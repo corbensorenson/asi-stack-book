@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/stable-capability-fields.qmd",
     "structured_atoms_reviewed": 54,
-    "prose_candidates_adjudicated": 46,
+    "prose_candidates_adjudicated": 47,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 SCF lifecycle proof refinement. The new proof-summary sentence is a nonmaterial explanation of two existing formal-target atoms; every other scanned sentence remains covered by bounded existing ownership or status/non-claim classification. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 SCF lifecycle proof refinement. The new proof-summary sentence is a nonmaterial explanation of two existing formal-target atoms; every other scanned sentence remains covered by bounded existing ownership or status/non-claim classification. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-08-11 Assurance-Shift source integration was re-reviewed against the current chapter; new material propositions map to existing owners and retain the paper's conceptual evidence ceiling."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -799,6 +799,11 @@
     "stable-capability-fields.prose.437acdce2087": {
       "state": "nonmaterial_explanation",
       "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/stable-capability-fields.json`."
+    },
+    "stable-capability-fields.prose.2a55592f455c": {
+      "state": "duplicate_of_atom",
+      "rationale": "The 2026-08-11 Assurance-Shift integration was semantically reviewed as a bounded refinement of the named existing atom. The complete manuscript and source mapping add no separate support-bearing proposition and do not promote support.",
+      "target_atom_id": "stable-capability-fields.invariant.009"
     }
   },
   "non_claims": [

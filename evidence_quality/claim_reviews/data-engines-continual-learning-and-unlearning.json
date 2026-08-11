@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/data-engines-continual-learning-and-unlearning.qmd",
     "structured_atoms_reviewed": 86,
-    "prose_candidates_adjudicated": 81,
+    "prose_candidates_adjudicated": 82,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. Adaptive lineage, reversible integration, commitment annealing, knowledge placement, salvage, retirement, privacy, influence, and storage-erasure distinctions are bounded by the chapter's existing provenance, full-state, lifecycle, checkpoint-authority, deletion-axis, descendant, rollback, and custody atoms. The prior Regret Engine material remains bounded. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning\u2013Compute Topology integration. Adaptive lineage, reversible integration, commitment annealing, knowledge placement, salvage, retirement, privacy, influence, and storage-erasure distinctions are bounded by the chapter's existing provenance, full-state, lifecycle, checkpoint-authority, deletion-axis, descendant, rollback, and custody atoms. The prior Regret Engine material remains bounded. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-08-11 Assurance-Shift source integration was re-reviewed against the current chapter; new material propositions map to existing owners and retain the paper's conceptual evidence ceiling."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -465,6 +465,11 @@
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `data-engines-continual-learning-and-unlearning.failure_mode.018`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "data-engines-continual-learning-and-unlearning.failure_mode.018"
+    },
+    "data-engines-continual-learning-and-unlearning.prose.818babc5f875": {
+      "state": "duplicate_of_atom",
+      "rationale": "The 2026-08-11 Assurance-Shift integration was semantically reviewed as a bounded refinement of the named existing atom. The complete manuscript and source mapping add no separate support-bearing proposition and do not promote support.",
+      "target_atom_id": "data-engines-continual-learning-and-unlearning.mechanism.006"
     }
   },
   "prose_review_lineage": [

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
     "structured_atoms_reviewed": 73,
-    "prose_candidates_adjudicated": 76,
+    "prose_candidates_adjudicated": 77,
     "unowned_material_claims": 0,
-    "review_note": "Incremental semantic review on 2026-08-08 maps the Hermes Agent and OpenClaw skill-mutation comparison to existing qualification, disagreement, reification, regression, and lifecycle atoms. Both projects were documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Incremental semantic review on 2026-08-08 maps the Hermes Agent and OpenClaw skill-mutation comparison to existing qualification, disagreement, reification, regression, and lifecycle atoms. Both projects were documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-08-11 Assurance-Shift source integration was re-reviewed against the current chapter; new material propositions map to existing owners and retain the paper's conceptual evidence ceiling."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -398,7 +398,7 @@
     },
     "procedural-memory-and-cognitive-loop-closure.prose.3e40eee46709": {
       "state": "nonmaterial_explanation",
-      "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+      "rationale": "Incomplete line-wrap fragment introduced by the C1\u2013C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
     },
     "procedural-memory-and-cognitive-loop-closure.prose.c89d60d8df8e": {
       "state": "nonmaterial_explanation",
@@ -471,6 +471,11 @@
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked loop closure: the shortcut fails outside its precondition` to existing reviewed atom `procedural-memory-and-cognitive-loop-closure.mechanism.015`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "procedural-memory-and-cognitive-loop-closure.mechanism.015"
+    },
+    "procedural-memory-and-cognitive-loop-closure.prose.c3ea324e73cd": {
+      "state": "duplicate_of_atom",
+      "rationale": "The 2026-08-11 Assurance-Shift integration was semantically reviewed as a bounded refinement of the named existing atom. The complete manuscript and source mapping add no separate support-bearing proposition and do not promote support.",
+      "target_atom_id": "procedural-memory-and-cognitive-loop-closure.mechanism.006"
     }
   },
   "non_claims": [

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "stable-capability-fields",
   "chapter_file": "chapters/stable-capability-fields.qmd",
-  "chapter_sha256": "6203504cd364a7308f9ef0a30e3855201c2a7482298455458ac4bb0558e6819f",
+  "chapter_sha256": "45562264993c7f6daab9e893596e1605ddba0692c2f8879102345993094a27ec",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-06-capability-fields-and-replacement",
   "review_state": "digest_bound_editorial_pass",
@@ -15,15 +15,58 @@
     "residual_owner": "The field owner retains regression, incident, evaluator, workload replay, authority, migration, expiry, review-trigger, default-blocker, and rollback obligations.",
     "evidence_boundary": "The harness validates three synthetic records and rejects six controls; it does not execute replacement, establish semantic equivalence, prove evaluator independence, or demonstrate rollback."
   },
-  "worked_trace": {"heading": "Worked replacement decision: canary qualified, default still blocked", "state_labels": ["fixed_field_contract", "candidate_qualified_for_scope", "canary_lease", "default_blocked", "incumbent_fallback_retained"], "source_or_fixture_refs": ["experiments/stable_capability_fields/fixtures/valid_canary_qualified_field.json", "experiments/stable_capability_fields/results/2026-06-28-local.md", "scripts/validate_stable_capability_fields.py"], "maximum_inference": "The synthetic harness validates qualification, authority, lease, blocker, and rollback record boundaries only; it establishes no runtime semantic identity, safe replacement, evaluator integrity, production safety, or successful rollback."},
+  "worked_trace": {
+    "heading": "Worked replacement decision: canary qualified, default still blocked",
+    "state_labels": [
+      "fixed_field_contract",
+      "candidate_qualified_for_scope",
+      "canary_lease",
+      "default_blocked",
+      "incumbent_fallback_retained"
+    ],
+    "source_or_fixture_refs": [
+      "experiments/stable_capability_fields/fixtures/valid_canary_qualified_field.json",
+      "experiments/stable_capability_fields/results/2026-06-28-local.md",
+      "scripts/validate_stable_capability_fields.py"
+    ],
+    "maximum_inference": "The synthetic harness validates qualification, authority, lease, blocker, and rollback record boundaries only; it establishes no runtime semantic identity, safe replacement, evaluator integrity, production safety, or successful rollback."
+  },
   "counterexample_or_simpler_baseline": "A mutable registry flag marks the new implementation default after tests pass. The field instead grants only a scoped canary lease because the runtime replay, evaluator independence, and default-route obligations remain unresolved.",
   "readable_claim": "A replacement inherits a capability name only for the exact consumer, use, environment, and evidence epoch in which it preserved the field's observable and authority obligations.",
   "normative_rule": "Keep the field contract fixed while qualifying an exact candidate and its dependencies. Preserve historical regressions, incidents, state-migration duties, authority ceilings, expiry, and an executable fallback; unknown or failed obligations block default routing.",
-  "formal_binding": {"claim_id": "stable-capability-fields.core", "support_state": "argument", "anchor": "versioned, consumer-relative substitution contract"},
-  "claim_atom_and_source_links": ["stable-capability-fields.core", "scf", "ext_capability_based_computer_systems_1984", "ext_semver_2_0_0"],
-  "caveat_consolidation": {"local_caveat": "The trace distinguishes fixture qualification, canary permission, default routing, semantic identity, and actual rollback.", "consolidated_disposition": "Consumer, use, environment, evaluator, provenance, regression, incident, migration, composition, expiry, authority, production, and rollback limits remain in dedicated sections.", "distinct_limitations_preserved": true},
+  "formal_binding": {
+    "claim_id": "stable-capability-fields.core",
+    "support_state": "argument",
+    "anchor": "versioned, consumer-relative substitution contract"
+  },
+  "claim_atom_and_source_links": [
+    "stable-capability-fields.core",
+    "scf",
+    "ext_capability_based_computer_systems_1984",
+    "ext_semver_2_0_0"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The trace distinguishes fixture qualification, canary permission, default routing, semantic identity, and actual rollback.",
+    "consolidated_disposition": "Consumer, use, environment, evaluator, provenance, regression, incident, migration, composition, expiry, authority, production, and rollback limits remain in dedicated sections.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "The narrative names only the field predicates, candidate, blockers, and fallback; full fixtures and lifecycle matrices remain in the harness surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule make inheritance, qualification, and default authority distinct before the formal claim.", "hedge_disposition": "The difference between record validation and world replacement remains explicit because it bounds the result.", "table_disposition": "No new status table was added; the fixture's decisive route is narrated."},
-  "non_claims": ["The harness does not establish runtime semantic equivalence or evaluator independence.", "The harness does not execute replacement, production routing, or rollback.", "The editorial revision does not move support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim and operational rule make inheritance, qualification, and default authority distinct before the formal claim.",
+    "hedge_disposition": "The difference between record validation and world replacement remains explicit because it bounds the result.",
+    "table_disposition": "No new status table was added; the fixture's decisive route is narrated."
+  },
+  "non_claims": [
+    "The harness does not establish runtime semantic equivalence or evaluator independence.",
+    "The harness does not execute replacement, production routing, or rollback.",
+    "The editorial revision does not move support or release state."
+  ]
 }

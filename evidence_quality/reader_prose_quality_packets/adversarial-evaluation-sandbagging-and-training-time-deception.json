@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
   "chapter_file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
-  "chapter_sha256": "c14cb52f64b9567d9cd8879eb28bafebdb4d87ad0c3c17c4824ea311404422e5",
+  "chapter_sha256": "4e6f40f89ebaf82581bb6135356d9b32eb9e37484e97475a9774e7198ab1f5ce",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-19-readiness-and-liveness",
   "review_state": "digest_bound_editorial_pass",
@@ -17,18 +17,56 @@
   },
   "worked_trace": {
     "heading": "Worked trace: the model that improves when the monitor disappears",
-    "state_labels": ["frozen_conditions", "context_discrepancy", "alternative_hypotheses", "promotion_blocked", "replication_and_scope"],
-    "source_or_fixture_refs": ["chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd", "sources/source_notes/ext_ai_sandbagging_2024.md", "sources/source_notes/ext_alignment_faking_2024.md"],
+    "state_labels": [
+      "frozen_conditions",
+      "context_discrepancy",
+      "alternative_hypotheses",
+      "promotion_blocked",
+      "replication_and_scope"
+    ],
+    "source_or_fixture_refs": [
+      "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+      "sources/source_notes/ext_ai_sandbagging_2024.md",
+      "sources/source_notes/ext_alignment_faking_2024.md"
+    ],
     "maximum_inference": "The trace demonstrates how a monitor-conditioned discrepancy should block broad inference and preserve alternatives; it does not diagnose deception, latent capability, monitor validity, or deployment safety."
   },
   "counterexample_or_simpler_baseline": "Adding more tests is the simpler baseline, but test count cannot resolve a shared monitor, reward proxy, selection pressure, or scorer dependency; the observation contract makes those dependencies inspectable.",
   "readable_claim": "The contribution is not another deception detector. It is an observation contract that remains useful whether a discrepancy is strategic behavior, distribution shift, evaluator error, leakage, or unresolved combination.",
   "normative_rule": "A stronger approach makes the evaluator and the conditions of observation inspectable, preserves disagreement rather than smoothing it away, and requires an explicit statement of what the evidence does not establish.",
-  "formal_binding": {"claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core", "support_state": "argument", "anchor": "Evaluation Observation Integrity Packet"},
-  "claim_atom_and_source_links": ["adversarial-evaluation-sandbagging-and-training-time-deception.core", "ext_ai_sandbagging_2024", "ext_alignment_faking_2024", "ext_emergent_misalignment_reward_hacking_2025"],
-  "caveat_consolidation": {"local_caveat": "The scene preserves multiple live explanations and refuses to label the model deceptive from the discrepancy alone.", "consolidated_disposition": "Elicitation, monitor, reward, evaluator, indicator, replication, mitigation, capability, intent, safety, and transfer limits remain in the mechanism and source boundaries.", "distinct_limitations_preserved": true},
+  "formal_binding": {
+    "claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core",
+    "support_state": "argument",
+    "anchor": "Evaluation Observation Integrity Packet"
+  },
+  "claim_atom_and_source_links": [
+    "adversarial-evaluation-sandbagging-and-training-time-deception.core",
+    "ext_ai_sandbagging_2024",
+    "ext_alignment_faking_2024",
+    "ext_emergent_misalignment_reward_hacking_2025"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The scene preserves multiple live explanations and refuses to label the model deceptive from the discrepancy alone.",
+    "consolidated_disposition": "Elicitation, monitor, reward, evaluator, indicator, replication, mitigation, capability, intent, safety, and transfer limits remain in the mechanism and source boundaries.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "The scene is carried in prose because alternative explanations are the argument; full lifecycle fields and evaluator-owner inventories remain in their reference surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The chapter's readable observation-contract statement remains a separate projection from the exact formal packet.", "hedge_disposition": "Uncertainty is causal content in this scene, so alternatives are preserved rather than mechanically deleted.", "table_disposition": "The worked scene avoids a new status table; comparator and owner tables remain where comparison is the argument."},
-  "non_claims": ["The trace does not diagnose deception, sandbagging, or latent capability in a real model.", "The trace does not establish monitor validity, alignment, or deployment safety.", "The editorial packet does not move support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The chapter's readable observation-contract statement remains a separate projection from the exact formal packet.",
+    "hedge_disposition": "Uncertainty is causal content in this scene, so alternatives are preserved rather than mechanically deleted.",
+    "table_disposition": "The worked scene avoids a new status table; comparator and owner tables remain where comparison is the argument."
+  },
+  "non_claims": [
+    "The trace does not diagnose deception, sandbagging, or latent capability in a real model.",
+    "The trace does not establish monitor validity, alignment, or deployment safety.",
+    "The editorial packet does not move support or release state."
+  ]
 }

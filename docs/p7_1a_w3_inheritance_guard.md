@@ -13,7 +13,7 @@ evaluations, evidence plans, tests, summaries, and handoffs.
 
 The editorial narrative projection falls from **812** to **0** distinct repeated 12-grams at a minimum spread of eight chapters; maximum spread moves from **14** to **0**. Exact editorial blocks of at least 24 words across five chapters fall from **0** to **0**.
 
-The raw-QMD diagnostic is also retained (1,921 to 1,259). Its widest families are generated source and P7 evidence reconciliation packets with explicit generator owners; they are
+The raw-QMD diagnostic is also retained (1,921 to 1,281). Its widest families are generated source and P7 evidence reconciliation packets with explicit generator owners; they are
 not misreported as reader-facing editorial repetition.
 
 ## Method and custody
@@ -28,7 +28,7 @@ fingerprinted separately so those exclusions cannot hide copied structure.
 All ten repaired chapters retain their manifest source assignments, claim
 markers, equations, proof tags, protocol/schema references, evidence level, and
 claim label. The semantic queue retires 298 inherited prose-candidate IDs,
-adjudicates 937 domain-specific replacements against existing owned atoms,
+adjudicates 946 domain-specific replacements against existing owned atoms,
 preserves all 4,064 structured atoms, and leaves zero pending prose candidates.
 The packet changes no support, release, or publication state.
 

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "resource-economics-and-token-budgets",
   "chapter_file": "chapters/resource-economics-and-token-budgets.qmd",
-  "chapter_sha256": "a87ca08741ff886edcccc9987984221842a4ed332ed61641092aa4da30be7797",
+  "chapter_sha256": "c98c93a11737babc13e12c090da1301f46cf74be996b9aa7037b5b13203f6d09",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-20-resource-and-recovery-economics",
   "review_state": "digest_bound_editorial_pass",
@@ -17,19 +17,33 @@
   },
   "worked_trace": {
     "heading": "Worked cost comparison: the cheapest route is not the economical route",
-    "state_labels": ["candidate_routes", "eligibility_checks", "residualized_controls", "selected_eligible_route", "bounded_cost_result"],
-    "source_or_fixture_refs": ["docs/costed_route_resource_slice.md", "scripts/validate_costed_route_resource_slice.py"],
+    "state_labels": [
+      "candidate_routes",
+      "eligibility_checks",
+      "residualized_controls",
+      "selected_eligible_route",
+      "bounded_cost_result"
+    ],
+    "source_or_fixture_refs": [
+      "docs/costed_route_resource_slice.md",
+      "scripts/validate_costed_route_resource_slice.py"
+    ],
     "maximum_inference": "A bounded selector can reject cheaper ineligible routes and select the lowest-cost adequate route in the tracked synthetic fixture; no production or chapter-core economic conclusion follows."
   },
   "counterexample_or_simpler_baseline": "A scalar cost sort chooses the 2.3-unit route and calls it efficient. The accepted selector rejects it for failed verification and compares the 14.2 route with a 43.0 adequate baseline.",
-  "readable_claim": "Resource efficiency means the lowest complete cost for a qualified useful outcome—not the fewest tokens, fastest local step, highest cache-hit rate, or cheapest route before verification and repair.",
+  "readable_claim": "Resource efficiency means the lowest complete cost for a qualified useful outcome\u2014not the fewest tokens, fastest local step, highest cache-hit rate, or cheapest route before verification and repair.",
   "normative_rule": "Protected safety, rights, verification, recovery, and residual costs enter the ledger before selection. A route that omits them is ineligible, not inexpensive.",
   "formal_binding": {
     "claim_id": "resource-economics-and-token-budgets.core",
     "support_state": "argument",
     "anchor": "Resource Allocation Lease"
   },
-  "claim_atom_and_source_links": ["resource-economics-and-token-budgets.core", "tokenmana", "planforge", "ext_pagedattention_vllm_2023"],
+  "claim_atom_and_source_links": [
+    "resource-economics-and-token-budgets.core",
+    "tokenmana",
+    "planforge",
+    "ext_pagedattention_vllm_2023"
+  ],
   "caveat_consolidation": {
     "local_caveat": "The worked comparison labels every number synthetic and denies production, scheduler, and chapter-core inference.",
     "consolidated_disposition": "Provider, paging, cache, energy, human-cost, and simulation-transfer limitations remain at the sections where those distinct decisions arise.",

@@ -1,7 +1,70 @@
 {
-  "schema_version":"asi_stack.p7_1c_reader_prose_quality_packet.v1","chapter_id":"readiness-gates-residual-escrow-and-quarantine","chapter_file":"chapters/readiness-gates-residual-escrow-and-quarantine.qmd","chapter_sha256":"c81b565481b2ecbddc28e55b25989ff358744f968a9f3544170ac6ba3286af9d","chapter_role":"load-bearing-reference","reader_spine_unit":"unit-19-readiness-and-liveness","review_state":"digest_bound_editorial_pass",
-  "concrete_scene":{"heading":"Worked stale gate: the model changed after qualification","actor_or_system":"Model v7, tokenizer-modified v7.1, a read-only coding workload, qualification gates, regression floors, caches, a fallback, and residual escrow","attempted_action":"Reuse v7's readiness lease for v7.1 because the marketing name and much of the model remain unchanged.","observable_outcome":"Target identity change invalidates affected evidence, v7.1 enters diagnostic quarantine, and ordinary traffic falls back to v7 until reruns complete.","failed_or_tested_boundary":"The scene tests whether readiness adheres to a model family name or survives stale gates; it does not.","residual_owner":"Target, tokenizer, evaluator, cache, gate, regression, monitor, fallback, rollback, descendant, and residual owners retain their obligations.","evidence_boundary":"Finite lifecycle checks preserve lease state but do not establish gate adequacy, evaluator independence, natural-workload safety, monitoring efficacy, or deployment merit."},
-  "worked_trace":{"heading":"Worked stale gate: the model changed after qualification","state_labels":["v7_qualified","v7_1_target_changed","old_gates_stale","v7_1_quarantined","v7_fallback_active"],"source_or_fixture_refs":["evidence_quality/proof_model_dossiers/readiness-gates-residual-escrow-and-quarantine.md","scripts/validate_readiness_lifecycle_probe.py"],"maximum_inference":"Exact target binding, stale-gate refusal, quarantine, fallback, and residual custody are coherent; readiness evidence adequacy and deployment safety remain unproven."},
-  "counterexample_or_simpler_baseline":"The badge baseline carries readiness across a minor version. The lease path binds evidence to the exact executable target and expires on change.","readable_claim":"Readiness is an expiring permission for one target and use, not a permanent badge attached to a model name.","normative_rule":"Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. Any target change or stale gate blocks ordinary use until rerun; quarantine always carries a working fallback and residual owner.",
-  "formal_binding":{"claim_id":"readiness-gates-residual-escrow-and-quarantine.core","support_state":"argument","anchor":"expiring routability lease"},"claim_atom_and_source_links":["readiness-gates-residual-escrow-and-quarantine.core","scf","benchmaxxing"],"caveat_consolidation":{"local_caveat":"The example states once that lifecycle correctness is not gate adequacy.","consolidated_disposition":"Targets, gates, evaluators, regression, routes, monitoring, fallback, rollback, descendants, safety, readiness merit, and release remain distinct.","distinct_limitations_preserved":true},"bookkeeping_surface_disposition":"v7, v7.1, stale gates, and fallback remain reader-facing; complete lifecycle transitions remain formal.","semantic_diff":{"unique_claims_preserved":true,"sources_preserved":true,"proof_boundaries_preserved":true,"non_claims_preserved":true,"support_state_effect":"none","release_effect":"none"},"editorial_diagnostics":{"mega_sentence_disposition":"The short claim turns the readiness schema into an expiring lease.","hedge_disposition":"The gate-adequacy boundary follows the example once.","table_disposition":"Gate and lifecycle tables remain because state and route differ."},"non_claims":["A valid readiness record does not prove evaluator adequacy.","Quarantine and fallback records do not establish deployment safety.","The editorial revision does not move support or release state."]
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+  "chapter_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+  "chapter_sha256": "0f0a38a8b6e20191472556dd6fdcb32f2604a1309d7a230909ead82a0dd7cc7f",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-19-readiness-and-liveness",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked stale gate: the model changed after qualification",
+    "actor_or_system": "Model v7, tokenizer-modified v7.1, a read-only coding workload, qualification gates, regression floors, caches, a fallback, and residual escrow",
+    "attempted_action": "Reuse v7's readiness lease for v7.1 because the marketing name and much of the model remain unchanged.",
+    "observable_outcome": "Target identity change invalidates affected evidence, v7.1 enters diagnostic quarantine, and ordinary traffic falls back to v7 until reruns complete.",
+    "failed_or_tested_boundary": "The scene tests whether readiness adheres to a model family name or survives stale gates; it does not.",
+    "residual_owner": "Target, tokenizer, evaluator, cache, gate, regression, monitor, fallback, rollback, descendant, and residual owners retain their obligations.",
+    "evidence_boundary": "Finite lifecycle checks preserve lease state but do not establish gate adequacy, evaluator independence, natural-workload safety, monitoring efficacy, or deployment merit."
+  },
+  "worked_trace": {
+    "heading": "Worked stale gate: the model changed after qualification",
+    "state_labels": [
+      "v7_qualified",
+      "v7_1_target_changed",
+      "old_gates_stale",
+      "v7_1_quarantined",
+      "v7_fallback_active"
+    ],
+    "source_or_fixture_refs": [
+      "evidence_quality/proof_model_dossiers/readiness-gates-residual-escrow-and-quarantine.md",
+      "scripts/validate_readiness_lifecycle_probe.py"
+    ],
+    "maximum_inference": "Exact target binding, stale-gate refusal, quarantine, fallback, and residual custody are coherent; readiness evidence adequacy and deployment safety remain unproven."
+  },
+  "counterexample_or_simpler_baseline": "The badge baseline carries readiness across a minor version. The lease path binds evidence to the exact executable target and expires on change.",
+  "readable_claim": "Readiness is an expiring permission for one target and use, not a permanent badge attached to a model name.",
+  "normative_rule": "Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. Any target change or stale gate blocks ordinary use until rerun; quarantine always carries a working fallback and residual owner.",
+  "formal_binding": {
+    "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
+    "support_state": "argument",
+    "anchor": "expiring routability lease"
+  },
+  "claim_atom_and_source_links": [
+    "readiness-gates-residual-escrow-and-quarantine.core",
+    "scf",
+    "benchmaxxing"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The example states once that lifecycle correctness is not gate adequacy.",
+    "consolidated_disposition": "Targets, gates, evaluators, regression, routes, monitoring, fallback, rollback, descendants, safety, readiness merit, and release remain distinct.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "v7, v7.1, stale gates, and fallback remain reader-facing; complete lifecycle transitions remain formal.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The short claim turns the readiness schema into an expiring lease.",
+    "hedge_disposition": "The gate-adequacy boundary follows the example once.",
+    "table_disposition": "Gate and lifecycle tables remain because state and route differ."
+  },
+  "non_claims": [
+    "A valid readiness record does not prove evaluator adequacy.",
+    "Quarantine and fallback records do not establish deployment safety.",
+    "The editorial revision does not move support or release state."
+  ]
 }

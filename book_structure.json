@@ -249,7 +249,7 @@
             }
           ],
           "lean_module": "AsiStackProofs.StackBoundaries",
-  "proof_targets": [
+          "proof_targets": [
             {
               "tag": "lean:stack.layer_boundaries.operational_invariant",
               "module": "AsiStackProofs.StackBoundaries",
@@ -1665,7 +1665,8 @@
             "corbens_trainer_project",
             "corbens_best_model_possible_project",
             "ext_unlearning_benchmarks_weak_2024",
-            "ext_embedded_agency_2019"
+            "ext_embedded_agency_2019",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -1682,7 +1683,8 @@
               "beastbrain_project",
               "bugbrain_project",
               "corbens_trainer_project",
-              "corbens_best_model_possible_project"
+              "corbens_best_model_possible_project",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -1853,6 +1855,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds the Qualified Competence Envelope as a versioned, distribution-, time-, region-, and evaluator-relative evidence claim rather than an assertion of competence truth.",
+              "limits": "The source does not promote any evidence state or establish envelope completeness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -3519,7 +3532,7 @@
           "core_claim": "A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.",
           "mechanism": [
             "Preserve each conflict before action as proposition-level normative claims with separate descriptive evidence, predictive uncertainty, value or theory provenance, affected parties and standing, stakes, reversibility, jurisdiction, authority or consent boundary, dependencies, and known omissions.",
-            "Record the exact decision procedure\u2014precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation\u2014along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
+            "Record the exact decision procedure—precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation—along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
             "Issue a bounded decision lease naming permitted and prohibited actions, authority ceiling, affected parties, evidence bar, preserved dissent, residual uncertainty, expiry, revisit and material-change triggers, rollback, appeal, correction, and redress without treating the lease as moral settlement.",
             "Represent audit, explanation, dissent, review, appeal, correction, redress, exit, export, fork, and contestability as rights records with holder and standing, request state, scope, access path, timing, accessibility, cost, retaliation and dependency risks, required artifacts, accountable owner, denial reason, appeal route, preservation rule, and receipt.",
             "Bind every denial, withholding, and redaction to a classified reason, necessity and proportionality rule, withheld-material inventory or digest, expiry, independent-enough review, appeal, and later-disclosure trigger; secrecy cannot erase the fact or scope of withholding.",
@@ -4294,7 +4307,8 @@
             "ext_capability_based_computer_systems_1984",
             "ext_semver_2_0_0",
             "ext_slsa_v1_0",
-            "reflexive_router_whitepaper"
+            "reflexive_router_whitepaper",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -4304,7 +4318,8 @@
               "viea",
               "talos",
               "ladon_manhattan",
-              "reflexive_router_whitepaper"
+              "reflexive_router_whitepaper",
+              "assurance_shift_learning"
             ],
             "variants": [
               "ext_capability_based_computer_systems_1984",
@@ -4318,7 +4333,7 @@
           },
           "problem": "A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.",
           "insufficient": "Plugin APIs, model registries, Semantic Versioning, capability-security references, supply-chain provenance, benchmark leaderboards, canaries, and rollback runbooks each cover part of replacement, but none alone establishes semantic field identity across inputs, outputs, preconditions, postconditions, failure and abstention behavior, nondeterminism, resource and privacy limits, authority effects, state compatibility, evaluator independence, qualification scope and expiry, historical regressions, downstream reliance, incident response, and effect-complete rollback. Interface compatibility or artifact provenance is not behavioral refinement, qualification for one workload is not universal substitutability, and a stored rollback pointer is not evidence that prior effects can be reversed.",
-          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface\u2014including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds\u2014to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
+          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
           "mechanism": [
             "Define field identity independently of any implementation, model family, vendor, prompt, tool, benchmark, deployment, or route name; a material semantic change creates a governed field version or a new field rather than silently reusing the old identity.",
             "Specify the observable contract over accepted and rejected inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions.",
@@ -4549,6 +4564,17 @@
                 "sources/source_notes/ext_slsa_v1_0.md:13-45"
               ],
               "passage_review_note": "Reviewed the source note for artifact-integrity and provenance lineage while preserving the boundary between supply-chain evidence and SCF behavioral qualification; no SLSA workflow or conformance claim is promoted."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds Boundary Evidence Bundles as field-qualification inputs, least-invasive repair placement, protected positives, repair compatibility, and exact descendant invalidation.",
+              "limits": "No field repair, compatibility result, qualification transition, or safe composition was demonstrated.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ]
         },
@@ -5955,7 +5981,7 @@
             "Declared derivative closure is monotone through copying, transformation, packaging, extraction, backup, recovery, and distribution; an unknown or excluded branch remains an owned residual.",
             "Encryption keys and metadata remain purpose-, artifact-, holder-, operation-, scope-, usage-period-, and policy-bound; missing, stale, compromised, widened, or unreconciled key state fails closed.",
             "Attester Evidence, Verifier appraisal, Attestation Result, and Relying-Party authorization remain distinct claims with separate policy identities, owners, freshness, dependencies, and consumers.",
-            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch\u2014not token age alone.",
+            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch—not token age alone.",
             "An attestation result is scoped evidence about measured claims; it grants no hardware/vendor/operator/software trust, weight confidentiality, model safety, serving, tool, release, readiness, or deployment conclusion.",
             "Possession, key release, decryption, load, serve, action authority, transfer, recipient distribution, and open release are distinct non-transitive decisions.",
             "Plaintext, derived capability, output extraction, cache, crash dump, accelerator memory, log, backup, and recipient exposure remain inventoried at the declared observation grade.",
@@ -6449,7 +6475,7 @@
             "Retirement, access revocation, notice, retention, archive, sanitization, disposal, recipient recall, and world erasure remain distinct observed claims.",
             "Cross-organization evidence obeys privacy, rights, security, contractual, retention, and disclosure-minimization limits while remaining contestable and lineage-preserving.",
             "Security findings remain paired with affected-path precision/recall, false quarantine, useful-service loss, restoration, availability, operator labor, privacy/rights, benefit, and total cost.",
-            "Finite records, one declared graph, 34 theorem declarations, ten fixture mutations, eleven lifecycle controls, 24 component-inventory permutations, five terminal-state event checks, or zero observed compromise establish only their exact scope\u2014not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
+            "Finite records, one declared graph, 34 theorem declarations, ten fixture mutations, eleven lifecycle controls, 24 component-inventory permutations, five terminal-state event checks, or zero observed compromise establish only their exact scope—not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
           ],
           "failure_modes": [
             "Name, digest, version, tokenizer, dataset, dependency, model, configuration, policy, environment, build, package, signer, supplier, or recipient substitution occurs after approval or behind a familiar label.",
@@ -8838,7 +8864,7 @@
                 "sources/raw/google_docs/genesiscode.txt:868-1142",
                 "sources/raw/google_docs/genesiscode.txt:1143-1291"
               ],
-              "passage_review_note": "Reviewed all three tabs: paper semantics, Rust handoff, and style contract. Covered canonical CoreForm and hashing, G\u03bb, sealed protocol variants, effects/replay, obligations/evidence, semantic patches, row/effect/refinement types, e-graphs and translation validation, implementation crates/CLI/tests/conformance, qualified names, explicit payloads, stable formatting, module metadata, and AI-authoring rules. Added missing fresh-seal, closure identity, replay-completeness, capability-coverage, patch-anchor/impact, self-weakening, and finite-test boundaries. No implementation or empirical/security result is promoted."
+              "passage_review_note": "Reviewed all three tabs: paper semantics, Rust handoff, and style contract. Covered canonical CoreForm and hashing, Gλ, sealed protocol variants, effects/replay, obligations/evidence, semantic patches, row/effect/refinement types, e-graphs and translation validation, implementation crates/CLI/tests/conformance, qualified names, explicit payloads, stable formatting, module metadata, and AI-authoring rules. Added missing fresh-seal, closure identity, replay-completeness, capability-coverage, patch-anchor/impact, self-weakening, and finite-test boundaries. No implementation or empirical/security result is promoted."
             },
             {
               "source_id": "treellm",
@@ -11767,7 +11793,9 @@
               "source_id": "ext_github_copilot_work_surfaces_2026",
               "mapped_support": "Provides one product-family comparator spanning inline suggestion, chat, command-line, pull-request, desktop, and agent-driven work surfaces.",
               "limits": "Current official documentation only; no complete launch chronology, workflow reproduction, productivity result, or superiority claim.",
-              "passage_refs": ["sources/source_notes/ext_github_copilot_work_surfaces_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_github_copilot_work_surfaces_2026.md"
+              ],
               "passage_review_note": "Reviewed official documentation and bounded the source to work-surface comparison.",
               "passage_review_state": "reviewed"
             },
@@ -11775,7 +11803,9 @@
               "source_id": "ext_augment_code_agent_2026",
               "mapped_support": "Provides an IDE-panel comparator across chat, read-only inquiry, approval-paused agent work, auto execution, diffs, checkpoints, stop, and steering.",
               "limits": "Documentation review only; no execution or control was reproduced.",
-              "passage_refs": ["sources/source_notes/ext_augment_code_agent_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_augment_code_agent_2026.md"
+              ],
               "passage_review_note": "Reviewed official Agent documentation for mode and review boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -11783,7 +11813,9 @@
               "source_id": "ext_openai_codex_work_surfaces_2026",
               "mapped_support": "Provides a coding-agent comparator across local terminal, IDE, cloud, automation, permissions, project instructions, skills, plugins, and integrations.",
               "limits": "Official documentation and one pinned CLI revision; no hosted-system implementation, benchmark, correctness, safety, or productivity result was reproduced.",
-              "passage_refs": ["sources/source_notes/ext_openai_codex_work_surfaces_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_openai_codex_work_surfaces_2026.md"
+              ],
               "passage_review_note": "Reviewed official OpenAI documentation and pinned official CLI identity.",
               "passage_review_state": "reviewed"
             },
@@ -11791,7 +11823,9 @@
               "source_id": "ext_anthropic_claude_code_2026",
               "mapped_support": "Explicitly grounds the agentic-harness distinction and a gather-context, act, verify loop across terminal, IDE, desktop, web, remote, and automation surfaces.",
               "limits": "Official documentation only; no execution, complete-mediation, task-quality, or organizational-substitution result.",
-              "passage_refs": ["sources/source_notes/ext_anthropic_claude_code_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_anthropic_claude_code_2026.md"
+              ],
               "passage_review_note": "Reviewed official harness and tool-loop documentation.",
               "passage_review_state": "reviewed"
             },
@@ -11799,7 +11833,9 @@
               "source_id": "ext_opencode_agent_2026",
               "mapped_support": "Provides a pinned open-source comparator for model-provider-flexible terminal, desktop, and IDE work with plan/build modes, project instructions, recovery, and sharing.",
               "limits": "Source and documentation inspection only; no provider parity, permission, privacy, or task result.",
-              "passage_refs": ["sources/source_notes/ext_opencode_agent_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_opencode_agent_2026.md"
+              ],
               "passage_review_note": "Reviewed official documentation and pinned repository identity.",
               "passage_review_state": "reviewed"
             },
@@ -11807,7 +11843,9 @@
               "source_id": "ext_oh_my_pi_agent_2026",
               "mapped_support": "Provides a pinned comparator for an integrated terminal harness absorbing editing, LSP, shell, browser, subagents, memory, review, provider switching, and collaboration.",
               "limits": "No reported token, performance, security, quality, or collaboration claim was reproduced.",
-              "passage_refs": ["sources/source_notes/ext_oh_my_pi_agent_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_oh_my_pi_agent_2026.md"
+              ],
               "passage_review_note": "Reviewed the official repository and selected canonical documentation at the pinned revision.",
               "passage_review_state": "reviewed"
             },
@@ -11815,7 +11853,9 @@
               "source_id": "ext_hermes_agent_2026",
               "mapped_support": "Marks a move toward freestanding persistent agents with memory, skills, tools, and human-gated procedure mutation.",
               "limits": "Pinned source inspection only; no learning, utility, memory, security, or persistence result was reproduced.",
-              "passage_refs": ["sources/source_notes/ext_hermes_agent_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_hermes_agent_2026.md"
+              ],
               "passage_review_note": "Reused the reviewed implementation note at the work-surface boundary.",
               "passage_review_state": "reviewed"
             },
@@ -11823,7 +11863,9 @@
               "source_id": "ext_openclaw_agent_runtime_2026",
               "mapped_support": "Marks a gateway- and channel-connected agent surface joining sessions, tools, devices, external harnesses, and governed skill proposals.",
               "limits": "Pinned documentation inspection only; no gateway, harness, security, reliability, learning, or benchmark result.",
-              "passage_refs": ["sources/source_notes/ext_openclaw_agent_runtime_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_openclaw_agent_runtime_2026.md"
+              ],
               "passage_review_note": "Reused the reviewed implementation note without transferring Claw-SWE-Bench results.",
               "passage_review_state": "reviewed"
             },
@@ -11831,7 +11873,9 @@
               "source_id": "ext_elizaos_agent_runtime_2026",
               "mapped_support": "Marks a modular freestanding runtime whose plugins contribute context, action, evaluation, services, events, routes, tests, and views.",
               "limits": "Pinned documentation and source inspection only; no execution, test reproduction, security assessment, performance result, or promotion.",
-              "passage_refs": ["sources/source_notes/ext_elizaos_agent_runtime_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_elizaos_agent_runtime_2026.md"
+              ],
               "passage_review_note": "Reused the constructive, bounded implementation note for modular runtime comparison.",
               "passage_review_state": "reviewed"
             }
@@ -11905,11 +11949,11 @@
               "tag": "lean:work_surface.summary.non_equivalence",
               "module": "AsiStackProofs.WorkSurfaceTransitions",
               "target": "An aggregate autonomy or completion score cannot recover the transition record's authority, identity, effect, review, and residual fields.",
-      "status": "planned"
-    }
-  ],
-  "lean_module": "AsiStackProofs.WorkSurfaceTransitions",
-  "draft_maturity": "integrated_argument_chapter",
+              "status": "planned"
+            }
+          ],
+          "lean_module": "AsiStackProofs.WorkSurfaceTransitions",
+          "draft_maturity": "integrated_argument_chapter",
           "open_evidence_gaps": [
             "No named product or runtime was executed for this chapter intake.",
             "No matched cross-harness or cross-surface workload has been run.",
@@ -12341,7 +12385,8 @@
             "ext_faithfulness_information_flow_2026",
             "ext_swe_rebench_v2_2026",
             "regret_engine",
-            "ext_openclaw_agent_runtime_2026"
+            "ext_openclaw_agent_runtime_2026",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -12358,7 +12403,8 @@
               "bugbrain_project",
               "corbens_trainer_project",
               "corbens_best_model_possible_project",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -12607,6 +12653,17 @@
                 "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
               ],
               "passage_review_note": "Reviewed the pinned official repository and canonical gateway, agent-loop, ACP, policy, memory, and self-learning documentation; this implementation source remains distinct from Claw-SWE-Bench."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds Boundary Evidence Bundle lineage, append-only lifecycle, supersession, repair descendants, preserved prefixes, counterexamples, and replay provenance.",
+              "limits": "A complete-looking bundle does not establish source truth, causal adequacy, or receipt faithfulness.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -14140,7 +14197,8 @@
             "capability_ratchet_whitepaper",
             "regret_engine",
             "ext_hermes_agent_2026",
-            "ext_openclaw_agent_runtime_2026"
+            "ext_openclaw_agent_runtime_2026",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -14167,7 +14225,8 @@
               "kernel_english_residual_compiler",
               "relational_dimension_compiler",
               "capability_ratchet_whitepaper",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -14429,6 +14488,17 @@
                 "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
               ],
               "passage_review_note": "Reviewed the pinned official repository and canonical self-learning, skill, agent-loop, and policy documentation; the mapping remains bounded to the documented proposal lifecycle."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds a route for compiling mature exception families into tests, guards, procedures, tools, and recovery routines while preserving evidence, protected positives, expiry, and reactivation triggers.",
+              "limits": "No compiler, recurrence reduction, safe consolidation, or efficiency gain was implemented or measured.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -14838,14 +14908,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -15258,7 +15328,9 @@
               "source_id": "ext_eggroll_hyperscale_es_2026",
               "mapped_support": "Shows that the substrate ABI must include the learning rule and its population, perturbation, RNG, fitness, aggregate-update, and total-cost state, including recurrent and integer-valued cases.",
               "limits": "Source-reported architecture and learning results are coupled and unreproduced; neither ES nor a recurrent/int8 substrate is established as superior.",
-              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eggroll_hyperscale_es_2026.md"
+              ],
               "passage_review_note": "Reviewed for architecture--learning-rule coupling and checkpoint-state obligations.",
               "passage_review_state": "reviewed"
             },
@@ -15266,7 +15338,9 @@
               "source_id": "ext_mezo_2023",
               "mapped_support": "Provides a forward-only zeroth-order update comparator for a differentiable language model under backward-memory pressure.",
               "limits": "Reported memory and GPU-hour results are setting-bound and do not establish a preferred substrate or learning rule.",
-              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_mezo_2023.md"
+              ],
               "passage_review_note": "Reviewed for forward-only learning ABI and resource boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -15274,7 +15348,9 @@
               "source_id": "ext_forward_forward_2022",
               "mapped_support": "Provides a preliminary local forward-only credit-assignment comparator to a universal reverse-mode ABI.",
               "limits": "Small-scale preliminary investigations do not establish foundation-model parity, efficiency, or biological plausibility.",
-              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_forward_forward_2022.md"
+              ],
               "passage_review_note": "Reviewed as a bounded mechanism counterexample.",
               "passage_review_state": "reviewed"
             },
@@ -15683,7 +15759,7 @@
             "Qualify kernels with equal-active-parameter and equal-total-lifecycle-cost tournaments, matched strong baselines, independent evaluators, adverse controls, rollback, reproduction, and transfer.",
             "Separate recurrent computation from addressable memory by preregistering recurrent-state size, sparse-slot capacity, cache growth, pointer fusion, exact-memory controls, storage, lookup, invalidation, migration, and deletion cost.",
             "For tiny-recursive candidates, preregister canonical single-pass, matched sampling/voting, blank/random/unseen identity, marginal utility by recursion step, learned stopping, and progressive mechanism ablations.",
-            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation\u2014not merely weight updates.",
+            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation—not merely weight updates.",
             "Treat OneCell as one falsifiable compact recurrent candidate: shared transition weights, typed state lanes, exact external state, outer branch-preserving search, verified abstraction accumulation, and a frozen-core ratchet."
           ],
           "interfaces": [
@@ -15957,7 +16033,9 @@
               "source_id": "ext_eggroll_hyperscale_es_2026",
               "mapped_support": "Supplies the primary systems case for low-rank batched evolution strategies, counter-based perturbation reconstruction, discrete objectives, and source-reported recurrent/int8/reasoning studies.",
               "limits": "Kernel throughput, quality, theory, and total-cost results are configuration-bound and unreproduced; the largest reported int8 population has a severe GPU-hour denominator.",
-              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eggroll_hyperscale_es_2026.md"
+              ],
               "passage_review_note": "Reviewed for learning-rule identity, complete state, source-scoped results, and total-cost boundary.",
               "passage_review_state": "reviewed"
             },
@@ -15965,7 +16043,9 @@
               "source_id": "ext_openai_es_2017",
               "mapped_support": "Provides the foundational modern distributed ES comparator using parameter perturbations, scalar fitness, and shared-seed reconstruction.",
               "limits": "The studied control results do not establish foundation-model sample efficiency or total-compute advantage.",
-              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_openai_es_2017.md"
+              ],
               "passage_review_note": "Reviewed for ES mechanisms, population denominators, and communication-versus-compute separation.",
               "passage_review_state": "reviewed"
             },
@@ -15973,7 +16053,9 @@
               "source_id": "ext_mezo_2023",
               "mapped_support": "Provides a seed-reconstructed forward-only zeroth-order fine-tuning comparator with inference-like memory use.",
               "limits": "Source-reported savings are task- and baseline-bound; query cost and estimator variance remain.",
-              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_mezo_2023.md"
+              ],
               "passage_review_note": "Reviewed for forward-only update identity and total-resource accounting.",
               "passage_review_state": "reviewed"
             },
@@ -15981,7 +16063,9 @@
               "source_id": "ext_forward_forward_2022",
               "mapped_support": "Provides a preliminary positive/negative forward-pass and local-objective alternative to global reverse-mode credit.",
               "limits": "Does not establish large-scale performance, generalization, efficiency, or biological plausibility.",
-              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_forward_forward_2022.md"
+              ],
               "passage_review_note": "Reviewed as a mechanism family and evidence-boundary case.",
               "passage_review_state": "reviewed"
             },
@@ -16374,7 +16458,8 @@
             "ext_megatron_distributed_training_2021",
             "ext_gspmd_2021",
             "ext_pbt_2017",
-            "ext_openai_es_2017"
+            "ext_openai_es_2017",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -16384,7 +16469,8 @@
               "ext_megatron_distributed_training_2021",
               "ext_gspmd_2021",
               "ext_pbt_2017",
-              "ext_openai_es_2017"
+              "ext_openai_es_2017",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -16444,6 +16530,17 @@
               ],
               "passage_review_note": "Used to distinguish evidence/proposal width from adaptive-state width.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds a competence-dependent regime allocator: once positive support is broad and stable inside a qualified region, marginal learning effort may shift toward evaluation, boundary discovery, repair, assurance, and recovery.",
+              "limits": "Assurance-dominance is a falsifiable local allocation hypothesis, not a measured crossover, universal learning law, or resource advantage.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -16577,7 +16674,7 @@
           "core_claim": "A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
           "mechanism": [
             "State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.",
-            "Use multiple explanatory lenses\u2014capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses\u2014without laundering one into another.",
+            "Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.",
             "Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.",
             "Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes.",
             "Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination."
@@ -16644,7 +16741,9 @@
               "source_id": "ext_eggroll_hyperscale_es_2026",
               "mapped_support": "Supplies a bounded consistency analysis for low-rank population updates approaching Gaussian ES under declared high-dimensional assumptions.",
               "limits": "The result is not global convergence, backpropagation superiority, nonlinear-regime transport, or a local reproduction.",
-              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eggroll_hyperscale_es_2026.md"
+              ],
               "passage_review_note": "Reviewed for estimator assumptions and theorem-transport limits.",
               "passage_review_state": "reviewed"
             },
@@ -16652,7 +16751,9 @@
               "source_id": "ext_forward_forward_2022",
               "mapped_support": "Supplies a distinct local-credit learning architecture that changes the scope of learning and generalization claims.",
               "limits": "Preliminary small-scale feasibility is not a foundation-model generalization theory.",
-              "passage_refs": ["sources/source_notes/ext_forward_forward_2022.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_forward_forward_2022.md"
+              ],
               "passage_review_note": "Reviewed for learner-identity and evidence-transport boundaries.",
               "passage_review_state": "reviewed"
             },
@@ -16786,7 +16887,8 @@
             "ext_dont_hallucinate_abstain_2024",
             "ext_swe_rebench_v2_2026",
             "precision_contract",
-            "regret_engine"
+            "regret_engine",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -16810,7 +16912,8 @@
               "ext_darwin_godel_machine_2025",
               "ext_dont_hallucinate_abstain_2024",
               "precision_contract",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -17081,6 +17184,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary paper, official code/data descriptions, pinned metadata, and local preflight receipt reviewed; no paper result is promoted into local evidence."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds the Qualified Competence Envelope as a scoped readiness input and reinforces that learning eligibility, local competence evidence, and deployment readiness are separate decisions.",
+              "limits": "The envelope is evaluator- and distribution-relative; it is neither a complete competence map nor calibrated deployment permission.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -17388,7 +17502,7 @@
                 "sources/raw/google_docs/beastbrain.txt:7118-7134",
                 "sources/raw/google_docs/beastbrain.txt:7378-7391"
               ],
-              "passage_review_note": "Reviewed repeated Mimic editions across v3.2\u20136.1 for hardware handshake, topology discovery, thermal profiling, dynamic execution profiles, memory pressure, battery-aware maintenance, and fallback. Replaced fixed modes and panic mutation with a governed qualification transaction.",
+              "passage_review_note": "Reviewed repeated Mimic editions across v3.2–6.1 for hardware handshake, topology discovery, thermal profiling, dynamic execution profiles, memory pressure, battery-aware maintenance, and fallback. Replaced fixed modes and panic mutation with a governed qualification transaction.",
               "passage_review_state": "reviewed"
             },
             {
@@ -18329,7 +18443,7 @@
                 "sources/raw/google_docs/bbvca_v9.txt:894-927",
                 "sources/raw/google_docs/bbvca_v9.txt:928-1003"
               ],
-              "passage_review_note": "Reviewed all 26 sections and five appendices for the complete BBVCA v9 system: contract tuple, universality boundary, shared-law cost, apex exclusion, exact transition families, 3D-native scope, generator-state payload, proposal discipline, verification output, repair ladder, layerwise exactness, interface inequality, total rate, additivity/entropy tension, two-phase rate, three-source bootstrap, smoothing/shrinkage, safe literal ceiling, conservative anti-pruning, committed refresh, adaptive-tree DP assumptions, Prototype A pipeline and memory layout, staged B\u2013F roadmap, baselines, ablations, friendly/hostile tests, success/falsification, risks, pseudocode, and metaphysical boundary. No implementation, codec correctness, rate, runtime, utility, safety, support, SOTA, AGI, or ASI result is promoted."
+              "passage_review_note": "Reviewed all 26 sections and five appendices for the complete BBVCA v9 system: contract tuple, universality boundary, shared-law cost, apex exclusion, exact transition families, 3D-native scope, generator-state payload, proposal discipline, verification output, repair ladder, layerwise exactness, interface inequality, total rate, additivity/entropy tension, two-phase rate, three-source bootstrap, smoothing/shrinkage, safe literal ceiling, conservative anti-pruning, committed refresh, adaptive-tree DP assumptions, Prototype A pipeline and memory layout, staged B–F roadmap, baselines, ablations, friendly/hostile tests, success/falsification, risks, pseudocode, and metaphysical boundary. No implementation, codec correctness, rate, runtime, utility, safety, support, SOTA, AGI, or ASI result is promoted."
             },
             {
               "source_id": "bbvca_main",
@@ -19711,7 +19825,8 @@
             "ext_mooncake_2025",
             "ext_cacheblend_2025",
             "ext_azure_llm_semantic_cache_2026",
-            "precision_contract"
+            "precision_contract",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -19730,7 +19845,8 @@
               "reflexive_router_whitepaper",
               "kernel_english_residual_compiler",
               "relational_dimension_compiler",
-              "precision_contract"
+              "precision_contract",
+              "assurance_shift_learning"
             ],
             "variants": [
               "ext_eggroll_hyperscale_es_2026",
@@ -19845,7 +19961,7 @@
             "A local finite selector or replay is described as economic optimality, welfare improvement, production stability, or SOTA.",
             "Governance cost exceeds benefit, but institutional lock-in preserves the allocation policy and hides the refutation."
           ],
-          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus a 29-theorem, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle. Arbitrary accepted runs preserve nine bound identities and zero support/external-effect authority, account for exact receipts, keep resource-bill and reconciliation receipts monotone, compose across batches, and stop at closure. An independently implemented consumer checks nine trace splits, rejects 170/170 mutations, and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports\u2014not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
+          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus a 29-theorem, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle. Arbitrary accepted runs preserve nine bound identities and zero support/external-effect authority, account for exact receipts, keep resource-bill and reconciliation receipts monotone, compose across batches, and stop at closure. An independently implemented consumer checks nine trace splits, rejects 170/170 mutations, and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports—not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
           "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system and claim-transport layer for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, residualize work, or downgrade synthetic evidence without letting local cost pressure delete verification, security, approval, replay, rollback, human review, fidelity limits, or transfer boundaries. In the mature budget OS, cognition has a budget and simulations have contracts: budgets cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, residual burden, or the requirement that simulated results travel only as far as declared scope, fidelity, resources, omissions, and transfer decisions allow.",
           "codex_tests": [
             {
@@ -20077,7 +20193,9 @@
               "source_id": "ext_eggroll_hyperscale_es_2026",
               "mapped_support": "Supplies the explicit contrast between inference-like population-kernel throughput and total learning cost, including the reported large-population GPU-hour denominator.",
               "limits": "All throughput and cost observations are source-scoped and configuration-bound; no local population run or economic advantage is established.",
-              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eggroll_hyperscale_es_2026.md"
+              ],
               "passage_review_note": "Reviewed for total population, evaluator, accelerator-hour, and energy accounting.",
               "passage_review_state": "reviewed"
             },
@@ -20085,7 +20203,9 @@
               "source_id": "ext_openai_es_2017",
               "mapped_support": "Shows how scalar communication and large worker populations can improve wall-clock scaling while leaving rollout and total-resource denominators intact.",
               "limits": "Source-reported worker scaling is not universal sample, energy, or cost efficiency.",
-              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_openai_es_2017.md"
+              ],
               "passage_review_note": "Reviewed for wall-clock versus total-work accounting.",
               "passage_review_state": "reviewed"
             },
@@ -20093,7 +20213,9 @@
               "source_id": "ext_mezo_2023",
               "mapped_support": "Provides a countercase in which forward-only estimation can reduce memory and, in selected settings, GPU-hours.",
               "limits": "Reported savings are task-, baseline-, and estimator-bound and do not erase query count or variance.",
-              "passage_refs": ["sources/source_notes/ext_mezo_2023.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_mezo_2023.md"
+              ],
               "passage_review_note": "Reviewed for joint memory, query, quality, and GPU-hour accounting.",
               "passage_review_state": "reviewed"
             },
@@ -20353,6 +20475,17 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete paper for sparse relational complexity, candidate denominators, hardware illusion, end-to-end lifecycle cost, and measured-versus-asymptotic boundaries."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds assurance-share and equal-total-cost accounting across ordinary learning, evaluators, probes, adjudication, repair, governance, monitoring, and recovery.",
+              "limits": "No optimal allocation, amortization rate, or net lifecycle saving was measured.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "draft_maturity": "v0.4 temporal-access integration",
@@ -21946,7 +22079,7 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports executable-specification discipline through explicit trust strata, a small G\u03bb/CoreForm semantic target, total-error policy, authenticated control variants, capability/effect boundaries, heterogeneous obligations and evidence, semantic patches, row/effect/refinement candidates, e-graph rewrite candidates, translation validation, conformance, negative/golden/metamorphic/fuzz tests, and spec-first change. The audit adds token minting as authority-bearing state, obligation declaration/procedure/evidence/verdict/policy/consumer separation, and exact translation-validation language.",
+              "mapped_support": "Supports executable-specification discipline through explicit trust strata, a small Gλ/CoreForm semantic target, total-error policy, authenticated control variants, capability/effect boundaries, heterogeneous obligations and evidence, semantic patches, row/effect/refinement candidates, e-graph rewrite candidates, translation validation, conformance, negative/golden/metamorphic/fuzz tests, and spec-first change. The audit adds token minting as authority-bearing state, obligation declaration/procedure/evidence/verdict/policy/consumer separation, and exact translation-validation language.",
               "limits": "Three-tab architecture and implementation plan only. No parser, evaluator, formal semantics, token-security proof, replay checker, semantic patch engine, obligation runner, type/proof stack, optimizer checker, benchmark, integration, or security audit exists. TCB membership is unmeasured; finite equivalence tests are not a universal compiler-equivalence proof; dated Codex workflow advice has no formal support effect.",
               "passage_refs": [
                 "sources/raw/google_docs/genesiscode.txt:9-10",
@@ -21963,7 +22096,7 @@
                 "sources/raw/google_docs/genesiscode.txt:886-893",
                 "sources/raw/google_docs/genesiscode.txt:1134-1138"
               ],
-              "passage_review_note": "Completed the three-tab section-family audit: paper/technical semantics, Rust implementation handoff, and style contract. Reviewed TCB-A/B/non-TCB split, G\u03bb/CoreForm, total failures, seals, effects/replay, obligations/evidence/policy, patches, types/refinements, e-graphs/translation validation/WASM, examples, phases, conformance, crate/CLI/test plan, normative spec lock, formatting/lint rules, and AI-authoring constraints. Added fresh-token, runtime identity, heterogeneous-evidence, independent-policy, self-weakening, and translation-proof boundaries. No implementation or proof result is promoted.",
+              "passage_review_note": "Completed the three-tab section-family audit: paper/technical semantics, Rust implementation handoff, and style contract. Reviewed TCB-A/B/non-TCB split, Gλ/CoreForm, total failures, seals, effects/replay, obligations/evidence/policy, patches, types/refinements, e-graphs/translation validation/WASM, examples, phases, conformance, crate/CLI/test plan, normative spec lock, formatting/lint rules, and AI-authoring constraints. Added fresh-token, runtime identity, heterogeneous-evidence, independent-policy, self-weakening, and translation-proof boundaries. No implementation or proof result is promoted.",
               "passage_review_state": "reviewed"
             },
             {
@@ -22367,7 +22500,8 @@
             "attd",
             "temporal_coil_research",
             "regret_engine",
-            "ext_elizaos_agent_runtime_2026"
+            "ext_elizaos_agent_runtime_2026",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -22396,7 +22530,8 @@
               "capability_ratchet_whitepaper",
               "attd",
               "temporal_coil_research",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [
               "ext_mlperf_training_v6_2026"
@@ -22858,6 +22993,17 @@
                 "sources/source_notes/ext_elizaos_agent_runtime_2026.md:1-81"
               ],
               "passage_review_note": "Reviewed the pinned official repository plus scenario-runner and core-runtime documentation; the explicit diagnostic-versus-qualified boundary is imported without any result."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds selection-gap diagnosis, the benchmark-saturation versus capability-maturity distinction, and SaturationShiftBench as an equal-total-cost falsification program with attack injections and ablations.",
+              "limits": "The benchmark is proposed only; no condition, crossover, endpoint, or superiority result has been executed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -23161,7 +23307,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_probe_control_tasks_2019.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1\u20132, the reported probe-family comparisons, and the conclusion; retained the method and scope boundaries.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1–2, the reported probe-family comparisons, and the conclusion; retained the method and scope boundaries.",
               "passage_review_state": "reviewed"
             },
             {
@@ -23171,7 +23317,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_interpretability_illusion_bert_2021.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3\u20135, including datasets, annotations, results, geometry, and the concept-direction taxonomy.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–5, including datasets, annotations, results, geometry, and the concept-direction taxonomy.",
               "passage_review_state": "reviewed"
             },
             {
@@ -23181,7 +23327,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_saebench_2025.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3\u20136, including metric definitions, practitioner guidance, scale comparisons, and limitations.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–6, including metric definitions, practitioner guidance, scale comparisons, and limitations.",
               "passage_review_state": "reviewed"
             },
             {
@@ -23191,7 +23337,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_sae_benchmark_reliability_2026.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1\u20135 and 7, including noise, discrimination, synthetic validity, controls, recommendations, and limitations.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1–5 and 7, including noise, discrimination, synthetic validity, controls, recommendations, and limitations.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -23545,7 +23691,8 @@
             "ext_agentdojo_2024",
             "ext_owasp_agentic_top_10_2026",
             "ext_faithfulness_information_flow_2026",
-            "ext_monitorbench_2026"
+            "ext_monitorbench_2026",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -23557,7 +23704,8 @@
             ],
             "supporting": [
               "ext_rlhf_limitations_2023",
-              "ext_concrete_ai_safety_2016"
+              "ext_concrete_ai_safety_2016",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -23673,6 +23821,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds the evaluator observational ceiling, evaluator-first repair rule, probe-generator ecology, and train-deployment divergence as integrity limits on assurance-shift decisions.",
+              "limits": "No evaluator is established as adequate or independent, and no deception or sandbagging behavior was measured.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "problem": "Evaluation, training, and deployment observations change meaning with their consumer, elicitation, tools, authority, monitor visibility, reward, selection consequence, evaluator, hypothesis, and time; without exact lineage, an ordinary error, context effect, evaluator failure, compromise, or unresolved discrepancy can be laundered into capability, intent, safety, or promotion.",
@@ -23970,7 +24129,7 @@
             "Unknown-hazard neglect concentrates work on articulated risks while incidents, weak signals, politically inconvenient harms, and outside-envelope threats remain ownerless.",
             "Case-factory Goodhart optimizes graph counts, connected edges, closure rate, or review speed while adequacy, dissent, tails, cost, and residual age deteriorate."
           ],
-          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records\u2014one readiness-review route and seven negative routes\u2014and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records—one readiness-review route and seven negative routes—and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
           "beyond_state_of_art": "The mature Assurance Argument Compilation program continuously compiles exact governed references into versioned multi-hazard cases, actively searches for countercases and unknown-envelope failures, tests seeded omissions and stale dependencies, separates structural, semantic, empirical, control, acceptance, readiness, and release states, preserves competing arguments and dissent, exercises invalidation, override, redaction, fallback, rollback, and retirement, and measures detection quality, reviewer disagreement, false block/clear, resolution latency, burden, cost, and residual age together. It then requires independent institutional reproduction and heterogeneous transfer across systems, domains, hazards, access modes, safeguards, evidence regimes, organizations, jurisdictions, and time. Positive, negative, null, inconclusive, narrowed, refuted, withdrawn, overridden, retired, and blocked-after-full-attempt outcomes remain visible. This is a target campaign, not a current safety case, valid threat model, adequate evidence, effective control, safe system, or deployment authority.",
           "codex_tests": [
             "Complete bounded record to readiness-review route",
@@ -24185,7 +24344,8 @@
             "ext_nist_ai_rmf_1_0_2023",
             "ext_nist_deployed_ai_monitoring_2026",
             "ext_nist_incident_response_2025",
-            "regret_engine"
+            "regret_engine",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -24198,7 +24358,8 @@
               "theseus_operator_os",
               "viea",
               "talos",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [
               "deterministic_capability_compilation",
@@ -24302,6 +24463,17 @@
               ],
               "passage_review_note": "Reviewed the official NIST publication record and local note; AI-specific transfer remains a proposed adaptation.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds fast containment versus slow consolidation, recovery effectiveness as a coequal metric, and a prohibition on direct incident-to-gradient transitions.",
+              "limits": "No deployed detection, containment, recovery, consolidation, or recurrence result was observed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -24448,7 +24620,8 @@
             "spider_synapse",
             "regret_engine",
             "ext_eggroll_hyperscale_es_2026",
-            "ext_openai_es_2017"
+            "ext_openai_es_2017",
+            "assurance_shift_learning"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -24458,7 +24631,9 @@
               "source_id": "ext_eggroll_hyperscale_es_2026",
               "mapped_support": "Provides a batched low-rank evolution-strategy case for optimizing outcome-level, discrete, and nondifferentiable fitness without action-level gradients.",
               "limits": "Outcome-only fitness remains gameable and source-reported reasoning/control results do not validate local policy improvement, evaluator quality, safety, or total efficiency.",
-              "passage_refs": ["sources/source_notes/ext_eggroll_hyperscale_es_2026.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_eggroll_hyperscale_es_2026.md"
+              ],
               "passage_review_note": "Reviewed for policy-learning mechanism, fitness authority boundary, and population denominator.",
               "passage_review_state": "reviewed"
             },
@@ -24466,7 +24641,9 @@
               "source_id": "ext_openai_es_2017",
               "mapped_support": "Provides a foundational outcome-only parameter-search comparator to temporal policy-gradient credit assignment.",
               "limits": "The studied control tasks and distributed scaling do not establish universal policy quality, sample efficiency, or governance safety.",
-              "passage_refs": ["sources/source_notes/ext_openai_es_2017.md"],
+              "passage_refs": [
+                "sources/source_notes/ext_openai_es_2017.md"
+              ],
               "passage_review_note": "Reviewed for scalar-fitness policy search and rollout-denominator obligations.",
               "passage_review_state": "reviewed"
             },
@@ -24868,6 +25045,17 @@
                 "sources/source_notes/spider_synapse.md"
               ],
               "passage_review_note": "Reviewed the complete authenticated paper and preserved the failure as bounded evidence without promoting its speculative causal explanation."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds the positive-support prerequisite, outcome/process separation, evaluator-first rule, and governed negative-pressure boundary before an informative exception can enter an update lease.",
+              "limits": "No policy update, anti-tampering effect, or superiority of negative feedback was demonstrated.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -25031,7 +25219,8 @@
               "octopus_router",
               "scf",
               "tokenmana",
-              "cognitive_loop_closure"
+              "cognitive_loop_closure",
+              "assurance_shift_learning"
             ],
             "variants": [
               "ext_trpo_2015",
@@ -25118,7 +25307,8 @@
             "ext_v_jepa_2_2025",
             "ext_influence_functions_2017",
             "ext_curriculum_learning_2009",
-            "regret_engine"
+            "regret_engine",
+            "assurance_shift_learning"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -25258,6 +25448,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds informative-exception strata, learner-relative negative half-life, natural/probe distribution separation, protected positives, and repair-aware replay custody.",
+              "limits": "Inhibition, replay retirement, and retained negative knowledge do not establish parameter unlearning, deletion, privacy, or forgetting.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -25380,7 +25581,8 @@
               "ext_shumailov_model_collapse_2023",
               "ext_gerstgrasser_data_accumulation_2024",
               "ext_influence_functions_2017",
-              "ext_curriculum_learning_2009"
+              "ext_curriculum_learning_2009",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -26216,7 +26418,8 @@
             "kernel_english_residual_compiler",
             "ext_swe_rebench_v2_2026",
             "relational_dimension_compiler",
-            "regret_engine"
+            "regret_engine",
+            "assurance_shift_learning"
           ],
           "source_queue": {
             "primary": [
@@ -26248,7 +26451,8 @@
               "reflexive_router_whitepaper",
               "kernel_english_residual_compiler",
               "relational_dimension_compiler",
-              "regret_engine"
+              "regret_engine",
+              "assurance_shift_learning"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -26702,6 +26906,17 @@
                 "sources/source_notes/relational_dimension_compiler.md"
               ],
               "passage_review_note": "Reviewed the complete paper for the integrated architecture's end-to-end request, relational packet, branch, qualifier, contraction, compiler, effect-boundary, reconciliation, and subsystem-owner joins."
+            },
+            {
+              "source_id": "assurance_shift_learning",
+              "mapped_support": "Adds the joined six-plane GRBL return path across operation, evidence, discovery, adjudication, repair, and assurance without granting any plane omnibus authority.",
+              "limits": "No end-to-end GRBL service or cross-layer runtime was implemented.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/assurance_shift_learning.md",
+                "papers/assurance_shift_learning.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript and supplied package. Paper propositions, conjectures, algorithms, benchmark, and architecture remain conceptual or bounded as labeled; cited external results are not inherited as local evidence."
             }
           ],
           "mechanism": [
@@ -28274,7 +28489,7 @@
             "Unsupported transfer treats one repository's local hygiene, render pipeline, release process, or maintenance history as proof that the method improves other books, teams, domains, or times."
           ],
           "minimal_implementation": "Sixteen exact source-to-claim mappings; one living-book release-record fixture; a change-packet harness with three valid and six expected-invalid synthetic cases; a reader release-candidate bridge over the current blocked candidate, three additional valid routes, and eleven expected-invalid controls; manifest/outline/proof synchronization, claim and source appendices, Quarto HTML rendering, Human-view toggle, browser checks, changelog and release records, and an authoritative validation registry; and four proof targets implemented by 39 Lean declarations. Eighteen retained record and reader-route guards sit beside an inductive manifest compiler and a governed structural-change lifecycle proving derived contiguous ordinals, stable chapter-ID order, arbitrary-run identity and authority custody, gate coherence, exact composition, an accepted-current witness, zero support and publication authority, terminal accepted/rolled-back suffixes, and thin-summary insufficiency. The independent consumer checks all five trace splits, nine reachable states through 162 transitions, five terminal states through ninety absorbing transitions, and fifteen semantic mutations. These artifacts establish bounded repository and transaction discipline only; they do not prove source truth, editorial or accessibility quality, chapter truth, public release, reader or audio approval, future-maintainer correctness, external reproduction, transfer, or a chapter-core support effect.",
-          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates\u2014new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs\u2014performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
+          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates—new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs—performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
           "codex_tests": [
             {
               "name": "Living book release record validation",

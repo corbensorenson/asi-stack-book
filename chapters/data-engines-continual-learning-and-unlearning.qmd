@@ -296,6 +296,16 @@ traceable. Retirement stops active influence through an append-only status
 change rather than erasing the record. This is a proposed scheduler, not a
 demonstrated forgetting, unlearning, privacy, or continual-learning result.
 
+Assurance-Shift Learning (`assurance_shift_learning`) adds three constraints to this scheduler.
+First, natural-distribution evidence and adversarial or diagnostic probe evidence remain separate so a synthetic probe campaign cannot masquerade as prevalence.
+Second, every active exception retains protected positive cases and a counterexample to the proposed repair.
+Third, negative priority has a **learner-relative half-life**: it can decay only when the named version, repair, regression coverage, and operating region justify reduced attention, not merely because time passed.
+
+The resulting memory is not a warehouse of failures.
+It distinguishes unresolved bundles, active repair material, admitted regressions, competence-preserving positives, and retired or superseded records.
+A change in model, evaluator, region, or repair can reactivate an old bundle.
+Retiring its training influence is still not parameter deletion, privacy erasure, or proof that the underlying behavior is gone.
+
 Deletion and revocation are lifecycle events, not a completed state inferred
 from a request. The engine records the affected source and version, the method
 chosen, the declared downstream scope, the evaluation planned, and every
@@ -886,6 +896,7 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 | `ext_influence_functions_2017` | Passage-reviewed comparator: Understanding Black-box Predictions via Influence Functions. Provides an approximate training-point influence estimator that can prioritize candidate descendants and deletion impact checks. | Approximate influence is not proof of causal contribution, privacy leakage, legal erasure, storage erasure, or successful unlearning. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Shows that data order and difficulty schedules can be part of the learning mechanism rather than incidental loader state. | The source does not establish a universal curriculum, safe continual learning, or transfer to current foundation-model pipelines. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds informative-exception strata, learner-relative negative half-life, natural/probe distribution separation, protected positives, and repair-aware replay custody. | Inhibition, replay retirement, and retained negative knowledge do not establish parameter unlearning, deletion, privacy, or forgetting. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result

@@ -206,6 +206,16 @@
       "sha256": "4fd869f01f4c0782e6e2f1d657b6c84e87ced82e652126aae395123a04fac712",
       "bytes": 129274,
       "status_note": "Version 1.0 author research paper with a bundled reference implementation and reproducibility package. Its formal results are bounded to the stated models; its implementation checks finite IR behavior; its diagrams are toy or analytical; and its proposed architectures, empirical predictions, safety claims, scaling claims, and novelty claims remain unvalidated until independently tested."
+    },
+    {
+      "source_id": "assurance_shift_learning",
+      "document_class": "research_paper",
+      "canonical_source": "sources/raw/corben_papers/assurance_shift_learning/package_v1_0/When_Success_Stops_Teaching_Corben_Sorenson.md",
+      "canonical_asset_root": "sources/raw/corben_papers/assurance_shift_learning/package_v1_0",
+      "source_note": "sources/source_notes/assurance_shift_learning.md",
+      "sha256": "611787d91fb3035ff6948fd54b5391880da38f2008a85a6c8f89bb11da9fac40",
+      "bytes": 128784,
+      "status_note": "Version 1.0 author research paper and experimental specification. Its propositions and conjectures are bounded to stated formal settings; GRBL, the regime allocator, the repair compiler, and SaturationShiftBench have not been implemented or run; and no empirical crossover, evaluator adequacy, safety result, resource advantage, novelty result, or support transition is inferred."
     }
   ]
 }

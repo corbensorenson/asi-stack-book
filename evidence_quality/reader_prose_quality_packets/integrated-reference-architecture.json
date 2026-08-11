@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "integrated-reference-architecture",
   "chapter_file": "chapters/integrated-reference-architecture.qmd",
-  "chapter_sha256": "3eb7e1376cdd09b82d690491cb6584a60b40c8ac0eb4842372cc3d9c27038592",
+  "chapter_sha256": "34fbc4956dc0024b0fd46ec938b1ae5c574b1c6bfbb808805836bee41b1fd2f4",
   "chapter_role": "implementation-case",
   "reader_spine_unit": "unit-21-recursive-integration-and-prototype",
   "review_state": "digest_bound_editorial_pass",
@@ -17,8 +17,22 @@
   },
   "worked_trace": {
     "heading": "Worked showpiece trace: one request through the stack",
-    "state_labels": ["intent", "command_contract", "plan", "context", "route", "verification", "work_and_audit", "evidence", "no_promotion_gate"],
-    "source_or_fixture_refs": ["docs/governed_repository_change_slice.md", "scripts/validate_governed_repository_change_slice.py", "scripts/validate_reference_trace.py"],
+    "state_labels": [
+      "intent",
+      "command_contract",
+      "plan",
+      "context",
+      "route",
+      "verification",
+      "work_and_audit",
+      "evidence",
+      "no_promotion_gate"
+    ],
+    "source_or_fixture_refs": [
+      "docs/governed_repository_change_slice.md",
+      "scripts/validate_governed_repository_change_slice.py",
+      "scripts/validate_reference_trace.py"
+    ],
     "maximum_inference": "The executed slice and fixture trace show joined finite artifact discipline; they do not establish a deployed integrated runtime, general safety, capability, transfer, or chapter-core support."
   },
   "counterexample_or_simpler_baseline": "The simpler route treats a passing smoke test as release authority. It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.",
@@ -29,7 +43,12 @@
     "support_state": "argument",
     "anchor": "Cross-Layer Trace Join Contract"
   },
-  "claim_atom_and_source_links": ["integrated-reference-architecture.core", "viea", "scf", "project_theseus_whitepaper"],
+  "claim_atom_and_source_links": [
+    "integrated-reference-architecture.core",
+    "viea",
+    "scf",
+    "project_theseus_whitepaper"
+  ],
   "caveat_consolidation": {
     "local_caveat": "The scene distinguishes deterministic fixture cost and effect accounting from production economics and deployed enforcement.",
     "consolidated_disposition": "The drafting guardrail, claim boundary, worked-trace limits, and evidence reconciliation retain every distinct implementation and support limitation.",

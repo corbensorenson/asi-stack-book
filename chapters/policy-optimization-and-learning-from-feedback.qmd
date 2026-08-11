@@ -222,6 +222,17 @@ policy, protected capabilities, drift and resource limits, monitor window,
 rollback, expiry, and independent promotion authority. No Regret Engine was
 implemented, and no policy improvement or anti-tampering effect is inferred.
 
+### Informative exceptions do not self-authorize negative pressure
+
+Assurance-Shift Learning (`assurance_shift_learning`) sharpens the conditions under which a failure-like event can reach that lease.
+Ordinary positive support must first be broad and stable in the declared region; outcome quality and process quality are scored separately; the evaluator must distinguish the defect from bad luck, ambiguity, or instrumentation failure; and the bundle must preserve the successful prefix, protected positive behavior, a candidate correction, a counterexample to overbroad repair, and unresolved causal uncertainty.
+There is no direct `Observed -> Train` edge.
+
+Negative pressure remains one repair surface among many.
+A test, guard, procedure, memory entry, tool correction, recovery route, adapter, or module may be narrower and more reversible than changing policy weights.
+The update gate must therefore compare placements and test their interactions before it accepts a gradient-bearing condition.
+This is a proposed allocation discipline, not evidence that negative feedback improves policy or resists tampering.
+
 Every update should produce a policy-delta receipt. The receipt records what behavior changed, which feedback authorized the change, which probes tried to break the reward, which holdouts and regressions were checked, which authority boundary remained unchanged, what monitor window was opened, which evidence packet was produced, which deployment scope was allowed, and how rollback would restore the prior policy.
 
 ### Portia and Spider: optimize the smallest learning contract first
@@ -612,6 +623,7 @@ These rows keep Policy Optimization and Learning from Feedback's manifest assign
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_eggroll_hyperscale_es_2026` | Passage-reviewed comparator: Evolution Strategies at the Hyperscale. Provides a batched low-rank evolution-strategy case for optimizing outcome-level, discrete, and nondifferentiable fitness without action-level gradients. | Outcome-only fitness remains gameable and source-reported reasoning/control results do not validate local policy improvement, evaluator quality, safety, or total efficiency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openai_es_2017` | Passage-reviewed comparator: Evolution Strategies as a Scalable Alternative to Reinforcement Learning. Provides a foundational outcome-only parameter-search comparator to temporal policy-gradient credit assignment. | The studied control tasks and distributed scaling do not establish universal policy quality, sample efficiency, or governance safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds the positive-support prerequisite, outcome/process separation, evaluator-first rule, and governed negative-pressure boundary before an informative exception can enter an update lease. | No policy update, anti-tampering effect, or superiority of negative feedback was demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 real policy-update result

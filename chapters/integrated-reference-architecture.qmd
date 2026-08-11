@@ -201,6 +201,35 @@ contains a service blueprint and proposed coding-agent pilot, but no end-to-end
 Regret Engine, counterfactual tribunal, policy update, or deployment has been
 implemented here.
 
+### Assurance shift as a joined return path
+
+Assurance-Shift Learning (`assurance_shift_learning`) adds a second cross-layer
+return path without adding a super-owner. Operation emits versioned episodes;
+Evidence preserves outcomes, process traces, coverage, and uncertainty;
+Discovery proposes natural or probe exceptions; Adjudication decides whether
+they are defects and learning-eligible; Repair selects the least invasive
+qualified surface and tests composition; Assurance updates the scoped
+competence envelope, monitoring, recovery, and requalification triggers.
+
+```{mermaid}
+flowchart LR
+  O["Operation"] --> E["Evidence"]
+  E --> D["Discovery"]
+  D --> A["Adjudication"]
+  A --> R["Least-invasive repair"]
+  R --> Q["Assurance + qualified envelope"]
+  Q --> O
+  A --> X["Unresolved evidence escrow"]
+  R --> Y["Compatibility + descendant checks"]
+```
+
+The topology controller may allocate resources among these planes, but it may
+not judge its own evidence, authorize its own repair, or promote its own
+envelope. Learning eligibility remains distinct from readiness, and fast
+containment remains distinct from slow consolidation. The paper specifies the
+records, algorithms, invariants, and benchmark needed to test this join; no
+end-to-end GRBL service exists in the repository.
+
 ### Training candidates are transactions, not artifacts
 
 The same role separation now applies before a learned candidate reaches this
@@ -1290,6 +1319,7 @@ These rows keep Integrated Reference Architecture's manifest assignments visible
 | `ext_swe_rebench_v2_2026` | Passage-reviewed comparator: SWE-rebench V2: Language-Agnostic SWE Task Collection at Scale. Provides a natural repository-change substrate for testing the same candidate through matched test-only, record-only, and full-governance admission routes with visible utility, unsafe admission, false blocking, latency, rollback, residual, and cost outcomes. | No local gold run, candidate campaign, final heldout result, governance advantage, deployment, safety, or transfer result exists yet. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `relational_dimension_compiler` | Passage-reviewed comparator: [The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure](../papers/relational_dimension_compiler.html). Connects the reference trace's typed artifacts, branches, qualifiers, contractions, and abstraction maps into a joined relational state. In this chapter, the mapping makes explicit which semantic relations must survive routing, memory, execution, evidence review, and reconciliation rather than leaving those joins implicit between layers. | The Relational Dimension Compiler lifecycle has not been implemented inside the reference trace or shown to preserve semantic relations across real layer transitions. This mapping does not establish utility, cost, governance, or scaling advantages over simpler typed graph records. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds the joined six-plane GRBL return path across operation, evidence, discovery, adjudication, repair, and assurance without granting any plane omnibus authority. | No end-to-end GRBL service or cross-layer runtime was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

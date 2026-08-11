@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
   "chapter_file": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-  "chapter_sha256": "44835a787df433f27cc2cc77177a7599ad3690f41899f541644a3de84bf6f659",
+  "chapter_sha256": "aeee6c415761d5c3028fcae1fd8a7e55cb57af5a1ea2ee56f7b66adc96dc4b86",
   "chapter_role": "implementation-case",
   "reader_spine_unit": "unit-16-runtime-and-operations",
   "review_state": "digest_bound_editorial_pass",
@@ -17,18 +17,55 @@
   },
   "worked_trace": {
     "heading": "Natural publication-service development observation",
-    "state_labels": ["source_commit", "tested_artifact", "no_rebuild_deploy", "public_effect", "post_deploy_observation"],
-    "source_or_fixture_refs": ["experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json", "docs/p5_natural_publication_service_development_trace.md"],
+    "state_labels": [
+      "source_commit",
+      "tested_artifact",
+      "no_rebuild_deploy",
+      "public_effect",
+      "post_deploy_observation"
+    ],
+    "source_or_fixture_refs": [
+      "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json",
+      "docs/p5_natural_publication_service_development_trace.md"
+    ],
     "maximum_inference": "The retrospective trace establishes custody and observed publication for one named commit and interval; it establishes no incident-control efficacy, safe degradation, effect-complete rollback, unsafe-release rate, causal comparison, or production AI-service safety."
   },
   "counterexample_or_simpler_baseline": "The simpler baseline treats green source tests as proof of the live service. The trace requires the tested artifact to remain identical through deployment and then observes the public graph as a separate effect surface.",
   "readable_claim": "Restarting a service is not recovering governed operation. Recovery must reconnect the exact source, tested artifact, deployed state, authority, effects, residuals, and post-restoration observation.",
   "normative_rule": "When the live envelope is uncertain, narrow authority before changing the story. Every incident signal receives a disposition, every emergency lease expires, every degraded route preserves non-negotiable constraints, and restoration waits for state-and-effect reconciliation plus an independent-enough observation.",
-  "formal_binding": {"claim_id": "governed-operations-incident-command-and-graceful-degradation.core", "support_state": "argument", "anchor": "closed incident lifecycle that binds detection, classification, command authority"},
-  "claim_atom_and_source_links": ["governed-operations-incident-command-and-graceful-degradation.core", "ext_nist_deployed_ai_monitoring_2026", "ext_nist_incident_response_2025", "scf"],
-  "caveat_consolidation": {"local_caveat": "The publication scene states once that it was formalized after success and cannot enter a prospective causal denominator.", "consolidated_disposition": "Detector quality, command authority, containment, degradation, fallback, inventory, effects, operator capacity, distributed recovery, recurrence, disclosure, and decommissioning limits remain distinct.", "distinct_limitations_preserved": true},
+  "formal_binding": {
+    "claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
+    "support_state": "argument",
+    "anchor": "closed incident lifecycle that binds detection, classification, command authority"
+  },
+  "claim_atom_and_source_links": [
+    "governed-operations-incident-command-and-graceful-degradation.core",
+    "ext_nist_deployed_ai_monitoring_2026",
+    "ext_nist_incident_response_2025",
+    "scf"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The publication scene states once that it was formalized after success and cannot enter a prospective causal denominator.",
+    "consolidated_disposition": "Detector quality, command authority, containment, degradation, fallback, inventory, effects, operator capacity, distributed recovery, recurrence, disclosure, and decommissioning limits remain distinct.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "The commit, artifact, and 873/893-second observations remain because identity custody and effect observation are the case; exhaustive status and mutation inventories remain in evidence surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The new projections isolate recovery meaning and operational admission from the compact formal lifecycle claim.", "hedge_disposition": "The retrospective-development boundary is consolidated while detector, effect, fallback, operator, distributed-recovery, and causal limits remain explicit.", "table_disposition": "Operational artifact and fault tables remain where failure routes are the argument; machine-status inventories stay in evidence surfaces."},
-  "non_claims": ["The publication trace was recorded after success and is not a prospective campaign.", "The trace does not establish incident-control efficacy, safe degradation, or effect-complete recovery.", "The editorial revision does not move chapter-core support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The new projections isolate recovery meaning and operational admission from the compact formal lifecycle claim.",
+    "hedge_disposition": "The retrospective-development boundary is consolidated while detector, effect, fallback, operator, distributed-recovery, and causal limits remain explicit.",
+    "table_disposition": "Operational artifact and fault tables remain where failure routes are the argument; machine-status inventories stay in evidence surfaces."
+  },
+  "non_claims": [
+    "The publication trace was recorded after success and is not a prospective campaign.",
+    "The trace does not establish incident-control efficacy, safe degradation, or effect-complete recovery.",
+    "The editorial revision does not move chapter-core support or release state."
+  ]
 }

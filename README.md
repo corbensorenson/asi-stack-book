@@ -31,14 +31,14 @@ All 86 live chapter-core claims remain at `argument`.
 ## 60-Second Trust Surface
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **86 manifest chapters; 485 public-safe records; 86 chapter-core claims; 86/86 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **86 manifest chapters; 486 public-safe records; 86 chapter-core claims; 86/86 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 **What this is:** a public living-book research program and evidence system for governed advanced-AI systems, using ASI as the extreme stress case.
 
 **What this is not:** not a validated ASI implementation, not a deployed safety system, and not a benchmark-proven architecture.
 
-The inventory has 485 public-safe records; 86/86 chapters are externally positioned with 0 explicit external-baseline exceptions. External positioning is not exhaustive literature synthesis. All 86 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 86 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 64 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and no chapter-core promotion.
+The inventory has 486 public-safe records; 86/86 chapters are externally positioned with 0 explicit external-baseline exceptions. External positioning is not exhaustive literature synthesis. All 86 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 86 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 64 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and no chapter-core promotion.
 
 [Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which records external literature. The [Corben paper library](papers/index.qmd) publishes 48 exact, digest-bound original manuscripts as HTML reading pages and links each one to its current chapter assignments; publication exposes lineage but does not validate or promote the papers' claims. [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) reports current per-chapter coverage. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. No independent external review is claimed; see [the review ledger](docs/external_review_status.md).
 

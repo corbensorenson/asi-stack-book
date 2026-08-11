@@ -1,7 +1,70 @@
 {
-  "schema_version":"asi_stack.p7_1c_reader_prose_quality_packet.v1","chapter_id":"evidence-states-and-claim-discipline","chapter_file":"chapters/evidence-states-and-claim-discipline.qmd","chapter_sha256":"0ca8212b655b488763d57c0436f17783e94e2601f1149b479ef306b1b818938b","chapter_role":"thesis-bearing","reader_spine_unit":"unit-04-evidence-and-noninheritance","review_state":"digest_bound_editorial_pass",
-  "concrete_scene":{"heading":"Worked evidence transition: KERC fails, then the refutation narrows","actor_or_system":"The KERC broad-efficiency claim, a prospective falsifier, one frozen implementation, a simple baseline, raw transition history, and a later competence audit","attempted_action":"Interpret a 714.0-byte versus 73.25-byte result at task score 0.500000 as a broad mechanism or architecture refutation.","observable_outcome":"The raw failure and historical refuted transition remain immutable, while maximum inference narrows to N1 implementation failure and broader ideas remain untested.","failed_or_tested_boundary":"The scene tests whether a naive implementation failure can refute its parent mechanism or architecture; it cannot without competence and scope gates.","residual_owner":"Claim, experiment, implementation, compiler, verifier, training, representation, resource, competence, and parent-architecture owners retain residuals.","evidence_boundary":"The retained observation supports failure of the frozen configured implementation, not Kernel English, learned compilation, hierarchical residuals, or the broader architecture."},
-  "worked_trace":{"heading":"Worked evidence transition: KERC fails, then the refutation narrows","state_labels":["falsifier_frozen","raw_failure_observed","historical_refuted_retained","competence_audit_n1","parent_claims_untested"],"source_or_fixture_refs":["docs/negative_result_rehabilitation.md","docs/non_core_evidence_ledger.md"],"maximum_inference":"The frozen implementation failed its configured broad-efficiency test; mechanism, architecture, and parent claims remain untested because implementation competence was inadequate."},
-  "counterexample_or_simpler_baseline":"The result-label baseline reads “refuted” upward through the claim hierarchy. The transition ledger keeps the raw failure but narrows its usable scope after competence review.","readable_claim":"Evidence changes a claim only through a scoped transition; a failed implementation can refute that implementation without refuting the architecture it attempted to test.","normative_rule":"Give every claim stable identity, exact scope, support state, evidence-role vector, prospective transition gate, negative-evidence trigger, and immutable history. Record raw failures first, then audit implementation competence and narrow the affected scope before assigning refuted, downgraded, or untested states.",
-  "formal_binding":{"claim_id":"evidence-states-and-claim-discipline.core","support_state":"argument","anchor":"stable identity, versioned text and scope"},"claim_atom_and_source_links":["evidence-states-and-claim-discipline.core","kerc","claim_evidence_matrix"],"caveat_consolidation":{"local_caveat":"The worked KERC transition states its exact N1 ceiling rather than repeating generic failure disclaimers.","consolidated_disposition":"Raw observations, implementation competence, mechanism scope, parent claims, support states, transitions, negative evidence, refutation, support, and release remain distinct.","distinct_limitations_preserved":true},"bookkeeping_surface_disposition":"The 714.0, 73.25, and 0.500000 observations stay reader-facing because they are the claim-discipline example; full ledgers remain formal.","semantic_diff":{"unique_claims_preserved":true,"sources_preserved":true,"proof_boundaries_preserved":true,"non_claims_preserved":true,"support_state_effect":"none","release_effect":"none"},"editorial_diagnostics":{"mega_sentence_disposition":"The reader claim separates claim transition from hierarchical overreach.","hedge_disposition":"The N1 ceiling replaces generic caution with a precise scope.","table_disposition":"Evidence-state tables remain because states and roles do not aggregate."},"non_claims":["KERC N1 does not refute Kernel English or the broader architecture.","Retaining a negative result does not make the original implementation competent.","The editorial revision does not move support or release state."]
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "evidence-states-and-claim-discipline",
+  "chapter_file": "chapters/evidence-states-and-claim-discipline.qmd",
+  "chapter_sha256": "a6cc14bc00ef092f051aa936c2383cd99dd7860e5c26dfd15f8da0972ee6d0a7",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-04-evidence-and-noninheritance",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked evidence transition: KERC fails, then the refutation narrows",
+    "actor_or_system": "The KERC broad-efficiency claim, a prospective falsifier, one frozen implementation, a simple baseline, raw transition history, and a later competence audit",
+    "attempted_action": "Interpret a 714.0-byte versus 73.25-byte result at task score 0.500000 as a broad mechanism or architecture refutation.",
+    "observable_outcome": "The raw failure and historical refuted transition remain immutable, while maximum inference narrows to N1 implementation failure and broader ideas remain untested.",
+    "failed_or_tested_boundary": "The scene tests whether a naive implementation failure can refute its parent mechanism or architecture; it cannot without competence and scope gates.",
+    "residual_owner": "Claim, experiment, implementation, compiler, verifier, training, representation, resource, competence, and parent-architecture owners retain residuals.",
+    "evidence_boundary": "The retained observation supports failure of the frozen configured implementation, not Kernel English, learned compilation, hierarchical residuals, or the broader architecture."
+  },
+  "worked_trace": {
+    "heading": "Worked evidence transition: KERC fails, then the refutation narrows",
+    "state_labels": [
+      "falsifier_frozen",
+      "raw_failure_observed",
+      "historical_refuted_retained",
+      "competence_audit_n1",
+      "parent_claims_untested"
+    ],
+    "source_or_fixture_refs": [
+      "docs/negative_result_rehabilitation.md",
+      "docs/non_core_evidence_ledger.md"
+    ],
+    "maximum_inference": "The frozen implementation failed its configured broad-efficiency test; mechanism, architecture, and parent claims remain untested because implementation competence was inadequate."
+  },
+  "counterexample_or_simpler_baseline": "The result-label baseline reads \u201crefuted\u201d upward through the claim hierarchy. The transition ledger keeps the raw failure but narrows its usable scope after competence review.",
+  "readable_claim": "Evidence changes a claim only through a scoped transition; a failed implementation can refute that implementation without refuting the architecture it attempted to test.",
+  "normative_rule": "Give every claim stable identity, exact scope, support state, evidence-role vector, prospective transition gate, negative-evidence trigger, and immutable history. Record raw failures first, then audit implementation competence and narrow the affected scope before assigning refuted, downgraded, or untested states.",
+  "formal_binding": {
+    "claim_id": "evidence-states-and-claim-discipline.core",
+    "support_state": "argument",
+    "anchor": "stable identity, versioned text and scope"
+  },
+  "claim_atom_and_source_links": [
+    "evidence-states-and-claim-discipline.core",
+    "kerc",
+    "claim_evidence_matrix"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The worked KERC transition states its exact N1 ceiling rather than repeating generic failure disclaimers.",
+    "consolidated_disposition": "Raw observations, implementation competence, mechanism scope, parent claims, support states, transitions, negative evidence, refutation, support, and release remain distinct.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The 714.0, 73.25, and 0.500000 observations stay reader-facing because they are the claim-discipline example; full ledgers remain formal.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim separates claim transition from hierarchical overreach.",
+    "hedge_disposition": "The N1 ceiling replaces generic caution with a precise scope.",
+    "table_disposition": "Evidence-state tables remain because states and roles do not aggregate."
+  },
+  "non_claims": [
+    "KERC N1 does not refute Kernel English or the broader architecture.",
+    "Retaining a negative result does not make the original implementation competent.",
+    "The editorial revision does not move support or release state."
+  ]
 }
