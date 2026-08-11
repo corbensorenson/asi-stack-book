@@ -1870,8 +1870,9 @@
             },
             {
               "source_id": "adjudicated_persistence",
+              "crosswalk_display_title": "The six-object persistence transaction",
               "mapped_support": "Adds persistence disposition, realization, qualification, and authority as separate downstream objects so evidence support cannot be laundered into a durable update.",
-              "limits": "Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement.",
+              "limits": "Used only to separate evidentiary support from disposition, realization, qualification, and authority; it supplies no implemented transaction or validated support promotion.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/adjudicated_persistence.md",
@@ -4591,8 +4592,9 @@
             },
             {
               "source_id": "adjudicated_persistence",
+              "crosswalk_display_title": "Commitment profiles for capability-field changes",
               "mapped_support": "Adds commitment-profile and qualification-lease obligations for any adaptation that changes a capability field or its descendants.",
-              "limits": "Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement.",
+              "limits": "Used only for commitment-profile and lease design; it establishes neither behavioral equivalence nor a qualified capability replacement.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/adjudicated_persistence.md",
@@ -6987,8 +6989,9 @@
             },
             {
               "source_id": "adjudicated_persistence",
+              "crosswalk_display_title": "Non-self-ratifying placement compilation",
               "mapped_support": "Adds non-self-ratifying meta-compilation: an adaptive placement mechanism cannot solely generate, evaluate, and authorize its own expansion.",
-              "limits": "Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement.",
+              "limits": "Used only to frame independent adjudication of placement-compiler changes; no safe self-modification mechanism or meta-compiler result was produced.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/adjudicated_persistence.md",
@@ -9059,8 +9062,9 @@
             },
             {
               "source_id": "adjudicated_persistence",
+              "crosswalk_display_title": "Placement adjudication before semantic lowering",
               "mapped_support": "Separates deciding where a lesson should persist from compiling the accepted lesson into a particular semantic or executable representation, with UNKNOWN and deoptimization paths.",
-              "limits": "Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement.",
+              "limits": "Used only to order adjudication before lowering and preserve UNKNOWN and deoptimization; no compiler-correctness or representation-sufficiency result follows.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/adjudicated_persistence.md",
@@ -12740,8 +12744,9 @@
             },
             {
               "source_id": "adjudicated_persistence",
+              "crosswalk_display_title": "Lineage for persistence transactions",
               "mapped_support": "Adds lineage requirements connecting experience, lesson, disposition, realization, qualification, authority, descendants, invalidation, and residuals.",
-              "limits": "Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement.",
+              "limits": "Used only to specify lineage links among persistence objects and descendants; no replay completeness, causal recovery, or residual closure was demonstrated.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/adjudicated_persistence.md",

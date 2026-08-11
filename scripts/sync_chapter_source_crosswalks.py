@@ -69,11 +69,13 @@ def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict
     ]
     for source_id in source_ids:
         record = inventory.get(source_id, {})
-        title = qmd_escape(record.get("title", "Inventory record"))
+        mapping = mappings.get(source_id, {})
+        title = qmd_escape(
+            mapping.get("crosswalk_display_title", record.get("title", "Inventory record"))
+        )
         if source_id in readable_papers:
             title = f"[{title}](../papers/{source_id}.html)"
         notes = qmd_escape(record.get("notes", "Metadata-first source intake; consult the public source note."))
-        mapping = mappings.get(source_id, {})
         mapping_reviewed = mapping.get("passage_review_state") == "reviewed"
         inventory_reviewed = record.get("source_crosswalk_review_state") == "reviewed"
         if mapping_reviewed or inventory_reviewed:
