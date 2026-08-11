@@ -4,12 +4,12 @@
   "state": "terminal_integrated_argument_chapter",
   "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
   "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-  "chapter_sha256": "aeee6c415761d5c3028fcae1fd8a7e55cb57af5a1ea2ee56f7b66adc96dc4b86",
+  "chapter_sha256": "3cb68633ddf32ea5693bce7db585bfe887755b428d9813593b7c0ade8e9b90df",
   "reader_role": "load-bearing-reference",
   "terminal_decision": "integrate_at_argument_support",
   "exclusive_owner": "post-deployment continuity and control across field observability, incident declaration, scoped command, independent containment, degraded and fallback modes, state/effect reconciliation, recovery, disclosure, learning handoff, and decommissioning",
   "source_crosswalk": {
-    "assigned_source_count": 11,
+    "assigned_source_count": 12,
     "primary_external_source_ids": [
       "ext_nist_ai_rmf_1_0_2023",
       "ext_nist_deployed_ai_monitoring_2026",
@@ -23,7 +23,8 @@
       "talos",
       "platonic_world_model",
       "regret_engine",
-      "assurance_shift_learning"
+      "assurance_shift_learning",
+      "adjudicated_persistence"
     ],
     "all_inventory_targets_reconciled": true,
     "external_results_inherited_as_local_support": false

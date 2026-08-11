@@ -16,7 +16,7 @@ STRUCTURE = ROOT / "book_structure.json"
 SOURCES = ROOT / "sources/source_inventory.json"
 MANIFEST = ROOT / "proofs/proof_manifest.json"
 CHAPTER_ID = "governed-operations-incident-command-and-graceful-degradation"
-EXPECTED_SOURCES = ["scf", "deterministic_capability_compilation", "theseus_operator_os", "viea", "talos", "platonic_world_model", "regret_engine", "assurance_shift_learning", "ext_nist_ai_rmf_1_0_2023", "ext_nist_deployed_ai_monitoring_2026", "ext_nist_incident_response_2025"]
+EXPECTED_SOURCES = ["scf", "deterministic_capability_compilation", "theseus_operator_os", "viea", "talos", "platonic_world_model", "regret_engine", "assurance_shift_learning", "adjudicated_persistence", "ext_nist_ai_rmf_1_0_2023", "ext_nist_deployed_ai_monitoring_2026", "ext_nist_incident_response_2025"]
 
 
 def load(path: Path) -> Any:
@@ -53,7 +53,7 @@ def errors(data: dict[str, Any]) -> list[str]:
     ):
         out.append("refinement module digest or artifact drifted")
     source_ids = audit["source_crosswalk"]["primary_external_source_ids"] + audit["source_crosswalk"]["supporting_corben_source_ids"]
-    if set(source_ids) != set(EXPECTED_SOURCES) or audit["source_crosswalk"].get("assigned_source_count") != 11:
+    if set(source_ids) != set(EXPECTED_SOURCES) or audit["source_crosswalk"].get("assigned_source_count") != 12:
         out.append("source denominator drifted")
     inventory = {row["id"]: row for row in data["sources"]}
     if any(source_id not in inventory or CHAPTER_ID not in inventory[source_id].get("chapter_targets", []) for source_id in EXPECTED_SOURCES):
@@ -135,7 +135,7 @@ def main() -> None:
     contract = subprocess.run([sys.executable, "scripts/validate_governed_operations_control_contract.py"], cwd=ROOT, text=True, capture_output=True)
     if contract.returncode: failures.append((contract.stdout + contract.stderr).strip())
     if failures: raise SystemExit("P7.2-T4 reader integration failed:\n - " + "\n - ".join(failures))
-    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 11 source mappings, 3 implemented targets, 26 Lean declarations, 8-stage lifecycle with 44 rejecting mutations, authored safe hold, prospectively frozen 5-arm/40-task campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
+    print("P7.2-T4 reader integration passed: first tranche terminal at 4 argument-level chapters, 12 source mappings, 3 implemented targets, 26 Lean declarations, 8-stage lifecycle with 44 rejecting mutations, authored safe hold, prospectively frozen 5-arm/40-task campaign unexecuted, flagship separate, 13 integration mutations rejected; support/release/publication none.")
 
 
 if __name__ == "__main__":
