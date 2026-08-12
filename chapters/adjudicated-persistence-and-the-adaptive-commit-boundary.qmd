@@ -57,32 +57,32 @@ and revocation remain visible.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-Imagine two support agents making the same mistake during separate tax-account
-sessions. Each applies an old tax
-rule, catches the error before sending the answer, and eventually produces the
-correct result. Their visible outcomes are identical: a near miss followed by
-a successful correction.
+**Concrete lens.** Two tax-support agents can reach the same correct answer after failures that require different durable repairs.
 
-The first agent failed because its memory contained a stale jurisdictional
-fact. The right repair may be a dated knowledge update plus a freshness rule.
-The second agent had the correct facts but called a tool with the wrong field
-mapping. Its repair may be a test, a typed wrapper, and a blocked tool version.
-Updating both agents' weights would be broad and hard to inspect. Writing the
-same memory to both would leave the tool defect untouched. Turning every near
-miss into an organizational policy would bury people under process.
+Imagine two support agents each apply an outdated tax rule, catch the error
+before replying, and eventually produce a correct answer. Their visible
+outcomes match: a near miss followed by recovery.
 
-The hard question is therefore not simply, "What did the system learn?" It is,
-"What durable thing, if any, should now change?" A lesson can live in a prompt,
-memory, test, tool, router, model parameter, evaluator, environment, workflow,
-or institutional rule. Each location has different reach, cost, authority,
-reversibility, and failure modes.
+But one agent relied on stale jurisdictional memory. Its repair may be a dated
+knowledge update with a freshness rule. The other had correct facts but passed
+them through a tool with the wrong field mapping. Its repair may be a test,
+typed wrapper, and blocked tool version.
 
-The Adaptive Commit Boundary is the checkpoint before that choice becomes
-causal. It preserves the event, states the proposed lesson, compares possible
-places to realize it, asks whether the evidence is strong enough for the
-commitment, and records how the change will be tested and undone. The goal is
-not maximal persistence. It is the smallest durable intervention that can do
-the job without hiding uncertainty or making recovery impossible.
+Updating both models' weights would be broad and hard to inspect. Writing the
+same memory to both would leave the tool defect untouched. Making every near
+miss an organization-wide rule would bury people under process.
+
+The decisive question is not only what the system learned, but what durable
+thing, if any, should change. A lesson might enter context, memory, a test,
+tool, router, parameter, evaluator, workflow, environment, or institution.
+Each locus changes reach, cost, authority, reversibility, and failure.
+
+The Adaptive Commit Boundary stands before that choice becomes causal. It
+preserves the event and proposed lesson, compares possible loci, asks whether
+evidence justifies their commitment, and records qualification, monitoring,
+invalidation, and recovery. The aim is the least-committing durable
+intervention that can solve the problem without concealing uncertainty or
+making reversal impossible.
 :::
 
 ## Problem

@@ -1247,6 +1247,10 @@ def errors(data: dict) -> list[str]:
         out.append("object-level yield amendment moved support or release state")
 
     editorial = status.get("editorial_product_migration", {})
+    if editorial.get("review_baseline_commit") != "ce5b6181ff923e6183c52e7d78d16657ed289e18":
+        out.append("editorial migration lost its immutable 86-chapter review baseline")
+    if editorial.get("reconciliation_input_commit") != "90f60c9f4bca340f170069d415893797b118252c":
+        out.append("editorial migration does not bind the current 87-chapter reconciliation base")
     expected_merge_map = {
         "adversarial-machine-learning-and-model-attack-surface": "security-kernel-and-digital-scifs",
         "confidential-and-verifiable-ai-computation": "privacy-data-rights-and-information-flow-governance",
@@ -1267,6 +1271,16 @@ def errors(data: dict) -> list[str]:
         "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
         "prototype-roadmap": "project-theseus-as-report-first-implementation-reference",
     }
+    expected_merge_mode_map = {
+        chapter_id: "publication_nest" for chapter_id in expected_merge_map
+    }
+    expected_merge_mode_map.update(
+        {
+            "fast-generation-architectures": "method_detail_nest",
+            "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
+            "prototype-roadmap": "semantic_merge_candidate",
+        }
+    )
     expected_profile_map = {
         "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
         "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
@@ -1288,6 +1302,8 @@ def errors(data: dict) -> list[str]:
     }
     if editorial.get("merge_map") != expected_merge_map:
         out.append("editorial migration merge map drifted")
+    if editorial.get("merge_mode_map") != expected_merge_mode_map:
+        out.append("editorial migration merge-mode map drifted")
     if editorial.get("profile_map") != expected_profile_map:
         out.append("editorial migration profile map drifted")
     if editorial.get("dossier_map") != expected_dossier_map:
@@ -1313,6 +1329,14 @@ def errors(data: dict) -> list[str]:
         "target_primary_architecture_chapter_count": len(retained_ids - implementation_ids),
         "target_implementation_method_chapter_count": len(implementation_ids),
         "target_merge_count": len(expected_merge_map),
+        "target_semantic_merge_count": sum(
+            mode == "semantic_merge_candidate"
+            for mode in expected_merge_mode_map.values()
+        ),
+        "target_publication_nest_count": sum(
+            mode in {"publication_nest", "method_detail_nest"}
+            for mode in expected_merge_mode_map.values()
+        ),
         "target_profile_count": len(expected_profile_map),
         "target_dossier_owner_count": len(expected_dossier_map),
         "target_visible_dossier_count": len(set(expected_dossier_map.values())),
@@ -1331,6 +1355,40 @@ def errors(data: dict) -> list[str]:
         out.append("editorial migration does not preserve legacy identity and URLs")
     if editorial.get("support_inheritance_allowed") is not False:
         out.append("editorial migration permits support inheritance")
+    expected_recent_owner_reviews = {
+        "learning-compute-topology-and-adaptive-process-architecture": {
+            "disposition": "retain_primary_architecture_owner",
+            "strongest_neighbors": [
+                "governed-model-training-distributed-optimization-and-scaling",
+                "policy-optimization-and-learning-from-feedback",
+                "resource-economics-and-token-budgets",
+                "routing-heads-and-specialist-cores",
+            ],
+            "exit_test": "independent encoders fail useful topology agreement or matched-resource interventions show no explanatory, control, or outcome value",
+        },
+        "adjudicated-persistence-and-the-adaptive-commit-boundary": {
+            "disposition": "retain_primary_architecture_owner",
+            "strongest_neighbors": [
+                "procedural-memory-and-cognitive-loop-closure",
+                "cognitive-compilation-and-semantic-ir",
+                "data-engines-continual-learning-and-unlearning",
+                "policy-optimization-and-learning-from-feedback",
+            ],
+            "exit_test": "competent fixed-locus or human-reviewed policies match decision quality and recovery at lower whole-lifecycle cost",
+        },
+    }
+    if editorial.get("recent_owner_reviews") != expected_recent_owner_reviews:
+        out.append("editorial migration recent-owner review drifted")
+    if not set(expected_recent_owner_reviews).issubset(retained_ids):
+        out.append("editorial migration moved a retained recent owner out of the main architecture")
+    if editorial.get("source_only_intake_dispositions") != {
+        "assurance_shift_learning": "cross_owner_integration_no_new_chapter"
+    }:
+        out.append("editorial migration source-only intake disposition drifted")
+    if editorial.get("narrative_unit_21_title") != (
+        "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning"
+    ):
+        out.append("editorial migration does not route Adjudicated Persistence into narrative unit 21")
     if editorial.get("support_state_effect") != "none" or editorial.get("release_effect") != "none":
         out.append("editorial migration moved support or release state")
     active_product_text = json.dumps(
@@ -1355,6 +1413,12 @@ def errors(data: dict) -> list[str]:
         "P7.1-EM",
         "Local delta beyond the governed-cognition pattern",
         "54+2/18/7/5/1",
+        "one credible true semantic merge candidate and 17 publication or method-detail nests",
+        "2026-08-12 recent-owner reconciliation",
+        "Consolidation execution order",
+        "Sole semantic merge candidate",
+        "without recovering lost prose from Git history",
+        "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
         "26 narrative units",
     ]
     roadmap_casefold = " ".join(data["roadmap"].split()).casefold()

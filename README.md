@@ -59,6 +59,10 @@ in [docs/chapter_consolidation_sequence.md](docs/chapter_consolidation_sequence.
 and [docs/chapter_consolidation_url_history_policy.md](docs/chapter_consolidation_url_history_policy.md);
 the full history is checked by
 [`scripts/validate_chapter_consolidation_sequence.py`](scripts/validate_chapter_consolidation_sequence.py).
+The current 87-owner publication-consolidation plan is the `P7.1-EM` section
+of the [active roadmap](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md),
+with its exact machine contract in
+[`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json).
 
 The compact public contract is checked by [`scripts/validate_trust_surface.py`](scripts/validate_trust_surface.py).
 

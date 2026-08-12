@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-08-11
+Substantively revised: 2026-08-12
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -70,28 +70,41 @@ Improvement versus Autonomous Replication.
 
 ### Exact proposed disposition
 
-The 18 semantic-merge hypotheses are:
+The 18 peer-status consolidation hypotheses are not 18 semantic deletions. A
+fresh ownership review against the current manuscripts, proof modules, source
+queues, and the June 30 consolidation record finds one credible true semantic
+merge candidate and 17 publication or method-detail nests. A publication nest
+removes equal top-level weight from the public architecture and human
+narrative while preserving the child as a canonical technical owner and
+stable detail route. It does not transfer the child's claim support, proof
+scope, evidence, or authority to the family destination.
 
-| Legacy owner | Proposed surviving parent |
-|---|---|
-| `adversarial-machine-learning-and-model-attack-surface` | `security-kernel-and-digital-scifs` |
-| `confidential-and-verifiable-ai-computation` | `privacy-data-rights-and-information-flow-governance` |
-| `ai-supply-chain-integrity-and-lifecycle-provenance` | `model-weight-custody-and-hardware-roots-of-trust` |
-| `human-ai-communication-persuasion-and-epistemic-security` | `human-factors-and-meaningful-control-in-oversight` |
-| `moral-uncertainty-and-value-conflict` | `constitutional-alignment-substrate` |
-| `societal-resilience-and-misuse-defense` | `institutions-international-coordination-and-public-legitimacy` |
-| `human-intent-as-a-formal-input` | `intent-to-execution-contracts` |
-| `context-transactions-snapshots-mounts-and-taint` | `virtual-context-abi` |
-| `white-box-evidence-interpretability-and-activation-governance` | `adversarial-evaluation-sandbagging-and-training-time-deception` |
-| `human-ai-organizations-delegation-and-accountability` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` |
-| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `inter-stack-protocols-identity-and-economic-exchange` |
-| `artifact-steward-agents-and-living-project-governance` | `living-book-methodology` |
-| `open-weight-release-and-post-release-control` | `model-weight-custody-and-hardware-roots-of-trust` |
-| `fast-generation-architectures` | `resource-economics-and-token-budgets` |
-| `governed-deliberation-and-test-time-scaling` | `resource-economics-and-token-budgets` |
-| `rankfold-neuralfold-and-artifact-compression` | `compact-generative-systems-and-residual-honesty` |
-| `open-ended-improvement-engines` | `recursive-self-improvement-boundaries` |
-| `prototype-roadmap` | `project-theseus-as-report-first-implementation-reference` |
+| Technical owner | Family destination | Mode | Boundary that must survive consolidation |
+|---|---|---|---|
+| `adversarial-machine-learning-and-model-attack-surface` | `security-kernel-and-digital-scifs` | `publication_nest` | Preserve the model-threat contract and training/inference attack-defense lifecycle; the kernel continues to own reference monitoring and privileged effects. |
+| `confidential-and-verifiable-ai-computation` | `privacy-data-rights-and-information-flow-governance` | `publication_nest` | Preserve protected-execution statements, trust anchors, verifier policy, leakage, and freshness; privacy continues to own purpose, rights, flows, and remedy. |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | `model-weight-custody-and-hardware-roots-of-trust` | `publication_nest` | Preserve the typed multi-asset dependency and provenance graph; weight custody continues to own model-family possession, loading, keys, attestation, and retirement. |
+| `human-ai-communication-persuasion-and-epistemic-security` | `human-factors-and-meaningful-control-in-oversight` | `publication_nest` | Preserve the outbound communication and correction transaction; human factors continues to own operator knowledge, time, attention, authority, and intervention. |
+| `moral-uncertainty-and-value-conflict` | `constitutional-alignment-substrate` | `publication_nest` | Preserve plural value profiles, dissent, contestability, appeal, and non-settlement; the constitution continues to own protected commitments and amendment constraints. |
+| `societal-resilience-and-misuse-defense` | `institutions-international-coordination-and-public-legitimacy` | `publication_nest` | Preserve resist-absorb-recover-adapt operations and harmed-party routes; institutions continues to own mandate, jurisdiction, participation, legitimacy, and international coordination. |
+| `human-intent-as-a-formal-input` | `intent-to-execution-contracts` | `publication_nest` | Preserve ambiguity, authority extraction, clarification, bounded defaults, re-contract, and stop conditions; command contracts continue to own typed lowering and executable dispatch conditions. |
+| `context-transactions-snapshots-mounts-and-taint` | `virtual-context-abi` | `publication_nest` | Preserve dynamic transaction, snapshot, mount, taint, commit, rollback, and concurrency semantics; the ABI continues to own static addressability, representation, and typed context objects. |
+| `white-box-evidence-interpretability-and-activation-governance` | `adversarial-evaluation-sandbagging-and-training-time-deception` | `publication_nest` | Preserve internal-evidence methods, construct validity, interventions, activation custody, and method-specific limits; adversarial evaluation continues to own behavioral challenge and evaluation-integrity protocols. |
+| `human-ai-organizations-delegation-and-accountability` | `ai-work-surfaces-agent-harnesses-and-organizational-absorption` | `publication_nest` | Preserve organizational responsibility chains, accountable owners, review, recourse, and residual duties; work surfaces continues to own abstraction-layer absorption and harness transitions. |
+| `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | `inter-stack-protocols-identity-and-economic-exchange` | `publication_nest` | Preserve population dynamics, conflict, collusion, emergence, and gradual disempowerment; inter-stack protocols continues to own identity, delegation, exchange, receipts, and dispute mechanics. |
+| `artifact-steward-agents-and-living-project-governance` | `living-book-methodology` | `publication_nest` | Preserve general artifact-steward work, continuity, maintenance, and retirement contracts; Living Book Methodology remains the reflexive book-specific implementation and publication method. |
+| `open-weight-release-and-post-release-control` | `model-weight-custody-and-hardware-roots-of-trust` | `publication_nest` | Preserve the irreversible authority-loss transition, marginal/cumulative release case, derivatives, and post-release limits; custody continues to own controlled possession before release. |
+| `fast-generation-architectures` | `resource-economics-and-token-budgets` | `method_detail_nest` | Preserve generation-family mechanisms, cache objects, exactness, fallbacks, and matched comparisons as a technical method dossier; resource economics owns the complete cost and allocation decision. |
+| `governed-deliberation-and-test-time-scaling` | `resource-economics-and-token-budgets` | `publication_nest` | Preserve branch, stopping, verifier, dissent, and answer-change control; resource economics owns budgets and opportunity cost, not deliberation policy. |
+| `rankfold-neuralfold-and-artifact-compression` | `compact-generative-systems-and-residual-honesty` | `method_detail_nest` | Preserve the specific transform, protected-observable, residual, fallback, and evaluation contracts as a technical method dossier; Compact Generative Systems owns the general reconstruction and residual-custody architecture. |
+| `open-ended-improvement-engines` | `recursive-self-improvement-boundaries` | `publication_nest` | Preserve generator-evaluator-archive campaign search and open-endedness failures; RSI continues to own qualification, promotion, rollback, and self-referential authority. |
+| `prototype-roadmap` | `project-theseus-as-report-first-implementation-reference` | `semantic_merge_candidate` | Rewrite one implementation argument in which the evidence-gated phase-unlock program becomes the implementation reference's roadmap; retain the old ID, claims, proof module, and URL as governed history. |
+
+`publication_nest` and `method_detail_nest` are navigation and composition
+decisions, not statements that the destination semantically owns every child
+mechanism. Only `prototype-roadmap` is currently eligible for a true
+one-skeleton semantic merge, and even that row must pass the ordinary
+claim/source/proof/test/URL reconciliation gate before execution.
 
 The seven deployment profiles are Military AI and Strategic Stability
 (`military-ai-autonomous-weapons-and-strategic-stability`), Embodied Agency and
@@ -121,6 +134,95 @@ Book Methodology remain the two implementation/method chapters inside the
 architecture owner because no other chapter owns the prior cross-surface
 decision that selects whether and where an experience becomes durable causal
 structure.
+
+### 2026-08-12 recent-owner reconciliation
+
+The product-migration baseline at `ce5b6181` contained 86 chapters and already
+included Learning-Compute Topology. Adjudicated Persistence was added afterward
+as the 87th owner. This reconciliation reads the exact 87-chapter input at
+`90f60c9f4`; it does not relabel that input as the original review baseline.
+Both recent owners have now been re-run through the six retention tests,
+including their strongest neighboring owners rather than only a chapter-count
+check:
+
+| Recent owner | Disposition | Distinct object and transition | Strongest neighbors and non-merge boundary | Falsifiable exit test |
+|---|---|---|---|---|
+| `learning-compute-topology-and-adaptive-process-architecture` | retain as primary architecture owner | Owns LCT-IR and the causal organization of adaptive work across candidate, evaluator, integrator, archive, update, and realization topologies; owns semantic compilation from learning-process topology to a physical execution. | Governed Training owns update execution and checkpoint custody; Policy Optimization owns feedback-conditioned policy change; Resource Economics owns bills and budgets; Routing owns runtime task assignment. None owns learning-process topology or realization leakage. | Narrow to a method dossier if independent encoders cannot agree on useful topology identity, or matched-resource interventions show that the proposed topology distinctions do not change explanation, control, or outcome. |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | retain as primary architecture owner | Owns the prior Adaptive Commit Boundary from experience and lesson hypothesis to disposition, locus portfolio, realization, qualification, authority, invalidation, descendants, and residuals. | Procedural Memory, Cognitive Compilation, Data Engines, Policy Optimization, Memory, Operations, and institutions own downstream realizations. None owns the cross-surface choice of whether and where a lesson becomes durable causal structure. | Narrow or retire the compiler if competent fixed-locus or human-reviewed policies match its decision quality and recovery behavior at lower whole-lifecycle cost. |
+
+The intervening *When Success Stops Teaching* intake did not create another
+chapter. Assurance-Shift Learning and Governed Residual Boundary Learning are
+cross-owner allocation and handoff rules spanning Learning-Compute Topology,
+Adjudicated Persistence, Benchmark Ratchets, Policy Optimization, Data Engines,
+Procedural Memory, and Resource Economics. Turning that source into a third
+learning chapter would recreate the overlap this migration is intended to
+remove.
+
+The 87-owner count therefore remains correct. Future chapter intake must amend
+this reconciliation in the same transaction: classify the new identity as a
+primary owner, implementation/method owner, publication nest, deployment
+profile, dossier owner, or generated back-matter owner; identify its strongest
+neighbor and exit test; update the narrative-unit crosswalk; and derive every
+count from `book_structure.json`. A chapter may not remain an unclassified
+equal-weight peer merely because it passed source intake.
+
+### Consolidation execution order
+
+Run the 18 peer-status packages in this order. A wave advances only after its
+technical children remain directly reachable, its top-level family reads as
+one argument, and its identity/source/proof/test/URL reconciliation passes.
+
+1. **Metadata and generated preview.** Classify all 87 IDs without changing
+   chapter prose, URLs, or the current public route. Generate the 56-chapter
+   top-level preview, profile collections, dossier surfaces, back-matter route,
+   and technical-detail navigation from `book_structure.json`.
+2. **Method-detail pilot.** Nest Fast Generation and Governed Deliberation
+   under Cognitive Resource Economics, and RankFold/NeuralFold under Compact
+   Generative Systems. This wave must prove that a technical method can leave
+   the top-level spine while keeping its own mechanisms, proof module,
+   evidence limits, figures, anchors, and stable detail URL.
+3. **Security, privacy, and artifact custody.** Compose Adversarial Machine
+   Learning with the Security Kernel; Confidential and Verifiable Computation
+   with Privacy and Data Rights; and Supply-Chain Integrity plus Open-Weight
+   Release with Model-Weight Custody. Keep reference monitoring, model attack
+   testing, protected computation, rights, general supply-chain provenance,
+   controlled custody, and irreversible release as explicit non-substitutable
+   transitions inside the three family routes.
+4. **Human and institutional governance.** Compose Communication and
+   Epistemic Security with Human Factors; Moral Uncertainty with
+   Constitutional Alignment; and Societal Resilience with Institutions. The
+   family prose must not turn meaningful control into communication safety,
+   constitutional constraints into moral settlement, or public legitimacy
+   into operational resilience.
+5. **Context, evidence, organization, and exchange.** Compose Human Intent
+   with Command Contracts; Context Transactions with the Virtual Context ABI;
+   White-Box Evidence with Adversarial Evaluation; Human-AI Organizations with
+   Work Surfaces; and Multi-Agent Dynamics with Inter-Stack Protocols. Preserve
+   the static/dynamic, internal/behavioral, organizational/interaction, and
+   protocol/population distinctions as named subowners and technical routes.
+6. **Improvement and stewardship families.** Compose Open-Ended Improvement
+   with RSI Boundaries and Artifact Stewards with Living Book Methodology.
+   Preserve campaign search versus promotion authority and general artifact
+   governance versus the reflexive book implementation.
+7. **Sole semantic merge candidate.** Only after waves 1-6 pass, evaluate
+   Prototype Roadmap into Project Theseus as one rewritten implementation
+   argument. Execute only if all Prototype claims, sources, Lean targets,
+   tests, phase debts, residuals, and historical URL routes survive and the
+   destination removes a full repeated skeleton. Otherwise downgrade it to a
+   publication nest without changing the 56-chapter top-level target.
+8. **Narrative and cutover.** Author the 26-unit human book from the completed
+   family graph, run conclusion/claim crosswalk and legacy-route checks, record
+   `support_state_effect: none`, and cut over only after render, viewport,
+   accessibility, and link validation. Do not build major-version EPUB, PDF,
+   DOCX, or audio before the separate content-freeze gate.
+
+Each package is complete only when the family destination has one Problem,
+Insufficiency, Mechanism, Interface, Evidence, Implementation, and Handoff
+arc; shared governed-cognition boilerplate is removed; every child local delta
+and strongest objection remains findable; the technical child has an explicit
+top-level visibility disposition; no claim or support is inherited; every old
+URL resolves; and the package can be reversed from the canonical graph without
+recovering lost prose from Git history.
 
 Display-title changes are editorial aliases only; stable IDs and claim
 identity do not change. Candidate aliases include Security Kernel and
@@ -166,13 +268,17 @@ surface. The immutable reader and release archives remain untouched.
    relationships to the canonical graph; validate disjoint 56/18/7/5/1
    disposition coverage and two implementation/method owners; generate a
    reviewable preview without changing prose or the current public route.
-3. **EM2 — semantic ownership migration.** Process one merge/profile/dossier
-   cluster at a time. Preserve unique objects, claims, objections, failure
-   modes, evidence exits, sources, proofs, tests, artifacts, and non-claims;
-   remove shared lifecycle boilerplate; add the local delta and a
-   merge-boundary non-claim; and produce one compact migration receipt. A
-   merged parent must be rewritten as one argument, never assembled by
-   concatenating child files.
+3. **EM2 — publication composition and the one semantic merge candidate.**
+   Process one consolidation/profile/dossier cluster at a time. A publication
+   or method-detail nest keeps the child as a canonical technical owner and
+   stable detail route while the family destination provides one top-level
+   argument and navigation entry. Preserve unique objects, claims, objections,
+   failure modes, evidence exits, sources, proofs, tests, artifacts, and
+   non-claims; remove shared lifecycle boilerplate; add the local delta and a
+   consolidation-boundary non-claim; and produce one compact migration
+   receipt. Only the Prototype Roadmap/Project Theseus package is a current
+   semantic merge candidate. Its parent must be rewritten as one argument,
+   never assembled by concatenating files.
 4. **EM3 — 26-unit human narrative.** Rebuild the human manuscript around the
    26-unit thesis-to-method route below, using the Human Reading Paths and the
    continuing repository-change trace as inputs. Each unit receives one compact
@@ -210,7 +316,7 @@ The 26 narrative units are:
 18. Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk
 19. Routing and Replaceable Cognitive Substrates
 20. Governed Training and Learning-Compute Topology
-21. Generalization, Feedback, Continual Learning, and Unlearning
+21. Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning
 22. Evaluation, Readiness, Thresholds, and Structured Assurance
 23. Generative Compression and Cognitive Resource Economics
 24. Physical Compute, Energy, and Infrastructure
@@ -218,7 +324,9 @@ The 26 narrative units are:
 26. Integrated Reference Architecture, Project Theseus, and the Living Research Method
 
 `P7.1-EM` is complete only when all 87 legacy IDs resolve exactly once; the
-54+2 main-book split, 18 merge relationships, seven profiles, five dossier
+54+2 main-book split, 18 peer-status consolidation relationships (one semantic
+merge candidate, 15 publication nests, and two method-detail nests), seven
+profiles, five dossier
 owners/two dossier surfaces, one back-matter owner, and 26 narrative units are
 machine-validated; no evidence edge is orphaned; old URLs resolve; every
 primary chapter passes the local-delta gate; the human view omits most
@@ -729,7 +837,7 @@ remain closed while other work proceeds.
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the nine-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal historical packet with current-manifest admission | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter R21 packet remains immutable history. Current chapter growth is manifest-driven and requires the full admission and debt-reconciliation path; additive atom or bounded formal-target custody is now 87/87 without rewriting the historical receipt. | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff remains terminal. New owners must gain exact atom or bounded formal-target custody at birth and cannot inherit completion from the historical packet. |
 | Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
-| Editorial product migration and independent human narrative — active book packet | `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration` | The current 22-unit candidate and its crosswalk remain historical custody; the 87-row role/parent migration and 26-unit replacement are specified but not implemented or released | Run EM0–EM4: fix stale active counts, classify all 87 identities, validate the 54+2/18/7/5/1 product split, migrate semantic ownership without support inheritance, and compose the 120,000–180,000-word 26-unit human source around one continuing repository-change trace. Preserve major conclusions and every technical identity without reproducing local status administration. Defer the primer and major release formats until content freeze. |
+| Editorial product migration and independent human narrative — active book packet | `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration` | The current 22-unit candidate and its crosswalk remain historical custody; the 87-row role/parent migration and 26-unit replacement are specified but not implemented or released | Run EM0–EM4: fix stale active counts, classify all 87 identities, validate the 54+2/18/7/5/1 product split, compose 15 publication nests and two method-detail nests without transferring technical ownership or support, execute the one semantic merge candidate only after its full gate, and write the 120,000–180,000-word 26-unit human source around one continuing repository-change trace. Preserve major conclusions and every technical identity without reproducing local status administration. Defer the primer and major release formats until content freeze. |
 | Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical and stale; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 87 chapters. Twenty-four case-first narrations have been rewritten: 20 remain narration drafts, while four targets have treatment, narration, and beat-plan files but no current script or animatic gate pass after source and authoring-standard invalidation. Their local animatics and sampled-frame receipts are diagnostic only; no downstream publication state is closed. Treatment-free v2 plans and their downstream artifacts remain historical. The current ledger reports 63 planned, 20 narration drafts, four file-level beat-planned targets, zero current script-passed targets after source invalidation, zero animatic-passed targets, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
 | Formal slot — consumer-gated | `P4.1-consumer-gated-cross-owner-composition` | `P5-U1` or one contribution exit ladder names a concrete runtime, evidence, or decision consumer; the original C6 residual estate remains under exact dependency and consumer custody; new work requires the seven-field family admission rule plus maximum inference | Implement only the invariant or distributed-fault model required by that consumer, then rebuild the overlay and ledger with no support or release movement. No independent theorem-family expansion is authorized. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
@@ -5325,7 +5433,8 @@ is not a debugging interface.
    Preserve the published `reader-2026-07-18` receipts and the terminal W3 and
    current-reader freshness packets as historical custody, not as the target
    human book. Execute `P7.1-EM` metadata-first: preserve all 87 research
-   identities while validating the 54+2 main-book, 18 merge, seven-profile,
+   identities while validating the 54+2 main-book, 18 peer-status
+   consolidation (one semantic merge candidate and 17 nests), seven-profile,
    five-owner/two-dossier, one-back-matter product split, then compose and
    maintain the independent 26-unit, 120,000-180,000-word narrative source.
    Preserve major conclusions and claim identity through its crosswalk while
@@ -5515,7 +5624,7 @@ the compiler rather than preserving it as governance theater.
 | M4 — Semantic formal depth and composition | in progress; consumer-gated | Preserve the terminal six-cluster local audit and complete only dependency-safe rationalization or connected-owner composition required by `P5-U1` or a contribution exit ladder. Every family has a real consumer and seven-field admission record; no aggregate theorem count or finite authored record grants empirical, operational, institutional, or whole-system support. |
 | M5 — Effect-complete reference | in progress; `P5-U1` headline | Deliver the fresh-checkout `P5-U1` command, three prospectively frozen routes, four effect/failure paths, state-checkable outcomes, rejecting mutations, and joint utility/safety/cost/burden accounting without support movement. Retain the two bounded local slices and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 87 owners and exact claim or bounded formal-target custody for all 87; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, work-surface, learning-topology, and adjudicated-persistence manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
-| M7 — Editorial product migration, independent narrative, and derivative disposition | in progress | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, and the current 22-unit candidate as immutable historical receipts while maintaining all 87 research identities. Complete EM0–EM4: manifest-derived count truth; exact metadata-first 54+2/18/7/5/1 disposition; evidence-preserving semantic migration and redirects; an independently maintained 26-unit, 120,000-180,000-word human manuscript with conclusion/claim crosswalk; the fifteen-minute utility route; three runnable task recipes; optional-depth marking; and unit-level use/avoid/conclusion-change guidance. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for or block narrative completion. |
+| M7 — Editorial product migration, independent narrative, and derivative disposition | in progress | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, and the current 22-unit candidate as immutable historical receipts while maintaining all 87 research identities. Complete EM0–EM4: manifest-derived count truth; exact metadata-first 54+2/18/7/5/1 disposition; evidence-preserving publication nests, method-detail nests, one gated semantic merge candidate, and redirects; an independently maintained 26-unit, 120,000-180,000-word human manuscript with conclusion/claim crosswalk; the fifteen-minute utility route; three runnable task recipes; optional-depth marking; and unit-level use/avoid/conclusion-change guidance. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for or block narrative completion. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done
@@ -5542,7 +5651,8 @@ claim/conclusion crosswalk. Completion also requires terminal disposition of
 the fifteen-minute utility route, three task recipes, optional-depth map, and
 unit-level use/avoid/conclusion-change guidance; exact preservation of all 87
 legacy IDs and their claim/source/proof/test/artifact edges through the
-54+2/18/7/5/1 editorial migration; and working legacy redirects. Completion does not require an
+54+2/18/7/5/1 editorial migration, including one semantic merge candidate and
+17 technical-owner-preserving nests; and working legacy redirects. Completion does not require an
 external-human prepublication review or a GitHub popularity threshold.
 Completion also requires terminal disposition of the Round 16
 atom/current-reader/template and six-chapter proof-readiness

@@ -1,8 +1,8 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v27",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v28",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
-  "snapshot_date": "2026-08-10",
+  "snapshot_date": "2026-08-12",
   "authority": "Corben Sorenson",
   "status": "active",
   "current_priority": "P5-U1",
@@ -111,11 +111,14 @@
     "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
     "state": "active_metadata_first_public_cutover_pending",
     "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
+    "reconciliation_input_commit": "90f60c9f4bca340f170069d415893797b118252c",
     "current_reference_chapter_count": 87,
     "target_main_book_chapter_count": 56,
     "target_primary_architecture_chapter_count": 54,
     "target_implementation_method_chapter_count": 2,
     "target_merge_count": 18,
+    "target_semantic_merge_count": 1,
+    "target_publication_nest_count": 17,
     "target_profile_count": 7,
     "target_dossier_owner_count": 5,
     "target_visible_dossier_count": 2,
@@ -150,6 +153,26 @@
       "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
       "prototype-roadmap": "project-theseus-as-report-first-implementation-reference"
     },
+    "merge_mode_map": {
+      "adversarial-machine-learning-and-model-attack-surface": "publication_nest",
+      "confidential-and-verifiable-ai-computation": "publication_nest",
+      "ai-supply-chain-integrity-and-lifecycle-provenance": "publication_nest",
+      "human-ai-communication-persuasion-and-epistemic-security": "publication_nest",
+      "moral-uncertainty-and-value-conflict": "publication_nest",
+      "societal-resilience-and-misuse-defense": "publication_nest",
+      "human-intent-as-a-formal-input": "publication_nest",
+      "context-transactions-snapshots-mounts-and-taint": "publication_nest",
+      "white-box-evidence-interpretability-and-activation-governance": "publication_nest",
+      "human-ai-organizations-delegation-and-accountability": "publication_nest",
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "publication_nest",
+      "artifact-steward-agents-and-living-project-governance": "publication_nest",
+      "open-weight-release-and-post-release-control": "publication_nest",
+      "fast-generation-architectures": "method_detail_nest",
+      "governed-deliberation-and-test-time-scaling": "publication_nest",
+      "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
+      "open-ended-improvement-engines": "publication_nest",
+      "prototype-roadmap": "semantic_merge_candidate"
+    },
     "profile_map": {
       "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
       "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
@@ -173,6 +196,32 @@
       "project-theseus-as-report-first-implementation-reference",
       "living-book-methodology"
     ],
+    "recent_owner_reviews": {
+      "learning-compute-topology-and-adaptive-process-architecture": {
+        "disposition": "retain_primary_architecture_owner",
+        "strongest_neighbors": [
+          "governed-model-training-distributed-optimization-and-scaling",
+          "policy-optimization-and-learning-from-feedback",
+          "resource-economics-and-token-budgets",
+          "routing-heads-and-specialist-cores"
+        ],
+        "exit_test": "independent encoders fail useful topology agreement or matched-resource interventions show no explanatory, control, or outcome value"
+      },
+      "adjudicated-persistence-and-the-adaptive-commit-boundary": {
+        "disposition": "retain_primary_architecture_owner",
+        "strongest_neighbors": [
+          "procedural-memory-and-cognitive-loop-closure",
+          "cognitive-compilation-and-semantic-ir",
+          "data-engines-continual-learning-and-unlearning",
+          "policy-optimization-and-learning-from-feedback"
+        ],
+        "exit_test": "competent fixed-locus or human-reviewed policies match decision quality and recovery at lower whole-lifecycle cost"
+      }
+    },
+    "source_only_intake_dispositions": {
+      "assurance_shift_learning": "cross_owner_integration_no_new_chapter"
+    },
+    "narrative_unit_21_title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
     "migration_phases": [
       "EM0-structural-truth",
       "EM1-metadata-only-disposition",
