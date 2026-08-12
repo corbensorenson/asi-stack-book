@@ -46,7 +46,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v28"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v29"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -312,6 +312,12 @@
         "target_back_matter_owner_count": 1,
         "current_narrative_unit_count": 22,
         "target_narrative_unit_count": 26,
+        "target_narrative_part_count": 3,
+        "target_narrative_owner_route_count": 87,
+        "target_narrative_outline_path": "docs/human_reader_26_unit_outline.md",
+        "target_narrative_outline_state": "canonical_target_outline_manuscript_and_cutover_pending",
+        "historical_narrative_spine_path": "products/narrative_product_spine.json",
+        "target_outline_is_completed_manuscript": false,
         "stale_active_product_count_literal_count": 3,
         "em0_count_reconciliation_complete": false,
         "count_is_editorial_target_not_quality_metric": true,

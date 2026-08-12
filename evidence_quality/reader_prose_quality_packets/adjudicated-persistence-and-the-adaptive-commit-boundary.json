@@ -1,0 +1,75 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+  "chapter_file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
+  "chapter_sha256": "684761b4dc83482f98cc5a28567fccb1e9009c089180175fd1e500bb3f4c943d",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-18-developmental-learning",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "A worked two-case transaction",
+    "actor_or_system": "Two tax-support agents, one versioned memory system, one tool adapter, an adjudicator, independent qualification, and downstream consumers.",
+    "attempted_action": "Turn two superficially identical corrected tax-answer failures into the least-committing durable repairs that address their distinct causes.",
+    "observable_outcome": "The stale-rule case routes to a versioned memory correction and freshness guard, while the field-mapping case routes to a typed wrapper, regression test, and quarantined predecessor.",
+    "failed_or_tested_boundary": "An outcome-only record cannot distinguish the proper persistence locus; identity, provenance, causal alternatives, authority, qualification, invalidators, and descendants must remain visible.",
+    "residual_owner": "Memory, tool, qualification, artifact-lineage, operations, resource, and affected-party governance owners retain their separate obligations and unresolved descendants.",
+    "evidence_boundary": "The scene illustrates distinctions required by the proposed architecture. It is not an implemented Adaptive Commit Boundary, a LocusBench result, evidence of placement quality, a safety result, or a support-state promotion."
+  },
+  "worked_trace": {
+    "heading": "A worked two-case transaction",
+    "state_labels": [
+      "equal_visible_outcomes",
+      "distinct_experience_records",
+      "distinct_lesson_hypotheses",
+      "candidate_locus_portfolios",
+      "least_commitment_dispositions",
+      "independent_qualification",
+      "leased_use_with_invalidators",
+      "descendant_residual_custody"
+    ],
+    "source_or_fixture_refs": [
+      "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
+      "sources/source_notes/adjudicated_persistence.md"
+    ],
+    "maximum_inference": "A typed adaptation transaction can express why equal outcomes may require different durable interventions and keep realization, qualification, and authority separate; the trace does not show that a real adjudicator diagnoses or places adaptations correctly."
+  },
+  "counterexample_or_simpler_baseline": "The competent simpler baselines are no durable update, a temporary guard, a human-reviewed single-locus repair, and a fixed-locus policy. Cross-surface adjudication must justify its additional evidence, delay, monitoring, rollback, descendant, and carrying-cost burden against them.",
+  "readable_claim": "The Adaptive Commit Boundary makes that decision explicit. It separates the event from the lesson, the lesson from the persistence disposition, the disposition from the realization, the realization from qualification, and qualification from authority.",
+  "normative_rule": "The preferred portfolio is the least-commitment admissible one that can meet the declared behavior and reliability requirement.",
+  "formal_binding": {
+    "claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
+    "support_state": "argument",
+    "anchor": "Every transition from experience to durable causal influence should cross an Adaptive Commit Boundary"
+  },
+  "claim_atom_and_source_links": [
+    "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
+    "adjudicated_persistence",
+    "assurance_shift_learning",
+    "regret_engine",
+    "ext_bourtoule_machine_unlearning_2021"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The chapter keeps the conceptual architecture, planned proof targets, proposed experiments, source-reported comparisons, and implemented evidence states distinct where each appears.",
+    "consolidated_disposition": "Implementation existence, diagnosis and placement quality, commitment estimation, qualification, recovery efficacy, lifecycle cost, useful throughput, safety, transfer, and support movement remain separate unresolved burdens.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The reader-facing chapter retains the two-case transaction, six-object separation, commitment profile, minimum-persistence rule, qualification lifecycle, deliberation reserve, adaptation debt, and meta-governance boundary; package hashes, passage-level mining, and exhaustive source custody remain in the source note and paper library.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The core transaction is unfolded through the two-case scene, six separately named records, and short lifecycle sections rather than repeated as one uninterrupted definition.",
+    "hedge_disposition": "Evidence ceilings are stated beside the source paper, worked trace, planned Lean targets, experimental plan, and summary without interrupting every mechanism paragraph.",
+    "table_disposition": "Tables remain where they compare persistence surfaces, expose the equal-outcome collision, define interfaces and tests, or preserve source boundaries; narrative carries the causal decision."
+  },
+  "non_claims": [
+    "The worked tax transaction is not an implemented placement system or an observed production incident.",
+    "The five planned Lean targets are not completed proofs and do not establish real-world predicates.",
+    "The LocusBench design does not establish placement advantage, useful-throughput benefit, safety, transfer, SOTA, AGI, ASI, or support-state promotion."
+  ]
+}

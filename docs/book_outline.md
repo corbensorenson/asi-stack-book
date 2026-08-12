@@ -2,11 +2,11 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: expanded source-of-truth drafting outline, updated 2026-07-26 after the
-Round 18 depth pass, Precision Contract integration, final four-owner
-full-coverage admission, and 22-unit three-projection reconciliation.
-`book_structure.json` remains the ordering source of truth; Quarto generates
-displayed chapter numbers from the manifest.
+Status: source-of-truth **technical-reference** outline, reconciled 2026-08-12
+against the 87-owner manifest. `book_structure.json` remains its ordering source
+of truth. The superseding three-part, 26-unit human writing specification is
+`docs/human_reader_26_unit_outline.md`; references below to the 22-unit route
+describe the preserved historical candidate, not the current manuscript target.
 
 The manifest now contains **87 chapters**, which is the sole current chapter
 count. The 2026-08-08 work-surface intake added one Part II owner for the
@@ -6405,7 +6405,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 335 proof targets, 132 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 340 proof targets, 133 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.

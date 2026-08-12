@@ -551,7 +551,9 @@ def validate_semantic_depth(errors: list[str]) -> dict[str, Any]:
     )
     buckets: dict[int, set[bool]] = {}
     for values in product((False, True), repeat=len(review_fields)):
-        review = dict(zip(review_fields, values, strict=True))
+        if len(values) != len(review_fields):
+            raise AssertionError("benchmark review field/value arity drift")
+        review = dict(zip(review_fields, values))
         buckets.setdefault(aggregate_pass_count(review), set()).add(
             promotion_accepted(review)
         )

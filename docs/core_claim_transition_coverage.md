@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 86 |
+| Manifest chapter core claims | 87 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 64 |
+| Accepted explicit no-promotion decisions | 65 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -47,6 +47,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 
 | Claim ID | Chapter | Decision | Primary blockers |
 |---|---|---|---|
+| `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | Adjudicated Persistence and the Adaptive Commit Boundary | `argument_only` | no running cross-surface adjudicator, qualifier, deoptimizer, or descendant-revocation system; no empirical evidence that the proposed placement discipline improves outcomes or recovery over simpler baselines; author-lineage propositions, architecture, benchmark design, and source synthesis cannot promote support |
 | `adversarial-evaluation-sandbagging-and-training-time-deception.core` | Adversarial Evaluation, Sandbagging, and Training-Time Deception | `argument_only` | no local deceptive-model or detector result; no cross-context workload or independent replay; finite theorem does not establish sandbagging resistance or evaluator correctness |
 | `adversarial-machine-learning-and-model-attack-surface.core` | Adversarial Machine Learning and the Model Attack Surface | `argument_only` | no accepted chapter-core empirical result; no independent reproduction or transfer result; prose, source synthesis, schemas, and planned tests do not promote support |
 | `ai-deployment-transition-distribution-and-human-agency.core` | AI Deployment, Transition, Distribution, and Human Agency | `argument_only` | no accepted chapter-core empirical result; no independent reproduction or transfer result; prose, source synthesis, schemas, and planned tests do not promote support |

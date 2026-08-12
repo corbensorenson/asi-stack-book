@@ -30,14 +30,14 @@
     "roadmap_path": {"const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"},
     "review_packet_path": {"const": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md"},
     "chapter_triage_path": {"const": "docs/chapter_content_triage_2026_08_08.md"},
-    "canonical_chapter_count": {"const": 86},
-    "state": {"const": "complete_86_chapter_reader_prose_quality_validated"},
+    "canonical_chapter_count": {"const": 87},
+    "state": {"const": "complete_87_chapter_reader_prose_quality_validated"},
     "scope": {
       "type": "object",
       "additionalProperties": false,
       "required": ["chapters", "new_chapters_authorized", "support_state_effect", "release_effect", "external_prepublication_human_required"],
       "properties": {
-        "chapters": {"const": 86},
+        "chapters": {"const": 87},
         "new_chapters_authorized": {"const": 0},
         "support_state_effect": {"const": "none"},
         "release_effect": {"const": "none"},
@@ -66,9 +66,9 @@
       "properties": {
         "directory": {"const": "evidence_quality/reader_prose_quality_packets"},
         "required_fields": {"type": "array", "minItems": 16, "uniqueItems": true, "items": {"type": "string"}},
-        "required_chapter_packets": {"const": 86},
-        "current_packets": {"type": "integer", "minimum": 0, "maximum": 86},
-        "current_digest_bound_packets": {"type": "integer", "minimum": 0, "maximum": 86}
+        "required_chapter_packets": {"const": 87},
+        "current_packets": {"type": "integer", "minimum": 0, "maximum": 87},
+        "current_digest_bound_packets": {"type": "integer", "minimum": 0, "maximum": 87}
       }
     },
     "acceptance_gates": {"type": "array", "minItems": 7, "items": {"type": "string"}},

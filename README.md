@@ -63,6 +63,9 @@ The current 87-owner publication-consolidation plan is the `P7.1-EM` section
 of the [active roadmap](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md),
 with its exact machine contract in
 [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json).
+The independent human-reader edition is specified by the
+[canonical 26-unit writing outline](docs/human_reader_26_unit_outline.md); the
+older 22-unit product spine remains historical candidate custody.
 
 The compact public contract is checked by [`scripts/validate_trust_surface.py`](scripts/validate_trust_surface.py).
 

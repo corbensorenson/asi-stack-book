@@ -83,6 +83,7 @@ This generated audit checks every active chapter against the architecture-refere
 | `safety-cases-and-structured-assurance` | pass | bounded in insufficiency section | complete packet surface |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | pass | explicit heading | complete packet surface |
 | `governed-operations-incident-command-and-graceful-degradation` | pass | bounded in insufficiency section | complete packet surface |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | pass | bounded in insufficiency section | complete packet surface |
 | `policy-optimization-and-learning-from-feedback` | pass | explicit heading | complete packet surface |
 | `data-engines-continual-learning-and-unlearning` | pass | bounded in insufficiency section | complete packet surface |
 | `scientific-discovery-and-experimental-governance` | pass | bounded in insufficiency section | complete packet surface |
@@ -93,6 +94,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 86 of 86 active chapters pass; 0 remain open.
+Summary: 87 of 87 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

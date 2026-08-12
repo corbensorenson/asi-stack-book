@@ -64,6 +64,7 @@ SOURCE_INVENTORY = ROOT / "sources/source_inventory.json"
 BOOK_MANIFEST = ROOT / "book_structure.json"
 NARRATIVE_PRODUCT_SPINE = ROOT / "products/narrative_product_spine.json"
 NARRATIVE_UNIT_CROSSWALK = ROOT / "products/narrative_unit_crosswalk.json"
+HUMAN_READER_26_UNIT_OUTLINE = ROOT / "docs/human_reader_26_unit_outline.md"
 VISUAL_EDITION_MANIFEST = ROOT / "visual_edition/manifest.json"
 MANIM_V2_LEDGER = ROOT / "visual_edition/manim_v2_production_ledger.json"
 REVIEW_ADJUDICATION = ROOT / "docs/chatgpt_pro_full_book_review_adjudication_2026_07_25.md"
@@ -256,6 +257,9 @@ def inputs() -> dict:
         "book_manifest": load(BOOK_MANIFEST),
         "narrative_product_spine": load(NARRATIVE_PRODUCT_SPINE),
         "narrative_unit_crosswalk": load(NARRATIVE_UNIT_CROSSWALK),
+        "human_reader_26_unit_outline": HUMAN_READER_26_UNIT_OUTLINE.read_text(
+            encoding="utf-8"
+        ),
         "visual_edition_manifest": load(VISUAL_EDITION_MANIFEST),
         "manim_v2_ledger": load(MANIM_V2_LEDGER),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
@@ -1349,6 +1353,118 @@ def errors(data: dict) -> list[str]:
         out.append("editorial migration current narrative-unit count drifted")
     if editorial.get("target_narrative_unit_count") != 26:
         out.append("editorial migration lost the 26-unit narrative target")
+    expected_narrative_titles = [
+        "ASI Is a Stack, Not a Model",
+        "The Efficient ASI Hypothesis",
+        "Authority, Failure, and Misuse",
+        "Security, Privacy, and AI Artifact Custody",
+        "Evidence States and Scalable Oversight",
+        "Human Intent, Control, and Epistemic Security",
+        "Constitutions, Moral Uncertainty, and Objective Formation",
+        "Institutions, Coordination, and Societal Resilience",
+        "Stable Capability Fields and Governed Replacement",
+        "Perception and Observation Trust",
+        "Governed World Models and Reality Grounding",
+        "Planning as a Control Layer",
+        "Cognitive Compilation and Semantic IR",
+        "Virtual Context and Durable Semantic Memory",
+        "Verification Bandwidth, Claim Ledgers, and Proof",
+        "Labor OS, Work Surfaces, and Organizations",
+        "Artifact Graphs, Runtime Effects, and Operations",
+        "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
+        "Routing and Replaceable Cognitive Substrates",
+        "Governed Training and Learning-Compute Topology",
+        "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
+        "Evaluation, Readiness, Thresholds, and Structured Assurance",
+        "Generative Compression and Cognitive Resource Economics",
+        "Physical Compute, Energy, and Infrastructure",
+        "Recursive Improvement, Replication, and Containment",
+        "Integrated Reference Architecture, Project Theseus, and the Living Research Method",
+    ]
+    human_outline = data["human_reader_26_unit_outline"]
+    outline_parts = re.findall(r"^# Part [IVX]+ - .+$", human_outline, flags=re.MULTILINE)
+    outline_units = re.split(r"^## Unit ", human_outline, flags=re.MULTILINE)[1:]
+    outline_titles = []
+    outline_routes = []
+    outline_word_ranges = []
+    for expected_order, unit in enumerate(outline_units, start=1):
+        heading, _, body = unit.partition("\n")
+        match = re.fullmatch(r"(\d+) - (.+)", heading.strip())
+        if not match:
+            out.append(f"human-reader outline unit {expected_order} has a malformed heading")
+            continue
+        if int(match.group(1)) != expected_order:
+            out.append("human-reader outline unit order drifted")
+        outline_titles.append(match.group(2))
+        route_match = re.search(
+            r"\*\*Canonical owner routes\.\*\*\s*(.*?)(?=\n\n\*\*)",
+            body,
+            flags=re.DOTALL,
+        )
+        if not route_match:
+            out.append(f"human-reader outline unit {expected_order} lacks owner routing")
+        else:
+            unit_routes = re.findall(r"`([a-z0-9-]+)`", route_match.group(1))
+            outline_routes.extend(unit_routes)
+            lead_match = re.search(r"\*\*Lead owner\.\*\*\s*`([a-z0-9-]+)`", body)
+            if not lead_match or lead_match.group(1) not in unit_routes:
+                out.append(f"human-reader outline unit {expected_order} has an invalid lead owner")
+        for field in [
+            "Narrative job",
+            "Central question",
+            "Argument moves",
+            "Running example",
+            "Strongest objection",
+            "Evidence that would change the conclusion",
+            "Handoff",
+            "Target length",
+        ]:
+            if f"**{field}.**" not in body:
+                out.append(f"human-reader outline unit {expected_order} lacks {field}")
+        length_match = re.search(
+            r"\*\*Target length\.\*\* ([\d,]+)-([\d,]+) words\.", body
+        )
+        if not length_match:
+            out.append(f"human-reader outline unit {expected_order} lacks a valid word range")
+        else:
+            lower = int(length_match.group(1).replace(",", ""))
+            upper = int(length_match.group(2).replace(",", ""))
+            if lower > upper:
+                out.append(f"human-reader outline unit {expected_order} has an inverted word range")
+            outline_word_ranges.append((lower, upper))
+    if len(outline_parts) != 3:
+        out.append("human-reader outline does not have exactly three parts")
+    if outline_titles != expected_narrative_titles:
+        out.append("human-reader outline 26-unit title route drifted")
+    outline_route_counts = Counter(outline_routes)
+    if len(outline_routes) != len(manifest_ids) or set(outline_routes) != manifest_ids:
+        out.append("human-reader outline does not route all 87 canonical owners exactly once")
+    if any(count != 1 for count in outline_route_counts.values()):
+        out.append("human-reader outline duplicates a canonical owner route")
+    if (
+        len(outline_word_ranges) != 26
+        or not 120_000 <= sum(lower for lower, _ in outline_word_ranges) <= 180_000
+        or not 120_000 <= sum(upper for _, upper in outline_word_ranges) <= 180_000
+    ):
+        out.append("human-reader outline word budget does not reconcile with the 120,000-180,000-word contract")
+    expected_outline_contract = {
+        "target_narrative_part_count": len(outline_parts),
+        "target_narrative_owner_route_count": len(outline_routes),
+        "target_narrative_outline_path": "docs/human_reader_26_unit_outline.md",
+        "target_narrative_outline_state": "canonical_target_outline_manuscript_and_cutover_pending",
+        "historical_narrative_spine_path": "products/narrative_product_spine.json",
+        "target_outline_is_completed_manuscript": False,
+    }
+    for field, expected in expected_outline_contract.items():
+        if editorial.get(field) != expected:
+            out.append(f"human-reader outline contract drift: {field}")
+    if (
+        "Status: **canonical target outline; manuscript and cutover pending**" not in human_outline
+        or "Historical predecessor: `products/narrative_product_spine.json` (22-unit candidate; do not rewrite)" not in human_outline
+        or data["narrative_product_spine"].get("chapters") is None
+        or len(data["narrative_product_spine"]["chapters"]) != 22
+    ):
+        out.append("human-reader outline does not preserve the historical 22-unit candidate boundary")
     if editorial.get("canonical_graph_owner") != "book_structure.json" or editorial.get("new_hand_maintained_source_of_truth_allowed") is not False:
         out.append("editorial migration permits a parallel hand-maintained source of truth")
     if editorial.get("legacy_ids_preserved") is not True or editorial.get("legacy_urls_preserved") is not True:
@@ -1420,6 +1536,8 @@ def errors(data: dict) -> list[str]:
         "without recovering lost prose from Git history",
         "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
         "26 narrative units",
+        "docs/human_reader_26_unit_outline.md",
+        "routes all 87 technical owners exactly once",
     ]
     roadmap_casefold = " ".join(data["roadmap"].split()).casefold()
     for phrase in required_editorial_phrases:
@@ -2917,6 +3035,11 @@ def main() -> None:
     mutate("first-tranche terminal count rollback", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("completed_reader_chapter_count", 1))
     mutate("T1/T2/T3 terminal identity deletion", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("terminal_reader_chapter_ids", []))
     mutate("P4 C5 status reopening", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"][4].__setitem__("state", "strengthen"))
+    mutate("human-reader target route count drift", lambda c: c["status"]["editorial_product_migration"].__setitem__("target_narrative_owner_route_count", 86))
+    mutate("human-reader completed-manuscript laundering", lambda c: c["status"]["editorial_product_migration"].__setitem__("target_outline_is_completed_manuscript", True))
+    mutate("human-reader unit deletion", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("## Unit 26 - Integrated Reference Architecture, Project Theseus, and the Living Research Method", "## Removed final unit", 1)))
+    mutate("human-reader owner-route duplication", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("`open-research-agenda-and-bibliography-plan`", "`living-book-methodology`", 1)))
+    mutate("human-reader word-budget inflation", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("**Target length.** 6,000-7,500 words.", "**Target length.** 6,000-70,000 words.", 1)))
     mutate("reader format history laundering", lambda c: c["status"]["activation_truth"].__setitem__("current_published_reader_formats", ["html"]))
 
     for label, candidate in mutations:

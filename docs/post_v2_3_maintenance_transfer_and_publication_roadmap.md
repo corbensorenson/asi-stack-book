@@ -323,6 +323,16 @@ The 26 narrative units are:
 25. Recursive Improvement, Replication, and Containment
 26. Integrated Reference Architecture, Project Theseus, and the Living Research Method
 
+The titles above are the compact route. The canonical writing specification is
+`docs/human_reader_26_unit_outline.md`. It divides the edition into three
+parts, routes all 87 technical owners exactly once, and gives every unit a lead
+owner, narrative job, central question, argument moves, cumulative
+repository-change beat, strongest objection, conclusion-changing evidence,
+handoff, and target-length range. The historical
+`products/narrative_product_spine.json` remains the 22-unit candidate and is
+not rewritten or relabeled as the 26-unit manuscript. The detailed outline is
+not completed prose and does not authorize cutover.
+
 `P7.1-EM` is complete only when all 87 legacy IDs resolve exactly once; the
 54+2 main-book split, 18 peer-status consolidation relationships (one semantic
 merge candidate, 15 publication nests, and two method-detail nests), seven

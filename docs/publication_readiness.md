@@ -78,7 +78,7 @@ It creates no support state or release effect and does not alter the immutable
   `status/versioned_release_policy.json` with its SHA-256.
 - Root `CITATION.cff` describes the completed v2.3.0 release. Historical
   citation snapshots remain version-scoped and do not override that fact.
-- All 86 live chapter-core claims remain at `argument`; publication
+- All 87 live chapter-core claims remain at `argument`; publication
   reconciliation creates no evidence transition or support-state promotion.
 - Current closure boundary: all 87 live chapter-core claims remain at
   `argument`.

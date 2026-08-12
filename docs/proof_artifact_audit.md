@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 335 |
-| Manifest status counts | {"implemented": 330, "planned": 5} |
-| Triage class counts | {"formal-invariant": 335} |
+| Proof targets audited | 340 |
+| Manifest status counts | {"implemented": 330, "planned": 10} |
+| Triage class counts | {"formal-invariant": 339, "process-contract": 1} |
 | Lean modules referenced | 95 |
-| Chapters with proof targets | 86 |
+| Chapters with proof targets | 87 |
 | Validation errors | 0 |
 | Warnings | 0 |
 | ProofEnvelope theorem declarations | 28 |
@@ -152,6 +152,7 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 
 | Chapter ID | Tags present | Limitation references | Missing tags | Missing limitation references |
 |---|---:|---:|---:|---:|
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | 5 | 0 | 0 | 0 |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 8 | 8 | 0 | 0 |
 | `adversarial-machine-learning-and-model-attack-surface` | 1 | 1 | 0 | 0 |
 | `ai-deployment-transition-distribution-and-human-agency` | 1 | 1 | 0 | 0 |
@@ -536,6 +537,11 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `lean:operations.degradation_never_widens_authority` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.recovery_requires_complete_state` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperations` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:operations.incident_lifecycle_refines_static_contracts` | `governed-operations-incident-command-and-graceful-degradation` | `AsiStackProofs.GovernedOperationsRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:persistence.outcome_only_placement_nonidentifiability` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `AsiStackProofs.AdjudicatedPersistence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:persistence.commitment_dominance_evidence_monotonicity` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `AsiStackProofs.AdjudicatedPersistence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:persistence.transaction_requires_distinct_qualification_authority` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `AsiStackProofs.AdjudicatedPersistence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:persistence.meta_compiler_non_self_ratification` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `AsiStackProofs.AdjudicatedPersistence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:persistence.descendant_invalidation_residual_closure` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `AsiStackProofs.AdjudicatedPersistence` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:policy_optimization.update.operational_invariant` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.reward_boundary.failure_blocks_promotion` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:policy_optimization.promotion_route.failure_routes` | `policy-optimization-and-learning-from-feedback` | `AsiStackProofs.PolicyOptimizationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
