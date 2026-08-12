@@ -85,7 +85,7 @@ The Phase 1 idea-placement and prose-convergence gate is complete.
 `docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md` records the
 ownership pass. `products/narrative_product_spine.json` now defines 22
 representative units, `products/narrative_unit_crosswalk.json` assigns every
-one of the 84 canonical chapters exactly once, and the cumulative
+chapter in the current canonical manifest exactly once, and the cumulative
 repository-change trace carries the route. Narrative spine v1 gives every unit
 a separate plain-language thesis, normative engineering rule, and bounded
 machine contract with an explicit noninheritance boundary; the generated

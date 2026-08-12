@@ -74,6 +74,8 @@
                 "id",
                 "title",
                 "file",
+                "publication",
+                "human_reader_unit_id",
                 "status",
                 "evidence_level",
                 "claim_label",
@@ -96,6 +98,73 @@
                 "id": { "type": "string", "minLength": 1 },
                 "title": { "type": "string", "minLength": 1 },
                 "file": { "type": "string", "minLength": 1 },
+                "publication": {
+                  "type": "object",
+                  "required": [
+                    "role",
+                    "parent_id",
+                    "visibility",
+                    "legacy_id",
+                    "legacy_file",
+                    "claim_ownership",
+                    "editorial_state",
+                    "support_state_effect"
+                  ],
+                  "properties": {
+                    "role": {
+                      "type": "string",
+                      "enum": [
+                        "primary_architecture_owner",
+                        "implementation_method_owner",
+                        "publication_nest",
+                        "method_detail_nest",
+                        "semantic_merge_candidate",
+                        "deployment_profile_owner",
+                        "research_dossier_owner",
+                        "generated_back_matter_owner"
+                      ]
+                    },
+                    "parent_id": {
+                      "anyOf": [
+                        { "type": "string", "minLength": 1 },
+                        { "type": "null" }
+                      ]
+                    },
+                    "visibility": {
+                      "type": "string",
+                      "enum": [
+                        "main_book",
+                        "technical_detail",
+                        "deployment_profile",
+                        "research_dossier",
+                        "generated_back_matter"
+                      ]
+                    },
+                    "legacy_id": { "type": "string", "minLength": 1 },
+                    "legacy_file": { "type": "string", "minLength": 1 },
+                    "claim_ownership": {
+                      "type": "string",
+                      "enum": ["preserved_local_no_inheritance"]
+                    },
+                    "editorial_state": {
+                      "type": "string",
+                      "enum": [
+                        "metadata_classified_prose_unchanged",
+                        "composed_preserving_technical_owner",
+                        "semantic_merge_completed_preserving_legacy_route"
+                      ]
+                    },
+                    "support_state_effect": {
+                      "type": "string",
+                      "enum": ["none"]
+                    }
+                  },
+                  "additionalProperties": false
+                },
+                "human_reader_unit_id": {
+                  "type": "string",
+                  "minLength": 7
+                },
                 "status": { "type": "string", "minLength": 1 },
                 "evidence_level": {
                   "type": "string",

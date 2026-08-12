@@ -1,0 +1,908 @@
+{
+  "schema_version": 1,
+  "product_id": "editorial-migration-metadata-preview",
+  "state": "metadata_preview_no_public_cutover",
+  "sources": [
+    "book_structure.json",
+    "docs/human_reader_26_unit_outline.md"
+  ],
+  "book_structure_sha256": "8e6f8e12cfbb7c0a77a62493a96df55e6eef48d745caec4b4f32beba525a46e0",
+  "human_reader_outline_sha256": "198e75920bf9dc8129f950538601b1fa25f4a12d1e2d949aa30abca846d6e20e",
+  "reference_owner_count": 87,
+  "main_book_owner_count": 56,
+  "role_counts": {
+    "deployment_profile_owner": 7,
+    "generated_back_matter_owner": 1,
+    "implementation_method_owner": 2,
+    "method_detail_nest": 2,
+    "primary_architecture_owner": 54,
+    "publication_nest": 15,
+    "research_dossier_owner": 5,
+    "semantic_merge_candidate": 1
+  },
+  "roles": {
+    "deployment_profile_owner": [
+      {
+        "id": "ai-deployment-transition-distribution-and-human-agency",
+        "title": "AI Deployment, Transition, Distribution, and Human Agency",
+        "file": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
+        "parent_id": "ai-deployment-distribution-and-human-agency",
+        "human_reader_unit_id": "unit-16"
+      },
+      {
+        "id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+        "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
+        "file": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
+        "parent_id": "content-authenticity-and-synthetic-media-integrity",
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "embodied-agency-real-time-control-and-physical-safety",
+        "title": "Embodied Agency, Real-Time Control, and Physical Safety",
+        "file": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
+        "parent_id": "embodied-agency-and-physical-safety",
+        "human_reader_unit_id": "unit-10"
+      },
+      {
+        "id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+        "title": "Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty",
+        "file": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
+        "parent_id": "neurotechnology-and-cognitive-sovereignty",
+        "human_reader_unit_id": "unit-16"
+      },
+      {
+        "id": "military-ai-autonomous-weapons-and-strategic-stability",
+        "title": "Military AI, Autonomous Weapons, and Strategic Stability",
+        "file": "chapters/military-ai-autonomous-weapons-and-strategic-stability.qmd",
+        "parent_id": "military-ai-and-strategic-stability",
+        "human_reader_unit_id": "unit-03"
+      },
+      {
+        "id": "personal-compute-hives-and-federated-edge-intelligence",
+        "title": "Personal Compute Hives and Federated Edge Intelligence",
+        "file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
+        "parent_id": "personal-and-federated-edge-intelligence",
+        "human_reader_unit_id": "unit-24"
+      },
+      {
+        "id": "scientific-discovery-and-experimental-governance",
+        "title": "Scientific Discovery and Experimental Governance",
+        "file": "chapters/scientific-discovery-and-experimental-governance.qmd",
+        "parent_id": "scientific-discovery-and-experimental-governance",
+        "human_reader_unit_id": "unit-21"
+      }
+    ],
+    "generated_back_matter_owner": [
+      {
+        "id": "open-research-agenda-and-bibliography-plan",
+        "title": "Open Research Agenda and Bibliography Plan",
+        "file": "chapters/open-research-agenda-and-bibliography-plan.qmd",
+        "parent_id": "generated-open-research-registry",
+        "human_reader_unit_id": "unit-26"
+      }
+    ],
+    "implementation_method_owner": [
+      {
+        "id": "living-book-methodology",
+        "title": "Living Book Methodology",
+        "file": "chapters/living-book-methodology.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-26"
+      },
+      {
+        "id": "project-theseus-as-report-first-implementation-reference",
+        "title": "Project Theseus as Report-First Implementation Reference",
+        "file": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-26"
+      }
+    ],
+    "method_detail_nest": [
+      {
+        "id": "fast-generation-architectures",
+        "title": "Fast Generation Architectures",
+        "file": "chapters/fast-generation-architectures.qmd",
+        "parent_id": "resource-economics-and-token-budgets",
+        "human_reader_unit_id": "unit-23"
+      },
+      {
+        "id": "rankfold-neuralfold-and-artifact-compression",
+        "title": "RankFold, NeuralFold, and Artifact Compression",
+        "file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+        "parent_id": "compact-generative-systems-and-residual-honesty",
+        "human_reader_unit_id": "unit-23"
+      }
+    ],
+    "primary_architecture_owner": [
+      {
+        "id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+        "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
+        "file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-21"
+      },
+      {
+        "id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
+        "file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+        "title": "From Chat to Organizations: AI Work Surfaces and Agent Harnesses",
+        "file": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-16"
+      },
+      {
+        "id": "artifact-graphs-audit-logs-and-replay",
+        "title": "Artifact Graphs, Audit Logs, and Replay",
+        "file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-17"
+      },
+      {
+        "id": "asi-is-a-stack-not-a-model",
+        "title": "ASI Is a Stack, Not a Model",
+        "file": "chapters/asi-is-a-stack-not-a-model.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-01"
+      },
+      {
+        "id": "autonomous-replication-proliferation-and-containment",
+        "title": "Autonomous Replication, Proliferation, and Containment",
+        "file": "chapters/autonomous-replication-proliferation-and-containment.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-25"
+      },
+      {
+        "id": "benchmark-ratchets-and-anti-goodhart-evidence",
+        "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
+        "file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "capability-replacement-and-rollback",
+        "title": "Capability Replacement and Rollback",
+        "file": "chapters/capability-replacement-and-rollback.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-09"
+      },
+      {
+        "id": "capability-thresholds-and-deployment-commitments",
+        "title": "Capability Thresholds and Deployment Commitments",
+        "file": "chapters/capability-thresholds-and-deployment-commitments.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "claim-ledgers-and-belief-revision",
+        "title": "Claim Ledgers and Belief Revision",
+        "file": "chapters/claim-ledgers-and-belief-revision.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-15"
+      },
+      {
+        "id": "cognitive-compilation-and-semantic-ir",
+        "title": "Cognitive Compilation and Semantic IR",
+        "file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-13"
+      },
+      {
+        "id": "compact-generative-systems-and-residual-honesty",
+        "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
+        "file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-23"
+      },
+      {
+        "id": "constitutional-alignment-substrate",
+        "title": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+        "file": "chapters/constitutional-alignment-substrate.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-07"
+      },
+      {
+        "id": "dangerous-capability-domains-and-misuse-uplift",
+        "title": "Dangerous Capability Domains and Misuse Uplift",
+        "file": "chapters/dangerous-capability-domains-and-misuse-uplift.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-03"
+      },
+      {
+        "id": "data-engines-continual-learning-and-unlearning",
+        "title": "Data Engines, Continual Learning, and Unlearning",
+        "file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-21"
+      },
+      {
+        "id": "durable-semantic-memory-and-knowledge-lattices",
+        "title": "Durable Semantic Memory and Knowledge Lattices",
+        "file": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-14"
+      },
+      {
+        "id": "evidence-states-and-claim-discipline",
+        "title": "Evidence States and Claim Discipline",
+        "file": "chapters/evidence-states-and-claim-discipline.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-05"
+      },
+      {
+        "id": "executable-specifications-and-lean-proof-envelope",
+        "title": "Executable Specifications and Lean Proof Envelope",
+        "file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-15"
+      },
+      {
+        "id": "failure-modes-of-ungoverned-intelligence",
+        "title": "Failure Modes of Ungoverned Intelligence",
+        "file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-03"
+      },
+      {
+        "id": "governed-model-training-distributed-optimization-and-scaling",
+        "title": "Governed Model Training, Distributed Optimization, and Scaling",
+        "file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-20"
+      },
+      {
+        "id": "governed-objective-formation-value-learning-and-goal-integrity",
+        "title": "Governed Objective Formation, Value Learning, and Goal Integrity",
+        "file": "chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-07"
+      },
+      {
+        "id": "governed-operations-incident-command-and-graceful-degradation",
+        "title": "Governed Operations, Incident Command, and Graceful Degradation",
+        "file": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-17"
+      },
+      {
+        "id": "governed-world-models-and-reality-grounding",
+        "title": "Governed World Models and Reality Grounding",
+        "file": "chapters/governed-world-models-and-reality-grounding.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-11"
+      },
+      {
+        "id": "human-factors-and-meaningful-control-in-oversight",
+        "title": "Human Factors and Meaningful Control in Oversight",
+        "file": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-06"
+      },
+      {
+        "id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+        "title": "Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
+        "file": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-07"
+      },
+      {
+        "id": "institutions-international-coordination-and-public-legitimacy",
+        "title": "Institutions, International Coordination, and Public Legitimacy",
+        "file": "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-08"
+      },
+      {
+        "id": "integrated-reference-architecture",
+        "title": "Integrated Reference Architecture",
+        "file": "chapters/integrated-reference-architecture.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-26"
+      },
+      {
+        "id": "intent-to-execution-contracts",
+        "title": "Command Contracts: From Intent to Executable Work",
+        "file": "chapters/intent-to-execution-contracts.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-06"
+      },
+      {
+        "id": "inter-stack-protocols-identity-and-economic-exchange",
+        "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
+        "file": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-18"
+      },
+      {
+        "id": "labor-os-and-typed-jobs",
+        "title": "Labor OS and Typed Jobs",
+        "file": "chapters/labor-os-and-typed-jobs.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-16"
+      },
+      {
+        "id": "learning-compute-topology-and-adaptive-process-architecture",
+        "title": "Learning–Compute Topology and Adaptive Process Architecture",
+        "file": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-20"
+      },
+      {
+        "id": "learning-theory-generalization-and-scaling-science",
+        "title": "Learning Theory, Generalization, and Scaling Science",
+        "file": "chapters/learning-theory-generalization-and-scaling-science.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-21"
+      },
+      {
+        "id": "model-weight-custody-and-hardware-roots-of-trust",
+        "title": "Model-Weight Custody and Hardware Roots of Trust",
+        "file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "perception-sensor-fusion-and-observation-trust",
+        "title": "Perception, Sensor Fusion, and Observation Trust",
+        "file": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-10"
+      },
+      {
+        "id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+        "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
+        "file": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-24"
+      },
+      {
+        "id": "planning-as-a-control-layer",
+        "title": "Planning as a Control Layer: DAGs and Intelligence Arbitrage",
+        "file": "chapters/planning-as-a-control-layer.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-12"
+      },
+      {
+        "id": "policy-optimization-and-learning-from-feedback",
+        "title": "Policy Optimization and Learning from Feedback",
+        "file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-21"
+      },
+      {
+        "id": "privacy-data-rights-and-information-flow-governance",
+        "title": "Privacy, Data Rights, and Information-Flow Governance",
+        "file": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "procedural-memory-and-cognitive-loop-closure",
+        "title": "Procedural Memory and Cognitive Loop Closure",
+        "file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-18"
+      },
+      {
+        "id": "readiness-gates-residual-escrow-and-quarantine",
+        "title": "Readiness Gates, Residual Escrow, and Quarantine",
+        "file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "recursive-self-improvement-boundaries",
+        "title": "Recursive Self-Improvement Boundaries",
+        "file": "chapters/recursive-self-improvement-boundaries.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-25"
+      },
+      {
+        "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
+        "file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-19"
+      },
+      {
+        "id": "resource-economics-and-token-budgets",
+        "title": "Resource Economics and Token Budgets",
+        "file": "chapters/resource-economics-and-token-budgets.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-23"
+      },
+      {
+        "id": "routing-heads-and-specialist-cores",
+        "title": "Routing Heads and Specialist Cores",
+        "file": "chapters/routing-heads-and-specialist-cores.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-19"
+      },
+      {
+        "id": "runtime-adapters-tool-permissions-and-human-approval",
+        "title": "Runtime Adapters, Tool Permissions, and Human Approval",
+        "file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-17"
+      },
+      {
+        "id": "safety-cases-and-structured-assurance",
+        "title": "Safety Cases and Structured Assurance",
+        "file": "chapters/safety-cases-and-structured-assurance.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-22"
+      },
+      {
+        "id": "scalable-oversight-and-adversarial-ai-control",
+        "title": "Scalable Oversight and Adversarial AI Control",
+        "file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-05"
+      },
+      {
+        "id": "security-kernel-and-digital-scifs",
+        "title": "Security Kernel and Digital SCIFs",
+        "file": "chapters/security-kernel-and-digital-scifs.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "spinoza-verification-and-proof-carrying-claims",
+        "title": "Proof-Carrying Claims and Adversarial Review",
+        "file": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-15"
+      },
+      {
+        "id": "stable-capability-fields",
+        "title": "Stable Capability Fields",
+        "file": "chapters/stable-capability-fields.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-09"
+      },
+      {
+        "id": "system-boundaries-and-authority",
+        "title": "System Boundaries and Authority",
+        "file": "chapters/system-boundaries-and-authority.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-03"
+      },
+      {
+        "id": "the-efficient-asi-hypothesis",
+        "title": "The Efficient ASI Hypothesis",
+        "file": "chapters/the-efficient-asi-hypothesis.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-02"
+      },
+      {
+        "id": "verification-bandwidth-and-context-adequacy",
+        "title": "Verification Bandwidth and Context Adequacy",
+        "file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-15"
+      },
+      {
+        "id": "virtual-context-abi",
+        "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
+        "file": "chapters/virtual-context-abi.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-14"
+      }
+    ],
+    "publication_nest": [
+      {
+        "id": "adversarial-machine-learning-and-model-attack-surface",
+        "title": "Adversarial Machine Learning and the Model Attack Surface",
+        "file": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+        "parent_id": "security-kernel-and-digital-scifs",
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+        "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
+        "file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+        "parent_id": "model-weight-custody-and-hardware-roots-of-trust",
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "artifact-steward-agents-and-living-project-governance",
+        "title": "Artifact Steward Agents and Living Project Governance",
+        "file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+        "parent_id": "living-book-methodology",
+        "human_reader_unit_id": "unit-26"
+      },
+      {
+        "id": "confidential-and-verifiable-ai-computation",
+        "title": "Confidential and Verifiable AI Computation",
+        "file": "chapters/confidential-and-verifiable-ai-computation.qmd",
+        "parent_id": "privacy-data-rights-and-information-flow-governance",
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "context-transactions-snapshots-mounts-and-taint",
+        "title": "Context Transactions, Snapshots, Mounts, and Taint",
+        "file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+        "parent_id": "virtual-context-abi",
+        "human_reader_unit_id": "unit-14"
+      },
+      {
+        "id": "governed-deliberation-and-test-time-scaling",
+        "title": "Governed Deliberation and Test-Time Scaling",
+        "file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
+        "parent_id": "resource-economics-and-token-budgets",
+        "human_reader_unit_id": "unit-23"
+      },
+      {
+        "id": "human-ai-communication-persuasion-and-epistemic-security",
+        "title": "Human-AI Communication, Persuasion, and Epistemic Security",
+        "file": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+        "parent_id": "human-factors-and-meaningful-control-in-oversight",
+        "human_reader_unit_id": "unit-06"
+      },
+      {
+        "id": "human-ai-organizations-delegation-and-accountability",
+        "title": "Human-AI Organizations, Delegation, and Accountability",
+        "file": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+        "parent_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+        "human_reader_unit_id": "unit-16"
+      },
+      {
+        "id": "human-intent-as-a-formal-input",
+        "title": "Human Intent as a Formal Input",
+        "file": "chapters/human-intent-as-a-formal-input.qmd",
+        "parent_id": "intent-to-execution-contracts",
+        "human_reader_unit_id": "unit-06"
+      },
+      {
+        "id": "moral-uncertainty-and-value-conflict",
+        "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
+        "file": "chapters/moral-uncertainty-and-value-conflict.qmd",
+        "parent_id": "constitutional-alignment-substrate",
+        "human_reader_unit_id": "unit-07"
+      },
+      {
+        "id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
+        "file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+        "parent_id": "inter-stack-protocols-identity-and-economic-exchange",
+        "human_reader_unit_id": "unit-18"
+      },
+      {
+        "id": "open-ended-improvement-engines",
+        "title": "Open-Ended Improvement Engines",
+        "file": "chapters/open-ended-improvement-engines.qmd",
+        "parent_id": "recursive-self-improvement-boundaries",
+        "human_reader_unit_id": "unit-25"
+      },
+      {
+        "id": "open-weight-release-and-post-release-control",
+        "title": "Open-Weight Release and Post-Release Control",
+        "file": "chapters/open-weight-release-and-post-release-control.qmd",
+        "parent_id": "model-weight-custody-and-hardware-roots-of-trust",
+        "human_reader_unit_id": "unit-04"
+      },
+      {
+        "id": "societal-resilience-and-misuse-defense",
+        "title": "Societal Resilience and Misuse Defense",
+        "file": "chapters/societal-resilience-and-misuse-defense.qmd",
+        "parent_id": "institutions-international-coordination-and-public-legitimacy",
+        "human_reader_unit_id": "unit-08"
+      },
+      {
+        "id": "white-box-evidence-interpretability-and-activation-governance",
+        "title": "White-Box Evidence, Interpretability, and Activation Governance",
+        "file": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        "parent_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "human_reader_unit_id": "unit-05"
+      }
+    ],
+    "research_dossier_owner": [
+      {
+        "id": "circle-calculus-and-proof-carrying-ai-contracts",
+        "title": "Circle Calculus and Proof-Carrying AI Contracts",
+        "file": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
+        "parent_id": "cyclic-and-proof-carrying-substrates",
+        "human_reader_unit_id": "unit-15"
+      },
+      {
+        "id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+        "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
+        "file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
+        "parent_id": "cyclic-and-proof-carrying-substrates",
+        "human_reader_unit_id": "unit-19"
+      },
+      {
+        "id": "coilra-multicoil-rope-and-cyclic-mixers",
+        "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
+        "file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
+        "parent_id": "cyclic-and-proof-carrying-substrates",
+        "human_reader_unit_id": "unit-19"
+      },
+      {
+        "id": "mathematical-and-search-substrates",
+        "title": "Mathematical and Search Substrates",
+        "file": "chapters/mathematical-and-search-substrates.qmd",
+        "parent_id": "experimental-mathematical-and-relational-substrates",
+        "human_reader_unit_id": "unit-13"
+      },
+      {
+        "id": "relational-dimension-compilation-and-polyadic-cognition",
+        "title": "Relational Dimension Compilation and Polyadic Cognition",
+        "file": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
+        "parent_id": "experimental-mathematical-and-relational-substrates",
+        "human_reader_unit_id": "unit-13"
+      }
+    ],
+    "semantic_merge_candidate": [
+      {
+        "id": "prototype-roadmap",
+        "title": "Prototype Roadmap",
+        "file": "chapters/prototype-roadmap.qmd",
+        "parent_id": "project-theseus-as-report-first-implementation-reference",
+        "human_reader_unit_id": "unit-26"
+      }
+    ]
+  },
+  "human_reader": {
+    "state": "outlined_manuscript_pending",
+    "unit_count": 26,
+    "owner_route_count": 87,
+    "units": [
+      {
+        "unit_id": "unit-01",
+        "title": "ASI Is a Stack, Not a Model",
+        "owner_ids": [
+          "asi-is-a-stack-not-a-model"
+        ]
+      },
+      {
+        "unit_id": "unit-02",
+        "title": "The Efficient ASI Hypothesis",
+        "owner_ids": [
+          "the-efficient-asi-hypothesis"
+        ]
+      },
+      {
+        "unit_id": "unit-03",
+        "title": "Authority, Failure, and Misuse",
+        "owner_ids": [
+          "system-boundaries-and-authority",
+          "failure-modes-of-ungoverned-intelligence",
+          "dangerous-capability-domains-and-misuse-uplift",
+          "military-ai-autonomous-weapons-and-strategic-stability"
+        ]
+      },
+      {
+        "unit_id": "unit-04",
+        "title": "Security, Privacy, and AI Artifact Custody",
+        "owner_ids": [
+          "security-kernel-and-digital-scifs",
+          "adversarial-machine-learning-and-model-attack-surface",
+          "privacy-data-rights-and-information-flow-governance",
+          "confidential-and-verifiable-ai-computation",
+          "model-weight-custody-and-hardware-roots-of-trust",
+          "open-weight-release-and-post-release-control",
+          "ai-supply-chain-integrity-and-lifecycle-provenance"
+        ]
+      },
+      {
+        "unit_id": "unit-05",
+        "title": "Evidence States and Scalable Oversight",
+        "owner_ids": [
+          "evidence-states-and-claim-discipline",
+          "scalable-oversight-and-adversarial-ai-control",
+          "white-box-evidence-interpretability-and-activation-governance"
+        ]
+      },
+      {
+        "unit_id": "unit-06",
+        "title": "Human Intent, Control, and Epistemic Security",
+        "owner_ids": [
+          "human-intent-as-a-formal-input",
+          "human-factors-and-meaningful-control-in-oversight",
+          "human-ai-communication-persuasion-and-epistemic-security",
+          "intent-to-execution-contracts"
+        ]
+      },
+      {
+        "unit_id": "unit-07",
+        "title": "Constitutions, Moral Uncertainty, and Objective Formation",
+        "owner_ids": [
+          "constitutional-alignment-substrate",
+          "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+          "moral-uncertainty-and-value-conflict",
+          "governed-objective-formation-value-learning-and-goal-integrity"
+        ]
+      },
+      {
+        "unit_id": "unit-08",
+        "title": "Institutions, Coordination, and Societal Resilience",
+        "owner_ids": [
+          "institutions-international-coordination-and-public-legitimacy",
+          "societal-resilience-and-misuse-defense"
+        ]
+      },
+      {
+        "unit_id": "unit-09",
+        "title": "Stable Capability Fields and Governed Replacement",
+        "owner_ids": [
+          "stable-capability-fields",
+          "capability-replacement-and-rollback"
+        ]
+      },
+      {
+        "unit_id": "unit-10",
+        "title": "Perception and Observation Trust",
+        "owner_ids": [
+          "perception-sensor-fusion-and-observation-trust",
+          "embodied-agency-real-time-control-and-physical-safety"
+        ]
+      },
+      {
+        "unit_id": "unit-11",
+        "title": "Governed World Models and Reality Grounding",
+        "owner_ids": [
+          "governed-world-models-and-reality-grounding"
+        ]
+      },
+      {
+        "unit_id": "unit-12",
+        "title": "Planning as a Control Layer",
+        "owner_ids": [
+          "planning-as-a-control-layer"
+        ]
+      },
+      {
+        "unit_id": "unit-13",
+        "title": "Cognitive Compilation and Semantic IR",
+        "owner_ids": [
+          "cognitive-compilation-and-semantic-ir",
+          "relational-dimension-compilation-and-polyadic-cognition",
+          "mathematical-and-search-substrates"
+        ]
+      },
+      {
+        "unit_id": "unit-14",
+        "title": "Virtual Context and Durable Semantic Memory",
+        "owner_ids": [
+          "virtual-context-abi",
+          "durable-semantic-memory-and-knowledge-lattices",
+          "context-transactions-snapshots-mounts-and-taint"
+        ]
+      },
+      {
+        "unit_id": "unit-15",
+        "title": "Verification Bandwidth, Claim Ledgers, and Proof",
+        "owner_ids": [
+          "verification-bandwidth-and-context-adequacy",
+          "claim-ledgers-and-belief-revision",
+          "spinoza-verification-and-proof-carrying-claims",
+          "circle-calculus-and-proof-carrying-ai-contracts",
+          "executable-specifications-and-lean-proof-envelope"
+        ]
+      },
+      {
+        "unit_id": "unit-16",
+        "title": "Labor OS, Work Surfaces, and Organizations",
+        "owner_ids": [
+          "labor-os-and-typed-jobs",
+          "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+          "human-ai-organizations-delegation-and-accountability",
+          "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+          "ai-deployment-transition-distribution-and-human-agency"
+        ]
+      },
+      {
+        "unit_id": "unit-17",
+        "title": "Artifact Graphs, Runtime Effects, and Operations",
+        "owner_ids": [
+          "artifact-graphs-audit-logs-and-replay",
+          "runtime-adapters-tool-permissions-and-human-approval",
+          "governed-operations-incident-command-and-graceful-degradation"
+        ]
+      },
+      {
+        "unit_id": "unit-18",
+        "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
+        "owner_ids": [
+          "inter-stack-protocols-identity-and-economic-exchange",
+          "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+          "procedural-memory-and-cognitive-loop-closure"
+        ]
+      },
+      {
+        "unit_id": "unit-19",
+        "title": "Routing and Replaceable Cognitive Substrates",
+        "owner_ids": [
+          "routing-heads-and-specialist-cores",
+          "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+          "coil-attention-cyclic-memory-and-recurrence-contracts",
+          "coilra-multicoil-rope-and-cyclic-mixers"
+        ]
+      },
+      {
+        "unit_id": "unit-20",
+        "title": "Governed Training and Learning-Compute Topology",
+        "owner_ids": [
+          "governed-model-training-distributed-optimization-and-scaling",
+          "learning-compute-topology-and-adaptive-process-architecture"
+        ]
+      },
+      {
+        "unit_id": "unit-21",
+        "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
+        "owner_ids": [
+          "adjudicated-persistence-and-the-adaptive-commit-boundary",
+          "learning-theory-generalization-and-scaling-science",
+          "policy-optimization-and-learning-from-feedback",
+          "data-engines-continual-learning-and-unlearning",
+          "scientific-discovery-and-experimental-governance"
+        ]
+      },
+      {
+        "unit_id": "unit-22",
+        "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
+        "owner_ids": [
+          "readiness-gates-residual-escrow-and-quarantine",
+          "benchmark-ratchets-and-anti-goodhart-evidence",
+          "capability-thresholds-and-deployment-commitments",
+          "adversarial-evaluation-sandbagging-and-training-time-deception",
+          "safety-cases-and-structured-assurance",
+          "content-authenticity-watermarking-and-synthetic-media-integrity"
+        ]
+      },
+      {
+        "unit_id": "unit-23",
+        "title": "Generative Compression and Cognitive Resource Economics",
+        "owner_ids": [
+          "compact-generative-systems-and-residual-honesty",
+          "fast-generation-architectures",
+          "governed-deliberation-and-test-time-scaling",
+          "rankfold-neuralfold-and-artifact-compression",
+          "resource-economics-and-token-budgets"
+        ]
+      },
+      {
+        "unit_id": "unit-24",
+        "title": "Physical Compute, Energy, and Infrastructure",
+        "owner_ids": [
+          "personal-compute-hives-and-federated-edge-intelligence",
+          "physical-compute-infrastructure-energy-and-environmental-constraints"
+        ]
+      },
+      {
+        "unit_id": "unit-25",
+        "title": "Recursive Improvement, Replication, and Containment",
+        "owner_ids": [
+          "recursive-self-improvement-boundaries",
+          "open-ended-improvement-engines",
+          "autonomous-replication-proliferation-and-containment"
+        ]
+      },
+      {
+        "unit_id": "unit-26",
+        "title": "Integrated Reference Architecture, Project Theseus, and the Living Research Method",
+        "owner_ids": [
+          "artifact-steward-agents-and-living-project-governance",
+          "integrated-reference-architecture",
+          "project-theseus-as-report-first-implementation-reference",
+          "prototype-roadmap",
+          "living-book-methodology",
+          "open-research-agenda-and-bibliography-plan"
+        ]
+      }
+    ]
+  },
+  "support_state_effect": "none",
+  "public_route_effect": "none",
+  "non_claims": [
+    "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
+    "Metadata classification does not complete prose composition or the semantic merge candidate.",
+    "The 26-unit outline is not a completed Human Reader manuscript.",
+    "No support state, release state, safety, readiness, AGI, or ASI claim changes."
+  ]
+}

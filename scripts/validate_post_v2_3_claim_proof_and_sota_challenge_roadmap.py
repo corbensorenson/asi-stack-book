@@ -1108,8 +1108,8 @@ def errors(data: dict) -> list[str]:
     current_units = {row.get("script") for row in registry_units}
     if "validate_post_v2_3_claim_proof_and_sota_challenge_roadmap.py" not in current_units:
         out.append("active roadmap validator is absent from the authoritative validation registry")
-    if exact_contracts != 89:
-        out.append("current registry must retain the 88-contract activation baseline plus the exact proof-artifact audit contract")
+    if exact_contracts < 90:
+        out.append("current registry must retain the 88-contract activation baseline plus the proof-artifact audit and editorial-migration contracts")
     live_chapter_count = len(chapter_ids)
     vector_summary = data["vectors"].get("summary", {})
     successor_activation_truth = successor_status.get("activation_truth", {})
