@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/resource-economics-and-token-budgets.qmd",
     "structured_atoms_reviewed": 82,
-    "prose_candidates_adjudicated": 150,
+    "prose_candidates_adjudicated": 152,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The added topology-cost comparison is bound to the existing matched-resource and joint-outcome accounting atoms: accelerator time, CPU, memory, storage, network, evaluator and human work, failed branches, wall time, discovery, evaluation, integration, retention, and rollback remain separately visible. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The prior EGGROLL/MeZO source report remains bounded. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The added topology-cost comparison is bound to the existing matched-resource and joint-outcome accounting atoms: accelerator time, CPU, memory, storage, network, evaluator and human work, failed branches, wall time, discovery, evaluation, integration, retention, and rollback remain separately visible. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The prior EGGROLL/MeZO source report remains bounded. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. EM2 publication-composition additions were re-reviewed; new scanner deltas are line-wrapped ownership or uncertainty clauses, not new material claims."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -825,6 +825,14 @@
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked cost comparison: the cheapest route is not the economical route` to existing reviewed atom `resource-economics-and-token-budgets.failure_mode.018`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "resource-economics-and-token-budgets.failure_mode.018"
+    },
+    "resource-economics-and-token-budgets.prose.14e49047fde9": {
+      "state": "nonmaterial_explanation",
+      "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or uncertainty boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
+    },
+    "resource-economics-and-token-budgets.prose.2913c68cb1f8": {
+      "state": "nonmaterial_explanation",
+      "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or uncertainty boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
     }
   },
   "prose_review_lineage": [

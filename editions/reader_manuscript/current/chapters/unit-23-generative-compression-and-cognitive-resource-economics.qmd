@@ -1,0 +1,637 @@
+---
+title: "Generative Compression and Cognitive Resource Economics"
+unit_id: "unit-23"
+---
+
+One repository change can be produced in a dozen plausible ways. A frontier
+model can draft it in one pass. A smaller model can propose a patch and ask a
+stronger model to verify it. Several candidates can be generated in parallel.
+A reasoning model can revise its first answer. A cached prefix can save repeated
+prefill. A compact representation can reduce what must be loaded. A human can
+review the uncertain part. Every route can be called efficient if the
+accounting stops at the place where that route looks best.
+
+That is the trap this chapter addresses. The engineering question is not how
+to make one component use fewer tokens or produce more tokens per second. It is
+how to allocate a finite cognitive budget among generation, retrieval,
+deliberation, verification, compression, fallback, repair, and review while
+still delivering an accepted useful result. The word *accepted* matters. Work
+that fails its verifier, loses a residual, exceeds its authority, or forces an
+expensive recovery later has not become cheap merely because its first step was
+fast.
+
+The running case is a patch to the book's source-ingestion pipeline. A new
+paper has arrived. The requested change is bounded: ingest it, preserve its
+source boundary, route its ideas to existing chapter owners, update the public
+crosswalk, and leave the claim states untouched. The system has a fixed
+latency budget, limited context, one high-quality model slot, a cheaper local
+generator, deterministic tests, and a human reviewer who can spend only a few
+minutes on the final decision. The allocation problem is deciding where each
+resource earns its cost.
+
+The most obvious route sends the entire repository and paper to the strongest
+model and asks for a complete answer. That may work. It may also pay repeatedly
+to rediscover stable project rules, consume context on irrelevant files, and
+leave no explicit account of which work required expensive judgment. A cheap
+route can fail in the opposite direction: summarize the paper aggressively,
+reuse a stale source map, produce a quick patch, and count only generation
+time. The first route risks undifferentiated overkill. The second hides its
+repair bill.
+
+The governed alternative begins by naming the product. The desired output is
+not a patch-shaped string. It is a source-preserving repository change with
+valid chapter ownership, current links, passing checks, an explicit evidence
+boundary, and a recovery path. Those conditions establish the denominator for
+efficiency. They also determine which costs cannot be optimized away.
+
+{{< include ../generated/unit-23-status.qmd >}}
+
+## The Complete Bill
+
+Resource accounting starts with direct costs: model tokens, wall-clock time,
+memory, storage, network transfer, tool calls, and money. Those are easy to
+observe and therefore easy to overvalue. The complete bill also includes
+queueing, context construction, verification, rejected candidates, repairs,
+fallbacks, reviewer attention, residual ownership, rollback, and the useful
+work displaced while scarce resources were occupied.
+
+Suppose a fast unverified transform costs 2.3 synthetic units, a route that
+hides a residual costs 8.2, a bounded transform plus verifier costs 14.2, and a
+manual-review baseline costs 43.0. Sorting the scalar selects 2.3. Applying the
+product contract rejects the first route because verification failed and the
+second because the residual and reviewer handoff disappeared. The economic
+choice is 14.2: the least costly *eligible* route. The 43.0 route remains a
+useful adequate baseline, but it spends more than the task requires.
+
+This is not a claim that the 14.2 route will win in production. The numbers are
+from a bounded synthetic fixture. Their value is conceptual: a route enters
+the comparison only after its obligations are included. An omitted verifier is
+not a saving. An unowned repair is not free. A fallback that activates on half
+the workload belongs in the expected cost. A cache hit that returns the wrong
+kind of answer is not useful reuse.
+
+The ledger should keep unlike quantities unlike. Tokens, seconds, dollars,
+joules, reviewer minutes, unsafe effects, false refusals, unresolved residuals,
+and recovery time should not be collapsed into one magic number before policy
+has declared the tradeoff. A decision may use a scalar after floors and
+constraints are applied, but the underlying vector has to remain available so
+that a cheap route cannot conceal what it spent elsewhere.
+
+Protected costs enter before optimization. Privacy review, authority checks,
+security boundaries, source traceability, and rollback may be expensive, but a
+route that avoids them is not an equivalent low-cost route when the task
+requires them. The correct response to an inadequate budget may be to narrow
+the task, defer it, escalate it, or refuse it. Quietly weakening the product is
+not resource management; it is an undisclosed change of objective.
+
+## Speed Is a Qualified Route
+
+Fast generation is not one mechanism. Speculative decoding, multi-token
+prediction, recurrent computation, parallel drafting, cache reuse, precision
+routing, and heterogeneous memory alter different parts of the serving path.
+Some reduce prefill. Some propose several tokens that a target model may
+accept. Some reuse an exact prefix. Some trade representation or precision for
+speed. Their costs and failure modes are therefore different.
+
+The ingestion case makes the distinction concrete. An exact cache hit on the
+repository's source-policy prefix may save context construction without
+changing the answer contract. Reusing a prior paper's chapter mapping is a
+different operation: it reuses a decision whose validity depends on the new
+paper's content. The first can be exact computation reuse. The second is a
+semantic claim and needs renewed checking.
+
+A qualified fast path records the model and hardware, the workload, the cache
+or proposal object, the acceptance rule, the verifier, the fallback, the
+expiry condition, and the complete measured route. Raw tokens per second do
+not answer whether the output was accepted, delivered, useful, or expensive to
+repair. Aggregate throughput can improve while one high-priority request
+misses its latency target. A smaller memory footprint can move cost to storage
+traffic. A draft model can propose quickly while a low acceptance rate erases
+the gain.
+
+These details belong to the Fast Generation technical route. The resource
+controller should not pretend to know them from a price estimate. It receives
+a qualified offer: under this workload and validity window, this accelerated
+path has these expected costs, these failure states, and this fallback. The
+controller can fund or reject the offer, but it cannot certify the mechanism
+that produced it.
+
+The same boundary prevents speed from becoming authority. A faster generator
+may draft the patch, but it does not decide that the source was represented
+fairly, that a claim should be promoted, or that a repository write is
+authorized. Acceleration changes how a candidate is produced. It does not
+collapse proposal, verification, approval, and effect into one act.
+
+## Deliberation Has a Failure Surface
+
+When the task is difficult, spending more inference compute can be sensible.
+The model might revise its first answer, search several plans, compare
+candidates, ask a critic, or abstain. But additional reasoning is not a
+monotone path to correctness. A model can replace an initially correct answer
+with a polished mistake. Several branches can share the same blind spot. A
+self-score can repeat the generator's error with greater confidence.
+
+Governed deliberation therefore begins before the answer is known. The request
+specifies the permitted mode, branch or revision budget, stopping rule,
+evaluator scope, escalation condition, and downstream consumer. Candidate
+history is preserved so that the system can measure both repair and
+corruption. If evaluation records only cases where reasoning fixed an initial
+mistake, it overstates value by hiding cases where reasoning damaged an
+initially correct answer.
+
+In the paper-ingestion case, the first candidate may correctly route an idea
+to an existing chapter. A later branch might invent a new chapter because the
+paper's terminology feels novel. More deliberation has then increased
+structural churn without improving ownership. A useful stopping rule notices
+that the existing owner already has the relevant object and transition, and
+that the new source adds evidence or detail rather than a new architectural
+responsibility.
+
+The deliberation policy also has to account for evaluator dependence. A critic
+using the same context, model family, and assumptions is not an independent
+check merely because it occupies another prompt. Independence is not binary,
+but correlation should be visible. Where the evaluator is weak or the stakes
+are high, the policy may route to deterministic tests, an external source, a
+different model family, or human review.
+
+This mechanism remains distinct from resource allocation. Governed
+Deliberation owns candidate custody, branching, revision, stopping,
+abstention, and bounded handoff. Resource Economics owns whether the complete
+deliberative route earns the capacity it consumes. A successful reasoning
+trace does not prove that it was the best use of the budget; a low-cost route
+does not prove that its reasoning policy was sound.
+
+## Compression Moves Burden
+
+Compression is often described as removing information. For governed systems,
+the more useful question is where the burden went. A smaller seed may require
+a decoder. A summary may require the source during review. A low-rank artifact
+may need a residual stream. A distilled procedure may need fallback when its
+use envelope changes. A compact model may save inference cost while increasing
+verification or repair.
+
+Compact Generative Systems treats a representation as a tuple of seed, rule,
+memory, residual, and governance. The representation earns use only when the
+system can state what it reconstructs, how it is checked, what remains outside
+it, who owns the residual, and when the full object returns. A representation
+that is small only because it discards an unpriced obligation has not reduced
+the system's burden. It has moved the burden into the future.
+
+The ingestion pipeline illustrates this with source compression. A concise
+source note can make later chapter work cheaper. It cannot replace the paper
+for a claim that depends on a precise method, limitation, or result. The note
+is a useful representation for routing and orientation. The original remains
+the authority for passage-level review. The lease differs by consumer use.
+
+RankFold and NeuralFold make the same problem concrete for stored artifacts.
+A compressed theorem index might reconstruct byte-for-byte in a sequential
+replay and still fail an interactive verifier that needs low-latency random
+access. The archive can be admitted for cold storage while being rejected for
+hot lookup. Compression ratio, reconstruction, access utility, latency, and
+evidentiary authority are separate claims.
+
+This is why the technique remains a technical dossier rather than becoming
+the general compression argument. RankFold/NeuralFold owns candidate
+transforms, artifact manifests, decoder constraints, access probes, WORM
+assumptions, local replay records, and benchmark burdens. Compact Generative
+Systems owns the broader rule that representation, reconstruction, residual,
+fallback, and consumer policy must remain joined. The general frame does not
+inherit a codec result, and the codec does not become a universal answer to
+representation cost.
+
+## One Allocation Decision
+
+The components now meet at the resource controller. For the paper-ingestion
+change, it can allocate the budget in stages:
+
+1. Retrieve the source and the smallest relevant project context without
+   weakening source custody.
+2. Use a cheap generator for an initial concept and owner map.
+3. Spend the strong-model slot on ambiguous ownership and source-boundary
+   decisions rather than on boilerplate.
+4. Run deterministic manifest, link, schema, and render checks.
+5. Use bounded deliberation only where candidates disagree or a strong
+   objection survives.
+6. Preserve the full paper while compiling a smaller source note for future
+   routing.
+7. Route the final residuals and a concise diff to the human reviewer.
+
+This sequence is not universally optimal. It is a policy hypothesis. Its value
+is that each expenditure has a reason and a consumer. Retrieval reduces
+irrelevant context. Cheap generation handles reversible proposal work. Strong
+inference addresses judgment-heavy boundaries. Deterministic tests check what
+they can actually decide. Deliberation is conditional rather than ambient.
+Compression accelerates later work without erasing the source. Human attention
+is reserved for consequences the automated checks do not settle.
+
+The controller should compare this policy with credible alternatives. A
+frontier-only baseline tests whether orchestration overhead outweighs savings.
+A fixed-depth deliberation baseline tests whether adaptive stopping helps. A
+no-compression baseline measures whether source notes merely add maintenance.
+A no-cache baseline measures real reuse. A stop-heavy governance baseline
+reveals false refusal and missed help. Every comparison should include the full
+attempt universe, not only accepted successes.
+
+## The Allocation Lease
+
+A useful controller needs more than a cost estimate. It needs a temporary
+agreement between the work and the resources being assigned to it. The book
+calls this a Resource Allocation Lease because the decision is scoped and
+expiring. It applies to one consumer, task class, risk level, workload,
+organization, resource pool, and time window. A route that was qualified for
+small documentation changes on one machine is not automatically qualified for
+security-critical code, a different model version, or a saturated shared
+cluster.
+
+The lease begins with the success condition. In the ingestion case, success
+means more than adding a citation. The paper must be preserved, the source note
+must distinguish proposals from results, each concept must reach the correct
+technical owner, existing claims must keep their support states, public links
+must resolve, and validation must pass. A route that adds the paper but loses
+its limitations is incomplete. A route that writes persuasive prose but
+silently promotes a claim is unsafe. A route that is correct but cannot be
+replayed leaves an operational residual.
+
+Next comes the resource inventory. The controller records which model slots,
+context windows, local tools, verifiers, storage tiers, reviewers, and
+execution permissions are available. Availability is not capability. A local
+model may be free in marginal dollars but constrained by memory and latency. A
+frontier model may be fast but rate-limited. A human reviewer may be competent
+but unavailable inside the deadline. A cache may exist but be invalid under
+the current source revision. The inventory has to describe the resource that
+can actually be used under the task's authority and timing constraints.
+
+Protected floors are applied before optimization. The source must remain
+recoverable. The final patch must pass deterministic checks. Any claim-bearing
+summary must retain its limitation. The write must stay inside the repository.
+These are not preferences that a cheap route can trade away. The controller
+can change the task's scope or ask for more resources, but it cannot declare a
+route efficient by removing the properties that define the product.
+
+Only then does the controller compare route offers. Each offer should describe
+its expected direct cost, uncertainty, failure modes, verification burden,
+fallback, and residual. A fast generator might offer low latency with a higher
+review burden. A reasoning route might offer better ownership decisions but
+consume the only scarce model slot. A compact source note might save future
+context but require maintenance whenever the paper changes. The lease records
+which trade was accepted and why.
+
+Execution does not close the lease. Actual costs must be reconciled with the
+estimate. The controller records cache misses, rejected candidates, retries,
+tool failures, reviewer time, and residuals discovered after the initial
+decision. Without reconciliation, every estimate can remain optimistically
+wrong forever. A route that repeatedly underprices repair should lose its
+qualification or receive a larger uncertainty reserve.
+
+Finally, the lease expires. Model upgrades, hardware changes, new failure
+evidence, source revisions, workload shifts, or a different consumer can all
+invalidate the old comparison. Expiry is not bureaucratic distrust. It is the
+recognition that efficiency is relational. A route is efficient for something,
+under conditions, compared with alternatives, during a period in which the
+evidence remains applicable.
+
+## A Worked Budget
+
+Consider a six-stage budget for the ingestion task. The figures below are
+illustrative units, not measured prices. Their purpose is to expose the
+decision structure.
+
+The first stage assigns four units to context construction. One unit loads the
+book's source policy and relevant owner records. Two units parse the paper and
+retain stable passage references. One unit retrieves the strongest neighboring
+chapters. Loading the entire repository would cost more and increase
+distraction; loading only the paper would make ownership guesses brittle.
+
+The second stage assigns three units to a cheap proposal route. It produces a
+concept list, candidate owner map, and explicit uncertainty flags. This route
+is not allowed to write the final crosswalk because its role is reversible
+proposal work. Its usefulness is measured by how much correct structure it
+surfaces for later adjudication, not by whether its first draft appears
+finished.
+
+The third stage reserves eight units of strong-model inference for the
+uncertain edges: whether a concept is genuinely unowned, whether two candidate
+chapters have distinct objects, and whether the paper reports evidence or only
+proposes an experiment. The expensive resource is concentrated where the
+decision depends on synthesis rather than formatting.
+
+The fourth stage allocates five units to deterministic machinery. Schema
+checks verify the source record. Manifest checks verify chapter identities.
+Link checks verify routes. A render checks that the public page compiles. These
+tests do not judge whether the paper was understood, but they cheaply reject
+many concrete failures. Spending model inference to imitate them would be both
+more expensive and less reliable.
+
+The fifth stage holds six units in reserve for bounded deliberation. The
+reserve is released only when the proposal and adjudication disagree, a
+neighbor boundary remains unclear, or a test failure suggests a semantic
+rather than mechanical defect. Unused deliberation is not a failure to think.
+It is capacity preserved because the stopping condition was met.
+
+The sixth stage reserves five minutes of human review. The reviewer sees the
+source boundary, owner decisions, changed claims, unresolved residuals, and
+validation result. They do not reread every generated token. This is an
+important economic property of structured artifacts: good machine work can
+reduce the review surface without pretending to remove human authority.
+
+Now change one condition. Suppose the new paper introduces a safety-critical
+claim whose assigned chapter has no competent external source. The previous
+budget no longer fits. The controller may spend more on source verification,
+route the claim to an evidence backlog, or narrow the integration to a clearly
+labeled proposal. It may not use the old cheap path and call the absent source
+an efficiency gain.
+
+Change another condition. Suppose the paper is a minor revision of an already
+ingested source and its digest shows that only the bibliography changed. Exact
+diffing and cached context may eliminate most proposal and adjudication work.
+The system should exploit that structure. Governance is not an instruction to
+repeat expensive reasoning when deterministic identity and change records can
+settle the question.
+
+The two cases reveal the purpose of adaptive allocation. More intelligence is
+not always more model inference. Sometimes it is the ability to spend less
+because identity, provenance, and invariants make the unchanged work visible.
+Sometimes it is the discipline to spend more because a changed claim crosses a
+protected boundary.
+
+## Failure Cases
+
+The first failure is **metric capture**. If the organization rewards tokens
+per second, the serving team can improve the metric while verification queues
+grow. If it rewards cost per accepted patch, difficult work may be refused or
+quietly routed away. If it rewards cache-hit rate, the system may increase
+reuse even where freshness matters. Every metric creates a selection pressure,
+so the ledger needs countermetrics and explicit protected floors.
+
+The second is **denominator loss**. A report may count successful requests but
+omit rejected candidates, timeouts, fallback runs, or tasks the policy refused.
+This makes selective systems look efficient by hiding the work they did not
+complete. The complete attempt universe must remain visible, with distinct
+states for proposed, attempted, verified, delivered, useful, refused,
+quarantined, recovered, and unresolved work.
+
+The third is **cost displacement**. Compression saves storage but increases
+decode latency. Faster generation increases reviewer burden. Aggressive
+stopping reduces compute but increases missed help. A local model reduces API
+spend but increases operator maintenance. These may still be good trades, but
+the receiving cost center cannot be treated as external to the decision.
+
+The fourth is **verification starvation**. A controller can allocate so much
+capacity to generation that the verifier becomes the bottleneck. More
+candidates then increase waiting time without increasing accepted output. In a
+governed system, verification bandwidth is a scarce production resource. High
+generation capacity without matching judgment capacity can reduce useful
+throughput.
+
+The fifth is **correlated confidence**. Parallel candidates, critics, and
+verifiers may share a model, training lineage, retrieval corpus, or prompt
+assumption. Counting each as independent exaggerates evidence. Resource
+accounting should record dependence because paying for several correlated
+opinions may buy less uncertainty reduction than one genuinely different
+check.
+
+The sixth is **fallback fiction**. A design may claim safety because a slower
+exact path exists, even though the fallback is too expensive, unavailable
+under load, or untested after a version change. Fallback belongs in both the
+technical contract and the economic model. Its activation rate, latency,
+capacity, and recovery behavior have to be observed.
+
+The seventh is **residual aging**. Deferring an unresolved problem can be the
+right decision, but a residual that is never revisited becomes invisible debt.
+The ledger should charge carrying cost and identify the condition that would
+reopen the decision. Otherwise deferral can masquerade as closure.
+
+The eighth is **controller overhead**. Rich schemas, estimators, and approval
+logic can consume more effort than they save. This is the strongest practical
+objection because it attacks the architecture on its own efficiency terms. The
+answer must be empirical and modular: use the smallest accounting surface that
+changes consequential decisions, automate stable observations, and retire
+fields that do not improve allocation or review.
+
+## Evidence and Experiments
+
+The chapter's central claim is still architectural. It is supported by source
+synthesis, bounded formal models, synthetic route tests, and several narrow
+local campaigns across the technical owners. Those assets clarify interfaces
+and expose failure modes. They do not establish that the combined allocation
+system outperforms a strong simple baseline in natural operation.
+
+A credible test would freeze a family of real tasks before outcomes and compare
+at least four policies: a strong-model-only route, a fixed low-cost route, a
+fixed deliberation route, and the governed adaptive controller. All policies
+would receive the same task universe and product contract. The study would
+measure accepted useful completion, unsafe or unauthorized effects, false
+refusal, defect escape, latency distributions, model and tool cost, memory and
+storage, reviewer time, recovery, and residual burden.
+
+The experiment must also separate mechanisms. Disable cache reuse while
+holding the route constant. Disable adaptive stopping while preserving the
+same maximum reasoning budget. Remove source compression but preserve
+retrieval. Replace the qualified verifier with a correlated self-check. These
+ablations reveal whether a gain came from routing, reuse, deliberation,
+verification, or a hidden shift in the denominator.
+
+Transfer matters because resource policies are especially workload-dependent.
+A controller tuned on repository maintenance may fail on scientific analysis,
+long-running operations, or interactive assistance. Hardware changes can
+reverse a paging decision. A model update can change speculative acceptance.
+A new reviewer interface can change the human-cost frontier. Claims should
+therefore remain tied to the workload and platform until prospective transfer
+tests justify a wider scope.
+
+Negative results are valuable here. If adaptive deliberation corrupts more
+initially correct answers than it repairs, the policy should narrow. If a
+compact representation increases the complete packet size, the broad
+efficiency claim should fail for that implementation. If governance overhead
+eliminates the utility gain, the controller should simplify rather than
+relabel the overhead as an unmeasured benefit.
+
+The decisive evidence is not a benchmark win in one component. It is a matched
+effect-complete comparison in which the governed route improves the frontier
+after all required costs and failures are counted. Until then, the
+architecture is a disciplined hypothesis about how to make such comparisons
+possible.
+
+## Human Time and Organizational Cost
+
+The most neglected resource is often human attention. Compute is metered by
+default; reviewer interruption, context switching, uncertainty, and recovery
+work usually are not. An automated route can look cheap because it produces a
+large volume of plausible work while transferring the burden of identifying
+the bad fraction to people downstream.
+
+In the ingestion case, a twenty-page machine report is not necessarily better
+than a one-page decision packet. The reviewer needs the changed owner map, the
+source limitations, the claims affected, the unresolved questions, and the
+validation state. Every extra detail competes for attention with those
+decisions. The technical evidence should remain reachable, but the default
+review surface should be shaped around the authority the person is expected to
+exercise.
+
+This creates a subtle compression problem. Summarizing the review packet can
+reduce cognitive load, but it can also hide the very uncertainty the reviewer
+needs to see. The correct target is not the shortest report. It is the minimum
+sufficient decision surface: enough context to understand the consequence,
+inspect the contested evidence, reject the recommendation, and recover the
+deeper trace when needed.
+
+Human time also has temporal structure. Five minutes of planned review during
+a focused session is not equivalent to five one-minute interruptions. A queue
+that sends every uncertain detail to a person can destroy the concentration
+needed for the hardest decisions. Resource policy should batch compatible
+reviews, preserve priority, and distinguish urgent intervention from work that
+can wait. Latency objectives should include the cost of interrupting the
+reviewer, not only the time until the model receives an answer.
+
+Organizational ownership matters for the same reason. A route can be globally
+expensive while looking cheap to the team that runs it. A generator team may
+externalize defects to maintainers. An infrastructure team may optimize
+utilization at the expense of tail latency for safety review. A governance team
+may add controls whose operator cost is never measured. A serious ledger
+assigns displaced costs to the route and makes the responsible owner visible.
+
+That does not mean every consequence receives a precise price. Some values are
+better represented as constraints: privacy rights, prohibited effects,
+minimum review authority, or required recovery. Others can be measured but
+should stay separate because the conversion rate is contested. The point of
+the ledger is not to turn every value into money. It is to stop local metrics
+from making other people's burdens disappear.
+
+## From Minimum Implementation to Mature System
+
+The minimum viable resource layer can be small. It needs a typed request, a
+few eligible routes, protected floors, a complete route-cost record, a
+verification result, a fallback, actual-cost reconciliation, and an owned
+residual. A simple policy can choose the least costly eligible route and refuse
+to compare routes that omit required obligations. This already improves on a
+token-only scheduler because it changes what counts as a candidate.
+
+The minimum generation integration likewise needs only a few modes: a direct
+baseline, one accelerated path, and a fallback. It records attempted and
+accepted output separately. The minimum deliberation integration offers direct
+generation, one bounded revision, and abstention, with a stop rule fixed before
+outcomes. The minimum compression integration preserves the source, records
+the decoder, tests one consumer use, and falls back when the probe fails.
+
+Even this small implementation should avoid false precision. Early cost
+estimates can be intervals or ordinal classes. Reviewer burden can be measured
+in coarse minutes and interruptions. Residuals can be counted by age and risk
+class. The goal is to support better decisions, not to fabricate an economic
+science from sparse local observations.
+
+A mature system would learn resource policies without allowing the learner to
+rewrite its own protected floors. It would forecast queueing and memory
+pressure, estimate the value of additional deliberation, choose verifier
+independence under a budget, decide when to materialize or evict context, and
+price recovery before effects are committed. It would carry uncertainty
+through the decision instead of collapsing every forecast to a point estimate.
+
+The mature controller would also understand portfolios. Spending all capacity
+on the currently highest-scoring route can create monoculture and correlated
+failure. Maintaining a slower independent verifier, a different model family,
+or an uncompressed source may look inefficient during ordinary operation but
+be valuable as resilience. The policy must distinguish waste from reserve.
+
+At larger scale, resource governance becomes institutional. Different teams,
+tenants, or organizations contend for compute, energy, network, data access,
+and human oversight. Allocation rules then express priorities and rights. Who
+gets delayed? Which work receives scarce verification? Who bears the energy or
+infrastructure cost? Which communities can contest the policy? These questions
+cannot be answered by a model's internal utility estimate alone.
+
+The logical endpoint is not a universal optimizer that assigns one score to
+everything. It is a governed market of typed resource offers and obligations:
+generation routes state what they can do; deliberation policies state how they
+spend inference; verifiers state their scope and dependence; compression
+leases state what they preserve; human and institutional owners state
+protected constraints; the controller composes an allocation and leaves a
+receipt that can be challenged.
+
+Such a system could still decide quickly. Mature governance should move stable
+rules into compiled policy, reuse qualified routes, and reserve deliberation
+for changed conditions. The long-term ambition is not more ceremony around
+every token. It is a system that knows which decisions are routine, which are
+novel, which are irreversible, and which evidence would justify spending more
+or less.
+
+The architecture reaches beyond current practice when resource allocation,
+semantic compression, inference acceleration, deliberation, verification, and
+human review are optimized jointly while remaining separately accountable.
+That joint optimization is the destination, not a result this book claims to
+have achieved.
+
+One final discipline keeps that destination honest: the controller must retain
+the option to conclude that optimization is not worth doing. For a rare,
+high-consequence task, the expensive baseline may be the correct choice. For a
+tiny reversible edit, the full allocation protocol may cost more than the work.
+For a workload whose uncertainty cannot be estimated competently, fixed
+conservative limits may be better than adaptive confidence. A governed
+resource layer is not committed to sophistication. It is committed to making
+the reason for simplification visible and revisable.
+
+That principle also protects the book from its own architecture. The five
+technical owners synthesized here should remain separate only while their
+distinct responsibilities improve explanation, testing, or control. If
+matched evidence shows that a smaller interface preserves accepted useful
+work, failure containment, recovery, and full cost, the stack should contract.
+Efficiency is not merely a claim about models. It is a demand that the
+governance machinery itself justify the burden it creates.
+
+The practical review question is therefore two-sided. Did the chosen route
+spend enough to preserve the product, and did it avoid spending resources that
+did not change the outcome? A system that answers only the first question can
+be safe but unusably expensive. A system that answers only the second can be
+fast but untrustworthy. Cognitive resource economics exists to keep both
+questions attached to the same decision.
+
+The strongest objection is that this accounting can become optimization
+theater. Estimates can be wrong. Teams can assign artificial prices to
+uncomfortable residuals. The ledger itself consumes time. A controller can be
+more complicated than the work it schedules. These are real failure modes, not
+reasons to return to invisible allocation.
+
+The response is to scale accounting with consequence and uncertainty. Small,
+reversible tasks can use coarse budgets and standard routes. High-cost,
+high-risk, or novel work receives richer records. Estimates are reconciled
+against actuals. Categories that never affect decisions should be removed.
+Protected floors remain policy constraints rather than negotiable weights.
+The resource layer earns its place only when it changes a decision or makes a
+hidden tradeoff inspectable.
+
+Matched deployments could still narrow the chapter's conclusion. If one
+general model with a simple fixed policy matches governed allocation on
+accepted useful work, unsafe effects, false refusal, latency, full cost,
+recovery, and reviewer burden, much of this machinery should be retired. If
+static budgets perform as well as adaptive leases, the dynamic controller is
+unnecessary. The architecture should not preserve complexity for its own
+sake.
+
+## What This Establishes
+
+The argument establishes a division of responsibility. Fast Generation owns
+qualified acceleration mechanisms. Governed Deliberation owns the policy for
+spending extra inference on branches, revisions, stopping, and abstention.
+Compact Generative Systems owns reconstruction and residual honesty.
+RankFold/NeuralFold owns one candidate artifact-compression family. Resource
+Economics owns the complete allocation decision across all of them.
+
+It does not establish that the proposed controller is economically optimal,
+that any accelerated route transfers to production, that more reasoning is
+reliably beneficial, or that RankFold/NeuralFold beats standard codecs. The
+technical book contains bounded proofs, tests, and local results for narrower
+interfaces, but the five chapter cores remain at their recorded evidence
+ceilings. The Human Reader synthesis does not combine those ceilings into a
+stronger claim.
+
+The practical rule is simpler than the machinery: optimize accepted useful
+outcomes after the complete bill is visible. Do not call omitted verification
+a saving, a hidden residual compression, an unaccepted token throughput, or a
+longer reasoning trace evidence. Spend expensive cognition where it changes
+the decision, preserve the fallback, and keep the burden attached to the route
+that created it.
+
+The next chapter follows the bill into the physical world. Models, caches,
+storage, networks, energy systems, cooling, and supply chains determine which
+cognitive policies are feasible and who bears their cost. Physical compute is
+not a neutral footnote to resource economics; it is the substrate on which the
+ledger becomes real.

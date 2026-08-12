@@ -132,7 +132,7 @@ def build_preview(structure: dict) -> dict:
     return {
         "schema_version": 1,
         "product_id": "editorial-migration-metadata-preview",
-        "state": "metadata_preview_no_public_cutover",
+        "state": "method_detail_pilot_composed_no_public_cutover",
         "sources": ["book_structure.json", "docs/human_reader_26_unit_outline.md"],
         "book_structure_sha256": digest(STRUCTURE),
         "human_reader_outline_sha256": digest(OUTLINE),

@@ -6,6 +6,7 @@ from __future__ import annotations
 import copy
 import json
 from pathlib import Path
+from typing import Optional
 
 from build_editorial_migration_preview import (
     OUTLINE,
@@ -46,13 +47,58 @@ EXPECTED_VISIBILITY = {
     "research_dossier_owner": "research_dossier",
     "generated_back_matter_owner": "generated_back_matter",
 }
+COMPOSED_PARENT_IDS = {
+    "resource-economics-and-token-budgets",
+    "compact-generative-systems-and-residual-honesty",
+}
+COMPOSED_CHILD_IDS = {
+    "fast-generation-architectures",
+    "governed-deliberation-and-test-time-scaling",
+    "rankfold-neuralfold-and-artifact-compression",
+}
+COMPOSITION_SURFACES = {
+    "resource-economics-and-token-budgets": (
+        "chapters/resource-economics-and-token-budgets.qmd",
+        [
+            "### Generation mode and deliberation depth are allocation decisions",
+            "[Fast Generation Architectures](fast-generation-architectures.qmd)",
+            "[Governed Deliberation and Test-Time Scaling](governed-deliberation-and-test-time-scaling.qmd)",
+            "inherits another's claim support",
+        ],
+    ),
+    "compact-generative-systems-and-residual-honesty": (
+        "chapters/compact-generative-systems-and-residual-honesty.qmd",
+        [
+            "### RankFold and NeuralFold as a technical method dossier",
+            "(rankfold-neuralfold-and-artifact-compression.qmd)",
+            "does not inherit a codec result",
+        ],
+    ),
+    "fast-generation-architectures": (
+        "chapters/fast-generation-architectures.qmd",
+        ["### Publication placement and preserved technical ownership", "(resource-economics-and-token-budgets.qmd)"],
+    ),
+    "governed-deliberation-and-test-time-scaling": (
+        "chapters/governed-deliberation-and-test-time-scaling.qmd",
+        ["### Publication placement and preserved technical ownership", "(resource-economics-and-token-budgets.qmd)"],
+    ),
+    "rankfold-neuralfold-and-artifact-compression": (
+        "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
+        ["### Publication placement and preserved technical ownership", "(compact-generative-systems-and-residual-honesty.qmd)"],
+    ),
+}
 
 
 def load(path: Path) -> object:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def validate(structure: dict, status: dict, preview: dict) -> list[str]:
+def validate(
+    structure: dict,
+    status: dict,
+    preview: dict,
+    surface_texts: Optional[dict[str, str]] = None,
+) -> list[str]:
     errors: list[str] = []
     rows = chapters(structure)
     ids = {row.get("id") for row in rows}
@@ -100,8 +146,13 @@ def validate(structure: dict, status: dict, preview: dict) -> list[str]:
             errors.append(f"{chapter_id}: legacy identity or route drift")
         if publication.get("claim_ownership") != "preserved_local_no_inheritance":
             errors.append(f"{chapter_id}: claim ownership can be inherited")
-        if publication.get("editorial_state") != "metadata_classified_prose_unchanged":
-            errors.append(f"{chapter_id}: EM1 changed prose-composition state")
+        expected_editorial_state = "metadata_classified_prose_unchanged"
+        if chapter_id in COMPOSED_PARENT_IDS:
+            expected_editorial_state = "family_composed_preserving_technical_owners"
+        elif chapter_id in COMPOSED_CHILD_IDS:
+            expected_editorial_state = "composed_preserving_technical_owner"
+        if publication.get("editorial_state") != expected_editorial_state:
+            errors.append(f"{chapter_id}: editorial composition state drift")
         if publication.get("support_state_effect") != "none":
             errors.append(f"{chapter_id}: metadata migration changed support state")
         unit_id = row.get("human_reader_unit_id")
@@ -127,10 +178,32 @@ def validate(structure: dict, status: dict, preview: dict) -> list[str]:
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em1_metadata_classified_preview_generated":
-        errors.append("editorial migration state does not record EM1 completion")
+    if editorial.get("state") != "em2_method_detail_pilot_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record the EM2 method-detail pilot")
+    expected_package = {
+        "id": "em2-method-detail-pilot",
+        "state": "composed_no_public_cutover",
+        "parent_ids": sorted(COMPOSED_PARENT_IDS),
+        "child_ids": sorted(COMPOSED_CHILD_IDS),
+        "stable_technical_routes_preserved": True,
+        "claim_support_inheritance": False,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    if editorial.get("completed_composition_packages") != [expected_package]:
+        errors.append("EM2 method-detail pilot receipt drifted")
     if editorial.get("support_state_effect") != "none" or editorial.get("release_effect") != "none":
         errors.append("editorial migration moved support or release state")
+    if surface_texts is None:
+        surface_texts = {
+            chapter_id: (ROOT / path).read_text(encoding="utf-8")
+            for chapter_id, (path, _) in COMPOSITION_SURFACES.items()
+        }
+    for chapter_id, (_, fragments) in COMPOSITION_SURFACES.items():
+        text = surface_texts.get(chapter_id, "")
+        for fragment in fragments:
+            if fragment not in text:
+                errors.append(f"{chapter_id}: missing composition boundary {fragment!r}")
     return errors
 
 
@@ -157,6 +230,16 @@ def main() -> None:
     for label, altered in mutations:
         if not validate(altered, status, build_preview(altered)):
             errors.append(f"negative control accepted: {label}")
+    surfaces = {
+        chapter_id: (ROOT / path).read_text(encoding="utf-8")
+        for chapter_id, (path, _) in COMPOSITION_SURFACES.items()
+    }
+    altered_surfaces = dict(surfaces)
+    altered_surfaces["resource-economics-and-token-budgets"] = altered_surfaces[
+        "resource-economics-and-token-budgets"
+    ].replace("inherits another's claim support", "shares claim support")
+    if not validate(structure, status, preview, altered_surfaces):
+        errors.append("negative control accepted: composition-boundary erasure")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -164,7 +247,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 3 rejecting controls."
+        "and 4 rejecting controls."
     )
 
 

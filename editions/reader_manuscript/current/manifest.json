@@ -1,0 +1,657 @@
+{
+  "schema_version": "asi_stack.human_reader_current.v1",
+  "edition_id": "human-reader-current",
+  "state": "independent_manuscript_in_progress",
+  "source_graph": "book_structure.json",
+  "source_outline": "docs/human_reader_26_unit_outline.md",
+  "book_structure_sha256": "01a5dc46a69c4ab5befc571a4e50075af210f3bb8c8bea7b3809ddca938ffa35",
+  "outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
+  "unit_count": 26,
+  "owner_route_count": 87,
+  "started_unit_count": 1,
+  "target_length_unit_count": 1,
+  "visible_word_count": 5508,
+  "units": [
+    {
+      "unit_id": "unit-01",
+      "order": 1,
+      "title": "ASI Is a Stack, Not a Model",
+      "owner_ids": [
+        "asi-is-a-stack-not-a-model"
+      ],
+      "narrative_job": "Replace the image of a single superintelligent model with a system of distinct responsibilities and governed transitions, then establish noninheritance as the book's central engineering law.",
+      "central_question": "What must remain separate for advanced intelligence to be understandable, governable, repairable, and replaceable?",
+      "strongest_objection": "Explicit layers may discard useful information and create ceremony that a capable end-to-end model could avoid.",
+      "conclusion_change": "Matched natural deployments in which a simpler monolith is equally controllable, observable, recoverable, useful, and affordable would narrow or reject parts of the stack thesis.",
+      "handoff": "Separation has a cost, so Unit 2 asks whether routing, reuse, and specialization can pay for the architecture rather than merely decorate it.",
+      "target_min_words": 4500,
+      "target_max_words": 6000,
+      "source_file": "chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-02",
+      "order": 2,
+      "title": "The Efficient ASI Hypothesis",
+      "owner_ids": [
+        "the-efficient-asi-hypothesis"
+      ],
+      "narrative_job": "State the book's efficiency hypothesis without treating token reduction, benchmark speed, or smaller models as automatic system-level improvement.",
+      "central_question": "Can a governed stack produce more accepted useful work per unit of total lifecycle cost than frontier-model-only operation?",
+      "strongest_objection": "Governance and routing overhead may exceed any savings from specialization or reuse.",
+      "conclusion_change": "Full-cost matched workloads showing no risk-adjusted quality, throughput, or recovery advantage would reject or sharply narrow the hypothesis.",
+      "handoff": "Efficiency is meaningful only inside an authority boundary, which Unit 3 develops through concrete failure and misuse cases.",
+      "target_min_words": 4500,
+      "target_max_words": 6000,
+      "source_file": "chapters/unit-02-the-efficient-asi-hypothesis.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-03",
+      "order": 3,
+      "title": "Authority, Failure, and Misuse",
+      "owner_ids": [
+        "system-boundaries-and-authority",
+        "failure-modes-of-ungoverned-intelligence",
+        "dangerous-capability-domains-and-misuse-uplift",
+        "military-ai-autonomous-weapons-and-strategic-stability"
+      ],
+      "narrative_job": "Show why proposing, approving, executing, observing, and releasing are different acts, then pressure-test that distinction against ordinary failure, dual-use uplift, and high-consequence domains.",
+      "central_question": "Who may cause which effect, under what conditions, and who owns the result when capability outruns authority or observation?",
+      "strongest_objection": "Typed authority can become ceremonial metadata when the runtime, operator, or institution can bypass it.",
+      "conclusion_change": "Simpler permission systems that resist revocation, bypass, confused-deputy, escalation, and residual-loss failures equally well would justify a smaller boundary model.",
+      "handoff": "Authority cannot survive an untrusted substrate, so Unit 4 moves downward into security, privacy, computation, and artifact custody.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-03-authority-failure-and-misuse.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-04",
+      "order": 4,
+      "title": "Security, Privacy, and AI Artifact Custody",
+      "owner_ids": [
+        "security-kernel-and-digital-scifs",
+        "adversarial-machine-learning-and-model-attack-surface",
+        "privacy-data-rights-and-information-flow-governance",
+        "confidential-and-verifiable-ai-computation",
+        "model-weight-custody-and-hardware-roots-of-trust",
+        "open-weight-release-and-post-release-control",
+        "ai-supply-chain-integrity-and-lifecycle-provenance"
+      ],
+      "narrative_job": "Establish the trusted base beneath cognitive governance and follow data, models, dependencies, keys, attestations, and release decisions through their distinct custody lifecycles.",
+      "central_question": "What must remain outside the model so that untrusted content, compromised components, private data, and irreversible releases do not silently acquire authority?",
+      "strongest_objection": "Hardware roots, attestations, provenance records, and policy kernels can all be compromised or produce false assurance about the larger system.",
+      "conclusion_change": "Evidence that a materially smaller trusted base preserves confidentiality, integrity, revocation, provenance, and post-release risk at lower burden would narrow the design.",
+      "handoff": "Secure records still do not tell us what to believe, so Unit 5 turns from custody to evidence and scalable review.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-05",
+      "order": 5,
+      "title": "Evidence States and Scalable Oversight",
+      "owner_ids": [
+        "evidence-states-and-claim-discipline",
+        "scalable-oversight-and-adversarial-ai-control",
+        "white-box-evidence-interpretability-and-activation-governance"
+      ],
+      "narrative_job": "Explain how support changes without laundering nearby claims, then connect scalable oversight and internal-model evidence to the same identity-bound discipline.",
+      "central_question": "How can limited evaluators learn from behavior, internal signals, proofs, and delegated review without letting any one artifact stand in for truth or safety?",
+      "strongest_objection": "Evidence labels and oversight hierarchies may create an aura of rigor while dependence, weak constructs, and reviewer incapacity remain unchanged.",
+      "conclusion_change": "Natural correction streams in which simpler review records produce equal calibration, challenge, and error recovery would justify a smaller transition system.",
+      "handoff": "Oversight itself can be manipulated or misunderstand intent, so Unit 6 centers the human as principal, reviewer, and epistemic target.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-06",
+      "order": 6,
+      "title": "Human Intent, Control, and Epistemic Security",
+      "owner_ids": [
+        "human-intent-as-a-formal-input",
+        "human-factors-and-meaningful-control-in-oversight",
+        "human-ai-communication-persuasion-and-epistemic-security",
+        "intent-to-execution-contracts"
+      ],
+      "narrative_job": "Turn human intent from an assumed prompt property into a revisable formal input while accounting for attention, comprehension, persuasion, disagreement, revocation, and the cost of meaningful control.",
+      "central_question": "How does an ambiguous human request become bounded work without inventing permission or manipulating the person who must approve it?",
+      "strongest_objection": "Formal intent contracts can harden a mistaken interpretation and shift genuine human judgment into unread fields.",
+      "conclusion_change": "User studies showing lighter clarification and control mechanisms produce fewer consequential intent and manipulation failures at lower burden would narrow the contract.",
+      "handoff": "Individual intent cannot settle conflicting values, so Unit 7 moves from commands to constitutions and objective formation.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-06-human-intent-control-and-epistemic-security.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-07",
+      "order": 7,
+      "title": "Constitutions, Moral Uncertainty, and Objective Formation",
+      "owner_ids": [
+        "constitutional-alignment-substrate",
+        "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+        "moral-uncertainty-and-value-conflict",
+        "governed-objective-formation-value-learning-and-goal-integrity"
+      ],
+      "narrative_job": "Show how protected commitments, unresolved value conflict, learned objectives, amendment, and appeal can coexist without allowing an optimizer to ratify its own purpose.",
+      "central_question": "How should a system act when objectives are learned, values conflict, and no single preference can legitimately settle the case?",
+      "strongest_objection": "A formal constitution may freeze contested values, centralize power, and provide only the appearance of alignment.",
+      "conclusion_change": "Pluralistic mechanisms with fewer capture, rigidity, evasion, and review-burden failures would replace or sharply narrow the proposed substrate.",
+      "handoff": "Constitutions need legitimate institutions, which Unit 8 treats as an engineering dependency rather than an assumed source of authority.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-08",
+      "order": 8,
+      "title": "Institutions, Coordination, and Societal Resilience",
+      "owner_ids": [
+        "institutions-international-coordination-and-public-legitimacy",
+        "societal-resilience-and-misuse-defense"
+      ],
+      "narrative_job": "Extend governance from one system to affected publics, jurisdictions, competing organizations, international coordination, remedy, and recovery under diffuse or cumulative harm.",
+      "central_question": "What makes an AI governance decision legitimate and resilient when authority, harms, and affected parties cross institutional boundaries?",
+      "strongest_objection": "Institutional machinery can entrench incumbents, diffuse accountability, and move more slowly than the harms it governs.",
+      "conclusion_change": "Leaner institutional designs that preserve standing, remedy, coordination, and recovery with less capture and delay would justify consolidation.",
+      "handoff": "Part II begins by asking how stable technical capabilities can change behind these governance boundaries without inheriting readiness.",
+      "target_min_words": 4500,
+      "target_max_words": 6500,
+      "source_file": "chapters/unit-08-institutions-coordination-and-societal-resilience.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-09",
+      "order": 9,
+      "title": "Stable Capability Fields and Governed Replacement",
+      "owner_ids": [
+        "stable-capability-fields",
+        "capability-replacement-and-rollback"
+      ],
+      "narrative_job": "Separate stable capability identity from changing implementation identity and make qualification, migration, rollback, and retirement properties of each replacement rather than inherited reputation.",
+      "central_question": "How can a system change its models, tools, memories, and substrates without losing the contract that makes those changes governable?",
+      "strongest_objection": "Stable field names can hide semantic drift and make incomparable components appear interchangeable.",
+      "conclusion_change": "Natural replacement studies showing no continuity, challenge, or recovery benefit beyond conventional versioning would weaken the abstraction.",
+      "handoff": "A replaceable capability must still know what happened, so Unit 10 starts the cognitive path with observation trust.",
+      "target_min_words": 4500,
+      "target_max_words": 6000,
+      "source_file": "chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-10",
+      "order": 10,
+      "title": "Perception and Observation Trust",
+      "owner_ids": [
+        "perception-sensor-fusion-and-observation-trust",
+        "embodied-agency-real-time-control-and-physical-safety"
+      ],
+      "narrative_job": "Establish observations as provenance-bearing, fallible inputs rather than direct reality, then extend that discipline to real-time physical control where latency and irreversible effects matter.",
+      "central_question": "When may a system treat sensor, tool, human, or environmental reports as independent-enough evidence about actual state?",
+      "strongest_objection": "Provenance fields cannot guarantee independence, calibration, or physical truth and may merely document correlated error.",
+      "conclusion_change": "Simpler fusion and control systems with equal calibration, contradiction detection, latency, and recovery would justify a thinner trust model.",
+      "handoff": "Observations become useful when organized into predictions and causal alternatives, which Unit 11 assigns to governed world models.",
+      "target_min_words": 4500,
+      "target_max_words": 6500,
+      "source_file": "chapters/unit-10-perception-and-observation-trust.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-11",
+      "order": 11,
+      "title": "Governed World Models and Reality Grounding",
+      "owner_ids": [
+        "governed-world-models-and-reality-grounding"
+      ],
+      "narrative_job": "Keep simulations, predictions, interventions, observations, and reconciled beliefs distinct while showing how their mismatch drives useful learning and control.",
+      "central_question": "How can a system reason over possible worlds without confusing a successful simulation or plausible story with actual state?",
+      "strongest_objection": "World-model governance may add records without improving prediction, causal identification, calibration, or action.",
+      "conclusion_change": "Strong predictive and causal baselines with simpler branch discipline and equal intervention value would justify collapsing the extra machinery.",
+      "handoff": "A world model can compare futures, but Unit 12 must decide how a plan coordinates them without becoming permission.",
+      "target_min_words": 4500,
+      "target_max_words": 6000,
+      "source_file": "chapters/unit-11-governed-world-models-and-reality-grounding.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-12",
+      "order": 12,
+      "title": "Planning as a Control Layer",
+      "owner_ids": [
+        "planning-as-a-control-layer"
+      ],
+      "narrative_job": "Treat plans as versioned, challengeable control artifacts that coordinate dependencies and alternatives without granting execution authority.",
+      "central_question": "How can a plan remain useful when assumptions, context, costs, and authority change during execution?",
+      "strongest_objection": "Detailed plans can be expensive and brittle in environments that change faster than they can be checked.",
+      "conclusion_change": "Dynamic-task studies in which direct reactive control is safer, cheaper, and more recoverable would narrow when explicit planning should activate.",
+      "handoff": "Plans need executable representations, so Unit 13 follows meaning through cognitive compilation and search.",
+      "target_min_words": 4500,
+      "target_max_words": 6000,
+      "source_file": "chapters/unit-12-planning-as-a-control-layer.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-13",
+      "order": 13,
+      "title": "Cognitive Compilation and Semantic IR",
+      "owner_ids": [
+        "cognitive-compilation-and-semantic-ir",
+        "relational-dimension-compilation-and-polyadic-cognition",
+        "mathematical-and-search-substrates"
+      ],
+      "narrative_job": "Explain how intent, relations, constraints, and knowledge can be lowered into efficient executable forms while semantic loss, alternatives, and rescue paths remain visible.",
+      "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
+      "strongest_objection": "Semantic IRs may become brittle private languages that discard nuance while presenting an illusion of interoperability.",
+      "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
+      "handoff": "Compiled work needs exact, revisable inputs, so Unit 14 develops context transactions and durable semantic memory together.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-14",
+      "order": 14,
+      "title": "Virtual Context and Durable Semantic Memory",
+      "owner_ids": [
+        "virtual-context-abi",
+        "durable-semantic-memory-and-knowledge-lattices",
+        "context-transactions-snapshots-mounts-and-taint"
+      ],
+      "narrative_job": "Separate temporary working context from durable belief while giving both identity, provenance, freshness, taint, rights, contradiction, revocation, and deletion semantics.",
+      "central_question": "How should a system mount what it needs now and preserve what it may need later without treating presence, repetition, or retrieval as truth?",
+      "strongest_objection": "Structured context and memory may amplify early errors and impose false precision while retrieval quality still dominates outcomes.",
+      "conclusion_change": "Simpler retrieval and memory systems matching provenance, contradiction handling, forgetting, transfer, revocation, and cost would justify a thinner layer.",
+      "handoff": "Available information is not necessarily reviewable information, so Unit 15 turns to verification bandwidth and claim custody.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-15",
+      "order": 15,
+      "title": "Verification Bandwidth, Claim Ledgers, and Proof",
+      "owner_ids": [
+        "verification-bandwidth-and-context-adequacy",
+        "claim-ledgers-and-belief-revision",
+        "spinoza-verification-and-proof-carrying-claims",
+        "circle-calculus-and-proof-carrying-ai-contracts",
+        "executable-specifications-and-lean-proof-envelope"
+      ],
+      "narrative_job": "Join reviewer capacity, evidence, defeaters, formal proof, runtime observation, and belief revision without allowing any one of them to stand in for the others.",
+      "central_question": "What must be connected for a claim to remain challengeable, scoped, and correctable as evidence and consumers change?",
+      "strongest_objection": "Rich ledgers and proofs can preserve impeccable metadata around a false or irrelevant conclusion while exhausting review capacity.",
+      "conclusion_change": "Simpler evidence records that produce equal correction, calibration, proof-scope discipline, and consumer repair would justify consolidation.",
+      "handoff": "Accepted claims and plans still need accountable work, so Unit 16 turns the architecture into jobs, work surfaces, and organizations.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-16",
+      "order": 16,
+      "title": "Labor OS, Work Surfaces, and Organizations",
+      "owner_ids": [
+        "labor-os-and-typed-jobs",
+        "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+        "human-ai-organizations-delegation-and-accountability",
+        "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+        "ai-deployment-transition-distribution-and-human-agency"
+      ],
+      "narrative_job": "Explain how humans, agents, tools, and institutions share work without losing task identity, responsibility, recourse, cognitive agency, or the ability to distinguish assistance from organizational replacement.",
+      "central_question": "How does increasingly autonomous AI absorb work surfaces and organizational roles while accountability and human agency remain real?",
+      "strongest_objection": "A labor operating system may bureaucratize work, obscure responsibility in records, and normalize displacement under the label of efficiency.",
+      "conclusion_change": "Conventional issue, CI, organizational, and assistive workflows matching continuity, agency, remedy, and recovery at lower burden would narrow the layer.",
+      "handoff": "Work becomes real through artifacts and effects, which Unit 17 follows through runtime operation and incident recovery.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-17",
+      "order": 17,
+      "title": "Artifact Graphs, Runtime Effects, and Operations",
+      "owner_ids": [
+        "artifact-graphs-audit-logs-and-replay",
+        "runtime-adapters-tool-permissions-and-human-approval",
+        "governed-operations-incident-command-and-graceful-degradation"
+      ],
+      "narrative_job": "Follow owned work into immutable artifacts, least-privilege effects, actual-state observation, incident command, graceful degradation, and recovery without mistaking logs for reality.",
+      "central_question": "Which runtime boundary turns approved proposals into observable effects and keeps the system governable when those effects fail?",
+      "strongest_objection": "Audit and adapter layers can invite rubber-stamping while tools escape declared boundaries and logs omit the effect that matters.",
+      "conclusion_change": "Simpler wrappers and operations systems matching provenance, revocation, incident containment, observation, and recovery would narrow the contract.",
+      "handoff": "One successful operation may become reusable procedure and may cross system boundaries, which Unit 18 governs explicitly.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-18",
+      "order": 18,
+      "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
+      "owner_ids": [
+        "inter-stack-protocols-identity-and-economic-exchange",
+        "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+        "procedural-memory-and-cognitive-loop-closure"
+      ],
+      "narrative_job": "Show how validated work becomes reusable procedure and how procedures, authority, artifacts, and value move between stacks without hiding population-level conflict, collusion, concentration, or systemic failure.",
+      "central_question": "What must accompany a reusable skill or inter-agent transaction so that local validity does not become global permission or systemic safety?",
+      "strongest_objection": "Protocol and procedural formality may not predict emergent behavior and can legitimize harmful markets that satisfy every local rule.",
+      "conclusion_change": "Simpler skill stores and agent protocols that preserve retirement, accountability, dispute, and systemic-risk detection at lower cost would justify consolidation.",
+      "handoff": "Part III asks how the stack chooses its cognitive machinery, learns from experience, and decides when any improvement deserves promotion.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-19",
+      "order": 19,
+      "title": "Routing and Replaceable Cognitive Substrates",
+      "owner_ids": [
+        "routing-heads-and-specialist-cores",
+        "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+        "coil-attention-cyclic-memory-and-recurrence-contracts",
+        "coilra-multicoil-rope-and-cyclic-mixers"
+      ],
+      "narrative_job": "Make substrate choice a governed routing decision rather than a permanent commitment to transformer monoculture or novelty-driven architecture replacement.",
+      "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
+      "strongest_objection": "Heterogeneous routing can add coordination cost and correlated failure without outperforming one well-tuned general model.",
+      "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
+      "handoff": "Selected substrates still need a governed developmental process, which Unit 20 treats as topology over learning rather than only weight updates.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-20",
+      "order": 20,
+      "title": "Governed Training and Learning-Compute Topology",
+      "owner_ids": [
+        "governed-model-training-distributed-optimization-and-scaling",
+        "learning-compute-topology-and-adaptive-process-architecture"
+      ],
+      "narrative_job": "Join reproducible training transactions with a topology of learning processes that distinguishes where computation occurs, which state it changes, and how semantic intent survives realization.",
+      "central_question": "How can training remain reproducible and governable when learning spans models, memory, tools, evaluators, environments, and institutions?",
+      "strongest_objection": "The topology layer may redescribe standard training without improving prediction, control, transfer, or cost.",
+      "conclusion_change": "If independent encoders cannot agree on useful topology identity, or matched-resource interventions show no explanatory, control, or outcome value, the layer should be narrowed.",
+      "handoff": "Training produces experiences and candidate lessons; Unit 21 asks which of them should become durable causal structure, where, and for how long.",
+      "target_min_words": 5000,
+      "target_max_words": 7000,
+      "source_file": "chapters/unit-20-governed-training-and-learning-compute-topology.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-21",
+      "order": 21,
+      "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
+      "owner_ids": [
+        "adjudicated-persistence-and-the-adaptive-commit-boundary",
+        "learning-theory-generalization-and-scaling-science",
+        "policy-optimization-and-learning-from-feedback",
+        "data-engines-continual-learning-and-unlearning",
+        "scientific-discovery-and-experimental-governance"
+      ],
+      "narrative_job": "Govern the full path from experience and feedback to a candidate lesson, persistence decision, realization locus, qualification, generalization, forgetting, deletion, and scientific revision.",
+      "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
+      "strongest_objection": "A persistence adjudicator may add cost and centralize learning decisions that competent local or human-reviewed policies could make more cheaply.",
+      "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
+      "handoff": "A candidate capability or lesson still cannot promote itself, so Unit 22 assembles adversarial evaluation, readiness, thresholds, and assurance.",
+      "target_min_words": 6000,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-22",
+      "order": 22,
+      "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
+      "owner_ids": [
+        "readiness-gates-residual-escrow-and-quarantine",
+        "benchmark-ratchets-and-anti-goodhart-evidence",
+        "capability-thresholds-and-deployment-commitments",
+        "adversarial-evaluation-sandbagging-and-training-time-deception",
+        "safety-cases-and-structured-assurance",
+        "content-authenticity-watermarking-and-synthetic-media-integrity"
+      ],
+      "narrative_job": "Turn evaluation into a repeated, adversarial, evidence- compiled promotion decision rather than a benchmark score, safety label, or one-time release checklist.",
+      "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
+      "strongest_objection": "Evaluation suites and safety cases can become performative compliance that optimize visible evidence while missing novel or strategic failure.",
+      "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
+      "handoff": "Evaluation consumes scarce computation and attention, so Unit 23 asks how generation, deliberation, compression, and verification should share a budget.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-23",
+      "order": 23,
+      "title": "Generative Compression and Cognitive Resource Economics",
+      "owner_ids": [
+        "compact-generative-systems-and-residual-honesty",
+        "fast-generation-architectures",
+        "governed-deliberation-and-test-time-scaling",
+        "rankfold-neuralfold-and-artifact-compression",
+        "resource-economics-and-token-budgets"
+      ],
+      "narrative_job": "Treat faster generation, compact models, artifact compression, and test-time deliberation as competing allocations inside one effect-complete resource decision.",
+      "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
+      "strongest_objection": "Detailed resource accounting may be expensive, misestimated, and easy to game, producing optimization theater rather than useful allocation.",
+      "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
+      "handoff": "Cognitive cost is realized on physical infrastructure, which Unit 24 treats as an architectural and governance constraint rather than a footnote.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
+      "state": "target_length_reached_internal_review_pending",
+      "visible_word_count": 5508,
+      "source_sha256": "17e25e568f5582feccaeef8be7b0559fa3ee598926df2775cc837273d963f9fe",
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-24",
+      "order": 24,
+      "title": "Physical Compute, Energy, and Infrastructure",
+      "owner_ids": [
+        "personal-compute-hives-and-federated-edge-intelligence",
+        "physical-compute-infrastructure-energy-and-environmental-constraints"
+      ],
+      "narrative_job": "Connect abstract cognitive budgets to hardware, memory, networks, energy, cooling, supply chains, resilience, environmental burden, local ownership, and edge or federated alternatives.",
+      "central_question": "What physical and social constraints determine whether an efficient cognitive architecture is actually deployable, resilient, and worth its displaced costs?",
+      "strongest_objection": "Physical-impact accounting is context-dependent and may overstate architectural control over grid, supply-chain, and institutional outcomes.",
+      "conclusion_change": "Deployment studies showing physical constraints and topology do not materially affect accepted useful output, resilience, privacy, or total cost would narrow this layer.",
+      "handoff": "Once the stack can change itself and its physical deployment, Unit 25 confronts recursive improvement, replication, and containment directly.",
+      "target_min_words": 4500,
+      "target_max_words": 6500,
+      "source_file": "chapters/unit-24-physical-compute-energy-and-infrastructure.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-25",
+      "order": 25,
+      "title": "Recursive Improvement, Replication, and Containment",
+      "owner_ids": [
+        "recursive-self-improvement-boundaries",
+        "open-ended-improvement-engines",
+        "autonomous-replication-proliferation-and-containment"
+      ],
+      "narrative_job": "Show how a stack may generate, test, and adopt improvements without letting proposal become ratification, local gain become descendant authority, or replication escape containment and retirement.",
+      "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
+      "strongest_objection": "Governance layers may be bypassed by a sufficiently capable improver, while restrictive containment may prevent the very progress the system is meant to enable.",
+      "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",
+      "handoff": "The final unit must show the whole architecture operating as one system and explain how Project Theseus and the Living Book keep it testable.",
+      "target_min_words": 5500,
+      "target_max_words": 7500,
+      "source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    },
+    {
+      "unit_id": "unit-26",
+      "order": 26,
+      "title": "Integrated Reference Architecture, Project Theseus, and the Living Research Method",
+      "owner_ids": [
+        "artifact-steward-agents-and-living-project-governance",
+        "integrated-reference-architecture",
+        "project-theseus-as-report-first-implementation-reference",
+        "prototype-roadmap",
+        "living-book-methodology",
+        "open-research-agenda-and-bibliography-plan"
+      ],
+      "narrative_job": "Reassemble the book into an effect-complete reference path, show how Project Theseus implements and challenges it, and make the Living Book the mechanism by which claims, proofs, experiments, prose, and open questions remain corrigible.",
+      "central_question": "What does it mean to implement the ASI Stack as a testable system rather than merely describe an attractive architecture?",
+      "strongest_objection": "The integrated architecture may be internally coherent yet too costly, incomplete, or weakly evidenced to outperform simpler agent systems; Project Theseus may validate only its own conventions.",
+      "conclusion_change": "Fresh-checkout natural tasks, independent reproduction, governance-rent ablations, and end-to-end failure tests that favor a simpler system would narrow or reject the reference design.",
+      "handoff": "The book closes with a maintained research frontier: every open claim has an owner, a strongest objection, an evidence path, and an explicit condition under which the architecture should change.",
+      "target_min_words": 6000,
+      "target_max_words": 8000,
+      "source_file": "chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd",
+      "state": "not_started",
+      "visible_word_count": 0,
+      "source_sha256": null,
+      "owner_support_states": [
+        "argument"
+      ]
+    }
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "This maintained draft is not a major-version release or a generated excerpt of the live technical chapters.",
+    "A routed owner does not transfer claim, proof, source, evidence, or authority ownership to the Human Reader unit.",
+    "Word-count or render completion is not editorial approval, evidence, safety, readiness, AGI, or ASI.",
+    "EPUB, PDF, DOCX, audio, and full release work remain deferred until content freeze."
+  ]
+}

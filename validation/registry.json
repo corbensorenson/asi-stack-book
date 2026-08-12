@@ -3203,7 +3203,20 @@
     "scripts/build_editorial_migration_preview.py",
     "scripts/register_editorial_migration_validator.py",
     "products/editorial_migration_preview.json",
-    "docs/human_reader_26_unit_outline.md"
+    "docs/human_reader_26_unit_outline.md",
+    "scripts/validate_human_reader_current.py",
+    "scripts/build_human_reader_current.py",
+    "scripts/register_human_reader_current_validator.py",
+    "editions/reader_manuscript/current/manifest.json",
+    "editions/reader_manuscript/current/_quarto.yml",
+    "editions/reader_manuscript/current/index.qmd",
+    "editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
+    "editions/reader_manuscript/current/generated/unit-23-status.qmd",
+    "scripts/reconcile_editorial_migration_claim_reviews.py",
+    "evidence_quality/claim_reviews/compact-generative-systems-and-residual-honesty.json",
+    "evidence_quality/claim_reviews/governed-deliberation-and-test-time-scaling.json",
+    "evidence_quality/claim_reviews/rankfold-neuralfold-and-artifact-compression.json",
+    "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json"
   ],
   "units": [
     {
@@ -18890,6 +18903,7 @@
         "scripts/validate_editorial_migration.py",
         "scripts/build_editorial_migration_preview.py",
         "scripts/register_editorial_migration_validator.py",
+        "scripts/reconcile_editorial_migration_claim_reviews.py",
         "schemas/book_structure.schema.json",
         "book_structure.json",
         "products/editorial_migration_preview.json",
@@ -18898,7 +18912,12 @@
         "docs/human_reader_26_unit_outline.md",
         "docs/book_outline.md",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
-        "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json"
+        "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
+        "evidence_quality/prose_claim_candidate_queue.json",
+        "evidence_quality/claim_reviews/compact-generative-systems-and-residual-honesty.json",
+        "evidence_quality/claim_reviews/governed-deliberation-and-test-time-scaling.json",
+        "evidence_quality/claim_reviews/rankfold-neuralfold-and-artifact-compression.json",
+        "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json"
       ],
       "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
       "output_assertions": [
@@ -18912,24 +18931,66 @@
         "5 dossier owners",
         "1 back-matter owner",
         "26 Human Reader units",
-        "3 semantic mutations reject",
+        "4 semantic mutations reject",
         "support and release effects none"
       ],
       "claim_scope": "Metadata-only publication classification, legacy identity preservation, and Human Reader routing for EM0/EM1.",
-      "negative_controls": "validator_owned_support_parent_and_route_mutations",
+      "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
       "negative_control_cases": [
         "support promotion",
         "owner reroute",
-        "parent erasure"
+        "parent erasure",
+        "composition-boundary erasure"
       ],
       "prohibited_inference": "Metadata classification does not complete publication composition, the semantic merge, Human Reader prose, public cutover, release, safety, readiness, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "checked_metadata_only_editorial_migration"
+    },
+    {
+      "id": "validate_human_reader_current.py:471",
+      "order": 471,
+      "script": "validate_human_reader_current.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes, independent maintained prose sources, and generated compact status panels.",
+      "input_artifacts": [
+        "scripts/validate_human_reader_current.py",
+        "scripts/build_human_reader_current.py",
+        "scripts/register_human_reader_current_validator.py",
+        "editions/reader_manuscript/current/manifest.json",
+        "editions/reader_manuscript/current/_quarto.yml",
+        "editions/reader_manuscript/current/index.qmd",
+        "editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
+        "editions/reader_manuscript/current/generated/unit-23-status.qmd",
+        "docs/human_reader_26_unit_outline.md",
+        "book_structure.json",
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+      ],
+      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, canonical generated derivatives, preserved support boundaries, and no format or release work.",
+      "output_assertions": [
+        "26 Human Reader units",
+        "87 owners routed once",
+        "Unit 23 within its 5500-7500 word target",
+        "independent maintained prose",
+        "3 mutations reject",
+        "support and release effects none"
+      ],
+      "claim_scope": "Independent Human Reader manuscript structure and Unit 23 drafting completeness only.",
+      "negative_controls": "validator_owned_route_length_and_support_mutations",
+      "negative_control_cases": [
+        "owner-route loss",
+        "false length completion",
+        "support laundering"
+      ],
+      "prohibited_inference": "Draft or target-length completion does not establish editorial approval, evidence, publication, release, safety, readiness, SOTA, AGI, or ASI.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "checked_independent_human_reader_draft_contract"
     }
   ],
   "summary": {
-    "required_artifact_count": 3159,
-    "unit_count": 470
+    "required_artifact_count": 3172,
+    "unit_count": 471
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

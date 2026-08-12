@@ -25,7 +25,8 @@ or chapter-local AI scaffolding in the main prose. Those details remain
 available through compact generated evidence panels and links to the living
 architecture reference.
 
-The edition targets 120,000-180,000 words. Each unit should read as a finished
+The edition targets 131,000-180,000 words, the exact aggregate of the unit
+ranges below. Each unit should read as a finished
 book chapter with a concrete opening, one dominant question, a visible causal
 argument, honest objections, and a transition that makes the next chapter
 necessary. The continuing example is one consequential repository change that

@@ -257,6 +257,46 @@ The budget state should therefore be an adjudication state, not just a number. A
 
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
 
+### Generation mode and deliberation depth are allocation decisions
+
+Generation speed and reasoning depth belong in one economic decision even
+though they remain different technical mechanisms. A request can spend its
+budget by drafting more tokens per second, by branching across candidate
+solutions, by revising one candidate, by paying an independent verifier, or by
+falling back to a slower route. Comparing only the generator hides branch
+cost; comparing only the reasoning policy hides queueing, memory, decode,
+verification, and repair. Resource Economics owns the comparison across those
+choices because it owns the complete bill and the opportunity cost of the
+capacity they consume.
+
+The allocation lease therefore receives two independently governed offers.
+[Fast Generation Architectures](fast-generation-architectures.qmd) offers a
+named execution path with its model, hardware, cache, paging, proposal,
+verification, fallback, and expiry contract.
+[Governed Deliberation and Test-Time Scaling](governed-deliberation-and-test-time-scaling.qmd)
+offers a direct, revision, search, or abstention policy with branch custody,
+stopping rules, evaluator scope, answer-change accounting, and residual owner.
+The resource controller may fund, narrow, combine, defer, or reject those
+offers. It may not redefine their mechanisms, certify their outputs, or borrow
+their local evidence as proof of economic advantage.
+
+This separation changes the optimization target. The controller does not ask
+for the fastest mode or the largest reasoning budget. It asks for the
+lowest-cost eligible route to an accepted useful outcome under the request's
+risk, latency, authority, rights, and verification floors. Sometimes that is
+a fast exact path with cheap verification. Sometimes it is direct generation
+because extra branches mostly corrupt initially correct answers. Sometimes a
+slower deliberative route earns its cost by repairing difficult cases. When
+the evidence cannot distinguish those conditions, the honest state is a
+bounded default, escalation, or unresolved allocation residual.
+
+The two technical chapters remain stable detail routes because the economic
+ledger cannot substitute for their contracts. Fast Generation owns whether an
+accelerated execution path is admissible. Governed Deliberation owns how
+candidates are generated, retained, stopped, and handed to planning. Resource
+Economics owns whether the complete route is worth funding. No parent or child
+inherits another's claim support, proof result, test result, or authority.
+
 ### Bounded-liveness accounting
 
 Resource Economics owns the accounting projection of bounded liveness. A task
