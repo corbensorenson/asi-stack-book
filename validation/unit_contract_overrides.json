@@ -3766,12 +3766,13 @@
     {
       "script": "validate_human_reader_current.py",
       "args": [],
-      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes, independent maintained prose sources, and generated compact status panels.",
+      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, and generated compact status panels.",
       "input_artifacts": [
         "scripts/validate_human_reader_current.py",
         "scripts/build_human_reader_current.py",
         "scripts/register_human_reader_current_validator.py",
         "editions/reader_manuscript/current/manifest.json",
+        "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
         "editions/reader_manuscript/current/_quarto.yml",
         "editions/reader_manuscript/current/index.qmd",
         "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
@@ -3834,9 +3835,10 @@
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
+        "canonical conclusion/claim crosswalk",
         "All 26 units within their declared word targets",
         "independent maintained prose",
-        "3 mutations reject",
+        "4 mutations reject",
         "support and release effects none"
       ],
       "claim_scope": "Independent Human Reader manuscript structure and all 26 units' drafting completeness only.",
@@ -3844,7 +3846,8 @@
       "negative_control_cases": [
         "owner-route loss",
         "false length completion",
-        "support laundering"
+        "support laundering",
+        "crosswalk owner-edge loss"
       ],
       "prohibited_inference": "Draft or target-length completion does not establish editorial approval, evidence, publication, release, safety, readiness, SOTA, AGI, or ASI.",
       "contract_precision": "exact_high_impact",

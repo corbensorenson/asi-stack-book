@@ -8,6 +8,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
+import shlex
 from typing import Optional
 
 
@@ -16,6 +17,7 @@ EDITION = ROOT / "editions/reader_manuscript/current"
 CHAPTERS = EDITION / "chapters"
 GENERATED = EDITION / "generated"
 MANIFEST = EDITION / "manifest.json"
+CROSSWALK = EDITION / "conclusion_claim_crosswalk.json"
 QUARTO = EDITION / "_quarto.yml"
 INDEX = EDITION / "index.qmd"
 OUTLINE = ROOT / "docs/human_reader_26_unit_outline.md"
@@ -24,6 +26,10 @@ STRUCTURE = ROOT / "book_structure.json"
 
 def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
+
+
+def digest_text(text: str) -> str:
+    return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
 def slugify(value: str) -> str:
@@ -79,6 +85,142 @@ def outline_units() -> list[dict]:
             }
         )
     return units
+
+
+def tracked_artifact_refs(owner: dict) -> list[dict]:
+    """Return only repository paths already named by canonical owner metadata."""
+    candidates = {owner["file"]}
+    lean_module = owner.get("lean_module")
+    if lean_module:
+        candidates.add(f"lean/{lean_module.replace('.', '/')}.lean")
+    encoded = json.dumps(
+        {
+            "proof_targets": owner.get("proof_targets", []),
+            "codex_tests": owner.get("codex_tests", []),
+        },
+        ensure_ascii=False,
+    )
+    for quoted in re.findall(r"`([^`]+)`", encoded):
+        try:
+            tokens = shlex.split(quoted)
+        except ValueError:
+            tokens = quoted.split()
+        for token in tokens:
+            token = token.strip("'\"(),;:")
+            if token and not token.startswith("-"):
+                candidates.add(token)
+    refs = []
+    for candidate in sorted(candidates):
+        path = ROOT / candidate
+        if path.is_file():
+            refs.append({"path": candidate, "sha256": digest(path)})
+    return refs
+
+
+def build_crosswalk(records: list[dict], owner_map: dict[str, dict]) -> dict:
+    units = []
+    for record in records:
+        owners = []
+        for owner_id in record["owner_ids"]:
+            owner = owner_map[owner_id]
+            source_note_refs = [
+                f"sources/source_notes/{source_id}.md"
+                for source_id in owner["source_ids"]
+                if (ROOT / f"sources/source_notes/{source_id}.md").is_file()
+            ]
+            proof_edges = [
+                {
+                    "tag": target.get("tag"),
+                    "module": target.get("module"),
+                    "status": target.get("status"),
+                    "target_sha256": digest_text(target.get("target", "")),
+                }
+                for target in owner.get("proof_targets", [])
+            ]
+            test_edges = []
+            for test in owner.get("codex_tests", []):
+                if isinstance(test, str):
+                    test_edges.append(
+                        {
+                            "name": test,
+                            "record_shape": "name_only",
+                            "record_sha256": digest_text(json.dumps(test, ensure_ascii=False)),
+                        }
+                    )
+                    continue
+                test_edges.append(
+                    {
+                        "name": test.get("name"),
+                        "record_shape": "structured",
+                        "implementation_status": test.get("implementation_status"),
+                        "record_sha256": digest_text(json.dumps(test, sort_keys=True, ensure_ascii=False)),
+                    }
+                )
+            owners.append(
+                {
+                    "chapter_id": owner_id,
+                    "title": owner["title"],
+                    "technical_source_file": owner["file"],
+                    "technical_source_sha256": digest(ROOT / owner["file"]),
+                    "live_technical_path": f"chapters/{owner_id}.html",
+                    "human_reader_unit_id": owner["human_reader_unit_id"],
+                    "core_claim_id": f"{owner_id}.core",
+                    "core_claim": owner["core_claim"],
+                    "claim_label": owner["claim_label"],
+                    "support_state": owner["evidence_level"],
+                    "source_ids": owner["source_ids"],
+                    "source_note_refs": source_note_refs,
+                    "proof_edges": proof_edges,
+                    "test_edges": test_edges,
+                    "artifact_refs": tracked_artifact_refs(owner),
+                    "publication": owner["publication"],
+                }
+            )
+        units.append(
+            {
+                "unit_id": record["unit_id"],
+                "order": record["order"],
+                "title": record["title"],
+                "human_reader_source_file": record["source_file"],
+                "human_reader_source_sha256": record["source_sha256"],
+                "public_path": f"reader/{Path(record['source_file']).stem}.html",
+                "central_question": record["central_question"],
+                "conclusion_change": record["conclusion_change"],
+                "handoff": record["handoff"],
+                "owner_count": len(owners),
+                "owners": owners,
+            }
+        )
+    owner_records = [owner for unit in units for owner in unit["owners"]]
+    return {
+        "schema_version": "asi_stack.human_reader_conclusion_claim_crosswalk.v1",
+        "edition_id": "human-reader-current",
+        "state": "canonical_current_editorial_crosswalk",
+        "source_graph": "book_structure.json",
+        "source_outline": "docs/human_reader_26_unit_outline.md",
+        "book_structure_sha256": digest(STRUCTURE),
+        "outline_sha256": digest(OUTLINE),
+        "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
+        "unit_count": len(units),
+        "owner_route_count": len(owner_records),
+        "edge_counts": {
+            "claim": len(owner_records),
+            "source": sum(len(owner["source_ids"]) for owner in owner_records),
+            "proof": sum(len(owner["proof_edges"]) for owner in owner_records),
+            "test": sum(len(owner["test_edges"]) for owner in owner_records),
+            "tracked_artifact_reference": sum(len(owner["artifact_refs"]) for owner in owner_records),
+            "publication": len(owner_records),
+        },
+        "units": units,
+        "support_state_effect": "none",
+        "release_effect": "none",
+        "non_claims": [
+            "The crosswalk preserves identity and discoverability; it does not transfer or combine support among technical owners.",
+            "An artifact reference means that canonical owner metadata names a tracked repository file; it does not independently validate that artifact's claims.",
+            "Human Reader synthesis does not replace the live technical source for claims, sources, proofs, tests, evidence transitions, implementation status, or releases.",
+            "Crosswalk completeness is not editorial approval, publication authority, safety, readiness, SOTA, AGI, or ASI evidence.",
+        ],
+    }
 
 
 def build() -> tuple[dict, dict[Path, str]]:
@@ -176,6 +318,10 @@ def build() -> tuple[dict, dict[Path, str]]:
         index_lines.append(f"| {record['order']} | {title} | `{record['state']}` | {record['visible_word_count']:,} |")
     outputs[INDEX] = "\n".join(index_lines) + "\n"
 
+    crosswalk = build_crosswalk(records, owner_map)
+    crosswalk_text = json.dumps(crosswalk, indent=2, ensure_ascii=False) + "\n"
+    outputs[CROSSWALK] = crosswalk_text
+
     manifest = {
         "schema_version": "asi_stack.human_reader_current.v1",
         "edition_id": "human-reader-current",
@@ -184,6 +330,8 @@ def build() -> tuple[dict, dict[Path, str]]:
         "source_outline": "docs/human_reader_26_unit_outline.md",
         "book_structure_sha256": digest(STRUCTURE),
         "outline_sha256": digest(OUTLINE),
+        "conclusion_claim_crosswalk": "conclusion_claim_crosswalk.json",
+        "conclusion_claim_crosswalk_sha256": digest_text(crosswalk_text),
         "unit_count": len(records),
         "owner_route_count": sum(len(record["owner_ids"]) for record in records),
         "started_unit_count": sum(record["state"] != "not_started" for record in records),

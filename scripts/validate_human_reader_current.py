@@ -8,6 +8,7 @@ import json
 from pathlib import Path
 
 from build_human_reader_current import (
+    CROSSWALK,
     EDITION,
     MANIFEST,
     ROOT,
@@ -683,10 +684,12 @@ UNIT_26_REQUIRED = [
 ]
 
 
-def validate(manifest: dict, expected: dict) -> list[str]:
+def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk: dict) -> list[str]:
     errors: list[str] = []
     if manifest != expected:
         errors.append("manifest differs from its canonical graph/outline/manuscript derivation")
+    if crosswalk != expected_crosswalk:
+        errors.append("conclusion/claim crosswalk differs from its canonical graph/outline/manuscript derivation")
     if manifest.get("unit_count") != 26 or manifest.get("owner_route_count") != 87:
         errors.append("Human Reader denominator drift")
     units = manifest.get("units", [])
@@ -699,6 +702,32 @@ def validate(manifest: dict, expected: dict) -> list[str]:
     }
     if set(owner_ids) != canonical_ids:
         errors.append("Human Reader routes omit or invent a canonical owner")
+    crosswalk_owners = [owner for unit in crosswalk.get("units", []) for owner in unit.get("owners", [])]
+    crosswalk_ids = [owner.get("chapter_id") for owner in crosswalk_owners]
+    if crosswalk.get("unit_count") != 26 or crosswalk.get("owner_route_count") != 87:
+        errors.append("conclusion/claim crosswalk denominator drift")
+    if len(crosswalk_ids) != len(set(crosswalk_ids)) or set(crosswalk_ids) != canonical_ids:
+        errors.append("conclusion/claim crosswalk does not preserve every technical owner exactly once")
+    if crosswalk.get("support_state_effect") != "none" or crosswalk.get("release_effect") != "none":
+        errors.append("conclusion/claim crosswalk changed support or release state")
+    for unit in crosswalk.get("units", []):
+        if unit.get("owner_count") != len(unit.get("owners", [])):
+            errors.append(f"{unit.get('unit_id')}: crosswalk owner count drift")
+        source_path = EDITION / unit.get("human_reader_source_file", "")
+        if not source_path.is_file():
+            errors.append(f"{unit.get('unit_id')}: crosswalk Human Reader source is missing")
+        for owner in unit.get("owners", []):
+            if owner.get("human_reader_unit_id") != unit.get("unit_id"):
+                errors.append(f"{owner.get('chapter_id')}: crosswalk unit binding drift")
+            if owner.get("core_claim_id") != f"{owner.get('chapter_id')}.core":
+                errors.append(f"{owner.get('chapter_id')}: crosswalk core-claim identity drift")
+            technical_path = ROOT / owner.get("technical_source_file", "")
+            if not technical_path.is_file():
+                errors.append(f"{owner.get('chapter_id')}: crosswalk technical source is missing")
+            for artifact in owner.get("artifact_refs", []):
+                artifact_path = ROOT / artifact.get("path", "")
+                if not artifact_path.is_file():
+                    errors.append(f"{owner.get('chapter_id')}: crosswalk artifact reference is missing")
     for unit in units:
         path = EDITION / unit["source_file"]
         state = unit.get("state")
@@ -951,7 +980,9 @@ def validate(manifest: dict, expected: dict) -> list[str]:
 def main() -> None:
     expected, outputs = build()
     manifest = json.loads(MANIFEST.read_text(encoding="utf-8"))
-    errors = validate(manifest, expected)
+    crosswalk = json.loads(CROSSWALK.read_text(encoding="utf-8"))
+    expected_crosswalk = json.loads(outputs[CROSSWALK])
+    errors = validate(manifest, expected, crosswalk, expected_crosswalk)
     stale = [
         path.relative_to(ROOT).as_posix()
         for path, text in outputs.items()
@@ -962,23 +993,27 @@ def main() -> None:
 
     altered = copy.deepcopy(manifest)
     altered["units"][0]["owner_ids"] = []
-    if not validate(altered, expected):
+    if not validate(altered, expected, crosswalk, expected_crosswalk):
         errors.append("negative control accepted: owner-route loss")
     altered = copy.deepcopy(manifest)
     altered["units"][22]["visible_word_count"] = 1
-    if not validate(altered, expected):
+    if not validate(altered, expected, crosswalk, expected_crosswalk):
         errors.append("negative control accepted: false length completion")
     altered = copy.deepcopy(manifest)
     altered["support_state_effect"] = "promoted"
-    if not validate(altered, expected):
+    if not validate(altered, expected, crosswalk, expected_crosswalk):
         errors.append("negative control accepted: support laundering")
+    altered_crosswalk = copy.deepcopy(crosswalk)
+    altered_crosswalk["units"][0]["owners"] = []
+    if not validate(manifest, expected, altered_crosswalk, expected_crosswalk):
+        errors.append("negative control accepted: crosswalk owner-edge loss")
 
     if errors:
         raise SystemExit("Human Reader current validation failed:\n - " + "\n - ".join(errors))
     print(
         f"Human Reader current validation passed: {manifest['started_unit_count']}/26 units started, "
         f"{manifest['target_length_unit_count']} at target length, 87 owners routed once, "
-        f"{manifest['visible_word_count']} visible words, and 3 rejecting controls."
+        f"{manifest['visible_word_count']} visible words, and 4 rejecting controls."
     )
 
 
