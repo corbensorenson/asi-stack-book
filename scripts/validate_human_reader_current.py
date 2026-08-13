@@ -192,6 +192,53 @@ UNIT_11_REQUIRED = [
     "The model's\nown predicted state cannot serve as that effect observation",
     "The claim-bearing empirical lane is prospectively specified but has not run",
 ]
+UNIT_12_REQUIRED = [
+    "## A Plan That Survives Contact",
+    "## Six Objects That Should Not Collapse",
+    "## The Plan Begins With a Frozen Contract",
+    "## Obligations, Not To-Do Items",
+    "## Dependencies Have Types",
+    "## Unknown Is a Planning State",
+    "## Alternatives Need a Denominator",
+    "## Reachability Is Not Permission",
+    "## Scheduling the Whole Cost",
+    "## Replanning Is a New Version",
+    "## Branch Joins Are Semantic Decisions",
+    "## Stop, Fallback, and Recovery Are Work",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Planner to a Governed Control Service",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Reachability is not permission",
+    "They do not establish decomposition quality, dependency truth or completeness",
+]
+UNIT_13_REQUIRED = [
+    "## The Artifact That Followed the Plan",
+    "## A Plan Node Is Not Yet an Artifact",
+    "## Stable Semantic Identity",
+    "## Ambiguity Is Compiler Debt",
+    "## Relations Need Roles",
+    "## Dimensions Are Types, Not Decoration",
+    "## Equivalence Is Relative to a Consumer",
+    "## Search Is a Candidate Generator",
+    "## A New Substrate Must Earn Its Boundary",
+    "## Progressive Lowering",
+    "## Validate the Actual Target",
+    "## Repair by Identity and Observed Change",
+    "## Reverse Compilation Is Not Mind Reading",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Compiler to a Cognitive Toolchain",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "None of these results transfers support to the other owners",
+    "selected full route tied its baseline at 1.000 task accuracy while\nusing 1.913386 times the operations",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -308,6 +355,22 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_11_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 11 missing required argument boundary: {fragment!r}")
+    unit_12 = next((unit for unit in units if unit.get("unit_id") == "unit-12"), None)
+    if unit_12 is None or unit_12.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 12 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_12["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_12_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 12 missing required argument boundary: {fragment!r}")
+    unit_13 = next((unit for unit in units if unit.get("unit_id") == "unit-13"), None)
+    if unit_13 is None or unit_13.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 13 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_13["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_13_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 13 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

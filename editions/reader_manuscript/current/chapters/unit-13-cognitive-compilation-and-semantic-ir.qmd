@@ -1,0 +1,674 @@
+---
+title: "Cognitive Compilation and Semantic IR"
+unit_id: "unit-13"
+---
+
+## The Artifact That Followed the Plan
+
+The controller plan now contains an admitted publication obligation: produce a
+technical summary of the failed trial for the project site. The summary must
+name the tested controller and observed residuals, link the public evidence,
+exclude private filesystem paths, make no safety claim, and preserve the fact
+that the claim-bearing campaign has not run.
+
+A generator receives those instructions and emits valid HTML. The page renders
+cleanly. Its headings are ordered, every link resolves, and the schema checker
+passes. Hidden inside a citation tooltip is an absolute path to a local raw
+trace. In the conclusion, “the bounded trial stopped after oscillation” has
+become “the controller safely detected oscillation.” The artifact is
+syntactically excellent and semantically wrong.
+
+The plan did its job. It selected and ordered an accepted obligation. The
+failure occurred while translating that obligation into a target artifact.
+Several distinctions disappeared: observation became safety, stopping became
+successful detection, a private source location became public output, and an
+unexecuted evidence lane vanished from the conclusion.
+
+Cognitive compilation gives those losses addresses. Instead of asking one
+model to regenerate the entire page, it represents the source obligation,
+non-goals, authority bounds, evidence limits, required relations, ambiguities,
+validators, and recovery duties in an intermediate form. A sequence of passes
+lowers that form into document structure and concrete HTML. Another evaluator
+checks the actual target against the preserved obligations. Repair changes the
+failed tooltip and conclusion nodes, rebuilds their descendants, and reruns the
+relevant checks.
+
+This resembles an ordinary compiler, but the analogy has limits. Programming
+languages usually begin with more explicit semantics than human requests,
+institutional rules, scientific claims, or plans. A well-typed cognitive IR can
+still encode a mistaken interpretation. Compilation cannot manufacture meaning
+that the source contract failed to preserve. Its value is narrower: make
+interpretation, transformation, loss, validation, and repair inspectable enough
+that a consumer can challenge them.
+
+## A Plan Node Is Not Yet an Artifact
+
+Planning decides which obligation should become work and when. It does not
+choose every representation needed to perform that work. “Publish a bounded
+trial summary” remains too abstract for a document generator, privacy checker,
+claim validator, link checker, and site builder to share precisely.
+
+The compiler receives an admitted plan node plus its exact contract version.
+It does not decide that publication should occur. It translates an already
+accepted obligation through several levels:
+
+- a **source-plan representation** retains the human-facing outcome, non-goals,
+  assumptions, affected parties, authority, rights, evidence boundaries,
+  stops, and recovery duties;
+- a **semantic intermediate representation** gives obligations, entities,
+  relations, fields, validators, ambiguities, and residuals stable identities;
+- a **target representation** expresses the requirements in the language of a
+  document, program, schema, proof, experiment, job, or tool;
+- a **concrete artifact** is the actual HTML, code, record, theorem source,
+  test, or execution packet that downstream systems inspect and may use.
+
+Each crossing can lose information. A non-goal can disappear because a target
+schema has no field for it. A relation can become a bag of entities whose roles
+are ambiguous. A probability can become a Boolean. A human review requirement
+can become an automated checker. A predicted state can become an asserted fact.
+
+The compiler records those transformations rather than hiding them inside a
+prompt. It may normalize wording, split one obligation into several target
+checks, merge equivalent fields, defer an ambiguity, or approximate a
+representation. Every such action needs a declared rule, scope, and residual.
+
+The output is an artifact *candidate*. Syntactic validity says the target can
+be parsed. It does not say the artifact preserved the obligation, satisfies the
+consumer, is authorized, has useful external effects, or deserves stronger
+evidence support.
+
+## Stable Semantic Identity
+
+Repair becomes unreliable when identity depends on where a sentence, node, or
+tensor happens to sit. Insert a paragraph above the conclusion and every
+positional path changes. Rename an entity and a string key breaks. Re-encode an
+object and its hash changes. Move a capability to another machine and its
+physical address changes.
+
+A semantic IR therefore assigns stable identities to obligations, non-goals,
+assumptions, entities, relations, fields, validators, artifacts, and residuals.
+The identity remains distinct from wording, source span, graph position,
+embedding, storage key, route, and support state.
+
+In the summary example, the privacy non-goal has an identity independent of
+the sentence “exclude private filesystem paths.” It maps to source spans,
+semantic nodes, target fields, and validators. The evidence boundary has
+another identity linking “bounded trial stopped” to the observed trace and
+prohibiting a safety inference. The conclusion node consumes that boundary.
+
+When validation fails, repair can target those identities. The system changes
+the tooltip generator and the conclusion claim, then computes which target
+nodes, links, indexes, previews, and publication checks depend on them. It does
+not assume that changing two source nodes changes only two files; observed
+mutations are compared with the declared repair scope.
+
+Hashes still matter. They bind exact bytes, compiler inputs, artifacts, and
+receipts. They answer identity and integrity questions at a particular level.
+They do not prove semantic equivalence. Two different byte strings can preserve
+the same obligation, while identical generated bytes can be wrong under a new
+contract or consumer.
+
+Stable IDs do not solve interpretation either. They make a disputed meaning
+addressable. A consumer can say which obligation was misunderstood, which
+mapping is contested, and which descendants need review without pretending
+that the identifier itself is truth.
+
+## Ambiguity Is Compiler Debt
+
+Human language often supports several readings. Conventional generation tends
+to select one silently. A governed compiler records ambiguity as a state with
+consequences.
+
+Suppose “link the public evidence” could mean link the source note, the rendered
+technical chapter, or the raw trace package. The raw trace is not approved for
+public release. A strict compiler cannot choose it because it is the most
+detailed. The ambiguity ledger records the alternatives, available evidence,
+rights and authority boundaries, consumer consequence, and who may resolve the
+question.
+
+Some ambiguities do not matter to the target. Whether the summary says
+“oscillation” or “periodic motion” may preserve the same qualified observation
+if the terminology is defined and the source mapping survives. Others are
+material. Whether “safe” means “inside the authored finite lease” or “physically
+safe in deployment” changes the claim and must block strict lowering.
+
+The compiler can request clarification, retrieve an approved source, run a
+validator, preserve several variants, narrow the target, or return unknown. A
+resolved ambiguity carries the resolution authority and evidence. A deferred
+one travels into the target and may prohibit particular consumers.
+
+Question selection should be decision-relative. Resolve an ambiguity when it
+can change validity, authority, risk, cost, or the consumer's action. Do not
+spend unlimited resources turning every synonym into one canonical ontology.
+Several cheap, independent-enough checks may be better than one expensive
+model. If no admissible question closes the distinction, abstention is a valid
+compile result.
+
+This turns ambiguity from hidden model behavior into managed debt. It still
+does not guarantee that the recorded alternatives are complete or that the
+resolver is competent.
+
+## Relations Need Roles
+
+Many obligations cannot be represented as isolated properties. They concern
+relations among actors, artifacts, claims, sources, actions, times, branches,
+and authority.
+
+Consider the statement: “the human reviewer approved controller version 8 for
+a low-energy trial under lease L after inspecting trace T.” Reducing it to a set
+of tokens loses who approved what, for which use, under which authority, after
+which evidence. Pairwise edges can preserve much of the structure if they keep
+typed roles and share one relation identity. A relation object can bind
+reviewer, candidate, permitted use, lease, evidence, and time without requiring
+one permanently dense six-way tensor.
+
+The Relational Dimension Compiler distinguishes **semantic arity**, the number
+of meaningful roles; **primitive computational arity**, the number of items a
+kernel scores jointly; and **storage arity**, the representation used to retain
+the accepted relation. A high-arity fact can be stored as one relation identity
+plus role-labelled incidences. A pairwise computational substrate may process
+it without claiming that the meaning was originally pairwise.
+
+Role identity should survive permutation, branching, caching, lowering,
+contraction, explanation, migration, and rollback. “Reviewer approved
+candidate” is not interchangeable with “candidate approved reviewer.” A
+relation in an imagined branch is not an observed relation. A qualified
+proposal is not an executed effect.
+
+Polyadic or higher-order operators may sometimes discover structure that
+pairwise methods miss. They must compete against competent lower-order rescues:
+reification, message passing, factorization, sequences, retrieval, solvers, and
+ordinary models under matched information and cost. Semantic arity does not
+prove that a higher-order neural kernel is necessary or efficient.
+
+The compiler preserves the relation and its evidence. Substrate governance
+decides which operator, if any, earns adoption for a particular consumer.
+
+## Dimensions Are Types, Not Decoration
+
+A tensor axis can index examples, entities, roles, time, spatial coordinates,
+possible worlds, evidence states, or scales. Those axes may have the same
+numeric length and entirely different legal operations.
+
+A branch axis cannot be averaged as though alternative worlds were simultaneous
+observations. A directed role axis cannot be pooled as an exchangeable set. A
+spatial vector cannot move between frames without a transformation. An
+epistemic score cannot be cast into action authority. A time interval cannot be
+added to a probability because both are floating-point values.
+
+Dimension-safe IR records the carrier, semantics, symmetry, metric and units
+where relevant, transformation law, legal operations, loss policy, consumer,
+and validity envelope for each axis. A compiler pass that pools, contracts,
+reorders, broadcasts, approximates, or changes precision must show that the
+operation is legal for those types.
+
+The summary artifact contains dimensions too. Claims vary by source, support
+state, time, world branch, audience, and release surface. A compiler that
+flattens “observed in one bounded trial” and “established for deployment” has
+performed an illegal contraction across scope and evidence axes even though
+the prose remains grammatical.
+
+Macro-objects add another boundary. The project may use “qualified controller”
+as a compact object for a query family. Its contraction certificate states
+which details are hidden, what discrepancy is tolerated, which consumers may
+use the summary, and what change forces expansion. A compiler cannot pass the
+macro-object into a consumer whose query depends on an omitted payload,
+calibration, or authority field.
+
+These types make bad transformations rejectable. They do not prove that the
+chosen ontology describes the world, that the relations are true, or that the
+representation is learnable and useful.
+
+## Equivalence Is Relative to a Consumer
+
+Two representations are not simply equivalent or different. They are
+equivalent for a declared family of questions, under a declared error budget,
+for a declared interval. That qualification matters whenever a compiler
+compresses, normalizes, factors, quantizes, summarizes, or replaces one
+representation with another.
+
+The trial summary and its raw trace are not interchangeable for every
+consumer. They may be equivalent for a reader asking which controller version
+was tested and whether the bounded run stopped. They are not equivalent for an
+investigator asking when oscillation began, which sensor first diverged, or
+whether the stop command preceded the energy drop. A public page can therefore
+be an admitted representation for one query family while remaining an invalid
+input to another.
+
+The compiler records this boundary as a contraction contract. It identifies
+the source object, derived object, permitted consumers, supported queries,
+excluded queries, discrepancy metric, tolerance, retained rescue path,
+freshness limit, and invalidating events. A consumer that needs an excluded
+detail must expand the representation or request a different artifact. It
+cannot infer that the omitted detail was irrelevant merely because another
+consumer accepted the contraction.
+
+This idea generalizes beyond summaries. A graph embedding may preserve
+neighborhood retrieval while destroying exact path identity. A quantized model
+may preserve aggregate task accuracy while changing a rare safety-relevant
+decision. A macro-action may preserve expected motion while hiding actuator
+limits. A proof-oriented abstraction may preserve one finite invariant while
+omitting the environmental premise on which deployment depends. Each object
+needs its own denominator.
+
+Information loss should therefore be budgeted before lowering, not narrated
+afterward. The budget names what may be forgotten, why the target cannot or
+need not retain it, which validator measures the discrepancy, and what happens
+when the budget is exceeded. Zero declared loss is appropriate for identities,
+authority, prohibitions, support state, and other fields whose mutation would
+change the governing decision. Bounded loss may be acceptable for display
+precision, redundant wording, or high-volume diagnostic detail when an exact
+rescue artifact remains available to an authorized consumer.
+
+No metric closes this problem universally. Lexical similarity can miss a
+reversed claim. Behavioral agreement on sampled inputs can miss a rare branch.
+Equal downstream scores can hide different affected parties. A theorem can
+prove preservation only for its formalized relation and premises. For
+consequential crossings, the compiler uses several tests with distinct failure
+paths and keeps unresolved semantic risk visible.
+
+The critical discipline is refusal. If the compiler cannot establish the
+equivalence required by the target consumer, it can emit a narrower artifact,
+retain multiple candidates, request review, or stop. Producing fluent output
+is not the default proof that a representation survived.
+
+## Search Is a Candidate Generator
+
+Once obligations and relations are explicit, many substrates can propose a
+lowering. Symbolic rules can enforce exact constraints. Graph algorithms can
+traverse dependencies. Tree or beam search can retain alternatives. Program
+synthesis can construct reusable procedures. Neural models can interpret
+language and generate candidates. Retrieval can recover examples. Solvers can
+check bounded properties. Hybrid routes can combine them.
+
+The compiler should not declare one substrate universally intelligent. It
+states the consumer, workload, expected advantage, required baselines, metrics,
+resource envelope, proof or structural facts, failure policy, and fallback.
+Adoption is a versioned decision, not an aesthetic preference.
+
+For the publication obligation, a deterministic template may handle metadata
+and links, a language model may draft prose, a claim mapper may bind evidence,
+a privacy scanner may reject paths, and a human may resolve a nuanced safety
+statement. Another task may be better served by direct code generation plus
+tests. The route should match the distinctions and consequences the consumer
+requires.
+
+Search output remains a proposal. A high score does not establish semantic
+preservation. More branches do not create independent evidence when they share
+one model or evaluator. A proof about a graph property does not establish
+artifact utility. Source-reported performance does not become a local result
+because the substrate appears in the architecture.
+
+The adoption record therefore separates structural facts, speed, memory,
+routing, compression, search quality, verifier results, downstream quality,
+and total burden. A candidate can win one axis and lose the decision.
+
+## A New Substrate Must Earn Its Boundary
+
+Novel mathematical or search substrates are especially vulnerable to
+architectural promotion by metaphor. A representation can be elegant, a
+kernel can have appealing symmetries, and a search procedure can resemble
+deliberation without improving the consumer's result. The compiler should make
+such candidates easy to test and easy to reject.
+
+An adoption packet begins with the exact workload and consumer. It states the
+proposed advantage, competent baseline, matched information, resource budget,
+success metric, failure metric, transfer claim, and retirement rule. It also
+separates properties established by mathematics from properties that require
+measurement. Equivariance, reversibility, bounded error, or finite
+reachability may be proved for an authored object. Accuracy, robustness,
+latency, energy use, maintainability, and usefulness remain empirical.
+
+For a relational operator, the baseline cannot be a deliberately weakened
+pairwise model. It should include reified relation nodes, message passing,
+factor graphs, sequences, retrieval, and other credible lower-order rescues.
+For a search substrate, the comparison should include direct generation,
+best-of-several sampling, ordinary tree search, constrained solvers, and a
+route that abstains. For a new geometric or algebraic representation, the
+comparison must measure the complete adapter and validation burden rather than
+only the favored kernel.
+
+Matched compute is necessary but not sufficient. Two routes may use equal
+floating-point operations while consuming different memory bandwidth, human
+review, retrieval calls, model invocations, latency, implementation effort, or
+failure-recovery work. A claimed efficiency gain needs the whole cost relevant
+to the deployment decision. A claimed reasoning gain needs held-out tasks that
+actually require the proposed structure and diagnostics showing where the
+advantage arose.
+
+The packet should survive a negative result. If the candidate loses, the
+failed hypothesis, conditions, artifacts, and residuals remain useful. They
+prevent the architecture from repeatedly adopting the same attractive idea
+without evidence. If the candidate wins narrowly, the adoption lease names
+that narrow regime. It does not become the stack's universal substrate.
+
+This is why the semantic IR should accommodate multiple backends without
+becoming a private language designed around one favorite method. The stable
+contract belongs to the consumer and its obligations. Substrates compete below
+that boundary and remain replaceable.
+
+## Progressive Lowering
+
+Trying to jump directly from a human contract to executable detail makes every
+failure global. Progressive lowering introduces levels whose contracts can be
+checked separately.
+
+The source-plan dialect first preserves the publication mandate and its
+non-goals. A semantic pass creates stable atoms for the controller identity,
+trial observation, residuals, evidence limit, privacy boundary, approved links,
+audience, and release authority. A document dialect maps those atoms into
+sections, claims, citations, links, callouts, and metadata. A target pass emits
+Markdown or HTML. Build tooling produces the concrete page.
+
+Each pass binds input and output dialects, compiler version, deterministic and
+nondeterministic inputs, preconditions, postconditions, legality rules, allowed
+loss, authority effects, dependency changes, costs, failure outputs, and a
+reproducer bundle. A changed source, pass, model, evaluator, target, policy,
+environment, or dependency creates a new build identity.
+
+Loss can be legitimate. A public summary may omit internal diagnostic detail.
+It may compress several trace fields into one bounded sentence. The compiler
+records what was omitted, why the target permits it, which exact source remains
+available to authorized consumers, and what question would require expansion.
+Undeclared loss is a compile failure.
+
+Lowering can produce code, prose, schemas, proof targets, experiments,
+diagrams, database operations, or job packets. Every backend has target-specific
+semantics. A document validator cannot certify a motor command. A type checker
+cannot establish that a scientific claim follows from its citation. The IR
+provides shared lineage while validators retain local competence boundaries.
+
+## Validate the Actual Target
+
+A compiler cannot accept its own intermediate form as proof that the artifact
+preserved meaning. Validation occurs after translation and inspects the actual
+target.
+
+The HTML page passes parsing and link checks. A privacy validator finds the
+absolute path. A claim validator compares the conclusion with the evidence
+boundary and rejects the word “safely.” A release validator checks that every
+linked artifact is approved for the public surface. An accessibility check
+inspects the rendered page rather than trusting source metadata alone.
+
+Each result answers a different question. Source validity, IR well-formedness,
+lowering preservation, target validity, artifact usefulness, external effect,
+support movement, and release remain distinct decisions. Passing one does not
+inherit the others.
+
+Evaluator dependence matters. A validator written by the same generator may
+share its interpretation error. Two model judges may share training data or
+prompt framing. Independent-enough validation records method, model, code,
+data, infrastructure, organization, incentives, and exposure where relevant.
+Human review can add a different failure path without becoming infallible.
+
+Translation validation is only as good as its source semantics and checked
+property. If the IR never represented the affected party or evidence limit, a
+perfect source-to-target simulation preserves the wrong contract. Validation
+makes one translation challengeable; it does not solve open-ended semantic
+equivalence.
+
+## Repair by Identity and Observed Change
+
+After rejection, the compiler should not regenerate everything by default. It
+uses stable semantic identities to propose a repair scope, applies a bounded
+change, observes what actually changed, computes dependency closure, rebuilds
+descendants, and reruns validators.
+
+The tooltip repair changes the target link formatter. The claim repair changes
+the conclusion node and perhaps its summary. Those edits may alter generated
+navigation, search indexes, previews, or other pages. The repair receipt lists
+the declared scope and actual mutations. If the mutation escapes the allowed
+subgraph, the route stops or widens through review.
+
+Every attempt remains visible: parse failures, IR candidates, pass failures,
+backend emissions, validator results, retries, cache hits, model calls, human
+interventions, abandoned repairs, costs, and residuals. A successful final page
+does not erase how much work or risk its construction required.
+
+Localized repair is an empirical claim. A schema can declare that one node is
+repairable without showing that a generative backend changes only that node.
+The system measures the mutation set and downstream effects. When identity or
+dependency information is weak, full rebuild and broader validation may be the
+honest route.
+
+Repair also preserves the failed artifact for diagnosis while preventing it
+from entering the accepted publication surface. History supports learning; it
+does not grant failed outputs another path to use.
+
+## Reverse Compilation Is Not Mind Reading
+
+Existing repositories and papers often lack semantic IR. A lifter can extract
+files, syntax trees, interfaces, imports, routes, tests, headings, claims,
+citations, entities, and explicit constraints into a candidate representation.
+
+Deterministic facts remain distinct from evidence-backed claims and model
+guesses. Every lifted node records its origin, exact span or artifact, method,
+confidence, parser or model version, rights metadata, and unresolved ambiguity.
+An inferred purpose does not become the author's true intent because it is
+plausible.
+
+Several historical artifacts can then be compared at stable identities. A
+merge bundle preserves source fingerprints, candidate aliases, conflicts,
+chosen and rejected alternatives, decision policy, rights constraints, and
+trace links. Alias candidates do not merge by name or embedding alone.
+
+This is useful for a living book: papers, project records, source notes, and
+chapters can be mined into one architecture without making repeated wording
+independent evidence. It also creates copyright, privacy, provenance, and
+semantic-laundering risks. Structure can preserve protected expression;
+summaries can erase attribution; incompatible claims can be merged into a
+false consensus.
+
+Reverse compilation therefore produces a defeasible analysis and an explicit
+residual frontier. It is not recovery of one canonical meaning, and
+recompilation does not prove that the new artifact is faithful without source-
+and target-specific review.
+
+## Failure Cases
+
+**Typed nonsense.** Every field validates, but the source obligation was
+misinterpreted.
+
+**Syntax becomes semantics.** Valid HTML, code, JSON, or proof syntax is treated
+as preservation of the consumer's meaning.
+
+**Hash equivalence.** Equal or unequal digests are used as a semantic verdict.
+
+**Positional identity.** Inserting one node renames downstream obligations and
+breaks repair lineage.
+
+**Silent ambiguity choice.** The compiler selects one plausible reading without
+recording alternatives or resolution authority.
+
+**Non-goal loss.** Required exclusions, rights, authority limits, or residual
+duties disappear because target generation focuses on positive outputs.
+
+**Role collapse.** A polyadic relation becomes an unordered collection or set
+of pairwise edges that loses who did what to whom.
+
+**Dimension error.** Branches, roles, time, evidence, or authority are pooled or
+cast because their arrays have compatible shapes.
+
+**Substrate prestige.** A fashionable model, search method, or mathematical
+representation is adopted without a consumer-specific advantage test.
+
+**Self-validation.** Generator and validator share the same omission and call
+agreement independent evidence.
+
+**Declared local repair.** The receipt names one node while observed mutations
+and effects spread beyond its descendants.
+
+**Reverse-compilation laundering.** A model guess becomes a hard constraint,
+or several sources become apparent corroboration after provenance is lost.
+
+**Compiler rent.** IR construction, validation, migration, and repair cost more
+than direct generation plus competent review.
+
+These failures do not share one fix. Better schemas help with omission, not
+interpretation. Stable identity helps repair, not truth. Rich relations help
+role preservation, not usefulness. The architecture must be tested end to end.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline is direct generation from the same accepted contract,
+followed by the same target validators and a competent reviewer. It receives
+the same sources, tools, model budget, repair opportunities, authority, and
+outcome horizon. A second baseline uses a structured template or ordinary
+workflow without a general semantic IR. Conventional parsers, compilers,
+planning languages, retrieval, program synthesis, and human integration are
+additional task-appropriate comparators.
+
+The comparison measures obligation and non-goal preservation, ambiguity
+handling, role fidelity, invalid acceptance, false rejection, repair locality,
+downstream validity, useful artifact quality, latency, compute, human burden,
+privacy and rights behavior, migration cost, and residuals. IR quality cannot
+be scored only on its own fields.
+
+If direct generation preserves the contract and repairs failures equally well
+at lower total cost, explicit compilation should narrow to high-consequence,
+repeated, multi-target, or highly repairable work. If a simple template handles
+the domain, a universal cognitive language is unnecessary.
+
+## What the Current Work Establishes
+
+The three routed technical owners have bounded but distinct results.
+
+Cognitive Compilation implements three public targets. Its current finite
+surface contains 45 live Lean declarations across the retained route module and
+the reachable refinement. The refinement validator accepts two fixtures,
+rejects four, follows an eight-event obligation, repair, and fresh-validation
+lifecycle, and rejects 86 mutations. The trace harness retains two valid and
+four expected-invalid compilation records. A separate semantic-preservation
+fixture remains blocked and rejects nine mutations.
+
+The QCSA-adjacent implementation produced 2,340 deterministic predictions over
+60 synthetic cases, 13 systems, and three seeds, plus one 13-stage reversible
+zero-model trace with ten rejecting controls. On that template-generated
+workload, the selected full route tied its baseline at 1.000 task accuracy while
+using 1.913386 times the operations. The matched-advantage and resource gates
+failed. That bounded result does not establish open-domain semantic
+preservation or refute question value generally.
+
+Relational Dimension Compilation's finite lifecycle has 42 exact Lean
+declarations, eight transitions, 54 exact repairs, seven receipt invalidations,
+two non-identifiability results, and three rejecting consumers. It preserves
+typed roles and proposal-denominator custody inside the authored model. It does
+not establish relational truth, natural higher-order usefulness, efficiency,
+irreducibility, or a universal bounded-arity claim.
+
+Mathematical and Search Substrates has a finite adoption surface with 19 exact
+Lean declarations, four valid traces, and eight expected-invalid controls. It
+checks record and adoption boundaries. No candidate substrate A/B, learned
+model, natural workload, kernel benchmark, measured advantage, independent
+reproduction, or heterogeneous transfer is established.
+
+None of these results transfers support to the other owners. All three cores
+remain `Design rationale` at `argument`. Together they motivate an interface;
+they do not demonstrate that the joined compiler preserves meaning or improves
+artifacts.
+
+## From a Minimum Compiler to a Cognitive Toolchain
+
+A minimum implementation can compile one accepted publication obligation into
+one target page. It needs stable obligation and non-goal identities, an
+ambiguity ledger, field lineage, a small semantic IR, one target dialect,
+pass/failure receipts, requirement-specific validators, observed repair scope,
+dependency-closed rebuild, and retained residuals. Direct generation and a
+template workflow provide baselines.
+
+The next experiment should use natural obligations across documents, code,
+schemas, proofs, and tool jobs. Gold review must identify outcomes, non-goals,
+roles, assumptions, authority, rights, ambiguities, acceptable losses, target
+validity, and useful quality. Adversarial cases should insert paraphrase,
+omission, role permutation, branch collapse, illegal dimension operations,
+authority escape, stale context, evaluator dependence, and repair spillover.
+
+The mature system would expose a family of interoperable dialects rather than
+one universal private language. Human contracts, plans, relational state,
+documents, programs, experiments, proofs, jobs, and hardware targets would
+share stable semantic identities and explicit translation boundaries. Learned,
+symbolic, search, database, graph, and solver substrates could compete behind
+consumer-specific interfaces.
+
+Every pass would state allowed loss. Every accepted artifact would carry a
+translation receipt. Every repair would bind observed mutations. Every
+representation or substrate replacement would preserve historical views,
+migration residuals, and a fallback path. Unknown meaning would remain unknown
+rather than compiled into false precision.
+
+Maturity requires useful advantage over strong direct and structured baselines,
+causal ablations, independent semantic and target evaluation, complete costs,
+reproduction, and transfer across models, domains, languages, targets,
+organizations, ontologies, and hardware. Formal record discipline is necessary
+infrastructure, not evidence that this end state exists.
+
+## The Strongest Objection
+
+A semantic IR can become a brittle private language that discards nuance while
+presenting an illusion of interoperability. Its types may encode the current
+architect's worldview, its validators may reward conformity to that worldview,
+and every new domain may require expensive schema work. Direct models may
+preserve meaning better through rich context than through forced decomposition.
+
+The objection has force. Explicit structure should activate where stable
+identity, multi-target lowering, repair, audit, or consequence justifies it.
+The IR must support ambiguity, variants, source expansion, escape hatches, and
+schema evolution. Consumers should be able to reject an inadequate dialect or
+fall back to the source rather than accept lossy compilation.
+
+Interoperability must be measured through tasks, not declared by shared field
+names. Two components can parse the same IR and interpret it differently. A
+translation receipt exposes the disagreement surface; it does not remove the
+need for tests and qualified judgment.
+
+The architecture should remain plural. Some obligations deserve exact symbolic
+forms. Some need relational structures. Some are best handled by direct neural
+generation under review. Some require human interpretation. Compilation
+coordinates those routes without claiming that one representation captures all
+thought.
+
+## Evidence That Would Change the Conclusion
+
+End-to-end systems preserving intent, relational roles, and recovery better
+without explicit IR would narrow the compilation boundary. If direct generation
+plus target validation matches obligation preservation, ambiguity handling,
+repair locality, useful quality, and safety at lower total cost, explicit IR
+should be reserved for narrower regimes.
+
+Evidence for the broader architecture would require prospective natural tasks
+across several target types, with accepted source semantics, matched direct and
+structured baselines, independent target validation, complete failures and
+costs, causal ablations of stable identity and lineage, and transfer. Relational
+and substrate components would need their own consumer-specific advantage
+tests rather than inheriting a compiler win.
+
+A result showing that role-rich or higher-order structure adds no value beyond
+competent lower-order rescues would narrow the relational layer. A result
+showing that conventional representations dominate proposed substrates would
+retire those candidates. The system should preserve the compiler boundary only
+where it earns observable value.
+
+## What This Establishes
+
+Cognitive compilation is the discipline of making transformation accountable.
+It turns one accepted obligation into a chain of representations whose losses,
+ambiguities, validators, repairs, and residuals can be inspected.
+
+The publication artifact failed despite following a valid plan and passing
+syntax checks. Semantic identities reveal which privacy and evidence
+obligations were lost. Typed relations preserve who approved what and under
+which lease. Dimension-safe lowering prevents branch or support scope from
+collapsing into actuality. Target validation rejects the concrete page. Repair
+changes the addressed nodes and rebuilds their descendants.
+
+None of that proves the compiler understood the source. It creates specific
+places where misunderstanding can be found, measured, and corrected. Where a
+simpler route performs as well, the compiler should step aside.
+
+Compiled work still depends on exact inputs. The next question is how a system
+mounts temporary context, preserves durable knowledge, tracks contradiction and
+taint, and forgets what it is no longer allowed to retain. Unit 14 develops
+Virtual Context and Durable Semantic Memory as the information boundary beneath
+the toolchain.
+
+{{< include ../generated/unit-13-status.qmd >}}

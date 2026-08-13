@@ -1,0 +1,598 @@
+---
+title: "Planning as a Control Layer"
+unit_id: "unit-12"
+---
+
+## A Plan That Survives Contact
+
+The failed gantry trial has produced three obligations. Regenerate the stale
+configuration. Diagnose the oscillation. Retest the controller before any
+full-speed motion. The desired outcome is clear enough: a controller candidate
+whose repository state, simulated behavior, and bounded physical behavior have
+all been checked under the current contract.
+
+The first plan is simple. Edit the generator input, rebuild, rerun the
+integration test, update the simulator, run another low-energy trial, and then
+deploy. Written as a list, it looks complete. It is not.
+
+The generator edit and simulator update can happen in parallel, but both depend
+on the same controller contract. The integration test depends on a cold build,
+not merely on the source edit. The next physical trial depends on current
+sensor calibration, an approved payload, a reachable stop route, and a
+controller artifact whose identity matches the build receipt. Deployment
+depends on the trial outcome and on authority that no plan can grant itself.
+The oscillation diagnosis may change the controller, invalidating work already
+done on the generator branch.
+
+A useful plan must represent these facts before execution turns them into
+expensive surprises. It needs goals and non-goals, candidate decompositions,
+typed dependencies, assumptions, observations, context requests, capability
+requirements, resource limits, verification points, stop conditions,
+alternatives, and residual owners. It needs to say what can run now, what is
+blocked, what may happen in parallel, and what change would invalidate each
+decision.
+
+That is planning as a control layer. The plan is not a prediction, a queue, a
+worker assignment, or permission to act. It is a versioned policy for ordering
+and revising obligations under uncertainty. Its value lies less in describing
+one ideal future than in preserving enough structure to change course without
+losing the mandate.
+
+## Six Objects That Should Not Collapse
+
+Planning systems often use one word for several distinct objects. Keeping them
+separate prevents a graph from inheriting powers it should not have.
+
+A **goal contract** says what outcome is sought, what must not happen, which
+parties and rights matter, what authority and resources are available, and
+when the mandate expires or requires clarification. Unit 6 established why
+this contract is an interpretation under uncertainty rather than a prompt
+string.
+
+A **plan** decomposes that accepted contract into obligations and alternatives.
+It identifies dependencies, assumptions, observations, validation points,
+failure routes, and completion criteria. It can contain branches that will
+never execute.
+
+A **schedule** assigns eligible plan nodes to times and resource windows. It
+may optimize a critical path, deadline, cost, or burden, but only relative to
+the plan model it receives.
+
+A **route proposal** says which capability, model, tool, person, or service
+might perform a node under a declared adequacy predicate. Routing owns
+qualification and selection among implementations. The planner states what is
+needed; it does not certify that a cheap worker is competent.
+
+A **job** is an admitted unit of work handed to an execution system. It binds
+specific inputs, outputs, worker state, retry rules, and closure behavior. A
+plan node can exist without becoming a job.
+
+An **authority grant** permits a specified actor to attempt a specified effect
+inside a bounded envelope. A valid plan and a ready job can still lack that
+grant. Reachability is not permission.
+
+For the gantry patch, “run the next physical trial” begins as a plan node. It
+becomes schedulable only when the build, simulator, calibration, payload, and
+review dependencies are current. Routing may propose the lab controller and a
+human observer. Labor or runtime infrastructure may create jobs. A separate
+authority owner decides whether the motor command may occur. The plan records
+all those requirements without impersonating any of their owners.
+
+## The Plan Begins With a Frozen Contract
+
+A planner should not optimize before it knows which problem it is allowed to
+solve. The planning epoch begins by freezing the accepted command version,
+consumer, purpose, success obligations, non-goals, authority and rights
+ceilings, affected parties, environment, outcome horizon, resource accounts,
+support ceiling, and material-change triggers.
+
+The gantry contract requires a verified controller candidate and forbids
+full-speed movement before a bounded trial. It preserves the physical stop
+route, prohibits using unreviewed generated configuration, limits the available
+lab window, and requires that failed predictions and trials remain in the
+record. A plan that reaches deployment by dropping the bounded trial is not a
+more efficient plan. It solves a different problem.
+
+Freezing does not make the contract eternally correct. It establishes which
+version the current plan claims to preserve. A new safety requirement, payload,
+deadline, user instruction, or affected-party constraint may require
+re-contracting. The planner can propose that change and explain its
+consequences. It cannot quietly reinterpret the mandate to keep its schedule
+green.
+
+The distinction matters because optimization creates pressure to weaken
+constraints that block progress. A system may relabel a required verification
+as optional, treat a non-goal as a preference, or infer authority from the fact
+that a task appears on the critical path. A versioned contract makes those
+moves visible as semantic changes rather than scheduling decisions.
+
+The plan also records abstention as a candidate. “No adequate plan,” “request
+clarification,” “defer until observation,” and “use a human-authored plan” are
+legitimate outputs. Forcing every planning invocation to return an executable
+graph converts uncertainty into invented feasibility.
+
+## Obligations, Not To-Do Items
+
+A plan node is stronger than a task label. “Update simulator” says almost
+nothing about what must be preserved. The corresponding obligation identifies
+the accepted contract and purpose; exact inputs and outputs; preconditions and
+postconditions; forbidden means; observation and context requirements;
+authority and rights demand; resource envelope; verifier; expected effects;
+failure behavior; fallback; and residual owner.
+
+For example, the simulator update node consumes the current controller model,
+payload range, observed oscillation trace, and the world-model residual from
+Unit 11. It must produce a versioned candidate model and a comparison report.
+It may not overwrite the failed pre-trial prediction. Its verifier checks
+whether the candidate reproduces the diagnostic trace and preserves previously
+accepted behavior. Failure leaves an owned modeling residual rather than an
+empty checkbox.
+
+The cold-build node consumes the exact repository revision and generator
+inputs. It produces a content-addressed artifact and dependency receipt. Its
+postcondition is not “build command returned zero.” It includes the artifact
+identity required by the integration test and physical trial. The node cannot
+declare that identity by copying the predicted digest from the plan.
+
+This structure makes partial progress meaningful. The generator fix can be
+complete while the controller remains blocked. The simulator can improve while
+the physical route remains unauthorized. A failed diagnostic can narrow the
+next experiment without satisfying the parent obligation.
+
+It also creates stable repair surfaces. If the payload changes, the plan can
+invalidate nodes whose preconditions mention payload while preserving a source
+inspection that did not depend on it. Without addressable obligations, systems
+often regenerate the whole plan or, worse, preserve every completed step even
+when its premises have expired.
+
+## Dependencies Have Types
+
+An arrow in a graph can mean many things. Treating every edge as “must happen
+before” hides why the order exists and what a change should invalidate.
+
+A **data dependency** says one node consumes another's output. A **control
+dependency** says a decision must occur first. A **semantic dependency** says
+an obligation relies on an interpretation or contract. A **temporal dependency**
+expresses a deadline, freshness window, or duration. **Authority** and
+**rights dependencies** require a current grant or permission. An **evidence
+dependency** requires a verifier result. A **resource dependency** requires
+capacity. A **state dependency** requires a world or repository condition. A
+**recovery dependency** requires a reachable fallback before an attempt.
+
+The edge also records how it was established. It may be asserted by a person,
+inferred from a build graph, observed in a trace, imported from a tool, or
+unknown. Acyclicity says nothing about truth. A graph can be a perfect DAG and
+still omit the generator relation that caused the earlier failure.
+
+For the patch, the physical trial has a data dependency on the controller
+artifact, an evidence dependency on integration-test acceptance, a state
+dependency on current calibration and payload, an authority dependency on the
+lab lease, a temporal dependency on observation freshness, and a recovery
+dependency on the stop route. If any one expires, “all predecessors complete”
+is not enough.
+
+Typed edges make replanning narrower. A changed deadline may alter scheduling
+without invalidating semantic outputs. A changed contract may invalidate nearly
+everything. A revoked authority grant blocks dispatch but need not erase a
+verified artifact. A failed recovery check can stop the physical branch while
+software analysis continues.
+
+Graph form remains useful. A strict topological order over the actual finite
+edges excludes cycles in that representation. It can expose parallelism,
+critical paths, and blocked dependencies. The discipline is to avoid promoting
+that structural fact into completeness, semantic truth, or planning quality.
+
+## Unknown Is a Planning State
+
+Plans fail when missing information is treated as a blank to fill with a
+plausible assumption. A governed planner records assumptions, open-world
+unknowns, observation provenance, staleness, disagreement, and the consequence
+of being wrong.
+
+The gantry plan does not know whether cable flex caused the oscillation. It may
+represent several hypotheses and schedule a discriminating low-energy test.
+It does not know whether the lab's payload certificate will remain current at
+the planned trial time. That becomes a future observation requirement. It may
+not know which specialist route can edit the simulator without losing prior
+calibration. That becomes a capability request rather than an invented worker.
+
+Missing context can route to retrieval, inspection, sensing, clarification,
+human review, deferment, or abstention. Each route has cost and may expose data
+or consume authority. Information gathering is itself planned work, not a free
+prelude outside the denominator.
+
+This is where Planning consumes Perception and World Models without absorbing
+them. Perception supplies bounded observations. World Models supply qualified
+branches and residuals. Planning decides which information-gathering or work
+obligation follows. It cannot relabel a prediction as an observation or certify
+that an observation is true.
+
+Unknown also protects scheduling. A node with an unresolved verifier or route
+is not dispatchable merely because idle capacity exists. A scheduler may
+reserve a window or rank alternatives, but it cannot turn missing feasibility
+into readiness.
+
+## Alternatives Need a Denominator
+
+A planner that reports only its selected graph hides how the decision was made.
+Candidate decompositions, rejected branches, retries, timeouts, human edits,
+and no-plan options should remain in the denominator.
+
+For the controller patch, one plan repairs the generator first, one diagnoses
+the physical model first, one runs both branches in parallel, and one abandons
+the controller change in favor of the old qualified version. Another asks a
+human engineer to author the diagnostic plan. Each candidate has different
+latency, resource, uncertainty, and recovery implications.
+
+Selection records the generator, method, prompt or policy, seed where relevant,
+search history, assumptions, expected utility, risk, total cost, and reason for
+rejection. This does not make the chosen plan optimal. It prevents the system
+from comparing one polished survivor against an invisible set of failures.
+
+Search depth should be consequence- and value-sensitive. A reversible text
+edit may justify a direct route. A physical trial with uncertain dynamics may
+justify alternatives and explicit contingency branches. More deliberation can
+improve a plan, but it also costs time and creates more model-generated
+surfaces to verify.
+
+The no-plan baseline is especially important. Sometimes direct reactive
+control, a fixed procedure, or an experienced human performs better than a
+detailed generated plan. Planning earns activation when its coordination and
+anticipation value exceeds its search, verification, delay, and maintenance
+cost.
+
+## Reachability Is Not Permission
+
+A planner may prove that a sequence of nodes can reach a target inside its
+model. That result says nothing by itself about whether the sequence is
+authorized, lawful, acceptable to affected parties, safe, or supported by
+current evidence.
+
+Each node therefore carries separate demands for context, capability,
+authority, rights, resources, and verification. A node becomes dispatchable
+only when its exact dependencies and feasibility predicates are current. Even
+then, Planning emits a dispatch request. Runtime and authority owners decide
+whether an effect occurs.
+
+This prevents a common escalation path. A planner notices that access to a
+restricted environment would shorten the critical path. It inserts an access
+node and then treats the graph's dependence on that node as justification for
+the permission. The plan has converted convenience into authority.
+
+In the gantry case, the physical trial may be on the only route to empirical
+resolution. That fact does not grant a lab lease, authorize movement, or waive
+human-presence conditions. If authority is absent, the node remains blocked or
+the planner proposes a different route. It may surface the cost of delay; it
+may not issue the grant.
+
+The same boundary applies to software tools, personal data, model weights,
+publication, spending, and delegation. A plan coordinates obligations under a
+ceiling inherited from the contract. It cannot increase that ceiling because
+its preferred route requires more power.
+
+## Scheduling the Whole Cost
+
+Once nodes are eligible, scheduling decides when and with which scarce
+resources they should run. The familiar objective is critical-path reduction:
+shorten the longest dependency chain and total completion time may fall. That
+logic is useful, but only relative to the graph and costs the planner has
+represented.
+
+The gantry branches compete for more than compute. The simulator update needs a
+specialist and a calibrated trace. The cold build needs storage and an isolated
+worker. Integration testing needs the lab software environment. The physical
+trial needs the gantry, an observer, an authority window, current sensors, and
+recovery capacity. Running both branches in parallel may shorten elapsed time
+while increasing review collisions or making the shared controller contract
+change underneath one branch.
+
+A schedule therefore carries a vector of resources and burdens: compute,
+memory, network, tools, credentials, evaluator capacity, human attention,
+privacy exposure, rights constraints, energy, physical equipment, recovery
+reserve, and opportunity cost. It records slack and deadlines, but it does not
+compress unlike resources into one price unless a declared policy justifies
+the conversion.
+
+Verification belongs on the critical path when an artifact cannot be consumed
+without it. Human review is not free because it occurs outside machine time.
+Fallback capacity cannot be sold twice, once as productive capacity and again
+as emergency reserve. Retries, coordination, merge repair, and cleanup remain
+part of the schedule's observed cost even when the successful trace does not
+show them.
+
+The scheduler can propose an optimization: run the cold build while the
+specialist examines the oscillation, then join only after both branches bind
+the same controller version. It cannot prove that the dependency model is
+complete or that the parallel route is worthwhile. Observed completion,
+conflict, review burden, and recovery cost must answer those questions later.
+
+## Replanning Is a New Version
+
+When feedback arrives, the planner should not mutate the active graph in place.
+It compares the observation with prospective triggers and emits a scoped
+replan proposal.
+
+Suppose the cold build reveals that the generator fix changes two additional
+artifacts. That observation invalidates the integration-test input and any
+downstream physical-trial package. It may not invalidate the simulator's
+analysis of cable flex. The replanner computes the affected future subgraph
+from typed dependencies, marks stale assumptions and artifacts, preserves
+unaffected work only when its premises still hold, and records the old and new
+graphs.
+
+The delta explains added, removed, split, merged, blocked, and rescheduled
+nodes; changed edges and assumptions; invalidated context, routes, authority,
+rights, resources, and verifiers; and new residuals. It also states whether the
+accepted contract remains unchanged. If the only feasible route violates the
+non-goal or authority ceiling, the correct output is re-contract, escalation,
+or failure, not a quiet graph rewrite.
+
+Prospective triggers prevent arbitrary churn. Replan when a material
+observation contradicts an assumption, a dependency expires, a route fails, a
+resource disappears, a verifier rejects, the contract changes, or a stop rule
+fires. Do not replan merely because a generator can imagine another graph.
+
+Replanning itself has cost and can create instability. A fast-changing
+environment may invalidate plans before they are checked. Hysteresis, minimum
+commitment windows, bounded horizons, reactive subcontrollers, and explicit
+abandonment can be better than constant global optimization.
+
+## Branch Joins Are Semantic Decisions
+
+Parallel branches do not become compatible merely because they both finish.
+At a join, the planner compares source and state versions, semantic assumptions,
+authority and rights ceilings, evidence views, quality predicates, side
+effects, resource ledgers, and residuals.
+
+The generator branch may build against controller version 7 while the
+oscillation branch produces version 8. Both nodes can be locally valid and
+globally incompatible. One branch may assume a 20-kilogram payload while the
+other calibrates for 15. One may consume an authority grant that expired
+during the parallel run.
+
+A merge can accept one branch, rebuild a descendant, retain variants, request
+review, or fail. It should not average contradictory assumptions or choose the
+newest timestamp by default. The join receipt names what was compared, which
+policy decided, what was rejected, and which residuals remain.
+
+This is another reason plans need semantic identities rather than only task
+positions. If an obligation moves in the graph, its identity and descendants
+should remain traceable. If two nodes appear similar, equivalence requires
+consumer-relative validation, not a matching label or embedding.
+
+The next unit develops the representation machinery for that validation.
+Planning decides which obligation should be lowered and when. Cognitive
+Compilation must preserve what the obligation means while turning it into a
+target artifact or executable job.
+
+## Stop, Fallback, and Recovery Are Work
+
+A plan is incomplete if its failure routes are verbs without mechanisms.
+“Stop,” “rollback,” “ask a human,” and “use fallback” each need an owner,
+preconditions, timing, resources, authority, descendant handling, verification,
+and an observed consequence.
+
+For the physical trial, stopping requires a current control channel and enough
+physical margin. Rolling back the software does not reverse motion already
+performed or measurements already disclosed. Returning to controller version
+7 requires that its artifact, configuration, calibration, and authority remain
+available. Human escalation requires an identified person with time and enough
+context to decide.
+
+The plan includes these obligations before dispatch. A fallback that becomes
+available only after failure is not a reachable fallback. A rollback request
+that no runtime can execute is documentation. A stop command that misses its
+deadline is a failed effect.
+
+Recovery can also change the future graph. If the low-energy trial stops after
+oscillation, descendants are invalidated, the physical state is observed, and
+the residual routes back to diagnosis. If stopping leaves the gantry in an
+unusual position, the next plan begins from that actual state rather than from
+the pre-trial branch.
+
+These distinctions keep planning honest about irreversibility. The graph can
+restore a software artifact and still leave external effects, opportunity cost,
+human burden, or lost time. Recovery closes only the obligations it actually
+satisfies.
+
+## Failure Cases
+
+**The tidy wrong DAG.** Every edge is acyclic and every node is typed, but a
+real dependency is missing. Structural validity is mistaken for truth.
+
+**Constraint erosion.** A required verification or non-goal disappears because
+it blocks the preferred schedule.
+
+**Reachability laundering.** The planner infers permission from the fact that a
+restricted action lies on the only path to the target.
+
+**Capability self-certification.** A route is selected because it is cheap or
+available without evidence that it can satisfy the node's adequacy predicate.
+
+**Unknown becomes assumed.** Missing context, observation, or causal structure
+is filled with a plausible value to keep the graph executable.
+
+**Alternative survivorship.** Only the chosen plan and completed nodes are
+counted; failed searches, retries, abandoned branches, and human repairs vanish.
+
+**Stale completion.** A node remains marked complete after its contract,
+dependency, context, model, authority, or verifier changes.
+
+**Global replan churn.** Every observation regenerates the whole graph, wasting
+work and making commitments impossible.
+
+**Local replan underreach.** A changed assumption has wider descendants than
+the declared repair scope, leaving incompatible work active.
+
+**Blind branch merge.** Two successful branches use different state versions,
+assumptions, or authority ceilings and are joined by position or timestamp.
+
+**Paper fallback.** Stop, rollback, recovery, or escalation is named but lacks
+a reachable mechanism, owner, deadline, or verification.
+
+**Planning tax exceeds value.** Search, records, reviews, and replanning add
+latency and burden while a reactive or fixed procedure performs as well.
+
+Each case demands an observable test. A richer schema can reject some malformed
+records. Only task outcomes can show whether planning improves coordination,
+recovery, and cost.
+
+## The Strongest Simpler Baseline
+
+Planning should compete against direct execution, reactive control, fixed
+procedures, single-pass prompted plans, ordinary workflows, hierarchical or
+symbolic planners where appropriate, and competent human plans. All arms need
+the same contract, information, tools, authority, resource ceiling, evaluator
+access, and outcome horizon.
+
+For the patch, a strong simple route may be: revert to controller version 7,
+perform a cold rebuild, run the full fixed test procedure, and ask the engineer
+to diagnose the oscillation separately. It sacrifices parallelism and adaptive
+search but may be easier to audit and recover.
+
+The comparison measures useful completion, contract preservation, dependency
+errors, unsafe or unauthorized requests, missed help, recovery, rework,
+latency, compute, human burden, tool use, false blocks, and residuals. A planner
+that looks efficient because its failed searches or human repairs are excluded
+has not earned the claim.
+
+Dynamic environments provide the hardest test. If plans expire faster than
+they can be validated, a reactive controller with bounded deliberation may be
+safer and cheaper. Explicit planning should activate where dependencies,
+parallelism, delayed effects, alternatives, and recovery justify its cost.
+
+## What the Current Work Establishes
+
+The current repository implements a substantial finite planning contract, but
+not a demonstrated planner.
+
+Seven public proof targets are implemented across two Lean modules. The
+Planning module contains 53 theorem declarations, and PlanForge contains 18.
+The finite models cover admission, dependency order, dispatch requests,
+authority ceilings, stops, versioning, lifecycle transitions, replan deltas,
+and residual preservation. Strict topological order over every actual finite
+edge excludes cycles in the modeled graph.
+
+The scheduler-state probe contains two valid synthetic scheduler traces and
+seven expected-invalid controls. Its graph consumer binds one valid and three
+rejected PlanForge cases, five reachable dependency pairs, one thin-summary
+collision, and twelve complete graph-transport mutation rejections. The
+runtime-replan audit contains two valid synthetic traces and nine
+expected-invalid controls.
+
+The complete finite lifecycle reaches renewed job lowering after feedback and
+replanning while preserving authority, order, version, stop, dispatch, and
+residual invariants. Eleven closed controls reject invalid transitions. These
+results establish behavior of the authored records and transition systems.
+
+They do not establish decomposition quality, dependency truth or completeness,
+context-demand prediction, selected-route adequacy, scheduler optimality,
+useful critical-path improvement, deployed runtime behavior, live-feedback
+benefit, safety, transfer, or support promotion. The chapter's core remains
+`Design rationale` at `argument` support.
+
+## From a Minimum Planner to a Governed Control Service
+
+A minimum implementation can use one bounded repository task. Freeze the
+contract, generate at least a direct route and one decomposed alternative,
+represent typed obligations and dependencies, require current context and
+route receipts, schedule eligible nodes, record every dispatch request, inject
+one material feedback event, compute a replan delta, and verify stop and
+residual behavior. Compare it with a fixed workflow and direct execution under
+matched resources.
+
+The next stage needs natural tasks with hidden dependencies, changing context,
+delayed outcomes, parallel branches, route failures, revoked authority,
+resource contention, and recoverable and irreversible effects. Gold labels
+must distinguish plan-model error, execution error, observation error, and
+evaluation error. Every generated plan, node, edge, retry, timeout, replan,
+human intervention, cost, and failure stays in the denominator.
+
+The mature service would choose planning depth by consequence and expected
+value. It would combine symbolic constraints, learned world models, search,
+human proposals, and reactive policies without giving any one representation
+automatic priority. Plans would remain live, versioned artifacts whose
+assumptions and descendants expire precisely. Schedulers would account for
+compute, tools, verification, privacy, rights, recovery, and human attention,
+not merely CPU slots.
+
+Branch joins would compare semantics and external effects. Replanning would be
+scoped and causally audited. Stop and fallback routes would be tested in the
+environment. The system would learn reusable decompositions only through
+governed promotion and retain the slower route when compiled plans drift.
+
+Maturity requires prospective natural campaigns against competent simple,
+symbolic, model-based, and human baselines; causal ablations; delayed outcome
+measurement; independent evaluation and reproduction; and transfer across
+models, tasks, environments, and organizations. A finite DAG proof or clean
+trace is the starting contract, not the destination.
+
+## The Strongest Objection
+
+Detailed plans can be obsolete before they are checked. In fast, partially
+observed environments, a reactive policy may use current state while a planner
+reasons over stale assumptions. More graph structure creates more places for
+dependency errors, false precision, and administrative latency.
+
+The objection is correct in some regimes. Planning is not an intelligence tax
+that every task must pay. Its activation should depend on delayed effects,
+coordination needs, branching, irreversibility, consequence, and the expected
+value of information. A low-consequence action with immediate feedback may
+need only a short policy and stop rule.
+
+Governance can also become theater. Exact records do not improve a bad
+decomposition. A complete denominator does not make search useful. A typed
+fallback does not make it reachable. The architecture earns its place only
+when it improves outcomes, recovery, or accountability after total costs are
+counted.
+
+The practical response is a hybrid hierarchy. Reactive controllers handle
+fast local dynamics inside bounded envelopes. Short-horizon planners coordinate
+near-term dependencies. Deeper planning activates for expensive, delayed,
+multi-party, or hard-to-reverse decisions. Feedback can narrow or abandon the
+plan without forcing every control loop through global deliberation.
+
+## Evidence That Would Change the Conclusion
+
+Dynamic-task studies in which direct reactive control is safer, cheaper, and
+more recoverable would narrow when explicit planning should activate. If fixed
+workflows or competent human plans match adaptive planning on useful outcomes,
+contract preservation, rework, and recovery at lower total cost, the generated
+planning layer should contract.
+
+Evidence supporting the broader design would require prospective natural tasks
+where the governed route improves joint utility, dependency handling,
+appropriate parallelism, stop behavior, and recovery without increasing
+unauthorized action, unsafe effects, latency, compute, or human burden. The
+study would need matched baselines, complete denominators, causal ablations of
+typed edges and replan logic, independent outcomes, reproduction, and transfer.
+
+No one favorable benchmark should turn every task into a planning problem.
+The conclusion should remain conditional on task regime, consequence, and
+planning rent.
+
+## What This Establishes
+
+A plan is a control artifact for preserving obligations through change. It is
+not a polished prediction of one future and not permission to make that future
+real.
+
+The gantry plan remains useful because its nodes expose exactly why they are
+blocked, which assumptions they consume, and what feedback invalidates them.
+The generator branch and oscillation branch can proceed independently where
+their premises permit. They cannot merge across controller versions by
+convenience. The physical trial stays blocked until its evidence, authority,
+state, resource, and recovery dependencies are current.
+
+This structure lets a system replan without rewriting its mandate or erasing
+failed alternatives. It also reveals when planning is unnecessary or too
+expensive. The measure is not whether the graph is elegant. It is whether the
+system coordinates useful work and changes course better than simpler routes.
+
+Plans still cannot execute themselves. Each admitted obligation must be
+translated into representations that tools, models, verifiers, and people can
+share without losing meaning. Unit 13 follows that translation through
+semantic intermediate representations, relational structure, search, and
+target lowering.
+
+{{< include ../generated/unit-12-status.qmd >}}
