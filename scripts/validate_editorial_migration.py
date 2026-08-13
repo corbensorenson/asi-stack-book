@@ -95,12 +95,21 @@ CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS = {
     "human-ai-organizations-delegation-and-accountability",
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
 }
+IMPROVEMENT_STEWARDSHIP_PARENT_IDS = {
+    "recursive-self-improvement-boundaries",
+    "living-book-methodology",
+}
+IMPROVEMENT_STEWARDSHIP_CHILD_IDS = {
+    "open-ended-improvement-engines",
+    "artifact-steward-agents-and-living-project-governance",
+}
 COMPOSED_PARENT_IDS = (
     METHOD_DETAIL_PARENT_IDS
     | SECURITY_CUSTODY_PARENT_IDS
     | WHITE_BOX_PARENT_IDS
     | HUMAN_INSTITUTIONAL_PARENT_IDS
     | CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS
+    | IMPROVEMENT_STEWARDSHIP_PARENT_IDS
 )
 COMPOSED_CHILD_IDS = (
     METHOD_DETAIL_CHILD_IDS
@@ -108,6 +117,7 @@ COMPOSED_CHILD_IDS = (
     | WHITE_BOX_CHILD_IDS
     | HUMAN_INSTITUTIONAL_CHILD_IDS
     | CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS
+    | IMPROVEMENT_STEWARDSHIP_CHILD_IDS
 )
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
@@ -308,6 +318,38 @@ COMPOSITION_SURFACES = {
             "does not turn protocol conformance into a claim about the",
         ],
     ),
+    "recursive-self-improvement-boundaries": (
+        "chapters/recursive-self-improvement-boundaries.qmd",
+        [
+            "### Open-ended campaigns inside the recursive-improvement boundary",
+            "(open-ended-improvement-engines.qmd)",
+            "this chapter does\nnot inherit a search-performance",
+        ],
+    ),
+    "open-ended-improvement-engines": (
+        "chapters/open-ended-improvement-engines.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(recursive-self-improvement-boundaries.qmd)",
+            "does not inherit a\nsafe-recursion",
+        ],
+    ),
+    "living-book-methodology": (
+        "chapters/living-book-methodology.qmd",
+        [
+            "### Artifact stewardship inside the living-book method",
+            "(artifact-steward-agents-and-living-project-governance.qmd)",
+            "without treating it as proof that the general steward\ndesign works",
+        ],
+    ),
+    "artifact-steward-agents-and-living-project-governance": (
+        "chapters/artifact-steward-agents-and-living-project-governance.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(living-book-methodology.qmd)",
+            "does not inherit manuscript quality",
+        ],
+    ),
 }
 
 
@@ -400,8 +442,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_five_packages_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record all five EM2 packages")
+    if editorial.get("state") != "em2_six_packages_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record all six EM2 packages")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",
@@ -448,6 +490,16 @@ def validate(
             "state": "composed_no_public_cutover",
             "parent_ids": sorted(CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS),
             "child_ids": sorted(CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-improvement-and-stewardship-publication-nests",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(IMPROVEMENT_STEWARDSHIP_PARENT_IDS),
+            "child_ids": sorted(IMPROVEMENT_STEWARDSHIP_CHILD_IDS),
             "stable_technical_routes_preserved": True,
             "claim_support_inheritance": False,
             "support_state_effect": "none",
@@ -572,6 +624,25 @@ def main() -> None:
         altered_surfaces[chapter_id] = altered_surfaces[chapter_id].replace(good, bad)
         if not validate(structure, status, preview, altered_surfaces):
             errors.append(f"negative control accepted: {label}")
+    final_boundary_mutations = [
+        (
+            "recursive-self-improvement-boundaries",
+            "this chapter does\nnot inherit a search-performance",
+            "this chapter inherits search performance",
+            "recursive/open-ended boundary erasure",
+        ),
+        (
+            "living-book-methodology",
+            "without treating it as proof that the general steward\ndesign works",
+            "as proof that the general steward design works",
+            "living-book/stewardship boundary erasure",
+        ),
+    ]
+    for chapter_id, good, bad, label in final_boundary_mutations:
+        altered_surfaces = dict(surfaces)
+        altered_surfaces[chapter_id] = altered_surfaces[chapter_id].replace(good, bad)
+        if not validate(structure, status, preview, altered_surfaces):
+            errors.append(f"negative control accepted: {label}")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -579,7 +650,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 13 rejecting controls."
+        "and 15 rejecting controls."
     )
 
 

@@ -20,6 +20,10 @@ EXPECTED = {
     "intent-to-execution-contracts.prose.0a47a15a695d",
     "inter-stack-protocols-identity-and-economic-exchange.prose.11b089026a9a",
     "virtual-context-abi.prose.f0b1eb7dca03",
+    "artifact-steward-agents-and-living-project-governance.prose.6634273143db",
+    "living-book-methodology.prose.903a4f621148",
+    "living-book-methodology.prose.fe3d7ede718a",
+    "living-book-methodology.prose.e3ede756ed0d",
 }
 REVIEWED_CHAPTERS = {
     "constitutional-alignment-substrate",
@@ -31,6 +35,8 @@ REVIEWED_CHAPTERS = {
     "inter-stack-protocols-identity-and-economic-exchange",
     "moral-uncertainty-and-value-conflict",
     "virtual-context-abi",
+    "artifact-steward-agents-and-living-project-governance",
+    "living-book-methodology",
 }
 
 

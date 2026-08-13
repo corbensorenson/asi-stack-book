@@ -112,6 +112,27 @@ UNIT_07_REQUIRED = [
     "an optimizer\ncannot ratify its own purpose",
     "This Human Reader synthesis does not combine those bounded results into a\nstronger theorem",
 ]
+UNIT_08_REQUIRED = [
+    "## The Patch Leaves the Repository",
+    "## Capability Is Not Mandate",
+    "## The Affected Public Is Part of the System",
+    "## Participation Is Not Representation",
+    "## Jurisdiction Is a Routing Constraint",
+    "## Coordination Must Survive Partial Participation",
+    "## Resilience Has Four Different Verbs",
+    "## One Shared Service, Many Authorities",
+    "## Remedy Must Reach the Harmed Party",
+    "## Concentration and Gradual Loss of Human Influence",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Can Establish",
+    "## From a Minimum Packet to a Mature Governance Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Capability does not\ncreate mandate",
+    "This Human Reader synthesis does not combine the two finite reviews into a\nstronger theorem",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -196,6 +217,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_07_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 7 missing required argument boundary: {fragment!r}")
+    unit_08 = next((unit for unit in units if unit.get("unit_id") == "unit-08"), None)
+    if unit_08 is None or unit_08.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 8 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_08["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_08_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 8 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

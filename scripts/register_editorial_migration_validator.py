@@ -67,6 +67,10 @@ ARTIFACTS = [
     "evidence_quality/claim_reviews/virtual-context-abi.json",
     "evidence_quality/claim_reviews/context-transactions-snapshots-mounts-and-taint.json",
     "evidence_quality/claim_reviews/inter-stack-protocols-identity-and-economic-exchange.json",
+    "chapters/recursive-self-improvement-boundaries.qmd",
+    "chapters/open-ended-improvement-engines.qmd",
+    "chapters/living-book-methodology.qmd",
+    "chapters/artifact-steward-agents-and-living-project-governance.qmd",
 ]
 STALE_POST_ACTIVATION_CLAIM_REVIEWS = {
     "evidence_quality/claim_reviews/human-factors-and-meaningful-control-in-oversight.json",
@@ -87,7 +91,7 @@ def main() -> None:
     contract = {
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the five completed no-cutover EM2 composition packages.",
+        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the six completed no-cutover EM2 composition packages.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
         "output_assertions": [
@@ -101,15 +105,15 @@ def main() -> None:
             "5 dossier owners",
             "1 back-matter owner",
             "26 Human Reader units",
-            "13 semantic mutations reject",
+            "15 semantic mutations reject",
             "support and release effects none",
         ],
-        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and five evidence-preserving EM2 composition packages without public cutover.",
+        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and six evidence-preserving EM2 composition packages without public cutover.",
         "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
-        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure", "white-box composition-boundary erasure", "human-control/communication boundary erasure", "constitution/moral-conflict boundary erasure", "institution/resilience boundary erasure", "intent/command boundary erasure", "context static/dynamic boundary erasure", "work-surface/organization boundary erasure", "protocol/population boundary erasure"],
-        "prohibited_inference": "Composition does not transfer technical ownership or support, complete the remaining publication nests or semantic merge, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
+        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure", "white-box composition-boundary erasure", "human-control/communication boundary erasure", "constitution/moral-conflict boundary erasure", "institution/resilience boundary erasure", "intent/command boundary erasure", "context static/dynamic boundary erasure", "work-surface/organization boundary erasure", "protocol/population boundary erasure", "recursive/open-ended boundary erasure", "living-book/stewardship boundary erasure"],
+        "prohibited_inference": "Composition does not transfer technical ownership or support, complete the semantic merge candidate, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
         "contract_precision": "exact_high_impact",
-        "semantic_review_state": "checked_five_no_cutover_composition_packages",
+        "semantic_review_state": "checked_six_no_cutover_composition_packages",
     }
     unit.update(contract)
     referenced = {

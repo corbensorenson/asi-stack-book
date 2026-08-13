@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "product_id": "editorial-migration-metadata-preview",
-  "state": "five_packages_composed_no_public_cutover",
+  "state": "six_packages_composed_no_public_cutover",
   "sources": [
     "book_structure.json",
     "docs/human_reader_26_unit_outline.md"
   ],
-  "book_structure_sha256": "8b7fc09fea97fce4055d3923965cb6fb02c420c98c631d4df1827e1c6bf205ce",
+  "book_structure_sha256": "b145cbe60f85a348f7e6f3efba4b8635bbd15033acf6486579a0e2fddda9f1ff",
   "human_reader_outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
   "reference_owner_count": 87,
   "main_book_owner_count": 56,
@@ -901,7 +901,7 @@
   "public_route_effect": "none",
   "non_claims": [
     "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-    "Four composition packages do not complete the remaining publication nests or semantic merge candidate.",
+    "Six composition packages preserve all publication and method-detail nests; the semantic merge candidate and public cutover remain incomplete.",
     "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
     "No support state, release state, safety, readiness, AGI, or ASI claim changes."
   ]

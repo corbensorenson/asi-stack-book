@@ -1,0 +1,608 @@
+---
+title: "Institutions, Coordination, and Societal Resilience"
+unit_id: "unit-08"
+---
+
+## The Patch Leaves the Repository
+
+A repository change begins inside a boundary that seems manageable. A maintainer
+proposes it. Reviewers inspect it. Automated checks run. Someone with merge
+authority accepts or rejects it. Even when the decision is difficult, the roles
+can be named and the affected artifact can be identified.
+
+Then the repository becomes infrastructure.
+
+Other projects depend on its package. Several organizations rely on its release
+service. Volunteer maintainers, commercial users, public institutions, and
+people who never agreed to the project's governance are exposed to its
+behavior. A change that saves the original team an hour may transfer days of
+work to downstream operators. A security measure that protects one population
+may deny service to another. An emergency response that is lawful in one place
+may violate duties in another. A clean rollback may restore the code while
+leaving financial loss, inaccessible services, damaged records, or uncorrected
+public claims behind.
+
+The engineering problem has changed. The question is no longer only whether an
+authorized operator may modify an artifact. It is who can authorize effects
+across institutions, whose interests count, how disagreements cross
+jurisdictions, and what happens after prevention fails. Capability does not
+create mandate. Technical correctness does not create legitimacy. Stopping an
+incident does not by itself restore the people and institutions that absorbed
+its effects.
+
+This is where governance becomes more than a permission system. A governed AI
+stack needs institutions that can turn bounded evidence into contestable
+collective action, and it needs resilience mechanisms that continue after a
+decision, model, provider, or control has failed. Neither layer may borrow the
+other's conclusion. An institution can possess a mandate and still respond
+badly. A response network can restore a service and still lack lawful authority,
+representative standing, or an adequate remedy.
+
+The central design problem is therefore not to create one global approval bit.
+It is to preserve the differences among mandate, evidence, participation,
+enforcement, remedy, resistance, recovery, and adaptation while allowing them
+to compose under pressure.
+
+## Capability Is Not Mandate
+
+An AI system may be able to draft a regulation, evaluate a model, coordinate a
+response, allocate compute, or disable an account. None of those capabilities
+answers whether it may do so for a particular public, institution, or
+jurisdiction.
+
+Mandate is a relation, not a property of the system. It binds an actor, an
+instrument, a jurisdiction, an affected population, a class of action, a time
+window, and a route for challenge. The same organization can be authorized to
+inspect one service and forbidden to inspect another. The same emergency power
+can be valid for one incident and invalid after its expiry. The same technical
+standard can be useful evidence in several countries without becoming law in
+any of them.
+
+This distinction matters because advanced systems make mandate laundering easy.
+A model can produce a convincing report faster than an institution can decide
+who is entitled to rely on it. A company can implement a voluntary standard and
+describe the result as public legitimacy. A coordination forum can collect
+signatures while leaving enforcement, withdrawal, and remedy undefined. A
+technical team can inherit responsibility for a public problem simply because
+it is the only group able to act quickly.
+
+The stack should resist each substitution. Competence can qualify an actor for
+a role, but cannot appoint it. Evidence can inform an authority, but cannot
+create one. Standards can make expectations testable, but cannot settle who is
+bound. Participation can expose disagreement, but cannot turn consultation
+into consent. Speed can reduce harm, but cannot erase the need to record the
+authority used and the residuals left behind.
+
+## The Affected Public Is Part of the System
+
+System diagrams often end at the organization that deploys the model. The
+effects do not. They travel through customers, workers, contractors,
+communities, public services, supply chains, information environments, and
+institutions with unequal capacity to respond.
+
+An affected-party map is therefore not a public-relations appendix. It is part
+of the control surface. It should name direct users, non-user subjects,
+downstream dependents, operators, reviewers, maintainers, populations exposed
+to externalities, institutions expected to provide remedy, and groups likely to
+bear the cost of a failure or a safeguard. It should also record uncertainty:
+unknown dependents and unrepresented populations do not disappear because the
+map is incomplete.
+
+This changes the meaning of a successful intervention. Suppose a provider
+blocks a malicious account. The account-level action may be correct. Yet a
+complete review still asks whether copied artifacts remain elsewhere, whether
+victims were notified, whether false records were corrected, whether a public
+service stayed available, whether investigators preserved evidence lawfully,
+and whether the attacker moved to another provider. The provider owns only part
+of the path.
+
+The same rule applies to benefits. A deployment can improve aggregate
+throughput while concentrating decision power, reducing meaningful exit, or
+making a weaker institution dependent on a stronger one. Average performance
+does not identify who gained agency, who lost it, or who can contest the new
+arrangement. Those are separate observations.
+
+## Participation Is Not Representation
+
+Counting participants is attractive because it produces a clean number. A
+large consultation, a public comment period, a standards meeting, or a
+multi-stakeholder panel can demonstrate that a process opened a door. The count
+cannot establish who walked through it, who could not, whose input changed the
+decision, or whether the participants had standing to represent anyone beyond
+themselves.
+
+Representation requires a theory of constituency and accountability. Who
+selected the representative? What information did that person receive? Could
+the represented group replace them? Were dissenting positions preserved? Did
+language, time, expertise, disability, money, or fear of retaliation determine
+who could participate? Was the decision already fixed before participation
+began?
+
+This does not mean every technical change requires a plebiscite. It means the
+form of participation should match the decision and its effects. A maintainer
+may decide an internal refactor. A change that alters contractual obligations
+needs the parties named by those contracts. A cross-border public deployment
+may require regulators, affected institutions, technical evaluators, civil
+society, and harmed-party routes with different kinds of standing. Expertise,
+democratic authority, ownership, operational responsibility, and lived exposure
+are not interchangeable credentials.
+
+A well-designed packet records the differences instead of compressing them
+into a stakeholder score. It can say that a process had broad notice but weak
+influence, strong technical review but poor affected-party representation, or
+formal authorization but unresolved dissent. That may look less decisive. It
+is more honest, and it gives later review something precise to repair.
+
+## Jurisdiction Is a Routing Constraint
+
+Jurisdiction is often treated as metadata attached after a system design is
+complete. In a governed stack it changes the route itself.
+
+The system needs to know which institution is acting, under which instrument,
+for which population, over which action, and with which geographic or sectoral
+scope. It needs conflict rules when several authorities apply, escalation when
+no competent authority can be identified, expiry when emergency or temporary
+powers end, and a refusal path when a requested action exceeds the recorded
+mandate.
+
+This is not a claim that law can be reduced to a policy engine. Legal meaning,
+facts, precedent, institutional competence, and due process exceed a finite
+schema. The record serves a narrower purpose: it prevents the runtime from
+treating one valid authorization as universal. A mandate issued for one
+jurisdiction should not silently authorize another. A changed instrument,
+protocol, population, or territorial scope should invalidate the old receipt
+until the new case is reviewed.
+
+Cross-border coordination needs the same discipline. An international
+commitment should identify parties, covered systems, entry conditions,
+measurement, verification access, data-sharing limits, uncertainty,
+noncompliance handling, incentives or sanctions, withdrawal, amendment,
+emergency exceptions, and re-entry. A signature is evidence of a commitment,
+not evidence that domestic institutions implemented it or that enforcement is
+effective.
+
+## Coordination Must Survive Partial Participation
+
+Coordination designs frequently assume that the relevant actors will join,
+report honestly, interpret terms similarly, and remain capable of carrying out
+their commitments. Real systems contain nonparticipants, delayed participants,
+weak institutions, strategic concealment, incompatible laws, resource
+asymmetries, and actors who benefit from the others' restraint.
+
+The architecture should model those states before an emergency. For each
+commitment, it should ask what can be observed, who verifies it, how shared
+dependencies are disclosed, how disagreement is recorded, what happens when a
+party cannot perform, and which actions remain possible when a party refuses.
+The strongest actor should not become the default global authority merely
+because it has the fastest telemetry or the largest response team.
+
+This is why commitment and enforcement must remain separate. A beautifully
+specified treaty, policy, or protocol can coexist with weak inspection,
+selective enforcement, inaccessible remedy, or no capacity to act. Conversely,
+an institution may have strong enforcement capacity but no legitimate mandate
+for the proposed action. A coordination packet should make both failures
+visible.
+
+It should also preserve strategic feedback. If complying actors incur high
+cost while noncomplying actors capture the benefit, the arrangement may
+collapse. If verification requires data that weaker parties cannot collect,
+formal equality can produce practical exclusion. If emergency exceptions are
+easy to invoke and hard to retire, temporary coordination can become permanent
+centralization. These are system dynamics, not footnotes.
+
+## Resilience Has Four Different Verbs
+
+Prevention is necessary, but prevention-only governance is brittle. Some attacks
+will pass. Some models will be misused. Some safeguards will fail. Some harms
+will come from ordinary errors, institutional conflict, cascading dependencies,
+or slow shifts that no single incident detector recognizes.
+
+Societal resilience begins by separating four capacities.
+
+**Resist** means reducing the probability or reach of a harmful event before it
+takes hold. Authentication, access control, hardened services, careful release,
+training, redundancy, public education, and defensive tools can all contribute.
+Resistance is not absolute prevention; it is measured against a threat and an
+exposed population.
+
+**Absorb** means continuing essential functions while the event is active.
+Fallback communication, service degradation plans, manual procedures,
+alternative providers, trusted intermediaries, and protected reserves can keep
+one failure from becoming total institutional collapse. Absorption can impose
+unequal burdens, so continuity metrics need affected-party measures as well as
+uptime.
+
+**Recover** means restoring services, rights, records, resources, and agency
+after containment. Re-enabling an account or reverting code may be part of
+recovery, but harmed-party remedy, correction, compensation, support, and
+institutional repair may continue long afterward. A provider's terminal state
+is not necessarily the victim's terminal state.
+
+**Adapt** means changing the system in response to what was learned without
+creating a new unreviewed hazard. Playbooks, training, technical controls,
+coordination agreements, and laws may all change. Adaptation should name the
+evidence, affected parties, authority, expected effect, expiry, and rollback of
+the change. Updating a policy document is not evidence that field behavior
+improved.
+
+These stages overlap. Resistance continues during response. Recovery can reveal
+new exposure and reopen containment. Adaptation can reduce one threat while
+creating a new concentration or access failure. A resilient system therefore
+does not force every incident through a neat linear pipeline. It preserves the
+state of each capacity and the residuals that keep the case open.
+
+## One Shared Service, Many Authorities
+
+Consider a hypothetical release service used by dozens of independent software
+projects. It builds packages, signs artifacts, publishes updates, and carries a
+reputation for dependable automation. Some projects are volunteer-maintained.
+Some are commercial. A public institution depends on one downstream package
+for an essential internal service. Users in several jurisdictions receive
+updates through different distributors.
+
+The service's maintainers propose an AI-assisted change. The new controller
+would identify low-risk releases, compress review steps, and publish them more
+quickly. On the service's historical fixtures, the controller reduces delay and
+passes the tests. Under repository-scale governance, the change looks ready.
+
+The institutional view asks different questions. Who authorized the service to
+classify risk for downstream projects? Did those projects delegate publication
+authority or only build execution? Which users are affected by a false low-risk
+classification? Does a public institution have duties that prevent automated
+updates without its own review? Can a volunteer project realistically inspect
+the evidence packet? Which jurisdiction governs a disputed signature or an
+incorrectly withdrawn release? Who may pause the shared service, and who can
+continue operating if it is paused?
+
+Suppose the controller publishes a flawed dependency. The release service
+detects the anomaly and stops further publication. That is resistance arriving
+late and containment arriving early. It is useful, but the system has not
+recovered.
+
+Some downstream projects already incorporated the package. One distributor
+cached it. The public institution disables an affected service while it
+investigates. A volunteer maintainer cannot respond immediately. Users receive
+conflicting notices because each organization knows only part of the incident.
+No single actor has both a complete dependency map and authority over every
+copy.
+
+A governed response starts with shared incident identity rather than shared
+sovereignty. Participants can refer to the same event, affected artifacts, and
+time window while retaining their own duties. The release service can revoke
+its signature, publish evidence, preserve logs, notify known dependents, and
+offer a corrected build. Distributors can quarantine cached copies. Projects
+can decide whether the corrected version satisfies their own release rules.
+The public institution can follow its continuity and reporting obligations.
+No actor's valid action automatically ratifies the others.
+
+The response packet should record known and unknown affected populations,
+services that must remain available, evidence-sharing rules, confidentiality
+constraints, response owners, deadlines, handoffs, disputes, and residuals.
+Where lawful and proportionate, participants may share minimal telemetry about
+affected versions and observed failures. They should not turn incident
+coordination into an unlimited data-sharing license.
+
+Absorption might involve a stable older package, a manual workflow, or a
+temporary alternative service. These routes have costs. The older package may
+carry a known vulnerability. Manual operation may burden a small team.
+Alternative infrastructure may be available only to wealthy participants. A
+serious review records these tradeoffs instead of reporting that service was
+simply “restored.”
+
+Recovery proceeds on several clocks. The release service can restore correct
+publication quickly. Downstream projects may need to rebuild and redistribute.
+The public institution may need to verify records and notify affected people.
+Users may need corrections or support. A project that lost trust or volunteer
+capacity may not recover when the software does. Each clock needs an owner and
+a criterion for closure.
+
+Adaptation comes last only in the sense that it should be informed by the
+event. The service might tighten its classifier, add a downstream approval
+mode, improve dependency notification, or reduce the controller's authority.
+Participants might create a mutual-aid agreement for future incidents. These
+changes are new proposals, not automatic consequences of the postmortem. They
+need their own evidence, mandate, burden review, and rollback path.
+
+The example reveals why one global score would be misleading. The release
+service can improve mean recovery time while weaker projects recover more
+slowly. The corrected package can be technically sound while notices remain
+inaccessible. Most participants can approve a new coordination agreement while
+the most exposed population lacks representation. The architecture needs a
+joint picture without erasing these differences.
+
+## Remedy Must Reach the Harmed Party
+
+Remedy is often attached to governance as an appeals address. For a complex AI
+system, it is an end-to-end path.
+
+A person or institution must be able to discover that a decision or incident
+affected them, identify the responsible route, preserve relevant evidence,
+challenge facts or authority, receive a timely response, obtain correction or
+other relief where appropriate, and escalate when the first institution cannot
+act. The route should survive vendor changes, model replacement, organizational
+restructuring, and cross-border handoffs.
+
+This does not imply that every bad outcome has one liable actor or one complete
+repair. Adaptive systems and shared infrastructure can create uncertain,
+distributed causation. The answer is not to erase responsibility because it is
+hard to allocate. The system can record contribution hypotheses, confidence,
+disputes, evidence custody, provisional measures, and unresolved residuals
+while the competent institutions adjudicate the case.
+
+Remedy is also distinct from resilience metrics. Rapid containment does not
+show that an injured party was restored. High service availability does not
+show that burdens were equitable. Compensation does not establish that the
+system is now safe. Each result answers a different question.
+
+## Concentration and Gradual Loss of Human Influence
+
+Not every institutional failure arrives as an incident. AI systems may produce
+gradual shifts in who can understand, contest, finance, or perform important
+work. Each local adoption can appear voluntary and useful while the combined
+system becomes hard to exit.
+
+A shared evaluator may become the only practical route to market. A handful of
+providers may control compute, identity, model access, or incident telemetry.
+Organizations may retain formal approval while losing the expertise and time
+needed to disagree. Public institutions may depend on private systems they
+cannot inspect. Workers and communities may be consulted after the operational
+alternatives have disappeared.
+
+This is gradual disempowerment as a systems problem: human influence can erode
+without one agent seizing power and without one decision crossing a dramatic
+threshold. The relevant signals include concentration, switching cost,
+dependency depth, review capacity, skill retention, option diversity,
+meaningful appeal, and the ability of affected groups to form and finance
+alternatives.
+
+The response cannot be a blanket ban on scale or specialization. Shared
+infrastructure can make strong security, evidence, and recovery available to
+small institutions. The design goal is to keep shared capability from becoming
+unreviewable authority. Interoperability, portable records, independent
+evaluation, federated response capacity, fork and exit paths, local competence,
+and explicit sunset review can preserve alternatives. None guarantees a fair
+distribution of power, but each makes loss of agency more observable and
+contestable.
+
+## Failure Cases
+
+**Legitimacy laundering.** A company cites technical conformance, a consultation,
+or an international principle as if it were public authorization. The repair is
+to name the actual mandate, jurisdiction, instrument, affected population, and
+challenge route. If those fields cannot be supplied, the action should not be
+described as institutionally authorized.
+
+**Participation without influence.** A process collects comments after the key
+decision is fixed, counts attendees instead of tracing representation, or
+invites groups without giving them the information and time needed to respond.
+The participation record should show notice, access, standing, influence,
+dissent, and unresolved exclusions separately.
+
+**Forum shopping.** An actor selects the weakest jurisdiction, standard, or
+review body and treats that result as sufficient everywhere. The system should
+retain overlapping duties and route conflicts rather than choosing the most
+convenient authorization.
+
+**Treaty or protocol theater.** Parties sign a commitment with no measurable
+obligations, verification access, noncompliance process, capacity plan, or
+domestic implementation. The signature belongs in the record, but the
+enforcement and outcome states remain open.
+
+**Emergency ratchet.** A temporary power or centralized response is activated
+quickly and never meaningfully expires. Every emergency route needs scope,
+review dates, sunset conditions, retained rights, and an effect-complete path
+back to ordinary governance.
+
+**Coordination capture.** The organization with the most data, compute, or
+staff defines the incident, controls the evidence, and sets closure criteria.
+Shared incident identity should not entail shared control. Independent custody,
+dispute routes, and separately owned recovery measures are necessary.
+
+**Prevention-only success.** A dashboard reports blocked attempts while omitting
+successful bypasses, downstream displacement, service disruption, harmed-party
+recovery, and attacker adaptation. Denominators, null outcomes, and residuals
+must remain visible.
+
+**Provider-terminal recovery.** A platform closes the case after disabling an
+account or restoring a service even though copied artifacts, false records,
+financial losses, or affected-party needs remain. Closure needs an explicit
+scope. One actor can finish its action without declaring the incident socially
+resolved.
+
+**Resilience as permission to take avoidable risk.** Operators point to backups,
+insurance, or recovery plans to justify a hazardous deployment. Recovery
+capacity does not lower the probability of harm unless evidence shows a causal
+effect, and it does not waive duties to prevent avoidable harm.
+
+**Permanent quarantine.** A system avoids visible recurrence by indefinitely
+withholding a service, account, or capability. Containment can be necessary,
+but it is not recovery when essential function, rights, or appeal never return.
+
+**Adaptation theater.** A policy, playbook, or model card is updated after an
+incident, yet behavior, resources, authority, and field performance remain
+unchanged. Adaptation claims need observed implementation and outcome measures.
+
+**Aggregate resilience.** Average recovery improves while vulnerable
+populations experience longer outages, greater surveillance, inaccessible
+remedy, or higher switching costs. Population identity and distributional
+measures must survive aggregation.
+
+**Slow institutional dependence.** Every individual adoption is approved, but
+review skills, alternative providers, and local operating capacity decay. A
+periodic legitimacy and resilience review should examine option loss, not just
+incident counts.
+
+## The Strongest Simpler Baseline
+
+The strongest alternative is not no governance. It is a compact arrangement:
+ordinary law and contracts, a competent regulator or accountable governing
+body, established incident-response practice, clear organizational ownership,
+and interoperable technical standards. Many systems should use exactly that
+instead of inventing a new institutional protocol.
+
+The stack earns its additional machinery only when several conditions occur
+together: effects cross authorities, evidence changes quickly, responsibility
+is distributed, important dependencies are shared, harms can outlive the
+provider's response, and no one institution can observe or repair the whole
+path. Even then, the new records should connect existing institutions rather
+than pretend to replace them.
+
+A fair comparison would hold the incident, participants, powers, resources,
+privacy constraints, and recovery goals constant. It would compare coordination
+delay, missed handoffs, wrongful action, participant burden, affected-party
+recovery, institutional capture, residual closure, and total cost. If ordinary
+arrangements perform as well with less complexity, they should be preferred.
+
+## What the Current Work Can Establish
+
+The live technical chapters provide two bounded formal reviews. They establish
+properties of authored finite records, not real institutional legitimacy or
+population resilience.
+
+`AsiStackProofs.InstitutionalLegitimacyReview` contains 32 theorem declarations
+over an eight-transition review. The local validation surface checks 45
+single-axis admission mutations and requires an exact repair or refusal for
+each. Within that model, a mandate tied to one jurisdiction cannot authorize a
+different jurisdiction, and changes to the jurisdiction, instrument,
+population, or protocol invalidate the associated receipt. Two
+non-identifiability results show that identical participation signals can
+coexist with different representation states, and identical commitment signals
+can coexist with different enforcement states.
+
+Those are useful negative results. They block a record system from claiming
+that participant counts determine representative standing or that commitment
+signals determine effective enforcement. They do not establish lawful
+authority, representativeness, enforcement efficacy, remedy, public legitimacy,
+geopolitical stability, or safety.
+
+`AsiStackProofs.SocietalResilienceReview` also contributes 32 theorem
+declarations over an eight-transition finite review. It keeps incident and
+population identity, cross-organization coordination, resistance, absorption,
+recovery, remedy, adaptation, and non-authority distinct. Its local review
+checks exact dispositions for the chapter's bounded mutation set and includes
+non-identifiability results that prevent response activity or speed from
+determining affected-population recovery and remedy.
+
+Again, the value is in what the model refuses to compress. A complete response
+record does not prove that people recovered. A fast response does not establish
+lawful or equitable remedy. A resilience packet does not authorize deployment,
+raise a claim's support state, or prove acceptable residual harm.
+
+This Human Reader synthesis does not combine the two finite reviews into a
+stronger theorem. The institutional chapter owns mandate, jurisdiction,
+participation, enforcement, and legitimacy. The resilience chapter owns the
+domain-specific resist, absorb, recover, and adapt network. Their composition is
+a design argument whose real-world performance remains untested here.
+
+The external sources mapped by the live chapters provide legal, standards,
+incident-response, AI-risk, and international-coordination comparators. They
+support the vocabulary and reveal neighboring practices. They do not prove that
+this architecture is lawful, effective, representative, equitable, or state of
+the art in deployment.
+
+## From a Minimum Packet to a Mature Governance Fabric
+
+The minimum viable implementation is a shared packet, not a new world
+government. For one cross-organizational service, record the decision or
+incident identity, participating institutions, claimed mandates, jurisdictions,
+affected populations, relevant instruments, evidence references, data-sharing
+limits, response roles, service dependencies, resistance and absorption state,
+recovery and remedy owners, disputes, expiry, and residuals. Give each actor a
+way to sign, reject, narrow, or annotate its portion without endorsing the
+whole.
+
+Exercise the packet in a tabletop scenario before attaching it to live
+authority. Introduce conflicting jurisdictions, missing participants, a weak
+institution, delayed evidence, an inaccessible remedy route, a provider
+outage, a false recovery signal, and an emergency power that should expire.
+Measure whether the participants identify the conflict, route the decision,
+preserve evidence, maintain essential function, reach affected parties, and
+retire temporary authority. A successful tabletop demonstrates process behavior
+under the chosen scenario, not societal safety.
+
+A stronger implementation connects the packet to real dependency inventories,
+incident systems, legal and policy registries, public notices, independent
+evidence custody, service-level monitoring, appeal channels, and harmed-party
+support. Interfaces should expose only the information required for the role;
+coordination is not a license for ambient surveillance. Receipts should state
+what each actor observed and did, not imply agreement on facts beyond its
+competence.
+
+The mature system is a federated governance fabric. Institutions retain their
+mandates and legal forms while interoperating through typed commitments,
+incident identities, evidence references, dispute routes, and recovery
+contracts. Affected publics can discover decisions, understand which authority
+acted, contest relevant facts or mandates, and follow remedy across handoffs.
+Independent evaluators can challenge technical claims. Weaker institutions can
+draw on shared defensive capacity without surrendering all local authority.
+Concentration, option loss, and review-capacity decline are monitored as slow
+hazards alongside acute incidents.
+
+Maturity also changes the optimization target. The system does not maximize
+agreement or speed. It seeks sufficient coordination while preserving lawful
+disagreement, meaningful participation, rights, local competence, and recovery.
+It measures prevented and realized harm, continuity, remedy, adaptation,
+distributional burden, institutional capacity, privacy cost, response delay,
+and total governance work. No single metric controls admission.
+
+## The Strongest Objection
+
+Institutional machinery can become the problem it claims to solve. Large
+organizations can dominate standards and evidence. Incumbents can turn
+compliance cost into a barrier to entry. Committees can diffuse responsibility
+until no one owns the outcome. Cross-border processes can move too slowly for a
+fast incident. Rich participants can satisfy record requirements that weaker
+ones cannot. A technically elaborate packet can create an aura of legitimacy
+without changing power.
+
+This objection has teeth because more structure is not automatically more
+accountability. The answer must be architectural and empirical. The minimum
+packet should remain small. Authority, evidence, and remedy should have named
+owners. Decision deadlines and emergency paths should exist, but emergency
+powers should expire. Participation should record influence and exclusion, not
+just attendance. Shared infrastructure should provide capacity to weaker
+institutions without requiring them to accept the strongest actor's entire
+policy. Independent challenge, transparent residuals, fork and exit paths, and
+periodic sunset review should constrain institutional accumulation.
+
+Even these measures may fail. Capture, delay, and unequal capacity are not bugs
+that a schema can eliminate. The proposal is justified only if tested
+arrangements improve real coordination and recovery without imposing greater
+domination, surveillance, exclusion, or delay than their alternatives.
+
+## Evidence That Would Change the Conclusion
+
+The architecture should become smaller if leaner institutions preserve
+standing, jurisdiction, challenge, coordination, response, remedy, and recovery
+with lower capture risk and burden. It should change if affected parties cannot
+use its routes, if institutions routinely treat packet completion as
+legitimacy, if privacy-preserving coordination cannot provide adequate incident
+visibility, or if emergency response remains too slow.
+
+It should be rejected in a domain if the machinery systematically centralizes
+authority, excludes weaker participants, delays necessary action, or produces
+no measurable improvement in harmed-party outcomes. Evidence should include
+natural incidents and exercises, complete attempt denominators, distributional
+outcomes, independent evaluation, cross-institution reproduction, and transfer
+across jurisdictions and threat classes. A successful fixture or formal record
+review is not enough.
+
+## What This Establishes
+
+Governance at institutional scale is not one larger permission system. It is a
+composition of mandates, jurisdictions, evidence, participation, enforcement,
+remedy, and resilience capacities that must remain distinct even while they
+coordinate.
+
+The practical rule is simple to state and hard to implement: no actor should
+gain public authority from technical capability, and no provider should declare
+societal recovery from the completion of its own response. Shared records can
+make those substitutions harder. Finite proofs can protect exact boundaries in
+the record logic. Neither supplies legitimacy or resilience by itself.
+
+Part I has now moved from the system boundary to the public institutions around
+it. Part II turns inward again. Its first question is how a capability can
+change behind these boundaries without inheriting readiness, authority, or
+support from the component it replaces.
+
+{{< include ../generated/unit-08-status.qmd >}}
