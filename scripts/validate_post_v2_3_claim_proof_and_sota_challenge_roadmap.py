@@ -375,10 +375,18 @@ def errors(data: dict) -> list[str]:
     successor_priorities = {
         row.get("id"): row.get("state") for row in successor_status.get("priorities", [])
     }
+    execution_readiness = successor_status.get("execution_readiness", {})
+    declared_execution_frontier = (
+        execution_readiness.get("headline_priority") == successor_frontier
+        and isinstance(execution_readiness.get("headline_priority_state"), str)
+        and bool(execution_readiness.get("headline_priority_state"))
+    )
+    declared_priority_frontier = successor_priorities.get(successor_priority_owner) == "in_progress"
     if (
         successor_status.get("status") != "active"
         or successor_status.get("roadmap_path") != SUCCESSOR
-        or successor_priorities.get(successor_priority_owner) != "in_progress"
+        or successor_frontier is None
+        or not (declared_priority_frontier or declared_execution_frontier)
     ):
         out.append("maintenance successor must be active at its declared in-progress frontier")
     if status.get("predecessor", {}).get("path") != PREDECESSOR or data["predecessor_status"].get("status") != "completed":
@@ -2589,6 +2597,10 @@ def main() -> None:
     duplicate = copy.deepcopy(base)
     duplicate["active_roadmaps"] = [ROADMAP, "docs/fake_roadmap.md"]
     mutations.append(("duplicate active roadmap", duplicate))
+
+    detached_successor_frontier = copy.deepcopy(base)
+    detached_successor_frontier["successor_status"]["execution_readiness"]["headline_priority"] = "detached-frontier"
+    mutations.append(("detached maintenance successor frontier", detached_successor_frontier))
 
     missing_claim = copy.deepcopy(base)
     missing_claim["status"]["chapter_claim_program"] = missing_claim["status"]["chapter_claim_program"][:-1]

@@ -1,0 +1,132 @@
+{
+  "schema_version": "asi_stack.p2_r3a_capacity_preflight.v1",
+  "attempt_id": "2026-08-13-r3a-004",
+  "recorded_at_utc": "2026-08-13T20:17:23.879280+00:00",
+  "state": "blocked_before_materialization",
+  "claim_id": "p2.governed_natural_repository_change_admission_joint_frontier",
+  "scope": "host_capacity_and_docker_daemon_entry_preflight_only",
+  "source_commit": "a91616b8abbabdc5ffe8e6da0c6d16124df32f45",
+  "inputs": {
+    "resource_ceiling_path": "evidence_quality/p2_resource_ceiling.json",
+    "resource_ceiling_sha256": "aeeef25145348544e73d9df0028e6bd70f63aa33da03b12c2b6464f5099762bb",
+    "replacement_queue_path": "experiments/p2_governed_repository_admission/corpus/replacement_queue.json",
+    "replacement_queue_sha256": "957d842b376812c510faefca04da48f543a928efddda00beebaf2fd6d54150f5",
+    "frozen_candidate_count": 30
+  },
+  "host_capacity": {
+    "measured_path": "/Users/corbensorenson/Documents/AI_book",
+    "total_bytes": 994662584320,
+    "used_bytes": 987022098432,
+    "available_bytes": 7640485888,
+    "minimum_required_bytes": 53687091200,
+    "shortfall_bytes": 46046605312,
+    "floor_pass": false
+  },
+  "docker": {
+    "daemon_reachable": false,
+    "all_diagnostic_commands_exit_zero": false,
+    "reclaimable_bytes_known": false,
+    "reclamation_attempted": false,
+    "reclamation_authorized_scope": "docker_objects_only"
+  },
+  "command_receipts": [
+    {
+      "argv": [
+        "df",
+        "-k",
+        "/Users/corbensorenson/Documents/AI_book"
+      ],
+      "shell_display": "df -k /Users/corbensorenson/Documents/AI_book",
+      "started_at_utc": "2026-08-13T20:17:23.879366+00:00",
+      "ended_at_utc": "2026-08-13T20:17:23.882613+00:00",
+      "wall_seconds": 0.003278,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 0,
+      "stdout": "Filesystem   1024-blocks      Used Available Capacity iused    ifree %iused  Mounted on\n/dev/disk3s5   971350180 934621528   7461412   100% 8831629 74614120   11%   /System/Volumes/Data\n",
+      "stderr": "",
+      "stdout_sha256": "aee1e3bb2749178e998b0b7a2700dacb71a948c01bd8dd3488ce0b88c34ed5b3",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "argv": [
+        "docker",
+        "version",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker version --format '{{json .}}'",
+      "started_at_utc": "2026-08-13T20:17:23.882690+00:00",
+      "ended_at_utc": "2026-08-13T20:17:24.068643+00:00",
+      "wall_seconds": 0.18601,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 1,
+      "stdout": "{\"Client\":{\"Version\":\"29.2.0\",\"ApiVersion\":\"1.53\",\"DefaultAPIVersion\":\"1.53\",\"GitCommit\":\"0b9d198\",\"GoVersion\":\"go1.25.6\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Mon Jan 26 19:25:13 2026\",\"Context\":\"desktop-linux\"},\"Server\":null}\n",
+      "stderr": "permission denied while trying to connect to the docker API at unix:///Users/corbensorenson/.docker/run/docker.sock\n",
+      "stdout_sha256": "bdadb5e69036a2282bbe6ef1737d27661619cbf699744e6b3a327e21ddace895",
+      "stderr_sha256": "c35a6d33abe8a9ebdef9bd572bcc220f0657230cfa1ca463e5cef8f2e2b1570d"
+    },
+    {
+      "argv": [
+        "docker",
+        "info",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker info --format '{{json .}}'",
+      "started_at_utc": "2026-08-13T20:17:24.068742+00:00",
+      "ended_at_utc": "2026-08-13T20:17:24.709089+00:00",
+      "wall_seconds": 0.640376,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 1,
+      "stdout": "{\"ID\":\"\",\"Containers\":0,\"ContainersRunning\":0,\"ContainersPaused\":0,\"ContainersStopped\":0,\"Images\":0,\"Driver\":\"\",\"DriverStatus\":null,\"Plugins\":{\"Volume\":null,\"Network\":null,\"Authorization\":null,\"Log\":null},\"MemoryLimit\":false,\"SwapLimit\":false,\"CpuCfsPeriod\":false,\"CpuCfsQuota\":false,\"CPUShares\":false,\"CPUSet\":false,\"PidsLimit\":false,\"IPv4Forwarding\":false,\"Debug\":false,\"NFd\":0,\"OomKillDisable\":false,\"NGoroutines\":0,\"SystemTime\":\"\",\"LoggingDriver\":\"\",\"CgroupDriver\":\"\",\"NEventsListener\":0,\"KernelVersion\":\"\",\"OperatingSystem\":\"\",\"OSVersion\":\"\",\"OSType\":\"\",\"Architecture\":\"\",\"IndexServerAddress\":\"\",\"RegistryConfig\":null,\"NCPU\":0,\"MemTotal\":0,\"GenericResources\":null,\"DockerRootDir\":\"\",\"HttpProxy\":\"\",\"HttpsProxy\":\"\",\"NoProxy\":\"\",\"Name\":\"\",\"Labels\":null,\"ExperimentalBuild\":false,\"ServerVersion\":\"\",\"Runtimes\":null,\"DefaultRuntime\":\"\",\"Swarm\":{\"NodeID\":\"\",\"NodeAddr\":\"\",\"LocalNodeState\":\"\",\"ControlAvailable\":false,\"Error\":\"\",\"RemoteManagers\":null},\"LiveRestoreEnabled\":false,\"Isolation\":\"\",\"InitBinary\":\"\",\"ContainerdCommit\":{\"ID\":\"\"},\"RuncCommit\":{\"ID\":\"\"},\"InitCommit\":{\"ID\":\"\"},\"SecurityOptions\":null,\"CDISpecDirs\":null,\"Warnings\":null,\"ClientInfo\":{\"Debug\":false,\"Version\":\"29.2.0\",\"DefaultAPIVersion\":\"1.53\",\"GitCommit\":\"0b9d198\",\"GoVersion\":\"go1.25.6\",\"Os\":\"darwin\",\"Arch\":\"arm64\",\"BuildTime\":\"Mon Jan 26 19:25:13 2026\",\"Context\":\"desktop-linux\",\"Plugins\":[{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v1.17.2\",\"ShortDescription\":\"Docker AI Agent - Ask Gordon\",\"Name\":\"ai\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-ai\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.31.1-desktop.1\",\"ShortDescription\":\"Docker Buildx\",\"Name\":\"buildx\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-buildx\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v5.0.2\",\"ShortDescription\":\"Docker Compose\",\"Name\":\"compose\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-compose\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"0.0.47\",\"ShortDescription\":\"Get a shell into any image or container\",\"Name\":\"debug\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-debug\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.3.0\",\"ShortDescription\":\"Docker Desktop commands\",\"Name\":\"desktop\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-desktop\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.2.31\",\"ShortDescription\":\"Manages Docker extensions\",\"Name\":\"extension\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-extension\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v1.4.0\",\"ShortDescription\":\"Creates Docker-related starter files for your project\",\"Name\":\"init\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-init\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.38.0\",\"ShortDescription\":\"Docker MCP Plugin\",\"Name\":\"mcp\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-mcp\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v1.0.8\",\"ShortDescription\":\"Docker Model Runner\",\"Name\":\"model\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-model\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.5.42\",\"ShortDescription\":\"Docker Offload\",\"Name\":\"offload\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-offload\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.0.24\",\"ShortDescription\":\"Docker Pass Secrets Manager Plugin (beta)\",\"Hidden\":true,\"Name\":\"pass\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-pass\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v0.11.0\",\"ShortDescription\":\"Docker Sandbox\",\"Name\":\"sandbox\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-sandbox\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Anchore Inc.\",\"Version\":\"0.6.0\",\"ShortDescription\":\"View the packaged-based Software Bill Of Materials (SBOM) for an image\",\"URL\":\"https://github.com/docker/sbom-cli-plugin\",\"Name\":\"sbom\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-sbom\"},{\"SchemaVersion\":\"0.1.0\",\"Vendor\":\"Docker Inc.\",\"Version\":\"v1.19.0\",\"ShortDescription\":\"Docker Scout\",\"Name\":\"scout\",\"Path\":\"/Users/corbensorenson/.docker/cli-plugins/docker-scout\"}],\"Warnings\":null}}\n",
+      "stderr": "permission denied while trying to connect to the docker API at unix:///Users/corbensorenson/.docker/run/docker.sock\n",
+      "stdout_sha256": "975f8f0b805efca9b52418dc8b96013087a722e890a388445610ba9090d97e36",
+      "stderr_sha256": "c35a6d33abe8a9ebdef9bd572bcc220f0657230cfa1ca463e5cef8f2e2b1570d"
+    },
+    {
+      "argv": [
+        "docker",
+        "system",
+        "df",
+        "--format",
+        "{{json .}}"
+      ],
+      "shell_display": "docker system df --format '{{json .}}'",
+      "started_at_utc": "2026-08-13T20:17:24.709161+00:00",
+      "ended_at_utc": "2026-08-13T20:17:24.830658+00:00",
+      "wall_seconds": 0.121538,
+      "timeout_seconds": 30,
+      "timed_out": false,
+      "exit_code": 1,
+      "stdout": "",
+      "stderr": "permission denied while trying to connect to the docker API at unix:///Users/corbensorenson/.docker/run/docker.sock\n",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "c35a6d33abe8a9ebdef9bd572bcc220f0657230cfa1ca463e5cef8f2e2b1570d"
+    }
+  ],
+  "decision": {
+    "entry_gate_pass": false,
+    "blockers": [
+      "host_free_bytes_below_frozen_50_gib_floor",
+      "docker_daemon_unreachable"
+    ],
+    "pool_materialization_started": false,
+    "candidate_image_pull_started": false,
+    "dependency_materialization_started": false,
+    "protected_task_content_opened": false,
+    "candidate_outcome_opened": false,
+    "next_legal_action": "restore_frozen_capacity_floor_and_live_docker_daemon_then_record_new_immutable_preflight"
+  },
+  "negative_inference_level": "N0",
+  "support_state_effect": "none",
+  "release_effect": "none",
+  "non_claims": [
+    "A failed capacity or Docker preflight is not evidence against governed repository admission.",
+    "No task problem, patch, test identity, command, label, model output, evaluator judgment, or outcome was opened.",
+    "This receipt does not materialize the thirty-candidate pool or qualify a replacement.",
+    "No non-Docker user data may be deleted by this protocol."
+  ]
+}

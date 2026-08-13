@@ -45,6 +45,7 @@ P5_U1_RESULT = ROOT / "experiments/p5_u1_governed_repository_change/results/2026
 P5_NATURAL_TRACE = ROOT / "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
 P5_NATURAL_CAMPAIGN = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
 P5_NATURAL_QUALIFICATION = ROOT / "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json"
+C1_EXIT_PROTOCOL = ROOT / "experiments/c1_exit_ladder/preregistration.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -239,6 +240,7 @@ def inputs() -> dict:
         "p5_natural_trace": load(P5_NATURAL_TRACE),
         "p5_natural_campaign": load(P5_NATURAL_CAMPAIGN),
         "p5_natural_qualification": load(P5_NATURAL_QUALIFICATION),
+        "c1_exit_protocol": load(C1_EXIT_PROTOCOL),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -328,6 +330,7 @@ def errors(data: dict) -> list[str]:
         "## P1 — Negative-result rehabilitation and false-negative defense",
         "## P2 — Competence-qualified natural empirical frontier",
         "### P2-R3a exact capacity and Docker receipt — 2026-07-28",
+        "### P2-R3a exact capacity and Docker receipt — 2026-08-13",
         "## P3 — Independent reproduction, transfer, and SOTA challenge",
         "## P4 — Semantically meaningful formal evidence",
         "## P5 — Effect-complete governed reference system",
@@ -1248,6 +1251,23 @@ def errors(data: dict) -> list[str]:
         != "complete_three_exact_ladders_no_transition_effect"
     ):
         out.append("three-contribution exit-ladder custody drifted")
+    if (
+        yield_amendment.get("active_exit_ladder_protocol_path")
+        != "experiments/c1_exit_ladder/preregistration.json"
+        or yield_amendment.get("active_exit_ladder_task_admitted") is not False
+    ):
+        out.append("active C1-EL protocol path or closed task-admission state drifted")
+    c1_protocol = data["c1_exit_protocol"]
+    if (
+        c1_protocol.get("protocol_id")
+        != "c1-el-governed-cognition-next-natural-maintenance-defect-001"
+        or c1_protocol.get("state") != "frozen_before_eligible_task_admission"
+        or c1_protocol.get("task_admitted") is not False
+        or c1_protocol.get("protected_content_opened") is not False
+        or c1_protocol.get("support_state_effect") != "none"
+        or c1_protocol.get("release_effect") != "none"
+    ):
+        out.append("C1-EL prospective freeze opened task, protected, support, or release state")
     if yield_amendment.get("reference_chapter_count") != len(manifest_ids) or yield_amendment.get("new_chapter_authorized") is not False:
         out.append("scope-compression amendment changed reference truth or silently authorized a chapter")
     if yield_amendment.get("fifteen_minute_route_required") is not True or yield_amendment.get("task_recipe_count") != 3:
@@ -2351,14 +2371,17 @@ def errors(data: dict) -> list[str]:
         or recovery.get("observed_host_available_1k_blocks_2026_07_24") != 22337556
         or recovery.get("observed_host_available_bytes_2026_07_24") != 22873657344
         or recovery.get("docker_inspection_state_2026_07_24") != "permission_denied_local_socket"
-        or recovery.get("latest_preflight_attempt_id") != "2026-07-28-r3a-003"
-        or recovery.get("latest_preflight_source_commit") != "cef11abd5fca0a421087b3123c1defb31f2b4e6d"
+        or recovery.get("latest_preflight_attempt_id") != "2026-08-13-r3a-004"
+        or recovery.get("latest_preflight_source_commit") != "a91616b8abbabdc5ffe8e6da0c6d16124df32f45"
         or recovery.get("observed_host_available_bytes_2026_07_27") != 25627230208
         or recovery.get("observed_host_shortfall_bytes_2026_07_27") != 28059860992
         or recovery.get("docker_daemon_available_2026_07_27") is not False
         or recovery.get("observed_host_available_bytes_2026_07_28") != 4690223104
         or recovery.get("observed_host_shortfall_bytes_2026_07_28") != 48996868096
         or recovery.get("docker_daemon_available_2026_07_28") is not False
+        or recovery.get("observed_host_available_bytes_2026_08_13") != 7640485888
+        or recovery.get("observed_host_shortfall_bytes_2026_08_13") != 46046605312
+        or recovery.get("docker_daemon_available_2026_08_13") is not False
     ):
         out.append("P2 historical or current capacity truth drifted")
     for field in ("latest_preflight_receipt_path", "latest_preflight_human_receipt_path"):
@@ -3099,7 +3122,7 @@ def main() -> None:
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
-        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-07-28 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
+        "P2 selected prospectively from five candidates; natural development preflight covers 1,117 post-snapshot tasks, 12 repositories, seven languages, and 12 image manifests; the fixed gold denominator is fully dispositioned as eight qualified and four N0 replacements across 62 verified arm logs and eight attempts; the corrected infrastructure/content boundary reinstates rank five as setup-retry-pending and keeps rank six closed; the historical 2026-07-22 capacity entry condition was met, while the latest exact 2026-08-13 receipt confirms both a below-floor host and unreachable Docker daemon without opening protected content; the complete 30-candidate sequential materialization remains unpassed; Q1 D1 and Theseus Q2 D2 remain disjoint and sealed; remeasurement, qualification, construct, and heldout gates remain closed; "
         "all six historical semantic proof clusters remain terminally adequate at bounded local scope, while P4.1 opens only for a named object-level consumer; the 2026-08-10 amendment activates a minimal useful governed vertical slice, three contribution exit ladders without promotion quotas, governance-rent tests, scope compression, a fifteen-minute utility route, and three task recipes without an external-human prepublication gate; the historical 66-chapter Round 18 freeze remains recorded, while the superseding no-deferral, taxonomy, and full-coverage transactions admit eighteen distinct manuscript owners into the then-current 84-chapter book at argument support, leave zero live candidate queue, add semantic review and current proof-triage custody, and remove structural deferral for manuscript ideas; the historical 84-entry role partition is exact at 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative chapters; the C0-C8 convergence amendment preserves three defended contributions, and the 2026-08-03 amendment activates generated chapter status, claim-kind maturity, a 22-unit independent human narrative, composition invariants, a distributed fault matrix, concentrated natural evidence, and closest-prior-art synthesis without an external-human prepublication gate; P7.3 remains a separately owned derivative packet with five pilots, a current-manifest ManimCE target, YouTube binary hosting, Git/Pages binary exclusion, exact captions/transcripts/receipts, and zero fabricated completion; optimizer manuscript depth is terminal while its empirical campaign remains a nonblocking evidence residual; current proof and main-attestation baselines exact; no support/release effect; "
         f"{len(mutations)}/{len(mutations)} mutations rejected."
     )

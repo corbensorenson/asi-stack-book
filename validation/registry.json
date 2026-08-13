@@ -3295,7 +3295,10 @@
     "schemas/p5_u1_governed_repository_change_result.schema.json",
     "scripts/run_p5_u1_governed_repository_change.py",
     "scripts/validate_p5_u1_governed_repository_change.py",
-    "editions/reader_manuscript/current/quickstart.qmd"
+    "editions/reader_manuscript/current/quickstart.qmd",
+    "experiments/c1_exit_ladder/preregistration.json",
+    "schemas/c1_exit_ladder_preregistration.schema.json",
+    "scripts/validate_c1_exit_ladder_preregistration.py"
   ],
   "units": [
     {
@@ -13712,6 +13715,7 @@
         "experiments/effect_complete_service/results/2026-07-27-local.json",
         "docs/p5_stateful_service_reference_report.md",
         "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
+        "experiments/c1_exit_ladder/preregistration.json",
         "experiments/governed_operations_argument_exit/preregistration.json",
         "schemas/governed_operations_campaign_preregistration.schema.json",
         "docs/p5_natural_stateful_service_campaign_preregistration.md",
@@ -19223,11 +19227,49 @@
       "prohibited_inference": "This outcome-aware replay is not a prospective, randomized, held-out, independent, human-operator, production, general-utility, safety, transfer, SOTA, AGI, or ASI result and changes no support or release state.",
       "contract_precision": "exact",
       "semantic_review_state": "retrospective_natural_defect_replay_with_real_local_git_effect_boundary"
+    },
+    {
+      "id": "validate_c1_exit_ladder_preregistration:473",
+      "order": 473,
+      "script": "validate_c1_exit_ladder_preregistration.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The first post-freeze eligible natural maintenance defect, three matched routes, one natural happy path, three explicit injected controls, twelve joint outcomes, fixed dispositions, and closed task/protected/support/release state.",
+      "input_artifacts": [
+        "experiments/c1_exit_ladder/preregistration.json",
+        "schemas/c1_exit_ladder_preregistration.schema.json",
+        "scripts/validate_c1_exit_ladder_preregistration.py"
+      ],
+      "output_contract": "Reject outcome-aware task selection, route or outcome loss, replacement after admission, support laundering, protected-content opening, or inference beyond one local prospective case.",
+      "output_assertions": [
+        "first eligible post-freeze task only",
+        "three matched route contracts",
+        "natural happy path separated from injected faults",
+        "success negative and inconclusive dispositions frozen",
+        "eight mutations reject",
+        "task protected support and release states closed"
+      ],
+      "claim_scope": "Prospective selection and analysis contract for one future public-safe ASI Stack maintenance defect only.",
+      "negative_controls": "task_route_outcome_replacement_inference_protection_and_support_mutations",
+      "negative_control_cases": [
+        "task preadmitted",
+        "protected content opened",
+        "route removed",
+        "baseline relabeled",
+        "outcome removed",
+        "replacement allowed",
+        "inference widened",
+        "support promoted"
+      ],
+      "prohibited_inference": "Preregistration is not execution or evidence and cannot establish utility, human effort, production reliability, safety, transfer, SOTA, AGI, ASI, or chapter-core support.",
+      "contract_precision": "exact",
+      "semantic_review_state": "prospective_single_natural_task_with_explicit_injected_controls"
     }
   ],
   "summary": {
-    "required_artifact_count": 3251,
-    "unit_count": 472
+    "required_artifact_count": 3254,
+    "unit_count": 473
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

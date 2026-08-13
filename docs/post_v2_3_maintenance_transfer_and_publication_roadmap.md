@@ -504,6 +504,19 @@ the full identity/competence/inference gate with shape-only JSON Schema
 validation. No ladder result is promoted by this checkpoint. The first
 claim-bearing attempt must remain prospective and claim-commensurate.
 
+**2026-08-13 prospective freeze.** The first attempt is now frozen at
+`experiments/c1_exit_ladder/preregistration.json` before any eligible task is
+admitted. It selects exactly the next independently necessary public-safe book
+maintenance defect discovered after the freeze, requires a machine-detectable
+failure before the solution is known, and forbids replacement after admission.
+The natural happy path stays distinct from three authored fault injections.
+Direct, record-only, and full-governed routes share source bytes, task statement,
+acceptance check, and resource ceiling. The protocol freezes twelve joint
+outcomes, a positive control, seven instrument-sensitivity classes, success,
+negative, and inconclusive dispositions, the strongest alternative explanation,
+and a one-case maximum inference. Task identity, protected content, support,
+and release state remain closed.
+
 ### Scope compression and practical entry surface
 
 The 87-chapter research graph remains the lossless technical ownership surface.
@@ -915,7 +928,7 @@ remain closed while other work proceeds.
 | Editorial product migration and independent human narrative — active book packet | `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration` | EM0-EM3 are complete. Seven no-cutover EM2 packages compose all sixteen publication nests and two method-detail nests while preserving stable routes, local ownership, support ceilings, and URLs; the sole semantic candidate failed its losslessness test and was downgraded to a publication nest. All 26 EM3 units are independently authored inside their declared word targets for 133,658 visible words, with all 87 owners routed exactly once. The exact 54+2/16+2+0/7/5/1 split remains validated. The conclusion/claim crosswalk and first-class `/reader/` candidate are pushed at `96a22b15e` under an explicit no-support cutover record; public deployment is not yet claimed. | Complete EM4 by confirming the exact-head Pages artifact, public routes, browser/accessibility behavior, and deployed-state receipt. Preserve major conclusions and every technical identity without reproducing local status administration. Defer the primer and major release formats until content freeze. |
 | Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical and stale; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 87 chapters. Twenty-four case-first narrations have been rewritten: 20 remain narration drafts, while four targets have treatment, narration, and beat-plan files but no current script or animatic gate pass after source and authoring-standard invalidation. Their local animatics and sampled-frame receipts are diagnostic only; no downstream publication state is closed. Treatment-free v2 plans and their downstream artifacts remain historical. The current ledger reports 63 planned, 20 narration drafts, four file-level beat-planned targets, zero current script-passed targets after source invalidation, zero animatic-passed targets, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
 | Formal slot — consumer-gated | `P4.1-consumer-gated-cross-owner-composition` | `P5-U1` or one contribution exit ladder names a concrete runtime, evidence, or decision consumer; the original C6 residual estate remains under exact dependency and consumer custody; new work requires the seven-field family admission rule plus maximum inference | Implement only the invariant or distributed-fault model required by that consumer, then rebuild the overlay and ledger with no support or release movement. No independent theorem-family expansion is authorized. |
-| Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
+| Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `2026-08-13-r3a-004` measured 7.12 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
 | First structural tranche — terminal | White-Box, World Models, Human Factors, and Governed Operations are terminal at argument support | Four exact integration packets preserve owners, sources, formal ceilings, protocols, reader handoffs, and no-promotion boundaries | Maintenance only; no reopened chapter packet without a dated machine-validated defect. |
 | No-deferral manuscript transaction — terminal at argument support; evidence follow-up open | All ten formerly deferred distinct owners are admitted | Ten complete argument-level chapters, one new NIST source record/note, source crosswalks, evidence-plan rows, no-promotion decisions, handoffs, outline/roadmap reconciliation, and 76-chapter manifest truth | No manuscript idea remains in a candidate queue. All 76 chapter cores remain at `argument`; implementation, empirical, formal, reproduction, transfer, and deployment residuals remain open. |
 | Taxonomy and structural-maturity transaction — terminal at argument support | Four unowned danger/release/integrity/resilience lifecycles plus the accepted existing-owner depth repairs | Four complete non-template chapters, three title/content repairs, thirteen section-scale integrations, 21 net-new external sources, source/claim wiring, outline and roadmap reconciliation, and 80-chapter manifest truth | No identified manuscript idea remains deferred. All 80 chapter cores remain at `argument`; the shared flagship, independent evaluation, reproduction, transfer, and publication attestation remain open. |
@@ -1341,6 +1354,19 @@ This is another N0 infrastructure disposition, not a candidate or architecture
 result. P2 remains resource-blocked without consuming active WIP. Its unblock
 trigger is unchanged: at least 50 GiB free and a reachable Docker daemon in a
 later immutable receipt.
+
+### P2-R3a exact capacity and Docker receipt — 2026-08-13
+
+The fourth immutable preflight, `2026-08-13-r3a-004`, is bound to source commit
+`a91616b8abbabdc5ffe8e6da0c6d16124df32f45`. It measured `7,640,485,888`
+available bytes against the frozen `53,687,091,200`-byte floor, a shortfall of
+`46,046,605,312` bytes, and found no reachable Docker daemon. The combined gate
+failed before materialization. No protected task content was opened, no image
+pull or dependency setup started, and this N0 infrastructure disposition does
+not count as a candidate attempt. The 30-candidate queue and fixed denominator
+remain sealed. No cleanup of non-Docker user data is authorized. Restore both
+the host floor and Docker daemon, then write a new immutable preflight before
+any pull. No support or release state moves.
 
 The sequence may move past a packet only when its validator, negative controls,
 status projection, changelog, clean `main` commit, and exact residual record

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C1-EL prospective governed-cognition exit-ladder preregistration",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "protocol_id", "state", "freeze_parent_commit",
+    "freeze_authority", "contribution_id", "bounded_claim", "task_selection",
+    "routes", "paths", "outcomes", "controls", "dispositions",
+    "strongest_alternative_explanation", "next_consumer", "task_admitted",
+    "task_identity", "protected_content_opened", "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.c1_exit_ladder_preregistration.v1"},
+    "protocol_id": {"const": "c1-el-governed-cognition-next-natural-maintenance-defect-001"},
+    "state": {"const": "frozen_before_eligible_task_admission"},
+    "freeze_parent_commit": {"const": "a91616b8abbabdc5ffe8e6da0c6d16124df32f45"},
+    "freeze_authority": {"type": "string", "minLength": 1},
+    "contribution_id": {"const": "governed-cognition-interface-contracts"},
+    "bounded_claim": {"type": "string", "minLength": 100},
+    "task_selection": {
+      "type": "object", "additionalProperties": false,
+      "required": ["population", "admission_rule", "eligible", "excluded", "replacement_policy"],
+      "properties": {
+        "population": {"type": "string", "minLength": 1},
+        "admission_rule": {"type": "string", "minLength": 1},
+        "eligible": {"type": "array", "minItems": 5, "items": {"type": "string", "minLength": 1}},
+        "excluded": {"type": "array", "minItems": 6, "items": {"type": "string", "minLength": 1}},
+        "replacement_policy": {"type": "string", "minLength": 1}
+      }
+    },
+    "routes": {
+      "type": "array", "minItems": 3, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "contract"],
+        "properties": {
+          "id": {"enum": ["direct", "record_only", "full_governed"]},
+          "contract": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "paths": {
+      "type": "object", "additionalProperties": false,
+      "required": ["natural_happy", "injected_blocked_authority", "injected_partial_effect_crash", "injected_external_effect"],
+      "properties": {
+        "natural_happy": {"type": "string", "minLength": 1},
+        "injected_blocked_authority": {"type": "string", "minLength": 1},
+        "injected_partial_effect_crash": {"type": "string", "minLength": 1},
+        "injected_external_effect": {"type": "string", "minLength": 1}
+      }
+    },
+    "outcomes": {"type": "array", "minItems": 12, "maxItems": 12, "items": {"type": "string"}},
+    "controls": {
+      "type": "object", "additionalProperties": false,
+      "required": ["positive", "instrument_sensitivity", "distinctive_ablation", "simplest_baseline", "closest_comparator"],
+      "properties": {
+        "positive": {"type": "string", "minLength": 1},
+        "instrument_sensitivity": {"type": "string", "minLength": 1},
+        "distinctive_ablation": {"type": "string", "minLength": 1},
+        "simplest_baseline": {"type": "string", "minLength": 1},
+        "closest_comparator": {"type": "string", "minLength": 1}
+      }
+    },
+    "dispositions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["success", "negative", "inconclusive", "maximum_inference"],
+      "properties": {
+        "success": {"type": "string", "minLength": 1},
+        "negative": {"type": "string", "minLength": 1},
+        "inconclusive": {"type": "string", "minLength": 1},
+        "maximum_inference": {"type": "string", "minLength": 1}
+      }
+    },
+    "strongest_alternative_explanation": {"type": "string", "minLength": 1},
+    "next_consumer": {"type": "string", "minLength": 1},
+    "task_admitted": {"const": false},
+    "task_identity": {"type": "null"},
+    "protected_content_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}
