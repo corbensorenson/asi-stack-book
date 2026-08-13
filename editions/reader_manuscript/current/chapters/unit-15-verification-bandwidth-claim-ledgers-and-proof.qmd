@@ -1,0 +1,761 @@
+---
+title: "Verification Bandwidth, Claim Ledgers, and Proof"
+unit_id: "unit-15"
+---
+
+## The Claim Everyone Approved
+
+The release note now uses a coherent, current context. It says that controller
+version 8 completed a bounded gantry trial, the run stopped after oscillation,
+the observed trace is linked through an approved public summary, and the
+claim-bearing safety campaign has not run.
+
+Five reviewers inspect it. The schema checker confirms the record shape. The
+link checker confirms that every public URL resolves. A Lean theorem confirms
+that the authored stop lease cannot remain active after its recorded expiry.
+A model reviewer finds no unsupported sentence in the note it sees. A human
+reviewer checks the prose and approves publication.
+
+The claim still has a defect. The public summary omits that one sensor stream
+was unavailable during the final interval. The schema did not require that
+field. The link checker could not infer it. The Lean theorem was about lease
+state, not sensor coverage. The model reviewer received only the release note
+and summary. The human spent four minutes and assumed the technical checks had
+covered the evidence.
+
+Every reviewer performed its assigned work. The joined verification program
+was inadequate.
+
+This failure is not solved by adding one more approval label. It requires a
+claim identity that survives wording changes, an explicit set of obligations,
+enough verification capacity to discharge them, artifacts that state what they
+actually check, objections and defeaters that remain attached, a bounded
+support decision, and a repair path to every known consumer.
+
+Verification Bandwidth asks whether the system had enough appropriate checking
+capacity for this claim. Claim Ledgers preserve what the system currently
+believes and why. Proof-Carrying Claims bind selected propositions to formal,
+executable, empirical, source, or adversarial artifacts. Executable
+specifications and Lean prove narrow properties under explicit assumptions.
+Proof-carrying contracts let those facts travel without broadening. None of
+these owners is a truth machine. Together, they make a claim challengeable and
+correctable.
+
+## Verification Starts With Obligations
+
+A verification program begins by asking what could make a claim wrong or
+misleading for its intended consumer. It does not begin with whichever checker
+is convenient.
+
+The release-note claim has several obligations. Identity requires that the
+controller, software, configuration, trial, and evidence refer to the same
+run. Observation requires that the stop and oscillation statements match the
+recorded sensors and their missingness. Scope requires that a bounded trial not
+become a deployment claim. Authority requires that the evidence and wording be
+permitted for the public consumer. Formal structure requires that any stated
+lease or lifecycle property match its encoded model. Publication requires that
+links, accessibility, and release state be current. Residual custody requires
+that unavailable sensors and unexecuted campaigns remain visible.
+
+Each obligation names a mode of failure, required context, checking method,
+competence assumptions, independence needs, cost, deadline, and consequence if
+unresolved. Some can be discharged by deterministic code. Some require source
+inspection, formal proof, empirical measurement, adversarial review, domain
+expertise, affected-party input, or continued abstention.
+
+The obligation set is itself defeasible. Reviewers can miss a dimension. A
+well-formed list does not prove completeness. The system therefore records who
+constructed it, which threat model and consumer informed it, which templates or
+prior incidents were consulted, and which unknowns remain.
+
+This prevents tool-driven verification. A team with a theorem prover should
+not turn every question into a theorem. A team with model judges should not
+reduce every question to prose scoring. The claim determines the obligations;
+the obligations select the routes.
+
+## Verification Bandwidth Is Qualified Capacity
+
+Verification bandwidth is not the number of tokens spent criticizing an
+answer. It is the claim-specific capacity to perform the checks that matter
+before the decision deadline.
+
+A verifier has a mode, scope, competence envelope, context requirement,
+throughput, latency, cost, error profile, dependence graph, and authority. A
+static analyzer may check one program property quickly. A domain expert may
+identify a missing premise that no local test encodes. A model reviewer may
+screen many claims while sharing failure modes with the generator. A formal
+kernel may check a proof exactly while saying nothing about whether the theorem
+matches the world.
+
+The allocation problem is bipartite. One side contains claim obligations. The
+other contains available checks and reviewers. An edge says that a verifier is
+qualified to address an obligation under specified context and assumptions.
+The system must choose enough edges to cover the required obligations within
+time and resource limits.
+
+Coverage is not merely a count. Twelve checkers may all inspect grammar while
+no one inspects sensor missingness. Two apparently independent model judges may
+share training data, provider infrastructure, prompt framing, or evidence. A
+human approval after reading only a summary cannot cover a source-level
+obligation.
+
+The result can be adequate, narrowed, escalated, abstained, blocked, disputed,
+or expired. Adequacy means the declared required checks were competently
+performed for this claim and consumer. It does not mean the claim is true.
+Narrowing changes the claim to fit what can be checked. Blocking preserves the
+unresolved obligations rather than replacing them with reviewer confidence.
+
+## Verification Is a Portfolio Decision
+
+No serious system can verify every claim with every available method. Human
+attention, model calls, proof engineering, experiments, source access, and
+decision time are finite. Verification therefore needs an allocation policy,
+not an aspiration to check everything.
+
+The policy begins with consequence, uncertainty, reversibility, affected
+parties, consumer count, propagation depth, novelty, adversarial exposure, and
+deadline. A low-consequence sentence in an internal draft may need citation
+lint and a visible uncertainty marker. A claim that controls deployment,
+rights, money, physical action, or recursive improvement deserves a broader
+and more independent program.
+
+Expected information value helps choose the next check. If two observations
+would lead to the same decision, the cheaper one may suffice. If one missing
+sensor stream could reverse the verdict, inspecting that stream outranks
+another general prose review. If the decision can safely wait, acquiring fresh
+evidence may dominate argument. If delay itself causes harm, the system may
+choose a narrower reversible action with monitoring instead of pretending to
+finish verification.
+
+The allocation record names candidate checks, predicted decision impact,
+cost, latency, dependence, failure risk, chosen sequence, rejected routes, and
+stop conditions. Prediction errors remain visible. A check expected to be
+decisive may return unknown; a cheap source lookup may uncover the core defect.
+The system learns allocation policy only from outcomes that retain the full
+denominator.
+
+Parallel checks can reduce latency but may waste resources or contaminate
+independence. A reviewer who sees another verdict can anchor on it. A model
+judge asked after a human decision may reproduce the decision rather than
+provide a distinct failure path. The plan states which checks are blind,
+sequential, shared-context, or contingent.
+
+Verification also needs stopping rules. Stop when required obligations are
+covered to the declared standard, when a material unresolved obligation forces
+block or narrowing, when expected information value falls below cost, when the
+deadline requires a safe fallback, or when the review cycle reaches its cap.
+“Keep reviewing until approval” is not a stopping rule.
+
+Budgets cannot become permission to ignore rights or severe hazards. Some
+obligations are hard constraints. If they cannot be checked, the action narrows
+or stops. The portfolio policy optimizes among admissible programs; it does not
+price away boundaries it lacks authority to trade.
+
+This allocation layer gives verification bandwidth an operational meaning. It
+can be evaluated against fixed checklists, uniform review, expert-only review,
+model-only review, and ordinary risk-based practice. Success means better
+decisions and correction under the same complete budget, not more elaborate
+packets.
+
+## Context Adequacy Is Claim-Relative
+
+The previous unit built coherent context transactions. Coherence is necessary
+but not enough. A context can be internally consistent and still omit what a
+verifier needs.
+
+Context adequacy begins with the claim, obligation, verifier, and decision. The
+link checker needs the rendered public URLs. The observation reviewer needs
+the trace, sensor inventory, calibration and missingness, trial configuration,
+and exact claim. The Lean kernel needs theorem source, imported definitions,
+and compiler environment. The public reviewer needs intelligible evidence and
+known limitations.
+
+The adequacy record names requested objects, mounted objects, denied or absent
+objects, transformations, resolution quality, freshness, contradictions,
+truncation, verifier use, and residual effect. A large context window can be
+inadequate if the decisive sensor metadata is missing. A small exact packet can
+be adequate for a narrow hash check.
+
+More context can reduce verification bandwidth. Distractors consume attention,
+hide decisive evidence, and increase the chance that a model or human accepts
+a plausible but irrelevant argument. Compression can help if it preserves the
+obligation-specific facts and rescue path. It harms when it removes the very
+missingness or dissent that should change the verdict.
+
+The verifier should attest to what it actually used, not merely what was
+available in the mount. A citation may be present but unread. A test result may
+be visible but misunderstood. A model context may include the policy while the
+generated answer ignores it. Use evidence remains fallible, but it narrows the
+gap between context delivery and verification work.
+
+## A Claim Needs an Identity Before a Score
+
+Claims change wording, location, support, scope, and consumers over time. A
+stable claim identity lets the system track that history without pretending
+that every wording is equivalent.
+
+The release-note claim can be represented as a structured proposition: for
+trial identity T, controller version V, configuration C, and interval I, the
+observed run stopped after oscillation under evidence packet E. Its public
+surface includes prose that renders that proposition. A separate non-claim
+states that the record does not establish deployment safety.
+
+The claim record binds identity, current wording, semantic representation,
+scope, time, affected parties, consumer, support state, evidence and source
+refs, proof and test refs, objections, defeaters, dependencies, authority,
+maximum inference, residuals, and surface locations. The identity does not
+guarantee that the representation is correct. It makes disagreement and repair
+addressable.
+
+Surface identity remains separate. The same claim may appear in a technical
+chapter, Human Reader chapter, release note, diagram, status panel, API, and
+model memory. Each surface can drift. The claim ledger records which version
+each surface presented and which consumers acknowledged a change.
+
+A new wording that changes quantifier, population, time, modality, causal
+force, or support boundary creates a proposed claim revision, not a cosmetic
+edit. A faithful paraphrase may retain the claim identity with a mapping
+receipt. Ambiguous changes route to review.
+
+## The Ledger Is Append-Only Belief History
+
+A claim ledger records events rather than overwriting the current label. Events
+include proposal, source attachment, evidence admission, objection, proof
+result, test result, contradiction, narrowing, promotion, demotion, refutation,
+deprecation, supersession, consumer use, and surface repair.
+
+Each event binds the previous claim version, proposed next version, actor or
+process, authority, evidence, verifier, time, affected obligations, support
+effect, consumer effect, and residuals. Rejected proposals remain in history.
+A later reader can reconstruct why the current state exists and which
+alternative was declined.
+
+Append-only does not mean immutable error. A false claim can be demoted or
+refuted. Its historical events remain so the system can find decisions made
+under it. Deleting the record would make correction harder and permit the same
+claim to re-enter without its defeaters.
+
+Concurrency matters. Two reviewers may propose incompatible revisions from
+the same base. The ledger should not silently make the last write win. It
+records the branch, detects the stale base, and requires a merge or adjudication
+event. Consumers continue using the last accepted version or enter safe hold
+according to consequence.
+
+The ledger does not own the support decision simply because it stores it.
+Evidence and governance policies determine who may change support. The ledger
+checks that the requested transition is authorized and complete, then records
+the result exactly.
+
+## Evidence Events Do Not Promote Themselves
+
+A passing test, theorem, source, benchmark, review, or runtime observation is
+an evidence artifact. It does not automatically move the parent claim.
+
+The transition proposal identifies the claim, current support, requested next
+state, exact artifact, relevance, quality dimensions, scope, counterevidence,
+alternative explanations, competence, independence, reproduction, consumer
+consequence, and maximum inference. An authorized policy evaluates that
+packet. The outcome may promote, narrow, demote, refute, preserve, or defer.
+
+This separation prevents self-promotion. A benchmark runner cannot decide that
+its own result proves the architecture. A proof producer cannot generalize its
+theorem. A chapter author cannot convert source synthesis into external
+validation by changing a label. The artifact can propose; a distinct gate
+decides.
+
+Negative results need the same care. An instrument failure does not refute the
+idea. A competent null result may narrow a mechanism. An adversarial failure
+may block a route without proving every related system unsafe. The ledger keeps
+test competence, result direction, inference boundary, and parent support
+separate.
+
+In the release-note case, discovering the missing sensor stream should at
+least narrow the public observation claim or add an explicit residual. Whether
+it demotes a broader controller claim depends on the broader claim's identity
+and evidence, not on textual proximity.
+
+## Defeaters and Maximum Inference Travel With the Claim
+
+A **defeater** states what would weaken, block, or reverse the claim. It may be
+an observed contradiction, missing premise, failed replication, expired
+policy, changed implementation, unqualified evaluator, alternative causal
+explanation, or unresolved affected-party concern.
+
+Defeaters are not footnotes. They participate in admission and consumer
+decisions. A claim with an active material defeater may remain visible for
+research while being blocked from planning or publication. Resolving a
+defeater requires an artifact and authority appropriate to its type.
+
+**Maximum inference** states the strongest conclusion the current packet can
+support. For the release note, it might permit: “This exact recorded run stopped
+after the observed oscillation under incomplete final-interval sensing.” It
+forbids conclusions about controller detection competence, causal attribution,
+general reliability, or deployment safety.
+
+The boundary should be machine-visible and human-readable. Downstream systems
+can compare a proposed use with permitted inference. Readers can see why a
+claim is narrow without parsing an internal ledger.
+
+Maximum inference can contract when evidence is invalidated and expand only
+through an authorized transition. It does not expand because a sentence is
+repeated across many surfaces.
+
+## Formality Has Several Lanes
+
+“Verified” is too ambiguous for consequential claims. The architecture names
+the artifact lane.
+
+A **schema** checks shape, required fields, enums, and local consistency. A
+**deterministic validator** checks an executable rule over artifacts. A
+**unit or integration test** checks selected behavior in an implementation. A
+**benchmark** measures outcomes under a protocol. A **formal proof** establishes
+a proposition in a logic from definitions and assumptions. A **runtime
+observation** records what happened in an environment. A **source review**
+checks a relation to external literature or records. A **human or adversarial
+review** supplies bounded judgment and challenge.
+
+These lanes can reinforce one another. They cannot substitute without an
+explicit bridge. A schema-valid trace can contain false values. A theorem about
+an abstract state machine can fail to describe the code. Passing code tests do
+not prove all inputs. A benchmark can be contaminated. A runtime observation
+can be mismeasured. A human can misunderstand the dossier.
+
+The proof envelope maps a prose claim to the appropriate artifacts and records
+what remains outside each. Some claims should stay as research questions until
+an operational predicate can be stated honestly.
+
+## Executable Specifications Make Disagreement Concrete
+
+An executable specification turns selected meanings into states, transitions,
+preconditions, postconditions, and invariants. It is valuable when a disputed
+boundary can be stated precisely enough to reject a bad case.
+
+For the release note, an executable record might require exact trial identity,
+current public evidence, explicit sensor coverage, active policy, nonexpired
+lease, unchanged support state, and no deployment inference. A validator can
+reject a packet that omits sensor missingness or references the stale summary.
+
+The specification is not the world. It can encode the wrong obligation, omit a
+stakeholder, or simplify time and uncertainty. Its provenance should identify
+which prose claim, incident, policy, or design decision produced each predicate.
+Counterexamples and rejected fixtures help reviewers see the intended boundary.
+
+Specifications should be small enough to understand and connected to a real
+consumer. Proving hundreds of projections over unused records creates formal
+surface area without reducing uncertainty. The preferred target is a
+load-bearing transition, impossibility, conservation rule, noninterference
+property, or consumer gate.
+
+## Lean Proves the Encoded Proposition
+
+Lean can check that a theorem follows from authored definitions and premises.
+That is a powerful and deliberately narrow fact.
+
+A theorem may prove that an expired lease cannot authorize a transition, that
+a rejected event preserves state, that accepted runs retain identity, that
+support is not assigned by a transaction, or that two thin summaries cannot
+determine a richer state. These results remove ambiguity from the modeled
+record system.
+
+They do not prove that the environment supplied truthful fields, the code
+refines the model, the policy is legitimate, the theorem captures the reader's
+intended claim, or the system is safe. Those require additional bridges.
+
+The proof packet binds theorem ID, source digest, definitions, assumptions,
+Lean and dependency versions, build command, checked result, interpretation
+mapping, implementation binding, consumer, expiry, non-claims, and residuals.
+A changed definition, source, compiler, or consumer can invalidate the packet
+without making the historical theorem false.
+
+Neural-network verification has the same boundary. A verifier may establish a
+property for one checkpoint, preprocessing pipeline, input region, arithmetic
+semantics, and output predicate. It does not establish natural-distribution
+robustness, model intent, privacy, or whole-agent safety.
+
+## Proof-Carrying Claims Bind Interpretation
+
+A proof-carrying claim packages a proposition with the artifact that supports
+one of its boundaries. The package includes the claim identity and version,
+formal or executable target, interpretation mapping, verifier, artifact,
+failed attempts, support effect, consumer, expiry, dissent, and non-claims.
+
+Interpretation mapping is essential. A perfectly valid theorem about
+`leaseActive = false` may not establish that the physical controller stopped.
+The package says which natural-language phrase corresponds to which predicate
+and what bridge remains empirical.
+
+Not every claim needs formal proof. A citation dossier, executable procedure,
+reproducible experiment, adversarial case, or structured human review may be
+the correct justification. “Proof-carrying” names the discipline of carrying
+the exact justification and boundary, not a promise that all knowledge reduces
+to theorem proving.
+
+The package can fail. The theorem may not resolve. The interpretation may be
+ambiguous. The artifact may be stale. The verifier may be unsupported. A
+failed attempt remains in the denominator and routes to repair, narrowing, or
+continued block.
+
+## Proof Contracts Travel Without Promotion
+
+Proof-carrying contracts let finite structural facts move between producers
+and consumers. A contract can bind theorem IDs, fingerprints, receipt state,
+proof boundary, source refs, consumer state, staleness policy, support effect,
+and non-claims.
+
+The useful property is transport discipline. A planner can consume a proven
+finite ordering predicate without inferring that the plan is useful. A memory
+service can consume a revocation invariant without inferring that every copy
+was found. A routing service can consume a structural tensor property without
+inferring model-quality advantage.
+
+Circle Calculus supplies one source family and external receipt lineage for
+this idea. The ASI Stack's local consumer can check pinned receipt boundaries,
+mutations, and finite lifecycle properties. That does not mean this repository
+built the external calculus, resolved every theorem from source, or validated
+downstream model behavior.
+
+A proof receipt should make overclaiming harder. If a consumer can drop the
+non-claims or reuse the receipt after its source or implementation changes, the
+transport failed even if the original proof was valid.
+
+## Adversarial Review Is a Bounded Tribunal
+
+Some claims remain consequential and interpretation-heavy after formal and
+empirical work. They need structured challenge.
+
+A tribunal packet binds the case, claim version, evidence, proof and test
+artifacts, affected parties, reviewer roles, dependence graph, attack plan,
+findings, dissent, unresolved questions, cycle cap, verdict, appeal, required
+actions, and writeback request.
+
+Reviewer diversity is functional, not demographic bookkeeping alone. One
+reviewer may attack source validity, another formal interpretation, another
+runtime correspondence, another rights or public consequence. Shared model,
+organization, incentives, evidence, or infrastructure can make several
+reviewers one failure path.
+
+The tribunal can approve narrowly, require revision, block, dispute, or return
+unknown. It does not create truth by vote. A complete dossier can lead to a
+wrong verdict, and a correct verdict can be generalized beyond its case.
+
+Appeal requires new evidence, identified error, changed policy, or another
+declared basis. Repeating the same prompt until a favorable judge appears is
+not appeal. Cycle caps prevent unlimited review from consuming the whole
+system.
+
+## Disagreement Is an Output, Not a Defect
+
+Review systems often pressure several judgments into one scalar verdict. That
+can erase the exact disagreement that a decision-maker needs.
+
+One reviewer may accept the claim's observational wording but reject its
+sensor coverage. Another may accept the evidence and dispute public authority.
+A formal reviewer may confirm the lease theorem while objecting that its
+interpretation map is incomplete. These are not three noisy estimates of one
+probability. They concern different obligations.
+
+The verdict packet preserves each finding, evidence basis, scope, dependence,
+confidence or uncertainty representation, requested action, and unresolved
+response. It records where reviewers agree, where their methods share a root,
+and which disagreements can change the consumer decision. An aggregate can be
+computed for a policy that genuinely needs one, but the underlying structure
+remains available.
+
+Some disputes can be resolved by a new observation or proof. Others concern
+values, jurisdiction, acceptable risk, or ontology and require an authorized
+decision rather than more evidence. The ledger must not describe a governance
+choice as though a fact checker settled it.
+
+Minority findings gain neither automatic correctness nor automatic dismissal.
+A dissent can block if policy assigns it that power for a specified hazard; it
+can trigger another check; it can remain attached as a residual; or it can be
+overruled through a recorded authority path. The disposition and rationale
+travel with the accepted claim.
+
+Preserved disagreement improves future correction. If the missing sensor
+stream later proves decisive, the system can identify which reviewer raised
+the issue, which evidence was unavailable, why the concern did or did not
+block, and which consumers relied on the resulting verdict. A single approval
+score would have destroyed that learning signal.
+
+## Runtime Truth Is a Separate Bridge
+
+The formal model may say that a stop transition disables authority. The code
+may pass tests showing that it emits the stop command. The runtime trace may
+show the command was sent. The plant may nevertheless continue moving because
+the actuator failed.
+
+Each crossing needs evidence: specification to theorem, theorem to code, code
+to deployed artifact, artifact to execution, execution to observation, and
+observation to claim. A break at one crossing does not invalidate every fact
+above it, but it blocks the broader conclusion.
+
+Implementation refinement can use proof, testing, model checking, trace
+comparison, code generation, or restricted trusted components. Runtime
+correspondence needs exact build identity, configuration, environment,
+instrumentation, time, and independent-enough effect observation.
+
+The release-note claim is observational. The Lean lease theorem is relevant to
+the control record, but it cannot fill the missing sensor interval. The claim
+must retain that residual unless another admissible observation closes it.
+
+## Downgrades Must Reach Every Known Consumer
+
+Correction fails when the central ledger changes but downstream surfaces keep
+the old claim.
+
+A downgrade event computes the known dependency closure: plans, memory
+objects, reports, pages, diagrams, APIs, benchmarks, policies, training data,
+and external releases that consumed the affected version. Each consumer has a
+repair policy: invalidate, rebuild, annotate, quarantine, notify, appeal, or
+record irreversible residual.
+
+The ledger tracks proposed scope and observed mutations. A surface can
+acknowledge the new claim, dispute applicability, or remain unreachable. The
+central transition is not complete simply because one database row changed.
+
+For the release note, the missing sensor stream may require revised wording in
+the technical chapter, public summary, release note, memory object, and future
+prompt context. An already copied external post may be irrecoverable. The
+residual stays attached to the claim and release history.
+
+Unknown consumers remain a real limitation. Exact lineage covers only recorded
+uses. Search, telemetry, access logs, and repository scans can discover more,
+but no clean local closure proves universal propagation.
+
+Known consumers return acknowledgments bound to the changed claim version.
+They record whether they rebuilt, narrowed, quarantined, annotated, appealed,
+or could not repair; which artifact now replaces the old basis; and which
+effects remain irreversible. Silence after notification is not counted as
+successful repair. Consequential consumers enter safe hold when their policy
+requires acknowledgment before reuse.
+
+## Failure Cases
+
+**Obligation omission.** Every assigned check passes because the decisive
+failure mode was never listed.
+
+**Verifier monoculture.** Several reviewers share one model, source, prompt, or
+institutional incentive.
+
+**Context abundance.** Large packets hide the decisive evidence and exhaust
+attention.
+
+**Context nonuse.** Required evidence is mounted but never inspected.
+
+**Claim alias drift.** Different surfaces appear to discuss one claim while
+their quantifiers or scope diverge.
+
+**Last-write-wins belief.** Concurrent revisions erase disagreement and stale
+base versions.
+
+**Evidence self-promotion.** A producer upgrades the parent claim from its own
+artifact.
+
+**Negative-result overreach.** An inadequate instrument is treated as a
+mechanism refutation.
+
+**Proof substitution.** A theorem about records is presented as environmental
+or deployment truth.
+
+**Implementation gap.** Proven definitions do not match the code or deployed
+configuration.
+
+**Receipt laundering.** A downstream consumer drops the proof boundary,
+expiry, or non-claims.
+
+**Tribunal theater.** Reviewers fill every field without possessing the context
+or competence to challenge the claim.
+
+**Review exhaustion.** Low-value checks consume scarce human and computational
+capacity while high-consequence obligations wait.
+
+**Surface orphaning.** A downgrade reaches the ledger but not a report,
+diagram, model memory, or release.
+
+**Irreversible publication.** A corrected claim cannot retract copies already
+distributed.
+
+**Formal surface inflation.** Theorem and validator counts rise without
+connecting to a live consumer or uncertainty.
+
+## The Strongest Simpler Baseline
+
+The strongest ordinary system uses version control, issue tracking, citations,
+tests, code review, continuous integration, a database of claims, release
+checklists, and human approval. It can provide excellent verification without
+one universal ledger or proof-carrying protocol.
+
+That baseline should remain preferred for many projects. The additional
+architecture earns its cost where claims persist across many surfaces and
+consumers; where support changes need exact authority and history; where formal,
+empirical, source, runtime, and review artifacts must remain distinct; or where
+downstream invalidation has material consequences.
+
+The comparison should measure correction rate, false acceptance, false block,
+calibration, time to find decisive evidence, proof-scope errors, downstream
+repair, reviewer load, latency, compute, implementation complexity, and
+residual harm. Metadata completeness is not the outcome.
+
+A thin ledger plus excellent reviewers may outperform a rich protocol with
+weak obligation discovery. A small set of focused tests may beat a large
+formalization program. The architecture should consolidate wherever ordinary
+records produce equal correction and scope discipline at lower total cost.
+
+## What the Current Work Establishes
+
+The five technical owners have distinct bounded artifacts. Their combination
+does not create a stronger support state.
+
+Verification Bandwidth has four implemented targets. Its authored evidence
+includes three valid and five rejecting admission records, two valid and seven
+rejecting contradiction traces, three valid and five rejecting capacity
+traces, a twelve-unit record with 66 pairwise obligations of which 18 are
+checked and 48 remain residual, and a 24-obligation decomposition with six
+boundary checks. Its current 35-theorem replacement surface reaches evidence-
+gate handoff and rejects 31 handoff mutations. A three-instrument sacrificial
+campaign reached six-of-six eligibility accuracy and complete required-
+residual recall but admitted only three of six extraction interfaces, so its
+held-out workload stayed sealed.
+
+Claim Ledgers has four implemented targets through 27 refinement declarations,
+with sixteen weak declarations retired and four bounded legacy lemmas retained.
+Five valid and seven rejecting revision fixtures plus one valid and eleven
+rejecting historical lifecycle records feed five reachable stages, 22 route
+cases, and 34 rejected lifecycle mutations.
+
+Proof-Carrying Claims and Adversarial Review has five implemented targets and
+44 live declarations across its retained and refinement modules. The proof-
+carrying surface uses three valid and five rejecting fixtures, two valid and
+seven rejecting dossier cases, six stages, 23 routes, and 36 rejected
+mutations. The Tribunal surface uses three valid and five rejecting reviews,
+one valid and eleven rejecting method or independence records, seven stages,
+28 routes, and 45 rejected mutations.
+
+Circle's current local surface contains 28 Lean declarations. Its public
+records include two schema-valid fixtures, a pinned external receipt slice, a
+consumer gate that accepts one receipt and rejects four mutations, and a
+digest-verified archive of nine contracts and four policy receipts with five
+rejected controls. The lifecycle checks 45 reachable states through 360
+transitions, nine revoked-lineage states through 72 contained transitions,
+eight trace splits, 16 lifecycle mutations, and 15 semantic mutations. A
+narrow non-core receipt transition does not promote the chapter core.
+
+The Executable Specifications proof envelope has two implemented targets and a
+28-declaration local module. Its independent audit executes a ten-event
+authority-lease trace, checks eleven composition splits, rejects 33 route
+cases, exercises expiry and a thin-summary collision, and rejects 19 complete-
+transport mutations.
+
+All five cores remain `Design rationale` at `argument`. These results do not
+establish obligation completeness, natural claim identity, source or artifact
+truth, semantic equivalence, verifier soundness, reviewer competence or
+independence in fact, verdict correctness, implementation refinement, runtime
+correspondence, useful advantage, safety, deployment, reproduction, or
+transfer.
+
+## From a Minimum Ledger to an Evidence Fabric
+
+A minimum implementation can use the release-note claim. Give it a stable
+identity and exact public wording. Construct obligations for identity,
+observation, missingness, scope, authority, formal lease state, publication,
+and residuals. Allocate deterministic, source, formal, runtime, model, and
+human checks under a fixed budget. Record which context each verifier requested
+and used.
+
+Bind the lease theorem to its interpretation and non-claims. Run an adversarial
+review that specifically seeks obligation omission and shared reviewer
+dependence. Submit the joined artifacts to a separate support gate. Inject the
+missing sensor stream, require narrowing, and propagate the revision to every
+known surface. Preserve one unreachable external copy as an irreversible
+residual.
+
+The next stage needs natural multi-surface claims with changing evidence,
+concurrent revisions, ontology migration, stale proofs, implementation drift,
+reviewer disagreement, and actual external effects. Compare ordinary issue
+tracking, evidence databases, model review, expert review, tests, and formal
+methods under matched information and cost. Measure correction and decision
+quality, not packet completion.
+
+The mature evidence fabric would allocate verification effort by consequence,
+uncertainty, expected information value, reviewer dependence, and deadline. It
+would connect sources, proofs, tests, runtime observations, objections,
+affected-party input, support decisions, consumers, and repair without making
+one evaluator sovereign.
+
+Claims could be promoted, narrowed, demoted, refuted, or retired while their
+history and downstream consequences remain recoverable. Proofs and receipts
+would travel as bounded facts. Unknown and dispute would remain operational
+states. Formal work would grow only where it removes a live ambiguity or
+protects a real consumer.
+
+## The Strongest Objection
+
+Rich ledgers and proofs can preserve impeccable metadata around a false or
+irrelevant conclusion. They can also consume the verification bandwidth they
+are meant to manage. Reviewers may spend more time checking receipts than
+examining the world.
+
+The objection is correct. Traceability cannot rescue a bad ontology, omitted
+obligation, weak evaluator, or irrelevant theorem. Formal precision can make a
+mistake look authoritative. A complicated support workflow can discourage
+small corrections and shift power toward whoever controls the ledger.
+
+The architecture responds by treating obligation discovery, context use,
+reviewer competence, outcome quality, and total burden as empirical questions.
+It allows thin records, low-consequence fast paths, bounded review cycles, and
+ordinary tools. It forbids theorem counts, packet completeness, or approval
+counts from becoming outcome metrics.
+
+The ledger should be judged by whether consequential errors are found earlier,
+claims are scoped more accurately, corrections reach consumers, and residuals
+remain visible at acceptable cost. If it does not improve those outcomes, it
+should contract.
+
+## Evidence That Would Change the Conclusion
+
+Simpler evidence records that produce equal correction, calibration, proof-
+scope discipline, consumer repair, and reviewer independence at lower total
+cost would justify consolidation. Evidence that formal envelopes systematically
+increase deference or hide semantic mismatch would narrow where they should be
+used.
+
+Support for the broader design would require prospective natural claim
+campaigns with independent semantic and outcome labels, competent simple
+baselines, matched context, explicit obligation denominators, causal ablations,
+concurrent revisions, downgrade propagation, complete costs, reproduction, and
+transfer across domains, models, evaluators, institutions, and consumers.
+
+Formal bridges would need to show that selected executable specifications match
+their prose claims, implementations refine the models at the checked boundary,
+and runtime observations preserve build and environment identity. No one bridge
+would establish the whole system.
+
+The conclusion should narrow if better reviewer training and source access
+solve the same failures without persistent ledgers, or if most downstream
+repair can be handled reliably through ordinary version control and release
+practice.
+
+## What This Establishes
+
+A challengeable claim needs more than evidence nearby. It needs stable
+identity, explicit obligations, qualified verification capacity, adequate
+context, bounded artifacts, objections, maximum inference, an authorized
+belief transition, and repair to known consumers.
+
+Schemas, tests, benchmarks, proofs, runtime observations, sources, and human
+review answer different questions. Lean proves the encoded proposition.
+Proof-carrying claims bind interpretation and non-claims. Tribunals structure
+challenge. Claim ledgers preserve revision without claiming truth.
+
+The current repository shows that many of these record and lifecycle
+boundaries can be stated and checked over finite authored cases. It does not
+show that the joined system verifies natural claims correctly or improves
+decisions.
+
+Accepted claims and plans still need accountable work. Unit 16 turns the
+architecture into typed jobs, work surfaces, and organizations while
+preserving the evidence and authority constraints that made the work
+admissible.
+
+{{< include ../generated/unit-15-status.qmd >}}

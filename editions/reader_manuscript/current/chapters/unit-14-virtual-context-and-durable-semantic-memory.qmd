@@ -1,0 +1,679 @@
+---
+title: "Virtual Context and Durable Semantic Memory"
+unit_id: "unit-14"
+---
+
+## The Patch That Remembered Too Much
+
+The publication artifact from the previous chapter has been repaired. Its
+private filesystem path is gone, and the conclusion once again says that the
+bounded controller trial stopped after oscillation rather than claiming that
+the controller safely detected it. The corrected page passes its target
+checks.
+
+The next morning, another worker is asked to prepare a short release note. It
+retrieves a cached summary from the earlier attempt. That summary still
+contains the private path and the word “safely.” A policy record revoking use
+of the raw trace exists in the repository, but the cached summary predates the
+revocation. The worker has access to both the corrected page and the stale
+summary. The stale one is shorter and appears more relevant, so it wins the
+retrieval score.
+
+Nothing in this failure requires the model to be malicious. The system mixed
+five different facts: material was stored, material was available to the
+current task, material had once been used, material was believed, and material
+was authorized. It treated them as one condition called memory.
+
+A governed system needs a sharper boundary. **Virtual context** is the exact,
+temporary view mounted for one consumer and purpose. **Durable semantic
+memory** is the versioned set of objects and relations the system may carry
+across tasks and restarts. Neither is truth. Neither is authority. Both need
+identity, provenance, freshness, rights, contradiction, taint, revocation,
+expiry, and residuals.
+
+The release-note worker should receive a new context transaction. That
+transaction asks for the current public trial result, its permitted evidence,
+the active release policy, and known contradictions. The resolver sees that
+the cached summary depends on a revoked raw path and an obsolete claim. It can
+exclude the summary, mount it as quarantined diagnostic material, or request a
+fresh derivation. If the summary had already become durable belief, the memory
+layer must invalidate that belief and every known consumer receipt derived
+from it.
+
+This is more work than vector search. It is also narrower than a promise of
+perfect memory. The architecture does not guarantee that all useful context is
+found or that stored beliefs are true. It makes presence, use, belief, and
+permission separate enough to challenge.
+
+## Five States, Not One Memory
+
+The word *memory* often collapses several systems that fail differently.
+
+**Source state** contains the original files, observations, policies, messages,
+datasets, traces, and records. A source may be authentic or forged, current or
+stale, authorized or denied. Its existence does not determine its meaning.
+
+**Storage state** records what bytes or structured objects are retained and
+where. Databases, object stores, indexes, caches, model weights, backups, and
+logs all belong here. Successful storage proves neither retrieval nor lawful
+use.
+
+**Context state** is what a particular consumer can see during a bounded
+operation. It includes selected source spans, summaries, tool results,
+policies, schemas, examples, and prior work. The context window is one physical
+carrier for this state, not its complete semantics.
+
+**Belief state** records which propositions, objects, relations, procedures,
+or hypotheses the system is prepared to carry forward. Belief can be
+qualified, contradicted, superseded, scoped, or unknown. Repetition and
+retrieval do not create justified belief.
+
+**Authority state** determines which material may influence which action for
+which purpose. A belief can be well supported yet unauthorized for a consumer.
+A private fact may be valid and still excluded from a public release. A tool
+may be able to read a file without having permission to publish it.
+
+The five states interact but do not inherit from one another. Storage does not
+grant context admission. Context admission does not establish belief. Belief
+does not grant authority. Authority does not establish truth. A useful memory
+architecture keeps those failed implications visible in its records and APIs.
+
+This separation also clarifies deletion. Removing an object from the active
+context is not deleting storage. Deleting one database row is not removing a
+backup. Removing exact bytes is not necessarily removing a learned influence
+from model parameters. Revoking authority is not pretending the information
+never existed. Each operation needs its own target and receipt.
+
+## Context Is a Typed Mount
+
+A context request should say more than “find relevant documents.” It identifies
+the consumer, task, purpose, requested object or query family, source and time
+boundaries, authority ceiling, freshness requirements, adequacy criteria,
+conflict policy, loss tolerance, cost budget, lease, and failure behavior.
+
+The resolver answers with a **mount**, a versioned view over admitted context
+objects. The mount can contain exact source spans, typed records, derived
+summaries, indexes, tool outputs, or references to material too large or
+restricted to copy. Every item retains its source identity, transformation,
+version, validity interval, rights, taint, and omission record.
+
+For the release note, the request names the public-release consumer and current
+trial-summary purpose. It requires the active release policy, public evidence,
+the current controller identity, the observed stop condition, and open
+residuals. It excludes raw private paths and claims beyond the bounded trial.
+The context lease lasts for one draft-and-review transaction. It expires if the
+policy, source page, evidence epoch, or consumer changes.
+
+The mount is not a bag of text. It is a governed view. Two consumers can mount
+different views over the same source estate. An internal investigator may see
+the raw trace path; a public writer may see only an approved evidence link. A
+verifier may need exact schema fields; a human reader may need a concise
+explanation plus a rescue link. Those views can be equally legitimate without
+being identical.
+
+A mount can also be incomplete. The resolver records requested but absent
+objects, unresolved aliases, omitted material, denied sources, stale items,
+conflicts, failed retrievals, truncated fields, and approximations. Silence is
+not evidence that the missing item does not exist.
+
+## Pages, Cells, and Certificates
+
+The Virtual Context ABI provides a shared record shape without requiring every
+memory backend to use one physical layout.
+
+A **page** groups context for a declared purpose and consumer. It has a stable
+page identity, version, lease, source basis, authority ceiling, adequacy target,
+and residual set. Pages can be mounted, superseded, invalidated, or released.
+
+A **cell** is an addressable semantic item within or referenced by a page. It
+may hold an exact value, proposition, relation, source span, procedure,
+constraint, policy, observation, summary, or pointer. A cell records type,
+identity, origin, transformation, time, uncertainty, rights, taint, and known
+dependents. Its semantic identity remains distinct from its token position,
+embedding, storage address, or cache key.
+
+A **certificate** binds a materialized page to the request it answers. It lists
+the resolver and version, source fingerprints, admitted and omitted cells,
+losses, freshness, conflict disposition, authority checks, adequacy checks,
+faults, costs, and lease. It may say that a page is structurally admissible for
+one consumer. It does not certify that every cell is true or that the model
+will use the page correctly.
+
+This distinction lets different substrates share context. A graph store can
+resolve relations, a vector index can propose related passages, a database can
+return exact records, and a long-context model can consume rendered text. They
+exchange pages, cells, and certificates while retaining their own storage and
+retrieval methods.
+
+The ABI should remain smaller than a universal ontology. It defines the fields
+needed to preserve identity, boundaries, and repair. Domain schemas define
+what a controller result, legal rule, biological observation, or financial
+position means. If the ABI tries to encode every domain, it becomes the brittle
+private language it was meant to avoid.
+
+## Addresses Are Not Meaning
+
+Every context system needs addressing, but no address is sufficient by itself.
+
+A file path can change when a repository moves. A line number changes when a
+paragraph is inserted. A content hash changes when formatting changes. A vector
+address depends on an embedding model and index version. A database key can
+survive while the row's meaning changes. A natural-language name can refer to
+several objects.
+
+The architecture keeps physical, content, structural, semantic, and authority
+identities separate. A semantic object can map to several exact source spans.
+One source span can support several propositions. A content hash binds bytes;
+an alias record proposes co-reference; an authority record governs use. None
+silently substitutes for the others.
+
+The stale summary in the example has a valid content identity. It is not
+corrupted bytes. Its problem is semantic and temporal: it refers to an obsolete
+claim and carries denied provenance into a public consumer. Deleting it merely
+because it is stale would also destroy useful diagnostic history. The better
+response is to preserve its identity, mark its current disposition, block
+ordinary use, and retain a governed repair path.
+
+Stable identities make descendant invalidation possible. When the privacy
+policy changes, the system can ask which cells, summaries, pages, prompts,
+claims, artifacts, and consumer receipts depended on the newly denied source.
+An approximate embedding search may help discover unrecorded descendants, but
+declared lineage supplies the exact known set and exposes the remaining
+discovery gap.
+
+## Snapshots Freeze a View, Not the World
+
+A snapshot records one context or memory state at a precise boundary. It binds
+versions of sources, policies, indexes, aliases, rights, transformations,
+resolvers, and unresolved residuals. It enables replay and comparison.
+
+Snapshots are essential when work spans time. The release-note draft should be
+reviewed against the same policy and evidence view used to create it, or the
+system should explicitly rebase it onto a newer view. Without a snapshot, a
+reviewer may approve text whose citations or permissions changed between draft
+and review.
+
+A snapshot does not freeze external reality. The underlying controller can
+change, a source can be corrected, and a right can be revoked. The snapshot
+remains a historical record of what the transaction saw. Its lease and
+freshness rules determine whether it can still support action.
+
+This creates two valid operations. **Replay** reconstructs a historical view
+for diagnosis. **Refresh** resolves a new view under current state. Replaying an
+old snapshot does not reauthorize its contents. Refreshing does not erase the
+old basis. A governed system needs both to explain why a decision occurred and
+why the same decision should or should not occur now.
+
+## Context Changes Are Transactions
+
+Mounting context changes the effective input to cognition. It should have
+transaction semantics where consequences justify them.
+
+A context transaction binds a request, base snapshot, proposed additions and
+removals, source versions, policy epoch, resolver, conflict decisions,
+authority checks, expected descendants, and commit conditions. It can prepare
+a candidate page, validate it, commit a new mounted version, or abort without
+presenting a half-updated view as current.
+
+The transaction protects against a common hybrid state. Suppose the corrected
+claim is mounted, but the old privacy policy remains cached. Or the policy is
+current, but the embedding index still returns the denied path. A consumer can
+receive pieces from incompatible epochs even though every component is valid
+in isolation.
+
+Atomicity is consumer-relative. A simple single-process store may use an
+append-only event plus one pointer swap. A distributed context service may need
+version vectors, leases, idempotent retries, conflict records, and compensating
+actions. The architecture should not claim serializability or linearizability
+without implementing and testing them. It must state what consistency model it
+actually provides.
+
+Crash behavior belongs in the contract. A crash before event append should
+leave the old view current. A crash after append but before index update should
+be recoverable through replay. A crash after materialization but before
+consumer acknowledgment should not create an untracked use. Every ambiguous
+boundary becomes a residual rather than an assumed success.
+
+## Branches Need Context Isolation
+
+Planning, search, simulation, and parallel work create branches with different
+assumptions. One branch may use the corrected public evidence. Another may
+inspect the stale summary to diagnose the earlier failure. A third may test a
+hypothesis in which the controller really did identify oscillation safely. All
+three branches can be useful. They cannot share one undifferentiated context.
+
+Each branch receives its own snapshot identity, assumptions, mounted objects,
+authority ceiling, writes, observations, and residuals. A hypothetical object
+is typed as hypothetical even when its wording resembles an observed fact. A
+diagnostic branch may read quarantined material without granting that material
+ordinary publication use. A private branch can derive an internal finding
+without making it available to the public branch.
+
+Isolation is not automatically supplied by separate model calls. Two calls may
+share a cache, retrieval index, scratch directory, tool session, or durable
+memory writer. The transaction boundary must include every state carrier that
+can move information between branches. Undeclared carriers become explicit
+isolation residuals.
+
+Joining branches is a semantic operation. The join compares base snapshots,
+object identities, assumptions, policy epochs, rights, contradictions,
+external effects, and writes. Exact nonconflicting records may merge
+mechanically. Conflicting claims remain plural or route to adjudication.
+Hypothetical facts do not become actual because several simulated branches
+contain them. A denied source cannot enter the public branch through a summary
+written by an internal branch.
+
+The release-note task illustrates the rule. The diagnostic branch can preserve
+the stale summary and its raw path to explain the defect. Its output is a
+repair record whose public projection says only that restricted provenance was
+removed. The public branch consumes that approved projection, not the
+diagnostic context itself. Both branches retain lineage to the same incident
+without inheriting the same view or authority.
+
+Branch retirement matters too. When a search branch loses, its context should
+not remain mounted indefinitely or silently consolidate into durable belief.
+Useful negative evidence, failed hypotheses, and repair lessons can be proposed
+for memory through a separate admission transaction. Temporary prompts,
+credentials, private artifacts, and speculative assertions expire with the
+branch unless another policy explicitly preserves them.
+
+Strong isolation has costs. Copying every object is wasteful, while sharing
+immutable content with copy-on-write views can be efficient. The implementation
+may choose snapshots, overlays, namespaced caches, capability-scoped handles,
+or transactional stores. The architectural requirement is observable: branch
+identity and permitted information flow survive the optimization, and merge or
+leakage failures can be detected.
+
+## Taint Is a Dependency Property
+
+Taint records a reason that material requires restricted handling. It may arise
+from privacy, licensing, security classification, uncertain provenance,
+untrusted generation, stale policy, contamination, adversarial input, failed
+validation, or a known contradiction.
+
+Taint is not a permanent moral label on bytes. It is typed, scoped, and
+versioned. A private path and an unverified claim fail for different reasons.
+One may be safely transformed into an approved public reference; the other may
+require evidence or weaker wording. A declassification decision needs an
+authorized rule and receipt. Merely paraphrasing tainted material does not
+remove its lineage.
+
+Propagation follows dependency, not textual similarity alone. If a summary
+uses a denied source, the derived cell carries that dependency even when it
+contains none of the source's exact words. If an aggregate can be released
+under a validated privacy rule, the new artifact records the transformation,
+allowed consumer, residual risk, and source obligations.
+
+Overtainting can make a system unusable. Undertainting can leak restricted
+material or launder unsupported claims. The remedy is not one global Boolean.
+It is typed propagation, explicit declassification, consumer-specific rules,
+and measurements of false blocks, missed dependencies, review burden, and
+downstream harm.
+
+## Durable Memory Begins With Events
+
+Temporary context ends when the lease closes. Some results deserve to survive:
+the corrected public claim, the active privacy policy, the relation between the
+trial and its evidence, and the fact that a stale summary was rejected. Durable
+memory admits these as versioned semantic objects and events.
+
+An event-sourced design records admission, normalization, relation creation,
+contradiction, supersession, rights change, retrieval use, correction,
+compaction, migration, deletion request, and retirement. The current view is a
+projection over that history, not an overwrite that destroys it.
+
+Events help with replay and accountability, but logs are not automatically
+truthful or complete. A missing event, forged actor, wrong timestamp, or bad
+normalization can reproduce the same error deterministically. Event identity,
+authorization, source binding, and validation remain separate requirements.
+
+Durable objects retain semantic identity across representations. The
+proposition that the bounded trial stopped after oscillation may appear in a
+source note, claim ledger, public page, release note, and memory graph. Those
+artifacts have different identities and consumers. Their shared proposition
+identity allows correction to propagate without claiming that all wording is
+equivalent.
+
+## Knowledge Is a Lattice of Qualified Relations
+
+Calling memory a *knowledge lattice* emphasizes that beliefs can be ordered,
+related, revised, and viewed under different scopes without collapsing into
+one canonical sentence.
+
+Objects can represent entities, events, observations, claims, policies,
+procedures, hypotheses, and artifacts. Relations name roles: source supports
+claim, policy governs use, observation concerns controller, summary derives
+from trace, claim supersedes claim, consumer used object. Provenance records
+how each relation entered and which transformations it survived.
+
+The lattice need not imply that every belief has a neat mathematical join.
+Some conflicts should remain unresolved. One source may report that the
+controller stopped because of oscillation while another attributes the stop to
+a timeout. The system can preserve both observations, their scopes, and the
+open adjudication rather than averaging them into a false consensus.
+
+Consolidation creates a new derived object only when a policy states what may
+be combined, which distinctions are preserved, what is lost, and which
+consumers can use the result. The derived object keeps every parent source and
+cannot inherit broader purpose authority than its parents permit.
+
+This is controlled fallibility, not omniscience. The lattice should make it
+possible to ask what was believed, why, under which ontology, for which
+consumer, at which time, with which contradictions and omissions.
+
+## Contradiction Is Not a Cache Miss
+
+Retrieval systems often return the most similar or highest-ranked item. A
+memory system also needs to return material conflicts.
+
+Contradictions can be logical, temporal, observational, policy-based, or
+identity-based. “The controller stopped” and “the controller continued” may be
+inconsistent if they concern the same run and time. They may both be correct if
+they concern different runs. A privacy policy can supersede an earlier policy
+without making the historical policy false. Two aliases may refer to distinct
+controllers despite similar names.
+
+The contradiction record binds the compared objects, asserted relation,
+scope, time, ontology, detection method, evidence, adjudication state, and
+affected consumers. It can block strict use, permit a plural view, request
+observation, or narrow the question.
+
+Supersession also needs care. A newer object does not automatically dominate an
+older one. Authority, evidence, scope, and effective time determine the
+relation. The old object remains available for historical replay while current
+consumers receive the new one.
+
+In the release-note case, the corrected claim supersedes the stale summary for
+public current use. The stale summary remains diagnostically relevant because
+it explains the retrieval failure. The context certificate shows which one was
+mounted and why.
+
+## Retrieval Produces Candidates
+
+Exact lookup, lexical search, vector retrieval, graph traversal, learned
+navigation, long-context scanning, and hybrid methods are candidate generators.
+They should be evaluated against the consumer's actual need.
+
+A candidate passes through identity resolution, provenance, freshness,
+contradiction, rights, taint, scope, relevance, and adequacy checks. The result
+may be admitted, denied, quarantined, narrowed, or returned with unresolved
+alternatives. A high similarity score cannot override a denied purpose or open
+deletion duty.
+
+The strongest baseline is not an intentionally naive vector store. It includes
+competent databases, retrieval-augmented generation, graph retrieval, long
+context, ordinary caches, rerankers, source citations, access control, and
+human review. The governed layer must earn its extra state by improving useful
+outcomes, correction, provenance survival, contradiction handling, rights
+closure, or recovery after complete costs are counted.
+
+Retrieval quality may dominate many tasks. If better indexing and reranking
+solve the observed failures, the semantic layer should contract. Governance is
+not an excuse to preserve a costly ontology that adds no decision value.
+
+## Forgetting Has Several Targets
+
+A request to forget can concern active context, a cache entry, durable storage,
+an index, a backup, a derived summary, a consumer belief, a model parameter, an
+external recipient, or future authority. Those targets are not interchangeable.
+
+The system begins with a known-copy and known-descendant inventory. It records
+what was requested, under which right or policy, which identities are in
+scope, which operations ran, what was verified, what could not be reached, and
+which residuals remain.
+
+Removing the stale summary from the active context prevents immediate reuse.
+Retiring its durable object prevents ordinary retrieval. Deleting its storage
+copies changes retention. Invalidating descendant receipts tells known
+consumers not to rely on it. None proves that every copy was found or that a
+model's learned influence disappeared.
+
+Machine unlearning belongs beside, but not inside, this lifecycle. A parameter
+update can be evaluated for behavioral removal, influence, membership privacy,
+lineage, storage, backups, descendants, and utility. Improvement on one axis
+does not close the others. The memory ledger should preserve those separate
+outcomes rather than issuing one “forgotten” flag.
+
+Forgetting also has an epistemic cost. Deleting source material can make later
+claims harder to audit. Rights and retention policy may require deletion
+despite that cost. The architecture records the trade rather than silently
+retaining information because it might be useful.
+
+## Migration Must Preserve the Repair Path
+
+Memory systems change. Ontologies evolve, indexes are rebuilt, embeddings are
+replaced, storage backends migrate, schemas split, and models reinterpret old
+records.
+
+A migration packet maps old and new identities, fields, relations, ontology
+versions, losses, conflicts, rights, consumers, and rollback conditions. It
+tests exact records where possible and samples semantic behavior where exact
+equivalence is unavailable. Every unresolved mapping becomes a residual.
+
+Rollback is bounded by what changed externally. Reverting an index may restore
+retrieval ordering. It cannot retract a release note already copied elsewhere.
+Restoring a database snapshot may reintroduce a record that policy now denies.
+A rollback therefore replays current authority and deletion rules rather than
+pretending to return the world to an earlier state.
+
+Migration quality is consumer-relative. A new embedding can preserve ordinary
+question answering while losing rare contradiction retrieval. A compacted log
+can preserve current values while losing why they changed. The acceptance test
+must include the queries and repair duties important to known consumers.
+
+## Failure Cases
+
+**Presence laundering.** A stored or retrieved item is treated as true.
+
+**Authority laundering.** A readable item is treated as permitted for the
+current purpose.
+
+**Epoch mixing.** A context combines sources, policy, aliases, or indexes from
+incompatible versions.
+
+**Stale summary dominance.** A concise derived object outranks a current exact
+source.
+
+**Positional identity.** Insertions or migrations detach repairs from their
+semantic targets.
+
+**Silent omission.** Missing, denied, truncated, or failed retrieval is
+presented as an adequate complete view.
+
+**Contradiction collapse.** Conflicting observations are averaged or one is
+discarded without adjudication.
+
+**Taint laundering.** Paraphrase or re-embedding hides restricted provenance.
+
+**Taint explosion.** Broad propagation blocks unrelated uses and makes the
+system unusable.
+
+**Split transaction.** A consumer sees a new claim with an old policy or a new
+policy with an old index.
+
+**Replay reauthorization.** A historical snapshot is mounted as though its
+expired rights were current.
+
+**Alias collision.** Similar names or embeddings merge distinct entities and
+their authority.
+
+**Ontology migration loss.** A relation survives syntactically while its role
+or scope changes.
+
+**Deletion by count.** Matching an expected number of deleted objects is
+treated as proof that the correct identities were removed.
+
+**Behavioral-forgetting substitution.** A changed model answer is treated as
+proof of parameter, storage, backup, legal, and descendant erasure.
+
+**Unbounded context administration.** Provenance and certificates cost more
+than the decision warrants.
+
+## The Strongest Simpler Baseline
+
+The strongest ordinary design uses versioned source control, a transactional
+database, an object store, access control, exact and vector indexes, cache
+invalidation, citations, retention jobs, and human review. It can solve many
+problems without pages, cells, knowledge lattices, or a universal memory
+service.
+
+That baseline should be the default competitor. The governed architecture is
+justified where several consumers need shared identity and repair across
+temporary context and durable belief; where contradiction, rights, taint,
+expiry, migration, or deletion materially affect decisions; or where replay
+and descendant invalidation matter.
+
+For low-consequence tasks, an ephemeral prompt assembled from current files
+may be safer and cheaper. For exact records, a relational database may be more
+reliable than semantic retrieval. For one user and one process, ordinary
+transactions may supply enough consistency. The stack should not demand its
+full memory protocol everywhere.
+
+The comparison must count retrieval quality, downstream utility, correction
+speed, false admission, false denial, provenance survival, contradiction
+calibration, rights closure, deletion residuals, latency, storage, compute,
+energy, implementation complexity, and human burden.
+
+## What the Current Work Establishes
+
+The three technical owners supply substantial finite record contracts, not a
+deployed memory system.
+
+The Virtual Context ABI has six implemented public proof targets and 83 live
+Lean declarations. Its bounded surfaces include three valid and five rejecting
+admission fixtures, two valid and nine rejecting resolver routes, one
+four-project certificate with eleven rejecting mutations, a 39-theorem request
+and fault lifecycle with 73 rejected mutations, and a reachable certificate
+admission surface with 64 rejected mutations. Mixed QCSA results remain bounded
+to their synthetic workloads.
+
+Context Transactions has four implemented targets and 52 Lean declarations:
+seventeen retained finite route and countermodel results plus 35 reachable
+refinement declarations. Its executable records include three valid and six
+rejecting store cases, two valid and four rejecting sequence cases, and one
+bounded five-project restart lifecycle with ten rejecting mutations.
+
+Durable Semantic Memory has one implemented target through a 35-declaration,
+seven-transition review. Thirty-eight admission-axis mutations receive exact
+repair or refusal dispositions. The model preserves identity, provenance,
+purpose narrowing, migration invalidation, retrieval-use receipts, replay
+composition, and open deletion-duty blocking inside authored finite records.
+Two collision pairs separate contradiction state from a thin summary and
+storage deletion from learned influence.
+
+None of these results transfers support among the owners. All three cores
+remain `Design rationale` at `argument`. They do not establish source truth,
+context adequacy, useful retrieval, transaction isolation, serializability,
+linearizability, crash durability, complete taint or deletion propagation,
+behavioral forgetting, natural model use, safety, deployment, reproduction, or
+transfer.
+
+## From a Minimum Context Service to Durable Memory
+
+A minimum implementation can use the release-note case. Create exact source,
+policy, corrected-claim, stale-summary, and consumer identities. Issue a
+public-purpose context request, resolve at least exact and semantic candidates,
+materialize a page, record omissions and taint, and bind a certificate. Inject
+a policy revocation and stale-index fault. Require the transaction either to
+mount a coherent current view or fail with a typed residual.
+
+Then admit only validated, authorized conclusions into a small event-sourced
+semantic store. Record contradiction, supersession, retrieval use, correction,
+and deletion duty. Crash before and after event append, projection update,
+snapshot, compaction, and consumer receipt. Replay the event stream and compare
+the exact governed view. Test known descendant invalidation without claiming
+that the inventory is complete.
+
+The next stage needs natural update-heavy tasks with changing sources,
+conflicting observations, policy revisions, ontology migration, restarts,
+compaction, poisoning, rights changes, deletion, and model replacement. Compare
+exact databases, vector and graph retrieval, long context, ordinary RAG, and
+human review under matched access and tuning. Score task utility and every
+governance cost separately.
+
+The mature service would provide temporary context and durable semantic state
+to heterogeneous models, tools, agents, and institutions. It would support
+plural ontologies and hypotheses, consumer-bound views, independently
+replaceable retrieval backends, bounded consolidation, precise revocation,
+rights-aware forgetting, restart recovery, and migration without pretending
+that one graph or embedding is the world.
+
+Maturity is not perfect recall. It is controlled fallibility: the system can
+say what it mounted, what it believed, why, under which policy and ontology,
+which contradictions survived, which consumers used it, what changed, and
+what could not be repaired or forgotten.
+
+## The Strongest Objection
+
+Structured context and semantic memory can amplify an early mistake. A wrong
+identity, relation, policy interpretation, or ontology mapping may propagate
+farther because the system records it precisely. Rich certificates can create
+false confidence while retrieval quality still determines whether the useful
+fact reaches the model.
+
+The objection has force. Governance metadata is not meaning. A perfect lineage
+graph around a false proposition remains false. An expensive memory service
+that retrieves worse context than a simple index can reduce system quality.
+False precision also consumes reviewer attention and makes migrations harder.
+
+The architecture responds by keeping ambiguity and contradiction first-class,
+making retrieval backends replaceable, allowing thin implementations, and
+requiring consumer-specific advantage. Stable identities make a mistake
+repairable; they do not make it correct. Certificates report their checked
+boundary; they do not certify truth.
+
+Where simple retrieval, ordinary databases, access control, and cache
+invalidation perform as well, the layer should contract. The most elaborate
+memory machinery belongs only where shared identity, temporal revision,
+rights, contradiction, replay, or descendant repair changes consequential
+decisions.
+
+## Evidence That Would Change the Conclusion
+
+Simpler retrieval and memory systems matching provenance preservation,
+contradiction handling, forgetting, transfer, revocation, recovery, and total
+cost would justify a thinner layer. Evidence that stable semantic identity or
+event history systematically worsens correction could retire those mechanisms
+for affected workloads.
+
+Evidence supporting the broader design would require prospective natural
+campaigns against competent database, vector, graph, long-context, RAG, and
+human-review baselines. They would need update-heavy tasks, complete event and
+consumer denominators, independent outcome measures, crash and migration
+faults, rights and deletion tests, causal ablations, reproduction, and transfer
+across models, backends, domains, and organizations.
+
+The conclusion should remain narrow if the layer improves auditability but not
+useful outcomes, or if its governance burden exceeds the harms it prevents.
+One clean replay cannot establish semantic continuity, and one retrieval win
+cannot establish durable memory.
+
+## What This Establishes
+
+Context is a temporary, typed, consumer-bound mount. Durable memory is a
+versioned history of qualified semantic objects and relations. Storage,
+context, belief, and authority remain distinct.
+
+Pages, cells, certificates, snapshots, transactions, taint, contradiction,
+supersession, retrieval receipts, migration packets, and deletion residuals
+give failures exact locations. They allow a stale summary to remain available
+for diagnosis while preventing it from silently governing a public release.
+
+The current finite proofs and fixtures show that these boundaries can be made
+machine-checkable for authored records. They do not show that the resulting
+system retrieves well, remembers truth, forgets completely, or works in
+deployment.
+
+When identity, authority, freshness, or contradiction cannot be resolved, the
+safe result is not an empty context disguised as confidence. The transaction
+returns the unresolved objects, denied operations, missing evidence, affected
+consumers, and next admissible checks, then holds consequential use. A later
+resolver can continue from that exact boundary without converting uncertainty
+into absence.
+
+Available information is not necessarily reviewable information. The next
+unit asks how finite reviewer attention, evidence, objections, formal proofs,
+runtime observations, and changing consumers can remain connected without any
+one artifact standing in for the rest.
+
+{{< include ../generated/unit-14-status.qmd >}}

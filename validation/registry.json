@@ -3253,7 +3253,11 @@
     "editions/reader_manuscript/current/chapters/unit-12-planning-as-a-control-layer.qmd",
     "editions/reader_manuscript/current/generated/unit-12-status.qmd",
     "editions/reader_manuscript/current/chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-    "editions/reader_manuscript/current/generated/unit-13-status.qmd"
+    "editions/reader_manuscript/current/generated/unit-13-status.qmd",
+    "editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
+    "editions/reader_manuscript/current/generated/unit-14-status.qmd",
+    "editions/reader_manuscript/current/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
+    "editions/reader_manuscript/current/generated/unit-15-status.qmd"
   ],
   "units": [
     {
@@ -19071,6 +19075,10 @@
         "editions/reader_manuscript/current/generated/unit-12-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
         "editions/reader_manuscript/current/generated/unit-13-status.qmd",
+        "editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
+        "editions/reader_manuscript/current/generated/unit-14-status.qmd",
+        "editions/reader_manuscript/current/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
+        "editions/reader_manuscript/current/generated/unit-15-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
         "editions/reader_manuscript/current/generated/unit-23-status.qmd",
         "docs/human_reader_26_unit_outline.md",
@@ -19081,12 +19089,12 @@
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
-        "Units 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, and 23 within their declared word targets",
+        "Units 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, and 23 within their declared word targets",
         "independent maintained prose",
         "3 mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Independent Human Reader manuscript structure and Units 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, and 23 drafting completeness only.",
+      "claim_scope": "Independent Human Reader manuscript structure and Units 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, and 23 drafting completeness only.",
       "negative_controls": "validator_owned_route_length_and_support_mutations",
       "negative_control_cases": [
         "owner-route loss",
@@ -19099,7 +19107,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3209,
+    "required_artifact_count": 3213,
     "unit_count": 471
   },
   "non_claims": [

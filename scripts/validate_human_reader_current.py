@@ -239,6 +239,61 @@ UNIT_13_REQUIRED = [
     "None of these results transfers support to the other owners",
     "selected full route tied its baseline at 1.000 task accuracy while\nusing 1.913386 times the operations",
 ]
+UNIT_14_REQUIRED = [
+    "## The Patch That Remembered Too Much",
+    "## Five States, Not One Memory",
+    "## Context Is a Typed Mount",
+    "## Pages, Cells, and Certificates",
+    "## Addresses Are Not Meaning",
+    "## Snapshots Freeze a View, Not the World",
+    "## Context Changes Are Transactions",
+    "## Branches Need Context Isolation",
+    "## Taint Is a Dependency Property",
+    "## Durable Memory Begins With Events",
+    "## Knowledge Is a Lattice of Qualified Relations",
+    "## Contradiction Is Not a Cache Miss",
+    "## Retrieval Produces Candidates",
+    "## Forgetting Has Several Targets",
+    "## Migration Must Preserve the Repair Path",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Context Service to Durable Memory",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Storage does not\ngrant context admission. Context admission does not establish belief",
+    "None of these results transfers support among the owners",
+]
+UNIT_15_REQUIRED = [
+    "## The Claim Everyone Approved",
+    "## Verification Starts With Obligations",
+    "## Verification Bandwidth Is Qualified Capacity",
+    "## Verification Is a Portfolio Decision",
+    "## Context Adequacy Is Claim-Relative",
+    "## A Claim Needs an Identity Before a Score",
+    "## The Ledger Is Append-Only Belief History",
+    "## Evidence Events Do Not Promote Themselves",
+    "## Defeaters and Maximum Inference Travel With the Claim",
+    "## Formality Has Several Lanes",
+    "## Executable Specifications Make Disagreement Concrete",
+    "## Lean Proves the Encoded Proposition",
+    "## Proof-Carrying Claims Bind Interpretation",
+    "## Proof Contracts Travel Without Promotion",
+    "## Adversarial Review Is a Bounded Tribunal",
+    "## Disagreement Is an Output, Not a Defect",
+    "## Runtime Truth Is a Separate Bridge",
+    "## Downgrades Must Reach Every Known Consumer",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Ledger to an Evidence Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "A passing test, theorem, source, benchmark, review, or runtime observation is\nan evidence artifact. It does not automatically move the parent claim",
+    "Silence after notification is not counted as\nsuccessful repair",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -371,6 +426,22 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_13_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 13 missing required argument boundary: {fragment!r}")
+    unit_14 = next((unit for unit in units if unit.get("unit_id") == "unit-14"), None)
+    if unit_14 is None or unit_14.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 14 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_14["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_14_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 14 missing required argument boundary: {fragment!r}")
+    unit_15 = next((unit for unit in units if unit.get("unit_id") == "unit-15"), None)
+    if unit_15 is None or unit_15.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 15 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_15["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_15_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 15 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]
