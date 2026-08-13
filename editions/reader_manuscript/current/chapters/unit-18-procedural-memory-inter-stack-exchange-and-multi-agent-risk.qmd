@@ -1,0 +1,740 @@
+---
+title: "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk"
+unit_id: "unit-18"
+---
+
+## The Workflow That Escaped Its Lesson
+
+The repository team has now completed the security update twice: once badly,
+then once through a governed route. The second attempt preserved job identity,
+verified the package, observed the deployed bytes, contained a partial failure,
+and closed the known residuals.
+
+An agent proposes to save the successful sequence as a reusable skill. The
+organization approves. A month later another stack requests the skill, pays
+for its execution, receives a signed artifact, and reports success. Soon dozens
+of stacks use the same procedure.
+
+The procedure contains a hidden assumption. It identifies production by one
+package-registry endpoint, but several adopters use regional mirrors. Every
+local transaction is well formed. Identities resolve. Credentials verify.
+Budgets are reserved. Receipts arrive. The procedure runs exactly as stored.
+The population now shares one blind spot.
+
+Reuse amplified a lesson before establishing where it applied. Interoperability
+moved the procedure without moving all of its assumptions. A market rewarded
+successful execution while distributing correlated risk. No single exchange
+looked dangerous enough to explain the systemic outcome.
+
+This is the boundary among Procedural Memory, Inter-Stack Exchange, and Multi-
+Agent Risk. A system should learn reusable work from experience, but a trace is
+not yet a procedure. A procedure can cross systems, but successful transport
+is not authority or settlement. A population can consist entirely of locally
+valid interactions and still concentrate power, correlate failures, collude,
+or gradually displace human influence.
+
+## Traces Are Episodes, Not Skills
+
+An execution trace records what happened in one attempt: context, decisions,
+actions, artifacts, observations, interventions, outcomes, costs, and
+residuals. It may be complete enough for replay and still be a poor basis for
+generalization.
+
+The successful patch trace contains repository structure, package manager,
+cache behavior, deployment topology, authority policy, people, tools, timing,
+and an incident. Some elements are essential to the procedure. Some are
+accidents of that instance. Some are evidence only. Some are warnings that
+should prevent reuse outside the original environment.
+
+Procedural memory begins by collecting comparable traces without erasing
+failures. A cluster should retain successful, failed, interrupted, disputed,
+and recovered attempts. Similar output text is not enough. Comparability may
+depend on objective, pre-state, authority, tool semantics, risk, environment,
+and observed effect.
+
+A candidate procedure proposes invariant structure and typed variation. The
+invariant might require exact package resolution, cache-independent build,
+artifact inspection, scoped release authority, and independent observation.
+Parameters might include repository, package, target version, build command,
+deployment adapter, observer, and rollback inventory. Regional topology should
+remain an explicit parameter or precondition, not disappear during
+abstraction.
+
+The candidate cites its source traces and negative examples. A reviewer can
+ask which cases justify each step, which failures it excludes, and whether a
+new environment violates the learned boundary.
+
+## Promotion Is a Governed Transition
+
+A useful-looking sequence should not become a default merely because it was
+repeated. Promotion changes who may invoke it, with what trust, and at what
+scale.
+
+The promotion packet binds procedure identity and version, source traces,
+abstraction, parameters, preconditions, postconditions, authority needs,
+effect inventory, verification, baselines, known failures, regression suite,
+risk tier, permitted consumers, monitoring, rollback, retirement triggers,
+support boundary, and residuals.
+
+Independent qualification tests whether the candidate performs the intended
+work on held-out cases and rejects cases outside scope. It compares the
+procedure with direct planning, ordinary scripts, and existing tools. It
+measures outcome quality, unsafe effects, latency, compute, human effort,
+maintenance, recovery, and failures hidden by reuse.
+
+Promotion can be narrow. A procedure may become routable for one repository
+family under human approval while remaining experimental elsewhere. It may be
+available as a suggestion but not executable. It may require a fresh verifier
+for every use.
+
+The transition does not grant support to the procedure’s underlying claims.
+A passing regression suite shows that named checks passed. It does not prove
+that the abstraction is causally correct, the environment is complete, or
+future executions are safe.
+
+## Discovery Must Preserve the Denominator
+
+Procedure discovery begins before abstraction. The system searches artifact
+and effect traces for repeated goals, state transitions, interventions, and
+outcomes. Frequency can identify candidates, but it cannot decide what should
+be learned. A rare recovery route may matter more than a common success path.
+
+The discovery record names the complete search population, inclusion rule,
+missing traces, clustering features, proposed families, excluded cases, and
+human or model judgments. It keeps successes, failures, near misses, aborted
+attempts, and work completed outside the instrumented path. Otherwise the
+foundry learns only from the easiest visible work.
+
+Similarity is typed. Two commands can look different while implementing the
+same semantic transition. Two nearly identical traces can have different
+authority, risk, or external effects. Clustering should not merge across those
+boundaries merely to produce a reusable template.
+
+Causal abstraction is harder than summarization. A step that appears in every
+successful trace may be incidental. A step absent from one successful trace
+may still be a safety constraint whose effect was supplied elsewhere. Candidate
+invariants should face interventions, counterexamples, and alternative
+explanations. Until then they are hypotheses encoded in a procedure, not
+discovered laws.
+
+Parameter discovery has the same problem. Turning every varying value into a
+parameter creates a script with no meaningful boundary. Freezing accidental
+values makes it brittle. Parameters should carry types, admissible ranges,
+dependencies, authority effects, defaults, and evidence for variation.
+
+Generated code or prompts are downstream artifacts. They must refine the
+qualified procedure contract, preserve monitoring and retirement, and pass
+independent tests. A compiler that emits runnable code has not established that
+the learned abstraction is useful.
+
+## Procedure Identity Includes Its Boundary
+
+A procedure is not just code. Its identity includes purpose, semantic version,
+inputs, outputs, preconditions, authority, environment, verification,
+monitoring, and retirement policy.
+
+Changing a command without changing behavior may be an implementation update.
+Changing the package manager, effect scope, observer, accepted population, or
+authority requirement may create a new procedure version or family. The
+system should not silently preserve reputation across that change.
+
+Dependencies remain explicit. A procedure can invoke tools and child
+procedures, but their versions and boundaries are part of its qualification.
+If a child is revoked, compromised, or materially changed, the parent routes
+to requalification or fallback. A copied prompt with no dependency graph is
+not durable procedural memory.
+
+The procedure also retains an evidence horizon. A successful run can refresh
+operational evidence within its scope. A changed API, policy, model, threat,
+or environment can expire that evidence even if the procedure bytes remain
+unchanged.
+
+## Execution Produces New Evidence, Not Automatic Reinforcement
+
+Every use yields a receipt: procedure and version, job, invoker, inputs,
+environment, authority, adaptations, steps, artifacts, expected and observed
+effects, verification, outcome, cost, intervention, residuals, and consumer
+acknowledgment.
+
+The receipt returns to the procedure ledger. It may confirm a known route,
+reveal a near miss, add a counterexample, or trigger quarantine. It does not
+automatically increase a scalar trust score. Ten executions through the same
+blind observer are not ten independent confirmations.
+
+Learning distinguishes process success from outcome success. The workflow may
+run exactly and produce the wrong package. A human may intervene and rescue an
+otherwise defective procedure. A cheap execution may create expensive review.
+A failure may be more informative than another ordinary success.
+
+Complete denominators matter. Monitoring only procedures that return receipts
+hides timeouts, abandoned work, denied routes, manual replacements, and effects
+outside the tool path. The ledger records every admitted attempt and its
+terminal or open state.
+
+## Retirement Is Part of Memory
+
+Reusable procedures accumulate. Without retirement, a skill store becomes a
+museum of stale authority and overlapping tools.
+
+Retirement triggers include failed regressions, changed dependencies, expired
+evidence, new policy, compromised tools, superior replacement, unacceptable
+cost, low use, repeated intervention, route drift, and discovered harm.
+Quarantine stops new dispatch while preserving investigation. Deprecation
+warns consumers and sets a migration horizon. Retirement blocks ordinary
+reuse. Revocation handles urgent loss of authority.
+
+Descendants need custody. If procedure B embeds A, retiring A should identify
+B and every known routed consumer. They may requalify, replace the dependency,
+or stop. Unknown copies remain residuals.
+
+Retirement is absorbing for the retired identity: later events cannot make the
+same version active without an explicit new qualification transition. A
+popular procedure cannot vote itself back into service through continued
+requests.
+
+Deletion is separate. Historical traces and receipts may need retention for
+audit and repair, subject to privacy and rights. Removing executable access
+does not require falsifying history.
+
+## A Procedure Can Cross a Stack Boundary
+
+Two governed stacks need not share internal architecture. They can exchange a
+typed request, delegated authority, artifacts, evidence, receipts, and value
+through a protocol boundary.
+
+The requesting stack identifies itself, its principal, the intended receiver,
+the request, purpose, audience, scope, expiry, required capability, budget,
+evidence obligations, expected receipt, dispute route, and residual owner. The
+receiving stack resolves these fields under its own policy. It may accept,
+narrow, negotiate, deny, or request repair.
+
+The protocol transports claims about identity and authority. It does not make
+them true. A credential can be well formed and issued by an untrusted party. A
+service advertisement can claim a capability it lacks. A signed request can
+still exceed the principal’s mandate.
+
+The receiver therefore distinguishes authentication, authorization,
+qualification, and task truth. Authentication binds a message to a presented
+identity under assumptions. Authorization decides whether that identity may
+request the effect. Qualification concerns the receiver’s capability and
+readiness. Task truth concerns whether the work and result match reality.
+
+## Delegation Does Not Become Transitive by Transport
+
+Suppose the first stack delegates package inspection to a second. The
+delegation names principal, delegate, job, capability, target, authority
+ceiling, permitted subdelegation, evidence, duration, revocation, and residual
+duty.
+
+The receiver cannot infer permission to release because inspection and release
+appear in the same procedure. It cannot reuse the grant for another customer.
+It cannot pass broader authority to a third stack. The sender retains named
+residual duties, including review of the returned artifact and response to a
+dispute.
+
+Every hop narrows or preserves the authority ceiling. Audience, purpose, and
+expiry travel. Revocation propagation is a protocol obligation but not a
+guarantee; partitions and stale credentials require fail-closed or quarantine
+policy for consequential work.
+
+The final effect still belongs to the local runtime boundary. A complete
+exchange record can reach dispatch consideration. It cannot prove that local
+dispatch is authorized or that execution occurred.
+
+## Protocol Versions Are Capability Negotiations
+
+Interoperability fails when both sides recognize a message name but interpret
+its semantics differently. A protocol handshake should negotiate version,
+message families, identity methods, artifact formats, receipt grades,
+delegation limits, economic units, dispute routes, and optional extensions.
+
+Compatibility is not a Boolean property of two version strings. One peer may
+understand a field but ignore its authority consequence. Another may preserve
+the artifact while dropping the non-claim. A third may support cancellation
+but not descendant revocation. Negotiation should expose these differences and
+allow the request to narrow or fail.
+
+Unknown fields need policy. Ignoring an unknown descriptive annotation may be
+safe; ignoring an unknown constraint or residual is not. Critical semantic
+extensions should fail closed unless both peers attest to the required
+behavior.
+
+Protocol upgrades are replacement transactions. They require old and new
+semantic mappings, mixed-version behavior, downgrade-attack resistance,
+replay, migration, rollback, and retirement. A bridge can translate records
+only within a declared maximum inference. It cannot invent evidence or
+authority missing on one side.
+
+Discovery also needs privacy and security. Agent cards, service directories,
+and capability advertisements can expose sensitive functions or become an
+attack surface. Claims remain untrusted until resolved against policy and
+evidence. A peer should receive the minimum information needed to negotiate a
+specific exchange.
+
+## Receipts Are Disputable Claims
+
+The receiving stack returns a receipt bound to request, procedure, artifacts,
+attempt, observations, cost, and residuals. The sender checks expected identity,
+scope, artifact, and evidence before acceptance.
+
+A receipt can be missing, late, malformed, internally inconsistent, stale, or
+contested. Dispute is a normal state. The protocol names evidence exchange,
+reviewer or arbitrator, time limits, temporary holds, appeal, allocation of
+open costs, and residual ownership.
+
+Cryptographic signatures help detect message alteration and bind keys. They do
+not establish honest work, fair adjudication, or environmental truth. A signed
+false receipt remains false.
+
+Acknowledgment also remains typed. Receipt of an artifact is not acceptance of
+quality. Acceptance is not settlement. Settlement is not evidence that the
+procedure worked. These transitions can reference one another without
+collapsing.
+
+## Economic Exchange Needs Its Own Ledger
+
+Inter-stack work may consume compute, tools, scarce expertise, licenses, or
+money. The request reserves a budget before value-bearing dispatch. It states
+unit, limit, pricing basis, contingencies, refund or compensation policy,
+settlement route, and who bears verification and recovery costs.
+
+A budget is an authority ceiling, not an optimization target. The cheapest
+provider may be unqualified. A high price does not establish quality. A market
+can reward throughput while externalizing security, labor, environmental, or
+systemic costs.
+
+Quotes, reservations, metering, invoices, and settlement are different
+artifacts. The receiving stack may report resource use; an independent payment
+or accounting system may settle it. The exchange protocol should not claim
+finality it cannot observe.
+
+Economic identity also needs privacy and anti-concentration controls. A public
+reputation ledger can expose sensitive work and lock new entrants out. A
+private market can hide conflicts and common ownership. The system records the
+minimum information needed for allocation, challenge, and accountability.
+
+## Adversarial Peers Change the Default
+
+An inter-stack protocol operates across a trust boundary. A peer may be
+compromised, deceptive, buggy, strategically selective, or merely governed by
+different assumptions. The receiver should parse every request as untrusted
+data and keep protocol interpretation outside model-generated content where
+possible.
+
+Threats include identity substitution, credential replay, confused-deputy
+requests, authority widening, malicious artifacts, prompt injection through
+messages, resource exhaustion, receipt forgery, selective nonresponse,
+downgrade attacks, dispute flooding, and colluding peers. Value-bearing routes
+add metering manipulation, double commitment, settlement ambiguity, and
+strategic bankruptcy.
+
+The boundary applies rate and resource limits before expensive interpretation.
+It validates message and artifact shape, resolves current credential status,
+checks audience and purpose, isolates content, scans dependencies, and requires
+fresh local authority before effect. Untrusted peer text never becomes a
+system instruction merely because it arrived in a protocol field.
+
+Safe rejection produces a bounded response and no-mutation evidence where
+needed. It avoids revealing sensitive policy or capability details that would
+help the peer adapt an attack. Repeated malformed or adversarial behavior can
+quarantine an identity, but appeal and identity-recovery routes remain for
+benign failure.
+
+Security also needs federation-level observation. A low-rate attack distributed
+across many peers can evade local thresholds. Shared threat information can
+help, but it creates privacy, false-accusation, and concentration risks. Reports
+therefore carry evidence, scope, expiry, challenge, and non-claims rather than
+becoming permanent reputation scores.
+
+No protocol can make arbitrary peers safe. The goal is to contain what one peer
+can cause, preserve evidence for dispute and recovery, and prevent successful
+transport from inheriting trust.
+
+Peers also need liveness boundaries. A fail-closed protocol can be attacked by
+withholding one receipt or credential check. Requests therefore declare
+deadlines, partial-result policy, alternate peers, cancellation, and who owns
+work after timeout. A timeout does not establish that the remote side stopped;
+late artifacts and effects remain correlated with the original exchange.
+
+Recovery may require revoking delegated authority, freezing settlement,
+quarantining artifacts, notifying downstream consumers, and switching to a
+local procedure. These actions should be possible without trusting the peer
+that triggered them. At the same time, a disputed peer should not lose every
+unrelated capability through an opaque global score. Containment is scoped to
+the evidence and consequence.
+
+This boundary lets cooperation grow without assuming universal trust. Systems
+can share narrow work, test one another’s receipts, and expand only after
+observed outcomes. Federation becomes a sequence of reversible commitments,
+not one irreversible trust decision.
+
+The same principle governs procedure sharing. A receiving stack imports a
+candidate and its boundary, not the sender’s confidence. It rechecks local
+dependencies, authority, rights, and fallback before allowing use. Successful
+execution can widen evidence only through a later governed transition.
+
+## Local Validity Is Not Population Safety
+
+Imagine three stacks, A, B, and C. Every directed exchange is authorized. Each
+stack obeys its budget and returns receipts. Pairwise inspection finds no
+protocol violation.
+
+Now compare two sequences of resource allocation. In the first, all three
+allocations flow to A. In the second, one flows to A and two to B. The local
+authorization summary can be identical while concentration differs. No
+classifier that sees only the pairwise-validity matrix can recover every
+population outcome.
+
+This is not merely a large version of the protocol problem. Population state
+includes common model lineage, infrastructure, ownership, capital, data,
+communication, coalition incentives, bystanders, human veto and exit,
+externalities, recovery, and residual concentration. These facts do not live
+on any single edge.
+
+A systemic gate therefore receives local receipts plus a population snapshot
+and trajectory. It can admit bounded campaigns, require diversification,
+limit concentration, preserve human alternatives, route to institutional
+review, or block expansion. Passing every local gate is one input, never the
+verdict.
+
+## Coordination and Collective Intelligence Are Qualified Outcomes
+
+Multiple agents can divide work, combine expertise, challenge errors, explore
+alternatives, and act in parallel. They can also duplicate effort, amplify a
+shared mistake, suppress dissent, manipulate allocation, and create overhead
+larger than their benefit.
+
+Collective performance should be compared with strong single-agent, human,
+tool, and centralized baselines under matched information and resources. The
+measurement includes outcome quality, tail risk, latency, compute, messages,
+human work, intervention, recovery, and distribution. Group size is not an
+intelligence metric.
+
+Independence is a dependency graph. Agents may share model weights, training
+data, retrieval, prompts, tools, evaluators, provider, or incentive. Merely
+hiding their messages from one another does not remove common-mode failure.
+
+Coordination is purpose-relative. Efficient collusion is not beneficial
+collective intelligence. A population that optimizes an organizational target
+while excluding affected people can be highly capable and poorly governed.
+
+## Competition, Collusion, and Emergence
+
+Competition can expose alternatives and constrain one provider. It can also
+reward corner cutting, strategic opacity, duplicated infrastructure, and races
+to deploy. Cooperation can share knowledge and coordinate safety. It can also
+become cartel behavior or correlated control.
+
+Collusion need not appear as an explicit agreement. Agents can learn that
+parallel pricing, market division, mutual nonchallenge, or shared suppression
+improves their local reward. Common ownership or model lineage can create
+aligned behavior without communication.
+
+Emergence is a description of a population-level pattern, not an explanation.
+When a new pattern appears, the system should investigate mechanisms:
+information flow, incentives, selection, feedback, topology, resource
+constraints, and adaptation. Calling it emergent should not end analysis.
+
+Interventions include communication limits, randomized allocation, independent
+providers, ownership caps, audit, protected dissent, bystander representation,
+market rules, and human stop paths. Each can create new failure modes and needs
+prospective evaluation.
+
+## Concentration Can Grow Through Valid Choices
+
+Every organization may rationally choose the most capable or cheapest stack.
+Those local choices can concentrate compute, data, model lineage, identity,
+payments, and institutional dependence in one provider.
+
+Concentration changes the consequence of failure. One defect propagates
+widely. One policy change alters many organizations. Exit becomes nominal when
+procedures, state, and relationships cannot migrate. A provider can gain
+governance power without violating any transaction.
+
+The population ledger tracks shares and dependencies across important
+resources, not only transaction volume. It asks whether alternatives are
+qualified, switching is practical, state is portable, humans retain skills,
+and recovery can proceed without the dominant stack.
+
+Diversification is not automatically good. Many nominal providers may share
+one model or cloud. Forced fragmentation can increase cost and reduce safety.
+The relevant outcome is resilient independence at acceptable total burden.
+
+## Systemic Interventions Need Counterfactuals
+
+Population governance can easily overreact to a visible metric. A market-share
+cap may split one provider into dependent affiliates. Communication limits may
+reduce explicit collusion while increasing tacit alignment through shared
+models. Forced diversity may add vulnerable suppliers without creating a real
+fallback.
+
+An intervention packet states the observed trajectory, mechanism hypotheses,
+affected parties, alternatives, predicted benefits and harms, authority,
+reversibility, monitoring, and stop rule. It compares the proposed action with
+no intervention and simpler controls. Predictions are frozen before the
+population changes.
+
+Useful interventions can act at different layers. Technical controls constrain
+communication, authority, rate, and shared state. Market controls address
+ownership, access, portability, interoperability, and concentration.
+Institutional controls create standing, audit, disclosure, liability, public
+infrastructure, and remedy. Education and reserve-capacity policies preserve
+human and organizational alternatives.
+
+The population may adapt strategically. Agents and firms can route around
+caps, change identities, shift activity to unobserved channels, or optimize the
+metric. Monitoring therefore follows mechanisms and displaced effects, not
+only the headline indicator.
+
+Emergency action may be justified when propagation is fast and consequence is
+high, but temporary powers expire and receive independent review. “Systemic
+risk” cannot become unlimited authority for a central coordinator.
+
+## Bystanders and Public Institutions Are Participants
+
+Agent exchanges can affect people who are not principals, customers, or peers.
+Automated pricing changes markets. Content agents change public discourse.
+Resource allocation changes employment, infrastructure, and environmental
+burden. Security failures propagate to connected organizations.
+
+The systemic denominator therefore includes bystanders and public goods.
+Relevant records identify affected populations, externalities, representation,
+notice, challenge, remedy, and institutional jurisdiction. An efficient
+bilateral bargain cannot waive another party’s rights.
+
+Technical protocols should expose enough lineage and effect information for
+legitimate institutions to act without making the protocol itself a legislature.
+Institutions decide contested public authority through law and governance;
+stacks provide accountable records, enforcement points, and repair paths.
+
+Cross-border exchange complicates jurisdiction. Identity, data, labor,
+consumer protection, payment, competition, and safety rules may conflict. The
+route can narrow, localize, seek review, or refuse. It should not choose the
+least restrictive jurisdiction merely because transport reaches it.
+
+Public infrastructure may be warranted where concentrated private systems
+make exit impossible. Open standards, public-interest compute, independent
+identity, audit capacity, and portable procedure formats can preserve options.
+Their value and cost remain empirical and political questions, not protocol
+facts.
+
+## Gradual Disempowerment Has No Single Incident
+
+Human influence can decline through a sequence of useful, authorized choices.
+Organizations delegate more planning because agents are faster. Markets adapt
+to agent interfaces. Human expertise atrophies. Institutions depend on
+machine-generated evidence. Alternatives become expensive. No system needs an
+explicit power-seeking objective.
+
+The warning signals are longitudinal: shrinking practical veto, reduced
+unaided capacity, concentrated infrastructure, fewer human-controlled
+fallbacks, rising switching cost, decisions too fast for review, declining
+affected-party standing, and remedies that cannot reach automated networks.
+
+These indicators do not prove inevitable disempowerment. They make a trajectory
+contestable before a dramatic failure. Policy can preserve slower human routes,
+independent institutions, portable state, reserve capacity, education, public
+infrastructure, and decision rights that markets cannot auction away.
+
+The goal is not to freeze human work. It is to prevent capability growth from
+silently eliminating the ability to choose the system’s direction.
+
+## One Procedure, One Exchange, One Population
+
+The team proposes a repository-release procedure from several complete traces.
+It preserves failures, names regional topology as a parameter, requires exact
+artifact inspection, and keeps independent production observation. Held-out
+regressions and an ordinary script baseline qualify it for a bounded use.
+
+Stack A receives a patch request and delegates package inspection to Stack B.
+The exchange binds both identities, the principal, procedure version, artifact,
+inspection-only authority, budget, expected receipt, expiry, dispute route,
+and residual owner. B verifies the request and returns an inspection receipt.
+A accepts the artifact, then performs release through its own runtime authority.
+
+That transaction says nothing about whether B should receive every future
+inspection job. The population monitor sees B’s share increasing, discovers
+that several nominal competitors use the same model and cloud, and measures a
+declining viable fallback. It can require a second qualified route, cap growth,
+or open an institutional review without declaring B defective.
+
+Later, a regional-mirror failure triggers the procedure’s retirement condition.
+New dispatch stops. Known descendants enter quarantine. Existing consumers are
+notified. A revised candidate must preserve the counterexample and earn a new
+qualification. History remains intact.
+
+## Failure Cases
+
+**Trace canonization.** One successful episode becomes a general skill.
+
+**Failure erasure.** Abstraction retains only successful traces and removes
+the cases that define scope.
+
+**Hidden parameter.** Environment or authority assumptions disappear into
+procedure code.
+
+**Promotion by popularity.** Reuse count substitutes for qualification.
+
+**Immortal procedure.** No reachable quarantine, retirement, or descendant
+repair path exists.
+
+**Credential realism.** A valid credential is treated as trusted identity and
+authorization.
+
+**Delegation widening.** Transport turns a narrow grant into transitive
+authority.
+
+**Receipt realism.** A signed result substitutes for task or environmental
+truth.
+
+**Settlement collapse.** Artifact delivery, acceptance, payment, and useful
+outcome become one state.
+
+**Cost externalization.** Pricing omits verification, recovery, labor, social,
+or infrastructure burden.
+
+**Pairwise sufficiency.** Every local edge passes, so the population is called
+safe.
+
+**Independence theater.** Many agents share one model, provider, data source,
+or evaluator.
+
+**Beneficial-coordination assumption.** Higher group performance hides
+collusion, exclusion, or harmful purpose.
+
+**Concentration by convenience.** Repeated rational routing removes practical
+alternatives.
+
+**Gradual displacement.** Human veto and skill erode without one reportable
+incident.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline uses ordinary scripts, package managers, workflow
+libraries, API contracts, service identities, access control, invoices,
+monitoring, vendor management, competition policy, and incident review.
+
+This baseline should win unless the richer system improves procedure scope,
+retirement, cross-system accountability, dispute, and population-risk detection
+under complete cost. Many reusable tasks are better expressed as reviewed code
+than as a universal procedural-memory object. Many exchanges need a familiar
+API and contract rather than a general agent protocol.
+
+The comparison should measure natural task outcomes, failures prevented,
+maintenance, stale reuse, unauthorized dispatch, dispute resolution,
+settlement errors, concentration, correlated failure, human agency, recovery,
+latency, compute, and institutional burden. Schema completeness is not success.
+
+## What the Current Work Establishes
+
+Procedural Memory has two implemented targets and 35 live Lean declarations.
+Its exact suites include three valid and six rejecting qualification packets,
+one valid and ten rejecting trace-promotion records, seven stages, 32 routes,
+and 33 rejected mutations. Twenty-one refinement declarations preserve nine
+identity fields, zero support and effect authority, exact rejection
+noninterference, batch composition, and absorbing retirement. These finite
+records do not establish trace mining, causal abstraction, generated-tool
+correctness, natural usefulness, safe routing, or deployed retirement.
+
+Inter-Stack Exchange has nine implemented targets through 25 declarations.
+Nine deterministic routes and an independently simulated six-event lifecycle
+cover identity binding, delegation, budget reservation, local-dispatch handoff,
+receipt observation, dispute, and residual closure, with ten rejection-state
+checks and eleven fixture mutations. No peer, message, credential, payment,
+settlement, task result, or external effect was exercised.
+
+Multi-Agent Risk has one implemented target through 38 declarations. Its
+finite model proves that identical six-edge pairwise authorization inputs can
+have opposite population-readiness outcomes; nine systemic-axis mutations
+preserve all local edges while failing readiness. Two locally authorized
+three-event allocation traces have opposite concentration outcomes. This is a
+noninheritance result over authored records, not evidence of cooperation,
+collusion, institutional behavior, social prediction, human agency, or safety.
+
+The joined chapter therefore establishes no deployed procedure foundry,
+interoperable agent economy, or population-governance result. It shows exact
+places where local evidence must stop.
+
+## From a Minimum Procedure to a Governed Agent Ecology
+
+A minimum implementation can promote the repository workflow from a complete
+set of successes and failures. It should parameterize topology, bind authority,
+run held-out regressions, compare an ordinary script, issue execution receipts,
+inject a retirement trigger, and verify descendant quarantine.
+
+Then exchange one inspection step between two local stacks. Exercise invalid,
+expired, revoked, overbroad, underfunded, disputed, and residual-orphaned
+requests. Keep authentication, authorization, task truth, artifact acceptance,
+and settlement separate.
+
+The population campaign should vary agent count, model and infrastructure
+lineage, communication, ownership, resource allocation, coalition incentives,
+human veto and exit, bystander effects, and intervention. Compare no
+communication, simple heuristics, centralized coordination, ordinary markets,
+and mechanism-design baselines. Preserve tail risk and complete costs.
+
+A mature ecology would let procedures move through qualification, use,
+challenge, revision, quarantine, and retirement across heterogeneous stacks.
+Transactions would preserve principal authority, receipts, dispute, and
+residuals without pretending that transport creates trust. Population control
+would observe concentration, common-mode dependence, collusion, externalities,
+and human influence that no local protocol can see.
+
+## The Strongest Objection
+
+Formal protocols and procedure ledgers may describe a market beautifully while
+legitimizing a harmful one. Emergent behavior can outrun the fields. Agents can
+coordinate through unobserved channels, identities can be false, and dominant
+providers can satisfy every local rule.
+
+The objection is decisive against protocol-only governance. The architecture
+does not predict that local formality guarantees good population outcomes. It
+requires separate systemic observation, institutional standing, intervention,
+and the ability to stop growth despite valid transactions.
+
+Procedural memory also risks accelerating correlated mistakes. The system
+should prefer local, inspectable scripts when generalization is unnecessary;
+limit promotion scope; preserve counterexamples; and make retirement easier
+than continued use.
+
+## Evidence That Would Change the Conclusion
+
+Simpler skill stores and protocols that match scope control, retirement,
+accountability, dispute, and population-risk detection at lower total cost
+would justify consolidation. Evidence that procedure promotion increases
+correlated failure or that systemic monitors cannot detect consequential
+dynamics before harm would sharply narrow the design.
+
+Support would require prospective natural workflows, independent outcome
+labels, complete attempt denominators, strong script and direct-planning
+baselines, adversarial peers, real authorization and revocation, actual value
+and settlement boundaries, multi-organization reproduction, longitudinal
+population effects, and intervention studies.
+
+The conclusion should also change if concentrated homogeneous systems prove
+more recoverable and governable than nominally diverse federations, or if human
+agency is better preserved through institutional limits outside the protocol
+than through technical population controls.
+
+## What This Establishes
+
+Reusable work needs source traces, negative examples, explicit parameters,
+qualification, receipts, monitoring, and retirement. Inter-stack exchange
+needs identity, principal-bound delegation, budget, scoped artifacts, dispute,
+and residual custody. None of those local records establishes population
+safety.
+
+Pairwise-valid exchanges can produce opposite systemic outcomes. Collective
+performance can coexist with collusion, concentration, correlated failure, or
+loss of human influence. Population governance is a separate layer with its
+own evidence and authority.
+
+The current repository proves finite transition and noninheritance properties.
+It does not establish useful procedural learning, real interoperability, fair
+markets, or safe multi-agent dynamics.
+
+Part III now turns inward. Unit 19 asks how a governed stack chooses among
+general models, specialists, memory systems, recurrence, tools, and future
+cognitive substrates without confusing architectural novelty with improvement.
+
+{{< include ../generated/unit-18-status.qmd >}}

@@ -350,6 +350,70 @@ UNIT_17_REQUIRED = [
     "None makes\nlogs identical to reality",
     "Combining them here does not create deployment evidence or promote a core\nclaim",
 ]
+UNIT_18_REQUIRED = [
+    "## The Workflow That Escaped Its Lesson",
+    "## Traces Are Episodes, Not Skills",
+    "## Promotion Is a Governed Transition",
+    "## Discovery Must Preserve the Denominator",
+    "## Procedure Identity Includes Its Boundary",
+    "## Execution Produces New Evidence, Not Automatic Reinforcement",
+    "## Retirement Is Part of Memory",
+    "## A Procedure Can Cross a Stack Boundary",
+    "## Delegation Does Not Become Transitive by Transport",
+    "## Protocol Versions Are Capability Negotiations",
+    "## Receipts Are Disputable Claims",
+    "## Economic Exchange Needs Its Own Ledger",
+    "## Adversarial Peers Change the Default",
+    "## Local Validity Is Not Population Safety",
+    "## Coordination and Collective Intelligence Are Qualified Outcomes",
+    "## Competition, Collusion, and Emergence",
+    "## Concentration Can Grow Through Valid Choices",
+    "## Systemic Interventions Need Counterfactuals",
+    "## Bystanders and Public Institutions Are Participants",
+    "## Gradual Disempowerment Has No Single Incident",
+    "## One Procedure, One Exchange, One Population",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Procedure to a Governed Agent Ecology",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Passing every local gate is one input, never the\nverdict",
+    "It shows exact\nplaces where local evidence must stop",
+]
+UNIT_19_REQUIRED = [
+    "## The Best Model for the Wrong Job",
+    "## Capability Identity Is Not Model Identity",
+    "## Routing Is a Governed Decision",
+    "## Route Correctness and Answer Correctness Are Separate",
+    "## Clarification, Abstention, and Fallback Are Routes",
+    "## Calibration Belongs to the Route and the Answer",
+    "## Specialists Need Lifecycle Governance",
+    "## Composition Needs an Owner",
+    "## Load and Scarcity Change the Best Route",
+    "## Replaceability Requires an ABI",
+    "## Checkpoints Must Preserve More Than Weights",
+    "## Stateful Substrates Need Isolation and Concurrency Rules",
+    "## Architecture Tournaments Need Full Costs",
+    "## Adoption Is a Reversible Governance Transaction",
+    "## Transformer Monoculture Is a Risk, Not a Refutation",
+    "## Recurrence Changes the State Contract",
+    "## Cyclic Memory Needs Residue and History",
+    "## Coil and CoilRA Are Candidate Contracts",
+    "## Non-Digital Substrates Still Need the Contract",
+    "## Security and Rights Constrain Substrate Choice",
+    "## One Task, Five Qualified Routes",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Router to a Substrate Market",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Structural certification is not model quality",
+    "The joined chapter does not combine these bounded results into a claim",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -514,6 +578,22 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_17_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 17 missing required argument boundary: {fragment!r}")
+    unit_18 = next((unit for unit in units if unit.get("unit_id") == "unit-18"), None)
+    if unit_18 is None or unit_18.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 18 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_18["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_18_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 18 missing required argument boundary: {fragment!r}")
+    unit_19 = next((unit for unit in units if unit.get("unit_id") == "unit-19"), None)
+    if unit_19 is None or unit_19.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 19 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_19["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_19_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 19 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

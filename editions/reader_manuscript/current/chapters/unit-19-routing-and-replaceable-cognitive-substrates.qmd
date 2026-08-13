@@ -1,0 +1,721 @@
+---
+title: "Routing and Replaceable Cognitive Substrates"
+unit_id: "unit-19"
+---
+
+## The Best Model for the Wrong Job
+
+The repository workflow is now reusable. A new request asks the stack to find
+a vulnerable dependency, propose a patch, verify package resolution, and plan
+rollback.
+
+The organization sends every step to its largest general model. The model
+produces a fluent report and correct patch, but it rereads the repository for
+each question, invents one package-manager flag, and spends most of its context
+reconstructing facts that deterministic tools already know. A small dependency
+analyzer would have found the graph exactly. A coding specialist could have
+generated the patch. A verifier should have checked the lockfile. A retrieval
+system could have preserved exact package documentation. The expensive model
+was capable of every step and well matched to none of their full contracts.
+
+The obvious response is to route. But routing introduces another system that
+can be wrong. It may choose an unready specialist, leak authority, hide
+fallback costs, or optimize the route label rather than the answer. A catalog
+of architectures creates more maintenance and correlated failure. A novel
+memory or cyclic mixer can satisfy elegant structural properties without
+improving one real task.
+
+Replaceability therefore needs two boundaries. Stable capability fields keep
+the job contract above implementations. Governed routing chooses among
+qualified candidates under cost, authority, evidence, and recovery. The stack
+can explore new substrates without letting novelty inherit readiness.
+
+## Capability Identity Is Not Model Identity
+
+A capability field names a promise such as dependency-graph extraction,
+bounded patch generation, source-grounded explanation, proof checking, or
+rollback verification. It states input and output types, semantic obligations,
+authority, performance and resource envelope, uncertainty, evidence,
+verification, failure behavior, state, and recovery.
+
+An implementation may be a general language model, specialist model, symbolic
+tool, search procedure, database, recurrent system, human, or composition.
+The field remains stable while qualified implementations change.
+
+This separation prevents a product or architecture name from becoming the
+requirement. “Use model X” hides why it is needed and which alternative could
+replace it. “Generate a patch that satisfies contract C” makes the outcome and
+evidence explicit.
+
+The field is still defeasible. Its ontology may omit a necessary obligation.
+Two implementations can satisfy the same schema while differing semantically.
+Stable identity supports comparison and migration; it does not prove
+interchangeability.
+
+## Routing Is a Governed Decision
+
+A routing request binds task identity, capability requirements, context,
+authority ceiling, risk, deadline, quality and verification needs, resource
+budget, state constraints, privacy, fallback, and residual owner.
+
+The router constructs a candidate denominator rather than selecting from the
+first available models. Candidates include the current baseline, specialists,
+tools, humans, compositions, clarification, abstention, and no action where
+appropriate. Rejected candidates retain reasons and predicted costs.
+
+Each candidate has a readiness record: version, capability scope, evidence,
+calibration, permitted authority, required context and tools, resource profile,
+load, expiry, known failures, evaluator dependence, fallback, and lifecycle
+state. Advertising a capability is not readiness.
+
+Selection seeks the least powerful and least costly route that is adequately
+qualified for the complete contract. “Least” is multidimensional. A smaller
+model with broad tool authority may be more consequential than a large model
+that only drafts text. A fast specialist may require expensive verification.
+
+The route receives an expiring lease. Execution, answer, verification,
+observation, cost, and residuals return as distinct records. The router learns
+from complete outcomes without awarding itself support or widening authority.
+
+## Route Correctness and Answer Correctness Are Separate
+
+A router can correctly choose the best available specialist and receive a
+wrong answer. It can choose an inferior route that succeeds by luck. It can
+abstain correctly while producing no answer. Evaluation must keep these events
+separate.
+
+Route correctness asks whether the selected candidate was admissible and
+preferable under the frozen information and policy. Answer correctness asks
+whether the result satisfied the task. Outcome quality includes downstream
+effects and utility. Cost includes routing, context, execution, verification,
+fallback, human work, delay, recovery, and maintenance.
+
+Training on answer labels alone can punish correct abstention and reward lucky
+overreach. Training on route labels can reproduce the evaluator’s preferences
+without improving outcomes. The ledger preserves both labels, disagreements,
+and the decision context.
+
+For the repository task, routing the dependency graph to a deterministic tool
+may be correct even if the tool fails on an unsupported manifest. The route
+should then activate a declared fallback. A successful general-model answer
+does not prove that the more expensive route was efficient.
+
+## Clarification, Abstention, and Fallback Are Routes
+
+A capable router should sometimes decline to choose a cognitive substrate.
+Ambiguous scope may require clarification. Missing evidence may require a
+source acquisition job. High consequence may require a human or independent
+verifier. No candidate may meet the authority or readiness threshold.
+
+Abstention is useful only when it changes action safely. A system that labels
+itself uncertain and then executes anyway has not abstained. A router that
+always escalates can shift all burden to humans while claiming caution.
+
+Fallback is prospective. It names the trigger, alternative, preserved state,
+authority, expected cost, and recovery. Repeating the same request to a larger
+version of the same model may not diversify the failure path. A deterministic
+tool, different architecture, human reviewer, or narrower task can provide a
+more useful fallback.
+
+Fallback activation should be exercised. A route listed only in configuration
+is not operational evidence.
+
+## Calibration Belongs to the Route and the Answer
+
+A specialist can be well calibrated on its own outputs while the router is
+poorly calibrated about when to select it. Conversely, the router may predict
+the right capability family while the selected model expresses unjustified
+confidence. These uncertainties need separate identities.
+
+Router calibration compares predicted route adequacy with complete outcomes,
+including fallback and intervention. Specialist calibration compares output
+confidence or abstention with task truth under the admitted population.
+System-level calibration asks whether the final decision and effect matched
+the evidence available to the whole composition.
+
+Distribution shift can enter at each layer. The task mix changes, a specialist
+version changes, candidate load changes, or an evaluator degrades. A global
+confidence threshold cannot capture all four. Readiness and calibration expire
+by population, version, time, and consequence.
+
+Exploration creates evidence but also risk. The router can allocate low-
+consequence shadow tasks, canaries, or duplicated work to uncertain candidates
+without letting them cause the primary effect. Exploration budgets, protected
+populations, stop rules, and data use are explicit. A candidate should not gain
+traffic merely because the routing learner benefits from information.
+
+Feedback can be selective. Easy successful routes return clean labels while
+hard failures remain unresolved. The learning record preserves admitted
+requests, missing outcomes, human overrides, and delayed effects so calibration
+does not improve only on paper.
+
+## Specialists Need Lifecycle Governance
+
+A specialist is valuable because it narrows assumptions, tools, context, or
+computation around a job family. That narrowness can improve cost and
+verifiability. It can also make failures brittle and maintenance expensive.
+
+The registry records training or construction lineage, interface, capability,
+evidence, calibration, environment, dependencies, authority, costs, known
+failures, owner, monitoring, expiry, and retirement. Readiness is consumer-
+relative. A model suitable for drafting tests may be unqualified to approve
+them.
+
+Specialists can drift. Data changes, APIs evolve, dependencies disappear,
+adversaries adapt, and load alters latency. A previously qualified route can
+be downgraded, quarantined, replaced, or retired. Historical success does not
+make eligibility permanent.
+
+Sprawl is a first-class cost. Every specialist adds deployment, security,
+evaluation, migration, monitoring, and incident burden. Split only when the
+measured gain exceeds this lifecycle cost. Merge or retire overlapping routes
+when a general system matches them.
+
+## Composition Needs an Owner
+
+Many tasks require a graph rather than one specialist: retrieve source,
+analyze dependencies, propose a patch, execute tests, verify artifacts, and
+explain residuals.
+
+Composition can be sequential, parallel, adversarial, hierarchical, or
+iterative. Edges state what travels: data, claim, artifact, authority,
+uncertainty, or control. The parent job retains an owner for the joined outcome.
+
+Agreement among specialists is not verification if they share a failure root.
+Disagreement is not automatically resolved by majority vote. The composition
+policy states which verifier, source, proof, experiment, or human can decide,
+and when the system must preserve dispute.
+
+Compositions need budgets and stop rules. Agent debate can spend arbitrary
+compute while cycling around one ambiguity. Parallel search can create many
+artifacts no one can review. The graph should expose marginal information and
+terminate, narrow, or escalate when further work cannot change the decision.
+
+## Load and Scarcity Change the Best Route
+
+Readiness is not static under demand. A specialist that is fast and calibrated
+at low load may become slow, truncate work, lose context, or accumulate stale
+state when saturated. A human reviewer’s competence does not disappear when a
+queue grows, but meaningful review capacity does.
+
+The router observes queue depth, predicted latency, resource reservation,
+failure rate, calibration freshness, and recovery capacity. It does not route
+solely around congestion if the alternative lacks authority or quality. The
+result may be a later deadline, narrowed task, degraded service, or explicit
+refusal.
+
+Priority is governed. A market bid, executive request, or internal benchmark
+should not silently displace protected or safety-critical work. The allocation
+policy names service classes, rights, deadlines, preemption, reservation,
+appeal, and emergency authority. Scarce human verification can be budgeted for
+the consequences where it changes decisions most.
+
+Load balancing must preserve task and state identity. Moving a recurrent or
+adapted request to another replica may lose hidden state. Copying state may
+violate isolation. Retrying after a timeout can duplicate external effects.
+The route receipt records migration, replay, and uncertainty rather than
+calling the second attempt equivalent.
+
+Capacity planning includes fallbacks. If every route depends on one cloud,
+model family, evaluator, or data service, nominal specialist diversity will
+collapse under the same outage. Reserve routes need periodic exercise and
+current artifacts, not only architecture diagrams.
+
+Scarcity also affects evidence. A cheap route can appear superior when costly
+failures are deferred to an overloaded review queue. Complete cost follows the
+work until acceptance, recovery, or residual transfer.
+
+The router should expose scarcity rather than hiding it behind a confident
+selection. A consumer may choose a slower qualified route, accept a narrower
+result, fund additional verification, or postpone the job. These are policy
+decisions, not model errors.
+
+Resource contention can also change safety. Memory pressure may evict context,
+batching may mix tenants, quantization may alter calibration, and speculative
+execution may cause work before final selection. Readiness records bind the
+operating envelope in which evidence was obtained. Crossing that envelope
+routes to fresh qualification or a conservative fallback.
+
+A mature scheduler learns demand and cost while preserving protected
+constraints. It cannot improve throughput by redefining dropped, delayed, or
+human-rescued work as successful. Capacity forecasts remain predictions;
+observed queues, outcomes, and residuals decide whether the current route is
+still admissible.
+
+Allocation receipts make this contestable. They record eligible candidates,
+scarcity facts, protected constraints, selected route, deferred work, predicted
+and actual cost, and who accepted the consequence. A downstream consumer can
+then distinguish “best qualified route” from “only route available under the
+current budget.” That distinction matters when the system later learns from
+the decision.
+
+It also prevents temporary scarcity from becoming permanent evidence that a
+candidate is inferior. Deferred and unavailable routes remain in the
+denominator, with the conditions under which they should be reconsidered.
+Absence today is not disqualification tomorrow.
+
+## Replaceability Requires an ABI
+
+A Cognitive Kernel ABI defines the boundary between a capability field and a
+substrate. It names observations, state, actions or outputs, uncertainty,
+resource use, authority, checkpoints, receipts, and lifecycle events.
+
+The ABI should be rich enough to preserve the contract and small enough to
+allow genuinely different implementations. If it assumes token-by-token
+generation, Transformer cache semantics, or gradient-based training, it has
+encoded the incumbent rather than cognition.
+
+Substrates may differ in what state they hold and how they compute. A recurrent
+core carries hidden state. A retrieval system holds indexed artifacts. A
+symbolic engine manipulates explicit structures. A diffusion language model
+uses iterative denoising. Event-driven, analog, photonic, quantum, or biohybrid
+systems have different error and control surfaces.
+
+The common boundary should expose only what governance needs: semantic input
+and output obligations, state identity, evidence, resource accounting,
+failure, intervention, migration, and recovery. Architecture-specific
+extensions remain typed rather than leaking into every consumer.
+
+## Checkpoints Must Preserve More Than Weights
+
+Replacement often fails because a checkpoint is treated as a weight file.
+Operational state may also include optimizer, tokenizer, retrieval index,
+memory, cache, tool configuration, policy, calibration, random state, adapter,
+environment, and external dependencies.
+
+A full checkpoint declares which state classes exist, their identities,
+consistency relation, portability, confidentiality, and restoration test. A
+common summary can hide omitted state: two systems may have equal version,
+step, and weight digest while differing in memory or policy.
+
+Migration defines a mapping from old to new state, expected information loss,
+verification, fallback, and residuals. Some substrates cannot import one
+another’s internal state. The system may preserve capability through external
+artifacts and requalification rather than pretending to convert hidden state.
+
+Rollback uses the same complete inventory. Restoring weights while retaining a
+poisoned cache or changed policy is not restoration.
+
+## Stateful Substrates Need Isolation and Concurrency Rules
+
+A stateless call can still depend on caches and services, but a stateful
+substrate makes continuity explicit. Recurrent memory, test-time adaptation,
+persistent retrieval, online learning, and agent memory can change because of
+one request and influence the next.
+
+The state contract names tenant, job, capability, version, writers, readers,
+merge policy, freshness, consistency, retention, reset, export, and incident
+behavior. Shared state is never inferred from physical co-location. A service
+must state whether updates are request-local, user-local, organization-local,
+or global.
+
+Concurrent updates need semantics. Last-write-wins can erase a safety
+correction. Averaging state can combine incompatible adaptations. A merge may
+need causal order, typed conflict detection, independent validation, or
+quarantine. During a partition, consequential state changes can narrow to a
+safe local mode rather than creating two silently divergent minds.
+
+Reset is an observed operation. Clearing a visible conversation while retaining
+retrieval, optimizer, recurrent, or routing state is not a clean reset. The
+receipt inventories every state class and records what could not be removed.
+
+Persistent adaptation also changes evaluation. A benchmark run can contaminate
+later cases, and one customer can influence another. Tests randomize order,
+reconstruct clean baselines, and inspect cross-request effects. Useful online
+learning is a separate claim from fast inference.
+
+## Architecture Tournaments Need Full Costs
+
+Candidate substrates should compete on frozen workloads and complete
+contracts. Measures include accepted useful outcomes, selective risk,
+calibration, latency distribution, throughput, memory, energy, data and
+training cost, context acquisition, verification, migration, recovery,
+maintenance, human work, and hardware utilization.
+
+The baseline is the best competently tuned deployable system, not a naive
+Transformer. It can use retrieval, caching, quantization, tools, batching,
+specialists, and ordinary engineering. New architectures receive comparable
+tuning and rescue budgets without unlimited iteration.
+
+Hidden assistance must be counted. A tiny core with a large search service and
+human cleanup is not automatically efficient. A fast generated answer that
+requires expensive verification may lose at the system level. Device-level
+energy does not establish end-to-end efficiency after conversion, memory,
+control, and host work.
+
+Selection should be prospective. Freeze tasks, metrics, exclusions,
+interventions, and stop rules before seeing candidate outcomes. Keep failed
+architectures in the denominator.
+
+## Adoption Is a Reversible Governance Transaction
+
+A winning tournament does not immediately replace the incumbent. Adoption
+binds the capability field, candidate version, evidence, consumers, rollout,
+state migration, authority, costs, monitors, fallback, expiry, and residuals.
+
+The first route may operate in shadow mode, then canary, then bounded production.
+Each stage has outcome and safety thresholds. Promotion is consumer-specific:
+a substrate can serve internal retrieval before it is eligible for public
+decision support.
+
+The incumbent remains available until the new route demonstrates recovery and
+the organization has retained enough expertise and infrastructure to return.
+Running two systems has a cost, but deleting the fallback before migration is
+observed converts a reversible trial into a one-way bet.
+
+Adoption also updates threat models, privacy assessments, operational runbooks,
+proof boundaries, and staff competence. A new architecture can introduce side
+channels, opaque state, numerical failures, supply-chain dependencies, and
+unfamiliar incident modes even when task quality improves.
+
+The decision expires. Continued use requires fresh evidence under current
+workloads and versions. Regression, cost growth, concentration, rights impact,
+or a better alternative can narrow or reverse it. Architectural prestige does
+not create tenure.
+
+Recursive architectural improvement uses the same transaction. A system may
+propose changes to its own router or substrate, but an independent authority
+freezes the contract, controls the trial, observes outcomes, and decides
+promotion. The candidate cannot use its proposed improvement to ratify itself.
+
+## Transformer Monoculture Is a Risk, Not a Refutation
+
+Transformers are powerful general substrates with mature tooling, scaling
+evidence, and broad deployment. The case for replaceability is not that they
+have failed. It is that one architecture should not define every stable
+capability or become impossible to challenge.
+
+Monoculture creates common-mode exposure in model behavior, kernels, memory,
+hardware, serving, and training assumptions. It can also produce enormous
+economies of scale, shared evaluation, easier migration, and concentrated
+security investment. Heterogeneity trades correlated risk for integration and
+maintenance risk.
+
+The stack should therefore preserve an exit path without forcing diversity for
+its own sake. A Transformer may remain the best route for many capabilities.
+Replaceability means alternatives can enter a fair qualification process and
+the incumbent can be replaced when complete evidence justifies it.
+
+## Recurrence Changes the State Contract
+
+Recurrent and state-space systems can carry information through compact state
+rather than rereading an entire sequence. They may support streaming, bounded
+memory, adaptive compute, or long-running interaction. Their state introduces
+freshness, aliasing, isolation, reset, and migration problems.
+
+A recurrence contract identifies request, state version, update schedule,
+budget, exit, fallback, observation, and residual. It distinguishes active
+computation from carried state. It prevents an old state from appearing fresh
+after the source or policy changes.
+
+Adaptive recurrence needs a stop rule. More steps can improve an answer or
+amplify error. The controller records why another step is permitted, what
+evidence it seeks, resource ceiling, and fallback when the loop fails to
+converge.
+
+Shared recurrent state across users or jobs creates leakage and interference.
+Isolation and reset must cover all state, not merely the visible cache.
+
+## Cyclic Memory Needs Residue and History
+
+A ring buffer reuses physical slots. Addressing only by residue loses which
+cycle produced the content. Events 7, 15, 23, and 31 all map to slot 7 in an
+eight-slot ring. The residue identifies location; the winding identifies the
+generation.
+
+A complete cyclic address binds residue and winding, or an equivalent epoch.
+The memory record also binds request, source, policy, update, freshness, and
+alias residuals. A stale read cannot be admitted as fresh merely because the
+slot contains valid bytes.
+
+Sparse attention has a related coverage boundary. Structural reachability of
+some positions does not establish semantic adequacy. Missing lags require a
+fallback or visible residual. A proof that an address scheme is injective does
+not prove that retrieved content helps the model.
+
+Cyclic memory can be useful when the workload has periodic, streaming, or
+bounded-window structure. It should not be imposed on arbitrary semantics
+because the mathematics is elegant.
+
+## Coil and CoilRA Are Candidate Contracts
+
+Coil Attention treats cyclic position, memory, and recurrence as explicit
+structures. CoilRA and MultiCoil RoPE explore low-rank adaptation, multiple
+cyclic phases, position encodings, and mixers that can exploit genuine cyclic
+regularity.
+
+These proposals are useful in the book because they force exact questions.
+What aliases under residue-only addressing? Which winding or phase resolves
+it? Which structural properties are exact, discretized, approximate, or
+learned? How do parameter count, quality, runtime, memory, and hardware cost
+change independently? What baseline and fallback govern adoption?
+
+Structural certification is not model quality. A cyclic mixer can reproduce a
+declared dense operator in a bounded fixture and still train poorly, run
+slowly, or fail to use context. A RoPE collision result under an exact or
+discretized model does not establish real-valued behavior at every context
+length.
+
+Candidate promotion therefore requires mechanism semantics, reference
+equivalence where appropriate, numerical analysis, trained-model evaluation,
+kernel verification, full cost, regression, and rollback. Until then these
+systems remain optional specialist substrates, not a replacement claim.
+
+## Non-Digital Substrates Still Need the Contract
+
+Replaceability can extend below software. Neuromorphic systems may exploit
+sparse events. Analog and in-memory devices may reduce data movement. Photonic
+systems may accelerate selected linear operations. Quantum systems may offer
+specialized subroutines. Biohybrid systems may exhibit adaptive dynamics.
+
+Each candidate changes the accounting boundary. Encoding, conversion, noise,
+drift, calibration, host control, memory, packaging, cooling, reliability,
+programming, verification, and lifecycle belong in the comparison. A cheap
+device operation is not a cheap cognitive route.
+
+Governance may also change. Biohybrid work raises biosafety, consent, welfare,
+and moral-status uncertainty. Quantum verification may rely on different
+assumptions. Analog state may be hard to checkpoint exactly. The stable field
+should expose these differences rather than pretending every substrate is a
+drop-in accelerator.
+
+## Security and Rights Constrain Substrate Choice
+
+Substrates expose different attack surfaces. A general model may be vulnerable
+to prompt injection and weight theft. A retrieval route can leak indexed data.
+A recurrent service can carry adversarial state. Analog and physical systems
+can reveal side channels. Tool compositions expand the supply chain.
+
+The route decision includes data purpose, confidentiality, integrity,
+isolation, provenance, inspectability, patchability, custody, and post-release
+control. A slightly less accurate local tool may be preferable when sending
+sensitive context to a remote model would violate the contract.
+
+Rights also shape qualification. Accessibility, language, group error,
+explanation, contestability, data deletion, and practical alternative routes
+belong to the consumer contract. Average benchmark quality cannot authorize a
+substrate that systematically excludes an affected population.
+
+Some systems create moral uncertainty beyond ordinary software. Biohybrid
+research may implicate welfare or sentience. Highly persuasive or intimate
+interfaces can alter cognitive agency. The router cannot price these concerns
+as ordinary latency. Protected constraints and institutional authority define
+which experiments are permissible.
+
+Open release changes replaceability. An internal model can be revoked; copied
+weights or designs cannot be recalled completely. Adoption and publication are
+separate decisions with distinct evidence and residuals.
+
+The best route is therefore not the highest-scoring cognitive engine. It is an
+admissible complete system for this purpose, population, and authority.
+
+## One Task, Five Qualified Routes
+
+Return to the repository request.
+
+The router freezes the task and constructs candidates. A deterministic package
+analyzer receives dependency extraction. A retrieval service returns exact
+package documentation with provenance. A coding specialist proposes the patch
+under file-scoped authority. A general model integrates ambiguous context and
+explains alternatives. A verifier checks the lockfile and artifact. The
+rollback planner uses the operational procedure from Unit 18.
+
+Each route receives only the context and authority it needs. Artifacts retain
+the parent job and capability identities. The general model cannot release.
+The deterministic analyzer cannot silently edit. The coding specialist’s
+successful patch does not waive independent verification.
+
+If the package analyzer encounters an unsupported manifest, it returns a typed
+failure and activates the general-model fallback. If the coding specialist is
+stale or overloaded, the router selects the baseline or asks for human review.
+Costs and interventions return to the route ledger.
+
+A cyclic-memory candidate may be evaluated for a streaming log-analysis
+subtask. Its structural receipt can admit a benchmark; only measured useful
+outcomes can qualify it for routing. The production task does not become its
+uncontrolled experiment.
+
+## Failure Cases
+
+**Semantic-fit laundering.** Relevance substitutes for readiness, authority,
+or utility.
+
+**Incomplete denominator.** The router hides human, tool, baseline, no-action,
+or rejected candidates.
+
+**Route-label leakage.** Held-out decisions or outcomes enter router training.
+
+**Answer-route collapse.** A correct answer proves the route was good, or a
+wrong answer proves it was inadmissible.
+
+**Abstention theater.** The system reports uncertainty but causes the effect.
+
+**Fallback theater.** A declared alternative is never exercised or shares the
+same failure root.
+
+**Authority laundering.** Selection widens tools, context, duration, or
+delegation.
+
+**Readiness inheritance.** A product, family, or prior version lends reputation
+to an unqualified candidate.
+
+**Specialist sprawl.** Lifecycle cost exceeds cognitive savings.
+
+**Evaluator capture.** Router, specialists, and judge share one model or
+incentive.
+
+**Checkpoint truncation.** Weights stand in for complete operational state.
+
+**Migration optimism.** Incompatible hidden state is treated as portable.
+
+**Architecture benchmark theater.** A narrow synthetic win becomes general
+substrate superiority.
+
+**Hardware boundary hiding.** Host, conversion, memory, and control costs are
+omitted.
+
+**Structural-quality collapse.** Exact addressing or operator equivalence is
+presented as useful learned behavior.
+
+**Cyclic overreach.** Periodic machinery is applied where the workload has no
+relevant cyclic structure.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline is one well-tuned general model with deterministic
+tools, retrieval, caching, explicit permissions, and human escalation. It has
+fewer moving parts, shared context, simpler evaluation, and lower maintenance.
+
+Heterogeneous routing should beat that baseline on accepted useful output,
+risk, latency, compute, memory, energy, human work, recovery, and lifecycle
+cost. Route accuracy alone is insufficient. A specialist system that saves
+inference but doubles verification and maintenance has not shown efficiency.
+
+The architecture should consolidate where one model matches specialists. It
+should preserve deterministic tools where learning adds no value. Novel
+substrates should enter only when they improve a complete route or provide a
+valuable independent failure path.
+
+## What the Current Work Establishes
+
+Routing has five implemented targets and 29 live declarations. Its exact
+refinement includes 25 arbitrary-run theorems, seven stages, 42 routes, and 47
+rejected mutations with route and answer outcomes kept distinct. The broader
+surface includes three routing/runtime schemas, valid and rejecting lease and
+readiness fixtures, a 300-example matched program, and a 60-request ambiguous
+workload. The narrow result concerns route discrimination and exercised non-
+answer behavior, not useful specialist answers or deployed routing.
+
+Replaceable Substrates has one implemented ABI target through 23 declarations.
+Synthetic conformance includes twelve event mutations, four common-checkpoint
+omitted-state collisions, and six full-checkpoint mutations. A matched
+heterogeneous-kernel tournament and architectural-improvement lifecycle remain
+unrun. The work does not establish substrate superiority or interchangeability.
+
+Cyclic Memory has three implemented targets and 34 declarations. Its fixtures
+cover complete residue-plus-winding addresses, alias visibility, freshness,
+sparse-coverage fallback, recurrence budgets, stale paths, trace composition,
+and closure. The independent route reaches 40 states and checks 320 transitions,
+with stale-suffix containment and semantic mutations. These are finite
+structural properties, not retrieval, long-context, speed, memory, reasoning,
+or model-quality results.
+
+Cyclic Mixers has two implemented targets and 23 declarations. A bounded Circle
+receipt records exact dense delta zero and a block-to-dense parameter ratio of
+0.0625 for its declared fixture; the lifecycle checks six trace splits, 35
+reachable states, 700 transitions, 17 retired states, 340 absorbing transitions,
+and 18 semantic mutations. It does not establish trained quality, numerical
+behavior beyond the fixture, kernel performance, context use, deployment, or
+transfer.
+
+The joined chapter does not combine these bounded results into a claim that
+heterogeneous routing or cyclic substrates improve natural tasks.
+
+## From a Minimum Router to a Substrate Market
+
+A minimum implementation can route the repository task among one general
+model, deterministic dependency tool, coding specialist, verifier, human, and
+no-action route. Freeze the denominator and policies. Exercise clarification,
+abstention, stale readiness, authority denial, fallback, wrong route, wrong
+answer, cost overrun, revocation, and closure. Compare the complete system with
+the strong general-model baseline.
+
+Next, implement the Cognitive Kernel ABI for two genuinely different
+substrates. Inventory all state, migrate or reconstruct it, inject omitted-
+state collisions, and demonstrate rollback. Run a prospective tournament with
+matched tuning, verification, hardware, and human budgets.
+
+Cyclic candidates should begin in isolated structural and kernel tests, then
+trained canaries with ordinary attention, recurrence, state-space, and dense
+baselines. Measure quality, calibration, context use, latency, throughput,
+memory, energy, parameter count, stability, fallback, and total lifecycle
+cost. Keep every failed candidate.
+
+A mature substrate market would continuously qualify general models,
+specialists, tools, humans, and new computational families behind stable
+capability fields. The router would allocate work by evidence, authority,
+consequence, load, and complete cost; preserve abstention and fallback; and
+retire candidates without breaking task identity.
+
+Architectural experimentation could proceed rapidly below the boundary while
+governance, claims, and recovery remain stable above it. Diversity would be an
+empirical option, not a doctrine.
+
+## The Strongest Objection
+
+Heterogeneous routing can cost more than it saves. The router becomes another
+model to train and attack. Specialists duplicate infrastructure. Interface
+losses remove useful context. Different substrates fail in correlated ways
+while making diagnosis harder. One excellent general model may be more
+controllable and economical.
+
+This objection defines the baseline. Replaceability is valuable even when the
+incumbent wins, because it makes the comparison and exit path explicit. But
+actual heterogeneity must earn deployment through complete outcomes.
+
+The system should not maintain alternatives as ceremonial insurance. It should
+measure migration and reserve costs, exercise fallbacks, and retire routes that
+do not improve utility or resilience. Simplicity is a system property worth
+optimizing.
+
+## Evidence That Would Change the Conclusion
+
+Matched natural tasks showing no accepted-useful-output, risk, resilience, or
+cost advantage after routing, migration, verification, and maintenance would
+favor the general-model baseline. Evidence that stable fields erase decisive
+architecture semantics would require richer or more specialized interfaces.
+
+The case would strengthen through prospective multi-domain tournaments with
+complete candidate denominators, independent labels, exercised fallback,
+state migration, adversarial routes, hardware accounting, reproduction, and
+longitudinal maintenance. Cyclic systems need trained-model and kernel evidence
+that survives strong recurrent, attention, state-space, and ordinary systems
+baselines.
+
+The conclusion should narrow if diversity increases correlated organizational
+failure, if route learning cannot remain calibrated under changing candidates,
+or if the governance overhead prevents timely useful work.
+
+## What This Establishes
+
+Cognitive capability should be named above implementation. Routing should
+select from a complete denominator under readiness, authority, evidence,
+resource, fallback, and recovery constraints. Route correctness, answer
+correctness, and useful outcome remain separate.
+
+Replaceability needs a substrate-neutral ABI, complete checkpoint state,
+qualified migration, matched tournaments, and retirement. Recurrence and
+cyclic memory create useful structural possibilities and exact freshness and
+alias obligations. Structural proof is not learned quality.
+
+The current repository establishes finite routing, ABI, cyclic-address, and
+candidate-lifecycle properties plus narrow synthetic observations. It does not
+establish that heterogeneous or cyclic systems outperform a strong general
+model.
+
+Selected substrates still have to learn. Unit 20 follows training as a
+governed transaction and then widens the view from model architecture to the
+topology of evidence, judgment, credit, state, compute, and authority that
+actually produces adaptation.
+
+{{< include ../generated/unit-19-status.qmd >}}
