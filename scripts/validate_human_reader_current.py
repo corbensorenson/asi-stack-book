@@ -66,6 +66,37 @@ UNIT_02_REQUIRED = [
     "These artifacts establish finite accounting and transition discipline",
     "They do\nnot establish complete candidate search, accurate costs, calibrated quality",
 ]
+UNIT_03_REQUIRED = [
+    "## The Planner Does Not Hold the Key",
+    "## Proposal, Approval, Effect, and Release",
+    "## The Authority Tuple",
+    "## Authority Is Checked at the Effect",
+    "## Technical Authority and Legitimate Authority",
+    "## Delegation Attenuates",
+    "## Revocation Is a Race",
+    "## Failure Is a Broken Responsibility",
+    "## Incidents, Recurrence, and Remedy",
+    "## Ungoverned Does Not Mean Unstructured",
+    "## Dangerous Capability Is an Uplift Question",
+    "## A Public-Safe Uplift Dossier",
+    "## Misuse Authority Is Not Research Authority",
+    "## Military AI Is a Command-and-Interaction System",
+    "## Meaningful Human Judgment",
+    "## Strategic Stability Is Relational",
+    "## Safe Posture and Off-Ramps",
+    "## Assurance Under Secrecy",
+    "## One Request Across Four Risk Levels",
+    "## Failure Modes",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From Minimum Authority to Governed Institutions",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "All four routed chapter cores remain at `argument` support",
+    "They do not establish authentic identity or\nreceipts, deployed permission enforcement",
+    "No hazardous-domain evaluation, public-safe strategic simulation",
+    "No support or release state\nmoved",
+]
 UNIT_23_REQUIRED = [
     "## The Complete Bill",
     "## Speed Is a Qualified Route",
@@ -710,6 +741,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_02_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 2 missing required argument boundary: {fragment!r}")
+    unit_03 = next((unit for unit in units if unit.get("unit_id") == "unit-03"), None)
+    if unit_03 is None or unit_03.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 3 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_03["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_03_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 3 missing required argument boundary: {fragment!r}")
     unit_04 = next((unit for unit in units if unit.get("unit_id") == "unit-04"), None)
     if unit_04 is None or unit_04.get("state") != "target_length_reached_internal_review_pending":
         errors.append("Unit 4 has not reached its drafting target")
