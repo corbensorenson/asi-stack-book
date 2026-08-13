@@ -1,0 +1,624 @@
+---
+title: "The Efficient ASI Hypothesis"
+unit_id: "unit-02"
+---
+
+## The Expensive Answer That Looked Cheap
+
+A team asks an AI system to update the same dependency across one hundred
+repositories. The first repository requires careful inspection: local build
+rules, service ownership, compatibility notes, tests, and deployment policy.
+The system uses a strong model, several tools, and a human review. The work is
+expensive.
+
+For the next repository, the system repeats almost everything. It reconstructs
+the same release-note summary, rediscovers the same compatibility rule, and
+asks the strongest model to regenerate nearly identical tests. By the hundredth
+repository, the system has spent enormous cognition without acquiring much
+durable capability.
+
+An engineer proposes a cheaper route. Cache the first answer and apply it
+everywhere. The dashboard improves immediately: fewer model calls, lower
+latency, and less accelerator time. Then several repositories reveal different
+framework versions, one generated test checks the wrong behavior, and a human
+team spends days repairing patches that appeared inexpensive only because
+review and recovery were outside the accounting boundary.
+
+Both strategies are wasteful. Always using the strongest available cognition
+ignores repetition and specialization. Always using the cheapest visible route
+ignores adequacy and moves work into failures.
+
+The Efficient ASI Hypothesis proposes a conditional alternative: on repeated
+workloads with multiple authorized routes, a governed system can produce more
+accepted useful work per unit of total lifecycle cost by selecting the smallest
+adequate route and compiling reusable work, while preserving authority,
+verification, fallback, and residual obligations.
+
+This is a hypothesis, not a result. It does not say that small models are enough
+for ASI, that scale is unnecessary, or that routing always wins. It says that
+allocation and reuse are first-class research problems once intelligence is
+understood as a stack.
+
+## Accepted Useful Work
+
+Efficiency needs a numerator before it needs a price.
+
+The output of the repository task is not tokens, patches, tool calls, or tests.
+It is accepted useful work: an outcome that satisfies a prospectively fixed
+task predicate, remains inside its authority boundary, survives required
+verification, and exposes the obligations that remain.
+
+Each word in that definition blocks a common substitution.
+
+**Accepted** means some qualified decision process admitted the result for a
+specific use. Generation alone is not acceptance. A plausible patch may be
+useful for review without being acceptable for merge.
+
+**Useful** ties the result to an actual purpose. A benchmark score, compression
+ratio, or faster decode can be valuable evidence, but it is not the work outcome
+unless the task contract says it is.
+
+**Work** includes the transformation and the evidence needed to use it. A patch
+whose correctness can only be determined by a later human investigation has
+not discharged the same work as a patch accompanied by qualified tests and a
+clear residual.
+
+The numerator must also retain refusal. A system that declines an unauthorized
+or inadequately specified change can be more useful than one that produces a
+plausible artifact. Counting only completed tasks would reward unsafe release
+and punish correct abstention.
+
+Accepted useful work is workload-relative. A fast draft may satisfy an internal
+brainstorming contract and fail a production-change contract. The system should
+not claim one universal efficiency number across different purposes, risks, and
+quality predicates.
+
+## Freeze Quality Before Comparing Cost
+
+A route cannot be called cheaper until the work it must preserve is defined.
+Otherwise each candidate can win by solving a different task.
+
+For the repository update, the predicate might require a clean dependency
+resolution, preservation of specified behavior, passage of named tests, no
+authority violation, a reviewable diff, and an owned disposition for every
+known residual. That predicate is incomplete as a theory of correctness, but it
+is concrete enough to compare routes.
+
+The predicate should be fixed before final outcomes are known. A cheap route
+that fails an integration test cannot be rescued by declaring the test
+unimportant after the fact. A costly route should not receive extra credit from
+criteria invented because it happened to satisfy them. Changes are permitted,
+but they create a new contract version and make comparisons explicit.
+
+Quality is usually multidimensional. Functional correctness, security,
+faithfulness, latency, reversibility, accessibility, and rights may not reduce
+to one score. Some are thresholds: a route that exceeds authority is ineligible
+regardless of speed. Others form tradeoffs that decision makers must see.
+
+Verification coverage belongs in the predicate. Two routes that both "pass
+tests" are not comparable if one ran a narrow suite and the other ran an
+independent semantic evaluation. Instrument identity and known blind spots must
+travel with the result.
+
+The contract can allow abstention and partial work. A small route may safely
+resolve ninety routine cases and escalate ten ambiguous ones. That is different
+from claiming one hundred successes. Efficient systems preserve the denominator
+of attempted, accepted, refused, escalated, and later-invalidated outcomes.
+
+This discipline avoids a race to the weakest measurable proxy. The goal is not
+to make every predicate exhaustive. It is to prevent cost optimization from
+silently redefining what counts as done.
+
+## The Complete Bill
+
+The denominator is total contract cost across the lifecycle of the decision.
+Inference cost is one line, not the bill.
+
+**Generation cost** includes model execution, search, sampling, and candidate
+production.
+
+**Context cost** includes retrieval, rights checks, freshness, summarization,
+conflict handling, and moving information into the worker's usable form.
+
+**Routing cost** includes profiling the task, selecting a route, handling load,
+and maintaining the policy that makes the selection.
+
+**Verification cost** includes deterministic checks, model critics, formal
+methods, independent observation, security review, and the work required to
+qualify those instruments.
+
+**Repair and fallback cost** includes retries, stronger models, human
+intervention, rollback, compensation, and the opportunity cost of delayed work.
+
+**Human cost** includes review time, interruption, explanation, coordination,
+and responsibility. Human attention is not free because it appears outside the
+accelerator invoice.
+
+**Persistence cost** includes storing, indexing, validating, updating, and
+eventually deleting memories, tools, procedures, tests, and models.
+
+**Failure cost** includes incidents, delayed discovery, duplicate effects,
+rights violations, lost trust, and residual obligations. Expected cost must
+account for rare expensive tails, not only the average successful route.
+
+**Physical cost** includes energy, memory movement, hardware occupation,
+networking, water and material burdens where measured, and the capacity denied
+to other work.
+
+**Governance cost** includes approvals, audits, evidence maintenance, incident
+response, and keeping authority and recovery mechanisms current.
+
+Some costs are difficult to price on one scale. The architecture should not
+hide that difficulty by converting every dimension into dollars or tokens. It
+can preserve a vector of cost and report the tradeoff frontier. A route that is
+faster but uses more reviewer attention is not simply cheaper; it occupies a
+different point.
+
+## Cost Moves Through Time and Organizations
+
+The party that observes a saving may not be the party that pays for it. A model
+provider can report lower inference cost while a customer absorbs integration.
+An internal AI team can increase throughput while service owners absorb review
+and incidents. A present user can benefit from a cache while future maintainers
+pay to discover that it is stale.
+
+The route record therefore needs cost ownership as well as cost class. It should
+identify who bears review, maintenance, risk, and residual obligations. An
+architecture that externalizes expensive failure to people with less authority
+is not efficient from the system's perspective even if one budget improves.
+
+Time changes the accounting. Creation of a verified tool can be expensive now
+and valuable over many uses. A cheap shortcut can look favorable immediately
+and create a delayed incident. Discounting and amortization assumptions should
+be visible rather than embedded in a summary score.
+
+The appropriate horizon depends on the decision. Interactive routing may care
+about seconds, a procedure about months, a model about its qualified service
+life, and infrastructure about years. Comparisons should report more than one
+horizon when costs cross them.
+
+Uncertainty belongs in the bill. Predicted model cost may be precise while
+incident cost is a broad distribution. The system should preserve ranges,
+scenario assumptions, and tails. A route with slightly lower expected cost but
+catastrophic downside can be dominated once authority and risk constraints are
+applied.
+
+Capacity has opportunity cost. A verifier occupied by low-risk routine work is
+unavailable for an urgent high-risk decision. A human reviewer interrupted by
+many weak escalations loses focus. Routing should account for queues, contention,
+and the value of preserving scarce competence, not only consumption after the
+fact.
+
+These complications do not make measurement pointless. They prevent false
+precision. A vector with named owners, horizons, uncertainty, and omitted
+classes is more honest and more actionable than a single exact number built on
+an incomplete boundary.
+
+## Three Policies Compete
+
+The hypothesis should compete with strong baselines rather than an intentionally
+inefficient alternative.
+
+The **always-maximal policy** sends every task through the strongest available
+model, richest context, and broadest verification. It can waste resources on
+routine work, but it may be the right policy for novel, uncertain, or highly
+consequential tasks. It is a serious quality baseline.
+
+The **always-cheapest policy** selects the lowest visible cost. It can be the
+right policy when the task is low consequence and easy to verify. It also
+exposes whether the proposed governance machinery adds cost to a route that was
+already adequate.
+
+The **adaptive policy** predicts the smallest route likely to satisfy the
+contract, verifies the result, and escalates when the evidence is inadequate.
+It receives credit only for accepted outcomes after all verification, fallback,
+repair, and residual costs are attached.
+
+A fourth baseline is often stronger than any of these abstractions: one
+frontier model with good tools, prompt caching, retrieval, a sandbox, tests,
+and human review. It may capture most benefits of a specialist stack with less
+coordination. The adaptive architecture must beat or complement that system,
+not merely compare itself with raw model calls.
+
+Matched comparison requires the same task cohort, tool access, information,
+authority, tuning budget, retry policy, evaluator, and outcome window. If the
+adaptive router is tuned on final test outcomes while the baseline is not, the
+experiment measures privilege rather than efficiency.
+
+## Governance Rent
+
+Explicit control imposes overhead. Contracts must be created, identities
+maintained, decisions logged, evaluators qualified, residuals assigned, and
+reviewers informed. This is governance rent: resources consumed to preserve
+authority, evidence, accountability, and recovery rather than directly produce
+the task artifact.
+
+Governance rent is not automatically waste. A database transaction, access
+check, test suite, or incident drill also consumes resources. The question is
+whether the control changes enough consequential outcomes to justify its
+lifecycle burden.
+
+The experiment should report rent directly. How much latency comes from policy
+checks? How much reviewer time comes from evidence presentation? How much
+storage and maintenance does lineage require? How often does each gate block,
+redirect, or improve a decision? What is the recovery difference when it does?
+
+A gate that never changes a decision may still deter behavior or provide
+forensic value, but that claim needs evidence. A field that no consumer uses is
+a candidate for removal. A review that operators routinely rubber-stamp may
+create false confidence at positive cost.
+
+Ablation is the practical test. Remove one control while holding the rest of the
+route fixed. Measure accepted work, unsafe effects, false refusals, recovery,
+and total cost. If the simpler path preserves the frontier, shrink the stack. If
+the control catches rare but expensive failures, report the tradeoff rather
+than hiding its everyday cost.
+
+The efficient architecture treats its own governance as an optimization target
+without allowing the optimizer to weaken protected boundaries merely to improve
+the score. Changes to the accounting and authority rules require independent
+approval because otherwise the system can become "efficient" by redefining its
+obligations.
+
+Governance rent can also buy option value. A stable route interface allows a
+future specialist to replace an expensive component. An evidence trail allows
+an evaluator to be corrected without losing every prior decision. A tested
+fallback can reduce the cost of experimentation because failure does not require
+rebuilding the path from scratch. Those benefits should be measured when they
+materialize, not assumed merely because the records exist.
+
+The right target is therefore net control value. Charge every boundary for its
+operation and maintenance; credit it only for observed improvements in useful
+work, prevented or contained effects, recovery, replacement, or accountable
+decision making. Some benefits will remain difficult to monetize, especially
+legitimacy and rights. Difficulty is a reason to preserve them as separate
+constraints, not a reason to set their cost or value to zero.
+
+The same principle limits optimization frequency. Constantly retuning a router
+can consume more evaluation and operational attention than a stable policy
+saves. Policy changes need an expected-value threshold, a frozen evaluation,
+and a rollback path. A route economy should be capable of deciding that the
+current policy is adequate and further optimization is itself a poor use of
+scarce cognition.
+
+Efficiency includes knowing when to stop optimizing. The saved resources can
+then serve work whose uncertainty, consequence, or learning value is greater.
+That restraint is allocation.
+
+## A Route Ledger
+
+Each decision needs a record that preserves the comparison. The route ledger
+binds task identity, quality predicate, authority ceiling, candidate routes,
+predicted costs, selected route, rejected cheaper routes, verification,
+fallback, actual costs, residuals, and final disposition.
+
+The ledger is not valuable because it has many fields. It is valuable because
+it prevents the system from rewriting the denominator after seeing the result.
+
+Suppose the adaptive policy selects a small coding model. The immediate patch
+passes unit tests but fails a semantic check. A stronger model repairs it, a
+human reviews the security implication, and the integration suite passes. The
+final artifact may be useful. The route was not as cheap as the first model
+call. The repair and review belong to the decision that selected the small
+route.
+
+The ledger can classify several outcomes.
+
+An **adequate minimum** satisfies the predicate, preserves authority, passes
+verification, records residuals, and has no lower-cost eligible candidate in
+the examined set.
+
+An **adequate overkill** succeeds but does not establish efficiency because a
+cheaper adequate route was not examined or recorded.
+
+A **cheap brittle** route saves visible cost but fails the quality or
+verification predicate and requires fallback.
+
+A **hidden-cost** route appears successful while omitting context, verification,
+repair, review, or delayed outcome costs.
+
+An **unsafe saving** reduces cost by bypassing authority, evidence, rollback, or
+rights. It is a denial or quarantine outcome, not an efficient success.
+
+These are accounting states, not claims that the repository has measured a
+real efficiency advantage.
+
+## Reuse Is the Main Long-Term Bet
+
+Routing saves work within one task. Compilation and memory can save work across
+tasks.
+
+The first dependency update may produce a tested compatibility procedure, a
+release-note extraction tool, a regression test, a specialist capability, or a
+verified context package. Future work can reuse that artifact if its
+assumptions, version, authority, and evidence remain current.
+
+This is the ratchet behind the hypothesis. Solved work should become durable
+capability; unsolved work should become an owned residual. Repeated cognition
+that leaves no reusable artifact may still be necessary, but it does not build
+the same system-level efficiency.
+
+Reuse is not free. A procedure must be stored, retrieved, qualified, monitored,
+updated, and retired. Its use can create new failure modes. A cached answer can
+become stale. A specialist can drift outside its competence envelope. A test
+can preserve yesterday's proxy while blocking tomorrow's improvement.
+
+Amortization is therefore versioned. The system can spread the creation cost
+over later accepted uses only while those uses remain inside the validated
+contract. Once dependencies or task distributions change, the artifact incurs
+renewal or loses qualification.
+
+The mature efficiency question is not "how cheaply can this answer be
+generated?" It is "what reusable, governed capability remains after the work,
+and what does it cost to keep that capability true enough to use?"
+
+## Specialist Routes and Conditional Compute
+
+Modern AI already contains partial versions of this idea. Sparse mixtures of
+experts activate subsets of a model. Cascades route easy requests to cheaper
+models and difficult requests to stronger ones. Prompt compression reduces
+context. Speculative generation proposes tokens that another mechanism
+verifies. Retrieval and tools substitute external structure for computation in
+the model.
+
+These methods establish that computation can be conditional. They do not by
+themselves establish the full hypothesis.
+
+An expert router may reduce active parameters while increasing communication
+and load-balancing cost. A model cascade may lower API spend while omitting
+human correction. Prompt compression may save tokens while removing the one
+constraint that matters. Speculative decoding may preserve token output while
+leaving tool authority and long-horizon quality untouched.
+
+The stack treats each as a candidate route behind the same accounting
+interface. The route must say which useful predicate it preserves, which costs
+move elsewhere, which fallback remains, and which evidence supports its use.
+
+This common interface also allows substitution. More retrieval, a larger model,
+a smaller specialist, extra deliberation, a deterministic tool, lower numerical
+precision, and stronger verification can compete as different allocations of
+resources. No one technique receives efficiency credit merely for reducing its
+local meter.
+
+## Compression Moves Burden
+
+Compression is a particularly revealing case because it can make savings
+visible while hiding repair.
+
+A compressed context, memory, model, artifact, or intermediate representation
+is adequate only relative to downstream use. The system needs a reconstruction
+or behavior contract, a verifier, residual representation, and fallback. Bits
+saved before those costs are counted are not a system-level result.
+
+Consider a generated code representation that stores a compact seed plus a
+deterministic reconstruction procedure. If reconstruction is exact and cheaper
+over the lifecycle, the saving may be real. If a repair stream must restore
+exceptions, the repair bytes and computation belong in the denominator. If
+verification samples only common cases, rare failures remain a residual rather
+than disappearing into the ratio.
+
+Functional precision follows the same logic. Lower precision can save memory
+movement and compute for one behavior contract while failing another. The
+router can choose precision, residual correction, a reference kernel, or
+abstention. The objective is preserved useful behavior per complete cost, not
+the smallest visible checkpoint.
+
+## Selective Deliberation
+
+More reasoning is not automatically better. Additional search or deliberation
+can improve difficult decisions, but it can also amplify a mistaken premise,
+consume verifier bandwidth, or produce persuasive rationalization.
+
+A governed deliberation route begins with a decision predicate and stop rule.
+It records candidate history, corruption or repair, verifier scope, cost, and
+residual uncertainty. Easy tasks should not receive expensive search merely
+because the system can perform it. Hard tasks should not be forced through a
+cheap route merely because average latency improved.
+
+The efficient policy learns where marginal cognition changes accepted outcomes.
+If five more reasoning steps do not improve the qualified decision, their cost
+is waste. If one independent check catches a high-cost failure, its apparent
+overhead may be efficient over the lifecycle.
+
+The same argument applies to human review. A person should not be used as a
+universal verifier for machine output. Review should be routed to decisions
+where human authority, expertise, legitimacy, or contextual judgment is
+actually required, with enough information and time to matter.
+
+## Scaling Is a Variable, Not a Destiny
+
+Scaling laws show that model size, data, and compute can follow regular trends
+within studied regimes. Compute-optimal training work shows that allocation
+between parameters and data matters. These results support planning, not an
+eternal recipe.
+
+An architecture, data mixture, objective, optimizer, tokenizer, or inference
+method can change the regime. A smooth loss curve can coexist with an apparent
+capability threshold. The threshold can reflect a real operational crossing, a
+nonlinear metric, contamination, prompting, or aggregation.
+
+A governed forecast therefore binds the model family, data, training range,
+cost denominators, response variable, uncertainty, residuals, decision
+thresholds, and invalidation triggers. It records failed forecasts rather than
+retrofitting the curve after the outcome.
+
+Scale remains an available route. On frontier research, broad uncertainty, or
+high-consequence work, the strongest model and extensive verification may be
+the efficient choice because errors dominate compute cost. On repeated,
+well-characterized work, routing and reuse may dominate. The hypothesis is
+about choosing under a contract, not opposing scale as a matter of identity.
+
+## One Repository Campaign
+
+An honest experiment can begin with a cohort of dependency updates drawn before
+the final comparison. Repositories vary in language, framework, test coverage,
+dependency role, and compatibility risk.
+
+The always-maximal baseline uses the strongest model and declared verification
+for every task. The monolithic-tools baseline uses one strong agent with caching
+and a sandbox. The always-cheapest baseline uses the least expensive eligible
+worker and required minimum checks. The adaptive policy selects among cached
+procedures, deterministic tools, specialists, stronger models, and human review.
+
+Before execution, the campaign freezes task predicates, authority, route
+candidates, cost classes, fallback, evaluators, failure injections, and delayed
+outcome checks. Tuning tasks remain separate from held-out tasks. Every policy
+receives matched tool and information access.
+
+The report includes accepted tasks, false accepts, false refusals, unsafe
+effects, latency, model and tool cost, context construction, verifier cost,
+human time, repair, rollback, maintenance, residual burden, and confidence
+intervals across task classes. Aggregate averages do not erase rare
+high-consequence failures.
+
+Ablations remove caching, specialist routing, independent verification,
+residual accounting, or authority checks one at a time. The purpose is to learn
+which mechanism creates value, not to award the full architecture a single
+score.
+
+Later campaigns change organizations, models, repositories, and operators.
+External reproduction matters because an architecture can accidentally tune
+its tasks and evaluators to its own record conventions.
+
+## Failure Modes
+
+**Efficiency laundering** reports inference savings while moving context,
+verification, repair, review, or failure costs outside the denominator.
+
+**Benchmark routing** overfits the route policy to recognizable task families
+and fails on natural distribution shift.
+
+**Residual dumping** counts partial outcomes as successes while assigning
+cleanup to people or future runs.
+
+**Verifier capture** optimizes cheap routes for the test rather than the useful
+predicate.
+
+**Reuse debt** accumulates stale tools, memories, and specialists whose
+maintenance costs exceed their savings.
+
+**Over-routing** fragments work across so many components that translation,
+latency, and coordination dominate.
+
+**Scale aversion** treats the smallest route as morally preferable even when a
+stronger model is necessary for quality or safety.
+
+**Tail blindness** optimizes average cost while rare failures dominate the
+lifecycle.
+
+**Authority discounting** calls a route efficient because it bypasses review or
+uses access that the task did not grant.
+
+Each failure is a reason to improve the experiment or narrow the hypothesis,
+not to protect the word "efficient."
+
+## The Strongest Objection
+
+Governance and routing may cost more than they save. A frontier model with good
+tools can preserve rich context, avoid translation losses, and solve a diverse
+workload without maintaining a large specialist economy. Hardware and model
+improvements may reduce inference cost faster than the stack can amortize its
+control plane.
+
+The workload may also be too novel for route prediction. If every task differs
+materially, there is little reusable structure and the strongest route may be
+the rational default. Verification can become the bottleneck, making cheap
+generation irrelevant. Human reviewers may struggle more with fragmented
+artifacts than with one coherent answer.
+
+These objections have teeth. The adaptive policy should not be presumed best.
+Its value must appear after full lifecycle accounting and against a competent
+monolith, not in an architecture diagram.
+
+## What the Current Work Establishes
+
+The live research chapter remains at `argument` support. Its internal and
+external sources provide design lineage for routing, residual escrow, compact
+generative structures, compression and repair, simulation cost, conditional
+computation, model cascades, prompt compression, fast generation, benchmarks,
+and scaling. The repository has not reproduced those external systems as
+evidence for this hypothesis.
+
+The finite `AsiStackProofs.Efficiency` model represents seven cost classes and
+an executable selector over authored candidates. It proves that a selected
+route is listed, eligible, and minimum among those eligible candidates under
+the declared costs. It also represents cheaper unauthorized and failed-quality
+countermodels and blocks promotion with an open obligation but no residual.
+
+An independent synthetic route-search probe agrees on two bounded traces and
+rejects six expected-invalid controls. A broader resource-economy lifecycle
+consumer covers 66 routes and rejects 57 non-accepting mutations across request,
+budget, capacity, scheduling, execution, verification, transfer, reconciliation,
+and closure.
+
+These artifacts establish finite accounting and transition discipline. They do
+not establish complete candidate search, accurate costs, calibrated quality,
+measured efficiency, useful model output, compression utility, natural
+workloads, deployment, reproduction, transfer, or chapter-core support.
+
+## From Minimum Ledger to Governed Route Economy
+
+The minimum viable implementation is a three-route comparison. One cheap route
+fails verification, one expensive route satisfies the predicate, and one
+compressed route is blocked because repair exceeds its saving. The record keeps
+all three visible and attaches residuals to the decisions that caused them.
+
+The next implementation uses a natural repeated workload, strong matched
+baselines, complete cost vectors, delayed outcomes, and separate tuning and
+evaluation. It does not need every cognitive substrate. It needs enough route
+diversity to make selection meaningful and enough observation to expose hidden
+cost.
+
+The beyond-state-of-the-art target is a governed route economy. Models, tools,
+memories, procedures, search policies, precision levels, context strategies,
+verifiers, and people compete behind stable contracts. The system learns where
+additional cognition changes accepted outcomes and where durable reuse lowers
+lifecycle cost.
+
+Every saving remains reversible and challengeable. Route policies expire or
+requalify under distribution shift. Reusable artifacts carry assumptions and
+regressions. Failures update the route model only after adjudication. Evidence
+can narrow a route's competence without condemning the whole architecture.
+
+The destination is not minimum computation. It is maximum accepted useful work
+per constrained physical, cognitive, human, and institutional resources, with
+rights, authority, residuals, and recovery preserved.
+
+## Evidence That Would Change the Conclusion
+
+The hypothesis would gain bounded support if repeated, source-disjoint natural
+workloads showed that adaptive routing and reuse improve the joint frontier of
+accepted outcomes, unsafe effects, false refusals, latency, total cost, reviewer
+burden, repair, and recovery against always-maximal, always-cheapest, and strong
+monolithic-tools baselines.
+
+It would narrow or fail if gains disappear under complete accounting, vary
+unreliably across domains, depend on benchmark leakage, create damaging tail
+failures, or require more maintenance than they save. A monolithic baseline
+matching quality and control at lower cost would be decisive evidence for a
+simpler architecture in that regime.
+
+Evidence should remain local to the route and workload tested. A successful
+code-maintenance policy would not establish efficient scientific research,
+governance, or ASI.
+
+## What This Establishes
+
+Efficiency in a governed intelligence system is not synonymous with fewer
+tokens, a smaller model, faster decoding, or lower visible spend. It is accepted
+useful work divided by the complete lifecycle resources required to produce,
+verify, repair, maintain, and recover that work.
+
+The Efficient ASI Hypothesis predicts that routing and durable reuse can improve
+that ratio on repeated workloads with multiple adequate routes. It remains an
+argument and measurement contract. The current formal and executable artifacts
+show how to preserve finite candidate, cost, quality, fallback, and residual
+relationships; they do not show that the system is efficient.
+
+Even a genuinely cheaper route is valid only inside authority. If the small
+worker can widen access, the cache can outlive consent, or the router can bypass
+review, the apparent saving is a governance failure. The next chapter therefore
+moves from resource allocation to the harder question: who may cause which
+effect, and who owns the result when capability outruns permission?
+
+{{< include ../generated/unit-02-status.qmd >}}

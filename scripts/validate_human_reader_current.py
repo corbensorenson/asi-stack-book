@@ -41,6 +41,31 @@ UNIT_01_REQUIRED = [
     "It does not establish authentic approvals or receipts",
     "does not promote the chapter core",
 ]
+UNIT_02_REQUIRED = [
+    "## The Expensive Answer That Looked Cheap",
+    "## Accepted Useful Work",
+    "## Freeze Quality Before Comparing Cost",
+    "## The Complete Bill",
+    "## Cost Moves Through Time and Organizations",
+    "## Three Policies Compete",
+    "## Governance Rent",
+    "## A Route Ledger",
+    "## Reuse Is the Main Long-Term Bet",
+    "## Specialist Routes and Conditional Compute",
+    "## Compression Moves Burden",
+    "## Selective Deliberation",
+    "## Scaling Is a Variable, Not a Destiny",
+    "## One Repository Campaign",
+    "## Failure Modes",
+    "## The Strongest Objection",
+    "## What the Current Work Establishes",
+    "## From Minimum Ledger to Governed Route Economy",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "The live research chapter remains at `argument` support",
+    "These artifacts establish finite accounting and transition discipline",
+    "They do\nnot establish complete candidate search, accurate costs, calibrated quality",
+]
 UNIT_23_REQUIRED = [
     "## The Complete Bill",
     "## Speed Is a Qualified Route",
@@ -677,6 +702,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_01_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 1 missing required argument boundary: {fragment!r}")
+    unit_02 = next((unit for unit in units if unit.get("unit_id") == "unit-02"), None)
+    if unit_02 is None or unit_02.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 2 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_02["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_02_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 2 missing required argument boundary: {fragment!r}")
     unit_04 = next((unit for unit in units if unit.get("unit_id") == "unit-04"), None)
     if unit_04 is None or unit_04.get("state") != "target_length_reached_internal_review_pending":
         errors.append("Unit 4 has not reached its drafting target")
