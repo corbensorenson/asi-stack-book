@@ -1,0 +1,602 @@
+---
+title: "Perception and Observation Trust"
+unit_id: "unit-10"
+---
+
+## Four Reports About One Patch
+
+The repository change now reaches a controller that operates a low-energy lab
+gantry. The patch adjusts how the gantry slows near the end of its rail. Before
+the change can run, the team asks a seemingly simple question: did the intended
+controller reach the test and deployment environments?
+
+Four reports arrive.
+
+The file-system monitor says the controller source has the new hash. The test
+runner says the patched controller passed its simulation suite. A reviewer
+opens the generated report and confirms the same passing results. The
+deployment observer, however, says the running service still exposes the old
+controller identity.
+
+Three reports appear to support the patch and one contradicts them. A majority
+vote would accept the change. That would be a mistake.
+
+The test runner and reviewer both read artifacts produced from the same stale
+build cache. They are two reports but one causal source. The file-system monitor
+proves that a file exists at a particular location and revision, not that the
+build consumed it. The deployment observer may be stale too; its last sample
+could predate the rollout. None of the four reports is direct access to reality.
+Each is a measurement transformed by an instrument, clock, calibration,
+software path, model, and interpretation.
+
+This is perception in its broadest systems sense. Cameras, microphones, force
+sensors, logs, test runners, reviewers, APIs, and deployment probes all turn
+parts of the world into claims that another component may use. Their outputs
+can be useful without being true in every respect. They can agree because they
+are independent, because they share a cause, or because they share a mistake.
+They can disagree because one is wrong, because they observed different times,
+or because each measured a different property.
+
+An advanced AI stack cannot begin with “the sensor saw it” or “the tool
+reported success.” It needs to know which observation occurred, through which
+path, at what time, under which conditions, with which dependencies, and for
+which decision. Observation trust is not a permanent score attached to a
+source. It is a bounded permission to use a particular report for a particular
+purpose while preserving what remains uncertain.
+
+The gantry makes the stakes visible. A stale build report may waste a release.
+A stale position estimate can turn the same motor command from admissible to
+dangerous. The discipline is continuous across those cases, but the permitted
+latency and residual risk are not. As effects become faster and less
+reversible, the observation contract must become narrower.
+
+## A Report Is Not the World
+
+Every observation has at least three identities: the thing being observed, the
+instrument or process that produced the measurement, and the transformation
+that converted the measurement into a usable hypothesis.
+
+For the file-system report, the object is a path at a repository revision. The
+instrument is a file reader running in an environment. The transformation may
+be a hash function and a rule saying which hash denotes the candidate. For the
+test report, the object is not simply “the patch.” It is a build artifact,
+fixture set, simulator version, selected tests, environment, and execution. The
+reviewer's observation includes the report generation path and whatever source
+the reviewer actually inspected. The deployment probe has an endpoint,
+credential, sampling time, routing path, and rule for identifying the running
+controller.
+
+Those details do not prove any report correct. They establish what the report
+could mean. Without them, later consumers cannot distinguish a current
+observation from a cached one, an independent measurement from a repeated
+summary, or a claim about source code from a claim about deployed behavior.
+
+This is why provenance is necessary but insufficient. Provenance can show that
+a report came from the expected process. The expected process can still be
+miscalibrated, observe the wrong target, share a hidden dependency, or produce
+an answer outside its competence. A signed test result from the wrong build is
+authentically wrong.
+
+An observation record therefore carries identity and limits together. It names
+the variables requested by the consumer, the channels used, timestamps and
+clock model, calibration and pose where relevant, preprocessing and model
+versions, coverage and missingness, per-channel hypotheses, uncertainty,
+dependence assumptions, disagreement, freshness, permitted consumers,
+authority, cost, and residuals. The record should be small enough to use but
+specific enough to invalidate.
+
+The last property matters. If the build cache changes, the test observation may
+need to be rerun. If a camera moves, its old geometric calibration cannot
+silently follow. If a deployment probe changes endpoint or credential, its
+prior observation does not remain current by name alone. An observation that
+cannot say what would make it stale is not a durable input to consequential
+reasoning.
+
+## Observation Is Task-Relative
+
+The question “is this report trustworthy?” is usually underspecified.
+Trustworthy for what?
+
+The file-system hash may be adequate to prove that a source file was written.
+It is inadequate to prove that the test runner compiled that file. The
+simulation report may support a bounded claim about selected trajectories in a
+particular simulator. It is inadequate to prove that the physical gantry uses
+the candidate or that the real stopping distance improved. A deployment probe
+may identify the running artifact while saying nothing about the actuator,
+sensor, payload, or rail condition.
+
+An observation need begins with the consumer's decision. It names the variables
+required, consequence class, deadline, acceptable uncertainty, coverage, and
+maximum authority. A documentation suggestion can tolerate older repository
+state than a merge decision. A reversible simulation can tolerate more
+uncertainty than a command that moves mass near a person. The same report can
+be admissible for one use and rejected for another without contradiction.
+
+This task-relative boundary prevents confidence from becoming authority. A
+detector may be highly confident that an object is present; that does not grant
+permission to move toward it. A deployment probe may be certain which binary is
+running; that does not establish that the binary is safe. The observation layer
+supplies bounded evidence. Governance and control decide whether that evidence
+is sufficient for a proposed effect.
+
+The boundary also makes abstention meaningful. “Unknown” is not failure to
+produce a polished answer. It is the correct result when the available channels
+cannot satisfy the observation need. The system can request a fresh sample,
+change viewpoint, inspect another artifact, ask a person, reduce the action, or
+enter a safe hold. A useful perception system knows when additional sensing is
+worth its time, energy, privacy cost, and physical risk.
+
+## Agreement Is Not Independence
+
+Return to the test runner and reviewer. They agree because the reviewer reads
+the test runner's generated report. Counting them as two pieces of evidence
+would be obvious double counting. The harder cases are less visible.
+
+Two cameras can share glare, weather, power, clock drift, or a calibration
+service. A camera and lidar can have different device identities while sharing
+an incorrect pose transform. Two software agents can call different tools that
+read the same cache. Two human reviewers can rely on the same generated
+summary. Several models can inherit one training-set blind spot. Distinct
+channels do not imply distinct causes.
+
+The observation record therefore retains a dependence graph or, at minimum,
+declared common-cause groups. Agreeing channels with one known root should not
+be promoted as if they were independent confirmations. Disagreeing channels
+should not be averaged into a confident middle merely because fusion software
+requires one output.
+
+The current formal work behind this chapter proves a narrow version of that
+rule. In a finite authored pair model, two usable agreeing records with the same
+declared dependence root count as one independent evidence item. Distinct
+declared roots count as two inside that model, and disagreement remains
+disagreement. The lifecycle preserves exact observation, channel,
+calibration, clock, pose, dependence, hypothesis, consumer, residual, and
+version identities while rejecting stale or inflated handoffs.
+
+But even distinct declared roots are not enough. Camera and lidar can have
+separate device roots while sharing a scene obstruction or synchronization
+fault. The formal counterexample shows that the same pairwise summary can
+correspond to opposite global common-cause states. No classifier that sees only
+the pair labels can always recover the larger causal graph.
+
+That limitation is the useful result. The proof does not discover real causal
+dependence. It establishes why a consumer must not treat two labels as a
+universal guarantee of independence. Common-cause context, its version and
+expiry, and unresolved uncertainty must travel with the fused observation.
+
+For the gantry patch, the correct fusion is not “three votes to one.” It is
+closer to this: source file updated; test and review jointly support one stale
+build artifact; deployment identity conflicts with the intended candidate;
+current physical-controller identity unknown. That representation is less
+decisive and far more useful.
+
+## Calibration and Missingness Travel With the Result
+
+A confidence number is meaningful only under the conditions that gave it a
+relationship to outcomes. Calibration on one repository family, sensor suite,
+location, weather regime, payload, or population does not automatically survive
+a change in any of them.
+
+Suppose the clean-build test runner historically reports ninety percent
+confidence when nine of ten similarly scored patches later pass independent
+review. That relationship can break when the test selector changes, a new
+language enters the repository, generated tests dominate the suite, or the
+review process begins reading the runner's own explanations. The number remains
+well formed while its empirical meaning decays.
+
+Physical perception adds more ways to drift. A camera can move. A lens can
+foul. Temperature can alter a sensor. A new payload can change vibration and
+braking. A model update can preserve clean accuracy while changing confidence
+under glare or occlusion. Calibration should therefore carry its cohort,
+environment, instrument and model versions, collection period, uncertainty,
+expiry conditions, and the consumers for which it was evaluated.
+
+Missingness must remain visible for the same reason. If lidar drops out in
+rain, the remaining camera is not simply a smaller version of the normal sensor
+suite. The missing channel may be informative about the operating condition,
+and the fusion model may never have been qualified for that pattern. A clear
+camera view of the near rail does not cover the occluded far rail. A passing
+unit-test subset does not cover the skipped integration test.
+
+The observation record should preserve which channels were expected, present,
+late, corrupted, rejected, or never queried. It should say whether the fusion
+route was trained and calibrated for that pattern and whether uncertainty rose
+appropriately. Imputation can support a bounded decision, but it cannot rewrite
+an absent measurement as an observed one.
+
+This discipline also protects disagreement. A high fused score can coexist
+with one channel warning about a rare, consequential state. Consumers may need
+the fused estimate, the per-channel hypotheses, and the missingness pattern
+together. The point is not to force every downstream component to process raw
+sensor streams. It is to keep the information that determines whether the
+summary is fit for the proposed decision.
+
+## Disagreement Is a Routing Signal
+
+Fusion systems are often rewarded for producing one answer. Consequential
+systems sometimes need to preserve several.
+
+The deployment contradiction can arise from at least four hypotheses. The
+rollout never occurred. The deployment probe sampled before the rollout. The
+probe reached a different replica. Or the build itself used stale input. Each
+hypothesis suggests a different next observation.
+
+The system can query the deployment manifest by immutable digest, bypass the
+build cache, sample every replica, compare the running controller's self-report
+with an external artifact measurement, and rerun the simulation from the
+content-addressed candidate. These actions are *active observation*: the
+system chooses another measurement because its expected decision value exceeds
+the cost.
+
+Active observation is not free. A new camera view can move a robot or expose a
+person. A diagnostic query can consume credentials, reveal data, delay a
+deadline, or perturb the system being measured. Rebuilding from scratch costs
+compute and time. Asking a human consumes attention. The sensing action needs
+its own authority and budget; uncertainty does not authorize unlimited
+inspection.
+
+This produces a practical routing rule. Fresh, adequately covered, calibrated,
+and sufficiently independent evidence may support the named decision. Stale,
+contradictory, unsupported, or undercovered evidence routes to a fresh sample,
+alternative channel, narrower action, human review, abstention, degraded mode,
+or safe hold. The system should record which branch it took and why.
+
+Safe hold is a route, not a safety claim. It may be unreachable, too slow, or
+harmful in a particular environment. Its adequacy must be tested separately.
+The observation layer can identify that its own evidence is insufficient; it
+cannot prove that every downstream fallback will work.
+
+## Freshness Is Part of Meaning
+
+Some observations decay slowly. Others expire between sensing and action.
+
+A repository license record may remain useful for months if the dependency does
+not change. A deployment identity can become stale during a rollout. A gantry
+position estimate may be unusable milliseconds later. Freshness is therefore
+not one global time-to-live. It belongs to the variable, dynamics, consumer,
+consequence, and action horizon.
+
+Suppose the gantry controller receives a move command at tick five. The plant
+lease expires at tick eight. Its state was observed at tick four, with maximum
+permitted age two. Worst-case sensing, estimation, scheduling, and control
+latency must still fit inside the control period. The estimated state interval
+must lie inside the declared envelope, requested force and motion must remain
+within actuator limits, and the stopping-distance bound must fit inside the
+remaining margin.
+
+The symbolic command can remain identical while those conditions change. If
+latency grows beyond the period or stopping margin shrinks below the bound, the
+advanced command becomes inadmissible. A correct plan executed late can be the
+wrong action.
+
+This is where observation trust becomes physical control. The controller does
+not consume “position equals five” as timeless truth. It consumes a
+time-stamped estimate, uncertainty interval, estimator identity, plant model,
+clock, and age. Every control period rechecks whether that packet still supports
+the command. Missing sensing, clock disagreement, stale human-presence state,
+or lost stopping margin narrows authority toward a baseline controller, hold,
+or independent stop.
+
+The learned or deliberative controller cannot vote itself more time. Its
+confidence does not extend the lease. Urgency does not convert missing evidence
+into permission.
+
+## From Observation to Physical Effect
+
+A language model can propose a trajectory or explain why a move seems safe. A
+real-time controller must satisfy a different contract.
+
+The physical-control lease binds the exact plant and payload, workspace,
+maintenance state, estimator and dynamics model, control period, latency and
+jitter budgets, force, speed, energy, space and contact limits, human-presence
+mode, advanced controller, baseline controller, switching monitor, interlocks,
+stop path, exploration authority, effect observations, compensation duties,
+irreversible residuals, and expiry.
+
+These fields separate timescales and authorities. A slower model may propose a
+goal or recovery option. A local controller closes the fast loop. An
+independent monitor can filter, switch, hold, isolate, or stop. A mechanically
+simple interlock may own the fastest boundary. The slower component does not
+inherit the deadline or trust of the faster one.
+
+Control-barrier methods, constrained learning, and advanced-plus-baseline
+switching architectures provide strong ways to construct parts of this system.
+Their guarantees remain conditional. A barrier depends on its model, state
+estimate, safe set, feasibility, and timing. A baseline controller may share
+the failed sensor, power supply, or runtime. Switching can happen too late or
+oscillate. An emergency stop can leave residual energy or an unstable load.
+
+The architecture does not solve those engineering problems by naming them. It
+prevents a general AI capability claim from erasing them. A controller remains
+qualified only for a plant-specific operating envelope whose assumptions and
+fallback reachability are current.
+
+For the gantry, the patch cannot move from clean simulation to physical action
+because three reports looked favorable. The system must establish the running
+controller identity, rerun the candidate from current inputs, verify the state
+and timing envelope, confirm the independent stop path, and begin in a
+physically isolated low-energy setting. Human proximity is a separate evidence
+and authority lane.
+
+## Simulation Is an Instrument, Not a World
+
+The simulation report is still valuable. It can exercise thousands of
+trajectories, seed deadline misses, vary payloads, expose saturation, and test
+fallback branches that would be irresponsible to discover first on hardware.
+It is a development and falsification instrument.
+
+Its limits must be explicit. A simulator chooses dynamics, contact, friction,
+latency, sensor noise, human behavior, fault distributions, and omitted
+phenomena. A controller can exploit those choices. A digital twin can stay
+synchronized with a particular plant and fuse telemetry, maintenance history,
+and learned residuals, yet remain a model with a validity envelope rather than
+a more convenient reality.
+
+A twin or simulator record should name plant identity, geometry and dynamics
+version, synchronization delay, represented and omitted phenomena, operating
+region, validation episodes, fault library, uncertainty, sim-to-real
+residuals, expiry, and permitted consumers. Predicted and observed trajectories
+must later be compared. Growing residuals narrow the lease; they do not get
+smoothed away to preserve a successful simulation story.
+
+Progression should be staged: software in the loop, hardware in the loop,
+bounded empty-cell trials, isolated low-energy hardware, controlled
+interaction, and only then the intended operating envelope. Passing one stage
+does not transfer evidence to the next. It identifies which assumptions may now
+be tested under a slightly less artificial condition.
+
+## Effect Observation and Recovery
+
+Sending a command is not observing its effect. An actuator acknowledgment is
+not proof that the plant moved as intended. Stopping software is not restoring
+the physical world.
+
+A complete trace links the authorized action, observation packet, controller
+and lease, command, actuator response, measured motion, contact, human or
+environmental effects, interlock behavior, stop, stabilization, inspection,
+compensation, and remaining residual. The trace needs synchronized identities
+and clocks so a later reviewer can join a semantic event back to the raw window
+and responsible command.
+
+Physical logs often exist at several levels. Raw telemetry supports replay and
+new analyses but costs storage and privacy. Event logs retain contacts, slips,
+gate failures, holds, and recoveries but miss events their detectors never
+anticipated. Semantic traces are easier to reason over but can rewrite an
+ambiguous signal as fact. Skill traces name the active controller and authority
+lease but may hide the actual command path. Residual logs preserve prediction
+errors, unsafe margins, failed recovery, and unresolved effects but depend on a
+competent taxonomy.
+
+No representation should silently replace the others. A bounded raw ring
+buffer around anomalies, policy changes, interventions, and random audits can
+preserve enough context to challenge the summaries. Retention must still obey
+privacy, rights, and security constraints. “Log everything” is neither feasible
+nor legitimate.
+
+Recovery is likewise physical and inventory-specific. A stop may prevent the
+next command while leaving motion, energy, damage, calibration drift, a moved
+object, or human reliance behind. The system may need to stabilize, isolate
+energy, inspect, compensate, invalidate descendants, and requalify the plant
+before operation resumes. Loading the old controller is only one software step.
+
+## Failure Cases
+
+The most common failure is **truth laundering**: a source-authenticated or
+schema-valid report is described as true. Provenance establishes lineage, not
+accuracy, calibration, coverage, or correct interpretation.
+
+**Agreement inflation** counts several reports that share data, models, caches,
+clocks, calibration, operators, or environmental causes as independent votes.
+The apparent evidence grows while the causal information does not.
+
+**Disagreement erasure** averages a rare but decisive warning into a confident
+fused output. The consumer receives one convenient answer and loses the fact
+that a channel contradicted it.
+
+**Freshness laundering** replays an old observation after the sensor, model,
+environment, dependency, or consumer changed. A valid past report retains
+authority after its basis expired.
+
+**Coverage laundering** treats a clear measurement of one region or population
+as evidence about an occluded or missing one. Missingness becomes invisible
+rather than an observation result.
+
+**Active-sensing overreach** uses uncertainty to justify more cameras, queries,
+movement, credentials, data access, energy, or human attention than the
+decision warrants. Perception gains authority by claiming it needs one more
+look.
+
+**Deadline blindness** admits a command from a state estimate that was adequate
+when computed but stale when acted upon. Average latency hides the tail in
+which the safety margin disappears.
+
+**Fallback common mode** gives the advanced and baseline controllers different
+names while they share the sensor, estimator, power, runtime, or generated
+code that failed. Switching preserves the defect.
+
+**Simulation promotion** treats performance in a modeled plant as hardware or
+human-proximity evidence. Omitted contact, latency, wear, or behavior becomes
+an unrecorded transfer assumption.
+
+**Software-only recovery** restores a process and closes the incident while
+physical state, residual energy, damaged equipment, environmental change, or
+human effect remains unresolved.
+
+Each failure is a substitution: lineage for truth, count for independence,
+fusion for agreement, a timestamp for freshness, simulation for reality, or a
+stop command for recovery. The architecture earns its cost only if it makes
+those substitutions harder in real decisions.
+
+## The Strongest Simpler Baseline
+
+A competent perception and control system can be built without a universal
+observation ledger. Sensor drivers already carry timestamps and calibration.
+Robotics systems fuse state estimates, monitor deadlines, apply constraints,
+switch controllers, log telemetry, and expose emergency stops. Software teams
+already invalidate caches, pin artifacts, rerun tests, and compare deployment
+digests.
+
+The strongest baseline combines those practices well: task-specific fusion,
+standard calibration, robust state estimation, explicit timing analysis, a
+conventional controller, independent interlocks, canary deployment, and an
+incident process. A larger trust record may add latency and paperwork while
+giving false confidence that dependence or physical truth has been captured.
+
+That objection should govern the research program. The proposed fabric should
+survive only where it improves calibration, detects contradictions or common
+causes, preserves consequential disagreement, reduces unsafe admissions,
+chooses valuable active observations, catches deadline loss, improves fallback
+and recovery, or makes residual effects easier to own. Those benefits must be
+measured with task utility, false refusal, delay, energy, privacy, operator
+work, storage, nuisance intervention, wear, and total lifecycle cost.
+
+The record should be thinner where ordinary mechanisms already suffice. A
+static repository observation may need identity, source, time, dependency, and
+expiry. A physical control packet needs much more. Proportionality is part of
+observation trust because the sensing and recording machinery can itself cause
+harm.
+
+## What the Current Work Establishes
+
+The technical owners behind this unit have exact but narrow formal results.
+
+The observation model contains thirty-two Lean theorem declarations. Its
+independent consumer checks seven trace splits, forty-six exact-state lifecycle
+mutations, thirteen pair-classification controls, six terminal event kinds, and
+twelve same-summary/opposite-common-cause cases. These results establish
+behavior of authored finite records: correlated agreement is not promoted as
+independent, disagreement is retained, invalidated state is terminal, rejected
+events preserve modeled state, and pair labels cannot universally identify a
+larger common cause.
+
+The physical-control model contains forty-one Lean declarations across a
+finite lease admission model and simulation-trial lifecycle. The independent
+consumer rejects thirteen admission-axis mutations and 105 lifecycle
+mutations, checks timing and stopping-margin monotonicity, and preserves exact
+identity, receipt, stop, support, and external-effect boundaries through its
+authored trace.
+
+The numbers matter only inside those models. Every channel, calibration,
+dependence root, plant, estimator, safe envelope, timing bound, fallback, and
+effect field is authored. No multimodal campaign, natural consequential
+workload, physical plant trial, deadline test, stop-path test, sim-to-hardware
+transfer, human-proximity study, or independent safety campaign has run here.
+The models establish neither environmental truth, calibration, causal
+independence, useful fusion, physical safety, recovery, nor deployment
+readiness. Both core claims remain at `argument`.
+
+## From a Minimum Contract to an Observation Fabric
+
+The minimum honest implementation starts with two or three channels and one
+decision. For the repository case, use immutable file, clean-build test, and
+deployment observations. Record exact identity, clock, source, cache and build
+dependencies, per-channel hypotheses, disagreement, freshness, consumer, and
+expiry. Seed one stale cache, one missing channel, one benign disagreement, and
+one spoofed or substituted identity. Reject majority voting when the apparent
+votes share a cause.
+
+For physical control, begin in a low-energy simulator with one conventional
+controller, one advanced controller, an independent monitor, and a reachable
+stop. Seed stale state, latency, estimator error, actuator saturation,
+communication loss, and unavailable fallback. Keep every failed task, nuisance
+intervention, missed deadline, recovery attempt, and irreversible residual in
+the denominator. Hardware transfer waits for positive controls and a separate
+authority decision.
+
+The mature target is a substrate-neutral observation fabric spanning digital
+reports, cameras, audio, depth, thermal, inertial sensing, scientific
+instruments, and future modalities behind stable contracts. It estimates
+evidence dependence, chooses observations by expected decision value,
+preserves plural hypotheses, invalidates descendants after material change,
+and transfers calibrated uncertainty into world models and controllers without
+claiming open-world truth.
+
+Its physical-control counterpart hosts classical, learned,
+model-predictive, and hybrid controllers behind plant-specific leases while
+keeping high-rate safety local and independently enforceable. It predicts when
+fallback is becoming unreachable, coordinates active perception with remaining
+margin, reconciles commanded and observed effects, and distinguishes stopping,
+stabilization, compensation, repair, and irreversible residuals.
+
+This mature system remains a research target. It must be compared against
+competent unimodal and multimodal fusion, ordinary robust estimation,
+conventional control, constraint filters, switching architectures, and the
+best standard engineering process under matched tasks and resources. Simpler
+systems that deliver equal calibration, contradiction detection, latency,
+fallback, and recovery at lower cost should replace the extra machinery.
+
+## The Strongest Objection
+
+Provenance fields cannot guarantee independence, calibration, or physical
+truth. They may merely document correlated error in exquisite detail.
+
+That is correct. A dependence graph can omit the common cause. A calibration
+record can be stale or fraudulent. A safe envelope can model the wrong plant.
+An independent monitor can share a hidden dependency. A complete receipt can
+faithfully describe a bad decision.
+
+The architecture must therefore avoid presenting record completeness as
+reality grounding. Records create challenge points. They let another evaluator
+ask whether two channels really differ, whether clocks align, whether coverage
+matches the consumer, whether the fallback remains reachable, and whether the
+observed effect agrees with the command. They make assumptions visible enough
+to test and invalidate. They do not make the assumptions true.
+
+If the machinery does not improve downstream decisions, the answer is not a
+larger schema. It is a thinner system or a different sensing and control
+design.
+
+## Evidence That Would Change the Conclusion
+
+Simpler fusion and control systems with equal calibration, contradiction
+detection, selective risk, latency, task value, fallback availability,
+recovery, privacy, and cost would justify removing much of the trust model. The
+proposal should narrow if active observation rarely changes decisions, if
+independence records fail to predict correlated error, if uncertainty packets
+are ignored downstream, or if safe holds and fallbacks are unavailable when
+needed.
+
+Positive evidence would require natural and synthetic corruptions, missing
+channels, time and pose faults, common-cause failures, benign near-neighbors,
+positive controls, complete denominators, and independently owned ground truth.
+The physical lane would require measured plants, schedulers, actuators,
+fallbacks, stop paths, effects, and recovery traces, progressing from
+simulation to isolated low-energy hardware without implying human-proximity
+authority.
+
+The joint outcome must include useful decisions and safe effects, not only
+record validity. A system that always abstains may avoid some errors while
+failing its purpose. A system that acts quickly may gain utility while hiding
+rare harm. Calibration, decision value, false admission, false refusal,
+deadline behavior, physical margin, residual harm, energy, privacy, operator
+burden, and lifecycle cost must remain visible together.
+
+## What This Establishes
+
+Observation is not the passive front end of intelligence. It is a governed
+transition from signals and reports into bounded evidence that another layer
+may use.
+
+The file-system monitor, test runner, reviewer, and deployment probe do not
+become four votes merely because four messages arrived. Their identities,
+times, targets, transformations, dependencies, coverage, disagreement, and
+freshness determine what can be inferred. When evidence is insufficient, the
+system asks for a better observation or narrows the action. It does not promote
+uncertainty into truth because a decision is waiting.
+
+Physical control makes the same principle urgent. The admissibility of a
+command depends on current state, observation age, latency, plant envelope,
+actuator limits, stopping margin, human presence, and an independently
+reachable fallback. The same symbolic action can become invalid one tick later.
+Stopping software is not physical recovery, and a simulation is not the plant.
+
+This discipline does not guarantee reality. It preserves the path by which a
+claim about reality was formed and the conditions under which that claim may be
+used. That is enough to make contradiction, decay, common causes, and failed
+effects governable rather than invisible.
+
+The next unit takes these bounded observations and asks how a system organizes
+them into predictions, causal alternatives, and revisable beliefs without
+confusing a plausible internal world with the world itself.
+
+{{< include ../generated/unit-10-status.qmd >}}

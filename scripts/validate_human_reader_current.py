@@ -151,6 +151,27 @@ UNIT_09_REQUIRED = [
     "The field holds the\npromise. The implementation is one defeasible attempt to keep it",
     "No finite proof, schema, fixture, or clean local rollback can answer that\nquestion alone",
 ]
+UNIT_10_REQUIRED = [
+    "## Four Reports About One Patch",
+    "## A Report Is Not the World",
+    "## Observation Is Task-Relative",
+    "## Agreement Is Not Independence",
+    "## Calibration and Missingness Travel With the Result",
+    "## Disagreement Is a Routing Signal",
+    "## Freshness Is Part of Meaning",
+    "## From Observation to Physical Effect",
+    "## Simulation Is an Instrument, Not a World",
+    "## Effect Observation and Recovery",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Contract to an Observation Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "The test runner and reviewer both read artifacts produced from the same stale\nbuild cache",
+    "The models establish neither environmental truth, calibration, causal\nindependence, useful fusion, physical safety, recovery, nor deployment\nreadiness",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -251,6 +272,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_09_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 9 missing required argument boundary: {fragment!r}")
+    unit_10 = next((unit for unit in units if unit.get("unit_id") == "unit-10"), None)
+    if unit_10 is None or unit_10.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 10 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_10["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_10_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 10 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]
