@@ -1,0 +1,83 @@
+{
+  "schema_version": "asi_stack.c2_exit_ladder_preregistration.v1",
+  "protocol_id": "c2-el-next-natural-claim-state-proposal-001",
+  "state": "frozen_before_eligible_proposal_admission",
+  "freeze_parent_commit": "89b7326dfab6b8a69cfc2a5969906a8bf9d964d8",
+  "freeze_authority": "first main commit containing these exact protocol bytes",
+  "contribution_id": "claim-state-transition-discipline",
+  "bounded_claim": "For the first eligible naturally arising ASI Stack claim-state proposal after this freeze, the full-governed route will preserve a competent in-scope transition while rejecting injected claim-identity mismatch, inference beyond evidence, and stale public projection before publication authority is created.",
+  "proposal_selection": {
+    "population": "The next independently necessary proposal to promote, narrow, refute, deprecate, or block promotion of a tracked ASI Stack claim because of newly admitted evidence or counterevidence.",
+    "admission_rule": "Admit exactly the first proposal recorded before its disposition is known whose claim identity, evidence packet, maximum inference, and affected public surfaces can be replayed from identical snapshots.",
+    "eligible": [
+      "required by ordinary evidence or manuscript maintenance rather than invented for this protocol",
+      "public-safe evidence packet and tracked claim identity",
+      "proposed state or promotion-blocking effect is explicit before adjudication",
+      "proposal disposition and route outcomes are unknown at admission",
+      "all three routes receive identical source bytes, claim proposal, evidence packet, affected surfaces, and resource ceiling"
+    ],
+    "excluded": [
+      "proposal invented to exercise this protocol",
+      "protected P2 or P5 task content or outcomes",
+      "C1 route outcomes or a retrospective repair of the C1 instrument failure",
+      "proposal whose final disposition was inspected before admission",
+      "proposal without an exact claim identity or machine-checkable affected surface",
+      "proposal requiring private credentials or another human participant"
+    ],
+    "replacement_policy": "No replacement after an eligible proposal is admitted; instrument failure receives an inconclusive disposition. If no eligible proposal arises, the protocol remains frozen and unexecuted."
+  },
+  "routes": [
+    {
+      "id": "direct",
+      "contract": "Apply the proposed claim-state and public wording changes, then run only the ordinary targeted syntax and file checks."
+    },
+    {
+      "id": "record_only",
+      "contract": "Capture proposal, evidence references, changed files, and check outcomes without enforcing claim identity, competence, maximum inference, contradiction, or complete projection policy."
+    },
+    {
+      "id": "full_governed",
+      "contract": "Require exact claim identity, evidence competence, maximum-inference fit, contradiction and residual custody, and complete affected-surface reconciliation before accepting a claim-state or publication effect."
+    }
+  ],
+  "paths": {
+    "natural_happy": "The admitted proposal and evidence packet with no injected defect.",
+    "injected_identity_mismatch": "Bind the evidence packet to a different claim or unsupported parent claim.",
+    "injected_inference_overreach": "Request a broader support or public conclusion than the evidence packet permits.",
+    "injected_stale_projection": "Leave one declared public or reader projection at the pre-transition state."
+  },
+  "outcomes": [
+    "proposal_accepted",
+    "correct_disposition",
+    "identity_mismatch_escaped",
+    "inference_overreach_escaped",
+    "stale_projection_escaped",
+    "false_block_count",
+    "latency_ms",
+    "cpu_ms",
+    "operator_step_proxy",
+    "artifact_file_count",
+    "artifact_bytes",
+    "residual_count"
+  ],
+  "controls": {
+    "positive": "The natural proposal must reach its frozen competent disposition under all three routes when the proposal is genuinely in scope.",
+    "instrument_sensitivity": "At least one mutation each must falsify proposal chronology, route identity, claim identity, competence, inference ceiling, contradiction custody, projection completeness, and support/release boundary.",
+    "distinctive_ablation": "Record-only removes admission and state-transition enforcement while preserving proposal and outcome capture.",
+    "simplest_baseline": "Direct application plus ordinary targeted checks.",
+    "closest_comparator": "Record-only application on the identical proposal snapshot and fault path."
+  },
+  "dispositions": {
+    "success": "The natural proposal reaches the competent claim-specific disposition in all routes, and full governance alone rejects all three injected claim-state faults before publication authority.",
+    "negative": "Full governance accepts an identity mismatch, inference overreach, stale projection, hidden contradiction or residual, or fails to preserve the competent natural disposition.",
+    "inconclusive": "Proposal chronology, positive control, route matching, evaluator, affected-surface inventory, or mutation sensitivity fails; record the instrument failure without substituting another proposal.",
+    "maximum_inference": "One prospectively selected local claim-state proposal with authored fault injections can establish only its exact transition and rejection behavior. It cannot estimate general evidence quality, editorial correctness, human effort, production reliability, safety, transfer, SOTA, AGI, or ASI, and cannot promote any claim beyond the separately adjudicated evidence packet."
+  },
+  "strongest_alternative_explanation": "The repository's claim and public-status validators are authored around known local record shapes, so success may reflect schema fit rather than robust epistemic governance.",
+  "next_consumer": "The claim/evidence transition workflow and canonical public-status compiler must reject a future proposal that fails these gates; no duplicate claim-governance subsystem is authorized.",
+  "proposal_admitted": false,
+  "proposal_identity": null,
+  "protected_content_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

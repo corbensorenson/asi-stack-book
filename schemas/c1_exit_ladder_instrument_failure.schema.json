@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C1-EL terminal instrument failure",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "protocol_id", "admission_id",
+    "source_commit", "state", "command", "exit_code", "failure_stage",
+    "exception_type", "exception_message", "failing_source_line",
+    "result_file_created", "route_outcomes_recoverable_from_durable_artifact",
+    "trial_function_return_count_inferred_from_trace_position",
+    "trial_outcome_claimed", "disposition",
+    "replacement_or_rerun_allowed_for_this_prospective_task", "repair",
+    "maximum_inference", "protected_content_opened", "support_state_effect",
+    "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.c1_exit_ladder_instrument_failure.v1"},
+    "result_id": {"const": "c1-el-quarto-render-db-open-001-instrument-failure"},
+    "protocol_id": {"const": "c1-el-governed-cognition-next-natural-maintenance-defect-001"},
+    "admission_id": {"const": "c1-el-quarto-render-db-open-001"},
+    "source_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+    "state": {"const": "inconclusive_instrument_failure_after_trial_execution_before_result_custody"},
+    "command": {"const": "python3 scripts/run_c1_exit_ladder.py"},
+    "exit_code": {"const": 1},
+    "failure_stage": {"const": "result_record_construction_after_all_execute_trial_calls_returned"},
+    "exception_type": {"const": "NameError"},
+    "exception_message": {"const": "name 'false' is not defined"},
+    "failing_source_line": {"type": "string", "minLength": 1},
+    "result_file_created": {"const": false},
+    "route_outcomes_recoverable_from_durable_artifact": {"const": false},
+    "trial_function_return_count_inferred_from_trace_position": {"const": 12},
+    "trial_outcome_claimed": {"const": false},
+    "disposition": {"const": "inconclusive"},
+    "replacement_or_rerun_allowed_for_this_prospective_task": {"const": false},
+    "repair": {
+      "type": "object", "additionalProperties": false,
+      "required": ["state", "change", "prospective_result_recovered"],
+      "properties": {
+        "state": {"const": "runner_corrected_for_future_nonprospective_or_newly_preregistered_consumers_only"},
+        "change": {"type": "string", "minLength": 1},
+        "prospective_result_recovered": {"const": false}
+      }
+    },
+    "maximum_inference": {"type": "string", "minLength": 1},
+    "protected_content_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}

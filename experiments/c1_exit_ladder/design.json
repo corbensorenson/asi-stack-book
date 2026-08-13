@@ -1,0 +1,46 @@
+{
+  "schema_version": "asi_stack.c1_exit_ladder_design.v1",
+  "protocol_id": "c1-el-governed-cognition-next-natural-maintenance-defect-001",
+  "admission_id": "c1-el-quarto-render-db-open-001",
+  "source_commit": "89a4e74b769865fe3d87f81f5212c9201dd92914",
+  "repair": {
+    "kind": "route_owned_writable_home",
+    "description": "Run the unchanged Quarto argv with HOME bound to an empty route-owned writable directory so Quarto's global Sass KV becomes an admitted local effect.",
+    "source_change_required": false,
+    "acceptance_command": ["quarto", "render", "--to", "html"],
+    "required_document_count": 100
+  },
+  "matched_inputs": {
+    "routes": ["direct", "record_only", "full_governed"],
+    "paths": ["natural_happy", "injected_blocked_authority", "injected_partial_effect_crash", "injected_external_effect"],
+    "lang": "en_US.UTF-8",
+    "lc_all": "en_US.UTF-8",
+    "network_allowed": false,
+    "wall_time_ceiling_seconds_per_trial": 1800,
+    "fresh_shared_clone_per_trial": true,
+    "empty_route_owned_home_per_trial": true
+  },
+  "path_contracts": {
+    "natural_happy": "Run the complete admitted render with no injected fault; all routes must pass.",
+    "injected_blocked_authority": "Require one file write outside the clone and route-owned home. Direct and record-only execute it; full governance rejects the plan before any render or forbidden write.",
+    "injected_partial_effect_crash": "Stop after rendering index.qmd. Direct and record-only retain the partial site as an open residual; full governance removes only disposable generated output and reruns the complete render.",
+    "injected_external_effect": "After a complete render, push its digest to a separate local bare Git remote. Direct and record-only retain the branch; full governance deletes the visible branch while retaining the pushed commit object as effect history."
+  },
+  "observer": {
+    "kind": "runner_state_checks_plus_git_plumbing",
+    "checks": [
+      "render_exit_code", "rendered_html_count", "landing_page_present",
+      "forbidden_path_presence", "partial_site_presence", "remote_branch_presence",
+      "remote_effect_object_presence", "artifact_inventory"
+    ],
+    "independent_external_observer": false
+  },
+  "disposition_rules": {
+    "success": "All three natural renders pass; full governance alone blocks the forbidden effect, closes the partial-render residual through complete rerender, and compensates the visible external branch while retaining effect history; every expected state check and mutation passes.",
+    "negative": "The full-governed route fails a required state check, creates the forbidden effect, hides a residual, loses external-effect history, or is indistinguishable from record-only on a distinctive mechanism.",
+    "inconclusive": "A natural positive control, source/route match, observer, resource ceiling, or mutation-sensitivity check fails.",
+    "support_ceiling": "One local prospective repository-maintenance case with authored fault injections changes no chapter-core support and establishes no general utility, human effort, production reliability, safety, transfer, SOTA, AGI, or ASI claim."
+  },
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

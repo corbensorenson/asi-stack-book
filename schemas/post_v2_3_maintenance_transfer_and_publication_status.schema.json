@@ -46,7 +46,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v34"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v35"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -64,7 +64,7 @@
       "const": "active"
     },
     "current_priority": {
-      "const": "C1-EL"
+      "const": "C2-EL"
     },
     "execution_readiness": {
       "type": "object",
@@ -92,13 +92,13 @@
       ],
       "properties": {
         "state": {
-          "const": "c1_exit_ladder_task_admitted_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned"
+          "const": "c2_exit_ladder_frozen_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned"
         },
         "headline_priority": {
-          "const": "C1-EL"
+          "const": "C2-EL"
         },
         "headline_priority_state": {
-          "const": "quarto_render_defect_admitted_before_solution_investigation"
+          "const": "prospective_claim_state_exit_ladder_frozen_before_proposal_admission"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -113,7 +113,7 @@
           "const": false
         },
         "immediate_object_level_packet": {
-          "const": "C1-EL-quarto-render-db-open-001"
+          "const": "C2-EL-claim-state-proposal-001"
         },
         "immediate_empirical_packet": {
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
@@ -207,6 +207,9 @@
         "defended_contribution_count",
         "contribution_exit_ladder_count",
         "contribution_exit_ladder_state",
+        "completed_exit_ladder_attempt_id",
+        "completed_exit_ladder_disposition",
+        "completed_exit_ladder_result_path",
         "active_exit_ladder_protocol_path",
         "active_exit_ladder_admission_path",
         "active_exit_ladder_task_identity",
@@ -248,7 +251,7 @@
           ]
         },
         "headline_packet": {
-          "const": "C1-EL-quarto-render-db-open-001"
+          "const": "C2-EL-claim-state-proposal-001"
         },
         "concurrent_book_packet": {
           "const": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration"
@@ -275,17 +278,26 @@
         "contribution_exit_ladder_state": {
           "const": "complete_three_exact_ladders_no_transition_effect"
         },
+        "completed_exit_ladder_attempt_id": {
+          "const": "c1-el-quarto-render-db-open-001"
+        },
+        "completed_exit_ladder_disposition": {
+          "const": "inconclusive_instrument_failure_no_replacement"
+        },
+        "completed_exit_ladder_result_path": {
+          "const": "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json"
+        },
         "active_exit_ladder_protocol_path": {
-          "const": "experiments/c1_exit_ladder/preregistration.json"
+          "const": "experiments/c2_exit_ladder/preregistration.json"
         },
         "active_exit_ladder_admission_path": {
-          "const": "experiments/c1_exit_ladder/admission.json"
+          "type": "null"
         },
         "active_exit_ladder_task_identity": {
-          "const": "quarto-clean-html-render-database-open-failure"
+          "type": "null"
         },
         "active_exit_ladder_task_admitted": {
-          "const": true
+          "const": false
         },
         "promotion_quota": {
           "const": false

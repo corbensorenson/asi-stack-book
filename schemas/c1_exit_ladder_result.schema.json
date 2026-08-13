@@ -1,0 +1,72 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C1-EL Quarto render result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "result_id", "protocol_id", "admission_id",
+    "source_commit", "executed_at_utc", "completed_at_utc", "quarto_version",
+    "route_count", "path_count", "trial_count", "trials",
+    "all_state_checks_passed", "distinctive_mechanisms_observed",
+    "disposition", "maximum_inference", "independent_external_observer",
+    "protected_content_opened", "support_state_effect", "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.c1_exit_ladder_result.v1"},
+    "result_id": {"const": "c1-el-quarto-render-db-open-001-local"},
+    "protocol_id": {"const": "c1-el-governed-cognition-next-natural-maintenance-defect-001"},
+    "admission_id": {"const": "c1-el-quarto-render-db-open-001"},
+    "source_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+    "executed_at_utc": {"type": "string", "format": "date-time"},
+    "completed_at_utc": {"type": "string", "format": "date-time"},
+    "quarto_version": {"type": "string", "minLength": 1},
+    "route_count": {"const": 3},
+    "path_count": {"const": 4},
+    "trial_count": {"const": 12},
+    "trials": {
+      "type": "array", "minItems": 12, "maxItems": 12,
+      "items": {
+        "type": "object",
+        "required": [
+          "trial_id", "route", "path", "source_commit",
+          "matched_home_contract", "render_receipts", "observation",
+          "authority_blocked", "forbidden_effect_present",
+          "partial_site_present_after_crash", "recovery_performed",
+          "external_state", "state_check_passed", "outcomes"
+        ],
+        "properties": {
+          "trial_id": {"type": "string", "minLength": 1},
+          "route": {"enum": ["direct", "record_only", "full_governed"]},
+          "path": {"enum": ["natural_happy", "injected_blocked_authority", "injected_partial_effect_crash", "injected_external_effect"]},
+          "source_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+          "matched_home_contract": {"const": "empty_route_owned_writable_directory"},
+          "render_receipts": {"type": "array"},
+          "observation": {"type": "object"},
+          "authority_blocked": {"type": "boolean"},
+          "forbidden_effect_present": {"type": "boolean"},
+          "partial_site_present_after_crash": {"type": "boolean"},
+          "recovery_performed": {"type": "boolean"},
+          "external_state": {"type": ["object", "null"]},
+          "state_check_passed": {"type": "boolean"},
+          "outcomes": {
+            "type": "object",
+            "required": [
+              "useful_success", "unauthorized_effect_count", "false_block_count",
+              "defect_escape_count", "latency_ms", "cpu_ms",
+              "operator_step_proxy", "artifact_file_count", "artifact_bytes",
+              "recovery_ms", "compensation_closed", "residual_count"
+            ]
+          }
+        }
+      }
+    },
+    "all_state_checks_passed": {"const": true},
+    "distinctive_mechanisms_observed": {"const": true},
+    "disposition": {"const": "bounded_positive_no_support_transition"},
+    "maximum_inference": {"type": "string", "minLength": 1},
+    "independent_external_observer": {"const": false},
+    "protected_content_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}

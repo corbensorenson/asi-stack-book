@@ -47,6 +47,8 @@ P5_NATURAL_CAMPAIGN = ROOT / "experiments/governed_operations_argument_exit/prer
 P5_NATURAL_QUALIFICATION = ROOT / "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json"
 C1_EXIT_PROTOCOL = ROOT / "experiments/c1_exit_ladder/preregistration.json"
 C1_EXIT_ADMISSION = ROOT / "experiments/c1_exit_ladder/admission.json"
+C1_EXIT_FAILURE = ROOT / "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json"
+C2_EXIT_PROTOCOL = ROOT / "experiments/c2_exit_ladder/preregistration.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
@@ -243,6 +245,8 @@ def inputs() -> dict:
         "p5_natural_qualification": load(P5_NATURAL_QUALIFICATION),
         "c1_exit_protocol": load(C1_EXIT_PROTOCOL),
         "c1_exit_admission": load(C1_EXIT_ADMISSION),
+        "c1_exit_failure": load(C1_EXIT_FAILURE),
+        "c2_exit_protocol": load(C2_EXIT_PROTOCOL),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
@@ -1208,20 +1212,20 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if status.get("current_priority") != "C1-EL":
-        out.append("roadmap status does not expose the first contribution exit-ladder attempt as current priority")
-    if execution_readiness.get("state") != "c1_exit_ladder_task_admitted_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
+    if status.get("current_priority") != "C2-EL":
+        out.append("roadmap status does not expose the second contribution exit-ladder attempt as current priority")
+    if execution_readiness.get("state") != "c2_exit_ladder_frozen_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
         out.append("execution board does not preserve the active exit-ladder/editorial work, consumer-gated P4.1, P2 resource block, and separate P7.3 ownership")
-    if execution_readiness.get("headline_priority") != "C1-EL" or execution_readiness.get("headline_priority_state") != "quarto_render_defect_admitted_before_solution_investigation":
-        out.append("execution board obscures the admitted prospective governed-cognition exit-ladder task")
+    if execution_readiness.get("headline_priority") != "C2-EL" or execution_readiness.get("headline_priority_state") != "prospective_claim_state_exit_ladder_frozen_before_proposal_admission":
+        out.append("execution board obscures the frozen prospective claim-state exit-ladder attempt")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
     if execution_readiness.get("structural_admission_freeze") is not False:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
-    if execution_readiness.get("immediate_object_level_packet") != "C1-EL-quarto-render-db-open-001":
-        out.append("execution board does not activate the admitted Quarto render task")
+    if execution_readiness.get("immediate_object_level_packet") != "C2-EL-claim-state-proposal-001":
+        out.append("execution board does not activate the prospective claim-state task")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
     if execution_readiness.get("immediate_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
@@ -1242,8 +1246,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board structural-resume gate set drifted")
 
     yield_amendment = status.get("object_level_yield_amendment", {})
-    if yield_amendment.get("headline_packet") != "C1-EL-quarto-render-db-open-001":
-        out.append("object-level yield amendment lost the admitted governed-cognition task")
+    if yield_amendment.get("headline_packet") != "C2-EL-claim-state-proposal-001":
+        out.append("object-level yield amendment lost the prospective claim-state task")
     if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
         out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
@@ -1255,14 +1259,21 @@ def errors(data: dict) -> list[str]:
         out.append("three-contribution exit-ladder custody drifted")
     if (
         yield_amendment.get("active_exit_ladder_protocol_path")
-        != "experiments/c1_exit_ladder/preregistration.json"
-        or yield_amendment.get("active_exit_ladder_admission_path")
-        != "experiments/c1_exit_ladder/admission.json"
-        or yield_amendment.get("active_exit_ladder_task_identity")
-        != "quarto-clean-html-render-database-open-failure"
-        or yield_amendment.get("active_exit_ladder_task_admitted") is not True
+        != "experiments/c2_exit_ladder/preregistration.json"
+        or yield_amendment.get("active_exit_ladder_admission_path") is not None
+        or yield_amendment.get("active_exit_ladder_task_identity") is not None
+        or yield_amendment.get("active_exit_ladder_task_admitted") is not False
     ):
-        out.append("active C1-EL protocol or admitted-task identity drifted")
+        out.append("active C2-EL protocol or closed proposal-admission state drifted")
+    if (
+        yield_amendment.get("completed_exit_ladder_attempt_id")
+        != "c1-el-quarto-render-db-open-001"
+        or yield_amendment.get("completed_exit_ladder_disposition")
+        != "inconclusive_instrument_failure_no_replacement"
+        or yield_amendment.get("completed_exit_ladder_result_path")
+        != "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json"
+    ):
+        out.append("terminal C1-EL instrument-failure custody drifted")
     c1_protocol = data["c1_exit_protocol"]
     if (
         c1_protocol.get("protocol_id")
@@ -1290,6 +1301,28 @@ def errors(data: dict) -> list[str]:
         or c1_admission.get("release_effect") != "none"
     ):
         out.append("C1-EL admission chronology, task identity, or no-effect boundary drifted")
+    c1_failure = data["c1_exit_failure"]
+    if (
+        c1_failure.get("state")
+        != "inconclusive_instrument_failure_after_trial_execution_before_result_custody"
+        or c1_failure.get("disposition") != "inconclusive"
+        or c1_failure.get("replacement_or_rerun_allowed_for_this_prospective_task")
+        is not False
+        or c1_failure.get("trial_outcome_claimed") is not False
+        or c1_failure.get("support_state_effect") != "none"
+        or c1_failure.get("release_effect") != "none"
+    ):
+        out.append("C1-EL terminal failure was rerun, laundered, or promoted")
+    c2_protocol = data["c2_exit_protocol"]
+    if (
+        c2_protocol.get("protocol_id") != "c2-el-next-natural-claim-state-proposal-001"
+        or c2_protocol.get("state") != "frozen_before_eligible_proposal_admission"
+        or c2_protocol.get("proposal_admitted") is not False
+        or c2_protocol.get("protected_content_opened") is not False
+        or c2_protocol.get("support_state_effect") != "none"
+        or c2_protocol.get("release_effect") != "none"
+    ):
+        out.append("C2-EL prospective freeze opened proposal, protected, support, or release state")
     if yield_amendment.get("reference_chapter_count") != len(manifest_ids) or yield_amendment.get("new_chapter_authorized") is not False:
         out.append("scope-compression amendment changed reference truth or silently authorized a chapter")
     if yield_amendment.get("fifteen_minute_route_required") is not True or yield_amendment.get("task_recipe_count") != 3:
@@ -3140,7 +3173,7 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, P5-U1 terminal at retrospective scope, active C1-EL with P4.1/M4 consumer-gated; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, P5-U1 terminal at retrospective scope, C1-EL terminal inconclusive without replacement, active C2-EL with P4.1/M4 consumer-gated; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "

@@ -2,7 +2,7 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-08-12
+Substantively revised: 2026-08-13
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
@@ -31,8 +31,8 @@ the semantic-custody gate stays separate under a dated amendment rather than
 being forced through to satisfy a number.
 
 This is the active P7 book packet, `P7.1-EM`. It runs concurrently with the
-first contribution exit-ladder attempt, `C1-EL`, now admitted as
-`C1-EL-quarto-render-db-open-001`, under the existing two-slot
+second contribution exit-ladder attempt, `C2-EL`, frozen before proposal
+admission as `C2-EL-claim-state-proposal-001`, under the existing two-slot
 WIP limit. It does not reopen the terminal P5-U1 retrospective slice, open an empirical denominator, authorize new proof
 families, require external-human prepublication review, or change claim
 support. The current 22-unit product remains a historical candidate until the
@@ -529,6 +529,27 @@ observation is explicitly excluded because its likely mechanism was inspected
 before task admission. Protected content remains closed and no support or
 release state moves.
 
+**2026-08-13 terminal C1 disposition.** The preregistered runner invoked all
+twelve trial functions, then raised a Python `NameError` while constructing
+the result object because one Boolean used JSON spelling. No result file was
+created, and the route outcomes are not recoverable from a durable artifact.
+The attempt is therefore inconclusive for instrument failure, with no route
+outcome, support effect, release effect, replacement, or rerun. The exact
+failure and the prospective ceiling are preserved in
+`experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json`; the
+runner correction is available only to future nonprospective uses or a newly
+preregistered attempt.
+
+**2026-08-13 C2 prospective freeze.** The next exit-ladder attempt is frozen
+at `experiments/c2_exit_ladder/preregistration.json` before proposal admission.
+It selects the first independently necessary post-freeze claim-state proposal
+and compares direct, record-only, and full-governed routes across one natural
+path plus identity-mismatch, inference-overreach, and stale-projection fault
+paths. The protocol fixes twelve joint outcomes, forbids proposal replacement,
+and keeps protected content, support, and release state closed. The terminal
+C1 failure cannot be backfilled as the C2 proposal because it was known before
+this freeze.
+
 ### Scope compression and practical entry surface
 
 The 87-chapter research graph remains the lossless technical ownership surface.
@@ -896,10 +917,11 @@ The structural window is therefore closed again.
 
 P2 remains the protected natural empirical headline, but it is not the current
 executable priority while its infrastructure gates are closed. P5-U1 is
-terminal at its retrospective implementation-and-reader scope. `C1-EL`, the
-first prospective governed-cognition exit-ladder attempt, has admitted the
-natural EM4 Quarto database-open render failure before solution inspection and is the active
-object-level packet, with the independent P7.1 narrative and fifteen-minute
+terminal at its retrospective implementation-and-reader scope. `C1-EL` is
+terminal and inconclusive after an instrument failure, with no replacement or
+route claim. `C2-EL`, the second prospective claim-state exit-ladder attempt,
+is frozen before proposal admission and is the active object-level packet,
+with the independent P7.1 narrative and fifteen-minute
 utility route as the active book packet. P4.1 is consumer-gated: it may proceed
 only when P5-U1 or one of
 the three contribution exit ladders names the theorem's runtime, evidence, or
@@ -928,6 +950,8 @@ remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
+| Governed-cognition exit ladder - terminal inconclusive | `C1-EL-quarto-render-db-open-001` | Admitted prospectively after the ordinary EM4 render failed, then terminated when the result writer raised after the trial-function phase | Preserve the instrument-failure receipt, no-rerun rule, no route outcome, and zero support/release effect. Do not reuse the known task as prospective evidence. |
+| Claim-state exit ladder - frozen | `C2-EL-claim-state-proposal-001` | Admit only the first independently necessary post-freeze claim-state proposal before its disposition is known | Run the matched direct, record-only, and full-governed comparison only after admission; retain natural and three fault paths, twelve outcomes, mutation sensitivity, and the one-case inference ceiling. |
 | Object-level utility — implementation and reader route terminal; prospective evidence open | `P5-U1-minimal-useful-governed-vertical-slice` | The 2026-08-13 retrospective replay runs one real Human Reader source-link repair through direct, record-only, and fully governed routes across happy, blocked-authority, crash/recovery, and external-effect compensation paths; its first-class Human Reader route includes the command, three recipes, and implemented-versus-proposed boundary; protected P2 content remains closed | Preserve the 12/12 fresh-workspace result, seven rejecting record mutations, reader route, and honest retrospective ceiling. Route broader usefulness, natural performance, human effort, production, safety, and transfer only through the prospective natural campaign. |
 | Existing-book integration — terminal | `P6.5-R16-A-six-chapter-atom-pack` | Completed 2026-07-26 | Thirty reviewed atoms across six chapters, six digest-bound review receipts, a separate schema and validator, identity-graph reconciliation to 4,112 canonical atoms, Appendix C projection, fourteen rejecting mutations, and zero support movement. |
 | Existing-book integration — terminal | `P7.1a-W3-admission-template-inheritance-guard` | Completed 2026-07-26 | Exact 84-chapter NFKC audit; reader-facing repeated 12-grams at spread eight reduced 812→0; copied diagram/test spread 10→0; shared lifecycle method centralized; ten chapter diffs plus eleven semantic-review reconciliations; 241 retired inherited prose IDs replaced by 177 domain-specific dispositions with 4,067 atoms unchanged and zero pending; copied fixture rejected, distinct fixture accepted; eighteen mutations; zero meaning or support movement. |

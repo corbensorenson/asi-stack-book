@@ -3300,7 +3300,15 @@
     "schemas/c1_exit_ladder_preregistration.schema.json",
     "scripts/validate_c1_exit_ladder_preregistration.py",
     "experiments/c1_exit_ladder/admission.json",
-    "schemas/c1_exit_ladder_admission.schema.json"
+    "schemas/c1_exit_ladder_admission.schema.json",
+    "experiments/c1_exit_ladder/design.json",
+    "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json",
+    "schemas/c1_exit_ladder_instrument_failure.schema.json",
+    "schemas/c1_exit_ladder_result.schema.json",
+    "scripts/run_c1_exit_ladder.py",
+    "experiments/c2_exit_ladder/preregistration.json",
+    "schemas/c2_exit_ladder_preregistration.schema.json",
+    "scripts/validate_c2_exit_ladder_preregistration.py"
   ],
   "units": [
     {
@@ -13719,6 +13727,8 @@
         "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
         "experiments/c1_exit_ladder/preregistration.json",
         "experiments/c1_exit_ladder/admission.json",
+        "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json",
+        "experiments/c2_exit_ladder/preregistration.json",
         "experiments/governed_operations_argument_exit/preregistration.json",
         "schemas/governed_operations_campaign_preregistration.schema.json",
         "docs/p5_natural_stateful_service_campaign_preregistration.md",
@@ -19242,18 +19252,24 @@
       "input_artifacts": [
         "experiments/c1_exit_ladder/preregistration.json",
         "experiments/c1_exit_ladder/admission.json",
+        "experiments/c1_exit_ladder/design.json",
+        "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json",
         "schemas/c1_exit_ladder_preregistration.schema.json",
         "schemas/c1_exit_ladder_admission.schema.json",
+        "schemas/c1_exit_ladder_instrument_failure.schema.json",
+        "schemas/c1_exit_ladder_result.schema.json",
+        "scripts/run_c1_exit_ladder.py",
         "scripts/validate_c1_exit_ladder_preregistration.py"
       ],
-      "output_contract": "Reject outcome-aware task selection, route or outcome loss, replacement after admission, support laundering, protected-content opening, or inference beyond one local prospective case.",
+      "output_contract": "Reject outcome-aware task selection, route or outcome loss, replacement after admission or terminal instrument failure, support laundering, protected-content opening, a fabricated result, or inference beyond the retained inconclusive attempt.",
       "output_assertions": [
         "first eligible post-freeze task only",
         "task admission precedes solution and route-outcome inspection",
         "three matched route contracts",
         "natural happy path separated from injected faults",
         "success negative and inconclusive dispositions frozen",
-        "twelve mutations reject",
+        "terminal instrument failure retained without rerun or result recovery",
+        "fifteen mutations reject",
         "protected support and release states closed"
       ],
       "claim_scope": "Prospective selection and analysis contract for one future public-safe ASI Stack maintenance defect only.",
@@ -19270,16 +19286,59 @@
         "solution preopened",
         "route outcomes preopened",
         "task invented",
-        "freeze source changed"
+        "freeze source changed",
+        "rerun allowed",
+        "route outcome claimed",
+        "failure promoted"
       ],
       "prohibited_inference": "Preregistration is not execution or evidence and cannot establish utility, human effort, production reliability, safety, transfer, SOTA, AGI, ASI, or chapter-core support.",
       "contract_precision": "exact",
-      "semantic_review_state": "prospective_single_natural_task_with_explicit_injected_controls"
+      "semantic_review_state": "terminal_inconclusive_instrument_failure_no_replacement_or_support_effect"
+    },
+    {
+      "id": "validate_c2_exit_ladder_preregistration:474",
+      "order": 474,
+      "script": "validate_c2_exit_ladder_preregistration.py",
+      "args": [],
+      "execution_tier": "pr",
+      "validation_class": "proof_or_evidence_gate",
+      "input_contract": "The first post-freeze eligible natural claim-state proposal, three matched routes, one natural path, three claim-state faults, twelve outcomes, fixed dispositions, and closed proposal/protected/support/release state.",
+      "input_artifacts": [
+        "experiments/c2_exit_ladder/preregistration.json",
+        "schemas/c2_exit_ladder_preregistration.schema.json",
+        "scripts/validate_c2_exit_ladder_preregistration.py"
+      ],
+      "output_contract": "Reject outcome-aware proposal selection, route/path/outcome loss, replacement after admission, identity or inference laundering, protected-content opening, and support or release movement before execution.",
+      "output_assertions": [
+        "first eligible post-freeze claim-state proposal only",
+        "three matched route contracts",
+        "natural path separated from identity inference and projection faults",
+        "success negative and inconclusive dispositions frozen",
+        "ten mutations reject",
+        "proposal protected support and release states closed"
+      ],
+      "claim_scope": "Prospective selection and analysis contract for one future public-safe ASI Stack claim-state proposal only.",
+      "negative_controls": "proposal_route_path_outcome_replacement_inference_protection_and_support_mutations",
+      "negative_control_cases": [
+        "proposal preadmitted",
+        "proposal identity preopened",
+        "protected content opened",
+        "route removed",
+        "route relabeled",
+        "fault path removed",
+        "outcome removed",
+        "replacement allowed",
+        "inference widened",
+        "support promoted"
+      ],
+      "prohibited_inference": "Preregistration is not execution or evidence and cannot establish transition correctness, evidence quality, editorial quality, human effort, production reliability, safety, transfer, SOTA, AGI, ASI, or chapter-core support.",
+      "contract_precision": "exact",
+      "semantic_review_state": "prospective_single_natural_claim_state_proposal_with_explicit_injected_controls"
     }
   ],
   "summary": {
-    "required_artifact_count": 3256,
-    "unit_count": 473
+    "required_artifact_count": 3264,
+    "unit_count": 474
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

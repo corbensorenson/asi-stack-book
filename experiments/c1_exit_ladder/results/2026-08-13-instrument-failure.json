@@ -1,0 +1,29 @@
+{
+  "schema_version": "asi_stack.c1_exit_ladder_instrument_failure.v1",
+  "result_id": "c1-el-quarto-render-db-open-001-instrument-failure",
+  "protocol_id": "c1-el-governed-cognition-next-natural-maintenance-defect-001",
+  "admission_id": "c1-el-quarto-render-db-open-001",
+  "source_commit": "89a4e74b769865fe3d87f81f5212c9201dd92914",
+  "state": "inconclusive_instrument_failure_after_trial_execution_before_result_custody",
+  "command": "python3 scripts/run_c1_exit_ladder.py",
+  "exit_code": 1,
+  "failure_stage": "result_record_construction_after_all_execute_trial_calls_returned",
+  "exception_type": "NameError",
+  "exception_message": "name 'false' is not defined",
+  "failing_source_line": "\"independent_external_observer\": false,",
+  "result_file_created": false,
+  "route_outcomes_recoverable_from_durable_artifact": false,
+  "trial_function_return_count_inferred_from_trace_position": 12,
+  "trial_outcome_claimed": false,
+  "disposition": "inconclusive",
+  "replacement_or_rerun_allowed_for_this_prospective_task": false,
+  "repair": {
+    "state": "runner_corrected_for_future_nonprospective_or_newly_preregistered_consumers_only",
+    "change": "Replace JSON-style false with Python False.",
+    "prospective_result_recovered": false
+  },
+  "maximum_inference": "The runner had a result-custody defect. No route effectiveness, utility, authority, recovery, compensation, cost, safety, transfer, production, SOTA, AGI, ASI, or chapter-core conclusion follows.",
+  "protected_content_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

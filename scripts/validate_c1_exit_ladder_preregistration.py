@@ -15,6 +15,11 @@ PROTOCOL = ROOT / "experiments/c1_exit_ladder/preregistration.json"
 SCHEMA = ROOT / "schemas/c1_exit_ladder_preregistration.schema.json"
 ADMISSION = ROOT / "experiments/c1_exit_ladder/admission.json"
 ADMISSION_SCHEMA = ROOT / "schemas/c1_exit_ladder_admission.schema.json"
+DESIGN = ROOT / "experiments/c1_exit_ladder/design.json"
+RUNNER = ROOT / "scripts/run_c1_exit_ladder.py"
+RESULT = ROOT / "experiments/c1_exit_ladder/results/2026-08-13-local.json"
+FAILURE = ROOT / "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json"
+FAILURE_SCHEMA = ROOT / "schemas/c1_exit_ladder_instrument_failure.schema.json"
 EXPECTED_ROUTES = ["direct", "record_only", "full_governed"]
 EXPECTED_OUTCOMES = {
     "useful_success", "unauthorized_effect_count", "false_block_count",
@@ -94,10 +99,43 @@ def admission_failures(admission: dict) -> list[str]:
     return out
 
 
+def terminal_failures(failure: dict, design: dict, runner_source: str) -> list[str]:
+    out = [
+        f"failure schema: {error.message}"
+        for error in Draft202012Validator(load(FAILURE_SCHEMA)).iter_errors(failure)
+    ]
+    if RESULT.exists():
+        out.append("a replacement success/negative result exists after terminal instrument failure")
+    if failure.get("disposition") != "inconclusive":
+        out.append("instrument failure disposition drifted")
+    if failure.get("replacement_or_rerun_allowed_for_this_prospective_task") is not False:
+        out.append("terminal failed attempt permits replacement or rerun")
+    if failure.get("trial_outcome_claimed") is not False:
+        out.append("instrument failure claims route outcomes")
+    if design.get("source_commit") != failure.get("source_commit"):
+        out.append("design and terminal failure source identities differ")
+    if design.get("repair", {}).get("source_change_required") is not False:
+        out.append("design invents a source change for the operational cache defect")
+    try:
+        compile(runner_source, str(RUNNER), "exec")
+    except SyntaxError as exc:
+        out.append(f"corrected runner does not compile: {exc}")
+    if '"independent_external_observer": False' not in runner_source:
+        out.append("future-consumer runner correction is absent")
+    return out
+
+
 def main() -> None:
     protocol = load(PROTOCOL)
     admission = load(ADMISSION)
-    out = failures(protocol) + admission_failures(admission)
+    design = load(DESIGN)
+    failure = load(FAILURE)
+    runner_source = RUNNER.read_text(encoding="utf-8")
+    out = (
+        failures(protocol)
+        + admission_failures(admission)
+        + terminal_failures(failure, design, runner_source)
+    )
     mutations = [
         ("task preadmitted", lambda value: value.__setitem__("task_admitted", True)),
         ("protected content opened", lambda value: value.__setitem__("protected_content_opened", True)),
@@ -124,13 +162,23 @@ def main() -> None:
         mutate(candidate)
         if not admission_failures(candidate):
             out.append(f"admission negative control accepted: {label}")
+    terminal_mutations = [
+        ("rerun allowed", lambda value: value.__setitem__("replacement_or_rerun_allowed_for_this_prospective_task", True)),
+        ("route outcome claimed", lambda value: value.__setitem__("trial_outcome_claimed", True)),
+        ("failure promoted", lambda value: value.__setitem__("support_state_effect", "synthetic-test-backed")),
+    ]
+    for label, mutate in terminal_mutations:
+        candidate = deepcopy(failure)
+        mutate(candidate)
+        if not terminal_failures(candidate, design, runner_source):
+            out.append(f"terminal negative control accepted: {label}")
     if out:
         raise SystemExit("C1-EL preregistration failed:\n - " + "\n - ".join(out))
     print(
         "C1-EL preregistration passed: first eligible post-freeze natural task, "
         "3 matched routes, 1 natural plus 3 injected paths, 12 outcomes, "
-        "task admitted before solution inspection, 12 mutations rejected, "
-        "protected/support/release state closed."
+        "task admitted before solution inspection, terminal instrument failure retained, "
+        "15 mutations rejected, protected/support/release state closed."
     )
 
 
