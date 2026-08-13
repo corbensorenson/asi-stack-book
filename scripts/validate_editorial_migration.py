@@ -73,8 +73,30 @@ WHITE_BOX_PARENT_IDS = {
 WHITE_BOX_CHILD_IDS = {
     "white-box-evidence-interpretability-and-activation-governance",
 }
-COMPOSED_PARENT_IDS = METHOD_DETAIL_PARENT_IDS | SECURITY_CUSTODY_PARENT_IDS | WHITE_BOX_PARENT_IDS
-COMPOSED_CHILD_IDS = METHOD_DETAIL_CHILD_IDS | SECURITY_CUSTODY_CHILD_IDS | WHITE_BOX_CHILD_IDS
+HUMAN_INSTITUTIONAL_PARENT_IDS = {
+    "constitutional-alignment-substrate",
+    "human-factors-and-meaningful-control-in-oversight",
+    "institutions-international-coordination-and-public-legitimacy",
+    "intent-to-execution-contracts",
+}
+HUMAN_INSTITUTIONAL_CHILD_IDS = {
+    "human-ai-communication-persuasion-and-epistemic-security",
+    "human-intent-as-a-formal-input",
+    "moral-uncertainty-and-value-conflict",
+    "societal-resilience-and-misuse-defense",
+}
+COMPOSED_PARENT_IDS = (
+    METHOD_DETAIL_PARENT_IDS
+    | SECURITY_CUSTODY_PARENT_IDS
+    | WHITE_BOX_PARENT_IDS
+    | HUMAN_INSTITUTIONAL_PARENT_IDS
+)
+COMPOSED_CHILD_IDS = (
+    METHOD_DETAIL_CHILD_IDS
+    | SECURITY_CUSTODY_CHILD_IDS
+    | WHITE_BOX_CHILD_IDS
+    | HUMAN_INSTITUTIONAL_CHILD_IDS
+)
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
         "chapters/resource-economics-and-token-budgets.qmd",
@@ -160,6 +182,70 @@ COMPOSITION_SURFACES = {
             "### Publication placement and preserved technical ownership",
             "(adversarial-evaluation-sandbagging-and-training-time-deception.qmd)",
             "does not inherit a\ndeception",
+        ],
+    ),
+    "human-factors-and-meaningful-control-in-oversight": (
+        "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+        [
+            "### Communication inside the meaningful-control boundary",
+            "(human-ai-communication-persuasion-and-epistemic-security.qmd)",
+            "The placement blocks two substitutions.",
+        ],
+    ),
+    "human-ai-communication-persuasion-and-epistemic-security": (
+        "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(human-factors-and-meaningful-control-in-oversight.qmd)",
+            "The claims remain separate.",
+        ],
+    ),
+    "constitutional-alignment-substrate": (
+        "chapters/constitutional-alignment-substrate.qmd",
+        [
+            "### Moral conflict inside the constitutional boundary",
+            "(moral-uncertainty-and-value-conflict.qmd)",
+            "The placement prevents a constitutional predicate",
+        ],
+    ),
+    "moral-uncertainty-and-value-conflict": (
+        "chapters/moral-uncertainty-and-value-conflict.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(constitutional-alignment-substrate.qmd)",
+            "That placement does not collapse plural values",
+        ],
+    ),
+    "institutions-international-coordination-and-public-legitimacy": (
+        "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+        [
+            "### Resilience inside the institutional boundary",
+            "(societal-resilience-and-misuse-defense.qmd)",
+            "The family preserves both directions of non-substitution.",
+        ],
+    ),
+    "societal-resilience-and-misuse-defense": (
+        "chapters/societal-resilience-and-misuse-defense.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(institutions-international-coordination-and-public-legitimacy.qmd)",
+            "A closed provider ticket",
+        ],
+    ),
+    "intent-to-execution-contracts": (
+        "chapters/intent-to-execution-contracts.qmd",
+        [
+            "### Intent resolution before command lowering",
+            "(human-intent-as-a-formal-input.qmd)",
+            "The placement blocks assumption laundering",
+        ],
+    ),
+    "human-intent-as-a-formal-input": (
+        "chapters/human-intent-as-a-formal-input.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(intent-to-execution-contracts.qmd)",
+            "An accepted intent record does not establish",
         ],
     ),
 }
@@ -254,8 +340,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_three_packages_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record all three EM2 packages")
+    if editorial.get("state") != "em2_four_packages_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record all four EM2 packages")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",
@@ -282,6 +368,16 @@ def validate(
             "state": "composed_no_public_cutover",
             "parent_ids": sorted(WHITE_BOX_PARENT_IDS),
             "child_ids": sorted(WHITE_BOX_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-human-intent-and-institutional-governance-publication-nests",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(HUMAN_INSTITUTIONAL_PARENT_IDS),
+            "child_ids": sorted(HUMAN_INSTITUTIONAL_CHILD_IDS),
             "stable_technical_routes_preserved": True,
             "claim_support_inheritance": False,
             "support_state_effect": "none",
@@ -350,6 +446,37 @@ def main() -> None:
     ].replace("does not\ninherit a white-box mechanism", "inherits the white-box mechanism")
     if not validate(structure, status, preview, altered_surfaces):
         errors.append("negative control accepted: white-box composition-boundary erasure")
+    human_boundary_mutations = [
+        (
+            "human-factors-and-meaningful-control-in-oversight",
+            "The placement blocks two substitutions.",
+            "The placement permits substitution.",
+            "human-control/communication boundary erasure",
+        ),
+        (
+            "constitutional-alignment-substrate",
+            "The placement prevents a constitutional predicate",
+            "The placement allows a constitutional predicate",
+            "constitution/moral-conflict boundary erasure",
+        ),
+        (
+            "institutions-international-coordination-and-public-legitimacy",
+            "The family preserves both directions of non-substitution.",
+            "The family permits substitution.",
+            "institution/resilience boundary erasure",
+        ),
+        (
+            "intent-to-execution-contracts",
+            "The placement blocks assumption laundering",
+            "The placement permits assumption laundering",
+            "intent/command boundary erasure",
+        ),
+    ]
+    for chapter_id, good, bad, label in human_boundary_mutations:
+        altered_surfaces = dict(surfaces)
+        altered_surfaces[chapter_id] = altered_surfaces[chapter_id].replace(good, bad)
+        if not validate(structure, status, preview, altered_surfaces):
+            errors.append(f"negative control accepted: {label}")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -357,7 +484,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 6 rejecting controls."
+        "and 10 rejecting controls."
     )
 
 

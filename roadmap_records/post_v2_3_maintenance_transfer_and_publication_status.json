@@ -109,7 +109,7 @@
   },
   "editorial_product_migration": {
     "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
-    "state": "em2_three_packages_composed_public_cutover_pending",
+    "state": "em2_four_packages_composed_public_cutover_pending",
     "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
     "reconciliation_input_commit": "90f60c9f4bca340f170069d415893797b118252c",
     "current_reference_chapter_count": 87,
@@ -132,9 +132,9 @@
     "historical_narrative_spine_path": "products/narrative_product_spine.json",
     "target_outline_is_completed_manuscript": false,
     "human_reader_current_manifest_path": "editions/reader_manuscript/current/manifest.json",
-    "human_reader_started_unit_count": 3,
-    "human_reader_target_length_unit_count": 3,
-    "human_reader_visible_word_count": 16711,
+    "human_reader_started_unit_count": 4,
+    "human_reader_target_length_unit_count": 4,
+    "human_reader_visible_word_count": 21835,
     "stale_active_product_count_literal_count": 0,
     "em0_count_reconciliation_complete": true,
     "completed_composition_packages": [
@@ -182,6 +182,26 @@
         ],
         "child_ids": [
           "white-box-evidence-interpretability-and-activation-governance"
+        ],
+        "stable_technical_routes_preserved": true,
+        "claim_support_inheritance": false,
+        "support_state_effect": "none",
+        "release_effect": "none"
+      },
+      {
+        "id": "em2-human-intent-and-institutional-governance-publication-nests",
+        "state": "composed_no_public_cutover",
+        "parent_ids": [
+          "constitutional-alignment-substrate",
+          "human-factors-and-meaningful-control-in-oversight",
+          "institutions-international-coordination-and-public-legitimacy",
+          "intent-to-execution-contracts"
+        ],
+        "child_ids": [
+          "human-ai-communication-persuasion-and-epistemic-security",
+          "human-intent-as-a-formal-input",
+          "moral-uncertainty-and-value-conflict",
+          "societal-resilience-and-misuse-defense"
         ],
         "stable_technical_routes_preserved": true,
         "claim_support_inheritance": false,
@@ -1106,9 +1126,9 @@
       "current_copied_diagram_and_test_spread": 0,
       "repaired_chapter_count": 10,
       "baseline_prose_candidate_count": 3444,
-      "current_prose_candidate_count": 4105,
+      "current_prose_candidate_count": 4112,
       "retired_inherited_prose_candidate_count": 298,
-      "added_domain_specific_prose_candidate_count": 959,
+      "added_domain_specific_prose_candidate_count": 966,
       "baseline_structured_atom_count": 4067,
       "current_structured_atom_count": 4064,
       "pending_prose_candidate_count": 0,

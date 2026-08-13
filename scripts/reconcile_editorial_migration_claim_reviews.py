@@ -7,15 +7,25 @@ import json
 from collections import Counter
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 REVIEWS = ROOT / "evidence_quality/claim_reviews"
 EXPECTED = {
-    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.24cc47fd5e4d",
+    "constitutional-alignment-substrate.prose.91abf2b0ecb5",
+    "constitutional-alignment-substrate.prose.c2872320d27d",
+    "moral-uncertainty-and-value-conflict.prose.7f99887ffe9d",
+    "moral-uncertainty-and-value-conflict.prose.c01b2f4c5b0e",
+    "institutions-international-coordination-and-public-legitimacy.prose.b2ec6d08f0be",
+    "intent-to-execution-contracts.prose.05b6de551cc8",
+    "intent-to-execution-contracts.prose.0a47a15a695d",
 }
 REVIEWED_CHAPTERS = {
-    "adversarial-evaluation-sandbagging-and-training-time-deception",
+    "constitutional-alignment-substrate",
+    "human-ai-communication-persuasion-and-epistemic-security",
+    "human-intent-as-a-formal-input",
+    "institutions-international-coordination-and-public-legitimacy",
+    "intent-to-execution-contracts",
+    "moral-uncertainty-and-value-conflict",
 }
 
 
@@ -30,21 +40,25 @@ def dump(path: Path, value: dict) -> None:
 def main() -> None:
     queue = load(QUEUE)
     candidates = queue["candidates"]
+    candidate_by_id = {row["candidate_id"]: row for row in candidates}
     pending = {
         row["candidate_id"]: row
         for row in candidates
         if row.get("review_state") == "pending_materiality_adjudication"
     }
-    if set(pending) != EXPECTED:
+    missing_expected = EXPECTED - set(candidate_by_id)
+    unexpected_pending = set(pending) - EXPECTED
+    if missing_expected or unexpected_pending:
         raise SystemExit(
-            "EM2 claim-review pending set drifted: "
-            f"expected {sorted(EXPECTED)}, found {sorted(pending)}"
+            "EM2 claim-review candidate set drifted: "
+            f"missing expected {sorted(missing_expected)}, unexpected pending {sorted(unexpected_pending)}"
         )
     counts = Counter(row["chapter_id"] for row in candidates)
     for chapter_id in REVIEWED_CHAPTERS:
         path = REVIEWS / f"{chapter_id}.json"
         review = load(path)
-        for candidate_id, row in pending.items():
+        for candidate_id in EXPECTED:
+            row = candidate_by_id[candidate_id]
             if row["chapter_id"] != chapter_id:
                 continue
             review["prose_candidate_dispositions"][candidate_id] = {
@@ -60,9 +74,9 @@ def main() -> None:
         review["semantic_sweep"]["prose_candidates_adjudicated"] = counts[chapter_id]
         prior = review["semantic_sweep"].get("review_note", "")
         suffix = (
-            " The white-box/evaluation EM2 publication-composition additions were re-reviewed; "
-            "the scanner delta is a line-wrapped non-inference clause, and the composition "
-            "adds no new material or support-bearing claim."
+            " The human-intent and institutional-governance EM2 publication-composition additions "
+            "were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference "
+            "clause, and the composition adds no new material or support-bearing claim."
         )
         if suffix.strip() not in prior:
             review["semantic_sweep"]["review_note"] = prior.rstrip() + suffix

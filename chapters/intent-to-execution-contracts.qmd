@@ -174,6 +174,31 @@ If an adapter nevertheless sends data, later output quality cannot repair the au
 
 **How to read the intent-to-artifact figure:** Follow the allowed path from accepted intent through the command contract, plan graph, typed job, authority gate, adapter effect, artifact node, and evidence ledger. The lower path is equally important: ambiguity, authority overreach, missing approval, failed verification, unreplayable effects, incomplete artifacts, or non-claim boundaries route to refusal, residual custody, or re-contracting instead of quiet execution. The figure is a draft reader aid, not proof of parser correctness, planning quality, dispatcher enforcement, adapter safety, artifact completeness, replay behavior, support-state movement, or release approval.
 
+### Intent resolution before command lowering
+
+The conformance relation begins with an accepted intent receipt; it does not
+own the interpretation that produced one. This chapter owns typed lowering and
+lineage conformance from accepted objective and non-goals through authority,
+plan, job, approval, dispatch, observed effect, artifact, verification,
+delivery, feedback, and residual custody. [Human Intent as a Formal
+Input](human-intent-as-a-formal-input.qmd) is the stable technical-detail owner
+for preserving the raw request, separating desired outcome from allowed and
+forbidden means, extracting only supplied authority, recording affected
+parties and boundaries, classifying assumptions and ambiguities, and managing
+clarification, revocation, appeal, expiry, and re-contract.
+
+The placement blocks assumption laundering in both directions. A well-formed
+intent contract does not prove that the interpretation is complete, consent is
+informed, authority is authentic, or downstream execution conforms. A
+conformant execution lineage does not prove that the accepted interpretation
+captured the person's real preference or every affected party's authority.
+The parent does not inherit intent-understanding or consent claims; the
+technical route does not inherit lowering, tool, effect, artifact, rollback,
+or delivery claims. Both retain separate sources, claims, proof targets,
+tests, failures, evidence exits, support ceilings, IDs, and URLs. Composition
+creates no permission, semantic equivalence, useful outcome, support,
+deployment, or release result.
+
 ## Mechanism
 
 The mechanism begins only with an accepted intent receipt. It creates a

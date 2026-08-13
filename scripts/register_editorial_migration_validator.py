@@ -44,7 +44,25 @@ ARTIFACTS = [
     "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
     "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
     "evidence_quality/claim_reviews/adversarial-evaluation-sandbagging-and-training-time-deception.json",
+    "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
+    "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
+    "chapters/constitutional-alignment-substrate.qmd",
+    "chapters/moral-uncertainty-and-value-conflict.qmd",
+    "chapters/institutions-international-coordination-and-public-legitimacy.qmd",
+    "chapters/societal-resilience-and-misuse-defense.qmd",
+    "chapters/intent-to-execution-contracts.qmd",
+    "chapters/human-intent-as-a-formal-input.qmd",
+    "evidence_quality/claim_reviews/human-ai-communication-persuasion-and-epistemic-security.json",
+    "evidence_quality/claim_reviews/constitutional-alignment-substrate.json",
+    "evidence_quality/claim_reviews/moral-uncertainty-and-value-conflict.json",
+    "evidence_quality/claim_reviews/institutions-international-coordination-and-public-legitimacy.json",
+    "evidence_quality/claim_reviews/intent-to-execution-contracts.json",
+    "evidence_quality/claim_reviews/human-intent-as-a-formal-input.json",
 ]
+STALE_POST_ACTIVATION_CLAIM_REVIEWS = {
+    "evidence_quality/claim_reviews/human-factors-and-meaningful-control-in-oversight.json",
+    "evidence_quality/claim_reviews/societal-resilience-and-misuse-defense.json",
+}
 
 
 def main() -> None:
@@ -60,7 +78,7 @@ def main() -> None:
     contract = {
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the three completed no-cutover EM2 composition packages.",
+        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the four completed no-cutover EM2 composition packages.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
         "output_assertions": [
@@ -74,17 +92,27 @@ def main() -> None:
             "5 dossier owners",
             "1 back-matter owner",
             "26 Human Reader units",
-            "6 semantic mutations reject",
+            "10 semantic mutations reject",
             "support and release effects none",
         ],
-        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and three evidence-preserving EM2 composition packages without public cutover.",
+        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and four evidence-preserving EM2 composition packages without public cutover.",
         "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
-        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure", "white-box composition-boundary erasure"],
+        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure", "white-box composition-boundary erasure", "human-control/communication boundary erasure", "constitution/moral-conflict boundary erasure", "institution/resilience boundary erasure", "intent/command boundary erasure"],
         "prohibited_inference": "Composition does not transfer technical ownership or support, complete the remaining publication nests or semantic merge, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
         "contract_precision": "exact_high_impact",
-        "semantic_review_state": "checked_three_no_cutover_composition_packages",
+        "semantic_review_state": "checked_four_no_cutover_composition_packages",
     }
     unit.update(contract)
+    referenced = {
+        artifact
+        for row in registry["units"]
+        for artifact in row.get("input_artifacts", [])
+    }
+    registry["required_artifacts"] = [
+        artifact
+        for artifact in registry["required_artifacts"]
+        if artifact not in STALE_POST_ACTIVATION_CLAIM_REVIEWS or artifact in referenced
+    ]
     for artifact in ARTIFACTS:
         if artifact not in registry["required_artifacts"]:
             registry["required_artifacts"].append(artifact)

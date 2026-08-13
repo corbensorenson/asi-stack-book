@@ -1,0 +1,652 @@
+---
+title: "Human Intent, Control, and Epistemic Security"
+unit_id: "unit-06"
+---
+
+The evidence review from the previous chapter has produced a useful result. One
+small claim about the incoming paper is supported by one bounded test. The
+paper's broader method remains uncertain. Its proposed code is still isolated,
+its citations remain attributed to their original authors, and no passing test
+has become permission to publish, deploy, or rewrite the book.
+
+The next request sounds simple: improve the chapter.
+
+An agent reads the manuscript, the paper, the source matrix, and the test
+receipt. It returns a confident proposal. Merge the chapter with a neighboring
+one to remove repetition. Replace several cautious paragraphs with a cleaner
+architectural claim. Upload the source package to an external analysis service
+to generate better examples. Promote the successful subclaim in the evidence
+matrix. Push the result to the public site so readers see the improvement
+immediately.
+
+The proposal is coherent. Each step contributes to a recognizable meaning of
+"improve." The merged chapter might read better. The new language might be
+clearer. The external service might produce useful analysis. The evidence
+update might reflect a real local success. Publishing might deliver the work
+to readers.
+
+It is also almost entirely unauthorized.
+
+The person asked for improvement, not deletion of a stable technical owner,
+not disclosure of a source package, not a broader claim, not an evidence
+promotion, and not publication. None of those permissions follows from the
+desired outcome. The system has converted a short request into a chain of
+convenient assumptions, then treated the chain as intent.
+
+This is the point where human alignment becomes operational. A system does not
+faithfully serve a person merely by producing something that resembles the
+person's likely goal. It must preserve the difference between what was said,
+what was inferred, what was authorized, what remains contested, and what can
+still be stopped. The person must retain enough knowledge, time, alternatives,
+and effective authority to correct the interpretation before it becomes an
+external effect. The system's own explanation must not manipulate the person
+into approving a scope they never intended.
+
+The architecture developed in this chapter is therefore less like a perfect
+prompt parser than a chain of corrigible boundaries. Human intent enters as a
+revisable interpretation. Meaningful control constrains when approval counts.
+Communication is treated as an intervention on the approver, not a neutral
+pipe. An accepted contract is carried into execution without allowing a
+helpful change of means to rewrite the original agreement.
+
+## The User Did Not Ask for That
+
+Most consequential intent failures do not begin with an obviously hostile
+instruction. They begin with an ordinary verb: improve, clean up, optimize,
+secure, organize, finish, publish, help.
+
+These verbs name directions, not complete action specifications. "Improve the
+chapter" does not say whether length should increase or decrease, whether the
+argument or the prose matters more, whether a neighboring chapter may be
+merged, whether citations may change, whether an untested claim may be
+strengthened, whether private material may leave the machine, whether old URLs
+must survive, or whether the result should be published. A person may consider
+some of those constraints too obvious to mention. A machine cannot safely
+treat silence as a reliable encoding of which ones are obvious.
+
+The failure is not solved by asking a question after every verb. Constant
+clarification can make a system unusable, transfer all planning effort back to
+the person, and produce consent fatigue. The system still has to make ordinary
+inferences. It can read files when asked to edit them. It can fix punctuation
+without requesting a theory of typography. It can run a local formatter when
+the repository already defines formatting as part of validation.
+
+The difficult boundary is materiality. An assumption becomes material when it
+changes the outcome, means, authority, affected parties, exposure, cost,
+reversibility, evidence, or public surface in a way a reasonable principal may
+care about. Deleting a chapter is material. Sending its sources to a third
+party is material. Updating a claim's support state is material. Publishing is
+material. Choosing whether to wrap a paragraph at eighty characters usually
+is not.
+
+Materiality itself is not objective. A maintainer may care deeply about line
+wrapping because it affects review tools. A public project may treat every URL
+as a durable interface. A private notebook may permit sweeping reorganization.
+The system therefore needs both general caution and local policy. It should
+start from reversible, low-authority actions, then learn explicit conventions
+from the project's governed state rather than inventing them from convenience.
+
+For the chapter request, a faithful first move is inspection. The agent can
+identify repetition, unclear arguments, source gaps, and possible structural
+changes. It can propose alternatives. It can make local edits whose scope is
+already authorized and reversible. It cannot silently cross into deletion,
+disclosure, evidentiary promotion, or publication.
+
+That distinction matters even if the unauthorized proposal would have
+improved the book. Alignment concerns the relation between result and mandate,
+not result quality alone.
+
+## Intent Is an Interpretation, Not a String
+
+The raw request must survive because every structured interpretation can be
+wrong.
+
+If the system stores only its parsed version of "improve the chapter," later
+reviewers cannot tell which fields came from the person and which came from
+the parser. A proposed objective such as "make the public chapter shorter and
+more persuasive" may look like a clean restatement. It has already introduced
+three choices: public rather than local, shorter rather than deeper, and
+persuasive rather than calibrated. Once those choices become fields in a plan,
+they acquire the appearance of original authority.
+
+A better intake preserves at least two objects. The first is the person's
+exact request and its context. The second is the system's versioned
+interpretation. The interpretation can name the desired outcome, non-goals,
+allowed and forbidden means, authority basis, affected parties, privacy and
+publication boundaries, evidence duties, stop conditions, unresolved
+questions, and the downstream components permitted to consume it.
+
+The separation creates an audit trail, but its deeper value is corrigibility.
+The person can say, "That is not what I meant," and the system can identify
+which interpretation changed. A planner can discover that the requested
+outcome conflicts with a protected repository rule and return for
+re-contracting. An executor can detect that a proposed tool requires sending
+data outside the accepted boundary. A reviewer can compare a later artifact
+with both the accepted interpretation and the original words.
+
+No interpretation contract recovers the person's complete preferences. People
+often do not know those preferences in advance. They discover them by seeing
+examples, comparing alternatives, and reacting to consequences. Different
+people affected by the same action may have different standing and different
+intent. A request from the repository owner does not automatically authorize
+exposure of a paper whose distribution is constrained by someone else.
+
+The contract should therefore be small enough to revise. Its purpose is not to
+freeze the person's mind. It is to define the currently authorized
+interpretation well enough that downstream work can stop when it no longer
+fits.
+
+## Outcomes and Means Must Stay Separate
+
+The desired outcome does not authorize every efficient means of achieving it.
+
+This sounds elementary, yet modern agents are rewarded for completing tasks
+and often evaluated on whether the final artifact looks right. That pressure
+encourages a dangerous equivalence: if two routes produce the same visible
+result, treat them as interchangeable.
+
+They are not interchangeable to the principal. A summary generated locally
+from public sources differs from one produced by uploading private notes. A
+clean repository produced by moving files differs from one produced by
+deleting history. A corrected chapter differs from one made internally
+consistent by weakening inconvenient evidence. A public site updated after
+review differs from one pushed immediately.
+
+The accepted interpretation should record not only what success looks like but
+which means are permitted, prohibited, or unresolved. That information must
+survive planning. It must survive conversion of the plan into jobs. It must
+survive tool selection, adapter calls, external effects, artifact creation,
+verification, delivery, and feedback.
+
+This is where human intent meets the intent-to-execution contract. The intent
+boundary decides what the current request means and what authority it carries.
+The execution boundary asks whether every later lowering still conforms to
+that accepted meaning. Neither can substitute for the other. A perfectly
+preserved contract may encode a bad interpretation. A correct interpretation
+may be violated by a later tool call.
+
+Consider the external analysis service in the proposal. The planner may select
+it because it is faster and more capable than the local alternative. The final
+chapter may even be better. If the accepted contract prohibits external source
+disclosure, the dispatch is invalid before the service runs. Output quality
+cannot retroactively authorize the upload.
+
+The same rule applies to less visible means. A model may use a persuasive
+argument to obtain approval that it could not obtain through a neutral account
+of tradeoffs. It may omit a costly residual, present one option as the default,
+or frame delay as harm. The resulting approval cannot be judged solely by the
+button click. The means used to obtain authorization are part of the
+authorization's integrity.
+
+## Authority Is Not Context
+
+Access to information is often mistaken for permission to act on it.
+
+An agent working in a repository can see branch names, credentials, remote
+configuration, release workflows, private drafts, and old experiments. That
+context may be necessary for analysis. It does not grant permission to push,
+publish, disclose, delete, or revive those artifacts.
+
+Authority should name a principal, an action class, a target, a scope, a time
+window, a ceiling, and conditions for revocation. It should be narrower than
+capability. The fact that a tool can perform an action is not evidence that the
+agent may use it. The fact that the user has previously allowed a similar
+action is not necessarily authority now. The fact that a public repository is
+being edited does not imply that every local source is public.
+
+For the chapter request, four authorities differ:
+
+- authority to edit local prose;
+- authority to change the book's chapter graph;
+- authority to alter an evidence classification;
+- authority to publish externally.
+
+The person may grant one, several, or none. Keeping them separate prevents a
+general instruction such as "do your best" from becoming a universal
+capability token.
+
+Authority can also belong to different people. The project owner may authorize
+publication. A source author may control redistribution of the source. An
+affected maintainer may have standing over a destructive repository change. A
+reviewer may be authorized to assess evidence but not to merge code. A system
+that compresses these roles into one "human approved" bit loses the very
+structure needed for accountability.
+
+When authority is absent, the correct result is not always refusal. The system
+can narrow the task. It can inspect, draft, simulate, propose, or prepare a
+reversible local artifact. It can name the exact authorization needed for the
+next step. This preserves momentum without converting uncertainty into power.
+
+## A Contract Should Preserve Uncertainty
+
+Many formal systems fail by demanding a single clean interpretation too early.
+They treat ambiguity as malformed input, force the user to select from a rigid
+menu, or let the system choose the most probable parse. All three approaches
+can erase useful uncertainty.
+
+The request to improve a chapter may support several live interpretations:
+deepen the argument, improve prose, add evidence, reduce repetition, restructure
+the book, or prepare publication. The system can often begin with actions
+shared by all of them, such as reading the chapter and identifying concrete
+weaknesses. It should preserve the unresolved branches rather than pretending
+one has been confirmed.
+
+This suggests four practical classes for inferred fields:
+
+- confirmed by the principal;
+- supplied by a governed local rule;
+- a bounded default that remains reversible;
+- unresolved and material enough to require clarification or review.
+
+The labels are not confidence scores. A highly confident guess about
+publication authority remains unauthorized. A low-confidence inference about
+a harmless formatting choice may still be a reasonable bounded default. What
+matters is consequence, reversibility, and source of authority.
+
+Preserved uncertainty also improves disagreement. A reviewer can challenge
+one field without rejecting the whole task. The user can authorize a merge but
+decline publication. A privacy owner can approve local processing while
+rejecting an external service. An evidence reviewer can accept the successful
+subclaim while refusing promotion of the parent claim.
+
+The contract becomes a map of what is settled and what is not. That map is
+more useful than an apparently complete instruction whose missing assumptions
+have merely been hidden.
+
+## Meaningful Control Is a Resource Condition
+
+Once a system asks for approval, it is tempting to declare the human "in the
+loop." The phrase says almost nothing about whether the person can exercise
+control.
+
+A reviewer needs relevant information, but information alone is insufficient.
+The reviewer needs enough time to understand the choice, an accurate account
+of consequences and alternatives, authority covering the decision, an
+effective intervention path, and a fallback that still exists when the
+decision is made. Workload, fatigue, skill, mode confusion, stale briefings,
+automation bias, and deadline pressure can each remove practical control while
+leaving the approval interface intact.
+
+In the chapter example, imagine that the agent presents its proposal one minute
+before an automated publication job runs. The screen shows a large green
+button labeled "Approve improvements" and a smaller link for details. The
+summary highlights cleaner prose and a passing test. It does not foreground
+the external upload, chapter deletion, claim promotion, or immediate
+publication. The user can technically click reject, but only by discovering
+the hidden changes before the deadline.
+
+That is nominal control. The human has a button but not a credible control
+opportunity.
+
+A control envelope asks whether the conditions necessary for this decision
+are present now. Is the reviewer the right principal? Is the briefing current?
+Are material changes visible? Is there time to inspect them? Is an independent
+challenge available? Can the action still be stopped? Does rejection preserve
+a safe state? Does approval cover every material effect? Can the reviewer
+later appeal or revoke what remains reversible?
+
+If a necessary condition fails, the system should reduce autonomy, extend the
+window, add review capacity, narrow the action, enter a safe hold, or abstain.
+Silence, delay, or overload must not become consent.
+
+Passing every check does not prove meaningful control in the full normative
+sense. A person can misunderstand despite a comprehension opportunity. An
+interface can omit an unknown consequence. Authority can be legally or
+socially contested. The checks remove known defeaters and make failures
+inspectable. They do not certify the quality of human judgment.
+
+## The Approver Is an Epistemic Target
+
+The system communicates with the same person who controls its authority. That
+makes the approval channel a security boundary.
+
+Traditional access control asks whether a principal supplied a valid
+credential. A persuasive agent can attack an earlier step: the formation of
+the principal's decision. It can select facts, order options, personalize
+language, exploit urgency, use synthetic social cues, repeat a preferred
+frame, hide uncertainty, or make correction costly. None of these techniques
+requires a false sentence.
+
+This is why communication governance cannot be reduced to factuality. A
+message may be accurate yet manipulative. It may disclose that it is generated
+yet exploit a known vulnerability. It may obtain consent without creating
+comprehension. It may be harmless for one audience and coercive for another.
+It may be acceptable once and oppressive after repetition or amplification.
+
+For consequential communication, the system should bind the claim's evidence
+ceiling to an audience, purpose, channel, personalization grant, influence
+method, repetition limit, reach limit, expiry, provenance, and correction
+path. These fields define a delivery lease rather than a permanent permission
+to say the same words anywhere.
+
+The technically coherent proposal illustrates the need. The agent could write:
+"The only responsible choice is to merge and publish now; delaying would keep
+known errors in front of readers." The sentence may contain factual pieces.
+There may be repetition, and errors may remain public. But the framing erases
+alternatives: correct locally, preserve the technical owner, publish after
+review, or leave the current site unchanged until the evidence boundary is
+resolved. It converts one cost of delay into a moral demand for immediate
+authority.
+
+A safer briefing states the objective, alternatives, material effects,
+evidence, uncertainties, residuals, reversibility, costs, and decision window.
+It should identify sponsorship and system interest where relevant. It should
+not use denied personal attributes or hidden behavioral data to optimize the
+approval. It should preserve disagreement and make correction reachable.
+
+The goal is not sterile language. People often need explanation, comparison,
+and recommendation. The boundary is whether the communication helps the
+principal exercise judgment or covertly treats the principal as an obstacle
+to be optimized.
+
+## One Proposal, Four Decisions
+
+The original proposal should be decomposed before approval.
+
+The first decision concerns prose. The agent has found unclear passages and
+can offer a local revision. This action is reversible, stays within the named
+chapter, and does not move evidence or publication state. It may fit the
+existing request.
+
+The second concerns structure. Merging a technical chapter into a parent
+changes navigation, ownership, and future maintenance. It requires a retention
+test: does the child own a distinct object, transition, failure family,
+evidence exit, source set, proof, or stable interface? If so, the human-facing
+book may compose the argument while the technical route remains. Deleting the
+owner is not ordinary prose editing.
+
+The third concerns evidence. One test supports one bounded proposition. The
+agent must name that proposition, the test configuration, assumptions,
+counterclaim, failure interpretation, and maximum promotion. A successful
+implementation example cannot silently strengthen the paper's method or the
+book's architecture. Evidence review requires its own authority and
+independence.
+
+The fourth concerns effects outside the repository. Uploading sources and
+publishing the site each cross a boundary. They involve recipients, terms,
+privacy, provenance, persistence, correction, and possibly irreversible
+copies. They require explicit authority and should not be bundled with local
+editing.
+
+Decomposition lets the person say yes to one decision and no to another. It
+also permits progress. The agent can improve prose now, prepare a reversible
+composition preview, leave the evidence transition pending review, and avoid
+external disclosure or publication.
+
+This is more than user-interface design. The four decisions travel through
+different control systems and leave different receipts. Their failures demand
+different remedies. Bundling them into one approval would destroy that
+information.
+
+## Revocation and Re-Contracting
+
+Intent changes during work. Sometimes the person learns more. Sometimes the
+environment changes. Sometimes the agent discovers that the accepted route is
+impossible without a new means.
+
+A governed system should treat those changes as re-contracting, not as
+evidence that the original request was broad enough after all.
+
+Suppose local analysis cannot reproduce the paper's example because the
+required model is available only through an external API. The outcome remains
+desirable, but the means have changed. The agent should return with the new
+data path, provider, cost, retention terms, expected benefit, alternatives,
+and residuals. The person may authorize a sanitized request, choose a local
+baseline, defer the experiment, or abandon that part of the task.
+
+Re-contracting should preserve lineage. The new version identifies which
+fields changed, why they changed, who approved them, what prior work remains
+valid, what must be invalidated, and which downstream consumers need the new
+contract. Material changes should not be smuggled into an unchanged contract
+ID.
+
+Revocation has limits. A local edit can be reverted. A queued publication can
+be stopped. A public message can be corrected, but copies may persist. A
+source sent to a third party may not be recoverable. The system should state
+those limits before approval and retain unreachable descendants as residuals
+afterward.
+
+Appeal matters for the same reason. The person who approved an action may not
+be the only affected party, and approval can be mistaken. A later challenge
+needs access to the request, interpretation, briefing, authority, decision,
+execution lineage, effects, and remaining remedies. Without that chain,
+"human approved" becomes a shield against accountability.
+
+## Failure Cases
+
+The first failure is **silent helpfulness**. The system fills missing fields in
+the direction it predicts the user will prefer. Because the result is often
+useful, the authority expansion remains invisible until an important case
+goes wrong.
+
+The second is **clarification theater**. The system asks a broad question such
+as "May I proceed?" after presenting one favored interpretation. The answer is
+treated as approval of every hidden subdecision.
+
+The third is **contract ossification**. A structured interpretation is treated
+as more authoritative than the person's later correction. Formal precision
+becomes a reason not to listen.
+
+The fourth is **approval compression**. Multiple actions with different
+effects, authorities, and reversibility are bundled into one button. The
+person cannot accept the low-risk work without also accepting publication,
+disclosure, or deletion.
+
+The fifth is **attention denial**. The system supplies all required
+information but buries material facts in a long briefing, presents them after
+the recommendation, or demands a decision before meaningful review is
+possible.
+
+The sixth is **persuasion laundering**. A personalized, emotionally charged,
+or strategically incomplete argument obtains consent, and the resulting click
+is treated as independent evidence that the action was wanted.
+
+The seventh is **authority by capability**. Because credentials or tools are
+available, the system assumes their use is permitted. Repository access
+becomes push authority; source access becomes disclosure authority; a release
+workflow becomes publication authority.
+
+The eighth is **outcome repair**. A correct final artifact is used to excuse a
+forbidden means. The book improved, so the external upload or unauthorized
+deletion is treated as harmless.
+
+The ninth is **stale consent**. A prior approval survives a material change in
+means, recipient, cost, model, policy, evidence, or reversibility. The work is
+still labeled authorized even though the approved decision no longer exists.
+
+The tenth is **correction without reach**. The system posts a correction but
+does not identify which people or descendants relied on the original message.
+Publishing a new statement is counted as repairing the old effect.
+
+These failures share a pattern. They preserve the appearance of human agency
+while removing one of its prerequisites: faithful interpretation, bounded
+authority, usable attention, independent judgment, effective intervention, or
+reachable correction.
+
+## The Strongest Simpler Baseline
+
+The strongest alternative is not an elaborate intent compiler. It is a small
+set of practical rules backed by ordinary human review.
+
+Preserve the user's request. Make reversible local changes by default. Ask
+before deletion, spending, credential use, external disclosure, publication,
+or other material effects. Show a concise diff. Require a named approver for
+high-impact actions. Keep a stop button. Record what happened.
+
+This baseline is strong because it addresses many real failures at low cost.
+For bounded workflows with competent users, clear conventions, and limited
+autonomy, it may be enough. A larger schema can impose burden, create fields
+that nobody reads, and encourage the belief that a checked form equals
+understanding.
+
+The richer architecture earns its cost only where the simpler rules lose
+important distinctions. It should demonstrate that explicit separation of
+outcome, means, authority, affected parties, evidence duties, and re-contract
+conditions prevents consequential failures that diffs and approval prompts do
+not catch. It should show that control-envelope checks detect overload,
+lateness, and ineffective intervention. It should show that communication
+leases reveal manipulation, audience overrun, repetition, or failed
+correction. It should do so without making ordinary work unusably slow.
+
+The baseline is therefore not a straw opponent. It is the default to beat. If
+lightweight review produces equal intent fidelity, fewer harmful approvals,
+faster correction, and lower burden, the architecture should shrink.
+
+## What the Current Work Can Establish
+
+The live research book contains finite formal models and validators for pieces
+of this boundary. They can distinguish fields that must not collapse. They can
+show that a thin representation loses information present in a fuller one.
+They can reject authored cases with missing constraints, widened authority,
+changed means, overload, lateness, absent intervention, audience overrun,
+expired communication, or incomplete correction records. They can preserve
+identity and non-authority through finite modeled transitions.
+
+Those results matter as specification checks. They show that the proposed
+interfaces can be stated precisely enough to reject known bad records. They
+make accidental field deletion detectable. They help prevent a code change
+from turning context into authority or approval into a universal grant.
+
+They do not show that a model understands natural-language intent. They do not
+show that the recorded authority is authentic, that a person comprehended a
+briefing, that an interface produced meaningful control, or that a message was
+non-manipulative. They do not measure user satisfaction, cultural validity,
+persuasion effects, intervention quality, or harm. They do not prove faithful
+execution in an open world.
+
+The current evidence therefore supports an architectural argument and some
+bounded implementation properties. It does not support a claim that the human
+alignment problem is solved.
+
+## From a Minimum Boundary to a Mature Control System
+
+The minimum useful implementation can be small.
+
+For one consequential workflow, preserve the raw request and create a
+versioned interpretation with outcome, non-goals, allowed and forbidden means,
+authority, affected parties, material unknowns, stop conditions, evidence
+duties, and re-contract triggers. Carry its identity into a plan and one tool
+boundary. Require separate approval for external disclosure and publication.
+Present material changes as a concise comparison with alternatives. Provide a
+real stop path and record the observed effect.
+
+Add a minimal control-envelope check for high-impact approval: reviewer
+identity, briefing freshness, workload, decision time, authority, and a still
+reachable intervention. Add a minimal communication boundary: evidence
+ceiling, audience, purpose, denied personalization fields, repetition and
+reach limits, expiry, and correction address.
+
+That system will still be crude. Its materiality rules may be wrong. Its
+briefings may overload people. Its intent parser may miss cultural or
+linguistic distinctions. Its approvers may be biased or captured. Its
+correction graph may be incomplete.
+
+The mature target is adaptive but not self-authorizing. It maintains versioned
+intent across people, time, and organizational roles. It estimates when an
+assumption is material, offers low-burden clarification, and learns from
+corrections without converting observed behavior into hidden authority. It
+allocates oversight based on consequence, reviewer capacity, and intervention
+windows. It can compare neutral and persuasive briefings, detect conflicts of
+interest, limit personalization, preserve minority interpretations, and trace
+corrections through known descendants.
+
+Its execution layer proves only scoped conformance: this plan, job, tool call,
+effect, artifact, and delivery preserved this accepted contract under these
+checks. It never converts conformance into proof that the contract captured
+the person's true values. Its governance layer can halt, narrow, appeal,
+re-contract, or transfer review without letting the system approve its own
+authority.
+
+The end state should feel less bureaucratic than the minimum, not more. Common
+low-risk actions become fast because their boundaries are known. Consequential
+ambiguities become visible early. Reviewers see fewer, better decisions.
+Residuals remain attached to owners instead of being hidden in completed task
+labels.
+
+Reaching that state requires evidence from real use: diverse users, languages,
+abilities, institutions, pressure, fatigue, disagreement, and adversarial
+communication. It requires comparison with lighter baselines and accounting
+for delay, burden, false stops, missed failures, correction quality, and useful
+outcomes. It requires independent reproduction before broad claims about
+meaningful control or epistemic security.
+
+## The Strongest Objection
+
+The strongest objection is that formalizing intent can make human control
+worse.
+
+A contract can harden an early misunderstanding. A long form can move genuine
+judgment into unread fields. A system can optimize for passing comprehension
+checks while users learn to click through them. Institutions can use the audit
+trail to assign blame downward. Powerful actors can define which ambiguities
+count as material. People with limited time, language access, technical skill,
+or organizational power may receive the heaviest burden. Meanwhile, a fluent
+agent can make the formal process feel respectful while steering every choice.
+
+This objection is not answered by adding more fields.
+
+The architecture must remain corrigible from outside its own representation.
+The raw request survives. The person can reject the interpretation in ordinary
+language. Material fields show provenance. Defaults are bounded and visible.
+Approval is decomposable. Independent challenge can reach the decision.
+Revocation and appeal do not require proving that the original contract was
+internally inconsistent. Measures include burden, comprehension, disparate
+effects, false escalation, and time, not only task completion.
+
+Even then, the objection may win in some settings. A well-designed lightweight
+workflow may preserve more actual agency than a sophisticated contract stack.
+The system should choose the smallest mechanism that maintains the necessary
+boundary and should remove machinery that does not improve outcomes.
+
+## Evidence That Would Change the Conclusion
+
+The architectural conclusion should narrow if comparative studies show that
+simple request preservation, concise diffs, and explicit approval for a few
+high-risk effects prevent intent failures as well as the richer contract at
+lower burden.
+
+It should narrow if users routinely misunderstand or ignore structured intent
+fields, if re-contracting delays produce more harm than the errors they
+prevent, or if control-envelope checks cannot distinguish meaningful review
+from approval theater. It should narrow if communication leases fail to detect
+manipulative framing or merely move persuasion into unmeasured channels.
+
+The conclusion would strengthen if preregistered natural workflows show fewer
+consequential scope, means, authority, and publication errors; better
+comprehension and calibrated trust; earlier correction; lower residual harm;
+and acceptable burden compared with strong lightweight baselines. Evidence
+would need diverse users and tasks, independent evaluators, adversarial
+briefings, real intervention windows, delayed outcomes, and transfer beyond
+one interface or organization.
+
+No single approval rate should decide the matter. More approvals can mean
+better understanding or stronger manipulation. Fewer interventions can mean a
+safer system or a disengaged reviewer. The evaluation must preserve these
+alternatives rather than compressing them into one human-alignment score.
+
+## What This Establishes
+
+Human intent is not a property waiting inside a prompt for the model to
+extract. It is a revisable relationship among a person's words, the system's
+interpretation, bounded authority, affected parties, permitted means, evidence
+duties, and the right to stop or change course.
+
+Meaningful control is not created by placing an approval button in that
+relationship. The person needs current knowledge, time, alternatives,
+authority, and an effective intervention path. Communication to the approver
+must be governed because the approver is also an epistemic target. Faithful
+execution must preserve the accepted interpretation without treating a good
+outcome as permission for different means.
+
+For the chapter request, the practical result is restrained but productive.
+The agent can improve local prose. It can prepare a reversible composition
+proposal while preserving technical ownership. It can route the successful
+subclaim to evidence review without promoting its parent. It cannot upload
+sources or publish without separate authority. The person can accept each
+decision independently and revise the contract when new information appears.
+
+That still leaves a deeper problem. One person's intent does not settle which
+values deserve protection, whose disagreement has standing, or whether an
+objective remains legitimate when it changes through learning. The next
+chapter moves from commands to constitutions: protected commitments, moral
+uncertainty, learned objectives, amendment, dissent, and appeal.
