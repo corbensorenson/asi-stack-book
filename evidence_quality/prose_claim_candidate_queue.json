@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4112,
+    "candidate_count": 4114,
     "review_state_counts": {
       "duplicate_of_atom": 1985,
       "editorial_or_question": 58,
       "historical_or_source_report": 338,
       "material_atom": 3,
-      "nonmaterial_explanation": 1728
+      "nonmaterial_explanation": 1730
     }
   },
   "candidates": [
@@ -27875,9 +27875,28 @@
       "target_atom_id": "virtual-context-abi.minimum.001"
     },
     {
+      "candidate_id": "virtual-context-abi.prose.f0b1eb7dca03",
+      "chapter_id": "virtual-context-abi",
+      "source": "chapters/virtual-context-abi.qmd:217",
+      "sentence": "The placement preserves a necessary asymmetry.",
+      "cues": [
+        "necessary"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "virtual-context-abi.prose.347f733f8054",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:247",
+      "source": "chapters/virtual-context-abi.qmd:271",
       "sentence": "sufficient packet under node, depth, edge, token, latency, privacy, authority,",
       "cues": [
         "sufficient"
@@ -27896,7 +27915,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.309658666d94",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:270",
+      "source": "chapters/virtual-context-abi.qmd:294",
       "sentence": "require revalidation or an explicit residual.",
       "cues": [
         "require"
@@ -27915,7 +27934,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.4e110cf6106b",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:286",
+      "source": "chapters/virtual-context-abi.qmd:310",
       "sentence": "obligation but cannot grant itself storage, disclosure, behavioral, or action",
       "cues": [
         "cannot"
@@ -27934,7 +27953,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.c5da9a551bb4",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:312",
+      "source": "chapters/virtual-context-abi.qmd:336",
       "sentence": "A timeout cannot become `proven_infeasible`; an admitted planning brief cannot",
       "cues": [
         "cannot"
@@ -27953,7 +27972,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.0402084a224f",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:313",
+      "source": "chapters/virtual-context-abi.qmd:337",
       "sentence": "become adequate evidence; a best-effort packet cannot be narrated as optimal;",
       "cues": [
         "cannot"
@@ -27972,7 +27991,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.8e9730a56bc3",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:314",
+      "source": "chapters/virtual-context-abi.qmd:338",
       "sentence": "and a purged cache does not prove that every descendant or trained influence",
       "cues": [
         "prove"
@@ -27991,7 +28010,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.4660042bcd08",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:331",
+      "source": "chapters/virtual-context-abi.qmd:355",
       "sentence": "The ABI should preserve at least six states:",
       "cues": [
         "should"
@@ -28010,7 +28029,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.92b749e36caa",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:373",
+      "source": "chapters/virtual-context-abi.qmd:397",
       "sentence": "handle should not mean “whatever the graph returns now.” It binds one durable",
       "cues": [
         "should"
@@ -28029,7 +28048,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.b009e53d3f2c",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:379",
+      "source": "chapters/virtual-context-abi.qmd:403",
       "sentence": "it is not the durable memory object and cannot silently write back to it.",
       "cues": [
         "cannot"
@@ -28048,7 +28067,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.7ee086c26016",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:465",
+      "source": "chapters/virtual-context-abi.qmd:489",
       "sentence": "when it is adequate for orientation, yet require deeper identity, temporal,",
       "cues": [
         "require"
@@ -28067,7 +28086,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.34a83ef3edf8",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:480",
+      "source": "chapters/virtual-context-abi.qmd:504",
       "sentence": "They should trigger broader retrieval, another question, fallback,",
       "cues": [
         "should"
@@ -28086,7 +28105,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.d400abcffada",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:499",
+      "source": "chapters/virtual-context-abi.qmd:523",
       "sentence": "The ABI should adopt the stable-identity, plural-address, certificate,",
       "cues": [
         "should"
@@ -28105,7 +28124,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.ab2e3bdcd16a",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:505",
+      "source": "chapters/virtual-context-abi.qmd:529",
       "sentence": "“Paging” appears at two different layers of the stack and should not be allowed",
       "cues": [
         "should"
@@ -28124,7 +28143,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.d73386840a40",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:524",
+      "source": "chapters/virtual-context-abi.qmd:548",
       "sentence": "A VCM semantic address must never be treated as a device pointer or storage",
       "cues": [
         "must"
@@ -28143,7 +28162,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.c792f2b9dec8",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:544",
+      "source": "chapters/virtual-context-abi.qmd:568",
       "sentence": "Yet semantic adequacy cannot be proved by a cache hit, and physical",
       "cues": [
         "cannot"
@@ -28162,7 +28181,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.ed874624b67d",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:545",
+      "source": "chapters/virtual-context-abi.qmd:569",
       "sentence": "correctness cannot be proved by a valid representation certificate.",
       "cues": [
         "cannot"
@@ -28181,7 +28200,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.566c5481b186",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:551",
+      "source": "chapters/virtual-context-abi.qmd:575",
       "sentence": "The Reflexive Router extends the ABI in the opposite direction: not only must",
       "cues": [
         "must"
@@ -28200,7 +28219,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.92a4b20b07f8",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:553",
+      "source": "chapters/virtual-context-abi.qmd:577",
       "sentence": "results must re-enter context without being flattened into anonymous prose.",
       "cues": [
         "must"
@@ -28219,7 +28238,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.d67b647191d7",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:563",
+      "source": "chapters/virtual-context-abi.qmd:587",
       "sentence": "omissions and prevent a compact rendering from erasing uncertainty, stale time,",
       "cues": [
         "prevent"
@@ -28238,7 +28257,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.005d972205f5",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:571",
+      "source": "chapters/virtual-context-abi.qmd:595",
       "sentence": "invalidation set must include tenant, principal/authority, purpose, policy,",
       "cues": [
         "must"
@@ -28257,7 +28276,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.e317a3d77bfd",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:576",
+      "source": "chapters/virtual-context-abi.qmd:600",
       "sentence": "No typed packet proves its own truth or usefulness.",
       "cues": [
         "proves"
@@ -28276,7 +28295,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.53796805f500",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:624",
+      "source": "chapters/virtual-context-abi.qmd:648",
       "sentence": "request but cannot reinterpret or reprioritize it.",
       "cues": [
         "cannot"
@@ -28295,7 +28314,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.50ab4b807a0f",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:632",
+      "source": "chapters/virtual-context-abi.qmd:656",
       "sentence": "Address confidence and graph position cannot grant truth, use, or",
       "cues": [
         "cannot"
@@ -28314,7 +28333,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.c93afc8cd255",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:637",
+      "source": "chapters/virtual-context-abi.qmd:661",
       "sentence": "Source links, citations, certificates, and packet use cannot",
       "cues": [
         "cannot"
@@ -28333,7 +28352,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.33d677ed6e3d",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:677",
+      "source": "chapters/virtual-context-abi.qmd:701",
       "sentence": "cannot widen authority, rights, purpose, use, evidence, effects, support, or",
       "cues": [
         "cannot"
@@ -28352,7 +28371,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.b11aff99bbce",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:694",
+      "source": "chapters/virtual-context-abi.qmd:718",
       "sentence": "changed sources and packets cannot inherit current admission, adequacy, or",
       "cues": [
         "cannot"
@@ -28371,7 +28390,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.a1035d9e350e",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:710",
+      "source": "chapters/virtual-context-abi.qmd:734",
       "sentence": "traces, and finite theorems establish only their exact scopes and cannot",
       "cues": [
         "cannot"
@@ -28390,7 +28409,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.9304067e7659",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:715",
+      "source": "chapters/virtual-context-abi.qmd:739",
       "sentence": "must also know which source object it came from, which representation was",
       "cues": [
         "must"
@@ -28409,7 +28428,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.0193fb11bf33",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:718",
+      "source": "chapters/virtual-context-abi.qmd:742",
       "sentence": "should have blocked the packet before a model, worker, verifier, claim ledger,",
       "cues": [
         "should"
@@ -28428,7 +28447,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.aae366d2eca2",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:796",
+      "source": "chapters/virtual-context-abi.qmd:820",
       "sentence": "fidelity, measure model use, execute memory transactions, enforce deletion, or",
       "cues": [
         "measure"
@@ -28447,7 +28466,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.4a613173d67a",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:801",
+      "source": "chapters/virtual-context-abi.qmd:825",
       "sentence": "remain trusted abstract inputs; the model establishes neither open-domain",
       "cues": [
         "establishes"
@@ -28466,7 +28485,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.d89bed1dd24d",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:804",
+      "source": "chapters/virtual-context-abi.qmd:828",
       "sentence": "The next honest minimum must materialize natural held-out source sets into",
       "cues": [
         "must"
@@ -28485,7 +28504,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.2d6cd56793a2",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:808",
+      "source": "chapters/virtual-context-abi.qmd:832",
       "sentence": "evaluators must label source obligations, actual packet content, model use,",
       "cues": [
         "must"
@@ -28504,7 +28523,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.7a05618696b4",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:811",
+      "source": "chapters/virtual-context-abi.qmd:835",
       "sentence": "artifacts; and transfer to a second model and memory backend.",
       "cues": [
         "transfer"
@@ -28523,7 +28542,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.1cbaf33af47a",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:815",
+      "source": "chapters/virtual-context-abi.qmd:839",
       "sentence": "The shorter VCM paper reports a synthetic fault-injection result that should be",
       "cues": [
         "should"
@@ -28542,7 +28561,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.2b0c979a2bc0",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:827",
+      "source": "chapters/virtual-context-abi.qmd:851",
       "sentence": "lesson is that one declared cross-layer binding can prevent modeled races that",
       "cues": [
         "prevent"
@@ -28561,7 +28580,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.939fd60a2e0e",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:829",
+      "source": "chapters/virtual-context-abi.qmd:853",
       "sentence": "The source's conformance suite similarly establishes one",
       "cues": [
         "establishes"
@@ -28580,7 +28599,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.ccd157ae5756",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:832",
+      "source": "chapters/virtual-context-abi.qmd:856",
       "sentence": "The source also preserves a result that should remain unknown.",
       "cues": [
         "should"
@@ -28599,7 +28618,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.40f619484460",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:836",
+      "source": "chapters/virtual-context-abi.qmd:860",
       "sentence": "does not show VCM packets are worse for real pretrained models.",
       "cues": [
         "show"
@@ -28618,7 +28637,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.16ca6b1632ab",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:847",
+      "source": "chapters/virtual-context-abi.qmd:871",
       "sentence": "governance outcomes at lower total burden should replace or narrow VCM.",
       "cues": [
         "should"
@@ -28637,7 +28656,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.fdc965ef68e7",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:855",
+      "source": "chapters/virtual-context-abi.qmd:879",
       "sentence": "complete selection and cost ledgers, least-sufficient authority and rights,",
       "cues": [
         "sufficient"
@@ -28656,7 +28675,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.7b32cbf58802",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:875",
+      "source": "chapters/virtual-context-abi.qmd:899",
       "sentence": "reproduction and transfer span models, languages, modalities, stores,",
       "cues": [
         "transfer"
@@ -28675,7 +28694,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.bbefed0f1144",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:878",
+      "source": "chapters/virtual-context-abi.qmd:902",
       "sentence": "Promotion requires nonzero useful opportunity, strong matched baselines,",
       "cues": [
         "requires"
@@ -28694,7 +28713,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.abd23c7dda86",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:881",
+      "source": "chapters/virtual-context-abi.qmd:905",
       "sentence": "cross-backend transfer, and accepted claim-specific transitions.",
       "cues": [
         "transfer"
@@ -28713,7 +28732,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.ff4948a71282",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:1007",
+      "source": "chapters/virtual-context-abi.qmd:1031",
       "sentence": "Admission establishes only request and policy conformance.",
       "cues": [
         "establishes"
@@ -28732,7 +28751,7 @@
     {
       "candidate_id": "virtual-context-abi.prose.d8dfcfa968a8",
       "chapter_id": "virtual-context-abi",
-      "source": "chapters/virtual-context-abi.qmd:1062",
+      "source": "chapters/virtual-context-abi.qmd:1086",
       "sentence": "belief or memory authority; the durable layer must preserve every source,",
       "cues": [
         "must"
@@ -29837,7 +29856,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.327cc0425f3d",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:331",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:352",
       "sentence": "field replacement, policy change, and atlas migration must invalidate every",
       "cues": [
         "must"
@@ -29856,7 +29875,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.3b6c6e17f38f",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:346",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:367",
       "sentence": "Its transaction boundary must therefore establish that the old",
       "cues": [
         "must"
@@ -29875,7 +29894,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.07611cc40b11",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:386",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:407",
       "sentence": "If a descendant cannot be reached or deleted,",
       "cues": [
         "cannot"
@@ -29894,7 +29913,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.625a37c9442a",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:400",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:421",
       "sentence": "documents a request cache salt that prevents different trust groups from",
       "cues": [
         "prevents"
@@ -29913,7 +29932,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.25cb02f2b6d0",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:401",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:422",
       "sentence": "sharing hash-derived blocks and reduces timing inference about another group's",
       "cues": [
         "reduces"
@@ -29932,7 +29951,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.9f72307426df",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:403",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:424",
       "sentence": "behavior where required, and rate-limit isolation are distinct defenses.",
       "cues": [
         "required"
@@ -29951,7 +29970,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.f54f86c22231",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:404",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:425",
       "sentence": "hash collision defense does not prevent a valid but unauthorized cross-tenant",
       "cues": [
         "prevent"
@@ -29970,7 +29989,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.4923772adb86",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:405",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:426",
       "sentence": "hit, and an access check does not prevent timing from revealing that an entry",
       "cues": [
         "prevent"
@@ -29989,7 +30008,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.fafb86a8cd88",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:438",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:459",
       "sentence": "Simulation output cannot enter the actual-world ledger because it looks",
       "cues": [
         "cannot"
@@ -30008,7 +30027,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.c8d638fd6ee1",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:439",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:460",
       "sentence": "plausible; promotion requires an authorized execution, observation, or adoption",
       "cues": [
         "requires"
@@ -30027,7 +30046,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.df6dc9a94554",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:473",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:494",
       "sentence": "scope, expiry, and whether user approval is required.",
       "cues": [
         "required"
@@ -30046,7 +30065,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.dc8a79750bf2",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:476",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:497",
       "sentence": "instruction cannot mutate the ledger merely because the compiler recognized",
       "cues": [
         "cannot"
@@ -30065,7 +30084,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.664abec203b5",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:482",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:503",
       "sentence": "visible glossary does not prove those descendants forgot it.",
       "cues": [
         "prove"
@@ -30084,7 +30103,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.c953985fdfe9",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:492",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:513",
       "sentence": "emits a static packet; it cannot mutate, merge, delete, revoke, or recover",
       "cues": [
         "cannot"
@@ -30103,7 +30122,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.86bdc9d80fde",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:495",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:516",
       "sentence": "consistency needs but cannot declare a write applied, durable, visible,",
       "cues": [
         "cannot"
@@ -30122,7 +30141,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.9b8ee5051cb0",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:504",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:525",
       "sentence": "A correction, supersession, deletion, or commit cannot promote",
       "cues": [
         "cannot"
@@ -30141,7 +30160,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.e1378e15ec26",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:509",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:530",
       "sentence": "abort, restore, or compensation cannot claim rollback of an external effect",
       "cues": [
         "cannot"
@@ -30160,7 +30179,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.4c0449d80146",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:516",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:537",
       "sentence": "transaction validity establishes only declared state-transition properties.",
       "cues": [
         "establishes"
@@ -30179,7 +30198,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.7b5dd9a7fc30",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:605",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:626",
       "sentence": "and exports cannot widen authority, rights, purpose, retention, permitted",
       "cues": [
         "cannot"
@@ -30198,7 +30217,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.cad3e763e164",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:626",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:647",
       "sentence": "Context abort, restore, or compensation cannot erase an external effect,",
       "cues": [
         "cannot"
@@ -30217,7 +30236,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.adf456c779f4",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:634",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:655",
       "sentence": "finite theorems establish only their exact scopes and cannot universalize",
       "cues": [
         "cannot"
@@ -30236,7 +30255,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.4c8484390bff",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:635",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:656",
       "sentence": "isolation, durability, deletion, security, usefulness, or transfer.",
       "cues": [
         "transfer"
@@ -30255,7 +30274,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.70d3be0abc42",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:710",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:731",
       "sentence": "The next honest minimum must run prospectively declared stateful tasks through",
       "cues": [
         "must"
@@ -30274,7 +30293,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.e122091a8986",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:713",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:734",
       "sentence": "It must inject dirty and stale",
       "cues": [
         "must"
@@ -30293,7 +30312,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.b92b868e93a7",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:718",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:739",
       "sentence": "Reproduction from environment locks and transfer",
       "cues": [
         "transfer"
@@ -30312,7 +30331,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.9da7380957c4",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:719",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:740",
       "sentence": "to a second model and backend are required before promotion.",
       "cues": [
         "required"
@@ -30331,7 +30350,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.73167adec3bb",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:738",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:759",
       "sentence": "Promotion requires nonzero useful opportunity, predicted mechanism-specific",
       "cues": [
         "requires"
@@ -30350,7 +30369,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.5525f4f67195",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:744",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:765",
       "sentence": "transfer narrows, blocks, or refutes the exact corresponding claim rather than",
       "cues": [
         "transfer"
@@ -30369,7 +30388,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.64a99f04f1f7",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:749",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:770",
       "sentence": "reproduction, and cross-backend transfer gates pass.",
       "cues": [
         "transfer"
@@ -30388,7 +30407,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.bba7a2c18784",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:766",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:787",
       "sentence": "The transaction route proof keeps unclosed deletion obligations from being modeled as allowed materializations, rejects stale or absent snapshots before read admission, routes branch leaks and unrepaired mount faults away from materialization, requires review for tainted context without declassification, blocks invisible committed reads, and preserves replay, evidence-transition, and non-claim boundaries.",
       "cues": [
         "requires"
@@ -30407,7 +30426,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.e242c81b4907",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:784",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:805",
       "sentence": "The declarations do not prove serializability, linearizability, snapshot",
       "cues": [
         "prove"
@@ -30426,7 +30445,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.e2ec2009193e",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:788",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:809",
       "sentence": "Those claims require typed store and",
       "cues": [
         "require"
@@ -30445,7 +30464,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.d676bff244df",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:816",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:837",
       "sentence": "The result sharpens the required state surfaces while leaving transactional isolation and lifecycle safety unproved.",
       "cues": [
         "required"
@@ -30464,7 +30483,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.2b6f2d49e685",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:841",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:862",
       "sentence": "The repository currently proves only finite record and route consequences and",
       "cues": [
         "proves"
@@ -30483,7 +30502,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.dd7b6020ca74",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:846",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:867",
       "sentence": "categories, complete costs, reproduction, and transfer.",
       "cues": [
         "transfer"
@@ -30502,7 +30521,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.213e5006db0c",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:848",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:869",
       "sentence": "A context operation that cannot establish its declared isolation, authority,",
       "cues": [
         "cannot"
@@ -30521,7 +30540,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.30cd106fda2d",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:849",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:870",
       "sentence": "durability, visibility, or closure state should fault or remain indeterminate.",
       "cues": [
         "should"
@@ -30540,7 +30559,7 @@
     {
       "candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.6deeb3783790",
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
-      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:898",
+      "source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:919",
       "sentence": "Valid context operations are necessary, but they do not automatically give enough evidence for a claim.",
       "cues": [
         "necessary"
@@ -38430,9 +38449,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.11b089026a9a",
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:181",
+      "sentence": "population-level warning does not show which protocol action was invalid or",
+      "cues": [
+        "show"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.6e879fb1df64",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:168",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:197",
       "sentence": "artifact, the authority and credential references required by local policy, the",
       "cues": [
         "required"
@@ -38451,7 +38489,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.d61bbd531f94",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:190",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:219",
       "sentence": "A response must bind back to",
       "cues": [
         "must"
@@ -38470,7 +38508,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.9da12440221c",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:228",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:257",
       "sentence": "Require an independent result owner to test the response and artifacts",
       "cues": [
         "require"
@@ -38489,7 +38527,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.5cc0e6a5b34a",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:283",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:312",
       "sentence": "This does not prove that South acted",
       "cues": [
         "prove"
@@ -38508,7 +38546,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.07b5869089f3",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:284",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:313",
       "sentence": "It shows only that North no longer",
       "cues": [
         "shows"
@@ -38527,7 +38565,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.5c49aed2f9ee",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:285",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:314",
       "sentence": "has the current verification state required by its own contract.",
       "cues": [
         "required"
@@ -38546,7 +38584,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.d4deb1995f02",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:308",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:337",
       "sentence": "full compatibility, while removing identity/address indirection reduces",
       "cues": [
         "reduces"
@@ -38565,7 +38603,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.3c7273bbe9a0",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:309",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:338",
       "sentence": "compatibility to 0.400000 and removing migration compatibility reduces it to",
       "cues": [
         "reduces"
@@ -38584,7 +38622,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.67976d027d6a",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:359",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:388",
       "sentence": "request inspectable, but it cannot issue an effect lease, certify context,",
       "cues": [
         "cannot"
@@ -38603,7 +38641,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.c37a7a8425d2",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:384",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:413",
       "sentence": "release; interoperability success cannot promote a system by itself.",
       "cues": [
         "cannot"
@@ -38622,7 +38660,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.a90ce1d81f00",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:393",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:422",
       "sentence": "These eighteen invariants prevent a convenient remote path from changing the",
       "cues": [
         "prevent"
@@ -38641,7 +38679,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.d90134188bf5",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:402",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:431",
       "sentence": "Identity resolution and credential verification cannot silently become",
       "cues": [
         "cannot"
@@ -38660,7 +38698,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.8232bc7ecb23",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:411",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:440",
       "sentence": "evidence required for its intended use.",
       "cues": [
         "required"
@@ -38679,7 +38717,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.3ef32f974273",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:418",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:447",
       "sentence": "Retries are idempotent or carry a new exchange identity; replay cannot",
       "cues": [
         "cannot"
@@ -38698,7 +38736,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.547cffb86a17",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:429",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:458",
       "sentence": "required record routes to repair, review, dispute, or denial.",
       "cues": [
         "required"
@@ -38717,7 +38755,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.5ae06b08d951",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:435",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:464",
       "sentence": "The negative-control program must cover eighteen distinct ways a message-shaped",
       "cues": [
         "must"
@@ -38736,7 +38774,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.3270f163ebbd",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:457",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:486",
       "sentence": "balance update into legal finality or dispute-free transfer.",
       "cues": [
         "transfer"
@@ -38755,7 +38793,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.55ffa8d55883",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:477",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:506",
       "sentence": "**Interoperability increases the importance of refusal semantics.** Common",
       "cues": [
         "increases"
@@ -38774,7 +38812,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.30492e0c0ae0",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:488",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:517",
       "sentence": "**Economic state needs epistemic state.** A technically successful transfer",
       "cues": [
         "transfer"
@@ -38793,7 +38831,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.9734dccdbf91",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:491",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:520",
       "sentence": "**Privacy can conflict with accountability.** Rich identity records improve",
       "cues": [
         "improve"
@@ -38812,7 +38850,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.45db3d7f4f30",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:511",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:540",
       "sentence": "qualifications can reduce work, but their consumer, audience, expiry,",
       "cues": [
         "reduce"
@@ -38831,7 +38869,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.462b052765b1",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:512",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:541",
       "sentence": "dependency, and revocation conditions must remain visible.",
       "cues": [
         "must"
@@ -38850,7 +38888,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.7f2c091c12f0",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:518",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:547",
       "sentence": "accounting improves coordination or creates gaming pressure remains empirical.",
       "cues": [
         "improves"
@@ -38869,7 +38907,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.241b977b7d3a",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:528",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:557",
       "sentence": "design does not prove that accountability and privacy always reconcile.",
       "cues": [
         "prove"
@@ -38888,7 +38926,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.841019df24cf",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:535",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:564",
       "sentence": "should not automatically invalidate every artifact previously produced by the",
       "cues": [
         "should"
@@ -38907,7 +38945,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.fddf1b0fb2f6",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:544",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:573",
       "sentence": "receipt can show that a named peer accepted a payload under a contract; it does",
       "cues": [
         "show"
@@ -38926,7 +38964,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.c6682eb1cc04",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:545",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:574",
       "sentence": "not show that the payload is correct or that payment is legally owed.",
       "cues": [
         "show"
@@ -38945,7 +38983,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.53dfead0af5c",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:555",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:584",
       "sentence": "A protocol that increases exchange volume",
       "cues": [
         "increases"
@@ -38964,7 +39002,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.560f67098d18",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:564",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:593",
       "sentence": "with a required invalid credential and blocks a value-bearing dispatch that",
       "cues": [
         "required"
@@ -38983,7 +39021,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.bed6f958a457",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:574",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:603",
       "sentence": "does not earn trust in a peer or prove the value of a remote answer.",
       "cues": [
         "prove"
@@ -39002,7 +39040,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.1d1f50334ee9",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:576",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:605",
       "sentence": "The next empirical campaign must be frozen before implementation selection or",
       "cues": [
         "must"
@@ -39021,7 +39059,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.2171d6e29e65",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:596",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:625",
       "sentence": "An independently implemented evaluator must reproduce the",
       "cues": [
         "must"
@@ -39040,7 +39078,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.7cf76f7082f2",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:597",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:626",
       "sentence": "Transfer tests vary protocol version, transport,",
       "cues": [
         "transfer"
@@ -39059,7 +39097,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.97092bee37db",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:616",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:645",
       "sentence": "A successful program must establish causal signatures, not just an aggregate",
       "cues": [
         "must"
@@ -39078,7 +39116,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.80cad7b6175c",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:617",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:646",
       "sentence": "Removing bounded delegation should increase privilege drift without",
       "cues": [
         "increase",
@@ -39098,7 +39136,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.297673d0fe69",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:620",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:649",
       "sentence": "independent verification should increase accepted wrong artifacts without",
       "cues": [
         "increase",
@@ -39118,7 +39156,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.3540856b71de",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:621",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:650",
       "sentence": "Removing privacy constraints should reduce message",
       "cues": [
         "reduce",
@@ -39138,7 +39176,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.471efc8ac453",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:623",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:652",
       "sentence": "economic states should increase settlement, dispute, or refund errors.",
       "cues": [
         "increase",
@@ -39158,7 +39196,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.79c6c48267a9",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:626",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:655",
       "sentence": "The stronger claim also requires independent reproduction and transfer.",
       "cues": [
         "requires",
@@ -39178,7 +39216,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.4d22881936fc",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:627",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:656",
       "sentence": "separate implementation and evaluator must preserve conclusions across MCP and",
       "cues": [
         "must"
@@ -39197,7 +39235,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.3efd4b67d0ad",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:631",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:660",
       "sentence": "correctness, latency, human burden, cost, residuals, and recovery must be judged",
       "cues": [
         "must"
@@ -39216,7 +39254,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.38f7f48c8ff5",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:638",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:667",
       "sentence": "independent reproduction, and heterogeneous transfer pass.",
       "cues": [
         "transfer"
@@ -39235,7 +39273,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.506e60800ee3",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:678",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:707",
       "sentence": "ceiling, and cannot assign support, external effects, or settlement.",
       "cues": [
         "cannot"
@@ -39254,7 +39292,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.293e17a48ad0",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:684",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:713",
       "sentence": "It does not prove that any",
       "cues": [
         "prove"
@@ -39273,7 +39311,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.42d43e88b43e",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:738",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:767",
       "sentence": "The present proof establishes nine finite route consequences.",
       "cues": [
         "establishes"
@@ -39292,7 +39330,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.9e49930bc96a",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:739",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:768",
       "sentence": "claim of useful, secure, private, economically correct interoperability requires",
       "cues": [
         "requires"
@@ -39311,7 +39349,7 @@
     {
       "candidate_id": "inter-stack-protocols-identity-and-economic-exchange.prose.6bd213c8e73e",
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
-      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:741",
+      "source": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd:770",
       "sentence": "independent-reproduction, and transfer campaign described above.",
       "cues": [
         "transfer"

@@ -296,7 +296,7 @@
     "editorial_product_migration": {
       "const": {
         "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
-        "state": "em2_four_packages_composed_public_cutover_pending",
+        "state": "em2_five_packages_composed_public_cutover_pending",
         "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
         "reconciliation_input_commit": "90f60c9f4bca340f170069d415893797b118252c",
         "current_reference_chapter_count": 87,
@@ -319,9 +319,9 @@
         "historical_narrative_spine_path": "products/narrative_product_spine.json",
         "target_outline_is_completed_manuscript": false,
         "human_reader_current_manifest_path": "editions/reader_manuscript/current/manifest.json",
-        "human_reader_started_unit_count": 4,
-        "human_reader_target_length_unit_count": 4,
-        "human_reader_visible_word_count": 21835,
+        "human_reader_started_unit_count": 5,
+        "human_reader_target_length_unit_count": 5,
+        "human_reader_visible_word_count": 27352,
         "stale_active_product_count_literal_count": 0,
         "em0_count_reconciliation_complete": true,
         "completed_composition_packages": [
@@ -389,6 +389,24 @@
               "human-intent-as-a-formal-input",
               "moral-uncertainty-and-value-conflict",
               "societal-resilience-and-misuse-defense"
+            ],
+            "stable_technical_routes_preserved": true,
+            "claim_support_inheritance": false,
+            "support_state_effect": "none",
+            "release_effect": "none"
+          },
+          {
+            "id": "em2-context-organization-and-exchange-publication-nests",
+            "state": "composed_no_public_cutover",
+            "parent_ids": [
+              "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+              "inter-stack-protocols-identity-and-economic-exchange",
+              "virtual-context-abi"
+            ],
+            "child_ids": [
+              "context-transactions-snapshots-mounts-and-taint",
+              "human-ai-organizations-delegation-and-accountability",
+              "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
             ],
             "stable_technical_routes_preserved": true,
             "claim_support_inheritance": false,
@@ -1298,7 +1316,7 @@
           "validator_path": "scripts/validate_post_activation_six_chapter_claim_atom_addendum.py",
           "chapter_review_count": 6,
           "atom_count": 30,
-          "identity_graph_canonical_atom_count": 4112,
+          "identity_graph_canonical_atom_count": 4109,
           "appendix_c_projection_complete": true,
           "mutation_rejection_count": 14,
           "chapter_ids": [
@@ -1377,9 +1395,9 @@
           "current_copied_diagram_and_test_spread": 0,
           "repaired_chapter_count": 10,
           "baseline_prose_candidate_count": 3444,
-          "current_prose_candidate_count": 4112,
+          "current_prose_candidate_count": 4114,
           "retired_inherited_prose_candidate_count": 298,
-          "added_domain_specific_prose_candidate_count": 966,
+          "added_domain_specific_prose_candidate_count": 968,
           "baseline_structured_atom_count": 4067,
           "current_structured_atom_count": 4064,
           "pending_prose_candidate_count": 0,

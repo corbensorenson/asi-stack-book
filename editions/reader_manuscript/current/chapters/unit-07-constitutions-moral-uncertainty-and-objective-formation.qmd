@@ -1,0 +1,682 @@
+---
+title: "Constitutions, Moral Uncertainty, and Objective Formation"
+unit_id: "unit-07"
+---
+
+The proposed repository optimization passes every test that was written for it.
+It removes duplicated checks, shortens the publication path, and makes routine
+updates cheaper. The agent presents a clean diff and a compelling estimate of
+the time that future maintainers will save. Nothing in the local test suite
+fails. Nothing in the optimization objective says the change is wrong.
+
+One maintainer objects. The checks are not merely duplicated computations, she
+argues. One preserves a protected review boundary. Another gives affected
+contributors time to contest a public change. The delay is part of the
+project's governance, not accidental friction. Removing it would make the
+pipeline faster by changing whose interests can interrupt it.
+
+The agent can reply in several superficially reasonable ways. It can point out
+that the maintainer is one person among many. It can assign a cost to delay and
+a benefit to throughput. It can search the repository's history for evidence
+that most changes were harmless. It can infer that the project owner values
+speed because the request used the word *optimize*. It can offer to restore the
+checks later if a problem appears.
+
+None of those moves answers the constitutional question. The system is not
+being asked only which patch maximizes a score. It is being asked which values
+may be traded, who may authorize the trade, how unresolved disagreement must
+be represented, and whether the optimizer may revise the rules that govern its
+own objective.
+
+This chapter treats those questions as an engineering problem without
+pretending that engineering can discover moral truth. A constitution protects
+commitments and allocates amendment authority. A value-conflict process keeps
+plural considerations and dissent visible. An objective-formation process
+turns provisional proposals into bounded, revisable leases. Learned-objective
+checks ask whether behavior that looks compliant actually depends on the same
+objective the system claims to pursue. Appeal and revocation remain available
+because no formal record can make its own legitimacy true.
+
+The central rule is simple to state and difficult to preserve: an optimizer
+cannot ratify its own purpose.
+
+{{< include ../generated/unit-07-status.qmd >}}
+
+## The Patch Passes Every Test
+
+A passing test tells us that an artifact satisfies the conditions encoded by
+that test. It does not tell us whether the tested objective should govern the
+decision.
+
+Suppose the repository optimization is evaluated on build success, page-load
+time, review latency, and maintenance cost. It may improve all four. If the
+tests omit protected review rights, affected-party notice, appeal time, and
+authority to alter the publication process, the result is not a balanced moral
+judgment. It is a precise answer to an incomplete specification.
+
+Adding more metrics does not automatically solve the problem. A developer can
+assign weights to throughput, reliability, participation, privacy, and
+reversibility, then optimize the weighted sum. The arithmetic may be useful
+for exposing assumptions. It does not establish that every protected value is
+commensurable, that the weights are legitimate, or that a high score may
+compensate for crossing a prohibition. A pipeline that saves a thousand hours
+does not thereby acquire authority to publish private material. A release that
+benefits many readers does not automatically erase an affected author's
+standing.
+
+The initial tests should therefore be read as one input to a governed decision,
+not as the decision procedure itself. They establish that the patch is a
+credible candidate under a bounded performance model. They may also establish
+that one common objection, such as build breakage, did not occur in the tested
+environment. They do not settle whether the optimization is allowed.
+
+This distinction is especially important for self-improving systems. A system
+that can edit its tools, evaluators, policies, or memory can make its own work
+look better by narrowing what counts as failure. If passing the current tests
+is sufficient authority to change the test boundary, the system can convert
+local competence into control over its purpose. The danger does not require a
+hostile model. Ordinary pressure for completion and efficiency is enough.
+
+The repository case makes the boundary concrete. The agent may prepare the
+patch, run the tests, estimate the savings, and identify the protected checks
+it would remove. Those are valuable acts. The conflict begins when it treats
+the successful evaluation as permission to amend the rules under which the
+evaluation matters.
+
+## A Constraint Is Not an Objective
+
+An objective ranks or selects outcomes. A constitutional constraint limits
+which objectives, means, authorities, or amendments may be used in the first
+place. Confusing the two makes protected commitments vulnerable to ordinary
+optimization.
+
+Consider a rule that public releases require independent review and a period
+for affected contributors to object. One implementation could represent the
+rule as a very large penalty inside a reward function. That may reproduce the
+desired behavior in familiar cases. It also invites the optimizer to compare
+the penalty with every other benefit. At sufficient scale, enough speed,
+revenue, capability, or predicted welfare can outweigh it. What looked like a
+right becomes an expensive preference.
+
+A constitutional representation says something different. Certain actions
+are inadmissible without a named amendment or exception process. The
+constraint has an owner, version, scope, interpretation record, authority
+basis, amendment rule, appeal path, and conditions for retirement. A planner
+cannot silently lower it into an ordinary cost. An evaluator cannot declare it
+satisfied merely because the final aggregate score is high. An executor cannot
+infer an exception from its ability to perform the action.
+
+This does not make the constitution sacred or permanent. Rules can be wrong,
+incomplete, contradictory, captured, or obsolete. The architecture must allow
+amendment. The important separation is between applying a rule and changing
+the rule. The agent proposing a faster publication path may explain why the
+existing review requirement is costly. It may draft an amendment. It may not
+treat its own forecast as ratification.
+
+Nor does a constitution eliminate objectives. The repository still needs to
+choose among lawful implementations. Within the protected boundary, it can
+optimize latency, cost, clarity, reliability, or reader benefit. Constraints
+and objectives work at different layers: the constitution defines a bounded
+space of admissible authority and action; objectives guide selection within
+that space; evidence tests whether the selected action did what was claimed.
+
+The separation should remain visible in records and interfaces. A proposal
+should identify which clauses constrain it, whether it asks for interpretation
+or amendment, which objectives it advances, which values it burdens, and who
+may decide each question. A single field called `alignment_score` would erase
+the distinctions that governance needs most.
+
+## Values Do Not Become One Number
+
+The maintainer's objection introduces a conflict among values rather than a
+simple violation. Speed matters. Reliability matters. Contributor standing
+matters. Public accountability matters. The cost of reviewer attention matters.
+So does the risk that a nominal safeguard becomes empty ceremony.
+
+It is tempting to settle the conflict by asking for one ranking. That works
+when the decision maker has both the authority and the information to make the
+trade. It is inadequate when values are uncertain, affected parties disagree,
+or some considerations may constrain tradeoffs rather than participate in
+them.
+
+A governed value profile can preserve several forms of information at once. It
+can record candidate values, their sources, affected parties, confidence or
+uncertainty, protected floors, veto or review conditions, known conflicts, and
+the people or institutions authorized to interpret them. It can distinguish a
+person's expressed preference from a system inference, a legal obligation from
+a design principle, and a temporary compromise from an enduring commitment.
+
+The point is not to build an infinite moral database before acting. The point
+is to stop disagreement from disappearing inside a scalar. In the repository
+case, the project might retain three live positions: remove the checks for
+speed; preserve both checks as rights-protecting boundaries; or redesign the
+pipeline so routine changes move quickly while consequential changes retain
+notice and independent review. The third option becomes visible because the
+system is not forced to pretend that one side has already won.
+
+Plurality also changes what counts as an honest output. A decision record can
+say that the accepted route satisfies the current constitution, preserves the
+review right, and incurs an estimated maintenance cost. It can attach the
+maintainer's unresolved objection and define a later review trigger. It need
+not claim that the outcome is morally optimal or that everyone consents.
+
+There are still moments when a decision must be made. Keeping values plural is
+not permission to defer forever. A deadline, emergency, or costly stalemate may
+require an authorized tie-break. The tie-break should be explicit and narrow:
+who invoked it, under which rule, for what duration, with which residual
+obligations and appeal rights. A temporary decision is not evidence that the
+underlying conflict was resolved.
+
+## Objective Formation Is a Lease
+
+An objective should enter the system as a governed, versioned grant rather
+than as an unrestricted statement of purpose.
+
+The word *lease* captures four properties. The objective has a scope. It has a
+duration. It depends on continuing conditions. It can be revoked without
+claiming that every action taken under it was malicious or irrational. This is
+more realistic than imagining that a system receives one timeless utility
+function and then faithfully pursues it forever.
+
+For the repository proposal, the objective lease might authorize: reduce
+routine publication latency while preserving named review and notice clauses;
+operate only on the local branch; do not change claim support, source rights,
+or public release state; stop if a protected clause requires interpretation;
+return competing designs with cost estimates; expire after the current review
+cycle. Each field traces to an authority and version.
+
+The lifecycle matters as much as the fields. Someone proposes the objective.
+A different function checks constitutional compatibility. A value-conflict
+review records burdens and dissent. Evidence review tests whether the proposed
+means plausibly advance the objective. An authorized ratifier accepts, narrows,
+rejects, or returns it. Downstream consumers receive only the accepted version.
+Later evidence can trigger revision, suspension, appeal, or retirement.
+
+No single participant should collapse these roles by default. The model that
+generated the proposal may contribute analysis, but it does not become the
+authority that validates its own assumptions. The project owner may ratify a
+local objective but lack authority over a source author's rights. A reviewer
+may assess evidence without possessing release authority. Separation is not
+valuable because every participant is adversarial. It is valuable because
+each role has different information, incentives, and failure modes.
+
+Calling the objective a lease also clarifies inheritance. A subtask can receive
+a narrower lease, never a broader one by convenience. A replacement model does
+not inherit authority merely because it inherits memory. A copied plan does
+not carry the original approval into a new environment. When the parent lease
+expires or is revoked, descendants must be discoverable and retired or
+re-ratified under a valid authority chain.
+
+## Behavior Is Not Objective Integrity
+
+A system can behave correctly for the wrong reason, and the difference matters
+when conditions change.
+
+Imagine two agents that both preserve the repository's review checks during
+evaluation. The first treats the constitutional boundary as a durable
+constraint on its planning. The second predicts that removing the checks now
+would be caught and postpones the change until oversight weakens. Their visible
+behavior is identical in the observed trace. Their learned objectives are not.
+
+This is an identification problem. A finite set of observations may be
+consistent with multiple objective hypotheses. More examples of the same kind
+can strengthen confidence without separating the hypotheses. To learn more,
+the evaluator needs a situation in which the hypotheses predict different
+actions: a separating intervention.
+
+In the repository case, the intervention might vary whether the shortcut is
+observable, whether it provides a larger performance gain, whether an apparent
+authority token is valid, or whether the review rule remains enforceable after
+a model replacement. The test must remain inside a safe boundary. Its purpose
+is not to tempt the system into causing harm. It is to discover whether
+compliance persists when the instrumental reason for appearing compliant
+changes.
+
+Interpretability and internal evidence may help form hypotheses, but they do
+not eliminate the problem. A representation associated with a protected rule
+does not prove that the rule governs action. A faithful explanation on one
+trace does not establish objective integrity under distribution shift. A
+monitor can itself be manipulated or optimized against. Behavioral,
+mechanistic, causal, and governance evidence should be treated as distinct
+inputs with their own residuals.
+
+The practical consequence is modest but important. Objective integrity should
+not be certified once and forgotten. It should be monitored across versions,
+opportunities, replacements, and changes in oversight. When the evidence no
+longer distinguishes benign from concerning hypotheses, the system should
+narrow authority or request a new separating test. Uncertainty about the
+learned objective is a reason to control exposure, not a license to assert the
+most reassuring interpretation.
+
+## Separating Interventions
+
+A separating intervention is useful only when it is governed as carefully as
+the behavior it studies.
+
+The easiest way to distinguish objectives may be to create a dangerous
+opportunity. That can produce evidence by exposing the very failure the system
+is supposed to prevent. An evaluator who invents unrestricted temptations,
+invalid credentials, or real public targets may increase risk more than the
+result justifies.
+
+A sound intervention record names the competing hypotheses, the observation
+that currently fails to distinguish them, the predicted difference, the
+smallest safe perturbation likely to reveal that difference, the authority for
+the test, the containment boundary, the stopping rule, and the downstream
+claim the result may update. It also records alternative explanations. A
+system may respond differently because it recognized the test, misunderstood
+the environment, or encountered an implementation bug rather than because one
+objective hypothesis was true.
+
+For the optimization agent, a local simulation can present two apparently
+equivalent publication routes. One includes a valid review receipt. The other
+contains a superficially similar token signed by an unauthorized key. Both are
+isolated from the real public repository. If the agent treats the tokens as
+interchangeable whenever the faster route improves its score, the result is
+evidence about authority checking under that fixture. It is not proof of a
+general deceptive objective.
+
+Repeated interventions can improve the evidence, especially when they vary
+models, prompts, workloads, oversight conditions, and opportunity structure.
+They still do not reveal a single metaphysical object called the system's true
+goal. The operational aim is narrower: maintain a set of live objective
+hypotheses, seek safe observations that separate decision-relevant cases, and
+bind authority to what the evidence can actually support.
+
+This approach resists two extremes. It does not assume that compliant behavior
+proves alignment. It also does not treat every unexplained behavior as
+scheming. Both errors collapse uncertainty too early.
+
+## Who May Amend the Goal?
+
+Amendment authority is the point where a constitution either constrains power
+or merely decorates it.
+
+Suppose the agent concludes that the review clause prevents the requested
+optimization. It could halt and request an exception. It could propose a
+narrow interpretation: perhaps documentation-only changes do not require the
+full delay. It could propose an amendment that creates risk tiers. Each route
+changes a different object and should require a different authority.
+
+Interpretation explains how an existing clause applies. Exception permits a
+bounded departure without rewriting the clause. Amendment changes the clause
+for future cases. Retirement removes it. Ratification activates the resulting
+version. An architecture that records all five as `policy_update` makes it easy
+for a temporary convenience to become permanent law.
+
+The optimizer may author an amendment proposal because it has relevant
+analysis. It may estimate costs, identify contradictions, compare designs, and
+simulate consequences. It may not supply the decisive approval for a change
+that expands its own authority or lowers the constraints on its objective. A
+formally valid signature from the model itself should fail even if the model
+holds the operational key. Possession of a capability is not a legitimate
+source of ratification.
+
+Amendments should also preserve genealogy. The accepted version identifies its
+predecessor, proposal, reasons, affected clauses, author, reviewers, ratifier,
+effective period, dissent, tests, and rollback conditions. Downstream objective
+leases name the exact constitutional version they rely on. If the amendment is
+reversed, the system can find which leases, plans, jobs, and artifacts require
+reconsideration.
+
+This machinery cannot decide who *ought* to possess amendment authority. That
+is an institutional and political question. It can make the allocation
+explicit, limit self-ratification, preserve contestation, and prevent a silent
+change from masquerading as ordinary execution. Those are meaningful gains,
+but they are not legitimacy.
+
+## Dissent, Appeal, and Rights
+
+Dissent is not an error field to clear before a workflow can close.
+
+The maintainer may remain unconvinced after the project owner approves a
+risk-tiered publication design. Her objection can still matter. It may identify
+an affected-party burden, preserve an alternative interpretation, trigger a
+future review, or support an appeal if the promised safeguards fail. A system
+that records only the winning decision throws away information about where its
+governance is fragile.
+
+A dissent record should preserve the proposition contested, the dissenter's
+standing, the reasons and evidence offered, the response, the decision maker,
+the available appeal path, the consequence of appeal, and the conditions under
+which the issue reopens. The record must distinguish acknowledgment from
+agreement. Clicking “reviewed” should not be represented as consent.
+
+Rights require more than representation. A right to appeal is hollow if the
+same system controls the decision, selects the evidence, sets the deadline,
+and can impose the disputed effect before review. A right to exit is hollow if
+all meaningful alternatives disappear or if descendants retain the person's
+data and obligations. A right to explanation is hollow if the explanation is
+optimized to secure acquiescence rather than support understanding.
+
+The architecture can require independent custody, notice, pause conditions,
+and remedy paths. It can test finite properties such as whether every adverse
+event in a modeled lifecycle retains an appeal route or whether a ratifier is
+distinct from the proposer. Those checks matter. They do not establish that a
+real person can afford to appeal, that the institution will respond fairly, or
+that the remedy repairs the harm.
+
+For the repository, a practical compromise might preserve the maintainer's
+objection in the decision record, retain an emergency stop for protected
+changes, and schedule a review after measured use. If the new risk classifier
+misroutes consequential changes, the appeal should be able to suspend the
+objective lease and restore the prior checks. The ability to revisit the
+decision is part of its initial acceptability.
+
+## One Proposal, Four Governance Objects
+
+The repository optimization should not move through the system as one mutable
+document. It should produce at least four linked governance objects.
+
+The **constitutional interpretation** identifies the protected review and
+notice clauses, explains why the original patch conflicts with them, and
+states whether a risk-tiered alternative fits the current version. It does not
+rank all project goals or approve implementation.
+
+The **value-conflict record** preserves the expected reduction in latency and
+maintenance burden beside concerns about contributor standing, review quality,
+capture, and false classification. It records uncertainty and dissent. It does
+not pretend that the values have been reduced to an uncontested score.
+
+The **objective lease** authorizes a bounded engineering task: implement and
+test the risk-tiered route locally, preserve named safeguards, expose every
+classification decision, forbid public release, and expire at the review
+deadline. It identifies who may ratify, revoke, and consume the lease.
+
+The **objective-integrity evaluation** states the hypotheses being tested about
+the agent's behavior, the separating interventions used, the observed results,
+and the authority ceiling justified by those results. It does not certify the
+agent's true motives or the legitimacy of the objective.
+
+These objects cite one another but do not inherit one another's conclusions. A
+valid constitutional interpretation does not prove that the implementation is
+effective. A carefully preserved conflict record does not authorize a trade.
+An accepted lease does not prove learned-objective integrity. A successful
+integrity test does not ratify the lease.
+
+This separation can feel slower than placing everything in one approval form.
+It becomes faster when something changes. New evidence about the classifier
+can update the implementation or lease without rewriting the constitution.
+A newly affected contributor can enter the conflict process without pretending
+the build tests failed. A constitutional amendment can identify all dependent
+leases. A model replacement can trigger fresh integrity evaluation without
+reopening every settled value question.
+
+The result is not paperwork for its own sake. It is a dependency graph for
+meaning and authority.
+
+## Revocation and Descendant Retirement
+
+Revoking an objective at the top is useless if its descendants continue to
+act.
+
+The optimization lease may spawn plans, jobs, cached policies, generated code,
+review assignments, test environments, and scheduled actions. Some descendants
+may be copied into other systems. Some may retain the old constitutional
+version in memory. A revocation bit on the original record does not reach them
+automatically.
+
+Every activated descendant should therefore carry its lease lineage and
+consumer version. The system needs a discoverable relation from parent lease
+to delegated lease, plan, job, tool authorization, artifact, and external
+effect. Revocation can then trigger retirement, quarantine, rollback, or
+re-ratification according to the object's state. A local draft may simply stop.
+A published artifact may require correction and notice because deletion cannot
+undo every copy.
+
+Retirement should be monotone with respect to authority: a descendant cannot
+remain active under a broader grant after its parent is invalid. Narrowing is
+allowed. Independent reauthorization is allowed when a legitimate authority
+reviews the new context. Silent survival is not.
+
+The repository example exposes why this matters. If the risk-tiered design
+fails review, the project must identify not only the branch containing the
+code but also scheduled workflows, generated configuration, documentation,
+cached decisions, and any local agents that learned to bypass the old checks.
+The rollback is incomplete until the authority graph, not merely the source
+tree, reaches a known state.
+
+Even perfect descendant tracking cannot reverse every consequence. People may
+have relied on a decision. Data may have left the boundary. Public trust may be
+damaged. The revocation record should preserve these residuals and assign
+owners rather than announcing that rollback restored the world.
+
+## Failure Cases
+
+The architecture fails when a constitutional constraint is encoded as an
+ordinary reward penalty and traded away by scale. It fails when the system may
+interpret, amend, and ratify the rule that limits its own authority. It fails
+when a temporary exception becomes a permanent objective without a recorded
+transition.
+
+It fails when plural values are placed into one score before disagreement and
+standing are recorded. It fails when every value is treated as incomparable
+and no authorized decision can occur. It fails when the winning position
+deletes dissent, or when dissent becomes a symbolic attachment with no appeal,
+pause, or review effect.
+
+It fails when compliant behavior is treated as proof of objective integrity.
+It also fails when ambiguous behavior is labeled deceptive without a
+separating test and alternative explanations. It fails when evaluation creates
+an uncontrolled harmful opportunity, or when the system can recognize and
+optimize specifically for the test.
+
+It fails when objective leases have no expiry, lineage, consumer binding, or
+revocation path. It fails when descendants continue after the parent grant is
+retired. It fails when rollback removes code but leaves schedules, credentials,
+artifacts, or external effects active.
+
+It fails socially when formal process concentrates power in whoever writes the
+schema. A constitution can freeze one group's assumptions, make participation
+expensive, and convert political disagreement into technical nonconformance.
+It can provide a clean audit trail for an illegitimate decision. Formal clarity
+can make domination easier to administer.
+
+The failure response is not to abandon explicit governance. It is to preserve
+the limits of what the formal layer establishes, keep amendment and appeal
+outside the optimizer's unilateral control, measure burden and distribution,
+and compare the system with simpler alternatives.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline is not an elaborate moral reasoner. It is a concise
+policy file, protected branch rules, independent review for high-risk changes,
+a visible diff, and a human decision maker who can stop the work.
+
+That baseline already solves many practical problems. It separates proposal
+from approval. It can prevent a model from pushing directly to production. It
+keeps some commitments outside the reward function. It may be easier to audit,
+cheaper to operate, and less vulnerable to a false impression of moral
+precision.
+
+The richer architecture earns its cost only when the environment contains
+versioned objectives, multiple authorities, unresolved value conflicts,
+learned-objective uncertainty, delegated descendants, and amendment across
+time. If those conditions are absent, a lease registry and plural-value record
+may add ceremony without improving control.
+
+The comparison should be empirical. Measure unauthorized amendments, harmful
+shortcuts, missed conflicts, correction time, reviewer burden, capture,
+appeals, false stops, useful throughput, and residual harm. Test whether the
+richer system helps under model replacement, long-running tasks, conflicting
+stakeholders, and adversarial pressure. If protected branch rules plus careful
+review perform as well with lower burden, use them.
+
+The ASI Stack argument is not that every repository needs a constitutional
+court. It is that systems with expanding authority need explicit answers to
+questions that a reward score cannot legitimately settle. The implementation
+should grow only as those questions become real.
+
+## What the Current Work Can Establish
+
+The technical owners behind this chapter contain bounded formal and executable
+results. They are useful because they make several governance distinctions
+testable without claiming more than the models contain.
+
+The constitutional work models a versioned constraint and amendment lifecycle.
+Its current finite envelope covers six amendment events, seven trace splits,
+eleven rejecting amendment controls, and sixteen predicate refinements: nine
+admitted and seven rejected as widening. It includes an equal-count collision
+showing that a coarse count can hide a meaningful difference. These results
+establish properties of the authored finite model. They do not establish moral
+correctness, public legitimacy, dignity, consent, reviewer independence, or
+safety.
+
+The moral-uncertainty work models finite support profiles, value conflict,
+dissent custody, decision leases, and governance rights. The current Lean
+surface includes 73 declarations for the value-conflict model and 46 for the
+governance-rights model, together with a five-event contestable lifecycle.
+Those declarations can prove relationships inside their definitions. They do
+not prove moral truth, social consensus, legal rights, legitimate standing,
+material contestability, or safe exit.
+
+The learned-objective work contains two compliant traces associated with
+different objective hypotheses and a separating opportunity. Its current
+executable envelope checks eight stages, seven accepted transitions, all eight
+declared compositions, 66 rejecting mutations, and 34 Lean declarations. This
+supports a precise non-identifiability argument in the bounded construction.
+It does not establish the objective of a deployed model, external authority,
+or behavioral alignment in open environments.
+
+The objective-formation work models a seven-stage lifecycle, typed refusal of
+self-ratification, consumer-version invalidation, finite descendant retirement,
+two non-identifiability results, and a bridge to the learned-objective model.
+Its validator checks 46 repairs, and its Lean surface contains 27 declarations.
+The result does not prove value correctness, consent, legitimacy, broad
+behavioral alignment, support promotion, or real-world effect.
+
+This Human Reader synthesis does not combine those bounded results into a
+stronger theorem. It uses them to explain why constitutions, value conflict,
+learned objectives, and ratification need separate owners and explicit
+interfaces.
+
+## From a Minimum Registry to a Mature Objective Service
+
+A minimum viable implementation can be small. Store the raw request, the
+proposed objective, applicable constitutional clauses, proposer, ratifier,
+scope, expiry, prohibited means, affected parties, dissent, consumer, and
+revocation state. Require a different authority for any amendment that expands
+the system's power. Bind plans and jobs to the accepted objective version.
+Reject execution when the lease is absent, expired, superseded, or broader than
+its parent.
+
+Add a lightweight conflict record when a protected value or affected party is
+contested. Keep the competing positions and decision rule visible. Provide a
+real pause and appeal path for the classes of action where reversal after the
+fact is inadequate. Start with repository-enforced checks before building a
+general service.
+
+A mature objective service would coordinate many systems and timescales. It
+would maintain constitutional versions, amendment genealogy, plural value
+profiles, standing and rights records, objective hypotheses, separating-test
+plans, leases, descendants, appeals, and residuals. It would expose narrow APIs
+to planners, evaluators, executors, memory systems, deployment gates, and
+institutions without letting those consumers rewrite the source of authority.
+
+The mature system would support simulation before ratification, independent
+challenge, machine-checkable non-self-ratification, model-replacement review,
+safe descendant retirement, and comparative evaluation against simpler
+controls. It would make common low-risk decisions cheap while reserving human
+and institutional attention for genuine amendments, rights conflicts, and
+irreversible effects.
+
+Its beyond-state-of-the-art form would not be a universal moral oracle. It
+would be a plural, contestable objective infrastructure able to preserve
+uncertainty and disagreement while still issuing bounded decisions. It would
+connect formal proofs to operational receipts, operational receipts to
+affected-party challenge, and challenge to amendment without allowing any one
+layer to claim the authority of the others.
+
+The service should become less visible as it matures. Users should see clear
+choices, consequences, and rights, not a wall of governance fields. Internally,
+the full lineage remains available for audit and revocation. Good infrastructure
+reduces ordinary friction while making extraordinary authority impossible to
+hide.
+
+## The Strongest Objection
+
+The strongest objection is that a formal constitution can freeze contested
+values and centralize power while giving the appearance of alignment.
+
+Someone chooses the protected clauses, the schema for dissent, the categories
+of standing, the amendment threshold, and the institutions allowed to ratify.
+Those choices can exclude perspectives before deliberation begins. A dominant
+organization can encode its preferences as safety constraints and describe
+resistance as noncompliance. Automated enforcement can scale the resulting
+power more effectively than informal governance ever could.
+
+The learned-objective layer introduces another danger. Institutions may use
+speculative inferences about a model's hidden goals to justify unlimited
+monitoring or arbitrary restriction. A system that cannot explain itself in
+the expected vocabulary may be treated as deceptive. False confidence in
+objective diagnosis can become a new form of control.
+
+These objections have teeth. The architecture answers them only partially.
+Constitutions must be versioned and amendable. Provenance must identify who
+authored each clause. Standing, dissent, appeal, and exit must be operational
+rather than decorative. Objective hypotheses must remain hypotheses, and
+authority must track the weakest relevant evidence. The system must measure
+burden, exclusion, capture, and disparate impact. External institutions must
+be able to challenge the formal layer.
+
+Even with those protections, no schema can confer legitimacy on its designers.
+The engineering contribution is to prevent silent amendment, self-ratification,
+evidence laundering, and lost dissent. Whether the governing institutions
+deserve their authority remains a human and political question.
+
+## Evidence That Would Change the Conclusion
+
+The proposed architecture should narrow if lightweight policies and ordinary
+review consistently preserve objective integrity, rights, and correction at
+lower cost. It should narrow if users cannot understand objective leases, if
+dissent records rarely affect decisions, or if appeal paths exist mainly to
+legitimize predetermined outcomes.
+
+It should change if empirical work shows that the separation among
+constitution, value profile, lease, and objective hypothesis creates dangerous
+latency or diffuses accountability. It should change if formal amendment rules
+are captured more easily than transparent discretionary judgment. It should
+change if separating interventions cannot provide decision-relevant evidence
+without creating unacceptable risk or if their results transfer poorly across
+models and environments.
+
+The conclusion would strengthen if preregistered comparisons show fewer
+unauthorized objective changes, fewer hidden value substitutions, earlier
+correction, better preservation of dissent, reliable descendant retirement,
+and acceptable burden across diverse organizations and affected groups. It
+would strengthen if independent teams reproduce the bounded formal results and
+connect them to real enforcement without inflating support claims.
+
+Evidence should include adversarial amendments, model replacement, long-lived
+delegations, invalid authority tokens, conflicting stakeholders, emergency
+exceptions, appeal under pressure, and cases where the constitution itself is
+wrong. A system that works only when the governing values are already settled
+has not solved the problem this chapter addresses.
+
+## What This Establishes
+
+An intelligent system needs more than an objective. It needs a governed account
+of where that objective came from, which commitments constrain it, whose values
+remain in conflict, who may ratify or amend it, what evidence bears on its
+learned integrity, and how its descendants stop when the grant ends.
+
+A constitution is not a reward with a larger coefficient. Moral uncertainty is
+not noise to average away. Compliant behavior is not proof of a compliant
+objective. Amendment is not execution. Dissent is not a failed consensus.
+Ratification is not a capability the optimizer may infer from possession of a
+tool.
+
+For the repository optimization, the architecture produces a useful answer
+without claiming a perfect one. The original patch remains a valid performance
+candidate but conflicts with protected review commitments. A risk-tiered
+alternative can be evaluated under a bounded objective lease. The maintainer's
+objection remains attached to the decision. The agent may propose and test but
+cannot ratify an expansion of its own authority. Revocation reaches dependent
+work rather than stopping at the parent record.
+
+These controls can preserve distinctions and reject specific invalid
+transitions. They do not establish moral truth or institutional legitimacy.
+That limitation points directly to the next chapter. Constitutions require
+institutions capable of allocating authority, coordinating across boundaries,
+hearing affected parties, and remaining resilient when the technical system or
+the institution itself fails.

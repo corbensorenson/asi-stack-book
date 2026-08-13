@@ -91,6 +91,27 @@ UNIT_06_REQUIRED = [
     "Alignment concerns the relation between result and mandate",
     "the approver is also an epistemic target",
 ]
+UNIT_07_REQUIRED = [
+    "## The Patch Passes Every Test",
+    "## A Constraint Is Not an Objective",
+    "## Values Do Not Become One Number",
+    "## Objective Formation Is a Lease",
+    "## Behavior Is Not Objective Integrity",
+    "## Separating Interventions",
+    "## Who May Amend the Goal?",
+    "## Dissent, Appeal, and Rights",
+    "## One Proposal, Four Governance Objects",
+    "## Revocation and Descendant Retirement",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Can Establish",
+    "## From a Minimum Registry to a Mature Objective Service",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "an optimizer\ncannot ratify its own purpose",
+    "This Human Reader synthesis does not combine those bounded results into a\nstronger theorem",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -167,6 +188,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_06_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 6 missing required argument boundary: {fragment!r}")
+    unit_07 = next((unit for unit in units if unit.get("unit_id") == "unit-07"), None)
+    if unit_07 is None or unit_07.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 7 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_07["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_07_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 7 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

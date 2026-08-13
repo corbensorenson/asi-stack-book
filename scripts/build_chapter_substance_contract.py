@@ -732,8 +732,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "multi-agent-dynamics-collective-intelligence-and-systemic-risk": {
-        "reviewed_sha256": "60799c3850d51d0d9e0e03f5108934d04f3e4cf8b9ebb9efd5ce08c377bd51a1",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "379ccdf827377712ecc9fe8bb470cd5fcdd53d9415523f186a796ec9d4ad99f7",
+        "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -742,6 +742,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the chapter preserves effective diversity, affected nonparticipants, externalities, alternative theories, false-negative defenses, intervention displacement, and argument-only support",
             "the reader-facing allocation counterexample faithfully projects the same-local-permission/opposite-concentration finite result and explicitly refuses social, market, welfare, collusion, or human-agency inference",
             "the 38-declaration static admission and temporal allocation packet establishes only authored campaign-admission, transition-integrity, conservation, receipt, non-authority, composition, exhaustion, and local-summary insufficiency boundaries; population outcomes, effective human agency, and support remain Theseus or empirical obligations",
+            "the publication placement preserves population dynamics as the systemic-risk owner beneath inter-stack protocol mechanics and forbids protocol conformance, claim support, or authority from substituting for population evidence",
         ],
         "support_state_effect": "none",
     },
@@ -860,8 +861,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "human-ai-organizations-delegation-and-accountability": {
-        "reviewed_sha256": "6ee9b2644e21e4e2b869b5aa529fa894bec5dbd3ae8d14867f8f9d624954e52f",
-        "reviewed_date": "2026-08-11",
+        "reviewed_sha256": "8e4bcc27090bb53481279fd571c69df09195704b5844acf0ec648b47320123dc",
+        "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -871,6 +872,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the retained five-stage Lean review and twenty-field mutation consumer establish only finite authored-record reachability and refusal; the added ten-stage delegation-to-remedy lifecycle and 156-mutation consumer establish only authored identity custody, ordering, receipts, non-authority, and closure, while explicit prose preserves field-truth, reviewer-competence, real human-control, remedy-effectiveness, lawful-accountability, organizational-outcome, support, and external-effect nonclaims",
             "the two-hop delegation scene correctly lowers ceilings, aligns current delegate and accountable owner, separates reviewers and custodians, and retains prior owners in residual custody without claiming real or legal accountability",
             "the added institutional-persistence section correctly distinguishes technical write access from legitimate authority and retains affected-party standing, labor, privacy, contestability, remedy, retirement, and adaptation-debt boundaries without claiming organizational efficacy",
+            "the publication placement preserves organizational authority, delegation, accountability, remedy, and succession as this chapter's ownership beneath work-surface evolution without importing product adoption, capability, support, or legitimacy",
         ],
         "support_state_effect": "none",
     },

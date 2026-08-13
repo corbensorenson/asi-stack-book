@@ -201,6 +201,30 @@ truthfulness. Those stronger claims require a deployed resolver, durable-store
 recovery tests, paired source/derived evaluation, and an accepted evidence
 transition.
 
+### Transactions inside the context ABI boundary
+
+A typed context object is only a stable interface if changes to the state
+behind it remain governable. This chapter owns the static request-to-packet
+relation: addresses, versions, snapshots, representations, source and field
+lineage, transformations, omissions, authority and rights, freshness, lease,
+adequacy request, actual emitted content, typed faults, and residuals. [Context
+Transactions, Snapshots, Mounts, and
+Taint](context-transactions-snapshots-mounts-and-taint.qmd) is the stable
+technical-detail owner for dynamic mutation: begin, read, write, mount, branch,
+merge, commit, abort, rollback, crash recovery, taint propagation, invalidation,
+concurrency, and closure across durable context state.
+
+The placement preserves a necessary asymmetry. A transaction can commit
+correctly while materializing an inadequate or over-authorized packet; a
+well-formed packet can refer to state whose write, rollback, deletion, or crash
+recovery was incomplete. The ABI does not inherit serializability, durability,
+atomicity, taint completeness, deletion closure, or recovery. The transaction
+route does not inherit packet adequacy, representation fidelity, model use,
+truth, or permission to expose material. Both owners retain their sources,
+claims, proof targets, tests, fixtures, failures, evidence exits, support
+ceilings, IDs, and URLs. The publication nest creates no context correctness,
+runtime enforcement, support transition, deployment, or release result.
+
 ## Mechanism
 
 The ABI begins with a context request that names the task, address or address

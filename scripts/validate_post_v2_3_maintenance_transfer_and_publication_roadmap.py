@@ -2294,7 +2294,7 @@ def errors(data: dict) -> list[str]:
     if (
         atom_pack.get("chapter_review_count") != 6
         or atom_pack.get("atom_count") != 30
-        or atom_pack.get("identity_graph_canonical_atom_count") != 4112
+        or atom_pack.get("identity_graph_canonical_atom_count") != 4109
         or atom_pack.get("appendix_c_projection_complete") is not True
         or atom_pack.get("mutation_rejection_count") != 14
     ):
@@ -2374,9 +2374,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 4112
+        or template_guard.get("current_prose_candidate_count") != 4114
         or template_guard.get("retired_inherited_prose_candidate_count") != 298
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 966
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 968
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4064
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -2405,7 +2405,7 @@ def errors(data: dict) -> list[str]:
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
         or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 298
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 966
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 968
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):

@@ -18,14 +18,19 @@ EXPECTED = {
     "institutions-international-coordination-and-public-legitimacy.prose.b2ec6d08f0be",
     "intent-to-execution-contracts.prose.05b6de551cc8",
     "intent-to-execution-contracts.prose.0a47a15a695d",
+    "inter-stack-protocols-identity-and-economic-exchange.prose.11b089026a9a",
+    "virtual-context-abi.prose.f0b1eb7dca03",
 }
 REVIEWED_CHAPTERS = {
     "constitutional-alignment-substrate",
+    "context-transactions-snapshots-mounts-and-taint",
     "human-ai-communication-persuasion-and-epistemic-security",
     "human-intent-as-a-formal-input",
     "institutions-international-coordination-and-public-legitimacy",
     "intent-to-execution-contracts",
+    "inter-stack-protocols-identity-and-economic-exchange",
     "moral-uncertainty-and-value-conflict",
+    "virtual-context-abi",
 }
 
 
@@ -74,9 +79,9 @@ def main() -> None:
         review["semantic_sweep"]["prose_candidates_adjudicated"] = counts[chapter_id]
         prior = review["semantic_sweep"].get("review_note", "")
         suffix = (
-            " The human-intent and institutional-governance EM2 publication-composition additions "
-            "were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference "
-            "clause, and the composition adds no new material or support-bearing claim."
+            " The completed EM2 publication-composition additions were re-reviewed; every scanner "
+            "delta is a line-wrapped ownership or non-inference clause, and the composition adds no "
+            "new material or support-bearing claim."
         )
         if suffix.strip() not in prior:
             review["semantic_sweep"]["review_note"] = prior.rstrip() + suffix

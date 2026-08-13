@@ -85,17 +85,29 @@ HUMAN_INSTITUTIONAL_CHILD_IDS = {
     "moral-uncertainty-and-value-conflict",
     "societal-resilience-and-misuse-defense",
 }
+CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS = {
+    "virtual-context-abi",
+    "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+    "inter-stack-protocols-identity-and-economic-exchange",
+}
+CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS = {
+    "context-transactions-snapshots-mounts-and-taint",
+    "human-ai-organizations-delegation-and-accountability",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+}
 COMPOSED_PARENT_IDS = (
     METHOD_DETAIL_PARENT_IDS
     | SECURITY_CUSTODY_PARENT_IDS
     | WHITE_BOX_PARENT_IDS
     | HUMAN_INSTITUTIONAL_PARENT_IDS
+    | CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS
 )
 COMPOSED_CHILD_IDS = (
     METHOD_DETAIL_CHILD_IDS
     | SECURITY_CUSTODY_CHILD_IDS
     | WHITE_BOX_CHILD_IDS
     | HUMAN_INSTITUTIONAL_CHILD_IDS
+    | CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS
 )
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
@@ -248,6 +260,54 @@ COMPOSITION_SURFACES = {
             "An accepted intent record does not establish",
         ],
     ),
+    "virtual-context-abi": (
+        "chapters/virtual-context-abi.qmd",
+        [
+            "### Transactions inside the context ABI boundary",
+            "(context-transactions-snapshots-mounts-and-taint.qmd)",
+            "The placement preserves a necessary asymmetry.",
+        ],
+    ),
+    "context-transactions-snapshots-mounts-and-taint": (
+        "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
+        [
+            "### Dynamic context state beneath the ABI",
+            "(virtual-context-abi.qmd)",
+            "does not turn a packet certificate into transaction evidence",
+        ],
+    ),
+    "ai-work-surfaces-agent-harnesses-and-organizational-absorption": (
+        "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
+        [
+            "### Organizations inside the work-surface boundary",
+            "(human-ai-organizations-delegation-and-accountability.qmd)",
+            "The placement blocks product history from becoming institutional authority.",
+        ],
+    ),
+    "human-ai-organizations-delegation-and-accountability": (
+        "chapters/human-ai-organizations-delegation-and-accountability.qmd",
+        [
+            "### Accountable organizations beneath evolving work surfaces",
+            "(ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd)",
+            "does not let adoption, autonomy, or task coverage stand in",
+        ],
+    ),
+    "inter-stack-protocols-identity-and-economic-exchange": (
+        "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
+        [
+            "### Population dynamics inside the protocol boundary",
+            "(multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd)",
+            "The placement blocks local protocol validity from becoming systemic assurance.",
+        ],
+    ),
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk": (
+        "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
+        [
+            "### Population dynamics above valid inter-stack protocols",
+            "(inter-stack-protocols-identity-and-economic-exchange.qmd)",
+            "does not turn protocol conformance into a claim about the",
+        ],
+    ),
 }
 
 
@@ -340,8 +400,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_four_packages_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record all four EM2 packages")
+    if editorial.get("state") != "em2_five_packages_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record all five EM2 packages")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",
@@ -378,6 +438,16 @@ def validate(
             "state": "composed_no_public_cutover",
             "parent_ids": sorted(HUMAN_INSTITUTIONAL_PARENT_IDS),
             "child_ids": sorted(HUMAN_INSTITUTIONAL_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-context-organization-and-exchange-publication-nests",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS),
+            "child_ids": sorted(CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS),
             "stable_technical_routes_preserved": True,
             "claim_support_inheritance": False,
             "support_state_effect": "none",
@@ -477,6 +547,31 @@ def main() -> None:
         altered_surfaces[chapter_id] = altered_surfaces[chapter_id].replace(good, bad)
         if not validate(structure, status, preview, altered_surfaces):
             errors.append(f"negative control accepted: {label}")
+    composition_boundary_mutations = [
+        (
+            "virtual-context-abi",
+            "The placement preserves a necessary asymmetry.",
+            "The placement permits static and dynamic substitution.",
+            "context static/dynamic boundary erasure",
+        ),
+        (
+            "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+            "The placement blocks product history from becoming institutional authority.",
+            "The placement turns product history into institutional authority.",
+            "work-surface/organization boundary erasure",
+        ),
+        (
+            "inter-stack-protocols-identity-and-economic-exchange",
+            "The placement blocks local protocol validity from becoming systemic assurance.",
+            "The placement turns local protocol validity into systemic assurance.",
+            "protocol/population boundary erasure",
+        ),
+    ]
+    for chapter_id, good, bad, label in composition_boundary_mutations:
+        altered_surfaces = dict(surfaces)
+        altered_surfaces[chapter_id] = altered_surfaces[chapter_id].replace(good, bad)
+        if not validate(structure, status, preview, altered_surfaces):
+            errors.append(f"negative control accepted: {label}")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -484,7 +579,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 10 rejecting controls."
+        "and 13 rejecting controls."
     )
 
 

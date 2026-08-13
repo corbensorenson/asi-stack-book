@@ -196,6 +196,27 @@ erasure categories before it can claim useful advantage.
 
 **How to read the context-transaction figure:** Read the figure as a state lifecycle, not a retrieval pipeline. A context ABI record and certificate enter a transaction record, which fixes the read set, write set, snapshot, mount policy, audit refs, and replay boundary. Branch or commit decisions do not erase taint or deletion obligations. Tainted, revoked, unauthorized, stale, or unclosed derivatives route to fault or quarantine instead of materialization. Downstream artifacts, adequacy records, claim ledgers, and jobs should cite the transaction that materialized their view. The figure is a draft reader aid, not proof of deployed memory-store behavior, branch isolation, resolver correctness, deletion closure, taint enforcement, side-channel safety, benchmark performance, support-state movement, or release approval.
 
+### Dynamic context state beneath the ABI
+
+The consolidated architecture places this dynamic-state route beneath [The
+Virtual Context ABI: Typed Pages, Cells, and
+Certificates](virtual-context-abi.qmd). The parent owns the static,
+consumer-relative request, resolution, representation, certificate, and
+materialization contract. This route continues to own transaction identity,
+read and write sets, snapshots, mounts, branches, merges, commits, aborts,
+rollback, restart recovery, taint and invalidation propagation, concurrency,
+cache invalidation, effect residuals, and closure.
+
+That placement does not turn a packet certificate into transaction evidence
+or a successful commit into context adequacy. This route retains its own
+claims, source queue, proof targets, tests, fixtures, failure modes, evidence
+exit, non-claims, support ceiling, identity, and legacy URL. The parent does
+not inherit serializability, durability, deletion closure, taint completeness,
+or recovery; this route does not inherit representation fidelity, source
+adequacy, authority to disclose, model use, truth, or usefulness. The nest
+creates no deployed storage, concurrency, context-quality, support, safety,
+release, AGI, or ASI result.
+
 ## Mechanism
 
 A Context Transaction Record is the dynamic ledger for durable context-state
