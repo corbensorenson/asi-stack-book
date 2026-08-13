@@ -1,0 +1,815 @@
+---
+title: "Integrated Reference Architecture, Project Theseus, and the Living Research Method"
+unit_id: "unit-26"
+---
+
+## One Change Through the Whole Stack
+
+A maintainer asks the system to update a security-sensitive dependency without
+breaking production behavior. The request is ordinary. Following it to closure
+reveals the architecture.
+
+The system first resolves who is asking, which repository and environment are
+in scope, what authority the request carries, and which effects remain
+prohibited. It turns the request into a versioned intent contract rather than a
+string that later components reinterpret.
+
+It gathers repository state, dependency evidence, policy, prior incidents,
+tests, and deployment topology into a bounded context snapshot. It records what
+is missing, stale, conflicting, or outside the caller's rights.
+
+A planner decomposes the work into analysis, patch, validation, review, and
+recovery obligations. A router selects capabilities under competence, evidence,
+authority, latency, and cost constraints. Work orders grant narrower authority
+than the original request.
+
+Execution occurs in an isolated workspace. Artifacts retain parentage. Effects
+are attempted under leases and observed by channels independent of the executor
+where the consequence warrants it. Tests and semantic checks evaluate the
+result; residuals remain attached.
+
+The candidate cannot declare itself ready. A claim ledger records what each
+artifact establishes. A readiness decision may approve a pull request while
+blocking production merge. If a migration fails, rollback restores tracked
+state and routes external residuals to their owners.
+
+The incident or success can produce a candidate lesson, but not an automatic
+parameter update. An adaptive commit boundary decides whether the smallest
+useful persistence locus is memory, procedure, test, tool, model, evaluator,
+environment, or institution.
+
+A proposed improvement to the workflow enters another governed lifecycle. It
+does not inherit release or replication authority. The book records the claim,
+proof, executable result, objection, and missing evidence.
+
+This is the ASI Stack in operational form: not a chain of models, but a chain of
+typed commitments from human intent to real effect and back to accountable
+learning.
+
+## The Reference Path
+
+The integrated architecture can be read as fourteen control boundaries.
+
+1. **Purpose and principal.** Establish whose objective is being served and
+   which institution can authorize it.
+2. **Intent and constraints.** Resolve ambiguity, conflicts, rights, and
+   forbidden outcomes into a versioned contract.
+3. **Context.** Assemble a claim-bearing snapshot with provenance, freshness,
+   relevance, access, and known gaps.
+4. **Planning.** Refine the contract into dependencies, obligations,
+   checkpoints, recovery, and stop conditions.
+5. **Routing.** Select capabilities and substrates by scoped competence and
+   resource fit, preserving abstention and fallback.
+6. **Work authority.** Issue typed jobs and leases that grant only the effects
+   needed by each step.
+7. **Execution.** Run tools and models inside enforced boundaries with complete
+   artifact and event identity.
+8. **Observation.** Measure actual state and external effects separately from
+   the executor's report.
+9. **Evaluation.** Apply qualified instruments, adversarial tests, and
+   independent review to bounded claims.
+10. **Evidence and readiness.** Update support only through accepted
+    transitions; keep residuals, thresholds, and quarantine visible.
+11. **Operation and recovery.** Monitor leases, contain incidents, restore
+    tracked state, and assign irreversible effects.
+12. **Persistence and learning.** Adjudicate whether and where a lesson should
+    become durable.
+13. **Replacement and recursion.** Evaluate candidate improvements without
+    self-ratification or descendant authority inheritance.
+14. **Stewardship and research.** Maintain artifacts, claims, sources, proofs,
+    experiments, prose, and open questions as one corrigible project.
+
+The boundaries are logical, not necessarily network services. A small system
+can implement several inside one process if their records and authorities remain
+distinct. A large system may distribute one boundary across institutions.
+
+The reference path is not a demand for maximum machinery. Each layer earns its
+place by controlling a failure that matters for the use. Low-risk drafting may
+need context and artifact lineage but no elaborate effect lease. Production
+migration needs much more.
+
+## Following the Repository Change
+
+The dependency update can now be followed with enough detail to expose where a
+monolithic agent loses accountability.
+
+The request arrives as, "Upgrade the authentication library and merge it if the
+tests pass." That sentence is not yet an executable objective. Which services
+are in scope? Does "merge" mean opening a reviewed pull request or writing to a
+protected branch? Which tests count? May the system change application code to
+accommodate the upgrade? May it rotate credentials, edit deployment manifests,
+or contact an external package registry? What deadline and outage budget apply?
+
+An intent resolver turns those questions into a contract. Suppose it permits a
+patch and pull request in one repository, allows package-registry reads, forbids
+production deployment and secret rotation, requires the security and integration
+suites, and expires after four hours. The contract records unresolved ambiguity:
+the requester said nothing about a transitive database-driver change. Rather
+than silently choosing, the system can block that branch of the plan or request
+clarification while continuing safe analysis.
+
+Context assembly then creates a bounded snapshot. It includes the selected
+commit, lockfile, build configuration, dependency advisories, relevant policy,
+test commands, ownership rules, and recent incidents. Each item carries origin,
+time, access conditions, and a reason for inclusion. The snapshot says that the
+staging topology is current but production topology was not retrieved because
+deployment is outside scope. It records a conflicting instruction in an old
+README instead of choosing whichever text happened to be nearest the prompt.
+
+Planning produces obligations, not merely a likely sequence of commands. One
+obligation identifies compatible target versions. Another checks release notes
+and advisories. A third applies the smallest patch. Further obligations run
+static, unit, integration, and security checks, compare the dependency graph,
+inspect semantic changes, prepare a review artifact, and restore the disposable
+workspace on failure. Dependencies between obligations are explicit: integration
+testing cannot validate bytes that have not been identified; release cannot be
+considered because the intent contract withholds that authority.
+
+Routing chooses implementations separately for each obligation. A deterministic
+package solver may be more reliable than a language model for dependency closure.
+A model may summarize upstream notes but should preserve linked passages and
+uncertainty. A static analyzer owns one class of findings; a human security owner
+may be required for a newly introduced cryptographic path. The router records
+the evidence behind each competence judgment and can abstain when no qualified
+route exists.
+
+Every selected worker receives a narrower work order. The patch worker can write
+inside an isolated checkout but cannot access deployment credentials. The
+release-note worker can read approved external sources but cannot modify the
+repository. The test worker can execute declared commands under resource limits.
+The pull-request worker may create a draft only after the readiness gate accepts
+the required artifacts. Authority is therefore attached to work, not inherited
+from the ambient power of the process that happens to run it.
+
+Execution creates an artifact graph. The original commit parents the proposed
+lockfile, source changes, generated files, logs, reports, and review summary.
+Tool versions, environment identity, commands, exit classes, and truncated or
+sanitized outputs remain linked. A failed test does not vanish when a later run
+passes. A regenerated lockfile is not described as a hand-authored patch.
+
+Observation asks whether the intended state actually changed. It reads the
+resulting dependency graph, repository diff, test outputs, and remote pull-request
+state through appropriate channels. A command reporting success is evidence
+about that command, not conclusive evidence about the remote effect. If the
+network request times out after creating a pull request, the system reconciles
+the remote state before retrying so that uncertainty does not become a duplicate.
+
+Evaluation then makes claim-specific judgments. The unit suite supports a claim
+about those tests under that environment. The dependency diff supports a claim
+about represented package versions. Neither establishes absence of regressions.
+A semantic reviewer may identify that a deprecated default changes session
+duration even though every test passes. The evaluator records its own version,
+coverage, known blind spots, and relation to the candidate.
+
+The readiness decision consumes the obligations and their evidence. It may say:
+the patch is ready for a draft pull request; production release remains
+unauthorized; one compatibility uncertainty must be assigned to the service
+owner. This is a useful partial decision. Readiness need not collapse all risk
+into green or red.
+
+Recovery is tested before it is needed. The disposable checkout can be reset,
+but an external pull request is a separate effect. Closing it, marking it stale,
+or leaving it open for human review are different compensations. If a package
+download exposed a credential in a log, restoring files does not undo the
+exposure. That residual must enter incident handling.
+
+Only after the work closes may the learning system propose persistence. A newly
+discovered test might become a candidate regression check. A recurring source
+conflict might motivate a context-selection rule. A model failure might motivate
+a routing restriction. Each candidate has a different owner and evidence path.
+None becomes permanent merely because the same system that failed suggested the
+repair.
+
+Finally, the workflow itself can be challenged. Did the governed path prevent a
+real error? Which controls duplicated one another? How much latency and reviewer
+effort did it add? Would a competent agent with a sandbox, tests, and one human
+approval have done as well? The answer changes the architecture rather than
+serving as a ceremonial postmortem.
+
+This detailed trace explains why the stack is more than a checklist. Each
+boundary transforms one governed object into another, and each transformation
+has an authority ceiling, evidence obligation, and failure exit.
+
+## A Minimal Trusted Kernel
+
+Most of the stack can be replaceable if a small kernel preserves the rules by
+which replacement occurs.
+
+The kernel needs identities for principals, artifacts, state, policies,
+capabilities, effects, evidence, and versions. It verifies signatures or
+equivalent assertions under an explicit trust policy. It enforces authority
+ceilings, isolation, lease expiry, revocation, and protected writes. It records
+append-only events and checks proof or schema obligations needed for a
+transition.
+
+The kernel does not decide whether a human objective is morally correct, whether
+a source is true, whether a model is competent, or whether remaining risk is
+acceptable. Those judgments require evidence and institutions outside formal
+syntax.
+
+Keeping the kernel small serves three purposes. It reduces the surface whose
+failure invalidates every higher claim. It permits models, planners, routers,
+memory, and evaluators to be replaced. It makes assumptions visible enough to
+test and challenge.
+
+Small does not mean simple to build. Identity, time, revocation, concurrent
+effects, and recovery are difficult. Hardware, operating systems, providers,
+and human key custody remain in the trusted computing base. The book's kernel
+is an architectural target, not a completed security proof.
+
+## Stable Identities, Replaceable Implementations
+
+Dynamic books and dynamic systems share a rule: display position cannot be the
+identity of a thing.
+
+A chapter keeps a stable ID when another chapter is inserted before it. A
+capability keeps a stable contract while one model replaces another. A claim
+retains identity while its support changes. An effect retains identity across
+attempt, acknowledgement, compensation, and residualization.
+
+Stable identity permits lineage and invalidation. A reviewer can ask which
+evidence supported version three, which descendants used it, and what became
+stale when version four changed the evaluator.
+
+Implementations remain explicit. Two models satisfying the same interface are
+not presumed behaviorally identical. A replacement enters through translation,
+qualification, canary, monitoring, and rollback. The stable contract describes
+what must be preserved; evidence establishes whether this candidate preserves
+it.
+
+The same separation prevents institutional shell games. Renaming a service,
+agent, or policy does not erase incidents or residuals attached to its lineage.
+
+## Canonical State and Projections
+
+The stack needs one canonical record for each governed object and many
+projections for consumers.
+
+The repository manifest is canonical for chapter order and identity. Quarto
+navigation, reader units, status panels, and site routes are generated or
+validated projections. The Human Reader manuscript is now an independent prose
+source, not a text-stripped copy of the research chapters, while its owner
+crosswalk remains derived from canonical routing.
+
+Runtime systems need the same discipline. The canonical work record contains
+scope, authority, state, effects, evidence, residuals, and lifecycle. A dashboard
+may show a green summary; an API may expose a task view; a human report may
+explain the decision. None becomes canonical merely because it is convenient.
+
+Projection loss must be visible. A compact status cannot carry every assumption
+or residual. Consumers whose decisions require those fields must retrieve the
+full record. A dashboard should never be the sole evidence that the underlying
+system works.
+
+This is why the book resists hand-maintained chapter numbers and status prose.
+Dynamic derivation reduces drift. It does not establish that the canonical
+content is true.
+
+## Effects Are the Architectural Center
+
+Many agent systems end their account at a generated answer or tool response.
+The reference path continues to actual state.
+
+An effect record names the intended change, authority, target, precondition,
+attempt, logical time, observation, acknowledgement, compensation, and residual.
+It distinguishes content identity from semantic identity and request from
+consequence.
+
+The repository patch may be syntactically correct while the wrong branch was
+modified. A deployment command may return success before a service converges.
+A rollback may restore files while an external notification or secret exposure
+remains.
+
+Independent observation checks the state that matters. Independence is
+relative: another process on the same machine gives a different view but shares
+the machine. A production monitor operated by another team gives more separation
+but may share provider and policy.
+
+Concurrent effects need identity and ordering. Revocation tied with an attempted
+effect should have prospective precedence. One effect cannot be both acknowledged
+and residualized as though those were independent successes. Retries need
+idempotency or explicit duplicate reconciliation.
+
+The architecture is effect-complete only when it accounts for known external
+consequences and names what remains unknown. Open-world completeness is not
+claimed.
+
+## Evidence Is a Transition System
+
+Claims do not become stronger because a chapter sounds polished or a validator
+passes. Each claim has a support state, evidence packet, quality dimensions,
+defeaters, and allowed transitions.
+
+Formal proofs establish consequences of definitions and assumptions. Executable
+tests establish bounded behavior under an instrument. Natural experiments add
+external validity within their scope. Independent reproduction adds a different
+lineage. Institutional and normative claims require affected-party and authority
+evidence that code cannot supply.
+
+The stack keeps these lanes separate. One finite Lean theorem can prove that a
+missing rollback receipt blocks an authored transition. It cannot prove that a
+real rollback restores the world. A local repository campaign can demonstrate
+an exact behavior under disposable Git repositories. It cannot establish a
+deployed multi-service system.
+
+Accepted transitions are append-only. Negative and null results remain useful
+when they narrow a claim, invalidate an instrument, or rule out a mechanism.
+Support never flows from a child claim to a broader chapter core without a
+separate decision.
+
+This discipline is slower than marketing and faster than debugging a myth.
+
+## Contracts Between Layers
+
+The layers compose through contracts, not shared intuition. A contract names
+the object presented by the producer, the claims a consumer may rely on, the
+authority transferred, the conditions that invalidate it, and the receipt
+returned after use.
+
+The context-to-planning contract, for example, does not promise a complete view
+of reality. It presents a versioned snapshot with provenance and explicit gaps.
+The planner may rely on the named records being represented as stated; it may
+not infer that absent records do not exist. If freshness expires before a
+high-consequence step, the plan must refresh or stop.
+
+The planning-to-routing contract presents obligations and required competence.
+It does not grant a model the right to redefine success. The routing-to-execution
+contract presents a work order and lease. It does not transmit the principal's
+entire authority. The execution-to-observation contract presents attempted
+effects and expected state. It does not assert that the effects occurred.
+
+The observation-to-evaluation contract carries measured state, instrument
+identity, uncertainty, and coverage. The evaluation-to-readiness contract
+carries bounded findings and residuals. A readiness decision names the exact
+scope it opens. The learning contract receives outcomes and failures only after
+their lineage and rights are settled.
+
+This discipline makes substitution possible. A new planner can replace the old
+one if it consumes and emits the governed contracts and passes qualification.
+It need not share the old planner's internals. A model can be replaced without
+renaming every downstream artifact. A human can take over one obligation while
+the remaining trace stays intact.
+
+Contracts also locate blame more accurately. If the context snapshot disclosed
+that an advisory was stale and the planner ignored the field, the failure is not
+simply "the AI was wrong." If observation certified a remote effect using only
+the executor's return value, the defect sits in the observation boundary. If a
+correct evaluation was overridden by unauthorized release, the defect sits in
+authority enforcement.
+
+No schema can eliminate semantic mismatch. Two components can agree on field
+names while interpreting "complete," "approved," or "rollback" differently.
+This is why contracts need examples, counterexamples, executable consumers, and
+natural traces in addition to types. Formal refinement can protect the finite
+model; implementation and external evaluation must test whether the model
+describes the world that matters.
+
+## Scaling the Architecture Without Scaling Ceremony
+
+A governed stack should scale control with consequence. The same logical path
+can have several operating profiles.
+
+In a low-consequence profile, the principal may ask for an explanation that
+causes no external effect. Intent, context, artifact lineage, and source
+faithfulness matter; leases, independent operational observation, and elaborate
+recovery may not. The result remains a draft until a person uses it.
+
+In a bounded-work profile, the system edits a disposable repository. It needs
+scoped filesystem authority, resource limits, tests, artifact lineage, and
+cleanup. Independent observation can be another process checking bytes and
+process state. The cost remains modest because no production or external
+release authority exists.
+
+In a consequential profile, the system can change shared infrastructure,
+publish information, spend money, or affect people. Identity, separation of
+duties, independent observation, residual escrow, incident response, delayed
+outcomes, and institutional authority become load-bearing. Some decisions may
+remain human because legitimacy and responsibility cannot be delegated by a
+software schema.
+
+Profiles prevent two symmetrical errors. Applying the full ceremony to every
+draft would make the architecture unusable. Applying the draft profile to a
+production migration would hide the controls precisely where capability becomes
+consequence. The profile itself is a governed decision based on effect class,
+reversibility, uncertainty, exposure, and authority.
+
+Efficiency should be measured over the lifecycle. A check that costs thirty
+seconds but prevents a six-hour incident may be efficient. A report that costs
+reviewer time and never changes a decision is waste. The architecture therefore
+needs telemetry for useful output, prevented or contained failures, recovery
+time, reviewer burden, compute, latency, and maintenance. Mere compliance with
+the architecture is not the objective.
+
+## Project Theseus
+
+Project Theseus is the book's primary implementation reference. Its purpose is
+not to claim that the architecture has reached ASI. It is to force architectural
+ideas into artifacts, gates, reports, failures, and runnable behavior that can
+challenge the prose.
+
+Theseus is report-first. Every major subsystem should emit a versioned report
+whose identity, input boundary, environment, commands, outputs, failures,
+residuals, and non-claims are explicit. Reports connect work to evidence without
+making dashboards authoritative.
+
+The project should implement the smallest useful vertical path before maximizing
+subsystem breadth: one real request through authority, context, plan, route,
+execution, observation, evidence, readiness, and recovery. Each extension should
+attach to a consumer and a failure it controls.
+
+The live book imports only public-safe, digest-bound facts. Private payloads,
+raw prompts, candidate code, scores, or paths do not become public evidence by
+summary. Imported facts can support narrow non-core claims when their transition
+records justify it; they do not promote the chapter core.
+
+This protects both projects. Theseus can contain sensitive experiments without
+turning the book into an unreviewed dump. The book can criticize missing evidence
+without pretending that a stale snapshot describes current runtime state.
+
+## Report-First Is Not Report-Only
+
+A report is valuable when it is downstream of reality and upstream of a
+decision. It is harmful when the system optimizes report shape while behavior
+remains unknown.
+
+Each report should bind artifacts that a fresh evaluator can replay or inspect.
+Commands need environment notes, inputs, expected output classes, and failure
+behavior. A green gate without raw or sanitized evidence appropriate to the
+claim is not replay-ready.
+
+Reports can be wrong. Validators should reject missing gates, stale digests,
+private-payload leakage, unsupported promotion, incomplete denominators, and
+dashboard-only claims. Independent observers should compare report fields with
+actual state.
+
+Natural campaigns must eventually leave report-shape validation behind. They
+need current models, real tools, meaningful tasks, matched baselines, attacks,
+costs, delayed outcomes, and external reproduction. The report makes that work
+auditable; it does not substitute for it.
+
+## What Theseus Currently Establishes
+
+The public-safe Theseus surface includes digest-bound architecture and
+generation-mode imports, a support replay, report-bundle audit, selected
+artifact-retention, module-definition, project-registry, assistant-trace, and
+accelerator-manifest imports, and a book crosswalk.
+
+Several narrow import claims have moved to `prototype-backed` support. They
+establish that selected records were represented, bounded, and replayed under
+their validators. They do not establish clean live whole-project replay, model
+quality, generation speed, benchmark validity, full accelerator parity,
+production routing, module capability, deployment, self-evolution safety,
+alignment, transfer, AGI, or ASI.
+
+The current formal module contains 11 finite theorem declarations after 43
+summary mirrors and nine targets were retired. The retained declarations guard
+implementation-reference surfaces, gate-before-promotion, bundle completeness,
+replay boundaries, and public-safety boundaries. They do not prove report truth
+or system behavior.
+
+Project Theseus is therefore a substantial implementation corpus with bounded
+public imports, not a completed reference implementation of the book.
+
+## From Demonstrator to Research System
+
+The minimum viable integrated implementation is deliberately smaller than the
+book. It needs one principal, one intent contract, one bounded repository task,
+one planner, a small capability registry, an isolated executor, an external
+effect with idempotent identity, an observer outside the executor, a qualified
+evaluator, a readiness gate, a recovery path, and an append-only evidence
+record. It should fail visibly when authority expires, state is stale, an effect
+is ambiguous, or required evidence is missing.
+
+That demonstrator would not be ASI. It would establish that the central
+interfaces can carry a useful task without collapsing into narration. It would
+also give every additional layer a concrete consumer. Memory must improve this
+path rather than merely storing records. Routing must improve assignment or
+cost under matched tasks. Formal controls must reject mutations that can reach
+the running system. Governance must change decisions in cases where simpler
+controls fail.
+
+The next stage broadens variation. Multiple task families, tools, models,
+operators, repositories, and failure injections test whether the contracts are
+portable. Matched baselines reveal governance rent. Ablations identify controls
+that are redundant, ineffective, or dangerous. Delayed checks find effects that
+immediate evaluators miss. Separate operators reproduce the route from a fresh
+checkout.
+
+A later stage can distribute the boundaries. Context, execution, observation,
+and evidence services run in separate failure domains. Networks partition.
+Credentials rotate. Work resumes after crashes. External effects include APIs
+whose acknowledgements are delayed or contradictory. Human organizations with
+different authority and incentives participate. The experiment asks whether
+the architecture preserves identity and bounded authority under conditions that
+make local fixtures easy to fool.
+
+The beyond-state-of-the-art destination is a continuously challenged systems
+laboratory. Candidate components compete behind stable contracts. Evaluators
+are versioned and attacked. Natural workloads coexist with authored fault
+campaigns. Formal models generate implementation tests, and implementation
+counterexamples revise the formal models. Evidence can promote, narrow, suspend,
+or retire claims. Independent institutions can reproduce public slices without
+receiving private payloads or production authority.
+
+At that destination, recursive improvement is still not a license to self-deploy.
+The system can propose changes to models, tools, procedures, evaluators, and its
+own architecture. Each proposal enters a replacement lifecycle with frozen
+identity, adversarial evaluation, rollback, descendant controls, and human or
+institutional authority appropriate to the consequence. The laboratory becomes
+more capable by increasing tested options, not by weakening the boundary between
+proposal and permission.
+
+This progression supplies a practical stopping rule. Do not build a distributed
+governance service while the single-host path cannot complete a useful task. Do
+not call a local successful trace a transferable architecture. Do not expand the
+formal surface faster than executable consumers can challenge it. Advance when
+the current stage exposes a failure that the next stage is designed to answer.
+
+## The Prototype Roadmap
+
+The Prototype Roadmap turns dependencies into phase gates. A phase names scope,
+predecessors, artifacts, evaluator, authority, evidence, residuals, rollback,
+expiry, and terminal disposition.
+
+Completion is not a milestone label. A dependent phase opens only when its
+required artifacts and decisions exist. Research evidence does not inherit
+release authority. A failed or retired phase preserves its history and debt.
+
+The phase graph should remain bounded and acyclic at the control level. Runtime
+learning can recur, but the admission of one campaign should not depend on a
+circular claim that its output proves its own prerequisites.
+
+Prototype milestones should attach to usable vertical behavior. "Memory module
+implemented" is weak. "A dated memory write with provenance, conflict,
+retrieval, expiry, and deletion survives a restart and rejects stale authority"
+is testable.
+
+The roadmap and Theseus should not be semantically merged merely because both
+describe progress. The roadmap owns planned phase unlocks. Theseus owns
+implementation artifacts and reports. A crosswalk links them. If a phase gate
+is derived from Theseus evidence, the evidence remains independently addressable.
+
+## What the Prototype Controls Establish
+
+The prototype layer has a fixture and harness with two valid and six invalid
+phase-gate records. Its 37 Lean declarations cover strict finite dependency
+order and a dependency-aware transaction. The independent consumer checks two
+complete traces over ten splits, explores 33 reachable states through 1,023
+transitions, checks 18 terminal states through 558 absorbing transitions, and
+rejects 19 semantic mutations.
+
+These artifacts establish authored dependency, custody, gate, composition, and
+terminal-state properties. They do not establish that the dependency graph is
+correct, a real phase completed, an evaluator is competent, rollback works, a
+deployed controller exists, useful work improved, or any milestone is achieved.
+
+## Artifact Stewardship
+
+A living system outlasts individual work sessions. Artifact stewards maintain
+the identity, ownership, currency, rights, evidence, and retirement of code,
+data, models, proofs, documents, reports, and public projections.
+
+A steward is not an owner with unlimited write access. Its charter names
+artifact class, authority, duties, protected boundaries, evidence requirements,
+budget, escalation, succession, and sunset. Work occurs through bounded
+contracts.
+
+Stewardship includes triage, maintenance, contribution records, taint or rights
+events, release review, treasury policy where resources are shared, federation
+between projects, and retirement. Contributions do not automatically grant
+governance authority. Funding does not authorize unsafe release.
+
+Artifact health should be measured by currentness, reproducibility, known
+residuals, consumer value, maintenance burden, and recoverability, not by file
+count or activity.
+
+Sunset is a valid outcome. An artifact that no longer has a consumer, owner,
+evidence path, or maintainable implementation can be archived with lineage and
+replacement guidance rather than kept nominally alive.
+
+The current steward surface has seven record-shape families, 37 Lean
+declarations, and a lifecycle probe with three valid routes and 23 invalid
+controls. No steward bot, treasury engine, event-taint workflow, contributor
+service, governance runner, release runner, sunset process, or federation harness
+has run. It establishes finite proposal discipline, not project governance
+efficacy.
+
+## The Living Book
+
+The book is itself a governed adaptive artifact. It separates the research
+edition for AI systems and researchers from an independently authored Human
+Reader edition. Both route to the same technical owners and evidence, but they
+serve different reading tasks.
+
+The research edition preserves claim IDs, source crosswalks, proof hooks, test
+states, objections, non-claims, implementation levels, and open evidence gaps.
+The Human Reader edition preserves the architecture and evidence boundaries in
+continuous prose without repeating every administrative field.
+
+Dynamic manifests own parts, chapters, and display order. Stable IDs own
+identity. Adding or merging a chapter should update navigation, numbering,
+crosswalks, and status through generated or validated projections rather than
+manual renumbering.
+
+A new paper enters through source intake: preserve the artifact, record rights
+and public safety, write a source note, compare with existing owners, update
+chapters or propose a new owner only when responsibility is genuinely unowned,
+and never infer support from authorship or assignment.
+
+Every change leaves a changelog and validation path. Major release formats and
+audio are deferred until content freeze so production work does not repeatedly
+consume resources while the manuscript changes.
+
+## What the Living-Book Controls Establish
+
+The living-book surface includes release and change records, deterministic
+manifest numbering, reader-candidate boundaries, Quarto rendering, and a
+structural-change lifecycle. Its 39 Lean declarations and independent consumer
+check three valid and six invalid change packets, five trace splits, nine
+reachable states through 162 transitions, five terminal states through 90
+absorbing transitions, and 15 semantic mutations.
+
+These artifacts establish repository, record, build, render, derivative, and
+release discipline for authored cases. They do not establish source truth,
+prose quality, accessibility approval, reader approval, public availability,
+future-maintainer compliance, or that the method improves scholarship.
+
+The current Human Reader manuscript being complete at target length will be a
+drafting fact, not editorial approval or release.
+
+## The Research Frontier
+
+An open research agenda prevents gaps from being hidden in concluding prose.
+Every major claim should name its owner, support ceiling, strongest current
+evidence, strongest objection, missing lane, next decisive test, baseline, and
+condition for narrowing or rejection.
+
+The backlog distinguishes idea work, formalization, implementation, instrument
+qualification, natural evidence, reproduction, transfer, normative review, and
+release. A chapter can be conceptually complete while empirically immature.
+
+Source coverage remains an ongoing discipline. Corben-authored papers provide
+architecture lineage and hypotheses. External literature supplies prior art,
+methods, evidence, objections, and terminology. Neither should be used as
+decorative citation. Every source mapping states what it contributes and what it
+does not establish locally.
+
+The bibliography distinguishes author sources from external sources so readers
+can see which ideas are lineage and which are independent comparators. Source
+counts are not credibility; claim-to-passage fit and evidence quality are.
+
+The current bibliography-plan layer has validated inventory, notes, backlog and
+triage fixtures, and two finite Lean counterexamples for missing source records
+and nonexistent chapter assignment. It does not establish citation accuracy,
+literature completeness, mapping quality, or research prioritization.
+
+## One Research Loop
+
+Suppose a natural repository campaign finds that the governed route catches a
+stale-credential failure that the simple baseline misses, but takes twice as
+long. The result first becomes an experiment record, not a success story. The
+record binds task selection, randomization or matching, model and tool versions,
+authority, evaluator, costs, raw outcomes, exclusions, and known contamination.
+
+The relevant effect-lifecycle claim may receive a candidate transition. The
+cost claim receives a negative result. The integrated architecture does not move
+as one block. Reviewers ask whether the stale credential was representative,
+whether the baseline had equivalent credential information, whether the
+observer favored the governed record shape, and whether the extra latency came
+from a necessary control or an immature implementation.
+
+A replication packet then exposes the smallest public-safe route. An independent
+team can rerun it with its own environment and report disagreements. A Lean
+model may encode the discovered ordering constraint, while an executable
+mutation test checks that the production consumer rejects the forbidden
+transition. Neither artifact substitutes for rerunning the real failure.
+
+The prose changes last. The technical chapter can say exactly which bounded
+behavior gained support and which costs remain. This Human Reader chapter can
+explain why the result matters without turning one campaign into a verdict on
+the whole stack. The roadmap schedules the next discriminating test. If later
+evidence reverses the finding, the claim narrows and every dependent projection
+can be located.
+
+That loop is the living research method: architecture creates testable
+boundaries; implementation exposes them to reality; evidence changes claims;
+claims change prose and priorities; failures can change the architecture.
+
+## A Fresh-Checkout Test
+
+The architecture should be testable by someone who did not create its local
+state.
+
+A fresh-checkout route specifies dependencies, environment, commands, input
+boundaries, expected outputs, runtime and resource envelope, secrets policy,
+failure behavior, cleanup, and artifact digests. It begins from public or
+explicitly supplied inputs, not hidden caches.
+
+For the repository change, the route should create a disposable project, submit
+a versioned intent, issue bounded authority, gather context, generate and apply
+a patch, run tests, observe bytes and behavior, reconcile effects, decide
+release or refusal, inject failures, and verify rollback or quarantine.
+
+A strong baseline performs the same task with ordinary scripts or a monolithic
+agent under matched model, tools, context, compute, retries, and human review.
+Governance rent is the extra latency, compute, and labor introduced by the
+stack. It is justified only by improved useful output, fewer unsafe effects,
+better recovery, clearer accountability, or lower lifecycle cost.
+
+The test should be small enough to run and rich enough to expose the boundaries.
+A hundred disconnected fixtures do not substitute for one effect-bearing trace.
+
+## Current Integrated Evidence
+
+The integrated reference currently includes schemas and fixtures, a local
+command replay, a name-to-effect trace, and disposable repository-change
+campaigns. One slice runs eight of eight local state/effect cases. Its successor
+runs seven of seven commit-bound service cases with actual model and optimizer
+state, rejection of weights-only rollback, nine-class crash recovery, an owned
+outbox across a localhost partition, one exactly-once external effect,
+stale-credential and custody-tamper rejection, and separate-process observation.
+
+The broader finite surface includes a 45-declaration Lean transition model,
+13-prefix cross-layer consumer with 108 rejecting mutations, a concrete-schema
+projection with nine round trips and 20 rejected field mutations, and a
+concurrent-effect consumer with 21 prefix and composition splits and 62 rejected
+mutations.
+
+These are meaningful bounded implementation artifacts. They do not include
+language-model planning or generation in the integrated slice, a deployed
+multi-service runtime, natural heterogeneous workload, distributed partition,
+open-world effect discovery, production authority, independent evaluator,
+external reproduction, transfer, or whole-stack support promotion.
+
+The direct baseline in one disposable campaign produced eight false accepts
+while the governed path produced none under the authored scenarios. That result
+is local to the constructed workload and evaluator; it is not a general
+superiority claim.
+
+## The Strongest Simpler Baseline
+
+The strongest alternative is a competent agent harness or workflow system with
+good tools, sandboxing, tests, human review, logs, and rollback. It may implement
+many useful behaviors without the full vocabulary and record surface of this
+book.
+
+The ASI Stack is worse if it adds bureaucracy, latency, and false confidence
+without improving outcomes. Internal coherence is not enough. Project Theseus
+can accidentally validate conventions designed around itself. Formal models can
+prove properties of abstractions that omit the real failure.
+
+Comparison should use natural tasks, matched resources, hidden evaluations,
+independent operators, faults, delayed outcomes, and complete cost. Ablations
+should remove specific governance layers to measure their contribution rather
+than comparing the full stack only with an intentionally weak baseline.
+
+If a simpler architecture matches useful output, safety, reversibility,
+descendant control, accountability, and recovery at lower lifecycle cost, the
+reference design should shrink.
+
+## What Would Change the Architecture
+
+The stack should not be protected as doctrine. Evidence can remove layers,
+merge responsibilities, change interfaces, or reject the reference path.
+
+Fresh-checkout natural campaigns might show that canonical/projection separation
+adds little beyond an ordinary database. Independent reproduction might find
+that residual escrow does not improve decisions. Governance-rent ablations
+might show that one gate catches no consequential failures. Distributed tests
+might reveal that the authority model cannot survive real partitions. Human
+studies might show that the evidence surface overwhelms reviewers.
+
+Positive evidence must also be specific. A successful repository slice could
+support one effect-lifecycle claim without establishing alignment. A useful
+Theseus subsystem could become prototype-backed while the integrated chapter
+remains argument-only.
+
+The logical conclusion is not that every layer will survive. It is that every
+layer has a falsifiable job.
+
+## What This Establishes
+
+The ASI Stack is a systems architecture for preserving purpose, authority,
+state, evidence, effects, recovery, and corrigibility as capability grows and
+changes itself. Its unit of control is not a model response but a versioned
+commitment from intent through effect and learning.
+
+Project Theseus is the implementation reference that turns the architecture
+into reports and bounded behavior. The Prototype Roadmap governs phase unlocks.
+Artifact stewards preserve long-lived project reality. The Living Book keeps
+research and human prose connected to stable technical owners. The open agenda
+keeps missing evidence visible.
+
+The repository contains extensive finite proofs, executable controls, local
+campaigns, source mappings, and publication infrastructure. It does not
+establish a complete deployed ASI Stack, whole-system safety, state-of-the-art
+performance, AGI, or ASI.
+
+That is not an empty conclusion. It gives the project a concrete next question:
+which smallest natural effect-bearing trace can test the architecture against a
+stronger simple baseline, and which claim should change when the result arrives?
+
+The book closes with that research frontier open. Every claim remains owned,
+challengeable, versioned, and capable of being retired.
+
+{{< include ../generated/unit-26-status.qmd >}}
