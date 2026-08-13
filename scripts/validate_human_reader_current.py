@@ -535,6 +535,40 @@ UNIT_24_REQUIRED = [
     "It does not measure a natural workload or\nestablish performance, environmental impact, resilience, community outcome",
     "Both chapter cores remain at argument support",
 ]
+UNIT_25_REQUIRED = [
+    "## When the Verifier Proposes Its Successor",
+    "## What Makes Improvement Recursive",
+    "## Proposal Is Not Permission",
+    "## Choose the Smallest Improvement Locus",
+    "## Freeze the Improvement Contract",
+    "## Open-Ended Search Without Open Authority",
+    "## Evaluators Are Part of the Attack Surface",
+    "## Strategic Candidates Need Adversarial Evaluation",
+    "## Full-State Identity Before Replacement",
+    "## Evidence Does Not Compound Automatically",
+    "## The Improvement Governor",
+    "## Govern the Improvement Portfolio",
+    "## Admitting the Better Verifier",
+    "## Descendants Inherit History, Not Authority",
+    "## Replication Is a Distinct Capability",
+    "## Replication Leases",
+    "## Containment Is Continued Control",
+    "## When Containment Fails",
+    "## Revocation and Finite Retirement",
+    "## Bounded Liveness",
+    "## Improvement Velocity Has a Control Limit",
+    "## Recursive Depth and Protected Boundaries",
+    "## Failure Modes",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From One Replacement to a Governed Improvement Program",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "No live candidate-authored proposal, natural useful improvement",
+    "no task generator, adaptive\ncandidate search, evolving archive",
+    "All three chapter cores remain at argument support",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -747,6 +781,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_24_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 24 missing required argument boundary: {fragment!r}")
+    unit_25 = next((unit for unit in units if unit.get("unit_id") == "unit-25"), None)
+    if unit_25 is None or unit_25.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 25 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_25["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_25_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 25 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]
