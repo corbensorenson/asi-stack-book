@@ -720,6 +720,9 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
     ):
         if fragment not in workflow:
             errors.append(f"Pages workflow does not publish the Human Reader: {fragment}")
+    quarto = (EDITION / "_quarto.yml").read_text(encoding="utf-8")
+    if 'repo-subdir: "editions/reader_manuscript/current"' not in quarto:
+        errors.append("Human Reader repository actions are not scoped to the independent manuscript tree")
     if not CUTOVER_RECORD.is_file():
         errors.append("Human Reader HTML cutover record is missing")
     else:

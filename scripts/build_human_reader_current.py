@@ -417,6 +417,7 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         "  author: \"Corben Sorenson\"\n"
         "  site-url: \"https://corbensorenson.github.io/asi-stack-book/reader/\"\n"
         "  repo-url: \"https://github.com/corbensorenson/asi-stack-book\"\n"
+        "  repo-subdir: \"editions/reader_manuscript/current\"\n"
         "  repo-actions: [source, issue]\n"
         "  page-navigation: true\n  search: true\n  chapters:\n"
         + "\n".join(chapter_lines)

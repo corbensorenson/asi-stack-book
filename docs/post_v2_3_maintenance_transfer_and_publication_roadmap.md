@@ -335,9 +335,15 @@ technical-route edges. The first-class `/reader/` HTML projection, reciprocal
 edition navigation, canonical owner-to-unit route map, and clean-render wiring
 are configured, locally validated, and pushed on `main` at `96a22b15e`. The
 explicit cutover candidate record preserves `support_state_effect: none` and
-does not claim deployment. EM4 remains open until the exact-head Pages build,
-public-route/browser/accessibility confirmation, and final deployed-state
-reconciliation are complete.
+does not claim deployment. Exact-head build `31687234316` and tested-artifact
+deployment/attestation `31689093572` passed for `1f6c8352c`; public inspection
+confirmed the 87-owner/26-unit route map, all 26 reader chapter routes,
+reciprocal technical-to-reader routing, and mobile containment. That inspection
+also found that Quarto repository actions omitted the independent manuscript
+subdirectory. The canonical generator and validator now require
+`repo-subdir: editions/reader_manuscript/current`. EM4 remains open until that
+repair receives its own exact-head Pages build/deploy and the cutover receipt is
+promoted from `pushed` to `pages_deployed`.
 
 The 26 narrative units are:
 
