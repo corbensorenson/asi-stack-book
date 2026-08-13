@@ -20,6 +20,8 @@ ARTIFACTS = [
     "assets/reading-mode.html",
     "assets/styles.scss",
     "scripts/validate_live_human_view_browser.js",
+    "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json",
+    "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
     "editions/reader_manuscript/current/manifest.json",
     "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
     "editions/reader_manuscript/current/_quarto.yml",
@@ -97,14 +99,14 @@ def main() -> None:
         "validation_class": "proof_or_evidence_gate",
         "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, the P5-U1 fifteen-minute utility route, and generated compact status panels.",
         "input_artifacts": ARTIFACTS,
-        "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
-        "output_assertions": ["26 Human Reader units", "87 owners routed once", "canonical conclusion/claim crosswalk", "All 26 units within their declared word targets", "independent maintained prose", "P5-U1 fifteen-minute route and three task recipes", "Pages /reader/ publication path", "4 mutations reject", "support and release effects none"],
+        "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, an exact-commit deployed /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
+        "output_assertions": ["26 Human Reader units", "87 owners routed once", "canonical conclusion/claim crosswalk", "All 26 units within their declared word targets", "independent maintained prose", "P5-U1 fifteen-minute route and three task recipes", "deployed Pages /reader/ publication path", "4 mutations reject", "support effect none"],
         "claim_scope": "Independent Human Reader manuscript structure and all 26 units' drafting completeness only.",
         "negative_controls": "validator_owned_route_length_and_support_mutations",
         "negative_control_cases": ["owner-route loss", "false length completion", "support laundering", "crosswalk owner-edge loss"],
-        "prohibited_inference": "Draft or target-length completion does not establish editorial approval, evidence, publication, release, safety, readiness, SOTA, AGI, or ASI.",
+        "prohibited_inference": "Draft, target-length completion, or HTML deployment does not establish external-human editorial approval, accessibility conformance, evidence, major-version package release, safety, readiness, SOTA, AGI, or ASI.",
         "contract_precision": "exact_high_impact",
-        "semantic_review_state": "checked_independent_human_reader_draft_contract",
+        "semantic_review_state": "checked_independent_human_reader_html_deployment_contract",
     }
     unit.update(contract)
     for artifact in ARTIFACTS:

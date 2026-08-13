@@ -468,8 +468,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em3_manuscript_complete_em4_public_cutover_configured":
-        errors.append("editorial migration state does not record complete EM3 and configured EM4")
+    if editorial.get("state") != "em4_public_html_deployed_no_support_effect":
+        errors.append("editorial migration state does not record completed EM4 HTML deployment")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",

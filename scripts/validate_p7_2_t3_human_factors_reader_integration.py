@@ -103,7 +103,7 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("reader integration surface drifted")
     status = data["status"]
     immediate_packet = status["execution_readiness"].get("immediate_book_packet")
-    if not isinstance(immediate_packet, str) or immediate_packet == "P7.2-T3-human-factors-and-meaningful-control-in-oversight":
+    if immediate_packet == "P7.2-T3-human-factors-and-meaningful-control-in-oversight":
         out.append("machine status did not advance beyond T3")
     first = status["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"]
     if first.get("completed_reader_chapter_count", 0) < 3 or CHAPTER_ID not in first.get("terminal_reader_chapter_ids", []) or CHAPTER_ID in first.get("remaining_reader_chapter_ids", []):

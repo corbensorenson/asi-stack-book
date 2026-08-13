@@ -3308,7 +3308,9 @@
     "scripts/run_c1_exit_ladder.py",
     "experiments/c2_exit_ladder/preregistration.json",
     "schemas/c2_exit_ladder_preregistration.schema.json",
-    "scripts/validate_c2_exit_ladder_preregistration.py"
+    "scripts/validate_c2_exit_ladder_preregistration.py",
+    "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
+    "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json"
   ],
   "units": [
     {
@@ -13729,6 +13731,7 @@
         "experiments/c1_exit_ladder/admission.json",
         "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json",
         "experiments/c2_exit_ladder/preregistration.json",
+        "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
         "experiments/governed_operations_argument_exit/preregistration.json",
         "schemas/governed_operations_campaign_preregistration.schema.json",
         "docs/p5_natural_stateful_service_campaign_preregistration.md",
@@ -18995,7 +18998,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the seven completed no-cutover EM2 composition packages.",
+      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, seven completed EM2 composition packages, and the exact-commit EM4 Human Reader HTML deployment receipt.",
       "input_artifacts": [
         "scripts/validate_editorial_migration.py",
         "scripts/build_editorial_migration_preview.py",
@@ -19008,6 +19011,7 @@
         "products/narrative_unit_crosswalk.json",
         "docs/human_reader_26_unit_outline.md",
         "docs/book_outline.md",
+        "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
         "schemas/post_v2_3_maintenance_transfer_and_publication_status.schema.json",
         "evidence_quality/prose_claim_candidate_queue.json",
@@ -19057,7 +19061,7 @@
         "chapters/living-book-methodology.qmd",
         "chapters/artifact-steward-agents-and-living-project-governance.qmd"
       ],
-      "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
+      "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical deployed preview, exact EM4 HTML custody, and no support inheritance or major-version package release.",
       "output_assertions": [
         "87 canonical technical owners",
         "54 primary architecture owners",
@@ -19069,10 +19073,11 @@
         "5 dossier owners",
         "1 back-matter owner",
         "26 Human Reader units",
+        "exact-commit EM4 HTML deployment",
         "16 semantic mutations reject",
-        "support and release effects none"
+        "support effect none"
       ],
-      "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and seven evidence-preserving EM2 composition packages without public cutover.",
+      "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, seven evidence-preserving EM2 composition packages, and the exact EM4 public HTML cutover.",
       "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
       "negative_control_cases": [
         "support promotion",
@@ -19092,9 +19097,9 @@
         "living-book/stewardship boundary erasure",
         "theseus/roadmap boundary erasure"
       ],
-      "prohibited_inference": "Composition does not transfer technical ownership or support, erase the rejected semantic-merge boundary, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
+      "prohibited_inference": "Composition and HTML deployment do not transfer technical ownership or support, erase the rejected semantic-merge boundary, approve major-version packages or accessibility conformance, or establish safety, readiness, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
-      "semantic_review_state": "checked_seven_no_cutover_composition_packages"
+      "semantic_review_state": "checked_seven_composition_packages_and_em4_html_cutover"
     },
     {
       "id": "validate_human_reader_current.py:471",
@@ -19113,6 +19118,8 @@
         "assets/reading-mode.html",
         "assets/styles.scss",
         "scripts/validate_live_human_view_browser.js",
+        "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json",
+        "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
         "editions/reader_manuscript/current/manifest.json",
         "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
         "editions/reader_manuscript/current/_quarto.yml",
@@ -19176,7 +19183,7 @@
         "book_structure.json",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
       ],
-      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
+      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, an exact-commit deployed /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
@@ -19184,9 +19191,9 @@
         "All 26 units within their declared word targets",
         "independent maintained prose",
         "P5-U1 fifteen-minute route and three task recipes",
-        "Pages /reader/ publication path",
+        "deployed Pages /reader/ publication path",
         "4 mutations reject",
-        "support and release effects none"
+        "support effect none"
       ],
       "claim_scope": "Independent Human Reader manuscript structure and all 26 units' drafting completeness only.",
       "negative_controls": "validator_owned_route_length_and_support_mutations",
@@ -19196,9 +19203,9 @@
         "support laundering",
         "crosswalk owner-edge loss"
       ],
-      "prohibited_inference": "Draft or target-length completion does not establish editorial approval, evidence, publication, release, safety, readiness, SOTA, AGI, or ASI.",
+      "prohibited_inference": "Draft, target-length completion, or HTML deployment does not establish external-human editorial approval, accessibility conformance, evidence, major-version package release, safety, readiness, SOTA, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
-      "semantic_review_state": "checked_independent_human_reader_draft_contract"
+      "semantic_review_state": "checked_independent_human_reader_html_deployment_contract"
     },
     {
       "id": "validate_p5_u1_governed_repository_change:472",
@@ -19337,7 +19344,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3264,
+    "required_artifact_count": 3266,
     "unit_count": 474
   },
   "non_claims": [

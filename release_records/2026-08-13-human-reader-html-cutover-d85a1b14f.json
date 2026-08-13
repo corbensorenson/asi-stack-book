@@ -1,0 +1,76 @@
+{
+  "release_id": "2026-08-13-human-reader-html-cutover-d85a1b14f",
+  "release_state": "pages_deployed",
+  "source_commit": "d85a1b14fd7f4277a0deb1db22b30f605f3579a8",
+  "audience_profiles": [
+    "human_researchers",
+    "interested_humans"
+  ],
+  "canonical_scope": "Deployed Human Reader HTML cutover containing the independent 26-unit manuscript, reciprocal edition navigation, an 87-owner route map, and a generated conclusion/claim crosswalk. The 87-owner live research graph remains the evidence authority, and the historical 22-unit candidate, reader-2026-07-18 release, and pushed 96a22b15e cutover candidate remain immutable.",
+  "rendered_site": "Exact source commit d85a1b14fd7f4277a0deb1db22b30f605f3579a8 produced 100 technical documents, 28 Human Reader documents, and 51 paper-library documents. Build run 31747729802 created the tested artifact; deploy and attestation run 31749131391 deployed that artifact without rebuilding and passed the public crawl. Public inspection confirmed the exact canonical status commit, /reader/ landing, 87-owner route map, and representative reader chapter route.",
+  "scaffold_sync": "GitHub build run 31747729802 passed the generated-scaffold check from a clean checkout.",
+  "proof_manifest_sync": "GitHub build run 31747729802 passed the deep validation tier and Lean build; no outline proof tag, proof manifest, theorem, or proof binding changed in the cutover transaction.",
+  "validation_commands": [
+    "python3 scripts/validate_human_reader_current.py",
+    "python3 scripts/validate_editorial_migration.py",
+    "python3 scripts/validate_public_site_accessibility.py",
+    "python3 scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
+    "python3 scripts/run_validation_registry.py --tier pr",
+    "quarto render --to html",
+    "quarto render editions/reader_manuscript/current --to html",
+    "python3 scripts/build_human_reader_public_site.py --site _site",
+    "quarto render papers --to html",
+    "python3 scripts/validate_paper_library.py --site _site",
+    "node scripts/validate_live_human_view_browser.js --site _site --all-chapters --all-viewports --strict",
+    "python3 scripts/build_tested_site_bundle.py --site _site --output build/pages-tested",
+    "python3 scripts/validate_tested_site_bundle.py --bundle build/pages-tested --expected-commit d85a1b14fd7f4277a0deb1db22b30f605f3579a8"
+  ],
+  "validation_status": "pass",
+  "changelog_refs": [
+    "appendices/F_changelog.qmd"
+  ],
+  "public_url": "https://corbensorenson.github.io/asi-stack-book/reader/",
+  "derived_artifacts": [
+    {
+      "artifact_class": "live_site",
+      "status": "published",
+      "path_or_uri": "https://corbensorenson.github.io/asi-stack-book/reader/",
+      "review_status": "pass",
+      "notes": "The exact tested Pages artifact is deployed. Local exhaustive browser validation exercised 178 technical and 52 Human Reader desktop/mobile page-view pairs; the GitHub deployment attestation crawled the public status and chapter graph. This is HTML route publication, not accessibility conformance or a major-version package release."
+    },
+    {
+      "artifact_class": "reader_source",
+      "status": "reviewed",
+      "path_or_uri": "editions/reader_manuscript/current",
+      "review_status": "pass",
+      "notes": "All 26 independent units are inside their declared drafting targets, all 87 technical owners route exactly once, and generated status panels and crosswalks retain local evidence boundaries. This is internal review, not external-human editorial approval."
+    },
+    {
+      "artifact_class": "reader_format",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "EPUB, PDF, DOCX, and other full reader formats remain deferred until a major-version content freeze."
+    },
+    {
+      "artifact_class": "audio_artifact",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "Audiobook and embedded-audio work remain deferred until a major-version content freeze."
+    }
+  ],
+  "support_state_effect": "none",
+  "residuals": [
+    "External-human line editing and final major-version content approval remain optional post-cutover work, not prepublication gates.",
+    "Manual assistive-technology and screen-reader review remain unclaimed; automated browser and accessibility-preparation checks are not accessibility conformance.",
+    "Major-version EPUB, PDF, DOCX, e-reader, and audio artifacts remain deferred until content freeze."
+  ],
+  "non_claims": [
+    "does not replace the live research graph as the evidence authority",
+    "does not promote any claim, proof, empirical result, or support state",
+    "does not approve EPUB, PDF, DOCX, audiobook, or embedded-audio artifacts",
+    "does not claim external-human editorial approval or accessibility conformance",
+    "does not establish AGI, ASI, deployment readiness, system safety, or comparative superiority"
+  ]
+}

@@ -455,7 +455,7 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
     manifest = {
         "schema_version": "asi_stack.human_reader_current.v1",
         "edition_id": "human-reader-current",
-        "state": "complete_draft_public_html_candidate",
+        "state": "complete_manuscript_public_html_deployed",
         "source_graph": "book_structure.json",
         "source_outline": "docs/human_reader_26_unit_outline.md",
         "book_structure_sha256": digest(STRUCTURE),

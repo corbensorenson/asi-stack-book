@@ -71,6 +71,7 @@ ARTIFACTS = [
     "experiments/c1_exit_ladder/admission.json",
     "experiments/c1_exit_ladder/results/2026-08-13-instrument-failure.json",
     "experiments/c2_exit_ladder/preregistration.json",
+    "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
     "experiments/governed_operations_argument_exit/preregistration.json",
     "schemas/governed_operations_campaign_preregistration.schema.json",
     "docs/p5_natural_stateful_service_campaign_preregistration.md",

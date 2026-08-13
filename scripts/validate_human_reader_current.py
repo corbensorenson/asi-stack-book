@@ -34,8 +34,9 @@ UTILITY_ROUTE_REQUIRED = [
 
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 PAGES_WORKFLOW = ROOT / ".github/workflows/build-pages-artifact.yml"
-CUTOVER_RECORD = ROOT / "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json"
-CUTOVER_SOURCE_COMMIT = "96a22b15e536cb9489480af4531e941910033c2e"
+CUTOVER_CANDIDATE_RECORD = ROOT / "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json"
+CUTOVER_RECORD = ROOT / "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json"
+CUTOVER_SOURCE_COMMIT = "d85a1b14fd7f4277a0deb1db22b30f605f3579a8"
 
 
 UNIT_01_REQUIRED = [
@@ -711,6 +712,8 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
         errors.append("conclusion/claim crosswalk differs from its canonical graph/outline/manuscript derivation")
     if manifest.get("unit_count") != 26 or manifest.get("owner_route_count") != 87:
         errors.append("Human Reader denominator drift")
+    if manifest.get("state") != "complete_manuscript_public_html_deployed":
+        errors.append("Human Reader manifest does not preserve the deployed HTML state")
     units = manifest.get("units", [])
     owner_ids = [owner_id for unit in units for owner_id in unit.get("owner_ids", [])]
     if len(owner_ids) != len(set(owner_ids)):
@@ -747,20 +750,30 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             errors.append(f"Human Reader utility route missing required boundary: {fragment!r}")
     if manifest.get("utility_route") != "quickstart.qmd":
         errors.append("Human Reader manifest utility-route identity drift")
-    if not CUTOVER_RECORD.is_file():
-        errors.append("Human Reader HTML cutover record is missing")
+    if not CUTOVER_CANDIDATE_RECORD.is_file() or not CUTOVER_RECORD.is_file():
+        errors.append("Human Reader HTML candidate or deployed cutover record is missing")
     else:
+        candidate = json.loads(CUTOVER_CANDIDATE_RECORD.read_text(encoding="utf-8"))
         cutover = json.loads(CUTOVER_RECORD.read_text(encoding="utf-8"))
-        if cutover.get("release_state") != "pushed":
-            errors.append("Human Reader cutover record overstates or understates its pushed state")
+        if (
+            candidate.get("release_state") != "pushed"
+            or candidate.get("source_commit") != "96a22b15e536cb9489480af4531e941910033c2e"
+        ):
+            errors.append("Human Reader pushed cutover candidate history drifted")
+        if cutover.get("release_state") != "pages_deployed":
+            errors.append("Human Reader cutover record does not preserve its deployed state")
         if cutover.get("source_commit") != CUTOVER_SOURCE_COMMIT:
             errors.append("Human Reader cutover record source-commit drift")
         if cutover.get("support_state_effect") != "none":
             errors.append("Human Reader cutover record changes support state")
         if cutover.get("public_url") != "https://corbensorenson.github.io/asi-stack-book/reader/":
             errors.append("Human Reader cutover record public route drift")
-        if not any("exact-head github pages" in item.lower() for item in cutover.get("residuals", [])):
-            errors.append("Human Reader cutover record omits the unverified deployment residual")
+        rendered = cutover.get("rendered_site", "")
+        for fragment in ("31747729802", "31749131391", "87-owner route map"):
+            if fragment not in rendered:
+                errors.append(f"Human Reader deployed cutover receipt omits {fragment}")
+        if any("deployment" in item.lower() and "confirm" in item.lower() for item in cutover.get("residuals", [])):
+            errors.append("Human Reader deployed cutover retains an unverified deployment residual")
     for unit in crosswalk.get("units", []):
         if unit.get("owner_count") != len(unit.get("owners", [])):
             errors.append(f"{unit.get('unit_id')}: crosswalk owner count drift")

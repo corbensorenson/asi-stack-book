@@ -51,6 +51,7 @@ C1_EXIT_FAILURE = ROOT / "experiments/c1_exit_ladder/results/2026-08-13-instrume
 C2_EXIT_PROTOCOL = ROOT / "experiments/c2_exit_ladder/preregistration.json"
 READER_MANIFEST = ROOT / "editions/reader_manuscript/reader_2026_07_18/manifest.json"
 READER_RELEASE_RECORD = ROOT / "release_records/2026-07-18-reader-2026-07-18-0921a924.json"
+HUMAN_READER_CUTOVER = ROOT / "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json"
 STRUCTURAL_RESEARCH = ROOT / "docs/structural_completeness_chapter_research_2026_07_19.md"
 STRUCTURAL_GAP_AUDIT = ROOT / "docs/structural_completeness_gap_audit_2026_07_19.md"
 OPTIMIZER_RESEARCH = ROOT / "docs/optimizer_landscape_chapter_research_2026_07_21.md"
@@ -249,6 +250,7 @@ def inputs() -> dict:
         "c2_exit_protocol": load(C2_EXIT_PROTOCOL),
         "reader_manifest": load(READER_MANIFEST),
         "reader_release_record": load(READER_RELEASE_RECORD),
+        "human_reader_cutover": load(HUMAN_READER_CUTOVER),
         "structural_research": STRUCTURAL_RESEARCH.read_text(encoding="utf-8"),
         "structural_gap_audit": STRUCTURAL_GAP_AUDIT.read_text(encoding="utf-8"),
         "optimizer_research": OPTIMIZER_RESEARCH.read_text(encoding="utf-8"),
@@ -1214,8 +1216,8 @@ def errors(data: dict) -> list[str]:
     execution_readiness = status.get("execution_readiness", {})
     if status.get("current_priority") != "C2-EL":
         out.append("roadmap status does not expose the second contribution exit-ladder attempt as current priority")
-    if execution_readiness.get("state") != "c2_exit_ladder_frozen_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
-        out.append("execution board does not preserve the active exit-ladder/editorial work, consumer-gated P4.1, P2 resource block, and separate P7.3 ownership")
+    if execution_readiness.get("state") != "c2_exit_ladder_frozen_p7_1_editorial_migration_complete_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
+        out.append("execution board does not preserve active C2, completed editorial migration, consumer-gated P4.1, P2 resource block, and separate P7.3 ownership")
     if execution_readiness.get("headline_priority") != "C2-EL" or execution_readiness.get("headline_priority_state") != "prospective_claim_state_exit_ladder_frozen_before_proposal_admission":
         out.append("execution board obscures the frozen prospective claim-state exit-ladder attempt")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
@@ -1228,8 +1230,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board does not activate the prospective claim-state task")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
-    if execution_readiness.get("immediate_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
-        out.append("execution board does not activate the metadata-first editorial migration and independent 26-unit narrative")
+    if execution_readiness.get("immediate_book_packet") is not None:
+        out.append("execution board retains a book packet after EM4 completion")
     if execution_readiness.get("immediate_formal_packet") != "P4.1-consumer-gated-cross-owner-composition":
         out.append("execution board does not keep P4.1 composition consumer-gated")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1248,8 +1250,8 @@ def errors(data: dict) -> list[str]:
     yield_amendment = status.get("object_level_yield_amendment", {})
     if yield_amendment.get("headline_packet") != "C2-EL-claim-state-proposal-001":
         out.append("object-level yield amendment lost the prospective claim-state task")
-    if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
-        out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
+    if yield_amendment.get("concurrent_book_packet") is not None:
+        out.append("object-level yield amendment retains a concurrent book packet after EM4 completion")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
         out.append("object-level yield amendment confuses exit ladders with promotion quotas")
     if (
@@ -1333,6 +1335,27 @@ def errors(data: dict) -> list[str]:
         out.append("object-level yield amendment moved support or release state")
 
     editorial = status.get("editorial_product_migration", {})
+    cutover = data["human_reader_cutover"]
+    if (
+        cutover.get("release_state") != "pages_deployed"
+        or cutover.get("source_commit")
+        != "d85a1b14fd7f4277a0deb1db22b30f605f3579a8"
+        or cutover.get("public_url")
+        != "https://corbensorenson.github.io/asi-stack-book/reader/"
+        or cutover.get("support_state_effect") != "none"
+    ):
+        out.append("Human Reader EM4 deployed-cutover receipt drifted")
+    expected_cutover_status = {
+        "deployed_cutover_record_path": "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
+        "deployed_source_commit": "d85a1b14fd7f4277a0deb1db22b30f605f3579a8",
+        "deployed_build_run_id": 31747729802,
+        "deployed_pages_run_id": 31749131391,
+        "deployed_owner_route_count": 87,
+        "local_browser_page_view_pair_count": 230,
+    }
+    for field, expected in expected_cutover_status.items():
+        if editorial.get(field) != expected:
+            out.append(f"Human Reader EM4 cutover status drift: {field}")
     if editorial.get("review_baseline_commit") != "ce5b6181ff923e6183c52e7d78d16657ed289e18":
         out.append("editorial migration lost its immutable 86-chapter review baseline")
     if editorial.get("reconciliation_input_commit") != "90f60c9f4bca340f170069d415893797b118252c":
@@ -1532,7 +1555,7 @@ def errors(data: dict) -> list[str]:
         "target_narrative_part_count": len(outline_parts),
         "target_narrative_owner_route_count": len(outline_routes),
         "target_narrative_outline_path": "docs/human_reader_26_unit_outline.md",
-        "target_narrative_outline_state": "canonical_26_unit_manuscript_complete_public_cutover_configured",
+        "target_narrative_outline_state": "canonical_26_unit_manuscript_complete_public_html_deployed",
         "historical_narrative_spine_path": "products/narrative_product_spine.json",
         "target_outline_is_completed_manuscript": True,
     }
@@ -1540,7 +1563,7 @@ def errors(data: dict) -> list[str]:
         if editorial.get(field) != expected:
             out.append(f"human-reader outline contract drift: {field}")
     if (
-        "Status: **canonical 26-unit manuscript complete; tested public HTML cutover pending**" not in human_outline
+        "Status: **canonical 26-unit manuscript complete; tested public HTML deployed**" not in human_outline
         or "Historical predecessor: `products/narrative_product_spine.json` (22-unit candidate; do not rewrite)" not in human_outline
         or data["narrative_product_spine"].get("chapters") is None
         or len(data["narrative_product_spine"]["chapters"]) != 22
@@ -3173,7 +3196,7 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, P5-U1 terminal at retrospective scope, C1-EL terminal inconclusive without replacement, active C2-EL with P4.1/M4 consumer-gated; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, P5-U1 terminal at retrospective scope, C1-EL terminal inconclusive without replacement, active C2-EL, EM4/P7/M7 complete, and P4.1/M4 consumer-gated; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "

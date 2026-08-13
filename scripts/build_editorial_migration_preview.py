@@ -132,7 +132,7 @@ def build_preview(structure: dict) -> dict:
     return {
         "schema_version": 1,
         "product_id": "editorial-migration-metadata-preview",
-        "state": "manuscript_complete_public_cutover_candidate_pushed",
+        "state": "manuscript_complete_public_html_deployed",
         "sources": ["book_structure.json", "docs/human_reader_26_unit_outline.md"],
         "book_structure_sha256": digest(STRUCTURE),
         "human_reader_outline_sha256": digest(OUTLINE),
@@ -153,7 +153,7 @@ def build_preview(structure: dict) -> dict:
         "non_claims": [
             "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
             "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
-            "The 26-unit maintained manuscript is draft-complete, but exact-head public deployment and external-human editorial approval remain unclaimed.",
+            "The 26-unit maintained manuscript is deployed as public HTML, but external-human editorial approval and accessibility conformance remain unclaimed.",
             "No support state, release state, safety, readiness, AGI, or ASI claim changes.",
         ],
     }
