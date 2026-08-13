@@ -1243,6 +1243,11 @@ def errors(data: dict) -> list[str]:
         out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
         out.append("object-level yield amendment confuses exit ladders with promotion quotas")
+    if (
+        yield_amendment.get("contribution_exit_ladder_state")
+        != "complete_three_exact_ladders_no_transition_effect"
+    ):
+        out.append("three-contribution exit-ladder custody drifted")
     if yield_amendment.get("reference_chapter_count") != len(manifest_ids) or yield_amendment.get("new_chapter_authorized") is not False:
         out.append("scope-compression amendment changed reference truth or silently authorized a chapter")
     if yield_amendment.get("fifteen_minute_route_required") is not True or yield_amendment.get("task_recipe_count") != 3:

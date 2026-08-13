@@ -59,3 +59,37 @@ manifest order and checked by `scripts/validate_contribution_focus_contract.py`.
 The map is a scope-control mechanism, not novelty proof, evidence, external
 review, or support-state movement. A primary owner can still fail its
 falsification target, be narrowed by prior art, or remain at `argument`.
+
+## Exit ladders
+
+The generated contract now gives each contribution one bounded route out of
+argument-only discussion without creating a promotion quota. Every ladder
+names the claim slice, closest implemented comparator, simplest baseline,
+positive and instrument controls, mechanism ablation, strongest alternative
+explanation, success/negative/inconclusive dispositions, support ceiling, and
+next consumer.
+
+For governed-cognition contracts, the current comparator is the P5-U1 record-only route
+and the simplest baseline is direct execution with the
+ordinary source-link check. The full route's distinctive mechanisms are
+admission, recovery, and compensation. Because the successful repair was known
+before replay, the current result remains bounded local implementation evidence
+and cannot estimate natural-task utility.
+
+For claim-state discipline, the simplest baseline is **JSON Schema validation**
+without exact claim-identity, competence, and maximum-inference checks. The
+ablation asks whether shape-valid records can still launder support. Passing
+repository controls cannot prove evidence truth, evaluator competence, or an
+optimal epistemology.
+
+For record/reality and residual honesty, the bounded target joins receipts to
+**independently read Git state**, retained effect history, compensation, and
+residual counts. The ablation keeps an executor report while removing terminal
+state reads and residual conservation. Local Git transparency and shared
+repository ownership remain strong alternative explanations, so opaque-service
+and independent-observer transfer stays open.
+
+The machine-readable ladders in `products/contribution_focus_contract.json`
+are authoritative. A positive outcome may move only the exact bounded non-core
+mechanism named by its accepted evidence transition. A negative outcome narrows
+or rejects that mechanism. Instrument failure produces no substantive result.

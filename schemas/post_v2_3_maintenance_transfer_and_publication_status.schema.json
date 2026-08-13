@@ -46,7 +46,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v30"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v31"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -206,6 +206,7 @@
         "governance_rent_fields",
         "defended_contribution_count",
         "contribution_exit_ladder_count",
+        "contribution_exit_ladder_state",
         "promotion_quota",
         "reference_chapter_count",
         "new_chapter_authorized",
@@ -266,6 +267,9 @@
         },
         "contribution_exit_ladder_count": {
           "const": 3
+        },
+        "contribution_exit_ladder_state": {
+          "const": "complete_three_exact_ladders_no_transition_effect"
         },
         "promotion_quota": {
           "const": false

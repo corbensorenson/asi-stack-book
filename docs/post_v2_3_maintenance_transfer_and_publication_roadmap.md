@@ -493,6 +493,17 @@ promotion count is never an optimization target. The purpose is to make claim
 movement possible when earned and reveal whether the current core claim is too
 broad, not to manufacture upward transitions.
 
+**2026-08-13 checkpoint.** All three ladders are now instantiated in the
+existing generated `products/contribution_focus_contract.json`. Each carries
+the eight required fields and explicit success, negative, inconclusive, and
+support-ceiling dispositions. P5-U1 supplies the direct and record-only
+comparators, happy-path positive control, fault paths, mutation sensitivity,
+mechanism ablations, and concrete P5 campaign consumers for the
+governed-cognition and record/reality ladders. The claim-state ladder compares
+the full identity/competence/inference gate with shape-only JSON Schema
+validation. No ladder result is promoted by this checkpoint. The first
+claim-bearing attempt must remain prospective and claim-commensurate.
+
 ### Scope compression and practical entry surface
 
 The 87-chapter research graph remains the lossless technical ownership surface.
@@ -888,7 +899,7 @@ remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Object-level utility — active; retrospective demonstrator terminal, reader integration open | `P5-U1-minimal-useful-governed-vertical-slice` | The 2026-08-13 retrospective replay runs one real Human Reader source-link repair through direct, record-only, and fully governed routes across happy, blocked-authority, crash/recovery, and external-effect compensation paths; protected P2 content remains closed | Preserve the 12/12 fresh-workspace result and seven rejecting record mutations. Complete the fifteen-minute reader route and task recipes, then keep prospective usefulness, natural performance, human effort, production, safety, transfer, support, and release claims open for the frozen natural campaign. |
+| Object-level utility — implementation and reader route terminal; prospective evidence open | `P5-U1-minimal-useful-governed-vertical-slice` | The 2026-08-13 retrospective replay runs one real Human Reader source-link repair through direct, record-only, and fully governed routes across happy, blocked-authority, crash/recovery, and external-effect compensation paths; its first-class Human Reader route includes the command, three recipes, and implemented-versus-proposed boundary; protected P2 content remains closed | Preserve the 12/12 fresh-workspace result, seven rejecting record mutations, reader route, and honest retrospective ceiling. Route broader usefulness, natural performance, human effort, production, safety, and transfer only through the prospective natural campaign. |
 | Existing-book integration — terminal | `P6.5-R16-A-six-chapter-atom-pack` | Completed 2026-07-26 | Thirty reviewed atoms across six chapters, six digest-bound review receipts, a separate schema and validator, identity-graph reconciliation to 4,112 canonical atoms, Appendix C projection, fourteen rejecting mutations, and zero support movement. |
 | Existing-book integration — terminal | `P7.1a-W3-admission-template-inheritance-guard` | Completed 2026-07-26 | Exact 84-chapter NFKC audit; reader-facing repeated 12-grams at spread eight reduced 812→0; copied diagram/test spread 10→0; shared lifecycle method centralized; ten chapter diffs plus eleven semantic-review reconciliations; 241 retired inherited prose IDs replaced by 177 domain-specific dispositions with 4,067 atoms unchanged and zero pending; copied fixture rejected, distinct fixture accepted; eighteen mutations; zero meaning or support movement. |
 | Existing-book integration — terminal | `P7.2-T1D-proof-readiness-depth-pack` | Completed 2026-07-26 | Six maturity records, 36 condition decisions, 12 chapter-specific anchors, four existing-owner repairs, five White-Box source receipts, ten applicable claim identities, eighteen rejecting mutations, and zero support movement. |

@@ -20,6 +20,16 @@ EXPECTED = {
     "claim-state-transition-discipline",
     "record-reality-residual-honesty",
 }
+EXIT_LADDER_FIELDS = {
+    "bounded_claim_slice",
+    "closest_implemented_comparator",
+    "simplest_credible_baseline",
+    "positive_and_instrument_controls",
+    "distinctive_mechanism_ablation",
+    "strongest_alternative_explanation",
+    "outcome_dispositions",
+    "next_behavior_changing_consumer",
+}
 
 
 def load(path: Path):
@@ -41,6 +51,17 @@ def main() -> None:
     contributions = tracked.get("contributions", [])
     if {row.get("id") for row in contributions} != EXPECTED or len(contributions) != 3:
         errors.append("program must contain exactly the three defended contributions")
+    for contribution in contributions:
+        ladder = contribution.get("exit_ladder", {})
+        if set(ladder) != EXIT_LADDER_FIELDS:
+            errors.append(f"{contribution.get('id')} exit-ladder fields drifted")
+            continue
+        dispositions = ladder.get("outcome_dispositions", {})
+        if set(dispositions) != {"success", "negative", "inconclusive", "support_ceiling"}:
+            errors.append(f"{contribution.get('id')} outcome dispositions drifted")
+        for field in EXIT_LADDER_FIELDS - {"outcome_dispositions"}:
+            if not isinstance(ladder.get(field), str) or not ladder[field].strip():
+                errors.append(f"{contribution.get('id')} exit ladder lacks {field}")
     assignments = tracked.get("chapter_assignments", [])
     ids = [row.get("chapter_id") for row in assignments]
     manifest_count = len(expected.get("chapter_assignments", []))
@@ -72,6 +93,10 @@ def main() -> None:
         "Eleven are primary owners",
         f"other {manifest_count - 11} are supporting or integration chapters",
         "not novelty proof",
+        "## Exit ladders",
+        "P5-U1 record-only route",
+        "JSON Schema validation",
+        "independently read Git state",
     ):
         if phrase not in doc:
             errors.append(f"{DOC.relative_to(ROOT)} missing {phrase!r}")
