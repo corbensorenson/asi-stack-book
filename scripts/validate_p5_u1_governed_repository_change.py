@@ -50,6 +50,10 @@ def stable_projection(result: dict[str, Any]) -> dict[str, Any]:
         metrics = trial.get("metrics", {})
         for key in DYNAMIC_METRICS:
             metrics.pop(key, None)
+    for comparison in projected.get("governance_rent", {}).get("comparisons", []):
+        overhead = comparison.get("overhead", {})
+        overhead.pop("latency_ms_delta", None)
+        overhead.pop("cpu_ms_delta", None)
     return projected
 
 
@@ -135,6 +139,52 @@ def semantic_failures(result: dict[str, Any]) -> list[str]:
         or result.get("release_effect") != "none"
     ):
         failures.append("task classification or no-promotion boundary drifted")
+
+    rent = result.get("governance_rent", {})
+    if (
+        rent.get("measurement_scope") != "matched_four_path_retrospective_local_replay"
+        or rent.get("operator_burden_measure") != "operator_steps_proxy"
+        or rent.get("operator_active_time_observed") is not False
+        or rent.get("host_timing_is_diagnostic") is not True
+    ):
+        failures.append("governance-rent scope or operator-burden boundary drifted")
+    comparisons = {row.get("comparator_route"): row for row in rent.get("comparisons", [])}
+    expected_rent = {
+        "direct": {
+            "operator_step_delta": 12,
+            "artifact_file_delta": 14,
+            "artifact_byte_delta": 1729,
+            "unauthorized_effects_prevented": 1,
+            "residuals_closed": 2,
+            "successful_recoveries_gained": 1,
+            "compensations_closed_gained": 1,
+            "false_block_delta": 0,
+            "defect_escape_delta": 0,
+        },
+        "record_only": {
+            "operator_step_delta": 8,
+            "artifact_file_delta": 4,
+            "artifact_byte_delta": 920,
+            "unauthorized_effects_prevented": 1,
+            "residuals_closed": 2,
+            "successful_recoveries_gained": 1,
+            "compensations_closed_gained": 1,
+            "false_block_delta": 0,
+            "defect_escape_delta": 0,
+        },
+    }
+    if set(comparisons) != set(expected_rent):
+        failures.append("governance-rent comparator denominator drifted")
+    else:
+        for comparator, expected in expected_rent.items():
+            row = comparisons[comparator]
+            if row.get("matched_path_count") != 4:
+                failures.append(f"{comparator}: governance-rent path denominator drifted")
+            observed = {**row.get("overhead", {}), **row.get("benefit", {})}
+            if any(observed.get(key) != value for key, value in expected.items()):
+                failures.append(f"{comparator}: governance-rent matched outcome drifted")
+            if any(not isinstance(row.get("overhead", {}).get(key), (int, float)) for key in ("latency_ms_delta", "cpu_ms_delta")):
+                failures.append(f"{comparator}: governance-rent timing diagnostic missing")
     return failures
 
 
@@ -148,6 +198,8 @@ def require_mutation_rejection(result: dict[str, Any]) -> list[str]:
         ("compensation laundering", lambda value: value["trials"][11]["metrics"].__setitem__("compensation_closed", False)),
         ("support laundering", lambda value: value.__setitem__("support_state_effect", "synthetic-test-backed")),
         ("prospective laundering", lambda value: value["task"].__setitem__("outcome_known_before_route_replay", False)),
+        ("operator-time laundering", lambda value: value["governance_rent"].__setitem__("operator_active_time_observed", True)),
+        ("governance-rent laundering", lambda value: value["governance_rent"]["comparisons"][0]["benefit"].__setitem__("residuals_closed", 0)),
     ]
     for name, mutate in mutations:
         candidate = deepcopy(result)
@@ -193,7 +245,7 @@ def main() -> None:
         raise SystemExit("P5-U1 validation failed:\n - " + "\n - ".join(failures))
     print(
         "P5-U1 validation passed: fresh 12-case replay, 3 routes x 4 paths, "
-        "7 rejecting record mutations, retrospective boundary, no support/release effect."
+        "9 rejecting record mutations, explicit matched governance rent, retrospective boundary, no support/release effect."
     )
 
 

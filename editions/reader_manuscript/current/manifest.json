@@ -5,9 +5,9 @@
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
   "book_structure_sha256": "6e1c5a254a3890afdf7aa092b41fdb33d86f7ba6c20bdbb0880b823fd9eae271",
-  "outline_sha256": "ffc95544a613a29d073df4f06a0b23c00fa031a54bfc88aaf5049141bb254868",
+  "outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
   "conclusion_claim_crosswalk": "conclusion_claim_crosswalk.json",
-  "conclusion_claim_crosswalk_sha256": "61aeea9ed065e46489b9ee18b14e519cd8ba305c53ff559715b7356710b9e687",
+  "conclusion_claim_crosswalk_sha256": "332859a357fc56f5243801c1d580c9e3897ad678ee04c7992328e4030966ec8c",
   "utility_route": "quickstart.qmd",
   "utility_route_sha256": "8f9f008393dc3f86d5290057af0dc0feafa26c7c394166e8e003810bc451d8b2",
   "unit_count": 26,
@@ -31,7 +31,7 @@
       "target_min_words": 4500,
       "target_max_words": 6000,
       "source_file": "chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4503,
       "source_sha256": "9015d69847ff8cb7b0cc19c336bbbc68d17a53db110de609998ab4db3034e381",
       "owner_support_states": [
@@ -53,7 +53,7 @@
       "target_min_words": 4500,
       "target_max_words": 6000,
       "source_file": "chapters/unit-02-the-efficient-asi-hypothesis.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4501,
       "source_sha256": "8e6e9d84db3c9e34f205ddd23dcf74a0e47c294f2da471ee35e86cf764438bbb",
       "owner_support_states": [
@@ -78,7 +78,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-03-authority-failure-and-misuse.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5003,
       "source_sha256": "7968be49d2cca3ede04655848f2e69f1297094876781755622fe24c4dcd2bbde",
       "owner_support_states": [
@@ -106,7 +106,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5650,
       "source_sha256": "ff256d926acb80b9eb8fe39a212e274d0cf62671f2a697680511239745adb81d",
       "owner_support_states": [
@@ -130,7 +130,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5553,
       "source_sha256": "42d4fb7c2b9110defdf68754945cd8079bcc367743cb8f9f74ca3eb4733e126a",
       "owner_support_states": [
@@ -155,7 +155,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-06-human-intent-control-and-epistemic-security.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5124,
       "source_sha256": "460732d96fabd45380a64cc8a02349f235f9f13d5c339467c86118a68a863477",
       "owner_support_states": [
@@ -180,7 +180,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5517,
       "source_sha256": "970344657ab484db16c240f24ced803040dd39f0f168536a8929e7118f825251",
       "owner_support_states": [
@@ -203,7 +203,7 @@
       "target_min_words": 4500,
       "target_max_words": 6500,
       "source_file": "chapters/unit-08-institutions-coordination-and-societal-resilience.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4703,
       "source_sha256": "96fd573f4291012808f75f77681104ecefd1bb7779f037936715719ad56ecc56",
       "owner_support_states": [
@@ -226,7 +226,7 @@
       "target_min_words": 4500,
       "target_max_words": 6000,
       "source_file": "chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4606,
       "source_sha256": "2ead54f429b3e161b96871a1d8cca3e60921dd141c4253bc0221c4eb2fcac279",
       "owner_support_states": [
@@ -249,7 +249,7 @@
       "target_min_words": 4500,
       "target_max_words": 6500,
       "source_file": "chapters/unit-10-perception-and-observation-trust.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4723,
       "source_sha256": "dae32da34bd6ecc154347bb5dd235178222cc84e57ef1debf5cff81139b7ae5b",
       "owner_support_states": [
@@ -271,7 +271,7 @@
       "target_min_words": 4500,
       "target_max_words": 6000,
       "source_file": "chapters/unit-11-governed-world-models-and-reality-grounding.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4824,
       "source_sha256": "372198ddf4f2a7f9c61865d51a143776df96f17d0da9cc1b914abc20da576ad3",
       "owner_support_states": [
@@ -293,7 +293,7 @@
       "target_min_words": 4500,
       "target_max_words": 6000,
       "source_file": "chapters/unit-12-planning-as-a-control-layer.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4534,
       "source_sha256": "0d8718ba3b35c249e481220365b1128293babb4e05295a4f76cff1c66b3314c3",
       "owner_support_states": [
@@ -317,7 +317,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5094,
       "source_sha256": "2db62fdceb4f56789e8b1352d4c47bbb41d5162248171394d95cfe61c14b055a",
       "owner_support_states": [
@@ -341,7 +341,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5043,
       "source_sha256": "3f90242a07ddae60ea6ceb3758bf0fd5e87fa1a82898eae7dd8ca7e118c456eb",
       "owner_support_states": [
@@ -367,7 +367,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5518,
       "source_sha256": "a502057545385d09594573350a5967b1f8a711e72d5dd66153c3243ba8781ff8",
       "owner_support_states": [
@@ -393,7 +393,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5514,
       "source_sha256": "01c13df34b8371ba84130ab0ed77aaaf5d06f46528d4e8bb26be053c06fe79e2",
       "owner_support_states": [
@@ -417,7 +417,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5015,
       "source_sha256": "b87dc49445d81a7ca866c421fa944cc247fc7c823136bc57485bc9074ed0ef7b",
       "owner_support_states": [
@@ -441,7 +441,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5004,
       "source_sha256": "ddd6750c4f430caeaeedc55a854314f2bb117b1dc503c45794af6087684efdd4",
       "owner_support_states": [
@@ -466,7 +466,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5000,
       "source_sha256": "1ddebc74800c6746a3d640ab8560c8c9182cca1b1609a4b4acd3ef0675dec9aa",
       "owner_support_states": [
@@ -489,7 +489,7 @@
       "target_min_words": 5000,
       "target_max_words": 7000,
       "source_file": "chapters/unit-20-governed-training-and-learning-compute-topology.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5000,
       "source_sha256": "606ec20c2a534c8d514bee75a21f316661fa46c46bd7ed845cdeae7df0aacfd5",
       "owner_support_states": [
@@ -515,7 +515,7 @@
       "target_min_words": 6000,
       "target_max_words": 7500,
       "source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 6121,
       "source_sha256": "bde2de129a8bda7f3245260758d3d938140d3fa3e6b8014997dd06fe9e344fe3",
       "owner_support_states": [
@@ -542,7 +542,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5526,
       "source_sha256": "b57387587ccae4011e3cf6458c3a85a352ded8295b5fcb25954528a58e2a7a3d",
       "owner_support_states": [
@@ -568,7 +568,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5508,
       "source_sha256": "17e25e568f5582feccaeef8be7b0559fa3ee598926df2775cc837273d963f9fe",
       "owner_support_states": [
@@ -591,7 +591,7 @@
       "target_min_words": 4500,
       "target_max_words": 6500,
       "source_file": "chapters/unit-24-physical-compute-energy-and-infrastructure.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 4507,
       "source_sha256": "c1fb33eb3e31b62bda7a6409ac4fa303199b85384d1dfaa93f7f23060847bb23",
       "owner_support_states": [
@@ -615,7 +615,7 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 5502,
       "source_sha256": "e674d46754b55db4dbf97ba0b183bb9a54c58dae66713567a784365f0b974fcc",
       "owner_support_states": [
@@ -642,7 +642,7 @@
       "target_min_words": 6000,
       "target_max_words": 8000,
       "source_file": "chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd",
-      "state": "target_length_reached_internal_review_pending",
+      "state": "target_length_reached_ready_for_author_review",
       "visible_word_count": 6065,
       "source_sha256": "f639d7ed9a79c2be890def6bb981585f66cc9e8546e3d9a8f9fb7d625a00ec07",
       "owner_support_states": [

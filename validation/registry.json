@@ -8232,8 +8232,8 @@
       "args": [],
       "execution_tier": "deep",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D\u2013F closure audit.",
-      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D\u2013F closure boundaries.",
+      "input_contract": "Re-executed governed Git slice, matched baseline metrics, derived invariant suite, claim dispositions, proof manifest/adequacy/artifact audits, volatile source records, inter-stack routing, terminology refresh, and readable D–F closure audit.",
+      "output_contract": "Reject drift in bounded empirical metrics, invariant mutations/residuals, core dispositions, proof target/adequacy traceability, volatile source routing, or D–F closure boundaries.",
       "claim_scope": "Local roadmap closure for Workstreams D, E, and F at their explicitly bounded empirical, formal, and source-governance scopes.",
       "negative_controls": "validator_owned",
       "prohibited_inference": "Local closure does not prove deployed safety, general cost-effectiveness, formal runtime enforcement, novelty, exhaustive literature coverage, or independent review.",
@@ -19208,49 +19208,8 @@
       "semantic_review_state": "checked_independent_human_reader_html_deployment_contract"
     },
     {
-      "id": "validate_p5_u1_governed_repository_change:472",
-      "order": 472,
-      "script": "validate_p5_u1_governed_repository_change.py",
-      "args": [],
-      "execution_tier": "deep",
-      "validation_class": "behavioral_fixture",
-      "input_contract": "A real Human Reader source-link defect, its pre-fix Git identity, three frozen execution routes, four lifecycle paths, local Git repositories and bare remotes, tracked result, schema, and bounded report.",
-      "input_artifacts": [
-        "experiments/p5_u1_governed_repository_change/design.json",
-        "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
-        "schemas/p5_u1_governed_repository_change_result.schema.json",
-        "scripts/run_p5_u1_governed_repository_change.py",
-        "scripts/validate_p5_u1_governed_repository_change.py",
-        "docs/p5_effect_complete_reference_report.md"
-      ],
-      "output_contract": "Replay the 3x4 route/path matrix in a fresh workspace and reject route loss, authority laundering, false state checks, false compensation, prospective-task laundering, or support movement.",
-      "output_assertions": [
-        "twelve of twelve state-checkable route/path trials pass",
-        "full governance blocks the out-of-scope mutation before effect",
-        "full governance recovers the partial repository change",
-        "full governance compensates the external Git effect while retaining history",
-        "direct and record-only routes expose the expected unauthorized and residual effects",
-        "seven record mutations reject",
-        "retrospective task identity and no-promotion boundary remain explicit"
-      ],
-      "claim_scope": "The retrospective local replay of one naturally arising Human Reader source-link repair only.",
-      "negative_controls": "fresh_replay_plus_route_authority_state_compensation_classification_and_support_mutations",
-      "negative_control_cases": [
-        "route loss",
-        "route-label laundering",
-        "false state-check pass",
-        "unauthorized-effect laundering",
-        "false compensation closure",
-        "support-state laundering",
-        "retrospective-to-prospective laundering"
-      ],
-      "prohibited_inference": "This outcome-aware replay is not a prospective, randomized, held-out, independent, human-operator, production, general-utility, safety, transfer, SOTA, AGI, or ASI result and changes no support or release state.",
-      "contract_precision": "exact",
-      "semantic_review_state": "retrospective_natural_defect_replay_with_real_local_git_effect_boundary"
-    },
-    {
       "id": "validate_c1_exit_ladder_preregistration:473",
-      "order": 473,
+      "order": 472,
       "script": "validate_c1_exit_ladder_preregistration.py",
       "args": [],
       "execution_tier": "pr",
@@ -19304,7 +19263,7 @@
     },
     {
       "id": "validate_c2_exit_ladder_preregistration:474",
-      "order": 474,
+      "order": 473,
       "script": "validate_c2_exit_ladder_preregistration.py",
       "args": [],
       "execution_tier": "pr",
@@ -19341,6 +19300,50 @@
       "prohibited_inference": "Preregistration is not execution or evidence and cannot establish transition correctness, evidence quality, editorial quality, human effort, production reliability, safety, transfer, SOTA, AGI, ASI, or chapter-core support.",
       "contract_precision": "exact",
       "semantic_review_state": "prospective_single_natural_claim_state_proposal_with_explicit_injected_controls"
+    },
+    {
+      "id": "validate_p5_u1_governed_repository_change:474",
+      "order": 474,
+      "script": "validate_p5_u1_governed_repository_change.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "behavioral_fixture",
+      "input_contract": "A real Human Reader source-link defect, its pre-fix Git identity, three frozen execution routes, four lifecycle paths, local Git repositories and bare remotes, tracked result, schema, and bounded report.",
+      "input_artifacts": [
+        "experiments/p5_u1_governed_repository_change/design.json",
+        "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
+        "schemas/p5_u1_governed_repository_change_result.schema.json",
+        "scripts/run_p5_u1_governed_repository_change.py",
+        "scripts/validate_p5_u1_governed_repository_change.py",
+        "docs/p5_effect_complete_reference_report.md"
+      ],
+      "output_contract": "Replay the 3x4 route/path matrix in a fresh workspace, compute matched governance rent against both simpler routes, and reject route loss, authority laundering, false state checks, false compensation, proxy-as-human-time laundering, rent laundering, prospective-task laundering, or support movement.",
+      "output_assertions": [
+        "twelve of twelve state-checkable route/path trials pass",
+        "full governance blocks the out-of-scope mutation before effect",
+        "full governance recovers the partial repository change",
+        "full governance compensates the external Git effect while retaining history",
+        "direct and record-only routes expose the expected unauthorized and residual effects",
+        "matched governance rent reports overhead and prevented or closed failures together",
+        "nine record mutations reject",
+        "retrospective task identity and no-promotion boundary remain explicit"
+      ],
+      "claim_scope": "The retrospective local replay of one naturally arising Human Reader source-link repair only.",
+      "negative_controls": "fresh_replay_plus_route_authority_state_compensation_classification_and_support_mutations",
+      "negative_control_cases": [
+        "route loss",
+        "route-label laundering",
+        "false state-check pass",
+        "unauthorized-effect laundering",
+        "false compensation closure",
+        "support-state laundering",
+        "retrospective-to-prospective laundering",
+        "operator-step proxy relabeled as observed human time",
+        "governance-rent benefit laundering"
+      ],
+      "prohibited_inference": "This outcome-aware replay is not a prospective, randomized, held-out, independent, human-operator, production, general-utility, safety, transfer, SOTA, AGI, or ASI result and changes no support or release state.",
+      "contract_precision": "exact",
+      "semantic_review_state": "retrospective_natural_defect_replay_with_real_local_git_effect_boundary"
     }
   ],
   "summary": {

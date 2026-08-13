@@ -12,6 +12,7 @@
     "path_count",
     "trial_count",
     "trials",
+    "governance_rent",
     "aggregate",
     "support_state_effect",
     "release_effect",
@@ -82,6 +83,62 @@
               "compensation_commit_pushed": {"type": "boolean"},
               "history_retained": {"type": "boolean"},
               "terminal_content_matches_baseline": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "governance_rent": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "measurement_scope",
+        "operator_burden_measure",
+        "operator_active_time_observed",
+        "host_timing_is_diagnostic",
+        "comparisons"
+      ],
+      "properties": {
+        "measurement_scope": {"const": "matched_four_path_retrospective_local_replay"},
+        "operator_burden_measure": {"const": "operator_steps_proxy"},
+        "operator_active_time_observed": {"const": false},
+        "host_timing_is_diagnostic": {"const": true},
+        "comparisons": {
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["comparator_route", "matched_path_count", "overhead", "benefit"],
+            "properties": {
+              "comparator_route": {"enum": ["direct", "record_only"]},
+              "matched_path_count": {"const": 4},
+              "overhead": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["latency_ms_delta", "cpu_ms_delta", "operator_step_delta", "artifact_file_delta", "artifact_byte_delta"],
+                "properties": {
+                  "latency_ms_delta": {"type": "number"},
+                  "cpu_ms_delta": {"type": "number"},
+                  "operator_step_delta": {"type": "integer"},
+                  "artifact_file_delta": {"type": "integer"},
+                  "artifact_byte_delta": {"type": "integer"}
+                }
+              },
+              "benefit": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["unauthorized_effects_prevented", "residuals_closed", "successful_recoveries_gained", "compensations_closed_gained", "false_block_delta", "defect_escape_delta"],
+                "properties": {
+                  "unauthorized_effects_prevented": {"type": "integer"},
+                  "residuals_closed": {"type": "integer"},
+                  "successful_recoveries_gained": {"type": "integer"},
+                  "compensations_closed_gained": {"type": "integer"},
+                  "false_block_delta": {"type": "integer"},
+                  "defect_escape_delta": {"type": "integer"}
+                }
+              }
             }
           }
         }

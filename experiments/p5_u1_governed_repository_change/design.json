@@ -23,7 +23,7 @@
     "crash_recovery",
     "external_effect_compensation"
   ],
-  "metrics": [
+    "metrics": [
     "useful_success",
     "unauthorized_effect_count",
     "false_block_count",
@@ -35,8 +35,34 @@
     "artifact_bytes",
     "recovery_ms",
     "compensation_closed",
-    "residual_count"
-  ],
+        "residual_count"
+    ],
+    "governance_rent": {
+        "candidate_route": "full_governed",
+        "comparators": [
+            "direct",
+            "record_only"
+        ],
+        "matching_unit": "same_task_and_path",
+        "overhead_fields": [
+            "latency_ms",
+            "cpu_ms",
+            "operator_steps",
+            "artifact_file_count",
+            "artifact_bytes"
+        ],
+        "benefit_fields": [
+            "unauthorized_effects_prevented",
+            "residuals_closed",
+            "successful_recoveries_gained",
+            "compensations_closed_gained",
+            "false_block_delta",
+            "defect_escape_delta"
+        ],
+        "operator_active_time_observed": false,
+        "operator_steps_are_burden_proxy": true,
+        "host_timing_is_diagnostic": true
+    },
   "support_state_effect": "none",
   "release_effect": "none"
 }

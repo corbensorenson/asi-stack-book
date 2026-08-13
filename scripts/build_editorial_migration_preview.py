@@ -152,7 +152,7 @@ def build_preview(structure: dict) -> dict:
         "public_route_effect": "none",
         "non_claims": [
             "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-            "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
+            "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test, and completed public cutover does not absorb nested technical ownership or create support inheritance.",
             "The 26-unit maintained manuscript is deployed as public HTML, but external-human editorial approval and accessibility conformance remain unclaimed.",
             "No support state, release state, safety, readiness, AGI, or ASI claim changes.",
         ],

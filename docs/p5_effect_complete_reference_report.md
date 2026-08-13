@@ -61,6 +61,16 @@ validator repeats the matrix and rejects route loss, route-label laundering,
 false state checks, unauthorized-effect laundering, false compensation,
 prospective-task laundering, and support promotion.
 
+The result computes governance rent over the same four matched paths rather
+than leaving that comparison implicit. Relative to direct execution, the full
+governed route adds twelve operator-step proxy units, fourteen receipt files,
+and 1,729 artifact bytes while preventing one unauthorized effect, closing two
+residuals, recovering the interrupted change, and compensating the external
+effect. Relative to record-only execution, it adds eight step-proxy units,
+four files, and 920 bytes for the same bounded benefits. Latency and CPU deltas
+remain host diagnostics. No human operator time was observed, so the result
+does not relabel workflow steps as measured human effort.
+
 This is a **retrospective replay** of a real defect whose successful repair was
 known before the comparison ran. It is not a prospective utility estimate,
 held-out comparison, human-operator study, production deployment, or evidence

@@ -244,7 +244,7 @@ def build() -> tuple[dict, dict[Path, str]]:
         state = "not_started"
         if exists:
             state = (
-                "target_length_reached_internal_review_pending"
+                "target_length_reached_ready_for_author_review"
                 if unit["target_min_words"] <= words <= unit["target_max_words"]
                 else "drafting"
             )
@@ -434,7 +434,7 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
     index_lines = [
         "# Human Reader Edition {.unnumbered}",
         "",
-        "This is the complete maintained draft of the independent 26-unit Human Reader edition. Every unit is inside its target range; editorial review and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
+        "This is the complete maintained draft of the independent 26-unit Human Reader edition. Every unit is inside its target range and ready for author review; author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
         "",
         "Start with [A Fifteen-Minute Route Through the Stack](quickstart.qmd) to run one bounded governed repository change and inspect what is implemented, what remains proposed, and how the three execution routes differ.",
         "",
@@ -445,7 +445,12 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         title = record["title"]
         if record["state"] != "not_started":
             title = f"[{title}]({record['source_file']})"
-        index_lines.append(f"| {record['order']} | {title} | `{record['state']}` | {record['visible_word_count']:,} |")
+        state_label = {
+            "target_length_reached_ready_for_author_review": "Ready for author review",
+            "drafting": "Drafting",
+            "not_started": "Not started",
+        }[record["state"]]
+        index_lines.append(f"| {record['order']} | {title} | {state_label} | {record['visible_word_count']:,} |")
     outputs[INDEX] = "\n".join(index_lines) + "\n"
 
     crosswalk = build_crosswalk(records, owner_map)
@@ -467,7 +472,7 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         "unit_count": len(records),
         "owner_route_count": sum(len(record["owner_ids"]) for record in records),
         "started_unit_count": sum(record["state"] != "not_started" for record in records),
-        "target_length_unit_count": sum(record["state"] == "target_length_reached_internal_review_pending" for record in records),
+        "target_length_unit_count": sum(record["state"] == "target_length_reached_ready_for_author_review" for record in records),
         "visible_word_count": sum(record["visible_word_count"] for record in records),
         "units": records,
         "support_state_effect": "none",

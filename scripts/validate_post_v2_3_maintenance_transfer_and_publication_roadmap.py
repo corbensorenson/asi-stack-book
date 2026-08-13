@@ -2750,10 +2750,14 @@ def errors(data: dict) -> list[str]:
         "path_count": p5_u1_result.get("path_count"),
         "trial_count": p5_u1_result.get("trial_count"),
         "state_checks_passed": p5_u1_result.get("aggregate", {}).get("state_checks_passed"),
-        "rejecting_record_mutation_count": 7,
+        "rejecting_record_mutation_count": 9,
         "governed_authority_blocks": p5_u1_result.get("aggregate", {}).get("governed_authority_blocks"),
         "governed_crash_recoveries": p5_u1_result.get("aggregate", {}).get("governed_crash_recoveries"),
         "governed_compensations": p5_u1_result.get("aggregate", {}).get("governed_compensations"),
+        "governance_rent_comparator_count": len(p5_u1_result.get("governance_rent", {}).get("comparisons", [])),
+        "governance_rent_matched_path_count_per_comparator": 4,
+        "operator_burden_measure": p5_u1_result.get("governance_rent", {}).get("operator_burden_measure"),
+        "operator_active_time_observed": p5_u1_result.get("governance_rent", {}).get("operator_active_time_observed"),
         "outcome_known_before_route_replay": p5_u1_result.get("task", {}).get("outcome_known_before_route_replay"),
         "fresh_checkout_validated": True,
         "fresh_checkout_commit": "8bff377f482cd4014945be08957b8cadd82fd68a",
@@ -2769,6 +2773,9 @@ def errors(data: dict) -> list[str]:
         or p5_u1_result.get("aggregate", {}).get("trial_count") != 12
         or p5_u1_result.get("aggregate", {}).get("state_checks_passed") != 12
         or p5_u1_result.get("aggregate", {}).get("mutations_rejected") != 12
+        or len(p5_u1_result.get("governance_rent", {}).get("comparisons", [])) != 2
+        or any(row.get("matched_path_count") != 4 for row in p5_u1_result.get("governance_rent", {}).get("comparisons", []))
+        or p5_u1_result.get("governance_rent", {}).get("operator_active_time_observed") is not False
         or p5_u1_result.get("support_state_effect") != "none"
         or p5_u1_result.get("release_effect") != "none"
     ):

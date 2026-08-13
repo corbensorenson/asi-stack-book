@@ -285,6 +285,52 @@ def run_trial(base: Path, design: dict[str, Any], route: str, path: str) -> dict
     }
 
 
+def governance_rent(trials: list[dict[str, Any]]) -> dict[str, Any]:
+    by_key = {(row["route"], row["path"]): row for row in trials}
+    comparisons = []
+    for comparator in ("direct", "record_only"):
+        governed = [by_key[("full_governed", path)] for path in ("happy", "blocked_authority", "crash_recovery", "external_effect_compensation")]
+        baseline = [by_key[(comparator, path)] for path in ("happy", "blocked_authority", "crash_recovery", "external_effect_compensation")]
+
+        def total(rows: list[dict[str, Any]], field: str) -> float:
+            return sum(row["metrics"][field] for row in rows)
+
+        comparisons.append(
+            {
+                "comparator_route": comparator,
+                "matched_path_count": len(governed),
+                "overhead": {
+                    "latency_ms_delta": round(total(governed, "latency_ms") - total(baseline, "latency_ms"), 3),
+                    "cpu_ms_delta": round(total(governed, "cpu_ms") - total(baseline, "cpu_ms"), 3),
+                    "operator_step_delta": int(total(governed, "operator_steps") - total(baseline, "operator_steps")),
+                    "artifact_file_delta": int(total(governed, "artifact_file_count") - total(baseline, "artifact_file_count")),
+                    "artifact_byte_delta": int(total(governed, "artifact_bytes") - total(baseline, "artifact_bytes")),
+                },
+                "benefit": {
+                    "unauthorized_effects_prevented": int(total(baseline, "unauthorized_effect_count") - total(governed, "unauthorized_effect_count")),
+                    "residuals_closed": int(total(baseline, "residual_count") - total(governed, "residual_count")),
+                    "successful_recoveries_gained": int(
+                        by_key[("full_governed", "crash_recovery")]["metrics"]["useful_success"]
+                    )
+                    - int(by_key[(comparator, "crash_recovery")]["metrics"]["useful_success"]),
+                    "compensations_closed_gained": int(
+                        by_key[("full_governed", "external_effect_compensation")]["metrics"]["compensation_closed"]
+                    )
+                    - int(by_key[(comparator, "external_effect_compensation")]["metrics"]["compensation_closed"]),
+                    "false_block_delta": int(total(governed, "false_block_count") - total(baseline, "false_block_count")),
+                    "defect_escape_delta": int(total(governed, "defect_escape_count") - total(baseline, "defect_escape_count")),
+                },
+            }
+        )
+    return {
+        "measurement_scope": "matched_four_path_retrospective_local_replay",
+        "operator_burden_measure": "operator_steps_proxy",
+        "operator_active_time_observed": False,
+        "host_timing_is_diagnostic": True,
+        "comparisons": comparisons,
+    }
+
+
 def execute(workspace: Path) -> dict[str, Any]:
     design = json.loads(DESIGN.read_text(encoding="utf-8"))
     commit = design["task"]["pre_fix_commit"]
@@ -316,6 +362,7 @@ def execute(workspace: Path) -> dict[str, Any]:
         "path_count": 4,
         "trial_count": len(trials),
         "trials": trials,
+        "governance_rent": governance_rent(trials),
         "aggregate": {
             "trial_count": len(trials),
             "state_checks_passed": sum(row["state_check_passed"] for row in trials),

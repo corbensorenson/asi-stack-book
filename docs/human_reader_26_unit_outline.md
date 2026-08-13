@@ -1061,9 +1061,10 @@ condition under which the architecture should change.
 
 **Target length.** 6,000-8,000 words.
 
-## Cutover gate
+## Cutover disposition
 
-The 26-unit outline may replace the historical 22-unit candidate only after:
+The 26-unit edition replaced the historical 22-unit candidate after these
+machine-validated gates passed:
 
 1. all 87 canonical owners route exactly once and every stable ID remains
    directly reachable;
@@ -1076,13 +1077,14 @@ The 26-unit outline may replace the historical 22-unit candidate only after:
 5. compact generated panels link current support, evidence, proof, objections,
    and conclusion-changing conditions without dominating the prose;
 6. unit-to-unit handoffs, repeated explanations, terminology, figures, links,
-   accessibility, and desktop/mobile rendering pass editorial review; and
+   accessibility preparation, and desktop/mobile rendering pass internal
+   editorial and automated browser review; and
 7. the cutover records `support_state_effect: none` and `release_effect: none`.
 
 ## Non-claims
 
-- This outline is not the completed human manuscript or a reviewed reader
-  release.
+- Cutover completion is not Corben's author approval, external-human editorial
+  approval, accessibility conformance, or a major-version package release.
 - Exact 87-owner routing is editorial completeness, not evidence that the
   architecture is correct.
 - A unit does not inherit the support, proof scope, authority, or novelty of

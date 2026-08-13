@@ -808,7 +808,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             errors.append(f"{unit['unit_id']}: source does not include its generated research-status panel")
         if "chapters/" in text and "{{< include" in text and "../generated/" not in text:
             errors.append(f"{unit['unit_id']}: source appears to include a live technical chapter")
-        if state == "target_length_reached_internal_review_pending" and not (
+        if state == "target_length_reached_ready_for_author_review" and not (
             unit["target_min_words"] <= unit["visible_word_count"] <= unit["target_max_words"]
         ):
             errors.append(f"{unit['unit_id']}: false target-length completion")
@@ -822,7 +822,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
                 if owner_url not in panel:
                     errors.append(f"{unit['unit_id']}: missing discoverable owner route {owner_id}")
     unit_01 = next((unit for unit in units if unit.get("unit_id") == "unit-01"), None)
-    if unit_01 is None or unit_01.get("state") != "target_length_reached_internal_review_pending":
+    if unit_01 is None or unit_01.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 1 has not reached its drafting target")
     else:
         text = (EDITION / unit_01["source_file"]).read_text(encoding="utf-8")
@@ -830,7 +830,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 1 missing required argument boundary: {fragment!r}")
     unit_02 = next((unit for unit in units if unit.get("unit_id") == "unit-02"), None)
-    if unit_02 is None or unit_02.get("state") != "target_length_reached_internal_review_pending":
+    if unit_02 is None or unit_02.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 2 has not reached its drafting target")
     else:
         text = (EDITION / unit_02["source_file"]).read_text(encoding="utf-8")
@@ -838,7 +838,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 2 missing required argument boundary: {fragment!r}")
     unit_03 = next((unit for unit in units if unit.get("unit_id") == "unit-03"), None)
-    if unit_03 is None or unit_03.get("state") != "target_length_reached_internal_review_pending":
+    if unit_03 is None or unit_03.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 3 has not reached its drafting target")
     else:
         text = (EDITION / unit_03["source_file"]).read_text(encoding="utf-8")
@@ -846,7 +846,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 3 missing required argument boundary: {fragment!r}")
     unit_04 = next((unit for unit in units if unit.get("unit_id") == "unit-04"), None)
-    if unit_04 is None or unit_04.get("state") != "target_length_reached_internal_review_pending":
+    if unit_04 is None or unit_04.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 4 has not reached its drafting target")
     else:
         text = (EDITION / unit_04["source_file"]).read_text(encoding="utf-8")
@@ -854,7 +854,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 4 missing required argument boundary: {fragment!r}")
     unit_23 = next((unit for unit in units if unit.get("unit_id") == "unit-23"), None)
-    if unit_23 is None or unit_23.get("state") != "target_length_reached_internal_review_pending":
+    if unit_23 is None or unit_23.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 23 has not reached its drafting target")
     else:
         text = (EDITION / unit_23["source_file"]).read_text(encoding="utf-8")
@@ -862,7 +862,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 23 missing required argument boundary: {fragment!r}")
     unit_05 = next((unit for unit in units if unit.get("unit_id") == "unit-05"), None)
-    if unit_05 is None or unit_05.get("state") != "target_length_reached_internal_review_pending":
+    if unit_05 is None or unit_05.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 5 has not reached its drafting target")
     else:
         text = (EDITION / unit_05["source_file"]).read_text(encoding="utf-8")
@@ -870,7 +870,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 5 missing required argument boundary: {fragment!r}")
     unit_06 = next((unit for unit in units if unit.get("unit_id") == "unit-06"), None)
-    if unit_06 is None or unit_06.get("state") != "target_length_reached_internal_review_pending":
+    if unit_06 is None or unit_06.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 6 has not reached its drafting target")
     else:
         text = (EDITION / unit_06["source_file"]).read_text(encoding="utf-8")
@@ -878,7 +878,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 6 missing required argument boundary: {fragment!r}")
     unit_07 = next((unit for unit in units if unit.get("unit_id") == "unit-07"), None)
-    if unit_07 is None or unit_07.get("state") != "target_length_reached_internal_review_pending":
+    if unit_07 is None or unit_07.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 7 has not reached its drafting target")
     else:
         text = (EDITION / unit_07["source_file"]).read_text(encoding="utf-8")
@@ -886,7 +886,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 7 missing required argument boundary: {fragment!r}")
     unit_08 = next((unit for unit in units if unit.get("unit_id") == "unit-08"), None)
-    if unit_08 is None or unit_08.get("state") != "target_length_reached_internal_review_pending":
+    if unit_08 is None or unit_08.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 8 has not reached its drafting target")
     else:
         text = (EDITION / unit_08["source_file"]).read_text(encoding="utf-8")
@@ -894,7 +894,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 8 missing required argument boundary: {fragment!r}")
     unit_09 = next((unit for unit in units if unit.get("unit_id") == "unit-09"), None)
-    if unit_09 is None or unit_09.get("state") != "target_length_reached_internal_review_pending":
+    if unit_09 is None or unit_09.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 9 has not reached its drafting target")
     else:
         text = (EDITION / unit_09["source_file"]).read_text(encoding="utf-8")
@@ -902,7 +902,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 9 missing required argument boundary: {fragment!r}")
     unit_10 = next((unit for unit in units if unit.get("unit_id") == "unit-10"), None)
-    if unit_10 is None or unit_10.get("state") != "target_length_reached_internal_review_pending":
+    if unit_10 is None or unit_10.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 10 has not reached its drafting target")
     else:
         text = (EDITION / unit_10["source_file"]).read_text(encoding="utf-8")
@@ -910,7 +910,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 10 missing required argument boundary: {fragment!r}")
     unit_11 = next((unit for unit in units if unit.get("unit_id") == "unit-11"), None)
-    if unit_11 is None or unit_11.get("state") != "target_length_reached_internal_review_pending":
+    if unit_11 is None or unit_11.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 11 has not reached its drafting target")
     else:
         text = (EDITION / unit_11["source_file"]).read_text(encoding="utf-8")
@@ -918,7 +918,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 11 missing required argument boundary: {fragment!r}")
     unit_12 = next((unit for unit in units if unit.get("unit_id") == "unit-12"), None)
-    if unit_12 is None or unit_12.get("state") != "target_length_reached_internal_review_pending":
+    if unit_12 is None or unit_12.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 12 has not reached its drafting target")
     else:
         text = (EDITION / unit_12["source_file"]).read_text(encoding="utf-8")
@@ -926,7 +926,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 12 missing required argument boundary: {fragment!r}")
     unit_13 = next((unit for unit in units if unit.get("unit_id") == "unit-13"), None)
-    if unit_13 is None or unit_13.get("state") != "target_length_reached_internal_review_pending":
+    if unit_13 is None or unit_13.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 13 has not reached its drafting target")
     else:
         text = (EDITION / unit_13["source_file"]).read_text(encoding="utf-8")
@@ -934,7 +934,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 13 missing required argument boundary: {fragment!r}")
     unit_14 = next((unit for unit in units if unit.get("unit_id") == "unit-14"), None)
-    if unit_14 is None or unit_14.get("state") != "target_length_reached_internal_review_pending":
+    if unit_14 is None or unit_14.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 14 has not reached its drafting target")
     else:
         text = (EDITION / unit_14["source_file"]).read_text(encoding="utf-8")
@@ -942,7 +942,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 14 missing required argument boundary: {fragment!r}")
     unit_15 = next((unit for unit in units if unit.get("unit_id") == "unit-15"), None)
-    if unit_15 is None or unit_15.get("state") != "target_length_reached_internal_review_pending":
+    if unit_15 is None or unit_15.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 15 has not reached its drafting target")
     else:
         text = (EDITION / unit_15["source_file"]).read_text(encoding="utf-8")
@@ -950,7 +950,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 15 missing required argument boundary: {fragment!r}")
     unit_16 = next((unit for unit in units if unit.get("unit_id") == "unit-16"), None)
-    if unit_16 is None or unit_16.get("state") != "target_length_reached_internal_review_pending":
+    if unit_16 is None or unit_16.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 16 has not reached its drafting target")
     else:
         text = (EDITION / unit_16["source_file"]).read_text(encoding="utf-8")
@@ -958,7 +958,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 16 missing required argument boundary: {fragment!r}")
     unit_17 = next((unit for unit in units if unit.get("unit_id") == "unit-17"), None)
-    if unit_17 is None or unit_17.get("state") != "target_length_reached_internal_review_pending":
+    if unit_17 is None or unit_17.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 17 has not reached its drafting target")
     else:
         text = (EDITION / unit_17["source_file"]).read_text(encoding="utf-8")
@@ -966,7 +966,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 17 missing required argument boundary: {fragment!r}")
     unit_18 = next((unit for unit in units if unit.get("unit_id") == "unit-18"), None)
-    if unit_18 is None or unit_18.get("state") != "target_length_reached_internal_review_pending":
+    if unit_18 is None or unit_18.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 18 has not reached its drafting target")
     else:
         text = (EDITION / unit_18["source_file"]).read_text(encoding="utf-8")
@@ -974,7 +974,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 18 missing required argument boundary: {fragment!r}")
     unit_19 = next((unit for unit in units if unit.get("unit_id") == "unit-19"), None)
-    if unit_19 is None or unit_19.get("state") != "target_length_reached_internal_review_pending":
+    if unit_19 is None or unit_19.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 19 has not reached its drafting target")
     else:
         text = (EDITION / unit_19["source_file"]).read_text(encoding="utf-8")
@@ -982,7 +982,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 19 missing required argument boundary: {fragment!r}")
     unit_20 = next((unit for unit in units if unit.get("unit_id") == "unit-20"), None)
-    if unit_20 is None or unit_20.get("state") != "target_length_reached_internal_review_pending":
+    if unit_20 is None or unit_20.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 20 has not reached its drafting target")
     else:
         text = (EDITION / unit_20["source_file"]).read_text(encoding="utf-8")
@@ -990,7 +990,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 20 missing required argument boundary: {fragment!r}")
     unit_21 = next((unit for unit in units if unit.get("unit_id") == "unit-21"), None)
-    if unit_21 is None or unit_21.get("state") != "target_length_reached_internal_review_pending":
+    if unit_21 is None or unit_21.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 21 has not reached its drafting target")
     else:
         text = (EDITION / unit_21["source_file"]).read_text(encoding="utf-8")
@@ -998,7 +998,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 21 missing required argument boundary: {fragment!r}")
     unit_22 = next((unit for unit in units if unit.get("unit_id") == "unit-22"), None)
-    if unit_22 is None or unit_22.get("state") != "target_length_reached_internal_review_pending":
+    if unit_22 is None or unit_22.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 22 has not reached its drafting target")
     else:
         text = (EDITION / unit_22["source_file"]).read_text(encoding="utf-8")
@@ -1006,7 +1006,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 22 missing required argument boundary: {fragment!r}")
     unit_24 = next((unit for unit in units if unit.get("unit_id") == "unit-24"), None)
-    if unit_24 is None or unit_24.get("state") != "target_length_reached_internal_review_pending":
+    if unit_24 is None or unit_24.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 24 has not reached its drafting target")
     else:
         text = (EDITION / unit_24["source_file"]).read_text(encoding="utf-8")
@@ -1014,7 +1014,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 24 missing required argument boundary: {fragment!r}")
     unit_25 = next((unit for unit in units if unit.get("unit_id") == "unit-25"), None)
-    if unit_25 is None or unit_25.get("state") != "target_length_reached_internal_review_pending":
+    if unit_25 is None or unit_25.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 25 has not reached its drafting target")
     else:
         text = (EDITION / unit_25["source_file"]).read_text(encoding="utf-8")
@@ -1022,7 +1022,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             if fragment not in text:
                 errors.append(f"Unit 25 missing required argument boundary: {fragment!r}")
     unit_26 = next((unit for unit in units if unit.get("unit_id") == "unit-26"), None)
-    if unit_26 is None or unit_26.get("state") != "target_length_reached_internal_review_pending":
+    if unit_26 is None or unit_26.get("state") != "target_length_reached_ready_for_author_review":
         errors.append("Unit 26 has not reached its drafting target")
     else:
         text = (EDITION / unit_26["source_file"]).read_text(encoding="utf-8")
