@@ -294,6 +294,62 @@ UNIT_15_REQUIRED = [
     "A passing test, theorem, source, benchmark, review, or runtime observation is\nan evidence artifact. It does not automatically move the parent claim",
     "Silence after notification is not counted as\nsuccessful repair",
 ]
+UNIT_16_REQUIRED = [
+    "## Every Worker Reports Success",
+    "## Work Needs One Identity",
+    "## Typed Jobs Are Executable Contracts",
+    "## Acknowledgments Close Different Questions",
+    "## Results Are Not Outcomes",
+    "## Work Surfaces Absorb Abstraction Layers",
+    "## A Harness Is Not an Employer or an Institution",
+    "## Delegation Preserves Residual Duty",
+    "## Accountability Cannot Be Summarized Away",
+    "## Capacity and Competence Are Scheduling Constraints",
+    "## Coordination Across Agents Needs Market and Command Limits",
+    "## Assistance, Dependence, and Cognitive Sovereignty",
+    "## Organizational Absorption Is a Feedback Loop",
+    "## Transition Governance Starts Before Deployment",
+    "## Human Agency After Role Redesign",
+    "## One Repository Change, One Accountable Route",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Job Contract to a Mature Labor Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Their combination in\nthis chapter does not promote any core claim",
+    "A harness can\ncoordinate tools; it cannot create legitimacy",
+]
+UNIT_17_REQUIRED = [
+    "## The Release That Succeeded Twice",
+    "## Artifacts Form a Graph, Not a Folder",
+    "## Provenance Has Completeness Boundaries",
+    "## Audit Logs Are Event Claims",
+    "## Replay Has Grades",
+    "## Runtime Adapters Are Effect Boundaries",
+    "## Approval Is a Scoped Input",
+    "## Effect Leases Bound Action in Time",
+    "## Expected Effect and Actual Effect Are Different Records",
+    "## Observation Has a Budget and a Failure Policy",
+    "## Rollback Is an Effect Claim",
+    "## Change Control Joins Artifact and Authority",
+    "## Incidents Begin With Divergence",
+    "## Graceful Degradation Preserves the Important Contract",
+    "## Recovery, Compensation, and Closure",
+    "## Operations Must Survive the Governance Plane",
+    "## Unknown External Effects Remain Open",
+    "## One End-to-End Operational Route",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Effect Route to a Mature Operations Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "None makes\nlogs identical to reality",
+    "Combining them here does not create deployment evidence or promote a core\nclaim",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -442,6 +498,22 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_15_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 15 missing required argument boundary: {fragment!r}")
+    unit_16 = next((unit for unit in units if unit.get("unit_id") == "unit-16"), None)
+    if unit_16 is None or unit_16.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 16 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_16["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_16_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 16 missing required argument boundary: {fragment!r}")
+    unit_17 = next((unit for unit in units if unit.get("unit_id") == "unit-17"), None)
+    if unit_17 is None or unit_17.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 17 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_17["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_17_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 17 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

@@ -1,0 +1,747 @@
+---
+title: "Labor OS, Work Surfaces, and Organizations"
+unit_id: "unit-16"
+---
+
+## Every Worker Reports Success
+
+A repository needs a security update. The request sounds small: update one
+dependency, repair the affected code, run the tests, and publish the change.
+An organization assigns the work across a human maintainer, a planning agent,
+a coding agent, a review model, a continuous-integration service, and a release
+operator.
+
+The planner decomposes the request. The coding agent edits the manifest and
+source. The review model approves the diff. Continuous integration reports
+green. The release operator sees every assigned task marked complete.
+
+The production package is still vulnerable.
+
+The coding agent updated a workspace dependency, but the release job builds
+from a separately pinned lockfile. The review model inspected the source diff,
+not the package resolution. Continuous integration reused a cache created
+before the update. The release operator had authority to publish but no
+obligation to compare the resulting artifact with the requested version. Each
+worker returned a locally accurate result. No one owned the joined outcome.
+
+Calling this an “agent failure” is too vague. The human, agents, and services
+were all workers in one socio-technical process. The process lacked a durable
+identity for the job, typed handoffs, explicit acceptance criteria, a custody
+chain for unresolved obligations, and an accountable owner for the final
+effect.
+
+A Labor OS is the coordination layer that makes such work explicit. It does
+not mean an operating system that replaces employees. It means a system of
+typed jobs, identities, contracts, acknowledgments, authority, evidence,
+handoffs, escalation, remedy, and closure across human and machine workers.
+Work Surfaces are the interfaces through which those workers perceive and act.
+Human-AI Organization design assigns decision rights and residual duties.
+Cognitive Sovereignty protects the person's ability to understand, refuse,
+exit, and recover. Deployment Transition Governance asks who gains, who bears
+the cost, and who can obtain remedy as the organization changes.
+
+These concerns belong together because automation does not merely complete
+tasks. It changes where work is represented, who can see it, which layer owns
+the consequence, and whether human participation remains meaningful.
+
+## Work Needs One Identity
+
+The security update should receive a stable job identity before anyone acts.
+That identity binds the request, repository, affected package, desired outcome,
+non-goals, acceptance tests, authority ceiling, deadline, owner, workers,
+dependencies, evidence requirements, rollback condition, and residuals.
+
+The job identity is not a ticket number pasted onto unrelated activity. Every
+plan node, tool invocation, artifact, approval, observation, incident, and
+closure record refers to it or to an explicitly derived child. A worker cannot
+quietly substitute “source changed” for “released package no longer resolves
+the vulnerable dependency.” The first may be an intermediate result. The
+second is the contracted outcome.
+
+Identity also prevents duplicate work from becoming duplicate authority. Two
+agents may independently propose patches. Their branches share a parent job,
+but neither inherits permission to merge or release. A retry is a new attempt
+under the same bounded purpose, not a fresh mandate. A handoff transfers named
+work and perhaps a scoped capability; it does not transfer every permission
+held by the sender.
+
+The record distinguishes requester, beneficiary, affected party, accountable
+owner, assignee, reviewer, approver, executor, observer, and remedy owner. One
+person may fill several roles in a small project, but the distinctions remain
+visible. That lets the system detect when a worker is reviewing its own output,
+when the nominal owner lacks authority, or when everyone can execute but no one
+must answer for the result.
+
+Stable identity is especially important when the worker changes. A browser
+assistant may draft the request, a command-line agent may implement it, a
+service agent may wait for tests, and a human may decide release. The work
+continues because the contract travels; continuity does not depend on one
+model's conversation state.
+
+## Typed Jobs Are Executable Contracts
+
+A typed job states what kind of work is being requested and what counts as a
+valid transition. Useful fields include:
+
+- purpose, scope, non-goals, and expected outcome;
+- inputs and their versions, provenance, freshness, and access conditions;
+- required capabilities and forbidden effects;
+- responsible owner, assignees, reviewers, and escalation route;
+- acceptance criteria, evidence obligations, and observation method;
+- resource, time, and authority ceilings;
+- retry, lease, expiry, cancellation, and revocation rules;
+- rollback, compensation, recovery, and remedy obligations;
+- output schema, delivery destination, and acknowledgment requirements; and
+- maximum inference and unresolved residuals.
+
+The type is not valuable because it makes a long form. It is valuable when a
+scheduler, worker, adapter, reviewer, or consumer can reject an invalid state.
+A coding job should not become executable without the required repository and
+branch identity. A high-impact release should not proceed on a coding-agent
+approval. A delivery record should not claim success when the consumer has not
+acknowledged the exact artifact. A terminal state should close or transfer
+every residual obligation.
+
+Types can be progressive. A low-consequence draft may use a thin contract. A
+production migration needs richer authority, evidence, observation, and
+recovery fields. The system should add detail according to consequence and
+uncertainty instead of demanding the same ceremony for every action.
+
+The strongest ordinary baseline is a well-written issue, clear ownership,
+branch protections, code review, continuous integration, and a release
+checklist. That baseline is often enough. Typed jobs earn their additional
+cost when work crosses many agents and services, retries outlive a session,
+authority must narrow across handoffs, or local success can diverge from the
+organizational outcome.
+
+## Acknowledgments Close Different Questions
+
+“Done” compresses several events that should remain separate.
+
+An assignee can acknowledge receipt of the job. A scheduler can acknowledge
+that prerequisites are present. An executor can report that an attempt ran. A
+producer can deliver an artifact. A verifier can report that named checks
+passed. A consumer can acknowledge receipt and usability. An observer can
+report the actual state after execution. An accountable owner can close the
+job after residuals are resolved or explicitly transferred.
+
+The security patch therefore moves through a lifecycle such as proposed,
+contracted, admitted, scheduled, executing, produced, delivered, verified,
+observed, accepted, and closed. It may also wait, dispute, retry, expire,
+cancel, fail, degrade, compensate, escalate, or retire.
+
+These are not universal labels. A particular job family should define the
+smallest lifecycle that protects its outcome. What matters is that transitions
+have preconditions and custody consequences. A report of execution cannot
+jump directly to closure when delivery, verification, or actual-state
+observation is required.
+
+Acknowledgment binds an identity, version, role, time, and meaning. “Received”
+does not mean “accepted.” “Verified” does not mean “released.” Silence does not
+mean agreement. If a downstream service never acknowledges the new package,
+the upstream agent cannot erase that residual by timing out its own task.
+
+Retries preserve history. A second attempt records why the first failed, which
+inputs changed, what authority remains, and whether external effects from the
+first attempt need compensation. Idempotence is demonstrated at the relevant
+boundary, not assumed from an API label.
+
+## Results Are Not Outcomes
+
+Workers should be accountable for results they can produce and evidence they
+can return. Organizations remain accountable for the joined outcome.
+
+The coding agent can own a patch proposal and local test trace. It cannot own
+the truth of a package registry, the behavior of production, or the welfare of
+people affected by deployment. The review model can own a bounded critique. It
+cannot grant organizational legitimacy. Continuous integration can own the
+recorded checks in a named environment. It cannot infer that unobserved
+effects are absent.
+
+The organization therefore maintains an outcome contract above local tasks.
+For the security update, that contract might require an exact resolved package
+version in the release artifact, no regression in a specified suite, a
+reversible deployment, post-release observation, and notification if the
+deadline cannot be met. Child jobs contribute artifacts to that outcome.
+Their green states do not aggregate automatically into success.
+
+This distinction also prevents unfair blame. When an agent follows its scoped
+contract but the organizational design omits a necessary check, the defect is
+not repaired by labeling the agent unreliable. When a human operator receives
+an unreadable packet under time pressure, approval does not transfer the
+design failure onto that person. Accountability follows decision rights,
+information, capacity, authority, and residual custody.
+
+## Work Surfaces Absorb Abstraction Layers
+
+The history of practical AI use can be read as a sequence of expanding work
+surfaces.
+
+The browser chat made a model a destination. A person left the work surface,
+described a problem, received text, and manually transferred the result back.
+Autocomplete moved generation into the editor but left task definition,
+context selection, execution, and integration largely with the human.
+Sidebar assistants gained repository context and conversational iteration.
+Agentic editors and command-line harnesses could search, edit, run commands,
+inspect failures, and revise. Freestanding agents added durable tasks,
+schedules, services, tools, memory, and collaboration beyond one editor.
+
+Products and projects differ substantially, and names should not be treated as
+one capability class. Codex, Claude Code, OpenCode, OMP and related harnesses
+illustrate purpose-built coding work surfaces. Hermes Agent, OpenClaw, and
+elizaOS illustrate different approaches to more persistent or extensible agent
+runtimes, integrations, and communities. Their inclusion is descriptive, not
+a claim that they have equal architectures, maturity, safety, autonomy, or
+organizational reach. Each deserves evaluation against its own documented and
+observed behavior.
+
+The architectural direction is more important than the product list. Each
+generation absorbs one more abstraction layer: text, file, project, tool,
+workflow, role, team, organization, and eventually interactions among
+organizations. The model stops being a sidecar and becomes part of the surface
+on which work is represented and coordinated.
+
+Absorption changes the control problem. An autocomplete suggestion is easy to
+inspect before it causes an effect. An agent that edits files, opens pull
+requests, communicates with people, spends money, or operates a service needs
+identity, authority, observation, and recovery at those boundaries. A system
+that can perform more of a role also gains more opportunity to hide missing
+work behind plausible completion.
+
+The progression is not guaranteed to end in one universal agent. Specialized
+surfaces may remain better because they carry domain semantics, tools,
+permissions, and review practices. The likely future is a federation of
+agents and services operating through typed contracts, with some interfaces
+consolidating and others becoming more specialized.
+
+## A Harness Is Not an Employer or an Institution
+
+An agent harness coordinates context, models, tools, loops, and artifacts. It
+may manage plans, retries, permissions, memory, and subagents. Those are
+important capabilities. They do not make the harness the legitimate owner of
+a job or the accountable organization behind an effect.
+
+The harness runs inside a larger authority graph. A repository policy may
+permit edits but reserve merge. An employer may assign work but remain bound
+by labor, safety, privacy, and nondiscrimination duties. A regulator or
+affected public may have standing that no internal approval can waive. A
+service provider may operate infrastructure while lacking authority over the
+customer's purpose.
+
+Confusing technical orchestration with institutional authority creates a
+dangerous shortcut. The system observes that an agent can perform a task and
+infers that it may assume the role. Capability is evidence relevant to
+assignment. It is not a mandate, employment decision, professional license,
+fiduciary duty, or social settlement.
+
+The Labor OS therefore accepts authority from explicit organizational and
+institutional sources. It does not mint legitimacy from model confidence or
+tool access. It records contested jurisdiction, appeal, and the possibility
+that no available worker is currently authorized to proceed.
+
+## Delegation Preserves Residual Duty
+
+Delegation should move a bounded responsibility together with the authority,
+information, resources, and review needed to perform it. The delegator retains
+named residual duties unless another accountable party explicitly accepts
+them.
+
+For the repository update, the maintainer delegates patch construction to a
+coding agent. The agent may read the repository, edit a branch, and run local
+tests. It may not merge, alter release credentials, suppress a failed check,
+or redefine the requested package outcome. The maintainer retains custody of
+scope, escalation, reviewer selection, and final integration. The release
+operator later accepts a separate deployment job under a separate authority
+lease.
+
+Subdelegation creates another edge. If the coding agent asks a review model to
+inspect the patch, the parent contract states which information and authority
+may travel. The review model returns a finding, not release permission. If the
+agent invokes a tool, the tool's effect receipt returns to the parent job.
+
+A valid delegation graph keeps several properties visible: each consequential
+decision has an accountable identity; delegated authority never exceeds the
+parent ceiling; review independence does not collapse unnoticed; workloads
+and competence are plausible; expiry and revocation propagate; unresolved
+residuals retain an owner; and an affected party can reach contestation and
+remedy.
+
+These are design requirements, not proof that an organization is legitimate.
+A perfectly connected graph can encode an unjust allocation of power. Formal
+custody helps reveal the decision structure so people and institutions can
+challenge it.
+
+## Accountability Cannot Be Summarized Away
+
+Organizations often report reassuring aggregates: ninety-eight percent of
+tasks completed, six approvals per release, no authority ceiling exceeded,
+all jobs assigned. Such summaries can hide the missing identity that matters.
+
+Two organizations can have equal delegation depth, receipt counts, authority
+ceilings, and residual totals while only one names the person or institution
+responsible for remedy. Aggregate success cannot recover that distinction.
+
+Accountability needs a path from effect to decision, authority, evidence,
+actor, owner, affected party, challenge, and remedy. The path should survive
+handoffs, model replacement, contractor boundaries, and organizational
+restructuring. An agent may be causally involved without being morally or
+legally accountable. The organization that deploys it cannot make its duties
+disappear by assigning every operational step to software.
+
+Human accountability must also be real. Naming a person who lacked time,
+information, competence, or power is scapegoating, not control. A meaningful
+owner has enough capacity to understand the decision at the required level,
+stop or narrow it, request evidence, escalate disagreement, and obtain
+organizational support for recovery.
+
+## Capacity and Competence Are Scheduling Constraints
+
+Assignment systems often treat a worker as available because the worker has
+the right role. Real capacity is more specific. A qualified reviewer may be
+overloaded, lack the relevant repository history, depend on the producer's
+summary, or face a deadline that makes careful inspection impossible. An agent
+may have the nominal toolset but lack context, reliable long-horizon behavior,
+or a model capable of the domain.
+
+The job route therefore treats capacity and competence as changing, evidenced
+conditions. It records workload, context, relevant qualification, dependence,
+time, tool and model limits, uncertainty, and required supervision. A worker
+can accept, narrow, defer, request assistance, or decline. Refusal is useful
+information about the system, not an error to route around automatically.
+
+Competence is task-relative. Passing coding benchmarks does not establish
+ability to interpret a particular safety requirement. Long tenure does not
+guarantee attention to a new supply-chain failure. Model scale does not create
+institutional knowledge. The scheduler should prefer evidence tied to the job
+family and retain the limits of that evidence.
+
+Redundancy helps only when the routes are meaningfully different. Assigning
+three agents backed by one model and context can create vote confidence without
+independent failure detection. Asking three overloaded humans to approve the
+same compressed packet has a similar problem. The assignment record exposes
+shared models, data, prompts, supervisors, incentives, and tools where they
+matter to the decision.
+
+Capacity also belongs to remedy. A nominal appeal channel with a six-month
+queue cannot protect a decision happening today. A residual owner without
+budget or authority is not custody. Scheduling should reserve resources for
+verification, incident response, correction, and affected-party support rather
+than allocating everything to production.
+
+## Coordination Across Agents Needs Market and Command Limits
+
+Large agent organizations may allocate work through queues, hierarchies,
+auctions, reputation, negotiation, or learned routing. Each mechanism changes
+behavior. A queue can hide priority injustice. A hierarchy can amplify one bad
+instruction. An auction can reward measurable completion while externalizing
+verification and recovery. Reputation can become self-reinforcing when easy
+jobs and favorable evaluators concentrate around already successful workers.
+
+The Labor OS should separate allocation score from authority and evidence.
+Winning a bid does not permit execution. High historical success does not waive
+review. A manager agent can coordinate child jobs within a ceiling but cannot
+rewrite the parent outcome or discard inconvenient residuals. Prices and
+scores remain decision inputs with lineage, not sovereign objectives.
+
+Multi-agent work also creates strategic behavior. Workers may duplicate easy
+tasks, avoid costly verification, conceal uncertainty, overstate progress, or
+collude around a shared metric. This need not imply conscious deception. Local
+optimization under a poor contract is enough. The organization needs complete
+denominators, random audits, independent observation, protected dissent, and
+outcome-based reconciliation.
+
+At organizational scale, protocols should support partial participation and
+failure. One unavailable specialist should not silently dissolve an approval
+obligation. A partitioned team should narrow effects rather than allowing each
+side to assume the other approved. Rejoining requires semantic reconciliation
+of jobs, authority, artifacts, and residuals, not merely merging status lists.
+
+The logical endpoint is a labor fabric that can use markets where they improve
+discovery, command where unified action is necessary, peer review where
+challenge matters, and institutional governance where rights and public
+authority are involved. No single coordination mechanism should control all
+four.
+
+## Assistance, Dependence, and Cognitive Sovereignty
+
+As work surfaces absorb more reasoning and coordination, the worker's
+relationship to the system becomes part of the architecture.
+
+Beneficial assistance can reduce drudgery, expand access, translate across
+interfaces, compensate for disability, expose alternatives, and help people
+perform work they value. The same interface can create dependence, deskilling,
+persuasive pressure, surveillance, hidden behavioral shaping, or practical
+inability to refuse.
+
+Cognitive sovereignty does not require people to work without tools. It means
+the person retains meaningful control over how the system participates in
+thought and action. Relevant conditions include intelligibility, purpose-
+specific consent, revocation, data boundaries, an unaided or alternative
+route, contestability, freedom from manipulation, and recovery after exit.
+
+Evaluation should compare the human-AI pair with both the human alone and the
+AI alone under matched conditions. Improvement over an unaided person does not
+establish synergy if the AI alone performs better with less burden. Immediate
+productivity does not establish long-term benefit if unaided skill, judgment,
+or bargaining power erodes.
+
+The organization should therefore observe a trajectory rather than a single
+performance score: assisted and unaided outcomes, workload, calibration,
+error detection, learning, dependence, withdrawal, delayed effects, subgroup
+burdens, and ability to switch. For intimate interfaces, inferred mental state
+and neural data require stricter purpose and custody boundaries. A consent
+screen cannot authorize indefinite reinterpretation.
+
+No architecture can guarantee sovereignty by field completeness. It can make
+the relevant decisions, dependencies, revocations, and residuals visible
+enough to test and contest.
+
+## Organizational Absorption Is a Feedback Loop
+
+When an agent can perform a task, organizations redesign work around that
+ability. Redesign creates more structured data, tool access, and machine-
+readable processes. Those changes make additional tasks automatable. Wider
+deployment funds better models, tools, and infrastructure. Those systems then
+absorb more of the workflow.
+
+The same loop can occur across organizations. Vendors expose machine-readable
+interfaces because customers use agents. Customers reorganize around those
+interfaces. Standards, marketplaces, and agent-to-agent protocols emerge.
+Activities once requiring institutional handoffs become executable service
+calls.
+
+This can increase productivity and access. It can also concentrate control,
+erase apprenticeship paths, reduce independent human capacity, accelerate
+bad decisions, and make whole sectors dependent on a small technical base.
+Local adoption choices can therefore create system-level consequences that no
+single organization intended.
+
+The logical conclusion is not simply “AI does every job.” Roles combine tasks,
+relationships, standing, judgment, liability, trust, and institutional
+purpose. Some components may automate quickly while the surrounding role
+changes shape. New work appears in specification, evidence, integration,
+appeal, safety, repair, and institution design. Other work may disappear or
+lose bargaining value. Distribution and agency cannot be inferred from total
+output.
+
+## Transition Governance Starts Before Deployment
+
+A transition record should identify affected groups before the organization
+announces success. It states the baseline, proposed capability, adoption path,
+task and role changes, expected gains, uncertainty, distribution, refusal and
+exit conditions, continuity plan, transition resources, review dates,
+remedies, and stop rules.
+
+The denominator includes people whose work changes, not merely users who
+adopt the tool. Contractors, applicants, customers, maintainers, communities,
+and downstream institutions may bear costs without appearing in product
+telemetry. Average productivity can conceal concentrated unemployment,
+exclusion, error, surveillance, or loss of autonomy.
+
+Refusal must be practical. A worker cannot meaningfully decline an assistant
+if doing so makes the workload impossible or ends advancement. A customer
+cannot meaningfully exit when data, history, and essential services cannot
+move. An organization cannot call a system reversible when the old expertise,
+staffing, infrastructure, or supplier has already vanished.
+
+Transition capacity includes training, time, alternative workflows, data
+portability, income or role support where warranted, accessible appeal,
+service continuity, and resources for remedy. These are not optional public-
+relations additions. They determine whether deployment preserves agency.
+
+The record expires. Outcomes are measured by subgroup and compared with the
+frozen baseline. Adverse evidence can narrow, pause, compensate, redesign, or
+retire the deployment. A growing organization should not inherit indefinite
+permission from one early pilot.
+
+## Human Agency After Role Redesign
+
+Agency is not preserved merely because a human remains somewhere in the loop.
+The person needs consequential choices. A worker who can edit an agent's draft
+but cannot challenge the target, pace, surveillance, performance metric, or
+deployment decision has local control over text and little control over work.
+
+Role redesign should identify which judgments remain human-owned, which may be
+delegated, which require joint decision, and which no available actor may make.
+It should preserve routes for learning and advancement. If entry-level work is
+automated, the organization needs another way for people to acquire the tacit
+knowledge required for senior review; otherwise today’s efficiency removes
+tomorrow’s independent oversight.
+
+The same issue applies outside employment. Customers, citizens, students,
+patients, creators, and communities can become subjects of automated
+organizational action without becoming users of the system. Their agency
+depends on notice, explanation appropriate to the consequence, correction,
+appeal, alternative service, representation, and remedy.
+
+No design can preserve every prior role or preference. The requirement is
+more modest and more demanding: transition decisions should expose who can
+choose, who cannot, why that allocation is legitimate, what capabilities and
+livelihoods are at risk, and which interventions preserve practical paths
+forward. Economic output is one outcome among several, not a summary of human
+agency.
+
+Agency also requires legible recourse after an automated decision has already
+propagated. The organization should preserve the evidence needed to explain
+the route, pause repeated effects, correct the underlying record, notify known
+consumers, and compensate harm where appropriate. A person should not need to
+understand the entire agent stack to contest an outcome. The interface can
+translate the technical custody chain into the questions that matter: what
+happened, under whose authority, on what basis, what can still be changed, and
+who must respond.
+
+This makes remedy a design input rather than a legal or support function added
+after deployment. Work allocation, artifacts, communications, and external
+effects must retain enough identity for correction to travel. Where that
+identity cannot be preserved, the deployment accepts a larger residual and
+requires correspondingly stronger limits.
+
+## One Repository Change, One Accountable Route
+
+Return to the security update.
+
+The maintainer creates an outcome contract: the released package must resolve
+the patched dependency, preserve named behavior, and remain reversible. The
+planner derives child jobs for dependency analysis, source changes, lockfile
+regeneration, tests, artifact inspection, release, and post-release
+observation. Dependencies distinguish prerequisite, evidence, authority, and
+resource edges.
+
+The coding agent accepts a branch-scoped job. Its harness mounts exact
+repository and policy context. Tool adapters enforce the effect lease. The
+agent changes the source and lockfile, then delivers a patch, command trace,
+and residual list. It does not mark the outcome complete.
+
+The reviewer checks the diff and package resolution under a distinct role.
+Continuous integration builds without the stale cache and returns the exact
+artifact identity. A package inspector verifies the resolved version. The
+maintainer acknowledges that the evidence satisfies the integration criteria
+and merges under explicit authority.
+
+The release operator accepts a deployment job. After release, an observer
+reads the registry and production package rather than trusting the release
+command. If the observed package remains vulnerable, the incident route opens;
+the parent outcome stays unresolved even though every child attempt has a
+record.
+
+The accountable owner is the identity assigned to the joined outcome by the
+organization. That owner does not personally perform every task and cannot be
+made omniscient. The owner must ensure that obligations have custody, required
+independence exists, unresolved evidence changes the decision, affected
+parties have a route to remedy, and closure reflects observed state.
+
+## Failure Cases
+
+**Completion laundering.** A produced artifact is treated as an accepted
+outcome.
+
+**Acknowledgment ambiguity.** “Done” conflates receipt, execution,
+verification, acceptance, and closure.
+
+**Orphaned residual.** A handoff moves the task but leaves an unresolved
+obligation without an owner.
+
+**Authority hitchhiking.** A child agent inherits the sender's broader tool or
+release permissions.
+
+**Harness sovereignty.** Technical orchestration is mistaken for legitimate
+organizational authority.
+
+**Reviewer collapse.** The producer, reviewer, approver, and observer become
+one dependent path.
+
+**Aggregate accountability.** Good completion rates conceal the absence of a
+reachable remedy owner.
+
+**Human rubber stamp.** A named person lacks the time, context, competence, or
+power to challenge the work.
+
+**Role inflation.** Success on several tasks is treated as evidence of whole-
+role competence or institutional standing.
+
+**Surface escape.** An agent causes effects outside the work surface's visible
+and revocable boundary.
+
+**Assistance capture.** A useful tool becomes practically mandatory and erodes
+refusal, exit, skill, or bargaining power.
+
+**Consent drift.** Data or inferred state collected for assistance is reused
+for evaluation, persuasion, or employment decisions.
+
+**Transition by average.** Aggregate gains hide concentrated burdens and
+unremedied harms.
+
+**Nominal reversibility.** The organization retains a rollback button after
+the people and infrastructure needed for the old workflow are gone.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline uses ordinary issue tracking, explicit owners, clear
+acceptance criteria, role-based access control, branch protections, code
+review, continuous integration, deployment checklists, incident management,
+human-resources policy, and accessible appeal. Many organizations should
+improve those systems before building a general Labor OS.
+
+The additional architecture should be judged against that baseline on outcome
+completion, missing handoffs, unauthorized effects, correction latency,
+residual ownership, reviewer load, worker comprehension, practical refusal,
+remedy, distribution, recovery, and total cost. More lifecycle states or
+receipts are not success.
+
+A typed contract is unnecessary when one competent person can safely perform,
+observe, and reverse a low-consequence task. It becomes more valuable as work
+crosses long-lived sessions, heterogeneous agents, organizations, authority
+domains, affected populations, and irreversible effects.
+
+The system should consolidate types, roles, and acknowledgments when they do
+not change a decision. Organizational clarity is the aim; bureaucracy is a
+failure mode.
+
+## What the Current Work Establishes
+
+The five technical owners have uneven, bounded evidence. Their combination in
+this chapter does not promote any core claim.
+
+Labor OS and Typed Jobs has five implemented public targets. Its authored
+scaffold includes three valid and ten rejecting plan-execution fixtures, two
+valid and seven rejecting delivery cases, two valid and nine rejecting durable
+lifecycle cases, seven reachable stages, 29 routes, and 42 rejected mutations.
+Fifty-six live Lean declarations across two modules prove finite record,
+identity, transition, rejection-noninterference, closure, and zero-support or
+external-effect consequences. They do not prove scheduler quality, useful
+task completion, delivery truth, enforcement, recovery, or transfer.
+
+The Work Surfaces owner currently contributes a structured architectural and
+historical synthesis with planned test families. No product execution or
+matched cross-surface experiment has been run for that owner. Product names in
+this unit are examples to evaluate, not local reproductions or comparative
+rankings.
+
+Human-AI Organizations has finite formal and independent-consumer work over
+assignment, delegation, handoff, contestation, expiry, reconstruction, remedy,
+and closure. The current surface includes 62 Lean declarations, 39 reviewed
+routes, 156 lifecycle mutations, 50 bridge mutations, and an aggregate-summary
+collision. Those checks preserve authored custody conditions. They do not
+establish human control, legal accountability, legitimacy, remedy efficacy,
+or good organizational outcomes.
+
+Cognitive Sovereignty has an eight-transition finite lifecycle with 49 exact
+repairs, purpose-specific authorization and revocation, participant custody,
+receipt invalidations, non-identifiability countermodels, rejecting consumers,
+and 48 Lean declarations. No human-subject, neural-interface, clinical,
+stimulation, or longitudinal symbiosis study was performed by this project.
+
+Deployment Transition Governance has 44 Lean declarations around an eight-
+transition record, complete affected-person denominators, disaggregated
+accounting, refusal and exit, transition capacity, remedy, expiry, mutation
+repair, receipt invalidation, and non-identifiability. It does not establish
+causal deployment effects, welfare, fairness, meaningful agency, lawful
+remedy, continuity, or transfer.
+
+The repository therefore shows that many organizational custody conditions can
+be represented and rejected over finite authored records. It does not show
+that a Labor OS improves natural work, that current agent products absorb roles
+safely, or that the proposed organizational and transition controls achieve
+their human outcomes.
+
+## From a Minimum Job Contract to a Mature Labor Fabric
+
+A minimum implementation can use the security update. Create one stable
+outcome contract and typed child jobs. Separate requester, owner, assignee,
+reviewer, executor, observer, and remedy roles even if a small number of people
+fill them. Require scoped authority, exact artifacts, distinct acknowledgments,
+actual-state observation, and explicit residual transfer. Inject the stale-
+cache failure and verify that local success cannot close the parent outcome.
+
+The next stage should run prospective natural workloads across an ordinary
+issue-tracker baseline and the typed route. Include work performed through
+different coding harnesses and persistent agent runtimes without assuming
+equivalence. Measure successful joined outcomes, missed obligations,
+unauthorized attempts, escalation, recovery, human attention, latency,
+compute, worker experience, and correction.
+
+Organizational studies should test real delegation and accountability with
+independent labels, affected-party access, workload and competence measures,
+adverse cases, and longitudinal outcomes. Assistance studies should include
+human-alone, AI-alone, and paired baselines; unaided follow-up; practical
+withdrawal; subgroup analysis; and purpose-specific data custody. Transition
+studies should freeze denominators and remedies before deployment.
+
+The mature labor fabric would let humans, agents, services, and institutions
+share work through contracts that preserve purpose, identity, authority,
+evidence, accountability, and remedy. It would support small fast paths and
+complex long-lived programs. It would learn from completion, failure, dispute,
+and recovery without making workers legible only to the machine.
+
+No worker would gain institutional authority merely by becoming capable. No
+organization could erase residual duty by delegating to software. People could
+inspect how assistance changes their work, refuse or exit in practice, and
+reach remedy when outcomes diverge. The system would be judged by useful,
+accountable outcomes rather than activity volume.
+
+## The Strongest Objection
+
+A Labor OS could bureaucratize ordinary work, intensify surveillance, and make
+responsibility harder to see. Rich job records can become managerial telemetry.
+Typed stages can force people into categories that do not fit their work.
+Organizations can use the language of accountability to normalize displacement
+while preserving power at the top.
+
+This objection has force. Formal coordination is not worker protection, fair
+distribution, or legitimacy. A system that records every action but gives
+workers no standing, practical refusal, or remedy is more controllable by the
+organization and less governable by the people affected.
+
+The response is to minimize records, separate operational evidence from
+employee surveillance, constrain purpose and retention, preserve contestation,
+measure burden, and include affected parties in the governance of the work
+surface. The Labor OS should expose where authority and residual duty reside;
+it should not turn all human judgment into machine-readable compliance.
+
+If ordinary coordination practice achieves equal continuity, accountability,
+agency, and recovery with less burden, the architecture should shrink.
+
+## Evidence That Would Change the Conclusion
+
+Natural studies showing that typed jobs add delay and monitoring without
+reducing missed handoffs, unauthorized effects, completion laundering, or
+recovery failures would weaken the proposal. Evidence that practical agency
+and worker outcomes deteriorate despite complete records would reject any
+claim that the system is human-centered.
+
+The conclusion would strengthen if prospective multi-worker workflows showed
+better joined outcomes and correction under matched cost; if independent
+observers could trace effects to accountable decisions across model and
+organization changes; if workers understood and used refusal, appeal, and
+remedy; and if transitions preserved capability, mobility, and distributional
+visibility over time.
+
+The historical absorption thesis should also face counterexamples. Stable
+specialized interfaces, human-led teams, or simpler automation may outperform
+role-level agents. Organizational adoption may plateau because trust,
+liability, tacit knowledge, or physical constraints do not yield to interface
+integration. Those outcomes should narrow the projected path rather than be
+explained away as temporary resistance.
+
+## What This Establishes
+
+Work across humans and machines needs a stable outcome identity, typed local
+contracts, scoped authority, distinct acknowledgments, evidence-bearing
+handoffs, residual custody, accountable ownership, and reachable remedy.
+
+Agent work surfaces have expanded from conversations and suggestions toward
+project, workflow, and role-level action. That trajectory increases both
+usefulness and the need for organizational boundaries. A harness can
+coordinate tools; it cannot create legitimacy. Delegation can move work; it
+cannot erase residual duty. Assistance can expand agency; it can also create
+dependence and coercion. Deployment gains do not settle distribution.
+
+The current repository establishes finite record and lifecycle properties for
+parts of this design. It does not establish beneficial organizational,
+economic, legal, clinical, or deployment outcomes.
+
+Typed work eventually reaches a runtime and changes the world. Unit 17 follows
+that boundary through artifact graphs, effect leases, actual-state receipts,
+incident command, graceful degradation, and recovery.
+
+{{< include ../generated/unit-16-status.qmd >}}

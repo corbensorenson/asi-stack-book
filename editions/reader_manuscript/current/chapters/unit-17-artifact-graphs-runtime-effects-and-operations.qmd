@@ -1,0 +1,713 @@
+---
+title: "Artifact Graphs, Runtime Effects, and Operations"
+unit_id: "unit-17"
+---
+
+## The Release That Succeeded Twice
+
+The security update from the previous unit is merged. The release job invokes
+the approved adapter, the command exits successfully, and the deployment log
+records the new version. A second service reads the release API and confirms
+success.
+
+Production still serves the old package.
+
+Both reports came from the same control-plane record. A downstream replication
+step partially failed after the release API committed. The observer compared
+the expected version with another projection of the command record rather than
+with the package actually served. The rollback tool restored the control-plane
+pointer but did not remove two newly written cache objects. An operator sees a
+green release, a green verification, and users receiving vulnerable code.
+
+The failure crosses three boundaries.
+
+The artifact boundary asks which source, build, package, evidence, and release
+objects are related, and how strongly. The runtime boundary asks which
+authority allowed a proposal to cause which effect. The operations boundary
+asks how the organization detects divergence, contains it, degrades service,
+recovers, compensates, and retains custody of unknown or irreversible effects.
+
+Artifact Graphs make provenance and replay explicit. Runtime Adapters mediate
+tools, permissions, approvals, effect leases, and receipts. Governed Operations
+joins expected and actual state with incident command and recovery. None makes
+logs identical to reality. Their purpose is to make the gap visible and
+actionable.
+
+## Artifacts Form a Graph, Not a Folder
+
+A repository tree shows where files are stored. An artifact graph shows how a
+claim-bearing object came to exist and what depends on it.
+
+Nodes may include requests, source snapshots, context transactions, plans,
+patches, tool calls, builds, tests, proofs, reviews, packages, approvals,
+deployments, observations, incidents, corrections, and publications. Edges
+carry roles such as generated-from, compiled-from, tested-against, reviewed-by,
+approved-for, deployed-as, observed-at, supersedes, contradicts, invalidates,
+or compensates-for.
+
+The edge role matters. A test report derived from a build is not evidence that
+the build was deployed. A release page linked to a package is not proof that
+the package bytes came from the reviewed source. A rollback record related to
+an incident is not proof that every effect was reversed.
+
+Each important artifact has a semantic identity and a content identity. A
+semantic identity says what role the object plays: the release candidate for
+job J under contract C. A content identity binds exact bytes or structured
+state. Version, producer, environment, policy, source and context parents,
+creation time, expiry, audience, confidentiality, and maximum inference travel
+with it.
+
+Immutable does not mean eternally correct. The original release receipt remains
+in history after the deployment is found defective. A correction adds a new
+node and explicit relation. Preserving the false historical record is useful
+because decisions and downstream artifacts may have consumed it.
+
+## Provenance Has Completeness Boundaries
+
+An artifact can have flawless recorded lineage while omitting an important
+parent. The build system may record source and compiler but not a fetched
+dependency. The release record may bind the package digest but omit a mutable
+configuration. The observer may retain a response body but not the routing
+layer that selected the responding service.
+
+Provenance therefore states its inventory. It identifies which object classes,
+effects, environments, and external systems are expected to appear; how their
+identities are acquired; which collectors are trusted; and which surfaces are
+outside coverage.
+
+Completeness is relative to a purpose. A graph may be complete enough to
+rebuild documentation but inadequate for a security incident. It may bind
+repository and package bytes while lacking the user-visible configuration.
+
+Missingness remains first-class. Unknown parent, unavailable log, unobserved
+effect, collector outage, and untracked external copy are not represented as
+empty success. They change replay grade, support eligibility, recovery, and
+release decisions.
+
+Cryptographic digests make substitution detectable under their assumptions.
+They do not establish that the hashed object is truthful, safe, complete, or
+the one that affected the world. Signatures bind a key and message; they do
+not make the key holder a legitimate authority. Attestation can narrow the
+trusted base while leaving hardware, firmware, configuration, and semantic
+interpretation as assumptions.
+
+## Audit Logs Are Event Claims
+
+An audit log is a sequence of event claims made by collectors. It is not the
+world itself.
+
+A useful event binds actor or process identity, parent job, authority, action,
+target, expected effect, observed pre-state, attempted transition, observed
+post-state, time basis, collector, evidence, and residuals. Append-only storage
+helps reveal later alteration. Cross-signing, replication, sequence numbers,
+hash chains, independent observers, and external anchors can make some forms
+of omission or rewriting harder.
+
+These mechanisms remain bounded. A compromised collector can faithfully append
+a false observation. Two logs may agree because they share one upstream
+source. A process can cause an uninstrumented network or physical effect. A
+clock can drift. An operator can act outside the recorded tool path.
+
+The audit design therefore includes challenge. Sample events are compared with
+source systems. Independent consumers reconstruct selected decisions. Missing
+sequence ranges and conflicting observations route to investigation. The
+system records which claims rely on the log and what happens when its
+faithfulness is disputed.
+
+The right question is not “Do we have logs?” It is “Which consequences can be
+inferred from these collectors, under what threat model, and what evidence
+would reveal that the inference failed?”
+
+## Replay Has Grades
+
+“Reproducible” often compresses very different accomplishments.
+
+Record replay reconstructs the sequence of declared events. Computational
+replay reruns code with named inputs and environment. Artifact replay produces
+the same bytes. Semantic replay produces an equivalent result for a stated
+consumer. Effect replay restores or reproduces a bounded external state.
+Operational replay demonstrates that the service, dependencies, monitors, and
+recovery path behave as required.
+
+These grades do not automatically imply one another. A deterministic build may
+reproduce package bytes while the original deployment depended on an external
+configuration. A record replay may reconstruct a release decision without
+showing that production ever served the artifact. A local filesystem rollback
+may be exact while an email, payment, credential disclosure, or physical action
+remains irreversible.
+
+A replay packet states target grade, source objects, environment, trusted
+components, expected observations, tolerances, missingness, external effects,
+and result. Partial replay can be valuable. It must not be promoted into a
+stronger grade.
+
+For the security release, byte-exact rebuild answers whether the source can
+produce the package. A separate deployment replay exercises the adapter and
+replication path in an isolated environment. An actual-state probe inspects the
+served package. Recovery replay restores both control-plane state and cache
+objects. Each result closes a different obligation.
+
+## Runtime Adapters Are Effect Boundaries
+
+The model or planner should propose an action. A runtime adapter interprets
+that proposal against typed authority and causes the permitted effect.
+
+An adapter invocation binds parent job, worker identity, capability, target,
+arguments, impact class, authority receipt, approval if required, effect lease,
+sandbox, secret handles, expected precondition, expected mutation, rollback or
+compensation plan, observation method, audit destination, and expiry.
+
+The adapter does not ask only whether the worker can call a function. It asks
+whether this worker may use this capability for this job, target, purpose,
+time, and effect. A general repository-write permission should not authorize
+release. A valid approval for package A should not authorize package B. A
+lease that expired while a plan waited should not revive because the model
+still remembers it.
+
+Least privilege applies to information and effects. Secrets remain behind
+handles when possible rather than entering model-visible context. Filesystem,
+network, process, repository, cloud, financial, communication, and physical
+capabilities are separately scoped. High-impact or irreversible actions
+require stronger approval, observation, and recovery conditions.
+
+The adapter is a policy-enforcement point, not the entire security boundary.
+The operating system, service, credential store, network, hardware, and target
+API must enforce the assumptions it makes. If a tool can escape through an
+unmediated path, a perfect adapter record becomes theater.
+
+## Approval Is a Scoped Input
+
+Human approval should be an explicit, expiring input bound to the exact action
+and evidence the person reviewed.
+
+The approval records approver identity and role, job and proposal version,
+scope, target, impact, evidence refs, unresolved residuals, time, expiry,
+conditions, and revocation route. A material change to arguments, artifact,
+target, or risk invalidates or narrows it.
+
+Approval does not prove comprehension, competence, independence, correctness,
+or legitimacy. The interface can overload, persuade, or mislead the reviewer.
+Repeated low-value prompts can create alarm fatigue. An organization can call
+a click “human control” while making refusal impractical.
+
+The runtime therefore treats approval as one authority condition, accompanied
+by workload, context, independence, and consequence-sensitive controls. Safe
+defaults deny or narrow when approval is missing, stale, mismatched, or
+revoked. A denial should include no-mutation evidence where the system relies
+on the claim that no effect occurred.
+
+For low-consequence reversible work, pre-authorized policies can avoid constant
+interruptions. Escalation is reserved for exceptions and high-impact effects.
+The design objective is meaningful control, not maximum clicking.
+
+## Effect Leases Bound Action in Time
+
+An effect lease grants a capability under a bounded purpose, target, authority
+ceiling, environment, start, expiry, and revocation policy. It can require a
+fresh precondition immediately before dispatch.
+
+Leases prevent a plan from treating old permission as permanent. They also
+help partition planning from execution. The planner may prepare a release while
+the lease is absent. The adapter dispatches only after current authority,
+approval, and pre-state align.
+
+Distributed systems complicate revocation. A worker may hold a stale grant
+while another service records its withdrawal. If consistency cannot be
+guaranteed during a partition, the system chooses an explicit policy: deny
+consequential effects without fresh authority, quarantine the result, restrict
+operations to a safe subset, or accept a named residual under institutional
+authority.
+
+The grant/effect race needs custody. Revocation after dispatch cannot make an
+already caused effect disappear. The receipt records whether execution began,
+which mutations were observed, and who owns compensation. A timeout is not
+evidence of nonexecution.
+
+## Expected Effect and Actual Effect Are Different Records
+
+Before dispatch, the invocation declares an expected transition: package P at
+version old becomes package P at version new, with named cache and registry
+updates. The adapter observes pre-state, performs the attempt, and records what
+it can observe afterward.
+
+The result distinguishes command status, adapter observation, target-system
+acknowledgment, independent actual-state observation, and downstream outcome.
+A zero exit status belongs to the first category. It cannot stand in for the
+last four.
+
+An effect receipt binds invocation identity, exact authority and artifacts,
+pre-state, attempted calls, returned statuses, observed post-state, external
+effects, verification, rollback handle, incident links, and residual unknowns.
+The receipt says which observer produced each field and which surfaces were
+not visible.
+
+For the release, the adapter can observe that the control plane accepted the
+new package. An independent probe should inspect the package served through the
+production route. The two observations may disagree. That disagreement opens
+an operational decision rather than being averaged into success.
+
+No-mutation evidence also has scope. A denied adapter call may demonstrate that
+its own dispatch function did not run. It may not establish that another
+worker or stale process caused no effect.
+
+## Observation Has a Budget and a Failure Policy
+
+Actual-state observation consumes storage, compute, network capacity, operator
+attention, privacy, and time. A system cannot inspect every effect forever.
+The operations contract therefore chooses sensors by consequence, uncertainty,
+failure detectability, and recovery value.
+
+Each required observation has a freshness bound, expected coverage, missing-
+data behavior, calibration or challenge route, retention policy, and owner.
+The system decides in advance what happens when the sensor is unavailable. A
+missing post-release probe may hold a consequential rollout, reduce its cohort,
+switch to an independent instrument, or enter an explicitly authorized
+degraded state. It should not silently convert absence into success.
+
+Sampling can control cost, but rare or concentrated harms need targeted
+coverage. Privacy-sensitive observation may require aggregation, local
+computation, strict purpose limits, or affected-party reporting rather than
+more centralized telemetry. The best monitor is not always the one with the
+largest data stream.
+
+Observation policy should itself face incidents. A detector can drift, a
+dashboard can omit a region, and alert thresholds can optimize for calm. The
+artifact graph records detector and configuration versions so a later review
+can identify which decisions depended on a defective view.
+
+## Rollback Is an Effect Claim
+
+Rollback should name the baseline, effect inventory, reversal method,
+observation, and residuals. “Restore previous version” is inadequate when the
+operation touched configuration, caches, credentials, messages, indexes,
+payments, human decisions, or external services.
+
+Some effects can be restored exactly. Some require compensation. Some can be
+contained but not reversed. Some are unknown. The recovery record separates
+these cases.
+
+An exact local file restoration does not establish ACID transactions, crash
+consistency, distributed recovery, or reversal of open-world effects. A
+database transaction does not retract an email. Revoking a credential does
+not erase a disclosed secret. Deleting an artifact does not recall every copy.
+
+The security release's rollback inventory includes release pointer, served
+package, cache objects, registry metadata, notifications, and any downstream
+consumer. If two cache writes remain after the control pointer is restored,
+the rollback is partial. Service may need to stay degraded until those objects
+are removed or isolated.
+
+## Change Control Joins Artifact and Authority
+
+A change is not governed merely because its diff was reviewed. Change control
+binds the proposed semantic difference, exact artifacts, affected service,
+authority, evidence, rollout, observation, recovery, communication, and
+expiry. It distinguishes approval to create an artifact, approval to integrate
+it, and approval to expose it to an environment or public.
+
+The record describes expected benefit and risk, dependencies, compatibility,
+affected parties, rollout cohorts, canary criteria, stop thresholds, fallback,
+and who may make each decision. An emergency path can be faster, but it names
+which checks were deferred and creates custody for completing or compensating
+them later.
+
+Progressive delivery limits blast radius only when cohorts are meaningful and
+outcomes are observed. A canary drawn from easy internal traffic may say little
+about the population at risk. A feature flag can stop future access while
+leaving data migrations or messages already caused. The rollout plan states
+which effects are gated and which are not.
+
+Configuration belongs to the artifact graph. A binary that passed tests can
+behave differently under runtime flags, prompts, policies, model versions,
+retrieval indexes, credentials, or routing rules. “No code change” is not “no
+system change.” The same identity and authority discipline applies to these
+mutable components.
+
+Change windows and freeze periods are risk controls, not rituals. They are
+useful when staffing, dependency stability, external events, or recovery
+capacity change consequence. They should be overridden only through explicit
+authority and observed conditions, not because an agent estimates that the
+patch is simple.
+
+## Incidents Begin With Divergence
+
+An incident can begin when expected and observed state diverge, when a control
+fails, when uncertainty crosses a consequence threshold, or when an affected
+party reports harm. It does not require certainty about root cause.
+
+The incident record preserves triggering observations, competing hypotheses,
+scope, consequence, reversibility, propagation risk, timing, affected parties,
+authority, and unknowns. Classification determines the command envelope, not
+the truth of the cause.
+
+Incident command assigns accountable roles for decision, operations,
+communication, evidence, affected-party contact, and recovery. The commander
+coordinates within an authority ceiling. Emergency authority is explicit,
+time-bounded, logged, reviewable, and unable to erase protected constraints.
+
+The first goal is often to prevent additional harm while preserving enough
+evidence to understand what happened. That can mean revoking a lease,
+quarantining an artifact, stopping dispatch, isolating a service, narrowing a
+capability, switching to a known baseline, or requiring manual confirmation.
+
+Containment may destroy evidence or worsen service if applied blindly. The
+decision records expected benefit, cost, uncertainty, reversibility, and stop
+condition. Incident urgency does not turn guesses into facts.
+
+## Graceful Degradation Preserves the Important Contract
+
+Graceful degradation is not “the system is slower.” It is an explicit move to
+a smaller service envelope that preserves priority constraints while dropping
+or narrowing less critical capability.
+
+The degradation contract names protected functions, disabled functions,
+capacity, quality and latency bounds, user-visible consequences, affected
+groups, authority, monitoring, expiry, and recovery criteria. It should be
+tested before the incident where possible.
+
+For the package service, degradation might stop new releases, pin all clients
+to the last independently observed safe package, disable cache promotion, and
+serve a status notice. It should not silently continue vulnerable service
+under a green control-plane label.
+
+Different failures require different verbs. Fail-safe stops an action.
+Fail-operational preserves essential service. Fail-soft reduces quality or
+capacity. Fail-secure protects security properties. These goals can conflict.
+Stopping a medical or infrastructure service may be more harmful than running
+a constrained fallback. The architecture needs a consequence-specific choice,
+not one universal “safe mode.”
+
+Degradation can become permanent neglect. Every entry has an owner, budget,
+review cadence, expiry, and exit condition. Users should know when service is
+reduced and how to obtain remedy.
+
+## Recovery, Compensation, and Closure
+
+Recovery begins from an observed incident state, not from the state the plan
+expected to exist. It chooses a target baseline, verifies required artifacts
+and authority, performs bounded steps, observes each transition, and preserves
+a fallback.
+
+Restoration returns modeled state to a prior baseline. Reconstruction rebuilds
+state from trusted artifacts. Replacement introduces a newly qualified
+component. Compensation addresses effects that cannot be reversed. Remedy
+addresses affected people and institutions. These routes can occur together.
+
+The release incident may restore the old package pointer, remove the stale
+cache objects, rebuild the patched artifact from verified source, redeploy
+through a fresh lease, and independently inspect the served bytes. Users who
+received the vulnerable package may need notification and mitigation. That
+last obligation does not disappear when the service returns to green.
+
+Closure requires evidence that the protected service envelope is restored or
+that a legitimate authority accepted a narrower state; known residuals have
+owners; affected parties received required communication and remedy; temporary
+authority ended; and recurrence controls entered a tracked route.
+
+Root-cause confidence is not required for containment, but causal claims at
+closure should match the evidence. “Replication failure caused the incident”
+may remain a hypothesis while the system accurately records which controls
+failed and which repairs worked.
+
+## Operations Must Survive the Governance Plane
+
+The control system can fail during the incident it is meant to govern. The
+artifact registry may be unavailable, the policy service partitioned, the
+primary model degraded, the approval interface unreachable, or the audit store
+suspect. A mature design cannot require perfect access to every governance
+service before it can preserve essential safety and continuity.
+
+Critical components need small offline contracts: last-known qualified
+baselines, locally verifiable authority ceilings, emergency stop or isolation,
+manual procedures, read-only artifact inventories, independent communication,
+and reconstruction from protected records. Emergency action remains scoped and
+later reconciled; offline capability is not a permanent bypass.
+
+The recovery route should test loss of its own dependencies. Can operators
+identify the exact running artifact without the central dashboard? Can they
+revoke a credential when the orchestration service is down? Can essential
+service continue without model access? Can the audit trail be rebuilt after a
+collector fails? Can affected parties receive accurate communication through
+an independent channel?
+
+This produces two related availability goals. The governed service should
+degrade safely when its workload dependencies fail. The governance plane
+should itself degrade without granting broader authority or erasing evidence.
+Availability cannot be purchased by failing open on consequential effects.
+
+After recovery, learning enters through controlled changes. The incident may
+revise detectors, inventories, runbooks, types, policies, proofs, tests, and
+training. Each revision states which observed failure it addresses and which
+claims remain unresolved. A successful response is not evidence that the new
+control prevents recurrence until that control is independently exercised.
+
+Incident metrics should preserve the denominator: detected and undetected
+failures where known, false alarms, time to consequence recognition, time to
+containment, service and human harm, residuals, recurrence, operator burden,
+and repair completion. Rewarding only rapid closure encourages premature green
+states.
+
+## Unknown External Effects Remain Open
+
+Open systems cannot enumerate every consumer or effect. An agent can publish
+text that is copied, trigger a human decision, reveal a secret, change a market,
+or cause another service to act. The artifact graph covers recorded edges; the
+world contains unrecorded ones.
+
+The system should represent an unknown external-effect residual when an action
+crossed a boundary whose consequences are not fully observable. It can search
+logs, query counterparties, inspect known consumers, and monitor indicators.
+It cannot close the residual merely because no further evidence arrived.
+
+This does not mean every action remains forever open. Policies define bounded
+observation periods, materiality, escalation, notification, and archival
+states. Closure can honestly say: known effects were restored, two external
+copies were notified, and additional copies remain unobservable.
+
+Such language is less satisfying than “rollback complete.” It is more useful
+for future decisions.
+
+## One End-to-End Operational Route
+
+The corrected security release starts with a source snapshot and job contract.
+The build produces a package whose graph binds source, dependency lock,
+environment, tests, review, and exact bytes. An independent consumer checks
+that required parents and non-claims are present.
+
+The release adapter receives a proposal referencing that package. It checks
+parent-job permission, release authority, approval scope, lease freshness,
+target, impact, sandbox or service boundary, rollback inventory, secret
+handles, and required observers. It captures pre-state and dispatches.
+
+The control plane accepts the package. The receipt records this expected
+partial result. A production probe then observes that one region serves the
+old package. The joined route cannot declare success. It opens an incident,
+halts further rollout, quarantines the stale region, and preserves essential
+service through the last independently observed package.
+
+Operators compare artifact lineage, replication logs, cache state, and served
+bytes. They find a partial downstream failure. Recovery clears the affected
+cache under a fresh lease, reapplies the release, and observes every region.
+The artifact graph links the failed and repaired attempts. Temporary incident
+authority expires. Residual users who may have received the old package remain
+assigned to notification and remedy.
+
+At no point does a log alone become reality. Logs propose event claims;
+independent observations and bounded replays challenge them. At no point does
+recovery erase history. The failed attempt remains available to explain why
+the controls changed.
+
+## Failure Cases
+
+**Provenance theater.** Every object has a digest, but a decisive dependency or
+configuration is outside the graph.
+
+**Edge collapse.** “Related to” hides whether an artifact was built from,
+reviewed against, deployed as, or merely linked to another.
+
+**Log realism.** Collector records are treated as direct environmental truth.
+
+**Shared-observer agreement.** Two green reports depend on one stale control-
+plane source.
+
+**Replay inflation.** Record or byte replay is presented as effect or
+operational replay.
+
+**Permission inheritance.** Tool access from a parent context becomes
+authority for a different job or target.
+
+**Approval drift.** A modified proposal executes under approval for an earlier
+version.
+
+**Revocation race.** A stale worker dispatches after authority changed.
+
+**Secret materialization.** A credential enters model-visible context instead
+of remaining behind a handle.
+
+**No-mutation overclaim.** One denied call is treated as proof that no external
+effect occurred.
+
+**Receipt completion.** Command success substitutes for actual-state
+observation.
+
+**Rollback fiction.** The primary pointer is restored while caches, messages,
+copies, or human consequences remain.
+
+**Incident omniscience.** Response waits for certain root cause while harm
+propagates.
+
+**Unsafe safe mode.** A generic stop or fallback violates the service's most
+important constraint.
+
+**Permanent degradation.** Reduced service has no owner, expiry, remedy, or
+funded exit.
+
+**Green closure.** Service restoration erases affected-party obligations and
+unknown external effects.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline uses version control, reproducible builds, signed
+artifacts, role-based access, established CI/CD, cloud audit logs, deployment
+health checks, incident command, backups, runbooks, and post-incident review.
+These systems already solve much of the practical problem and should be used
+well before inventing a universal graph or adapter protocol.
+
+The proposed architecture earns its cost when artifacts and effects cross many
+tools, agents, organizations, and support decisions; when authority must remain
+bound to parent work; when replay grades are routinely confused; or when
+correction must propagate across technical and epistemic consumers.
+
+Comparison should measure unauthorized attempts, provenance defects, time to
+detect actual-state divergence, rollback completeness, residual discovery,
+containment, service preservation, recurrence, human load, latency, and total
+cost. Counts of nodes, receipts, logs, or incident fields are not outcomes.
+
+If ordinary supply-chain and site-reliability practice produces equal
+traceability, enforcement, observation, and recovery with less burden, the
+architecture should consolidate around those practices.
+
+## What the Current Work Establishes
+
+The three technical owners have substantial but bounded executable artifacts.
+Combining them here does not create deployment evidence or promote a core
+claim.
+
+Artifact Graphs has ten implemented public targets. The current proof surface
+contains finite provenance, replay-grade, artifact-admission, replay-packet,
+receipt-faithfulness, repository-audit, challenge, live-attestation, and
+epistemic-trust-base predicates. The chapter records 56 live Lean theorem
+declarations for the retained surface, with weaker declarations retired, plus
+synthetic cross-record replay, receipt challenge, public artifact attestation,
+and trust-base harnesses. These checks establish consequences over declared
+records. They do not establish open-world provenance completeness, collector
+truth, ACID storage, crash recovery, or external-effect atomicity.
+
+Runtime Adapters has six implemented public targets and 68 Lean declarations
+covering finite permission, approval, effect-lease, authority-ceiling,
+confused-deputy, sandbox-escape, receipt, dispatch, replay, revocation, and
+oversight-degradation routes. A public-safe probe performs one generated
+temporary-file write and exact local restoration. Other deterministic probes
+include two valid and twelve rejecting adversarial boundary cases, human-
+oversight degradation records, and partitioned-authority fixtures. They do not
+establish deployed sandbox enforcement, approval-service quality, secret-
+handle safety, distributed revocation, policy correctness, reviewer
+competence, or open-world rollback.
+
+Governed Operations has three implemented targets through 26 Lean declarations
+over finite degradation, recovery, and incident-lifecycle predicates. Current
+executable work includes authored routing controls, eight real-subprocess
+authority/effect/recovery cases, seven commit-bound service cases with crash
+and restart behavior, localhost partition and outbox retry, stale-credential
+and custody-tamper rejection, and a historical publication-service trace. The
+claim-bearing natural-service campaign remains unexecuted. The results do not
+establish detector quality, inventory completeness, natural incident-response
+efficacy, safe degradation, deployed recovery, or transfer.
+
+The repository therefore shows that selected record routes, rejection
+conditions, local effects, and bounded recovery sequences can be implemented
+and checked. It does not show that logs faithfully capture a hostile or open
+world, that adapters contain capable agents in deployment, or that the joined
+operations system improves real incidents.
+
+## From a Minimum Effect Route to a Mature Operations Fabric
+
+A minimum implementation can use the package release. Construct an artifact
+graph from exact source, lockfile, build environment, package, tests, approval,
+and release. Define the intended effect and complete inventory. Dispatch
+through a scoped, expiring adapter lease. Observe the control plane and served
+package independently. Inject the partial replication failure, require
+degradation, execute recovery, and preserve one unknown external-effect
+residual.
+
+The next stage should compare this route with a strong conventional CI/CD and
+incident process under prospectively frozen scenarios. Include stale grants,
+approval mismatch, collector compromise, shared observers, partial writes,
+crash and restart, network partition, secret exposure, rollback gaps, delayed
+effects, and inaccessible consumers. Score real containment, service outcomes,
+repair, and burden rather than record completion.
+
+Natural campaigns need deployed services, independent ground truth where
+available, red-team attempts, actual operators, complete incident denominators,
+unknown-effect handling, and follow-up for recurrence. Artifact and adapter
+claims should be reproduced across operating systems, infrastructures, tool
+families, and organizations.
+
+The mature operations fabric would connect every consequential proposal to a
+bounded authority path, exact artifacts, observed effects, incident policy,
+and recovery custody. It would support independent collectors and challenges,
+graded replay, hardware-backed trust where warranted, distributed revocation,
+and explicit residuals where the world cannot be closed.
+
+It would degrade by preserving the service's most important contract rather
+than merely stopping. It would treat affected-party remedy and external
+copies as operational obligations. It would learn from incidents without
+rewriting failed history or allowing successful recovery to promote unrelated
+safety claims.
+
+## The Strongest Objection
+
+Artifact graphs, adapters, and incident packets can become an elaborate
+simulation of control. Tools can escape mediation. Logs can omit effects.
+Operators can rubber-stamp fields during an emergency. A larger control plane
+can introduce new failure modes and make recovery dependent on the very system
+that failed.
+
+The objection is correct. A record layer is useful only where it is connected
+to enforced boundaries, independent observation, tested recovery, competent
+operators, and affected-party outcomes. More metadata can widen the attack
+surface and delay urgent action.
+
+The response is a small trusted base, consequence-scaled records, direct
+testing of rejecting paths, offline and manual recovery, independent
+observation, graceful operation when the governance service is unavailable,
+and continuous comparison with ordinary operational practice. The system must
+be able to explain which controls are declarative, simulated, enforced, and
+observed.
+
+No local proof can close the semantic and physical gap by itself. That gap is
+managed through layered evidence and residual custody, not declared absent.
+
+## Evidence That Would Change the Conclusion
+
+The design should narrow if standard provenance, permissions, deployment
+health checks, and incident practice achieve equal outcomes with lower
+complexity. It should be rejected where the added machinery increases outage
+duration, hides operator judgment, creates correlated control-plane failures,
+or encourages false confidence.
+
+Support would require prospective natural operations with independently
+observed effects, adversarial attempts, complete costs, matched baselines,
+actual recovery and compensation, reproduction, and transfer. The studies
+should distinguish prevented dispatch from no effect, local restoration from
+open-world reversal, and service recovery from affected-party remedy.
+
+Artifact claims would strengthen if challenge audits detect planted omissions
+and substitutions across heterogeneous collectors. Adapter claims would
+strengthen if real sandboxes and services prevent confused-deputy, secret,
+revocation, and escape attempts. Operations claims would strengthen if the
+system detects divergence earlier, contains harm, preserves essential service,
+and closes fewer incidents with hidden residuals.
+
+## What This Establishes
+
+Consequential work needs a trace from purpose and source to artifact, authority,
+effect, observation, incident, recovery, and residual. Artifact edges need
+roles. Logs are event claims. Replay has grades. Approval and effect leases are
+scoped inputs. Command success is not actual-state truth. Rollback is a bounded
+effect claim.
+
+Governed operations begins when expected and observed state diverge. It assigns
+command authority, contains propagation, chooses a consequence-specific
+degradation envelope, recovers from observed state, compensates irreversible
+effects, and preserves unknowns.
+
+The current repository proves and executes selected finite parts of these
+routes. It does not establish open-world faithfulness, deployed containment, or
+incident efficacy.
+
+One governed stack will eventually need to exchange procedures, artifacts, and
+authority with another. Unit 18 moves from internal operations to protocol
+semantics and inter-stack coordination.
+
+{{< include ../generated/unit-17-status.qmd >}}
