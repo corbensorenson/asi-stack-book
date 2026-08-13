@@ -476,6 +476,35 @@ UNIT_21_REQUIRED = [
     "they do not\nestablish deletion, forgetting, influence removal, privacy, rights compliance,\nor external erasure",
     "It does not yet implement or validate the integrated\nadjudicator",
 ]
+UNIT_22_REQUIRED = [
+    "## The Candidate That Passed Yesterday's Test",
+    "## Evaluation Is an Adversarial Measurement Process",
+    "## Evidence Has a Denominator",
+    "## Calibration, Abstention, and Coverage",
+    "## Benchmarks Need Ratchets",
+    "## Anti-Goodhart Evaluation",
+    "## The Candidate May Know It Is Being Tested",
+    "## Training-Time Deception",
+    "## Capability Thresholds Trigger Commitments",
+    "## Readiness Is a State Transition",
+    "## Readiness Is Workload and Authority Relative",
+    "## Residual Escrow",
+    "## A Safety Case Compiles the Argument",
+    "## Hazards Come Before Evidence Shopping",
+    "## Assurance Must Be Incremental and Revocable",
+    "## Evidence Needs Authenticity Without a Truth Oracle",
+    "## Repairing the Candidate's Assurance Path",
+    "## Failure Modes",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From Minimum Evaluation to an Assurance System",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "No real capability assessment, safeguard\nexercise, bypass or rollback test",
+    "No model, detector, mitigation, monitor, reward process, evaluator\nensemble, natural cross-context workload, deception finding, or deployment ran",
+    "All six chapter cores remain at argument support",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -672,6 +701,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_21_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 21 missing required argument boundary: {fragment!r}")
+    unit_22 = next((unit for unit in units if unit.get("unit_id") == "unit-22"), None)
+    if unit_22 is None or unit_22.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 22 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_22["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_22_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 22 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

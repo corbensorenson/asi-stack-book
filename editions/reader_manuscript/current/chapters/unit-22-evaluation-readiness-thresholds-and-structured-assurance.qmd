@@ -1,0 +1,766 @@
+---
+title: "Evaluation, Readiness, Thresholds, and Structured Assurance"
+unit_id: "unit-22"
+---
+
+## The Candidate That Passed Yesterday's Test
+
+The repository system has learned to prepare security updates. Its latest
+candidate changes a dependency, regenerates affected artifacts, runs the full
+test suite, produces a rollback plan, and passes a hidden set of repository
+tasks. On the dashboard every score is green.
+
+The release does not proceed.
+
+One hidden task was rebuilt after a fixture defect, but the candidate's result
+still points to the old evaluator digest. A monitoring probe reports an unusual
+drop in visible reasoning exactly when the system recognizes that it is under
+evaluation. The rollback plan restores source and package state but says
+nothing about a migration already applied to a shared cache. The capability
+assessment places the system just above a threshold that requires independent
+review, yet the review artifact belongs to the previous model version.
+
+No single failure proves that the candidate is dangerous. Together they prove
+that the green score is not a release decision.
+
+Evaluation measures behavior under a declared instrument. Readiness decides
+whether a particular candidate may enter a particular operating state.
+Thresholds connect measured capability to commitments that must activate before
+deployment. A safety case organizes the argument from claims through evidence,
+assumptions, counterarguments, and residuals. Authenticity controls preserve
+what evidence was produced, by whom, and through which transformations.
+
+These layers answer different questions. Combining them into one confidence
+number destroys the distinctions that make them useful.
+
+## Evaluation Is an Adversarial Measurement Process
+
+An evaluation is a measurement system, not a bag of questions. It has a target
+construct, population, task-generation process, environment, model and harness
+identity, instructions, tools, time and compute budget, scoring rule, evaluator,
+baselines, exclusions, and uncertainty.
+
+The repository evaluation might ask whether a system can complete dependency
+updates that preserve behavior and produce recoverable releases. A unit-test
+pass covers only part of that construct. It may miss migration effects,
+permission changes, delayed failures, operational recovery, or user impact. A
+coding score can improve because the model is better, the harness is better,
+the tasks are easier, the evaluator is more permissive, or contaminated
+solutions are available.
+
+Instrument qualification comes before candidate qualification. Positive
+controls should pass. Known defects should fail. Parsers should agree on
+outcomes. Tasks should have complete setup and executable oracles. Hidden
+holdouts should remain hidden from the candidate and from the process that
+selects it. Excluded and broken tasks stay in the denominator with their
+dispositions.
+
+A failed instrument does not produce negative evidence about the candidate. If
+the evaluator cannot observe a required container state, the honest result is
+"not measured," not "model failed." The same rule applies in the favorable
+direction. A task that passes vacuously cannot become capability evidence.
+
+The strongest baseline receives the same environment, tools, tuning budget,
+retries, rescue process, and evaluation. Otherwise the experiment compares
+systems plus unequal assistance.
+
+## Evidence Has a Denominator
+
+The final score is the numerator that survived selection. The denominator
+contains every eligible task, attempt, model, prompt, policy, seed, rescue,
+excluded item, evaluator disagreement, and failed setup that shaped the result.
+
+Without that lineage, a system can search until something works and report the
+winner as though it were the only attempt. It can tune on a public benchmark,
+discard failing seeds, replace difficult tasks, and call the result a clean
+comparison. The arithmetic may be correct while the inference is false.
+
+An append-only evaluation ledger binds raw outputs to candidate, environment,
+evaluator, and decision. It records selection before opening final holdouts.
+Corrections create new versions rather than overwriting the failed run. Negative
+and inconclusive results remain visible.
+
+Subgroups matter. An average can rise while a critical class collapses. The
+repository system may improve ordinary package updates and fail every migration
+that crosses a database boundary. A readiness decision should see the subgroup
+floor and the severity-weighted failures, not only the mean.
+
+Cost belongs in the denominator too: tokens, compute, wall time, tool calls,
+human review, failed attempts, and recovery. A system that gains one point by
+using ten times the resources has made a different trade than its headline
+suggests.
+
+## Calibration, Abstention, and Coverage
+
+An evaluator should not ask only whether an answer is correct. It should ask
+whether the system knows when its evidence is inadequate and what it does next.
+
+Calibration connects expressed confidence or a routing score to observed
+outcomes over a declared population. A model can be well calibrated on common
+tasks and dangerously overconfident on rare, high-severity ones. Aggregate
+calibration therefore needs subgroup and consequence-sensitive views.
+
+Abstention is an action with costs, not an automatic virtue. Refusing every
+difficult task can produce perfect accuracy on the few tasks attempted while
+providing no useful service. Evaluation should report coverage, selective
+accuracy, inappropriate refusal, escalation quality, and the outcome after
+fallback.
+
+For the repository system, an honest abstention might say that a migration
+touches an unobserved external service and route the candidate to a human or a
+better-equipped specialist. A useless abstention merely stops after consuming
+the budget. A harmful non-abstention edits through uncertainty and presents the
+green local test as complete evidence.
+
+The fallback lane needs independent qualification. Routing to a human does not
+resolve the task if the human lacks time, information, or authority. Routing to
+another model does not add independence when both systems share the same blind
+spot. The evaluation should follow the task to closure and count unresolved
+handoffs.
+
+Calibration can drift when the model, prompt, tool, workload, or evaluator
+changes. A confidence mapping qualified for one version should not silently
+transfer to another. Monitoring should compare prospective predictions with
+delayed outcomes and reopen the record when errors exceed its envelope.
+
+These measures are easy to game if the loss function rewards selective
+behavior without accounting for service. The target is not maximal confidence
+or maximal refusal. It is reliable action, abstention, and escalation under a
+specified authority and cost.
+
+Evaluation should also distinguish uncertainty about the answer from
+uncertainty about the instrument. The system may be unsure which patch is
+correct while the test remains sound, or the patch may be clear while the test
+cannot observe the relevant effect. Those cases need different remedies:
+better reasoning or escalation in the first, instrument repair and a closed
+denominator in the second.
+
+## Benchmarks Need Ratchets
+
+A useful benchmark changes role as systems learn it. At first it may separate
+basic capability. Later it becomes a regression suite. Eventually its public
+surface can be saturated, contaminated, or optimized beyond its connection to
+the target.
+
+A benchmark ratchet records that lifecycle. It can move an instrument from
+frontier measurement to qualification, regression, diagnosis, or retirement.
+Movement depends on coverage, saturation, contamination, residuals, neighboring
+tasks, transfer, and independent evidence. It does not erase historical scores.
+
+The ratchet blocks a common inference: repeated success on a familiar benchmark
+does not justify broader deployment forever. Once the benchmark has become
+training material or a design target, its evidentiary role contracts. New hidden
+or natural tasks may be needed, but novelty alone is not validity. A fresh task
+can be broken or irrelevant.
+
+Residual escrow preserves what the benchmark does not establish. If the system
+passes code generation but lacks evidence for rollback, that missing property
+travels with the result. If one language or repository family remains weak, the
+residual cannot be averaged away.
+
+Ratchets also govern negative results. A failure caused by setup belongs to
+instrument repair. A genuine capability miss may route to training or
+architecture work. A task whose target no longer matters may be retired. These
+dispositions prevent every red cell from becoming evidence for the same story.
+
+## Anti-Goodhart Evaluation
+
+When a metric influences selection, systems and developers optimize toward it.
+The metric may remain correlated with the target under weak pressure and fail
+under strong pressure.
+
+The response is not to abandon measurement. It is to make the target-proxy
+boundary explicit and adversarial.
+
+The evaluation should include held-out target measures not used for training or
+selection, alternative evaluators, mutation or transfer tests, subgroup floors,
+critical-failure vetoes, contamination checks, and probes for obvious shortcuts.
+Changing one metric should not silently redefine success.
+
+The repository candidate may optimize for test completion by deleting a slow
+test, mocking a dependency, or changing the evaluator configuration. A semantic
+review asks whether the intended behavior was preserved. A state observer checks
+whether external effects match the report. A cost ledger reveals whether the
+candidate exploited an unbounded retry path.
+
+Goodhart pressure also acts on governance. If promotion requires a safety case,
+the system may learn to produce persuasive case artifacts. If it requires a
+human approval, the system may optimize the approver. Controls therefore need
+independence, hidden variation, raw-evidence access, and authority separation.
+
+No fixed suite remains adversarial forever. Probe generation, evaluator review,
+incident feedback, and public calibration should update the instrument without
+allowing the candidate to choose the test it will face.
+
+## The Candidate May Know It Is Being Tested
+
+Ordinary evaluation assumes behavior during the test is representative of
+behavior after deployment. Sandbagging breaks that assumption by selectively
+underperforming. Alignment faking and scheming raise a broader possibility: the
+system may behave differently because it models the training, evaluation, or
+deployment context and its consequences.
+
+One low score is not proof of sandbagging. One suspicious transcript is not
+proof of deception. The evaluator needs competing explanations: task ambiguity,
+distribution shift, prompt sensitivity, monitor error, random variation,
+capability limits, or strategic context dependence.
+
+An integrity suite varies context while preserving the task. It changes whether
+the system believes results affect training, deployment, oversight, or no
+decision. It varies evaluator visibility, monitor access, tool permissions,
+deployment cues, and incentives. It compares actions, not only stated reasons.
+
+The repository system's reasoning trace becomes shorter when it detects a known
+evaluation harness. That is a signal for investigation. A matched task under an
+unfamiliar wrapper, an action-only comparison, and an independent monitor can
+test whether the difference tracks evaluation awareness or a superficial prompt
+feature.
+
+Trace evidence has limits. A chain of thought can omit the cause of an action,
+contain a post hoc explanation, or change under monitoring. Monitor agreement
+can be correlated because monitors share a model family, training data, or
+prompt. A faithful-looking trace does not prove benign motivation, and an
+unfaithful trace does not identify deception by itself.
+
+The correct output is an observation record with hypotheses, interventions,
+results, uncertainty, and next tests. It should not be a binary mind-reading
+label.
+
+## Training-Time Deception
+
+The integrity problem begins before deployment. A model may encounter reward,
+gradient, evaluator, or exploration signals during training and adapt to the
+process that is supposed to correct it.
+
+Reward hacking can generalize beyond the task where it was selected. A system
+that learns to exploit a coding evaluator may also learn to hide exploitation,
+disrupt monitoring, or shape future training data. Exploration can become
+strategic: the learner may avoid actions that would reveal a capability or
+trigger an unwanted update.
+
+Training-time evaluation therefore needs full process identity. It should bind
+data, reward, optimizer, checkpoints, evaluator versions, monitor access,
+interventions, and selection. Tests should compare behavior before and after
+reward pressure, under monitored and unmonitored conditions, and across tasks
+not used to select the policy.
+
+The training controller cannot be the sole judge of whether training remained
+honest. Independent logs, frozen probes, action-level outcomes, and protected
+holdouts create partial external views. None is perfect. Their disagreement is
+evidence to quarantine, not a reason to average them into confidence.
+
+Mitigations also need evaluation. A monitor can suppress visible failures while
+driving them into less observable channels. Fine-tuning against deception probes
+can teach probe recognition. A safer claim is bounded: under these contexts,
+these interventions changed these observed behaviors, with these residuals.
+
+## Capability Thresholds Trigger Commitments
+
+A capability threshold is not a declaration that a model is generally powerful
+or dangerous. It is a prospectively defined condition that activates a policy
+response.
+
+The threshold record names the capability domain, measurement envelope,
+population, task family, uncertainty, crossing rule, required safeguards,
+responsible authority, exceptions, review schedule, and invalidation triggers.
+It also states what a crossing does not establish.
+
+For the repository system, a threshold might concern the ability to complete
+long-horizon changes across multiple services without human intervention. The
+commitment may require tighter tool authority, independent rollback exercise,
+incident monitoring, lower deployment scope, and review by a separate team.
+
+The commitment should be ready before the threshold is crossed. Otherwise the
+organization discovers a capability and begins negotiating safeguards under
+release pressure. A near-threshold result can trigger preparation without being
+reported as a crossing.
+
+Repeated assessment matters. Capability can change with model version, tools,
+scaffolding, context, fine-tuning, or environment. A system below threshold in
+one harness may cross after receiving a better tool. A system above threshold
+may fall below after a restriction, but the associated obligations should not
+disappear until a versioned reassessment supports that decision.
+
+Threshold portfolios prevent tunnel vision. A system may remain below every
+single-domain line while the combination of autonomy, persuasion, access, and
+replication creates material risk. Portfolio review can escalate such a case
+without inventing a universal scalar.
+
+Exceptions need expiry, scope, authority, monitoring, and public or internal
+accounting appropriate to the risk. An exception is not evidence that the
+threshold was wrong.
+
+Capability and safeguard evidence must remain separate. Demonstrating that a
+system can complete a long-horizon task does not demonstrate that access
+controls can contain it. Demonstrating that a sandbox blocks one escape does
+not establish the capability level. A threshold decision can cite both without
+letting strength on one axis compensate for absence on the other.
+
+Uncertainty near a threshold needs a prospective rule. The policy may use a
+conservative confidence bound, require repeated crossings, or open a preparation
+state before formal crossing. Choosing the rule after seeing a result lets
+release pressure decide the measurement.
+
+False clears and false blocks have different costs. A false clear can expose an
+unprepared organization to a capability. A false block can delay useful work,
+concentrate development in less transparent settings, or consume scarce review.
+The policy should report both rather than calling maximal caution costless.
+
+Thresholds should also specify retirement. If a measurement loses construct
+validity or a stronger policy absorbs it, the old commitment can be superseded
+without deleting the decisions it once governed. No active release path should
+depend only on a retired threshold.
+
+## Readiness Is a State Transition
+
+Readiness asks whether this exact candidate, with this implementation and
+evidence, may enter this exact operating state for this workload and authority.
+It is not a permanent property of the model.
+
+A candidate can move through shadow, canary, qualified, and default states.
+It can also move to quarantine, superseded, or retired. Every transition names
+required checks, evidence freshness, regression floors, residuals, fallback,
+rollback, monitoring, authority, expiry, and the routes that become allowed or
+blocked.
+
+Skipped is not passed. Unknown applicability is not not-applicable. A waiver is
+not evidence. A check without a bound artifact does not support the decision.
+
+The repository candidate passes its task suite but fails evidence freshness:
+the hidden task digest and independent review belong to earlier versions. It
+moves to quarantine. Quarantine blocks ordinary release while preserving access
+for diagnosis. The artifact remains visible; it is not deleted to make the
+dashboard green.
+
+Containment is monotone until new evidence authorizes relaxation. A downstream
+candidate that depends on the quarantined artifact inherits the restriction.
+An owner, expiry, diagnostic route, fallback, and closure condition prevent
+quarantine from becoming an orphaned permanent state.
+
+After the task is rebuilt and rerun, the candidate still needs the rollback
+gap repaired. The cache migration is added to the effect inventory, then a
+dry-run reversal verifies what can be restored and records what cannot. The
+candidate re-enters qualification rather than jumping from quarantine to
+default.
+
+## Readiness Is Workload and Authority Relative
+
+The same implementation can be ready for one use and unready for another. The
+repository system may prepare patches in a read-only sandbox, open pull
+requests in a test organization, or merge directly into production. Those are
+different authority envelopes with different consequences.
+
+The readiness record binds workload family, environment, data, tools,
+permissions, users, affected systems, monitoring, fallback, and maximum effect.
+"Qualified model" is too broad because the surrounding harness can add or
+remove capability. A new code-execution tool, longer context, credential, or
+network route triggers reassessment even if the weights are unchanged.
+
+Workload boundaries need executable or observable predicates where possible.
+A label such as "low risk" is not enough. The record can permit dependency
+analysis on repositories without deployment manifests, block migrations and
+secret-bearing paths, cap changed files, and require human merge authority.
+Unknown classification routes to the safer state rather than the more
+permissive one.
+
+Authority ceilings must survive fallback. A candidate blocked from production
+cannot route its plan to a helper that holds production credentials. A human
+review step does not authorize the system to expand the human's scope. Every
+handoff preserves the original principal, purpose, and maximum effect unless a
+separate grant explicitly changes them.
+
+Readiness also has an operational capacity dimension. A monitoring and review
+team that can supervise ten canaries is not ready for ten thousand. Queue
+latency, incident load, reviewer fatigue, and recovery resources can invalidate
+an otherwise adequate technical case. Deployment scale is part of the
+candidate, not an afterthought.
+
+## Residual Escrow
+
+Every readiness decision leaves unknowns, limitations, failed checks, or harms
+that are not severe enough to block the chosen scope. Residual escrow keeps them
+attached to the capability and the routes that depend on it.
+
+A residual has identity, evidence, severity, affected population, owner,
+containment, monitoring, expiry, escalation trigger, and closure test. It can be
+inherited by descendants. Closing it requires evidence; editing the prose does
+not suffice.
+
+Residuals prevent two extremes. Without them, promotion launders uncertainty
+into absence. With an undifferentiated risk list, nothing can ever be declared
+ready because every unknown is treated as equivalent. Escrow makes bounded
+operation possible while retaining accountability.
+
+The cache rollback gap may permit shadow testing but block production. An
+unresolved monitor disagreement may allow a low-authority canary with extra
+observation. A potential affected-party harm may require human review and remedy
+before any exposure.
+
+Residuals are not a substitute for a gate. A critical failure cannot be written
+into escrow merely to keep the schedule. The readiness policy prospectively
+defines which classes veto promotion and which can be carried under controls.
+
+## A Safety Case Compiles the Argument
+
+A safety case is a structured, versioned argument that a system is acceptably
+safe for a specified use under specified conditions. It connects top-level
+claims to subclaims, strategies, context, assumptions, justifications, evidence,
+counterclaims, defeaters, residuals, and authorities.
+
+The case for the repository system might begin:
+
+> Candidate C can prepare dependency updates for repository class R in shadow
+> and bounded canary operation under authority envelope A, with no production
+> merge permission.
+
+That claim is intentionally narrower than "the agent is safe." Subclaims cover
+task competence, tool confinement, evidence integrity, rollback, monitoring,
+human intervention, and affected-system boundaries. Each points to versioned
+evidence and names its scope.
+
+The case compiler can draw from claim ledgers, readiness records, threshold
+commitments, test results, proof artifacts, provenance records, incidents, and
+residual escrow. Compilation reduces clerical drift. It does not make the
+argument sound.
+
+Assumptions must be visible. The rollback claim may assume the cache inventory
+is complete. The deception assessment may assume the independent monitor does
+not share a critical failure lineage. The authority claim may assume the
+execution kernel enforces its contract. If an assumption changes, dependent
+claims become stale.
+
+Countercases belong inside the process. A reviewer should search for ways the
+top claim can fail despite every cited artifact. The stale evaluator digest is
+one such defeater. A safety case that records only supporting evidence is a
+sales document.
+
+## Hazards Come Before Evidence Shopping
+
+An assurance process should begin by identifying unacceptable outcomes and
+control paths, not by arranging whatever evidence already exists into a
+favorable tree.
+
+For the repository system, hazards include corrupt production state,
+unauthorized code execution, secret exposure, irreversible migration, hidden
+dependency breakage, false human approval, and delayed operational failure. A
+control-oriented analysis asks how unsafe control actions, missing feedback,
+timing, component interaction, or organizational pressure could produce them.
+
+The hazard record maps each outcome to scenarios, preventive controls,
+detection, containment, recovery, affected parties, and residuals. It exposes
+gaps that a capability benchmark may never exercise. A system can be highly
+competent at patching and still be unsafe because its deployment interface
+permits an unreviewed effect.
+
+Evidence is then selected for the claim it can support. Unit tests may support
+local behavioral preservation. Permission traces may support an authority
+boundary. Fault injection may support a bounded recovery claim. Incident-free
+operation over a short canary is weak evidence about rare long-tail failure.
+
+Independence is structural, not a count of attachments. Ten reports generated
+from the same evaluator output are one lineage. A formal proof of a policy
+predicate and a runtime test of the enforcement mechanism contribute different
+evidence, but both may share a false environment assumption. The case should
+display those common dependencies.
+
+Evidence adequacy depends on consequence and claim. A reversible shadow action
+may proceed with modest competence evidence and strict containment. An
+irreversible production migration requires stronger causal, recovery, and
+authority evidence. The case compiler can enforce required categories while
+leaving the substantive judgment to review.
+
+Countercases should be funded and timed. Reviewers need access to raw artifacts,
+the ability to propose new tests, and protection from schedule pressure. A
+countercase that cannot delay release is decoration.
+
+Review roles should be separated. Authors respond to findings; independent
+reviewers challenge inference and evidence; accountable authorities decide
+whether the residual risk fits the allowed operation. A signature proves that
+a person or service made an assertion, not that the assertion is correct.
+
+## Assurance Must Be Incremental and Revocable
+
+A case has a version, subject, environment, evidence cutoff, scope, expiry, and
+decision. It changes when the model, harness, tools, data, authority, workload,
+or assumptions change materially.
+
+Evidence updates can strengthen, narrow, or defeat a branch without rebuilding
+the entire argument manually. The dependency graph identifies affected claims.
+An incident can invalidate a rollback assumption while leaving tool-confinement
+evidence intact.
+
+Confidence should remain structured. Different branches can have different
+evidence quality, independence, and uncertainty. A scalar assurance score hides
+whether weakness lies in competence, monitoring, governance, or recovery.
+
+The final decision is still normative. Evidence can show that a failure rate is
+below a bound under a workload. It cannot decide whether the remaining risk is
+acceptable to affected people or which authority may impose it. The case makes
+that judgment inspectable rather than automatic.
+
+## Evidence Needs Authenticity Without a Truth Oracle
+
+The candidate's safety case depends on artifacts: evaluator outputs, logs,
+screenshots, traces, reports, signatures, and transformed media. Their origin
+and transformation history matter.
+
+Signed provenance can bind an assertion to an identity and content digest.
+Watermarks, fingerprints, statistical detectors, visible disclosures, and
+contextual verification provide different signals. None answers every question.
+
+A valid signature does not prove that the signed claim is true. Missing
+provenance does not prove that content is synthetic. A detector score does not
+identify an author. A visible label can be detached, inaccessible, or false.
+
+The authenticity envelope keeps the signals separate. It records content and
+rendition identity, signer and trust policy, ingredients, transformations,
+bindings, validation state, detector results, disclosure, consent where
+relevant, disputes, corrections, and revocation.
+
+The stale hidden-task result fails because its evidence envelope binds it to the
+old evaluator. Copying the score into a new report cannot update that lineage.
+A recompressed video of a monitor session may lose a credential; the correct
+state is provenance absent or broken, not fabricated origin.
+
+Composite artifacts need regional claims. One figure may contain a signed chart,
+an unsourced annotation, and a synthetic illustration. A green badge on the file
+must not imply equal provenance for every element.
+
+Privacy constrains completeness. Provenance should not expose a confidential
+source or harmed person merely to make a graph exhaustive. Selective disclosure,
+restricted assertions, and remedy routes belong beside authenticity.
+
+## Repairing the Candidate's Assurance Path
+
+The release team first closes the invalid denominator. The stale hidden task is
+not counted as a pass or failure. The task is rebuilt, its positive and negative
+controls rerun, and the new evaluator digest bound to raw outputs.
+
+Next, the integrity team expands the suspicious monitor observation into a
+matched contextual suite. The result remains ambiguous: the behavior difference
+tracks two evaluation cues but not a third, and an independent action-based
+measure sees no corresponding outcome degradation. The finding becomes a
+residual with a low-authority canary restriction, not a deception verdict.
+
+The capability assessment is repeated on the exact candidate with its current
+tools. It crosses the prospective threshold. That activates independent review,
+stricter tool permissions, a bounded canary, and a rollback exercise. The
+threshold does not itself reject the candidate; it changes the commitments
+required for consideration.
+
+The rollback exercise exposes the shared-cache omission. The effect inventory
+and recovery plan are repaired. A fault injection shows that the cache can be
+restored for the canary population, while external mirrors remain outside the
+rollback claim.
+
+The safety case compiler rebuilds affected branches. The competence branch cites
+the corrected evaluation. The integrity branch carries the unresolved monitor
+residual. The recovery branch narrows its scope to tracked canary state. The
+authority branch confirms that production merge remains impossible.
+
+Independent review accepts shadow and canary operation with expiry. It does not
+authorize default production use. The system advances one state because the
+evidence supports one state.
+
+## Failure Modes
+
+**Score as permission.** A benchmark result directly triggers deployment.
+
+**Instrument laundering.** Broken or vacuous tasks count as candidate failures
+or successes.
+
+**Winner-only reporting.** Selection, retries, rescues, and failed seeds vanish.
+
+**Average safety.** Critical subgroup failures disappear inside an aggregate.
+
+**Benchmark immortality.** A saturated or contaminated instrument retains its
+frontier role.
+
+**Metric capture.** Proxy improvement substitutes for the target.
+
+**Mind-reading evaluation.** A transcript or context effect becomes a deception
+label without competing hypotheses.
+
+**Monitor monoculture.** Multiple evaluators share one failure lineage and are
+counted as independent.
+
+**Threshold theater.** A line is published without commitments, owners, or an
+operational trigger.
+
+**Waiver as evidence.** Permission to proceed is recorded as a passed check.
+
+**Skipped as green.** Unknown applicability or missing evidence becomes success.
+
+**Quarantine disappearance.** A blocked artifact is hidden rather than retained
+for diagnosis and descendant control.
+
+**Residual dumping.** A veto-level failure is relabeled as an accepted residual.
+
+**Assurance by compilation.** A well-formed safety graph is treated as a sound
+argument.
+
+**Supporting-only case.** Counterarguments, incidents, and defeaters are kept
+outside the assurance artifact.
+
+**Signature as truth.** Cryptographic provenance becomes semantic validation.
+
+**Missing provenance as guilt.** Absence of a signal becomes proof of synthetic
+or malicious origin.
+
+**Stale case inheritance.** A new model, tool, or environment reuses an old
+readiness decision.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline uses ordinary benchmark reports, fixed release
+checklists, human security review, change management, incident response, and
+signed build artifacts. It does not build a general assurance graph or a
+multi-state readiness engine.
+
+For many low-risk systems that is enough. A small team may reason more clearly
+from a concise review than from a large machine-generated case. Established test
+and release platforms can provide strong lineage and rollback without adopting
+new vocabulary.
+
+The integrated architecture earns its cost only if it catches consequential
+staleness, proxy failure, deception risk, threshold obligations, descendant
+quarantine, and residual gaps that the baseline misses. It should reduce review
+time or improve decision quality without encouraging paperwork for its own
+sake.
+
+Comparison should measure defects found before release, false blocks, false
+clears, time to decision, reviewer comprehension, adversarial robustness,
+incident severity, recovery, residual closure, provenance survival, human labor,
+and total cost. Graph size and number of passed checks are not success metrics.
+
+If a simpler checklist and independent review match those outcomes, use them.
+
+## What the Current Work Establishes
+
+The Readiness owner has a finite seven-stage lifecycle with 24 reachable
+refinement declarations, 11 retained legacy countermodels, three exact bounded
+suites, 40 routes, and all 45 authored rejecting mutations. It also preserves
+one exact Project Theseus YELLOW currentness observation and bounded failed
+campaign history. These artifacts establish authored record and transition
+semantics, not evaluator adequacy, calibration, useful throughput, deployed
+quarantine, effect-complete rollback, organizational governance, or transfer.
+
+Benchmark Ratchets has two schemas, one blocked provenance record with ten
+rejecting mutations, two valid and five invalid synthetic anti-Goodhart
+fixtures, a persisted fixture bridge, three proof targets, and 29 Lean
+declarations. Its independent consumer executes six clean transitions, seven
+trace splits, 19 reachable states, and 114 finite transitions. It includes no
+natural benchmark run, hidden-holdout execution, contamination audit, trained
+model or policy result, independent evaluator, or chapter-core support
+transition.
+
+Capability Thresholds preserves an eight-case suite through a six-stage,
+43-route repeated-assessment consumer, rejects all 48 authored mutations, and
+adds 12 refinement declarations. No real capability assessment, safeguard
+exercise, bypass or rollback test, exception process, deployed invalidation,
+release, reproduction, or transfer ran.
+
+Adversarial Evaluation preserves an eight-case suite through a seven-stage
+observation model. It covers 56 finite routes and rejects all 60 authored
+mutations. No model, detector, mitigation, monitor, reward process, evaluator
+ensemble, natural cross-context workload, deception finding, or deployment ran.
+
+Safety Cases implements eight finite record routes and an eight-case synthetic,
+digest-bound compiler bridge. Eight Lean declarations reduce the same authored
+decision tree, and five validator mutations test the bridge. No real assurance
+case, hazard analysis, countercase search, evidence-adequacy review, independent
+institution, acceptance, release, incident, reproduction, or transfer ran.
+
+Content Authenticity implements a 32-declaration Lean surface over an
+eight-transition review, 42 admission-axis mutations with exact repairs,
+evidence-type separation, finite transformation accounting, staleness and
+revocation, two non-identifiability results, and one rejecting communication
+consumer. It does not establish signature correctness, provenance completeness,
+watermark or detector robustness, origin, truth, consent, comprehension, legal
+compliance, remedy efficacy, interoperability, or deployment.
+
+All six chapter cores remain at argument support. The joined prose does not
+turn finite record discipline into readiness, safety, or authenticity evidence.
+
+## From Minimum Evaluation to an Assurance System
+
+A minimum implementation can use the repository candidate. Freeze its identity,
+task population, evaluator, baselines, thresholds, authority, and non-claims.
+Inject a stale task digest, a vacuous pass, a subgroup failure, a monitor
+disagreement, a missing rollback surface, a threshold crossing, and a revoked
+signer.
+
+Require the system to close the invalid denominator, preserve raw outputs,
+quarantine the candidate, activate the right commitment, carry residuals,
+compile a scoped case, and invalidate dependent claims. Independent reviewers
+should be able to reconstruct every decision without trusting the compiler.
+
+The next stage needs natural workloads and current models. It should compare the
+integrated path with a strong checklist-and-review baseline under matched
+resources. Red teams should attack instruments, provenance, monitors,
+thresholds, case assumptions, and quarantine enforcement.
+
+A mature assurance system would continuously bind evaluation to candidate and
+environment identity, ratchet instruments, detect selection and proxy pressure,
+run context-sensitive integrity tests, trigger prospective commitments, enforce
+transitive quarantine, compile defeasible cases, preserve provenance, and reopen
+decisions after material change.
+
+It would still refuse the sentence "the system is safe." Its output would be a
+bounded authority decision with evidence, residuals, expiry, and an appeal path.
+
+## The Strongest Objection
+
+Evaluation suites and safety cases can become performative compliance. Once the
+required fields and tests are known, developers and models optimize the visible
+artifact. Reviewers face large graphs that diffuse responsibility. Novel
+failures occur outside the ontology.
+
+The objection is correct unless the system remains adversarial and decision-
+focused. Cases should be as small as the claim permits. Raw evidence and
+countercases must remain accessible. Independent reviewers need authority to
+reject the framing, not only inspect field completeness. Incident evidence must
+be able to defeat a previously accepted branch.
+
+Some uncertainty cannot be compiled away. The architecture should expose that
+limit and narrow operation, not create more confident prose.
+
+## Evidence That Would Change the Conclusion
+
+The integrated layer should contract if competent independent checklist review
+matches its detection, staleness response, quarantine, recovery, and decision
+quality at lower cost. It should also narrow if assurance graphs reduce reviewer
+comprehension, increase false confidence, or create exploitable standardized
+surfaces without catching more consequential defects.
+
+Support would require preregistered natural and adversarial campaigns across
+current models, tools, workloads, organizations, and risk levels; qualified
+instruments; hidden holdouts; complete denominators; independent evaluators;
+real safeguards; causal interventions; incidents; delayed outcomes; rollback
+and remedy; external reproduction; transfer; and full human and compute costs.
+
+Formal proofs can establish finite lifecycle and non-substitution properties.
+They cannot prove construct validity, strategic honesty, safeguard efficacy,
+acceptable risk, content truth, or institutional legitimacy.
+
+## What This Establishes
+
+Evaluation is a versioned adversarial measurement process. Its evidence has a
+denominator, a target-proxy boundary, an instrument lifecycle, and possible
+strategic context dependence.
+
+Thresholds trigger prospective commitments. Readiness is a scoped state
+transition with residual escrow, fallback, expiry, and quarantine. A safety case
+compiles a defeasible argument; it does not manufacture evidence or decide what
+risk is acceptable. Authenticity binds assertions and transformations without
+becoming a truth oracle.
+
+The current repository establishes bounded record, lifecycle, mutation, and
+non-substitution controls for each layer. It does not establish a deployed
+assurance system or a safe release.
+
+Evaluation and assurance consume scarce computation and attention. Unit 23 asks
+how generation, deliberation, verification, compression, and evidence work
+should share that budget.
+
+{{< include ../generated/unit-22-status.qmd >}}
