@@ -1,20 +1,20 @@
 {
-  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v31",
+  "schema_version": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v32",
   "roadmap_id": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17",
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "snapshot_date": "2026-08-13",
   "authority": "Corben Sorenson",
   "status": "active",
-  "current_priority": "P5-U1",
+  "current_priority": "C1-EL",
   "execution_readiness": {
-    "state": "p5_u1_utility_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned",
-    "headline_priority": "P5-U1",
-    "headline_priority_state": "minimal_useful_governed_vertical_slice",
+    "state": "c1_exit_ladder_attempt_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned",
+    "headline_priority": "C1-EL",
+    "headline_priority_state": "prospective_governed_cognition_exit_ladder_attempt",
     "work_in_progress_limit": 2,
     "blocked_lane_consumes_work_in_progress": false,
     "protected_outcome_inspection_allowed": false,
     "structural_admission_freeze": false,
-    "immediate_object_level_packet": "P5-U1-minimal-useful-governed-vertical-slice",
+    "immediate_object_level_packet": "C1-EL-governed-cognition-prospective-attempt",
     "immediate_empirical_packet": "P2-R3-storage-materialization-and-replacement-qualification",
     "immediate_book_packet": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration",
     "immediate_formal_packet": "P4.1-consumer-gated-cross-owner-composition",
@@ -85,7 +85,7 @@
       "github_popularity",
       "external_human_prepublication_review"
     ],
-    "headline_packet": "P5-U1-minimal-useful-governed-vertical-slice",
+    "headline_packet": "C1-EL-governed-cognition-prospective-attempt",
     "concurrent_book_packet": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration",
     "formal_packet_state": "consumer_gated",
     "governance_rent_fields": [
@@ -1910,7 +1910,7 @@
       "attestation_scope": "local_source_and_runtime_identity_not_deployment"
     },
     "p5_u1_repository_change_demonstrator": {
-      "state": "retrospective_natural_defect_replay_complete_reader_integration_open",
+      "state": "terminal_retrospective_natural_defect_replay_and_reader_route",
       "design_path": "experiments/p5_u1_governed_repository_change/design.json",
       "result_path": "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
       "schema_path": "schemas/p5_u1_governed_repository_change_result.schema.json",
@@ -1927,6 +1927,8 @@
       "governed_crash_recoveries": 1,
       "governed_compensations": 1,
       "outcome_known_before_route_replay": true,
+      "fresh_checkout_validated": true,
+      "fresh_checkout_commit": "8bff377f482cd4014945be08957b8cadd82fd68a",
       "prospective_utility_estimate": false,
       "support_state_effect": "none",
       "release_effect": "none"

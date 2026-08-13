@@ -31,8 +31,8 @@ the semantic-custody gate stays separate under a dated amendment rather than
 being forced through to satisfy a number.
 
 This is the active P7 book packet, `P7.1-EM`. It runs concurrently with the
-object-level `P5-U1` packet under the existing two-slot WIP limit. It does not
-displace the utility slice, open an empirical denominator, authorize new proof
+first contribution exit-ladder attempt, `C1-EL`, under the existing two-slot
+WIP limit. It does not reopen the terminal P5-U1 retrospective slice, open an empirical denominator, authorize new proof
 families, require external-human prepublication review, or change claim
 support. The current 22-unit product remains a historical candidate until the
 26-unit replacement passes every cutover gate.
@@ -536,12 +536,13 @@ human-learning evidence and must not be reported as reader approval.
 This amendment changes priority, not evidence state:
 
 1. continuous P0 truth and fresh-checkout publication custody;
-2. `P5-U1` minimal useful governed vertical slice as the headline object-level
-   packet;
+2. the first prospective contribution exit-ladder attempt as the headline
+   object-level packet, using terminal P5-U1 only as bounded implementation and
+   instrument-development input;
 3. `P7.1-EM` metadata-first product separation, 26-unit narrative, and
    fifteen-minute route as the concurrent book packet;
-4. one contribution exit ladder, selected only after `P5-U1` exposes its
-   actual consumer and instrumentation needs;
+4. one contribution exit ladder at a time under its preregistered success,
+   negative, inconclusive, and support-ceiling dispositions;
 5. P4.1 formalization only where that ladder or vertical slice names the
    theorem's runtime or decision consumer;
 6. P2 natural-campaign materialization immediately when its storage and Docker
@@ -869,10 +870,12 @@ sequencing decision, not evidence that the Round 16 criticism lacked force.
 The structural window is therefore closed again.
 
 P2 remains the protected natural empirical headline, but it is not the current
-executable priority while its infrastructure gates are closed. `P5-U1`, the
-minimal useful governed vertical slice, is the active object-level packet, with
-the independent P7.1 narrative and fifteen-minute utility route as the active
-book packet. P4.1 is consumer-gated: it may proceed only when `P5-U1` or one of
+executable priority while its infrastructure gates are closed. P5-U1 is
+terminal at its retrospective implementation-and-reader scope. `C1-EL`, the
+first prospective governed-cognition exit-ladder attempt, is the active
+object-level packet, with the independent P7.1 narrative and fifteen-minute
+utility route as the active book packet. P4.1 is consumer-gated: it may proceed
+only when P5-U1 or one of
 the three contribution exit ladders names the theorem's runtime, evidence, or
 decision consumer. The exact 2026-07-27
 `P2-R3a-002` receipt supersedes transient capacity observations for current
@@ -3009,9 +3012,11 @@ not a production service. Timing and CPU are host diagnostics; workflow steps
 and artifact bytes are burden proxies, not observed human effort. This packet
 is therefore not a prospective utility estimate, randomized or held-out
 comparison, independent reproduction, deployment, safety, transfer, SOTA,
-AGI, or ASI result. It moves no support or release state. P5-U1 remains active
-only for the fifteen-minute reader route and task-recipe integration; the
-broader P5 natural campaign remains frozen and unopened.
+AGI, or ASI result. It moves no support or release state. The documented route
+and validator also pass from a fresh clone of `main` at
+`8bff377f482cd4014945be08957b8cadd82fd68a`, so P5-U1 is terminal at this
+retrospective scope. The broader P5 natural campaign remains frozen and
+unopened.
 
 ### P5 natural publication-service development checkpoint — 2026-07-27
 

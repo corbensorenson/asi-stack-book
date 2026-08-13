@@ -1203,20 +1203,20 @@ def errors(data: dict) -> list[str]:
 
     quality_program = status.get("quality_uplift_program", {})
     execution_readiness = status.get("execution_readiness", {})
-    if status.get("current_priority") != "P5-U1":
-        out.append("roadmap status does not expose P5-U1 as the current object-level priority")
-    if execution_readiness.get("state") != "p5_u1_utility_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
-        out.append("execution board does not preserve active utility/editorial-migration work, consumer-gated P4.1, the P2 resource block, and separate P7.3 ownership")
-    if execution_readiness.get("headline_priority") != "P5-U1" or execution_readiness.get("headline_priority_state") != "minimal_useful_governed_vertical_slice":
-        out.append("execution board obscures the active minimal useful governed vertical slice")
+    if status.get("current_priority") != "C1-EL":
+        out.append("roadmap status does not expose the first contribution exit-ladder attempt as current priority")
+    if execution_readiness.get("state") != "c1_exit_ladder_attempt_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned":
+        out.append("execution board does not preserve the active exit-ladder/editorial work, consumer-gated P4.1, P2 resource block, and separate P7.3 ownership")
+    if execution_readiness.get("headline_priority") != "C1-EL" or execution_readiness.get("headline_priority_state") != "prospective_governed_cognition_exit_ladder_attempt":
+        out.append("execution board obscures the active prospective governed-cognition exit-ladder attempt")
     if execution_readiness.get("work_in_progress_limit") != 2 or execution_readiness.get("blocked_lane_consumes_work_in_progress") is not False:
         out.append("execution board lost its bounded WIP or blocked-lane rule")
     if execution_readiness.get("protected_outcome_inspection_allowed") is not False:
         out.append("execution board permits protected-outcome inspection")
     if execution_readiness.get("structural_admission_freeze") is not False:
         out.append("execution board contradicts the superseding no-deferral manuscript policy")
-    if execution_readiness.get("immediate_object_level_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
-        out.append("execution board does not activate the minimal useful governed vertical slice")
+    if execution_readiness.get("immediate_object_level_packet") != "C1-EL-governed-cognition-prospective-attempt":
+        out.append("execution board does not activate the governed-cognition exit-ladder attempt")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
     if execution_readiness.get("immediate_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
@@ -1237,8 +1237,8 @@ def errors(data: dict) -> list[str]:
         out.append("execution board structural-resume gate set drifted")
 
     yield_amendment = status.get("object_level_yield_amendment", {})
-    if yield_amendment.get("headline_packet") != "P5-U1-minimal-useful-governed-vertical-slice":
-        out.append("object-level yield amendment lost its headline packet")
+    if yield_amendment.get("headline_packet") != "C1-EL-governed-cognition-prospective-attempt":
+        out.append("object-level yield amendment lost the governed-cognition exit-ladder packet")
     if yield_amendment.get("concurrent_book_packet") != "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration":
         out.append("object-level yield amendment does not expose the superseding editorial-migration packet")
     if yield_amendment.get("contribution_exit_ladder_count") != 3 or yield_amendment.get("promotion_quota") is not False:
@@ -2637,7 +2637,7 @@ def errors(data: dict) -> list[str]:
     p5_u1_status = p5.get("p5_u1_repository_change_demonstrator", {})
     p5_u1_result = data["p5_u1_result"]
     expected_p5_u1_status = {
-        "state": "retrospective_natural_defect_replay_complete_reader_integration_open",
+        "state": "terminal_retrospective_natural_defect_replay_and_reader_route",
         "design_path": "experiments/p5_u1_governed_repository_change/design.json",
         "result_path": "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
         "schema_path": "schemas/p5_u1_governed_repository_change_result.schema.json",
@@ -2654,6 +2654,8 @@ def errors(data: dict) -> list[str]:
         "governed_crash_recoveries": p5_u1_result.get("aggregate", {}).get("governed_crash_recoveries"),
         "governed_compensations": p5_u1_result.get("aggregate", {}).get("governed_compensations"),
         "outcome_known_before_route_replay": p5_u1_result.get("task", {}).get("outcome_known_before_route_replay"),
+        "fresh_checkout_validated": True,
+        "fresh_checkout_commit": "8bff377f482cd4014945be08957b8cadd82fd68a",
         "prospective_utility_estimate": False,
         "support_state_effect": p5_u1_result.get("support_state_effect"),
         "release_effect": p5_u1_result.get("release_effect"),
@@ -3070,7 +3072,7 @@ def main() -> None:
     mutate("Manim mechanical-aesthetic laundering", lambda c: c["status"]["manim_visual_edition"]["pedagogical_and_aesthetic_ratchet"].__setitem__("mechanical_diagnostic_is_aesthetic_verdict", True))
     mutate("Manim support promotion", lambda c: c["status"]["manim_visual_edition"].__setitem__("support_state_effect", "promoted"))
     mutate("Manim roadmap section deletion", lambda c: c.__setitem__("roadmap", c["roadmap"].replace("### P7.3 — Governed Manim visual edition", "### Removed visual edition", 1)))
-    mutate("P5-U1 headline rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_object_level_packet", "P4-C3-authority-effect-rollback-and-corrigibility-semantic-audit"))
+    mutate("contribution-ladder headline rollback", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_object_level_packet", "P5-U1-minimal-useful-governed-vertical-slice"))
     mutate("P4 consumer gate bypass", lambda c: c["status"]["execution_readiness"].__setitem__("immediate_formal_packet", "P4.1-cross-owner-composition-and-proof-rationalization"))
     mutate("promotion quota laundering", lambda c: c["status"]["object_level_yield_amendment"].__setitem__("promotion_quota", True))
     mutate("external-human prepublication blocker", lambda c: c["status"]["object_level_yield_amendment"].__setitem__("external_human_prepublication_required", True))
@@ -3093,7 +3095,7 @@ def main() -> None:
             "Evidence-competence roadmap validation failed:\n - " + "\n - ".join(failures)
         )
     print(
-        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, active P5-U1/M5 with P4.1/M4 consumer-gated; 115 accepted transitions, "
+        "Evidence-competence roadmap passed: P0 clean pushed/build/deploy ancestral custody checkpoint attested, P1/M1 complete, P2/M2 protected but resource-blocked, P5-U1 terminal at retrospective scope, active C1-EL with P4.1/M4 consumer-gated; 115 accepted transitions, "
         "25 direct and 90 indirect identities resolved with zero unmapped; N0-N5 competence contract active and historical rehabilitation complete; "
         "90 accepted historical negatives classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5; "
         "the frozen 75-surface rehabilitation snapshot including the then-live 55 chapters reconciled with zero overbroad negative language; "
