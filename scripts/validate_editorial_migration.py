@@ -47,15 +47,28 @@ EXPECTED_VISIBILITY = {
     "research_dossier_owner": "research_dossier",
     "generated_back_matter_owner": "generated_back_matter",
 }
-COMPOSED_PARENT_IDS = {
+METHOD_DETAIL_PARENT_IDS = {
     "resource-economics-and-token-budgets",
     "compact-generative-systems-and-residual-honesty",
 }
-COMPOSED_CHILD_IDS = {
+METHOD_DETAIL_CHILD_IDS = {
     "fast-generation-architectures",
     "governed-deliberation-and-test-time-scaling",
     "rankfold-neuralfold-and-artifact-compression",
 }
+SECURITY_CUSTODY_PARENT_IDS = {
+    "security-kernel-and-digital-scifs",
+    "privacy-data-rights-and-information-flow-governance",
+    "model-weight-custody-and-hardware-roots-of-trust",
+}
+SECURITY_CUSTODY_CHILD_IDS = {
+    "adversarial-machine-learning-and-model-attack-surface",
+    "confidential-and-verifiable-ai-computation",
+    "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "open-weight-release-and-post-release-control",
+}
+COMPOSED_PARENT_IDS = METHOD_DETAIL_PARENT_IDS | SECURITY_CUSTODY_PARENT_IDS
+COMPOSED_CHILD_IDS = METHOD_DETAIL_CHILD_IDS | SECURITY_CUSTODY_CHILD_IDS
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
         "chapters/resource-economics-and-token-budgets.qmd",
@@ -85,6 +98,47 @@ COMPOSITION_SURFACES = {
     "rankfold-neuralfold-and-artifact-compression": (
         "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
         ["### Publication placement and preserved technical ownership", "(compact-generative-systems-and-residual-honesty.qmd)"],
+    ),
+    "security-kernel-and-digital-scifs": (
+        "chapters/security-kernel-and-digital-scifs.qmd",
+        [
+            "### Learned-model threats inside the authority-use boundary",
+            "(adversarial-machine-learning-and-model-attack-surface.qmd)",
+            "Neither chapter inherits the\nother's claim support",
+        ],
+    ),
+    "adversarial-machine-learning-and-model-attack-surface": (
+        "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+        ["### Publication placement and preserved technical ownership", "(security-kernel-and-digital-scifs.qmd)"],
+    ),
+    "privacy-data-rights-and-information-flow-governance": (
+        "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+        [
+            "### Protected computation inside the information-lifecycle transaction",
+            "(confidential-and-verifiable-ai-computation.qmd)",
+            "does not inherit privacy, compliance, total",
+        ],
+    ),
+    "confidential-and-verifiable-ai-computation": (
+        "chapters/confidential-and-verifiable-ai-computation.qmd",
+        ["### Publication placement and preserved technical ownership", "(privacy-data-rights-and-information-flow-governance.qmd)"],
+    ),
+    "model-weight-custody-and-hardware-roots-of-trust": (
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+        [
+            "### Lineage and irreversible release inside custody",
+            "(ai-supply-chain-integrity-and-lifecycle-provenance.qmd)",
+            "(open-weight-release-and-post-release-control.qmd)",
+            "without inheriting another's claim support",
+        ],
+    ),
+    "ai-supply-chain-integrity-and-lifecycle-provenance": (
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+        ["### Publication placement and preserved technical ownership", "(model-weight-custody-and-hardware-roots-of-trust.qmd)"],
+    ),
+    "open-weight-release-and-post-release-control": (
+        "chapters/open-weight-release-and-post-release-control.qmd",
+        ["### Publication placement and preserved technical ownership", "(model-weight-custody-and-hardware-roots-of-trust.qmd)"],
     ),
 }
 
@@ -178,20 +232,32 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_method_detail_pilot_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record the EM2 method-detail pilot")
-    expected_package = {
-        "id": "em2-method-detail-pilot",
-        "state": "composed_no_public_cutover",
-        "parent_ids": sorted(COMPOSED_PARENT_IDS),
-        "child_ids": sorted(COMPOSED_CHILD_IDS),
-        "stable_technical_routes_preserved": True,
-        "claim_support_inheritance": False,
-        "support_state_effect": "none",
-        "release_effect": "none",
-    }
-    if editorial.get("completed_composition_packages") != [expected_package]:
-        errors.append("EM2 method-detail pilot receipt drifted")
+    if editorial.get("state") != "em2_two_packages_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record both EM2 packages")
+    expected_packages = [
+        {
+            "id": "em2-method-detail-pilot",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(METHOD_DETAIL_PARENT_IDS),
+            "child_ids": sorted(METHOD_DETAIL_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-security-custody-publication-nests",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(SECURITY_CUSTODY_PARENT_IDS),
+            "child_ids": sorted(SECURITY_CUSTODY_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+    ]
+    if editorial.get("completed_composition_packages") != expected_packages:
+        errors.append("EM2 composition-package receipts drifted")
     if editorial.get("support_state_effect") != "none" or editorial.get("release_effect") != "none":
         errors.append("editorial migration moved support or release state")
     if surface_texts is None:
@@ -240,6 +306,12 @@ def main() -> None:
     ].replace("inherits another's claim support", "shares claim support")
     if not validate(structure, status, preview, altered_surfaces):
         errors.append("negative control accepted: composition-boundary erasure")
+    altered_surfaces = dict(surfaces)
+    altered_surfaces["model-weight-custody-and-hardware-roots-of-trust"] = altered_surfaces[
+        "model-weight-custody-and-hardware-roots-of-trust"
+    ].replace("without inheriting another's claim support", "while sharing claim support")
+    if not validate(structure, status, preview, altered_surfaces):
+        errors.append("negative control accepted: security-custody composition-boundary erasure")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -247,7 +319,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 4 rejecting controls."
+        "and 5 rejecting controls."
     )
 
 

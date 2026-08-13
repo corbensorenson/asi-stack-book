@@ -3216,7 +3216,14 @@
     "evidence_quality/claim_reviews/compact-generative-systems-and-residual-honesty.json",
     "evidence_quality/claim_reviews/governed-deliberation-and-test-time-scaling.json",
     "evidence_quality/claim_reviews/rankfold-neuralfold-and-artifact-compression.json",
-    "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json"
+    "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json",
+    "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+    "evidence_quality/claim_reviews/security-kernel-and-digital-scifs.json",
+    "evidence_quality/claim_reviews/adversarial-machine-learning-and-model-attack-surface.json",
+    "evidence_quality/claim_reviews/model-weight-custody-and-hardware-roots-of-trust.json",
+    "evidence_quality/claim_reviews/ai-supply-chain-integrity-and-lifecycle-provenance.json",
+    "editions/reader_manuscript/current/chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
+    "editions/reader_manuscript/current/generated/unit-04-status.qmd"
   ],
   "units": [
     {
@@ -18898,7 +18905,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and metadata-only EM0/EM1 state.",
+      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the two completed no-cutover EM2 composition packages.",
       "input_artifacts": [
         "scripts/validate_editorial_migration.py",
         "scripts/build_editorial_migration_preview.py",
@@ -18917,7 +18924,18 @@
         "evidence_quality/claim_reviews/compact-generative-systems-and-residual-honesty.json",
         "evidence_quality/claim_reviews/governed-deliberation-and-test-time-scaling.json",
         "evidence_quality/claim_reviews/rankfold-neuralfold-and-artifact-compression.json",
-        "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json"
+        "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json",
+        "chapters/security-kernel-and-digital-scifs.qmd",
+        "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+        "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+        "chapters/confidential-and-verifiable-ai-computation.qmd",
+        "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+        "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+        "chapters/open-weight-release-and-post-release-control.qmd",
+        "evidence_quality/claim_reviews/security-kernel-and-digital-scifs.json",
+        "evidence_quality/claim_reviews/adversarial-machine-learning-and-model-attack-surface.json",
+        "evidence_quality/claim_reviews/model-weight-custody-and-hardware-roots-of-trust.json",
+        "evidence_quality/claim_reviews/ai-supply-chain-integrity-and-lifecycle-provenance.json"
       ],
       "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
       "output_assertions": [
@@ -18931,20 +18949,21 @@
         "5 dossier owners",
         "1 back-matter owner",
         "26 Human Reader units",
-        "4 semantic mutations reject",
+        "5 semantic mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Metadata-only publication classification, legacy identity preservation, and Human Reader routing for EM0/EM1.",
+      "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and two evidence-preserving EM2 composition packages without public cutover.",
       "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
       "negative_control_cases": [
         "support promotion",
         "owner reroute",
         "parent erasure",
-        "composition-boundary erasure"
+        "method-detail composition-boundary erasure",
+        "security-custody composition-boundary erasure"
       ],
-      "prohibited_inference": "Metadata classification does not complete publication composition, the semantic merge, Human Reader prose, public cutover, release, safety, readiness, AGI, or ASI.",
+      "prohibited_inference": "Composition does not transfer technical ownership or support, complete the remaining publication nests or semantic merge, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
-      "semantic_review_state": "checked_metadata_only_editorial_migration"
+      "semantic_review_state": "checked_two_no_cutover_composition_packages"
     },
     {
       "id": "validate_human_reader_current.py:471",
@@ -18961,6 +18980,8 @@
         "editions/reader_manuscript/current/manifest.json",
         "editions/reader_manuscript/current/_quarto.yml",
         "editions/reader_manuscript/current/index.qmd",
+        "editions/reader_manuscript/current/chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
+        "editions/reader_manuscript/current/generated/unit-04-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
         "editions/reader_manuscript/current/generated/unit-23-status.qmd",
         "docs/human_reader_26_unit_outline.md",
@@ -18971,12 +18992,12 @@
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
-        "Unit 23 within its 5500-7500 word target",
+        "Units 4 and 23 within their 5500-7500 word targets",
         "independent maintained prose",
         "3 mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Independent Human Reader manuscript structure and Unit 23 drafting completeness only.",
+      "claim_scope": "Independent Human Reader manuscript structure and Units 4 and 23 drafting completeness only.",
       "negative_controls": "validator_owned_route_length_and_support_mutations",
       "negative_control_cases": [
         "owner-route loss",
@@ -18989,7 +19010,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3172,
+    "required_artifact_count": 3179,
     "unit_count": 471
   },
   "non_claims": [

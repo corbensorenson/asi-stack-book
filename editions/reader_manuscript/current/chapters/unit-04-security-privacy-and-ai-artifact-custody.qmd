@@ -1,0 +1,660 @@
+---
+title: "Security, Privacy, and AI Artifact Custody"
+unit_id: "unit-04"
+---
+
+A paper arrives with more than an argument. Its supporting package includes a
+small evaluation script, a model adapter, a configuration file, example
+prompts, and a link to downloadable weights. The request sounds routine: add
+the paper to the book, run the example, preserve the useful result, and publish
+the update.
+
+Every noun in that sentence hides a different boundary. The paper may be safe
+to read while its examples contain hostile instructions. The script may be
+correctly signed while importing a compromised dependency. The adapter may be
+harmless in isolation while changing the behavior of a model that can use
+tools. The prompts may include personal or confidential data that the author
+had authority to study but not to redistribute. The weights may be available
+to download without being authorized for this machine, this purpose, or a
+public derivative. A successful local run may establish none of those facts.
+
+The easy mistake is to ask one broad question: is the package secure? No single
+mechanism can answer it. A sandbox can limit some effects but cannot decide
+whether the data use is legitimate. Encryption can protect bytes while an
+authorized program misuses them. A signature can identify an issuer without
+proving that the artifact is benign. An attestation can describe a measured
+environment without establishing that the right policy ran for the right
+person. A model card can document release intentions without recalling a copy
+once usable weights are public.
+
+The stack needs a set of narrower questions that meet at explicit transitions.
+Who is asking? What exact object is involved? What operation is permitted? What
+data may enter? Which effects may leave? What evidence is current? Which copy,
+key, dependency, or recipient is still under control? What happens when the
+answer is unknown? The purpose of the security layer is not to produce a
+single reassuring verdict. It is to prevent one favorable fact from silently
+authorizing everything around it.
+
+The previous chapter established the separation between proposing an effect
+and possessing authority to cause it. This chapter moves beneath that boundary.
+It asks what the runtime, data, artifacts, and release process must preserve so
+that the authority distinction remains real when the model, its inputs, or its
+dependencies are untrusted.
+
+{{< include ../generated/unit-04-status.qmd >}}
+
+## A Change Can Be Correct and Still Be Unsafe
+
+Suppose the paper's script produces exactly the output described by its author.
+That is useful evidence about reproducibility under the observed configuration.
+It does not answer whether the script read files outside its task, sent data
+over the network, persisted credentials, loaded a different model derivative,
+or wrote output to a public location. Correct computation and authorized
+computation are different properties.
+
+The distinction matters more for AI systems because natural-language content
+can influence control flow. A source document can contain an instruction that
+the model mistakes for part of its task. A retrieved web page can ask the model
+to reveal its context. A tool description can induce a call whose arguments
+carry confidential material. A planner can discover a route that satisfies the
+surface request while violating the operator's unstated assumptions. The model
+does not need malicious intent for any of this to happen. Ambiguous channels
+and excessive authority are enough.
+
+Security therefore starts from a threat model and an authority-use
+transaction, not from trust in the prompt. The transaction identifies the
+principal, purpose, operation, target, data scope, destination, budget, time,
+policy, and revocation authority. It admits only the context and capabilities
+needed for that operation. It mediates effects as they occur. It treats any
+output that might carry protected information as tainted until a separate
+declassification decision permits release. It closes temporary files, handles,
+caches, logs, descendants, and unresolved residuals when the work ends.
+
+In the paper-ingestion case, reading the manuscript and running its script are
+separate grants. The reader may receive a sanitized source note while the
+execution environment receives a temporary checkout, a synthetic fixture, and
+no access to private source archives. The model may propose a repository patch,
+but a reference monitor decides which files it can read and write. The test may
+produce a result, but a declassifier decides whether logs and artifacts can
+leave the compartment. The final publication action remains outside the
+experiment entirely.
+
+That separation may seem fussy until one remembers what a failure looks like.
+A secret copied into a log can survive after the process exits. An opaque
+credential handle can be replayed even when its bytes were never shown. A
+temporary model load can leave plaintext pages in host memory, swap, a crash
+dump, or an accelerator allocation. A denial that arrives after an external
+write has already happened is not enforcement. The system has to control the
+transition before the irreversible part, not explain it afterward.
+
+## The Smallest Powerful Kernel
+
+The security kernel should be narrow because anything inside it can invalidate
+the larger system. Its job is not to reason about every domain. It is to make a
+small set of facts non-optional: exact identity, live authority, policy version,
+time and freshness, context provenance, artifact custody, observed effects,
+evaluation scope, isolation boundary, rollback coverage, and release identity.
+Each fact needs a failure consequence.
+
+If the target artifact is ambiguous, the load is held. If the policy is stale,
+the grant is not reused. If the runtime cannot observe a material effect, the
+claim narrows or execution stops. If rollback cannot cover an external action,
+the residual remains open. If a proposed release does not match the artifact
+that was reviewed, publication is blocked. The point is not to fill fields. It
+is to ensure that missing facts change what the system can do.
+
+A Digital SCIF is one expression of this idea: a temporary compartment with a
+declared isolation grade, minimized context, mediated tools, controlled egress,
+and explicit closure. The name is deliberately evocative, but the name itself
+guarantees nothing. A process sandbox may share a kernel, network, browser
+profile, accelerator, operator, or cloud control plane. A virtual machine may
+still expose side channels or depend on a compromised host. The compartment's
+claim is only as wide as the surfaces actually isolated and observed.
+
+The useful pattern is late substitution. If a task needs a credential, the
+ordinary model context receives a constrained handle rather than raw secret
+bytes. A privileged component checks the live lease and substitutes the secret
+at the narrow point of use. This reduces exposure, but it does not make the
+handle harmless. Handles can be stolen, redirected, correlated, or replayed.
+They need purpose, destination, use-count, expiry, and revocation constraints
+of their own.
+
+Declassification is equally important. A model can transform protected data
+without reproducing it verbatim. It may reveal an inference, a membership
+signal, a sensitive aggregate, or an actionable description. An output filter
+that searches only for literal strings is therefore not a general privacy
+boundary. The declassification decision must know what entered, what operation
+was permitted, what the output means for the recipient, and which uncertainty
+remains.
+
+The kernel should also preserve bounded liveness. A system that blocks every
+uncertain action can be secure in a narrow sense while becoming unusable and
+encouraging bypass. Denials need named reasons, appeal or repair routes, and
+measured false-refusal cost. Stable low-risk operations should compile into
+cheap policies. Novel, high-consequence, or poorly observed operations should
+receive more scrutiny. Security has to compete on the joint frontier of useful
+work, disclosure, unauthorized effects, availability, recovery, human burden,
+and cost.
+
+## The Model Is Part of the Attack Surface
+
+Even a perfect reference monitor needs a threat description for the learned
+component it is mediating. Models can fail differently across training,
+adaptation, inference, retrieval, multimodal inputs, tool use, and model access.
+An adversary may know the architecture, query only an API, control a fraction
+of training data, supply a trigger, perturb one sensor, or adapt after seeing a
+defense. Calling all of these “adversarial AI” hides the mechanism that a
+control is supposed to address.
+
+A model-threat contract therefore binds the exact checkpoint and serving
+configuration to the lifecycle stage, attacker's knowledge and capability,
+access, objective, budget, adaptation, success criterion, observed effect,
+detector, mitigation, utility cost, recovery, disclosure, and residual. A
+failed attack has meaning only inside that envelope. It may show that one
+implementation did not achieve one objective with one budget. It does not show
+that the model is robust.
+
+The same discipline prevents defense laundering. A regional certificate can
+establish a property over a bounded network and input region without covering
+poisoning, model extraction, a tool chain, or a different checkpoint. A runtime
+monitor can detect a class of behavior without proving that it sees every
+relevant path. Recovery can repair a damaged artifact without preventing the
+attack. These mechanisms can reinforce one another, but they are not
+substitutes.
+
+For the incoming paper, the first question is whether its examples are data or
+instructions. The second is whether its script or adapter changes the model's
+attack surface. The third is whether the evaluation includes an attacker that
+knows about the proposed defense. The fourth is whether a failed exploit left
+utility, recovery, or disclosure costs unmeasured. The output of that review is
+a bounded threat disposition consumed by the kernel. It does not replace the
+kernel's authority decision.
+
+This division of labor matters. Adversarial evaluation tells the system what
+learned behavior was challenged and what remained unresolved. The kernel
+decides whether a particular model may receive a particular capability inside
+a particular route. A robust model can still be over-authorized. A fragile
+model can sometimes perform a harmless, tightly mediated task. Neither result
+should be promoted into the other.
+
+## Privacy Is About Use, Not Merely Secrecy
+
+Security asks whether an operation stayed inside its permitted technical
+boundary. Privacy asks a broader and more human question: was this information
+use legitimate, minimized, bounded to its purpose, and accountable to the
+people affected by it? Data can remain encrypted throughout computation and
+still be used for an unauthorized purpose. Data can be public and still be
+combined, inferred, or retained in ways that create a privacy harm.
+
+An information-lifecycle transaction names the affected person or group, data
+categories and sources, purpose, processing operation, claimed authority and
+jurisdiction, recipients, retention, minimization decision, cross-user
+boundaries, threat model, rights state, remedy, exceptions, known copies,
+derivatives, learned influence, cost, and residuals. Not every use needs the
+same formal mechanism, but every consequential use needs enough identity to be
+challenged and changed.
+
+Consider a deletion request. Removing the source row is not the same as
+removing a curated shard, backup, feature table, checkpoint influence, cached
+output, or recipient copy. Revoking future ordinary use is not proof that every
+byte disappeared. A changed response from the model is not proof of forgetting.
+The honest transaction records a separate disposition for each known copy and
+keeps unknown copies or influence as residuals.
+
+In the paper-ingestion case, the source note may quote or summarize material
+that was legitimately published, while the example data has a different
+rights boundary. The system should not infer permission to store prompts from
+permission to read the paper. It should not infer permission to train from
+permission to evaluate. It should not infer permission to publish logs from
+permission to run a local test. Purpose is attached to the transition, not
+carried forever by the file.
+
+This is where privacy and the security kernel meet. Privacy decides the
+permitted use and required remedy. The kernel enforces the resulting technical
+scope. If the privacy record requires that prompts never leave a local trust
+domain, the kernel can deny a cloud route. If the kernel cannot observe a
+relevant recipient or derivative, privacy cannot pretend the flow is complete.
+One owner supplies legitimacy; the other supplies mediation. Neither certifies
+the other.
+
+## Protected Computation Is Evidence, Not Permission
+
+Sometimes the declared distrust boundary cannot be removed by ordinary
+organizational controls. A data holder may not trust the model provider with
+raw records. A model provider may not trust the data holder with proprietary
+weights. Both may need evidence that a committed operation ran in a particular
+environment. Confidential execution, secure multiparty computation, fully
+homomorphic encryption, zero-knowledge proofs, differential privacy, and local
+execution address different pieces of this problem.
+
+The right starting point is a guarantee vector. It distinguishes input
+confidentiality, model confidentiality, computation integrity, platform
+identity, output authenticity, usage privacy, availability, and recovery. It
+also names the adversary, trust assumptions, allowed leakage, unsupported
+properties, and fallback. Choosing a technology before naming those properties
+often protects the wrong asset.
+
+Remote attestation illustrates the boundary. An attester produces evidence
+about a measured environment. A verifier appraises that evidence against
+reference values and policy. A relying party decides what, if anything, the
+result authorizes. Collapsing those roles lets a platform's statement become
+its own permission. Keeping them separate makes freshness, verifier
+dependencies, reference-value changes, and revocation visible.
+
+Cryptographic proof has a similar semantic limit. A proof may strongly
+establish that an encoded relation held for committed values. The system still
+has to ask whether the relation represented the intended model, tokenizer,
+preprocessing, sampling rule, tool call, or policy. A valid proof of the wrong
+relation is valid evidence about the wrong thing. The circuit-to-semantics gap
+belongs in the receipt, not in a footnote.
+
+Cost and fallback are also part of the security claim. A protected path that
+silently falls back to ordinary inference under load has a different guarantee
+from the path that was reviewed. Long queues, memory pressure, proof size,
+failure timing, access patterns, and logs can create leakage or denial-of-
+service channels. The result should identify which path ran and which
+properties survived.
+
+For the paper package, a protected execution receipt could bind the exact
+script, model, adapter, configuration, input commitment, environment,
+freshness challenge, verifier policy, output commitment, measured cost,
+fallback state, and unsupported properties. That would make the run
+reconstructible. It would not establish that the paper's data use was lawful,
+that the model output was true, or that the result was safe to publish.
+
+## Model Weights Are a Custody Graph
+
+Model weights are not just another dependency file. A capable model can be a
+high-value asset, an attack target, a source of proprietary information, and a
+capability that becomes difficult to recall once copied. Custody therefore
+tracks more than the canonical checkpoint. It follows adapters, quantizations,
+distillations, shards, caches, backups, recovery images, optimizer state,
+extracted equivalents, recipient copies, and any combination that can
+reconstruct a governed capability.
+
+Each custody transition binds exact content and lineage identity, holder,
+purpose, location, storage and transfer state, key lifecycle, measured
+environment, verifier policy, freshness, requested effect, observed effect,
+plaintext exposure, descendants, incident state, sanitization method, recovery,
+and residual owner. Decryption, loading, serving, transferring, and publishing
+are separate authorities. A key released for one model and environment does not
+authorize a repackaged derivative merely because both signatures are valid.
+
+Paging and quantization make the graph more important, not less. A model loaded
+from SSD may create encrypted archives, decrypted pages, memory-mapped files,
+host buffers, accelerator allocations, swap entries, temporary conversions,
+and crash artifacts. A quantized representation may include scales, codebooks,
+kernels, calibration data, residuals, and a full-precision fallback. “The
+weights are encrypted on disk” says little about these descendants.
+
+Deletion language must remain precise. Cache eviction removes an entry from a
+cache policy. File deletion removes a namespace reference. Key revocation can
+deny future compliant requests. Cryptographic erase applies under a declared
+key and attacker model. Media sanitization applies a method to a declared
+medium. Recipient recall asks another party to return or delete material. None
+of these operations proves that every copy or reconstruction path is gone.
+
+The running case should therefore keep the downloadable weights quarantined
+until their digest, lineage, license, derivative relation, holder, intended
+purpose, and load route are explicit. A local experiment can use a harmless
+substitute or remain unexecuted. Availability on the internet is not local
+authority. A successful test is not permission to retain, redistribute, or
+publish a derivative.
+
+## The Supply Chain Is a Living Dependency Graph
+
+Custody asks who controls an artifact. Supply-chain integrity asks what that
+artifact depends on, which assertions describe it, and which consumers become
+affected when something changes. The graph includes data, code, models,
+prompts, policies, build and training steps, environments, hardware and
+firmware, suppliers, services, signers, advisories, transformations, releases,
+recipients, descendants, retention, and retirement.
+
+A digest can establish that two byte sequences match. A signature can establish
+that a key signed a statement. A bill of materials can list components known to
+its producer. None proves that the statement is true, the list is complete, the
+artifact is correct, the data rights are adequate, or the model is safe. The
+graph is valuable because it carries typed claims and invalidations to the
+consumers that depend on them, not because metadata itself creates trust.
+
+Suppose the paper's script imports a library that later receives a critical
+advisory. The affected path should reach the exact evaluation result, generated
+artifact, chapter statement, and release candidate that consumed it. Those
+consumers move to a named state such as quarantine or re-review. They do not
+remain ordinary because a dashboard has not refreshed. If a patched component
+arrives, restoration still requires identity, compatibility, rerun, and
+consumer-specific acceptance.
+
+The graph must remain consumer-relative. A training pipeline and a
+documentation renderer may depend on the same package but require different
+properties. A missing license field may block redistribution without blocking
+a local security analysis. A compromised build step may invalidate an
+executable artifact while leaving the text of a cited paper intact. Relation
+types determine propagation; undifferentiated “tainted” labels create either
+false confidence or permanent quarantine.
+
+Completeness is also bounded. Unknown dependencies and unofficial derivatives
+remain possible. The system should preserve discovery methods, coverage, and
+unknown edges rather than claiming world-complete lineage. A graph that admits
+its boundary can guide repair. A graph that calls itself complete by definition
+cannot notice what it missed.
+
+## Release Changes the Kind of Control
+
+Before release, custody can often deny a key, stop a transfer, narrow a lease,
+or destroy a controlled copy. After usable weights reach independent
+recipients, those verbs usually apply only to official hosting, future keys,
+licenses, cooperative registries, or parties within legal and technical reach.
+Open-weight release is therefore not a weaker setting on the same deployment
+control. It is an authority-loss transition.
+
+A serious release case freezes the exact artifact, code, configuration, and
+license. It compares release with realistic alternatives such as no release,
+hosted access, gated research access, delayed release, or a less capable model.
+It tests default behavior, safeguard removal, fine-tuning, merging,
+quantization, repackaging, and scaffolded elicitation. It considers marginal
+risk relative to what is already accessible, cumulative ecosystem effects,
+benefits, access distribution, monitoring, incident channels, patch adoption,
+and the controls that survive copying.
+
+This does not create a presumption against open development. Open weights can
+support research, access, competition, audit, customization, education, and
+local control. Those benefits should be evaluated with the same seriousness as
+risks, including who receives them and who bears the residual. The discipline
+is symmetric: neither “openness is always good” nor “custody is always safer”
+is allowed to replace an artifact- and date-specific comparison.
+
+After release, governance still has work to do. Maintainers can publish
+advisories, improve safer derivatives, coordinate registries, support incident
+response, update evaluations, and provide patches. Institutions can use law,
+norms, procurement, and platform policy within their reach. Researchers can
+measure downstream adaptations. What the system cannot honestly claim is
+universal recall of independently held usable bytes.
+
+For the incoming package, a link to weights can be recorded without mirroring
+or endorsing them. A local reproduction can remain separate from a public
+release decision. If the project eventually distributes a derived artifact,
+the decision must bind the exact bytes and the evidence current at that time.
+The fact that a neighboring project already published something similar is a
+comparator, not delegated authority.
+
+## One End-to-End Custody Decision
+
+Return to the original request. The system first ingests the paper as a source,
+preserving its public identity and separating reported results from local
+evidence. The manuscript enters an untrusted reading context. Any embedded
+instructions are treated as data. The model can propose concepts and chapter
+routes, but it receives no automatic authority to run code or fetch weights.
+
+The script enters a supply-chain intake. Its digest, license, repository
+revision, declared dependencies, build instructions, and expected outputs are
+recorded. Dependencies are resolved under a network policy that does not expose
+private credentials. Unknown or mutable dependencies hold execution or force a
+harmless pinned substitute. A signature, if present, is preserved as one
+issuer statement rather than converted into a safety verdict.
+
+The example data enters a privacy review. The system identifies whether it is
+synthetic, public, licensed, personal, confidential, or unknown; which purpose
+the paper permits; whether local reproduction needs the full granularity; what
+may be retained; and what may appear in logs or the final book. If authority is
+unclear, the experiment narrows to synthetic data or remains unexecuted. The
+book can still discuss the method without fabricating a result.
+
+The model and adapter enter custody review. The exact model family,
+checkpoint, tokenizer, adapter, quantization, and serving configuration are
+distinguished. The system decides whether downloading is permitted, which
+machine and storage tier may hold the artifact, whether decryption or loading
+is authorized, how temporary descendants are tracked, and which sanitization
+or retention action closes the run. A public link does not waive these steps.
+
+Execution receives a short-lived lease. The compartment contains only the
+pinned code, approved data or synthetic fixture, named model artifact or
+substitute, bounded compute, required tools, and a destination for temporary
+results. Network egress, repository writes, and secret use are denied unless
+separately granted. The model can request actions; the monitor mediates them.
+Logs and outputs retain taint until the declassifier checks them against the
+purpose and publication boundary.
+
+The result then splits into several records. A reproducibility record says what
+ran and what was observed. A threat record says which attacks or negative
+controls were attempted. A privacy record says what data and derivatives
+remain. A custody record says where model artifacts and plaintext descendants
+went. A supply-chain record preserves dependencies and invalidation paths. A
+publication decision says which text, code, or artifact may leave. None of
+these records automatically upgrades the others.
+
+Finally, the repository patch is reviewed as a separate effect. The system can
+add a source note and bounded prose while leaving the experiment labeled
+unreproduced. It can record a failed run without publishing sensitive logs. It
+can preserve an external weight link without hosting the artifact. It can
+accept a local result while denying a public derivative. This is not
+indecision. It is the ability to produce the largest honest product supported
+by the available authority and evidence.
+
+## Failure Cases
+
+The first failure is **security-label laundering**. “Sandboxed,” “encrypted,”
+“attested,” “verified,” or “signed” becomes a universal adjective. Each term
+has a scope. The remedy is to state the exact property, actor, object,
+assumption, freshness condition, and consumer decision it can support.
+
+The second is **metadata without enforcement**. The repository contains rich
+leases, threat models, and receipts, but the model can still write through an
+unmediated tool or retrieve a secret from ordinary context. A record that does
+not change an effect is documentation, not a security boundary.
+
+The third is **incomplete observation**. The process reports a clean run while
+network, filesystem, accelerator, browser, or operator channels remain outside
+the observer. The honest response is to narrow the isolation claim and retain
+the channel as a residual, not to infer safety from silence.
+
+The fourth is **proof-purpose substitution**. A cryptographic proof or
+attestation validates its statement, and the system silently treats that as
+authorization, privacy, semantic correctness, or output truth. The relying
+party must make a separate decision using the exact statement and its policy.
+
+The fifth is **copy-lineage fiction**. One canonical weight file is protected
+while quantizations, adapters, backups, memory pages, or recipient copies are
+ignored. Revocation then applies to the official route but is described as
+recall. Custody needs a derivative closure and an explicit unknown-copy
+residual.
+
+The sixth is **provenance theater**. Every component has a digest and signature,
+yet harmful or compromised artifacts move through the graph because authentic
+assertions were mistaken for true, complete, or adequate ones. Provenance must
+connect to independent verification, observed effects, and consumer-specific
+policy.
+
+The seventh is **silent fallback**. Protected computation fails under realistic
+load and the service quietly routes to an unprotected path. The user receives
+an answer with a different guarantee from the one requested. Fallback must be
+observable, separately authorized, and included in performance and failure
+accounting.
+
+The eighth is **security by refusal**. Controls block so much legitimate work
+that operators route around them, disable monitoring, or move sensitive work
+to ungoverned systems. False denial, delay, recovery burden, and reviewer time
+belong in the evaluation alongside prevented disclosures and effects.
+
+The ninth is **release ceremony**. A long dossier changes no decision, or a
+model card is treated as control after public copies exist. The release process
+earns its complexity only when it changes an option, exposes a missing fact,
+improves downstream evidence, or assigns a residual that would otherwise be
+hidden.
+
+The tenth is **centralized false assurance**. The same vendor, model, policy,
+observer, and evaluator produce every favorable record. Redundant signatures
+or prompts then look like independent evidence. The trust graph should expose
+shared dependencies and route consequential disagreements to a genuinely
+different observer where feasible.
+
+## What the Current Evidence Can Establish
+
+The live technical book contains implemented bounded Lean targets and
+deterministic fixtures for the seven owners in this chapter. Those artifacts
+formalize finite admission rules, identity preservation, named rejection
+states, lifecycle ordering, non-authority, revocation limits, and mutation
+controls. They are useful because they make some forms of laundering impossible
+inside the modeled state machines.
+
+Their limit is equally important. A theorem over a finite custody record does
+not establish that every physical copy was discovered. A rejected synthetic
+secret leak does not establish prompt-injection resistance or side-channel
+security. A protected-execution schema does not establish cryptographic
+soundness, hardware trust, or measured leakage. A supply-chain fixture does not
+establish a trustworthy supplier or complete dependency graph. A release
+review model does not authorize release.
+
+External sources strengthen the vocabulary and objections. Classical
+protection principles motivate least privilege and complete mediation. NIST
+taxonomies distinguish adversarial-learning stages and attacker capabilities.
+Privacy frameworks make purpose, rights, and organizational context visible.
+Confidential-computing and remote-attestation architectures separate trust
+domains, evidence, appraisal, and relying-party decisions. RAND's model-weight
+work emphasizes multiple attack paths and defense in depth. Supply-chain
+standards cover lifecycle risk, suppliers, monitoring, and incident response.
+These are comparators and design grounding, not local conformance results.
+
+A credible natural evaluation would run the same bounded work through simpler
+and richer policies. It would compare ordinary process isolation, a narrow
+reference monitor, a protected-computation path, and the composed route. It
+would include benign tasks, prompt injection, confused-deputy requests,
+dependency substitution, stale attestation, artifact mismatch, privacy-rights
+changes, copy creation, revocation, silent-fallback pressure, and release
+language that falsely implies recall.
+
+The measurements would include accepted useful completion, unauthorized
+effects, secret and inferred disclosure, false denial, missed help, utility
+loss, latency, resource cost, reviewer burden, recovery, residual closure, and
+complete attempt denominators. Independent implementations should challenge
+the monitor, verifier, observer, dependency resolver, and evaluator. Transfer
+should span models, tools, hardware, organizations, data rights, attack
+families, and time.
+
+Evidence that a materially smaller trusted base matches those outcomes at lower
+burden would narrow the architecture. Evidence that ordinary authenticated
+encryption, strict access control, minimal logging, short retention, and
+independent audit perform as well as advanced protected computation would
+remove unnecessary mechanisms. Evidence that release dossiers do not improve
+decisions or downstream response would justify a simpler process. The stack is
+not entitled to complexity merely because its records are precise.
+
+## From Minimum Implementation to a Mature Security Fabric
+
+The minimum viable implementation can protect one narrow repository task. It
+needs an external tool broker, exact principal and artifact identities, a
+short-lived capability lease, a temporary workspace, denied-by-default network
+and secret access, file-scope enforcement, taint on protected inputs, a separate
+commit decision, cleanup, and an append-only receipt. A synthetic secret and a
+harmless dependency substitution provide positive and negative controls.
+
+Add privacy by declaring the data categories, purpose, retention, recipients,
+known copies, and deletion or restriction route. Add custody by binding the
+exact model and derivative identities, storage locations, keys, load purpose,
+temporary plaintext surfaces, and closure action. Add supply-chain integrity by
+pinning code and dependencies and preserving the path from a changed component
+to affected results. Add protected computation only if the named distrust
+boundary justifies its cost. Keep public release outside the minimum exercise.
+
+The next level replaces assumed enforcement with independently observed
+effects. A separate process watches filesystem and network activity. Artifact
+digests are checked at load and commit. A verifier distinct from the workload
+appraises attestation or proof evidence. Recovery tests confirm what rollback
+actually restores. Revocation propagates to known descendants. False refusals
+and operator workarounds are measured, not dismissed.
+
+A mature system would compile stable policy while preserving challenge. It
+would maintain a live graph joining principals, purposes, data, models,
+dependencies, environments, keys, leases, effects, recipients, releases, and
+residuals. Changes in a policy, advisory, model derivative, firmware version,
+rights state, or recipient would invalidate only the decisions that depend on
+that relation. The system would know which controls remain reversible and
+which effects have crossed into compensation or societal response.
+
+The mature kernel would be substrate-aware but not vendor-sovereign. Hardware
+roots, cloud attestations, cryptographic proofs, operating-system controls, and
+organizational approvals would enter as typed evidence with explicit issuers,
+dependencies, freshness, and failure modes. No vendor token would become a
+universal trust bit. Multiple mechanisms could be composed when they protect
+different properties, and removed when a simpler route performs as well.
+
+At the frontier, security becomes a continuous experimental discipline. New
+models, tools, compression methods, memory systems, and deployment surfaces
+change the attack and custody graph. The system generates threat hypotheses,
+runs bounded adversarial campaigns, learns from incidents, updates controls,
+and preserves negative results. Yet the learner cannot rewrite its own
+protected floors, erase failed attempts, broaden its authority, or publish a
+new release merely because optimization predicts a benefit.
+
+This mature state is beyond what the current repository demonstrates. No
+production reference monitor, confidential model deployment, complete artifact
+graph, real weight-custody campaign, or open-release experiment has been
+validated here. The architecture is a research target whose components must
+earn admission against strong simpler baselines.
+
+## The Strongest Objection
+
+The strongest objection is that this machinery can create an elaborate theater
+of control. Every transition gains a schema, receipt, signature, proof, policy,
+and reviewer, while a compromised operator or overlooked channel defeats the
+whole arrangement. Complexity expands the attack surface. Centralized custody
+can concentrate power. Restrictive release policy can suppress beneficial open
+work. Privacy records can normalize surveillance by making it look governed.
+Attestation can transfer trust to opaque hardware and vendors.
+
+This objection has teeth. The answer cannot be another layer of paperwork. A
+control belongs only if it changes an effect, exposes a consequential unknown,
+improves recovery, or reduces the trusted base under matched evaluation. The
+system should prefer ordinary encryption, process isolation, access control,
+short retention, and independent audit when they satisfy the declared threat
+model. It should preserve open alternatives and distributional benefits in
+release decisions. It should minimize sensitive audit data and allow affected
+people to contest the purpose, not merely inspect the receipt.
+
+The kernel must also be designed for compromise. Independent observation,
+content binding, separation of evidence from authorization, narrow grants,
+short expiry, safe holds, rollback, and residual ownership limit how far one
+failed component can speak. They do not eliminate root compromise. When the
+root or observer cannot be trusted, the system should narrow its claim and
+stop the dependent transition rather than manufacture certainty.
+
+The conclusion should change if simpler systems prove equally effective across
+the complete joint outcome. It should also change if the governance burden
+predictably drives work into less accountable channels. The goal is not maximum
+control. It is the smallest enforceable boundary that preserves legitimate
+work, human rights, artifact integrity, recoverability, and honest knowledge of
+what cannot be controlled.
+
+## What This Establishes
+
+Security, privacy, protected computation, model custody, supply-chain
+integrity, and release governance are connected because they share identities
+and transitions. They remain separate because they answer different questions.
+The kernel governs privileged effects. Adversarial model security governs
+threat-relative learned behavior. Privacy governs legitimate information use
+and remedy. Protected computation governs named guarantees across distrust
+boundaries. Custody governs possession, keys, loads, copies, and retirement.
+Supply-chain integrity governs dependencies and invalidation. Open release
+governs the point where direct control is intentionally surrendered.
+
+The practical rule is to refuse inference between those properties. A signed
+artifact is not necessarily safe. An attested environment is not necessarily
+authorized. An authorized use is not necessarily private. A private
+computation is not necessarily correct. A robust model is not necessarily
+properly constrained. A successful local load is not release authority. A
+public license is not universal recall.
+
+For the repository change, this produces a useful outcome even when some gates
+stay closed. The paper can be preserved and discussed. Its code can be pinned
+or quarantined. Its reported result can remain source-reported. A harmless
+local test can be separated from its publication status. Sensitive data can be
+excluded. Weights can remain external. Residuals can stay visible. The book can
+say exactly what it learned without claiming that the package, model, runtime,
+or release is secure.
+
+Secure custody still does not tell the system what to believe. A perfectly
+mediated experiment can use a weak construct, a biased evaluator, a stale
+source, or an invalid inference. The next chapter turns from control of
+information and effects to the governance of evidence itself: how claims gain,
+lose, and retain support when review capacity is limited and the system being
+evaluated may influence the evaluator.

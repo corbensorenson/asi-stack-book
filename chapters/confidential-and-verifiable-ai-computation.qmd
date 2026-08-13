@@ -498,6 +498,23 @@ workloads, observable fallback, recovery, and complete attempt denominators.
 | `ext_zkllm_2024` | zkLLM: Zero Knowledge Proofs for Large Language Models | Planned use from inventory/manifest: Research prototype for proving bounded LLM inference claims while hiding model parameters. Reported proof size and latency are configuration-bound and do not establish semantic correctness, authorization, side-channel security, production readiness, or end-to-end privacy. |
 | `ext_ietf_rats_architecture_2023` | Remote ATtestation procedureS (RATS) Architecture | Planned use from inventory/manifest: Primary IETF architecture and terminology comparator for Attester, Verifier, Relying Party, Evidence, Attestation Results, appraisal policies, reference values, freshness, layered environments, privacy, trust roots, and confidential-model key release. It is informational architecture, not a protocol, hardware assurance level, verifier-independence result, or local attestation deployment. |
 
+### Publication placement and preserved technical ownership
+
+In the consolidated publication argument, this chapter is the protected-
+execution dossier nested under
+[Privacy, Data Rights, and Information-Flow Governance](privacy-data-rights-and-information-flow-governance.qmd).
+It continues to own guarantee separation, distrust boundaries, attestation and
+proof statements, verifier policy, freshness, leakage, cost, fallback, and
+construction-specific limits. Privacy continues to own purpose, authority,
+affected parties, minimization, recipients, retention, rights, remedy, and the
+complete-enough information lifecycle.
+
+The nesting is editorial, not evidentiary. Cryptographic validity cannot
+authorize a purpose or prove end-to-end privacy, and a privacy record cannot
+establish hardware trust, proof soundness, or side-channel resistance. This
+URL, its local claim, source mappings, proof target, test plan, and
+argument-level support ceiling remain independently reviewable.
+
 ## Summary
 
 Confidential computation, verifiable computation, remote attestation, privacy,

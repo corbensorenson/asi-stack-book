@@ -34,6 +34,24 @@ UNIT_23_REQUIRED = [
     "evidentiary authority are separate claims",
     "does not establish that the proposed controller is economically optimal",
 ]
+UNIT_04_REQUIRED = [
+    "## A Change Can Be Correct and Still Be Unsafe",
+    "## The Smallest Powerful Kernel",
+    "## The Model Is Part of the Attack Surface",
+    "## Privacy Is About Use, Not Merely Secrecy",
+    "## Protected Computation Is Evidence, Not Permission",
+    "## Model Weights Are a Custody Graph",
+    "## The Supply Chain Is a Living Dependency Graph",
+    "## Release Changes the Kind of Control",
+    "## One End-to-End Custody Decision",
+    "## Failure Cases",
+    "## What the Current Evidence Can Establish",
+    "## From Minimum Implementation to a Mature Security Fabric",
+    "## The Strongest Objection",
+    "## What This Establishes",
+    "A successful local load is not release authority",
+    "The conclusion should change if simpler systems prove equally effective",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -78,6 +96,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
                 owner_url = f"https://corbensorenson.github.io/asi-stack-book/chapters/{owner_id}.html"
                 if owner_url not in panel:
                     errors.append(f"{unit['unit_id']}: missing discoverable owner route {owner_id}")
+    unit_04 = next((unit for unit in units if unit.get("unit_id") == "unit-04"), None)
+    if unit_04 is None or unit_04.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 4 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_04["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_04_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 4 missing required argument boundary: {fragment!r}")
     unit_23 = next((unit for unit in units if unit.get("unit_id") == "unit-23"), None)
     if unit_23 is None or unit_23.get("state") != "target_length_reached_internal_review_pending":
         errors.append("Unit 23 has not reached its drafting target")

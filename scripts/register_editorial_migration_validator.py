@@ -30,6 +30,17 @@ ARTIFACTS = [
     "evidence_quality/claim_reviews/governed-deliberation-and-test-time-scaling.json",
     "evidence_quality/claim_reviews/rankfold-neuralfold-and-artifact-compression.json",
     "evidence_quality/claim_reviews/resource-economics-and-token-budgets.json",
+    "chapters/security-kernel-and-digital-scifs.qmd",
+    "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
+    "chapters/privacy-data-rights-and-information-flow-governance.qmd",
+    "chapters/confidential-and-verifiable-ai-computation.qmd",
+    "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
+    "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
+    "chapters/open-weight-release-and-post-release-control.qmd",
+    "evidence_quality/claim_reviews/security-kernel-and-digital-scifs.json",
+    "evidence_quality/claim_reviews/adversarial-machine-learning-and-model-attack-surface.json",
+    "evidence_quality/claim_reviews/model-weight-custody-and-hardware-roots-of-trust.json",
+    "evidence_quality/claim_reviews/ai-supply-chain-integrity-and-lifecycle-provenance.json",
 ]
 
 
@@ -46,7 +57,7 @@ def main() -> None:
     contract = {
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and metadata-only EM0/EM1 state.",
+        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the two completed no-cutover EM2 composition packages.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
         "output_assertions": [
@@ -60,15 +71,15 @@ def main() -> None:
             "5 dossier owners",
             "1 back-matter owner",
             "26 Human Reader units",
-            "4 semantic mutations reject",
+            "5 semantic mutations reject",
             "support and release effects none",
         ],
-        "claim_scope": "Metadata-only publication classification, legacy identity preservation, and Human Reader routing for EM0/EM1.",
+        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and two evidence-preserving EM2 composition packages without public cutover.",
         "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
-        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "composition-boundary erasure"],
-        "prohibited_inference": "Metadata classification does not complete publication composition, the semantic merge, Human Reader prose, public cutover, release, safety, readiness, AGI, or ASI.",
+        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure"],
+        "prohibited_inference": "Composition does not transfer technical ownership or support, complete the remaining publication nests or semantic merge, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
         "contract_precision": "exact_high_impact",
-        "semantic_review_state": "checked_metadata_only_editorial_migration",
+        "semantic_review_state": "checked_two_no_cutover_composition_packages",
     }
     unit.update(contract)
     for artifact in ARTIFACTS:

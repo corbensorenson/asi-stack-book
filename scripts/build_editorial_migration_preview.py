@@ -132,7 +132,7 @@ def build_preview(structure: dict) -> dict:
     return {
         "schema_version": 1,
         "product_id": "editorial-migration-metadata-preview",
-        "state": "method_detail_pilot_composed_no_public_cutover",
+        "state": "two_packages_composed_no_public_cutover",
         "sources": ["book_structure.json", "docs/human_reader_26_unit_outline.md"],
         "book_structure_sha256": digest(STRUCTURE),
         "human_reader_outline_sha256": digest(OUTLINE),
@@ -143,7 +143,7 @@ def build_preview(structure: dict) -> dict:
         "role_counts": {role: len(rows) for role, rows in sorted(roles.items())},
         "roles": dict(sorted(roles.items())),
         "human_reader": {
-            "state": "outlined_manuscript_pending",
+            "state": "independent_manuscript_in_progress",
             "unit_count": len(units),
             "owner_route_count": sum(len(unit["owner_ids"]) for unit in units),
             "units": units,
@@ -152,8 +152,8 @@ def build_preview(structure: dict) -> dict:
         "public_route_effect": "none",
         "non_claims": [
             "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-            "Metadata classification does not complete prose composition or the semantic merge candidate.",
-            "The 26-unit outline is not a completed Human Reader manuscript.",
+            "Two composition packages do not complete the remaining publication nests or semantic merge candidate.",
+            "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
             "No support state, release state, safety, readiness, AGI, or ASI claim changes.",
         ],
     }

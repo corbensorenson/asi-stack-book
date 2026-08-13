@@ -4,13 +4,13 @@
   "state": "independent_manuscript_in_progress",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "01a5dc46a69c4ab5befc571a4e50075af210f3bb8c8bea7b3809ddca938ffa35",
+  "book_structure_sha256": "7591b07bd4a029d186ca331019e36af57c4361ea10291a06c059fb7cf32da371",
   "outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
   "unit_count": 26,
   "owner_route_count": 87,
-  "started_unit_count": 1,
-  "target_length_unit_count": 1,
-  "visible_word_count": 5508,
+  "started_unit_count": 2,
+  "target_length_unit_count": 2,
+  "visible_word_count": 11158,
   "units": [
     {
       "unit_id": "unit-01",
@@ -102,9 +102,9 @@
       "target_min_words": 5500,
       "target_max_words": 7500,
       "source_file": "chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
-      "state": "not_started",
-      "visible_word_count": 0,
-      "source_sha256": null,
+      "state": "target_length_reached_internal_review_pending",
+      "visible_word_count": 5650,
+      "source_sha256": "ff256d926acb80b9eb8fe39a212e274d0cf62671f2a697680511239745adb81d",
       "owner_support_states": [
         "argument"
       ]

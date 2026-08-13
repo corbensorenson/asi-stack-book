@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/security-kernel-and-digital-scifs.qmd",
     "structured_atoms_reviewed": 66,
-    "prose_candidates_adjudicated": 66,
+    "prose_candidates_adjudicated": 68,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 canonical descendant-revocation proof increment. The exact 56-theorem surface now includes rejected-state noninterference, arbitrary-run descendant-inventory and trace custody, terminal revocation, twelve state-preserving rejecting controls, six inventory permutations, and a count-only impossibility result. Every newly scanned sentence remains owned by an existing formal target or explicit non-claim boundary. No new support atom, runtime-security inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 canonical descendant-revocation proof increment. The exact 56-theorem surface now includes rejected-state noninterference, arbitrary-run descendant-inventory and trace custody, terminal revocation, twelve state-preserving rejecting controls, six inventory permutations, and a count-only impossibility result. Every newly scanned sentence remains owned by an existing formal target or explicit non-claim boundary. No new support atom, runtime-security inference, evidence transition, release decision, or publication claim was introduced. The security/custody EM2 publication-composition additions were re-reviewed; scanner deltas are line-wrapped ownership or non-inference clauses, and the composition adds no new material or support-bearing claim."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -511,6 +511,14 @@
     "security-kernel-and-digital-scifs.prose.136e62dc1878": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Representation-layer security: residuals, macros, and exact objects` and reviewed owner atoms `security-kernel-and-digital-scifs.beyond_sota.001`, `security-kernel-and-digital-scifs.minimum.001`, `security-kernel-and-digital-scifs.core`."
+    },
+    "security-kernel-and-digital-scifs.prose.62e9d5ab8351": {
+      "state": "nonmaterial_explanation",
+      "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
+    },
+    "security-kernel-and-digital-scifs.prose.1cf372259a97": {
+      "state": "nonmaterial_explanation",
+      "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
     }
   },
   "prose_review_lineage": [

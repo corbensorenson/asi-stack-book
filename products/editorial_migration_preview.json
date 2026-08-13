@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "product_id": "editorial-migration-metadata-preview",
-  "state": "method_detail_pilot_composed_no_public_cutover",
+  "state": "two_packages_composed_no_public_cutover",
   "sources": [
     "book_structure.json",
     "docs/human_reader_26_unit_outline.md"
   ],
-  "book_structure_sha256": "01a5dc46a69c4ab5befc571a4e50075af210f3bb8c8bea7b3809ddca938ffa35",
-  "human_reader_outline_sha256": "198e75920bf9dc8129f950538601b1fa25f4a12d1e2d949aa30abca846d6e20e",
+  "book_structure_sha256": "7591b07bd4a029d186ca331019e36af57c4361ea10291a06c059fb7cf32da371",
+  "human_reader_outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
   "reference_owner_count": 87,
   "main_book_owner_count": 56,
   "role_counts": {
@@ -648,7 +648,7 @@
     ]
   },
   "human_reader": {
-    "state": "outlined_manuscript_pending",
+    "state": "independent_manuscript_in_progress",
     "unit_count": 26,
     "owner_route_count": 87,
     "units": [
@@ -901,8 +901,8 @@
   "public_route_effect": "none",
   "non_claims": [
     "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-    "Metadata classification does not complete prose composition or the semantic merge candidate.",
-    "The 26-unit outline is not a completed Human Reader manuscript.",
+    "Two composition packages do not complete the remaining publication nests or semantic merge candidate.",
+    "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
     "No support state, release state, safety, readiness, AGI, or ASI claim changes."
   ]
 }

@@ -671,8 +671,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "adversarial-machine-learning-and-model-attack-surface": {
-        "reviewed_sha256": "0e62dcdd6538d66405c552842f8ff8fd18f6d52f00b6c5c8566ab330aac1b8c8",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "fa6fdb2f85aca751464dc6db2bc888be39dc305a1541584e517c1f587911b6e4",
+        "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -681,12 +681,13 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the formalization is restricted to authored dossier admissibility, exact repair routes, typed assurance separation, finite trace quarantine, bounded disposition invalidation, information-loss countermodels, and a no-release consumer bridge",
             "the chapter preserves attacker competence, positive controls, clean utility, false-negative ceilings, safe authority, residual ownership, and argument-only support",
             "the reader-facing three-attack comparison keeps extraction, constructed backdoor persistence, and cross-channel defense externality in their distinct source-reported scopes rather than collapsing them into a universal robustness score",
+            "the added publication-placement paragraph nests learned-model attack analysis under the Security Kernel while preserving this chapter's separate threat taxonomy, source queue, concept contracts, support ceiling, and stable route",
         ],
         "support_state_effect": "none",
     },
     "open-weight-release-and-post-release-control": {
-        "reviewed_sha256": "9f0d7eef5c78bbe3775f33e78bfa56ba902c9157e6a73b9a8bfeac71bf2c09ca",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "dd8e0e22e434910f487036aeb123747df1ae6db79967a1b275219b1b4f632743",
+        "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -695,6 +696,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the formalization is restricted to trusted authored fields, exact repairs, arithmetic monotonicity, and information-loss countermodels; it authorizes no release and reports no ecosystem behavior",
             "the chapter preserves fair rescue, exact artifact custody, ecosystem uncertainty, non-adoption, derivative exposure, and argument-only support",
             "the one-public-copy scene correctly separates official withdrawal and patch coordination from universal recall and does not perform or authorize release",
+            "the added publication-placement paragraph nests irreversible release analysis under Model-Weight Custody while retaining this chapter's release-decision owner, eight concept contracts, support ceiling, non-release boundary, and stable route",
         ],
         "support_state_effect": "none",
     },
@@ -812,8 +814,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "confidential-and-verifiable-ai-computation": {
-        "reviewed_sha256": "1653b4a37e7abd1dde400a03541ff8abdf2baf88ecbbe0522190b36064e233af",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "5cf320461c380a059f110224d2367dd9b5ddaf41771e86409081694e881c39b6",
+        "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -822,6 +824,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "the chapter preserves adversary and leakage models, circuit-to-semantics gaps, replay, composition, side channels, matched native baselines, explicit fallback, and argument-only support",
             "the formalization is restricted to authored dossier admissibility, typed evidence non-substitution, finite leakage accounting, receipt and fallback invalidation, information-loss countermodels, and a privacy-owner rejection; it establishes no cryptographic, hardware, privacy, authorization, or deployment result",
             "the attested-enclave and leaking-fallback scene correctly composes protected-path evidence with fallback, authorization, disclosure, timing, and leakage residuals without implying cryptographic or end-to-end privacy proof",
+            "the added publication-placement paragraph nests protected-computation mechanics under Privacy and Information Flow while preserving this chapter's distinct guarantee-vector owner, eight concept contracts, support ceiling, non-authorization boundary, and stable route",
         ],
         "support_state_effect": "none",
     },
