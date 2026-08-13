@@ -1,0 +1,669 @@
+---
+title: "Evidence States and Scalable Oversight"
+unit_id: "unit-05"
+---
+
+The paper package from the previous chapter is now contained. Its manuscript
+has been preserved, its code has run in a bounded environment, its model and
+dependency identities are known, and its release status has not been inferred
+from local success. One test passes. The proposed adapter produces the expected
+output on the example supplied by the authors.
+
+What, exactly, did the book learn?
+
+The shortest answer is tempting: the paper works. That sentence is also
+wrong. A passing example may show that one command produced one expected
+result in one observed environment. It may support a claim about the example,
+the command, or the implementation under that configuration. It does not by
+itself show that the paper's mechanism caused the result, that the result
+generalizes, that the evaluator measured the right property, that the adapter
+is safe, that the source's interpretation is correct, or that any architectural
+claim in this book should become more confident.
+
+The distinction is easy to state and hard to preserve. People naturally read
+evidence outward. A test result becomes evidence for the implementation, then
+for the method, then for the design principle, then for the larger system. A
+paper citation lends authority to the paragraph around it. A formal proof
+makes nearby empirical language feel more certain. A sophisticated reviewer
+makes the conclusion look independently checked. An activation plot makes an
+internal mechanism seem visible. Each step may be reasonable, but none follows
+automatically from the previous one.
+
+This chapter develops the stack's answer: evidence must move through stable
+claim identities, declared roles, bounded inferences, and review paths that
+remain honest about dependence and evaluator limits. The purpose is not to
+turn judgment into a database operation. It is to prevent a useful artifact
+from speaking for claims it never tested.
+
+The security layer controlled who could read, run, and release the package.
+The evidence layer controls what conclusions may survive from what happened.
+That control is just as important. A perfectly isolated experiment can still
+measure the wrong construct, compare against a weak baseline, omit failed
+cases, or persuade a reviewer who lacks the information needed to challenge
+it.
+
+{{< include ../generated/unit-05-status.qmd >}}
+
+## A Passing Test Is Not a General Verdict
+
+Begin with three different objects. The first is a claim: a proposition with
+words, scope, and conditions under which it could be wrong. The second is an
+evidence artifact: a source passage, test result, proof object, evaluation
+transcript, model-internal observation, or review record. The third is the
+world: the implementation and environment whose behavior matters.
+
+Those objects can disagree. A claim can be precise while its evidence is weak.
+An artifact can be authentic while the represented event is misunderstood. A
+proof can be valid for a finite model while the deployed system violates the
+model's assumptions. A benchmark can be reproduced while measuring a poor
+proxy. A runtime can behave correctly while the claim describing it is too
+broad. Good evidence discipline begins by refusing to collapse the three.
+
+For the incoming adapter, the passing example has a narrow identity. It names
+the exact source commit, model configuration, command, fixture, environment,
+expected output, observed output, and time. It can support a sentence such as:
+*under this recorded configuration, the example completed and matched its
+declared expected result*. Even this sentence should preserve the command log,
+failures, and environmental assumptions that make it inspectable.
+
+The artifact cannot support *the method is generally effective* without a
+workload and comparator. It cannot support *the mechanism caused the gain*
+without interventions that distinguish the proposed mechanism from plausible
+alternatives. It cannot support *the adapter is safe* without a threat model,
+adversarial controls, and effect observations. It cannot support *the ASI Stack
+is validated* because one component-level run is not an end-to-end test of the
+architecture.
+
+This narrowing is not pedantry. It protects useful evidence. When a broad
+claim later fails, the exact passing observation can remain true. When a
+dependency changes, the result can expire without erasing its history. When a
+better evaluator reveals that the measured property was wrong, the book can
+revise the interpretation while retaining the original artifact. Evidence
+becomes more reusable when its maximum inference is explicit.
+
+The same rule applies to negative results. Suppose the adapter fails on a
+second task. The failure should be recorded before anyone explains it away.
+But *this run failed* is not identical to *the implementation is incapable*,
+and neither is identical to *the architecture is refuted*. A missing
+dependency, weak training setup, inadequate evaluator, or malformed task can
+narrow what the failure tests. Competence review may change the maximum
+inference without rewriting the raw outcome.
+
+This distinction matters in a living book because prose can improve faster
+than evidence. A revision may make an argument clearer, remove a weak analogy,
+or connect two mechanisms more convincingly. Better writing is valuable, but
+it is not a support transition. If exposition and evidence are allowed to move
+together by mood, the most polished chapter will gradually sound the most
+proven.
+
+## Claims Need Stable Identities
+
+A claim is not merely a sentence at a page location. It is an object that
+persists while wording, scope, and evidence change. Its record needs at least a
+stable identity, current text, claim kind, scope, support state, evidence
+references, limitations, defeaters, descendants, and history.
+
+Stable identity solves a practical problem. The same sentence can mean
+different things under different quantifiers. “The adapter improves source
+routing” might refer to one fixture, one family of papers, the current
+repository, or technical writing in general. An evaluation over ten curated
+examples may be relevant to the first two and silent about the others. If the
+claim has no identity beyond its prose, evidence can attach to the broadest
+reading after the fact.
+
+The stack therefore separates a core architectural claim from narrower
+subclaims. A core might say that consequential evidence should move through a
+versioned claim ledger. Subclaims can address whether a schema captures the
+needed fields, whether a validator rejects identity substitution, whether a
+review protocol finds an omitted failure, or whether the full system improves
+calibration on natural work. Those claims share a topic but not a support
+state.
+
+This is why support does not inherit freely. A successful fixture for the
+record shape does not promote the natural-work claim. A useful oversight
+protocol does not establish the competence of every reviewer. A causal
+intervention on one checkpoint does not establish a universal mechanism. A
+parent chapter does not inherit the proof or experiment of a technical child,
+and a child does not inherit the rhetorical importance of its parent.
+
+Stable identities also make revision safer. When a claim is narrowed, the
+ledger can retain the previous wording, the reason for narrowing, and the
+evidence that survives. When two claims are discovered to be different, they
+can split without pretending that all prior evidence applies equally. When a
+claim is deprecated, dependent conclusions can be located and re-examined.
+
+The alternative is confidence by adjacency. A citation placed near three
+sentences appears to support all three. A proof badge near a chapter title
+colors the whole chapter. A benchmark table makes the surrounding mechanism
+sound measured. Stable claim identity turns adjacency back into an explicit
+mapping question: which artifact supports which proposition, in which role,
+under which limit?
+
+## Support States Are Not a Confidence Score
+
+The book uses support states, but they should not be read as one universal
+ladder from weak to strong. Source-derived, mechanized, prototype-backed,
+synthetic-test-backed, empirical-test-backed, and external-literature-backed
+evidence answer different questions.
+
+A source note can establish what another author argued or measured. It does
+not reproduce the result locally. A proof can establish a theorem inside its
+formal assumptions. It does not show that the assumptions describe the
+runtime. A synthetic fixture can test a transition or rejection path exactly.
+It may have little transfer to natural work. An empirical result can measure a
+real workload while suffering from poor construct validity or dependence. An
+external replication can add independence while testing a narrower variant.
+
+No fixed arithmetic makes one category dominate all others. The relevant
+question depends on the claim. If the claim concerns a finite state-machine
+invariant, a proof may be decisive within that scope. If it concerns operator
+fatigue, a formal theorem over authored fields cannot replace human evidence.
+If it concerns source lineage, an exact passage may matter more than a local
+simulation. If it concerns deployment safety, no single evidence role is
+likely to be sufficient.
+
+The public support state is therefore a summary. Behind it sits an evidence
+cell that keeps quality dimensions separate: independence, reproducibility,
+recency, coverage, adversarial strength, validity, artifact access, and
+transfer distance. A result can be reproducible but dependent, adversarial but
+poorly targeted, current but inaccessible, or broad but weakly causal.
+Allowing one dimension to compensate automatically for another would hide the
+reason a reviewer should trust or distrust the result.
+
+The evidence cell also retains negative and null evidence. A campaign that
+finds no advantage against a strong baseline can leave the claim unchanged,
+narrow it, or refute a precise subclaim. An inconclusive attempt can establish
+that the instrument was inadequate. A failure to reproduce can reveal a
+configuration dependency without resolving which implementation is correct.
+These are not embarrassing leftovers. They are part of the denominator that
+makes future positive results interpretable.
+
+## An Evidence Transition Is a Bounded Argument
+
+Support changes through a transition rather than through an edit. The
+transition names the claim before and after, the proposed support movement,
+the artifacts being used, their evidence roles, the consumer, the reviewer,
+the maximum inference, the limitations, the negative evidence, the dissent,
+the expiry conditions, and the dependent claims that may need review.
+
+This is not an attempt to automate epistemology. The transition is a compact
+argument with enough structure to be challenged. Its fields prevent common
+omissions, but a shape-valid record can still contain false statements, a weak
+construct, or a captured reviewer. The record earns no authority merely by
+existing.
+
+The transition for the paper's passing example might request movement for one
+implementation subclaim from argument to synthetic-test-backed. The reviewer
+checks that the fixture was prospective rather than selected after the result,
+that the environment and expected output are bound, that failed cases remain
+visible, that the evaluator did not share the implementation defect being
+tested, and that the resulting sentence stays inside the observation.
+
+The transition should be rejected if the requested claim is broader than the
+artifact. It should also be rejected if the evidence is authentic but
+inapplicable, if the evaluator cannot inspect the relevant property, if a
+material dependency is stale, or if the proposal attempts to move a parent or
+neighbor claim. Rejection preserves the artifact. It says only that the
+requested inference did not pass.
+
+Downward movement needs equal discipline. A contradiction, failed proof,
+invalidated dataset, benchmark contamination, implementation failure, or new
+counterexample can narrow, downgrade, refute, deprecate, or expire a claim.
+The transition records which conclusion changed and which did not. This avoids
+two opposite errors: hiding negative evidence to protect the architecture, and
+letting an incompetent attempt refute an idea it never actually tested.
+
+Every accepted transition ends with a bounded handoff. The claim ledger owns
+the support record. It does not authorize deployment, training, publication,
+or tool use. Those decisions may consume the support state, but they remain
+separate acts with their own owners.
+
+## Oversight Begins Where the Evaluator Is Weaker
+
+Evidence discipline becomes difficult when the system being evaluated can
+produce work that no single reviewer can fully reconstruct. A model may search
+more alternatives, read more context, write more code, or exploit a domain
+specialism that exceeds the evaluator's immediate capacity. Scalable oversight
+asks whether decomposition, consultation, debate, critics, audits, tools, and
+selective escalation can help limited supervisors evaluate stronger systems.
+
+The word *scalable* does not mean that adding reviewers automatically solves
+the problem. It means that review protocols themselves become evaluated
+components. A protocol needs a task and authority scope, a supervisor
+capability envelope, the evidence available to each role, a comparison
+baseline, known dependencies, an outcome audit where possible, a residual
+owner, a permitted consumer, and an escalation route.
+
+Consider the adapter's proposed integration. A strong model argues that the
+passing example and clean static checks justify adoption. A smaller critic is
+asked to challenge it. A human reviewer chooses between them. This sounds like
+three layers of oversight, but the arrangement may be weaker than it appears.
+The critic might see only the model's summary rather than the raw logs. Both
+models may share the same base family and retrieval corpus. The human may lack
+time to inspect the omitted cases. The test harness may have been written by
+the same process that wrote the adapter.
+
+A useful oversight record exposes those dependencies. It names what each role
+could observe, what it could not observe, which incentives and tools it shared,
+and what outcome could later reveal whether the review was right. The protocol
+is compared with a competent simpler baseline, such as one informed human
+reviewing the complete frozen report without model advocacy.
+
+The protocol can then earn a narrow result. Perhaps the critic notices that
+the passing example used a source category excluded from the book's actual
+intake path. An independent replay confirms the mismatch. The protocol has
+helped find a real defect. It has not proved that debate is generally reliable,
+that the critic is independent, or that the adapter should be adopted. The
+evidence system can record the finding; the authority owner can keep the
+change quarantined.
+
+Where no admissible outcome exists, the honest state is unresolved. The system
+may narrow the task, acquire better evidence, ask a qualified reviewer, hold
+the decision, or accept an explicitly owned residual under existing authority.
+It may not turn a long transcript or majority vote into truth by default.
+
+## Independence Is a Dependency Graph
+
+Review roles are often counted as if independence were a head count. A
+proposer, critic, judge, and auditor look like four checks. If they share the
+same model weights, prompts, retrieval source, benchmark leakage, reward
+signal, tool defect, or organizational incentive, they may reproduce one
+error four times.
+
+Independence is better represented as a dependency graph. Nodes are people,
+models, instruments, datasets, prompts, tools, and decision owners. Edges show
+shared training, information, incentives, implementation, or authority. The
+graph does not produce a binary certificate of independence. It tells the
+reviewer which correlated failures still need a challenge.
+
+For example, two model families may have different weights but share the same
+evaluation dataset. Two human reviewers may be organizationally separate but
+use the same summary dashboard. A deterministic test may be independent of a
+model's persuasion but depend on a schema that omits the decisive property. An
+external paper may be independent in authorship while using the same benchmark
+and assumptions.
+
+The response is not maximal diversity. Additional reviewers consume time,
+money, privacy, and attention, and can create new persuasion surfaces. The goal
+is targeted separation. A suspected parser defect calls for a separately
+implemented parser or direct artifact inspection. A causal claim calls for an
+intervention that breaks the proposed mechanism while preserving plausible
+alternatives. A concern about benchmark leakage calls for a held-out or newly
+constructed cohort. A high-consequence decision with no adequate evaluator may
+call for refusal rather than another model vote.
+
+Reviewer capacity also changes over time. Queue pressure, alarm fatigue,
+automation bias, repeated approval, and persuasive presentation can degrade a
+nominally capable supervisor. A receipt showing that a human clicked approve
+does not establish that meaningful review occurred. The record should preserve
+the decision window, evidence view, intervention path, workload, unresolved
+conflicts, and whether a stop would have changed the system's behavior.
+
+## White-Box Evidence Starts a New Challenge
+
+Behavioral tests observe what a model did. White-box methods inspect internal
+states: activations, probe outputs, sparse features, circuits, attribution
+graphs, or the effects of interventions. These methods can reveal hypotheses
+that behavior alone may miss. They also create a powerful temptation to treat
+visibility as understanding.
+
+Suppose an analysis finds an activation that rises on examples labeled
+deceptive. The activation predicts the benchmark label, and suppressing it
+reduces deceptive answers. It is natural to call the feature “deception” and
+present the intervention as causal evidence. A matched control may reveal a
+different explanation: the activation tracks discussion of hypothetical
+agents across both deceptive and honest examples. Suppression reduces the
+benchmark behavior because it suppresses the topic more broadly.
+
+The original observation remains useful. The label and inference change. A
+white-box evidence packet therefore preserves the exact model and checkpoint,
+capture population, extraction method, hyperparameters, reconstruction error,
+label author, positive and negative examples, alternative labels, predictive
+performance, intervention semantics, side effects, stability, unexplained
+residuals, and expiry.
+
+The inference proceeds through a ladder. Capturing an internal state does not
+make it meaningful. Extracting a feature does not make the feature natural or
+unique. Assigning a label does not make it the model's own concept. Predicting
+behavior does not show that the model uses the feature. An intervention that
+changes behavior does not establish specificity, completeness, or safety. A
+useful research intervention does not authorize an activation policy in
+deployment.
+
+Different methods ask different questions. A probe can show that information
+is available to a chosen probe family while learning the task itself from weak
+traces. A sparse dictionary can produce readable features while splitting,
+merging, or changing them across checkpoints and corpora. A circuit analysis
+can identify a sufficient path without proving that it is the only path. An
+ablation can damage unrelated computation. Steering can improve the measured
+behavior while moving the risk outside the evaluator's view.
+
+Stronger evidence comes from distinct challenges. Does the hypothesis predict
+held-out behavior beyond simple behavioral signals? Is the proposed component
+necessary under one intervention? Is it sufficient in an appropriate context?
+Are unrelated capabilities preserved? Does effect strength change coherently
+with intervention dose? Do alternative methods and checkpoints recover a
+compatible bounded story? Which behavior and computation remain unexplained?
+
+Even a good answer earns only a scoped status. It may justify additional
+scrutiny, a bounded causal claim, or a candidate monitor. The monitor or
+steering rule is a new model component with false positives, false negatives,
+latency, privacy exposure, side effects, fallback, rollback, and expiry. It
+must be qualified separately against a strong behavioral baseline.
+
+This is why white-box evidence belongs inside the broader evaluation-integrity
+family while retaining its own technical owner. Behavioral discrepancies do
+not identify internal causes. Internal observations do not establish
+deception, sandbagging, or intent. The two evidence paths can constrain and
+challenge one another without inheriting each other's conclusions.
+
+## One Patch, Three Evidence Paths
+
+Return to the paper-ingestion change. The adapter proposes a mapping from new
+paper passages to existing chapter owners. Its authors claim that an internal
+routing representation makes the mapping more consistent and cheaper to
+review. The repository now has three evidence paths.
+
+The first path is behavioral. A prospective fixture presents papers with known
+ownership distinctions and records the adapter's mappings, abstentions,
+errors, and costs against a simple rule-based baseline and a direct strong-model
+baseline. The passing example establishes one observation. A broader claim
+requires the complete denominator, failures, matched access, and a workload
+that was not selected after seeing the adapter's strengths.
+
+The second path is oversight. A critic receives the paper, the candidate
+mapping, the owner definitions, and the same source boundaries as the
+proposer. A human reviewer receives both arguments and the underlying passages.
+An independent outcome check asks whether the accepted mapping preserves the
+book's canonical ownership graph. The protocol records shared dependencies and
+compares the assisted path with informed direct review.
+
+The third path is internal. A probe or sparse feature appears to distinguish
+mechanism-bearing passages from examples and background. The analysis records
+the exact checkpoint, extraction method, label construction, reconstruction,
+counterexamples, and stability. It tests whether the feature predicts held-out
+ownership decisions beyond surface vocabulary and whether interventions alter
+the target decision without damaging unrelated routing.
+
+The three paths do not vote on one universal verdict. The behavioral path may
+show that the adapter works on a bounded cohort. The oversight path may show
+that assisted review finds a particular omission. The internal path may remain
+predictive but not causal. The claim ledger can accept, reject, or defer
+separate transitions for each proposition.
+
+Suppose the behavioral fixture passes, the critic finds no new errors, and the
+internal feature is unstable across a checkpoint update. The correct result is
+not “two of three checks passed.” The implementation subclaim may gain bounded
+synthetic support. The oversight protocol may record no demonstrated advantage
+over direct review. The internal-mechanism claim may remain unsupported or
+expire. The architecture-level claim remains at its prior state.
+
+Now suppose a later outcome audit finds that the fixture omitted papers with
+mixed normative and implementation content. That discovery can invalidate the
+transition that depended on the cohort without erasing the exact examples that
+did pass. Descendant claims and decisions are located through identity, not
+through recollection. The adapter may return to quarantine, the test may be
+revised prospectively, and the negative result remains part of the next
+denominator.
+
+This is the practical value of the machinery: not confidence, but controlled
+revision. The system can learn without pretending that every artifact agrees,
+and it can recover without deleting the history that explains why confidence
+changed.
+
+## Failure Cases
+
+**Citation laundering.** A source is accurately cited but mapped to a broader
+claim than the passage supports. The cure is claim-specific source mapping and
+a visible limit, not more citations.
+
+**Proof halo.** A theorem about a finite record lifecycle makes readers infer
+that the recorded event is true or the deployed system is safe. The proof must
+state its trusted inputs and maximum inference beside the theorem-bearing
+claim.
+
+**Fixture inflation.** A synthetic test of schema or transition behavior is
+reported as evidence of natural-task utility. The claim identity and evidence
+role must keep record behavior separate from world behavior.
+
+**Result cherry-picking.** Passing cases are reported while failed, retried,
+abstained, or excluded cases disappear. Complete denominators and immutable
+raw outcomes prevent a cleaned summary from replacing the campaign.
+
+**Parent promotion.** A narrow child claim gains evidence and the larger
+chapter or architecture inherits the movement. Support transitions must name
+their exact target and reject upward or lateral inheritance.
+
+**Correlated oversight.** Several reviewers share the same blind spot and are
+counted as independent agreement. Dependency disclosure and targeted
+correlation challenges replace head count with a falsifiable review claim.
+
+**Persuasion theater.** A fluent advocate convinces a weak judge without an
+admissible outcome audit. High-risk results route to escalation or residual
+custody rather than automatic admission.
+
+**Coverage laundering.** Hard cases, abstentions, and unresolved disagreements
+are removed from the reported score. Coverage, selective risk, queue effects,
+and escalation outcomes remain beside accuracy.
+
+**White-box semantic leap.** A readable feature receives an attractive label,
+then prediction and intervention are treated as proof of a complete mechanism.
+Alternative constructs, controls, side effects, method disagreement, and
+unexplained residuals remain first-class evidence.
+
+**Monitor self-certification.** A monitor or steering policy is trusted because
+the interpretation that motivated it looked causal. The policy is treated as
+a new component and tested separately for failure, gaming, collateral effects,
+cost, rollback, and drift.
+
+**Stale reuse.** An evidence receipt survives a changed model, task, prompt,
+dataset, evaluator, protocol, or decision. Material-change triggers expire the
+dependent inference and require re-admission.
+
+**Authority laundering.** A support transition becomes permission to train,
+deploy, publish, or use tools. The claim ledger can inform those owners but
+cannot impersonate them.
+
+## The Strongest Simpler Baseline
+
+The strongest simpler baseline is not an unstructured conversation. It is a
+small, append-only review record attached to a precise claim. The record names
+the proposition, source or result, scope, reviewer, decision, limitation, and
+date. A competent human reads the complete artifact, compares it with a
+declared baseline, and updates the record. No elaborate support taxonomy,
+delegated debate, dependency graph, or white-box packet is required unless it
+changes the decision.
+
+This baseline can be very strong. Many claims do not need a complex state
+machine. A source attribution may need only an exact passage and an honest
+summary. A deterministic regression may need a pinned command and result. A
+small, transparent code change may be easier to inspect directly than to route
+through multiple AI reviewers. A behavioral test may dominate an expensive
+interpretability analysis.
+
+The stack should lose where that baseline preserves the same calibration,
+challenge, revision, and recovery at lower cost. Complexity is justified only
+when the simpler record predictably loses claim identity, dependence,
+negative evidence, expiry, or consumer boundaries that matter to consequential
+decisions.
+
+This comparison prevents governance from becoming self-validating. The
+question is not whether a richer ledger can represent more information. It is
+whether the additional structure finds consequential errors, improves
+calibration, preserves disagreement, reduces unsafe inference, or makes
+revision and recovery materially better after reviewer time and system cost
+are included.
+
+## What the Current Evidence Can Establish
+
+The live technical book contains formal models, schemas, fixtures, source
+notes, and bounded campaigns related to claim transitions, oversight, and
+white-box evidence. Those artifacts establish narrow properties about the
+records the repository actually checks. They can show, for example, that a
+finite transition rejects identity substitution, that a bounded oversight
+route refuses an incomplete handoff, or that an internal-evidence packet
+preserves declared fields and non-authority boundaries.
+
+They do not establish that the fields are true, that a reviewer is competent,
+that a model's trace is faithful, that a probe has found a genuine semantic
+feature, that an intervention is safe, that scalable oversight works on
+superhuman tasks, or that the full evidence system improves natural work.
+Source-reported interpretability and oversight results remain evidence about
+their own studies, not local reproduction or universal validation.
+
+The three routed chapter cores remain at argument support. Their formal and
+executable artifacts belong to narrower subclaims and record-lifecycle
+properties. This Human Reader synthesis does not combine those narrower
+results into a stronger conclusion. It explains why the interfaces are
+needed and what experiments would justify keeping them.
+
+## From Minimum Implementation to a Mature Evidence System
+
+The minimum viable implementation is small. Give every material claim a stable
+identity, current wording, scope, support state, evidence references,
+limitations, and immutable transition history. Require every proposed movement
+to name its target, artifact role, maximum inference, reviewer, negative
+evidence, and expiry. Reject movement to parents or neighbors. Keep deployment
+and publication authority elsewhere.
+
+Add scalable oversight only where the evaluator gap matters. The first useful
+protocol records the task, risk, evidence views, role dependencies, direct
+review baseline, outcome-audit status, permitted consumer, abstention or
+residual, and escalation owner. High-risk results without adequate outcome
+evidence do not become training labels, claim transitions, or release inputs.
+
+Add white-box evidence only where internal access might change a decision. The
+first packet binds the model, checkpoint, capture, extraction assumptions,
+label provenance, predictive test, intervention, controls, side effects,
+stability, residual, and maximum inference. A readable visualization is not a
+completed packet. A causal-bounded result is not a release decision.
+
+A mature system would maintain a living claim graph. It would know which
+sources, proofs, tests, evaluations, internal observations, and decisions
+depend on each claim version. New evidence could strengthen one proposition,
+narrow another, expire a third, and leave the parent unchanged. Contradictions
+and null results would remain searchable. Dissent would be preserved rather
+than averaged away.
+
+Oversight would become an adaptive but governed service. Review protocols
+would be selected by risk, evaluator capacity, known dependence, available
+outcome references, latency, privacy, and cost. Their own performance would be
+measured against direct-review and simpler assisted baselines. The system would
+learn which kinds of decomposition and challenge help, where they merely add
+persuasion, and when the correct action is to abstain.
+
+White-box methods would enter as competing instruments rather than privileged
+windows into the model. Predictive and causal hypotheses would be challenged
+across methods, checkpoints, data shifts, and behavioral controls. Monitor and
+steering policies would be versioned, qualified, observed, rolled back, and
+retired like other model changes. Unexplained computation and construct
+uncertainty would remain visible.
+
+At the frontier, the evidence system would continuously test its own trusted
+base. It would ask whether evaluators share hidden dependencies, whether
+selection pressure changes what the model reveals, whether reviewers are being
+persuaded rather than informed, whether the evidence schema omits the decisive
+property, and whether the governance burden itself is causing bypass. It would
+generate countercases and preserve failures without allowing the learner to
+rewrite protected histories or promote itself.
+
+That mature state is a research target. The present repository does not
+demonstrate a generally reliable scalable-oversight system, complete model
+interpretability, evaluator independence, or a natural-work advantage for the
+full claim ledger. Those are argument-exit obligations, not implied results.
+
+## The Strongest Objection
+
+The strongest objection is that evidence machinery can produce epistemic
+theater. A claim receives an identifier, vector, transition, reviewer,
+dependency graph, and status panel. The process looks rigorous even when the
+construct is wrong and every participant shares the same blind spot. Worse,
+the structure can make a weak result persuasive because readers mistake
+record completeness for truth.
+
+This objection applies with special force to AI-assisted oversight. A model
+can generate both the proposal and its critique, supply plausible alternatives,
+and write the transition record. The human sees a polished debate and a green
+validator. Internal evidence adds another layer of apparent access: a feature
+plot or causal intervention makes the system look understood even when the
+label, method, and coverage are fragile.
+
+The architecture cannot eliminate this risk. Its answer is deliberately
+limited. Record shape is not evidence truth. Roles are not independence.
+Votes are not outcomes. Interventions are not completeness. Review does not
+grant authority. Every layer preserves a route to no change, downgrade,
+abstention, or refusal. The strongest baseline remains visible, and the richer
+system must demonstrate decision value rather than assume it.
+
+The machinery should be removed where it does not change conclusions. Low-risk
+claims can use light records. Transparent artifacts can receive direct review.
+Behavioral evidence can beat white-box analysis. A fixed review policy can beat
+adaptive orchestration. The evidence system earns its complexity only through
+better calibration, challenge, correction, and recovery on natural work.
+
+## Evidence That Would Change the Conclusion
+
+The chapter's conclusion should narrow if a simpler append-only claim record
+matches the full system on calibration, false promotion, challenge success,
+negative-result retention, revision accuracy, and recovery cost. It should
+narrow if direct expert review matches delegated protocols after equal access,
+time, task difficulty, and outcome auditing. It should narrow if white-box
+methods add no decision-relevant information beyond strong behavioral
+baselines after compute, analyst effort, privacy, maintenance, and collateral
+effects are counted.
+
+The conclusion should strengthen only through matched natural correction
+streams. Those streams need prospectively frozen claims and workloads,
+complete outcome denominators, strong simple baselines, materially separated
+evaluators, hard negative and positive controls, real model and task changes,
+adversarial attempts to exploit review, and independently checked outcomes.
+They must measure not only accuracy but false promotion, false quarantine,
+coverage, selective risk, reviewer burden, latency, privacy, cost, residual
+age, rollback, and recovery.
+
+White-box promotion needs an additional burden: multiple method families,
+construct alternatives, held-out behavioral prediction, necessity and
+sufficiency distinctions, specificity and side-effect checks, checkpoint and
+distribution stability, method disagreement, and a strong behavioral-only
+baseline. A bounded gain must survive without becoming a claim of whole-model
+understanding or safety.
+
+Failure can also change the conclusion. If structured evidence records
+systematically increase confidence without improving correctness, if review
+protocols amplify persuasion or hide correlated error, or if the overhead
+drives consequential work into unrecorded channels, the stack should simplify
+or reject those mechanisms.
+
+## What This Establishes
+
+Evidence States owns how a claim's support may change. Scalable Oversight owns
+the protocol by which limited evaluators, assistants, critics, auditors, and
+escalation owners contribute bounded review. White-Box Evidence owns the
+maximum inference that may survive from internal-state observation and
+intervention. Adversarial Evaluation remains the broader owner for behavioral
+and training-time observation integrity. These responsibilities interact, but
+none inherits another's evidence or authority.
+
+The practical rule is to keep the inference smaller than the artifact until a
+claim-specific transition earns more. A passing test is not a method verdict.
+A citation is not local reproduction. A proof is not runtime truth. A long
+debate is not independent review. A human approval is not meaningful control
+by default. An activation is not a concept. A causal intervention is not a
+complete mechanism. A support transition is not permission to deploy or
+publish.
+
+For the incoming paper, the book can now say something precise. One example
+may pass. One implementation subclaim may receive bounded support after exact
+review. The broader method can remain untested. The oversight protocol can
+record whether it found a real defect and what dependencies remain. The
+internal observation can remain predictive, causal-bounded, unstable, or
+rejected without forcing a universal verdict. Every conclusion retains the
+evidence that produced it and the conditions that would expire it.
+
+This discipline still depends on people. Someone chooses the claim, interprets
+the request, defines the construct, sets the evidence threshold, and decides
+whether a residual is acceptable. Those people can be overloaded, persuaded,
+or mistaken. The next chapter moves into that human boundary: how an ambiguous
+request becomes a governed intent contract, how meaningful control is
+preserved under limited attention, and how communication itself becomes an
+epistemic attack surface.

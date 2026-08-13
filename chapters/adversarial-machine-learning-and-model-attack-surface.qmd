@@ -419,15 +419,6 @@ All dossier fields are authored assumptions. Lean does not prove robustness, exp
 | `ext_carlini_training_data_extraction_2021` | Extracting Training Data from Large Language Models | Primary failure source reporting black-box extraction of memorized GPT-2 training sequences. The source result is configuration-bound and not a local or universal leakage result. |
 | `ext_adversarial_sensor_fusion_2022` | Adversarial Robustness of Deep Sensor Fusion Models | WACV camera-LiDAR study reporting that fusion can improve clean accuracy and some single-source robustness while single-channel adversarial training can create cross-channel externalities. The results are source-reported, architecture- and threat-model-bound, and not local evidence that fusion is safe. |
 
-### Manifest source assignment reconciliation
-
-These rows keep Adversarial Machine Learning and the Model Attack Surface's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
-
-| Source | Intake role | Boundary |
-|---|---|---|
-| `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region. | A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-
-<!-- manifest-source-reconciliation:end -->
 ### Publication placement and preserved technical ownership
 
 In the consolidated publication argument, this chapter is the learned-model
@@ -445,6 +436,15 @@ cannot establish robustness of the learned model. This URL, its local claim,
 source mappings, proof target, test plan, and argument-level support ceiling
 remain independently reviewable.
 
+### Manifest source assignment reconciliation
+
+These rows keep Adversarial Machine Learning and the Model Attack Surface's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region. | A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Adversarial machine learning governs attacks on learned behavior across data,

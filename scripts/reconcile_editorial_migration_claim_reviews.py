@@ -12,19 +12,10 @@ ROOT = Path(__file__).resolve().parents[1]
 QUEUE = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 REVIEWS = ROOT / "evidence_quality/claim_reviews"
 EXPECTED = {
-    "security-kernel-and-digital-scifs.prose.62e9d5ab8351",
-    "security-kernel-and-digital-scifs.prose.1cf372259a97",
-    "adversarial-machine-learning-and-model-attack-surface.prose.b6c3b78b0699",
-    "adversarial-machine-learning-and-model-attack-surface.prose.458a3c1b73a0",
-    "model-weight-custody-and-hardware-roots-of-trust.prose.b52edc76b796",
-    "model-weight-custody-and-hardware-roots-of-trust.prose.9cf20c4f966a",
-    "model-weight-custody-and-hardware-roots-of-trust.prose.205cd65f040f",
+    "adversarial-evaluation-sandbagging-and-training-time-deception.prose.24cc47fd5e4d",
 }
 REVIEWED_CHAPTERS = {
-    "security-kernel-and-digital-scifs",
-    "adversarial-machine-learning-and-model-attack-surface",
-    "model-weight-custody-and-hardware-roots-of-trust",
-    "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "adversarial-evaluation-sandbagging-and-training-time-deception",
 }
 
 
@@ -69,9 +60,9 @@ def main() -> None:
         review["semantic_sweep"]["prose_candidates_adjudicated"] = counts[chapter_id]
         prior = review["semantic_sweep"].get("review_note", "")
         suffix = (
-            " The security/custody EM2 publication-composition additions were re-reviewed; "
-            "scanner deltas are line-wrapped ownership or non-inference clauses, and the "
-            "composition adds no new material or support-bearing claim."
+            " The white-box/evaluation EM2 publication-composition additions were re-reviewed; "
+            "the scanner delta is a line-wrapped non-inference clause, and the composition "
+            "adds no new material or support-bearing claim."
         )
         if suffix.strip() not in prior:
             review["semantic_sweep"]["review_note"] = prior.rstrip() + suffix

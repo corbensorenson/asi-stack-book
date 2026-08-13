@@ -41,6 +41,9 @@ ARTIFACTS = [
     "evidence_quality/claim_reviews/adversarial-machine-learning-and-model-attack-surface.json",
     "evidence_quality/claim_reviews/model-weight-custody-and-hardware-roots-of-trust.json",
     "evidence_quality/claim_reviews/ai-supply-chain-integrity-and-lifecycle-provenance.json",
+    "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+    "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+    "evidence_quality/claim_reviews/adversarial-evaluation-sandbagging-and-training-time-deception.json",
 ]
 
 
@@ -57,7 +60,7 @@ def main() -> None:
     contract = {
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the two completed no-cutover EM2 composition packages.",
+        "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the three completed no-cutover EM2 composition packages.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Require disjoint owner roles, exact parents and legacy routes, local claim ownership, one Human Reader route per owner, a canonical preview, and no prose, support, release, or public-route cutover.",
         "output_assertions": [
@@ -71,15 +74,15 @@ def main() -> None:
             "5 dossier owners",
             "1 back-matter owner",
             "26 Human Reader units",
-            "5 semantic mutations reject",
+            "6 semantic mutations reject",
             "support and release effects none",
         ],
-        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and two evidence-preserving EM2 composition packages without public cutover.",
+        "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and three evidence-preserving EM2 composition packages without public cutover.",
         "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
-        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure"],
+        "negative_control_cases": ["support promotion", "owner reroute", "parent erasure", "method-detail composition-boundary erasure", "security-custody composition-boundary erasure", "white-box composition-boundary erasure"],
         "prohibited_inference": "Composition does not transfer technical ownership or support, complete the remaining publication nests or semantic merge, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
         "contract_precision": "exact_high_impact",
-        "semantic_review_state": "checked_two_no_cutover_composition_packages",
+        "semantic_review_state": "checked_three_no_cutover_composition_packages",
     }
     unit.update(contract)
     for artifact in ARTIFACTS:

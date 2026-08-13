@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4104,
+    "candidate_count": 4105,
     "review_state_counts": {
       "duplicate_of_atom": 1985,
       "editorial_or_question": 58,
       "historical_or_source_report": 338,
       "material_atom": 3,
-      "nonmaterial_explanation": 1720
+      "nonmaterial_explanation": 1721
     }
   },
   "candidates": [
@@ -17505,7 +17505,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.b6c3b78b0699",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:443",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:434",
       "sentence": "result cannot establish a secure authority-use route, and a mediated runtime",
       "cues": [
         "cannot"
@@ -17524,7 +17524,7 @@
     {
       "candidate_id": "adversarial-machine-learning-and-model-attack-surface.prose.458a3c1b73a0",
       "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
-      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:444",
+      "source": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd:435",
       "sentence": "cannot establish robustness of the learned model.",
       "cues": [
         "cannot"
@@ -65555,9 +65555,28 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.7bca16f1431a",
+      "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.24cc47fd5e4d",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:146",
+      "sentence": "identify its internal cause, and an activation pattern does not establish",
+      "cues": [
+        "cause"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.7bca16f1431a",
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:171",
       "sentence": "disclosure and redaction; measures useful throughput, errors, delay, burden,",
       "cues": [
         "measures"
@@ -65576,7 +65595,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a369bf1e22d2",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:163",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:188",
       "sentence": "signal should not be the only artifact deciding whether that signal was",
       "cues": [
         "should"
@@ -65595,7 +65614,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d8aeb6bcc4cf",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:166",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:191",
       "sentence": "deception; it means the record cannot support the broadest interpretation.",
       "cues": [
         "cannot"
@@ -65614,7 +65633,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9f7c2876c7b8",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:176",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:201",
       "sentence": "It must not become a diagnosis of intent",
       "cues": [
         "must"
@@ -65633,7 +65652,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fa5f3db021e5",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:196",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:221",
       "sentence": "**What this diagram shows:** every observation first retains the conditions under",
       "cues": [
         "shows"
@@ -65652,7 +65671,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.95a4de28b54f",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:243",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:268",
       "sentence": "block or bound an input to those owners; it cannot validate their artifacts,",
       "cues": [
         "cannot"
@@ -65671,7 +65690,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.d7f5723716b2",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:247",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:272",
       "sentence": "These interfaces prevent a single owner from laundering its own observations.",
       "cues": [
         "prevent"
@@ -65690,7 +65709,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.18b0a5fbf2a1",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:251",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:276",
       "sentence": "promotion decision, where SCF can require a rerun, a smaller scope, or explicit",
       "cues": [
         "require"
@@ -65709,7 +65728,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.71c87593bee9",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:266",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:291",
       "sentence": "not require perfect detectors or an impossible guarantee that no model adapts",
       "cues": [
         "guarantee",
@@ -65729,7 +65748,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.4e808c48f686",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:267",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:292",
       "sentence": "They require the more practical discipline of retaining the",
       "cues": [
         "require"
@@ -65748,7 +65767,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.2cb5c7bf1051",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:271",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:296",
       "sentence": "The full invariant set additionally requires named consumers and outcomes;",
       "cues": [
         "requires"
@@ -65767,7 +65786,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.c04b6874073a",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:278",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:303",
       "sentence": "prospective replication and transfer; authorized disclosure; review rather than",
       "cues": [
         "transfer"
@@ -65786,7 +65805,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.43430a21a4a3",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:285",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:310",
       "sentence": "Sandbagging that causes a capability threshold to be missed or delayed.",
       "cues": [
         "causes"
@@ -65805,7 +65824,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.3e5290d49a6e",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:286",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:311",
       "sentence": "Reward hacking that improves an outcome metric while eroding task fidelity.",
       "cues": [
         "improves"
@@ -65824,7 +65843,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.075bcc151626",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:314",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:339",
       "sentence": "**A detector becomes part of what it measures.** Visibility, reward coupling,",
       "cues": [
         "measures"
@@ -65843,7 +65862,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8e8061991593",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:332",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:357",
       "sentence": "**\"Testing deception requires creating a deceptive model.\"** The first campaign",
       "cues": [
         "requires"
@@ -65862,7 +65881,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.07064e52a7ea",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:361",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:386",
       "sentence": "Candidate multiplicity cannot overcome an evaluator channel that carries too",
       "cues": [
         "cannot"
@@ -65881,7 +65900,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9ad21a0aae2b",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:369",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:394",
       "sentence": "An evaluator ecology should record evaluator identities, training data,",
       "cues": [
         "should"
@@ -65900,7 +65919,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.25612efb057a",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:372",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:397",
       "sentence": "Some anchors must remain outside the candidate",
       "cues": [
         "must"
@@ -65919,7 +65938,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.acf7f91a6e61",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:378",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:403",
       "sentence": "It must also test the opposite failure: excessive",
       "cues": [
         "must"
@@ -65938,7 +65957,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f77efbcb92c8",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:380",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:405",
       "sentence": "No information bound or typed graph establishes evaluator validity;",
       "cues": [
         "establishes"
@@ -65957,7 +65976,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8a0012210a0f",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:381",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:406",
       "sentence": "natural attacked workloads and causal interventions remain required.",
       "cues": [
         "required"
@@ -65976,7 +65995,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.e915de44a935",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:383",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:408",
       "sentence": "Assurance-Shift Learning (`assurance_shift_learning`) turns that limit into an allocation rule: when relevant states are observationally indistinguishable to the current evaluator, more policy pressure cannot recover the missing information.",
       "cues": [
         "cannot"
@@ -65995,7 +66014,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a5b284624517",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:388",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:413",
       "sentence": "Natural and probe distributions must be reported separately, and training-time results must be compared with deployment-time behavior under changed monitor visibility and selection consequence.",
       "cues": [
         "must"
@@ -66014,7 +66033,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.6686ae0c01b7",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:390",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:415",
       "sentence": "No proposed evaluator ecology or bundle establishes that these attacks are detected.",
       "cues": [
         "establishes"
@@ -66033,7 +66052,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.721417fe5392",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:409",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:434",
       "sentence": "Acceptance requires every discrepant or context-incomplete case to avoid",
       "cues": [
         "requires"
@@ -66052,7 +66071,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a8eeca1aa79a",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:420",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:445",
       "sentence": "same task output differently, so the permitted inference and required",
       "cues": [
         "required"
@@ -66071,7 +66090,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.c1e6946f0e33",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:438",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:463",
       "sentence": "Perturbations should vary one declared factor when possible, but interactions",
       "cues": [
         "should"
@@ -66090,7 +66109,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.bdc4e288dbd0",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:464",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:489",
       "sentence": "Transfer to other tasks, models, monitors, or",
       "cues": [
         "transfer"
@@ -66109,7 +66128,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f8cbed64367b",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:465",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:490",
       "sentence": "deployment settings requires another claim and denominator.",
       "cues": [
         "requires"
@@ -66128,7 +66147,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fef85ae43095",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:479",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:504",
       "sentence": "independent evaluation, cross-context probe, or residual ownership cannot take",
       "cues": [
         "cannot"
@@ -66147,7 +66166,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.f5396a4a7d91",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:491",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:516",
       "sentence": "Where traces or attack details require",
       "cues": [
         "require"
@@ -66166,7 +66185,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.647205d3cd98",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:500",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:525",
       "sentence": "**objective shortcutting**, where reward improves without the intended task",
       "cues": [
         "improves"
@@ -66185,7 +66204,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.21b61a077abe",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:510",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:535",
       "sentence": "sandbagging; it may show ordinary elicitation sensitivity.",
       "cues": [
         "show"
@@ -66204,7 +66223,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dd6539a5e8bc",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:515",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:540",
       "sentence": "Reward-shortcut probes compare reward, intended task outcome, and transfer.",
       "cues": [
         "transfer"
@@ -66223,7 +66242,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.bac32d3a1c1e",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:532",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:557",
       "sentence": "model organisms can test behavior under explicit knowledge; they cannot prove",
       "cues": [
         "cannot",
@@ -66243,7 +66262,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.a3e3ebb8fd70",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:553",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:578",
       "sentence": "cannot hide one high-impact discrepant cohort.",
       "cues": [
         "cannot"
@@ -66262,7 +66281,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dc19253ebc8d",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:558",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:583",
       "sentence": "exhausting the capacity to investigate them may not improve useful safety.",
       "cues": [
         "improve"
@@ -66281,7 +66300,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.3a9dfd8870df",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:586",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:611",
       "sentence": "readiness handoff, release, incident, independent reproduction, or transfer",
       "cues": [
         "transfer"
@@ -66300,7 +66319,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.10867cb2046d",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:589",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:614",
       "sentence": "A viable first slice is an evaluation-integrity record that requires a model",
       "cues": [
         "requires"
@@ -66319,7 +66338,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.2796bfdcebc0",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:594",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:619",
       "sentence": "It must not train a deceptive model,",
       "cues": [
         "must"
@@ -66338,7 +66357,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.05c104ac60b7",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:595",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:620",
       "sentence": "simulate a hidden objective, or claim that a detector establishes safety.",
       "cues": [
         "establishes"
@@ -66357,7 +66376,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8ac1e4b62dba",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:615",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:640",
       "sentence": "measure useful throughput, unsafe promotion, false quarantine, detection and",
       "cues": [
         "measure"
@@ -66376,7 +66395,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.15de5ddf5e68",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:617",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:642",
       "sentence": "Any promoted result must then survive independent",
       "cues": [
         "must"
@@ -66395,7 +66414,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fea20b69192c",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:618",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:643",
       "sentence": "institutional reproduction and heterogeneous transfer across tasks, models,",
       "cues": [
         "transfer"
@@ -66414,7 +66433,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.7f2e1c436cc4",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:634",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:659",
       "sentence": "deception can be fully detected, or that a complete evaluation record proves",
       "cues": [
         "proves"
@@ -66433,7 +66452,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.dcee80effedc",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:640",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:665",
       "sentence": "changes, monitor policy, and deployment scope become versioned causes of an",
       "cues": [
         "causes"
@@ -66452,7 +66471,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.80e41c5dc5b6",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:647",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:672",
       "sentence": "It remains bounded by the support state recorded above until the necessary source mappings, schemas, proofs, tests, runtime traces, review artifacts, or governance records exist.",
       "cues": [
         "necessary"
@@ -66471,7 +66490,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.8e2fa02717c5",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:678",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:703",
       "sentence": "review handoff, and requires trigger, descendant-invalidation, ordinary-route-",
       "cues": [
         "requires"
@@ -66490,7 +66509,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fd6125da5673",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:688",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:713",
       "sentence": "These finite records do not prove any field true or any control effective.",
       "cues": [
         "prove"
@@ -66509,7 +66528,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.fdfe7591613d",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:700",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:725",
       "sentence": "ordinary repair, or reduce monitorability when the evaluation condition becomes",
       "cues": [
         "reduce"
@@ -66528,7 +66547,7 @@
     {
       "candidate_id": "adversarial-evaluation-sandbagging-and-training-time-deception.prose.9f877b506c3d",
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
-      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:713",
+      "source": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd:738",
       "sentence": "neither paper establishes local sandbagging, deception, or safety.",
       "cues": [
         "establishes"

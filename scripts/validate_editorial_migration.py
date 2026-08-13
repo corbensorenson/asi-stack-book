@@ -67,8 +67,14 @@ SECURITY_CUSTODY_CHILD_IDS = {
     "ai-supply-chain-integrity-and-lifecycle-provenance",
     "open-weight-release-and-post-release-control",
 }
-COMPOSED_PARENT_IDS = METHOD_DETAIL_PARENT_IDS | SECURITY_CUSTODY_PARENT_IDS
-COMPOSED_CHILD_IDS = METHOD_DETAIL_CHILD_IDS | SECURITY_CUSTODY_CHILD_IDS
+WHITE_BOX_PARENT_IDS = {
+    "adversarial-evaluation-sandbagging-and-training-time-deception",
+}
+WHITE_BOX_CHILD_IDS = {
+    "white-box-evidence-interpretability-and-activation-governance",
+}
+COMPOSED_PARENT_IDS = METHOD_DETAIL_PARENT_IDS | SECURITY_CUSTODY_PARENT_IDS | WHITE_BOX_PARENT_IDS
+COMPOSED_CHILD_IDS = METHOD_DETAIL_CHILD_IDS | SECURITY_CUSTODY_CHILD_IDS | WHITE_BOX_CHILD_IDS
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
         "chapters/resource-economics-and-token-budgets.qmd",
@@ -139,6 +145,22 @@ COMPOSITION_SURFACES = {
     "open-weight-release-and-post-release-control": (
         "chapters/open-weight-release-and-post-release-control.qmd",
         ["### Publication placement and preserved technical ownership", "(model-weight-custody-and-hardware-roots-of-trust.qmd)"],
+    ),
+    "adversarial-evaluation-sandbagging-and-training-time-deception": (
+        "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
+        [
+            "### Internal evidence inside the evaluation-integrity boundary",
+            "(white-box-evidence-interpretability-and-activation-governance.qmd)",
+            "does not\ninherit a white-box mechanism",
+        ],
+    ),
+    "white-box-evidence-interpretability-and-activation-governance": (
+        "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(adversarial-evaluation-sandbagging-and-training-time-deception.qmd)",
+            "does not inherit a\ndeception",
+        ],
     ),
 }
 
@@ -232,8 +254,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_two_packages_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record both EM2 packages")
+    if editorial.get("state") != "em2_three_packages_composed_public_cutover_pending":
+        errors.append("editorial migration state does not record all three EM2 packages")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",
@@ -250,6 +272,16 @@ def validate(
             "state": "composed_no_public_cutover",
             "parent_ids": sorted(SECURITY_CUSTODY_PARENT_IDS),
             "child_ids": sorted(SECURITY_CUSTODY_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-white-box-evaluation-publication-nest",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(WHITE_BOX_PARENT_IDS),
+            "child_ids": sorted(WHITE_BOX_CHILD_IDS),
             "stable_technical_routes_preserved": True,
             "claim_support_inheritance": False,
             "support_state_effect": "none",
@@ -312,6 +344,12 @@ def main() -> None:
     ].replace("without inheriting another's claim support", "while sharing claim support")
     if not validate(structure, status, preview, altered_surfaces):
         errors.append("negative control accepted: security-custody composition-boundary erasure")
+    altered_surfaces = dict(surfaces)
+    altered_surfaces["adversarial-evaluation-sandbagging-and-training-time-deception"] = altered_surfaces[
+        "adversarial-evaluation-sandbagging-and-training-time-deception"
+    ].replace("does not\ninherit a white-box mechanism", "inherits the white-box mechanism")
+    if not validate(structure, status, preview, altered_surfaces):
+        errors.append("negative control accepted: white-box composition-boundary erasure")
 
     if errors:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
@@ -319,7 +357,7 @@ def main() -> None:
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
         "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 5 rejecting controls."
+        "and 6 rejecting controls."
     )
 
 

@@ -671,7 +671,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "adversarial-machine-learning-and-model-attack-surface": {
-        "reviewed_sha256": "fa6fdb2f85aca751464dc6db2bc888be39dc305a1541584e517c1f587911b6e4",
+        "reviewed_sha256": "85de5f06db8a71fc817b20fa5a5196c79a2dcf6db0c15b3b6c2110ad14aa5110",
         "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
@@ -686,7 +686,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "open-weight-release-and-post-release-control": {
-        "reviewed_sha256": "dd8e0e22e434910f487036aeb123747df1ae6db79967a1b275219b1b4f632743",
+        "reviewed_sha256": "7aa406c048fb118f3b85acd5cf877dea39383553336f9e82add0f6a6b1c33e88",
         "reviewed_date": "2026-08-12",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
