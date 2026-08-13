@@ -414,6 +414,39 @@ UNIT_19_REQUIRED = [
     "Structural certification is not model quality",
     "The joined chapter does not combine these bounded results into a claim",
 ]
+UNIT_20_REQUIRED = [
+    "## The Checkpoint That Loaded Perfectly",
+    "## A Training Run Is an Experimental Transaction",
+    "## Data Order Is Part of the Mechanism",
+    "## Optimizers Carry State and Policy",
+    "## Randomness and Numerics Are Named Inputs",
+    "## Distributed Execution Is Not Learning Topology",
+    "## Four Topologies Must Stay Separate",
+    "## Adaptive Identity Is Persistent Causal State",
+    "## Learning Relations Need Types",
+    "## LCT-IR Makes the Process Explicit",
+    "## Learning Causal Normal Form Is a Comparison Tool",
+    "## The Semantic Compiler Needs a Firewall",
+    "## Realization Leakage Is a Measured Residual",
+    "## Checkpoints Are Full-State Commits",
+    "## Resume Equivalence Is Prospective",
+    "## Checkpoint Selection Is Not Qualification",
+    "## Scaling Is a Family of Interventions",
+    "## Topology Claims Need Causal Experiments",
+    "## Learning Extends Beyond Parameters",
+    "## Adaptive Branch–Validate–Integrate",
+    "## One Repository Learner, One Governed Run",
+    "## Training Authority Expires",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Run Record to Adaptive Infrastructure",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "It does not train\na model or establish resume equivalence",
+    "The joined chapter therefore establishes a precise training and topology\ncontract",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -594,6 +627,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_19_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 19 missing required argument boundary: {fragment!r}")
+    unit_20 = next((unit for unit in units if unit.get("unit_id") == "unit-20"), None)
+    if unit_20 is None or unit_20.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 20 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_20["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_20_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 20 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

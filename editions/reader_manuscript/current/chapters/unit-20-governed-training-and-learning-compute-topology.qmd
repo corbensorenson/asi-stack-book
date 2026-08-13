@@ -1,0 +1,754 @@
+---
+title: "Governed Training and Learning-Compute Topology"
+unit_id: "unit-20"
+---
+
+## The Checkpoint That Loaded Perfectly
+
+The repository stack begins learning from its patch history. It trains a model
+to predict which dependency changes will require source edits, which tests are
+likely to fail, and which rollback plan fits the release topology.
+
+Halfway through the run, a worker fails. The orchestrator loads the latest
+weight checkpoint on replacement hardware. The file digest matches, the model
+produces sensible outputs, and the loss resumes near its previous value. The
+run is labeled recovered.
+
+It is not the same run.
+
+The optimizer momentum was not restored. The scheduler restarted one phase
+early. The data sampler repeated part of the curriculum and skipped another
+part. Random-number state changed. One retrieval cache was rebuilt from newer
+documents. The distributed reduction order changed with the replacement
+topology. The weights loaded; the adaptive process diverged.
+
+This distinction matters even when the final model appears good. The system
+cannot compare the resumed trajectory with the planned experiment as though
+nothing changed. It cannot attribute an improvement to the optimizer while the
+curriculum and topology also changed. It cannot reproduce the model from a
+weight file that omits the process state that created it.
+
+Governed Training gives the run a complete identity and transaction boundary.
+Learning–Compute Topology widens the object under governance. Learning may
+occur in model parameters, semantic memory, procedures, tools, evaluators,
+environments, routing policies, or institutions. It may involve one persistent
+learner, many competing lineages, or thousands of proposal workers feeding one
+central state. Hardware count does not reveal that organization.
+
+## A Training Run Is an Experimental Transaction
+
+A run begins with a frozen contract. It names purpose, hypotheses, model and
+learning-process identities, data and curriculum, optimizer and schedules,
+topology, numerical policy, random seeds, resource budget, checkpoints,
+evaluation, selection, authority, stop conditions, recovery, and non-claims.
+
+The contract does not prevent every adaptation. It distinguishes planned
+degrees of freedom from changes that create a new run, branch, or amendment.
+Learning-rate tuning within a prospectively declared range may belong to one
+campaign. Changing the data population after inspecting results does not.
+
+Run identity persists across distributed workers and time. Every artifact
+links to the same contract version or an explicit descendant. Logs, weights,
+optimizer shards, evaluations, interventions, failures, and checkpoints are
+events in the run, not loose files sharing a directory.
+
+The transaction is append-only. A failed attempt remains in the denominator.
+An operator intervention records what changed and why. A restart does not
+overwrite the earlier trajectory. A selected checkpoint retains the family of
+candidates from which it was chosen.
+
+This makes a training result challengeable. A reviewer can ask whether the
+reported outcome came from the frozen process, a valid amendment, or an
+unacknowledged change.
+
+## Data Order Is Part of the Mechanism
+
+A dataset is not just a bag of examples. Selection, filtering, weighting,
+deduplication, ordering, mixing, augmentation, replay, and curriculum can
+change the learning trajectory.
+
+The data record binds source, license and rights, provenance, transformations,
+population, exclusions, splits, contamination checks, order policy, sampler
+state, versions, and deletion obligations. It distinguishes data available to
+training, validation, checkpoint selection, and final qualification.
+
+The repository learner may begin with simple manifest-only changes, then move
+to multi-file patches, rollback incidents, and ambiguous dependency graphs.
+That curriculum can improve optimization or bias the system toward easy
+patterns. The schedule is a hypothesis, not invisible loader configuration.
+
+Distributed loaders need one global accounting. Each example or batch receives
+an identity sufficient to detect unintended repeat, omission, or split
+crossing. Dynamic filtering and online data acquisition produce events that
+can be reconstructed. Privacy and deletion requests propagate to derivatives,
+checkpoints, and later unlearning routes without claiming complete erasure.
+
+Data quality remains task-relative. A perfectly tracked corpus can teach the
+wrong objective. Provenance and order make the process inspectable; they do
+not establish usefulness, consent, fairness, or truth.
+
+## Optimizers Carry State and Policy
+
+An optimizer maps evidence from the current computation into a state change.
+Its state may include moments, factorizations, curvature estimates, schedules,
+scalers, trust ratios, preconditioners, and parameter-group policy.
+
+Changing optimizer is not a cosmetic implementation swap. It changes the
+update rule, memory, communication, numerical sensitivity, and often the
+meaning of hyperparameters. Restoring weights without optimizer state does not
+continue the same trajectory.
+
+The optimizer policy card records algorithm and version, equations or
+reference implementation, parameter grouping, precision, schedules, clipping,
+regularization, distributed semantics, checkpoint state, tuning budget,
+failure triggers, and fallback. A primary method and ordinary baseline receive
+matched tuning and rescue resources.
+
+No optimizer wins universally. Adam, AdamW, Adafactor, LAMB, Shampoo, K-FAC,
+Lion, Sophia, SOAP, schedule-free methods, Muon, and future methods trade memory,
+communication, curvature approximation, scale transfer, stability, and
+hardware fit. Source-reported gains enter as hypotheses and comparators, not
+local evidence.
+
+The stack should choose an optimizer because it meets the run contract under
+complete cost, not because its update looks theoretically elegant or has
+frontier branding.
+
+## Randomness and Numerics Are Named Inputs
+
+Random initialization, sampling, dropout, augmentation, routing, kernel
+selection, and asynchronous order can all affect a run. Seeds help reproduce
+some choices but are not a universal replay mechanism.
+
+The run inventories random-number generators, seed derivation, per-worker
+streams, state checkpoints, and nondeterministic operations. It records
+precision, rounding, reduction order, compiler and kernel versions, and
+hardware properties where they can alter the result.
+
+Exact bitwise replay may be infeasible or unnecessary. The contract chooses an
+equivalence class before the run: exact artifact, bounded numerical deviation,
+matched trajectory statistics, or outcome-level equivalence. Tolerances include
+the consumer and consequence.
+
+Determinism can cost throughput and still omit environmental change. Nondeterminism
+can be acceptable if the distribution is characterized and checkpoint
+selection does not exploit lucky seeds. Neither label establishes quality.
+
+Repeated runs retain variance. A single favorable seed cannot represent a
+method. Failed and unstable runs remain in the denominator, including attempts
+terminated before a headline metric.
+
+## Distributed Execution Is Not Learning Topology
+
+Data, tensor, pipeline, sequence, expert, and optimizer-state parallelism
+describe how computation and state are mapped across devices. They matter for
+communication, memory, synchronization, failure, and numerical behavior.
+
+They do not determine how many adaptive identities exist.
+
+Eight GPUs can compute gradients for one synchronized model. They are eight
+workers and one persistent learner. The same eight GPUs can host four lineages
+that see different environments and are later selected or merged. They are
+four adaptive identities. Hundreds of workers can evaluate perturbations while
+one central vector receives every update. Proposal width is large and durable
+learning width is one.
+
+Conversely, one device can time-share many persistent learners. Counting
+processes, agents, or chips does not reveal where experience accumulates, who
+judges it, which state changes, or what survives integration.
+
+This separation lets the system optimize execution without silently changing
+the learning process. Moving a synchronized update to a faster collective may
+preserve semantics within tolerance. Replacing independent branches with
+gradient averaging may destroy the very diversity the experiment was designed
+to test.
+
+## Four Topologies Must Stay Separate
+
+Model architecture describes how one model computes and represents: attention,
+recurrence, state space, graph operations, symbolic rules, or another
+substrate.
+
+Learning-process topology describes persistent adaptive identities and the
+relations among evidence, judgment, credit, state change, integration, and
+authority.
+
+Execution topology maps operations and state to processes, devices, services,
+memory, and time.
+
+Physical compute topology describes actual hardware, interconnect, storage,
+energy, failure domains, and geography.
+
+These objects interact but do not inherit properties automatically. A highly
+parallel execution can implement a centralized learner. A decentralized
+learning process can run sequentially. A modular model can be trained through
+one global objective. A monolithic model can participate in a population of
+competing lineages.
+
+Governance needs the distinctions because authority and failure follow
+different edges. A device operator can restart hardware without authority to
+merge adaptive branches. A learning controller can retire a branch without
+permission to publish its weights. A model update can be valid while the
+physical infrastructure violates a resource or jurisdiction constraint.
+
+## Adaptive Identity Is Persistent Causal State
+
+An adaptive identity is a stateful process whose history can influence future
+behavior and whose changes are separately attributable enough for the current
+decision.
+
+Identity can reside in parameters, optimizer state, memory, procedures,
+datasets, evaluators, routing policy, environment, or institutional rules. A
+model replica that contributes to one synchronized state is usually not an
+independent learner. A memory branch that accumulates distinct evidence may be.
+
+The identity record names state, lineage, observations, judgments, credit,
+updates, authority, checkpoints, descendants, integration, and retirement. It
+also names ambiguity. Some systems do not admit one clean boundary; the record
+can preserve competing decompositions rather than force a false count.
+
+Identity is task-relative. Two branches may be distinct for causal analysis
+but operationally equivalent for a consumer. A topology representation should
+state why the distinction matters.
+
+Without persistent identity, credit cannot be assigned honestly. Improvement
+after a merge may come from one branch, the interaction among branches, the
+evaluator, or changed data. A final score alone cannot recover that history.
+
+## Learning Relations Need Types
+
+An unlabeled arrow between components hides what moves. Learning–Compute
+Topology uses typed relations such as evidence, judgment, credit, state,
+artifact, control, and authority.
+
+Evidence carries observations or measurements. Judgment evaluates evidence
+under a method. Credit assigns consequence to a state, action, component, or
+process. State edges mutate durable adaptive state. Artifact edges produce or
+consume models, memories, tools, and records. Control schedules or selects
+processes. Authority permits, denies, narrows, or retires change.
+
+These relations should not collapse. An evaluator’s judgment is not credit
+until a policy assigns it. Credit is not an update until an authorized learning
+rule changes state. A produced checkpoint is not qualified for use. A controller
+that can schedule a branch may lack authority to promote it.
+
+Typed edges expose bottlenecks and capture. Many proposal workers may feed one
+evaluator, creating judgment concentration. Several evaluators may depend on
+one evidence source. Distributed credit may still commit through one authority
+node.
+
+The topology can then be challenged at the relation that matters instead of
+calling the whole process centralized or decentralized.
+
+## LCT-IR Makes the Process Explicit
+
+Learning–Compute Topology Intermediate Representation, or LCT-IR, is a typed
+description of adaptive identities, state classes, relation edges,
+constraints, lifecycle events, and semantic obligations.
+
+It is not a graph drawing format. The representation should distinguish
+persistent from transient state, evidence from control, proposed from committed
+change, local from shared state, and semantic identity from execution placement.
+Validators reject missing endpoints, invalid relation roles, authority
+widening, and incompatible lifecycle states.
+
+The source package’s bounded reference implementation parses, validates,
+normalizes, compares, and compiles selected LCT-IR objects. Its eleven unit
+tests passing establishes that finite implementation behavior under those
+tests. It does not establish that the primitive set is complete, that two human
+encoders will agree, or that the representation improves training.
+
+An IR earns adoption when independent teams can encode natural processes,
+disagreements reveal useful ambiguity, interventions map to executable changes,
+and the representation predicts or controls outcomes better than simpler
+descriptions.
+
+## Learning Causal Normal Form Is a Comparison Tool
+
+A normalized learning process can be expressed around adaptive identities and
+the path from evidence to judgment, credit, state mutation, integration, and
+authority. Normalization makes processes comparable even when frameworks and
+hardware differ.
+
+The proposed Learning Causal Normal Form is not claimed as the unique canonical
+representation of all learning. It is a hypothesis about a useful sufficient
+vocabulary under explicit-state and interface assumptions.
+
+Normalization should preserve the distinctions relevant to the consumer. Two
+execution plans may normalize to the same learning process if device placement
+does not alter the declared semantics. Two visually similar loops should remain
+different if one preserves competing lineages and the other averages them away.
+
+Information loss is recorded. An opaque proprietary service may expose only
+aggregate judgment, leaving credit assignment unknown. A physical process may
+have hidden state. The normal form should represent an unresolved boundary,
+not invent internal edges.
+
+The value of normalization is empirical: better audit, prediction,
+intervention, portability, or design. A neat canonical graph is not itself an
+outcome.
+
+## The Semantic Compiler Needs a Firewall
+
+The semantic topology must eventually become an execution plan. Compilation
+maps adaptive identities, relations, state, and constraints onto software,
+devices, collectives, storage, and schedules.
+
+A semantic compiler firewall protects obligations during lowering. It checks
+that identity is not merged accidentally, state is not shared beyond scope,
+authority does not widen, required independence is not lost, evidence remains
+traceable, budgets hold, and recovery stays reachable.
+
+Some transformations are semantics-preserving under stated assumptions:
+sharding one state, batching evidence, or replacing a collective. Others are
+semantic amendments: changing branch communication, evaluator ownership,
+credit policy, or integration rule.
+
+The compiler emits an obligation report, not merely executable configuration.
+It names preserved relations, introduced dependencies, approximations,
+unresolved constraints, physical failure domains, and required validation.
+
+Compilation success establishes conformance to encoded rules. It cannot prove
+that the semantic specification was correct or that hardware will realize the
+model faithfully.
+
+## Realization Leakage Is a Measured Residual
+
+Physical realization can change the learning process through latency,
+bandwidth, synchronization, precision, failure, scheduling, memory pressure,
+and locality.
+
+A theoretically independent branch may share a cache, data service, evaluator,
+or failure domain. An asynchronous update may systematically favor fast
+workers. Compression can erase rare evidence. Limited cut capacity can prevent
+the information flow assumed by the semantic topology.
+
+Realization leakage compares the declared process with observed execution. It
+tracks delayed or dropped evidence, altered order, stale state, approximated
+judgment, credit distortion, shared dependencies, and unauthorized control
+paths.
+
+Some leakage is acceptable within a frozen tolerance. Some changes the
+experimental question. The run record classifies the difference and prevents
+an altered realization from inheriting the original claim silently.
+
+Topology metrics such as adaptive width, evidence diversity, judgment
+concentration, credit bottlenecks, integration loss, authority concentration,
+and cut capacity can help describe this gap. Their usefulness must be tested
+against simpler counts and actual outcomes.
+
+## Checkpoints Are Full-State Commits
+
+A complete checkpoint inventories every state class required to continue the
+declared process: model parameters, optimizer, scheduler, sampler, RNG,
+precision scaler, curriculum, data position, topology, memory, caches,
+adapters, evaluator state, policy, environment, and pending external work.
+
+The inventory is framework- and process-specific. The contract says which
+classes exist and why. Atomicity binds mutually dependent shards to one commit.
+Digests, versions, provenance, and storage receipts make substitution or
+partial restoration detectable.
+
+A weight-and-step summary is not injective over complete run state. Distinct
+optimizer, sampler, or topology states can share the same visible pair. No
+universal decoder can reconstruct omitted state from those fields.
+
+Loading is therefore the start of recovery, not its conclusion. The system
+restores all declared classes, checks cross-state consistency, exercises a
+prospectively chosen equivalence test, and records unknowns. If equivalence
+fails, the restart becomes a branch or new attempt.
+
+Full-state checkpointing can be expensive. The design should compare storage,
+coordination, and recovery value; use incremental or tiered methods where they
+preserve the contract; and narrow equivalence rather than claiming impossible
+exactness.
+
+## Resume Equivalence Is Prospective
+
+Two trajectories are equivalent only relative to a declared consumer and
+tolerance. Exact optimizer research may need closely matched updates. A broad
+capability campaign may accept statistical equivalence. A production recovery
+may care about output and safety envelopes more than identical weights.
+
+The equivalence test is frozen before failure. Otherwise the team can select a
+metric that makes the restart look continuous. It includes positive controls,
+known divergent states, time horizon, and stop conditions.
+
+Recovery compares uninterrupted and resumed paths where feasible. It reports
+which state was restored, what changed, and whether the resumed path remains
+eligible for the original analysis. A successful outcome can still be a
+non-equivalent trajectory.
+
+Distributed faults complicate atomicity. Workers may observe different commit
+states, storage can lag, and external data may move. The protocol chooses
+coordination and consistency according to consequence and records residual
+windows rather than asserting perfect recovery.
+
+## Checkpoint Selection Is Not Qualification
+
+Validation can choose among checkpoints without authorizing deployment or
+support. The selection set and rule are frozen, and every candidate remains in
+the family record.
+
+Repeatedly checking a final holdout while tuning checkpoints contaminates it.
+Choosing the best seed or time step and reporting only that result hides
+variance and selection cost. Early stopping is a policy with its own evidence,
+not an innocent implementation detail.
+
+Qualification uses an independently unopened population and separate decision
+authority. It measures the complete capability and risk contract, including
+recovery and cost. A training service hands a candidate to qualification; it
+cannot promote its own model.
+
+This separation also protects negative results. A failed qualification should
+not be rewritten as training failure if the instrument was inadequate. The
+evidence system classifies what the run and evaluator were competent to show.
+
+## Scaling Is a Family of Interventions
+
+“Scale” can mean more parameters, data, tokens, training time, context, memory,
+workers, proposals, branches, environments, evaluators, tools, or physical
+resources. These interventions are not interchangeable.
+
+A scaling study freezes the changed variables, held variables, data population,
+architecture, optimizer, topology, quality target, resources, and forecast
+before running. It reports the complete attempt family and uncertainty, not
+only the largest successful point.
+
+Time-to-quality can be more informative than final quality when methods consume
+different resources. The report includes accelerator and host work, memory,
+communication, storage, data preparation, failures, checkpointing, evaluation,
+human tuning, and discarded runs. Hardware utilization is not useful learning
+unless the system reaches the contracted outcome.
+
+Transfer needs separate axes. A hyperparameterization that transfers across
+width may not transfer across depth, duration, architecture, data regime, or
+learning topology. A distributed schedule that works on one interconnect may
+fail elsewhere. The receipt states the tested regime and expires when material
+variables change.
+
+Scaling curves describe observations under a family. They do not identify a
+mechanism by themselves. A threshold-like jump can arise from metric
+resolution, data change, selection, prompting, tool use, or topology. Mechanism
+claims require interventions that separate these alternatives.
+
+The topology view expands scaling science. Increasing proposal workers while
+holding one commitment state changes exploration width. Increasing persistent
+branches changes adaptive diversity. Adding evaluators changes judgment
+capacity. Widening communication changes integration and correlated failure.
+The same compute budget can therefore implement causally different scaling
+experiments.
+
+## Topology Claims Need Causal Experiments
+
+A topology diagram can explain a process after the fact without predicting
+anything. To earn causal status, the representation should support prospective
+interventions with directional predictions.
+
+An experiment can hold model architecture, data, optimizer, evaluation, and
+total resources approximately fixed while changing one learning relation:
+centralized versus distributed judgment, isolated versus communicating
+branches, local versus global credit, selection versus averaging, or one
+authority gate versus delegated integration.
+
+The intervention packet states which LCT-IR edge or node changes, expected
+information flow, predicted learning and failure outcomes, realization plan,
+confounders, and equivalence checks. It verifies that the physical execution
+actually implemented the semantic difference.
+
+Outcomes include capability, generalization, calibration, diversity,
+catastrophic failure, information retained through integration, response to
+corruption, recovery, cost, and human burden. A topology may improve one and
+worsen another.
+
+Ablations also test the representation itself. Remove relation types, merge
+adaptive identities, or replace the topology with worker count and generic
+graphs. If predictions and decisions do not deteriorate, the added vocabulary
+has not earned its complexity.
+
+Independent encoders should receive the same process artifacts and produce
+their own topology records. Agreement is not expected on every ambiguous
+boundary. Useful disagreement should identify missing evidence or consumer-
+relative identity, not arbitrary annotation preference.
+
+## Learning Extends Beyond Parameters
+
+The repository stack can improve without changing model weights. It can add a
+dated fact to semantic memory, qualify a procedure, strengthen a test, revise
+a router, update an evaluator, change an environment, or amend an institutional
+policy.
+
+Each locus has different persistence, verification, reach, deletion, and
+rollback. A memory entry is inspectable and easy to expire but may not affect
+behavior reliably. A procedure changes action directly but can be scoped and
+retired. Parameter updates generalize implicitly but are hard to interpret and
+remove. An evaluator update changes which future evidence is admitted. An
+institutional policy can constrain many systems while carrying legitimacy and
+implementation burdens.
+
+Learning topology therefore includes state outside the training framework.
+Evidence from a failed patch may lead to a test rather than a gradient. Human
+review may change the task ontology. A legal decision may remove an otherwise
+effective data or deployment route.
+
+These loci can interact. A memory supplies context to a model; a procedure
+generates traces used for training; an evaluator selects model checkpoints; a
+policy determines which feedback is admissible. The topology records these
+causal edges so a later correction can reach descendants.
+
+Not every change should be synchronized. Local memory can preserve minority or
+domain knowledge that global parameters would flatten. A central policy can
+protect rights that local optimization would trade away. Multiple time scales
+and authorities are a design feature, not an inconsistency to average.
+
+Unit 21 will govern the commitment decision across these loci. For training,
+the important consequence is that a model run is one adaptive process inside a
+larger system, not the universal location of learning.
+
+## Adaptive Branch–Validate–Integrate
+
+One proposed topology, Adaptive Branch–Validate–Integrate, preserves multiple
+candidate lineages, subjects them to independent validation, and commits only
+admissible changes through a governed integration boundary.
+
+Branching creates diversity only if histories, evidence, or mechanisms differ
+meaningfully. Copies with different random seeds may still share the decisive
+failure. Validation needs independent evidence and complete candidate custody.
+Integration can select, merge, distill, compose, archive, or reject; each route
+has different information loss.
+
+The governor controls branch creation, resources, communication, evaluation,
+integration, rollback, and retirement. Candidates cannot alter the gate that
+judges them. Failed branches remain evidence rather than disappearing from the
+denominator.
+
+ABVI is a research proposal, not an implemented improvement result. It should
+compete with one-lineage training, ordinary checkpoint search, population-based
+training, evolutionary strategies, federated learning, and simple ensembles
+under matched resources and outcomes.
+
+## One Repository Learner, One Governed Run
+
+The training contract freezes the repository task population, curriculum,
+data rights, model, optimizer policy, seeds, distributed execution, LCT-IR
+topology, checkpoints, resume test, evaluation, selection, and qualification
+handoff.
+
+The declared learning topology contains one persistent model lineage, a dated
+semantic-memory store, a procedure candidate branch, two evaluators, and one
+integration authority. Evidence from patch outcomes reaches the evaluators.
+Their judgments assign separate credit to model, memory, and procedure changes.
+No component can commit itself.
+
+Execution maps the process across eight workers. A topology change replaces
+synchronous data parallelism with four persistent branches sharing two
+evaluators. That is a semantic amendment, not merely performance tuning. The
+run forks under a new contract and preserves the prior attempt.
+
+A worker failure triggers full-state recovery. The weight file loads, but the
+sampler and optimizer mismatch the checkpoint family. The system refuses
+equivalent-resume status and records a new branch. It can continue useful work
+without laundering the experiment.
+
+At the end, validation selects a checkpoint family. The final qualification
+set remains unopened. The run has produced a candidate and evidence, not a
+deployment decision.
+
+## Training Authority Expires
+
+A run consumes data, compute, infrastructure, evaluator attention, and often
+the right to create powerful or sensitive artifacts. Its authority is bounded
+by purpose, population, capability, resource, duration, security, and release
+policy.
+
+The controller can schedule admitted work but cannot widen those limits. A
+promising loss curve does not authorize more data, a larger capability domain,
+or publication. Material changes route to an accountable amendment or new run.
+
+Stop conditions include resource ceilings, invalid data custody, contamination,
+unexpected capability, unstable or unsafe behavior, checkpoint inconsistency,
+loss of observation, and evidence that the instrument cannot answer the
+question. Stopping preserves artifacts and residuals for review; it is not a
+failed optimization event to hide.
+
+Emergency intervention can pause workers, revoke credentials, isolate
+checkpoints, or preserve a safe baseline. The operator records the exact state
+and authority used. Resumption requires fresh custody rather than an automatic
+job retry.
+
+At closure, unused grants expire, sensitive artifacts receive disposition,
+costs and failures remain in the denominator, and every candidate enters
+qualification, archive, quarantine, or retirement. Training success alone
+cannot select the release route.
+
+The closure receipt is therefore an evidence handoff, not a certificate that
+the resulting learner is useful, safe, general, robust, or ready.
+
+## Failure Cases
+
+**Weight-file identity.** Loading parameters is called continuation.
+
+**Sampler amnesia.** Repeated or skipped data disappears from the record.
+
+**Optimizer reset.** Lost moments or schedules silently create a new
+trajectory.
+
+**Seed theater.** Recording one seed implies reproducibility despite
+nondeterministic kernels and environment changes.
+
+**Failed-run erasure.** Only the selected checkpoint and successful attempts
+survive.
+
+**Validation leakage.** Checkpoint selection consumes the qualification set.
+
+**Topology collapse.** Device count is mistaken for adaptive-identity count.
+
+**Unlabeled edge.** Evidence, judgment, credit, state, control, and authority
+become generic communication.
+
+**Replica diversity.** Copies of one state are treated as independent
+learners.
+
+**Semantic compiler drift.** Faster realization merges branches or shares
+state that the specification kept distinct.
+
+**Hidden realization leakage.** Latency, precision, or failure changes credit
+and evidence flow.
+
+**Metric ontology.** Attractive topology measures substitute for outcome
+improvement.
+
+**Integration survivor bias.** Failed branches vanish, making selection look
+inevitable.
+
+**Scaling by endpoint.** Final loss or capability hides total attempts,
+compute, data, failures, and selection.
+
+**Self-qualification.** The training controller promotes the model it created.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline uses an ordinary reproducible training manifest,
+experiment tracker, distributed framework, full framework checkpoint,
+versioned data loader, fixed evaluation, and human-reviewed promotion.
+
+That baseline should remain preferred unless LCT adds explanatory or control
+value. Many runs have one obvious persistent learner and need no elaborate
+topology IR. Existing workflow and lineage tools may capture enough state.
+
+Comparison should measure independent encoding agreement, defects found,
+intervention precision, causal attribution, recovery, transfer across
+frameworks, prediction of failure and cost, human comprehension, implementation
+burden, and learning outcomes. Graph complexity or vocabulary coverage is not
+success.
+
+If the topology layer merely redescribes standard training, it should contract
+to a small extension of the run manifest.
+
+## What the Current Work Establishes
+
+Governed Model Training has three implemented public targets through 20 Lean
+declarations. One authored transaction fixture, schema, and independent
+semantic validator check 21 transaction mutations, seven weight-only omitted-
+state collisions, and nine complete-encoding mutations. The finite model
+establishes run-handoff, complete-checkpoint, selection-separation, and
+checkpoint-information consequences over authored records. It does not train
+a model or establish resume equivalence, optimizer quality, distributed fault
+tolerance, scaling, or deployment.
+
+The natural five-arm campaign is prospectively specified and unexecuted. No
+outcome from it is reported here.
+
+Learning–Compute Topology contributes a complete source package, seven bounded
+mathematical propositions, a reference LCT-IR implementation whose supplied
+suite passes 11 of 11 tests, manually coded scoped coverage and novelty
+matrices, toy or analytical phase diagrams, and the ABVI proposal. The seven
+propositions have not been independently mechanized in this repository. The
+implementation covers bounded IR behavior, not neural training, distributed
+execution, online topology control, prediction, safety, or superiority.
+
+The joined chapter therefore establishes a precise training and topology
+contract with bounded executable and formal artifacts. It does not establish
+that the topology representation improves learning or that the combined system
+works in a natural campaign.
+
+## From a Minimum Run Record to Adaptive Infrastructure
+
+A minimum implementation can use the repository learner. Freeze one run,
+inventory full state, inject optimizer, sampler, RNG, topology, and cache
+omissions, restore from a checkpoint, and classify equivalence under a
+prospective test. Preserve all attempts and keep qualification unopened.
+
+Encode the same process independently in LCT-IR. Compare disagreements, then
+compile it onto two execution topologies. Inject branch merging, shared
+evaluator dependence, stale evidence, cut-capacity limits, and authority
+widening. Measure whether the IR detects changes that an ordinary manifest
+misses.
+
+The next stage needs matched natural campaigns comparing the strong training-
+manifest baseline with LCT-assisted design. Vary one persistent learner,
+populations, proposal-worker systems, federation, and ABVI. Hold model, data,
+resources, evaluation, and authority constant where the question permits.
+
+A mature learning infrastructure would treat model, memory, procedure, tool,
+evaluator, environment, and institution updates as one typed topology. It would
+compile semantic learning plans to changing hardware, observe realization
+leakage, recover complete state, preserve failed branches, and hand candidates
+to independent qualification.
+
+## The Strongest Objection
+
+Learning–Compute Topology may be a new vocabulary for familiar workflow graphs,
+distributed training, population methods, and experiment tracking. More typed
+nodes can increase documentation while changing no prediction or decision.
+
+The objection is correct unless the representation earns its layer. The book
+does not claim universal canonicality or completeness. The layer should be as
+small as the consumer requires.
+
+Its value proposition is falsifiable: independent encoders should agree enough
+to support action; disagreements should expose real ambiguity; topology
+interventions should predictably change evidence, credit, persistence, or
+outcomes; and semantic compilation should prevent consequential realization
+drift at acceptable cost.
+
+If ordinary manifests and experiment trackers match those outcomes, use them.
+
+## Evidence That Would Change the Conclusion
+
+The topology layer should narrow if independent encoders cannot identify stable
+adaptive identities or typed relations, if its metrics fail to predict or
+explain relevant outcomes, or if matched-resource interventions show no control
+or recovery benefit.
+
+Support would require prospectively frozen natural learning campaigns,
+competent simple baselines, independent topology encoding, causal ablations,
+multiple frameworks and hardware realizations, complete resource and human
+costs, reproduction, and transfer. ABVI must compete with ordinary training,
+search, population, and evolutionary methods rather than inherit plausibility.
+
+The training contract should also narrow where framework-native checkpointing
+and versioning produce equal run identity, recovery, selection discipline, and
+audit at lower cost.
+
+## What This Establishes
+
+A learning run is a full-state experimental transaction, not a weight file.
+Data order, optimizer, randomness, numerics, topology, checkpoints, resume,
+selection, and qualification belong to its identity.
+
+Model architecture, learning-process topology, execution topology, and
+physical compute topology are different objects. Typed evidence, judgment,
+credit, state, artifact, control, and authority relations make adaptation
+challengeable. Semantic compilation must expose realization leakage.
+
+The current repository establishes finite training-record semantics and a
+bounded LCT-IR implementation. It does not establish natural training or
+topology advantage.
+
+Training produces experiences, scores, failures, and candidate lessons. Unit
+21 asks the harder question: what durable thing, if anything, should change;
+where should it persist; and how should it later be corrected, forgotten, or
+unlearned?
+
+{{< include ../generated/unit-20-status.qmd >}}
