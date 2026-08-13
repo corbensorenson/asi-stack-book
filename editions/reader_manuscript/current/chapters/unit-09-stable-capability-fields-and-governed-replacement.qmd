@@ -1,0 +1,553 @@
+---
+title: "Stable Capability Fields and Governed Replacement"
+unit_id: "unit-09"
+---
+
+## The Name That Survives the Upgrade
+
+Imagine that the repository from Part I has acquired a patch verifier. Before a
+change can merge, the verifier reads the proposed diff, checks the affected
+interfaces, runs selected tests, looks for policy violations, and returns one
+of three results: accept, reject, or ask for human review. Other tools now call
+it by a stable name. Maintainers write procedures around it. Approval rules
+refer to it. Audit logs say that the patch verifier approved a release.
+
+Then a better verifier appears.
+
+It is faster on ordinary patches and catches several defects the old one
+missed. It uses a newer model, a different prompt, another retrieval index, and
+a more aggressive test selector. On a benchmark it wins decisively. Replacing
+the old verifier looks like an obvious upgrade.
+
+But what, exactly, is being replaced? The command name can stay the same while
+the meaning changes underneath it. The new verifier may abstain less often,
+interpret policy language differently, omit an audit field, tolerate a class
+of flaky tests, read more of the repository, send context to a remote service,
+or take actions that the old verifier could only recommend. Its average score
+may rise while a rare security regression returns. Its output schema may be
+compatible while its authority expands. A clean software deployment can
+therefore move the terms of trust without changing the name that everyone
+relies on.
+
+This is a general problem for an improving AI system. Models, tools, prompts,
+policies, memories, evaluators, data, hardware, and organizations will all
+change. A system that cannot replace them becomes brittle. A system that
+replaces them by reputation, benchmark rank, or mutable registry flag becomes
+unaccountable. Improvement requires continuity, but continuity cannot mean
+freezing the implementation forever.
+
+The proposed answer has two parts. First, give the capability a stable field:
+a versioned statement of what the capability means for a particular consumer,
+use, environment, threat model, and period of evidence. Second, treat every
+replacement as a governed transaction against that field. The field holds the
+promise. The implementation is one defeasible attempt to keep it.
+
+The phrase *stable capability field* can sound more mysterious than it is. The
+idea is familiar whenever a durable role outlives its current occupant. A bank
+account is not identical to the database process serving it. A public office is
+not identical to one officeholder. A network service is not identical to one
+binary. Stability belongs to the governed interface and its obligations, not
+to the machinery currently realizing them.
+
+The difficulty is that an AI capability has a richer contract than a function
+signature. The patch verifier's promise includes what it reads, what it may
+write, which failures it must detect, when it must abstain, how uncertainty is
+shown, what evidence it emits, how long its qualification lasts, who may rely
+on it, and what happens when it is wrong. A replacement is governable only when
+those obligations remain visible before, during, and after the swap.
+
+## A Field Is a Promise, Not a Label
+
+A conventional registry says which implementation currently answers a name.
+A stable capability field says what must be true before any implementation may
+answer that name.
+
+For the patch verifier, the field might require that every decision identify
+the repository revision, proposed diff, test plan, policy version, model and
+tool versions, evidence consulted, unresolved uncertainty, and authority used.
+It might require rejection when protected tests cannot run, abstention when the
+change exceeds the verifier's competence, and human review when policy and
+evidence conflict. It might forbid network access for confidential projects and
+forbid the verifier from merging the patch it evaluates. It might preserve a
+set of historical regressions that every successor must face.
+
+These obligations define a capability only in context. The same verifier may
+be qualified to advise a maintainer on a public documentation patch and
+unqualified to approve a production authentication change. A model that is
+adequate on one language, repository family, or threat model does not thereby
+inherit every route bearing the same friendly name. Qualification is therefore
+consumer-relative. It binds an exact consumer and use, not an imaginary global
+score called capability.
+
+The field also has a version. If the organization decides that the verifier may
+now inspect secrets, approve database migrations, or replace human review for a
+class of changes, the contract changed. Calling that an implementation upgrade
+would hide a governance decision inside a technical release. A material change
+to observables, authority, rights, effects, or recovery duties should produce a
+new field version or a new field, with its own review.
+
+This gives the system a disciplined answer to a deceptively simple question:
+what stayed the same? It can point to the field version, required observables,
+authority ceiling, preserved regressions, consumer scope, and recovery duties.
+The answer may still be wrong; a record cannot guarantee semantic equivalence.
+But it is specific enough to challenge, test, and revoke.
+
+Without such a boundary, the system suffers capability amnesia. Release notes
+remember that version two replaced version one, but the organization forgets
+which old failure mattered, why a permission was denied, which evaluator was
+trusted, or which downstream service relied on a particular abstention. The
+new implementation appears to inherit the accumulated trust of the old one
+while shedding the history that made that trust conditional.
+
+Stable fields keep the memory with the capability. Incidents, regressions,
+appeals, expired evidence, and prior limitations remain obligations of the
+field rather than trivia attached to a retired artifact. An upgrade may resolve
+them, but cannot make them disappear by changing implementation identity.
+
+## Compatibility Is Not Qualification
+
+Software engineering already offers useful tools for change: semantic
+versioning, interface tests, provenance records, model registries, feature
+flags, canary releases, rollout controllers, and rollback commands. The field
+does not replace them. It explains why none is sufficient by itself.
+
+An interface test can show that the new verifier accepts the same request
+shape and emits the same response shape. It cannot show that `accept` still
+means the same thing, that rare failures are preserved, or that a new remote
+dependency did not widen the information boundary. Semantic versioning can
+announce a breaking public change; it does not discover a behavioral change
+the developer failed to name. Provenance can establish which source and build
+produced an artifact; it cannot establish that the artifact is fit for this
+field. A benchmark can compare selected outcomes; it does not own authority,
+incident memory, state migration, or recovery.
+
+Qualification asks a larger, scoped question. Does this exact candidate,
+including its model, prompt, tools, data, dependencies, hardware, runtime, and
+policy, preserve every required observable and authority obligation for this
+consumer and use under this environment and threat model? Does it retain the
+historical regressions? Can it migrate required state? Does it compose with
+neighboring capabilities? Is the evaluator sufficiently independent of the
+candidate and its training path? What happens when evidence is missing or has
+expired?
+
+The honest answers include *no* and *unknown*. Unknown is especially important.
+Systems under delivery pressure often treat absence of a detected failure as a
+pass. A stable field instead treats missing evidence as a route decision. The
+candidate can remain in a sandbox, shadow role, or narrow canary while the
+default stays unchanged. Progress is allowed without forcing uncertainty into
+production.
+
+Qualification is also an evidence lease rather than a permanent badge. It
+names the exact implementation and dependencies, evaluator, workload,
+environment, consumer, use, threat model, and evidence epoch. A dependency
+change, new incident, evaluator update, provenance failure, policy revision,
+hardware change, or expired monitoring window can narrow or revoke it. The
+field does not say that the candidate became inherently safe. It says where
+the available evidence currently permits routing.
+
+For the patch verifier, the first lease might allow only public repositories
+and low-risk changes, require human confirmation, and expire after thirty days
+or after any policy update. The old verifier remains the default and fallback.
+The candidate may earn a broader lease later, but it cannot borrow one from its
+name.
+
+## The Patch Verifier Replacement
+
+Now return to the proposed upgrade. The team wants the new verifier because it
+is faster and appears more accurate. A governed replacement begins before the
+team observes the final comparison.
+
+First, it freezes the transaction. The record names the field version, prior
+implementation, candidate, dependency graph, repository population, allowed
+change classes, authority ceiling, evaluator, historical regression set,
+checkpoint, canary population, monitor, stop rules, commit rule, rollback
+objective, residual owner, and review authority. Choosing these rules after
+seeing the result would let the candidate select its own test.
+
+Second, it classifies the change. The candidate uses a new model and retrieval
+index, changes its prompt policy, adds a remote dependency, and alters how it
+selects tests. Each delta is visible. The remote dependency may violate the
+field for confidential repositories even if the model improves. A new output
+meaning may require a field-version decision rather than an implementation
+replacement. Classification prevents a large semantic change from entering
+through a small deployment label.
+
+Third, it freezes the pre-state and affected inventory. For this verifier, that
+includes the route alias, model and prompt artifacts, policy bundle, retrieval
+snapshot, test cache, credentials, monitor configuration, audit schema,
+downstream approval rules, and any learned state produced from prior reviews.
+The inventory also names surfaces it cannot restore, such as a decision already
+shown to a maintainer or context already sent to an external service.
+
+Fourth, the candidate runs in isolation. It may read selected repository
+snapshots and produce recommendations, but it cannot merge, publish, change
+credentials, update the default route, or train a descendant. Its decisions are
+compared against historical cases, rare failures, adversarial patches, human
+review, and the old verifier under matched conditions. Disagreements are
+evidence to inspect, not inconveniences to average away.
+
+Suppose the candidate performs well enough for a canary. The lease still names
+which repositories and patch classes it may see, how much traffic it receives,
+which decisions require human confirmation, how delayed outcomes will be
+counted, and which monitor event immediately returns traffic to the prior
+implementation. Silence is not success. Missing telemetry is itself a failure
+condition because the canary cannot establish what no observer measured.
+
+During the canary, the new verifier approves a change that reintroduces a
+historical authentication defect. The ordinary performance metrics remain
+healthy. Latency is lower. Most reviewers prefer the new explanations. The
+regression-floor monitor nevertheless fails.
+
+The transaction does not ask whether the candidate is promising overall. It
+follows the preregistered branch. Default promotion is blocked. Canary traffic
+returns to zero. The alias points back to the prior verifier. The candidate and
+its evidence are quarantined for analysis. The failed attempt remains in the
+field's history so the next candidate must face the same regression.
+
+That outcome is not a wasted experiment. It discovered a boundary that the
+average benchmark obscured and preserved it for future replacements. A system
+that can learn from failed upgrades without normalizing them is more capable of
+improvement than one that records only winners.
+
+## Replacement Is a Transaction
+
+The difference between installing an artifact and replacing a capability is
+the difference between a file operation and a state transition with effects.
+
+A real replacement can touch models, optimizer state, prompts, tools, policy,
+data, caches, credentials, routes, monitors, user expectations, and downstream
+systems. It may create external actions or disclosures. A canary can write
+shared state or influence later training. A new schema can make the old system
+unable to read the current state. A descendant may learn from outputs produced
+while the candidate was active.
+
+The transaction therefore has explicit stages: precheck, qualification,
+canary, commit, monitor, rollback or compensation, quarantine, retirement, and
+closure. These are not decorative labels. Each stage has an allowed authority,
+required observations, failure route, and receipt. Passing precheck does not
+authorize a canary. Starting a canary does not authorize default. Default does
+not mean the monitor window is over. Restoring the old alias does not mean all
+effects were reversed.
+
+This staged model protects the old path while the new one proves itself. The
+prior implementation remains identifiable and recoverable until closure. The
+candidate cannot silently rewrite the qualification policy, its own evaluator,
+or the evidence history. The monitor can trigger rollback even when product
+pressure favors promotion. A failed branch terminates in an owned state rather
+than falling between release tooling and incident response.
+
+The transaction also distinguishes candidate quality from replacement
+quality. A candidate can be better on the measured task while the replacement
+is unacceptable because migration is lossy, authority widened, monitoring is
+weak, rollback is incomplete, or operating cost overwhelms the benefit. A
+candidate can be worse overall yet useful for a narrow route. The system should
+make the routing decision from the joint contract rather than a single rank.
+
+## Rollback Is Not Time Travel
+
+Rollback is the most comforting word in an upgrade plan and one of the easiest
+to misuse.
+
+Pointing an alias back to the old verifier is a real recovery action. Restoring
+the old model, prompt, policy, and cache can be real recovery too. But neither
+reverses a secret sent to a remote service, a patch already merged, a user
+decision made from the candidate's output, an audit record disclosed to an
+outside party, or a descendant trained on the candidate's behavior. Some
+effects can be replayed, some compensated, some contained, and some only
+recorded as irreversible residuals.
+
+The replacement transaction names a recovery objective before exposure. It
+does not promise perfect reversal. It says which artifacts, state, services,
+routes, credentials, policies, and downstream dependencies should match the
+authorized checkpoint after rollback. It assigns owners for compensation,
+notification, invalidation, disclosure response, or continuing containment
+where equality is impossible.
+
+This makes rollback testable. Reviewers can compare the declared pre-state with
+the post-recovery state and say exactly which surfaces returned, which did not,
+and why. A partial rollback may be the best available response. It becomes
+misleading only when partial restoration is narrated as if the event never
+happened.
+
+The current technical work behind this chapter illustrates that boundary. One
+bounded local campaign restored all twenty-four surfaces it had prospectively
+declared across fifteen transactions, while finding no challenger with the
+required utility gain. Another campaign achieved exact attack-control rollback
+in thirty-two of thirty-six trials but produced only two useful releases,
+below its gates. These are valuable negative results. They show that a declared
+inventory can support exact local restoration and that strict governance can
+still fail to produce useful replacement. They do not show complete semantic
+or external-effect recovery, production rollback, or general safety.
+
+The lesson is not that rollback is impossible. It is that recovery claims must
+match their inventory. “The route alias and declared local state were restored”
+is stronger engineering than “we rolled back everything” because the first can
+be checked and the second usually cannot.
+
+## Authority Must Not Ride Along
+
+An implementation replacement is especially dangerous when capability and
+authority are allowed to rise together.
+
+Suppose the new verifier can call more tools than the old one. It can inspect a
+private dependency service, trigger a deployment preview, or merge a trivial
+change without human confirmation. Those features may be useful. They are not
+evidence that the old field authorized them. The candidate must either remain
+inside the existing ceiling or receive a separate governance grant attached to
+a new field version or route.
+
+This rule prevents a common form of capability laundering: a new component is
+described as an implementation improvement, then gains broader effects because
+its extra abilities are convenient. The field fixes authority independently of
+implementation performance. A high score cannot grant a permission. A passing
+test cannot appoint an evaluator. A canary cannot expand its own traffic. A
+replacement record cannot promote its own evidence state.
+
+Evaluator independence matters for the same reason. If the candidate wrote the
+tests, selected the examples, influenced the monitor, and proposed the release,
+then several nominally separate approvals may share one failure. Independence
+is not a checkbox; it is a disclosed graph of models, data, prompts, tools,
+people, organizations, and incentives. Where independence cannot be achieved,
+the lease should narrow and the dependency should remain a residual.
+
+## The Proof Boundary
+
+Parts of this lifecycle are suitable for formal proof. A finite model can prove
+that a mismatched field identity is rejected, that authority cannot expand
+without a grant, that failed regression gates block promotion, that rejected
+events leave the modeled state unchanged, that terminal quarantine absorbs
+later suffixes, or that a monitor failure routes to rollback rather than
+default.
+
+These are useful results because transition logic is easy to get subtly wrong.
+A system should not reach default through an invalid sequence. It should not
+lose the prior implementation when a canary fails. It should preserve residual
+ownership and refuse a record that omits a required rollback handle. Formal
+models can make those structural promises exact over the records they define.
+
+The proof ends at that boundary. It does not establish that the field captures
+the real semantics of patch verification, that the regression suite is
+competent, that the evaluator is actually independent, that the monitor sees
+delayed harm, that an external service deleted the transmitted context, or that
+restored files imply restored human trust. Those are empirical, institutional,
+and semantic questions.
+
+The architecture needs both kinds of work. Formal checks should prevent the
+control record from contradicting itself. Real experiments and operations must
+test whether the record corresponds to the world. Neither may borrow the
+other's authority.
+
+## Failure Cases
+
+The first failure is **field drift**. The organization keeps the stable name
+while gradually changing outputs, abstentions, permissions, users, and failure
+meaning. Each individual change looks small. Taken together, they produce a
+different capability that inherits the old one's trust. Version review must
+therefore inspect cumulative semantic and authority change, not only the latest
+diff.
+
+The second is **qualification laundering**. A candidate passes an interface
+test, provenance check, or benchmark and the narrow result is described as
+qualification for the field. Each observation may be valid while the inference
+is not. Qualification requires the conjunction named by the field for the
+specific route; a strong score on one dimension cannot fill missing authority,
+regression, migration, or recovery evidence.
+
+The third is **evaluator capture**. The candidate and evaluator share a model,
+training data, prompt author, retrieval system, organizational incentive, or
+failure blind spot. Two agreeing outputs are then counted as independent
+support. Dependency disclosure does not eliminate capture, but it can prevent
+the system from assigning independence it did not earn and route the candidate
+to a narrower lease.
+
+The fourth is **canary leakage**. A supposedly isolated candidate writes to a
+shared cache, updates a memory, influences a human decision, trains a
+descendant, changes an external record, or exposes confidential context. Its
+traffic share may be small while its effects are durable. Canary scope must
+therefore cover reads, writes, learning, credentials, tools, network, external
+effects, and descendant influence rather than only request percentage.
+
+The fifth is **monitor blindness**. The rollout monitor sees latency and
+immediate test outcomes but not delayed security defects, distributional harm,
+appeals, downstream regressions, or changes in human reliance. A quiet monitor
+window then becomes evidence of success. The transaction should name outcome
+delay, missing-telemetry behavior, censoring, observation dependencies, and
+post-commit review. Where the harm cannot be observed in time, exposure should
+remain narrower.
+
+The sixth is **checkpoint hindsight**. The team selects the prior or candidate
+state after observing results, reports the best checkpoint rather than the
+authorized final state, or changes the evaluation window to favor the upgrade.
+Prospective checkpoint authority and a durable comparison history keep useful
+exploration from becoming selective evidence.
+
+The seventh is **rollback theater**. The old binary or alias is restored and
+the incident closes even though data, caches, policies, credentials, services,
+external actions, disclosures, descendants, or user reliance remain changed.
+Recovery claims must enumerate the restored inventory and preserve every
+unrestored effect as compensation work, containment, or an owned residual.
+
+The eighth is **descendant escape**. A canary or short-lived default produces a
+dataset, tool, policy, memory, or successor model that survives after the
+candidate is rolled back. Restoring the parent route does not invalidate what
+learned from it. The transaction needs descendant identity and invalidation
+rules wherever replacement outputs can become durable causal inputs.
+
+The ninth is **incident amnesia**. Retirement removes the old implementation
+and its local documentation, taking historical failures with it. Future
+candidates repeat the defect because the regression belonged to the artifact
+rather than the field. The stable field should retain the incident and its
+test, along with the limits of that test, after every implementation that
+originally encountered it is gone.
+
+The tenth is **governance overload**. Every low-risk replacement receives the
+same elaborate packet, reviews slow to a halt, and operators begin copying
+records without examining them. The machinery then adds ceremony while real
+risk moves elsewhere. Field depth and transaction cost should scale with
+authority, state, side effects, uncertainty, reversibility, and affected
+consumers. Proportionality is not a waiver of governance; it is protection
+against governance becoming uninformative.
+
+These failures share one pattern: a true statement about one surface is allowed
+to stand in for the whole replacement. The field and transaction are useful
+only when they prevent that substitution. They should make narrow success
+easier to state, broad success harder to counterfeit, and failure cheaper to
+retain as knowledge.
+
+## The Strongest Simpler Baseline
+
+The strongest objection is not that change should be ungoverned. It is that
+ordinary disciplined engineering may already be enough.
+
+A competent team can use versioned interfaces, provenance, model registries,
+feature flags, progressive delivery, canaries, regression suites, MLOps
+pipelines, rollback rehearsal, incident response, and human approval. Adding a
+stable-field object and a larger transaction may duplicate those practices,
+slow useful upgrades, create new paperwork, and give a false impression that
+semantic continuity has been certified.
+
+This objection has force. The field should not survive merely because it can
+describe more metadata. It must improve decisions that matter: detecting
+semantic drift, preventing authority expansion, preserving rare regressions,
+calibrating evidence expiry, exposing evaluator dependence, recovering more of
+the declared state and effects, reducing repeated incidents, or making a failed
+replacement easier to understand and contain. Those gains must be compared
+against latency, compute, operator work, evaluator work, storage, missed help,
+false blocking, and residual burden.
+
+The architecture should also be allowed to shrink. A low-risk, stateless tool
+with no privileged effects may need only a small field: interface, provenance,
+tests, owner, expiry, and fallback. A high-risk verifier that influences release
+authority needs more. Governance proportionality is part of the design. If the
+same packet is required for every change, the system will either stop changing
+or learn to fill forms without learning anything.
+
+## From a Minimum Record to a Replacement Fabric
+
+The minimum useful implementation is modest. Give one capability a stable ID
+and versioned contract. Name its consumers, accepted inputs, required outputs,
+abstentions, errors, side effects, authority ceiling, historical regressions,
+candidate identity, evaluator, evidence lease, lifecycle state, fallback, and
+rollback owner. Validate that missing identity, stale evidence, authority
+widening, failed regressions, self-evaluation, absent fallback, or unowned
+irreversible effects block the default route.
+
+Then run one prospective replacement. Freeze the rules before results. Keep the
+candidate isolated. Use a narrow canary with a real stop condition. Exercise
+rollback before default. Compare the declared inventory after recovery. Keep
+negative and null outcomes. This does not prove the architecture, but it turns
+“upgrade” into a decision that can be inspected.
+
+The mature system is a replacement fabric spanning models, tools, memory,
+policies, data, evaluators, runtimes, and organizational procedures. Fields are
+versioned and consumer-relative. Qualification evidence decays. Historical
+incidents follow the field. Dependency changes trigger revalidation. Candidates
+can remain shadowed or canaried without pressure to become default. Monitoring,
+rollback, compensation, descendant invalidation, and retirement share one
+lineage.
+
+A serious research campaign would compare this fabric with registries,
+interface-only checks, provenance-only admission, benchmark promotion,
+progressive delivery, conventional MLOps, snapshot restoration, and the best
+ordinary change-management baseline. It would use real stateful and
+side-effecting capabilities, ambiguous boundaries, delayed outcomes,
+irreversible effects, heterogeneous consumers, captured evaluators, and stale
+evidence. It would measure useful improvement and blocked harm together.
+
+The proposal should advance only if it is not dominated on that joint frontier.
+If conventional methods preserve continuity and recovery at lower cost, the
+field should narrow. If a mechanism adds paperwork without changing decisions,
+remove it. If field boundaries prove too ambiguous for independent reviewers to
+agree, do not disguise disagreement as a stable interface.
+
+## The Strongest Objection
+
+Stable names can hide exactly the semantic drift they are meant to expose.
+
+Once a field becomes an important route, organizations may resist admitting
+that its meaning changed. A committee can preserve the field ID, update a few
+tests, and declare the candidate compatible. The stable abstraction then makes
+incomparable systems look interchangeable. A rich record can worsen the problem
+by giving the decision a technical appearance.
+
+The answer cannot be more faith in the record. Field changes need dissent,
+appeal, independent evaluation, incident memory, and a visible route to say
+that the old and new implementations are not the same capability. Unknown and
+incomparable must remain valid outcomes. A field version should split when
+material obligations diverge, even when that complicates navigation or delays
+an attractive release.
+
+The objection also reaches rollback. An organization may declare success over
+the surfaces it chose to inventory and ignore everything outside them. The
+inventory must therefore be prospective, challengeable, and tied to affected
+consumers and external effects. Omitted surfaces need reasons and owners. The
+claim must stay inventory-specific.
+
+## Evidence That Would Change the Conclusion
+
+The architecture should be reduced if natural replacement studies show no
+continuity, challenge, or recovery benefit beyond conventional versioning,
+progressive delivery, and disciplined MLOps. It should change if independent
+reviewers cannot agree on field boundaries, if evidence leases fail to predict
+regression, if rollback inventories systematically omit consequential effects,
+or if evaluator-separation records fail to reveal shared failure.
+
+It should be rejected for a domain if the machinery blocks useful improvement
+without reducing unsafe release, repeated incidents, authority drift, or
+recovery burden. Positive evidence would need prospective comparisons across
+real implementations, consumers, environments, update classes, and threat
+models; complete denominators including failed and abandoned attempts;
+independent evaluation; causal ablations of field identity, leases, regression
+memory, authority ceilings, canary isolation, and recovery duties; and transfer
+across organizations and substrates.
+
+No finite proof, schema, fixture, or clean local rollback can answer that
+question alone. The current technical work establishes bounded record and
+transition behavior, plus narrow inventory-specific outcomes. The core claims
+remain arguments awaiting broader evidence.
+
+## What This Establishes
+
+An improving system needs stable promises and replaceable machinery. Confusing
+the two produces either stagnation or trust laundering.
+
+Stable Capability Fields put identity, observable obligations, authority,
+incident memory, evidence scope, and recovery duties above any one
+implementation. Governed replacement turns an upgrade into a prospective,
+staged transaction whose failures, partial reversals, and irreversible effects
+remain visible. Together they make improvement contestable and reversible
+where possible without pretending that a name, benchmark, or rollback command
+proves equivalence.
+
+The patch verifier may change. Its promise cannot change invisibly. The new
+implementation earns only the route its evidence supports, for the consumers
+and uses that were actually examined, during the period in which that evidence
+remains current. When the canary fails, the system returns to the prior route,
+keeps the failed result, and owns what could not be undone.
+
+That is the handoff to the next problem. A replaceable capability can preserve
+its contract and still reason from bad observations. Unit 10 begins the
+cognitive path by asking what a system is entitled to believe about the world
+it senses.
+
+{{< include ../generated/unit-09-status.qmd >}}

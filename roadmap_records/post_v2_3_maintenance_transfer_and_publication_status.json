@@ -109,7 +109,7 @@
   },
   "editorial_product_migration": {
     "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
-    "state": "em2_six_packages_composed_public_cutover_pending",
+    "state": "em2_composition_complete_public_cutover_pending",
     "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
     "reconciliation_input_commit": "90f60c9f4bca340f170069d415893797b118252c",
     "current_reference_chapter_count": 87,
@@ -117,8 +117,8 @@
     "target_primary_architecture_chapter_count": 54,
     "target_implementation_method_chapter_count": 2,
     "target_merge_count": 18,
-    "target_semantic_merge_count": 1,
-    "target_publication_nest_count": 17,
+    "target_semantic_merge_count": 0,
+    "target_publication_nest_count": 18,
     "target_profile_count": 7,
     "target_dossier_owner_count": 5,
     "target_visible_dossier_count": 2,
@@ -132,9 +132,9 @@
     "historical_narrative_spine_path": "products/narrative_product_spine.json",
     "target_outline_is_completed_manuscript": false,
     "human_reader_current_manifest_path": "editions/reader_manuscript/current/manifest.json",
-    "human_reader_started_unit_count": 6,
-    "human_reader_target_length_unit_count": 6,
-    "human_reader_visible_word_count": 32055,
+    "human_reader_started_unit_count": 7,
+    "human_reader_target_length_unit_count": 7,
+    "human_reader_visible_word_count": 36661,
     "stale_active_product_count_literal_count": 0,
     "em0_count_reconciliation_complete": true,
     "completed_composition_packages": [
@@ -241,6 +241,20 @@
         "claim_support_inheritance": false,
         "support_state_effect": "none",
         "release_effect": "none"
+      },
+      {
+        "id": "em2-theseus-roadmap-publication-nest",
+        "state": "composed_no_public_cutover",
+        "parent_ids": [
+          "project-theseus-as-report-first-implementation-reference"
+        ],
+        "child_ids": [
+          "prototype-roadmap"
+        ],
+        "stable_technical_routes_preserved": true,
+        "claim_support_inheritance": false,
+        "support_state_effect": "none",
+        "release_effect": "none"
       }
     ],
     "count_is_editorial_target_not_quality_metric": true,
@@ -287,7 +301,7 @@
       "governed-deliberation-and-test-time-scaling": "publication_nest",
       "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
       "open-ended-improvement-engines": "publication_nest",
-      "prototype-roadmap": "semantic_merge_candidate"
+      "prototype-roadmap": "publication_nest"
     },
     "profile_map": {
       "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",

@@ -175,6 +175,33 @@ Appendix C now records ten passage-reviewed mappings for the Project Theseus cor
 | Circle transfer lane | Report-only bridge from deterministic Circle fixtures into private experiment configuration, structural smoke names, deterministic proxy benchmark design, claim-axis separation, and explicit disallowed quality/runtime/context/progress claims. | No consumer, smoke workload, proxy benchmark, private workload attachment, learned-model evaluation, transfer result, or model-promotion evidence was run here. |
 | Formal and fixture artifacts | `theseus_report_crosswalk_record.valid.json` and finite Lean predicates define record-level implementation-reference and gate-before-promotion expectations. | They prove public record-shape gates only, not Theseus runtime behavior, report truth, current readiness, self-evolution safety, or capability improvement. |
 
+### Phase-unlock governance inside the implementation reference
+
+[Prototype Roadmap](prototype-roadmap.qmd) remains the technical-detail owner
+for the program controller that decides whether a phase may research, demo,
+integrate, enter evidence review, promote, release, roll back, or retire. Its
+owned objects are dependency edges, phase work contracts, evaluator gates,
+phase debt, residuals, rollback paths, and terminal decisions. This chapter
+owns a different object: the evidence packet that lets a reviewer locate,
+replay, date, bound, and challenge what Project Theseus actually reports.
+
+The proposed semantic merge was therefore rejected by its own losslessness
+test. The two chapters share a report-first discipline, but they do not share
+an acceptance predicate. A complete, current, replayable Theseus packet can
+still describe a phase whose prerequisites failed; a correctly formed phase
+transaction can still depend on missing, stale, private, or unreplayed
+implementation artifacts. Publication places the roadmap beneath this
+implementation reference so the reader encounters one family argument, while
+the phase controller retains its source mappings, claim atoms, 37-declaration
+Lean module, fixtures, test plan, debt and residual vocabulary, evidence
+ceiling, and stable URL.
+
+Neither owner inherits the other's result. Theseus report completeness does
+not establish safe dependency order, phase acceptance, evaluator competence,
+rollback execution, or program completion. The roadmap's finite gate results
+do not establish report truth, runtime currentness, benchmark validity,
+capability, deployment, or a clean Theseus replay.
+
 ### Concrete Theseus Evidence Surface
 
 The Project Theseus reference should show the machine where the repository can show it safely. The current public-safe surface has twelve concrete pieces plus one selected support-lane aggregate.

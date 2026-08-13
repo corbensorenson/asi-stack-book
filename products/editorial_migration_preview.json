@@ -1,12 +1,12 @@
 {
   "schema_version": 1,
   "product_id": "editorial-migration-metadata-preview",
-  "state": "six_packages_composed_no_public_cutover",
+  "state": "composition_complete_no_public_cutover",
   "sources": [
     "book_structure.json",
     "docs/human_reader_26_unit_outline.md"
   ],
-  "book_structure_sha256": "b145cbe60f85a348f7e6f3efba4b8635bbd15033acf6486579a0e2fddda9f1ff",
+  "book_structure_sha256": "6e1c5a254a3890afdf7aa092b41fdb33d86f7ba6c20bdbb0880b823fd9eae271",
   "human_reader_outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
   "reference_owner_count": 87,
   "main_book_owner_count": 56,
@@ -16,9 +16,8 @@
     "implementation_method_owner": 2,
     "method_detail_nest": 2,
     "primary_architecture_owner": 54,
-    "publication_nest": 15,
-    "research_dossier_owner": 5,
-    "semantic_merge_candidate": 1
+    "publication_nest": 16,
+    "research_dossier_owner": 5
   },
   "roles": {
     "deployment_profile_owner": [
@@ -586,6 +585,13 @@
         "human_reader_unit_id": "unit-04"
       },
       {
+        "id": "prototype-roadmap",
+        "title": "Prototype Roadmap",
+        "file": "chapters/prototype-roadmap.qmd",
+        "parent_id": "project-theseus-as-report-first-implementation-reference",
+        "human_reader_unit_id": "unit-26"
+      },
+      {
         "id": "societal-resilience-and-misuse-defense",
         "title": "Societal Resilience and Misuse Defense",
         "file": "chapters/societal-resilience-and-misuse-defense.qmd",
@@ -635,15 +641,6 @@
         "file": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
         "parent_id": "experimental-mathematical-and-relational-substrates",
         "human_reader_unit_id": "unit-13"
-      }
-    ],
-    "semantic_merge_candidate": [
-      {
-        "id": "prototype-roadmap",
-        "title": "Prototype Roadmap",
-        "file": "chapters/prototype-roadmap.qmd",
-        "parent_id": "project-theseus-as-report-first-implementation-reference",
-        "human_reader_unit_id": "unit-26"
       }
     ]
   },
@@ -901,7 +898,7 @@
   "public_route_effect": "none",
   "non_claims": [
     "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-    "Six composition packages preserve all publication and method-detail nests; the semantic merge candidate and public cutover remain incomplete.",
+    "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
     "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
     "No support state, release state, safety, readiness, AGI, or ASI claim changes."
   ]

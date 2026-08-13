@@ -70,10 +70,10 @@ Improvement versus Autonomous Replication.
 
 ### Exact proposed disposition
 
-The 18 peer-status consolidation hypotheses are not 18 semantic deletions. A
-fresh ownership review against the current manuscripts, proof modules, source
-queues, and the June 30 consolidation record finds one credible true semantic
-merge candidate and 17 publication or method-detail nests. A publication nest
+The 18 peer-status consolidation hypotheses are not semantic deletions. The
+final ownership review against the current manuscripts, proof modules, source
+queues, and the June 30 consolidation record finds zero open semantic merge
+candidates and 18 publication or method-detail nests. A publication nest
 removes equal top-level weight from the public architecture and human
 narrative while preserving the child as a canonical technical owner and
 stable detail route. It does not transfer the child's claim support, proof
@@ -98,13 +98,14 @@ scope, evidence, or authority to the family destination.
 | `governed-deliberation-and-test-time-scaling` | `resource-economics-and-token-budgets` | `publication_nest` | Preserve branch, stopping, verifier, dissent, and answer-change control; resource economics owns budgets and opportunity cost, not deliberation policy. |
 | `rankfold-neuralfold-and-artifact-compression` | `compact-generative-systems-and-residual-honesty` | `method_detail_nest` | Preserve the specific transform, protected-observable, residual, fallback, and evaluation contracts as a technical method dossier; Compact Generative Systems owns the general reconstruction and residual-custody architecture. |
 | `open-ended-improvement-engines` | `recursive-self-improvement-boundaries` | `publication_nest` | Preserve generator-evaluator-archive campaign search and open-endedness failures; RSI continues to own qualification, promotion, rollback, and self-referential authority. |
-| `prototype-roadmap` | `project-theseus-as-report-first-implementation-reference` | `semantic_merge_candidate` | Rewrite one implementation argument in which the evidence-gated phase-unlock program becomes the implementation reference's roadmap; retain the old ID, claims, proof module, and URL as governed history. |
+| `prototype-roadmap` | `project-theseus-as-report-first-implementation-reference` | `publication_nest` | Preserve the evidence-gated phase-unlock controller, dependency graph, evaluator gates, phase debt, rollback, residuals, 37-declaration proof program, and URL beneath the report-first implementation reference; Theseus evidence-packet currentness remains a separate predicate. |
 
 `publication_nest` and `method_detail_nest` are navigation and composition
 decisions, not statements that the destination semantically owns every child
-mechanism. Only `prototype-roadmap` is currently eligible for a true
-one-skeleton semantic merge, and even that row must pass the ordinary
-claim/source/proof/test/URL reconciliation gate before execution.
+mechanism. `prototype-roadmap` failed the one-skeleton losslessness test: the
+phase-unlock controller and the Theseus evidence packet retain distinct owned
+objects, acceptance predicates, proof programs, and strongest failures. The
+family is therefore composed as a publication nest with no semantic deletion.
 
 The seven deployment profiles are Military AI and Strategic Stability
 (`military-ai-autonomous-weapons-and-strategic-stability`), Embodied Agency and
@@ -204,12 +205,12 @@ one argument, and its identity/source/proof/test/URL reconciliation passes.
    with RSI Boundaries and Artifact Stewards with Living Book Methodology.
    Preserve campaign search versus promotion authority and general artifact
    governance versus the reflexive book implementation.
-7. **Sole semantic merge candidate.** Only after waves 1-6 pass, evaluate
-   Prototype Roadmap into Project Theseus as one rewritten implementation
-   argument. Execute only if all Prototype claims, sources, Lean targets,
-   tests, phase debts, residuals, and historical URL routes survive and the
-   destination removes a full repeated skeleton. Otherwise downgrade it to a
-   publication nest without changing the 56-chapter top-level target.
+7. **Semantic-merge adjudication.** Prototype Roadmap was evaluated against
+   Project Theseus after waves 1-6. The merge was rejected because preserving
+   all Prototype claims, sources, Lean targets, tests, phase debts, residuals,
+   and historical URL routes would retain two independent predicates instead
+   of removing a full repeated skeleton. Compose it as a publication nest
+   without changing the 56-chapter top-level target.
 8. **Narrative and cutover.** Author the 26-unit human book from the completed
    family graph, run conclusion/claim crosswalk and legacy-route checks, record
    `support_state_effect: none`, and cut over only after render, viewport,
@@ -268,7 +269,7 @@ surface. The immutable reader and release archives remain untouched.
    relationships to the canonical graph; validate disjoint 56/18/7/5/1
    disposition coverage and two implementation/method owners; generate a
    reviewable preview without changing prose or the current public route.
-3. **EM2 — publication composition and the one semantic merge candidate.**
+3. **EM2 — publication composition and semantic-merge adjudication.**
    Process one consolidation/profile/dossier cluster at a time. A publication
    or method-detail nest keeps the child as a canonical technical owner and
    stable detail route while the family destination provides one top-level
@@ -276,9 +277,10 @@ surface. The immutable reader and release archives remain untouched.
    failure modes, evidence exits, sources, proofs, tests, artifacts, and
    non-claims; remove shared lifecycle boilerplate; add the local delta and a
    consolidation-boundary non-claim; and produce one compact migration
-   receipt. Only the Prototype Roadmap/Project Theseus package is a current
-   semantic merge candidate. Its parent must be rewritten as one argument,
-   never assembled by concatenating files.
+   receipt. The Prototype Roadmap/Project Theseus package was the sole
+   semantic-merge candidate. It failed the losslessness test and is now a
+   publication nest: the parent carries the family argument while the phase
+   controller remains an independently addressable technical route.
 4. **EM3 — 26-unit human narrative.** Rebuild the human manuscript around the
    26-unit thesis-to-method route below, using the Human Reading Paths and the
    continuing repository-change trace as inputs. Each unit receives one compact
@@ -294,7 +296,7 @@ surface. The immutable reader and release archives remain untouched.
    replace the 22-unit candidate. Full EPUB/PDF/DOCX and audio remain deferred
    until the next major-version content freeze.
 
-EM0 and EM1 are complete. Six EM2 packages are complete without public
+EM0 and EM1 are complete. Seven EM2 packages are complete without public
 cutover. The method-detail pilot composes Fast Generation and Governed
 Deliberation into Resource Economics and RankFold/NeuralFold into Compact
 Generative Systems. The security/custody package composes Adversarial Machine
@@ -316,10 +318,13 @@ Open-Ended Improvement Engines beneath Recursive Self-Improvement Boundaries
 while preserving campaign search versus promotion authority, and composes
 Artifact Steward Agents beneath Living Book Methodology while preserving
 general project governance versus this book's reflexive implementation. The
-sole semantic-merge candidate remains open. EM3 drafting has six maintained
+seventh package composes Prototype Roadmap beneath Project Theseus after
+rejecting a true semantic merge: report-packet currentness and phase-unlock
+acceptance remain separate predicates. No semantic-merge candidate remains
+open. EM3 drafting has seven maintained
 Human Reader units at target length: Unit 4 is 5,650 words, Unit 5 is 5,553,
-Unit 6 is 5,124, Unit 7 is 5,517, Unit 8 is 4,703, and Unit 23 is 5,508, for
-32,055 visible words. The other 20 units remain openly
+Unit 6 is 5,124, Unit 7 is 5,517, Unit 8 is 4,703, Unit 9 is 4,606, and Unit 23
+is 5,508, for 36,661 visible words. The other 19 units remain openly
 `not_started`; target length is not
 editorial approval or release.
 
@@ -363,8 +368,8 @@ not rewritten or relabeled as the 26-unit manuscript. The detailed outline is
 not completed prose and does not authorize cutover.
 
 `P7.1-EM` is complete only when all 87 legacy IDs resolve exactly once; the
-54+2 main-book split, 18 peer-status consolidation relationships (one semantic
-merge candidate, 15 publication nests, and two method-detail nests), seven
+54+2 main-book split, 18 peer-status consolidation relationships (16
+publication nests and two method-detail nests), seven
 profiles, five dossier
 owners/two dossier surfaces, one back-matter owner, and 26 narrative units are
 machine-validated; no evidence edge is orphaned; old URLs resolve; every
@@ -876,7 +881,7 @@ remain closed while other work proceeds.
 | Existing-owner functional-precision packet — source and prose terminal; evidence work queued | `P6.8-functional-precision-and-behavior-preserving-computation` | Source intake and the nine-owner manuscript integration are complete; schemas, validators, source resolution, and empirical work retain ordinary gates; no new chapter or support movement | Maintain the integrated Precision Contract treatment led by RankFold/NeuralFold. Preserve representation invariance, protected behavior, complete executable and physical-cost accounting, progressive residual precision, routed fallback, certificate scope, and program-transformation proof limits. Reconsider a standalone chapter only if a dated post-integration coherence audit finds a genuinely unowned lifecycle. |
 | Existing-book depth recovery — terminal historical packet with current-manifest admission | `P6.9-R21-concept-complete-depth-and-atom-adequacy` | The 84-chapter R21 packet remains immutable history. Current chapter growth is manifest-driven and requires the full admission and debt-reconciliation path; additive atom or bounded formal-target custody is now 87/87 without rewriting the historical receipt. | Preserve all twenty-three completed owners and 184 concepts at their reviewed digests. The raw-scaffold audit owns all 21 widest blocks with zero reader-visible or unjustified blocks; the exact 23-chapter/184-concept proof/evidence handoff remains terminal. New owners must gain exact atom or bounded formal-target custody at birth and cannot inherit completion from the historical packet. |
 | Corben paper corpus fidelity — terminal; drift-triggered maintenance | `P6.10-complete-Corben-paper-section-family-closure` | All 46 locally readable canonical Corben paper texts and seven authenticated connector records have complete section-family dispositions; connector variants and project-lineage records retain separate evidence classes | Maintain both machine closure ledgers, `docs/source_mining_synthesis.md`, per-source notes, inventory, chapter mappings, and owning prose together. Reopen only the affected family when a paper changes, an inaccessible variant is recovered, or a new source arrives. Every useful item must integrate, remain in the public-safe note, become a concrete research obligation, or be an explicit non-claim; source assignment alone never closes mining. |
-| Editorial product migration and independent human narrative — active book packet | `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration` | EM0 and EM1 are complete. Six no-cutover EM2 packages compose all fifteen publication nests and two method-detail nests while preserving stable routes, local ownership, support ceilings, and URLs. EM3 Units 4, 5, 6, 7, 8, and 23 are independently authored at 5,650, 5,553, 5,124, 5,517, 4,703, and 5,508 words inside their targets; 20 units remain not started. The exact 54+2/15+2+1/7/5/1 split and 26 owner routes remain validated; no public cutover or release occurred. | Continue EM2–EM4 with one gated semantic-merge candidate and 20 independent Human Reader units. Preserve major conclusions and every technical identity without reproducing local status administration. Defer the primer and major release formats until content freeze. |
+| Editorial product migration and independent human narrative — active book packet | `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration` | EM0 and EM1 are complete. Seven no-cutover EM2 packages compose all sixteen publication nests and two method-detail nests while preserving stable routes, local ownership, support ceilings, and URLs; the sole semantic candidate failed its losslessness test and was downgraded to a publication nest. EM3 Units 4, 5, 6, 7, 8, 9, and 23 are independently authored at 5,650, 5,553, 5,124, 5,517, 4,703, 4,606, and 5,508 words inside their targets; 19 units remain not started. The exact 54+2/16+2+0/7/5/1 split and 26 owner routes remain validated; no public cutover or release occurred. | Continue EM3–EM4 with 19 independent Human Reader units, conclusion/claim crosswalk, redirects, and cutover validation. Preserve major conclusions and every technical identity without reproducing local status administration. Defer the primer and major release formats until content freeze. |
 | Visual edition — separately owned derivative packet | `P7.3-governed-manim-visual-edition` | The 84 generation-one packets and their technical receipts remain historical and stale; all former YouTube previews are private and the current Quarto projection is empty. Generation two is manifest-driven across 87 chapters. Twenty-four case-first narrations have been rewritten: 20 remain narration drafts, while four targets have treatment, narration, and beat-plan files but no current script or animatic gate pass after source and authoring-standard invalidation. Their local animatics and sampled-frame receipts are diagnostic only; no downstream publication state is closed. Treatment-free v2 plans and their downstream artifacts remain historical. The current ledger reports 63 planned, 20 narration drafts, four file-level beat-planned targets, zero current script-passed targets after source invalidation, zero animatic-passed targets, and zero accepted generation-two videos. | The separate video task owns P7.3-F9. Complete treatment, script, block-timed beat-plan, animatic, qualified forced alignment, picture-and-sound lock, independent source-aware review, context-isolated cold-proxy review, technical, accessibility, and publication gates in that order. Treat an AI proxy as artifact diagnosis rather than human-learning evidence. Preserve private predecessor history and zero current publication claims. Do not let derivative work satisfy or block the prose/proof/evidence path. |
 | Formal slot — consumer-gated | `P4.1-consumer-gated-cross-owner-composition` | `P5-U1` or one contribution exit ladder names a concrete runtime, evidence, or decision consumer; the original C6 residual estate remains under exact dependency and consumer custody; new work requires the seven-field family admission rule plus maximum inference | Implement only the invariant or distributed-fault model required by that consumer, then rebuild the overlay and ledger with no support or release movement. No independent theorem-family expansion is authorized. |
 | Empirical headline — exact N0 entry receipt; materialization blocked | `P2-R3-storage-materialization-and-replacement-qualification` | `P2-R3a-002` measured 23.87 GiB free against the 50 GiB floor and no reachable Docker daemon; restore both gates and write a new immutable preflight before any pull | Then thirty sealed candidate recipes and receipts; terminal pool materialization; four competently qualified replacements restoring the fixed twelve-task denominator; rank progression only under the frozen amendment; zero protected-content leakage. No deletion of non-Docker user data is authorized. |
@@ -5473,7 +5478,7 @@ is not a debugging interface.
    current-reader freshness packets as historical custody, not as the target
    human book. Execute `P7.1-EM` metadata-first: preserve all 87 research
    identities while validating the 54+2 main-book, 18 peer-status
-   consolidation (one semantic merge candidate and 17 nests), seven-profile,
+   consolidation (zero open semantic merge candidates and 18 nests), seven-profile,
    five-owner/two-dossier, one-back-matter product split, then compose and
    maintain the independent 26-unit, 131,000-180,000-word narrative source.
    Preserve major conclusions and claim identity through its crosswalk while
@@ -5663,7 +5668,7 @@ the compiler rather than preserving it as governance theater.
 | M4 — Semantic formal depth and composition | in progress; consumer-gated | Preserve the terminal six-cluster local audit and complete only dependency-safe rationalization or connected-owner composition required by `P5-U1` or a contribution exit ladder. Every family has a real consumer and seven-field admission record; no aggregate theorem count or finite authored record grants empirical, operational, institutional, or whole-system support. |
 | M5 — Effect-complete reference | in progress; `P5-U1` headline | Deliver the fresh-checkout `P5-U1` command, three prospectively frozen routes, four effect/failure paths, state-checkable outcomes, rejecting mutations, and joint utility/safety/cost/burden accounting without support movement. Retain the two bounded local slices and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 87 owners and exact claim or bounded formal-target custody for all 87; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, work-surface, learning-topology, and adjudicated-persistence manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
-| M7 — Editorial product migration, independent narrative, and derivative disposition | in progress; EM0-EM1 and six EM2 packages complete | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, and the current 22-unit candidate as immutable historical receipts while maintaining all 87 research identities. EM0 manifest-derived count truth, EM1 exact metadata-first 54+2/15+2+1/7/5/1 disposition, six no-cutover EM2 composition packages covering all fifteen publication nests and two method-detail nests, and six target-length EM3 units are complete. Finish EM2-EM4: one gated semantic merge candidate, redirects, and an independently maintained 26-unit, 131,000-180,000-word human manuscript with conclusion/claim crosswalk; retain the fifteen-minute utility route, three runnable task recipes, optional-depth marking, and unit-level use/avoid/conclusion-change guidance. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for or block narrative completion. |
+| M7 — Editorial product migration, independent narrative, and derivative disposition | in progress; EM0-EM2 complete | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, and the current 22-unit candidate as immutable historical receipts while maintaining all 87 research identities. EM0 manifest-derived count truth, EM1 exact metadata-first 54+2/16+2+0/7/5/1 disposition, seven no-cutover EM2 composition packages covering all sixteen publication nests and two method-detail nests, a terminal no-merge adjudication for Prototype Roadmap/Project Theseus, and seven target-length EM3 units are complete. Finish EM3-EM4: nineteen independent units, redirects, and a maintained 26-unit, 131,000-180,000-word human manuscript with conclusion/claim crosswalk; retain the fifteen-minute utility route, three runnable task recipes, optional-depth marking, and unit-level use/avoid/conclusion-change guidance. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for or block narrative completion. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
 
 ## Definition of done
@@ -5690,8 +5695,9 @@ claim/conclusion crosswalk. Completion also requires terminal disposition of
 the fifteen-minute utility route, three task recipes, optional-depth map, and
 unit-level use/avoid/conclusion-change guidance; exact preservation of all 87
 legacy IDs and their claim/source/proof/test/artifact edges through the
-54+2/18/7/5/1 editorial migration, including one semantic merge candidate and
-17 technical-owner-preserving nests; and working legacy redirects. Completion does not require an
+54+2/18/7/5/1 editorial migration, including 18
+technical-owner-preserving nests and zero open semantic merge candidates; and
+working legacy redirects. Completion does not require an
 external-human prepublication review or a GitHub popularity threshold.
 Completion also requires terminal disposition of the Round 16
 atom/current-reader/template and six-chapter proof-readiness

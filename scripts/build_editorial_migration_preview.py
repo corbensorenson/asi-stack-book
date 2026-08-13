@@ -132,7 +132,7 @@ def build_preview(structure: dict) -> dict:
     return {
         "schema_version": 1,
         "product_id": "editorial-migration-metadata-preview",
-        "state": "six_packages_composed_no_public_cutover",
+        "state": "composition_complete_no_public_cutover",
         "sources": ["book_structure.json", "docs/human_reader_26_unit_outline.md"],
         "book_structure_sha256": digest(STRUCTURE),
         "human_reader_outline_sha256": digest(OUTLINE),
@@ -152,7 +152,7 @@ def build_preview(structure: dict) -> dict:
         "public_route_effect": "none",
         "non_claims": [
             "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
-            "Six composition packages preserve all publication and method-detail nests; the semantic merge candidate and public cutover remain incomplete.",
+            "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
             "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
             "No support state, release state, safety, readiness, AGI, or ASI claim changes.",
         ],

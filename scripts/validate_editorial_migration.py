@@ -23,9 +23,9 @@ from build_editorial_migration_preview import (
 EXPECTED_ROLE_COUNTS = {
     "primary_architecture_owner": 54,
     "implementation_method_owner": 2,
-    "publication_nest": 15,
+    "publication_nest": 16,
     "method_detail_nest": 2,
-    "semantic_merge_candidate": 1,
+    "semantic_merge_candidate": 0,
     "deployment_profile_owner": 7,
     "research_dossier_owner": 5,
     "generated_back_matter_owner": 1,
@@ -103,6 +103,12 @@ IMPROVEMENT_STEWARDSHIP_CHILD_IDS = {
     "open-ended-improvement-engines",
     "artifact-steward-agents-and-living-project-governance",
 }
+THESEUS_ROADMAP_PARENT_IDS = {
+    "project-theseus-as-report-first-implementation-reference",
+}
+THESEUS_ROADMAP_CHILD_IDS = {
+    "prototype-roadmap",
+}
 COMPOSED_PARENT_IDS = (
     METHOD_DETAIL_PARENT_IDS
     | SECURITY_CUSTODY_PARENT_IDS
@@ -110,6 +116,7 @@ COMPOSED_PARENT_IDS = (
     | HUMAN_INSTITUTIONAL_PARENT_IDS
     | CONTEXT_ORGANIZATION_EXCHANGE_PARENT_IDS
     | IMPROVEMENT_STEWARDSHIP_PARENT_IDS
+    | THESEUS_ROADMAP_PARENT_IDS
 )
 COMPOSED_CHILD_IDS = (
     METHOD_DETAIL_CHILD_IDS
@@ -118,6 +125,7 @@ COMPOSED_CHILD_IDS = (
     | HUMAN_INSTITUTIONAL_CHILD_IDS
     | CONTEXT_ORGANIZATION_EXCHANGE_CHILD_IDS
     | IMPROVEMENT_STEWARDSHIP_CHILD_IDS
+    | THESEUS_ROADMAP_CHILD_IDS
 )
 COMPOSITION_SURFACES = {
     "resource-economics-and-token-budgets": (
@@ -350,6 +358,24 @@ COMPOSITION_SURFACES = {
             "does not inherit manuscript quality",
         ],
     ),
+    "project-theseus-as-report-first-implementation-reference": (
+        "chapters/project-theseus-as-report-first-implementation-reference.qmd",
+        [
+            "### Phase-unlock governance inside the implementation reference",
+            "(prototype-roadmap.qmd)",
+            "The proposed semantic merge was therefore rejected by its own losslessness\ntest.",
+            "not establish safe dependency order",
+        ],
+    ),
+    "prototype-roadmap": (
+        "chapters/prototype-roadmap.qmd",
+        [
+            "### Publication placement and preserved technical ownership",
+            "(project-theseus-as-report-first-implementation-reference.qmd)",
+            "This placement follows a failed semantic-merge test",
+            "does not\ninherit safe sequencing",
+        ],
+    ),
 }
 
 
@@ -442,8 +468,8 @@ def validate(
         errors.append("EM0 count reconciliation is not complete")
     if editorial.get("stale_active_product_count_literal_count") != 0:
         errors.append("EM0 still records stale active product counts")
-    if editorial.get("state") != "em2_six_packages_composed_public_cutover_pending":
-        errors.append("editorial migration state does not record all six EM2 packages")
+    if editorial.get("state") != "em2_composition_complete_public_cutover_pending":
+        errors.append("editorial migration state does not record complete EM2 composition")
     expected_packages = [
         {
             "id": "em2-method-detail-pilot",
@@ -500,6 +526,16 @@ def validate(
             "state": "composed_no_public_cutover",
             "parent_ids": sorted(IMPROVEMENT_STEWARDSHIP_PARENT_IDS),
             "child_ids": sorted(IMPROVEMENT_STEWARDSHIP_CHILD_IDS),
+            "stable_technical_routes_preserved": True,
+            "claim_support_inheritance": False,
+            "support_state_effect": "none",
+            "release_effect": "none",
+        },
+        {
+            "id": "em2-theseus-roadmap-publication-nest",
+            "state": "composed_no_public_cutover",
+            "parent_ids": sorted(THESEUS_ROADMAP_PARENT_IDS),
+            "child_ids": sorted(THESEUS_ROADMAP_CHILD_IDS),
             "stable_technical_routes_preserved": True,
             "claim_support_inheritance": False,
             "support_state_effect": "none",
@@ -637,6 +673,12 @@ def main() -> None:
             "as proof that the general steward design works",
             "living-book/stewardship boundary erasure",
         ),
+        (
+            "project-theseus-as-report-first-implementation-reference",
+            "not establish safe dependency order",
+            "establishes safe dependency order",
+            "theseus/roadmap boundary erasure",
+        ),
     ]
     for chapter_id, good, bad, label in final_boundary_mutations:
         altered_surfaces = dict(surfaces)
@@ -648,9 +690,9 @@ def main() -> None:
         raise SystemExit("Editorial migration validation failed:\n - " + "\n - ".join(errors))
     print(
         "Editorial migration validation passed: 87 owners, 54+2 main-book owners, "
-        "15 publication nests, 2 method-detail nests, 1 semantic candidate, "
+        "16 publication nests, 2 method-detail nests, 0 semantic candidates, "
         "7 profiles, 5 dossier owners, 1 back-matter owner, 26 Human Reader routes, "
-        "and 15 rejecting controls."
+        "and 16 rejecting controls."
     )
 
 

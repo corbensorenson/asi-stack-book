@@ -1282,7 +1282,6 @@ def errors(data: dict) -> list[str]:
         {
             "fast-generation-architectures": "method_detail_nest",
             "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
-            "prototype-roadmap": "semantic_merge_candidate",
         }
     )
     expected_profile_map = {
@@ -1529,10 +1528,10 @@ def errors(data: dict) -> list[str]:
         "P7.1-EM",
         "Local delta beyond the governed-cognition pattern",
         "54+2/18/7/5/1",
-        "one credible true semantic merge candidate and 17 publication or method-detail nests",
+        "zero open semantic merge candidates and 18 publication or method-detail nests",
         "2026-08-12 recent-owner reconciliation",
         "Consolidation execution order",
-        "Sole semantic merge candidate",
+        "Semantic-merge adjudication",
         "without recovering lost prose from Git history",
         "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
         "26 narrative units",

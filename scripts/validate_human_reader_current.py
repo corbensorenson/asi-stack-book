@@ -133,6 +133,24 @@ UNIT_08_REQUIRED = [
     "Capability does not\ncreate mandate",
     "This Human Reader synthesis does not combine the two finite reviews into a\nstronger theorem",
 ]
+UNIT_09_REQUIRED = [
+    "## The Name That Survives the Upgrade",
+    "## A Field Is a Promise, Not a Label",
+    "## Compatibility Is Not Qualification",
+    "## The Patch Verifier Replacement",
+    "## Replacement Is a Transaction",
+    "## Rollback Is Not Time Travel",
+    "## Authority Must Not Ride Along",
+    "## The Proof Boundary",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## From a Minimum Record to a Replacement Fabric",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "The field holds the\npromise. The implementation is one defeasible attempt to keep it",
+    "No finite proof, schema, fixture, or clean local rollback can answer that\nquestion alone",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -225,6 +243,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_08_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 8 missing required argument boundary: {fragment!r}")
+    unit_09 = next((unit for unit in units if unit.get("unit_id") == "unit-09"), None)
+    if unit_09 is None or unit_09.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 9 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_09["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_09_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 9 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

@@ -3243,7 +3243,9 @@
     "editions/reader_manuscript/current/chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
     "editions/reader_manuscript/current/generated/unit-07-status.qmd",
     "editions/reader_manuscript/current/chapters/unit-08-institutions-coordination-and-societal-resilience.qmd",
-    "editions/reader_manuscript/current/generated/unit-08-status.qmd"
+    "editions/reader_manuscript/current/generated/unit-08-status.qmd",
+    "editions/reader_manuscript/current/chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
+    "editions/reader_manuscript/current/generated/unit-09-status.qmd"
   ],
   "units": [
     {
@@ -18925,7 +18927,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the six completed no-cutover EM2 composition packages.",
+      "input_contract": "The canonical 87-owner graph, reviewed 54+2/18/7/5/1 publication disposition, exact 26-unit owner route, and the seven completed no-cutover EM2 composition packages.",
       "input_artifacts": [
         "scripts/validate_editorial_migration.py",
         "scripts/build_editorial_migration_preview.py",
@@ -18992,17 +18994,17 @@
         "87 canonical technical owners",
         "54 primary architecture owners",
         "2 implementation/method owners",
-        "15 publication nests",
+        "16 publication nests",
         "2 method-detail nests",
-        "1 gated semantic-merge candidate",
+        "0 open semantic-merge candidates",
         "7 deployment profiles",
         "5 dossier owners",
         "1 back-matter owner",
         "26 Human Reader units",
-        "15 semantic mutations reject",
+        "16 semantic mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and six evidence-preserving EM2 composition packages without public cutover.",
+      "claim_scope": "Publication classification, legacy identity preservation, Human Reader routing, and seven evidence-preserving EM2 composition packages without public cutover.",
       "negative_controls": "validator_owned_support_parent_route_and_composition_mutations",
       "negative_control_cases": [
         "support promotion",
@@ -19019,11 +19021,12 @@
         "work-surface/organization boundary erasure",
         "protocol/population boundary erasure",
         "recursive/open-ended boundary erasure",
-        "living-book/stewardship boundary erasure"
+        "living-book/stewardship boundary erasure",
+        "theseus/roadmap boundary erasure"
       ],
-      "prohibited_inference": "Composition does not transfer technical ownership or support, complete the semantic merge candidate, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
+      "prohibited_inference": "Composition does not transfer technical ownership or support, erase the rejected semantic-merge boundary, authorize public cutover or release, or establish safety, readiness, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
-      "semantic_review_state": "checked_six_no_cutover_composition_packages"
+      "semantic_review_state": "checked_seven_no_cutover_composition_packages"
     },
     {
       "id": "validate_human_reader_current.py:471",
@@ -19050,6 +19053,8 @@
         "editions/reader_manuscript/current/generated/unit-07-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-08-institutions-coordination-and-societal-resilience.qmd",
         "editions/reader_manuscript/current/generated/unit-08-status.qmd",
+        "editions/reader_manuscript/current/chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
+        "editions/reader_manuscript/current/generated/unit-09-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
         "editions/reader_manuscript/current/generated/unit-23-status.qmd",
         "docs/human_reader_26_unit_outline.md",
@@ -19060,12 +19065,12 @@
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
-        "Units 4, 5, 6, 7, 8, and 23 within their declared word targets",
+        "Units 4, 5, 6, 7, 8, 9, and 23 within their declared word targets",
         "independent maintained prose",
         "3 mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Independent Human Reader manuscript structure and Units 4, 5, 6, 7, 8, and 23 drafting completeness only.",
+      "claim_scope": "Independent Human Reader manuscript structure and Units 4, 5, 6, 7, 8, 9, and 23 drafting completeness only.",
       "negative_controls": "validator_owned_route_length_and_support_mutations",
       "negative_control_cases": [
         "owner-route loss",
@@ -19078,7 +19083,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3199,
+    "required_artifact_count": 3201,
     "unit_count": 471
   },
   "non_claims": [
