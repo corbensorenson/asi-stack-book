@@ -6,7 +6,9 @@ project:
   output-dir: _site
   resources:
     - "!chapters/*.html"
+    - "!chapters/*_files/**"
     - "!appendices/*.html"
+    - "!appendices/*_files/**"
     - chapters/agency-dignity-and-corrigibility.html
     - chapters/governance-rights-fork-exit-and-audit.html
     - chapters/generate-verify-repair-compression.html

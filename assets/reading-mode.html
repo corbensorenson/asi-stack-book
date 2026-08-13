@@ -440,6 +440,36 @@
     }
   }
 
+  function readerEditionBaseUrl() {
+    const brand = document.querySelector("a.navbar-brand");
+    if (brand && brand.href) return new URL("reader/", brand.href);
+    const marker = "/chapters/";
+    const index = window.location.pathname.indexOf(marker);
+    if (index >= 0) {
+      return new URL(`${window.location.pathname.slice(0, index + 1)}reader/`, window.location.origin);
+    }
+    return new URL("reader/", window.location.href);
+  }
+
+  function resolveReaderEditionLink(link) {
+    const base = readerEditionBaseUrl();
+    link.href = base.href;
+    const sourceFile = currentSourceFile();
+    if (!sourceFile || typeof window.fetch !== "function") return;
+    window.fetch(new URL("route-map.json", base))
+      .then((response) => {
+        if (!response.ok) throw new Error(`route map ${response.status}`);
+        return response.json();
+      })
+      .then((payload) => {
+        const route = (payload.routes || []).find((row) => row.technical_source_file === sourceFile);
+        if (route && route.reader_path) link.href = new URL(route.reader_path, base).href;
+      })
+      .catch(() => {
+        /* Keep the reader index fallback when the route map is unavailable. */
+      });
+  }
+
   function insertToggle() {
     const target = document.querySelector("header#title-block-header") || document.querySelector("main.content") || document.querySelector("#quarto-document-content") || document.body;
     const control = document.createElement("div");
@@ -448,15 +478,18 @@
     control.setAttribute("aria-label", "Reading mode");
     control.setAttribute("aria-describedby", "asi-reading-mode-description");
     control.innerHTML = [
-      '<span class="asi-reading-mode__label">Reading mode</span>',
-      '<span id="asi-reading-mode-description" class="asi-sr-only">AI view shows the full live research scaffold. Human view hides repeated workflow sections and shows human-facing bridge prose.</span>',
+      '<span class="asi-reading-mode__label">Edition</span>',
+      '<span id="asi-reading-mode-description" class="asi-sr-only">AI view shows the full live research scaffold. Condensed view hides repeated workflow sections. Reader book opens the independent Human Reader edition.</span>',
       '<button type="button" data-asi-reading-choice="ai" aria-pressed="true" title="Show the full AI and researcher scaffold">AI view</button>',
-      '<button type="button" data-asi-reading-choice="human" aria-pressed="false" title="Read the human-facing chapter prose">Human view</button>',
+      '<button type="button" data-asi-reading-choice="human" aria-pressed="false" title="Read the condensed technical chapter">Condensed</button>',
+      '<a class="asi-reading-mode__reader-link" data-asi-reader-edition href="../reader/" title="Open the independent Human Reader book">Reader book</a>',
       '<span class="asi-sr-only" role="status" aria-live="polite" data-asi-reading-mode-status></span>'
     ].join("");
     control.querySelectorAll("button").forEach((button) => {
       button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice"), { updateUrl: true }));
     });
+    const readerLink = control.querySelector("[data-asi-reader-edition]");
+    if (readerLink) resolveReaderEditionLink(readerLink);
     if (target.matches && target.matches("header#title-block-header")) {
       target.insertAdjacentElement("afterend", control);
     } else {

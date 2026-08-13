@@ -1,6 +1,6 @@
 # Human Reader Edition: 26-Unit Writing Outline
 
-Status: **canonical target outline; manuscript and cutover pending**
+Status: **canonical 26-unit manuscript complete; tested public HTML cutover pending**
 
 Roadmap owner: `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration`
 

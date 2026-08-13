@@ -105,6 +105,13 @@ function viewportsForValidation(allViewports) {
   return [{ name: "desktop", size: VIEWPORTS.desktop }];
 }
 
+function readerPagesForValidation(crosswalk, allUnits) {
+  const units = crosswalk.units || [];
+  if (allUnits) return units;
+  const indexes = new Set([0, Math.floor(units.length / 2), units.length - 1]);
+  return [...indexes].filter((index) => units[index]).map((index) => units[index]);
+}
+
 function candidateModuleRoots() {
   const roots = [];
   for (const key of ["NODE_PATH", "CODEX_PLAYWRIGHT_NODE_MODULES", "CODEX_NODE_MODULES"]) {
@@ -239,6 +246,8 @@ async function validateResponsiveLayout(page, pageId, mode) {
         text_overflow_px: Math.max(0, button.scrollWidth - button.clientWidth),
       };
     });
+    const readerLink = document.querySelector(".asi-reading-mode__reader-link");
+    const readerLinkRect = readerLink ? readerLink.getBoundingClientRect() : null;
     return {
       viewport_width: viewportWidth,
       viewport_height: viewportHeight,
@@ -263,6 +272,15 @@ async function validateResponsiveLayout(page, pageId, mode) {
         : null,
       toggle_clipped_horizontally: toggleRect ? toggleRect.left < -1 || toggleRect.right > viewportWidth + 1 : true,
       buttons,
+      reader_link: readerLinkRect
+        ? {
+            text: readerLink.textContent ? readerLink.textContent.trim() : "",
+            href: readerLink.href || "",
+            visible: window.getComputedStyle(readerLink).visibility !== "hidden" && readerLinkRect.width > 0 && readerLinkRect.height > 0,
+            clipped_horizontally: readerLinkRect.left < -1 || readerLinkRect.right > viewportWidth + 1,
+            text_overflow_px: Math.max(0, readerLink.scrollWidth - readerLink.clientWidth),
+          }
+        : null,
     };
   });
 
@@ -281,7 +299,46 @@ async function validateResponsiveLayout(page, pageId, mode) {
       throw new Error(`${pageId}: ${mode} view reading-mode button ${button.choice} has ${button.text_overflow_px}px text overflow.`);
     }
   }
+  if (!metrics.reader_link || !metrics.reader_link.visible) throw new Error(`${pageId}: ${mode} view reader-edition link is not visible.`);
+  if (metrics.reader_link.clipped_horizontally) throw new Error(`${pageId}: ${mode} view reader-edition link is clipped horizontally.`);
+  if (metrics.reader_link.text_overflow_px > 2) throw new Error(`${pageId}: ${mode} view reader-edition link text overflows.`);
   return metrics;
+}
+
+async function validateReaderPage(page, fileUrl, unit, viewportName) {
+  await page.goto(fileUrl, { waitUntil: "domcontentloaded" });
+  await page.waitForSelector(".asi-edition-switch", { timeout: 5000 });
+  const metrics = await page.evaluate(() => {
+    const doc = document.documentElement;
+    const control = document.querySelector(".asi-edition-switch");
+    const controlRect = control ? control.getBoundingClientRect() : null;
+    const researchLink = document.querySelector("[data-asi-research-edition]");
+    const current = document.querySelector('.asi-edition-switch [aria-current="page"]');
+    const h1 = document.querySelector("main.content h1");
+    const main = document.querySelector("main.content");
+    const skip = document.querySelector('.asi-reader-skip[href="#quarto-document-content"]');
+    return {
+      horizontal_overflow_px: Math.max(0, doc.scrollWidth - doc.clientWidth),
+      control_visible: Boolean(controlRect) && controlRect.width > 0 && controlRect.height > 0,
+      control_clipped: controlRect ? controlRect.left < -1 || controlRect.right > window.innerWidth + 1 : true,
+      research_href: researchLink ? researchLink.href : "",
+      research_text: researchLink && researchLink.textContent ? researchLink.textContent.trim() : "",
+      current_text: current && current.textContent ? current.textContent.trim() : "",
+      title: h1 && h1.textContent ? h1.textContent.trim() : "",
+      main_present: Boolean(main),
+      skip_link_present: Boolean(skip),
+      research_link_label: researchLink ? researchLink.getAttribute("aria-label") || researchLink.textContent.trim() : "",
+      callout_count: document.querySelectorAll(".callout-note").length,
+    };
+  });
+  if (metrics.horizontal_overflow_px > 2) throw new Error(`${unit.unit_id}: reader ${viewportName} has horizontal overflow.`);
+  if (!metrics.control_visible || metrics.control_clipped) throw new Error(`${unit.unit_id}: reader edition control is absent or clipped.`);
+  if (!metrics.main_present || !metrics.skip_link_present) throw new Error(`${unit.unit_id}: reader landmarks or skip link are missing.`);
+  if (!metrics.research_href || !metrics.research_link_label) throw new Error(`${unit.unit_id}: research-edition return link is inaccessible.`);
+  if (metrics.current_text !== "Human Reader") throw new Error(`${unit.unit_id}: Human Reader current-edition state is missing.`);
+  if (!metrics.title.includes(unit.title)) throw new Error(`${unit.unit_id}: rendered title differs from the crosswalk.`);
+  if (metrics.callout_count < 1) throw new Error(`${unit.unit_id}: generated research-status panel is missing.`);
+  return { unit_id: unit.unit_id, viewport: viewportName, url: fileUrl, checks: metrics };
 }
 
 async function validateRenderedDiagrams(page, pageId, mode) {
@@ -538,8 +595,10 @@ async function validateAppendixPage(page, fileUrl, pageId) {
 
 async function runBrowserValidation(playwright, args) {
   const structure = loadJson("book_structure.json");
+  const readerCrosswalk = loadJson("editions/reader_manuscript/current/conclusion_claim_crosswalk.json");
   const pageSelection = args.allChapters ? "all-chapters" : "sample";
   const pages = pagesForValidation(structure, args.allChapters);
+  const readerPages = readerPagesForValidation(readerCrosswalk, args.allChapters);
   const viewports = viewportsForValidation(args.allViewports);
   const missing = pages
     .map((record) => renderedPath(args.site, record.sourceFile))
@@ -550,6 +609,7 @@ async function runBrowserValidation(playwright, args) {
 
   const browser = await launchChromium(playwright);
   const records = [];
+  const readerRecords = [];
   try {
     for (const viewport of viewports) {
       const page = await browser.newPage({ viewport: viewport.size });
@@ -564,6 +624,11 @@ async function runBrowserValidation(playwright, args) {
           record.viewport = viewport.name;
           record.viewport_size = viewport.size;
           records.push(record);
+        }
+        for (const unit of readerPages) {
+          const readerPath = path.join(args.site, unit.public_path);
+          if (!fs.existsSync(readerPath)) throw new Error(`Rendered Human Reader HTML is missing: ${readerPath}`);
+          readerRecords.push(await validateReaderPage(page, pathToFileURL(readerPath).href, unit, viewport.name));
         }
       } finally {
         await page.close();
@@ -581,11 +646,12 @@ async function runBrowserValidation(playwright, args) {
     viewports: viewports.map((viewport) => ({ name: viewport.name, ...viewport.size })),
     site_dir: args.site,
     validated_pages: records,
+    validated_reader_pages: readerRecords,
     // Backward-compatible alias for consumers created before --all-chapters.
     sampled_pages: records,
     non_claims: [
-      "This browser smoke test validates rendered reading-mode interaction, responsive layout fit, and rendered Mermaid visibility only.",
-      "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
+      "This browser smoke test validates rendered reading-mode interaction, Human Reader edition navigation, responsive layout fit, basic landmarks, and rendered Mermaid visibility only.",
+      "It does not claim a major-version reader release, ebook, PDF, DOCX, audiobook, accessibility conformance, editorial approval, or support-state promotion exists.",
     ],
   };
 }
@@ -613,7 +679,7 @@ function writeReport(reportPath, report) {
     const report = await runBrowserValidation(playwright, args);
     writeReport(args.report, report);
     console.log(
-      `Live Human view browser validation passed: ${report.validated_pages.length} rendered page-view pairs exercised (${report.page_selection}, ${report.viewport_selection}).`
+      `Live/Reader browser validation passed: ${report.validated_pages.length} technical and ${report.validated_reader_pages.length} reader page-view pairs exercised (${report.page_selection}, ${report.viewport_selection}).`
     );
   } catch (error) {
     const message = error && error.stack ? error.stack : String(error);

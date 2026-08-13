@@ -5,8 +5,13 @@ project:
 
 book:
   title: "The ASI Stack"
-  subtitle: "Human Reader Edition - Maintained Draft"
+  subtitle: "Human Reader Edition"
   author: "Corben Sorenson"
+  site-url: "https://corbensorenson.github.io/asi-stack-book/reader/"
+  repo-url: "https://github.com/corbensorenson/asi-stack-book"
+  repo-actions: [source, issue]
+  page-navigation: true
+  search: true
   chapters:
     - index.qmd
     - part: "Part I - Why Intelligence Needs a Governed Stack"
@@ -46,5 +51,10 @@ format:
   html:
     toc: true
     number-sections: true
-    theme: cosmo
+    theme:
+      - cosmo
+      - generated/reader.scss
+    include-before-body:
+      - generated/edition-nav.html
+    link-external-newwindow: true
 lang: en-US

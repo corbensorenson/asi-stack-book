@@ -17,6 +17,7 @@ from build_human_reader_current import (
 )
 
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+PAGES_WORKFLOW = ROOT / ".github/workflows/build-pages-artifact.yml"
 
 
 UNIT_01_REQUIRED = [
@@ -710,6 +711,13 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
         errors.append("conclusion/claim crosswalk does not preserve every technical owner exactly once")
     if crosswalk.get("support_state_effect") != "none" or crosswalk.get("release_effect") != "none":
         errors.append("conclusion/claim crosswalk changed support or release state")
+    workflow = PAGES_WORKFLOW.read_text(encoding="utf-8")
+    for fragment in (
+        "quarto render editions/reader_manuscript/current --to html",
+        "python3 scripts/build_human_reader_public_site.py --site _site",
+    ):
+        if fragment not in workflow:
+            errors.append(f"Pages workflow does not publish the Human Reader: {fragment}")
     for unit in crosswalk.get("units", []):
         if unit.get("owner_count") != len(unit.get("owners", [])):
             errors.append(f"{unit.get('unit_id')}: crosswalk owner count drift")
@@ -739,6 +747,9 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
             errors.append(f"{unit['unit_id']}: started source is missing")
             continue
         text = path.read_text(encoding="utf-8")
+        expected_panel_include = f"{{{{< include ../generated/{unit['unit_id']}-status.qmd >}}}}"
+        if expected_panel_include not in text:
+            errors.append(f"{unit['unit_id']}: source does not include its generated research-status panel")
         if "chapters/" in text and "{{< include" in text and "../generated/" not in text:
             errors.append(f"{unit['unit_id']}: source appears to include a live technical chapter")
         if state == "target_length_reached_internal_review_pending" and not (

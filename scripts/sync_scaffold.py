@@ -256,7 +256,9 @@ HISTORICAL_CHAPTER_STUBS = (
 
 GENERATED_HTML_RESOURCE_EXCLUSIONS = (
     "!chapters/*.html",
+    "!chapters/*_files/**",
     "!appendices/*.html",
+    "!appendices/*_files/**",
 )
 
 

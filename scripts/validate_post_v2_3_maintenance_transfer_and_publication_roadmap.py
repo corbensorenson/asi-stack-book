@@ -1450,15 +1450,15 @@ def errors(data: dict) -> list[str]:
         "target_narrative_part_count": len(outline_parts),
         "target_narrative_owner_route_count": len(outline_routes),
         "target_narrative_outline_path": "docs/human_reader_26_unit_outline.md",
-        "target_narrative_outline_state": "canonical_target_outline_manuscript_and_cutover_pending",
+        "target_narrative_outline_state": "canonical_26_unit_manuscript_complete_public_cutover_configured",
         "historical_narrative_spine_path": "products/narrative_product_spine.json",
-        "target_outline_is_completed_manuscript": False,
+        "target_outline_is_completed_manuscript": True,
     }
     for field, expected in expected_outline_contract.items():
         if editorial.get(field) != expected:
             out.append(f"human-reader outline contract drift: {field}")
     if (
-        "Status: **canonical target outline; manuscript and cutover pending**" not in human_outline
+        "Status: **canonical 26-unit manuscript complete; tested public HTML cutover pending**" not in human_outline
         or "Historical predecessor: `products/narrative_product_spine.json` (22-unit candidate; do not rewrite)" not in human_outline
         or data["narrative_product_spine"].get("chapters") is None
         or len(data["narrative_product_spine"]["chapters"]) != 22
@@ -3035,7 +3035,7 @@ def main() -> None:
     mutate("T1/T2/T3 terminal identity deletion", lambda c: c["status"]["quality_uplift_program"]["structural_completeness_tranche"]["first_tranche"].__setitem__("terminal_reader_chapter_ids", []))
     mutate("P4 C5 status reopening", lambda c: c["status"]["semantic_proof_cluster_inventory"]["clusters"][4].__setitem__("state", "strengthen"))
     mutate("human-reader target route count drift", lambda c: c["status"]["editorial_product_migration"].__setitem__("target_narrative_owner_route_count", 86))
-    mutate("human-reader completed-manuscript laundering", lambda c: c["status"]["editorial_product_migration"].__setitem__("target_outline_is_completed_manuscript", True))
+    mutate("human-reader completed-manuscript rollback", lambda c: c["status"]["editorial_product_migration"].__setitem__("target_outline_is_completed_manuscript", False))
     mutate("human-reader unit deletion", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("## Unit 26 - Integrated Reference Architecture, Project Theseus, and the Living Research Method", "## Removed final unit", 1)))
     mutate("human-reader owner-route duplication", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("`open-research-agenda-and-bibliography-plan`", "`living-book-methodology`", 1)))
     mutate("human-reader word-budget inflation", lambda c: c.__setitem__("human_reader_26_unit_outline", c["human_reader_26_unit_outline"].replace("**Target length.** 6,000-7,500 words.", "**Target length.** 6,000-70,000 words.", 1)))

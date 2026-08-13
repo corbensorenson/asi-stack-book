@@ -1,0 +1,17 @@
+<a class="asi-reader-skip" href="#quarto-document-content">Skip to chapter</a>
+<nav class="asi-edition-switch" aria-label="Book edition">
+  <span class="asi-edition-switch__label">Edition</span>
+  <a data-asi-research-edition href="https://corbensorenson.github.io/asi-stack-book/">AI / researcher</a>
+  <span aria-current="page">Human Reader</span>
+</nav>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const link = document.querySelector("[data-asi-research-edition]");
+  if (!link) return;
+  const marker = "/reader/";
+  const index = window.location.pathname.indexOf(marker);
+  if (index >= 0) {
+    link.href = window.location.pathname.slice(0, index + 1);
+  }
+});
+</script>
