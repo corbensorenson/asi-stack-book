@@ -5461,16 +5461,19 @@ closure merely because derivative production remains in progress.
 
 P0 remains continuous and first reconciles the generated 87-chapter status
 surface plus claim-kind maturity projection. P1 is complete and its N0–N5
-ceilings remain binding. `P5-U1` is the current executable priority: deliver
-the smallest useful end-to-end governed transaction, compare it with direct
-and record-only routes, and expose its costs and failure behavior. P4.1 proceeds
-only for a consumer named by that slice or a contribution exit ladder. P2
-preflight remains the
+ceilings remain binding. `P5-U1` is terminal at its bounded retrospective
+scope: one fresh-checkout command compares direct, record-only, and fully
+governed routes across all four required paths, exposes explicit matched
+governance rent, and preserves the no-support boundary. The prospective P5
+natural campaign now owns broader utility, performance, observed human effort,
+production, safety, and transfer questions. P4.1 proceeds only for a consumer
+named by that campaign or a contribution exit ladder. P2 preflight remains the
 protected empirical headline but is below its frozen storage floor at the
-latest 2026-07-27 exact observation; its required command-bound failure record
-is committed, and the next action is a new exact capacity/Docker receipt after
-both infrastructure gates are restored. The storage-feasible protocol and
-four-slot replacement qualification remain its unblocking path. `P2-Q1-D1`
+latest immutable `2026-08-13-r3a-004` observation; its command-bound N0 failure
+record reports 7.12 GiB free and no reachable Docker daemon, and the next
+action is a new exact capacity/Docker receipt only after both infrastructure
+gates are restored. The storage-feasible protocol and four-slot replacement
+qualification remain its unblocking path. `P2-Q1-D1`
 stays closed until P2's own competence dossier passes, then may open for the Q1
 strong-worker arms. The disjoint `ASI-THESEUS-Q2-D2` stays closed through
 `T2`–`T4`; D1 outcomes cannot tune it. Historical `T0`, successor `T0A`, and
@@ -5526,10 +5529,11 @@ is not a debugging interface.
    vectors without changing the conservative public support projection.
 2. **Ready natural-campaign preflight (`P2`).** Preserve the fixed P2
    denominator and all N0 infrastructure outcomes. The exact 2026-07-28
-   out-of-sandbox receipt records only 4.37 GiB free against the 50-GiB entry
-   floor and an unreachable Docker daemon; neither condition is a task
-   outcome. The lane is resource-blocked and consumes no active WIP. Recheck
-   only after external capacity or daemon state changes. Once both gates pass,
+   receipt remains historical; the latest immutable
+   `2026-08-13-r3a-004` receipt records 7.12 GiB free against the 50-GiB entry
+   floor and no reachable Docker daemon. Neither condition is a task outcome.
+   The lane is resource-blocked and consumes no active WIP. Recheck only after
+   external capacity or daemon state changes. Once both gates pass,
    execute the
    storage-feasible materialization protocol (sequential-verified
    readiness and Docker-scoped reclamation with receipts), then competently
@@ -5557,13 +5561,16 @@ is not a debugging interface.
    refinement route, counterexample, maintenance owner, retirement condition,
    and maximum inference. Declaration count remains diagnostic only; Lean does
    not inherit runtime, empirical, institutional, or whole-system support.
-5. **Effect-complete reference and immediate utility (`P5`).** `P5-U1` is the
-   current headline: expose one documented command for the same public-safe
-   repository task through direct, record-only, and fully governed routes, and
-   close the four required happy, blocked-authority, crash/recovery, and non-
-   undoable-external-effect paths with state-checkable outcomes, mutations,
-   burden measurements, and a fresh-checkout recipe. Then design against the
-   `T4` joined trace: durable identity, scoped authority, concurrent ledgers,
+5. **Effect-complete reference and immediate utility (`P5`).** Preserve the
+   terminal `P5-U1` retrospective natural-defect replay: one documented
+   fresh-checkout command runs the same public-safe repository task through
+   direct, record-only, and fully governed routes across happy,
+   blocked-authority, crash/recovery, and non-undoable-external-effect paths.
+   Its 12/12 state-checkable cases, nine rejecting mutations, explicit matched
+   governance-rent comparisons, and Human Reader route are implementation and
+   instrument evidence only; they are not prospective natural-task evidence.
+   Next design against the `T4` joined trace: durable identity, scoped
+   authority, concurrent ledgers,
    observed effects, exact rollback or compensation, crash recovery, full
    learning state, revocation, and descendant-aware deletion. Preserve the natural publication
    development trace's source/tested-artifact/no-rebuild deployment/public-
@@ -5803,7 +5810,7 @@ the compiler rather than preserving it as governance theater.
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth and composition | in progress; consumer-gated | Preserve the terminal six-cluster local audit and complete only dependency-safe rationalization or connected-owner composition required by `P5-U1` or a contribution exit ladder. Every family has a real consumer and seven-field admission record; no aggregate theorem count or finite authored record grants empirical, operational, institutional, or whole-system support. |
-| M5 — Effect-complete reference | in progress; `P5-U1` headline | Deliver the fresh-checkout `P5-U1` command, three prospectively frozen routes, four effect/failure paths, state-checkable outcomes, rejecting mutations, and joint utility/safety/cost/burden accounting without support movement. Retain the two bounded local slices and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
+| M5 — Effect-complete reference | in progress; bounded `P5-U1` slice terminal | Preserve the fresh-checkout `P5-U1` command, three fixed routes, four effect/failure paths, 12/12 state-checkable outcomes, nine rejecting mutations, and explicit matched governance-rent accounting without support movement. Retain its retrospective natural-defect ceiling, the two bounded local slices, and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 87 owners and exact claim or bounded formal-target custody for all 87; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, work-surface, learning-topology, and adjudicated-persistence manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Editorial product migration, independent narrative, and derivative disposition | completed through EM4 HTML cutover | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, the 22-unit candidate, and the pushed `96a22b15e` cutover candidate as immutable historical receipts while maintaining all 87 research identities. EM0 manifest-derived count truth, EM1 exact metadata-first 54+2/16+2+0/7/5/1 disposition, seven EM2 composition packages covering all sixteen publication nests and two method-detail nests, the terminal no-merge adjudication for Prototype Roadmap/Project Theseus, all twenty-six target-length EM3 units at 133,658 visible words, the generated 87-owner conclusion/claim crosswalk, and EM4 exact-head build/deploy/public-route/browser validation are complete. Retain the fifteen-minute utility route, three runnable task recipes, optional-depth marking, unit-level use/avoid/conclusion-change guidance, and `support_state_effect: none`. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for narrative evidence. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |
