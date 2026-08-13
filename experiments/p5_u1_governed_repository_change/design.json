@@ -1,0 +1,42 @@
+{
+  "schema_version": "asi_stack.p5_u1_design.v1",
+  "experiment_id": "p5-u1-human-reader-source-link-repair",
+  "task": {
+    "classification": "retrospective_replay_of_naturally_arising_repository_defect",
+    "discovery": "The public EM4 browser audit found that Human Reader View source links escaped the independent manuscript tree.",
+    "pre_fix_commit": "1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb",
+    "files": [
+      "scripts/build_human_reader_current.py",
+      "editions/reader_manuscript/current/_quarto.yml"
+    ],
+    "required_line": "  repo-subdir: \"editions/reader_manuscript/current\"",
+    "ordinary_test": "Both the canonical generator and generated Quarto configuration contain the required repository subdirectory exactly once, and the derived source URL resolves inside that subdirectory."
+  },
+  "routes": [
+    "direct",
+    "record_only",
+    "full_governed"
+  ],
+  "paths": [
+    "happy",
+    "blocked_authority",
+    "crash_recovery",
+    "external_effect_compensation"
+  ],
+  "metrics": [
+    "useful_success",
+    "unauthorized_effect_count",
+    "false_block_count",
+    "defect_escape_count",
+    "latency_ms",
+    "cpu_ms",
+    "operator_steps",
+    "artifact_file_count",
+    "artifact_bytes",
+    "recovery_ms",
+    "compensation_closed",
+    "residual_count"
+  ],
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

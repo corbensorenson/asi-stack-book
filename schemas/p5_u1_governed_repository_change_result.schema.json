@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "P5-U1 governed repository-change result",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "result_id",
+    "design_sha256",
+    "task",
+    "route_count",
+    "path_count",
+    "trial_count",
+    "trials",
+    "aggregate",
+    "support_state_effect",
+    "release_effect",
+    "maximum_inference",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p5_u1_result.v1"},
+    "result_id": {"const": "p5-u1-human-reader-source-link-repair-local"},
+    "design_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "task": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "pre_fix_commit", "pre_fix_files_match_git", "current_fix_present", "outcome_known_before_route_replay"],
+      "properties": {
+        "classification": {"const": "retrospective_replay_of_naturally_arising_repository_defect"},
+        "pre_fix_commit": {"const": "1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb"},
+        "pre_fix_files_match_git": {"const": true},
+        "current_fix_present": {"const": true},
+        "outcome_known_before_route_replay": {"const": true}
+      }
+    },
+    "route_count": {"const": 3},
+    "path_count": {"const": 4},
+    "trial_count": {"const": 12},
+    "trials": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["trial_id", "route", "path", "expected_disposition", "terminal_disposition", "ordinary_test_passed", "state_check_passed", "mutation_rejected", "metrics", "remote_history"],
+        "properties": {
+          "trial_id": {"type": "string"},
+          "route": {"enum": ["direct", "record_only", "full_governed"]},
+          "path": {"enum": ["happy", "blocked_authority", "crash_recovery", "external_effect_compensation"]},
+          "expected_disposition": {"type": "string"},
+          "terminal_disposition": {"type": "string"},
+          "ordinary_test_passed": {"type": "boolean"},
+          "state_check_passed": {"const": true},
+          "mutation_rejected": {"const": true},
+          "metrics": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["useful_success", "unauthorized_effect_count", "false_block_count", "defect_escape_count", "latency_ms", "cpu_ms", "operator_steps", "artifact_file_count", "artifact_bytes", "recovery_ms", "compensation_closed", "residual_count"],
+            "properties": {
+              "useful_success": {"type": "boolean"},
+              "unauthorized_effect_count": {"type": "integer", "minimum": 0},
+              "false_block_count": {"type": "integer", "minimum": 0},
+              "defect_escape_count": {"type": "integer", "minimum": 0},
+              "latency_ms": {"type": "number", "minimum": 0},
+              "cpu_ms": {"type": "number", "minimum": 0},
+              "operator_steps": {"type": "integer", "minimum": 1},
+              "artifact_file_count": {"type": "integer", "minimum": 0},
+              "artifact_bytes": {"type": "integer", "minimum": 0},
+              "recovery_ms": {"type": "number", "minimum": 0},
+              "compensation_closed": {"type": "boolean"},
+              "residual_count": {"type": "integer", "minimum": 0}
+            }
+          },
+          "remote_history": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["effect_pushed", "compensation_commit_pushed", "history_retained", "terminal_content_matches_baseline"],
+            "properties": {
+              "effect_pushed": {"type": "boolean"},
+              "compensation_commit_pushed": {"type": "boolean"},
+              "history_retained": {"type": "boolean"},
+              "terminal_content_matches_baseline": {"type": "boolean"}
+            }
+          }
+        }
+      }
+    },
+    "aggregate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["trial_count", "state_checks_passed", "mutations_rejected", "governed_authority_blocks", "governed_crash_recoveries", "governed_compensations", "direct_or_record_only_unauthorized_effects", "support_state_effect"],
+      "properties": {
+        "trial_count": {"const": 12},
+        "state_checks_passed": {"const": 12},
+        "mutations_rejected": {"const": 12},
+        "governed_authority_blocks": {"const": 1},
+        "governed_crash_recoveries": {"const": 1},
+        "governed_compensations": {"const": 1},
+        "direct_or_record_only_unauthorized_effects": {"const": 2},
+        "support_state_effect": {"const": "none"}
+      }
+    },
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "maximum_inference": {"type": "string", "minLength": 1},
+    "non_claims": {"type": "array", "minItems": 6, "items": {"type": "string"}}
+  }
+}

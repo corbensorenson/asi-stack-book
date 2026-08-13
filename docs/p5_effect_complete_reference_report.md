@@ -41,6 +41,34 @@ storage surfaces are deleted.
 This is implementation evidence for the local vertical slice. It is stronger
 than a record-shape fixture and weaker than deployment evidence.
 
+## P5-U1 useful-route demonstrator
+
+The P5-U1 packet applies the same discipline to one naturally arising book
+defect: the public Human Reader's **View source** links escaped the independent
+reader manuscript tree. The tracked design recovers both affected files from
+the pre-fix Git commit, then runs the same repair through direct, record-only,
+and fully governed routes. Each route exercises a happy path, an out-of-scope
+authority request, a crash after the first file mutation, and an external Git
+effect that cannot be made historically nonexistent.
+
+All twelve route/path trials reach their state-checkable expected disposition.
+The fully governed route blocks the out-of-scope mutation before effect,
+restores and replays the complete two-file plan after the partial-effect crash,
+and compensates the external branch state while retaining explicit effect and
+compensation history. The direct and record-only routes intentionally expose
+the corresponding unauthorized and residual states. A fresh-workspace
+validator repeats the matrix and rejects route loss, route-label laundering,
+false state checks, unauthorized-effect laundering, false compensation,
+prospective-task laundering, and support promotion.
+
+This is a **retrospective replay** of a real defect whose successful repair was
+known before the comparison ran. It is not a prospective utility estimate,
+held-out comparison, human-operator study, production deployment, or evidence
+of general safety. Its latency and CPU fields are host diagnostics, while its
+step and artifact counts are workflow-burden proxies rather than observed
+human effort. P5 remains in progress, the frozen natural campaign remains
+unopened, and no support or release state moves.
+
 ## Boundaries and remaining work
 
 This is **not a deployed AI service**. The state payloads are deterministic
@@ -62,4 +90,6 @@ state and grants no release authority.
 ```bash
 python3 scripts/run_p5_effect_complete_reference.py
 python3 scripts/validate_p5_effect_complete_reference.py
+python3 scripts/run_p5_u1_governed_repository_change.py
+python3 scripts/validate_p5_u1_governed_repository_change.py
 ```

@@ -888,7 +888,7 @@ remain closed while other work proceeds.
 | Slot | Next packet | Entry condition | Terminal output |
 |---|---|---|---|
 | Continuous custody | P0 repository and public-truth reconciliation | Always open | Clean `main`, exact generated/source boundaries, current roadmap pointers, and no stale claim or release identity. |
-| Object-level utility — active | `P5-U1-minimal-useful-governed-vertical-slice` | Existing bounded mechanisms and current public-safe repository tasks are available; protected P2 content remains closed | One documented command runs the same task through direct, record-only, and fully governed routes; happy, blocked-authority, crash/recovery, and non-undoable external-effect paths have state-checkable outcomes and rejecting mutations; useful success, unsafe effects, false blocking, defect escape, latency, compute, operator burden, artifact volume, recovery, compensation closure, and residual burden are reported without support movement. |
+| Object-level utility — active; retrospective demonstrator terminal, reader integration open | `P5-U1-minimal-useful-governed-vertical-slice` | The 2026-08-13 retrospective replay runs one real Human Reader source-link repair through direct, record-only, and fully governed routes across happy, blocked-authority, crash/recovery, and external-effect compensation paths; protected P2 content remains closed | Preserve the 12/12 fresh-workspace result and seven rejecting record mutations. Complete the fifteen-minute reader route and task recipes, then keep prospective usefulness, natural performance, human effort, production, safety, transfer, support, and release claims open for the frozen natural campaign. |
 | Existing-book integration — terminal | `P6.5-R16-A-six-chapter-atom-pack` | Completed 2026-07-26 | Thirty reviewed atoms across six chapters, six digest-bound review receipts, a separate schema and validator, identity-graph reconciliation to 4,112 canonical atoms, Appendix C projection, fourteen rejecting mutations, and zero support movement. |
 | Existing-book integration — terminal | `P7.1a-W3-admission-template-inheritance-guard` | Completed 2026-07-26 | Exact 84-chapter NFKC audit; reader-facing repeated 12-grams at spread eight reduced 812→0; copied diagram/test spread 10→0; shared lifecycle method centralized; ten chapter diffs plus eleven semantic-review reconciliations; 241 retired inherited prose IDs replaced by 177 domain-specific dispositions with 4,067 atoms unchanged and zero pending; copied fixture rejected, distinct fixture accepted; eighteen mutations; zero meaning or support movement. |
 | Existing-book integration — terminal | `P7.2-T1D-proof-readiness-depth-pack` | Completed 2026-07-26 | Six maturity records, 36 condition decisions, 12 chapter-specific anchors, four existing-owner repairs, five White-Box source receipts, ten applicable claim identities, eighteen rejecting mutations, and zero support movement. |
@@ -2970,6 +2970,37 @@ dependencies, replica/partition recovery, externally rooted model custody, and
 joint usefulness, unsafe-release, false-blocking, latency, recovery, operator,
 compute, and residual metrics. No support transition or release authority
 follows.
+
+### P5-U1 governed repository-change checkpoint — 2026-08-13
+
+The executable core of the P5-U1 utility packet is terminal at its exact
+retrospective local scope. The public EM4 browser audit exposed a naturally
+arising defect: Human Reader **View source** links escaped the independent
+reader manuscript tree. `scripts/run_p5_u1_governed_repository_change.py`
+recovers the two pre-fix files from commit
+`1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb`, creates twelve isolated real Git
+workspaces and bare remote effect boundaries, and runs the same repair through
+direct, record-only, and fully governed routes across happy,
+blocked-authority, partial-effect crash/recovery, and non-undoable external
+effect paths.
+
+All twelve expected terminal states pass byte- or Git-state checks. The fully
+governed route blocks the out-of-scope change before effect, restores and
+replays the complete plan after the partial mutation, and compensates the
+external branch state while retaining explicit effect and compensation
+history. The direct and record-only controls preserve their expected
+unauthorized or unresolved residuals. The fresh-workspace validator rejects
+seven mutations covering route loss, identity, state-check, authority,
+compensation, prospective-classification, and support-state laundering.
+
+The defect outcome was known before this replay and the local bare remote is
+not a production service. Timing and CPU are host diagnostics; workflow steps
+and artifact bytes are burden proxies, not observed human effort. This packet
+is therefore not a prospective utility estimate, randomized or held-out
+comparison, independent reproduction, deployment, safety, transfer, SOTA,
+AGI, or ASI result. It moves no support or release state. P5-U1 remains active
+only for the fifteen-minute reader route and task-recipe integration; the
+broader P5 natural campaign remains frozen and unopened.
 
 ### P5 natural publication-service development checkpoint — 2026-07-27
 

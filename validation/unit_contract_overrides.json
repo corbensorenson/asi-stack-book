@@ -3766,7 +3766,7 @@
     {
       "script": "validate_human_reader_current.py",
       "args": [],
-      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, and generated compact status panels.",
+      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, the P5-U1 fifteen-minute utility route, and generated compact status panels.",
       "input_artifacts": [
         "scripts/validate_human_reader_current.py",
         "scripts/build_human_reader_current.py",
@@ -3780,6 +3780,7 @@
         "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
         "editions/reader_manuscript/current/_quarto.yml",
         "editions/reader_manuscript/current/index.qmd",
+        "editions/reader_manuscript/current/quickstart.qmd",
         "editions/reader_manuscript/current/generated/edition-nav.html",
         "editions/reader_manuscript/current/generated/reader.scss",
         "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
@@ -3838,13 +3839,14 @@
         "book_structure.json",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
       ],
-      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
+      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
         "canonical conclusion/claim crosswalk",
         "All 26 units within their declared word targets",
         "independent maintained prose",
+        "P5-U1 fifteen-minute route and three task recipes",
         "Pages /reader/ publication path",
         "4 mutations reject",
         "support and release effects none"

@@ -3289,7 +3289,13 @@
     "assets/reading-mode.html",
     "assets/styles.scss",
     "editions/reader_manuscript/current/generated/edition-nav.html",
-    "editions/reader_manuscript/current/generated/reader.scss"
+    "editions/reader_manuscript/current/generated/reader.scss",
+    "experiments/p5_u1_governed_repository_change/design.json",
+    "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
+    "schemas/p5_u1_governed_repository_change_result.schema.json",
+    "scripts/run_p5_u1_governed_repository_change.py",
+    "scripts/validate_p5_u1_governed_repository_change.py",
+    "editions/reader_manuscript/current/quickstart.qmd"
   ],
   "units": [
     {
@@ -13639,13 +13645,13 @@
       "semantic_review_state": "checked_claim_crosswalk_negative_results_header_provenance_composer_platform_residuals_and_publication_boundary"
     },
     {
-      "id": "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py:383",
+      "id": "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py:380",
       "order": 380,
       "script": "validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
       "args": [],
       "execution_tier": "pr",
       "validation_class": "publication_gate",
-      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 84-chapter manifest and exact 11/54/7/12 chapter-role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices, one retrospective natural happy path, one prospectively frozen five-arm/forty-task P5 natural-service campaign with protected outcomes closed, and its exact authored implementation/instrument qualification with natural content still closed; current reader, proof, attestation, derivative, and public-truth surfaces.",
+      "input_contract": "Completed claim-proof predecessor; exact no-release terminal record; active unfinished-work successor; the current 87-chapter manifest and exact role partition; the adjudicated Pro full-book review and C0-C8 convergence amendment; exact concept-first exit receipt with eight packets, 26 prose/product anchors, and zero current roadmap-only remainder; the terminal six-chapter/thirty-atom R16-A organization packet; canonical atoms and all accepted transitions with complete direct/indirect claim identity; N0-N5 negative-result rehabilitation and experiment competence; prospective P2 and ASI-THESEUS-FLAGSHIP-01 natural-evidence custody; two bounded P5 reference slices, one retrospective natural happy path, one retrospective P5-U1 natural-defect route comparison, one prospectively frozen five-arm/forty-task P5 natural-service campaign with protected outcomes closed, and its exact authored implementation/instrument qualification with natural content still closed; current reader, proof, attestation, derivative, and public-truth surfaces.",
       "input_artifacts": [
         "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
         "docs/c1_c8_phase1_idea_placement_and_prose_audit_2026_07_25.md",
@@ -13705,6 +13711,7 @@
         "scripts/validate_p2_replacement_queue.py",
         "experiments/effect_complete_service/results/2026-07-27-local.json",
         "docs/p5_stateful_service_reference_report.md",
+        "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
         "experiments/governed_operations_argument_exit/preregistration.json",
         "schemas/governed_operations_campaign_preregistration.schema.json",
         "docs/p5_natural_stateful_service_campaign_preregistration.md",
@@ -13740,11 +13747,11 @@
       "output_assertions": [
         "P0 authority wait, P1/M1 complete, active P2/M2",
         "R16-A terminal with six chapter reviews, thirty atoms, fourteen local mutations, Appendix C projection, and zero support movement",
-        "W3 active over the current 84-chapter corpus",
+        "W3 active over the current 87-chapter corpus",
         "115 accepted transitions with 25 direct and 90 indirect identities resolved against 4,112 canonical atoms and zero unmapped",
         "90 accepted negative/no-change transitions classified as 1 N0, 15 N1, 74 N2, and 0 N3-N5",
-        "84 current chapters partitioned exactly as 11 thesis, 54 load-bearing reference, 7 implementation, and 12 speculative",
-        "C0-C8 convergence program and 22-unit narrative target",
+        "current chapter roles remain exactly reconciled",
+        "C0-C8 convergence program and 26-unit narrative target",
         "concept-first exit receipt reconciles eight packets through 26 exact prose or product anchors with zero current roadmap-only remainder",
         "Phase 2 resumes through smallest consumed conclusions and natural evidence rather than proof volume",
         "three defended contribution families and one existing natural flagship",
@@ -13759,7 +13766,7 @@
         "metadata-only queue contains 30 unique repositories while candidate content remains unopened",
         "construct and resource gates pending with heldout closed",
         "all six semantic proof clusters terminal at bounded adequate scope",
-        "P5 status binds two bounded slices, one retrospective natural happy path, one prospectively frozen five-arm/forty-task natural-service campaign, and a 60-trial/213-process authored implementation qualification with 24/24 evaluator controls and 14/14 gates while all natural and protected content remains closed",
+        "P5 status binds two bounded slices, one retrospective natural happy path, one 12-case retrospective P5-U1 natural-defect replay, one prospectively frozen five-arm/forty-task natural-service campaign, and a 60-trial/213-process authored implementation qualification while all natural and protected content remains closed",
         "N0-N5 competence contract",
         "current proof snapshot",
         "main-only build-deploy-crawl attestation truth",
@@ -19079,7 +19086,7 @@
       "args": [],
       "execution_tier": "pr",
       "validation_class": "proof_or_evidence_gate",
-      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, and generated compact status panels.",
+      "input_contract": "The canonical 26-unit outline, all 87 exact technical-owner routes and claim/source/proof/test/artifact/publication edges, independent maintained prose sources, the P5-U1 fifteen-minute utility route, and generated compact status panels.",
       "input_artifacts": [
         "scripts/validate_human_reader_current.py",
         "scripts/build_human_reader_current.py",
@@ -19093,6 +19100,7 @@
         "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
         "editions/reader_manuscript/current/_quarto.yml",
         "editions/reader_manuscript/current/index.qmd",
+        "editions/reader_manuscript/current/quickstart.qmd",
         "editions/reader_manuscript/current/generated/edition-nav.html",
         "editions/reader_manuscript/current/generated/reader.scss",
         "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
@@ -19151,13 +19159,14 @@
         "book_structure.json",
         "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
       ],
-      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
+      "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, a first-class /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
         "canonical conclusion/claim crosswalk",
         "All 26 units within their declared word targets",
         "independent maintained prose",
+        "P5-U1 fifteen-minute route and three task recipes",
         "Pages /reader/ publication path",
         "4 mutations reject",
         "support and release effects none"
@@ -19173,11 +19182,52 @@
       "prohibited_inference": "Draft or target-length completion does not establish editorial approval, evidence, publication, release, safety, readiness, SOTA, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "checked_independent_human_reader_draft_contract"
+    },
+    {
+      "id": "validate_p5_u1_governed_repository_change:472",
+      "order": 472,
+      "script": "validate_p5_u1_governed_repository_change.py",
+      "args": [],
+      "execution_tier": "deep",
+      "validation_class": "behavioral_fixture",
+      "input_contract": "A real Human Reader source-link defect, its pre-fix Git identity, three frozen execution routes, four lifecycle paths, local Git repositories and bare remotes, tracked result, schema, and bounded report.",
+      "input_artifacts": [
+        "experiments/p5_u1_governed_repository_change/design.json",
+        "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
+        "schemas/p5_u1_governed_repository_change_result.schema.json",
+        "scripts/run_p5_u1_governed_repository_change.py",
+        "scripts/validate_p5_u1_governed_repository_change.py",
+        "docs/p5_effect_complete_reference_report.md"
+      ],
+      "output_contract": "Replay the 3x4 route/path matrix in a fresh workspace and reject route loss, authority laundering, false state checks, false compensation, prospective-task laundering, or support movement.",
+      "output_assertions": [
+        "twelve of twelve state-checkable route/path trials pass",
+        "full governance blocks the out-of-scope mutation before effect",
+        "full governance recovers the partial repository change",
+        "full governance compensates the external Git effect while retaining history",
+        "direct and record-only routes expose the expected unauthorized and residual effects",
+        "seven record mutations reject",
+        "retrospective task identity and no-promotion boundary remain explicit"
+      ],
+      "claim_scope": "The retrospective local replay of one naturally arising Human Reader source-link repair only.",
+      "negative_controls": "fresh_replay_plus_route_authority_state_compensation_classification_and_support_mutations",
+      "negative_control_cases": [
+        "route loss",
+        "route-label laundering",
+        "false state-check pass",
+        "unauthorized-effect laundering",
+        "false compensation closure",
+        "support-state laundering",
+        "retrospective-to-prospective laundering"
+      ],
+      "prohibited_inference": "This outcome-aware replay is not a prospective, randomized, held-out, independent, human-operator, production, general-utility, safety, transfer, SOTA, AGI, or ASI result and changes no support or release state.",
+      "contract_precision": "exact",
+      "semantic_review_state": "retrospective_natural_defect_replay_with_real_local_git_effect_boundary"
     }
   ],
   "summary": {
-    "required_artifact_count": 3245,
-    "unit_count": 471
+    "required_artifact_count": 3251,
+    "unit_count": 472
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

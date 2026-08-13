@@ -1,0 +1,224 @@
+---
+title: "A Fifteen-Minute Route Through the Stack"
+number-sections: false
+---
+
+This route is for a reader who wants to see the architecture do something
+before reading the full argument. It follows one real maintenance defect from
+discovery to a tested repair, then compares what happens when the same change
+is executed directly, recorded without admission control, or governed through
+explicit authority and recovery boundaries.
+
+The example is deliberately small. It does not demonstrate ASI, production
+safety, or general usefulness. It does show why the book separates a useful
+change from permission to make it, a process report from observed state, and a
+rollback from compensation for an effect that already crossed a boundary.
+
+## The Thesis in One Page
+
+The ASI Stack begins from a practical claim: greater cognitive capability does
+not remove the need for system architecture. It makes boundaries more
+important. A capable model can propose, plan, explain, and execute, but none of
+those abilities automatically establishes who it serves, what it may change,
+whether the effect occurred, whether the evidence is adequate, or whether a
+lesson should become durable.
+
+The architecture therefore keeps three commitments visible.
+
+1. **Governed cognition uses typed interfaces.** Intent, authority, plans,
+   work orders, effects, evidence, readiness, and persistence are different
+   objects. Capability does not confer authority, and one object's support does
+   not silently transfer to another.
+2. **Claims move through public evidence states.** A test, proof, benchmark,
+   external paper, deployment trace, and human judgment answer different
+   questions. Accepted transitions preserve assumptions, negative results,
+   residuals, and the maximum inference the evidence permits.
+3. **Records must reconcile with reality.** A successful tool return is not
+   proof that a remote effect occurred. Recovery must inspect actual state,
+   distinguish reversible state from irreversible history, and leave owned
+   residuals when restoration is incomplete.
+
+These are defended architectural contributions, not claims that the current
+repository has solved alignment or built ASI. The live technical edition owns
+their exact claims, proofs, tests, sources, and open evidence obligations.
+
+## The Defect
+
+During a public browser audit, the Human Reader's **View source** links were
+found to escape the independent reader-manuscript directory. The pages rendered
+and the book was readable, but the repository link pointed at a path that did
+not exist. The repair added Quarto's `repo-subdir` field to the canonical
+generator and regenerated configuration.
+
+That ordinary defect is useful because it crosses several boundaries. Two
+files must agree. An incomplete edit can leave generated state inconsistent.
+Changing a remote Git branch creates an external history. A process can report
+success while acting outside its granted file scope. The same patch can
+therefore be correct as text and still be wrong as an authorized transaction.
+
+The tracked demonstrator recovers the pre-fix files from Git commit
+`1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb`. It creates twelve isolated real
+Git workspaces and local bare remotes. The routes and lifecycle paths were
+frozen in the design before the replay, but the successful repair was already
+known. This is retrospective development evidence, not a prospective utility
+experiment.
+
+## Run It
+
+From a fresh checkout of the repository, run:
+
+```bash
+python3 scripts/run_p5_u1_governed_repository_change.py
+```
+
+The command writes its disposable workspaces and result to
+`build/p5_u1/latest/`. It needs Python and Git; it does not publish, contact a
+production service, inspect protected experimental content, or change the
+book's support states. Validate the checked-in reference result and all seven
+adversarial record mutations with:
+
+```bash
+python3 scripts/validate_p5_u1_governed_repository_change.py
+```
+
+The validator reruns the twelve cases in a fresh temporary workspace. It
+compares every stable result field while treating wall time, CPU time, and
+recovery time as host-specific diagnostics.
+
+## Read the Twelve Outcomes
+
+The direct route applies changes and runs the ordinary check. The record-only
+route adds intent and outcome artifacts but no admission policy. The fully
+governed route checks required scope before mutation and owns recovery and
+compensation.
+
+| Path | Direct | Record only | Fully governed |
+|---|---|---|---|
+| Happy | Useful change completes | Useful change completes with records | Useful change completes with authority and outcome records |
+| Blocked authority | Out-of-scope change executes | Out-of-scope change executes and is recorded | Change is blocked before effect |
+| Partial-effect crash | One-file mutation remains unresolved | Partial mutation is owned but unresolved | Baseline is restored and the complete plan is replayed |
+| External effect | Remote change remains open | Remote change remains open and recorded | Branch content is compensated while effect and compensation history remain inspectable |
+
+All twelve expected dispositions pass state checks. The two simpler routes each
+execute one unauthorized change in the blocked-authority case. They each leave
+one residual in the crash case and one in the external-effect case. The fully
+governed route blocks the unauthorized request, closes the crash residual, and
+closes the branch-state residual without claiming that the original Git effect
+never happened.
+
+The direct route creates no governance artifacts. Record-only cases create two
+or three small receipt files. Fully governed cases create three or four. The
+workflow-step proxy rises from three steps on the direct happy path to five on
+the governed happy path, and to twelve for governed external compensation.
+Those counts expose mechanism cost. They are not measurements of human effort,
+and the local latency and CPU values are not transferable performance results.
+
+## Three Practical Recipes
+
+### Inspect a claim
+
+Use this when you need to know what the book actually asserts before citing or
+implementing it.
+
+**Input.** A stable chapter ID, such as `system-boundaries-and-authority`.
+
+**Command.** Run:
+
+```bash
+jq '.parts[].chapters[] | select(.id == "system-boundaries-and-authority") | {id, core_claim, claim_label, evidence_level, source_ids, proof_targets, codex_tests}' book_structure.json
+```
+
+**Output.** The canonical claim, label, support state, sources, proof targets,
+and test obligations for that owner. Follow the chapter and source-note paths
+from the same record for context.
+
+**Failure state.** No row means the ID is wrong or the manifest has changed. A
+proof target or test name is an obligation or bounded artifact, not automatic
+support for the whole chapter.
+
+**Cleanup.** None; this recipe is read-only.
+
+### Run a governed change
+
+Use this when you want to inspect the route differences on a contained,
+public-safe repository task.
+
+**Input.** The tracked P5-U1 design and the Git history containing the pre-fix
+commit.
+
+**Command.** Run the P5-U1 command above, then inspect:
+
+```bash
+jq '.trials[] | {route, path, terminal_disposition, metrics, remote_history}' build/p5_u1/latest/result.json
+```
+
+**Output.** Twelve workspaces and one result record covering useful completion,
+authority rejection, crash recovery, external compensation, residuals,
+artifacts, steps, time, and CPU diagnostics.
+
+**Failure state.** A missing historical commit, unavailable Git executable,
+failed state check, or failed mutation causes the run or validator to fail. Do
+not reinterpret a failed case as evidence for a different route.
+
+**Cleanup.** Remove `build/p5_u1/latest/` when inspection is complete. The build
+directory is ignored and is not a source of record.
+
+### Diagnose a blocked or failed transition
+
+Use this when a governed action did not reach its intended terminal state.
+
+**Input.** A failed trial record and its workspace.
+
+**Command.** First select non-useful or residual-bearing cases:
+
+```bash
+jq '.trials[] | select(.metrics.useful_success == false or .metrics.residual_count > 0) | {trial_id, terminal_disposition, ordinary_test_passed, metrics, remote_history}' build/p5_u1/latest/result.json
+```
+
+Then inspect that trial's `work/`, `receipts/`, and `remote.git/` paths. Compare
+the terminal disposition with the expected disposition before changing code.
+
+**Output.** A distinction among a legitimate authority block, an incomplete
+local effect, an owned but unresolved residual, and a compensated external
+effect.
+
+**Failure state.** If the record says compensation closed while remote content
+or retained history disagrees, the state check must fail. If the action was
+blocked because required scope exceeded granted scope, widening authority is a
+new decision, not an automatic recovery step.
+
+**Cleanup.** Keep only a deliberately promoted, validated result. Disposable
+workspaces stay under `build/` and should not become repository evidence.
+
+## What Exists and What Does Not
+
+| Capability | Current status |
+|---|---|
+| Stable chapter, claim, source, proof, test, artifact, and publication identities | Implemented and validated in repository manifests and ledgers |
+| Local authority, record, crash-recovery, rollback, and compensation examples | Implemented in bounded reference slices, including P5-U1 |
+| Lean proofs for finite interfaces, transitions, rejection, preservation, and selected composition properties | Implemented at their named finite scopes |
+| Independent 26-unit Human Reader and 87-owner technical graph | Implemented as separate maintained prose and research surfaces |
+| Prospective estimate that full governance improves real maintenance utility | Not established; the natural campaign remains unopened |
+| Complete effect discovery, distributed recovery, model-weight custody, or production enforcement | Not established by P5-U1 |
+| Human usability, operator-effort, or learning benefit | Not established by automated proxy checks |
+| Whole-stack safety, alignment, AGI, or ASI | Not established |
+
+## Use This Route Carefully
+
+Use P5-U1 to understand the interfaces, inspect concrete artifacts, and test
+whether the checks can reject false records. Do not use it to estimate how much
+governance helps across real tasks, how people experience the workflow, or how
+the architecture behaves under production-scale distributed faults.
+
+The strongest simpler baseline remains a competent agent in a disposable
+checkout with ordinary tests and one carefully placed approval. If that system
+matches the governed route on useful work and harmful-effect prevention at
+lower total cost across a competent prospective task set, the architecture
+should shrink. If the governed route catches distinct failures but its records
+cannot be operated economically, its mechanisms should be redesigned rather
+than preserved as ceremony.
+
+Continue with [ASI Is a Stack, Not a Model](chapters/unit-01-asi-is-a-stack-not-a-model.qmd)
+for the full argument, or jump to [Integrated Reference Architecture, Project
+Theseus, and the Living Research Method](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd)
+for the end-to-end reference path.

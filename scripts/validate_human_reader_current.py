@@ -13,8 +13,24 @@ from build_human_reader_current import (
     MANIFEST,
     ROOT,
     STRUCTURE,
+    UTILITY_ROUTE,
     build,
 )
+
+UTILITY_ROUTE_REQUIRED = [
+    "title: \"A Fifteen-Minute Route Through the Stack\"",
+    "## The Thesis in One Page",
+    "## Run It",
+    "python3 scripts/run_p5_u1_governed_repository_change.py",
+    "python3 scripts/validate_p5_u1_governed_repository_change.py",
+    "## Read the Twelve Outcomes",
+    "### Inspect a claim",
+    "### Run a governed change",
+    "### Diagnose a blocked or failed transition",
+    "## What Exists and What Does Not",
+    "not a prospective utility",
+    "not measurements of human effort",
+]
 
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 PAGES_WORKFLOW = ROOT / ".github/workflows/build-pages-artifact.yml"
@@ -723,6 +739,14 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
     quarto = (EDITION / "_quarto.yml").read_text(encoding="utf-8")
     if 'repo-subdir: "editions/reader_manuscript/current"' not in quarto:
         errors.append("Human Reader repository actions are not scoped to the independent manuscript tree")
+    if "    - quickstart.qmd" not in quarto:
+        errors.append("Human Reader utility route is absent from book navigation")
+    utility_route = UTILITY_ROUTE.read_text(encoding="utf-8") if UTILITY_ROUTE.is_file() else ""
+    for fragment in UTILITY_ROUTE_REQUIRED:
+        if fragment not in utility_route:
+            errors.append(f"Human Reader utility route missing required boundary: {fragment!r}")
+    if manifest.get("utility_route") != "quickstart.qmd":
+        errors.append("Human Reader manifest utility-route identity drift")
     if not CUTOVER_RECORD.is_file():
         errors.append("Human Reader HTML cutover record is missing")
     else:

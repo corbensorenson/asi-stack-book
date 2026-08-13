@@ -20,6 +20,7 @@ MANIFEST = EDITION / "manifest.json"
 CROSSWALK = EDITION / "conclusion_claim_crosswalk.json"
 QUARTO = EDITION / "_quarto.yml"
 INDEX = EDITION / "index.qmd"
+UTILITY_ROUTE = EDITION / "quickstart.qmd"
 EDITION_NAV = GENERATED / "edition-nav.html"
 READER_STYLE = GENERATED / "reader.scss"
 OUTLINE = ROOT / "docs/human_reader_26_unit_outline.md"
@@ -287,7 +288,9 @@ def build() -> tuple[dict, dict[Path, str]]:
         2: "Part II - Building Governed Cognition",
         3: "Part III - Learning, Resources, and Recursive Improvement",
     }
-    chapter_lines = ["    - index.qmd"]
+    if not UTILITY_ROUTE.is_file():
+        raise ValueError("Human Reader utility route is missing")
+    chapter_lines = ["    - index.qmd", "    - quickstart.qmd"]
     for part_number, start, end in ((1, 1, 8), (2, 9, 18), (3, 19, 26)):
         part_files = [record["source_file"] for record in records if start <= record["order"] <= end and record["state"] != "not_started"]
         if part_files:
@@ -433,6 +436,8 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         "",
         "This is the complete maintained draft of the independent 26-unit Human Reader edition. Every unit is inside its target range; editorial review and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
         "",
+        "Start with [A Fifteen-Minute Route Through the Stack](quickstart.qmd) to run one bounded governed repository change and inspect what is implemented, what remains proposed, and how the three execution routes differ.",
+        "",
         "| Unit | Chapter | State | Words |",
         "|---:|---|---|---:|",
     ]
@@ -457,6 +462,8 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         "outline_sha256": digest(OUTLINE),
         "conclusion_claim_crosswalk": "conclusion_claim_crosswalk.json",
         "conclusion_claim_crosswalk_sha256": digest_text(crosswalk_text),
+        "utility_route": "quickstart.qmd",
+        "utility_route_sha256": digest(UTILITY_ROUTE),
         "unit_count": len(records),
         "owner_route_count": sum(len(record["owner_ids"]) for record in records),
         "started_unit_count": sum(record["state"] != "not_started" for record in records),

@@ -41,6 +41,7 @@ P2_POLICY = ROOT / "evidence_quality/p2_task_qualification_and_replacement_polic
 P2_RESOURCE = ROOT / "evidence_quality/p2_resource_ceiling.json"
 P2_REPLACEMENT_QUEUE = ROOT / "experiments/p2_governed_repository_admission/corpus/replacement_queue.json"
 P5_STATEFUL_RESULT = ROOT / "experiments/effect_complete_service/results/2026-07-27-local.json"
+P5_U1_RESULT = ROOT / "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json"
 P5_NATURAL_TRACE = ROOT / "experiments/p5_natural_publication_service_trace/results/2026-07-27-development.json"
 P5_NATURAL_CAMPAIGN = ROOT / "experiments/governed_operations_argument_exit/preregistration.json"
 P5_NATURAL_QUALIFICATION = ROOT / "experiments/governed_operations_argument_exit/qualification/2026-07-28-local.json"
@@ -234,6 +235,7 @@ def inputs() -> dict:
         "p2_resource": load(P2_RESOURCE),
         "p2_replacement_queue": load(P2_REPLACEMENT_QUEUE),
         "p5_stateful_result": load(P5_STATEFUL_RESULT),
+        "p5_u1_result": load(P5_U1_RESULT),
         "p5_natural_trace": load(P5_NATURAL_TRACE),
         "p5_natural_campaign": load(P5_NATURAL_CAMPAIGN),
         "p5_natural_qualification": load(P5_NATURAL_QUALIFICATION),
@@ -2626,6 +2628,43 @@ def errors(data: dict) -> list[str]:
         or p5_result.get("release_effect") != "none"
     ):
         out.append("P5 stateful-service slice laundered support or release state")
+
+    p5_u1_status = p5.get("p5_u1_repository_change_demonstrator", {})
+    p5_u1_result = data["p5_u1_result"]
+    expected_p5_u1_status = {
+        "state": "retrospective_natural_defect_replay_complete_reader_integration_open",
+        "design_path": "experiments/p5_u1_governed_repository_change/design.json",
+        "result_path": "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
+        "schema_path": "schemas/p5_u1_governed_repository_change_result.schema.json",
+        "runner_path": "scripts/run_p5_u1_governed_repository_change.py",
+        "validator_path": "scripts/validate_p5_u1_governed_repository_change.py",
+        "report_path": "docs/p5_effect_complete_reference_report.md",
+        "classification": p5_u1_result.get("task", {}).get("classification"),
+        "route_count": p5_u1_result.get("route_count"),
+        "path_count": p5_u1_result.get("path_count"),
+        "trial_count": p5_u1_result.get("trial_count"),
+        "state_checks_passed": p5_u1_result.get("aggregate", {}).get("state_checks_passed"),
+        "rejecting_record_mutation_count": 7,
+        "governed_authority_blocks": p5_u1_result.get("aggregate", {}).get("governed_authority_blocks"),
+        "governed_crash_recoveries": p5_u1_result.get("aggregate", {}).get("governed_crash_recoveries"),
+        "governed_compensations": p5_u1_result.get("aggregate", {}).get("governed_compensations"),
+        "outcome_known_before_route_replay": p5_u1_result.get("task", {}).get("outcome_known_before_route_replay"),
+        "prospective_utility_estimate": False,
+        "support_state_effect": p5_u1_result.get("support_state_effect"),
+        "release_effect": p5_u1_result.get("release_effect"),
+    }
+    if p5_u1_status != expected_p5_u1_status:
+        out.append("P5-U1 demonstrator result and roadmap status diverged")
+    if (
+        p5_u1_result.get("task", {}).get("outcome_known_before_route_replay") is not True
+        or p5_u1_status.get("prospective_utility_estimate") is not False
+        or p5_u1_result.get("aggregate", {}).get("trial_count") != 12
+        or p5_u1_result.get("aggregate", {}).get("state_checks_passed") != 12
+        or p5_u1_result.get("aggregate", {}).get("mutations_rejected") != 12
+        or p5_u1_result.get("support_state_effect") != "none"
+        or p5_u1_result.get("release_effect") != "none"
+    ):
+        out.append("P5-U1 demonstrator laundered prospective evidence or failed its exact matrix")
 
     p5_natural = p5.get("natural_publication_service_development_trace", {})
     p5_trace = data["p5_natural_trace"]
