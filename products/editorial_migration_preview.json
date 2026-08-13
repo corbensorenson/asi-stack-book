@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
   "product_id": "editorial-migration-metadata-preview",
-  "state": "composition_complete_no_public_cutover",
+  "state": "manuscript_complete_public_cutover_candidate_pushed",
   "sources": [
     "book_structure.json",
     "docs/human_reader_26_unit_outline.md"
   ],
   "book_structure_sha256": "6e1c5a254a3890afdf7aa092b41fdb33d86f7ba6c20bdbb0880b823fd9eae271",
-  "human_reader_outline_sha256": "985bf1470e2ff8aa7a5682fddf6647feef0589596719348f766cfc5a1de08ebf",
+  "human_reader_outline_sha256": "7cde8b0d65c855161a93251a92afcb42ddebab1daab485193b674a9a90d33640",
   "reference_owner_count": 87,
   "main_book_owner_count": 56,
   "role_counts": {
@@ -645,7 +645,7 @@
     ]
   },
   "human_reader": {
-    "state": "independent_manuscript_in_progress",
+    "state": "complete_draft_public_html_candidate",
     "unit_count": 26,
     "owner_route_count": 87,
     "units": [
@@ -899,7 +899,7 @@
   "non_claims": [
     "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
     "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
-    "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
+    "The 26-unit maintained manuscript is draft-complete, but exact-head public deployment and external-human editorial approval remain unclaimed.",
     "No support state, release state, safety, readiness, AGI, or ASI claim changes."
   ]
 }

@@ -132,7 +132,7 @@ def build_preview(structure: dict) -> dict:
     return {
         "schema_version": 1,
         "product_id": "editorial-migration-metadata-preview",
-        "state": "composition_complete_no_public_cutover",
+        "state": "manuscript_complete_public_cutover_candidate_pushed",
         "sources": ["book_structure.json", "docs/human_reader_26_unit_outline.md"],
         "book_structure_sha256": digest(STRUCTURE),
         "human_reader_outline_sha256": digest(OUTLINE),
@@ -143,7 +143,7 @@ def build_preview(structure: dict) -> dict:
         "role_counts": {role: len(rows) for role, rows in sorted(roles.items())},
         "roles": dict(sorted(roles.items())),
         "human_reader": {
-            "state": "independent_manuscript_in_progress",
+            "state": "complete_draft_public_html_candidate",
             "unit_count": len(units),
             "owner_route_count": sum(len(unit["owner_ids"]) for unit in units),
             "units": units,
@@ -153,7 +153,7 @@ def build_preview(structure: dict) -> dict:
         "non_claims": [
             "Publication nesting does not transfer claim, proof, evidence, or authority ownership.",
             "Seven composition packages preserve all eighteen publication and method-detail nests; the sole semantic candidate was rejected by its losslessness test and public cutover remains incomplete.",
-            "The 26-unit outline and partial maintained manuscript are not a completed Human Reader edition.",
+            "The 26-unit maintained manuscript is draft-complete, but exact-head public deployment and external-human editorial approval remain unclaimed.",
             "No support state, release state, safety, readiness, AGI, or ASI claim changes.",
         ],
     }

@@ -1,0 +1,75 @@
+{
+  "release_id": "2026-08-13-human-reader-html-cutover-96a22b15e",
+  "release_state": "pushed",
+  "source_commit": "96a22b15e536cb9489480af4531e941910033c2e",
+  "audience_profiles": [
+    "human_researchers",
+    "interested_humans"
+  ],
+  "canonical_scope": "Pushed Human Reader HTML cutover candidate containing the independent 26-unit manuscript, reciprocal edition navigation, an 87-owner route map, and a generated conclusion/claim crosswalk. The 87-owner live research graph remains the evidence authority, and the historical 22-unit candidate and reader-2026-07-18 release remain immutable.",
+  "rendered_site": "Local clean renders produced 100 technical documents and 27 Human Reader documents; scripts/build_human_reader_public_site.py assembled the 26-unit reader projection at _site/reader. Exact-head GitHub Pages deployment is not yet claimed.",
+  "scaffold_sync": "python3 scripts/sync_scaffold.py (pass; clean root render configuration)",
+  "proof_manifest_sync": "not run because no outline proof tag, proof manifest, theorem, or proof binding changed",
+  "validation_commands": [
+    "python3 scripts/validate_human_reader_current.py",
+    "python3 scripts/validate_post_v2_3_maintenance_transfer_and_publication_roadmap.py",
+    "python3 scripts/validate_schemas.py",
+    "python3 scripts/validate_negative_inference_surface_audit.py",
+    "python3 scripts/validate_publication.py",
+    "python3 scripts/validate_live_human_view.py",
+    "python3 scripts/run_validation_registry.py --tier pr",
+    "quarto render --to html",
+    "quarto render editions/reader_manuscript/current --to html",
+    "python3 scripts/build_human_reader_public_site.py --site _site",
+    "node scripts/validate_live_human_view_browser.js --site _site --all-chapters --all-viewports --strict"
+  ],
+  "validation_status": "pass",
+  "changelog_refs": [
+    "appendices/F_changelog.qmd"
+  ],
+  "public_url": "https://corbensorenson.github.io/asi-stack-book/reader/",
+  "derived_artifacts": [
+    {
+      "artifact_class": "live_site",
+      "status": "rendered",
+      "path_or_uri": "_site/reader/",
+      "review_status": "pass",
+      "notes": "The local candidate passed static link checks and exhaustive desktop/mobile browser exercise. Public exact-head deployment remains pending."
+    },
+    {
+      "artifact_class": "reader_source",
+      "status": "reviewed",
+      "path_or_uri": "editions/reader_manuscript/current",
+      "review_status": "pass",
+      "notes": "All 26 independent units are inside their declared drafting targets, all 87 technical owners route exactly once, and the generated status panels and crosswalk retain local evidence boundaries. This is internal review, not external-human editorial approval."
+    },
+    {
+      "artifact_class": "reader_format",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "EPUB, PDF, DOCX, and other full reader formats remain deferred until a major-version content freeze."
+    },
+    {
+      "artifact_class": "audio_artifact",
+      "status": "not_attempted",
+      "path_or_uri": "",
+      "review_status": "not_started",
+      "notes": "Audiobook and embedded-audio work remain deferred until a major-version content freeze."
+    }
+  ],
+  "support_state_effect": "none",
+  "residuals": [
+    "Confirm the exact-head GitHub Pages build, deployment, and public /reader/ routes before changing release_state to pages_deployed.",
+    "External-human line editing, accessibility-technology review, and final major-version content approval remain open.",
+    "Legacy-route cutover remains reversible while the technical edition stays canonical for evidence and research custody."
+  ],
+  "non_claims": [
+    "does not claim public deployment for commit 96a22b15e536cb9489480af4531e941910033c2e",
+    "does not replace the live research graph as the evidence authority",
+    "does not promote any claim, proof, empirical result, support state, or release state",
+    "does not approve EPUB, PDF, DOCX, audiobook, or embedded-audio artifacts",
+    "does not claim external-human editorial approval or accessibility conformance",
+    "does not establish AGI, ASI, deployment readiness, system safety, or comparative superiority"
+  ]
+}

@@ -18,6 +18,8 @@ from build_human_reader_current import (
 
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 PAGES_WORKFLOW = ROOT / ".github/workflows/build-pages-artifact.yml"
+CUTOVER_RECORD = ROOT / "release_records/2026-08-13-human-reader-html-cutover-96a22b15e.json"
+CUTOVER_SOURCE_COMMIT = "96a22b15e536cb9489480af4531e941910033c2e"
 
 
 UNIT_01_REQUIRED = [
@@ -718,6 +720,20 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
     ):
         if fragment not in workflow:
             errors.append(f"Pages workflow does not publish the Human Reader: {fragment}")
+    if not CUTOVER_RECORD.is_file():
+        errors.append("Human Reader HTML cutover record is missing")
+    else:
+        cutover = json.loads(CUTOVER_RECORD.read_text(encoding="utf-8"))
+        if cutover.get("release_state") != "pushed":
+            errors.append("Human Reader cutover record overstates or understates its pushed state")
+        if cutover.get("source_commit") != CUTOVER_SOURCE_COMMIT:
+            errors.append("Human Reader cutover record source-commit drift")
+        if cutover.get("support_state_effect") != "none":
+            errors.append("Human Reader cutover record changes support state")
+        if cutover.get("public_url") != "https://corbensorenson.github.io/asi-stack-book/reader/":
+            errors.append("Human Reader cutover record public route drift")
+        if not any("exact-head github pages" in item.lower() for item in cutover.get("residuals", [])):
+            errors.append("Human Reader cutover record omits the unverified deployment residual")
     for unit in crosswalk.get("units", []):
         if unit.get("owner_count") != len(unit.get("owners", [])):
             errors.append(f"{unit.get('unit_id')}: crosswalk owner count drift")
