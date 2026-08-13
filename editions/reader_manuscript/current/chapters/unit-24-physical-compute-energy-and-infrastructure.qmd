@@ -1,0 +1,650 @@
+---
+title: "Physical Compute, Energy, and Infrastructure"
+unit_id: "unit-24"
+---
+
+## Where the Repository Task Actually Runs
+
+The repository system receives another dependency update. Its cognitive plan
+looks simple: retrieve the affected contracts, generate a patch, run tests,
+inspect the result, and prepare a rollback.
+
+The plan can run on a laptop in the maintainer's office, across several owned
+devices in a personal compute hive, on rented accelerators, or in a centralized
+cluster. The logical workflow is similar. The physical consequences are not.
+
+On the laptop, model weights and key-value state exceed accelerator memory.
+Layers move between storage, system memory, and the device. Latency rises, but
+the repository and credentials remain local. A thermal limit reduces speed
+halfway through the test suite.
+
+The hive adds a workstation and a home server. It gains aggregate capacity and
+failure alternatives, but now needs identity, scheduling, revocation, network
+security, and partition behavior. One device belongs to a family member and may
+not receive private project data.
+
+The cloud cluster finishes generation quickly. It pays network latency and
+transfer cost, depends on a provider and region, and moves code into a different
+trust and jurisdictional boundary. Its efficient accelerator may consume less
+energy per token while the facility, cooling, redundancy, and idle capacity
+change the total.
+
+"Use 40,000 tokens and two verification passes" is an abstract budget. It says
+nothing yet about memory traffic, electricity, water, hardware life, network
+dependence, ownership, resilience, or the people who bear the infrastructure's
+cost. Cognitive efficiency becomes real only when compiled onto physical
+capacity.
+
+## From Cognitive Demand to Physical Demand
+
+Every cognitive action expands into a physical workload. The record should bind
+model and artifact identities, precision, context and cache sizes, batch and
+sequence shape, generation and verification steps, memory placement, data
+movement, storage, network, hardware, site, interval, and required reliability.
+
+Tokens alone are insufficient. Two runs with equal token counts can differ in
+model size, active parameters, cache traffic, speculative branches, retrieval,
+tool use, and test execution. One may be compute-bound; another spends most of
+its time moving data.
+
+The physical compiler begins with demand classes:
+
+- arithmetic and accelerator operations;
+- high-bandwidth and ordinary memory capacity;
+- storage reads, writes, and endurance;
+- network transfer and synchronization;
+- CPU orchestration and tool execution;
+- power, cooling, and backup requirements;
+- space, maintenance, and operator attention.
+
+It then maps them to a hardware profile and records rejected placements. A
+route that fits nominal accelerator memory but thrashes through unified memory
+is not equivalent to one that remains resident. A route that meets average
+power but violates a thermal or battery limit is not feasible.
+
+The map is time-bound. Available memory, temperature, battery, network, other
+loads, electricity conditions, and device health change. A profile qualified
+at idle can become invalid under concurrent work.
+
+## Memory Movement Can Dominate
+
+Model discussions often focus on arithmetic throughput. Inference and training
+also move weights, activations, optimizer state, cache, retrieval results, and
+artifacts through a hierarchy of storage, memory, interconnects, and networks.
+
+When the model does not fit, the system can shard by layer or tensor, offload to
+CPU or disk, compress weights or cache, reduce context, use sparse activation,
+or select a smaller route. Each choice trades latency, throughput, fidelity,
+energy, endurance, and implementation complexity.
+
+The repository task is interactive. A method optimized for large batches may
+show high throughput while delivering an unusable first-token delay. Disk
+offload may make a model fit yet extend the review beyond the human's available
+window. A smaller model plus retrieval and verification may complete sooner and
+with stronger evidence.
+
+Data movement belongs in the resource receipt. It should report bytes by tier,
+transfer paths, cache reuse, compression, recomputation, and stalls. Otherwise a
+claimed compute reduction can hide increased memory traffic or network burden.
+
+Storage is not free archival space. Repeated model paging and checkpoint writes
+consume bandwidth and device life. Recovery copies improve resilience while
+increasing capacity and embodied replacement pressure. The correct comparison
+is end to end.
+
+## Hardware Profiles Are Versioned Decisions
+
+A runtime should not infer a permanent machine class from a device name. Two
+systems with the same nominal accelerator can differ in memory, thermal design,
+storage, driver, background load, power mode, and failure history.
+
+A hardware profile records observed capacity and the policy used to interpret
+it. It can include accelerator and CPU identity, usable memory by tier, transfer
+bandwidth, storage behavior, supported kernels and precision, thermal envelope,
+battery, network, meter coverage, and known defects. The record names the probe,
+time, environment, uncertainty, and expiry.
+
+Candidate execution profiles are tested in stages. A dry allocation checks fit.
+A bounded kernel test checks compatibility. A short workload observes memory,
+temperature, and throughput. A canary checks end-to-end output and recovery.
+Rejected profiles remain visible so the system does not repeat a dangerous
+experiment every time it restarts.
+
+Dynamic adaptation needs hysteresis. If the runtime switches placement whenever
+temperature crosses one noisy reading, it can oscillate between profiles and
+lose more work than it saves. Entry and exit thresholds, minimum dwell time,
+cooldown, and state-safe handoff belong to the decision.
+
+Pressure should reduce optional work before required safety work. The system can
+shrink batch size, reduce speculative branches, move a cache, or fall back to a
+smaller model. It should not silently disable verification or monitoring because
+those components consume memory.
+
+Hardware probes do not grant authority. Discovering a fast device does not
+permit the system to send it private data, install software, spend money, or run
+in the background. The profile supplies capability evidence to a later policy
+decision.
+
+Profiles also make regressions diagnosable. A slower result can be attributed to
+a changed driver, thermal limit, storage mode, or workload rather than vaguely
+to the model. Material changes invalidate the receipt and trigger bounded
+requalification.
+
+## Measure Use Before Modeling Impact
+
+Physical accounting separates observed use from modeled consequence.
+
+Observed quantities can include wall time, device utilization, memory traffic,
+network bytes, node power, facility energy, temperature, cooling operation, and
+failures. Each needs a meter identity, scope, interval, sampling policy,
+calibration, missing-data rule, and uncertainty.
+
+Modeled quantities translate observations into attribution, emissions, water,
+cost, or lifecycle impact. They add assumptions about facility overhead,
+electricity mix, marginal versus average generation, cooling, shared capacity,
+hardware allocation, and supply chain.
+
+The two should never be collapsed. A meter reading of server power does not
+directly measure the workload's global emissions. A regional average does not
+reveal the marginal source at that hour. A facility power-usage factor does not
+describe every cooling condition.
+
+The receipt can state:
+
+> During interval I, meter M observed energy E for node set N. Facility and
+> lifecycle impacts were estimated with model V under assumptions A, exclusions
+> X, and uncertainty U.
+
+This sentence is less dramatic than "the model used E clean energy," but it can
+be audited and revised.
+
+Missing backup or cooling energy should remain missing, not silently become
+zero. Shared infrastructure requires an explicit allocation rule. The same
+measured facility total can support different workload attributions, so the
+model version belongs beside the result.
+
+## Useful Output Is the Denominator
+
+Lower energy per token is not enough if the route needs more tokens, retries,
+verification, or repair. Lower energy per run is not enough if the run produces
+fewer accepted useful outcomes.
+
+The relevant ratio is claim-specific: physical resources per accepted patch,
+per verified decision, or per recovered incident under a fixed quality and
+authority contract. Unsafe or unusable outputs do not count as useful delivery.
+
+The local laptop may consume more joules per generated token but avoid transfer,
+provider, and review overhead. The cluster may finish more quickly and reduce
+energy per accepted patch. The hive may reuse otherwise idle owned hardware yet
+spend more coordination and standby energy.
+
+All attempts remain in the denominator. A central route that retries failed
+workers, a local route that recompiles after thermal interruption, and a hive
+route that requeues after device dropout all pay those costs.
+
+Efficiency can increase total impact through greater demand. A cheaper task can
+be run more often, at larger scale, or on work that was previously rejected.
+The system should report unit efficiency and total consumption separately. It
+should not infer that one controls the other.
+
+## Energy Is Capacity, Timing, and Reliability
+
+Electricity is not only a scalar cost. The workload needs capacity at a place
+and time, with quality and continuity sufficient for its purpose.
+
+Training can sometimes shift across hours or locations. Interactive inference,
+incident response, and human review have tighter deadlines. A flexible workload
+can pause or reduce precision when the grid is constrained; a safety monitor may
+not be allowed to disappear.
+
+The run contract names deadline, interruptibility, checkpoint interval,
+recovery, minimum service, and degradation. A scheduler can prefer lower-impact
+windows only after policy and usefulness constraints are satisfied.
+
+Backup power and redundancy improve availability while adding equipment, idle
+loss, maintenance, and fuel. A facility's normal-operation efficiency does not
+establish resilience during grid, cooling, or network failure.
+
+Power loss tests should follow effects. If the repository generator stops, can
+the task restart from complete state? Did a partial migration occur? Are
+credentials still bounded? Is a human available to interpret the residual? A
+checkpoint file alone does not prove recovery.
+
+## Water, Land, Materials, and Hardware Life
+
+Operational electricity is one infrastructure axis. Cooling water, land,
+construction, accelerators, memory, networking, batteries, critical materials,
+transport, maintenance, reuse, and retirement also matter.
+
+Accounting should avoid both omission and false precision. Facility water use
+depends on cooling design, climate, season, and electricity generation. Hardware
+impact depends on manufacturing, utilization, lifetime, replacement, and
+allocation among workloads. Supply-chain visibility is incomplete.
+
+The chapter does not require every task to carry a perfect lifecycle inventory.
+It requires consequential decisions to preserve known categories, uncertainty,
+and excluded burdens. A hardware refresh justified by energy efficiency should
+include embodied replacement and e-waste. Extending old device life should
+include its lower performance, reliability, and security support.
+
+Local context matters. One unit of water or power has different consequences in
+different regions and seasons. A global average can hide a stressed community.
+Community impact includes prices, infrastructure competition, noise, land use,
+employment, tax arrangements, and who participates in the decision.
+
+These are not properties that a scheduler can optimize from telemetry alone.
+They require institutional authority, affected-party evidence, and contestable
+judgment.
+
+## Concentration Changes the Architecture
+
+Frontier accelerators, high-bandwidth memory, fabrication, advanced packaging,
+cloud platforms, power interconnection, and skilled operations are concentrated
+resources. Concentration can improve utilization and reliability while creating
+dependency, bargaining power, surveillance, and correlated failure.
+
+A centralized provider may offer excellent hardware, mature networking, rapid
+recovery, and lower unit cost. The stack should use those advantages when they
+fit the authority and resilience contract. It should not confuse operational
+quality with user ownership or exit.
+
+The infrastructure record names provider, region, jurisdiction, portability,
+data exposure, model and artifact custody, price risk, quota, failure domain,
+and exit path. A nominally portable workload may depend on proprietary services,
+accelerator behavior, or data gravity that makes exit slow.
+
+## Infrastructure Is a Governance Surface
+
+Compute access determines who can train, evaluate, deploy, and reproduce a
+system. Allocation policies therefore shape the research and institutional
+landscape even when the scheduler appears purely technical.
+
+Quota, pricing, identity requirements, acceptable-use rules, export controls,
+interconnection queues, and provider moderation can block or privilege work.
+Some controls may reduce harm; others may concentrate power or exclude legitimate
+users. The stack should record the authority and appeal path rather than
+presenting denial as a law of physics.
+
+Hardware attestation and metering can support compute-policy enforcement. Their
+coverage is bounded. A trusted report about one device state does not prove the
+software, workload, operator, or downstream effects. Attestation roots create
+update, revocation, compatibility, surveillance, and capture risks of their own.
+
+Infrastructure governance should preserve least disclosure. A provider may need
+evidence that a job fits a resource or policy envelope without receiving the
+job's private content. Selective proofs, secure measurement, and local
+enforcement can reduce exposure, but each adds a trust and failure surface.
+
+Exit is a resilience control. Models, checkpoints, manifests, logs, and recovery
+procedures should remain portable enough for the declared fallback. A paper
+right to leave is weak if moving petabytes, rebuilding kernels, or requalifying
+every evaluator takes months.
+
+Public policy claims require separate evidence. The architecture can expose
+concentration, dependencies, denials, and switching cost. It cannot decide the
+correct market structure or legal remedy by itself.
+
+Competition analysis is evidence about markets and institutions, not a proof
+that centralization is always harmful. The engineering question is whether the
+system retains meaningful alternatives and can test recovery from provider
+loss.
+
+## Personal Compute Hives
+
+A personal compute hive joins devices owned or authorized by a person,
+household, workshop, or project into a governed resource field. It may include a
+laptop, workstation, phone, home server, storage node, or explicitly leased
+external worker.
+
+Reachability is not permission. Every node has an owner or guardian, hardware
+profile, attestation state, allowed data and tool classes, energy and thermal
+constraints, availability, trust tier, and revocation path.
+
+Every job has a principal, purpose, data class, tools, effect envelope,
+deadline, risk and spending limits, acceptance test, and cleanup obligation.
+The scheduler intersects job and node policy before optimizing latency, cost,
+energy, or locality.
+
+This order matters. A fast rented node is ineligible for private family data
+unless an explicit contract permits that exposure. A child's device may be
+reachable but blocked from adult project work. A phone can approve a high-risk
+job without becoming the execution authority.
+
+Among eligible nodes, the hive chooses the least-authority adequate placement.
+It binds a task-local context and execution lease, monitors the run, and emits
+artifact, effect, resource, recovery, and residual receipts.
+
+The goal is not to use every idle cycle. It is to make owned capacity available
+without turning a household network into an unbounded cluster.
+
+## Locality Is More Than Latency
+
+Keeping computation near the data can reduce network transfer, improve response
+time, preserve operation during provider outages, and limit exposure. It can
+also place sensitive work on poorly maintained devices with weak isolation and
+irregular backups.
+
+Locality should be stated by object and stage. Source files may remain local
+while a redacted embedding or public dependency graph travels. Generation may
+run remotely while final evaluation and effect authority remain on the owned
+machine. A result can return without granting the worker access to the repository.
+
+Data minimization happens before routing. The system selects the smallest input
+that can support the task, marks derivation and reidentification risk, and binds
+retention and deletion. Redaction is not automatically safe; code structure,
+paths, errors, and embeddings can reveal private information.
+
+Confidential-computing mechanisms may reduce provider visibility, but they do
+not eliminate side channels, compromised roots, malicious clients, output
+leakage, or governance questions. Their evidence should narrow the exposure
+claim rather than turn an external node into a local one.
+
+Local operation can also preserve user agency. A person can inspect resource
+use, revoke a lease, keep a model available after a service changes, and choose
+when a device works. Those benefits depend on usable controls, software support,
+and real ownership. A technically local system controlled by a remote account
+or opaque update path may offer little practical exit.
+
+The placement decision therefore balances latency, transfer, privacy, security,
+maintenance, continuity, and authority. "Local first" is a default to test, not
+a universal answer.
+
+## Federation Adds a Principal Boundary
+
+Two hives or a personal hive and a project cluster can cooperate through a
+federation lease. The lease names principals, job, data and tool scope, sandbox,
+resource budget, evidence, expiry, revocation, cleanup, and dispute path.
+
+The external node should not discover private network resources merely because
+it accepted one job. Results return through a narrow artifact interface. Local
+secrets and credentials remain outside the lease unless explicitly required and
+authorized.
+
+Reputation can inform scrutiny but cannot grant authority. A well-behaved node
+still needs a current lease. A new node can execute a low-risk public job if it
+satisfies the contract without inheriting broad distrust forever.
+
+Payment and bidding come after policy. An ineligible node cannot win by being
+cheap. Estimates should include expected latency, energy, network, failure,
+verification, and recovery rather than compute price alone.
+
+Federation creates legal, tax, labor, consumer-protection, and jurisdictional
+questions beyond the scheduler. The technical lease can expose the relationship;
+it cannot decide the applicable institution.
+
+## Partitions Are Authority Events
+
+Distributed systems must choose how to behave when communication is delayed or
+lost. For ordinary cached data, availability may be preferred. For revocation
+and authority, acting on stale state can create irreversible effects.
+
+Suppose the workstation loses contact with the hive authority after receiving a
+job. A previous grant appears valid locally, but the principal may have revoked
+it. The safe action depends on the job's effect envelope and prospective policy.
+Read-only public analysis may continue under a lease; a private-data mutation
+may quarantine before action.
+
+The system should record last confirmed authority, partition time, allowed
+offline actions, no-mutation evidence, residual owner, and reconciliation path.
+On reconnection it compares effects with current authority. It does not rewrite
+history to imply continuous authorization.
+
+This can reduce availability. That is an explicit trade, not a scheduler bug.
+The policy should reserve offline capability for cases whose consequences are
+acceptable under stale authority and test that boundary.
+
+## Resilience Requires Diverse Failure Domains
+
+More nodes do not automatically create resilience. Devices may share power,
+network, software, credentials, model artifacts, or operator mistakes. Three
+machines in one room are not three independent sites.
+
+The repository workflow maps dependencies: model storage, source repository,
+package mirrors, credential service, evaluator, approval channel, and backup.
+A recovery plan should survive the failure classes it names.
+
+Hive dropout can requeue a pure generation job. A stateful test or migration
+needs checkpoint and effect reconciliation before another node continues.
+Duplicate execution can be worse than delay.
+
+Central infrastructure can provide stronger redundancy than a home hive. A
+local route can continue during provider outage. A hybrid design may keep
+private context and authority local while using external capacity for public,
+sandboxed computation.
+
+Resilience comparisons include recovery time, lost work, state correctness,
+operator burden, security updates, replacement parts, and residual effects. A
+route that remains online but acts from stale authority is not resilient in the
+relevant sense.
+
+## Maintenance Is Part of Capacity
+
+Hardware does not remain available by owning it. Devices need updates, keys,
+monitoring, cleaning, replacement, compatible drivers, tested backups, and
+someone who can diagnose failure. A hive that relies on unpaid household labor
+has not made that cost disappear.
+
+The capacity record should include maintenance windows, support horizon, spare
+parts, recovery competence, and the operator's sustainable workload. Unsupported
+software can turn useful old hardware into a security liability. Frequent
+replacement can improve reliability while increasing cost and embodied burden.
+
+Automation can reduce routine work, but it also needs authority limits. An
+updater should not rewrite every node during a partition, invalidate the only
+recovery image, or expand remote access to simplify administration. Staged
+rollout, diversity, rollback, and an offline recovery path preserve options.
+
+Human capacity is a failure domain. If one person holds every key and procedure,
+the system is not resilient to their absence. Documentation, rehearsed recovery,
+and scoped delegation are physical-infrastructure controls because they
+determine whether hardware can return to useful service.
+
+Maintenance debt should therefore travel with every placement decision, not
+appear later as an unexplained loss of capacity.
+
+## Beyond Digital Accelerators
+
+Neuromorphic, photonic, analog, in-memory, and quantum approaches may change
+physical tradeoffs. They should enter through the same end-to-end contract.
+
+A device-level operation count or energy result does not establish application
+advantage. The comparison includes data encoding, conversion, memory, control,
+error correction, training, host computation, networking, programmability,
+yield, reliability, verification, and fallback.
+
+Workload fit matters. Event-driven hardware may excel on sparse temporal
+signals without replacing dense language-model inference. Photonics may offer
+high-throughput linear operations while conversion and control dominate another
+stage. Quantum advantage claims need classical baselines, data-loading cost,
+noise, scale, and complete output quality.
+
+Alternative substrates should not inherit authority from novelty. They need
+hardware identity, measurement, error envelope, update and revocation policy,
+security analysis, and a route back to a qualified baseline.
+
+## One Workflow, Three Placements
+
+The team freezes the repository task and compares local, hive, and centralized
+routes under the same acceptance test and authority ceiling.
+
+The local route uses a compact model, retrieval, and full tests. It keeps data
+and credentials on the workstation. Memory offload raises latency and the run
+throttles once, but it completes without network dependence.
+
+The hive route sends public dependency analysis to the home server and keeps
+private source generation on the workstation. The phone supplies a bound review
+approval. A simulated partition revokes the server lease; the public analysis
+finishes under its offline policy while the private action quarantines. The
+team counts requeue and reconciliation.
+
+The cluster route sends a redacted task to a rented accelerator. It is fastest
+for generation, but repository retrieval, result verification, and effect
+authority remain local. The provider route loses eligibility when the patch
+requires an unredacted secret-bearing file.
+
+The comparison reports accepted outcome, wall time, compute, memory and network
+traffic, measured energy where available, modeled impact with uncertainty,
+money, human work, failures, recovery, privacy exposure, and residuals. No route
+wins by one number.
+
+The decision may differ by task. That is the point of infrastructure-aware
+routing.
+
+## Failure Modes
+
+**Token physicalism.** Token count is treated as complete resource use.
+
+**Arithmetic tunnel vision.** Accelerator operations hide memory and network
+movement.
+
+**Fit as performance.** Making a model load is reported as useful throughput.
+
+**Meter-to-impact leap.** Node energy becomes a global environmental claim.
+
+**Missing as zero.** Cooling, backup, or supply-chain burdens disappear.
+
+**Unit-efficiency morality.** Better energy per token is treated as lower total
+impact.
+
+**Embodied amnesia.** A hardware refresh ignores manufacturing and retirement.
+
+**Global-average locality.** Regional and community constraints vanish.
+
+**Reachability as authority.** Every discovered device becomes an eligible
+worker.
+
+**Optimization before policy.** Price or speed chooses a forbidden node.
+
+**Reputation as permission.** Historical behavior replaces a current lease.
+
+**Partition optimism.** Stale grants continue irreversible work.
+
+**Replica resilience.** Correlated devices are counted as independent recovery.
+
+**Novel-substrate exceptionalism.** Component results bypass end-to-end
+accounting.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline runs the task on one well-administered local machine or
+one mature cloud provider. It uses ordinary monitoring, access control,
+backups, cost reports, and regional sustainability data. It avoids a custom
+hive scheduler and detailed per-task lifecycle accounting.
+
+That baseline may be more reliable and secure. A personal hive increases
+attack surface and maintenance. Fine-grained impact estimates can consume more
+effort than they improve decisions.
+
+The wider layer earns its cost only when physical constraints materially change
+placement, accepted useful output, privacy, resilience, or whole-lifecycle cost.
+It should be compared with competent local, cloud, and hybrid baselines under
+real failure and workload conditions.
+
+If a static placement and ordinary accounting match the outcomes at lower
+burden, use them.
+
+## What the Current Work Establishes
+
+Personal Compute Hives currently has seven public record schemas, two valid and
+eight invalid admission fixtures, three valid and six invalid partitioned-
+authority records, 52 live family declarations, and a 31-declaration reachable
+refinement. Its independent consumer executes six accepted events, checks seven
+trace splits, covers 47 finite routes, rejects all post-closure events, and
+rejects all 144 authored mutations.
+
+Those artifacts establish finite record, custody, policy-first, lease,
+partition, and route consequences. No live scheduler, registry, portal,
+authority service, network overlay, sandbox, federation, partition experiment,
+energy measurement, dropout recovery, privacy, security, availability, useful
+work, independent reproduction, or transfer ran.
+
+Physical Compute Infrastructure implements a 36-declaration Lean surface over
+a six-transition review and 44 admission-axis mutations with exact repairs. It
+proves finite accounting, capacity, monotonicity, receipt invalidation, and two
+information-loss constructions. It does not measure a natural workload or
+establish performance, environmental impact, resilience, community outcome,
+deployment readiness, or infrastructure superiority.
+
+Both chapter cores remain at argument support. Source-reported infrastructure
+and hardware results are comparators, not local reproduction.
+
+## From Minimum Measurement to Governed Infrastructure
+
+A minimum implementation can run the repository workflow on one local node and
+one isolated external node. Freeze the task and authority. Measure wall time,
+memory, storage and network traffic, node energy, failures, human work, and
+accepted outcomes. Preserve assumptions and missing facility data.
+
+Add a policy-first scheduler with one private and one public data class. Inject
+thermal pressure, memory exhaustion, network loss, stale authority, revocation,
+node dropout, corrupted output, and incomplete cleanup. Verify denial,
+quarantine, requeue, effect reconciliation, and residual custody.
+
+The next stage compares local, hive, central, and hybrid routes across natural
+workloads with matched models and acceptance tests. It needs independent meters,
+evaluators, security review, privacy analysis, lifecycle estimates, and affected-
+community evidence where claims extend that far.
+
+A mature system would compile cognitive demand onto live hardware and
+infrastructure profiles, filter placements through rights and authority, route
+across diverse failure domains, account for complete physical and human cost,
+shift flexible work under capacity constraints, recover effect-complete state,
+and preserve the uncertainty between measured use and modeled impact.
+
+It would not maximize distributed compute. It would choose the smallest
+physical commitment that satisfies the task and its social contract.
+
+## The Strongest Objection
+
+Physical-impact accounting is highly context-dependent. Grid conditions,
+facility allocation, supply chains, water, and community effects often lie
+outside the system's observation or control. Detailed estimates can create
+false precision and distract from direct capability and safety work.
+
+The objection is correct. The layer should expose uncertainty and use decision-
+relevant resolution, not pretend to produce a universal footprint. It should
+not claim that architecture alone solves institutional allocation or
+environmental justice.
+
+The narrower claim is operational: physical capacity and topology can change
+whether a cognitive plan fits, who controls it, how it fails, and what it costs.
+Those differences deserve explicit evidence when they affect a decision.
+
+## Evidence That Would Change the Conclusion
+
+This layer should narrow if matched deployment studies show that physical
+constraints and topology do not materially affect accepted useful output,
+latency, privacy, resilience, recovery, or total cost, or if ordinary provider
+reports produce equally good decisions with less burden.
+
+Support would require natural multi-site workloads, calibrated meters,
+transparent impact models, strong local and cloud baselines, failure injection,
+security and privacy evaluation, authority and partition tests, lifecycle and
+community boundaries, independent reproduction, and transfer across devices,
+networks, regions, providers, and time.
+
+Formal proofs can establish finite accounting and authority invariants. They
+cannot establish meter accuracy, grid effects, supply-chain truth, community
+benefit, privacy, useful scheduling, or resilience in deployment.
+
+## What This Establishes
+
+Cognitive budgets become physical demand through memory, storage, network,
+hardware, power, cooling, reliability, and human operations. Measured use and
+modeled impact are different evidence. Useful accepted output, not tokens alone,
+is the denominator.
+
+Central clusters, local machines, personal hives, and federated workers offer
+different ownership, locality, capacity, and failure properties. Policy and
+authority must filter placement before optimization. Partitions, revocation,
+dropout, and recovery are part of the architecture.
+
+The repository contains bounded finite controls for hive admission and physical
+accounting. It does not establish a deployed hive or an environmentally
+superior infrastructure.
+
+Once the stack can distribute work and modify its own mechanisms, physical
+capacity also becomes a channel for replication and self-expansion. Unit 25
+confronts recursive improvement, replication, and containment directly.
+
+{{< include ../generated/unit-24-status.qmd >}}

@@ -505,6 +505,36 @@ UNIT_22_REQUIRED = [
     "No model, detector, mitigation, monitor, reward process, evaluator\nensemble, natural cross-context workload, deception finding, or deployment ran",
     "All six chapter cores remain at argument support",
 ]
+UNIT_24_REQUIRED = [
+    "## Where the Repository Task Actually Runs",
+    "## From Cognitive Demand to Physical Demand",
+    "## Memory Movement Can Dominate",
+    "## Hardware Profiles Are Versioned Decisions",
+    "## Measure Use Before Modeling Impact",
+    "## Useful Output Is the Denominator",
+    "## Energy Is Capacity, Timing, and Reliability",
+    "## Water, Land, Materials, and Hardware Life",
+    "## Concentration Changes the Architecture",
+    "## Infrastructure Is a Governance Surface",
+    "## Personal Compute Hives",
+    "## Locality Is More Than Latency",
+    "## Federation Adds a Principal Boundary",
+    "## Partitions Are Authority Events",
+    "## Resilience Requires Diverse Failure Domains",
+    "## Maintenance Is Part of Capacity",
+    "## Beyond Digital Accelerators",
+    "## One Workflow, Three Placements",
+    "## Failure Modes",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From Minimum Measurement to Governed Infrastructure",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "No live scheduler, registry, portal,\nauthority service, network overlay, sandbox, federation, partition experiment",
+    "It does not measure a natural workload or\nestablish performance, environmental impact, resilience, community outcome",
+    "Both chapter cores remain at argument support",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -709,6 +739,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_22_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 22 missing required argument boundary: {fragment!r}")
+    unit_24 = next((unit for unit in units if unit.get("unit_id") == "unit-24"), None)
+    if unit_24 is None or unit_24.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 24 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_24["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_24_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 24 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]
