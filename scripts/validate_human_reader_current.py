@@ -18,6 +18,29 @@ from build_human_reader_current import (
 STATUS = ROOT / "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
 
 
+UNIT_01_REQUIRED = [
+    "## The Change That Worked",
+    "## The Wrong Unit of Analysis",
+    "## Why Greater Capability Makes Boundaries More Important",
+    "## What the Stack Separates",
+    "## The Law of Noninheritance",
+    "## One Request, Many Commitments",
+    "## When Does a Responsibility Deserve a Layer?",
+    "## Interfaces Make Failure Addressable",
+    "## Logical Layers, Not a Service Tax",
+    "## The Stack Is Inside the World",
+    "## One Architecture, Several Views",
+    "## The Monolith Can Be the Right Baseline",
+    "## Failure Modes of the Stack Thesis",
+    "## What the Current Work Establishes",
+    "## From Minimum Stack to Mature Architecture",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "Capability does not confer authority",
+    "The live research chapter remains at `argument` support",
+    "It does not establish authentic approvals or receipts",
+    "does not promote the chapter core",
+]
 UNIT_23_REQUIRED = [
     "## The Complete Bill",
     "## Speed Is a Qualified Route",
@@ -646,6 +669,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
                 owner_url = f"https://corbensorenson.github.io/asi-stack-book/chapters/{owner_id}.html"
                 if owner_url not in panel:
                     errors.append(f"{unit['unit_id']}: missing discoverable owner route {owner_id}")
+    unit_01 = next((unit for unit in units if unit.get("unit_id") == "unit-01"), None)
+    if unit_01 is None or unit_01.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 1 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_01["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_01_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 1 missing required argument boundary: {fragment!r}")
     unit_04 = next((unit for unit in units if unit.get("unit_id") == "unit-04"), None)
     if unit_04 is None or unit_04.get("state") != "target_length_reached_internal_review_pending":
         errors.append("Unit 4 has not reached its drafting target")

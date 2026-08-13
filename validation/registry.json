@@ -3277,7 +3277,9 @@
     "editions/reader_manuscript/current/chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
     "editions/reader_manuscript/current/generated/unit-25-status.qmd",
     "editions/reader_manuscript/current/chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd",
-    "editions/reader_manuscript/current/generated/unit-26-status.qmd"
+    "editions/reader_manuscript/current/generated/unit-26-status.qmd",
+    "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
+    "editions/reader_manuscript/current/generated/unit-01-status.qmd"
   ],
   "units": [
     {
@@ -19075,6 +19077,8 @@
         "editions/reader_manuscript/current/manifest.json",
         "editions/reader_manuscript/current/_quarto.yml",
         "editions/reader_manuscript/current/index.qmd",
+        "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
+        "editions/reader_manuscript/current/generated/unit-01-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
         "editions/reader_manuscript/current/generated/unit-04-status.qmd",
         "editions/reader_manuscript/current/chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
@@ -19129,12 +19133,12 @@
       "output_assertions": [
         "26 Human Reader units",
         "87 owners routed once",
-        "Units 4 through 26 within their declared word targets",
+        "Unit 1 and Units 4 through 26 within their declared word targets",
         "independent maintained prose",
         "3 mutations reject",
         "support and release effects none"
       ],
-      "claim_scope": "Independent Human Reader manuscript structure and Units 4 through 26 drafting completeness only.",
+      "claim_scope": "Independent Human Reader manuscript structure and Unit 1 plus Units 4 through 26 drafting completeness only.",
       "negative_controls": "validator_owned_route_length_and_support_mutations",
       "negative_control_cases": [
         "owner-route loss",
@@ -19147,7 +19151,7 @@
     }
   ],
   "summary": {
-    "required_artifact_count": 3233,
+    "required_artifact_count": 3235,
     "unit_count": 471
   },
   "non_claims": [

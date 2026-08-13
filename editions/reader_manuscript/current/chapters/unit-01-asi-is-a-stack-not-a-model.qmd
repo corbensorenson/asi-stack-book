@@ -1,0 +1,613 @@
+---
+title: "ASI Is a Stack, Not a Model"
+unit_id: "unit-01"
+---
+
+## The Change That Worked
+
+A software team asks an AI assistant to update a dependency. The assistant
+finds the correct version, edits the repository, runs the visible tests, and
+reports success. The patch works. Days later, a production failure reveals that
+the update changed a default used by a service whose tests were not present in
+the assistant's checkout.
+
+The team tries to reconstruct what happened. Which source defined the task?
+What repository state did the assistant see? Did it know that the absent service
+depended on the default? Who authorized the edit? Which plan was approved? Which
+tests ran, under which environment? Did the assistant observe the actual remote
+repository or only the exit status of a command? What did it retain as a lesson?
+
+There are logs, but they are incomplete. The prompt appears in one system, tool
+calls in another, and test output in a third. A model summary says the change was
+safe. No record says what "safe" meant. The pull request identifies the final
+bytes but not the context that justified them. The successful result cannot be
+reconstructed as a chain of accountable decisions.
+
+This is not primarily a failure of intelligence. The model may have reasoned
+well from what it saw. It is a failure of architecture. The system collapsed
+several different responsibilities into one apparently competent act: resolve
+the request, gather context, plan work, receive authority, modify state,
+observe consequences, evaluate evidence, declare readiness, and learn.
+
+Calling the model more intelligent does not restore the missing boundaries. A
+larger model might infer the hidden dependency. It might also make a more
+persuasive case for the same mistake. The important question is not only how
+capable the model is. It is what system turns capability into consequence.
+
+The central thesis of this book follows: advanced intelligence should be
+engineered as a governed stack of distinct responsibilities and transitions,
+not treated as one undifferentiated model.
+
+That claim does not require one service for every responsibility. It does not
+deny that end-to-end learning can discover useful representations. It says that
+the responsibilities must remain externally distinguishable wherever their
+authority, evidence, failure, or replacement conditions differ.
+
+## The Wrong Unit of Analysis
+
+Public discussion often treats the model as the system. A model receives an
+input and emits an output; benchmark scores summarize its behavior. That view
+is useful for studying a component. It becomes misleading when the component
+can retrieve private context, call tools, modify durable state, communicate
+with people, spend resources, or improve the machinery around itself.
+
+The consequential system includes much more than weights. It includes the
+people and institutions that define purposes, the interfaces that collect
+requests, the credentials available at runtime, the retrieval and memory
+systems that shape context, the planner that decomposes work, the router that
+selects capabilities, the tools that cause effects, the observers that measure
+state, the evaluators that judge results, the ledgers that preserve evidence,
+and the processes that approve release or replacement.
+
+A model can change while the system remains recognizably the same. A system can
+also change radically while using the same model: grant it a production key,
+attach a persistent memory, remove review, or give it a replication route. The
+weights alone do not identify the operational object.
+
+The stack is therefore the unit of analysis. It is the set of components,
+people, contracts, state, and institutions that carry an objective from request
+to real-world effect and then decide what the result means for future action.
+
+This framing resembles earlier service-oriented, modular-agent, cognitive-
+architecture, and layered-control traditions. Their existence matters because
+decomposition is not new. The narrower proposal in this book is to make
+governance operational at every consequential handoff: stable identity, scoped
+authority, typed artifacts, evidence state, residual ownership, invalidation,
+rollback or quarantine, and release records.
+
+The distinction prevents novelty by relabeling. Memory, planning, tools, and
+expert routing are familiar ideas. The architectural question is whether their
+interfaces preserve the responsibilities that make the whole system
+understandable and governable.
+
+## Why Greater Capability Makes Boundaries More Important
+
+Weak systems often fail before their organizational structure matters. They
+cannot form a plausible plan, use the tool, or keep enough context to complete
+the task. Improving capability removes those obvious barriers. The system can
+act across longer horizons, recover from local errors, persuade operators,
+write its own tooling, and coordinate other systems.
+
+That progress changes the dominant risk. A system that cannot modify a
+repository needs better code generation. A system that can modify thousands of
+repositories needs to know which one, under whose authority, with which
+verification and recovery. Intelligence makes the interface question more
+consequential because more proposals can become effects.
+
+Long horizons also magnify identity drift. A request is interpreted, decomposed,
+summarized, delegated, resumed after interruption, and revised after feedback.
+Without stable identity and versioned contracts, the final worker may satisfy a
+plausible descendant of the request while violating the original purpose. The
+system appears coherent because each local step follows from the previous one.
+The chain as a whole has changed meaning.
+
+Self-improvement magnifies the problem again. The object being evaluated can
+change the planner, tools, memory, context policy, verifier, or evaluator that
+will judge its successor. If those roles are merely aspects of one opaque
+agent, the system can accidentally use improvement evidence as authority to
+weaken its own controls. Explicit replacement and evidence boundaries make the
+conflict visible even when they cannot eliminate it.
+
+This is why the book begins with architecture rather than a list of model
+capabilities. The more general the intelligence, the less credible it becomes
+to govern the whole system with instructions embedded in the same channel as
+ordinary task data. Purpose, authority, observation, evidence, and replacement
+need control paths that do not depend solely on the candidate honoring a prompt.
+
+The thesis is not that capable models are inherently untrustworthy. It is that
+competence in a domain does not answer the institutional questions created by
+consequence. A brilliant engineer still works through access control, review,
+testing, incident response, and organizational authority. Advanced AI does not
+make those functions obsolete; it changes their scale, speed, and adversarial
+surface.
+
+## What the Stack Separates
+
+The repository change exposes at least nine responsibilities.
+
+**Purpose and intent** determine what outcome is being sought, for whom, under
+which constraints. The sentence "update the dependency" does not settle
+whether deployment is permitted, whether application code may change, or what
+risk is acceptable.
+
+**Context** determines what the system is allowed and able to know for this
+decision. Repository bytes, documentation, advisories, incident history, and
+organizational policy have different provenance, freshness, and rights.
+
+**Planning** turns an accepted intent into dependencies, obligations, stop
+conditions, and recovery. A plan can propose a production change without
+having permission to make it.
+
+**Routing** chooses which model, tool, specialist, or person should discharge
+an obligation. Competence for code generation does not imply competence for
+security review, and neither grants authority.
+
+**Execution** applies permitted transformations in an enforced environment. It
+owns attempts and receipts, not the truth of every consequence.
+
+**Observation** measures what happened. A command exit code, a filesystem read,
+a remote API query, and an independent production monitor provide different
+views. Observation should not be silently replaced by executor self-report.
+
+**Evaluation and evidence** decide what bounded claim the artifacts support.
+Passing one suite is evidence about that suite and environment, not proof that
+the change is globally safe.
+
+**Memory and learning** decide whether an outcome should alter future context,
+procedure, tools, models, evaluators, or policy. A lesson is a candidate change,
+not an automatic update.
+
+**Governance and stewardship** determine who may approve, release, review,
+repair, replace, or retire the components and records. The system cannot derive
+institutional legitimacy from its own confidence.
+
+These responsibilities recur throughout the book. Later chapters refine them
+into specialized machinery, but the opening principle remains the same: if two
+responsibilities differ in what they may claim, cause, or inherit, their
+boundary must remain visible.
+
+## The Law of Noninheritance
+
+The most important rule of the stack is noninheritance. A useful property on
+one side of a boundary does not automatically confer a different property on
+the other side.
+
+Capability does not confer authority. A model that can discover a vulnerability
+is not therefore allowed to exploit, disclose, conceal, or deploy it.
+
+Context does not confer truth. A retrieved passage may be authentic yet stale,
+irrelevant, disputed, or outside the rights of the current task.
+
+Planning does not confer execution. A coherent plan remains a proposal until a
+current grant admits its effects.
+
+Execution receipts do not confer observation. A tool can report success while
+the intended state is absent, partial, duplicated, or changed elsewhere.
+
+Evidence does not confer readiness. A bounded test can support one claim while
+release remains blocked by another obligation.
+
+A theorem does not confer enforcement. Formal proof establishes a consequence
+of definitions and assumptions. The runtime must still implement the modeled
+boundary, and the model must still capture the failure that matters.
+
+Learning does not confer persistence. A useful inference from one event may be
+wrong, private, unsafe to generalize, or appropriate only for a temporary
+context.
+
+Replacement does not confer qualification. A successor component must earn its
+own evidence under the current contract. It does not inherit the predecessor's
+approval because it shares a name or interface.
+
+Improvement does not confer self-ratification. A system may propose a better
+planner, evaluator, policy, or version of itself. The proposal cannot authorize
+its own adoption or weaken the gate that judges it.
+
+Noninheritance sounds restrictive, but it is what makes improvement possible
+without surrendering control. When properties are attached to explicit
+transitions, a component can change while the rest of the architecture knows
+which claims became stale and which authority remains valid.
+
+## One Request, Many Commitments
+
+Return to the dependency update. A governed path begins by issuing stable
+identities for the request, repository snapshot, policy, plan, work orders,
+artifacts, effects, observations, evaluations, and decision. These identities
+are not decorative labels. They let the system bind and later invalidate
+relationships.
+
+The intent contract might permit a patch and draft pull request but forbid
+production deployment. It might require a security suite and human ownership
+review. Its expiry prevents yesterday's approval from silently authorizing
+today's changed repository.
+
+The context package records the exact commit, dependency graph, test inventory,
+advisories, service map, and known omissions. The planner can reason from it
+without pretending it is complete. If a critical source expires or conflicts,
+the plan must refresh, narrow, or stop.
+
+The plan emits obligations. A router selects a package solver for deterministic
+closure, a model for release-note synthesis, a static analyzer for known
+patterns, and a person for the security decision. Each worker receives only the
+authority required for its obligation.
+
+The executor modifies an isolated tree. Every derivative links to the source
+snapshot and work order. Tests produce artifacts with environment identity and
+complete denominators. An observer reads the resulting graph and remote pull-
+request state separately from the process that attempted the writes.
+
+An evaluator might conclude that the patch satisfies the visible tests but
+changes a default affecting an absent consumer. Readiness can then allow a
+draft review artifact while blocking merge. The residual has an owner instead
+of disappearing inside a green status.
+
+If the change fails, rollback is also decomposed. Restoring the tree does not
+close a remote pull request, revoke an exposed credential, retract a message,
+or restore an external system. Each effect needs its own compensation or
+residual disposition.
+
+After closure, the system may propose a durable regression test or context rule.
+That candidate enters another governed lifecycle. The original outcome supplies
+evidence, not permission.
+
+The same model could participate in several of these roles. What matters is
+that it cannot use hidden shared state to bypass the contracts between them.
+
+## When Does a Responsibility Deserve a Layer?
+
+Not every technique deserves a layer. Prompting, retrieval, caching, search,
+and fine-tuning are implementation methods. They become architecturally
+distinct only when they own a responsibility whose contract, authority,
+evidence, failure, or lifecycle differs from adjacent work.
+
+A candidate responsibility earns separation when at least one of five tests
+applies.
+
+First, it crosses an **authority boundary**. The component may cause an effect
+that its upstream producer may only propose, or it handles secrets and rights
+that should not flow backward.
+
+Second, it crosses an **evidence boundary**. The downstream decision requires
+an instrument or observation independent enough that producer self-report is
+not adequate.
+
+Third, it crosses a **failure boundary**. The component can fail, recover, or be
+quarantined without invalidating the entire system, and that difference matters
+operationally.
+
+Fourth, it crosses a **replacement boundary**. Several implementations can
+serve the role, and qualification should attach to the candidate rather than to
+the rest of the stack.
+
+Fifth, it crosses an **institutional boundary**. Different people, teams,
+organizations, or legal authorities own the decision and cannot be collapsed
+by technical convenience.
+
+If none applies, separation may be unnecessary. Two adjacent transformations
+can remain one internal implementation. If several apply, hiding the boundary
+inside shared prompts or process memory creates technical debt even if the
+prototype works.
+
+This test also governs the living book. A new paper should not automatically
+create a chapter. It should first be routed to the owner whose contract it
+changes. A new owner is warranted only when the idea introduces a distinct
+responsibility, invariant, artifact, failure, or evidence path. Stable owner
+identities let the visible chapter structure consolidate without losing the
+specialist work underneath it.
+
+## Interfaces Make Failure Addressable
+
+A typed interface names what one responsibility presents to the next. At
+minimum it binds source and target identities, artifact type, authority ceiling,
+obligations, evidence state, expiry or revocation, residuals, and the receipt
+expected from the consumer.
+
+Types alone are insufficient. A producer and consumer can agree that a field is
+called `approved` while disagreeing about who approved what. Contracts need
+semantics, examples, counterexamples, lifecycle states, and tests that exercise
+the actual consumer.
+
+Still, an explicit handoff changes debugging. If the wrong repository was
+patched, the system can inspect context identity and work-order scope. If an
+expired grant admitted an effect, authority enforcement owns the failure. If a
+tool succeeded but observation was absent, the readiness gate should refuse.
+If a valid result became an invalid global rule, persistence governance owns the
+mistake.
+
+Without the boundaries, every incident becomes "the agent failed." That label
+is too coarse to guide repair. It encourages adding more prompt instructions or
+more model capability when the actual defect may be credential custody,
+observation, evaluator coverage, or institutional approval.
+
+Interfaces also allow replacement. A new planner can be qualified against the
+planning contract without rewriting execution. A stronger model can enter one
+route without becoming the memory authority. A verifier can be updated while
+prior decisions retain the exact evaluator version that supported them.
+
+The resulting control path can be pictured without mistaking sequence for a
+simple pipeline. Intent constrains context and planning. Planning creates work
+for routing and execution. Observation and evaluation return evidence rather
+than merely forwarding success. Governance can stop the path at every
+consequential transition. Memory and learning receive adjudicated outcomes,
+then propose changes back into the same controlled system.
+
+```{mermaid}
+flowchart LR
+  A["Purpose and intent"] --> B["Context"]
+  B --> C["Plan and route"]
+  C --> D["Authorized work"]
+  D --> E["Effect"]
+  E --> F["Independent observation"]
+  F --> G["Evidence and readiness"]
+  G --> H["Persistence and learning"]
+  H -. "candidate change" .-> B
+  I["Governance"] --> A
+  I --> D
+  I --> G
+  I --> H
+  E -. "residual or recovery" .-> I
+```
+
+The backward arrows matter as much as the forward path. A failed observation
+can invalidate readiness. A residual can return work to governance. A learned
+procedure can alter future context only after admission. The architecture is a
+network of controlled state transitions, not a waterfall in which every output
+must move onward.
+
+Nor does every task traverse every node. Read-only analysis may stop at an
+evidence artifact. A denied request may end before planning. A cached procedure
+may shorten the route while retaining its version and qualification. The stack
+defines what must be true when a boundary is crossed; it does not require
+crossing boundaries that the task does not need.
+
+This map also separates the control plane from the cognitive substrate. A
+frontier model, a collection of specialists, deterministic software, people,
+or some future machine can implement the transformations. The control question
+stays stable: which identity and contract govern the transition, and which
+observer can tell whether it occurred? Substrate neutrality is not indifference
+to implementation. Different substrates create different costs and failures.
+It is a refusal to let one currently successful substrate define the enduring
+architecture of authority and evidence.
+
+That distinction gives the book room to evolve. New models can improve the
+quality of planning or generation. New hardware can change placement and cost.
+New formal methods can strengthen a gate. None requires rewriting the purpose
+of neighboring layers unless the responsibility itself changes.
+
+## Logical Layers, Not a Service Tax
+
+A common objection is that this architecture would turn every useful action
+into a procession of services, schemas, and approvals. That is not the claim.
+
+A layer is a logical responsibility. Several low-risk responsibilities can run
+inside one process or one model call if their records, authority changes, and
+failure exits remain distinguishable. Physical separation is warranted when a
+threat model requires a stronger boundary: untrusted code execution, secret
+custody, independent observation, high-consequence approval, or institutional
+separation of duties.
+
+The amount of machinery should scale with consequence. A read-only explanation
+may need source lineage and no effect lease. Editing a disposable repository
+needs scoped filesystem authority, artifact lineage, tests, and cleanup. A
+production migration needs current grants, independent observation, residual
+ownership, incident response, and release authority.
+
+This graded approach prevents governance from becoming ritual. A field or gate
+earns its cost by controlling a named failure. If it never changes a decision,
+supports recovery, exposes uncertainty, or enables replacement, it should be
+simplified or removed.
+
+The architecture is therefore not maximally modular. It seeks the smallest set
+of externally visible responsibilities that preserves control over the effects
+and claims that matter.
+
+## The Stack Is Inside the World
+
+A diagram can make the governor appear to stand outside the system with a
+complete view. Real systems are embedded. Models, ledgers, verifiers, operators,
+networks, and institutions are all parts of the same world they attempt to
+describe and control.
+
+The context layer cannot know every relevant fact. The observer can share
+failure modes with the executor. The evaluator can be manipulated or wrong.
+The authority service depends on hardware, software, identities, and people.
+The human approver can be rushed, persuaded, or unable to understand the
+decision.
+
+Explicit boundaries do not solve embedded agency. They expose assumptions and
+give uncertainty somewhere to live. An observation record can name shared
+failure domains. A readiness decision can abstain. A residual can remain open.
+A claim can stay at argument support even when the architecture around it is
+formally tidy.
+
+This humility is central. The stack is not an omniscient control plane placed
+above intelligence. It is a fallible institution designed to make its own
+limits inspectable and corrigible.
+
+## One Architecture, Several Views
+
+Different participants need different projections of the same governed system.
+
+An operator needs the active request, authority, state, effects, blockers, and
+recovery path. A researcher needs claims, assumptions, sources, proof scope,
+test design, negative results, and evidence gaps. A human reader needs a causal
+account of why the boundaries exist and what would change the conclusion. An
+auditor may need lineage and decision records. A component needs only the
+minimal contract for its work.
+
+These views should not become independent realities. They project from stable
+identities and governed records while preserving their own purpose and prose.
+The operator dashboard cannot erase a residual because it does not fit the
+summary. The research edition cannot treat a citation as an experiment. The
+human edition should not reproduce every internal field, but it must preserve
+the architecture's conclusions and honest evidence limits.
+
+Projection is therefore different from duplication. A concise view can omit
+detail if it says where the authoritative record lives and prevents consumers
+from making decisions that require the omitted fields. A generated navigation
+list can change chapter numbers without changing owner identity. A human
+chapter can be rewritten for clarity without silently changing the support
+state of the claims it explains.
+
+The stack needs this plurality because no universal interface serves every
+decision well. The discipline is to keep canonical identity, lineage, and
+invalidation connected while allowing presentation and implementation to fit
+the consumer.
+
+## The Monolith Can Be the Right Baseline
+
+For some tasks, one capable model with tools, a sandbox, tests, and human review
+may be the best system. It can preserve rich internal representations without
+lossy translations. It avoids coordination latency and schema maintenance. Its
+end-to-end optimization may discover strategies that a hand-designed
+decomposition blocks.
+
+The stack thesis fails if explicit layers merely add paperwork while a simpler
+system is equally controllable, observable, recoverable, useful, and affordable.
+This is the strongest objection, not an edge case.
+
+The comparison must be fair. The monolith should receive good tools, context,
+caching, review, and rollback. The stack should be charged for routing,
+verification, human attention, latency, storage, maintenance, and integration
+failures. Both should face the same natural tasks and delayed outcome checks.
+
+The relevant question is not whether decomposition catches an intentionally
+obvious error. It is whether particular boundaries improve the joint frontier
+of useful output, unsafe effect rate, false refusal, recovery, accountability,
+and lifecycle cost.
+
+Ablation matters. If removing an evidence gate changes nothing, the gate may be
+ceremonial. If merging planning and routing preserves outcomes while reducing
+cost, the architecture should merge them. If independent observation catches
+failures that executor self-report misses, that boundary has earned a stronger
+case.
+
+The stack is a falsifiable design, not a doctrine of maximal separation.
+
+## Failure Modes of the Stack Thesis
+
+The first failure is **monolith drift**. The architecture keeps layer names but
+allows one model to become ambient authority, memory, evaluator, and release
+decision. The diagram survives while the boundaries disappear.
+
+The second is **anthology drift**. Every interesting paper becomes a new layer
+or chapter. Responsibilities overlap, ownership becomes unclear, and the book
+turns into a catalog rather than one machine.
+
+The third is **schema theater**. Records are complete and validators pass, but
+the fields contain self-reported or semantically empty assertions. Formal
+structure becomes a substitute for external observation.
+
+The fourth is **evidence inflation**. A source mapping becomes "validated," a
+finite theorem becomes "safe," or a local fixture becomes "deployed." The
+support label outruns the inference the artifact can carry.
+
+The fifth is **coordination loss**. Translation between layers discards useful
+information, creates latency, or causes failures that an end-to-end system would
+avoid.
+
+The sixth is **authority bypass**. The runtime, operator, or institution can
+ignore the typed grant. The architecture then describes policy without
+enforcing it.
+
+The seventh is **unowned residuals**. Every component completes its local job,
+but no one owns the external consequence, unresolved uncertainty, or long-tail
+repair.
+
+These are not reasons to abandon the stack. They are requirements for testing
+it.
+
+## What the Current Work Establishes
+
+The live research chapter remains at `argument` support. Its source mappings
+connect the stack thesis to Corben-authored architecture papers and external
+comparators in composed AI services, modular systems, agent architectures,
+cognitive architectures, layered control, and embedded agency. Those mappings
+provide lineage, mechanisms, and objections. They do not validate this stack.
+
+The repository also contains a finite authority-to-effect model. Its current
+surface has 34 Lean theorem declarations. An independently implemented consumer
+matches 18 generated layer-contract routes, classifies six authority fixtures,
+checks three runtime paths totaling ten accepted events, and preserves one local
+temporary-file effect, one independent observation, one exact rollback, two
+no-mutation denials, five revocation entries, and twelve rejected semantic
+mutations.
+
+That is useful evidence for the authored transition contract. It shows that the
+finite model can reject over-ceiling grants, missing dispatch, post-revocation
+effects, authority widening, and artifact substitution under its assumptions.
+
+It does not establish authentic approvals or receipts, complete effect
+discovery, a deployed authority service, distributed behavior, natural-task
+usefulness, architectural superiority, external reproduction, transfer,
+whole-system safety, AGI, or ASI. It does not promote the chapter core.
+
+## From Minimum Stack to Mature Architecture
+
+The minimum viable implementation is one useful effect-bearing path. It needs a
+versioned request, bounded grant, context snapshot, plan, work order, isolated
+effect, independent observation, evaluation, readiness decision, rollback or
+residual, and evidence record. It should reject an expired grant and recover
+from at least one injected failure.
+
+The implementation should be small enough that every handoff can be inspected.
+Its purpose is not to demonstrate breadth. It is to prove that the central
+separations can survive contact with one real task.
+
+The next stage varies tasks, models, tools, operators, and failures. Strong
+monolithic and lightweight baselines receive matched resources. Costs include
+human review, repair, latency, maintenance, and delayed outcomes. Each layer is
+ablated so that the architecture learns which boundaries carry value.
+
+The mature target is a substrate-neutral, continuously challenged system in
+which components can be replaced behind stable contracts; authority remains
+externally enforced; observations expose shared failure domains; claims change
+only through evidence transitions; failures route to owners; and recursive
+improvements enter the same governed lifecycle they propose to change.
+
+Formal models, executable consumers, natural workloads, and independent
+reproduction should correct one another. The mature architecture is not the one
+with the most layers. It is the smallest architecture that preserves purpose,
+authority, evidence, effects, recovery, and corrigibility as capability grows.
+
+## Evidence That Would Change the Conclusion
+
+Matched natural deployments could narrow the thesis sharply. If a competent
+monolithic agent with sandboxing, tests, human review, and rollback matches the
+stack on useful output, effect control, observation, recovery, accountability,
+and total cost, then some explicit boundaries are not earning their place.
+
+Evidence could also strengthen a bounded version. Repeated tasks might show
+that independent observation catches consequential false-success reports.
+Revocation tests might show that work-scoped grants contain stale credentials.
+Replacement campaigns might show that stable contracts reduce regression and
+recovery cost. External teams might reproduce those findings under different
+systems and institutions.
+
+No single result would establish the entire stack. Evidence should move the
+specific boundary claim it tests. A failed layer should be repaired, merged, or
+removed without protecting the diagram from the data.
+
+## What This Establishes
+
+Advanced intelligence becomes consequential through a system, not through
+weights alone. Treating that system as a governed stack makes distinct
+questions addressable: what was requested, what was known, what was planned,
+what was authorized, what changed, what was observed, what the evidence
+supports, what remains, and what may be learned.
+
+The law of noninheritance keeps those answers from laundering one another.
+Capability is not authority. A plan is not an effect. A receipt is not reality.
+A theorem is not enforcement. A proposed improvement is not permission to
+replace the system.
+
+Explicit boundaries carry real costs and can fail. They must be scaled to
+consequence and tested against strong simpler baselines. The stack should become
+smaller wherever separation does not improve the joint frontier.
+
+That leaves an immediate engineering question. If a stack spends more effort
+on contracts, routing, verification, and recovery, can it produce more accepted
+useful work per total cost? The next chapter turns that hope into the Efficient
+ASI Hypothesis and gives it a denominator capable of failing.
+
+{{< include ../generated/unit-01-status.qmd >}}
