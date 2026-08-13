@@ -172,6 +172,26 @@ UNIT_10_REQUIRED = [
     "The test runner and reviewer both read artifacts produced from the same stale\nbuild cache",
     "The models establish neither environmental truth, calibration, causal\nindependence, useful fusion, physical safety, recovery, nor deployment\nreadiness",
 ]
+UNIT_11_REQUIRED = [
+    "## The Branch That Passed",
+    "## Five Kinds of State",
+    "## Freeze the Forecast Before the Intervention",
+    "## Prediction Is Not Intervention",
+    "## Horizon Changes the Claim",
+    "## Keep More Than One Possible World",
+    "## Optimization Finds Favorable Mistakes",
+    "## The Trial and the Receipt",
+    "## Learning Without Rewriting History",
+    "## Failure Cases",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From a Minimum Contract to a Reality-Grounded Model Service",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "The model's\nown predicted state cannot serve as that effect observation",
+    "The claim-bearing empirical lane is prospectively specified but has not run",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -280,6 +300,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_10_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 10 missing required argument boundary: {fragment!r}")
+    unit_11 = next((unit for unit in units if unit.get("unit_id") == "unit-11"), None)
+    if unit_11 is None or unit_11.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 11 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_11["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_11_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 11 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

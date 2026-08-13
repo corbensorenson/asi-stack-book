@@ -1,0 +1,616 @@
+---
+title: "Governed World Models and Reality Grounding"
+unit_id: "unit-11"
+---
+
+## The Branch That Passed
+
+The gantry-controller patch from the previous chapter has finally reached a
+clean build. Its source digest, test artifact, deployment candidate, and
+observation records now agree. Before the team lets the candidate control the
+lab gantry, it creates a branch of the repository and predicts what the change
+will do.
+
+The branch model says the new braking rule will shorten settling time without
+increasing peak force. It predicts which dependency nodes will rebuild, which
+tests will change, how the simulated carriage will move, and which monitoring
+signals should remain inside their limits. In the model, every check passes.
+
+The bounded trial does not.
+
+The build graph contains an extra generated configuration file that the branch
+model omitted. One integration test fails because that file preserves the old
+deceleration threshold. The physical trial, stopped before full travel, also
+shows a small oscillation that the simulator did not predict. The model's
+dependency tree was plausible. Its simulated trajectory was smooth. Neither
+was the state of the repository or the gantry.
+
+This is the central problem of a world model. A system needs representations of
+states it cannot observe directly and futures that do not yet exist. It must
+fill gaps, compress history, predict transitions, compare interventions, and
+reason about alternatives. Those abilities make planning possible. They also
+create an internal surface on which a coherent mistake can look more complete
+than an inconvenient observation.
+
+The right response is not to ban imagination. It is to govern its relationship
+to actuality. The prediction must remain identifiable as a prediction. The
+intervention must be declared before the result is known. The observed outcome
+must come through an independent-enough path. The discrepancy must survive
+reconciliation. A successful simulation may influence a bounded plan, but it
+does not become evidence that its imagined state occurred.
+
+The failed branch is therefore useful. It reveals a dependency the model did
+not represent and a physical dynamic it did not capture. If the system records
+only that the trial failed, it loses the structure needed to improve. If it
+silently edits the forecast until it matches the outcome, it loses the fact
+that it was wrong. A governed world model keeps both.
+
+## Five Kinds of State
+
+Many failures begin because several different objects are all called “the
+state.” A practical architecture should distinguish at least five.
+
+An **observation** is a report produced through an instrument or process. The
+repository scanner reports a generated file. The force sensor reports a time
+series. Each report carries the provenance, timing, calibration, dependence,
+and missingness discussed in Unit 10.
+
+A **belief state** is the system's current, defeasible interpretation of those
+observations. It may combine several reports, infer hidden variables, retain
+alternative hypotheses, and express uncertainty. It is more useful than a raw
+measurement and less direct.
+
+A **prediction** is a model-relative claim about a state at another time or
+under another condition. “The integration test will pass after rebuilding” is
+a prediction. So is “the carriage will settle within 300 milliseconds.” Both
+depend on a model version, an observation cutoff, a horizon, and assumptions.
+
+A **counterfactual branch** is a prediction under an intervention that was not
+necessarily taken. It may ask what would happen if the threshold changed, if a
+dependency were rebuilt, or if the gantry carried a heavier payload. Several
+branches can coexist without contradiction because each belongs to different
+conditions.
+
+**Actuality** is the state admitted from observation after an action or event.
+It is still known through fallible instruments; “actual” does not mean
+omniscient. It means the record belongs to what the system currently treats as
+having occurred rather than to what a model imagined.
+
+These categories need explicit bridges. Observation can update belief. A model
+can project belief into a predicted branch. An authorized action can realize
+one intervention, after which a new observation can update actuality. A
+reconciliation can compare prediction and actuality. Confidence alone cannot
+cross any of those boundaries.
+
+The distinction sounds formal until a system loses it. A language model writes
+a plausible test result before running the test. A simulator's state is copied
+into an operational database. A planner treats its own branch summary as a
+fresh observation. A postmortem replaces the original prediction with the
+corrected explanation. Each move converts a useful hypothesis into counterfeit
+history.
+
+For the gantry trial, the five objects remain separate: the pre-trial repository
+and sensor observations; the belief that the clean candidate is deployed; the
+prediction that the dependency tree and trajectory will behave in specified
+ways; the counterfactual heavier-payload branches; and the independently
+recorded test failure and oscillation. Their links matter, but their identities
+must not merge.
+
+## Freeze the Forecast Before the Intervention
+
+A forecast that can change after every outcome cannot be calibrated. Before a
+trial begins, the system freezes the question, observation basis, model
+checkpoint, intervention, predicted outcomes, uncertainty, horizon, validity
+domain, and evaluation rule. The frozen packet need not be immutable forever;
+it must be immutable as the record of what was predicted for that trial.
+
+The gantry packet says which repository revision is being tested, which
+generated files are expected, which simulation and model versions produced the
+trajectory, what controller threshold will change, which payload and rail
+conditions are assumed, and what counts as a material miss. It also names
+omissions. Perhaps cable flex is not modeled, motor temperature is held fixed,
+and the dependency model ignores files generated outside the primary build
+graph. Those are not footnotes. They determine where the prediction may be
+used.
+
+Freezing the packet protects against three forms of hindsight. The first is
+ordinary memory drift: people and systems remember a forecast as less specific
+after it fails. The second is version drift: a later model silently replaces
+the checkpoint that made the decision. The third is semantic drift: the
+meaning of “pass,” “settle,” or “same environment” changes after the evidence
+arrives.
+
+This does not require one prediction for an entire project. Receding-horizon
+control can freeze short forecasts, observe again, and issue new ones. What
+matters is that each forecast has a before and an after. A new observation may
+invalidate a branch and trigger another prediction. It may not rewrite the old
+branch into a success.
+
+The same discipline applies outside physical control. A coding agent predicts
+which files a patch will affect before executing it. A research agent predicts
+which result would distinguish two hypotheses before running an experiment. An
+operations agent predicts service behavior before a rollout. Without a frozen
+forecast, a system can generate elegant explanations without accumulating
+evidence about whether its internal model improves.
+
+## Prediction Is Not Intervention
+
+Observational patterns answer questions about what tends to occur together.
+Interventions ask what changes when a particular variable is deliberately set
+while the relevant causal assumptions hold. The two questions are not
+interchangeable.
+
+Suppose repository history shows that gantry-controller changes followed by a
+full rebuild usually pass integration tests. That association does not prove
+that the rebuild causes success. Experienced developers may choose full
+rebuilds for better-understood changes. A hidden generator version may affect
+both the rebuild choice and the result. Or the historical tasks may simply be
+easier.
+
+Likewise, simulation may show that lowering a threshold and reducing payload
+together removes oscillation. It cannot identify which change mattered unless
+the design separates them or a justified causal model supplies the missing
+structure. A world model can represent a causal graph, but drawing arrows does
+not make the graph correct.
+
+Governed counterfactuals therefore bind intervention semantics. The record
+states which variable is set, which mechanisms are assumed to remain stable,
+which variables may respond, what external conditions are held, and where the
+query leaves the model's validated domain. Observational conditioning and
+intervention remain different operations even when one software interface can
+compute both.
+
+Held-out interventions provide a harder test than fitting familiar
+trajectories. The gantry model might see many ordinary controller runs but not
+the exact threshold change, payload, or generated-file defect used in the
+trial. Correctly predicting the intervention would be stronger evidence than
+reconstructing a sequence already represented in training data. It still would
+not prove a universally correct causal model; it would establish bounded
+performance under named conditions.
+
+This distinction also disciplines explanation. After the oscillation, the
+system may propose cable flex, stale configuration, sensor lag, controller
+gain, or an interaction among them. Those are causal hypotheses. They should
+generate discriminating interventions: regenerate only the configuration,
+change payload while holding the controller fixed, measure at another point,
+or compare a model with and without the suspected dynamic. A fluent causal
+story is the beginning of experiment design, not the end of inquiry.
+
+## Horizon Changes the Claim
+
+A model can be useful one step ahead and misleading twenty steps ahead. Error
+compounds, uncertainty grows, small state mistakes change later actions, and
+the policy itself steers toward states the model represents poorly.
+
+The gantry model may predict force accurately for the next control interval
+but miss oscillation over a full traverse. The repository model may predict the
+files touched by a direct edit while missing a generated descendant three build
+stages later. A service model may forecast one rollout cohort but not the
+feedback created when users respond to the change.
+
+Every prediction therefore names its horizon and temporal semantics. “Within
+five seconds,” “after one clean build,” and “over the next thousand requests”
+are different claims. The observation cutoff matters too: a five-second
+forecast based on a sample taken four seconds ago may be almost exhausted when
+it reaches the controller.
+
+Uncertainty should change with horizon, state region, intervention, and
+consequence. One global confidence score hides the structure a consumer needs.
+A model might be well calibrated for ordinary motion and poorly calibrated
+near the rail end. It might predict test outcomes well for hand-written code
+and poorly for generated artifacts. It might preserve average accuracy while
+underestimating rare failures selected by a planner.
+
+Prediction sets and ensemble disagreement can help express uncertainty, but
+their guarantees are conditional. Coverage measured under one distribution can
+fail after a shift. Several models can share data, architecture, objective, or
+blind spots. A narrow set can be confidently wrong when its assumptions break.
+The record must retain the conditions under which calibration was evaluated
+and the shifts that would defeat it.
+
+For a low-consequence documentation choice, a long and uncertain forecast may
+still be useful. For physical motion, security changes, irreversible data
+deletion, or public release, the same uncertainty should shorten the horizon,
+narrow the action, request another observation, or stop the route. The world
+model supplies a bounded prediction; consequence determines how much influence
+that prediction may receive.
+
+## Keep More Than One Possible World
+
+One model can produce several branches. Several models can produce several
+incompatible accounts of the same branch. Both forms of plurality matter.
+
+The repository predictor expects a complete rebuild to incorporate the new
+threshold. A second model, trained on content-addressed build traces, predicts
+that the generated configuration will remain stale unless its generator input
+changes. The physics simulator predicts stable motion. A learned dynamics model
+assigns substantial probability to oscillation under the current payload.
+
+The system does not need to average these into one smooth answer. It can retain
+each hypothesis, identify where they differ, and ask which observation or
+intervention has the greatest decision value. Rebuild from a cold cache. Inspect
+the generated file by digest. Run a low-energy step input. Change payload in
+simulation. Each action can eliminate some branches or reveal that the models
+share a missing variable.
+
+Plurality is useful only when it adds meaningful error diversity. Two models
+initialized with different random seeds but trained on the same data and
+objective may fail together. A symbolic constraint and a learned predictor may
+be more independent in one respect while sharing the same faulty observation.
+The architecture should record lineage and common dependencies rather than
+assuming that model count equals evidence count.
+
+Branches also need stable identities. If a model update changes a relation,
+the old branch cannot silently point to the new checkpoint. If a macro-object
+such as “clean build” expands into files and generators, the contraction rule,
+tolerance, and expansion trigger travel with it. Predicted, believed, observed,
+executed, contradicted, and retired relations remain distinct lifecycle states.
+
+This makes contradiction productive. The extra generated file is not an
+embarrassing exception to remove from the world state. It is a residual that
+defeats the “clean build” abstraction for this query family. The abstraction
+can be narrowed, expanded, or retired while historical decisions remain
+replayable under the representation that actually informed them.
+
+## Optimization Finds Favorable Mistakes
+
+Average predictive accuracy is not enough when another system optimizes
+against the model. A planner searches many branches and selects the one with
+the highest modeled value. That search tends to find regions where the model is
+optimistic, including regions that are optimistic because they are poorly
+supported.
+
+Imagine that the gantry planner may choose speed, acceleration, and threshold.
+Most ordinary settings are represented accurately. At one unusual combination,
+the simulator underestimates oscillation and predicts a faster completion. A
+planner evaluating thousands of combinations is more likely than a random
+policy to discover and select that error. The model does not need to be bad on
+average for optimization to exploit it.
+
+The same pattern appears in software. An agent may choose a patch that satisfies
+the tests its model predicts while bypassing an unmodeled integration path. A
+reward predictor may favor outputs that exploit evaluator blind spots. A
+deployment planner may choose a cohort whose missing telemetry makes the
+forecast appear safest.
+
+A governed admission gate looks for this pattern. Is the proposed branch much
+more valuable than nearby branches? Does its value rise where model support,
+coverage, or agreement falls? Is the action outside familiar intervention
+classes? Does the critic share the actor's representation or training data?
+Would a constraint, second model, fresh observation, or conservative baseline
+reject it?
+
+No checklist guarantees detection. A sophisticated optimizer can find errors
+that the gate does not represent. The practical rule is narrower: an
+attractive low-support branch cannot manufacture stronger authority from its
+own predicted value. It can trigger more evaluation, a shorter horizon, a
+bounded trial, an alternative model, human review, or refusal.
+
+For the controller patch, the full-speed branch is denied. The system admits a
+low-energy trial with a stop condition, independent force observation, and a
+smaller physical envelope. This is not proof that the trial is safe. It is a
+way to keep the information gained and the possible effect proportionate to
+the current prediction support.
+
+## The Trial and the Receipt
+
+The bounded trial begins only after the prediction packet is frozen and a
+separate runtime grants its limited authority. The world model does not issue
+the motor command merely because its branch passed admission. It hands a
+qualified hypothesis to planning; planning proposes a trial; the runtime checks
+the actual permission, resource, and stop conditions.
+
+The action receipt names the exact candidate, controller settings, environment,
+authority ceiling, start time, expected observables, and abort route. An
+independent-enough observer records which artifact ran, which tests executed,
+how the carriage moved, and whether the stop condition activated. The model's
+own predicted state cannot serve as that effect observation.
+
+The observed repository tree reveals the extra generated configuration. The
+test report records the integration failure. The physical trace records the
+oscillation and the early stop. These become actuality records for the next
+decision, subject to their own observation limits.
+
+Reconciliation computes several residuals rather than one pass/fail bit:
+
+- a **representation residual** because the dependency vocabulary omitted the
+  generator relation;
+- a **transition residual** because the predicted build state differed from
+  the observed state;
+- a **physical residual** because the simulated trajectory omitted the
+  oscillation;
+- a **calibration residual** if the misses fell outside the declared
+  uncertainty;
+- a **decision residual** because the admitted low-energy trial produced less
+  utility and more review burden than predicted;
+- an **authority residual** only if the realized effect exceeded the granted
+  envelope.
+
+Each residual receives an owner and a route. The dependency model may need a
+new generator relation. The simulator may need another state variable or a
+narrower validity domain. Calibration may need to widen near the end of the
+rail. Planning must invalidate descendants that assumed the old branch. The
+controller remains blocked from full-speed use.
+
+Reconciliation should not force every mismatch into model training. A sensor
+may be wrong. The intervention may not have executed as recorded. The evaluator
+may share the model's defect. The environment may have changed. The ontology
+may be too coarse to express the difference. The residual record keeps these
+alternatives open until evidence distinguishes them.
+
+## Learning Without Rewriting History
+
+Once the missing generator and oscillation are understood, the team can update
+the models. The new checkpoint receives a new identity, data and training
+lineage, evaluator record, calibration profile, validity domain, migration
+decision, and rollback scope. It does not replace the old checkpoint inside
+the historical trial.
+
+This matters because improvement claims require a stable denominator. If every
+past decision is reinterpreted through the latest model, the system cannot ask
+whether the new version would have predicted old failures or whether its gains
+come with new blind spots. Historical branch packets remain bound to the model
+that produced them. A shadow evaluation can replay observations through the new
+checkpoint without pretending that the new prediction existed at decision
+time.
+
+Model replacement also invalidates descendants selectively. A branch that
+depends on changed dynamics may need regeneration. A symbolic constraint that
+did not change may remain valid. Cached plans must state which model facts they
+consumed. An update to prediction quality does not widen the old authority
+ceiling or erase unresolved residuals.
+
+Learning can also change representation. The repository model may replace the
+single “clean build” macro-object with typed source, generator, artifact, and
+cache relations. The physical model may add payload-dependent flex. Such
+changes can improve explanation and prediction, but they complicate comparison.
+Migration needs a map between old and new variables, preserved losses, and a
+route for historical records that cannot be translated faithfully.
+
+The mature learning loop is therefore not “predict, observe, update” as one
+opaque operation. It is a sequence of separately inspectable claims: which
+forecast was made, which intervention occurred, which outcome was observed,
+which residual was assigned, which update was proposed, and which evidence
+qualified the replacement. That separation lets a system improve without
+granting every new model the power to certify its own progress.
+
+## Failure Cases
+
+The architecture earns its cost only if it catches failures that matter. At
+least ten deserve explicit tests.
+
+**Imagination becomes observation.** A predicted state is inserted into the
+actuality ledger without an admitted measurement. Downstream reasoning then
+confirms the model with its own output.
+
+**The forecast moves after the result.** The model version, predicted interval,
+or success criterion changes during reconciliation. Calibration becomes
+meaningless.
+
+**The intervention is underspecified.** A branch says “apply the patch” without
+naming build, deployment, controller, or environmental changes. The outcome
+cannot distinguish causes.
+
+**Long-horizon confidence remains flat.** The model reports the same uncertainty
+one step and one hundred steps ahead despite compounding error and policy
+feedback.
+
+**Plural models share one blind spot.** Apparent agreement is counted as
+independent support even though models share data, objective, representation,
+or observations.
+
+**The planner exploits a low-support state.** Search selects a branch whose
+high value comes from model error. Aggregate validation never visits the
+selected region.
+
+**Observation is overwritten by coherence.** A current sensor or test
+contradicts the branch, but the system discounts it because the simulated story
+is internally consistent.
+
+**Residuals collapse into one score.** Representation, transition, observation,
+calibration, policy, and authority errors are averaged into a metric that no
+owner can repair.
+
+**A model update rewrites lineage.** Cached branches silently point to a new
+checkpoint, making historical decisions impossible to replay.
+
+**A successful simulation launders authority.** Because the branch predicts a
+good outcome, the prediction service grants or expands execution permission.
+
+**Safe hold exists only on paper.** The fallback is too slow, unreachable, or
+itself harmful in the actual environment. Routing to it is not evidence that it
+works.
+
+**Governance dominates the task.** Packet construction, plural inference,
+review, and reconciliation cost more than the decision value they add. A
+simpler controller would perform as well with lower latency and burden.
+
+Each failure has a different repair. More fields do not solve bad calibration.
+More models do not solve common-cause error. More frequent observation does not
+solve a missing variable. A conservative gate does not solve an unreachable
+fallback. The system needs outcome evidence, not only record completeness.
+
+## The Strongest Simpler Baseline
+
+The full architecture should compete against systems a competent engineer
+would actually deploy.
+
+One baseline is reactive or model-free. It receives the same observations,
+action set, interaction budget, safety constraints, compute ceiling, evaluator
+access, and recovery opportunity, but it does not plan through an explicit
+world model. For the gantry, it may use a proven feedback controller and fixed
+limits. For the repository, it may run a cold build and test suite instead of
+predicting the dependency graph.
+
+A second baseline uses one short-horizon predictor with ordinary
+receding-horizon updates. It records forecasts and outcomes but omits plural
+model routing, elaborate support packets, and causal machinery. A third uses
+an ensemble for uncertainty without the broader governance lifecycle.
+
+The comparison must count more than task reward. It includes unsafe or
+out-of-envelope actions, calibration under shift, abstention quality, recovery,
+latency, compute, memory, energy, human review, instrumentation, false stops,
+and the cost of maintaining the model. A governed system that avoids every
+failure by refusing useful work has not won.
+
+If a reactive system matches utility and risk, the world-model layer should not
+activate for that regime. If a short-horizon predictor achieves the same
+intervention value and calibration, much of the extra machinery should
+collapse. Architecture is justified by a favorable joint frontier, not by the
+number of concepts it can represent.
+
+## What the Current Work Establishes
+
+The repository currently establishes a narrow transaction discipline, not a
+successful world model.
+
+Two public Lean targets are implemented through 32 theorem declarations. The
+finite model represents a six-event path: bind an admitted observation, bind a
+current model, qualify an imagined branch, hand it to planning under a bounded
+use, record an independently observed effect, and reconcile an owned residual.
+Accepted runs preserve exact model, observation, branch, action, effect, and
+authority identities. They do not assign support or execution authority.
+
+The validator exercises 11 lifecycle rejections. A stale observation, an
+imagined branch mislabeled as observation, a stale model, an unsupported
+branch, unresolved model disagreement, unbounded planner use, attempted
+authority laundering, a missing action receipt, self-observed effect, missing
+residual, or unowned residual blocks the corresponding transition. A separate
+record fixture remains in safe hold because its model and observation are
+stale, support is absent, and disagreement is material. Thirteen
+fixture/protocol mutations are rejected.
+
+These are real formal and executable results about the authored finite record
+system. They do not establish that any learned state corresponds to the world,
+that uncertainty is calibrated, that a causal graph is correct, that a
+fallback works, or that the architecture improves decisions.
+
+The claim-bearing empirical lane is prospectively specified but has not run.
+It preserves six matched arms, eight competence gates, seven rescue steps, ten
+joint outcomes, and six causal ablations. Its protected outcomes remain closed.
+An earlier bounded synthetic campaign is adjacent evidence only; it does not
+establish this chapter's core claim. The owner therefore remains at
+`Design rationale` and `argument` support.
+
+That boundary is not modesty theater. It marks the difference between proving
+that a transaction cannot accept certain malformed records and showing that
+the records improve prediction, causal identification, calibration, control,
+or safety in a real task.
+
+## From a Minimum Contract to a Reality-Grounded Model Service
+
+The minimum viable implementation can be small. Build a bounded partially
+observed task with an external environment oracle, two independently trained
+dynamics models, one reactive or model-free baseline, and one ordinary
+short-horizon predictive baseline. Freeze branch packets before action. Record
+horizon-conditional uncertainty, model disagreement, authority ceilings,
+action receipts, observed effects, and residuals. Inject stale observations,
+unsupported horizons, rare hazards, shift, and planner exploitation. Verify
+that known-invalid packets refuse correctly.
+
+That implementation would test record correctness and expose engineering
+failures. It would not by itself justify the architecture. The next stage needs
+held-out interventions, prospective task and metric selection, matched
+resources, competence checks for every arm, an evaluator outside the
+model-actor-critic path, causal component ablations, complete attempt and cost
+denominators, and independent reproduction. Transfer to a second environment
+should test whether the governance contract survives rather than merely
+whether a checkpoint can be fine-tuned.
+
+The mature target is a plural predictive substrate in which learned latent
+models, symbolic constraints, simulators, causal hypotheses, and instrument or
+human observations cooperate without losing their status. It can revise its
+ontology while preserving branch lineage, historical forecasts, migration
+losses, calibration records, and unresolved residuals. It chooses model family,
+resolution, horizon, and verification effort according to consequence and
+budget. When no available representation is adequate, it says so.
+
+Every consequential branch would have an independent correction path. Every
+model replacement would pass shadow comparison, compatibility review,
+descendant invalidation, and rollback accounting. Every planner would face an
+admission boundary that prevents favorable model error from becoming stronger
+authority. Every claimed benefit would be measured against competent simpler
+systems on useful outcomes, risk, recovery, latency, resource use, and human
+burden.
+
+This is beyond the current state of the project and beyond what the cited
+external results establish. Learned world-model systems have demonstrated
+useful imagined control and predictive representations in bounded reported
+domains. Causal representation learning, ensembles, conformal prediction, and
+distribution-shift benchmarks contribute important tools and challenges. None
+of those results proves the joined architecture, open-world grounding, general
+causal fidelity, or safe consequential use.
+
+## The Strongest Objection
+
+The strongest objection is empirical: governance can make a bad model legible
+without making it better.
+
+A false prediction with perfect provenance is still false. An uncertainty
+packet can be miscalibrated. A residual ledger can classify a failure after the
+harm. Plural models can share a blind spot. Safe holds can destroy useful
+performance or fail when needed. Meanwhile, a reactive controller may respond
+to current observations with less latency, fewer assumptions, and a smaller
+attack surface.
+
+This objection should shape the architecture. Governance is not a substitute
+for predictive competence, causal tests, or control evidence. Its purpose is
+to make the model's operational influence bounded, challengeable, and
+measurable while those capabilities are tested. If the added records do not
+improve intervention choice, reveal exploitable uncertainty, speed diagnosis,
+preserve recovery, or prevent unsupported action, they are overhead.
+
+The design should therefore activate proportionally. Low-consequence,
+short-horizon tasks may use a thin forecast/outcome record. High-consequence or
+irreversible tasks may require plural models, independent observation, causal
+tests, and tighter authority gates. Some regimes should remain reactive. The
+goal is not to place every thought inside a maximal packet. It is to prevent
+imagined state from receiving more influence than evidence and consequence
+justify.
+
+## Evidence That Would Change the Conclusion
+
+Strong predictive and causal baselines with simpler branch discipline and equal
+intervention value would justify collapsing the extra machinery. If a
+short-horizon model with ordinary receding updates matched the full design's
+calibration, rare-hazard behavior, exploit resistance, utility, recovery, and
+cost, the plural registry and richer lifecycle should be narrowed or removed.
+
+Evidence could also weaken the broader premise. If explicit world models
+consistently induced exploitable errors that reactive or model-free systems
+avoided under matched conditions, their use should contract to analysis,
+simulation, or low-consequence domains. If disagreement and residual records
+failed to predict or diagnose consequential misses, those mechanisms would
+need replacement rather than more fields.
+
+Evidence in the other direction would require prospective, held-out
+interventions where the governed route improves useful outcomes and calibrated
+abstention under shift without worsening unsafe action, latency, total resource
+cost, or review burden. The result would need causal ablations, independent
+outcome observation, reproduction, and transfer. Even then, support would be
+bounded to the tested tasks and environments.
+
+## What This Establishes
+
+A world model is most useful when the system can disagree with it.
+
+The essential architecture is a disciplined separation: observation, belief,
+prediction, counterfactual branch, intervention, action, actuality, and
+residual keep distinct identities. Forecasts freeze before outcomes. Horizons,
+assumptions, uncertainty, and validity domains travel with predictions.
+Observation can defeat imagination. Model updates preserve history. Neither a
+beautiful rollout nor a favorable predicted value grants authority.
+
+That discipline makes learning possible without turning explanation into
+revisionist history. The failed gantry branch remains a failed prediction, the
+extra generated file becomes a representation residual, and the oscillation
+becomes a physical residual. New models can learn from both while the old
+decision remains replayable.
+
+A governed world model can now compare several possible futures. It still
+cannot decide which future the system should pursue, how dependencies should
+be coordinated, or when a changing situation should abandon the chosen route.
+Those are planning problems. Unit 12 turns imagined branches into challengeable
+control artifacts without mistaking a plan for permission.
+
+{{< include ../generated/unit-11-status.qmd >}}
