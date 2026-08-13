@@ -1,0 +1,61 @@
+{
+  "schema_version": "asi_stack.c1_exit_ladder_admission.v1",
+  "admission_id": "c1-el-quarto-render-db-open-001",
+  "protocol_id": "c1-el-governed-cognition-next-natural-maintenance-defect-001",
+  "state": "admitted_before_solution_investigation",
+  "admitted_at_utc": "2026-08-13T20:48:06Z",
+  "freeze_commit": "89a4e74b769865fe3d87f81f5212c9201dd92914",
+  "source_commit": "89a4e74b769865fe3d87f81f5212c9201dd92914",
+  "task_identity": "quarto-clean-html-render-database-open-failure",
+  "task_origin": "Ordinary EM4 exact-current local HTML render required by the active roadmap.",
+  "command": [
+    "quarto",
+    "render",
+    "--to",
+    "html"
+  ],
+  "working_directory": "/Users/corbensorenson/Documents/AI_book",
+  "acceptance_condition": "The unchanged 100-document Quarto HTML project render exits zero from the admitted source snapshot.",
+  "observed_failure": {
+    "exit_code": 1,
+    "render_position": "1/100",
+    "source_document": "index.qmd",
+    "error_line": "ERROR: unable to open database file"
+  },
+  "chronology": {
+    "acceptance_failure_observed_before_admission": true,
+    "solution_files_inspected_before_admission": false,
+    "candidate_fix_inspected_before_admission": false,
+    "task_solution_known_at_admission": false,
+    "route_outcomes_known_at_admission": false
+  },
+  "eligibility": {
+    "independently_necessary": true,
+    "public_safe": true,
+    "machine_detectable": true,
+    "disposable_git_workspace_compatible": true,
+    "matched_route_inputs_possible": true,
+    "private_credential_required": false,
+    "protected_task_content": false,
+    "video_work": false,
+    "invented_for_protocol": false
+  },
+  "matched_input_contract": {
+    "source_commit": "89a4e74b769865fe3d87f81f5212c9201dd92914",
+    "task_statement": "Restore a clean HTML render without weakening the 100-document acceptance condition.",
+    "acceptance_command": "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html",
+    "network_allowed": false,
+    "wall_time_ceiling_seconds_per_route": 1800
+  },
+  "prior_screening": [
+    {
+      "observation": "GitHub deploy attestation run 31740971926 reported an exact-commit mismatch.",
+      "disposition": "excluded_before_task_admission",
+      "reason": "Failure details and the likely workflow-race mechanism were inspected before a C1 admission record existed, so solution chronology was no longer closed."
+    }
+  ],
+  "next_legal_action": "Freeze and validate this admission record, then diagnose the render failure without changing task identity or substituting another task.",
+  "protected_content_opened": false,
+  "support_state_effect": "none",
+  "release_effect": "none"
+}

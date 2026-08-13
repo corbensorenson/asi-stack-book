@@ -46,7 +46,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v33"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v34"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -92,13 +92,13 @@
       ],
       "properties": {
         "state": {
-          "const": "c1_exit_ladder_attempt_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned"
+          "const": "c1_exit_ladder_task_admitted_and_p7_1_editorial_migration_active_p4_1_consumer_gated_p2_resource_blocked_p7_3_separately_owned"
         },
         "headline_priority": {
           "const": "C1-EL"
         },
         "headline_priority_state": {
-          "const": "prospective_governed_cognition_exit_ladder_attempt"
+          "const": "quarto_render_defect_admitted_before_solution_investigation"
         },
         "work_in_progress_limit": {
           "const": 2
@@ -113,7 +113,7 @@
           "const": false
         },
         "immediate_object_level_packet": {
-          "const": "C1-EL-governed-cognition-prospective-attempt"
+          "const": "C1-EL-quarto-render-db-open-001"
         },
         "immediate_empirical_packet": {
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
@@ -208,6 +208,8 @@
         "contribution_exit_ladder_count",
         "contribution_exit_ladder_state",
         "active_exit_ladder_protocol_path",
+        "active_exit_ladder_admission_path",
+        "active_exit_ladder_task_identity",
         "active_exit_ladder_task_admitted",
         "promotion_quota",
         "reference_chapter_count",
@@ -246,7 +248,7 @@
           ]
         },
         "headline_packet": {
-          "const": "C1-EL-governed-cognition-prospective-attempt"
+          "const": "C1-EL-quarto-render-db-open-001"
         },
         "concurrent_book_packet": {
           "const": "P7.1-EM-87-identity-56-reference-26-unit-editorial-migration"
@@ -276,8 +278,14 @@
         "active_exit_ladder_protocol_path": {
           "const": "experiments/c1_exit_ladder/preregistration.json"
         },
+        "active_exit_ladder_admission_path": {
+          "const": "experiments/c1_exit_ladder/admission.json"
+        },
+        "active_exit_ladder_task_identity": {
+          "const": "quarto-clean-html-render-database-open-failure"
+        },
         "active_exit_ladder_task_admitted": {
-          "const": false
+          "const": true
         },
         "promotion_quota": {
           "const": false

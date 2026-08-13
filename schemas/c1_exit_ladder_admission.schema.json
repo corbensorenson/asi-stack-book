@@ -1,0 +1,107 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "C1-EL prospective task admission",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "admission_id", "protocol_id", "state",
+    "admitted_at_utc", "freeze_commit", "source_commit", "task_identity",
+    "task_origin", "command", "working_directory", "acceptance_condition",
+    "observed_failure", "chronology", "eligibility", "matched_input_contract",
+    "prior_screening", "next_legal_action", "protected_content_opened",
+    "support_state_effect", "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.c1_exit_ladder_admission.v1"},
+    "admission_id": {"const": "c1-el-quarto-render-db-open-001"},
+    "protocol_id": {"const": "c1-el-governed-cognition-next-natural-maintenance-defect-001"},
+    "state": {"const": "admitted_before_solution_investigation"},
+    "admitted_at_utc": {"type": "string", "format": "date-time"},
+    "freeze_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+    "source_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+    "task_identity": {"const": "quarto-clean-html-render-database-open-failure"},
+    "task_origin": {"type": "string", "minLength": 1},
+    "command": {
+      "const": ["quarto", "render", "--to", "html"]
+    },
+    "working_directory": {"type": "string", "minLength": 1},
+    "acceptance_condition": {"type": "string", "minLength": 1},
+    "observed_failure": {
+      "type": "object", "additionalProperties": false,
+      "required": ["exit_code", "render_position", "source_document", "error_line"],
+      "properties": {
+        "exit_code": {"const": 1},
+        "render_position": {"const": "1/100"},
+        "source_document": {"const": "index.qmd"},
+        "error_line": {"const": "ERROR: unable to open database file"}
+      }
+    },
+    "chronology": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "acceptance_failure_observed_before_admission",
+        "solution_files_inspected_before_admission",
+        "candidate_fix_inspected_before_admission",
+        "task_solution_known_at_admission",
+        "route_outcomes_known_at_admission"
+      ],
+      "properties": {
+        "acceptance_failure_observed_before_admission": {"const": true},
+        "solution_files_inspected_before_admission": {"const": false},
+        "candidate_fix_inspected_before_admission": {"const": false},
+        "task_solution_known_at_admission": {"const": false},
+        "route_outcomes_known_at_admission": {"const": false}
+      }
+    },
+    "eligibility": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "independently_necessary", "public_safe", "machine_detectable",
+        "disposable_git_workspace_compatible", "matched_route_inputs_possible",
+        "private_credential_required", "protected_task_content", "video_work",
+        "invented_for_protocol"
+      ],
+      "properties": {
+        "independently_necessary": {"const": true},
+        "public_safe": {"const": true},
+        "machine_detectable": {"const": true},
+        "disposable_git_workspace_compatible": {"const": true},
+        "matched_route_inputs_possible": {"const": true},
+        "private_credential_required": {"const": false},
+        "protected_task_content": {"const": false},
+        "video_work": {"const": false},
+        "invented_for_protocol": {"const": false}
+      }
+    },
+    "matched_input_contract": {
+      "type": "object", "additionalProperties": false,
+      "required": [
+        "source_commit", "task_statement", "acceptance_command",
+        "network_allowed", "wall_time_ceiling_seconds_per_route"
+      ],
+      "properties": {
+        "source_commit": {"const": "89a4e74b769865fe3d87f81f5212c9201dd92914"},
+        "task_statement": {"type": "string", "minLength": 1},
+        "acceptance_command": {"const": "LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 quarto render --to html"},
+        "network_allowed": {"const": false},
+        "wall_time_ceiling_seconds_per_route": {"type": "integer", "minimum": 1}
+      }
+    },
+    "prior_screening": {
+      "type": "array", "minItems": 1,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["observation", "disposition", "reason"],
+        "properties": {
+          "observation": {"type": "string", "minLength": 1},
+          "disposition": {"const": "excluded_before_task_admission"},
+          "reason": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "next_legal_action": {"type": "string", "minLength": 1},
+    "protected_content_opened": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}

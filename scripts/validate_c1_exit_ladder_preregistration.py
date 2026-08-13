@@ -13,6 +13,8 @@ from jsonschema import Draft202012Validator
 ROOT = Path(__file__).resolve().parents[1]
 PROTOCOL = ROOT / "experiments/c1_exit_ladder/preregistration.json"
 SCHEMA = ROOT / "schemas/c1_exit_ladder_preregistration.schema.json"
+ADMISSION = ROOT / "experiments/c1_exit_ladder/admission.json"
+ADMISSION_SCHEMA = ROOT / "schemas/c1_exit_ladder_admission.schema.json"
 EXPECTED_ROUTES = ["direct", "record_only", "full_governed"]
 EXPECTED_OUTCOMES = {
     "useful_success", "unauthorized_effect_count", "false_block_count",
@@ -58,9 +60,44 @@ def failures(protocol: dict) -> list[str]:
     return out
 
 
+def admission_failures(admission: dict) -> list[str]:
+    out = [
+        f"admission schema: {error.message}"
+        for error in Draft202012Validator(load(ADMISSION_SCHEMA)).iter_errors(admission)
+    ]
+    chronology = admission.get("chronology", {})
+    eligibility = admission.get("eligibility", {})
+    if chronology.get("task_solution_known_at_admission") is not False:
+        out.append("task solution was open at admission")
+    if chronology.get("route_outcomes_known_at_admission") is not False:
+        out.append("route outcomes were open at admission")
+    if not all(
+        eligibility.get(field) is True
+        for field in (
+            "independently_necessary", "public_safe", "machine_detectable",
+            "disposable_git_workspace_compatible", "matched_route_inputs_possible",
+        )
+    ):
+        out.append("admitted task lost a positive eligibility gate")
+    if any(
+        eligibility.get(field) is True
+        for field in (
+            "private_credential_required", "protected_task_content", "video_work",
+            "invented_for_protocol",
+        )
+    ):
+        out.append("admitted task crossed an exclusion boundary")
+    if admission.get("freeze_commit") != admission.get("source_commit"):
+        out.append("admitted task source does not match the freeze commit")
+    if admission.get("support_state_effect") != "none" or admission.get("release_effect") != "none":
+        out.append("task admission moved support or release state")
+    return out
+
+
 def main() -> None:
     protocol = load(PROTOCOL)
-    out = failures(protocol)
+    admission = load(ADMISSION)
+    out = failures(protocol) + admission_failures(admission)
     mutations = [
         ("task preadmitted", lambda value: value.__setitem__("task_admitted", True)),
         ("protected content opened", lambda value: value.__setitem__("protected_content_opened", True)),
@@ -76,12 +113,24 @@ def main() -> None:
         mutate(candidate)
         if not failures(candidate):
             out.append(f"negative control accepted: {label}")
+    admission_mutations = [
+        ("solution preopened", lambda value: value["chronology"].__setitem__("task_solution_known_at_admission", True)),
+        ("route outcomes preopened", lambda value: value["chronology"].__setitem__("route_outcomes_known_at_admission", True)),
+        ("task invented", lambda value: value["eligibility"].__setitem__("invented_for_protocol", True)),
+        ("freeze source changed", lambda value: value.__setitem__("source_commit", "0" * 40)),
+    ]
+    for label, mutate in admission_mutations:
+        candidate = deepcopy(admission)
+        mutate(candidate)
+        if not admission_failures(candidate):
+            out.append(f"admission negative control accepted: {label}")
     if out:
         raise SystemExit("C1-EL preregistration failed:\n - " + "\n - ".join(out))
     print(
         "C1-EL preregistration passed: first eligible post-freeze natural task, "
         "3 matched routes, 1 natural plus 3 injected paths, 12 outcomes, "
-        "8 mutations rejected, task/protected/support/release state closed."
+        "task admitted before solution inspection, 12 mutations rejected, "
+        "protected/support/release state closed."
     )
 
 

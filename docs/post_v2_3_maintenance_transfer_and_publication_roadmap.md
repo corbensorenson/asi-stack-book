@@ -31,7 +31,8 @@ the semantic-custody gate stays separate under a dated amendment rather than
 being forced through to satisfy a number.
 
 This is the active P7 book packet, `P7.1-EM`. It runs concurrently with the
-first contribution exit-ladder attempt, `C1-EL`, under the existing two-slot
+first contribution exit-ladder attempt, `C1-EL`, now admitted as
+`C1-EL-quarto-render-db-open-001`, under the existing two-slot
 WIP limit. It does not reopen the terminal P5-U1 retrospective slice, open an empirical denominator, authorize new proof
 families, require external-human prepublication review, or change claim
 support. The current 22-unit product remains a historical candidate until the
@@ -517,6 +518,17 @@ negative, and inconclusive dispositions, the strongest alternative explanation,
 and a one-case maximum inference. Task identity, protected content, support,
 and release state remain closed.
 
+**2026-08-13 task admission.** After freeze commit
+`89a4e74b769865fe3d87f81f5212c9201dd92914`, the ordinary EM4 clean HTML
+render failed at `index.qmd` with exit code 1 and `ERROR: unable to open
+database file`. `experiments/c1_exit_ladder/admission.json` records that exact
+failure before any Quarto cache, permission, source, or candidate-fix
+investigation. The matched task is to restore the unchanged 100-document HTML
+acceptance check from the same source snapshot. A prior deployment-race
+observation is explicitly excluded because its likely mechanism was inspected
+before task admission. Protected content remains closed and no support or
+release state moves.
+
 ### Scope compression and practical entry surface
 
 The 87-chapter research graph remains the lossless technical ownership surface.
@@ -885,7 +897,8 @@ The structural window is therefore closed again.
 P2 remains the protected natural empirical headline, but it is not the current
 executable priority while its infrastructure gates are closed. P5-U1 is
 terminal at its retrospective implementation-and-reader scope. `C1-EL`, the
-first prospective governed-cognition exit-ladder attempt, is the active
+first prospective governed-cognition exit-ladder attempt, has admitted the
+natural EM4 Quarto database-open render failure before solution inspection and is the active
 object-level packet, with the independent P7.1 narrative and fifteen-minute
 utility route as the active book packet. P4.1 is consumer-gated: it may proceed
 only when P5-U1 or one of

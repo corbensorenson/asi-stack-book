@@ -12,7 +12,9 @@ REGISTRY = ROOT / "validation/registry.json"
 SCRIPT = "validate_c1_exit_ladder_preregistration.py"
 ARTIFACTS = [
     "experiments/c1_exit_ladder/preregistration.json",
+    "experiments/c1_exit_ladder/admission.json",
     "schemas/c1_exit_ladder_preregistration.schema.json",
+    "schemas/c1_exit_ladder_admission.schema.json",
     "scripts/validate_c1_exit_ladder_preregistration.py",
 ]
 
@@ -28,23 +30,25 @@ def main() -> None:
         "args": [],
         "execution_tier": "pr",
         "validation_class": "proof_or_evidence_gate",
-        "input_contract": "The first post-freeze eligible natural maintenance defect, three matched routes, one natural happy path, three explicit injected controls, twelve joint outcomes, fixed dispositions, and closed task/protected/support/release state.",
+        "input_contract": "The prospectively frozen protocol plus the first post-freeze eligible natural maintenance defect admitted before solution inspection, three matched routes, one natural happy path, three explicit injected controls, twelve joint outcomes, fixed dispositions, and closed protected/support/release state.",
         "input_artifacts": ARTIFACTS,
         "output_contract": "Reject outcome-aware task selection, route or outcome loss, replacement after admission, support laundering, protected-content opening, or inference beyond one local prospective case.",
         "output_assertions": [
             "first eligible post-freeze task only",
+            "task admission precedes solution and route-outcome inspection",
             "three matched route contracts",
             "natural happy path separated from injected faults",
             "success negative and inconclusive dispositions frozen",
-            "eight mutations reject",
-            "task protected support and release states closed",
+            "twelve mutations reject",
+            "protected support and release states closed",
         ],
         "claim_scope": "Prospective selection and analysis contract for one future public-safe ASI Stack maintenance defect only.",
         "negative_controls": "task_route_outcome_replacement_inference_protection_and_support_mutations",
         "negative_control_cases": [
             "task preadmitted", "protected content opened", "route removed",
             "baseline relabeled", "outcome removed", "replacement allowed",
-            "inference widened", "support promoted",
+            "inference widened", "support promoted", "solution preopened",
+            "route outcomes preopened", "task invented", "freeze source changed",
         ],
         "prohibited_inference": "Preregistration is not execution or evidence and cannot establish utility, human effort, production reliability, safety, transfer, SOTA, AGI, ASI, or chapter-core support.",
         "contract_precision": "exact",

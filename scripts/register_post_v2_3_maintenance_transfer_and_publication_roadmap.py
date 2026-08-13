@@ -68,6 +68,7 @@ ARTIFACTS = [
     "docs/p5_stateful_service_reference_report.md",
     "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json",
     "experiments/c1_exit_ladder/preregistration.json",
+    "experiments/c1_exit_ladder/admission.json",
     "experiments/governed_operations_argument_exit/preregistration.json",
     "schemas/governed_operations_campaign_preregistration.schema.json",
     "docs/p5_natural_stateful_service_campaign_preregistration.md",
