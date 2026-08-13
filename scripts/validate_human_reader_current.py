@@ -447,6 +447,35 @@ UNIT_20_REQUIRED = [
     "It does not train\na model or establish resume equivalence",
     "The joined chapter therefore establishes a precise training and topology\ncontract",
 ]
+UNIT_21_REQUIRED = [
+    "## The Same Green Patch, Two Different Lessons",
+    "## An Outcome Is Not a Lesson",
+    "## Candidate Lessons Need Identity",
+    "## The Adaptive Commit Boundary",
+    "## Eight Places a Lesson Can Live",
+    "## Locus Is Part of the Claim",
+    "## Minimum Sufficient Persistence",
+    "## Generalization Is a Prospective Claim",
+    "## Feedback Is Evidence, Not an Objective",
+    "## Policy Updates Are Leased Candidates",
+    "## Continual Learning Is State Management",
+    "## Multiple Update Clocks",
+    "## Data Engines Carry Learning Obligations",
+    "## Unlearning Is Not One Claim",
+    "## Scientific Discovery Is Governed Revision",
+    "## Adjudicating the Two Patches",
+    "## Deoptimization and Retirement",
+    "## Failure Modes",
+    "## The Strongest Simpler Baseline",
+    "## What the Current Work Establishes",
+    "## From Minimum Persistence to a Mature Learning System",
+    "## The Strongest Objection",
+    "## Evidence That Would Change the Conclusion",
+    "## What This Establishes",
+    "The central Adjudicated Persistence architecture is presently an argument and\nresearch program",
+    "they do not\nestablish deletion, forgetting, influence removal, privacy, rights compliance,\nor external erasure",
+    "It does not yet implement or validate the integrated\nadjudicator",
+]
 
 
 def validate(manifest: dict, expected: dict) -> list[str]:
@@ -635,6 +664,14 @@ def validate(manifest: dict, expected: dict) -> list[str]:
         for fragment in UNIT_20_REQUIRED:
             if fragment not in text:
                 errors.append(f"Unit 20 missing required argument boundary: {fragment!r}")
+    unit_21 = next((unit for unit in units if unit.get("unit_id") == "unit-21"), None)
+    if unit_21 is None or unit_21.get("state") != "target_length_reached_internal_review_pending":
+        errors.append("Unit 21 has not reached its drafting target")
+    else:
+        text = (EDITION / unit_21["source_file"]).read_text(encoding="utf-8")
+        for fragment in UNIT_21_REQUIRED:
+            if fragment not in text:
+                errors.append(f"Unit 21 missing required argument boundary: {fragment!r}")
     if manifest.get("support_state_effect") != "none" or manifest.get("release_effect") != "none":
         errors.append("Human Reader drafting changed support or release state")
     status = json.loads(STATUS.read_text(encoding="utf-8"))["editorial_product_migration"]

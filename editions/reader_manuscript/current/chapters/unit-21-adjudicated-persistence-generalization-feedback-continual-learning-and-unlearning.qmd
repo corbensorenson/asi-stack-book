@@ -1,0 +1,855 @@
+---
+title: "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning"
+unit_id: "unit-21"
+---
+
+## The Same Green Patch, Two Different Lessons
+
+The repository learner sees two patches that produce the same visible result.
+Both repair a failing dependency upgrade. Both pass the test suite. Both are
+merged after review. If learning means collecting successful examples, the two
+events appear nearly interchangeable.
+
+They are not.
+
+The first patch succeeds because the maintainer remembers an undocumented
+compatibility condition. The dependency may be upgraded only after a generated
+schema has been rebuilt. The code change is routine; the missing knowledge is
+the defect. A dated semantic-memory entry, linked to the affected package and
+its source evidence, may be the smallest durable correction.
+
+The second patch succeeds only after a reviewer notices that the tool used to
+edit the manifest silently drops an optional field. The maintainer did not lack
+knowledge. The tool violated its contract. Another memory entry would warn
+future agents while leaving the faulty mechanism in place. The smaller and
+stronger correction is a typed tool test that rejects the lossy transformation.
+
+Equal outcomes conceal unequal causes. A system that stores every success in
+memory accumulates folklore. A system that retrains on every success changes
+parameters when a test would have sufficed. A system that compiles every
+repeated behavior into a procedure can preserve an accidental workaround. A
+system that refuses to learn avoids those errors by preserving all of its old
+ones.
+
+The question after an experience is therefore not simply, "What did we learn?"
+It is a sequence of harder questions:
+
+1. Did the outcome carry an informative lesson at all?
+2. Which causal account of the outcome remains plausible?
+3. What candidate change follows from that account?
+4. Where could the change persist?
+5. What is the least consequential locus that can solve the problem?
+6. What evidence and authority does that commitment require?
+7. How will the change be qualified, monitored, revised, and retired?
+
+This sequence is the adaptive commit boundary. It separates experience from
+durable structure. It is not a single omniscient controller. It is a governed
+decision process whose records can be challenged and whose commitments can be
+reversed.
+
+## An Outcome Is Not a Lesson
+
+An outcome is an observation about what happened under particular conditions.
+A lesson is a proposed regularity, cause, policy, or intervention inferred from
+that observation. Confusing the two converts correlation into architecture.
+
+A successful patch may demonstrate that one edit worked once. It does not by
+itself demonstrate why, whether the edit was necessary, whether another edit
+would have worked, whether the test captured the real objective, or whether the
+same rule transfers to a new repository. A failed patch may expose a genuine
+constraint, an unrelated outage, a stale evaluator, a permissions problem, or
+random variation. Reward and blame do not identify cause.
+
+The experience record should preserve more than a scalar score. It needs the
+decision context available at the time, alternatives that were eligible then,
+the action taken, predictions, observed effects, evaluator identities,
+interventions, confounders, residuals, and later corrections. Counterfactual
+comparators must be decision-time fair. An alternative invented after seeing
+the result cannot be presented as though the agent irrationally ignored it.
+
+This record still does not make causal inference automatic. It keeps the
+epistemic debt visible. A candidate lesson can say that the schema-ordering
+explanation is supported by the event and by a reproduction. It cannot quietly
+upgrade that statement to a universal dependency rule.
+
+Success can be uninformative. If the existing process already predicted the
+outcome, the event may add confidence without justifying structural change.
+Failure can be informative without naming a remedy. A mature system should be
+able to record, "The current account is inadequate," while declining to commit
+the first available story.
+
+This matters most when the system is under pressure to improve itself. A
+learning metric rewards visible updates. A governed learning process rewards
+correct restraint as well.
+
+## Candidate Lessons Need Identity
+
+A candidate lesson should be an artifact, not an atmosphere. It needs a stable
+identifier, proposition, scope, evidence lineage, causal alternatives,
+assumptions, affected surfaces, expected benefit, possible harm, expiry or
+review condition, and named owner.
+
+For the first patch, a candidate might be:
+
+> Within repository family R and dependency line D, regenerate schema S before
+> accepting an upgrade candidate, because the generated interface changes the
+> compatibility test.
+
+That sentence is already more disciplined than "regenerate schemas after
+dependency upgrades." It names a bounded population and a causal hypothesis.
+The record can link the original incident, a reproducing run, a dissenting
+explanation, and the date after which the dependency behavior must be checked
+again.
+
+The second patch yields a different candidate:
+
+> Tool T must preserve optional manifest field F under a parse-write round trip;
+> reject its output when the field is lost.
+
+That lesson points toward executable enforcement, not recollection. Its natural
+qualification is a failing test before the fix and a passing test after it.
+
+Candidate identity prevents a common failure in continual learning: later
+evidence cannot revise a lesson that was never stated. It also permits two
+lessons from one incident or one lesson from many incidents without merging
+their histories. Conflicting candidates can coexist while adjudication remains
+open.
+
+The identity should survive realization. If the schema-ordering lesson becomes
+a memory entry, a checklist item, and eventually a tool precondition, each
+artifact should point back to the candidate and to the decision that authorized
+its form. Otherwise descendants become orphaned folklore that cannot be
+reliably withdrawn.
+
+## The Adaptive Commit Boundary
+
+The adaptive commit boundary receives experience and candidate lessons, then
+decides whether any durable change is warranted. Its output is not merely
+"learn" or "do not learn." It can reject, defer, request evidence, choose a
+locus, limit scope, stage a canary, require human approval, create a temporary
+lease, or record an unresolved residual.
+
+The decision should answer five tests.
+
+**Learning eligibility.** Is there a material mismatch, opportunity, or newly
+supported regularity? Is the feedback admissible? Are obvious evaluator,
+provenance, and tampering failures excluded?
+
+**Causal adequacy.** Does the proposed change address the plausible cause rather
+than merely correlate with the outcome? What alternatives remain live?
+
+**Locus fit.** Which persistence surface changes the right behavior with the
+least unrelated effect?
+
+**Commitment proportionality.** Is the evidence strong enough for the cost,
+reach, duration, and reversibility of the proposed change?
+
+**Lifecycle custody.** Can the system qualify, observe, revoke, and account for
+the change and its descendants?
+
+These tests need not be administered by one service. A local tool owner may
+approve a test fix. A memory service may accept a short-lived note under a
+standing policy. A parameter update may require an independent evaluator and a
+deployment authority. The boundary is architectural: no consequential
+persistence surface should be writable merely because an upstream component
+produced a high score.
+
+Centralizing every decision would create cost, latency, and a new target for
+capture. The practical design is federated adjudication under shared contracts.
+Local authorities can act within explicit scopes; expensive review is reserved
+for high-commitment or cross-surface changes. Every route still emits enough
+evidence to reconstruct why it was chosen.
+
+## Eight Places a Lesson Can Live
+
+Learning discussions often jump from experience directly to parameter update.
+An engineered system has more choices.
+
+### Context
+
+The lightest intervention is to supply information during the current task.
+Context is appropriate when the need is temporary, local, or not yet supported
+for reuse. It expires naturally, but repeated retrieval costs attention and can
+fail under context pressure.
+
+### Semantic Memory
+
+Memory preserves a proposition across tasks. It is useful when later decisions
+need dated, challengeable knowledge. Memory writes should retain provenance,
+scope, confidence, conflicts, review conditions, and deletion obligations.
+Memory can be corrected more directly than parameters, but stale or
+overgeneralized entries can influence many actions invisibly.
+
+### Procedure
+
+A procedure preserves an ordered method: checks, branches, stop conditions,
+and recovery. It fits recurrent work whose control flow is understood.
+Procedural memory saves reasoning effort but can harden yesterday's workaround
+into tomorrow's default.
+
+### Tool or Test
+
+A tool changes what actions are possible; a test changes what artifacts may
+pass. These are strong loci when the lesson describes a machine-checkable
+invariant. They provide direct feedback and often precise rollback. They can
+also encode a mistaken rule with high authority.
+
+### Model Parameters
+
+Parameter changes can alter broad behavior where explicit rules or retrieval
+are inadequate. Their reach is also their danger. The changed knowledge may be
+hard to locate, explain, delete, or reverse without collateral effects. A
+parameter update requires evidence beyond the convenience of having a training
+pipeline.
+
+### Evaluator
+
+Sometimes the failure is not generation but judgment. An evaluator may need new
+tests, examples, calibrations, independence rules, or adversarial probes.
+Changing the evaluator changes what future learning optimizes, so it cannot be
+treated as neutral maintenance.
+
+### Environment
+
+The best lesson may be to change the world around the agent: repair an API,
+remove an ambiguous interface, restrict an unsafe capability, improve
+observability, or redesign a workflow. Agent adaptation should not compensate
+forever for a defective environment.
+
+### Institution
+
+Organizations learn through roles, permissions, review duties, escalation
+rules, incentives, and norms. Institutional change is appropriate when the
+defect arises from coordination or authority. It is costly, politically
+consequential, and difficult to reverse, so technical convenience cannot be its
+only justification.
+
+These loci can be combined, but combination is not automatically better. A
+temporary context reminder may support a tool repair while the test is being
+built. The memory should then expire or narrow. Leaving every intervention in
+place creates adaptation debt: duplicated rules, conflicting behavior, hidden
+carrying cost, and no clear source of authority.
+
+## Locus Is Part of the Claim
+
+A lesson cannot be evaluated apart from where it will live. "The agent should
+check generated schemas" means something different as advice in context, a
+retrieved memory, a mandatory procedure step, a blocking test, or a learned
+parameter tendency. The proposition may be similar while its reliability,
+reach, and authority change.
+
+This is why adjudication cannot end with selecting a true sentence. It must
+select an intervention. A causal account can be accurate and still yield a bad
+placement. A parameter update may improve average behavior while making the
+rule impossible to invoke reliably at the exact boundary. A blocking test may
+enforce the rule perfectly while causing unacceptable false rejections outside
+its scope.
+
+The system should make cross-locus alternatives explicit. For each candidate it
+can ask:
+
+- How often will the lesson be needed, and how costly is retrieval failure?
+- Does the lesson have crisp preconditions and a machine-checkable consequence?
+- Must it change generation, judgment, permission, or the environment itself?
+- Who is affected if the lesson is wrong?
+- Can its active effect and descendants be found later?
+- What evidence would justify moving it to a stronger or broader locus?
+
+These questions reveal when a hybrid route is justified. A temporary memory
+can protect work while a tool repair is implemented. A canary policy can run
+alongside the old policy while the evaluator gathers independent evidence. An
+institutional rule can require a test without prescribing its implementation.
+The combination needs an authority order and retirement plan, or the temporary
+layer becomes permanent duplication.
+
+Conflicts between loci are normal. Memory may recommend an action that a newer
+tool contract forbids. A learned policy may bypass a procedure. An evaluator
+may reward behavior that an institutional rule prohibits. The stack needs a
+typed resolution order: constitutional and authority constraints bound action;
+current executable contracts govern their surfaces; qualified procedures and
+memories advise within those bounds; parameter behavior remains subject to all
+of them. That order is itself a governed policy, not a claim that higher layers
+are always correct.
+
+Conflict records are learning evidence. Repeated disagreement between a policy
+and a tool precondition may reveal stale parameters, a bad precondition, or a
+shift in the environment. Silently choosing one side destroys the signal that
+could correct either.
+
+## Minimum Sufficient Persistence
+
+The default should be the least persistent, least expansive intervention that
+meets the need under the required reliability.
+
+"Least" does not mean weakest. A tool invariant can be more decisive and less
+wide-ranging than a parameter update. A narrow institutional permission change
+can be safer than asking every agent to remember a policy in context. The
+comparison must include reach, duration, reversibility, observability,
+qualification cost, deletion cost, and expected collateral effect.
+
+For each candidate locus, the adjudicator can estimate a commitment profile:
+
+| Dimension | Lower commitment | Higher commitment |
+|---|---|---|
+| Reach | one task or repository | many domains or organizations |
+| Duration | one lease | indefinite default |
+| Reversibility | direct removal | diffuse descendants |
+| Observability | explicit artifact | latent behavior |
+| Authority | advisory | blocks or initiates action |
+| Coupling | isolated surface | changes evaluators and learners |
+| Deletion | one object | retraining or institutional repeal |
+
+The profile determines the evidence burden. One reproducible incident may
+justify a scoped test for the exact failure. It should not justify a universal
+parameter update. A broad update may eventually be warranted, but only after
+holdouts, competing explanations, transfer tests, rollback rehearsals, and
+independent review appropriate to its reach.
+
+The system should also price not changing. A narrow memory entry that is easy to
+revoke but too unreliable for a safety-critical precondition may be false
+economy. Minimum sufficient persistence minimizes whole-lifecycle loss, not the
+number of artifacts created today.
+
+## Generalization Is a Prospective Claim
+
+A lesson becomes more consequential when it claims to transfer beyond the
+events that produced it. Generalization is not a feeling that the rule is
+"fundamental." It is a forecast over a named population under stated
+conditions.
+
+The schema-ordering lesson might forecast success across repositories using the
+same generator and dependency family. It should name exclusions, expected
+failure modes, metrics, evaluation window, and what counts as a meaningful
+miss. New repositories become prospective tests rather than post hoc anecdotes.
+
+Transfer asks whether the intervention remains useful under changed task,
+domain, model, organization, or execution environment. Scaling asks how its
+behavior changes with data, model capacity, compute, agent population, or
+deployment reach. These are distinct claims. A method can generalize within one
+distribution yet fail under scale because coordination or evaluator pressure
+changes.
+
+Forecasts should be registered before outcomes are known. Repairs remain in the
+record. Failed forecasts are not deleted when a later version succeeds.
+Material changes in the learner, data, evaluator, or environment invalidate old
+qualification unless a prospective rule says otherwise.
+
+This discipline blocks an easy path to mythology. Without it, every success is
+called evidence of a general principle while every failure is classified as an
+implementation detail. With it, the system accumulates calibration as well as
+capability.
+
+Generalization evidence should travel with the realized lesson. A memory entry
+may be valid for dependency line D but not its successor. A procedure may have
+been qualified with one tool version. A parameter checkpoint may have passed
+one distribution and failed another. Consumers need those boundaries at use
+time, not only in an archived experiment report.
+
+## Feedback Is Evidence, Not an Objective
+
+Feedback can come from users, reviewers, automated tests, reward models,
+environmental outcomes, affected parties, or the system's own monitors. Each
+source observes part of the world through incentives and failure modes.
+
+A thumbs-up may reflect task success, politeness, low expectations, or
+persuasion. A test pass may establish an executable property while missing the
+user's objective. A reward model may reproduce annotator preferences and add
+its own exploitable boundary. A business metric may reward engagement while
+degrading autonomy or trust.
+
+The first job is feedback admission. The record should name who or what emitted
+the signal, what they could observe, how they were selected, which incentives
+applied, whether the candidate could influence them, and which target the
+signal is supposed to inform. Conflicting feedback should remain visible.
+
+Optimization begins only after this epistemic work, and it must preserve the
+difference between proxy and target. Improving a reward is evidence about the
+optimization process. It is not proof that the underlying objective improved.
+
+This is the anti-Goodhart boundary. A candidate policy needs target evaluations
+outside the reward used to produce it, held-out cases, contamination checks,
+reward-hacking probes, regression checks, authority review, and a rollback
+route. The stronger the optimization pressure, the less safe it is to infer
+target quality from proxy movement alone.
+
+Human feedback does not dissolve the problem. People can be inconsistent,
+fatigued, manipulated, strategically selective, or unable to inspect the
+relevant process. A persuasive system may improve its approval rate by changing
+the approver rather than the result. High-stakes feedback therefore needs
+independent channels, protected dissent, sampling of affected parties, and
+limits on the candidate's access to the evaluation process.
+
+## Policy Updates Are Leased Candidates
+
+A policy update should enter operation through a lease, not a coronation. The
+lease names the candidate identity, training process, eligible feedback,
+baseline, target and proxy metrics, holdouts, contamination checks, authority
+scope, canary population, stop conditions, residuals, rollback artifact, and
+expiry.
+
+The policy first runs in a shadow or bounded canary where its effects can be
+compared with a competent baseline. It cannot expand its own authority. The
+component that generated the update should not be the sole component that
+qualifies it. Unexpected reward-target divergence, forgetting, evaluator
+tampering, or rollback failure blocks promotion.
+
+Successful canary operation is still local evidence. It does not prove broad
+generalization or causal improvement. The candidate may have benefited from a
+favorable sample, a changed workload, or hidden assistance. Promotion requires
+the level of causal and transfer evidence appropriate to the next scope.
+
+Rollback also needs a precise meaning. Restoring a policy artifact while
+leaving changed memories, caches, tools, downstream data, or user effects is not
+full reversal. The lease should declare which surfaces it can restore and which
+residuals require separate custody.
+
+The same discipline applies whether the update uses reinforcement learning,
+preference optimization, supervised fine-tuning, evolutionary search, prompt
+optimization, or a hand-edited routing table. Optimization family does not
+waive governance.
+
+## Continual Learning Is State Management
+
+Continual learning asks a system to acquire useful behavior while retaining,
+revising, or discarding earlier behavior over time. That makes it a state-
+management problem before it is an algorithm contest.
+
+The learner must know what changed, from which data and feedback, under which
+contract, with which expected interactions. It needs baselines for retained
+capabilities, prospective measures of new capability, and tests for interference.
+Without them, "continual" can mean an unversioned stream of updates whose
+failures appear only after old tasks disappear from view.
+
+The stability-plasticity tradeoff is architectural. Excessive stability
+preserves defects and blocks adaptation. Excessive plasticity overwrites useful
+behavior and creates oscillation. Different persistence loci offer different
+tradeoffs. Semantic memory can add dated knowledge without changing broad model
+behavior. Procedures can isolate repeated methods. Parameters can integrate
+patterns that explicit artifacts cannot capture, at the cost of harder
+attribution and removal.
+
+Replay buffers, retained examples, synthetic data, regularization, modular
+adapters, and parameter isolation are mechanisms, not complete governance.
+Their data rights, provenance, representativeness, contamination, and deletion
+obligations remain live. A replay strategy can preserve performance by
+preserving data that should no longer be retained.
+
+Every update should produce a full-state checkpoint sufficient for its stated
+recovery claim. Weights alone may omit optimizer, sampler, random-number,
+curriculum, memory, evaluator, and descendant state. A learner cannot claim to
+have returned to an earlier state if only one surface moved backward.
+
+## Multiple Update Clocks
+
+Not every lesson should move at the same speed. An operational incident may
+require a context warning in minutes, a memory correction in hours, a tool
+repair in days, and a parameter update only after a qualified campaign. Forcing
+all learning through one clock either delays urgent containment or grants
+durable change on emergency evidence.
+
+A practical stack separates at least three clocks.
+
+The **fast clock** contains immediate risk. It can change context, quarantine an
+artifact, disable a route, or attach a temporary warning under narrow standing
+authority. Its leases are short and its non-claims explicit.
+
+The **operational clock** turns repeated, reproduced lessons into memory,
+procedures, tools, tests, or bounded policy canaries. It requires stronger
+causal and qualification records and names a rollback owner.
+
+The **structural clock** changes parameters, evaluators, environments, or
+institutions whose effects are broad or difficult to reverse. It demands
+independent evidence, competing baselines, transfer testing, descendant
+planning, and authority commensurate with the commitment.
+
+Evidence can move between clocks, but authority does not flow automatically. A
+temporary quarantine can motivate a permanent control; it cannot authorize one.
+Conversely, a slow structural review should not erase the operational fact that
+a route is presently dangerous.
+
+The clocks also limit oscillation. If every user complaint updates the policy
+immediately, the system can chase noise or coordinated manipulation. If all
+feedback waits for a quarterly retraining cycle, defects persist and affected
+people have no timely remedy. Aggregation windows, rate limits, diversity
+requirements, and change budgets belong to the learning contract.
+
+Urgency itself is evidence that can be gamed. A candidate system might frame a
+preferred update as emergency containment. Fast-clock changes therefore need
+scope limits, automatic expiry, retrospective review, and a prohibition on
+quietly becoming training labels or permanent policy.
+
+These clocks connect continual learning to incident command and governance.
+They let the system respond quickly without pretending that speed supplies
+truth.
+
+## Data Engines Carry Learning Obligations
+
+A data engine turns observations, documents, demonstrations, labels, feedback,
+and synthetic material into governed learning inputs. Its purpose is not merely
+throughput. It preserves identity and obligations across acquisition,
+transformation, selection, use, retention, and removal.
+
+Each item needs source, rights, consent where applicable, time, population,
+transformations, confidence, split eligibility, contamination status, derived
+artifacts, retention policy, and deletion route. Batches and curricula need
+reconstructible selection and order. Failed filters and excluded populations
+belong in the record because they shape what the learner could discover.
+
+Derived data complicates custody. One incident can produce a summary, embedding,
+label, replay example, synthetic variant, evaluation case, and parameter update.
+A later correction must reach every descendant that carries the defect or
+obligation. A flat list of training files is not enough.
+
+The data engine should separate ingestion from admission. Availability does not
+imply eligibility for training, evaluation, or memory. The same item may be
+allowed for incident investigation and prohibited for parameter learning.
+Rights and purpose can change, so admission decisions need version and expiry.
+
+Synthetic data needs lineage to the models, prompts, tools, and source material
+that generated it. High volume does not create independent evidence. Thousands
+of variants from one mistaken premise remain one lineage with repeated error.
+
+## Unlearning Is Not One Claim
+
+"The system forgot the data" can refer to several different outcomes:
+
+1. the item is no longer returned through an access path;
+2. the original and named derivatives are deleted from tracked storage;
+3. a model no longer emits a target behavior under specified probes;
+4. the item's measurable influence approaches an agreed retraining baseline;
+5. membership or reconstruction risk falls under stated attacks;
+6. downstream institutions and external copies have been notified or corrected.
+
+None implies all the others.
+
+Deleting a memory row can satisfy a local storage claim while leaving cached
+retrievals, summaries, logs, backups, or parameter influence. Fine-tuning a
+model to suppress an answer can change observed behavior without removing the
+underlying influence or reducing privacy risk. Exact retraining without the
+item is a useful comparator when feasible, but even it does not erase external
+copies or effects already produced.
+
+An unlearning request therefore needs a target, scope, threat model, descendant
+graph, baseline, method, evaluation, residuals, and expiry. The result should
+say exactly which claim was tested. "Removed from five tracked local storage
+surfaces" is narrower and more useful than "forgotten."
+
+Approximate unlearning requires competent attacks and utility tests. A method
+can reduce one distance metric while worsening membership inference, or preserve
+aggregate utility while damaging a small affected population. Results depend on
+the model, data, attacker, and evaluation distribution. One score should not
+collapse those axes.
+
+Verification has an unavoidable limit: an auditor can inspect tracked systems
+and run bounded probes, but cannot prove a universal negative over every latent
+representation, prompt, future attack, backup, or external recipient. Honest
+unlearning is a structured residual claim. It records what was removed, what was
+tested, what remains uncertain, and who owns further action.
+
+## Scientific Discovery Is Governed Revision
+
+Scientific learning is another persistence path. An observation becomes a
+hypothesis; a hypothesis shapes an experiment; results may revise models,
+procedures, tools, and institutions. The same adaptive boundary applies, with
+additional pressure from researcher degrees of freedom.
+
+A governed discovery campaign freezes the question, hypotheses, admissible
+interventions, measurement plan, analysis, stopping rules, resource budget,
+authority, and non-claims before confirmatory evidence is opened. Exploratory
+work is welcome, but it remains labeled exploratory. Negative results, failed
+attempts, protocol deviations, and discarded hypotheses stay in the record.
+
+The experiment must distinguish observation from intervention and association
+from causal identification. A result may support a local prediction without
+discovering a general mechanism. Automated systems are especially capable of
+generating many hypotheses and analyses, which increases both discovery
+capacity and selection bias.
+
+Independent confirmation should not share every dependency with the discovery
+path. New seeds on the same code and evaluator are useful, but they do not
+provide the same evidence as a separately implemented replication. Material
+changes after confirmation trigger readmission rather than inheriting the old
+label.
+
+Scientific conclusions remain versioned candidates. Later evidence can narrow,
+supersede, or retire them without rewriting history. This is not a weakness of
+the system. It is the mechanism by which correction remains possible.
+
+## Adjudicating the Two Patches
+
+Return to the two successful patches.
+
+For the first, the system records the successful edit, the remembered schema
+condition, and two alternatives: the dependency itself may be faulty, or the
+test environment may contain a stale generated file. A clean reproduction
+shows that regeneration order causes the failure in the scoped repository.
+
+The candidate lesson enters a short-lived semantic-memory locus. It is dated,
+scoped to the dependency line, and linked to the reproduction. Why memory rather
+than parameters? The proposition is explicit, narrow, and likely to change with
+the next generator version. Why not a tool test immediately? The team does not
+yet own the upstream generation tool, and the exact invariant across repositories
+is still uncertain.
+
+The memory lease requires retrieval when dependency D is upgraded. Three later
+upgrades become prospective transfer tests. Two support the rule; one reveals a
+different generator path. The lesson narrows rather than counting the two wins
+and hiding the miss.
+
+When the tool owner adds an explicit precondition, the procedural checklist and
+memory entry become redundant. The adjudicator retires the checklist, keeps the
+memory as a historical explanation for one release cycle, then archives it from
+active retrieval. Descendant links preserve the incident history without
+continuing to spend attention.
+
+For the second patch, the parse-write loss is reproduced directly. The
+candidate lesson maps cleanly to a typed round-trip test. The test fails against
+the old tool and passes after the repair. A canary checks representative
+manifests, including ones without the optional field. The tool version and test
+move together.
+
+A parameter update would have been poorly placed. It might teach an agent to
+avoid the tool or reconstruct the dropped field, while other callers remain
+exposed. A memory warning would depend on retrieval. The test changes the
+mechanism at the failure boundary.
+
+Months later the manifest format removes the optional field. The old test now
+blocks a valid migration. Material change invalidates its qualification. The
+test is retired with a record of why it once existed, and the tool admits the
+new format through a fresh versioned contract.
+
+The two paths begin with equal green outcomes and end with different durable
+structures. That difference is the work of learning.
+
+## Deoptimization and Retirement
+
+Adaptive systems need a way to become less committed. Deoptimization removes
+or narrows structure that no longer earns its carrying cost.
+
+Every persistent lesson consumes something: context, storage, validation,
+monitoring, human review, compatibility work, rollback preparation, or
+organizational flexibility. Old rules can conflict with new ones. Defensive
+tests can freeze obsolete interfaces. Memories can crowd retrieval. Parameters
+can retain behavior after its evidence expires.
+
+Retirement conditions should be designed with the original commitment. They
+may include date, version change, population drift, contradictory evidence,
+replacement by a stronger locus, repeated non-use, or failure to reproduce.
+Expiry should usually trigger review, not silent deletion, when descendants or
+rights are involved.
+
+Deoptimization preserves the record of the decision while removing its active
+effect. This distinction supports accountability without forcing the system to
+carry every past belief forever.
+
+A mature learner measures deletion and recovery as first-class capabilities.
+It should be able to answer not only how quickly a lesson entered operation, but
+how completely it can be challenged, narrowed, and withdrawn.
+
+## Failure Modes
+
+**Outcome worship.** A score or success is stored as its own explanation.
+
+**First-story lock-in.** The earliest causal account gains persistence before
+alternatives are recorded.
+
+**Parameter reflex.** Every useful signal becomes a training example even when
+a memory, test, tool repair, or environmental change fits better.
+
+**Memory landfill.** Temporary warnings remain active after stronger controls
+replace them.
+
+**Cross-locus duplication.** The same rule persists in prompts, memory,
+procedures, tools, and weights with no authority order.
+
+**Evaluator capture.** The learner improves the judge that then approves the
+learner.
+
+**Reward ontology.** Proxy improvement is reported as objective improvement.
+
+**Counterfactual hindsight.** Alternatives invented after an outcome are used
+to assign regret as if they were available before it.
+
+**Generalization by adjective.** A result is called robust or scalable without
+a prospective population and failure criterion.
+
+**Success-only memory.** Failed forecasts and update attempts disappear from
+the denominator.
+
+**Rollback theater.** One artifact is restored while descendant effects remain.
+
+**Forgetting by suppression.** A model stops emitting an answer under familiar
+prompts and the system claims deletion or privacy.
+
+**Deletion by inventory.** Removing known files is treated as proof that no
+copy, derivative, or influence remains.
+
+**Scientific self-confirmation.** One automated pipeline proposes, tests,
+selects, and validates a hypothesis through shared dependencies.
+
+**Permanent learning.** No review, expiry, or retirement condition accompanies
+the update.
+
+## The Strongest Simpler Baseline
+
+The strongest baseline is not a self-modifying system with elaborate central
+adjudication. It is a competent human-reviewed process with versioned memory,
+ordinary tests, reproducible training, explicit model releases, data lineage,
+and deletion tickets.
+
+Local owners know their surfaces. A tool maintainer can often place a fix faster
+than a general persistence service. Mature machine-learning platforms already
+provide experiment tracking, checkpointing, canaries, and rollback. Scientific
+teams already use preregistration and independent replication when incentives
+permit.
+
+The adaptive commit boundary earns its cost only if it improves decisions
+across those surfaces. It should be compared on placement accuracy, time to
+useful correction, transfer, collateral change, retained capability, deletion,
+recovery, lifecycle cost, human comprehension, and resistance to manipulated
+feedback.
+
+If fixed-locus or human-reviewed policies match those outcomes at lower cost,
+the boundary should contract. Shared contracts and descendant records may still
+be useful without a general adjudicator.
+
+## What the Current Work Establishes
+
+The central Adjudicated Persistence architecture is presently an argument and
+research program. The repository does not contain a running cross-surface
+adjudicator, qualifier, deoptimizer, or descendant-revocation system. Five proof
+targets and five experimental suites are planned, not implemented or run. The
+chapter therefore does not establish that persistence adjudication improves
+placement, transfer, deletion, recovery, or safety.
+
+The Learning Theory refinement is narrower and executable. Its validator checks
+a six-transition forecast lifecycle, 45 exact repair cases, finite attempt and
+alternative custody, adverse monotonicity, seven receipt invalidations, two
+non-identifiability results, one rejecting Benchmark Ratchets bridge, and 38
+exact Lean declarations. It does not establish natural generalization,
+transfer, emergence, scaling, safety, support, or release.
+
+The Policy Optimization refinement begins from a synthetic six-sample,
+five-candidate lease and follows a seven-stage lifecycle. It checks 63 finite
+routes, rejects all 73 authored route mutations and three cross-stage
+mutations, and preserves the reward-target distinction through rollback. A
+deterministic router-policy canary fixture includes holdouts, contamination
+checking, reward-hacking probes, unchanged authority, expected-invalid controls,
+and dry-run rollback. No optimizer, model, natural workload, preference
+dataset, live canary, causal policy improvement, rollback efficacy, or transfer
+was tested. Its support effect is none.
+
+The Data Engine refinement covers an eight-stage composed lifecycle with 82
+finite routes. Its validator rejects all 96 authored route mutations and three
+cross-stage mutations. A full-state bridge checks 24 surfaces, 15 exact local
+rollbacks, prospective checkpoint authority, separated unlearning claims, 12
+Lean theorems, and six rejecting mutations. Bounded local campaigns restore
+tracked state and remove a named cohort from specified surfaces, but they do not
+establish deletion, forgetting, influence removal, privacy, rights compliance,
+or external erasure.
+
+The Scientific Discovery refinement checks an eight-transition lifecycle, 54
+exact repair cases, finite attempt and confirmatory custody, adverse
+monotonicity, seven receipt invalidations, two non-identifiability results, two
+rejecting evidence consumers, and 41 exact Lean declarations. It establishes
+finite record and routing properties, not causal discovery, replication,
+safety, support, release, or external effect.
+
+Together these artifacts establish useful finite control semantics around
+forecasting, update leases, data-state recovery, and scientific records. They
+do not establish the integrated adaptive commit boundary described in this
+unit, and they do not demonstrate a superior continual-learning system.
+
+## From Minimum Persistence to a Mature Learning System
+
+A minimum implementation can use the two repository incidents. Build an
+experience packet for each, record causal alternatives, and create candidate
+lessons. Require an adjudicator that can choose among no change, temporary
+context, dated memory, procedure, and typed tool test. It must state why the
+chosen locus is smaller than the rejected alternatives.
+
+Qualify both lessons prospectively. Inject stale evidence, evaluator conflict,
+scope widening, missing authority, failed rollback, and material change. Verify
+that the memory entry expires and that the tool test retires when the format
+changes. Preserve descendants and non-claims.
+
+The next stage adds policy updates, full-state checkpoints, data lineage, and
+separate unlearning claims. Compare adjudicated placement with memory-only,
+parameter-only, rule-based local, and human-review baselines. Measure whole-
+lifecycle cost, not only immediate task success.
+
+Natural campaigns should span different kinds of learning: software incidents,
+user feedback, model adaptation, evaluator revision, data deletion, and
+scientific hypothesis testing. Independent reviewers should judge causal
+accounts and placement without seeing the architecture label. Failed campaigns
+remain in the denominator.
+
+A mature system would treat every durable adaptation as a typed, leased,
+challengeable commitment. It would choose among loci, compile qualification
+obligations from commitment, preserve prospective forecasts, detect proxy-
+target divergence, trace descendants, restore complete state, and retire stale
+structure. No component would gain durable influence merely by producing its
+own evidence.
+
+## The Strongest Objection
+
+This architecture may turn ordinary engineering judgment into a costly
+bureaucracy. The locus list can create analysis paralysis. A shared adjudicator
+can centralize power, impose one ontology on unlike domains, and become the
+single gate that an adaptive system learns to manipulate.
+
+That objection has teeth. Most low-risk local changes should remain cheap.
+Standing policies can authorize reversible memory writes and tool tests within
+bounded scopes. Human review may outperform automated causal adjudication for
+rare, ambiguous changes. Domain owners should retain authority over meanings
+that a generic service cannot infer.
+
+The architecture should therefore scale review with commitment. It should
+federate authority, expose dissent, and permit consumers to use only the
+contracts they need. Its purpose is not to maximize process. It is to prevent a
+success signal from silently becoming an irreversible cross-system change.
+
+## Evidence That Would Change the Conclusion
+
+The adaptive commit boundary should narrow or be retired if competent fixed-
+locus policies or human review match its placement quality, transfer,
+retention, deletion, recovery, and safety at lower lifecycle cost.
+
+Support would require prospective natural campaigns with matched resources,
+independent causal and placement assessment, real competing baselines,
+cross-domain transfer, adversarial feedback, long-horizon forgetting and
+deoptimization, descendant-aware deletion, full-state recovery, and external
+reproduction. The studies must report abstentions, failed updates, human labor,
+compute, latency, and residual harm.
+
+No finite Lean model can establish those empirical effects. Formal work can
+prove that authored records obey stated commitment and revocation rules; it
+cannot prove that the chosen lesson is true, that the evaluator is legitimate,
+or that every descendant has been erased.
+
+## What This Establishes
+
+Experience, feedback, and reward are inputs to learning, not permission to
+change durable structure. A candidate lesson needs identity, causal alternatives,
+scope, lineage, and a lifecycle.
+
+Context, memory, procedure, tool, parameter, evaluator, environment, and
+institution are different persistence loci. The least consequential sufficient
+locus should be preferred, with evidence matched to reach, duration, authority,
+and reversibility.
+
+Generalization is a prospective forecast. Policy updates are leased candidates.
+Continual learning requires full-state and descendant custody. Unlearning is a
+family of bounded claims, not a synonym for suppression or file deletion.
+Scientific discovery remains governed revision rather than self-certifying
+output.
+
+The repository has finite formal and executable controls for several pieces of
+this lifecycle. It does not yet implement or validate the integrated
+adjudicator.
+
+A candidate lesson still cannot decide whether it is safe to promote. Unit 22
+assembles adversarial evaluation, readiness thresholds, residual custody, and a
+structured assurance case for that decision.
+
+{{< include ../generated/unit-21-status.qmd >}}
