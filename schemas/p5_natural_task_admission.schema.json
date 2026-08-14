@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p5_natural_task_admission.schema.json",
+  "title": "P5 natural task admission receipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "campaign_id",
+    "task_id",
+    "candidate_sha256",
+    "admitted_at_utc",
+    "family",
+    "family_eligible_index",
+    "assignment",
+    "assigned_fault",
+    "arm_execution_order",
+    "source_snapshot",
+    "discovery_evidence_sha256",
+    "task_statement_sha256",
+    "acceptance_contract_sha256",
+    "development_content",
+    "heldout_content_redacted",
+    "pre_custody_sha256",
+    "post_custody_sha256",
+    "natural_task_outcome_opened",
+    "fault_outcome_opened",
+    "requalification_required_before_execution",
+    "support_state_effect",
+    "release_effect",
+    "non_claims"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p5_natural_task_admission.v1"},
+    "campaign_id": {"const": "governed-operations-natural-service-campaign-001"},
+    "task_id": {"type": "string", "pattern": "^p5-natural-[0-9a-f]{20}$"},
+    "candidate_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "admitted_at_utc": {"type": "string", "format": "date-time"},
+    "family": {
+      "enum": [
+        "manuscript_and_source_reconciliation",
+        "schema_validator_and_registry_maintenance",
+        "roadmap_status_and_claim_boundary_reconciliation",
+        "evidence_result_and_receipt_maintenance",
+        "publication_projection_and_public_truth_maintenance"
+      ]
+    },
+    "family_eligible_index": {"type": "integer", "minimum": 0, "maximum": 10},
+    "assignment": {"enum": ["development", "heldout"]},
+    "assigned_fault": {
+      "enum": [
+        "worker_crash_after_state_mutation_before_acknowledgement",
+        "partition_between_intent_ledger_and_effect_service",
+        "stale_leader_and_replica_conflict",
+        "model_or_policy_identity_mismatch",
+        "credential_revocation_during_queued_work",
+        "cache_or_retrieval_memory_staleness",
+        "shared_dependency_failure_across_primary_and_backup",
+        "monitor_delay_loss_or_corrupted_observation",
+        "rollback_that_leaves_a_credential_descendant_or_external_effect",
+        "irreversible_effect_requiring_compensation_and_quarantine",
+        "supply_chain_or_model_custody_drift",
+        "operator_capacity_exhaustion_and_expired_emergency_lease"
+      ]
+    },
+    "arm_execution_order": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "direct_model_tooling",
+          "stop_only",
+          "competent_generic_sre",
+          "proposal_plus_independent_acceptance",
+          "governed_operations"
+        ]
+      }
+    },
+    "source_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "tree", "surface_count", "surfaces_sha256"],
+      "properties": {
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "surface_count": {"type": "integer", "minimum": 1},
+        "surfaces_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      }
+    },
+    "discovery_evidence_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "task_statement_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "acceptance_contract_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "development_content": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["task_statement", "independently_needed_reason", "acceptance_contract", "effect_surfaces"],
+          "properties": {
+            "task_statement": {"type": "string", "minLength": 40},
+            "independently_needed_reason": {"type": "string", "minLength": 40},
+            "acceptance_contract": {"type": "object"},
+            "effect_surfaces": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+          }
+        }
+      ]
+    },
+    "heldout_content_redacted": {"type": "boolean"},
+    "pre_custody_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "post_custody_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "natural_task_outcome_opened": {"const": false},
+    "fault_outcome_opened": {"const": false},
+    "requalification_required_before_execution": {"const": true},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"},
+    "non_claims": {
+      "type": "array",
+      "minItems": 5,
+      "items": {"type": "string", "minLength": 20}
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"assignment": {"const": "development"}}},
+      "then": {
+        "properties": {
+          "development_content": {"type": "object"},
+          "heldout_content_redacted": {"const": false}
+        }
+      }
+    },
+    {
+      "if": {"properties": {"assignment": {"const": "heldout"}}},
+      "then": {
+        "properties": {
+          "development_content": {"type": "null"},
+          "heldout_content_redacted": {"const": true}
+        }
+      }
+    }
+  ]
+}

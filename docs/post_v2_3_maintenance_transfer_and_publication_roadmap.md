@@ -3236,6 +3236,33 @@ change, and perform the development-only precision simulation. The forty-task
 held-out denominator remains closed until its competence, resource, precision,
 and custody gates pass and the single protected opening is authorized.
 
+### P5 natural-task admission gate - 2026-08-14
+
+The campaign's next legal action is now executable rather than documentary.
+`scripts/admit_p5_natural_task.py` accepts one candidate envelope kept outside
+the repository, verifies a clean content-addressed source snapshot, checks the
+pre-outcome acceptance contract and all frozen eligibility exclusions, and
+previews the admission before `--write` is allowed. It allocates each of the
+five task families through a frozen seeded schedule containing exactly three
+development and eight held-out slots, assigns one fault and one five-arm order,
+and updates the existing intake custody. Development receipts retain the task
+and acceptance contract. Held-out receipts retain only digests and expose no
+protected task content.
+
+`scripts/validate_p5_natural_task_admission.py` exhausts the authored 55-slot
+allocation in temporary repositories: fifteen development assignments, forty
+held-out assignments, five-family balance, deterministic fault/arm binding,
+held-out redaction, exact custody/receipt identity, and eighteen rejecting
+controls for invented or solved work,
+outcome-aware selection, late acceptance, private or human-dependent work,
+public effects, denominator overlap, prior exposure, subjective preference,
+source drift, discovery drift, and duplicate admission. This is gate
+qualification, not a natural task result. Canonical custody remains at zero
+admitted tasks and zero outcomes. Every future admission changes custody and
+therefore requires the campaign qualification to be rerun before any arm may
+execute. No support, release, T4, usefulness, safety, transfer, SOTA, AGI, or
+ASI inference follows.
+
 ## P6 — Evidence, instrument, and source renewal
 
 Run a dated primary-source and official-comparator sweep at least quarterly and
@@ -5577,8 +5604,11 @@ is not a debugging interface.
    monitor joins, but never place its outcome-aware happy path in a held-out
    denominator. Preserve the terminal 60-trial, 213-process authored
    implementation/instrument qualification and its zero-natural-task boundary.
-   Admit consecutive development tasks only when independently necessary work
-   arises; never manufacture tasks to fill the campaign. The protected
+   Admit consecutive tasks only when independently necessary work arises by
+   preparing the candidate outside the repository and previewing
+   `python3 scripts/admit_p5_natural_task.py --candidate <path>` before any
+   `--write`; every admission requires requalification before execution. Never
+   manufacture tasks to fill the campaign. The protected
    forty-task denominator remains closed.
 6. **Evidence, instrument, and structural renewal (`P6`).** Keep primary comparators,
    evaluator sensitivity, false-negative controls, alternative substrates,
@@ -5810,7 +5840,7 @@ the compiler rather than preserving it as governance theater.
 | M2 — Competent natural empirical result | in progress | A high-value natural, non-authored campaign passes every competence gate and ends with a bounded positive, negative, or inconclusive disposition. |
 | M3 — Reproduction and transfer | pending | Any broadened result has independent reproduction and two prospectively selected materially different transfer settings. |
 | M4 — Semantic formal depth and composition | in progress; consumer-gated | Preserve the terminal six-cluster local audit and complete only dependency-safe rationalization or connected-owner composition required by `P5-U1` or a contribution exit ladder. Every family has a real consumer and seven-field admission record; no aggregate theorem count or finite authored record grants empirical, operational, institutional, or whole-system support. |
-| M5 — Effect-complete reference | in progress; bounded `P5-U1` slice terminal | Preserve the fresh-checkout `P5-U1` command, three fixed routes, four effect/failure paths, 12/12 state-checkable outcomes, nine rejecting mutations, and explicit matched governance-rent accounting without support movement. Retain its retrospective natural-defect ceiling, the two bounded local slices, and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, and 14/14 development-opening gates, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
+| M5 — Effect-complete reference | in progress; bounded `P5-U1` slice terminal | Preserve the fresh-checkout `P5-U1` command, three fixed routes, four effect/failure paths, 12/12 state-checkable outcomes, nine rejecting mutations, and explicit matched governance-rent accounting without support movement. Retain its retrospective natural-defect ceiling, the two bounded local slices, and one outcome-aware natural publication happy path at their exact scopes. The frozen five-arm campaign has terminal authored implementation/instrument qualification across 60 arm/fault controls, 14 state classes, 213 child processes, 24/24 evaluator cases, 14/14 development-opening gates, and an executable fail-closed admission transaction with a 15-development/40-heldout authored allocation and eighteen rejecting controls, but ran zero natural tasks and observed no elapsed 24-hour window. Consecutive natural development work, full cost measurement, precision simulation, the single protected opening, causal comparison, transfer, and independent reproduction remain. |
 | M6 — Renewal and structural completeness | completed with additive successor custody | The first tranche, A1/A2, Round 18 breadth packet, ten-owner no-deferral transaction, four-owner taxonomy reconciliation, 2026-07-25 full-coverage audit, T1D six-chapter maturity/source/reader packet, Precision Contract integration, R16-A six-chapter/thirty-atom organization packet, W3 84-chapter inheritance guard, and R16-B 84-chapter reader-freshness derivative remain terminal historical receipts at their declared argument or organization scope. The current manifest has 87 owners and exact claim or bounded formal-target custody for all 87; later admissions do not rewrite those historical denominators. Optimizer, heterogeneous-memory, inference-cache, work-surface, learning-topology, and adjudicated-persistence manuscript depth are in the book; executable evidence residuals remain ordinary Phase 2 work. |
 | M7 — Editorial product migration, independent narrative, and derivative disposition | completed through EM4 HTML cutover | Preserve `reader-2026-07-18`, the 84-chapter virtual derivative, the 22-unit candidate, and the pushed `96a22b15e` cutover candidate as immutable historical receipts while maintaining all 87 research identities. EM0 manifest-derived count truth, EM1 exact metadata-first 54+2/16+2+0/7/5/1 disposition, seven EM2 composition packages covering all sixteen publication nests and two method-detail nests, the terminal no-merge adjudication for Prototype Roadmap/Project Theseus, all twenty-six target-length EM3 units at 133,658 visible words, the generated 87-owner conclusion/claim crosswalk, and EM4 exact-head build/deploy/public-route/browser validation are complete. Retain the fifteen-minute utility route, three runnable task recipes, optional-depth marking, unit-level use/avoid/conclusion-change guidance, and `support_state_effect: none`. Defer the primer and full EPUB/PDF/DOCX/audio build until major-version content freeze. P7.3 remains separately owned and cannot substitute for narrative evidence. |
 | M8 — Successor continuity | pending | Every open item has a terminal disposition and the next exact authority is active. |

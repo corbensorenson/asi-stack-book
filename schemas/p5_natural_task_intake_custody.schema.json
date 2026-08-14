@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p5_natural_task_intake_custody.schema.json",
+  "title": "P5 natural task intake custody",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version", "campaign_id", "state", "assignment_seed", "task_families",
+    "development_capacity", "heldout_capacity", "heldout_tasks_per_family",
+    "development_task_ids", "heldout_task_ids", "task_content_opened",
+    "protected_outcomes_opened", "rejection_requires_pre_outcome_code",
+    "denominator_shrink_after_protected_output_allowed", "p2_q1_q2_overlap_allowed",
+    "t4_substitution_allowed", "public_effects_allowed", "support_state_effect", "release_effect"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p5_natural_task_intake_custody.v1"},
+    "campaign_id": {"const": "governed-operations-natural-service-campaign-001"},
+    "state": {"enum": ["future_intake_initialized_content_closed", "development_intake_active", "heldout_intake_active", "denominator_full_outcomes_closed"]},
+    "assignment_seed": {"const": 20260728},
+    "task_families": {"type": "array", "minItems": 5, "maxItems": 5, "uniqueItems": true, "items": {"type": "string"}},
+    "development_capacity": {"const": 15},
+    "heldout_capacity": {"const": 40},
+    "heldout_tasks_per_family": {"const": 8},
+    "development_task_ids": {"type": "array", "maxItems": 15, "uniqueItems": true, "items": {"type": "string", "pattern": "^p5-natural-[0-9a-f]{20}$"}},
+    "heldout_task_ids": {"type": "array", "maxItems": 40, "uniqueItems": true, "items": {"type": "string", "pattern": "^p5-natural-[0-9a-f]{20}$"}},
+    "task_content_opened": {"type": "integer", "minimum": 0, "maximum": 15},
+    "protected_outcomes_opened": {"const": false},
+    "rejection_requires_pre_outcome_code": {"const": true},
+    "denominator_shrink_after_protected_output_allowed": {"const": false},
+    "p2_q1_q2_overlap_allowed": {"const": false},
+    "t4_substitution_allowed": {"const": false},
+    "public_effects_allowed": {"const": false},
+    "support_state_effect": {"const": "none"},
+    "release_effect": {"const": "none"}
+  }
+}

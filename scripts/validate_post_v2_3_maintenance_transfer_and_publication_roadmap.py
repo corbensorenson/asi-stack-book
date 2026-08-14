@@ -346,6 +346,7 @@ def errors(data: dict) -> list[str]:
         "### P5 natural publication-service development checkpoint — 2026-07-27",
         "### P5 prospective natural stateful-service campaign freeze — 2026-07-28",
         "### P5 natural stateful-service implementation qualification — 2026-07-28",
+        "### P5 natural-task admission gate - 2026-08-14",
         "## P6 — Evidence, instrument, and source renewal",
         "### P6.4-R18 — terminal bounded conceptual-completeness packet",
         "### P6.5 — Round 16 post-activation integration debt",
@@ -2915,6 +2916,26 @@ def errors(data: dict) -> list[str]:
     }
     if qualification_status != expected_qualification_status:
         out.append("P5 qualification result and roadmap status diverged")
+    expected_admission_status = {
+        "state": "executable_canonical_task_and_outcome_custody_closed",
+        "candidate_schema_path": "schemas/p5_natural_task_candidate.schema.json",
+        "admission_schema_path": "schemas/p5_natural_task_admission.schema.json",
+        "custody_schema_path": "schemas/p5_natural_task_intake_custody.schema.json",
+        "command_path": "scripts/admit_p5_natural_task.py",
+        "validator_path": "scripts/validate_p5_natural_task_admission.py",
+        "canonical_admitted_task_count": 0,
+        "canonical_natural_task_outcome_count": 0,
+        "fixture_family_count": 5,
+        "fixture_development_assignment_count": 15,
+        "fixture_heldout_assignment_count": 40,
+        "rejecting_control_count": 18,
+        "heldout_content_redacted": True,
+        "requalification_required_before_execution": True,
+        "support_state_effect": "none",
+        "release_effect": "none",
+    }
+    if p5_campaign.get("admission_gate") != expected_admission_status:
+        out.append("P5 natural-task admission gate and roadmap status diverged")
     if (
         p5_campaign.get("state")
         != "implementation_and_instrument_qualified_development_content_still_closed"

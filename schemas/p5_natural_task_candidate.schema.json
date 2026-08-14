@@ -1,0 +1,145 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://asi-stack.local/schemas/p5_natural_task_candidate.schema.json",
+  "title": "P5 natural repository-maintenance task candidate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "campaign_id",
+    "discovered_at_utc",
+    "family",
+    "task_statement",
+    "independently_needed_reason",
+    "discovery_evidence",
+    "source_snapshot",
+    "acceptance_contract",
+    "effect_surfaces",
+    "eligibility_attestations"
+  ],
+  "properties": {
+    "schema_version": {"const": "asi_stack.p5_natural_task_candidate.v1"},
+    "campaign_id": {"const": "governed-operations-natural-service-campaign-001"},
+    "discovered_at_utc": {"type": "string", "format": "date-time"},
+    "family": {
+      "enum": [
+        "manuscript_and_source_reconciliation",
+        "schema_validator_and_registry_maintenance",
+        "roadmap_status_and_claim_boundary_reconciliation",
+        "evidence_result_and_receipt_maintenance",
+        "publication_projection_and_public_truth_maintenance"
+      ]
+    },
+    "task_statement": {"type": "string", "minLength": 40},
+    "independently_needed_reason": {"type": "string", "minLength": 40},
+    "discovery_evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "locator", "sha256", "observed_before_solution_investigation"],
+      "properties": {
+        "kind": {"enum": ["tracked_surface", "validator_failure", "ci_failure", "source_change"]},
+        "locator": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "observed_before_solution_investigation": {"const": true}
+      }
+    },
+    "source_snapshot": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["commit", "tree", "surfaces"],
+      "properties": {
+        "commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "tree": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+        "surfaces": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["path", "sha256"],
+            "properties": {
+              "path": {"type": "string", "minLength": 1},
+              "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            }
+          }
+        }
+      }
+    },
+    "acceptance_contract": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["checks", "terminal_conditions"],
+      "properties": {
+        "checks": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["argv", "expected_exit_code"],
+            "properties": {
+              "argv": {
+                "type": "array",
+                "minItems": 1,
+                "items": {"type": "string", "minLength": 1}
+              },
+              "expected_exit_code": {"type": "integer", "minimum": 0, "maximum": 255}
+            }
+          }
+        },
+        "terminal_conditions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"type": "string", "minLength": 20}
+        }
+      }
+    },
+    "effect_surfaces": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "filesystem",
+          "git_object_store",
+          "validation_worker",
+          "artifact_projection",
+          "read_only_monitor"
+        ]
+      }
+    },
+    "eligibility_attestations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "independently_necessary",
+        "invented_for_campaign",
+        "already_solved",
+        "solution_investigated",
+        "outcome_inspected",
+        "acceptance_defined_before_outcome",
+        "public_safe",
+        "requires_another_human",
+        "uncontrolled_public_effect",
+        "p2_q1_q2_overlap",
+        "prior_p4_p5_prompt_exposure",
+        "subjective_preference_required"
+      ],
+      "properties": {
+        "independently_necessary": {"const": true},
+        "invented_for_campaign": {"const": false},
+        "already_solved": {"const": false},
+        "solution_investigated": {"const": false},
+        "outcome_inspected": {"const": false},
+        "acceptance_defined_before_outcome": {"const": true},
+        "public_safe": {"const": true},
+        "requires_another_human": {"const": false},
+        "uncontrolled_public_effect": {"const": false},
+        "p2_q1_q2_overlap": {"const": false},
+        "prior_p4_p5_prompt_exposure": {"const": false},
+        "subjective_preference_required": {"const": false}
+      }
+    }
+  }
+}

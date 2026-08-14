@@ -2021,6 +2021,24 @@
         "model_quality_evaluated": false,
         "support_state_effect": "none",
         "release_effect": "none"
+      },
+      "admission_gate": {
+        "state": "executable_canonical_task_and_outcome_custody_closed",
+        "candidate_schema_path": "schemas/p5_natural_task_candidate.schema.json",
+        "admission_schema_path": "schemas/p5_natural_task_admission.schema.json",
+        "custody_schema_path": "schemas/p5_natural_task_intake_custody.schema.json",
+        "command_path": "scripts/admit_p5_natural_task.py",
+        "validator_path": "scripts/validate_p5_natural_task_admission.py",
+        "canonical_admitted_task_count": 0,
+        "canonical_natural_task_outcome_count": 0,
+        "fixture_family_count": 5,
+        "fixture_development_assignment_count": 15,
+        "fixture_heldout_assignment_count": 40,
+        "rejecting_control_count": 18,
+        "heldout_content_redacted": true,
+        "requalification_required_before_execution": true,
+        "support_state_effect": "none",
+        "release_effect": "none"
       }
     },
     "next_action": "admit_consecutive_eligible_natural_development_tasks_only_as_independently_necessary_work_arises_run_the_frozen_five_arm_fault_and_full_cost_procedure_recalibrate_after_any_change_and_complete_development_only_precision_simulation_without_opening_heldout_content",
