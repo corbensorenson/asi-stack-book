@@ -650,6 +650,25 @@ No architecture can make governance invulnerable to every more-capable system.
 The practical goal is to prevent easy authority collapse, preserve external
 control, detect violated assumptions, and fail into bounded states.
 
+## Improvement Can Rewrite Its Own Test
+
+A recursive improver does not change only itself. It can change the benchmark,
+tool environment, data distribution, evaluator, and institution that decide
+whether the next change looks successful. The evidence offered for an upgrade
+may therefore descend from the earlier upgrade.
+
+That is why the protected evaluation channel matters as much as the protected
+objective. Improvement proposals must name which parts of their evidence were
+generated under the candidate's influence, which comparison regimes remain,
+and what would falsify the claimed gain. A candidate cannot widen its own
+authority using a benchmark or evaluator that it was solely authorized to
+reshape.
+
+The same rule applies to method improvement. A system may discover a better
+reasoning protocol, but it cannot certify the protocol, promote it, and expand
+its permissions through one self-contained success story. Variation may be
+automated. Ratification remains independently governed.
+
 ## Failure Modes
 
 **Self-ratification.** The candidate's score or proof authorizes adoption.

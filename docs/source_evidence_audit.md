@@ -10,14 +10,14 @@ It does **not** quote or publish raw private source passages. It also does **not
 
 | Metric | Value |
 |---|---:|
-| Chapters audited | 87 |
-| Assigned source/chapter pairs | 1346 |
-| Exact claim-source mappings | 1138 |
+| Chapters audited | 89 |
+| Assigned source/chapter pairs | 1350 |
+| Exact claim-source mappings | 1142 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1346 |
-| Source notes listing assigned chapter | 1346 |
-| Passage-reviewed mappings recorded | 1069 |
-| Support-state counts | {"argument": 87} |
+| Source notes present for assigned pairs | 1350 |
+| Source notes listing assigned chapter | 1350 |
+| Passage-reviewed mappings recorded | 1073 |
+| Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
 
@@ -66,7 +66,9 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `perception-sensor-fusion-and-observation-trust` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 12 | 9 | 12 | 12 | 9 | argument | passage review required before source-derived promotion |
 | `governed-world-models-and-reality-grounding` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
+| `reflexive-model-world-systems` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
+| `cognitive-method-transfer-and-qualification` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
 | `virtual-context-abi` | 31 | 24 | 31 | 31 | 24 | argument | passage review required before source-derived promotion |
 | `durable-semantic-memory-and-knowledge-lattices` | 10 | 10 | 10 | 10 | 6 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
@@ -409,10 +411,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_deep_ensembles_2017` | 1 | yes |
 | `ext_conformal_prediction_2021` | 1 | yes |
 | `ext_wilds_2021` | 1 | yes |
+| `reflexive_model_world_systems` | 1 | yes |
+| `ext_performative_prediction_2020` | 1 | yes |
 | `ext_pddl_1998` | 1 | yes |
 | `ext_llvm_langref_docs` | 1 | yes |
 | `ext_mlir_2020` | 1 | yes |
 | `ext_translation_validation_1998` | 1 | yes |
+| `compiling_civilization_cmtq` | 1 | yes |
+| `ext_coala_2024` | 1 | yes |
 | `ext_rag_2020` | 1 | yes |
 | `ext_lost_in_middle_2023` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
@@ -941,6 +947,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_deep_ensembles_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_conformal_prediction_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-world-models-and-reality-grounding.core` | `governed-world-models-and-reality-grounding` | `ext_wilds_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `reflexive-model-world-systems.core` | `reflexive-model-world-systems` | `reflexive_model_world_systems` | mapped | note present | chapter listed | passage-reviewed |
+| `reflexive-model-world-systems.core` | `reflexive-model-world-systems` | `ext_performative_prediction_2020` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -962,6 +970,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `relational_dimension_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-method-transfer-and-qualification.core` | `cognitive-method-transfer-and-qualification` | `compiling_civilization_cmtq` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-method-transfer-and-qualification.core` | `cognitive-method-transfer-and-qualification` | `ext_coala_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |

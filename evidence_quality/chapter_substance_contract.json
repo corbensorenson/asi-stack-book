@@ -3,7 +3,7 @@
   "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy",
   "recorded_date": "2026-07-28",
   "manifest_path": "book_structure.json",
-  "manifest_chapter_count_freeze": 87,
+  "manifest_chapter_count_freeze": 89,
   "word_count_method": "Unicode text split on whitespace over canonical chapter source with the generated visual projection removed; diagnostic trigger only",
   "word_trigger": 5000,
   "concept_contract_rule": "An active concept section must be named, contain at least 150 words, and separately state mechanism, failure mode, non-claim, and source grounding. It must also map to one or more existing owner atoms with an explicit many-to-one ownership rationale. Completion additionally requires a digest-bound chapter-specific semantic review. The diagnostic word trigger does not participate in concept completion, and passing remains editorial preparation rather than evidence.",
@@ -8333,8 +8333,8 @@
       "chapter_id": "governed-world-models-and-reality-grounding",
       "chapter_title": "Governed World Models and Reality Grounding",
       "path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
-      "word_count": 9634,
+      "sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe",
+      "word_count": 9631,
       "word_trigger": 5000,
       "depth_state": "word_trigger_clear_semantic_certification_not_implied",
       "short_reference_exception": false,
@@ -8365,11 +8365,34 @@
       "semantic_review": null
     },
     {
+      "chapter_id": "reflexive-model-world-systems",
+      "chapter_title": "Reflexive Model-World Systems",
+      "path": "chapters/reflexive-model-world-systems.qmd",
+      "sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
+      "word_count": 4028,
+      "word_trigger": 5000,
+      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "short_reference_exception": false,
+      "short_reference_justification": null,
+      "atom_refs": [
+        {
+          "atom_id": "lean:reflexive_system.augmented_state_required",
+          "source_path": "proofs/proof_manifest.json"
+        },
+        {
+          "atom_id": "lean:reflexive_system.rollback_no_restoration",
+          "source_path": "proofs/proof_manifest.json"
+        }
+      ],
+      "concept_contracts": [],
+      "semantic_review": null
+    },
+    {
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_title": "Cognitive Compilation and Semantic IR",
       "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f",
-      "word_count": 11239,
+      "sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
+      "word_count": 11268,
       "word_trigger": 5000,
       "depth_state": "word_trigger_clear_semantic_certification_not_implied",
       "short_reference_exception": false,
@@ -8662,6 +8685,29 @@
         {
           "atom_id": "cognitive-compilation-and-semantic-ir.formal.cognitive-compilation-ir-semantic-lowering-route-envelope",
           "source_path": "evidence_quality/claim_atom_registry.json"
+        }
+      ],
+      "concept_contracts": [],
+      "semantic_review": null
+    },
+    {
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "chapter_title": "Cognitive Method Transfer and Qualification",
+      "path": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797",
+      "word_count": 4274,
+      "word_trigger": 5000,
+      "depth_state": "queued_thin_chapter_for_manual_concept_contract",
+      "short_reference_exception": false,
+      "short_reference_justification": null,
+      "atom_refs": [
+        {
+          "atom_id": "lean:cmtq.axes.non_substitution",
+          "source_path": "proofs/proof_manifest.json"
+        },
+        {
+          "atom_id": "lean:cmtq.promotion.no_self_authority",
+          "source_path": "proofs/proof_manifest.json"
         }
       ],
       "concept_contracts": [],
@@ -23886,18 +23932,18 @@
     }
   ],
   "summary": {
-    "chapter_count": 87,
-    "thin_chapter_count": 5,
+    "chapter_count": 89,
+    "thin_chapter_count": 7,
     "contracted_chapter_count": 23,
     "concept_complete_semantic_reviewed_chapter_count": 23,
-    "queued_thin_chapter_count": 0,
+    "queued_thin_chapter_count": 2,
     "word_trigger_clear_chapter_count": 82,
-    "atom_covered_chapter_count": 87,
+    "atom_covered_chapter_count": 89,
     "atom_uncovered_chapter_count": 0,
     "active_concept_count": 184,
     "active_concepts_passing_count": 184,
     "current_semantic_review_count": 23,
-    "low_atom_count_diagnostic_chapter_count": 9,
+    "low_atom_count_diagnostic_chapter_count": 11,
     "atom_count_is_acceptance_target": false,
     "word_trigger_is_completion_gate": false,
     "support_state_effect": "none"

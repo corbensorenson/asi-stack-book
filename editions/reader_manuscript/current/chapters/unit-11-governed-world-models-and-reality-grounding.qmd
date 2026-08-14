@@ -374,6 +374,51 @@ which residual was assigned, which update was proposed, and which evidence
 qualified the replacement. That separation lets a system improve without
 granting every new model the power to certify its own progress.
 
+## When the Model Changes Its Own Evidence
+
+Reality does not always arrive untouched. A risk score can trigger treatment,
+which prevents the event the score predicted. A ranking can change the
+institution being ranked. A recommender can change both what people encounter
+and what they later prefer. A generated answer can enter the corpus used to
+train a successor model.
+
+In these cases, the model is not merely learning from the world. It is helping
+to produce the world from which its lineage learns next. That changes what an
+observation means.
+
+Suppose an alarm correctly identifies a dangerous patient and treatment works.
+The bad outcome never occurs. A naive retraining loop can interpret the absence
+of harm as evidence that the patient was never at risk. The system slowly
+trains away its own successful warning. The observed label answers, "What
+happened after we acted?" It does not answer, "What would have happened if we
+had not acted?"
+
+The same distinction applies to evidence provenance. Human-written data is not
+automatically independent if a model selected which people spoke, which items
+were visible, or which records entered the dataset. Synthetic data is not
+automatically descended from the active model if it came from an independently
+specified simulator. What matters is causal ancestry, not the identity of the
+last author.
+
+A reflexive deployment therefore keeps a lineage manifest and a time-unrolled
+causal record. It asks how the model may have changed features, outcomes,
+sampling, measurement, preferences, categories, institutions, and other model
+lineages. Each training channel states which policy regime it identifies. The
+system also protects a grounding reserve: archives, randomized sentinels,
+shadow policies, independent measurements, or other informative channels the
+active lineage cannot freely reshape.
+
+This reserve is not a ceremonial holdout. An archive can become stale. An
+independent institution can absorb the same incentives. A simulator can encode
+the model's assumptions. Grounding is always relative to a question, lineage,
+and horizon.
+
+The final consequence is about rollback. Restoring last month's checkpoint
+does not restore people, preferences, categories, budgets, or training data to
+last month's state. A serious rollback plan names the persistent world changes,
+descendant data, affected groups, and evidence needed to tell whether recovery
+actually occurred.
+
 ## Failure Cases
 
 The architecture earns its cost only if it catches failures that matter. At

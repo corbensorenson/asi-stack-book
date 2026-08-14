@@ -1,16 +1,16 @@
 {
   "schema_version": "asi_stack.youtube_ledger.v1",
-  "generated_at_utc": "2026-08-14T07:20:47Z",
+  "generated_at_utc": "2026-08-14T20:34:39Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
+  "book_structure_sha256": "ba7df5ee9a210252209d2e917699387041d89e365b022ba74e36a5cecf2f4095",
   "visual_manifest_path": "visual_edition/manifest.json",
-  "visual_manifest_sha256": "cc789a2a96c52ab776775515dcab5da768fb8e14df85af02ae3114a1fa01aa34",
+  "visual_manifest_sha256": "7a278c0cc254cbfff98f8632967979ae5fd43cbbaba0a5cd4fe9ce2953b976e9",
   "channel_config_path": "visual_edition/youtube_channel.json",
   "channel_config_sha256": "bd7fd9655396dc117d335b85386222faef75d48184528e3e1c3a90dd92967dc3",
   "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
   "playlist_id": null,
   "counts": {
-    "total_chapters": 87,
+    "total_chapters": 89,
     "packets_present": 84,
     "youtube_objects": 0,
     "published_current": 0,
@@ -856,7 +856,7 @@
       "position": 33,
       "chapter_id": "governed-world-models-and-reality-grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "chapter_sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
+      "chapter_sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe",
       "stable_internal_video_id": "asi-video-governed-world-models-and-reality-grounding",
       "packet_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/packet.json",
       "lifecycle_state": "stale",
@@ -880,9 +880,35 @@
     },
     {
       "position": 34,
+      "chapter_id": "reflexive-model-world-systems",
+      "chapter_path": "chapters/reflexive-model-world-systems.qmd",
+      "chapter_sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
+      "stable_internal_video_id": "asi-video-reflexive-model-world-systems",
+      "packet_path": null,
+      "lifecycle_state": "planned",
+      "staleness_state": "not_yet_derived",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "create_derivative_packet"
+    },
+    {
+      "position": 35,
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f",
+      "chapter_sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
       "stable_internal_video_id": "asi-video-cognitive-compilation-and-semantic-ir",
       "packet_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/packet.json",
       "lifecycle_state": "stale",
@@ -905,7 +931,33 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 35,
+      "position": 36,
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "chapter_path": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "chapter_sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797",
+      "stable_internal_video_id": "asi-video-cognitive-method-transfer-and-qualification",
+      "packet_path": null,
+      "lifecycle_state": "planned",
+      "staleness_state": "not_yet_derived",
+      "youtube": {
+        "channel_id": "UCX7Tu67cGmKfT6O38xxiQFA",
+        "video_id": null,
+        "watch_url": null,
+        "playlist_id": null,
+        "generation": 0,
+        "publication_state": "not_authorized",
+        "uploaded_output_sha256": null,
+        "bound_chapter_sha256": null,
+        "bound_source_commit": null,
+        "published_at_utc": null,
+        "platform_receipt_path": null,
+        "supersedes_video_id": null
+      },
+      "generations": [],
+      "required_action": "create_derivative_packet"
+    },
+    {
+      "position": 37,
       "chapter_id": "virtual-context-abi",
       "chapter_path": "chapters/virtual-context-abi.qmd",
       "chapter_sha256": "93428a43644ea0726b250fe6584f51f4a7d2a7d2e40d0ca9b1da907cc9064990",
@@ -931,7 +983,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 36,
+      "position": 38,
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
       "chapter_sha256": "71de05e06d969252ed16cecf7eee4022ba11f6bdedfea73d12ce8ae5956618ad",
@@ -957,7 +1009,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 37,
+      "position": 39,
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
       "chapter_sha256": "53fd932d37c5dcb69e4eda6b80a85dc4333c87b4e4d88bb3f2c4c0b12fe21d48",
@@ -983,7 +1035,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 38,
+      "position": 40,
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
       "chapter_sha256": "9a1e744ce115fb2b3df77ddc918d734ded6ecbf1830b66f93525a74dd926139d",
@@ -1009,7 +1061,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 39,
+      "position": 41,
       "chapter_id": "claim-ledgers-and-belief-revision",
       "chapter_path": "chapters/claim-ledgers-and-belief-revision.qmd",
       "chapter_sha256": "d8fcf0912c2b2f6611c70ec496f3c9ccfe0d688df4e2e940cf312e47a733b536",
@@ -1035,7 +1087,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 40,
+      "position": 42,
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
       "chapter_sha256": "25af101ae162480312d0e0fa9dd125ad3293b6b5c49aa1f5d5053bacc6709706",
@@ -1061,7 +1113,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 41,
+      "position": 43,
       "chapter_id": "labor-os-and-typed-jobs",
       "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
       "chapter_sha256": "874efccd1b8bea980314f301ce1c2e021177e85cfdc57ccc394e6e285811f72c",
@@ -1087,7 +1139,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 42,
+      "position": 44,
       "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "chapter_path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
       "chapter_sha256": "09bd8b0f380012553785c164d23e0adb9df9c7de69cbfad62c3692cf1b4d1112",
@@ -1113,7 +1165,7 @@
       "required_action": "create_derivative_packet"
     },
     {
-      "position": 43,
+      "position": 45,
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
       "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
       "chapter_sha256": "8e4bcc27090bb53481279fd571c69df09195704b5844acf0ec648b47320123dc",
@@ -1139,7 +1191,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 44,
+      "position": 46,
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "chapter_path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
       "chapter_sha256": "1355424fe29ea1a1b74ba4c826d555a99cde312176bdc8735e79f26f7a9ff329",
@@ -1165,7 +1217,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 45,
+      "position": 47,
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
       "chapter_path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
       "chapter_sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa",
@@ -1191,7 +1243,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 46,
+      "position": 48,
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
       "chapter_sha256": "71b335725c29bdb1d54cac7a2750795ac1ce518238c4bf200c67ef5696fb6509",
@@ -1217,7 +1269,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 47,
+      "position": 49,
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
       "chapter_sha256": "2e0e1c5781d7e5051f8ace36168f68ebc7628aa4c51d2c14c6a9e4ddc3653c3f",
@@ -1243,7 +1295,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 48,
+      "position": 50,
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
       "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
       "chapter_sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
@@ -1269,7 +1321,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 49,
+      "position": 51,
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
       "chapter_sha256": "aa5e7ddcf675c7ba9d8afd9a775d9e5e53a4ccdc4714563660d423d0065bd5d0",
@@ -1295,7 +1347,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 50,
+      "position": 52,
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
       "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
       "chapter_sha256": "379ccdf827377712ecc9fe8bb470cd5fcdd53d9415523f186a796ec9d4ad99f7",
@@ -1321,7 +1373,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 51,
+      "position": 53,
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
       "chapter_sha256": "f02e407b80ea78a3b0636bbd9d63acbf4d0beff66805dde3053428e6fb5dad8c",
@@ -1347,7 +1399,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 52,
+      "position": 54,
       "chapter_id": "routing-heads-and-specialist-cores",
       "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
       "chapter_sha256": "41f31774c24739887ea9e2cf53ee51d14bf386b133cf80f48c8c40a002691abb",
@@ -1373,7 +1425,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 53,
+      "position": 55,
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
       "chapter_sha256": "d25ec2f016f6a475d51003975a62178247a6bbb0ef172d73e843974a3cfb2bba",
@@ -1399,7 +1451,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 54,
+      "position": 56,
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
       "chapter_path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
       "chapter_sha256": "ffda01625266430342533eb67ccde822d71a3717f62a04a571bf0c86b13bbd46",
@@ -1425,7 +1477,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 55,
+      "position": 57,
       "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
       "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
       "chapter_sha256": "8367ff24ca2e0261e0944ea399af50215ff4c51a029cae895fe3e6ec9a7c89d0",
@@ -1451,7 +1503,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 56,
+      "position": 58,
       "chapter_id": "learning-compute-topology-and-adaptive-process-architecture",
       "chapter_path": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
       "chapter_sha256": "138d09fb34862d7d7cc735e6a3ce40aaa158a6dccff9b6dd48e87aac973bbf0b",
@@ -1477,7 +1529,7 @@
       "required_action": "create_derivative_packet"
     },
     {
-      "position": 57,
+      "position": 59,
       "chapter_id": "learning-theory-generalization-and-scaling-science",
       "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
       "chapter_sha256": "f2056a2a1c8ba5df23af84b337a04673a0a045774a9bf5d7b004e483accb08d5",
@@ -1503,7 +1555,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 58,
+      "position": 60,
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
       "chapter_sha256": "252314141515a2ed7a9009644e1ae817eda4d62e36227023d9d236cc8ca0ed49",
@@ -1529,7 +1581,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 59,
+      "position": 61,
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
       "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
       "chapter_sha256": "81bc86e40145b73a6693d3efc3c85028cbc5c48711e9f756acc2b9d5828d04b0",
@@ -1555,7 +1607,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 60,
+      "position": 62,
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
       "chapter_sha256": "5e091bee1a66527204272f4ca71ce03b9badb57be5d5e65622f7c4383f032a1d",
@@ -1581,7 +1633,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 61,
+      "position": 63,
       "chapter_id": "fast-generation-architectures",
       "chapter_path": "chapters/fast-generation-architectures.qmd",
       "chapter_sha256": "4f55e375f67ebf3b9d434ecc23918f3c5339dda45090114cc5cb7e2a0940c4ad",
@@ -1607,7 +1659,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 62,
+      "position": 64,
       "chapter_id": "governed-deliberation-and-test-time-scaling",
       "chapter_path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
       "chapter_sha256": "181763de70b859c59c0df3b0e5735fd9c793f3c980393389f23bfa3219c2df3e",
@@ -1633,7 +1685,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 63,
+      "position": 65,
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
       "chapter_sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3",
@@ -1659,7 +1711,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 64,
+      "position": 66,
       "chapter_id": "resource-economics-and-token-budgets",
       "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
       "chapter_sha256": "6ff1fc0b391e0174e57748c5f03037fca11e1a2c9d14a7c7cb00848ac74251f5",
@@ -1685,7 +1737,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 65,
+      "position": 67,
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
       "chapter_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
       "chapter_sha256": "6c71909679f4bd354fb27a4a5c7cfe0898586a04339c02829b4b3a0215042183",
@@ -1711,7 +1763,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 66,
+      "position": 68,
       "chapter_id": "mathematical-and-search-substrates",
       "chapter_path": "chapters/mathematical-and-search-substrates.qmd",
       "chapter_sha256": "7d7e581f698309eb761016082d09ccef2a69d1e10a88726a9ec142f0aff9886f",
@@ -1737,7 +1789,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 67,
+      "position": 69,
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
       "chapter_sha256": "606b56f2320d3eb600f82bd899862bda739148440eadaca01d833d064a6e9f64",
@@ -1763,7 +1815,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 68,
+      "position": 70,
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
       "chapter_sha256": "a1c1c145eff27d82f32b696933ffdc17b3c6565fbe068c0e6f4e78707d542d54",
@@ -1789,7 +1841,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 69,
+      "position": 71,
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
       "chapter_sha256": "b9a4deafe7c0042afa5ea1c9b19493b617beb1519ee78aa3e04eea374e05b16d",
@@ -1815,7 +1867,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 70,
+      "position": 72,
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
       "chapter_sha256": "fe3fc3f87a10d6ced6b3a87bdb787bec729c2600f7863bc520aab9ae490787bc",
@@ -1841,7 +1893,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 71,
+      "position": 73,
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
       "chapter_sha256": "a0425c58f07fe8033a94012995c8358d7d5ec7dcc8cdc59d65a08810dd77851a",
@@ -1867,7 +1919,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 72,
+      "position": 74,
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
       "chapter_sha256": "7b17b3d83b4317fecc7e4fed6503d2374f1394c9483e98b87b2e38000e7ffccc",
@@ -1893,7 +1945,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 73,
+      "position": 75,
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "chapter_path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
       "chapter_sha256": "0997c12f83c6da4d661542ccf9c39da56e963f90c2fd63d2679b2b064d4979e1",
@@ -1919,7 +1971,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 74,
+      "position": 76,
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
       "chapter_sha256": "9eb8f04a3bcede75f2158152ba9058861658a28a15c74d67d80393af1ca19bca",
@@ -1945,7 +1997,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 75,
+      "position": 77,
       "chapter_id": "safety-cases-and-structured-assurance",
       "chapter_path": "chapters/safety-cases-and-structured-assurance.qmd",
       "chapter_sha256": "ca80519a5d7aa8ec9eb269ddd4fab233cea73a1122de86292805a4403b430ef4",
@@ -1971,7 +2023,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 76,
+      "position": 78,
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
       "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
       "chapter_sha256": "5c9f9fdb9a4cfa2ad59fe0418b22aa6ec33628e4837585a9649acc575aaf6d80",
@@ -1997,7 +2049,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 77,
+      "position": 79,
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
       "chapter_sha256": "3cb68633ddf32ea5693bce7db585bfe887755b428d9813593b7c0ade8e9b90df",
@@ -2023,7 +2075,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 78,
+      "position": 80,
       "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
       "chapter_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
       "chapter_sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085",
@@ -2049,7 +2101,7 @@
       "required_action": "create_derivative_packet"
     },
     {
-      "position": 79,
+      "position": 81,
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
       "chapter_sha256": "e64b9b32c83dbc9131d5cfbf1a4db429f7605cd5b6d2cb759feeccbe5584f5a6",
@@ -2075,7 +2127,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 80,
+      "position": 82,
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
       "chapter_sha256": "040469c8bcf6dd17c7829db601ba2058bf1163e4667a9bc6d737194f2cfa69fa",
@@ -2101,7 +2153,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 81,
+      "position": 83,
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
       "chapter_sha256": "10a415cf64b0cdcfc3c5fcf763aa0066fc4b1d59f899fb141b2d80778942b896",
@@ -2127,7 +2179,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 82,
+      "position": 84,
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
       "chapter_sha256": "c2dd1dd179a2d341995b3b901800ca102c54f41d20f3db1bd236b24030aeeb63",
@@ -2153,7 +2205,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 83,
+      "position": 85,
       "chapter_id": "integrated-reference-architecture",
       "chapter_path": "chapters/integrated-reference-architecture.qmd",
       "chapter_sha256": "20ee2862ac6dba8df3f889e624cd70a13de13a89e6fdb1e82073390d4a86d78f",
@@ -2179,7 +2231,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 84,
+      "position": 86,
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
       "chapter_sha256": "7c97677d5ec36ae1d59de025e1e051980f27bf85d0db7f9a4c63705a701ffff6",
@@ -2205,7 +2257,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 85,
+      "position": 87,
       "chapter_id": "prototype-roadmap",
       "chapter_path": "chapters/prototype-roadmap.qmd",
       "chapter_sha256": "a135fae506b2519a1b53c0be8856f943e7e8a4fc9b83d043d11c5d37e39bdb11",
@@ -2231,7 +2283,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 86,
+      "position": 88,
       "chapter_id": "living-book-methodology",
       "chapter_path": "chapters/living-book-methodology.qmd",
       "chapter_sha256": "fa3caa8bf28aeefcfc890a120ce29f3fde475d005d9106052af8fab738368265",
@@ -2257,7 +2309,7 @@
       "required_action": "regenerate_stale_derivative"
     },
     {
-      "position": 87,
+      "position": 89,
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",
       "chapter_sha256": "88b33fe78d25a95f4977971b3f514b7d027b428b532c384ed9c6513ba5188fbb",

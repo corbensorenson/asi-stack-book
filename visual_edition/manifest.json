@@ -1,10 +1,10 @@
 {
   "schema_version": "asi_stack.visual_edition_manifest.v1",
   "edition_id": "asi-stack-p7.3-visual-edition",
-  "generated_at_utc": "2026-08-14T07:20:47Z",
+  "generated_at_utc": "2026-08-14T20:34:39Z",
   "book_structure_path": "book_structure.json",
-  "source_commit_at_generation": "88062bb6fdd87f5b7fd9466bf1b0bd566ab984d3",
-  "canonical_chapter_count": 87,
+  "source_commit_at_generation": "59ee8c12ccdf91171f28e8682e05a235440262bb",
+  "canonical_chapter_count": 89,
   "pilot_chapter_ids": [
     "asi-is-a-stack-not-a-model",
     "capability-replacement-and-rollback",
@@ -38,7 +38,7 @@
     "next_upload_position": 1
   },
   "counts": {
-    "planned": 3,
+    "planned": 5,
     "storyboarded": 0,
     "scripted": 0,
     "rendered": 0,
@@ -443,7 +443,7 @@
       "chapter_id": "governed-world-models-and-reality-grounding",
       "title": "Governed World Models and Reality Grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "chapter_sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
+      "chapter_sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
       "chapter_index": 4,
@@ -452,16 +452,40 @@
       "packet_path": "visual_edition/chapters/governed-world-models-and-reality-grounding/packet.json"
     },
     {
-      "chapter_id": "cognitive-compilation-and-semantic-ir",
-      "title": "Cognitive Compilation and Semantic IR",
-      "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f",
+      "chapter_id": "reflexive-model-world-systems",
+      "title": "Reflexive Model-World Systems",
+      "chapter_path": "chapters/reflexive-model-world-systems.qmd",
+      "chapter_sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
       "chapter_index": 5,
       "pilot": false,
+      "lifecycle_state": "planned",
+      "packet_path": null
+    },
+    {
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "title": "Cognitive Compilation and Semantic IR",
+      "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+      "chapter_sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_index": 2,
+      "chapter_index": 6,
+      "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/cognitive-compilation-and-semantic-ir/packet.json"
+    },
+    {
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "title": "Cognitive Method Transfer and Qualification",
+      "chapter_path": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "chapter_sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_index": 2,
+      "chapter_index": 7,
+      "pilot": false,
+      "lifecycle_state": "planned",
+      "packet_path": null
     },
     {
       "chapter_id": "virtual-context-abi",
@@ -470,7 +494,7 @@
       "chapter_sha256": "93428a43644ea0726b250fe6584f51f4a7d2a7d2e40d0ca9b1da907cc9064990",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 6,
+      "chapter_index": 8,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/virtual-context-abi/packet.json"
@@ -482,7 +506,7 @@
       "chapter_sha256": "71de05e06d969252ed16cecf7eee4022ba11f6bdedfea73d12ce8ae5956618ad",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 7,
+      "chapter_index": 9,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/durable-semantic-memory-and-knowledge-lattices/packet.json"
@@ -494,7 +518,7 @@
       "chapter_sha256": "53fd932d37c5dcb69e4eda6b80a85dc4333c87b4e4d88bb3f2c4c0b12fe21d48",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 8,
+      "chapter_index": 10,
       "pilot": true,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/context-transactions-snapshots-mounts-and-taint/packet.json"
@@ -506,7 +530,7 @@
       "chapter_sha256": "9a1e744ce115fb2b3df77ddc918d734ded6ecbf1830b66f93525a74dd926139d",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 9,
+      "chapter_index": 11,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/verification-bandwidth-and-context-adequacy/packet.json"
@@ -518,7 +542,7 @@
       "chapter_sha256": "d8fcf0912c2b2f6611c70ec496f3c9ccfe0d688df4e2e940cf312e47a733b536",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 10,
+      "chapter_index": 12,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/claim-ledgers-and-belief-revision/packet.json"
@@ -530,7 +554,7 @@
       "chapter_sha256": "25af101ae162480312d0e0fa9dd125ad3293b6b5c49aa1f5d5053bacc6709706",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 11,
+      "chapter_index": 13,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/spinoza-verification-and-proof-carrying-claims/packet.json"
@@ -542,7 +566,7 @@
       "chapter_sha256": "874efccd1b8bea980314f301ce1c2e021177e85cfdc57ccc394e6e285811f72c",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 12,
+      "chapter_index": 14,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/labor-os-and-typed-jobs/packet.json"
@@ -554,7 +578,7 @@
       "chapter_sha256": "09bd8b0f380012553785c164d23e0adb9df9c7de69cbfad62c3692cf1b4d1112",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 13,
+      "chapter_index": 15,
       "pilot": false,
       "lifecycle_state": "planned",
       "packet_path": null
@@ -566,7 +590,7 @@
       "chapter_sha256": "8e4bcc27090bb53481279fd571c69df09195704b5844acf0ec648b47320123dc",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 14,
+      "chapter_index": 16,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/human-ai-organizations-delegation-and-accountability/packet.json"
@@ -578,7 +602,7 @@
       "chapter_sha256": "1355424fe29ea1a1b74ba4c826d555a99cde312176bdc8735e79f26f7a9ff329",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 15,
+      "chapter_index": 17,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty/packet.json"
@@ -590,7 +614,7 @@
       "chapter_sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 16,
+      "chapter_index": 18,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/ai-deployment-transition-distribution-and-human-agency/packet.json"
@@ -602,7 +626,7 @@
       "chapter_sha256": "71b335725c29bdb1d54cac7a2750795ac1ce518238c4bf200c67ef5696fb6509",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 17,
+      "chapter_index": 19,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/artifact-graphs-audit-logs-and-replay/packet.json"
@@ -614,7 +638,7 @@
       "chapter_sha256": "2e0e1c5781d7e5051f8ace36168f68ebc7628aa4c51d2c14c6a9e4ddc3653c3f",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 18,
+      "chapter_index": 20,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/runtime-adapters-tool-permissions-and-human-approval/packet.json"
@@ -626,7 +650,7 @@
       "chapter_sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 19,
+      "chapter_index": 21,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/embodied-agency-real-time-control-and-physical-safety/packet.json"
@@ -638,7 +662,7 @@
       "chapter_sha256": "aa5e7ddcf675c7ba9d8afd9a775d9e5e53a4ccdc4714563660d423d0065bd5d0",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 20,
+      "chapter_index": 22,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/inter-stack-protocols-identity-and-economic-exchange/packet.json"
@@ -650,7 +674,7 @@
       "chapter_sha256": "379ccdf827377712ecc9fe8bb470cd5fcdd53d9415523f186a796ec9d4ad99f7",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 21,
+      "chapter_index": 23,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk/packet.json"
@@ -662,7 +686,7 @@
       "chapter_sha256": "f02e407b80ea78a3b0636bbd9d63acbf4d0beff66805dde3053428e6fb5dad8c",
       "part_id": "planning-memory-reasoning-execution",
       "part_index": 2,
-      "chapter_index": 22,
+      "chapter_index": 24,
       "pilot": false,
       "lifecycle_state": "stale",
       "packet_path": "visual_edition/chapters/procedural-memory-and-cognitive-loop-closure/packet.json"

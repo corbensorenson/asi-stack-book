@@ -3409,7 +3409,47 @@
       "triage": "formal-invariant",
       "recommended_route": "lean-candidate",
       "rationale": "Use a finite acyclic descendant graph and require a total terminal disposition over the ancestor's reachable closure. Prove coverage for the modeled graph while retaining inventory completeness, external effects, and real erasure as trusted empirical obligations."
+    },
+    {
+      "tag": "lean:reflexive_system.augmented_state_required",
+      "chapter_id": "reflexive-model-world-systems",
+      "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+      "formal_target": "In a finite transition model, equal external world states paired with different deployed model states can produce different successor distributions, so external state alone cannot recover the encoded next-state route.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Construct a finite pair with equal external-state projections and distinct deployed-model states whose admitted transitions reach different successors. The theorem would establish non-identifiability only for the encoded projection, not that a real causal graph, state representation, or response channel is complete."
+    },
+    {
+      "tag": "lean:reflexive_system.rollback_no_restoration",
+      "chapter_id": "reflexive-model-world-systems",
+      "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+      "formal_target": "Restoring a prior model identity does not imply restoration of a persistent institutional state; accepted rollback requires explicit world, evidence, descendant, and residual fields and assigns no support or legitimacy.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Model software identity and persistent world state separately, exhibit a trace where model restoration leaves institutional state changed, and require a total rollback disposition over evidence descendants and residual effects. Authored fields cannot establish real restoration, legitimacy, or safety."
+    },
+    {
+      "tag": "lean:cmtq.axes.non_substitution",
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "module": "AsiStackProofs.CognitiveMethodQualification",
+      "formal_target": "Finite qualification, assurance, and authority coordinates remain independent: no projection over either pair exactly recovers the third, and an accepted protocol route requires all three without assigning truth, outcome benefit, legitimacy, support, or external effect.",
+      "target_status": "planned",
+      "triage": "formal-invariant",
+      "recommended_route": "lean-candidate",
+      "rationale": "Define three finite coordinates, construct equal-pair counterexamples with different third coordinates, and gate protocol admission on all three. The result would prove non-substitution only for the modeled records, not method efficacy, faithful execution, legitimate authority, or correct outcomes."
+    },
+    {
+      "tag": "lean:cmtq.promotion.no_self_authority",
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "module": "AsiStackProofs.CognitiveMethodQualification",
+      "formal_target": "A candidate protocol can emit a revision proposal and evidence but cannot reach promotion or permission expansion when the candidate is the sole qualifier, assurer, or authorizer.",
+      "target_status": "planned",
+      "triage": "process-contract",
+      "recommended_route": "policy-model-first",
+      "rationale": "Encode distinct candidate, qualifier, assurer, and authorizer identities and reject self-controlled promotion or permission expansion while preserving proposal and evidence submission. The finite model cannot establish real independence, collusion resistance, reviewer competence, legitimacy, or security."
     }
   ],
-  "record_count": 340
+  "record_count": 344
 }

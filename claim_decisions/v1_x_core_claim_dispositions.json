@@ -1,7 +1,7 @@
 {
   "disposition_set_id": "v1_x.per_chapter_core_claim_dispositions",
   "date": "2026-07-24",
-  "scope_boundary": "Standing per-chapter disposition record for the 87 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
+  "scope_boundary": "Standing per-chapter disposition record for the 89 active manifest chapter core claims. It consolidates accepted no-change transitions, accepted no-promotion decisions, Appendix C open gaps, and per-chapter evidence-plan promotion paths. It creates no support-state movement.",
   "review_status": "active_validator_checked_record",
   "generated_from": [
     "book_structure.json",
@@ -12,11 +12,11 @@
   ],
   "support_state_effect": "none",
   "summary": {
-    "manifest_chapter_core_claims": 87,
+    "manifest_chapter_core_claims": 89,
     "accepted_core_transition_dispositions": 22,
-    "accepted_no_promotion_dispositions": 65,
+    "accepted_no_promotion_dispositions": 67,
     "promoted_core_claims": 0,
-    "chapter_core_claims_remaining_at_argument": 87
+    "chapter_core_claims_remaining_at_argument": 89
   },
   "dispositions": [
     {
@@ -1507,6 +1507,44 @@
       "relevant_non_core_transition_refs": []
     },
     {
+      "claim_id": "reflexive-model-world-systems.core",
+      "chapter_id": "reflexive-model-world-systems",
+      "chapter_title": "Reflexive Model-World Systems",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/reflexive-model-world-systems.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "exact reproduction of the supplied campaigns with pinned dependencies and retained discrepancy reporting",
+        "finite mechanization of augmented-state necessity and rollback non-restoration plus malformed ancestry and estimand controls",
+        "prospective lineage-aware causal-governance campaign, independent evaluation, reproduction, transfer, and an accepted scope-bounded evidence transition"
+      ],
+      "blockers": [
+        "no locally reproduced RMWS campaign or independently checked theorem",
+        "no real-world causal ancestry, grounding, stability, legitimacy, or rollback evidence",
+        "author-lineage framework and source-reported toy results cannot promote support"
+      ],
+      "promotion_burden": "The complete Corben-authored package supplies a causal architecture, six scoped propositions, code, data, figures, and three source-reported toy campaigns, but the campaigns were not rerun locally and no independent formalization, causal-identification result, real deployment, grounding-reserve validation, legitimacy assessment, or persistence-aware rollback result has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not establish causal identification, beneficial steering, legitimate intervention, global stability, or safe rollback",
+        "does not establish readiness, deployment, transfer, SOTA, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 2 assigned sources; 2 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Pinned reproduction of the supplied three toy campaigns plus a prospective lineage-aware causal-governance benchmark",
+      "formal_or_prototype_work": "Mechanize augmented-state necessity and rollback non-restoration; implement lineage, target-regime, intervention, ancestry, grounding-reserve, and persistence residuals with malformed-record controls.",
+      "human_reader_focus": "Follow one intervention that changes the label used to train a successor, keeping baseline and on-policy questions visibly distinct.",
+      "what_would_move_this": "Exact source-package reproduction succeeds or discrepancies are retained; a prospective multi-channel campaign identifies bounded model-descended evidence better than static-shift and human-versus-synthetic baselines without laundering causal, legitimacy, safety, or deployment claims.",
+      "relevant_non_core_transition_refs": []
+    },
+    {
       "claim_id": "cognitive-compilation-and-semantic-ir.core",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_title": "Cognitive Compilation and Semantic IR",
@@ -1550,6 +1588,44 @@
         "evidence_transitions/post_v2_3/qcsa_plural_facets_exact_fixture_value_promote.json",
         "evidence_transitions/post_v2_3/qcsa_semantic_round_trip_exact_preservation_narrow.json"
       ]
+    },
+    {
+      "claim_id": "cognitive-method-transfer-and-qualification.core",
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "chapter_title": "Cognitive Method Transfer and Qualification",
+      "part_id": "planning-memory-reasoning-execution",
+      "part_title": "Part II - Planning, Memory, Reasoning, and Execution",
+      "chapter_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "current_support_state": "argument",
+      "claim_label": "Design rationale",
+      "core_claim": "Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.",
+      "disposition": "retained_at_argument_via_accepted_no_promotion_decision",
+      "disposition_record_ref": "claim_decisions/v1_0_core_claim_no_promotion.json",
+      "coverage_type": "accepted_no_promotion_decision",
+      "support_state_effect": "argument_only",
+      "required_evidence": [
+        "finite mechanization of qualification, assurance, and authority non-substitution plus no-self-promotion and permission-expansion rejection",
+        "matched-budget frozen-model comparison of prose possession, structured interpretation, compiled protocol control, and independent verification",
+        "multi-method routing, interaction, security, reproduction, transfer, cost, harm, and authority accounting plus an accepted scope-bounded transition"
+      ],
+      "blockers": [
+        "schema and package conformance do not establish method fidelity or benefit",
+        "no locally measured routing, interaction, security, or transfer result",
+        "author-lineage framework and external positioning cannot promote support"
+      ],
+      "promotion_burden": "The complete Corben-authored package supplies CTR and QCP schemas, a conforming example, a transport framework, protocol lifecycle, security model, and experimental program, but no CMTQ runtime, procedure-realization benchmark, routing or interaction study, secure protocol campaign, independently checked proof, reproduction, or beneficial transfer result has been accepted.",
+      "limitations": [],
+      "non_claims": [
+        "does not establish that civilizational methods transport, that compiled protocols improve reasoning, or that qualification grants authority",
+        "does not establish safety, readiness, deployment, transfer, SOTA, AGI, or ASI"
+      ],
+      "current_evidence_summary": "Source notes available for all 2 assigned sources; 2 exact claim-level source-note mappings recorded; support remains at the recorded state until an accepted evidence transition, proof, test, or source-derived promotion justifies movement.",
+      "open_gap": "Review the mapped source-note support against source passages, evidence transitions, and tests before raising support state.",
+      "primary_evidence_lane": "Frozen-model matched-budget procedure-realization, routing, interaction, and security campaign",
+      "formal_or_prototype_work": "Mechanize qualification/assurance/authority non-substitution and no self-promotion; import the supplied CTR/QCP schemas with missing-applicability, fabricated-evidence, stale-qualification, verifier-dependence, poisoned-package, and permission-expansion controls.",
+      "human_reader_focus": "Show a useful method moving from source prose to a target-specific protocol whose missing diagnostic causes honest rejection.",
+      "what_would_move_this": "A preregistered multi-method, multi-model campaign separates possession, realization, transport, routing, qualification, assurance, cost, harm, and authority; beneficial protocols transfer and reproduce without self-ratification, while null and negative results remain retrievable.",
+      "relevant_non_core_transition_refs": []
     },
     {
       "claim_id": "virtual-context-abi.core",

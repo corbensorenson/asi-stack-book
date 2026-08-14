@@ -981,11 +981,11 @@ safe control, real-world grounding, and a favorable governed frontier open.
 
 ## Handoff
 
-Governed World Models leaves the planner with a qualified branch packet:
-predicted state, horizon, uncertainty, checkpoint, disagreement, reality
-residual, and an authority ceiling. That packet is still not executable work.
-**Cognitive Compilation and Semantic IR** receives admitted obligations and
-model-relative assumptions, lowers them into typed artifacts, and preserves
-which inputs were observations, beliefs, or predictions. Compilation may encode
-an imagined consequence, but it may not turn that consequence into evidence or
-permission while doing so.
+Governed World Models leaves a qualified branch packet with predicted state,
+horizon, uncertainty, checkpoint, disagreement, reality residual, and an
+authority ceiling. Before downstream work treats later observation as an
+independent correction, **Reflexive Model-World Systems** asks whether prior
+deployment changed that observation, its measurement process, or the successor
+lineage that consumes it. It adds causal ancestry, target-regime, grounding,
+and persistence-aware rollback obligations without converting a prediction or
+observed on-policy outcome into independent evidence.

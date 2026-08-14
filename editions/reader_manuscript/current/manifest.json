@@ -4,17 +4,17 @@
   "state": "complete_manuscript_public_html_deployed",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
-  "outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
+  "book_structure_sha256": "ba7df5ee9a210252209d2e917699387041d89e365b022ba74e36a5cecf2f4095",
+  "outline_sha256": "94884617689063c4f8fe0a7ff008517eaab9ff1b8dd7d4f59d395a95b37f2d7e",
   "conclusion_claim_crosswalk": "conclusion_claim_crosswalk.json",
-  "conclusion_claim_crosswalk_sha256": "ce6b1fbefa8bebde55caf06e09c6517f4ef491fdbbde5d13cf4be4babdf3145a",
+  "conclusion_claim_crosswalk_sha256": "3e9c66c066dfaa3edd2b44ad081aca745e781ee767be2682944c74ae1e19e67d",
   "utility_route": "quickstart.qmd",
   "utility_route_sha256": "8f9f008393dc3f86d5290057af0dc0feafa26c7c394166e8e003810bc451d8b2",
   "unit_count": 26,
-  "owner_route_count": 87,
+  "owner_route_count": 89,
   "started_unit_count": 26,
   "target_length_unit_count": 26,
-  "visible_word_count": 134976,
+  "visible_word_count": 136239,
   "units": [
     {
       "unit_id": "unit-01",
@@ -261,9 +261,10 @@
       "order": 11,
       "title": "Governed World Models and Reality Grounding",
       "owner_ids": [
-        "governed-world-models-and-reality-grounding"
+        "governed-world-models-and-reality-grounding",
+        "reflexive-model-world-systems"
       ],
-      "narrative_job": "Keep simulations, predictions, interventions, observations, and reconciled beliefs distinct while showing how their mismatch drives useful learning and control.",
+      "narrative_job": "Keep simulations, predictions, interventions, observations, and reconciled beliefs distinct while showing how their mismatch drives useful learning and control, including the reflexive case where deployment changes the world, institution, or evidence used by a successor model.",
       "central_question": "How can a system reason over possible worlds without confusing a successful simulation or plausible story with actual state?",
       "strongest_objection": "World-model governance may add records without improving prediction, causal identification, calibration, or action.",
       "conclusion_change": "Strong predictive and causal baselines with simpler branch discipline and equal intervention value would justify collapsing the extra machinery.",
@@ -272,8 +273,8 @@
       "target_max_words": 6000,
       "source_file": "chapters/unit-11-governed-world-models-and-reality-grounding.qmd",
       "state": "target_length_reached_ready_for_author_review",
-      "visible_word_count": 4824,
-      "source_sha256": "372198ddf4f2a7f9c61865d51a143776df96f17d0da9cc1b914abc20da576ad3",
+      "visible_word_count": 5189,
+      "source_sha256": "46ce979c814f3ff5322d9f477491e34ac5d5f88b05feb2cc6bcf665ff24a167b",
       "owner_support_states": [
         "argument"
       ]
@@ -306,10 +307,11 @@
       "title": "Cognitive Compilation and Semantic IR",
       "owner_ids": [
         "cognitive-compilation-and-semantic-ir",
+        "cognitive-method-transfer-and-qualification",
         "relational-dimension-compilation-and-polyadic-cognition",
         "mathematical-and-search-substrates"
       ],
-      "narrative_job": "Explain how intent, relations, constraints, and knowledge can be lowered into efficient executable forms while semantic loss, alternatives, and rescue paths remain visible.",
+      "narrative_job": "Explain how civilizational methods, intent, relations, constraints, and knowledge can be admitted and lowered into executable forms while mechanism transport, qualification, semantic loss, alternatives, and rescue paths remain visible.",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "strongest_objection": "Semantic IRs may become brittle private languages that discard nuance while presenting an illusion of interoperability.",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
@@ -318,8 +320,8 @@
       "target_max_words": 7000,
       "source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
       "state": "target_length_reached_ready_for_author_review",
-      "visible_word_count": 5094,
-      "source_sha256": "2db62fdceb4f56789e8b1352d4c47bbb41d5162248171394d95cfe61c14b055a",
+      "visible_word_count": 5481,
+      "source_sha256": "08d523b4002f5f218977d988ad8fb3b75edcef42c4a29955b779e3ea00400f9b",
       "owner_support_states": [
         "argument"
       ]
@@ -442,8 +444,8 @@
       "target_max_words": 7000,
       "source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
       "state": "target_length_reached_ready_for_author_review",
-      "visible_word_count": 5181,
-      "source_sha256": "4797c40a5032fb13da789cc605f5062c71ccf487e22c17e5f782965f0e3e5665",
+      "visible_word_count": 5380,
+      "source_sha256": "50eb5208607b6d86e932d2c065b38c01504b1c2da52ac1f0659c812760b8934d",
       "owner_support_states": [
         "argument"
       ]
@@ -516,8 +518,8 @@
       "target_max_words": 7500,
       "source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
       "state": "target_length_reached_ready_for_author_review",
-      "visible_word_count": 6608,
-      "source_sha256": "a4e37111c65e654c2283c9823f40d11ec6d3c89a763b6388a3fe264638efee46",
+      "visible_word_count": 6774,
+      "source_sha256": "593c2671aeb1916c88618b331c397d91ae0d08a2d7b5a92db9d66d6747343bda",
       "owner_support_states": [
         "argument"
       ]
@@ -616,8 +618,8 @@
       "target_max_words": 7500,
       "source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
       "state": "target_length_reached_ready_for_author_review",
-      "visible_word_count": 5661,
-      "source_sha256": "069811da0c607c719c168b8cf75f4fda890535667965d7ea061cc72542905819",
+      "visible_word_count": 5807,
+      "source_sha256": "18d01f283fa96de3f49738caf45678afa4ccfe7c66e6ca78786f093c9238b99e",
       "owner_support_states": [
         "argument"
       ]

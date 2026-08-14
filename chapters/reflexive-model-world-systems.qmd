@@ -1,0 +1,291 @@
+---
+title: "Reflexive Model-World Systems"
+chapter_id: "reflexive-model-world-systems"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "integrated_argument_chapter"
+last_updated: "2026-08-14"
+primary_sources:
+  - "reflexive_model_world_systems"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "The supplied toy campaigns were inspected but not rerun locally because scikit-learn was unavailable."
+  - "No formal proposition has been independently mechanized or reviewed in this repository."
+  - "No real deployment establishes causal descendancy, grounding adequacy, stability, legitimacy, or rollback effectiveness."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `reflexive-model-world-systems` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Claim label | Design rationale |
+| Support state | argument |
+| Primary source | `reflexive_model_world_systems` |
+| Source review | Exact manuscript, code, data, summaries, figures, run log, and checksums reviewed |
+| Source loading state | Exact author manuscript and bounded source note reviewed; no support promotion |
+| Local reproduction | Not run: the supplied simulation requires unavailable `scikit-learn` |
+
+::: {.callout-important title="Evidence boundary"}
+The source package reports three deterministic toy campaigns and supplies their code and result files. Those results are useful mechanistic examples, but they were not reproduced during this intake and do not estimate effects in a deployed social, medical, institutional, or frontier-model system. This chapter therefore remains at `argument` support.
+:::
+
+::: {.asi-human-only}
+## Human Reading Path
+
+**Concrete lens.** A hospital alarm prevents the event it predicted, and the next training run mistakes the prevention for a false alarm.
+
+Prediction changes character profoundly when people or institutions react to it. A credit score can change access to credit, a recommendation can reshape taste, and a medical warning can cause treatment that changes the outcome later used as a label. Once those reactions feed a successor model, the system is learning from a world partly made by its own lineage.
+
+That loop does not make the evidence worthless. It changes what the evidence can answer. An outcome observed after intervention describes the deployed policy, not automatically the world without intervention. A human-written record may still descend from a model if the model selected who was seen, what was measured, or which work received attention. Provenance must therefore include causal ancestry and target regime, not only authorship or file history.
+
+Grounding reserves preserve comparison points that deployment cannot easily absorb: shadow policies, randomized sentinels, independent institutions, protected sensors, archives, or deliberately varied deployments. Each reserve can fail or become stale, so it carries uncertainty and a declared query rather than a blanket badge of independence.
+
+Rollback also reaches beyond software. Restoring yesterday's weights cannot restore a vanished comparison group, an altered institution, or years of model-shaped data. A governed lineage must track those persistent effects and admit when the original counterfactual can no longer be recovered.
+:::
+
+## Problem
+
+A world model is often pictured as an observer. The world produces observations, the observations update a model, and the model is evaluated against later observations. That picture becomes incomplete once model outputs alter the process that generates those later observations.
+
+A risk score changes who receives treatment. A ranking changes institutional strategy. A recommender changes exposure and may change preference. A classifier changes which categories become socially or administratively salient. A generative system produces records that enter a successor's training corpus. A sufficiently influential model is therefore not outside the world it describes. It is one of the causes of the evidence from which its lineage later learns.
+
+The resulting failure is deeper than ordinary drift. If an alarm successfully prevents an adverse event, the observed label no longer answers the original question, "What would have happened without intervention?" If a recommender narrows what users encounter, later preference data may measure adaptation to the recommender rather than an independent preference distribution. If a model-selected corpus trains a successor, human authorship alone does not make the corpus independent of the model lineage.
+
+```{mermaid}
+flowchart LR
+  W["World and regime state"] --> O["Observed evidence"]
+  O --> M["Model lineage version"]
+  M --> D["Deployment or policy"]
+  D --> W2["Changed world and regime"]
+  W2 --> O2["Future evidence"]
+  O2 --> M2["Successor model"]
+  G["Protected grounding reserve"] -. "comparison" .-> O2
+  D -. "causal ancestry" .-> O2
+  W2 --> R["Persistent-state rollback dossier"]
+  R -. "unresolved residual" .-> M2
+  M2 -. "governed continuation" .-> M
+```
+
+**How to read the reflexive lineage loop:** the solid path shows deployment changing the world that generates successor evidence. The dotted ancestry edge prevents that evidence from appearing independent, the grounding reserve supplies a declared comparison, and the rollback dossier carries persistent effects forward when restoring model software cannot restore the world.
+
+## Why existing approaches are insufficient
+
+Static prediction tests assume that the target distribution is not materially changed by deployment. Generic distribution-shift monitoring notices that data changed but does not say *why*. Human-versus-synthetic labels describe content provenance, not whether a model caused the record, selected who was observed, changed the label, or altered the institution that defines the category.
+
+Software rollback is similarly incomplete. Restoring an earlier checkpoint cannot by itself restore lost comparison groups, preferences formed under years of exposure, administrative categories, investment decisions, or training data already copied into descendant systems. A reflexive system needs a causal and persistence-aware contract, not only version control.
+
+### External positioning: beyond a model-dependent distribution
+
+[Performative Prediction](https://proceedings.mlr.press/v119/perdomo20a.html) (`ext_performative_prediction_2020`) is the closest formal predecessor. Perdomo and colleagues make the future data distribution depend on the deployed model, distinguish performative stability from ordinary fixed-distribution risk, and analyze when retraining converges under stated conditions. RMWS does not replace that framework. It broadens the systems boundary: from one model-indexed distribution to governed lineages; from a generic induced shift to eight separately auditable response channels; and from equilibrium analysis to evidence ancestry, grounding reserves, cross-lineage effects, legitimacy, and persistent world-state rollback. Those additions remain design arguments until independently formalized and tested.
+
+## Core Claim
+
+[reflexive-model-world-systems.core, label: Design rationale, support: argument] A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.
+
+The unit of identity is a **governed model lineage**, not one parameter vector. A successor may inherit weights, data, objectives, operational role, distillation lineage, or a declared replacement relationship. Conversely, identical model copies in unrelated institutions need not belong to one lineage.
+
+For a chosen evidence channel and horizon, the lineage is reflexively closed when two admissible deployment sequences would produce different future evidence distributions and that evidence is later used to update a successor. This is an intervention claim. Correlation between deployment and later data is not enough.
+
+Reflexivity is indexed rather than absolute. A recommender may strongly affect which songs are heard but not the acoustic frequency of a recorded note. A medical policy may affect mortality while leaving genotype unchanged. The record must name the lineage, query, horizon, admissible deployment class, identification method, and uncertainty.
+
+## Mechanism
+
+The mechanism is a time-indexed causal loop over lineage state, deployment, world response, evidence generation, and successor update. It becomes auditable by separating response channels, preserving model descendancy, maintaining grounding reserves, and carrying unresolved identification debt forward rather than laundering it into ordinary training data.
+
+### The eight-channel audit
+
+"Distribution shift" is too coarse to assign a causal estimand or a control. The audit separates eight response channels:
+
+| Channel | What deployment may change | Typical governance question |
+|---|---|---|
+| State or feature | behavior, attributes, strategic presentation | Is adaptation part of the target or an evasion response? |
+| Outcome or label | treatment, prevention, self-fulfilling or self-negating outcomes | Does the observed label identify baseline or on-policy risk? |
+| Exposure or sampling | who or what becomes visible | Which groups and tails disappeared from observation? |
+| Measurement | instruments, reporting, label construction | Did the measurement rule change with the model? |
+| Preference or utility | tastes, goals, willingness, norms | Did the system learn a preference or help cause it? |
+| Ontology | categories, classes, problem definitions | Did deployment change what counts as the thing measured? |
+| Institution | incentives, rules, budgets, authority | Which changes persist after model withdrawal? |
+| Model ecology | other lineages and shared corpora | What evidence externalities cross organizational boundaries? |
+
+An empty channel means "evaluated and judged negligible," not "forgotten." Different channels can coexist, interact, and operate on different time scales.
+
+### Model-descended evidence
+
+The useful primary distinction is not human versus synthetic. It is **model-descended versus lineage-independent evidence**.
+
+A human-written document may be descended if a model selected the topic, ranked visibility, shaped incentives, or routed which examples entered the corpus. A synthetic observation may be comparatively independent if an externally specified simulator was not influenced by the active lineage. Descendancy is not a moral judgment and does not make data unusable. It determines which intervention regime the evidence can identify.
+
+Each evidence record or aggregate channel should preserve:
+
+```text
+origin_type
+source_process
+lineage_exposure
+model_versions
+intervention_channels
+target_query
+target_regime
+exposure_horizon
+estimated_effect_or_bound
+identification_method
+uncertainty
+```
+
+Ordinary lineage records how bytes moved and which transformation produced them. Causal ancestry additionally records why the evidence existed, who was observed, what was measured, and which deployed systems materially influenced those facts.
+
+### Grounding reserves and reflexive debt
+
+A **grounding reserve** is a protected portfolio of channels that are both informative for a declared query and approximately invariant to admissible interventions by the lineage. A constant sensor is independent but useless. A large, current corpus may be informative about the deployed world while revealing little about alternatives.
+
+Candidate anchors include pre-deployment archives, randomized sentinels, shadow policies, independent institutions, policy-insulated sensors, accumulated original data, independently specified simulators, delayed outcomes, and deliberately varied deployments. None is automatically valid. Archives become stale; sentinels are indirectly exposed; institutions synchronize; simulators share assumptions. Anchor status is versioned, challenged, and query-specific.
+
+**Reflexive debt** accumulates when deployment changes the world while the system fails to preserve enough variation and provenance to recover relevant counterfactuals. Missing exposure logs, action receipts, measurement changes, unaffected groups, randomized variation, and ontology revisions widen the set of baseline worlds compatible with the surviving record.
+
+At the limit, the lineage can become well calibrated on the world it helped create while losing the ability to estimate the pre-deployment world or meaningful alternatives. This is **epistemic capture**. Higher on-policy accuracy is then not evidence of better independent understanding.
+
+### Formal boundaries from the source
+
+The paper states six scoped propositions. Their value here is architectural, not evidentiary promotion.
+
+1. **Augmented-state necessity.** If two equal external world states paired with different model states have different next-state distributions, external state alone is not Markov-sufficient.
+2. **Local loop stability.** The coupled world-model fixed point is locally stable when the spectral radius of the linearized joint transition is below one. Stability is not desirability.
+3. **Counterfactual-label mismatch.** Naive retraining on post-intervention outcomes targets on-policy risk rather than the no-intervention risk unless the deployment effect is separately identified.
+4. **Common-target contraction.** In the paper's scalar update model, movement toward one shared target contracts variance along that dimension.
+5. **Single-history non-identifiability.** Without assumptions or intervention variation, one deterministic deployment history can be compatible with both causal and non-causal models.
+6. **Institutional hysteresis.** With persistent institutional state, model withdrawal does not imply restoration of the pre-deployment world.
+
+These are not universal theorems for neural or social systems. The local-stability result does not cover global nonlinear dynamics, strategic discontinuities, changing state spaces, or rare transitions.
+
+### What the supplied experiments show
+
+The paper reports three controlled demonstrations:
+
+- a norm-coevolution simulation in which a common score contracts appearance diversity, joint response also contracts preference diversity, and a plural local-model condition preserves multiple attractors under the chosen parameters;
+- a self-negating decision-support simulation in which naive retraining underestimates no-intervention risk while a correctly specified treatment-aware model remains near the simulated structural target; and
+- a recursive categorical simulation in which lineage-independent synthetic data remains stable while model-generated and model-selected human-origin data lose support under the chosen replacement and selection rules.
+
+The examples demonstrate that the proposed distinctions can produce observably different regimes. They do not establish that causal adjustment is easy, that plurality is always protective, that all model-generated data degrades, or that ancestry alone determines quality. Because the local rerun stopped before execution on a missing dependency, all numerical values remain source-reported.
+
+#### Concrete scene: the successful alarm erases its own label
+
+A hospital deploys a deterioration model that triggers earlier observation and treatment. For one patient, the model predicts a severe event, the care team intervenes, and the event does not occur. A naive retraining pipeline records the prediction beside the observed non-event and classifies the case as a false positive. The next model is then trained to suppress alarms in cases like the one where intervention succeeded.
+
+The reflexive record keeps two questions separate: what happened under the deployed intervention, and what would likely have happened under the declared no-intervention baseline. It binds the model version, alarm, treatment, observation process, outcome, target regime, and uncertainty into one lineage-relative record. The care team still owns clinical authority; the causal model owns an estimate rather than a fact; the evidence ledger retains the non-identification residual. The architecture prevents an on-policy outcome from silently masquerading as a baseline label, but it does not establish that the alarm was causally effective or clinically safe.
+
+#### Worked trace: from baseline risk to model-descended evidence
+
+The case enters as `baseline_risk_unobserved`. Model version `m7` emits `high_risk_alarm`, and the authority gate records `early_treatment_authorized`. The subsequent non-event becomes `on_policy_outcome_observed`, not `baseline_false_positive`. When successor `m8` requests the record, the ancestry check emits `model_descended_evidence` and requires either an identified treatment adjustment, an informative grounding-reserve comparison, or an explicit unresolved residual. A pipeline that strips the intervention edge is rejected because the same bytes would then answer a different causal question.
+
+The maximum inference is structural: deployment ancestry and target regime can remain explicit through successor learning. This trace does not identify the patient's untreated outcome, validate the causal graph, estimate treatment benefit, establish calibration, or justify deployment.
+
+## Evaluation contract
+
+A reflexive deployment needs at least four separate views:
+
+1. **Baseline descriptive fidelity:** what would occur under a declared reference policy?
+2. **On-policy fidelity:** what occurs under the deployed policy?
+3. **Causal steering utility:** what outcomes did deployment cause?
+4. **Legitimacy and distribution:** who bore adaptation costs, whose preferences changed, which alternatives disappeared, and who had standing to authorize or contest the intervention?
+
+A successful alarm can be inaccurate against the prevented outcome yet valuable. A self-fulfilling denial can be highly calibrated and harmful. A stable system can converge on a homogeneous or exploitative equilibrium. No single score recovers these distinctions.
+
+## Interfaces
+
+The canonical dossier contains a lineage manifest, time-unrolled causal graph, eight-channel signature, estimand registry, ancestry graph, grounding-reserve specification, identification plan, stability and stress tests, legitimacy assessment, and persistence-aware rollback plan.
+
+The runtime boundary accepts versioned deployment receipts, exposure and intervention records, observations, measurement and ontology revisions, cross-lineage ancestry, and authority decisions. It emits target-regime-specific evidence records, identification residuals, grounding-reserve status, stability warnings, legitimacy obligations, and rollback limits. A successor learner consumes those outputs only through the evidence and promotion gates; the lineage cannot use its own dossier to widen its authority.
+
+These interfaces also separate observation from interpretation. Sensors and institutions report events under declared measurement versions; causal analysis proposes ancestry and estimands; governance records standing, authorization, and contestability; learning consumes only evidence slices admitted for a named target. Cross-lineage exchange carries byte provenance and intervention ancestry so a recipient can reject an otherwise valid artifact whose causal regime is incompatible with its query.
+
+## Invariants
+
+The governing invariants are:
+
+- human origin does not establish independence;
+- synthetic origin does not establish descendancy;
+- on-policy success does not identify a counterfactual baseline;
+- descended evidence cannot by itself widen the lineage's authority;
+- one lineage cannot silently own actuation, evidence selection, metrics, and sole promotion;
+- uncertainty from non-identification remains visible;
+- model rollback cannot stand in for world-state restoration;
+- stability cannot stand in for welfare, rights, pluralism, or legitimacy.
+
+Together, these rules prevent the most convenient substitutions in a reflexive loop. They do not make the causal record complete. Their narrower purpose is to force every downstream consumer to see which world, policy, lineage, measurement process, and unresolved residual its evidence describes before treating that evidence as a basis for learning or action.
+
+## Failure modes
+
+The primary failures are counterfactual-label mismatch, model-mediated sampling collapse, preference or ontology capture, endogenous measurement, reflexive debt, stale anchors, cross-lineage contamination, synchronized evaluator failure, stable harmful equilibria, institutional hysteresis, and software-only rollback theater.
+
+The strongest objection is that RMWS may be performative prediction or cybernetics with more labels. The answer must be operational: the eight channels are useful only when they produce different estimands, experiments, and controls. If they do not, the framework should be consolidated rather than defended terminologically.
+
+A second failure is governance theater: a system can fill every ancestry field while the same organization controls deployment, measurement, causal interpretation, evaluation, and promotion. Another is reserve capture, where a nominally independent benchmark or institution gradually adapts to the lineage and stops providing counterfactual variation. These cases require adversarial audits of control relationships and measured independence, not additional metadata alone.
+
+## Minimum Viable Implementation
+
+Use one bounded decision-support simulation. Version the lineage, declare baseline and on-policy targets, record every policy and treatment exposure, label evidence ancestry, and preserve one randomized or shadow-policy anchor. Compare naive retraining with a causal-aware baseline under identical seeds and data. Emit the exact dependency lock, summaries, figures, and discrepancy report. Add a rollback dossier naming descendant-data treatment and persistent-state limits.
+
+The first acceptance criterion is not a favorable result. It is a reproducible result whose causal target and limitations remain intact.
+
+The implementation should also include rejecting fixtures. Remove the deployment edge, relabel an on-policy outcome as a baseline label, reuse evidence under an incompatible target regime, mark an exposed reserve as independent, and restore model identity while leaving persistent world state changed. Each mutation should fail without deleting the underlying observation or converting the failure into support for the framework.
+
+## Mature Research Target
+
+The mature system is a multi-lineage reflexive-governance plane. It estimates causal influence over evidence, preferences, institutions, and successor systems; maintains diversified grounding as public epistemic infrastructure; detects epistemic capture before on-policy success launders it; runs randomized probes and trajectory stress tests; constrains performative channels; and coordinates socio-technical rollback.
+
+Formal methods may prove finite custody, authority, and rollback obligations. They cannot prove that a social objective is legitimate, a causal graph is complete, a grounding reserve is adequate in the world, or a global trajectory is safe. Those remain empirical and institutional obligations.
+
+At scale, the plane would maintain intervention-aware lineage graphs across organizations without requiring one institution to reveal every protected record. Query-specific attestations could disclose that a datum crossed an affected channel, that a reserve met a declared independence test, or that rollback left unresolved descendants, while preserving lawful confidentiality. Shared protocols would let interacting lineages report evidence externalities and coordinate experiments before synchronized deployment destroys the variation needed to learn.
+
+The endpoint is not a perfectly detached observer. It is a system that knows when observation is entangled with action and prices that entanglement into evidence, authority, and recovery. Promotion would depend on prospective interventions, reserve health, cross-lineage challenge, delayed outcomes, and persistent-state reconciliation. A mature implementation would still abstain when the counterfactual is unidentified or the institution lacks legitimate authority to run the experiment.
+
+## Formalization hooks
+
+The following are planned proof targets, not implemented theorems. Their intended scope is finite record structure and information loss; neither target can establish causal-model adequacy, real-world restoration, legitimacy, safety, or chapter-core support.
+
+| Planned target | Finite model | Honest conclusion | Semantic limit |
+|---|---|---|---|
+| `lean:reflexive_system.augmented_state_required` | Equal external-state projections paired with distinct deployed-model states and successor routes | External state alone cannot recover the encoded next-state route | Does not establish that a real state representation, causal graph, or response-channel inventory is complete |
+| `lean:reflexive_system.rollback_no_restoration` | Separate model identity, persistent institutional state, descendant evidence, and residual disposition | Restoring model identity need not restore the encoded world state | Does not prove real rollback completeness, institutional restoration, legitimacy, or safety |
+
+## Codex test plan
+
+| Target | Current state | Honest next step |
+|---|---|---|
+| Augmented-state finite countermodel | planned | Mechanize two equal external states whose model states imply different successor routes. |
+| Rollback non-restoration | planned | Mechanize persistent institutional state and show model restoration does not recover the initial state. |
+| Supplied simulation reproduction | blocked | Pin `scikit-learn` and all dependencies, rerun every seed, and compare exact summaries. |
+| Evidence-ancestry mutations | planned | Reject missing lineage, target regime, exposure, identification, anchor, and rollback fields. |
+| Reflexive benchmark | planned | Add outcome, exposure, preference, measurement, institution, and cross-lineage interventions. |
+
+## Source crosswalk
+
+| Source | Use | Boundary |
+|---|---|---|
+| [Reflexive Model-World Systems](../papers/reflexive_model_world_systems.qmd) | Primary framework, formal propositions, audit, and supplied toy campaigns | Author preprint; results not locally reproduced; no real deployment or support promotion |
+| [Performative Prediction](https://proceedings.mlr.press/v119/perdomo20a.html) | Closest formal comparator for model-dependent distributions, performative stability, and retraining | Primary paper reviewed; proofs and experiments not locally reproduced; does not validate the broader RMWS synthesis |
+| [Bounded source note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/reflexive_model_world_systems.md) | Exact provenance, chapter routing, proof backlog, and non-claims | Mining record, not independent evidence |
+
+### Manifest source assignment reconciliation
+
+These rows keep Reflexive Model-World Systems's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `reflexive_model_world_systems` | Passage-reviewed comparator: [Reflexive Model-World Systems: When Representations Become Causes](../papers/reflexive_model_world_systems.html). Provides the lineage-relative reflexive-closure criterion, eight-channel causal signature, model-descended evidence, grounding reserve, reflexive debt, six scoped propositions, three source-reported toy campaigns, a ten-step audit, and trajectory-level alignment framing. | Formal claims retain their stated assumptions. The toy campaigns were not rerun during intake because scikit-learn was unavailable, do not estimate deployed effects, and do not establish causal identification, stability, legitimacy, alignment, safety, or independent reproduction. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_performative_prediction_2020` | Passage-reviewed comparator: Performative Prediction. Provides the closest formal predecessor for model-dependent future data distributions, performative stability, and retraining dynamics under stated conditions. | The source does not establish RMWS's lineage identity, eight-channel taxonomy, evidence descendancy, grounding reserves, institutional persistence, legitimacy layer, causal identification, or safety. No theorem or experiment was reproduced locally. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Summary
+
+When a deployed learner helps generate its own future evidence, observation is no longer an automatically independent reality check. The stack must model deployment, world and institutional state, evidence ancestry, successor updates, and interacting lineages as one causal process. It must preserve informative anchors, state which regime each dataset identifies, separate prediction from steering and legitimacy, and roll back persistent consequences rather than only code.
+
+The architecture earns value only when those distinctions alter decisions: which estimand is computed, which evidence is admitted, which experiment is required, which authority may act, and which residual survives rollback. The supplied paper and toy campaigns motivate that contract but do not validate it in deployment. The chapter remains an argument with planned finite proofs, an unreproduced local experiment package, and a clear empirical burden.
+
+## Handoff
+
+The reflexive audit determines which observations and model-world relations may enter downstream reasoning without ancestry laundering. [Cognitive Compilation and Semantic IR](cognitive-compilation-and-semantic-ir.qmd) then lowers accepted obligations into target artifacts while preserving that lineage, uncertainty, and authority boundary.
+
+Its compiler may carry a target-regime label, ancestry graph, or grounding residual forward, but it cannot erase those fields, reinterpret an on-policy observation as a baseline fact, or grant the resulting artifact permission to act.

@@ -18,29 +18,29 @@ This repository contains the canonical Quarto manuscript, its dynamic structure,
 
 Projection boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md).
 
-The canonical current book is the live **87-chapter** site. Use its `AI view` for the complete research scaffold or `Human view` for the cleaner prose projection. Human view is a reading aid, not a reviewed reader-release manuscript.
+The canonical current book is the live **89-chapter** site. Use its `AI view` for the complete research scaffold or `Human view` for the cleaner prose projection. Human view is a reading aid, not a reviewed reader-release manuscript.
 
 The mutable root site and `/latest/` are the canonical current publication
-surfaces and contain all 87 manifest chapters. Versioned tags and GitHub Release assets are immutable historical snapshots. `v2.3.0` remains the latest
+surfaces and contain all 89 manifest chapters. Versioned tags and GitHub Release assets are immutable historical snapshots. `v2.3.0` remains the latest
 completed immutable HTML release. The
 [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md)
 is the sole active roadmap, with machine authority in
 [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json).
-All 87 live chapter-core claims remain at `argument`.
+All 89 live chapter-core claims remain at `argument`.
 
 ## 60-Second Trust Surface
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **87 manifest chapters; 491 public-safe records; 87 chapter-core claims; 87/87 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **89 manifest chapters; 495 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 **What this is:** a public living-book research program and evidence system for governed advanced-AI systems, using ASI as the extreme stress case.
 
 **What this is not:** not a validated ASI implementation, not a deployed safety system, and not a benchmark-proven architecture.
 
-The inventory has 491 public-safe records; 87/87 chapters are externally positioned with 0 explicit external-baseline exceptions. External positioning is not exhaustive literature synthesis. All 87 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 87 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 65 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and no chapter-core promotion.
+The inventory has 495 public-safe records; 89/89 chapters are externally positioned with 0 explicit external-baseline exceptions. External positioning is not exhaustive literature synthesis. All 89 chapter core claims remain at `argument`; [the core-claim disposition ledger](docs/core_claim_disposition_ledger.md) records 89 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 67 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [the non-core evidence ledger](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and no chapter-core promotion.
 
-[Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which records external literature. The [Corben paper library](papers/index.qmd) publishes 50 exact, digest-bound original manuscripts as HTML reading pages and links each one to its current chapter assignments; publication exposes lineage but does not validate or promote the papers' claims. [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) reports current per-chapter coverage. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. No independent external review is claimed; see [the review ledger](docs/external_review_status.md).
+[Appendix C](appendices/C_claim_evidence_matrix.qmd) is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which records external literature. The [Corben paper library](papers/index.qmd) publishes 53 exact, digest-bound original manuscripts as HTML reading pages and links each one to its current chapter assignments; publication exposes lineage but does not validate or promote the papers' claims. [docs/chapter_external_grounding_status.md](docs/chapter_external_grounding_status.md) reports current per-chapter coverage. [Novelty positioning](docs/contribution_novelty_ledger.md) is not proof of novelty. No independent external review is claimed; see [the review ledger](docs/external_review_status.md).
 
 Contribution-level prior-art positioning is recorded in
 [docs/defended_contribution_prior_art_positioning.md](docs/defended_contribution_prior_art_positioning.md)
@@ -59,7 +59,7 @@ in [docs/chapter_consolidation_sequence.md](docs/chapter_consolidation_sequence.
 and [docs/chapter_consolidation_url_history_policy.md](docs/chapter_consolidation_url_history_policy.md);
 the full history is checked by
 [`scripts/validate_chapter_consolidation_sequence.py`](scripts/validate_chapter_consolidation_sequence.py).
-The current 87-owner publication-consolidation plan is the `P7.1-EM` section
+The current 89-owner publication-consolidation plan is the `P7.1-EM` section
 of the [active roadmap](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md),
 with its exact machine contract in
 [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json).

@@ -528,6 +528,27 @@ Synthetic data needs lineage to the models, prompts, tools, and source material
 that generated it. High volume does not create independent evidence. Thousands
 of variants from one mistaken premise remain one lineage with repeated error.
 
+## The Data May Descend From the Policy
+
+Continual learning becomes more dangerous when the current system helped
+generate the next training set. A successful intervention can erase the event
+it prevented. A recommender can alter exposure and preference. A classifier can
+change which cases are reported or how categories are defined. Training on
+those records without deployment ancestry teaches the successor an ambiguous
+mixture of world change and model influence.
+
+Every update therefore states the regime its evidence identifies. The data
+engine records model versions, exposure, actions, measurement changes,
+selection paths, and descendant summaries. It protects independent or
+deliberately varied evidence where possible. When the effect cannot be
+identified, the update carries an uncertainty range or residual rather than a
+fictional clean target.
+
+This is also a placement issue. Self-descended evidence may improve on-policy
+behavior while weakening the system's ability to reason about alternatives.
+The persistence adjudicator must count that lost counterfactual option as a
+cost, not mistake adaptation to the created world for general learning.
+
 ## Unlearning Is Not One Claim
 
 "The system forgot the data" can refer to several different outcomes:

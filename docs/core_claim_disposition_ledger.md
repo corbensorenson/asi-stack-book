@@ -9,11 +9,11 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 87 |
+| Manifest chapter core claims | 89 |
 | Accepted core-transition dispositions | 22 |
-| Accepted no-promotion dispositions | 65 |
+| Accepted no-promotion dispositions | 67 |
 | Promoted core claims | 0 |
-| Core claims remaining at `argument` | 87 |
+| Core claims remaining at `argument` | 89 |
 
 ## Dispositions
 
@@ -52,7 +52,9 @@ It consolidates the per-chapter core-claim disposition state from the manifest, 
 | `perception-sensor-fusion-and-observation-trust.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | On representative tasks and at least two sensor/model families, the governed route improves calibration and task-relative useful outcomes over strong single-channel, naive-fusion, and learned-fusion baselines under preregistered faults without worse unsafe action, latency, or sensing cost; joint-channel attacks, shared-cause controls, and independent reproduction preserve explicit residuals and bounded authority. |
 | `planning-as-a-control-layer.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/planning_control_no_change.json` | Public-safe DAG replay validates, invalid DAG fails, and route selection passes only when adequacy and cost constraints both hold without displaced verification or cleanup. |
 | `governed-world-models-and-reality-grounding.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | On partially observed natural tasks, governed world-model routes outperform strong reactive, model-free, and single-model baselines on useful outcomes and calibration under shift without worse unsafe action, latency, or governance cost, then reproduce and transfer. |
+| `reflexive-model-world-systems.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Exact source-package reproduction succeeds or discrepancies are retained; a prospective multi-channel campaign identifies bounded model-descended evidence better than static-shift and human-versus-synthetic baselines without laundering causal, legitimacy, safety, or deployment claims. |
 | `cognitive-compilation-and-semantic-ir.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | IR translation preserves required fields and rejects lossy lowering. |
+| `cognitive-method-transfer-and-qualification.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | A preregistered multi-method, multi-model campaign separates possession, realization, transport, routing, qualification, assurance, cost, harm, and authority; beneficial protocols transfer and reproduce without self-ratification, while null and negative results remain retrievable. |
 | `virtual-context-abi.core` | `argument` | `retained_at_argument_via_accepted_no_change_transition` | `evidence_transitions/v1_0_pilot/virtual_context_abi_no_change.json` | Admission fixture rejects stale, conflicting, mode-confused, stale-certificate, missing-certificate, or authority-escalating packets and records residual. |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Hybrid memory improves bounded update-heavy tasks while preserving provenance, contradiction calibration, rights closure, and recovery; no truth, complete-memory, or erasure claim. |
 | `context-transactions-snapshots-mounts-and-taint.core` | `argument` | `retained_at_argument_via_accepted_no_promotion_decision` | `claim_decisions/v1_0_core_claim_no_promotion.json` | Transaction replay proves conflict/deletion gates fire. |

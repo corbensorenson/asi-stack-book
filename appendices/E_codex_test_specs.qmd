@@ -213,12 +213,18 @@ No result is recorded here unless a test has actually been implemented and run.
 | `governed-world-models-and-reality-grounding` | Governed World Models and Reality Grounding | Reality-gap and horizon calibration benchmark | planned | not_run |
 | `governed-world-models-and-reality-grounding` | Governed World Models and Reality Grounding | Model-exploitation red-team suite | planned | not_run |
 | `governed-world-models-and-reality-grounding` | Governed World Models and Reality Grounding | Counterfactual intervention test | planned | not_run |
+| `reflexive-model-world-systems` | Reflexive Model-World Systems | Pinned RMWS toy-campaign reproduction | blocked | not_run_missing_scikit_learn |
+| `reflexive-model-world-systems` | Reflexive Model-World Systems | Evidence-ancestry and estimand mutation suite | planned | not_run |
+| `reflexive-model-world-systems` | Reflexive Model-World Systems | Reflexive benchmark | planned | not_run |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Requirement preservation test | implemented | passes via synthetic plan-execution contract harness |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Semantic lowering route proof | implemented | passes via Lean build; finite semantic-lowering route coverage only |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Incremental repair regression test | implemented | passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Target compilation audit | implemented | passes via `python3 scripts/validate_cognitive_compilation_traces.py`; synthetic trace records only |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Historical-project semantic contract preservation | implemented | passing via `python3 scripts/validate_semantic_contract_preservation.py`; accepts one blocked three-project fixture and rejects nine paraphrase, omission, insertion, authority, repair-scope, ambiguity, failure-retention, and digest-parity mutations; no parser, backend, execution authority, measured locality, or support promotion |
 | `cognitive-compilation-and-semantic-ir` | Cognitive Compilation and Semantic IR | Executed obligation-preserving compilation refinement | implemented | passes via `python3 scripts/validate_cognitive_compilation_refinement.py`: 2 accepted/4 rejected fixtures, an 8-event repair-and-revalidation witness, 33 Lean theorems, and 86/86 rejected mutations; support-state effect none |
+| `cognitive-method-transfer-and-qualification` | Cognitive Method Transfer and Qualification | CTR and QCP schema conformance | source_package_validated | passed_source_package_only |
+| `cognitive-method-transfer-and-qualification` | Cognitive Method Transfer and Qualification | Procedure-realization benchmark | planned | not_run |
+| `cognitive-method-transfer-and-qualification` | Cognitive Method Transfer and Qualification | Method routing, interaction, and security campaign | planned | not_run |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Context ABI fixture validation | implemented | passes via protocol fixture validation; shape only |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Address/version stability test | implemented | passes through finite Lean context-reference predicates |
 | `virtual-context-abi` | The Virtual Context ABI: Typed Pages, Cells, and Certificates | Admission vs adequacy test | implemented | passes via synthetic context admission/adequacy harness; no model verification-bandwidth claim |
@@ -720,19 +726,19 @@ This section is generated from `proofs/proof_triage.json`. It records coverage a
 
 | Metric | Count |
 |---|---:|
-| Proof targets covered by triage | 340 |
+| Proof targets covered by triage | 344 |
 
 ### Coverage by Status
 
 | Target status | Count |
 |---|---:|
 | implemented | 330 |
-| planned | 10 |
+| planned | 14 |
 
 ### Coverage by Route
 
 | Target status | Triage class | Recommended route | Count |
 |---|---|---|---:|
 | implemented | formal-invariant | lean-candidate | 330 |
-| planned | formal-invariant | lean-candidate | 9 |
-| planned | process-contract | policy-model-first | 1 |
+| planned | formal-invariant | lean-candidate | 12 |
+| planned | process-contract | policy-model-first | 2 |

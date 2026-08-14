@@ -39,7 +39,9 @@ This generated audit checks every active chapter against the architecture-refere
 | `perception-sensor-fusion-and-observation-trust` | pass | explicit heading | complete packet surface |
 | `planning-as-a-control-layer` | pass | explicit heading | complete packet surface |
 | `governed-world-models-and-reality-grounding` | pass | explicit heading | complete packet surface |
+| `reflexive-model-world-systems` | pass | bounded in insufficiency section | complete packet surface |
 | `cognitive-compilation-and-semantic-ir` | pass | explicit heading | complete packet surface |
+| `cognitive-method-transfer-and-qualification` | pass | bounded in insufficiency section | complete packet surface |
 | `virtual-context-abi` | pass | explicit heading | complete packet surface |
 | `durable-semantic-memory-and-knowledge-lattices` | pass | bounded in insufficiency section | complete packet surface |
 | `context-transactions-snapshots-mounts-and-taint` | pass | explicit heading | complete packet surface |
@@ -94,6 +96,6 @@ This generated audit checks every active chapter against the architecture-refere
 | `living-book-methodology` | pass | bounded in insufficiency section | complete packet surface |
 | `open-research-agenda-and-bibliography-plan` | pass | bounded in insufficiency section | complete packet surface |
 
-Summary: 87 of 87 active chapters pass; 0 remain open.
+Summary: 89 of 89 active chapters pass; 0 remain open.
 
 Non-claims: this is a structural and bounded semantic audit, not proof of prose quality, source interpretation, empirical validity, formal adequacy, deployment, safety, or independent review.

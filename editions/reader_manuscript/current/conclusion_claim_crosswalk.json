@@ -4,18 +4,18 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
-  "outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
+  "book_structure_sha256": "ba7df5ee9a210252209d2e917699387041d89e365b022ba74e36a5cecf2f4095",
+  "outline_sha256": "94884617689063c4f8fe0a7ff008517eaab9ff1b8dd7d4f59d395a95b37f2d7e",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
-  "owner_route_count": 87,
+  "owner_route_count": 89,
   "edge_counts": {
-    "claim": 87,
-    "source": 1346,
-    "proof": 340,
-    "test": 660,
-    "tracked_artifact_reference": 258,
-    "publication": 87
+    "claim": 89,
+    "source": 1350,
+    "proof": 344,
+    "test": 666,
+    "tracked_artifact_reference": 260,
+    "publication": 89
   },
   "units": [
     {
@@ -3680,18 +3680,18 @@
       "order": 11,
       "title": "Governed World Models and Reality Grounding",
       "human_reader_source_file": "chapters/unit-11-governed-world-models-and-reality-grounding.qmd",
-      "human_reader_source_sha256": "372198ddf4f2a7f9c61865d51a143776df96f17d0da9cc1b914abc20da576ad3",
+      "human_reader_source_sha256": "46ce979c814f3ff5322d9f477491e34ac5d5f88b05feb2cc6bcf665ff24a167b",
       "public_path": "reader/chapters/unit-11-governed-world-models-and-reality-grounding.html",
       "central_question": "How can a system reason over possible worlds without confusing a successful simulation or plausible story with actual state?",
       "conclusion_change": "Strong predictive and causal baselines with simpler branch discipline and equal intervention value would justify collapsing the extra machinery.",
       "handoff": "A world model can compare futures, but Unit 12 must decide how a plan coordinates them without becoming permission.",
-      "owner_count": 1,
+      "owner_count": 2,
       "owners": [
         {
           "chapter_id": "governed-world-models-and-reality-grounding",
           "title": "Governed World Models and Reality Grounding",
           "technical_source_file": "chapters/governed-world-models-and-reality-grounding.qmd",
-          "technical_source_sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
+          "technical_source_sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe",
           "live_technical_path": "chapters/governed-world-models-and-reality-grounding.html",
           "human_reader_unit_id": "unit-11",
           "core_claim_id": "governed-world-models-and-reality-grounding.core",
@@ -3769,7 +3769,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-world-models-and-reality-grounding.qmd",
-              "sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15"
+              "sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe"
             },
             {
               "path": "lean/AsiStackProofs/GovernedWorldModels.lean",
@@ -3782,6 +3782,76 @@
             "visibility": "main_book",
             "legacy_id": "governed-world-models-and-reality-grounding",
             "legacy_file": "chapters/governed-world-models-and-reality-grounding.qmd",
+            "claim_ownership": "preserved_local_no_inheritance",
+            "editorial_state": "metadata_classified_prose_unchanged",
+            "support_state_effect": "none"
+          }
+        },
+        {
+          "chapter_id": "reflexive-model-world-systems",
+          "title": "Reflexive Model-World Systems",
+          "technical_source_file": "chapters/reflexive-model-world-systems.qmd",
+          "technical_source_sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
+          "live_technical_path": "chapters/reflexive-model-world-systems.html",
+          "human_reader_unit_id": "unit-11",
+          "core_claim_id": "reflexive-model-world-systems.core",
+          "core_claim": "A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.",
+          "claim_label": "Design rationale",
+          "support_state": "argument",
+          "source_ids": [
+            "reflexive_model_world_systems",
+            "ext_performative_prediction_2020"
+          ],
+          "source_note_refs": [
+            "sources/source_notes/reflexive_model_world_systems.md",
+            "sources/source_notes/ext_performative_prediction_2020.md"
+          ],
+          "proof_edges": [
+            {
+              "tag": "lean:reflexive_system.augmented_state_required",
+              "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+              "status": "planned",
+              "target_sha256": "c6bb3ae0aa2e144d3a3388da45c438e151ea8436533bb86e86d24aeae62be736"
+            },
+            {
+              "tag": "lean:reflexive_system.rollback_no_restoration",
+              "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+              "status": "planned",
+              "target_sha256": "ac0d0009224b6cd7680ec56472e631c75e9d9cf5226449166384766d0aec83ca"
+            }
+          ],
+          "test_edges": [
+            {
+              "name": "Pinned RMWS toy-campaign reproduction",
+              "record_shape": "structured",
+              "implementation_status": "blocked",
+              "record_sha256": "0af9a40ee0047b2edcec7292bda435f39a1958a5a48bf1a4dc314828b3b3ffaf"
+            },
+            {
+              "name": "Evidence-ancestry and estimand mutation suite",
+              "record_shape": "structured",
+              "implementation_status": "planned",
+              "record_sha256": "9d37f54342a5c3766238a5b731716bfd8677c61a29745fb0c9ed66c5f0c59058"
+            },
+            {
+              "name": "Reflexive benchmark",
+              "record_shape": "structured",
+              "implementation_status": "planned",
+              "record_sha256": "29b044f17a162342c96c7f07c24da02d6003890f686ef0ff39f38c0c3b17bfa9"
+            }
+          ],
+          "artifact_refs": [
+            {
+              "path": "chapters/reflexive-model-world-systems.qmd",
+              "sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8"
+            }
+          ],
+          "publication": {
+            "role": "primary_architecture_owner",
+            "parent_id": null,
+            "visibility": "main_book",
+            "legacy_id": "reflexive-model-world-systems",
+            "legacy_file": "chapters/reflexive-model-world-systems.qmd",
             "claim_ownership": "preserved_local_no_inheritance",
             "editorial_state": "metadata_classified_prose_unchanged",
             "support_state_effect": "none"
@@ -3982,18 +4052,18 @@
       "order": 13,
       "title": "Cognitive Compilation and Semantic IR",
       "human_reader_source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "human_reader_source_sha256": "2db62fdceb4f56789e8b1352d4c47bbb41d5162248171394d95cfe61c14b055a",
+      "human_reader_source_sha256": "08d523b4002f5f218977d988ad8fb3b75edcef42c4a29955b779e3ea00400f9b",
       "public_path": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
       "handoff": "Compiled work needs exact, revisable inputs, so Unit 14 develops context transactions and durable semantic memory together.",
-      "owner_count": 3,
+      "owner_count": 4,
       "owners": [
         {
           "chapter_id": "cognitive-compilation-and-semantic-ir",
           "title": "Cognitive Compilation and Semantic IR",
           "technical_source_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-          "technical_source_sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f",
+          "technical_source_sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
           "live_technical_path": "chapters/cognitive-compilation-and-semantic-ir.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "cognitive-compilation-and-semantic-ir.core",
@@ -4107,7 +4177,7 @@
           "artifact_refs": [
             {
               "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-              "sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f"
+              "sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f"
             },
             {
               "path": "lean/AsiStackProofs/CognitiveCompilation.lean",
@@ -4132,6 +4202,76 @@
             "visibility": "main_book",
             "legacy_id": "cognitive-compilation-and-semantic-ir",
             "legacy_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+            "claim_ownership": "preserved_local_no_inheritance",
+            "editorial_state": "metadata_classified_prose_unchanged",
+            "support_state_effect": "none"
+          }
+        },
+        {
+          "chapter_id": "cognitive-method-transfer-and-qualification",
+          "title": "Cognitive Method Transfer and Qualification",
+          "technical_source_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
+          "technical_source_sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797",
+          "live_technical_path": "chapters/cognitive-method-transfer-and-qualification.html",
+          "human_reader_unit_id": "unit-13",
+          "core_claim_id": "cognitive-method-transfer-and-qualification.core",
+          "core_claim": "Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.",
+          "claim_label": "Design rationale",
+          "support_state": "argument",
+          "source_ids": [
+            "compiling_civilization_cmtq",
+            "ext_coala_2024"
+          ],
+          "source_note_refs": [
+            "sources/source_notes/compiling_civilization_cmtq.md",
+            "sources/source_notes/ext_coala_2024.md"
+          ],
+          "proof_edges": [
+            {
+              "tag": "lean:cmtq.axes.non_substitution",
+              "module": "AsiStackProofs.CognitiveMethodQualification",
+              "status": "planned",
+              "target_sha256": "5749a1e9aa7b7d3b2ac1e4c604360998aaf8a3a98c659e92413545fe00ef5593"
+            },
+            {
+              "tag": "lean:cmtq.promotion.no_self_authority",
+              "module": "AsiStackProofs.CognitiveMethodQualification",
+              "status": "planned",
+              "target_sha256": "4d2344c1b6a6026ceb1735ae6266d51ee5780bff7a15ce9fcfb67fdb67e5946a"
+            }
+          ],
+          "test_edges": [
+            {
+              "name": "CTR and QCP schema conformance",
+              "record_shape": "structured",
+              "implementation_status": "source_package_validated",
+              "record_sha256": "620e86abeb8ff7fb5d7584ecea094d7ad54b1cf1a01c64f246dbb0b92b2c9879"
+            },
+            {
+              "name": "Procedure-realization benchmark",
+              "record_shape": "structured",
+              "implementation_status": "planned",
+              "record_sha256": "57781947b97485f02bbecaa2c1f355b0df6fa6411cd58617fe165d08b0913194"
+            },
+            {
+              "name": "Method routing, interaction, and security campaign",
+              "record_shape": "structured",
+              "implementation_status": "planned",
+              "record_sha256": "9d351d9925fe80d0c95c0266d60e0ddbff93149ce5f3ec95cf133948a508c25f"
+            }
+          ],
+          "artifact_refs": [
+            {
+              "path": "chapters/cognitive-method-transfer-and-qualification.qmd",
+              "sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797"
+            }
+          ],
+          "publication": {
+            "role": "primary_architecture_owner",
+            "parent_id": null,
+            "visibility": "main_book",
+            "legacy_id": "cognitive-method-transfer-and-qualification",
+            "legacy_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
             "claim_ownership": "preserved_local_no_inheritance",
             "editorial_state": "metadata_classified_prose_unchanged",
             "support_state_effect": "none"
@@ -6767,7 +6907,7 @@
       "order": 18,
       "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
       "human_reader_source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
-      "human_reader_source_sha256": "4797c40a5032fb13da789cc605f5062c71ccf487e22c17e5f782965f0e3e5665",
+      "human_reader_source_sha256": "50eb5208607b6d86e932d2c065b38c01504b1c2da52ac1f0659c812760b8934d",
       "public_path": "reader/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.html",
       "central_question": "What must accompany a reusable skill or inter-agent transaction so that local validity does not become global permission or systemic safety?",
       "conclusion_change": "Simpler skill stores and agent protocols that preserve retirement, accountability, dispute, and systemic-risk detection at lower cost would justify consolidation.",
@@ -8069,7 +8209,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "a4e37111c65e654c2283c9823f40d11ec6d3c89a763b6388a3fe264638efee46",
+      "human_reader_source_sha256": "593c2671aeb1916c88618b331c397d91ae0d08a2d7b5a92db9d66d6747343bda",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -11203,7 +11343,7 @@
       "order": 25,
       "title": "Recursive Improvement, Replication, and Containment",
       "human_reader_source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "human_reader_source_sha256": "069811da0c607c719c168b8cf75f4fda890535667965d7ea061cc72542905819",
+      "human_reader_source_sha256": "18d01f283fa96de3f49738caf45678afa4ccfe7c66e6ca78786f093c9238b99e",
       "public_path": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html",
       "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
       "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",

@@ -12,8 +12,8 @@ This report classifies Lean theorem bodies by proof-shape depth so the book can 
 
 | Metric | Value |
 |---|---:|
-| Proof targets in manifest | 340 |
-| Lean modules scanned | 133 |
+| Proof targets in manifest | 344 |
+| Lean modules scanned | 135 |
 | Theorem declarations classified | 3153 |
 | Direct/projection-style theorem declarations | 447 |
 | Derived/decomposed theorem declarations | 1978 |
@@ -72,6 +72,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ClaimLedgerRefinement.lean` | claim-ledgers-and-belief-revision | 4 | 27 | 0 | 15 | 12 | manual review |
 | `lean/AsiStackProofs/CognitiveCompilation.lean` | unmapped | 0 | 12 | 0 | 12 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CognitiveCompilationRefinement.lean` | cognitive-compilation-and-semantic-ir | 3 | 33 | 2 | 22 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
+| `lean/AsiStackProofs/CognitiveMethodQualification.lean` | cognitive-method-transfer-and-qualification | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CoilAttentionMemory.lean` | coil-attention-cyclic-memory-and-recurrence-contracts | 3 | 34 | 4 | 26 | 4 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/CommandContracts.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/CommandSemanticRefinement.lean` | intent-to-execution-contracts | 3 | 12 | 0 | 3 | 9 | manual review |
@@ -148,6 +149,7 @@ Safety-critical modules with direct/projection-style theorem declarations must h
 | `lean/AsiStackProofs/ReadinessGates.lean` | unmapped | 0 | 11 | 0 | 11 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/ReadinessRefinement.lean` | readiness-gates-residual-escrow-and-quarantine | 3 | 24 | 13 | 10 | 1 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReferenceArchitecture.lean` | unmapped | 0 | 5 | 0 | 5 | 0 | derived/decomposed by classifier |
+| `lean/AsiStackProofs/ReflexiveModelWorldSystems.lean` | reflexive-model-world-systems | 2 | 0 | 0 | 0 | 0 | derived/decomposed by classifier |
 | `lean/AsiStackProofs/RelationalDimensionCompiler.lean` | relational-dimension-compilation-and-polyadic-cognition | 1 | 42 | 14 | 19 | 9 | mixed: preserve limitation prose and prioritize projection replacements |
 | `lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean` | replaceable-cognitive-substrates-beyond-transformer-monoculture | 1 | 23 | 0 | 16 | 7 | manual review |
 | `lean/AsiStackProofs/Replacement.lean` | capability-replacement-and-rollback | 6 | 60 | 8 | 49 | 3 | mixed: preserve limitation prose and prioritize projection replacements |

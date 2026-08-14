@@ -710,7 +710,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
         errors.append("manifest differs from its canonical graph/outline/manuscript derivation")
     if crosswalk != expected_crosswalk:
         errors.append("conclusion/claim crosswalk differs from its canonical graph/outline/manuscript derivation")
-    if manifest.get("unit_count") != 26 or manifest.get("owner_route_count") != 87:
+    if manifest.get("unit_count") != 26 or manifest.get("owner_route_count") != 89:
         errors.append("Human Reader denominator drift")
     if manifest.get("state") != "complete_manuscript_public_html_deployed":
         errors.append("Human Reader manifest does not preserve the deployed HTML state")
@@ -726,7 +726,7 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
         errors.append("Human Reader routes omit or invent a canonical owner")
     crosswalk_owners = [owner for unit in crosswalk.get("units", []) for owner in unit.get("owners", [])]
     crosswalk_ids = [owner.get("chapter_id") for owner in crosswalk_owners]
-    if crosswalk.get("unit_count") != 26 or crosswalk.get("owner_route_count") != 87:
+    if crosswalk.get("unit_count") != 26 or crosswalk.get("owner_route_count") != 89:
         errors.append("conclusion/claim crosswalk denominator drift")
     if len(crosswalk_ids) != len(set(crosswalk_ids)) or set(crosswalk_ids) != canonical_ids:
         errors.append("conclusion/claim crosswalk does not preserve every technical owner exactly once")
@@ -1079,7 +1079,7 @@ def main() -> None:
         raise SystemExit("Human Reader current validation failed:\n - " + "\n - ".join(errors))
     print(
         f"Human Reader current validation passed: {manifest['started_unit_count']}/26 units started, "
-        f"{manifest['target_length_unit_count']} at target length, 87 owners routed once, "
+        f"{manifest['target_length_unit_count']} at target length, 89 owners routed once, "
         f"{manifest['visible_word_count']} visible words, and 4 rejecting controls."
     )
 

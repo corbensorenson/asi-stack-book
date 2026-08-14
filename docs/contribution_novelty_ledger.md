@@ -13,7 +13,7 @@ review, not external review, and not support-state movement.
 - Source of record: `docs/contribution_novelty_ledger.json`
 - Validator: `python3 scripts/validate_contribution_novelty_ledger.py`
 - Rows: 9 signature ideas
-- Chapter-core support effect: none; all 87 chapter core claims remain
+- Chapter-core support effect: none; all 89 chapter core claims remain
   `argument`.
 - Novelty claim effect: none; the ledger permits disciplined positioning, not
   defended novelty language.

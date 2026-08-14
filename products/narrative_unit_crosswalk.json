@@ -1,7 +1,7 @@
 {
   "schema_version": "asi_stack.narrative_unit_crosswalk.v0",
   "status": "phase_1_idea_placement_route",
-  "canonical_chapter_count": 87,
+  "canonical_chapter_count": 89,
   "narrative_unit_count": 22,
   "assignment_rule": "Every canonical chapter belongs to exactly one reader-facing narrative unit. The representative chapter carries the unit orientation; every other chapter remains a canonical reference owner and is routed, not merged or demoted.",
   "units": [
@@ -104,6 +104,7 @@
       "chapter_ids": [
         "perception-sensor-fusion-and-observation-trust",
         "governed-world-models-and-reality-grounding",
+        "reflexive-model-world-systems",
         "embodied-agency-real-time-control-and-physical-safety"
       ]
     },
@@ -114,6 +115,7 @@
       "representative_chapter_id": "cognitive-compilation-and-semantic-ir",
       "chapter_ids": [
         "cognitive-compilation-and-semantic-ir",
+        "cognitive-method-transfer-and-qualification",
         "relational-dimension-compilation-and-polyadic-cognition",
         "mathematical-and-search-substrates"
       ]

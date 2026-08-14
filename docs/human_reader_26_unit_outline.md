@@ -441,19 +441,23 @@ causal alternatives, which Unit 11 assigns to governed world models.
 
 **Lead owner.** `governed-world-models-and-reality-grounding`
 
-**Canonical owner routes.** `governed-world-models-and-reality-grounding`
+**Canonical owner routes.** `governed-world-models-and-reality-grounding`,
+`reflexive-model-world-systems`
 
 **Narrative job.** Keep simulations, predictions, interventions, observations,
 and reconciled beliefs distinct while showing how their mismatch drives useful
-learning and control.
+learning and control, including the reflexive case where deployment changes the
+world, institution, or evidence used by a successor model.
 
 **Central question.** How can a system reason over possible worlds without
 confusing a successful simulation or plausible story with actual state?
 
 **Argument moves.** Represent alternative states and causal assumptions;
 freeze predictions before intervention; bind observed outcomes to provenance;
-reconcile rather than overwrite disagreement; route calibration failure and
-unknown external effects to safe holds.
+reconcile rather than overwrite disagreement; distinguish baseline and
+on-policy targets; track model-descended evidence; protect informative
+grounding reserves; route calibration, identification, and persistent rollback
+residuals to safe holds.
 
 **Running example.** Predict the patch's effects in a branch, execute a bounded
 trial, and reconcile the predicted dependency graph with the observed tree and
@@ -510,21 +514,25 @@ through cognitive compilation and search.
 **Lead owner.** `cognitive-compilation-and-semantic-ir`
 
 **Canonical owner routes.** `cognitive-compilation-and-semantic-ir`,
+`cognitive-method-transfer-and-qualification`,
 `relational-dimension-compilation-and-polyadic-cognition`,
 `mathematical-and-search-substrates`
 
-**Narrative job.** Explain how intent, relations, constraints, and knowledge
-can be lowered into efficient executable forms while semantic loss,
-alternatives, and rescue paths remain visible.
+**Narrative job.** Explain how civilizational methods, intent, relations,
+constraints, and knowledge can be admitted and lowered into executable forms
+while mechanism transport, qualification, semantic loss, alternatives, and
+rescue paths remain visible.
 
 **Central question.** What intermediate representations let different
 cognitive substrates share work without pretending that structural conformity
 equals preserved meaning?
 
-**Argument moves.** Introduce typed semantic IR; preserve relational roles and
-polyadic structure; expose loss, approximation, and fallback; compare symbolic,
-search, neural, and hybrid substrates; require consumer-specific validation
-rather than universal equivalence claims.
+**Argument moves.** Separate method possession, realization, transport,
+qualification, assurance, and authority; introduce CTR and QCP artifacts plus
+typed semantic IR; preserve relational roles and polyadic structure; expose
+loss, approximation, applicability, contraindications, and fallback; compare
+symbolic, search, neural, and hybrid substrates; require consumer-specific
+validation rather than universal equivalence claims.
 
 **Running example.** Lower the repository-change contract into planner
 predicates, verifier queries, tool calls, relation-preserving constraints, and

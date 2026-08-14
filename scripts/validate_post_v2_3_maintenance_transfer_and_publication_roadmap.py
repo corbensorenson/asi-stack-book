@@ -155,7 +155,7 @@ EXPECTED_CONCEPT_ANCHORS = [
     ("C1", "C1-theorem-runtime-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A theorem is not runtime enforcement"),
     ("C1", "C1-proposal-ratification-boundary", "chapters/asi-is-a-stack-not-a-model.qmd", "A proposal is not ratification"),
     ("C2", "C2-twenty-two-unit-spine", "products/narrative_product_spine.json", "A twenty-two-unit thesis-to-method route through the canonical manifest"),
-    ("C2", "C2-all-eighty-seven-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 87'),
+    ("C2", "C2-all-eighty-nine-crosswalk", "products/narrative_unit_crosswalk.json", '"canonical_chapter_count": 89'),
     ("C2", "C2-nonabsorption-prose", "chapters/living-book-methodology.qmd", "Narrative compression without claim absorption"),
     ("C3", "C3-calculus-owner", "chapters/executable-specifications-and-lean-proof-envelope.qmd", "Governed Transition Calculus"),
     ("C3", "C3-authority-projection", "chapters/system-boundaries-and-authority.qmd", "authority-specific projection of the shared Governed Transition Calculus"),
@@ -1907,7 +1907,7 @@ def errors(data: dict) -> list[str]:
         "current_projection_state": "zero_youtube_objects_zero_quarto_embeds",
         "publication_preflight_path": "visual_edition/youtube_publication_preflight.json",
         "mutation_scope_path": "visual_edition/youtube_mutation_scope.json",
-        "mutation_scope_sha256": "3f901ca06169b3df555b6e8dbc6a327c6dab9e623b6712407cf0a9366eeb55f0",
+        "mutation_scope_sha256": "01631c7eca60b36785262138886772fd3cacdc03453c779609ed42cbad2b52f9",
         "mutation_scope_requires_exact_action_time_authorization": True,
         "platform_receipt_schema_path": "schemas/youtube_platform_receipt.schema.json",
         "platform_receipt_recorder_path": "scripts/record_youtube_platform_receipt.py",
@@ -2320,7 +2320,7 @@ def errors(data: dict) -> list[str]:
         or len(role_assignments) != len(manifest_chapters)
         or any(count != 1 for count in role_counts.values())
         or role_summary.get("thesis_bearing_count") != 11
-        or role_summary.get("load_bearing_reference_count") != 57
+        or role_summary.get("load_bearing_reference_count") != 59
         or role_summary.get("implementation_case_count") != 7
         or role_summary.get("speculative_research_count") != 12
         or role_summary.get("total_count") != len(manifest_chapters)
@@ -2665,12 +2665,12 @@ def errors(data: dict) -> list[str]:
         r"(\d+) unknown/mixed",
         data["proof_review"],
     )
-    expected_proof = (340, 133, 3153, 1978, 447, 728)
+    expected_proof = (344, 135, 3153, 1978, 447, 728)
     if not proof_match or tuple(map(int, proof_match.groups())) != expected_proof:
         out.append("proof-depth baseline drifted without roadmap reconciliation")
-    if data["proof_manifest"].get("proof_target_count") != 340:
+    if data["proof_manifest"].get("proof_target_count") != 344:
         out.append("proof manifest target count disagrees with the current implemented and planned targets")
-    if data["proof_manifest"].get("status_counts") != {"implemented": 330, "planned": 10}:
+    if data["proof_manifest"].get("status_counts") != {"implemented": 330, "planned": 14}:
         out.append("proof target lifecycle counts drifted")
 
     proof_inventory = status.get("semantic_proof_cluster_inventory", {})

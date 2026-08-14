@@ -29,7 +29,7 @@ python3 scripts/build_reader_edition.py \
 ```
 
 The generated orientation is derivative editorial navigation. It adds no
-evidence and changes no support state. The other 65 chapters remain visible in
+evidence and changes no support state. The other 67 chapters remain visible in
 the architecture reference and are not rejected or deleted. The candidate is
 not a reviewed reader release; here, "reviewed" means that the final artifact
 gates have not yet been run, not that external-human review is required.
@@ -79,7 +79,7 @@ work.
 
 ## Architecture reference specification
 
-The generated architecture route is a complete 87-chapter lookup index in
+The generated architecture route is a complete 89-chapter lookup index in
 canonical manifest order. Every row carries the canonical chapter and
 core-claim identity, distinct responsibility, claim label, support ceiling,
 and assignment to one of the three defended contributions. Protocol schemas,

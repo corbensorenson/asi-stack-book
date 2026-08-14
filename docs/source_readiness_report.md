@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 27
-- `source_note_available_uncached`: 409
+- `source_note_available_uncached`: 419
 
 ## Records
 
@@ -54,6 +54,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_multi_agent_risks_2025` | Multi-Agent Risks from Advanced AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_replibench_2025` | RepliBench: Evaluating the Autonomous Replication Capabilities of Language Model Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_autonomous_lab_materials_2023` | An autonomous laboratory for the accelerated synthesis of inorganic materials | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ai_scientist_end_to_end_2026` | Towards end-to-end automation of AI research | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_coscientist_chemistry_2023` | Autonomous chemical research with large language models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ai_co_scientist_2025` | Towards an AI co-scientist | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_moral_crumple_zones_2019` | Moral Crumple Zones: Cautionary Tales in Human-Robot Interaction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_conversational_persuasion_gpt4_2025` | On the conversational persuasiveness of GPT-4 | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_anthropic_model_persuasiveness_2024` | Measuring the Persuasiveness of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
@@ -498,3 +501,10 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mezo_2023` | Fine-Tuning Language Models with Just Forward Passes | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_forward_forward_2022` | The Forward-Forward Algorithm: Some Preliminary Investigations | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `regret_engine` | The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_pbt_2017` | Population Based Training of Neural Networks | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `learning_compute_topology` | Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `assurance_shift_learning` | When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `adjudicated_persistence` | Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `forward_transfer_program_synthesis` | From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `compiling_civilization_cmtq` | Compiling Civilization: Cognitive Method Transfer and Qualification for Artificial Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `reflexive_model_world_systems` | Reflexive Model-World Systems: When Representations Become Causes | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

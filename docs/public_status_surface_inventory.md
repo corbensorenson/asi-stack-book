@@ -15,7 +15,7 @@ or hand-edited block as well as contradictory active prose around it.
 | Navigation and chapter order | `book_structure.json` through Quarto/scaffold generation | Rendered sidebar paths, titles, order, uniqueness, and chapter H1 count are checked against canonical status. |
 | Chapter status headers | per-chapter manifest fields | Headers may report that chapter's claim label, support state, sources, and proof hooks, but may not carry a separately maintained global chapter/source count. |
 | Generated reader edition | `book_structure.json` plus release-profile builders | Ignored build manifests derive active chapter order and totals during generation; they are not hand-maintained public status. |
-| Tracked curated-reader and release manifests | explicit historical snapshot scope | Frozen derivative spines remain valid only for their named source commits and cannot override the active 87-chapter manifest. |
+| Tracked curated-reader and release manifests | explicit historical snapshot scope | Frozen derivative spines remain valid only for their named source commits and cannot override the active 89-chapter manifest. |
 | Deployed site | tested bundle canonical status | Must identify one clean tested commit and pass the post-deployment graph crawl. |
 
 This inventory does not make historical records current, approve a reader

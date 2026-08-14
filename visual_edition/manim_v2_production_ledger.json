@@ -3,9 +3,9 @@
   "edition_id": "asi-stack-p7.3-visual-edition",
   "generated_at_utc": "2026-08-01T05:10:09Z",
   "book_structure_path": "book_structure.json",
-  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
+  "book_structure_sha256": "ba7df5ee9a210252209d2e917699387041d89e365b022ba74e36a5cecf2f4095",
   "visual_manifest_path": "visual_edition/manifest.json",
-  "visual_manifest_sha256": "cc789a2a96c52ab776775515dcab5da768fb8e14df85af02ae3114a1fa01aa34",
+  "visual_manifest_sha256": "7a278c0cc254cbfff98f8632967979ae5fd43cbbaba0a5cd4fe9ce2953b976e9",
   "authoring_standard_path": "skills/asi-stack-manim-videos/SKILL.md",
   "authoring_standard_sha256": "6fe7393d89d4cd67a86dfda60b8c6fb4e068c7b9255188c2724414bfde6838f1",
   "authoring_bundle_sha256": "4ef3a7b138ba5d634bad6e2286b71fa483547d4e523bfd81d0aa456069caa5d1",
@@ -63,7 +63,7 @@
   "primitive_regression_manifest_path": "visual_edition/primitive_regression_manifest.json",
   "primitive_regression_manifest_sha256": "2c0ff7b806bbc22db49d38f256d7ea805392821f2789b560b9e1913359c6167c",
   "primitive_regression_bundle_sha256": "e84b4080037182d7026e8916ed23d94d70183e4dd0819093129f7b7a8ec19385",
-  "canonical_chapter_count": 87,
+  "canonical_chapter_count": 89,
   "target_generation": 2,
   "cohorts": {
     "owner_reviewed_remediation": [
@@ -105,7 +105,9 @@
       "perception-sensor-fusion-and-observation-trust",
       "planning-as-a-control-layer",
       "governed-world-models-and-reality-grounding",
+      "reflexive-model-world-systems",
       "cognitive-compilation-and-semantic-ir",
+      "cognitive-method-transfer-and-qualification",
       "virtual-context-abi",
       "durable-semantic-memory-and-knowledge-lattices",
       "context-transactions-snapshots-mounts-and-taint",
@@ -194,7 +196,7 @@
     "primitive_graphical_regression_required": true
   },
   "counts": {
-    "planned": 63,
+    "planned": 65,
     "narration_draft": 20,
     "treated": 0,
     "script_passed": 0,
@@ -2223,7 +2225,7 @@
       "chapter_id": "governed-world-models-and-reality-grounding",
       "title": "Governed World Models and Reality Grounding",
       "chapter_path": "chapters/governed-world-models-and-reality-grounding.qmd",
-      "chapter_sha256": "afab0b267b79a04c9e0a9002487b9573ecc8935c66b53e997578837caf6ecc15",
+      "chapter_sha256": "7df3df78f2431899338f0166726fc452d85540dbac95e0f023f4b65e593820fe",
       "source_context_sha256": "cb77c61183c312d3089bd8972c6f5e8ae6c3d3135fd0324c8ff87c78c0419efb",
       "cohort": "not_yet_uploaded",
       "predecessor": {
@@ -2282,10 +2284,63 @@
     },
     {
       "position": 34,
+      "chapter_id": "reflexive-model-world-systems",
+      "title": "Reflexive Model-World Systems",
+      "chapter_path": "chapters/reflexive-model-world-systems.qmd",
+      "chapter_sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
+      "source_context_sha256": "b90515ecde862d458e441791ea79fca5b8e345327075109988e8327d08712f31",
+      "cohort": "not_yet_uploaded",
+      "predecessor": null,
+      "target": {
+        "generation": 2,
+        "stage": "planned",
+        "treatment_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/treatment.json",
+        "treatment_sha256": null,
+        "beat_plan_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/beat_plan.json",
+        "beat_plan_sha256": null,
+        "scene_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/scene.py",
+        "scene_sha256": null,
+        "narration_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/narration.txt",
+        "narration_sha256": null,
+        "caption_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/captions.vtt",
+        "caption_sha256": null,
+        "transcript_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/transcript.md",
+        "transcript_sha256": null,
+        "thumbnail_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/thumbnail.svg",
+        "thumbnail_sha256": null,
+        "master_path": "build/visual_edition/generation-2/final/reflexive-model-world-systems.mp4",
+        "master_sha256": null,
+        "render_receipt_path": "visual_edition/chapters/reflexive-model-world-systems/generation-2/render_receipt.json",
+        "render_receipt_sha256": null,
+        "experience_review_paths": {
+          "animatic": "visual_edition/chapters/reflexive-model-world-systems/generation-2/reviews/animatic.json",
+          "picture_and_sound_lock": "visual_edition/chapters/reflexive-model-world-systems/generation-2/reviews/picture_and_sound_lock.json",
+          "release_candidate": "visual_edition/chapters/reflexive-model-world-systems/generation-2/reviews/release_candidate.json",
+          "independent_release_candidate": "visual_edition/chapters/reflexive-model-world-systems/generation-2/reviews/independent_release_candidate.json"
+        },
+        "gates": {
+          "treatment": "not_started",
+          "script": "not_started",
+          "beat_plan": "not_started",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
+          "release_candidate": "not_started",
+          "independent_release_candidate": "not_started",
+          "technical": "not_started",
+          "claim_fidelity": "not_started",
+          "accepted": "not_started"
+        },
+        "youtube_state": "not_ready",
+        "youtube_video_id": null,
+        "quarto_embed_state": "absent"
+      }
+    },
+    {
+      "position": 35,
       "chapter_id": "cognitive-compilation-and-semantic-ir",
       "title": "Cognitive Compilation and Semantic IR",
       "chapter_path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-      "chapter_sha256": "9852ce847fb515345c4de9ee23b88b821236b2e360ad402dddfafc599ccc099f",
+      "chapter_sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
       "source_context_sha256": "19f1b91504a38cf62fb8485811df95aeead51041dad6027741b873ff8b4f56c3",
       "cohort": "not_yet_uploaded",
       "predecessor": {
@@ -2343,7 +2398,60 @@
       }
     },
     {
-      "position": 35,
+      "position": 36,
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "title": "Cognitive Method Transfer and Qualification",
+      "chapter_path": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "chapter_sha256": "0fadeb4ce612516d13a4cf3162f32ff917f570af2fc75d6ee60d5feaca589797",
+      "source_context_sha256": "bab150f2e93e95727add9235e50d5fd4b9264a3c9c4f02d7e35bbe0521ee46a7",
+      "cohort": "not_yet_uploaded",
+      "predecessor": null,
+      "target": {
+        "generation": 2,
+        "stage": "planned",
+        "treatment_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/treatment.json",
+        "treatment_sha256": null,
+        "beat_plan_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/beat_plan.json",
+        "beat_plan_sha256": null,
+        "scene_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/scene.py",
+        "scene_sha256": null,
+        "narration_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/narration.txt",
+        "narration_sha256": null,
+        "caption_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/captions.vtt",
+        "caption_sha256": null,
+        "transcript_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/transcript.md",
+        "transcript_sha256": null,
+        "thumbnail_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/thumbnail.svg",
+        "thumbnail_sha256": null,
+        "master_path": "build/visual_edition/generation-2/final/cognitive-method-transfer-and-qualification.mp4",
+        "master_sha256": null,
+        "render_receipt_path": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/render_receipt.json",
+        "render_receipt_sha256": null,
+        "experience_review_paths": {
+          "animatic": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/reviews/animatic.json",
+          "picture_and_sound_lock": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/reviews/picture_and_sound_lock.json",
+          "release_candidate": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/reviews/release_candidate.json",
+          "independent_release_candidate": "visual_edition/chapters/cognitive-method-transfer-and-qualification/generation-2/reviews/independent_release_candidate.json"
+        },
+        "gates": {
+          "treatment": "not_started",
+          "script": "not_started",
+          "beat_plan": "not_started",
+          "animatic": "not_started",
+          "picture_and_sound_lock": "not_started",
+          "release_candidate": "not_started",
+          "independent_release_candidate": "not_started",
+          "technical": "not_started",
+          "claim_fidelity": "not_started",
+          "accepted": "not_started"
+        },
+        "youtube_state": "not_ready",
+        "youtube_video_id": null,
+        "quarto_embed_state": "absent"
+      }
+    },
+    {
+      "position": 37,
       "chapter_id": "virtual-context-abi",
       "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
       "chapter_path": "chapters/virtual-context-abi.qmd",
@@ -2405,7 +2513,7 @@
       }
     },
     {
-      "position": 36,
+      "position": 38,
       "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "title": "Durable Semantic Memory and Knowledge Lattices",
       "chapter_path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
@@ -2467,7 +2575,7 @@
       }
     },
     {
-      "position": 37,
+      "position": 39,
       "chapter_id": "context-transactions-snapshots-mounts-and-taint",
       "title": "Context Transactions, Snapshots, Mounts, and Taint",
       "chapter_path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
@@ -2529,7 +2637,7 @@
       }
     },
     {
-      "position": 38,
+      "position": 40,
       "chapter_id": "verification-bandwidth-and-context-adequacy",
       "title": "Verification Bandwidth and Context Adequacy",
       "chapter_path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
@@ -2591,7 +2699,7 @@
       }
     },
     {
-      "position": 39,
+      "position": 41,
       "chapter_id": "claim-ledgers-and-belief-revision",
       "title": "Claim Ledgers and Belief Revision",
       "chapter_path": "chapters/claim-ledgers-and-belief-revision.qmd",
@@ -2653,7 +2761,7 @@
       }
     },
     {
-      "position": 40,
+      "position": 42,
       "chapter_id": "spinoza-verification-and-proof-carrying-claims",
       "title": "Proof-Carrying Claims and Adversarial Review",
       "chapter_path": "chapters/spinoza-verification-and-proof-carrying-claims.qmd",
@@ -2715,7 +2823,7 @@
       }
     },
     {
-      "position": 41,
+      "position": 43,
       "chapter_id": "labor-os-and-typed-jobs",
       "title": "Labor OS and Typed Jobs",
       "chapter_path": "chapters/labor-os-and-typed-jobs.qmd",
@@ -2777,7 +2885,7 @@
       }
     },
     {
-      "position": 42,
+      "position": 44,
       "chapter_id": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
       "title": "From Chat to Organizations: AI Work Surfaces and Agent Harnesses",
       "chapter_path": "chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd",
@@ -2830,7 +2938,7 @@
       }
     },
     {
-      "position": 43,
+      "position": 45,
       "chapter_id": "human-ai-organizations-delegation-and-accountability",
       "title": "Human-AI Organizations, Delegation, and Accountability",
       "chapter_path": "chapters/human-ai-organizations-delegation-and-accountability.qmd",
@@ -2892,7 +3000,7 @@
       }
     },
     {
-      "position": 44,
+      "position": 46,
       "chapter_id": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
       "title": "Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty",
       "chapter_path": "chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.qmd",
@@ -2954,7 +3062,7 @@
       }
     },
     {
-      "position": 45,
+      "position": 47,
       "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
       "title": "AI Deployment, Transition, Distribution, and Human Agency",
       "chapter_path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
@@ -3016,7 +3124,7 @@
       }
     },
     {
-      "position": 46,
+      "position": 48,
       "chapter_id": "artifact-graphs-audit-logs-and-replay",
       "title": "Artifact Graphs, Audit Logs, and Replay",
       "chapter_path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
@@ -3078,7 +3186,7 @@
       }
     },
     {
-      "position": 47,
+      "position": 49,
       "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "title": "Runtime Adapters, Tool Permissions, and Human Approval",
       "chapter_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
@@ -3140,7 +3248,7 @@
       }
     },
     {
-      "position": 48,
+      "position": 50,
       "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
       "title": "Embodied Agency, Real-Time Control, and Physical Safety",
       "chapter_path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
@@ -3202,7 +3310,7 @@
       }
     },
     {
-      "position": 49,
+      "position": 51,
       "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
       "title": "Inter-Stack Protocols, Identity, and Economic Exchange",
       "chapter_path": "chapters/inter-stack-protocols-identity-and-economic-exchange.qmd",
@@ -3264,7 +3372,7 @@
       }
     },
     {
-      "position": 50,
+      "position": 52,
       "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
       "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
       "chapter_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
@@ -3326,7 +3434,7 @@
       }
     },
     {
-      "position": 51,
+      "position": 53,
       "chapter_id": "procedural-memory-and-cognitive-loop-closure",
       "title": "Procedural Memory and Cognitive Loop Closure",
       "chapter_path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
@@ -3388,7 +3496,7 @@
       }
     },
     {
-      "position": 52,
+      "position": 54,
       "chapter_id": "routing-heads-and-specialist-cores",
       "title": "Routing Heads and Specialist Cores",
       "chapter_path": "chapters/routing-heads-and-specialist-cores.qmd",
@@ -3450,7 +3558,7 @@
       }
     },
     {
-      "position": 53,
+      "position": 55,
       "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
       "chapter_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
@@ -3512,7 +3620,7 @@
       }
     },
     {
-      "position": 54,
+      "position": 56,
       "chapter_id": "relational-dimension-compilation-and-polyadic-cognition",
       "title": "Relational Dimension Compilation and Polyadic Cognition",
       "chapter_path": "chapters/relational-dimension-compilation-and-polyadic-cognition.qmd",
@@ -3574,7 +3682,7 @@
       }
     },
     {
-      "position": 55,
+      "position": 57,
       "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
       "title": "Governed Model Training, Distributed Optimization, and Scaling",
       "chapter_path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
@@ -3636,7 +3744,7 @@
       }
     },
     {
-      "position": 56,
+      "position": 58,
       "chapter_id": "learning-compute-topology-and-adaptive-process-architecture",
       "title": "Learning–Compute Topology and Adaptive Process Architecture",
       "chapter_path": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
@@ -3689,7 +3797,7 @@
       }
     },
     {
-      "position": 57,
+      "position": 59,
       "chapter_id": "learning-theory-generalization-and-scaling-science",
       "title": "Learning Theory, Generalization, and Scaling Science",
       "chapter_path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
@@ -3751,7 +3859,7 @@
       }
     },
     {
-      "position": 58,
+      "position": 60,
       "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
       "title": "Readiness Gates, Residual Escrow, and Quarantine",
       "chapter_path": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
@@ -3813,7 +3921,7 @@
       }
     },
     {
-      "position": 59,
+      "position": 61,
       "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
       "title": "Personal Compute Hives and Federated Edge Intelligence",
       "chapter_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
@@ -3875,7 +3983,7 @@
       }
     },
     {
-      "position": 60,
+      "position": 62,
       "chapter_id": "compact-generative-systems-and-residual-honesty",
       "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
       "chapter_path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
@@ -3937,7 +4045,7 @@
       }
     },
     {
-      "position": 61,
+      "position": 63,
       "chapter_id": "fast-generation-architectures",
       "title": "Fast Generation Architectures",
       "chapter_path": "chapters/fast-generation-architectures.qmd",
@@ -3999,7 +4107,7 @@
       }
     },
     {
-      "position": 62,
+      "position": 64,
       "chapter_id": "governed-deliberation-and-test-time-scaling",
       "title": "Governed Deliberation and Test-Time Scaling",
       "chapter_path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
@@ -4061,7 +4169,7 @@
       }
     },
     {
-      "position": 63,
+      "position": 65,
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
       "title": "RankFold, NeuralFold, and Artifact Compression",
       "chapter_path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
@@ -4123,7 +4231,7 @@
       }
     },
     {
-      "position": 64,
+      "position": 66,
       "chapter_id": "resource-economics-and-token-budgets",
       "title": "Resource Economics and Token Budgets",
       "chapter_path": "chapters/resource-economics-and-token-budgets.qmd",
@@ -4185,7 +4293,7 @@
       }
     },
     {
-      "position": 65,
+      "position": 67,
       "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
       "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
       "chapter_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
@@ -4247,7 +4355,7 @@
       }
     },
     {
-      "position": 66,
+      "position": 68,
       "chapter_id": "mathematical-and-search-substrates",
       "title": "Mathematical and Search Substrates",
       "chapter_path": "chapters/mathematical-and-search-substrates.qmd",
@@ -4309,7 +4417,7 @@
       }
     },
     {
-      "position": 67,
+      "position": 69,
       "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
       "title": "Circle Calculus and Proof-Carrying AI Contracts",
       "chapter_path": "chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd",
@@ -4371,7 +4479,7 @@
       }
     },
     {
-      "position": 68,
+      "position": 70,
       "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
       "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
       "chapter_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
@@ -4433,7 +4541,7 @@
       }
     },
     {
-      "position": 69,
+      "position": 71,
       "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
       "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
       "chapter_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
@@ -4495,7 +4603,7 @@
       }
     },
     {
-      "position": 70,
+      "position": 72,
       "chapter_id": "executable-specifications-and-lean-proof-envelope",
       "title": "Executable Specifications and Lean Proof Envelope",
       "chapter_path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
@@ -4557,7 +4665,7 @@
       }
     },
     {
-      "position": 71,
+      "position": 73,
       "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
       "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
       "chapter_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
@@ -4619,7 +4727,7 @@
       }
     },
     {
-      "position": 72,
+      "position": 74,
       "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
       "title": "White-Box Evidence, Interpretability, and Activation Governance",
       "chapter_path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
@@ -4681,7 +4789,7 @@
       }
     },
     {
-      "position": 73,
+      "position": 75,
       "chapter_id": "capability-thresholds-and-deployment-commitments",
       "title": "Capability Thresholds and Deployment Commitments",
       "chapter_path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
@@ -4743,7 +4851,7 @@
       }
     },
     {
-      "position": 74,
+      "position": 76,
       "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
       "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
       "chapter_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
@@ -4805,7 +4913,7 @@
       }
     },
     {
-      "position": 75,
+      "position": 77,
       "chapter_id": "safety-cases-and-structured-assurance",
       "title": "Safety Cases and Structured Assurance",
       "chapter_path": "chapters/safety-cases-and-structured-assurance.qmd",
@@ -4867,7 +4975,7 @@
       }
     },
     {
-      "position": 76,
+      "position": 78,
       "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
       "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
       "chapter_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
@@ -4929,7 +5037,7 @@
       }
     },
     {
-      "position": 77,
+      "position": 79,
       "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
       "title": "Governed Operations, Incident Command, and Graceful Degradation",
       "chapter_path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
@@ -4991,7 +5099,7 @@
       }
     },
     {
-      "position": 78,
+      "position": 80,
       "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
       "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
       "chapter_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
@@ -5044,7 +5152,7 @@
       }
     },
     {
-      "position": 79,
+      "position": 81,
       "chapter_id": "policy-optimization-and-learning-from-feedback",
       "title": "Policy Optimization and Learning from Feedback",
       "chapter_path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
@@ -5106,7 +5214,7 @@
       }
     },
     {
-      "position": 80,
+      "position": 82,
       "chapter_id": "data-engines-continual-learning-and-unlearning",
       "title": "Data Engines, Continual Learning, and Unlearning",
       "chapter_path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
@@ -5168,7 +5276,7 @@
       }
     },
     {
-      "position": 81,
+      "position": 83,
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "title": "Scientific Discovery and Experimental Governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
@@ -5230,7 +5338,7 @@
       }
     },
     {
-      "position": 82,
+      "position": 84,
       "chapter_id": "artifact-steward-agents-and-living-project-governance",
       "title": "Artifact Steward Agents and Living Project Governance",
       "chapter_path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
@@ -5292,7 +5400,7 @@
       }
     },
     {
-      "position": 83,
+      "position": 85,
       "chapter_id": "integrated-reference-architecture",
       "title": "Integrated Reference Architecture",
       "chapter_path": "chapters/integrated-reference-architecture.qmd",
@@ -5354,7 +5462,7 @@
       }
     },
     {
-      "position": 84,
+      "position": 86,
       "chapter_id": "project-theseus-as-report-first-implementation-reference",
       "title": "Project Theseus as Report-First Implementation Reference",
       "chapter_path": "chapters/project-theseus-as-report-first-implementation-reference.qmd",
@@ -5416,7 +5524,7 @@
       }
     },
     {
-      "position": 85,
+      "position": 87,
       "chapter_id": "prototype-roadmap",
       "title": "Prototype Roadmap",
       "chapter_path": "chapters/prototype-roadmap.qmd",
@@ -5478,7 +5586,7 @@
       }
     },
     {
-      "position": 86,
+      "position": 88,
       "chapter_id": "living-book-methodology",
       "title": "Living Book Methodology",
       "chapter_path": "chapters/living-book-methodology.qmd",
@@ -5540,7 +5648,7 @@
       }
     },
     {
-      "position": 87,
+      "position": 89,
       "chapter_id": "open-research-agenda-and-bibliography-plan",
       "title": "Open Research Agenda and Bibliography Plan",
       "chapter_path": "chapters/open-research-agenda-and-bibliography-plan.qmd",

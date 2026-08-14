@@ -7,10 +7,10 @@
   "roadmap_path": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md",
   "review_packet_path": "docs/round_23_reader_prose_quality_reconciliation_2026_08_02.md",
   "chapter_triage_path": "docs/chapter_content_triage_2026_08_08.md",
-  "canonical_chapter_count": 87,
-  "state": "complete_87_chapter_reader_prose_quality_validated",
+  "canonical_chapter_count": 89,
+  "state": "complete_89_chapter_reader_prose_quality_validated",
   "scope": {
-    "chapters": 87,
+    "chapters": 89,
     "new_chapters_authorized": 0,
     "support_state_effect": "none",
     "release_effect": "none",
@@ -46,14 +46,14 @@
       "editorial_diagnostics",
       "non_claims"
     ],
-    "required_chapter_packets": 87,
-    "current_packets": 87,
-    "current_digest_bound_packets": 87
+    "required_chapter_packets": 89,
+    "current_packets": 89,
+    "current_digest_bound_packets": 89
   },
   "acceptance_gates": [
-    "87/87 digest-bound chapter packets validate",
-    "87/87 chapters contain a concrete scene, worked trace, counterexample boundary, and handoff",
-    "87/87 core claims have readable and formal projections with stable atom/source identity",
+    "89/89 digest-bound chapter packets validate",
+    "89/89 chapters contain a concrete scene, worked trace, counterexample boundary, and handoff",
+    "89/89 core claims have readable and formal projections with stable atom/source identity",
     "role-normalized disclaimer audit has no unjustified outlier",
     "direct/agentive prose and off-surface bookkeeping audit passes",
     "semantic diff, render, browser Human-view, accessibility-tree, and link gates pass",

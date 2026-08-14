@@ -3,12 +3,12 @@
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
 Status: source-of-truth **technical-reference** outline, reconciled 2026-08-12
-against the 87-owner manifest. `book_structure.json` remains its ordering source
+against the 89-owner manifest. `book_structure.json` remains its ordering source
 of truth. The superseding three-part, 26-unit human writing specification is
 `docs/human_reader_26_unit_outline.md`; references below to the 22-unit route
 describe the preserved historical candidate, not the current manuscript target.
 
-The manifest now contains **87 chapters**, which is the sole current chapter
+The manifest now contains **89 chapters**, which is the sole current chapter
 count. The 2026-08-08 work-surface intake added one Part II owner for the
 transition from answer and suggestion through task, project, role, team,
 organization, and network; earlier 84-chapter audit and narrative-product
@@ -159,7 +159,7 @@ Throughout the outline, `layer` means a logical responsibility and authority bou
 ### Current reader-role classification
 
 P7.1a-W2 assigns every chapter in its historical 60-chapter scope one primary
-reader role. The current 87-entry projection is
+reader role. The current 89-entry projection is
 `evidence_quality/current_chapter_role_map.json`; the frozen W2 machine record
 remains `evidence_quality/p7_1a_w2_narrative_audit.json`. Roles guide emphasis
 and navigation only. They do
@@ -193,7 +193,7 @@ publication status.
   `coilra-multicoil-rope-and-cyclic-mixers`, and
   `open-research-agenda-and-bibliography-plan`, plus
   `relational-dimension-compilation-and-polyadic-cognition`.
-- **Load-bearing reference (57):** every remaining manifest chapter, including
+- **Load-bearing reference (59):** every remaining manifest chapter, including
   `governed-model-training-distributed-optimization-and-scaling` and
   `privacy-data-rights-and-information-flow-governance`. Each owns
   a distinct interface, invariant, artifact, lifecycle, or failure family and
@@ -295,7 +295,7 @@ natural evaluation, reproduction, and transfer remain open.
 
 ## Full-Coverage Admission Overlay — 2026-07-25
 
-The current manifest contains **87 chapters**. The full audit in
+The current manifest contains **89 chapters**. The full audit in
 `docs/full_coverage_gap_audit_2026_07_25.md` admitted four distinct owners:
 
 | Chapter | Exclusive job |
@@ -3232,6 +3232,85 @@ Lean proof targets:
 | `lean:world_model.unsupported_rollout_no_authority` | `AsiStackProofs.GovernedWorldModels` | A reachable six-stage world-model transaction binds an admitted observation, current model, qualified imagined branch, bounded planning handoff, independently observed actuality, and owned residual reconciliation while arbitrary accepted runs preserve exact identities, authority ceilings, and zero support or effect-authority assignment; stale, unsupported, disagreeing, unbounded, or authority-laundering packets are rejected. | implemented |
 | `lean:world_model.reality_residual_forces_route` | `AsiStackProofs.GovernedWorldModels` | A material observation residual forces bounded re-estimation, fallback, review, or safe hold before further model-based execution; the temporal model additionally requires an action receipt, independent effect observation, actuality labeling, residual computation, a response for material residuals, and a residual owner before reconciliation. | implemented |
 
+### Reflexive Model-World Systems
+
+Stable ID: `reflexive-model-world-systems`
+
+Chapter job: Own the trajectory-level causal contract for model lineages whose
+deployments alter the world, measurement process, preferences, institutions,
+shared evidence, or successor-training inputs, so later observation cannot
+silently masquerade as lineage-independent grounding.
+
+Core claim: A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `reflexive_model_world_systems` | Read the complete author preprint, formal assumptions, code, supplied result files, figures, and limitations. Treat the toy campaigns as source-reported until independently rerun; do not inherit the paper's external citations as evidence. |
+
+
+| Manifest assignment reconciliation | `ext_performative_prediction_2020` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Define governed model lineage and intervention-relative reflexive closure over
+  an evidence channel and horizon.
+- Separate state, outcome, exposure, measurement, preference, ontology,
+  institution, and model-ecology response channels instead of collapsing them
+  into generic distribution shift.
+- Replace human-versus-synthetic provenance with query-relative causal ancestry;
+  preserve lineage, exposure, target regime, identification method, and
+  uncertainty.
+- Specify grounding reserves as informative channels approximately invariant to
+  admissible lineage interventions; track reflexive debt and epistemic capture.
+- Preserve the source's scoped results on augmented-state necessity, local
+  stability, counterfactual-label mismatch, common-target contraction,
+  single-history non-identifiability, and institutional hysteresis without
+  universalizing them.
+- Evaluate baseline description, on-policy prediction, causal steering,
+  distribution, and legitimacy separately.
+- Require lineage manifests, time-unrolled causal graphs, ancestry records,
+  estimand registries, anchor contracts, identification plans, stress tests,
+  and persistence-aware rollback dossiers.
+
+Primary invariants:
+
+- Human origin does not establish lineage independence; synthetic origin does
+  not establish model descendancy.
+- On-policy calibration does not identify a no-deployment or alternative-policy
+  target.
+- Stable convergence does not establish welfare, rights, legitimacy, or safety.
+- Self-descended evidence cannot widen the lineage's own authority by itself.
+- Missing identification remains an uncertainty set or residual.
+- Model checkpoint rollback cannot establish restoration of persistent world,
+  evidence, preference, or institutional state.
+
+Failure modes to cover:
+
+- Counterfactual-label mismatch; epistemic capture; reflexive debt;
+  model-mediated selection; preference, ontology, measurement, and evaluator
+  endogeneity; cross-lineage evidence contamination; stale grounding;
+  single-history non-identification; stable harmful equilibria; institutional
+  hysteresis; and software-only rollback theater.
+
+Draft deliverables:
+
+- A complete technical chapter and bounded source note.
+- Public exact-source HTML with all seven supplied figures and explicit
+  non-reproduction disclosure.
+- Human Reader integration in Units 11, 21, and 25 without adding a new unit.
+- Planned pinned rerun of all supplied seeds, exact summary comparison, and
+  discrepancy reporting once `scikit-learn` is available.
+- Planned Project Theseus lineage, ancestry, grounding, target-regime, and
+  persistence-aware rollback slice.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:reflexive_system.augmented_state_required` | `AsiStackProofs.ReflexiveModelWorldSystems` | In a finite transition model, equal external world states paired with different deployed model states can produce different successor distributions, so external state alone cannot recover the encoded next-state route. | planned |
+| `lean:reflexive_system.rollback_no_restoration` | `AsiStackProofs.ReflexiveModelWorldSystems` | Restoring a prior model identity does not imply restoration of a persistent institutional state; accepted rollback requires explicit world, evidence, descendant, and residual fields and assigns no support or legitimacy. | planned |
+
 ### Cognitive Compilation and Semantic IR
 
 Stable ID: `cognitive-compilation-and-semantic-ir`
@@ -3303,6 +3382,84 @@ Lean proof targets:
 | `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `AsiStackProofs.CognitiveCompilationRefinement` | The original finite routes are consumed alongside an eight-event reachable refinement and independent exact-build six-fixture/86-mutation consumer covering source, obligation, authority, target, version, validation, receipt, repair, ledger, residual, support, and effect failures. | implemented |
 
 Proof boundary: the three public targets group 45 live declarations across the twelve-declaration retained route module and 33-declaration reachable refinement. Two assumption projections are physically retired with frozen lineage. The replacement proves exact abstract identity, authority, receipt, residual, localized-repair, coordinated version, fresh-validation, trace, and composition consequences for one finite model; it does not establish natural-language source/target semantics, arbitrary obligation completeness, actual artifact content, evaluator correctness, backend execution, measured repair locality, reproduction, transfer, or runtime refinement.
+
+### Cognitive Method Transfer and Qualification
+
+Stable ID: `cognitive-method-transfer-and-qualification`
+
+Chapter job: Own the upstream inheritance boundary that decides whether a human
+or institutional cognitive method's mechanism transports to an AI substrate,
+how the target realization is represented and qualified, and what assurance and
+authority may accompany it before ordinary compilation or runtime use.
+
+Core claim: Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.
+
+Source loading queue:
+
+| Role | Source IDs | Loading instruction |
+|---|---|---|
+| Primary | `compiling_civilization_cmtq` | Read the complete author paper, CTR/QCP schemas, example, figures, bibliography, validation boundary, and experimental program. Package conformance does not establish method validity or authority; cited external results need separate notes before supporting book claims. |
+
+
+| Manifest assignment reconciliation | `ext_coala_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+Draft arc:
+
+- Separate possession, realization, transport, qualification, and governance
+  gaps.
+- Define the CTR as the source record for mechanism hypotheses, assumptions,
+  evidence, contraindications, cost, normative content, provenance, and negative
+  records.
+- Decompose methods into roles, artifacts, operations, constraints, incentives,
+  and feedback; choose copy, transform, hybridize, or reject.
+- Define the QCP as a typed execution contract with applicability, epistemic
+  state, control flow, obligations, guards, verifiers, failure routes, budgets,
+  permissions, provenance, qualification scope, expiry, and rollback.
+- Keep qualification, assurance, and authority independent; no coordinate
+  implies another.
+- Maintain inheritance, execution, and evolution loops plus distinct beliefs
+  about the world and about method performance.
+- Route a minimal method set under policy, expected value of computation,
+  interactions, and order effects; preserve exploration/validation separation.
+- Treat protocol packages as security-sensitive supply-chain artifacts and
+  prohibit self-certification, self-promotion, and permission expansion.
+- Falsify through frozen-model, matched-budget comparisons of direct, prose,
+  structured, compiled, and independently verified conditions.
+
+Primary invariants:
+
+- Source familiarity does not imply qualification.
+- Protocol conformance does not imply truth or beneficial outcome.
+- Qualification, assurance, and authority do not substitute for one another.
+- Applicability and contraindications travel with the protocol.
+- A candidate may propose but cannot promote or empower itself.
+- Normative and legitimacy-bearing nodes remain explicitly owned.
+- Negative and null method records remain in the active evidence denominator.
+
+Failure modes to cover:
+
+- Latent possession without invocation; surface imitation; method theater;
+  wrong routing or order; over-structuring; verifier correlation; qualification
+  laundering; method monoculture; tacit-knowledge and legitimacy erasure;
+  poisoned packages; self-promotion; permission expansion; and recursive
+  metacognitive cost explosion.
+
+Draft deliverables:
+
+- A complete technical chapter and bounded source note.
+- Public exact-source HTML with the four supplied figures and package-validation
+  disclosure.
+- Human Reader integration in Units 13 and 18 without adding a new unit.
+- Planned import of bounded CTR/QCP schemas and one causal-claim protocol into
+  Project Theseus.
+- Planned frozen-model realization, routing, interaction, cost, harm, and
+  security campaign before any support promotion.
+
+Lean proof targets:
+
+| Tag | Lean module | Formal target | Status |
+|---|---|---|---|
+| `lean:cmtq.axes.non_substitution` | `AsiStackProofs.CognitiveMethodQualification` | Finite qualification, assurance, and authority coordinates remain independent: no projection over either pair exactly recovers the third, and an accepted protocol route requires all three without assigning truth, outcome benefit, legitimacy, support, or external effect. | planned |
+| `lean:cmtq.promotion.no_self_authority` | `AsiStackProofs.CognitiveMethodQualification` | A candidate protocol can emit a revision proposal and evidence but cannot reach promotion or permission expansion when the candidate is the sole qualifier, assurer, or authorizer. | planned |
 
 ### The Virtual Context ABI: Typed Pages, Cells, and Certificates
 
@@ -8092,7 +8249,7 @@ Draft arc:
 - Mechanism: Issue a typed change packet; regenerate scaffold, proof manifest, appendices, metrics, projections, status, and release records from canonical inputs; run surface-appropriate semantic, executable, rights, accessibility, render, browser, release, and deployment checks.
 - Mechanism: Treat chapter and part numbers as generated presentation data over stable manifest IDs; derive contiguous ordinals from current manifest order so insertion, removal, movement, or merge requires no stored-number rewrite and cannot change evidence identity.
 - Mechanism: Keep AI/research, Human view, reader, HTML, DOCX, EPUB, PDF, companion, article, image, and audio outputs as typed derivatives; separate generation, inspection, approval, deployment, observation, archive, and publication; promote only by accepted evidence transition.
-- Mechanism: Compress the 87-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
+- Mechanism: Compress the 89-chapter responsibility graph into 22 narrative units without claim absorption: representatives own orientation, specialists retain distinct responsibility, claim identity, label, evidence ceiling, and direct canonical routes, and the architecture reference retains complete technical density.
 - Mechanism: Preserve every terminal result; propagate corrections, downgrades, proof retirement, failed tests, rights changes, release revocation, and derivative drift; monitor quality, freshness, debt, accessibility, residuals, burden, and cost; hand exactly one active roadmap to the successor.
 - Interfaces: Twelve exact joins cover human authority; sources; canonical book graph; claim/evidence control; proof and executable artifacts; version and release identity; public Quarto projection; typed derivatives; validation and attestation; continuous work and handoff; external comparators; and downstream consumers.
 
@@ -8141,7 +8298,7 @@ and records four first-tranche manifest entries—white-box evidence and
 activation governance, governed world models and reality grounding, human
 factors and meaningful oversight, and governed operations/incident command.
 That historical working manifest contained 59 entries; the current manifest
-contains 87. White-Box Evidence is terminally
+contains 89. White-Box Evidence is terminally
 integrated as an argument-level reader chapter with its packet, formal route,
 resource-isolated claim-bearing protocol, source crosswalk, and non-claim
 boundary complete; its empirical campaign remains deliberately unexecuted and

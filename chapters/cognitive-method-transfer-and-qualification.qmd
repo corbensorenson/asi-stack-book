@@ -1,0 +1,345 @@
+---
+title: "Cognitive Method Transfer and Qualification"
+chapter_id: "cognitive-method-transfer-and-qualification"
+part_id: "planning-memory-reasoning-execution"
+status: "conceptual"
+draft_maturity: "integrated_argument_chapter"
+last_updated: "2026-08-14"
+primary_sources:
+  - "compiling_civilization_cmtq"
+evidence_level: "argument"
+claim_label: "Design rationale"
+open_evidence_gaps:
+  - "No CMTQ runtime or procedure-realization benchmark has been implemented or run."
+  - "No method-routing, interaction, or security effect has been measured locally."
+  - "No independent reproduction establishes beneficial transport of a human or institutional method into an AI protocol."
+---
+
+## Chapter status
+
+| Field | Value |
+|---|---|
+| Chapter ID | `cognitive-method-transfer-and-qualification` |
+| Part | Part II - Planning, Memory, Reasoning, and Execution |
+| Claim label | Design rationale |
+| Support state | argument |
+| Primary source | `compiling_civilization_cmtq` |
+| Package review | Manuscript, bibliography, figures, schemas, example, build files, manifest, and checksums reviewed |
+| Source loading state | Exact author manuscript and bounded source note reviewed; no support promotion |
+| Local validation | Supplied package validator passed; no CMTQ efficacy test ran |
+
+::: {.callout-important title="Evidence boundary"}
+The supplied CTR and QCP schemas are valid and the example QCP conforms to its schema. That establishes a bounded artifact check, not that the represented method is useful, faithfully transported, secure, legitimate, or authorized. CMTQ remains a proposed architecture and experimental program.
+:::
+
+::: {.asi-human-only}
+## Human Reading Path
+
+**Concrete lens.** An agent can quote a causal-inference method perfectly and still omit the diagnostic that determines whether the method applies.
+
+Civilization has accumulated ways of thinking that are more structured than advice: checklists, double-entry reconciliation, differential diagnosis, peer review, premortems, appeals, and experimental controls. Giving their names to a model is not enough. A method matters because of the mechanism that makes omissions visible, separates roles, forces comparison, or blocks commitment until evidence arrives.
+
+Moving such a method into an AI system requires translation. Some elements can be copied, some must be transformed, some depend on human institutions, and some should be rejected. A checklist may become persistent obligations enforced by code. Peer review may require genuinely independent evidence and authority rather than several role prompts sharing one context. A method that works for one model, task, budget, and risk level may fail elsewhere.
+
+The transferred result becomes a versioned protocol with typed inputs, stopping rules, verifiers, permissions, and rollback. Three judgments remain separate. Qualification asks whether the method helps in a defined setting. Assurance asks whether the protocol was followed. Authority asks what the result may change. Passing one judgment cannot silently pass the others.
+
+This separation lets a system inherit intellectual tools without treating tradition as infallible or a valid schema as proof of benefit. Failed translations stay in memory, candidate revisions remain quarantined, and no protocol receives permission to certify or promote itself.
+:::
+
+## Problem
+
+Civilization stores more than facts. It stores arrangements for thinking: mathematical notation, experimental protocols, checklists, differential diagnosis, peer review, double-entry reconciliation, premortems, postmortems, appeals, engineering standards, and institutions that separate proposal from authorization.
+
+A capable model can often describe these methods. Description is not execution. The model may fail to recognize when a method applies, select it too late, omit a mandatory step, invent evidence that a step occurred, stop before verification, or store a weak lesson as if it were authoritative.
+
+Direct copying creates a second failure. Human methods were built around human memory, embodiment, incentives, professions, institutional authority, and social legitimacy. A peer-review prompt can imitate the label while sharing the proposer's evidence and failure modes. A checklist translated into prose can preserve visible form while losing its omission-blocking mechanism. A court-like debate among role prompts does not acquire legal authority or public legitimacy.
+
+The problem is therefore not "How do we give an agent more skills?" It is:
+
+> How does a method developed in one cognitive and institutional substrate become a justified, executable, target-specific, and revocable component of another?
+
+## Why existing approaches are insufficient
+
+CMTQ separates five failures that are often merged:
+
+1. **Possession gap:** the system can state a method but does not reliably invoke it.
+2. **Realization gap:** it invokes the method but does not execute the mechanism faithfully.
+3. **Transport gap:** the human surface form is copied even though the relevant mechanism depends on human-specific structure.
+4. **Qualification gap:** the realization exists but has not been shown useful for this model, domain, task distribution, environment, budget, and risk class.
+5. **Governance gap:** a useful, faithfully executed method is granted effects or authority it does not legitimately possess.
+
+Ordinary prompt libraries and agent frameworks can address pieces of these gaps, but they usually do not preserve the source method, mechanism hypothesis, transported realization, indexed qualification, runtime receipt, and authority decision as distinct versioned objects. Without that separation, a persuasive description can be mistaken for a tested procedure, conformance can be mistaken for benefit, and repeated use can become de facto promotion without an accountable admission decision.
+
+### External positioning: from cognitive architecture to method admission
+
+[Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) (`ext_coala_2024`) gives direct prior art for organizing language agents through modular memory, structured internal and external actions, and a generalized decision process. CMTQ accepts that architectural premise but owns an earlier admission problem that CoALA does not claim to solve: preserving the source method before implementation, testing whether its mechanism transports, compiling a target-specific protocol, qualifying that exact realization, and preventing qualification, execution assurance, and authority from substituting for one another. The difference is one of contract scope, not a claim that cognitive-architecture work is deficient or that CMTQ has already outperformed it.
+
+```{mermaid}
+flowchart LR
+  S["Civilizational source method"] --> C["Cognitive Technology Record"]
+  C --> T["Functional transport analysis"]
+  T --> P["Candidate Qualified Cognitive Protocol"]
+  P --> Q["Scoped qualification"]
+  Q --> R["Runtime routing and execution"]
+  R --> E["Method-performance evidence"]
+  Q --> I["Independent evaluator"]
+  I -. "bounded finding" .-> E
+  E --> G["Independent promotion, restriction, or retirement"]
+  G -. "versioned revision" .-> C
+  P -. "cannot self-promote" .-> G
+```
+
+**Reading the cognitive method admission pipeline:** the main path preserves a source method through record creation, transport analysis, protocol compilation, qualification, execution, and evidence. The evaluator contributes a bounded finding rather than authority, while the return edge creates a new version and the prohibition edge prevents a candidate protocol from promoting itself.
+
+## Core Claim
+
+[cognitive-method-transfer-and-qualification.core, label: Design rationale, support: argument] Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.
+
+This chapter owns the upstream admission boundary. [Cognitive Compilation and Semantic IR](cognitive-compilation-and-semantic-ir.qmd) lowers an obligation already accepted for translation. [Procedural Memory and Cognitive Loop Closure](procedural-memory-and-cognitive-loop-closure.qmd) turns repeated local trajectories into reusable procedures. CMTQ asks whether an inherited method's mechanism transports and what evidence must accompany its use.
+
+## Mechanism
+
+CMTQ operates as a governed compilation pipeline: preserve the source method, expose competing mechanism hypotheses, test functional transport, compile a typed protocol, qualify that exact realization for an indexed target, and admit it through an authority boundary that the protocol cannot control. Three coupled loops then govern inheritance, execution, and evolution without allowing success in one loop to certify another.
+
+### Cognitive Technology Records
+
+A **Cognitive Technology Record (CTR)** preserves the source method before implementation choices erase its assumptions. It records:
+
+- source identity, history, version, and domain;
+- intended cognitive function and failure class;
+- roles, artifacts, operations, constraints, incentives, and feedback;
+- competing mechanism hypotheses and their observable implications;
+- source evidence, uncertainty, indirectness, and implementation fidelity;
+- assumptions, contraindications, known harms, and null results;
+- time, compute, coordination, and implementation costs;
+- normative content, authority, consent, and legitimacy dependencies;
+- provenance, integrity, and security state.
+
+Mechanism hypotheses are first-class. A checklist may work through omission prevention, pause creation, team communication, or institutional signaling. A hard runtime gate can reproduce omission prevention without reproducing communication or legitimacy. When the target realization succeeds or fails, the record should say which mechanism was actually tested.
+
+Negative CTRs matter. A method that is ineffective, harmful, or non-transportable remains retrievable with the conditions and tests that revealed the failure. Otherwise a self-improving system repeatedly rediscovers attractive mistakes.
+
+### Functional transport
+
+Transport begins by decomposing the source method into structural elements and asking which are causally relevant. Each element is classified as substrate-general, human-specific, institution-specific, normative, or uncertain. The result can be:
+
+- **copy**, when the source structure itself remains appropriate;
+- **transform**, when a different implementation preserves the mechanism;
+- **hybridize**, when human or institutional ownership is essential;
+- **reject**, when the mechanism does not transport or expected value is negative.
+
+Rejection is not a failure. It is evidence that civilization is a hypothesis corpus, not an infallible blueprint.
+
+Applicability is part of the method. Counterexample search may be central for a universal mathematical claim and wasteful for a low-stakes aesthetic request. Premortems may expand failure coverage after a plan exists and suppress exploration if run before ideation. Repeated self-critique can damage a correct answer when no external feedback exists. Every realization needs positive predicates, contraindications, and an explicit stopping rule.
+
+### Qualified Cognitive Protocols
+
+A **Qualified Cognitive Protocol (QCP)** is a typed, versioned execution contract. It specifies:
+
+```text
+identity and version
+applicability and contraindications
+typed inputs, outputs, claims, and runtime state
+control and data flow
+obligations, invariants, and forbidden transitions
+verifier and evidence bindings
+retry, repair, abstention, escalation, and rollback
+budget and stopping policy
+permissions, effects, and authority boundaries
+indexed qualification package
+provenance, integrity, expiry, and revocation
+```
+
+Its intermediate representation needs only a compact cognitive-control vocabulary: observe, retrieve, generate, decompose, compare, estimate, simulate, challenge, verify, revise, delegate, escalate, commit, store, abstain, and stop. Each node declares its owner. Models own ambiguous interpretation, hypothesis generation, analogy, and creative search. Code owns control flow, schema checks, versioning, arithmetic, budgets, and permission checks. Independent verifiers own externally checkable calculations or artifacts. Humans and institutions retain values, consent, legitimacy, constitutional change, and high-stakes authority.
+
+The objective is not deterministic thought. It is deterministic or independently inspectable ownership of the boundaries that can be made structural.
+
+### Typed epistemic state
+
+Fluent prose erases state distinctions. A model output becomes an observation; a report becomes a fact; a hypothesis becomes a finding; confidence becomes evidence; a recommendation becomes action.
+
+QCPs preserve types such as `Observation`, `SourceReport`, `Assumption`, `Hypothesis`, `Prediction`, `DerivedClaim`, `CausalClaim`, `EvidenceItem`, `Finding`, `Conflict`, `Unknown`, `Decision`, `CandidateAction`, `ExecutedAction`, `Permission`, and `Obligation`.
+
+Representative guards include:
+
+```text
+ModelOutput -> Observation
+    requires external grounding
+
+Correlation -> CausalClaim
+    requires an applicable causal-identification protocol
+
+CandidateAction -> ExecutedAction
+    requires permission and risk gates
+
+ProtocolProposal -> ProtocolPromotion
+    requires independent evaluation and authorization
+```
+
+The guard can establish that a required operation occurred. It cannot establish that the resulting belief is true. A provenance checker can verify that a source exists without proving the source correct. A statistical tool can reproduce a calculation without proving representativeness. Process assurance and epistemic validity remain separate.
+
+### Three independent axes
+
+The protocol state has three coordinates:
+
+| Axis | Question | What it cannot establish |
+|---|---|---|
+| Qualification | Does the method improve declared outcomes in this indexed scope? | Faithful execution or permission |
+| Assurance | Was the protocol executed and were its obligations satisfied? | Method validity or truth |
+| Authority | What belief, memory, tool, or external state may it change? | Efficacy or correctness |
+
+A strongly enforced method can be harmful. A beneficial method can be executed unreliably. A beneficial and faithful method can remain unauthorized. No scalar maturity score should erase these cases.
+
+Qualification is always scoped. A label without the exact model, protocol version, domain, task distribution, environment, budget, risk class, evaluator, and date is incomplete. The source proposes lifecycle levels and assurance levels, but they remain framework constructs rather than calibrated standards.
+
+### Inheritance, execution, and evolution
+
+The architecture has three coupled loops.
+
+**Inheritance** discovers candidate methods, creates CTRs, separates mechanism from surface form, evaluates evidence and indirectness, and emits weakly qualified candidate realizations.
+
+**Execution** builds a task descriptor, retrieves matching protocols, checks conflicts and dependencies, selects a minimal graph under policy and resource constraints, binds owners and verifiers, monitors obligations, and terminates as accepted, provisional, abstained, escalated, failed, or rolled back.
+
+**Evolution** observes traces and outcomes, then asks whether success or failure came from the method, routing, execution fidelity, verifier quality, interaction, resource limits, environmental change, model behavior, or a wrong mechanism hypothesis. Candidate changes stay quarantined until held-out, adversarial, and independent review authorizes staged use.
+
+The system maintains two beliefs: beliefs about the world and beliefs about method performance. A protocol can reach the right answer for the wrong reason or the wrong answer despite faithful execution. Those episodes should update different records.
+
+### Method ecology and routing
+
+A large registry should not become a large prompt. Protocol relations include `requires`, `conflicts_with`, `specializes`, `subsumes`, `verifies`, `invalidates`, `must_precede`, `must_follow`, and `requires_independence_from`.
+
+Selection is a metareasoning problem: expected benefit must exceed resource cost, residual risk, and interaction cost after mandatory policy constraints. Method effects can be non-additive and order-dependent. Retrieval before ideation can ground or anchor. Criticism before exploration can narrow diversity. Exploration and validation should therefore occupy different epistemic regimes.
+
+The router itself needs qualification, calibration, abstention, fallback, and audit. A valid method invoked on the wrong task is still a system failure.
+
+### Translating representative methods
+
+The framework changes familiar translations:
+
+- A checklist becomes persistent obligations with satisfaction evidence and a blocked commitment boundary, not a list the model can claim to have completed.
+- Double-entry logic becomes redundant representations plus reconciliation invariants, not a guarantee that original entries are honest.
+- Peer review becomes declared independence across evidence, model, context, method, incentive, authority, time, and human legitimacy.
+- A premortem becomes prospective failure search with timing constraints, preserved minority hazards, leading indicators, mitigations, and rollback triggers.
+- Differential diagnosis becomes competing-model elimination with base rates, consequence asymmetry, discriminating tests, and domain authority intact.
+- A postmortem becomes a failure signature, candidate detector, regression test, held-out qualification, and only then a possible guard or recovery policy.
+
+These examples demonstrate mechanism-preserving translation. They do not establish that the translations work.
+
+## Interfaces
+
+The intake interface accepts a versioned source method, provenance, evidence record, domain and task description, candidate mechanism hypotheses, assumptions, normative dependencies, and known harms. The compiler emits a CTR, one or more candidate QCPs, typed obligations, verifier bindings, applicability and contraindication predicates, budgets, stopping rules, and unresolved translation residuals. Runtime returns execution receipts, outcome observations, assurance findings, authority decisions, and method-performance evidence to independent lifecycle owners.
+
+Registry queries operate over those exact identities rather than free-text method names. A router may request candidates for a task descriptor, but it receives applicability predicates, conflict edges, qualification scope, expiry, resource estimates, and authority ceilings alongside each protocol. Evaluators consume frozen protocol versions and matched-budget traces. Promotion consumes evaluator records through a separate authority interface, while memory stores both accepted and rejected realizations without treating retrieval as permission to execute.
+
+## Invariants
+
+- Qualification never substitutes for faithful execution or permission.
+- Execution assurance never establishes method validity, truth, or legitimacy.
+- Authority never establishes efficacy or correctness.
+- A protocol cannot qualify, promote, or widen the permissions of itself or its successor.
+- Source form cannot stand in for a transported mechanism, and conformance cannot stand in for outcome evidence.
+- Every qualification remains bound to an exact model, protocol version, target distribution, environment, budget, evaluator, risk class, and date.
+- Failed, harmful, and non-transportable methods remain available as negative procedural evidence.
+
+These invariants keep the lifecycle from collapsing into one confidence score. They are enforceable only to the extent that identities, role separation, receipts, and permission checks are real. A typed record cannot make an evaluator competent or an institution legitimate; it can make an attempted substitution visible and reject the represented transition instead of silently accepting it.
+
+## Failure modes
+
+### Security and governance
+
+A protocol can determine what the model sees, which evidence it trusts, what it stores, which tools it invokes, and what it may do. It is therefore a permission-bearing supply-chain artifact.
+
+Threats include injected documentation, malicious code, hidden effects, memory poisoning, composition attacks, forged provenance, downgrade, self-promotion, permission expansion, false receipts, and evaluator capture. Each QCP needs stable identity, integrity, declared effects, least privilege, admission review, sandboxing, revocation, and a rollback target.
+
+No protocol can certify its own qualification, promote its own revision, or widen its own authority. Human or institutional legitimacy cannot be synthesized by spawning another role prompt.
+
+## Evaluation and falsification
+
+The decisive experiment freezes model weights and compares:
+
+1. direct response;
+2. prose possession of the method;
+3. structured but model-interpreted execution;
+4. compiled protocol control;
+5. compiled control with independent verification.
+
+Evaluation separately measures method validity, selection validity, execution fidelity, outcome effect, calibration, error recovery, provenance, cost, latency, harm, and authority violations. Matched compute is mandatory. Otherwise additional calls can masquerade as better cognitive organization.
+
+CMTQ is weakened if prose possession matches compiled fidelity, effects transfer uniformly without scope, selective routing does not beat indiscriminate loading as registries grow, guards improve compliance without outcomes or harm reduction, negative procedural controls do not reduce recurrence, or governance adds cost without reducing regression or attack success.
+
+### Concrete scene: a causal method arrives as persuasive prose
+
+An agent is asked whether a hospital alarm improved outcomes. Retrieval finds a respected paper describing causal adjustment, and the agent produces a fluent answer that treats the observed post-treatment outcome as the untreated baseline. The method was present in the context, but its assumptions, required variables, diagnostic checks, and stop conditions never became executable obligations.
+
+Under CMTQ, the paper first becomes a Cognitive Technology Record that preserves provenance, purpose, prerequisites, invariants, failure modes, and unresolved translation choices. A compiler then emits a Qualified Cognitive Protocol whose preflight rejects the task if treatment assignment, intervention timing, target regime, or overlap diagnostics are missing. The protocol may improve procedural custody, but qualification, assurance, and authority remain separate: a well-formed protocol is not evidence that the causal method is correct, that its assumptions hold, or that the agent may make a clinical decision.
+
+### Worked trace: from method claim to qualified protocol
+
+The intake begins at `source_method_claimed`. Extraction produces `ctr_semantics_recorded`, with every ambiguity retained as a typed residual. Compilation produces `qcp_candidate` containing required inputs, ordered operations, branch conditions, evidence obligations, failure states, and an abstention route. Independent conformance checks may move it to `protocol_qualified_for_runtime_r2`; empirical comparison may separately move assurance, while the authority field remains `analysis_only`. At execution time, a missing positivity diagnostic produces `preflight_rejected`, not a guessed substitute. A later protocol revision creates a new version and must rerun the affected qualification suite.
+
+The maximum inference is architectural: a method can be transported through records, typed protocols, qualification evidence, and bounded runtime invocation without collapsing those states. This trace does not establish semantic extraction accuracy, causal validity, benchmark advantage, evaluator independence, or safe autonomous use.
+
+## Minimum Viable Implementation
+
+Implement the supplied CTR and QCP schemas for one causal-claim audit. Bind each node to a model, code path, verifier, or human role. Add mutations for missing applicability, fabricated evidence, invalid causal transition, absent permission, self-promotion, stale qualification, and verifier dependence.
+
+Run a frozen-model comparison across direct, prose, structured, compiled, and verifier-backed conditions with matched budgets. Publish mandatory-step fidelity, invalid transitions, task outcome, calibration, tokens, latency, tool cost, and harm. A passing schema and one successful trace remain implementation evidence only.
+
+The first implementation should preserve every attempted state transition in a replayable ledger and include negative controls for prompt-only possession, wrong-task routing, omitted prerequisites, shared-evidence pseudo-review, self-ratification, stale qualification, and permission expansion. Acceptance requires exact artifact reproduction and honest null reporting, not an improvement result. Any observed advantage must survive simpler structured baselines and an independent evaluator before it can influence qualification.
+
+## Mature Research Target
+
+The mature system is a cognitive-method operating system. It maintains a transparent atlas of inherited and machine-discovered methods, estimates target-relative applicability and interaction, compiles minimal graphs, allocates verification by risk and expected value, preserves negative results and dissent, and evolves through held-out, cross-model, adversarial, and monitored evaluation.
+
+Its endpoint is not permanent imitation of humans. Human methods seed a broader science of how reasoners, representations, memory, tools, evidence, roles, feedback, and authority should be arranged. The root of methodological trust remains bounded by independent outcomes, integrity-protected evaluation, held-out environments, legitimate authority, and no-self-certification.
+
+At mature scale, the registry would model method composition rather than ranking isolated skills. It would estimate when retrieval anchors exploration, when criticism suppresses diversity, when redundant representations expose disagreement, and when verification costs exceed expected benefit. Protocol graphs would be synthesized under explicit risk and resource constraints, then evaluated as graphs so a successful component could not inherit credit from a stronger surrounding workflow.
+
+New methods discovered by the system would enter through the same boundary as inherited ones. A candidate could propose its mechanism, implementation, expected domain, and falsification tests, but it could not choose its sole evidence, evaluator, or authority. Cross-model and cross-institution evaluation would search for transport failures and correlated blind spots. Retirement would propagate to descendants while preserving a negative record that prevents the same failed mechanism from returning under a new name.
+
+## Formalization hooks
+
+The following targets are planned. They are deliberately limited to finite admission and authority records; neither target proves semantic extraction, method efficacy, execution fidelity, evaluator independence, legitimate authority, security, or chapter-core support.
+
+| Planned target | Finite model | Honest conclusion | Semantic limit |
+|---|---|---|---|
+| `lean:cmtq.axes.non_substitution` | Independent qualification, assurance, and authority coordinates with equal-pair counterexamples | No modeled pair can recover the third coordinate, and admission can require all three | Does not establish that any coordinate is true, competent, independent, or legitimate in practice |
+| `lean:cmtq.promotion.no_self_authority` | Candidate, qualifier, assurer, and authorizer roles over proposal, evidence, promotion, and permission states | A sole self-controlled candidate cannot reach modeled promotion or permission expansion | Does not establish real institutional independence, collusion resistance, reviewer competence, or deployed enforcement |
+
+## Codex test plan
+
+| Target | Current state | Honest next step |
+|---|---|---|
+| CTR and QCP package conformance | passed for supplied package | Import bounded schemas without converting conformance into qualification. |
+| Qualification-assurance-authority non-substitution | planned | Mechanize finite coordinates and collision cases. |
+| No self-promotion or permission expansion | planned | Mechanize candidate, evaluator, authorizer, and promotion roles. |
+| Procedure-realization benchmark | planned | Run frozen-model matched-budget comparisons. |
+| Routing, interaction, and security campaign | planned | Add applicability, overload, order, poisoning, downgrade, and self-ratification controls. |
+
+## Source crosswalk
+
+| Source | Use | Boundary |
+|---|---|---|
+| [Compiling Civilization](../papers/compiling_civilization_cmtq.qmd) | Primary CTR, QCP, transport, routing, governance, and evaluation framework | Author conceptual paper; no CMTQ runtime or efficacy result |
+| [Cognitive Architectures for Language Agents](https://arxiv.org/abs/2309.02427) | External comparator for modular memory, structured action spaces, and language-agent decision cycles | Primary paper reviewed; no surveyed result reproduced; does not validate CMTQ transport or qualification |
+| [Bounded source note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/compiling_civilization_cmtq.md) | Exact provenance, chapter routing, validation result, proof backlog, and non-claims | Mining record, not independent evidence |
+
+### Manifest source assignment reconciliation
+
+These rows keep Cognitive Method Transfer and Qualification's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `compiling_civilization_cmtq` | Passage-reviewed comparator: [Compiling Civilization: Cognitive Method Transfer and Qualification for Artificial Intelligence](../papers/compiling_civilization_cmtq.html). Provides the CTR and QCP artifact contracts, five-gap decomposition, functional transport test, QCP-IR sketch, typed epistemic state, independent qualification/assurance/authority axes, three-loop lifecycle, method ecology, security model, cognitive-leverage benchmark, and explicit falsification conditions. | The framework, proposed levels, runtime, routing policy, benchmark, and post-human method science are not implemented or empirically validated. Package and schema conformance do not establish method efficacy, faithful realization, legitimacy, security, or authority. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_coala_2024` | Passage-reviewed comparator: Cognitive Architectures for Language Agents. Provides direct external context for modular memory, structured internal and external action spaces, and generalized decision cycles in language-agent cognitive architectures. | The source does not establish CMTQ's source records, functional transport test, typed qualified protocols, independent qualification/assurance/authority axes, supply-chain controls, or method efficacy. No surveyed result was reproduced locally. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
+## Summary
+
+Civilization's methods are valuable candidate infrastructure, not automatic authority. Before a method governs an AI system, the stack must preserve its source assumptions, identify its mechanism, decide whether that mechanism transports, compile a typed realization, qualify it for a bounded target, verify its execution, constrain its effects, and keep failed or rejected methods in memory. Qualification, assurance, and authority remain independent throughout.
+
+That pipeline turns methodological inheritance into an accountable experimental program. It also creates a route for methods that no human institution has named yet, provided they face the same provenance, falsification, independence, permission, and retirement rules. The supplied schemas establish that the proposed records can be represented; they do not establish that extraction is faithful or that compiled methods improve outcomes. Those questions remain planned empirical and formal work.
+
+## Handoff
+
+Once an inherited method is qualified and admitted, its runtime state still needs bounded context, typed evidence, freshness, taint, and certificate semantics. [The Virtual Context ABI: Typed Pages, Cells, and Certificates](virtual-context-abi.qmd) owns that memory and context boundary. It materializes only the context authorized by the admitted protocol and preserves omissions, loss, expiry, revocation, and adequacy residuals without inheriting authority to requalify the method.

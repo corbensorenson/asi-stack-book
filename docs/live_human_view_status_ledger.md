@@ -8,10 +8,10 @@ This ledger replaces the former long `Live Human view` cell in `docs/v1_0_candid
 
 | Metric | Value |
 |---|---:|
-| Expected rendered book pages | 100 |
-| Manifest chapters | 87 |
+| Expected rendered book pages | 102 |
+| Manifest chapters | 89 |
 | Appendices | 11 |
-| Human Reading Path blocks | 87 |
+| Human Reading Path blocks | 89 |
 | Human bridge minimum words | 190 |
 | Human bridge minimum opening-sentence words | 11 |
 | Human bridge minimum closing-sentence words | 11 |
@@ -19,12 +19,12 @@ This ledger replaces the former long `Live Human view` cell in `docs/v1_0_candid
 | Active reader-overlay operations | 75 |
 | Active reader-overlay chapters | 31 |
 | Overlay operations embedded in live asset | 75 |
-| Post-render static pages expected | 100 |
-| Browser page-view pairs expected with all chapters/viewports | 178 |
+| Post-render static pages expected | 102 |
+| Browser page-view pairs expected with all chapters/viewports | 182 |
 
 ## Status-Page Row
 
-| Live Human view | Live/Human-view detail is generated in `docs/live_human_view_status_ledger.md`: 100 expected book pages, 87 manifest chapters with one Human Reading Path each, 75 active reader-overlay operations across 31 chapters, bridge minima 190/11/11 words with 0 template hits, and post-render static/browser gates remain required for hiding, restoration, overlay processing, and overflow checks. | `docs/live_human_view_status_ledger.md`; `assets/reader-overlays.html`; `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_live_human_view_status_ledger.py`; `python3 scripts/validate_live_human_view.py`; `node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` |
+| Live Human view | Live/Human-view detail is generated in `docs/live_human_view_status_ledger.md`: 102 expected book pages, 89 manifest chapters with one Human Reading Path each, 75 active reader-overlay operations across 31 chapters, bridge minima 190/11/11 words with 0 template hits, and post-render static/browser gates remain required for hiding, restoration, overlay processing, and overflow checks. | `docs/live_human_view_status_ledger.md`; `assets/reader-overlays.html`; `assets/reading-mode.html`; `assets/styles.scss`; `python3 scripts/validate_live_human_view_status_ledger.py`; `python3 scripts/validate_live_human_view.py`; `node scripts/validate_live_human_view_browser.js --all-chapters --all-viewports` |
 
 ## Source Contract
 

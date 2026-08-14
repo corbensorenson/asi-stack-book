@@ -10,11 +10,11 @@ It does **not** prove semantic adequacy, source interpretation, model quality, d
 
 | Metric | Value |
 |---|---:|
-| Proof targets audited | 340 |
-| Manifest status counts | {"implemented": 330, "planned": 10} |
-| Triage class counts | {"formal-invariant": 339, "process-contract": 1} |
+| Proof targets audited | 344 |
+| Manifest status counts | {"implemented": 330, "planned": 14} |
+| Triage class counts | {"formal-invariant": 342, "process-contract": 2} |
 | Lean modules referenced | 95 |
-| Chapters with proof targets | 87 |
+| Chapters with proof targets | 89 |
 | Validation errors | 0 |
 | Warnings | 0 |
 | ProofEnvelope theorem declarations | 28 |
@@ -168,6 +168,7 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `circle-calculus-and-proof-carrying-ai-contracts` | 4 | 4 | 0 | 0 |
 | `claim-ledgers-and-belief-revision` | 4 | 4 | 0 | 0 |
 | `cognitive-compilation-and-semantic-ir` | 3 | 3 | 0 | 0 |
+| `cognitive-method-transfer-and-qualification` | 2 | 0 | 0 | 0 |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 3 | 3 | 0 | 0 |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 2 | 2 | 0 | 0 |
 | `compact-generative-systems-and-residual-honesty` | 9 | 9 | 0 | 0 |
@@ -222,6 +223,7 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `rankfold-neuralfold-and-artifact-compression` | 3 | 3 | 0 | 0 |
 | `readiness-gates-residual-escrow-and-quarantine` | 3 | 3 | 0 | 0 |
 | `recursive-self-improvement-boundaries` | 3 | 3 | 0 | 0 |
+| `reflexive-model-world-systems` | 2 | 0 | 0 | 0 |
 | `relational-dimension-compilation-and-polyadic-cognition` | 1 | 1 | 0 | 0 |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 1 | 1 | 0 | 0 |
 | `resource-economics-and-token-budgets` | 11 | 11 | 0 | 0 |
@@ -362,9 +364,13 @@ effect, safety, transfer, SOTA, AGI, or ASI.
 | `lean:planforge.dag.failure_blocks_promotion` | `planning-as-a-control-layer` | `AsiStackProofs.PlanForge` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:world_model.unsupported_rollout_no_authority` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:world_model.reality_residual_forces_route` | `governed-world-models-and-reality-grounding` | `AsiStackProofs.GovernedWorldModels` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:reflexive_system.augmented_state_required` | `reflexive-model-world-systems` | `AsiStackProofs.ReflexiveModelWorldSystems` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:reflexive_system.rollback_no_restoration` | `reflexive-model-world-systems` | `AsiStackProofs.ReflexiveModelWorldSystems` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:cognitive_compilation.ir.operational_invariant` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.failure_blocks_promotion` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:cognitive_compilation.ir.semantic_lowering_route_envelope` | `cognitive-compilation-and-semantic-ir` | `AsiStackProofs.CognitiveCompilationRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
+| `lean:cmtq.axes.non_substitution` | `cognitive-method-transfer-and-qualification` | `AsiStackProofs.CognitiveMethodQualification` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
+| `lean:cmtq.promotion.no_self_authority` | `cognitive-method-transfer-and-qualification` | `AsiStackProofs.CognitiveMethodQualification` | triage ok; chapter tag ok; planned target; module and formalization implementation checks deferred |
 | `lean:vcm.abi.operational_invariant` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.failure_blocks_promotion` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |
 | `lean:vcm.abi.context_admission_route_envelope` | `virtual-context-abi` | `AsiStackProofs.VirtualContextRefinement` | triage ok; module ok; chapter tag ok; limitation ok |

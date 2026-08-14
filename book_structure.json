@@ -3688,7 +3688,7 @@
           "core_claim": "A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.",
           "mechanism": [
             "Preserve each conflict before action as proposition-level normative claims with separate descriptive evidence, predictive uncertainty, value or theory provenance, affected parties and standing, stakes, reversibility, jurisdiction, authority or consent boundary, dependencies, and known omissions.",
-            "Record the exact decision procedure—precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation—along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
+            "Record the exact decision procedure\u2014precedence rule, aggregation method, veto, lottery, tribunal, negotiated compromise, least-harm or reversible default, abstention, or escalation\u2014along with who selected it, its scope, and its non-claims; no aggregation silently becomes moral truth or consent.",
             "Issue a bounded decision lease naming permitted and prohibited actions, authority ceiling, affected parties, evidence bar, preserved dissent, residual uncertainty, expiry, revisit and material-change triggers, rollback, appeal, correction, and redress without treating the lease as moral settlement.",
             "Represent audit, explanation, dissent, review, appeal, correction, redress, exit, export, fork, and contestability as rights records with holder and standing, request state, scope, access path, timing, accessibility, cost, retaliation and dependency risks, required artifacts, accountable owner, denial reason, appeal route, preservation rule, and receipt.",
             "Bind every denial, withholding, and redaction to a classified reason, necessity and proportionality rule, withheld-material inventory or digest, expiry, independent-enough review, appeal, and later-disclosure trigger; secrecy cannot erase the fact or scope of withholding.",
@@ -4534,7 +4534,7 @@
           },
           "problem": "A governed stack needs to replace models, prompts, tools, adapters, policies, data, evaluators, and runtime dependencies without letting a persistent capability name conceal changes in observable behavior, failure semantics, authority, evidence, affected consumers, or recovery obligations. Without a consumer-relative and time-bounded substitution contract, an apparent upgrade can silently redefine success, strand state, erase regressions, widen permissions, or inherit trust earned by a different artifact in a different environment.",
           "insufficient": "Plugin APIs, model registries, Semantic Versioning, capability-security references, supply-chain provenance, benchmark leaderboards, canaries, and rollback runbooks each cover part of replacement, but none alone establishes semantic field identity across inputs, outputs, preconditions, postconditions, failure and abstention behavior, nondeterminism, resource and privacy limits, authority effects, state compatibility, evaluator independence, qualification scope and expiry, historical regressions, downstream reliance, incident response, and effect-complete rollback. Interface compatibility or artifact provenance is not behavioral refinement, qualification for one workload is not universal substitutability, and a stored rollback pointer is not evidence that prior effects can be reversed.",
-          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
+          "core_claim": "A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface\u2014including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds\u2014to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.",
           "mechanism": [
             "Define field identity independently of any implementation, model family, vendor, prompt, tool, benchmark, deployment, or route name; a material semantic change creates a governed field version or a new field rather than silently reusing the old identity.",
             "Specify the observable contract over accepted and rejected inputs, output and side-effect postconditions, errors, abstentions, timeouts, nondeterminism envelope, latency and resource budgets, privacy and security effects, authority use, and required evidence and audit emissions.",
@@ -6260,7 +6260,7 @@
             "Declared derivative closure is monotone through copying, transformation, packaging, extraction, backup, recovery, and distribution; an unknown or excluded branch remains an owned residual.",
             "Encryption keys and metadata remain purpose-, artifact-, holder-, operation-, scope-, usage-period-, and policy-bound; missing, stale, compromised, widened, or unreconciled key state fails closed.",
             "Attester Evidence, Verifier appraisal, Attestation Result, and Relying-Party authorization remain distinct claims with separate policy identities, owners, freshness, dependencies, and consumers.",
-            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch—not token age alone.",
+            "Freshness is relational to artifact, target/attesting environments, firmware/workload, reference values, endorsements, trust anchors, verifier and relying-party policies, recipient, use, and epoch\u2014not token age alone.",
             "An attestation result is scoped evidence about measured claims; it grants no hardware/vendor/operator/software trust, weight confidentiality, model safety, serving, tool, release, readiness, or deployment conclusion.",
             "Possession, key release, decryption, load, serve, action authority, transfer, recipient distribution, and open release are distinct non-transitive decisions.",
             "Plaintext, derived capability, output extraction, cache, crash dump, accelerator memory, log, backup, and recipient exposure remain inventoried at the declared observation grade.",
@@ -6776,7 +6776,7 @@
             "Retirement, access revocation, notice, retention, archive, sanitization, disposal, recipient recall, and world erasure remain distinct observed claims.",
             "Cross-organization evidence obeys privacy, rights, security, contractual, retention, and disclosure-minimization limits while remaining contestable and lineage-preserving.",
             "Security findings remain paired with affected-path precision/recall, false quarantine, useful-service loss, restoration, availability, operator labor, privacy/rights, benefit, and total cost.",
-            "Finite records, one declared graph, 34 theorem declarations, ten fixture mutations, eleven lifecycle controls, 24 component-inventory permutations, five terminal-state event checks, or zero observed compromise establish only their exact scope—not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
+            "Finite records, one declared graph, 34 theorem declarations, ten fixture mutations, eleven lifecycle controls, 24 component-inventory permutations, five terminal-state event checks, or zero observed compromise establish only their exact scope\u2014not inventory completeness, assertion truth, artifact integrity, supplier trust, effective control, safety, compliance, or transfer."
           ],
           "failure_modes": [
             "Name, digest, version, tokenizer, dataset, dependency, model, configuration, policy, environment, build, package, signer, supplier, or recipient substitution occurs after approval or behind a familiar label.",
@@ -9052,6 +9052,158 @@
           "human_reader_unit_id": "unit-11"
         },
         {
+          "id": "reflexive-model-world-systems",
+          "title": "Reflexive Model-World Systems",
+          "file": "chapters/reflexive-model-world-systems.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+      "source_ids": [
+        "reflexive_model_world_systems",
+        "ext_performative_prediction_2020"
+          ],
+          "source_queue": {
+            "primary": [
+              "reflexive_model_world_systems"
+            ],
+        "supporting": [
+          "ext_performative_prediction_2020"
+        ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives prediction, observation, intervention, and model-version identities from Governed World Models; hands causal-ancestry and qualification-bearing state to Cognitive Compilation without treating descended evidence as independent reality."
+            ]
+          },
+          "problem": "A deployed model can change behavior, outcomes, exposure, measurement, preferences, categories, institutions, and public data, then train a successor on those altered observations. Ordinary prediction governance can therefore mistake evidence descended from the lineage's own actions for an independent reality check.",
+          "insufficient": "Static accuracy, generic distribution-shift monitoring, human-versus-synthetic labels, software rollback, or a model's self-reported influence cannot identify the no-deployment world, preserve counterfactual variation, establish causal ancestry, or restore institutions and preferences already changed by deployment.",
+          "core_claim": "A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.",
+          "claim_source_mappings": [
+        {
+          "source_id": "reflexive_model_world_systems",
+              "mapped_support": "Provides the lineage-relative reflexive-closure criterion, eight-channel causal signature, model-descended evidence, grounding reserve, reflexive debt, six scoped propositions, three source-reported toy campaigns, a ten-step audit, and trajectory-level alignment framing.",
+              "limits": "Formal claims retain their stated assumptions. The toy campaigns were not rerun during intake because scikit-learn was unavailable, do not estimate deployed effects, and do not establish causal identification, stability, legitimacy, alignment, safety, or independent reproduction.",
+              "passage_refs": [
+                "sources/source_notes/reflexive_model_world_systems.md",
+                "papers/reflexive_model_world_systems.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript, code, data, summaries, run log, figures, requirements, and checksums; source-reported results remain explicitly non-reproduced locally.",
+          "passage_review_state": "reviewed"
+        },
+        {
+          "source_id": "ext_performative_prediction_2020",
+          "mapped_support": "Provides the closest formal predecessor for model-dependent future data distributions, performative stability, and retraining dynamics under stated conditions.",
+          "limits": "The source does not establish RMWS's lineage identity, eight-channel taxonomy, evidence descendancy, grounding reserves, institutional persistence, legitimacy layer, causal identification, or safety. No theorem or experiment was reproduced locally.",
+          "passage_refs": [
+            "sources/source_notes/ext_performative_prediction_2020.md",
+            "https://proceedings.mlr.press/v119/perdomo20a.html"
+          ],
+          "passage_review_note": "Reviewed the official PMLR metadata, abstract, and primary paper for the distribution-map, stability, and retraining claims used in the positioning paragraph.",
+          "passage_review_state": "reviewed"
+        }
+          ],
+          "mechanism": [
+            "Bind each deployed version to a governed model lineage and explicit continuation rule.",
+            "Draw a time-unrolled causal graph from deployment through state, regime, observation, training, and successor admission.",
+            "Audit state, outcome, exposure, measurement, preference, ontology, institution, and model-ecology response channels separately.",
+            "Attach query-, horizon-, lineage-, and intervention-relative causal ancestry to every training and monitoring channel.",
+            "Maintain informative anchor channels, randomized probes, shadow policies, archives, or independent institutions as a protected grounding reserve.",
+            "Track reflexive debt when deployment erases counterfactual variation or leaves causal influence unidentified.",
+            "Separate baseline prediction, on-policy prediction, steering utility, distribution, and legitimacy in evaluation.",
+            "Use joint world-model-regime state and explicit loop-gain stress tests where the model changes the transition law.",
+            "Require persistence-aware rollback that addresses descendant data, incentives, categories, institutions, and affected populations rather than restoring software alone."
+          ],
+          "interfaces": [
+            "model-lineage manifest",
+            "time-unrolled causal graph",
+            "eight-channel reflexive signature",
+            "evidence-ancestry graph",
+            "estimand registry",
+            "grounding-reserve contract",
+            "reflexive-debt ledger",
+            "trajectory evaluation matrix",
+            "persistence-aware rollback dossier"
+          ],
+          "invariants": [
+            "Human origin does not imply lineage independence and synthetic origin does not imply model descendancy.",
+            "An evidence channel's ancestry is indexed to a lineage, query, horizon, and admissible deployment class.",
+            "On-policy calibration cannot substitute for baseline or alternative-policy identification.",
+            "Stable convergence cannot substitute for welfare, rights, legitimacy, or preserved alternatives.",
+            "A lineage cannot control the actuator, evidence selector, metric, and sole promotion decision without an explicit unresolved independence residual.",
+            "Model rollback alone cannot establish restoration of persistent world or institutional state.",
+            "Self-descended evidence cannot widen the lineage's own authority by itself.",
+            "Unidentified causal effects remain ranges, residuals, or unknowns rather than invented point estimates."
+          ],
+          "failure_modes": [
+            "counterfactual-label mismatch",
+            "epistemic capture",
+            "reflexive debt",
+            "model-mediated sampling collapse",
+            "preference or ontology capture",
+            "measurement and evaluator endogeneity",
+            "cross-lineage evidence contamination",
+            "stable but harmful equilibrium",
+            "single-history causal non-identification",
+            "stale or uninformative grounding reserve",
+            "institutional hysteresis",
+            "software-only rollback theater"
+          ],
+          "minimal_implementation": "For one bounded adaptive decision-support simulation, version the model lineage, declare baseline and on-policy estimands, record deployment and treatment exposure, label evidence ancestry, preserve one randomized or shadow-policy anchor, compare naive and causal-aware retraining, and require a rollback dossier that names descendant-data and persistent-state handling. Report missing identification as a residual and do not promote support from a supplied result file alone.",
+          "beyond_state_of_art": "A mature reflexive-governance plane would continuously estimate a multi-lineage causal influence graph over evidence, preferences, institutions, and successor systems; preserve a diversified public grounding reserve; detect epistemic capture before on-policy success launders it; run counterfactual and trajectory stress tests; constrain performative channels; and coordinate persistence-aware rollback across technical and social state. It would support formal obligations for bounded influence and preserved evidence while explicitly leaving values, legitimacy, global nonlinear dynamics, and real-world causal adequacy open to independent empirical and institutional judgment.",
+          "codex_tests": [
+            {
+              "name": "Pinned RMWS toy-campaign reproduction",
+              "purpose": "Rerun all supplied seeds and compare exact summaries, figures, and dependency versions; any discrepancy becomes a result rather than being normalized away.",
+              "implementation_status": "blocked",
+              "result_status": "not_run_missing_scikit_learn"
+            },
+            {
+              "name": "Evidence-ancestry and estimand mutation suite",
+              "purpose": "Reject missing lineage, target regime, exposure, identification, anchor, or rollback fields and test human-origin/model-selected controls.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Reflexive benchmark",
+              "purpose": "Compare static monitoring with lineage-aware causal governance under outcome, exposure, preference, measurement, and institutional response channels.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.ReflexiveModelWorldSystems",
+          "proof_targets": [
+            {
+              "tag": "lean:reflexive_system.augmented_state_required",
+              "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+              "target": "In a finite transition model, equal external world states paired with different deployed model states can produce different successor distributions, so external state alone cannot recover the encoded next-state route.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:reflexive_system.rollback_no_restoration",
+              "module": "AsiStackProofs.ReflexiveModelWorldSystems",
+              "target": "Restoring a prior model identity does not imply restoration of a persistent institutional state; accepted rollback requires explicit world, evidence, descendant, and residual fields and assigns no support or legitimacy.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "The supplied toy campaigns have not been rerun locally because scikit-learn is unavailable.",
+            "No proposition has been independently mechanized or reviewed in this repository.",
+            "No real deployment establishes descendancy estimates, grounding-reserve adequacy, stability, legitimacy, or rollback effectiveness."
+          ],
+          "publication": {
+            "role": "primary_architecture_owner",
+            "parent_id": null,
+            "visibility": "main_book",
+            "legacy_id": "reflexive-model-world-systems",
+            "legacy_file": "chapters/reflexive-model-world-systems.qmd",
+            "claim_ownership": "preserved_local_no_inheritance",
+            "editorial_state": "metadata_classified_prose_unchanged",
+            "support_state_effect": "none"
+          },
+          "human_reader_unit_id": "unit-11"
+        },
+        {
           "id": "cognitive-compilation-and-semantic-ir",
           "title": "Cognitive Compilation and Semantic IR",
           "file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
@@ -9282,7 +9434,7 @@
                 "sources/raw/google_docs/genesiscode.txt:868-1142",
                 "sources/raw/google_docs/genesiscode.txt:1143-1291"
               ],
-              "passage_review_note": "Reviewed all three tabs: paper semantics, Rust handoff, and style contract. Covered canonical CoreForm and hashing, Gλ, sealed protocol variants, effects/replay, obligations/evidence, semantic patches, row/effect/refinement types, e-graphs and translation validation, implementation crates/CLI/tests/conformance, qualified names, explicit payloads, stable formatting, module metadata, and AI-authoring rules. Added missing fresh-seal, closure identity, replay-completeness, capability-coverage, patch-anchor/impact, self-weakening, and finite-test boundaries. No implementation or empirical/security result is promoted."
+              "passage_review_note": "Reviewed all three tabs: paper semantics, Rust handoff, and style contract. Covered canonical CoreForm and hashing, G\u03bb, sealed protocol variants, effects/replay, obligations/evidence, semantic patches, row/effect/refinement types, e-graphs and translation validation, implementation crates/CLI/tests/conformance, qualified names, explicit payloads, stable formatting, module metadata, and AI-authoring rules. Added missing fresh-seal, closure identity, replay-completeness, capability-coverage, patch-anchor/impact, self-weakening, and finite-test boundaries. No implementation or empirical/security result is promoted."
             },
             {
               "source_id": "treellm",
@@ -9457,6 +9609,163 @@
             "visibility": "main_book",
             "legacy_id": "cognitive-compilation-and-semantic-ir",
             "legacy_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+            "claim_ownership": "preserved_local_no_inheritance",
+            "editorial_state": "metadata_classified_prose_unchanged",
+            "support_state_effect": "none"
+          },
+          "human_reader_unit_id": "unit-13"
+        },
+        {
+          "id": "cognitive-method-transfer-and-qualification",
+          "title": "Cognitive Method Transfer and Qualification",
+          "file": "chapters/cognitive-method-transfer-and-qualification.qmd",
+          "status": "conceptual",
+          "evidence_level": "argument",
+          "claim_label": "Design rationale",
+      "source_ids": [
+        "compiling_civilization_cmtq",
+        "ext_coala_2024"
+          ],
+          "source_queue": {
+            "primary": [
+              "compiling_civilization_cmtq"
+            ],
+        "supporting": [
+          "ext_coala_2024"
+        ],
+            "variants": [],
+            "connector_or_recovery": [],
+            "handoff_or_recovery_notes": [
+              "Receives accepted semantic and execution boundaries from Cognitive Compilation while owning the prior transport and qualification decision; hands typed protocol state to the Virtual Context ABI without granting context contents authority."
+            ]
+          },
+          "problem": "Civilization has accumulated methods for inquiry, diagnosis, review, verification, coordination, and learning, but a model's ability to describe a method does not establish that it will recognize, select, execute, verify, or learn from it. Human procedures can also depend on social roles, incentives, tacit expertise, embodiment, and legitimacy that do not survive direct copying into an AI runtime.",
+          "insufficient": "Prompting a model to use a named method, compiling prose into a workflow, or observing one successful run cannot establish that the source mechanism transported, that the method helps the target model and domain, that its obligations were faithfully executed, or that it has authority to alter belief, memory, tools, or the world.",
+          "core_claim": "Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.",
+          "claim_source_mappings": [
+        {
+          "source_id": "compiling_civilization_cmtq",
+              "mapped_support": "Provides the CTR and QCP artifact contracts, five-gap decomposition, functional transport test, QCP-IR sketch, typed epistemic state, independent qualification/assurance/authority axes, three-loop lifecycle, method ecology, security model, cognitive-leverage benchmark, and explicit falsification conditions.",
+              "limits": "The framework, proposed levels, runtime, routing policy, benchmark, and post-human method science are not implemented or empirically validated. Package and schema conformance do not establish method efficacy, faithful realization, legitimacy, security, or authority.",
+              "passage_refs": [
+                "sources/source_notes/compiling_civilization_cmtq.md",
+                "papers/compiling_civilization_cmtq.qmd"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript, DOCX metadata, bibliography, schemas, example, figures, build files, manifest, checksums, and validation report; the supplied package validator passed locally.",
+          "passage_review_state": "reviewed"
+        },
+        {
+          "source_id": "ext_coala_2024",
+          "mapped_support": "Provides direct external context for modular memory, structured internal and external action spaces, and generalized decision cycles in language-agent cognitive architectures.",
+          "limits": "The source does not establish CMTQ's source records, functional transport test, typed qualified protocols, independent qualification/assurance/authority axes, supply-chain controls, or method efficacy. No surveyed result was reproduced locally.",
+          "passage_refs": [
+            "sources/source_notes/ext_coala_2024.md",
+            "https://arxiv.org/abs/2309.02427"
+          ],
+          "passage_review_note": "Reviewed the primary arXiv metadata, abstract, and TMLR manuscript for CoALA's modular-memory, action-space, and decision-process framework.",
+          "passage_review_state": "reviewed"
+        }
+          ],
+          "mechanism": [
+            "Create a Cognitive Technology Record that preserves source evidence, mechanism hypotheses, assumptions, contraindications, cost, normative content, and provenance before executable translation.",
+            "Decompose the source method into roles, artifacts, operations, constraints, incentives, and feedback; classify substrate dependence and choose copy, transform, hybridize, or reject.",
+            "Compile candidate realizations into a Qualified Cognitive Protocol with applicability predicates, epistemic types, control and data flow, obligations, forbidden transitions, verifiers, failure routes, budgets, permissions, provenance, expiry, and rollback.",
+            "Index qualification to exact model, protocol version, domain, task distribution, environment, budget, risk class, and evaluation date.",
+            "Keep method validity, routing validity, execution fidelity, outcome effect, cost, harm, and interaction effects separately observable.",
+            "Route a minimal protocol set using expected value of computation while preserving mandatory policy constraints and explicit conflicts or order effects.",
+            "Maintain distinct beliefs about the world and about method performance.",
+            "Quarantine proposed protocol revisions, test them on held-out and adversarial tasks, and require independent promotion, staged use, expiry, and rollback.",
+            "Retain negative records for rejected methods, failed mechanisms, and contraindicated scopes."
+          ],
+          "interfaces": [
+            "Cognitive Technology Record",
+            "functional transport dossier",
+            "Qualified Cognitive Protocol",
+            "QCP intermediate representation",
+            "qualification package",
+            "method registry and relation graph",
+            "protocol router and compiler",
+            "cognitive execution receipt",
+            "negative procedural record",
+            "promotion and revocation decision"
+          ],
+          "invariants": [
+            "Source familiarity does not imply method qualification.",
+            "Protocol conformance does not imply truth or beneficial outcome.",
+            "Qualification does not imply faithful execution or authority.",
+            "Assurance does not imply method validity or permission.",
+            "Authority does not imply efficacy or correctness.",
+            "A protocol may propose but cannot promote its own revision, certify its own qualification, or expand its own permissions.",
+            "Applicability and contraindications travel with the protocol and are checked before execution.",
+            "Normative and legitimacy-bearing nodes remain explicitly human or institution owned where automation would erase their source property.",
+            "Negative and null method records remain retrievable beside successes.",
+            "Exploratory outputs cannot acquire factual or operational status without entering the declared validation and commitment regime."
+          ],
+          "failure_modes": [
+            "latent possession without invocation",
+            "surface imitation without mechanism transport",
+            "method theater",
+            "wrong routing or order",
+            "over-structuring and creativity suppression",
+            "same-model verifier correlation",
+            "qualification laundering",
+            "method monoculture",
+            "tacit-knowledge erasure",
+            "human bias encoded as protocol",
+            "malicious or overprivileged protocol package",
+            "memory-to-protocol poisoning",
+            "self-promotion and permission expansion",
+            "recursive metacognitive cost explosion"
+          ],
+          "minimal_implementation": "Implement the supplied CTR and QCP schemas for one causal-claim audit. Compare direct response, prose method description, structured model-interpreted procedure, compiled QCP, and compiled QCP with an independent verifier under a frozen model and matched budgets. Record applicability, required-step fidelity, invalid transitions, outcome quality, cost, and harm; keep all results at argument or bounded test status until an accepted transition.",
+          "beyond_state_of_art": "A mature cognitive-method operating system would maintain a transparent, security-reviewed atlas of civilizational and machine-discovered methods; infer target-relative applicability and interactions; compile minimal typed protocol graphs; allocate verification by risk and expected value; preserve dissent, negative records, legitimacy, and human authority; and evolve its method ecology through held-out, cross-model, adversarial, and production monitoring without self-ratification. Its scientific object would be the complete arrangement of reasoner, representation, memory, tools, evidence, roles, feedback, and authority rather than model weights alone.",
+          "codex_tests": [
+            {
+              "name": "CTR and QCP schema conformance",
+              "purpose": "Validate the supplied source artifacts and mutation controls without treating schema validity as method qualification.",
+              "implementation_status": "source_package_validated",
+              "result_status": "passed_source_package_only"
+            },
+            {
+              "name": "Procedure-realization benchmark",
+              "purpose": "Compare declarative possession, prose instruction, structured execution, compiled control, and independent verification under matched model and budget conditions.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            },
+            {
+              "name": "Method routing, interaction, and security campaign",
+              "purpose": "Measure applicability, overload, order effects, poisoned packages, self-promotion, and authority-escalation controls.",
+              "implementation_status": "planned",
+              "result_status": "not_run"
+            }
+          ],
+          "lean_module": "AsiStackProofs.CognitiveMethodQualification",
+          "proof_targets": [
+            {
+              "tag": "lean:cmtq.axes.non_substitution",
+              "module": "AsiStackProofs.CognitiveMethodQualification",
+              "target": "Finite qualification, assurance, and authority coordinates remain independent: no projection over either pair exactly recovers the third, and an accepted protocol route requires all three without assigning truth, outcome benefit, legitimacy, support, or external effect.",
+              "status": "planned"
+            },
+            {
+              "tag": "lean:cmtq.promotion.no_self_authority",
+              "module": "AsiStackProofs.CognitiveMethodQualification",
+              "target": "A candidate protocol can emit a revision proposal and evidence but cannot reach promotion or permission expansion when the candidate is the sole qualifier, assurer, or authorizer.",
+              "status": "planned"
+            }
+          ],
+          "draft_maturity": "integrated_argument_chapter",
+          "open_evidence_gaps": [
+            "No CMTQ runtime or procedure-realization benchmark has run.",
+            "No method-routing or interaction effect is locally measured.",
+            "No independent reproduction establishes secure or beneficial transport from a human institution to an AI protocol."
+          ],
+          "publication": {
+            "role": "primary_architecture_owner",
+            "parent_id": null,
+            "visibility": "main_book",
+            "legacy_id": "cognitive-method-transfer-and-qualification",
+            "legacy_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
             "claim_ownership": "preserved_local_no_inheritance",
             "editorial_state": "metadata_classified_prose_unchanged",
             "support_state_effect": "none"
@@ -15599,14 +15908,14 @@
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:Abstract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§3 System Overview",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§6 Governance Plane",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§7 Readiness Gate and Promotion Contract",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§8 Task Runtime and Bounded Recursive Labor",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§9 Evidence and Replay Integrity",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§13 Benchmark Architecture",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§19 Truthful Limits",
-                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:§23 Final Position"
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a73 System Overview",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a76 Governance Plane",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a77 Readiness Gate and Promotion Contract",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a78 Task Runtime and Bounded Recursive Labor",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a79 Evidence and Replay Integrity",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a713 Benchmark Architecture",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a719 Truthful Limits",
+                "google-drive:1F0KW0-TR54xKGeetIPkDTV1Tn5_9w3i0:text/markdown:\u00a723 Final Position"
               ],
               "passage_review_note": "Reviewed authenticated Google Drive text extraction for the Markdown variant/source export. It matches the primary MoECOT runtime vocabulary around compact orchestration, specialist lanes, control-plane gates, readiness, task runtime, replay, benchmark architecture, truthful limits, and final route-execute-verify-audit-improve framing; it remains a variant, not independent corroboration or reproduced evidence."
             },
@@ -16461,7 +16770,7 @@
             "Qualify kernels with equal-active-parameter and equal-total-lifecycle-cost tournaments, matched strong baselines, independent evaluators, adverse controls, rollback, reproduction, and transfer.",
             "Separate recurrent computation from addressable memory by preregistering recurrent-state size, sparse-slot capacity, cache growth, pointer fusion, exact-memory controls, storage, lookup, invalidation, migration, and deletion cost.",
             "For tiny-recursive candidates, preregister canonical single-pass, matched sampling/voting, blank/random/unseen identity, marginal utility by recursion step, learned stopping, and progressive mechanism ablations.",
-            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation—not merely weight updates.",
+            "Govern architectural RSI as candidate generation, training, shadowing, canarying, promotion, composition, narrowing, rollback, retirement, and descendant invalidation\u2014not merely weight updates.",
             "Treat OneCell as one falsifiable compact recurrent candidate: shared transition weights, typed state lanes, exact external state, outer branch-preserving search, verified abstraction accumulation, and a frozen-core ratchet."
           ],
           "interfaces": [
@@ -17182,7 +17491,7 @@
         },
         {
           "id": "learning-compute-topology-and-adaptive-process-architecture",
-          "title": "Learning–Compute Topology and Adaptive Process Architecture",
+          "title": "Learning\u2013Compute Topology and Adaptive Process Architecture",
           "file": "chapters/learning-compute-topology-and-adaptive-process-architecture.qmd",
           "status": "conceptual",
           "evidence_level": "argument",
@@ -17223,7 +17532,7 @@
                 "sources/source_notes/learning_compute_topology.md",
                 "papers/learning_compute_topology.qmd"
               ],
-              "passage_review_note": "Reviewed the complete paper and archive twice, including claims map, references, figures, reproducibility files, formal specifications, grammar/schema, implementation, examples, normalized outputs, schedules, tests, phase data, novelty and coverage matrices, tree-shaking memo, and quality reports. The second-pass completeness audit restores the six-axis object, four temporal views, v0.2 specification boundary, A–E conformance, ten equivalence relations, control coordinates, causal interventions, topology-conditioned scaling, phase studies, and lower-confidence supplemental research directions without promoting their evidence state.",
+              "passage_review_note": "Reviewed the complete paper and archive twice, including claims map, references, figures, reproducibility files, formal specifications, grammar/schema, implementation, examples, normalized outputs, schedules, tests, phase data, novelty and coverage matrices, tree-shaking memo, and quality reports. The second-pass completeness audit restores the six-axis object, four temporal views, v0.2 specification boundary, A\u2013E conformance, ten equivalence relations, control coordinates, causal interventions, topology-conditioned scaling, phase studies, and lower-confidence supplemental research directions without promoting their evidence state.",
               "passage_review_state": "reviewed"
             },
             {
@@ -17285,7 +17594,7 @@
             "Keep template, active, trace, and counterfactual topology distinct; record every instantiate, fork, update, synchronize, select, merge, distill, compose, transfer, archive, restore, retire, route, allocate, and rewire transition.",
             "Compile declared learning semantics into execution and physical placement through a semantic firewall that records approximation, staleness, compression, numerical order, failure, and information leakage.",
             "Measure causal, adaptive, epistemic, evaluator, commitment, and deployment width; effective breadth; learning bandwidth; integration retention; topological regret; and full lifecycle resource cost.",
-            "Treat retained learning as a capacity-matched discovery–evaluation–integration pipeline and allocate branches, evaluators, integration capacity, archives, and reversibility to the current bottleneck.",
+            "Treat retained learning as a capacity-matched discovery\u2013evaluation\u2013integration pipeline and allocate branches, evaluators, integration capacity, archives, and reversibility to the current bottleneck.",
             "Estimate topology credit through matched structural interventions; treat candidate subsets, evaluators, fidelities, and integration plans as a joint experimental-design problem rather than scaling candidates alone.",
             "Constrain physical placement by semantic independence, failure-domain, archive, and authority requirements where they matter, then charge their cost and test whether they improve fault discovery or recovery.",
             "Test topology-conditioned scaling, process morphology, portfolio migration, topology distillation, learned topology priors, proof-carrying rewrites, and stratified reflexive control as distinct hypotheses with progressively stronger authority boundaries.",
@@ -17294,7 +17603,7 @@
           "interfaces": [
             "Replaceable Cognitive Substrates owns model-kernel contracts; this chapter owns the adaptive process that creates, compares, and replaces those kernels.",
             "Governed Model Training owns faithful execution of a frozen run; this chapter supplies the learning-process contract that execution must preserve.",
-            "Routing Heads owns task and capability routing; LCT requires every routed semantic object—evidence, judgement, credit, state, control, or authority—to remain typed.",
+            "Routing Heads owns task and capability routing; LCT requires every routed semantic object\u2014evidence, judgement, credit, state, control, or authority\u2014to remain typed.",
             "Policy Optimization and adversarial evaluation own evaluator and feedback quality; this chapter represents their position and capacity inside the process topology.",
             "Data Engines owns data, memory, archive, deletion, continual learning, and unlearning; this chapter records their adaptive identity and lifecycle relations.",
             "Resource Economics owns total cost; this chapter contributes topology-specific work, span, communication, evaluator, integration, storage, and reversibility accounts.",
@@ -17421,7 +17730,7 @@
           "core_claim": "A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.",
           "mechanism": [
             "State the population, sampling process, shift model, hypothesis family, learning algorithm, optimization path, inductive bias, metric, and consumer before making a generalization claim.",
-            "Use multiple explanatory lenses—capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses—without laundering one into another.",
+            "Use multiple explanatory lenses\u2014capacity and complexity, stability, compression and MDL, information, margins, implicit bias, interpolation, and benign-overfitting hypotheses\u2014without laundering one into another.",
             "Fit scaling relations with uncertainty, held-out scales, architecture and data identifiers, failed runs, compute accounting, breakpoint diagnostics, and prospective forecasts.",
             "Distinguish smooth underlying performance from thresholded metrics and test whether apparent emergence survives metric, prompting, sampling, and denominator changes.",
             "Challenge transfer and compositionality under natural shift, targeted shift, new task structure, optimizer change, architecture replacement, and data contamination."
@@ -18298,7 +18607,7 @@
                 "sources/raw/google_docs/beastbrain.txt:7118-7134",
                 "sources/raw/google_docs/beastbrain.txt:7378-7391"
               ],
-              "passage_review_note": "Reviewed repeated Mimic editions across v3.2–6.1 for hardware handshake, topology discovery, thermal profiling, dynamic execution profiles, memory pressure, battery-aware maintenance, and fallback. Replaced fixed modes and panic mutation with a governed qualification transaction.",
+              "passage_review_note": "Reviewed repeated Mimic editions across v3.2\u20136.1 for hardware handshake, topology discovery, thermal profiling, dynamic execution profiles, memory pressure, battery-aware maintenance, and fallback. Replaced fixed modes and panic mutation with a governed qualification transaction.",
               "passage_review_state": "reviewed"
             },
             {
@@ -19250,7 +19559,7 @@
                 "sources/raw/google_docs/bbvca_v9.txt:894-927",
                 "sources/raw/google_docs/bbvca_v9.txt:928-1003"
               ],
-              "passage_review_note": "Reviewed all 26 sections and five appendices for the complete BBVCA v9 system: contract tuple, universality boundary, shared-law cost, apex exclusion, exact transition families, 3D-native scope, generator-state payload, proposal discipline, verification output, repair ladder, layerwise exactness, interface inequality, total rate, additivity/entropy tension, two-phase rate, three-source bootstrap, smoothing/shrinkage, safe literal ceiling, conservative anti-pruning, committed refresh, adaptive-tree DP assumptions, Prototype A pipeline and memory layout, staged B–F roadmap, baselines, ablations, friendly/hostile tests, success/falsification, risks, pseudocode, and metaphysical boundary. No implementation, codec correctness, rate, runtime, utility, safety, support, SOTA, AGI, or ASI result is promoted."
+              "passage_review_note": "Reviewed all 26 sections and five appendices for the complete BBVCA v9 system: contract tuple, universality boundary, shared-law cost, apex exclusion, exact transition families, 3D-native scope, generator-state payload, proposal discipline, verification output, repair ladder, layerwise exactness, interface inequality, total rate, additivity/entropy tension, two-phase rate, three-source bootstrap, smoothing/shrinkage, safe literal ceiling, conservative anti-pruning, committed refresh, adaptive-tree DP assumptions, Prototype A pipeline and memory layout, staged B\u2013F roadmap, baselines, ablations, friendly/hostile tests, success/falsification, risks, pseudocode, and metaphysical boundary. No implementation, codec correctness, rate, runtime, utility, safety, support, SOTA, AGI, or ASI result is promoted."
             },
             {
               "source_id": "bbvca_main",
@@ -20829,7 +21138,7 @@
             "A local finite selector or replay is described as economic optimality, welfare improvement, production stability, or SOTA.",
             "Governance cost exceeds benefit, but institutional lock-in preserves the allocation policy and hides the refutation."
           ],
-          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus a 29-theorem, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle. Arbitrary accepted runs preserve nine bound identities and zero support/external-effect authority, account for exact receipts, keep resource-bill and reconciliation receipts monotone, compose across batches, and stop at closure. An independently implemented consumer checks nine trace splits, rejects 170/170 mutations, and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports—not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
+          "minimal_implementation": "Twenty-three retained countermodels and bounded computations plus a 29-theorem, nine-stage, 66-route allocation, execution, simulation-transport, reconciliation, and closure lifecycle. Arbitrary accepted runs preserve nine bound identities and zero support/external-effect authority, account for exact receipts, keep resource-bill and reconciliation receipts monotone, compose across batches, and stop at closure. An independently implemented consumer checks nine trace splits, rejects 170/170 mutations, and digest-binds twelve bounded source families. Thirty-five assumption projections and copied fixture summaries are retired. This is bounded policy/conformance evidence over synthetic fixtures, repository replays, local timing, historical CI, and sanitized imports\u2014not economic optimality, deployed scheduling, useful-throughput improvement, simulation adequacy, physical feasibility, transfer, or SOTA evidence.",
           "beyond_state_of_art": "Resource economics matures into a risk-aware budget operating system and claim-transport layer for cognition. It decides when the stack may spend, defer, shrink, escalate, reject, residualize work, or downgrade synthetic evidence without letting local cost pressure delete verification, security, approval, replay, rollback, human review, fidelity limits, or transfer boundaries. In the mature budget OS, cognition has a budget and simulations have contracts: budgets cannot delete verification tax, protected overhead, review capacity, rollback cost, security cost, residual burden, or the requirement that simulated results travel only as far as declared scope, fidelity, resources, omissions, and transfer decisions allow.",
           "codex_tests": [
             {
@@ -23036,7 +23345,7 @@
             },
             {
               "source_id": "genesiscode",
-              "mapped_support": "Supports executable-specification discipline through explicit trust strata, a small Gλ/CoreForm semantic target, total-error policy, authenticated control variants, capability/effect boundaries, heterogeneous obligations and evidence, semantic patches, row/effect/refinement candidates, e-graph rewrite candidates, translation validation, conformance, negative/golden/metamorphic/fuzz tests, and spec-first change. The audit adds token minting as authority-bearing state, obligation declaration/procedure/evidence/verdict/policy/consumer separation, and exact translation-validation language.",
+              "mapped_support": "Supports executable-specification discipline through explicit trust strata, a small G\u03bb/CoreForm semantic target, total-error policy, authenticated control variants, capability/effect boundaries, heterogeneous obligations and evidence, semantic patches, row/effect/refinement candidates, e-graph rewrite candidates, translation validation, conformance, negative/golden/metamorphic/fuzz tests, and spec-first change. The audit adds token minting as authority-bearing state, obligation declaration/procedure/evidence/verdict/policy/consumer separation, and exact translation-validation language.",
               "limits": "Three-tab architecture and implementation plan only. No parser, evaluator, formal semantics, token-security proof, replay checker, semantic patch engine, obligation runner, type/proof stack, optimizer checker, benchmark, integration, or security audit exists. TCB membership is unmeasured; finite equivalence tests are not a universal compiler-equivalence proof; dated Codex workflow advice has no formal support effect.",
               "passage_refs": [
                 "sources/raw/google_docs/genesiscode.txt:9-10",
@@ -23053,7 +23362,7 @@
                 "sources/raw/google_docs/genesiscode.txt:886-893",
                 "sources/raw/google_docs/genesiscode.txt:1134-1138"
               ],
-              "passage_review_note": "Completed the three-tab section-family audit: paper/technical semantics, Rust implementation handoff, and style contract. Reviewed TCB-A/B/non-TCB split, Gλ/CoreForm, total failures, seals, effects/replay, obligations/evidence/policy, patches, types/refinements, e-graphs/translation validation/WASM, examples, phases, conformance, crate/CLI/test plan, normative spec lock, formatting/lint rules, and AI-authoring constraints. Added fresh-token, runtime identity, heterogeneous-evidence, independent-policy, self-weakening, and translation-proof boundaries. No implementation or proof result is promoted.",
+              "passage_review_note": "Completed the three-tab section-family audit: paper/technical semantics, Rust implementation handoff, and style contract. Reviewed TCB-A/B/non-TCB split, G\u03bb/CoreForm, total failures, seals, effects/replay, obligations/evidence/policy, patches, types/refinements, e-graphs/translation validation/WASM, examples, phases, conformance, crate/CLI/test plan, normative spec lock, formatting/lint rules, and AI-authoring constraints. Added fresh-token, runtime identity, heterogeneous-evidence, independent-policy, self-weakening, and translation-proof boundaries. No implementation or proof result is promoted.",
               "passage_review_state": "reviewed"
             },
             {
@@ -24322,7 +24631,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_probe_control_tasks_2019.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1–2, the reported probe-family comparisons, and the conclusion; retained the method and scope boundaries.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1\u20132, the reported probe-family comparisons, and the conclusion; retained the method and scope boundaries.",
               "passage_review_state": "reviewed"
             },
             {
@@ -24332,7 +24641,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_interpretability_illusion_bert_2021.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–5, including datasets, annotations, results, geometry, and the concept-direction taxonomy.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3\u20135, including datasets, annotations, results, geometry, and the concept-direction taxonomy.",
               "passage_review_state": "reviewed"
             },
             {
@@ -24342,7 +24651,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_saebench_2025.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3–6, including metric definitions, practitioner guidance, scale comparisons, and limitations.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1 and 3\u20136, including metric definitions, practitioner guidance, scale comparisons, and limitations.",
               "passage_review_state": "reviewed"
             },
             {
@@ -24352,7 +24661,7 @@
               "passage_refs": [
                 "sources/source_notes/ext_sae_benchmark_reliability_2026.md"
               ],
-              "passage_review_note": "Reviewed the primary paper at Sections 1–5 and 7, including noise, discrimination, synthetic validity, controls, recommendations, and limitations.",
+              "passage_review_note": "Reviewed the primary paper at Sections 1\u20135 and 7, including noise, discrimination, synthetic validity, controls, recommendations, and limitations.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -25177,7 +25486,7 @@
             "Unknown-hazard neglect concentrates work on articulated risks while incidents, weak signals, politically inconvenient harms, and outside-envelope threats remain ownerless.",
             "Case-factory Goodhart optimizes graph counts, connected edges, closure rate, or review speed while adequacy, dissent, tails, cost, and residual age deteriorate."
           ],
-          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records—one readiness-review route and seven negative routes—and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
+          "minimal_implementation": "Two public schemas plus eight digest-bound synthetic case records\u2014one readiness-review route and seven negative routes\u2014and five validator mutations bridge eight owned Lean declarations. All eight declarations are derived finite reductions of one hand-authored SafetyCaseRouteFor decision tree. No real case, hazard analysis, threat model, evidence-adequacy review, countercase search, safeguard verification, independent institution, acceptance, readiness, release, deployment, incident, reproduction, or transfer ran; chapter-core support effect is zero.",
           "beyond_state_of_art": "The mature Assurance Argument Compilation program continuously compiles exact governed references into versioned multi-hazard cases, actively searches for countercases and unknown-envelope failures, tests seeded omissions and stale dependencies, separates structural, semantic, empirical, control, acceptance, readiness, and release states, preserves competing arguments and dissent, exercises invalidation, override, redaction, fallback, rollback, and retirement, and measures detection quality, reviewer disagreement, false block/clear, resolution latency, burden, cost, and residual age together. It then requires independent institutional reproduction and heterogeneous transfer across systems, domains, hazards, access modes, safeguards, evidence regimes, organizations, jurisdictions, and time. Positive, negative, null, inconclusive, narrowed, refuted, withdrawn, overridden, retired, and blocked-after-full-attempt outcomes remain visible. This is a target campaign, not a current safety case, valid threat model, adequate evidence, effective control, safe system, or deployment authority.",
           "codex_tests": [
             "Complete bounded record to readiness-review route",
@@ -28378,7 +28687,7 @@
             {
               "source_id": "learning_compute_topology",
               "mapped_support": "Makes the integrated reference trace represent learning as a typed, multi-view process graph rather than a single opaque training step. This chapter uses the paper's LCT-IR relations and template, active, realized, and counterfactual views to locate where evidence, judgement, credit, state, artifacts, controls, and authority cross stack layers.",
-              "limits": "This is a synthesis mapping, not a claim that Learning–Compute Topology is canonical or complete. The paper's finite propositions and bounded supplement do not demonstrate neural-training benefit, causal identification, scalable compilation, safe self-rewrite, or superiority to simpler process records.",
+              "limits": "This is a synthesis mapping, not a claim that Learning\u2013Compute Topology is canonical or complete. The paper's finite propositions and bounded supplement do not demonstrate neural-training benefit, causal identification, scalable compilation, safe self-rewrite, or superiority to simpler process records.",
               "passage_review_state": "reviewed",
               "passage_refs": [
                 "sources/source_notes/learning_compute_topology.md",
@@ -30022,7 +30331,7 @@
             "Unsupported transfer treats one repository's local hygiene, render pipeline, release process, or maintenance history as proof that the method improves other books, teams, domains, or times."
           ],
           "minimal_implementation": "Sixteen exact source-to-claim mappings; one living-book release-record fixture; a change-packet harness with three valid and six expected-invalid synthetic cases; a reader release-candidate bridge over the current blocked candidate, three additional valid routes, and eleven expected-invalid controls; manifest/outline/proof synchronization, claim and source appendices, Quarto HTML rendering, Human-view toggle, browser checks, changelog and release records, and an authoritative validation registry; and four proof targets implemented by 39 Lean declarations. Eighteen retained record and reader-route guards sit beside an inductive manifest compiler and a governed structural-change lifecycle proving derived contiguous ordinals, stable chapter-ID order, arbitrary-run identity and authority custody, gate coherence, exact composition, an accepted-current witness, zero support and publication authority, terminal accepted/rolled-back suffixes, and thin-summary insufficiency. The independent consumer checks all five trace splits, nine reachable states through 162 transitions, five terminal states through ninety absorbing transitions, and fifteen semantic mutations. These artifacts establish bounded repository and transaction discipline only; they do not prove source truth, editorial or accessibility quality, chapter truth, public release, reader or audio approval, future-maintainer correctness, external reproduction, transfer, or a chapter-core support effect.",
-          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates—new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs—performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
+          "beyond_state_of_art": "The mature argument-exit campaign must follow a prospectively frozen stream of natural substantive updates\u2014new sources, conflicting evidence, claim promotion and refutation, proof retirement, schema changes, figures, accessibility fixes, corrections, rollbacks, releases, reader derivatives, and successor handoffs\u2014performed by multiple independent human and AI maintainers. It must compare the Evidence-Preserving Publication Transaction with matched static manuscript, wiki, ordinary Git repository, literate-programming, executable-book, docs-as-code, and strongest conventional scholarly publishing workflows under equal content, tooling, time, and review opportunity; inject source revocation, citation error, claim drift, proof bloat, validator weakness, rights conflict, derivative drift, release mismatch, deployment failure, errata, and handoff loss; and jointly measure claim accuracy and calibration, source and proof traceability, error detection, correction latency, reproducibility, rollback, accessibility, reader comprehension, editorial quality, maintenance burden, reviewer time, compute, storage, hosting, opportunity cost, and total cost. Independent maintainers, editors, accessibility reviewers, readers, repositories, institutions, formats, hosting systems, and domains must reproduce and transfer positive, negative, null, narrowed, blocked, and refuted outcomes. Until then the transaction is not proof of superior scholarship, editorial quality, accessibility, reader value, governance effectiveness, external reproducibility, transfer, or SOTA publishing.",
           "codex_tests": [
             {
               "name": "Living book release record validation",

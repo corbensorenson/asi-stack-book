@@ -1,0 +1,69 @@
+{
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "reflexive-model-world-systems",
+  "chapter_file": "chapters/reflexive-model-world-systems.qmd",
+  "chapter_sha256": "f10c036802d1f56d2e156923158363827524db49722c36e3345a387ce9273eb8",
+  "chapter_role": "load-bearing-reference",
+  "reader_spine_unit": "unit-09-world-models",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Concrete scene: the successful alarm erases its own label",
+    "actor_or_system": "A hospital deterioration model, care team, intervention ledger, successor trainer, and causal evidence owner",
+    "attempted_action": "Retrain a successor model by treating the observed non-event after an alarm-triggered treatment as evidence that the original alarm was a false positive.",
+    "observable_outcome": "The governed record labels the outcome on-policy, preserves alarm and treatment ancestry, and refuses to substitute it for the unobserved no-treatment outcome.",
+    "failed_or_tested_boundary": "The scene tests whether a deployment-caused outcome may silently answer a baseline causal question; the reflexive evidence contract rejects that substitution.",
+    "residual_owner": "Clinical authority remains with the care team, the causal estimate remains with its model owner, and non-identification remains an explicit evidence residual.",
+    "evidence_boundary": "The scene demonstrates a record and routing distinction; it does not establish untreated outcome, causal efficacy, clinical safety, calibration, legitimacy, or deployment readiness."
+  },
+  "worked_trace": {
+    "heading": "Worked trace: from baseline risk to model-descended evidence",
+    "state_labels": [
+      "baseline_risk_unobserved",
+      "high_risk_alarm",
+      "early_treatment_authorized",
+      "on_policy_outcome_observed",
+      "model_descended_evidence"
+    ],
+    "source_or_fixture_refs": [
+      "chapters/reflexive-model-world-systems.qmd",
+      "sources/source_notes/reflexive_model_world_systems.md"
+    ],
+    "maximum_inference": "Deployment ancestry and target regime can remain explicit through successor learning; causal identification, calibration, clinical benefit, legitimacy, and safety remain unproven."
+  },
+  "counterexample_or_simpler_baseline": "The naive trainer labels every prevented outcome a false positive. The governed route preserves intervention ancestry and blocks reuse until the requested target regime is declared.",
+  "readable_claim": "A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.",
+  "normative_rule": "The record must name the lineage, query, horizon, admissible deployment class, identification method, and uncertainty.",
+  "formal_binding": {
+    "claim_id": "reflexive-model-world-systems.core",
+    "support_state": "argument",
+    "anchor": "time-indexed causal record"
+  },
+  "claim_atom_and_source_links": [
+    "reflexive-model-world-systems.core",
+    "reflexive_model_world_systems"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The hospital trace states once that lineage custody is not causal or clinical validation.",
+    "consolidated_disposition": "Baseline, on-policy, causal, legitimacy, persistence, support, and release questions remain separately owned.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The alarm, treatment, observed non-event, and successor request remain reader-facing; the complete ancestry and estimand schemas remain on the formal surface.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The scene converts the reflexive-closure claim into one bounded causal-label failure.",
+    "hedge_disposition": "The maximum-inference paragraph states the empirical boundary once after the trace.",
+    "table_disposition": "The eight-channel table remains because it assigns distinct causal questions and controls."
+  },
+  "non_claims": [
+    "The supplied toy campaigns were not reproduced during this intake.",
+    "The hospital scene does not identify an untreated counterfactual outcome.",
+    "The editorial packet does not change support or release state."
+  ]
+}
