@@ -565,6 +565,38 @@ discovering a general mechanism. Automated systems are especially capable of
 generating many hypotheses and analyses, which increases both discovery
 capacity and selection bias.
 
+That pressure appears in at least three forms. A laboratory agent can connect a
+plan to a robot and a physical intervention. A computational research agent can
+move from an idea to code, experiments, figures, a paper, and even an automated
+review. A hypothesis system can generate and rank a population of possible
+explanations before any experiment is run. Each is impressive in a different
+way, and each stops at a different evidentiary boundary. A completed robot
+command is not an interpretation. A finished paper is not a confirmed result.
+A highly ranked hypothesis is not a discovery.
+
+The larger the search, the more important its denominator becomes. Imagine a
+system that generates ten thousand ideas, tests one hundred, repairs twenty
+after seeing partial results, and publishes the single survivor. The survivor
+may be valuable, but its history is part of the evidence. The discarded ideas,
+failed code, abandoned experiments, pruning rules, compute allocation, and
+human interventions cannot vanish merely because the final manuscript reads as
+if one clean idea led to one clean test.
+
+Review has a similar hidden structure. Five reviewers are not five independent
+checks when they share the same model family, training data, retrieval tools,
+prompts, or scoring habits. Related reviewers can still catch errors and improve
+a draft, but their agreement must not be sold as independent confirmation.
+Independence is a property of the dependency graph, not the number of names in
+a panel.
+
+A venue decision belongs in the record too, but in the right place. Acceptance
+is evidence about what one review process decided under its own incentives,
+standards, and attention limits. It is not a direct measurement of whether the
+paper's claims are true. As automated systems make papers cheaper to produce,
+the scarce resource may become careful appraisal. A governed scientific system
+must account for the burden it places on reviewers as well as the experiments
+it completes.
+
 Independent confirmation should not share every dependency with the discovery
 path. New seeds on the same code and evaluator are useful, but they do not
 provide the same evidence as a separately implemented replication. Material

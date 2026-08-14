@@ -5,19 +5,19 @@
   "state": "terminal_complete",
   "source_contract": {
     "path": "evidence_quality/chapter_substance_contract.json",
-    "sha256": "934cab7f9f758594085ea90aed76bbab47da78692ae66fc079dd50d7cceac60d",
+    "sha256": "431ebe6838fe44a842e63f6c200a5e497f153e360694c7771a41503cb4e5fea3",
     "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy"
   },
   "raw_scaffold_exit": {
     "path": "evidence_quality/p6_9_raw_scaffold_ownership_audit.json",
-    "sha256": "9d0f68cd6eb80cb8aa9acbfda32a247ce3f3636ea871b0a9ffdc9a45585c7f4d",
+    "sha256": "2bb94a170fdec72e676b4130f47c65ff165a53f2502ff8a26c57c6b4bed8f6e7",
     "state": "terminal_complete",
     "unjustified_widest_block_count": 0,
     "exit_passed": true
   },
   "w3_binding": {
     "path": "evidence_quality/p7_1a_w3_inheritance_guard.json",
-    "sha256": "77f46c8fc84c1a1aed8333d48578e3a2c1c60f928c57046b18fed237c209c560",
+    "sha256": "dae9c295c820cd23f1e546feefbeb4d0fc7f03fbf4596e01bf0e65f7487180b1",
     "state": "terminal_complete",
     "reader_facing_repeated_12_gram_count": 0
   },
@@ -7140,9 +7140,9 @@
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "chapter_title": "Scientific Discovery and Experimental Governance",
       "chapter_path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-      "chapter_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
-      "semantic_review_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
-      "semantic_review_date": "2026-08-09",
+      "chapter_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+      "semantic_review_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+      "semantic_review_date": "2026-08-13",
       "concept_count": 8,
       "concepts": [
         {
@@ -7150,14 +7150,16 @@
           "heading": "Hypothesis and experiment provenance",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_refs": [
             {
               "atom_id": "scientific-discovery-and-experimental-governance.mechanism.001",
               "atom_source_path": "evidence_quality/claim_atom_registry.json",
               "owner": "scientific-discovery-and-experimental-governance",
-              "proposition": "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.",
+              "proposition": "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened; preserve the full hypothesis and research search tree, including parentage, pruning, repairs, compute allocation, abandoned branches, human interventions, evaluator dependencies, and selection policy.",
               "falsifier": "A reachable trace violates a load-bearing Scientific Discovery and Experimental Governance invariant, a required field has no exercised consumer, or a competent matched simpler system dominates the chapter's joint usefulness/safety/cost frontier.",
               "evidence_lanes": [
                 "source-synthesis",
@@ -7174,7 +7176,7 @@
               "support_state": "argument"
             }
           ],
-          "atom_ownership_rationale": "The existing experiment-contract atom owns ancestry, preregistration, design, stopping, and analysis as one bounded provenance transaction.",
+          "atom_ownership_rationale": "The experiment-contract atom owns ancestry, preregistration, design, stopping, analysis, and the full branch, selection, compute, intervention, and evaluator-dependence history as one bounded provenance transaction.",
           "semantic_review_disposition": "accepted_for_editorial_substance_no_evidence_effect",
           "support_state_effect": "none"
         },
@@ -7183,7 +7185,8 @@
           "heading": "Closed-loop laboratory authority",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_coscientist_chemistry_2023"
           ],
           "atom_refs": [
             {
@@ -7236,7 +7239,9 @@
           "heading": "Discovery versus benchmark success",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_refs": [
             {
@@ -7289,7 +7294,9 @@
           "heading": "Reproducibility and replication",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_refs": [
             {
@@ -7349,7 +7356,7 @@
               "atom_id": "scientific-discovery-and-experimental-governance.invariant.004",
               "atom_source_path": "evidence_quality/claim_atom_registry.json",
               "owner": "scientific-discovery-and-experimental-governance",
-              "proposition": "All attempts, exclusions, stopping events, and human interventions remain in the denominator.",
+              "proposition": "All attempts, search branches, exclusions, stopping events, human interventions, and evaluator dependencies remain in the denominator; selection, manuscript completion, reviewer score, or venue decision never becomes scientific truth by itself.",
               "falsifier": "A reachable trace violates a load-bearing Scientific Discovery and Experimental Governance invariant, a required field has no exercised consumer, or a competent matched simpler system dominates the chapter's joint usefulness/safety/cost frontier.",
               "evidence_lanes": [
                 "source-synthesis",
@@ -7369,7 +7376,7 @@
               "atom_id": "scientific-discovery-and-experimental-governance.failure_mode.004",
               "atom_source_path": "evidence_quality/claim_atom_registry.json",
               "owner": "scientific-discovery-and-experimental-governance",
-              "proposition": "For Scientific Discovery and Experimental Governance, a material failure mode is: publication bias",
+              "proposition": "For Scientific Discovery and Experimental Governance, a material failure mode is: publication bias, branch-selection laundering, and paper-production substitution",
               "falsifier": "A reachable trace violates a load-bearing Scientific Discovery and Experimental Governance invariant, a required field has no exercised consumer, or a competent matched simpler system dominates the chapter's joint usefulness/safety/cost frontier.",
               "evidence_lanes": [
                 "source-synthesis",
@@ -7428,14 +7435,16 @@
           "heading": "Resource allocation and search governance",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_refs": [
             {
               "atom_id": "scientific-discovery-and-experimental-governance.mechanism.001",
               "atom_source_path": "evidence_quality/claim_atom_registry.json",
               "owner": "scientific-discovery-and-experimental-governance",
-              "proposition": "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.",
+              "proposition": "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened; preserve the full hypothesis and research search tree, including parentage, pruning, repairs, compute allocation, abandoned branches, human interventions, evaluator dependencies, and selection policy.",
               "falsifier": "A reachable trace violates a load-bearing Scientific Discovery and Experimental Governance invariant, a required field has no exercised consumer, or a competent matched simpler system dominates the chapter's joint usefulness/safety/cost frontier.",
               "evidence_lanes": [
                 "source-synthesis",
@@ -7481,7 +7490,10 @@
           "heading": "Human scientific judgment and accountable handoff",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_coscientist_chemistry_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_refs": [
             {

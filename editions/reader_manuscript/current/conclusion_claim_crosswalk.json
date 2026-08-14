@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "6e1c5a254a3890afdf7aa092b41fdb33d86f7ba6c20bdbb0880b823fd9eae271",
+  "book_structure_sha256": "4d7a6dd202ee9bfd67a1c183fb10001f10eb3ddff0a102fd7c16a44650d58a2d",
   "outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 87,
   "edge_counts": {
     "claim": 87,
-    "source": 1335,
+    "source": 1338,
     "proof": 340,
     "test": 660,
     "tracked_artifact_reference": 258,
@@ -8065,7 +8065,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "bde2de129a8bda7f3245260758d3d938140d3fa3e6b8014997dd06fe9e344fe3",
+      "human_reader_source_sha256": "ad32312bc71992e4775df4440ee42707763f746775457f639e415addecbeb862",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8720,7 +8720,7 @@
           "chapter_id": "scientific-discovery-and-experimental-governance",
           "title": "Scientific Discovery and Experimental Governance",
           "technical_source_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-          "technical_source_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
+          "technical_source_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
           "live_technical_path": "chapters/scientific-discovery-and-experimental-governance.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "scientific-discovery-and-experimental-governance.core",
@@ -8729,11 +8729,17 @@
           "support_state": "argument",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_coscientist_chemistry_2023",
+            "ext_ai_co_scientist_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/aletheia.md",
-            "sources/source_notes/ext_autonomous_lab_materials_2023.md"
+            "sources/source_notes/ext_autonomous_lab_materials_2023.md",
+            "sources/source_notes/ext_ai_scientist_end_to_end_2026.md",
+            "sources/source_notes/ext_coscientist_chemistry_2023.md",
+            "sources/source_notes/ext_ai_co_scientist_2025.md"
           ],
           "proof_edges": [
             {
@@ -8768,7 +8774,7 @@
           "artifact_refs": [
             {
               "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-              "sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd"
+              "sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da"
             },
             {
               "path": "lean/AsiStackProofs/ScientificExperimentReview.lean",

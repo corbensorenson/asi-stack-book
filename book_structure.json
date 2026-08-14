@@ -27019,13 +27019,16 @@
           "claim_label": "Design rationale",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_coscientist_chemistry_2023",
+            "ext_ai_co_scientist_2025"
           ],
           "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.",
           "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
           "core_claim": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.",
           "mechanism": [
-            "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened.",
+            "Record hypothesis ancestry, prior evidence, competing explanations, exploratory status, preregistration, design, power, outcomes, exclusions, stopping, and analysis before protected data are opened; preserve the full hypothesis and research search tree, including parentage, pruning, repairs, compute allocation, abandoned branches, human interventions, evaluator dependencies, and selection policy.",
             "Lease simulators and instruments with calibration, operating envelope, sample identity, control state, maintenance, operator intervention, and safety authority.",
             "Separate generated hypotheses, execution, measurement, analysis, causal interpretation, and claim drafting across inspectable roles and preserve all failed attempts.",
             "Require positive, negative, null, contamination, drift, and analysis-robustness controls plus independent reanalysis and, where feasible, replication.",
@@ -27041,18 +27044,18 @@
             "Hypothesis generation and confirmatory testing remain separated.",
             "Simulator or instrument return is an observation, not scientific truth.",
             "Exploratory and confirmatory analyses remain visibly distinct.",
-            "All attempts, exclusions, stopping events, and human interventions remain in the denominator.",
+            "All attempts, search branches, exclusions, stopping events, human interventions, and evaluator dependencies remain in the denominator; selection, manuscript completion, reviewer score, or venue decision never becomes scientific truth by itself.",
             "One laboratory, domain, or replication does not imply broad transfer."
           ],
           "failure_modes": [
             "HARKing",
             "p-hacking",
             "selective stopping",
-            "publication bias",
+            "publication bias, branch-selection laundering, and paper-production substitution",
             "instrument drift",
             "simulator laundering",
             "contaminated controls",
-            "automation bias",
+            "automation bias, evaluator monoculture, and review-system flooding",
             "hidden intervention",
             "irreproducibility",
             "unsafe experiment generation",
@@ -27069,9 +27072,13 @@
           ],
           "source_queue": {
             "primary": [
-              "ext_autonomous_lab_materials_2023"
+              "ext_autonomous_lab_materials_2023",
+              "ext_coscientist_chemistry_2023",
+              "ext_ai_scientist_end_to_end_2026"
             ],
-            "supporting": [],
+            "supporting": [
+              "ext_ai_co_scientist_2025"
+            ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
@@ -27086,6 +27093,36 @@
                 "sources/source_notes/ext_autonomous_lab_materials_2023.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_ai_scientist_end_to_end_2026",
+              "mapped_support": "Passage-reviewed computational-research comparator: the reported system connects ideation, literature search, code, experiments, analysis, manuscript production, and automated review. The paper reports one of three generated workshop submissions receiving a 6.33 mean score at a workshop with a 70 percent acceptance rate, while the authors judged none conference-ready and documented implementation, rigor, figure, and citation failures.",
+              "limits": "Source-reported machine-learning workflow only; paper completion, automated review, and venue scoring are not scientific truth. No system run, manuscript, hidden search tree, review, reproduction, transfer, or support result is local.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_ai_scientist_end_to_end_2026.md"
+              ],
+              "passage_review_note": "The official Nature paper was reviewed for architecture, workshop evaluation, automated-review dependence, limitations, and explicit non-claim use."
+            },
+            {
+              "source_id": "ext_coscientist_chemistry_2023",
+              "mapped_support": "Passage-reviewed physical-laboratory comparator: Coscientist connects a language-model planner to web and document search, code execution, and robotic laboratory APIs across six reported chemistry task families, making proposal, tool, intervention, measurement, and adjudication boundaries concrete.",
+              "limits": "Source-reported bounded chemistry demonstrations with human oversight and task-specific assessment; no local chemistry run, independent scientist, general laboratory safety, causal discovery, transfer, or support promotion.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_coscientist_chemistry_2023.md"
+              ],
+              "passage_review_note": "The official Nature full text was reviewed for system components, six task families, human oversight, planning errors, and scope limits."
+            },
+            {
+              "source_id": "ext_ai_co_scientist_2025",
+              "mapped_support": "Passage-bounded hypothesis-generation comparator: the proposed multi-agent system generates, reflects on, ranks, evolves, and meta-reviews hypotheses with an Elo-style process and additional inference compute, followed by source-reported expert and selected laboratory appraisal.",
+              "limits": "Preprint and provider-reported evaluation only; internal rank, expert preference, and laboratory confirmation remain separate evidence objects. No full search population, evaluator independence, experiment, reproduction, transfer, or support result is local.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "sources/source_notes/ext_ai_co_scientist_2025.md"
+              ],
+              "passage_review_note": "The official preprint record and authors' research overview were reviewed for agent roles, Elo ranking, expert and laboratory cases, stated limitations, and non-claim boundaries."
             }
           ],
           "proof_targets": [

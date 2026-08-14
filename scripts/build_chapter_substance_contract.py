@@ -61,14 +61,14 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
         {"concept_id": "mental-health-and-parasocial-harm", "heading": "Manipulation, mental health, and parasocial harms", "source_ids": ["ext_singapore_consensus_2026", "ext_international_ai_safety_report_2026"]},
     ],
     "scientific-discovery-and-experimental-governance": [
-        {"concept_id": "hypothesis-experiment-provenance", "heading": "Hypothesis and experiment provenance", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
-        {"concept_id": "closed-loop-laboratory-authority", "heading": "Closed-loop laboratory authority", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
-        {"concept_id": "discovery-versus-benchmark-success", "heading": "Discovery versus benchmark success", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
-        {"concept_id": "reproducibility-and-replication", "heading": "Reproducibility and replication", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
+        {"concept_id": "hypothesis-experiment-provenance", "heading": "Hypothesis and experiment provenance", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_ai_scientist_end_to_end_2026", "ext_ai_co_scientist_2025"]},
+        {"concept_id": "closed-loop-laboratory-authority", "heading": "Closed-loop laboratory authority", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_coscientist_chemistry_2023"]},
+        {"concept_id": "discovery-versus-benchmark-success", "heading": "Discovery versus benchmark success", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_ai_scientist_end_to_end_2026", "ext_ai_co_scientist_2025"]},
+        {"concept_id": "reproducibility-and-replication", "heading": "Reproducibility and replication", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_ai_scientist_end_to_end_2026", "ext_ai_co_scientist_2025"]},
         {"concept_id": "negative-and-null-results", "heading": "Negative and null results", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
         {"concept_id": "dual-use-review", "heading": "Dual-use review and information hazards", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
-        {"concept_id": "resource-allocation", "heading": "Resource allocation and search governance", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
-        {"concept_id": "human-scientific-judgment", "heading": "Human scientific judgment and accountable handoff", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023"]},
+        {"concept_id": "resource-allocation", "heading": "Resource allocation and search governance", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_ai_scientist_end_to_end_2026", "ext_ai_co_scientist_2025"]},
+        {"concept_id": "human-scientific-judgment", "heading": "Human scientific judgment and accountable handoff", "source_ids": ["aletheia", "ext_autonomous_lab_materials_2023", "ext_coscientist_chemistry_2023", "ext_ai_scientist_end_to_end_2026", "ext_ai_co_scientist_2025"]},
     ],
     "governed-objective-formation-value-learning-and-goal-integrity": [
         {"concept_id": "preferences-values-authorization", "heading": "Preferences, values, and authorization are different objects", "source_ids": ["alignment_field", "ext_cooperative_inverse_rl_2016"]},
@@ -264,7 +264,7 @@ CONCEPT_SPECS: dict[str, list[dict[str, Any]]] = {
 
 CONCEPT_ATOM_MAPPINGS: dict[str, dict[str, dict[str, Any]]] = {
     "scientific-discovery-and-experimental-governance": {
-        "hypothesis-experiment-provenance": {"atom_ids": ["scientific-discovery-and-experimental-governance.mechanism.001"], "rationale": "The existing experiment-contract atom owns ancestry, preregistration, design, stopping, and analysis as one bounded provenance transaction."},
+        "hypothesis-experiment-provenance": {"atom_ids": ["scientific-discovery-and-experimental-governance.mechanism.001"], "rationale": "The experiment-contract atom owns ancestry, preregistration, design, stopping, analysis, and the full branch, selection, compute, intervention, and evaluator-dependence history as one bounded provenance transaction."},
         "closed-loop-laboratory-authority": {"atom_ids": ["scientific-discovery-and-experimental-governance.mechanism.002", "scientific-discovery-and-experimental-governance.mechanism.003"], "rationale": "Instrument leasing and role separation jointly own the laboratory authority boundary without creating a duplicate atom."},
         "discovery-versus-benchmark-success": {"atom_ids": ["scientific-discovery-and-experimental-governance.core", "scientific-discovery-and-experimental-governance.insufficiency.001"], "rationale": "The core ceiling and insufficiency atom already distinguish workflow or benchmark observations from scientific discovery."},
         "reproducibility-and-replication": {"atom_ids": ["scientific-discovery-and-experimental-governance.mechanism.004", "scientific-discovery-and-experimental-governance.invariant.005"], "rationale": "Controls and independent replay own the mechanism while the transfer invariant bounds the inference."},
@@ -587,14 +587,14 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "scientific-discovery-and-experimental-governance": {
-        "reviewed_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+        "reviewed_date": "2026-08-13",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
             "the eight concepts preserve hypothesis ancestry, laboratory authority, discovery ceilings, complete attempts, replication, dual-use review, resource allocation, and accountable scientific judgment as distinct lifecycle roles",
-            "the Aletheia and corrected A-Lab source contributions remain explicitly bounded from local reproduction, causal discovery, domain transfer, laboratory safety, and general scientific autonomy",
-            "the chapter preserves positive-control competence, null and inconclusive denominators, information-hazard limits, adjacent-owner handoffs, and argument-only support without padding-based completion",
+            "the Aletheia, corrected A-Lab, Coscientist, AI Scientist, and AI co-scientist contributions remain explicitly bounded from local reproduction, causal discovery, domain transfer, laboratory safety, evaluator independence, and general scientific autonomy",
+            "the chapter adds search-tree denominators, evaluator-dependence graphs, and the paper-versus-result boundary while preserving positive-control competence, null and inconclusive denominators, information-hazard limits, adjacent-owner handoffs, and argument-only support",
             "the formalization is restricted to authored experiment-dossier admissibility, finite attempt and confirmatory custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and Evidence States/Benchmark Ratchets rejection; it establishes no hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect",
             "the new attempts-21-to-23 scene faithfully preserves positive, null, and inconclusive outcomes plus an unopened preregistered confirmatory branch without implying a scientific result",
         ],

@@ -1,0 +1,50 @@
+{
+  "scenario_id": "autonomous-science-frontier-triage-2026-08-13",
+  "scenario_scope": "Triage three current autonomous-science regimes against the existing scientific-discovery and experimental-governance owner.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "autonomous-science-existing-owner-integration",
+      "intake_kind": "external_source_packet",
+      "access_state": "source_notes_available",
+      "source_storage_policy": "external_url_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_sources_to_existing_chapter",
+      "existing_chapter_id": "scientific-discovery-and-experimental-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Physical laboratory control, computational paper production, and hypothesis ranking instantiate the chapter's existing scientific lifecycle while exposing missing search-tree and evaluator-dependence custody. They do not own a separate architectural layer.",
+      "required_before_drafting": [
+        "official primary-source review",
+        "bounded source notes",
+        "chapter mapping and explicit nonclaims",
+        "argument-only support preservation"
+      ],
+      "evidence_transition_preconditions": [
+        "prospectively frozen benign campaign",
+        "complete branch and attempt denominators",
+        "independently qualified analysis or replication",
+        "accepted claim-specific transition"
+      ],
+      "promotion_blockers": [
+        "source-reported results only",
+        "no local reproduction",
+        "no independent natural-workflow evidence"
+      ],
+      "non_claims": [
+        "does not make venue review a truth oracle",
+        "does not make tool completion scientific confirmation",
+        "does not promote support"
+      ]
+    }
+  ],
+  "validation_boundary": "Records a passage-bounded existing-owner integration. It validates no autonomous scientist, discovery, causal claim, laboratory safety, evaluator independence, transfer, or support movement.",
+  "support_state_effect": "backlog_only",
+  "non_claims": [
+    "does not change chapter count or ordering",
+    "does not authorize experiments",
+    "does not reproduce source results",
+    "does not authorize release or deployment"
+  ]
+}

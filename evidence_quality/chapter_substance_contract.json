@@ -21602,8 +21602,8 @@
       "chapter_id": "scientific-discovery-and-experimental-governance",
       "chapter_title": "Scientific Discovery and Experimental Governance",
       "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-      "sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
-      "word_count": 4554,
+      "sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+      "word_count": 5609,
       "word_trigger": 5000,
       "depth_state": "concept_contract_complete_semantic_reviewed",
       "short_reference_exception": false,
@@ -21748,12 +21748,14 @@
           "heading": "Hypothesis and experiment provenance",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.mechanism.001"
           ],
-          "atom_ownership_rationale": "The existing experiment-contract atom owns ancestry, preregistration, design, stopping, and analysis as one bounded provenance transaction.",
+          "atom_ownership_rationale": "The experiment-contract atom owns ancestry, preregistration, design, stopping, analysis, and the full branch, selection, compute, intervention, and evaluator-dependence history as one bounded provenance transaction.",
           "minimum_section_words": 150,
           "required_elements": [
             "**Mechanism.**",
@@ -21761,7 +21763,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 201,
+          "observed_section_words": 215,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21776,7 +21778,8 @@
           "heading": "Closed-loop laboratory authority",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_coscientist_chemistry_2023"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.mechanism.002",
@@ -21790,7 +21793,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 184,
+          "observed_section_words": 205,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21805,7 +21808,9 @@
           "heading": "Discovery versus benchmark success",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.core",
@@ -21819,7 +21824,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 187,
+          "observed_section_words": 209,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21834,7 +21839,9 @@
           "heading": "Reproducibility and replication",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.mechanism.004",
@@ -21848,7 +21855,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 185,
+          "observed_section_words": 209,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21920,7 +21927,9 @@
           "heading": "Resource allocation and search governance",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.mechanism.001",
@@ -21934,7 +21943,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 186,
+          "observed_section_words": 206,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21949,7 +21958,10 @@
           "heading": "Human scientific judgment and accountable handoff",
           "source_ids": [
             "aletheia",
-            "ext_autonomous_lab_materials_2023"
+            "ext_autonomous_lab_materials_2023",
+            "ext_coscientist_chemistry_2023",
+            "ext_ai_scientist_end_to_end_2026",
+            "ext_ai_co_scientist_2025"
           ],
           "atom_ids": [
             "scientific-discovery-and-experimental-governance.mechanism.003",
@@ -21963,7 +21975,7 @@
             "**Non-claim.**",
             "**Source grounding.**"
           ],
-          "observed_section_words": 189,
+          "observed_section_words": 214,
           "observed_elements": [
             "**Mechanism.**",
             "**Failure mode.**",
@@ -21975,14 +21987,14 @@
         }
       ],
       "semantic_review": {
-        "reviewed_sha256": "316bc83034cc154a97c63272697b4d867c3a9cc5941a5c5ff45edf46071965dd",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+        "reviewed_date": "2026-08-13",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": "accepted_for_editorial_substance_no_evidence_effect",
         "review_basis": [
           "the eight concepts preserve hypothesis ancestry, laboratory authority, discovery ceilings, complete attempts, replication, dual-use review, resource allocation, and accountable scientific judgment as distinct lifecycle roles",
-          "the Aletheia and corrected A-Lab source contributions remain explicitly bounded from local reproduction, causal discovery, domain transfer, laboratory safety, and general scientific autonomy",
-          "the chapter preserves positive-control competence, null and inconclusive denominators, information-hazard limits, adjacent-owner handoffs, and argument-only support without padding-based completion",
+          "the Aletheia, corrected A-Lab, Coscientist, AI Scientist, and AI co-scientist contributions remain explicitly bounded from local reproduction, causal discovery, domain transfer, laboratory safety, evaluator independence, and general scientific autonomy",
+          "the chapter adds search-tree denominators, evaluator-dependence graphs, and the paper-versus-result boundary while preserving positive-control competence, null and inconclusive denominators, information-hazard limits, adjacent-owner handoffs, and argument-only support",
           "the formalization is restricted to authored experiment-dossier admissibility, finite attempt and confirmatory custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and Evidence States/Benchmark Ratchets rejection; it establishes no hypothesis truth, causal identification, instrument accuracy, reproducibility, discovery, laboratory safety, support, release, or external effect",
           "the new attempts-21-to-23 scene faithfully preserves positive, null, and inconclusive outcomes plus an unopened preregistered confirmatory branch without implying a scientific result"
         ],
@@ -23874,11 +23886,11 @@
   ],
   "summary": {
     "chapter_count": 87,
-    "thin_chapter_count": 6,
+    "thin_chapter_count": 5,
     "contracted_chapter_count": 23,
     "concept_complete_semantic_reviewed_chapter_count": 23,
     "queued_thin_chapter_count": 0,
-    "word_trigger_clear_chapter_count": 81,
+    "word_trigger_clear_chapter_count": 82,
     "atom_covered_chapter_count": 87,
     "atom_uncovered_chapter_count": 0,
     "active_concept_count": 184,

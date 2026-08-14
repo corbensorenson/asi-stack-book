@@ -3,10 +3,13 @@ title: "Scientific Discovery and Experimental Governance"
 chapter_id: "scientific-discovery-and-experimental-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
-draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+draft_maturity: "v0.4 concept-complete argument-level manuscript"
+last_updated: "2026-08-13"
 primary_sources:
   - "ext_autonomous_lab_materials_2023"
+  - "ext_coscientist_chemistry_2023"
+  - "ext_ai_scientist_end_to_end_2026"
+  - "ext_ai_co_scientist_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -22,11 +25,11 @@ open_evidence_gaps:
 | Chapter ID | `scientific-discovery-and-experimental-governance` |
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
-| Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-08-08 |
+| Manuscript maturity | v0.4 concept-complete argument-level manuscript |
+| Last updated | 2026-08-13 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`; raw cache: `aletheia` |
+| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_coscientist_chemistry_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_ai_co_scientist_2025`; raw cache: `aletheia` |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -124,6 +127,59 @@ instrument accurate. It demonstrates the custody condition that lets a later
 reader tell the difference between a result that survived a declared test and
 one selected by the pipeline that produced it.
 
+### Three automation regimes, three different evidentiary risks
+
+Current systems automate different slices of science, and their strongest
+result has to be interpreted at the layer where it occurred. A physical
+laboratory agent can turn a plan into an intervention, as the bounded chemistry
+tasks reported for Coscientist and the materials loop reported for A-Lab
+illustrate. That makes instrument identity, calibration, sample custody,
+operator intervention, and stop authority load-bearing. A successfully issued
+robot command or completed synthesis is still an event in the laboratory. It
+does not adjudicate what was measured or whether the scientific claim follows.
+
+An end-to-end computational research agent faces a different boundary. The
+Nature report on the AI Scientist connects ideas, literature search, code,
+experiments, figures, manuscripts, and automated reviews. One of three
+generated workshop submissions received a mean score of 6.33 at a workshop
+with a reported 70 percent acceptance rate, while the authors judged none of
+the papers ready for the main ICLR conference and documented weak ideas,
+implementation errors, insufficient rigor, duplicated figures, and inaccurate
+or hallucinated citations. The venue outcome is informative about one
+institutional review path. It is not a measurement of the paper's underlying
+claims, much less a replacement for independent analysis or replication.
+
+A hypothesis co-scientist occupies a third regime. The reported Google system
+uses specialized generation, reflection, ranking, evolution, proximity, and
+meta-review agents with an Elo-style comparison process and additional
+inference compute. This can be a useful proposal and prioritization engine.
+Internal rank, expert interest, and experimental confirmation are nevertheless
+three different evidence objects. A system does not manufacture independence
+by asking several related agents to review one another.
+
+A **search-tree denominator** accompanies all three regimes. Every
+candidate receives an identity, parent, creation path, compute allocation,
+tests, repairs, pruning reason, and disposition. The record includes abandoned
+ideas, failed code, invalid experiments, rejected manuscripts, and human
+interventions as well as the selected branch. Selection policy is frozen or
+versioned, and outcome access is recorded. Otherwise a large search can present
+its winner as though it were the only hypothesis ever considered.
+
+Review also needs an **evaluator-dependence graph**. Five reviews are not five
+independent roots when they share a model family, training corpus, retrieval
+system, prompts, code, literature database, or scoring heuristic. The graph
+does not disqualify dependent review; it states what kind of evidence it is.
+Model self-review can provide debugging and triage. A claim that relies on
+independence needs a separately qualified method, data path, or replication
+whose relevant dependencies are actually different.
+
+The practical rule is simple: a paper is an artifact, acceptance is an
+institutional observation, and a scientific conclusion is a claim compiled
+from design, observations, analysis, alternatives, and replication. Automation
+may strengthen the first two while leaving the third weak. The experimental packet must
+make that distinction inspectable rather than asking polished prose to carry
+epistemic authority.
+
 The scientific packet is a dependency graph from research question to bounded
 claim. Hypotheses retain ancestry to observations, theories, prior searches,
 and model-generated suggestions. Confirmatory branches freeze outcomes,
@@ -174,7 +230,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** Complete ancestry does not make a hypothesis important, original, causal, or true. It establishes custody of the search and test history only.
 
-**Source grounding.** `aletheia` motivates claim-native dossiers, explicit unknowns, and verification lineage. `ext_autonomous_lab_materials_2023` supplies a bounded corrected case in which target identity, training overlap, attempted syntheses, and later reinterpretation materially affect what may be said. Neither source establishes that this provenance design improves discovery in a local campaign.
+**Source grounding.** `aletheia` motivates claim-native dossiers, explicit unknowns, and verification lineage. `ext_autonomous_lab_materials_2023` supplies a bounded corrected case in which target identity, training overlap, attempted syntheses, and later reinterpretation materially affect what may be said. `ext_ai_scientist_end_to_end_2026` and `ext_ai_co_scientist_2025` make candidate population, tree search, ranking, pruning, compute, and selection dependencies concrete. None establishes that this provenance design improves discovery in a local campaign.
 
 ### Closed-loop laboratory authority
 
@@ -184,7 +240,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** Completing a robotic workflow demonstrates neither scientific autonomy nor safe laboratory operation beyond the named equipment, materials, intervention budget, and environment.
 
-**Source grounding.** `ext_autonomous_lab_materials_2023` describes a materials-specific loop joining computation, literature-derived models, robotics, X-ray characterization, and active learning. Its correction also shows why instrument and identification outputs require review. `aletheia` contributes separation between evidence authority and execution authority; neither supplies a reproduced laboratory control plane here.
+**Source grounding.** `ext_autonomous_lab_materials_2023` describes a materials-specific loop joining computation, literature-derived models, robotics, X-ray characterization, and active learning. Its correction also shows why instrument and identification outputs require review. `ext_coscientist_chemistry_2023` adds a bounded language-model planner connected to search, code, documentation, and laboratory APIs, with human oversight and reported planning errors. `aletheia` contributes separation between evidence authority and execution authority; none supplies a reproduced laboratory control plane here.
 
 ### Discovery versus benchmark success
 
@@ -194,7 +250,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** High benchmark performance, a successful synthesis, or a novel model output does not by itself establish scientific novelty, explanation, causality, or general discovery competence.
 
-**Source grounding.** The corrected `ext_autonomous_lab_materials_2023` record distinguishes 57 targets, 36 confirmed realizations, four later-inconclusive identifications, and novelty relative to a prediction platform rather than necessarily to science. `aletheia` supports bounded claim compilation. These sources motivate the distinction but do not validate a general discovery metric.
+**Source grounding.** The corrected `ext_autonomous_lab_materials_2023` record distinguishes 57 targets, 36 confirmed realizations, four later-inconclusive identifications, and novelty relative to a prediction platform rather than necessarily to science. `ext_ai_scientist_end_to_end_2026` distinguishes manuscript production and workshop appraisal from conference-level scientific quality, while `ext_ai_co_scientist_2025` distinguishes internal ranking, expert preference, and selected laboratory appraisal. `aletheia` supports bounded claim compilation. These sources motivate the distinction but do not validate a general discovery metric.
 
 ### Reproducibility and replication
 
@@ -204,7 +260,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** One successful replay or replication does not establish broad reproducibility, transfer across domains, or correctness of the original causal interpretation.
 
-**Source grounding.** `aletheia` motivates replayable claim dossiers and retained contradiction. The correction history in `ext_autonomous_lab_materials_2023` demonstrates why later reanalysis must remain connected to the original denominator. Neither source supplies an independent replication of the chapter’s proposed mechanism, so the support state remains argument.
+**Source grounding.** `aletheia` motivates replayable claim dossiers and retained contradiction. The correction history in `ext_autonomous_lab_materials_2023` demonstrates why later reanalysis must remain connected to the original denominator. `ext_ai_scientist_end_to_end_2026` and `ext_ai_co_scientist_2025` expose another independence problem: generator, reviewer, ranker, and meta-reviewer may share model and tool dependencies even when they occupy different named roles. None supplies an independent replication of the chapter’s proposed mechanism, so the support state remains argument.
 
 ### Negative and null results
 
@@ -234,7 +290,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** A rational-looking budget or high information-gain estimate does not establish that the chosen scientific questions are socially valuable, morally legitimate, or globally optimal.
 
-**Source grounding.** `aletheia` motivates routing by uncertainty, risk, ambiguity, and historical failure while warning about verification latency. `ext_autonomous_lab_materials_2023` demonstrates active selection inside one bounded synthesis workflow. Neither source validates the proposed portfolio rule or its societal priorities.
+**Source grounding.** `aletheia` motivates routing by uncertainty, risk, ambiguity, and historical failure while warning about verification latency. `ext_autonomous_lab_materials_2023` demonstrates active selection inside one bounded synthesis workflow. `ext_ai_scientist_end_to_end_2026` and `ext_ai_co_scientist_2025` add computational tree search, hypothesis ranking, and test-time compute; the chapter therefore tracks branch-level resources and selection policy. None validates the proposed portfolio rule or its societal priorities.
 
 ### Human scientific judgment and accountable handoff
 
@@ -244,7 +300,7 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Non-claim.** Human approval does not make an experiment correct, safe, representative, or legitimate. The claim is that accountable roles and inspectable dissent preserve a correction path.
 
-**Source grounding.** `aletheia` supplies adversarial review, explicit unknowns, and separate evidence authority. The corrected `ext_autonomous_lab_materials_2023` history illustrates the value of later human reanalysis but does not prove that this governance arrangement prevents error or scales to autonomous science.
+**Source grounding.** `aletheia` supplies adversarial review, explicit unknowns, and separate evidence authority. The corrected `ext_autonomous_lab_materials_2023` history illustrates the value of later human reanalysis. `ext_coscientist_chemistry_2023` preserves a bounded human-supervised laboratory context; `ext_ai_scientist_end_to_end_2026` documents gaps that survived an automated paper-and-review pipeline; and `ext_ai_co_scientist_2025` reports expert appraisal while naming factuality and evaluation limitations. None proves that this governance arrangement prevents error or scales to autonomous science.
 
 ## Interfaces
 
@@ -287,6 +343,16 @@ seeing partial outcomes, choosing among many plausible analyses, discarding
 simulator as both hypothesis generator and truth oracle. Positive and null
 controls must pass under the same autonomy and tooling available to the target
 study.
+
+Branch-selection laundering hides the generated population and presents one
+survivor as a prespecified insight. Evaluator monoculture counts correlated
+model reviews as independent judgment. Paper-production substitution treats a
+complete manuscript or favorable venue decision as confirmation of its claims.
+Review-system flooding exploits cheap generation, consumes scarce human
+attention, lowers review depth, and gives polished but defective artifacts more
+opportunities to survive. Each failure is testable only when the system
+preserves the search tree, evaluator dependencies, submission denominator, and
+human review burden.
 
 The principal failure family includes HARKing; p-hacking; selective stopping; publication bias; instrument drift; simulator laundering; contaminated controls; automation bias; hidden intervention; irreproducibility; unsafe experiment generation; dual-use leakage; claim drafting beyond the data.
 
@@ -346,6 +412,7 @@ No such campaign has passed. Scientific-automation support should stay at argume
 | Instrument authority and drift | Inject calibration failure, simulator mismatch, contamination, and operator intervention. | planned |
 | Complete attempt denominator | Preserve failed runs, exclusions, stopping events, and analysis variants. | planned |
 | Replication and claim ceiling | Require independent reanalysis or replication and block transfer beyond the tested protocol and domain. | planned |
+| Search-tree and evaluator custody | Reject omitted branches, hidden pruning or intervention, correlated reviewers presented as independent, and venue outcomes presented as truth. | planned |
 
 ## Formalization hooks
 
@@ -362,6 +429,17 @@ Two information-loss constructions show why equal significance signals cannot de
 | `aletheia` | Aletheia Foundry | Corben-authored safe-intelligence lineage for truth-seeking, verification, and disciplined knowledge production. It motivates an epistemic foundry interface, but it does not supply preregistered experiments, instrument calibration, causal identification, independent replication, laboratory safety, or a scientific-discovery result. |
 | `ext_autonomous_lab_materials_2023` | An autonomous laboratory for the accelerated synthesis of inorganic materials | Preliminary autonomous-laboratory comparator based on the corrected official Nature article abstract, selected article-page passages, and the 2026 author correction: A-Lab integrates computation, literature-derived data, machine learning, active learning, and robotics, with the corrected article reporting 36 realized compounds from 57 targets. The correction narrows the novelty wording and excludes four inconclusive identifications; no laboratory run, material synthesis, replication, or general experimental-control-plane result has been reproduced locally. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Scientific Discovery and Experimental Governance's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_ai_scientist_end_to_end_2026` | Passage-reviewed comparator: Towards end-to-end automation of AI research. Passage-reviewed computational-research comparator: the reported system connects ideation, literature search, code, experiments, analysis, manuscript production, and automated review. The paper reports one of three generated workshop submissions receiving a 6.33 mean score at a workshop with a 70 percent acceptance rate, while the authors judged none conference-ready and documented implementation, rigor, figure, and citation failures. | Source-reported machine-learning workflow only; paper completion, automated review, and venue scoring are not scientific truth. No system run, manuscript, hidden search tree, review, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_coscientist_chemistry_2023` | Passage-reviewed comparator: Autonomous chemical research with large language models. Passage-reviewed physical-laboratory comparator: Coscientist connects a language-model planner to web and document search, code execution, and robotic laboratory APIs across six reported chemistry task families, making proposal, tool, intervention, measurement, and adjudication boundaries concrete. | Source-reported bounded chemistry demonstrations with human oversight and task-specific assessment; no local chemistry run, independent scientist, general laboratory safety, causal discovery, transfer, or support promotion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ai_co_scientist_2025` | Passage-reviewed comparator: Towards an AI co-scientist. Passage-bounded hypothesis-generation comparator: the proposed multi-agent system generates, reflects on, ranks, evolves, and meta-reviews hypotheses with an Elo-style process and additional inference compute, followed by source-reported expert and selected laboratory appraisal. | Preprint and provider-reported evaluation only; internal rank, expert preference, and laboratory confirmation remain separate evidence objects. No full search population, evaluator independence, experiment, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Scientific discovery is a governed evidence-production process from question

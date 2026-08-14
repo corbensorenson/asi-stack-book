@@ -7567,6 +7567,9 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | Primary | `ext_autonomous_lab_materials_2023` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
+| Primary | `ext_coscientist_chemistry_2023` | Use the bounded chemistry workflow to separate planning, tool invocation, physical intervention, observation, and claim authority; preserve human oversight and task-specific limits. |
+| Primary | `ext_ai_scientist_end_to_end_2026` | Use the end-to-end computational research pipeline to expose search-tree denominators, manuscript-versus-result boundaries, and automated-review dependencies; do not inherit venue appraisal as scientific truth. |
+| Supporting | `ext_ai_co_scientist_2025` | Use the multi-agent hypothesis and Elo-style ranking system to distinguish proposal ranking, expert appraisal, and experimental confirmation while preserving provider-report limits. |
 
 
 | Manifest assignment reconciliation | `aletheia` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |

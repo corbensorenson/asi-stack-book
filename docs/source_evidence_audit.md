@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 87 |
-| Assigned source/chapter pairs | 1335 |
-| Exact claim-source mappings | 1127 |
+| Assigned source/chapter pairs | 1338 |
+| Exact claim-source mappings | 1130 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1335 |
-| Source notes listing assigned chapter | 1335 |
-| Passage-reviewed mappings recorded | 1058 |
+| Source notes present for assigned pairs | 1338 |
+| Source notes listing assigned chapter | 1338 |
+| Passage-reviewed mappings recorded | 1061 |
 | Support-state counts | {"argument": 87} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -113,7 +113,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `adjudicated-persistence-and-the-adaptive-commit-boundary` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 37 | 35 | 37 | 37 | 35 | argument | passage review required before source-derived promotion |
 | `data-engines-continual-learning-and-unlearning` | 19 | 15 | 19 | 19 | 15 | argument | passage review required before source-derived promotion |
-| `scientific-discovery-and-experimental-governance` | 2 | 1 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
+| `scientific-discovery-and-experimental-governance` | 5 | 4 | 5 | 5 | 3 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 24 | 23 | 24 | 24 | 23 | argument | passage review required before source-derived promotion |
 | `integrated-reference-architecture` | 40 | 35 | 40 | 40 | 35 | argument | passage review required before source-derived promotion |
 | `project-theseus-as-report-first-implementation-reference` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
@@ -560,6 +560,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_shumailov_model_collapse_2023` | 1 | yes |
 | `ext_gerstgrasser_data_accumulation_2024` | 1 | yes |
 | `ext_autonomous_lab_materials_2023` | 1 | yes |
+| `ext_ai_scientist_end_to_end_2026` | 1 | yes |
+| `ext_coscientist_chemistry_2023` | 1 | yes |
+| `ext_ai_co_scientist_2025` | 1 | yes |
 | `ext_github_webhooks_docs` | 1 | yes |
 | `ext_openzeppelin_governor_docs` | 1 | yes |
 | `ext_open_collective_docs` | 1 | yes |
@@ -1768,6 +1771,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
 | `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `aletheia` | unmapped | note present | chapter listed | not passage-reviewed |
 | `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_autonomous_lab_materials_2023` | mapped | note present | chapter listed | not passage-reviewed |
+| `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_ai_scientist_end_to_end_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_coscientist_chemistry_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_ai_co_scientist_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-steward-agents-and-living-project-governance.core` | `artifact-steward-agents-and-living-project-governance` | `planforge` | mapped | note present | chapter listed | passage-reviewed |

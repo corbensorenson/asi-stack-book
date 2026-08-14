@@ -68,8 +68,8 @@ def errors(value: dict[str, Any]) -> list[str]:
         if row.get("chapter_ids_sha256") != expected_ids:
             out.append("widest-block chapter-set fingerprint drifted")
         if (
-            row.get("chapter_spread") != 69
-            or len(chapter_ids) != 69
+            row.get("chapter_spread") != 70
+            or len(chapter_ids) != 70
             or row.get("word_tokens") != 12
         ):
             out.append("widest-block scope drifted")
