@@ -160,6 +160,25 @@ Local authorities can act within explicit scopes; expensive review is reserved
 for high-commitment or cross-surface changes. Every route still emits enough
 evidence to reconstruct why it was chosen.
 
+## A Good Idea Can Be the Wrong Default
+
+A reusable abstraction can be true, elegant, and well verified without
+deserving automatic use. Perhaps the ordinary solver already finds every
+answer. Perhaps retrieval costs more than it saves. Perhaps the abstraction
+helps one family and distracts another. The persistence decision needs a field
+for semantic validity and a different field for measured future benefit.
+
+That measurement also needs its own round. Candidates are extracted and
+checked during development; the library is frozen; held-out tasks are then run
+with absence, placebo, and removal controls. A successful candidate enters the
+next version, not the version it was tested against. Otherwise the test set
+quietly becomes training data and the system certifies a moving target.
+
+This separation allows a humane outcome for uncertain knowledge. A candidate
+can remain archived, inspectable, and available to specialists without being
+routed as a default. Denial of promotion is not deletion of the idea. It is a
+claim about the evidence for this use, distribution, search method, and budget.
+
 ## Eight Places a Lesson Can Live
 
 Learning discussions often jump from experience directly to parameter update.

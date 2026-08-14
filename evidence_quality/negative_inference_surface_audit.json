@@ -26,7 +26,7 @@
     "release_effect": "none"
   },
   "term_counts": {
-    "refuted": 95,
+    "refuted": 98,
     "no_change": 343,
     "blocked_after_full_attempt": 179
   },
@@ -36,7 +36,7 @@
   "surfaces": [
     {
       "path": "README.md",
-      "sha256": "7b629ab92c3bfad02e9cff0258e19d3308811ed7ea4faad253f12c5b8f3f849f",
+      "sha256": "bf1e5c9c99d37135505c942d39111eb5a31e01338cc46d65518a1340ab7f4d5d",
       "bytes": 9965,
       "term_counts": {
         "refuted": 0,
@@ -46,8 +46,8 @@
     },
     {
       "path": "appendices/A_source_matrix.qmd",
-      "sha256": "82194a1da5838159e9a52bc426bad3935dbef3e8dde4dbc1eaced3b095b1346e",
-      "bytes": 441371,
+      "sha256": "2f1b043c2f8ec146475ff25eb0a56cbcba1e978e190ca3c1ba1e9b5ff57e4456",
+      "bytes": 443507,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -56,8 +56,8 @@
     },
     {
       "path": "appendices/C_claim_evidence_matrix.qmd",
-      "sha256": "35127fb27759ffdac0f0ad4e5089713cfbb5076785ad06ebcf9e89013f6939b0",
-      "bytes": 597487,
+      "sha256": "e9c7d10944ef09eda9b24ab40c4ee8e13ac5922bb5a0c99e41c418af145611b9",
+      "bytes": 600948,
       "term_counts": {
         "refuted": 1,
         "no_change": 0,
@@ -76,8 +76,8 @@
     },
     {
       "path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-      "sha256": "684761b4dc83482f98cc5a28567fccb1e9009c089180175fd1e500bb3f4c943d",
-      "bytes": 41727,
+      "sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085",
+      "bytes": 44193,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -176,10 +176,10 @@
     },
     {
       "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-      "sha256": "f0c142408e33d677e13438f12c7256cb38d5a8631f52e20f71a3bd116ef1ccfa",
-      "bytes": 110076,
+      "sha256": "a0425c58f07fe8033a94012995c8358d7d5ec7dcc8cdc59d65a08810dd77851a",
+      "bytes": 112300,
       "term_counts": {
-        "refuted": 0,
+        "refuted": 1,
         "no_change": 1,
         "blocked_after_full_attempt": 4
       }
@@ -356,10 +356,10 @@
     },
     {
       "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-      "sha256": "005eed50afd81d5b76e384c9d2bcae1505c6c396acc080ff9139a77a3b475d69",
-      "bytes": 69560,
+      "sha256": "fe3fc3f87a10d6ced6b3a87bdb787bec729c2600f7863bc520aab9ae490787bc",
+      "bytes": 71690,
       "term_counts": {
-        "refuted": 1,
+        "refuted": 2,
         "no_change": 1,
         "blocked_after_full_attempt": 4
       }
@@ -556,8 +556,8 @@
     },
     {
       "path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-      "sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2",
-      "bytes": 42831,
+      "sha256": "f2056a2a1c8ba5df23af84b337a04673a0a045774a9bf5d7b004e483accb08d5",
+      "bytes": 44713,
       "term_counts": {
         "refuted": 0,
         "no_change": 0,
@@ -716,10 +716,10 @@
     },
     {
       "path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-      "sha256": "9e3f8031cebce53e19f803341ec6739a5529e46785393f71d3aa1e92faf0e2d5",
-      "bytes": 81989,
+      "sha256": "f02e407b80ea78a3b0636bbd9d63acbf4d0beff66805dde3053428e6fb5dad8c",
+      "bytes": 84781,
       "term_counts": {
-        "refuted": 0,
+        "refuted": 1,
         "no_change": 0,
         "blocked_after_full_attempt": 3
       }
@@ -746,8 +746,8 @@
     },
     {
       "path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-      "sha256": "957225607952a9697f01651c4019692690a477dfc21a8b0efe8200b28c536d9c",
-      "bytes": 75669,
+      "sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3",
+      "bytes": 77558,
       "term_counts": {
         "refuted": 0,
         "no_change": 2,
@@ -766,8 +766,8 @@
     },
     {
       "path": "chapters/recursive-self-improvement-boundaries.qmd",
-      "sha256": "bc7f2cdb02d0f5f3e37513f4975528d12cecafce1ac6da827aaa765de7c15378",
-      "bytes": 57365,
+      "sha256": "e890b6068978cca8ea93606d568d368c3a09215278c6c080e450913d37b6a990",
+      "bytes": 59380,
       "term_counts": {
         "refuted": 1,
         "no_change": 4,
@@ -796,8 +796,8 @@
     },
     {
       "path": "chapters/resource-economics-and-token-budgets.qmd",
-      "sha256": "3ae991c59c041932410d2eb9a385806efb773d21e899d8a431af699090057c10",
-      "bytes": 146672,
+      "sha256": "6ff1fc0b391e0174e57748c5f03037fca11e1a2c9d14a7c7cb00848ac74251f5",
+      "bytes": 148754,
       "term_counts": {
         "refuted": 0,
         "no_change": 3,
@@ -956,8 +956,8 @@
     },
     {
       "path": "docs/book_outline.md",
-      "sha256": "77843c70349f72d2a1e8f94d5f11d272bca6b8ec28a9c96b0b6aeef05216eca3",
-      "bytes": 1008156,
+      "sha256": "be96795851ffda1d5706bcc5188422dac4f310030c2f40f5aa8613b912a4d9d9",
+      "bytes": 1008880,
       "term_counts": {
         "refuted": 6,
         "no_change": 35,
@@ -1036,7 +1036,7 @@
     },
     {
       "path": "docs/publication_readiness.md",
-      "sha256": "b6a1f140dc865d7c30f3fa6011fdd4ddb1b40b769c20865a0da189c6706ffb3b",
+      "sha256": "c6b575054443d80b3abad0ff87b9d39d7d5f06ec57ec5a6bec0f25acc3dd78f5",
       "bytes": 36599,
       "term_counts": {
         "refuted": 1,
@@ -1076,7 +1076,7 @@
     },
     {
       "path": "index.qmd",
-      "sha256": "18ce5c78c191fdb3eacf3d52cfb9030e6179eea9c14bee0e2cdec8dde2c1bc5e",
+      "sha256": "471a01cd63af3c1c6448af2aaf399ab9b674ced55b874c2ae754a74e2f1888fb",
       "bytes": 19135,
       "term_counts": {
         "refuted": 1,

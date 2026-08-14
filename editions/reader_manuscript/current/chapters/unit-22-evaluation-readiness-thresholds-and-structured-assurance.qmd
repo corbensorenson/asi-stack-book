@@ -163,6 +163,27 @@ instrument repair. A genuine capability miss may route to training or
 architecture work. A task whose target no longer matters may be retired. These
 dispositions prevent every red cell from becoming evidence for the same story.
 
+## Test the Library, Not the Story
+
+A learned library invites a persuasive narrative: the system found a compact
+idea, reused it, and therefore became better. Evaluation has to break that
+sentence into testable steps. Was the idea available? Was it invoked? Did it
+contribute to a verified answer? Was it necessary? Did it improve outcomes
+relative to the same search and budget?
+
+The clean experiment freezes the library before revealing held-out tasks. It
+compares the candidate with no library, irrelevant and duplicate entries,
+removal of entries that appear in solutions, and a stronger search procedure
+with and without the library. Every timeout, invalid task, failed verification,
+and unknown result stays in the denominator.
+
+These controls can disappoint a beautiful theory. That is their purpose. If
+search rather than stored knowledge caused the gain, the architecture should
+credit search. If the library helps only one task lineage, its lease should say
+so. If construction cost exceeds future savings, the economic claim should
+fail even when accuracy rises. The current source defines this design but does
+not report a completed experiment.
+
 ## Anti-Goodhart Evaluation
 
 When a metric influences selection, systems and developers optimize toward it.

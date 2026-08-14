@@ -149,6 +149,30 @@ Every passed artifact should produce a proof/spec receipt. The receipt says what
 
 The artifact lane is a first-class field because different lanes fail differently. A Lean lane can fail because the module does not build. A schema lane can pass while the represented event never happened. A process-validator lane can check wiring without checking semantics. A behavior-test lane can exercise a path without proving a theorem. A benchmark lane can measure performance while saying nothing about proof. The proof envelope is useful only if those lane differences survive into the fixture and into the prose that consumes it.
 
+### Verification of an abstraction is not verification of transfer
+
+A reusable abstraction creates at least three separately checkable claims. The
+semantic claim says the abstraction denotes what its contract says. The
+artifact claim says lowering, compilation, linking, or emission preserved that
+contract in the bytes that ran. The transfer claim says making the verified
+artifact available changed future outcomes under a frozen task distribution,
+search procedure, verifier, and budget. A proof of the first does not discharge
+the second, and neither proves the third.
+
+The receipt should therefore bind a verification level and an exact outcome.
+Tested, exhaustive-bounded, solver-validated, certificate-checked,
+proof-assistant-checked, and artifact-validated results carry different
+authority. Likewise, `unknown` and `timeout` cannot be collapsed into
+`refuted`, while a verified artifact can remain transfer-neutral or
+transfer-negative. If source and emitted artifact differ, the consumer needs a
+translation or artifact-validation obligation rather than a comment asserting
+that the proof survived compilation.
+
+The finite counterexamples and protocols in *From Compression to Forward
+Transfer* motivate this separation but are not mechanized in the repository.
+Any Lean target derived from them must first be deduplicated against existing
+proof owners and remain scoped to the encoded finite model.
+
 ### A tiny kernel still has authority-bearing roots
 
 GenesisCode proposes a useful three-way trust split: a minimal evaluator,
@@ -694,6 +718,7 @@ These rows keep Executable Specifications and Lean Proof Envelope's manifest ass
 |---|---|---|
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies a concrete neural-network verification case in which a solver checks a stated property over a bounded ReLU network region. | The theorem concerns only the encoded network, property, arithmetic semantics, and region; it does not prove model intent, data quality, whole-system safety, or deployed implementation binding. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Separates a verified semantic abstraction from verified lowering, emitted-artifact validity, and measured forward transfer, and supplies exact outcome and verification-level vocabularies for each boundary. | No Lean theorem, solver run, certificate check, compiler validation, emitted-artifact validation, or transfer experiment was executed for this source. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -185,6 +185,30 @@ technically correct but unauthorized. A qualified tool can later become stale
 when its dependency changes. An authorized experiment can remain unqualified
 for production. Separate records make these states expressible.
 
+### Reusable knowledge needs a separate admission round
+
+A valid candidate abstraction is not yet a beneficial persistence decision.
+The candidate may compress prior solutions, pass independent semantic checks,
+and appear in later traces while adding no marginal value. It can also remain a
+useful archived artifact even when a removal or placebo intervention shows that
+the default library should not expose it. Validation status and transfer
+disposition therefore remain separate fields.
+
+The test round must consume a frozen knowledge version. Extraction,
+development tuning, and independent validation happen before that freeze;
+held-out tasks then compare presence, absence, placebos, removal, and any
+library-search interaction. An accepted candidate can enter only a subsequent
+version. Promoting it into the evaluated version would let test information
+alter the intervention and turn the benchmark into part of the training loop.
+
+This is the Adaptive Commit Boundary applied to reusable symbolic knowledge:
+the lesson hypothesis concerns future task benefit, the realization is the
+exact library entry and retrieval surface, the disposition records the causal
+test, and qualification names its distribution, search, verifier, budget,
+expiry, and removal conditions. *From Compression to Forward Transfer*
+proposes this lifecycle but reports no admission transaction or measured
+effect.
+
 ```{mermaid}
 flowchart LR
   E["Experience record<br/>provenance, context, outcome"] --> L{"Learning eligible?"}
@@ -645,6 +669,15 @@ does not import those references as independent support. Each external result
 must receive its own source note and chapter-specific mapping before it can
 move a claim.
 
+### Manifest source assignment reconciliation
+
+These rows keep Adjudicated Persistence and the Adaptive Commit Boundary's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds a separate later-version admission step after independent validation and frozen evaluation, preserving valid-but-transfer-negative artifacts without routing them as beneficial defaults. | No admission service, knowledge-version transition, removal test, benchmark result, or support movement was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Current Evidence and Non-Claims
 
 The complete manuscript, DOCX, README, five figures, and package manifest were

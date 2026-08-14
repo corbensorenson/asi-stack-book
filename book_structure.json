@@ -6903,7 +6903,8 @@
             "ext_darwin_godel_machine_2025",
             "ext_adas_2024",
             "ext_embedded_agency_2019",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -6919,7 +6920,8 @@
               "theseus_self_evolution_system",
               "theseus_architecture_gate",
               "capability_ratchet_whitepaper",
-              "attd"
+              "attd",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -7284,6 +7286,19 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "crosswalk_display_title": "Library growth versus verified improvement",
+              "mapped_support": "Separates library growth, exposure, invocation, necessity, positive future-task transfer, and cross-family transfer, and requires distinct interventions on the knowledge state and search procedure before any recursive-improvement claim.",
+              "limits": "Framework and experimental blueprint only; no open-ended, compounding, cross-family, or resource-positive improvement was implemented or measured.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:712-725",
+                "papers/source/forward_transfer_program_synthesis.md:1711-1728",
+                "papers/source/forward_transfer_program_synthesis.md:1766-1769"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript, supplied DOCX, and bibliography. The recursive-improvement discussion is a scoped experimental proposal; no empirical result or external citation is inherited as evidence."
             }
           ],
           "open_evidence_gaps": [
@@ -14838,7 +14853,8 @@
             "ext_hermes_agent_2026",
             "ext_openclaw_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -14866,7 +14882,8 @@
               "relational_dimension_compiler",
               "capability_ratchet_whitepaper",
               "regret_engine",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -15150,6 +15167,18 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Adds the verified forward-transfer intervention as the admission test for reusable procedures, with four-value separation, an R0-R7 reuse ladder, frozen knowledge versions, matched controls, and later-round admission.",
+              "limits": "Framework and experimental blueprint only; no candidate procedure, synthesis benchmark, forward-transfer effect, cost advantage, or support transition was produced.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:351-725",
+                "papers/source/forward_transfer_program_synthesis.md:1063-1597",
+                "papers/source/forward_transfer_program_synthesis.md:1806-1964"
+              ],
+              "passage_review_note": "Reviewed the complete author manuscript, supplied DOCX, and bibliography for the value separation, reuse ladder, intervention design, lifecycle, benchmark protocols, and reporting schema. No proposed experiment is represented as executed evidence."
             }
           ],
           "mechanism": [
@@ -17384,7 +17413,8 @@
             "ext_emergent_abilities_mirage_2023",
             "ext_no_free_lunch_inductive_bias_2024",
             "ext_eggroll_hyperscale_es_2026",
-            "ext_forward_forward_2022"
+            "ext_forward_forward_2022",
+            "forward_transfer_program_synthesis"
           ],
           "problem": "The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.",
           "insufficient": "PAC bounds, capacity measures, stability, compression, information theory, scaling-law fits, emergence plots, and benchmark curves each illuminate part of learning. None is a universal theory of deep networks, and none automatically transports from a loss metric, architecture family, data regime, optimizer, or scale range to downstream capability or safety.",
@@ -17447,7 +17477,8 @@
             ],
             "supporting": [
               "ext_eggroll_hyperscale_es_2026",
-              "ext_forward_forward_2022"
+              "ext_forward_forward_2022",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -17563,6 +17594,20 @@
                 "sources/source_notes/ext_emergent_abilities_mirage_2023.md"
               ],
               "passage_review_note": "Reviewed for metric-artifact alternative, uncertainty, and continuous-measurement requirements."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Makes reusable-knowledge transfer explicitly relative to a task lineage, task distribution, search procedure, verifier, and resource budget, and separates within-family positive transfer from cross-family transfer.",
+              "limits": "No universal generalization, scaling law, distribution-independent benefit, or empirical transfer result is established.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:459-480",
+                "papers/source/forward_transfer_program_synthesis.md:1032-1062",
+                "papers/source/forward_transfer_program_synthesis.md:1315-1470",
+                "papers/source/forward_transfer_program_synthesis.md:1576-1586",
+                "papers/source/forward_transfer_program_synthesis.md:1647-1659"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for task-lineage, budget-relative, search-relative, and cross-family boundaries. The paper proposes experiments and does not supply a generalization result."
             }
           ],
           "proof_targets": [
@@ -20292,7 +20337,8 @@
             "cgs",
             "bugbrain",
             "ext_raptor_2024",
-            "precision_contract"
+            "precision_contract",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -20303,7 +20349,8 @@
             "supporting": [
               "bbvca_v9",
               "cgs",
-              "bugbrain"
+              "bugbrain",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -20557,6 +20604,18 @@
                 "sources/source_notes/ext_raptor_2024.md:1-44"
               ],
               "passage_review_note": "Reviewed the bounded public source note for recursive abstraction and hierarchical retrieval, including provenance-loss and fidelity risks. Source-reported performance remains unimported; this mapping adds no local compression, utility, reconstruction, or support evidence."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Separates retrospective and prospective compression from causal future-task benefit and supplies a finite warning that adding valid vocabulary can worsen bounded discoverability.",
+              "limits": "No RankFold, NeuralFold, codec, search, or transfer experiment was run; compression remains candidate-generation evidence rather than utility evidence.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:351-480",
+                "papers/source/forward_transfer_program_synthesis.md:796-851",
+                "papers/source/forward_transfer_program_synthesis.md:954-1062"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for compression metrics, grammar-growth cost, counterexamples, and intervention boundaries. No measured codec or forward-transfer result is imported."
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
@@ -20633,7 +20692,8 @@
             "ext_azure_llm_semantic_cache_2026",
             "precision_contract",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -20653,7 +20713,8 @@
               "kernel_english_residual_compiler",
               "relational_dimension_compiler",
               "precision_contract",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [
               "ext_eggroll_hyperscale_es_2026",
@@ -21304,6 +21365,16 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Adds full lifecycle costing for reusable knowledge, equal-downstream and equal-total-budget comparisons, vocabulary and retrieval overhead, and an explicit break-even horizon.",
+              "limits": "The paper provides a cost schema and comparison discipline, not measured construction cost, operating cost, break-even time, or resource superiority.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:725-851"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for mining, verification, indexing, documentation, storage, maintenance, retrieval, search, candidate-verification, compilation, budget, and break-even accounting. No observed cost is imported."
             }
           ],
           "draft_maturity": "v0.4 temporal-access integration",
@@ -22922,7 +22993,8 @@
             "moecot_manifest_project",
             "corbens_best_model_possible_project",
             "precision_contract",
-            "ext_reluplex_2017"
+            "ext_reluplex_2017",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -22941,7 +23013,8 @@
               "moecot_manifest_project",
               "corbens_best_model_possible_project",
               "precision_contract",
-              "ext_reluplex_2017"
+              "ext_reluplex_2017",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -23146,6 +23219,17 @@
               ],
               "passage_review_note": "Reviewed the public-safe pinned source note for verification, execution, and implementation-binding negative cases; no build, proof, model, tribunal, runtime, or deployment was replayed.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Separates a verified semantic abstraction from verified lowering, emitted-artifact validity, and measured forward transfer, and supplies exact outcome and verification-level vocabularies for each boundary.",
+              "limits": "No Lean theorem, solver run, certificate check, compiler validation, emitted-artifact validation, or transfer experiment was executed for this source.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:259-351",
+                "papers/source/forward_transfer_program_synthesis.md:852-1062"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for verification levels, exact outcomes, source-to-artifact boundaries, and formal counterexamples. None is represented as an independently checked local proof."
             }
           ],
           "mechanism": [
@@ -23397,7 +23481,8 @@
             "regret_engine",
             "ext_elizaos_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_queue": {
             "primary": [
@@ -23427,7 +23512,8 @@
               "attd",
               "temporal_coil_research",
               "regret_engine",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [
               "ext_mlperf_training_v6_2026"
@@ -23911,6 +23997,17 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Adds causal controls for reusable-knowledge evaluation: frozen rounds, absence and matched placebo conditions, removal and necessity tests, a library-search factorial, exact verifier outcomes, and complete task-lineage denominators.",
+              "limits": "Experimental blueprint only; no benchmark condition, ablation, transfer effect, or promotion decision was executed.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:481-725",
+                "papers/source/forward_transfer_program_synthesis.md:1063-1597"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for controls, version freezing, exact outcomes, protocols, and reporting requirements. All empirical conditions remain proposed."
             }
           ],
           "mechanism": [
@@ -25590,7 +25687,8 @@
             "platonic_world_model",
             "viea",
             "talos",
-            "ext_bourtoule_machine_unlearning_2021"
+            "ext_bourtoule_machine_unlearning_2021",
+            "forward_transfer_program_synthesis"
           ],
           "problem": "Adaptive systems can convert one ambiguous, noisy, manipulated, or weakly attributed experience into durable causal influence across weights, memory, procedures, tools, orchestration, evaluators, environments, or institutions. The consequential decision is not merely what lesson to learn, but whether it may persist, where it should persist, how strongly it should bind, and how it can later be observed, invalidated, and removed.",
           "insufficient": "A weight update, memory write, generated tool, routing change, policy edit, or organizational rule assumes its persistence locus before the system has justified that choice. Outcome quality and causal attribution do not by themselves determine the least-commitment realization, the authority needed to create it, the evidence needed to qualify it, or the descendant closure needed to revoke it.",
@@ -25696,7 +25794,8 @@
               "deterministic_capability_compilation",
               "platonic_world_model",
               "viea",
-              "talos"
+              "talos",
+              "forward_transfer_program_synthesis"
             ],
             "variants": [
               "ext_bourtoule_machine_unlearning_2021"
@@ -25797,6 +25896,17 @@
               ],
               "passage_review_note": "Reviewed primary-paper definitions, SISA design, evaluation, and limitations through the existing source note; no code, checkpoint, deletion request, or local reproduction was run.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "forward_transfer_program_synthesis",
+              "mapped_support": "Adds a separate later-version admission step after independent validation and frozen evaluation, preserving valid-but-transfer-negative artifacts without routing them as beneficial defaults.",
+              "limits": "No admission service, knowledge-version transition, removal test, benchmark result, or support movement was implemented.",
+              "passage_review_state": "reviewed",
+              "passage_refs": [
+                "papers/source/forward_transfer_program_synthesis.md:569-725",
+                "papers/source/forward_transfer_program_synthesis.md:1892-1964"
+              ],
+              "passage_review_note": "Reviewed the complete manuscript for independent validation, frozen rounds, disposition, future-version admission, and audit schema. The lifecycle remains a proposal."
             }
           ],
           "lean_module": "AsiStackProofs.AdjudicatedPersistence",

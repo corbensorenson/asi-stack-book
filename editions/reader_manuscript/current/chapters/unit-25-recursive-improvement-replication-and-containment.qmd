@@ -61,6 +61,26 @@ Recursive does not mean unconstrained. The stack can permit a bounded family of
 self-changes under an external contract while requiring new authority for
 changes to that contract.
 
+## A Bigger Library Is Not Yet a Better Improver
+
+A self-improving system may accumulate tools and abstractions while standing
+still. Counting stored artifacts measures growth of inventory. Counting calls
+measures exposure to that inventory. Neither shows that future work improved,
+and neither shows that one improvement made the next improvement easier.
+
+The causal test changes one thing at a time. Hold search fixed while adding the
+library; hold the library fixed while improving search; then test their
+interaction. Freeze each version before the next round begins. Compare useful
+outcomes and complete cost, not only solution length or benchmark score. A
+single positive task family remains local evidence, not a law of compounding
+intelligence.
+
+This is a stricter picture of recursive improvement, but also a more useful
+one. It identifies whether progress came from reusable knowledge, search,
+verification, extra compute, or leakage. The proposed experiments provide a
+way to ask the question; they have not established an open-ended improvement
+curve.
+
 ## Proposal Is Not Permission
 
 An improvement proposal is an artifact with identity. It names the problem,

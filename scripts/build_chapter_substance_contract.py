@@ -803,8 +803,8 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "learning-theory-generalization-and-scaling-science": {
-        "reviewed_sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2",
-        "reviewed_date": "2026-08-09",
+        "reviewed_sha256": "f2056a2a1c8ba5df23af84b337a04673a0a045774a9bf5d7b004e483accb08d5",
+        "reviewed_date": "2026-08-14",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
         "review_basis": [
@@ -812,6 +812,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
             "PAC, MDL, weakness, information bottleneck, scaling-law, double-descent, emergence, weak-to-strong, and no-free-lunch sources remain conditional, theoretical, empirical, model-family, task, representation, prior, or explanatory comparators rather than a universal learning theory",
             "the chapter preserves failed runs, quantifiers, alternative explanations, prospective forecasts, uncertainty, metric artifacts, architecture and optimizer expiry, and no transfer or safety promotion",
             "the added EGGROLL and Forward-Forward discussion treats the learner and update rule as part of the bound claim identity, keeps linearized estimator analysis and preliminary small-scale results inside their source scopes, and does not infer global optimization, foundation-model transfer, or superiority to backpropagation",
+            "the forward-transfer addition makes transfer explicitly relative to task distribution, lineage, search procedure, verifier, metric, and budget; it routes the paper's frozen-round and matched-control design as a proposed evaluation protocol and imports no completed experiment or general transfer result",
             "the formalization is restricted to authored forecast-dossier admissibility, finite attempt and alternative custody, adverse monotonicity, receipt invalidation, information-loss countermodels, and a Benchmark Ratchet rejection; it establishes no generalization, transfer, emergence, forecast accuracy, calibration, safety, deployment, support, or release result",
             "the two-model prospective forecast scene preserves three attempts, frozen regime identity, held-out timing, alternatives, and invalidation without converting a curve fit into generalization or emergence evidence",
         ],

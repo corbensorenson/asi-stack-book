@@ -236,6 +236,27 @@ hypothesis look weak.
 better neural networks or that description length is useless on structured,
 nonuniform real tasks.
 
+### Transfer claims are distribution, search, verifier, and budget relative
+
+A reusable abstraction does not have one context-free transfer value. Its
+effect is indexed by the future task distribution, lineage split, representation
+language, search procedure, verifier, and resource budget. The same abstraction
+can help when retrieval is accurate and verification is cheap, do nothing when
+the baseline already finds the solution, and harm when vocabulary growth or
+branching consumes a bounded search budget.
+
+The evaluation unit is therefore a frozen tuple rather than an artifact name.
+Within-family transfer and cross-family transfer receive different labels;
+lineage-related tasks cannot be counted as independent evidence merely because
+their surface forms differ. Positive average transfer also retains
+heterogeneity, failures, unknown outcomes, timeouts, and cost rather than
+becoming a universal generalization claim.
+
+*From Compression to Forward Transfer* turns these constraints into proposed
+program-synthesis interventions. It offers no measured learning curve or
+scaling law. Its contribution here is to expose the quantifiers that a future
+transfer claim must carry.
+
 ### Scaling laws: forecast registries instead of retrospective straight lines
 
 **Mechanism.** Test apparent emergence with continuous and probabilistic metrics, denser checkpoints, uncertainty intervals, prompt and sampling variants, contamination controls, and prospective breakpoint predictions. **Failure mode.** Exact-match thresholds, floors, small samples, and retrospective task choice can create cliffs or hide consequential crossings. **Non-claim.** Showing a metric artifact in one task does not refute every phase transition. **Source grounding.** Emergent Abilities and the Mirage critique provide competing source-bounded interpretations, not a settled general law.
@@ -439,6 +460,7 @@ These rows keep Learning Theory, Generalization, and Scaling Science's manifest 
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_no_free_lunch_inductive_bias_2024` | Metadata-first comparator: The No Free Lunch Theorem, Kolmogorov Complexity, and the Role of Inductive Biases in Machine Learning. ICML 2024 treatment connecting no-free-lunch limits, Kolmogorov complexity, and inductive bias. It supports explicit assumption accounting; it does not show that all learning problems are equally hard or identify the right bias for a deployment. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Makes reusable-knowledge transfer explicitly relative to a task lineage, task distribution, search procedure, verifier, and resource budget, and separates within-family positive transfer from cross-family transfer. | No universal generalization, scaling law, distribution-independent benefit, or empirical transfer result is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## No-free-lunch, identifiability, and the assumption ledger

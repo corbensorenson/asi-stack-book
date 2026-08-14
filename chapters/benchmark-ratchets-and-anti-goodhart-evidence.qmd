@@ -172,6 +172,32 @@ and Readiness/Release owns deployment authority. The Benchmark Instrument
 Lease is the bounded record that lets those owners consume a result without
 turning the benchmark into a truth machine.
 
+### A reusable-knowledge benchmark needs causal controls
+
+A benchmark for learned libraries must distinguish access from effect. The
+minimum comparison exposes future tasks to a frozen candidate library and to a
+matched absence condition under the same search, verifier, and downstream
+budget. Stronger controls include an irrelevant abstraction of similar size, a
+duplicate, a no-op, a random valid abstraction, an expert library, and an
+oracle library. A removal condition asks whether a used abstraction was
+operationally necessary rather than merely present in the trace.
+
+When library construction and search improve together, a two-by-two factorial
+is required: baseline library with baseline search, candidate library with
+baseline search, baseline library with candidate search, and both candidates
+together. Otherwise a better enumerator can be misreported as useful knowledge,
+or a useful library can be blamed for a search regression. Bounded set-removal
+tests can expose interactions without pretending that all subsets are
+tractable.
+
+The evaluation round freezes task lineages, grammar, knowledge version, search
+procedure, verifier, budgets, and analysis before held-out exposure. Every
+attempt remains in the denominator, and `verified`, `refuted`, `unknown`,
+`timeout`, and `invalid` remain distinct terminal observations. These controls
+come from the proposed protocol in *From Compression to Forward Transfer*;
+they have not yet been executed here and do not move benchmark or chapter
+support.
+
 ### A regret instrument must survive adversarial measurement
 
 The Regret Engine source (`regret_engine`) contributes an experiment family
@@ -1017,6 +1043,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `ext_elizaos_agent_runtime_2026` | Passage-reviewed comparator: elizaOS Agent Runtime and Scenario Runner. Supplies a current implementation comparator for deterministic and live runtime scenarios, per-turn and final assertions, trajectory export, and an explicit separation between in-process diagnostics and externally observed provider qualification. | Official software and documentation review only; no scenario, model, provider, observer signature, trajectory, benchmark, cost, failure, or qualification result was executed or reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds selection-gap diagnosis, the benchmark-saturation versus capability-maturity distinction, and SaturationShiftBench as an equal-total-cost falsification program with attack injections and ablations. | The benchmark is proposed only; no condition, crossover, endpoint, or superiority result has been executed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Contributes LocusBench: matched outcomes with different latent defects, per-locus and cross-locus baselines, placement regret, and whole-lifecycle commitment costs. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds causal controls for reusable-knowledge evaluation: frozen rounds, absence and matched placebo conditions, removal and necessity tests, a library-search factorial, exact verifier outcomes, and complete task-lineage denominators. | Experimental blueprint only; no benchmark condition, ablation, transfer effect, or promotion decision was executed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

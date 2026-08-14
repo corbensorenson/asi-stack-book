@@ -257,6 +257,30 @@ The budget state should therefore be an adjudication state, not just a number. A
 
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
 
+### Price reuse over its break-even horizon
+
+Reusable knowledge moves cost rather than deleting it. Its construction bill
+includes mining, independent validation, indexing, documentation, storage, and
+admission. Its operating bill includes retrieval, vocabulary growth, search,
+candidate verification, compilation or lowering, monitoring, maintenance, and
+retirement. A shorter future derivation can still lose economically if the
+library makes the search space harder to navigate or if a rarely used artifact
+never repays its fixed cost.
+
+Two comparisons answer different questions. An equal-downstream-budget test
+asks whether the frozen library helps once construction is treated as sunk.
+An equal-total-budget test charges construction and maintenance to the
+candidate and asks whether the complete system is preferable. Both should be
+reported, followed by the task volume or time horizon at which cumulative
+savings, if any, exceed the fixed and continuing cost. A favorable latency
+result does not erase verification capacity, human review, storage, energy,
+wrong-route recovery, or opportunity cost.
+
+*From Compression to Forward Transfer* specifies this ledger and break-even
+analysis but supplies no measured costs. It therefore sharpens what a future
+resource claim must retain; it does not establish that a learned library,
+compressed artifact, or compiled procedure is economical.
+
 ### Generation mode and deliberation depth are allocation decisions
 
 Generation speed and reasoning depth belong in one economic decision even
@@ -1193,6 +1217,7 @@ These rows keep Resource Economics and Token Budgets's manifest assignments visi
 | `precision_contract` | Passage-reviewed comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Turns compression and mixed-precision choices into a resource-allocation problem over complete executable packages. For Resource Economics, the paper requires separate accounting for stored and moved bits, decoder and routing work, fallback, repair, verification, certificate generation, monitoring, retained-reference cost, latency, energy, and peak memory under a protected-behavior contract. | The functional-rate formulation is conditional on a declared contract, decoder, code family, and system boundary. No compiler run, useful compression result, physical-cost advantage, certificate qualification, or production transfer has been demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds assurance-share and equal-total-cost accounting across ordinary learning, evaluators, probes, adjudication, repair, governance, monitoring, and recovery. | No optimal allocation, amortization rate, or net lifecycle saving was measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Adds persistence carrying cost and adaptation debt across storage, validation, monitoring, rollback, human review, rigidity, and descendant maintenance. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds full lifecycle costing for reusable knowledge, equal-downstream and equal-total-budget comparisons, vocabulary and retrieval overhead, and an explicit break-even horizon. | The paper provides a cost schema and comparison discipline, not measured construction cost, operating cost, break-even time, or resource superiority. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 measured governance cost

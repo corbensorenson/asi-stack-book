@@ -181,6 +181,27 @@ fallback execution, and independent review exist.
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |
 | `ext_raptor_2024` | Recursive abstraction and hierarchical retrieval as a compact-view comparator. | Metadata-first note only; no local tree, fidelity, reconstruction, provenance, utility, or RankFold comparison result. |
 
+### Compression proposes; transfer disposes
+
+Retrospective compression asks whether a representation describes solved
+artifacts more compactly. Prospective compression asks whether it shortens the
+best known description of future solutions. Neither quantity establishes that
+a bounded search process will discover those solutions more often, sooner, or
+more cheaply. Adding a valid abstraction enlarges the available vocabulary and
+can worsen discoverability when retrieval, branching, or verification overhead
+dominates its shorter description.
+
+This makes compression a proposal mechanism. Reuse traces can show that a
+candidate entered a solution; removal can show that it was necessary under one
+search process; only a matched future-task intervention can show marginal
+benefit. RankFold and NeuralFold remain responsible for representation,
+reconstruction, routing, fidelity, and codec economics. The benchmark owner
+measures transfer, and the resource owner prices the whole route.
+
+The source paper supplies finite counterexamples and an evaluation design, not
+a RankFold or NeuralFold experiment. No compression ratio, artifact utility,
+search improvement, or support state changes here.
+
 ### What “universal” means—and does not mean
 
 The local RankFold/NeuralFold source is a bundle of technical papers,
@@ -821,6 +842,7 @@ These rows keep RankFold, NeuralFold, and Artifact Compression's manifest assign
 | Source | Intake role | Boundary |
 |---|---|---|
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Separates retrospective and prospective compression from causal future-task benefit and supplies a finite warning that adding valid vocabulary can worsen bounded discoverability. | No RankFold, NeuralFold, codec, search, or transfer experiment was run; compression remains candidate-generation evidence rather than utility evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

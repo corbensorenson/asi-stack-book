@@ -199,6 +199,25 @@ fallback, and consumer policy must remain joined. The general frame does not
 inherit a codec result, and the codec does not become a universal answer to
 representation cost.
 
+## A Reusable Idea Has a Payback Period
+
+Compression can move work from every future task into one up-front investment.
+That can be a good trade, but the investment is real. Someone or something must
+mine the pattern, verify it, document it, index it, store it, retrieve it,
+maintain it, and eventually retire it. The larger vocabulary can also make
+search slower even when individual solutions become shorter.
+
+Two ledgers prevent convenient accounting. The first treats construction as
+sunk and asks whether future tasks improve under the same downstream budget.
+The second charges construction and maintenance to the candidate and compares
+equal total resources. If the library wins only after ten thousand uses, that
+break-even horizon matters to a system that expects one hundred.
+
+This turns “reuse saves compute” into a conditional claim. The answer depends
+on task volume, retrieval quality, verification cost, failure recovery, human
+attention, and the alternative route. The framework is specified; no measured
+payback result is being asserted here.
+
 ## One Allocation Decision
 
 The components now meet at the resource controller. For the paper-ingestion

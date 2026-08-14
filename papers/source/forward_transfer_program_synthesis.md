@@ -1,0 +1,2027 @@
+# From Compression to Forward Transfer
+
+## Evaluating Reusable Knowledge in Program Synthesis
+
+**Corben Sorenson**  
+Independent Researcher  
+August 2026
+
+---
+
+## Abstract
+
+Automated program-synthesis systems increasingly accumulate libraries of reusable functions, rewrite rules, tools, proof lemmas, and program representations. Such systems are commonly evaluated through retrospective compression of previously solved programs or through aggregate performance on later tasks. Neither measurement establishes that the learned knowledge caused the improvement. An abstraction may compress old solutions yet be irrelevant to future tasks; it may be frequently retrieved or invoked without being necessary; and a larger library may reduce performance under fixed resources by increasing retrieval ambiguity or the branching factor of search. Recent compute-matched re-evaluations of large-language-model library-learning systems further show that apparent gains can disappear when baselines receive equal computational budgets and when actual reuse is inspected.
+
+This paper proposes a general evaluation framework for reusable symbolic knowledge based on **verified forward-transfer interventions**. At each evaluation round, the program grammar, task lineages, search procedure, verifier, resource budgets, and analysis plan are fixed while a candidate abstraction is either included in or removed from the available knowledge state. The framework distinguishes retrospective compression, prospective compression, observed reuse, operational necessity, and marginal forward transfer. It introduces a behavioral reuse ladder, matched placebo abstractions, removal tests, factorial experiments that separate library effects from search-policy co-adaptation, and full cost accounting that includes abstraction discovery, independent verification, retrieval, search branching, and maintenance. It generalizes beyond function libraries to reusable proof lemmas, certified search constraints, and verified program representations. Correctness is assigned by an independent verifier with explicit outcomes of verified, refuted, unknown, timeout, or invalid; claims about executable artifacts additionally require verified lowering or translation validation.
+
+The paper provides formal counterexamples showing why compression, invocation frequency, library growth, and end-to-end accuracy do not imply forward transfer. It also specifies reproducible experimental protocols for comparator networks and bounded bit-vector synthesis, where candidate programs can be checked against finite or solver-defined semantics. This is a framework and experimental blueprint, not a report of completed empirical results. Its central proposal is that reusable knowledge should be credited only when its availability measurably improves future independently verified synthesis under a fair, versioned, compute-matched comparison.
+
+**Keywords:** program synthesis; library learning; abstraction learning; forward transfer; formal verification; algorithm discovery; compute-matched evaluation; cumulative learning
+
+---
+
+## 1. Introduction
+
+Program synthesis is often presented as a sequence of independent problems: given a specification and a space of candidate programs, find a program that satisfies the specification. A mature synthesis system should be able to do more. Solving previous problems should change what it can solve next, how quickly it can solve it, and how cheaply it can establish correctness. Repeated synthesis should therefore produce not only completed programs but also reusable knowledge.
+
+This goal has motivated a substantial literature on library learning and abstraction discovery. DreamCoder alternates task solving with the construction of reusable program libraries and a learned search policy (Ellis et al., 2021). Stitch extracts shared abstractions from program corpora at much greater scale than earlier deductive methods (Bowers et al., 2023). BABBLE learns abstractions modulo equational theories by combining anti-unification with e-graphs (Cao et al., 2023). LILO synthesizes, compresses, names, and documents reusable functions, showing that documentation can itself help a model deploy learned abstractions (Grand et al., 2024). ReGAL uses execution-checked refactoring to construct libraries that improve later program prediction across several domains (Stengel-Eskin et al., 2024). Similar ideas now appear in formal theorem proving, where systems accumulate reusable lemmas and use them on later proof obligations (Wang et al., 2023; Zhang et al., 2026; Ota et al., 2026).
+
+These developments make a growing symbolic library look like a natural indicator of cumulative learning. That interpretation is premature. A library can grow without becoming useful. An abstraction can shorten programs already in the training corpus while offering no benefit on future tasks. A solver may retrieve or invoke a helper because it is highly ranked, not because the helper changes whether the task can be solved. A learned library can also alter prompts, search order, candidate count, verification effort, or the number of model samples. End-to-end performance can therefore improve for reasons that have little to do with reusable knowledge.
+
+Recent critical evaluations have made this attribution problem concrete. Berlot-Attwell, Rudzicz, and Si (2024, 2025) found very low direct reuse in two large-language-model library-learning systems and presented evidence that self-correction or self-consistency better explained some reported gains. A broader EACL 2026 study found that improvements in several in-context library-learning systems did not consistently survive compute matching and argued that equal computational budgets and behavioral analysis are necessary for credible evaluation (Berlot-Attwell et al., 2026). These findings do not show that library learning is impossible. They show that storing tools or lemmas, or observing aggregate accuracy improvements, is insufficient evidence that reusable knowledge is the operative mechanism.
+
+A second complication is that future-oriented abstraction selection is itself no longer an open conceptual niche. Hernandez Cano et al. (2026) distinguish retrospective compression of past programs from **prospective compression** of anticipated future programs. Their work provides an important model of abstraction selection under a changing task distribution. Yet predicted future compressibility is still not the same as a measured causal contribution to future synthesis. An abstraction can be expected to shorten future solutions while making those solutions harder to find, more expensive to verify, or less robust to task-distribution shift.
+
+This paper addresses the resulting methodological question:
+
+> **What evidence is sufficient to conclude that symbolic knowledge learned from previous synthesis tasks makes future independently verified synthesis easier?**
+
+The proposed answer is **verified forward-transfer intervention**. A candidate abstraction is evaluated by constructing matched synthesis conditions that differ only in whether the abstraction is available. Task lineages, search algorithms, seeds, verifiers, budgets, semantic profiles, and stopping rules are fixed. The system then measures not only solve rate but also search cost, verification cost, execution quality, negative transfer, actual reuse behavior, and the overhead of building and maintaining the library. A reusable abstraction earns credit only when its presence produces a reproducible positive effect on held-out task lineages after those costs are accounted for.
+
+The framework makes four primary contributions.
+
+1. **A formal distinction among four notions of library value:** retrospective compression, prospective compression, observed reuse, and forward-transfer effect. These quantities answer different questions and do not imply one another.
+
+2. **A controlled evaluation protocol for reusable symbolic knowledge:** per-abstraction interventions, matched placebo abstractions, removal and necessity tests, compute-matched baselines, and factorial experiments that separate library effects from search-policy or representation changes.
+
+3. **A behavioral and verification model:** a reuse ladder from storage through cross-family transfer, explicit terminal outcomes of verified, refuted, unknown, timeout, and invalid, and separate verification levels for testing, bounded exhaustive checks, solver validation, proof checking, and artifact validation.
+
+4. **A reproducible experimental blueprint:** lineage-based train, development, and test splits; full cost accounting; statistically paired comparisons; and reference domains based on comparator networks and bounded bit-vector synthesis.
+
+The paper does **not** claim to introduce library learning, future-oriented abstraction selection, proof reuse, counterexample-guided synthesis, or machine algorithm discovery. It does not claim that accumulated libraries guarantee indefinite improvement. It proposes a stricter standard for determining when cumulative symbolic knowledge has actually produced forward transfer.
+
+### 1.1 Scope
+
+The main setting is a synthesis system that searches a discrete or finitely represented program space under a declared resource budget and uses an independently specified verifier. The framework is applicable to neural, symbolic, solver-based, evolutionary, or hybrid candidate generators. It can evaluate reusable functions, rewrite rules, proof lemmas, certified constraints, and verified representation transformations.
+
+The framework is not restricted to systems that use large language models. In fact, its purpose is to make the generator largely irrelevant to the correctness claim: an arbitrarily complicated or learned system may propose candidates, but verification and attribution must remain independently reproducible.
+
+### 1.2 Paper organization
+
+Section 2 reviews library learning, prospective abstraction selection, critical evaluation, proof libraries, verification, and algorithm discovery. Section 3 defines the synthesis environment, task lineages, knowledge types, outcomes, and budgets. Section 4 separates four notions of library value. Section 5 introduces the behavioral reuse ladder. Sections 6 and 7 define intervention design and cost accounting. Section 8 specifies independent verification. Section 9 gives formal observations and counterexamples. Sections 10 and 11 provide experimental and statistical protocols. Section 12 states testable hypotheses, Section 13 catalogs failure modes, Sections 14 and 15 place the proposal in broader conceptual and technical context, and Sections 16 and 17 state limitations and conclusions. Appendices provide a reporting checklist and a minimal artifact schema.
+
+---
+
+## 2. Background and Related Work
+
+### 2.1 Library learning and abstraction discovery
+
+Library learning seeks a reusable vocabulary that makes a collection of programs shorter, easier to synthesize, or more interpretable. The library may contain functions, macros, combinators, rewrite rules, or higher-level domain primitives.
+
+DreamCoder is a central example. It alternates a wake phase that solves tasks using the current domain-specific language with a sleep phase that compresses solutions into a progressively richer library and trains a recognition model that guides future search (Ellis et al., 2021). Because the library and the search policy are learned together, DreamCoder demonstrates the power of cumulative abstraction while also illustrating an attribution challenge: later improvements can be caused by the library, the recognition model, or their interaction.
+
+Stitch reformulates corpus-guided library learning as top-down synthesis of lambda abstractions and reports orders-of-magnitude gains in abstraction-discovery speed and memory relative to prior deductive methods while maintaining comparable or better compression (Bowers et al., 2023). Its evaluation makes compressivity an explicit and practical objective. BABBLE extends library learning modulo an equational theory, using e-graphs to compactly represent equivalent programs and anti-unification to identify shared structure despite syntactic variation (Cao et al., 2023). Equality saturation and e-graphs more generally provide an efficient representation of large equivalence classes of expressions (Willsey et al., 2021).
+
+LILO combines language-model-guided synthesis, Stitch-based compression, and automatic naming and documentation (Grand et al., 2024). Its result that documentation can improve downstream use is especially relevant to AI-assisted synthesis: a library entry has both a semantic identity and a presentation that changes how readily a model can retrieve and apply it. ReGAL takes a different route, learning abstractions by refactoring existing programs and using execution to verify that the refactoring preserves behavior (Stengel-Eskin et al., 2024). These systems establish that learned libraries can improve later synthesis or program prediction under their evaluated conditions.
+
+The present paper does not challenge these contributions. It asks a narrower attribution question: for a proposed abstraction, what portion of later improvement is caused by making that abstraction available, once compute, retrieval, search policy, verification, and vocabulary overhead are controlled?
+
+### 2.2 Retrospective and prospective abstraction selection
+
+Compression-based library learning usually evaluates an abstraction by the reduction in description length it produces on a known corpus. This is retrospective: the library is selected using programs that have already been solved.
+
+Hernandez Cano et al. (2026) formalize a future-oriented alternative. In a nonstationary visual program-synthesis setting, they model abstraction selection according to expected compression of future solution corpora rather than only past solutions. Their work is close in spirit to the motivation of cumulative synthesis and occupies the conceptual territory of **prospective abstraction selection**.
+
+The present framework treats retrospective and prospective compression as proposal criteria. Either can identify abstractions worth testing. Neither by itself establishes forward transfer. Expected description-length reduction does not include all effects of adding a constructor to a search grammar: it can change the branching factor, retrieval behavior, verification burden, and error surface. The contribution here is therefore not future-oriented abstraction selection; it is an intervention protocol for measuring whether a proposed abstraction actually helps future verified synthesis.
+
+### 2.3 Critical evaluation of library learning
+
+A growing body of work argues that library-learning systems require stronger controls. Berlot-Attwell, Rudzicz, and Si (2024) examined LEGO-Prover and TroVE and found that direct reuse of learned functions or lemmas was extremely infrequent in their studied settings. Their ablations suggested that self-correction and self-consistency were more plausible explanations for observed gains. A subsequent LEGO-Prover case study found no evidence of direct lemma reuse, evidence against a softer reuse interpretation, and no advantage over a simple prompting baseline after accounting for compute (Berlot-Attwell et al., 2025).
+
+The EACL 2026 follow-up generalized the critique across three in-context library-learning systems. It argued that many evaluations grant the library system more sampling or inference compute than the baseline, and found that some apparent gains vanished or reversed under equal budgets. It called for equal computational budgets and behavioral analysis in addition to aggregate task performance (Berlot-Attwell et al., 2026).
+
+These papers identify two necessary conditions for credible claims:
+
+- **budget comparability**, so that extra search is not mislabeled as reusable knowledge; and
+- **mechanism evidence**, so that the learned artifacts are shown to participate in later problem solving.
+
+The proposed framework incorporates both and adds a third requirement: **intervention-based marginal attribution**. Actual invocation is stronger evidence than storage, but it still does not show that the abstraction changed the outcome. That requires a matched condition in which the abstraction is absent.
+
+### 2.4 Proof and lemma libraries
+
+Formal theorem proving offers a parallel setting in which reusable knowledge consists of lemmas rather than executable functions. LEGO-Prover proposed a growing library of formally verified lemmas for mathematical reasoning (Wang et al., 2023), although later evaluations questioned whether reuse explained its gains (Berlot-Attwell et al., 2025, 2026).
+
+Recent systems offer stronger evidence that lemma libraries can improve later proof search. DreamProver alternates theorem proving with a consolidation stage that abstracts and refines transferable lemmas; it reports higher proof success, shorter proofs, and reduced computation on unseen theorems (Zhang et al., 2026). Ota, Osa, and Harada (2026) start from axioms and inference rules, grow a theorem library through self-supervised proof search, and reuse discovered theorems on later goals.
+
+These systems motivate a generalization beyond function libraries. Reusable knowledge can reduce the cost of constructing a program, the cost of proving it correct, or both. The present framework therefore models executable abstractions and proof lemmas as distinct knowledge classes with distinct behavioral traces and cost effects.
+
+### 2.5 Program synthesis and independent verification
+
+Syntax-Guided Synthesis separates a semantic specification from a grammar that defines the admissible implementation space (Alur et al., 2013). Counterexample-guided synthesis alternates candidate generation with the production of inputs or constraints that refute incorrect candidates. This producer-verifier structure is ideal for evaluating reusable knowledge because the candidate generator can change while the correctness authority remains fixed.
+
+Compiler optimization provides mature examples. Souper synthesizes LLVM-level optimizations using a functional intermediate representation and solver-backed checking (Sasnauskas et al., 2017). Alive provides a language for specifying peephole rewrites and automatically proves them or produces counterexamples (Lopes et al., 2015). Alive2 performs bounded translation validation for LLVM and has exposed numerous compiler defects while maintaining an explicit bound on what has been verified (Lopes et al., 2021).
+
+Proof-carrying code provides a complementary security model: an untrusted producer supplies both code and a proof that a smaller trusted checker validates (Necula, 1997). Translation validation checks the output of a transformation on each run rather than requiring the transformation engine itself to be proved correct (Pnueli et al., 1998). Verified compilers such as CompCert instead establish semantic preservation for a stable compiler implementation (Leroy, 2009). The framework in this paper adopts these distinctions and requires that verification status remain scoped to the exact candidate, semantics, assumptions, and artifact.
+
+### 2.6 Automated algorithm discovery
+
+Machine-discovered algorithms demonstrate why independent evaluation and multiobjective reporting matter. AlphaTensor discovered exact matrix-multiplication decompositions and showed that algorithms optimized for measured hardware performance can differ from those optimized for scalar operation count (Fawzi et al., 2022). AlphaDev searched low-level programs and produced small sorting routines that were subsequently integrated into widely used libraries after conventional review and testing (Mankowitz et al., 2023). FunSearch combined language-model proposals with an external evaluator to discover improved programs for combinatorial problems (Romera-Paredes et al., 2024).
+
+These systems establish that complex generators can produce useful algorithm candidates when paired with crisp external evaluation. They do not by themselves establish cumulative transfer across algorithm-discovery tasks. The proposed framework supplies a way to test whether previous discoveries, abstracted into reusable knowledge, improve later independently verified discovery.
+
+### 2.7 Scope of the contribution relative to prior work
+
+The proposal deliberately avoids four novelty claims.
+
+First, it does not claim that learned libraries improve synthesis; many systems already report that result. Second, it does not claim that future task demand should influence abstraction selection; prospective compression already formalizes that idea. Third, it does not claim that proof reuse or counterexample-guided search is new. Fourth, it does not claim that candidate generation must be independent of learning.
+
+The proposed contribution is an **evaluation framework** that combines:
+
+- compute matching;
+- task-lineage-aware held-out evaluation;
+- behavioral reuse traces;
+- per-abstraction interventions;
+- matched placebo controls;
+- complete cost accounting;
+- explicit verification scope; and
+- versioned evaluation rounds.
+
+The goal is to make claims of cumulative symbolic learning falsifiable and attributable.
+
+---
+
+## 3. Problem Formulation
+
+### 3.1 Evaluation rounds
+
+An **evaluation round** freezes the objects needed to interpret a forward-transfer claim. Let
+
+\[
+\mathcal{E}_t = (G_t, K_t, A_t, V_t, \mathcal{D}_t, B_t, M_t),
+\]
+
+where:
+
+- \(G_t\) is a typed program grammar or domain-specific language;
+- \(K_t\) is the reusable knowledge available to the synthesizer;
+- \(A_t\) is the candidate-generation and search procedure;
+- \(V_t\) is the independent verification procedure;
+- \(\mathcal{D}_t\) is a task distribution or finite evaluation set;
+- \(B_t\) is the declared resource and cost profile; and
+- \(M_t\) is the measurement and statistical-analysis plan.
+
+The subscript \(t\) denotes a versioned round, not continuous wall-clock time. All seven components are content- or version-identified before the final test tasks are evaluated. Any change creates a new round or a separately keyed experimental condition.
+
+The central experimental discipline is:
+
+\[
+\boxed{\text{The knowledge state used to generate evidence remains fixed within a round.}}
+\]
+
+A candidate abstraction discovered during round \(t\) can be evaluated as a treatment condition or proposed for round \(t+1\). It does not silently alter the baseline used by later runs in round \(t\).
+
+### 3.2 Task lineages
+
+Synthesis benchmarks often contain several conditions derived from one underlying problem. A task may appear at multiple input sizes, prompts, random seeds, target profiles, or context conditions. Counting these variants as independent observations can substantially understate uncertainty.
+
+Let \(\ell\) index an underlying **task lineage**, and let
+
+\[
+\tau_{\ell,j}
+\]
+
+denote condition \(j\) from lineage \(\ell\). Lineage membership should capture shared specification structure, oracle origin, generator ancestry, or reference solution family. The default independent statistical unit is the lineage rather than every condition.
+
+Task lineages are split into:
+
+\[
+\mathcal{L}_{\mathrm{train}},\quad
+\mathcal{L}_{\mathrm{dev}},\quad
+\mathcal{L}_{\mathrm{test}},
+\]
+
+with
+
+\[
+\mathcal{L}_{\mathrm{train}}\cap\mathcal{L}_{\mathrm{dev}}=
+\mathcal{L}_{\mathrm{train}}\cap\mathcal{L}_{\mathrm{test}}=
+\mathcal{L}_{\mathrm{dev}}\cap\mathcal{L}_{\mathrm{test}}=\varnothing.
+\]
+
+Training lineages produce candidate abstractions. Development lineages select abstractions, thresholds, or admission criteria. Test lineages estimate final forward transfer. No candidate library entry, retrieval policy, or analysis choice may be selected using the final test outcomes.
+
+### 3.3 Reusable knowledge classes
+
+Reusable symbolic knowledge is represented as
+
+\[
+K_t=(L_t,P_t,C_t,R_t),
+\]
+
+where:
+
+- \(L_t\) is a library of executable program abstractions;
+- \(P_t\) is a library of proof lemmas, invariants, or proof procedures;
+- \(C_t\) is a set of certified constraints, counterexamples, lower bounds, or no-good facts; and
+- \(R_t\) is a set of verified program representations and conversions.
+
+Search-policy knowledge is initially kept in \(A_t\), not \(K_t\). This separation is intentional. If a system jointly changes its library and search policy, a factorial experiment is needed to identify which component caused an improvement.
+
+#### 3.3.1 Executable abstractions
+
+An executable abstraction may be a function, combinator, rewrite schema, algorithm, specialized implementation, or deterministic dispatcher with a fallback. Each abstraction should include:
+
+- a type and semantic contract;
+- exact applicability conditions;
+- a reference or expansion semantics;
+- proof or test status;
+- provenance;
+- and an activation interface visible to the search procedure.
+
+#### 3.3.2 Proof abstractions
+
+A proof abstraction may be a lemma, invariant, refinement relation, induction schema, solver encoding, or checked proof tactic. It should declare:
+
+- assumptions;
+- conclusion;
+- semantic profile;
+- checker identity;
+- dependent results;
+- and invalidation conditions.
+
+#### 3.3.3 Certified constraints
+
+Certified constraints may include:
+
+- minimized counterexamples;
+- unsatisfiable cores;
+- symmetry reductions;
+- infeasible type or effect combinations;
+- lower-bound certificates;
+- and no-good constraints.
+
+A constraint is permitted to prune the search space only within the exact scope established by its evidence. Heuristic patterns may guide prioritization but cannot conclusively remove candidates.
+
+#### 3.3.4 Representations
+
+Representations include data layouts, normal forms, sparse or dense encodings, recursive or iterative decompositions, and verified conversion procedures. A representation can make a useful program easier to express or verify without changing the denotational semantics of the task.
+
+### 3.4 Search and verification
+
+For a task \(\tau\), grammar \(G\), knowledge state \(K\), search procedure \(A\), verifier \(V\), and budget \(B\), define the resource-bounded verified result set
+
+\[
+\mathcal{R}_B(\tau;G,K,A,V)
+=
+\left\{
+ p:\ A(G,K,\tau)\ \text{finds }p\text{ within }B
+ \land V(\tau,p)=\textsf{verified}
+\right\}.
+\]
+
+This object is intentionally search-procedure-specific. It distinguishes four different questions:
+
+1. **Expressibility:** does some program in \(G\) denote a solution?
+2. **Bounded representation:** can a solution be written within a size or depth bound?
+3. **Discoverability:** can \(A\) find a solution within budget \(B\)?
+4. **Verifiability:** can \(V\) establish the declared claim within budget \(B\)?
+
+An abstraction can improve discoverability without increasing expressibility. It can also make proof construction easier without changing the final executable program.
+
+### 3.5 Outcome vector
+
+For lineage \(\ell\), condition \(j\), stochastic seed \(s\), and knowledge state \(K\), define an outcome
+
+\[
+Y_{\ell,j,s}(K)=
+\left(
+Z,
+C_{\mathrm{search}},
+C_{\mathrm{verify}},
+C_{\mathrm{execute}},
+Q,
+U,
+F
+\right).
+\]
+
+The components are:
+
+- \(Z\): terminal status;
+- \(C_{\mathrm{search}}\): search resource vector;
+- \(C_{\mathrm{verify}}\): verification resource vector;
+- \(C_{\mathrm{execute}}\): execution or deployment cost vector;
+- \(Q\): quality vector for a verified solution;
+- \(U\): behavioral use trace for reusable knowledge; and
+- \(F\): failure attribution.
+
+Terminal status is one of:
+
+\[
+Z\in
+\{
+\textsf{verified},
+\textsf{refuted},
+\textsf{unknown},
+\textsf{timeout},
+\textsf{invalid}
+\}.
+\]
+
+The distinctions are load-bearing.
+
+- **Verified** means the declared property was established under the stated verification scope.
+- **Refuted** means a valid counterexample or contradiction was established.
+- **Unknown** means the verifier terminated without proving or refuting the claim.
+- **Timeout** means the declared resource bound was reached.
+- **Invalid** means the experimental request, candidate, environment, or evidence bundle failed before a semantic judgment was possible.
+
+Timeout is not refutation. Search failure is not unrealizability. A bounded proof is not a universal proof.
+
+### 3.6 Resource profile
+
+The budget \(B\) must identify at least:
+
+- candidate-generation calls;
+- model calls and tokens, where applicable;
+- solver calls;
+- logical search steps;
+- CPU or accelerator time;
+- wall-clock limit;
+- peak memory;
+- output and artifact limits;
+- number of retries or samples;
+- verifier time;
+- and hardware/software profile.
+
+Different comparison questions can use different budget views, but each view must be explicit. Section 7 distinguishes equal downstream-search budget, equal total compute, and break-even analysis.
+
+---
+
+## 4. Four Notions of Library Value
+
+The central conceptual claim of this paper is that four commonly conflated quantities answer different questions.
+
+### 4.1 Retrospective compression
+
+Let \(\mathcal{P}_{\mathrm{past}}\) be a corpus of previously solved programs. For candidate abstraction \(a\), define retrospective compression benefit
+
+\[
+RC(a;\mathcal{P}_{\mathrm{past}})
+=
+\operatorname{Size}(\mathcal{P}_{\mathrm{past}})
+-
+\operatorname{Size}(\mathcal{P}_{\mathrm{past}}\mid a)
+-
+\operatorname{Cost}(a).
+\]
+
+The size measure may be source length, AST nodes, DAG size, grammar description length, or another declared measure. \(\operatorname{Cost}(a)\) charges for adding the abstraction to the library.
+
+Retrospective compression asks:
+
+> How well does \(a\) summarize or refactor the programs already observed?
+
+This is a useful proposal criterion. It can identify repeated structure and reduce storage or description length. It does not establish benefit on unseen tasks.
+
+### 4.2 Prospective compression
+
+Let \(\widehat{\mathcal{D}}_{\mathrm{future}}\) be a predictive distribution over future programs or tasks. Define
+
+\[
+PC(a)
+=
+\mathbb{E}_{p\sim\widehat{\mathcal{D}}_{\mathrm{future}}}
+\left[
+\operatorname{Size}(p)
+-
+\operatorname{Size}(p\mid a)
+\right]
+-
+\operatorname{Cost}(a).
+\]
+
+Prospective compression asks:
+
+> According to the current predictive model, how much will \(a\) shorten future solutions?
+
+This can favor abstractions that anticipate a changing task distribution (Hernandez Cano et al., 2026). Yet it remains a prediction about representation length. It need not reflect search, proof, execution, or retrieval cost.
+
+### 4.3 Observed reuse
+
+Observed reuse records whether later synthesis actually exposes, retrieves, invokes, or preserves the abstraction. A simple invocation count is
+
+\[
+Reuse(a,\tau)=
+\sum_{p\in\operatorname{Candidates}(\tau)}
+\mathbf{1}[a\text{ occurs in }p].
+\]
+
+A richer trace records where and how the abstraction was used. Observed reuse asks:
+
+> Did the synthesis process make behavioral use of \(a\)?
+
+This is stronger evidence than mere library storage. It still does not establish marginal benefit. The abstraction may be redundant, dead, or selected because of retrieval bias.
+
+### 4.4 Forward-transfer effect
+
+Let \(K\) be a baseline knowledge state and \(K+a\) the same state with abstraction \(a\) available. For held-out lineage \(\ell\), seed \(s\), and outcome functional \(g\), define
+
+\[
+\delta_{\ell,s}^{g}(a)
+=
+ g\big(Y_{\ell,s}(K+a)\big)
+-
+ g\big(Y_{\ell,s}(K)\big).
+\]
+
+The average held-out effect is
+
+\[
+FT_g(a)
+=
+\mathbb{E}_{\ell\sim\mathcal{L}_{\mathrm{test}},s}
+\left[
+\delta_{\ell,s}^{g}(a)
+\right].
+\]
+
+Because outcomes are multiobjective, the preferred object is a vector:
+
+\[
+\Delta(a)=
+\begin{bmatrix}
+\Delta\text{ verified solve rate}\\
+\Delta\text{ time to first verified solution}\\
+\Delta\text{ candidates evaluated}\\
+\Delta\text{ verifier calls}\\
+\Delta\text{ proof size or checker time}\\
+\Delta\text{ execution quality}\\
+\Delta\text{ search diversity}\\
+\Delta\text{ library overhead}
+\end{bmatrix}.
+\]
+
+Forward transfer asks:
+
+> Did making \(a\) available cause future verified synthesis to improve under a matched protocol?
+
+### 4.5 The non-implication chain
+
+The four quantities should not be treated as a monotone ladder:
+
+\[
+RC(a)>0
+\centernot\Rightarrow
+PC(a)>0
+\centernot\Rightarrow
+Reuse(a)>0
+\centernot\Rightarrow
+FT(a)>0.
+\]
+
+Nor do reverse implications hold in general. An abstraction can provide positive forward transfer without substantially compressing prior programs—for example, if it encodes a rare but difficult proof lemma or representation conversion.
+
+The paper’s governing principle is therefore:
+
+> **Compression proposes. Reuse provides mechanism evidence. Forward transfer provides outcome evidence. Marginal forward transfer requires intervention.**
+
+---
+
+## 5. A Behavioral Reuse Ladder
+
+A binary `used` flag discards too much information. The following ladder separates increasingly strong evidence.
+
+| Level | Name | Required evidence | Explicit non-claim |
+|---|---|---|---|
+| R0 | Stored | The abstraction is present in the library. | It may never be retrieved. |
+| R1 | Exposed or retrieved | The search process receives or retrieves it. | It may not be invoked. |
+| R2 | Invoked in a candidate | At least one candidate calls or instantiates it. | The candidate may be invalid or incorrect. |
+| R3 | Present in a verified solution | A verified final program contains it or a certified expansion. | It may be semantically redundant. |
+| R4 | Semantically contributory | Its execution or proof step contributes to the verified result. | The same result may remain equally easy without it. |
+| R5 | Operationally essential | Removal under the matched budget loses the solve, increases cost, or worsens quality. | The effect may be confined to one lineage. |
+| R6 | Positive forward transfer | Availability produces a reproducible positive effect across held-out lineages after overhead. | It may not generalize across task families. |
+| R7 | Cross-family transfer | Positive transfer appears outside the family used to extract it. | It is not universally useful. |
+
+### 5.1 Instrumentation requirements
+
+A synthesis run should retain enough information to reconstruct:
+
+- which library entries were visible;
+- which entries were retrieved;
+- the order and score of retrieval;
+- which candidates invoked each entry;
+- whether the invocation was type-correct;
+- whether the candidate was verified or refuted;
+- whether the entry survived compilation or simplification;
+- whether it was executed on the accepted path;
+- and whether removal changes the matched outcome.
+
+For language-model systems, the record should also include:
+
+- exact prompt or context assembly;
+- names and documentation shown to the model;
+- tool schemas;
+- model and runtime identity;
+- decoding and retry policy;
+- and complete candidate artifacts.
+
+Names and documentation do not belong to semantic identity, but they are causal search inputs. LILO’s AutoDoc results illustrate why they must be versioned when evaluating model-guided reuse (Grand et al., 2024).
+
+### 5.2 Essentiality tests
+
+For a verified solution \(p\) containing \(a\), essentiality can be tested in several ways.
+
+1. **Search-level removal:** rerun the matched synthesis process without \(a\).
+2. **Program-level expansion:** replace \(a\) by its verified definition and compare semantics and costs.
+3. **Program-level deletion or replacement:** remove or replace \(a\) and check whether the verified behavior persists.
+4. **Proof-level removal:** forbid lemma \(a\) and re-run proof search under the same budget.
+5. **Constraint-level removal:** remove a certified pruning fact and measure search expansion.
+
+No single test is universally appropriate. The test used must match the claimed mechanism.
+
+---
+
+## 6. Controlled Knowledge Interventions
+
+### 6.1 Basic per-abstraction design
+
+For candidate abstraction \(a\), define:
+
+\[
+K^{(0)}=K
+\]
+
+and
+
+\[
+K^{(1)}=K\cup\{a\}.
+\]
+
+The treatment and control conditions must hold fixed:
+
+- task lineage and condition;
+- task ordering;
+- search procedure and implementation;
+- model and decoding policy, where applicable;
+- seeds;
+- verifier and proof scope;
+- semantic profile;
+- hardware and software class;
+- downstream-search budget;
+- stopping rule;
+- and analysis plan.
+
+The abstraction is the treatment. Any other changed input must be separately keyed and analyzed.
+
+For deterministic systems, one paired run per task condition may be sufficient after reproducibility is established. For stochastic systems, seeds must be paired across treatment and control. The final statistical analysis clusters conditions by task lineage.
+
+### 6.2 Candidate abstraction lifecycle
+
+A clean lifecycle is:
+
+1. **Extraction:** training lineages produce candidate abstraction \(a\).
+2. **Independent validation:** the abstraction’s own semantic contract is verified.
+3. **Development evaluation:** development lineages estimate transfer and select among candidates.
+4. **Freeze:** the candidate, retrieval exposure, budgets, and analysis are fixed.
+5. **Test intervention:** final test lineages compare \(K\) and \(K+a\).
+6. **Disposition:** report positive, neutral, negative, or inconclusive transfer.
+7. **Admission:** a separate library decision may admit \(a\) for a future version.
+
+An abstraction that is semantically valid but transfer-negative remains a valid research artifact. It is simply not supported as a generally useful addition under the evaluated conditions.
+
+### 6.3 Matched placebo abstractions
+
+Adding any constructor can change search order, prompt length, retrieval behavior, or implementation details. Treatment should therefore be compared not only with absence but also with placebo conditions.
+
+#### 6.3.1 Matched irrelevant abstraction
+
+Construct \(a_{\mathrm{irr}}\) to match \(a\) in:
+
+- type arity;
+- AST or body size;
+- name and documentation length;
+- retrieval exposure;
+- activation frequency target;
+- and compilation or typechecking overhead,
+
+while making it irrelevant to held-out solutions.
+
+If \(K+a\) and \(K+a_{\mathrm{irr}}\) perform similarly, the measured effect may be caused by vocabulary perturbation or added compute rather than the abstraction’s semantics.
+
+#### 6.3.2 Duplicate abstraction
+
+Add \(a_{\mathrm{dup}}\), behaviorally equivalent to an existing primitive or library entry. This tests whether retrieval frequency and nominal reuse can rise without increasing capability.
+
+#### 6.3.3 No-op abstraction
+
+Add an abstraction that has no semantic effect. A system that reports verified semantic contribution from the no-op condition has a broken behavioral audit.
+
+#### 6.3.4 Random valid abstraction
+
+Sample a type-correct abstraction from the same structural distribution as \(a\). This estimates the effect of increasing grammar breadth without targeted knowledge.
+
+### 6.4 Expert and oracle controls
+
+A small human-designed expert library answers:
+
+> Could a useful library help this task distribution at all?
+
+If the expert library helps but the learned library does not, the failure is in abstraction discovery or selection rather than the general premise of reusable knowledge.
+
+An oracle library may be constructed using held-out information to estimate an upper bound on attainable benefit under the chosen grammar and search procedure. Oracle results are analysis-only and never count as eligible transfer evidence.
+
+### 6.5 Removal and necessity tests
+
+A positive treatment effect should be accompanied by a removal test when feasible. Suppose \(a\) appears in a verified solution. Re-run the same task under the same downstream budget with \(a\) unavailable. Possible outcomes include:
+
+- the task is no longer solved;
+- it is solved with greater search or proof cost;
+- it is solved with worse execution quality;
+- it is solved unchanged;
+- or the result is inconclusive.
+
+This distinguishes convenient reuse from operational necessity.
+
+For proof lemmas, remove the lemma from the visible library but preserve every other proof-search input. For certified constraints, remove only the constraint and measure the additional candidate or solver load. For representations, compare the original and treatment representation while preserving semantic and search conditions as far as possible.
+
+### 6.6 Factorial experiments for co-adaptation
+
+Library-learning systems frequently change both knowledge and search. Let:
+
+- \(A_0\) be the original search procedure;
+- \(A_1\) be a learned or modified search procedure;
+- \(K_0\) be the baseline knowledge state; and
+- \(K_1=K_0+a\).
+
+Evaluate the four cells:
+
+\[
+(A_0,K_0),\quad
+(A_0,K_1),\quad
+(A_1,K_0),\quad
+(A_1,K_1).
+\]
+
+The abstraction-search interaction is
+
+\[
+I(a,A_1)=
+\left[Y(A_1,K_1)-Y(A_1,K_0)\right]
+-
+\left[Y(A_0,K_1)-Y(A_0,K_0)\right].
+\]
+
+This design can reveal:
+
+- a general abstraction effect;
+- a general search-policy effect;
+- positive complementarity;
+- or brittle co-adaptation where the pair works but neither component transfers independently.
+
+The same design applies to library-by-representation and library-by-retrieval interactions.
+
+### 6.7 Multiple-abstraction proposals
+
+Some abstractions may be valuable only in combination. For a set \(S=\{a_1,\dots,a_k\}\), define the joint effect
+
+\[
+FT(S)=Y(K\cup S)-Y(K).
+\]
+
+The interaction beyond independent contributions is
+
+\[
+\Gamma(S)=FT(S)-\sum_{a\in S}FT(a).
+\]
+
+Positive \(\Gamma\) indicates complementarity; negative \(\Gamma\) indicates redundancy or interference. Because the number of subsets grows exponentially, set-level evaluation should be bounded and preregistered. A broad combinatorial search over abstraction sets cannot be followed by treating the best observed subset as unbiased test evidence.
+
+### 6.8 Versioned evaluation rounds
+
+The complete round manifest should bind:
+
+```text
+EvaluationRound
+  task-lineage split
+  grammar and semantic profile
+  baseline knowledge state
+  candidate treatment and placebo entries
+  retrieval and exposure policy
+  search implementation and configuration
+  verifier and proof scope
+  cost profile and hardware class
+  seeds and attempt policy
+  stopping rule
+  statistical analysis plan
+  software and artifact identities
+```
+
+A result is append-only. If the library, verifier, search algorithm, or task set changes, the result remains historically valid for its original identities but does not silently migrate to the new condition.
+
+### 6.9 Separation of proposal, verification, and admission
+
+The same component may fill several roles during exploratory development, but strong claims require logical separation among:
+
+- the component proposing abstractions;
+- the verifier establishing their semantic validity;
+- the evaluator measuring forward transfer;
+- and the authority admitting abstractions into a released library.
+
+This is not a claim that four organizations are always required. It is a claim about non-circular evidence. A search engine must not alter the verifier or hidden test distribution used to certify its own improvement.
+
+---
+
+## 7. Complete Cost Accounting
+
+A library can improve downstream synthesis while remaining a net loss after construction and maintenance costs. The paper therefore distinguishes three economic questions.
+
+### 7.1 Cost decomposition
+
+For knowledge state \(K\) evaluated across horizon \(H\) future tasks, define
+
+\[
+\begin{aligned}
+C_{\mathrm{total}}(K,H)
+=&\ C_{\mathrm{mine}}
++C_{\mathrm{library\ verify}}
++C_{\mathrm{index}}
++C_{\mathrm{document}}
++C_{\mathrm{store}}
++C_{\mathrm{maintain}}\\
+&+\sum_{\tau=1}^{H}
+\left(
+C_{\mathrm{retrieve}}(\tau)
++C_{\mathrm{search}}(\tau)
++C_{\mathrm{candidate\ verify}}(\tau)
++C_{\mathrm{compile}}(\tau)
+\right).
+\end{aligned}
+\]
+
+Depending on the system, these costs may include:
+
+- model inference and tokens;
+- synthesis or enumeration steps;
+- solver calls;
+- proof generation and checking;
+- CPU, GPU, or accelerator time;
+- memory and storage;
+- compilation;
+- benchmark execution;
+- and human review.
+
+No universal conversion to dollars or joules is required. The raw cost vector should be retained, with any scalarized objective declared separately.
+
+### 7.2 Equal downstream-search budget
+
+Treatment and control receive the same resources on held-out tasks, while library construction is treated as sunk cost. This asks:
+
+> Once the library exists, does it improve future synthesis?
+
+This view isolates operational usefulness and is appropriate for testing the semantics of forward transfer.
+
+### 7.3 Equal total compute
+
+Library construction and validation are charged against the treatment. The control may spend the same total resources on additional samples, deeper search, self-consistency, or another predeclared baseline mechanism. This asks:
+
+> Does the complete library-learning system outperform simpler uses of the same total resources?
+
+The EACL 2026 critique shows why this comparison is necessary for in-context library-learning systems (Berlot-Attwell et al., 2026).
+
+### 7.4 Break-even horizon
+
+A library may require substantial one-time investment but repay that investment across many tasks. Define
+
+\[
+H^*=
+\min\left\{
+H:\ C_{\mathrm{total}}(K+a,H)
+< C_{\mathrm{total}}(K,H)
+\right\}.
+\]
+
+If no break-even point is observed within the experimental horizon, report a lower bound or `not reached`. Do not extrapolate a precise break-even point from a short horizon without a validated cost model.
+
+### 7.5 Activation and vocabulary costs
+
+Adding an abstraction can impose cost even when it is never invoked:
+
+- larger search branching;
+- longer prompts or contexts;
+- increased retrieval latency;
+- typechecking and elaboration;
+- more ambiguous function choices;
+- more proof obligations;
+- documentation and compatibility;
+- and maintenance or deprecation.
+
+Define abstraction carrying cost
+
+\[
+C_{\mathrm{carry}}(a)
+=
+C_{\mathrm{exposure}}
++C_{\mathrm{retrieval}}
++C_{\mathrm{verification}}
++C_{\mathrm{maintenance}}
++C_{\mathrm{compatibility}}.
+\]
+
+A high-value abstraction should not merely improve one task. Its marginal benefit should justify this ongoing cost under the target use horizon.
+
+### 7.6 Search-space effects
+
+Let \(b(K,d)\) be the effective branching factor at construction depth \(d\) under knowledge state \(K\). A useful abstraction can reduce solution depth but increase branching:
+
+\[
+d(K+a)<d(K),
+\qquad
+b(K+a,d)>b(K,d).
+\]
+
+The net effect depends on the search procedure and budget. This is why library quality cannot be inferred from description length alone.
+
+### 7.7 Multiobjective reporting
+
+For a verified program, retain separate dimensions such as:
+
+- synthesis cost;
+- proof cost;
+- execution latency;
+- memory;
+- code size;
+- numerical error;
+- portability;
+- and abstraction overhead.
+
+A Pareto frontier is preferable to a hidden scalar when objectives conflict. If a scalar score is used, its weights, normalization, and sensitivity must be published.
+
+---
+
+## 8. Independent Verification and Claim Scope
+
+### 8.1 Untrusted generation, trusted checking
+
+Candidate generation may use any method:
+
+- enumerative synthesis;
+- neural search;
+- an LLM;
+- evolutionary search;
+- e-graph extraction;
+- SAT or SMT solving;
+- or a hybrid portfolio.
+
+The candidate generator is not the correctness authority. Strong correctness claims require a verifier whose behavior is independently specified and reproducible.
+
+This follows the producer-checker pattern of proof-carrying code (Necula, 1997) and the artifact-specific discipline of translation validation (Pnueli et al., 1998). The checker can be much smaller than the generator and can reject a candidate without understanding how it was produced.
+
+### 8.2 Verification statuses
+
+The system must distinguish:
+
+#### Tested
+
+The candidate passed declared examples, properties, or metamorphic tests.
+
+#### Exhaustive-bounded
+
+All cases in an exact finite domain were checked.
+
+#### Solver-validated
+
+A solver found no counterexample under an exact encoding and theory, with solver result and version retained.
+
+#### Certificate-checked
+
+A proof, unsatisfiability certificate, or proof log was checked by an independent checker.
+
+#### Proof-assistant checked
+
+A small trusted kernel accepted a theorem about the candidate under explicit assumptions.
+
+#### Artifact-validated
+
+The emitted executable artifact was related back to the verified source or intermediate representation through verified compilation, translation validation, or a checked certificate.
+
+These statuses are not interchangeable. `Tested` is not a proof outside the tests. `Solver-validated` depends on the encoding and solver outcome. A theorem about an intermediate representation is not automatically a theorem about machine code.
+
+### 8.3 Exact claim binding
+
+Every verification claim should bind:
+
+- task and specification;
+- candidate semantic identity;
+- grammar and profile;
+- assumptions;
+- input domain;
+- proof or test method;
+- verifier identity;
+- resource bound;
+- target lowering, if any;
+- and executable artifact, if performance is measured.
+
+A change to any bound input invalidates inheritance of the claim unless an explicit compatibility theorem applies.
+
+### 8.4 Counterexample retention
+
+Refuted candidates should retain minimized counterexamples where safe and feasible. Counterexamples serve three purposes:
+
+1. they explain rejection;
+2. they can become regression tests;
+3. they may support certified search constraints in later rounds.
+
+A counterexample-based constraint can prune only candidates covered by its proved generalization. A single observed failure does not justify banning an entire syntactic family.
+
+### 8.5 Proof-to-artifact binding
+
+Suppose \(p\) is verified in an intermediate language and compiler \(T\) produces artifact \(b=T(p)\). The source theorem establishes a property of \(p\), not necessarily of \(b\). A lowering defect can produce
+
+\[
+\llbracket p\rrbracket\neq\llbracket b\rrbracket.
+\]
+
+An execution-performance claim about \(b\) therefore requires at least one of:
+
+- a verified compiler path, as in CompCert-style refinement;
+- translation validation for the particular lowering;
+- or an independently checked source-to-artifact certificate.
+
+### 8.6 Verifier evolution
+
+A proposed improvement to the verifier creates a new verifier condition. The new verifier cannot be the sole authority validating the change that grants it authority. At minimum, the transition requires:
+
+- cross-checking against the prior verifier on its supported domain;
+- adversarial cases that distinguish the new behavior;
+- independent certificate checking where available;
+- and explicit handling of disagreements.
+
+This requirement is a practical non-circularity rule, not a claim that verifiers can never evolve.
+
+---
+
+## 9. Formal Observations and Counterexamples
+
+The framework rests on several simple but consequential observations. They are stated for clarity rather than mathematical novelty.
+
+### Proposition 1. Retrospective compression does not imply forward transfer
+
+There exist a past program corpus, a held-out task distribution, and an abstraction \(a\) such that
+
+\[
+RC(a)>0
+\]
+
+while
+
+\[
+FT(a)=0.
+\]
+
+There also exist settings where
+
+\[
+RC(a)>0
+\quad\text{and}\quad
+FT(a)<0.
+\]
+
+**Proof sketch.** Let every program in the training corpus contain the same repeated subterm, so factoring it into \(a\) reduces corpus size. Let every held-out task belong to a disjoint function family in which \(a\) is inapplicable. Then availability of \(a\) cannot shorten the successful held-out solutions, giving zero semantic benefit. If the search procedure enumerates all visible constructors under a fixed candidate budget, adding the irrelevant constructor can increase the branching factor and push a previously reachable solution beyond the budget, producing negative forward transfer. ∎
+
+### Proposition 2. Observed invocation does not imply marginal utility
+
+There exist a retrieval policy, task distribution, and abstraction \(a\) such that \(a\) is frequently invoked in verified solutions while
+
+\[
+FT(a)=0.
+\]
+
+**Proof sketch.** Let \(a\) be behaviorally equivalent to an existing primitive \(q\), and let the retrieval or generation policy prefer \(a\) whenever it is visible. Verified solutions will invoke \(a\). Removing \(a\) causes the same policy to use \(q\) at identical cost and success rate. Invocation is therefore real but not marginally beneficial. ∎
+
+### Proposition 3. More reusable knowledge need not improve bounded discoverability
+
+For some grammar, search algorithm, task, and finite budget \(B\), knowledge states \(K\subset K'\) satisfy
+
+\[
+\mathcal{R}_B(\tau;G,K',A,V)
+\subset
+\mathcal{R}_B(\tau;G,K,A,V).
+\]
+
+**Proof sketch.** Consider breadth-first enumeration with deterministic constructor order and a budget measured in candidates. Let the correct program be the last program reached under \(K\) before the budget expires. Add an irrelevant constructor to form \(K'\), ordered before a constructor on the correct path. The added branches consume budget and the correct program is no longer enumerated. The larger library preserves or expands unbounded expressive closure while shrinking the resource-bounded verified result set. ∎
+
+### Proposition 4. Aggregate improvement under unequal compute does not identify a library effect
+
+Suppose a library system receives \(n+m\) candidate samples and its baseline receives \(n\), with \(m>0\). An observed solve-rate difference cannot identify the library as the cause without additional assumptions or a compute-matched condition.
+
+**Justification.** A system using no reusable abstraction but drawing \(n+m\) independent samples can outperform an \(n\)-sample baseline through self-consistency or simple increased coverage. Any library-enabled difference is confounded with the extra sampling opportunity. This is the central concern documented empirically by Berlot-Attwell et al. (2026).
+
+### Proposition 5. Verification of a source program does not imply verification of an emitted artifact
+
+There exist a verified source candidate \(p\) and lowering implementation \(T\) such that
+
+\[
+V(p)=\textsf{verified}
+\]
+
+but
+
+\[
+\llbracket T(p)\rrbracket\neq\llbracket p\rrbracket.
+\]
+
+**Proof sketch.** Let \(T\) contain a defect that replaces one source operation with a non-equivalent target instruction. Verification of \(p\) is unaffected, but the target artifact differs. Artifact-level claims therefore require a verified lowering relation. ∎
+
+### Proposition 6. Same-round promotion confounds abstraction evaluation
+
+Suppose abstraction \(a\) is extracted from early tasks, added to the active library, and used to solve later tasks in the same evaluation round. The later outcomes cannot simultaneously be treated as an unbiased estimate of \(a\)’s held-out transfer if they influence whether \(a\) remains active, how it is documented, or how search is tuned.
+
+**Justification.** The treatment is selected, exposed, and potentially modified using outcomes from the same stream. The evaluation distribution is no longer conditionally independent of the admission decision. A versioned train-development-test split or a delayed next-round admission restores a cleaner interpretation.
+
+### Proposition 7. Forward transfer is distribution- and budget-dependent
+
+For an abstraction \(a\), it is possible that
+
+\[
+FT_{\mathcal{D}_1,B_1}(a)>0
+\]
+
+while
+
+\[
+FT_{\mathcal{D}_2,B_2}(a)<0.
+\]
+
+**Justification.** Under one task distribution, \(a\) can expose a frequently needed deep construction and reduce search. Under another distribution it may be irrelevant. Under a low budget its added branching may dominate; under a medium budget its depth reduction may help; under a very high budget both conditions may solve all tasks and the abstraction may become redundant. Library value must therefore name the task distribution, search algorithm, and budget.
+
+### 9.1 Consequence: no single proxy is sufficient
+
+The propositions rule out the following substitutions:
+
+- compression for transfer;
+- invocation for necessity;
+- library size for cumulative learning;
+- end-to-end accuracy for causal attribution;
+- source verification for artifact verification;
+- and one budget or task distribution for universal usefulness.
+
+A credible evaluation requires several forms of evidence aligned to the exact claim.
+
+---
+
+## 10. Reference Experimental Program
+
+The framework should be validated in domains that provide precise semantics, known baselines, and tractable independent checking. This section specifies a staged experimental program. It does not report completed experiments.
+
+### 10.1 General requirements
+
+Every domain should provide:
+
+- a typed grammar;
+- an exact task specification;
+- lineage identifiers;
+- a training, development, and test split;
+- independent verification;
+- reference or expert baselines;
+- deterministic or paired stochastic seeds;
+- multiple search budgets;
+- candidate and verifier resource accounting;
+- and complete abstraction-use traces.
+
+The first implementation should favor small, auditable domains over broad claims. A framework that cannot correctly identify negative transfer in a finite domain is not ready for claims about general code generation.
+
+### 10.2 Preliminary domain: depth-controlled sequence transformations
+
+A small loop-free DSL over fixed-length integer sequences can isolate the interaction among abstraction depth, search breadth, and budget.
+
+#### 10.2.1 Example primitives
+
+- identity;
+- reverse;
+- rotate-left and rotate-right;
+- elementwise increment or decrement;
+- map by a small primitive function;
+- filter under a finite predicate set;
+- concatenate;
+- take and drop;
+- fixed index selection.
+
+The exact DSL should be chosen so that shortest primitive-only solutions can be computed or tightly bounded for generated tasks.
+
+#### 10.2.2 Controlled task generation
+
+Generate task families with known shortest primitive-only depth \(d\). Extract candidate macros from training tasks and evaluate held-out tasks at low, medium, and high candidate budgets.
+
+This domain tests a predicted three-regime pattern:
+
+1. **Low budget:** extra constructors may hurt by increasing branching.
+2. **Intermediate budget:** a macro may make an otherwise unreachable depth reachable.
+3. **High budget:** both conditions solve the task, making the macro redundant.
+
+The domain is useful for validating metrics, placebos, and reporting. It is too simple to serve as the sole empirical basis of a general paper.
+
+### 10.3 Primary calibration domain: comparator networks
+
+Comparator networks are finite, pure, and structurally transparent. A comparator takes two wires and outputs their values in sorted order. A sorting network is a fixed sequence or layered DAG of comparators that sorts all inputs.
+
+For Boolean inputs, the zero-one principle permits exhaustive finite checking of sorting behavior. Small optimal network sizes are known; for example, 25 comparators are optimal for nine inputs and 29 for ten (Codish et al., 2016). This makes the domain suitable for calibration against known results.
+
+#### 10.3.1 Grammar
+
+A minimal typed grammar can include:
+
+- `compare(i,j)` for valid wire indices;
+- serial composition;
+- parallel composition on disjoint wire pairs;
+- wire permutation;
+- fixed subnetwork invocation;
+- parameterized layer invocation; and
+- optional symmetry-normalized constructors.
+
+The grammar must define canonical equivalence rules separately from heuristic similarity. Two networks that sort identically may differ in comparator count, depth, parallelism, or construction history.
+
+#### 10.3.2 Task lineages
+
+Possible lineages include:
+
+- full sorting for \(n\) inputs;
+- merge of two sorted runs;
+- minimum and maximum;
+- median or order statistic;
+- top-\(k\) selection;
+- partial ordering constraints;
+- and bounded deduplication or partition variants where the specification is exact.
+
+Lineages should be split by structural family, not merely by input size. A size-5 instance derived from the same generator and oracle as size 4 is not automatically an independent lineage.
+
+#### 10.3.3 Candidate abstractions
+
+Candidate reusable structures may include:
+
+- comparator layers;
+- merge subnetworks;
+- selection subnetworks;
+- symmetry-normalized motifs;
+- parameterized wire patterns;
+- and proof lemmas about composition.
+
+Each candidate must declare its wire-count and precondition contract. A useful four-wire subnetwork is not a general arbitrary-width abstraction unless generality is separately established.
+
+#### 10.3.4 Verification
+
+Verification can combine:
+
+- exhaustive Boolean evaluation for fixed widths;
+- SAT-based counterexample search;
+- independent proof-log checking where available;
+- and known lower-bound or optimality results for calibration.
+
+The system should retain exact verification scope. A network verified for nine wires is not verified for ten, and a bounded search that fails to find a 24-comparator network does not establish impossibility unless the search is complete and independently checked.
+
+#### 10.3.5 Outcomes
+
+Primary outcomes include:
+
+- verified solve rate;
+- time and candidates to first verified network;
+- comparator count;
+- depth;
+- SAT and checker cost;
+- abstraction reuse level;
+- and grammar activation overhead.
+
+### 10.4 Main realistic domain: bounded bit-vector synthesis
+
+Bounded bit-vector synthesis is close to compiler superoptimization while retaining finite semantics. The domain should initially exclude memory, pointers, poison values, undefined behavior, loops, and floating point.
+
+#### 10.4.1 Grammar
+
+A loop-free DSL can include:
+
+- bitwise `and`, `or`, `xor`, and `not`;
+- modular addition and subtraction;
+- logical and arithmetic shifts;
+- equality and ordered comparisons;
+- conditional select;
+- concatenation and extraction;
+- sign and zero extension;
+- truncation;
+- and constants from a bounded set.
+
+Width and signedness must be explicit. Each operation has deterministic total semantics within the selected profile.
+
+#### 10.4.2 Tasks
+
+Task lineages may include:
+
+- expression simplification;
+- cheaper implementation of a reference expression;
+- synthesis under path conditions;
+- conditional rewrite discovery;
+- strength reduction;
+- bit-manipulation idioms;
+- target-cost specialization;
+- and equivalence-preserving normal-form construction.
+
+Tasks should be drawn from several sources or generators to avoid a library that merely memorizes one benchmark’s surface syntax.
+
+#### 10.4.3 Reusable knowledge classes
+
+This domain can evaluate four knowledge types.
+
+**Executable abstractions:** parameterized expression schemas and helper functions.
+
+**Proof abstractions:** algebraic lemmas or reusable solver encodings.
+
+**Certified constraints:** counterexample-derived no-goods, impossible operator combinations, or sound symmetry reductions.
+
+**Representations:** alternative normal forms or factorizations with verified conversions.
+
+#### 10.4.4 Verification
+
+Verification can use:
+
+- exhaustive evaluation at small widths;
+- SMT counterexample search at larger bounded widths;
+- cross-solver checks;
+- certificate or proof-log checking where supported;
+- and translation validation for emitted LLVM, Wasm, or native artifacts.
+
+A solver result of `unknown` remains `unknown`. A timeout is retained. The encoding, solver version, options, and resource bounds are part of the evidence identity.
+
+#### 10.4.5 Execution quality
+
+Beyond correctness, verified candidates can be compared on:
+
+- abstract operation count;
+- target instruction count;
+- critical path;
+- code size;
+- measured latency;
+- register pressure proxy;
+- and target-specific cost models.
+
+These objectives remain separate. AlphaTensor’s distinction between arithmetic complexity and measured hardware performance is a useful precedent for profile-specific reporting (Fawzi et al., 2022).
+
+### 10.5 Optional extension: theorem-library learning
+
+After the core intervention harness is validated, a theorem-proving domain can evaluate proof abstractions directly.
+
+A suitable setting should provide:
+
+- a small trusted proof kernel;
+- task lineages grouped by theorem family;
+- a fixed theorem-proving agent or search procedure;
+- complete lemma retrieval and invocation traces;
+- proof checking;
+- and removal tests.
+
+Outcomes include:
+
+- proof success;
+- proof-search nodes;
+- checker time;
+- proof length;
+- retrieved and invoked lemmas;
+- and operational necessity.
+
+This extension would connect the framework to DreamProver and self-supervised theorem-discovery systems (Zhang et al., 2026; Ota et al., 2026) while directly addressing the reuse concerns raised in LEGO-Prover evaluations.
+
+### 10.6 Experimental condition matrix
+
+The experimental harness should support the following knowledge-selection conditions.
+
+| Condition | Selection rule | Purpose |
+|---|---|---|
+| Primitive baseline | No learned abstractions | Establish base search performance |
+| Expert library | Small hand-designed library | Test whether the domain permits useful reuse |
+| Retrospective | Maximize past-corpus compression | Represent standard library learning |
+| Prospective | Maximize predicted future compression | Test future-oriented selection |
+| Intervention-selected | Maximize development-set verified transfer | Test the proposed admission rule |
+| Random matched | Match type and size distribution | Control for vocabulary growth |
+| Placebo matched | Match exposure but remain irrelevant | Control for search and retrieval perturbation |
+| Oracle | Use held-out information | Estimate an ineligible upper bound |
+
+The final test set compares frozen conditions selected using training and development data only.
+
+### 10.7 Minimum experimental sequence
+
+A credible first empirical paper should complete at least:
+
+1. a sanity study in the depth-controlled sequence DSL;
+2. a calibration study in comparator networks;
+3. a main study in bounded bit-vector synthesis;
+4. at least three library-selection conditions beyond the primitive baseline;
+5. matched downstream and total-compute views;
+6. behavioral reuse analysis;
+7. a low, medium, and high budget sweep;
+8. placebo controls;
+9. independent verification; and
+10. complete reporting of neutral and negative transfer.
+
+---
+
+## 11. Measurement and Statistical Analysis
+
+### 11.1 Primary endpoint
+
+The preferred primary endpoint is **independently verified solve rate** at a preregistered resource budget.
+
+For treatment condition \(K+a\) and control \(K\), define the lineage-level paired difference
+
+\[
+D_{\ell}(a)
+=
+\frac{1}{|S_\ell|}
+\sum_{s\in S_\ell}
+\left[
+\mathbf{1}\{Z_{\ell,s}(K+a)=\textsf{verified}\}
+-
+\mathbf{1}\{Z_{\ell,s}(K)=\textsf{verified}\}
+\right].
+\]
+
+The average effect is computed over lineages, not over every condition or seed as though independent.
+
+### 11.2 Secondary endpoints
+
+Secondary outcomes should include:
+
+- time to first verified solution;
+- candidates evaluated to first verified solution;
+- verifier or solver calls;
+- proof size and checking time;
+- execution-quality vector;
+- retrieval and reuse levels;
+- negative-transfer rate;
+- invalid and unknown outcomes;
+- library activation overhead;
+- equal-total-compute performance;
+- and break-even horizon.
+
+These outcomes explain *how* a library helped or hurt.
+
+### 11.3 Pairing and randomization
+
+Treatment and control should share:
+
+- task instances;
+- stochastic seeds;
+- candidate-order seeds;
+- model sampling seeds where supported;
+- hardware class;
+- software version;
+- and stopping rules.
+
+When run order can affect caches or system load, randomize or counterbalance order. Record warm versus cold state. If a model provider does not expose immutable versions or seeds, preserve the limitation and avoid claims that require exact rerun identity.
+
+### 11.4 Timeouts and censored outcomes
+
+Time to verification is right-censored by the experiment’s timeout. Do not:
+
+- remove timed-out tasks;
+- assign them the maximum successful time;
+- or compare latency only among successful runs.
+
+Suitable summaries include:
+
+- verified success probability by budget;
+- restricted mean time to verification;
+- time-to-event curves with verification as the event;
+- and complete timeout counts.
+
+A task that times out in both conditions can still carry information about candidate count, verifier behavior, and abstraction use, but it does not contribute a verified solution.
+
+### 11.5 Budget sweeps
+
+Run at least three preregistered budgets:
+
+\[
+B_{\mathrm{low}},\quad B_{\mathrm{medium}},\quad B_{\mathrm{high}}.
+\]
+
+The aim is not to choose the budget that makes the treatment look best. It is to identify the regime in which the abstraction changes reachability.
+
+Possible patterns include:
+
+- negative transfer at low budget from vocabulary expansion;
+- positive transfer at intermediate budget from reduced construction depth;
+- and convergence at high budget when both conditions solve all tasks.
+
+Report the complete curve rather than only one point.
+
+### 11.6 Multiple abstractions and multiplicity
+
+Testing many candidate abstractions creates selection bias. The protocol should distinguish:
+
+- exploratory training-set mining;
+- development-set selection;
+- and final test-set confirmation.
+
+If multiple abstractions are individually tested on the final set, control the familywise error rate or false discovery rate as appropriate, and report unadjusted effect sizes with adjusted uncertainty or decisions. Better still, freeze a small set of primary abstraction hypotheses before final testing.
+
+### 11.7 Uncertainty
+
+Report:
+
+- paired effect sizes;
+- confidence intervals clustered by lineage;
+- complete denominators;
+- dispersion across seeds;
+- and sensitivity to budget and cost assumptions.
+
+For small numbers of lineages, exact or randomization-based intervals may be preferable to asymptotic approximations. Bayesian hierarchical models are also reasonable if their priors and model checks are published.
+
+### 11.8 Pareto reporting
+
+Where solution quality is multiobjective, report:
+
+- the verified Pareto frontier;
+- frontier hypervolume under a declared reference point;
+- and per-objective changes.
+
+Do not treat an incorrect or unverified program as Pareto-competitive with a verified program. Correctness and applicability are admission gates to the performance frontier.
+
+### 11.9 Negative transfer
+
+Define lineage-level negative transfer for a primary outcome as
+
+\[
+NT(a)=
+\Pr_{\ell}
+\left[D_{\ell}(a)<0\right].
+\]
+
+A positive mean effect can hide severe regressions on a minority of task families. Report:
+
+- the proportion of improved, unchanged, and harmed lineages;
+- the affected task classes;
+- and whether harm is caused by branching, retrieval, verification, or semantic misuse.
+
+### 11.10 Preregistration and immutable analysis
+
+Before final test execution, freeze:
+
+- primary and secondary endpoints;
+- task lineage split;
+- treatment and control libraries;
+- budget views;
+- stopping rule;
+- exclusions;
+- timeout handling;
+- statistical tests;
+- and figure/table specifications where practical.
+
+Post-hoc analyses are welcome but must be labeled exploratory.
+
+---
+
+## 12. Testable Hypotheses
+
+The framework is useful only if it supports falsifiable claims. The following hypotheses define a coherent initial research program.
+
+### H1. Retrospective compression imperfectly predicts forward transfer
+
+Across candidate abstractions, retrospective compression benefit will correlate only imperfectly with verified held-out transfer.
+
+A strong result against the hypothesis—near-perfect prediction across domains and budgets—would reduce the need for expensive intervention evaluation.
+
+### H2. Intervention-selected abstractions outperform compression-selected abstractions
+
+At matched library size and total compute, abstractions selected using development-set forward-transfer interventions will produce greater test-set verified transfer than abstractions selected solely by retrospective compression.
+
+### H3. Vocabulary expansion can cause negative transfer
+
+Matched irrelevant, duplicate, or random abstractions will reduce bounded synthesis performance in at least some low-budget conditions by increasing branching, prompt length, or retrieval ambiguity.
+
+### H4. Transfer depends on the search-reach regime
+
+Abstraction benefit will be largest when the shortest primitive-only construction lies outside the typical search reach but the abstraction-augmented construction lies inside it. Benefit will be smaller when both are trivial or both remain unreachable.
+
+### H5. Invocation frequency overstates useful reuse
+
+The number of abstractions invoked in candidates or even verified solutions will exceed the number that are operationally essential under removal tests.
+
+### H6. Library and search-policy effects interact
+
+Jointly learned systems will exhibit significant library-by-search interactions; one-factor ablations will not fully identify the causal source of improvement.
+
+### H7. Proof and constraint knowledge can transfer without executable reuse
+
+Reusable lemmas or certified pruning constraints will reduce verification or search cost on held-out tasks even when no learned executable abstraction appears in the final program.
+
+### H8. Equal-total-compute analysis reverses some apparent gains
+
+Some libraries that improve downstream solve rate under equal task-time budgets will lose their advantage after abstraction mining and verification costs are charged and the baseline receives equal total resources.
+
+### H9. Versioned evaluation rounds improve attribution and reproducibility
+
+Freezing the knowledge state within an evaluation round will produce more stable and interpretable effect estimates than online same-round promotion.
+
+### H10. Cross-family transfer is rarer but more highly amortized
+
+Abstractions with positive transfer outside their extraction family will be less common than within-family macros but, when present, will reach break-even over fewer total domains or longer task horizons. This hypothesis is exploratory and should not be a primary claim of the first experiment.
+
+---
+
+## 13. Failure Modes and Required Controls
+
+| Failure mode | False conclusion | Required control |
+|---|---|---|
+| Unequal sampling or inference compute | Extra attempts are credited to the library | Equal-search and equal-total-compute baselines |
+| Task siblings split across train and test | Memorized structure is called transfer | Split and analyze by lineage |
+| Library size used as progress | Duplicates and unused entries look useful | Behavioral reuse ladder and equivalence audit |
+| Retrieval counted as reuse | Exposure is called contribution | Candidate, verified-use, and removal traces |
+| Invocation counted as causal benefit | Redundant calls are called transfer | Matched absence and necessity tests |
+| Same-round promotion | Descendants partly self-justify the abstraction | Versioned rounds and delayed admission |
+| Search policy changes with the library | Better search is credited to the abstraction | Factorial library-by-search experiment |
+| Added vocabulary changes branching | Search harm is hidden | Matched placebo and budget sweep |
+| Only successful runs reported | Timeouts and invalids disappear | Complete terminal-status ledger |
+| Bounded testing called proof | Scope is overstated | Explicit verification level and domain |
+| IR theorem applied to machine code | Lowering defects are ignored | Verified compilation or translation validation |
+| Compression-only selection | Past repetition overfits the library | Held-out intervention evaluation |
+| One domain used for broad claims | Domain-specific macros look general | Multi-domain or explicitly scoped claims |
+| Repeated conditions treated as independent | Confidence is overstated | Lineage clustering |
+| Heuristic no-goods prune conclusively | Valid candidates disappear | Certified pruning scope and audit |
+| Search and verifier share the same defect | Circular checking appears independent | Separate implementation, certificate, or cross-checker |
+| Search fails to reach the relevant depth | Failure is blamed on the abstraction | Frontier, depth, and candidate-count logging |
+| Library-construction cost omitted | Amortization is overstated | End-to-end cost ledger |
+| Abstraction selected after test outcomes | Test set becomes development data | Three-way split and preregistration |
+| One scalar score hides regressions | Faster but unsafe results appear better | Correctness gate and vector reporting |
+| Model prompt or documentation changes | Presentation effects are credited to semantics | Version and ablate presentation separately |
+| Hardware profile changes | Target-specific performance appears general | Exact target identity and profile-specific claims |
+| Solver `unknown` dropped | Incomplete evidence looks like success | Preserve verified/refuted/unknown/timeout |
+| Counterexamples not retained | Repeated failure teaches nothing | Minimized regression corpus and provenance |
+| Candidate generator edits verifier or tasks | Self-authored success | Separate proposal, checking, and admission roles |
+| Public API carries large maintenance burden | Short-term gain hides long-term cost | Carrying cost and break-even horizon |
+
+### 13.1 Goodhart effects
+
+Once a library metric becomes an optimization target, systems may maximize the metric without producing reusable knowledge.
+
+Examples include:
+
+- generating many tiny functions to inflate library size;
+- factoring arbitrary one-off code to maximize apparent compression;
+- retrieving every library entry to inflate reuse counts;
+- adding wrappers that appear in verified programs but do no semantic work;
+- constructing benchmark-specific macros;
+- or producing abstractions that shift cost from synthesis to verification.
+
+The defense is not a better single metric. It is a chain of evidence:
+
+\[
+\text{semantic validity}
+\rightarrow
+\text{behavioral use}
+\rightarrow
+\text{necessity}
+\rightarrow
+\text{held-out transfer}
+\rightarrow
+\text{cost-adjusted benefit}.
+\]
+
+### 13.2 Distribution shift
+
+Forward transfer is always relative to a task distribution. A library can be beneficial in one domain and harmful in another. The evaluation should therefore report:
+
+- within-family transfer;
+- cross-family transfer;
+- task-distribution metadata;
+- and sensitivity to curriculum or prevalence assumptions.
+
+No Free Lunch results reinforce this dependence: search superiority requires assumptions about the problem distribution (Wolpert and Macready, 1997).
+
+### 13.3 Verification bottlenecks
+
+A more expressive library may produce candidates faster than they can be verified. A system can therefore improve search while reducing end-to-end verified throughput. Search and verification costs must be reported separately.
+
+### 13.4 Human and agent usability
+
+A semantically useful abstraction may have a confusing name, overly broad type, unclear applicability, or poor documentation. For model-guided systems, these presentation features alter retrieval and correct invocation. Semantic identity and presentation identity should therefore be separate, and documentation effects should be evaluated rather than assumed.
+
+---
+
+## 14. Conceptual Context and Theoretical Limits
+
+The framework is grounded in standard program-synthesis and verification concepts. Several broader ideas help explain why the distinctions matter, but none is required for the protocol.
+
+### 14.1 Primitive bases and EML
+
+Odrzywołek (2026) shows that the constant \(1\) and one binary operator,
+
+\[
+\operatorname{eml}(x,y)=e^x-\ln y,
+\]
+
+can generate the ordinary elementary-function repertoire. This result is a vivid example of basis dependence: a very small primitive vocabulary can have broad expressive closure.
+
+For synthesis, expressive sufficiency is not the same as practical usefulness. A one-operator basis may require deep expressions, induce difficult search, create numerical singularities, or provide poor human and model interfaces. Reusable intermediate abstractions can therefore improve resource-bounded discoverability even when they add no theoretical expressive power.
+
+This paper does not propose EML as a synthesis language. It uses the result to illustrate why primitive count is an inadequate measure of an effective search basis.
+
+### 14.2 Construction history, DAGs, and Assembly Theory
+
+Assembly Theory emphasizes recursive construction paths and reuse of previously assembled motifs (Sharma et al., 2023). That emphasis is conceptually related to reusable program fragments, shared subexpressions, and proof dependencies.
+
+However, the novelty and physical interpretation of Assembly Theory are actively disputed. Ozelim et al. (2026) argue that its core measures reduce to dictionary compression and established statistical ideas. The present framework does not depend on resolving that debate and does not introduce an “assembly index” for programs.
+
+Programs already provide precise conventional objects:
+
+- AST size;
+- DAG size;
+- derivation depth;
+- grammar-relative description length;
+- proof size;
+- dependency graphs;
+- and actual search cost.
+
+These measures should be reported with their exact status. A best-known construction is not necessarily a proven minimum.
+
+### 14.3 Gödel and meta-level change
+
+Gödel’s incompleteness theorems establish limits on sufficiently expressive, consistent, effective formal systems and on their ability to prove their own consistency under standard assumptions (Gödel, 1931). The framework neither avoids nor weakens those results.
+
+The relevant design lesson is modest: object-level search and modification of the system used to judge that search are different operations. A synthesis system may propose a new proof rule, verifier, or grammar. The proposal must be evaluated under a separately justified process rather than becoming its own sole authority.
+
+Gödel’s results also reinforce the importance of `unknown`. A formal system’s failure to prove a claim is not automatically a refutation, and no fixed verifier should be described as complete beyond its proven scope.
+
+### 14.4 Blum speedup
+
+Blum’s machine-independent complexity theory includes functions for which no single program is near-final in the intuitive sense: for every program, another program computes the same function substantially faster under the relevant complexity measure (Blum, 1967). This is an existential result, not a claim that ordinary practical algorithms necessarily admit endless improvement.
+
+Its relevance is cautionary. An algorithm-discovery system should avoid universal claims that one implementation is final or globally optimal unless the exact domain, grammar, and cost model justify that claim.
+
+### 14.5 No Free Lunch
+
+No Free Lunch theorems show that optimization performance depends on the class or distribution of problems being considered (Wolpert and Macready, 1997). A library-learning system should therefore state:
+
+- the task distribution;
+- the search algorithm;
+- the resource budget;
+- and the target cost profile.
+
+An abstraction is not universally useful merely because it is effective on one benchmark.
+
+---
+
+## 15. Broader Applications and Extensions
+
+### 15.1 Automated theorem proving
+
+The framework applies directly to lemma libraries. A lemma can be:
+
+- stored;
+- retrieved;
+- invoked in an attempted proof;
+- present in a checked proof;
+- operationally essential under removal;
+- and forward-transfer positive across held-out theorem families.
+
+This yields a direct way to evaluate claims of growing mathematical knowledge without relying on library size or proof success alone.
+
+### 15.2 Compiler optimization
+
+Compiler superoptimizers and rewrite synthesizers can use the framework to evaluate whether learned rewrite schemas improve later optimization discovery. Correctness can be established with Alive-, Alive2-, or Souper-like methods, while executable performance claims require artifact validation and target-specific measurement.
+
+A learned rewrite may reduce search in one target profile and increase it in another. The treatment should therefore include both semantic and cost-profile identities.
+
+### 15.3 Representation learning for synthesis
+
+A verified representation transformation can change search geometry without appearing in the final program. The intervention becomes:
+
+\[
+R
+\quad\text{versus}\quad
+R+r,
+\]
+
+with the search procedure, tasks, and verifier held fixed. Outcomes include solve rate, representation-conversion overhead, proof cost, and execution quality.
+
+### 15.4 Certified negative knowledge
+
+Counterexamples, lower bounds, and no-good constraints can be evaluated as reusable knowledge even when they never appear in the final program. Their forward-transfer effect is measured through reduced search or verification cost under exact pruning scope.
+
+This extension is especially important because cumulative learning should include failures that safely prevent repeated work.
+
+### 15.5 Algorithm families and dispatch
+
+A synthesis system may discover several correct implementations with different performance regimes. Rather than selecting one universal winner, it can produce:
+
+- a reference implementation;
+- specialized variants;
+- exact applicability predicates;
+- a verified dispatcher;
+- and a deterministic fallback.
+
+The family is evaluated on both component correctness and dispatcher correctness. AlphaTensor provides a useful precedent for preserving algorithms optimized under different hardware objectives (Fawzi et al., 2022).
+
+### 15.6 Recursive improvement of the search procedure
+
+A later research program could apply the same intervention framework to search algorithms themselves. A proposed search operator or policy would create a new \(A_t\) condition and be evaluated against the prior search procedure with the knowledge state, tasks, verifier, and budgets controlled.
+
+This paper does not develop open-ended search-system evolution. The immediate priority is a trustworthy method for evaluating reusable knowledge under a fixed search protocol.
+
+### 15.7 Automated scientific discovery
+
+Scientific discovery systems also accumulate reusable models, transformations, invariants, and negative results. The same distinction applies:
+
+- a model may summarize past data;
+- it may be used in later hypotheses;
+- but only controlled prospective evaluation establishes whether it improves future discovery.
+
+Adapting the framework would require domain-specific verification and cost definitions.
+
+---
+
+## 16. Limitations
+
+### 16.1 No guarantee of globally useful abstractions
+
+The framework can estimate transfer under declared task distributions, budgets, search procedures, and verifiers. It cannot establish universal usefulness across all future tasks.
+
+### 16.2 Intervention cost
+
+Per-abstraction A/B testing is expensive. Large libraries may contain more candidate abstractions than can be individually evaluated. Practical systems may need staged screening:
+
+1. compression or prospective prediction;
+2. low-cost behavioral tests;
+3. development-set intervention;
+4. final test confirmation for a small subset.
+
+The screening process itself must avoid using final test outcomes.
+
+### 16.3 Imperfect control of learned generators
+
+Hosted models, nondeterministic runtimes, and adaptive services may not expose exact versions or seeds. The framework can preserve prompts, outputs, and provider facts, but some comparisons will remain less reproducible than deterministic synthesis.
+
+### 16.4 Verification incompleteness
+
+A verifier may return `unknown` on correct candidates. The framework distinguishes unknown from refuted but cannot eliminate incomplete verification. Comparative results can also depend on which candidates are easiest to prove rather than which are semantically best.
+
+### 16.5 Human maintenance and API quality
+
+Library overhead is difficult to quantify. Documentation quality, compatibility burden, cognitive load, and future deprecation may require human assessment. These costs should be disclosed even when they cannot be reduced to one scalar.
+
+### 16.6 Task-lineage uncertainty
+
+The correct lineage structure is not always obvious. Two tasks may share hidden oracle ancestry or reference implementations. Under-clustering inflates confidence; over-clustering discards information. Lineage rules should therefore be specified before final evaluation and subjected to sensitivity analysis.
+
+### 16.7 Distribution drift
+
+A library selected under one future-task model may become obsolete as the task distribution changes. Versioned rounds preserve historical evidence but do not automatically solve online adaptation.
+
+### 16.8 No proof of indefinite cumulative improvement
+
+Positive forward transfer over several rounds does not prove that improvement will continue indefinitely. Libraries can saturate, conflict, or become too costly. The framework measures observed cumulative benefit; it does not guarantee open-endedness.
+
+### 16.9 No claim that compression is unimportant
+
+Compression remains a powerful abstraction proposal and regularization principle. The claim is only that compression is not sufficient evidence of downstream causal benefit.
+
+### 16.10 Framework paper without empirical results
+
+This paper specifies a formal distinction, experimental design, and reporting standard. Its empirical hypotheses remain to be tested. Any later implementation should publish null and negative results rather than treating the framework itself as evidence that forward transfer occurs.
+
+---
+
+## 17. Conclusion
+
+Program synthesis can become cumulative only if previous work changes future problem solving in a measurable and trustworthy way. A growing library, shorter past programs, or frequent tool invocation does not by itself establish that change. Reusable knowledge can help, do nothing, or hurt, depending on the task distribution, search procedure, verifier, and resource budget.
+
+This paper proposes **verified forward-transfer intervention** as the central evaluation standard. Candidate abstractions are extracted from prior tasks, independently validated, and tested by comparing matched knowledge states on unseen task lineages. The protocol counts all relevant costs, traces actual reuse, preserves negative transfer, separates library effects from search-policy effects, and binds correctness to an independent verifier with explicit scope. It extends naturally from executable functions to proof lemmas, certified constraints, and verified representations.
+
+The proposal does not replace compression-based or prospective abstraction learning. It places them in a larger evidentiary sequence:
+
+\[
+\begin{gathered}
+\text{propose reusable knowledge}\rightarrow\text{verify its semantic contract}\\
+\text{run compute-matched held-out interventions}\rightarrow\text{audit actual use and necessity}\\
+\text{count construction, search, proof, and maintenance costs}\rightarrow\text{admit, reject, or retain as uncertain}
+\end{gathered}
+\]
+
+The resulting criterion is deliberately demanding:
+
+> **A library is not evidence of cumulative learning. Cumulative learning is present only when independently verified knowledge makes future independently verified problem solving measurably easier under a fair comparison.**
+
+## Data and Code Availability
+
+No empirical data were generated for this framework paper. The experimental protocols, hypotheses, and reporting checklist are intended to support future independently reproducible implementations.
+
+---
+
+## Appendix A. Minimum Reporting Checklist
+
+A study claiming forward transfer from reusable symbolic knowledge should report the following.
+
+### A.1 Task authority
+
+- [ ] Task definitions and semantic profiles
+- [ ] Task-lineage identifiers and construction rules
+- [ ] Train, development, and test split by lineage
+- [ ] Hidden or held-out material policy
+- [ ] Alternative-solution policy
+- [ ] Task exclusions and invalid conditions
+
+### A.2 Knowledge state
+
+- [ ] Baseline library identity
+- [ ] Candidate abstraction identity and source
+- [ ] Type, contract, applicability, and expansion semantics
+- [ ] Proof or test status of the abstraction itself
+- [ ] Names, documentation, and retrieval representation
+- [ ] Placebo, duplicate, random, expert, or oracle controls used
+
+### A.3 Search
+
+- [ ] Search implementation and version
+- [ ] Grammar and constructor order
+- [ ] Retrieval and activation policy
+- [ ] Model, prompt, tools, and decoding settings where applicable
+- [ ] Seeds and attempt policy
+- [ ] Stopping rule
+- [ ] Candidate count and search-frontier statistics
+
+### A.4 Verification
+
+- [ ] Verifier implementation and version
+- [ ] Exact verification level
+- [ ] Solver encoding and options where applicable
+- [ ] Proof or certificate checker
+- [ ] Artifact-lowering validation
+- [ ] Verified, refuted, unknown, timeout, and invalid counts
+- [ ] Counterexample retention policy
+
+### A.5 Cost
+
+- [ ] Abstraction mining cost
+- [ ] Library verification cost
+- [ ] Retrieval and activation cost
+- [ ] Downstream search cost
+- [ ] Candidate-verification cost
+- [ ] Compilation and execution cost
+- [ ] Equal-search-budget comparison
+- [ ] Equal-total-compute comparison
+- [ ] Break-even horizon or `not reached`
+
+### A.6 Behavioral reuse
+
+- [ ] Exposed or retrieved entries
+- [ ] Candidate invocations
+- [ ] Verified-solution invocations
+- [ ] Semantic contribution
+- [ ] Removal or necessity result
+- [ ] Lineage-level forward-transfer result
+- [ ] Cross-family transfer, if claimed
+
+### A.7 Statistics
+
+- [ ] Primary and secondary endpoints
+- [ ] Independent statistical unit
+- [ ] Paired design and seed handling
+- [ ] Timeout and censoring treatment
+- [ ] Budget sweep
+- [ ] Multiple-comparison treatment
+- [ ] Confidence intervals and complete denominators
+- [ ] Exploratory analyses labeled
+
+### A.8 Reproducibility
+
+- [ ] Versioned evaluation-round manifest
+- [ ] Complete candidate artifacts
+- [ ] Complete run records
+- [ ] Hardware and software environment
+- [ ] Deterministic replay or limitations
+- [ ] Append-only corrections and supersessions
+
+---
+
+## Appendix B. Minimal Artifact Schema
+
+The following conceptual schema is intentionally implementation-neutral.
+
+```text
+ReusableKnowledgeArtifact
+  identity
+    artifact_id
+    semantic_profile
+    source_round
+    source_task_lineages
+
+  kind
+    executable_abstraction
+    proof_lemma
+    certified_constraint
+    representation
+
+  interface
+    type_or_statement
+    preconditions
+    postconditions
+    applicability
+    expansion_or_reference_semantics
+
+  evidence
+    verification_level
+    verifier_identity
+    assumptions
+    domain
+    counterexamples
+    proof_or_certificate_identity
+    executable_artifact_bindings
+
+  presentation
+    name
+    documentation
+    examples
+    retrieval_representation
+
+  costs
+    extraction
+    verification
+    storage
+    retrieval
+    maintenance_estimate
+
+  evaluation
+    baseline_knowledge_identity
+    treatment_knowledge_identity
+    task_split_identity
+    search_identity
+    budget_identity
+    forward_transfer_result
+    reuse_level_distribution
+    negative_transfer
+    break_even_horizon
+
+  disposition
+    proposed
+    development_selected
+    test_confirmed
+    rejected
+    inconclusive
+    admitted_to_future_version
+    deprecated
+    invalidated
+```
+
+The schema separates semantic evidence from presentation, and research evaluation from release admission. A system can implement the fields as JSON, typed records, a database, or content-addressed artifacts; the logical distinctions are the requirement.
+
+---
+
+## References
+
+Alur, R., Bodik, R., Juniwal, G., Martin, M. M. K., Raghothaman, M., Seshia, S. A., Singh, R., Solar-Lezama, A., Torlak, E., and Udupa, A. (2013). Syntax-guided synthesis. In *Proceedings of the IEEE International Conference on Formal Methods in Computer-Aided Design*, 1–17. https://doi.org/10.1109/FMCAD.2013.6679385
+
+Berlot-Attwell, I., Rudzicz, F., and Si, X. (2024). Library learning doesn’t: The curious case of the single-use “library.” arXiv:2410.20274.
+
+Berlot-Attwell, I., Rudzicz, F., and Si, X. (2025). LLM library learning fails: A LEGO-Prover case study. arXiv:2504.03048.
+
+Berlot-Attwell, I., Sesterhenn, T., Rudzicz, F., and Si, X. (2026). Is this LLM library learning? Evaluation must account for compute and behaviour. In *Proceedings of the 19th Conference of the European Chapter of the Association for Computational Linguistics*, 3534–3568. https://doi.org/10.18653/v1/2026.eacl-long.163
+
+Blum, M. (1967). A machine-independent theory of the complexity of recursive functions. *Journal of the ACM*, 14(2), 322–336. https://doi.org/10.1145/321386.321395
+
+Bowers, M., Olausson, T. X., Wong, L., Grand, G., Tenenbaum, J. B., Ellis, K., and Solar-Lezama, A. (2023). Top-down synthesis for library learning. *Proceedings of the ACM on Programming Languages*, 7(POPL), 1182–1213. https://doi.org/10.1145/3571234
+
+Cao, D., Kunkel, R., Nandi, C., Willsey, M., Tatlock, Z., and Polikarpova, N. (2023). BABBLE: Learning better abstractions with e-graphs and anti-unification. *Proceedings of the ACM on Programming Languages*, 7(POPL), 396–424. https://doi.org/10.1145/3571207
+
+Codish, M., Cruz-Filipe, L., Frank, M., and Schneider-Kamp, P. (2016). Sorting nine inputs requires twenty-five comparisons. *Journal of Computer and System Sciences*, 82(3), 551–563. https://doi.org/10.1016/j.jcss.2015.11.014
+
+Ellis, K., Wong, C., Nye, M., Sablé-Meyer, M., Morales, L., Hewitt, L., Cary, L., Solar-Lezama, A., and Tenenbaum, J. B. (2021). DreamCoder: Bootstrapping inductive program synthesis with wake-sleep library learning. In *Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation*, 835–850. https://doi.org/10.1145/3453483.3454080
+
+Fawzi, A., et al. (2022). Discovering faster matrix multiplication algorithms with reinforcement learning. *Nature*, 610, 47–53. https://doi.org/10.1038/s41586-022-05172-4
+
+Gödel, K. (1931). Über formal unentscheidbare Sätze der Principia Mathematica und verwandter Systeme I. *Monatshefte für Mathematik und Physik*, 38, 173–198. https://doi.org/10.1007/BF01700692
+
+Grand, G., Wong, L., Bowers, M., Olausson, T. X., Liu, M., Tenenbaum, J. B., and Andreas, J. (2024). LILO: Learning interpretable libraries by compressing and documenting code. In *International Conference on Learning Representations*.
+
+Hernandez Cano, L., Zareski, I., El Amouri, L., Zhao, P., Mascini, M., Sansone, E., Pu, Y., Zhao, B., and Kryven, M. (2026). Prospective compression in human abstraction learning. arXiv:2605.09985.
+
+Leroy, X. (2009). Formal verification of a realistic compiler. *Communications of the ACM*, 52(7), 107–115. https://doi.org/10.1145/1538788.1538814
+
+Lopez-Paz, D., and Ranzato, M. (2017). Gradient episodic memory for continual learning. In *Advances in Neural Information Processing Systems*, 30.
+
+Lopes, N. P., Menendez, D., Nagarakatte, S., and Regehr, J. (2015). Provably correct peephole optimizations with Alive. In *Proceedings of the 36th ACM SIGPLAN Conference on Programming Language Design and Implementation*, 22–32. https://doi.org/10.1145/2737924.2737965
+
+Lopes, N. P., Lee, J., Hur, C.-K., Liu, Z., and Regehr, J. (2021). Alive2: Bounded translation validation for LLVM. In *Proceedings of the 42nd ACM SIGPLAN International Conference on Programming Language Design and Implementation*, 65–79. https://doi.org/10.1145/3453483.3454030
+
+Mankowitz, D. J., et al. (2023). Faster sorting algorithms discovered using deep reinforcement learning. *Nature*, 618, 257–263. https://doi.org/10.1038/s41586-023-06004-9
+
+Necula, G. C. (1997). Proof-carrying code. In *Proceedings of the 24th ACM SIGPLAN-SIGACT Symposium on Principles of Programming Languages*, 106–119. https://doi.org/10.1145/263699.263712
+
+Odrzywołek, A. (2026). All elementary functions from a single binary operator. arXiv:2603.21852.
+
+Ota, K., Osa, T., and Harada, T. (2026). Self-supervised theorem discovery in a formal axiomatic system. arXiv:2606.28747.
+
+Ozelim, L., Uthamacumaran, A., Abrahão, F. S., et al. (2026). Assembly theory collapses to dictionary compression and is rendered redundant by common statistical algorithms. *npj Complexity*. https://doi.org/10.1038/s44260-026-00088-w
+
+Pnueli, A., Siegel, M., and Singerman, E. (1998). Translation validation. In *Tools and Algorithms for the Construction and Analysis of Systems*, Lecture Notes in Computer Science 1384, 151–166. https://doi.org/10.1007/BFb0054170
+
+Romera-Paredes, B., et al. (2024). Mathematical discoveries from program search with large language models. *Nature*, 625, 468–475. https://doi.org/10.1038/s41586-023-06924-6
+
+Sasnauskas, R., Chen, Y., Collingbourne, P., Ketema, J., Lup, G., Taneja, J., and Regehr, J. (2017). Souper: A synthesizing superoptimizer. arXiv:1711.04422.
+
+Sharma, A., Czégel, D., Lachmann, M., Kempes, C. P., Walker, S. I., and Cronin, L. (2023). Assembly theory explains and quantifies selection and evolution. *Nature*, 622, 321–328. https://doi.org/10.1038/s41586-023-06600-9
+
+Stengel-Eskin, E., Prasad, A., and Bansal, M. (2024). ReGAL: Refactoring programs to discover generalizable abstractions. In *Proceedings of the 41st International Conference on Machine Learning*, PMLR 235, 46605–46624.
+
+Wang, H., et al. (2023). LEGO-Prover: Neural theorem proving with growing libraries. arXiv:2310.00656.
+
+Willsey, M., Nandi, C., Wang, Y. R., Flatt, O., Tatlock, Z., and Panchekha, P. (2021). Egg: Fast and extensible equality saturation. *Proceedings of the ACM on Programming Languages*, 5(POPL), 1–29. https://doi.org/10.1145/3434304
+
+Wolpert, D. H., and Macready, W. G. (1997). No free lunch theorems for optimization. *IEEE Transactions on Evolutionary Computation*, 1(1), 67–82. https://doi.org/10.1109/4235.585893
+
+Zhang, Y., Sun, J., Bi, H., Geng, C., Ma, W., Li, Z., and Si, X. (2026). DreamProver: Evolving transferable lemma libraries via a wake-sleep theorem-proving agent. arXiv:2604.26311.

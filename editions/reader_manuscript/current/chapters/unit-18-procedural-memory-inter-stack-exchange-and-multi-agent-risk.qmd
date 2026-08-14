@@ -92,6 +92,27 @@ A passing regression suite shows that named checks passed. It does not prove
 that the abstraction is causally correct, the environment is complete, or
 future executions are safe.
 
+## A Shortcut Must Earn the Next Task
+
+There is an important distance between compressing yesterday's work and
+improving tomorrow's. A helper can make ten old solutions look beautifully
+simple and still fail to help on the eleventh. It can be loaded but never used,
+used but unnecessary, or necessary only because the new search process was
+designed around it.
+
+The test is intervention. Freeze the future tasks, search method, verifier, and
+budget. Run them with the candidate procedure, without it, and with plausible
+placebos such as a duplicate or irrelevant helper of similar size. Then remove
+the procedure from solutions that used it. This separates availability from
+invocation, contribution, necessity, and actual improvement.
+
+A candidate that passes semantic checks but fails this transfer test need not
+be destroyed. It can remain an archived idea, an explanatory compression, or a
+special-case tool. It simply should not become the default on a claim the
+evidence did not support. The paper that develops this protocol proposes
+several exact program-synthesis experiments; those experiments have not yet
+been run for this book.
+
 ## Discovery Must Preserve the Denominator
 
 Procedure discovery begins before abstraction. The system searches artifact

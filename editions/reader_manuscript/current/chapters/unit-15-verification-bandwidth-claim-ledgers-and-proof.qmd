@@ -372,6 +372,25 @@ property for one checkpoint, preprocessing pipeline, input region, arithmetic
 semantics, and output predicate. It does not establish natural-distribution
 robustness, model intent, privacy, or whole-agent safety.
 
+## Proof and Use Answer Different Questions
+
+Suppose a system discovers a reusable sorting routine and proves it correct.
+That settles an important question about the routine's semantics. It does not
+show that the compiler emitted the code described by the proof, or that adding
+the routine to a search library helps solve future problems under a fixed
+budget.
+
+Those are three claims: the abstraction is valid, the executed artifact
+preserves it, and its availability improves later outcomes. Each needs its own
+receipt. A verified routine can be too expensive to retrieve, redundant with
+the baseline, or harmful because it enlarges the search vocabulary. Conversely,
+a useful heuristic can improve outcomes without carrying a theorem.
+
+Formal methods are strongest when they keep these boundaries visible. The
+proof does not become weaker because it declines to certify transfer. It
+becomes more trustworthy because readers can see exactly where semantic
+certainty ends and experimental evidence must begin.
+
 ## Proof-Carrying Claims Bind Interpretation
 
 A proof-carrying claim packages a proposition with the artifact that supports

@@ -156,6 +156,39 @@ whether it may cause an effect.
 
 RMI and RGS connect this path to the broader ratchet: benchmark pressure creates traces, traces expose repeated structure, verified structure becomes tools, residuals remain visible, and regressions protect the floor. Benchmaxxing keeps promotion tied to evaluation rather than enthusiasm. Theseus adds the report-first implementation boundary: a tool is not routable just because a trace looked useful; it needs a card, checks, ledgers, and retirement criteria.
 
+### Forward transfer is the admission test for reusable knowledge
+
+[From Compression to Forward Transfer](../papers/forward_transfer_program_synthesis.qmd)
+adds a missing causal boundary to this lifecycle. A compact description of old
+traces can be valuable as analysis without helping on the next task. A stored
+procedure can be retrieved without being invoked, invoked without contributing
+to a verified solution, and contribute without being necessary. Even an
+operationally necessary abstraction can fail to improve the outcome once its
+mining, retrieval, search, and verification burden is counted.
+
+The procedure record therefore carries a reuse state rather than a single
+`reused` flag. The proposed ladder runs from stored (R0), exposed or retrieved
+(R1), invoked (R2), present in a verified solution (R3), semantically
+contributory (R4), operationally essential under removal (R5), positive on a
+frozen future-task distribution (R6), and positive across a distinct task
+family (R7). Each transition needs its own evidence. Frequency can prioritize a
+candidate for testing; it cannot skip the ladder.
+
+Admission also crosses a version boundary. Extraction and independent
+validation occur on development material. The knowledge state, search
+procedure, verifier, task lineage, and budgets are then frozen before the test
+intervention. Accepted candidates enter a later library version rather than
+the version being evaluated. This blocks a successful test task from teaching
+the artifact that is credited with solving that same task.
+
+The decisive comparison is a matched intervention: candidate present versus
+absent, irrelevant or duplicate placebos, removal for necessity, and a
+library-by-search factorial when both changed. Outcomes remain `verified`,
+`refuted`, `unknown`, `timeout`, or `invalid`; cost and complete denominators
+stay visible. The source proposes this design and concrete program-synthesis
+protocols but reports no run, so this chapter gains an admission criterion, not
+evidence that any current procedure transfers.
+
 The operational lifecycle has eighteen stages:
 
 1. Freeze the task family, consumers, authority, risk, horizon, success criteria,
@@ -831,6 +864,7 @@ These rows keep Procedural Memory and Cognitive Loop Closure's manifest assignme
 | `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator for isolated trajectory review, bounded evidence exposure, one-mutation pending proposals, exact-target hash binding, stale-target rejection, security rescanning, rollback metadata, abstention, and skill lifecycle aging. | Official software and documentation review only; reviewer isolation and proposal controls do not establish procedure correctness, evaluator independence, held-out transfer, safe default routing, or beneficial recursive improvement, and no local result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds a route for compiling mature exception families into tests, guards, procedures, tools, and recovery routines while preserving evidence, protected positives, expiry, and reactivation triggers. | No compiler, recurrence reduction, safe consolidation, or efficiency gain was implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Adds the prior adjudication step that determines whether a repeated cognitive pattern is eligible to become a procedure or tool. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds the verified forward-transfer intervention as the admission test for reusable procedures, with four-value separation, an R0-R7 reuse ladder, frozen knowledge versions, matched controls, and later-round admission. | Framework and experimental blueprint only; no candidate procedure, synthesis benchmark, forward-transfer effect, cost advantage, or support transition was produced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

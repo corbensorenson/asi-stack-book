@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/resource-economics-and-token-budgets.qmd",
     "structured_atoms_reviewed": 82,
-    "prose_candidates_adjudicated": 152,
+    "prose_candidates_adjudicated": 154,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The added topology-cost comparison is bound to the existing matched-resource and joint-outcome accounting atoms: accelerator time, CPU, memory, storage, network, evaluator and human work, failed branches, wall time, discovery, evaluation, integration, retention, and rollback remain separately visible. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The prior EGGROLL/MeZO source report remains bounded. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. EM2 publication-composition additions were re-reviewed; new scanner deltas are line-wrapped ownership or uncertainty clauses, not new material claims."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The added topology-cost comparison is bound to the existing matched-resource and joint-outcome accounting atoms: accelerator time, CPU, memory, storage, network, evaluator and human work, failed branches, wall time, discovery, evaluation, integration, retention, and rollback remain separately visible. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The prior EGGROLL/MeZO source report remains bounded. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. EM2 publication-composition additions were re-reviewed; new scanner deltas are line-wrapped ownership or uncertainty clauses, not new material claims. The 2026-08-14 forward-transfer pass classifies both scanner additions as fragments of the proposed full-lifecycle break-even ledger; no measured cost result is imported."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -833,6 +833,14 @@
     "resource-economics-and-token-budgets.prose.2913c68cb1f8": {
       "state": "nonmaterial_explanation",
       "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or uncertainty boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
+    },
+    "resource-economics-and-token-budgets.prose.b1ad1d925316": {
+      "state": "historical_or_source_report",
+      "rationale": "Line-wrapped attribution to the paper's proposed lifecycle ledger and break-even protocol; no measured economic outcome is imported."
+    },
+    "resource-economics-and-token-budgets.prose.7dc7c48a552d": {
+      "state": "historical_or_source_report",
+      "rationale": "Line-wrapped explicit non-result boundary denying that the proposed ledger establishes a library, search, or economic advantage."
     }
   },
   "prose_review_lineage": [

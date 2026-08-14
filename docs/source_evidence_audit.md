@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 87 |
-| Assigned source/chapter pairs | 1338 |
-| Exact claim-source mappings | 1130 |
+| Assigned source/chapter pairs | 1346 |
+| Exact claim-source mappings | 1138 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1338 |
-| Source notes listing assigned chapter | 1338 |
-| Passage-reviewed mappings recorded | 1061 |
+| Source notes present for assigned pairs | 1346 |
+| Source notes listing assigned chapter | 1346 |
+| Passage-reviewed mappings recorded | 1069 |
 | Support-state counts | {"argument": 87} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -59,7 +59,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `model-weight-custody-and-hardware-roots-of-trust` | 16 | 10 | 16 | 16 | 10 | argument | passage review required before source-derived promotion |
 | `open-weight-release-and-post-release-control` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 15 | 13 | 15 | 15 | 13 | argument | passage review required before source-derived promotion |
-| `recursive-self-improvement-boundaries` | 19 | 15 | 19 | 19 | 15 | argument | passage review required before source-derived promotion |
+| `recursive-self-improvement-boundaries` | 20 | 16 | 20 | 20 | 16 | argument | passage review required before source-derived promotion |
 | `open-ended-improvement-engines` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `autonomous-replication-proliferation-and-containment` | 2 | 1 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
@@ -83,34 +83,34 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `embodied-agency-real-time-control-and-physical-safety` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
 | `inter-stack-protocols-identity-and-economic-exchange` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 7 | 6 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `procedural-memory-and-cognitive-loop-closure` | 29 | 23 | 29 | 29 | 23 | argument | passage review required before source-derived promotion |
+| `procedural-memory-and-cognitive-loop-closure` | 30 | 24 | 30 | 30 | 24 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 25 | 20 | 25 | 25 | 20 | argument | passage review required before source-derived promotion |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 53 | 42 | 53 | 53 | 42 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `governed-model-training-distributed-optimization-and-scaling` | 33 | 31 | 33 | 33 | 31 | argument | passage review required before source-derived promotion |
 | `learning-compute-topology-and-adaptive-process-architecture` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
-| `learning-theory-generalization-and-scaling-science` | 13 | 11 | 13 | 13 | 3 | argument | passage review required before source-derived promotion |
+| `learning-theory-generalization-and-scaling-science` | 14 | 12 | 14 | 14 | 4 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 24 | 21 | 24 | 24 | 21 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 32 | 24 | 32 | 32 | 24 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 44 | 21 | 44 | 44 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
-| `rankfold-neuralfold-and-artifact-compression` | 7 | 6 | 7 | 7 | 6 | argument | passage review required before source-derived promotion |
-| `resource-economics-and-token-budgets` | 48 | 23 | 48 | 48 | 23 | argument | passage review required before source-derived promotion |
+| `rankfold-neuralfold-and-artifact-compression` | 8 | 7 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
+| `resource-economics-and-token-budgets` | 49 | 24 | 49 | 49 | 24 | argument | passage review required before source-derived promotion |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 8 | 3 | 8 | 8 | 1 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `executable-specifications-and-lean-proof-envelope` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `benchmark-ratchets-and-anti-goodhart-evidence` | 48 | 37 | 48 | 48 | 37 | argument | passage review required before source-derived promotion |
+| `executable-specifications-and-lean-proof-envelope` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
+| `benchmark-ratchets-and-anti-goodhart-evidence` | 49 | 38 | 49 | 49 | 38 | argument | passage review required before source-derived promotion |
 | `white-box-evidence-interpretability-and-activation-governance` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `governed-operations-incident-command-and-graceful-degradation` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
-| `adjudicated-persistence-and-the-adaptive-commit-boundary` | 9 | 9 | 9 | 9 | 9 | argument | eligible for support review |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 37 | 35 | 37 | 37 | 35 | argument | passage review required before source-derived promotion |
 | `data-engines-continual-learning-and-unlearning` | 19 | 15 | 19 | 19 | 15 | argument | passage review required before source-derived promotion |
 | `scientific-discovery-and-experimental-governance` | 5 | 4 | 5 | 5 | 3 | argument | passage review required before source-derived promotion |
@@ -164,6 +164,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `simulation_scaling` | 8 | yes |
 | `cognitive_compilation` | 8 | yes |
 | `theseus_architecture_gate` | 8 | yes |
+| `forward_transfer_program_synthesis` | 8 | yes |
 | `theseus_circle_transfer` | 8 | yes |
 | `cgs` | 7 | yes |
 | `ladon_manhattan` | 7 | yes |
@@ -881,6 +882,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_adas_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
@@ -1233,6 +1235,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `assurance_shift_learning` | mapped | note present | chapter listed | passage-reviewed |
 | `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `procedural-memory-and-cognitive-loop-closure.core` | `procedural-memory-and-cognitive-loop-closure` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `octopus_router` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1365,6 +1368,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_no_free_lunch_inductive_bias_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_eggroll_hyperscale_es_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `ext_forward_forward_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `learning-theory-generalization-and-scaling-science.core` | `learning-theory-generalization-and-scaling-science` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
 | `readiness-gates-residual-escrow-and-quarantine.core` | `readiness-gates-residual-escrow-and-quarantine` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1503,6 +1507,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bugbrain` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_raptor_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_eggroll_hyperscale_es_2026` | mapped | note present | chapter listed | passage-reviewed |
@@ -1551,6 +1556,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `precision_contract` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `assurance_shift_learning` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `tokenmana` | unmapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_iea_energy_and_ai_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_lbnl_data_center_energy_2024` | mapped | note present | chapter listed | not passage-reviewed |
@@ -1604,6 +1610,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `corbens_best_model_possible_project` | mapped | note present | chapter listed | passage-reviewed |
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `ext_reluplex_2017` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1652,6 +1659,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `ext_elizaos_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `assurance_shift_learning` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `kernel_english_residual_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
@@ -1713,6 +1721,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `viea` | mapped | note present | chapter listed | passage-reviewed |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `ext_bourtoule_machine_unlearning_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |

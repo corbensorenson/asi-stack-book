@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "4d7a6dd202ee9bfd67a1c183fb10001f10eb3ddff0a102fd7c16a44650d58a2d",
+  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
   "outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 87,
   "edge_counts": {
     "claim": 87,
-    "source": 1338,
+    "source": 1346,
     "proof": 340,
     "test": 660,
     "tracked_artifact_reference": 258,
@@ -4871,7 +4871,7 @@
       "order": 15,
       "title": "Verification Bandwidth, Claim Ledgers, and Proof",
       "human_reader_source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
-      "human_reader_source_sha256": "a502057545385d09594573350a5967b1f8a711e72d5dd66153c3243ba8781ff8",
+      "human_reader_source_sha256": "d685fd8bf7e5479e1c6bf75a51cf880aee6be6a5e7e98515afef2dc4fcb3efc5",
       "public_path": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
       "central_question": "What must be connected for a claim to remain challengeable, scoped, and correctable as evidence and consumers change?",
       "conclusion_change": "Simpler evidence records that produce equal correction, calibration, proof-scope discipline, and consumer repair would justify consolidation.",
@@ -5548,7 +5548,7 @@
           "chapter_id": "executable-specifications-and-lean-proof-envelope",
           "title": "Executable Specifications and Lean Proof Envelope",
           "technical_source_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-          "technical_source_sha256": "005eed50afd81d5b76e384c9d2bcae1505c6c396acc080ff9139a77a3b475d69",
+          "technical_source_sha256": "fe3fc3f87a10d6ced6b3a87bdb787bec729c2600f7863bc520aab9ae490787bc",
           "live_technical_path": "chapters/executable-specifications-and-lean-proof-envelope.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "executable-specifications-and-lean-proof-envelope.core",
@@ -5569,7 +5569,8 @@
             "moecot_manifest_project",
             "corbens_best_model_possible_project",
             "precision_contract",
-            "ext_reluplex_2017"
+            "ext_reluplex_2017",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/genesiscode.md",
@@ -5585,7 +5586,8 @@
             "sources/source_notes/moecot_manifest_project.md",
             "sources/source_notes/corbens_best_model_possible_project.md",
             "sources/source_notes/precision_contract.md",
-            "sources/source_notes/ext_reluplex_2017.md"
+            "sources/source_notes/ext_reluplex_2017.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -5678,7 +5680,7 @@
           "artifact_refs": [
             {
               "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-              "sha256": "005eed50afd81d5b76e384c9d2bcae1505c6c396acc080ff9139a77a3b475d69"
+              "sha256": "fe3fc3f87a10d6ced6b3a87bdb787bec729c2600f7863bc520aab9ae490787bc"
             },
             {
               "path": "lean/AsiStackProofs/ProofEnvelope.lean",
@@ -6765,7 +6767,7 @@
       "order": 18,
       "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
       "human_reader_source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
-      "human_reader_source_sha256": "ddd6750c4f430caeaeedc55a854314f2bb117b1dc503c45794af6087684efdd4",
+      "human_reader_source_sha256": "4797c40a5032fb13da789cc605f5062c71ccf487e22c17e5f782965f0e3e5665",
       "public_path": "reader/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.html",
       "central_question": "What must accompany a reusable skill or inter-agent transaction so that local validity does not become global permission or systemic safety?",
       "conclusion_change": "Simpler skill stores and agent protocols that preserve retirement, accountability, dispute, and systemic-risk detection at lower cost would justify consolidation.",
@@ -6997,7 +6999,7 @@
           "chapter_id": "procedural-memory-and-cognitive-loop-closure",
           "title": "Procedural Memory and Cognitive Loop Closure",
           "technical_source_file": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-          "technical_source_sha256": "9e3f8031cebce53e19f803341ec6739a5529e46785393f71d3aa1e92faf0e2d5",
+          "technical_source_sha256": "f02e407b80ea78a3b0636bbd9d63acbf4d0beff66805dde3053428e6fb5dad8c",
           "live_technical_path": "chapters/procedural-memory-and-cognitive-loop-closure.html",
           "human_reader_unit_id": "unit-18",
           "core_claim_id": "procedural-memory-and-cognitive-loop-closure.core",
@@ -7033,7 +7035,8 @@
             "ext_hermes_agent_2026",
             "ext_openclaw_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/cognitive_loop_closure.md",
@@ -7064,7 +7067,8 @@
             "sources/source_notes/ext_hermes_agent_2026.md",
             "sources/source_notes/ext_openclaw_agent_runtime_2026.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -7121,7 +7125,7 @@
           "artifact_refs": [
             {
               "path": "chapters/procedural-memory-and-cognitive-loop-closure.qmd",
-              "sha256": "9e3f8031cebce53e19f803341ec6739a5529e46785393f71d3aa1e92faf0e2d5"
+              "sha256": "f02e407b80ea78a3b0636bbd9d63acbf4d0beff66805dde3053428e6fb5dad8c"
             }
           ],
           "publication": {
@@ -8065,7 +8069,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "ad32312bc71992e4775df4440ee42707763f746775457f639e415addecbeb862",
+      "human_reader_source_sha256": "a4e37111c65e654c2283c9823f40d11ec6d3c89a763b6388a3fe264638efee46",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8076,7 +8080,7 @@
           "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
           "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
           "technical_source_file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-          "technical_source_sha256": "684761b4dc83482f98cc5a28567fccb1e9009c089180175fd1e500bb3f4c943d",
+          "technical_source_sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085",
           "live_technical_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
@@ -8092,7 +8096,8 @@
             "platonic_world_model",
             "viea",
             "talos",
-            "ext_bourtoule_machine_unlearning_2021"
+            "ext_bourtoule_machine_unlearning_2021",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/adjudicated_persistence.md",
@@ -8103,7 +8108,8 @@
             "sources/source_notes/platonic_world_model.md",
             "sources/source_notes/viea.md",
             "sources/source_notes/talos.md",
-            "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md"
+            "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -8172,7 +8178,7 @@
           "artifact_refs": [
             {
               "path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-              "sha256": "684761b4dc83482f98cc5a28567fccb1e9009c089180175fd1e500bb3f4c943d"
+              "sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085"
             }
           ],
           "publication": {
@@ -8190,7 +8196,7 @@
           "chapter_id": "learning-theory-generalization-and-scaling-science",
           "title": "Learning Theory, Generalization, and Scaling Science",
           "technical_source_file": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-          "technical_source_sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2",
+          "technical_source_sha256": "f2056a2a1c8ba5df23af84b337a04673a0a045774a9bf5d7b004e483accb08d5",
           "live_technical_path": "chapters/learning-theory-generalization-and-scaling-science.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "learning-theory-generalization-and-scaling-science.core",
@@ -8210,7 +8216,8 @@
             "ext_emergent_abilities_mirage_2023",
             "ext_no_free_lunch_inductive_bias_2024",
             "ext_eggroll_hyperscale_es_2026",
-            "ext_forward_forward_2022"
+            "ext_forward_forward_2022",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/simulation_scaling.md",
@@ -8225,7 +8232,8 @@
             "sources/source_notes/ext_emergent_abilities_mirage_2023.md",
             "sources/source_notes/ext_no_free_lunch_inductive_bias_2024.md",
             "sources/source_notes/ext_eggroll_hyperscale_es_2026.md",
-            "sources/source_notes/ext_forward_forward_2022.md"
+            "sources/source_notes/ext_forward_forward_2022.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -8260,7 +8268,7 @@
           "artifact_refs": [
             {
               "path": "chapters/learning-theory-generalization-and-scaling-science.qmd",
-              "sha256": "5e6ecdab7534d4f1e16349a13757c9cda47bda1f399a54783a676e0426dbc7b2"
+              "sha256": "f2056a2a1c8ba5df23af84b337a04673a0a045774a9bf5d7b004e483accb08d5"
             },
             {
               "path": "lean/AsiStackProofs/LearningTheoryForecastReview.lean",
@@ -8799,7 +8807,7 @@
       "order": 22,
       "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
       "human_reader_source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "human_reader_source_sha256": "b57387587ccae4011e3cf6458c3a85a352ded8295b5fcb25954528a58e2a7a3d",
+      "human_reader_source_sha256": "49b4c11dead9d2ffa0274de4b5e24b2b1f9440f1d677a0599b5e16247eedfcd9",
       "public_path": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html",
       "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
       "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
@@ -9012,7 +9020,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "f0c142408e33d677e13438f12c7256cb38d5a8631f52e20f71a3bd116ef1ccfa",
+          "technical_source_sha256": "a0425c58f07fe8033a94012995c8358d7d5ec7dcc8cdc59d65a08810dd77851a",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9067,7 +9075,8 @@
             "regret_engine",
             "ext_elizaos_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/benchmaxxing.md",
@@ -9117,7 +9126,8 @@
             "sources/source_notes/regret_engine.md",
             "sources/source_notes/ext_elizaos_agent_runtime_2026.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -9174,7 +9184,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "f0c142408e33d677e13438f12c7256cb38d5a8631f52e20f71a3bd116ef1ccfa"
+              "sha256": "a0425c58f07fe8033a94012995c8358d7d5ec7dcc8cdc59d65a08810dd77851a"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -9669,7 +9679,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "17e25e568f5582feccaeef8be7b0559fa3ee598926df2775cc837273d963f9fe",
+      "human_reader_source_sha256": "de0b3bc2f04adf10ccb47da94c726a1ab8f007f2885e973a6a1b690d7288bd0c",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
@@ -10345,7 +10355,7 @@
           "chapter_id": "rankfold-neuralfold-and-artifact-compression",
           "title": "RankFold, NeuralFold, and Artifact Compression",
           "technical_source_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-          "technical_source_sha256": "957225607952a9697f01651c4019692690a477dfc21a8b0efe8200b28c536d9c",
+          "technical_source_sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3",
           "live_technical_path": "chapters/rankfold-neuralfold-and-artifact-compression.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "rankfold-neuralfold-and-artifact-compression.core",
@@ -10359,7 +10369,8 @@
             "cgs",
             "bugbrain",
             "ext_raptor_2024",
-            "precision_contract"
+            "precision_contract",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/rankfold_neuralfold.md",
@@ -10368,7 +10379,8 @@
             "sources/source_notes/cgs.md",
             "sources/source_notes/bugbrain.md",
             "sources/source_notes/ext_raptor_2024.md",
-            "sources/source_notes/precision_contract.md"
+            "sources/source_notes/precision_contract.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -10428,7 +10440,7 @@
           "artifact_refs": [
             {
               "path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-              "sha256": "957225607952a9697f01651c4019692690a477dfc21a8b0efe8200b28c536d9c"
+              "sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3"
             }
           ],
           "publication": {
@@ -10446,7 +10458,7 @@
           "chapter_id": "resource-economics-and-token-budgets",
           "title": "Resource Economics and Token Budgets",
           "technical_source_file": "chapters/resource-economics-and-token-budgets.qmd",
-          "technical_source_sha256": "3ae991c59c041932410d2eb9a385806efb773d21e899d8a431af699090057c10",
+          "technical_source_sha256": "6ff1fc0b391e0174e57748c5f03037fca11e1a2c9d14a7c7cb00848ac74251f5",
           "live_technical_path": "chapters/resource-economics-and-token-budgets.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "resource-economics-and-token-budgets.core",
@@ -10501,7 +10513,8 @@
             "ext_azure_llm_semantic_cache_2026",
             "precision_contract",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -10551,7 +10564,8 @@
             "sources/source_notes/ext_azure_llm_semantic_cache_2026.md",
             "sources/source_notes/precision_contract.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -10768,7 +10782,7 @@
           "artifact_refs": [
             {
               "path": "chapters/resource-economics-and-token-budgets.qmd",
-              "sha256": "3ae991c59c041932410d2eb9a385806efb773d21e899d8a431af699090057c10"
+              "sha256": "6ff1fc0b391e0174e57748c5f03037fca11e1a2c9d14a7c7cb00848ac74251f5"
             },
             {
               "path": "scripts/validate_capacity_smoothing.py",
@@ -11189,7 +11203,7 @@
       "order": 25,
       "title": "Recursive Improvement, Replication, and Containment",
       "human_reader_source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "human_reader_source_sha256": "e674d46754b55db4dbf97ba0b183bb9a54c58dae66713567a784365f0b974fcc",
+      "human_reader_source_sha256": "069811da0c607c719c168b8cf75f4fda890535667965d7ea061cc72542905819",
       "public_path": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html",
       "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
       "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",
@@ -11200,7 +11214,7 @@
           "chapter_id": "recursive-self-improvement-boundaries",
           "title": "Recursive Self-Improvement Boundaries",
           "technical_source_file": "chapters/recursive-self-improvement-boundaries.qmd",
-          "technical_source_sha256": "bc7f2cdb02d0f5f3e37513f4975528d12cecafce1ac6da827aaa765de7c15378",
+          "technical_source_sha256": "e890b6068978cca8ea93606d568d368c3a09215278c6c080e450913d37b6a990",
           "live_technical_path": "chapters/recursive-self-improvement-boundaries.html",
           "human_reader_unit_id": "unit-25",
           "core_claim_id": "recursive-self-improvement-boundaries.core",
@@ -11226,7 +11240,8 @@
             "ext_darwin_godel_machine_2025",
             "ext_adas_2024",
             "ext_embedded_agency_2019",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "forward_transfer_program_synthesis"
           ],
           "source_note_refs": [
             "sources/source_notes/scf.md",
@@ -11247,7 +11262,8 @@
             "sources/source_notes/ext_darwin_godel_machine_2025.md",
             "sources/source_notes/ext_adas_2024.md",
             "sources/source_notes/ext_embedded_agency_2019.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/forward_transfer_program_synthesis.md"
           ],
           "proof_edges": [
             {
@@ -11322,7 +11338,7 @@
           "artifact_refs": [
             {
               "path": "chapters/recursive-self-improvement-boundaries.qmd",
-              "sha256": "bc7f2cdb02d0f5f3e37513f4975528d12cecafce1ac6da827aaa765de7c15378"
+              "sha256": "e890b6068978cca8ea93606d568d368c3a09215278c6c080e450913d37b6a990"
             }
           ],
           "publication": {
