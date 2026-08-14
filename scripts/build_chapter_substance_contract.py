@@ -587,7 +587,7 @@ SEMANTIC_REVIEWS: dict[str, dict[str, Any]] = {
         "support_state_effect": "none",
     },
     "scientific-discovery-and-experimental-governance": {
-        "reviewed_sha256": "6d4168626fc8691637df97f1f13e091dc09e312d2018e167f64d27ed74ad68da",
+        "reviewed_sha256": "10a415cf64b0cdcfc3c5fcf763aa0066fc4b1d59f899fb141b2d80778942b896",
         "reviewed_date": "2026-08-13",
         "reviewer_role": "codex_editorial_semantic_review",
         "disposition": SEMANTIC_REVIEW_DISPOSITION,
