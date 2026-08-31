@@ -51,6 +51,8 @@ POST_ACTIVATION_EXPANSION_IDS = {
     "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
     "relational-dimension-compilation-and-polyadic-cognition",
     "adjudicated-persistence-and-the-adaptive-commit-boundary",
+    "cognitive-method-transfer-and-qualification",
+    "reflexive-model-world-systems",
 }
 POST_ACTIVATION_FORMAL_TARGETS = {"lean:corrigibility.agency.generic_countermodel_routes"}
 POST_ACTIVATION_ATOM_IDS = {

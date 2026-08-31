@@ -1,19 +1,20 @@
 # Corben Papers and Architecture Sources
 
-This library publishes the original author manuscripts that directly preceded or informed *The ASI Stack*. It exists so a reader can inspect the source ideas rather than seeing only the book's later synthesis. The current tranche contains **53 exact, digest-bound manuscripts** with HTML reading pages.
+This library publishes original author manuscripts that preceded or informed *The ASI Stack* and compact authorial syntheses derived from the book. The current tranche contains **59 exact, digest-bound manuscripts** with HTML reading pages.
 
-The library is a provenance surface, not an evidence shortcut. A paper can be historically important and still be speculative, superseded, incomplete, or wrong. The living chapters, source notes, claim ledger, tests, and later evidence records control the book's current conclusions. The paper pages preserve what was proposed at the time.
+The library is a provenance and reading surface, not an evidence shortcut. A source paper can be historically important and still be speculative, superseded, incomplete, or wrong. A derived synthesis can make the architecture easier to read without becoming independent corroboration of its inputs. The living chapters, source notes, claim ledger, tests, and later evidence records control the book's current conclusions.
 
 ## How to read the library
 
 - **Original text stays identifiable.** Every page links an exact tracked source copy and reports its SHA-256 digest and byte count.
+- **Derived syntheses stay labeled.** A compact restatement of the book is separated from original source inputs and cannot increase support by repetition.
 - **Book interpretation stays separate.** A provenance panel links the source note and every current chapter assignment; no paper silently becomes current book prose.
 - **Historical negatives stay visible.** Deprecated or failed designs such as SpiderSynapse remain readable alongside their successors.
 - **Presentation changes are disclosed.** HTML pages may normalize line endings, move YAML metadata into the provenance panel, demote headings, or mark unavailable figures. They do not pretend missing assets were recovered.
 - **Credits remain authoritative.** Authorship and collaborator credits in each exact manuscript control; the library wrapper does not silently rewrite them.
 - **Rights remain explicit.** Publication makes the manuscripts readable but grants no new license. Corben Sorenson's rights are reserved, while collaborator and third-party rights remain with their holders.
 
-## Read the papers
+## Original papers and architecture sources
 
 | Paper or architecture source | Library class | Source ID | Manuscript date | Current chapter assignments | Exact-source digest |
 |---|---|---|---|---:|---|
@@ -70,6 +71,19 @@ The library is a provenance surface, not an evidence shortcut. A paper can be hi
 | [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](forward_transfer_program_synthesis.qmd) | research_paper | `forward_transfer_program_synthesis` | 2026-08-14 | 8 | `70c4e62eedad…` |
 | [Compiling Civilization: Cognitive Method Transfer and Qualification for Artificial Intelligence](compiling_civilization_cmtq.qmd) | research_paper | `compiling_civilization_cmtq` | 2026-08-14 | 1 | `425017e36f82…` |
 | [Reflexive Model-World Systems: When Representations Become Causes](reflexive_model_world_systems.qmd) | research_paper | `reflexive_model_world_systems` | 2026-08-14 | 1 | `6b30990f2d22…` |
+
+## Governed Intelligence: six-paper synthesis
+
+These six papers compress the book and fifty-three earlier Corben manuscripts into a cumulative research sequence. They are useful as a smaller reading surface and as an interface map. They are **derived synthesis**, not six independent confirmations of the architecture.
+
+| Synthesis paper | Library class | Source ID | Manuscript date | Mapped chapter owners | Exact-source digest |
+|---|---|---|---|---:|---|
+| [From Intent to Verified Effect: A Contract-Based Architecture for Agentic AI Systems](governed_intelligence_intent_to_effect.qmd) | derived_synthesis_paper | `governed_intelligence_intent_to_effect` | 2026-08-15 | 10 | `7ec90afc36aa…` |
+| [Semantic and Epistemic State for Long-Lived AI Agents: Identity, Context, Evidence, Belief Revision, and Semantic Migration](governed_intelligence_semantic_epistemic_state.qmd) | derived_synthesis_paper | `governed_intelligence_semantic_epistemic_state` | 2026-08-15 | 9 | `018f91a104fe…` |
+| [Causal Adaptation in AI Systems: Learning-Process Topology, Persistence Placement, and Verified Forward Transfer](governed_intelligence_causal_adaptation.qmd) | derived_synthesis_paper | `governed_intelligence_causal_adaptation` | 2026-08-15 | 8 | `af365f54aaf8…` |
+| [Governed Self-Improvement and Reflexive AI Systems: Versioned Replacement, Evidence Ancestry, and Control of Recursive Change](governed_intelligence_self_improvement.qmd) | derived_synthesis_paper | `governed_intelligence_self_improvement` | 2026-08-15 | 8 | `3abd3d72fedc…` |
+| [Contract-Aware Representation and Resource Optimization: Functional Rate-Distortion, Residual Accounting, and Adaptive Compute Allocation](governed_intelligence_representation_resources.qmd) | derived_synthesis_paper | `governed_intelligence_representation_resources` | 2026-08-15 | 8 | `10477fb0391c…` |
+| [Constitutional Governance for Advanced AI: Value Uncertainty, Meaningful Human Control, Contestability, and Moral Status](governed_intelligence_constitutional_governance.qmd) | derived_synthesis_paper | `governed_intelligence_constitutional_governance` | 2026-08-15 | 9 | `1a262676e404…` |
 
 ## Corpus boundary
 

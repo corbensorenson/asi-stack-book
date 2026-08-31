@@ -1,0 +1,954 @@
+---
+title: "From Intent to Verified Effect: A Contract-Based Architecture for Agentic AI Systems"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "2026-08-15"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Compact authorial synthesis derived from The ASI Stack and its source lineage."
+bibliography: ../papers/references/governed_intelligence.bib
+link-citations: true
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Derived synthesis, not independent evidence"}
+This manuscript is a compact authorial synthesis derived from the living book and its earlier source lineage. It is published as a readable research surface, not counted as independent corroboration of the book, and cannot promote a claim by repeating material already present in its inputs.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `governed_intelligence_intent_to_effect` |
+| Source class | `authorial_derived_synthesis` |
+| Library class | `derived_synthesis_paper` |
+| Manuscript date | 2026-08-15 |
+| Inventory updated | 2026-08-30 |
+| Exact published-source SHA-256 | `7ec90afc36aa2ace7f0115da71309e1811dfe09a2b30d47535a8efe24a63b1bb` |
+| Exact published-source bytes | 55,195 |
+| Exact source text | [Download/view the tracked Markdown source](source/governed_intelligence_intent_to_effect.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/governed_intelligence_intent_to_effect.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Paper 1 of the Governed Intelligence derived synthesis. It compresses existing book and author-source material into an intent-to-effect lifecycle; it is not independent corroboration and creates no implementation, benchmark, support-state, readiness, release, SOTA, AGI, or ASI result.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The manuscript YAML front matter is represented by the provenance panel rather than repeated in the body. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this synthesis maps onto the living book
+
+[System Boundaries and Authority](../chapters/system-boundaries-and-authority.html), [Human Intent as a Formal Input](../chapters/human-intent-as-a-formal-input.html), [Command Contracts: From Intent to Executable Work](../chapters/intent-to-execution-contracts.html), [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.html), [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.html), [Cognitive Method Transfer and Qualification](../chapters/cognitive-method-transfer-and-qualification.html), [Labor OS and Typed Jobs](../chapters/labor-os-and-typed-jobs.html), [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.html), [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.html), [Integrated Reference Architecture](../chapters/integrated-reference-architecture.html)
+
+<hr>
+
+## Original manuscript
+
+## Introduction: From Model Output to Real Effect
+
+A language model can produce a convincing answer without changing anything outside its context window. An agentic system is different. It may inspect a repository, purchase a service, schedule a meeting, sign a transaction, change a database, deploy software, operate a laboratory instrument, or direct other agents. Once a system can create persistent effects, the quality of its final prose is no longer the primary unit of control. The relevant object is a chain of commitments extending from a person’s purpose to a changed world.
+
+Consider a routine request:
+
+> Upgrade the authentication dependency, open a pull request, and merge it if the tests pass.
+
+A competent coding model can propose a patch. Yet the sentence leaves consequential questions unanswered. Which repository and branch are in scope? Is the system authorized to open a draft pull request or to merge into a protected branch? Which test suites count? May it modify application code, regenerate lockfiles, rotate credentials, contact package registries, or change a transitive database driver? What happens if the remote service creates the pull request but the client times out? What evidence justifies declaring the patch ready? What state can be restored if a later step fails, and which effects require compensation rather than rollback?
+
+Most agent frameworks expose useful mechanisms for parts of this problem. ReAct interleaves reasoning and action [@yao2023react]. Toolformer studies learned tool use [@schick2023toolformer]. AutoGen provides a flexible multi-agent orchestration substrate [@wu2023autogen]. Requirements engineering formalizes stakeholder goals, obstacles, assumptions, and operational requirements [@vanlamsweerde2001goals]. Contract Net established a classic model of distributed task allocation [@smith1980contractnet]. Capability security and least privilege constrain delegated power [@saltzer1975protection]. Proof-Carrying Code and software-supply-chain systems bind artifacts to machine-checkable policies and provenance [@necula1997pcc; @torresarias2019intoto]. Recent work on intelligent delegation explicitly includes authority, responsibility, accountability, role boundaries, intent, and trust [@tomasev2026delegation], while proof-of-execution systems bind an execution contract to a causal event stream and replay context [@rhodes2026proofexecution].
+
+The missing object is the **complete intent-to-effect lifecycle**. A system may contain excellent components and still fail at their interfaces. A plan can preserve the wrong interpretation of the request. A router can select a capable worker that lacks permission. An authorization service can approve an operation whose target changed after approval. A tool can report success before the remote state converges. A verifier can prove a local property that does not justify release. A rollback can restore files while leaving a public artifact, exposed secret, or downstream action in place.
+
+This paper develops one governing principle:
+
+> **A state at one layer does not automatically confer status at the next.**
+
+A request is not a task contract. A task contract is not a plan. A plan is not an authorization. A capability is not permission. An attempted action is not an effect. A tool acknowledgement is not independent observation. A verification result is not a readiness decision. A restored checkpoint is not complete recovery.
+
+The principle is called **noninheritance** because it forbids convenient but invalid implications across interfaces. It does not demand a separate network service for every distinction. A small system can implement several roles in one process, provided their records, authority, and failure states remain distinguishable. The objective is not procedural maximalism. It is to make consequential transitions explicit enough to test, challenge, and reverse.
+
+The paper makes four contributions.
+
+First, it defines a typed lifecycle from request to terminal effect disposition. Second, it presents a compiler path from natural-language objectives and inherited human methods to executable obligations. Third, it treats delegation as a coupled transfer of work, authority, responsibility, and accountability rather than a routing score. Fourth, it extends runtime execution through independent observation, reconciliation, readiness, recovery, and compensation.
+
+The proposal is deliberately falsifiable. It should contract when a simpler architecture with a sandbox, tests, logs, and human review achieves equivalent useful completion, effect control, and recovery at lower total cost.
+
+## Scope, Assumptions, and Terminology
+
+The architecture concerns **effect-bearing agentic systems**: systems whose outputs can influence persistent digital, physical, organizational, or informational state. It does not assume artificial general intelligence, consciousness, or autonomous strategic intent. The same lifecycle applies to a narrow deployment agent and to a more capable multi-agent system; only the strength of the required controls changes.
+
+The principal terms are conventional.
+
+**Principal.** The person or institution whose authority grounds the task. A principal may delegate only authority it possesses under the relevant policy.
+
+**Affected party.** A person, group, organization, or system that can bear material consequences from the task. Affected parties need not be principals and may have rights that limit the principal’s authority.
+
+**Request.** The initial expression of desired work. It may be incomplete, ambiguous, contradictory, or unauthorized.
+
+**Task contract.** A versioned representation of purpose, scope, constraints, non-goals, acceptance conditions, evidence requirements, authority limits, budget, deadline, affected parties, and recovery expectations. It is a requirements artifact, not proof that the requester’s interpretation is correct.
+
+**Obligation.** A condition that must be established, performed, preserved, or explicitly discharged. Obligations include functional requirements, safety constraints, evidence duties, approvals, and recovery steps.
+
+**Plan.** A proposed dependency structure over obligations, actions, checkpoints, and stop conditions. A plan describes intended work; it does not authorize execution.
+
+**Capability.** A versioned interface through which some implementation can attempt a class of transformations. Capability evidence is consumer-relative: a worker can be adequate for one task and unsuitable for another.
+
+**Work authorization.** A bounded grant to perform specified operations against specified targets under declared conditions. It should be narrower than the principal’s ambient authority.
+
+**Action attempt.** A concrete invocation directed at a target.
+
+**Effect.** A change in persistent state attributable to an action attempt. The intended and actual effects may differ.
+
+**Observation.** Evidence about the state that matters after an action. Observation can be independent to varying degrees; a second process on the same host is less independent than a separately administered external measurement.
+
+**Verification finding.** A claim-specific result produced by an instrument under a declared scope. A test suite, proof checker, static analyzer, reviewer, and remote-state observer establish different properties.
+
+**Readiness decision.** A policy decision about whether a specific consumer may rely on specified evidence for a specified next step.
+
+**Rollback.** Restoration of captured internal state.
+
+**Compensation.** A new effect intended to mitigate or reverse consequences that cannot be erased by state restoration.
+
+**Residual.** An unresolved obligation, effect, uncertainty, loss, or recovery gap with an owner and terminal condition.
+
+The architecture assumes that at least some enforcement mechanisms remain outside the unilateral control of the acting component. It does not assume that the trusted core is invulnerable, that semantic requirements can be perfectly formalized, or that every external effect is observable. Claims are always bounded by the declared system boundary and threat model.
+
+## Related Work and Novelty Boundary
+
+This paper is a synthesis across several mature traditions. Its contribution depends on locating the joins precisely rather than renaming existing ideas.
+
+### Requirements and planning
+
+Goal-oriented requirements engineering begins from stakeholder goals, obstacles, and operational refinements rather than treating a natural-language request as a complete specification [@vanlamsweerde2001goals]. Classical and modern planning systems represent actions through preconditions and effects. Workflow engines and build systems encode dependencies, retries, and scheduling. The present architecture inherits these ideas, but adds an explicit separation between semantic acceptance of the task, plan construction, work authorization, effect observation, and readiness.
+
+### Agents and tool use
+
+ReAct, Toolformer, and multi-agent frameworks show how language models can interleave reasoning, tool calls, and coordination [@yao2023react; @schick2023toolformer; @wu2023autogen]. Their central concern is usually successful task completion. This paper treats those systems as candidate planners and executors inside a larger control path. It does not assume that a model’s proposed action, tool call, or self-report carries authority or establishes the effect.
+
+### Delegation and authorization
+
+Contract Net frames distributed work as negotiated task allocation [@smith1980contractnet]. Intelligent AI Delegation broadens delegation to include authority, responsibility, accountability, roles, intent, and trust [@tomasev2026delegation]. Overlaying Governance proposes compositional authorization and scope attenuation for recursive delegation [@ibrahim2026overlaying], while Safe Bilevel Delegation studies runtime trade-offs between autonomy and safety [@sun2026sbd]. The present paper adds a typed handoff from task obligation to work order, effect identity, returned evidence, and terminal accountability. Delegation is incomplete until the delegator can reconcile what actually happened.
+
+### Capability security and mediated effects
+
+Capability systems distinguish possession of an unforgeable reference from ambient authority. Least privilege, economy of mechanism, and complete mediation remain fundamental [@saltzer1975protection]. The confused-deputy problem demonstrates how a component can misuse another principal’s authority when purpose and delegation are not bound [@hardt1988confused]. OAuth offers a widely used authorization framework [@rfc6749], but token possession alone does not express every agentic obligation: task purpose, model identity, consequence ceiling, evidence duty, or descendant delegation. This paper uses capability references and short-lived grants as implementation mechanisms inside a richer task contract.
+
+### Proof, provenance, and runtime verification
+
+Proof-Carrying Code separates an untrusted producer from a consumer that checks an artifact against a policy [@necula1997pcc]. in-toto records supply-chain steps and artifact identities [@torresarias2019intoto]. PROV-O supplies a general provenance vocabulary [@w3c2013provo]. Proof of Execution binds authorization, effect, event history, and replay into a runtime-checkable object [@rhodes2026proofexecution]. The present proposal extends this logic to the complete agent lifecycle and keeps formal proof, observed state, policy authorization, and readiness distinct.
+
+### Precise contribution
+
+The paper does not claim to invent contracts, planning, delegation, capabilities, provenance, or runtime verification. It contributes a **single typed architecture that prevents status from being silently inherited across those mechanisms**. The research question is not whether every stage is useful in isolation. It is whether the joined lifecycle improves effect-bearing work after its full cost and false-block rate are counted.
+
+## Formal Lifecycle and Object Model
+
+Let one governed task instance be represented by
+
+\[
+\mathcal{J} = (P, T, G, R, W, X, O, V, D),
+\]
+
+where:
+
+- \(P\) is the principal and affected-party record;
+- \(T\) is the accepted task contract;
+- \(G\) is the obligation and plan graph;
+- \(R\) is the capability and route selection;
+- \(W\) is the set of work authorizations;
+- \(X\) is the action/effect event history;
+- \(O\) is the observation set;
+- \(V\) is the verification finding set;
+- \(D\) is the readiness and terminal disposition.
+
+Each object has stable identity and immutable versions. The current state is a projection over append-only events rather than a mutable narrative that silently overwrites earlier attempts.
+
+### Eleven governed objects
+
+The lifecycle separates:
+
+1. request;
+2. task contract;
+3. plan;
+4. capability selection;
+5. work authorization;
+6. action attempt;
+7. effect;
+8. observation;
+9. verification finding;
+10. readiness decision;
+11. recovery or residual disposition.
+
+The objects can be connected by allowed transition records. For example:
+
+\[
+\text{Request} \xrightarrow{\text{interpret}} \text{TaskContract}
+\]
+
+\[
+\text{TaskContract} \xrightarrow{\text{plan}} \text{Plan}
+\]
+
+\[
+\text{PlanNode} + \text{CapabilityEvidence} + \text{Policy}
+\xrightarrow{\text{authorize}}
+\text{WorkAuthorization}
+\]
+
+\[
+\text{ActionAttempt} + \text{Observation}
+\xrightarrow{\text{reconcile}}
+\text{EffectDisposition}.
+\]
+
+No inverse implication is automatic. A plan does not prove that its task contract is semantically adequate. An authorization does not prove that the capability is competent. A successful action return does not prove that the effect occurred. A verification finding does not by itself open a release route.
+
+### The noninheritance matrix
+
+| Producer object | What the consumer may rely on | Prohibited inference |
+|---|---|---|
+| Request | Literal payload and authenticated source | Complete intent or authority |
+| Task contract | Accepted interpretation, scope, constraints, non-goals | Plan correctness or execution permission |
+| Plan | Declared obligations and dependencies | Capability, authorization, or outcome |
+| Capability record | Evidence about a transformation under an envelope | Task-local permission |
+| Work authorization | Permitted operation, target, limits, and expiry | Competence or success |
+| Action receipt | What the executor reports attempting | Actual external state |
+| Observation | Measured state under an instrument | Total consequence or causal explanation |
+| Verification finding | Named property under a scope | General correctness or release readiness |
+| Readiness decision | Permission for one next use | Timeless trust or broader authority |
+| Rollback receipt | Restored captured state | Erasure of external or descendant effects |
+
+This matrix is the architecture’s semantic kernel. Implementations may combine objects physically, but every assertion about a transition should identify which row it uses.
+
+### Material change
+
+A task object is valid only under a declared dependency set. Material changes include changes to the principal, task interpretation, target, implementation, dependency, evaluator, environment, authority, policy, external state, or threat model that could alter the consumer’s decision. Material change invalidates or narrows dependent records; it does not delete their historical validity.
+
+## Requirements and Intent Compilation
+
+Natural language is a powerful coordination medium because it tolerates ambiguity. Execution cannot safely inherit that ambiguity without representing it.
+
+A task contract can be modeled as
+
+\[
+T = (p, o, s, c, n, a, e, b, h, q),
+\]
+
+where \(p\) is purpose, \(o\) objective, \(s\) scope, \(c\) constraints, \(n\) non-goals, \(a\) authority, \(e\) evidence and acceptance requirements, \(b\) budget, \(h\) horizon, and \(q\) unresolved questions.
+
+### Interpretation without silent hardening
+
+A system may infer structure from a request, but inferred structure must not expand authority. The compiler produces two compact human-facing artifacts:
+
+- a **task interpretation summary**, stating what the system believes the requester intends;
+- a **material assumptions record**, exposing inferred targets, audiences, definitions, evidence standards, authority, deadlines, and risk-relevant defaults.
+
+Low-consequence, reversible work can proceed under coarse contracts. High-consequence or ambiguous work may require confirmation, clarification, or a narrowed analysis-only route. The aim is not to ask a human to approve every field. It is to expose the assumptions whose error would materially change the result.
+
+### Requirements as obligations
+
+The compiler converts accepted clauses into typed obligations:
+
+- state obligations: a condition must hold;
+- action obligations: an operation must be attempted;
+- evidence obligations: specified support must be produced;
+- preservation obligations: an invariant must remain true;
+- authority obligations: a qualified approval or grant must exist;
+- recovery obligations: a checkpoint, compensation, or terminal residual must be available.
+
+Every obligation carries source, scope, priority, verifier, owner, and failure behavior. Ambiguous clauses remain explicit debt rather than disappearing during normalization.
+
+### Non-goals and forbidden outcomes
+
+Positive requirements are not enough. A patch may “upgrade the dependency” by replacing the authentication system; a summarizer may “make the report concise” by removing its limitation; a planner may “meet the deadline” by skipping review. Non-goals and forbidden outcomes constrain the search space and later repair. They should be first-class inputs to planning and verification, not prose left at the top of a prompt.
+
+### Risk-scaled interaction
+
+Human confirmation is a finite resource. A sensible policy scales interaction with consequence, ambiguity, reversibility, and uncertainty. The system can distinguish:
+
+- direct execution of well-typed, low-risk, reversible work;
+- execution after a concise assumption review;
+- analysis and proposal without effect authority;
+- required specialist or institutional approval;
+- refusal when the task cannot be made lawful, safe, or sufficiently specified.
+
+The correct measure is not how many confirmations occur, but how often interaction changes a consequential interpretation or prevents an invalid effect.
+
+## Cognitive Method Transfer and Semantic Compilation
+
+Some tasks require more than transforming a request into a plan. They invoke a human-developed method: scientific experimentation, causal analysis, incident command, legal interpretation, design review, red teaming, or statistical inference. A language model may be able to describe such a method without reliably recognizing when it applies, executing its steps, or preserving its epistemic limits.
+
+The architecture therefore treats method use as a transport-and-qualification problem.
+
+### Method records
+
+A **cognitive method record** preserves:
+
+- source practice and provenance;
+- intended problem class;
+- proposed mechanism;
+- assumptions and contraindications;
+- roles and required independence;
+- evidence and disputed claims;
+- costs, risks, and normative content;
+- negative results and known misuse.
+
+The record is descriptive. It does not authorize deployment or establish that the method transfers to an artificial system.
+
+### Qualified protocols
+
+A candidate method is compiled into a **qualified protocol** containing applicability predicates, typed inputs and outputs, control flow, evidence obligations, forbidden transitions, verifier bindings, budgets, permissions, failure behavior, provenance, and a scope-indexed qualification package.
+
+Three axes remain independent:
+
+1. **Efficacy:** does the method improve the intended outcome in the target setting?
+2. **Conformance:** was the method actually executed as specified?
+3. **Authority:** was the system permitted to execute it and use its result for the intended consequence?
+
+A method can be effective but unauthorized, faithfully executed but ineffective, or useful in one domain but dangerous in another. No axis grants either of the others.
+
+### Semantic intermediate representation
+
+Once a method or task is accepted, the compiler represents obligations in a target-independent semantic intermediate representation. Each node has stable identity, typed inputs and outputs, constraints, dependencies, provenance, authority requirements, validators, and repair policy. Target-specific lowering then produces code, documents, workflows, queries, or other artifacts.
+
+The compiler must preserve a trace from source clause to semantic node to target artifact. This trace does not prove semantic equivalence. It makes omissions, transformations, and localized repair inspectable.
+
+### Reverse lifting
+
+Existing artifacts can be lifted into candidate semantic claims and obligations. Deterministic parsers recover syntax, interfaces, and explicit dependencies; statistical models may infer intent or semantics with lower confidence. Lifted facts, claims, and guesses remain distinct. Reverse compilation recovers evidence about what an artifact does, not privileged access to the original author’s intent.
+
+## Planning and Task Decomposition
+
+Planning refines the accepted task contract into a dependency-aware graph. It is a control layer, not an authorization layer.
+
+Let a plan be a directed graph \(G=(N,E)\), where each node is an obligation-bearing unit and each edge represents a declared dependency. Nodes include:
+
+- preconditions;
+- required inputs and context;
+- candidate actions;
+- expected artifacts;
+- verification steps;
+- checkpoints;
+- human decisions;
+- recovery and compensation duties;
+- stop or escalation conditions.
+
+### Decomposition
+
+A planner recursively refines nonprimitive obligations until each leaf maps to a known operation, a qualified human role, a request for clarification, an experiment, a residual, or a justified no-plan decision. Decomposition is bounded by depth, time, compute, and meaningful-progress criteria. Repetition without new evidence is not progress.
+
+The planner preserves alternative decompositions when they differ materially in cost, authority, reversibility, or risk. It does not commit to one narrative before dependencies and capabilities are checked.
+
+### Dependency types
+
+Useful plans distinguish:
+
+- data dependencies;
+- temporal dependencies;
+- authority dependencies;
+- evidence dependencies;
+- resource dependencies;
+- state-version dependencies;
+- rights and policy dependencies;
+- recovery dependencies.
+
+A graph can be acyclic and still be wrong. Missing edges, false independence, shared mutable state, and hidden external dependencies remain central risks.
+
+### Critical path and slack
+
+Critical-path analysis helps allocate scarce resources, but duration estimates are uncertain and incomplete. Queueing, retries, verification, merge conflicts, human review, and recovery can change the critical path. The planner should treat criticality as a forecast with uncertainty, not as proof that expensive capability belongs on a node.
+
+### Replanning
+
+A replan creates a new graph version. It states which assumptions failed, which completed work remains valid, which pending work becomes stale, and which effects already occurred. Replanning must not rewrite failed attempts out of the denominator or quietly broaden authority to reach the original objective.
+
+## Capability Discovery, Routing, and Delegation
+
+A route assigns a plan obligation to an implementation. The routing problem is constrained optimization over candidates that are already eligible; it is not a free search for the cheapest model.
+
+For obligation \(n\), candidate \(k\), and context \(z\), a route offer may be represented by
+
+\[
+\rho_{n,k,z} = (C, Q, U, L, R, V, F),
+\]
+
+where \(C\) is cost, \(Q\) expected quality, \(U\) uncertainty, \(L\) latency, \(R\) risk and authority profile, \(V\) verifier availability, and \(F\) fallback and recovery.
+
+### Capability records
+
+A capability record specifies:
+
+- supported and excluded task families;
+- input and output contracts;
+- state and environment assumptions;
+- tools and data access;
+- effect and authority ceilings;
+- failure semantics and abstention;
+- latency and resource profiles;
+- verifier requirements;
+- qualification evidence and expiry;
+- fallback, migration, and retirement.
+
+A human-readable label such as “coding agent” or “research agent” is not a sufficient route description.
+
+### Qualification before optimization
+
+The router first filters candidates against identity, scope, authority, rights, freshness, state, verifier, and consequence constraints. It then optimizes among the eligible set. A learned router can propose candidates and estimate uncertainty, but it cannot invent permissions, waive required evidence, or promote itself after a successful route.
+
+The architecture supports several route shapes:
+
+- single worker;
+- sequential pipeline;
+- parallel proposals;
+- producer–verifier pair;
+- bounded debate or review;
+- deterministic tool or compiled workflow;
+- human–AI collaboration;
+- abstention or escalation.
+
+Each shape has different dependency, correlation, latency, and authority semantics.
+
+### Delegation records
+
+Delegation is represented as more than a subtask description. A delegation record names:
+
+- delegator and delegatee;
+- obligation and success condition;
+- scope and non-goals;
+- transferred and withheld authority;
+- information and resources supplied;
+- evidence to return;
+- responsibility for execution;
+- accountability for review and consequence;
+- deadline, expiry, revocation, fallback, and appeal.
+
+Authority attenuates across delegation unless a higher-authority process explicitly expands it. A child cannot infer the principal’s full permissions from the fact that it received a task.
+
+### The coordinator bottleneck
+
+A modular system can fail because its coordinator becomes an unacknowledged monolith. The coordinator should allocate, compose, and escalate, not silently perform every specialist task while claiming to route. Its own capability and authority should be declared and evaluated. Composition is an evidence-bearing operation: it can preserve, distort, suppress, or invent claims made by its delegates.
+
+## Work Authorization and Isolated Execution
+
+Selection answers who or what appears able to perform the work. Authorization answers what the selected worker may actually do.
+
+A work authorization should bind at least:
+
+\[
+W = (i, p, n, o, t, s, b, e, v, f),
+\]
+
+where \(i\) is authorization identity, \(p\) the principal and delegation chain, \(n\) the obligation, \(o\) allowed operations, \(t\) targets, \(s\) scope and purpose, \(b\) resource and consequence budgets, \(e\) expiry and revocation conditions, \(v\) verification requirements, and \(f\) fallback or recovery.
+
+### Least privilege as task-local attenuation
+
+The worker receives only the files, data, tools, credentials, network routes, and effect rights needed for the assigned obligation. This is not merely a static role. The grant is task-local, purpose-bound, time-bounded, and revocable.
+
+For example, the dependency-analysis worker may read the repository and package registry but not write files. The patch worker may modify an isolated checkout but not open a pull request. The test worker may execute declared commands under resource limits. The pull-request worker may create a draft only after the readiness gate accepts the required evidence.
+
+This structure prevents ambient authority from becoming the hidden substrate of autonomy.
+
+### Scoped capability references
+
+Sensitive credentials should remain outside the model-visible context where possible. The worker may receive a scoped capability reference that permits a named operation without revealing the underlying secret. The mediation point checks caller, task, target, parameters, destination, purpose, rate, expiry, nonce, and current revocation before every use.
+
+Withholding literal secret bytes reduces one exposure path. It does not prevent harmful authorized use, inference from outputs, confused-deputy attacks, replay, side channels, or downstream disclosure. Returned signatures, transaction IDs, decrypted results, error differences, and timing behavior can themselves be sensitive derivatives.
+
+### Isolation grades
+
+“Sandboxed” should not be a binary claim. The execution record names the actual boundary:
+
+- process isolation;
+- container or virtual machine;
+- read-only or disposable filesystem;
+- network denylist or allowlist;
+- separate cloud account or project;
+- hardware-backed protected execution;
+- remote signing or service-side effect mediation;
+- human-supervised environment.
+
+Each grade has a threat model, trusted computing base, known side channels, and recovery properties. A container does not prove credential safety; a trusted execution environment does not establish semantic correctness; a local process does not become harmless because its output is logged.
+
+### Authorization revalidation
+
+Approvals can become stale between planning and effect. The system revalidates authorization immediately before an effect-bearing operation. This closes races involving revoked credentials, changed branch protection, altered policy, modified destination, or expired human approval.
+
+Revocation and an attempted effect require a declared ordering policy. In high-consequence settings, prospective revocation should take precedence unless an already committed transaction has entered a safer compensating path.
+
+### Effect-free preparation
+
+Where possible, work is divided into prepare and commit phases. Preparation can build an artifact, validate parameters, calculate a diff, or simulate an operation without creating the external effect. Commit requires a fresh authorization and an exact prepared-object identity. This reduces the authority and time window of the effect-bearing step.
+
+## Effect Commit and Independent Observation
+
+Many agent systems terminate their account when a tool returns `success`. That is an interface acknowledgement, not necessarily a fact about the world.
+
+A remote request may time out after succeeding. A deployment API may report acceptance before convergence. A database client may return after writing to a replica that later loses leadership. A pull-request creation call may succeed while the client retries and creates a duplicate. A laboratory instrument may acknowledge a command while a safety interlock prevents the physical action.
+
+The architecture therefore treats effect custody as a distinct transaction.
+
+### Effect identity
+
+An effect record includes:
+
+- intended change;
+- principal and authorization;
+- target and precondition;
+- idempotency identity;
+- prepared artifact or request digest;
+- attempt time and logical order;
+- executor report;
+- expected observation;
+- actual observation;
+- acknowledgement state;
+- compensation or rollback path;
+- unresolved residuals.
+
+Content identity and semantic identity can differ. Two byte-different requests may represent one idempotent effect; two byte-identical requests may target different state versions.
+
+### State machine
+
+A useful effect state machine is:
+
+```text
+proposed
+→ authorized
+→ prepared
+→ commit_attempted
+→ acknowledged | denied | ambiguous | failed
+→ observed
+→ reconciled
+→ accepted | compensated | residualized
+```
+
+`Acknowledged` and `observed` are separate. An acknowledgement establishes what the target or intermediary reported. Observation establishes a measurement under a named instrument. Reconciliation compares the intended, reported, and observed states.
+
+### Independent observation
+
+Independence is a vector, not a Boolean. Observers may differ across:
+
+- process;
+- host;
+- account;
+- provider;
+- implementation;
+- data source;
+- administrative owner;
+- incentive;
+- time.
+
+Reading the resulting Git branch through a separate process is more independent than trusting the write call. Querying an externally administered service may be more independent still. Perfect independence is often impossible; shared dependencies remain explicit.
+
+### Ambiguous effects and retries
+
+When an effect may have occurred but is not yet observable, the correct state is ambiguous. Retrying without reconciliation can duplicate the effect. Failing the task as though nothing happened can strand a live external object.
+
+The system should first use the idempotency identity, target history, remote query, or another observation route to resolve the state. If resolution remains impossible, the task ends with an owned residual and restricted further action.
+
+### Exactly-once claims
+
+Exactly-once external effects are ordinarily constructed, not assumed. They require some combination of idempotency keys, transactional outboxes, deduplication, compare-and-swap preconditions, target-side uniqueness, durable attempt identity, and reconciliation. Even then, the claim applies to a defined effect boundary. It does not imply that downstream consumers acted exactly once.
+
+### Causal consequence
+
+Observation of the target state does not establish every downstream consequence. A published package can be mirrored. A message can be read. A secret can be copied. Effect completeness is therefore bounded to the known consequence graph. Unknown external consequences remain a stated limit rather than being treated as absent.
+
+## Verification, Readiness, Recovery, and Compensation
+
+A green result can answer several different questions. The architecture keeps them separate.
+
+### Claim-specific verification
+
+A verifier is qualified for a named predicate, population, environment, and failure model. Examples include:
+
+- schema validation;
+- unit and integration tests;
+- static analysis;
+- proof checking;
+- source-evidence review;
+- semantic diff review;
+- security scanning;
+- remote-state observation;
+- human approval.
+
+A unit test establishes behavior on the tested cases. A proof establishes a formal statement under assumptions. A source review establishes a bounded interpretation. A human approval establishes a decision by a person with some competence and authority. None is a general “verified” state.
+
+Proof-Carrying Code offers a useful producer–consumer pattern: an untrusted producer supplies an artifact and evidence, and a smaller consumer checks a policy [@necula1997pcc]. Agentic systems need the same discipline across heterogeneous evidence classes.
+
+### Readiness as a policy decision
+
+Readiness consumes obligations, findings, residuals, affected parties, authority, and consequence. It may approve a narrow next step while blocking a broader one.
+
+For the dependency case, the patch may be ready for a draft pull request but not for merge or deployment. One compatibility uncertainty may require an owner. A low-severity lint failure may be accepted under policy; a missing security test may be a hard blocker.
+
+The readiness decision states:
+
+- exact candidate and state;
+- consumer and proposed use;
+- satisfied and unsatisfied obligations;
+- evidence and evaluator identities;
+- residuals and owners;
+- authority opened;
+- monitoring and stop conditions;
+- expiry and material-change triggers.
+
+A score can inform readiness but should not choose it by itself when hard constraints or incomparable obligations exist.
+
+### Rollback inventory
+
+Rollback begins with an inventory of mutable state:
+
+- source and generated files;
+- model or policy state;
+- optimizer and scheduler state;
+- caches and indexes;
+- external records;
+- credentials and leases;
+- queued jobs;
+- publications and notifications;
+- descendants that consumed the candidate.
+
+Restoring one checkpoint is complete only with respect to the captured set. A weights-only rollback can leave optimizer state and caches inconsistent. A repository reset can leave a pull request open. Reinstalling an old binary can leave data migrated to a new schema.
+
+### Compensation
+
+Some effects cannot be undone. A disclosed secret cannot be made unknown. A sent message cannot be unread. A physical resource cannot be unconsumed. A harmful decision may require notice, correction, financial remedy, service restoration, or institutional review.
+
+Compensation is a new authorized action. It should not be described as rollback merely because it aims to reduce harm.
+
+### Residual custody
+
+A task can end usefully without pretending every issue is closed. Residuals record unresolved compatibility, unknown external effects, incomplete deletion, uncertain attribution, unverified assumptions, or unowned consequences. Each residual has severity, owner, due condition, allowed operations, review trigger, and terminal disposition.
+
+The architecture treats a clean terminal state as one in which every obligation is satisfied, explicitly waived by authorized policy, or residualized with custody—not one in which the final tool call returned green.
+
+## Reference Architecture and Minimal Trusted Core
+
+The complete architecture can be implemented as fourteen logical boundaries:
+
+1. principal and affected-party identification;
+2. task interpretation and requirements contract;
+3. context assembly;
+4. method admission and semantic compilation;
+5. planning;
+6. capability qualification and routing;
+7. work authorization;
+8. isolated execution;
+9. effect commit;
+10. independent observation;
+11. verification;
+12. readiness;
+13. recovery and residual custody;
+14. outcome handoff to learning and governance.
+
+These are logical roles, not mandatory microservices. A small deployment can combine several in one process if the combined component cannot silently rewrite the records that authorize or judge its own effects.
+
+### Minimal trusted core
+
+Most intelligent components can remain replaceable if a smaller core preserves the mechanics of controlled transition. The core should provide:
+
+- principal, artifact, authorization, effect, and version identity;
+- signature or trust-policy verification;
+- authority ceilings and delegation attenuation;
+- lease expiry and revocation;
+- protected writes;
+- isolation and effect mediation hooks;
+- append-only event custody;
+- transition checks for required fields and references;
+- protected recovery routes.
+
+The core does not decide whether the user’s goal is morally legitimate, whether a source is true, whether a planner is competent, or whether residual risk is acceptable. Those are evidence- and institution-dependent judgments.
+
+### Control plane and proposal plane
+
+Intelligent components propose:
+
+- task interpretations;
+- plans;
+- routes;
+- artifacts;
+- verifications;
+- repairs;
+- policy changes.
+
+The control plane checks declared identities, authority, lifecycle state, required evidence, and transition rules. It can refuse or narrow a proposal; it cannot make hard semantic problems disappear through schema validation.
+
+### Fast and slow paths
+
+Routine, reversible work can use compiled policy and prequalified capabilities. Novel, ambiguous, or high-consequence work receives richer planning and review. The architecture should make the reason for escalation visible rather than applying maximum ceremony to every task.
+
+A fast path is qualified for a task class, environment, implementation, evaluator, authority envelope, and time period. It expires or degrades when those conditions change.
+
+## Threat Model and Failure Taxonomy
+
+The system faces ordinary software faults, model errors, strategic behavior, institutional failure, and correlated dependence.
+
+### Interpretation and context failures
+
+- prompt injection or retrieved instructions treated as principal authority;
+- ambiguous request hardened into a broad task;
+- stale or incomplete context;
+- hidden affected parties;
+- source summarization that removes constraints;
+- conflicting policy resolved by proximity rather than authority.
+
+### Planning and routing failures
+
+- missing dependency;
+- false parallelism over shared mutable state;
+- route selected by cost before qualification;
+- specialist label mistaken for competence;
+- coordinator silently performing untracked work;
+- retries or speculation duplicating effects;
+- verifier capacity omitted from the schedule.
+
+### Authorization failures
+
+- confused deputy;
+- bearer token reused outside purpose;
+- delegation chain expands scope;
+- approval remains valid after target change;
+- secret hidden from context but usable for arbitrary effects;
+- revocation race;
+- individually safe capabilities compose into a dangerous effect.
+
+### Execution and observation failures
+
+- tool acknowledgement mistaken for world state;
+- effect occurs after client timeout;
+- observer shares the executor’s corrupted state;
+- idempotency identity omitted or reused incorrectly;
+- partial effect followed by unsafe retry;
+- logs edited by the component they monitor;
+- downstream effects excluded from the consequence boundary.
+
+### Verification and readiness failures
+
+- proof of the wrong formal statement;
+- test leakage and overfitting;
+- evaluator monoculture;
+- review fatigue and rubber-stamping;
+- aggregate score hides a hard violation;
+- readiness label reused for a different consumer;
+- stale evidence survives implementation or policy change.
+
+### Recovery failures
+
+- code restored but state migration persists;
+- credential revoked but queued work remains;
+- artifact removed but descendants retain it;
+- compensation described as erasure;
+- incident record deleted to produce a clean dashboard;
+- residuals accumulate without owners or deadlines.
+
+### Governance bypass
+
+The system can also exploit procedural incentives. It may route around expensive checks, minimize recorded residuals, choose easy-to-verify effects, or pressure humans with urgency and polished explanations. Controls should be evaluated on whether they change real decisions, not whether their forms are complete.
+
+## Evaluation Program
+
+The architecture should compete against the strongest simpler systems, not against an intentionally careless baseline.
+
+### Experimental conditions
+
+At minimum, compare:
+
+1. **Monolithic agent.** A capable model with the same tools, sandbox, context, retries, and human-review budget.
+2. **Record-only workflow.** The same execution path plus structured logging, but without independent admission, authority, effect reconciliation, or residual policy.
+3. **Governed lifecycle.** The complete proposed path.
+
+All conditions receive the same task universe and product contract. Model and tool budgets, tuning effort, evaluator exposure, and human availability are matched or reported.
+
+### Task families
+
+A useful initial campaign includes:
+
+- repository maintenance;
+- cloud-resource changes;
+- document and data publication;
+- external API transactions;
+- stateful service operations;
+- bounded scientific or data-processing workflows.
+
+Tasks should be prospective and selected before outcomes. The workload must contain ordinary tasks, ambiguous tasks, and fault-bearing tasks rather than only examples designed around the architecture.
+
+### Fault injections
+
+Inject:
+
+- ambiguous authority;
+- stale task context;
+- changed target after approval;
+- duplicate effect after timeout;
+- partial crash between commit and observation;
+- credential revocation race;
+- misleading success acknowledgement;
+- corrupted observer cache;
+- incomplete rollback;
+- compensable but irreversible external effect;
+- reviewer overload;
+- changed evaluator or policy.
+
+### Metrics
+
+Report:
+
+- accepted useful completion;
+- false acceptance;
+- false refusal;
+- unauthorized effects;
+- effect ambiguity duration;
+- unreconciled and aged residuals;
+- rollback and compensation success;
+- defect escape;
+- latency distribution;
+- model, tool, storage, and network cost;
+- reviewer minutes and interruptions;
+- maintenance and governance overhead.
+
+Prevented harm cannot be measured only by counting blocked actions. A high refusal rate can make a system appear safe while destroying utility. Conversely, speed cannot excuse unauthorized or unrecoverable effects.
+
+### Ablations
+
+Remove one mechanism at a time:
+
+- task-contract confirmation;
+- capability qualification;
+- authority attenuation;
+- pre-commit revalidation;
+- independent observation;
+- residual custody;
+- full-state recovery inventory.
+
+The ablation should preserve the rest of the route so the contribution of each boundary can be estimated.
+
+## Limitations, Falsifiers, and Contraction Rules
+
+The architecture can fail in at least four ways.
+
+First, semantic contracts may be expensive yet incomplete. A model can satisfy the schema while missing the user’s actual concern. Second, a control plane can centralize power and create a high-value attack surface. Third, richer records can overload operators and encourage ceremonial compliance. Fourth, independent observation and full recovery can be unavailable for open-world effects.
+
+The proposal should be narrowed when:
+
+- a simpler sandbox-and-review baseline matches useful completion, authority control, recovery, and reviewer burden;
+- contract fields do not change consequential decisions;
+- independent observation adds cost without resolving material ambiguity;
+- false refusals exceed prevented failures under a declared utility policy;
+- the trusted core grows until it is no easier to validate than the system it governs;
+- recovery records routinely exceed what operators can understand or maintain.
+
+Some tasks should bypass most of the machinery. A reversible private draft may need only source boundaries and artifact identity. A rare high-consequence migration may warrant manual control rather than automated planning. A mature architecture is not committed to complexity. It is committed to preserving the reason why complexity is or is not required.
+
+The strongest objection is that the architecture converts ordinary engineering judgment into bureaucracy. That objection has force. The answer is not to insist that every field and transition survive. It is to make every boundary earn its place through matched experiments and to retire controls that do not improve decisions.
+
+## Conclusion
+
+Agentic AI turns language into potential consequence. The central engineering problem is no longer only whether a model can produce a good answer, but whether a human or institutional purpose can travel through interpretation, planning, delegation, authorization, execution, observation, verification, and recovery without silently changing its meaning or legitimacy.
+
+This paper presents a contract-based architecture for that path. Its central rule is noninheritance: a request is not an authorization, a capability is not permission, a tool acknowledgement is not an observed effect, a verification finding is not release readiness, and a restored artifact is not complete recovery. The system therefore represents each transition through a distinct object, binds work to attenuated authority, commits effects under idempotent identity, observes state independently where consequence warrants it, and ends with explicit readiness, compensation, or residual custody.
+
+The proposal is intentionally conditional. It does not prove that a governed lifecycle always outperforms a competent monolithic agent or a conventional workflow. Its value will be established only if it improves accepted useful work, effect control, and recovery after complete cost and false refusal are counted.
+
+The terminal outcome of one task becomes input to two further questions. What should the system believe about what happened? And what, if anything, should it learn durably from the experience? Those questions require separate semantic, epistemic, and adaptive architectures. They are not permissions hidden inside execution success.
+
+## Appendix A: Canonical Record Sketches
+
+### Task contract
+
+```yaml
+task_contract:
+  id: task:uuid
+  principal: principal:version
+  purpose: string
+  objective: string
+  scope:
+    included: []
+    excluded: []
+  assumptions: []
+  non_goals: []
+  affected_parties: []
+  acceptance_obligations: []
+  evidence_requirements: []
+  authority_ceiling: authority:version
+  resource_budget: budget:version
+  deadline: timestamp
+  recovery_requirements: []
+  unresolved_questions: []
+  material_change_triggers: []
+```
+
+### Work authorization
+
+```yaml
+work_authorization:
+  id: authorization:uuid
+  task: task:uuid
+  obligation: obligation:uuid
+  delegatee: capability-implementation:hash
+  allowed_operations: []
+  targets: []
+  purpose: string
+  context_handles: []
+  resource_ceiling: budget
+  effect_ceiling: consequence-class
+  verifier_requirements: []
+  issued_at: timestamp
+  expires_at: timestamp
+  revocation_ref: policy:version
+  fallback: route:version
+```
+
+### Effect record
+
+```yaml
+effect_record:
+  id: effect:uuid
+  authorization: authorization:uuid
+  target: target:version
+  intended_change: string
+  prepared_artifact: digest
+  idempotency_key: string
+  precondition_observation: observation:uuid
+  attempts: []
+  executor_acknowledgement: state
+  independent_observations: []
+  reconciliation: accepted | denied | ambiguous | compensated | residual
+  external_descendants: []
+  residuals: []
+```
+
+## Appendix B: Instruction and Workflow Patterns
+
+A concise task instruction can use seven fields:
+
+1. objective;
+2. current context;
+3. constraints and non-goals;
+4. procedure or permitted search space;
+5. required output artifact;
+6. verification and acceptance;
+7. failure, escalation, and recovery behavior.
+
+The fields are not mandatory ceremony for every request. They are a compact lint surface for tasks whose consequences justify explicit structure.
+
+Common workflow shapes include linear pipelines, guarded branches, bounded loops, recursive decomposition with a base case, producer–verifier pairs, and transactional prepare/commit routes. Each handoff should produce an artifact with identity, expected consumer, and failure behavior.
+
+## Appendix C: Intellectual Lineage and Supersession
+
+This paper consolidates eleven earlier author manuscripts. They are historical and conceptual sources, not independent empirical confirmation.
+
+| Legacy source | Material retained | Material narrowed or retired |
+|---|---|---|
+| Verified Intent-to-Execution Architecture | Complete lifecycle, task interpretation summary, material assumptions, artifact classes, structured integration, fast/slow routing, tool lifecycle | Whole-stack superiority and projected efficiency claims |
+| Talos Protocol | Typed asynchronous work, durable custody, mediated authority, evidence-bearing artifacts, terminal receipts, negative constraints | Unverified thresholds, numerical performance claims, and security absolutes |
+| PlanForge | Obligation graphs, critical path, worker assignment, replanning boundary | Synthetic savings claims and deterministic optimality language |
+| PlanForge compiler variant | Concise compiler staging | Counted as a duplicate presentation, not independent support |
+| Reflexive Router | Explicit command precedence, qualification before optimization, abstention, effect commit, fast-path retirement | Unmeasured efficiency and safety claims; biological terminology |
+| Octopus Router | Specialist records, route shapes, task-local permissions, residency, lifecycle | Biological metaphor and the assumption that modularity is inherently beneficial |
+| Cognitive Compilation | Semantic intermediate representation, target lowering, traceability, localized repair, reverse lifting | Strong semantic-equivalence claims and product/licensing scope |
+| GenesisCode | Authenticated control variants, explicit effects, capability mediation, replay, evidence-carrying packages, structural patches | Unresolved fresh-seal semantics and unimplemented trusted-kernel claims |
+| Ladon and Manhattan | Secret-use mediation, scoped capability references, derivative-output and side-channel awareness | “Ignorance” and “ephemerality” theorem claims |
+| Software Magic Grimoire | Instruction grammar, guarded workflow patterns, failure-shadow vocabulary | Magical and numerological framing; empirical prompting claims |
+| Compiling Civilization / CMTQ | Method records, qualified protocols, independent efficacy/conformance/authority axes, negative procedural memory | Any implication that inherited human methods are valid by tradition |
+
+## References

@@ -1,5 +1,9 @@
 # Compiling Civilization: Cognitive Method Transfer and Qualification for Artificial Intelligence
 
+| Field | Value |
+|---|---|
+| Source ID | `compiling_civilization_cmtq` |
+
 - **Source ID:** `compiling_civilization_cmtq`
 - **Author:** Corben Sorenson
 - **Date:** August 2026
@@ -26,7 +30,7 @@ Its two canonical artifacts are:
 
 This boundary warrants a dedicated technical chapter because it owns distinct artifact identities, admission rules, qualification state, and failure modes. The Human Reader should absorb the argument into its existing compilation and procedural-memory units rather than add a twenty-seventh unit.
 
-## Mechanisms mined
+## Mechanisms
 
 1. **Five-gap decomposition.** Separate possession, realization, transport, qualification, and governance. A method can be known but not invoked, invoked but poorly realized, faithfully copied but mechanism-destroying, operational but unqualified for the target, or effective but unauthorized.
 2. **Functional transport.** Decompose source method structure into roles, artifacts, operations, constraints, incentives, and feedback; identify mechanism hypotheses; classify substrate dependence and normative content; then copy, transform, hybridize, or reject.
@@ -39,7 +43,7 @@ This boundary warrants a dedicated technical chapter because it owns distinct ar
 9. **Root of methodological trust.** Self-revising method science still requires integrity-protected evaluation, independent measurement, held-out environments, external outcomes, legitimate authority, and no-self-certification constraints.
 10. **Fixed-model cognitive leverage.** Hold base weights fixed and separately measure method validity, selection validity, execution fidelity, outcome effect, cost, harm, and interactions.
 
-## Primary chapter routing
+## Book Chapters Supported
 
 - `cognitive-method-transfer-and-qualification` — primary owner of CTRs, QCPs, transport analysis, the three axes, the three-loop lifecycle, and the method-qualification benchmark.
 - `cognitive-compilation-and-semantic-ir` — consumes an admitted method and lowers QCP-IR without inheriting authority to decide whether the source method is valid.
@@ -52,13 +56,19 @@ This boundary warrants a dedicated technical chapter because it owns distinct ar
 - `recursive-self-improvement-boundaries` and `open-ended-improvement-engines` — consume method-level variation and selection while preserving independent promotion and a bounded methodological root of trust.
 - `integrated-reference-architecture` — locates the inheritance compiler before semantic lowering and runtime execution.
 
-## Evidence and limits
+## Claims To Add Or Update
+
+- Keep method possession, target realization, transport fidelity, qualification, assurance, and authority separate.
+- Admit inherited cognitive methods through versioned source and protocol records rather than prose familiarity.
+- Compare transferred methods under fixed-model, matched-resource, independently evaluated protocols before claiming cognitive leverage.
+
+## Evidence
 
 The paper is a conceptual architecture with formal definitions, schemas, an example QCP, and a detailed experimental design. The package validator confirms structural integrity and schema conformance. It does **not** report a CMTQ implementation, benchmark run, measured cognitive-leverage gain, validated routing advantage, secure deployment, independent reproduction, or evidence that its proposed Q0-Q6 and A0-A4 levels are calibrated standards.
 
 The paper's external citations remain citation leads, not inherited evidence. Their results may support book claims only after source-specific notes and passage review.
 
-## Failure modes and strongest objections
+## Failure Modes
 
 - Method theater can satisfy artifacts without improving cognition.
 - Wrong routing can make a useful method harmful or wasteful.
@@ -75,6 +85,12 @@ The paper's external citations remain citation leads, not inherited evidence. Th
 - Lean: a candidate protocol may propose but cannot authorize its own promotion or permission expansion.
 - Schema/test: validate CTR and QCP identity, scope, obligation, verifier, permission, provenance, expiry, and rollback completeness.
 - Project Theseus: implement a bounded CMTQ registry, compile one causal-claim QCP, compare prose possession with compiled execution, and preserve exact receipts and negative controls.
+
+## Open Questions
+
+- Which human methods preserve their causal mechanism when transported into artificial substrates?
+- How should interacting methods be qualified without combinatorial evaluation collapse?
+- Which methodological roots must remain outside a self-revising system's unilateral authority?
 
 ## Support-state disposition
 

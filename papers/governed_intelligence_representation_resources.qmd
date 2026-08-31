@@ -1,0 +1,1087 @@
+---
+title: "Contract-Aware Representation and Resource Optimization: Functional Rate-Distortion, Residual Accounting, and Adaptive Compute Allocation"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "2026-08-15"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Compact authorial synthesis derived from The ASI Stack and its source lineage."
+bibliography: ../papers/references/governed_intelligence.bib
+link-citations: true
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Derived synthesis, not independent evidence"}
+This manuscript is a compact authorial synthesis derived from the living book and its earlier source lineage. It is published as a readable research surface, not counted as independent corroboration of the book, and cannot promote a claim by repeating material already present in its inputs.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `governed_intelligence_representation_resources` |
+| Source class | `authorial_derived_synthesis` |
+| Library class | `derived_synthesis_paper` |
+| Manuscript date | 2026-08-15 |
+| Inventory updated | 2026-08-30 |
+| Exact published-source SHA-256 | `10477fb0391cd270ea0fc5b2f0933667ebb0a8a1ab63712e32ddc34f81e5694a` |
+| Exact published-source bytes | 48,113 |
+| Exact source text | [Download/view the tracked Markdown source](source/governed_intelligence_representation_resources.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/governed_intelligence_representation_resources.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Paper 5 of the Governed Intelligence derived synthesis. It compresses existing book and author-source material into contract-aware representation and complete resource accounting; it is not independent corroboration and reports no codec, routing, efficiency, support-state, readiness, release, SOTA, AGI, or ASI result.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The manuscript YAML front matter is represented by the provenance panel rather than repeated in the body. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this synthesis maps onto the living book
+
+[The Efficient ASI Hypothesis](../chapters/the-efficient-asi-hypothesis.html), [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html), [Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](../chapters/compact-generative-systems-and-residual-honesty.html), [Fast Generation Architectures](../chapters/fast-generation-architectures.html), [RankFold, NeuralFold, and Artifact Compression](../chapters/rankfold-neuralfold-and-artifact-compression.html), [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.html), [Physical Compute Infrastructure, Energy, and Environmental Constraints](../chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html), [Integrated Reference Architecture](../chapters/integrated-reference-architecture.html)
+
+<hr>
+
+## Original manuscript
+
+## Introduction: Local Savings Are Not System Efficiency
+
+A model is quantized from sixteen bits to four. A tensor is approximated by low-rank factors. A document is summarized into a compact semantic packet. A router sends easy requests to a cheaper model. A cache avoids repeated computation. Each change can produce a striking local metric.
+
+The system can still become worse.
+
+The four-bit model may need sparse high-precision exceptions, calibration data, a routing policy, and an expensive fallback on the cases that matter most. The low-rank tensor may produce a residual that is larger under the actual entropy coder than under the surrogate used during optimization. The summary may omit one qualifier that forces a human reviewer to reopen the source. The cheap model may generate outputs that require stronger verification and frequent repair. The cache may save compute while serving stale or unauthorized state.
+
+The error is not optimization. It is an incomplete denominator.
+
+Classical rate–distortion theory asks for the minimum representation rate under a distortion criterion [@shannon1959ratedistortion]. Minimum description length treats compact description as an inductive and model-selection principle [@rissanen1978mdl]. Neural-network compression has developed effective methods for pruning, quantization, mixed precision, equivalent transformations, and low-bit inference [@han2015deepcompression; @wang2018haq; @frantar2022gptq; @xiao2022smoothquant; @lin2023awq; @ma2024bitnet]. Model-routing systems allocate requests among models with different cost and quality profiles [@chen2023frugalgpt; @ong2024routellm; @ding2024hybridllm]. Implicit neural representations encode continuous signals as coordinate-conditioned networks [@sitzmann2020siren].
+
+These traditions provide powerful mechanisms. They do not by themselves define the complete object being optimized. “Four bits per weight” depends on the parameterization, codebook, decoder, exceptions, and protected behavior. “Three times smaller” depends on headers, factors, residuals, indexes, fallback, and the access pattern. “Cheaper route” depends on verification, retries, latency tails, unsafe effects, and human review. “Fewer tokens” depends on what semantic obligations were omitted and which stronger source must later be reloaded.
+
+This paper introduces a common contract-aware framework for these cases. Its central question is:
+
+> **What is the least costly complete executable implementation that preserves the distinctions required by a declared consumer contract?**
+
+The word *complete* is load-bearing. The candidate includes everything required to reconstruct, execute, verify, route, recover, and maintain the representation. The word *consumer* is equally important. A representation can be adequate for cold archival storage and inadequate for low-latency random access. A summary can be adequate for routing and inadequate for legal quotation. A low-precision model can be adequate for ordinary classification and inadequate for calibrated abstention on rare high-consequence inputs.
+
+The framework unifies five ideas:
+
+1. **Functional equivalence rather than parameter proximity.** Representation is judged by protected behavior under a contract.
+2. **Complete burden accounting.** Decoder, metadata, residuals, verification, fallback, repair, and lifecycle costs remain attached.
+3. **Progressive representation.** A low-cost base can be refined by ordered residuals or escalation.
+4. **Qualified routing.** Different inputs and consequences can invoke different models, precision levels, representations, or verifiers.
+5. **Scoped validity.** Every optimized path is versioned, monitored, invalidated by material change, and able to return to a stronger baseline.
+
+The paper does not assert that compression is intelligence, that low precision is always desirable, or that one resource scalar can settle competing values. It offers a falsifiable systems discipline for comparing representations without allowing burden to disappear at the boundary of a convenient metric.
+
+## Scope and Standard Terminology
+
+**Reference system.** The complete behavior-producing system used as the comparison target, including preprocessing, tokenizer, model, sampler, retrieval, tools, runtime, and policy components inside the declared boundary.
+
+**Consumer contract.** A versioned declaration of the population, protected behaviors, fidelity metrics, thresholds, confidence requirements, resource limits, authority constraints, and fallback policy for one use.
+
+**Candidate representation.** A complete package and execution route proposed as an alternative to the reference system.
+
+**Decoder.** All machinery required to turn the candidate package into executable state or reconstructed output. A decoder can include code, codebooks, models, shared libraries, hardware assumptions, and runtime services.
+
+**Residual.** Information, behavior, cases, uncertainty, or obligations not carried by the compact base representation and therefore retained, repaired, escalated, or explicitly left unresolved.
+
+**Functional equivalence.** Contract-relative preservation of named behavior. It is weaker than universal identity and stronger than parameter proximity.
+
+**Precision field.** A policy mapping component, input, internal state, and consumer contract to a numerical or representational precision choice.
+
+**Progressive representation.** A cumulative base plus ordered refinements, exceptions, residuals, or fallback paths.
+
+**Complete resource vector.** Storage, memory, bandwidth, compute, latency, energy, communication, human effort, verification, recovery, and residual burden, preserved in native units until policy authorizes aggregation.
+
+**Qualification.** A scoped, expiring decision that an exact candidate is acceptable for a named consumer and environment under stated evidence.
+
+**Hidden complexity.** Burden displaced into an unpriced decoder, environment, shared corpus, human operator, verifier, maintenance process, or unknown residual.
+
+This paper uses *compression* only when the complete representation burden is reduced relative to a declared baseline. A shorter principal stream that requires a larger side channel is relocation, not necessarily compression.
+
+## Related Work and Novelty Boundary
+
+### Rate–distortion and description length
+
+Rate–distortion theory formalizes the minimum rate needed to represent a source under a distortion criterion [@shannon1959ratedistortion]. Minimum description length connects model selection to total description length [@rissanen1978mdl]. The present framework inherits their discipline but applies it to complete executable AI systems whose distortion can include behavior, calibration, trajectories, safety-relevant slices, authority, and recovery.
+
+### Neural-network compression and precision allocation
+
+Deep Compression combines pruning, quantization, and coding [@han2015deepcompression]. HAQ learns hardware-aware mixed-precision policies [@wang2018haq]. GPTQ, SmoothQuant, AWQ, and BitNet develop increasingly effective low-bit transformations and inference methods [@frantar2022gptq; @xiao2022smoothquant; @lin2023awq; @ma2024bitnet]. These methods demonstrate that useful precision is heterogeneous and transformation-dependent. The present work does not claim to invent mixed precision. It contributes the consumer contract, complete executable boundary, progressive residual model, and qualification lifecycle.
+
+### Model routing and cascades
+
+FrugalGPT, RouteLLM, and Hybrid LLM allocate requests among models under cost and quality considerations [@chen2023frugalgpt; @ong2024routellm; @ding2024hybridllm]. This paper extends the route offer to include authority, verification burden, fallback, uncertainty, residuals, and actual reconciled cost.
+
+### Implicit and structured representations
+
+Implicit neural representations such as SIREN encode continuous signals in coordinate-conditioned networks [@sitzmann2020siren]. Low-rank approximation, tensor methods, hierarchical codecs, graph representations, and semantic intermediate languages provide additional candidate families. Their usefulness remains workload- and access-pattern-dependent.
+
+### Precise contribution
+
+The paper does not claim a new universal codec, quantizer, router, or semantic language. It proposes a common research object:
+
+> **A complete candidate implementation evaluated for one consumer through a versioned behavioral contract, resource vector, residual record, qualification decision, and fallback path.**
+
+This object enables fair comparison across techniques that otherwise optimize incompatible local metrics.
+
+## Representation Invariance and Functional Equivalence
+
+The useful precision of a weight is not a representation-invariant property. Consider a positively homogeneous network in which one layer can be multiplied by a positive constant and the next divided by the same constant without changing the function. Individual magnitudes and local sensitivities change while behavior remains identical. Similar nonuniqueness arises through permutations, codebooks, factorizations, sparse exceptions, binary limbs, external algorithms, and changes in parameter count.
+
+A universal per-coordinate precision ceiling is therefore ill posed unless the representation, decoder, scale convention, environment, and tolerated behavior are fixed.
+
+### Complete reference boundary
+
+Let the reference system be
+
+\[
+M = (P,T,N,R,U,E),
+\]
+
+where the components can include preprocessing \(P\), tokenizer or representation \(T\), neural or symbolic core \(N\), retrieval and memory \(R\), tools and runtime \(U\), and execution environment \(E\).
+
+A candidate description \(z\) plus decoder \(\mathsf{Dec}\) realizes
+
+\[
+\widehat M_z = \mathsf{Dec}(z).
+\]
+
+The decoder boundary is explicit. Shared libraries, codebooks, public models, hardware kernels, and external services are named and allocated rather than treated as free by default.
+
+### Consumer contract
+
+A contract \(\mathcal C\) contains:
+
+- input and environment population;
+- protected outputs, decisions, trajectories, and failure modes;
+- metric vector;
+- thresholds and noncompensating vetoes;
+- confidence, proof, or coverage requirements;
+- resource and timing envelope;
+- authority and privacy limits;
+- escalation, abstention, and fallback policy;
+- exact reference, candidate, decoder, evaluator, and platform identities.
+
+The contract-relative acceptable set is
+
+\[
+[M]_{\mathcal C} = \left\{\widehat M_z : \widehat M_z \text{ satisfies } \mathcal C\right\}.
+\]
+
+This is an equivalence class only when the acceptance relation has the required properties. In many practical settings it is better treated as an acceptable set because tolerance, directionality, and consumer asymmetry can break symmetry or transitivity.
+
+### Functional rate
+
+Given an encoding and decoder family \(\mathcal Z\), define the functional contract rate
+
+\[
+R^*(M,\mathcal C,\mathcal Z)
+= \inf_{z\in\mathcal Z: \widehat M_z\in[M]_{\mathcal C}}
+L_{\mathrm{complete}}(z,\mathsf{Dec},\mathcal C),
+\]
+
+where \(L_{\mathrm{complete}}\) counts every component needed to realize and justify the candidate. In practice a compiler produces an achieved upper bound, not the global optimum.
+
+### Behavioral distortion vector
+
+Useful distortion is rarely one average error. A vector may include:
+
+- output-distribution divergence;
+- exact decision disagreement;
+- calibration error;
+- selective risk and abstention;
+- trajectory divergence;
+- tool-use correctness;
+- invariant or property violations;
+- subgroup and tail behavior;
+- latency and resource behavior;
+- recovery and fallback success.
+
+A candidate that preserves mean benchmark accuracy while changing rare safety-relevant refusal or tool behavior has not preserved the same contract.
+
+### Parameter metrics remain useful proxies
+
+Weight distance, Hessian sensitivity, activation error, reconstruction error, and local salience can guide search. They are not the final acceptance criterion. A large parameter displacement can preserve behavior, and a small perturbation can cross a brittle decision boundary. The proxy must be calibrated against contract-level outcomes.
+
+## Complete Executable Description and Resource Accounting
+
+The complete candidate package is not merely the compressed weight or principal bitstream. It can include:
+
+\[
+Z = (B, D, M, I, C, X, Q, F, V, G),
+\]
+
+where:
+
+- \(B\): base representation;
+- \(D\): decoder and runtime dependencies;
+- \(M\): metadata, shapes, scales, codebooks, and indexes;
+- \(I\): sparse exceptions and irregular state;
+- \(C\): residual or correction streams;
+- \(X\): routing, precision, or escalation policy;
+- \(Q\): qualification and verification artifacts;
+- \(F\): fallback and retained reference requirements;
+- \(V\): versioning, migration, and invalidation state;
+- \(G\): governance and operating obligations.
+
+The complete storage bill is one projection. Operational cost can be represented as a vector
+
+\[
+\mathbf c =
+(c_{store},c_{memory},c_{bandwidth},c_{compute},c_{latency},
+ c_{energy},c_{network},c_{human},c_{verify},c_{recover},c_{residual}).
+\]
+
+Unlike quantities should remain separate until policy establishes a legitimate tradeoff. A dollar value can be useful for budgeting, but it should not silently price away an unsafe effect, an unresolved rights issue, or a recovery obligation.
+
+### Direct and lifecycle cost
+
+Direct cost includes:
+
+- encoded bytes;
+- execution operations;
+- memory traffic;
+- latency;
+- energy;
+- model or API charges.
+
+Lifecycle cost includes:
+
+- candidate search;
+- calibration;
+- failed pilots;
+- benchmark construction;
+- verification;
+- reviewer attention;
+- maintenance;
+- drift monitoring;
+- migration;
+- fallback retention;
+- incident response;
+- retirement.
+
+A representation that saves one dollar per use after a one-million-dollar qualification campaign needs an explicit break-even horizon.
+
+### Access-pattern contracts
+
+Compression ratio does not determine usability. A representation can reconstruct sequentially while failing random access, partial decoding, low-latency updates, or hardware placement constraints. Contracts should declare:
+
+- cold archive versus active serving;
+- sequential versus random access;
+- full versus partial decode;
+- mutation frequency;
+- expected reads and transfers;
+- cache and prefetch behavior;
+- corruption and recovery requirements.
+
+Write-once-read-many economics can justify expensive encoding for immutable artifacts. The same method may be irrational for frequently rewritten checkpoints.
+
+### Physical bounds and engineering capacity
+
+Physical information and energy bounds can constrain complete systems, but they are not practical device specifications or per-weight limits. Landauer’s principle concerns irreversible erasure, not every operation [@landauer1961]. Real capacity depends on architecture, geometry, cooling, bandwidth, reliability, control, and duration.
+
+Resource feasibility should be expressed through typed inequalities
+
+\[
+d_j(\mathcal C,I) \leq c_j(A,E)
+\]
+
+for each resource \(j\), contract \(\mathcal C\), implementation \(I\), architecture \(A\), and environment \(E\), plus coupling constraints. A minimum normalized margin can summarize an already completed vector audit; it cannot replace one.
+
+## Residual Honesty and Hidden Complexity
+
+Every compact representation draws a boundary between what it carries directly and what remains elsewhere.
+
+A residual can be:
+
+- literal reconstruction data;
+- numerical correction;
+- sparse exception;
+- omitted semantic qualifier;
+- unhandled task family;
+- uncertainty;
+- verification gap;
+- human judgment;
+- fallback invocation;
+- external dependency;
+- known failure awaiting repair.
+
+Residuals are not embarrassment. They are the interface between the compact object and the target it does not fully contain.
+
+### Hidden-complexity tests
+
+A candidate fails residual honesty when it:
+
+- calls a large shared decoder free without an allocation rule;
+- reports principal-stream bytes while omitting side channels;
+- counts average quality while excluding fallback cases;
+- reports successful routes and omits failed pilots;
+- treats human correction as external to the method;
+- stores exact source material elsewhere but claims the summary replaced it;
+- excludes indexes, checksums, codebooks, or migration maps;
+- calls unknown behavior “out of scope” only after evaluation;
+- preserves a full duplicate while counting only the compact copy.
+
+### Residual concentration
+
+A small average residual can conceal a dangerous tail. Reports should include:
+
+- residual rate by population and failure family;
+- magnitude and code-length distribution;
+- fallback frequency;
+- unresolved obligation count;
+- human-repair burden;
+- transfer and drift behavior;
+- worst-case or veto-level failures.
+
+### Residual lifecycle
+
+Residuals move through:
+
+```text
+observed
+→ classified
+→ owned
+→ repaired | accepted_with_scope | escalated | deferred
+→ regression_tested
+→ retired | reopened
+```
+
+A candidate should not improve its apparent compression by deleting the record of cases it cannot serve.
+
+### Hidden environment structure
+
+Morphology, hardware, public decoders, pretrained models, and shared corpora can provide useful structure. Their contribution should be declared rather than denied. A compact controller can exploit environmental regularity without transmitting it per artifact, but the environment’s availability, version, rights, and maintenance belong to the system contract.
+
+## Progressive Precision and Representation
+
+One fixed representation rarely dominates every input and consequence level. A system can use a low-cost base and acquire more information only when needed.
+
+### Precision field
+
+Define a precision field
+
+\[
+p : (component,input,state,\mathcal C) \mapsto representation\ level.
+\]
+
+The field can vary by:
+
+- layer or channel;
+- transformed direction;
+- token or sequence position;
+- task family;
+- uncertainty;
+- detected out-of-distribution state;
+- consequence class;
+- hardware pressure;
+- verifier requirement.
+
+Static mixed precision is one restricted case.
+
+### Base-plus-residual model
+
+A progressive package can be represented as
+
+\[
+z = z^{(0)} \oplus z^{(1)} \oplus \cdots \oplus z^{(K)},
+\]
+
+where \(z^{(0)}\) is the base and each refinement contributes additional precision, exceptions, rank, context, evidence, or representation detail.
+
+The layers should be cumulative under the declared decoder. Every stage states:
+
+- bytes or resources loaded;
+- contract properties newly satisfied;
+- remaining residuals;
+- latency and memory;
+- safe uses;
+- fallback behavior.
+
+More bits need not improve every outcome monotonically if routing, numerical effects, or calibration change. Monotonicity must be tested rather than presumed.
+
+### Escalation policy
+
+A conservative route can choose among:
+
+- base execution;
+- refined execution;
+- exact or reference execution;
+- a different model or representation;
+- human review;
+- abstention.
+
+The route policy is itself a qualified artifact. Confidence alone is insufficient. It should use calibration, applicability, effect class, monitor state, and fallback availability.
+
+### Protected behaviors
+
+Progressive optimization must protect positive capability. A low-cost path that avoids hard cases by abstaining can appear safe while reducing useful coverage. Contracts therefore pair error and risk limits with coverage floors, task utility, and false-refusal measures.
+
+## Coder-Aligned Low-Rank and Neural Representations
+
+Low-rank approximation is useful when a matrix or tensor contains structure that can be predicted by a smaller factorization. Standard truncated singular-value decomposition minimizes squared residual energy at a fixed rank. A storage system pays for factors and the coded distribution of a quantized residual. The two objectives need not agree.
+
+### Predictor–corrector representation
+
+For matrix \(M\in\mathbb R^{m\times n}\), rank \(r\), factors \(U,V\), and quantization step \(\Delta\):
+
+\[
+P = UV^\top,
+\qquad
+E_q = \operatorname{round}\left(\frac{M-P}{\Delta}\right),
+\qquad
+\widehat M = P + \Delta E_q.
+\]
+
+The complete rate is
+
+\[
+B_{total}=B_{header}+B_U+B_V+B_{tables}+B_{runs}
++B_{signs}+B_{magnitudes}+B_{escapes}+B_{checks}.
+\]
+
+A candidate wins only when this complete rate and the consumer distortion beat strong baselines.
+
+### Coder-aligned factor refinement
+
+A predictor that produces slightly higher squared error can produce more zeros, longer zero runs, smaller magnitudes, or fewer escape symbols. A coder-aligned objective can therefore refine \(U,V\) against a differentiable proxy for actual residual bytes, for example
+
+\[
+\mathcal L(U,V)=
+\sum_{ij}\log\left(1+\frac{|E_{q,ij}|}{\delta}\right)
++\lambda(\lVert U\rVert_F^2+\lVert V\rVert_F^2).
+\]
+
+This objective is a proxy, not proof of rate improvement. Evaluation must report surrogate-to-byte correlation and compare against:
+
+- truncated SVD with the identical residual coder;
+- quantization plus a strong conventional codec;
+- dead-zone quantization;
+- domain-specific tensor codecs;
+- literal or raw fallback.
+
+### Traversal and residual coding
+
+Spatial tensors can use block or Morton traversal to expose local runs. Bounded residual coding separates zero runs, signs, small magnitudes, and escapes. Traversal, alphabet, table normalization, factor precision, and exceptional-value behavior are part of the format.
+
+The decoder must define endian, rounding, overflow, NaN, infinity, signed zero, and accumulation semantics. Deterministic decode of \(\widehat M\) does not imply exact recovery of original floating-point bytes.
+
+### Implicit neural representations
+
+A continuous artifact can be represented by a coordinate network \(f_\theta(x)\), as in implicit neural representations [@sitzmann2020siren]. The complete package includes:
+
+- architecture;
+- coordinate normalization;
+- tiling or partitioning;
+- parameters;
+- parameter compression;
+- decoder compute;
+- distortion contract;
+- random-access behavior.
+
+This path is usually lossy with respect to the signal even if the stored network is decoded exactly. Signal reconstruction, downstream utility, and model-bit preservation are separate claims.
+
+For discrete bundles, a learned predictor can be combined with an exact residual. Exactness then depends on predictor reproducibility, complete residual, path and metadata tables, and decoder semantics. Random or encrypted data should route to a conventional path rather than forcing neural representation.
+
+### Probe, route, and fallback
+
+A bounded pilot estimates total candidate cost before expensive encoding. The router compares predicted complete size and contract compliance with strong baselines. Evaluation includes false admissions, missed wins, pilot overhead, predicted-versus-achieved bytes, and behavior under high-entropy, already-compressed, tiny, and adversarial inputs.
+
+## Hierarchical Generative Coding with Exact Repair
+
+A second candidate family models a target through a hierarchy of local generators. The mature discipline is not “a small seed recreates everything.” It is:
+
+> **Generate, verify, repair, split, or store literally.**
+
+### Reconstruction contract
+
+A hierarchical codec declares
+
+\[
+\mathcal K=(\Omega,\mathcal M,\Delta,\mathcal A,\mathcal L,\Pi),
+\]
+
+where:
+
+- \(\Omega\): source domain;
+- \(\mathcal M\): mapping to the internal field;
+- \(\Delta\): exact or bounded distortion criterion;
+- \(\mathcal A\): arithmetic semantics;
+- \(\mathcal L\): permitted simplifications;
+- \(\Pi\): shared public law family.
+
+If the source-to-field mapping is not fixed and public, its identity and inverse cost belong in the stream.
+
+### Apex-only exclusion
+
+A strictly smaller upper state cannot injectively represent every state in a larger finite lower domain without retained detail or equivalent transmitted structure. A compact apex can explain common structure; arbitrary omitted degrees of freedom require:
+
+- reversible detail;
+- exact residual;
+- sparse correction;
+- split and recurse;
+- literal fallback.
+
+This is an honesty boundary, not a claim that hierarchical generation is useless.
+
+### Two exact transition families
+
+1. **Reversible factorization**
+
+\[
+T_k(V_k)=(V_{k+1},D_k,S_k)
+\]
+
+with a fully specified inverse.
+
+2. **Prediction plus restoration**
+
+\[
+\widetilde V_k=P_k(V_{k+1},S_k),
+\qquad
+V_k=R_k(\widetilde V_k,E_k,C_k,L_k).
+\]
+
+The first is elegant but technically demanding. The second makes exactness visible in the repair stream.
+
+### Layerwise exactness
+
+Each layer preserves or restores its contracted target before further approximation compounds. In lossy mode, every layer records the distortion spent and remaining. This localizes debugging and prevents the same tolerance from being spent repeatedly.
+
+### Complete local decision
+
+For each region, the encoder compares:
+
+- law selection and parameters;
+- generated prediction;
+- residual or correction;
+- split signaling;
+- interface burden;
+- literal baseline.
+
+Splitting is accepted only when interior savings exceed boundary and signaling cost. A lower local error can still lose because interfaces explode.
+
+### Search proxy versus final stream
+
+Bottom-up dynamic programming usually needs additive local prices. A stateful entropy coder can make final rates depend on global history. Search should therefore freeze an additive proxy, optimize under that proxy, serialize the selected structure with the actual coder, and report the gap. An optional refresh must be prospective and bounded. Exact optimization of the proxy is not final-rate optimality.
+
+### Domain boundary
+
+Native volumetric, spatial, or tensorized data is the strongest first target. Folding arbitrary bytes into a cube does not create useful geometry and may destroy locality. Broader claims should follow only after the method wins on domains where its hypothesis is strongest.
+
+## Compact Semantic and Relational Representations
+
+Representation optimization also applies to language, knowledge, and relational state. The main danger is treating a shorter semantic stream as though discarded surface or structural distinctions no longer matter.
+
+### Compact semantic language
+
+A semantic compiler can route:
+
+- canonical concepts and relations through a compact principal stream;
+- names, quotations, code, numbers, URLs, and exact objects through protected handles;
+- global, segment, token-local, and exact reconstruction information through hierarchical residuals.
+
+The source text remains immutable. Protection occurs before spelling correction or canonicalization. Ambiguity, negation, modality, quantification, scope, attribution, and coreference survive the translation or remain explicit residuals.
+
+The useful hypothesis is not that a small internal vocabulary is inherently intelligent. It is that different kinds of information may travel through different-cost computational paths while total information and fidelity remain accounted for.
+
+### Round-trip validation
+
+A generated answer can be represented first as a structured content packet and then rendered into surface language. Recompiling the output can test:
+
+- entity identity;
+- quantity;
+- scope;
+- modality;
+- time;
+- causality;
+- attribution;
+- quotation;
+- caveats.
+
+The compiler and recompiler can share errors. Round-trip success is bounded translation evidence, not truth or complete semantic equivalence.
+
+### Semantic, computational, and storage arity
+
+A relation involving many roles has **semantic arity**. The primitive kernel that scores items jointly has **computational arity**. The persistent data structure has **storage arity**. These are different.
+
+Any finite relation can be reified as a relation-instance node connected to participants through typed role incidences. This preserves representation under stated identity and schema assumptions without requiring unbounded dense tensors. Selective higher-order kernels can still be useful for discovery or inference.
+
+A contract-aware relational compiler compares:
+
+- pairwise message passing;
+- relation reification;
+- hypergraph or simplicial operators;
+- factorization;
+- sequence models;
+- database joins;
+- exact solvers;
+- higher-order neural kernels.
+
+The selected operator receives a certificate only after competent lower-order rescues and matched-budget comparisons.
+
+### Semantic contraction
+
+A stable subgraph can become a macro-object relative to a declared query family, environment class, discrepancy tolerance, and boundary interface. The contraction retains:
+
+- provenance;
+- uncertainty;
+- supported queries;
+- excluded queries;
+- expansion path;
+- invalidation triggers.
+
+A shorter graph is not an improvement if it hides the relations needed by future consumers.
+
+## Runtime Model and Representation Routing
+
+A resource controller chooses among qualified offers rather than interpreting a price as capability.
+
+### Route offer
+
+Each route states:
+
+- exact model and representation;
+- consumer and task population;
+- expected quality and uncertainty;
+- authority and data constraints;
+- direct resources;
+- verification burden;
+- fallback;
+- failure modes;
+- residuals;
+- validity window.
+
+The controller applies protected floors before optimization. Privacy, authority, required evidence, recovery, and minimum useful coverage are constraints, not cheap dimensions to trade away.
+
+### Generalized objective
+
+A constrained route decision can be written
+
+\[
+\min_{r\in\mathcal R_{eligible}}
+\mathbf w^\top \mathbf c(r)
+\]
+
+subject to contract predicates. The weights \(\mathbf w\) are policy, not universal constants, and the underlying vector remains available. High-consequence vetoes are applied before scalarization.
+
+### Fast path and strong fallback
+
+A smaller model or compact representation can handle reversible proposal work. A stronger model, exact source, deterministic solver, or human reviewer handles ambiguous or consequential boundaries. The route should concentrate expensive cognition where it changes the decision, not apply it ambiently to every token.
+
+### Actual-cost reconciliation
+
+Execution records:
+
+- cache misses;
+- rejected candidates;
+- retries;
+- route changes;
+- verifier calls;
+- human review;
+- fallback use;
+- residuals discovered after commitment.
+
+A route that repeatedly underprices repair loses qualification or receives a larger uncertainty reserve.
+
+### Portfolio resilience
+
+The cheapest route for every task can create monoculture. A slower independent verifier, different model family, uncompressed source, or spare capacity can be rational reserve. The controller distinguishes waste from resilience and keeps reserve policy explicit.
+
+## Temporal Capacity and Human Resource Effects
+
+Resource availability has temporal structure. Periodic quota resets, burst limits, queue policy, dynamic prices, and reviewer interruption patterns shape when and how work occurs.
+
+### Regenerative capacity
+
+A bounded capacity stock can evolve as
+
+\[
+\frac{dM}{dt}=r-u(t),
+\qquad 0\leq M(t)\leq M_{max},
+\]
+
+with explicit spill or stopped regeneration at the upper boundary, service-rate limits, bounded debt if permitted, and protected floors.
+
+Regenerative capacity can smooth one reset cliff. It does not guarantee lower variance, fairness, or welfare. Common deadlines, identical accrual, notifications, prices, and retries can create new synchronization.
+
+### Credits are not authority
+
+A resource credit permits a request under current policy. It does not guarantee compute, grant effect authority, waive verification, or become money by analogy. Safety, rights, and review floors survive scarcity.
+
+### Human time
+
+Five planned minutes of review are not equivalent to five one-minute interruptions. Resource accounting should include:
+
+- reviewer minutes;
+- interruption count;
+- queueing delay;
+- context switching;
+- decision complexity;
+- fatigue;
+- repair burden;
+- delayed consequences.
+
+A machine workflow can look cheap by transferring the task of finding its bad outputs to people downstream.
+
+### Temporal access and welfare
+
+Quota and deadline design can shift work toward night hours or induce bursts, but token volume is not productivity and temporal clustering is not proof of health harm. Any human-outcomes study requires consent, data minimization, purpose limitation, withdrawal, non-employment use, and appropriate ethics review. Infrastructure optimization should not become worker surveillance.
+
+### Dynamic pricing
+
+Load-sensitive prices can reduce or amplify oscillation depending on delay, elasticity, smoothing, caps, strategic response, and shared infrastructure. A pricing controller needs stability analysis, fairness review, notification, appeal, and fallback. Provider margin is not social welfare.
+
+## Qualification, Invalidation, and Recovery
+
+An optimized representation is a versioned candidate, not an intrinsic property of the artifact.
+
+### Qualification record
+
+A qualification binds:
+
+- reference and candidate identities;
+- consumer contract;
+- domain and exclusions;
+- decoder and runtime;
+- evaluator and evidence;
+- complete resource measurements;
+- known failures;
+- route and fallback;
+- validity interval;
+- material-change triggers;
+- recovery path.
+
+Useful states include:
+
+- `QUALIFIED`;
+- `PROVISIONAL`;
+- `DOMAIN_RESTRICTED`;
+- `UNSATISFIABLE_UNDER_BUDGET`;
+- `UNVERIFIED`;
+- `REVOKED`.
+
+A certificate describes the evidence and scope. It does not grant deployment authority.
+
+### Material-change invalidation
+
+Changes to any of the following can stale the record:
+
+- candidate bytes;
+- decoder;
+- platform or kernel;
+- model or tokenizer;
+- evaluator;
+- contract;
+- input distribution;
+- access pattern;
+- rights or policy;
+- fallback;
+- physical resource profile.
+
+Property-specific dependence can preserve unaffected evidence, but missing dependence fails wide.
+
+### Monitoring
+
+Runtime monitors compare:
+
+- route prediction with actual cost;
+- protected behavior with baseline;
+- fallback and abstention;
+- residual growth;
+- drift;
+- corruption;
+- latency and energy;
+- reviewer burden;
+- recovery readiness.
+
+### Recovery
+
+Recovery can restore:
+
+- the reference model;
+- a higher-precision level;
+- exact source or literal representation;
+- an earlier decoder;
+- a prior route policy;
+- a clean checkpoint.
+
+External effects and lost data may require compensation rather than rollback. A compressed copy cannot be the sole recovery source before its decoder and corruption behavior are qualified.
+
+## Unified Benchmark Program
+
+The paper’s claims require mechanism-separated experiments rather than one compression leaderboard.
+
+### Functional Precision campaign
+
+Select one open model and define three contracts:
+
+1. **Aggregate capability:** ordinary benchmark and language-quality preservation.
+2. **Rare-slice assurance:** calibration, subgroup, tail, and abstention behavior.
+3. **Agent behavior:** tool selection, argument validity, effect restraint, and fallback.
+
+Generate candidate representations across bit widths, mixed precision, sparse exceptions, and progressive residuals. Report complete executable size, memory traffic, latency, energy, verification cost, route coverage, false fallback, and protected behavior.
+
+The key hypothesis is that different contracts produce materially different precision fields and that one aggregate benchmark contract is insufficient.
+
+### Tensor codec campaign
+
+Evaluate low-rank predictor–corrector methods on:
+
+- transformer tensors;
+- scientific matrices;
+- smooth and piecewise-smooth fields;
+- dense random controls;
+- pathological outliers;
+- already-compressed controls;
+- tiny tensors.
+
+Baselines include literal storage, general-purpose codecs, quantization plus compression, SVD plus the identical residual coder, and domain-specific codecs. Sweep rank, step size, factor precision, traversal, and optimization steps.
+
+Report actual bytes by component, distortion, downstream task utility, encode/decode time, memory, energy, random access, corruption, and determinism.
+
+### Hierarchical codec campaign
+
+Begin with native volumetric data. Compare:
+
+- multiscale residual coding;
+- octree or wavelet methods;
+- small law families with exact repair;
+- split and interface ablations;
+- proxy bootstrap and refresh policies;
+- literal fallback.
+
+Success requires a declared domain where complete rate and operational cost beat strong baselines without repair or interface domination.
+
+### Semantic representation campaign
+
+Compare:
+
+- original natural language;
+- ordinary summaries;
+- compact semantic packets with residuals;
+- graph and relational representations;
+- direct long-context inference.
+
+Tasks include exact quotation, multi-step reasoning, scope and negation, entity tracking, code and numbers, cross-lingual transfer, and generated-output round trips. Count compiler, renderer, residual, source fallback, tokens, latency, and errors.
+
+### Routing campaign
+
+Compare:
+
+- strongest-model-only;
+- fixed cascade;
+- learned quality router;
+- contract-aware router;
+- human-reviewed route.
+
+Use equal task universes and report accepted useful outcomes, unsafe effects, false refusals, complete cost, fallback, and reviewer burden.
+
+### Preregistration and denominator
+
+Every campaign freezes:
+
+- task population;
+- contracts;
+- baselines;
+- candidate search budget;
+- evaluator;
+- exclusions;
+- stopping rules;
+- complete cost policy;
+- success and falsification criteria.
+
+Failed pilots and abandoned candidates remain in the denominator.
+
+## Threat Model
+
+### Decoder hiding
+
+A large or unstable decoder is treated as free shared infrastructure.
+
+### Residual dumping
+
+The principal representation shrinks by moving difficult information into an unreported residual or human process.
+
+### Parameter-metric substitution
+
+Weight error or reconstruction error is presented as behavioral equivalence.
+
+### Proxy optimization
+
+A differentiable rate surrogate improves while actual serialized bytes or task utility worsen.
+
+### Baseline weakening
+
+The candidate is compared with naive literal storage rather than strong conventional methods.
+
+### Access-pattern laundering
+
+A sequential archive win is reported as a serving or random-access win.
+
+### Route cherry-picking
+
+Only tasks accepted by the cheap route appear in its denominator.
+
+### Fallback concealment
+
+Reference execution is frequent but excluded from average cost.
+
+### Certificate theater
+
+A structured record gives false confidence around an incomplete contract or weak evaluator.
+
+### Precision escalation attack
+
+Adversarial inputs force expensive precision, model, or verifier escalation and create denial of service.
+
+### Semantic erasure
+
+Compact language removes negation, scope, identity, quotation, or authority distinctions that are expensive to represent.
+
+### Interface explosion
+
+Hierarchical splitting or modular representation reduces local error while boundary metadata and coordination dominate.
+
+### Resource shifting
+
+Compute savings increase bandwidth, memory traffic, cooling, human work, or recovery cost.
+
+### Temporal manipulation
+
+Quota, price, and notification policy creates synchronized demand, artificial scarcity, addiction-like engagement, or inaccessible service.
+
+### Governance overhead
+
+Qualification and monitoring cost more than the representation saves but are omitted from the economic claim.
+
+## Limitations, Falsifiers, and Contraction Rules
+
+The framework depends on the consumer contract. An omitted protected behavior cannot be preserved by definition. Contract construction therefore remains a major source of error and power.
+
+The functional optimum is generally intractable. Candidate search uses proxies, limited code families, finite evaluators, and incomplete data. Qualification is always bounded by the tested population and threat model.
+
+Resources can be difficult to compare. Energy estimates vary by hardware and utilization; human costs are noisy; rights and unsafe effects should often remain constraints rather than prices. The vector representation does not solve policy disagreement.
+
+Progressive routing can create new complexity and attack surfaces. A static simple representation may be more reliable. Semantic compilers can introduce interpretation errors. Higher-order relational operators may never beat ordinary reification or message passing. Hierarchical codecs may lose to mature domain-specific methods.
+
+The framework should contract when:
+
+- simple fixed precision matches dynamic precision under the full contract;
+- a strong conventional codec matches coder-aligned or hierarchical methods;
+- semantic compression does not reduce total model and verification cost;
+- routing overhead and fallback erase savings;
+- qualification fails to predict runtime behavior;
+- human review becomes the hidden dominant decoder;
+- monitoring categories never change a decision;
+- the retained reference makes the compact path economically irrelevant.
+
+A negative result should narrow the representation family or retire the controller. “Architecturally interesting” is not an efficiency metric.
+
+## Conclusion
+
+Representation and resource optimization should begin from the behavior a consumer needs preserved, not from the numeric format or component where a local saving is easiest to report.
+
+A useful candidate is a complete executable object: representation, decoder, metadata, residuals, routing, verification, fallback, migration, and recovery. Its cost remains a vector over physical and human resources. Its validity is scoped to a consumer contract, platform, workload, evaluator, and evidence period. A low-cost base can be progressively refined, but coverage and protected behavior must remain visible. Low-rank residual coding, implicit neural representations, hierarchical generate–verify–repair codecs, compact semantic languages, relational operators, and model routing all become comparable only when their complete burden and access pattern are measured.
+
+The paper does not identify one universally optimal representation. It establishes a stricter criterion for claiming progress:
+
+> **No burden has disappeared merely because it moved outside the metric being optimized.**
+
+The resulting research program is empirical. A representation earns adoption only when it improves the complete qualified outcome frontier against strong baselines—and when it can return safely to a stronger representation when its assumptions fail.
+
+## Appendix A: Canonical Record Sketches
+
+### Consumer contract
+
+```yaml
+contract_id:
+consumer:
+purpose:
+reference_system:
+domain:
+excluded_conditions:
+protected_behaviors:
+metrics:
+thresholds:
+vetoes:
+coverage_floor:
+confidence_or_proof_requirements:
+resource_limits:
+authority_and_privacy:
+escalation:
+fallback:
+material_change_triggers:
+```
+
+### Candidate package
+
+```yaml
+candidate_id:
+base_representation:
+decoder:
+metadata:
+residuals:
+exceptions:
+route_policy:
+verification_artifacts:
+fallback_dependencies:
+platform:
+complete_resource_vector:
+known_failures:
+recovery:
+```
+
+### Qualification record
+
+```yaml
+qualification_id:
+candidate_id:
+contract_id:
+reference_id:
+evaluator:
+evidence:
+result: QUALIFIED | PROVISIONAL | DOMAIN_RESTRICTED | UNSAT | UNVERIFIED | REVOKED
+validity_window:
+monitor:
+expiry:
+invalidation_dependencies:
+non_claims:
+```
+
+### Runtime route receipt
+
+```yaml
+request_id:
+contract_id:
+eligible_routes:
+selected_route:
+disqualifications:
+predicted_cost:
+actual_cost:
+verification:
+fallback_used:
+protected_behavior_result:
+residuals:
+terminal_state:
+```
+
+## Appendix B: Intellectual Lineage and Supersession
+
+| Earlier manuscript | Canonical contribution retained here | Material superseded or demoted |
+|---|---|---|
+| The Precision Contract | Functional rate–distortion, precision fields, progressive representation, scoped certificates | Any implication of a universal solved optimum |
+| Compact Generative Systems | Seed/rules/state/residual/verification/governance burden model | Universal theory or scalar quality ratio |
+| RankFold + NeuralFold | Coder-aligned low-rank predictor, field and byte paths, probe-route-fallback | Unverified compression and market claims |
+| RankFold Compressor | Correction from hyper-precision shortcuts to bounded predictor–corrector coding | Bijection, recursive-exponential, quantum, lossless, and unsupported benchmark claims |
+| BBVCA v9 | Reconstruction contract, generate–verify–repair, layerwise exactness, proxy/final separation | Cosmological or universal-codec implications |
+| BBVCA lineage | Versioned correction history | Independent evidentiary weight for repeated drafts |
+| Kernel English Residual Compiler | Protected exact objects, compact semantic path, hierarchical residuals, round-trip checks | Assumption that shorter internal language is efficient or faithful |
+| Relational Dimension Compiler | Semantic/computational/storage arity and adaptive operator selection | Fixed higher tensor order as intelligence |
+| Simulation Scaling | Contract-relative typed resource feasibility | Universal scalar “law” or metaphysical simulation conclusions |
+| TokenMana | Regenerative temporal capacity and human/displaced-cost accounting | Unproved equilibrium, variance, profit, productivity, or health claims |
+
+## References

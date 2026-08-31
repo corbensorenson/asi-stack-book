@@ -4,37 +4,37 @@
   "snapshot_date": "2026-07-13",
   "scope": "All active chapter-core claims; vectors expose quality dimensions without changing the authoritative support summary.",
   "summary": {
-    "vector_count": 87,
+    "vector_count": 89,
     "dimension_count": 8,
     "summary_support_states": {
-      "argument": 87
+      "argument": 89
     },
     "dimension_state_counts": {
       "independence": {
-        "internal_only": 87
+        "internal_only": 89
       },
       "reproducibility": {
         "adjacent_local_replay": 36,
-        "not_demonstrated_for_claim": 51
+        "not_demonstrated_for_claim": 53
       },
       "recency": {
-        "repository_snapshot_current": 87
+        "repository_snapshot_current": 89
       },
       "coverage": {
-        "claim_scope_unmeasured": 87
+        "claim_scope_unmeasured": 89
       },
       "adversarial_strength": {
         "adjacent_bounded_controls": 36,
-        "not_demonstrated_for_claim": 51
+        "not_demonstrated_for_claim": 53
       },
       "validity": {
-        "not_independently_assessed": 87
+        "not_independently_assessed": 89
       },
       "artifact_access": {
-        "public_claim_records_partial_evidence": 87
+        "public_claim_records_partial_evidence": 89
       },
       "transfer_distance": {
-        "not_established": 87
+        "not_established": 89
       }
     },
     "numeric_aggregate_count": 0,
@@ -4043,6 +4043,123 @@
       ]
     },
     {
+      "vector_id": "reflexive-model-world-systems.core.quality.2026-07-13",
+      "claim_id": "reflexive-model-world-systems.core",
+      "chapter_id": "reflexive-model-world-systems",
+      "chapter_file": "chapters/reflexive-model-world-systems.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Pinned reproduction of the supplied three toy campaigns plus a prospective lineage-aware causal-governance benchmark; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The complete Corben-authored package supplies a causal architecture, six scoped propositions, code, data, figures, and three source-reported toy campaigns, but the campaigns were not rerun locally and no independent formalization, causal-identification result, real deployment, grounding-reserve validation, legitimacy assessment, or persistence-aware rollback result has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/reflexive-model-world-systems.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
       "vector_id": "cognitive-compilation-and-semantic-ir.core.quality.2026-07-13",
       "claim_id": "cognitive-compilation-and-semantic-ir.core",
       "chapter_id": "cognitive-compilation-and-semantic-ir",
@@ -4195,6 +4312,123 @@
             "appendices/C_claim_evidence_matrix.qmd",
             "claim_decisions/v1_x_core_claim_dispositions.json",
             "claim_decisions/qcsa_reference_evaluation_dispositions.json"
+          ],
+          "residuals": [
+            "External-context and deployed-context transfer remain unknown."
+          ]
+        }
+      },
+      "aggregation": {
+        "policy": "non_aggregating",
+        "scalar_score": "prohibited",
+        "automatic_support_state_derivation": "prohibited"
+      },
+      "support_state_effect": "none",
+      "non_claims": [
+        "This vector does not promote the chapter-core claim.",
+        "Current, public, or locally replayed records do not imply independent validity or transfer."
+      ]
+    },
+    {
+      "vector_id": "cognitive-method-transfer-and-qualification.core.quality.2026-07-13",
+      "claim_id": "cognitive-method-transfer-and-qualification.core",
+      "chapter_id": "cognitive-method-transfer-and-qualification",
+      "chapter_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
+      "summary_support_state": "argument",
+      "summary_source": "claim_decisions/v1_x_core_claim_dispositions.json",
+      "dimensions": {
+        "independence": {
+          "state": "internal_only",
+          "rationale": "The book, mappings, checks, and disposition were produced inside the author/AI project; no accepted independent human review is recorded.",
+          "evidence_refs": [
+            "docs/external_review_status.md",
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Shared project incentives and correlated review remain unresolved."
+          ]
+        },
+        "reproducibility": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted replay directly reproduces this chapter-core architectural claim.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Direct independent reproduction of the claim-bounded result is absent."
+          ]
+        },
+        "recency": {
+          "state": "repository_snapshot_current",
+          "rationale": "The vector and active disposition were regenerated for the 2026-07-13 repository snapshot.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Repository freshness does not establish empirical recency or protect against future drift."
+          ]
+        },
+        "coverage": {
+          "state": "claim_scope_unmeasured",
+          "rationale": "The recorded lane is Frozen-model matched-budget procedure-realization, routing, interaction, and security campaign; current artifacts do not cover the broad chapter-core claim population.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "The complete Corben-authored package supplies CTR and QCP schemas, a conforming example, a transport framework, protocol lifecycle, security model, and experimental program, but no CMTQ runtime, procedure-realization benchmark, routing or interaction study, secure protocol campaign, independently checked proof, reproduction, or beneficial transfer result has been accepted."
+          ]
+        },
+        "adversarial_strength": {
+          "state": "not_demonstrated_for_claim",
+          "rationale": "No accepted adversarial program directly tests the chapter-core claim.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Adaptive and independent claim-bounded red-team evidence is absent."
+          ]
+        },
+        "validity": {
+          "state": "not_independently_assessed",
+          "rationale": "Internal mappings and validators do not establish that available artifacts measure or prove the construct expressed by the core claim.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Construct and criterion validity require independent, claim-specific assessment; QCSA's internal separation is not external independence."
+          ]
+        },
+        "artifact_access": {
+          "state": "public_claim_records_partial_evidence",
+          "rationale": "The chapter, Appendix C row, disposition, and public-safe references are accessible, while complete claim-bounded evidence is not available because it has not been produced.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
+          ],
+          "residuals": [
+            "Public metadata and partial artifacts are not a complete reproducibility bundle."
+          ]
+        },
+        "transfer_distance": {
+          "state": "not_established",
+          "rationale": "No accepted evidence establishes transfer from narrow fixtures, sources, or local records to the broad architecture setting named by the core claim.",
+          "evidence_refs": [
+            "chapters/cognitive-method-transfer-and-qualification.qmd",
+            "appendices/C_claim_evidence_matrix.qmd",
+            "claim_decisions/v1_x_core_claim_dispositions.json"
           ],
           "residuals": [
             "External-context and deployed-context transfer remain unknown."

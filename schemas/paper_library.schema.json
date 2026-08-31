@@ -20,9 +20,19 @@
           "document_class": {
             "enum": [
               "research_paper", "technical_whitepaper", "architecture_whitepaper",
-              "technical_specification", "philosophical_treatise", "project_paper_lineage"
+              "technical_specification", "philosophical_treatise", "project_paper_lineage",
+              "derived_synthesis_paper"
             ]
           },
+          "lineage_role": {"enum": ["independent_author_source", "derived_book_synthesis"]},
+          "series_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "series_order": {"type": "integer", "minimum": 1},
+          "chapter_routes": {
+            "type": "array",
+            "items": {"type": "string", "pattern": "^[a-z0-9-]+$"},
+            "uniqueItems": true
+          },
+          "bibliography": {"type": "string", "pattern": "^papers/references/[a-z0-9_]+\\.bib$"},
           "canonical_source": {"type": "string", "pattern": "^sources/raw/"},
           "canonical_asset_root": {"type": "string", "pattern": "^sources/raw/"},
           "source_note": {"type": "string", "pattern": "^sources/source_notes/[a-z0-9_]+\\.md$"},

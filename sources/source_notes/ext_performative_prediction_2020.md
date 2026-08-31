@@ -31,7 +31,7 @@ When a prediction informs a decision, deployment can change the distribution on 
 
 `reflexive-model-world-systems` extends the ownership question from a parameter-indexed distribution to governed model lineages, eight distinct response channels, evidence ancestry, grounding reserves, institutional persistence, legitimacy, and multi-lineage interaction. Those extensions are an architectural synthesis and remain at `argument` support.
 
-## Limits And Non-Claims
+## Failure Modes
 
 - Performative stability is not automatically beneficial, legitimate, globally stable, or safe.
 - The source does not establish the completeness of the RMWS channel taxonomy.
@@ -43,3 +43,13 @@ When a prediction informs a decision, deployment can change the distribution on 
 - `reflexive-model-world-systems`
 - `governed-world-models-and-reality-grounding`
 - `data-engines-continual-learning-and-unlearning`
+
+## Claims To Add Or Update
+
+- Use performative prediction as the primary formal comparator for deployment-dependent data distributions.
+- Keep performative stability separate from legitimacy, safety, causal identification, and desirable trajectory claims.
+
+## Open Questions
+
+- Which regularity and convergence assumptions remain plausible in multi-lineage institutional settings?
+- How should distribution maps be extended when deployment changes measurement, categories, preferences, and governance simultaneously?

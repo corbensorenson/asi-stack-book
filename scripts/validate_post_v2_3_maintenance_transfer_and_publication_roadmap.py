@@ -2482,9 +2482,9 @@ def errors(data: dict) -> list[str]:
         or template_guard.get("current_copied_diagram_and_test_spread") != 0
         or template_guard.get("repaired_chapter_count") != 10
         or template_guard.get("baseline_prose_candidate_count") != 3444
-        or template_guard.get("current_prose_candidate_count") != 4150
-        or template_guard.get("retired_inherited_prose_candidate_count") != 298
-        or template_guard.get("added_domain_specific_prose_candidate_count") != 1004
+        or template_guard.get("current_prose_candidate_count") != 4153
+        or template_guard.get("retired_inherited_prose_candidate_count") != 299
+        or template_guard.get("added_domain_specific_prose_candidate_count") != 1008
         or template_guard.get("baseline_structured_atom_count") != 4067
         or template_guard.get("current_structured_atom_count") != 4064
         or template_guard.get("pending_prose_candidate_count") != 0
@@ -2512,8 +2512,8 @@ def errors(data: dict) -> list[str]:
         or w3.get("corpus", {}).get("manifest_chapter_count") != 84
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("baseline", {}).get("distinct_repeated_12_grams") != 812
         or w3.get("measurements", {}).get("editorial_narrative", {}).get("current", {}).get("distinct_repeated_12_grams") != 0
-        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 298
-        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 1004
+        or w3.get("claim_review_reconciliation", {}).get("retired_inherited_prose_candidate_count") != 299
+        or w3.get("claim_review_reconciliation", {}).get("added_domain_specific_prose_candidate_count") != 1008
         or w3.get("claim_review_reconciliation", {}).get("current_pending_prose_candidate_count") != 0
         or w3.get("meaning_custody", {}).get("chapter_core_support_movements") != 0
     ):

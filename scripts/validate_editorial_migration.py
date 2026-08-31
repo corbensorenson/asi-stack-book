@@ -21,7 +21,7 @@ from build_editorial_migration_preview import (
 
 
 EXPECTED_ROLE_COUNTS = {
-    "primary_architecture_owner": 54,
+    "primary_architecture_owner": 56,
     "implementation_method_owner": 2,
     "publication_nest": 16,
     "method_detail_nest": 2,

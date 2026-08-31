@@ -1,0 +1,964 @@
+---
+title: "Causal Adaptation in AI Systems: Learning-Process Topology, Persistence Placement, and Verified Forward Transfer"
+author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+date: "2026-08-15"
+page-layout: article
+toc: true
+toc-depth: 3
+number-sections: false
+description: "Compact authorial synthesis derived from The ASI Stack and its source lineage."
+bibliography: ../papers/references/governed_intelligence.bib
+link-citations: true
+---
+
+[← Corben Papers and Architecture Sources](index.qmd)
+
+::: {.callout-important title="Derived synthesis, not independent evidence"}
+This manuscript is a compact authorial synthesis derived from the living book and its earlier source lineage. It is published as a readable research surface, not counted as independent corroboration of the book, and cannot promote a claim by repeating material already present in its inputs.
+:::
+
+## Publication and provenance
+
+| Field | Record |
+|---|---|
+| Source ID | `governed_intelligence_causal_adaptation` |
+| Source class | `authorial_derived_synthesis` |
+| Library class | `derived_synthesis_paper` |
+| Manuscript date | 2026-08-15 |
+| Inventory updated | 2026-08-30 |
+| Exact published-source SHA-256 | `af365f54aaf8886a6ab63a02bae1f8153e656bc8611ce5eb383e3ed5fcf76d8d` |
+| Exact published-source bytes | 44,517 |
+| Exact source text | [Download/view the tracked Markdown source](source/governed_intelligence_causal_adaptation.md) |
+| Book's source note | [Read the bounded mining note](https://github.com/corbensorenson/asi-stack-book/blob/main/sources/source_notes/governed_intelligence_causal_adaptation.md) |
+| Authorship and collaborator credits | Preserved from the exact original manuscript; this library wrapper does not replace or simplify them. |
+| Rights | No new license grant. Corben Sorenson's rights are reserved; collaborator, quotation, source-title, and third-party rights remain with their holders. |
+
+**Current publication boundary.** Paper 3 of the Governed Intelligence derived synthesis. It compresses existing book and author-source material into a causal adaptation and forward-transfer program; it is not independent corroboration and reports no executed benchmark, measured transfer, support-state, readiness, release, SOTA, AGI, or ASI result.
+
+**HTML presentation note.** The HTML page normalizes line endings and trailing whitespace, preserves explicit Markdown hard breaks, and demotes manuscript headings beneath the page title. The manuscript YAML front matter is represented by the provenance panel rather than repeated in the body. The digest above applies to the linked exact source text, not to this presentation wrapper.
+
+## Where this synthesis maps onto the living book
+
+[Procedural Memory and Cognitive Loop Closure](../chapters/procedural-memory-and-cognitive-loop-closure.html), [Learning–Compute Topology and Adaptive Process Architecture](../chapters/learning-compute-topology-and-adaptive-process-architecture.html), [Learning Theory, Generalization, and Scaling Science](../chapters/learning-theory-generalization-and-scaling-science.html), [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.html), [Adjudicated Persistence and the Adaptive Commit Boundary](../chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html), [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.html), [Data Engines, Continual Learning, and Unlearning](../chapters/data-engines-continual-learning-and-unlearning.html), [Integrated Reference Architecture](../chapters/integrated-reference-architecture.html)
+
+<hr>
+
+## Original manuscript
+
+## Introduction: Outcomes Do Not Identify Lessons
+
+Two agents can produce the same failure for entirely different reasons.
+
+Imagine that both agents submit a patch that drops an optional field from a configuration file. In the first system, the parser itself discards the field during a read–write round trip. In the second, the parser is correct, but the task context contains a stale schema that tells the agent the field no longer exists. The visible outcome is identical. The durable repair should not be.
+
+The first failure belongs at the mechanism boundary: repair the parser and add a typed round-trip test. A memory warning would leave every other caller exposed. A parameter update might merely teach one agent to compensate for a broken tool.
+
+The second failure belongs in context and source governance: invalidate the stale schema, repair the retrieval path, and perhaps retain a dated incident record. Changing the parser would encode the wrong lesson into shared infrastructure.
+
+A score, reward, or terminal label cannot identify this distinction. “The patch failed” is evidence that something went wrong, not a causal explanation or permission to update a particular surface.
+
+Contemporary AI learning spans many surfaces. Continual learning updates model parameters while attempting to preserve prior capabilities [@kirkpatrick2017ewc]. Model editing changes specific factual associations [@meng2022rome]. Federated learning coordinates local adaptive states [@mcmahan2017fedavg]. Population-based training maintains and selects alternative learners [@jaderberg2017pbt]. Meta-learning changes how systems adapt [@finn2017maml]. Program-synthesis systems accumulate reusable libraries [@ellis2020dreamcoder; @bowers2022stitch; @grand2023lilo]. Embodied agents build skill libraries [@wang2023voyager].
+
+Each field offers powerful mechanisms, but each often begins after an important question has already been answered implicitly: **what kind of thing should this experience become?** A gradient? A memory? A test? A tool? A routing rule? A revised evaluator? An environmental change? A new institutional procedure? Or merely retained evidence pending better attribution?
+
+This paper develops a causal adaptation framework around three linked objects.
+
+1. **Learning-process topology:** the causal organization of persistent adaptive identities and the routes through which evidence, judgment, credit, state, artifacts, control, and authority change them.
+2. **Persistence admission:** the decision that an experience is eligible to acquire durable influence, along with the locus, strength, scope, qualification, monitoring, and retirement obligations of that influence.
+3. **Verified forward transfer:** the intervention-based test of whether the resulting knowledge or structure improves future independently verified work under fair resource accounting.
+
+The three objects form one complete chain:
+
+```text
+adaptive process
+→ candidate lesson and placement
+→ durable realization
+→ future consequence
+```
+
+The theory’s central rule is:
+
+> **An outcome does not identify a lesson, and a lesson does not identify its proper persistence locus.**
+
+This rule protects against several familiar failures. A lucky success can encode a defective process. A bad outcome can punish a defensible decision. Repeated behavior can become an automated tool before its hidden parameters are understood. A benchmark plateau can be mistaken for capability maturity. A growing library can appear to demonstrate cumulative intelligence even when it merely increases search cost. A system can improve its score by forgetting hard cases, suppressing useful exploration, or changing the evaluator.
+
+The framework is not anti-learning. It is an attempt to make cumulative learning more precise. The objective is to preserve useful knowledge while retaining the ability to challenge, narrow, relocate, and retire it.
+
+## Scope and Standard Terminology
+
+The unit of analysis is an **adaptive system**, not necessarily a single neural network. An adaptive system contains at least one persistent state that can change in response to evidence and influence later behavior.
+
+**Adaptive state.** Any persistent state modified by learning: model weights, optimizer state, memory, data selection, procedures, tools, evaluator parameters, routing policies, archives, or organizational routines.
+
+**Adaptive identity.** A versioned state-bearing entity that can diverge from alternatives, persist across events, and influence future outcomes. A temporary worker replica is not automatically an independent adaptive identity.
+
+**Evidence.** Information made available to an adaptive process. Evidence can be an outcome, trace, user correction, experiment, incident, benchmark result, or source change.
+
+**Judgment.** An evaluation of evidence: correct, harmful, surprising, unsupported, causally relevant, or otherwise decision-bearing.
+
+**Credit assignment.** A mapping from judgment to the component, process, or decision thought responsible for the outcome.
+
+**Lesson hypothesis.** A defeasible proposition about what should change, why, under what scope, and with what expected effect.
+
+**Persistence locus.** The surface in which a lesson is realized: context, semantic memory, procedure, tool or test, model parameters, evaluator, environment, system structure, or institution.
+
+**Realization.** A concrete persistent artifact or state change implementing a lesson.
+
+**Qualification.** A scoped, time-bounded decision that a realization is fit for a named consumer and use under stated evidence and assumptions.
+
+**Authority.** Permission to activate the realization or let it influence a particular consequence.
+
+**Commitment burden.** The reach, binding force, duration, coupling, authority, irreversibility, and descendant impact of a realization.
+
+**Deoptimization.** Narrowing, decompiling, relocating, or retiring persistent structure that no longer justifies its burden.
+
+**Forward transfer.** A causal improvement in future performance attributable to the availability of previously acquired knowledge under a matched intervention.
+
+**Protected positive behavior.** Existing useful capability that an adaptation is required to preserve.
+
+The framework excludes changes to the process that determines what counts as evidence, improvement, or legitimate authority. Those reflexive changes require the separate architecture developed in Paper IV.
+
+## Related Work and Novelty Boundary
+
+### Learning graphs and distributed execution
+
+Stochastic computation graphs formalize stochastic dependencies and gradient estimation [@schulman2015scg]. Distributed intermediate representations such as DistIR model how neural computations are placed and scheduled [@santhanam2021distir]. These formalisms are valuable, but they ordinarily assume the learning identity, objective, and integration semantics are already fixed.
+
+This paper treats the **learning process itself** as a typed causal graph: which adaptive states exist, which evidence reaches them, who judges candidates, how credit is assigned, how alternative states are integrated or retired, and who may rewire the process.
+
+### Federated, population, and meta-learning
+
+Federated averaging creates locally adapted client states and periodically aggregates them [@mcmahan2017fedavg]. Population-based training creates, evaluates, copies, mutates, and retires persistent alternatives [@jaderberg2017pbt]. MAML optimizes for rapid task adaptation [@finn2017maml]. These systems illustrate different learning-process topologies even when their physical compute graphs look similar.
+
+### Continual learning and model editing
+
+Continual learning focuses on incorporating new information while avoiding forgetting [@kirkpatrick2017ewc]. Model editing changes selected associations or behaviors [@meng2022rome]. The present framework places these among several candidate persistence loci. It does not assume that every lesson should enter parameters.
+
+### Library learning, tool use, and proceduralization
+
+DreamCoder, Stitch, LILO, and Voyager demonstrate mechanisms for extracting reusable abstractions or skills [@ellis2020dreamcoder; @bowers2022stitch; @grand2023lilo; @wang2023voyager]. Recent compute-matched evaluations caution that performance gains can disappear when baselines receive equivalent resources and that stored libraries may show little direct reuse [@berlotattwell2026library]. These results motivate a stricter distinction between compression, invocation, necessity, and forward transfer.
+
+### Precise contribution
+
+The paper does not claim to invent continual learning, program libraries, causal graphs, or multi-agent learning. It contributes a joined framework in which:
+
+- learning-process topology identifies the possible causal routes of adaptation;
+- persistence admission governs whether and where a lesson should become durable;
+- forward-transfer interventions test whether the realized structure benefits future work.
+
+## Adaptive Identities and Learning-Process Topology
+
+The conventional learning abstraction is a state update:
+
+\[
+\theta_t \xrightarrow{\text{data, loss, update}} \theta_{t+1}.
+\]
+
+This representation is useful, but it hides the organization of evidence, evaluation, credit, and persistent alternatives. Many systems contain several adaptive states, archives, evaluators, and integration operations. Their causal organization can change what is discoverable, preserved, or destroyed even when the same models and hardware are used.
+
+### Typed adaptive process
+
+Represent a learning process as a typed open hypergraph
+
+\[
+\mathcal{G} = (V, H, S, \tau, \kappa, \alpha, \pi),
+\]
+
+where:
+
+- \(V\) is the set of process components;
+- \(H\) is the set of event hyperedges;
+- \(S\) is persistent and transient state;
+- \(\tau\) assigns types to state and ports;
+- \(\kappa\) gives transition kernels or deterministic rules;
+- \(\alpha\) records authority and provenance;
+- \(\pi\) gives permitted topology rewrites.
+
+Hyperedges are useful because one event may consume evidence, evaluator state, resource budgets, and several candidate models while producing judgments, credit assignments, artifacts, and updated identities.
+
+### State types
+
+A practical intermediate representation distinguishes at least:
+
+- adaptive state;
+- evidence;
+- judgment;
+- credit;
+- artifact;
+- resource;
+- control;
+- authority;
+- static configuration.
+
+The types prevent common substitutions. A reward is evidence or judgment, not necessarily credit. Credit is not the update itself. A copied model is an alternative state, not new information. An archive is retained option capacity, not current deployment. Authority to update one state does not authorize changing the evaluator or objective.
+
+### Identity tests
+
+A state should count as an adaptive identity only if it passes four tests:
+
+1. **Persistence:** it survives long enough to influence later events.
+2. **Divergence:** it can differ meaningfully from another candidate state.
+3. **Update:** some evidence or decision can change it independently.
+4. **Consequence:** its state can affect later behavior, evaluation, or integration.
+
+Thousands of data-parallel workers may implement one adaptive identity if they synchronize into a canonical successor. One physical device may time-share many adaptive identities if they persist separately.
+
+### Operators
+
+A minimal operator vocabulary includes:
+
+- observe;
+- evaluate;
+- assign credit;
+- update;
+- fork;
+- synchronize;
+- select;
+- merge;
+- distill;
+- compose;
+- transfer;
+- archive;
+- restore;
+- retire;
+- route;
+- allocate;
+- rewire;
+- checkpoint.
+
+Integration operators are not interchangeable. Selection preserves one candidate and discards or archives others. Parameter merge creates a new state with uncertain semantic inheritance. Distillation transfers behavior under a teacher–student objective. Modular composition preserves several identities into deployment. A generic “aggregate” edge conceals these differences.
+
+### Process topology versus compute topology
+
+The same learning process can be realized through different schedules, devices, communication patterns, and numerical formats. Conversely, the same hardware can realize different learning topologies. The compiler from semantic process to physical execution should declare what it preserves and what leakage it introduces:
+
+- staleness;
+- dropped messages;
+- quantization;
+- partial failures;
+- scheduler-dependent ordering;
+- compression;
+- resource-induced truncation.
+
+A faster realization that changes credit timing, evaluator exposure, or candidate survival is not merely an implementation optimization.
+
+## Adaptive Causal Normal Form
+
+Different systems can share a graph silhouette while implementing different learning semantics. A normal form makes the causal roles explicit enough for comparison.
+
+A bounded normalization procedure:
+
+1. selects a resolution contract;
+2. exposes persistent adaptive identities;
+3. separates evidence, judgment, credit, and update;
+4. replaces generic integration with typed operators;
+5. exposes feedback and lifecycle events;
+6. records authority and provenance;
+7. contracts only components whose interfaces preserve the relevant distinctions;
+8. emits a canonical ordering and names.
+
+Equivalence remains claim-specific. Structural equivalence does not imply equal traces. Equal traces do not imply equal learning behavior under interventions. Equal task behavior does not imply equal authority, cost, or recoverability.
+
+Useful equivalence classes include:
+
+- structural;
+- lineage;
+- trace;
+- stochastic;
+- behavioral;
+- learning;
+- resource;
+- deployment;
+- authority equivalence.
+
+The purpose of normal form is not to create one universal ontology. It is to prevent a comparison from silently moving between equivalence claims.
+
+## Experience Integrity and Lesson Hypotheses
+
+Learning begins with an experience record, but an outcome alone is not enough.
+
+An experience record should bind:
+
+- decision-time information;
+- task and authority;
+- action or policy;
+- environment and implementation versions;
+- predicted outcomes and uncertainty;
+- actual observations;
+- delayed effects;
+- evaluator identity;
+- interventions and human involvement;
+- alternative explanations;
+- source and rights constraints.
+
+### Outcome and process
+
+Outcome quality and process quality are orthogonal. A sound decision can produce a bad outcome under stochasticity. A defective decision can succeed by luck. An agent that optimizes only terminal reward may encode both cases incorrectly.
+
+The record therefore distinguishes:
+
+- actual loss or success;
+- hard violations;
+- surprise;
+- process conformance;
+- causal contribution;
+- avoidability;
+- foreseeability;
+- recurrence;
+- learning eligibility.
+
+### Decision-time fairness
+
+Counterfactual evaluation must respect what was available when the decision was made. A comparator is admissible only if it was informationally, causally, legally, and resource-wise feasible under the decision-time state.
+
+Later evidence may improve estimates of consequences. It cannot retroactively create an obligation to choose an alternative that was unavailable, unauthorized, or unknowable.
+
+### Counterfactual evaluation record
+
+Rather than a scalar regret signal, the system stores a typed record over:
+
+- comparator;
+- horizon;
+- stakeholder or objective;
+- actual and counterfactual outcome distributions;
+- causal contribution;
+- uncertainty and identification status;
+- feasibility and authority;
+- reversibility;
+- recurrence and repair value.
+
+Scalar projections may guide a bounded consumer, but the underlying distinctions remain available. This reduces incentives to manipulate one regret number while leaving the protected deficit unchanged.
+
+### Alternative explanations
+
+Before a lesson is admitted, the system records competing explanations:
+
+- model knowledge failure;
+- context failure;
+- tool or implementation defect;
+- procedure failure;
+- evaluator failure;
+- specification defect;
+- environmental novelty;
+- adversarial interference;
+- unavoidable stochastic outcome;
+- unresolved cause.
+
+The earliest plausible story should not become permanent merely because it is available first.
+
+## Persistence Admission and Cross-Locus Placement
+
+The transition from transient evidence to durable influence is a consequential effect. This paper calls it the **adaptive commit boundary** after first defining it in ordinary terms as a persistence-admission decision.
+
+### Six-object separation
+
+The lifecycle distinguishes:
+
+1. experience record;
+2. lesson hypothesis;
+3. persistence disposition;
+4. concrete realization;
+5. qualification;
+6. authority to activate or rely on the realization.
+
+A lesson can be plausible without being implemented. A realization can exist without being qualified. A qualified realization can remain unauthorized for a high-consequence use.
+
+### Learning eligibility
+
+An experience may justify containment or investigation without justifying learning. Admission checks include:
+
+- record integrity;
+- decision-time reconstruction;
+- outcome maturity;
+- causal identifiability;
+- evaluator adequacy;
+- protected positive behavior;
+- authorized data use;
+- monitorability and recovery.
+
+When those conditions fail, the correct disposition can be “retain evidence,” “investigate,” “contain,” or “unknown”—not forced adaptation.
+
+### Candidate loci
+
+The main persistence loci are:
+
+| Locus | Appropriate when | Characteristic risk |
+|---|---|---|
+| Task context | Need is temporary or episode-specific | Repeated rediscovery |
+| Semantic memory | Explicit dated proposition should survive | Staleness, retrieval pollution |
+| Procedure | Recurrent sequence or decision rule is stable | Brittle automation |
+| Tool or test | Crisp invariant can be enforced at the failure boundary | Interface ossification |
+| Model parameters | Broad implicit generalization is necessary | Collateral behavior change, difficult deletion |
+| Evaluator | Judgment mechanism is defective | Self-certifying metrics |
+| Environment | Interface or world structure causes the failure | Hidden burden transfer |
+| System topology | Information or authority flow is wrong | Coupling and coordination debt |
+| Institution | Roles, incentives, rights, or legitimacy must change | Centralization and political capture |
+| No change yet | Attribution or evidence is inadequate | Recurrence while unresolved |
+
+The correct answer may be a portfolio: a temporary warning plus a tool repair, or containment plus later policy update. Portfolios should avoid duplicate rules that persist indefinitely across prompts, memory, procedures, tools, and parameters.
+
+## Commitment Profiles and Minimum Sufficient Persistence
+
+Persistence is not binary. A realization’s burden can be described by
+
+\[
+\chi(r) = (s, b, d, c, a, i, g),
+\]
+
+where \(s\) is scope, \(b\) binding strength, \(d\) duration, \(c\) coupling, \(a\) authority, \(i\) irreversibility, and \(g\) descendant reach.
+
+A global parameter update and a dated memory note can express similar content while having radically different commitment profiles.
+
+### Evidence–commitment matching
+
+If realization \(r_2\) dominates \(r_1\) across commitment dimensions, \(r_2\) should not require weaker evidence merely because it is convenient. Broader, stronger, less reversible, more authoritative, and more descendant-reaching changes require correspondingly stronger support and legitimate authority.
+
+This is a monotonic burden principle, not a claim that one scalar can price every dimension.
+
+### Minimum sufficient persistence
+
+Among admissible realizations, prefer the least committing portfolio that satisfies:
+
+- expected efficacy;
+- coverage;
+- preservation of protected capabilities;
+- observability;
+- recovery;
+- authorized use.
+
+Formally, choose
+
+\[
+r^* \in \arg\min_{r \in \mathcal{A}} \chi(r)
+\]
+
+subject to the required constraints. Because \(\chi\) is multidimensional, the decision may produce a Pareto set rather than one scalar optimum.
+
+Minimum sufficient persistence does not mean minimum artifact count. A tool plus test may be less committing than one opaque parameter update even if it creates more files. Nor does it mean the narrowest local patch regardless of reliability. A brittle warning that depends on retrieval can be less sufficient than a mechanism-level fix.
+
+### Guarded realizations
+
+Persistent realizations should preserve:
+
+- applicability predicates;
+- explicit unknown states;
+- slow-path fallback;
+- monitoring;
+- material-change invalidation;
+- deoptimization or retirement;
+- descendant tracking.
+
+A compiled fast path that eliminates the general mechanism needed to detect novelty can make its own obsolescence invisible.
+
+## Competence-Dependent Learning Regimes
+
+As a system becomes competent within a local operating region, the marginal information carried by another ordinary success can decline. A well-characterized exception may reveal more about the boundary of capability, the evaluator, or the environment.
+
+This does not imply that negative examples are universally more valuable. High aggregate success can reflect benchmark exhaustion, hidden scaffolding, evaluator blindness, or collapsing coverage. A shift toward assurance is justified only inside a **qualified competence envelope** indexed by:
+
+- system and version;
+- task family and distribution;
+- time and environment;
+- evaluator set;
+- evidence;
+- coverage and observability;
+- protected capabilities.
+
+### Learning modes
+
+A mature adaptive system allocates effort among:
+
+- acquisition of new positive capability;
+- selection and routing;
+- robustness and boundary discovery;
+- evaluator improvement;
+- assurance and monitoring;
+- recovery and repair.
+
+The allocation changes with evidence. It is not a permanent phase transition for the whole system.
+
+### Evaluator-first repair
+
+When the observation channel cannot distinguish the states that matter, additional policy optimization cannot recover the missing information. The first repair belongs to the evaluator or instrument.
+
+This rule prevents a system from treating every bad score as evidence for changing the actor. It also protects against optimizing an evaluator that is systematically blind to the real failure.
+
+### Informative exceptions
+
+An exception’s learning value depends on more than rarity or severity. Useful dimensions include:
+
+- surprise;
+- recurrence;
+- transfer across tasks;
+- causal identifiability;
+- evaluator confidence;
+- repair value;
+- protected-positive risk;
+- observability after repair.
+
+A rare catastrophic event may justify containment while remaining unsuitable for direct learning because attribution is unresolved. A frequent low-severity defect may be ideal for proceduralization.
+
+### Fast and slow clocks
+
+Immediate response may stop, fall back, quarantine, preserve evidence, or restore state. Durable consolidation may change procedures, tools, parameters, evaluators, or specifications only through a slower qualification path. Containment is not learning, and recovery should not erase the incident record.
+
+### Protected positives
+
+Boundary learning can produce refusal or avoidance as an easy local optimum. Every adaptation declares which useful behavior must remain available. Evaluation includes protected positive cases, not only the targeted failure.
+
+## Procedure Induction and Qualification
+
+Repeated successful trajectories can become procedural memory, but repetition alone does not identify the procedure.
+
+A qualified procedure-induction lifecycle contains:
+
+1. complete trajectory logging;
+2. candidate task-family identification;
+3. loop or recurring-structure detection;
+4. invariant, parameter, precondition, and unknown-assumption analysis;
+5. active parameter discovery;
+6. procedure or tool synthesis;
+7. independent verification;
+8. registry admission;
+9. governed routing;
+10. monitoring, revision, and retirement.
+
+### Eligible trace universe
+
+Discovery must include the full set of runs that could have entered the analysis:
+
+- successes;
+- failures;
+- abstentions;
+- retries;
+- human interventions;
+- timeouts;
+- censored or delayed outcomes.
+
+Winner-only traces produce misleading procedures and erase the conditions under which the apparent pattern failed.
+
+### Active parameter discovery
+
+A value that did not vary in observed traces may be a hidden parameter rather than an invariant. The system probes candidate boundaries through:
+
+- historical variation;
+- counterfactual replay;
+- synthetic cases;
+- adversarial cases;
+- environment interrogation;
+- explicit human clarification.
+
+Each candidate field becomes an invariant, parameter, precondition, or unresolved assumption. Unresolved assumptions block broad automatic routing rather than being silently compiled as defaults.
+
+### Qualified procedure
+
+A procedure record includes:
+
+- task family and applicability;
+- inputs and outputs;
+- parameters and preconditions;
+- side effects and authority;
+- environment and dependencies;
+- verification and monitoring;
+- latency and resource profile;
+- known failures and residuals;
+- fallback;
+- version and expiry;
+- retirement triggers.
+
+A procedure may contain bounded model calls, but their role, variability, and verifier remain explicit.
+
+### Three control modes
+
+The system can route among:
+
+- **deliberation** for novel or ambiguous work;
+- **qualified procedure** for recurring work inside a known envelope;
+- **failsafe control** for hard-latency containment or safety response.
+
+These modes differ in authority, timing, and evidence. A fast path is not simply a shorter prompt.
+
+## Verified Forward Transfer
+
+Persistent structure is valuable only if it changes future work in the desired direction. Compression, storage, retrieval, and invocation are not sufficient evidence.
+
+### Four notions of value
+
+1. **Retrospective compression:** the abstraction shortens or organizes previously solved examples.
+2. **Prospective compression:** the abstraction is predicted to shorten future solutions.
+3. **Observed reuse:** future work retrieves or invokes the abstraction.
+4. **Marginal forward transfer:** making the abstraction available causally improves future verified outcomes under a matched comparison.
+
+The first three can motivate an experiment. Only the fourth establishes benefit.
+
+### Behavioral reuse ladder
+
+A useful ladder distinguishes:
+
+- R0: stored;
+- R1: exposed to the solver;
+- R2: retrieved or invoked;
+- R3: present in a verified solution;
+- R4: semantically contributes to the solution;
+- R5: operationally necessary under removal;
+- R6: produces positive within-family transfer;
+- R7: produces cross-family transfer.
+
+A library can be large at R0 and weak at R6. Invocation frequency can rise while marginal utility remains zero or negative.
+
+### Intervention design
+
+Freeze:
+
+- task distribution and lineages;
+- grammar or action space;
+- knowledge state;
+- search procedure;
+- verifier;
+- resource budgets;
+- randomization and stopping rules;
+- analysis plan.
+
+Then compare matched conditions differing only in the candidate knowledge intervention.
+
+Controls include:
+
+- absence;
+- irrelevant placebo;
+- duplicate abstraction;
+- no-op abstraction;
+- random valid abstraction;
+- expert abstraction;
+- oracle abstraction;
+- removal after observed use.
+
+### Library-search factorial
+
+Libraries and search policies often co-adapt. A two-by-two factorial separates them:
+
+| | Baseline search | Improved search |
+|---|---:|---:|
+| No library | A | B |
+| Candidate library | C | D |
+
+The library effect, search effect, and interaction can then be estimated rather than bundled into one end-to-end score.
+
+### Verification outcomes
+
+Future tasks terminate as:
+
+- verified;
+- refuted;
+- unknown;
+- timeout;
+- invalid.
+
+A timeout is not a semantic refutation. A source-level proof is not enough when the emitted artifact depends on an unverified compiler or lowering step.
+
+### Full cost accounting
+
+Forward-transfer economics includes:
+
+- abstraction discovery;
+- independent validation;
+- documentation and indexing;
+- storage and retrieval;
+- search branching;
+- candidate verification;
+- maintenance and migration;
+- human review;
+- negative transfer;
+- fallback and repair.
+
+Evaluate equal downstream budgets and equal total lifecycle budgets. A library that pays back only after ten thousand uses is not beneficial for a workload expecting one hundred.
+
+## Benchmark and Capability-Frontier Lifecycle
+
+Benchmarks create learning pressure but can stop being informative.
+
+A benchmark may be:
+
+- frontier;
+- diagnostic;
+- regression;
+- live or refreshed;
+- public calibration;
+- retired.
+
+These are roles, not a monotone maturity ladder.
+
+### Saturation, wall, and architecture limitation
+
+**Benchmark saturation** means the instrument no longer supplies useful gradient because of ceiling, contamination, narrowness, noise, or low residual value.
+
+A **development wall** means credible interventions fail to improve a still-valid instrument under matched budgets.
+
+An **architecture limitation** is a causal diagnosis that a missing mechanism is responsible after instrument, data, training, inference, procedure, and tooling alternatives have been tested fairly.
+
+A score alone establishes none of the three.
+
+### Frontier and floor
+
+A capability-improvement cycle should move the current frontier while preserving the exact obligations established on prior tasks. The “floor” is not one aggregate score. It includes subgroup, tail, safety, calibration, authority, and resource constraints.
+
+Graduated benchmarks can become regression instruments. Their unresolved tail remains in a residual registry rather than being erased by graduation.
+
+### Threshold adjustment
+
+Ordinary noisy tails can trap a curriculum. Thresholds may change prospectively under declared patience, effort, uncertainty, subgroup floors, and critical vetoes. Waiting alone should not cause success. Safety-critical obligations should not decay through ordinary schedule pressure.
+
+### Public versus internal instruments
+
+Public benchmarks support common comparison but are vulnerable to contamination and direct optimization. Internal and live instruments support diagnosis but reduce comparability. The system should keep their roles separate and prevent public scores from becoming the sole steering signal.
+
+## Unified Experimental Program
+
+The theory requires three benchmark families.
+
+### Adaptation-Placement Benchmark
+
+Construct tasks in which similar terminal outcomes arise from different causal defects:
+
+- missing knowledge;
+- stale context;
+- broken parser or tool;
+- inadequate evaluator;
+- wrong procedure;
+- model capacity limitation;
+- environmental ambiguity;
+- authorization failure;
+- specification defect;
+- no identifiable lesson.
+
+Candidate systems must produce:
+
+- causal alternatives;
+- lesson hypothesis;
+- chosen persistence locus or portfolio;
+- commitment profile;
+- evidence and authority obligations;
+- protected positives;
+- monitoring and retirement.
+
+Compare parameter-only, memory-only, rule-based local, human placement, and cross-locus adjudication baselines.
+
+Measure:
+
+- placement accuracy;
+- future recurrence;
+- collateral change;
+- commitment overshoot;
+- protected-capability loss;
+- detection of stale repair;
+- deoptimization and rollback;
+- total lifecycle cost.
+
+### Forward-Transfer Benchmark
+
+Begin with comparator networks, bounded bit-vector synthesis, or another domain with independently checkable semantics. Use frozen task lineages and matched interventions. Report the full R0–R7 reuse ladder, exact verifier outcomes, search branching, construction cost, and negative transfer.
+
+The benchmark should include cases where:
+
+- compression is positive but transfer is zero;
+- invocation is high but removal has no effect;
+- a larger library hurts bounded search;
+- a placebo improves prompts without semantic contribution;
+- a useful abstraction transfers across related but not unrelated families.
+
+### Learning-Topology Benchmark
+
+Hold model capacity, task population, approximate compute, and evaluator fixed while changing:
+
+- one-lineage sequential learning;
+- isolated branches;
+- communicating branches;
+- population selection;
+- parameter merge;
+- distillation;
+- ensemble or modular composition;
+- evaluator placement;
+- credit timing;
+- archive and salvage policy.
+
+Measure discovery, evaluator selection, integration retention, diversity, cost, recovery, and authority leakage. The purpose is not to find one universal topology, but to map regimes in which topologies differ.
+
+### Instrument integrity
+
+Every benchmark reports:
+
+- task and candidate denominators;
+- contamination and exposure;
+- model, tool, and evaluator versions;
+- failed and abandoned attempts;
+- human interventions;
+- confidence intervals or bounded uncertainty;
+- positive and negative controls;
+- mechanism ablations;
+- transfer and replication conditions.
+
+## Threat Model
+
+### Outcome worship
+
+Terminal success or failure becomes its own explanation. Lucky success is compiled; unlucky but defensible action is punished.
+
+### First-story lock-in
+
+The earliest causal narrative acquires persistence before alternatives are recorded or tested.
+
+### Parameter reflex
+
+Every signal becomes training data even when a context, procedure, tool, evaluator, or environment change fits better.
+
+### Memory landfill
+
+Warnings and lessons accumulate without expiry, conflict handling, or replacement by stronger controls.
+
+### Cross-locus duplication
+
+The same rule persists in prompts, memory, procedures, tools, and parameters with no authority order or retirement plan.
+
+### Evaluator capture
+
+The learner improves the metric that then approves the learner. A better score can reflect a weaker judge.
+
+### Regret tampering
+
+The actor suppresses evidence, changes comparators, narrows the objective, or increases abstention to reduce measured counterfactual loss.
+
+### Negative fixation
+
+Boundary learning overweights failures, suppresses useful exploration, or converges to refusal.
+
+### Library mythology
+
+Stored artifact count, invocation count, or compression ratio is reported as cumulative intelligence.
+
+### Winner-only recursion
+
+Failed candidates, timeouts, and abandoned attempts disappear from the denominator.
+
+### Benchmark ratchet failure
+
+A contaminated or invalid benchmark becomes a permanent floor. Conversely, a hard tail is discarded as noise to manufacture progress.
+
+### Permanent learning
+
+No expiry, material-change trigger, deoptimization, or retirement accompanies the update.
+
+### Revocation without closure
+
+A memory entry is deleted while derived tools, fine-tunes, tests, publications, or institutional routines remain active.
+
+## Limitations, Falsifiers, and Contraction Rules
+
+The framework faces several hard limits.
+
+Causal placement may be non-identifiable from observational traces. Different defects can produce the same evidence, and experiments may be unsafe or expensive. Commitment dimensions may be incomparable. A least-committing change can be unreliable. Human placement can outperform an elaborate service. Learning-topology representations can become descriptive bureaucracy rather than predictive science.
+
+The proposal should be narrowed when:
+
+- human or fixed local policies match placement quality at lower cost;
+- cross-locus adjudication does not reduce recurrence or collateral damage;
+- forward-transfer gains disappear under compute and lifecycle matching;
+- learning-topology encodings do not support stable independent annotation or discriminating interventions;
+- assurance-shift policies reduce useful coverage more than they reduce failures;
+- procedure induction fails to beat direct reasoning after construction and maintenance costs;
+- deoptimization and revocation cannot reach consequential descendants.
+
+The strongest simpler baseline is a well-run engineering organization with versioned memory, ordinary tests, reproducible training, explicit model releases, source control, incident review, and human ownership. The framework earns its place only if it improves decisions across those surfaces rather than restating them in one schema.
+
+The paper also assumes a stable enough improvement process that evidence and evaluation remain comparable. When the system changes its evaluator, objective, authority kernel, or future evidence-generating environment, the experiment itself changes. Those cases belong to governed self-improvement and reflexive systems rather than ordinary adaptation.
+
+## Conclusion
+
+Cumulative intelligence is not the accumulation of every successful trace, memory, tool, or model update. It is the disciplined conversion of experience into persistent structure whose causal role, scope, burden, qualification, future benefit, and retirement remain visible.
+
+This paper joins three problems. Learning-process topology describes the persistent identities and typed causal routes through which adaptation occurs. Persistence admission governs whether and where a lesson becomes durable. Verified forward transfer tests whether the resulting structure actually helps future work under fair comparison.
+
+The framework separates experience, lesson, realization, qualification, and authority. It matches evidence to commitment burden, prefers minimum sufficient persistence, preserves protected positive behavior, and retains slow paths and deoptimization. It treats counterfactual evaluation as decision-time fair and typed rather than as one self-authored scalar reward. It distinguishes competence-dependent assurance from universal negative learning. It qualifies repeated trajectories before turning them into procedures. It credits reusable knowledge only when intervention shows future benefit.
+
+The proposal will be successful only if these distinctions improve real learning systems. If simpler human-reviewed or fixed-locus policies match placement, transfer, preservation, and recovery at lower cost, the architecture should contract.
+
+A harder problem begins when adaptation changes the machinery that decides what counts as evidence, improvement, or authority—or when deployment reshapes the world that supplies future data. At that point the system is no longer learning under a stable experiment. It is modifying the experiment itself.
+
+## Appendix A: Canonical Record Sketches
+
+### Lesson hypothesis
+
+```yaml
+lesson_hypothesis:
+  id: lesson:uuid
+  experiences: []
+  proposition: string
+  causal_alternatives: []
+  evidence: []
+  identification_status: identified | bounded | unresolved
+  proposed_scope: {}
+  protected_positive_behavior: []
+  candidate_loci: []
+  no_change_option: true
+  expiry: timestamp
+```
+
+### Persistence disposition
+
+```yaml
+persistence_disposition:
+  id: disposition:uuid
+  lesson: lesson:uuid
+  selected_portfolio:
+    - locus: context | memory | procedure | tool | parameters | evaluator | environment | topology | institution
+      realization: artifact:hash
+  rejected_alternatives: []
+  commitment_profile:
+    scope: value
+    binding_strength: value
+    duration: value
+    coupling: value
+    authority: value
+    irreversibility: value
+    descendant_reach: value
+  qualification_requirements: []
+  monitoring: []
+  deoptimization: []
+  authority_required: authority:version
+```
+
+### Forward-transfer intervention
+
+```yaml
+forward_transfer_round:
+  id: round:uuid
+  task_distribution: dataset:version
+  task_lineages: []
+  knowledge_state: artifact:hash
+  search_policy: policy:version
+  verifier: verifier:version
+  budgets: {}
+  conditions:
+    - absence
+    - candidate
+    - placebo
+    - removal
+  outcomes: []
+  reuse_ladder: R0-R7
+  lifecycle_costs: {}
+  disposition: positive | negative | inconclusive | instrument_failure
+```
+
+## Appendix B: Intellectual Lineage and Supersession
+
+| Legacy source | Material retained | Material narrowed or retired |
+|---|---|---|
+| Learning–Compute Topology | Adaptive identity, typed process graph, normal form, integration operators, compute realization | Universal representation or optimal-topology implications |
+| Adjudicated Persistence | Persistence admission, six-object separation, cross-locus placement, commitment profiles, minimum sufficient persistence | Overlong schema and institutional scope; arbitrary-trace identifiability |
+| Assurance-Shift Learning | Qualified competence envelopes, evaluator-first repair, protected positives, fast/slow clocks | Universal priority of negative data |
+| Regret Engine | Decision-time capsule, comparator admissibility, typed counterfactual evaluation, root-cause routing | Scalar reward framing and event-level identifiability |
+| From Compression to Forward Transfer | Compression/reuse/necessity/transfer separation, intervention controls, full cost | Any empirical transfer claim before running the benchmark |
+| Ratcheting Modular Intelligence | Pressure–attempt–residual–structure cycle, frontier and floor, intervention ladder | Independent flagship status and uncalibrated substrate or threshold claims |
+| Ratcheting Generative Systems | Early frontier/floor and residual-escrow formulations | Counted as precursor rather than corroboration |
+| Cognitive Loop Closure | Procedure induction, active parameter discovery, qualification, monitoring, retirement | Automation before full trace and effect evidence |
+| Benchmaxxing | Saturation/wall/architecture distinction, benchmark lifecycle, regression floors | Branding and unexecuted benchmark claims |
+
+## References

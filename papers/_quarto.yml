@@ -60,6 +60,12 @@ project:
     - forward_transfer_program_synthesis.qmd
     - compiling_civilization_cmtq.qmd
     - reflexive_model_world_systems.qmd
+    - governed_intelligence_intent_to_effect.qmd
+    - governed_intelligence_semantic_epistemic_state.qmd
+    - governed_intelligence_causal_adaptation.qmd
+    - governed_intelligence_self_improvement.qmd
+    - governed_intelligence_representation_resources.qmd
+    - governed_intelligence_constitutional_governance.qmd
 
 lang: en-US
 
@@ -132,6 +138,14 @@ website:
           - forward_transfer_program_synthesis.qmd
           - compiling_civilization_cmtq.qmd
           - reflexive_model_world_systems.qmd
+      - section: "Governed Intelligence synthesis"
+        contents:
+          - governed_intelligence_intent_to_effect.qmd
+          - governed_intelligence_semantic_epistemic_state.qmd
+          - governed_intelligence_causal_adaptation.qmd
+          - governed_intelligence_self_improvement.qmd
+          - governed_intelligence_representation_resources.qmd
+          - governed_intelligence_constitutional_governance.qmd
 
 format:
   html:

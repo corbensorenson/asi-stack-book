@@ -1,5 +1,9 @@
 # Reflexive Model-World Systems: When Representations Become Causes
 
+| Field | Value |
+|---|---|
+| Source ID | `reflexive_model_world_systems` |
+
 - **Source ID:** `reflexive_model_world_systems`
 - **Author:** Corben Sorenson
 - **Date:** August 2026
@@ -21,7 +25,7 @@ The existing world-model chapter governs imagination as a fallible prediction se
 
 This warrants a dedicated technical chapter after `Governed World Models and Reality Grounding`. The Human Reader should deepen Unit 11 and connect the consequences to Units 21 and 25 rather than add a new unit.
 
-## Mechanisms mined
+## Mechanisms
 
 1. **Lineage-relative reflexive closure.** Define model identity through governed succession, not weight similarity, and require an intervention difference in a future evidence channel used by a successor.
 2. **Eight-channel audit signature.** Track state/features, outcomes/labels, exposure/sampling, measurement, preferences/utilities, ontologies/categories, institutions, and model ecology. The channels imply different estimands and controls and should not be collapsed into generic distribution shift.
@@ -38,7 +42,7 @@ This warrants a dedicated technical chapter after `Governed World Models and Rea
 13. **Trajectory-level evaluation.** Separate baseline fidelity, on-policy fidelity, causal steering utility, and legitimacy. High accuracy on the world a model helped create is not independent validation.
 14. **Reflexive alignment.** Govern acceptable model-world trajectories, including evidence, preferences, institutions, and successor systems, rather than only a frozen model or immediate action.
 
-## Primary chapter routing
+## Book Chapters Supported
 
 - `reflexive-model-world-systems` — primary owner of reflexive closure, the eight-channel audit, model-descended evidence, grounding reserves, reflexive debt, trajectory evaluation, and persistence-aware rollback.
 - `governed-world-models-and-reality-grounding` — hands off model predictions and deployment effects; consumes self-inclusive state and distinguishes observation from lineage-independent grounding.
@@ -52,7 +56,13 @@ This warrants a dedicated technical chapter after `Governed World Models and Rea
 - `regret_engine` consumers, especially `planning-as-a-control-layer` and `policy-optimization-and-learning-from-feedback`, should distinguish observed on-policy regret from counterfactual regret.
 - `integrated-reference-architecture` — locates the reflexive-system audit around deployment, observation, evidence, retraining, and successor admission.
 
-## Formal and experimental evidence
+## Claims To Add Or Update
+
+- Treat evidence independence as lineage-, intervention-, horizon-, and query-relative rather than as human-versus-synthetic provenance.
+- Preserve model-descended evidence, grounding reserves, reflexive debt, and target-regime identity through retraining and replacement.
+- Evaluate trajectories and counterfactual recoverability, not only accuracy on the regime a model helped create.
+
+## Evidence
 
 The paper states six propositions under explicit assumptions: augmented-state necessity, local linear stability, counterfactual-label mismatch, contraction under a common target, single-history non-identifiability, and institutional hysteresis. These should be treated as scoped mathematical arguments until independently mechanized or checked.
 
@@ -64,7 +74,7 @@ The package reports three deterministic toy campaigns:
 
 The supplied data, code, figures, and checksums make those source-reported runs inspectable. Intake did not reproduce them because the local environment lacked `scikit-learn`; therefore the book may report them only as source-reported mechanistic demonstrations, not as locally reproduced or externally validated findings.
 
-## Failure modes and strongest objections
+## Failure Modes
 
 - The framework may be a relabeling of performative prediction or cybernetics unless its decomposition changes estimands and controls.
 - Descendancy may be unidentifiable without randomization, instruments, variation, or structural assumptions.
@@ -81,6 +91,12 @@ The supplied data, code, figures, and checksums make those source-reported runs 
 - Lean: bounded common-target updates contract pairwise differences; model rollback alone does not imply restoration of a persistent institutional state.
 - Project Theseus: implement a lineage manifest, time-unrolled causal graph, evidence-ancestry record, grounding-reserve contract, target-regime field, and persistence-aware rollback dossier.
 - Test: rerun the three simulations in a pinned environment, verify exact summaries or explain drift, then add intervention and ablation controls.
+
+## Open Questions
+
+- Which intervention classes make evidence descendancy identifiable in deployed sociotechnical systems?
+- How can a grounding reserve remain both intervention-resistant and decision-relevant over time?
+- What governance can preserve counterfactual variation without imposing unacceptable human or institutional cost?
 
 ## Support-state disposition
 

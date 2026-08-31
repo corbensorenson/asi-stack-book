@@ -1,6 +1,6 @@
 # Three Defended Contributions
 
-Last updated: 2026-07-10
+Last updated: 2026-08-30
 
 The book remains broad, but the research program now permits exactly three
 program-level defended contributions. The older five-track portfolio remains
@@ -50,9 +50,9 @@ Honesty, and Resource Economics and Token Budgets.
 
 ## Chapter assignment rule
 
-`products/contribution_focus_contract.json` assigns all 87 manifest chapters
+`products/contribution_focus_contract.json` assigns all 89 manifest chapters
 to exactly one primary program contribution. Eleven are primary owners; the
-other 76 are supporting or integration chapters. Every assignment explicitly
+other 78 are supporting or integration chapters. Every assignment explicitly
 sets `independent_flagship_claim` to false. The contract is generated in
 manifest order and checked by `scripts/validate_contribution_focus_contract.py`.
 

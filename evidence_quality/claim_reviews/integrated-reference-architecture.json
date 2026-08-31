@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 106,
+    "prose_candidates_adjudicated": 108,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The new learning-process plane is bounded to an owner-preserving semantic contract between training policy and execution infrastructure; it does not collapse model, learning, execution, or physical topology or claim an integrated runtime result. The hardware-parallelism and schedule-success substitutions are mapped to the chapter's existing owner, join, state, effect, evidence, and integration obligations. The prior Regret Engine return path remains bounded. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
@@ -569,6 +569,16 @@
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Concrete integration failure: the patch that passed and still could not ship` to existing reviewed atom `integrated-reference-architecture.mechanism.016`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "integrated-reference-architecture.mechanism.016"
+    },
+    "integrated-reference-architecture.prose.c81ab15b4ca2": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the existing invariant that adaptation and self-improvement remain downstream of their own evidence, authority, readiness, residual, rollback, and monitoring gates.",
+      "target_atom_id": "integrated-reference-architecture.invariant.013"
+    },
+    "integrated-reference-architecture.prose.09f32ecca742": {
+      "state": "duplicate_of_atom",
+      "rationale": "Restates the no-super-owner invariant: resource optimization cannot inherit or redefine another owner's protected semantics or authority.",
+      "target_atom_id": "integrated-reference-architecture.invariant.001"
     }
   },
   "non_claims": [

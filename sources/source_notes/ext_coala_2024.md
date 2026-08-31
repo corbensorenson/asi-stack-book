@@ -31,7 +31,7 @@ CoALA organizes language agents through modular memory, a structured action spac
 
 `cognitive-method-transfer-and-qualification` accepts CoALA's premise that agent cognition benefits from explicit architectural organization, then asks a different upstream question: how a method enters the system, whether its mechanism transports, how it becomes a typed protocol, what qualifies a particular realization, and why qualification, assurance, and authority cannot substitute for one another.
 
-## Limits And Non-Claims
+## Failure Modes
 
 - A cognitive-architecture description does not establish faithful method execution.
 - Modular memory and action types do not establish method validity, qualification, or authority.
@@ -43,3 +43,13 @@ CoALA organizes language agents through modular memory, a structured action spac
 - `cognitive-method-transfer-and-qualification`
 - `cognitive-compilation-and-semantic-ir`
 - `procedural-memory-and-cognitive-loop-closure`
+
+## Claims To Add Or Update
+
+- Use CoALA as prior art for explicit memory roles, internal and external actions, and language-agent decision cycles.
+- Do not use architectural organization as evidence that a method was transported, qualified, or authorized.
+
+## Open Questions
+
+- Which surveyed cognitive-architecture components have robust causal evidence across agent families?
+- How should procedural memory connect to independently qualified method transport?

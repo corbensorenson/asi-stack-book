@@ -83,11 +83,13 @@ def flatten_chapters(structure: dict) -> list[dict]:
     ]
 
 
-def chapter_links(source_id: str, structure: dict, *, from_paper: bool) -> list[str]:
+def chapter_links(record: dict, structure: dict, *, from_paper: bool) -> list[str]:
     prefix = "../chapters" if from_paper else "../chapters"
+    source_id = str(record["source_id"])
+    routed_ids = set(record.get("chapter_routes", []))
     links: list[str] = []
     for chapter in flatten_chapters(structure):
-        if source_id not in chapter.get("source_ids", []):
+        if chapter.get("id") not in routed_ids and source_id not in chapter.get("source_ids", []):
             continue
         label = qmd_escape(chapter.get("title", chapter.get("id", "chapter")))
         file_name = Path(str(chapter["file"])).with_suffix(".html").name
@@ -184,7 +186,7 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         canonical_asset_root=canonical_asset_root,
         public_asset_prefix=f"assets/{record['source_id']}" if canonical_asset_root else None,
     )
-    chapter_refs = chapter_links(record["source_id"], structure, from_paper=True)
+    chapter_refs = chapter_links(record, structure, from_paper=True)
     chapter_text = ", ".join(chapter_refs) if chapter_refs else "No current chapter assignment."
     date = inventory_record.get("published") or inventory_record.get("updated") or "Date not normalized"
     updated = inventory_record.get("updated") or "Not separately recorded"
@@ -210,6 +212,23 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         "status_note",
         "Archived author paper; its claims retain the status and limits stated in the paper and do not inherit the living book's current evidence state.",
     )
+    is_derived_synthesis = record.get("lineage_role") == "derived_book_synthesis"
+    callout_title = "Derived synthesis, not independent evidence" if is_derived_synthesis else "Original paper, not rewritten book prose"
+    callout_body = (
+        "This manuscript is a compact authorial synthesis derived from the living book and its earlier source lineage. "
+        "It is published as a readable research surface, not counted as independent corroboration of the book, and cannot promote a claim by repeating material already present in its inputs."
+        if is_derived_synthesis else
+        "This page publishes Corben Sorenson's original source manuscript so readers can inspect the ideas that preceded or informed the living book. "
+        "The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. "
+        "Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion."
+    )
+    route_heading = "Where this synthesis maps onto the living book" if is_derived_synthesis else "Where this paper enters the living book"
+    bibliography_line = f"bibliography: ../{record['bibliography']}\nlink-citations: true\n" if record.get("bibliography") else ""
+    description = (
+        "Compact authorial synthesis derived from The ASI Stack and its source lineage."
+        if is_derived_synthesis else
+        "Original Corben Sorenson paper published as part of The ASI Stack source and lineage library."
+    )
 
     return f"""---
 title: {yaml_string(record['title'])}
@@ -219,13 +238,13 @@ page-layout: article
 toc: true
 toc-depth: 3
 number-sections: false
-description: {yaml_string('Original Corben Sorenson paper published as part of The ASI Stack source and lineage library.')}
----
+description: {yaml_string(description)}
+{bibliography_line}---
 
 [← Corben Papers and Architecture Sources](index.qmd)
 
-::: {{.callout-important title="Original paper, not rewritten book prose"}}
-This page publishes Corben Sorenson's original source manuscript so readers can inspect the ideas that preceded or informed the living book. The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion.
+::: {{.callout-important title="{callout_title}"}}
+{callout_body}
 :::
 
 ## Publication and provenance
@@ -248,7 +267,7 @@ This page publishes Corben Sorenson's original source manuscript so readers can 
 
 **HTML presentation note.** {qmd_escape(presentation)} The digest above applies to the linked exact source text, not to this presentation wrapper.
 
-## Where this paper enters the living book
+## {route_heading}
 
 {chapter_text}
 
@@ -261,38 +280,52 @@ This page publishes Corben Sorenson's original source manuscript so readers can 
 
 
 def expected_index(records: list[dict], inventory: dict[str, dict], structure: dict) -> str:
-    rows: list[str] = []
-    for record in records:
-        source_id = record["source_id"]
-        inv = inventory[source_id]
-        date = inv.get("published") or inv.get("updated") or "date not normalized"
-        chapters = chapter_links(source_id, structure, from_paper=False)
-        title = qmd_escape(record["title"])
-        page = Path(record["page"]).name
-        rows.append(
-            f"| [{title}]({page}) | {qmd_escape(record.get('document_class', 'paper or architecture source'))} | `{qmd_escape(source_id)}` | {qmd_escape(date)} | "
-            f"{len(chapters)} | `{qmd_escape(record['sha256'][:12])}…` |"
-        )
+    def table_rows(selected: list[dict]) -> str:
+        rows: list[str] = []
+        for record in selected:
+            source_id = record["source_id"]
+            inv = inventory[source_id]
+            date = inv.get("published") or inv.get("updated") or "date not normalized"
+            chapters = chapter_links(record, structure, from_paper=False)
+            title = qmd_escape(record["title"])
+            page = Path(record["page"]).name
+            rows.append(
+                f"| [{title}]({page}) | {qmd_escape(record.get('document_class', 'paper or architecture source'))} | `{qmd_escape(source_id)}` | {qmd_escape(date)} | "
+                f"{len(chapters)} | `{qmd_escape(record['sha256'][:12])}…` |"
+            )
+        return "\n".join(rows)
+
+    original_records = [record for record in records if record.get("lineage_role") != "derived_book_synthesis"]
+    synthesis_records = [record for record in records if record.get("lineage_role") == "derived_book_synthesis"]
     return f"""# Corben Papers and Architecture Sources
 
-This library publishes the original author manuscripts that directly preceded or informed *The ASI Stack*. It exists so a reader can inspect the source ideas rather than seeing only the book's later synthesis. The current tranche contains **{len(records)} exact, digest-bound manuscripts** with HTML reading pages.
+This library publishes original author manuscripts that preceded or informed *The ASI Stack* and compact authorial syntheses derived from the book. The current tranche contains **{len(records)} exact, digest-bound manuscripts** with HTML reading pages.
 
-The library is a provenance surface, not an evidence shortcut. A paper can be historically important and still be speculative, superseded, incomplete, or wrong. The living chapters, source notes, claim ledger, tests, and later evidence records control the book's current conclusions. The paper pages preserve what was proposed at the time.
+The library is a provenance and reading surface, not an evidence shortcut. A source paper can be historically important and still be speculative, superseded, incomplete, or wrong. A derived synthesis can make the architecture easier to read without becoming independent corroboration of its inputs. The living chapters, source notes, claim ledger, tests, and later evidence records control the book's current conclusions.
 
 ## How to read the library
 
 - **Original text stays identifiable.** Every page links an exact tracked source copy and reports its SHA-256 digest and byte count.
+- **Derived syntheses stay labeled.** A compact restatement of the book is separated from original source inputs and cannot increase support by repetition.
 - **Book interpretation stays separate.** A provenance panel links the source note and every current chapter assignment; no paper silently becomes current book prose.
 - **Historical negatives stay visible.** Deprecated or failed designs such as SpiderSynapse remain readable alongside their successors.
 - **Presentation changes are disclosed.** HTML pages may normalize line endings, move YAML metadata into the provenance panel, demote headings, or mark unavailable figures. They do not pretend missing assets were recovered.
 - **Credits remain authoritative.** Authorship and collaborator credits in each exact manuscript control; the library wrapper does not silently rewrite them.
 - **Rights remain explicit.** Publication makes the manuscripts readable but grants no new license. Corben Sorenson's rights are reserved, while collaborator and third-party rights remain with their holders.
 
-## Read the papers
+## Original papers and architecture sources
 
 | Paper or architecture source | Library class | Source ID | Manuscript date | Current chapter assignments | Exact-source digest |
 |---|---|---|---|---:|---|
-{chr(10).join(rows)}
+{table_rows(original_records)}
+
+## Governed Intelligence: six-paper synthesis
+
+These six papers compress the book and fifty-three earlier Corben manuscripts into a cumulative research sequence. They are useful as a smaller reading surface and as an interface map. They are **derived synthesis**, not six independent confirmations of the architecture.
+
+| Synthesis paper | Library class | Source ID | Manuscript date | Mapped chapter owners | Exact-source digest |
+|---|---|---|---|---:|---|
+{table_rows(synthesis_records)}
 
 ## Corpus boundary
 
@@ -304,11 +337,16 @@ New papers enter only through `papers/paper_library.json` with an explicit sourc
 
 def expected_quarto_config(records: list[dict]) -> str:
     render = ["index.qmd", *[f"{record['source_id']}.qmd" for record in records]]
+    original_records = [record for record in records if record.get("lineage_role") != "derived_book_synthesis"]
+    synthesis_records = [record for record in records if record.get("lineage_role") == "derived_book_synthesis"]
     sidebar = [
         "      - index.qmd",
         '      - section: "Original manuscripts"',
         "        contents:",
-        *[f"          - {record['source_id']}.qmd" for record in records],
+        *[f"          - {record['source_id']}.qmd" for record in original_records],
+        '      - section: "Governed Intelligence synthesis"',
+        "        contents:",
+        *[f"          - {record['source_id']}.qmd" for record in synthesis_records],
     ]
     return "\n".join(
         [
@@ -356,6 +394,7 @@ def validate_manifest(
     inventory: dict[str, dict],
     closure: dict[str, dict],
     receipts: dict[str, dict],
+    structure: dict,
 ) -> tuple[list[dict], list[str]]:
     errors: list[str] = []
     if not isinstance(data, dict) or data.get("schema_version") != "asi_stack.paper_library.v1":
@@ -364,6 +403,7 @@ def validate_manifest(
     if not isinstance(records, list) or not records:
         return [], ["paper library records must be a non-empty array"]
     seen: set[str] = set()
+    chapter_ids = {str(chapter.get("id")) for chapter in flatten_chapters(structure)}
     hydrated: list[dict] = []
     for index, record in enumerate(records):
         if not isinstance(record, dict):
@@ -399,6 +439,16 @@ def validate_manifest(
             value = str(derived.get(key, ""))
             if value.startswith("/") or ".." in Path(value).parts:
                 errors.append(f"{source_id or index}: unsafe {key} path {value!r}")
+        if record.get("document_class") == "derived_synthesis_paper" and record.get("lineage_role") != "derived_book_synthesis":
+            errors.append(f"{source_id}: derived synthesis paper must declare lineage_role derived_book_synthesis")
+        unknown_routes = sorted(set(record.get("chapter_routes", [])) - chapter_ids)
+        if unknown_routes:
+            errors.append(f"{source_id}: unknown chapter_routes: {', '.join(unknown_routes)}")
+        bibliography = record.get("bibliography")
+        if bibliography:
+            bibliography_path = ROOT / str(bibliography)
+            if not str(bibliography).startswith("papers/references/") or not bibliography_path.is_file():
+                errors.append(f"{source_id}: bibliography is missing or outside papers/references")
         asset_root = derived.get("canonical_asset_root")
         if asset_root:
             value = str(asset_root)
@@ -423,7 +473,7 @@ def synchronize(check: bool) -> list[str]:
     inventory = {str(row.get("id")): row for row in raw_inventory if isinstance(row, dict) and row.get("id")}
     closure = {str(row.get("source_id")): row for row in closure_data.get("records", []) if isinstance(row, dict) and row.get("source_id")}
     receipts = {str(row.get("source_id")): row for row in receipt_data.get("records", []) if isinstance(row, dict) and row.get("source_id")}
-    records, errors = validate_manifest(manifest, inventory, closure, receipts)
+    records, errors = validate_manifest(manifest, inventory, closure, receipts, structure)
     if errors:
         return errors
 
@@ -539,7 +589,7 @@ def main() -> None:
         sys.exit(1)
     mode = "validated" if args.check else "synchronized"
     count = len(load_json(MANIFEST)["records"])
-    print(f"Paper library {mode}: {count} exact author manuscripts and HTML reader routes.")
+    print(f"Paper library {mode}: {count} exact manuscripts or derived syntheses and HTML reader routes.")
 
 
 if __name__ == "__main__":

@@ -6,16 +6,16 @@
     "book_structure.json",
     "docs/human_reader_26_unit_outline.md"
   ],
-  "book_structure_sha256": "057d522f6fe4350f08f83ba5f301fe264e8a1d31f3928f0b666619ff552611e9",
-  "human_reader_outline_sha256": "1903fa2adbea76fbc8d009309eb8e7ef52a8badd3f1cc4f756b849c0c7ddbe13",
-  "reference_owner_count": 87,
-  "main_book_owner_count": 56,
+  "book_structure_sha256": "ba7df5ee9a210252209d2e917699387041d89e365b022ba74e36a5cecf2f4095",
+  "human_reader_outline_sha256": "94884617689063c4f8fe0a7ff008517eaab9ff1b8dd7d4f59d395a95b37f2d7e",
+  "reference_owner_count": 89,
+  "main_book_owner_count": 58,
   "role_counts": {
     "deployment_profile_owner": 7,
     "generated_back_matter_owner": 1,
     "implementation_method_owner": 2,
     "method_detail_nest": 2,
-    "primary_architecture_owner": 54,
+    "primary_architecture_owner": 56,
     "publication_nest": 16,
     "research_dossier_owner": 5
   },
@@ -187,6 +187,13 @@
         "id": "cognitive-compilation-and-semantic-ir",
         "title": "Cognitive Compilation and Semantic IR",
         "file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-13"
+      },
+      {
+        "id": "cognitive-method-transfer-and-qualification",
+        "title": "Cognitive Method Transfer and Qualification",
+        "file": "chapters/cognitive-method-transfer-and-qualification.qmd",
         "parent_id": null,
         "human_reader_unit_id": "unit-13"
       },
@@ -399,6 +406,13 @@
         "file": "chapters/recursive-self-improvement-boundaries.qmd",
         "parent_id": null,
         "human_reader_unit_id": "unit-25"
+      },
+      {
+        "id": "reflexive-model-world-systems",
+        "title": "Reflexive Model-World Systems",
+        "file": "chapters/reflexive-model-world-systems.qmd",
+        "parent_id": null,
+        "human_reader_unit_id": "unit-11"
       },
       {
         "id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
@@ -647,7 +661,7 @@
   "human_reader": {
     "state": "complete_draft_public_html_candidate",
     "unit_count": 26,
-    "owner_route_count": 87,
+    "owner_route_count": 89,
     "units": [
       {
         "unit_id": "unit-01",
@@ -743,7 +757,8 @@
         "unit_id": "unit-11",
         "title": "Governed World Models and Reality Grounding",
         "owner_ids": [
-          "governed-world-models-and-reality-grounding"
+          "governed-world-models-and-reality-grounding",
+          "reflexive-model-world-systems"
         ]
       },
       {
@@ -758,6 +773,7 @@
         "title": "Cognitive Compilation and Semantic IR",
         "owner_ids": [
           "cognitive-compilation-and-semantic-ir",
+          "cognitive-method-transfer-and-qualification",
           "relational-dimension-compilation-and-polyadic-cognition",
           "mathematical-and-search-substrates"
         ]
