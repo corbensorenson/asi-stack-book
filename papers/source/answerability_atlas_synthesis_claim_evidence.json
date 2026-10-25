@@ -1,0 +1,778 @@
+{
+  "original_ledger_statuses": {
+    "claims/ledger.json": {
+      "D-CONTRACT": "definition",
+      "E0-COUNT": "exact_finite_result",
+      "E0-DIAG": "exact_finite_result",
+      "E1-BATCH-PILOT": "empirical_supported",
+      "E1-FINITE-OUTPUT": "exact_finite_result",
+      "E1-RPC-PILOT": "empirical_supported",
+      "E2-COMPILE-COMPONENT": "empirical_supported",
+      "E2-PROTOCOL-SENSITIVITY": "empirical_supported",
+      "E2-STORAGE-CROSSOVER": "empirical_supported",
+      "E3-ACCOUNTING": "empirical_supported",
+      "E3-FAMILY": "empirical_supported",
+      "E3-PILOT": "empirical_supported",
+      "E3-PRIMARY": "empirical_supported",
+      "E4-MAINTENANCE": "empirical_supported",
+      "E4-SELECTOR": "empirical_supported",
+      "H-DISCOVERY": "refuted_in_scope",
+      "H-REGIMES": "hypothesis",
+      "K-QD": "known_result"
+    },
+    "claims/phase2_ledger.json": {
+      "D-P2-RHO": "definition",
+      "H-P2-CALIB": "empirical_supported",
+      "H-P2-CONTROL": "empirical_supported",
+      "H-P2-DIAG": "refuted_in_scope",
+      "H-P2-DOSE": "refuted_in_scope",
+      "H-P2-STRONG": "refuted_in_scope",
+      "M-P2-ACTIONS": "empirical_supported",
+      "M-P2-COVERAGE": "empirical_supported",
+      "M-P2-HIGHER": "empirical_supported",
+      "M-P2-PRIMARY": "empirical_supported",
+      "M-P2-PROBES": "empirical_supported",
+      "M-P2-STOP": "empirical_supported",
+      "X-P2-PHASE1-CONTRASTS": "unresolved"
+    },
+    "claims/phase2_preresult_ledger.json": {
+      "D-P2-RHO": "definition",
+      "H-P2-CALIB": "hypothesis",
+      "H-P2-CONTROL": "hypothesis",
+      "H-P2-DIAG": "hypothesis",
+      "H-P2-DOSE": "hypothesis",
+      "H-P2-STRONG": "hypothesis",
+      "X-P2-PHASE1-CONTRASTS": "unresolved"
+    },
+    "claims/phase3_1_ledger.json": {
+      "E-P3-BUDGET-ROBUSTNESS": "empirical_supported",
+      "X-P3-COSTKEY-NULL": "empirical_supported",
+      "X-P3-GAIN-DECOMPOSITION": "unresolved"
+    },
+    "claims/phase3_2_ledger.json": {
+      "X-P3-COMPOSITION-HEADROOM": "empirical_supported"
+    },
+    "claims/phase3_2a_ledger.json": {
+      "X-P3-COMPOSITION-HEADROOM-CORRECTED": "refuted_in_scope"
+    },
+    "claims/phase3_current_ledger.json": {
+      "D-P3-NORMALIZER": "definition",
+      "D-P3-REPLIMITED": "definition",
+      "E-P3-CLASS-COVERAGE": "empirical_supported",
+      "E-P3-DEVELOPMENT": "empirical_supported",
+      "E-P3-EXPANSION-MECHANISMS": "empirical_supported",
+      "H-P3-DIAG": "unresolved",
+      "H-P3-EB": "refuted_in_scope",
+      "H-P3-NEGCTRL": "unresolved",
+      "H-P3-STRONG": "unresolved",
+      "R-P2-CALIB-STRATIFIED": "refuted_in_scope",
+      "X-P2-ACTION-DISPLACEMENT": "unresolved",
+      "X-P2-MODEL-CROSSOVER": "unresolved",
+      "X-P2-SHUFFLE-SCOPE": "empirical_supported"
+    },
+    "claims/phase3_ledger.json": {
+      "D-P3-REPLIMITED": "definition",
+      "H-P3-DIAG": "hypothesis",
+      "H-P3-EB": "hypothesis",
+      "H-P3-NEGCTRL": "hypothesis",
+      "H-P3-STRONG": "hypothesis",
+      "R-P2-CALIB-STRATIFIED": "refuted_in_scope",
+      "X-P2-ACTION-DISPLACEMENT": "unresolved",
+      "X-P2-MODEL-CROSSOVER": "unresolved",
+      "X-P2-SHUFFLE-SCOPE": "empirical_supported"
+    },
+    "claims/phase3_validation_claim_snapshot.json": {
+      "D-P3-NORMALIZER": "definition",
+      "D-P3-REPLIMITED": "definition",
+      "H-P3-DIAG": "hypothesis",
+      "H-P3-EB": "refuted_in_scope",
+      "H-P3-NEGCTRL": "hypothesis",
+      "H-P3-STRONG": "hypothesis",
+      "R-P2-CALIB-STRATIFIED": "refuted_in_scope",
+      "X-P2-ACTION-DISPLACEMENT": "unresolved",
+      "X-P2-MODEL-CROSSOVER": "unresolved",
+      "X-P2-SHUFFLE-SCOPE": "empirical_supported"
+    }
+  },
+  "records": [
+    {
+      "artifacts": [
+        {
+          "bytes": 8705,
+          "id": "E01",
+          "path": "results/reference_20261023/reference_demo.json",
+          "sha256": "11bb0f4e84fea4cc08d0ae4ad8cb7bba898ada0b257e5c1abfd5ea996418ee46",
+          "title": "Finite reference"
+        },
+        {
+          "bytes": 24084,
+          "id": "E20",
+          "path": "results/phase3_2a_comparators/receipt.json",
+          "sha256": "19abb2c5df339c64e6034b520369b403427e3ce96949aaefcc0d612b41b40c38",
+          "title": "Final correction integrity receipt"
+        }
+      ],
+      "do_not_promote_to": "Not a novel universal theory, arbitrary-code sandbox or proof of search advantage.",
+      "evidence_status": "implemented_in_scope",
+      "id": "S01",
+      "sections": "2-3",
+      "statement": "The atlas implements explicit comparison contracts, capability records, provenance and distinct evidence states."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 8705,
+          "id": "E01",
+          "path": "results/reference_20261023/reference_demo.json",
+          "sha256": "11bb0f4e84fea4cc08d0ae4ad8cb7bba898ada0b257e5c1abfd5ea996418ee46",
+          "title": "Finite reference"
+        },
+        {
+          "path": "reference/atlas_reference.py",
+          "sha256": "5230fe9fbd5f1bb59736382066340dbe5aee60c4e294f30cbaa8c2be1391c6f8",
+          "title": "Supporting original artifact"
+        },
+        {
+          "path": "reference/test_atlas_reference.py",
+          "sha256": "2cdb737761c13f7dc3327bb409b81cbc6f02eb1bc2133915a298ad14801878a4",
+          "title": "Supporting original artifact"
+        }
+      ],
+      "do_not_promote_to": "Only the fixed grammar/decoder; not all algorithms.",
+      "evidence_status": "exact_finite",
+      "id": "S02",
+      "sections": "3.1",
+      "statement": "The declared finite reference contains1296 encodings; separate checks enumerate all256 Boolean worlds."
+    },
+    {
+      "artifacts": [
+        {
+          "path": "results/corrected_finite_audit_20261023/summary.json",
+          "sha256": "33dc26aa169a4d2039f375d657536d5068b1554f5e972a32cfcf34072f024d92",
+          "title": "Supporting original artifact"
+        }
+      ],
+      "do_not_promote_to": "Fixed input sweeps are not all mutable histories.",
+      "evidence_status": "finite_output_audit",
+      "id": "S03",
+      "sections": "3.1",
+      "statement": "The CPU finite audit covers64096 outcomes and23 fully correct world/method sweeps of30."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 35171,
+          "id": "E02",
+          "path": "results/analysis_batch_mechanism_pilot/analysis.json",
+          "sha256": "d3225961139a92a92ad0beba38bafbdd28f81d6e51dcc812c4d973711f5e7b26",
+          "title": "Corrected batch mechanism pilot"
+        }
+      ],
+      "do_not_promote_to": "Known mechanisms on fixed workloads; not optimal description length, total latency or energy.",
+      "evidence_status": "measured_descriptive",
+      "id": "S04",
+      "sections": "3.2",
+      "statement": "Compilation reduces the measured answer component in restricted affine workloads; residual encoded-state advantage reverses with exceptions."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 37429,
+          "id": "E03",
+          "path": "results/analysis_mechanism_pilot_v2/analysis.json",
+          "sha256": "fd290bd043b9a6d759a3642740189b5e65492b9b5495ae56b1e8f3d618c145f7",
+          "title": "Corrected RPC mechanism pilot"
+        }
+      ],
+      "do_not_promote_to": "No unique causal attribution of the overhead difference.",
+      "evidence_status": "measured_descriptive",
+      "id": "S05",
+      "sections": "3.2",
+      "statement": "RPC and answer-component rankings disagree in five of eight compilation comparisons."
+    },
+    {
+      "artifacts": [
+        {
+          "path": "results/gap_challenges_20261023/summary.json",
+          "sha256": "f0f1f6dfc9f79e97778efb8db36e443fe8ef9427af22778cb8d4ef16bb3a71cb",
+          "title": "Supporting original artifact"
+        }
+      ],
+      "do_not_promote_to": "Not a held-out classifier accuracy estimate.",
+      "evidence_status": "engineering_fixture",
+      "id": "S06",
+      "sections": "3.1",
+      "statement": "Eight constructed diagnosis fixtures match their prescribed actions, including supported uncertainty."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 23238194,
+          "id": "E04",
+          "path": "results/confirmation_v1_analysis/primary_analysis.json",
+          "sha256": "83349e9b69a48d55441c344400987b5b68b67d190189f5d50040f3d63236ce54",
+          "title": "Phase1 registered primary"
+        }
+      ],
+      "do_not_promote_to": "Different score preferences and hardware can change the result; no coordinate-free ranking.",
+      "evidence_status": "registered_scoped_negative",
+      "id": "S07",
+      "sections": "4",
+      "statement": "Phase1 primary favors factorized engineering under the registered score and CPU protocol."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 6996968,
+          "id": "E05",
+          "path": "results/family_extension_v1_analysis/primary_analysis.json",
+          "sha256": "abad70d6eadfe4b47728e81b6f9f86dc43ecabd10d55e89a40605e076cc08f51",
+          "title": "Phase1 separate family extension"
+        }
+      ],
+      "do_not_promote_to": "Not pooled with primary; one family does not establish universal transfer.",
+      "evidence_status": "separate_family_exploratory",
+      "id": "S08",
+      "sections": "4",
+      "statement": "A separate16-world family extension has the same negative direction."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 8138,
+          "id": "E06",
+          "path": "results/phase2_planning/arm_contrasts.json",
+          "sha256": "54c0b57706c76d98cd7718db35e7df18fb6706eb46c94c4b01745123db1013cc",
+          "title": "Phase1 exploratory arm contrasts"
+        }
+      ],
+      "do_not_promote_to": "Family interval includes zero; no equivalence or universal mechanism inference.",
+      "evidence_status": "exploratory_nonreplication_in_direction",
+      "id": "S09",
+      "sections": "4",
+      "statement": "The exploratory Atlas-no-atlas primary hint reverses direction in the separate family."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 103826,
+          "id": "E07",
+          "path": "results/maintenance_analysis_v1/analysis.json",
+          "sha256": "fa2fa0f1ebf406772c7b402100f2d79b449d7529aba62772124ce420e0e4586d",
+          "title": "Prospective maintenance"
+        }
+      ],
+      "do_not_promote_to": "Eight worlds; missing original whole-attempt costs prevent full acquisition-wall claims.",
+      "evidence_status": "prospective_exploratory_unresolved",
+      "id": "S10",
+      "sections": "4.1",
+      "statement": "Frozen maintenance selection shows no clear work-count advantage over generic regression."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 210107379,
+          "id": "E08",
+          "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+          "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+          "title": "Phase2 registered primary"
+        },
+        {
+          "bytes": 13465690,
+          "id": "E09",
+          "path": "results/phase2_higher_order_v2_analysis/analysis.json",
+          "sha256": "c1d7b3ed9994eba55f410592c6811e6849313f471ad2349fe402bb10ab2897e8",
+          "title": "Phase2 separate higher-order study"
+        }
+      ],
+      "do_not_promote_to": "This fixed policy, model, budget, generator and utility; not every diagnosis policy.",
+      "evidence_status": "registered_scoped_negative",
+      "id": "S11",
+      "sections": "5.1",
+      "statement": "The Phase2 routing controller loses to its ablation at every primary interaction level and supplies no advancing higher-order level."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 210107379,
+          "id": "E08",
+          "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+          "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+          "title": "Phase2 registered primary"
+        }
+      ],
+      "do_not_promote_to": "Modeling and action-selection effects are distinct; not a randomized mediation estimate.",
+      "evidence_status": "descriptive_model_comparison",
+      "id": "S12",
+      "sections": "5",
+      "statement": "Joint modeling can outperform factorized modeling descriptively while diagnostic routing loses."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 210107379,
+          "id": "E08",
+          "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+          "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+          "title": "Phase2 registered primary"
+        },
+        {
+          "bytes": 13465690,
+          "id": "E09",
+          "path": "results/phase2_higher_order_v2_analysis/analysis.json",
+          "sha256": "c1d7b3ed9994eba55f410592c6811e6849313f471ad2349fe402bb10ab2897e8",
+          "title": "Phase2 separate higher-order study"
+        }
+      ],
+      "do_not_promote_to": "The stronger per-level proposition fails; do not rewrite the true aggregate pass.",
+      "evidence_status": "registered_aggregate_with_stratified_limitation",
+      "id": "S13",
+      "sections": "5.3",
+      "statement": "Aggregate calibration passed while high-interaction coverage failed badly."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 38200,
+          "id": "E10",
+          "path": "results/phase3_planning/phase2_review.json",
+          "sha256": "c6a2b04daaa0f991a6c64128bae806d673e7bd084ba62be249ce34aa44605960",
+          "title": "Phase2 review reanalysis"
+        }
+      ],
+      "do_not_promote_to": "The control cannot identify the effect of permuting those tags.",
+      "evidence_status": "exact_retained_trace_count",
+      "id": "S14",
+      "sections": "5.3",
+      "statement": "All58828 relevant Phase2 shuffled interaction tags were unchanged."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 9670,
+          "id": "E11",
+          "path": "results/phase3_m1/analysis.json",
+          "sha256": "65d761a2ab122d7fbca2e11cebe099bd2057955ab13824fedaa84fef7439e39f",
+          "title": "Learned-prior development check"
+        }
+      ],
+      "do_not_promote_to": "Eight reused worlds per level, mixed search quality, plug-in hyperparameters.",
+      "evidence_status": "development_mixed",
+      "id": "S15",
+      "sections": "6.1",
+      "statement": "Empirical Bayes improves high-coupling coverage substantially but fails the full prewritten development conjunction."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 682778,
+          "id": "E12",
+          "path": "results/phase3_validation_v1/analysis.json",
+          "sha256": "55aa3b50205fd476e74248de5810a882e8d8038b5238d7b42faef107eb6fb7b4",
+          "title": "Phase3 once-only validation"
+        },
+        {
+          "bytes": 11885,
+          "id": "E13",
+          "path": "results/phase3_report/summary.json",
+          "sha256": "e25514bb892e6954862f7cc167ac384864f7b2c4e55421902742107df12e6862",
+          "title": "Phase3 development and presentation"
+        }
+      ],
+      "do_not_promote_to": "80% interval; not diagnosis-specific causal attribution or confirmation.",
+      "evidence_status": "development_positive_signal",
+      "id": "S16",
+      "sections": "6.3",
+      "statement": "The final Phase3 recipe has a modest positive once-only validation difference over its ablation."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 682778,
+          "id": "E12",
+          "path": "results/phase3_validation_v1/analysis.json",
+          "sha256": "55aa3b50205fd476e74248de5810a882e8d8038b5238d7b42faef107eb6fb7b4",
+          "title": "Phase3 once-only validation"
+        },
+        {
+          "bytes": 11885,
+          "id": "E13",
+          "path": "results/phase3_report/summary.json",
+          "sha256": "e25514bb892e6954862f7cc167ac384864f7b2c4e55421902742107df12e6862",
+          "title": "Phase3 development and presentation"
+        }
+      ],
+      "do_not_promote_to": "The interval includes .02; no population effect-size upper bound follows.",
+      "evidence_status": "development_no_go",
+      "id": "S17",
+      "sections": "6.3",
+      "statement": "The same recipe misses the .02 mean margin and fails the unreachable-spending screen; formal confirmation remains untested."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 879201,
+          "id": "E21",
+          "path": "results/phase3_validation_v1/mechanisms.json",
+          "sha256": "50493f99bb30d949ba48840a5a8cf46bf155c3051db35c762399f2842f77acc1",
+          "title": "Phase3 planted mechanism traces"
+        }
+      ],
+      "do_not_promote_to": "Seed conditions nested in eight worlds; not a causal bottleneck proof.",
+      "evidence_status": "descriptive_deployment",
+      "id": "S18",
+      "sections": "6.3",
+      "statement": "Paired-key validation deployment is1/16 for Atlas and7/16 for the privileged reference."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 496224,
+          "id": "E14",
+          "path": "results/phase3_1_addendum/budget_addendum.json",
+          "sha256": "2c78725fb108390aeb1644d1096ce9da59131442ed40dea5df24276a0e80af66",
+          "title": "Phase3 complete budget addendum"
+        }
+      ],
+      "do_not_promote_to": "No new gate; claim-match superiority at64 is not settled by its95% interval.",
+      "evidence_status": "posthoc_budget_addendum",
+      "id": "S19",
+      "sections": "7.1",
+      "statement": "No measured budget combines the stated ablation mean gain with a nonnegative mean against every frozen traditional comparator."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 496224,
+          "id": "E14",
+          "path": "results/phase3_1_addendum/budget_addendum.json",
+          "sha256": "2c78725fb108390aeb1644d1096ce9da59131442ed40dea5df24276a0e80af66",
+          "title": "Phase3 complete budget addendum"
+        }
+      ],
+      "do_not_promote_to": "Ratios are not causal shares; an inactive mechanism cannot test its usefulness.",
+      "evidence_status": "posthoc_mechanism_unresolved",
+      "id": "S20",
+      "sections": "7.1",
+      "statement": "Shuffle retains much of the observed mean gain, while cost-key score differences are inactive."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 74713,
+          "id": "E15",
+          "path": "results/phase3_1_mechanism/analysis.json",
+          "sha256": "6503918b5413e8a15aaa08fc9a366c89f15982efef33e58a1fcbca52d29146ef",
+          "title": "Phase3 training-only mechanism controls"
+        }
+      ],
+      "do_not_promote_to": "Ordinary unadjusted intervals; does not isolate labels, gap existence or optimism.",
+      "evidence_status": "training_descriptive_positive",
+      "id": "S21",
+      "sections": "7.2",
+      "statement": "Atlas exceeds the particular transport control at64 on inspected training worlds."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 74713,
+          "id": "E15",
+          "path": "results/phase3_1_mechanism/analysis.json",
+          "sha256": "6503918b5413e8a15aaa08fc9a366c89f15982efef33e58a1fcbca52d29146ef",
+          "title": "Phase3 training-only mechanism controls"
+        }
+      ],
+      "do_not_promote_to": "Does not explain all Atlas gains; repeated runs do not enlarge N.",
+      "evidence_status": "training_descriptive_positive",
+      "id": "S22",
+      "sections": "7.2",
+      "statement": "A four-unit affordability reserve gives a small positive claim-matching contrast at32 and exact paired equality at64."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 366958,
+          "id": "E16",
+          "path": "results/phase3_2_headroom/analysis.json",
+          "sha256": "68ef4073269c878697d51cef52131864c79302dcd080c3c038b8406fcafeedcd",
+          "title": "Initial six-comparator headroom"
+        },
+        {
+          "bytes": 110609,
+          "id": "E17",
+          "path": "results/phase3_2a_comparators/analysis.json",
+          "sha256": "dd68e21499250e92e8d73410de08c932b5d885e9e81f53ccfa95be798c557ad1",
+          "title": "Corrected eight-comparator headroom"
+        },
+        {
+          "bytes": 1231,
+          "id": "E18",
+          "path": "results/phase3_2a_comparators/decision_corrected.json",
+          "sha256": "6bbb08e82d599cf05b7720653a15d48762a689cf94f9081a699f01218aef3aee",
+          "title": "Corrected operational decision"
+        }
+      ],
+      "do_not_promote_to": "Not an optimal-policy ceiling, a real-probe simulation, a new confirmation or universal impossibility.",
+      "evidence_status": "posthoc_operational_stop",
+      "id": "S23",
+      "sections": "8",
+      "statement": "The corrected eight-arm headroom screen fails the unchanged continuation rule."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 16853,
+          "id": "E19",
+          "path": "results/phase3_2a_comparators/parity.json",
+          "sha256": "c77a782e17f5bf392e0f74452d3b6449186743dda30f748cc3823d08eaea7f7f",
+          "title": "Exact world-mean and truth parity"
+        },
+        {
+          "bytes": 24084,
+          "id": "E20",
+          "path": "results/phase3_2a_comparators/receipt.json",
+          "sha256": "19abb2c5df339c64e6034b520369b403427e3ce96949aaefcc0d612b41b40c38",
+          "title": "Final correction integrity receipt"
+        }
+      ],
+      "do_not_promote_to": "Same worlds; not independent replication or additional statistical N.",
+      "evidence_status": "integrity_parity",
+      "id": "S24",
+      "sections": "8.2",
+      "statement": "All24 rerun world means match exactly and regenerated truth records are byte-identical."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 110609,
+          "id": "E17",
+          "path": "results/phase3_2a_comparators/analysis.json",
+          "sha256": "dd68e21499250e92e8d73410de08c932b5d885e9e81f53ccfa95be798c557ad1",
+          "title": "Corrected eight-comparator headroom"
+        }
+      ],
+      "do_not_promote_to": "Measured can include probes; direct-build counts separate; no unique causal decomposition.",
+      "evidence_status": "descriptive_funnel",
+      "id": "S25",
+      "sections": "8.3",
+      "statement": "Expand-all acquisition, joint measurement and shortlist counts differ across budgets."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 23238194,
+          "id": "E04",
+          "path": "results/confirmation_v1_analysis/primary_analysis.json",
+          "sha256": "83349e9b69a48d55441c344400987b5b68b67d190189f5d50040f3d63236ce54",
+          "title": "Phase1 registered primary"
+        },
+        {
+          "bytes": 210107379,
+          "id": "E08",
+          "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+          "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+          "title": "Phase2 registered primary"
+        },
+        {
+          "bytes": 682778,
+          "id": "E12",
+          "path": "results/phase3_validation_v1/analysis.json",
+          "sha256": "55aa3b50205fd476e74248de5810a882e8d8038b5238d7b42faef107eb6fb7b4",
+          "title": "Phase3 once-only validation"
+        },
+        {
+          "bytes": 1231,
+          "id": "E18",
+          "path": "results/phase3_2a_comparators/decision_corrected.json",
+          "sha256": "6bbb08e82d599cf05b7720653a15d48762a689cf94f9081a699f01218aef3aee",
+          "title": "Corrected operational decision"
+        }
+      ],
+      "do_not_promote_to": "Not a new theorem or a quantitatively tested architectural improvement.",
+      "evidence_status": "interpretive",
+      "id": "S26",
+      "sections": "9-12",
+      "statement": "Retaining the evidence apparatus while retiring the tested controller is a defensible engineering interpretation."
+    },
+    {
+      "artifacts": [
+        {
+          "bytes": 8705,
+          "id": "E01",
+          "path": "results/reference_20261023/reference_demo.json",
+          "sha256": "11bb0f4e84fea4cc08d0ae4ad8cb7bba898ada0b257e5c1abfd5ea996418ee46",
+          "title": "Finite reference"
+        },
+        {
+          "bytes": 23238194,
+          "id": "E04",
+          "path": "results/confirmation_v1_analysis/primary_analysis.json",
+          "sha256": "83349e9b69a48d55441c344400987b5b68b67d190189f5d50040f3d63236ce54",
+          "title": "Phase1 registered primary"
+        },
+        {
+          "bytes": 210107379,
+          "id": "E08",
+          "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+          "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+          "title": "Phase2 registered primary"
+        },
+        {
+          "bytes": 682778,
+          "id": "E12",
+          "path": "results/phase3_validation_v1/analysis.json",
+          "sha256": "55aa3b50205fd476e74248de5810a882e8d8038b5238d7b42faef107eb6fb7b4",
+          "title": "Phase3 once-only validation"
+        },
+        {
+          "bytes": 1231,
+          "id": "E18",
+          "path": "results/phase3_2a_comparators/decision_corrected.json",
+          "sha256": "6bbb08e82d599cf05b7720653a15d48762a689cf94f9081a699f01218aef3aee",
+          "title": "Corrected operational decision"
+        }
+      ],
+      "do_not_promote_to": "No recursive self-improvement, general invention, energy, alignment or ASI likelihood claim.",
+      "evidence_status": "untested_architectural_implication",
+      "id": "S27",
+      "sections": "10",
+      "statement": "Implications for ASI Stack are conditional architectural lessons, not tests of ASI."
+    }
+  ],
+  "scope": "Retrospective synthesis index, not a new hypothesis ledger. Original ledgers and confirmation dispositions remain unchanged.",
+  "source_head": "d36a09b37c928165b5743703d0d6ad820cccc629",
+  "source_records": {
+    "E01": {
+      "bytes": 8705,
+      "path": "results/reference_20261023/reference_demo.json",
+      "sha256": "11bb0f4e84fea4cc08d0ae4ad8cb7bba898ada0b257e5c1abfd5ea996418ee46",
+      "title": "Finite reference"
+    },
+    "E02": {
+      "bytes": 35171,
+      "path": "results/analysis_batch_mechanism_pilot/analysis.json",
+      "sha256": "d3225961139a92a92ad0beba38bafbdd28f81d6e51dcc812c4d973711f5e7b26",
+      "title": "Corrected batch mechanism pilot"
+    },
+    "E03": {
+      "bytes": 37429,
+      "path": "results/analysis_mechanism_pilot_v2/analysis.json",
+      "sha256": "fd290bd043b9a6d759a3642740189b5e65492b9b5495ae56b1e8f3d618c145f7",
+      "title": "Corrected RPC mechanism pilot"
+    },
+    "E04": {
+      "bytes": 23238194,
+      "path": "results/confirmation_v1_analysis/primary_analysis.json",
+      "sha256": "83349e9b69a48d55441c344400987b5b68b67d190189f5d50040f3d63236ce54",
+      "title": "Phase1 registered primary"
+    },
+    "E05": {
+      "bytes": 6996968,
+      "path": "results/family_extension_v1_analysis/primary_analysis.json",
+      "sha256": "abad70d6eadfe4b47728e81b6f9f86dc43ecabd10d55e89a40605e076cc08f51",
+      "title": "Phase1 separate family extension"
+    },
+    "E06": {
+      "bytes": 8138,
+      "path": "results/phase2_planning/arm_contrasts.json",
+      "sha256": "54c0b57706c76d98cd7718db35e7df18fb6706eb46c94c4b01745123db1013cc",
+      "title": "Phase1 exploratory arm contrasts"
+    },
+    "E07": {
+      "bytes": 103826,
+      "path": "results/maintenance_analysis_v1/analysis.json",
+      "sha256": "fa2fa0f1ebf406772c7b402100f2d79b449d7529aba62772124ce420e0e4586d",
+      "title": "Prospective maintenance"
+    },
+    "E08": {
+      "bytes": 210107379,
+      "path": "results/phase2_confirmation_v2_analysis/analysis.json",
+      "sha256": "2393b4a21d43010aa25fca489c67aae98621f6e4359b28a9ffe6e294c583bf9e",
+      "title": "Phase2 registered primary"
+    },
+    "E09": {
+      "bytes": 13465690,
+      "path": "results/phase2_higher_order_v2_analysis/analysis.json",
+      "sha256": "c1d7b3ed9994eba55f410592c6811e6849313f471ad2349fe402bb10ab2897e8",
+      "title": "Phase2 separate higher-order study"
+    },
+    "E10": {
+      "bytes": 38200,
+      "path": "results/phase3_planning/phase2_review.json",
+      "sha256": "c6a2b04daaa0f991a6c64128bae806d673e7bd084ba62be249ce34aa44605960",
+      "title": "Phase2 review reanalysis"
+    },
+    "E11": {
+      "bytes": 9670,
+      "path": "results/phase3_m1/analysis.json",
+      "sha256": "65d761a2ab122d7fbca2e11cebe099bd2057955ab13824fedaa84fef7439e39f",
+      "title": "Learned-prior development check"
+    },
+    "E12": {
+      "bytes": 682778,
+      "path": "results/phase3_validation_v1/analysis.json",
+      "sha256": "55aa3b50205fd476e74248de5810a882e8d8038b5238d7b42faef107eb6fb7b4",
+      "title": "Phase3 once-only validation"
+    },
+    "E13": {
+      "bytes": 11885,
+      "path": "results/phase3_report/summary.json",
+      "sha256": "e25514bb892e6954862f7cc167ac384864f7b2c4e55421902742107df12e6862",
+      "title": "Phase3 development and presentation"
+    },
+    "E14": {
+      "bytes": 496224,
+      "path": "results/phase3_1_addendum/budget_addendum.json",
+      "sha256": "2c78725fb108390aeb1644d1096ce9da59131442ed40dea5df24276a0e80af66",
+      "title": "Phase3 complete budget addendum"
+    },
+    "E15": {
+      "bytes": 74713,
+      "path": "results/phase3_1_mechanism/analysis.json",
+      "sha256": "6503918b5413e8a15aaa08fc9a366c89f15982efef33e58a1fcbca52d29146ef",
+      "title": "Phase3 training-only mechanism controls"
+    },
+    "E16": {
+      "bytes": 366958,
+      "path": "results/phase3_2_headroom/analysis.json",
+      "sha256": "68ef4073269c878697d51cef52131864c79302dcd080c3c038b8406fcafeedcd",
+      "title": "Initial six-comparator headroom"
+    },
+    "E17": {
+      "bytes": 110609,
+      "path": "results/phase3_2a_comparators/analysis.json",
+      "sha256": "dd68e21499250e92e8d73410de08c932b5d885e9e81f53ccfa95be798c557ad1",
+      "title": "Corrected eight-comparator headroom"
+    },
+    "E18": {
+      "bytes": 1231,
+      "path": "results/phase3_2a_comparators/decision_corrected.json",
+      "sha256": "6bbb08e82d599cf05b7720653a15d48762a689cf94f9081a699f01218aef3aee",
+      "title": "Corrected operational decision"
+    },
+    "E19": {
+      "bytes": 16853,
+      "path": "results/phase3_2a_comparators/parity.json",
+      "sha256": "c77a782e17f5bf392e0f74452d3b6449186743dda30f748cc3823d08eaea7f7f",
+      "title": "Exact world-mean and truth parity"
+    },
+    "E20": {
+      "bytes": 24084,
+      "path": "results/phase3_2a_comparators/receipt.json",
+      "sha256": "19abb2c5df339c64e6034b520369b403427e3ce96949aaefcc0d612b41b40c38",
+      "title": "Final correction integrity receipt"
+    },
+    "E21": {
+      "bytes": 879201,
+      "path": "results/phase3_validation_v1/mechanisms.json",
+      "sha256": "50493f99bb30d949ba48840a5a8cf46bf155c3051db35c762399f2842f77acc1",
+      "title": "Phase3 planted mechanism traces"
+    },
+    "E22": {
+      "bytes": 36809,
+      "path": "results/phase3_planning/study_inventory_v1.json",
+      "sha256": "4cf7de9cd4764876b14ff20be2f4d661ad51603e4b733a1d5b69f2b40df3adc5",
+      "title": "Phase3 retained-study inventory"
+    }
+  }
+}

@@ -17,6 +17,7 @@
         "additionalProperties": false,
         "properties": {
           "source_id": {"type": "string", "pattern": "^[a-z0-9_]+$"},
+          "author_credit": {"type": "string", "minLength": 1},
           "document_class": {
             "enum": [
               "research_paper", "technical_whitepaper", "architecture_whitepaper",
@@ -34,6 +35,7 @@
           },
           "bibliography": {"type": "string", "pattern": "^papers/references/[a-z0-9_]+\\.bib$"},
           "canonical_source": {"type": "string", "pattern": "^sources/raw/"},
+          "published_source": {"type": "string", "pattern": "^papers/source/[a-z0-9_]+\\.md$"},
           "canonical_asset_root": {"type": "string", "pattern": "^sources/raw/"},
           "source_note": {"type": "string", "pattern": "^sources/source_notes/[a-z0-9_]+\\.md$"},
           "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},

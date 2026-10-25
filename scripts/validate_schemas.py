@@ -28,7 +28,7 @@ def main() -> None:
             continue
         for key in ["$schema", "title", "type", "properties"]:
             if key not in schema:
-                relative = str(path.relative_to(ROOT))
+                relative = path.relative_to(ROOT).as_posix()
                 if key == "title" and TITLE_EXEMPTIONS.get(relative) == hashlib.sha256(path.read_bytes()).hexdigest():
                     continue
                 errors.append(f"{path.relative_to(ROOT)}: missing {key}")

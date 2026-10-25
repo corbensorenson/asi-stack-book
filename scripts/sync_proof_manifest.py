@@ -78,7 +78,7 @@ def parse_outline() -> list[dict]:
                 "formal_target": target.strip(),
                 "status": status,
                 "outline_line": lineno,
-                "module_path": str(module_path(module).relative_to(ROOT)),
+                "module_path": module_path(module).relative_to(ROOT).as_posix(),
             }
         )
     return records
@@ -122,7 +122,7 @@ def build_manifest(records: list[dict]) -> dict:
     status_counts = Counter(record["status"] for record in records)
     chapter_counts = Counter(record["chapter_id"] for record in records)
     return {
-        "generated_from": str(OUTLINE.relative_to(ROOT)),
+        "generated_from": OUTLINE.relative_to(ROOT).as_posix(),
         "note": "Generated from Lean proof target tables in docs/book_outline.md. Edit the outline, not this file.",
         "proof_target_count": len(records),
         "status_counts": dict(sorted(status_counts.items())),

@@ -7,3 +7,6 @@ experiments/post_v2_3_evidence_campaigns/artifacts/model_outputs/*.txt -whitespa
 editions/reader_manuscript/v2_0/artifacts/*.pdf binary
 editions/reader_manuscript/v2_0/artifacts/*.epub binary
 editions/reader_manuscript/v2_0/artifacts/*.docx binary
+
+# Preserve the supplied working-paper PDF byte identity.
+papers/source/answerability_atlas_synthesis.pdf binary

@@ -1,7 +1,7 @@
 # Publication Readiness
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **89 manifest chapters; 501 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **89 manifest chapters; 502 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 Last audited: 2026-07-18

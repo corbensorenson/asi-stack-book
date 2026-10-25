@@ -213,6 +213,7 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         "Archived author paper; its claims retain the status and limits stated in the paper and do not inherit the living book's current evidence state.",
     )
     is_derived_synthesis = record.get("lineage_role") == "derived_book_synthesis"
+    author_credit = record.get("author_credit", "Corben Sorenson — original collaborator credits preserved in the manuscript")
     callout_title = "Derived synthesis, not independent evidence" if is_derived_synthesis else "Original paper, not rewritten book prose"
     callout_body = (
         "This manuscript is a compact authorial synthesis derived from the living book and its earlier source lineage. "
@@ -222,6 +223,11 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         "The text may contain historical terminology, claims, confidence, citations, or implementation status that the book later narrows, revises, tests, or rejects. "
         "Publication here establishes provenance and access—not correctness, novelty, replication, or support-state promotion."
     )
+    if record.get("author_credit") and not is_derived_synthesis:
+        callout_body = (
+            "This page publishes a source manuscript supplied by Corben, with the manuscript's own attribution preserved. "
+            "Publication establishes provenance and access, not correctness, novelty, independent replication or book support-state promotion."
+        )
     route_heading = "Where this synthesis maps onto the living book" if is_derived_synthesis else "Where this paper enters the living book"
     bibliography_line = f"bibliography: ../{record['bibliography']}\nlink-citations: true\n" if record.get("bibliography") else ""
     description = (
@@ -229,10 +235,12 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         if is_derived_synthesis else
         "Original Corben Sorenson paper published as part of The ASI Stack source and lineage library."
     )
+    if record.get("author_credit") and not is_derived_synthesis:
+        description = "Supplied source manuscript; attribution follows the exact manuscript rather than the library's default personal credit."
 
     return f"""---
 title: {yaml_string(record['title'])}
-author: "Corben Sorenson — original collaborator credits preserved in the manuscript"
+author: {yaml_string(author_credit)}
 date: {yaml_string(date)}
 page-layout: article
 toc: true
@@ -557,7 +565,7 @@ def synchronize(check: bool) -> list[str]:
                     shutil.copyfile(canonical, published_source)
                 else:
                     published_source.write_bytes(canonical_bytes)
-            page.write_text(expected, encoding="utf-8")
+            page.write_text(expected, encoding="utf-8", newline="\n")
 
     index_expected = expected_index(records, inventory, structure)
     if check:
@@ -565,14 +573,14 @@ def synchronize(check: bool) -> list[str]:
             errors.append("papers/index.qmd is missing or stale")
     else:
         INDEX.parent.mkdir(parents=True, exist_ok=True)
-        INDEX.write_text(index_expected, encoding="utf-8")
+        INDEX.write_text(index_expected, encoding="utf-8", newline="\n")
 
     config_expected = expected_quarto_config(records)
     if check:
         if not QUARTO_CONFIG.exists() or QUARTO_CONFIG.read_text(encoding="utf-8") != config_expected:
             errors.append("papers/_quarto.yml is missing or stale")
     else:
-        QUARTO_CONFIG.write_text(config_expected, encoding="utf-8")
+        QUARTO_CONFIG.write_text(config_expected, encoding="utf-8", newline="\n")
 
     return errors
 
