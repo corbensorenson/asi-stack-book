@@ -117,6 +117,15 @@ The controller still has to preserve what its own task needs. This external
 statistical result is also distinct from Sorenson's *Platonic World Model*
 proposal; the shared name does not validate that semantic constitution.
 
+[LeWorldModel](https://arxiv.org/abs/2603.19312v3) supplies an action-conditioned
+example: a pixel encoder and next-latent predictor train on offline
+observation/action trajectories using predictive and Gaussian-regularization
+losses. A later planner searches action sequences while the world model stays
+fixed. This differs from the identity-predictor theorem above. Its short
+horizons, data-coverage needs and action labels bound the result; meaningful
+latent probes do not establish safe physical control. Unit 12 examines how a
+learned planner can exploit errors in just such a model.
+
 ## Freeze the Forecast Before the Intervention
 
 A forecast that can change after every outcome cannot be calibrated. Before a

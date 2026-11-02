@@ -4,11 +4,10 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-10-11"
+last_updated: "2026-11-02"
 primary_sources:
   - "planforge"
   - "platonic_world_model"
-  - "regret_engine"
   - "viea"
   - "cognitive_compilation"
   - "software_magic_grimoire"
@@ -18,6 +17,8 @@ primary_sources:
   - "tokenmana"
   - "ext_v_jepa_2_2025"
   - "reflexive_router_whitepaper"
+  - "regret_engine"
+  - "ext_reinforced_planning_rp1_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -36,12 +37,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-10-11 (source argument and figure; recorded results retain their dates) |
-| Primary source records | `planforge`, `platonic_world_model`, `regret_engine`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper` |
+| Last updated | 2026-11-02 |
+| Primary source records | 13 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `planforge`, `viea`, `planforge_compiler_arch`; supporting: `cognitive_compilation`, `software_magic_grimoire`, `tokenmana`, `reflexive_router_whitepaper`; connector/recovery: `moecot`, `coherence_exchange` |
-| Source loading state | source notes: `planforge`, `platonic_world_model`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper`, `regret_engine`; raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/recovery: `moecot`, `coherence_exchange` |
+| Source loading state | source notes: `planforge`, `platonic_world_model`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `moecot`, `planforge_compiler_arch`, `coherence_exchange`, `tokenmana`, `ext_v_jepa_2_2025`, `reflexive_router_whitepaper`, `regret_engine`, `ext_reinforced_planning_rp1_2026`; raw cache: `planforge`, `viea`, `cognitive_compilation`, `software_magic_grimoire`, `planforge_compiler_arch`, `tokenmana`; connector/recovery: `moecot`, `coherence_exchange` |
 | Test state | The schema/fixture, plan-execution, scheduler-state, runtime-replan, and Lean checks pass over their exact synthetic records. Across them, eight valid records, 29 rejecting cases, two accepted no-change transitions, 12 complete graph-transport mutations, and 71 theorem declarations under seven targets establish finite record, route, lifecycle, actual-edge ordering, and information-loss consequences only. No natural planner output, dependency-truth/completeness result, planner-quality result, live scheduler, observed replan benefit, cost-quality dominance, or support transition exists. |
 
 ## Drafting guardrail
@@ -473,6 +474,32 @@ qualification, cancellation and retry correctness, plan provenance, and final
 outcome separately. The paper contains no executed DAG planner or measured
 benefit, so the planning core remains at `argument`.
 
+### Learn the plan update without granting the plan authority {#reinforced-planning-with-world-models}
+
+[Reinforced Planning](https://arxiv.org/abs/2608.18669v2), instantiated as RP1,
+learns how to revise a multi-step action plan. A goal-conditioned critic
+evaluates the imagined terminal state; a learned operator receives the current
+plan, its value and the gradient through the differentiable world model, then
+returns a revised plan. It learns an update procedure rather than simply
+imitating a fixed optimizer or mapping the current state directly to an action.
+
+The revised paper distinguishes offline planner training from simulator
+episodes used for checkpoint selection. Its query reductions and concurrent
+planner timing use particular backbones, horizons, baselines and hardware;
+they are not equal-budget curves for every alternative or complete training
+economics. RP1 also needs retraining when the world model or goal horizon
+changes, and the study does not compare amortized policies trained through
+the same critic.
+
+The planner can exploit world-model errors. The reported Dyna correction
+collects failed interactions, updates the model and retrains the planner; it
+reduces rather than eliminates that risk. In the stack, the learned proposal
+therefore retains critic, model, horizon, selection evidence and rollout
+lineage. The task DAG, dependency validity, runtime permission and actual
+effect record remain the responsibility of their existing owners. Efficient
+search within an imagined world does not establish an executable, authorized
+or physically adequate plan.
+
 ## Interfaces
 
 Planning consumes a versioned command but cannot reinterpret it. Context and
@@ -800,6 +827,7 @@ These rows keep Planning as a Control Layer: DAGs and Intelligence Arbitrage's m
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: [The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence](../papers/platonic_world_model.html). Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_reinforced_planning_rp1_2026` | Passage-reviewed comparator: Reinforced Planning with Latent World Models. Learns a multi-step plan-update rule using a critic, imagined rollouts and gradients through a world model. Distinguishes improving search from learning a direct action policy. | Planner training can be offline while checkpoint selection still uses simulator episodes. It can exploit world-model errors and needs retraining across model/horizon changes. Query reduction is not the same as latency or complete training cost. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

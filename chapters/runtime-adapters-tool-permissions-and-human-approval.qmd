@@ -4,9 +4,11 @@ chapter_id: "runtime-adapters-tool-permissions-and-human-approval"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-10-11"
+last_updated: "2026-11-02"
 primary_sources:
   - "talos"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
   - "viea"
   - "ladon_manhattan"
   - "software_magic_grimoire"
@@ -14,11 +16,11 @@ primary_sources:
   - "moecot"
   - "field_of_god_ai_constitution"
   - "theseus_operator_os"
-  - "ext_cap_theorem_gilbert_lynch_2002"
   - "ext_humans_automation_1997"
   - "ext_ironies_automation_1983"
   - "ext_levels_automation_2000"
   - "ext_complacency_bias_automation_2010"
+  - "ext_cap_theorem_gilbert_lynch_2002"
   - "ext_inspect_ai_2024"
   - "ext_agentdojo_2024"
   - "ext_camel_prompt_injection_2025"
@@ -32,6 +34,10 @@ primary_sources:
   - "ext_txfs_2018"
   - "qcsa_whitepaper"
   - "reflexive_router_whitepaper"
+  - "ext_elizaos_agent_runtime_2026"
+  - "ext_hermes_agent_2026"
+  - "ext_openclaw_agent_runtime_2026"
+  - "ext_mage_vl_cowork_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -49,12 +55,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-10-11 |
-| Primary source records | twenty-six primary architecture and comparator records; supplemental manifest assignments retain their boundaries in the source crosswalk |
+| Last updated | 2026-11-02 |
+| Primary source records | 32 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting: `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`; external comparator: `ext_cap_theorem_gilbert_lynch_2002`; connector/recovery: `moecot` |
-| Source loading state | source notes: `talos`, `deterministic_capability_compilation`, `platonic_world_model`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `ext_elizaos_agent_runtime_2026`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
+| Source loading state | source notes: `talos`, `deterministic_capability_compilation`, `platonic_world_model`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `moecot`, `field_of_god_ai_constitution`, `theseus_operator_os`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_camel_prompt_injection_2025`, `ext_owasp_agentic_top_10_2026`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `ext_elizaos_agent_runtime_2026`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`, `ext_mage_vl_cowork_2026`; raw cache: `talos`, `viea`, `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`; connector/recovery: `moecot` |
 | Test state | Runtime adapter fixture validation now includes invocation state, impact class, risk tier, approval scope/expiry, effect lease, pre/post state refs, external side effects, verification refs, irreversible residuals, incident/audit refs, support-state effect, non-claims, and authority probes; finite permission, approval, effect-lease, rollback-obligation, authority-ceiling, confused-deputy, sandbox-escape, effect-receipt, dispatch-route, effect-replay, adversarial-boundary, revocation-route, and human-oversight degradation predicates plus negative-case theorems are implemented in `AsiStackProofs.RuntimeAdapters` for missing parent-job permission, high-impact unapproved adapter calls that try to remain unrejected, missing scoped approval, mismatched effect leases, expired leases, revoked leases, unsandboxed leases, over-ceiling requested authority, confused-deputy attempts, sandbox-escape attempts, high-impact rollback-required calls without rollback handles, revoked approvals and authority receipts without no-mutation denial evidence, missing effect receipts, missing no-mutation evidence, inexact rollback, repository/network side effects, support-state effects, parentage mismatch, approval expiry, sandbox path escape, secret materialization, missing audit refs, missing non-claim boundaries, reviewer overload, rubber-stamped approval, alarm fatigue, and automation-bias contradictions; `python3 scripts/validate_runtime_adapter_permissions.py` checks 2 valid and 7 expected-invalid synthetic typed-job, adapter-invocation, authority-use-receipt, and authority-probe scenarios; the Runtime adapter effect replay probe (`python3 scripts/validate_runtime_adapter_effect_probe.py`) checks `valid_low_impact_local_write_effect_replay`, a rollback-exact temp-file restoration, `invalid_missing_permission_no_mutation`, and `invalid_expired_approval_no_mutation`; the Runtime adapter adversarial boundary probe (`python3 scripts/validate_runtime_adapter_adversarial_boundary_probe.py`) checks two valid synthetic adapter boundary reviews and twelve expected-invalid controls without support-state promotion; the Human oversight degradation fixture (`python3 scripts/validate_human_oversight_degradation.py`) writes `experiments/human_oversight_degradation/results/2026-07-03-local.json`; `evidence_transitions/v1_x_measured/human_oversight_degradation_no_change.json` records an accepted `blocks_promotion` no-change decision for approval-workflow, reviewer-correctness, alert-quality, deployed-human-factors, runtime-adapter-safety, and chapter-core promotion claims; and the partitioned authority fixture (`python3 scripts/validate_partitioned_authority_fixture.py`) writes `experiments/partitioned_authority/results/2026-07-03-local.json` with stale-grant, fresh authority receipt, grant/effect race, no-mutation evidence, and CAP-style authority consistency checks. Deployed adapter execution, sandbox isolation, approval-service behavior, reviewer correctness, deployed human-factors behavior, secret-handle safety, rollback-service behavior, deployed partition tolerance, distributed consensus, revocation propagation, policy-enforcement correctness, and security review remain untested. |
 
 ## Drafting guardrail
@@ -435,6 +441,31 @@ for practical agent infrastructure. Claims about local behavior await local
 execution or independent evaluation.
 Documentation review is the sole basis for this comparison; none of the three
 runtimes was executed in this repository.
+
+### GUI and terminal channels share an effect contract {#mage-hybrid-computer-use}
+
+[Mage-VL-Cowork](https://arxiv.org/abs/2610.40747v1) supplies a concrete
+hybrid computer-use case. Its teacher's model weights stay fixed while the
+external harness evolves: scaffold, tool interface, prompt and available
+terminal libraries influence which demonstrations are later distilled into
+a compact GUI/terminal policy. Reusable task workflows coordinate the requested
+outcome, setup artifacts and evaluator instead of constructing every task
+package independently.
+
+In the paper's controlled harness comparison, an extra accessibility channel
+does not improve the resulting student. Additional channels can introduce
+ambiguous routing rather than useful capability. A terminal edit may also
+change a file while a running application retains a cached view; the chosen
+channel and observation path therefore matter to the effect claim.
+
+The reported OSWorld-Verified configuration evaluates 361 tasks, excludes
+Google Drive, uses a 50-step budget and averages two runs. This qualifies a
+benchmark comparison, not permission enforcement or safe desktop deployment.
+For this chapter, each GUI or terminal attempt still carries its actual
+target, authority, environment state, observation coverage and recovery
+limits. Channel selection is a policy decision; it cannot bypass the adapter's
+effect boundary or turn an intended edit into an observed result. This book
+does not execute or qualify the source runtime.
 
 ## Interfaces
 
@@ -829,6 +860,7 @@ These rows keep Runtime Adapters, Tool Permissions, and Human Approval's manifes
 | `ext_elizaos_agent_runtime_2026` | Passage-reviewed comparator: elizaOS Agent Runtime and Scenario Runner. Supplies a current implementation comparator for modular actions, providers, evaluators, services, runtime lifecycle, guarded host access, and scenario execution with an explicit boundary between in-process diagnostics and externally qualified provider evidence. | Official software and documentation review only; no plugin, permission, sandbox, scenario, provider qualification, security, or production result was executed or reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hermes_agent_2026` | Passage-reviewed comparator: Hermes Agent: Learning, Memory, Tools, and Security Architecture. Supplies a current implementation comparator for dangerous-command approval, file-write restrictions, container isolation, credential filtering, context scanning, cross-session isolation, tool backends, and optional staged approval of agent-authored skill mutations. | Official software and documentation review only; no command, sandbox, tool, approval, skill-write, security, or deployment result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator that separates sandbox placement, tool availability policy, approval, and elevated execution, while documenting that ACP external harnesses retain their own execution authorization and are not wrapped by the parent sandbox. | Official software and documentation review only; no policy, sandbox, approval, elevation, ACP confinement, effect observation, or security result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mage_vl_cowork_2026` | Passage-reviewed comparator: Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses. A concrete GUI/terminal policy trained from an evolved teacher harness and reusable task-generation workflows. Extra action channels can hurt the distilled student when they introduce ambiguous routing. | The OSWorld result uses 361 tasks, excludes Google Drive, permits 50 steps and averages two runs. This configuration-specific result is not evidence of permission enforcement, general desktop safety or a drop-in runtime. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 governed adapter boundary

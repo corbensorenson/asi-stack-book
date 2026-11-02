@@ -1,12 +1,25 @@
 {
   "backlog_id": "additional-source-screening-2026-11-02",
-  "triage_state": "discovered",
-  "source_or_gap": "Additional sources absent from the 527-entry inventory after the November 2 literature and chapter-coverage passes; selected-method screening now supplies a ranked adoption plan.",
+  "triage_state": "integrated",
+  "source_or_gap": "User-authorized incorporation of the complete fifteen-paper additional-source shortlist into twelve existing technical owners and ten reader units, after selected primary-passage and chapter-boundary review.",
   "access_state": "available",
   "source_storage_policy": "repo_public_note_only",
   "public_safety_state": "public_safe",
-  "assigned_chapters": [],
-  "chapter_action_policy": "Recommend eight first-batch sources, the paired mHC finetuning counterpoint and six next-batch cases through existing chapter owners. No source or chapter manifest mutation in this search-only pass.",
+  "assigned_chapters": [
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "data-engines-continual-learning-and-unlearning",
+    "adversarial-machine-learning-and-model-attack-surface",
+    "policy-optimization-and-learning-from-feedback",
+    "scalable-oversight-and-adversarial-ai-control",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "governed-world-models-and-reality-grounding",
+    "planning-as-a-control-layer",
+    "durable-semantic-memory-and-knowledge-lattices",
+    "scientific-discovery-and-experimental-governance",
+    "runtime-adapters-tool-permissions-and-human-approval",
+    "governed-model-training-distributed-optimization-and-scaling"
+  ],
+  "chapter_action_policy": "User-authorized integration of all fifteen screened sources into twelve existing owners, with bounded reader explanations and unchanged core support.",
   "chapter_decision_refs": [
     "new_paper_triage_scenarios/additional_source_screening_2026_11_02.json",
     "docs/reader_manuscript_review.md"
@@ -14,26 +27,10 @@
   "deduplication_state": "overlaps_existing_chapter",
   "merge_or_split_policy": "No new chapter recommended. Neural residual topology belongs to substrate design, not multi-agent learning topology; distinguish learned lookup from external memory.",
   "boundary_decision_rationale": "Each proposed source contributes a concrete missing mechanism, comparator, scoped failure mode or contrary result; recency and leaderboard position alone do not determine inclusion.",
-  "source_note_state": "planned",
-  "claim_mapping_state": "none",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
   "passage_review_state": "partial",
-  "external_literature_need": [
-    "First batch: Conditional Memory via Scalable Lookup (Engram) (https://arxiv.org/abs/2601.07372v2); proposed owner replaceable-cognitive-substrates-beyond-transformer-monoculture.",
-    "First batch: EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory (https://arxiv.org/abs/2610.10533v1); proposed owner data-engines-continual-learning-and-unlearning.",
-    "First batch: mHC: Manifold-Constrained Hyper-Connections (https://arxiv.org/abs/2512.24880v2); proposed owner replaceable-cognitive-substrates-beyond-transformer-monoculture.",
-    "First batch: Attention Residuals (https://arxiv.org/abs/2603.15031v1); proposed owner replaceable-cognitive-substrates-beyond-transformer-monoculture.",
-    "First batch: RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents (https://arxiv.org/abs/2610.06401v2); proposed owner adversarial-machine-learning-and-model-attack-surface.",
-    "First batch: CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL (https://arxiv.org/abs/2609.39533v3); proposed owner policy-optimization-and-learning-from-feedback.",
-    "First batch: Simulated Control Evals (https://arxiv.org/abs/2610.31593v1); proposed owner scalable-oversight-and-adversarial-ai-control.",
-    "First batch: Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems (https://arxiv.org/abs/2610.12822v2); proposed owner multi-agent-dynamics-collective-intelligence-and-systemic-risk.",
-    "Pair with mHC: Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning (https://arxiv.org/abs/2607.18130v2); proposed owner replaceable-cognitive-substrates-beyond-transformer-monoculture.",
-    "Next batch: LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels (https://arxiv.org/abs/2603.19312v3); proposed owner governed-world-models-and-reality-grounding.",
-    "Next batch: Reinforced Planning with Latent World Models (RP1) (https://arxiv.org/abs/2608.18669v2); proposed owner planning-as-a-control-layer.",
-    "Next batch: Continual Graph Memory for Mathematical Research Agents (Ansatz) (https://arxiv.org/abs/2610.02945v1); proposed owner durable-semantic-memory-and-knowledge-lattices.",
-    "Next batch: Evolving in Thought Space (Guidance-TTT) (https://arxiv.org/abs/2610.06269v1); proposed owner scientific-discovery-and-experimental-governance.",
-    "Next batch: Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses (https://arxiv.org/abs/2610.40747v1); proposed owner runtime-adapters-tool-permissions-and-human-approval.",
-    "Next batch: SimHack: Predicting the onset of detectable reward hacking before RL training (https://arxiv.org/abs/2610.28707v1); proposed owner governed-model-training-distributed-optimization-and-scaling."
-  ],
+  "external_literature_need": [],
   "proof_or_test_backlog": [
     "No model execution, scientific replay, training, Docker or Lean campaign is commissioned by this literature search."
   ],
@@ -41,12 +38,27 @@
     "Preserve source-reported status and exact study scope when adding prose; a citation or review decision cannot promote architecture support."
   ],
   "required_before_drafting": [
-    "Use the selected primary versions and scopes in the linked scenario.",
-    "Write source notes, inventory metadata and owner-specific mappings before treating any candidate as integrated.",
-    "Read remaining relevant passages when a planned claim exceeds this selected scope; verify paper-specific numbers before quoting them."
+    "The fifteen standard notes, inventory records and owner-specific mappings were written from the selected primary versions before treating the sources as incorporated.",
+    "Current owner mechanisms, adjacent responsibilities and source-specific counterevidence were reviewed.",
+    "Any future expansion beyond the recorded selected passages needs further primary review before stronger wording."
   ],
   "insertion_decision": "update_existing_chapter",
   "source_refs": [
+    "ext_engram_conditional_memory_2026",
+    "ext_engramedit_2026",
+    "ext_mhc_2025",
+    "ext_attention_residuals_2026",
+    "ext_raised_prompt_injection_2026",
+    "ext_catch_reward_hacking_2026",
+    "ext_simulated_control_evals_2026",
+    "ext_transmissible_reward_hacking_2026",
+    "ext_mhc_peft_2026",
+    "ext_leworldmodel_2026",
+    "ext_reinforced_planning_rp1_2026",
+    "ext_ansatz_continual_graph_memory_2026",
+    "ext_guidance_ttt_2026",
+    "ext_mage_vl_cowork_2026",
+    "ext_simhack_2026",
     "https://arxiv.org/abs/2601.07372v2",
     "https://arxiv.org/abs/2610.10533v1",
     "https://arxiv.org/abs/2512.24880v2",
@@ -63,18 +75,17 @@
     "https://arxiv.org/abs/2610.40747v1",
     "https://arxiv.org/abs/2610.28707v1"
   ],
-  "support_state_effect": "backlog_only",
+  "support_state_effect": "none",
   "promotion_blockers": [
-    "These papers are not registered or integrated in this pass; recommendations do not count as completed coverage.",
     "No local replication, independent formal verification, complete source/code review or general architecture advantage."
   ],
   "residuals": [
     "The sweep is selective. It covers 2026 work and missing late-2025/early-2026 foundations rather than only October announcements.",
     "RP1 and multi-agent reward-hacking current revisions supersede the initially retrieved versions; Attention Residuals required PDF text because its HTML conversion lacks the paper."
   ],
-  "next_action": "Adopt the eight first-batch papers with standard notes and bounded existing-owner explanations; pair mHC with its finetuning counterpoint. Then integrate the six next-batch cases at their stated responsibility boundaries.",
+  "next_action": "Maintain the fifteen registered versions, source notes and twelve explanatory owner routes. Review new versions or expanded claim scopes through the same selected-passage and evidence-boundary process.",
   "non_claims": [
-    "No new source assignment, core/proof change, support transition, experiment, private-source publication or broader-goal completion.",
-    "No candidate title, model alias, reported result or claimed proof is independently certified by this screening."
+    "No new chapter, stronger core support, proof definition, scientific outcome, private-source publication or broader-goal completion.",
+    "Paper results remain external source reports at their recorded scope, without independent reproduction."
   ]
 }

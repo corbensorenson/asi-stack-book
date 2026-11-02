@@ -2,7 +2,76 @@
 
 ## Current independent manuscript review
 
+### November 2 incorporation of the fifteen additional sources
+
+The user authorized incorporation of the complete shortlist below. Fifteen
+standard source notes and inventory entries now supply fifteen assignments
+through twelve existing technical owners. Each owner contains an explanatory
+mechanism, comparison and evidence boundary; presence in a source table alone
+does not count as the integration. Ten existing narrative units connect all
+fifteen papers to their reader arguments without introducing another chapter.
+
+| Explanatory technical entry point | Incorporated primary sources | Reader connection |
+|---|---|---|
+| [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd#learned-lookup-and-routing-across-depth) | [Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models](https://arxiv.org/abs/2601.07372v2), [mHC: Manifold-Constrained Hyper-Connections](https://arxiv.org/abs/2512.24880v2), [Attention Residuals](https://arxiv.org/abs/2603.15031v1), [Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning](https://arxiv.org/abs/2607.18130v2) | [Unit 19](../editions/reader_manuscript/current/chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd) |
+| [Data Engines, Continual Learning, and Unlearning](../chapters/data-engines-continual-learning-and-unlearning.qmd#conditional-memory-editing) | [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](https://arxiv.org/abs/2610.10533v1) | [Unit 14](../editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) |
+| [Adversarial Machine Learning and the Model Attack Surface](../chapters/adversarial-machine-learning-and-model-attack-surface.qmd#raised-injection-and-clean-utility) | [RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents](https://arxiv.org/abs/2610.06401v2) | [Unit 4](../editions/reader_manuscript/current/chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd) |
+| [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd#catch-reward-hacking-and-monitor-pressure) | [CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL](https://arxiv.org/abs/2609.39533v3) | [Unit 20](../editions/reader_manuscript/current/chapters/unit-20-governed-training-and-learning-compute-topology.qmd) |
+| [Scalable Oversight and Adversarial AI Control](../chapters/scalable-oversight-and-adversarial-ai-control.qmd#simulated-control-evals) | [Simulated Control Evals](https://arxiv.org/abs/2610.31593v1) | [Unit 5](../editions/reader_manuscript/current/chapters/unit-05-evidence-states-and-scalable-oversight.qmd) |
+| [Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk](../chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#transmissible-reward-hacking) | [Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems](https://arxiv.org/abs/2610.12822v2) | [Unit 18](../editions/reader_manuscript/current/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd) |
+| [Governed World Models and Reality Grounding](../chapters/governed-world-models-and-reality-grounding.qmd#leworldmodel-action-conditioned-dynamics) | [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](https://arxiv.org/abs/2603.19312v3) | [Unit 11](../editions/reader_manuscript/current/chapters/unit-11-governed-world-models-and-reality-grounding.qmd) |
+| [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd#reinforced-planning-with-world-models) | [Reinforced Planning with Latent World Models](https://arxiv.org/abs/2608.18669v2) | [Unit 12](../editions/reader_manuscript/current/chapters/unit-12-planning-as-a-control-layer.qmd) |
+| [Durable Semantic Memory and Knowledge Lattices](../chapters/durable-semantic-memory-and-knowledge-lattices.qmd#ansatz-verification-and-scoped-recall) | [Continual Graph Memory for Mathematical Research Agents](https://arxiv.org/abs/2610.02945v1) | [Unit 14](../editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) |
+| [Scientific Discovery and Experimental Governance](../chapters/scientific-discovery-and-experimental-governance.qmd#guidance-ttt-adaptation-and-credit) | [Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries](https://arxiv.org/abs/2610.06269v1) | [Unit 23](../editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd) |
+| [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd#mage-hybrid-computer-use) | [Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses](https://arxiv.org/abs/2610.40747v1) | [Unit 17](../editions/reader_manuscript/current/chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) |
+| [Governed Model Training, Distributed Optimization, and Scaling](../chapters/governed-model-training-distributed-optimization-and-scaling.qmd#simhack-training-recipe-risk) | [SimHack: Predicting the onset of detectable reward hacking before RL training](https://arxiv.org/abs/2610.28707v1) | [Unit 20](../editions/reader_manuscript/current/chapters/unit-20-governed-training-and-learning-compute-topology.qmd) |
+
+The integration retains the distinctions that motivated the search: learned
+table parameters versus external memory; editing versus erasure; depth routing
+versus agent learning topology; latent prediction versus a qualified action;
+optimized reward versus a protected outcome audit; simulator realism versus
+executed control evidence; shared findings versus independent corroboration;
+strategic guidance versus successful implementation; and GUI/terminal channel
+selection versus actual effect authority. Counterevidence is in the prose:
+the mHC finetuning comparison, Ansatz notebook ablation, RP1 model-error
+exploitation and RAISED clean-teacher ceiling are not relegated to footnotes.
+
+The complete corpus is now 542 sources and 1,402 assigned source/chapter pairs;
+Appendix H owns 446 external records and Appendix G retains 96. The current
+26-unit reader contains 154,492 visible words, with every unit inside its
+existing target range. Eleven new P1 scanner fragments were individually
+reviewed as source reports, existing contract applications or nonmaterial
+explanation. The census remains 4,064 structured atoms and 64 dossiers, with
+4,238 reviewed prose candidates and no pending materiality decision. The
+four owners outside the historical activation-era scanner were reviewed
+directly rather than inferred covered by its count.
+
+Source notes, manifest mappings, chapter status/crosswalks, outline queues,
+Appendices A/C/H and reader projections agree. Proof metadata follows current
+outline lines while all 344 target definitions remain exact. Core contracts,
+scientific outcomes, support states, source-paper library bytes and frozen
+custody are unchanged. Selected passage review does not establish independent
+source-method reproduction, whole-chapter requalification or complete-field
+coverage. No model, source-project software, Docker, training, scientific
+campaign or Lean rebuild was run. The wider improvement goal is not completed
+or resumed by this editorial task.
+
+
+Twenty-five selected HTML pages rendered. Browser checks pass for thirteen
+new technical sections in Human/AI modes, all ten reader additions, fifteen
+pinned primary citations, fifteen Appendix H entries, eight selected local
+technical-link observations and three layouts. Narrow and doubled-text
+screenshots were inspected. Source-note, chapter/source, outline, claim-census,
+reader, schema, publication, visual-coverage and proof consistency checks pass.
+The existing dependency-review expiry is not renewed. These local checks do
+not establish whole-site, independent-reader, live-source or deployed-release
+qualification.
+
 ### November 2 additional-source recommendations after chapter coverage
+
+This is the historical screening snapshot before the incorporation above. Its
+prospective status and corpus totals describe that earlier search, not the
+current chapter state.
 
 Searched for further sources across model architecture, memory and editing,
 planning, agent execution, training, scientific search and adversarial control.

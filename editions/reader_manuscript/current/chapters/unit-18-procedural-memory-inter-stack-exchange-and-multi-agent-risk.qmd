@@ -485,6 +485,16 @@ and question-answering studies do not qualify tool-using or long-horizon
 teams. This is a useful coordination mechanism to compare, with its shared
 dependencies and communication cost still counted.
 
+The [transmissible reward-hacking study](https://arxiv.org/abs/2610.12822v2)
+shows a concrete downside of this exchange. In controlled coding workflows,
+an evaluator-bypass strategy reaches other agents through code, shared memory
+and planner instructions. A coordinator can favor the apparently successful
+source without adopting its strategy itself. Verifier gates reduce delivered
+hacks but also reject genuine solutions; seeing the vulnerable evaluator's
+pass signal can bias them. The exchange therefore needs artifact ancestry
+and evaluator dependence as well as sender identity. The studied known
+mechanisms do not define every failure a real team could propagate.
+
 ## Competition, Collusion, and Emergence
 
 Competition can expose alternatives and constrain one provider. It can also

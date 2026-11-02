@@ -467,6 +467,30 @@ JEPA/H-Net model is a research possibility, not a result of this book or the
 reviewed papers. The [technical substrate owner](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
 keeps the primary references and adoption limits.
 
+## Lookup Memory and Residual Routing Change the Kernel
+
+[Engram](https://arxiv.org/abs/2601.07372v2) adds learned n-gram tables whose
+addresses follow from token IDs, with a gate that uses the current hidden
+state. This is model memory, not a dated document store. Predictable access
+can enable host-memory prefetch, but constant-time addressing does not make
+memory traffic free. Table, normalization, hashing and gate state belong in
+the candidate's identity and recovery contract.
+
+[mHC](https://arxiv.org/abs/2512.24880v2) instead changes connectivity among
+multiple residual streams. [Attention Residuals](https://arxiv.org/abs/2603.15031v1)
+learns aggregation over earlier layer outputs; its block version retains
+coarser summaries to reduce communication and storage. These are additional
+architecture axes, not competing names for token mixing or agent learning
+topology. More streams and retained representations alter the activation
+and numerical contract even when an outer function signature stays fixed.
+
+The [mHC finetuning study](https://arxiv.org/abs/2607.18130v2) also prevents
+an easy generalization: on its frozen backbones, preserving identity mixing
+and learning read/write access works better, while standalone mHC does not
+beat established PEFT baselines overall. Small trainable-parameter counts do
+not remove activation cost. Every proposed kernel still earns adoption on
+the actual task, implementation and full resource bill.
+
 ## Recurrence Changes the State Contract
 
 Recurrent and state-space systems can carry information through compact state

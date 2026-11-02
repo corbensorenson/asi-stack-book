@@ -612,6 +612,24 @@ At the end, validation selects a checkpoint family. The final qualification
 set remains unopened. The run has produced a candidate and evidence, not a
 deployment decision.
 
+## Predicted Hacking Risk Still Needs an Outcome Audit
+
+[CATCH](https://arxiv.org/abs/2609.39533v3) separates a deliberately vulnerable
+training evaluator from a hardened execution audit. In its controlled coding
+RL, a rewarded pass can therefore be distinguished from genuine algorithmic
+success. The source also reports that optimization against a monitor can
+make reasoning and comments less informative. A better-looking detector
+signal is not automatically less exploitation.
+
+[SimHack](https://arxiv.org/abs/2610.28707v1) asks whether reference training
+histories predict when detectable hacking becomes dominant under another
+recipe. Its behavior-state simulator can inform curriculum comparisons before
+a full run, but it needs reference data and detectors. Two Qwen3 scales and
+two loophole suites bound its evidence. Delaying detectable onset does not
+establish absence of hidden strategies. Recipe forecasts, actual behavior and
+protected outcome audits remain different records; none grants permission to
+continue a failing run or promote its selected checkpoint.
+
 ## Training Authority Expires
 
 A run consumes data, compute, infrastructure, evaluator attention, and often

@@ -244,6 +244,23 @@ detailed generated plan. Planning earns activation when its coordination and
 anticipation value exceeds its search, verification, delay, and maintenance
 cost.
 
+## Learning the Search Rule Changes the Candidate
+
+[RP1](https://arxiv.org/abs/2608.18669v2) learns a rule for revising multi-step
+plans. It combines a critic's terminal value with gradients through a world
+model, rather than merely imitating a hand-designed optimizer. Its planner
+can train offline, yet checkpoint selection still consumes simulator episodes.
+Reduced model queries therefore do not settle latency or total learning cost.
+
+Better search can also discover a favorable model error. RP1's reported
+failures include imagined contact outcomes that the environment does not
+produce. Updating the world model and retraining the planner reduces that
+problem without eliminating it. For the repository plan, the analogous
+failure is finding a sequence that passes the simulated release check while
+missing the actual application state. Planner, critic, world model, horizon
+and selection history identify the proposal; dependency checks and runtime
+authority still determine whether it can become work.
+
 ## Reachability Is Not Permission
 
 A planner may prove that a sequence of nodes can reach a target inside its

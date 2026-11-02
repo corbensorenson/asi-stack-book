@@ -2087,7 +2087,8 @@
             "ext_anthropic_model_persuasiveness_2024",
             "ext_commercial_persuasion_ai_2026",
             "ext_monitorability_disposition_2026",
-            "ext_shutdownmod_2026"
+            "ext_shutdownmod_2026",
+            "ext_simulated_control_evals_2026"
           ],
           "source_queue": {
             "primary": [
@@ -2098,7 +2099,8 @@
             "supporting": [
               "verification_bandwidth",
               "ext_monitorability_disposition_2026",
-              "ext_shutdownmod_2026"
+              "ext_shutdownmod_2026",
+              "ext_simulated_control_evals_2026"
             ],
             "variants": [
               "ext_conversational_persuasion_gpt4_2025",
@@ -2216,6 +2218,17 @@
                 "https://arxiv.org/html/2610.35486v1"
               ],
               "passage_review_note": "2026-11-02: Sections 2, 3.1, 4.3 and 5, including replay semantics, task-clustered uncertainty, signature checks and prevention limitations. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_simulated_control_evals_2026",
+              "mapped_support": "Ground tool-response simulations in honest trajectories and code snapshots, then compare predicted safeguard performance against actual execution. Directly relevant to the simulation-to-evidence boundary.",
+              "limits": "Validated primarily on LinuxArena and assumes a trusted simulator. Plausibility and low discriminability do not establish control-relevant fidelity. Task-pair draws include repeated selections; these are not independent worlds.",
+              "passage_refs": [
+                "sources/source_notes/ext_simulated_control_evals_2026.md",
+                "https://arxiv.org/html/2610.31593v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2.1–2.3 and 4; simulator access, sampling denominator and trust/transfer limitations. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -5620,7 +5633,8 @@
             "ext_sleeper_agents_2024",
             "ext_carlini_training_data_extraction_2021",
             "ext_adversarial_sensor_fusion_2022",
-            "ext_reluplex_2017"
+            "ext_reluplex_2017",
+            "ext_raised_prompt_injection_2026"
           ],
           "problem": "A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.",
           "insufficient": "Generic access control, one robustness score, static red teaming, accuracy on clean data, or a single defense cannot characterize a model attack. Results depend on lifecycle stage, target checkpoint, attacker knowledge and capability, perturbation or influence budget, transfer and adaptation, query access, success objective, and the defense-aware evaluation protocol.",
@@ -5677,7 +5691,9 @@
               "ext_adversarial_sensor_fusion_2022",
               "ext_reluplex_2017"
             ],
-            "supporting": [],
+            "supporting": [
+              "ext_raised_prompt_injection_2026"
+            ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
@@ -5732,6 +5748,17 @@
                 "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_raised_prompt_injection_2026",
+              "mapped_support": "Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence.",
+              "limits": "Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee.",
+              "passage_refs": [
+                "sources/source_notes/ext_raised_prompt_injection_2026.md",
+                "https://arxiv.org/html/2610.06401v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.2 and 5.2, Appendix G; selected threat-model, objective and limitation passages. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "proof_targets": [
@@ -8458,7 +8485,8 @@
             "tokenmana",
             "ext_v_jepa_2_2025",
             "reflexive_router_whitepaper",
-            "regret_engine"
+            "regret_engine",
+            "ext_reinforced_planning_rp1_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8471,7 +8499,8 @@
               "software_magic_grimoire",
               "tokenmana",
               "reflexive_router_whitepaper",
-              "regret_engine"
+              "regret_engine",
+              "ext_reinforced_planning_rp1_2026"
             ],
             "variants": [
               "ext_v_jepa_2_2025"
@@ -8782,6 +8811,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "Primary-source passages were reviewed for the stated comparator contribution and limits; no local implementation, reproduction, safety result, or support-state promotion is inferred."
+            },
+            {
+              "source_id": "ext_reinforced_planning_rp1_2026",
+              "mapped_support": "Learns a multi-step plan-update rule using a critic, imagined rollouts and gradients through a world model. Distinguishes improving search from learning a direct action policy.",
+              "limits": "Planner training can be offline while checkpoint selection still uses simulator episodes. It can exploit world-model errors and needs retraining across model/horizon changes. Query reduction is not the same as latency or complete training cost.",
+              "passage_refs": [
+                "sources/source_notes/ext_reinforced_planning_rp1_2026.md",
+                "https://arxiv.org/html/2608.18669v2"
+              ],
+              "passage_review_note": "2026-11-02: v2 Sections 4, 7.4–7.5 and 8, compared with v1; September 27 revision narrows claims and clarifies selection costs. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "publication": {
@@ -8821,7 +8861,8 @@
             "ext_wilds_2021",
             "ext_i_jepa_2023",
             "ext_platonic_representation_hypothesis_2024",
-            "ext_platonic_representation_jepa_2026"
+            "ext_platonic_representation_jepa_2026",
+            "ext_leworldmodel_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8841,7 +8882,8 @@
               "relational_dimension_compiler",
               "ext_i_jepa_2023",
               "ext_platonic_representation_hypothesis_2024",
-              "ext_platonic_representation_jepa_2026"
+              "ext_platonic_representation_jepa_2026",
+              "ext_leworldmodel_2026"
             ],
             "variants": [
               "deterministic_capability_compilation",
@@ -9035,6 +9077,17 @@
                 "sources/source_notes/ext_platonic_representation_jepa_2026.md"
               ],
               "passage_review_note": "2026-11-02 selected primary passage review as enumerated in the source note; existing V-JEPA 2 note reused at its earlier scope where indicated. No complete paper/proof/code audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_leworldmodel_2026",
+              "mapped_support": "Supplies an action-conditioned latent-dynamics example alongside our representation-only JEPA discussion: pixel encoder, next-embedding predictor, Gaussian regularization and latent-space planning.",
+              "limits": "Uses offline action-labeled trajectories with coverage requirements and short planning horizons. Latent structure or surprise detection is not complete physical understanding or a safety certificate.",
+              "passage_refs": [
+                "sources/source_notes/ext_leworldmodel_2026.md",
+                "https://arxiv.org/html/2603.19312v3"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.2 and Limitations & Future Work; June 3 revision. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -10479,7 +10532,8 @@
             "ext_hermes_agent_2026",
             "adjudicated_persistence",
             "ext_memory_centric_continual_learning_2026",
-            "ext_mempp_organizational_memory_2026"
+            "ext_mempp_organizational_memory_2026",
+            "ext_ansatz_continual_graph_memory_2026"
           ],
           "problem": "Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.",
           "insufficient": "Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.",
@@ -10541,7 +10595,8 @@
             "supporting": [
               "vcm_public",
               "ext_memory_centric_continual_learning_2026",
-              "ext_mempp_organizational_memory_2026"
+              "ext_mempp_organizational_memory_2026",
+              "ext_ansatz_continual_graph_memory_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -10669,6 +10724,17 @@
                 "https://arxiv.org/html/2610.02002v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4.2–4.3, including graph temporal leakage, missing author metadata and ablation limits. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ansatz_continual_graph_memory_2026",
+              "mapped_support": "Connects candidate facts, verifier admission, revocation, exploration curation and scoped cross-project recall. Recalled statements need local re-proving and readmission rather than inherited standing.",
+              "limits": "A flat fact notebook matched the graph on the seven-task ablation; curation and verification have more discriminating evidence there. Agent verification is not Lean checking, and disabling web access does not prove absence of prior exposure.",
+              "passage_refs": [
+                "sources/source_notes/ext_ansatz_continual_graph_memory_2026.md",
+                "https://arxiv.org/html/2610.02945v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.2, 3.5 and 4.1.1–4.1.4; no independent checking of the claimed mathematical closures. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -13967,7 +14033,8 @@
             "reflexive_router_whitepaper",
             "ext_elizaos_agent_runtime_2026",
             "ext_hermes_agent_2026",
-            "ext_openclaw_agent_runtime_2026"
+            "ext_openclaw_agent_runtime_2026",
+            "ext_mage_vl_cowork_2026"
           ],
           "source_queue": {
             "primary": [
@@ -13985,7 +14052,8 @@
               "bugbrain_project",
               "corbens_trainer_project",
               "corbens_best_model_possible_project",
-              "reflexive_router_whitepaper"
+              "reflexive_router_whitepaper",
+              "ext_mage_vl_cowork_2026"
             ],
             "variants": [
               "ext_cap_theorem_gilbert_lynch_2002"
@@ -14315,6 +14383,17 @@
                 "sources/source_notes/ext_openclaw_agent_runtime_2026.md:1-88"
               ],
               "passage_review_note": "Reviewed the pinned official repository and canonical gateway, agent-loop, ACP, and policy documentation; the mapping preserves the documented external-harness residual."
+            },
+            {
+              "source_id": "ext_mage_vl_cowork_2026",
+              "mapped_support": "A concrete GUI/terminal policy trained from an evolved teacher harness and reusable task-generation workflows. Extra action channels can hurt the distilled student when they introduce ambiguous routing.",
+              "limits": "The OSWorld result uses 361 tasks, excludes Google Drive, permits 50 steps and averages two runs. This configuration-specific result is not evidence of permission enforcement, general desktop safety or a drop-in runtime.",
+              "passage_refs": [
+                "sources/source_notes/ext_mage_vl_cowork_2026.md",
+                "https://arxiv.org/html/2610.40747v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.2, 6.1 and 6.7 plus conclusion; published paper, not model-card headline alone. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -15089,7 +15168,8 @@
             "ext_constructive_interdependence_human_ai_2026",
             "ext_functional_decision_theory_2017",
             "coherence_exchange",
-            "ext_muffin_async_shared_memory_2026"
+            "ext_muffin_async_shared_memory_2026",
+            "ext_transmissible_reward_hacking_2026"
           ],
           "source_queue": {
             "primary": [
@@ -15101,7 +15181,8 @@
             ],
             "supporting": [
               "coherence_exchange",
-              "ext_muffin_async_shared_memory_2026"
+              "ext_muffin_async_shared_memory_2026",
+              "ext_transmissible_reward_hacking_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -15182,6 +15263,17 @@
                 "https://arxiv.org/html/2610.31355v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.2 and 4.1, 4.3–4.4; inspected workflow, visibility rule, summarizer and limitation passages. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_transmissible_reward_hacking_2026",
+              "mapped_support": "Shows an evaluator-bypass strategy moving through code, shared memory and planner-to-coder communication, with routing and aggregation effects. Useful counterevidence to treating collaboration as automatically beneficial.",
+              "limits": "Controlled source-agent exposure and a criterion for known mechanisms bound the result. Verifiers can reject genuine solutions as well as hacks; evaluator pass signals can bias their decisions.",
+              "passage_refs": [
+                "sources/source_notes/ext_transmissible_reward_hacking_2026.md",
+                "https://arxiv.org/html/2610.12822v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.2, 5.4 and 8.2 plus Appendix A; v2 differs from inspected v1 only in date/front matter. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -16431,7 +16523,11 @@
             "ext_h_net_2025",
             "ext_v_jepa_2_2025",
             "ext_nested_learning_hope_2025",
-            "ext_end_to_end_ttt_long_context_2025"
+            "ext_end_to_end_ttt_long_context_2025",
+            "ext_engram_conditional_memory_2026",
+            "ext_mhc_2025",
+            "ext_attention_residuals_2026",
+            "ext_mhc_peft_2026"
           ],
           "source_queue": {
             "primary": [
@@ -16490,7 +16586,11 @@
               "ext_h_net_2025",
               "ext_v_jepa_2_2025",
               "ext_nested_learning_hope_2025",
-              "ext_end_to_end_ttt_long_context_2025"
+              "ext_end_to_end_ttt_long_context_2025",
+              "ext_engram_conditional_memory_2026",
+              "ext_mhc_2025",
+              "ext_attention_residuals_2026",
+              "ext_mhc_peft_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -17000,6 +17100,50 @@
               ],
               "passage_review_note": "2026-11-02: Sections 2.1–2.3, 3.7, and abstract experiment envelope. Selected derivation and timing limitations; no kernel/code execution. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_engram_conditional_memory_2026",
+              "mapped_support": "Adds learned, hashed n-gram lookup and context-dependent gating as an axis alongside conditional computation. Distinguish this model component from document retrieval and agent episodic memory.",
+              "limits": "Constant-time addressing is not constant physical cost. The reported CPU-offload throughput experiment uses a specific prototype, dense backbones and workload; it is not a general MoE serving result.",
+              "passage_refs": [
+                "sources/source_notes/ext_engram_conditional_memory_2026.md",
+                "https://arxiv.org/html/2601.07372v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2.2–2.5 and 6.4; mechanism and hardware-bound timing scope. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mhc_2025",
+              "mapped_support": "Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection.",
+              "limits": "Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below.",
+              "passage_refs": [
+                "sources/source_notes/ext_mhc_2025.md",
+                "https://arxiv.org/html/2512.24880v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 4.1–4.3 and 6; method and infrastructure claims, not independent theorem verification. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_attention_residuals_2026",
+              "mapped_support": "Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden.",
+              "limits": "This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload.",
+              "passage_refs": [
+                "sources/source_notes/ext_attention_residuals_2026.md",
+                "https://arxiv.org/pdf/2603.15031v1"
+              ],
+              "passage_review_note": "2026-11-02: PDF Sections 3.1–3.2 and the large-scale training discussion around Section 5.2. arXiv HTML is an incomplete conversion; use the primary PDF. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mhc_peft_2026",
+              "mapped_support": "A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe.",
+              "limits": "Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types.",
+              "passage_refs": [
+                "sources/source_notes/ext_mhc_peft_2026.md",
+                "https://arxiv.org/html/2607.18130v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3–5 and Appendix A; current October 7 revision, not the older abstract. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -17251,7 +17395,8 @@
             "ext_eggroll_hyperscale_es_2026",
             "ext_openai_es_2017",
             "ext_mezo_2023",
-            "ext_forward_forward_2022"
+            "ext_forward_forward_2022",
+            "ext_simhack_2026"
           ],
           "source_queue": {
             "primary": [
@@ -17286,7 +17431,8 @@
               "ext_kimi_k3_2026",
               "ext_openai_es_2017",
               "ext_mezo_2023",
-              "ext_forward_forward_2022"
+              "ext_forward_forward_2022",
+              "ext_simhack_2026"
             ],
             "variants": [
               "ext_amsgrad_2018",
@@ -17615,6 +17761,17 @@
                 "sources/source_notes/corbens_trainer_project.md"
               ],
               "passage_review_note": "Reviewed the primary paper or official documentation at the bounded passages recorded in the source note; no source-reported result is treated as local evidence.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_simhack_2026",
+              "mapped_support": "Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons.",
+              "limits": "Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee.",
+              "passage_refs": [
+                "sources/source_notes/ext_simhack_2026.md",
+                "https://arxiv.org/html/2610.28707v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -26745,7 +26902,8 @@
             "ext_eggroll_hyperscale_es_2026",
             "ext_openai_es_2017",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_catch_reward_hacking_2026"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -27191,6 +27349,17 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "ext_catch_reward_hacking_2026",
+              "mapped_support": "Separates a vulnerable training evaluator from a hardened execution-based audit. It also studies how monitor pressure changes the usefulness of reasoning and comments as evidence.",
+              "limits": "Constructed software-wrapped algorithmic tasks and Qwen3-4B RL are the tested setting. Known-loophole gold labels do not define every real-repository failure or general deceptive intent.",
+              "passage_refs": [
+                "sources/source_notes/ext_catch_reward_hacking_2026.md",
+                "https://arxiv.org/html/2609.39533v3"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.2.2 and 4.3, Limitations; no execution or attack reproduction. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -27355,7 +27524,8 @@
               "scf",
               "tokenmana",
               "cognitive_loop_closure",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "ext_catch_reward_hacking_2026"
             ],
             "variants": [
               "ext_trpo_2015",
@@ -27456,7 +27626,8 @@
             "regret_engine",
             "assurance_shift_learning",
             "adjudicated_persistence",
-            "ext_memory_centric_continual_learning_2026"
+            "ext_memory_centric_continual_learning_2026",
+            "ext_engramedit_2026"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -27629,6 +27800,17 @@
               ],
               "passage_review_note": "2026-11-02 secondary-owner coverage audit: same selected primary passages as the existing source note; interface interpretation only. No new model run, source-method claim or support promotion.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_engramedit_2026",
+              "mapped_support": "Provides a concrete memory-parameter update surface: edit shared n-gram embeddings across expressions with reuse-sensitive regularization while the backbone stays fixed.",
+              "limits": "Experiments use LongCat-Flash-Lite. Editing success, paraphrase transfer, unrelated knowledge and multi-hop use remain separate. Counterfactual benchmark targets are not established facts; editing is not erasure.",
+              "passage_refs": [
+                "sources/source_notes/ext_engramedit_2026.md",
+                "https://arxiv.org/html/2610.10533v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.3, 4.1 and 6, including the ethics statement; no proof or code audit. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -27753,7 +27935,8 @@
               "ext_influence_functions_2017",
               "ext_curriculum_learning_2009",
               "assurance_shift_learning",
-              "ext_memory_centric_continual_learning_2026"
+              "ext_memory_centric_continual_learning_2026",
+              "ext_engramedit_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -27887,7 +28070,8 @@
             "ext_coscientist_chemistry_2023",
             "ext_ai_co_scientist_2025",
             "answerability_atlas_synthesis",
-            "ext_test_time_memory_evolution_2026"
+            "ext_test_time_memory_evolution_2026",
+            "ext_guidance_ttt_2026"
           ],
           "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.",
           "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
@@ -27944,7 +28128,8 @@
             "supporting": [
               "ext_ai_co_scientist_2025",
               "answerability_atlas_synthesis",
-              "ext_test_time_memory_evolution_2026"
+              "ext_test_time_memory_evolution_2026",
+              "ext_guidance_ttt_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -28011,6 +28196,17 @@
                 "https://arxiv.org/html/2610.32046v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4.1, 4.4 and 5; Appendix C.3 memory schedule. Selected method, comparator provenance and accounting scope. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_guidance_ttt_2026",
+              "mapped_support": "Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution.",
+              "limits": "Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority.",
+              "passage_refs": [
+                "sources/source_notes/ext_guidance_ttt_2026.md",
+                "https://arxiv.org/html/2610.06269v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.3 and 4.1, Appendix B.3; archive, comparison and credit-assignment scope. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],

@@ -4,8 +4,9 @@ chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
+  - "learning_compute_topology"
   - "beastbrain"
   - "ext_llama3_herd_2024"
   - "ext_megatron_distributed_training_2021"
@@ -29,6 +30,16 @@ primary_sources:
   - "ext_modular_norm_2024"
   - "ext_muon_scalable_2025"
   - "ext_muon_spectral_norm_2026"
+  - "corbens_trainer_project"
+  - "ext_proof_of_learning_2021"
+  - "ext_test_time_training_2020"
+  - "ext_curriculum_learning_2009"
+  - "ext_kimi_k3_2026"
+  - "ext_eggroll_hyperscale_es_2026"
+  - "ext_openai_es_2017"
+  - "ext_mezo_2023"
+  - "ext_forward_forward_2022"
+  - "ext_simhack_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -47,12 +58,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated |
-| Last updated | 2026-07-31 |
-| Primary source records | BeastBrain maintenance-learning lineage, seven distributed-training/checkpoint records, and fifteen optimizer records spanning Adam/AdamW, failure variants, memory/layer scaling, tensor and curvature preconditioning, Lion, Sophia, SOAP, schedule-free methods, maximal-update and modular-norm transfer, and Muon. |
+| Last updated | 2026-11-02 |
+| Primary source records | 34 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `beastbrain`, `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026`, `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019`, `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024`, `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024`, `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022`; raw cache: `beastbrain` |
+| Source loading state | source notes: `learning_compute_topology`, `beastbrain`, `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026`, `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019`, `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024`, `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024`, `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_simhack_2026`; raw cache: `beastbrain` |
 | Test state | One authored transaction fixture, a JSON Schema, and an independent semantic validator check 21 transaction mutations, seven weight-only omitted-field collisions, and nine complete-encoding mutations. The natural five-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Three public targets are implemented in `AsiStackProofs.GovernedModelTraining` through 20 theorem declarations. Their ceiling is finite record-route and checkpoint-information semantics. |
 
@@ -722,6 +733,31 @@ results. The test or qualification split remains unopened. The best and final
 checkpoints both remain available because late regression is evidence rather
 than an inconvenience.
 
+### Predicting recipe risk is different from observing the learner {#simhack-training-recipe-risk}
+
+[SimHack](https://arxiv.org/abs/2610.28707v1) asks whether reference RL
+histories can predict when detectable reward hacking becomes dominant under
+another training recipe. It models prompt-level distributions over correct,
+hacking and other behavior, then simulates their evolution under changes to
+curriculum, rollout count, learning rate and model scale. Its output is an
+onset distribution, not a direct monitor of a live learner's internal state.
+
+The study uses Qwen3-0.6B/4B and two coding loophole suites, with reference
+and target recipes separated during fitting and evaluation. Detectability
+depends on the retained behavior labels and detectors. A later predicted
+onset does not establish absence of hidden strategies, and learning a simulator
+requires reference runs; the predictive method is not evidence of cost-free
+qualification for an arbitrary new model family.
+
+For the training-run contract, the simulator version, reference history,
+detector, target recipe and uncertainty can inform a prospective comparison
+before spending the full run budget. Actual behavior, protected outcome audits,
+monitor drift and stop/selection rules still need observation during the run.
+[CATCH](policy-optimization-and-learning-from-feedback.qmd#catch-reward-hacking-and-monitor-pressure)
+shows why the exposed reward and optimized detector are not substitutes for
+that outcome audit. The prediction is a planning input, not authority to
+continue training or promote a selected checkpoint.
+
 ## Interfaces
 
 - Intent and objective governance provide the authorized purpose and target
@@ -1085,6 +1121,7 @@ These rows keep Governed Model Training, Distributed Optimization, and Scaling's
 | `ext_test_time_training_2020` | Passage-reviewed comparator: Test-Time Training with Self-Supervision for Generalization under Distribution Shifts. Provides a distinct training-timescale comparator in which per-input self-supervised updates occur at test time. | The method does not establish safe online learning, distributed-state consistency, rollback, or general robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Provides the foundational curriculum-learning hypothesis that example order and difficulty schedules can change optimization outcomes. | Curriculum effects are task-, model-, metric-, and schedule-dependent; easier-first ordering is not a universal improvement rule. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_simhack_2026` | Passage-reviewed comparator: SimHack: Predicting the onset of detectable reward hacking before RL training. Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons. | Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

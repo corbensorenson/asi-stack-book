@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 30
-- `source_note_available_uncached`: 450
+- `source_note_available_uncached`: 465
 
 ## Records
 
@@ -542,3 +542,18 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_persona_selection_model_2026` | The Persona Selection Model: Why AI Assistants might Behave like Humans | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_lyra_neuron_explorer_2026` | Lyra’s Neuron Explorer: Steering-First Neuron Exploration | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
 | `ext_neuronary_2026` | Neuronary: A Public Dictionary of Neuron Steering Recipes | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_engram_conditional_memory_2026` | Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_engramedit_2026` | EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mhc_2025` | mHC: Manifold-Constrained Hyper-Connections | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_attention_residuals_2026` | Attention Residuals | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_raised_prompt_injection_2026` | RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_catch_reward_hacking_2026` | CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_simulated_control_evals_2026` | Simulated Control Evals | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_transmissible_reward_hacking_2026` | Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mhc_peft_2026` | Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_leworldmodel_2026` | LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_reinforced_planning_rp1_2026` | Reinforced Planning with Latent World Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ansatz_continual_graph_memory_2026` | Continual Graph Memory for Mathematical Research Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_guidance_ttt_2026` | Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mage_vl_cowork_2026` | Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_simhack_2026` | SimHack: Predicting the onset of detectable reward hacking before RL training | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

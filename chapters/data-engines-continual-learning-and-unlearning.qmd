@@ -26,6 +26,7 @@ primary_sources:
   - "assurance_shift_learning"
   - "adjudicated_persistence"
   - "ext_memory_centric_continual_learning_2026"
+  - "ext_engramedit_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -43,10 +44,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
 | Last updated | 2026-11-02 |
-| Primary source records | 20 current manifest assignments; selected primary-passage review is recorded per mapping. |
+| Primary source records | 21 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `ext_bourtoule_machine_unlearning_2021`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024`, `theseus_synthetic_data_curation`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence`, `ext_memory_centric_continual_learning_2026` |
+| Source loading state | source notes: `learning_compute_topology`, `ext_bourtoule_machine_unlearning_2021`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024`, `theseus_synthetic_data_curation`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `qcsa_whitepaper`, `ext_v_jepa_2_2025`, `ext_influence_functions_2017`, `ext_curriculum_learning_2009`, `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence`, `ext_memory_centric_continual_learning_2026`, `ext_engramedit_2026` |
 | Test state | The receipt probe validates four intake routes. P3 and M7 preserve their bounded update/unlearning results and failures. The first P5 slice restores nine prospectively frozen classes and removes one cohort from five declared local storage surfaces. The second mutates actual model/Adam learning state, rejects weights-only recovery, and restores nine classes after a crash. Neither tests deletion, forgetting, influence, privacy, rights, or external erasure; the core remains `argument`. |
 
 ## Drafting guardrail
@@ -549,6 +550,31 @@ but they are not interchangeable with external-memory updates. The MCCL
 taxonomy and proposed protocols establish no local continual-learning result;
 its scaling relationships remain hypotheses.
 
+### Editing conditional memory without declaring erasure {#conditional-memory-editing}
+
+[EngramEdit](https://arxiv.org/abs/2610.10533v1) supplies a concrete update
+surface between external text memory and broad backbone adaptation. Different
+expressions of one fact can activate different n-gram embeddings, and one
+embedding can serve unrelated facts. The method computes target memory
+representations across expressions, maps their shared activations, and jointly
+allocates embedding changes with stronger penalties for frequently reused
+entries. The Transformer backbone stays fixed; the memory parameters change.
+
+Its experiments use LongCat-Flash-Lite and distinguish edit efficacy,
+held-out paraphrases, unrelated queries, generated-text quality, general
+capabilities and multi-hop use. Success on the edit prompt cannot substitute
+for all those outcomes. The counterfactual targets are benchmark interventions,
+not facts established about the world. The result does not establish that
+editing arbitrary conditional-memory architectures behaves similarly.
+
+For this chapter's custody lease, the changed embedding rows, mapping and
+expression set, regularization, reference checkpoint, interference tests and
+descendants identify the intervention. A fixed backbone is not unchanged
+behavior or absence of learned influence. Localizing an update can aid audit
+and recovery, but changed answers do not demonstrate removal from backups,
+other parameter surfaces or downstream artifacts. Editing, retraction,
+rollback and the separate unlearning claim axes retain their existing owners.
+
 ## Interfaces
 
 The custody lease has twelve explicit neighbors. Policy Optimization consumes
@@ -957,6 +983,7 @@ These rows keep Data Engines, Continual Learning, and Unlearning's manifest assi
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds informative-exception strata, learner-relative negative half-life, natural/probe distribution separation, protected positives, and repair-aware replay custody. | Inhibition, replay retirement, and retained negative knowledge do not establish parameter unlearning, deletion, privacy, or forgetting. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Frames datasets, replay buffers, labels, weights, memories, and deletion obligations as distinct persistence surfaces with different descendant and unlearning costs. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_memory_centric_continual_learning_2026` | Passage-reviewed comparator: Memory-Centric Continual Learning for AI Agents. MCCL separates storage substrate, memory asset and management policy, and distinguishes inner memory-state changes from outer management-policy learning. It proposes separate retention, adaptation and transfer evaluations with matched controls. | Memory content can change behavior without weight or management-policy updates. The survey supplies no local continual-learning result or universal memory-scaling law. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_engramedit_2026` | Passage-reviewed comparator: EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory. Provides a concrete memory-parameter update surface: edit shared n-gram embeddings across expressions with reuse-sensitive regularization while the backbone stays fixed. | Experiments use LongCat-Flash-Lite. Editing success, paraphrase transfer, unrelated knowledge and multi-hop use remain separate. Counterfactual benchmark targets are not established facts; editing is not erasure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 update and deletion result

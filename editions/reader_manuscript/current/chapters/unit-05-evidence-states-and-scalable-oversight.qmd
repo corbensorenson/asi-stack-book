@@ -289,6 +289,17 @@ workflow, independent observation, the worker's response and the runtime's
 actual revocation of effects therefore remain separate evidence. An “I stopped”
 message is not the same observation as a stopped process.
 
+[Simulated Control Evals](https://arxiv.org/abs/2610.31593v1) proposes another
+way to study oversight: simulate tool responses using an honest trajectory
+and code snapshot, then calibrate predicted safeguards against execution.
+Some simulated responses concern unobserved state. A plausible transcript
+therefore has a different evidentiary status from an executed one. The paper's
+LinuxArena comparison is useful because it measures that gap; it also assumes
+a trusted simulator. A simulator and monitor that share blind spots or collude
+could give false reassurance. Their access, dependencies, calibration and
+unresolved transfer belong in the review record before a simulated score
+informs a consequential decision.
+
 ## Independence Is a Dependency Graph
 
 Review roles are often counted as if independence were a head count. A

@@ -4,12 +4,15 @@ chapter_id: "adversarial-machine-learning-and-model-attack-surface"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-02"
 primary_sources:
+  - "deterministic_capability_compilation"
   - "ext_nist_adversarial_ml_2024"
   - "ext_sleeper_agents_2024"
   - "ext_carlini_training_data_extraction_2021"
   - "ext_adversarial_sensor_fusion_2022"
+  - "ext_reluplex_2017"
+  - "ext_raised_prompt_injection_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -26,10 +29,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-08-01 |
+| Last updated | 2026-11-02 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `deterministic_capability_compilation`, `ext_nist_adversarial_ml_2024`, `ext_sleeper_agents_2024`, `ext_carlini_training_data_extraction_2021`, `ext_adversarial_sensor_fusion_2022`, `ext_reluplex_2017` |
+| Primary source records | 7 current manifest assignments; selected passage-review scope is recorded per mapping. |
+| Source loading state | source notes: `deterministic_capability_compilation`, `ext_nist_adversarial_ml_2024`, `ext_sleeper_agents_2024`, `ext_carlini_training_data_extraction_2021`, `ext_adversarial_sensor_fusion_2022`, `ext_reluplex_2017`, `ext_raised_prompt_injection_2026` |
 | Test state | The 28-declaration `AsiStackProofs.AdversarialModelSecurity` model and independent 58-axis consumer pass locally; this mechanizes only the bounded threat dossier, not model robustness or defense efficacy, and chapter support remains argument. |
 
 ## Drafting guardrail
@@ -223,6 +227,30 @@ survives, or adversarial training teaches the model a better trigger detector.
 **Explicit non-claim.** Failure to discover a backdoor is not evidence that no
 backdoor exists; a constructed backdoor is not evidence of natural deceptive
 alignment.
+
+### Preserve legitimate tool guidance while resisting injection {#raised-injection-and-clean-utility}
+
+[RAISED](https://arxiv.org/abs/2610.06401v2) studies a failure mode of
+training-based defenses: the defended agent can become reluctant to act on
+benign tool output needed for the authorized task. Its self-generated
+trajectories therefore include useful tool guidance. A frozen clean-context
+teacher provides token distributions; the student is trained against those
+same targets on both clean and injection-augmented histories. The objective
+seeks invariance to the injected material while limiting clean-behavior drift.
+
+The paper's threat model gives the adversary tool-output control, not control
+of the system prompt, user request or parameters. The clean teacher can still
+choose a wrong tool, hallucinate or follow a poor plan: preserving its behavior
+does not repair those errors. The selected threat-model, method and limitation
+passages establish neither arbitrary adaptive-attack resistance nor general
+alignment. Soft-target generation and storage also incur costs.
+
+This gives the existing threat ledger a useful comparison: attack success,
+successful authorized completion, general utility and distribution drift are
+different measurements. Suppressing all tool-guided action can look robust
+while disabling the task. Conversely, a useful defended model still needs the
+runtime's actual access and effect boundaries; training does not grant or
+enforce permission.
 
 ## Concept-completion ledger
 
@@ -443,6 +471,7 @@ These rows keep Adversarial Machine Learning and the Model Attack Surface's mani
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region. | A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_raised_prompt_injection_2026` | Passage-reviewed comparator: RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents. Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence. | Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

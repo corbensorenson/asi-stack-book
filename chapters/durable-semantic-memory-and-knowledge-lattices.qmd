@@ -18,6 +18,7 @@ primary_sources:
   - "adjudicated_persistence"
   - "ext_memory_centric_continual_learning_2026"
   - "ext_mempp_organizational_memory_2026"
+  - "ext_ansatz_continual_graph_memory_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -37,8 +38,8 @@ open_evidence_gaps:
 | Last updated | 2026-11-02 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Primary source records | 12 current manifest assignments; November 2 additions have selected primary-passage review only. |
-| Source loading state | source notes: `qcsa_whitepaper`, `vcm_public`, `treellm`, `portia_synapse`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025`, `ext_hermes_agent_2026`, `adjudicated_persistence`, `ext_memory_centric_continual_learning_2026`, `ext_mempp_organizational_memory_2026`; raw cache: `vcm_public`, `treellm` |
+| Primary source records | 13 current manifest assignments; selected passage-review scope is recorded per mapping. |
+| Source loading state | source notes: `qcsa_whitepaper`, `vcm_public`, `treellm`, `portia_synapse`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025`, `ext_hermes_agent_2026`, `adjudicated_persistence`, `ext_memory_centric_continual_learning_2026`, `ext_mempp_organizational_memory_2026`, `ext_ansatz_continual_graph_memory_2026`; raw cache: `vcm_public`, `treellm` |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -205,6 +206,30 @@ record forever. Claims of learning call for matched stateful/reset comparisons
 and repeated behavioral probes, while source selection and current-use validity
 remain visible to the consumer. The external studies do not validate this
 chapter's proposed lattice or memory admission policy.
+
+### Recalled proof statements need local readmission {#ansatz-verification-and-scoped-recall}
+
+[Ansatz](https://arxiv.org/abs/2610.02945v1) offers a concrete research-memory
+workflow. Workers submit statements, proofs and predecessor identifiers.
+Prechecks, a fresh verifier session and a successful store write precede
+admission to its fact graph. Exploration notes and curator scores cannot
+independently become accepted facts. Cross-project recall returns statements,
+negative findings and lessons with provenance; a recalled statement needs
+local re-proving and submission before serving as a predecessor.
+
+Scope is not chronology: the operator's off/batch/all visibility setting does
+not itself prevent later projects from leaking into an earlier evaluation.
+Sequential orchestration supplies that temporal condition. The verifier is
+an agent protocol, not a Lean kernel or an independently checked mathematical
+proof. This book has not checked the paper's claimed research closures.
+
+Its ablations also qualify the storage story. Replacing the fact graph with a
+flat notebook preserves seven-of-seven success on the tested subset; removing
+exploration/curation or independent verification gives more discriminating
+failures in their respective subsets. Those subsets do not support universal
+component rankings. The useful comparator joins admission, retrieval,
+revocation and evidence-sensitive curation, while leaving graph superiority,
+verification soundness and cross-problem transfer as separate questions.
 
 ## Concept-completion ledger
 
@@ -628,6 +653,7 @@ These rows keep Durable Semantic Memory and Knowledge Lattices's manifest assign
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Treats memory as one consequential persistence locus whose writes require evidence, authority, qualification, expiry, and descendant-aware revocation. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_memory_centric_continual_learning_2026` | Passage-reviewed comparator: Memory-Centric Continual Learning for AI Agents. Evaluate persistent agent memory through later behavior rather than retrieval success alone. Separates storage substrate, episodic/semantic/procedural asset and management policy. An inner loop changes memory; an outer loop can change the management policy. Fixed-policy memory changes do not imply policy learning. | A stored or retrieved record need not improve behavior. A bundled stateful advantage does not identify which memory mechanism helped. Surveyed systems are not independently replicated here. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mempp_organizational_memory_2026` | Passage-reviewed comparator: Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents. Whole dated documents can be a strong alternative to irreversible fact extraction at write time. Stores original text and event dates, embeds and indexes it, then applies an as-of date before rank fusion. Main runs disable optional consolidation. Only supersession metadata changes; readout does not automatically enforce those links. | Graph triples lack dates and can leak future information into as-of questions. Whole-text retention does not remove encoder truncation, reader-context limits or privacy/deletion obligations; no local utility or erasure result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ansatz_continual_graph_memory_2026` | Passage-reviewed comparator: Continual Graph Memory for Mathematical Research Agents. Connects candidate facts, verifier admission, revocation, exploration curation and scoped cross-project recall. Recalled statements need local re-proving and readmission rather than inherited standing. | A flat fact notebook matched the graph on the seven-task ablation; curation and verification have more discriminating evidence there. Agent verification is not Lean checking, and disabling web access does not prove absence of prior exposure. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

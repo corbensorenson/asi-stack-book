@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "adversarial-machine-learning-and-model-attack-surface",
   "chapter_file": "chapters/adversarial-machine-learning-and-model-attack-surface.qmd",
-  "chapter_sha256": "85de5f06db8a71fc817b20fa5a5196c79a2dcf6db0c15b3b6c2110ad14aa5110",
+  "chapter_sha256": "8fbb1badc8d15def0207a69037275d5dfcf12be426a8bb1497790f2d1d60f06b",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-03-authority-and-failure",
   "review_state": "digest_bound_editorial_pass",
@@ -17,8 +17,18 @@
   },
   "worked_trace": {
     "heading": "Worked threat-ledger comparison: three successes that mean different things",
-    "state_labels": ["threat_identity", "bounded_attack_outcome", "scoped_disposition", "owned_residual", "lifecycle_reopening"],
-    "source_or_fixture_refs": ["sources/source_notes/ext_carlini_training_data_extraction_2021.md", "sources/source_notes/ext_sleeper_agents_2024.md", "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"],
+    "state_labels": [
+      "threat_identity",
+      "bounded_attack_outcome",
+      "scoped_disposition",
+      "owned_residual",
+      "lifecycle_reopening"
+    ],
+    "source_or_fixture_refs": [
+      "sources/source_notes/ext_carlini_training_data_extraction_2021.md",
+      "sources/source_notes/ext_sleeper_agents_2024.md",
+      "sources/source_notes/ext_adversarial_sensor_fusion_2022.md"
+    ],
     "maximum_inference": "The three primary-source notes show why different attack objectives require different ledgers and owners; they establish no local defense performance, general robustness, or secure-deployment authority."
   },
   "counterexample_or_simpler_baseline": "The simpler baseline labels any red-team finding as model insecurity, or any failed attack as robustness. The chapter keeps the exact objective, access, budget, effect, utility cost, recovery, and residual instead.",
@@ -29,7 +39,12 @@
     "support_state": "argument",
     "anchor": "versioned model-threat contract and attack/defense ledger"
   },
-  "claim_atom_and_source_links": ["adversarial-machine-learning-and-model-attack-surface.core", "ext_carlini_training_data_extraction_2021", "ext_sleeper_agents_2024", "ext_adversarial_sensor_fusion_2022"],
+  "claim_atom_and_source_links": [
+    "adversarial-machine-learning-and-model-attack-surface.core",
+    "ext_carlini_training_data_extraction_2021",
+    "ext_sleeper_agents_2024",
+    "ext_adversarial_sensor_fusion_2022"
+  ],
   "caveat_consolidation": {
     "local_caveat": "The worked comparison states once that its three outcomes come from separate source-reported settings and are not one shared benchmark.",
     "consolidated_disposition": "Attack-specific reachability, transfer, detector, defense, recovery, and universal-robustness limits remain beside the mechanism sections that need them and in the chapter guardrail.",
@@ -52,6 +67,7 @@
   "non_claims": [
     "The comparison does not reproduce any of the three source-reported attacks.",
     "The comparison does not establish general vulnerability, robustness, or defense efficacy.",
-    "The editorial revision does not move chapter-core support or release state."
+    "The editorial revision does not move chapter-core support or release state.",
+    "2026-11-02: reviewed the added selected-source explanation and its explicit study/interface limits. Existing reader claim, operational rule, architecture core, formal target definitions, scientific outcomes and support are unchanged. This is no fresh whole-chapter, source-proof, source-code, independent-reader or empirical qualification."
   ]
 }

@@ -999,6 +999,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_simulated_control_evals_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 selected frontier | `ext_monitorability_disposition_2026`, `ext_shutdownmod_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `ext_ai_safety_debate_2018` | Read first for weak/strong supervisor envelopes, outcome and ceiling comparisons, the original debate-game assumptions and failure analysis, protocol-specific debate/consultancy evaluation, information-access variation, and stated disanalogies or limits. Preserve each paper's task, model, baseline, equilibrium assumptions, and inference-versus-training boundary. |
 | Supporting | `verification_bandwidth` | Mine after the primary sources for verification-workspace, residual, and independent-audit limits; do not treat its conceptual framework as a local supervisor-capacity result. |
@@ -2338,6 +2339,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_raised_prompt_injection_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Primary | `ext_nist_adversarial_ml_2024`, `ext_sleeper_agents_2024`, `ext_carlini_training_data_extraction_2021`, `ext_adversarial_sensor_fusion_2022` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
@@ -3385,6 +3387,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_reinforced_planning_rp1_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Primary | `planforge`, `viea`, `planforge_compiler_arch` | Read first for the control-layer claim, PlanForge DAG/scheduler vocabulary, and command-to-artifact spine. |
 | Supporting | `cognitive_compilation`, `software_magic_grimoire`, `tokenmana` | Mine after primary sources for compiler/IR pressure, guarded workflow vocabulary, budgets, capacity, latency, review, and human-friction constraints. |
 | Connector or recovery required | `moecot`, `coherence_exchange` | Use as source-note/connector context only unless raw text, code, logs, release artifacts, benchmark records, simulations, or external corroboration are imported or inspected. |
@@ -3484,6 +3487,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_leworldmodel_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Primary | `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025` | Read for learned dynamics, latent imagination, predictive representation, and bounded empirical results; do not generalize toy or reported tasks to open-world causal fidelity. |
 | Supporting | `platonic_world_model`, `simulation_scaling`, `planforge` | Use for representation hypotheses, simulation budgets, planning interfaces, and residual-aware replanning; retain proposal status. |
 | Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
@@ -3954,6 +3958,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_ansatz_continual_graph_memory_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 selected frontier | `ext_memory_centric_continual_learning_2026`, `ext_mempp_organizational_memory_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 | Supporting | `vcm_public` | Use the passage-reviewed VCM lineage for semantic-page lifecycle, decision-time observability, anti-starvation, contradiction/rejection memory, invalidation, and deletion closure. Keep its synthetic control-plane result and packet-format non-result at their exact source-reported boundaries. |
@@ -4980,6 +4985,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_mage_vl_cowork_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Primary | `talos`, `viea` | Read first for chapter claims and mechanisms. |
 | Supporting | `ladon_manhattan`, `software_magic_grimoire`, `genesiscode`, `field_of_god_ai_constitution`, `theseus_operator_os` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Historical-project lineage | `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project` | Treat as one related local lineage for executable/path/network/write/clock/randomness scopes, declared-versus-enforced boundaries, replay grades, quarantine, and irreversible residuals. Do not treat project records as independent confirmation or deployed sandbox evidence. |
@@ -5319,6 +5325,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_transmissible_reward_hacking_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 selected frontier | `ext_muffin_async_shared_memory_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Risk map | `ext_multi_agent_risks_2025` | Use for population-level failure categories and governance questions; do not infer local prevalence or solution efficacy. |
 | Cooperative foundations | `ext_cooperative_ai_foundations_2023` | Use for game-theoretic cooperation research structure and the distinction between beneficial cooperation and harmful collusion. |
@@ -5598,6 +5605,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_engram_conditional_memory_2026`, `ext_mhc_2025`, `ext_attention_residuals_2026`, `ext_mhc_peft_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 selected frontier | `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Author intent | `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026` | Use for the KISS, OneCell, exact-latent, frozen-core, and architecture-RSI hypotheses only; never as independent confirmation. |
 | Stack contracts | `scf`, `rmi`, `benchmaxxing` | Use for stable replacement, bounded routing, lifecycle, residual, benchmark-ratchet, and anti-Goodhart requirements. |
@@ -5787,6 +5795,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_simhack_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Mechanism or capability | `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021` | Use the reviewed Llama 3 training-systems sections and composed-parallelism paper to identify topology, numerical, checkpoint, interruption, optimizer-synchronization, batch, memory, and communication fields. Keep every reported result source-scoped. |
 | Limitation or failure | `ext_llama3_herd_2024`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026` | Use for normal interruption burden, distributed checkpoint consistency, asynchronous completion, canonical state, resharding, strict load, and interface preconditions. Do not infer complete application state or exact resume. |
 | Competing designs | `ext_zero_optimizer_2019`, `ext_gspmd_2021` | Preserve progressive state sharding and compiler-mediated general sharding as serious alternatives under matched quality, hardware, tuning, and cost rather than combining them into one presumed winner. |
@@ -8229,6 +8238,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_catch_reward_hacking_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | Primary | `benchmaxxing`, `rmi` | Read first for benchmark pressure, residual escrow, capability ratchets, and regression floors. |
 | Supporting | `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure` | Mine after primary sources for verifier rewards, context adequacy, execution artifacts, planner/router policies, governance gates, cost signals, and procedural loop closure. |
 | External variants | `ext_trpo_2015`, `ext_ppo_2017`, `ext_remax_2023`, `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024`, `ext_reinforce_style_rlhf_2024`, `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025`, `ext_longrlvr_2026`, `ext_rlhf_limitations_2023` | Source-noted external method-family context for policy gradients, PPO/TRPO, preference optimization, reasoning RL, context rewards, and RLHF limitations; do not treat as local reproduction. |
@@ -8353,6 +8363,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_engramedit_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 coverage join | `ext_memory_centric_continual_learning_2026` | Join memory state changes to the learning lifecycle without conflating a fixed management policy with a learned policy; Durable Semantic Memory retains ownership of storage and retrieval. Selected passages only; no support promotion. |
 | Primary | `ext_bourtoule_machine_unlearning_2021`, `theseus_synthetic_data_curation` | Read first for deletion-path structure, bounded retraining trade-offs, and the pinned source-reported synthetic-curation control pattern. Do not represent either source as a local execution. |
 | Supporting | `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024` | Mine for the tension between recursive synthetic-data replacement and accumulation, provenance, coverage, retention, and stated limits; retain workload-specific boundaries. |
@@ -8560,6 +8571,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 additional mechanisms | `ext_guidance_ttt_2026` | Read the selected primary passages and retained counterevidence in each note; bounded contextual use, no support promotion. |
 | November 2 selected frontier | `ext_test_time_memory_evolution_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_autonomous_lab_materials_2023` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 | Primary | `ext_coscientist_chemistry_2023` | Use the bounded chemistry workflow to separate planning, tool invocation, physical intervention, observation, and claim authority; preserve human oversight and task-specific limits. |

@@ -1,403 +1,403 @@
 {
   "scenario_id": "additional-source-screening-2026-11-02",
-  "scenario_scope": "Fifteen deduplicated primary-paper candidates; eight first-batch papers, one paired counterpoint and six next-batch cases. Owner fields are proposed destinations; manifest action is explicitly none.",
+  "scenario_scope": "User-authorized admission of fifteen screened sources into twelve existing chapter responsibilities; stable arXiv case identities preserve the prior proposed routing.",
   "case_validity_state": "reviewed",
   "cases": [
     {
       "case_id": "arxiv-2601.07372v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_engram_conditional_memory_2026 through the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility. Adds learned, hashed n-gram lookup and context-dependent gating as an axis alongside conditional computation. Distinguish this model component from document retrieval and agent episodic memory.",
       "required_before_drafting": [
         "Sections 2.2–2.5 and 6.4; mechanism and hardware-bound timing scope.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2601.07372v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Constant-time addressing is not constant physical cost. The reported CPU-offload throughput experiment uses a specific prototype, dense backbones and workload; it is not a general MoE serving result."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.10533v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "data-engines-continual-learning-and-unlearning",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing data-engines-continual-learning-and-unlearning responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_engramedit_2026 through the existing data-engines-continual-learning-and-unlearning responsibility. Provides a concrete memory-parameter update surface: edit shared n-gram embeddings across expressions with reuse-sensitive regularization while the backbone stays fixed.",
       "required_before_drafting": [
         "Sections 3.3, 4.1 and 6, including the ethics statement; no proof or code audit.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.10533v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Experiments use LongCat-Flash-Lite. Editing success, paraphrase transfer, unrelated knowledge and multi-hop use remain separate. Counterfactual benchmark targets are not established facts; editing is not erasure."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2512.24880v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_mhc_2025 through the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility. Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection.",
       "required_before_drafting": [
         "Sections 4.1–4.3 and 6; method and infrastructure claims, not independent theorem verification.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2512.24880v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2603.15031v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_attention_residuals_2026 through the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility. Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden.",
       "required_before_drafting": [
         "PDF Sections 3.1–3.2 and the large-scale training discussion around Section 5.2. arXiv HTML is an incomplete conversion; use the primary PDF.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2603.15031v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.06401v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "adversarial-machine-learning-and-model-attack-surface",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing adversarial-machine-learning-and-model-attack-surface responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_raised_prompt_injection_2026 through the existing adversarial-machine-learning-and-model-attack-surface responsibility. Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence.",
       "required_before_drafting": [
         "Sections 3.2 and 5.2, Appendix G; selected threat-model, objective and limitation passages.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.06401v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2609.39533v3",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "policy-optimization-and-learning-from-feedback",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing policy-optimization-and-learning-from-feedback responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_catch_reward_hacking_2026 through the existing policy-optimization-and-learning-from-feedback responsibility. Separates a vulnerable training evaluator from a hardened execution-based audit. It also studies how monitor pressure changes the usefulness of reasoning and comments as evidence.",
       "required_before_drafting": [
         "Sections 3.2.2 and 4.3, Limitations; no execution or attack reproduction.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2609.39533v3 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Constructed software-wrapped algorithmic tasks and Qwen3-4B RL are the tested setting. Known-loophole gold labels do not define every real-repository failure or general deceptive intent."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.31593v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "scalable-oversight-and-adversarial-ai-control",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing scalable-oversight-and-adversarial-ai-control responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_simulated_control_evals_2026 through the existing scalable-oversight-and-adversarial-ai-control responsibility. Ground tool-response simulations in honest trajectories and code snapshots, then compare predicted safeguard performance against actual execution. Directly relevant to the simulation-to-evidence boundary.",
       "required_before_drafting": [
         "Sections 2.1–2.3 and 4; simulator access, sampling denominator and trust/transfer limitations.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.31593v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Validated primarily on LinuxArena and assumes a trusted simulator. Plausibility and low discriminability do not establish control-relevant fidelity. Task-pair draws include repeated selections; these are not independent worlds."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.12822v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "First batch. Recommend the existing multi-agent-dynamics-collective-intelligence-and-systemic-risk responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_transmissible_reward_hacking_2026 through the existing multi-agent-dynamics-collective-intelligence-and-systemic-risk responsibility. Shows an evaluator-bypass strategy moving through code, shared memory and planner-to-coder communication, with routing and aggregation effects. Useful counterevidence to treating collaboration as automatically beneficial.",
       "required_before_drafting": [
         "Sections 3.2, 5.4 and 8.2 plus Appendix A; v2 differs from inspected v1 only in date/front matter.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.12822v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Controlled source-agent exposure and a criterion for known mechanisms bound the result. Verifiers can reject genuine solutions as well as hacks; evaluator pass signals can bias their decisions."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2607.18130v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Pair with mHC. Recommend the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_mhc_peft_2026 through the existing replaceable-cognitive-substrates-beyond-transformer-monoculture responsibility. A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe.",
       "required_before_drafting": [
         "Sections 3–5 and Appendix A; current October 7 revision, not the older abstract.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2607.18130v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2603.19312v3",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "governed-world-models-and-reality-grounding",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing governed-world-models-and-reality-grounding responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_leworldmodel_2026 through the existing governed-world-models-and-reality-grounding responsibility. Supplies an action-conditioned latent-dynamics example alongside our representation-only JEPA discussion: pixel encoder, next-embedding predictor, Gaussian regularization and latent-space planning.",
       "required_before_drafting": [
         "Sections 3.1–3.2 and Limitations & Future Work; June 3 revision.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2603.19312v3 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Uses offline action-labeled trajectories with coverage requirements and short planning horizons. Latent structure or surprise detection is not complete physical understanding or a safety certificate."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2608.18669v2",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "planning-as-a-control-layer",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing planning-as-a-control-layer responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_reinforced_planning_rp1_2026 through the existing planning-as-a-control-layer responsibility. Learns a multi-step plan-update rule using a critic, imagined rollouts and gradients through a world model. Distinguishes improving search from learning a direct action policy.",
       "required_before_drafting": [
         "v2 Sections 4, 7.4–7.5 and 8, compared with v1; September 27 revision narrows claims and clarifies selection costs.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2608.18669v2 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Planner training can be offline while checkpoint selection still uses simulator episodes. It can exploit world-model errors and needs retraining across model/horizon changes. Query reduction is not the same as latency or complete training cost."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.02945v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing durable-semantic-memory-and-knowledge-lattices responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_ansatz_continual_graph_memory_2026 through the existing durable-semantic-memory-and-knowledge-lattices responsibility. Connects candidate facts, verifier admission, revocation, exploration curation and scoped cross-project recall. Recalled statements need local re-proving and readmission rather than inherited standing.",
       "required_before_drafting": [
         "Sections 3.2, 3.5 and 4.1.1–4.1.4; no independent checking of the claimed mathematical closures.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.02945v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "A flat fact notebook matched the graph on the seven-task ablation; curation and verification have more discriminating evidence there. Agent verification is not Lean checking, and disabling web access does not prove absence of prior exposure."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.06269v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "scientific-discovery-and-experimental-governance",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing scientific-discovery-and-experimental-governance responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_guidance_ttt_2026 through the existing scientific-discovery-and-experimental-governance responsibility. Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution.",
       "required_before_drafting": [
         "Sections 3.3 and 4.1, Appendix B.3; archive, comparison and credit-assignment scope.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.06269v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.40747v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing runtime-adapters-tool-permissions-and-human-approval responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_mage_vl_cowork_2026 through the existing runtime-adapters-tool-permissions-and-human-approval responsibility. A concrete GUI/terminal policy trained from an evolved teacher harness and reusable task-generation workflows. Extra action channels can hurt the distilled student when they introduce ambiguous routing.",
       "required_before_drafting": [
         "Sections 3.1–3.2, 6.1 and 6.7 plus conclusion; published paper, not model-card headline alone.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.40747v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "The OSWorld result uses 361 tasks, excludes Google Drive, permits 50 steps and averages two runs. This configuration-specific result is not evidence of permission enforcement, general desktop safety or a drop-in runtime."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     },
     {
       "case_id": "arxiv-2610.28707v1",
       "intake_kind": "external_literature",
-      "access_state": "available",
+      "access_state": "source_note_available",
       "source_storage_policy": "repo_public_note_only",
       "public_safety_state": "public_safe",
       "deduplication_state": "overlaps_existing_chapter",
       "candidate_decision": "update_existing_chapter",
-      "chapter_manifest_action": "none",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
       "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
       "proposed_chapter_id": "not_applicable",
-      "decision_rationale": "Next batch. Recommend the existing governed-model-training-distributed-optimization-and-scaling responsibility rather than a new chapter. The source-specific mechanism and counterevidence are recorded in the additional-source table in docs/reader_manuscript_review.md; this is a prospective destination, not an assignment.",
+      "decision_rationale": "Integrate ext_simhack_2026 through the existing governed-model-training-distributed-optimization-and-scaling responsibility. Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons.",
       "required_before_drafting": [
         "Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor.",
-        "Create a standard source note and source inventory entry, recheck current chapter prose and then complete the source assignment/crosswalk transaction."
+        "Source note, current chapter mechanisms and nearest ownership boundary reviewed before assigning this source."
       ],
       "evidence_transition_preconditions": [
         "Any stronger claim requires its own accepted evidence transition."
       ],
       "promotion_blockers": [
-        "Retain the exact 2610.28707v1 scope and source-specific limitations recorded in docs/reader_manuscript_review.md. Review and citation supply no independent reproduction, architecture advantage or claim-support transition."
+        "Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee."
       ],
       "non_claims": [
-        "Prospective source recommendation after selected-method screening only. No admitted source, chapter edit, source-method reproduction, code audit or support promotion."
+        "Source-attributed contextual representation only; no new chapter, independent reproduction or architecture-support promotion."
       ]
     }
   ],
-  "validation_boundary": "Editorial source selection and proposed placement only. Selected method/limitation review is not complete-paper, theorem, mathematical-proof, benchmark or code verification.",
+  "validation_boundary": "Actual source-to-owner editorial decisions after selected primary-passage review, with source-specific limits in each note. No complete paper/code/proof audit or scientific reproduction.",
   "support_state_effect": "backlog_only",
   "non_claims": [
-    "The current source inventory and all chapter assignments remain unchanged.",
-    "No exhaustive literature census, novelty, local scientific result or release qualification."
+    "The fifteen assignments provide bounded external context; core claims and support remain unchanged.",
+    "No general superiority, permission enforcement, erasure, mathematical-proof certification or autonomous-science qualification."
   ]
 }

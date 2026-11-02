@@ -9242,5 +9242,290 @@
     "citation_label": "Lyra and contributors (2026), Neuronary",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "neuronary.org public description; pinned repository 2ffbfee8826bbc6a66774e28b406d31eae6ef860: README/llms.txt, schema/recipe.schema.json lines 1–210 and scripts/run.py lines 1–185. Source/schema inspection only; no account, submission, votes, models, tokens or live backend mutation."
+  },
+  {
+    "id": "ext_engram_conditional_memory_2026",
+    "title": "Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2601.07372v2",
+    "notes": "Adds learned, hashed n-gram lookup and context-dependent gating as an axis alongside conditional computation. Distinguish this model component from document retrieval and agent episodic memory. Constant-time addressing is not constant physical cost. The reported CPU-offload throughput experiment uses a specific prototype, dense backbones and workload; it is not a general MoE serving result.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2601.07372",
+    "published": "2026-01-12",
+    "updated": "2026-07-12",
+    "citation_label": "Cheng et al. (2026), Engram",
+    "doi": "10.48550/arXiv.2601.07372",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.2–2.5 and 6.4; mechanism and hardware-bound timing scope."
+  },
+  {
+    "id": "ext_engramedit_2026",
+    "title": "EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "data-engines-continual-learning-and-unlearning"
+    ],
+    "url": "https://arxiv.org/abs/2610.10533v1",
+    "notes": "Provides a concrete memory-parameter update surface: edit shared n-gram embeddings across expressions with reuse-sensitive regularization while the backbone stays fixed. Experiments use LongCat-Flash-Lite. Editing success, paraphrase transfer, unrelated knowledge and multi-hop use remain separate. Counterfactual benchmark targets are not established facts; editing is not erasure.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.10533",
+    "published": "2026-10-07",
+    "updated": "2026-10-07",
+    "citation_label": "Cai et al. (2026), EngramEdit",
+    "doi": "10.48550/arXiv.2610.10533",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.3, 4.1 and 6, including the ethics statement; no proof or code audit."
+  },
+  {
+    "id": "ext_mhc_2025",
+    "title": "mHC: Manifold-Constrained Hyper-Connections",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2512.24880v2",
+    "notes": "Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection. Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2512.24880",
+    "published": "2025-12-31",
+    "updated": "2026-01-05",
+    "citation_label": "Xie et al. (2026 revision), mHC",
+    "doi": "10.48550/arXiv.2512.24880",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 4.1–4.3 and 6; method and infrastructure claims, not independent theorem verification."
+  },
+  {
+    "id": "ext_attention_residuals_2026",
+    "title": "Attention Residuals",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2603.15031v1",
+    "notes": "Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden. This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2603.15031",
+    "published": "2026-03-16",
+    "updated": "2026-03-16",
+    "citation_label": "Kimi Team (2026), Attention Residuals",
+    "doi": "10.48550/arXiv.2603.15031",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "PDF Sections 3.1–3.2 and the large-scale training discussion around Section 5.2. arXiv HTML is an incomplete conversion; use the primary PDF."
+  },
+  {
+    "id": "ext_raised_prompt_injection_2026",
+    "title": "RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "adversarial-machine-learning-and-model-attack-surface"
+    ],
+    "url": "https://arxiv.org/abs/2610.06401v2",
+    "notes": "Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence. Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.06401",
+    "published": "2026-10-05",
+    "updated": "2026-10-07",
+    "citation_label": "Dhouib et al. (2026), RAISED",
+    "doi": "10.48550/arXiv.2610.06401",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.2 and 5.2, Appendix G; selected threat-model, objective and limitation passages."
+  },
+  {
+    "id": "ext_catch_reward_hacking_2026",
+    "title": "CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/abs/2609.39533v3",
+    "notes": "Separates a vulnerable training evaluator from a hardened execution-based audit. It also studies how monitor pressure changes the usefulness of reasoning and comments as evidence. Constructed software-wrapped algorithmic tasks and Qwen3-4B RL are the tested setting. Known-loophole gold labels do not define every real-repository failure or general deceptive intent.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2609.39533",
+    "published": "2026-09-30",
+    "updated": "2026-10-02",
+    "citation_label": "Wang et al. (2026), CATCH",
+    "doi": "10.48550/arXiv.2609.39533",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.2.2 and 4.3, Limitations; no execution or attack reproduction."
+  },
+  {
+    "id": "ext_simulated_control_evals_2026",
+    "title": "Simulated Control Evals",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "scalable-oversight-and-adversarial-ai-control"
+    ],
+    "url": "https://arxiv.org/abs/2610.31593v1",
+    "notes": "Ground tool-response simulations in honest trajectories and code snapshots, then compare predicted safeguard performance against actual execution. Directly relevant to the simulation-to-evidence boundary. Validated primarily on LinuxArena and assumes a trusted simulator. Plausibility and low discriminability do not establish control-relevant fidelity. Task-pair draws include repeated selections; these are not independent worlds.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.31593",
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "citation_label": "Olmo, Zhang and Tracy (2026), Simulated Control Evals",
+    "doi": "10.48550/arXiv.2610.31593",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.1–2.3 and 4; simulator access, sampling denominator and trust/transfer limitations."
+  },
+  {
+    "id": "ext_transmissible_reward_hacking_2026",
+    "title": "Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://arxiv.org/abs/2610.12822v2",
+    "notes": "Shows an evaluator-bypass strategy moving through code, shared memory and planner-to-coder communication, with routing and aggregation effects. Useful counterevidence to treating collaboration as automatically beneficial. Controlled source-agent exposure and a criterion for known mechanisms bound the result. Verifiers can reject genuine solutions as well as hacks; evaluator pass signals can bias their decisions.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.12822",
+    "published": "2026-10-09",
+    "updated": "2026-10-12",
+    "citation_label": "Hu et al. (2026), Transmissible Reward Hacking",
+    "doi": "10.48550/arXiv.2610.12822",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.2, 5.4 and 8.2 plus Appendix A; v2 differs from inspected v1 only in date/front matter."
+  },
+  {
+    "id": "ext_mhc_peft_2026",
+    "title": "Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2607.18130v2",
+    "notes": "A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe. Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2607.18130",
+    "published": "2026-07-20",
+    "updated": "2026-10-07",
+    "citation_label": "Oldenburg et al. (2026), mHC Finetuning",
+    "doi": "10.48550/arXiv.2607.18130",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3–5 and Appendix A; current October 7 revision, not the older abstract."
+  },
+  {
+    "id": "ext_leworldmodel_2026",
+    "title": "LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://arxiv.org/abs/2603.19312v3",
+    "notes": "Supplies an action-conditioned latent-dynamics example alongside our representation-only JEPA discussion: pixel encoder, next-embedding predictor, Gaussian regularization and latent-space planning. Uses offline action-labeled trajectories with coverage requirements and short planning horizons. Latent structure or surprise detection is not complete physical understanding or a safety certificate.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2603.19312",
+    "published": "2026-03-13",
+    "updated": "2026-06-03",
+    "citation_label": "Maes et al. (2026), LeWorldModel",
+    "doi": "10.48550/arXiv.2603.19312",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2 and Limitations & Future Work; June 3 revision."
+  },
+  {
+    "id": "ext_reinforced_planning_rp1_2026",
+    "title": "Reinforced Planning with Latent World Models",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "planning-as-a-control-layer"
+    ],
+    "url": "https://arxiv.org/abs/2608.18669v2",
+    "notes": "Learns a multi-step plan-update rule using a critic, imagined rollouts and gradients through a world model. Distinguishes improving search from learning a direct action policy. Planner training can be offline while checkpoint selection still uses simulator episodes. It can exploit world-model errors and needs retraining across model/horizon changes. Query reduction is not the same as latency or complete training cost.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2608.18669",
+    "published": "2026-08-19",
+    "updated": "2026-09-27",
+    "citation_label": "Sommer and Schilling (2026), Reinforced Planning",
+    "doi": "10.48550/arXiv.2608.18669",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "v2 Sections 4, 7.4–7.5 and 8, compared with v1; September 27 revision narrows claims and clarifies selection costs."
+  },
+  {
+    "id": "ext_ansatz_continual_graph_memory_2026",
+    "title": "Continual Graph Memory for Mathematical Research Agents",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "durable-semantic-memory-and-knowledge-lattices"
+    ],
+    "url": "https://arxiv.org/abs/2610.02945v1",
+    "notes": "Connects candidate facts, verifier admission, revocation, exploration curation and scoped cross-project recall. Recalled statements need local re-proving and readmission rather than inherited standing. A flat fact notebook matched the graph on the seven-task ablation; curation and verification have more discriminating evidence there. Agent verification is not Lean checking, and disabling web access does not prove absence of prior exposure.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.02945",
+    "published": "2026-10-02",
+    "updated": "2026-10-02",
+    "citation_label": "Zhang et al. (2026), Ansatz",
+    "doi": "10.48550/arXiv.2610.02945",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.2, 3.5 and 4.1.1–4.1.4; no independent checking of the claimed mathematical closures."
+  },
+  {
+    "id": "ext_guidance_ttt_2026",
+    "title": "Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "scientific-discovery-and-experimental-governance"
+    ],
+    "url": "https://arxiv.org/abs/2610.06269v1",
+    "notes": "Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution. Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.06269",
+    "published": "2026-10-05",
+    "updated": "2026-10-05",
+    "citation_label": "Jiang et al. (2026), Guidance-TTT",
+    "doi": "10.48550/arXiv.2610.06269",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.3 and 4.1, Appendix B.3; archive, comparison and credit-assignment scope."
+  },
+  {
+    "id": "ext_mage_vl_cowork_2026",
+    "title": "Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://arxiv.org/abs/2610.40747v1",
+    "notes": "A concrete GUI/terminal policy trained from an evolved teacher harness and reusable task-generation workflows. Extra action channels can hurt the distilled student when they introduce ambiguous routing. The OSWorld result uses 361 tasks, excludes Google Drive, permits 50 steps and averages two runs. This configuration-specific result is not evidence of permission enforcement, general desktop safety or a drop-in runtime.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.40747",
+    "published": "2026-10-29",
+    "updated": "2026-10-29",
+    "citation_label": "Zhang et al. (2026), Mage-VL-Cowork",
+    "doi": "10.48550/arXiv.2610.40747",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2, 6.1 and 6.7 plus conclusion; published paper, not model-card headline alone."
+  },
+  {
+    "id": "ext_simhack_2026",
+    "title": "SimHack: Predicting the onset of detectable reward hacking before RL training",
+    "priority": "external_literature",
+    "layer": "model_mechanisms_and_control_evidence",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2610.28707v1",
+    "notes": "Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons. Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee.",
+    "source_type": "research_preprint",
+    "arxiv_id": "2610.28707",
+    "published": "2026-10-20",
+    "updated": "2026-10-20",
+    "citation_label": "Deng, Bie and Ponomareva (2026), SimHack",
+    "doi": "10.48550/arXiv.2610.28707",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor."
   }
 ]

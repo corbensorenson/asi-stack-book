@@ -13,6 +13,7 @@ primary_sources:
   - "ext_ai_co_scientist_2025"
   - "answerability_atlas_synthesis"
   - "ext_test_time_memory_evolution_2026"
+  - "ext_guidance_ttt_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -32,8 +33,8 @@ open_evidence_gaps:
 | Last updated | 2026-11-02 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Primary source records | 7 current manifest assignments; November 2 additions have selected primary-passage review only. |
-| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_coscientist_chemistry_2023`, `ext_ai_co_scientist_2025`, `answerability_atlas_synthesis`, `ext_test_time_memory_evolution_2026`; raw cache: `aletheia` |
+| Primary source records | 8 current manifest assignments; selected passage-review scope is recorded per mapping. |
+| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_coscientist_chemistry_2023`, `ext_ai_co_scientist_2025`, `answerability_atlas_synthesis`, `ext_test_time_memory_evolution_2026`, `ext_guidance_ttt_2026`; raw cache: `aletheia` |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -157,6 +158,31 @@ scientific claim. Whether memory adaptation beats weight updates, static
 retrieval or ordinary search remains a matched, full-cost comparison in the
 target setting. This source neither reopens the closed Atlas controller line
 nor establishes an autonomous scientific-discovery result for this book.
+
+### Adapt strategic guidance while holding execution fixed {#guidance-ttt-adaptation-and-credit}
+
+[Guidance-TTT](https://arxiv.org/abs/2610.06269v1) adds a third adaptation
+surface to the comparison above. A compact model learns high-level changes
+while a stronger frozen model implements each change against an exact parent
+solution. A verifier scores the resulting program; sibling rewards update
+the guidance policy, and admissible children retain parent links in the
+search archive. This is parameter learning in the guidance model, not merely
+external-memory evolution or updating the executor.
+
+The final-program reward does not isolate strategic quality. A useful idea
+can receive a poor signal when its implementation fails; parent selection
+and policy updates can also concentrate search within a few successful
+lineages. The paper reports four computational domains and comparisons with
+different models, budgets and published references. Those results do not
+identify a universal full-cost advantage or general scientific validity.
+
+For a governed discovery campaign, the guidance, executor, parent-selection
+policy, candidate implementation and verifier retain separate identities.
+Invalid programs and unproductive branches remain in the attempt denominator.
+The lesson is to locate what actually adapts and where credit is ambiguous,
+then compare guidance learning, whole-model updates, memory evolution and
+ordinary search under the target campaign's declared resource and evidence
+boundaries. No discovery result or architecture support is promoted here.
 
 ### Atlas case: retain the positive finding and the stop {#atlas-development-and-correction}
 
@@ -501,6 +527,7 @@ These rows keep Scientific Discovery and Experimental Governance's manifest assi
 | `ext_coscientist_chemistry_2023` | Passage-reviewed comparator: Autonomous chemical research with large language models. Passage-reviewed physical-laboratory comparator: Coscientist connects a language-model planner to web and document search, code execution, and robotic laboratory APIs across six reported chemistry task families, making proposal, tool, intervention, measurement, and adjudication boundaries concrete. | Source-reported bounded chemistry demonstrations with human oversight and task-specific assessment; no local chemistry run, independent scientist, general laboratory safety, causal discovery, transfer, or support promotion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ai_co_scientist_2025` | Passage-reviewed comparator: Towards an AI co-scientist. Passage-bounded hypothesis-generation comparator: the proposed multi-agent system generates, reflects on, ranks, evolves, and meta-reviews hypotheses with an Elo-style process and additional inference compute, followed by source-reported expert and selected laboratory appraisal. | Preprint and provider-reported evaluation only; internal rank, expert preference, and laboratory confirmation remain separate evidence objects. No full search population, evaluator independence, experiment, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_test_time_memory_evolution_2026` | Passage-reviewed comparator: Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?. Update external lessons and strategies rather than model weights during verifier-guided mathematical search. TTME maintains operational guidelines and source-case-linked strategy families from evaluated candidates. Those memories condition later proposals while the model stays fixed; the discovery framework’s archive, parent selection and verifier are retained. | Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_guidance_ttt_2026` | Passage-reviewed comparator: Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries. Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution. | Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

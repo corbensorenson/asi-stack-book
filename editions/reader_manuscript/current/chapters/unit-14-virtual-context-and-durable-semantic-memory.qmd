@@ -465,6 +465,25 @@ Retrieval quality may dominate many tasks. If better indexing and reranking
 solve the observed failures, the semantic layer should contract. Governance is
 not an excuse to preserve a costly ontology that adds no decision value.
 
+## Memory Structure and Memory Editing Are Different Choices
+
+[Ansatz](https://arxiv.org/abs/2610.02945v1) gives research memory a concrete
+admission workflow. Candidate statements pass prechecks, a fresh verifier and
+a store write; cross-project recall returns leads that need local re-proving
+before reuse. Scope alone does not enforce chronological isolation. Its flat
+fact notebook also matches the graph on the tested seven-task subset, so the
+result supports careful curation and verification more directly than a claim
+that graph storage itself wins. An agent verifier is not a proof kernel.
+
+[EngramEdit](https://arxiv.org/abs/2610.10533v1) changes a different surface:
+learned n-gram memory parameters, with the Transformer backbone fixed.
+Expressions can share embeddings, so localized edits still need interference
+and transfer checks. Its counterfactual editing targets are experimental
+instructions, not facts verified about the world. For the stale release note,
+changing a retrieved record, editing a learned table and removing influence
+from descendants are three different operations. None can silently stand in
+for the others.
+
 ## Forgetting Has Several Targets
 
 A request to forget can concern active context, a cache entry, durable storage,

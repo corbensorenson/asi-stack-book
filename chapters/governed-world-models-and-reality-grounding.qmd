@@ -24,6 +24,7 @@ primary_sources:
   - "ext_i_jepa_2023"
   - "ext_platonic_representation_hypothesis_2024"
   - "ext_platonic_representation_jepa_2026"
+  - "ext_leworldmodel_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -42,11 +43,11 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
 | Last updated | 2026-11-02 |
-| Primary source records | 18 current manifest assignments; November 2 additions have the selected passage scopes recorded in their notes, not a fresh review of every earlier source. |
+| Primary source records | 19 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`, `relational_dimension_compiler`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` |
-| Source loading state | source notes: `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `relational_dimension_compiler`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`; raw cache: `simulation_scaling`, `cognitive_compilation`, `planforge`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` |
+| Source loading state | source notes: `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `relational_dimension_compiler`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`, `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026`, `ext_leworldmodel_2026`; raw cache: `simulation_scaling`, `cognitive_compilation`, `planforge` |
 | Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen fixture/protocol mutations, a six-event transaction lifecycle with eleven independent lifecycle rejections, and two public Lean targets through 32 declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -408,6 +409,31 @@ Huh et al.'s [original hypothesis](https://arxiv.org/abs/2405.07987v5) and its
 *Platonic World Model* is a separate semantic-constitution proposal. Shared
 terminology supplies no evidence that either external result implements or
 validates that proposal's semantic identities, governance or grounding.
+
+### An action-conditioned JEPA still needs a qualified planning use {#leworldmodel-action-conditioned-dynamics}
+
+[LeWorldModel](https://arxiv.org/abs/2603.19312v3) makes the bridge from
+representation learning to dynamics explicit. An encoder maps pixels to
+latents; a predictor takes a latent and an action to predict the next latent.
+Training uses offline observation/action trajectories, a next-embedding loss
+and Gaussian-distribution regularization. It therefore supplies an
+action-conditioned example alongside the JEPA objectives above, rather than
+an identity-predictor instance of the Platonic theorem.
+
+At use time the world model is fixed while a planner optimizes an action
+sequence toward a latent goal. The paper describes finite-horizon CEM search
+and receding-horizon control to limit accumulating prediction error. Its
+limitations retain short horizons, offline coverage and diversity requirements,
+and dependence on action labels. Latent probes and surprise detection do not
+establish complete physical understanding or safe interventions.
+
+The governed rollout record therefore identifies encoder, predictor,
+regularizer, training coverage, goal metric, solver and horizon separately.
+Changing the planner can expose a previously unobserved model error without
+changing the checkpoint. [RP1's learned plan updates](planning-as-a-control-layer.qmd#reinforced-planning-with-world-models)
+make that failure concrete: better optimization can exploit imagined contact
+outcomes that the real environment does not produce. Model-use qualification
+and action authority remain separate decisions.
 
 ### Causal reasoning and representation
 
@@ -1099,6 +1125,7 @@ These rows keep Governed World Models and Reality Grounding's manifest assignmen
 | `ext_deep_ensembles_2017` | Passage-reviewed comparator: Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. Provides a strong practical predictive-uncertainty and disagreement baseline. | Source-reported benchmark calibration is not distribution-free and can share common-mode blind spots. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_conformal_prediction_2021` | Passage-reviewed comparator: A Gentle Introduction to Conformal Prediction and Distribution-Free Uncertainty Quantification. Grounds finite-sample prediction-set coverage under explicit assumptions and target definitions. | Coverage does not establish semantic correctness, causal adequacy, safety, or validity after assumption-breaking shift. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_wilds_2021` | Passage-reviewed comparator: WILDS: A Benchmark of in-the-Wild Distribution Shifts. Provides natural distribution-shift benchmarks across institutions, geography, time, and collection processes. | Ten benchmark datasets do not cover all OOD conditions or establish local robustness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_leworldmodel_2026` | Passage-reviewed comparator: LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels. Supplies an action-conditioned latent-dynamics example alongside our representation-only JEPA discussion: pixel encoder, next-embedding predictor, Gaussian regularization and latent-space planning. | Uses offline action-labeled trajectories with coverage requirements and short planning horizons. Latent structure or surprise detection is not complete physical understanding or a safety certificate. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

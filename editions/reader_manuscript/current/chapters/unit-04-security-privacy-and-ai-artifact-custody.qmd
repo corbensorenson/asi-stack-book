@@ -178,6 +178,16 @@ a particular route. A robust model can still be over-authorized. A fragile
 model can sometimes perform a harmless, tightly mediated task. Neither result
 should be promoted into the other.
 
+[RAISED](https://arxiv.org/abs/2610.06401v2) makes one defense tradeoff concrete.
+An agent that refuses every tool-provided instruction may resist injection
+while failing legitimate work. RAISED trains on clean and injected tool
+histories using the same clean teacher targets, seeking resistance without
+that behavioral drift. It also preserves the clean teacher's mistakes.
+Attack success, authorized completion and general utility therefore remain
+separate measurements. Such training can improve a model component within
+the tested setting; it does not supply the kernel's actual access controls
+or permission to execute the suggested action.
+
 ## Privacy Is About Use, Not Merely Secrecy
 
 Security asks whether an operation stayed inside its permitted technical

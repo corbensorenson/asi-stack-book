@@ -66,6 +66,10 @@ primary_sources:
   - "ext_v_jepa_2_2025"
   - "ext_nested_learning_hope_2025"
   - "ext_end_to_end_ttt_long_context_2025"
+  - "ext_engram_conditional_memory_2026"
+  - "ext_mhc_2025"
+  - "ext_attention_residuals_2026"
+  - "ext_mhc_peft_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -85,10 +89,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-11-02 |
-| Primary source records | 60 current manifest assignments; November 2 additions have selected primary-passage review only. |
+| Primary source records | 64 current manifest assignments; selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025`, `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025`; raw cache: `scf`, `rmi`, `benchmaxxing` |
+| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025`, `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025`, `ext_engram_conditional_memory_2026`, `ext_mhc_2025`, `ext_attention_residuals_2026`, `ext_mhc_peft_2026`; raw cache: `scf`, `rmi`, `benchmaxxing` |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented, including 12 event mutations, four common-checkpoint omitted-state collisions, and six full-checkpoint mutations. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 | Formal state | The public ABI target is implemented by 23 theorem declarations covering finite transition invariants and a heterogeneous checkpoint information boundary. |
 
@@ -457,6 +461,57 @@ fixed. These are uses of the existing ABI obligations, not a new implemented
 H-Net adapter. Combining a JEPA objective with a hierarchical encoder is a
 research possibility; none of the reviewed sources or this repository supplies
 a validated combined JEPA/H-Net model.
+
+## Learned lookup and routing across depth
+
+### Conditional lookup is learned model state {#conditional-memory-engram}
+
+[Engram](https://arxiv.org/abs/2601.07372v2) separates conditional memory
+from MoE's conditional computation. Compressed token IDs determine hashed
+n-gram addresses in learned embedding tables. A gate uses the current hidden
+state to modulate the retrieved representation, followed by a short causal
+convolution. These are trained parameters and numerical activations, not
+dated documents or an agent's episodic record. Hash collisions, normalization
+choices and contextual ambiguity remain part of the implementation.
+
+Deterministic addresses permit early prefetch from host memory. They do not
+make physical access free. The paper's offload experiment uses a prototype
+inference harness, dense backbones, an H800 and a specified batched workload;
+its small throughput penalty does not establish universal serving efficiency
+for large MoE systems. The adoption record separates lookup complexity,
+resident table size, communication, gate cost and realized latency. Table,
+hash/token normalization and gate versions belong in checkpoint identity.
+[EngramEdit](data-engines-continual-learning-and-unlearning.qmd#conditional-memory-editing)
+then asks which parts of such memory can change without updating the backbone.
+
+### Residual topology is another architectural axis {#residual-topology-and-depth-routing}
+
+[mHC](https://arxiv.org/abs/2512.24880v2) expands the residual stream and
+constrains its mixing toward doubly stochastic mappings using Sinkhorn–Knopp
+iterations. The ideal mapping supplies bounded mixing properties; that is
+not a proof about the whole nonlinear network, finite-precision implementation
+or protected behavior. Its practical cost includes the wider activation state
+and specialized kernels, recomputation and communication schedule.
+
+[Attention Residuals](https://arxiv.org/abs/2603.15031v1) instead uses learned
+softmax aggregation over earlier layer outputs. Its block variant sums within
+blocks and attends across their representations, reducing the number of
+retained and communicated objects. Depth and sequence length are different
+scaling variables. This is a trained architecture, not evidence that attaching
+the mechanism to an arbitrary existing checkpoint improves it.
+
+The [mHC finetuning study](https://arxiv.org/abs/2607.18130v2) supplies an
+important contrast: on its frozen OLMo backbones, keeping residual mixing at
+identity and learning read/write access works better than freely adapting
+the mixer. Standalone mHC does not beat established PEFT baselines overall.
+Few trainable parameters also leave substantial multi-stream activation cost;
+its LoRA and mHC timing/energy figures use different GPU types.
+
+These mechanisms extend the substrate tournament's candidate space. Neural
+depth routing is not the causal topology of independently adapting agents.
+Residual state, precision, kernels and recovery still belong to the kernel
+contract, while an architecture label supplies neither qualification nor a
+general efficiency advantage.
 
 ## What the recent counterevidence changes
 
@@ -1205,6 +1260,10 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_nested_learning_hope_2025` | Passage-reviewed comparator: Nested Learning: The Illusion of Deep Learning Architectures. Represent models and learning rules as coupled optimization processes with different context flows and update frequencies. Nested Learning includes optimizer memory in its account. Continuum Memory Systems update blocks at different rates; Hope combines such memory with self-referential update mechanisms. Multiple levels are not merely extra ordinary network layers. | A multi-timescale design does not prove freedom from forgetting, unlimited retention or autonomous safe self-improvement. Existing TTT/Titans coverage supplies antecedents; no Hope implementation or local model result is added. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_end_to_end_ttt_long_context_2025` | Passage-reviewed comparator: End-to-End Test-Time Training for Long Context. Meta-learn a model initialization for next-token updates on the context supplied at inference. Uses sliding-window attention and adaptive MLP weights. The outer training objective differentiates through inner context updates; mini-batches address update efficiency and stability. This differs from updating a memory database. | Training latency remains a limitation: the reported implementation is slower than full attention at short context, despite favorable long-context prefill. Fixed per-step state/latency does not make total context processing constant cost or guarantee task retention. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_engram_conditional_memory_2026` | Passage-reviewed comparator: Conditional Memory via Scalable Lookup: A New Axis of Sparsity for Large Language Models. Adds learned, hashed n-gram lookup and context-dependent gating as an axis alongside conditional computation. Distinguish this model component from document retrieval and agent episodic memory. | Constant-time addressing is not constant physical cost. The reported CPU-offload throughput experiment uses a specific prototype, dense backbones and workload; it is not a general MoE serving result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mhc_2025` | Passage-reviewed comparator: mHC: Manifold-Constrained Hyper-Connections. Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection. | Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_attention_residuals_2026` | Passage-reviewed comparator: Attention Residuals. Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden. | This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mhc_peft_2026` | Passage-reviewed comparator: Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning. A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe. | Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Non-silicon and non-digital substrate families

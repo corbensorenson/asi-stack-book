@@ -186,6 +186,17 @@ unexamined, recursive calls can proliferate, and readable latent projections
 need not recover the actual causal reasoning. The route comparison retains
 those costs alongside correctness and monitorability.
 
+[Guidance-TTT](https://arxiv.org/abs/2610.06269v1) offers another allocation
+choice: adapt a compact model's strategic guidance while a stronger frozen
+executor implements changes to exact parent solutions. The resulting program
+receives the verifier reward. That concentrates training on short proposals,
+but a failed implementation can still give a sound idea a poor signal.
+Archive selection and learning can also concentrate search into a few
+lineages. Its four computational domains do not establish a universal
+advantage over memory evolution or whole-model updates. The comparison counts
+guidance training, execution, rejected candidates and verification together,
+and separates improvement within a search from transfer to a new problem.
+
 ## Compression Moves Burden
 
 Compression changes representation. A lossless route reconstructs specified
