@@ -9093,5 +9093,152 @@
     "doi": "10.48550/arXiv.2610.32046",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Sections 3.1–3.4, 4.1, 4.4 and 5; Appendix C.3 memory schedule. Selected method, comparator provenance and accounting scope."
+  },
+  {
+    "id": "ext_neuron_personality_trait_induction_2024",
+    "title": "Neuron-based Personality Trait Induction in Large Language Models",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/html/2410.12327v2",
+    "notes": "Induce Big Five trait expression by changing selected feed-forward activation coordinates during inference. Identification is contrast- and threshold-dependent; intervention sufficiency does not establish unique semantics or necessary causal structure. Trait and fluency scores do not establish stable cross-context personality, unchanged cognition or alignment.",
+    "source_type": "conference_paper",
+    "published": "2024-10-16",
+    "updated": "2026-06-10",
+    "citation_label": "Deng et al. (ICLR 2025; 2026 arXiv revision), NPTI",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.2–3.3 (neuron definition, identification and manipulation), abstract/experiment scope; ICLR 2025 proceedings record checked. Selected passages from the June 2026 v2 revision.",
+    "arxiv_id": "2410.12327",
+    "doi": "10.48550/arXiv.2410.12327"
+  },
+  {
+    "id": "ext_persona_vectors_2025",
+    "title": "Persona Vectors: Monitoring and Controlling Character Traits in Language Models",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance",
+      "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+    ],
+    "url": "https://arxiv.org/html/2507.21509v3",
+    "notes": "Contrastively extracted residual-stream directions can monitor or alter expressed character traits. Supervised trait selection, small question sets and model-judge labels limit coverage. Dense vectors are not single neurons or a complete objective representation. Suppression under a hook is not evidence that a learned objective was removed.",
+    "source_type": "preprint",
+    "published": "2025-07-29",
+    "updated": "2025-09-05",
+    "citation_label": "Chen et al. (2025), Persona Vectors",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.1–2.2, 3.1–3.3, 5.1–5.2 and 8; selected extraction, monitoring, inference/training intervention and limitation passages.",
+    "arxiv_id": "2507.21509",
+    "doi": "10.48550/arXiv.2507.21509"
+  },
+  {
+    "id": "ext_assistant_axis_2026",
+    "title": "The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/html/2601.10387v1",
+    "notes": "A contrast direction separates default Assistant behavior from sampled role-playing behavior and can stabilize selected persona-drift cases. Target models are not frontier or generally reasoning-trained; Qwen thinking is disabled. Synthetic conversations, incomplete persona elicitation and linear approximations limit transport. Selected benchmark preservation is not universal capability or deployment safety.",
+    "source_type": "preprint",
+    "published": "2026-01-15",
+    "updated": "2026-01-15",
+    "citation_label": "Lu et al. (2026), The Assistant Axis",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2, 5.1–5.2 and 8.1. Primary-paper capping formula and target-model limits take precedence over a simplified range description in the blog.",
+    "arxiv_id": "2601.10387",
+    "doi": "10.48550/arXiv.2601.10387"
+  },
+  {
+    "id": "ext_persona_steering_capabilities_2026",
+    "title": "A Systematic Analysis of the Impact of Persona Steering on LLM Capabilities",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/html/2604.11048v2",
+    "notes": "Persona steering can change cognitive benchmark performance as well as style, with task-dependent benefits and harms. The intervention bundles a named trait with activation changes; it does not isolate a human psychological construct as the unique cause. Small held-out subsets, best-static comparisons and set-valued success limit routing conclusions. Cross-species directional agreement is not shared biological mechanism evidence.",
+    "source_type": "conference_paper",
+    "published": "2026-04-13",
+    "updated": "2026-05-12",
+    "citation_label": "Chen et al. (2026), Persona Steering and Capabilities",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Methodology and experimental procedure; Leveraging Persona-Task Regularities including reference/test split, hit definition and mixed task outcomes. May v2; CogSci 2026 reference in arXiv metadata.",
+    "arxiv_id": "2604.11048",
+    "doi": "10.48550/arXiv.2604.11048"
+  },
+  {
+    "id": "ext_persona_dosing_2026",
+    "title": "Persona Dosing: Calibrated Activation Steering for Graded Trait Control",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/html/2609.36388v1",
+    "notes": "A steering coefficient is not a behavioral trait intensity; calibrated requests require a measured response curve. Mean targets do not constrain each answer. Coherence is intelligibility, not factual correctness or safety. Reachable request sets differ between methods, so MAEs are not a paired common-request advantage. Some held-out coherence floors fail; stale-map error after controller update is not measured.",
+    "source_type": "preprint",
+    "published": "2026-09-28",
+    "updated": "2026-09-28",
+    "citation_label": "Jin et al. (2026), Persona Dosing",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.3 and 6–7: controller, calibration/reachability, update effects and limitations. Selected held-out results and denominator distinctions.",
+    "arxiv_id": "2609.36388",
+    "doi": "10.48550/arXiv.2609.36388"
+  },
+  {
+    "id": "ext_persona_selection_model_2026",
+    "title": "The Persona Selection Model: Why AI Assistants might Behave like Humans",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "inner-alignment-mesa-optimization-and-learned-objective-integrity"
+    ],
+    "url": "https://alignment.anthropic.com/2026/psm/",
+    "notes": "Considers assistant behavior as a persona elicited from pretraining character representations and refined in post-training. Persona-like behavior and controllable trait expression do not settle the location or completeness of learned agency. The framework is not a causal proof that no hidden objective or non-persona mechanism exists.",
+    "source_type": "research_article",
+    "published": "2026-02-23",
+    "updated": "2026-02-23",
+    "citation_label": "Marks, Lindsey and Olah (2026), The Persona Selection Model",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Opening model statement; representational evidence discussion; How exhaustive is PSM? and its alternative agency accounts. Authored conceptual research essay, not a new universal identification theorem."
+  },
+  {
+    "id": "ext_lyra_neuron_explorer_2026",
+    "title": "Lyra’s Neuron Explorer: Steering-First Neuron Exploration",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://github.com/lyramakesmusic/neuron-explorer/tree/7ec363d2d9686802a1b4aa7c6d8a2627b1759159",
+    "notes": "Explore what raw MLP coordinates write by steering them, retaining rollouts and comparing matched controls. Code inspection and author logs are not local execution or independent replication. A changed self-description, striking selected rollout or few-coordinate intervention does not identify a unique personality mechanism or stable objective. No provenance or popularity claim beyond the author-linked project is established.",
+    "source_type": "official_software_and_documentation",
+    "published": "2026-10-18",
+    "updated": "2026-11-01",
+    "citation_label": "Lyra (@_lyraaaa_), Neuron Explorer (2026)",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Pinned repository 7ec363d2d9686802a1b4aa7c6d8a2627b1759159: README; research_log.md framing and initial full-layer/control passages (lines 1–155); explorer/runtime.py loading/hook implementation (lines 1–155). lyraaaa.dev confirms project and Evil Qwen links. X post itself returned HTTP 403 and was not independently read."
+  },
+  {
+    "id": "ext_neuronary_2026",
+    "title": "Neuronary: A Public Dictionary of Neuron Steering Recipes",
+    "priority": "external_literature",
+    "layer": "persona_steering_and_activation_governance",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://github.com/lyramakesmusic/neuronary/tree/2ffbfee8826bbc6a66774e28b406d31eae6ef860",
+    "notes": "Share small MLP-neuron intervention recipes with model names, doses and example outputs. A model repository name is not necessarily an exact checkpoint digest. Schema acceptance is not engine support: the inspected runner rejects MoE expert edits and does not implement free-form conditional recipes. Submitted interpretation/confidence or votes do not establish unique feature semantics, alignment or independent reproduction.",
+    "source_type": "official_software_and_documentation",
+    "published": "2026-10-27",
+    "updated": "2026-11-02",
+    "citation_label": "Lyra and contributors (2026), Neuronary",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "neuronary.org public description; pinned repository 2ffbfee8826bbc6a66774e28b406d31eae6ef860: README/llms.txt, schema/recipe.schema.json lines 1–210 and scripts/run.py lines 1–185. Source/schema inspection only; no account, submission, votes, models, tokens or live backend mutation."
   }
 ]

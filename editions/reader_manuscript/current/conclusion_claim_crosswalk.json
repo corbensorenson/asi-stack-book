@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "b0a620dafbb837851c922c5d0a64981f4696541ed2b875347de023785f3dec61",
+  "book_structure_sha256": "1d0e7c49e4f41dc729fdbd370189843c0a4e5a290ae96cbb54e63c6bd9a60445",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1376,
+    "source": 1385,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -1532,7 +1532,7 @@
       "order": 5,
       "title": "Evidence States and Scalable Oversight",
       "human_reader_source_file": "chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
-      "human_reader_source_sha256": "616165cfcf09931a654cecf81ffc60ae7915ed3d7748664825de04b235ee114f",
+      "human_reader_source_sha256": "b67cf96759f1e5d6d084a25e483bfb3de1fea6765b2921bd856ac44df049cc8d",
       "public_path": "reader/chapters/unit-05-evidence-states-and-scalable-oversight.html",
       "central_question": "How can limited evaluators learn from behavior, internal signals, proofs, and delegated review without letting any one artifact stand in for truth or safety?",
       "conclusion_change": "Natural correction streams in which simpler review records produce equal calibration, challenge, and error recovery would justify a smaller transition system.",
@@ -1824,7 +1824,7 @@
           "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
           "title": "White-Box Evidence, Interpretability, and Activation Governance",
           "technical_source_file": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-          "technical_source_sha256": "7b17b3d83b4317fecc7e4fed6503d2374f1394c9483e98b87b2e38000e7ffccc",
+          "technical_source_sha256": "8e09f6d266f794d06f483f0d6ff5c52969f8f450aad407ac43e1919abb927fab",
           "live_technical_path": "chapters/white-box-evidence-interpretability-and-activation-governance.html",
           "human_reader_unit_id": "unit-05",
           "core_claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
@@ -1845,7 +1845,14 @@
             "ext_saebench_2025",
             "ext_sae_benchmark_reliability_2026",
             "ext_elk_report_2021",
-            "ext_influence_functions_2017"
+            "ext_influence_functions_2017",
+            "ext_neuron_personality_trait_induction_2024",
+            "ext_persona_vectors_2025",
+            "ext_assistant_axis_2026",
+            "ext_persona_steering_capabilities_2026",
+            "ext_persona_dosing_2026",
+            "ext_lyra_neuron_explorer_2026",
+            "ext_neuronary_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/deterministic_capability_compilation.md",
@@ -1861,7 +1868,14 @@
             "sources/source_notes/ext_saebench_2025.md",
             "sources/source_notes/ext_sae_benchmark_reliability_2026.md",
             "sources/source_notes/ext_elk_report_2021.md",
-            "sources/source_notes/ext_influence_functions_2017.md"
+            "sources/source_notes/ext_influence_functions_2017.md",
+            "sources/source_notes/ext_neuron_personality_trait_induction_2024.md",
+            "sources/source_notes/ext_persona_vectors_2025.md",
+            "sources/source_notes/ext_assistant_axis_2026.md",
+            "sources/source_notes/ext_persona_steering_capabilities_2026.md",
+            "sources/source_notes/ext_persona_dosing_2026.md",
+            "sources/source_notes/ext_lyra_neuron_explorer_2026.md",
+            "sources/source_notes/ext_neuronary_2026.md"
           ],
           "proof_edges": [
             {
@@ -1900,7 +1914,7 @@
           "artifact_refs": [
             {
               "path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-              "sha256": "7b17b3d83b4317fecc7e4fed6503d2374f1394c9483e98b87b2e38000e7ffccc"
+              "sha256": "8e09f6d266f794d06f483f0d6ff5c52969f8f450aad407ac43e1919abb927fab"
             },
             {
               "path": "lean/AsiStackProofs/WhiteBoxEvidence.lean",
@@ -2505,7 +2519,7 @@
       "order": 7,
       "title": "Constitutions, Moral Uncertainty, and Objective Formation",
       "human_reader_source_file": "chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
-      "human_reader_source_sha256": "174ca276a2d8e9e3165764f5f642d5199cd75194db437dd75a15e65a8899c978",
+      "human_reader_source_sha256": "888fcef517950a511073a099cec3b8b4642c0dd250dd81f202afff7ef998b47e",
       "public_path": "reader/chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.html",
       "central_question": "How should a system act when objectives are learned, values conflict, and no single preference can legitimately settle the case?",
       "conclusion_change": "Pluralistic mechanisms with fewer capture, rigidity, evasion, and review-burden failures would replace or sharply narrow the proposed substrate.",
@@ -2700,7 +2714,7 @@
           "chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
           "title": "Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity",
           "technical_source_file": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
-          "technical_source_sha256": "be7ae6bca44d1690a682866fec530d95ea1f09e5ee63637c05d598a64dae2fe3",
+          "technical_source_sha256": "d37129a9c45d04b792ceb8a1f4a893566a71219b2b3489f395e466a5d864c3a5",
           "live_technical_path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.html",
           "human_reader_unit_id": "unit-07",
           "core_claim_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity.core",
@@ -2713,7 +2727,9 @@
             "ext_sleeper_agents_2024",
             "ext_emergent_misalignment_reward_hacking_2025",
             "ext_optimal_policies_power_2019",
-            "alignment_field"
+            "alignment_field",
+            "ext_persona_vectors_2025",
+            "ext_persona_selection_model_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_learned_optimization_risks_2019.md",
@@ -2721,7 +2737,9 @@
             "sources/source_notes/ext_sleeper_agents_2024.md",
             "sources/source_notes/ext_emergent_misalignment_reward_hacking_2025.md",
             "sources/source_notes/ext_optimal_policies_power_2019.md",
-            "sources/source_notes/alignment_field.md"
+            "sources/source_notes/alignment_field.md",
+            "sources/source_notes/ext_persona_vectors_2025.md",
+            "sources/source_notes/ext_persona_selection_model_2026.md"
           ],
           "proof_edges": [
             {
@@ -2760,7 +2778,7 @@
           "artifact_refs": [
             {
               "path": "chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd",
-              "sha256": "be7ae6bca44d1690a682866fec530d95ea1f09e5ee63637c05d598a64dae2fe3"
+              "sha256": "d37129a9c45d04b792ceb8a1f4a893566a71219b2b3489f395e466a5d864c3a5"
             },
             {
               "path": "lean/AsiStackProofs/LearnedObjectiveIntegrity.lean",

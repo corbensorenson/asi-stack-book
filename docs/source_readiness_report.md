@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 40
 - `connector_readable`: 7
-- `source_note_available_public_project`: 28
-- `source_note_available_uncached`: 444
+- `source_note_available_public_project`: 30
+- `source_note_available_uncached`: 450
 
 ## Records
 
@@ -534,3 +534,11 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_monitorability_disposition_2026` | Monitorability Disposition in Large Reasoning Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_shutdownmod_2026` | ShutdownMod: Turning Any Trajectory into a Shutdown Evaluation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_test_time_memory_evolution_2026` | Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_neuron_personality_trait_induction_2024` | Neuron-based Personality Trait Induction in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_persona_vectors_2025` | Persona Vectors: Monitoring and Controlling Character Traits in Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_assistant_axis_2026` | The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_persona_steering_capabilities_2026` | A Systematic Analysis of the Impact of Persona Steering on LLM Capabilities | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_persona_dosing_2026` | Persona Dosing: Calibrated Activation Steering for Graded Trait Control | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_persona_selection_model_2026` | The Persona Selection Model: Why AI Assistants might Behave like Humans | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lyra_neuron_explorer_2026` | Lyra’s Neuron Explorer: Steering-First Neuron Exploration | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_neuronary_2026` | Neuronary: A Public Dictionary of Neuron Steering Recipes | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |

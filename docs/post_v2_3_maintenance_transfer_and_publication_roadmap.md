@@ -10,6 +10,20 @@ Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
 ## 2026-10-02 project-improvement implementation amendment
 
 
+The user's subsequent neuron/personality-steering request specifically identifies
+Lyra's Neuron Explorer and Neuronary through `lyraaaa.dev`. Eight selected
+notes/nine assignments integrate these tools and the NPTI, Persona Vectors,
+Assistant Axis, capability, dosing and Persona Selection Model sources into
+White-Box Evidence and Inner Alignment. Current reader Units 5/7 gain short
+explanations. The scope distinguishes intervention semantics, hook sites,
+random controls, calibration/collateral, community evidence and learned-objective
+inference. Current totals are 527 sources/1,385 assignments and 152,358 reader
+words. Both owners are outside the activation-era P1 scanner; its census and
+all core/proof/experiment/support/frozen boundaries remain unchanged. No model
+run, Docker or scientific campaign is added by this editorial source task.
+
+
+
 A further November 2 dated literature survey adds twelve selected primary sources
 through the existing source-intake owners. Eight existing technical chapters
 and five concise reader passages represent memory-driven behavioral learning,

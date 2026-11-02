@@ -3,6 +3,55 @@
 ## Current independent manuscript review
 
 
+### November 2 neuron/persona steering and the named community tools
+
+The user's specific lead, Lyra (`@_lyraaaa_`, `lyraaaa.dev`), identifies Neuron
+Explorer and Neuronary. The author's website directly links both tools and the
+Evil Qwen demonstration. The X post itself returned HTTP 403 and was not read;
+no exclusive discovery or popularity ranking is inferred. Neuron Explorer is
+reviewed at commit `7ec363d2d9686802a1b4aa7c6d8a2627b1759159`; Neuronary at
+`2ffbfee8826bbc6a66774e28b406d31eae6ef860`. Selected README, log, schema and
+runtime-hook passages are recorded in their source notes. No software from
+those projects or model weights was executed.
+
+White-Box Evidence now distinguishes raw MLP coordinates, distributed persona
+vectors, Assistant Axis caps and a trained calibrated controller. NPTI's
+identification statistic uses the nonlinear gate output; Lyra's inspected hook
+edits the gated product entering the down projection. The Neuron Explorer case
+retains its author's random-direction identity-change control. The Neuronary
+case separates dose/site/token semantics, schema acceptance, runner support,
+model names and exact checkpoint identities. Community examples, readouts,
+interpretations, votes and reproduction reports retain their evidence limits.
+The explanation credits accessible exploration and recipe sharing without
+turning a striking output into a unique “personality neuron” or safety result.
+
+Five selected papers supply NPTI, Persona Vectors, Assistant Axis, capability
+collateral and Persona Dosing mechanisms/comparators. The Persona Selection
+Model essay supplies an explicitly non-exhaustive explanatory hypothesis in
+Inner Alignment. That chapter separates altered persona expression from
+learned-objective identification and from removal, suppression or capability
+damage. Reader Units 5/7 receive short explanations. Two obsolete source-ID
+aliases in the current White-Box editorial packet now point to actual corpus
+entries; the original reader claim and rule are preserved.
+
+Eight new source notes yield nine assignments through two existing owners.
+Current totals are 527 sources/1,385 assignments and 152,358 reader words.
+The two technical owners are outside the historical activation-era P1 scanner;
+its 4,064 atoms/4,222 reviewed candidates/64 dossiers remain unchanged. New
+prose and limits were read directly rather than inferred reviewed from that
+scanner. Core contracts, proof target definitions, experiment outcomes,
+support and frozen custody are unchanged. No steering trial, training campaign,
+Docker or Lean rebuild is required for this editorial integration.
+
+Seven selected HTML pages render successfully. Browser checks pass for three
+White-Box sections and one Inner-Alignment section in Human/AI modes, both
+reader explanations and three selected layouts. Narrow and doubled-text
+screenshots were inspected. Source/schema/publication, reader, visual,
+claim-census, outline and proof-target consistency checks pass. This is no
+fresh whole-site or independent-reader qualification.
+
+
+
 ### November 2 recent-literature representation
 
 A dated primary-source survey admitted twelve selected sources into eight

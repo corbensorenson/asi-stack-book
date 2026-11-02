@@ -384,6 +384,18 @@ not identify internal causes. Internal observations do not establish
 deception, sandbagging, or intent. The two evidence paths can constrain and
 challenge one another without inheriting each other's conclusions.
 
+Recent personality-steering work makes this boundary tangible.
+[Lyra's Neuron Explorer](https://github.com/lyramakesmusic/neuron-explorer) changes
+selected MLP activations, and [Neuronary](https://neuronary.org/) shares recipes
+and example outputs. A small intervention can visibly alter tone and claimed
+identity while the stored model weights remain fixed. That is a real change to
+the running computation, not proof of a single “personality neuron” or an aligned
+objective. Lyra's research log also reports identity changes from random-direction
+controls. Coordinates, dose, checkpoint, prompts, decoding, capability effects
+and the intervention site therefore matter more than a striking screenshot.
+The [technical explanation](https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html#personality-and-persona-steering)
+distinguishes neuron edits, distributed persona vectors and projection caps.
+
 ## One Patch, Three Evidence Paths
 
 Return to the paper-ingestion change. The adapter proposes a mapping from new

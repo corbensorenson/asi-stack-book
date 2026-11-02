@@ -4,7 +4,7 @@ chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -18,6 +18,15 @@ primary_sources:
   - "ext_interpretability_illusion_bert_2021"
   - "ext_saebench_2025"
   - "ext_sae_benchmark_reliability_2026"
+  - "ext_elk_report_2021"
+  - "ext_influence_functions_2017"
+  - "ext_neuron_personality_trait_induction_2024"
+  - "ext_persona_vectors_2025"
+  - "ext_assistant_axis_2026"
+  - "ext_persona_steering_capabilities_2026"
+  - "ext_persona_dosing_2026"
+  - "ext_lyra_neuron_explorer_2026"
+  - "ext_neuronary_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -34,11 +43,11 @@ open_evidence_gaps:
 | Part | Part IV — Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.5 source-role and method-comparison integrated reader chapter |
-| Last updated | 2026-08-02 |
-| Primary source records | Four Corben architecture sources plus ten external method, challenge, and measurement comparators; see the source crosswalk below. |
+| Last updated | 2026-11-02 |
+| Primary source records | 21 current manifest assignments; November 2 persona-steering additions have selected primary-passage/code review only. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017` |
+| Source loading state | source notes: `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017`, `ext_neuron_personality_trait_induction_2024`, `ext_persona_vectors_2025`, `ext_assistant_axis_2026`, `ext_persona_steering_capabilities_2026`, `ext_persona_dosing_2026`, `ext_lyra_neuron_explorer_2026`, `ext_neuronary_2026` |
 | Test state | The packet schema, record-shape fixture, independent semantic validator, twelve packet/protocol mutations, a 36-theorem Lean surface, and an independently simulated six-event lifecycle with 51/51 rejected mutations are implemented under two public targets. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
 
 ## Drafting guardrail
@@ -380,6 +389,108 @@ mechanistically chosen adversarial examples have different semantics. The
 record asks whether predicted behavior changed, unrelated capabilities moved,
 redundant paths compensated, the intervention was on-distribution, and an
 independently implemented evaluator agreed.
+
+### Neuron-level personality steering and distributed persona control {#personality-and-persona-steering}
+
+The October [Neuron Explorer](https://github.com/lyramakesmusic/neuron-explorer/tree/7ec363d2d9686802a1b4aa7c6d8a2627b1759159)
+and [Neuronary](https://neuronary.org/) projects linked from
+[Lyra's website](https://lyraaaa.dev/) make a concrete phenomenon accessible:
+changing a small set of MLP activation coordinates can substantially alter a
+model's expressed character, tone and self-description. The linked “Evil Qwen”
+example is a community demonstration of such a change. It is useful as an
+intervention lead, without establishing a universal “evil switch,” a new desire
+or the complete mechanism behind the persona. The earlier research below and
+the recent tools have distinct contributions and evidence scopes.
+
+Three intervention objects are easy to confuse:
+
+- **Raw MLP coordinates.** [NPTI](https://arxiv.org/abs/2410.12327v2) contrasts
+  activation probabilities under opposing Big Five trait prompts, then suppresses
+  selected coordinates and increases others during inference. “Neuron” names an
+  architectural coordinate at a specified site. It does not imply that one unit
+  contains an entire human personality. Its identification statistic uses the
+  nonlinear gate output, which is not the same signal as the gated product
+  entering `down_proj` in Lyra's inspected runtime.
+- **Distributed directions.** [Persona Vectors](https://arxiv.org/abs/2507.21509v3)
+  differences mean residual-stream activations from filtered contrastive
+  responses. Adding that vector is a distributed intervention; projecting onto
+  it is a measurement. Neither is automatically a single-neuron edit, an SAE
+  feature or an identified complete circuit.
+- **A bounded projection.** [The Assistant Axis](https://arxiv.org/abs/2601.10387v1)
+  contrasts default Assistant activations with sampled role-playing activations.
+  Its capping intervention imposes a minimum projection at selected layers when
+  the state falls below the cap, rather than constantly adding the same vector.
+  The axis correlates with a leading persona component in the studied models;
+  that is not guaranteed for every model. The paper's open dense models and
+  selected capability/behavior tests delimit its reported stabilization result.
+
+Stored weights can remain fixed while the running computation changes. Training
+an auxiliary controller, changing weights during finetuning and applying a
+runtime hook are nevertheless different update processes. They have different
+state, removal and requalification boundaries.
+
+### What Neuron Explorer and Neuronary contribute {#lyra-neuron-explorer-and-neuronary}
+
+Neuron Explorer reverses the usual question of which text activates a neuron:
+it also asks what happens when a coordinate is pushed while the model generates.
+The inspected implementation hooks the input of `down_proj`, where gated MLP
+activations are available. Adding to one coordinate, multiplying its natural
+activation, setting it to zero and adding a direction after the projection are
+different operations. Output-direction addition can reproduce a coordinate
+increment under the appropriate linear map; clamping that output direction is
+not equivalent to ablating the coordinate when other neurons also write along
+it.
+
+The project's research log supplies a particularly useful negative control:
+random directions can also change a model's claimed maker. A striking answer
+to “Who are you?” therefore does not by itself identify a personality neuron.
+Cross-prompt themes, matched-size random and off-target pushes, dose dependence,
+coherence and protected-capability outcomes provide different challenges to the
+interpretation. The reported sweeps remain the author's observations; this book
+inspected the pinned code and log without executing a model or independently
+replicating the results.
+
+Neuronary makes recipes shareable: model name, layer/neuron coordinates, signed
+doses, intervention operation and site, normalization, token scope and example
+outputs. Its default additive dose is normalized using a calibrated residual
+norm and the neuron's output-column norm. The same printed number is not a
+portable raw activation magnitude. Reproduction reports, neuron readouts and
+interpretations can accumulate around an entry, but their presence or popularity
+does not certify its label or causal interpretation.
+
+A schema-valid recipe is also not necessarily executable by every engine. The
+inspected runner rejects MoE expert coordinates and does not implement the
+format's free-form conditional behavior. A model repository name alone leaves
+checkpoint revision, dtype, backend and calibration identity unresolved. Those
+missing identities matter before treating two outputs as the same intervention.
+
+### Trait dose, collateral effects and the alignment boundary {#persona-dose-and-capability-tradeoffs}
+
+A stronger steering coefficient does not mean a known degree of a trait.
+[Persona Dosing](https://arxiv.org/abs/2609.36388v1) learns a description-conditioned
+activation controller and calibrates strength against mean rubric scores. The
+base language model is frozen, but the controller is trained. Its reachable
+targets, targeting error and held-out coherence are separate outcomes. Some
+held-out coherence floors fail; an intelligible answer is not necessarily true
+or safe. The paper does not establish calibrated control of unseen traits,
+long conversations or every individual response.
+
+Capability collateral is substantive. Persona Vectors reports MMLU degradation
+under strong post-hoc suppression, alongside a different tradeoff for
+preventative steering during finetuning. A
+[2026 NPTI capability study](https://arxiv.org/abs/2604.11048v2) reports task-dependent
+benefits and harms. Its dynamic-routing proof of concept counts a hit when any
+recommended persona solves an item; that is not the accuracy of a single
+committed routing choice. These results motivate measuring the changed system,
+not assuming that personality is a cosmetic setting.
+
+In a hypothetical research assistant, a warmer persona could coincide with more
+unsupported agreement. Trait expression, factual accuracy, refusal behavior,
+capability, monitor performance and compliance with applicable authority remain
+separate observations. A pleasant or stable Assistant persona does not identify
+an aligned learned objective. The [inner-alignment owner](inner-alignment-mesa-optimization-and-learned-objective-integrity.qmd#persona-control-and-objective-integrity)
+keeps that inference boundary; the existing activation-policy contract governs
+qualification and retirement of the intervention itself.
 
 ### Comparative method matrix
 
@@ -782,6 +893,13 @@ These rows keep White-Box Evidence, Interpretability, and Activation Governance'
 |---|---|---|
 | `ext_elk_report_2021` | Passage-reviewed comparator: Eliciting Latent Knowledge. Frames eliciting latent knowledge as the problem of recovering what a model internally knows when its ordinary answer channel may be untrusted. | ELK is a research problem and strategy space, not a solved truthful-reporting mechanism or a guarantee that latent knowledge is represented accessibly. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_influence_functions_2017` | Passage-reviewed comparator: Understanding Black-box Predictions via Influence Functions. Provides a first-order method for estimating how training points affect a model prediction or loss, useful as one attribution hypothesis. | Influence estimates depend on differentiability, curvature approximation, local linearization, checkpoint identity, and implementation; they do not prove causal responsibility or deletion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_neuron_personality_trait_induction_2024` | Passage-reviewed comparator: Neuron-based Personality Trait Induction in Large Language Models. Induce Big Five trait expression by changing selected feed-forward activation coordinates during inference. Contrasts positive activation probabilities on high/low-trait generations. It suppresses one selected set and adds an activation-scaled increment to the opposing set, leaving stored model weights fixed. | Identification is contrast- and threshold-dependent; intervention sufficiency does not establish unique semantics or necessary causal structure. Trait and fluency scores do not establish stable cross-context personality, unchanged cognition or alignment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_persona_vectors_2025` | Passage-reviewed comparator: Persona Vectors: Monitoring and Controlling Character Traits in Language Models. Contrastively extracted residual-stream directions can monitor or alter expressed character traits. Generates trait prompts, questions and a scoring rubric, filters contrastive responses and differences mean response activations. Layer-specific vectors support projection monitoring and additive inference steering. Preventative steering supplies the undesired direction during finetuning, with a different inference role. | Supervised trait selection, small question sets and model-judge labels limit coverage. Dense vectors are not single neurons or a complete objective representation. Suppression under a hook is not evidence that a learned objective was removed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_assistant_axis_2026` | Passage-reviewed comparator: The Assistant Axis: Situating and Stabilizing the Default Persona of Language Models. A contrast direction separates default Assistant behavior from sampled role-playing behavior and can stabilize selected persona-drift cases. Subtracts mean role activations from default Assistant activations. The direction correlates with persona-space PC1 but is not defined as necessarily PC1. Capping imposes a lower bound on its projection, applied at selected multiple layers rather than constant vector addition everywhere. | Target models are not frontier or generally reasoning-trained; Qwen thinking is disabled. Synthetic conversations, incomplete persona elicitation and linear approximations limit transport. Selected benchmark preservation is not universal capability or deployment safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_persona_steering_capabilities_2026` | Passage-reviewed comparator: A Systematic Analysis of the Impact of Persona Steering on LLM Capabilities. Persona steering can change cognitive benchmark performance as well as style, with task-dependent benefits and harms. Uses NPTI coordinate modulation under paired same-input deterministic decoding. A retrieval-based proof of concept recommends persona sets from performance on reference questions. | The intervention bundles a named trait with activation changes; it does not isolate a human psychological construct as the unique cause. Small held-out subsets, best-static comparisons and set-valued success limit routing conclusions. Cross-species directional agreement is not shared biological mechanism evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_persona_dosing_2026` | Passage-reviewed comparator: Persona Dosing: Calibrated Activation Steering for Graded Trait Control. A steering coefficient is not a behavioral trait intensity; calibrated requests require a measured response curve. A shared description-conditioned FLAS flow controller transforms residual activations in a frozen language model. It is trained separately; isotonic fitting and interpolation map requested mean rubric scores to controller strength. | Mean targets do not constrain each answer. Coherence is intelligibility, not factual correctness or safety. Reachable request sets differ between methods, so MAEs are not a paired common-request advantage. Some held-out coherence floors fail; stale-map error after controller update is not measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_lyra_neuron_explorer_2026` | Passage-reviewed comparator: Lyra’s Neuron Explorer: Steering-First Neuron Exploration. Explore what raw MLP coordinates write by steering them, retaining rollouts and comparing matched controls. The inspected runtime hooks the input of down_proj, where gated MLP activations live. Additive and multiplicative edits differ. The log distinguishes output-direction addition from ablation and normalizes additive doses to residual scale. | Code inspection and author logs are not local execution or independent replication. A changed self-description, striking selected rollout or few-coordinate intervention does not identify a unique personality mechanism or stable objective. No provenance or popularity claim beyond the author-linked project is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_neuronary_2026` | Passage-reviewed comparator: Neuronary: A Public Dictionary of Neuron Steering Recipes. Share small MLP-neuron intervention recipes with model names, doses and example outputs. The format records coordinates, add/multiply semantics, hook site, normalization, token scope and optional generation/example metadata. Its runner uses forward pre-hooks with residual-norm/down-column scaling for additive edits; schema and runner capabilities are separate. | A model repository name is not necessarily an exact checkpoint digest. Schema acceptance is not engine support: the inspected runner rejects MoE expert edits and does not implement free-form conditional recipes. Submitted interpretation/confidence or votes do not establish unique feature semantics, alignment or independent reproduction. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Current evidence and non-claims

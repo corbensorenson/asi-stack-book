@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1376 |
-| Exact claim-source mappings | 1168 |
+| Assigned source/chapter pairs | 1385 |
+| Exact claim-source mappings | 1177 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1376 |
-| Source notes listing assigned chapter | 1376 |
-| Passage-reviewed mappings recorded | 1099 |
+| Source notes present for assigned pairs | 1385 |
+| Source notes listing assigned chapter | 1385 |
+| Passage-reviewed mappings recorded | 1108 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -45,7 +45,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `human-factors-and-meaningful-control-in-oversight` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `human-ai-communication-persuasion-and-epistemic-security` | 6 | 3 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
 | `constitutional-alignment-substrate` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
-| `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
 | `governed-objective-formation-value-learning-and-goal-integrity` | 5 | 4 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `institutions-international-coordination-and-public-legitimacy` | 9 | 5 | 9 | 9 | 3 | argument | passage review required before source-derived promotion |
@@ -106,7 +106,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `executable-specifications-and-lean-proof-envelope` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 51 | 40 | 51 | 51 | 40 | argument | passage review required before source-derived promotion |
-| `white-box-evidence-interpretability-and-activation-governance` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
+| `white-box-evidence-interpretability-and-activation-governance` | 21 | 21 | 21 | 21 | 21 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
@@ -295,6 +295,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_off_switch_game_2016` | 2 | yes |
 | `ext_legal_alignment_2026` | 2 | yes |
 | `ext_sleeper_agents_2024` | 2 | yes |
+| `ext_persona_vectors_2025` | 2 | yes |
 | `ext_contestable_ai_design_2022` | 2 | yes |
 | `ext_eu_article_50_transparency_guidelines_2026` | 2 | yes |
 | `ext_eu_ai_civil_liability_2025` | 2 | yes |
@@ -373,6 +374,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_agentic_oversight_practice_2026` | 1 | yes |
 | `eternal_code` | 1 | yes |
 | `ext_constitutional_ai_2022` | 1 | yes |
+| `ext_persona_selection_model_2026` | 1 | yes |
 | `ext_reinforcement_learning_moral_uncertainty_2020` | 1 | yes |
 | `ext_taking_ai_welfare_seriously_2024` | 1 | yes |
 | `ext_un_global_digital_compact_2024` | 1 | yes |
@@ -560,6 +562,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_saebench_2025` | 1 | yes |
 | `ext_sae_benchmark_reliability_2026` | 1 | yes |
 | `ext_elk_report_2021` | 1 | yes |
+| `ext_neuron_personality_trait_induction_2024` | 1 | yes |
+| `ext_assistant_axis_2026` | 1 | yes |
+| `ext_persona_steering_capabilities_2026` | 1 | yes |
+| `ext_persona_dosing_2026` | 1 | yes |
+| `ext_lyra_neuron_explorer_2026` | 1 | yes |
+| `ext_neuronary_2026` | 1 | yes |
 | `ext_metr_time_horizons_2025` | 1 | yes |
 | `ext_anthropic_rsp_2026` | 1 | yes |
 | `ext_alignment_faking_2024` | 1 | yes |
@@ -752,6 +760,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity.core` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `ext_emergent_misalignment_reward_hacking_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity.core` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `ext_optimal_policies_power_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity.core` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
+| `inner-alignment-mesa-optimization-and-learned-objective-integrity.core` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `ext_persona_vectors_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `inner-alignment-mesa-optimization-and-learned-objective-integrity.core` | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | `ext_persona_selection_model_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ethica_mechanica` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `alignment_field` | mapped | note present | chapter listed | passage-reviewed |
@@ -1726,6 +1736,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_sae_benchmark_reliability_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_elk_report_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_influence_functions_2017` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_neuron_personality_trait_induction_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_persona_vectors_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_assistant_axis_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_persona_steering_capabilities_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_persona_dosing_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_lyra_neuron_explorer_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `white-box-evidence-interpretability-and-activation-governance.core` | `white-box-evidence-interpretability-and-activation-governance` | `ext_neuronary_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_metr_time_horizons_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_anthropic_rsp_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-thresholds-and-deployment-commitments.core` | `capability-thresholds-and-deployment-commitments` | `ext_openai_preparedness_framework_2025` | mapped | note present | chapter listed | passage-reviewed |

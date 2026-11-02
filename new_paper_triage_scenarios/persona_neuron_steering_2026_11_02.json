@@ -1,0 +1,238 @@
+{
+  "scenario_id": "persona-neuron-steering-2026-11-02",
+  "scenario_scope": "Actual selected-source routing for neuron/personality steering and the two specifically requested community tools.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "ext_neuron_personality_trait_induction_2024--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Induce Big Five trait expression by changing selected feed-forward activation coordinates during inference.",
+      "required_before_drafting": [
+        "Sections 3.2–3.3 (neuron definition, identification and manipulation), abstract/experiment scope; ICLR 2025 proceedings record checked. Selected passages from the June 2026 v2 revision."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Identification is contrast- and threshold-dependent; intervention sufficiency does not establish unique semantics or necessary causal structure. Trait and fluency scores do not establish stable cross-context personality, unchanged cognition or alignment."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_persona_vectors_2025--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Contrastively extracted residual-stream directions can monitor or alter expressed character traits.",
+      "required_before_drafting": [
+        "Sections 2.1–2.2, 3.1–3.3, 5.1–5.2 and 8; selected extraction, monitoring, inference/training intervention and limitation passages."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Supervised trait selection, small question sets and model-judge labels limit coverage. Dense vectors are not single neurons or a complete objective representation. Suppression under a hook is not evidence that a learned objective was removed."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_persona_vectors_2025--inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Contrastively extracted residual-stream directions can monitor or alter expressed character traits.",
+      "required_before_drafting": [
+        "Sections 2.1–2.2, 3.1–3.3, 5.1–5.2 and 8; selected extraction, monitoring, inference/training intervention and limitation passages."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Supervised trait selection, small question sets and model-judge labels limit coverage. Dense vectors are not single neurons or a complete objective representation. Suppression under a hook is not evidence that a learned objective was removed."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_assistant_axis_2026--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "A contrast direction separates default Assistant behavior from sampled role-playing behavior and can stabilize selected persona-drift cases.",
+      "required_before_drafting": [
+        "Sections 3.1–3.2, 5.1–5.2 and 8.1. Primary-paper capping formula and target-model limits take precedence over a simplified range description in the blog."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Target models are not frontier or generally reasoning-trained; Qwen thinking is disabled. Synthetic conversations, incomplete persona elicitation and linear approximations limit transport. Selected benchmark preservation is not universal capability or deployment safety."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_persona_steering_capabilities_2026--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Persona steering can change cognitive benchmark performance as well as style, with task-dependent benefits and harms.",
+      "required_before_drafting": [
+        "Methodology and experimental procedure; Leveraging Persona-Task Regularities including reference/test split, hit definition and mixed task outcomes. May v2; CogSci 2026 reference in arXiv metadata."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "The intervention bundles a named trait with activation changes; it does not isolate a human psychological construct as the unique cause. Small held-out subsets, best-static comparisons and set-valued success limit routing conclusions. Cross-species directional agreement is not shared biological mechanism evidence."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_persona_dosing_2026--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "A steering coefficient is not a behavioral trait intensity; calibrated requests require a measured response curve.",
+      "required_before_drafting": [
+        "Sections 3.1–3.3 and 6–7: controller, calibration/reachability, update effects and limitations. Selected held-out results and denominator distinctions."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Mean targets do not constrain each answer. Coherence is intelligibility, not factual correctness or safety. Reachable request sets differ between methods, so MAEs are not a paired common-request advantage. Some held-out coherence floors fail; stale-map error after controller update is not measured."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_persona_selection_model_2026--inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Considers assistant behavior as a persona elicited from pretraining character representations and refined in post-training.",
+      "required_before_drafting": [
+        "Opening model statement; representational evidence discussion; How exhaustive is PSM? and its alternative agency accounts. Authored conceptual research essay, not a new universal identification theorem."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Persona-like behavior and controllable trait expression do not settle the location or completeness of learned agency. The framework is not a causal proof that no hidden objective or non-persona mechanism exists."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_lyra_neuron_explorer_2026--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Explore what raw MLP coordinates write by steering them, retaining rollouts and comparing matched controls.",
+      "required_before_drafting": [
+        "Pinned repository 7ec363d2d9686802a1b4aa7c6d8a2627b1759159: README; research_log.md framing and initial full-layer/control passages (lines 1–155); explorer/runtime.py loading/hook implementation (lines 1–155). lyraaaa.dev confirms project and Evil Qwen links. X post itself returned HTTP 403 and was not independently read."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Code inspection and author logs are not local execution or independent replication. A changed self-description, striking selected rollout or few-coordinate intervention does not identify a unique personality mechanism or stable objective. No provenance or popularity claim beyond the author-linked project is established."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    },
+    {
+      "case_id": "ext_neuronary_2026--white-box-evidence-interpretability-and-activation-governance",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Share small MLP-neuron intervention recipes with model names, doses and example outputs.",
+      "required_before_drafting": [
+        "neuronary.org public description; pinned repository 2ffbfee8826bbc6a66774e28b406d31eae6ef860: README/llms.txt, schema/recipe.schema.json lines 1–210 and scripts/run.py lines 1–185. Source/schema inspection only; no account, submission, votes, models, tokens or live backend mutation."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "A model repository name is not necessarily an exact checkpoint digest. Schema acceptance is not engine support: the inspected runner rejects MoE expert edits and does not implement free-form conditional recipes. Submitted interpretation/confidence or votes do not establish unique feature semantics, alignment or independent reproduction."
+      ],
+      "non_claims": [
+        "Contextual source integration only; no new local model behavior or support transition."
+      ]
+    }
+  ],
+  "validation_boundary": "Selected primary-file/passage review and editorial routing; no model execution or scientific reproduction.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "This selection is not exhaustive literature coverage or an independent scientific reproduction.",
+    "Recency alone is not an admission criterion; selected sources supply distinct mechanism or counterevidence."
+  ]
+}

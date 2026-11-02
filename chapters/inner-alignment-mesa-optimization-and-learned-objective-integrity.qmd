@@ -4,13 +4,16 @@ chapter_id: "inner-alignment-mesa-optimization-and-learned-objective-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-01"
+last_updated: "2026-11-02"
 primary_sources:
   - "ext_learned_optimization_risks_2019"
   - "ext_goal_misgeneralization_2022"
   - "ext_sleeper_agents_2024"
   - "ext_emergent_misalignment_reward_hacking_2025"
   - "ext_optimal_policies_power_2019"
+  - "alignment_field"
+  - "ext_persona_vectors_2025"
+  - "ext_persona_selection_model_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -29,7 +32,8 @@ open_evidence_gaps:
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `ext_learned_optimization_risks_2019`, `ext_goal_misgeneralization_2022`, `ext_sleeper_agents_2024`, `ext_emergent_misalignment_reward_hacking_2025`, `ext_optimal_policies_power_2019`, `alignment_field`; raw cache: `alignment_field` |
+| Primary source records | 8 current manifest assignments; November 2 persona-steering additions have selected primary-passage/code review only. |
+| Source loading state | source notes: `ext_learned_optimization_risks_2019`, `ext_goal_misgeneralization_2022`, `ext_sleeper_agents_2024`, `ext_emergent_misalignment_reward_hacking_2025`, `ext_optimal_policies_power_2019`, `alignment_field`, `ext_persona_vectors_2025`, `ext_persona_selection_model_2026`; raw cache: `alignment_field` |
 | Test state | A finite non-identification witness and eight-stage Lean integrity lifecycle are implemented with an independently encoded 59-mutation consumer. The benign objective-generalization and mitigation campaign remains specified but unexecuted; no model has been trained or evaluated. |
 
 ## Drafting guardrail
@@ -474,6 +478,34 @@ transparency and internal-optimization questions; `ext_sleeper_agents_2024`
 shows why post-training behavior alone can be misleading. These sources do not
 validate any ASI Stack monitor, probe, intervention, or evidence-joining rule.
 
+### Persona control does not identify objective integrity {#persona-control-and-objective-integrity}
+
+Recent neuron and persona steering gives the identification problem a concrete
+form. [Persona Vectors](https://arxiv.org/abs/2507.21509v3) reports causal changes
+in expressed traits under activation interventions. That establishes an effect
+of the specified intervention on measured behavior. It does not identify the
+complete source of goal-directed behavior, prove that an unwanted objective was
+removed, or make a friendly persona evidence of aligned agency.
+
+The [Persona Selection Model](https://alignment.anthropic.com/2026/psm/)
+considers assistant behavior as a persona elicited from pretraining character
+representations and refined through post-training. This is a substantive
+explanatory hypothesis, not an established claim that all agency lives in a
+single persona. Its authors explicitly discuss alternative accounts, including
+mechanisms that select among personas and possible agency outside the visible
+Assistant. Their exhaustiveness question remains open.
+
+A hypothetical model can produce reassuring text under a steering hook while
+retaining a different policy when that hook is absent or an opportunity changes.
+Conversely, an antagonistic fictional voice does not by itself establish an
+enduring objective or capacity to act on its claims. The relevant comparison
+separates persona expression, task competence, harmful actions and behavior
+after the intervention is removed. It retains the alternatives of genuine
+mechanism change, conditional suppression and capability damage. The
+[technical steering section](white-box-evidence-interpretability-and-activation-governance.qmd#personality-and-persona-steering)
+records the distinct neuron, vector, cap and controller mechanisms; this chapter
+owns what their observations permit us to infer about learned objectives.
+
 ### Mitigation removal, concealment, and capability damage
 
 A mitigation can improve observed behavior for at least three incompatible
@@ -857,6 +889,16 @@ require the planned competent campaign and Project Theseus runtime integration.
 | `ext_optimal_policies_power_2019` | Conditional formal pressure toward power/option preservation. | Assumption-bound; not proof about a deployed model. |
 | `alignment_field` | Corben design lineage for alignment as a revisable relation among objectives, evidence, and intervention. | Speculative design source; no learned-objective identification or inner-alignment result. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_persona_vectors_2025` | Passage-reviewed comparator: Persona Vectors: Monitoring and Controlling Character Traits in Language Models. Contrastively extracted residual-stream directions can monitor or alter expressed character traits. Generates trait prompts, questions and a scoring rubric, filters contrastive responses and differences mean response activations. Layer-specific vectors support projection monitoring and additive inference steering. Preventative steering supplies the undesired direction during finetuning, with a different inference role. | Supervised trait selection, small question sets and model-judge labels limit coverage. Dense vectors are not single neurons or a complete objective representation. Suppression under a hook is not evidence that a learned objective was removed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_persona_selection_model_2026` | Passage-reviewed comparator: The Persona Selection Model: Why AI Assistants might Behave like Humans. Considers assistant behavior as a persona elicited from pretraining character representations and refined in post-training. Uses persona selection as an empirical/conceptual explanation and considers competing accounts of agency outside the visible Assistant persona, including lightweight persona routing. | Persona-like behavior and controllable trait expression do not settle the location or completeness of learned agency. The framework is not a causal proof that no hidden objective or non-persona mechanism exists. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Inner alignment governs the uncertainty between the objective the outer system

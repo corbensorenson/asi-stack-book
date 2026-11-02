@@ -1630,6 +1630,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 persona steering | `ext_persona_vectors_2025`, `ext_persona_selection_model_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_learned_optimization_risks_2019`, `ext_goal_misgeneralization_2022` | Read for mesa-optimization and goal-misgeneralization problem structure; preserve their conceptual and empirical limits. |
 | Supporting | `ext_sleeper_agents_2024`, `ext_emergent_misalignment_reward_hacking_2025` | Use for constructed persistent policies and reported reward-hacking-to-broad-misalignment behavior; do not generalize to naturally arising deception or all training regimes. |
 | Boundary comparator | `ext_optimal_policies_power_2019` | Use to connect objective uncertainty to option-preserving behavior under stated environment assumptions; do not turn possibility into inevitability. |
@@ -7517,6 +7518,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 persona steering | `ext_neuron_personality_trait_induction_2024`, `ext_persona_vectors_2025`, `ext_assistant_axis_2026`, `ext_persona_steering_capabilities_2026`, `ext_persona_dosing_2026`, `ext_lyra_neuron_explorer_2026`, `ext_neuronary_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017` | Read for mechanistic frameworks, probe selectivity, cross-dataset construct challenge, sparse features, multi-metric comparison, benchmark reliability, interventions, latent knowledge, attribution, and stated limits; do not infer completeness or cross-model transfer. |
 | Supporting | `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model` | Use for evidence contracts, residual accounting, substrate plurality, and representation hypotheses; local sources provide no interpretability result. |
 
