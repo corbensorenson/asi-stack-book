@@ -2,6 +2,89 @@
 
 ## Current independent manuscript review
 
+### November 2 additional-source recommendations after chapter coverage
+
+Searched for further sources across model architecture, memory and editing,
+planning, agent execution, training, scientific search and adversarial control.
+The fifteen candidates below are absent from the current 527-entry inventory
+by arXiv ID and source metadata, including the four previously abstract-only
+leads. Each received selected primary-method and limitation screening at the
+scope below. This is a ranked source-adoption recommendation, not chapter
+integration or a new evidence review of the book's core claims.
+
+Eight papers form the first batch. The mHC finetuning study should accompany
+the original mHC discussion as a counterpoint; six further cases form the next
+batch. Existing owners are sufficient. In particular, neural residual routing
+must not be conflated with the causal topology of adaptive agents, and learned
+lookup tables must not be presented as document retrieval or external agent
+memory. The plan is consumed through
+`research_backlog_records/additional_source_screening_2026_11_02.json` and
+`new_paper_triage_scenarios/additional_source_screening_2026_11_02.json`.
+Their manifest actions are explicitly `none`; owner links are recommendations.
+The inventory, chapters, reader manuscript and support states remain unchanged.
+
+| Adoption order | Primary paper | Proposed existing owner | Useful addition | Boundary to retain |
+|---|---|---|---|---|
+| First batch | [Conditional Memory via Scalable Lookup (Engram)](https://arxiv.org/abs/2601.07372v2) | [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd) | Adds learned, hashed n-gram lookup and context-dependent gating as an axis alongside conditional computation. Distinguish this model component from document retrieval and agent episodic memory. | Constant-time addressing is not constant physical cost. The reported CPU-offload throughput experiment uses a specific prototype, dense backbones and workload; it is not a general MoE serving result. |
+| First batch | [EngramEdit: Decoupled Knowledge Updates in LLMs through Conditional Memory](https://arxiv.org/abs/2610.10533v1) | [Data Engines, Continual Learning, and Unlearning](../chapters/data-engines-continual-learning-and-unlearning.qmd) | Provides a concrete memory-parameter update surface: edit shared n-gram embeddings across expressions with reuse-sensitive regularization while the backbone stays fixed. | Experiments use LongCat-Flash-Lite. Editing success, paraphrase transfer, unrelated knowledge and multi-hop use remain separate. Counterfactual benchmark targets are not established facts; editing is not erasure. |
+| First batch | [mHC: Manifold-Constrained Hyper-Connections](https://arxiv.org/abs/2512.24880v2) | [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd) | Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection. | Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below. |
+| First batch | [Attention Residuals](https://arxiv.org/abs/2603.15031v1) | [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd) | Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden. | This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload. |
+| First batch | [RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents](https://arxiv.org/abs/2610.06401v2) | [Adversarial Machine Learning and the Model Attack Surface](../chapters/adversarial-machine-learning-and-model-attack-surface.qmd) | Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence. | Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee. |
+| First batch | [CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL](https://arxiv.org/abs/2609.39533v3) | [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd) | Separates a vulnerable training evaluator from a hardened execution-based audit. It also studies how monitor pressure changes the usefulness of reasoning and comments as evidence. | Constructed software-wrapped algorithmic tasks and Qwen3-4B RL are the tested setting. Known-loophole gold labels do not define every real-repository failure or general deceptive intent. |
+| First batch | [Simulated Control Evals](https://arxiv.org/abs/2610.31593v1) | [Scalable Oversight and Adversarial AI Control](../chapters/scalable-oversight-and-adversarial-ai-control.qmd) | Ground tool-response simulations in honest trajectories and code snapshots, then compare predicted safeguard performance against actual execution. Directly relevant to the simulation-to-evidence boundary. | Validated primarily on LinuxArena and assumes a trusted simulator. Plausibility and low discriminability do not establish control-relevant fidelity. Task-pair draws include repeated selections; these are not independent worlds. |
+| First batch | [Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems](https://arxiv.org/abs/2610.12822v2) | [Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk](../chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd) | Shows an evaluator-bypass strategy moving through code, shared memory and planner-to-coder communication, with routing and aggregation effects. Useful counterevidence to treating collaboration as automatically beneficial. | Controlled source-agent exposure and a criterion for known mechanisms bound the result. Verifiers can reject genuine solutions as well as hacks; evaluator pass signals can bias their decisions. |
+| Pair with mHC | [Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning](https://arxiv.org/abs/2607.18130v2) | [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd) | A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe. | Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types. |
+| Next batch | [LeWorldModel: Stable End-to-End Joint-Embedding Predictive Architecture from Pixels](https://arxiv.org/abs/2603.19312v3) | [Governed World Models and Reality Grounding](../chapters/governed-world-models-and-reality-grounding.qmd) | Supplies an action-conditioned latent-dynamics example alongside our representation-only JEPA discussion: pixel encoder, next-embedding predictor, Gaussian regularization and latent-space planning. | Uses offline action-labeled trajectories with coverage requirements and short planning horizons. Latent structure or surprise detection is not complete physical understanding or a safety certificate. |
+| Next batch | [Reinforced Planning with Latent World Models (RP1)](https://arxiv.org/abs/2608.18669v2) | [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd) | Learns a multi-step plan-update rule using a critic, imagined rollouts and gradients through a world model. Distinguishes improving search from learning a direct action policy. | Planner training can be offline while checkpoint selection still uses simulator episodes. It can exploit world-model errors and needs retraining across model/horizon changes. Query reduction is not the same as latency or complete training cost. |
+| Next batch | [Continual Graph Memory for Mathematical Research Agents (Ansatz)](https://arxiv.org/abs/2610.02945v1) | [Durable Semantic Memory and Knowledge Lattices](../chapters/durable-semantic-memory-and-knowledge-lattices.qmd) | Connects candidate facts, verifier admission, revocation, exploration curation and scoped cross-project recall. Recalled statements need local re-proving and readmission rather than inherited standing. | A flat fact notebook matched the graph on the seven-task ablation; curation and verification have more discriminating evidence there. Agent verification is not Lean checking, and disabling web access does not prove absence of prior exposure. |
+| Next batch | [Evolving in Thought Space (Guidance-TTT)](https://arxiv.org/abs/2610.06269v1) | [Scientific Discovery and Experimental Governance](../chapters/scientific-discovery-and-experimental-governance.qmd) | Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution. | Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority. |
+| Next batch | [Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses](https://arxiv.org/abs/2610.40747v1) | [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd) | A concrete GUI/terminal policy trained from an evolved teacher harness and reusable task-generation workflows. Extra action channels can hurt the distilled student when they introduce ambiguous routing. | The OSWorld result uses 361 tasks, excludes Google Drive, permits 50 steps and averages two runs. This configuration-specific result is not evidence of permission enforcement, general desktop safety or a drop-in runtime. |
+| Next batch | [SimHack: Predicting the onset of detectable reward hacking before RL training](https://arxiv.org/abs/2610.28707v1) | [Governed Model Training, Distributed Optimization, and Scaling](../chapters/governed-model-training-distributed-optimization-and-scaling.qmd) | Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons. | Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee. |
+
+Four details substantially change how these sources should be used. The
+Ansatz ablation supports careful verification/curation rather than an
+unqualified claim that graph storage outperforms a notebook. EngramEdit's
+experiments concern a particular conditional-memory model, not arbitrary
+backbone knowledge replacement. RP1's revised paper distinguishes offline
+training from simulator-based checkpoint selection and makes model-error
+exploitation explicit. The mHC finetuning comparison prevents pretraining
+results from being transported uncritically into frozen-backbone adaptation.
+
+| Selected primary version and full-text route | Passages screened |
+|---|---|
+| [2601.07372v2](https://arxiv.org/html/2601.07372v2) | Sections 2.2–2.5 and 6.4; mechanism and hardware-bound timing scope. |
+| [2610.10533v1](https://arxiv.org/html/2610.10533v1) | Sections 3.3, 4.1 and 6, including the ethics statement; no proof or code audit. |
+| [2512.24880v2](https://arxiv.org/html/2512.24880v2) | Sections 4.1–4.3 and 6; method and infrastructure claims, not independent theorem verification. |
+| [2603.15031v1](https://arxiv.org/pdf/2603.15031v1) | PDF Sections 3.1–3.2 and the large-scale training discussion around Section 5.2. arXiv HTML is an incomplete conversion; use the primary PDF. |
+| [2610.06401v2](https://arxiv.org/html/2610.06401v2) | Sections 3.2 and 5.2, Appendix G; selected threat-model, objective and limitation passages. |
+| [2609.39533v3](https://arxiv.org/html/2609.39533v3) | Sections 3.2.2 and 4.3, Limitations; no execution or attack reproduction. |
+| [2610.31593v1](https://arxiv.org/html/2610.31593v1) | Sections 2.1–2.3 and 4; simulator access, sampling denominator and trust/transfer limitations. |
+| [2610.12822v2](https://arxiv.org/html/2610.12822v2) | Sections 3.2, 5.4 and 8.2 plus Appendix A; v2 differs from inspected v1 only in date/front matter. |
+| [2607.18130v2](https://arxiv.org/html/2607.18130v2) | Sections 3–5 and Appendix A; current October 7 revision, not the older abstract. |
+| [2603.19312v3](https://arxiv.org/html/2603.19312v3) | Sections 3.1–3.2 and Limitations & Future Work; June 3 revision. |
+| [2608.18669v2](https://arxiv.org/html/2608.18669v2) | v2 Sections 4, 7.4–7.5 and 8, compared with v1; September 27 revision narrows claims and clarifies selection costs. |
+| [2610.02945v1](https://arxiv.org/html/2610.02945v1) | Sections 3.2, 3.5 and 4.1.1–4.1.4; no independent checking of the claimed mathematical closures. |
+| [2610.06269v1](https://arxiv.org/html/2610.06269v1) | Sections 3.3 and 4.1, Appendix B.3; archive, comparison and credit-assignment scope. |
+| [2610.40747v1](https://arxiv.org/html/2610.40747v1) | Sections 3.1–3.2, 6.1 and 6.7 plus conclusion; published paper, not model-card headline alone. |
+| [2610.28707v1](https://arxiv.org/html/2610.28707v1) | Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor. |
+
+RP1's September 27 revision and the multi-agent paper's October 12 revision
+replace their initially retrieved versions in this recommendation. The latter
+has only front-matter/date differences in the inspected text. Attention
+Residuals' HTML conversion is incomplete; the selected PDF supplies its
+mechanism. Other papers retain their actual publication/revision dates rather
+than being relabeled new October work. Current-revision metadata was checked
+against primary arXiv pages. Raw primary downloads, text extracts and transient
+receipts stay in ignored `build/`, with only authored synthesis public here.
+
+No source notes, inventory entries or chapter assignments were added in this
+search pass. The current 527 sources/1,387 assignments, chapter cores, proof
+definitions, experimental outcomes and 153,245-word reader remain unchanged.
+The next implementation step is the ordinary source-note/intake and bounded
+chapter integration transaction, with the listed counterevidence retained.
+No model, source-project code, training or scientific experiment was run.
+
+
 ### November 2 chapter coverage of recent concepts
 
 This pass checked actual explanatory prose, not source-table presence. Its
