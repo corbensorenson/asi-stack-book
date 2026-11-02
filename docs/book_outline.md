@@ -999,6 +999,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_monitorability_disposition_2026`, `ext_shutdownmod_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_weak_to_strong_generalization_2023`, `ext_scalable_oversight_weak_llms_2024`, `ext_ai_safety_debate_2018` | Read first for weak/strong supervisor envelopes, outcome and ceiling comparisons, the original debate-game assumptions and failure analysis, protocol-specific debate/consultancy evaluation, information-access variation, and stated disanalogies or limits. Preserve each paper's task, model, baseline, equilibrium assumptions, and inference-versus-training boundary. |
 | Supporting | `verification_bandwidth` | Mine after the primary sources for verification-workspace, residual, and independent-audit limits; do not treat its conceptual framework as a local supervisor-capacity result. |
 | External lineage not yet chapter-owning | `ext_gpqa_2023` | Use only after fuller source review for hard-question benchmark pressure. Do not promote benchmark difficulty into local human-review quality or oversight claims. |
@@ -3951,6 +3952,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_memory_centric_continual_learning_2026`, `ext_mempp_organizational_memory_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_mem0_2025`, `ext_titans_2025` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 | Supporting | `vcm_public` | Use the passage-reviewed VCM lineage for semantic-page lifecycle, decision-time observability, anti-starvation, contradiction/rejection memory, invalidation, and deletion closure. Keep its synthetic control-plane result and packet-format non-result at their exact source-reported boundaries. |
 
@@ -5125,6 +5127,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_trust_vla_correctability_actionability_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Embodied capability | `ext_gemini_robotics_2025` | Use for reported vision-language-action and spatial-reasoning capability; do not infer independent safety or local transfer. |
 | Risk boundary | `ext_foundation_robotics_physical_risk_2025` | Use for physical-risk and evaluation framing; preserve source scope and non-reproduction. |
 | Formal safety comparator | `ext_control_barrier_functions_2019` | Use for forward-invariance and constraint-filtering theory under stated dynamics and set assumptions. |
@@ -5314,6 +5317,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_muffin_async_shared_memory_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Risk map | `ext_multi_agent_risks_2025` | Use for population-level failure categories and governance questions; do not infer local prevalence or solution efficacy. |
 | Cooperative foundations | `ext_cooperative_ai_foundations_2023` | Use for game-theoretic cooperation research structure and the distinction between beneficial cooperation and harmful collusion. |
 | Human influence | `ext_gradual_disempowerment_2025` | Use for aggregate economic, cultural, and political influence-loss scenarios; preserve its modeling assumptions. |
@@ -5592,6 +5596,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Author intent | `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026` | Use for the KISS, OneCell, exact-latent, frozen-core, and architecture-RSI hypotheses only; never as independent confirmation. |
 | Stack contracts | `scf`, `rmi`, `benchmaxxing` | Use for stable replacement, bounded routing, lifecycle, residual, benchmark-ratchet, and anti-Goodhart requirements. |
 | Dense/recurrent/state-space/long-convolution baselines | `ext_attention_is_all_you_need_2017`, `ext_s4_2022`, `ext_mamba_2023`, `ext_mamba2_ssd_2024`, `ext_mamba3_2026`, `ext_gated_deltanet_2024`, `ext_retnet_2023`, `ext_rwkv_2023`, `ext_hyena_hierarchy_2023`, `ext_xlstm_2024`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Position computational affordances, S4-to-Mamba lineage, memory-update rules, and exact failure pressures; no source-reported result becomes local evidence. |
@@ -6459,6 +6464,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_hybrid_reasoning_agents_2026`, `ext_recursive_language_models_2025` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024` | Read first for verification-limited reasoning, explicit search/backtracking, verifier-guided search, proposal refinement, and difficulty-dependent allocation. |
 | Supporting | `ext_deepseek_r1_2025`, `ext_s_grpo_2025` | Mine after primary sources for reasoning-RL and stopping-policy comparators; do not import their reported behavior as local evidence. |
 | Recurrent adaptive-depth comparators | `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026` | Use for shared-weight recurrence, per-position halting, complexity-controlled allocation, and the negative boundary that difficulty-aligned compute need not generalize. Do not infer adaptive reasoning or local efficiency. |
@@ -7376,6 +7382,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_agent_reliability_rater_drift_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `benchmaxxing`, `rmi` | Read first for chapter claims and mechanisms. |
 | Supporting | `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Current benchmark and infrastructure comparators | `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026` | Use for memory evaluation, dataset metadata/versioning, composable evals, adaptive security tests, self-improvement selection, architecture search, and complexity-controlled adaptive compute. Preserve contamination, judge, evaluator-capture, transfer, and local-reproduction limits. |
@@ -8549,6 +8556,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 selected frontier | `ext_test_time_memory_evolution_2026` | Read the selected primary passages in their source notes; mechanisms and counterevidence, no support promotion. |
 | Primary | `ext_autonomous_lab_materials_2023` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 | Primary | `ext_coscientist_chemistry_2023` | Use the bounded chemistry workflow to separate planning, tool invocation, physical intervention, observation, and claim authority; preserve human oversight and task-specific limits. |
 | Primary | `ext_ai_scientist_end_to_end_2026` | Use the end-to-end computational research pipeline to expose search-tree denominators, manuscript-versus-result boundaries, and automated-review dependencies; do not inherit venue appraisal as scientific truth. |

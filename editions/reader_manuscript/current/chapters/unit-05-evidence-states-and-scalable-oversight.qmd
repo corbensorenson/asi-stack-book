@@ -280,6 +280,15 @@ may narrow the task, acquire better evidence, ask a qualified reviewer, hold
 the decision, or accept an explicitly owned residual under existing authority.
 It may not turn a long transcript or majority vote into truth by default.
 
+Recent [monitorability-disposition](https://arxiv.org/abs/2610.04914v1) and
+[ShutdownMod](https://arxiv.org/abs/2610.35486v1) studies make a further distinction:
+a system can have a reporting channel without reporting the relevant failure,
+and can authenticate a stop request without complying. Their constructed
+model/harness settings do not establish universal behavior. In the proposed
+workflow, independent observation, the worker's response and the runtime's
+actual revocation of effects therefore remain separate evidence. An “I stopped”
+message is not the same observation as a stopped process.
+
 ## Independence Is a Dependency Graph
 
 Review roles are often counted as if independence were a head count. A

@@ -64,6 +64,8 @@ primary_sources:
   - "ext_platonic_representation_jepa_2026"
   - "ext_h_net_2025"
   - "ext_v_jepa_2_2025"
+  - "ext_nested_learning_hope_2025"
+  - "ext_end_to_end_ttt_long_context_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -83,10 +85,10 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-11-02 |
-| Primary source records | 58 current manifest assignments; November 2 additions have the selected passage scopes recorded in their notes, not a fresh review of every earlier source. |
+| Primary source records | 60 current manifest assignments; November 2 additions have selected primary-passage review only. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`; raw cache: `scf`, `rmi`, `benchmaxxing`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025` |
+| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025`, `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025`; raw cache: `scf`, `rmi`, `benchmaxxing` |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented, including 12 event mutations, four common-checkpoint omitted-state collisions, and six full-checkpoint mutations. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 | Formal state | The public ABI target is implemented by 23 theorem declarations covering finite transition invariants and a heterogeneous checkpoint information boundary. |
 
@@ -354,6 +356,37 @@ simpler systems match role-sensitive, counterfactual, transfer, and cost
 outcomes, explicit higher-order machinery should be narrowed or removed. If
 order-four or higher primitives repeatedly win after full rescue, the registry
 should admit them instead of defending a dogmatic bound.
+
+## Adaptive weights and multiple learning timescales {#adaptive-state-and-learning-timescales}
+
+The existing TTT and Titans comparators leave an important question: which
+parts of a running model can change, at what rate, and with what persistence?
+[Nested Learning](https://arxiv.org/abs/2512.24695v1) represents a model and its
+learning rules as coupled optimization processes with distinct context flows
+and update frequencies. Its Continuum Memory System uses blocks that update
+at different rates; Hope combines such memory with self-referential update
+mechanisms. These levels are not simply additional ordinary network layers.
+The paper's broad definition of learning includes internal adaptation, which
+is a different claim from durable improvement on future tasks. Its reported
+experiments do not prove that forgetting or open-ended learning is solved.
+
+[End-to-End Test-Time Training](https://arxiv.org/abs/2512.23675v2) makes another
+choice concrete: use sliding-window attention while adapting MLP weights to
+the context through next-token learning, with an initialization meta-learned
+through that update process. Context is partly represented in adaptive weights,
+not only retained attention entries. Its favorable long-context prefill timing
+has a stated envelope; training latency at short contexts remains a limitation,
+and decode latency is not separately benchmarked. Constant per-step state or
+latency does not make processing an entire context constant-cost.
+
+The Cognitive Kernel ABI consequently has more to identify than a base model
+name: adaptive parameters, update rule, current context, reset boundary and any
+optimizer state that affects continuation. A hypothetical restored base
+checkpoint without its permitted adaptive state can resume a different
+computation. Conversely, retaining that state across users can carry information
+across an intended isolation boundary. Qualification of the update and its
+retention belongs with the existing training, memory, privacy and persistence
+owners; these sources add mechanisms, not permission to learn from every input.
 
 ## Predictive objectives and learned granularity
 
@@ -1170,6 +1203,8 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 | `ext_quantum_ml_shadows_2024` | Metadata-first comparator: Shadows of quantum machine learning. Peer-reviewed analysis of limitations and benchmarking traps in quantum machine-learning advantage claims. It supports advantage declarations with data-loading, classical-baseline, noise, scale, and end-to-end accounting, not a claim that quantum ML is useless. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_organoid_intelligence_2023` | Metadata-first comparator: Organoid intelligence (OI): the new frontier in biocomputing and intelligence-in-a-dish. Research agenda for organoid intelligence and biohybrid computing. It motivates scientific, measurement, welfare, consent, and governance questions but does not demonstrate general intelligence, conscious experience, or practical compute superiority. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_nested_learning_hope_2025` | Passage-reviewed comparator: Nested Learning: The Illusion of Deep Learning Architectures. Represent models and learning rules as coupled optimization processes with different context flows and update frequencies. Nested Learning includes optimizer memory in its account. Continuum Memory Systems update blocks at different rates; Hope combines such memory with self-referential update mechanisms. Multiple levels are not merely extra ordinary network layers. | A multi-timescale design does not prove freedom from forgetting, unlimited retention or autonomous safe self-improvement. Existing TTT/Titans coverage supplies antecedents; no Hope implementation or local model result is added. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_end_to_end_ttt_long_context_2025` | Passage-reviewed comparator: End-to-End Test-Time Training for Long Context. Meta-learn a model initialization for next-token updates on the context supplied at inference. Uses sliding-window attention and adaptive MLP weights. The outer training objective differentiates through inner context updates; mini-batches address update efficiency and stability. This differs from updating a memory database. | Training latency remains a limitation: the reported implementation is slower than full attention at short context, despite favorable long-context prefill. Fixed per-step state/latency does not make total context processing constant cost or guarantee task retention. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Non-silicon and non-digital substrate families

@@ -12,6 +12,7 @@ primary_sources:
   - "ext_coscientist_chemistry_2023"
   - "ext_ai_co_scientist_2025"
   - "answerability_atlas_synthesis"
+  - "ext_test_time_memory_evolution_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -31,8 +32,8 @@ open_evidence_gaps:
 | Last updated | 2026-11-02 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Primary source records | 6 current manifest assignments; the Atlas addition is selected source-reported working-paper evidence, not a fresh review of all assigned sources. |
-| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_coscientist_chemistry_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_ai_co_scientist_2025`; raw cache: `aletheia` |
+| Primary source records | 7 current manifest assignments; November 2 additions have selected primary-passage review only. |
+| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_coscientist_chemistry_2023`, `ext_ai_co_scientist_2025`, `answerability_atlas_synthesis`, `ext_test_time_memory_evolution_2026`; raw cache: `aletheia` |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -129,6 +130,33 @@ independence. The record does not establish that any hypothesis is true or any
 instrument accurate. It demonstrates the custody condition that lets a later
 reader tell the difference between a result that survived a declared test and
 one selected by the pipeline that produced it.
+
+### External memory is a distinct adaptation mechanism {#test-time-memory-evolution}
+
+[Test-Time Memory Evolution](https://arxiv.org/abs/2610.32046v1) supplies a recent
+comparison for computational discovery: keep model weights fixed while changing
+the experience that conditions later proposals. TTME distills operational
+guidelines and source-case-linked strategy families from evaluated candidates.
+It retains the underlying search framework's parent-selection, archive and
+verifier while replacing weight adaptation with memory updates.
+
+This is a different intervention from either a new model checkpoint or merely
+allowing more independent samples. The paper reports favorable construction
+scores on five mathematical tasks. Its TTT comparison results come from the
+original papers, rather than fresh reruns of every arm. The reported runtime
+savings exclude candidate evaluation, although memory-related model calls are
+included. That accounting boundary matters when the verifier or simulator is
+the expensive component. Successful compilation and scoring also do not
+establish general scientific validity.
+
+For the proposed discovery workflow, distinguish improvements within the current
+search from transfer to an independently held-out problem. A hypothetical
+strategy note can carry its originating construction, verifier version, failed
+applications and later corrections without inheriting authority over a new
+scientific claim. Whether memory adaptation beats weight updates, static
+retrieval or ordinary search remains a matched, full-cost comparison in the
+target setting. This source neither reopens the closed Atlas controller line
+nor establishes an autonomous scientific-discovery result for this book.
 
 ### Atlas case: retain the positive finding and the stop {#atlas-development-and-correction}
 
@@ -472,6 +500,7 @@ These rows keep Scientific Discovery and Experimental Governance's manifest assi
 | `ext_ai_scientist_end_to_end_2026` | Passage-reviewed comparator: Towards end-to-end automation of AI research. Passage-reviewed computational-research comparator: the reported system connects ideation, literature search, code, experiments, analysis, manuscript production, and automated review. The paper reports one of three generated workshop submissions receiving a 6.33 mean score at a workshop with a 70 percent acceptance rate, while the authors judged none conference-ready and documented implementation, rigor, figure, and citation failures. | Source-reported machine-learning workflow only; paper completion, automated review, and venue scoring are not scientific truth. No system run, manuscript, hidden search tree, review, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_coscientist_chemistry_2023` | Passage-reviewed comparator: Autonomous chemical research with large language models. Passage-reviewed physical-laboratory comparator: Coscientist connects a language-model planner to web and document search, code execution, and robotic laboratory APIs across six reported chemistry task families, making proposal, tool, intervention, measurement, and adjudication boundaries concrete. | Source-reported bounded chemistry demonstrations with human oversight and task-specific assessment; no local chemistry run, independent scientist, general laboratory safety, causal discovery, transfer, or support promotion. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ai_co_scientist_2025` | Passage-reviewed comparator: Towards an AI co-scientist. Passage-bounded hypothesis-generation comparator: the proposed multi-agent system generates, reflects on, ranks, evolves, and meta-reviews hypotheses with an Elo-style process and additional inference compute, followed by source-reported expert and selected laboratory appraisal. | Preprint and provider-reported evaluation only; internal rank, expert preference, and laboratory confirmation remain separate evidence objects. No full search population, evaluator independence, experiment, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_test_time_memory_evolution_2026` | Passage-reviewed comparator: Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?. Update external lessons and strategies rather than model weights during verifier-guided mathematical search. TTME maintains operational guidelines and source-case-linked strategy families from evaluated candidates. Those memories condition later proposals while the model stays fixed; the discovery framework’s archive, parent selection and verifier are retained. | Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

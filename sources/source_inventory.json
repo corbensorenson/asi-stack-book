@@ -8865,5 +8865,233 @@
     "published": "2026-10-25",
     "updated": "2026-10-25",
     "citation_label": "Answerability Atlas Project (2026), What an Answerability Atlas Can and Cannot Do"
+  },
+  {
+    "id": "ext_memory_centric_continual_learning_2026",
+    "title": "Memory-Centric Continual Learning for AI Agents",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "durable-semantic-memory-and-knowledge-lattices"
+    ],
+    "url": "https://arxiv.org/abs/2610.29357v1",
+    "notes": "Evaluate persistent agent memory through later behavior rather than retrieval success alone. A stored or retrieved record need not improve behavior. A bundled stateful advantage does not identify which memory mechanism helped. Surveyed systems are not independently replicated here.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.29357",
+    "published": "2026-10-21",
+    "updated": "2026-10-21",
+    "citation_label": "Li et al. (2026), Memory-Centric Continual Learning",
+    "doi": "10.48550/arXiv.2610.29357",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2 (three axes), 3 (two loops), 4.1–4.2 (behavioral outcomes and controls), and the hypotheses introducing Section 4.3 scaling relations. Selected passages, not a complete survey/reference audit."
+  },
+  {
+    "id": "ext_mempp_organizational_memory_2026",
+    "title": "Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "durable-semantic-memory-and-knowledge-lattices"
+    ],
+    "url": "https://arxiv.org/abs/2610.02002v1",
+    "notes": "Whole dated documents can be a strong alternative to irreversible fact extraction at write time. Graph triples lack dates and can leak future information into as-of questions. Whole-text retention does not remove encoder truncation, reader-context limits or privacy/deletion obligations; no local utility or erasure result.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.02002",
+    "published": "2026-10-01",
+    "updated": "2026-10-01",
+    "citation_label": "Yehia et al. (2026), Mem++",
+    "doi": "10.48550/arXiv.2610.02002",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.4, 4.2–4.3, including graph temporal leakage, missing author metadata and ablation limits."
+  },
+  {
+    "id": "ext_muffin_async_shared_memory_2026",
+    "title": "Muffin - A Shared Memory Buffer for Asynchronous AI Agents",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://arxiv.org/abs/2610.31355v1",
+    "notes": "Asynchronous exchange of selected findings can be more useful than sharing complete reasoning traces. Atomic append prevents one write conflict under its assumed model; it does not resolve contradictory content, freshness, poisoning or correlated agents. Tool use, environment interaction and long-horizon execution remain future evaluation.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.31355",
+    "published": "2026-10-22",
+    "updated": "2026-10-22",
+    "citation_label": "Kuo et al. (2026), Muffin",
+    "doi": "10.48550/arXiv.2610.31355",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2 and 4.1, 4.3–4.4; inspected workflow, visibility rule, summarizer and limitation passages."
+  },
+  {
+    "id": "ext_hybrid_reasoning_agents_2026",
+    "title": "Hybrid Reasoning Agents",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2610.18861v1",
+    "notes": "Interleave continuous latent computation with text-based tool interaction in one generation process. Readable projection is not complete causal reasoning recovery, adversarial monitor reliability or confidentiality. A text-only transcript cannot reconstruct the full latent/KV state. Token savings do not by themselves measure complete execution cost.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.18861",
+    "published": "2026-10-13",
+    "updated": "2026-10-13",
+    "citation_label": "Zou et al. (2026), Hybrid Reasoning Agents",
+    "doi": "10.48550/arXiv.2610.18861",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.2, 4.1–4.2, 5.1–5.2, 6.3 and 8; selected mechanisms and auditability setup, not an independent proof or model audit."
+  },
+  {
+    "id": "ext_recursive_language_models_2025",
+    "title": "Recursive Language Models",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2512.24601v3",
+    "notes": "Treat long input as an external object that a model can inspect and recursively process with code. Subcalls can explode in cost; guardrails and natural long-context tasks remain open. Stored input does not establish complete coverage, faithful summaries or permission to execute generated code.",
+    "source_type": "preprint",
+    "arxiv_id": "2512.24601",
+    "published": "2025-12-31",
+    "updated": "2026-05-11",
+    "citation_label": "Zhang, Kraska and Khattab (2026 revision), Recursive Language Models",
+    "doi": "10.48550/arXiv.2512.24601",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Section 2 algorithms and distinctions, Section 3 task/baseline scope, Section 7 limitations. This is the May 11 v3 revision, not a new October publication."
+  },
+  {
+    "id": "ext_nested_learning_hope_2025",
+    "title": "Nested Learning: The Illusion of Deep Learning Architectures",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2512.24695v1",
+    "notes": "Represent models and learning rules as coupled optimization processes with different context flows and update frequencies. A multi-timescale design does not prove freedom from forgetting, unlimited retention or autonomous safe self-improvement. Existing TTT/Titans coverage supplies antecedents; no Hope implementation or local model result is added.",
+    "source_type": "conference_paper",
+    "arxiv_id": "2512.24695",
+    "published": "2025-12-31",
+    "updated": "2025-12-31",
+    "citation_label": "Behrouz et al. (2025), Nested Learning",
+    "doi": "10.48550/arXiv.2512.24695",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Section 3.2 definitions, Section 6 terminology, Section 7.1 CMS variants, Section 8 overview and Section 9 experiment scope. A version is reported published at NeurIPS 2025; this note pins the December arXiv text."
+  },
+  {
+    "id": "ext_end_to_end_ttt_long_context_2025",
+    "title": "End-to-End Test-Time Training for Long Context",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2512.23675v2",
+    "notes": "Meta-learn a model initialization for next-token updates on the context supplied at inference. Training latency remains a limitation: the reported implementation is slower than full attention at short context, despite favorable long-context prefill. Fixed per-step state/latency does not make total context processing constant cost or guarantee task retention.",
+    "source_type": "preprint",
+    "arxiv_id": "2512.23675",
+    "published": "2025-12-29",
+    "updated": "2025-12-31",
+    "citation_label": "Tandon et al. (2025), End-to-End Test-Time Training",
+    "doi": "10.48550/arXiv.2512.23675",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.1–2.3, 3.7, and abstract experiment envelope. Selected derivation and timing limitations; no kernel/code execution."
+  },
+  {
+    "id": "ext_trust_vla_correctability_actionability_2026",
+    "title": "When Reasoning Helps Action: Monitoring and Steering Chain-of-Thought in Vision-Language-Action Policies",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "embodied-agency-real-time-control-and-physical-safety"
+    ],
+    "url": "https://arxiv.org/abs/2610.00601v1",
+    "notes": "Improving an embodied policy’s textual reasoning and improving its resulting actions are separate empirical questions. These are particular VLA/simulator comparisons, not physical safety certification. Sensitivity to text does not establish intended causal correction; aggregate similarity is not proof of exact invariance or equivalence.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.00601",
+    "published": "2026-09-30",
+    "updated": "2026-09-30",
+    "citation_label": "Karnik et al. (2026), When Reasoning Helps Action",
+    "doi": "10.48550/arXiv.2610.00601",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Introduction, TRUST monitoring/steering description, Section V-B manipulation outcomes and reasoning-substitution protocol. Selected driving comparison scope from abstract/introduction."
+  },
+  {
+    "id": "ext_agent_reliability_rater_drift_2026",
+    "title": "Reliability of AI Agents: Rater Effects, Drift, and the Return to an Evaluation Program",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/2610.07003v1",
+    "notes": "Longitudinal agent evaluation has to separate agent changes from changes in the measurement process. No randomized evaluation-intensity intervention; sampling mix and unlogged/vendor changes remain concerns. The estimated roughly five-week uncertainty horizon is model- and deployment-specific, not a universal review deadline. Candidate fairness and hiring validity are not established by the reliability rubric.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.07003",
+    "published": "2026-10-04",
+    "updated": "2026-10-04",
+    "citation_label": "Zhang and Esposito (2026), Reliability of AI Agents",
+    "doi": "10.48550/arXiv.2610.07003",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.4, 4 measurement interpretation and Section 6.5/7 limitations. Selected deployment/estimand passages, not independent access to recordings."
+  },
+  {
+    "id": "ext_monitorability_disposition_2026",
+    "title": "Monitorability Disposition in Large Reasoning Models",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "scalable-oversight-and-adversarial-ai-control"
+    ],
+    "url": "https://arxiv.org/abs/2610.04914v1",
+    "notes": "Ability to expose reasoning differs from willingness to report a problem and remain monitored. Its call-count/warranted-case ratios can exceed 100%; they are not automatically calibrated recall. Judge labels and artificial channels limit the inference. No universal dishonesty, real human-monitor behavior or deployed monitor protection is shown.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.04914",
+    "published": "2026-10-04",
+    "updated": "2026-10-04",
+    "citation_label": "Golchin and Wetter (2026), Monitorability Disposition",
+    "doi": "10.48550/arXiv.2610.04914",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.1–2.5, 3 and 4; tool-channel construction, judge-defined warranted cases and reported severity/monitor-choice patterns."
+  },
+  {
+    "id": "ext_shutdownmod_2026",
+    "title": "ShutdownMod: Turning Any Trajectory into a Shutdown Evaluation",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "scalable-oversight-and-adversarial-ai-control"
+    ],
+    "url": "https://arxiv.org/abs/2610.35486v1",
+    "notes": "Separate recognizing an authentic interruption from actually complying with it in an ongoing task context. Different sampled positions can share an injection point. The protocol does not test preventing shutdown requests, successful external process termination or goals acquired outside context. Judge-estimated lower recognizability is not proof evaluation awareness is absent.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.35486",
+    "published": "2026-10-26",
+    "updated": "2026-10-26",
+    "citation_label": "Biyani et al. (2026), ShutdownMod",
+    "doi": "10.48550/arXiv.2610.35486",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2, 3.1, 4.3 and 5, including replay semantics, task-clustered uncertainty, signature checks and prevention limitations."
+  },
+  {
+    "id": "ext_test_time_memory_evolution_2026",
+    "title": "Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?",
+    "priority": "external_literature",
+    "layer": "recent_mechanisms_and_evaluation_boundaries",
+    "chapter_targets": [
+      "scientific-discovery-and-experimental-governance"
+    ],
+    "url": "https://arxiv.org/abs/2610.32046v1",
+    "notes": "Update external lessons and strategies rather than model weights during verifier-guided mathematical search. Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings.",
+    "source_type": "preprint",
+    "arxiv_id": "2610.32046",
+    "published": "2026-10-23",
+    "updated": "2026-10-23",
+    "citation_label": "Liu et al. (2026), Test-Time Memory Evolution",
+    "doi": "10.48550/arXiv.2610.32046",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3.1–3.4, 4.1, 4.4 and 5; Appendix C.3 memory schedule. Selected method, comparator provenance and accounting scope."
   }
 ]

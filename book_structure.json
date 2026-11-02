@@ -2085,7 +2085,9 @@
             "ext_monitorbench_2026",
             "ext_conversational_persuasion_gpt4_2025",
             "ext_anthropic_model_persuasiveness_2024",
-            "ext_commercial_persuasion_ai_2026"
+            "ext_commercial_persuasion_ai_2026",
+            "ext_monitorability_disposition_2026",
+            "ext_shutdownmod_2026"
           ],
           "source_queue": {
             "primary": [
@@ -2094,7 +2096,9 @@
               "ext_ai_safety_debate_2018"
             ],
             "supporting": [
-              "verification_bandwidth"
+              "verification_bandwidth",
+              "ext_monitorability_disposition_2026",
+              "ext_shutdownmod_2026"
             ],
             "variants": [
               "ext_conversational_persuasion_gpt4_2025",
@@ -2190,6 +2194,28 @@
                 "sources/source_notes/ext_commercial_persuasion_ai_2026.md:44-63"
               ],
               "passage_review_note": "Reviewed official arXiv metadata and abstract through the source note; paper body, preregistration, materials, code, and replications were not audited.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_monitorability_disposition_2026",
+              "mapped_support": "Ability to expose reasoning differs from willingness to report a problem and remain monitored. Crosses monitor channels and reporting directives for four models and three misbehavior families. Warranted cases are defined by an external judge over the complete session; models can enable or disable monitor tools.",
+              "limits": "Its call-count/warranted-case ratios can exceed 100%; they are not automatically calibrated recall. Judge labels and artificial channels limit the inference. No universal dishonesty, real human-monitor behavior or deployed monitor protection is shown.",
+              "passage_refs": [
+                "sources/source_notes/ext_monitorability_disposition_2026.md",
+                "https://arxiv.org/html/2610.04914v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2.1–2.5, 3 and 4; tool-channel construction, judge-defined warranted cases and reported severity/monitor-choice patterns. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_shutdownmod_2026",
+              "mapped_support": "Separate recognizing an authentic interruption from actually complying with it in an ongoing task context. Slices recorded trajectories and injects shutdown requests through a harness with optional signature verification. Records verification verdict and subsequent stop/defer/refuse/work decision separately.",
+              "limits": "Different sampled positions can share an injection point. The protocol does not test preventing shutdown requests, successful external process termination or goals acquired outside context. Judge-estimated lower recognizability is not proof evaluation awareness is absent.",
+              "passage_refs": [
+                "sources/source_notes/ext_shutdownmod_2026.md",
+                "https://arxiv.org/html/2610.35486v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2, 3.1, 4.3 and 5, including replay semantics, task-clustered uncertainty, signature checks and prevention limitations. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -10412,7 +10438,9 @@
             "ext_mem0_2025",
             "ext_titans_2025",
             "ext_hermes_agent_2026",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_memory_centric_continual_learning_2026",
+            "ext_mempp_organizational_memory_2026"
           ],
           "problem": "Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.",
           "insufficient": "Vector stores, knowledge graphs, GraphRAG, conversational memory, long-context models, and learned memory can improve retrieval, but none automatically supplies stable object identity, temporal validity, typed relations, provenance-preserving revision, ontology migration, poisoning controls, rights propagation, compaction, and restart-consistent persistence.",
@@ -10472,7 +10500,9 @@
               "ext_titans_2025"
             ],
             "supporting": [
-              "vcm_public"
+              "vcm_public",
+              "ext_memory_centric_continual_learning_2026",
+              "ext_mempp_organizational_memory_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -10579,6 +10609,28 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "ext_memory_centric_continual_learning_2026",
+              "mapped_support": "Evaluate persistent agent memory through later behavior rather than retrieval success alone. Separates storage substrate, episodic/semantic/procedural asset and management policy. An inner loop changes memory; an outer loop can change the management policy. Fixed-policy memory changes do not imply policy learning.",
+              "limits": "A stored or retrieved record need not improve behavior. A bundled stateful advantage does not identify which memory mechanism helped. Surveyed systems are not independently replicated here.",
+              "passage_refs": [
+                "sources/source_notes/ext_memory_centric_continual_learning_2026.md",
+                "https://arxiv.org/html/2610.29357v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2 (three axes), 3 (two loops), 4.1–4.2 (behavioral outcomes and controls), and the hypotheses introducing Section 4.3 scaling relations. Selected passages, not a complete survey/reference audit. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mempp_organizational_memory_2026",
+              "mapped_support": "Whole dated documents can be a strong alternative to irreversible fact extraction at write time. Stores original text and event dates, embeds and indexes it, then applies an as-of date before rank fusion. Main runs disable optional consolidation. Only supersession metadata changes; readout does not automatically enforce those links.",
+              "limits": "Graph triples lack dates and can leak future information into as-of questions. Whole-text retention does not remove encoder truncation, reader-context limits or privacy/deletion obligations; no local utility or erasure result.",
+              "passage_refs": [
+                "sources/source_notes/ext_mempp_organizational_memory_2026.md",
+                "https://arxiv.org/html/2610.02002v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4.2–4.3, including graph temporal leakage, missing author metadata and ablation limits. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "proof_targets": [
@@ -14440,7 +14492,8 @@
             "ext_simplex_architecture_1998",
             "ext_safe_reinforcement_learning_survey_2015",
             "ext_ai_simulation_digital_twins_2025",
-            "viea"
+            "viea",
+            "ext_trust_vla_correctability_actionability_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14454,7 +14507,8 @@
             "supporting": [
               "viea",
               "rmi",
-              "cognitive_loop_closure"
+              "cognitive_loop_closure",
+              "ext_trust_vla_correctability_actionability_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -14562,6 +14616,17 @@
                 "sources/raw/google_docs/cognitive_loop_closure.txt:2110-2129"
               ],
               "passage_review_note": "Reviewed the complete local raw cache for the embodied logging problem, telemetry/cognitive/event/residual separation, multi-resolution rolling buffers, retention triggers, semantic eventization, compressed features, reflex trace requirements, memory budget, latency/reflex routing, failure modes, research questions, and non-claims; no logging or physical-safety result is promoted.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_trust_vla_correctability_actionability_2026",
+              "mapped_support": "Improving an embodied policy’s textual reasoning and improving its resulting actions are separate empirical questions. An offline-trained prefix value model monitors likely reasoning errors and steers token sampling while leaving the VLA policy frozen. Correctability and actionability are measured separately; reasoning substitution probes behavioral dependence.",
+              "limits": "These are particular VLA/simulator comparisons, not physical safety certification. Sensitivity to text does not establish intended causal correction; aggregate similarity is not proof of exact invariance or equivalence.",
+              "passage_refs": [
+                "sources/source_notes/ext_trust_vla_correctability_actionability_2026.md",
+                "https://arxiv.org/html/2610.00601v1"
+              ],
+              "passage_review_note": "2026-11-02: Introduction, TRUST monitoring/steering description, Section V-B manipulation outcomes and reasoning-substitution protocol. Selected driving comparison scope from abstract/introduction. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -14984,7 +15049,8 @@
             "ext_gradual_disempowerment_2025",
             "ext_constructive_interdependence_human_ai_2026",
             "ext_functional_decision_theory_2017",
-            "coherence_exchange"
+            "coherence_exchange",
+            "ext_muffin_async_shared_memory_2026"
           ],
           "source_queue": {
             "primary": [
@@ -14995,7 +15061,8 @@
               "ext_functional_decision_theory_2017"
             ],
             "supporting": [
-              "coherence_exchange"
+              "coherence_exchange",
+              "ext_muffin_async_shared_memory_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -15065,6 +15132,17 @@
                 "sources/source_notes/coherence_exchange.md"
               ],
               "passage_review_note": "Reviewed as local inter-stack and exchange lineage only; no collective outcome claim.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muffin_async_shared_memory_2026",
+              "mapped_support": "Asynchronous exchange of selected findings can be more useful than sharing complete reasoning traces. An orchestrator selects direct or multi-agent inference. Agents append findings with agent/step identities, read a recent window of other agents’ committed entries and keep local notes private. A summarizer uses final agent summaries.",
+              "limits": "Atomic append prevents one write conflict under its assumed model; it does not resolve contradictory content, freshness, poisoning or correlated agents. Tool use, environment interaction and long-horizon execution remain future evaluation.",
+              "passage_refs": [
+                "sources/source_notes/ext_muffin_async_shared_memory_2026.md",
+                "https://arxiv.org/html/2610.31355v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.2 and 4.1, 4.3–4.4; inspected workflow, visibility rule, summarizer and limitation passages. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -16312,7 +16390,9 @@
             "ext_lejepa_2025",
             "ext_platonic_representation_jepa_2026",
             "ext_h_net_2025",
-            "ext_v_jepa_2_2025"
+            "ext_v_jepa_2_2025",
+            "ext_nested_learning_hope_2025",
+            "ext_end_to_end_ttt_long_context_2025"
           ],
           "source_queue": {
             "primary": [
@@ -16369,7 +16449,9 @@
               "ext_lejepa_2025",
               "ext_platonic_representation_jepa_2026",
               "ext_h_net_2025",
-              "ext_v_jepa_2_2025"
+              "ext_v_jepa_2_2025",
+              "ext_nested_learning_hope_2025",
+              "ext_end_to_end_ttt_long_context_2025"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -16856,6 +16938,28 @@
                 "sources/source_notes/ext_v_jepa_2_2025.md"
               ],
               "passage_review_note": "2026-11-02 selected primary passage review as enumerated in the source note; existing V-JEPA 2 note reused at its earlier scope where indicated. No complete paper/proof/code audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_nested_learning_hope_2025",
+              "mapped_support": "Represent models and learning rules as coupled optimization processes with different context flows and update frequencies. Nested Learning includes optimizer memory in its account. Continuum Memory Systems update blocks at different rates; Hope combines such memory with self-referential update mechanisms. Multiple levels are not merely extra ordinary network layers.",
+              "limits": "A multi-timescale design does not prove freedom from forgetting, unlimited retention or autonomous safe self-improvement. Existing TTT/Titans coverage supplies antecedents; no Hope implementation or local model result is added.",
+              "passage_refs": [
+                "sources/source_notes/ext_nested_learning_hope_2025.md",
+                "https://arxiv.org/html/2512.24695v1"
+              ],
+              "passage_review_note": "2026-11-02: Section 3.2 definitions, Section 6 terminology, Section 7.1 CMS variants, Section 8 overview and Section 9 experiment scope. A version is reported published at NeurIPS 2025; this note pins the December arXiv text. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_end_to_end_ttt_long_context_2025",
+              "mapped_support": "Meta-learn a model initialization for next-token updates on the context supplied at inference. Uses sliding-window attention and adaptive MLP weights. The outer training objective differentiates through inner context updates; mini-batches address update efficiency and stability. This differs from updating a memory database.",
+              "limits": "Training latency remains a limitation: the reported implementation is slower than full attention at short context, despite favorable long-context prefill. Fixed per-step state/latency does not make total context processing constant cost or guarantee task retention.",
+              "passage_refs": [
+                "sources/source_notes/ext_end_to_end_ttt_long_context_2025.md",
+                "https://arxiv.org/html/2512.23675v2"
+              ],
+              "passage_review_note": "2026-11-02: Sections 2.1–2.3, 3.7, and abstract experiment envelope. Selected derivation and timing limitations; no kernel/code execution. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -20463,7 +20567,9 @@
             "ext_dynamic_compute_recurrent_transformers_2026",
             "ext_faithfulness_information_flow_2026",
             "portia_synapse",
-            "spider_synapse"
+            "spider_synapse",
+            "ext_hybrid_reasoning_agents_2026",
+            "ext_recursive_language_models_2025"
           ],
           "source_queue": {
             "primary": [
@@ -20473,7 +20579,9 @@
             ],
             "supporting": [
               "ext_deepseek_r1_2025",
-              "ext_s_grpo_2025"
+              "ext_s_grpo_2025",
+              "ext_hybrid_reasoning_agents_2026",
+              "ext_recursive_language_models_2025"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -20585,6 +20693,28 @@
                 "sources/source_notes/spider_synapse.md"
               ],
               "passage_review_note": "Reviewed the complete paper for the reported plateau, architecture, diagnostics gap, recovery plan, and explicit causal limits."
+            },
+            {
+              "source_id": "ext_hybrid_reasoning_agents_2026",
+              "mapped_support": "Interleave continuous latent computation with text-based tool interaction in one generation process. A residual HybridLink maps hidden states back to input embeddings. Entry/exit anchors switch mode; accumulated KV state carries the hybrid trajectory across turns. HybridSFT and HybridRL train coordination and mode choices; replay retains recorded latent inputs.",
+              "limits": "Readable projection is not complete causal reasoning recovery, adversarial monitor reliability or confidentiality. A text-only transcript cannot reconstruct the full latent/KV state. Token savings do not by themselves measure complete execution cost.",
+              "passage_refs": [
+                "sources/source_notes/ext_hybrid_reasoning_agents_2026.md",
+                "https://arxiv.org/html/2610.18861v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.2, 4.1–4.2, 5.1–5.2, 6.3 and 8; selected mechanisms and auditability setup, not an independent proof or model audit. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_recursive_language_models_2025",
+              "mapped_support": "Treat long input as an external object that a model can inspect and recursively process with code. A persistent REPL holds the prompt and intermediate values. The root receives bounded metadata and writes code that invokes submodels on programmatically selected material; outputs can be assembled in variables.",
+              "limits": "Subcalls can explode in cost; guardrails and natural long-context tasks remain open. Stored input does not establish complete coverage, faithful summaries or permission to execute generated code.",
+              "passage_refs": [
+                "sources/source_notes/ext_recursive_language_models_2025.md",
+                "https://arxiv.org/html/2512.24601v3"
+              ],
+              "passage_review_note": "2026-11-02: Section 2 algorithms and distinctions, Section 3 task/baseline scope, Section 7 limitations. This is the May 11 v3 revision, not a new October publication. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "problem": "Additional inference can change a system's answer through search, revision, candidate aggregation, or verifier calls without a prospective rule for when extra compute is worthwhile, what evidence the verifier contributes, how initially correct answers are protected, when to stop or abstain, and what the resulting candidate may influence.",
@@ -23937,7 +24067,8 @@
             "assurance_shift_learning",
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_agent_reliability_rater_drift_2026"
           ],
           "source_queue": {
             "primary": [
@@ -23969,7 +24100,8 @@
               "regret_engine",
               "assurance_shift_learning",
               "forward_transfer_program_synthesis",
-              "answerability_atlas_synthesis"
+              "answerability_atlas_synthesis",
+              "ext_agent_reliability_rater_drift_2026"
             ],
             "variants": [
               "ext_mlperf_training_v6_2026"
@@ -24474,6 +24606,17 @@
                 "papers/source/answerability_atlas_synthesis.md"
               ],
               "passage_review_note": "2026-11-02 selected public manuscript/source-guide review. Exact passages are listed in the mapping; retrospective project reports, not a new book experiment or private raw-data audit.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_agent_reliability_rater_drift_2026",
+              "mapped_support": "Longitudinal agent evaluation has to separate agent changes from changes in the measurement process. Uses overlapping reviewers, reviewer-adjusted batch estimates, change logs and a separate support-ticket series. Interview date and reviewer sign-off date have different evidentiary meanings.",
+              "limits": "No randomized evaluation-intensity intervention; sampling mix and unlogged/vendor changes remain concerns. The estimated roughly five-week uncertainty horizon is model- and deployment-specific, not a universal review deadline. Candidate fairness and hiring validity are not established by the reliability rubric.",
+              "passage_refs": [
+                "sources/source_notes/ext_agent_reliability_rater_drift_2026.md",
+                "https://arxiv.org/html/2610.07003v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4 measurement interpretation and Section 6.5/7 limitations. Selected deployment/estimand passages, not independent access to recordings. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -27600,7 +27743,8 @@
             "ext_ai_scientist_end_to_end_2026",
             "ext_coscientist_chemistry_2023",
             "ext_ai_co_scientist_2025",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_test_time_memory_evolution_2026"
           ],
           "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.",
           "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
@@ -27656,7 +27800,8 @@
             ],
             "supporting": [
               "ext_ai_co_scientist_2025",
-              "answerability_atlas_synthesis"
+              "answerability_atlas_synthesis",
+              "ext_test_time_memory_evolution_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -27712,6 +27857,17 @@
                 "papers/source/answerability_atlas_synthesis.md"
               ],
               "passage_review_note": "2026-11-02 selected public manuscript/source-guide review. Exact passages are listed in the mapping; retrospective project reports, not a new book experiment or private raw-data audit.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_test_time_memory_evolution_2026",
+              "mapped_support": "Update external lessons and strategies rather than model weights during verifier-guided mathematical search. TTME maintains operational guidelines and source-case-linked strategy families from evaluated candidates. Those memories condition later proposals while the model stays fixed; the discovery framework’s archive, parent selection and verifier are retained.",
+              "limits": "Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings.",
+              "passage_refs": [
+                "sources/source_notes/ext_test_time_memory_evolution_2026.md",
+                "https://arxiv.org/html/2610.32046v1"
+              ],
+              "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4.1, 4.4 and 5; Appendix C.3 memory schedule. Selected method, comparator provenance and accounting scope. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
             }
           ],

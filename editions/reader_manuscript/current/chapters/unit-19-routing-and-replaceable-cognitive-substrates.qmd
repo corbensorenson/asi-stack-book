@@ -501,6 +501,16 @@ Cyclic memory can be useful when the workload has periodic, streaming, or
 bounded-window structure. It should not be imposed on arbitrary semantics
 because the mathematics is elegant.
 
+Adaptive state adds another replacement question.
+[Nested Learning](https://arxiv.org/abs/2512.24695v1) organizes update processes
+by their context flows and timescales; [end-to-end test-time training](https://arxiv.org/abs/2512.23675v2)
+adapts weights to the supplied context. These earlier sources complement the
+new JEPA/H-Net coverage without being new October papers. A hypothetical
+replacement that retains only the base checkpoint can lose the current adapted
+state, while copying all adapted state can cross an isolation boundary. Neither
+multi-timescale memory nor favorable prefill timing establishes solved forgetting
+or a lower complete-system cost.
+
 ## Coil and CoilRA Are Candidate Contracts
 
 Coil Attention treats cyclic position, memory, and recurrence as explicit

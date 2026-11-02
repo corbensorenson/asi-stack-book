@@ -186,6 +186,16 @@ An approximate embedding search may help discover unrecorded descendants, but
 declared lineage supplies the exact known set and exposes the remaining
 discovery gap.
 
+Two recent memory papers pressure different assumptions.
+[Mem++](https://arxiv.org/abs/2610.02002v1) retains dated documents and selects
+among them at read time; its graph variant also exposes a future-information
+leak when undated relations bypass an as-of filter.
+[Memory-Centric Continual Learning](https://arxiv.org/abs/2610.29357v1) asks whether
+experience changes later behavior under retention, adaptation and transfer
+controls. Whole records, useful retrieval and durable learning are thus three
+different achievements. This book's memory proposal does not acquire any of
+them merely by citing the papers, and retention remains bounded by rights.
+
 ## Snapshots Freeze a View, Not the World
 
 A snapshot records one context or memory state at a precise boundary. It binds

@@ -4,7 +4,7 @@ chapter_id: "governed-deliberation-and-test-time-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-11-02"
 primary_sources:
   - "verification_bandwidth"
   - "ext_tree_of_thoughts_2023"
@@ -16,6 +16,8 @@ primary_sources:
   - "ext_faithfulness_information_flow_2026"
   - "portia_synapse"
   - "spider_synapse"
+  - "ext_hybrid_reasoning_agents_2026"
+  - "ext_recursive_language_models_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -33,11 +35,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-08-02 |
-| Primary source records | `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_faithfulness_information_flow_2026` |
+| Last updated | 2026-11-02 |
+| Primary source records | 12 current manifest assignments; November 2 additions have selected primary-passage review only. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`; raw cache: `verification_bandwidth` |
+| Source loading state | source notes: `verification_bandwidth`, `ext_tree_of_thoughts_2023`, `ext_test_time_compute_scaling_2024`, `ext_deepseek_r1_2025`, `ext_s_grpo_2025`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `ext_hybrid_reasoning_agents_2026`, `ext_recursive_language_models_2025`; raw cache: `verification_bandwidth` |
 | Test state | Post-v2 and post-v2.1 comparisons preserve a bounded synthetic benefit, fifteen known harms, and an actual-model 0/60 null. The replacement proof family has eight reachable stages, 59 routes, seventeen refinement declarations, two retained countermodels, eight retired flat consequences, arbitrary-run identity/non-authority invariants, exact composition and closure, and an independent lifecycle consumer rejecting 51/51 non-accepting mutations. No beneficial actual-model or independent-evaluator result exists. |
 
 ## Drafting guardrail
@@ -273,6 +275,36 @@ but their original prompts and traces do not exist here and no new calls were
 made for them. The result rejects the claim that extra compute or a stopping
 gate was useful on this authored corpus. It preserves the narrower value of
 corruption accounting and stops at `argument` support.
+
+### Two ways to change the inference process {#recursive-context-and-hybrid-reasoning}
+
+Extra inference can change where information is processed or the medium in
+which computation proceeds. These are different choices with different failure
+surfaces.
+
+[Recursive Language Models](https://arxiv.org/abs/2512.24601v3) put the prompt and
+intermediate results in a persistent programming environment. The root model
+receives bounded metadata, writes code to inspect the input and can invoke
+submodels on programmatically selected pieces. This is an inference scaffold,
+not a new attention operator or an unlimited native context window. A document
+being stored does not mean every relevant passage was examined; recursive calls
+and verification can also consume more than the direct route. The
+[Virtual Context ABI](virtual-context-abi.qmd) owns context identity, access and
+mount semantics; this chapter owns the inference allocation and stopping choice.
+
+[Hybrid Reasoning Agents](https://arxiv.org/abs/2610.18861v1) instead interleave
+latent steps with text-based tool interaction. A learned HybridLink maps hidden
+states back into the input space; mode anchors control transitions, and KV
+state carries the hybrid trajectory across turns. The paper's nearest-token
+pseudo-text readout and selected mathematical monitoring tests provide evidence
+about those settings. They do not establish complete causal transparency,
+confidentiality or reliable detection of strategic failures.
+
+A hypothetical review harness therefore distinguishes the visible transcript
+from the state needed to resume the actual computation. Latent steps still
+consume compute; a recursive call still needs an applicable execution boundary.
+Neither source supplies a beneficial local ASI Stack deliberation result. The
+existing null result and corruption cases retain their original interpretation.
 
 ## Interfaces
 
@@ -697,6 +729,8 @@ These rows keep Governed Deliberation and Test-Time Scaling's manifest assignmen
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_faithfulness_information_flow_2026` | Passage-reviewed comparator: Faithfulness as Information Flow: Evaluating and Training Faithful Chain-of-Thought Reasoning. Provides a causal-information-flow objection to treating longer or more plausible deliberation traces as faithful, and supplies sufficiency, completeness, and necessity as separate evaluation targets. | The reported interventions do not establish that any ASI Stack deliberation route is faithful, useful, or safe, and transcript inspection alone cannot establish necessity. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hybrid_reasoning_agents_2026` | Passage-reviewed comparator: Hybrid Reasoning Agents. Interleave continuous latent computation with text-based tool interaction in one generation process. A residual HybridLink maps hidden states back to input embeddings. Entry/exit anchors switch mode; accumulated KV state carries the hybrid trajectory across turns. HybridSFT and HybridRL train coordination and mode choices; replay retains recorded latent inputs. | Readable projection is not complete causal reasoning recovery, adversarial monitor reliability or confidentiality. A text-only transcript cannot reconstruct the full latent/KV state. Token savings do not by themselves measure complete execution cost. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_recursive_language_models_2025` | Passage-reviewed comparator: Recursive Language Models. Treat long input as an external object that a model can inspect and recursively process with code. A persistent REPL holds the prompt and intermediate values. The root receives bounded metadata and writes code that invokes submodels on programmatically selected material; outputs can be assembled in variables. | Subcalls can explode in cost; guardrails and natural long-context tasks remain open. Stored input does not establish complete coverage, faithful summaries or permission to execute generated code. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched deliberation result

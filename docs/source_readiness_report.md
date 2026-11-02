@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 28
-- `source_note_available_uncached`: 432
+- `source_note_available_uncached`: 444
 
 ## Records
 
@@ -522,3 +522,15 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_platonic_representation_jepa_2026` | Proving and Improving the Platonic Representation Hypothesis with JEPAs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_h_net_2025` | Dynamic Chunking for End-to-End Hierarchical Sequence Modeling | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `answerability_atlas_synthesis` | What an Answerability Atlas Can and Cannot Do: An Audited Synthesis of Computational Design Experiments | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_memory_centric_continual_learning_2026` | Memory-Centric Continual Learning for AI Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mempp_organizational_memory_2026` | Mem++: Non-Destructive Memory for Long-Term Organizational LLM Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_muffin_async_shared_memory_2026` | Muffin - A Shared Memory Buffer for Asynchronous AI Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hybrid_reasoning_agents_2026` | Hybrid Reasoning Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_recursive_language_models_2025` | Recursive Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nested_learning_hope_2025` | Nested Learning: The Illusion of Deep Learning Architectures | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_end_to_end_ttt_long_context_2025` | End-to-End Test-Time Training for Long Context | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_trust_vla_correctability_actionability_2026` | When Reasoning Helps Action: Monitoring and Steering Chain-of-Thought in Vision-Language-Action Policies | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_agent_reliability_rater_drift_2026` | Reliability of AI Agents: Rater Effects, Drift, and the Return to an Evaluation Program | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_monitorability_disposition_2026` | Monitorability Disposition in Large Reasoning Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_shutdownmod_2026` | ShutdownMod: Turning Any Trajectory into a Shutdown Evaluation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_test_time_memory_evolution_2026` | Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -10,13 +10,30 @@ Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
 ## 2026-10-02 project-improvement implementation amendment
 
 
+A further November 2 dated literature survey adds twelve selected primary sources
+through the existing source-intake owners. Eight existing technical chapters
+and five concise reader passages represent memory-driven behavioral learning,
+whole-document retention, recursive context processing, hybrid latent/text
+inference, multi-timescale/adaptive-weight state, asynchronous findings,
+reasoning/action coupling, rater and deployment drift, voluntary monitorability,
+authenticated shutdown and memory-based discovery adaptation. Nine sources are
+September–October 2026 preprints; three earlier foundations retain their actual
+dates. Each source note records selected passages and counterevidence. The
+current totals are 519 sources/1,376 assignments, 152,147 reader words and
+4,064 atoms/4,222 reviewed candidates/64 dossiers. Core/proof definitions,
+scientific outcomes, frozen custody and support remain unchanged. This is a
+bounded literature integration, not exhaustive field coverage, independent
+reproduction or completion of the broader improvement program.
+
+
+
 The subsequent November 2 Answerability Atlas integration selects three existing
 owners: Benchmark Ratchets explains baseline completion and regime calibration;
 Resource Economics separates information from net decision value; Scientific
 Discovery retains the positive development finding, failed advance rule and
 unrun confirmation. Units 22/23 carry concise source-linked explanations. The
 exact source manuscript, PDF and claim index remain unchanged, raw research stays
-private and the tested controller line remains closed. Current totals are 507
+private and the tested controller line remains closed. At that pass the totals were 507
 sources, 1,364 assigned pairs, 60 paper-library entries and 151,719 reader words.
 P1 has 4,064 atoms/4,215 reviewed candidates/64 dossiers without a support change.
 Selected technical Human/AI views, both reader excerpts, the source paper and

@@ -3,6 +3,52 @@
 ## Current independent manuscript review
 
 
+### November 2 recent-literature representation
+
+A dated primary-source survey admitted twelve selected sources into eight
+existing technical owners, with five concise current-reader explanations.
+Nine papers were submitted September–October 2026. The earlier RLM, Nested
+Learning and end-to-end TTT sources fill missing foundations; their actual
+submission/revision dates remain explicit. Selected method, comparator and
+limitation passages were read from the pinned primary versions listed in each
+source note. This is neither an exhaustive field census nor complete paper,
+reference, code or theorem verification.
+
+| Existing owner | Added representation | Qualification retained |
+|---|---|---|
+| Durable Semantic Memory | Mem++ and Memory-Centric Continual Learning | Whole-document read-time selection, graph temporal leakage, behavioral retention/adaptation/transfer; scaling relations are hypotheses. |
+| Governed Deliberation | RLMs and Hybrid Reasoning Agents | Externalized context versus latent computation; recursive cost, full continuation state and bounded auditability. |
+| Cognitive Substrates | Nested Learning/Hope and end-to-end TTT | Different context/update frequencies and adaptive weights; neither solved forgetting nor complete cost advantage. |
+| Multi-Agent Dynamics | Muffin | Selective asynchronous sharing, dispatch-time visibility, summarizer harms and reasoning-only evaluation scope. |
+| Embodied Agency | TRUST | Correctability versus actionability; improved manipulation reasoning coexists with largely unchanged task success. |
+| Benchmark Ratchets | Production-agent rater/drift study | Comparable measurement, sign-off time, unlogged drift and operational corroboration without causal program-effect attribution. |
+| Scalable Oversight | Monitorability Disposition and ShutdownMod | Voluntary reporting versus independent observation; authentic request versus compliance versus actual enforcement. |
+| Scientific Discovery | TTME | External memory adaptation, original-paper TTT comparators, within-search versus held-out transfer, runtime excluding candidate evaluation. |
+
+Each chapter's source loading queue, manifest, crosswalk and note records the
+actual use. Current reader Units 5, 10, 14, 19 and 23 gain short explanations
+rather than a second paper catalog. The manuscript contains 152,147 visible
+words. The original reader conclusions, technical cores, proof definitions,
+scientific outcomes and support states retain their scope. Seven new P1 prose
+fragments were individually reviewed; none adds an unowned material claim.
+Other promising abstract-level leads are retained in the existing schema-bound
+backlog for method review, not declared irrelevant or fully integrated.
+
+Sixteen selected HTML pages rendered. Browser checks pass for all eight new
+technical sections in Human/AI mode, all five reader explanations, and the
+adaptive-state section at desktop, 320px and doubled-text 390px layouts.
+Screenshots were inspected; no whole-site, assistive-technology or independent
+reader qualification is inferred. Source-note, chapter/source, claim-census,
+reader, schema, publication and visual-coverage checks pass. No Docker, model
+training, scientific replay or Lean rebuild was performed.
+
+Source-note validation also exposed missing standard navigation sections in the
+Atlas source guide. Added pointers to its existing mechanism/evidence/boundary
+content and actual three chapter routes; the exact supplied paper, PDF and
+evidence index remain unchanged.
+
+
+
 ### November 2 source integration and pending-work reconciliation
 
 The Answerability Atlas Project synthesis is selectively integrated into

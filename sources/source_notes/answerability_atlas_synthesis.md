@@ -180,3 +180,38 @@ Answerability Atlas Project; no personal authorship, peer review, DOI or new
 scientific result is inferred. No external reference in the source is imported
 as separately reviewed literature. No Atlas controller is adopted or reopened.
 The book's core/support/proof outcomes remain unchanged.
+
+## Mechanisms
+
+The thesis/stage table and supplied integration guide above describe the
+capability archive, comparator selection and decision-cost mechanisms. The
+November 2 addendum records their three actual chapter integrations.
+
+## Evidence
+
+The source-reported stage table retains the reported positives, failed gates,
+uncertainty and post hoc correction. Its exact manuscript and evidence index
+remain the primary references; private raw experiments were not replayed here.
+
+## Failure Modes
+
+The boundaries above exclude independent confirmation, a universally better
+controller, uniquely identified diagnostic causation, complete cost equivalence
+and any tested ASI Stack advantage. The tested controller line remains closed.
+
+## Book Chapters Supported
+
+- `benchmark-ratchets-and-anti-goodhart-evidence`
+- `resource-economics-and-token-budgets`
+- `scientific-discovery-and-experimental-governance`
+
+## Claims To Add Or Update
+
+Maintain the three scoped cases identified in the integration addendum. Earlier
+placement suggestions remain historical; no new support transition follows.
+
+## Open Questions
+
+Underlying research remains private. Further literature or independent
+reproduction requires its own scope and authority; neither is required for
+this completed selective source integration.

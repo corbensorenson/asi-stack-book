@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "41e7e1201679425b54b70630afeb1462e73f2b5f38e09db424b19c898487bd69",
+  "book_structure_sha256": "b0a620dafbb837851c922c5d0a64981f4696541ed2b875347de023785f3dec61",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1364,
+    "source": 1376,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -1532,7 +1532,7 @@
       "order": 5,
       "title": "Evidence States and Scalable Oversight",
       "human_reader_source_file": "chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
-      "human_reader_source_sha256": "40163cbad4562e5a2b769030aee56958890bb347b699b5616014d472be3b8afd",
+      "human_reader_source_sha256": "616165cfcf09931a654cecf81ffc60ae7915ed3d7748664825de04b235ee114f",
       "public_path": "reader/chapters/unit-05-evidence-states-and-scalable-oversight.html",
       "central_question": "How can limited evaluators learn from behavior, internal signals, proofs, and delegated review without letting any one artifact stand in for truth or safety?",
       "conclusion_change": "Natural correction streams in which simpler review records produce equal calibration, challenge, and error recovery would justify a smaller transition system.",
@@ -1685,7 +1685,7 @@
           "chapter_id": "scalable-oversight-and-adversarial-ai-control",
           "title": "Scalable Oversight and Adversarial AI Control",
           "technical_source_file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
-          "technical_source_sha256": "f192114a2cf33693d7dae106de46cc3cba980ecc05b150c0558ad53c05712c43",
+          "technical_source_sha256": "8d1d3b7c30685a6af67df58e3d0d83590c5b09aa1e91dcf1b704f50e5c2ef7ec",
           "live_technical_path": "chapters/scalable-oversight-and-adversarial-ai-control.html",
           "human_reader_unit_id": "unit-05",
           "core_claim_id": "scalable-oversight-and-adversarial-ai-control.core",
@@ -1700,7 +1700,9 @@
             "ext_monitorbench_2026",
             "ext_conversational_persuasion_gpt4_2025",
             "ext_anthropic_model_persuasiveness_2024",
-            "ext_commercial_persuasion_ai_2026"
+            "ext_commercial_persuasion_ai_2026",
+            "ext_monitorability_disposition_2026",
+            "ext_shutdownmod_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_weak_to_strong_generalization_2023.md",
@@ -1710,7 +1712,9 @@
             "sources/source_notes/ext_monitorbench_2026.md",
             "sources/source_notes/ext_conversational_persuasion_gpt4_2025.md",
             "sources/source_notes/ext_anthropic_model_persuasiveness_2024.md",
-            "sources/source_notes/ext_commercial_persuasion_ai_2026.md"
+            "sources/source_notes/ext_commercial_persuasion_ai_2026.md",
+            "sources/source_notes/ext_monitorability_disposition_2026.md",
+            "sources/source_notes/ext_shutdownmod_2026.md"
           ],
           "proof_edges": [
             {
@@ -1802,7 +1806,7 @@
           "artifact_refs": [
             {
               "path": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
-              "sha256": "f192114a2cf33693d7dae106de46cc3cba980ecc05b150c0558ad53c05712c43"
+              "sha256": "8d1d3b7c30685a6af67df58e3d0d83590c5b09aa1e91dcf1b704f50e5c2ef7ec"
             }
           ],
           "publication": {
@@ -3514,7 +3518,7 @@
       "order": 10,
       "title": "Perception and Observation Trust",
       "human_reader_source_file": "chapters/unit-10-perception-and-observation-trust.qmd",
-      "human_reader_source_sha256": "82c1046849f5dc39ff7f896983d5d405f8edf104620d7127bce3d53b3bf1e7ba",
+      "human_reader_source_sha256": "f49668ef14194b9ddae9a25b6f783b71aee70b25ebeb645b02f07255d1dde4ad",
       "public_path": "reader/chapters/unit-10-perception-and-observation-trust.html",
       "central_question": "When may a system treat sensor, tool, human, or environmental reports as independent-enough evidence about actual state?",
       "conclusion_change": "Simpler fusion and control systems with equal calibration, contradiction detection, latency, and recovery would justify a thinner trust model.",
@@ -3601,7 +3605,7 @@
           "chapter_id": "embodied-agency-real-time-control-and-physical-safety",
           "title": "Embodied Agency, Real-Time Control, and Physical Safety",
           "technical_source_file": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
-          "technical_source_sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8",
+          "technical_source_sha256": "173a949c233d6263b31a46b3ae30e9037d1335084c98e225255bc3841bd10feb",
           "live_technical_path": "chapters/embodied-agency-real-time-control-and-physical-safety.html",
           "human_reader_unit_id": "unit-10",
           "core_claim_id": "embodied-agency-real-time-control-and-physical-safety.core",
@@ -3617,7 +3621,8 @@
             "ext_simplex_architecture_1998",
             "ext_safe_reinforcement_learning_survey_2015",
             "ext_ai_simulation_digital_twins_2025",
-            "viea"
+            "viea",
+            "ext_trust_vla_correctability_actionability_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/rmi.md",
@@ -3628,7 +3633,8 @@
             "sources/source_notes/ext_simplex_architecture_1998.md",
             "sources/source_notes/ext_safe_reinforcement_learning_survey_2015.md",
             "sources/source_notes/ext_ai_simulation_digital_twins_2025.md",
-            "sources/source_notes/viea.md"
+            "sources/source_notes/viea.md",
+            "sources/source_notes/ext_trust_vla_correctability_actionability_2026.md"
           ],
           "proof_edges": [
             {
@@ -3655,7 +3661,7 @@
           "artifact_refs": [
             {
               "path": "chapters/embodied-agency-real-time-control-and-physical-safety.qmd",
-              "sha256": "f7293e224153db47f153703c87d5e9010dca4c472748d9849a1ed5f448623bd8"
+              "sha256": "173a949c233d6263b31a46b3ae30e9037d1335084c98e225255bc3841bd10feb"
             },
             {
               "path": "lean/AsiStackProofs/EmbodiedPhysicalSafety.lean",
@@ -4491,7 +4497,7 @@
       "order": 14,
       "title": "Virtual Context and Durable Semantic Memory",
       "human_reader_source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
-      "human_reader_source_sha256": "5eda0a1123c7ad9a8541371a3f85f20de72a36b58747324b593e7e9b8019063a",
+      "human_reader_source_sha256": "23d0ef2261f7a38cc9be9cf1df6b8cb00f62a31330cdbb0b7e6506cc5d249a92",
       "public_path": "reader/chapters/unit-14-virtual-context-and-durable-semantic-memory.html",
       "central_question": "How should a system mount what it needs now and preserve what it may need later without treating presence, repetition, or retrieval as truth?",
       "conclusion_change": "Simpler retrieval and memory systems matching provenance, contradiction handling, forgetting, transfer, revocation, and cost would justify a thinner layer.",
@@ -4754,7 +4760,7 @@
           "chapter_id": "durable-semantic-memory-and-knowledge-lattices",
           "title": "Durable Semantic Memory and Knowledge Lattices",
           "technical_source_file": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-          "technical_source_sha256": "a194ee7915d3c1b5aeac4f3051c431ef629968fe563d66d32d46874d1f2a8eeb",
+          "technical_source_sha256": "f1f6107412fbdaa0feda5fc2ba0cb5eb980ddc4f3c51776bda1fe2a3ce181468",
           "live_technical_path": "chapters/durable-semantic-memory-and-knowledge-lattices.html",
           "human_reader_unit_id": "unit-14",
           "core_claim_id": "durable-semantic-memory-and-knowledge-lattices.core",
@@ -4771,7 +4777,9 @@
             "ext_mem0_2025",
             "ext_titans_2025",
             "ext_hermes_agent_2026",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_memory_centric_continual_learning_2026",
+            "ext_mempp_organizational_memory_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/qcsa_whitepaper.md",
@@ -4783,7 +4791,9 @@
             "sources/source_notes/ext_mem0_2025.md",
             "sources/source_notes/ext_titans_2025.md",
             "sources/source_notes/ext_hermes_agent_2026.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/ext_memory_centric_continual_learning_2026.md",
+            "sources/source_notes/ext_mempp_organizational_memory_2026.md"
           ],
           "proof_edges": [
             {
@@ -4818,7 +4828,7 @@
           "artifact_refs": [
             {
               "path": "chapters/durable-semantic-memory-and-knowledge-lattices.qmd",
-              "sha256": "a194ee7915d3c1b5aeac4f3051c431ef629968fe563d66d32d46874d1f2a8eeb"
+              "sha256": "f1f6107412fbdaa0feda5fc2ba0cb5eb980ddc4f3c51776bda1fe2a3ce181468"
             },
             {
               "path": "lean/AsiStackProofs/DurableSemanticMemoryReview.lean",
@@ -7067,7 +7077,7 @@
           "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
           "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
           "technical_source_file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-          "technical_source_sha256": "379ccdf827377712ecc9fe8bb470cd5fcdd53d9415523f186a796ec9d4ad99f7",
+          "technical_source_sha256": "1f1ea85921fa23a0cbf4f346aeb9a8b4f29146eb5d6ffd91341bf2242c84ba11",
           "live_technical_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html",
           "human_reader_unit_id": "unit-18",
           "core_claim_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
@@ -7081,7 +7091,8 @@
             "ext_gradual_disempowerment_2025",
             "ext_constructive_interdependence_human_ai_2026",
             "ext_functional_decision_theory_2017",
-            "coherence_exchange"
+            "coherence_exchange",
+            "ext_muffin_async_shared_memory_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7090,7 +7101,8 @@
             "sources/source_notes/ext_gradual_disempowerment_2025.md",
             "sources/source_notes/ext_constructive_interdependence_human_ai_2026.md",
             "sources/source_notes/ext_functional_decision_theory_2017.md",
-            "sources/source_notes/coherence_exchange.md"
+            "sources/source_notes/coherence_exchange.md",
+            "sources/source_notes/ext_muffin_async_shared_memory_2026.md"
           ],
           "proof_edges": [
             {
@@ -7123,7 +7135,7 @@
           "artifact_refs": [
             {
               "path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-              "sha256": "379ccdf827377712ecc9fe8bb470cd5fcdd53d9415523f186a796ec9d4ad99f7"
+              "sha256": "1f1ea85921fa23a0cbf4f346aeb9a8b4f29146eb5d6ffd91341bf2242c84ba11"
             },
             {
               "path": "lean/AsiStackProofs/MultiAgentDynamics.lean",
@@ -7292,7 +7304,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "cc5b925c97a4e504aa14352aff765316bbfbf7c3e1c08734ccf82ac5e2fbc3a9",
+      "human_reader_source_sha256": "231244f33e3334203123505e913881a5407bf1996838e700d679d0f0304f6eab",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7474,7 +7486,7 @@
           "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
           "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
           "technical_source_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-          "technical_source_sha256": "6605c7d8df0f74f4717592558f9f30b4e02b581004a5eff552e9d8ce0695d571",
+          "technical_source_sha256": "8c5a015ff56f24883cd0a1b962d1e656a5c92e930b773475b36539c9e517f68d",
           "live_technical_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -7539,7 +7551,9 @@
             "ext_lejepa_2025",
             "ext_platonic_representation_jepa_2026",
             "ext_h_net_2025",
-            "ext_v_jepa_2_2025"
+            "ext_v_jepa_2_2025",
+            "ext_nested_learning_hope_2025",
+            "ext_end_to_end_ttt_long_context_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7599,7 +7613,9 @@
             "sources/source_notes/ext_lejepa_2025.md",
             "sources/source_notes/ext_platonic_representation_jepa_2026.md",
             "sources/source_notes/ext_h_net_2025.md",
-            "sources/source_notes/ext_v_jepa_2_2025.md"
+            "sources/source_notes/ext_v_jepa_2_2025.md",
+            "sources/source_notes/ext_nested_learning_hope_2025.md",
+            "sources/source_notes/ext_end_to_end_ttt_long_context_2025.md"
           ],
           "proof_edges": [
             {
@@ -7638,7 +7654,7 @@
           "artifact_refs": [
             {
               "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-              "sha256": "6605c7d8df0f74f4717592558f9f30b4e02b581004a5eff552e9d8ce0695d571"
+              "sha256": "8c5a015ff56f24883cd0a1b962d1e656a5c92e930b773475b36539c9e517f68d"
             },
             {
               "path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
@@ -8890,7 +8906,7 @@
           "chapter_id": "scientific-discovery-and-experimental-governance",
           "title": "Scientific Discovery and Experimental Governance",
           "technical_source_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-          "technical_source_sha256": "966cb5b47ff6351ffccb1d897ce76eaba798892b986cf631194b5a8168cb6b45",
+          "technical_source_sha256": "8bfc59d72f78ba3caa75a5a5b72243df20ecb295f326dfce869ccb140930c9eb",
           "live_technical_path": "chapters/scientific-discovery-and-experimental-governance.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "scientific-discovery-and-experimental-governance.core",
@@ -8903,7 +8919,8 @@
             "ext_ai_scientist_end_to_end_2026",
             "ext_coscientist_chemistry_2023",
             "ext_ai_co_scientist_2025",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_test_time_memory_evolution_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/aletheia.md",
@@ -8911,7 +8928,8 @@
             "sources/source_notes/ext_ai_scientist_end_to_end_2026.md",
             "sources/source_notes/ext_coscientist_chemistry_2023.md",
             "sources/source_notes/ext_ai_co_scientist_2025.md",
-            "sources/source_notes/answerability_atlas_synthesis.md"
+            "sources/source_notes/answerability_atlas_synthesis.md",
+            "sources/source_notes/ext_test_time_memory_evolution_2026.md"
           ],
           "proof_edges": [
             {
@@ -8946,7 +8964,7 @@
           "artifact_refs": [
             {
               "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-              "sha256": "966cb5b47ff6351ffccb1d897ce76eaba798892b986cf631194b5a8168cb6b45"
+              "sha256": "8bfc59d72f78ba3caa75a5a5b72243df20ecb295f326dfce869ccb140930c9eb"
             },
             {
               "path": "lean/AsiStackProofs/ScientificExperimentReview.lean",
@@ -9184,7 +9202,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "f4744f2333f9ba1dbe5c62e6563b5154594680f08c93043cf16938a352fd57fe",
+          "technical_source_sha256": "1e06bf0c638a623e180b41865896ff1514f96944c13ca32df7ac5de70437bc69",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9241,7 +9259,8 @@
             "assurance_shift_learning",
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_agent_reliability_rater_drift_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/benchmaxxing.md",
@@ -9293,7 +9312,8 @@
             "sources/source_notes/assurance_shift_learning.md",
             "sources/source_notes/adjudicated_persistence.md",
             "sources/source_notes/forward_transfer_program_synthesis.md",
-            "sources/source_notes/answerability_atlas_synthesis.md"
+            "sources/source_notes/answerability_atlas_synthesis.md",
+            "sources/source_notes/ext_agent_reliability_rater_drift_2026.md"
           ],
           "proof_edges": [
             {
@@ -9350,7 +9370,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "f4744f2333f9ba1dbe5c62e6563b5154594680f08c93043cf16938a352fd57fe"
+              "sha256": "1e06bf0c638a623e180b41865896ff1514f96944c13ca32df7ac5de70437bc69"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -9845,7 +9865,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "ceb50262e35375c5e06fd4fc4b7c1846d826bf0c873bcd6e40fea06f5b201e3c",
+      "human_reader_source_sha256": "1809c0b8bffb8fb81e7bbce932040b27b6359083462182e0ed692a2eddd827a7",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
@@ -10373,7 +10393,7 @@
           "chapter_id": "governed-deliberation-and-test-time-scaling",
           "title": "Governed Deliberation and Test-Time Scaling",
           "technical_source_file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-          "technical_source_sha256": "181763de70b859c59c0df3b0e5735fd9c793f3c980393389f23bfa3219c2df3e",
+          "technical_source_sha256": "ca1e98db53977ed533bdeaa1d85d41c0288e6c9be1dbab884620bc7a73470f17",
           "live_technical_path": "chapters/governed-deliberation-and-test-time-scaling.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "governed-deliberation-and-test-time-scaling.core",
@@ -10390,7 +10410,9 @@
             "ext_dynamic_compute_recurrent_transformers_2026",
             "ext_faithfulness_information_flow_2026",
             "portia_synapse",
-            "spider_synapse"
+            "spider_synapse",
+            "ext_hybrid_reasoning_agents_2026",
+            "ext_recursive_language_models_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/verification_bandwidth.md",
@@ -10402,7 +10424,9 @@
             "sources/source_notes/ext_dynamic_compute_recurrent_transformers_2026.md",
             "sources/source_notes/ext_faithfulness_information_flow_2026.md",
             "sources/source_notes/portia_synapse.md",
-            "sources/source_notes/spider_synapse.md"
+            "sources/source_notes/spider_synapse.md",
+            "sources/source_notes/ext_hybrid_reasoning_agents_2026.md",
+            "sources/source_notes/ext_recursive_language_models_2025.md"
           ],
           "proof_edges": [
             {
@@ -10503,7 +10527,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-              "sha256": "181763de70b859c59c0df3b0e5735fd9c793f3c980393389f23bfa3219c2df3e"
+              "sha256": "ca1e98db53977ed533bdeaa1d85d41c0288e6c9be1dbab884620bc7a73470f17"
             }
           ],
           "publication": {

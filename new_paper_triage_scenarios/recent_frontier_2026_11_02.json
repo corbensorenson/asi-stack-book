@@ -1,0 +1,313 @@
+{
+  "scenario_id": "recent-frontier-representation-2026-11-02",
+  "scenario_scope": "Actual selected-source routing after November 2 primary survey; eight existing chapter responsibilities.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "ext_memory_centric_continual_learning_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Evaluate persistent agent memory through later behavior rather than retrieval success alone. Existing owner: durable-semantic-memory-and-knowledge-lattices.",
+      "required_before_drafting": [
+        "Sections 2 (three axes), 3 (two loops), 4.1\u20134.2 (behavioral outcomes and controls), and the hypotheses introducing Section 4.3 scaling relations. Selected passages, not a complete survey/reference audit."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "A stored or retrieved record need not improve behavior. A bundled stateful advantage does not identify which memory mechanism helped. Surveyed systems are not independently replicated here."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_mempp_organizational_memory_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "durable-semantic-memory-and-knowledge-lattices",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Whole dated documents can be a strong alternative to irreversible fact extraction at write time. Existing owner: durable-semantic-memory-and-knowledge-lattices.",
+      "required_before_drafting": [
+        "Sections 3.1\u20133.4, 4.2\u20134.3, including graph temporal leakage, missing author metadata and ablation limits."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Graph triples lack dates and can leak future information into as-of questions. Whole-text retention does not remove encoder truncation, reader-context limits or privacy/deletion obligations; no local utility or erasure result."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_muffin_async_shared_memory_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Asynchronous exchange of selected findings can be more useful than sharing complete reasoning traces. Existing owner: multi-agent-dynamics-collective-intelligence-and-systemic-risk.",
+      "required_before_drafting": [
+        "Sections 3.1\u20133.2 and 4.1, 4.3\u20134.4; inspected workflow, visibility rule, summarizer and limitation passages."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Atomic append prevents one write conflict under its assumed model; it does not resolve contradictory content, freshness, poisoning or correlated agents. Tool use, environment interaction and long-horizon execution remain future evaluation."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_hybrid_reasoning_agents_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-deliberation-and-test-time-scaling",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Interleave continuous latent computation with text-based tool interaction in one generation process. Existing owner: governed-deliberation-and-test-time-scaling.",
+      "required_before_drafting": [
+        "Sections 3.1\u20133.2, 4.1\u20134.2, 5.1\u20135.2, 6.3 and 8; selected mechanisms and auditability setup, not an independent proof or model audit."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Readable projection is not complete causal reasoning recovery, adversarial monitor reliability or confidentiality. A text-only transcript cannot reconstruct the full latent/KV state. Token savings do not by themselves measure complete execution cost."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_recursive_language_models_2025",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-deliberation-and-test-time-scaling",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Treat long input as an external object that a model can inspect and recursively process with code. Existing owner: governed-deliberation-and-test-time-scaling.",
+      "required_before_drafting": [
+        "Section 2 algorithms and distinctions, Section 3 task/baseline scope, Section 7 limitations. This is the May 11 v3 revision, not a new October publication."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Subcalls can explode in cost; guardrails and natural long-context tasks remain open. Stored input does not establish complete coverage, faithful summaries or permission to execute generated code."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_nested_learning_hope_2025",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Represent models and learning rules as coupled optimization processes with different context flows and update frequencies. Existing owner: replaceable-cognitive-substrates-beyond-transformer-monoculture.",
+      "required_before_drafting": [
+        "Section 3.2 definitions, Section 6 terminology, Section 7.1 CMS variants, Section 8 overview and Section 9 experiment scope. A version is reported published at NeurIPS 2025; this note pins the December arXiv text."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "A multi-timescale design does not prove freedom from forgetting, unlimited retention or autonomous safe self-improvement. Existing TTT/Titans coverage supplies antecedents; no Hope implementation or local model result is added."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_end_to_end_ttt_long_context_2025",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Meta-learn a model initialization for next-token updates on the context supplied at inference. Existing owner: replaceable-cognitive-substrates-beyond-transformer-monoculture.",
+      "required_before_drafting": [
+        "Sections 2.1\u20132.3, 3.7, and abstract experiment envelope. Selected derivation and timing limitations; no kernel/code execution."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Training latency remains a limitation: the reported implementation is slower than full attention at short context, despite favorable long-context prefill. Fixed per-step state/latency does not make total context processing constant cost or guarantee task retention."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_trust_vla_correctability_actionability_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "embodied-agency-real-time-control-and-physical-safety",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Improving an embodied policy\u2019s textual reasoning and improving its resulting actions are separate empirical questions. Existing owner: embodied-agency-real-time-control-and-physical-safety.",
+      "required_before_drafting": [
+        "Introduction, TRUST monitoring/steering description, Section V-B manipulation outcomes and reasoning-substitution protocol. Selected driving comparison scope from abstract/introduction."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "These are particular VLA/simulator comparisons, not physical safety certification. Sensitivity to text does not establish intended causal correction; aggregate similarity is not proof of exact invariance or equivalence."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_agent_reliability_rater_drift_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Longitudinal agent evaluation has to separate agent changes from changes in the measurement process. Existing owner: benchmark-ratchets-and-anti-goodhart-evidence.",
+      "required_before_drafting": [
+        "Sections 3.1\u20133.4, 4 measurement interpretation and Section 6.5/7 limitations. Selected deployment/estimand passages, not independent access to recordings."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "No randomized evaluation-intensity intervention; sampling mix and unlogged/vendor changes remain concerns. The estimated roughly five-week uncertainty horizon is model- and deployment-specific, not a universal review deadline. Candidate fairness and hiring validity are not established by the reliability rubric."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_monitorability_disposition_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Ability to expose reasoning differs from willingness to report a problem and remain monitored. Existing owner: scalable-oversight-and-adversarial-ai-control.",
+      "required_before_drafting": [
+        "Sections 2.1\u20132.5, 3 and 4; tool-channel construction, judge-defined warranted cases and reported severity/monitor-choice patterns."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Its call-count/warranted-case ratios can exceed 100%; they are not automatically calibrated recall. Judge labels and artificial channels limit the inference. No universal dishonesty, real human-monitor behavior or deployed monitor protection is shown."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_shutdownmod_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Separate recognizing an authentic interruption from actually complying with it in an ongoing task context. Existing owner: scalable-oversight-and-adversarial-ai-control.",
+      "required_before_drafting": [
+        "Sections 2, 3.1, 4.3 and 5, including replay semantics, task-clustered uncertainty, signature checks and prevention limitations."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Different sampled positions can share an injection point. The protocol does not test preventing shutdown requests, successful external process termination or goals acquired outside context. Judge-estimated lower recognizability is not proof evaluation awareness is absent."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    },
+    {
+      "case_id": "ext_test_time_memory_evolution_2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "scientific-discovery-and-experimental-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Update external lessons and strategies rather than model weights during verifier-guided mathematical search. Existing owner: scientific-discovery-and-experimental-governance.",
+      "required_before_drafting": [
+        "Sections 3.1\u20133.4, 4.1, 4.4 and 5; Appendix C.3 memory schedule. Selected method, comparator provenance and accounting scope."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings."
+      ],
+      "non_claims": [
+        "Source-attributed contextual representation only; no local result, architecture promotion or new chapter."
+      ]
+    }
+  ],
+  "validation_boundary": "Source-to-chapter editorial decisions only; selected review scope is recorded in twelve source notes.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "This selection is not exhaustive literature coverage or an independent scientific reproduction.",
+    "Recency alone is not an admission criterion; selected sources supply distinct mechanism or counterevidence."
+  ]
+}

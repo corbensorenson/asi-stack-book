@@ -4,15 +4,18 @@ chapter_id: "embodied-agency-real-time-control-and-physical-safety"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
-  - "cognitive_loop_closure"
   - "rmi"
+  - "cognitive_loop_closure"
   - "ext_gemini_robotics_2025"
   - "ext_foundation_robotics_physical_risk_2025"
   - "ext_control_barrier_functions_2019"
   - "ext_simplex_architecture_1998"
   - "ext_safe_reinforcement_learning_survey_2015"
+  - "ext_ai_simulation_digital_twins_2025"
+  - "viea"
+  - "ext_trust_vla_correctability_actionability_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -31,7 +34,8 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `rmi`, `cognitive_loop_closure`, `ext_gemini_robotics_2025`, `ext_foundation_robotics_physical_risk_2025`, `ext_control_barrier_functions_2019`, `ext_simplex_architecture_1998`, `ext_safe_reinforcement_learning_survey_2015`, `ext_ai_simulation_digital_twins_2025`, `viea`; raw cache: `rmi`, `cognitive_loop_closure`, `viea` |
+| Primary source records | 10 current manifest assignments; November 2 additions have selected primary-passage review only. |
+| Source loading state | source notes: `rmi`, `cognitive_loop_closure`, `ext_gemini_robotics_2025`, `ext_foundation_robotics_physical_risk_2025`, `ext_control_barrier_functions_2019`, `ext_simplex_architecture_1998`, `ext_safe_reinforcement_learning_survey_2015`, `ext_ai_simulation_digital_twins_2025`, `viea`, `ext_trust_vla_correctability_actionability_2026`; raw cache: `rmi`, `cognitive_loop_closure`, `viea` |
 | Test state | A 22-declaration finite control-lease model and independent 13-axis mutation validator pass locally; the Project Theseus closed-loop and simulation-to-low-energy-hardware campaigns remain unrun, with no plant, controller, fault, or person observed. |
 
 ## Drafting guardrail
@@ -282,6 +286,32 @@ stateDiagram-v2
     Hold --> Recover: inspection authorized
     Recover --> Deliberate: plant state verified
 ```
+
+### Correcting a reason is different from correcting an action {#reasoning-correctability-and-actionability}
+
+[When Reasoning Helps Action](https://arxiv.org/abs/2610.00601v1) distinguishes
+**correctability**, improving an unreliable reasoning trace during generation,
+from **actionability**, producing the intended behavioral change after that
+correction. Its TRUST mechanism uses an offline-trained prefix value model to
+monitor and steer reasoning tokens while the vision-language-action policy
+remains frozen.
+
+The distinction survives the reported results. Driving comparisons on a
+baseline-selected difficult AlpaSim subset improve several outcomes. In the
+manipulation study, grasp-state and action-choice reasoning become more correct
+while aggregate LIBERO-Plus task success remains largely unchanged. Some episode
+outcomes improve and others worsen. This is neither proof that reasoning never
+matters nor evidence that more accurate text is a reliable physical-safety
+interface. The particular models, simulator, selected cohort and compute-matched
+comparisons delimit the result.
+
+In the chapter's hypothetical control period, changing “the gripper holds the
+part” to “the gripper is empty” is useful only if the subsequent action responds
+appropriately to that corrected state. Text monitoring, action response, observed
+plant outcome and the independent fallback deadline remain separately
+observable. Reasoning substitution can investigate a causal link; a fluent
+explanation alone cannot establish it. Existing physical-control qualification
+and stop authority are still necessary for the proposed controller.
 
 ### Hierarchical logs without evidence amnesia
 
@@ -598,6 +628,7 @@ These rows keep Embodied Agency, Real-Time Control, and Physical Safety's manife
 | `rmi` | Passage-reviewed comparator: [Ratcheting Modular Intelligence](../papers/rmi.html). Supplies a hierarchical embodied-log design separating raw telemetry, salient events, semantic state, active skill/controller identity, and residuals so loop learning and safety review do not consume an undifferentiated sensor stream. | Conceptual architecture only; no logger, event detector, semantic encoder, raw-ring buffer, trace join, incident reconstruction, storage result, privacy result, physical controller, or hardware campaign has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `cognitive_loop_closure` | Passage-reviewed comparator: [Cognitive Loop Closure](../papers/cognitive_loop_closure.html). Supplies the detailed embodied trajectory policy: raw telemetry separated from cognitive/event/residual logs, rolling multi-resolution buffers, triggered pre/post-event retention, semantic eventization, feature compression, reflex-state custody, memory budgets, and explicit warning against loss of safety-relevant information. | Conceptual architecture only; no telemetry corpus, eventizer, feature compressor, raw-buffer policy, reflex logger, incident reconstruction, privacy evaluation, real-time controller, simulator, or hardware result has been implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ai_simulation_digital_twins_2025` | Passage-reviewed comparator: AI Simulation by Digital Twins: Systematic Survey, Reference Framework, and Mapping to a Standardized Architecture. Surveys AI-enabled simulation and digital-twin patterns relevant to plant models, telemetry synchronization, scenario testing, and sim-to-real residuals. | A digital twin is a maintained model, not the physical system; fidelity, synchronization, coverage, and transfer must be measured for each use. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_trust_vla_correctability_actionability_2026` | Passage-reviewed comparator: When Reasoning Helps Action: Monitoring and Steering Chain-of-Thought in Vision-Language-Action Policies. Improving an embodied policy’s textual reasoning and improving its resulting actions are separate empirical questions. An offline-trained prefix value model monitors likely reasoning errors and steers token sampling while leaving the VLA policy frozen. Correctability and actionability are measured separately; reasoning substitution probes behavioral dependence. | These are particular VLA/simulator comparisons, not physical safety certification. Sensitivity to text does not establish intended causal correction; aggregate similarity is not proof of exact invariance or equivalence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary
