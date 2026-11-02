@@ -1,6 +1,6 @@
 # Three Product Contracts
 
-Last updated: 2026-07-26
+Last updated: 2026-10-11
 
 **The ASI Stack** is one canonical research source tree projected into three
 different products. Treating those products as one interface made the landing
@@ -12,33 +12,37 @@ product to an audience, reader question, entry points, content layers,
 navigation and density rules, release profile, current status, review gate, and
 forbidden inference.
 
+All three products explain the same proposed research portfolio:
+governed-cognition interface contracts, public claim-state transition
+discipline, and record/reality reconciliation with residual honesty. The
+[contribution summary](three_defended_contributions.md) owns the scope; the
+[prior-art comparison](defended_contribution_prior_art_positioning.md) supplies
+competent conventional alternatives. These are composition and process
+proposals with bounded local implementation results, not three established
+discoveries. The 89 technical chapters support the portfolio; all chapter-core
+claims remain at `argument`.
+
 ## Narrative technical book
 
 The narrative product answers: what is the architecture, why does it matter,
-and how do its pieces fit together? Its generated entry is a 22-unit
-thesis-to-method route over the complete 89-chapter reference, and each
-representative chapter opens in Human view. Every
-selected chapter has three deliberately separate claim projections—a
-plain-language thesis, normative engineering rule, and bounded machine
-contract—plus one reader question, running example, strongest objection,
-failure story, evidence-changing condition, and canonical core-claim reference.
-The machine contract must carry an explicit noninheritance boundary; it cannot
-silently turn the readable thesis into stronger evidence, authority, readiness,
-or release language.
-It hides live status, test plans, proof-hook inventories, source crosswalks, and
-repeated support boilerplate.
+and how do its pieces fit together? The current entry is `/reader/`: 26
+independently authored units, with 89 routes to canonical technical owners.
+`editions/reader_manuscript/current/manifest.json` and its conclusion/claim
+crosswalk own those counts and routes. The manuscript is ready for author
+review; available HTML does not approve EPUB, PDF or audio.
 
-`products/narrative_unit_crosswalk.json` assigns every canonical chapter to
-exactly one unit. The representative chapter does not absorb the claims or
-evidence of its routed specialist owners; the crosswalk is navigation and
-coverage control. The generated narrative page makes that relationship
-reader-visible: each unit lists and directly links every specialist owner and
-states that owner's distinct responsibility, claim identity, claim label, and
-support ceiling, while sole-owner units say so explicitly.
+The technical owners retain their separate claims, sources, interfaces and
+support ceilings. Human view remains a convenience projection of technical
+prose. The 22-unit thesis-to-method route in
+`products/narrative_product_spine.json` and
+`products/narrative_unit_crosswalk.json` is historical candidate navigation,
+retained at the generated product page with a prominent current-reader link.
+Its three projections—plain-language thesis, normative rule and machine
+contract—remain bounded navigation and never absorb specialist claims.
 
-The route and Human view are convenience projections. They are not the reviewed reader release.
-A reader artifact still needs continuity, editorial, accessibility, figure,
-and format-specific review plus an edition release record.
+A reader artifact still needs its own author, continuity, accessibility,
+figure and format decisions. No external-human prepublication requirement is
+introduced by this routing correction.
 
 ## Architecture reference specification
 

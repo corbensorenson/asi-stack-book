@@ -5,8 +5,9 @@ unit_id: "unit-14"
 
 ## The Patch That Remembered Too Much
 
-The publication artifact from the previous chapter has been repaired. Its
-private filesystem path is gone, and the conclusion once again says that the
+Continue the hypothetical repair from the previous chapter. The candidate
+public page has been repaired, but has not been released. Its private
+filesystem path is gone, and the conclusion once again says that the
 bounded controller trial stopped after oscillation rather than claiming that
 the controller safely detected it. The corrected page passes its target
 checks.
@@ -35,10 +36,13 @@ The release-note worker should receive a new context transaction. That
 transaction asks for the current public trial result, its permitted evidence,
 the active release policy, and known contradictions. The resolver sees that
 the cached summary depends on a revoked raw path and an obsolete claim. It can
-exclude the summary, mount it as quarantined diagnostic material, or request a
-fresh derivation. If the summary had already become durable belief, the memory
-layer must invalidate that belief and every known consumer receipt derived
-from it.
+exclude the summary, request a fresh derivation, or mount it for diagnosis if
+that separate purpose and retention are permitted. If the summary had already
+become durable belief, the memory layer must suspend current reliance on its
+affected claims and notify known dependent consumers. Historical receipts still
+record what those consumers did; a new disposition changes eligibility for
+reuse rather than rewriting the past. Revoking source use does not, by itself,
+refute every proposition once derived from that source.
 
 This is more work than vector search. It is also narrower than a promise of
 perfect memory. The architecture does not guarantee that all useful context is
@@ -169,10 +173,11 @@ silently substitutes for the others.
 
 The stale summary in the example has a valid content identity. It is not
 corrupted bytes. Its problem is semantic and temporal: it refers to an obsolete
-claim and carries denied provenance into a public consumer. Deleting it merely
-because it is stale would also destroy useful diagnostic history. The better
-response is to preserve its identity, mark its current disposition, block
-ordinary use, and retain a governed repair path.
+claim and carries denied provenance into a public consumer. Where retention is
+permitted, preserving its identity and recording the new disposition can aid
+diagnosis while blocking ordinary use. Where retention is prohibited, diagnostic
+value does not justify keeping the payload. The repair path records only the
+permitted history and the resulting limits on reconstruction.
 
 Stable identities make descendant invalidation possible. When the privacy
 policy changes, the system can ask which cells, summaries, pages, prompts,
@@ -198,8 +203,8 @@ change, a source can be corrected, and a right can be revoked. The snapshot
 remains a historical record of what the transaction saw. Its lease and
 freshness rules determine whether it can still support action.
 
-This creates two valid operations. **Replay** reconstructs a historical view
-for diagnosis. **Refresh** resolves a new view under current state. Replaying an
+This creates two distinct operations. **Replay** reconstructs a historical view
+for an authorized diagnostic purpose, insofar as retained material permits it. **Refresh** resolves a new view under current state. Replaying an
 old snapshot does not reauthorize its contents. Refreshing does not erase the
 old basis. A governed system needs both to explain why a decision occurred and
 why the same decision should or should not occur now.
@@ -263,19 +268,35 @@ Hypothetical facts do not become actual because several simulated branches
 contain them. A denied source cannot enter the public branch through a summary
 written by an internal branch.
 
-The release-note task illustrates the rule. The diagnostic branch can preserve
-the stale summary and its raw path to explain the defect. Its output is a
-repair record whose public projection says only that restricted provenance was
-removed. The public branch consumes that approved projection, not the
-diagnostic context itself. Both branches retain lineage to the same incident
-without inheriting the same view or authority.
+The release-note task has two different repair paths. Suppose an explicit
+retention rule permits a restricted diagnostic archive. An authorized
+investigator can inspect the stale summary there, while the public branch
+receives an approved repair projection and the independently admitted current
+public claim. The archive's access does not grant publication use.
+
+Now suppose retention of the raw trace and derived private summary is also
+prohibited. Moving them into a folder called quarantine is insufficient. The
+repair removes the prohibited payload from identified stores, caches, and
+indexes, records unresolved copies, and keeps only a permitted disposition
+record. Historical replay may now be incomplete. The public draft proceeds
+only if its corrected statement has a currently admissible basis; otherwise
+it narrows the statement or holds it. It cannot fall back to the denied summary
+because that summary is convenient.
+
+Both paths can use a conventional transactional database, versioned policy,
+restricted archive where allowed, and cache invalidation. Pages and branch
+certificates earn their cost only if several consumers need additional
+cross-view identity or repair. The teaching case establishes a decision
+boundary, not a reason to build a new memory service for every writing task.
 
 Branch retirement matters too. When a search branch loses, its context should
 not remain mounted indefinitely or silently consolidate into durable belief.
 Useful negative evidence, failed hypotheses, and repair lessons can be proposed
 for memory through a separate admission transaction. Temporary prompts,
-credentials, private artifacts, and speculative assertions expire with the
-branch unless another policy explicitly preserves them.
+credentials, private artifacts, and speculative assertions lose their branch
+mount and use eligibility when it closes. That closure does not prove physical
+erasure. Storage removal, credential revocation, and any permitted retention
+need their own policies and observed outcomes.
 
 Strong isolation has costs. Copying every object is wasteful, while sharing
 immutable content with copy-on-write views can be efficient. The implementation
@@ -312,7 +333,8 @@ downstream harm.
 
 ## Durable Memory Begins With Events
 
-Temporary context ends when the lease closes. Some results deserve to survive:
+Mounted use ends when its lease closes; stored copies do not thereby vanish.
+Some results deserve to survive under an applicable retention rule:
 the corrected public claim, the active privacy policy, the relation between the
 trial and its evidence, and the fact that a stale summary was rejected. Durable
 memory admits these as versioned semantic objects and events.
@@ -320,7 +342,9 @@ memory admits these as versioned semantic objects and events.
 An event-sourced design records admission, normalization, relation creation,
 contradiction, supersession, rights change, retrieval use, correction,
 compaction, migration, deletion request, and retirement. The current view is a
-projection over that history, not an overwrite that destroys it.
+projection over that history. Events need not contain the entire source payload.
+Required deletion can remove prohibited content while preserving a minimal
+permitted disposition record and an explicit loss of replay fidelity.
 
 Events help with replay and accountability, but logs are not automatically
 truthful or complete. A missing event, forged actor, wrong timestamp, or bad
@@ -380,8 +404,9 @@ observation, or narrow the question.
 
 Supersession also needs care. A newer object does not automatically dominate an
 older one. Authority, evidence, scope, and effective time determine the
-relation. The old object remains available for historical replay while current
-consumers receive the new one.
+relation. If retention and diagnostic access permit, the old object remains
+available for historical replay while current consumers receive the new one.
+Otherwise, only the permitted history and its reconstruction limits remain.
 
 In the release-note case, the corrected claim supersedes the stale summary for
 public current use. The stale summary remains diagnostically relevant because
@@ -424,8 +449,8 @@ which residuals remain.
 
 Removing the stale summary from the active context prevents immediate reuse.
 Retiring its durable object prevents ordinary retrieval. Deleting its storage
-copies changes retention. Invalidating descendant receipts tells known
-consumers not to rely on it. None proves that every copy was found or that a
+copies changes retention. A new reliance disposition tells known consumers
+which uses are now blocked while preserving their historical receipts. None proves that every copy was found or that a
 model's learned influence disappeared.
 
 Machine unlearning belongs beside, but not inside, this lifecycle. A parameter
@@ -539,27 +564,24 @@ energy, implementation complexity, and human burden.
 The three technical owners supply substantial finite record contracts, not a
 deployed memory system.
 
-The Virtual Context ABI has six implemented public proof targets and 83 live
-Lean declarations. Its bounded surfaces include three valid and five rejecting
-admission fixtures, two valid and nine rejecting resolver routes, one
-four-project certificate with eleven rejecting mutations, a 39-theorem request
-and fault lifecycle with 73 rejected mutations, and a reachable certificate
-admission surface with 64 rejected mutations. Mixed QCSA results remain bounded
-to their synthetic workloads.
+[Virtual Context ABI](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html)
+checks authored admission, resolver, certificate, and fault-lifecycle records.
+Its rejecting controls expose selected missing fields, stale bindings, and
+invalid transitions. Mixed QCSA outcomes remain confined to their synthetic
+workloads; they do not qualify natural retrieval.
 
-Context Transactions has four implemented targets and 52 Lean declarations:
-seventeen retained finite route and countermodel results plus 35 reachable
-refinement declarations. Its executable records include three valid and six
-rejecting store cases, two valid and four rejecting sequence cases, and one
-bounded five-project restart lifecycle with ten rejecting mutations.
+[Context Transactions](https://corbensorenson.github.io/asi-stack-book/chapters/context-transactions-snapshots-mounts-and-taint.html)
+checks finite store and sequence cases and a bounded five-project restart
+lifecycle. These records distinguish coherent modeled views from incompatible
+epochs. They do not demonstrate crash durability or distributed isolation in an
+operating memory service.
 
-Durable Semantic Memory has one implemented target through a 35-declaration,
-seven-transition review. Thirty-eight admission-axis mutations receive exact
-repair or refusal dispositions. The model preserves identity, provenance,
-purpose narrowing, migration invalidation, retrieval-use receipts, replay
-composition, and open deletion-duty blocking inside authored finite records.
-Two collision pairs separate contradiction state from a thin summary and
-storage deletion from learned influence.
+[Durable Semantic Memory](https://corbensorenson.github.io/asi-stack-book/chapters/durable-semantic-memory-and-knowledge-lattices.html)
+checks a seven-transition authored model, including purpose narrowing,
+migration invalidation, retrieval-use receipts, and open deletion duties.
+Its collision pairs show why a thin summary cannot identify contradiction
+state, and why storage deletion cannot identify learned influence. The
+canonical owners retain the exact theorem, fixture, and mutation inventories.
 
 None of these results transfers support among the owners. All three cores
 remain `Design rationale` at `argument`. They do not establish source truth,
@@ -656,8 +678,10 @@ context, belief, and authority remain distinct.
 
 Pages, cells, certificates, snapshots, transactions, taint, contradiction,
 supersession, retrieval receipts, migration packets, and deletion residuals
-give failures exact locations. They allow a stale summary to remain available
-for diagnosis while preventing it from silently governing a public release.
+give recorded failures addressable locations. Where retention permits, a stale
+summary can remain available for authorized diagnosis while being excluded
+from public use. Otherwise, removal and a permitted disposition record take
+precedence over complete replay. Unknown copies remain an explicit limit.
 
 The current finite proofs and fixtures show that these boundaries can be made
 machine-checkable for authored records. They do not show that the resulting

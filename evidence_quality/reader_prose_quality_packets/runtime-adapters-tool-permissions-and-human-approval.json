@@ -1,7 +1,71 @@
 {
-  "schema_version":"asi_stack.p7_1c_reader_prose_quality_packet.v1","chapter_id":"runtime-adapters-tool-permissions-and-human-approval","chapter_file":"chapters/runtime-adapters-tool-permissions-and-human-approval.qmd","chapter_sha256":"2e0e1c5781d7e5051f8ace36168f68ebc7628aa4c51d2c14c6a9e4ddc3653c3f","chapter_role":"implementation-case","reader_spine_unit":"unit-16-runtime-and-operations","review_state":"digest_bound_editorial_pass",
-  "concrete_scene":{"heading":"Worked adapter trace: approval is valid, then the lease is revoked","actor_or_system":"A repository adapter, an approved caller, one file target, an active lease, a revocation event, an observer, and rollback state","attempted_action":"Execute one approved write, then reuse the old approval for a queued second write after revocation.","observable_outcome":"The first effect is independently observed and receipted; the stale-epoch second write is denied without mutation, and rollback restores the modeled baseline.","failed_or_tested_boundary":"The scene tests whether planning-time approval survives revocation or substitutes for effect observation; it does not.","residual_owner":"Runtime, authority, secret, observer, service, rollback, and incident owners retain all enforcement and effect residuals.","evidence_boundary":"The finite model trusts OS, sandbox, secret, service, and observer fields and proves no hardware enforcement, reviewer competence, distributed revocation, or effect-complete rollback."},
-  "worked_trace":{"heading":"Worked adapter trace: approval is valid, then the lease is revoked","state_labels":["lease_active","first_effect_observed","lease_revoked","second_effect_denied","baseline_modeled_restored"],"source_or_fixture_refs":["experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json","evidence_quality/proof_model_dossiers/runtime-adapters-tool-permissions-and-human-approval.md"],"maximum_inference":"Finite adapter ordering and refusal refine the authority model; real enforcement, effect truth, distributed revocation, and recovery remain unproven."},
-  "counterexample_or_simpler_baseline":"The approval-token baseline reuses an old receipt. The adapter path rechecks lease epoch at dispatch and observes the effect afterward.","readable_claim":"A tool adapter is the last place to stop an unauthorized effect and the first place to record what actually happened; planning-time approval is not enough.","normative_rule":"Immediately before dispatch, recheck caller identity, active lease, target, operation, permission, approval, epoch, secret handle, sandbox, and rollback pre-state. After dispatch, independently observe the effect; revocation blocks later events and rollback must name what it restored and what remains.",
-  "formal_binding":{"claim_id":"runtime-adapters-tool-permissions-and-human-approval.core","support_state":"argument","anchor":"enforce typed permissions, sandboxing, human approval"},"claim_atom_and_source_links":["runtime-adapters-tool-permissions-and-human-approval.core","talos","ladon_manhattan"],"caveat_consolidation":{"local_caveat":"The trace states once that modeled adapter behavior is not OS or service truth.","consolidated_disposition":"Approval, identity, secrets, sandboxing, effects, observation, revocation, rollback, deployment, and transfer remain distinct.","distinct_limitations_preserved":true},"bookkeeping_surface_disposition":"The six-event effect/revocation narrative stays reader-facing; full route and fixture inventories stay in formal evidence.","semantic_diff":{"unique_claims_preserved":true,"sources_preserved":true,"proof_boundaries_preserved":true,"non_claims_preserved":true,"support_state_effect":"none","release_effect":"none"},"editorial_diagnostics":{"mega_sentence_disposition":"The rule separates pre-dispatch and post-effect duties.","hedge_disposition":"The trusted-environment limit is consolidated after the trace.","table_disposition":"Permission and adapter tables remain because the mapping is operational."},"non_claims":["The trace does not establish OS or hardware enforcement.","Modeled restoration is not effect-complete rollback.","The editorial revision does not move support or release state."]
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+  "chapter_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
+  "chapter_sha256": "3bc9f829d931163cd65db979c8e3c80e5583c5793bd43f8c74581b417f6d7a21",
+  "chapter_role": "implementation-case",
+  "reader_spine_unit": "unit-16-runtime-and-operations",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked adapter trace: approval is valid, then the lease is revoked",
+    "actor_or_system": "A hypothetical caller and repository adapter, one generated-file target, serialized grant/commit gate, separate observer, and recovery owner",
+    "attempted_action": "Execute one approved write, then reuse the old approval for a queued second write after revocation.",
+    "observable_outcome": "Under the stated hypothetical ordering, one write is observed and a post-revocation queued write is denied. Restoration requires current recovery authority and an appropriate baseline; an intervening edit or unknown remote effect instead requires a hold and reconciliation.",
+    "failed_or_tested_boundary": "The scene tests whether planning-time approval survives revocation or substitutes for effect observation; it does not.",
+    "residual_owner": "Runtime, authority, secret, observer, service, rollback, and incident owners retain all enforcement and effect residuals.",
+    "evidence_boundary": "The teaching variants do not add a runtime observation. The retained finite model trusts encoded environment and observer fields; it does not establish OS/hardware enforcement, commit ordering in a deployed service, reviewer competence, distributed revocation, or open-world recovery."
+  },
+  "worked_trace": {
+    "heading": "Worked adapter trace: approval is valid, then the lease is revoked",
+    "state_labels": [
+      "lease_active",
+      "first_effect_observed",
+      "lease_revoked",
+      "second_effect_denied",
+      "baseline_modeled_restored"
+    ],
+    "source_or_fixture_refs": [
+      "experiments/runtime_adapter_effect_probe/results/2026-07-02-local.json",
+      "evidence_quality/proof_model_dossiers/runtime-adapters-tool-permissions-and-human-approval.md"
+    ],
+    "maximum_inference": "Finite adapter ordering and refusal refine the authority model; real enforcement, effect truth, distributed revocation, and recovery remain unproven."
+  },
+  "counterexample_or_simpler_baseline": "The approval-token baseline reuses an old receipt. The adapter path rechecks lease epoch at dispatch and observes the effect afterward.",
+  "readable_claim": "The proposed adapter mediates tool effects under current authority and records observed or unresolved outcomes; planning-time approval alone does not establish permission at effect commit.",
+  "normative_rule": "Before dispatch, bind the exact caller, target, operation, current grant, lease, policy-required approval, epoch, execution boundary, any required secret handle, and permitted recovery pre-state. Qualify the ordering between authority checks and effect commit; preflight alone leaves a race. After dispatch, seek independent observation within declared coverage, retaining unknown outcomes and partial effects. Recovery needs current authority, an appropriate baseline, and an account of what it restored, compensated, or left unresolved.",
+  "formal_binding": {
+    "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
+    "support_state": "argument",
+    "anchor": "enforce typed permissions, sandboxing, human approval"
+  },
+  "claim_atom_and_source_links": [
+    "runtime-adapters-tool-permissions-and-human-approval.core",
+    "talos",
+    "ladon_manhattan"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The trace states once that modeled adapter behavior is not OS or service truth.",
+    "consolidated_disposition": "Applicable existing grants remain usable. Admission, commit ordering, outcome observation, verification, restoration, compensation, incident custody, support and release retain distinct owners and evidence limits.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The six-event effect/revocation narrative stays reader-facing; full route and fixture inventories stay in formal evidence.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The rule names pre-dispatch duties separately from bounded observation, unknown outcomes and authorized recovery.",
+    "hedge_disposition": "The trusted-environment limit is consolidated after the trace.",
+    "table_disposition": "Permission and adapter tables retain their operational mappings. One readable admission/custody diagram carries the mechanism; a redundant shrunken sequence diagram was removed, while the three record distinctions remain explicit in prose."
+  },
+  "non_claims": [
+    "The trace does not establish OS or hardware enforcement.",
+    "Modeled restoration is not effect-complete rollback.",
+    "The editorial revision does not move support or release state.",
+    "The 2026-10-11 runtime editorial and diagram reconciliation is not a new source, theorem, effect, approval-service, recovery, support, or release result."
+  ]
 }

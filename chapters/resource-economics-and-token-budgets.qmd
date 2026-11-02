@@ -4,9 +4,13 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 temporal-access integration"
-last_updated: "2026-08-08"
+last_updated: "2026-11-02"
 primary_sources:
+  - "learning_compute_topology"
   - "tokenmana"
+  - "ext_eggroll_hyperscale_es_2026"
+  - "ext_openai_es_2017"
+  - "ext_mezo_2023"
   - "planforge"
   - "coherence_exchange"
   - "simulation_scaling"
@@ -47,6 +51,11 @@ primary_sources:
   - "ext_mooncake_2025"
   - "ext_cacheblend_2025"
   - "ext_azure_llm_semantic_cache_2026"
+  - "precision_contract"
+  - "assurance_shift_learning"
+  - "adjudicated_persistence"
+  - "forward_transfer_program_synthesis"
+  - "answerability_atlas_synthesis"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -64,8 +73,8 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.4 temporal-access integration |
-| Last updated | 2026-08-08 |
-| Primary source records | 41 assigned records spanning local resource and simulation lineage, serving and heterogeneous-memory comparators, current provider cache contracts, exact and modular prefix reuse, disaggregated and non-prefix KV state, semantic response caching, and benchmark context |
+| Last updated | 2026-11-02 |
+| Primary source records | 50 current manifest assignments; the Atlas addition is selected source-reported working-paper evidence, not a fresh review of all assigned sources. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `tokenmana`, `planforge`; supporting: the local resource, simulation, routing, residual, and relational lineage; external comparators: verification, memory, serving, recurrent compute, training benchmarks, heterogeneous inference memory, exact-prefix and prompt-module caches, disaggregated and non-prefix KV state, current provider contracts, and semantic response caching |
@@ -102,11 +111,37 @@ The budget should reveal tradeoffs before they become hidden policy: which laten
 
 ## Problem
 
+Suppose a repository change takes fewer model calls after a routing update,
+but now needs an extra hour of human repair. The token dashboard improves;
+the work does not. Suppose instead that a more expensive route completes the
+change correctly and leaves a reviewer enough time to inspect it. Choosing
+between them requires a definition of useful completion and a bill that follows
+the work through verification, repair, and recovery. These are illustrative
+decisions, not measurements from a deployment.
+
 ASI architecture consumes scarce resources: tokens, context, verifier time, model calls, tool time, storage, latency, human attention, review capacity, and risk budget. If those resources are implicit, the system will overspend expensive cognition on low-value tasks, cut verification when it is most needed, and overload at synchronized demand spikes.
 
 Resource economics is not an accounting appendix. It is a control layer. Planning needs budgets. Routing needs costed specialists. Evidence needs verification tax. Governance needs to know when cost pressure is trying to bypass protected gates.
 
 The central question is not "how do we spend less?" It is "which costs are safe to reduce, which costs are evidence obligations, and which costs are protected governance overhead?" That distinction keeps efficiency work from becoming permission to cut the very checks that make capability usable.
+
+### The short argument and the deeper reference
+
+Read the [worked cost comparison](#worked-cost-comparison-the-cheapest-route-is-not-the-economical-route)
+first: eligibility precedes price. The [mechanism](#mechanism) then explains
+how a budget becomes an allocation decision. Use the
+[I/O discussion](#the-io-roofline-and-the-price-of-virtual-vram) when memory or
+storage is the proposed saving, and [cache economics](#cache-hit-economics-and-honest-inference-pricing)
+when reuse is the proposed saving. The [minimum implementation](#minimum-viable-implementation)
+separates existing finite accounting artifacts from a deployed allocator;
+the dated result sections retain the exact scope of each experiment.
+
+This owner decides what work can be afforded within an already defined
+task and authority boundary. [Routing](routing-heads-and-specialist-cores.qmd)
+selects among available capabilities; resource accounting must include their
+fallback and review burden. A budget cannot make a route capable or authorize
+an effect. Start with the decision that needs a bill, then consult the deeper
+reference for the costs that decision would otherwise omit.
 
 ## Why existing approaches are insufficient
 
@@ -115,6 +150,24 @@ Ignoring resource economics makes high-quality verification unaffordable and enc
 TokenMana contributes the regenerative-capacity idea: bounded capacity accumulates continuously instead of appearing in synchronized cliffs. PlanForge contributes tier-aware scheduling: tasks should be assigned to the minimum adequate capability with fallback and replanning. Simulation Scaling contributes the transfer warning: synthetic or simulated results mean only what their scope, fidelity, resource bill, omissions, and transfer decision allow. PagedAttention/vLLM contributes a serving-layer warning: KV-cache memory, batching, and aggregate throughput are real resource variables, but they are not the same as verified output quality. Together they imply that budgets should be typed, risk-aware, fidelity-aware, and tied to evidence.
 
 Budget records should therefore include the cost of not acting, too. Deferral, rejection, escalation, and scope reduction are not failures if they preserve higher-value capacity or prevent unverifiable high-risk work. The ledger should make those choices visible instead of rewarding only dispatch.
+
+### When ordinary budgeting is enough
+
+A fair comparator is a conventional scheduler with per-task budgets, queue
+limits, quality checks, retry accounting, and human escalation. It need not
+use this book's terminology. For a predictable workload under one operator,
+that design may expose every material cost with less administration. The
+proposed allocation lease earns its place only when a decision crosses owners
+or time horizons that the ordinary bill fails to preserve: deferred review,
+shared verification capacity, displaced repair, or recovery after apparent
+completion.
+
+Compare both designs on the same accepted work and include the effort needed
+to maintain their accounting. If the conventional scheduler preserves the
+same protected obligations and useful outcomes at lower total cost, retain
+it. A richer record is justified by a consequential omitted cost, not by its
+number of fields. The local synthetic selector below illustrates eligibility;
+it does not establish superiority over that competent alternative.
 
 ### Worked cost comparison: the cheapest route is not the economical route
 
@@ -256,6 +309,32 @@ A budget record is not a quota override. It is the policy surface that decides w
 The budget state should therefore be an adjudication state, not just a number. A task can be `proposed`, `priced`, `underfunded`, `protected_overhead_required`, `dispatchable`, `escalated`, `deferred`, `scope_reduced`, `rejected`, or `residualized`. Those states keep verification, security, approval, replay, and human-review costs visible when local optimization pressure wants to compress them into zero.
 
 A Resource Budget Record attaches those constraints to a task, route, plan node, benchmark run, or review process. It records value, risk, capacity, cost, verification tax, serving pressure, protected gates, budget decision, escalation rule, residuals, and evidence references.
+
+### Atlas case: useful information must repay its decision cost {#atlas-information-cost}
+
+An experiment can reveal a real interaction and still be a poor purchase. In
+the [Answerability Atlas Project synthesis](../papers/answerability_atlas_synthesis.html),
+a tested priority-routing controller spent more of a fixed synthetic budget on
+probes while its matched no-diagnosis arm built more candidates. At the highest
+coupling level, the reported means were roughly 4.08 probes and 14.92 builds
+versus 0.086 probes and 31.18 builds. Many probes exposed real contrasts; the
+complete routing layer nevertheless lost the final shortlist comparison.
+
+This supports a bounded decision-value lesson, not a complete causal account
+of the loss. Routing also changed replications, purchases, posterior histories
+and proposals. Those stipulated action units do not equal controller CPU time
+or joules. Information quality, experiment-selection quality and realized
+useful output must be evaluated separately, with the foregone alternative use
+of the budget visible.
+
+The paper's CPU pilots expose a second boundary: answer-component and
+instrumented-RPC rankings disagreed in five of eight compilation comparisons.
+Serialization, hashing and verification were inside one timing boundary and
+outside the other; measurements came from one shared desktop. That is a
+source-reported accounting example, not a hardware-independent speedup or a
+unique attribution of overhead. The existing complete-bill contract keeps
+those quantities separate. The [benchmark case](benchmark-ratchets-and-anti-goodhart-evidence.qmd#atlas-baseline-correction)
+explains how comparator economics also changed the source's final decision.
 
 ### Price reuse over its break-even horizon
 
@@ -928,7 +1007,7 @@ system.
 
 Resource choices move through the Resource Budget Record and, when synthetic or simulated evidence is used, the Simulation Contract Record.
 
-The twelve-owner boundary is explicit: Intent and Planning provide value, scope, deadlines, dependencies, and acceptable reduction; the Resource Budget Record owns units, capacity, floors, estimates, decision, actuals, variance, and residuals; Routing provides eligible routes and consumes the allocation decision; Runtime and Serving report queue-to-recovery receipts; Verification owns checks and verifier capacity; Security, Rights, and Authority own non-waivable floors; Labor and Human review own reviewer capacity and conditions; the Simulation Contract Record owns fidelity and transfer; Evidence and Claim Ledgers keep proxy, useful, safety, fairness, economic, deployment, and SOTA states separate; Artifact Graph binds all receipts and descendants; Readiness and Incident Response own qualification, expiry, rollback, and reopening; and Release consumes only claims whose exact use and ceiling remain valid.
+The twelve-owner boundary is explicit: Intent and Planning provide value, scope, requested resources, deadlines, dependencies, and acceptable reduction; Resource Economics owns allocation decisions and leases, while the Resource Budget Record carries units, capacity, protected floors, estimates, actuals, variance, and residuals; Routing provides eligible routes and consumes the allocation decision; Runtime and Serving report queue-to-recovery receipts; Verification owns checks and verifier capacity; Security, Rights, and Authority own non-waivable floors; Labor and Human review own reviewer capacity and conditions; the Simulation Contract Record owns fidelity and transfer; Evidence and Claim Ledgers keep proxy, useful, safety, fairness, economic, deployment, and SOTA states separate; Artifact Graph binds all receipts and descendants; Readiness and Incident Response own qualification, expiry, rollback, and reopening; and Release consumes only claims whose exact use and ceiling remain valid.
 
 Minimum fields:
 
@@ -974,7 +1053,10 @@ Simulation-contract companion fields:
 - `residual_risks`
 - `non_claims`
 
-Planning allocates budgets and schedules work. Routing chooses costed specialists. Runtime adapters record actual spend. Evidence compares cost and quality. Serving infrastructure reports memory and throughput costs without converting them into quality claims. Simulation records preserve fidelity limits and claim boundaries before synthetic results enter the evidence ledger. Governance protects gates that budget pressure is not allowed to override. Benchmark chapters use the same record pair to avoid Goodharting cheap metrics or laundering convenient synthetic environments.
+Planning requests resources and schedules work within admitted allocations.
+Resource Economics owns allocation decisions; a request or a budget record
+cannot issue its own lease. Routing chooses costed specialists. Runtime
+adapters record actual spend. Evidence compares cost and quality. Serving infrastructure reports memory and throughput costs without converting them into quality claims. Simulation records preserve fidelity limits and claim boundaries before synthetic results enter the evidence ledger. Governance protects gates that budget pressure is not allowed to override. Benchmark chapters use the same record pair to avoid Goodharting cheap metrics or laundering convenient synthetic environments.
 
 Self-improvement transitions also consume this interface. A proposed improvement should say whether it saves tokens, verifier time, human review, memory, or latency, and whether those savings preserve quality and protected gates. Cost savings without a support boundary are just a pressure to overclaim.
 
@@ -1159,6 +1241,7 @@ gain erase lifecycle cost.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `answerability_atlas_synthesis` | [Answerability Atlas Project (2026)](../papers/answerability_atlas_synthesis.html) | Source-reported contrast between informative probes and final decision value, plus timing-boundary ranking reversals. Sections 2.1, 3.2 and 5.2; stipulated action budgets and one-machine CPU pilots remain distinct. Net routing loss does not uniquely identify probe expenditure as its cause. |
 | `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | Qualification-before-cost optimization, generalized route cost, Useful Reflex Efficiency as a non-authoritative synthesis, route regret, displaced work, and joint usefulness/safety/cost accounting. | source note available |
 | `tokenmana` | TokenMana | resource_economics | Regenerative capacity mechanisms for load-stable token pricing. | source note available; local raw cache available |
 | `planforge` | PlanForge | planning_control | Planning substrate. Goal-to-execution compilation, hierarchical decomposition, DAG planning, scheduling, intelligence arbitrage. | source note available; local raw cache available |

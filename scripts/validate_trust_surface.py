@@ -294,12 +294,20 @@ def main() -> None:
     normalized_index = re.sub(r"\s+", " ", index)
     for needle in (
         f"canonical current **{chapters}-chapter** book",
-        f"currently derives all {chapters} chapters",
         f"contain all {chapters} manifest chapters",
         f"{len(EXPECTED_NON_CORE)} narrow non-core evidence transitions accepted",
     ):
         if needle not in normalized_index:
             errors.append(f"index.qmd missing current reader/publication truth: {needle}")
+
+    # Independent-reader coverage comes from its owner, not the superseded
+    # generated all-chapter manuscript's descriptive sentence.
+    current_reader = read_json(ROOT / "editions/reader_manuscript/current/manifest.json")
+    current_units = current_reader.get("unit_count")
+    if current_reader.get("owner_route_count") != chapters:
+        errors.append("current Human Reader route denominator does not cover the technical manifest")
+    if "reader/index.html" not in index or not re.search(rf"\b{current_units}-unit\b", index):
+        errors.append("homepage narrative entry does not identify the current Human Reader and route")
 
     obsolete_count_pattern = re.compile(
         r"\b(?:44|54|55|59|61|66|76|80)[- ]chapter(?:s)?\b",
@@ -435,8 +443,8 @@ def main() -> None:
             if "evidence_quality/current_chapter_role_map.json" not in surface:
                 errors.append(f"{surface_name} lacks the current role-map authority")
 
-    if f"other {chapters - narrative_chapters} chapters remain visible" not in product_artifacts_doc:
-        errors.append("docs/product_projection_artifacts.md has stale narrative remainder")
+    if "historical" not in product_artifacts_doc.lower() or "current/manifest.json" not in product_artifacts_doc:
+        errors.append("product-projection documentation must distinguish historical candidate selection from the current reader owner")
 
     if not isinstance(product_contracts, dict):
         errors.append("products/product_contracts.json must contain an object")

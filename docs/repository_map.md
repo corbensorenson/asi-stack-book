@@ -23,7 +23,8 @@ Earlier roadmaps are immutable execution history, not competing current plans. E
 | Sources and citations | `sources/source_inventory.json`, `sources/source_notes/`, `research_backlog_records/`, `new_paper_triage_scenarios/`, `citations/` | Track public-safe metadata, reviewed synthesis, and schema-bound source-intake decisions; keep raw/private exports ignored. |
 | Public author-paper and synthesis library | `papers/paper_library.json`, `papers/index.qmd`, `papers/*.qmd`, `papers/source/`, `papers/references/`, `schemas/paper_library.schema.json` | The manifest selects exact Corben-supplied paper, architecture-source, and explicitly labeled derived-synthesis bytes for public reading while preserving manuscript-level authorship and collaborator credits. Tracked source copies preserve digest identity; generated QMD pages provide HTML presentation, chapter routes, and evidence/rights boundaries. `derived_book_synthesis` records are navigation and reading products, never independent corroboration of their book or manuscript inputs. Adding a paper requires explicit publication authority, a receipt or exact manifest identity, a source note, and a deterministic reader route. |
 | Governed evidence | `evidence_quality/`, `evidence_transitions/`, `claim_decisions/`, `experiments/`, `proofs/`, `release_records/`, `roadmap_records/` | Preserve exact lineage when the bytes are part of an evidence, governance, or release contract. |
-| Implementation | `scripts/`, `schemas/`, `lean/`, `tests/`, `protocols/` | Track reusable code, fixtures, schemas, and formal source. |
+| Advisory project planning | `docs/project_improvements.md` | Maintained improvement proposal consumed by Corben and maintainers when selecting governance and implementation decisions. It is advisory, not a second active roadmap, evidence transition, release gate, or external-action authorization. Adopted work enters existing canonical owners; transient review diagnostics remain ignored. |
+| Implementation | `scripts/`, `schemas/`, `lean/`, `tests/`, `protocols/`, `ci/`, `.github/actions/` | Track reusable code, fixtures, schemas, formal source, shared CI runtime setup, and locked browser dependencies. Record validators consume `schema_validation.py`; historical validators consume `repository_custody.py`; the registry runner consumes `validation_runtime.py`; Pages consumes the exact-main deployment selector. Regression tests run in each CI tier. |
 | Governed visual edition | `visual_edition/`, `skills/asi-stack-manim-videos/`, `schemas/manim_*`, `scripts/*manim*` | Track the repository-local audiovisual authoring standard; machine-auditable beat, experience-review, and generation-2 ledger contracts; Manim scene source, storyboards, narration, reviewed captions, descriptive transcripts, thumbnails, manifests, the canonical YouTube channel contract, exact generation-N supersession plans, and immutable render/platform receipts. `visual_edition/manim_v2_production_ledger.json` owns the current 84-target remediation state and preserves the generation-one predecessors; `visual_edition/youtube_ledger.json` owns platform identity after acceptance. Keep animatics, final video, narration audio, review frames, and Manim caches in ignored `build/`; YouTube owns published binaries. |
 | Generated local output | `build/`, `_site/`, `.quarto/`, `lean/.lake/`, `site_libs/` | Ignored and non-authoritative; delete after the active review no longer needs it. |
 | Private/local intake | `sources/inbox/`, `sources/raw/`, `sources/cache/`, `_archive/local_context/` | Ignored except explicit policy or readiness manifests. |
@@ -47,7 +48,8 @@ Prefer targeted checks during drafting. Run the full HTML render when manuscript
 
 | Change | Owner and action |
 |---|---|
-| Add, move, merge, or remove a chapter | Edit `book_structure.json`, run `python3 scripts/sync_scaffold.py`, then repair affected handoffs. |
+| Propose a new chapter | Use `scripts/add_chapter.py` for non-admitted intent; author and validate a complete isolated candidate with `scripts/prepare_chapter_admission.py`. Explicit `--install` runs the full deep gate and a manifest-last transaction; `scripts/recover_chapter_admission.py --rollback` restores an interrupted installation after custody checks. A real valid birth replay remains open under D02. |
+| Move, merge, or remove an existing chapter | Edit `book_structure.json`, run `python3 scripts/sync_scaffold.py`, then repair affected handoffs. |
 | Change proof scope | Edit the Lean target table in `docs/book_outline.md`, then run `python3 scripts/sync_proof_manifest.py`. |
 | Add a source | Update `sources/source_inventory.json`; add a source note only after reviewing the source; regenerate `docs/chapter_external_grounding_status.md` when chapter coverage changes. |
 | Publish or update an author paper | Update `papers/paper_library.json`, the Corben corpus closure and receipt when needed, then run `python3 scripts/sync_paper_library.py` followed by `python3 scripts/sync_scaffold.py`. The exact source copy and HTML projection must remain digest-bound; publication does not promote evidence. |
@@ -55,8 +57,9 @@ Prefer targeted checks during drafting. Run the full HTML render when manuscript
 | Audit defended-contribution prior art | Review `docs/defended_contribution_prior_art_positioning.md`, then run `scripts/validate_defended_contribution_prior_art.py`. Positioning is not proof of novelty. |
 | Audit evidence-laundering defenses | Review `docs/evidence_laundering_prevention_case_studies.md`, then run `scripts/validate_evidence_laundering_case_studies.py`. Passing preserves case-study boundaries; it does not promote a claim. |
 | Audit historical chapter consolidation | Use `docs/chapter_consolidation_sequence.md` and `docs/chapter_consolidation_url_history_policy.md` as public entrypoints; run `scripts/validate_chapter_consolidation_sequence.py` for the complete retained history. |
-| Review or execute current publication consolidation | Use the `P7.1-EM` section of `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` and `editorial_product_migration` in `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`; preserve the 87 stable technical identities until a gated semantic merge executes. |
-| Write the independent human-reader edition | Use `docs/human_reader_26_unit_outline.md` as the canonical 26-unit writing specification and `docs/book_outline.md` as the 87-owner technical-reference outline. Preserve `products/narrative_product_spine.json` as the historical 22-unit candidate until the 26-unit manuscript passes its cutover gate. |
+| Review or execute current publication consolidation | Use the `P7.1-EM` section of `docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md` and `editorial_product_migration` in `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`; preserve the current manifest’s stable technical identities until a gated semantic merge executes. |
+| Write the independent human-reader edition | Use `docs/human_reader_26_unit_outline.md` as the canonical 26-unit writing specification and `docs/book_outline.md` as the technical-reference outline. The current 26-unit manuscript and owner crosswalk live under `editions/reader_manuscript/current/` and publish at `/reader/`; `products/narrative_product_spine.json` remains historical 22-unit candidate custody after EM4 cutover. |
+| Maintain reader paths | `scripts/build_human_reader_current.py` derives `editions/reader_manuscript/current/generated/reading-routes.qmd` from canonical owners and the existing unit routes. The quickstart consumes it; its lifecycle is a generated current projection, rebuilt with reader derivatives and checked by the existing reader validator. Edit route intent in the builder, not generated links. It introduces no second outline, evidence owner, or publication receipt. |
 | Audit chapter-template inheritance | Use `docs/p7_1a_w3_inheritance_guard.md` and `evidence_quality/p7_1a_w3_inheritance_guard.json`; rebuild with `scripts/build_p7_1a_w3_inheritance_guard.py` and validate the current prose plus copied/distinct fixtures with `scripts/validate_p7_1a_w3_inheritance_guard.py`. |
 | Audit Round 20 chapter substance and atom custody | Use `docs/round_20_depth_and_substance_reconciliation_2026_07_27.md` as the reader decision, `evidence_quality/chapter_substance_contract.json` as the regenerated current-book editorial contract, and `evidence_quality/round20_four_chapter_claim_atom_addendum.json` as the append-only custody packet. Rebuild and validate them with the matching `build_*` and `validate_*` scripts. The substance contract is refreshed after manifest, chapter, or atom-source changes; the atom addendum is immutable evidence-history once superseded. Passing either does not promote support. |
 | Inspect or run the Phase 5 harness set | Use `experiments/phase5_harness_registry.json` and `docs/test_harness_status_ledger.md` as the canonical registry and public summary; check them with `scripts/validate_phase5_harness_registry.py` and execute them through `scripts/run_phase5_harnesses.py`. |
@@ -66,9 +69,36 @@ Prefer targeted checks during drafting. Run the full HTML render when manuscript
 | Revise human prose | Edit the chapter's human path or governed reader overlay while preserving evidence boundaries. |
 | Build or update a chapter visual abstract | Follow `skills/asi-stack-manim-videos/SKILL.md`; place generation-2 source under `visual_edition/chapters/<chapter-id>/generation-2/`; keep animatics and review frames under ignored `build/visual_edition/`; update and validate `visual_edition/manim_v2_production_ledger.json`; and do not promote a valid render past animatic, picture-and-sound lock, release candidate, independent review, technical, claim-fidelity, and acceptance gates. After acceptance, regenerate the publication ledger and use `scripts/prepare_youtube_supersession.py`, `scripts/record_youtube_supersession_receipt.py`, and `scripts/reconcile_youtube_supersession_receipt.py`. Each replacement requires its own exact plan-digest authority, keeps immutable generation receipts, makes the predecessor unlisted and points it to the successor, removes only its canonical playlist item, and never deletes either generation automatically. A video becomes current in Quarto only after the reconciled current YouTube identity exists. |
 | Prepare a major release | Follow `docs/major_version_release_runbook.md` only after the roadmap opens that gate. |
-| Validate ordinary work | Run targeted validators and `python3 scripts/validate_book.py`. For a complete public site, render the 85-chapter book with `quarto render --to html`, then render the unnumbered sibling paper library with `quarto render papers --to html`. |
+| Validate ordinary work | Run targeted validators and `python3 scripts/validate_book.py`. For a complete public site, render the manifest-defined technical book with `quarto render --to html`, then render the unnumbered sibling paper library with `quarto render papers --to html`. |
 
 ## Non-claims
+
+`scripts/book.py`, `scripts/validation_projection_plan.py` and
+`scripts/projection_files.py` are reusable authoring/validation mechanisms.
+`scripts/prepare_chapter_admission.py` prepares an isolated, non-admitted
+candidate consumed by the existing registered birth checks and maintainer
+review. Its explicit installation mode uses `scripts/canonical_admission_transaction.py`
+and the cooperating directory lease in `scripts/admission_guard.py`; interrupted
+installation is inspected/restored through `scripts/recover_chapter_admission.py`.
+Its durable regressions live in `tests/test_chapter_admission_staging.py`,
+`tests/test_chapter_proposals.py` and `tests/test_canonical_admission_transaction.py`,
+executed by the shared CI runtime. Synthetic successful gates establish
+mechanism controls, not a real semantically valid new chapter.
+Proposals, candidate patches, copied workspaces and interrupted receipts are
+ignored diagnostics under `build/`; they do not become another admission owner.
+`scripts/install_lean_runtime.py` is the shared CI bootstrap mechanism owned
+by the existing pin inventory; its durable consumers are the composite
+runtime, pin/reproducibility validators and archive/expiry regressions.
+Downloaded binaries and isolated tool homes are disposable ignored diagnostics.
+Their durable consumers are the authoritative registry validator, its current
+projection check units, the scaffold family and the CI infrastructure tests.
+The HTML command consumes the canonical Pages workflow's post-render interfaces;
+its reports identify exact checked site bytes and declared inputs, not clean
+render provenance. No second build or publication pipeline is introduced.
+The dependency graph lives inside `validation/registry.json`; no second
+command inventory or active roadmap is introduced. Plans and doctor reports
+belong under ignored `build/` and are disposable diagnostics. Review-required
+packets and retained history keep their existing custody classes.
 
 - A tracked file is not evidence merely because it passes schema validation.
 - A source note is not a claim promotion.

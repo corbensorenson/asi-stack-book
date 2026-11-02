@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 40
 - `connector_readable`: 7
-- `source_note_available_public_project`: 27
-- `source_note_available_uncached`: 419
+- `source_note_available_public_project`: 28
+- `source_note_available_uncached`: 432
 
 ## Records
 
@@ -508,3 +508,17 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `forward_transfer_program_synthesis` | From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `compiling_civilization_cmtq` | Compiling Civilization: Cognitive Method Transfer and Qualification for Artificial Intelligence | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `reflexive_model_world_systems` | Reflexive Model-World Systems: When Representations Become Causes | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_performative_prediction_2020` | Performative Prediction | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_coala_2024` | Cognitive Architectures for Language Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_intent_to_effect` | From Intent to Verified Effect: A Contract-Based Architecture for Agentic AI Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_semantic_epistemic_state` | Semantic and Epistemic State for Long-Lived AI Agents: Identity, Context, Evidence, Belief Revision, and Semantic Migration | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_causal_adaptation` | Causal Adaptation in AI Systems: Learning-Process Topology, Persistence Placement, and Verified Forward Transfer | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_self_improvement` | Governed Self-Improvement and Reflexive AI Systems: Versioned Replacement, Evidence Ancestry, and Control of Recursive Change | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_representation_resources` | Contract-Aware Representation and Resource Optimization: Functional Rate-Distortion, Residual Accounting, and Adaptive Compute Allocation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `governed_intelligence_constitutional_governance` | Constitutional Governance for Advanced AI: Value Uncertainty, Meaningful Human Control, Contestability, and Moral Status | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_i_jepa_2023` | Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_lejepa_2025` | LeJEPA: Provable and Scalable Self-Supervised Learning Without the Heuristics | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_platonic_representation_hypothesis_2024` | The Platonic Representation Hypothesis | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_platonic_representation_jepa_2026` | Proving and Improving the Platonic Representation Hypothesis with JEPAs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_h_net_2025` | Dynamic Chunking for End-to-End Hierarchical Sequence Modeling | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `answerability_atlas_synthesis` | What an Answerability Atlas Can and Cannot Do: An Audited Synthesis of Computational Design Experiments | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |

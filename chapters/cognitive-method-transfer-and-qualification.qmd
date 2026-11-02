@@ -4,7 +4,7 @@ chapter_id: "cognitive-method-transfer-and-qualification"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "integrated_argument_chapter"
-last_updated: "2026-08-14"
+last_updated: "2026-10-02"
 primary_sources:
   - "compiling_civilization_cmtq"
 evidence_level: "argument"
@@ -28,6 +28,8 @@ open_evidence_gaps:
 | Source loading state | Exact author manuscript and bounded source note reviewed; no support promotion |
 | Local validation | Supplied package validator passed; no CMTQ efficacy test ran |
 
+## Drafting guardrail
+
 ::: {.callout-important title="Evidence boundary"}
 The supplied CTR and QCP schemas are valid and the example QCP conforms to its schema. That establishes a bounded artifact check, not that the represented method is useful, faithfully transported, secure, legitimate, or authorized. CMTQ remains a proposed architecture and experimental program.
 :::
@@ -37,9 +39,9 @@ The supplied CTR and QCP schemas are valid and the example QCP conforms to its s
 
 **Concrete lens.** An agent can quote a causal-inference method perfectly and still omit the diagnostic that determines whether the method applies.
 
-Civilization has accumulated ways of thinking that are more structured than advice: checklists, double-entry reconciliation, differential diagnosis, peer review, premortems, appeals, and experimental controls. Giving their names to a model is not enough. A method matters because of the mechanism that makes omissions visible, separates roles, forces comparison, or blocks commitment until evidence arrives.
+Civilization stores structured thinking methods: checklists, double-entry reconciliation, differential diagnosis, peer review, premortems, appeals, and experimental controls. Names alone are insufficient. A method matters because of the mechanism that makes omissions visible, separates roles, forces comparison, or blocks commitment until evidence arrives.
 
-Moving such a method into an AI system requires translation. Some elements can be copied, some must be transformed, some depend on human institutions, and some should be rejected. A checklist may become persistent obligations enforced by code. Peer review may require genuinely independent evidence and authority rather than several role prompts sharing one context. A method that works for one model, task, budget, and risk level may fail elsewhere.
+Moving such a method into an AI system requires translation. Some elements transfer, others need transformation, institutional support, or rejection. A checklist may become persistent obligations enforced by code. Peer review may require genuinely independent evidence and authority rather than several role prompts sharing one context. A method that works for one model, task, budget, and risk level may fail elsewhere.
 
 The transferred result becomes a versioned protocol with typed inputs, stopping rules, verifiers, permissions, and rollback. Three judgments remain separate. Qualification asks whether the method helps in a defined setting. Assurance asks whether the protocol was followed. Authority asks what the result may change. Passing one judgment cannot silently pass the others.
 
@@ -54,7 +56,7 @@ A capable model can often describe these methods. Description is not execution. 
 
 Direct copying creates a second failure. Human methods were built around human memory, embodiment, incentives, professions, institutional authority, and social legitimacy. A peer-review prompt can imitate the label while sharing the proposer's evidence and failure modes. A checklist translated into prose can preserve visible form while losing its omission-blocking mechanism. A court-like debate among role prompts does not acquire legal authority or public legitimacy.
 
-The problem is therefore not "How do we give an agent more skills?" It is:
+The design question reaches beyond adding skills:
 
 > How does a method developed in one cognitive and institutional substrate become a justified, executable, target-specific, and revocable component of another?
 
@@ -251,7 +253,7 @@ A protocol can determine what the model sees, which evidence it trusts, what it 
 
 Threats include injected documentation, malicious code, hidden effects, memory poisoning, composition attacks, forged provenance, downgrade, self-promotion, permission expansion, false receipts, and evaluator capture. Each QCP needs stable identity, integrity, declared effects, least privilege, admission review, sandboxing, revocation, and a rollback target.
 
-No protocol can certify its own qualification, promote its own revision, or widen its own authority. Human or institutional legitimacy cannot be synthesized by spawning another role prompt.
+No protocol can certify its own qualification, promote its own revision, or widen its own authority. Human or institutional legitimacy cannot be synthesized by spawning another role prompt. A forged revocation receipt can also leave a retired protocol callable; consumers must check the live authorization state before an effect.
 
 ## Evaluation and falsification
 
@@ -291,7 +293,7 @@ The first implementation should preserve every attempted state transition in a r
 
 The mature system is a cognitive-method operating system. It maintains a transparent atlas of inherited and machine-discovered methods, estimates target-relative applicability and interaction, compiles minimal graphs, allocates verification by risk and expected value, preserves negative results and dissent, and evolves through held-out, cross-model, adversarial, and monitored evaluation.
 
-Its endpoint is not permanent imitation of humans. Human methods seed a broader science of how reasoners, representations, memory, tools, evidence, roles, feedback, and authority should be arranged. The root of methodological trust remains bounded by independent outcomes, integrity-protected evaluation, held-out environments, legitimate authority, and no-self-certification.
+This research target is not a current result or permanent imitation of humans. Human methods seed a broader science of how reasoners, representations, memory, tools, evidence, roles, feedback, and authority should be arranged. The root of methodological trust remains bounded by independent outcomes, integrity-protected evaluation, held-out environments, legitimate authority, and no-self-certification.
 
 At mature scale, the registry would model method composition rather than ranking isolated skills. It would estimate when retrieval anchors exploration, when criticism suppresses diversity, when redundant representations expose disagreement, and when verification costs exceed expected benefit. Protocol graphs would be synthesized under explicit risk and resource constraints, then evaluated as graphs so a successful component could not inherit credit from a stronger surrounding workflow.
 
@@ -308,13 +310,13 @@ The following targets are planned. They are deliberately limited to finite admis
 
 ## Codex test plan
 
-| Target | Current state | Honest next step |
+| Test | Purpose | Status |
 |---|---|---|
-| CTR and QCP package conformance | passed for supplied package | Import bounded schemas without converting conformance into qualification. |
-| Qualification-assurance-authority non-substitution | planned | Mechanize finite coordinates and collision cases. |
-| No self-promotion or permission expansion | planned | Mechanize candidate, evaluator, authorizer, and promotion roles. |
-| Procedure-realization benchmark | planned | Run frozen-model matched-budget comparisons. |
-| Routing, interaction, and security campaign | planned | Add applicability, overload, order, poisoning, downgrade, and self-ratification controls. |
+| CTR and QCP package conformance | Import bounded schemas without converting conformance into qualification. | passed for supplied package |
+| Qualification-assurance-authority non-substitution | Mechanize finite coordinates and collision cases. | planned |
+| No self-promotion or permission expansion | Mechanize candidate, evaluator, authorizer, and promotion roles. | planned |
+| Procedure-realization benchmark | Run frozen-model matched-budget comparisons. | planned |
+| Routing, interaction, and security campaign | Add applicability, overload, order, poisoning, downgrade, and self-ratification controls. | planned |
 
 ## Source crosswalk
 

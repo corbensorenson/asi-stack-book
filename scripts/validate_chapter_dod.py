@@ -7,6 +7,7 @@ import sys
 from pathlib import Path
 
 from visual_chapter_source import canonicalize_chapter_source
+from chapter_freshness import declarations as freshness_declarations
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -299,6 +300,11 @@ def main() -> None:
                 errors.append(
                     f"{chapter['file']}: ## Why existing approaches are insufficient contains {label}: {match.group(0)!r}"
                 )
+
+        try:
+            freshness_declarations(text)
+        except ValueError as error:
+            errors.append(f"{chapter['file']}: revision metadata: {error}")
 
         expected = {
             "chapter_id": chapter["id"],

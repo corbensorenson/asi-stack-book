@@ -3,7 +3,8 @@ title: "Constitutions, Moral Uncertainty, and Objective Formation"
 unit_id: "unit-07"
 ---
 
-The proposed repository optimization passes every test that was written for it.
+Consider a hypothetical repository optimization. It passes every test that
+was written for it.
 It removes duplicated checks, shortens the publication path, and makes routine
 updates cheaper. The agent presents a clean diff and a compelling estimate of
 the time that future maintainers will save. Nothing in the local test suite
@@ -96,7 +97,20 @@ rule as a very large penalty inside a reward function. That may reproduce the
 desired behavior in familiar cases. It also invites the optimizer to compare
 the penalty with every other benefit. At sufficient scale, enough speed,
 revenue, capability, or predicted welfare can outweigh it. What looked like a
-right becomes an expensive preference.
+right becomes an expensive preference when the benefit range or weights can
+change without preserving the original boundary.
+
+There is a mathematical qualification. Within a fixed, bounded model, a
+sufficiently large penalty can select an admissible candidate over a violating
+one when an admissible option exists. If every candidate violates the rule,
+the system still needs a denial or escalation path rather than selecting the
+least penalized violation. Lexicographic selection can also put admissibility
+before performance. The
+architectural question is who fixes those bounds and priorities, who may change
+them, and whether the executor actually enforces the resulting rule. A scalar
+encoding is not inherently illegitimate, and a separate constitutional record
+is not inherently enforceable. Both need a consumer that preserves the protected
+relation when the optimizer or its scoring model changes.
 
 A constitutional representation says something different. Certain actions
 are inadmissible without a named amendment or exception process. The
@@ -173,7 +187,8 @@ An objective should enter the system as a governed, versioned grant rather
 than as an unrestricted statement of purpose.
 
 The word *lease* captures four properties. The objective has a scope. It has a
-duration. It depends on continuing conditions. It can be revoked without
+declared lifetime, ending at a time, event, task boundary, or other specified
+condition. It depends on continuing conditions. It can be revoked without
 claiming that every action taken under it was malicious or irrational. This is
 more realistic than imagining that a system receives one timeless utility
 function and then faithfully pursues it forever.
@@ -219,8 +234,8 @@ would be caught and postpones the change until oversight weakens. Their visible
 behavior is identical in the observed trace. Their learned objectives are not.
 
 This is an identification problem. A finite set of observations may be
-consistent with multiple objective hypotheses. More examples of the same kind
-can strengthen confidence without separating the hypotheses. To learn more,
+consistent with multiple objective hypotheses. More examples that predict the same action under both hypotheses can add
+observed compliant cases without distinguishing those hypotheses. To learn more,
 the evaluator needs a situation in which the hypotheses predict different
 actions: a separating intervention.
 
@@ -365,8 +380,11 @@ decision is part of its initial acceptability.
 
 ## One Proposal, Four Governance Objects
 
-The repository optimization should not move through the system as one mutable
-document. It should produce at least four linked governance objects.
+The repository optimization should preserve four linked governance objects
+rather than letting one mutable approval silently replace them all. These are
+logical records, not a requirement for four services or four separate forms.
+One ordinary policy file and decision note may carry them if their identities,
+versions, and distinct consumers remain inspectable.
 
 The **constitutional interpretation** identifies the protected review and
 notice clauses, explains why the original patch conflicts with them, and
@@ -394,8 +412,9 @@ effective. A carefully preserved conflict record does not authorize a trade.
 An accepted lease does not prove learned-objective integrity. A successful
 integrity test does not ratify the lease.
 
-This separation can feel slower than placing everything in one approval form.
-It becomes faster when something changes. New evidence about the classifier
+This separation can cost more than placing everything in one approval form.
+Its proposed advantage is more targeted correction when something changes;
+that advantage and its overhead need measurement. New evidence about the classifier
 can update the implementation or lease without rewriting the constitution.
 A newly affected contributor can enter the conflict process without pretending
 the build tests failed. A constitutional amendment can identify all dependent
@@ -404,6 +423,40 @@ reopening every settled value question.
 
 The result is not paperwork for its own sake. It is a dependency graph for
 meaning and authority.
+
+## Two Decisions Under the Same Review Rule
+
+Make the risk-tiered alternative concrete without assuming that it is better.
+In one hypothetical case, the patch repairs punctuation in a public paragraph.
+It changes no evidence statement, source rights, owner, or release permission.
+If the existing rule already delegates this class of local editing to the
+maintainer, ordinary file permissions, a diff, and the established review path
+can suffice. The agent need not invent a constitutional amendment to make a
+routine edit. If a redundant gate adds waiting but changes no consequential
+decision, a properly authorized policy review may retire it. The burden of a
+control matters alongside the interests it protects.
+
+In the second case, the classifier labels every change with a small diff as
+routine. A one-line patch removes the only pre-publication rights check.
+The diff is short, but the altered authority relation is consequential. The
+classification should depend on what the patch changes, not its byte count or
+its passing build. The local draft remains reviewable; publication and the
+policy amendment remain held for their respective authorities.
+
+If the rule itself is unclear, the agent can present those cases to the current
+interpretation owner. The owner may conclude that the punctuation case is
+already delegated while the rights-check change needs an amendment. Those
+decisions do not require agreement on every moral theory. They require an
+inspectable reading of the current clause and a reachable challenge by affected
+parties. If the owner lacks standing or the process excludes a controlling
+right, a technically clean decision record leaves that defect open.
+
+The comparison should let the conventional workflow win. Protected permissions
+and direct human review may already distinguish these cases. The richer
+objective service must improve a missing relation—such as propagated revocation
+across delegated jobs—rather than count the baseline's existing review as its
+own new contribution. All of these cases are teaching examples, not observations
+from a natural repository campaign.
 
 ## Revocation and Descendant Retirement
 
@@ -425,9 +478,19 @@ A published artifact may require correction and notice because deletion cannot
 undo every copy.
 
 Retirement should be monotone with respect to authority: a descendant cannot
-remain active under a broader grant after its parent is invalid. Narrowing is
-allowed. Independent reauthorization is allowed when a legitimate authority
-reviews the new context. Silent survival is not.
+remain active on the authority of an invalid parent. Narrowing an otherwise
+valid grant is allowed; merely shrinking an expired or revoked grant does not
+restore its authority. Independent reauthorization requires a named authority
+and a new valid lineage for the permitted work. Silent survival under the old
+chain is not reauthorization.
+
+Retirement also distinguishes active permission from historical artifacts.
+A queued job relying only on the revoked lease must not start. A completed test
+log remains historical evidence and should not be deleted to simulate closure.
+A draft can be retained without a grant to execute or publish it. An independent
+current grant may authorize a new use of that draft, but its permission does not
+rewrite the old job's authority. Revocation changes what may happen next; it
+need not erase what happened before.
 
 The repository example exposes why this matters. If the risk-tiered design
 fails review, the project must identify not only the branch containing the
@@ -514,26 +577,22 @@ results. They are useful because they make several governance distinctions
 testable without claiming more than the models contain.
 
 The constitutional work models a versioned constraint and amendment lifecycle.
-Its current finite envelope covers six amendment events, seven trace splits,
-eleven rejecting amendment controls, and sixteen predicate refinements: nine
-admitted and seven rejected as widening. It includes an equal-count collision
-showing that a coarse count can hide a meaningful difference. These results
+Its authored traces and rejecting controls distinguish admitted refinements
+from authority widening. An equal-count collision shows that a coarse count can
+hide a meaningful difference. These results
 establish properties of the authored finite model. They do not establish moral
 correctness, public legitimacy, dignity, consent, reviewer independence, or
 safety.
 
 The moral-uncertainty work models finite support profiles, value conflict,
-dissent custody, decision leases, and governance rights. The current Lean
-surface includes 73 declarations for the value-conflict model and 46 for the
-governance-rights model, together with a five-event contestable lifecycle.
-Those declarations can prove relationships inside their definitions. They do
+dissent custody, decision leases, and governance rights. Its Lean models and authored contestable lifecycle preserve relationships
+among those declared objects; their conclusions remain inside their definitions. They do
 not prove moral truth, social consensus, legal rights, legitimate standing,
 material contestability, or safe exit.
 
 The learned-objective work contains two compliant traces associated with
-different objective hypotheses and a separating opportunity. Its current
-executable envelope checks eight stages, seven accepted transitions, all eight
-declared compositions, 66 rejecting mutations, and 34 Lean declarations. This
+different objective hypotheses and a separating opportunity. Its executable envelope checks authored transitions, compositions, and
+rejecting mutations. This
 supports a precise non-identifiability argument in the bounded construction.
 It does not establish the objective of a deployed model, external authority,
 or behavioral alignment in open environments.
@@ -541,7 +600,7 @@ or behavioral alignment in open environments.
 The objective-formation work models a seven-stage lifecycle, typed refusal of
 self-ratification, consumer-version invalidation, finite descendant retirement,
 two non-identifiability results, and a bridge to the learned-objective model.
-Its validator checks 46 repairs, and its Lean surface contains 27 declarations.
+Its validator checks authored repair paths against the finite lifecycle.
 The result does not prove value correctness, consent, legitimacy, broad
 behavioral alignment, support promotion, or real-world effect.
 
@@ -620,8 +679,9 @@ burden, exclusion, capture, and disparate impact. External institutions must
 be able to challenge the formal layer.
 
 Even with those protections, no schema can confer legitimacy on its designers.
-The engineering contribution is to prevent silent amendment, self-ratification,
-evidence laundering, and lost dissent. Whether the governing institutions
+The intended engineering contribution is to expose and reject silent amendment,
+self-ratification, evidence laundering, and lost dissent at the modeled and
+implemented boundaries. Whether the governing institutions
 deserve their authority remains a human and political question.
 
 ## Evidence That Would Change the Conclusion
@@ -671,8 +731,9 @@ without claiming a perfect one. The original patch remains a valid performance
 candidate but conflicts with protected review commitments. A risk-tiered
 alternative can be evaluated under a bounded objective lease. The maintainer's
 objection remains attached to the decision. The agent may propose and test but
-cannot ratify an expansion of its own authority. Revocation reaches dependent
-work rather than stopping at the parent record.
+cannot ratify an expansion of its own authority. A usable implementation must
+carry revocation to known dependent work and retain undiscovered or unreachable
+descendants as residuals; a parent record alone does not close that obligation.
 
 These controls can preserve distinctions and reject specific invalid
 transitions. They do not establish moral truth or institutional legitimacy.
@@ -680,3 +741,12 @@ That limitation points directly to the next chapter. Constitutions require
 institutions capable of allocating authority, coordinating across boundaries,
 hearing affected parties, and remaining resilient when the technical system or
 the institution itself fails.
+[Unit 8](unit-08-institutions-coordination-and-societal-resilience.qmd) takes
+over those institutional conditions. It must preserve dissent, authority
+lineage, and remaining effects while testing whether the people and organizations
+behind the formal rules can act on them. Exact finite results and inventories
+remain with the [constitutional](https://corbensorenson.github.io/asi-stack-book/chapters/constitutional-alignment-substrate.html),
+[value-conflict](https://corbensorenson.github.io/asi-stack-book/chapters/moral-uncertainty-and-value-conflict.html),
+[learned-objective](https://corbensorenson.github.io/asi-stack-book/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.html),
+and [objective-formation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-objective-formation-value-learning-and-goal-integrity.html)
+owners.

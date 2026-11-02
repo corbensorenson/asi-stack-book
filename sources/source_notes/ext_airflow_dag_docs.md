@@ -12,7 +12,7 @@
 
 ## Thesis
 
-Airflow is a useful workflow-orchestration comparator because it exposes a mature DAG vocabulary: schedules, tasks, dependencies, callbacks, retries, and operational workflow metadata. The Labor OS chapter should use Airflow to avoid presenting DAG/task orchestration as novel, while making clear that ASI Stack typed jobs add authority envelopes, approval gates, artifact receipts, and evidence-state boundaries for AI labor.
+Airflow is a useful workflow-orchestration comparator because it exposes a mature DAG vocabulary: schedules, tasks, dependencies, callbacks, retries, and operational workflow metadata. The Labor OS chapter should use Airflow to avoid presenting DAG/task orchestration as novel, while describing the proposed typed-job composition's authority envelopes, artifact receipts, and evidence-state boundaries as application obligations. A conventional application can implement those joins; their naming does not establish novelty or an orchestration advantage.
 
 ## Mechanisms
 
@@ -39,6 +39,7 @@ Airflow is a useful workflow-orchestration comparator because it exposes a matur
 
 - `intent-to-execution-contracts` (Command Contracts: From Intent to Executable Work)
 - `labor-os-and-typed-jobs` (Labor OS and Typed Jobs)
+- `planning-as-a-control-layer` (selected external-comparator follow-up)
 
 ## Claims To Add Or Update
 
@@ -50,3 +51,9 @@ Airflow is a useful workflow-orchestration comparator because it exposes a matur
 - Which Labor OS lifecycle states correspond to Airflow Dag run and task instance states, and where do they diverge?
 - Could future prototypes emit Airflow-compatible task receipts while preserving approval and evidence-state fields?
 - What negative controls would show that a workflow run is not enough for governed evidence readiness?
+
+## Selected task-lifecycle follow-up — 2026-10-11
+
+Inspected the official [Airflow 3.3.2 Tasks documentation](https://airflow.apache.org/docs/apache-airflow/3.3.2/core-concepts/tasks.html), specifically Relationships, Task Instances, and Special Exceptions. The page distinguishes dependency readiness, executor assignment, running, failure, retry, and waiting for human input. It describes upstream success as the default condition with configurable control flow, and provides a fast-failure example for an invalid API key that retry will not repair.
+
+Planning uses this selected reading to avoid treating ordinary dependency and retry control or human review as a new invention. The page's task-success state is not evidence that an arbitrary semantic obligation was satisfied. No Airflow installation, scheduler run, credential-repair experiment, comparative advantage, or current integration compatibility was exercised here. The July intake stays historical; this is a version-specific documentation reading, not a full current-library review.

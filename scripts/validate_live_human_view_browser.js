@@ -12,6 +12,7 @@ without browser dependencies do not report a fabricated browser result. Pass
 const fs = require("fs");
 const os = require("os");
 const path = require("path");
+const crypto = require("crypto");
 const { pathToFileURL } = require("url");
 
 const ROOT = path.resolve(__dirname, "..");
@@ -21,6 +22,64 @@ const VIEWPORTS = {
   desktop: { width: 1280, height: 900 },
   mobile: { width: 390, height: 844 },
 };
+
+const REPORT_INPUTS = ["book_structure.json", "editions/reader_manuscript/current/conclusion_claim_crosswalk.json",
+  "scripts/validate_live_human_view_browser.js"];
+
+function ordinary(file) {
+  for (let current = file;; current = path.dirname(current)) {
+    let stat;
+    try { stat = fs.lstatSync(current); }
+    catch (error) { if (error.code !== "ENOENT") throw error; }
+    if (stat && stat.isSymbolicLink()) {
+      throw new Error(`Browser report custody must not traverse a symlink: ${current}`);
+    }
+    if (current === path.dirname(current)) break;
+  }
+}
+
+function reportOutsideSite(args) {
+  ordinary(args.report);
+  const relativeReport = path.relative(args.site, args.report);
+  if (relativeReport === "" || (!relativeReport.startsWith(`..${path.sep}`) && relativeReport !== ".." && !path.isAbsolute(relativeReport))) {
+    throw new Error("Browser reports and screenshots must stay outside the checked site.");
+  }
+}
+
+function inputSnapshot(site) {
+  const activeAdmission = path.join(ROOT, "build", "chapter-admission-active.json");
+  ordinary(activeAdmission);
+  try {
+    fs.lstatSync(activeAdmission);
+    throw new Error("Canonical chapter admission is pending; browser observations are not admissible.");
+  } catch (error) {
+    if (error.code !== "ENOENT") throw error;
+  }
+  ordinary(site);
+  if (!fs.lstatSync(site).isDirectory()) throw new Error("Browser site must be an ordinary directory.");
+  const files = Object.create(null);
+  function walk(directory) {
+    for (const name of fs.readdirSync(directory).sort()) {
+      const file = path.join(directory, name);
+      const stat = fs.lstatSync(file);
+      if (stat.isSymbolicLink()) throw new Error(`Browser site contains a symlink: ${file}`);
+      if (stat.isDirectory()) walk(file);
+      else if (stat.isFile()) files[path.relative(site, file).split(path.sep).join("/")] =
+        crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+      else throw new Error(`Browser site contains a special filesystem object: ${file}`);
+    }
+  }
+  walk(site);
+  if (!Object.hasOwn(files, "index.html")) throw new Error("Browser site index.html is missing.");
+  const inputs = Object.create(null);
+  for (const relative of REPORT_INPUTS) {
+    const file = path.join(ROOT, relative);
+    ordinary(file);
+    if (!fs.lstatSync(file).isFile()) throw new Error(`Browser report input is not a regular file: ${file}`);
+    inputs[relative] = crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
+  }
+  return { site_sha256: files, input_sha256: inputs };
+}
 
 function parseArgs(argv) {
   const args = {
@@ -134,7 +193,19 @@ function candidateModuleRoots() {
   return [...new Set(roots)];
 }
 
-function loadPlaywright() {
+function loadPlaywright(strict = false) {
+  if (strict) {
+    // A publication gate must exercise the repository's locked runtime; an
+    // ambient global install must not conceal missing CI provisioning.
+    const candidate = path.join(ROOT, "ci", "browser", "node_modules", "playwright");
+    try {
+      const expected = loadJson("ci/browser/package.json").devDependencies.playwright;
+      if (require(path.join(candidate, "package.json")).version !== expected) return null;
+      return require(candidate);
+    } catch (_) {
+      return null;
+    }
+  }
   try {
     return require("playwright");
   } catch (_) {
@@ -248,6 +319,9 @@ async function validateResponsiveLayout(page, pageId, mode) {
     });
     const readerLink = document.querySelector(".asi-reading-mode__reader-link");
     const readerLinkRect = readerLink ? readerLink.getBoundingClientRect() : null;
+    const label = document.querySelector(".asi-reading-mode__label");
+    const labelStyle = label ? window.getComputedStyle(label) : null;
+    const labelRect = label ? label.getBoundingClientRect() : null;
     return {
       viewport_width: viewportWidth,
       viewport_height: viewportHeight,
@@ -272,6 +346,11 @@ async function validateResponsiveLayout(page, pageId, mode) {
         : null,
       toggle_clipped_horizontally: toggleRect ? toggleRect.left < -1 || toggleRect.right > viewportWidth + 1 : true,
       buttons,
+      label: labelRect ? {
+        height: labelRect.height,
+        line_height: parseFloat(labelStyle.lineHeight),
+        text_overflow_px: Math.max(0, label.scrollWidth - label.clientWidth),
+      } : null,
       reader_link: readerLinkRect
         ? {
             text: readerLink.textContent ? readerLink.textContent.trim() : "",
@@ -289,6 +368,9 @@ async function validateResponsiveLayout(page, pageId, mode) {
   }
   if (!metrics.toggle_visible) throw new Error(`${pageId}: ${mode} view reading-mode control is not visible.`);
   if (metrics.toggle_clipped_horizontally) throw new Error(`${pageId}: ${mode} view reading-mode control is clipped horizontally.`);
+  if (metrics.label && (metrics.label.height > metrics.label.line_height * 1.2 || metrics.label.text_overflow_px > 2)) {
+    throw new Error(`${pageId}: ${mode} view Edition label wraps or overflows.`);
+  }
   if (metrics.buttons.length < 2) throw new Error(`${pageId}: ${mode} view did not render both reading-mode buttons.`);
   for (const button of metrics.buttons) {
     if (!button.visible) throw new Error(`${pageId}: ${mode} view reading-mode button ${button.choice} is not visible.`);
@@ -303,6 +385,79 @@ async function validateResponsiveLayout(page, pageId, mode) {
   if (metrics.reader_link.clipped_horizontally) throw new Error(`${pageId}: ${mode} view reader-edition link is clipped horizontally.`);
   if (metrics.reader_link.text_overflow_px > 2) throw new Error(`${pageId}: ${mode} view reader-edition link text overflows.`);
   return metrics;
+}
+
+async function validateControlAccessibility(browser, fileUrl, reportPath) {
+  const records = [];
+  for (const width of [320, 390, 430]) {
+    for (const scale of [1, 2]) {
+      const page = await browser.newPage({ viewport: { width, height: 844 } });
+      try {
+        await page.goto(`${fileUrl}?view=human`, { waitUntil: "networkidle" });
+        await waitForMode(page, "human");
+        await page.evaluate((factor) => {
+          document.documentElement.style.fontSize = `${factor * 100}%`;
+        }, scale);
+        // Text enlargement changes Quarto's fixed header height. Its
+        // ResizeObserver updates body padding asynchronously; tabbing before
+        // that update can focus a link that is shifted out of view afterward.
+        // Observe the completed layout without scrolling or changing the UI.
+        await page.waitForFunction(() => {
+          const header = document.querySelector("header.fixed-top");
+          return document.fonts.status === "loaded" && (!header ||
+            parseFloat(window.getComputedStyle(document.body).paddingTop) === header.clientHeight);
+        }, null, { timeout: 5000 });
+        const metrics = await validateResponsiveLayout(page, `control-${width}-${scale}`, "human");
+        const choices = page.locator(".asi-reading-mode button, .asi-reading-mode__reader-link");
+        await choices.first().focus();
+        for (let index = 0; index < await choices.count(); index += 1) {
+          if (index > 0) await page.keyboard.press("Tab");
+          // Keyboard scrolling may animate under Quarto's smooth-scroll rule.
+          // Observe its settled result without forcing a scroll ourselves.
+          try {
+            await page.waitForFunction((choiceIndex) => {
+              const element = document.querySelectorAll(".asi-reading-mode button, .asi-reading-mode__reader-link")[choiceIndex];
+              if (!element || element !== document.activeElement) return false;
+              const rect = element.getBoundingClientRect();
+              const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+              return rect.top >= -1 && rect.bottom <= window.innerHeight + 1 && hit && (hit === element || element.contains(hit));
+            }, index, { timeout: 2000 });
+          } catch (error) {
+            const focus = await choices.nth(index).evaluate((element) => {
+              const rect = element.getBoundingClientRect();
+              const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+              return { active: element === document.activeElement, top: rect.top, bottom: rect.bottom,
+                viewport_height: window.innerHeight, scroll_y: window.scrollY,
+                unobscured: Boolean(hit) && (hit === element || element.contains(hit)) };
+            });
+            throw new Error(`control-${width}-${scale}: keyboard focus ${index} did not become visible: ${JSON.stringify(focus)}; ${error.message}`);
+          }
+          const focus = await choices.nth(index).evaluate((element) => {
+            const rect = element.getBoundingClientRect();
+            const hit = document.elementFromPoint(rect.left + rect.width / 2, rect.top + rect.height / 2);
+            return { active: element === document.activeElement, top: rect.top, bottom: rect.bottom,
+              unobscured: Boolean(hit) && (hit === element || element.contains(hit)) };
+          });
+          // Browser scrolling rounds CSS subpixels; allow one pixel at an edge
+          // while independently checking that the focused control receives hits.
+          if (!focus.active || !focus.unobscured || focus.top < -1 || focus.bottom > 845) {
+            throw new Error(`control-${width}-${scale}: keyboard focus ${index} is missing or obscured: ${JSON.stringify(focus)}`);
+          }
+        }
+        const shot = path.join(path.dirname(reportPath), `edition-control-${width}-${scale}x.png`);
+        await page.locator(".asi-reading-mode").screenshot({ path: shot });
+        records.push({ width, text_scale: scale, metrics, keyboard_controls: await choices.count(), screenshot: shot });
+      } catch (error) {
+        const shot = path.join(path.dirname(reportPath), `failure-control-${width}-${scale}x.png`);
+        await page.screenshot({ path: shot }).catch(() => {});
+        error.failure_screenshot = shot;
+        throw error;
+      } finally {
+        await page.close();
+      }
+    }
+  }
+  return records;
 }
 
 async function validateReaderPage(page, fileUrl, unit, viewportName) {
@@ -594,6 +749,7 @@ async function validateAppendixPage(page, fileUrl, pageId) {
 }
 
 async function runBrowserValidation(playwright, args) {
+  const before = inputSnapshot(args.site);
   const structure = loadJson("book_structure.json");
   const readerCrosswalk = loadJson("editions/reader_manuscript/current/conclusion_claim_crosswalk.json");
   const pageSelection = args.allChapters ? "all-chapters" : "sample";
@@ -610,7 +766,15 @@ async function runBrowserValidation(playwright, args) {
   const browser = await launchChromium(playwright);
   const records = [];
   const readerRecords = [];
+  let controlRecords = [];
   try {
+    fs.mkdirSync(path.dirname(args.report), { recursive: true });
+    const controlSample = pages.find((sample) => sample.kind === "chapter");
+    if (controlSample) {
+      controlRecords = await validateControlAccessibility(
+        browser, pathToFileURL(renderedPath(args.site, controlSample.sourceFile)).href, args.report
+      );
+    }
     for (const viewport of viewports) {
       const page = await browser.newPage({ viewport: viewport.size });
       try {
@@ -630,6 +794,11 @@ async function runBrowserValidation(playwright, args) {
           if (!fs.existsSync(readerPath)) throw new Error(`Rendered Human Reader HTML is missing: ${readerPath}`);
           readerRecords.push(await validateReaderPage(page, pathToFileURL(readerPath).href, unit, viewport.name));
         }
+      } catch (error) {
+        const shot = path.join(path.dirname(args.report), `failure-${viewport.name}.png`);
+        await page.screenshot({ path: shot }).catch(() => {});
+        error.failure_screenshot = shot;
+        throw error;
       } finally {
         await page.close();
       }
@@ -638,12 +807,18 @@ async function runBrowserValidation(playwright, args) {
     await browser.close();
   }
 
+  if (JSON.stringify(inputSnapshot(args.site)) !== JSON.stringify(before)) {
+    throw new Error("Browser inputs/site changed during checking; no current report can be certified.");
+  }
   return {
-    schema_version: "0.1",
+    schema_version: "0.2",
+    ...before,
     status: "pass",
     page_selection: pageSelection,
     viewport_selection: args.allViewports ? "all-viewports" : "desktop",
     viewports: viewports.map((viewport) => ({ name: viewport.name, ...viewport.size })),
+    edition_control_accessibility: controlRecords,
+    browser_version: browser.version(),
     site_dir: args.site,
     validated_pages: records,
     validated_reader_pages: readerRecords,
@@ -657,21 +832,36 @@ async function runBrowserValidation(playwright, args) {
 }
 
 function writeReport(reportPath, report) {
+  ordinary(reportPath);
   fs.mkdirSync(path.dirname(reportPath), { recursive: true });
-  fs.writeFileSync(reportPath, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+  const stage = `${reportPath}-stage-${crypto.randomBytes(12).toString("hex")}`;
+  let descriptor;
+  try {
+    descriptor = fs.openSync(stage, "wx", 0o600);
+    fs.writeFileSync(descriptor, `${JSON.stringify(report, null, 2)}\n`, "utf8");
+    fs.fsyncSync(descriptor);
+    fs.closeSync(descriptor);
+    descriptor = undefined;
+    ordinary(reportPath);
+    fs.renameSync(stage, reportPath);
+  } finally {
+    if (descriptor !== undefined) fs.closeSync(descriptor);
+    if (fs.existsSync(stage)) fs.unlinkSync(stage);
+  }
 }
 
 (async () => {
   const args = parseArgs(process.argv);
-  const playwright = loadPlaywright();
+  reportOutsideSite(args);
+  const playwright = loadPlaywright(args.strict);
   if (!playwright) {
     const report = {
-      schema_version: "0.1",
-      status: "skipped",
-      reason: "Playwright is not available in the current Node environment.",
+      schema_version: "0.2",
+      status: args.strict ? "fail" : "skipped",
+      reason: args.strict ? "Locked Playwright is unavailable or mismatched; run npm ci --ignore-scripts --prefix ci/browser." : "Playwright is not available in the current Node environment.",
     };
     writeReport(args.report, report);
-    console.log("Live Human view browser validation skipped: Playwright is not available.");
+    console.log(`Live Human view browser validation ${args.strict ? "failed" : "skipped"}: ${report.reason}`);
     process.exit(args.strict ? 1 : 0);
   }
 
@@ -684,9 +874,10 @@ function writeReport(reportPath, report) {
   } catch (error) {
     const message = error && error.stack ? error.stack : String(error);
     writeReport(args.report, {
-      schema_version: "0.1",
+      schema_version: "0.2",
       status: "fail",
       error: message,
+      failure_screenshot: error.failure_screenshot || null,
     });
     const unavailable = /Executable doesn't exist|browserType\.launch|Host system is missing dependencies|install-deps/i.test(message);
     if (unavailable && !args.strict) {

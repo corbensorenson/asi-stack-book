@@ -18,6 +18,7 @@ import sys
 from pathlib import Path
 
 import build_reader_edition
+from chapter_freshness import declarations as freshness_declarations, rendered_errors as freshness_errors
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_SITE = ROOT / "_site"
@@ -129,6 +130,7 @@ def site_readiness_errors(site_dir: Path, pages: list[dict[str, object]]) -> lis
 
     global_inputs = [
         ROOT / "_quarto.yml",
+        ROOT / "assets/filters/chapter-freshness.lua",
         ROOT / "book_structure.json",
         ROOT / "assets" / "reading-mode.html",
         ROOT / "assets" / "reader-overlays.html",
@@ -241,7 +243,8 @@ def validate(site_dir: Path) -> dict[str, object]:
             "chapter_records": [],
             "errors": readiness_errors,
             "non_claims": [
-                "This static check validates rendered live-site Human view wiring only.",
+                "This static check validates rendered Human view wiring and declaration/display consistency for chapter revision events.",
+                "Declared dates do not establish source truth, complete source-review coverage, manuscript quality or evidence reconciliation.",
                 "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
             ],
         }
@@ -296,6 +299,16 @@ def validate(site_dir: Path) -> dict[str, object]:
             continue
 
         html = html_path.read_text(encoding="utf-8", errors="ignore")
+        if page_kind == "chapter":
+            try:
+                declared_dates = freshness_declarations(source_path.read_text(encoding="utf-8"))
+                date_errors = freshness_errors(html, declared_dates)
+                record["declared_revision_events"] = declared_dates
+                record["revision_display_errors"] = date_errors
+                errors.extend(f"{source_file}: revision display: {message}" for message in date_errors)
+            except ValueError as error:
+                errors.append(f"{source_file}: revision metadata: {error}")
+
         for needle in (
             "asi-stack-reading-mode",
             "const queryParam = \"view\"",
@@ -408,7 +421,8 @@ def validate(site_dir: Path) -> dict[str, object]:
         "chapter_records": chapter_records,
         "errors": errors,
         "non_claims": [
-            "This static check validates rendered live-site Human view wiring only.",
+            "This static check validates rendered Human view wiring and declaration/display consistency for chapter revision events.",
+            "Declared dates do not establish source truth, complete source-review coverage, manuscript quality or evidence reconciliation.",
             "It does not claim a reviewed reader edition, ebook, PDF, DOCX, audiobook, or support-state promotion exists.",
         ],
     }

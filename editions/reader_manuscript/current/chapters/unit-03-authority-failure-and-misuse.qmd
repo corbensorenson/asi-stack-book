@@ -5,7 +5,8 @@ unit_id: "unit-03"
 
 ## The Planner Does Not Hold the Key
 
-An AI planner receives the dependency-update request from the opening chapters.
+Continue the hypothetical dependency-update campaign from the opening chapters.
+An AI planner receives the request.
 It produces a good plan: inspect release notes, update the lockfile, run tests,
 open a draft pull request, and wait for review. The plan is detailed enough to
 execute.
@@ -111,8 +112,11 @@ act.
 The executor checks that the grant is current, the principal and target match,
 the requested permission class is admitted, the operation remains inside
 scope, the caller ceiling is not exceeded, required predecessors exist, and
-the receipt path is available. Failure produces a denial record without the
-effect.
+the receipt path is available. A failed check should deny the attempt before the
+effect. That requires the executor to bind the check to the actual operation,
+not merely log an earlier permission decision. A lost response after dispatch
+is different: it leaves the effect uncertain and requires observation before
+retry or closure.
 
 The check must be enforced outside the component seeking authority. A prompt
 that tells the model not to exceed scope is useful defense in depth. It is not
@@ -190,7 +194,7 @@ build tool, and the build tool accesses a package registry. Each hop can become
 a confused deputy: a component uses its own broader power on behalf of a caller
 that was not entitled to it.
 
-A safe delegation chain preserves principal lineage, target and operation,
+An admitted delegation chain must preserve principal lineage, target and operation,
 permission class, scope, ceiling, epoch, expiry, and non-delegable restrictions.
 The child grant is no broader than the parent. Subdelegation is allowed only
 when explicitly admitted.
@@ -225,8 +229,42 @@ queued jobs, and replicas may retain authority unless the system can identify
 and invalidate them. A finite local proof of revocation semantics cannot
 establish hidden-descendant discovery in an open distributed system.
 
-The strongest architecture therefore combines prospective denial with
+An adequate revocation design therefore combines prospective denial with
 post-effect accountability. It does not describe every failure as rollback.
+
+Consider two hypothetical histories of the same checkout edit. A work order
+admits a change to a named file, and the owner then revokes it. For this example,
+assume a cooperating executor has one commit gate that orders revocation and
+the file replacement atomically. That is a declared implementation assumption,
+not a property obtained by writing an epoch into a record.
+
+In the first history, revocation reaches the gate before the replacement. The
+executor denies the stale order; an observer sees the original file. The useful
+outcome is a prevented change with a recorded reason. A competent conventional
+service that supplies the same gate can already do this; an extra stack record
+must add a relation a consumer needs, rather than take credit for the service's
+existing enforcement.
+
+In the second history, the replacement commits before revocation, but the
+success response is lost. The caller sees a timeout and a revoked grant. Neither
+fact establishes that the file stayed unchanged. The observer identifies the
+committed version, and the owner decides whether to retain it or authorize a
+separate restoration. Retrying the original command would risk a duplicate or
+an unauthorized new attempt. Restoration also needs a current target and grant;
+revocation is not permission to overwrite another person's intervening edit.
+
+Now change the target from a local file to a remote publication service. A local
+commit gate cannot by itself order the service's acceptance against local
+revocation. If the service exposes an operation identifier and status lookup,
+reconcile those records with observed remote state. If it does not, preserve an
+unknown-effect residual and restrict further effects until an authorized owner
+resolves it. Restoring the checkout would leave the publication question open.
+The additional obligation is this cross-boundary uncertainty, not merely a
+longer authority tuple.
+
+These histories yield different decisions from nearly identical caller-visible
+errors. The decision rule must depend on where the effect was ordered and what
+can be observed, rather than treating every timeout as a safe failure.
 
 ## Failure Is a Broken Responsibility
 
@@ -613,14 +651,13 @@ should use them.
 
 All four routed chapter cores remain at `argument` support.
 
-The authority owner has an exact 59-declaration finite authority surface and a
-31-theorem grant-to-effect refinement. Its consumer checks six authority
-fixtures, three effect traces containing twenty events, one two-event
-delegation trace, twenty-six batch compositions, one local effect, one
-independent observation, one exact rollback, two pre-effect denials, five
-revocation entries, nine governed repository scenarios, sixty-seven semantic
-mutations, one lossy-summary collision, and twenty complete-transport field
-rejections.
+The [authority owner](https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html)
+connects a finite authority model to grant-to-effect traces. Authored consumers
+exercise attenuation, pre-effect denial, local observation and restoration,
+revocation, repository scenarios, and batch composition. Rejecting mutations
+and a lossy-summary collision show why the checked decision fields must reach
+the consumer intact. Exact theorem and fixture inventories remain in that
+technical owner; their number is not a measure of deployed control.
 
 Those results establish authored authority and transition properties under
 trusted record identities. They do not establish authentic identity or
@@ -628,21 +665,23 @@ receipts, deployed permission enforcement, complete mediation or observation,
 concurrent or distributed delegation and revocation, hidden-descendant
 discovery, live adapter security, production security, or transfer.
 
-The failure owner has finite Lean predicates for invariant failure,
+The [failure owner](https://corbensorenson.github.io/asi-stack-book/chapters/failure-modes-of-ungoverned-intelligence.html)
+has finite Lean predicates for invariant failure,
 unbounded-authority detection, incident routing, tainted context,
 subject-modified evaluators, unverified claim promotion, and recurrence
 escalation. No runtime authority gate, context detector, evaluator-independence
 probe, recurrence detector, or deployed containment system has run.
 
-The dangerous-capability owner has a 20-declaration finite admission model over
-a seven-stage pre-campaign dossier. It rejects twenty-nine admission-axis
+The [dangerous-capability owner](https://corbensorenson.github.io/asi-stack-book/chapters/dangerous-capability-domains-and-misuse-uplift.html)
+has a finite pre-campaign admission model. It rejects authored admission-axis
 mutations, preserves expiry and denominator monotonicity, and demonstrates that
 equal aggregate scores can require opposite component-sensitive decisions. It
 does not establish capability, propensity, bypass, actor uplift, harm, threshold
 crossing, safeguard efficacy, or a hazardous-domain result.
 
-The military owner has a 24-declaration finite, explicitly non-operational
-eight-stage dossier. It rejects forty-five admission-axis mutations and shows
+The [military owner](https://corbensorenson.github.io/asi-stack-book/chapters/military-ai-autonomous-weapons-and-strategic-stability.html)
+has a finite, explicitly non-operational dossier. It rejects authored
+admission-axis mutations and shows
 that the same visible human interface or local component evidence can coexist
 with opposite modeled governance decisions. It does not establish lawful use,
 meaningful human control in practice, correct observation, acceptable effects,
@@ -725,10 +764,15 @@ response, crisis timing, secrecy, accountability, and off-ramps remain jointly
 load-bearing. A human button and a high benchmark score establish none of those
 conditions by themselves.
 
-These boundaries all depend on a trustworthy substrate. A perfect grant cannot
-protect a stolen credential. An honest evaluator cannot compensate for a
-compromised runtime. The next chapter therefore moves downward into security,
-privacy, protected computation, supply chains, model-weight custody, and the
-changing control problem created by release.
+These boundaries depend on the identity and enforcement assumptions beneath
+them. A well-formed grant does not establish who is using a stolen credential.
+An independent evaluator may detect an effect, but its conclusion still needs
+trustworthy observations when the runtime is compromised.
+[Unit 4](unit-04-security-privacy-and-ai-artifact-custody.qmd) takes over the
+security, privacy, protected-computation, supply-chain, and model-custody
+responsibilities. It must explain which authority checks a compromised actor can
+bypass, and which observations remain usable. The finite authority results above
+supply modeled relations to preserve, not an assurance that those assumptions
+hold in a deployed system.
 
 {{< include ../generated/unit-03-status.qmd >}}

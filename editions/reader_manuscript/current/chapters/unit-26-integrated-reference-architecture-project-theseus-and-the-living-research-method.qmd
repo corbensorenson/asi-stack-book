@@ -5,6 +5,7 @@ unit_id: "unit-26"
 
 ## One Change Through the Whole Stack
 
+Consider a hypothetical maintenance request, not a completed integrated run.
 A maintainer asks the system to update a security-sensitive dependency without
 breaking production behavior. The request is ordinary. Following it to closure
 reveals the architecture.
@@ -20,18 +21,23 @@ is missing, stale, conflicting, or outside the caller's rights.
 
 A planner decomposes the work into analysis, patch, validation, review, and
 recovery obligations. A router selects capabilities under competence, evidence,
-authority, latency, and cost constraints. Work orders grant narrower authority
-than the original request.
+authority, latency, and cost constraints. Work orders grant only the authority
+needed within the original request; an already narrow grant may need no further
+reduction or fresh approval.
 
 Execution occurs in an isolated workspace. Artifacts retain parentage. Effects
 are attempted under leases and observed by channels independent of the executor
 where the consequence warrants it. Tests and semantic checks evaluate the
 result; residuals remain attached.
 
-The candidate cannot declare itself ready. A claim ledger records what each
-artifact establishes. A readiness decision may approve a pull request while
-blocking production merge. If a migration fails, rollback restores tracked
-state and routes external residuals to their owners.
+The candidate cannot declare itself ready. Evidence States adjudicates accepted
+claim support; Claim Ledgers preserves claim identity and belief history.
+Readiness can find the candidate eligible for bounded review while withholding
+eligibility for production use. Actual repository writes and release retain
+their applicable grant and approval requirements. If a migration fails, the recovery procedure attempts
+to restore its declared tracked state under current authority and checks the
+result. Conflicts or failed restoration remain residuals alongside external
+effects, rather than becoming successful rollback by definition.
 
 The incident or success can produce a candidate lesson, but not an automatic
 parameter update. An adaptive commit boundary decides whether the smallest
@@ -42,9 +48,11 @@ A proposed improvement to the workflow enters another governed lifecycle. It
 does not inherit release or replication authority. The book records the claim,
 proof, executable result, objection, and missing evidence.
 
-This is the ASI Stack in operational form: not a chain of models, but a chain of
-typed commitments from human intent to real effect and back to accountable
-learning.
+This is the proposed operational path: typed commitments carry human intent
+toward an observed effect and accountable learning. Later in this chapter, the
+implemented local slices are distinguished from this whole-path teaching case.
+
+{{< include ../generated/unit-26-status.qmd >}}
 
 ## The Reference Path
 
@@ -109,17 +117,22 @@ those boundaries.
 
 ## Following the Repository Change
 
-The dependency update can now be followed with enough detail to expose where a
-monolithic agent loses accountability.
+The dependency update can now be followed with enough detail to expose where accountability can be lost at a handoff. A competent monolithic
+agent can preserve these relations too; process count is not the criterion.
 
 The request arrives as, "Upgrade the authentication library and merge it if the
-tests pass." That sentence is not yet an executable objective. Which services
-are in scope? Does "merge" mean opening a reviewed pull request or writing to a
-protected branch? Which tests count? May the system change application code to
+tests pass." That sentence needs interpretation against the current
+repository and applicable grants. Missing constraints matter; constraints already established in the
+session or standing policy need not be asked again. Which services
+are in scope? Which branch may be merged, and does the caller hold that authority?
+Opening a pull request and merging it are different effects; the request’s
+explicit merge instruction should not be silently redefined as creating a draft. Which tests count? May the system change application code
+to
 accommodate the upgrade? May it rotate credentials, edit deployment manifests,
 or contact an external package registry? What deadline and outage budget apply?
 
-An intent resolver turns those questions into a contract. Suppose it permits a
+An intent resolver checks the applicable answers and obtains any required
+clarification. Suppose the resulting agreed contract permits a
 patch and pull request in one repository, allows package-registry reads, forbids
 production deployment and secret rotation, requires the security and integration
 suites, and expires after four hours. The contract records unresolved ambiguity:
@@ -152,7 +165,7 @@ may be required for a newly introduced cryptographic path. The router records
 the evidence behind each competence judgment and can abstain when no qualified
 route exists.
 
-Every selected worker receives a narrower work order. The patch worker can write
+Every selected worker receives a work order scoped to its obligation. The patch worker can write
 inside an isolated checkout but cannot access deployment credentials. The
 release-note worker can read approved external sources but cannot modify the
 repository. The test worker can execute declared commands under resource limits.
@@ -192,7 +205,9 @@ or leaving it open for human review are different compensations. If a package
 download exposed a credential in a log, restoring files does not undo the
 exposure. That residual must enter incident handling.
 
-Only after the work closes may the learning system propose persistence. A newly
+The learning system may propose provisional lessons during the work, keeping
+their uncertainty explicit. Durable adoption depends on the evidence and
+adaptive-commit policy rather than waiting for an unrelated residual to close. A newly
 discovered test might become a candidate regression check. A recurring source
 conflict might motivate a context-selection rule. A model failure might motivate
 a routing restriction. Each candidate has a different owner and evidence path.
@@ -205,9 +220,11 @@ effort did it add? Would a competent agent with a sandbox, tests, and one human
 approval have done as well? The answer changes the architecture rather than
 serving as a ceremonial postmortem.
 
-This detailed trace explains why the stack is more than a checklist. Each
-boundary transforms one governed object into another, and each transformation
-has an authority ceiling, evidence obligation, and failure exit.
+This detailed trace specifies relations that an implementation must preserve:
+each boundary transforms an object under an authority ceiling, evidence
+obligation, and failure exit. Existing issue records, CI, access controls, and
+a release checklist can carry those relations for a bounded repository. A
+general trace service needs additional consumer value to justify its cost.
 
 ## A Minimal Trusted Kernel
 
@@ -218,8 +235,10 @@ The kernel needs identities for principals, artifacts, state, policies,
 capabilities, effects, evidence, and versions. It verifies signatures or
 equivalent assertions under an explicit trust policy. It enforces authority
 ceilings, isolation, lease expiry, revocation, and protected writes. It records
-append-only events and checks proof or schema obligations needed for a
-transition.
+append-only events within a permitted retention policy and checks proof or
+schema obligations needed for a transition. Sensitive payloads need not live
+forever in that event stream; admitted identifiers and dispositions can remain
+when content must be removed, with reduced replay fidelity recorded.
 
 The kernel does not decide whether a human objective is morally correct, whether
 a source is true, whether a model is competent, or whether remaining risk is
@@ -242,7 +261,8 @@ Dynamic books and dynamic systems share a rule: display position cannot be the
 identity of a thing.
 
 A chapter keeps a stable ID when another chapter is inserted before it. A
-capability keeps a stable contract while one model replaces another. A claim
+capability can keep its contract identity while implementation versions change.
+If required meaning changes, version the contract too. A claim
 retains identity while its support changes. An effect retains identity across
 attempt, acknowledgement, compensation, and residualization.
 
@@ -261,8 +281,9 @@ agent, or policy does not erase incidents or residuals attached to its lineage.
 
 ## Canonical State and Projections
 
-The stack needs one canonical record for each governed object and many
-projections for consumers.
+The stack needs an authoritative record with version and conflict rules for each governed
+object, plus consumer projections. This need not mean one central database: a
+distributed implementation must still declare ownership and reconcile replicas.
 
 The repository manifest is canonical for chapter order and identity. Quarto
 navigation, reader units, status panels, and site routes are generated or
@@ -305,8 +326,10 @@ the machine. A production monitor operated by another team gives more separation
 but may share provider and policy.
 
 Concurrent effects need identity and ordering. Revocation tied with an attempted
-effect should have prospective precedence. One effect cannot be both acknowledged
-and residualized as though those were independent successes. Retries need
+effect should have prospective precedence. Acknowledgement and residual closure answer different questions. A pull request
+can be observed as created while its exposed secret remains an unresolved
+incident. Do not count those statuses as two successful effects, or interpret
+the acknowledgement as complete recovery. Retries need
 idempotency or explicit duplicate reconciliation.
 
 The architecture is effect-complete only when it accounts for known external
@@ -320,9 +343,10 @@ passes. Each claim has a support state, evidence packet, quality dimensions,
 defeaters, and allowed transitions.
 
 Formal proofs establish consequences of definitions and assumptions. Executable
-tests establish bounded behavior under an instrument. Natural experiments add
-external validity within their scope. Independent reproduction adds a different
-lineage. Institutional and normative claims require affected-party and authority
+tests establish bounded behavior under an instrument. Natural-workload experiments supply observations under their sampled
+conditions; generalization depends on selection, design, uncertainty, and the
+claimed population. Independent reproduction adds evidence along its named
+separation dimensions, with shared dependencies still recorded. Institutional and normative claims require affected-party and authority
 evidence that code cannot supply.
 
 The stack keeps these lanes separate. One finite Lean theorem can prove that a
@@ -331,7 +355,8 @@ real rollback restores the world. A local repository campaign can demonstrate
 an exact behavior under disposable Git repositories. It cannot establish a
 deployed multi-service system.
 
-Accepted transitions are append-only. Negative and null results remain useful
+Accepted transition history remains available within its declared retention
+boundary; active reliance can still be suspended or corrected. Negative and null results remain useful
 when they narrow a claim, invalidate an instrument, or rule out a mechanism.
 Support never flows from a child claim to a broader chapter core without a
 separate decision.
@@ -360,8 +385,9 @@ effects and expected state. It does not assert that the effects occurred.
 The observation-to-evaluation contract carries measured state, instrument
 identity, uncertainty, and coverage. The evaluation-to-readiness contract
 carries bounded findings and residuals. A readiness decision names the exact
-scope it opens. The learning contract receives outcomes and failures only after
-their lineage and rights are settled.
+scope it opens. The learning contract receives outcomes and failures with explicit lineage,
+rights, and unresolved questions. Inadmissible payloads cannot be retained for
+learning; uncertainty is a reason to limit reliance, not to invent settled rights.
 
 This discipline makes substitution possible. A new planner can replace the old
 one if it consumes and emits the governed contracts and passes qualification.
@@ -396,8 +422,9 @@ recovery may not. The result remains a draft until a person uses it.
 In a bounded-work profile, the system edits a disposable repository. It needs
 scoped filesystem authority, resource limits, tests, artifact lineage, and
 cleanup. Independent observation can be another process checking bytes and
-process state. The cost remains modest because no production or external
-release authority exists.
+process state. The narrower effect scope can reduce required control cost, but expensive
+tests or review may still dominate. Measure that burden rather than assuming
+it is modest because production release is forbidden.
 
 In a consequential profile, the system can change shared infrastructure,
 publish information, spend money, or affect people. Identity, separation of
@@ -415,13 +442,16 @@ reversibility, uncertainty, exposure, and authority.
 Efficiency should be measured over the lifecycle. A check that costs thirty
 seconds but prevents a six-hour incident may be efficient. A report that costs
 reviewer time and never changes a decision is waste. The architecture therefore
-needs telemetry for useful output, prevented or contained failures, recovery
-time, reviewer burden, compute, latency, and maintenance. Mere compliance with
+needs observations of useful output, detected defects, denied attempts,
+containment, recovery time, reviewer burden, compute, latency, and maintenance.
+A denied attempt is not automatically a prevented incident; that causal claim
+needs an appropriate comparison, not simply the absence of a later failure. Mere compliance with
 the architecture is not the objective.
 
 ## Project Theseus
 
-Project Theseus is the book's primary implementation reference. Its purpose is
+[Project Theseus](https://corbensorenson.github.io/asi-stack-book/chapters/project-theseus-as-report-first-implementation-reference.html)
+is the book’s primary implementation reference. Its purpose is
 not to claim that the architecture has reached ASI. It is to force architectural
 ideas into artifacts, gates, reports, failures, and runnable behavior that can
 challenge the prose.
@@ -451,7 +481,9 @@ A report is valuable when it is downstream of reality and upstream of a
 decision. It is harmful when the system optimizes report shape while behavior
 remains unknown.
 
-Each report should bind artifacts that a fresh evaluator can replay or inspect.
+Each report should bind artifacts that an admitted evaluator can replay or
+inspect to its declared fidelity. Public-safe metadata may permit record replay
+without providing a private model checkpoint or reproducing its training.
 Commands need environment notes, inputs, expected output classes, and failure
 behavior. A green gate without raw or sanitized evidence appropriate to the
 claim is not replay-ready.
@@ -461,7 +493,7 @@ private-payload leakage, unsupported promotion, incomplete denominators, and
 dashboard-only claims. Independent observers should compare report fields with
 actual state.
 
-Natural campaigns must eventually leave report-shape validation behind. They
+Claims about natural efficacy need evidence beyond report-shape validation. They
 need current models, real tools, meaningful tasks, matched baselines, attacks,
 costs, delayed outcomes, and external reproduction. The report makes that work
 auditable; it does not substitute for it.
@@ -493,10 +525,12 @@ public imports, not a completed reference implementation of the book.
 
 The minimum viable integrated implementation is deliberately smaller than the
 book. It needs one principal, one intent contract, one bounded repository task,
-one planner, a small capability registry, an isolated executor, an external
-effect with idempotent identity, an observer outside the executor, a qualified
+one planner, a small capability registry, an isolated executor, an effect
+boundary outside that executor, an observer, a qualified
 evaluator, a readiness gate, a recovery path, and an append-only evidence
-record. It should fail visibly when authority expires, state is stale, an effect
+record. The effect can remain in an owned local sandbox; an external boundary
+need not be a remote public service or production deployment. It should fail
+visibly when authority expires, state is stale, an effect
 is ambiguous, or required evidence is missing.
 
 That demonstrator would not be ASI. It would establish that the central
@@ -504,8 +538,8 @@ interfaces can carry a useful task without collapsing into narration. It would
 also give every additional layer a concrete consumer. Memory must improve this
 path rather than merely storing records. Routing must improve assignment or
 cost under matched tasks. Formal controls must reject mutations that can reach
-the running system. Governance must change decisions in cases where simpler
-controls fail.
+the running system. Additional governance should improve a declared outcome or decision over
+competent simpler controls; the ordinary baseline may already handle the case.
 
 The next stage broadens variation. Multiple task families, tools, models,
 operators, repositories, and failure injections test whether the contracts are
@@ -546,7 +580,8 @@ the current stage exposes a failure that the next stage is designed to answer.
 
 ## The Prototype Roadmap
 
-The Prototype Roadmap turns dependencies into phase gates. A phase names scope,
+[The Prototype Roadmap](https://corbensorenson.github.io/asi-stack-book/chapters/prototype-roadmap.html)
+turns implementation dependencies into phase gates. A phase names scope,
 predecessors, artifacts, evaluator, authority, evidence, residuals, rollback,
 expiry, and terminal disposition.
 
@@ -565,7 +600,10 @@ is testable.
 
 The roadmap and Theseus should not be semantically merged merely because both
 describe progress. The roadmap owns planned phase unlocks. Theseus owns
-implementation artifacts and reports. A crosswalk links them. If a phase gate
+implementation artifacts and reports. A crosswalk links them. The chapter’s
+conceptual phase model is separate from this repository’s
+sole active maintenance roadmap;
+an illustrative unlock here does not open another operational work queue. If a phase gate
 is derived from Theseus evidence, the evidence remains independently addressable.
 
 ## What the Prototype Controls Establish
@@ -584,7 +622,8 @@ deployed controller exists, useful work improved, or any milestone is achieved.
 
 ## Artifact Stewardship
 
-A living system outlasts individual work sessions. Artifact stewards maintain
+A living system outlasts individual work sessions.
+[Artifact stewards](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-steward-agents-and-living-project-governance.html) maintain
 the identity, ownership, currency, rights, evidence, and retirement of code,
 data, models, proofs, documents, reports, and public projections.
 
@@ -603,8 +642,9 @@ residuals, consumer value, maintenance burden, and recoverability, not by file
 count or activity.
 
 Sunset is a valid outcome. An artifact that no longer has a consumer, owner,
-evidence path, or maintainable implementation can be archived with lineage and
-replacement guidance rather than kept nominally alive.
+evidence path, or maintainable implementation can be archived with permitted lineage and replacement guidance rather than
+kept nominally alive. Retention, deletion, and unknown-copy obligations still
+apply; sunset is not proof of physical erasure.
 
 The current steward surface has seven record-shape families, 37 Lean
 declarations, and a lifecycle probe with three valid routes and 23 invalid
@@ -615,7 +655,8 @@ efficacy.
 
 ## The Living Book
 
-The book is itself a governed adaptive artifact. It separates the research
+[The book’s living method](https://corbensorenson.github.io/asi-stack-book/chapters/living-book-methodology.html)
+treats the manuscript as a governed adaptive artifact. It separates the research
 edition for AI systems and researchers from an independently authored Human
 Reader edition. Both route to the same technical owners and evidence, but they
 serve different reading tasks.
@@ -630,8 +671,9 @@ identity. Adding or merging a chapter should update navigation, numbering,
 crosswalks, and status through generated or validated projections rather than
 manual renumbering.
 
-A new paper enters through source intake: preserve the artifact, record rights
-and public safety, write a source note, compare with existing owners, update
+A new paper enters through source intake: record rights and retain the artifact
+only where permitted, preserve an admitted locator and replay limits otherwise,
+record public safety, write a source note, compare with existing owners, update
 chapters or propose a new owner only when responsibility is genuinely unowned,
 and never infer support from authorship or assignment.
 
@@ -653,12 +695,24 @@ release discipline for authored cases. They do not establish source truth,
 prose quality, accessibility approval, reader approval, public availability,
 future-maintainer compliance, or that the method improves scholarship.
 
-The current Human Reader manuscript being complete at target length will be a
-drafting fact, not editorial approval or release.
+The current Human Reader has 26 authored units at their pacing targets. That
+is a drafting fact; it does not confer author approval, independent reader
+approval, or release authority. Substantive editorial review can improve the
+argument and source fit while the architecture’s empirical gaps remain open.
+
+Completing a book edition and completing the proposed research program are
+different deliverables. A coherent, reviewed manuscript can publish an
+argument with honest limitations; it need not run every future hardware,
+training, or distributed-system experiment before its prose is ready. Book
+completion requires clear explanations, faithful attribution, consistent
+boundaries, useful navigation, and the appropriate editorial and release
+decisions. The unexecuted studies remain a research agenda, not unfinished
+sentences disguised as validation prerequisites.
 
 ## The Research Frontier
 
-An open research agenda prevents gaps from being hidden in concluding prose.
+[The open research agenda](https://corbensorenson.github.io/asi-stack-book/chapters/open-research-agenda-and-bibliography-plan.html)
+keeps gaps visible in concluding prose.
 Every major claim should name its owner, support ceiling, strongest current
 evidence, strongest objection, missing lane, next decisive test, baseline, and
 condition for narrowing or rejection.
@@ -684,14 +738,17 @@ literature completeness, mapping quality, or research prioritization.
 
 ## One Research Loop
 
-Suppose a natural repository campaign finds that the governed route catches a
+Consider another hypothetical example. Suppose a natural repository campaign
+finds that the governed route catches a
 stale-credential failure that the simple baseline misses, but takes twice as
 long. The result first becomes an experiment record, not a success story. The
 record binds task selection, randomization or matching, model and tool versions,
 authority, evaluator, costs, raw outcomes, exclusions, and known contamination.
 
 The relevant effect-lifecycle claim may receive a candidate transition. The
-cost claim receives a negative result. The integrated architecture does not move
+latency claim receives an unfavorable observation; whether total cost rose
+depends on review, repair, and other measured burdens. “Twice as long” alone
+does not price the whole lifecycle. The integrated architecture does not move
 as one block. Reviewers ask whether the stale credential was representative,
 whether the baseline had equivalent credential information, whether the
 observer favored the governed record shape, and whether the extra latency came
@@ -703,7 +760,10 @@ model may encode the discovered ordering constraint, while an executable
 mutation test checks that the production consumer rejects the forbidden
 transition. Neither artifact substitutes for rerunning the real failure.
 
-The prose changes last. The technical chapter can say exactly which bounded
+For a new efficacy claim, evidence review precedes stronger prose. A detected
+misquotation or unsafe instruction can be corrected promptly while adjudication
+is pending; it need not wait for the research loop to finish. The technical
+chapter can say exactly which bounded
 behavior gained support and which costs remain. This Human Reader chapter can
 explain why the result matters without turning one campaign into a verdict on
 the whole stack. The roadmap schedules the next discriminating test. If later
@@ -743,10 +803,15 @@ A hundred disconnected fixtures do not substitute for one effect-bearing trace.
 The integrated reference currently includes schemas and fixtures, a local
 command replay, a name-to-effect trace, and disposable repository-change
 campaigns. One slice runs eight of eight local state/effect cases. Its successor
-runs seven of seven commit-bound service cases with actual model and optimizer
-state, rejection of weights-only rollback, nine-class crash recovery, an owned
-outbox across a localhost partition, one exactly-once external effect,
-stale-credential and custody-tamper rejection, and separate-process observation.
+runs seven of seven commit-bound service cases with a two-parameter predictor
+and bias-corrected Adam state, rejection of weights-only rollback, nine-class
+crash recovery, and an owned outbox across a localhost outage. One separate
+HTTP sink commits an effect and deduplicates a second retry under the authored
+identity and ledger protocol. These cases also reject stale credentials and
+custody tampering and use a separate-process observer. The exactly-once result
+belongs to that local protocol; it is not a guarantee for arbitrary remote APIs.
+The [Integrated Reference Architecture owner](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html)
+retains the two slice reports and their exact recovery and effect scope.
 
 The broader finite surface includes a 45-declaration Lean transition model,
 13-prefix cross-layer consumer with 108 rejecting mutations, a concrete-schema
@@ -762,8 +827,10 @@ external reproduction, transfer, or whole-stack support promotion.
 
 The direct baseline in one disposable campaign produced eight false accepts
 while the governed path produced none under the authored scenarios. That result
-is local to the constructed workload and evaluator; it is not a general
-superiority claim.
+is local to the constructed workload and evaluator. The direct arm treated a
+smoke-test pass as release permission; it does not show that a conventional
+workflow with competent authorization and release checks would fail. It is not
+a general superiority claim.
 
 ## The Strongest Simpler Baseline
 
@@ -782,7 +849,7 @@ independent operators, faults, delayed outcomes, and complete cost. Ablations
 should remove specific governance layers to measure their contribution rather
 than comparing the full stack only with an intentionally weak baseline.
 
-If a simpler architecture matches useful output, safety, reversibility,
+If a simpler architecture matches useful output, safety, bounded recovery,
 descendant control, accountability, and recovery at lower lifecycle cost, the
 reference design should shrink.
 
@@ -813,11 +880,12 @@ state, evidence, effects, recovery, and corrigibility as capability grows and
 changes itself. Its unit of control is not a model response but a versioned
 commitment from intent through effect and learning.
 
-Project Theseus is the implementation reference that turns the architecture
-into reports and bounded behavior. The Prototype Roadmap governs phase unlocks.
-Artifact stewards preserve long-lived project reality. The Living Book keeps
-research and human prose connected to stable technical owners. The open agenda
-keeps missing evidence visible.
+Project Theseus supplies an exact inspected implementation reference, reports
+and scoped observations. The Prototype Roadmap governs phase admission and
+closure. Artifact stewards maintain accountable project continuity. The Living
+Book governs applied editorial changes and publication custody across stable
+technical owners. The open agenda routes intake and closure of new sources,
+questions and missing evidence; it does not apply or approve those changes.
 
 The repository contains extensive finite proofs, executable controls, local
 campaigns, source mappings, and publication infrastructure. It does not
@@ -830,5 +898,3 @@ stronger simple baseline, and which claim should change when the result arrives?
 
 The book closes with that research frontier open. Every claim remains owned,
 challengeable, versioned, and capable of being retired.
-
-{{< include ../generated/unit-26-status.qmd >}}

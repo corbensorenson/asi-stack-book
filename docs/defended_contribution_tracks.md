@@ -1,12 +1,12 @@
 # Defended Contribution Track Selection
 
-Last updated: 2026-06-29
+Current framing updated: 2026-10-11; retained track selection: 2026-06-29
 
-This record selects the v1.x defended contribution tracks from
-`docs/a_plus_quality_scorecard.md` and binds them to the current active evidence
-cycle in `docs/v1_x_active_evidence_cycle.md`. It is a planning and
-release-control surface, not evidence, not an accepted review, and not a
-support-state transition.
+This record preserves the June 29 v1.x selection from
+`docs/a_plus_quality_scorecard.md` and its then-active evidence cycle in
+`docs/v1_x_active_evidence_cycle.md`. Current work is owned by the
+Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap. The dated
+track rows are subordinate history, not current execution or release gates.
 
 Program-level focus is now constrained by `products/contribution_focus_contract.json`
 and `docs/three_defended_contributions.md`: exactly three program-level defended
@@ -15,7 +15,15 @@ subordinate work tracks inside those contributions, not five separate headline
 claims. Every manifest chapter is assigned once as a primary owner or a
 supporting/integration chapter; none is an independent flagship.
 
+The three are proposed targets selected for scrutiny, not established novelty
+results. Their contribution types and competent conventional alternatives are
+specified in [the current comparison](defended_contribution_prior_art_positioning.md).
+Historical review requests below introduce no external-human prepublication
+requirement and do not freshen the dated artifact assessments.
+
 In short: three program-level defended contributions govern five subordinate work tracks.
+
+## Historical selection and then-open work — 2026-06-29
 
 The book remains broad, but this cycle does not try to make all 54 chapter
 claims equally defensible. It retains five subordinate work tracks for v1.x focus

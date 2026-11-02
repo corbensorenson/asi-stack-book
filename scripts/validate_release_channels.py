@@ -14,6 +14,7 @@ from typing import Any
 
 from build_canonical_public_status import ROOT, load_json, validate_against_schema
 from build_release_channels import INDEX_REL, POLICY, STATUS_REL, build_index
+from build_tested_site_bundle import file_rows
 
 
 POLICY_SCHEMA = ROOT / "schemas" / "versioned_release_policy.schema.json"
@@ -27,9 +28,8 @@ def digest(path: Path) -> str:
 def file_map(root: Path, excluded: set[str] | None = None) -> dict[str, str]:
     excluded = excluded or set()
     return {
-        path.relative_to(root).as_posix(): digest(path)
-        for path in sorted(candidate for candidate in root.rglob("*") if candidate.is_file())
-        if path.relative_to(root).parts[0] not in excluded and path.name != ".DS_Store"
+        row["path"]: row["sha256"] for row in file_rows(root)
+        if Path(row["path"]).parts[0] not in excluded and Path(row["path"]).name != ".DS_Store"
     }
 
 
@@ -122,6 +122,7 @@ def main() -> None:
     errors = validate_policy(policy)
     if args.site:
         site = args.site if args.site.is_absolute() else ROOT / args.site
+        before = file_rows(site)  # Refuse metadata links/special objects before reading.
         status = load_json(site / STATUS_REL)
     else:
         from build_canonical_public_status import build_status
@@ -143,6 +144,8 @@ def main() -> None:
             status.get("source_tree_state") != "clean" or status.get("build_context") != "tested_commit"
         ):
             errors.append("release channels require clean tested-commit canonical status")
+        if file_rows(site) != before:
+            errors.append("release-channel site changed during validation")
     errors.extend(negative_controls(policy, expected_index))
     if errors:
         print("Release-channel validation failed:")
@@ -156,4 +159,7 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except (OSError, TypeError, ValueError) as error:
+        raise SystemExit(f"Release-channel validation refused: {error}") from error

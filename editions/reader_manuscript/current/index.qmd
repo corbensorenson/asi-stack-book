@@ -1,34 +1,958 @@
 # Human Reader Edition {.unnumbered}
 
-This is the complete maintained draft of the independent 26-unit Human Reader edition. Every unit is inside its target range and ready for author review; author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.
+This is the maintained draft of the independent 26-unit Human Reader edition. Every unit is drafted and inside its pacing range. Narrative completeness requires review of the mechanism, alternative, example, failure, and conclusion; target length alone does not establish it. Author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.
+
+The narrative develops three proposed contributions: **governed-cognition interface contracts**, **public claim-state transition discipline**, and **record/reality reconciliation with residual honesty**. The 89 technical owners support these composition and process proposals; they are not independent discoveries. Bounded local implementation results do not establish general superiority, novelty, or chapter-core support. The [contribution summary](https://corbensorenson.github.io/asi-stack-book/docs/three_defended_contributions.md) and [conventional alternatives](https://corbensorenson.github.io/asi-stack-book/docs/defended_contribution_prior_art_positioning.md) give the scope and challengers.
 
 Start with [A Fifteen-Minute Route Through the Stack](quickstart.qmd) to run one bounded governed repository change and inspect what is implemented, what remains proposed, and how the three execution routes differ.
 
+## Find a Concept {#find-a-concept}
+
+These entry points revisit a distinction in the narrative. The working glossary gives the definition and canonical technical owner; neither route adds evidence to the claim.
+
+- **[Assurance]{#concept-assurance}.** [What does a safety argument leave unresolved?](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd#assurance-must-be-incremental-and-revocable) · [Assurance in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-assurance).
+
+- **[Authority]{#concept-authority}.** [Whose permission admits this effect?](chapters/unit-03-authority-failure-and-misuse.qmd#the-authority-tuple) · [Authority in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-authority).
+
+- **[Compensation]{#concept-compensation}.** [What can a new action repair without undoing history?](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd#recovery-compensation-and-closure) · [Compensation in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-compensation).
+
+- **[Contract]{#concept-contract}.** [How does an agreement preserve uncertainty?](chapters/unit-06-human-intent-control-and-epistemic-security.qmd#a-contract-should-preserve-uncertainty) · [Contract in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-contract).
+
+- **[Evidence]{#concept-evidence}.** [What does a support state actually mean?](chapters/unit-05-evidence-states-and-scalable-oversight.qmd#support-states-are-not-a-confidence-score) · [Evidence in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-evidence).
+
+- **[Layer]{#concept-layer}.** [When is a responsibility distinct without being a service?](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#logical-layers-not-a-service-tax) · [Layer in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-layer).
+
+- **[Lease]{#concept-lease}.** [How is an effect bounded while its grant remains current?](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd#effect-leases-bound-action-in-time) · [Lease in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-lease).
+
+- **[Observation]{#concept-observation}.** [Which state did an instrument actually inspect?](chapters/unit-10-perception-and-observation-trust.qmd#observation-is-task-relative) · [Observation in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-observation).
+
+- **[Qualification]{#concept-qualification}.** [Why can compatible components still be ineligible?](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd#compatibility-is-not-qualification) · [Qualification in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-qualification).
+
+- **[Receipt]{#concept-receipt}.** [What does a recorded event claim establish?](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd#audit-logs-are-event-claims) · [Receipt in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-receipt).
+
+- **[Residual]{#concept-residual}.** [Which obligation remains after a bounded decision?](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd#residual-escrow) · [Residual in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-residual).
+
+- **[Revocation]{#concept-revocation}.** [What happens when a grant and an effect race?](chapters/unit-03-authority-failure-and-misuse.qmd#revocation-is-a-race) · [Revocation in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-lease).
+
+- **[Rollback]{#concept-rollback}.** [Which controllable state was actually restored?](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd#rollback-is-an-effect-claim) · [Rollback in the working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html#term-rollback).
+
+### Return to the Repository Example {#repository-example}
+
+The story is a hypothetical teaching case. Jump to the stage you need; later stages retain their stated assumptions and unresolved effects.
+
+- [Decompose the request](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#one-request-many-commitments).
+
+- [Follow revocation ordering](chapters/unit-03-authority-failure-and-misuse.qmd#revocation-is-a-race).
+
+- [Separate restoration from downstream remedy](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd#recovery-compensation-and-closure).
+
+- [Decide whether a lesson becomes durable](chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd#the-adaptive-commit-boundary).
+
+- [Follow the integrated request](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd#following-the-repository-change).
+
+Search in this edition covers the current narrative. For specialist contracts, sources, or papers, follow the glossary's technical-owner links or switch to the AI / researcher edition. Historical releases retain their own status; a matching term does not make an old result current.
+
+## Chapters in Order
+
 | Unit | Chapter | State | Words |
 |---:|---|---|---:|
-| 1 | [ASI Is a Stack, Not a Model](chapters/unit-01-asi-is-a-stack-not-a-model.qmd) | Ready for author review | 4,503 |
-| 2 | [The Efficient ASI Hypothesis](chapters/unit-02-the-efficient-asi-hypothesis.qmd) | Ready for author review | 4,501 |
-| 3 | [Authority, Failure, and Misuse](chapters/unit-03-authority-failure-and-misuse.qmd) | Ready for author review | 5,003 |
-| 4 | [Security, Privacy, and AI Artifact Custody](chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd) | Ready for author review | 5,650 |
-| 5 | [Evidence States and Scalable Oversight](chapters/unit-05-evidence-states-and-scalable-oversight.qmd) | Ready for author review | 5,553 |
-| 6 | [Human Intent, Control, and Epistemic Security](chapters/unit-06-human-intent-control-and-epistemic-security.qmd) | Ready for author review | 5,124 |
-| 7 | [Constitutions, Moral Uncertainty, and Objective Formation](chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd) | Ready for author review | 5,517 |
-| 8 | [Institutions, Coordination, and Societal Resilience](chapters/unit-08-institutions-coordination-and-societal-resilience.qmd) | Ready for author review | 4,703 |
-| 9 | [Stable Capability Fields and Governed Replacement](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd) | Ready for author review | 4,606 |
-| 10 | [Perception and Observation Trust](chapters/unit-10-perception-and-observation-trust.qmd) | Ready for author review | 4,723 |
-| 11 | [Governed World Models and Reality Grounding](chapters/unit-11-governed-world-models-and-reality-grounding.qmd) | Ready for author review | 5,189 |
-| 12 | [Planning as a Control Layer](chapters/unit-12-planning-as-a-control-layer.qmd) | Ready for author review | 4,534 |
-| 13 | [Cognitive Compilation and Semantic IR](chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd) | Ready for author review | 5,481 |
-| 14 | [Virtual Context and Durable Semantic Memory](chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) | Ready for author review | 5,043 |
-| 15 | [Verification Bandwidth, Claim Ledgers, and Proof](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd) | Ready for author review | 5,672 |
-| 16 | [Labor OS, Work Surfaces, and Organizations](chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd) | Ready for author review | 5,514 |
-| 17 | [Artifact Graphs, Runtime Effects, and Operations](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) | Ready for author review | 5,015 |
-| 18 | [Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk](chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd) | Ready for author review | 5,380 |
-| 19 | [Routing and Replaceable Cognitive Substrates](chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd) | Ready for author review | 5,000 |
-| 20 | [Governed Training and Learning-Compute Topology](chapters/unit-20-governed-training-and-learning-compute-topology.qmd) | Ready for author review | 5,000 |
-| 21 | [Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning](chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd) | Ready for author review | 6,774 |
-| 22 | [Evaluation, Readiness, Thresholds, and Structured Assurance](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd) | Ready for author review | 5,705 |
-| 23 | [Generative Compression and Cognitive Resource Economics](chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd) | Ready for author review | 5,670 |
-| 24 | [Physical Compute, Energy, and Infrastructure](chapters/unit-24-physical-compute-energy-and-infrastructure.qmd) | Ready for author review | 4,507 |
-| 25 | [Recursive Improvement, Replication, and Containment](chapters/unit-25-recursive-improvement-replication-and-containment.qmd) | Ready for author review | 5,807 |
-| 26 | [Integrated Reference Architecture, Project Theseus, and the Living Research Method](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd) | Ready for author review | 6,241 |
+| 1 | [ASI Is a Stack, Not a Model](chapters/unit-01-asi-is-a-stack-not-a-model.qmd) | Ready for author review | 5,043 |
+| 2 | [The Efficient ASI Hypothesis](chapters/unit-02-the-efficient-asi-hypothesis.qmd) | Ready for author review | 5,291 |
+| 3 | [Authority, Failure, and Misuse](chapters/unit-03-authority-failure-and-misuse.qmd) | Ready for author review | 5,447 |
+| 4 | [Security, Privacy, and AI Artifact Custody](chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd) | Ready for author review | 6,208 |
+| 5 | [Evidence States and Scalable Oversight](chapters/unit-05-evidence-states-and-scalable-oversight.qmd) | Ready for author review | 6,070 |
+| 6 | [Human Intent, Control, and Epistemic Security](chapters/unit-06-human-intent-control-and-epistemic-security.qmd) | Ready for author review | 5,775 |
+| 7 | [Constitutions, Moral Uncertainty, and Objective Formation](chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd) | Ready for author review | 6,194 |
+| 8 | [Institutions, Coordination, and Societal Resilience](chapters/unit-08-institutions-coordination-and-societal-resilience.qmd) | Ready for author review | 5,198 |
+| 9 | [Stable Capability Fields and Governed Replacement](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd) | Ready for author review | 5,125 |
+| 10 | [Perception and Observation Trust](chapters/unit-10-perception-and-observation-trust.qmd) | Ready for author review | 5,032 |
+| 11 | [Governed World Models and Reality Grounding](chapters/unit-11-governed-world-models-and-reality-grounding.qmd) | Ready for author review | 5,801 |
+| 12 | [Planning as a Control Layer](chapters/unit-12-planning-as-a-control-layer.qmd) | Ready for author review | 4,997 |
+| 13 | [Cognitive Compilation and Semantic IR](chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd) | Ready for author review | 6,050 |
+| 14 | [Virtual Context and Durable Semantic Memory](chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) | Ready for author review | 5,308 |
+| 15 | [Verification Bandwidth, Claim Ledgers, and Proof](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd) | Ready for author review | 6,140 |
+| 16 | [Labor OS, Work Surfaces, and Organizations](chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd) | Ready for author review | 5,846 |
+| 17 | [Artifact Graphs, Runtime Effects, and Operations](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) | Ready for author review | 5,639 |
+| 18 | [Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk](chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd) | Ready for author review | 5,958 |
+| 19 | [Routing and Replaceable Cognitive Substrates](chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd) | Ready for author review | 5,881 |
+| 20 | [Governed Training and Learning-Compute Topology](chapters/unit-20-governed-training-and-learning-compute-topology.qmd) | Ready for author review | 5,618 |
+| 21 | [Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning](chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd) | Ready for author review | 7,347 |
+| 22 | [Evaluation, Readiness, Thresholds, and Structured Assurance](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd) | Ready for author review | 6,368 |
+| 23 | [Generative Compression and Cognitive Resource Economics](chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd) | Ready for author review | 6,489 |
+| 24 | [Physical Compute, Energy, and Infrastructure](chapters/unit-24-physical-compute-energy-and-infrastructure.qmd) | Ready for author review | 5,336 |
+| 25 | [Recursive Improvement, Replication, and Containment](chapters/unit-25-recursive-improvement-replication-and-containment.qmd) | Ready for author review | 6,543 |
+| 26 | [Integrated Reference Architecture, Project Theseus, and the Living Research Method](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd) | Ready for author review | 7,015 |
+
+## Find the Owner of a Source or Defect {#find-an-owner}
+
+Choose the responsibility where the first disputed meaning or decision arises. A misread request belongs to Human Intent; a plan that changes an accepted obligation belongs to conformance or Planning; an unknown external outcome belongs to Runtime. A source can inform several owners, and its volume does not create a chapter. A genuinely new responsibility still needs the established chapter-admission review.
+
+Expand a narrative unit below to see the distinct jobs of its technical owners, their inputs and outputs, and the closest neighboring responsibilities. These are authored architectural roles from the maintained book outline, not proof that an implementation or scientific claim is established. A logical owner need not be a separate service, model or institution.
+
+<details class="owner-routes"><summary>Unit 1 — ASI Is a Stack, Not a Model</summary>
+
+Read the [narrative explanation](chapters/unit-01-asi-is-a-stack-not-a-model.qmd) or follow an exact technical owner:
+
+**[ASI Is a Stack, Not a Model](https://corbensorenson.github.io/asi-stack-book/chapters/asi-is-a-stack-not-a-model.html)**
+
+Explain and challenge the stack thesis: which logical responsibilities must remain inspectable across a handoff, and when a competent conventional design is sufficient.
+
+Human purposes, constraints and candidate architecture roles enter; a responsibility map and conditions for accepting, narrowing or rejecting the stack proposal leave. This is the conceptual frame, not an artifact ledger or service blueprint. Integrated Reference Architecture owns the joined trace across the roles; this opener explains why the distinctions might earn their burden.
+
+**Nearest overlapping owners:** [Integrated Reference Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 2 — The Efficient ASI Hypothesis</summary>
+
+Read the [narrative explanation](chapters/unit-02-the-efficient-asi-hypothesis.qmd) or follow an exact technical owner:
+
+**[The Efficient ASI Hypothesis](https://corbensorenson.github.io/asi-stack-book/chapters/the-efficient-asi-hypothesis.html)**
+
+State the conditions under which selective cognition could improve accepted useful work per complete resource bill without weakening the task or hiding risk.
+
+Task quality requirements, candidate routes and full cost/outcome accounts enter; a bounded efficiency comparison and its weakening conditions leave. Resource Economics owns the accounting and allocation contract, while Routing selects an eligible worker. This chapter owns the hypothesis about their joint frontier, not an optimizer or a claim that the cheaper visible meter wins.
+
+**Nearest overlapping owners:** [Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html); [Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 3 — Authority, Failure, and Misuse</summary>
+
+Read the [narrative explanation](chapters/unit-03-authority-failure-and-misuse.qmd) or follow an exact technical owner:
+
+**[System Boundaries and Authority](https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html)**
+
+Define the exact permission relation for a principal, operation, target and current grant, including delegation, expiry, revocation and the effect ceiling.
+
+A requested use and applicable grants enter; the authority tuple and admission/denial obligations leave. Runtime Adapters owns the actual effect boundary, attempts and outcome observation. Route an incorrectly interpreted or widened grant here; route a correctly defined grant that was not enforced at the effect boundary to Runtime, preserving both owners when the defect crosses them.
+
+**Nearest overlapping owners:** [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+**[Failure Modes of Ungoverned Intelligence](https://corbensorenson.github.io/asi-stack-book/chapters/failure-modes-of-ungoverned-intelligence.html)**
+
+Define the failure conditions that make an architectural claim challengeable, including unmapped events, near misses, recurrence and escape.
+
+Declared invariants, threat assumptions and event reports enter; a versioned failure map, detection obligations and unresolved classifications leave. Operations owns incident response, while Adversarial Evaluation owns the validity of a challenge. A taxonomy entry is an obligation to investigate, not evidence that a detector found the event or containment worked.
+
+**Nearest overlapping owners:** [Governed Operations, Incident Command, and Graceful Degradation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-operations-incident-command-and-graceful-degradation.html); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html).
+
+**[Dangerous Capability Domains and Misuse Uplift](https://corbensorenson.github.io/asi-stack-book/chapters/dangerous-capability-domains-and-misuse-uplift.html)**
+
+Bound dangerous capability by domain, actor, access, elicitation, safeguards and uplift over the declared alternative.
+
+Threat models, task cohorts, realistic comparators and observations enter; a scoped capability/uplift dossier with uncertainty leaves. Capability Thresholds owns the commitment triggered by that dossier; Societal Resilience owns defensive response. Route a misleading domain measurement here, a wrong trigger consequence to Thresholds, and an inadequate public defense to Resilience. The dossier grants no deployment authority.
+
+**Nearest overlapping owners:** [Capability Thresholds and Deployment Commitments](https://corbensorenson.github.io/asi-stack-book/chapters/capability-thresholds-and-deployment-commitments.html); [Societal Resilience and Misuse Defense](https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html).
+
+**[Military AI, Autonomous Weapons, and Strategic Stability](https://corbensorenson.github.io/asi-stack-book/chapters/military-ai-autonomous-weapons-and-strategic-stability.html)**
+
+Assess the composed command-and-interaction boundary where military AI joins human authority, physical action, adversary response and escalation timing.
+
+Mission limits, command records, operator and sensor evidence, applicable constraints and interaction assumptions enter; a bounded strategic/control assessment and unresolved obligations leave. Dangerous Capabilities owns actor-level uplift; Embodied Agency owns deadline-bound actuation. Neither accurate targeting nor a secure actuator establishes lawful command, human comprehension or strategic stability; those remain separate judgments.
+
+**Nearest overlapping owners:** [Dangerous Capability Domains and Misuse Uplift](https://corbensorenson.github.io/asi-stack-book/chapters/dangerous-capability-domains-and-misuse-uplift.html); [Embodied Agency, Real-Time Control, and Physical Safety](https://corbensorenson.github.io/asi-stack-book/chapters/embodied-agency-real-time-control-and-physical-safety.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 4 — Security, Privacy, and AI Artifact Custody</summary>
+
+Read the [narrative explanation](chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd) or follow an exact technical owner:
+
+**[Security Kernel and Digital SCIFs](https://corbensorenson.github.io/asi-stack-book/chapters/security-kernel-and-digital-scifs.html)**
+
+Specify threat-bound mediation of privileged information flows and effects, including exposure, declassification, revocation and incident limits.
+
+A threat model, principals, current capabilities, data labels and requested uses enter; bounded admission/denial and flow/effect obligations leave. Runtime Adapters owns concrete effect attempts; Adversarial Machine Learning owns attacks on learned behavior. Valid receipt shape is not an enforced isolation boundary, and sanitization cannot silently become declassification authority.
+
+**Nearest overlapping owners:** [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html); [Adversarial Machine Learning and the Model Attack Surface](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-machine-learning-and-model-attack-surface.html).
+
+**[Adversarial Machine Learning and the Model Attack Surface](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-machine-learning-and-model-attack-surface.html)**
+
+Bind attacks and defenses on learned behavior to exact artifacts, attacker knowledge, objectives, budgets, adaptation and observed consequences.
+
+Build/deployment identity, threat specifications and bounded attack/defense observations enter; model-threat findings and defense tradeoffs leave. Security Kernel owns application/tool authority boundaries; Adversarial Evaluation owns test elicitation and evaluator deception. Authentic provenance does not rule out poisoned behavior, and an attack result cannot certify the entire system insecure or secure.
+
+**Nearest overlapping owners:** [Security Kernel and Digital SCIFs](https://corbensorenson.github.io/asi-stack-book/chapters/security-kernel-and-digital-scifs.html); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html).
+
+**[Privacy, Data Rights, and Information-Flow Governance](https://corbensorenson.github.io/asi-stack-book/chapters/privacy-data-rights-and-information-flow-governance.html)**
+
+Keep purpose compatibility, minimization, information rights and remedy duties attached to data use and known derivatives across the lifecycle.
+
+Affected parties, purpose/rights constraints, flow lineage and privacy evidence enter; scoped use/remedy decisions, propagation duties and unresolved exposure leave. Data Engines owns data/training/deletion events; Confidential Computation owns protected-execution properties. Encryption, consent metadata or a deletion receipt cannot settle purpose legitimacy, privacy loss or closure across unknown copies.
+
+**Nearest overlapping owners:** [Data Engines, Continual Learning, and Unlearning](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html); [Confidential and Verifiable AI Computation](https://corbensorenson.github.io/asi-stack-book/chapters/confidential-and-verifiable-ai-computation.html).
+
+**[Confidential and Verifiable AI Computation](https://corbensorenson.github.io/asi-stack-book/chapters/confidential-and-verifiable-ai-computation.html)**
+
+Separate privacy, computation integrity, platform identity and output authenticity when AI work crosses distrust boundaries.
+
+An exact workload, protection goals, adversary assumptions, protocol/platform evidence and permitted use enter; a bounded protected-execution appraisal and limitations leave. Privacy owns purpose and rights; Model-Weight Custody owns keys, assets and roots of trust. A protected platform or valid computation proof cannot certify all those properties at once or grant the relying party’s action.
+
+**Nearest overlapping owners:** [Privacy, Data Rights, and Information-Flow Governance](https://corbensorenson.github.io/asi-stack-book/chapters/privacy-data-rights-and-information-flow-governance.html); [Model-Weight Custody and Hardware Roots of Trust](https://corbensorenson.github.io/asi-stack-book/chapters/model-weight-custody-and-hardware-roots-of-trust.html).
+
+**[Model-Weight Custody and Hardware Roots of Trust](https://corbensorenson.github.io/asi-stack-book/chapters/model-weight-custody-and-hardware-roots-of-trust.html)**
+
+Track possession, access, copies, derivatives, keys, load state and retirement of exact model-family assets across custody boundaries.
+
+Asset/holder inventories, current access rules, key state, attestation appraisal and copy/load observations enter; scoped custody transitions and surviving-copy residuals leave. Supply Chain owns build/supplier integrity; Open-Weight Release owns deliberate irreversible distribution. Custody or hardware appraisal cannot establish model safety, complete derivative discovery or authority to publish the weights.
+
+**Nearest overlapping owners:** [AI Supply-Chain Integrity and Lifecycle Provenance](https://corbensorenson.github.io/asi-stack-book/chapters/ai-supply-chain-integrity-and-lifecycle-provenance.html); [Open-Weight Release and Post-Release Control](https://corbensorenson.github.io/asi-stack-book/chapters/open-weight-release-and-post-release-control.html).
+
+**[Open-Weight Release and Post-Release Control](https://corbensorenson.github.io/asi-stack-book/chapters/open-weight-release-and-post-release-control.html)**
+
+Treat deliberate weight distribution as a change in controllability, with explicit recall limits and post-release obligations.
+
+Exact release artifacts, bounded misuse evidence, commitments, institutional decisions and resilience limits enter; a scoped release disposition and irreversible residuals leave. Weight Custody owns restricted possession/access; Societal Resilience owns downstream defense and remedy. Revoking official availability does not retract independent copies, and a complete release packet cannot automatically authorize publication.
+
+**Nearest overlapping owners:** [Model-Weight Custody and Hardware Roots of Trust](https://corbensorenson.github.io/asi-stack-book/chapters/model-weight-custody-and-hardware-roots-of-trust.html); [Societal Resilience and Misuse Defense](https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html).
+
+**[AI Supply-Chain Integrity and Lifecycle Provenance](https://corbensorenson.github.io/asi-stack-book/chapters/ai-supply-chain-integrity-and-lifecycle-provenance.html)**
+
+Appraise exact lifecycle subjects and relations under a consumer’s integrity policy, including affected paths, invalidation and bounded restoration.
+
+Build/data/model identities, supplier assertions, provenance, advisories and verification policy enter; scoped assurance/affected-path decisions and unresolved coverage leave. Artifact Graphs preserves general lineage and replay; Weight Custody governs possession/use of model-family assets. A signature or BOM is an assertion to appraise, not artifact correctness, complete dependency coverage or release permission.
+
+**Nearest overlapping owners:** [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html); [Model-Weight Custody and Hardware Roots of Trust](https://corbensorenson.github.io/asi-stack-book/chapters/model-weight-custody-and-hardware-roots-of-trust.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 5 — Evidence States and Scalable Oversight</summary>
+
+Read the [narrative explanation](chapters/unit-05-evidence-states-and-scalable-oversight.qmd) or follow an exact technical owner:
+
+**[Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html)**
+
+Decide what an exact claim may currently assert from its evidence, preserving scope, contrary results and the reason for an accepted state transition.
+
+Versioned claims, evidence and reviewed transition proposals enter; accepted, rejected, narrowed or unchanged support dispositions leave. Claim Ledgers owns durable semantic identity and surface continuity; this chapter owns support policy and transition meaning. A proof or implementation result remains evidence at its exact scope rather than permission to promote a parent thesis.
+
+**Nearest overlapping owners:** [Claim Ledgers and Belief Revision](https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html).
+
+**[Scalable Oversight and Adversarial AI Control](https://corbensorenson.github.io/asi-stack-book/chapters/scalable-oversight-and-adversarial-ai-control.html)**
+
+Specify how a limited supervisor can inspect a stronger or less transparent system, with explicit protocol, evidence views and failure dependencies.
+
+An exact task, supervisor roles, evidence views and protocol constraints enter; a bounded oversight outcome, disagreement or abstention record leaves. Human Factors owns whether a person has workable information, time and intervention capacity; Verification Bandwidth owns checking adequacy. An oversight score or vote cannot grant an effect, authorize training or promote support.
+
+**Nearest overlapping owners:** [Human Factors and Meaningful Control in Oversight](https://corbensorenson.github.io/asi-stack-book/chapters/human-factors-and-meaningful-control-in-oversight.html); [Verification Bandwidth and Context Adequacy](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html).
+
+**[White-Box Evidence, Interpretability, and Activation Governance](https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html)**
+
+Turn internal-state capture and intervention into method-relative, challengeable evidence while keeping feature labels, causal effects and behavioral truth separate.
+
+Exact model/capture identity, access grants, extraction method, intervention controls and held-out behavioral observations enter; bounded evidence packets, alternatives, collateral effects and expiry leave. Perception owns external observation trust; Evidence States owns accepted support. A correlated activation or attractive feature label cannot establish complete mechanism, intervention safety or release permission.
+
+**Nearest overlapping owners:** [Perception, Sensor Fusion, and Observation Trust](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html); [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 6 — Human Intent, Control, and Epistemic Security</summary>
+
+Read the [narrative explanation](chapters/unit-06-human-intent-control-and-epistemic-security.qmd) or follow an exact technical owner:
+
+**[Human Intent as a Formal Input](https://corbensorenson.github.io/asi-stack-book/chapters/human-intent-as-a-formal-input.html)**
+
+Make the interpretation of a request contestable: bind the desired outcome, permitted means, current authorization, unacceptable effects, acceptance and unresolved ambiguity.
+
+The human request, session context, applicable grants and constraints enter; an accepted interpretation or a specific clarification/hold leaves. Intent-to-Execution Contracts owns conformance after that interpretation is accepted. Route a changed meaning or invented permission here; route a downstream plan or delivery that no longer conforms to the accepted meaning to the conformance owner. Applicable authorization need not be requested repeatedly.
+
+**Nearest overlapping owners:** [Command Contracts: From Intent to Executable Work](https://corbensorenson.github.io/asi-stack-book/chapters/intent-to-execution-contracts.html).
+
+**[Human Factors and Meaningful Control in Oversight](https://corbensorenson.github.io/asi-stack-book/chapters/human-factors-and-meaningful-control-in-oversight.html)**
+
+Determine whether the assigned human role has the information, time, competence, authority and usable intervention path needed for the proposed work.
+
+Role requirements, evidence views, workload, timing and intervention/recovery conditions enter; a bounded capacity disposition and shortfalls leave. Scalable Oversight owns the protocol; Runtime owns the effect and actual intervention channel. A nominal approval, training certificate or attractive explanation does not establish live control, comprehension or permission. Route an infeasible human review window here.
+
+**Nearest overlapping owners:** [Scalable Oversight and Adversarial AI Control](https://corbensorenson.github.io/asi-stack-book/chapters/scalable-oversight-and-adversarial-ai-control.html); [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+**[Human-AI Communication, Persuasion, and Epistemic Security](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-communication-persuasion-and-epistemic-security.html)**
+
+Govern consequential outbound influence and the correction obligations that follow its actual distribution and reach.
+
+Purpose, audience, supported claims, personal-data constraints, provenance and channel conditions enter; a scoped influence decision and post-delivery duties leave. Privacy owns purpose-compatible data use; Content Authenticity owns lineage and disclosure signals. Lawful data use, an authenticity mark or a delivery receipt cannot certify an honest message, informed consent or successful correction.
+
+**Nearest overlapping owners:** [Privacy, Data Rights, and Information-Flow Governance](https://corbensorenson.github.io/asi-stack-book/chapters/privacy-data-rights-and-information-flow-governance.html); [Content Authenticity, Watermarking, and Synthetic Media Integrity](https://corbensorenson.github.io/asi-stack-book/chapters/content-authenticity-watermarking-and-synthetic-media-integrity.html).
+
+**[Command Contracts: From Intent to Executable Work](https://corbensorenson.github.io/asi-stack-book/chapters/intent-to-execution-contracts.html)**
+
+Keep an accepted task’s obligations aligned through command, plan, job, effect, artifact and delivery without letting one stage certify another.
+
+Accepted intent, current constraints and stage-specific records enter; conformance decisions and owned gaps leave. Human Intent owns interpretation; Planning chooses obligation order; Runtime owns attempts and qualified outcomes. A dispatched job is not an effect, and a future outcome cannot be demanded as pre-effect evidence. A lost reply retains unknown-effect duties rather than rearming the accepted operation.
+
+**Nearest overlapping owners:** [Human Intent as a Formal Input](https://corbensorenson.github.io/asi-stack-book/chapters/human-intent-as-a-formal-input.html); [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 7 — Constitutions, Moral Uncertainty, and Objective Formation</summary>
+
+Read the [narrative explanation](chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd) or follow an exact technical owner:
+
+**[Constitutional Alignment: Agency, Dignity, and Corrigibility](https://corbensorenson.github.io/asi-stack-book/chapters/constitutional-alignment-substrate.html)**
+
+Make versioned constitutional constraints and correction paths usable by downstream plans without treating the constitution as its own authority or legitimacy certificate.
+
+Accepted intent, protected interests, exact rules and contested applicability enter; predicate/conflict records and correction requirements leave. Moral Uncertainty owns unresolved value conflict; Institutions owns public mandate and legitimacy. This chapter applies and preserves constraints; it cannot settle their authorship, widen an action grant or silently approve a weakening during replacement.
+
+**Nearest overlapping owners:** [Moral Uncertainty, Value Conflict, and Contestable Governance](https://corbensorenson.github.io/asi-stack-book/chapters/moral-uncertainty-and-value-conflict.html); [Institutions, International Coordination, and Public Legitimacy](https://corbensorenson.github.io/asi-stack-book/chapters/institutions-international-coordination-and-public-legitimacy.html).
+
+**[Inner Alignment, Mesa-Optimization, and Learned-Objective Integrity](https://corbensorenson.github.io/asi-stack-book/chapters/inner-alignment-mesa-optimization-and-learned-objective-integrity.html)**
+
+Keep a defeasible account of what a learned policy may optimize under shift, without equating training reward or observed compliance with objective identity.
+
+The outer target, signal lineage, behavioral/white-box observations and deployment opportunities enter; competing policy hypotheses, use limits and monitoring residuals leave. Objective Formation owns the approved target; Adversarial Evaluation owns elicitation and evaluator gaming. A favorable integrity test cannot define a goal, certify alignment or issue effect permission.
+
+**Nearest overlapping owners:** [Governed Objective Formation, Value Learning, and Goal Integrity](https://corbensorenson.github.io/asi-stack-book/chapters/governed-objective-formation-value-learning-and-goal-integrity.html); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html).
+
+**[Moral Uncertainty, Value Conflict, and Contestable Governance](https://corbensorenson.github.io/asi-stack-book/chapters/moral-uncertainty-and-value-conflict.html)**
+
+Preserve unresolved normative disagreement and usable challenge, remedy and exit paths when a bounded decision must still be made.
+
+Conflicting values, protected interests, affected parties and current authority constraints enter; a scoped decision record with dissent, rights duties and unresolved burden leaves. Constitutional Alignment owns the exact constraints; Institutions owns standing and public mandate. Aggregation or review does not make disagreement disappear, establish moral truth or repair a missing grant.
+
+**Nearest overlapping owners:** [Constitutional Alignment: Agency, Dignity, and Corrigibility](https://corbensorenson.github.io/asi-stack-book/chapters/constitutional-alignment-substrate.html); [Institutions, International Coordination, and Public Legitimacy](https://corbensorenson.github.io/asi-stack-book/chapters/institutions-international-coordination-and-public-legitimacy.html).
+
+**[Governed Objective Formation, Value Learning, and Goal Integrity](https://corbensorenson.github.io/asi-stack-book/chapters/governed-objective-formation-value-learning-and-goal-integrity.html)**
+
+Bind an operational target, its proxies and consumer uses so a temporary request or preference estimate cannot silently become an enduring system goal.
+
+Requests, uncertain preference evidence, constraints, normative conflict and bounded authority enter; a versioned objective lease and proxy/consumer bindings leave. Human Intent owns request interpretation; Policy Optimization owns approved behavior updates against the target. Route an altered target meaning here, rather than letting a planner or reward signal author or weaken the goal.
+
+**Nearest overlapping owners:** [Human Intent as a Formal Input](https://corbensorenson.github.io/asi-stack-book/chapters/human-intent-as-a-formal-input.html); [Policy Optimization and Learning from Feedback](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 8 — Institutions, Coordination, and Societal Resilience</summary>
+
+Read the [narrative explanation](chapters/unit-08-institutions-coordination-and-societal-resilience.qmd) or follow an exact technical owner:
+
+**[Institutions, International Coordination, and Public Legitimacy](https://corbensorenson.github.io/asi-stack-book/chapters/institutions-international-coordination-and-public-legitimacy.html)**
+
+Make mandate, jurisdiction, participation, enforcement and remedy explicit when AI governance crosses public bodies, borders and affected populations.
+
+Claimed mandates, applicable constraints, stakeholder challenges and bounded technical evidence enter; institutional decisions, accountability duties and unresolved legitimacy leave. Human-AI Organizations owns roles inside an organization; System Authority owns technical permission. A technically valid grant or safety case cannot appoint its legitimate issuer, and an institutional mandate cannot certify a safe effect.
+
+**Nearest overlapping owners:** [Human-AI Organizations, Delegation, and Accountability](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html); [System Boundaries and Authority](https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html).
+
+**[Societal Resilience and Misuse Defense](https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html)**
+
+Coordinate bounded defense, response, recovery and remedy across organizations and public systems facing AI-enabled misuse.
+
+Threat/uplift dossiers, incident reports, institutional mandates and information-use limits enter; coordinated defensive requirements, capacity shortfalls and harmed-party duties leave. Governed Operations owns the provider’s incident loop; Dangerous Capabilities owns the threat measurement. Defensive capacity does not itself justify a release or make shared surveillance legitimate.
+
+**Nearest overlapping owners:** [Governed Operations, Incident Command, and Graceful Degradation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-operations-incident-command-and-graceful-degradation.html); [Dangerous Capability Domains and Misuse Uplift](https://corbensorenson.github.io/asi-stack-book/chapters/dangerous-capability-domains-and-misuse-uplift.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 9 — Stable Capability Fields and Governed Replacement</summary>
+
+Read the [narrative explanation](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd) or follow an exact technical owner:
+
+**[Stable Capability Fields](https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html)**
+
+Define what a named capability must preserve for a particular consumer and use when its implementation changes.
+
+Consumer requirements, current use/authority limits, dependencies and qualification evidence enter; a substitution contract and scoped reliance conditions leave. Capability Replacement owns the actual change transaction; Readiness owns admission/quarantine for current use. A stable name is neither semantic equivalence nor permission to serve an expired or inadequate implementation.
+
+**Nearest overlapping owners:** [Capability Replacement and Rollback](https://corbensorenson.github.io/asi-stack-book/chapters/capability-replacement-and-rollback.html); [Readiness Gates, Residual Escrow, and Quarantine](https://corbensorenson.github.io/asi-stack-book/chapters/readiness-gates-residual-escrow-and-quarantine.html).
+
+**[Capability Replacement and Rollback](https://corbensorenson.github.io/asi-stack-book/chapters/capability-replacement-and-rollback.html)**
+
+Coordinate an authorized implementation change while distinguishing commit, observed performance, restoration, compensation and unresolved effects.
+
+The substitution contract, candidate, current grants, known state/effect inventory and evaluation/recovery conditions enter; a typed replacement disposition and terminal residuals leave. Stable Capability Fields owns the identity contract; Recursive Self-Improvement owns admission of a self-change proposal. An available checkpoint or restored file does not establish recovered behavior, reversed effects or useful improvement.
+
+**Nearest overlapping owners:** [Stable Capability Fields](https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html); [Recursive Self-Improvement Boundaries](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 10 — Perception and Observation Trust</summary>
+
+Read the [narrative explanation](chapters/unit-10-perception-and-observation-trust.qmd) or follow an exact technical owner:
+
+**[Perception, Sensor Fusion, and Observation Trust](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html)**
+
+Qualify fallible measurements and fused hypotheses while preserving channel identity, time, calibration, coverage, missingness and disagreement.
+
+Raw signals, transformations, quality/integrity checks and evidence requirements enter; admitted observation hypotheses, limitations or faults leave. World Models owns predictive branches; Embodied Agency owns physical action timing and control. Route a stale or misbound channel here and a contradicted forecast to World Models, retaining disputed attribution. Neither multiple sensors nor a newly admitted reading certifies environmental truth.
+
+**Nearest overlapping owners:** [Governed World Models and Reality Grounding](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html); [Embodied Agency, Real-Time Control, and Physical Safety](https://corbensorenson.github.io/asi-stack-book/chapters/embodied-agency-real-time-control-and-physical-safety.html).
+
+**[Embodied Agency, Real-Time Control, and Physical Safety](https://corbensorenson.github.io/asi-stack-book/chapters/embodied-agency-real-time-control-and-physical-safety.html)**
+
+Admit deadline-bound physical commands under a qualified plant/control envelope, preserving uncertainty, interlocks, timing, observed effects and recovery limits.
+
+An authorized action, time-bound observations, model assumptions and current controller/fallback conditions enter; bounded control decisions, effect traces or degradation/unknown outcomes leave. Perception qualifies measurements; Runtime owns tool/service effect mediation. A software restore does not restore the plant, and a stop or hold is not inherently safe outside its declared physical envelope.
+
+**Nearest overlapping owners:** [Perception, Sensor Fusion, and Observation Trust](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html); [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 11 — Governed World Models and Reality Grounding</summary>
+
+Read the [narrative explanation](chapters/unit-11-governed-world-models-and-reality-grounding.qmd) or follow an exact technical owner:
+
+**[Governed World Models and Reality Grounding](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html)**
+
+Qualify versioned predictive branches for declared planning uses and preserve their disagreement with later qualified observations.
+
+Admitted observations, uncertain beliefs, model versions and rollout requests enter; bounded branch packets and reality-residual records leave. Perception owns observation qualification; Planning owns plan revision; Runtime retains permission. Reflexive Model-World Systems owns whether deployment changed the measurement process or successor evidence. An admitted reading is not unquestionable reality, and predictive qualification creates no grant.
+
+**Nearest overlapping owners:** [Perception, Sensor Fusion, and Observation Trust](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html); [Reflexive Model-World Systems](https://corbensorenson.github.io/asi-stack-book/chapters/reflexive-model-world-systems.html).
+
+**[Reflexive Model-World Systems](https://corbensorenson.github.io/asi-stack-book/chapters/reflexive-model-world-systems.html)**
+
+Track how deployment changes measurement, institutions, preferences or successor evidence so on-policy outcomes cannot masquerade as independent grounding.
+
+Versioned deployments, exposures/interventions, observations and successor ancestry enter; target-regime evidence limits, identification residuals and persistence-aware rollback duties leave. World Models owns forecast qualification; Data Engines owns data lineage and learning/deletion events. A later observation can be useful without being lineage-independent, and withdrawing a model cannot automatically undo its earlier social or data effects.
+
+**Nearest overlapping owners:** [Governed World Models and Reality Grounding](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html); [Data Engines, Continual Learning, and Unlearning](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 12 — Planning as a Control Layer</summary>
+
+Read the [narrative explanation](chapters/unit-12-planning-as-a-control-layer.qmd) or follow an exact technical owner:
+
+**[Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html)**
+
+Choose and revise obligation order, observation strategy, schedule and node-local dispatch readiness under declared uncertainty and capacity.
+
+An accepted command, dependencies, predictions, current grants and resource/route constraints enter; a versioned plan and scoped dispatch/replan requests leave. Cognitive Compilation translates accepted obligations, Routing selects an eligible worker, and Runtime admits effects. Route ordering, shared-capacity or affected-dependency mistakes here; an unavailable credential is feasibility trouble rather than a reason to repeat an existing grant.
+
+**Nearest overlapping owners:** [Cognitive Compilation and Semantic IR](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html); [Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 13 — Cognitive Compilation and Semantic IR</summary>
+
+Read the [narrative explanation](chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd) or follow an exact technical owner:
+
+**[Cognitive Compilation and Semantic IR](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html)**
+
+Translate accepted obligations into target representations while making preservation assumptions, validation and affected rebuilds explicit.
+
+Version-bound obligations, source representations and target constraints enter; typed IR/artifacts, validation results or translation faults leave. Planning owns ordering and Cognitive Method Transfer owns whether a source method transports to the target substrate. A successful compile does not qualify that method, grant an effect, dispatch a job or establish that an omitted dependency is absent.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Cognitive Method Transfer and Qualification](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-method-transfer-and-qualification.html).
+
+**[Cognitive Method Transfer and Qualification](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-method-transfer-and-qualification.html)**
+
+Determine whether a human or institutional method’s mechanism transports to an AI realization before its assurance or authority is inherited.
+
+A versioned source method, evidence, mechanism hypotheses, assumptions and candidate realizations enter; a Cognitive Transfer Record, Qualified Cognitive Protocol candidates and qualification residuals leave. Cognitive Compilation translates accepted obligations; Procedural Memory promotes qualified reusable procedures. Renaming source steps, valid package shape or a successful compile cannot establish transferred efficacy or permission to use the method.
+
+**Nearest overlapping owners:** [Cognitive Compilation and Semantic IR](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html); [Procedural Memory and Cognitive Loop Closure](https://corbensorenson.github.io/asi-stack-book/chapters/procedural-memory-and-cognitive-loop-closure.html).
+
+**[Relational Dimension Compilation and Polyadic Cognition](https://corbensorenson.github.io/asi-stack-book/chapters/relational-dimension-compilation-and-polyadic-cognition.html)**
+
+Qualify role-sensitive higher-order relation candidates and their lowerings without equating computational arity, storage structure and semantic relation truth.
+
+Typed relation requests, role bindings, candidate operators, lower-order comparisons and provenance enter; relation/operator qualification, contraction/expansion conditions and residuals leave. World Models owns branch-local belief and reconciliation; Cognitive Compilation translates accepted obligations. High interaction scores, a compiled incidence form or a contraction certificate cannot certify the relation as actual-world truth.
+
+**Nearest overlapping owners:** [Governed World Models and Reality Grounding](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html); [Cognitive Compilation and Semantic IR](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html).
+
+**[Mathematical and Search Substrates](https://corbensorenson.github.io/asi-stack-book/chapters/mathematical-and-search-substrates.html)**
+
+Admit an exploratory mathematical or search substrate only for the structural, quality and cost axes its exact evidence and consumer permit.
+
+A candidate, theorem/implementation bindings, ordinary comparators, workloads, costs and intended use enter; axis-specific adoption, diagnostic-only, refusal or residual decisions leave. Circle transports bounded formal facts; CoilRA evaluates a particular cyclic candidate family. Elegant mathematics cannot establish downstream quality, a speed advantage or general adoption.
+
+**Nearest overlapping owners:** [Circle Calculus and Proof-Carrying AI Contracts](https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html); [CoilRA, MultiCoil RoPE, and Cyclic Mixers](https://corbensorenson.github.io/asi-stack-book/chapters/coilra-multicoil-rope-and-cyclic-mixers.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 14 — Virtual Context and Durable Semantic Memory</summary>
+
+Read the [narrative explanation](chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) or follow an exact technical owner:
+
+**[The Virtual Context ABI: Typed Pages, Cells, and Certificates](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html)**
+
+Bind a consumer’s declared context request to the actual versioned packet it receives, including transformations, omissions, allowed uses and faults.
+
+Requests and exact durable source/snapshot identities enter; a consumer-bound packet, conformance receipt or fault leaves. Durable Memory owns stored assertions, Context Transactions owns dynamic consistency and mutation, and Verification Bandwidth owns adequacy for a checking attempt. Route a wrong materialized packet here; a racing state update or an inadequate checking view belongs to its separate owner.
+
+**Nearest overlapping owners:** [Durable Semantic Memory and Knowledge Lattices](https://corbensorenson.github.io/asi-stack-book/chapters/durable-semantic-memory-and-knowledge-lattices.html); [Context Transactions, Snapshots, Mounts, and Taint](https://corbensorenson.github.io/asi-stack-book/chapters/context-transactions-snapshots-mounts-and-taint.html); [Verification Bandwidth and Context Adequacy](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html).
+
+**[Durable Semantic Memory and Knowledge Lattices](https://corbensorenson.github.io/asi-stack-book/chapters/durable-semantic-memory-and-knowledge-lattices.html)**
+
+Preserve durable semantic object/relation identity, ontology evolution and retrieval across restarts without confusing stored assertions with truth.
+
+Admitted semantic events, provenance, ontology versions and permitted retention/use enter; addressable objects, retrieval results and migration/conflict limits leave. Context Transactions owns state transitions and isolated views; Claim Ledgers owns proposition identity and belief history. Memory stores and retrieves assertions but cannot decide their support, waive a right or qualify a procedure.
+
+**Nearest overlapping owners:** [Context Transactions, Snapshots, Mounts, and Taint](https://corbensorenson.github.io/asi-stack-book/chapters/context-transactions-snapshots-mounts-and-taint.html); [Claim Ledgers and Belief Revision](https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html).
+
+**[Context Transactions, Snapshots, Mounts, and Taint](https://corbensorenson.github.io/asi-stack-book/chapters/context-transactions-snapshots-mounts-and-taint.html)**
+
+Coordinate declared durable-context state changes, snapshots, mounts, taint, conflicts and crash/recovery outcomes under an explicit participant and fault model.
+
+Exact prior state, requested operations, current grants and consistency constraints enter; committed/faulted views, transition receipts or indeterminate outcomes leave. Durable Memory owns semantic objects; the Context ABI materializes a consumer packet from the selected view. A valid commit cannot establish belief truth, model forgetting, complete deletion or reversal of an external effect.
+
+**Nearest overlapping owners:** [Durable Semantic Memory and Knowledge Lattices](https://corbensorenson.github.io/asi-stack-book/chapters/durable-semantic-memory-and-knowledge-lattices.html); [The Virtual Context ABI: Typed Pages, Cells, and Certificates](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 15 — Verification Bandwidth, Claim Ledgers, and Proof</summary>
+
+Read the [narrative explanation](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd) or follow an exact technical owner:
+
+**[Verification Bandwidth and Context Adequacy](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html)**
+
+Decide whether the available checking view and capacity cover the exact verification obligation, including a declared shortfall or escalation.
+
+A claim, consumer, required checks, actual context views and capacity/dependency information enter; an adequacy, shortfall or abstention record leaves. The Virtual Context ABI owns packet conformance; Proof-Carrying Claims owns the chosen verification route and bounded verdict. Adequacy says the attempt can cover its declared burden, not that the proposition is true or its support may move.
+
+**Nearest overlapping owners:** [The Virtual Context ABI: Typed Pages, Cells, and Certificates](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html); [Proof-Carrying Claims and Adversarial Review](https://corbensorenson.github.io/asi-stack-book/chapters/spinoza-verification-and-proof-carrying-claims.html).
+
+**[Claim Ledgers and Belief Revision](https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html)**
+
+Preserve exact claim identity, belief-transition history and acknowledged current surfaces while keeping dependency repair and permitted retention explicit.
+
+Versioned propositions, dependencies and accepted decisions enter; semantic lineage, affected-use repairs and surface acknowledgements leave. Evidence States owns support transitions, while Artifact Graphs owns general artifact lineage. Route a claim split, alias, stale surface or migration here; a wrong support inference goes to Evidence, and a missing or misidentified underlying artifact goes to Artifact Graphs.
+
+**Nearest overlapping owners:** [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html); [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html).
+
+**[Proof-Carrying Claims and Adversarial Review](https://corbensorenson.github.io/asi-stack-book/chapters/spinoza-verification-and-proof-carrying-claims.html)**
+
+Select and execute claim-specific verification/review routes and keep bounded verdicts, dissent, artifacts and unresolved checking obligations attached to the target.
+
+Exact claim identity, evidence views, checking obligations and eligible reviewers/tools enter; route results, bounded verdicts and residuals leave. Verification Bandwidth owns attempt adequacy; Evidence States owns accepted support transitions. A tribunal vote, valid proof or retrieved dossier cannot establish evaluator competence, issue effect permission or promote the claim by itself.
+
+**Nearest overlapping owners:** [Verification Bandwidth and Context Adequacy](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html); [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html).
+
+**[Circle Calculus and Proof-Carrying AI Contracts](https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html)**
+
+Transport named formal facts through resolvable, versioned proof-contract receipts without enlarging their meaning at the consumer boundary.
+
+Exact statements, assumptions, declarations, proof policy, fingerprints and consumer requirements enter; theorem-resolution/replay status and scoped delivery receipts leave. The Proof Envelope owns authorized formal interpretation and refinement obligations; Artifact Graphs owns generic identity and custody. A valid envelope cannot prove model behavior, repair semantic correspondence or qualify a substrate.
+
+**Nearest overlapping owners:** [Executable Specifications and Lean Proof Envelope](https://corbensorenson.github.io/asi-stack-book/chapters/executable-specifications-and-lean-proof-envelope.html); [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html).
+
+**[Executable Specifications and Lean Proof Envelope](https://corbensorenson.github.io/asi-stack-book/chapters/executable-specifications-and-lean-proof-envelope.html)**
+
+Decide what a formal artifact permits a consumer to claim, exposing the stated proposition, trusted assumptions, semantic adequacy and unproved implementation relation.
+
+A prose obligation, exact formal statement, proof/specification artifacts and consumer scope enter; a bounded interpretation or unusable-for-purpose disposition leaves. Circle owns proof receipt transport; Verification Bandwidth owns checking adequacy and evaluator constraints. A compiled theorem or valid schema cannot establish that its model matches the world or that a represented event occurred.
+
+**Nearest overlapping owners:** [Circle Calculus and Proof-Carrying AI Contracts](https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html); [Verification Bandwidth and Context Adequacy](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 16 — Labor OS, Work Surfaces, and Organizations</summary>
+
+Read the [narrative explanation](chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd) or follow an exact technical owner:
+
+**[Labor OS and Typed Jobs](https://corbensorenson.github.io/asi-stack-book/chapters/labor-os-and-typed-jobs.html)**
+
+Keep one authorized work unit’s admission, attempts, delivery and terminal receipt distinct from a worker’s process state.
+
+A dispatchable plan node, current grants, inputs, acceptance and delivery obligations enter; job lifecycle, attempt/artifact links and closure or residual receipts leave. Planning owns obligation order; Runtime owns effect attempts and observation. Process exit, queue completion and evidence-readiness eligibility do not establish delivered work, accepted evidence or release approval.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+**[From Chat to Organizations: AI Work Surfaces and Agent Harnesses](https://corbensorenson.github.io/asi-stack-book/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.html)**
+
+Make expansion from answers to tasks, projects and organizational roles explicit as a change in context, persistence, tools, custody, authority and human control.
+
+The current work surface, proposed expansion and accountable constraints enter; a bounded surface-change/custody decision, alternatives and migration residuals leave. Labor OS owns typed jobs; Human-AI Organizations owns internal decision rights and accountability. A setting named agent mode or a broader tool interface cannot establish legitimate delegation, adequate oversight or a completed migration.
+
+**Nearest overlapping owners:** [Labor OS and Typed Jobs](https://corbensorenson.github.io/asi-stack-book/chapters/labor-os-and-typed-jobs.html); [Human-AI Organizations, Delegation, and Accountability](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html).
+
+**[Human-AI Organizations, Delegation, and Accountability](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html)**
+
+Allocate decision, execution, review, intervention and remedy duties inside a mixed human-AI organization without treating a role title as competence or accountability.
+
+Authorized purpose, delegation, role/capacity evidence, work receipts and protected interests enter; bounded organizational duties, decisions and remedy residuals leave. Work Surfaces owns the technical expansion; Institutions owns public mandate and jurisdiction. A completed task does not settle liability, and an organization cannot vote itself broader effect authority or self-certify public legitimacy.
+
+**Nearest overlapping owners:** [From Chat to Organizations: AI Work Surfaces and Agent Harnesses](https://corbensorenson.github.io/asi-stack-book/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.html); [Institutions, International Coordination, and Public Legitimacy](https://corbensorenson.github.io/asi-stack-book/chapters/institutions-international-coordination-and-public-legitimacy.html).
+
+**[Human-AI Symbiosis, Neurotechnology, and Cognitive Sovereignty](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.html)**
+
+Assess longitudinal bidirectional human-AI coupling while preserving agency, consent, skill, neural-data limits and practical pause/exit paths.
+
+The population, purpose, coupling method, duration, adaptation evidence and protected interests enter; bounded coupled-system claims, monitoring and exit duties leave. Human Factors owns usable control capacity; Privacy owns information purpose and rights. One performance gain cannot establish beneficial complementarity, safe neural intervention, equitable access or durable human independence.
+
+**Nearest overlapping owners:** [Human Factors and Meaningful Control in Oversight](https://corbensorenson.github.io/asi-stack-book/chapters/human-factors-and-meaningful-control-in-oversight.html); [Privacy, Data Rights, and Information-Flow Governance](https://corbensorenson.github.io/asi-stack-book/chapters/privacy-data-rights-and-information-flow-governance.html).
+
+**[AI Deployment, Transition, Distribution, and Human Agency](https://corbensorenson.github.io/asi-stack-book/chapters/ai-deployment-transition-distribution-and-human-agency.html)**
+
+Track how deployment distributes benefits, burdens, access and practical agency across workers, customers, owners, communities and public services over time.
+
+Disaggregated task/role changes, costs, ownership, access, continuity and institutional constraints enter; population/time-bound transition findings and remedy duties leave. Human-AI Organizations owns internal roles; Resource Economics owns the resource bill. Aggregate productivity or lower compute cost cannot show who benefits, whose options shrink or whether service-transition capacity exists.
+
+**Nearest overlapping owners:** [Human-AI Organizations, Delegation, and Accountability](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html); [Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 17 — Artifact Graphs, Runtime Effects, and Operations</summary>
+
+Read the [narrative explanation](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) or follow an exact technical owner:
+
+**[Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html)**
+
+Preserve artifact identity, derivation, record/reality discrepancies, permitted history, replay grade and bounded impact queries across reuse and change.
+
+Source/job/effect/artifact records and qualified observations enter; lineage, replay limitations, affected-use results and unresolved custody leave. Labor OS owns job lifecycle; Claim Ledgers owns proposition identity; Runtime owns effect attempts and observation. A retained receipt is not world truth, a digest is not deleted content, and current-use withdrawal need not erase permitted history.
+
+**Nearest overlapping owners:** [Labor OS and Typed Jobs](https://corbensorenson.github.io/asi-stack-book/chapters/labor-os-and-typed-jobs.html); [Claim Ledgers and Belief Revision](https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html).
+
+**[Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html)**
+
+Mediate the actual tool or service effect under current permission and preserve attempt, observed/unknown outcome, stop and authorized recovery duties.
+
+An exact job/action request, current grant, targets and adapter conditions enter; admission/denial, attempt, observation and recovery receipts leave. System Authority owns the permission relation and Labor OS owns job closure. Route a missed effect check, blind retry or unobserved outcome here; a worker stopping or an executor report alone does not prove the external operation completed.
+
+**Nearest overlapping owners:** [System Boundaries and Authority](https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html); [Labor OS and Typed Jobs](https://corbensorenson.github.io/asi-stack-book/chapters/labor-os-and-typed-jobs.html).
+
+**[Governed Operations, Incident Command, and Graceful Degradation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-operations-incident-command-and-graceful-degradation.html)**
+
+Control a live incident from detection and authorized containment through degraded operation, effect reconciliation, recovery evidence and retained lessons.
+
+Exact deployed state, observations, current command grants, propagation hypotheses and qualified recovery options enter; observed service-mode changes, unresolved effects and restoration/decommission dispositions leave. Capability Replacement owns successor/restoration transactions; Safety Cases owns the affected assurance argument. Restart, acknowledgement or compensation cannot establish recovered governance, reversed harm or a true root cause.
+
+**Nearest overlapping owners:** [Capability Replacement and Rollback](https://corbensorenson.github.io/asi-stack-book/chapters/capability-replacement-and-rollback.html); [Safety Cases and Structured Assurance](https://corbensorenson.github.io/asi-stack-book/chapters/safety-cases-and-structured-assurance.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 18 — Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk</summary>
+
+Read the [narrative explanation](chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd) or follow an exact technical owner:
+
+**[Inter-Stack Protocols, Identity, and Economic Exchange](https://corbensorenson.github.io/asi-stack-book/chapters/inter-stack-protocols-identity-and-economic-exchange.html)**
+
+Preserve accepted scope, identity, delegation, consideration, acknowledgement and disputed obligations across an independently operated peer boundary.
+
+An accepted task, current permissions, peer identities, terms and referenced artifacts enter; a bounded exchange record, acknowledgement/unknown state and dispute/revocation duties leave. Runtime owns local effect admission; Multi-Agent Dynamics owns population interactions beyond a pairwise exchange. Interoperability or a peer response cannot issue a grant, certify context, prove settlement or establish claim support.
+
+**Nearest overlapping owners:** [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html); [Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk](https://corbensorenson.github.io/asi-stack-book/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html).
+
+**[Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk](https://corbensorenson.github.io/asi-stack-book/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html)**
+
+Assess incentives, commitments, coalitions, cascades and correlated failure among agents whose individual or pairwise actions may otherwise be authorized.
+
+Pairwise events, designed roles, topology/lineage, shared dependencies and bounded observations enter; population-risk findings, intervention requirements and residuals leave. Inter-Stack Protocols owns pairwise exchange; Human-AI Organizations owns deliberately assigned internal roles. Neither local compliance nor an equilibrium result certifies population welfare, stability or legitimate public intervention.
+
+**Nearest overlapping owners:** [Inter-Stack Protocols, Identity, and Economic Exchange](https://corbensorenson.github.io/asi-stack-book/chapters/inter-stack-protocols-identity-and-economic-exchange.html); [Human-AI Organizations, Delegation, and Accountability](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html).
+
+**[Procedural Memory and Cognitive Loop Closure](https://corbensorenson.github.io/asi-stack-book/chapters/procedural-memory-and-cognitive-loop-closure.html)**
+
+Turn eligible repeated work into qualified reusable procedures while preserving applicability, monitoring, deoptimization, retirement and fallback.
+
+Permitted traces, candidate abstractions, task/field contracts and evaluation evidence enter; procedure candidates, qualification/lifecycle records and unresolved transfer leave. Cognitive Compilation owns translation; Adjudicated Persistence owns whether and where a lesson may become durable influence. Reuse is not proposition truth or weight learning; readiness, support and effect authority remain separately decided.
+
+**Nearest overlapping owners:** [Cognitive Compilation and Semantic IR](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html); [Adjudicated Persistence and the Adaptive Commit Boundary](https://corbensorenson.github.io/asi-stack-book/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 19 — Routing and Replaceable Cognitive Substrates</summary>
+
+Read the [narrative explanation](chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd) or follow an exact technical owner:
+
+**[Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html)**
+
+Choose an eligible worker or representation for the exact task under quality, cost, current authority and fallback constraints.
+
+A capability request, qualified candidate set, current leases, capacity and consumer limits enter; selected/rejected routes, fallback or abstention and accounting leave. Readiness owns current-use admission; Replaceable Substrates owns the kernel interface. A selected route does not create permission, qualify its own result or show that its worker is better than the declared alternatives.
+
+**Nearest overlapping owners:** [Readiness Gates, Residual Escrow, and Quarantine](https://corbensorenson.github.io/asi-stack-book/chapters/readiness-gates-residual-escrow-and-quarantine.html); [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html).
+
+**[Replaceable Cognitive Substrates: Beyond Transformer Monoculture](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html)**
+
+Define a common learned-kernel boundary so candidate computation families can be compared or replaced without absorbing memory, authority and evidence roles.
+
+Task/kernel requirements, architecture-specific state, capabilities and migration/qualification limits enter; bounded kernel cards, interface compatibility and replacement obligations leave. Routing chooses the eligible implementation; Learning-Compute Topology organizes adaptation among identities. A cleaner ABI, hidden activation or architecture label cannot establish useful capability, exact memory or promotion legitimacy.
+
+**Nearest overlapping owners:** [Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html); [Learning–Compute Topology and Adaptive Process Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/learning-compute-topology-and-adaptive-process-architecture.html).
+
+**[Coil Attention, Cyclic Memory, and Recurrence Contracts](https://corbensorenson.github.io/asi-stack-book/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.html)**
+
+Gate cyclic state carry and reuse by exact request, version, freshness, coverage, alias and exit conditions rather than a matching memory slot.
+
+State/request identities, recurrence bounds, structural receipts and fallback obligations enter; admissible reuse, miss/refusal or bounded recurrence results leave. Virtual Context ABI owns the consumer packet; CoilRA owns evaluation of cyclic encoding/mixer candidates. Structural coverage cannot establish semantic adequacy, task quality or useful longer reasoning.
+
+**Nearest overlapping owners:** [The Virtual Context ABI: Typed Pages, Cells, and Certificates](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html); [CoilRA, MultiCoil RoPE, and Cyclic Mixers](https://corbensorenson.github.io/asi-stack-book/chapters/coilra-multicoil-rope-and-cyclic-mixers.html).
+
+**[CoilRA, MultiCoil RoPE, and Cyclic Mixers](https://corbensorenson.github.io/asi-stack-book/chapters/coilra-multicoil-rope-and-cyclic-mixers.html)**
+
+Evaluate concrete cyclic positional, adapter, route-head and mixer changes without collapsing structural diagnostics, workload quality and hardware cost.
+
+An exact candidate, phase/alias diagnostics, matched baselines, runtime bindings and hardware constraints enter; per-axis evidence, canary/refusal and fallback obligations leave. Coil owns state-carry contracts; Mathematical Substrates owns general adoption. A finite structural pass, parameter count or missing metric cannot justify a default architecture or quality claim.
+
+**Nearest overlapping owners:** [Coil Attention, Cyclic Memory, and Recurrence Contracts](https://corbensorenson.github.io/asi-stack-book/chapters/coil-attention-cyclic-memory-and-recurrence-contracts.html); [Mathematical and Search Substrates](https://corbensorenson.github.io/asi-stack-book/chapters/mathematical-and-search-substrates.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 20 — Governed Training and Learning-Compute Topology</summary>
+
+Read the [narrative explanation](chapters/unit-20-governed-training-and-learning-compute-topology.qmd) or follow an exact technical owner:
+
+**[Governed Model Training, Distributed Optimization, and Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-model-training-distributed-optimization-and-scaling.html)**
+
+Execute a declared training-run transaction with exact data consumption, numerical policy, distributed state, checkpoint family and recovery/accounting boundaries.
+
+An authorized objective, architecture/topology, data lease, optimizer/numerical policy and budget enter; run/checkpoint identities, consumption, failure/recovery costs and a candidate handoff leave. Policy Optimization owns feedback/update semantics; Learning-Compute Topology owns process organization. Finishing a run cannot repair data rights, redefine its target, retroactively authorize spending or grant deployment readiness.
+
+**Nearest overlapping owners:** [Policy Optimization and Learning from Feedback](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html); [Learning–Compute Topology and Adaptive Process Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/learning-compute-topology-and-adaptive-process-architecture.html).
+
+**[Learning–Compute Topology and Adaptive Process Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/learning-compute-topology-and-adaptive-process-architecture.html)**
+
+Specify how adaptive identities, evidence, judgment, credit, state and integration are causally organized before that process is compiled onto an execution topology.
+
+Kernel/state identities, learning/evaluation channels, controller constraints and proposed topology changes enter; a versioned adaptive-process contract and semantic/realization limits leave. Governed Training owns faithful run execution; Replaceable Substrates owns one kernel boundary. Parallel scheduling alone does not establish plural learners, independent evidence or preserved adaptive semantics.
+
+**Nearest overlapping owners:** [Governed Model Training, Distributed Optimization, and Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-model-training-distributed-optimization-and-scaling.html); [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 21 — Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning</summary>
+
+Read the [narrative explanation](chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd) or follow an exact technical owner:
+
+**[Adjudicated Persistence and the Adaptive Commit Boundary](https://corbensorenson.github.io/asi-stack-book/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html)**
+
+Decide whether an eligible lesson should become durable causal influence and which persistence locus or portfolio must carry its future obligations.
+
+A bounded lesson, current evidence/authority, candidate loci, carrying costs and invalidation constraints enter; reject, defer, transient-use or admitted persistence dispositions leave. Evidence States owns support; Policy Optimization and other medium owners realize the accepted change. Selecting a locus cannot validate a lesson, execute an update or erase descendant/revocation obligations.
+
+**Nearest overlapping owners:** [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html); [Policy Optimization and Learning from Feedback](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html).
+
+**[Learning Theory, Generalization, and Scaling Science](https://corbensorenson.github.io/asi-stack-book/chapters/learning-theory-generalization-and-scaling-science.html)**
+
+Bind generalization and scaling predictions to explicit data, hypothesis, optimization, architecture, compute and evaluation assumptions.
+
+Exact run descriptions, measured cohorts, resource accounts and modeling assumptions enter; dated forecasts, prediction tests, intervals and domain limits leave. Governed Training owns what was run; Benchmark Ratchets owns measurement and holdout integrity. A fitted law or favorable extrapolation cannot allocate resources, authorize deployment or establish behavior outside its qualified regime.
+
+**Nearest overlapping owners:** [Governed Model Training, Distributed Optimization, and Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-model-training-distributed-optimization-and-scaling.html); [Benchmark Ratchets and Anti-Goodhart Evidence](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html).
+
+**[Policy Optimization and Learning from Feedback](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html)**
+
+Construct bounded policy-update candidates from feedback while separating the reward proxy, target behavior and qualification of the resulting change.
+
+Accepted objectives, integrity-bounded feedback, data/checkpoint identity, update authority and regression/rollback requirements enter; candidate updates and exact evaluation/rollback obligations leave. Adjudicated Persistence owns whether a lesson should persist; Governed Training owns faithful run execution. Reward gain or a completed run cannot establish target improvement, current-use eligibility or support.
+
+**Nearest overlapping owners:** [Adjudicated Persistence and the Adaptive Commit Boundary](https://corbensorenson.github.io/asi-stack-book/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html); [Governed Model Training, Distributed Optimization, and Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-model-training-distributed-optimization-and-scaling.html).
+
+**[Data Engines, Continual Learning, and Unlearning](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html)**
+
+Govern custody and use of learning inputs, synthetic descendants, replay, retention and deletion across sequential updates without confusing deletion with forgetting.
+
+Versioned datasets/state, purpose/rights grants, partition/exposure history, descendants and deletion requests enter; bounded use/custody leases, lineage and separately scoped erasure/influence evidence leave. Policy Optimization owns update semantics; Context Transactions owns declared storage-state changes. Removed bytes or changed cohort behavior cannot establish influence removal, privacy erasure, preserved utility or complete descendant deletion.
+
+**Nearest overlapping owners:** [Policy Optimization and Learning from Feedback](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html); [Context Transactions, Snapshots, Mounts, and Taint](https://corbensorenson.github.io/asi-stack-book/chapters/context-transactions-snapshots-mounts-and-taint.html).
+
+**[Scientific Discovery and Experimental Governance](https://corbensorenson.github.io/asi-stack-book/chapters/scientific-discovery-and-experimental-governance.html)**
+
+Preserve the scientific design-to-inference bridge through prospective protocols, instrument effects, complete outcomes, replication and dual-use constraints.
+
+A research objective, hypotheses, design/analysis plan, instrument grants and replication dependencies enter; protocol-bound outcomes, bounded statistical/causal interpretations and disclosure limits leave. Planning owns work order; Evidence States owns accepted support. A positive result cannot establish discovery when failed attempts vanish, confirmation sees outcomes or replication shares an unexamined dependency.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 22 — Evaluation, Readiness, Thresholds, and Structured Assurance</summary>
+
+Read the [narrative explanation](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd) or follow an exact technical owner:
+
+**[Readiness Gates, Residual Escrow, and Quarantine](https://corbensorenson.github.io/asi-stack-book/chapters/readiness-gates-residual-escrow-and-quarantine.html)**
+
+Decide whether an exact capability is eligible for a named current use, preserving qualification expiry, restricted routes, quarantine and unresolved obligations.
+
+Field identity, scoped evidence, current constraints, monitor/recovery conditions and residual owners enter; bounded admission, diagnostic-only, hold or retirement dispositions leave. Stable Capability Fields owns substitution identity; Runtime checks permission at the effect boundary. Availability, reachability, a green fixture or a readiness state cannot promote a book claim or grant public release.
+
+**Nearest overlapping owners:** [Stable Capability Fields](https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html); [Runtime Adapters, Tool Permissions, and Human Approval](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html).
+
+**[Benchmark Ratchets and Anti-Goodhart Evidence](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html)**
+
+Preserve measurement constructs, task populations, contamination boundaries and regression floors as benchmark instruments and model systems change.
+
+Exact instrument/model ledgers, run universes, baselines, scorer limits and selection lineage enter; comparable bounded measurements, saturation/retirement status and regression obligations leave. Adversarial Evaluation owns context-conditioned observation integrity; Evidence States owns accepted support transitions. A pass count, saturated benchmark or hidden-test exposure cannot certify general capability or authorize use.
+
+**Nearest overlapping owners:** [Adversarial Evaluation, Sandbagging, and Training-Time Deception](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html); [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html).
+
+**[Capability Thresholds and Deployment Commitments](https://corbensorenson.github.io/asi-stack-book/chapters/capability-thresholds-and-deployment-commitments.html)**
+
+Bind a scoped capability assessment to its prospectively declared safeguard and deployment response, including exceptions and post-release triggers.
+
+A versioned risk profile, assessment protocol, response commitment, safeguard evidence and exception authority enter; a constrained deployment path or unresolved assessment disposition leaves. Benchmark Ratchets owns instrument validity; Readiness owns current operational admission. Crossing or not crossing a threshold cannot establish broad capability, safety, readiness or permission.
+
+**Nearest overlapping owners:** [Benchmark Ratchets and Anti-Goodhart Evidence](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html); [Readiness Gates, Residual Escrow, and Quarantine](https://corbensorenson.github.io/asi-stack-book/chapters/readiness-gates-residual-escrow-and-quarantine.html).
+
+**[Adversarial Evaluation, Sandbagging, and Training-Time Deception](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html)**
+
+Bound inference from behavior by preserving elicitation, monitoring, reward and selection conditions that can hide, distort or strategically shape an observation.
+
+Exact evaluation conditions, prompt/monitor/model lineage, controls and observed discrepancies enter; observation-integrity status, alternative explanations and scoped input restrictions leave. Benchmark Ratchets owns instrument validity; Scalable Oversight owns control protocols. A suspicious trace cannot prove intent or latent capability, and an integrity finding cannot train, promote, quarantine or deploy a system by itself.
+
+**Nearest overlapping owners:** [Benchmark Ratchets and Anti-Goodhart Evidence](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html); [Scalable Oversight and Adversarial AI Control](https://corbensorenson.github.io/asi-stack-book/chapters/scalable-oversight-and-adversarial-ai-control.html).
+
+**[Safety Cases and Structured Assurance](https://corbensorenson.github.io/asi-stack-book/chapters/safety-cases-and-structured-assurance.html)**
+
+Compile scoped support, assumptions, safeguards and defeaters into an inspectable assurance argument without allowing the argument to certify its own inputs or safety.
+
+Exact claim/evidence/control/threshold references, operating scope and unresolved challenges enter; a versioned dependency argument and visible gaps leave. Evidence States owns support decisions; Capability Thresholds owns predeclared deployment responses. A coherent case cannot accept a residual, verify a safeguard, close an incident or grant deployment permission.
+
+**Nearest overlapping owners:** [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html); [Capability Thresholds and Deployment Commitments](https://corbensorenson.github.io/asi-stack-book/chapters/capability-thresholds-and-deployment-commitments.html).
+
+**[Content Authenticity, Watermarking, and Synthetic Media Integrity](https://corbensorenson.github.io/asi-stack-book/chapters/content-authenticity-watermarking-and-synthetic-media-integrity.html)**
+
+Preserve generated-output and edit provenance, watermark signals and their failure limits without treating authenticity as semantic truth or missing provenance as synthetic origin.
+
+Asset identity, attestations/detectors, transformation/channel history, trust policy and affected-person obligations enter; bounded authenticity claims, unknowns and remedy references leave. Supply Chain owns generator/code/data provenance; Epistemic Security owns communication and deception assessment. A signed asset or detected watermark cannot establish the depicted event, consent or lawful distribution.
+
+**Nearest overlapping owners:** [AI Supply-Chain Integrity and Lifecycle Provenance](https://corbensorenson.github.io/asi-stack-book/chapters/ai-supply-chain-integrity-and-lifecycle-provenance.html); [Human-AI Communication, Persuasion, and Epistemic Security](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-communication-persuasion-and-epistemic-security.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 23 — Generative Compression and Cognitive Resource Economics</summary>
+
+Read the [narrative explanation](chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd) or follow an exact technical owner:
+
+**[Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](https://corbensorenson.github.io/asi-stack-book/chapters/compact-generative-systems-and-residual-honesty.html)**
+
+Decide whether compact or generated representations are admissible for an exact consumer while keeping loss, reconstruction, verification, fallback and displaced burden visible.
+
+Source/representation identity, consumer use, reconstruction/loss requirements and full cost evidence enter; a bounded use envelope, fallback/repair route and residual accounting leave. RankFold/NeuralFold owns particular artifact/codec candidates; Resource Economics owns the complete bill. Smaller payloads or successful generation cannot establish semantic fidelity, useful compression or permission to replace an exact source.
+
+**Nearest overlapping owners:** [RankFold, NeuralFold, and Artifact Compression](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html); [Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html).
+
+**[Fast Generation Architectures](https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html)**
+
+Choose a request-specific generation mode to reduce time to accepted useful work without weakening quality, verification, rights or full cost accounting.
+
+An exact request, eligible modes, model/context/runtime identity and current constraints enter; candidate/acceptance/correction traces, fallback costs and bounded outcomes leave. Routing supplies eligible workers; Deliberation owns extra inference/search decisions. Token rate or batch throughput cannot certify task success, faithful reasoning, release eligibility or a permitted external effect.
+
+**Nearest overlapping owners:** [Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html); [Governed Deliberation and Test-Time Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-deliberation-and-test-time-scaling.html).
+
+**[Governed Deliberation and Test-Time Scaling](https://corbensorenson.github.io/asi-stack-book/chapters/governed-deliberation-and-test-time-scaling.html)**
+
+Lease and stop additional inference, candidate search and verifier use while preserving its value, costs, dependencies and abstention boundary.
+
+The accepted purpose, current inference permissions, candidate/verifier capacity, context and budget enter; a bounded candidate or abstention receipt with search/cost/residual history leaves. Fast Generation supplies direct candidates; Planning owns obligation decomposition and ordering. More inference or self-scoring cannot establish faithful reasoning, accepted evidence or permission to execute a tool.
+
+**Nearest overlapping owners:** [Fast Generation Architectures](https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html); [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html).
+
+**[RankFold, NeuralFold, and Artifact Compression](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html)**
+
+Bind concrete codec candidates and compressed artifacts to reconstruction requirements, access patterns, residuals, literal fallback and permitted source retention.
+
+An exact artifact, codec/decoder versions, consumer policy, rights and access pattern enter; compact/raw/refusal candidates, reconstruction/probe records and limits leave. Compact Generative Systems owns general representation-use admission; Artifact Graphs owns lineage and replay custody. A compact container or a successful toy decode cannot establish general compression advantage, semantic adequacy or suitability for exact audit.
+
+**Nearest overlapping owners:** [Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](https://corbensorenson.github.io/asi-stack-book/chapters/compact-generative-systems-and-residual-honesty.html); [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html).
+
+**[Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html)**
+
+Allocate scarce compute, context, verification and human capacity against consumer value while preserving protected overhead and the complete realized bill.
+
+Accepted work, eligible alternatives, capacity, deadlines, protected floors and cost/fidelity assumptions enter; allocation or deferral, bounded simulation-use conditions, actual-versus-estimated costs and residuals leave. Planning owns work order and resource requests; Physical Infrastructure owns deliverability at a place and time. Cheap proxies, toy simulations and unpaid displaced labor cannot establish useful efficiency.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Physical Compute Infrastructure, Energy, and Environmental Constraints](https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 24 — Physical Compute, Energy, and Infrastructure</summary>
+
+Read the [narrative explanation](chapters/unit-24-physical-compute-energy-and-infrastructure.qmd) or follow an exact technical owner:
+
+**[Personal Compute Hives and Federated Edge Intelligence](https://corbensorenson.github.io/asi-stack-book/chapters/personal-compute-hives-and-federated-edge-intelligence.html)**
+
+Place exact jobs across separately governed nodes, stores, portals and providers without treating cheap capacity or network reachability as authority.
+
+Typed jobs, context/use limits, qualified node capabilities, topology, current leases and complete resource constraints enter; placement/abstention and custody/recovery obligations leave. Routing chooses eligible capabilities; Inter-Stack Protocols owns the contract crossing a chosen peer edge. Device ownership or a free worker cannot grant access to private data, spend budget or establish useful federation.
+
+**Nearest overlapping owners:** [Routing Heads and Specialist Cores](https://corbensorenson.github.io/asi-stack-book/chapters/routing-heads-and-specialist-cores.html); [Inter-Stack Protocols, Identity, and Economic Exchange](https://corbensorenson.github.io/asi-stack-book/chapters/inter-stack-protocols-identity-and-economic-exchange.html).
+
+**[Physical Compute Infrastructure, Energy, and Environmental Constraints](https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html)**
+
+Establish where and when a workload can physically run, with measured capacity, correlated failures, environmental burdens and affected-community constraints.
+
+Workload/topology requirements, site and hardware identity, power/cooling/network/storage limits and community obligations enter; capacity, metering, degradation and dependency receipts leave. Resource Economics owns allocation choices; Governed Operations owns live incident command. Bought accelerators or lower energy per unit do not establish delivered useful work, lower total impact or independent failure domains.
+
+**Nearest overlapping owners:** [Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html); [Governed Operations, Incident Command, and Graceful Degradation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-operations-incident-command-and-graceful-degradation.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 25 — Recursive Improvement, Replication, and Containment</summary>
+
+Read the [narrative explanation](chapters/unit-25-recursive-improvement-replication-and-containment.qmd) or follow an exact technical owner:
+
+**[Recursive Self-Improvement Boundaries](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html)**
+
+Admit or reject a self-change proposal while preserving protected objectives, evaluator boundaries, current authority and recovery obligations.
+
+An exact candidate, invariant/rights reviews, evaluator dependencies, qualified evidence, budgets and current change authority enter; research-only, rejected, quarantined or replacement-eligible disposition leaves. Open-Ended Improvement owns candidate generation; Capability Replacement owns the later commit/recovery transaction. Search success or canary entry alone is not promotion. Routine updates within an applicable lease do not need repeated permission; material changes to the governor or its limits retain separate admission.
+
+**Nearest overlapping owners:** [Open-Ended Improvement Engines](https://corbensorenson.github.io/asi-stack-book/chapters/open-ended-improvement-engines.html); [Capability Replacement and Rollback](https://corbensorenson.github.io/asi-stack-book/chapters/capability-replacement-and-rollback.html).
+
+**[Open-Ended Improvement Engines](https://corbensorenson.github.io/asi-stack-book/chapters/open-ended-improvement-engines.html)**
+
+Govern adaptive task/candidate generation and archive history so novelty, search pressure and winner-only reporting cannot become admission authority.
+
+A declared generation/evaluation policy, archive/exposure history, hazards and total budgets enter; bounded campaign records and candidate handoffs leave. Recursive Self-Improvement owns change admission; Procedural Memory owns procedure promotion and retirement. A generated task, growing archive or high score does not establish useful improvement or authorize changing the campaign’s own governor.
+
+**Nearest overlapping owners:** [Recursive Self-Improvement Boundaries](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html); [Procedural Memory and Cognitive Loop Closure](https://corbensorenson.github.io/asi-stack-book/chapters/procedural-memory-and-cognitive-loop-closure.html).
+
+**[Autonomous Replication, Proliferation, and Containment](https://corbensorenson.github.io/asi-stack-book/chapters/autonomous-replication-proliferation-and-containment.html)**
+
+Assess the composed creation, provisioning, deployment, persistence and recall of descendants rather than equating copied weights with autonomous replication.
+
+Scoped resource/tool permissions, artifact identity, provisioning/deployment observations and known descendant lineage enter; a bounded replication denominator, census unknowns and containment obligations leave. Recursive Self-Improvement owns system change; Weight Custody owns assets and copies. Neither a synthetic provisioning call nor a successful recall attempt establishes real-provider access or complete descendant containment.
+
+**Nearest overlapping owners:** [Recursive Self-Improvement Boundaries](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html); [Model-Weight Custody and Hardware Roots of Trust](https://corbensorenson.github.io/asi-stack-book/chapters/model-weight-custody-and-hardware-roots-of-trust.html).
+
+</details>
+
+<details class="owner-routes"><summary>Unit 26 — Integrated Reference Architecture, Project Theseus, and the Living Research Method</summary>
+
+Read the [narrative explanation](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd) or follow an exact technical owner:
+
+**[Artifact Steward Agents and Living Project Governance](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-steward-agents-and-living-project-governance.html)**
+
+Maintain project continuity across work cycles while keeping mission, roadmap, resources, contributors, accountable decisions and sunset conditions inspectable.
+
+A charter, exact project state, current grants, accepted obligations, resource limits and contributor/remedy rules enter; owned work, continuity records and escalation/exit proposals leave. Planning owns task dependencies; Living Book owns publication/change custody for this book. Useful maintenance cannot accumulate authority, grant spending or make the steward the sole route to human control.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Living Book Methodology](https://corbensorenson.github.io/asi-stack-book/chapters/living-book-methodology.html).
+
+**[Integrated Reference Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html)**
+
+Check that a declared cross-layer trace joins the participating owners’ exact inputs, outputs, authority, effects, evidence and residuals without taking over their decisions.
+
+Owner-specific contracts and stage records enter; a joined trace or explicit missing/incompatible handoff leaves. The opener owns the stack thesis; each specialist retains its decision. Route a broken relation between otherwise identified owner records here, and route a defective owner predicate to that owner. A successful local join does not establish whole-stack behavior or comparative usefulness.
+
+**Nearest overlapping owners:** [ASI Is a Stack, Not a Model](https://corbensorenson.github.io/asi-stack-book/chapters/asi-is-a-stack-not-a-model.html).
+
+**[Project Theseus as Report-First Implementation Reference](https://corbensorenson.github.io/asi-stack-book/chapters/project-theseus-as-report-first-implementation-reference.html)**
+
+Report the exact inspected Project Theseus implementation and consumer acknowledgements without borrowing its activity as capability or evidence.
+
+A pinned checkout, inspected reports/artifacts, authority boundaries and source-provenance records enter; a versioned implementation-reference packet, acknowledged edges and missing/currentness limits leave. Artifact Graphs owns generic custody; Prototype Roadmap owns phase admission. A nearby repository, report digest or accepted handoff cannot establish an unobserved result, support or current operational qualification.
+
+**Nearest overlapping owners:** [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html); [Prototype Roadmap](https://corbensorenson.github.io/asi-stack-book/chapters/prototype-roadmap.html).
+
+**[Prototype Roadmap](https://corbensorenson.github.io/asi-stack-book/chapters/prototype-roadmap.html)**
+
+Admit, sequence and terminate bounded prototype phases by the exact dependencies, consumer gates and authority each phase can unlock.
+
+Prospective phase goals, accepted predecessor artifacts, current grants, resources and stop/closure criteria enter; go, hold, downgrade or terminal phase decisions and successor obligations leave. Planning owns within-task work order; Theseus supplies a specific implementation reference. An impressive artifact or green checklist cannot establish competence, complete a different phase or unlock self-improvement authority.
+
+**Nearest overlapping owners:** [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html); [Project Theseus as Report-First Implementation Reference](https://corbensorenson.github.io/asi-stack-book/chapters/project-theseus-as-report-first-implementation-reference.html).
+
+**[Living Book Methodology](https://corbensorenson.github.io/asi-stack-book/chapters/living-book-methodology.html)**
+
+Change the book and its derivatives while preserving stable owner identity, source/claim/proof lineage, reader access and explicit publication authority.
+
+An editorial/source/evidence change, exact affected owners and derivative consumers, rights and acceptance obligations enter; reviewed source changes, synchronized projections and bounded release/correction records leave. Research Agenda owns intake and closure of research items; Artifact Steward owns project continuity. Publication, automation activity or a passing render cannot promote a scientific claim or imply independent reader approval.
+
+**Nearest overlapping owners:** [Open Research Agenda and Bibliography Plan](https://corbensorenson.github.io/asi-stack-book/chapters/open-research-agenda-and-bibliography-plan.html); [Artifact Steward Agents and Living Project Governance](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-steward-agents-and-living-project-governance.html).
+
+**[Open Research Agenda and Bibliography Plan](https://corbensorenson.github.io/asi-stack-book/chapters/open-research-agenda-and-bibliography-plan.html)**
+
+Route and close new sources, conflicts, missing artifacts and research proposals by their disputed responsibility, evidence need and actual consumer.
+
+A candidate source/bug/question, inspection state, rights, existing owner and closure criterion enter; update, new-boundary proposal, wait, duplicate/rejection or owned research work leaves. Living Book owns applied change/publication custody; Evidence States owns support decisions. Acquisition, source volume or checklist activity cannot require a chapter, establish support or satisfy a scientific outcome.
+
+**Nearest overlapping owners:** [Living Book Methodology](https://corbensorenson.github.io/asi-stack-book/chapters/living-book-methodology.html); [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html).
+
+</details>

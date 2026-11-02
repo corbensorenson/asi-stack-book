@@ -264,6 +264,31 @@ thead th {
   background: #f4f7f9;
 }
 
+.jepa-hnet-comparison {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-bottom: 1rem;
+}
+
+.jepa-hnet-comparison > table {
+  display: table;
+  width: 100%;
+  min-width: 40rem;
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.jepa-hnet-comparison td,
+.jepa-hnet-comparison th {
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.jepa-hnet-comparison:focus-visible {
+  outline: 2px solid var(--asi-accent);
+  outline-offset: 2px;
+}
+
 code {
   color: #28313d;
 }
@@ -297,9 +322,7 @@ main.content mjx-container[display="true"] {
 }
 
 .asi-reading-mode {
-  position: sticky;
-  top: 0.5rem;
-  z-index: 20;
+  position: static;
   display: inline-flex;
   align-items: center;
   gap: 0.35rem;
@@ -461,22 +484,68 @@ html[data-asi-reading-mode="human"] .asi-human-only h2 {
 
   .asi-reading-mode {
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
-    justify-content: space-between;
+    justify-content: flex-start;
+    position: static;
   }
 
   .asi-reading-mode__label {
-    flex: 1 1 auto;
+    flex: 0 0 auto;
+    white-space: nowrap;
   }
 
   .asi-reading-mode button,
   .asi-reading-mode__reader-link {
     min-width: 5.35rem;
+    max-width: 100%;
+    min-height: 2.75rem;
     padding-inline: 0.4rem;
   }
 
   .asi-reading-mode__reader-link {
     min-width: 6rem;
+  }
+
+  // Reflow long chapter links when text is enlarged; flex children's default
+  // minimum content width otherwise pushes the whole page beyond the viewport.
+  .page-navigation {
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  .page-navigation .nav-page {
+    flex: 1 1 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .page-navigation .pagination-link,
+  .page-navigation .nav-page-text {
+    min-width: 0;
+    overflow-wrap: anywhere;
+    white-space: normal;
+  }
+
+  // Keep the fixed mobile header compact; the full title remains in the page.
+  .quarto-secondary-nav .container-fluid { align-items: center; }
+  .quarto-secondary-nav .quarto-page-breadcrumbs { flex: 1 1 auto; min-width: 0; overflow: hidden; }
+  .quarto-secondary-nav .breadcrumb { flex-wrap: nowrap; margin: 0; }
+  .quarto-secondary-nav .breadcrumb-item:first-child:not(:last-child) { display: none; }
+  .quarto-secondary-nav .breadcrumb-item:last-child { flex: 1 1 auto; min-width: 0; max-width: 100%; padding-left: 0; overflow: hidden; }
+  .quarto-secondary-nav .breadcrumb-item:last-child::before { display: none; }
+  .quarto-secondary-nav .breadcrumb-item a { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .quarto-secondary-nav .quarto-btn-toggle { flex: 0 0 auto; }
+
+  .quarto-secondary-nav .quarto-secondary-nav-title {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .quarto-secondary-nav .quarto-search-button {
+    position: static;
+    flex: 0 0 auto;
+    padding-inline: 0.5rem;
   }
 }
 
@@ -497,4 +566,71 @@ html[data-asi-reading-mode="human"] .asi-human-only h2 {
     max-height: 7.4in;
     object-fit: contain;
   }
+}
+
+// The two contract/planning charts have readable canvases inside keyboard-scrollable frames.
+.intent-single-use .cell-output-display {
+  min-width: 585px;
+  overflow: visible;
+}
+
+.intent-single-use .cell-output-display svg[id^="mermaid"] {
+  width: 585px;
+  min-width: 585px;
+  max-width: none;
+}
+
+.intent-single-use .nodeLabel,
+.intent-single-use .edgeLabel,
+.intent-single-use .edgeLabel span {
+  color: #18202a !important;
+}
+
+.planning-control-loop .cell-output-display {
+  min-width: 640px;
+  overflow: visible;
+}
+
+.planning-control-loop .cell-output-display svg[id^="mermaid"] {
+  width: 640px;
+  min-width: 640px;
+  max-width: none;
+}
+
+.planning-control-loop .nodeLabel,
+.planning-control-loop .edgeLabel,
+.planning-control-loop .edgeLabel span {
+  color: #18202a !important;
+}
+
+// Predictive-use charts retain legible labels inside the existing accessible figure frame.
+.world-reality-loop .cell-output-display {
+  min-width: 680px;
+  overflow: visible;
+}
+
+.world-reality-loop .cell-output-display svg[id^="mermaid"] {
+  width: 680px;
+  min-width: 680px;
+  max-width: none;
+}
+
+.world-relation-use .cell-output-display {
+  min-width: 800px;
+  overflow: visible;
+}
+
+.world-relation-use .cell-output-display svg[id^="mermaid"] {
+  width: 800px;
+  min-width: 800px;
+  max-width: none;
+}
+
+.world-reality-loop .nodeLabel,
+.world-reality-loop .edgeLabel,
+.world-reality-loop .edgeLabel span,
+.world-relation-use .nodeLabel,
+.world-relation-use .edgeLabel,
+.world-relation-use .edgeLabel span {
+  color: #18202a !important;
 }

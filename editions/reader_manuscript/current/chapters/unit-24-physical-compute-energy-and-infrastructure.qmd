@@ -5,8 +5,8 @@ unit_id: "unit-24"
 
 ## Where the Repository Task Actually Runs
 
-The repository system receives another dependency update. Its cognitive plan
-looks simple: retrieve the affected contracts, generate a patch, run tests,
+Consider a hypothetical dependency update, not a reported hardware trial.
+Its cognitive plan looks simple: retrieve the affected contracts, generate a patch, run tests,
 inspect the result, and prepare a rollback.
 
 The plan can run on a laptop in the maintainer's office, across several owned
@@ -14,8 +14,9 @@ devices in a personal compute hive, on rented accelerators, or in a centralized
 cluster. The logical workflow is similar. The physical consequences are not.
 
 On the laptop, model weights and key-value state exceed accelerator memory.
-Layers move between storage, system memory, and the device. Latency rises, but
-the repository and credentials remain local. A thermal limit reduces speed
+Layers move between storage, system memory, and the device. Latency rises. Assume this route has enforced local data and credential
+boundaries;
+being on a laptop alone would not establish them. A thermal limit reduces speed
 halfway through the test suite.
 
 The hive adds a workstation and a home server. It gains aggregate capacity and
@@ -33,7 +34,10 @@ change the total.
 nothing yet about memory traffic, electricity, water, hardware life, network
 dependence, ownership, resilience, or the people who bear the infrastructure's
 cost. Cognitive efficiency becomes real only when compiled onto physical
-capacity.
+capacity. These placement outcomes are assumptions for comparing obligations,
+not observations of this book’s runtime.
+
+{{< include ../generated/unit-24-status.qmd >}}
 
 ## From Cognitive Demand to Physical Demand
 
@@ -61,6 +65,16 @@ It then maps them to a hardware profile and records rejected placements. A
 route that fits nominal accelerator memory but thrashes through unified memory
 is not equivalent to one that remains resident. A route that meets average
 power but violates a thermal or battery limit is not feasible.
+
+The map keeps requested, nameplate, available, delivered, and useful capacity
+separate. In a toy one-hour window, eight installed workers could each process
+ten patch jobs: eighty is the nameplate ceiling under that stipulated workload.
+Two workers are unavailable, leaving capacity for sixty. The scheduler requests
+fifty jobs but completes forty-eight before the deadline; forty meet the frozen
+acceptance contract. The account records fifty requested jobs, eighty nominal
+slots, sixty available slots, forty-eight completed jobs, and forty accepted
+results. Those numbers describe different populations and stages, not five
+interchangeable versions of throughput. None measures this project.
 
 The map is time-bound. Available memory, temperature, battery, network, other
 loads, electricity conditions, and device health change. A profile qualified
@@ -110,7 +124,7 @@ temperature, and throughput. A canary checks end-to-end output and recovery.
 Rejected profiles remain visible so the system does not repeat a dangerous
 experiment every time it restarts.
 
-Dynamic adaptation needs hysteresis. If the runtime switches placement whenever
+Dynamic adaptation may need hysteresis. If the runtime switches placement whenever
 temperature crosses one noisy reading, it can oscillate between profiles and
 lose more work than it saves. Entry and exit thresholds, minimum dwell time,
 cooldown, and state-safe handoff belong to the decision.
@@ -125,10 +139,12 @@ permit the system to send it private data, install software, spend money, or run
 in the background. The profile supplies capability evidence to a later policy
 decision.
 
-Profiles also make regressions diagnosable. A slower result can be attributed to
-a changed driver, thermal limit, storage mode, or workload rather than vaguely
-to the model. Material changes invalidate the receipt and trigger bounded
-requalification.
+Profiles also make regressions diagnosable. A changed driver, thermal limit,
+storage mode, or workload becomes a candidate explanation for slower service.
+The record alone does not identify its causal contribution; matched comparisons
+or other appropriate evidence are needed. A material change can invalidate
+current reuse eligibility while leaving the historical observation intact.
+Requalify affected claims rather than silently treating the old profile as current.
 
 ## Measure Use Before Modeling Impact
 
@@ -163,6 +179,21 @@ zero. Shared infrastructure requires an explicit allocation rule. The same
 measured facility total can support different workload attributions, so the
 model version belongs beside the result.
 
+The [2024 LBNL report](https://eta-publications.lbl.gov/sites/default/files/2024-12/us_data_center_energy_usage_report_lbnl-2001637_0.pdf),
+printed pages 39 and 44, defines PUE as facility electricity divided by IT
+electricity and distinguishes site cooling water from electricity-generation
+water. Its PUE/WUE estimates use modeled cooling and climate assumptions;
+commissioned operation as designed is an assumption, not a meter result.
+Those distinctions justify separating scope and method here, not importing
+a national estimate as a footprint for this repository.
+
+For a toy illustration, 100 kWh of IT electricity multiplied by an assumed
+PUE of 1.2 gives 120 kWh of estimated facility electricity. Do not add another
+20 kWh of overhead to that same total: it is already included. If only one
+server’s energy was measured, the facility-wide factor and workload attribution
+remain additional assumptions. Cooling water and electricity-generation water
+need distinct scopes; neither is measured by this arithmetic.
+
 ## Useful Output Is the Denominator
 
 Lower energy per token is not enough if the route needs more tokens, retries,
@@ -178,14 +209,27 @@ provider, and review overhead. The cluster may finish more quickly and reduce
 energy per accepted patch. The hive may reuse otherwise idle owned hardware yet
 spend more coordination and standby energy.
 
-All attempts remain in the denominator. A central route that retries failed
-workers, a local route that recompiles after thermal interruption, and a hive
-route that requeues after device dropout all pay those costs.
+For resources per accepted result, the numerator contains costs from all
+attempts, including rejected work and recovery; the denominator contains only
+accepted results under the declared contract. Attempted-task completion is a
+different ratio. A central route that retries failed workers, a local route
+that recompiles after thermal interruption, and a hive route that requeues
+after device dropout all pay those costs.
+
+Suppose two toy routes each use 20 kWh over ten attempted patch jobs. One
+delivers eight accepted patches; the other delivers four. Their electricity
+per accepted patch is 2.5 and 5 kWh, respectively, despite equal electricity
+per attempt. With zero accepted results, report the consumed energy and failed
+cohort rather than manufacturing a finite useful-output efficiency.
 
 Efficiency can increase total impact through greater demand. A cheaper task can
 be run more often, at larger scale, or on work that was previously rejected.
 The system should report unit efficiency and total consumption separately. It
-should not infer that one controls the other.
+should not infer that one controls the other. In another toy comparison,
+reducing energy per accepted job from two to one unit while increasing demand
+from ten to thirty jobs lowers unit cost but raises total energy from twenty
+to thirty units. This demonstrates possible arithmetic, not a measured rebound
+response or proof that efficiency always increases demand.
 
 ## Energy Is Capacity, Timing, and Reliability
 
@@ -194,7 +238,7 @@ and time, with quality and continuity sufficient for its purpose.
 
 Training can sometimes shift across hours or locations. Interactive inference,
 incident response, and human review have tighter deadlines. A flexible workload
-can pause or reduce precision when the grid is constrained; a safety monitor may
+can pause or use a qualified lower-precision route when the grid is constrained; a safety monitor may
 not be allowed to disappear.
 
 The run contract names deadline, interruptibility, checkpoint interval,
@@ -227,6 +271,13 @@ and excluded burdens. A hardware refresh justified by energy efficiency should
 include embodied replacement and e-waste. Extending old device life should
 include its lower performance, reliability, and security support.
 
+Retirement closes another boundary. Removing a node from scheduling does not
+erase its model weights, source copies, logs, or credentials. A decommissioning
+record separates revoked access, permitted retained history, verified disposal
+within the inspected device scope, and unknown copies. Reuse or recycling must
+respect that scope and the receiving party’s rights. A recovered material claim
+and a sensitive-data destruction claim require different evidence.
+
 Local context matters. One unit of water or power has different consequences in
 different regions and seasons. A global average can hide a stressed community.
 Community impact includes prices, infrastructure competition, noise, land use,
@@ -238,10 +289,12 @@ judgment.
 
 ## Concentration Changes the Architecture
 
-Frontier accelerators, high-bandwidth memory, fabrication, advanced packaging,
-cloud platforms, power interconnection, and skilled operations are concentrated
-resources. Concentration can improve utilization and reliability while creating
-dependency, bargaining power, surveillance, and correlated failure.
+Concentration can arise at several points: accelerator supply, high-bandwidth
+memory, fabrication, advanced packaging, cloud platforms, power connections,
+and skilled operations. Its current degree requires dated market evidence.
+When a workload depends on few substitutable providers, shared dependencies
+can create bargaining power, surveillance exposure, and correlated failure.
+Central operation can also improve utilization and reliability.
 
 A centralized provider may offer excellent hardware, mature networking, rapid
 recovery, and lower unit cost. The stack should use those advantages when they
@@ -266,8 +319,9 @@ users. The stack should record the authority and appeal path rather than
 presenting denial as a law of physics.
 
 Hardware attestation and metering can support compute-policy enforcement. Their
-coverage is bounded. A trusted report about one device state does not prove the
-software, workload, operator, or downstream effects. Attestation roots create
+coverage is bounded. A trusted report establishes only the device or software assertions its
+qualified evidence and appraisal policy cover; it does not establish unmeasured
+operator conduct or downstream effects. Attestation roots create
 update, revocation, compatibility, surveillance, and capture risks of their own.
 
 Infrastructure governance should preserve least disclosure. A provider may need
@@ -310,7 +364,9 @@ unless an explicit contract permits that exposure. A child's device may be
 reachable but blocked from adult project work. A phone can approve a high-risk
 job without becoming the execution authority.
 
-Among eligible nodes, the hive chooses the least-authority adequate placement.
+Among eligible nodes, the hive chooses an adequate placement under the declared
+authority and resource policy. Some placements may have incomparable rights or
+cost profiles; there need not be one universal least-authority winner.
 It binds a task-local context and execution lease, monitors the run, and emits
 artifact, effect, resource, recovery, and residual receipts.
 
@@ -361,8 +417,9 @@ secrets and credentials remain outside the lease unless explicitly required and
 authorized.
 
 Reputation can inform scrutiny but cannot grant authority. A well-behaved node
-still needs a current lease. A new node can execute a low-risk public job if it
-satisfies the contract without inheriting broad distrust forever.
+still needs an applicable current grant, which may already cover a bounded
+class of jobs; a new approval click is not required for every assignment. A new node can execute a low-risk public
+job if it satisfies the contract without inheriting broad distrust forever.
 
 Payment and bidding come after policy. An ineligible node cannot win by being
 cheap. Estimates should include expected latency, energy, network, failure,
@@ -386,8 +443,21 @@ may quarantine before action.
 
 The system should record last confirmed authority, partition time, allowed
 offline actions, no-mutation evidence, residual owner, and reconciliation path.
-On reconnection it compares effects with current authority. It does not rewrite
-history to imply continuous authorization.
+On reconnection it reconstructs the authority and effect ordering as far as the
+evidence permits. A current grant does not retroactively authorize an action,
+and a current revocation does not prove every earlier action was forbidden.
+Unknown timing remains unresolved rather than being rewritten as continuous
+authorization.
+
+For example, a hypothetical grant permits public read-only analysis offline
+for ten minutes, but a private repository mutation requires an online authority
+check. Contact is lost at minute three. Public analysis may continue within its
+remaining bound if all other obligations hold; the mutation waits. A revocation
+at the principal at minute four may be unknown to the isolated worker. The
+ten-minute bound limits this previously admitted stale-state exposure; it does
+not provide immediate remote enforcement. If the job requires immediate
+revocation awareness, that offline route is ineligible. Already copied data
+and completed effects need their separate retention and recovery treatment.
 
 This can reduce availability. That is an explicit trade, not a scheduler bug.
 The policy should reserve offline capability for cases whose consequences are
@@ -414,8 +484,9 @@ sandboxed computation.
 
 Resilience comparisons include recovery time, lost work, state correctness,
 operator burden, security updates, replacement parts, and residual effects. A
-route that remains online but acts from stale authority is not resilient in the
-relevant sense.
+route that remains online but acts beyond its admitted stale-state envelope is
+not resilient in the relevant sense. Qualified bounded offline work differs
+from silently assuming a revoked grant remains current.
 
 ## Maintenance Is Part of Capacity
 
@@ -464,26 +535,30 @@ security analysis, and a route back to a qualified baseline.
 
 ## One Workflow, Three Placements
 
-The team freezes the repository task and compares local, hive, and centralized
-routes under the same acceptance test and authority ceiling.
+Continue the hypothetical comparison. The team freezes the repository task and
+compares local, hive, and centralized routes under the same acceptance test and
+authority ceiling; none of the following runs is reported evidence.
 
 The local route uses a compact model, retrieval, and full tests. It keeps data
 and credentials on the workstation. Memory offload raises latency and the run
 throttles once, but it completes without network dependence.
 
 The hive route sends public dependency analysis to the home server and keeps
-private source generation on the workstation. The phone supplies a bound review
-approval. A simulated partition revokes the server lease; the public analysis
-finishes under its offline policy while the private action quarantines. The
-team counts requeue and reconciliation.
+private source generation on the workstation. The phone conveys the authorized
+reviewer’s bounded decision; the portal is not its own source of mandate. A
+partition cuts contact with the authority service. Public analysis finishes
+within its admitted offline allowance while the private mutation waits for
+fresh authority. If the principal separately revokes the grant, reconciliation
+records when that was known and what effects occurred. Network loss alone
+is not revocation. The team counts requeue and reconciliation.
 
 The cluster route sends a redacted task to a rented accelerator. It is fastest
 for generation, but repository retrieval, result verification, and effect
 authority remain local. The provider route loses eligibility when the patch
 requires an unredacted secret-bearing file.
 
-The comparison reports accepted outcome, wall time, compute, memory and network
-traffic, measured energy where available, modeled impact with uncertainty,
+The proposed comparison would report accepted outcome, wall time, compute, memory
+and network traffic, measured energy where available, modeled impact with uncertainty,
 money, human work, failures, recovery, privacy exposure, and residuals. No route
 wins by one number.
 
@@ -545,7 +620,8 @@ burden, use them.
 
 ## What the Current Work Establishes
 
-Personal Compute Hives currently has seven public record schemas, two valid and
+[Personal Compute Hives](https://corbensorenson.github.io/asi-stack-book/chapters/personal-compute-hives-and-federated-edge-intelligence.html)
+currently has seven public record schemas, two valid and
 eight invalid admission fixtures, three valid and six invalid partitioned-
 authority records, 52 live family declarations, and a 31-declaration reachable
 refinement. Its independent consumer executes six accepted events, checks seven
@@ -558,7 +634,8 @@ authority service, network overlay, sandbox, federation, partition experiment,
 energy measurement, dropout recovery, privacy, security, availability, useful
 work, independent reproduction, or transfer ran.
 
-Physical Compute Infrastructure implements a 36-declaration Lean surface over
+[Physical Compute Infrastructure](https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html)
+implements a 36-declaration Lean surface over
 a six-transition review and 44 admission-axis mutations with exact repairs. It
 proves finite accounting, capacity, monotonicity, receipt invalidation, and two
 information-loss constructions. It does not measure a natural workload or
@@ -617,11 +694,14 @@ constraints and topology do not materially affect accepted useful output,
 latency, privacy, resilience, recovery, or total cost, or if ordinary provider
 reports produce equally good decisions with less burden.
 
-Support would require natural multi-site workloads, calibrated meters,
-transparent impact models, strong local and cloud baselines, failure injection,
-security and privacy evaluation, authority and partition tests, lifecycle and
-community boundaries, independent reproduction, and transfer across devices,
-networks, regions, providers, and time.
+Evidence requirements follow the claim. A narrow latency claim on one machine
+needs matched workloads, accepted outputs, and appropriate timing evidence.
+A multi-site resilience claim needs its stated failure domains, authority
+behavior, and recovery trials. Environmental or community claims need suitable
+meters, explicit attribution models and exclusions, lifecycle scope, and
+affected-party evidence. Broad transfer needs independent reproduction across
+its named devices, networks, regions, providers, and times. No single campaign
+is automatically necessary or sufficient for all of these conclusions.
 
 Formal proofs can establish finite accounting and authority invariants. They
 cannot establish meter accuracy, grid effects, supply-chain truth, community
@@ -646,5 +726,3 @@ superior infrastructure.
 Once the stack can distribute work and modify its own mechanisms, physical
 capacity also becomes a channel for replication and self-expansion. Unit 25
 confronts recursive improvement, replication, and containment directly.
-
-{{< include ../generated/unit-24-status.qmd >}}

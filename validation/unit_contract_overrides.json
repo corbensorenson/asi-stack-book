@@ -8,14 +8,29 @@
       "input_artifacts": [
         "validation/registry.json",
         "validation/unit_contract_overrides.json",
-        "scripts/validate_validation_registry.py"
+        "scripts/validate_validation_registry.py",
+        "scripts/validation_runtime.py",
+        "scripts/run_validation_registry.py",
+        "tests/test_validation_runner.py",
+        "scripts/validation_projection_plan.py",
+        "scripts/book.py",
+        "tests/test_projection_plan.py",
+        "tests/test_contributor_commands.py",
+        "scripts/admission_guard.py",
+        "scripts/canonical_admission_transaction.py",
+        "scripts/recover_chapter_admission.py",
+        "tests/test_canonical_admission_transaction.py",
+        "scripts/build_tested_site_bundle.py"
       ],
       "output_contract": "Reject malformed, unordered, duplicate, stale-authority, missing-script, missing-artifact, or contract-incomplete registry state.",
       "output_assertions": [
         "contiguous unique order",
         "all scripts and artifacts exist",
         "all exact overrides resolve once",
-        "registry is sole inventory authority"
+        "registry is sole inventory authority",
+        "execution capabilities and side effects are explicit or honestly unreviewed",
+        "positive execution budgets and preceding dependencies",
+        "current projection graph has named consumers, valid relative paths and preceding dependencies"
       ],
       "claim_scope": "Validation orchestration metadata and filesystem coverage only.",
       "negative_controls": "validator_owned",
@@ -23,7 +38,15 @@
         "duplicate order",
         "missing script",
         "unresolved exact override",
-        "legacy authority marker"
+        "legacy authority marker",
+        "invalid execution budget",
+        "dependency cycle",
+        "unknown execution field",
+        "missing current projection graph",
+        "historical object in current rebuild graph",
+        "projection output escapes repository",
+        "unregistered projection consumer",
+        "projection dependency cycle"
       ],
       "prohibited_inference": "Registry validity does not establish semantic adequacy of its validators or truth of validated artifacts.",
       "contract_precision": "exact_high_impact",
@@ -32,23 +55,42 @@
     {
       "script": "validate_proof_artifact_audit.py",
       "args": [],
-      "input_contract": "The exact ProofEnvelope Lean module, generated proof manifest and triage, and generated proof-artifact audit.",
+      "input_contract": "Current proof manifest/triage/rationalization, canonical chapter manifest, imported Lean source library, ProofEnvelope module, audit/Appendix E, pinned compiler configuration, compiled axiom projection and the named execution helpers. Directory member identity remains domain-owned.",
       "input_artifacts": [
         "lean/AsiStackProofs/ProofEnvelope.lean",
         "proofs/proof_manifest.json",
         "proofs/proof_triage.json",
-        "docs/proof_artifact_audit.md"
+        "docs/proof_artifact_audit.md",
+        "proofs/axiom_dependencies.json",
+        "lean/tools/AxiomDependencies.lean",
+        "scripts/build_proof_axiom_audit.py",
+        "scripts/validate_proof_artifact_audit.py",
+        "scripts/validation_runtime.py",
+        "scripts/admission_guard.py",
+        "tests/test_publication_processes.py",
+        "book_structure.json",
+        "proofs/proof_rationalization_registry.json",
+        "lean/AsiStackProofs.lean",
+        "lean/AsiStackProofs",
+        "lean/lean-toolchain",
+        "lean/lakefile.lean",
+        "lean/lake-manifest.json",
+        "appendices/E_codex_test_specs.qmd",
+        "chapters"
       ],
-      "output_contract": "Reject theorem-surface drift, target wiring gaps, lifecycle reconstruction failures, noninterfering-route failures, composition failures, lossy-summary overclaims, complete-transport corruption, and support/effect authority laundering.",
+      "output_contract": "Reject theorem-surface drift, target wiring gaps, lifecycle reconstruction failures, noninterfering-route failures, composition failures, lossy-summary overclaims, complete-transport corruption, and support/effect authority laundering. Compile and elaborate through owner-supervised bounded execution; retain fresh raw logs and machine running/final outcomes. Compiler rejection/timeout remains failure. The 1800-second library build, 30-second version probe, 300-second query and 300-second exact-module compile have distinct budgets; the registered outer audit has 2700 seconds.",
       "output_assertions": [
         "exact 28-declaration module compiles",
-        "330 targets remain traceable",
+        "344 targets remain traceable",
         "ten-event lease lifecycle closes",
         "eleven composition splits agree",
         "33 rejected routes preserve exact state",
         "expiry and thin-summary collision remain explicit",
         "19 complete-transport mutations reject",
-        "support and external-effect authority remain false"
+        "support and external-effect authority remain false",
+        "all source theorem identities resolve in the rebuilt pinned Lean environment",
+        "exact transitive axioms and native compiler trust remain disclosed",
+        "unreviewed axiom classes block acceptance"
       ],
       "claim_scope": "Finite authored proof-target wiring and formal-artifact authority-lease lifecycle records explicitly checked.",
       "negative_controls": "validator_owned",
@@ -60,9 +102,17 @@
         "external-effect authority request",
         "expired issue request",
         "reasonless revocation",
-        "complete-transport field mutation"
+        "complete-transport field mutation",
+        "erased native dependency",
+        "unreviewed axiom class",
+        "compiler nonzero exit with retained diagnostic",
+        "nested cwd retains source-root lease and interpreter",
+        "owner-only SIGTERM/SIGKILL and ready-descendant timeout",
+        "linked compiler diagnostic directory refusal",
+        "zero-exit wrong compiler identity is a classified failure",
+        "zero-exit malformed compiled environment is a classified failure"
       ],
-      "prohibited_inference": "The audit does not establish artifact, source, or filesystem truth; semantic adequacy; implementation refinement; deployed enforcement; safety; empirical utility; support; transfer; or SOTA.",
+      "prohibited_inference": "The audit does not establish artifact, source, or filesystem truth; semantic adequacy; implementation refinement; deployed enforcement; safety; empirical utility; support; transfer; or SOTA. An axiom-free declaration may still assume an unobserved runtime premise.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "internal_contract_audit_not_independent"
     },
@@ -75,7 +125,9 @@
         ".github/workflows/publish.yml",
         "lean/lean-toolchain",
         "CITATION.cff",
-        "docs/release_reproducibility.md"
+        "docs/release_reproducibility.md",
+        ".github/actions/validation-runtime/action.yml",
+        "scripts/install_lean_runtime.py"
       ],
       "output_contract": "Reject toolchain, citation, DOI, tag, commit, locale, or release-record drift from the v1.0 reproducibility contract.",
       "output_assertions": [
@@ -97,12 +149,16 @@
     {
       "script": "validate_ci_supply_chain_pins.py",
       "args": [],
-      "input_contract": "Every GitHub Actions workflow, machine dependency-pin inventory/schema, reviewed action commits, Elan commit URL and digest, review dates, and prose ledger.",
+      "input_contract": "Every GitHub Actions workflow and local composite action, machine dependency-pin inventory/schema, reviewed action commits, Elan commit URL and digest, review dates, and prose ledger.",
       "input_artifacts": [
         ".github/workflows",
         "ci/dependency_pin_inventory.json",
         "schemas/ci_dependency_pin_inventory.schema.json",
-        "docs/ci_supply_chain_pinning.md"
+        "docs/ci_supply_chain_pinning.md",
+        ".github/actions",
+        "scripts/install_lean_runtime.py",
+        "tests/test_lean_runtime.py",
+        "tests/test_validation_infrastructure.py"
       ],
       "output_contract": "Reject moving or unregistered remote actions, workflow/inventory mismatch, mutable or unchecked installers, stale or malformed pin reviews, and incomplete documentation.",
       "output_assertions": [
@@ -112,18 +168,25 @@
         "all workflow actions are inventoried",
         "review due dates equal review date plus 90 days",
         "expired reviews fail closed",
-        "ledger records residual TCB"
+        "ledger records residual TCB",
+        "sole checksum-checked installer definition is shared by all validation tiers",
+        "native runtime archive is bound to an exact official version, platform, byte count and digest; old script is retained review context",
+        "default review expiry uses the UTC calendar; malformed inventory shapes refuse before semantic/workflow consumption"
       ],
       "claim_scope": "Fetched CI dependency identity at declared workflow references.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "moving action tag",
-        "mutable installer URL",
-        "missing installer checksum",
+        "moving binary installer",
+        "uncontrolled runtime helper",
         "stale review",
         "missing inventory action",
         "mismatched inventory pin",
-        "duplicate inventory ID"
+        "duplicate inventory ID",
+        "missing runtime binary",
+        "mutable binary URL",
+        "erased binary digest",
+        "duplicate binary platform"
       ],
       "prohibited_inference": "Pins do not prove upstream code benign, runner integrity, or transitive dependency immutability.",
       "contract_precision": "exact_high_impact",
@@ -136,21 +199,42 @@
       "input_artifacts": [
         ".github/workflows/build-pages-artifact.yml",
         ".github/workflows/publish.yml",
-        "docs/tested_artifact_deployment_contract.md"
+        "docs/tested_artifact_deployment_contract.md",
+        "scripts/select_tested_site_deployment.py",
+        "ci/browser/package.json",
+        "ci/browser/package-lock.json",
+        "scripts/validate_live_human_view_browser.js",
+        "scripts/validate_live_human_view_browser_report.py",
+        "tests/test_browser_report_consumer.py"
       ],
       "output_contract": "Reject deploy-time rebuilding, wrong-run artifact authority, absent commit binding, or verification after Pages upload.",
       "output_assertions": [
         "build performs deep gates",
         "deploy consumes triggering successful run",
         "bundle verified before upload",
-        "deploy contains no rebuild command"
+        "deploy contains no rebuild command",
+        "exact-current-main selection before preparation and deployment",
+        "strict complete locked browser gate",
+        "older completions cannot cancel an active deployment",
+        "browser report consumer follows producer before bundling/upload; neither conditional nor ignored"
       ],
       "claim_scope": "Static workflow authority and handoff structure.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "deploy rebuild",
+        "missing paper-library render",
+        "missing rendered paper validation",
         "current-run artifact",
-        "unbound commit"
+        "unbound commit",
+        "late-run cancellation",
+        "ignored eligibility",
+        "decorative selection",
+        "optional browser",
+        "missing browser report",
+        "decorative browser report",
+        "consumer before producer",
+        "conditional browser",
+        "ignored browser report failure"
       ],
       "prohibited_inference": "Static workflow structure does not attest a GitHub run or public deployment.",
       "contract_precision": "exact_high_impact",
@@ -234,15 +318,21 @@
       "args": [],
       "input_contract": "Versioned release policy, v1.0 release record, canonical current status, and optional rendered root/latest/index trees.",
       "input_artifacts": [
-        "status/versioned_release_policy.json",
+        "docs/versioned_release_channels.md",
         "release_records/2026-06-29-v1.0.0-living-book-96d0ca3c.json",
-        "docs/versioned_release_channels.md"
+        "scripts/build_release_channels.py",
+        "scripts/build_tested_site_bundle.py",
+        "status/versioned_release_policy.json",
+        "tests/test_release_channel_transaction.py",
+        "scripts/projection_files.py",
+        "scripts/validate_release_channels.py"
       ],
       "output_contract": "Reject dishonest immutable artifact state, version/commit mismatch, changed latest mirror files, and malformed version index.",
       "output_assertions": [
         "latest is explicitly mutable",
         "published immutable artifact requires URL and SHA-256",
-        "v1.0 absent archive disclosed"
+        "v1.0 absent archive disclosed",
+        "transactional channel construction is separately exercised by infrastructure tests"
       ],
       "claim_scope": "Release-channel identity and truthfulness.",
       "negative_controls": "validator_owned",
@@ -260,23 +350,45 @@
       "args": [
         "--self-test"
       ],
-      "input_contract": "Versioned release policy, deterministic archive builder, archive-candidate schema, tested-bundle format, and publication transaction documentation.",
+      "input_contract": "Versioned release policy, inspected exact tested-bundle bytes, deterministic archive builder and consumer, candidate/bundle schemas, shared directory custody and source guards, and publication documentation. The synthetic self-test envelope uses the existing public-status owner; dynamic note-presence and transition inputs remain a separate input-coverage limitation.",
       "input_artifacts": [
         "status/versioned_release_policy.json",
         "schemas/immutable_site_archive_manifest.schema.json",
         "schemas/tested_site_bundle.schema.json",
         "scripts/build_immutable_site_archive.py",
         "scripts/validate_immutable_site_archive.py",
-        "docs/immutable_site_archive_pipeline.md"
+        "docs/immutable_site_archive_pipeline.md",
+        "scripts/build_tested_site_bundle.py",
+        "scripts/validate_tested_site_bundle.py",
+        "scripts/generated_directory.py",
+        "scripts/projection_files.py",
+        "scripts/admission_guard.py",
+        "scripts/schema_validation.py",
+        "scripts/build_canonical_public_status.py",
+        "scripts/validate_external_sota_positioning.py",
+        "scripts/visual_chapter_source.py",
+        "tests/test_immutable_archive_transaction.py",
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "evidence_quality/claim_identity_graph.json",
+        "editions/release_profiles.json",
+        "schemas/canonical_public_status.schema.json",
+        "status/public_status_config.json"
       ],
-      "output_contract": "Build and replay a clean synthetic tested-bundle archive and reject policy/commit mismatch, false publication, changed bytes, unsafe members, non-determinism, or source-bundle drift.",
+      "output_contract": "Build and replay an owned temporary synthetic archive without candidate-side mutation files; reject policy/commit/state/authority mismatch, stale bundle identity, changed archive/checksum bytes, unsafe or noncanonical members, excessive member expansion and nondeterministic replay. Separate infrastructure tests exercise replacement custody.",
       "output_assertions": [
         "policy-bound filename and release record",
         "epoch-zero deterministic tar and gzip",
         "exact tested-site members and bytes",
         "clean candidate state",
         "empty unpublished URL",
-        "byte-identical replay digest"
+        "byte-identical replay digest",
+        "source bundle verified before packaging",
+        "non-writing consumption and in-memory mutation controls",
+        "adjacent checksum and complete payload identity",
+        "version/commit bound archive root and storage authority",
+        "unknown candidate objects and immutable identity preserved by separate custody tests"
       ],
       "claim_scope": "Deterministic packaging and identity of one tested-site archive candidate.",
       "negative_controls": "validator_owned",
@@ -683,7 +795,7 @@
     {
       "script": "validate_product_projections.py",
       "args": [],
-      "input_contract": "Canonical manifest/status, product and contribution contracts, 22-unit narrative spine, exact 84-chapter unit crosswalk, reader generator/overlays, projection schemas, and repository-backed evidence routes.",
+      "input_contract": "Current canonical manifest/status, product/contribution contracts, retained 22-unit candidate spine/crosswalk, current Human Reader binding, reader generator/overlays, projection schemas and explicitly named public evidence routes.",
       "input_artifacts": [
         "book_structure.json",
         "products/product_contracts.json",
@@ -694,18 +806,27 @@
         "schemas/product_projection_manifest.schema.json",
         "scripts/build_reader_edition.py",
         "scripts/build_product_projections.py",
-        "docs/product_projection_artifacts.md"
+        "docs/product_projection_artifacts.md",
+        "scripts/generated_directory.py",
+        "scripts/projection_files.py",
+        "scripts/build_canonical_public_status.py",
+        "schemas/canonical_public_status.schema.json",
+        "editions/reader_manuscript/current/manifest.json",
+        "tests/test_product_site_transaction.py",
+        "scripts/build_tested_site_bundle.py",
+        "scripts/admission_guard.py"
       ],
       "output_contract": "Regenerate all three product routes and reject non-22 or out-of-order narrative selection, incomplete or duplicated unit ownership, hidden or stale specialist-owner routes, stale distinct responsibilities, support inflation, missing plain/normative/machine projections, unbounded machine contracts, omitted-reference loss, incomplete reference coverage, canonical-count drift, support promotion, changed evidence snapshots, or a stale unit-crosswalk digest.",
       "output_assertions": [
-        "22 selected narrative units and 62 reference-routed chapters",
-        "62 specialist owners visibly linked under their assigned narrative units with canonical distinct responsibilities and support ceilings",
+        "22 retained candidate units and all other canonical chapters reference-routed",
+        "Every specialist owner visibly linked under their assigned narrative units with canonical distinct responsibilities and support ceilings",
         "all 22 units expose separate plain-language, engineering-rule, and bounded machine-contract projections",
-        "84 canonical chapters assigned exactly once across the narrative units",
-        "84 canonical reference chapters with distinct responsibilities, claim identities, labels, and support ceilings",
+        "All canonical chapters assigned exactly once across the narrative units",
+        "All canonical reference chapters with distinct responsibilities, claim identities, labels, and support ceilings",
         "17 evidence routes",
         "all core support remains argument",
-        "content-addressed snapshots and the narrative-unit crosswalk digest match"
+        "content-addressed snapshots and the narrative-unit crosswalk digest match",
+        "with --site, complete installed file/input identity is current and no checking writes occur"
       ],
       "claim_scope": "Generated product navigation, bounded reader source selection, and registry snapshot identity.",
       "negative_controls": "validator_owned",
@@ -1647,20 +1768,37 @@
         "LICENSE.md",
         "CITATION.cff",
         ".github",
-        "docs/publication_readiness.md"
+        "docs/publication_readiness.md",
+        "scripts/validate_publication.py",
+        "scripts/validation_runtime.py",
+        "scripts/admission_guard.py",
+        "scripts/validate_paper_library.py",
+        "scripts/sync_paper_library.py",
+        "scripts/validate_trust_surface.py",
+        "tests/test_publication_processes.py"
       ],
-      "output_contract": "Reject missing public repository surfaces, stale publication language, unsafe source metadata, or unsupported artifact/release claims.",
+      "output_contract": "Reject missing public repository surfaces, stale publication language, unsafe source metadata, or unsupported artifact/release claims. Retain owned per-invocation process results and separate bounded stdout/stderr; supervise payload lifetime through the existing guardian, including publication-owner death. Git filename protocol is complete and NUL-delimited.",
       "output_assertions": [
         "required publication files exist",
         "rights/citation boundaries present",
-        "public source inventory has no local private paths"
+        "public source inventory has no local private paths",
+        "bounded Git and child-validator execution with exact Python interpreter",
+        "separate stdout/stderr with total retention limit and visible truncation",
+        "publication-owner death cannot abandon cooperating payload groups",
+        "incomplete Git protocol rejects despite zero process exit",
+        "interrupted subcheck retains unresolved running state rather than success"
       ],
       "claim_scope": "Repository publication hygiene.",
       "negative_controls": "validator_owned",
       "negative_control_cases": [
         "missing public file",
         "unsafe source path",
-        "unsupported artifact claim"
+        "unsupported artifact claim",
+        "stuck subcheck and descendant",
+        "publication parent SIGTERM or SIGKILL",
+        "malformed or truncated Git protocol",
+        "log setup failure before child launch",
+        "linked diagnostic parent preserves foreign objects"
       ],
       "prohibited_inference": "Publication hygiene does not approve content, claims, accessibility, licensing change, or release readiness.",
       "contract_precision": "exact_high_impact",
@@ -3586,12 +3724,13 @@
     {
       "script": "build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
       "args": [],
-      "input_contract": "Exact P0-P3 artifacts, substantive tested commit f93a4d8f, format dispositions, source audit, flagship adjudication, Theseus import, immutable v2.3.0 identity, and zero public-release effects.",
+      "input_contract": "Exact P0-P3 artifacts, substantive tested commit f93a4d8f, format dispositions, source audit, flagship adjudication, Theseus import, immutable v2.3.0 identity, and zero public-release effects. Closure bytes are retrieved from their last attested retained commit a700382b648b65adcf044c126d1313aac696a569, separately from the substantive tested commit.",
       "input_artifacts": [
         "scripts/build_post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.py",
         "schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json",
         "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json",
-        "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md"
+        "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md",
+        "scripts/repository_custody.py"
       ],
       "output_contract": "Reject false format approval, public release, support promotion, useful-release laundering, metadata-erratum erasure, artifact omission, or immutable-release drift.",
       "output_assertions": [
@@ -3602,7 +3741,7 @@
         "32 flagship candidates",
         "YELLOW Theseus import",
         "v2.3.0 unchanged",
-        "six rejecting mutations"
+        "seven rejecting mutations"
       ],
       "claim_scope": "Exact terminal local-reader disposition and no-public-release transaction only.",
       "negative_controls": "validator_owned_and_terminal_artifact_bound",
@@ -3612,7 +3751,8 @@
         "support promotion",
         "unsafe denominator laundering",
         "erratum erased",
-        "artifact omission"
+        "artifact omission",
+        "historical closure digest mismatch"
       ],
       "prohibited_inference": "The record does not publish, tag, grant rights, approve blocked formats, promote core claims, or establish model quality, governance efficacy, safety, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
@@ -3841,7 +3981,12 @@
         "editions/reader_manuscript/current/generated/unit-26-status.qmd",
         "docs/human_reader_26_unit_outline.md",
         "book_structure.json",
-        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json"
+        "roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json",
+        "scripts/build_tested_site_bundle.py",
+        "scripts/projection_files.py",
+        "scripts/search_navigation.py",
+        "assets/search-labels.html",
+        "editions/reader_manuscript/current/generated/search-navigation.html"
       ],
       "output_contract": "Require exact owner coverage, honest drafting and target-length states, independent prose custody, a runnable bounded utility route with three task recipes and explicit nonclaims, canonical generated derivatives, an exact-commit deployed /reader/ Pages route with reciprocal edition navigation, preserved support boundaries, and no major-version format or audio work.",
       "output_assertions": [
@@ -3866,6 +4011,80 @@
       "prohibited_inference": "Draft, target-length completion, or HTML deployment does not establish external-human editorial approval, accessibility conformance, evidence, major-version package release, safety, readiness, SOTA, AGI, or ASI.",
       "contract_precision": "exact_high_impact",
       "semantic_review_state": "checked_independent_human_reader_html_deployment_contract"
+    },
+    {
+      "script": "sync_scaffold.py",
+      "args": [
+        "--check"
+      ],
+      "input_contract": "Current manifest, public inventory/source notes, proof and claim projections, generated appendices, source crosswalks and public count surfaces owned by sync_scaffold.py.",
+      "input_artifacts": [
+        "book_structure.json",
+        "sources/source_inventory.json",
+        "proofs/proof_triage.json",
+        "claim_decisions/v1_x_core_claim_dispositions.json",
+        "docs/book_outline.md",
+        "scripts/sync_scaffold.py",
+        "scripts/projection_files.py",
+        "scripts/sync_outline_source_queues.py",
+        "scripts/sync_chapter_source_crosswalks.py",
+        "scripts/sync_public_trust_metrics.py",
+        "scripts/build_canonical_public_status.py",
+        "tests/test_projection_preview.py",
+        "scripts/chapter_freshness.py",
+        "tests/test_chapter_freshness.py",
+        "scripts/search_navigation.py",
+        "assets/search-labels.html",
+        "assets/search-navigation.html"
+      ],
+      "output_contract": "Read-only preview must find no stale generated text; report exact added/updated paths and hashes with a rebuild command when stale.",
+      "output_assertions": [
+        "current generated outputs match their producers",
+        "preview changes no owner bytes or timestamps",
+        "writes preserve unchanged file timestamps",
+        "replacement failure preserves an existing complete file"
+      ],
+      "claim_scope": "Generated scaffold and current text projection byte consistency only.",
+      "negative_controls": "independent_test_suite",
+      "negative_control_cases": [
+        "missing Quarto configuration preview",
+        "changed projection preview",
+        "replacement failure",
+        "symlink output"
+      ],
+      "prohibited_inference": "A synchronized scaffold does not approve chapter birth, editorial review, claim support, historical evidence, or publication.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
+    },
+    {
+      "script": "sync_paper_library.py",
+      "args": [
+        "--check"
+      ],
+      "input_contract": "Paper publication manifest, source inventory, canonical source/receipt custody, exact tracked public copies, assets and generated HTML source routes.",
+      "input_artifacts": [
+        "papers/paper_library.json",
+        "sources/source_inventory.json",
+        "book_structure.json",
+        "sources/corben_paper_corpus_closure.json",
+        "sources/corben_raw_source_receipts.json",
+        "scripts/sync_paper_library.py",
+        "scripts/search_navigation.py",
+        "assets/search-labels.html",
+        "papers/search-navigation.html"
+      ],
+      "output_contract": "Read-only check rejects undeclared, stale or digest-mismatched paper routes, public copies, assets, index and configuration.",
+      "output_assertions": [
+        "exact publication copies remain digest-bound",
+        "generated source routes and index are current",
+        "undeclared artifacts reject"
+      ],
+      "claim_scope": "Paper-library publication custody and generated text only.",
+      "negative_controls": "not_declared",
+      "negative_control_cases": [],
+      "prohibited_inference": "Synchronization does not independently corroborate source claims, confer rights, approve release or promote chapter support.",
+      "contract_precision": "exact_high_impact",
+      "semantic_review_state": "internal_contract_audit_not_independent"
     }
   ],
   "non_claims": [

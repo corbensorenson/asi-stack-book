@@ -27,7 +27,7 @@ def errors(value: dict, expected: dict) -> list[str]:
 
 def main() -> None:
     value = json.loads(OUT.read_text(encoding="utf-8"))
-    expected = audit()
+    expected = audit(value["recorded_date"])
     failures = errors(value, expected)
     mutations = []
 

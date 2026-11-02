@@ -5,8 +5,8 @@ unit_id: "unit-02"
 
 ## The Expensive Answer That Looked Cheap
 
-A team asks an AI system to update the same dependency across one hundred
-repositories. The first repository requires careful inspection: local build
+Consider a hypothetical maintenance campaign. A team asks an AI system to
+update the same dependency across one hundred repositories. The first repository requires careful inspection: local build
 rules, service ownership, compatibility notes, tests, and deployment policy.
 The system uses a strong model, several tools, and a human review. The work is
 expensive.
@@ -63,10 +63,18 @@ whose correctness can only be determined by a later human investigation has
 not discharged the same work as a patch accompanied by qualified tests and a
 clear residual.
 
-The numerator must also retain refusal. A system that declines an unauthorized
-or inadequately specified change can be more useful than one that produces a
-plausible artifact. Counting only completed tasks would reward unsafe release
-and punish correct abstention.
+The outcome accounting must also retain refusal. A system that declines an
+unauthorized or inadequately specified change can make the correct decision
+without completing the requested transformation. Report that decision
+separately from an accepted patch. Otherwise a policy that refuses every request
+could appear productive merely because its refusals are compliant.
+
+Freeze which tasks permit a refusal, escalation, or partial result, and how
+those dispositions are judged. An unauthorized change correctly denied is not
+a false refusal. An authorized, feasible change rejected without a justified
+boundary is. Keep both visible alongside accepted work and unsafe effects;
+completion rate alone hides the first distinction, while a combined count of
+all compliant decisions hides the second.
 
 Accepted useful work is workload-relative. A fast draft may satisfy an internal
 brainstorming contract and fail a production-change contract. The system should
@@ -218,7 +226,10 @@ A fourth baseline is often stronger than any of these abstractions: one
 frontier model with good tools, prompt caching, retrieval, a sandbox, tests,
 and human review. It may capture most benefits of a specialist stack with less
 coordination. The adaptive architecture must beat or complement that system,
-not merely compare itself with raw model calls.
+not merely compare itself with raw model calls. If the conventional agent has
+the same observed quality and recovery at lower burden, prefer it in that
+setting. Do not rename its ordinary caching or access checks as evidence that
+the proposed composition was necessary.
 
 Matched comparison requires the same task cohort, tool access, information,
 authority, tuning budget, retry policy, evaluator, and outcome window. If the
@@ -302,14 +313,21 @@ final artifact may be useful. The route was not as cheap as the first model
 call. The repair and review belong to the decision that selected the small
 route.
 
-The ledger can classify several outcomes.
+The ledger can classify several outcomes. These labels describe what the
+comparison can establish, rather than rank every successful patch.
 
 An **adequate minimum** satisfies the predicate, preserves authority, passes
 verification, records residuals, and has no lower-cost eligible candidate in
-the examined set.
+the examined set under a declared cost ordering. For a cost vector, several
+routes may remain incomparable: less machine time and more human attention is
+not a minimum until the decision maker supplies a preference or constraint.
+Minimum among examined candidates does not mean minimum among all possible
+solutions.
 
-An **adequate overkill** succeeds but does not establish efficiency because a
-cheaper adequate route was not examined or recorded.
+An **adequate overkill** succeeds, but an examined cheaper eligible route
+would have satisfied the same contract. When cheaper alternatives were never
+examined, the outcome is adequate with efficiency unresolved; missing comparison
+is not evidence that the chosen route wasted resources.
 
 A **cheap brittle** route saves visible cost but fails the quality or
 verification predicate and requires fallback.
@@ -322,6 +340,62 @@ rights. It is a denial or quarantine outcome, not an efficient success.
 
 These are accounting states, not claims that the repository has measured a
 real efficiency advantage.
+
+## A Worked Bill, Not a Benchmark
+
+Return to the dependency update. Imagine the following priced costs for the
+same accepted task under three hypothetical route scenarios. Dollars are only
+an illustration: assume a declared conversion for staff time and the same
+prices, acceptance predicate, and observation window in every column. Machine
+verification excludes the human review row, and repair includes machine retries
+but excludes staff time, so those costs are not counted twice.
+
+The columns distinguish the conventional agent, the adaptive route that needs
+expensive repair, and the adaptive route with adequate reuse. On a narrow screen,
+focus the table and scroll horizontally to compare them.
+
+::: {.asi-reader-table role="region" tabindex="0" aria-label="Hypothetical priced costs for three update routes"}
+
+| Cost class | Conventional | Adaptive: repair | Adaptive: reuse |
+|---|---:|---:|---:|
+| Generation and context | $160 | $110 | $80 |
+| Dispatch and policy operation | $5 | $35 | $25 |
+| Machine verification | $80 | $90 | $75 |
+| Machine repair and fallback | $20 | $85 | $20 |
+| Human review and recovery time | $70 | $100 | $55 |
+| Allocated artifact and policy maintenance | $15 | $30 | $20 |
+| Total of these priced classes | **$350** | **$450** | **$275** |
+
+:::
+
+The middle route saves $50 on generation and context but costs $100 more in the
+priced total. Calling it efficient from its model invoice would reverse the
+conclusion. The rightmost route would save $75 if its reuse remains adequate;
+that is an assumption to test, not a measured improvement or a prediction that
+the middle route eventually becomes the rightmost one.
+
+Suppose maintaining the adaptive route also requires an extra twenty minutes
+of operator attention that the price conversion did not cover. Report the
+attention separately and revisit the comparison. Likewise, an unobserved delayed
+failure is not a zero-dollar failure. State the follow-up window and unresolved
+risk. This small table explains how a local saving can disappear; it is not a
+complete lifecycle estimate and cannot establish a Pareto improvement across
+unpriced costs, rights constraints, or failure tails.
+
+One accepted update is also an insufficient denominator for the campaign. If
+ten eligible requests produce eight accepted patches, one justified escalation,
+and one false refusal, report all ten. Attach escalation and refusal costs to
+the policy even though neither produced an accepted patch. Comparing cost per
+accepted patch without the cohort and disposition counts could reward a policy
+that serves only the easiest requests. If a patch is later invalidated, retain
+its earlier acceptance history but correct the final outcome for the declared
+follow-up window.
+
+The operational decision follows from the comparison. Keep the conventional
+agent when it meets the contract more cheaply. Use the adaptive route where
+qualified reuse changes the full tradeoff. Escalate or abstain where neither
+route satisfies the predicate. The architecture earns its place through those
+decisions, not through having more components.
 
 ## Reuse Is the Main Long-Term Bet
 
@@ -347,6 +421,14 @@ Amortization is therefore versioned. The system can spread the creation cost
 over later accepted uses only while those uses remain inside the validated
 contract. Once dependencies or task distributions change, the artifact incurs
 renewal or loses qualification.
+
+A break-even calculation can expose the reuse assumption before a campaign.
+If qualification and maintenance add a hypothetical $1,500 fixed cost and each
+eligible accepted reuse saves $75 after its own verification and repair, twenty
+uses only recover the fixed cost; savings begin after that. If the artifact
+expires after twelve uses, this scenario loses $600. Count uses before expiry
+under the same contract, rather than spreading cost across imagined future
+requests. Renewal, failed uses, and changed workload prices alter the calculation.
 
 The mature efficiency question is not "how cheaply can this answer be
 generated?" It is "what reusable, governed capability remains after the work,
@@ -575,8 +657,9 @@ verifiers, and people compete behind stable contracts. The system learns where
 additional cognition changes accepted outcomes and where durable reuse lowers
 lifecycle cost.
 
-Every saving remains reversible and challengeable. Route policies expire or
-requalify under distribution shift. Reusable artifacts carry assumptions and
+The allocation policy remains challengeable and replaceable; spent energy,
+lost time, and irreversible effects cannot be recovered by changing its record.
+Route policies expire or requalify under distribution shift. Reusable artifacts carry assumptions and
 regressions. Failures update the route model only after adjudication. Evidence
 can narrow a route's competence without condemning the whole architecture.
 
@@ -617,8 +700,12 @@ relationships; they do not show that the system is efficient.
 
 Even a genuinely cheaper route is valid only inside authority. If the small
 worker can widen access, the cache can outlive consent, or the router can bypass
-review, the apparent saving is a governance failure. The next chapter therefore
-moves from resource allocation to the harder question: who may cause which
-effect, and who owns the result when capability outruns permission?
+review, the apparent saving is a governance failure. [Unit 3](unit-03-authority-failure-and-misuse.qmd) therefore takes over at the
+effect boundary: who may cause which change, and who owns the result when
+capability outruns permission? It must preserve the distinction between an
+eligible route and an authorized action. For the exact finite selector and
+current evidence, follow the [canonical efficiency chapter](https://corbensorenson.github.io/asi-stack-book/chapters/the-efficient-asi-hypothesis.html);
+for allocation and capacity constraints, continue later to
+[Unit 23](unit-23-generative-compression-and-cognitive-resource-economics.qmd).
 
 {{< include ../generated/unit-02-status.qmd >}}

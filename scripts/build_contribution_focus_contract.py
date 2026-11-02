@@ -20,6 +20,14 @@ CONTRIBUTIONS: dict[str, dict[str, Any]] = {
         "not_claim": "This does not establish a complete ASI architecture, deployed enforcement, alignment, safety, or optimal modularity.",
         "empirical_lane": "governed repository-change vertical slice plus authority/revocation trace invariants",
         "primary_product": "architecture_reference",
+        "contribution_type": "proposed_architectural_composition_with_bounded_local_implementations",
+        "prospective_ordinary_comparison": {
+            "status": "specified_not_executed",
+            "blueprint_ref": "docs/defended_contribution_prior_art_positioning.md#ordinary-authority-workflow",
+            "alternative": "Conventional policy-mediated transactional repository workflow with current grants, qualified commits, observation, and authorized recovery.",
+            "proposed_delta": "Preserve exact authority, candidate, qualification, effect, and recovery relations through cognitive replacement and cross-owner handoff.",
+            "equality_disposition": "Prefer the ordinary workflow if it supplies the same accepted relations and useful outcomes at lower burden; narrow novelty to composition, teaching, or the exact implementation result."
+        },
         "legacy_subtracks": ["governed-self-improvement-boundary"],
         "exit_ladder": {
             "bounded_claim_slice": "For the tracked Human Reader source-link repair, full governed admission blocks the declared out-of-scope mutation before effect and reaches the expected residual-free terminal state after a partial-effect crash or compensable external Git effect.",
@@ -43,6 +51,14 @@ CONTRIBUTIONS: dict[str, dict[str, Any]] = {
         "not_claim": "This does not prove that the support ladder is epistemically optimal, that reviewers are correct, or that any chapter thesis is true.",
         "empirical_lane": "claim/evidence ledgers, transition gates, contradiction controls, and adversarial counterexample pressure tests",
         "primary_product": "evidence_registry",
+        "contribution_type": "proposed_public_evidence_process_with_bounded_consistency_checks",
+        "prospective_ordinary_comparison": {
+            "status": "specified_not_executed",
+            "blueprint_ref": "docs/defended_contribution_prior_art_positioning.md#ordinary-claim-register",
+            "alternative": "Versioned scientific claim register with exact identities, competence limits, prospective plans, authorized review decisions, and consumer checks.",
+            "proposed_delta": "Public consumer-linked claim, evidence, inference, and review relations across prose, proofs, experiments, and releases.",
+            "equality_disposition": "If conventional change control supplies the same behavior at lower burden, narrow the contribution to integration or implementation rather than a new epistemology."
+        },
         "legacy_subtracks": [
             "living-evidence-book-methodology",
             "claim-support-states-and-evidence-laundering-prevention",
@@ -71,6 +87,14 @@ CONTRIBUTIONS: dict[str, dict[str, Any]] = {
         "empirical_lane": "matched governed/baseline workload, receipt mismatch, hidden-residual, rollback, and governance-overhead measurements",
         "primary_product": "evidence_registry",
         "legacy_subtracks": ["costed-routing-residual-accounting-resource-discipline"],
+        "contribution_type": "proposed_observation_and_accounting_composition_with_bounded_local_implementations",
+        "prospective_ordinary_comparison": {
+            "status": "specified_not_executed",
+            "blueprint_ref": "docs/defended_contribution_prior_art_positioning.md#ordinary-incident-workflow",
+            "alternative": "Provenance, observability, incident response, compensation, and an obligation ledger with explicit observation and retention limits.",
+            "proposed_delta": "Connect challenged receipts, affected-use eligibility, effect history, and residual accounting across owners.",
+            "equality_disposition": "If ordinary records and incident tooling supply those relations with equal outcomes at lower burden, prefer them and narrow the claimed architectural delta."
+        },
         "exit_ladder": {
             "bounded_claim_slice": "For the tracked P5-U1 external-effect and crash paths, terminal disposition must agree with independently read Git state, unresolved local or remote effects must remain counted as residuals, and compensation may close branch content only while preserving effect history.",
             "closest_implemented_comparator": "The P5-U1 record-only route records the executor's partial and remote effects but leaves one residual open in each affected path.",

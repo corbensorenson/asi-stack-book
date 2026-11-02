@@ -5,6 +5,8 @@ unit_id: "unit-15"
 
 ## The Claim Everyone Approved
 
+This is an illustrative review failure, not a reported controller trial.
+
 The release note now uses a coherent, current context. It says that controller
 version 8 completed a bounded gantry trial, the run stopped after oscillation,
 the observed trace is linked through an approved public summary, and the
@@ -12,7 +14,9 @@ claim-bearing safety campaign has not run.
 
 Five reviewers inspect it. The schema checker confirms the record shape. The
 link checker confirms that every public URL resolves. A Lean theorem confirms
-that the authored stop lease cannot remain active after its recorded expiry.
+that the encoded validity rule rejects authorization after the recorded lease
+expiry. It does not establish the physical stop or the authenticity of that
+recorded time.
 A model reviewer finds no unsupported sentence in the note it sees. A human
 reviewer checks the prose and approves publication.
 
@@ -23,8 +27,23 @@ state, not sensor coverage. The model reviewer received only the release note
 and summary. The human spent four minutes and assumed the technical checks had
 covered the evidence.
 
+For this consumer, “completed a bounded trial” suggests that the required
+observation interval was covered. That implication is unsupported. If a
+separate admissible record establishes the stop, the narrower stop observation
+can survive. Missing sensing does not automatically show that the controller
+failed to stop; it limits what can be inferred about coverage and detection.
+
+A repaired note could say: “This recorded run stopped after the observed
+oscillation. One sensor stream was unavailable during the final interval. The
+record does not establish complete trial coverage or safe detection, and the
+claim-bearing safety campaign has not run.” If the missing stream is also the
+only basis for asserting the stop, that assertion must remain open too.
+
 Every reviewer performed its assigned work. The joined verification program
-was inadequate.
+was inadequate. A direct reviewer with the original admissible coverage record
+could have caught the omission using a short release checklist. A ledger or
+additional theorem is useful only if it improves discovery or propagation of
+that correction at an acceptable cost.
 
 This failure is not solved by adding one more approval label. It requires a
 claim identity that survives wording changes, an explicit set of obligations,
@@ -40,6 +59,17 @@ specifications and Lean prove narrow properties under explicit assumptions.
 Proof-carrying contracts let those facts travel without broadening. None of
 these owners is a truth machine. Together, they make a claim challengeable and
 correctable.
+
+Three objects in the opening scene must remain distinct. A **receipt** records
+what a checker or executor reports. An **observation** names the target and
+method that acquired a result, including the missing sensor interval. That
+result becomes **evidence** only in relation to the proposition and inference
+it is used to support. Storing all three in one packet does not merge their
+jobs. At support review, Evidence States may retain bounded support for the stop
+claim while refusing the broader claim of complete sensor coverage. Claim
+Ledgers preserves the identities, belief history and reason for revision. The
+stop observation still needs an admissible basis. This is how a narrow claim
+can survive correction of an overbroad one.
 
 ## Verification Starts With Obligations
 
@@ -166,9 +196,12 @@ verifier needs.
 Context adequacy begins with the claim, obligation, verifier, and decision. The
 link checker needs the rendered public URLs. The observation reviewer needs
 the trace, sensor inventory, calibration and missingness, trial configuration,
-and exact claim. The Lean kernel needs theorem source, imported definitions,
-and compiler environment. The public reviewer needs intelligible evidence and
-known limitations.
+and exact claim. Lean's front end needs the source and imports to elaborate
+user syntax; the kernel checks the resulting terms against their types and
+declaration environment. An auditable run also binds the toolchain and
+assumptions. These stages are distinguished in the official
+[Lean language reference](https://lean-lang.org/doc/reference/latest/Elaboration-and-Compilation/).
+The public reviewer needs intelligible evidence and known limitations.
 
 The adequacy record names requested objects, mounted objects, denied or absent
 objects, transformations, resolution quality, freshness, contradictions,
@@ -233,7 +266,11 @@ alternative was declined.
 Append-only does not mean immutable error. A false claim can be demoted or
 refuted. Its historical events remain so the system can find decisions made
 under it. Deleting the record would make correction harder and permit the same
-claim to re-enter without its defeaters.
+claim to re-enter without its defeaters. This is a revision-history discipline,
+not blanket permission to retain private payloads. Retention rules may require
+content deletion; preserve only permitted event metadata, record lost audit
+capability, and do not copy the restricted material into a supposedly permanent
+ledger to evade that limit.
 
 Concurrency matters. Two reviewers may propose incompatible revisions from
 the same base. The ledger should not silently make the last write win. It
@@ -302,6 +339,42 @@ repeated across many surfaces.
 
 ## Formality Has Several Lanes
 
+The release-note example needs separate checks for observed behavior and for
+the encoded lease property. Their results meet at the claim's obligations;
+neither result decides a broader claim on its own.
+
+::: {#bounded-evidence-text}
+**Text version.** An observation of the exact trial and a check of the encoded
+lease property enter the review as different evidence relations. The reviewer
+asks whether the required obligations are adequately covered. If a material
+obligation remains missing, narrow the claim or leave it open. If coverage is
+adequate, make only the bounded decision allowed by that packet. The diagram
+models this illustrative review, not a rule that every claim requires both
+lanes. It does not establish complete obligations, truth, general controller
+safety, or permission to deploy.
+:::
+
+::: {.asi-reader-diagram tabindex="0" role="region" aria-label="Scrollable bounded evidence decision" aria-describedby="bounded-evidence-text" style="--asi-diagram-width: 40rem;"}
+
+```{mermaid}
+flowchart TD
+  accTitle: Two checks, one bounded claim decision
+  accDescr: In the illustrative controller review, observation of the exact trial and a proof of the encoded lease property address different obligations. Review asks whether the declared obligations are adequately covered. Missing coverage leads to narrowing or an open claim; adequate coverage permits only a bounded evidence decision, not general safety or action authority.
+  O["Observe exact trial"] --> R["Review claim obligations"]
+  P["Check encoded lease property"] --> R
+  R --> Q{"Required coverage adequate?"}
+  Q -- "no" --> N["Narrow or leave open"]
+  Q -- "yes" --> B["Bounded evidence decision"]
+```
+
+:::
+
+*Figure. Different checks meet at a specific claim. A formal lease result
+cannot fill missing sensor coverage.*
+
+Scroll inside the frame when needed; the complete text version is above.
+
+
 “Verified” is too ambiguous for consequential claims. The architecture names
 the artifact lane.
 
@@ -364,8 +437,9 @@ intended claim, or the system is safe. Those require additional bridges.
 The proof packet binds theorem ID, source digest, definitions, assumptions,
 Lean and dependency versions, build command, checked result, interpretation
 mapping, implementation binding, consumer, expiry, non-claims, and residuals.
-A changed definition, source, compiler, or consumer can invalidate the packet
-without making the historical theorem false.
+A changed definition, source, compiler, or consumer can suspend the packet
+for current use without making the historical theorem false. Preserve which
+environment checked which statement; assess the changed environment separately.
 
 Neural-network verification has the same boundary. A verifier may establish a
 property for one checkpoint, preprocessing pipeline, input region, arithmetic
@@ -626,45 +700,34 @@ records produce equal correction and scope discipline at lower total cost.
 The five technical owners have distinct bounded artifacts. Their combination
 does not create a stronger support state.
 
-Verification Bandwidth has four implemented targets. Its authored evidence
-includes three valid and five rejecting admission records, two valid and seven
-rejecting contradiction traces, three valid and five rejecting capacity
-traces, a twelve-unit record with 66 pairwise obligations of which 18 are
-checked and 48 remain residual, and a 24-obligation decomposition with six
-boundary checks. Its current 35-theorem replacement surface reaches evidence-
-gate handoff and rejects 31 handoff mutations. A three-instrument sacrificial
-campaign reached six-of-six eligibility accuracy and complete required-
-residual recall but admitted only three of six extraction interfaces, so its
-held-out workload stayed sealed.
+[Verification Bandwidth](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html)
+checks finite admission, contradiction, capacity, and evidence-gate handoffs.
+A twelve-unit record leaves 48 of 66 pairwise obligations residual. Its
+sacrificial campaign satisfied eligibility and required-residual checks but
+admitted only three of six extraction interfaces, so the held-out workload
+stayed sealed. Adequate bookkeeping did not earn a natural claim evaluation.
 
-Claim Ledgers has four implemented targets through 27 refinement declarations,
-with sixteen weak declarations retired and four bounded legacy lemmas retained.
-Five valid and seven rejecting revision fixtures plus one valid and eleven
-rejecting historical lifecycle records feed five reachable stages, 22 route
-cases, and 34 rejected lifecycle mutations.
+[Claim Ledgers](https://corbensorenson.github.io/asi-stack-book/chapters/claim-ledgers-and-belief-revision.html)
+checks authored revision and historical lifecycle transitions, including
+reachable routes and rejecting controls. Weak retired declarations remain
+identified separately from the replacement refinement surface. These results
+concern recorded transitions rather than correctness of the beliefs recorded.
 
-Proof-Carrying Claims and Adversarial Review has five implemented targets and
-44 live declarations across its retained and refinement modules. The proof-
-carrying surface uses three valid and five rejecting fixtures, two valid and
-seven rejecting dossier cases, six stages, 23 routes, and 36 rejected
-mutations. The Tribunal surface uses three valid and five rejecting reviews,
-one valid and eleven rejecting method or independence records, seven stages,
-28 routes, and 45 rejected mutations.
+[Proof-Carrying Claims and Adversarial Review](https://corbensorenson.github.io/asi-stack-book/chapters/spinoza-verification-and-proof-carrying-claims.html)
+checks claim dossiers, review-method records, independence fields, and bounded
+lifecycle routes. Rejecting malformed or unauthorized records does not establish
+that reviewers are independent or competent in fact.
 
-Circle's current local surface contains 28 Lean declarations. Its public
-records include two schema-valid fixtures, a pinned external receipt slice, a
-consumer gate that accepts one receipt and rejects four mutations, and a
-digest-verified archive of nine contracts and four policy receipts with five
-rejected controls. The lifecycle checks 45 reachable states through 360
-transitions, nine revoked-lineage states through 72 contained transitions,
-eight trace splits, 16 lifecycle mutations, and 15 semantic mutations. A
-narrow non-core receipt transition does not promote the chapter core.
+[Circle](https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html)
+binds finite contracts and policy receipts through a consumer gate, archived
+identities, revoked-lineage containment, and lifecycle controls. Its narrow
+non-core receipt transition does not promote the chapter core.
 
-The Executable Specifications proof envelope has two implemented targets and a
-28-declaration local module. Its independent audit executes a ten-event
-authority-lease trace, checks eleven composition splits, rejects 33 route
-cases, exercises expiry and a thin-summary collision, and rejects 19 complete-
-transport mutations.
+[Executable Specifications](https://corbensorenson.github.io/asi-stack-book/chapters/executable-specifications-and-lean-proof-envelope.html)
+checks an authored ten-event authority trace, composition splits, expiry,
+thin-summary collisions, and complete-transport mutations. It connects selected
+modeled facts, not an operating plant. Each canonical owner retains its exact
+target, theorem, fixture, route, and mutation inventory.
 
 All five cores remain `Design rationale` at `argument`. These results do not
 establish obligation completeness, natural claim identity, source or artifact
@@ -677,12 +740,14 @@ transfer.
 
 A minimum implementation can use the release-note claim. Give it a stable
 identity and exact public wording. Construct obligations for identity,
-observation, missingness, scope, authority, formal lease state, publication,
-and residuals. Allocate deterministic, source, formal, runtime, model, and
-human checks under a fixed budget. Record which context each verifier requested
+observation, missingness, scope, authority, publication, and residuals. Add
+formal lease state only if the note makes or relies on that formal claim.
+Choose the necessary deterministic, source, formal, runtime, model, or human
+checks under a fixed budget; do not require every route for every claim. Record which context each verifier requested
 and used.
 
-Bind the lease theorem to its interpretation and non-claims. Run an adversarial
+Where a lease theorem is relevant, bind it to its interpretation and non-claims.
+Run an adversarial
 review that specifically seeks obligation omission and shared reviewer
 dependence. Submit the joined artifacts to a separate support gate. Inject the
 missing sensor stream, require narrowing, and propagate the revision to every

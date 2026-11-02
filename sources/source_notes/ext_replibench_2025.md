@@ -66,3 +66,13 @@ here.
 - What positive controls show that a synthetic sandbox is measuring the
   intended component without enabling a real one?
 - Which shutdown and descendant-lineage tests are independently enforceable?
+
+## Selected abstract recheck — 2026-10-10
+
+Rechecked the [version-2 abstract](https://arxiv.org/abs/2504.18565v2), dated
+May 5, 2025. Its four-domain decomposition and study-scoped component findings
+ground Unit 25’s distinction from end-to-end replication and containment.
+This does not renew a current-model safety claim. Paper-body, task, harness,
+provider, trace, score, and containment review remain outside this selected
+abstract scope; no benchmark or replication experiment ran. The original
+ingestion event remains historical.

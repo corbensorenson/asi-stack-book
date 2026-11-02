@@ -5,8 +5,8 @@ unit_id: "unit-11"
 
 ## The Branch That Passed
 
-The gantry-controller patch from the previous chapter has finally reached a
-clean build. Its source digest, test artifact, deployment candidate, and
+Continue the hypothetical gantry-controller patch from Unit 10. Assume its
+compile step now completes from the intended inputs. Its source digest, test artifact, deployment candidate, and
 observation records now agree. Before the team lets the candidate control the
 lab gantry, it creates a branch of the repository and predicts what the change
 will do.
@@ -71,10 +71,12 @@ dependency were rebuilt, or if the gantry carried a heavier payload. Several
 branches can coexist without contradiction because each belongs to different
 conditions.
 
-**Actuality** is the state admitted from observation after an action or event.
-It is still known through fallible instruments; “actual” does not mean
-omniscient. It means the record belongs to what the system currently treats as
-having occurred rather than to what a model imagined.
+An **actuality record** is the system's currently admitted account of an
+action or event, grounded in observation rather than an imagined branch. It is
+not the world itself. A fallible instrument or mistaken interpretation can
+make the account wrong; a later correction needs its own version and evidence.
+The distinction identifies which claims describe observed outcomes and which
+remain predictions, without declaring either infallible.
 
 These categories need explicit bridges. Observation can update belief. A model
 can project belief into a predicted branch. An authorized action can realize
@@ -95,6 +97,25 @@ prediction that the dependency tree and trajectory will behave in specified
 ways; the counterfactual heavier-payload branches; and the independently
 recorded test failure and oscillation. Their links matter, but their identities
 must not merge.
+
+## JEPA Features and Platonic Agreement
+
+A world model can predict learned features instead of a complete future image.
+I-JEPA learns image representations this way; V-JEPA 2 adds an action-conditioned
+prediction route after video pretraining. Useful latent prediction still needs
+the observation, horizon and control qualifications discussed here.
+
+The [October 2026 Platonic-representation paper](https://arxiv.org/abs/2610.39302v1)
+asks when independently trained encoders agree up to a rotation. Its theorem
+assumes an idealized population setting and an identity predictor; it explicitly
+does not cover learned action-conditioned predictors. Its authors report strong
+alignment from different observations of a scene, while acknowledging that the
+experiments do not exactly satisfy the theorem's hypotheses. This supports a
+training research direction, not a certificate of physical understanding.
+A camera pose can be nuisance for caption alignment and essential for the gantry.
+The controller still has to preserve what its own task needs. This external
+statistical result is also distinct from Sorenson's *Platonic World Model*
+proposal; the shared name does not validate that semantic constitution.
 
 ## Freeze the Forecast Before the Intervention
 
@@ -179,8 +200,11 @@ story is the beginning of experiment design, not the end of inquiry.
 ## Horizon Changes the Claim
 
 A model can be useful one step ahead and misleading twenty steps ahead. Error
-compounds, uncertainty grows, small state mistakes change later actions, and
-the policy itself steers toward states the model represents poorly.
+can compound, uncertainty can grow, small state mistakes can change later
+actions, and the policy can steer toward states the model represents poorly.
+Uncertainty need not increase at every step: stable dynamics or new observations
+may reduce it. Evaluate the stated horizon and conditions rather than assuming
+one universal growth rule.
 
 The gantry model may predict force accurately for the next control interval
 but miss oscillation over a full traverse. The repository model may predict the
@@ -328,8 +352,8 @@ Reconciliation computes several residuals rather than one pass/fail bit:
 
 Each residual receives an owner and a route. The dependency model may need a
 new generator relation. The simulator may need another state variable or a
-narrower validity domain. Calibration may need to widen near the end of the
-rail. Planning must invalidate descendants that assumed the old branch. The
+narrower validity domain. Calibration may need a new evaluation near the end of the rail; widening a
+reported interval without checking its coverage is not recalibration. Planning must invalidate descendants that assumed the old branch. The
 controller remains blocked from full-speed use.
 
 Reconciliation should not force every mismatch into model training. A sensor
@@ -376,8 +400,8 @@ granting every new model the power to certify its own progress.
 
 ## When the Model Changes Its Own Evidence
 
-Reality does not always arrive untouched. A risk score can trigger treatment,
-which prevents the event the score predicted. A ranking can change the
+Reality does not always arrive untouched. A warning can trigger an intervention
+that changes the event it predicted. A ranking can change the
 institution being ranked. A recommender can change both what people encounter
 and what they later prefer. A generated answer can enter the corpus used to
 train a successor model.
@@ -386,12 +410,14 @@ In these cases, the model is not merely learning from the world. It is helping
 to produce the world from which its lineage learns next. That changes what an
 observation means.
 
-Suppose an alarm correctly identifies a dangerous patient and treatment works.
-The bad outcome never occurs. A naive retraining loop can interpret the absence
-of harm as evidence that the patient was never at risk. The system slowly
-trains away its own successful warning. The observed label answers, "What
-happened after we acted?" It does not answer, "What would have happened if we
-had not acted?"
+In the hypothetical controller case, suppose a warning stops a proposed move
+and no fault follows. That observation is compatible with a prevented fault,
+a false alarm, or a changed condition. It does not identify which happened.
+A naive retraining loop labels the case harmless because it saw no failure,
+ignoring that the warned-about move never executed. The observed label answers,
+“What happened under the intervention?” It does not answer, “What would have
+happened without it?” A claim of successful prevention needs additional causal
+evidence; the absence of a fault alone cannot supply it.
 
 The same distinction applies to evidence provenance. Human-written data is not
 automatically independent if a model selected which people spoke, which items
@@ -407,6 +433,11 @@ lineages. Each training channel states which policy regime it identifies. The
 system also protects a grounding reserve: archives, randomized sentinels,
 shadow policies, independent measurements, or other informative channels the
 active lineage cannot freely reshape.
+
+Any sentinel, shadow policy, or independent measurement still needs an
+admitted purpose, exposure boundary, and data-use authority. Evidence
+preservation is not permission to withhold a required protective intervention
+or expose people to a hazard merely to obtain cleaner labels.
 
 This reserve is not a ceremonial holdout. An archive can become stale. An
 independent institution can absorb the same incentives. A simulator can encode
@@ -504,26 +535,54 @@ intervention value and calibration, much of the extra machinery should
 collapse. Architecture is justified by a favorable joint frontier, not by the
 number of concepts it can represent.
 
+## A Simpler Decision Can Be the Better One
+
+Return to the missing generated configuration. Suppose the immediate question
+is whether the current repository includes the intended threshold. Reading the
+named configuration and its generator inputs can answer that narrower question.
+A clean build and the relevant independent test may then check the corresponding
+behavior. A plural world-model service need not be activated to predict a state
+that can be inspected directly within the existing mandate.
+
+That result does not close the physical oscillation question. The source tree
+may now be correct while dynamics or sensing remain unresolved. Keep the
+controller's use bounded until the relevant qualifications are met. The model
+can help rank safe, authorized diagnostic options, but its explanation of cable
+flex or sensor lag is still a hypothesis. A direct inspection can win the digital
+part without granting authority for the physical part.
+
+The same restraint applies after the stopped move. A lightweight event record
+that preserves the warning, intervening stop, unexecuted action, and subsequent
+observation may prevent the naive harmless label. A richer causal lineage is
+useful only if it improves an inference or correction that this record would
+otherwise lose. Neither representation identifies the unobserved fault outcome
+by itself. The mechanism has to earn its cost through a better decision, not
+through naming more kinds of state.
+
+These cases are hypothetical comparisons, not new trials. They constrain the
+planned empirical evaluation: direct observation and an ordinary forecast/outcome
+record must remain competent baselines, and interventions must not be hidden
+inside the labels used to judge prediction.
+
 ## What the Current Work Establishes
 
 The repository currently establishes a narrow transaction discipline, not a
 successful world model.
 
-Two public Lean targets are implemented through 32 theorem declarations. The
-finite model represents a six-event path: bind an admitted observation, bind a
+The implemented public Lean targets cover a finite path: bind an admitted observation, bind a
 current model, qualify an imagined branch, hand it to planning under a bounded
 use, record an independently observed effect, and reconcile an owned residual.
 Accepted runs preserve exact model, observation, branch, action, effect, and
 authority identities. They do not assign support or execution authority.
 
-The validator exercises 11 lifecycle rejections. A stale observation, an
+The validator exercises authored lifecycle rejections. A stale observation, an
 imagined branch mislabeled as observation, a stale model, an unsupported
 branch, unresolved model disagreement, unbounded planner use, attempted
 authority laundering, a missing action receipt, self-observed effect, missing
 residual, or unowned residual blocks the corresponding transition. A separate
 record fixture remains in safe hold because its model and observation are
-stale, support is absent, and disagreement is material. Thirteen
-fixture/protocol mutations are rejected.
+stale, support is absent, and disagreement is material. Authored fixture and protocol
+mutations are rejected.
 
 These are real formal and executable results about the authored finite record
 system. They do not establish that any learned state corresponds to the world,
@@ -531,8 +590,8 @@ that uncertainty is calibrated, that a causal graph is correct, that a
 fallback works, or that the architecture improves decisions.
 
 The claim-bearing empirical lane is prospectively specified but has not run.
-It preserves six matched arms, eight competence gates, seven rescue steps, ten
-joint outcomes, and six causal ablations. Its protected outcomes remain closed.
+It preserves matched arms, competence gates, bounded rescue steps, joint
+outcomes, and causal ablations. Its protected outcomes remain closed.
 An earlier bounded synthetic campaign is adjacent evidence only; it does not
 establish this chapter's core claim. The owner therefore remains at
 `Design rationale` and `argument` support.
@@ -657,5 +716,12 @@ cannot decide which future the system should pursue, how dependencies should
 be coordinated, or when a changing situation should abandon the chosen route.
 Those are planning problems. Unit 12 turns imagined branches into challengeable
 control artifacts without mistaking a plan for permission.
+[Unit 12](unit-12-planning-as-a-control-layer.qmd) must preserve branch identity,
+observation cutoff, uncertainty, known misses, and authority ceilings while
+selecting and coordinating work. The
+[world-model](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html)
+and [reflexive-system](https://corbensorenson.github.io/asi-stack-book/chapters/reflexive-model-world-systems.html)
+owners retain exact finite results, lineage rules, and the unopened empirical
+program; this narrative adds no outcome to that program.
 
 {{< include ../generated/unit-11-status.qmd >}}

@@ -51,3 +51,13 @@ repository has not validated coverage, exchangeability, or shifted extensions.
 
 - Which online or shift-aware variants are competent for a world-model stream?
 - How should consequence-weighted errors coexist with marginal coverage?
+
+## Selected follow-up — 2026-10-11
+
+Reviewed [arXiv v6](https://arxiv.org/html/2107.07511v6), Sections 1,
+3.1 (“Conditional coverage”) and 4.5–4.6. Marginal coverage is distinct
+from pointwise coverage; selected planner actions cannot inherit the latter.
+The weighted covariate-shift construction requires an unchanged conditional
+response law and distribution weights. Drift bounds have additional conditions.
+This reading qualifies the World Models discussion; it adds no local coverage,
+shift, control or efficacy result. The original intake remains historical.

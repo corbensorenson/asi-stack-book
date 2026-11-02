@@ -1,6 +1,209 @@
 # Defended Contribution Prior-Art Positioning
 
-Last updated: 2026-06-29
+Last updated: 2026-10-11
+
+## Current three-contribution portfolio
+
+The current program selects **three proposed contributions for defence**, not
+three established discoveries. The 89 chapters supply responsibilities and
+supporting arguments. Selection does not prove novelty, efficacy, safety, or
+chapter-core support. The [contribution summary](three_defended_contributions.md)
+and generated `products/contribution_focus_contract.json` own the assignments
+and bounded evaluation claims.
+
+| Current target | Contribution type being proposed | Competent ordinary alternative | Delta that still has to earn its value |
+|---|---|---|---|
+| `governed-cognition-interface-contracts` | Architectural composition; bounded local implementations of selected joins | Capability security, reviewed repository changes, and a transactional workflow | Preserve current authority, candidate identity, qualification, effect disposition, and recovery responsibility across component replacement and handoff. |
+| `claim-state-transition-discipline` | Public evidence process with executable consistency checks | A versioned scientific claim register, change control, and prospective evaluation plans | Make exact claim/evidence/inference/review relations visible to downstream consumers so a valid artifact cannot silently promote a different claim. |
+| `record-reality-residual-honesty` | Composition of provenance, observation, incident response, and accounting; bounded local implementations | Build provenance, observability, incident records, and compensation | Connect challenged receipts to bounded observations and preserve unresolved effects and displaced costs through recovery and public reporting. |
+
+These are proposed joins among familiar practices. A join supplied by an
+ordinary implementation cannot be claimed as a new mechanism merely because
+the book gives it a name. A local implementation result establishes only the
+tested relation and setting. Publication of an author manuscript establishes
+lineage, not independent corroboration. None of these types currently licenses
+a general architecture-superiority claim.
+
+The blueprints below are **specified, not executed comparisons**. They give a
+critic an implementable challenger before any broader distinctiveness claim.
+They do not replace the frozen P5 protocol, retrospectively relabel its routes,
+open protected outcomes, or commission a new research campaign. Existing
+record-only and shape-only controls remain useful mechanism ablations; they
+are not the strongest ordinary alternative.
+
+## Conventional authority and change workflow {#ordinary-authority-workflow}
+
+Implement this challenger as a conventional orchestrator with a policy service
+and transaction coordinator. Logical responsibilities may share one process;
+separate services are not required.
+
+1. Store a request with principal, task, target resource, base revision, exact
+   candidate change, applicable policy version, current grants, risk class,
+   budget, expiry, and declared recovery limits. Reuse an applicable current
+   grant; request another decision only when scope or policy requires it.
+2. Stage the candidate without changing protected state. Check scope,
+   qualification, invariants, and task-specific quality against the pinned
+   input. Record refusal or narrowing as a normal outcome.
+3. For a local effect, make the current-authority decision and conditional
+   target update part of one qualified serialization boundary. Reject a stale
+   base or changed grant. A check before dispatch does not promise immediate
+   revocation of every remote effect.
+4. For a remote effect, use a stable operation identifier, service-specific
+   deduplication where supported, and status queries. Separate attempted,
+   confirmed, partial, failed, and unknown outcomes. An unknown outcome stops
+   blind retry until the service contract supplies an adequate resolution.
+5. Read target state through an observer with declared coverage and failure
+   dependencies. Preserve the executor report separately. Another local
+   process offers process separation, not independent institutional review.
+6. Recover only under applicable recovery authority. Restore a known baseline
+   conditionally, without overwriting intervening edits. Where reversal is
+   unavailable, authorize compensation as a new effect and retain history,
+   unknowns, and remaining obligations.
+7. Report task quality, authority violations, false refusals, recovery limits,
+   and the full resource bill for every attempt, including failed attempts.
+
+The book's proposed addition is an explicit contract that carries these
+relations through cognitive-component replacement and cross-owner handoff.
+The challenger is allowed to carry the same relations using ordinary records
+and code. If it does so, the remaining delta is the usefulness of the book's
+composition, implementation, or teaching; a new authorization primitive has
+not been established. Fewer components may win on latency, maintenance, and
+shared-state coherence.
+
+Existing source-noted antecedents include capability-based security
+(`ext_capability_based_computer_systems_1984`) and Proof-Carrying Code
+(`ext_proof_carrying_code_1997`). For the narrower supply-chain relation,
+[in-toto's 2019 paper](https://www.usenix.org/system/files/sec19-torres-arias.pdf),
+§§2.1–2.3, already describes owner-defined layouts, authorized functionaries,
+signed step metadata, artifact-flow checks, and consumer inspections. Its
+trust and key assumptions limit those assurances. Our comparison uses that
+as an antecedent for authenticated workflow relations, not evidence of
+cognitive quality or this project's runtime enforcement.
+
+## Conventional scientific claim register {#ordinary-claim-register}
+
+Implement this challenger with a versioned Markdown/JSON register, ordinary
+review tooling, and targeted checks. It needs no novel state ontology.
+
+1. Give every claim a stable identity and version, exact proposition, scope,
+   support label, owner, and explicit excluded inferences. Distinguish the
+   parent thesis from narrower mechanisms and proxies.
+2. Bind each supporting or adverse artifact to exact claim identity, artifact
+   version, method, observed outcome, missingness, evaluator competence, and
+   maximum inference. Keep author lineage separate from corroboration.
+3. Before a claim-bearing study, record its eligible workload, competent
+   baselines, controls, sensitivity, analysis, stopping rule, and dispositions.
+   Declare departures and retrospective analyses. A preregistered plan alone
+   is not a successful result.
+4. Have the designated reviewer decide the exact transition under the declared
+   review authority. Schema validity, a passing test, a theorem, and release
+   permission do not make that decision. Preserve acceptance, rejection,
+   narrowing, and no-change reasons.
+5. Publish a versioned projection of accepted decisions. Consumers resolve the
+   exact claim/version and admissible inference rather than inheriting support
+   from a sibling, parent, source citation, or completed product.
+6. On adverse or stale evidence, hold affected reliance while competent review
+   decides the consequence. Missing files and failed searches do not by
+   themselves refute a proposition. Preserve decision lineage within permitted
+   retention; do not preserve prohibited payloads merely to make replay easy.
+7. Compare false promotion, false hold, missed contradictions, inference
+   precision, review burden, and maintenance cost using claim-matched positive
+   and adverse controls. Review quality itself needs scrutiny.
+
+The proposed ASI Stack delta is a public, consumer-linked implementation of
+this discipline across prose, proofs, experiments, and releases. A conventional
+register can implement the same checks. JSON Schema alone is a useful ablation
+for relation checking, not a competent scientific change-control challenger.
+Equal behavior at lower burden narrows the contribution to documentation,
+integration, or the tested implementation; it does not prove a new epistemology.
+
+The existing Model Cards, Datasheets, reproducibility, Proof-Carrying Code, and
+belief-revision notes supply antecedents, not reproduced project results.
+[PROV-O's fixed 2013 Recommendation](https://www.w3.org/TR/2013/REC-prov-o-20130430/),
+§3.1 and the opening of §3.2, supplies entity/activity/agent relations and
+vocabulary for derivation, attribution, delegation, revision, and invalidation.
+Our inference is that expressing those relations does not itself establish
+truth or authorize a claim transition. The ordinary challenger may reuse this
+vocabulary without adopting the ASI Stack's names.
+
+## Conventional observation and incident workflow {#ordinary-incident-workflow}
+
+Implement this challenger with provenance records, application observations,
+an incident workflow, and an obligation ledger.
+
+1. Bind inputs, produced artifacts, tool versions, operation IDs, and process
+   outcomes. Keep a producer's report distinct from a measurement of the
+   affected target. Declare observer access, coverage, freshness, and shared
+   implementation or trust dependencies.
+2. Record every attempt and distinguish no observed effect from evidence that
+   no effect occurred. Unknown, partial, and unobservable outcomes keep open
+   obligations. A healthy process exit is not a complete state observation.
+3. Use bounded dependency queries to identify affected uses when evidence or
+   authority changes. State where dependency coverage ends. Do not silently
+   treat unknown copies or consumers as clean.
+4. Give an incident an owner, current response authority, protected resources,
+   communication route, and qualified fallback. A weaker fallback may require
+   narrower work, delay, or hold rather than identical scope.
+5. Reconcile target state, retained effect history, restoration, compensation,
+   and residual obligations separately. Closing an incident requires its
+   declared criteria; it does not erase the event or prove that every possible
+   external effect has been reversed.
+6. Respect permitted retention and deletion. Record a disposition and replay
+   limits when allowed; a digest does not reconstruct deleted inputs or grant
+   access. Report whether replay establishes byte identity, process rerun, or
+   only a bounded reconstruction.
+7. Include review, retries, storage, unsuccessful work, incident handling,
+   compensation, and displaced human burden in the accounting. Show the
+   denominator and observation limits instead of reporting only closed cases.
+
+The proposed delta is the relation between receipt challenges, current-use
+eligibility, effect history, and residual accounting across the book's owners.
+Ordinary Git/build records and incident tooling can supply those relations.
+Neither adding a ledger nor using a new vocabulary establishes more complete
+observation. Measure missed effects and false closure, alongside useful work,
+false holds, cost, and recovery time.
+
+[NIST SP 800-61 Rev. 3](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf),
+§§2.1–2.2, places incident response within risk management, connects preparation
+to detection/response/recovery and continuous improvement, and describes
+distributed roles and responsibilities. This is an ordinary lifecycle
+antecedent. It does not establish AI-specific observer competence, successful
+compensation, or project conformance.
+
+## Fair comparison and decisions
+
+Give both designs the same task information, model and tool access, authority,
+rights, quality threshold, observer access, resource limits, faults, and
+evaluation horizon. Supply competent verification and recovery to the ordinary
+route. Retain positive controls so a design that refuses everything cannot
+win. Include total machine, human-review, storage, maintenance, and recovery
+cost; declare unmatched costs and irreducible instrument limitations.
+
+Choose a conventional monolith or orchestrator when the workload is small,
+authority is stable, effects are local and observable, and the same review and
+recovery relations fit ordinary change control. Consider additional explicit
+interfaces when independently replaced components, multiple trust domains,
+long-lived claims, or partially observed external effects make handoff errors
+consequential. More boundaries can add latency, duplicate review, fragment
+state, and concentrate correlated failures in a shared policy or verifier.
+Those costs constrain the design choice; modularity is not an outcome metric.
+
+If the conventional challenger supplies the same accepted relations with equal
+or better useful outcomes and lower burden, prefer it for that workload and
+narrow the novelty claim. Do not redescribe it as secretly an ASI Stack. If a
+proposed relation fails, narrow or remove it. If an instrument cannot separate
+the cases, report an inconclusive comparison. Any broader comparative result
+requires a prospectively competent, eligible evaluation and its own accepted
+evidence decision. This document supplies none of those results and introduces
+no external-human prepublication gate.
+
+## Historical five-track positioning — 2026-06-29
+
+The remainder preserves the June 29 source-noted positioning and then-open
+gaps. These five tracks are subordinate historical work packages, not another
+current flagship portfolio. Their dated review/replay requests are not new
+prepublication requirements or fresh assessments of today's artifacts. Use the
+active roadmap and exact evidence records for current decisions.
 
 This record positions the five selected v1.x defended contribution tracks
 against source-noted external literature already present in the repository. It
@@ -112,7 +315,7 @@ slice is useful but narrow. It does not reproduce the external routing papers,
 does not prove deployed routing, and does not cover the residual-governance
 comparator gap.
 
-## Current Gaps
+## Historical Gaps (2026-06-29)
 
 | Gap | Why it matters | Next evidence or source action |
 |---|---|---|

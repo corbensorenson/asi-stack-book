@@ -221,6 +221,7 @@ def inputs() -> dict:
         "status": load(STATUS),
         "schema": load(SCHEMA),
         "roadmap": ROADMAP.read_text(encoding="utf-8"),
+        "improvement_catalog": (ROOT / "docs/project_improvements.md").read_text(encoding="utf-8"),
         "competence": COMPETENCE.read_text(encoding="utf-8"),
         "predecessor": load(PREDECESSOR_STATUS),
         "terminal": load(TERMINAL),
@@ -272,6 +273,7 @@ def inputs() -> dict:
         "human_reader_26_unit_outline": HUMAN_READER_26_UNIT_OUTLINE.read_text(
             encoding="utf-8"
         ),
+        "human_reader_current_manifest": load(ROOT / "editions/reader_manuscript/current/manifest.json"),
         "visual_edition_manifest": load(VISUAL_EDITION_MANIFEST),
         "manim_v2_ledger": load(MANIM_V2_LEDGER),
         "review_adjudication": REVIEW_ADJUDICATION.read_text(encoding="utf-8"),
@@ -1231,8 +1233,26 @@ def errors(data: dict) -> list[str]:
         out.append("execution board does not activate the prospective claim-state task")
     if execution_readiness.get("immediate_empirical_packet") != "P2-R3-storage-materialization-and-replacement-qualification":
         out.append("execution board does not preserve P2-R3 as the protected natural empirical packet")
-    if execution_readiness.get("immediate_book_packet") is not None:
-        out.append("execution board retains a book packet after EM4 completion")
+    improvements = status.get("project_improvements_implementation", {})
+    catalog_ids = re.findall(r"^### ([A-N][0-9]{2})\.", data["improvement_catalog"], re.MULTILINE)
+    if improvements.get("recommendation_ids") != catalog_ids or len(set(catalog_ids)) != 114:
+        out.append("improvement adoption does not preserve the exact recommendation catalog")
+    if "## 2026-10-02 project-improvement implementation amendment" not in data["roadmap"]:
+        out.append("improvement execution lacks its canonical roadmap amendment")
+    if execution_readiness.get("immediate_book_packet") != improvements.get("active_packet"):
+        out.append("improvement packet is not bound to the single book WIP slot")
+    for field in ("active_recommendations", "verified_recommendations"):
+        if not set(improvements.get(field, [])).issubset(catalog_ids):
+            out.append(f"improvement {field} names an unknown recommendation")
+    if improvements.get("state") == "complete" and (
+        set(improvements.get("verified_recommendations", [])) != set(catalog_ids)
+        or improvements.get("remaining_validation")
+        or improvements.get("active_packet") is not None
+        or improvements.get("active_recommendations")
+    ):
+        out.append("improvement completion retains unverified recommendations or active work")
+    if improvements.get("state") == "active" and improvements.get("active_packet") != "IMPROVEMENTS-integrity-001":
+        out.append("improvement implementation does not identify its active bounded packet")
     if execution_readiness.get("immediate_formal_packet") != "P4.1-consumer-gated-cross-owner-composition":
         out.append("execution board does not keep P4.1 composition consumer-gated")
     if execution_readiness.get("maximum_concurrent_second_tranche_candidates") != 0:
@@ -1564,12 +1584,20 @@ def errors(data: dict) -> list[str]:
         if editorial.get(field) != expected:
             out.append(f"human-reader outline contract drift: {field}")
     if (
-        "Status: **canonical 26-unit manuscript complete; tested public HTML deployed**" not in human_outline
+        "Status: **canonical 26-unit maintained manuscript; ready for author review**" not in human_outline
         or "Historical predecessor: `products/narrative_product_spine.json` (22-unit candidate; do not rewrite)" not in human_outline
         or data["narrative_product_spine"].get("chapters") is None
         or len(data["narrative_product_spine"]["chapters"]) != 22
     ):
         out.append("human-reader outline does not preserve the historical 22-unit candidate boundary")
+    current_reader = data["human_reader_current_manifest"]
+    for field, manifest_field in (
+        ("human_reader_started_unit_count", "started_unit_count"),
+        ("human_reader_target_length_unit_count", "target_length_unit_count"),
+        ("human_reader_visible_word_count", "visible_word_count"),
+    ):
+        if editorial.get(field) != current_reader.get(manifest_field):
+            out.append(f"current reader summary differs from its generated manifest: {field}")
     if editorial.get("canonical_graph_owner") != "book_structure.json" or editorial.get("new_hand_maintained_source_of_truth_allowed") is not False:
         out.append("editorial migration permits a parallel hand-maintained source of truth")
     if editorial.get("legacy_ids_preserved") is not True or editorial.get("legacy_urls_preserved") is not True:
@@ -3121,6 +3149,9 @@ def main() -> None:
     mutate("Q1 Q2 denominator overlap", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("denominator_overlap_allowed", True))
     mutate("Q1 outcome tuning leakage", lambda c: c["status"]["quality_uplift_program"]["empirical_lanes"].__setitem__("q1_outcomes_may_tune_q2_or_student", True))
     mutate("P7.1a artificial T4 blocker", lambda c: c["status"]["quality_uplift_program"]["narrative_quality_gate"].__setitem__("case_independent_compression_state", "blocked_by_T4"))
+    mutate("improvement catalog omission", lambda c: c["status"]["project_improvements_implementation"]["recommendation_ids"].pop())
+    mutate("improvement packet detachment", lambda c: c["status"]["project_improvements_implementation"].__setitem__("active_packet", "unrelated"))
+    mutate("improvement premature completion", lambda c: c["status"]["project_improvements_implementation"].__setitem__("state", "complete"))
     mutate("execution WIP expansion", lambda c: c["status"]["execution_readiness"].__setitem__("work_in_progress_limit", 9))
     mutate("blocked work consumes WIP", lambda c: c["status"]["execution_readiness"].__setitem__("blocked_lane_consumes_work_in_progress", True))
     mutate("protected outcome inspection", lambda c: c["status"]["execution_readiness"].__setitem__("protected_outcome_inspection_allowed", True))

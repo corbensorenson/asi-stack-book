@@ -2,6 +2,15 @@
 
 Last updated: 2026-06-29
 
+Current framing clarification — 2026-10-11: this is the retained June 29
+scorecard and five-track candidate history. It does not own the current
+portfolio, execution, or prepublication gates. The program now has
+[three proposed contribution targets](three_defended_contributions.md), with
+[competent conventional comparisons](defended_contribution_prior_art_positioning.md);
+the older five candidates are subordinate work packages. Historical requests
+for external review are not new prepublication requirements. This clarification
+does not renew the scorecard's dated assessments.
+
 This scorecard translates the current project critique into concrete A+ targets.
 It is a planning artifact, not evidence, not an external review, and not a
 support-state transition.

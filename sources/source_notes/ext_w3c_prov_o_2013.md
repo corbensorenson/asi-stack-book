@@ -10,6 +10,17 @@
 | Published / updated | 2013-04-30 / 2013-04-30 |
 | Ingestion basis | Metadata-first intake from the cited W3C Recommendation and repository inventory; no local PROV-O graph or conformance result exists. |
 
+## Bounded primary-source follow-up — 2026-10-11
+
+Read [the fixed 2013 Recommendation](https://www.w3.org/TR/2013/REC-prov-o-20130430/),
+§3.1 and the opening of §3.2, including Example 2: entity/activity/agent,
+derivation, attribution, delegation, and expanded revision/invalidation
+vocabulary. This extends the original metadata intake only for those passages,
+not the complete Recommendation or qualified-relation machinery. The inference
+that asserted relationships do not themselves authorize a claim transition is
+the book's comparison boundary. No graph, conformance, or integrity result was
+produced.
+
 ## Thesis
 
 PROV-O is a vocabulary comparator for interoperable asserted provenance over entities, activities, agents, derivation, attribution, delegation, revision, and invalidation.

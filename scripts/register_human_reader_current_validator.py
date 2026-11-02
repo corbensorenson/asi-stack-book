@@ -12,6 +12,9 @@ REGISTRY = ROOT / "validation/registry.json"
 OVERRIDES = ROOT / "validation/unit_contract_overrides.json"
 SCRIPT = "validate_human_reader_current.py"
 ARTIFACTS = [
+    "scripts/search_navigation.py",
+    "assets/search-labels.html",
+    "editions/reader_manuscript/current/generated/search-navigation.html",
     "scripts/validate_human_reader_current.py",
     "scripts/build_human_reader_current.py",
     "scripts/register_human_reader_current_validator.py",

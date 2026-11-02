@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-10-10"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -46,7 +46,7 @@ The opening sequence of Part I is ordered deliberately. This opening names the s
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** One model call followed by a shell command is the strongest simpler baseline and may be adequate in a genuinely read-only sandbox; the stack must earn each extra boundary through a distinct decision or failure owner.
+**Concrete lens.** A capable monolithic agent with scoped tools, current grants, target observation, ordinary review, and recovery is a strong simpler alternative. A single model call plus a shell command is only a thin control unless the task and sandbox make it adequate.
 
 Start with the architecture's basic contract: the subject is not a magic model and not a loose pile of agent tricks. It is a governed system whose parts must say what they own, what they may do, what evidence they create, and how they can be stopped or replaced.
 
@@ -88,13 +88,15 @@ transition a separate owner and a visible denial path.
 | `S2 admission` | The executor checks the current lease, scope hash, and effect class. | Authority → effect | The expired write lease is rejected. |
 | `S3 receipt` | The system records a denial and preserves the script for review. | Execution → evidence | A denial receipt is not reported as task completion. |
 
-The plain-language lesson is “a good plan is still only a proposal.” The
-engineering rule is to re-authorize at the effect boundary. The machine
-contract is a typed admission check over current authority, scope, expiry, and
-effect class. A simpler baseline—one model call followed by a shell command—
-may be cheaper, and could be acceptable for a genuinely read-only sandbox. It
-is not a counterexample to the stack; it is a reminder that the stack must
-show a distinct benefit or failure owner before adding another layer.
+The plain-language lesson is “a good plan is still only a proposal.” At the
+effect boundary, check current authority, scope, expiry, and effect class;
+reuse an applicable valid grant without requiring another approval merely
+because work reaches a new component. An ordinary wrapper can perform those
+checks, independently inspect the target, and own recovery. If that workflow
+preserves the accepted obligations at lower burden, prefer it. It does not need
+to adopt the ASI Stack's names. The single-call control is useful for isolating
+what a missing boundary changes, not for establishing superiority over that
+competent alternative.
 
 Advanced AI systems that plan, remember, verify, act, route work, compress representations, and improve under governance need one architecture frame. Without that frame, every paper in the source corpus can sound like a separate invention competing for center stage. With it, the papers become fragments of a single machine.
 
@@ -116,7 +118,12 @@ The ASI Stack treats those missing contracts as first-class design objects. It d
 
 A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module. One model may implement several roles if their typed handoffs, authority checks, evidence duties, and failure routes remain externally enforceable. Several models, tools, or people may also implement one role behind the same contract. Physical isolation can strengthen a high-risk boundary, but it is a deployment choice justified by the threat model; the stack claim itself is substrate-neutral.
 
-That is the delta beyond generic decomposition. A modular system has parts; a governed-cognition pattern gives those parts record identity, state, authority, evidence, receipts, and reversal behavior. The claim is still architectural and remains at `argument` support, but the pattern makes the book's repeated structure intentional instead of accidental.
+The proposed composition makes record identity, state, current authority,
+evidence, observations, and recovery explicit across the book's responsibilities.
+Ordinary engineering practices can supply the same joins. The candidate delta
+is their usefulness across component replacement and handoff, which still has
+to earn its burden in comparison. This remains an architectural argument,
+not an established new governance primitive.
 
 External positioning: the opening stack frame is still a synthetic orientation claim over this book's internal architecture, but it now has source-noted architecture comparators. Drexler's CAIS report (`ext_drexler_cais_2019`) already argues for composed AI services and R&D automation rather than a single self-transforming agent. MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator. The narrower ASI Stack candidate delta is operational governance at each interface: typed handoffs, authority ceilings, claim/support-state transitions, evidence and residual custody, rollback or quarantine routes, and release records. None of these comparators validates that contract here.
 
@@ -126,7 +133,9 @@ External positioning: the opening stack frame is still a synthetic orientation c
 
 The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Aletheia supports the trusted-output and verification boundary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence. CAIS grounds service-centered composition and R&D automation, while the other external architecture sources ground surrounding vocabulary for modular systems, LLM agents, cognitive architectures, and layered control. None reproduces or validates the ASI Stack.
 
-The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. A monolith can still be powerful, but it has fewer places to attach evidence, rollback, permissions, and replacement rules.
+The argument is that decomposition is both a governance device and an efficiency device. A stack can route the smallest adequate capability to a subtask, preserve context only where it is useful, compile repeated work into tools, and test the exact boundary that changed. Explicit boundaries can make evidence, recovery, permission, and replacement
+obligations easier to inspect. A competent monolithic workflow can also preserve
+those relations; the proposed decomposition must earn its additional cost.
 
 ### Claim-source mapping status
 
@@ -153,9 +162,12 @@ next boundary. Capability does not confer authority; context does not confer
 belief or permission; a plan does not confer an effect; a receipt does not
 confer reality; a theorem does not confer runtime enforcement; a replacement
 does not inherit qualification; and a self-improvement proposal cannot confer
-approval on itself. The law is deliberately stronger than “use
-least privilege.” It also constrains evidence, identity, observation,
-replacement, and improvement.
+approval on itself. This is a rule for justified inference and delegation, not a physical law
+forbidding all downstream use. Applicable grants can authorize bounded work;
+prior evidence can remain useful where its assumptions and consumer still fit.
+Least privilege is one established comparator. The synthesis also asks how
+evidence, identity, observation, replacement, and improvement remain joined;
+its value depends on the resulting decisions rather than a new name.
 
 The thesis has three projections, each with a different job:
 
@@ -227,7 +239,10 @@ second objection is that ordinary operating-system isolation, least-privilege
 tooling, provenance logs, and release engineering may provide the necessary
 control without a book-specific architecture. A third is that the stack can
 produce excellent records while failing to improve the external outcomes that
-matter.
+matter. Additional boundaries can also share one defective policy service,
+verifier, or state store. More components do not by themselves provide
+independent failure protection; duplicated checks may increase operator work
+while preserving that common failure.
 
 The thesis survives those objections only as an empirical and formal program,
 not by definition. A fair comparison would place a strong monolithic agent, a
@@ -296,7 +311,13 @@ flowchart TB
   Governance -. "authority ceiling" .-> Execution
 ```
 
-**How to read the stack map:** Read this stack map as a substrate-neutral responsibility loop, not a capability ladder or a physical topology. A monolithic model, modular service graph, hybrid system, or human/AI process can instantiate it only to the extent that the named interfaces and authority boundaries remain enforceable. Self-improvement is not outside the stack; it returns to governance, where new capabilities must be qualified, bounded, and made reversible before they become defaults.
+**How to read the stack map:** The figure assigns logical responsibilities;
+it does not require a service for every box. A monolithic agent or conventional
+workflow may preserve the same obligations under its own design and vocabulary.
+Mapping those obligations onto this figure does not establish that it needs
+the proposed architecture. Component changes still require current authority,
+qualification, and recovery appropriate to the accepted task; a diagram cannot
+make an irreversible effect reversible.
 
 ## Mechanism
 

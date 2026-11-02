@@ -6,6 +6,8 @@ import hashlib
 from pathlib import Path
 import sys
 
+from schema_validation import schema_errors
+
 ROOT = Path(__file__).resolve().parents[1]
 SCHEMA_DIR = ROOT / "schemas"
 TITLE_EXEMPTIONS = {
@@ -26,6 +28,7 @@ def main() -> None:
         except Exception as exc:
             errors.append(f"{path.relative_to(ROOT)}: invalid JSON: {exc}")
             continue
+        errors.extend(schema_errors(schema, str(path.relative_to(ROOT))))
         for key in ["$schema", "title", "type", "properties"]:
             if key not in schema:
                 relative = path.relative_to(ROOT).as_posix()

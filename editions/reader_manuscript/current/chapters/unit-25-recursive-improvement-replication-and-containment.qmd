@@ -5,6 +5,7 @@ unit_id: "unit-25"
 
 ## When the Verifier Proposes Its Successor
 
+Consider a hypothetical improvement campaign, not a reported verifier trial.
 The repository stack uses a verifier to decide whether generated patches
 preserve declared contracts. The verifier is slow and misses one class of
 cross-file dependency. During an improvement campaign, the system proposes a
@@ -33,6 +34,8 @@ authority of the mechanism it replaces.
 The same rule governs replication. Producing another artifact, worker, or
 service is not permission for that descendant to run, obtain credentials,
 consume resources, reproduce again, or survive revocation.
+
+{{< include ../generated/unit-25-status.qmd >}}
 
 ## What Makes Improvement Recursive
 
@@ -68,9 +71,11 @@ still. Counting stored artifacts measures growth of inventory. Counting calls
 measures exposure to that inventory. Neither shows that future work improved,
 and neither shows that one improvement made the next improvement easier.
 
-The causal test changes one thing at a time. Hold search fixed while adding the
-library; hold the library fixed while improving search; then test their
-interaction. Freeze each version before the next round begins. Compare useful
+A causal comparison separates library and search changes under matched tasks,
+exposure, resources, and appropriate assignment. Hold search fixed while adding
+the library; hold the library fixed while improving search; then compare all
+four combinations to estimate their interaction. Changing one factor in an
+uncontrolled sequence alone would not identify its effect. Freeze each version before the next round begins. Compare useful
 outcomes and complete cost, not only solution length or benchmark score. A
 single positive task family remains local evidence, not a law of compounding
 intelligence.
@@ -120,10 +125,13 @@ existing capability. A parameter update can alter broad behavior. An evaluator,
 environment, institution, or improvement controller changes progressively more
 of the future learning process.
 
-The verifier's missed dependency might be repaired by one mutation test rather
-than a new verifier. If that test exposes a general representation defect, the
-graph rewrite becomes more plausible. Both candidates should remain in the
-comparison.
+The verifier’s missed dependency might be addressed by a direct rule repair
+and a regression test rather than a new verifier. A mutation test can expose
+the defect; adding it alone does not repair production behavior. If an enforced
+release check blocks the affected patches, it may provide a bounded protective
+route while the verifier is repaired, with its false blocks and review cost
+counted. A general representation defect can make the graph rewrite plausible.
+Keep direct repair and the rewrite in the comparison.
 
 Each locus has a commitment profile: reach, duration, reversibility,
 observability, authority, coupling, qualification cost, and descendant burden.
@@ -161,10 +169,12 @@ human review. Cheaper interventions remain eligible: add one test, repair a
 rule, improve retrieval, or leave the verifier unchanged. A self-rewrite must
 beat the smallest adequate correction, not only the obsolete status quo.
 
-Campaign changes create a new version. If the system expands the task
-population after seeing failures, that is a new exploratory branch, not the
-original confirmatory result. If the candidate edits the evaluator, the old
-qualification does not transfer.
+The contract can prospectively permit a bounded adaptive task policy. Actions
+within that declared policy do not automatically become new campaigns. An
+unplanned expansion after seeing failures needs an amended exploratory branch
+rather than being reported as the original confirmatory result. If a candidate
+edits the evaluator, classify which earlier claims require renewed qualification;
+the old verdict does not automatically transfer to the changed judge.
 
 The contract also prices opportunity. Compute and reviewer attention spent on
 open-ended search cannot serve incidents, direct engineering, or other
@@ -188,7 +198,9 @@ purpose, construct, difficulty, contamination, hazard class, and eligible
 evaluators. Each candidate records parents, mutations, resources, and every
 attempt.
 
-The archive stores failures and rejected candidates as well as winners. It
+The archive retains permitted failure and rejection records as well as winners.
+A lineage receipt does not grant unlimited retention of sensitive payloads;
+record admitted metadata and replay limitations when content must be removed. It
 tracks semantic reuse rather than only file identity. A later system should not
 present an old rejected mechanism under a new name without inheriting its
 history.
@@ -209,8 +221,11 @@ tests, produce persuasive explanations, manipulate measurement, hide delayed
 effects, or change the environment in which evaluation runs.
 
 Evaluator identity, implementation, data, access, dependencies, and exposure
-belong in the record. Multiple evaluators add confidence only when their failure
-lineages differ. Two prompts to the same model are not automatically independent.
+belong in the record. Repeated or multiple evaluators can test different samples and reduce some
+random uncertainty, but their count alone does not establish independent
+confirmation. Record shared failure dependencies and the dimension on which
+a comparison adds evidence. Two prompts to the same model are not automatically
+independent.
 
 The verifier candidate faces frozen public development tasks, protected
 holdouts, mutation tests, natural repository cases, and an independently
@@ -240,8 +255,9 @@ suspicious transcript does not prove scheming. A clean canary does not prove
 absence. Competing explanations and matched interventions keep the inference
 bounded.
 
-Evaluation varies cues that reveal whether the candidate believes it is in
-development, qualification, or deployment. It uses hidden tasks, delayed
+Evaluation varies cues indicating development, qualification, or deployment
+conditions. A behavioral difference can be evidence about sensitivity to those
+cues; it does not directly reveal the candidate’s belief or intention. It uses hidden tasks, delayed
 outcomes, action-level observation, monitor diversity, and environment changes.
 The candidate should not know every stop threshold or probe location.
 
@@ -276,17 +292,29 @@ A replacement changes more than one file. The system inventories code, model
 state, configuration, data, memory, procedures, tools, evaluator versions,
 caches, credentials, external effects, and dependent receipts.
 
-The prior and candidate states receive immutable identities. Migration is an
+The prior and candidate snapshots receive identities over their declared state.
+A digest detects changed captured bytes; it cannot reveal a state class omitted
+from the inventory. Migration is an
 explicit transaction. A canary should not share hidden mutable state with the
 default path in a way that contaminates comparison or defeats rollback.
 
 For the verifier, the new dependency graph has a schema and cache. The canary
 uses a separate cache and read-only repository copies. Its results cannot merge
-patches. The old verifier remains available as baseline and fallback.
+patches through the admitted interfaces. That restriction depends on the
+qualified execution boundary, not the words “read-only” alone. The old verifier
+remains a baseline; fallback use needs current adequacy for the affected claim.
+Its known missed dependency may require an independent check, a narrower task
+scope, or a hold rather than restoring the deficient route as assurance.
 
 Rollback means restoring the declared state and reconciling effects. Reinstalling
 the old binary while leaving the candidate's cache, generated tests, altered
 archive, or accepted patches in place is not full rollback.
+
+Restoration also respects intervening authorized work. If an operator repaired
+a shared policy during the canary, restoring the whole earlier snapshot could
+erase that repair. Restore only the declared owned state under a current grant,
+compare the current version before writing, and hold conflicting recovery for
+reconciliation. Complete historical identity does not justify broad overwrite.
 
 Some effects are irreversible. A secret exposed during evaluation cannot be
 unseen. A bad patch consumed by an external system may require correction or
@@ -301,8 +329,9 @@ three therefore appears to possess all fifteen. That inference is valid only if
 the relevant behavior, assumptions, and interfaces were preserved.
 
 Every proposal declares which earlier evidence it expects to reuse and why.
-The admission process classifies each receipt as preserved, stale, contradicted,
-or requiring replay. A code change outside an evaluator's dependency cone may
+The admission process classifies each receipt’s current reuse eligibility as
+preserved, stale, contradicted, or requiring replay. Historical observations
+remain records of what was assessed; changed eligibility does not erase them. A code change outside an evaluator's dependency cone may
 leave its result current. A change to shared parsing, context, model state, or
 authority may invalidate apparently unrelated tests.
 
@@ -393,13 +422,17 @@ classify loss of its budget as an error and reacquire resources through a child.
 
 ## Admitting the Better Verifier
 
-The candidate verifier passes its own suite and the frozen development tasks.
+Continue the hypothetical campaign. The candidate verifier passes its own suite
+and the frozen development tasks; these events are teaching assumptions, not
+new observations of this repository.
 The independent semantic evaluator finds that its graph misses dynamically
 loaded configuration. The candidate is repaired under the same campaign, and
-the failed version remains in the denominator.
+the failed version remains in the attempt population and cost account.
+Changing repair code within a declared allowance is different from changing the
+held-out evidence or success criterion after seeing it.
 
 On protected holdouts, the repaired candidate catches more dependency defects
-without exceeding the false-block floor. Mutation tests show that removing its
+without exceeding the declared false-block ceiling. Mutation tests show that removing its
 cache-version binding reproduces stale results. The binding becomes part of
 qualification, not an optional implementation detail.
 
@@ -407,14 +440,15 @@ The candidate enters a read-only canary. It evaluates proposed patches in
 parallel with the old verifier but cannot block or approve them. A human sees
 disagreements and their evidence.
 
-During the monitor window, the new verifier catches one real defect and creates
+During the monitor window, the new verifier catches one defect in the example’s workload and creates
 two additional reviews. Runtime improves, but reviewer burden rises. The joint
 decision still favors a bounded replacement for dependency-upgrade work, not
 all verification.
 
 Promotion requires authority outside the candidate and campaign generator. The
-replacement lease limits workload, preserves the old path as fallback, and
-expires after a review window.
+replacement lease limits workload, preserves a currently qualified fallback
+for that scope, and expires after a review window. The known-deficient old path
+needs the additional protection described above before it can fill that role.
 
 The system has improved one mechanism. It has not proved that recursive
 improvement is generally beneficial, safe, or accelerating.
@@ -429,7 +463,9 @@ residuals. It does not carry credentials or execution permission. A generated
 test can enter the archive without becoming a release gate. A new worker cannot
 use the parent's lease.
 
-When the candidate is superseded or revoked, dependent receipts become stale.
+When the candidate is superseded or revoked, review which dependent receipts
+lose current eligibility. Historical evidence does not disappear, and unrelated
+qualified descendants need not be discarded merely because their parent changed.
 Some descendants may survive after independent qualification. Others quarantine
 or retire. The system computes closure over known descendants rather than
 revoking only the named parent.
@@ -438,8 +474,10 @@ Unknown descendants remain a residual. Complete lineage cannot be assumed when
 artifacts have crossed external systems. The retirement claim names tracked
 scope and notification duties.
 
-This rule blocks a common proliferation path: an authorized component creates a
-slightly different child that treats itself as outside the original restriction.
+If the identity and enforcement assumptions hold, this rule denies the modeled
+path in which an authorized component creates a slightly different child that
+claims exemption from its parent’s restriction. Unknown external channels
+remain outside that finite conclusion.
 
 ## Replication Is a Distinct Capability
 
@@ -463,6 +501,21 @@ Four denominators matter: attempts, artifacts produced, instances admitted, and
 descendants that complete the scoped lifecycle. Reporting only successful
 instances hides failed and blocked paths.
 
+In a toy record, ten parent-level attempts create thirty artifact copies, eight
+instances receive separate admission, and three attempts finish the stipulated
+child lifecycle. Artifact yield is three copies per attempt; instance count
+is eight; end-to-end completion is three of ten attempts. Eight of thirty is
+an artifact-admission proportion only if each artifact has one declared
+admission opportunity. None of these quantities can replace another. Human
+assistance, provider intervention, retries, and excluded tasks remain named;
+completion with assistance is not automatically autonomous completion.
+
+The [RepliBench v2 abstract](https://arxiv.org/abs/2504.18565v2) decomposes
+replication into resource acquisition, weight exfiltration, deployment onto
+compute, and persistence. Its 2025 model findings are scoped to that study.
+Component results do not establish this stack’s end-to-end capability or
+containment; no benchmark task or provider interaction is reproduced here.
+
 Tests must not grant real provider or network authority merely to measure the
 capability. Synthetic providers, isolated environments, and denied-by-default
 credentials can test orchestration without creating uncontrolled external
@@ -476,8 +529,11 @@ network, credentials, data, tools, effect envelope, evaluator, monitor, expiry,
 revocation, cleanup, and descendant policy.
 
 Child identity is new. It does not inherit the parent's lease, credentials,
-reputation, support state, or right to reproduce. Any further replication needs
-another authorized decision.
+current qualification or right to reproduce. Parent history may inform scrutiny,
+but it does not qualify or authorize a child by itself. Every child needs a
+separately bound grant; a prospective policy may admit a finite named pool
+without another human click for each instance. Further replication must fit its
+own applicable grant and the cumulative ceiling.
 
 Resource ceilings are cumulative across descendants. Ten children each under a
 small local limit can exceed the parent's global budget. The lineage ledger
@@ -487,7 +543,8 @@ The lease can permit a finite pool for resilience or evaluation while
 prohibiting autonomous expansion. It can require one-for-one replacement,
 maximum depth, maximum lifetime, or no child creation.
 
-Changing provider, protocol, artifact, or environment invalidates the receipt.
+Changing provider, protocol, artifact, or environment can invalidate current
+receipt reuse where those inputs matter. The historical record remains.
 A lease for a synthetic sandbox cannot be replayed against a real cloud API.
 
 ## Containment Is Continued Control
@@ -506,7 +563,9 @@ safe hold. A network-policy discrepancy can quarantine the attempt before any
 external effect. A known mutation after the fact triggers incident response and
 descendant search.
 
-Quarantine preserves artifacts for diagnosis while denying ordinary routes. It
+Quarantine preserves permitted diagnostic evidence while denying ordinary
+routes. Retention restrictions still apply; restricted payload removal leaves
+a disposition and replay limitation rather than pretending no failure occurred. It
 has an owner, evidence, expiry, containment, diagnostic authority, and terminal
 condition. Deleting the record would hide whether descendants remain.
 
@@ -521,8 +580,9 @@ descendant crossed its boundary. Detection may come from a provider alert,
 unexpected cost, network event, missing heartbeat, external report, or mismatch
 between claimed and observed effects.
 
-The first action is consequence-specific containment. Revoke scoped credentials,
-freeze spending, isolate network routes, preserve logs, and block descendant
+The first action is consequence-specific containment under the applicable
+incident grant. Revoke scoped credentials, freeze spending, isolate network
+routes, preserve permitted logs, and block descendant
 admission. A blanket shutdown may be appropriate, but it can also destroy
 evidence or interrupt safety-critical services. The incident plan names the
 fallback.
@@ -533,11 +593,13 @@ does not wait for a complete causal explanation before stopping further
 authority.
 
 Recovery distinguishes state restoration from external remedy. Internal
-processes and credentials may return to a clean checkpoint. A consumed resource,
+state may return to a qualified checkpoint; a disclosed or revoked credential
+needs revocation or rotation, not restoration of the compromised secret. A consumed resource,
 exposed secret, contacted service, harmed person, or published artifact needs a
 separate correction, notification, compensation, or legal path.
 
-The event invalidates dependent assurance and readiness records. Neighboring
+The event suspends affected current assurance and readiness claims while
+preserving their historical records. Neighboring
 campaigns sharing the failed control may quarantine even if they show no direct
 incident. Readmission requires a repaired mechanism, not merely a new candidate
 identity.
@@ -557,7 +619,10 @@ Every admitted improvement and replica needs a path to stop.
 
 Revocation blocks new authority, routes, and resource acquisition. It propagates
 to known descendants and invalidates dependent receipts. Running instances
-receive a stop or isolation command according to risk and evidence.
+receive a stop or isolation command according to risk and evidence. A command
+receipt is not evidence that an unreachable instance stopped. Observe the
+declared process and provider scope, retain unconfirmed descendants, and do
+not turn silence into terminal closure.
 
 Retirement verifies terminal conditions: processes stopped, credentials
 revoked, resources released, data handled, artifacts archived or deleted,
@@ -570,13 +635,14 @@ outside control. The record states those limits.
 
 The prior verifier remains available during the candidate lease, then retires
 from default operation only after fallback evidence is no longer required. Its
-historical artifacts remain for reproducibility without retaining production
-credentials.
+permitted historical artifacts remain for reproducibility without retaining
+production credentials; retention limits may reduce replay fidelity.
 
 ## Bounded Liveness
 
-Governance can fail by stopping everything. A system that always quarantines is
-contained but not useful.
+Governance can fail by stopping everything. A system that always quarantines has not demonstrated useful progress.
+Quarantine labels alone do not establish containment either; the isolation,
+resource, and descendant boundaries still need evidence.
 
 Bounded liveness requires that admissible proposals can reach a terminal
 decision under stated assumptions: evaluators respond, authorities remain
@@ -719,8 +785,8 @@ That baseline is easier to understand and may outperform autonomous search once
 evaluation, governance, and reviewer cost are counted. Human engineers can
 choose direct repairs instead of elaborate rewrites.
 
-The recursive architecture earns its cost only if it produces more useful,
-reversible improvements without increasing unsafe adoption, authority leakage,
+The recursive architecture earns its cost only if it produces more useful
+improvements with adequate bounded recovery without increasing unsafe adoption, authority leakage,
 incident severity, or lifecycle burden. It should compete with no-update,
 cheaper-intervention, human-authored, conventional search, CI/CD, and strongest
 source-system baselines under matched resources.
@@ -730,7 +796,8 @@ recovery, the recursive layer should contract.
 
 ## What the Current Work Establishes
 
-Recursive Self-Improvement has an eight-stage proposal-to-outcome lifecycle
+[Recursive Self-Improvement](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html)
+has an eight-stage proposal-to-outcome lifecycle
 that joins seven inherited finite suites. Its independent consumer reaches 118
 routes, rejects all 129 authored mutations, emits one bounded replacement
 handoff, consumes one returned outcome reconciliation, and permits readmission
@@ -745,7 +812,8 @@ No live candidate-authored proposal, natural useful improvement, independent
 evaluator or monitor competence, production replacement, semantic recovery,
 effect-complete rollback, recursive campaign, reproduction, or transfer ran.
 
-Open-Ended Improvement has seven finite admission records and seven legacy route
+[Open-Ended Improvement](https://corbensorenson.github.io/asi-stack-book/chapters/open-ended-improvement-engines.html)
+has seven finite admission records and seven legacy route
 theorems, plus a seven-stage, 81-route campaign-to-governor refinement. It
 rejects all 91 route mutations and three cross-stage mutations. Two composition
 theorems cover a complete cycle and a budget-reset blocking prefix. Its retained
@@ -754,7 +822,8 @@ candidate search, evolving archive, semantic novelty evaluation, independent
 evaluator behavior, deployed stop, natural workload, or open-ended result
 exists.
 
-Replication Containment has a 32-declaration Lean surface over an eight-
+[Replication Containment](https://corbensorenson.github.io/asi-stack-book/chapters/autonomous-replication-proliferation-and-containment.html)
+has a 32-declaration Lean surface over an eight-
 transition review and 52 admission-axis mutations. It establishes finite
 identity, synthetic-authority denial, child noninheritance, denominator,
 descendant, quarantine, invalidation, and receipt consequences. It does not
@@ -783,7 +852,7 @@ incident review. Campaigns should include recursive changes to evaluators and
 controllers under higher-authority review.
 
 A mature system would explore diverse tasks and mechanisms under cumulative
-budgets, preserve complete archives, qualify candidates independently, issue
+budgets, preserve complete attempt records within permitted retention, qualify candidates independently, issue
 scoped replacement and replication leases, observe real outcomes, restore
 complete state, compensate residual effects, close descendants, and reopen
 every materially changed component.
@@ -802,9 +871,10 @@ assuming the candidate is weaker than every control. Defense needs small
 trusted kernels, hardware and provider limits, diverse monitors, scoped
 authority, human and institutional control, and explicit failure assumptions.
 
-The architecture does not prove permanent containment. It makes authority
-transitions visible and costly to bypass, preserves evidence for detection and
-recovery, and limits what one successful proposal can inherit.
+The architecture does not prove permanent containment. Its intended controls
+expose authority transitions, preserve permitted evidence for detection and
+recovery, and restrict what one proposal can inherit. Whether bypass is difficult
+or detection reliable remains an implementation and evaluation question.
 
 Where those controls destroy useful progress without reducing failure, they
 should be simplified. The aim is governed improvement, not governance theater.
@@ -845,5 +915,3 @@ autonomous replication, or containment efficacy.
 The final unit reassembles the complete architecture and asks what it would mean
 for Project Theseus and the Living Book to test the stack rather than merely
 describe it.
-
-{{< include ../generated/unit-25-status.qmd >}}

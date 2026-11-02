@@ -1,7 +1,7 @@
 # Publication Readiness
 
 <!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **89 manifest chapters; 502 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+_Current canonical metrics (generated from machine records): **89 manifest chapters; 507 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
 <!-- canonical-status:generated-end -->
 
 Last audited: 2026-07-18
@@ -92,6 +92,28 @@ It creates no support state or release effect and does not alter the immutable
   coverage and are not advertised as the current book. No audiobook is
   published.
 
+## Publication-source process diagnostics
+
+The October 10 source gate runs Git and its paper/trust child checks through
+bounded shared execution and an owner-lifetime guard. Each invocation retains
+separate stdout/stderr and machine outcomes in a fresh ignored
+`build/publication-source-*/` directory, also uploaded by CI. Git has 30 seconds
+and a combined 4 MiB log budget; each child has 120 seconds and 1 MiB. Truncated
+or malformed Git NUL output fails even after a zero exit. Parent-only death and
+deadline controls observe payload cleanup and source-lease release on macOS.
+These checks do not qualify escaped process groups, physical power loss, all
+validation tiers or publication readiness; the nine expired dependency reviews
+remain unresolved. The existing release and support authorities still apply.
+
+The next proof-process continuation shares the owner-lifetime mechanism with
+the compiled axiom builder, ProofEnvelope and LivingBook. The source-root lease
+remains on the repository while Lean runs from its nested cwd. Separate build,
+version, query and module budgets retain fresh stage results/raw logs; zero-exit
+wrong compiler identity or malformed environment data still fails. The actual
+pinned query preserves all theorem/trust values, binding only reviewed execution
+input changes and the guardian dependency. These mechanism checks do not establish
+model adequacy, cold-build qualification, full tiers or dependency review renewal.
+
 ## Current reader surface
 
 - Canonical reader-facing route:
@@ -140,8 +162,8 @@ It creates no support state or release effect and does not alter the immutable
   `docs/chapter_consolidation_fold_semantic_representation.md`, and
   `docs/chapter_consolidation_release_stability_review.md`. These are completed,
   deferred, or superseded historical records, not current execution authority.
-- The defended contribution selection record exists at `docs/defended_contribution_tracks.md`; `scripts/validate_defended_contribution_tracks.py` checks five selected tracks, three deep-work tracks, active evidence-cycle lane anchors, and no chapter-core promotion.
-- The defended contribution prior-art positioning record exists at `docs/defended_contribution_prior_art_positioning.md`; `scripts/validate_defended_contribution_prior_art.py` checks that all five selected tracks are positioned against source-noted external comparators while preserving that the record is not exhaustive literature review, novelty proof, external review, evidence creation, or support-state movement.
+- The defended contribution selection record exists at `docs/defended_contribution_tracks.md`; `scripts/validate_defended_contribution_tracks.py` checks the historical five selected tracks, three deep-work tracks, and then-active evidence-cycle anchors. Current scope is the three proposed targets in `docs/three_defended_contributions.md` and `products/contribution_focus_contract.json`; selection is not novelty proof or chapter-core promotion.
+- The defended contribution prior-art positioning record exists at `docs/defended_contribution_prior_art_positioning.md`; `scripts/validate_defended_contribution_prior_art.py` retains the historical five-track/source positioning boundaries. The October 11 current section specifies competent conventional challengers for the three proposed contributions, their types, matching conditions, and equality dispositions; `scripts/validate_contribution_focus_contract.py` checks the current blueprint references. The update is not exhaustive review, novelty proof, an executed comparison, external review, evidence promotion, or support-state movement.
 - The evidence-laundering prevention case-study record exists at `docs/evidence_laundering_prevention_case_studies.md`; `scripts/validate_evidence_laundering_case_studies.py` checks three live no-promotion examples plus one live claim-surface narrowing record and preserves that no chapter-core demotion/refutation case, external review, or support-state movement is claimed.
 - The governed repository-change vertical slice exists at `docs/governed_repository_change_slice.md`; its runner creates disposable Git repositories and executes nine matched baseline/governed scenarios through code mutation, tests, independent effect observation, receipt comparison, release/refusal, rollback, and quarantine. `scripts/validate_governed_repository_change_slice.py` reruns the workload and preserves its bounded local-fixture and no-support-state boundary.
 - The current reproducibility and citation note exists at `docs/release_reproducibility.md`; root `CITATION.cff` records completed version `2.3.0`, its exact tag/commit/archive identity, and DOI-pending state. `citations/v1.0.0.cff` remains the historical v1.0.0 snapshot. `scripts/validate_release_reproducibility.py` checks the pinned CI toolchain, citation scopes, historical tag facts, and non-release artifact boundary.

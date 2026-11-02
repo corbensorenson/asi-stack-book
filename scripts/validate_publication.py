@@ -4,11 +4,64 @@
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
-import subprocess
 import sys
 
+from admission_guard import canonical_access
+from validation_runtime import execute_guarded, run_directory
+
 ROOT = Path(__file__).resolve().parents[1]
+GIT_BUDGET_SECONDS = 30
+CHILD_BUDGET_SECONDS = 120
+
+
+class PublicationProcesses:
+    """One fresh ignored invocation namespace; domain acceptance stays below."""
+
+    def __init__(self, root: Path):
+        self.root = root
+        self.directory = run_directory(root, "publication-source")
+        self.results = []
+
+    def run(self, name: str, command: list[str], budget: float, *, limit: int = 1024 * 1024) -> dict:
+        stem = f"{len(self.results) + 1:02d}-{name}"
+        pending = {"subcheck": name, "status": "running", "diagnostic_id": "subcheck_running",
+                   "inner_command": command, "timeout_seconds": budget,
+                   "log": str(self.directory / (stem + ".stdout.log")),
+                   "stderr_log": str(self.directory / (stem + ".stderr.log"))}
+        self.results.append(pending)
+        try:
+            (self.directory / "results.json").write_text(json.dumps(self.results, indent=2) + "\n")
+            result = execute_guarded(command, source_root=self.root, cwd=self.root,
+                             log=self.directory / (stem + ".stdout.log"),
+                             stderr_log=self.directory / (stem + ".stderr.log"),
+                             timeout=budget, max_log_bytes=limit)
+        except OSError as error:
+            pending.update(status="failed", diagnostic_id="subcheck_execution_error",
+                           reason=f"{type(error).__name__}: {error}")
+            (self.directory / "results.json").write_text(json.dumps(self.results, indent=2) + "\n")
+            raise
+        result.update(subcheck=name, inner_command=command, timeout_seconds=budget,
+                      scope="publication source subcheck; guarded command group, no support or release approval")
+        pending.update(result)
+        result = pending
+        (self.directory / "results.json").write_text(json.dumps(self.results, indent=2) + "\n")
+        if result["status"] != "passed":
+            print(f"Publication subcheck {name}: {result['diagnostic_id']}; logs: {self.directory}")
+            for path in (result["log"], result["stderr_log"]):
+                preview = Path(path).read_text(errors="replace")[:4000].strip()
+                if preview:
+                    print(preview)
+            raise SystemExit(130 if result["status"] == "cancelled" else 1)
+        return result
+
+    def reject_protocol(self, result: dict, code: str, reason: str) -> None:
+        result["process_status"] = result["status"]
+        result.update(status="failed", diagnostic_id=code, reason=reason)
+        (self.directory / "results.json").write_text(json.dumps(self.results, indent=2) + "\n")
+        print(f"Publication subcheck {result['subcheck']}: {code}; {reason}; logs: {self.directory}")
+        raise SystemExit(1)
 
 REQUIRED_FILES = [
     "README.md",
@@ -176,15 +229,18 @@ def fail(errors: list[str]) -> None:
     sys.exit(1)
 
 
-def git_ls_files() -> list[str]:
-    result = subprocess.run(
-        ["git", "ls-files"],
-        cwd=ROOT,
-        check=True,
-        text=True,
-        stdout=subprocess.PIPE,
-    )
-    return result.stdout.splitlines()
+def git_ls_files(processes: PublicationProcesses | None = None) -> list[str]:
+    processes = processes or PublicationProcesses(ROOT)
+    result = processes.run("git-files", ["git", "-c", "core.fsmonitor=false", "ls-files", "-z"],
+                           GIT_BUDGET_SECONDS, limit=4 * 1024 * 1024)
+    body = Path(result["log"]).read_bytes()
+    if result["log_truncated"] or body and not body.endswith(b"\0"):
+        processes.reject_protocol(result, "invalid_or_truncated_git_protocol",
+                                  "requires complete NUL-delimited filename output")
+    paths = body[:-1].split(b"\0") if body else []
+    if any(not path for path in paths):
+        processes.reject_protocol(result, "invalid_git_protocol", "empty filename segment")
+    return [os.fsdecode(path) for path in paths]
 
 
 def read_json(path: str) -> object:
@@ -192,17 +248,10 @@ def read_json(path: str) -> object:
         return json.load(f)
 
 
-def run_validator(script_name: str) -> None:
-    result = subprocess.run(
-        [sys.executable, str(ROOT / "scripts" / script_name)],
-        cwd=ROOT,
-        text=True,
-        stdout=subprocess.PIPE,
-        stderr=subprocess.STDOUT,
-    )
-    if result.returncode != 0:
-        print(result.stdout.strip())
-        sys.exit(result.returncode)
+def run_validator(script_name: str, processes: PublicationProcesses | None = None) -> None:
+    processes = processes or PublicationProcesses(ROOT)
+    processes.run(Path(script_name).stem, [sys.executable, str(ROOT / "scripts" / script_name)],
+                  CHILD_BUDGET_SECONDS)
 
 
 def manifest_chapter_count() -> int:
@@ -219,7 +268,7 @@ def source_record_count() -> int:
     return len(inventory)
 
 
-def main() -> None:
+def validate_surface(processes: PublicationProcesses) -> None:
     errors: list[str] = []
 
     for path in REQUIRED_FILES:
@@ -282,7 +331,7 @@ def main() -> None:
             if needle not in text:
                 errors.append(f"{path} is missing current public trust-surface text: {needle}")
 
-    tracked_paths = git_ls_files()
+    tracked_paths = git_ls_files(processes)
     for path in tracked_paths:
         if not (ROOT / path).exists():
             # `git ls-files` includes an unstaged deletion. Canonical missing
@@ -314,9 +363,15 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    run_validator("validate_paper_library.py")
-    run_validator("validate_trust_surface.py")
+    run_validator("validate_paper_library.py", processes)
+    run_validator("validate_trust_surface.py", processes)
+    print(f"Publication subcheck logs: {processes.directory}")
     print("Publication surface validation passed.")
+
+
+def main() -> None:
+    with canonical_access(ROOT):
+        validate_surface(PublicationProcesses(ROOT))
 
 
 if __name__ == "__main__":

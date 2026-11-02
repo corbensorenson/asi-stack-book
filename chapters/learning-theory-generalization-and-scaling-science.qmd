@@ -4,10 +4,12 @@ chapter_id: "learning-theory-generalization-and-scaling-science"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
+  - "simulation_scaling"
   - "ext_scaling_laws_neural_language_models_2020"
   - "ext_mdl_tutorial_2004"
+  - "ext_weakness_generalization_2023"
   - "ext_weak_to_strong_generalization_2023"
   - "ext_information_bottleneck_2000"
   - "ext_valiant_theory_learnable_1984"
@@ -15,6 +17,12 @@ primary_sources:
   - "ext_emergent_abilities_llms_2022"
   - "ext_emergent_abilities_mirage_2023"
   - "ext_no_free_lunch_inductive_bias_2024"
+  - "ext_eggroll_hyperscale_es_2026"
+  - "ext_forward_forward_2022"
+  - "forward_transfer_program_synthesis"
+  - "ext_lejepa_2025"
+  - "ext_platonic_representation_hypothesis_2024"
+  - "ext_platonic_representation_jepa_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -31,10 +39,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-07-24 |
+| Last updated | 2026-11-02 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `simulation_scaling`, `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weakness_generalization_2023`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023`, `ext_no_free_lunch_inductive_bias_2024`, `ext_eggroll_hyperscale_es_2026`, `ext_forward_forward_2022`; raw cache: `simulation_scaling` |
+| Primary source records | 17 current manifest assignments; November 2 additions have the selected passage scopes recorded in their notes, not a fresh review of every earlier source. |
+| Source loading state | source notes: `simulation_scaling`, `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weakness_generalization_2023`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023`, `ext_no_free_lunch_inductive_bias_2024`, `ext_eggroll_hyperscale_es_2026`, `ext_forward_forward_2022`; raw cache: `simulation_scaling`; November 2 reviewed notes: `ext_lejepa_2025`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -279,6 +288,56 @@ bar while failed runs and hyperparameter changes disappear.
 **Explicit non-claim.** predictable loss scaling is not predictable deployment
 behavior.
 
+### Platonic representations: conditions before convergence
+
+[Huh et al.](https://arxiv.org/abs/2405.07987v5) proposed the Platonic
+Representation Hypothesis after observing increasing similarity in learned
+representation geometry. The claim concerns statistical structure. Its
+idealized contrastive account assumes information-preserving observations;
+lossy modalities and abstract concepts limit the inference.
+
+[Balestriero and LeCun (2026)](https://arxiv.org/abs/2610.39302v1) supply a
+conditional sufficient result for JEPAs. In their main setting, independently
+trained encoders satisfy $f_m(g_m(z))=Q_m h^*(z)$: they agree on a common embedding
+up to an orthogonal transformation. The scope travels with the equation:
+
+- The world is finite and each rendering is injective.
+- Modalities share the positive-pair distribution and its marginals.
+- The representation dimension is fixed and the objective is rotation invariant.
+- The statement concerns population minimizers unique up to rotation.
+- A squared-loss, whitened spectral case establishes uniqueness under an
+  eigengap; full-distribution uniqueness for LeJEPA is left assumed.
+- The predictor is the identity. Learned action-conditioned predictors are
+  explicitly outside this analysis.
+
+The practical recipe changes what counts as a positive pair. Two observations
+of one scene can suppress observation-specific nuisance more effectively than
+two corruptions of one observation. But what counts as nuisance depends on the
+consumer: a camera viewpoint can obstruct cross-modal alignment while remaining
+necessary to control a robot. The theorem does not identify all useful
+invariances or prove that finite training finds its population solution.
+
+The reported 42-fold sample reduction is also a scoped comparison. A good-view
+text JEPA reaches one WIT alignment target with 21.6M training samples; the
+next-token comparator reaches a nearby score at 900M, with no earlier checkpoint
+scored. Their batch/learning-rate recipes differ, and a good-view sample reads
+three texts. The authors separately report a 14-fold text-token ratio. Neither
+ratio is a wall-time, energy or general-task efficiency result. Large-scale
+positive views include captions generated by an image–text-trained model;
+shared text controls make view choice informative without making the data
+independent of prior cross-modal supervision. Hyperparameters were tuned only
+for the good-view recipe. The authors state that no experiment exactly meets
+the main theorem's assumptions.
+
+[LeJEPA's SIGReg objective](https://arxiv.org/abs/2511.08544v3) is useful context
+for that gap: matching an embedding distribution is a particular anti-collapse
+recipe, not proof of task semantics. A theorem's hypothesis, an implementation's
+objective and an empirical metric must be recorded separately. Representation
+agreement does not establish truth, causal identification, safe control or
+interchangeable models. The World Models and Substrate owners retain those
+consumer and implementation decisions; this is external source synthesis, not
+a new local proof or a change to the chapter-core support state.
+
 ### Changing the learner changes the claim
 
 A learning-theory statement is scoped not only to a model class and data
@@ -440,6 +499,9 @@ Two information-loss constructions show why equal retrospective-fit signals cann
 
 | Source ID | Title | Bounded use |
 |---|---|---|
+| `ext_lejepa_2025` | [Balestriero and LeCun (2025), LeJEPA](https://arxiv.org/abs/2511.08544v3) | Predictive agreement plus SIGReg distributional anti-collapse; records the regularizer separately from encoder architecture and view policy. Conditional optimization arguments and external evaluations do not establish useful semantics or the full-distribution uniqueness assumed by the 2026 PRH theorem. |
+| `ext_platonic_representation_hypothesis_2024` | [Huh et al. (2024), The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987v5) | Representation-geometry convergence hypothesis, empirical alignment measures and the bijective-observation limitation. Alignment is not physical truth, causal identification or validation of Sorenson's distinct Platonic World Model proposal. |
+| `ext_platonic_representation_jepa_2026` | [Balestriero and LeCun (2026), Platonic representations with JEPAs](https://arxiv.org/abs/2610.39302v1) | Conditional shared-positive-kernel theorem and source-reported good-view text-JEPA alignment experiments; separates population theorem, training recipe and measured task. Identity predictor, injective renderings and population/uniqueness assumptions limit the theorem; no learned action-conditioned predictor, general task superiority, local reproduction or architecture-core promotion is established. |
 | `simulation_scaling` | Simulation Scaling Law | Corben-authored conceptual lineage for resource-constrained scope, clock speed, and fidelity. It motivates explicit scale and fidelity denominators, but it does not provide a validated neural scaling law, learning-theory bound, prospective forecast, emergence result, or transfer guarantee. |
 | `ext_scaling_laws_neural_language_models_2020` | Scaling Laws for Neural Language Models | Empirical study reporting power-law relationships between cross-entropy loss, model size, data, and compute in its model family. These fitted relations are source-reported, metric- and regime-bound, and do not automatically forecast downstream capabilities, safety, or other architectures. |
 | `ext_mdl_tutorial_2004` | A tutorial introduction to the minimum description length principle | External description-length source for model/data tradeoffs, compression as inductive discipline, and residual/error-accounting vocabulary. |

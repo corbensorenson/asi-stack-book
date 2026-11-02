@@ -5,11 +5,13 @@ from __future__ import annotations
 
 import copy
 import json
+import re
 from pathlib import Path
 import sys
 from typing import Any
 
 from build_validation_registry import OUTPUT, OVERRIDES, ROOT, authority_errors
+from validation_projection_plan import graph_errors
 
 
 VALIDATE_BOOK = ROOT / "scripts" / "validate_book.py"
@@ -25,12 +27,59 @@ EXACT_FIELDS = (
 )
 
 
+def execution_errors(registry: dict[str, Any]) -> list[str]:
+    errors = []
+    defaults = registry.get("execution_defaults", {})
+    fields = {'capabilities', 'side_effects', 'review_state', 'network', 'historical_mode',
+              'timeout_seconds', 'depends_on'}
+    if set(defaults) - fields:
+        errors.append(f"execution defaults contain unknown fields: {sorted(set(defaults) - fields)}")
+    ids = {unit.get("id") for unit in registry.get("units", [])} | {"base-gate"}
+    for unit in registry.get("units", []):
+        if set(unit.get('execution', {})) - fields:
+            errors.append(f"{unit.get('id')}: unknown execution fields: {sorted(set(unit['execution']) - fields)}")
+        contract = {**defaults, **unit.get("execution", {})}
+        prefix = str(unit.get("id"))
+        capabilities = contract.get("capabilities")
+        if not isinstance(capabilities, list) or not capabilities or not all(isinstance(x, str) for x in capabilities):
+            errors.append(f"{prefix}: execution capabilities must be explicit")
+        elif any(name not in {'python', 'unix_process_groups'} and not re.fullmatch(
+            r'(?:module|tool):[A-Za-z0-9_][A-Za-z0-9_.-]*', name
+        ) for name in capabilities):
+            errors.append(f"{prefix}: unknown capability name or malformed module/tool capability")
+        if contract.get("side_effects") not in {"read_only", "ignored_outputs", "owned_tracked_outputs", "unreviewed"}:
+            errors.append(f"{prefix}: invalid side-effect contract")
+        if contract.get("review_state") not in {"reviewed", "unreviewed"}:
+            errors.append(f"{prefix}: invalid execution review state")
+        if contract.get("review_state") == "reviewed" and contract.get("side_effects") == "unreviewed":
+            errors.append(f"{prefix}: reviewed contract has unknown side effects")
+        budget = contract.get("timeout_seconds")
+        if isinstance(budget, bool) or not isinstance(budget, (int, float)) or not 0 < budget <= 86400:
+            errors.append(f"{prefix}: invalid execution budget")
+        deps = contract.get("depends_on")
+        if not isinstance(deps, list) or not all(isinstance(x, str) for x in deps):
+            errors.append(f"{prefix}: dependencies must be a list")
+            continue
+        if any(dep not in ids or dep == prefix for dep in deps):
+            errors.append(f"{prefix}: unknown or self dependency")
+        positions = {row['id']: row['order'] for row in registry['units']}
+        if any(dep != 'base-gate' and positions.get(dep, 0) >= unit['order'] for dep in deps):
+            errors.append(f"{prefix}: dependencies must precede the consumer")
+        if contract.get("network") not in {"none", "required", "unreviewed"}:
+            errors.append(f"{prefix}: invalid network contract")
+        if contract.get("historical_mode") not in {"current", "retained_commit", "frozen_bytes", "mixed", "unreviewed"}:
+            errors.append(f"{prefix}: invalid custody contract")
+    return errors
+
+
 def load(path: Path) -> Any:
     return json.loads(path.read_text(encoding="utf-8"))
 
 
 def semantic_errors(registry: dict[str, Any]) -> list[str]:
     errors = authority_errors(registry)
+    errors.extend(execution_errors(registry))
+    errors.extend(graph_errors(registry))
     units = registry.get("units", [])
     artifacts = registry.get("required_artifacts", [])
     summary = registry.get("summary", {})
@@ -122,11 +171,35 @@ def negative_controls(registry: dict[str, Any]) -> list[str]:
             break
     legacy = copy.deepcopy(registry)
     legacy["legacy_source"] = "scripts/validate_book.py"
+    invalid_budget = copy.deepcopy(registry)
+    invalid_budget["execution_defaults"]["timeout_seconds"] = 0
+    dependency_cycle = copy.deepcopy(registry)
+    dependency_cycle["units"][0].setdefault("execution", {})["depends_on"] = [dependency_cycle["units"][0]["id"]]
+    unknown_field = copy.deepcopy(registry)
+    unknown_field['execution_defaults']['network_access'] = 'none'
+    missing_graph = copy.deepcopy(registry)
+    missing_graph.pop('current_projections')
+    historical_refresh = copy.deepcopy(registry)
+    historical_refresh['current_projections'][0]['mode'] = 'historical'
+    escaped_output = copy.deepcopy(registry)
+    escaped_output['current_projections'][0]['outputs'] = ['../outside']
+    missing_consumer = copy.deepcopy(registry)
+    missing_consumer['current_projections'][0]['checks'] = ['not-a-registered-consumer']
+    projection_cycle = copy.deepcopy(registry)
+    projection_cycle['current_projections'][0]['depends_on'] = [projection_cycle['current_projections'][-1]['id']]
     controls = (
         ("duplicate order", duplicate_order),
         ("missing script", missing_script),
         ("unresolved exact override", missing_override),
         ("legacy authority marker", legacy),
+        ("invalid execution budget", invalid_budget),
+        ("dependency cycle", dependency_cycle),
+        ("unknown execution field", unknown_field),
+        ("missing current projection graph", missing_graph),
+        ("historical object in current rebuild graph", historical_refresh),
+        ("projection output escapes repository", escaped_output),
+        ("unregistered projection consumer", missing_consumer),
+        ("projection dependency cycle", projection_cycle),
     )
     for label, mutation in controls:
         if not semantic_errors(mutation):
@@ -137,7 +210,10 @@ def negative_controls(registry: dict[str, Any]) -> list[str]:
 def main() -> None:
     registry = load(OUTPUT)
     errors = semantic_errors(registry)
-    errors.extend(negative_controls(registry))
+    if not errors:
+        errors.extend(negative_controls(registry))
+    else:
+        print("Registry negative controls skipped: the canonical baseline is invalid.")
     if errors:
         print("Validation registry validation failed:")
         for error in errors:
@@ -148,7 +224,7 @@ def main() -> None:
     print(
         f"Authoritative validation registry passed: {len(registry['units'])} units, "
         f"{len(registry['required_artifacts'])} artifacts, {exact} exact high-impact contracts, "
-        f"tiers={counts}, 4 rejecting negative controls."
+        f"tiers={counts}, 12 rejecting negative controls."
     )
 
 

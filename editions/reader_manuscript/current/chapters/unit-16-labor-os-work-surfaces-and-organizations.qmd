@@ -5,8 +5,9 @@ unit_id: "unit-16"
 
 ## Every Worker Reports Success
 
-A repository needs a security update. The request sounds small: update one
-dependency, repair the affected code, run the tests, and publish the change.
+Consider a hypothetical repository security update, not an observed release.
+The request sounds small: update one dependency, repair the affected code, run
+the tests, and publish the change.
 An organization assigns the work across a human maintainer, a planning agent,
 a coding agent, a review model, a continuous-integration service, and a release
 operator.
@@ -60,7 +61,7 @@ second is the contracted outcome.
 
 Identity also prevents duplicate work from becoming duplicate authority. Two
 agents may independently propose patches. Their branches share a parent job,
-but neither inherits permission to merge or release. A retry is a new attempt
+but in this assignment neither has been granted merge or release permission. A retry is a new attempt
 under the same bounded purpose, not a fresh mandate. A handoff transfers named
 work and perhaps a scoped capability; it does not transfer every permission
 held by the sender.
@@ -98,8 +99,9 @@ The type is not valuable because it makes a long form. It is valuable when a
 scheduler, worker, adapter, reviewer, or consumer can reject an invalid state.
 A coding job should not become executable without the required repository and
 branch identity. A high-impact release should not proceed on a coding-agent
-approval. A delivery record should not claim success when the consumer has not
-acknowledged the exact artifact. A terminal state should close or transfer
+approval. A delivery record may report transport success without consumer acceptance;
+it must not substitute that status for required acknowledgment of the exact
+artifact. A terminal state should close or transfer
 every residual obligation.
 
 Types can be progressive. A low-consequence draft may use a thin contract. A
@@ -161,8 +163,11 @@ effects are absent.
 The organization therefore maintains an outcome contract above local tasks.
 For the security update, that contract might require an exact resolved package
 version in the release artifact, no regression in a specified suite, a
-reversible deployment, post-release observation, and notification if the
-deadline cannot be met. Child jobs contribute artifacts to that outcome.
+bounded recovery route, post-release observation, and notification if the
+deadline cannot be met. Removing the named vulnerable resolution is the
+contracted security check, not proof that the whole package is secure. Recovery
+may restore controlled service state without retracting distributed copies or
+undoing earlier exposure. Child jobs contribute artifacts to that outcome.
 Their green states do not aggregate automatically into success.
 
 This distinction also prevents unfair blame. When an agent follows its scoped
@@ -174,8 +179,8 @@ information, capacity, authority, and residual custody.
 
 ## Work Surfaces Absorb Abstraction Layers
 
-The history of practical AI use can be read as a sequence of expanding work
-surfaces.
+One architectural reading of practical AI use is an expansion of work
+surfaces. These modes overlap; they are not a universal product chronology.
 
 The browser chat made a model a destination. A person left the work surface,
 described a problem, received text, and manually transferred the result back.
@@ -186,20 +191,19 @@ Agentic editors and command-line harnesses could search, edit, run commands,
 inspect failures, and revise. Freestanding agents added durable tasks,
 schedules, services, tools, memory, and collaboration beyond one editor.
 
-Products and projects differ substantially, and names should not be treated as
-one capability class. Codex, Claude Code, OpenCode, OMP and related harnesses
-illustrate purpose-built coding work surfaces. Hermes Agent, OpenClaw, and
-elizaOS illustrate different approaches to more persistent or extensible agent
-runtimes, integrations, and communities. Their inclusion is descriptive, not
-a claim that they have equal architectures, maturity, safety, autonomy, or
-organizational reach. Each deserves evaluation against its own documented and
-observed behavior.
+A chat, editor assistant, command-line harness, and persistent service can
+carry different responsibilities even when they use the same model. Product
+names are poor substitutes for inspecting context access, permitted effects,
+durable state, and handoff behavior. The
+[Work Surfaces technical owner](https://corbensorenson.github.io/asi-stack-book/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.html)
+retains the detailed historical and product positioning; it reports no matched
+cross-surface execution study.
 
-The architectural direction is more important than the product list. Each
-generation absorbs one more abstraction layer: text, file, project, tool,
-workflow, role, team, organization, and eventually interactions among
-organizations. The model stops being a sidecar and becomes part of the surface
-on which work is represented and coordinated.
+The architectural possibility matters more than a product list. A surface may
+absorb text, file, project, tool, workflow, or coordination duties. Moving one
+duty into the interface does not show that it can assume an entire role or
+organization. Specialized surfaces can retain important domain semantics,
+permissions, and review practices.
 
 Absorption changes the control problem. An autocomplete suggestion is easy to
 inspect before it causes an effect. An agent that edits files, opens pull
@@ -210,9 +214,9 @@ work behind plausible completion.
 
 The progression is not guaranteed to end in one universal agent. Specialized
 surfaces may remain better because they carry domain semantics, tools,
-permissions, and review practices. The likely future is a federation of
-agents and services operating through typed contracts, with some interfaces
-consolidating and others becoming more specialized.
+permissions, and review practices. This book proposes a federation of agents and services operating through typed
+contracts. Whether consolidation or specialization works better remains a
+consumer- and workload-specific comparison, not a guaranteed adoption path.
 
 ## A Harness Is Not an Employer or an Institution
 
@@ -379,9 +383,13 @@ thought and action. Relevant conditions include intelligibility, purpose-
 specific consent, revocation, data boundaries, an unaided or alternative
 route, contestability, freedom from manipulation, and recovery after exit.
 
-Evaluation should compare the human-AI pair with both the human alone and the
-AI alone under matched conditions. Improvement over an unaided person does not
-establish synergy if the AI alone performs better with less burden. Immediate
+Where those routes can perform the same admissible task, evaluation should
+compare the human-AI pair with both the human alone and the AI alone under
+matched information, resources, and acceptance criteria. Improvement over an
+unaided person establishes a narrower assistance benefit, not necessarily an
+advantage over either component alone. If the AI-alone route cannot hold the
+required decision rights or fulfill the human purpose, its artifact performance
+is not a substitute for the joined organizational outcome. Immediate
 productivity does not establish long-term benefit if unaided skill, judgment,
 or bargaining power erodes.
 
@@ -449,8 +457,9 @@ portability, income or role support where warranted, accessible appeal,
 service continuity, and resources for remedy. These are not optional public-
 relations additions. They determine whether deployment preserves agency.
 
-The record expires. Outcomes are measured by subgroup and compared with the
-frozen baseline. Adverse evidence can narrow, pause, compensate, redesign, or
+The permission and review period has a declared lifetime; the historical
+record and outstanding remedy duties do not disappear when it ends. Outcomes
+are measured by subgroup and compared with the frozen baseline. Adverse evidence can narrow, pause, compensate, redesign, or
 retire the deployment. A growing organization should not inherit indefinite
 permission from one early pilot.
 
@@ -501,7 +510,8 @@ requires correspondingly stronger limits.
 Return to the security update.
 
 The maintainer creates an outcome contract: the released package must resolve
-the patched dependency, preserve named behavior, and remain reversible. The
+the patched dependency, preserve named behavior, and have a bounded recovery
+plan. Release reversal and downstream exposure remain separate obligations. The
 planner derives child jobs for dependency analysis, source changes, lockfile
 regeneration, tests, artifact inspection, release, and post-release
 observation. Dependencies distinguish prerequisite, evidence, authority, and
@@ -529,6 +539,31 @@ organization. That owner does not personally perform every task and cannot be
 made omniscient. The owner must ensure that obligations have custody, required
 independence exists, unresolved evidence changes the decision, affected
 parties have a route to remedy, and closure reflects observed state.
+
+A second hypothetical comparison makes the human side visible. Assume both
+routes satisfy the same agreed patch acceptance and release criteria. In the
+ordinary route, a maintainer spends 30 minutes preparing it and 20 reviewing
+and inspecting the package: 50 minutes of human attention. In the assisted
+route, preparation takes 10 minutes, but a large generated diff takes 50
+minutes to review and inspect: 60 minutes. These are toy budgets, not measured
+productivity. Faster generation has increased the review burden by more than
+it saved in preparation. Tool cost and later repair would need separate
+accounting too.
+
+The organization has several admissible responses. It can use the ordinary
+route, ask the assistant for one smaller patch, or reduce intake while the
+reviewer catches up. Assigning that reviewer six concurrent proposals does
+not create capacity. The issue and release checklist can carry the decision;
+a new Labor OS service is unnecessary if they preserve the same custody.
+
+Now suppose management turns the promised drafting savings into a higher
+mandatory quota and removes the manual route. An assistant that improves a
+local coding step may still reduce practical refusal and learning. A trainee
+who never sees package resolution may later lack the skill to challenge the
+release. Retaining a usable alternative, supervised resolution work, and a
+funded review or escalation path connects cognitive sovereignty and transition
+governance to this same job. Their effectiveness needs observation over time;
+neither an opt-out field nor a completed training form proves agency.
 
 ## Failure Cases
 
@@ -588,8 +623,9 @@ residual ownership, reviewer load, worker comprehension, practical refusal,
 remedy, distribution, recovery, and total cost. More lifecycle states or
 receipts are not success.
 
-A typed contract is unnecessary when one competent person can safely perform,
-observe, and reverse a low-consequence task. It becomes more valuable as work
+Additional typed-job infrastructure is unnecessary when one competent person
+can perform, observe, and reverse a low-consequence task under an existing
+request or issue. It becomes more valuable as work
 crosses long-lived sessions, heterogeneous agents, organizations, authority
 domains, affected populations, and irreversible effects.
 
@@ -602,41 +638,35 @@ failure mode.
 The five technical owners have uneven, bounded evidence. Their combination in
 this chapter does not promote any core claim.
 
-Labor OS and Typed Jobs has five implemented public targets. Its authored
-scaffold includes three valid and ten rejecting plan-execution fixtures, two
-valid and seven rejecting delivery cases, two valid and nine rejecting durable
-lifecycle cases, seven reachable stages, 29 routes, and 42 rejected mutations.
-Fifty-six live Lean declarations across two modules prove finite record,
-identity, transition, rejection-noninterference, closure, and zero-support or
-external-effect consequences. They do not prove scheduler quality, useful
-task completion, delivery truth, enforcement, recovery, or transfer.
+[Labor OS and Typed Jobs](https://corbensorenson.github.io/asi-stack-book/chapters/labor-os-and-typed-jobs.html)
+checks authored plan, delivery, and durable lifecycle routes. Its finite
+predicates preserve identity, rejection noninterference, and scoped closure
+without assigning support or external effects. They do not demonstrate useful
+scheduling, delivery truth, enforcement, or natural task completion.
 
-The Work Surfaces owner currently contributes a structured architectural and
-historical synthesis with planned test families. No product execution or
-matched cross-surface experiment has been run for that owner. Product names in
-this unit are examples to evaluate, not local reproductions or comparative
-rankings.
+[Work Surfaces](https://corbensorenson.github.io/asi-stack-book/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.html)
+contributes architectural and historical synthesis with planned test families.
+It has no product execution or matched cross-surface experiment. Described
+capabilities and projected role absorption are not local reproductions.
 
-Human-AI Organizations has finite formal and independent-consumer work over
-assignment, delegation, handoff, contestation, expiry, reconstruction, remedy,
-and closure. The current surface includes 62 Lean declarations, 39 reviewed
-routes, 156 lifecycle mutations, 50 bridge mutations, and an aggregate-summary
-collision. Those checks preserve authored custody conditions. They do not
-establish human control, legal accountability, legitimacy, remedy efficacy,
-or good organizational outcomes.
+[Human-AI Organizations](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-organizations-delegation-and-accountability.html)
+checks finite assignment, delegation, contestation, remedy, and closure
+conditions. An aggregate-summary collision shows why matching counts cannot
+identify the accountable custody path. Preserving authored fields does not
+establish real human control, legitimacy, or remedy efficacy.
 
-Cognitive Sovereignty has an eight-transition finite lifecycle with 49 exact
-repairs, purpose-specific authorization and revocation, participant custody,
-receipt invalidations, non-identifiability countermodels, rejecting consumers,
-and 48 Lean declarations. No human-subject, neural-interface, clinical,
-stimulation, or longitudinal symbiosis study was performed by this project.
+[Cognitive Sovereignty](https://corbensorenson.github.io/asi-stack-book/chapters/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.html)
+checks finite purpose, participant, revocation, and repair records. Its
+countermodels expose what thin summaries cannot determine. No human-subject,
+neural-interface, clinical, stimulation, or longitudinal symbiosis study was
+performed by this project.
 
-Deployment Transition Governance has 44 Lean declarations around an eight-
-transition record, complete affected-person denominators, disaggregated
-accounting, refusal and exit, transition capacity, remedy, expiry, mutation
-repair, receipt invalidation, and non-identifiability. It does not establish
-causal deployment effects, welfare, fairness, meaningful agency, lawful
-remedy, continuity, or transfer.
+[Deployment Transition Governance](https://corbensorenson.github.io/asi-stack-book/chapters/ai-deployment-transition-distribution-and-human-agency.html)
+checks authored affected-person denominators, disaggregated accounting,
+refusal, exit, remedy, and lifecycle dispositions. These checks do not
+establish causal deployment effects, welfare, fairness, practical agency,
+lawful remedy, or continuity. Exact formal inventories remain with each
+canonical owner rather than becoming evidence of human outcomes here.
 
 The repository therefore shows that many organizational custody conditions can
 be represented and rejected over finite authored records. It does not show

@@ -5,36 +5,40 @@ unit_id: "unit-01"
 
 ## The Change That Worked
 
-A software team asks an AI assistant to update a dependency. The assistant
-finds the correct version, edits the repository, runs the visible tests, and
-reports success. The patch works. Days later, a production failure reveals that
+Consider a hypothetical repository change, not a reported incident. A software
+team asks an AI assistant to update a dependency. The assistant selects the
+requested version, edits the repository, runs the visible tests, and reports
+success. The patch passes those checks. Days later, a production failure reveals that
 the update changed a default used by a service whose tests were not present in
 the assistant's checkout.
 
 The team tries to reconstruct what happened. Which source defined the task?
 What repository state did the assistant see? Did it know that the absent service
-depended on the default? Who authorized the edit? Which plan was approved? Which
+depended on the default? Who authorized the edit? Which plan was admitted under the grant? Which
 tests ran, under which environment? Did the assistant observe the actual remote
 repository or only the exit status of a command? What did it retain as a lesson?
 
 There are logs, but they are incomplete. The prompt appears in one system, tool
 calls in another, and test output in a third. A model summary says the change was
 safe. No record says what "safe" meant. The pull request identifies the final
-bytes but not the context that justified them. The successful result cannot be
+bytes but not the context that justified them. The initially successful report cannot be
 reconstructed as a chain of accountable decisions.
 
-This is not primarily a failure of intelligence. The model may have reasoned
-well from what it saw. It is a failure of architecture. The system collapsed
+The missing account exposes an architectural defect without identifying the
+whole cause of the production failure. The model may have reasoned well from
+incomplete input, or failed to investigate a discoverable dependency. The
+system collapsed
 several different responsibilities into one apparently competent act: resolve
 the request, gather context, plan work, receive authority, modify state,
 observe consequences, evaluate evidence, declare readiness, and learn.
 
-Calling the model more intelligent does not restore the missing boundaries. A
+A stronger model could find more dependencies, but that alone would not restore
+the missing authority and evidence account. A
 larger model might infer the hidden dependency. It might also make a more
 persuasive case for the same mistake. The important question is not only how
 capable the model is. It is what system turns capability into consequence.
 
-The central thesis of this book follows: advanced intelligence should be
+This case motivates the book’s central design thesis: advanced intelligence should be
 engineered as a governed stack of distinct responsibilities and transitions,
 not treated as one undifferentiated model.
 
@@ -42,6 +46,14 @@ That claim does not require one service for every responsibility. It does not
 deny that end-to-end learning can discover useful representations. It says that
 the responsibilities must remain externally distinguishable wherever their
 authority, evidence, failure, or replacement conditions differ.
+
+“ASI” names the book’s intended advanced-system horizon; it is not an achieved
+capability label for this repository. The immediate argument applies to
+consequential AI systems already built from models, tools, people, and
+infrastructure. Whether this design helps a more capable future system is a
+separate empirical question.
+
+{{< include ../generated/unit-01-status.qmd >}}
 
 ## The Wrong Unit of Analysis
 
@@ -82,13 +94,14 @@ understandable and governable.
 
 ## Why Greater Capability Makes Boundaries More Important
 
-Weak systems often fail before their organizational structure matters. They
-cannot form a plausible plan, use the tool, or keep enough context to complete
-the task. Improving capability removes those obvious barriers. The system can
-act across longer horizons, recover from local errors, persuade operators,
-write its own tooling, and coordinate other systems.
+Capability defects can be obvious: a system cannot form a plausible plan, use
+a tool, or keep enough context to complete a task. Authority and recovery still
+matter at that stage; a weak system can misuse a credential or erase a file.
+As capability improves, longer horizons, richer tooling, coordination, and
+persuasion become additional possibilities. Their extent requires evidence
+for the particular system.
 
-That progress changes the dominant risk. A system that cannot modify a
+That progress can change which risks dominate. A system that cannot modify a
 repository needs better code generation. A system that can modify thousands of
 repositories needs to know which one, under whose authority, with which
 verification and recovery. Intelligence makes the interface question more
@@ -179,10 +192,14 @@ Context does not confer truth. A retrieved passage may be authentic yet stale,
 irrelevant, disputed, or outside the rights of the current task.
 
 Planning does not confer execution. A coherent plan remains a proposal until a
-current grant admits its effects.
+current grant admits its effects. Applicable session or standing grants may
+already provide that authority; the rule does not require a fresh human approval
+for every planned command.
 
-Execution receipts do not confer observation. A tool can report success while
-the intended state is absent, partial, duplicated, or changed elsewhere.
+Execution acknowledgements do not automatically establish the intended observed
+state. A tool can report success while that state is absent, partial, duplicated,
+or changed elsewhere. A receipt may include measurements, but their instrument,
+scope, and independence must be assessed rather than inferred from its label.
 
 Evidence does not confer readiness. A bounded test can support one claim while
 release remains blocked by another obligation.
@@ -196,14 +213,20 @@ wrong, private, unsafe to generalize, or appropriate only for a temporary
 context.
 
 Replacement does not confer qualification. A successor component must earn its
-own evidence under the current contract. It does not inherit the predecessor's
-approval because it shares a name or interface.
+own qualification under the current contract. Earlier evidence can remain
+applicable where the relevant assumptions and behavior are preserved; the
+reuse decision must say why. Shared name or interface alone is insufficient.
 
 Improvement does not confer self-ratification. A system may propose a better
 planner, evaluator, policy, or version of itself. The proposal cannot authorize
 its own adoption or weaken the gate that judges it.
 
-Noninheritance sounds restrictive, but it is what makes improvement possible
+This is a design rule about justified inference and delegation, not a physical
+law that forbids all downstream use. An authorized delegation can issue a
+narrower grant; a qualified evidence transition can support a new claim. The
+rule requires the admitting relation and its conditions to be explicit.
+
+Noninheritance supports improvement
 without surrendering control. When properties are attached to explicit
 transitions, a component can change while the rest of the architecture knows
 which claims became stale and which authority remains valid.
@@ -218,8 +241,9 @@ relationships.
 
 The intent contract might permit a patch and draft pull request but forbid
 production deployment. It might require a security suite and human ownership
-review. Its expiry prevents yesterday's approval from silently authorizing
-today's changed repository.
+review. Its scope and expiry bound current use. A changed repository may require
+readmission if the change affects the grant or qualification conditions; not
+every new commit automatically requires another approval.
 
 The context package records the exact commit, dependency graph, test inventory,
 advisories, service map, and known omissions. The planner can reason from it
@@ -241,12 +265,29 @@ changes a default affecting an absent consumer. Readiness can then allow a
 draft review artifact while blocking merge. The residual has an owner instead
 of disappearing inside a green status.
 
+But the record cannot conjure the absent service. If context gathering never
+finds it and the acceptance rule requires only visible tests, both the governed
+route and a conventional agent may pass the same deficient check. An affected-
+consumer inventory requirement could instead expose missing coverage and hold
+merge. That stronger obligation needs its own basis and cost; it is not a
+benefit created merely by naming a context layer.
+
+For a public documentation-only change with one known repository, ordinary
+version control, a rendered diff, and applicable edit permission may carry the
+whole decision adequately. The same maintainer can own planning and review
+where the task permits that arrangement. A secret-bearing release or disputed
+service contract changes the needed separation. Compare these uses before
+building another service.
+
 If the change fails, rollback is also decomposed. Restoring the tree does not
 close a remote pull request, revoke an exposed credential, retract a message,
 or restore an external system. Each effect needs its own compensation or
 residual disposition.
 
-After closure, the system may propose a durable regression test or context rule.
+The system may propose provisional lessons while the incident remains open.
+A durable regression test or context rule still requires its adaptive-commit
+evidence and rights review; closure of every unrelated residual is not a
+precondition for useful bounded learning.
 That candidate enters another governed lifecycle. The original outcome supplies
 evidence, not permission.
 
@@ -284,9 +325,9 @@ organizations, or legal authorities own the decision and cannot be collapsed
 by technical convenience.
 
 If none applies, separation may be unnecessary. Two adjacent transformations
-can remain one internal implementation. If several apply, hiding the boundary
-inside shared prompts or process memory creates technical debt even if the
-prototype works.
+can remain one internal implementation. If several apply, a shared prompt or process needs an explicit account of how
+it preserves them; a stronger enforced boundary may be needed where the threat
+model rules out that arrangement.
 
 This test also governs the living book. A new paper should not automatically
 create a chapter. It should first be routed to the owner whose contract it
@@ -331,22 +372,47 @@ than merely forwarding success. Governance can stop the path at every
 consequential transition. Memory and learning receive adjudicated outcomes,
 then propose changes back into the same controlled system.
 
+::: {#stack-control-text}
+**Text version.** Intent constrains context, then planning and routing produce
+work. Current authority must admit dispatch before an effect occurs; otherwise
+the route stops or narrows. An observation of the effect informs evidence and
+readiness, which can feed an adjudicated persistence decision. Governance
+constrains intent, dispatch, evidence, and persistence. Candidate changes from
+learning return to context; effect residuals return to governance. These are
+logical relationships, not a claim that this whole runtime exists or that
+every request must traverse every box.
+:::
+
+::: {.asi-reader-diagram tabindex="0" role="region" aria-label="Scrollable proposed stack control path" aria-describedby="stack-control-text" data-initial-scroll="end" style="--asi-diagram-width: 46rem;"}
+
 ```{mermaid}
-flowchart LR
+flowchart TD
+  accTitle: Proposed stack control path
+  accDescr: Intent constrains context and planning. Authorized work reaches an effect only if current authority permits it; otherwise it stops. Observation informs evidence and readiness, then persistence and learning. Governance constrains intent, dispatch, evidence, and persistence. Candidate learning changes return to context; effect residuals return to governance. This is a proposed responsibility map, not an executed stack.
   A["Purpose and intent"] --> B["Context"]
   B --> C["Plan and route"]
   C --> D["Authorized work"]
-  D --> E["Effect"]
+  D --> J{"Current authority?"}
+  J -- "yes" --> E["Effect"]
+  J -- "no" --> K["Stop or narrow"]
   E --> F["Independent observation"]
   F --> G["Evidence and readiness"]
   G --> H["Persistence and learning"]
   H -. "candidate change" .-> B
   I["Governance"] --> A
-  I --> D
+  I --> J
   I --> G
   I --> H
   E -. "residual or recovery" .-> I
 ```
+
+:::
+
+*Figure. Proposed responsibility and control paths. A prepared work item is
+not permission to dispatch; the stop path is part of the architecture.*
+
+Scroll inside the frame for the side paths; the complete text version is above.
+
 
 The backward arrows matter as much as the forward path. A failed observation
 can invalidate readiness. A residual can return work to governance. A learned
@@ -443,8 +509,9 @@ human edition should not reproduce every internal field, but it must preserve
 the architecture's conclusions and honest evidence limits.
 
 Projection is therefore different from duplication. A concise view can omit
-detail if it says where the authoritative record lives and prevents consumers
-from making decisions that require the omitted fields. A generated navigation
+detail if it identifies the authoritative record and clearly bounds what
+decisions the summary supports. Consequential automated consumers should
+retrieve required fields rather than treating omitted detail as satisfied. A generated navigation
 list can change chapter numbers without changing owner identity. A human
 chapter can be rewritten for clarity without silently changing the support
 state of the claims it explains.
@@ -519,6 +586,8 @@ it.
 
 ## What the Current Work Establishes
 
+The [canonical technical owner](https://corbensorenson.github.io/asi-stack-book/chapters/asi-is-a-stack-not-a-model.html)
+retains the exact contracts, mappings, and controls.
 The live research chapter remains at `argument` support. Its source mappings
 connect the stack thesis to Corben-authored architecture papers and external
 comparators in composed AI services, modular systems, agent architectures,
@@ -551,8 +620,8 @@ residual, and evidence record. It should reject an expired grant and recover
 from at least one injected failure.
 
 The implementation should be small enough that every handoff can be inspected.
-Its purpose is not to demonstrate breadth. It is to prove that the central
-separations can survive contact with one real task.
+Its purpose is to test whether the central separations survive one real task,
+not to infer general reliability from that single trace.
 
 The next stage varies tasks, models, tools, operators, and failures. Strong
 monolithic and lightweight baselines receive matched resources. Costs include
@@ -609,5 +678,3 @@ That leaves an immediate engineering question. If a stack spends more effort
 on contracts, routing, verification, and recovery, can it produce more accepted
 useful work per total cost? The next chapter turns that hope into the Efficient
 ASI Hypothesis and gives it a denominator capable of failing.
-
-{{< include ../generated/unit-01-status.qmd >}}

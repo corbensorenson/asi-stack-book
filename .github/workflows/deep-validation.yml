@@ -15,16 +15,28 @@ jobs:
       - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
         with:
           fetch-depth: 0
-      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
-        with:
-          python-version: "3.11"
-      - name: Install pinned post-v2 evidence runtime
-        run: |
-          python3 -m pip install --disable-pip-version-check --no-cache-dir \
-            --index-url https://download.pytorch.org/whl/cpu torch==2.7.1
-          python3 -m pip install --disable-pip-version-check --no-cache-dir \
-            -r ci/post_v2_requirements.txt
+      - name: Set up validation runtime
+        uses: ./.github/actions/validation-runtime
+
       - name: Run deep registry tier
         env:
           PYTHONPATH: ${{ github.workspace }}/ci/linux_mlx_preflight_stubs
         run: python3 scripts/run_validation_registry.py --tier deep
+
+      - name: Preserve validation diagnostics
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: validation-diagnostics-${{ github.workflow }}-${{ github.run_id }}
+          path: |
+            build/validation_registry_report.json
+            build/validation_registry_report-outputs/
+            build/publication-source-*/
+            build/proof-envelope-compile-*/
+            build/living-book-compile-*/
+            build/proof_axiom_audit/
+            build/live_human_view_browser_report.json
+            build/edition-control-*.png
+            build/failure-*.png
+          if-no-files-found: ignore
+          retention-days: 14

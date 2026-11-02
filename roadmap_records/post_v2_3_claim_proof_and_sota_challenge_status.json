@@ -56,17 +56,61 @@
     "governance_tax_governed_useful_release_count": 0
   },
   "proof_standards": [
-    {"id": "PS-01", "name": "typed_claim_atom", "required": true},
-    {"id": "PS-02", "name": "explicit_falsifier_and_scope", "required": true},
-    {"id": "PS-03", "name": "semantic_lane_separation", "required": true},
-    {"id": "PS-04", "name": "full_attempt_protocol", "required": true},
-    {"id": "PS-05", "name": "matched_baseline_and_negative_controls", "required": true},
-    {"id": "PS-06", "name": "uncertainty_cost_and_residual_accounting", "required": true},
-    {"id": "PS-07", "name": "claim_specific_terminal_disposition", "required": true},
-    {"id": "PS-08", "name": "same_transaction_successor_continuity", "required": true},
-    {"id": "PS-09", "name": "argument_exit_full_attempt", "required": true},
-    {"id": "PS-10", "name": "existing_proof_rationalization", "required": true},
-    {"id": "PS-11", "name": "public_synopsis_evidence_fidelity", "required": true}
+    {
+      "id": "PS-01",
+      "name": "typed_claim_atom",
+      "required": true
+    },
+    {
+      "id": "PS-02",
+      "name": "explicit_falsifier_and_scope",
+      "required": true
+    },
+    {
+      "id": "PS-03",
+      "name": "semantic_lane_separation",
+      "required": true
+    },
+    {
+      "id": "PS-04",
+      "name": "full_attempt_protocol",
+      "required": true
+    },
+    {
+      "id": "PS-05",
+      "name": "matched_baseline_and_negative_controls",
+      "required": true
+    },
+    {
+      "id": "PS-06",
+      "name": "uncertainty_cost_and_residual_accounting",
+      "required": true
+    },
+    {
+      "id": "PS-07",
+      "name": "claim_specific_terminal_disposition",
+      "required": true
+    },
+    {
+      "id": "PS-08",
+      "name": "same_transaction_successor_continuity",
+      "required": true
+    },
+    {
+      "id": "PS-09",
+      "name": "argument_exit_full_attempt",
+      "required": true
+    },
+    {
+      "id": "PS-10",
+      "name": "existing_proof_rationalization",
+      "required": true
+    },
+    {
+      "id": "PS-11",
+      "name": "public_synopsis_evidence_fidelity",
+      "required": true
+    }
   ],
   "self_contained_execution_contract": {
     "state": "active_no_external_conversational_dependencies",
@@ -599,18 +643,18 @@
     "compact_generation_residual_invalid_count": 5,
     "compact_generation_trace_entry_count": 4,
     "compact_generation_storage_entry_count": 4,
-      "compact_generation_storage_invalid_count": 5,
-      "compact_generation_reachable_stage_count": 9,
-      "compact_generation_lean_theorem_count": 35,
-      "compact_generation_trace_event_count": 8,
-      "compact_generation_trace_composition_split_count": 9,
-      "compact_generation_identity_field_count": 10,
-      "compact_generation_identity_preservation_check_count": 9,
-      "compact_generation_non_authority_preservation_check_count": 9,
-      "compact_generation_fallback_monotonicity_check_count": 8,
-      "compact_generation_terminal_rejection_count": 8,
-      "compact_generation_route_case_count": 60,
-      "compact_generation_mutation_rejection_count": 163,
+    "compact_generation_storage_invalid_count": 5,
+    "compact_generation_reachable_stage_count": 9,
+    "compact_generation_lean_theorem_count": 35,
+    "compact_generation_trace_event_count": 8,
+    "compact_generation_trace_composition_split_count": 9,
+    "compact_generation_identity_field_count": 10,
+    "compact_generation_identity_preservation_check_count": 9,
+    "compact_generation_non_authority_preservation_check_count": 9,
+    "compact_generation_fallback_monotonicity_check_count": 8,
+    "compact_generation_terminal_rejection_count": 8,
+    "compact_generation_route_case_count": 60,
+    "compact_generation_mutation_rejection_count": 163,
     "compact_generation_retired_baseline_declaration_count": 26,
     "compact_generation_retained_legacy_theorem_count": 6,
     "compact_generation_fallback_count": 1,
@@ -734,7 +778,7 @@
     "chapter_dossier_directory": "evidence_quality/claim_dossiers",
     "structured_atom_count": 4064,
     "structured_machine_candidate_count": 0,
-    "prose_candidate_count": 4153,
+    "prose_candidate_count": 4215,
     "pending_prose_candidate_count": 0,
     "chapter_dossier_count": 64,
     "semantic_chapter_sweep_completed_count": 64,
@@ -1260,9 +1304,16 @@
     "pdf_page_count": 912,
     "pdf_outer_edge_ink_page_count": 72,
     "pdf_confirmed_layout_failure_count": 2,
-    "approved_exact_local_formats": ["html"],
-    "bounded_not_release_approved_formats": ["epub", "docx"],
-    "failed_formats": ["pdf"],
+    "approved_exact_local_formats": [
+      "html"
+    ],
+    "bounded_not_release_approved_formats": [
+      "epub",
+      "docx"
+    ],
+    "failed_formats": [
+      "pdf"
+    ],
     "mutation_rejection_count": 7,
     "public_release_state": "not_authorized_not_published",
     "support_state_effect": "none",
@@ -1319,99 +1370,502 @@
     "release_effect": "none"
   },
   "priorities": [
-    {"id": "P0", "state": "completed", "purpose": "install proof authority, activation baseline, and same-transaction roadmap continuity"},
-    {"id": "P1", "state": "completed", "purpose": "decompose every core and material subordinate claim into typed falsifiable proof obligations"},
-    {"id": "P2", "state": "completed", "purpose": "rationalize every existing theorem and target, retire proof bloat, and build semantically adequate formal models, countermodels, traces, composition theorems, and runtime refinement"},
-    {"id": "P3", "state": "completed", "purpose": "implement integrated governed work, learning, and assurance reference slices"},
-    {"id": "P4", "state": "completed", "purpose": "run informative signature causal campaigns for governance, routing, deliberation, update, unlearning, rollback, residual honesty, situated world-model acquisition, and memory consolidation"},
-    {"id": "P5", "state": "completed", "purpose": "complete the formal, executable, empirical, causal, transfer, source, and normative program for all claim families"},
-    {"id": "P6", "state": "completed", "purpose": "reproduce strong current baselines and adjudicate exact SOTA challenges"},
-    {"id": "P7", "state": "completed", "purpose": "reconcile all 55 live chapters and evidence surfaces with actual results and counterevidence while preserving the 54-chapter activation baseline"},
-    {"id": "P8", "state": "completed", "purpose": "disposition reader formats and releases and freeze the evidence-reconciled public state"},
-    {"id": "P9", "state": "completed", "purpose": "produce and maintain the under-10000-word X Article synopsis and exact 5:2 header, record publication disposition, and activate the next roadmap"}
+    {
+      "id": "P0",
+      "state": "completed",
+      "purpose": "install proof authority, activation baseline, and same-transaction roadmap continuity"
+    },
+    {
+      "id": "P1",
+      "state": "completed",
+      "purpose": "decompose every core and material subordinate claim into typed falsifiable proof obligations"
+    },
+    {
+      "id": "P2",
+      "state": "completed",
+      "purpose": "rationalize every existing theorem and target, retire proof bloat, and build semantically adequate formal models, countermodels, traces, composition theorems, and runtime refinement"
+    },
+    {
+      "id": "P3",
+      "state": "completed",
+      "purpose": "implement integrated governed work, learning, and assurance reference slices"
+    },
+    {
+      "id": "P4",
+      "state": "completed",
+      "purpose": "run informative signature causal campaigns for governance, routing, deliberation, update, unlearning, rollback, residual honesty, situated world-model acquisition, and memory consolidation"
+    },
+    {
+      "id": "P5",
+      "state": "completed",
+      "purpose": "complete the formal, executable, empirical, causal, transfer, source, and normative program for all claim families"
+    },
+    {
+      "id": "P6",
+      "state": "completed",
+      "purpose": "reproduce strong current baselines and adjudicate exact SOTA challenges"
+    },
+    {
+      "id": "P7",
+      "state": "completed",
+      "purpose": "reconcile all 55 live chapters and evidence surfaces with actual results and counterevidence while preserving the 54-chapter activation baseline"
+    },
+    {
+      "id": "P8",
+      "state": "completed",
+      "purpose": "disposition reader formats and releases and freeze the evidence-reconciled public state"
+    },
+    {
+      "id": "P9",
+      "state": "completed",
+      "purpose": "produce and maintain the under-10000-word X Article synopsis and exact 5:2 header, record publication disposition, and activate the next roadmap"
+    }
   ],
   "milestones": [
-    {"id": "M0", "state": "completed", "purpose": "activate successor authority"},
-    {"id": "M1", "state": "completed", "purpose": "complete claim-atom coverage"},
-    {"id": "M2", "state": "completed", "purpose": "complete measurement and reproduction foundation"},
-    {"id": "M3", "state": "completed", "purpose": "complete existing-proof rationalization and formal semantic depth"},
-    {"id": "M4", "state": "completed", "purpose": "complete integrated executable slices"},
-    {"id": "M5", "state": "completed", "purpose": "adjudicate governance and usefulness"},
-    {"id": "M6", "state": "completed", "purpose": "adjudicate routing and deliberation with a mixed bounded effect and no support promotion"},
-    {"id": "M7", "state": "completed", "purpose": "adjudicate update and unlearning causality with a terminal bounded claim narrowing and no support promotion"},
-    {"id": "M8", "state": "completed", "purpose": "complete residual/verifier-capacity, situated-world-model/consolidation, KERC canonical-language/hierarchical-residual, the claim-family terminal-disposition audit, and one competent natural-work or end-to-end bundle per family"},
-    {"id": "M9", "state": "completed", "purpose": "complete external reproduction and SOTA challenges"},
-    {"id": "M10", "state": "completed", "purpose": "reconcile book and evidence"},
-    {"id": "M11", "state": "completed", "purpose": "disposition reader and release artifacts"},
-    {"id": "M12", "state": "completed", "purpose": "complete the maintained X Article synopsis, exact 5:2 header, crosswalk, and current-composer preflight"},
-    {"id": "M13", "state": "completed", "purpose": "record article publication or ready-not-published status and close with terminal records and an active successor"}
+    {
+      "id": "M0",
+      "state": "completed",
+      "purpose": "activate successor authority"
+    },
+    {
+      "id": "M1",
+      "state": "completed",
+      "purpose": "complete claim-atom coverage"
+    },
+    {
+      "id": "M2",
+      "state": "completed",
+      "purpose": "complete measurement and reproduction foundation"
+    },
+    {
+      "id": "M3",
+      "state": "completed",
+      "purpose": "complete existing-proof rationalization and formal semantic depth"
+    },
+    {
+      "id": "M4",
+      "state": "completed",
+      "purpose": "complete integrated executable slices"
+    },
+    {
+      "id": "M5",
+      "state": "completed",
+      "purpose": "adjudicate governance and usefulness"
+    },
+    {
+      "id": "M6",
+      "state": "completed",
+      "purpose": "adjudicate routing and deliberation with a mixed bounded effect and no support promotion"
+    },
+    {
+      "id": "M7",
+      "state": "completed",
+      "purpose": "adjudicate update and unlearning causality with a terminal bounded claim narrowing and no support promotion"
+    },
+    {
+      "id": "M8",
+      "state": "completed",
+      "purpose": "complete residual/verifier-capacity, situated-world-model/consolidation, KERC canonical-language/hierarchical-residual, the claim-family terminal-disposition audit, and one competent natural-work or end-to-end bundle per family"
+    },
+    {
+      "id": "M9",
+      "state": "completed",
+      "purpose": "complete external reproduction and SOTA challenges"
+    },
+    {
+      "id": "M10",
+      "state": "completed",
+      "purpose": "reconcile book and evidence"
+    },
+    {
+      "id": "M11",
+      "state": "completed",
+      "purpose": "disposition reader and release artifacts"
+    },
+    {
+      "id": "M12",
+      "state": "completed",
+      "purpose": "complete the maintained X Article synopsis, exact 5:2 header, crosswalk, and current-composer preflight"
+    },
+    {
+      "id": "M13",
+      "state": "completed",
+      "purpose": "record article publication or ready-not-published status and close with terminal records and an active successor"
+    }
   ],
   "claim_families": [
-    {"id": "CF-01", "name": "stack_authority_and_evidence_foundations", "state": "completed"},
-    {"id": "CF-02", "name": "alignment_oversight_security_and_improvement_governance", "state": "completed"},
-    {"id": "CF-03", "name": "intent_planning_compilation_execution_and_exchange", "state": "completed"},
-    {"id": "CF-04", "name": "context_memory_claims_artifacts_and_replay", "state": "completed"},
-    {"id": "CF-05", "name": "routing_readiness_deliberation_compute_and_economics", "state": "completed"},
-    {"id": "CF-06", "name": "compression_generation_recurrence_and_search_substrates", "state": "completed"},
-    {"id": "CF-07", "name": "benchmarks_evaluation_learning_unlearning_and_assurance", "state": "completed"},
-    {"id": "CF-08", "name": "integration_stewardship_implementation_transfer_and_living_method", "state": "completed"}
+    {
+      "id": "CF-01",
+      "name": "stack_authority_and_evidence_foundations",
+      "state": "completed"
+    },
+    {
+      "id": "CF-02",
+      "name": "alignment_oversight_security_and_improvement_governance",
+      "state": "completed"
+    },
+    {
+      "id": "CF-03",
+      "name": "intent_planning_compilation_execution_and_exchange",
+      "state": "completed"
+    },
+    {
+      "id": "CF-04",
+      "name": "context_memory_claims_artifacts_and_replay",
+      "state": "completed"
+    },
+    {
+      "id": "CF-05",
+      "name": "routing_readiness_deliberation_compute_and_economics",
+      "state": "completed"
+    },
+    {
+      "id": "CF-06",
+      "name": "compression_generation_recurrence_and_search_substrates",
+      "state": "completed"
+    },
+    {
+      "id": "CF-07",
+      "name": "benchmarks_evaluation_learning_unlearning_and_assurance",
+      "state": "completed"
+    },
+    {
+      "id": "CF-08",
+      "name": "integration_stewardship_implementation_transfer_and_living_method",
+      "state": "completed"
+    }
   ],
   "chapter_claim_program": [
-    {"chapter_id": "asi-is-a-stack-not-a-model", "claim_id": "asi-is-a-stack-not-a-model.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "the-efficient-asi-hypothesis", "claim_id": "the-efficient-asi-hypothesis.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "system-boundaries-and-authority", "claim_id": "system-boundaries-and-authority.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "failure-modes-of-ungoverned-intelligence", "claim_id": "failure-modes-of-ungoverned-intelligence.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "evidence-states-and-claim-discipline", "claim_id": "evidence-states-and-claim-discipline.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "scalable-oversight-and-adversarial-ai-control", "claim_id": "scalable-oversight-and-adversarial-ai-control.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "human-intent-as-a-formal-input", "claim_id": "human-intent-as-a-formal-input.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "constitutional-alignment-substrate", "claim_id": "constitutional-alignment-substrate.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "moral-uncertainty-and-value-conflict", "claim_id": "moral-uncertainty-and-value-conflict.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "stable-capability-fields", "claim_id": "stable-capability-fields.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "capability-replacement-and-rollback", "claim_id": "capability-replacement-and-rollback.core", "family_id": "CF-01", "state": "atomized"},
-    {"chapter_id": "security-kernel-and-digital-scifs", "claim_id": "security-kernel-and-digital-scifs.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "model-weight-custody-and-hardware-roots-of-trust", "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance", "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "recursive-self-improvement-boundaries", "claim_id": "recursive-self-improvement-boundaries.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "open-ended-improvement-engines", "claim_id": "open-ended-improvement-engines.core", "family_id": "CF-02", "state": "atomized"},
-    {"chapter_id": "intent-to-execution-contracts", "claim_id": "intent-to-execution-contracts.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "planning-as-a-control-layer", "claim_id": "planning-as-a-control-layer.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "cognitive-compilation-and-semantic-ir", "claim_id": "cognitive-compilation-and-semantic-ir.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "virtual-context-abi", "claim_id": "virtual-context-abi.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "context-transactions-snapshots-mounts-and-taint", "claim_id": "context-transactions-snapshots-mounts-and-taint.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "verification-bandwidth-and-context-adequacy", "claim_id": "verification-bandwidth-and-context-adequacy.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "claim-ledgers-and-belief-revision", "claim_id": "claim-ledgers-and-belief-revision.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "spinoza-verification-and-proof-carrying-claims", "claim_id": "spinoza-verification-and-proof-carrying-claims.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "labor-os-and-typed-jobs", "claim_id": "labor-os-and-typed-jobs.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "artifact-graphs-audit-logs-and-replay", "claim_id": "artifact-graphs-audit-logs-and-replay.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "runtime-adapters-tool-permissions-and-human-approval", "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "inter-stack-protocols-identity-and-economic-exchange", "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core", "family_id": "CF-03", "state": "atomized"},
-    {"chapter_id": "procedural-memory-and-cognitive-loop-closure", "claim_id": "procedural-memory-and-cognitive-loop-closure.core", "family_id": "CF-04", "state": "atomized"},
-    {"chapter_id": "routing-heads-and-specialist-cores", "claim_id": "routing-heads-and-specialist-cores.core", "family_id": "CF-05", "state": "atomized"},
-    {"chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture", "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "readiness-gates-residual-escrow-and-quarantine", "claim_id": "readiness-gates-residual-escrow-and-quarantine.core", "family_id": "CF-05", "state": "atomized"},
-    {"chapter_id": "personal-compute-hives-and-federated-edge-intelligence", "claim_id": "personal-compute-hives-and-federated-edge-intelligence.core", "family_id": "CF-05", "state": "atomized"},
-    {"chapter_id": "compact-generative-systems-and-residual-honesty", "claim_id": "compact-generative-systems-and-residual-honesty.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "fast-generation-architectures", "claim_id": "fast-generation-architectures.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "governed-deliberation-and-test-time-scaling", "claim_id": "governed-deliberation-and-test-time-scaling.core", "family_id": "CF-05", "state": "atomized"},
-    {"chapter_id": "rankfold-neuralfold-and-artifact-compression", "claim_id": "rankfold-neuralfold-and-artifact-compression.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "resource-economics-and-token-budgets", "claim_id": "resource-economics-and-token-budgets.core", "family_id": "CF-05", "state": "atomized"},
-    {"chapter_id": "mathematical-and-search-substrates", "claim_id": "mathematical-and-search-substrates.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "circle-calculus-and-proof-carrying-ai-contracts", "claim_id": "circle-calculus-and-proof-carrying-ai-contracts.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts", "claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "coilra-multicoil-rope-and-cyclic-mixers", "claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core", "family_id": "CF-06", "state": "atomized"},
-    {"chapter_id": "executable-specifications-and-lean-proof-envelope", "claim_id": "executable-specifications-and-lean-proof-envelope.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence", "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "capability-thresholds-and-deployment-commitments", "claim_id": "capability-thresholds-and-deployment-commitments.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception", "claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "safety-cases-and-structured-assurance", "claim_id": "safety-cases-and-structured-assurance.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "policy-optimization-and-learning-from-feedback", "claim_id": "policy-optimization-and-learning-from-feedback.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "data-engines-continual-learning-and-unlearning", "claim_id": "data-engines-continual-learning-and-unlearning.core", "family_id": "CF-07", "state": "atomized"},
-    {"chapter_id": "artifact-steward-agents-and-living-project-governance", "claim_id": "artifact-steward-agents-and-living-project-governance.core", "family_id": "CF-08", "state": "atomized"},
-    {"chapter_id": "integrated-reference-architecture", "claim_id": "integrated-reference-architecture.core", "family_id": "CF-08", "state": "atomized"},
-    {"chapter_id": "project-theseus-as-report-first-implementation-reference", "claim_id": "project-theseus-as-report-first-implementation-reference.core", "family_id": "CF-08", "state": "pending_atomization"},
-    {"chapter_id": "prototype-roadmap", "claim_id": "prototype-roadmap.core", "family_id": "CF-08", "state": "pending_atomization"},
-    {"chapter_id": "living-book-methodology", "claim_id": "living-book-methodology.core", "family_id": "CF-08", "state": "pending_atomization"},
-    {"chapter_id": "open-research-agenda-and-bibliography-plan", "claim_id": "open-research-agenda-and-bibliography-plan.core", "family_id": "CF-08", "state": "pending_atomization"}
+    {
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "claim_id": "asi-is-a-stack-not-a-model.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "the-efficient-asi-hypothesis",
+      "claim_id": "the-efficient-asi-hypothesis.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "system-boundaries-and-authority",
+      "claim_id": "system-boundaries-and-authority.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "failure-modes-of-ungoverned-intelligence",
+      "claim_id": "failure-modes-of-ungoverned-intelligence.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "evidence-states-and-claim-discipline",
+      "claim_id": "evidence-states-and-claim-discipline.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "scalable-oversight-and-adversarial-ai-control",
+      "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "human-intent-as-a-formal-input",
+      "claim_id": "human-intent-as-a-formal-input.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "constitutional-alignment-substrate",
+      "claim_id": "constitutional-alignment-substrate.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "moral-uncertainty-and-value-conflict",
+      "claim_id": "moral-uncertainty-and-value-conflict.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "stable-capability-fields",
+      "claim_id": "stable-capability-fields.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "capability-replacement-and-rollback",
+      "claim_id": "capability-replacement-and-rollback.core",
+      "family_id": "CF-01",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "security-kernel-and-digital-scifs",
+      "claim_id": "security-kernel-and-digital-scifs.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
+      "claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "recursive-self-improvement-boundaries",
+      "claim_id": "recursive-self-improvement-boundaries.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "open-ended-improvement-engines",
+      "claim_id": "open-ended-improvement-engines.core",
+      "family_id": "CF-02",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "intent-to-execution-contracts",
+      "claim_id": "intent-to-execution-contracts.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "planning-as-a-control-layer",
+      "claim_id": "planning-as-a-control-layer.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "cognitive-compilation-and-semantic-ir",
+      "claim_id": "cognitive-compilation-and-semantic-ir.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "virtual-context-abi",
+      "claim_id": "virtual-context-abi.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "claim_id": "context-transactions-snapshots-mounts-and-taint.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "claim_id": "verification-bandwidth-and-context-adequacy.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "claim-ledgers-and-belief-revision",
+      "claim_id": "claim-ledgers-and-belief-revision.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "spinoza-verification-and-proof-carrying-claims",
+      "claim_id": "spinoza-verification-and-proof-carrying-claims.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "labor-os-and-typed-jobs",
+      "claim_id": "labor-os-and-typed-jobs.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "claim_id": "artifact-graphs-audit-logs-and-replay.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "inter-stack-protocols-identity-and-economic-exchange",
+      "claim_id": "inter-stack-protocols-identity-and-economic-exchange.core",
+      "family_id": "CF-03",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "procedural-memory-and-cognitive-loop-closure",
+      "claim_id": "procedural-memory-and-cognitive-loop-closure.core",
+      "family_id": "CF-04",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "routing-heads-and-specialist-cores",
+      "claim_id": "routing-heads-and-specialist-cores.core",
+      "family_id": "CF-05",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
+      "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
+      "family_id": "CF-05",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "claim_id": "personal-compute-hives-and-federated-edge-intelligence.core",
+      "family_id": "CF-05",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "compact-generative-systems-and-residual-honesty",
+      "claim_id": "compact-generative-systems-and-residual-honesty.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "fast-generation-architectures",
+      "claim_id": "fast-generation-architectures.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "governed-deliberation-and-test-time-scaling",
+      "claim_id": "governed-deliberation-and-test-time-scaling.core",
+      "family_id": "CF-05",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "claim_id": "rankfold-neuralfold-and-artifact-compression.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "resource-economics-and-token-budgets",
+      "claim_id": "resource-economics-and-token-budgets.core",
+      "family_id": "CF-05",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "mathematical-and-search-substrates",
+      "claim_id": "mathematical-and-search-substrates.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "circle-calculus-and-proof-carrying-ai-contracts",
+      "claim_id": "circle-calculus-and-proof-carrying-ai-contracts.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
+      "claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
+      "claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core",
+      "family_id": "CF-06",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "claim_id": "executable-specifications-and-lean-proof-envelope.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "capability-thresholds-and-deployment-commitments",
+      "claim_id": "capability-thresholds-and-deployment-commitments.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
+      "claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "safety-cases-and-structured-assurance",
+      "claim_id": "safety-cases-and-structured-assurance.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "policy-optimization-and-learning-from-feedback",
+      "claim_id": "policy-optimization-and-learning-from-feedback.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "data-engines-continual-learning-and-unlearning",
+      "claim_id": "data-engines-continual-learning-and-unlearning.core",
+      "family_id": "CF-07",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "artifact-steward-agents-and-living-project-governance",
+      "claim_id": "artifact-steward-agents-and-living-project-governance.core",
+      "family_id": "CF-08",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "integrated-reference-architecture",
+      "claim_id": "integrated-reference-architecture.core",
+      "family_id": "CF-08",
+      "state": "atomized"
+    },
+    {
+      "chapter_id": "project-theseus-as-report-first-implementation-reference",
+      "claim_id": "project-theseus-as-report-first-implementation-reference.core",
+      "family_id": "CF-08",
+      "state": "pending_atomization"
+    },
+    {
+      "chapter_id": "prototype-roadmap",
+      "claim_id": "prototype-roadmap.core",
+      "family_id": "CF-08",
+      "state": "pending_atomization"
+    },
+    {
+      "chapter_id": "living-book-methodology",
+      "claim_id": "living-book-methodology.core",
+      "family_id": "CF-08",
+      "state": "pending_atomization"
+    },
+    {
+      "chapter_id": "open-research-agenda-and-bibliography-plan",
+      "claim_id": "open-research-agenda-and-bibliography-plan.core",
+      "family_id": "CF-08",
+      "state": "pending_atomization"
+    }
   ],
   "external_human_prepublication_required": false,
   "breadth_policy": "existing_chapters_first_distinct_interface_test_required",

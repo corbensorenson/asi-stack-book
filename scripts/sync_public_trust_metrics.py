@@ -16,6 +16,8 @@ from pathlib import Path
 from build_canonical_public_status import build_status, public_status_summary_block
 
 
+from projection_files import ProjectionFiles
+
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
@@ -105,8 +107,9 @@ def no_promotion_side_lane_count() -> int:
     return total
 
 
-def sync_evidence_lane_counts(ids: list[str]) -> None:
-    plan = EVIDENCE_PLAN.read_text(encoding="utf-8")
+def sync_evidence_lane_counts(ids: list[str], files: ProjectionFiles | None = None) -> None:
+    files = files if files is not None else ProjectionFiles()
+    plan = files.text(EVIDENCE_PLAN)
     plan = replace_once(
         plan,
         r"active \d+-chapter evidence-lane backlog",
@@ -122,9 +125,9 @@ def sync_evidence_lane_counts(ids: list[str]) -> None:
         )
     elif "Unselected lanes do not receive fixtures or" not in plan:
         raise ValueError(f"{EVIDENCE_PLAN.relative_to(ROOT)}: missing current unselected-lane boundary")
-    EVIDENCE_PLAN.write_text(plan, encoding="utf-8")
+    files.write(EVIDENCE_PLAN, plan)
 
-    cycle = ACTIVE_CYCLE.read_text(encoding="utf-8")
+    cycle = files.text(ACTIVE_CYCLE)
     selected_section_match = re.search(
         r"## Selected Lanes\n(.*?)\n## Planned-Only Lanes",
         cycle,
@@ -178,11 +181,12 @@ def sync_evidence_lane_counts(ids: list[str]) -> None:
     first = planned_section_match.start(1) + bullets[0].start()
     last = planned_section_match.start(1) + bullets[-1].end()
     cycle = cycle[:first] + "\n".join(f"- `{chapter_id}`" for chapter_id in planned_ids) + cycle[last:]
-    ACTIVE_CYCLE.write_text(cycle, encoding="utf-8")
+    files.write(ACTIVE_CYCLE, cycle)
 
 
-def sync_public_trust_metrics() -> None:
-    if (ROOT / ".git").exists():
+def sync_public_trust_metrics(files: ProjectionFiles | None = None) -> None:
+    files = files if files is not None else ProjectionFiles()
+    if files.exists(ROOT / ".git"):
         status = build_status()
     else:
         # Dynamic-spine fixtures copy the source tree without Git metadata.
@@ -206,9 +210,9 @@ def sync_public_trust_metrics() -> None:
             "write dispositions before synchronizing public metrics"
         )
 
-    sync_evidence_lane_counts(ids)
+    sync_evidence_lane_counts(ids, files=files)
 
-    ledger = NON_CORE_LEDGER.read_text(encoding="utf-8")
+    ledger = files.text(NON_CORE_LEDGER)
     ledger = replace_once(
         ledger,
         r"\| Chapter core claims \| All \d+ remain at `argument`\. \|",
@@ -227,10 +231,10 @@ def sync_public_trust_metrics() -> None:
         f"the active manifest now has {chapters} core claims, all at `argument`",
         NON_CORE_LEDGER,
     )
-    NON_CORE_LEDGER.write_text(ledger, encoding="utf-8")
+    files.write(NON_CORE_LEDGER, ledger)
 
     readme_path = ROOT / "README.md"
-    readme = readme_path.read_text(encoding="utf-8")
+    readme = files.text(readme_path)
     readme = replace_once(
         readme,
         r"[Tt]he inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
@@ -263,10 +267,10 @@ def sync_public_trust_metrics() -> None:
         r"All \d+ chapters now carry a `\.asi-human-only` Human Reading Path bridge",
         f"All {chapters} chapters now carry a `.asi-human-only` Human Reading Path bridge",
     )
-    readme_path.write_text(readme, encoding="utf-8")
+    files.write(readme_path, readme)
 
     index_path = ROOT / "index.qmd"
-    index = index_path.read_text(encoding="utf-8")
+    index = files.text(index_path)
     index = replace_once(
         index,
         r"\d+ public-safe records; \d+/\d+ chapters externally positioned",
@@ -285,10 +289,10 @@ def sync_public_trust_metrics() -> None:
         f"All {chapters} chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
         index_path,
     )
-    index_path.write_text(index, encoding="utf-8")
+    files.write(index_path, index)
 
     publication_path = ROOT / "docs" / "publication_readiness.md"
-    publication = publication_path.read_text(encoding="utf-8")
+    publication = files.text(publication_path)
     publication = replace_once(
         publication,
         r"\d+ of \d+ chapters currently have in-prose `ext_\*` positioning",
@@ -301,7 +305,7 @@ def sync_public_trust_metrics() -> None:
         f"currently has {chapters} source-noted chapters, 0 explicit exceptions",
         publication_path,
     )
-    publication_path.write_text(publication, encoding="utf-8")
+    files.write(publication_path, publication)
 
     block = public_status_summary_block(status)
     for surface in (
@@ -310,14 +314,14 @@ def sync_public_trust_metrics() -> None:
         ROOT / "docs" / "v1_0_candidate_status.md",
         ROOT / "docs" / "publication_readiness.md",
     ):
-        text = surface.read_text(encoding="utf-8")
+        text = files.text(surface)
         pattern = r"<!-- canonical-status:generated-begin -->.*?<!-- canonical-status:generated-end -->"
         updated, count = re.subn(pattern, lambda _: block, text, flags=re.DOTALL)
         if count != 1:
             raise ValueError(
                 f"{surface.relative_to(ROOT)}: expected one canonical generated-status block, found {count}"
             )
-        surface.write_text(updated, encoding="utf-8")
+        files.write(surface, updated)
 
     print(
         "Synchronized public trust metrics: "

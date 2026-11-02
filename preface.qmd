@@ -46,6 +46,36 @@ already proven. The strongest current claim is methodological: a technical book
 about powerful AI can make its own claims, evidence, proofs, tests, residuals,
 and release artifacts auditable as first-class system objects.
 
+## Three questions to carry through the book
+
+The research program concentrates on three proposed contributions. The 89
+technical chapters supply their distinct responsibilities; they are not 89
+independent discoveries. Each contribution must earn its own evidence.
+
+- **Governed-cognition interface contracts:** can a request pass from intent
+  through context, planning, verification, and execution while preserving who
+  may act, when the system must stop, and who owns recovery? Follow
+  [Intent-to-Execution Contracts](chapters/intent-to-execution-contracts.qmd)
+  and the integrated request trace for the proposed joins.
+- **Public claim-state discipline:** can a reader distinguish an argument,
+  a source-reported result, a bounded implementation, and a result that
+  actually warrants a stronger claim? Follow
+  [Evidence States and Claim Discipline](chapters/evidence-states-and-claim-discipline.qmd)
+  for the rules that prevent those categories from silently merging.
+- **Record/reality reconciliation and residual honesty:** does the recorded
+  success correspond to the observed effect, and what remains unresolved
+  after repair or compensation? Follow
+  [Artifact Graphs, Audit Logs, and Replay](chapters/artifact-graphs-audit-logs-and-replay.qmd)
+  for lineage, observation, and the limits of replay.
+
+These questions connect the architecture to decisions a reader can challenge.
+A conventional workflow may preserve the same responsibilities more simply;
+ordinary change control may keep the claims clear; existing operational records
+may expose the effects and unresolved obligations. The stack earns additional
+structure only where it improves a consequential join or its inspection at an
+acceptable total cost. Publishing this synthesis does not establish novelty,
+general efficiency, deployed safety, or the adequacy of every component.
+
 ## What this book is not
 
 It is not a claim that the architecture is complete, deployed, benchmark-proven,
@@ -58,7 +88,7 @@ a green validator, a source note, or a formal predicate does not by itself
 promote a chapter core claim. Claims move only through the support-state
 process recorded in the appendices and evidence-transition records.
 
-## Claim labels
+## Claim labels and support states {#claim-labels}
 
 Claims use explicit support states: `unsupported`, `argument`, `source-derived`, `prototype-backed`, `synthetic-test-backed`, `empirical-test-backed`, and `external-literature-backed`.
 

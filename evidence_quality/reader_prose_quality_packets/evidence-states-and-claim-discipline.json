@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "evidence-states-and-claim-discipline",
   "chapter_file": "chapters/evidence-states-and-claim-discipline.qmd",
-  "chapter_sha256": "e24585e83cb865153e52990bc17f13de599ddbc40408bb685235dc0500d74d49",
+  "chapter_sha256": "7ad642dbf4438106f451f0e3f1f88a573ab3cb28187f803c4aabe3302e7be051",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-04-evidence-and-noninheritance",
   "review_state": "digest_bound_editorial_pass",
@@ -30,9 +30,9 @@
     ],
     "maximum_inference": "The frozen implementation failed its configured broad-efficiency test; mechanism, architecture, and parent claims remain untested because implementation competence was inadequate."
   },
-  "counterexample_or_simpler_baseline": "The result-label baseline reads \u201crefuted\u201d upward through the claim hierarchy. The transition ledger keeps the raw failure but narrows its usable scope after competence review.",
+  "counterexample_or_simpler_baseline": "The result-label baseline reads “refuted” upward through the claim hierarchy. The transition ledger keeps the raw failure but narrows its usable scope after competence review.",
   "readable_claim": "Evidence changes a claim only through a scoped transition; a failed implementation can refute that implementation without refuting the architecture it attempted to test.",
-  "normative_rule": "Give every claim stable identity, exact scope, support state, evidence-role vector, prospective transition gate, negative-evidence trigger, and immutable history. Record raw failures first, then audit implementation competence and narrow the affected scope before assigning refuted, downgraded, or untested states.",
+  "normative_rule": "Give each material claim stable identity, exact scope, support state, evidence roles, a prospective transition gate, adverse-evidence triggers, and retained version history. Preserve permitted failure evidence first; record payload restrictions and replay limits where retention is not allowed. Audit instrument and implementation competence before assigning refuted, downgraded, or untested states. History and current reliance remain different records.",
   "formal_binding": {
     "claim_id": "evidence-states-and-claim-discipline.core",
     "support_state": "argument",
@@ -45,7 +45,7 @@
   ],
   "caveat_consolidation": {
     "local_caveat": "The worked KERC transition states its exact N1 ceiling rather than repeating generic failure disclaimers.",
-    "consolidated_disposition": "Raw observations, implementation competence, mechanism scope, parent claims, support states, transitions, negative evidence, refutation, support, and release remain distinct.",
+    "consolidated_disposition": "Raw observations, implementation competence, mechanism scope, parent claims, support states, transitions, negative evidence, refutation, support, and release remain distinct. All source/proof/test paths require a named accepted transition; adverse holds differ from permanent refutation, and retained history obeys payload rights. Failed replay machinery is not a counterexample.",
     "distinct_limitations_preserved": true
   },
   "bookkeeping_surface_disposition": "The 714.0, 73.25, and 0.500000 observations stay reader-facing because they are the claim-discipline example; full ledgers remain formal.",
@@ -65,6 +65,7 @@
   "non_claims": [
     "KERC N1 does not refute Kernel English or the broader architecture.",
     "Retaining a negative result does not make the original implementation competent.",
-    "The editorial revision does not move support or release state."
+    "The editorial revision does not move support or release state.",
+    "2026-10-11 scoped terminology/diagram reconciliation binds changed prose, with previous atom scopes and frozen proof/experiment results preserved. This is not a new source review, theorem, runtime trial, support transition, independent review, or release."
   ]
 }

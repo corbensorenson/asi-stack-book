@@ -115,7 +115,40 @@
       "review_due_on": "2026-10-08",
       "review_method": "Review the official installer source at the selected commit, independently calculate its SHA-256, and rerun Lean plus release gates.",
       "update_authority": "A reviewed pull request must update the commit URL, digest, workflow, this inventory, prose ledger, and rollback notes atomically.",
-      "residual": "The installer digest identifies downloaded bytes but does not prove those bytes benign or pin the packages, runner, network, and toolchain beneath them."
+      "residual": "The installer digest identifies downloaded bytes but does not prove those bytes benign or pin the packages, runner, network, and toolchain beneath them.",
+      "runtime_binary": {
+        "version": "v4.2.4",
+        "source_commit": "227caca133724d5516bee25c2aeb3e609478f2d8",
+        "observed_on": "2026-10-03",
+        "qualification_state": "archive_integrity_verified_linux_installer_smoke_passed_full_tiers_pending",
+        "source_script_role": "retained_review_context_not_executed",
+        "artifacts": [
+          {
+            "target": "aarch64-apple-darwin",
+            "url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-aarch64-apple-darwin.tar.gz",
+            "sha256": "7ad829861392c718dfebde3a83b5c8508df47be02af68894b094b0b3952616e5",
+            "bytes": 2190845
+          },
+          {
+            "target": "aarch64-unknown-linux-gnu",
+            "url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-aarch64-unknown-linux-gnu.tar.gz",
+            "sha256": "05febd124d84ebf994b2e7479922a5650b1e950c17ae3bd1ddd776b65bb72bf9",
+            "bytes": 5131114
+          },
+          {
+            "target": "x86_64-apple-darwin",
+            "url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-apple-darwin.tar.gz",
+            "sha256": "8a340b309d8ed2e96f930761fa223b3af57a38f5d253b53ac90293c9516f8cd4",
+            "bytes": 2330818
+          },
+          {
+            "target": "x86_64-unknown-linux-gnu",
+            "url": "https://github.com/leanprover/elan/releases/download/v4.2.4/elan-x86_64-unknown-linux-gnu.tar.gz",
+            "sha256": "42b94d4244e8353142c456ec0e4ca6528fd898a6c604d4059f494e706e431f63",
+            "bytes": 4996571
+          }
+        ]
+      }
     }
   ],
   "non_claims": [

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "fast-generation-architectures",
   "chapter_file": "chapters/fast-generation-architectures.qmd",
-  "chapter_sha256": "4f55e375f67ebf3b9d434ecc23918f3c5339dda45090114cc5cb7e2a0940c4ad",
+  "chapter_sha256": "db35da182c21deaef62e7f4c67615fba65dd05ebc0503dc427dd22c3e57abbd9",
   "chapter_role": "speculative-research",
   "reader_spine_unit": "unit-20-resource-and-recovery-economics",
   "review_state": "digest_bound_editorial_pass",
@@ -15,15 +15,59 @@
     "residual_owner": "The serving and custody owners retain corrupted shards, scratch files, shared-prefix leases, KV pages, partial outputs, failed cleanup, cache pollution, and recovery obligations.",
     "evidence_boundary": "The worked request is an architecture trace rather than a local AirLLM, FlexGen, or paging benchmark; it establishes no speed, memory, quality, energy, or hardware result."
   },
-  "worked_trace": {"heading": "Worked request: SSD shards to closure", "state_labels": ["conversion_and_manifest", "request_admission", "stream_and_prefetch", "decode_accounting", "closure_and_residual"], "source_or_fixture_refs": ["chapters/fast-generation-architectures.qmd", "docs/heterogeneous_inference_memory_and_paging_research_2026_07_23.md", "sources/source_notes/ext_airllm_2023.md"], "maximum_inference": "The request trace specifies an honest paging and closure contract; it does not reproduce a paging system or establish quality-equivalent latency, throughput, memory, energy, or useful-speed improvement."},
+  "worked_trace": {
+    "heading": "Worked request: SSD shards to closure",
+    "state_labels": [
+      "conversion_and_manifest",
+      "request_admission",
+      "stream_and_prefetch",
+      "decode_accounting",
+      "closure_and_residual"
+    ],
+    "source_or_fixture_refs": [
+      "chapters/fast-generation-architectures.qmd",
+      "docs/heterogeneous_inference_memory_and_paging_research_2026_07_23.md",
+      "sources/source_notes/ext_airllm_2023.md"
+    ],
+    "maximum_inference": "The request trace specifies an honest paging and closure contract; it does not reproduce a paging system or establish quality-equivalent latency, throughput, memory, energy, or useful-speed improvement."
+  },
   "counterexample_or_simpler_baseline": "The smallest fully resident model meeting the task contract is the strongest baseline, followed by unified-memory and ordinary offload paths; streaming must beat them after transfer, verification, recovery, and residual cost.",
   "readable_claim": "“The model emitted a token” is therefore an intermediate event, not the end of the memory lifecycle.",
   "normative_rule": "A competent comparison begins with the smallest fully resident model that meets the task contract, a CPU or unified-memory path, ordinary CPU/GPU offload, layer streaming, planned placement where available, exact and predictive KV variants, architecture-compatible sparse placement, and a prediction-disabled fallback.",
-  "formal_binding": {"claim_id": "fast-generation-architectures.core", "support_state": "argument", "anchor": "Fast-generation admission is consumer-, workload-, model-"},
-  "claim_atom_and_source_links": ["fast-generation-architectures.core", "ext_airllm_2023", "ext_flexgen_2023", "ext_speculative_decoding_2022"],
-  "caveat_consolidation": {"local_caveat": "The worked request is explicitly an architecture path and does not convert source-reported paging feasibility into a local result.", "consolidated_disposition": "Model, workload, hardware, quality, verifier, cache, memory, bandwidth, energy, recovery, and deployment limits remain in the qualification and evidence sections.", "distinct_limitations_preserved": true},
+  "formal_binding": {
+    "claim_id": "fast-generation-architectures.core",
+    "support_state": "argument",
+    "anchor": "Fast-generation admission is consumer-, workload-, model-"
+  },
+  "claim_atom_and_source_links": [
+    "fast-generation-architectures.core",
+    "ext_airllm_2023",
+    "ext_flexgen_2023",
+    "ext_speculative_decoding_2022"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The worked request is explicitly an architecture path and does not convert source-reported paging feasibility into a local result.",
+    "consolidated_disposition": "Model, workload, hardware, quality, verifier, cache, memory, bandwidth, energy, recovery, and deployment limits remain in the qualification and evidence sections.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "The prose trace retains only lifecycle-changing measurements; large metric matrices and source comparisons remain in qualification and evidence surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The emitted-token reader claim gives a short entry into the comprehensive admission contract.", "hedge_disposition": "The local no-benchmark boundary remains once while distinct failure and qualification limits stay actionable.", "table_disposition": "The request is prose-led; metric inventories remain reference material."},
-  "non_claims": ["The trace does not reproduce AirLLM, FlexGen, or any paging implementation.", "The trace does not establish useful speed, quality, memory, energy, or deployment gains.", "The editorial packet does not move support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The emitted-token reader claim gives a short entry into the comprehensive admission contract.",
+    "hedge_disposition": "The local no-benchmark boundary remains once while distinct failure and qualification limits stay actionable.",
+    "table_disposition": "The request is prose-led; metric inventories remain reference material."
+  },
+  "non_claims": [
+    "The trace does not reproduce AirLLM, FlexGen, or any paging implementation.",
+    "The trace does not establish useful speed, quality, memory, energy, or deployment gains.",
+    "The editorial packet does not move support or release state.",
+    "2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval."
+  ]
 }

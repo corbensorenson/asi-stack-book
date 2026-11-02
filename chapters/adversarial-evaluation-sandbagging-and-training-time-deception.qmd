@@ -255,8 +255,10 @@ finding; it would not erase the original selection context from history.
 - Policy Optimization consumes only evaluation records that preserve reward,
   selection, and monitoring conditions; it keeps update mechanics and rollback.
 - Artifact Graphs retain evaluator, monitor, prompt, trace, and result lineage.
-- SCF and Evidence States retain the authority to promote, quarantine, or
-  narrow a claim after an evaluation-integrity finding.
+- Stable Capability Fields owns capability identity; Readiness Gates decides
+  use qualification and quarantine; Evidence States owns accepted support
+  transitions; Claim Ledgers preserves claim identity and belief history. An
+  integrity finding supplies a bounded input, not a decision in those states.
 
 The complete twelve-owner boundary keeps Benchmark Instrument validity,
 Capability Commitments, Policy Optimization, Scalable Oversight and Control,
@@ -272,9 +274,11 @@ a safety case, authorize release, or rewrite public truth.
 These interfaces prevent a single owner from laundering its own observations.
 Benchmark Ratchets can say what was tested, Artifact Graphs can preserve what
 happened, and Policy Optimization can propose a change, but none can silently
-declare the change safe. The evidence ledger carries a discrepancy into the
-promotion decision, where SCF can require a rerun, a smaller scope, or explicit
-residual ownership.
+declare the change safe. A discrepancy enters the
+appropriate qualification or support review: Readiness can require new
+evaluation, a narrower use or explicit residual custody, while Evidence States
+adjudicates accepted claim support. Neither decision follows automatically
+from the discrepancy.
 
 ## Invariants
 

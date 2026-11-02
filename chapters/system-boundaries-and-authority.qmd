@@ -4,7 +4,7 @@ chapter_id: "system-boundaries-and-authority"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-10-11"
 primary_sources:
   - "viea"
   - "scf"
@@ -53,15 +53,23 @@ It follows the efficiency chapter because the cheapest adequate route is useful 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** The ambient-capability baseline reuses one credential for both helpful edits. The authority-tuple path allows only the operation whose principal, target, scope, ceiling, and time match.
+**Concrete lens.** In a hypothetical maintenance case, one credential can edit
+two repositories but the caller's grant covers only one. The second edit is
+ineligible unless another applicable grant admits it. A standing policy or an
+already authorized session can supply that grant; helpfulness alone cannot.
 
-The stack now has an identity and an efficiency claim to govern the work ahead. The authority boundary prevents efficiency from turning into ambient permission. A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.
+This chapter owns the permission decision: a requested operation and current
+grant/policy state enter; scoped admission, denial, or escalation with a bound
+record leaves. [Runtime adapters](runtime-adapters-tool-permissions-and-human-approval.qmd)
+own execution and observation; [operations](governed-operations-incident-command-and-graceful-degradation.qmd)
+own recovery after an effect. Those neighbors cannot turn a well-formed grant
+into evidence that enforcement or recovery actually occurred.
 
-Here, "can" and "may" separate. The architecture can contain very capable components, but the system remains governed only if each transition carries an explicit boundary, grant, denial path, and audit trail. That separation lets the stack stay useful while still treating refusal as a successful control outcome.
-
-Authority is therefore a first-class artifact: something granted, scoped, recorded, revoked, and reviewed instead of inferred from capability. The payoff is a system that can say no even when it knows how.
-
-That refusal path is part of the system's intelligence, not an interruption of it. Authority is real only when overreach has a recorded stop. That stop makes permission real because denied authority must stay denied.
+The common [noninheritance rule](asi-is-a-stack-not-a-model.qmd#what-the-stack-thesis-commits-us-to)
+is taught in the opening chapter. Here its specific consequence is that route
+selection must not borrow an executor's ambient power. Correct refusal is a
+useful control outcome, while an incorrect refusal is still a defect to count.
+A denial record alone proves neither classification accuracy nor enforcement.
 :::
 
 ## Problem
@@ -74,15 +82,26 @@ Authority is not a mood, trust score, or model reputation. It is a typed capabil
 
 Within the book's governed-cognition pattern, the permission layer owns the can/may delta. The shared governance shape becomes usable only when it can distinguish competence from permission, carry revocation forward, and make denial evidence durable. Other layers reuse permission fields; this layer defines why permission cannot be inferred from capability, context, route quality, source access, or user enthusiasm.
 
-Refusal and escalation should behave like normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence names the boundary the stack must protect. It lets the architecture remain useful under pressure, because a denial is not a failure to be intelligent; it is evidence that the correct authority boundary held.
+Refusal and escalation should behave like normal engineering outcomes. A well-governed system should be able to say: the plan is coherent, the source is available, the model is capable, and the action is still not authorized. That sentence names the boundary the stack must protect. It lets the architecture remain useful under pressure, when the denial is correct and the observed target remains unchanged. A logged
+refusal alone does not establish either condition.
 
 ## Why existing approaches are insufficient
 
 Role labels, prompts, and ambient process identity do not by themselves distinguish read, transform, disclose, write, execute, and approve authority or enforce delegation, expiry, revocation, and cross-domain approval.
 
-Prompt rules and role labels are too weak to carry authority. "You are an assistant" does not say whether the system can read a private source, call a shell, modify a file, push a commit, spend money, disclose a secret, update an evaluator, or approve its own replacement. Tool wrappers help, but only if the wrapper is part of a typed authority model rather than a list of convenient function names.
+Prompt rules and role labels are too weak to carry authority. "You are an assistant" does not say whether the system can read a private source, call a shell, modify a file, push a commit, spend money, disclose a secret, update an evaluator, or approve its own replacement. Tool wrappers help when they mediate the actual operation under an applicable
+permission rule. That rule can live in conventional capability security, access
+control, or a transactional workflow; it need not adopt this book’s record format.
 
-The external baselines locate the gap rather than solving it. `ext_nist_ai_rmf_1_0_2023` and `ext_frontier_ai_regulation_2023` provide risk-management and frontier-governance vocabulary around roles, lifecycle duties, assessment, and oversight, while `ext_optimal_policies_power_2019` gives a formal warning that capable agents can tend toward option preservation and power seeking under broad objectives. Security and systems sources sharpen the engineering boundary: `ext_saltzer_schroeder_protection_1975` gives least-privilege and complete-mediation comparators, `ext_capability_based_computer_systems_1984` grounds capability-style authority-bearing references, and `ext_confused_deputy_hardy_1988` names the failure where a deputy exercises broader authority on behalf of a lower-authority requester. Authority records translate that pressure into typed permission boundaries; the external sources do not prove the record design enforces them.
+The external comparators supply established controls and comparison methods. `ext_nist_ai_rmf_1_0_2023` and `ext_frontier_ai_regulation_2023` provide risk-management and frontier-governance vocabulary around roles, lifecycle duties, assessment, and oversight, while `ext_optimal_policies_power_2019` gives a formal warning that capable agents can tend toward option preservation and power seeking under broad objectives. Security and systems sources sharpen the engineering boundary: `ext_saltzer_schroeder_protection_1975` gives least-privilege and complete-mediation comparators, `ext_capability_based_computer_systems_1984` grounds capability-style authority-bearing references, and `ext_confused_deputy_hardy_1988` names the failure where a deputy exercises broader authority on behalf of a lower-authority requester. Authority records translate that pressure into typed permission boundaries; the external sources do not prove the record design enforces them.
+
+A competent conventional route can already preserve this boundary. For a
+static repository, a target-scoped service account, protected branch rules,
+existing approval policy, and a queried effect log may suffice. Compare those
+controls with the proposed tuple under the same tasks and permissions. The
+tuple’s candidate value is joining request, domain, budget, grant, trace, and
+replay identity across changing consumers; it is a composition to test, not
+proof that existing authorization mechanisms lack such joins.
 
 The recurring failure is permission collapse. Read access becomes write access. Planning becomes execution. A source summary becomes authorization. A benchmark result becomes promotion authority. A generated patch becomes accepted code. The ASI Stack treats each collapse as a missing transition record, not as an inevitable side effect of autonomy. When the record is missing, the architecture should not infer permission from competence, convenience, or user enthusiasm.
 
@@ -94,13 +113,27 @@ Permission collapse becomes more dangerous when the system improves itself. A re
 
 **Reader claim.** Being able to call a tool is not permission to use it; the exact principal, operation, target, scope, ceiling, and time must still match an active grant.
 
-**Operational rule.** Recheck the full authority tuple immediately before effect execution and bind the decision to an effect or denial receipt. Missing, expired, revoked, over-ceiling, or scope-mismatched authority produces no effect and cannot be repaired by model confidence.
+**Operational rule.** Admit an effect only under a current, scope-matching grant
+and caller ceiling, and bind the decision to a use or denial record. In the
+finite model, missing, expired, revoked, over-ceiling, or scope-mismatched
+authority rejects the transition. Runtime no-effect claims additionally require
+qualified enforcement and observation; model confidence cannot supply a grant.
+
+A preflight check alone cannot exclude a later revocation race. A local design
+can serialize grant use and revocation at the effect commit: revocation first
+rejects the use; an admitted effect first remains a historical effect with any
+recovery duties. A remote worker may not yet know about revocation. Its allowed
+offline envelope, expiry, and reconciliation policy must be qualified for the
+claim; an immediately revocable action cannot simply assume fresh state during
+a partition. These are proposed ordering conditions, not a new runtime trial.
 
 ### Worked authority check: a scope widens between plan and effect
 
-A maintenance agent is granted permission to update generated HTML under one repository’s publication directory. During execution it discovers a stale link in a neighboring repository and proposes to repair both sites with the same credential. The second edit is technically possible and arguably helpful, but its target is outside the active grant. The authority layer allows the first exact operation, emits its effect receipt, and denies the widened target without mutating it. If broader work is desirable, a new principal-approved grant must name that repository and operation.
+In the hypothetical case, a maintenance agent is granted permission to update generated HTML under one repository’s publication directory. During execution it discovers a stale link in a neighboring repository and proposes to repair both sites with the same credential. The second edit is technically possible and arguably helpful, but its target is outside the active grant. The authority layer allows the first exact operation, emits its effect receipt, and denies the widened target without mutating it. If broader work is desirable, first check whether another current grant already
+admits that repository and operation. Obtain new authorization only where the
+applicable scope is genuinely missing.
 
-The local refinement exercises six authority fixtures, three effect traces containing 20 events, and a two-event delegation trace. It checks 26 batch compositions, rejects 67 state-interfering mutations and 20 missing or altered transport fields, and preserves the caller ceiling across allowed and denied paths. Those checks show the intended finite refusal behavior. They trust the recorded principal, grant, observer, and receipt fields, so they do not establish deployed enforcement, credential security, or complete observation.
+The local refinement exercises six authority fixtures, three effect traces containing 20 events, and a two-event delegation trace. It checks 26 batch compositions, rejects 67 state-noninterfering semantic mutations and 20 missing or altered transport fields, and preserves the caller ceiling across allowed and denied paths. Those checks show the intended finite refusal behavior. They trust the recorded principal, grant, observer, and receipt fields, so they do not establish deployed enforcement, credential security, or complete observation.
 
 The claim remains at `argument` support. VIEA, SCF, Talos, Ladon/Manhattan, and GenesisCode all push toward typed boundaries and effect control, and those five mappings now have reviewed local raw-cache passage references in the manifest. Synthetic denial, permission-separation, adapter-level confused-deputy, and revoked-receipt probes now exercise narrow record behavior; the public claim strengthens beyond architectural argument only when deployed enforcement artifacts, live adapter traces, or accepted narrower evidence-transition records exist.
 
@@ -130,7 +163,9 @@ Appendix C now records exact source-note mappings for this core authority claim,
 
 Authority is the stack's answer to the question "who may cause an effect?" VIEA separates intent, contracts, runtime adapters, and ledgers. SCF binds stable capability identity to qualifications, grants, evaluator policy, lifecycle events, and recovery. Talos keeps execution inside typed jobs, approval gates, evidence, audit, and replay. Ladon/Manhattan keeps secrets behind handles, GenesisCode keeps effects behind capability boundaries and protocol seals, and MoECOT keeps specialist lanes inside a fail-closed control plane.
 
-An Authority Transition Record is the mechanism that must exist before a layer can cross a boundary.
+An Authority Transition Record is this chapter’s proposed representation of an
+admitted handoff. An existing permission service can provide equivalent bound
+information; a new form is not itself the enforcement mechanism.
 
 This record is the authority-specific projection of the shared Governed
 Transition Calculus defined by Executable Specifications. Its source and target
@@ -141,31 +176,44 @@ the required checks, receipts, denials, downstream acknowledgements, and
 rollback or retirement path. The projection is intentionally asymmetric:
 System Boundaries may add stricter authority fields, but neither a generic
 transition record nor a complete authority tuple may claim that a real effect
-was enforced without an independently grounded effect receipt.
+was enforced without appropriate observations of the admitted effect boundary.
+A receipt can contain or reference those observations; its name or signature
+does not independently establish them.
 
 ```{mermaid}
-flowchart LR
+flowchart TD
+  accTitle: Proposed authority admission gate
+  accDescr: A requested operation first checks its caller ceiling. Failure denies the request. Only a passing ceiling proceeds to a current matching grant check. Grant failure also denies the request. Both must pass before executor handoff; use or denial records feed the evidence ledger. This logical map does not establish runtime enforcement or revocation ordering.
   A["Principal / layer"] --> B["Requested operation"]
   B --> C["Authority ceiling"]
-  B --> D["Required grant"]
   C --> E{"Within ceiling?"}
-  D --> F{"Grant present<br/>and unrevoked?"}
   E -- "no" --> G["Deny + audit"]
+  E -- "yes" --> D["Required grant"]
+  D --> F{"Grant present,<br/>matching and unrevoked?"}
   F -- "no" --> G
-  E -- "yes" --> H["Authorized handoff"]
-  F -- "yes" --> H
+  F -- "yes" --> H["Authorized handoff"]
   H --> I["Executor / tool / field"]
   I --> J["Effect receipt"]
   J --> K["Evidence ledger"]
+  G --> K
 ```
 
-**How to read the authority gate:** The authority path treats denial as a real outcome, not a failed user experience. A request crosses the boundary only when both the ceiling and grant checks pass, and either path leaves an effect or denial receipt for the evidence ledger.
+**How to read the authority gate:** The proposed gate requires the ceiling check and then the matching current
+grant check; neither pass can bypass the other. The accepted path reaches the
+executor and a use record; either rejection reaches a denial record. These
+records supply evidence for review, not proof of enforcement or complete
+observation. The temporal ordering condition is stated above.
 
-The transition record makes principals, ceilings, grants, revocations, and handoff contracts explicit before an effect can occur. It also separates knowledge access from action authority. A layer may know that an operation would be helpful, or may read text that requests the operation, without receiving the grant to execute it. Missing authority therefore becomes a detectable denial or escalation record rather than implicit permission.
+The proposed transition record makes principals, ceilings, grants, revocations,
+and handoff contracts explicit before admission. It also separates knowledge access from action authority. A layer may know that an operation would be helpful, or may read text that requests the operation, without receiving the grant to execute it. Missing authority therefore becomes a detectable denial or escalation record rather than implicit permission.
 
 The record has four jobs. First, it says who or what is asking. Second, it names the operation and target boundary. Third, it checks the operation against the active ceiling and grant set. Fourth, it records the denial, authorized handoff, or effect receipt. A missing grant is not a soft warning; it is a failed transition. That failed transition is useful evidence: it identifies the exact boundary that would need governance review before the request can proceed.
 
-This model also keeps authority out of semantic similarity. A model may infer that an action is helpful. That inference is not a grant. A retrieved document may contain instructions. That text is not a grant. A specialist may be high quality. Quality is not a grant. The grant is a record issued by governance or an authorized caller under a bounded delegation rule. This is the authority analogue of the route ledger introduced earlier: both replace impressions with inspectable records.
+Semantic similarity and specialist quality do not issue permission. A retrieved
+instruction needs an authenticated, applicable authorization relation if it is
+to convey a grant; ordinary task data supplies none automatically. An authorized
+human request or standing policy can already admit bounded work. Bind that
+relation rather than requiring a repeated approval ritual.
 
 Authority has a lifecycle:
 
@@ -173,7 +221,7 @@ Authority has a lifecycle:
 stateDiagram-v2
   [*] --> Requested
   Requested --> Denied: over ceiling or missing grant
-  Requested --> Granted: scoped approval
+  Requested --> Granted: applicable scoped grant
   Granted --> Delegated: bounded handoff
   Delegated --> Used: adapter/effect call
   Used --> Receipted: effect receipt
@@ -184,7 +232,9 @@ stateDiagram-v2
   Denied --> [*]
 ```
 
-The lifecycle makes expiry and revocation part of the normal path. A grant is not a permanent property of a model or layer. It is scoped to a principal, operation, target boundary, time or epoch, approval state, and evidence obligation. Delegation can narrow that scope but should not silently widen it.
+The lifecycle makes expiry and revocation part of the normal path. A grant is not a permanent property of a model or layer. It is scoped to a principal, operation, target boundary, time or epoch, approval state, and evidence obligation. Delegation can narrow that scope but should not silently widen it. This diagram
+closes one authority-use record; a receipted use can still leave an unresolved
+external effect, and revocation does not erase prior use.
 
 ### One authority tuple across execution domains
 
@@ -194,9 +244,13 @@ The **unified authority tuple** therefore binds:
 
 `(principal, execution domain, operation, target, permission class, scope, budget account, trace, replay identity, grant, policy version, revocation epoch, expiry)`.
 
-That tuple is the authority identity for one possible effect. Planning may request it, routing may select an executor, and an adapter may realize it, but none may replace a field with a more convenient local identifier. Delegation inherits the grant, budget account, trace, and revocation epoch while narrowing scope. Replay identity binds trace, grant, and revocation epoch so a historical receipt cannot silently authorize a new epoch.
+That tuple is the authority identity for one possible effect. Planning may request it, routing may select an executor, and an adapter may realize it, but none may replace a field with a more convenient local identifier. An admitted delegation retains its parent-grant reference, budget account, trace,
+and revocation lineage while narrowing scope. The child’s authorization follows
+that declared delegation rule; it is not ambient credential inheritance. Replay identity binds trace, grant, and revocation epoch so a historical receipt cannot silently authorize a new epoch.
 
-Execution-domain ownership answers a related question: who owns the place where effects occur? The domain record distinguishes domain owner, executor, budget owner, trace owner, and revocation authority. Those roles may be implemented by the same process in a small system, but their responsibilities remain separate. A cross-domain handoff requires the target domain owner's approval; possession of a source-domain grant is not automatic authority in the target.
+Execution-domain ownership answers a related question: who owns the place where effects occur? The domain record distinguishes domain owner, executor, budget owner, trace owner, and revocation authority. Those roles may be implemented by the same process in a small system, but their responsibilities remain separate. A cross-domain handoff requires applicable target-domain authorization, which may
+be a standing grant. Possession of a source-domain grant is not automatic
+authority in the target.
 
 ```{mermaid}
 flowchart LR
@@ -318,7 +372,12 @@ Governance issues ceilings, execution checks permissions, and evidence records a
 
 In a mature deployment, denial receipts matter as much as grants because missing authority must leave an inspectable trail.
 
-This authority type system is still an architectural target. The synthetic harnesses exercise narrow transition-gate, ambient-authority, revoked-receipt, expired-approval, SCIF inactive approval, and repository trace behavior, but authority support remains at `argument` until deployed denial paths, live revocation propagation, runtime adapter enforcement, tool-call traces, and adversarial confused-deputy probes show that authority cannot expand silently by implication.
+This authority type system remains an architectural target. Synthetic harnesses
+and local effect traces exercise the named bounded gates; they do not qualify
+a deployed adapter or distributed revocation service. Stronger claims need
+claim-specific enforcement, timing, and observation evidence plus an accepted
+transition. Neither a type declaration nor deployment alone moves core support
+from `argument`.
 
 ## Codex test plan
 

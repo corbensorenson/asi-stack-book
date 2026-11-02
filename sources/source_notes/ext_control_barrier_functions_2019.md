@@ -50,3 +50,18 @@ implemented a barrier controller or verified its assumptions.
 
 - Which low-energy plant can provide an independently measured positive control?
 - How should barrier infeasibility route to fallback and effect residuals?
+
+## Selected passage review: 2026-10-10
+
+Reviewed [arXiv:1903.11199v1](https://arxiv.org/html/1903.11199v1), dated March
+27, 2019: Section II's model, II-B Definition 1 and Theorem 2, II-C's filter,
+and Section III's actuation constraints. This extends the original abstract
+review for reader Unit 10; it is not a full-text or later-version review.
+
+Theorem 2 relates forward invariance to the specified dynamics, barrier
+regularity, and admissible Lipschitz controller. II-C's initial filter assumes
+unrestricted inputs; III considers constrained inputs and safe subsets.
+
+These passages do not establish a sampled implementation, sensor accuracy,
+gantry safety, stop-path performance, or local reproduction. No controller,
+plant, or theorem implementation ran in this passage-review pass.

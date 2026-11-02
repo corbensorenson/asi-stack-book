@@ -3,7 +3,8 @@ title: "Evidence States and Scalable Oversight"
 unit_id: "unit-05"
 ---
 
-The paper package from the previous chapter is now contained. Its manuscript
+Continue the hypothetical paper package from Unit 4, choosing its optional
+execution route for this example. Assume the package is now contained. Its manuscript
 has been preserved, its code has run in a bounded environment, its model and
 dependency identities are known, and its release status has not been inferred
 from local success. One test passes. The proposed adapter produces the expected
@@ -76,7 +77,8 @@ architecture.
 
 This narrowing is not pedantry. It protects useful evidence. When a broad
 claim later fails, the exact passing observation can remain true. When a
-dependency changes, the result can expire without erasing its history. When a
+dependency changes, eligibility to reuse the result can expire without changing
+what the historical run actually observed. When a
 better evaluator reveals that the measured property was wrong, the book can
 revise the interpretation while retaining the original artifact. Evidence
 becomes more reusable when its maximum inference is explicit.
@@ -141,13 +143,25 @@ under which limit?
 
 ## Support States Are Not a Confidence Score
 
-The book uses support states, but they should not be read as one universal
-ladder from weak to strong. Source-derived, mechanized, prototype-backed,
-synthetic-test-backed, empirical-test-backed, and external-literature-backed
-evidence answer different questions.
+The book separates a **claim label** from a **support state**. Labels such as
+`Mechanized`, `Measured`, and `Design rationale` describe the kind of statement.
+States such as `argument`, `source-derived`, `prototype-backed`,
+`synthetic-test-backed`, `empirical-test-backed`, and `external-literature-backed`
+describe its recorded support. `Mechanized` is not a support state. Implementing
+a predicate does not by itself establish that the represented event occurred.
 
-A source note can establish what another author argued or measured. It does
-not reproduce the result locally. A proof can establish a theorem inside its
+Neither dimension is one universal ladder from weak to strong. A finite
+invariant can be expressed in executable form while its applicability to a
+natural workflow still rests on an argument. A measured observation can have
+synthetic support without testing a real deployment. Those are two
+classifications of a scoped claim, not two scores to add together. The
+[preface's definitions](https://corbensorenson.github.io/asi-stack-book/preface.html#claim-labels)
+and [claim matrix](https://corbensorenson.github.io/asi-stack-book/appendices/C_claim_evidence_matrix.html)
+retain the canonical vocabulary and actual assignments.
+
+Review of accessible source passages can establish what another author reports
+arguing or measuring. A source note preserves that attribution; it does not
+reproduce the result locally. A proof can establish a theorem inside its
 formal assumptions. It does not show that the assumptions describe the
 runtime. A synthetic fixture can test a transition or rejection path exactly.
 It may have little transfer to natural work. An empirical result can measure a
@@ -172,8 +186,9 @@ reason a reviewer should trust or distrust the result.
 
 The evidence cell also retains negative and null evidence. A campaign that
 finds no advantage against a strong baseline can leave the claim unchanged,
-narrow it, or refute a precise subclaim. An inconclusive attempt can establish
-that the instrument was inadequate. A failure to reproduce can reveal a
+narrow it, or refute a precise subclaim. An inconclusive attempt may reveal instrument
+inadequacy, or it may leave too little precision despite a qualified instrument.
+Those dispositions need different follow-up decisions. A failure to reproduce can reveal a
 configuration dependency without resolving which implementation is correct.
 These are not embarrassing leftovers. They are part of the denominator that
 makes future positive results interpretable.
@@ -194,7 +209,7 @@ existing.
 
 The transition for the paper's passing example might request movement for one
 implementation subclaim from argument to synthetic-test-backed. The reviewer
-checks that the fixture was prospective rather than selected after the result,
+checks when and how the fixture was selected and limits the inference accordingly,
 that the environment and expected output are bound, that failed cases remain
 visible, that the evaluator did not share the implementation defect being
 tested, and that the resulting sentence stays inside the observation.
@@ -208,8 +223,11 @@ requested inference did not pass.
 
 Downward movement needs equal discipline. A contradiction, failed proof,
 invalidated dataset, benchmark contamination, implementation failure, or new
-counterexample can narrow, downgrade, refute, deprecate, or expire a claim.
-The transition records which conclusion changed and which did not. This avoids
+counterexample can narrow, downgrade, refute, or deprecate a claim. A changed
+model or stale evaluator can instead suspend eligibility for a new use while
+leaving the historical support record intact. Expiry is a lifecycle condition,
+not an extra support-state category or a finding that the earlier claim was
+false. The transition records which conclusion changed and which did not. This avoids
 two opposite errors: hiding negative evidence to protect the architecture, and
 letting an incompetent attempt refute an idea it never actually tested.
 
@@ -362,7 +380,9 @@ challenge one another without inheriting each other's conclusions.
 Return to the paper-ingestion change. The adapter proposes a mapping from new
 paper passages to existing chapter owners. Its authors claim that an internal
 routing representation makes the mapping more consistent and cheaper to
-review. The repository now has three evidence paths.
+review. In this hypothetical campaign, compare three proposed evidence paths;
+none is a report that this repository ran the adapter or inspected its
+activations.
 
 The first path is behavioral. A prospective fixture presents papers with known
 ownership distinctions and records the adapter's mappings, abstentions,
@@ -395,8 +415,8 @@ Suppose the behavioral fixture passes, the critic finds no new errors, and the
 internal feature is unstable across a checkpoint update. The correct result is
 not “two of three checks passed.” The implementation subclaim may gain bounded
 synthetic support. The oversight protocol may record no demonstrated advantage
-over direct review. The internal-mechanism claim may remain unsupported or
-expire. The architecture-level claim remains at its prior state.
+over direct review. The internal-mechanism claim may remain unsupported, or a previously qualified
+inference may lose eligibility on the new checkpoint. The architecture-level claim remains at its prior state.
 
 Now suppose a later outcome audit finds that the fixture omitted papers with
 mixed normative and implementation content. That discovery can invalidate the
@@ -494,6 +514,29 @@ calibration, preserves disagreement, reduces unsafe inference, or makes
 revision and recovery materially better after reviewer time and system cost
 are included.
 
+For a concrete simpler win, suppose the only requested conclusion is that a
+specified example completed under a recorded configuration. An informed reviewer
+can inspect its command, fixture, output, and limitations directly. A second
+model debate or an activation probe need not improve that decision. The light
+record can retain the precise observation while leaving method efficacy and
+mechanism causality open.
+
+Now suppose a replacement fixture reports no improvement over the matched
+baseline. Before calling that a refutation, inspect the experiment's competence
+and precision. If both routes failed to solve even the easy positive controls,
+the campaign did not discriminate their useful mechanisms; repair the instrument
+and preserve the failed attempts. If both routes were competent but the interval
+still includes a consequential advantage and a consequential disadvantage, the
+comparison remains inconclusive. If a prospectively specified comparison
+excludes the claimed advantage within its adequate precision, narrow that exact
+advantage claim. These are hypothetical decisions, not outcomes of the book's
+frozen campaigns.
+
+The record's job is to preserve which of those situations occurred. More
+structure is warranted only if it improves the decision or its later correction.
+A claim does not earn support because its paperwork became more detailed, and a
+campaign does not become informative because its outcome was negative.
+
 ## What the Current Evidence Can Establish
 
 The live technical book contains formal models, schemas, fixtures, source
@@ -523,7 +566,8 @@ The minimum viable implementation is small. Give every material claim a stable
 identity, current wording, scope, support state, evidence references,
 limitations, and immutable transition history. Require every proposed movement
 to name its target, artifact role, maximum inference, reviewer, negative
-evidence, and expiry. Reject movement to parents or neighbors. Keep deployment
+evidence, and expiry. Reject automatic movement to parents or neighbors;
+any broader proposition needs its own claim-commensurate transition. Keep deployment
 and publication authority elsewhere.
 
 Add scalable oversight only where the evaluator gap matters. The first useful
@@ -644,8 +688,9 @@ intervention. Adversarial Evaluation remains the broader owner for behavioral
 and training-time observation integrity. These responsibilities interact, but
 none inherits another's evidence or authority.
 
-The practical rule is to keep the inference smaller than the artifact until a
-claim-specific transition earns more. A passing test is not a method verdict.
+The practical rule is to keep each inference within what its artifacts and
+argument actually support. A transition records that judgment; it cannot create
+coverage, independence, or causal evidence that the artifacts lack. A passing test is not a method verdict.
 A citation is not local reproduction. A proof is not runtime truth. A long
 debate is not independent review. A human approval is not meaningful control
 by default. An activation is not a concept. A causal intervention is not a
@@ -663,7 +708,14 @@ evidence that produced it and the conditions that would expire it.
 This discipline still depends on people. Someone chooses the claim, interprets
 the request, defines the construct, sets the evidence threshold, and decides
 whether a residual is acceptable. Those people can be overloaded, persuaded,
-or mistaken. The next chapter moves into that human boundary: how an ambiguous
-request becomes a governed intent contract, how meaningful control is
-preserved under limited attention, and how communication itself becomes an
-epistemic attack surface.
+or mistaken.
+[Unit 6](unit-06-human-intent-control-and-epistemic-security.qmd) takes over how
+an ambiguous request becomes an intent contract, how a reviewer retains a
+meaningful choice under limited attention, and how communication can manipulate
+that choice. It must preserve claim scope and visible disagreement without
+pretending that a sound evidence record settles the principal's purpose. The
+[Evidence States owner](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html)
+retains the exact transition rules, while the
+[Oversight](https://corbensorenson.github.io/asi-stack-book/chapters/scalable-oversight-and-adversarial-ai-control.html)
+and [White-Box Evidence](https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html)
+owners retain their distinct evaluator and instrument obligations.

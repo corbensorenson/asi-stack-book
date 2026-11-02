@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import subprocess
 from datetime import datetime, timezone
@@ -45,7 +46,7 @@ def git_head() -> str:
     return subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
 
 
-def main() -> None:
+def build() -> dict:
     structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
     channel = json.loads(CHANNEL.read_text(encoding="utf-8"))
     preview = json.loads(PREVIEW_BINDINGS.read_text(encoding="utf-8"))
@@ -156,10 +157,28 @@ def main() -> None:
         "support_state_effect": "none",
         "release_effect": "none",
     }
-    OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    return value
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--check', action='store_true', help='Verify source bindings without changing tracked files')
+    args = parser.parse_args()
+    value = build()
+    previous = json.loads(OUT.read_text()) if OUT.is_file() else None
+    comparable = dict(value)
+    if previous:
+        for key in ('generated_at_utc', 'source_commit_at_generation'):
+            comparable[key] = previous[key]
+    changed = previous != comparable
+    if args.check and changed:
+        raise SystemExit('Visual-edition manifest is stale; review source/lifecycle differences and run without --check.')
+    if not args.check and changed:
+        OUT.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
+    counts = value['counts']
     print(
-        f"Built visual-edition manifest: {len(rows)} chapters, {packet_count} packets, "
-        f"{rendered_count} validated render receipts, {youtube_count} YouTube publications."
+        f"{'Checked' if args.check else 'Reconciled'} visual-edition manifest: {len(value['chapters'])} chapters, {counts['packets_present']} packets, "
+        f"{counts['current_rendered_videos']} validated render receipts, {counts['youtube_videos_published']} YouTube publications."
     )
 
 

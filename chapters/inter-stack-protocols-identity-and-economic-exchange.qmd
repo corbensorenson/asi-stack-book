@@ -389,8 +389,10 @@ request inspectable, but it cannot issue an effect lease, certify context,
 decide resource policy, protect a secret, or turn a response into evidence.
 Twelve interfaces make those ownership boundaries explicit:
 
-1. **Intent-to-Execution Contracts** owns originating intent and task scope;
-   the exchange preserves the principal and accepted boundary across a peer.
+1. **Human Intent** owns interpretation of originating intent;
+   **Intent-to-Execution Contracts** binds accepted task scope. The exchange
+   preserves the principal and accepted boundary across a peer without
+   reinterpreting or widening them.
 2. **Labor OS and Organizational Design** owns roles, work assignment, and
    escalation; the exchange binds a cross-organization handoff without defining
    either organization.
@@ -398,11 +400,14 @@ Twelve interfaces make those ownership boundaries explicit:
    local authorization policy; the exchange transports bounded evidence only.
 4. **Runtime Adapters, Tool Permissions, and Human Approval** owns local
    effects; a complete remote request is not an effect lease.
-5. **Virtual Context ABI** owns context provenance, admission, and taint; the
-   exchange carries a reference without certifying adequacy or truth.
-6. **Artifact Graphs, Audit Logs, and Replay** and **Evidence Engineering** own
-   provenance, receipts, replay, and support; the exchange owns cross-stack
-   identity, delegation, consideration, and completeness.
+5. **Virtual Context ABI** materializes bounded consumer packets;
+   **Context Transactions** owns snapshot and taint state; access authorities
+   decide permissible admission. The exchange carries a reference without
+   certifying adequacy or truth.
+6. **Artifact Graphs, Audit Logs, and Replay** owns artifact identity,
+   provenance, receipt custody, and replay lineage; **Evidence States** owns
+   accepted support transitions. The exchange owns cross-stack identity,
+   delegation, consideration, and completeness without promoting support.
 7. **Resource Economics and Token Budgets** owns local cost and capacity policy;
    the exchange binds consideration without claiming settlement or fairness.
 8. **Privacy, Rights, and Legal Constraints** owns consent, rights, retention,

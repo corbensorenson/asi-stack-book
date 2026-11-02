@@ -9,9 +9,9 @@ It checks the v1.0 claim-state gate: every manifest chapter core claim must have
 
 | Metric | Count |
 |---|---:|
-| Manifest chapter core claims | 87 |
+| Manifest chapter core claims | 89 |
 | Accepted core evidence-transition records | 22 |
-| Accepted explicit no-promotion decisions | 65 |
+| Accepted explicit no-promotion decisions | 67 |
 | Missing core-claim coverage | 0 |
 
 All chapter core support states remain `argument`. The separate measured/replayed transitions for `living-book-methodology.phase5_harness_registry_runner`, `resource-economics.costed_route_budget_slice`, and `circle-calculus.external_rope_receipt_replay` are not chapter core claims and are not counted in this coverage table.
@@ -60,6 +60,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `capability-thresholds-and-deployment-commitments.core` | Capability Thresholds and Deployment Commitments | `argument_only` | no local capability assessment, threshold system, safeguard verification, or deployment process; no measured threshold validity, metric comparability, safeguard efficacy, or residual-risk result; finite theorems do not establish assessment correctness, threshold adequacy, safety, readiness, authority, or generality |
 | `circle-calculus-and-proof-carrying-ai-contracts.core` | Circle Calculus and Proof-Carrying AI Contracts | `argument_only` | narrow external rope receipt replay is not a chapter-core replay bundle; no consumer-gate trace; no workload metric tied to contract use |
 | `cognitive-compilation-and-semantic-ir.core` | Cognitive Compilation and Semantic IR | `argument_only` | fixture is hand-authored rather than emitted by a compiler; no generated target-artifact semantic validation; no measured repair-locality or artifact-quality comparison |
+| `cognitive-method-transfer-and-qualification.core` | Cognitive Method Transfer and Qualification | `argument_only` | schema and package conformance do not establish method fidelity or benefit; no locally measured routing, interaction, security, or transfer result; author-lineage framework and external positioning cannot promote support |
 | `coil-attention-cyclic-memory-and-recurrence-contracts.core` | Coil Attention, Cyclic Memory, and Recurrence Contracts | `argument_only` | no cyclic memory runtime; no retrieval-quality result; no alias-risk measurement |
 | `coilra-multicoil-rope-and-cyclic-mixers.core` | CoilRA, MultiCoil RoPE, and Cyclic Mixers | `argument_only` | no baseline comparison; no quality or runtime measurement; no adoption canary route |
 | `compact-generative-systems-and-residual-honesty.core` | Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty | `argument_only` | no model or backend run; no compactness-quality benchmark; no compression run; no verifier evaluation; no repair-cost accounting |
@@ -103,6 +104,7 @@ All chapter core support states remain `argument`. The separate measured/replaye
 | `project-theseus-as-report-first-implementation-reference.core` | Project Theseus as Report-First Implementation Reference | `argument_only` | static architecture-gate import exists only as implementation-reference evidence; no clean live report bundle; no accepted Theseus gate replay; no general capability evidence |
 | `prototype-roadmap.core` | Prototype Roadmap | `argument_only` | no prototype phase acceptance record; no implementation benchmark; no governed replacement run |
 | `rankfold-neuralfold-and-artifact-compression.core` | RankFold, NeuralFold, and Artifact Compression | `argument_only` | no compression ratio result; no utility benchmark; no baseline-symmetric comparison |
+| `reflexive-model-world-systems.core` | Reflexive Model-World Systems | `argument_only` | no locally reproduced RMWS campaign or independently checked theorem; no real-world causal ancestry, grounding, stability, legitimacy, or rollback evidence; author-lineage framework and source-reported toy results cannot promote support |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | Relational Dimension Compilation and Polyadic Cognition | `argument_only` | no RDC or RODIE result; no evidence that higher-order structure is necessary, useful, or efficient; author-lineage prose and source synthesis do not promote support |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | Replaceable Cognitive Substrates: Beyond Transformer Monoculture | `argument_only` | no common ABI, conformance checker, substrate swap, or mixed-kernel trace; no matched natural workload, hardware-aware lifecycle-cost packet, independent evaluator, reproduction, or transfer; OneCell and every named architecture remain candidates with no local superiority evidence |
 | `routing-heads-and-specialist-cores.core` | Routing Heads and Specialist Cores | `argument_only` | no real routing trace; no capability-quality measurement; no authority-enforced specialist lease; no imported MoECOT orchestration benchmark or replay artifact |

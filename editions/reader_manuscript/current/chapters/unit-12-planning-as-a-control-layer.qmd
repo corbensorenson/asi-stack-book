@@ -5,7 +5,8 @@ unit_id: "unit-12"
 
 ## A Plan That Survives Contact
 
-The failed gantry trial has produced three obligations. Regenerate the stale
+Continue the hypothetical failed gantry trial. It has produced three
+obligations in that scenario. Regenerate the stale
 configuration. Diagnose the oscillation. Retest the controller before any
 full-speed motion. The desired outcome is clear enough: a controller candidate
 whose repository state, simulated behavior, and bounded physical behavior have
@@ -125,8 +126,10 @@ payload range, observed oscillation trace, and the world-model residual from
 Unit 11. It must produce a versioned candidate model and a comparison report.
 It may not overwrite the failed pre-trial prediction. Its verifier checks
 whether the candidate reproduces the diagnostic trace and preserves previously
-accepted behavior. Failure leaves an owned modeling residual rather than an
-empty checkbox.
+accepted behavior. Matching the diagnostic trace is development fit, not
+independent evidence that the new model predicts a future trial. A separate
+qualification must test the intended prediction under declared conditions.
+Failure leaves an owned modeling residual rather than an empty checkbox.
 
 The cold-build node consumes the exact repository revision and generator
 inputs. It produces a content-addressed artifact and dependency receipt. Its
@@ -295,8 +298,10 @@ the conversion.
 
 Verification belongs on the critical path when an artifact cannot be consumed
 without it. Human review is not free because it occurs outside machine time.
-Fallback capacity cannot be sold twice, once as productive capacity and again
-as emergency reserve. Retries, coordination, merge repair, and cleanup remain
+Hard-reserved fallback capacity cannot also be promised as simultaneously
+available productive capacity. Shared capacity may be acceptable if a qualified
+preemption or activation mechanism makes it available within the fallback's
+required deadline; that assumption and its failure route belong in the schedule. Retries, coordination, merge repair, and cleanup remain
 part of the schedule's observed cost even when the successful trace does not
 show them.
 
@@ -308,9 +313,11 @@ conflict, review burden, and recovery cost must answer those questions later.
 
 ## Replanning Is a New Version
 
-When feedback arrives, the planner should not mutate the active graph in place.
-It compares the observation with prospective triggers and emits a scoped
-replan proposal.
+When feedback arrives, the accepted plan version must remain reconstructible.
+An implementation may update its internal graph, but it must retain the prior
+version, record a scoped delta, and bind dispatch to the accepted version.
+The planner compares the observation with prospective triggers before proposing
+that change.
 
 Suppose the cold build reveals that the generator fix changes two additional
 artifacts. That observation invalidates the integration-test input and any
@@ -365,6 +372,41 @@ Planning decides which obligation should be lowered and when. Cognitive
 Compilation must preserve what the obligation means while turning it into a
 target artifact or executable job.
 
+## A Join That Keeps Useful Work
+
+Make the version mismatch concrete. In this hypothetical plan, branch A finishes
+the generated configuration for controller version 7. Branch B finds a modeling
+error and proposes controller version 8. The version-7 build and its test result
+remain completed historical work. They do not qualify the version-8 controller
+merely because their nodes have green status.
+
+The join therefore keeps branch A's source inspection and the failure evidence
+that remain relevant, marks its candidate artifact unsuitable for the new
+controller, and schedules a new configuration/build/test obligation against
+version 8. Branch B's diagnostic findings survive only to the extent that their
+assumptions still apply. Neither branch's local completion grants a physical
+trial. That node stays blocked until its current observation, qualification,
+authority, and recovery requirements are met.
+
+Suppose the lab window is reserved for later today. Reservation can make the
+trial schedulable in a provisional timetable, but it cannot certify that the
+sensor observation will still be fresh at dispatch. The plan names a fresh
+observation and admission check near the effect boundary. If the window expires
+first, the system can retain the software artifacts and defer the trial. It
+should not erase completed work or extend authority because its schedule
+promised completion.
+
+A conventional build workflow with versioned inputs, a dependency graph,
+explicit manual gates, and retained run records may already do all of this.
+If it preserves the join and invalidation decisions at lower burden, prefer it.
+The richer planner needs to improve a consequential missing relation, not add
+an obligatory search over alternative graphs for this known sequence.
+
+The comparison counts the rebuilt branch, idle reservation, review, and deferred
+trial together. Reporting only the surviving successful build would hide the
+cost of discovering the mismatch. These are teaching decisions, not observations
+that the current repository ran a gantry plan.
+
 ## Stop, Fallback, and Recovery Are Work
 
 A plan is incomplete if its failure routes are verbs without mechanisms.
@@ -375,20 +417,22 @@ and an observed consequence.
 For the physical trial, stopping requires a current control channel and enough
 physical margin. Rolling back the software does not reverse motion already
 performed or measurements already disclosed. Returning to controller version
-7 requires that its artifact, configuration, calibration, and authority remain
-available. Human escalation requires an identified person with time and enough
+7 requires that its artifact, configuration, calibration, current qualification,
+and authority remain available for the present state. Human escalation requires an identified person with time and enough
 context to decide.
 
-The plan includes these obligations before dispatch. A fallback that becomes
-available only after failure is not a reachable fallback. A rollback request
+The plan includes these obligations before dispatch. A fallback may activate
+after failure, but its activation must fit the required response bound and
+have the necessary state, authority, and resources. A future promise without
+that mechanism is not a reachable fallback. A rollback request
 that no runtime can execute is documentation. A stop command that misses its
 deadline is a failed effect.
 
 Recovery can also change the future graph. If the low-energy trial stops after
 oscillation, descendants are invalidated, the physical state is observed, and
 the residual routes back to diagnosis. If stopping leaves the gantry in an
-unusual position, the next plan begins from that actual state rather than from
-the pre-trial branch.
+unusual position, the next plan begins from the new observation and its
+uncertainties rather than treating the pre-trial branch as current state.
 
 These distinctions keep planning honest about irreversibility. The graph can
 restore a software artifact and still leave external effects, opportunity cost,
@@ -445,7 +489,8 @@ symbolic planners where appropriate, and competent human plans. All arms need
 the same contract, information, tools, authority, resource ceiling, evaluator
 access, and outcome horizon.
 
-For the patch, a strong simple route may be: revert to controller version 7,
+For the patch, if controller version 7 remains qualified, a strong simple
+route may be: return to that version,
 perform a cold rebuild, run the full fixed test procedure, and ask the engineer
 to diagnose the oscillation separately. It sacrifices parallelism and adaptive
 search but may be easier to audit and recover.
@@ -466,23 +511,21 @@ parallelism, delayed effects, alternatives, and recovery justify its cost.
 The current repository implements a substantial finite planning contract, but
 not a demonstrated planner.
 
-Seven public proof targets are implemented across two Lean modules. The
-Planning module contains 53 theorem declarations, and PlanForge contains 18.
-The finite models cover admission, dependency order, dispatch requests,
+The public proof targets implemented in Planning and PlanForge cover finite
+models that cover admission, dependency order, dispatch requests,
 authority ceilings, stops, versioning, lifecycle transitions, replan deltas,
 and residual preservation. Strict topological order over every actual finite
 edge excludes cycles in the modeled graph.
 
-The scheduler-state probe contains two valid synthetic scheduler traces and
-seven expected-invalid controls. Its graph consumer binds one valid and three
-rejected PlanForge cases, five reachable dependency pairs, one thin-summary
-collision, and twelve complete graph-transport mutation rejections. The
-runtime-replan audit contains two valid synthetic traces and nine
-expected-invalid controls.
+The scheduler-state probe uses valid synthetic traces and expected-invalid
+controls. Its graph consumer binds admitted and rejected PlanForge cases,
+reachable dependency pairs, a thin-summary collision, and rejecting graph
+transport mutations. A separate runtime-replan audit checks authored feedback
+traces and invalid controls.
 
 The complete finite lifecycle reaches renewed job lowering after feedback and
 replanning while preserving authority, order, version, stop, dispatch, and
-residual invariants. Eleven closed controls reject invalid transitions. These
+residual invariants. Closed controls reject invalid transitions. These
 results establish behavior of the authored records and transition systems.
 
 They do not establish decomposition quality, dependency truth or completeness,
@@ -594,5 +637,11 @@ translated into representations that tools, models, verifiers, and people can
 share without losing meaning. Unit 13 follows that translation through
 semantic intermediate representations, relational structure, search, and
 target lowering.
+[Unit 13](unit-13-cognitive-compilation-and-semantic-ir.qmd) must preserve the
+accepted node version, input identities, prohibitions, evidence boundaries,
+and unresolved dependencies while producing a target candidate. The
+[planning owner](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html)
+retains the exact finite graph, scheduling, and replan results; no natural
+planner or physical trial is established by this narrative.
 
 {{< include ../generated/unit-12-status.qmd >}}

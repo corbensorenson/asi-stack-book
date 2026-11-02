@@ -438,7 +438,9 @@ Virtual Context assembles a temporary working set; Context Transactions own snap
 
 - Virtual Context ABI materializes bounded consumer packets; this chapter owns the durable semantic substrate it reads.
 - Context Transactions owns isolation, commit, mounts, taint, and crash semantics across state changes.
-- Claim Ledgers owns belief support and revision; durable memory stores the semantic objects and relations those claims reference.
+- Claim Ledgers owns claim identity and belief-revision history; Evidence States
+  owns accepted support transitions. Durable memory stores the referenced
+  semantic objects and relations without deciding support.
 - Procedural Memory owns reusable action trajectories; Artifact Graphs owns generic evidence lineage.
 - Privacy/Data Rights and Data Engines govern rights, deletion, learned influence, and descendant obligations.
 

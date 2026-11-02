@@ -104,7 +104,7 @@ def main() -> None:
     failures = errors(value)
     rebuilt = load_module(BUILDER, "p6_9_raw_builder").build()
     if rebuilt != value:
-        failures.append("tracked audit does not match a fresh deterministic rebuild")
+        failures.append("tracked audit does not match its retained terminal custody inputs")
     w3_validator = load_module(W3_VALIDATOR, "p7_1a_w3_validator")
     if not w3_validator.admission_errors(COPIED.read_text(encoding="utf-8")):
         failures.append("copied reader-facing scaffold negative control was accepted")
@@ -132,12 +132,12 @@ def main() -> None:
         ("exit", lambda item: item["summary"].__setitem__("exit_passed", False)),
         ("support", lambda item: item.__setitem__("support_state_effect", "promoted")),
     ]
-    baseline = set(errors(value))
-    for label, mutation in mutations:
-        candidate = copy.deepcopy(value)
-        mutation(candidate)
-        if not set(errors(candidate)) - baseline:
-            failures.append(f"negative mutation accepted: {label}")
+    if not errors(value):
+        for label, mutation in mutations:
+            candidate = copy.deepcopy(value)
+            mutation(candidate)
+            if not errors(candidate):
+                failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit(
             "P6.9 raw-scaffold ownership audit failed:\n - "

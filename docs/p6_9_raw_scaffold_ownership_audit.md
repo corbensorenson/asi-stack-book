@@ -2,7 +2,7 @@
 
 Status: **terminal complete**.
 
-The audit classifies every exact 12-token block at the current raw-QMD
+The retained audit classifies every exact 12-token block at its raw-QMD
 maximum spread of **70** chapters.
 All **21** widest fingerprints occur only
 inside the marked manifest-source reconciliation projection, are owned by
@@ -20,6 +20,14 @@ This closes only the raw-scaffold ownership gate. It changes no support,
 release, evidence, safety, transfer, SOTA, AGI, or ASI state.
 
 ## Reproduction
+
+The October 2, 2026 repair binds historical replay to the last retained
+matching inputs at `5ae6da1ef0b653d1248f83ca633e7658ac13dc4e`.
+This is a custody anchor rather than a new closure or original review date.
+The existing artifact, corpus digest and block classifications are preserved.
+The builder now replays without writing and refuses `--write`; missing Git
+history fails clearly. Current prose distinctness remains enforced by the
+separate current W3 and repeated-prose admission checks.
 
 ```bash
 python3 scripts/build_p6_9_raw_scaffold_ownership_audit.py

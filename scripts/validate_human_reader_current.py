@@ -18,7 +18,7 @@ from build_human_reader_current import (
 )
 
 UTILITY_ROUTE_REQUIRED = [
-    "title: \"A Fifteen-Minute Route Through the Stack\"",
+    "# A Fifteen-Minute Route Through the Stack {.unnumbered}",
     "## The Thesis in One Page",
     "## Run It",
     "python3 scripts/run_p5_u1_governed_repository_change.py",
@@ -496,7 +496,7 @@ UNIT_19_REQUIRED = [
     "## Checkpoints Must Preserve More Than Weights",
     "## Stateful Substrates Need Isolation and Concurrency Rules",
     "## Architecture Tournaments Need Full Costs",
-    "## Adoption Is a Reversible Governance Transaction",
+    "## Adoption Binds Authority and Recovery",
     "## Transformer Monoculture Is a Risk, Not a Refutation",
     "## Recurrence Changes the State Contract",
     "## Cyclic Memory Needs Residue and History",
@@ -712,8 +712,8 @@ def validate(manifest: dict, expected: dict, crosswalk: dict, expected_crosswalk
         errors.append("conclusion/claim crosswalk differs from its canonical graph/outline/manuscript derivation")
     if manifest.get("unit_count") != 26 or manifest.get("owner_route_count") != 89:
         errors.append("Human Reader denominator drift")
-    if manifest.get("state") != "complete_manuscript_public_html_deployed":
-        errors.append("Human Reader manifest does not preserve the deployed HTML state")
+    if manifest.get("state") != "complete_manuscript_ready_for_author_review":
+        errors.append("Human Reader source manifest must describe manuscript readiness without asserting deployment")
     units = manifest.get("units", [])
     owner_ids = [owner_id for unit in units for owner_id in unit.get("owner_ids", [])]
     if len(owner_ids) != len(set(owner_ids)):
@@ -1070,6 +1070,10 @@ def main() -> None:
     altered["support_state_effect"] = "promoted"
     if not validate(altered, expected, crosswalk, expected_crosswalk):
         errors.append("negative control accepted: support laundering")
+    altered = copy.deepcopy(manifest)
+    altered["state"] = "complete_manuscript_public_html_deployed"
+    if not validate(altered, expected, crosswalk, expected_crosswalk):
+        errors.append("negative control accepted: source derivation claims remote deployment")
     altered_crosswalk = copy.deepcopy(crosswalk)
     altered_crosswalk["units"][0]["owners"] = []
     if not validate(manifest, expected, altered_crosswalk, expected_crosswalk):
@@ -1080,7 +1084,7 @@ def main() -> None:
     print(
         f"Human Reader current validation passed: {manifest['started_unit_count']}/26 units started, "
         f"{manifest['target_length_unit_count']} at target length, 89 owners routed once, "
-        f"{manifest['visible_word_count']} visible words, and 4 rejecting controls."
+        f"{manifest['visible_word_count']} visible words, and 5 rejecting controls."
     )
 
 

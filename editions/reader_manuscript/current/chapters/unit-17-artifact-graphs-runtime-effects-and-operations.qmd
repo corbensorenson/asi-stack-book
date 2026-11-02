@@ -5,6 +5,9 @@ unit_id: "unit-17"
 
 ## The Release That Succeeded Twice
 
+This is a hypothetical continuation of the repository story, not an observed
+production deployment.
+
 The security update from the previous unit is merged. The release job invokes
 the approved adapter, the command exits successfully, and the deployment log
 records the new version. A second service reads the release API and confirms
@@ -16,7 +19,8 @@ Both reports came from the same control-plane record. A downstream replication
 step partially failed after the release API committed. The observer compared
 the expected version with another projection of the command record rather than
 with the package actually served. The rollback tool restored the control-plane
-pointer but did not remove two newly written cache objects. An operator sees a
+pointer but did not remove two newly written cache objects containing the old
+package. An operator sees a
 green release, a green verification, and users receiving vulnerable code.
 
 The failure crosses three boundaries.
@@ -60,7 +64,10 @@ with it.
 Immutable does not mean eternally correct. The original release receipt remains
 in history after the deployment is found defective. A correction adds a new
 node and explicit relation. Preserving the false historical record is useful
-because decisions and downstream artifacts may have consumed it.
+because decisions and downstream artifacts may have consumed it. Retention and
+diagnostic access must still be permitted. A correction can preserve allowed
+event metadata without retaining a prohibited source payload; lost replay
+fidelity then remains explicit.
 
 ## Provenance Has Completeness Boundaries
 
@@ -145,7 +152,9 @@ For the security release, byte-exact rebuild answers whether the source can
 produce the package. A separate deployment replay exercises the adapter and
 replication path in an isolated environment. An actual-state probe inspects the
 served package. Recovery replay restores both control-plane state and cache
-objects. Each result closes a different obligation.
+objects under a currently admissible recovery plan. Restoring an old vulnerable
+package may explain state recovery but cannot satisfy the security objective.
+Each result addresses a different obligation.
 
 ## Runtime Adapters Are Effect Boundaries
 
@@ -175,15 +184,27 @@ The operating system, service, credential store, network, hardware, and target
 API must enforce the assumptions it makes. If a tool can escape through an
 unmediated path, a perfect adapter record becomes theater.
 
+Here **authority** means a principal's permission to cause an effect. It is
+different from saying that a repository manifest is authoritative for a
+generated configuration. The latter chooses which representation controls the
+projection; it does not permit an agent to change either file or publish the
+result. Likewise, an available model, tool, or budget is a capability or
+resource, not a grant. This distinction matters when a proposal crosses from
+describing a desired release to dispatching the release call.
+
 ## Approval Is a Scoped Input
 
-Human approval should be an explicit, expiring input bound to the exact action
-and evidence the person reviewed.
+Human approval should be an explicit input with a declared scope and lifetime,
+bound to the action or action family and evidence the person reviewed. An
+applicable prior or session grant remains usable within that boundary; every
+invocation does not need a new click.
 
 The approval records approver identity and role, job and proposal version,
 scope, target, impact, evidence refs, unresolved residuals, time, expiry,
 conditions, and revocation route. A material change to arguments, artifact,
-target, or risk invalidates or narrows it.
+target, or risk requires checking that the proposed action still falls within
+the grant. It may require narrowing or new approval; a harmless change already
+covered by the grant need not.
 
 Approval does not prove comprehension, competence, independence, correctness,
 or legitimacy. The interface can overload, persuade, or mislead the reviewer.
@@ -203,7 +224,9 @@ The design objective is meaningful control, not maximum clicking.
 ## Effect Leases Bound Action in Time
 
 An effect lease grants a capability under a bounded purpose, target, authority
-ceiling, environment, start, expiry, and revocation policy. It can require a
+ceiling, environment, start, expiry condition, and revocation policy. Its
+lifetime may end at a deadline, a completed operation, or a changed condition.
+It can require a
 fresh precondition immediately before dispatch.
 
 Leases prevent a plan from treating old permission as permanent. They also
@@ -222,6 +245,14 @@ The grant/effect race needs custody. Revocation after dispatch cannot make an
 already caused effect disappear. The receipt records whether execution began,
 which mutations were observed, and who owns compensation. A timeout is not
 evidence of nonexecution.
+
+Other chapters use leases for other objects. A resource allocation lease
+reserves capacity under a task budget. A purpose lease bounds an information
+use. A source admission lease coordinates cooperating readers and writers around
+a repository view.
+None of those objects substitutes for this effect lease. The shared idea is
+scope and lifetime; the permitted operation depends on the named lease kind
+and the authority behind it.
 
 ## Expected Effect and Actual Effect Are Different Records
 
@@ -295,7 +326,19 @@ The security release's rollback inventory includes release pointer, served
 package, cache objects, registry metadata, notifications, and any downstream
 consumer. If two cache writes remain after the control pointer is restored,
 the rollback is partial. Service may need to stay degraded until those objects
-are removed or isolated.
+are removed or isolated. The restored old package is already known to contain
+the dependency under repair; restoring its pointer is not a security recovery.
+
+Call the old vulnerable package A and the patched release candidate B. Suppose
+a retry expects pointer B, but an authorized operator has since installed
+candidate C. A blind restoration to A would discard that intervening repair.
+The recovery step compares its expected current state with the observed one,
+then either reconciles C under current authority or holds the conflicting
+mutation. The same rule applies to cache cleanup: named objects created by the
+failed attempt may be removable, while an unrelated operator object must not
+be deleted merely because it matches a broad filename pattern. Observed state,
+owned identities, and current permission constrain recovery, not just the old
+snapshot.
 
 ## Change Control Joins Artifact and Authority
 
@@ -365,16 +408,21 @@ capacity, quality and latency bounds, user-visible consequences, affected
 groups, authority, monitoring, expiry, and recovery criteria. It should be
 tested before the incident where possible.
 
-For the package service, degradation might stop new releases, pin all clients
-to the last independently observed safe package, disable cache promotion, and
-serve a status notice. It should not silently continue vulnerable service
-under a green control-plane label.
+For the package service, degradation can stop new releases, disable cache
+promotion, isolate the affected route, and serve a status notice. A fallback
+package is usable only if it is currently qualified for the required service
+and security constraints. Being older or independently observed is insufficient.
+In this example the previous package is vulnerable, so pinning clients to it
+does not meet the security objective. If no qualifying package is available,
+the authorized response may suspend affected downloads while preserving the
+status and recovery channels. The service loss and affected users remain part
+of the decision; there is no universally harmless fallback.
 
 Different failures require different verbs. Fail-safe stops an action.
 Fail-operational preserves essential service. Fail-soft reduces quality or
 capacity. Fail-secure protects security properties. These goals can conflict.
-Stopping a medical or infrastructure service may be more harmful than running
-a constrained fallback. The architecture needs a consequence-specific choice,
+Stopping an essential service may create a larger continuity loss than running
+a qualified constrained fallback. The architecture needs a consequence-specific choice,
 not one universal “safe mode.”
 
 Degradation can become permanent neglect. Every entry has an owner, budget,
@@ -382,6 +430,40 @@ review cadence, expiry, and exit condition. Users should know when service is
 reduced and how to obtain remedy.
 
 ## Recovery, Compensation, and Closure
+
+::: {#recovery-scope-text}
+**Text version.** Begin with an observed incident and an inventory of the state
+and effects it may have changed. Restore controllable state where possible.
+Use a compensating action for an effect that cannot simply be reversed.
+Unknown or irreversible consequences remain owned. Reconcile the observed
+result of every chosen route, naming both what was closed and what remains
+open. The routes are not mutually exclusive and do not guarantee recovery.
+Restoring a release pointer cannot by itself undo a delivered package, erase
+history, or discharge a reader's unresolved correction need.
+:::
+
+::: {.asi-reader-diagram tabindex="0" role="region" aria-label="Scrollable recovery scope diagram" aria-describedby="recovery-scope-text" style="--asi-diagram-width: 46rem;"}
+
+```{mermaid}
+flowchart TD
+  accTitle: Recovery preserves different kinds of unfinished work
+  accDescr: Observe the incident and inventory its state and effects. Restore controllable state, compensate effects that cannot be reversed, and retain unknown or irreversible consequences with owners. Reconcile what each route actually changed and state which obligations remain open. These routes can coexist; no branch erases the earlier history.
+  I["Observed incident"] --> E["State and effect inventory"]
+  E --> S["Restore controllable state"]
+  E --> C["Compensate an external effect"]
+  E --> U["Own unknown or irreversible effects"]
+  S --> R["Reconcile results; retain open duties"]
+  C --> R
+  U --> R
+```
+
+:::
+
+*Figure. Recovery is an account of specific state and effects. Restoration,
+compensation, and unresolved consequences can coexist.*
+
+Scroll inside the frame when needed; the complete text version is above.
+
 
 Recovery begins from an observed incident state, not from the state the plan
 expected to exist. It chooses a target baseline, verifies required artifacts
@@ -393,9 +475,10 @@ state from trusted artifacts. Replacement introduces a newly qualified
 component. Compensation addresses effects that cannot be reversed. Remedy
 addresses affected people and institutions. These routes can occur together.
 
-The release incident may restore the old package pointer, remove the stale
-cache objects, rebuild the patched artifact from verified source, redeploy
-through a fresh lease, and independently inspect the served bytes. Users who
+The release incident may isolate the affected route, remove the identified
+stale cache objects without overwriting intervening work, rebuild the patched
+artifact from verified source, redeploy under current authority, and
+independently inspect the served bytes. Users who
 received the vulnerable package may need notification and mitigation. That
 last obligation does not disappear when the service returns to green.
 
@@ -482,12 +565,15 @@ handles, and required observers. It captures pre-state and dispatches.
 The control plane accepts the package. The receipt records this expected
 partial result. A production probe then observes that one region serves the
 old package. The joined route cannot declare success. It opens an incident,
-halts further rollout, quarantines the stale region, and preserves essential
-service through the last independently observed package.
+halts further rollout and isolates the stale region. Since its old package is
+known to be vulnerable, this route suspends affected downloads and preserves
+the status and recovery channels under the declared degradation policy.
 
 Operators compare artifact lineage, replication logs, cache state, and served
 bytes. They find a partial downstream failure. Recovery clears the affected
-cache under a fresh lease, reapplies the release, and observes every region.
+cache under current recovery authority, reapplies the release, and inspects
+each region in the declared inventory. Those probes cover their named times and
+routes; they do not prove what every client received between observations.
 The artifact graph links the failed and repaired attempts. Temporary incident
 authority expires. Residual users who may have received the old package remain
 assigned to notification and remedy.
@@ -573,36 +659,29 @@ The three technical owners have substantial but bounded executable artifacts.
 Combining them here does not create deployment evidence or promote a core
 claim.
 
-Artifact Graphs has ten implemented public targets. The current proof surface
-contains finite provenance, replay-grade, artifact-admission, replay-packet,
-receipt-faithfulness, repository-audit, challenge, live-attestation, and
-epistemic-trust-base predicates. The chapter records 56 live Lean theorem
-declarations for the retained surface, with weaker declarations retired, plus
-synthetic cross-record replay, receipt challenge, public artifact attestation,
-and trust-base harnesses. These checks establish consequences over declared
-records. They do not establish open-world provenance completeness, collector
-truth, ACID storage, crash recovery, or external-effect atomicity.
+[Artifact Graphs](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html)
+checks finite provenance, replay-grade, admission, receipt-challenge, and
+trust-base predicates, with synthetic cross-record and attestation harnesses.
+Weak retired declarations remain distinct from the retained surface. The
+results concern declared records; they do not establish open-world provenance
+completeness, collector truth, crash recovery, or external-effect atomicity.
 
-Runtime Adapters has six implemented public targets and 68 Lean declarations
-covering finite permission, approval, effect-lease, authority-ceiling,
-confused-deputy, sandbox-escape, receipt, dispatch, replay, revocation, and
-oversight-degradation routes. A public-safe probe performs one generated
-temporary-file write and exact local restoration. Other deterministic probes
-include two valid and twelve rejecting adversarial boundary cases, human-
-oversight degradation records, and partitioned-authority fixtures. They do not
-establish deployed sandbox enforcement, approval-service quality, secret-
-handle safety, distributed revocation, policy correctness, reviewer
-competence, or open-world rollback.
+[Runtime Adapters](https://corbensorenson.github.io/asi-stack-book/chapters/runtime-adapters-tool-permissions-and-human-approval.html)
+checks finite permission, approval, revocation, dispatch, and degradation
+routes. A public-safe probe performs one generated temporary-file write and
+exact local restoration. Other adversarial cases remain deterministic probes,
+including partitioned-authority and oversight records. They do not establish
+deployed sandbox enforcement, secret-handle safety, distributed revocation,
+reviewer competence, or open-world rollback.
 
-Governed Operations has three implemented targets through 26 Lean declarations
-over finite degradation, recovery, and incident-lifecycle predicates. Current
-executable work includes authored routing controls, eight real-subprocess
-authority/effect/recovery cases, seven commit-bound service cases with crash
-and restart behavior, localhost partition and outbox retry, stale-credential
-and custody-tamper rejection, and a historical publication-service trace. The
-claim-bearing natural-service campaign remains unexecuted. The results do not
-establish detector quality, inventory completeness, natural incident-response
-efficacy, safe degradation, deployed recovery, or transfer.
+[Governed Operations](https://corbensorenson.github.io/asi-stack-book/chapters/governed-operations-incident-command-and-graceful-degradation.html)
+checks finite degradation and incident lifecycles alongside eight bounded
+real-subprocess authority/effect/recovery cases, seven commit-bound service
+cases, localhost partition and retry, custody rejection, and a historical
+publication-service trace. The claim-bearing natural-service campaign remains
+unexecuted. Detector quality, complete effect inventories, natural incident
+response, safe degradation, deployed recovery, and transfer remain unestablished.
+The canonical owners retain exact proof and executable inventories.
 
 The repository therefore shows that selected record routes, rejection
 conditions, local effects, and bounded recovery sequences can be implemented
@@ -614,9 +693,11 @@ operations system improves real incidents.
 
 A minimum implementation can use the package release. Construct an artifact
 graph from exact source, lockfile, build environment, package, tests, approval,
-and release. Define the intended effect and complete inventory. Dispatch
-through a scoped, expiring adapter lease. Observe the control plane and served
-package independently. Inject the partial replication failure, require
+and release. Define the intended effect and the required inventory boundary; record any
+known coverage gaps. Dispatch
+through a scoped adapter lease with a declared lifetime. Observe the control plane and served
+package through distinct evidence paths, recording their shared infrastructure
+and observation coverage. Inject the partial replication failure, require
 degradation, execute recovery, and preserve one unknown external-effect
 residual.
 
@@ -706,8 +787,8 @@ The current repository proves and executes selected finite parts of these
 routes. It does not establish open-world faithfulness, deployed containment, or
 incident efficacy.
 
-One governed stack will eventually need to exchange procedures, artifacts, and
-authority with another. Unit 18 moves from internal operations to protocol
-semantics and inter-stack coordination.
+A repaired operational route may become a reusable procedure. Unit 18 asks
+when an episode may earn that promotion and what procedures, artifacts, and
+scoped authority can carry across stack boundaries.
 
 {{< include ../generated/unit-17-status.qmd >}}

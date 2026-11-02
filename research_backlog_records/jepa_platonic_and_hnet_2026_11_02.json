@@ -1,0 +1,68 @@
+{
+  "backlog_id": "jepa-platonic-and-hnet-2026-11-02",
+  "triage_state": "integrated",
+  "source_or_gap": "User-confirmed October 29 Platonic-representation JEPA paper plus foundational JEPA, original PRH and H-Net coverage gap; existing V-JEPA 2 coverage retained.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "assigned_chapters": [
+    "governed-world-models-and-reality-grounding",
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "learning-theory-generalization-and-scaling-science"
+  ],
+  "chapter_action_policy": "Use World Models for prediction/grounding limits, Substrates for objective/granularity/kernel distinctions and H-Net, and Learning Theory for theorem assumptions and metric/sample accounting.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/jepa_platonic_and_hnet_2026_11_02.json",
+    "sources/source_notes/ext_i_jepa_2023.md#chapter-decision",
+    "sources/source_notes/ext_lejepa_2025.md#chapter-decision",
+    "sources/source_notes/ext_platonic_representation_hypothesis_2024.md#chapter-decision",
+    "sources/source_notes/ext_platonic_representation_jepa_2026.md#chapter-decision",
+    "sources/source_notes/ext_h_net_2025.md#chapter-decision"
+  ],
+  "deduplication_state": "overlaps_existing_chapter",
+  "merge_or_split_policy": "No new chapter or structural merge; JEPA and H-Net do not introduce an unowned governance responsibility.",
+  "boundary_decision_rationale": "Training objective, sequence hierarchy and cross-modal alignment are orthogonal axes of existing model, prediction and assumption owners. External PRH must not be conflated with Sorenson's Platonic World Model source.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [
+    "Extend selected passage review only for a stronger source-derived assertion; retain the documented version and scope."
+  ],
+  "proof_or_test_backlog": [
+    "No new model run is needed to complete the editorial integration. Any future local performance claim requires exact tasks, baselines, data lineage, cost and independent evaluation."
+  ],
+  "evidence_transition_precondition": [
+    "A separate accepted claim-specific transition is required for local/architecture support; source-reported alignment and conditional external theorems are not that transition."
+  ],
+  "required_before_drafting": [
+    "Selected primary text reviewed and version-bounded notes written (completed 2026-11-02).",
+    "Existing-owner, deduplication and claim-ceiling decision recorded before prose (completed 2026-11-02)."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_i_jepa_2023",
+    "ext_lejepa_2025",
+    "ext_platonic_representation_hypothesis_2024",
+    "ext_platonic_representation_jepa_2026",
+    "ext_h_net_2025",
+    "https://arxiv.org/abs/2301.08243v3",
+    "https://arxiv.org/abs/2511.08544v3",
+    "https://arxiv.org/abs/2405.07987v5",
+    "https://arxiv.org/abs/2610.39302v1",
+    "https://arxiv.org/abs/2507.07955v2"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "No local reproduction.",
+    "New theorem assumptions are not satisfied by all practical JEPA models.",
+    "No demonstrated JEPA/H-Net combined model or whole-stack consequence."
+  ],
+  "residuals": [
+    "Passage review is selected, not a full paper/code/proof audit.",
+    "H-Net v2 is the reviewed architecture source; later implementations and conference revisions are not silently substituted."
+  ],
+  "next_action": "Maintain the selected-source notes and existing owner sections; extend passage scope or run model comparisons only for a separately specified scientific claim. No empirical campaign is a prerequisite for the completed editorial intake.",
+  "non_claims": [
+    "No publication, model download/training, benchmark, evidence-state promotion, or validation of Sorenson's semantic constitution."
+  ]
+}

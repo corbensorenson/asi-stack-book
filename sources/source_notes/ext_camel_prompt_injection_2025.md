@@ -43,3 +43,9 @@ CaMeL is a comparator for separating trusted control flow from untrusted data an
 ## Open Questions
 
 - What explicit failure fixtures distinguish policy parsing errors from capability-enforcement failures?
+
+## Selected method follow-up — 2026-10-11
+
+Inspected the [version-one HTML paper](https://arxiv.org/html/2503.18813v1), specifically the trusted-query/control-flow premise, capability-policy discussion, and reported failure analysis. The threat model assumes that the user prompt is trusted and not pasted from an adversarial source. The authors separate control from untrusted tool data; the reported failures include misunderstood queries and tasks requiring actions drawn from data that the privileged planner cannot read.
+
+The comparison motivates separating accepted control from retrieved content without treating that separation as complete interpretation. Policies and their trust assumptions remain part of the comparison. This is a selected primary-source reading, not a full current-version review, a local implementation inspection, an AgentDojo reproduction, or a performance or deployment claim. The July metadata-first intake and its then-recorded version information remain historical.

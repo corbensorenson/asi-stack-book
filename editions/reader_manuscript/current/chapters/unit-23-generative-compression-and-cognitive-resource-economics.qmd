@@ -20,10 +20,13 @@ that fails its verifier, loses a residual, exceeds its authority, or forces an
 expensive recovery later has not become cheap merely because its first step was
 fast.
 
-The running case is a patch to the book's source-ingestion pipeline. A new
+This is a hypothetical allocation case, not a reported ingestion run. The
+running task is a patch to the book’s source-ingestion pipeline. A new
 paper has arrived. The requested change is bounded: ingest it, preserve its
-source boundary, route its ideas to existing chapter owners, update the public
-crosswalk, and leave the claim states untouched. The system has a fixed
+source boundary, route its ideas to existing chapter owners, prepare the public
+crosswalk change, and leave the claim states untouched. Assume the example’s
+grant permits a bounded local source copy and the named repository edits.
+External publication still needs its applicable release authority. The system has a fixed
 latency budget, limited context, one high-quality model slot, a cheaper local
 generator, deterministic tests, and a human reviewer who can spend only a few
 minutes on the final decision. The allocation problem is deciding where each
@@ -60,8 +63,9 @@ hides a residual costs 8.2, a bounded transform plus verifier costs 14.2, and a
 manual-review baseline costs 43.0. Sorting the scalar selects 2.3. Applying the
 product contract rejects the first route because verification failed and the
 second because the residual and reviewer handoff disappeared. The economic
-choice is 14.2: the least costly *eligible* route. The 43.0 route remains a
-useful adequate baseline, but it spends more than the task requires.
+choice among these authored offers is 14.2: the least costly *eligible* route
+under the fixture’s declared cost formula. The 43.0 route remains an adequate baseline in the fixture; its higher
+modeled cost does not establish that human review is wasteful in natural work.
 
 This is not a claim that the 14.2 route will win in production. The numbers are
 from a bounded synthetic fixture. Their value is conceptual: a route enters
@@ -97,8 +101,10 @@ The ingestion case makes the distinction concrete. An exact cache hit on the
 repository's source-policy prefix may save context construction without
 changing the answer contract. Reusing a prior paper's chapter mapping is a
 different operation: it reuses a decision whose validity depends on the new
-paper's content. The first can be exact computation reuse. The second is a
-semantic claim and needs renewed checking.
+paper's content. The first can be exact computation reuse only within its cache contract: model,
+tokenization, prefix state, numerical policy, and required serving inputs must
+match. It does not establish that the cached source policy remains applicable
+to this task. The second reuses a semantic decision and needs renewed checking.
 
 A qualified fast path records the model and hardware, the workload, the cache
 or proposal object, the acceptance rule, the verifier, the fallback, the
@@ -109,7 +115,8 @@ misses its latency target. A smaller memory footprint can move cost to storage
 traffic. A draft model can propose quickly while a low acceptance rate erases
 the gain.
 
-These details belong to the Fast Generation technical route. The resource
+These details belong to the
+[Fast Generation technical owner](https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html). The resource
 controller should not pretend to know them from a price estimate. It receives
 a qualified offer: under this workload and validity window, this accelerated
 path has these expected costs, these failure states, and this fallback. The
@@ -154,23 +161,34 @@ but correlation should be visible. Where the evaluator is weak or the stakes
 are high, the policy may route to deterministic tests, an external source, a
 different model family, or human review.
 
-This mechanism remains distinct from resource allocation. Governed
-Deliberation owns candidate custody, branching, revision, stopping,
+This mechanism remains distinct from resource allocation. [Governed Deliberation](https://corbensorenson.github.io/asi-stack-book/chapters/governed-deliberation-and-test-time-scaling.html)
+owns candidate custody, branching, revision, stopping,
 abstention, and bounded handoff. Resource Economics owns whether the complete
 deliberative route earns the capacity it consumes. A successful reasoning
 trace does not prove that it was the best use of the budget; a low-cost route
 does not prove that its reasoning policy was sound.
 
+The [Answerability Atlas synthesis](https://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html)
+provides a bounded research example: many selected probes revealed real
+interactions, yet the tested routing controller lost against a matched policy
+that spent more budget building candidates. The net result does not isolate
+one cause of failure. It does show why accurate information and worthwhile
+computation are separate questions. Its stipulated action budget and separate
+one-machine timing pilots also remain different cost measurements; neither is
+physical energy or a general intelligence-resource law.
+
 ## Compression Moves Burden
 
-Compression is often described as removing information. For governed systems,
-the more useful question is where the burden went. A smaller seed may require
+Compression changes representation. A lossless route reconstructs specified
+content; a lossy route discards distinctions under a declared use contract.
+The resource question is where the burden went. A smaller seed may require
 a decoder. A summary may require the source during review. A low-rank artifact
 may need a residual stream. A distilled procedure may need fallback when its
 use envelope changes. A compact model may save inference cost while increasing
 verification or repair.
 
-Compact Generative Systems treats a representation as a tuple of seed, rule,
+[Compact Generative Systems](https://corbensorenson.github.io/asi-stack-book/chapters/compact-generative-systems-and-residual-honesty.html)
+treats a representation as a tuple of seed, rule,
 memory, residual, and governance. The representation earns use only when the
 system can state what it reconstructs, how it is checked, what remains outside
 it, who owns the residual, and when the full object returns. A representation
@@ -180,10 +198,16 @@ the system's burden. It has moved the burden into the future.
 The ingestion pipeline illustrates this with source compression. A concise
 source note can make later chapter work cheaper. It cannot replace the paper
 for a claim that depends on a precise method, limitation, or result. The note
-is a useful representation for routing and orientation. The original remains
-the authority for passage-level review. The lease differs by consumer use.
+is a useful representation for routing and orientation. The primary text
+anchors what the author actually wrote; it does not establish that the reported
+method or result is correct. Passage-level interpretation and result support
+need their own evidence. The lease differs by consumer use. If retention of a
+full copy is not permitted, preserve an admitted source locator and passage
+references, and record the limits on later replay rather than keeping a
+prohibited payload for convenience.
 
-RankFold and NeuralFold make the same problem concrete for stored artifacts.
+[RankFold and NeuralFold](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html)
+make the same problem concrete for stored artifacts.
 A compressed theorem index might reconstruct byte-for-byte in a sequential
 replay and still fail an interactive verifier that needs low-latency random
 access. The archive can be admitted for cold storage while being rejected for
@@ -220,7 +244,8 @@ payback result is being asserted here.
 
 ## One Allocation Decision
 
-The components now meet at the resource controller. For the paper-ingestion
+The components now meet at the
+[resource controller](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html). For the paper-ingestion
 change, it can allocate the budget in stages:
 
 1. Retrieve the source and the smallest relevant project context without
@@ -231,9 +256,10 @@ change, it can allocate the budget in stages:
 4. Run deterministic manifest, link, schema, and render checks.
 5. Use bounded deliberation only where candidates disagree or a strong
    objection survives.
-6. Preserve the full paper while compiling a smaller source note for future
+6. Retain the permitted source basis while compiling a smaller note for future
    routing.
-7. Route the final residuals and a concise diff to the human reviewer.
+7. Route final residuals and a concise diff to the responsible reviewer when
+   that decision requires review; reuse applicable standing grants within scope.
 
 This sequence is not universally optimal. It is a policy hypothesis. Its value
 is that each expenditure has a reason and a consumer. Retrieval reduces
@@ -256,20 +282,31 @@ attempt universe, not only accepted successes.
 A useful controller needs more than a cost estimate. It needs a temporary
 agreement between the work and the resources being assigned to it. The book
 calls this a Resource Allocation Lease because the decision is scoped and
-expiring. It applies to one consumer, task class, risk level, workload,
+bounded by a declared lifetime. It applies to one consumer, task class, risk
+level, workload,
 organization, resource pool, and time window. A route that was qualified for
 small documentation changes on one machine is not automatically qualified for
 security-critical code, a different model version, or a saturated shared
 cluster.
 
 The lease begins with the success condition. In the ingestion case, success
-means more than adding a citation. The paper must be preserved, the source note
+means more than adding a citation. The admitted source basis must remain
+traceable under its retention policy, the source note
 must distinguish proposals from results, each concept must reach the correct
 technical owner, existing claims must keep their support states, public links
 must resolve, and validation must pass. A route that adds the paper but loses
 its limitations is incomplete. A route that writes persuasive prose but
 silently promotes a claim is unsafe. A route that is correct but cannot be
-replayed leaves an operational residual.
+replayed at the declared grade leaves a recovery or audit residual. Record
+replay, artifact reconstruction, and external-effect restoration are different
+claims.
+
+This is an allocation lease, not an effect grant. Reserving the verifier or
+authorizing expenditure within a budget does not permit an otherwise forbidden
+file write, disclosure, or publication. The task's action authority arrives
+through its own boundary. The allocator may make an admitted route affordable,
+defer it, or reduce its scope; it cannot repair a missing permission by making
+the route cheaper.
 
 Next comes the resource inventory. The controller records which model slots,
 context windows, local tools, verifiers, storage tiers, reviewers, and
@@ -280,8 +317,8 @@ but unavailable inside the deadline. A cache may exist but be invalid under
 the current source revision. The inventory has to describe the resource that
 can actually be used under the task's authority and timing constraints.
 
-Protected floors are applied before optimization. The source must remain
-recoverable. The final patch must pass deterministic checks. Any claim-bearing
+Protected floors are applied before optimization. Source recoverability must
+meet the admitted retention and access contract. The final patch must pass deterministic checks. Any claim-bearing
 summary must retain its limitation. The write must stay inside the repository.
 These are not preferences that a cheap route can trade away. The controller
 can change the task's scope or ask for more resources, but it cannot declare a
@@ -347,11 +384,31 @@ neighbor boundary remains unclear, or a test failure suggests a semantic
 rather than mechanical defect. Unused deliberation is not a failure to think.
 It is capacity preserved because the stopping condition was met.
 
-The sixth stage reserves five minutes of human review. The reviewer sees the
+The sixth stage reserves five minutes of human review where that review is
+required. This reservation is a planning allowance, not evidence that five
+minutes provides adequate comprehension or expertise. The reviewer sees the
 source boundary, owner decisions, changed claims, unresolved residuals, and
 validation result. They do not reread every generated token. This is an
 important economic property of structured artifacts: good machine work can
 reduce the review surface without pretending to remove human authority.
+
+The first four stages plan 20 synthetic resource units; the optional reserve of
+six units for deliberation raises the reserved machine budget to 26. Those are
+allocations, not observations of spending. The five reviewer minutes remain a
+separate resource, and unused capacity may still carry an opportunity cost.
+Reconcile actual work, release unused reservations, and keep occupied time in
+the bill. If the review needs more than its allowance, narrow, defer, or fund
+that work rather than treating the scheduled minutes as a passed check.
+
+Verification can dominate this allocation. In a toy steady-rate pipeline,
+generation supplies twelve candidate patches per minute, the required checker
+can process three, and final review can accept two. If every candidate queues
+and every check passes, accepted throughput is still at most two per minute.
+The unverified queue grows by nine per minute and the review queue by one.
+If several accepted candidates address the same job, unique useful completion
+is lower still. Throttling or selecting fewer proposals can help, but discarded
+attempts and any selection defects stay in the account. Faster generation
+alone cannot remove this bottleneck.
 
 Now change one condition. Suppose the new paper introduces a safety-critical
 claim whose assigned chapter has no competent external source. The previous
@@ -361,8 +418,12 @@ labeled proposal. It may not use the old cheap path and call the absent source
 an efficiency gain.
 
 Change another condition. Suppose the paper is a minor revision of an already
-ingested source and its digest shows that only the bibliography changed. Exact
-diffing and cached context may eliminate most proposal and adjudication work.
+ingested source. A digest identifies the new bytes; an inspected complete diff
+and source-structure check show that only bibliography entries changed. That
+may eliminate repeated concept extraction, but the changed references still
+need interpretation. A replaced citation may alter support or attribution even
+when the main prose is identical. Reuse prior decisions only where their basis
+and applicability remain intact.
 The system should exploit that structure. Governance is not an instruction to
 repeat expensive reasoning when deterministic identity and change records can
 settle the question.
@@ -434,6 +495,28 @@ synthesis, bounded formal models, synthetic route tests, and several narrow
 local campaigns across the technical owners. Those assets clarify interfaces
 and expose failure modes. They do not establish that the combined allocation
 system outperforms a strong simple baseline in natural operation.
+
+The bounded observations also limit which comparison is available. Compact
+Generative Systems checks residual and reconstruction records, with toy savings
+and retained no-change or failed-decision outcomes; it has not established
+natural semantic utility. Fast Generation’s imported speed observations produce
+no promotable task comparison, and its verified template cases are deterministic
+cost accounting, not measured model-serving acceleration.
+
+Governed Deliberation’s deterministic comparison reports 179 of 180 correct
+for adaptive stopping and 154 of 180 for fixed search, with fifteen initially
+correct answers corrupted by fixed search. A later actual-model five-arm
+assessment reports zero of sixty correct in every arm and no initially correct
+cases. That second result provides no cases on which to measure corruption of
+an initially correct answer; it does not establish a natural adaptive advantage
+or universally refute additional deliberation. Neither family promotes the core.
+
+The artifact-compression owner’s tiny synthetic roundtrip used uncompressed
+`RAW0`; NeuralFold was license-disabled. Imported NeuralFold archive metadata
+is not a fresh compression run. The resource owner’s four-offer selector and
+other bounded records likewise do not establish whole-system optimality.
+The five canonical owners and status panel retain exact artifacts, failed
+controls, decisions, and inference boundaries.
 
 A credible test would freeze a family of real tasks before outcomes and compare
 at least four policies: a strong-model-only route, a fixed low-cost route, a
@@ -627,10 +710,11 @@ sake.
 
 ## What This Establishes
 
-The argument establishes a division of responsibility. Fast Generation owns
-qualified acceleration mechanisms. Governed Deliberation owns the policy for
-spending extra inference on branches, revisions, stopping, and abstention.
-Compact Generative Systems owns reconstruction and residual honesty.
+The argument establishes a division of responsibility. Fast Generation chooses
+a request-specific generation mode within qualified routes. Governed
+Deliberation owns the policy for spending extra inference on branches,
+revisions, stopping, and abstention. Compact Generative Systems owns
+consumer-relative representation admission and residual honesty.
 RankFold/NeuralFold owns one candidate artifact-compression family. Resource
 Economics owns the complete allocation decision across all of them.
 

@@ -8,10 +8,12 @@ from html import escape
 import hashlib
 import json
 from pathlib import Path
-import shutil
 from typing import Any
 
+import build_canonical_public_status as status_builder
 from build_canonical_public_status import ROOT, build_status, load_json
+from generated_directory import install as install_directory, ordinary, relative
+from projection_files import ProjectionFiles
 
 
 STRUCTURE = ROOT / "book_structure.json"
@@ -20,7 +22,12 @@ SPINE = ROOT / "products" / "narrative_product_spine.json"
 UNIT_CROSSWALK = ROOT / "products" / "narrative_unit_crosswalk.json"
 CONTRIBUTIONS = ROOT / "products" / "contribution_focus_contract.json"
 DEFAULT_OUTPUT = ROOT / "build" / "product_projections"
+CURRENT_READER = ROOT / "editions/reader_manuscript/current/manifest.json"
 MANIFEST_SCHEMA_VERSION = "asi_stack.product_projection_manifest.v1"
+PROJECTION_SCHEMA = ROOT / "schemas/product_projection_manifest.schema.json"
+STATUS_SCHEMA = ROOT / "schemas/canonical_public_status.schema.json"
+SPINE_SCHEMA = ROOT / "schemas/narrative_product_spine.schema.json"
+INVENTORY = ROOT / "sources/source_inventory.json"
 
 EVIDENCE_GROUPS = [
     {
@@ -86,9 +93,131 @@ def sha256_file(path: Path) -> str:
     return digest.hexdigest()
 
 
-def write_json(path: Path, value: Any) -> None:
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text(json.dumps(value, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+class ProductPayload:
+    """Pure byte preparation: --check does not create even a temporary tree."""
+    def __init__(self, root: Path):
+        self.root = root
+        self.files: dict[str, bytes] = {}
+
+    def write(self, path: Path, data: bytes) -> None:
+        name = relative(path.relative_to(self.root).as_posix())
+        self.files[name] = data
+
+
+def write_text(path: Path, text: str, payload: ProductPayload | None = None) -> None:
+    if payload is None:
+        ProjectionFiles().write(path, text)
+    else:
+        payload.write(path, text.encode("utf-8"))
+
+
+def write_json(path: Path, value: Any, payload: ProductPayload | None = None) -> None:
+    write_text(path, json.dumps(value, indent=2, ensure_ascii=False) + "\n", payload)
+
+
+class ProductInputs:
+    """Bind the bytes actually read, including optional snapshot presence."""
+    def __init__(self, status_path: Path | None):
+        self.status_path = status_path
+        self.data: dict[Path, bytes | None] = {}
+        required = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS, CURRENT_READER,
+                    PROJECTION_SCHEMA, STATUS_SCHEMA, SPINE_SCHEMA, INVENTORY]
+        required.extend(ROOT / name for name in ("scripts/build_product_projections.py", "scripts/generated_directory.py",
+                                                "scripts/build_tested_site_bundle.py",
+                                                "scripts/build_canonical_public_status.py", "scripts/projection_files.py",
+                                                "scripts/validate_product_projections.py", "scripts/schema_validation.py", "scripts/admission_guard.py"))
+        for path in required:
+            self.capture(path)
+        for group in EVIDENCE_GROUPS:
+            for _, target in group["entries"]:
+                self.capture(ROOT / relative(target), optional=True)
+        if status_path is not None:
+            self.capture(status_path)
+            self.status = self.json(status_path)
+        else:
+            self.auto_notes = self.note_presence()
+            self.auto_paths = self.status_inputs()
+            for path in self.auto_paths:
+                self.capture(path)
+            self.status = build_status()
+        # Retain the existing status schema/domain owners, without granting a
+        # supplied status record authority to change the manuscript's counts.
+        status_builder.validate_status_shape(self.status)
+        errors = status_builder.validate_against_schema(self.status, self.json(STATUS_SCHEMA), "product status")
+        if errors:
+            raise ValueError("; ".join(errors[:8]))
+        canonical = canonical_chapters(self.json(STRUCTURE))
+        if (self.status["counts"]["chapters"] != len(canonical)
+                or self.status["counts"]["sources"] != len(self.json(INVENTORY))
+                or self.status["digests"]["book_structure_sha256"] != self.digest(STRUCTURE)
+                or self.status["digests"]["source_inventory_sha256"] != self.digest(INVENTORY)
+                or self.status["claim_state_distribution"]["support_states"] != {"argument": len(canonical)}):
+            raise ValueError("product status does not match canonical chapter/support counts")
+        self.status_consumed = self.consumed_status(self.status)
+        self.identity = {}
+        for path, data in self.data.items():
+            name = "inputs/supplied-status.json" if path == status_path else path.relative_to(ROOT).as_posix()
+            self.identity[name] = hashlib.sha256(data).hexdigest() if data is not None else None
+        self.identity["inputs/derived-status-consumed.json"] = hashlib.sha256(self.status_consumed).hexdigest()
+        if status_path is None:
+            self.identity["inputs/external-note-presence.json"] = hashlib.sha256(json.dumps(self.auto_notes).encode()).hexdigest()
+        self.guard()
+
+    def capture(self, path: Path, *, optional: bool = False) -> None:
+        ordinary(path)
+        if path in self.data:
+            if self.data[path] is None and not optional:
+                raise ValueError(f"missing product input: {path}")
+            return
+        if path.exists() and not path.is_file():
+            raise ValueError(f"product input is not a regular file: {path}")
+        if not path.is_file() and not optional:
+            raise ValueError(f"missing product input: {path}")
+        self.data[path] = path.read_bytes() if path.is_file() else None
+
+    def status_inputs(self) -> list[Path]:
+        paths = [ROOT / path.relative_to(status_builder.ROOT) for path in
+                 (status_builder.CONFIG, status_builder.INVENTORY, status_builder.DISPOSITIONS,
+                  status_builder.RELEASE_PROFILES, status_builder.CLAIM_IDENTITY_GRAPH)]
+        paths += [ROOT / relative(chapter["file"]) for part in self.json(STRUCTURE)["parts"] for chapter in part["chapters"]]
+        for pattern in ("evidence_transitions/v1_0_measured/*.json", "evidence_transitions/v1_x_measured/*.json"):
+            paths += sorted(ROOT.glob(pattern))
+        return paths
+
+    def note_presence(self) -> list[str]:
+        # The status owner consumes filenames only, not note bodies.
+        names = []
+        for path in sorted(ROOT.glob("sources/source_notes/ext_*.md")):
+            ordinary(path)
+            if not path.is_file():
+                raise ValueError(f"external note presence is not a regular file: {path}")
+            names.append(path.relative_to(ROOT).as_posix())
+        return names
+
+    @staticmethod
+    def consumed_status(status: dict) -> bytes:
+        # build_timestamp is deliberately not consumed by a product page.
+        # Explicit --status bytes still retain their full source identity.
+        value = {key: status[key] for key in ("status_id", "source_commit", "counts", "claim_state_distribution")}
+        return json.dumps(value, sort_keys=True, ensure_ascii=False).encode("utf-8")
+
+    def json(self, path: Path) -> Any:
+        return json.loads(self.data[path])
+
+    def digest(self, path: Path) -> str:
+        return hashlib.sha256(self.data[path]).hexdigest()
+
+    def guard(self) -> None:
+        for path, data in self.data.items():
+            ordinary(path)
+            if path.exists() and not path.is_file():
+                raise ValueError(f"product input became a special object: {path}")
+            if (path.read_bytes() if path.is_file() else None) != data:
+                raise ValueError(f"product input changed while preparing: {path}")
+        if self.status_path is None:
+            if (self.status_inputs() != self.auto_paths or self.note_presence() != self.auto_notes
+                    or self.consumed_status(build_status()) != self.status_consumed):
+                raise ValueError("derived product status/input set changed while preparing")
 
 
 def canonical_chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
@@ -146,6 +275,7 @@ code {{ overflow-wrap:anywhere; }}
 <div class="eyebrow">Product projection</div>
 <h1>{escape(title)}</h1>
 <p class="lead">{escape(subtitle)}</p>
+<p>Three proposed contributions organize all three products: <strong>governed-cognition interface contracts</strong>, <strong>public claim-state transition discipline</strong>, and <strong>record/reality reconciliation with residual honesty</strong>. The 89 technical chapters support composition and process proposals with bounded local implementation results. Selection establishes neither novelty nor chapter-core support. Read the <a href="../../docs/three_defended_contributions.md">contribution summary</a> and <a href="../../docs/defended_contribution_prior_art_positioning.md">competent conventional alternatives</a>.</p>
 {body}
 </main></body></html>
 """
@@ -156,9 +286,11 @@ def build_narrative(
     canonical: list[dict[str, Any]],
     spine: dict[str, Any],
     contributions: dict[str, dict[str, Any]],
+    *, inputs: ProductInputs | None = None, payload: ProductPayload | None = None,
 ) -> dict[str, Any]:
     by_id = {row["chapter_id"]: row for row in canonical}
-    unit_crosswalk = load_json(UNIT_CROSSWALK)
+    unit_crosswalk = inputs.json(UNIT_CROSSWALK) if inputs else load_json(UNIT_CROSSWALK)
+    current_reader = inputs.json(CURRENT_READER) if inputs else load_json(CURRENT_READER)
     unit_by_representative = {
         unit["representative_chapter_id"]: unit
         for unit in unit_crosswalk["units"]
@@ -221,6 +353,14 @@ def build_narrative(
         })
     manifest = {
         "schema_version": "asi_stack.narrative_product_projection.v1",
+        "custody_mode": "historical_candidate_navigation",
+        "current_reader": {
+            "entry_path": "reader/index.html",
+            "unit_count": current_reader["unit_count"],
+            "owner_route_count": current_reader["owner_route_count"],
+            "manifest_sha256": inputs.digest(CURRENT_READER) if inputs else sha256_file(CURRENT_READER),
+            "review_state": "ready_for_author_review_not_an_approved_multiformat_release",
+        },
         "status": spine["status"],
         "selected_chapter_count": len(selected),
         "canonical_chapter_count": len(canonical),
@@ -231,7 +371,7 @@ def build_narrative(
         "non_claims": spine["non_claims"],
     }
     product_dir = output / "narrative-book"
-    write_json(product_dir / "manifest.json", manifest)
+    write_json(product_dir / "manifest.json", manifest, payload)
     cards = []
     for row in selected:
         link = safe_rel_link("products/narrative-book", row["public_path"]) + "?view=human"
@@ -281,14 +421,20 @@ def build_narrative(
             f'{reference_owner_block}</article>'
         )
     body = (
-        '<p class="status"><strong>Status:</strong> generated twenty-two-unit candidate route. '
+        '<p class="status"><strong>Current Human Reader:</strong> '
+        f'<a href="../../reader/">Read the independently authored {manifest["current_reader"]["unit_count"]}-unit book</a>, '
+        f'routed to all {manifest["current_reader"]["owner_route_count"]} technical owners. '
+        'HTML is available; the manuscript remains ready for author review. '
+        'This does not approve EPUB, PDF or audio.</p>'
+        '<h2>Historical candidate navigation</h2>'
+        '<p class="status"><strong>Status:</strong> historical generated twenty-two-unit candidate route. '
         'It is not a reviewed reader release, and the other canonical chapters remain in the architecture reference.</p>'
         '<h2>Thesis-to-method route</h2><div class="grid">' + "".join(cards) + '</div>'
         f'<h2>Reference routing</h2><p>{len(omitted)} specialized chapters remain discoverable in the architecture reference; none was deleted or demoted.</p>'
     )
-    (product_dir / "index.html").write_text(
+    write_text(product_dir / "index.html",
         page("Narrative technical book", "A bounded thesis-to-method reading route with the live research scaffold hidden in Human view.", body, "manifest.json"),
-        encoding="utf-8",
+        payload,
     )
     return manifest
 
@@ -297,6 +443,7 @@ def build_reference(
     output: Path,
     canonical: list[dict[str, Any]],
     contributions: dict[str, dict[str, Any]],
+    *, payload: ProductPayload | None = None,
 ) -> dict[str, Any]:
     chapters = []
     for row in canonical:
@@ -322,7 +469,7 @@ def build_reference(
         ],
     }
     product_dir = output / "architecture-reference"
-    write_json(product_dir / "manifest.json", manifest)
+    write_json(product_dir / "manifest.json", manifest, payload)
     groups: dict[str, list[dict[str, Any]]] = {}
     for row in chapters:
         groups.setdefault(row["part_title"], []).append(row)
@@ -344,26 +491,33 @@ def build_reference(
         '<p class="status"><strong>Status:</strong> complete generated lookup index over every canonical chapter. '
         'It is a specification route, not evidence of a deployed stack.</p>' + "".join(sections)
     )
-    (product_dir / "index.html").write_text(
+    write_text(product_dir / "index.html",
         page("Architecture reference specification", "All responsibilities, interfaces, invariants, failure routes, implementation horizons, and technical chapters in canonical order.", body, "manifest.json"),
-        encoding="utf-8",
+        payload,
     )
     return manifest
 
 
-def build_evidence(output: Path, status: dict[str, Any]) -> dict[str, Any]:
+def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
+                   payload: ProductPayload | None = None) -> dict[str, Any]:
     product_dir = output / "evidence-registry"
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:
         published_entries: list[dict[str, Any]] = []
         for label, target in group["entries"]:
-            source = ROOT / target
-            if source.is_file():
+            source = ROOT / relative(target)
+            ordinary(source)
+            data = inputs.data[source] if inputs else source.read_bytes() if source.is_file() else None
+            if data is not None:
                 snapshot = product_dir / "artifacts" / target
-                snapshot.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copy2(source, snapshot)
+                if payload is None:
+                    snapshot.parent.mkdir(parents=True, exist_ok=True)
+                    ordinary(snapshot)
+                    snapshot.write_bytes(data)
+                else:
+                    payload.write(snapshot, data)
                 projection_path = (Path("artifacts") / target).as_posix()
-                digest = sha256_file(source)
+                digest = hashlib.sha256(data).hexdigest()
                 mode = "content_addressed_snapshot"
             else:
                 projection_path = safe_rel_link("products/evidence-registry", target)
@@ -397,7 +551,7 @@ def build_evidence(output: Path, status: dict[str, Any]) -> dict[str, Any]:
             "The registry does not promote any chapter-core support state.",
         ],
     }
-    write_json(product_dir / "manifest.json", manifest)
+    write_json(product_dir / "manifest.json", manifest, payload)
     sections = []
     for group in published_groups:
         cards = []
@@ -414,45 +568,27 @@ def build_evidence(output: Path, status: dict[str, Any]) -> dict[str, Any]:
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
         + "".join(sections)
     )
-    (product_dir / "index.html").write_text(
+    write_text(product_dir / "index.html",
         page("Evidence, proof, and release registry", "Structured routes to what is supported, by which artifacts, under which limits, and with which unresolved residuals.", body, "manifest.json"),
-        encoding="utf-8",
+        payload,
     )
     manifest["entry_count"] = entry_count
-    write_json(product_dir / "manifest.json", manifest)
+    write_json(product_dir / "manifest.json", manifest, payload)
     return manifest
 
 
-def main() -> None:
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
-    parser.add_argument("--status", type=Path, help="canonical status file; defaults to a fresh local status build")
-    args = parser.parse_args()
-    output = args.output if args.output.is_absolute() else ROOT / args.output
-    status_path = (
-        args.status if args.status is not None and args.status.is_absolute()
-        else ROOT / args.status if args.status is not None
-        else None
-    )
-    required_inputs = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS]
-    if status_path is not None:
-        required_inputs.append(status_path)
-    for path in required_inputs:
-        if not path.exists():
-            raise SystemExit(f"missing product-projection input: {path}")
-    structure = load_json(STRUCTURE)
-    contracts = load_json(CONTRACTS)
-    spine = load_json(SPINE)
-    contribution_data = load_json(CONTRIBUTIONS)
-    status = load_json(status_path) if status_path is not None else build_status()
-    if output.exists():
-        shutil.rmtree(output)
-    output.mkdir(parents=True)
+def prepare_payload(output: Path, inputs: ProductInputs) -> ProductPayload:
+    structure = inputs.json(STRUCTURE)
+    contracts = inputs.json(CONTRACTS)
+    spine = inputs.json(SPINE)
+    contribution_data = inputs.json(CONTRIBUTIONS)
+    status = inputs.status
+    payload = ProductPayload(output)
     canonical = canonical_chapters(structure)
     assignments = {row["chapter_id"]: row for row in contribution_data["chapter_assignments"]}
-    narrative = build_narrative(output, canonical, spine, assignments)
-    reference = build_reference(output, canonical, assignments)
-    evidence = build_evidence(output, status)
+    narrative = build_narrative(output, canonical, spine, assignments, inputs=inputs, payload=payload)
+    reference = build_reference(output, canonical, assignments, payload=payload)
+    evidence = build_evidence(output, status, inputs=inputs, payload=payload)
     product_rows = [
         {
             "id": "narrative_book",
@@ -483,10 +619,10 @@ def main() -> None:
             "source_commit": status["source_commit"],
             "chapter_count": status["counts"]["chapters"],
             "source_count": status["counts"]["sources"],
-            "structure_sha256": sha256_file(STRUCTURE),
-            "contract_sha256": sha256_file(CONTRACTS),
-            "narrative_spine_sha256": sha256_file(SPINE),
-            "narrative_unit_crosswalk_sha256": sha256_file(UNIT_CROSSWALK),
+            "structure_sha256": inputs.digest(STRUCTURE),
+            "contract_sha256": inputs.digest(CONTRACTS),
+            "narrative_spine_sha256": inputs.digest(SPINE),
+            "narrative_unit_crosswalk_sha256": inputs.digest(UNIT_CROSSWALK),
         },
         "products": product_rows,
         "non_claims": [
@@ -495,7 +631,7 @@ def main() -> None:
             "The canonical source tree and its evidence records remain authoritative.",
         ],
     }
-    write_json(output / "product-projections.json", root_manifest)
+    write_json(output / "product-projections.json", root_manifest, payload)
     cards = "".join(
         f'<article class="card"><h3><a href="{escape(row["entry_path"])}">{escape(next(p["label"] for p in contracts["products"] if p["id"] == row["id"]))}</a></h3>'
         f'<p class="meta">{row["entry_count"]} indexed entries · {escape(row["status"])}</p></article>'
@@ -504,13 +640,107 @@ def main() -> None:
     root_body = '<p class="status">Three generated routes, one canonical source tree. Availability is separate from review and release approval.</p><div class="grid">' + cards + '</div>'
     # Root page needs one fewer parent traversal than the product-specific template.
     root_html = page("Choose the product you need", "Narrative reading, architecture lookup, and evidence audit are separate questions with separate density and review contracts.", root_body, "product-projections.json")
-    root_html = root_html.replace('href="../../index.html"', 'href="../index.html"').replace('href="../index.html">Three products</a>', '')
-    (output / "index.html").write_text(root_html, encoding="utf-8")
-    print(
-        f"Built product projections: {narrative['selected_chapter_count']} narrative chapters, "
-        f"{reference['chapter_count']} reference chapters, {evidence['entry_count']} evidence routes."
-    )
+    root_html = root_html.replace('href="../../index.html"', 'href="../index.html"').replace('href="../index.html">Three products</a>', '').replace('href="../../docs/', 'href="../docs/')
+    write_text(output / "index.html", root_html, payload)
+    validate_payload(payload, inputs)
+    return payload
+
+
+def validate_payload(payload: ProductPayload, inputs: ProductInputs) -> None:
+    # Keep the existing domain consumers; byte preparation is not acceptance.
+    from validate_product_projections import narrative_projection_errors, narrative_routing_errors, reference_responsibility_errors
+    def load(name):
+        return json.loads(payload.files[name])
+    root = load("product-projections.json")
+    narrative = load("narrative-book/manifest.json")
+    reference = load("architecture-reference/manifest.json")
+    evidence = load("evidence-registry/manifest.json")
+    canonical = canonical_chapters(inputs.json(STRUCTURE))
+    errors = status_builder.validate_against_schema(root, inputs.json(PROJECTION_SCHEMA), "product projection")
+    errors += status_builder.validate_against_schema(inputs.json(SPINE), inputs.json(SPINE_SCHEMA), "narrative spine")
+    errors += narrative_projection_errors(inputs.json(SPINE))
+    errors += narrative_routing_errors(narrative, inputs.json(UNIT_CROSSWALK)["units"], canonical,
+                                       payload.files["narrative-book/index.html"].decode())
+    errors += reference_responsibility_errors(reference, canonical, payload.files["architecture-reference/index.html"].decode())
+    expected_binding = {"canonical_status_id": inputs.status["status_id"], "source_commit": inputs.status["source_commit"],
+                        "chapter_count": len(canonical), "source_count": inputs.status["counts"]["sources"],
+                        "structure_sha256": inputs.digest(STRUCTURE), "contract_sha256": inputs.digest(CONTRACTS),
+                        "narrative_spine_sha256": inputs.digest(SPINE), "narrative_unit_crosswalk_sha256": inputs.digest(UNIT_CROSSWALK)}
+    if root["generated_from"] != expected_binding:
+        errors.append("prepared product binding differs from inspected status/source bytes")
+    expected_products = {"narrative_book": ("narrative-book", narrative, narrative["selected_chapter_count"]),
+                         "architecture_reference": ("architecture-reference", reference, reference["chapter_count"]),
+                         "evidence_registry": ("evidence-registry", evidence, evidence["entry_count"])}
+    if len(root["products"]) != 3 or {row["id"] for row in root["products"]} != set(expected_products):
+        errors.append("prepared product IDs are incomplete or duplicated")
+    for row in root["products"]:
+        if row["id"] in expected_products:
+            directory, manifest, count = expected_products[row["id"]]
+            if row != {"id": row["id"], "status": manifest["status"], "entry_path": directory + "/index.html",
+                       "manifest_path": directory + "/manifest.json", "entry_count": count}:
+                errors.append("prepared product route/count disagrees with its owning manifest")
+    current = inputs.json(CURRENT_READER)
+    if (narrative["current_reader"]["unit_count"] != current["unit_count"]
+            or narrative["current_reader"]["owner_route_count"] != current["owner_route_count"]
+            or narrative["current_reader"]["manifest_sha256"] != inputs.digest(CURRENT_READER)
+            or narrative["custody_mode"] != "historical_candidate_navigation"):
+        errors.append("prepared narrative lost current-reader or historical-candidate custody")
+    if (len(narrative["chapters"]) != narrative["selected_chapter_count"] or narrative["canonical_chapter_count"] != len(canonical)
+            or evidence["chapter_count"] != len(canonical) or evidence["source_count"] != inputs.status["counts"]["sources"]
+            or reference["chapter_count"] != len(canonical)):
+        errors.append("prepared product counts contradict canonical ownership/status")
+    if evidence["entry_count"] != sum(len(group["entries"]) for group in evidence["groups"]):
+        errors.append("prepared evidence denominator differs from its entries")
+    for group in evidence["groups"]:
+        for entry in group["entries"]:
+            if entry["publication_mode"] == "content_addressed_snapshot":
+                data = payload.files["evidence-registry/" + relative(entry["projection_path"])]
+                if hashlib.sha256(data).hexdigest() != entry["sha256"] or data != inputs.data[ROOT / entry["canonical_path"]]:
+                    errors.append("prepared evidence snapshot differs from inspected source")
+    for row in root["products"]:
+        if row["entry_path"] not in payload.files or row["manifest_path"] not in payload.files:
+            errors.append("prepared product route is missing")
+    if errors:
+        raise ValueError("; ".join(errors[:8]))
+
+
+def build_products(output: Path, status_path: Path | None = None, *, check: bool = False) -> dict:
+    ordinary(output)
+    output = output.resolve()
+    if not check and output != (ROOT / "_site/products").resolve() and not output.is_relative_to((ROOT / "build").resolve()):
+        raise ValueError("product installation requires _site/products or an ignored build output")
+    inputs = ProductInputs(status_path)
+    for path in inputs.data:
+        source = path.resolve()
+        if source == output or output in source.parents or source in output.parents:
+            raise ValueError("product output and inspected inputs must not overlap")
+    payload = prepare_payload(output, inputs)
+    # Products inside a rendered site share the reader/channel writer's lock.
+    lock_root = output.parent if output.name == "products" and (output.parent / "status/canonical-public-status.json").is_file() else output
+    return install_directory(output, family="product_projections", payload=payload.files, inputs=inputs.identity,
+                             guard=inputs.guard, check=check, lock_root=lock_root)
+
+
+def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT)
+    parser.add_argument("--status", type=Path, help="canonical status file; defaults to a fresh local status build")
+    parser.add_argument("--check", action="store_true", help="Check complete current bytes without writing or staging")
+    args = parser.parse_args()
+    output = args.output if args.output.is_absolute() else ROOT / args.output
+    status_path = args.status if args.status is None or args.status.is_absolute() else ROOT / args.status
+    try:
+        print(f"{'Checking' if args.check else 'Preparing complete replacement for'} product output: {output}", flush=True)
+        record = build_products(output, status_path, check=args.check)
+    except (ValueError, OSError, KeyError, TypeError) as error:
+        raise SystemExit(f"Product projection refused: {error}") from error
+    print(f"{'Checked' if args.check else 'Installed'} complete product projection: {len(record['files'])} files; support/release effects none.")
 
 
 if __name__ == "__main__":
-    main()
+    from admission_guard import canonical_access
+    try:
+        with canonical_access(ROOT):
+            main()
+    except (OSError, ValueError) as error:
+        raise SystemExit(f"Product projection refused: {error}")

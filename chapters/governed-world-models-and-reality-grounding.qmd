@@ -4,7 +4,7 @@ chapter_id: "governed-world-models-and-reality-grounding"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
   - "platonic_world_model"
   - "deterministic_capability_compilation"
@@ -12,14 +12,18 @@ primary_sources:
   - "simulation_scaling"
   - "cognitive_compilation"
   - "planforge"
+  - "relational_dimension_compiler"
   - "ext_world_models_2018"
   - "ext_dreamer_v3_2025"
   - "ext_v_jepa_2_2025"
-  - "relational_dimension_compiler"
   - "ext_toward_causal_representation_learning_2021"
+  - "ext_causal_calculus_1995"
   - "ext_deep_ensembles_2017"
   - "ext_conformal_prediction_2021"
   - "ext_wilds_2021"
+  - "ext_i_jepa_2023"
+  - "ext_platonic_representation_hypothesis_2024"
+  - "ext_platonic_representation_jepa_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -37,12 +41,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-08-02 |
-| Primary source records | fourteen assigned records, adding causal-representation, deep-ensemble, conformal-prediction, and natural distribution-shift comparators to the prior typed relation, latent dynamics, and governance sources |
+| Last updated | 2026-11-02 |
+| Primary source records | 18 current manifest assignments; November 2 additions have the selected passage scopes recorded in their notes, not a fresh review of every earlier source. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` |
-| Source loading state | source notes: `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `relational_dimension_compiler`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`; raw cache: `simulation_scaling`, `cognitive_compilation`, `planforge` |
+| Source queue | primary: `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`; supporting: `platonic_world_model`, `simulation_scaling`, `planforge`, `relational_dimension_compiler`; variants: `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` |
+| Source loading state | source notes: `platonic_world_model`, `deterministic_capability_compilation`, `qcsa_whitepaper`, `simulation_scaling`, `cognitive_compilation`, `planforge`, `relational_dimension_compiler`, `ext_world_models_2018`, `ext_dreamer_v3_2025`, `ext_v_jepa_2_2025`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021`; raw cache: `simulation_scaling`, `cognitive_compilation`, `planforge`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` |
 | Test state | The governed packet schema, safe-hold record fixture, independent semantic validator, thirteen fixture/protocol mutations, a six-event transaction lifecycle with eleven independent lifecycle rejections, and two public Lean targets through 32 declarations are implemented. The six-arm claim-bearing campaign is protocol-ready and resource-isolated, not executed; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -58,7 +62,12 @@ real-world grounding, safe deployment, or support-state movement.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** The model-first planner discounts the pallet to preserve its rollout. The reconciliation path makes current observation authoritative for action and retains the miss.
+**Concrete lens.** In a hypothetical warehouse, a forecast says the aisle is
+clear while a current qualified sensor reports an obstacle. A competent ordinary
+controller can stop and retain the disagreement. The proposed layer must earn
+its extra burden when longer predictions, competing models, or replacement make
+that comparison harder; it cannot certify sensor truth or grant motion
+permission.
 
 An intelligent system can rehearse many futures and still misunderstand the situation it inhabits. The danger begins when an internal trajectory is treated as an observation, when a planner exploits a prediction error, or when an updated model gains permission to drive actions.
 
@@ -89,51 +98,51 @@ cannot reliably separate model error from policy error, compare a forecast with
 what later happened, or explain why imagination was allowed to influence an
 effect request.
 
-Reality grounding has a deliberately operational meaning at this boundary. It
-is the repeated, governed reconciliation of admitted observations, predictive
+Reality grounding has a deliberately operational meaning at this boundary. It is
+the repeated, governed reconciliation of admitted observations, predictive
 state, imagined outcomes, authorized actions, and independently observed
 effects. It is not a proposed solution to philosophical symbol grounding and it
 does not absorb generic perception. The governed-world-model layer owns the
-validity and lifecycle of predictive state before that state can justify plan
-selection or stronger action.
+qualification and lifecycle of predictive state for a declared planning use.
+That use can inform an action proposal; it cannot make the action permissible.
 
 ### Exclusive job and adjacent boundaries
 
-**Exclusive job:** Govern predictive state, imagined branches, model/world
-disagreement, replanning, external correction, and action authority when an
-agent plans through a learned, symbolic, simulated, or hybrid world model.
+**Exclusive job:** Qualify versioned predictive branches for declared uses and
+retain their disagreement with later admitted observations. Planning owns the
+resulting plan revision; observation providers own measurement qualification;
+Runtime owns current permission and effect admission.
 
 | Adjacent owner | Keeps | Governed world models own |
 |---|---|---|
-| Planning as a Control Layer | goals, candidate decompositions, DAGs, scheduling, route choice, and replanning decisions | predictive-state validity, rollout support, imagined/observed discrepancy, and model-relative admission facts |
+| Planning as a Control Layer | goals, candidate decompositions, DAGs, scheduling, route requirements, and replanning decisions | predictive-state validity, rollout support, imagined/observed discrepancy, and model-relative admission facts |
 | Mathematical and Search Substrates | candidate algorithms, representations, recurrent structures, search families, and substrate adoption | world-model checkpoint lifecycle, horizon error budgets, grounding gates, and model-use residuals |
 | Artifact Graphs, Audit Logs, and Replay | general provenance, lineage, invalidation, and replay across the stack | distinct observation, belief, prediction, branch, intervention, and observed-effect identities |
-| Runtime Adapters, Tool Permissions, and Human Approval | permission and mechanisms for external effects | whether modeled state is sufficiently supported to request that authority |
+| Runtime Adapters, Tool Permissions, and Human Approval | current grants, effect admission, attempts, observation and recovery | whether predictive state is qualified for a declared action proposal; qualification supplies no grant |
 
 ## Why this boundary earns a chapter
 
-Planning owns what to pursue and how candidate work is ordered. Perception owns
-how environmental signals become admitted observations. Runtime owns whether an
-effect is permitted. None owns the intervening prediction object: the exact
-model-relative branch that may influence a plan while remaining defeasible,
-versioned, uncertainty-bearing, and answerable to later observation.
+Planning owns proposed work and its ordering. Observation providers qualify
+measurements. Runtime owns effect admission. The intervening prediction packet
+needs an explicit owner because an attractive forecast can be unsupported even
+when the plan and current grant are valid. A model update can also make a cached
+branch ineligible without erasing the earlier decision or observation.
 
-That object creates a distinct failure and governance surface. A planner can
-exploit a favorable model error even when every plan edge is well formed; a
-fresh observation can invalidate an attractive branch without invalidating the
-goal; and a model update can silently retarget cached branches while leaving
-the effect-authority record untouched. Returning these concerns to adjacent
-chapters would either make Planning responsible for model validity, make
-Perception responsible for counterfactuals, or let Runtime decide whether an
-imagined state was evidentially admissible. Each move collapses an interface the
-stack needs to inspect independently.
+These are logical responsibilities, not a requirement for separate services. An
+ordinary controller, state store, or conventional workflow can already carry
+forecast identity, measurement quality, current permission and later outcomes.
+Prefer that implementation when it meets the accepted obligations at lower
+burden. Stable, directly observable work may need no learned world model at all.
+Plural predictions become a candidate when long horizons, hidden state, model
+replacement or contested interventions make a single estimate inadequate; they
+can still share defects and fail to justify their cost.
 
-The terminal reader decision is therefore **integrate at argument support**.
-The chapter earns its place through its exclusive qualified-branch and
-reality-residual contract, not through source prestige or the prior synthetic
-campaign. Its formal record and protocol make the boundary executable and
-falsifiable while causal grounding, utility, safe control, transfer, and
-deployment remain open.
+The terminal reader decision remains **integrate at argument support**: retain
+the qualified-branch and reality-residual distinction as a falsifiable proposal.
+Existing schemas, finite route checks and a prospective protocol make recorded
+obligations inspectable. They do not implement or qualify a live prediction
+service. A comparison that favors ordinary control should narrow, merge or
+remove the additional machinery rather than redefine its winner as this stack.
 
 ## Why existing approaches are insufficient
 
@@ -188,15 +197,52 @@ consequence classes, or rejected for that regime.
 
 [governed-world-models-and-reality-grounding.core, label: Design rationale, support: argument] A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.
 
-**Reader claim.** A world-model prediction is a branch-local hypothesis until current observation reconciles it with reality; fluent imagination cannot overwrite a contradictory sensor state.
+**Reader claim.** A prediction remains a model-relative hypothesis. Compare it
+with qualified observations without turning either a coherent forecast or an
+admitted reading into unquestionable reality.
 
-**Operational rule.** Bind every rollout to model version, observation basis, branch, intervention, horizon, uncertainty, calibration, provenance, disagreement, authority, expiry, and fallback. Before consequential action, compare predicted and observed state; material mismatch stops or replans and preserves both records.
+**Operational rule.** Bind consequential rollout use to its model, observation
+basis, branch, intervention, horizon, uncertainty and validity limits. Check
+current use eligibility and the applicable action grant separately. Route
+material disagreement before further affected action; preserve permitted
+forecast and outcome history, including unresolved effects.
 
 ### Worked reconciliation: the imagined aisle is clear, the sensor sees a pallet
 
-A warehouse world model predicts that aisle `A7` will remain clear for the next five seconds and proposes a fast route. At dispatch time, a current depth sensor observes an unregistered pallet inside the stopping envelope. The planner may keep the forecast as a failed prediction for calibration, but it cannot relabel the sensor reading as noise merely because the imagined branch is coherent. The action route stops, the observed state becomes actuality for the next plan, and the prediction error enters the model’s ledger.
+Consider a hypothetical warehouse robot with a current grant for bounded motion
+and a controller qualified to stop within its declared operating envelope. At
+`t0`, model `M7` predicts aisle `A7` is clear for five seconds. At `t1`, before
+the proposed movement, an admitted depth reading reports an obstacle inside the
+stopping envelope. Its capture time, location binding and sensor-quality checks
+are adequate for this use. The fast branch is no longer eligible; the controller
+selects its qualified stop rather than letting the forecast dismiss the reading.
+The existing grant may cover the stop or an eligible alternate route. A fresh
+approval is needed only when the proposed action exceeds that grant.
 
-If sensor trust is itself disputed, the system routes to a conservative hold or independent observation rather than choosing whichever state enables progress. A model update may improve future forecasts but cannot erase this miss or widen motion authority. This architectural scene explains repeated reconciliation; it does not establish sensor truth, world-model accuracy, causal fidelity, calibration, safe control, or an advantage over model-free or rule-based baselines.
+| Record | What the hypothetical trace may say | What it may not say |
+|---|---|---|
+| Forecast | `M7` predicted a clear aisle at `t0` under a named horizon and assumptions | The aisle was actually clear for that interval |
+| Admitted reading | The qualified sensor reported an obstacle at `t1` | Every obstacle identity or hidden part of the aisle is known |
+| Control request | A stop is selected under the existing grant and qualified envelope | Selection proves the actuator stopped |
+| Later observation | A qualified outcome channel reports a stationary robot at `t2`, if available | A missing acknowledgement proves no motion occurred |
+| Residual | The forecast and reading disagree; attribution remains open until evidence discriminates | The model is the sole cause, or stopping proved a collision was prevented |
+
+If the reading is stale, misbound, occluded or suspected to be poisoned, retain
+the competing hypotheses and seek qualified cross-checks. The response follows
+the declared consequence policy; neither “always trust the newest sensor” nor
+“always trust the model” resolves uncertainty. A hold itself needs a feasible
+controller and can carry physical risk. If an actuator reply is lost after an
+attempt, the outcome remains unknown until qualified observation or a permitted
+same-operation protocol resolves it; a new branch does not rearm the effect.
+
+A competent reactive controller with a current grant, obstacle checks, outcome
+observation and an ordinary event log can make the same bounded decision.
+Stopping in this story therefore establishes no advantage for a learned model or
+plural-model governance. The proposed layer adds a candidate way to retain
+model-version and branch dependencies across more difficult forecasts. A later
+`M8` update may qualify new predictions, but it cannot erase the permitted `M7`
+history or widen the motion grant. This is a teaching trace, not a robot run,
+calibration result, prevention finding or safe-control demonstration.
 
 The service returns hypotheses and branch-local state, not facts about
 actuality. Consequential admission depends on a current observation basis,
@@ -249,76 +295,119 @@ horizon, resolution, consequence class, resource budget, planner purpose, and
 forbidden uses. The response contains predicted states or representations,
 reward or value estimates where relevant, uncertainty by horizon, validity
 domain, omissions, disagreement, and a support ceiling. An imagined branch has
-its own identity and cannot write into the actual-world ledger.
+its own identity and cannot be written as an observed outcome. The actual-world
+ledger records qualified assertions about external state; its label does not
+make those assertions true or complete.
 
 Admission evaluates the rollout where it will be used, not only on a global
 validation score. The gate consults horizon-conditional calibration, state-
 region coverage, action or intervention class, consequence severity, model
 freshness, observation freshness, model diversity, known failures, and current
-disagreement. It also probes whether the proposed policy is seeking an
-unusually valuable state in a low-support region. Failure can shorten the
-horizon, request another observation, switch models, use a symbolic constraint,
-defer to review, choose a safe action, or block the branch.
+disagreement. It also probes whether the proposed policy is seeking an unusually
+valuable state in a low-support region. Failure can shorten the horizon, request
+another observation, switch models, use a symbolic constraint, defer to review,
+choose a qualified fallback, or block the branch.
 
 Execution remains outside the prediction service. An admitted branch can
-influence a plan and support an authority request, but a separate runtime gate
-decides whether any effect may occur. After an authorized action, an observer
-outside the model/actor/critic path records the effect when possible. The
-reconciliation step compares forecast and observation, attributes error without
-backfilling history, updates calibration evidence, invalidates dependent
-branches, and routes material residuals to re-estimation, replanning, fallback,
-review, or safe hold.
+influence a plan and its action proposal, but a separate runtime gate checks the
+current grant and conditions before any effect attempt. An existing applicable
+grant remains usable; predictive confidence creates no new one. After an
+admitted attempt, an observer outside the model/actor/critic path records the
+effect when possible. The reconciliation step compares forecast and observation,
+retains unresolved attribution without backfilling history, updates calibration
+evidence, withdraws affected branches from current use under the known
+dependency map, retains permitted prior records, and routes material residuals
+to re-estimation, replanning, fallback, review, or safe hold.
 
 Model updates use a lifecycle distinct from ordinary belief updates. A new
-checkpoint receives a new identity, training and data lineage, evaluator
-record, validity profile, migration disposition, rollback scope, and authority
-ceiling. Shadow or canary use can collect comparison evidence, but the update
-does not inherit the old checkpoint's support outside explicitly reviewed
-compatibility. Historical decisions continue to resolve against the exact
-model and observation basis used at the time.
+checkpoint receives a new identity, training and data lineage, evaluator record,
+validity profile, migration disposition, rollback scope, and separately
+referenced authority ceiling. Shadow or canary use can collect comparison
+evidence, but the update does not inherit the old checkpoint's support outside
+explicitly reviewed compatibility. Historical decisions cite the exact model and
+observation basis used at the time where retention and access permit. A version
+reference is not a promise that all training data, checkpoints or private
+measurements may be kept forever, or that replay reconstructs an omitted
+external event.
 
+**How to read the governed reality loop:** qualified observations inform a
+versioned belief. A pinned model produces a branch with horizon, uncertainty,
+calibration and disagreement limits. Predictive-use admission can allow that
+hypothesis into a plan, or route it to review. Runtime separately checks the
+applicable grant before an attempt. A later qualified observation, or an
+explicit unknown outcome, is compared with the retained forecast. Material
+residuals route affected future use to re-estimation, replanning, qualified
+fallback or hold. Permitted records preserve both versions. These are proposed
+interfaces, not an implemented controller or a truth guarantee.
+
+::: {.asi-key-figure .world-reality-loop role="region" aria-label="Governed reality loop; scroll horizontally on narrow screens" tabindex="0"}
 ```{mermaid}
-flowchart LR
-  O["External observations and environment truth"]
-  A["Observation admission and freshness checks"]
-  B["Versioned belief state with alternatives"]
-  M["Pinned plural world models"]
-  R["Action-conditioned imagined branches"]
-  C["Calibration, support, and disagreement registry"]
-  G{"Planner admission gate"}
-  P["Plan alternatives and predicted consequences"]
-  X{"Independent effect-authority gate"}
-  E["Authorized effect and later observation"]
-  D["Reality residual and error attribution"]
-  F["Re-estimate, replan, fallback, review, or safe hold"]
-  L["Counterfactual and model-version ledger"]
-  O -- "admitted evidence" --> A
-  A --> B
-  B --> M
-  M --> R
-  R --> C
-  C -- "supported within envelope" --> G
-  C -- "stale, uncalibrated, or disagreeing" --> F
-  G -- "admit as hypothesis" --> P
-  G -- "reject or narrow" --> F
-  P --> X
-  X -- "authorized" --> E
-  X -- "denied" --> F
-  E -- "independent outcome" --> D
-  D -- "material discrepancy" --> F
-  D -- "bounded update evidence" --> C
-  R --> L
-  P --> L
-  D --> L
-  F --> B
+%%{init: {'themeVariables': {'fontSize': '20px'}}}%%
+flowchart TD
+  accTitle: Governed reality loop
+  accDescr: Qualified observations inform a versioned belief and pinned-model branch. Predictive admission allows a planning use or routes it to review. Runtime separately checks current permission before an attempt. Qualified outcome observation or an explicit unknown state produces a residual; affected future use is reviewed without overwriting permitted forecast history.
+  B["Qualified observation<br/>and versioned belief"]
+  R["Pinned-model branch<br/>horizon and uncertainty"]
+  G{"Qualified planning use?"}
+  P["Plan and action proposal"]
+  X{"Current runtime admission?"}
+  E["Attempt; outcome<br/>observed or unknown"]
+  D["Forecast / outcome residual"]
+  F["Review affected future use<br/>replan, fallback or hold"]
+  B --> R --> G
+  G -- eligible --> P --> X
+  G -- narrow or refuse --> F
+  X -- admit --> E --> D
+  X -- deny --> F
+  D -- material or unknown --> F
+  F -- qualified update --> B
 ```
+:::
 
-**How to read the governed reality loop:** observations enter from the left and
-imagined branches remain hypotheses through both admission decisions. Only the
-independent effect gate can permit an action. Later observation returns through
-the residual path rather than overwriting the earlier prediction. The diagram
-specifies interfaces and refusal routes; it reports no implemented service or
-control result.
+### JEPA: predicting a representation does not certify the world
+
+A gantry controller does not need a photorealistic movie to compare two braking
+plans. It may need an encoding that preserves position, velocity, load and the
+consequences of an action. That motivates prediction in representation space.
+It also creates a failure: an encoder can discard the very distinction the
+controller needs while producing useful-looking or well-aligned embeddings.
+
+**Joint-Embedding Predictive Architecture (JEPA)** names a family of training
+objectives, not one universal world model. [I-JEPA](https://arxiv.org/abs/2301.08243v3)
+predicts masked image-block representations from visible context, using
+Transformer encoders, a predictor and moving-average targets. The existing
+[V-JEPA 2 comparator](https://arxiv.org/abs/2506.09985) extends the operational
+question to video representations, action-conditioned prediction and bounded
+model-predictive control. Learning features, forecasting dynamics and selecting
+a permitted action remain different contracts. A JEPA can use attention; the
+objective does not by itself identify a replacement mixing architecture.
+
+The new [Platonic-representation paper](https://arxiv.org/abs/2610.39302v1)
+studies a different question: when separately trained encoders agree up to a
+rotation. Its identity-predictor theorem assumes a finite world, injective
+observations, a shared positive-pair distribution and population optima unique
+up to rotation. It explicitly excludes learned action-conditioned predictors.
+Its practical good-view recipe pairs different observations of a scene, rather
+than two corruptions that share one observation's nuisance. The authors report
+strong text–vision alignment; their experiments do not exactly satisfy the main
+theorem's assumptions. Those results therefore neither certify this controller's
+predictions nor convert latent agreement into causal knowledge.
+
+For the gantry, camera pose illustrates the boundary. Pose may be nuisance for
+aligning a caption with a scene while remaining essential for controlling the
+plant. An invariance chosen for alignment can discard operationally relevant
+information. The intended consumer must identify what the representation may
+ignore, then evaluate that decision on its actual task, horizon and observations.
+The [learning-theory owner](learning-theory-generalization-and-scaling-science.qmd#platonic-representations-conditions-before-convergence)
+keeps the theorem and sample-efficiency assumptions; the
+[substrate owner](replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd#predictive-objectives-and-learned-granularity)
+keeps the objective, architecture and checkpoint distinctions.
+
+Huh et al.'s [original hypothesis](https://arxiv.org/abs/2405.07987v5) and its
+2026 JEPA follow-up are external statistical-learning sources. Sorenson's
+*Platonic World Model* is a separate semantic-constitution proposal. Shared
+terminology supplies no evidence that either external result implements or
+validates that proposal's semantic identities, governance or grounding.
 
 ### Causal reasoning and representation
 
@@ -344,12 +433,14 @@ invariances, identifiability result or unresolved equivalence class, supported
 interventions, and failure tests.
 
 For planning, this creates a **causal-use gate**. An observational predictor may
-support forecasting inside a stable policy regime while being denied authority
-for a novel intervention. A model whose held-out interventions succeed may
-receive a wider but still bounded envelope. Competing causal graphs or latent
-variable interpretations remain plural when the available evidence cannot
-distinguish them. Ontology or sensor changes invalidate affected causal claims
-instead of being treated as ordinary calibration drift.
+support forecasting inside a stable policy regime while being ineligible to
+justify prediction for a novel intervention. A model whose held-out
+interventions succeed may qualify for a wider predictive-use envelope after the
+relevant review. That change does not widen the action grant. Competing causal
+graphs or latent variable interpretations remain plural when the available
+evidence cannot distinguish them. Ontology or sensor changes withdraw affected
+causal claims from current use instead of being treated as ordinary calibration
+drift.
 
 The strongest controls are deliberately ordinary: a high-capacity predictive
 model, a symbolic model with hand-specified variables, an invariant
@@ -372,22 +463,34 @@ minimum, the record separates:
 - decision uncertainty, where several predictions imply the same safe action
   or one small uncertainty crosses a high-consequence boundary.
 
-Deep ensembles provide a strong practical baseline for predictive
-disagreement, but shared data, architecture, and training can create common-
-mode certainty. Conformal prediction can provide finite-sample coverage for a
-declared target under stated assumptions, but marginal coverage can hide
-subgroup and high-consequence misses, and broken exchangeability voids the
-guarantee. WILDS supplies natural-shift pressure across institutions, time,
-geography, and collection processes; it is not a complete OOD universe.
+Deep ensembles provide a strong practical baseline for predictive disagreement,
+but shared data, architecture, and training can create common- mode certainty.
+Conformal prediction can provide finite-sample coverage for a declared target
+under stated assumptions, but marginal coverage can hide subgroup and
+high-consequence misses, and a violated assumption removes the basis for citing
+that guarantee; it does not prove that coverage actually failed. WILDS supplies
+natural-shift pressure across institutions, time, geography, and collection
+processes; it is not a complete OOD universe.
 
-Every uncertainty receipt therefore names the target, unit, cohort,
-environment, scoring rule, calibration data, model family, dependence among
-estimators, coverage or calibration claim, consequence weighting, freshness,
-shift detector, and action route. It reports interval or set width and
-abstention cost beside coverage. If a distribution shift, intervention, model
-replacement, or adaptive data-collection policy breaks the assumptions, the
-receipt expires and the system re-observes, broadens the set, falls back, or
-holds. “Uncertain” must change what the stack does.
+A measured calibration diagnostic and a theoretical coverage guarantee are
+different claims. Standard conformal marginal coverage does not supply pointwise
+or selected-action coverage. Shift-aware variants require their own conditions:
+the cited covariate-shift construction preserves the conditional response law
+and uses distribution weights. Merely refreshing timestamps does not establish
+those conditions. See Angelopoulos and Bates, [Sections 1, 3.1 and
+4.5–4.6](https://arxiv.org/html/2107.07511v6).
+
+Every uncertainty receipt therefore names the target, unit, cohort, environment,
+scoring rule, calibration data, model family, dependence among estimators,
+coverage or calibration claim, consequence weighting, freshness, shift detector,
+and action route. It reports interval or set width and abstention cost beside
+coverage. If a distribution shift, intervention, model replacement, or adaptive
+data-collection policy breaks the assumptions, the receipt loses eligibility for
+the affected use unless a qualified method addresses the change. Broader sets or
+fresh observations can be useful responses, but do not automatically restore
+coverage. Unaffected uses and permitted historical records remain separate.
+“Uncertain” must change the decision where it matters, not force a global stop
+for every small discrepancy.
 
 Four uncertainty families receive separate fields and remedies:
 
@@ -400,7 +503,9 @@ Four uncertainty families receive separate fields and remedies:
 3. **Structural or causal uncertainty** concerns which variables,
    relationships, mechanisms, interventions, or latent confounders belong in
    the model. A narrow ensemble over one structure cannot represent it.
-   Competing graphs remain plural until interventions separate them.
+   Competing graphs remain plural when available, permitted interventions or
+   other identifying evidence do not separate them; some ambiguities may remain
+   unresolved.
 4. **Distributional uncertainty** asks whether the case belongs to the
    population and support for which the other estimates were qualified. An
    unsupported case routes conservatively instead of receiving
@@ -435,47 +540,64 @@ and a key co-occur is not the same as establishing who gave what to whom.
 
 Relations move through explicit states such as proposed, qualified hypothesis,
 admitted belief, observed or executed, weakened, contradicted, superseded, and
-retired. Possible-world branches use copy-on-write state; unchanged entities
-and relations may be shared immutably, but hypothetical deltas remain attached
-to their branch. Crossing into actuality requires an observation, authorized
-effect, adoption decision, and later reconciliation—not aggregation over a
-branch axis.
+retired. Possible-world branches use copy-on-write state; unchanged entities and
+relations may be shared immutably, but hypothetical deltas remain attached to
+their branch. A state-estimate adoption is not an external event. An observation
+can be admitted without the agent having acted; a requested action can be
+attempted without its outcome being known. Qualified later observation supports
+an outcome assertion within its coverage. None of those events turns
+hypothetical deltas into facts by aggregating over a branch axis.
 
+**The relation lifecycle, in text:** a proposed relation may qualify for a named
+use and enter a bounded belief estimate. A separately admitted observation can
+inform that estimate without the agent taking an action. Counterevidence, expiry
+or a new version can withdraw affected current use while preserving permitted
+history. An authorized effect has its own attempt/outcome lifecycle; no belief
+transition creates it. This chart concerns state assertions, not effect
+execution.
+
+::: {.asi-key-figure .world-relation-use role="region" aria-label="Relation use and observation; scroll horizontally on narrow screens" tabindex="0"}
 ```{mermaid}
-stateDiagram-v2
-  [*] --> Proposed
-  Proposed --> QualifiedHypothesis: type, role, evidence, and branch checks
-  Proposed --> Residual: unresolved or rejected
-  QualifiedHypothesis --> AdmittedBelief: consumer-specific admission
-  AdmittedBelief --> ObservedOrExecuted: observation or authorized effect
-  AdmittedBelief --> Weakened: counterevidence
-  ObservedOrExecuted --> Confirmed: outcome reconciliation
-  ObservedOrExecuted --> Contradicted: discrepant outcome
-  QualifiedHypothesis --> Superseded: better schema or binding
-  Weakened --> Retired: expiry or failed requalification
-  Contradicted --> Retired: descendants invalidated
-  Superseded --> Retired
+%%{init: {'themeVariables': {'fontSize': '20px'}}}%%
+flowchart TD
+  accTitle: Relation use and observation
+  accDescr: A proposal qualifies for a named use and can enter a bounded belief. Admitted observations separately inform the belief. Counterevidence, expiry or a new version withdraws affected use; permitted history remains. None of these transitions authorizes an effect.
+  P["Proposed relation"]
+  Q["Qualified hypothesis<br/>for a named use"]
+  B["Admitted belief<br/>with alternatives"]
+  O["Separately admitted<br/>observation"]
+  W["Affected use withdrawn<br/>weakened, contradicted,<br/>superseded or retired"]
+  H["Permitted history retained"]
+  P -- qualification --> Q
+  Q -- estimator adoption --> B
+  O -- bounded update --> B
+  P -- rejected or unresolved --> W
+  Q -- expiry or replacement --> W
+  B -- counterevidence --> W
+  W --> H
 ```
+:::
 
-These transitions are not a confidence ladder. `QualifiedHypothesis` means the
-candidate survived a declared structural and evidentiary policy for a named
-use. `AdmittedBelief` says the world model currently uses it inside a bounded
-state estimate. `ObservedOrExecuted` names a different event: either an
-observation was accepted or an authorized action produced an acknowledged
-effect. None of the earlier states grants permission to create the later one.
-The transition record retains source observations, proposer, qualifier,
-alternative schemas and role bindings, calibration, counterevidence, known
-defeaters, downstream consumers, and invalidation dependencies.
+These are different evidentiary events, not a confidence ladder. A qualified
+hypothesis survives a declared policy for a named use; an admitted belief is
+currently used inside an uncertain estimate. An observation record states what
+its source reported and what checks qualified that report. It can be wrong. An
+acknowledgement can report receipt of an authorized command without certifying
+its external result. The transition record retains permitted source
+observations, proposer, qualifier, alternatives, calibration, counterevidence,
+known defeaters, consumers and invalidation dependencies. The existing finite
+formal model's actuality labels remain authored predicates; this diagram does
+not expand their proof scope into external truth or live execution.
 
 A branch is likewise an identity-bearing object, not a column in an anonymous
 batch. It records its parent, fork cause, assumptions or interventions,
 observation cutoff, model and policy versions, time horizon, uncertainty,
-changed entities, changed fields, changed relations, and descendants. A
-planning branch can share immutable history with the actual branch while its
-hypothetical transfer, collision, promise, or failure remains local. Comparing
-branches is a typed operation; adopting a branch prediction into actual state
-is a governed event; averaging branches into one apparently observed world is
-an axis error.
+changed entities, changed fields, changed relations, and descendants. A planning
+branch can share immutable history with the actual branch while its hypothetical
+transfer, collision, promise, or failure remains local. Comparing branches is a
+typed operation; adopting a branch prediction into the current belief is an
+explicit estimator event, not evidence of external actuality; averaging branches
+into one apparently observed world is an axis error.
 
 The same state can join discrete objects to continuous fields. An entity may
 sample a field, contribute a source term, or participate in a relation that
@@ -513,12 +635,14 @@ and its lineage remain addressable so the world model can reopen detail rather
 than silently inventing it after compression.
 
 This produces a recursive hierarchy of effective objects without making the
-hierarchy permanent. Signals may stabilize into features, features into
-objects, objects into events or systems, and systems into larger operational
-units. Each level is a consumer-relative view with a reversible map, not a
-license to delete the lower level. In this sense, a governed world model learns
-which structures are useful to treat as units while preserving the evidence
-needed to decide when that treatment has failed.
+hierarchy permanent. Signals may stabilize into features, features into objects,
+objects into events or systems, and systems into larger operational units. Each
+level is a consumer-relative view. Reopening detail depends on retained,
+permitted source state and an adequate map; lossy contraction alone cannot
+reconstruct discarded detail. If retention or access prevents expansion, the
+consumer must accept the declared limit or stop the affected use. In this sense,
+a governed world model learns which structures are useful to treat as units
+while preserving the evidence needed to decide when that treatment has failed.
 
 Finally, abstraction becomes a world-model operation with a receipt. A stable
 subcomplex may be contracted into a macro-object only for a declared query
@@ -563,7 +687,8 @@ loop.
 6. **Admit, narrow, or refuse.** Limit allowed planner uses, shorten horizon,
    require observation, route to another substrate, abstain, or hold safely.
 7. **Request effect separately.** Send a plan-relative prediction receipt to an
-   independent runtime authority boundary; never execute from the rollout API.
+   runtime admission boundary with the applicable current grant; never execute
+   from the rollout API. Dispatch, attempt and observed outcome remain distinct.
 8. **Reconcile and invalidate.** Record the observed outcome, retain the prior
    forecast, attribute discrepancies, invalidate descendants, and select a
    bounded recovery route.
@@ -603,12 +728,13 @@ receipt identity. Planning may compare that packet with other obligations and
 routes; it cannot upgrade the packet's evidence or effect authority.
 
 Observation and state-estimation providers submit measurements through the
-Observation Admission Record. Runtime Adapters receive only an authority
-request linked to an admitted plan and branch packet, never a bare model score.
-Artifact Graphs preserve lineage and invalidation, while Benchmark Ratchets and
-Evidence States consume calibration, intervention, shift, exploitation,
-recovery, and cost outcomes. Cognitive Compilation receives model-relative
-assumptions as typed inputs rather than silently converting them into facts.
+Observation Admission Record. Runtime Adapters receive only an authority request
+linked to an admitted plan and branch packet, never a bare model score. Artifact
+Graphs preserve permitted lineage and affected-use invalidation, while Benchmark
+Ratchets and Evidence States consume calibration, intervention, shift,
+exploitation, recovery, and cost outcomes. Cognitive Compilation receives
+model-relative assumptions as typed inputs rather than silently converting them
+into facts.
 
 The refusal path is first-class. Stale observations, incompatible intervention
 semantics, unsupported horizons, material model disagreement, unavailable safe
@@ -631,11 +757,13 @@ operation, not evidence that the gate chose the optimal policy.
 ## Invariants
 
 Prediction identity is preserved across planning, execution, and later review.
-Every consequential branch names its observation basis, belief state, model
-checkpoint, intervention, horizon, validity domain, uncertainty, planner/critic,
-and support ceiling. The later effect record links to that packet but never
-edits it in place. Historical replay resolves the exact model and policy basis
-used at decision time.
+Every branch used for a consequential proposal names its observation basis,
+belief state, model checkpoint, intervention, horizon, validity domain,
+uncertainty, planner/critic, and support ceiling. The later effect record links
+to that packet but never edits it in place. Where permitted artifacts remain
+available, historical replay resolves the recorded model and policy basis used
+at decision time; unresolved gaps stay visible rather than being filled from the
+latest checkpoint.
 
 Authority remains orthogonal to predictive confidence. No model score,
 ensemble vote, semantic address, calibration certificate, or branch selection
@@ -644,32 +772,38 @@ out-of-domain, materially disagreeing, or high-consequence rollouts cannot
 silently authorize action. A checkpoint update cannot widen either the action
 class or consequence ceiling by itself.
 
-Reality retains veto power through admitted observation. Material residuals
-force a bounded route—re-estimation, replanning, alternate model, fallback,
-review, or safe hold—before further model-based execution. Unknown state is not
-converted into false state; model disagreement is not converted into consensus
-by averaging alone; and rare hazards cannot be dropped merely because a latent
-representation assigns them low frequency.
+Admitted observations can defeat a forecast for its current use without becoming
+unquestionable world truth. Material residuals force a bounded
+route—re-estimation, replanning, alternate model, fallback, review, or safe
+hold—before further model-based execution. Unknown state is not converted into
+false state; model disagreement is not converted into consensus by averaging
+alone; and rare hazards cannot be dropped merely because a latent representation
+assigns them low frequency.
 
 Counterfactual comparisons use compatible state vocabularies, intervention
 semantics, horizons, clocks, and consequence measures. Predicted, planned,
 simulated, fictional, and actual branches cannot leak into one another without
-an explicit adoption or observation event. A reachable safe action, reversible
-fallback, or explicit hold route must exist before predictive confidence
-collapse can occur in a consequential controller.
+explicit estimator adoption or qualified observation records, with their
+different meanings retained. A consequential controller needs a qualified
+response for confidence collapse before admission. A stop, hold or fallback is
+not inherently safe or reversible; its feasibility, current authority, delay and
+residual risk belong to the declared operating envelope. If no adequate response
+exists, that use cannot be justified by the proposed contract.
 
 ## Failure modes
 
 ### Threat model
 
-Protected assets include the actual-world ledger, observation provenance,
-belief and branch identity, model-version registry, calibration evidence,
-planner admission policy, effect-authority boundary, and residual history. A
-malicious user, compromised sensor, poisoned data supplier, optimizing policy,
-captured evaluator, or model-update process may attempt to alter those assets.
-The policy and critic are not trusted merely because they share the model's
-training objective, and agreement among correlated models is not treated as
-independent corroboration.
+Protected assets include the actual-world ledger, observation provenance, belief
+and branch identity, model-version registry, calibration evidence, planner
+admission policy, effect-authority boundary, and residual history. A malicious
+user, compromised sensor, poisoned data supplier, optimizing policy, captured
+evaluator, or model-update process may attempt to alter those assets. The policy
+and critic are not trusted merely because they share the model's training
+objective, and agreement among correlated models is not treated as independent
+corroboration. An observer outside the actor/critic path can still share a
+sensor, simulator, data supplier or policy defect. Independence is relative to
+named failure paths; a separately named process alone does not establish it.
 
 Attacker capabilities may include crafting observations, replaying stale
 packets, choosing actions that target model blind spots, inducing long-horizon
@@ -707,26 +841,31 @@ Failure modes include conditioning on colliders, hidden confounding, post-treatm
 
 ## Minimum Viable Implementation
 
-A viable first slice is a bounded partially observed control harness with
-hidden state, at least one rare hazard, action interventions, controlled sensor
-corruption, and a held-out distribution shift. It contains a reactive or
-model-free baseline, one ordinary predictive controller, and a governed arm
-using two independently initialized dynamics models. The governed arm implements
-horizon-conditional calibration, receding observation updates, disagreement
-routing, a support-aware action gate, a reachable safe action, and immutable
-counterfactual and reality-residual receipts.
+The first proposed empirical slice is a bounded partially observed control
+harness with hidden state, at least one rare hazard, action interventions,
+controlled sensor corruption, and a held-out distribution shift. It contains a
+reactive or model-free baseline, one ordinary predictive controller, and a
+governed arm using two independently initialized dynamics models. The governed
+arm implements horizon-conditional calibration, receding observation updates,
+disagreement routing, a support-aware action gate, a reachable safe action, and
+immutable counterfactual and reality-residual receipts.
 
-The artifact surface can remain small: schemas for Observation Admission,
-Belief State, World-Model Manifest, Branch Packet, Admission Receipt, and
-Reality Residual; one deterministic validator; a trace renderer; and a harness
-that can inject stale observations, model disagreement, unsupported horizons,
-rare hazards, and planner exploitation. A symbolic environment oracle supplies
-outcome truth outside both learned models and their critic. The first traces
-must preserve forecast/outcome separation and distinguish model, policy,
+This future control comparison is research work, not a prerequisite for
+finishing the book. The implemented record-only boundary is described below; it
+must remain separate from the proposed live harness.
+
+The proposed artifact surface can remain small: schemas for Observation
+Admission, Belief State, World-Model Manifest, Branch Packet, Admission Receipt,
+and Reality Residual; one deterministic validator; a trace renderer; and a
+harness that can inject stale observations, model disagreement, unsupported
+horizons, rare hazards, and planner exploitation. A symbolic environment oracle
+supplies outcome truth outside both learned models and their critic. The first
+traces must preserve forecast/outcome separation and distinguish model, policy,
 observation, and evaluator errors.
 
-Success at this stage is limited to record correctness, refusal behavior on
-known invalid cases, and a prospectively evaluated toy control comparison. A
+If implemented and evaluated, this slice could establish only record
+correctness, refusal behavior on known invalid cases, and the exact toy control
+comparison its evidence supports. Those are separate possible conclusions. A
 green schema, a finite route proof, or a favorable authored task leaves the core
 claim at `argument`. Broader support requires a competent held-out intervention
 campaign, matched resources and baselines, uncertainty, full costs, independent
@@ -916,6 +1055,9 @@ record schema with defensible evidence.
 
 | Source ID | Primary record | Use here | Evidence limit |
 |---|---|---|---|
+| `ext_i_jepa_2023` | [Assran et al. (2023), I-JEPA](https://arxiv.org/abs/2301.08243v3) | Masked image-block representation prediction with a Transformer context/target encoder and positional predictor; distinguishes training objective from mixing architecture. | Image representation evaluations are source-reported; no pixel decoder, action-conditioned dynamics, local reproduction or general-purpose reasoning result follows. |
+| `ext_platonic_representation_hypothesis_2024` | [Huh et al. (2024), The Platonic Representation Hypothesis](https://arxiv.org/abs/2405.07987v5) | Representation-geometry convergence hypothesis, empirical alignment measures and the bijective-observation limitation. | Alignment is not physical truth, causal identification or validation of Sorenson's distinct Platonic World Model proposal. |
+| `ext_platonic_representation_jepa_2026` | [Balestriero and LeCun (2026), Platonic representations with JEPAs](https://arxiv.org/abs/2610.39302v1) | Conditional shared-positive-kernel theorem and source-reported good-view text-JEPA alignment experiments; separates population theorem, training recipe and measured task. | Identity predictor, injective renderings and population/uniqueness assumptions limit the theorem; no learned action-conditioned predictor, general task superiority, local reproduction or architecture-core promotion is established. |
 | `ext_world_models_2018` | [Ha and Schmidhuber (2018), *World Models*](https://arxiv.org/abs/1803.10122) | compact latent state, temporal prediction, imagined policy training, transfer pressure, and model-exploitation risk | simulated-domain results are source-reported; no local run or open-world grounding result exists |
 | `ext_dreamer_v3_2025` | [Hafner et al. (2025), *Mastering diverse control tasks through world models*](https://www.nature.com/articles/s41586-025-08744-2) | modern recurrent world-model/actor/critic comparator, broad task scope, and self-confirming error pressure | task-suite results are source-reported; no local reproduction, causal-correctness, governance, or deployment result exists |
 | `ext_v_jepa_2_2025` | [Assran et al. (2025), *V-JEPA 2*](https://arxiv.org/abs/2506.09985) | action-free predictive representation, action-conditioned predictor, model-predictive control, and explicit camera/horizon/search limits | no checkpoint, robot data, benchmark, timing, or control result was run locally |
@@ -933,14 +1075,17 @@ record schema with defensible evidence.
 
 ### New synthesis owned at this boundary
 
-The novel design synthesis is the single governance contract that binds
+The proposed composition is the single governance contract that binds
 observation freshness, belief identity, world-model checkpoint, imagined branch,
 intervention semantics, horizon, conditional calibration, model disagreement,
 planner/critic identity, action envelope, independently observed effect, and
 residual. It also makes model error, policy error, observation error, and
 evaluator error separately addressable while preserving the rule that a model
-update cannot widen authority. This synthesis is recorded as design rationale,
-not as a result reported by any one assigned source.
+update cannot widen authority. Familiar prediction, provenance, control and
+admission mechanisms can supply these joins in an ordinary implementation. Their
+usefulness across model replacement and contested forecasts is the candidate
+contribution to compare, not an established novel primitive or a result reported
+by any one assigned source.
 
 ### Manifest source assignment reconciliation
 
@@ -971,21 +1116,25 @@ are material.
 
 The architecture is valuable only if predictive state improves consequential
 decisions after tail risk, recovery, interaction, compute, latency, observation,
-and governance costs are counted. Reactive, model-free, and ordinary
-predictive controllers remain required baselines. Held-out interventions,
-rare-hazard tests, shift, exploitation pressure, independent outcome truth,
-uncertainty, causal ablations, reproduction, and transfer define the path out
-of architectural argument. Until that program succeeds, source-reported world-
-model capabilities motivate the interface while leaving causal adequacy,
-safe control, real-world grounding, and a favorable governed frontier open.
+and governance costs are counted. Reactive, model-free, and ordinary predictive
+controllers remain required baselines. Held-out interventions, rare-hazard
+tests, shift, exploitation pressure, independent outcome truth, uncertainty,
+causal ablations, reproduction, and transfer define the research path out of
+architectural argument. Equal or better ordinary control at lower burden favors
+the ordinary implementation and narrows this proposal. Finishing the manuscript
+requires an honest account of that choice and its open evidence, not executing
+the entire future campaign. Until that program succeeds, source-reported world-
+model capabilities motivate the interface while leaving causal adequacy, safe
+control, real-world grounding, and a favorable governed frontier open.
 
 ## Handoff
 
 Governed World Models leaves a qualified branch packet with predicted state,
 horizon, uncertainty, checkpoint, disagreement, reality residual, and an
 authority ceiling. Before downstream work treats later observation as an
-independent correction, **Reflexive Model-World Systems** asks whether prior
-deployment changed that observation, its measurement process, or the successor
-lineage that consumes it. It adds causal ancestry, target-regime, grounding,
-and persistence-aware rollback obligations without converting a prediction or
+independent correction, [**Reflexive Model-World Systems**](reflexive-model-world-systems.qmd)
+asks whether prior deployment
+changed that observation, its measurement process, or the successor lineage that
+consumes it. It adds causal ancestry, target-regime, grounding, and
+persistence-aware rollback obligations without converting a prediction or
 observed on-policy outcome into independent evidence.

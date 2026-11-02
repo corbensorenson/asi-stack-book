@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 73,
     "prose_candidates_adjudicated": 53,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. 2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -476,6 +476,66 @@
       "acceptance_criteria": [
         "Bind generated concurrent histories, actual backend traces, countermodels, and runtime refinement."
       ]
+    },
+    "context-transactions-snapshots-mounts-and-taint.interface.005": {
+      "known_confounds": [
+        "Authored histories and labels can omit real participants, effects, conflicts, descendants, caches, backups, and failure modes.",
+        "The governed route may receive stronger stores, more locks, retries, validation, repair, context, tools, or human work than baselines.",
+        "Transaction producer, state observer, recovery checker, model, and outcome evaluator may share code, infrastructure, data, organizations, or incentives.",
+        "Sequential tests, checksums, logs, successful returns, acknowledgements, replay, and exact byte comparisons can be mistaken for concurrent isolation, durability, or useful recovery.",
+        "Failed transactions, conflicts, timeouts, partial writes, process crashes, retries, repairs, privacy costs, and residuals can be removed from denominators.",
+        "A declared participant set can hide caches, replicas, backups, exports, downstream artifacts, external effects, model state, or human knowledge outside closure.",
+        "Short horizons can miss delayed cache resurrection, backup restoration, rights violations, poison propagation, descendant use, model influence, and recovery failure.",
+        "Non-release or fail-closed behavior can reduce observed harm while increasing missed help, unavailability, latency, and opportunity cost.",
+        "The same rules used to author synthetic records can reward their validator and conceal distribution shift or semantic conflicts.",
+        "A neighboring owner can supply a record or scoped result without owning its consumer decision; custody, verification, support, eligibility, permission, dispatch, and observed effect are separate."
+      ],
+      "non_claims": [
+        "A schema, log, event ID, checksum, success return, acknowledgement, finite route theorem, exact authored replay, or green restart record does not establish real I/O, concurrency isolation, atomicity, durability, complete deletion, useful recovery, safety, or support.",
+        "The current three valid memory-store records, six controls, two valid sequences, four sequence controls, one restart lifecycle, ten restart mutations, and twenty-three theorem declarations establish only their exact record checks, finite consequences, and no-promotion boundaries.",
+        "No static packet, claim truth, model or optimizer state, external effect, artifact correctness, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 interface wording lineage: prior wording \"Claim Ledgers and Spinoza own contradiction, evidence, belief, and support transitions; a context correction, supersession, deletion, or commit cannot promote or refute a claim by itself.\"; current wording \"Claim Ledgers owns claim identity, contradictions, and belief-revision history; Spinoza supplies scoped verification verdicts; Evidence States owns accepted support transitions. A context correction, supersession, deletion, or commit cannot promote or refute a claim by itself.\". 2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval."
+      ]
+    },
+    "context-transactions-snapshots-mounts-and-taint.interface.007": {
+      "known_confounds": [
+        "Authored histories and labels can omit real participants, effects, conflicts, descendants, caches, backups, and failure modes.",
+        "The governed route may receive stronger stores, more locks, retries, validation, repair, context, tools, or human work than baselines.",
+        "Transaction producer, state observer, recovery checker, model, and outcome evaluator may share code, infrastructure, data, organizations, or incentives.",
+        "Sequential tests, checksums, logs, successful returns, acknowledgements, replay, and exact byte comparisons can be mistaken for concurrent isolation, durability, or useful recovery.",
+        "Failed transactions, conflicts, timeouts, partial writes, process crashes, retries, repairs, privacy costs, and residuals can be removed from denominators.",
+        "A declared participant set can hide caches, replicas, backups, exports, downstream artifacts, external effects, model state, or human knowledge outside closure.",
+        "Short horizons can miss delayed cache resurrection, backup restoration, rights violations, poison propagation, descendant use, model influence, and recovery failure.",
+        "Non-release or fail-closed behavior can reduce observed harm while increasing missed help, unavailability, latency, and opportunity cost.",
+        "The same rules used to author synthetic records can reward their validator and conceal distribution shift or semantic conflicts.",
+        "A neighboring owner can supply a record or scoped result without owning its consumer decision; custody, verification, support, eligibility, permission, dispatch, and observed effect are separate."
+      ],
+      "non_claims": [
+        "A schema, log, event ID, checksum, success return, acknowledgement, finite route theorem, exact authored replay, or green restart record does not establish real I/O, concurrency isolation, atomicity, durability, complete deletion, useful recovery, safety, or support.",
+        "The current three valid memory-store records, six controls, two valid sequences, four sequence controls, one restart lifecycle, ten restart mutations, and twenty-three theorem declarations establish only their exact record checks, finite consequences, and no-promotion boundaries.",
+        "No static packet, claim truth, model or optimizer state, external effect, artifact correctness, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 interface wording lineage: prior wording \"Runtime Adapters own jobs, tools, approvals, and external effects; context-state abort, restore, or compensation cannot claim rollback of an external effect without separate effect-complete evidence.\"; current wording \"Labor OS owns typed-job dispatch and lifecycle; approval authorities supply current applicable grants; Runtime Adapters mediate tool calls and external effects. Context-state abort, restore, or compensation cannot claim rollback of an external effect without separate effect-complete evidence.\". 2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval."
+      ]
+    },
+    "context-transactions-snapshots-mounts-and-taint.interface.011": {
+      "known_confounds": [
+        "Authored histories and labels can omit real participants, effects, conflicts, descendants, caches, backups, and failure modes.",
+        "The governed route may receive stronger stores, more locks, retries, validation, repair, context, tools, or human work than baselines.",
+        "Transaction producer, state observer, recovery checker, model, and outcome evaluator may share code, infrastructure, data, organizations, or incentives.",
+        "Sequential tests, checksums, logs, successful returns, acknowledgements, replay, and exact byte comparisons can be mistaken for concurrent isolation, durability, or useful recovery.",
+        "Failed transactions, conflicts, timeouts, partial writes, process crashes, retries, repairs, privacy costs, and residuals can be removed from denominators.",
+        "A declared participant set can hide caches, replicas, backups, exports, downstream artifacts, external effects, model state, or human knowledge outside closure.",
+        "Short horizons can miss delayed cache resurrection, backup restoration, rights violations, poison propagation, descendant use, model influence, and recovery failure.",
+        "Non-release or fail-closed behavior can reduce observed harm while increasing missed help, unavailability, latency, and opportunity cost.",
+        "The same rules used to author synthetic records can reward their validator and conceal distribution shift or semantic conflicts.",
+        "A neighboring owner can supply a record or scoped result without owning its consumer decision; custody, verification, support, eligibility, permission, dispatch, and observed effect are separate."
+      ],
+      "non_claims": [
+        "A schema, log, event ID, checksum, success return, acknowledgement, finite route theorem, exact authored replay, or green restart record does not establish real I/O, concurrency isolation, atomicity, durability, complete deletion, useful recovery, safety, or support.",
+        "The current three valid memory-store records, six controls, two valid sequences, four sequence controls, one restart lifecycle, ten restart mutations, and twenty-three theorem declarations establish only their exact record checks, finite consequences, and no-promotion boundaries.",
+        "No static packet, claim truth, model or optimizer state, external effect, artifact correctness, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 interface wording lineage: prior wording \"Evidence States and Readiness Gates own support, quarantine, promotion, and release; a green commit, replay, deletion receipt, or restart check has no direct support-state effect.\"; current wording \"Evidence States owns accepted support transitions; Readiness Gates owns current use-specific eligibility and quarantine; deployment and publication owners retain release authority. A green commit, replay, deletion receipt, or restart check has no direct support-state effect.\". 2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval."
+      ]
     }
   },
   "prose_candidate_dispositions": {
@@ -557,16 +617,6 @@
       "state": "duplicate_of_atom",
       "rationale": "Restates planning request non-authority.",
       "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.002"
-    },
-    "context-transactions-snapshots-mounts-and-taint.prose.9b8ee5051cb0": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates claim-ledger ownership.",
-      "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.005"
-    },
-    "context-transactions-snapshots-mounts-and-taint.prose.e1378e15ec26": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates external-effect rollback separation.",
-      "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.007"
     },
     "context-transactions-snapshots-mounts-and-taint.prose.4c0449d80146": {
       "state": "duplicate_of_atom",
@@ -728,11 +778,55 @@
     "context-transactions-snapshots-mounts-and-taint.prose.a16c78daaccf": {
       "state": "historical_or_source_report",
       "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+    },
+    "context-transactions-snapshots-mounts-and-taint.prose.c538a28e6863": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.005",
+      "rationale": "2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval. The complete surrounding paragraph restates this interface; the scanner sentence or wrap fragment supplies no new material claim."
+    },
+    "context-transactions-snapshots-mounts-and-taint.prose.cbbe3485743f": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.007",
+      "rationale": "2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval. The complete surrounding paragraph restates this interface; the scanner sentence or wrap fragment supplies no new material claim."
     }
   },
   "non_claims": [
     "Completing the semantic sweep does not promote the chapter core or convert authored records, finite routes, exact replay, or Lean declarations into deployed transaction evidence.",
     "Storage deletion remains distinct from model influence, privacy, behavioral forgetting, external effects, and downstream copies.",
     "No static context packet, claim support, model state, external effect, deployment, release, publication, license, AGI, or ASI claim changes through this review."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.9b8ee5051cb0",
+      "retired_source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:525",
+      "retired_sentence": "A correction, supersession, deletion, or commit cannot promote",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates claim-ledger ownership.",
+        "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.005"
+      },
+      "retirement_reason": "2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval.",
+      "replacement_candidate_ids": [
+        "context-transactions-snapshots-mounts-and-taint.prose.c538a28e6863",
+        "context-transactions-snapshots-mounts-and-taint.prose.cbbe3485743f"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "context-transactions-snapshots-mounts-and-taint.prose.e1378e15ec26",
+      "retired_source": "chapters/context-transactions-snapshots-mounts-and-taint.qmd:530",
+      "retired_sentence": "abort, restore, or compensation cannot claim rollback of an external effect",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates external-effect rollback separation.",
+        "target_atom_id": "context-transactions-snapshots-mounts-and-taint.interface.007"
+      },
+      "retirement_reason": "2026-10-11 scoped interface reconciliation: claim identity and belief history, bounded verification, artifact custody, accepted support, current-use eligibility, job dispatch, grants, and actual effects retain distinct owners. This review covers the corrected interface passages and sixteen existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval.",
+      "replacement_candidate_ids": [
+        "context-transactions-snapshots-mounts-and-taint.prose.c538a28e6863",
+        "context-transactions-snapshots-mounts-and-taint.prose.cbbe3485743f"
+      ],
+      "recorded_on": "2026-10-11"
+    }
   ]
 }

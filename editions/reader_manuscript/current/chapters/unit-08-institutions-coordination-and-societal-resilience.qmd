@@ -5,7 +5,8 @@ unit_id: "unit-08"
 
 ## The Patch Leaves the Repository
 
-A repository change begins inside a boundary that seems manageable. A maintainer
+Imagine the repository change becoming a shared dependency. It begins inside
+a boundary that seems manageable. A maintainer
 proposes it. Reviewers inspect it. Automated checks run. Someone with merge
 authority accepts or rejects it. Even when the decision is difficult, the roles
 can be named and the affected artifact can be identified.
@@ -150,8 +151,9 @@ facts, precedent, institutional competence, and due process exceed a finite
 schema. The record serves a narrower purpose: it prevents the runtime from
 treating one valid authorization as universal. A mandate issued for one
 jurisdiction should not silently authorize another. A changed instrument,
-protocol, population, or territorial scope should invalidate the old receipt
-until the new case is reviewed.
+protocol, population, or territorial scope should suspend reliance on the old
+receipt for the changed case until it is reviewed. The historical record of
+what was authorized and observed remains intact.
 
 Cross-border coordination needs the same discipline. An international
 commitment should identify parties, covered systems, entry conditions,
@@ -268,12 +270,23 @@ copy.
 
 A governed response starts with shared incident identity rather than shared
 sovereignty. Participants can refer to the same event, affected artifacts, and
-time window while retaining their own duties. The release service can revoke
-its signature, publish evidence, preserve logs, notify known dependents, and
-offer a corrected build. Distributors can quarantine cached copies. Projects
+time window while retaining their own duties. The release service can withdraw the affected release from its official
+channels, publish evidence, preserve logs, notify known dependents, and offer a
+corrected build. If signing-key trust is affected, its actual revocation or
+trust-update mechanism also needs an explicit scope and consumer. Distributors can quarantine cached copies. Projects
 can decide whether the corrected version satisfies their own release rules.
 The public institution can follow its continuity and reporting obligations.
 No actor's valid action automatically ratifies the others.
+
+Withdrawal does not erase an already distributed package or its signature.
+An offline recipient may still verify the old bytes without having received
+the withdrawal notice. A current acceptance policy may reject that release,
+but the policy and its delivery are different from the signature check.
+The incident must distinguish known recipients that applied the notice,
+recipients still awaiting contact, and unknown copies. Revoking a signing key
+is also broader than correcting one flawed version: unaffected releases and
+their clients may depend on it. Choose the response from the actual compromise
+and distribution paths, rather than treating key revocation as universal recall.
 
 The response packet should record known and unknown affected populations,
 services that must remain available, evidence-sharing rules, confidentiality
@@ -309,6 +322,39 @@ slowly. The corrected package can be technically sound while notices remain
 inaccessible. Most participants can approve a new coordination agreement while
 the most exposed population lacks representation. The architecture needs a
 joint picture without erasing these differences.
+
+## Three Closures for One Incident
+
+In the hypothetical incident, the release service stops the affected version,
+publishes a corrected build, and reaches its own restoration criterion. A
+commercial downstream project confirms a rebuilt deployment. A small volunteer
+project has not yet checked whether it consumed the flawed version, and the
+public institution has reopened its service but still needs to resolve a
+corrupted record. Reporting one global “recovered” state would hide two open
+questions and one completed local action.
+
+The release-service owner may close its publication task. The volunteer project's
+owner still needs version discovery and, if affected, assistance with a safe
+update. The public institution's recovery owner still needs record reconciliation
+and the applicable remedy decision. Their closure criteria can share incident
+identity without becoming the same criterion. Where observations are missing,
+use unknown rather than assigning an unaffected or recovered state by default.
+
+These distinctions need not require a new federated service. A competent existing
+incident tracker, dependency inventory, and named contact protocol may already
+carry the event identity, each actor's status, its evidence, and the next owner.
+If those tools preserve the handoffs at acceptable burden, use them. A richer
+coordination packet earns its place when a consequential relation is otherwise
+lost—for example, when the upstream closure automatically suppresses notices to
+the two still-open downstream owners.
+
+A public notice also needs a declared audience and correction route. Reaching
+known maintainers is not proof that affected end users received usable guidance.
+A volunteer project's inability to respond may call for shared capacity rather
+than another deadline field. Measure whether the additional process reaches the
+unresolved work and the harmed party, not whether every participant supplied the
+same status label. These are illustrative outcomes, not observed recoveries or
+legal determinations.
 
 ## Remedy Must Reach the Harmed Party
 
@@ -459,12 +505,11 @@ The live technical chapters provide two bounded formal reviews. They establish
 properties of authored finite records, not real institutional legitimacy or
 population resilience.
 
-`AsiStackProofs.InstitutionalLegitimacyReview` contains 32 theorem declarations
-over an eight-transition review. The local validation surface checks 45
-single-axis admission mutations and requires an exact repair or refusal for
-each. Within that model, a mandate tied to one jurisdiction cannot authorize a
+`AsiStackProofs.InstitutionalLegitimacyReview` models a finite review lifecycle.
+Its authored single-axis admission mutations require exact repair or refusal. Within that model, a mandate tied to one jurisdiction cannot authorize a
 different jurisdiction, and changes to the jurisdiction, instrument,
-population, or protocol invalidate the associated receipt. Two
+population, or protocol make the associated receipt inadmissible for the changed
+case. Two
 non-identifiability results show that identical participation signals can
 coexist with different representation states, and identical commitment signals
 can coexist with different enforcement states.
@@ -475,8 +520,7 @@ signals determine effective enforcement. They do not establish lawful
 authority, representativeness, enforcement efficacy, remedy, public legitimacy,
 geopolitical stability, or safety.
 
-`AsiStackProofs.SocietalResilienceReview` also contributes 32 theorem
-declarations over an eight-transition finite review. It keeps incident and
+`AsiStackProofs.SocietalResilienceReview` provides a separate finite review. It keeps incident and
 population identity, cross-organization coordination, resistance, absorption,
 recovery, remedy, adaptation, and non-authority distinct. Its local review
 checks exact dispositions for the chapter's bounded mutation set and includes
@@ -555,8 +599,8 @@ fast incident. Rich participants can satisfy record requirements that weaker
 ones cannot. A technically elaborate packet can create an aura of legitimacy
 without changing power.
 
-This objection has teeth because more structure is not automatically more
-accountability. The answer must be architectural and empirical. The minimum
+The objection constrains who bears the work and who can challenge the response;
+more structure does not establish accountability. The answer must be architectural and empirical. The minimum
 packet should remain small. Authority, evidence, and remedy should have named
 owners. Decision deadlines and emergency paths should exist, but emergency
 powers should expire. Participation should record influence and exclusion, not
@@ -604,5 +648,12 @@ Part I has now moved from the system boundary to the public institutions around
 it. Part II turns inward again. Its first question is how a capability can
 change behind these boundaries without inheriting readiness, authority, or
 support from the component it replaces.
+[Unit 9](unit-09-stable-capability-fields-and-governed-replacement.qmd) takes
+over that replacement boundary. It must retain the affected consumers, unresolved
+recovery duties, and authority conditions instead of describing a new component
+as ready because the old service was trusted. Detailed finite results remain
+with the [institutional](https://corbensorenson.github.io/asi-stack-book/chapters/institutions-international-coordination-and-public-legitimacy.html)
+and [resilience](https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html)
+owners.
 
 {{< include ../generated/unit-08-status.qmd >}}

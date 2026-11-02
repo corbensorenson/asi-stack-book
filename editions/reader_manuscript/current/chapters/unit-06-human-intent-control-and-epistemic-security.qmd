@@ -3,7 +3,8 @@ title: "Human Intent, Control, and Epistemic Security"
 unit_id: "unit-06"
 ---
 
-The evidence review from the previous chapter has produced a useful result. One
+Continue the hypothetical source-ingestion example. Assume its evidence review
+has produced a useful result. One
 small claim about the incoming paper is supported by one bounded test. The
 paper's broader method remains uncertain. Its proposed code is still isolated,
 its citations remain attributed to their original authors, and no passing test
@@ -25,12 +26,15 @@ clearer. The external service might produce useful analysis. The evidence
 update might reflect a real local success. Publishing might deliver the work
 to readers.
 
-It is also almost entirely unauthorized.
+In this scenario, the maintainer authorized local editorial work and retained
+separate decisions over structural removal, disclosure, support movement, and
+publication. Most of the proposal crosses those retained boundaries.
 
-The person asked for improvement, not deletion of a stable technical owner,
-not disclosure of a source package, not a broader claim, not an evidence
-promotion, and not publication. None of those permissions follows from the
-desired outcome. The system has converted a short request into a chain of
+The current mandate permits improving local prose. It does not include deleting
+a stable technical owner, disclosing a source package, broadening a claim,
+promoting its support, or publishing. Those permissions do not follow from the
+desired outcome alone; they require an authority basis in the request, prior
+applicable grants, or the governing workflow. The system has converted a short request into a chain of
 convenient assumptions, then treated the chain as intent.
 
 This is the point where human alignment becomes operational. A system does not
@@ -98,8 +102,8 @@ not result quality alone.
 
 ## Intent Is an Interpretation, Not a String
 
-The raw request must survive because every structured interpretation can be
-wrong.
+The source of the interpretation must remain inspectable because every
+structured interpretation can be wrong.
 
 If the system stores only its parsed version of "improve the chapter," later
 reviewers cannot tell which fields came from the person and which came from
@@ -130,6 +134,14 @@ examples, comparing alternatives, and reacting to consequences. Different
 people affected by the same action may have different standing and different
 intent. A request from the repository owner does not automatically authorize
 exposure of a paper whose distribution is constrained by someone else.
+
+Request retention also needs a boundary. A raw message may contain private
+information unrelated to the decision. Preserve the necessary request and
+interpretation history within declared access and retention rules, rather than
+copying every utterance into a permanent public audit log. A digest can bind an
+identity while the permitted original remains available; it cannot reconstruct
+a deleted message or prove that a summary preserved its meaning. If the original
+cannot be retained, record the resulting limit on later review.
 
 The contract should therefore be small enough to revise. Its purpose is not to
 freeze the person's mind. It is to define the currently authorized
@@ -190,9 +202,12 @@ publish, disclose, delete, or revive those artifacts.
 Authority should name a principal, an action class, a target, a scope, a time
 window, a ceiling, and conditions for revocation. It should be narrower than
 capability. The fact that a tool can perform an action is not evidence that the
-agent may use it. The fact that the user has previously allowed a similar
-action is not necessarily authority now. The fact that a public repository is
-being edited does not imply that every local source is public.
+agent may use it. A previous similar action does not automatically authorize
+this target or effect. Conversely, an applicable grant already made in the
+session remains usable within its declared scope, conditions, and lifetime;
+it need not be requested again merely because work crosses a turn boundary.
+The fact that a public repository is being edited does not imply that every
+local source is public.
 
 For the chapter request, four authorities differ:
 
@@ -378,6 +393,46 @@ different control systems and leave different receipts. Their failures demand
 different remedies. Bundling them into one approval would destroy that
 information.
 
+## A Reviewable Mandate, Then Useful Work
+
+Make the earlier example concrete. Suppose the maintainer authorizes local
+revision of one chapter using its admitted public source notes, retaining its
+owner, existing URLs, and support states. The agent may rewrite explanations,
+replace repetition with a worked example, and render the edited page. External
+uploads and publication remain outside this grant. That is enough authority
+to do substantial work; asking again before each paragraph would add burden
+without improving the decision.
+
+The agent first prepares the actual revision. It can show the changed argument,
+the example's explicit hypothetical status, and the remaining unsupported
+proposition. If it discovers a useful structural merge, it can prepare an
+annotated composition preview and explain which ownership or URL obligations
+would change. The person can then inspect a concrete option rather than approve
+an unspecified promise to improve things. Work shared by the authorized choices
+continues while that separate structural decision remains open.
+
+Now the maintainer corrects the priority: deepen the mechanism instead of
+shortening the chapter. The agent updates its interpretation and revises the
+local draft. It does not require another grant for editing the same material,
+and it does not retain brevity as a hidden objective because an earlier plan
+selected it. If the correction prohibits a previously proposed external route,
+queued dispatch must use the new boundary. Any disclosure already completed
+needs a recorded disposition; changing the plan cannot undo it.
+
+The reviewer's attention should go to the live decision. A concise account can
+state the proposed merge, the owner and route it changes, the alternative of
+keeping both owners, and the correction cost. It need not ask the person to
+reapprove ordinary prose edits already covered by the mandate. If no adequate
+structural option has been prepared, the agent should finish that authorized
+preparation before asking for approval.
+
+This lighter workflow is a serious baseline for the formal contract. The
+richer representation earns its place only if it preserves material conditions
+that the request, retained grant, diff, and concise decision brief would
+otherwise lose. Repeated confirmation is not evidence of faithful intent.
+Useful work inside the mandate and a reachable correction path are both part
+of control.
+
 ## Revocation and Re-Contracting
 
 Intent changes during work. Sometimes the person learns more. Sometimes the
@@ -388,8 +443,10 @@ A governed system should treat those changes as re-contracting, not as
 evidence that the original request was broad enough after all.
 
 Suppose local analysis cannot reproduce the paper's example because the
-required model is available only through an external API. The outcome remains
-desirable, but the means have changed. The agent should return with the new
+required model is available only through an external API. If the current grant
+already covers that provider, data path, and cost boundary, the agent can use
+it under those conditions. If it does not, the outcome remains desirable but
+the required means exceed the mandate. The agent should return with the new
 data path, provider, cost, retention terms, expected benefit, alternatives,
 and residuals. The person may authorize a sanitized request, choose a local
 baseline, defer the experiment, or abandon that part of the task.
@@ -400,8 +457,9 @@ valid, what must be invalidated, and which downstream consumers need the new
 contract. Material changes should not be smuggled into an unchanged contract
 ID.
 
-Revocation has limits. A local edit can be reverted. A queued publication can
-be stopped. A public message can be corrected, but copies may persist. A
+Revocation has limits. A local edit can often be reverted if its prior state remains available and
+restoration does not overwrite intervening work. A queued publication can be
+stopped while the queue still honors cancellation before its effect. A public message can be corrected, but copies may persist. A
 source sent to a third party may not be recoverable. The system should state
 those limits before approval and retain unreachable descendants as residuals
 afterward.
@@ -468,9 +526,11 @@ reachable correction.
 The strongest alternative is not an elaborate intent compiler. It is a small
 set of practical rules backed by ordinary human review.
 
-Preserve the user's request. Make reversible local changes by default. Ask
-before deletion, spending, credential use, external disclosure, publication,
-or other material effects. Show a concise diff. Require a named approver for
+Preserve the necessary request and applicable grants. Make authorized local
+changes and prepare reviewable options. Ask before deletion, spending,
+credential use, external disclosure, publication, or other material effects
+that lack current authority; do not ask again for effects the current mandate
+already covers. Show a concise diff. Require a named approver for
 high-impact actions. Keep a stop button. Record what happened.
 
 This baseline is strong because it addresses many real failures at low cost.
@@ -650,5 +710,13 @@ values deserve protection, whose disagreement has standing, or whether an
 objective remains legitimate when it changes through learning. The next
 chapter moves from commands to constitutions: protected commitments, moral
 uncertainty, learned objectives, amendment, dissent, and appeal.
+[Unit 7](unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd)
+must preserve the current mandate while identifying conflicts that the
+individual requester cannot settle alone. The
+[Human Intent owner](https://corbensorenson.github.io/asi-stack-book/chapters/human-intent-as-a-formal-input.html)
+and [Intent-to-Execution owner](https://corbensorenson.github.io/asi-stack-book/chapters/intent-to-execution-contracts.html)
+retain interpretation and accepted-task conformance as separate contracts;
+Cognitive Compilation owns target lowering. Neither a precise parse nor
+faithful execution settles the legitimacy of the objective.
 
 {{< include ../generated/unit-06-status.qmd >}}

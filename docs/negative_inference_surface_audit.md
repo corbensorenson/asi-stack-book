@@ -1,6 +1,6 @@
 # Negative-Inference Surface Audit
 
-Date: 2026-07-17
+Current projection refreshed: 2026-11-02. Audit introduced July 17, 2026.
 
 This current-prose audit covers 109 reader-facing
 surfaces, including all 89 live chapters. It

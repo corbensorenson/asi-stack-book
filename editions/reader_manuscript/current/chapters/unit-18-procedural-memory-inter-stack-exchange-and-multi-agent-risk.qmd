@@ -5,10 +5,12 @@ unit_id: "unit-18"
 
 ## The Workflow That Escaped Its Lesson
 
-The repository team has now completed the security update twice: once badly,
-then once through a governed route. The second attempt preserved job identity,
-verified the package, observed the deployed bytes, contained a partial failure,
-and closed the known residuals.
+Continue the hypothetical repository story, not a reported deployment. An
+earlier attempt returned local success without the intended package outcome.
+The repaired route preserved job identity, inspected the package, observed
+served bytes at named routes and times, and contained a partial failure.
+Service restoration left downstream notification and remedy duties owned;
+it did not prove all prior exposure repaired.
 
 An agent proposes to save the successful sequence as a reusable skill. The
 organization approves. A month later another stack requests the skill, pays
@@ -87,7 +89,9 @@ family under human approval while remaining experimental elsewhere. It may be
 available as a suggestion but not executable. It may require a fresh verifier
 for every use.
 
-The transition does not grant support to the procedure’s underlying claims.
+Routing promotion does not automatically grant support to the procedure’s
+underlying claims. A separate support decision must name the exact claim and
+the inference earned by its evidence.
 A passing regression suite shows that named checks passed. It does not prove
 that the abstraction is causally correct, the environment is complete, or
 future executions are safe.
@@ -100,18 +104,31 @@ simple and still fail to help on the eleventh. It can be loaded but never used,
 used but unnecessary, or necessary only because the new search process was
 designed around it.
 
-The test is intervention. Freeze the future tasks, search method, verifier, and
-budget. Run them with the candidate procedure, without it, and with plausible
-placebos such as a duplicate or irrelevant helper of similar size. Then remove
-the procedure from solutions that used it. This separates availability from
-invocation, contribution, necessity, and actual improvement.
+For a forward-transfer claim, the proposed test is intervention. Extract and
+select the candidate on training and development tasks, independently check its
+semantic contract, then freeze the future task lineages, search method, verifier,
+retrieval exposure, and budget. Compare
+candidate-present, candidate-absent, and matched valid placebo conditions, such
+as a duplicate or irrelevant helper. Accept a tested candidate into a later
+library version; do not let the test task teach the version credited with
+solving that same task.
+
+If a verified solution used the helper, rerun the task with it unavailable
+under the same downstream budget. Merely deleting a call from the finished
+program would usually break that program by construction. The rerun asks
+whether another verified solution is found, at what cost, or with an unknown
+or timeout result. Operational necessity within that search and budget is not
+logical indispensability under every possible solver. If both the library and
+search policy changed, separate their effects before crediting the helper.
 
 A candidate that passes semantic checks but fails this transfer test need not
 be destroyed. It can remain an archived idea, an explanatory compression, or a
 special-case tool. It simply should not become the default on a claim the
-evidence did not support. The paper that develops this protocol proposes
-several exact program-synthesis experiments; those experiments have not yet
-been run for this book.
+evidence did not support. Corben’s
+[From Compression to Forward Transfer](https://corbensorenson.github.io/asi-stack-book/papers/forward_transfer_program_synthesis.html),
+especially Sections 6.1–6.6, proposes this protocol and concrete program-synthesis
+experiments. It is an experimental blueprint, not a report of completed
+transfer results for this book.
 
 ## Discovery Must Preserve the Denominator
 
@@ -120,11 +137,13 @@ and effect traces for repeated goals, state transitions, interventions, and
 outcomes. Frequency can identify candidates, but it cannot decide what should
 be learned. A rare recovery route may matter more than a common success path.
 
-The discovery record names the complete search population, inclusion rule,
-missing traces, clustering features, proposed families, excluded cases, and
-human or model judgments. It keeps successes, failures, near misses, aborted
-attempts, and work completed outside the instrumented path. Otherwise the
-foundry learns only from the easiest visible work.
+The discovery record names the declared eligible search population, inclusion
+rule, known missing traces, coverage uncertainty, clustering features, proposed
+families, excluded cases, and human or model judgments. It retains observed
+successes, failures, near misses, and aborted attempts. Known work outside the
+instrumented path enters the inventory with its missing evidence; the system
+cannot invent a complete trace for it. Otherwise the foundry learns only from
+the easiest visible work while calling its selection complete.
 
 Similarity is typed. Two commands can look different while implementing the
 same semantic transition. Two nearly identical traces can have different
@@ -172,10 +191,11 @@ unchanged.
 
 ## Execution Produces New Evidence, Not Automatic Reinforcement
 
-Every use yields a receipt: procedure and version, job, invoker, inputs,
-environment, authority, adaptations, steps, artifacts, expected and observed
-effects, verification, outcome, cost, intervention, residuals, and consumer
-acknowledgment.
+An admitted use opens an attempt record. An available execution receipt binds
+procedure and version, job, invoker, inputs, environment, authority, adaptations,
+steps, artifacts, expected and observed effects, verification, outcome, cost,
+intervention, residuals, and consumer acknowledgment. A missing receipt leaves
+the attempt open or explicitly unresolved; it does not erase that use.
 
 The receipt returns to the procedure ledger. It may confirm a known route,
 reveal a near miss, add a counterexample, or trigger quarantine. It does not
@@ -200,7 +220,8 @@ museum of stale authority and overlapping tools.
 Retirement triggers include failed regressions, changed dependencies, expired
 evidence, new policy, compromised tools, superior replacement, unacceptable
 cost, low use, repeated intervention, route drift, and discovered harm.
-Quarantine stops new dispatch while preserving investigation. Deprecation
+Quarantine stops new dispatch while preserving permitted investigation; it
+does not authorize retaining prohibited source payloads. Deprecation
 warns consumers and sets a migration horizon. Retirement blocks ordinary
 reuse. Revocation handles urgent loss of authority.
 
@@ -208,10 +229,11 @@ Descendants need custody. If procedure B embeds A, retiring A should identify
 B and every known routed consumer. They may requalify, replace the dependency,
 or stop. Unknown copies remain residuals.
 
-Retirement is absorbing for the retired identity: later events cannot make the
-same version active without an explicit new qualification transition. A
-popular procedure cannot vote itself back into service through continued
-requests.
+Retirement is absorbing for the retired version: later events do not make that
+version active again. Requalification proposes a new version with lineage to
+the retired one, even if its code bytes are unchanged and only its applicability
+or evidence changed. The old history remains addressable. A popular procedure
+cannot vote its retired version back into service through continued requests.
 
 Deletion is separate. Historical traces and receipts may need retention for
 audit and repair, subject to privacy and rights. Removing executable access
@@ -277,8 +299,9 @@ allow the request to narrow or fail.
 
 Unknown fields need policy. Ignoring an unknown descriptive annotation may be
 safe; ignoring an unknown constraint or residual is not. Critical semantic
-extensions should fail closed unless both peers attest to the required
-behavior.
+extensions should fail closed unless the interpretation is compatible and the
+required enforcement is qualified at the relevant boundary. A declaration of
+support alone is not evidence that the implementation honors the constraint.
 
 Protocol upgrades are replacement transactions. They require old and new
 semantic mappings, mixed-version behavior, downgrade-attack resistance,
@@ -319,7 +342,10 @@ money. The request reserves a budget before value-bearing dispatch. It states
 unit, limit, pricing basis, contingencies, refund or compensation policy,
 settlement route, and who bears verification and recovery costs.
 
-A budget is an authority ceiling, not an optimization target. The cheapest
+A budget bounds allocated resources; a principal’s spending grant can make a
+cost limit part of the authority ceiling. Available or reserved funds alone
+do not authorize the target, purpose, or effect. The remaining budget is not an
+objective to exhaust. The cheapest
 provider may be unqualified. A high price does not establish quality. A market
 can reward throughput while externalizing security, labor, environmental, or
 systemic costs.
@@ -385,14 +411,17 @@ unrelated capability through an opaque global score. Containment is scoped to
 the evidence and consequence.
 
 This boundary lets cooperation grow without assuming universal trust. Systems
-can share narrow work, test one another’s receipts, and expand only after
-observed outcomes. Federation becomes a sequence of reversible commitments,
-not one irreversible trust decision.
+can share narrow work, challenge receipts, and consider broader commitments
+under current authority and evidence. Future commitments can be limited or
+withdrawn; prior messages, payments, disclosures, and effects may persist.
+Their recovery and dispute duties remain owned rather than being described as
+universally reversible.
 
 The same principle governs procedure sharing. A receiving stack imports a
 candidate and its boundary, not the sender’s confidence. It rechecks local
 dependencies, authority, rights, and fallback before allowing use. Successful
-execution can widen evidence only through a later governed transition.
+execution adds a bounded evidence artifact. Broader routing qualification
+requires a later governed transition.
 
 ## Local Validity Is Not Population Safety
 
@@ -400,11 +429,13 @@ Imagine three stacks, A, B, and C. Every directed exchange is authorized. Each
 stack obeys its budget and returns receipts. Pairwise inspection finds no
 protocol violation.
 
-Now compare two sequences of resource allocation. In the first, all three
-allocations flow to A. In the second, one flows to A and two to B. The local
-authorization summary can be identical while concentration differs. No
-classifier that sees only the pairwise-validity matrix can recover every
-population outcome.
+Now compare two sequences of three equal-sized resource allocations. In the
+first, all three flow to A. In the second, one flows to A and two to B. The
+largest recipient share is three of three in the first sequence and two of
+three in the second. The pairwise-validity matrix does not encode these
+allocations, so it can be identical while concentration differs. No classifier
+that sees only that matrix can recover both concentration states. The share
+calculation is a toy illustration, not evidence that either population is safe.
 
 This is not merely a large version of the protocol problem. Population state
 includes common model lineage, infrastructure, ownership, capital, data,
@@ -415,7 +446,9 @@ on any single edge.
 A systemic gate therefore receives local receipts plus a population snapshot
 and trajectory. It can admit bounded campaigns, require diversification,
 limit concentration, preserve human alternatives, route to institutional
-review, or block expansion. Passing every local gate is one input, never the
+review, or block expansion within an assigned policy mandate. Observation
+provides a basis for intervention; it does not create the authority to impose
+it. Passing every local gate is one input, never the
 verdict.
 
 ## Coordination and Collective Intelligence Are Qualified Outcomes
@@ -566,12 +599,14 @@ Not every reusable procedure comes from the system's own experience. Some are
 inherited from science, engineering, medicine, accounting, law, or operations.
 Those procedures enter procedural memory through a different door.
 
-A lesson distilled from a local trace must prove that the trace supports the
-lesson. An inherited method must also prove that its mechanism survives the
-move into an artificial system. Peer review without meaningful independence is
+A lesson distilled from a local trace needs evidence that the trace supports
+the lesson. An inherited method needs additional qualification of its proposed
+mechanism in the artificial realization. These are justification obligations,
+not a requirement that every empirical lesson have a formal theorem. Peer review without meaningful independence is
 not peer review. A postmortem that stores a polished narrative without a
-detector or regression test may not prevent recurrence. An appeal handled by
-the same authority through the same evidence path is only repetition.
+detector or regression test may not prevent recurrence. A reconsideration by the same authority can correct a mistaken reading or
+clerical error. It does not supply an independent appeal where that is the
+required mechanism. Naming either process “appeal” cannot erase the difference.
 
 The procedural registry should therefore keep the source method, its proposed
 mechanism, its qualified target realization, and its runtime history distinct.
@@ -597,16 +632,34 @@ inspection-only authority, budget, expected receipt, expiry, dispute route,
 and residual owner. B verifies the request and returns an inspection receipt.
 A accepts the artifact, then performs release through its own runtime authority.
 
+Now change one requirement. A’s release contract needs observations from the
+primary endpoint and two regional mirrors. B’s imported procedure inspects only
+the primary endpoint. Its signed receipt can accurately report a matching
+package there while failing the release obligation. If B cannot perform the
+critical mirror check, it declines that part or proposes a narrower inspection.
+A can accept the bounded primary-endpoint result and still hold release until
+an admissible mirror observation arrives. Parsing the message, reserving the
+budget, and paying B do not fill the missing coverage or grant B release power.
+
+For one repository with a fixed deployment topology, a reviewed script and
+ordinary release checklist can encode these same three endpoints. Rechecking
+the script’s applicability and observing each required route may suffice;
+trace mining, general skill promotion, and a new exchange protocol must earn
+additional value. Repeated receipts from several peers that all query the same
+primary endpoint still share the original blind spot.
+
 That transaction says nothing about whether B should receive every future
-inspection job. The population monitor sees B’s share increasing, discovers
-that several nominal competitors use the same model and cloud, and measures a
-declining viable fallback. It can require a second qualified route, cap growth,
-or open an institutional review without declaring B defective.
+inspection job. A population monitor can report increasing concentration and
+shared model or cloud dependencies. A responsible owner may consider a second
+qualified route, a limit on growth, or institutional review under an applicable
+mandate. The monitor’s measurements alone confer no power to impose those
+changes, and do not establish that B is defective.
 
 Later, a regional-mirror failure triggers the procedure’s retirement condition.
 New dispatch stops. Known descendants enter quarantine. Existing consumers are
 notified. A revised candidate must preserve the counterexample and earn a new
-qualification. History remains intact.
+qualification under a new version. Permitted history remains addressable;
+required deletion and lost reconstruction fidelity remain explicit.
 
 ## Failure Cases
 
@@ -672,29 +725,27 @@ latency, compute, and institutional burden. Schema completeness is not success.
 
 ## What the Current Work Establishes
 
-Procedural Memory has two implemented targets and 35 live Lean declarations.
-Its exact suites include three valid and six rejecting qualification packets,
-one valid and ten rejecting trace-promotion records, seven stages, 32 routes,
-and 33 rejected mutations. Twenty-one refinement declarations preserve nine
-identity fields, zero support and effect authority, exact rejection
-noninterference, batch composition, and absorbing retirement. These finite
-records do not establish trace mining, causal abstraction, generated-tool
-correctness, natural usefulness, safe routing, or deployed retirement.
+[Procedural Memory](https://corbensorenson.github.io/asi-stack-book/chapters/procedural-memory-and-cognitive-loop-closure.html)
+checks authored qualification and trace-promotion packets and a seven-stage
+finite lifecycle. Its refinement preserves identity, exact rejection
+noninterference, batch composition, zero support/effect authority, and absorbing
+retirement. These properties do not establish trace mining, causal abstraction,
+generated-tool correctness, natural usefulness, or deployed retirement.
 
-Inter-Stack Exchange has nine implemented targets through 25 declarations.
-Nine deterministic routes and an independently simulated six-event lifecycle
-cover identity binding, delegation, budget reservation, local-dispatch handoff,
-receipt observation, dispute, and residual closure, with ten rejection-state
-checks and eleven fixture mutations. No peer, message, credential, payment,
-settlement, task result, or external effect was exercised.
+[Inter-Stack Exchange](https://corbensorenson.github.io/asi-stack-book/chapters/inter-stack-protocols-identity-and-economic-exchange.html)
+checks deterministic routes and an independently simulated six-event lifecycle
+covering identity, delegation, reservation, local-dispatch handoff, receipts,
+dispute, and residual closure. No real peer, message, credential, payment,
+settlement, task outcome, or external effect was exercised.
 
-Multi-Agent Risk has one implemented target through 38 declarations. Its
-finite model proves that identical six-edge pairwise authorization inputs can
-have opposite population-readiness outcomes; nine systemic-axis mutations
-preserve all local edges while failing readiness. Two locally authorized
-three-event allocation traces have opposite concentration outcomes. This is a
-noninheritance result over authored records, not evidence of cooperation,
-collusion, institutional behavior, social prediction, human agency, or safety.
+[Multi-Agent Risk](https://corbensorenson.github.io/asi-stack-book/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html)
+shows that identical six-edge local authorization inputs can accompany opposite
+readiness decisions in its authored finite model. Systemic-axis mutations and
+two three-event allocation traces expose information absent from the local
+summary. This is noninheritance, not observed cooperation, collusion, social
+prediction, human agency, or safety. Exact proof, route, fixture, and mutation
+inventories remain at the canonical owners. All three cores remain
+`Design rationale` at `argument`.
 
 The joined chapter therefore establishes no deployed procedure foundry,
 interoperable agent economy, or population-governance result. It shows exact
@@ -702,8 +753,8 @@ places where local evidence must stop.
 
 ## From a Minimum Procedure to a Governed Agent Ecology
 
-A minimum implementation can promote the repository workflow from a complete
-set of successes and failures. It should parameterize topology, bind authority,
+A minimum implementation can propose the repository workflow from a declared
+eligible trace inventory, retaining observed failures and known missingness. It should parameterize topology, bind authority,
 run held-out regressions, compare an ordinary script, issue execution receipts,
 inject a retirement trigger, and verify descendant quarantine.
 

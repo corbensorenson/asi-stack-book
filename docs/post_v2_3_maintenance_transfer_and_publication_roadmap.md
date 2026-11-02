@@ -2,10 +2,927 @@
 
 Status: **active canonical successor**  
 Activated: 2026-07-16  
-Substantively revised: 2026-08-13
+Substantively revised: 2026-11-02
 Authority: Corben Sorenson  
 Machine status: `roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`  
 Experiment authority: `docs/claim_bearing_experiment_competence_standard.md`
+
+## 2026-10-02 project-improvement implementation amendment
+
+
+The subsequent November 2 Answerability Atlas integration selects three existing
+owners: Benchmark Ratchets explains baseline completion and regime calibration;
+Resource Economics separates information from net decision value; Scientific
+Discovery retains the positive development finding, failed advance rule and
+unrun confirmation. Units 22/23 carry concise source-linked explanations. The
+exact source manuscript, PDF and claim index remain unchanged, raw research stays
+private and the tested controller line remains closed. Current totals are 507
+sources, 1,364 assigned pairs, 60 paper-library entries and 151,719 reader words.
+P1 has 4,064 atoms/4,215 reviewed candidates/64 dossiers without a support change.
+Selected technical Human/AI views, both reader excerpts, the source paper and
+three layouts pass; 224 pending software tests pass. Two stale reader link labels
+and a wrapped next-title reference are corrected. Visual coverage recognizes
+valid unquoted Mermaid labels and graph substance independent of source-line
+wrapping. Source/schema/publication checks pass; the existing October 8 pin
+review expiry remains an explicit CI failure. All authorized pending public work
+is consolidated on `main`; no new branch, Docker or scientific campaign. The
+full improvement goal remains active at 30/114 verified.
+
+
+The November 2 user-confirmed source intake integrates the October 29
+Platonic-representation JEPA preprint, original PRH, I-JEPA, LeJEPA and H-Net
+through five version/passage-bounded notes and the existing source-intake/triage
+owners. World Models, Cognitive Substrates and Learning Theory plus reader Units
+11/19 distinguish objectives, learned granularity, theorem assumptions and
+reported alignment/sample/FLOP results from grounding, actual cost and local
+support. Existing V-JEPA 2 coverage is reused at its recorded review scope.
+The inventory is 506 sources with 1,361 assigned pairs; the current reader is
+151,555 words. Core/proof/result/frozen custody remains intact. Selected HTML,
+source consistency and the corrected narrow comparison pass; no Docker, model
+run, scientific outcome or support transition is added. Broader I04/L02/J work
+remains active; verified recommendations remain 30 of 114.
+
+The October 11 J01 completion audit verifies the distinct-owner editorial
+criterion and brings the current total to 30 of 114. All 89 outline jobs and
+input/output boundaries are exposed in the current reader guide; the ten active
+Interfaces replacements and 26 narrative openings/conclusions were reconciled.
+Six passages in five units clarify ownership without changing other narrative
+sections, canonical/source/proof/evidence scope or frozen custody. The first-
+disputed-boundary walkthrough routes an unproved model/world relation to Proof
+Envelope adequacy review, retaining Circle’s receipt-delivery role. Five
+selected narrative HTML pages and the guide display the changes. At that pass the
+reader had 151,165 words; the November source intake updates the current total. J05/J06 and other
+active criteria retain their full scope; the goal stays active.
+
+The preceding contribution-type audit verified I03 and brought the total to 29. The three defended targets now have an explicit
+proposal/result/antecedent map; nine signature ideas are interpreted as
+composition/process proposals without renewing their dated assessments.
+Frozen mechanism-ablation fields distinguish comparison conditions rather
+than claim originality. Conventional implementations may carry the same useful
+joins, and author publication establishes lineage rather than novelty. Existing
+ledger and ladder bytes stay exact. Seventeen local references and current
+portfolio/prior-art/novelty checks pass; no chapter, new evidence, independent
+review, support or release is added. Earlier 28-item totals describe the
+preceding I05/World Models passes.
+
+The subsequent October 11 fair-case audit verifies I05's editorial completion
+criterion. Unit 1, the technical opener, conventional challenger blueprints and
+all three generated comparison dispositions agree on competent alternatives,
+full-cost/common-failure risks, workload fit, and observations that would change
+the choice. The audit corrected a remaining strongest-baseline misstatement
+and definition-based absorption in the opener and its two active reader
+overlays. Ordinary designs may win under their own vocabulary; boundaries may
+be merged or removed. The comparison is specified, not executed. That pass
+brought the verified total to 28; the later I03 audit brings it to 29. This adds
+no support, comparative research, independent/author approval or release.
+
+The October 11 concept/search continuation completes K09's representative
+navigation criteria. Native result labels derive from current technical owners,
+reader units, appendices, and the paper manifest: original author papers remain
+distinct from derived synthesis. Labels describe page role, not support or
+approval. A search-name fallback now preserves the magnifier instead of crowding
+the query; selected result text uses the existing dark blue accent. Twelve
+actual query views and three keyboard-selected explanations pass, along with
+five concept/example/glossary tasks and narrow/enlarged layouts. The four
+existing figure explanations precede unchanged diagram source, improving reading
+order and the observed recovery snippet. Current reader pacing totals 151,093
+words across 26 units; history and release custody are unchanged. K05/K06's
+wider scopes, actual assistive-technology inspection, independent reader review,
+author approval, and deployment remain separate. No Docker or research run.
+
+The October 11 portfolio continuation completes I01/I02's editorial criteria.
+The entry explanation, reader/products, synopsis, summary, and evaluation
+contract now lead with three proposed contributions and their actual ceilings.
+The existing prior-art owner specifies competent conventional authority/change,
+scientific claim-register, and observation/incident workflows, with exact joins,
+matching conditions, costs, recovery limits, and ordinary-alternative equality
+dispositions. Older five-track positioning is dated subordinate history.
+Composition and process types plus selected primary-source passages advance
+I03/I04/I05; wider novelty-language and claim-directed refresh remain open. The
+paper landing count is corrected to 59 = 53 original + six derived entries;
+this alone does not close L04. No frozen comparison is relabeled and no new
+experiment, support, review approval, publication, or Docker run is inferred.
+
+Corben has authorized implementation of the applicable recommendations in
+`docs/project_improvements.md`, with their actual completion conditions and
+prerequisites. The persistent execution goal adopts the full 114-item catalog;
+the machine counterpart records its exact IDs and current verification state.
+This amendment uses the existing roadmap rather than activating a competing
+roadmap. The advisory catalog remains the problem and acceptance specification.
+
+Corben's October 10 direction changes the current execution priority to book
+completion: substantive prose, source grounding, claim clarity, and reader
+continuity. Further Docker testing is out of scope. Retained infrastructure
+results keep their historical scope; unfinished platform qualification does
+not block manuscript work. The book slot now addresses I/J/K/L through existing
+owners rather than extending runtime qualification. J03's three named dense
+owners now have conceptual routes into their deeper reference sections,
+explicit neighboring jobs, and competent alternatives that may win. The edits
+narrow the replay/debugging absolute and the weak-baseline inference without
+changing support or a result. Independent reader review remains unclaimed. The current
+verified catalog total is 30 of 114 after the portfolio, K09 navigation, I05
+fair-case, I03 contribution-type and J01 ownership audits; later quoted 20-,
+27-, 28- and 29-item totals describe preceding phases. The current reader pass closes K02/K03: five
+explicitly hypothetical outcomes accompany the retained observed P5-U1 case;
+map-derived reading paths state audience, prerequisites, depth, and evidence
+limits. Units 19 and 20 gain direct-route and consumer-specific recovery cases
+while repeated numerical inventories give way to scoped results and research
+links. The source builder now reports author-review readiness rather than
+claiming deployment. The complete 28-page reader renders locally and its 1,627
+local links resolve. K01 remains open for semantic review of the other units
+and author approval; target lengths are pacing diagnostics.
+
+The shared-vocabulary continuation adds owned definitions for contract,
+lease, receipt, qualification, assurance, authority, observation, evidence,
+residual, rollback, compensation, and layer in Appendix B. It distinguishes
+logical responsibility, runtime service, artifact interface, and institutional
+role, and gives all 51 existing glossary owner references a chapter link.
+Focused reader edits in Units 15, 17, and 23 preserve those distinctions at
+claim, runtime, and resource handoffs. The review and deployment scenes are
+explicitly illustrative. J05 remains open for wider semantic reconciliation;
+the verified catalog total and all support states remain unchanged.
+
+The reader-figure pass closes K04 locally with three selected diagrams and a
+revised opening map. Each has one teaching purpose, an identifying accessible
+SVG title and description, a caption, a full adjacent text version, and a
+keyboard-scrollable frame. Twelve installed-Chrome observations cover four
+pages at desktop, 320 pixels, and doubled text. Initial page-wide overflow
+was corrected in diagram containment, edition controls, headings, and chapter
+navigation. A compact mobile breadcrumb leaves the full title in the chapter
+and contents. The quickstart is unnumbered; all 26 actual HTML chapter numbers
+now match the canonical unit order. K05/K07 remain open for their broader
+technical/reader scope; no screen-reader inspection, independent usability
+study, locked publication qualification, or remote deployment is claimed.
+
+The next manuscript pass reviews the full efficiency and authority units.
+Unit 2 now works through hypothetical full-cost arithmetic, reuse break-even,
+correct refusal versus accepted transformation, and incomplete route search.
+Unit 3 follows two local revocation histories and an uncertain remote effect,
+with explicit ordering assumptions and current authority for any restoration.
+A competent conventional agent or permission service may win. Dense fixture
+inventories give way to bounded conclusions and canonical owner links. This
+advances I02/I05/J06/J07/K01 without claiming those whole-catalog conditions
+complete; assistant editorial review does not supply author approval, a natural
+measurement, distributed enforcement, or institutional legitimacy.
+
+The security/evidence manuscript continuation reviews complete Units 4 and 5.
+Public-paper summary, private-input handling, untrusted execution, and protected
+computation now have separate reasons to admit a control; a conventional editor
+can suffice for the first case. Receipt and identity claims remain bounded by
+available inputs and trust assumptions. Selected primary RFC 9334 passages
+support role separation, co-location, and freshness limits in the existing
+source note. Unit 5 repairs the claim-label/support-state mix-up, distinguishes
+historical observation from reuse eligibility, and separates inadequate,
+imprecise, and informative negative comparisons. Hypothetical examples remain
+separate from the frozen campaigns. J05/K01/L02 advance without new support,
+author approval, external authority, or catalog-wide completion.
+
+The human-intent/constitution continuation reviews complete Units 6 and 7.
+Applicable session grants remain usable; ordinary drafting and reviewable
+preparation precede any genuinely missing authority. Request retention is
+bounded, and changed means trigger re-contracting only when they exceed the
+current mandate. Constitutional prose now qualifies finite penalty encodings,
+conditional lease lifetime, invalid-parent narrowing, and active revocation
+versus retained historical artifacts. Routine editing and a one-line rights-check
+removal receive different decisions under a competent conventional workflow.
+Numeric inventories give way to bounded conclusions with owner links. This
+advances I02/I05/J05/J06/K01 without new support, user studies, ratification,
+author approval, or catalog-wide completion.
+
+The institution/replacement continuation reviews complete Units 8 and 9.
+Withdrawal now differs from existing signed copies and recipient awareness;
+three closure criteria retain upstream completion, unknown downstream exposure,
+and unresolved harmed-party work. Receipt history remains intact when a changed
+case loses admissibility. Capability replacement now uses a competent registry
+baseline, separately admitted shadow exposure, and currently qualified fallback
+or a hold. A shared test-selector defect can disqualify both versions for the
+affected use. The exact bounded restoration and utility outcomes remain at their
+original scope. This advances I02/I05/J05/J06/K01 without new coordination,
+recovery, canary, author approval, or support results.
+
+The observation/world-model continuation reviews complete Units 10 and 11.
+Toy ticks distinguish an unexpired grant from stale measurement evidence;
+qualification, permission, sampled identity, and calibration remain different
+questions. Selected Ames et al. arXiv v1 passages locate the conditional barrier
+result and actuation constraints in the existing source note. Admitted actuality
+records remain fallible accounts, and horizon uncertainty is evaluated rather
+than assumed monotone. A stopped-move example distinguishes intervention outcomes
+from causal prevention; direct inspection and a light event record may suffice.
+Frozen forecasts, exact finite result scopes, and unopened empirical outcomes
+remain intact. This advances I02/I05/J05/J06/K01/L02 without physical trials,
+calibration, prevention, author approval, or support movement.
+
+The planning/compilation continuation reviews complete Units 12 and 13.
+Versioned branch joins retain historical work while rebuilding affected
+obligations; reservation differs from current readiness, and fallback activation
+needs a qualified response bound. Unit 13's stale three-owner summary now covers
+all four mapped owners, including method-transfer package conformance without
+efficacy or faithful-execution claims. CTR/QCP and method-performance assurance
+receive explicit meanings. Two target repairs give ordinary drafting/templates
+the same checks, so semantic IR must earn added consumer or repair value.
+The existing synthetic QCSA denominator and failed cost/advantage gates remain
+unchanged. This advances I02/I05/J01/J05/J06/J07/K01 without new planner,
+compiler, method-transfer, publication, author approval, or support results.
+
+The context/verification continuation reviews complete Units 14 and 15.
+Current reliance is distinct from historical receipts, and lease closure is
+not physical erasure. Contrasting hypothetical retention paths make diagnostic
+permission, required removal, lost replay fidelity, and a current public basis
+concrete. Missing sensing limits coverage inference without automatically
+refuting a separately observed stop. The repaired note and direct-review
+alternative connect each obligation to useful verification effort. Selected
+official Lean passages distinguish elaboration from kernel checking; they do
+not qualify the pinned compiler. Both units replace numerical inventories with
+bounded conclusions and exact owner links. This advances I02/I05/J05/J06/J07/
+K01/L02 without new memory, controller, verification, proof, author approval,
+or support results.
+
+The work/operations continuation reviews complete Units 16 and 17. The named
+security criterion does not certify whole-package safety, and controlled
+recovery does not retract distributed exposure. Toy attention budgets connect
+review capacity, ordinary-route alternatives, refusal, and learning to the same
+job. Work-surface expansion is a contingent architectural reading rather than
+a universal product sequence; comparable AI-alone tasks need admissible roles.
+Current grants remain usable within scope. Recovery respects intervening
+operator repairs and cannot classify a known vulnerable previous package as a
+qualified fallback. The hypothetical route holds affected downloads when no
+qualifying package exists and records bounded observation coverage. Both units
+retain canonical result owners and hand off through effects and procedure
+promotion. This advances I02/I05/J01/J05/J06/J07/K01 without natural work,
+productivity, organizational, deployment, recovery, author approval, or support
+results.
+
+The procedure/exchange continuation reviews complete Unit 18. Retired versions
+remain absorbing; requalification creates a new version with retained lineage.
+Resource reservation differs from effect permission, and withdrawing future
+commitments cannot erase previous exchange effects. Selected local primary
+forward-transfer passages ground semantic validation, frozen test/library
+versions, and same-budget removal reruns; deleting a call is not a necessity
+test. A three-endpoint release example retains an accurate partial inspection
+receipt while holding missing coverage, and a reviewed script/checklist can
+win. Population measurements do not create an intervention mandate. Known
+missing traces, permitted retention, and inherited-method reconsideration
+retain their separate boundaries. This advances I02/I05/J05/J06/J07/K01/L02
+without learned procedures, causal transfer, real peer/payment/settlement,
+population safety, author approval, or support movement.
+
+The full routing/training continuation reviews complete Units 19 and 20,
+extending their earlier contrasting-case pass. Known tool incompatibility
+differs from unexpected execution failure; fallback needs current qualification
+and authority. Toy compatibility, accepted-answer, and attempted-success
+fractions use distinct denominators. Adoption binds bounded recovery and retains
+its previous anchor; cyclic winding detects replacement but cannot reconstruct
+evicted content. A declared adaptive data rule can remain within one campaign.
+Optimizer state is rule-specific, hashes cannot discover an omitted state class,
+and qualification methods follow the consumer claim. The dated eleven-test
+source-package observation remains bounded IR evidence; historical results and
+current reuse eligibility differ. Internal updates and retries already covered
+by valid grants remain admissible. This advances I02/I05/J01/J05/J06/J07/K01/L02
+without router calibration, natural substrate benefit, training, causal topology
+advantage, author approval, or support promotion.
+
+The persistence/learning continuation reviews complete Unit 21. A regression
+check blocks a lossy output while a tool repair changes the mechanism; lack of
+upstream ownership does not eliminate a local guard. Commitment profiles can
+be incomparable, standing policies can admit bounded updates, and recovery
+claims need sufficient version/history rather than a full model copy per
+step. Withdrawing current use does not undo all prior consequences. Selected
+primary Bourtoule Definition III.1 passages ground the model-distribution
+removal target; a public fact retained through another admitted record can
+survive removal of the named record. Known descendants, unknown stores, and
+retention-limited history remain separate. The explicitly hypothetical cases
+and scoped finite results advance I02/I05/J01/J05/J06/J07/K01/L02 without an
+integrated adjudicator, causal lesson, transfer, unlearning/privacy closure,
+scientific discovery, author approval, or support movement.
+
+The evaluation/assurance continuation reviews complete Unit 22. A toy cohort
+separates attempted coverage, graded accuracy, verified yield, unresolved tasks,
+and resource cost; nested model/prompt/seed families are not one task count.
+Instrument failure has a stated scope rather than erasing all unaffected
+results. Presented evaluation cues do not reveal intent, and disagreement
+receives a consequence-specific disposition. Quarantine and evidence history
+retain only permitted content. The case states error/confinement criteria under
+an explicit policy, while signature validation, signer trust, and truth remain
+separate. Selected primary C2PA 2.3 Sections 1.2 and 14.1–14.3 supply the bounded
+attribution, without adopting a later version or claiming conformance. An
+ordinary checklist can carry the same hypothetical decision. This advances
+I02/I05/J01/J05/J06/J07/K01/L02 without an evaluation, deception finding,
+capability crossing, canary, real assurance case, author approval, or support
+movement.
+
+The resource-economics continuation reviews complete Unit 23. Exact cache reuse
+does not establish current policy applicability; source text anchors attribution,
+not method correctness. The hypothetical budget separates planned machine units,
+reserved capacity, actual spending, and reviewer minutes. A toy queue shows why
+verification and review can dominate generation. Inspected changes, rather than
+a digest alone, establish a bibliography-only revision. Five technical owners
+retain their bounded negative and no-change outcomes. This prose work adds no
+natural efficiency, compression, deliberation, allocation, support, publication,
+or author-approval result.
+
+The physical-infrastructure continuation reviews complete Unit 24. Hypothetical
+placements no longer read as reported trials. Toy capacity, useful-output,
+overhead, and demand examples keep their populations and costs distinct.
+Selected LBNL report passages ground measurement/model and electricity/water
+scope. A timed offline case distinguishes lost communication, revocation,
+admitted stale-state exposure, and uncertain effect ordering. Retirement and
+causal attribution retain their evidence limits; ordinary placement may win.
+No hardware trial, live hive, environmental footprint, deletion closure,
+resilience, community outcome, support, publication, or author approval added.
+
+The recursive/integration continuation reviews complete Units 25–26. The
+verifier and end-to-end request remain hypothetical. A regression test is not
+a production repair; fallback adequacy, intervening work, retention, separate
+child grants, and observed closure remain explicit. The selected RepliBench v2
+abstract does not renew a current safety claim. Acknowledged effects can retain
+residual incidents. The integrated successor uses a two-parameter predictor and
+a local deduplicating sink; the deficient constructed direct arm does not
+establish failure of competent ordinary release controls. Book completion and
+execution of the future research program are distinct deliverables. No natural
+improvement, replication, containment, prevention, general API guarantee,
+whole-stack advantage, support, publication, or author approval added.
+
+The opening-chapter continuation completes the full assistant unit pass across
+all 26 current reader chapters. Unit 1 distinguishes the missing architectural
+account from the complete cause of a hypothetical failure, keeps current grants
+and scoped evidence reuse usable, and shows that a typed record cannot conjure
+a missing consumer. Ordinary reviewed repository work may suffice. Cross-
+chapter editing, broader technical-owner reconciliation, targeted source review,
+and author/independent-reader decisions remain separate work. This pass is not
+a support transition, research-program completion, or publication decision;
+the recommendation verified total remains 24 of 114. Book completion retains
+priority over Docker and infrastructure qualification.
+
+The current reader now has a selected concept finder and five return points
+through its hypothetical repository example. Owner routing derives the chapter
+paths; named headings are checked before generation. Twelve essential glossary
+terms have stable anchors and matching reader backlinks, and the quickstart
+depth route links to the finder. This advances K09 navigation without declaring
+its cross-surface search labels or user comprehension proven. No support,
+approval, release, or new research-program authority is added.
+
+The October 11 technical terminology continuation reconciles the stack thesis,
+authority, and evidence-state owners with the current reader and glossary.
+Existing grants and evidence reuse remain usable, while ordering, observation,
+review, and retention conditions stay explicit. The authority drawing now
+requires both checks; proof/test validation no longer bypasses accepted evidence
+review. A missing replay file or failed proof attempt is not a negation.
+Twenty new scanner candidates were reviewed against existing atom scope and
+confounds; twelve retired reviews preserve text, source, and disposition lineage.
+Three source packets bind the changed prose. The current counts are 4,064
+structured atoms and 4,167 prose candidates, with no pending unowned candidate
+or new material atom. Wider owner reconciliation remains open; there is no new
+experiment, proof, source reproduction, support transition, or release.
+
+Actual HTML inspection also simplified the two gate layouts to readable
+16-pixel desktop labels and removed the edition switcher's obstruction of
+chapter content by keeping it in normal page flow. Selected diagrams retain
+descriptive text and explicit limits. The paired local reader links resolve;
+wider keyboard, assistive-technology, mobile, and search criteria remain open.
+
+The next October 11 continuation reviewed the full runtime source and selected
+operations evidence surfaces. Admission now uses applicable grants and
+qualified commit ordering; actual post-state, observation, and receipts follow
+the effect. Crash custody, unknown outcomes, authorized recovery, intervening
+edits, compensation, and irreversible exposure stay explicit. Operations
+preserves its bounded subprocess and tiny-predictor observations and
+retrospective publication example without implying a natural incident result
+or general exactly-once delivery. Twenty-one changed runtime candidates were
+reviewed, eleven retired reviews retain lineage, and the current registry has
+4,064 structured atoms and 4,177 prose candidates. No new material atom,
+scientific campaign, proof review, support transition, or release is inferred.
+The readable runtime chart and selected HTML pages were inspected locally;
+six declared paper targets remain outside that partial preview's rendered-link
+scope. Wider owner, independent-reader, and publication criteria remain open.
+
+The full artifact source continuation now separates canonical records from
+world truth, playback from purpose-specific reexecution, and dependency-impact
+holds from claim or release decisions. Permitted history does not require
+prohibited payload retention. Three existing manifest design rules are
+clarified with their prior wording retained; one stale minimum count is
+reconciled to unchanged source declarations. Twenty changed candidates were
+reviewed and fifteen retired reviews preserve lineage. The current registry is
+4,064 structured atoms and 4,182 prose candidates, with no new material atom or
+pending candidate. Four diagram renderings were visually inspected in the local
+technical view; the expanded selected link scope resolves 2,536 links/anchors
+and explicitly excludes eleven links to six omitted paper pages. Current reader
+HTML inputs remain unchanged. No new source/proof reproduction, experiment,
+privacy/deletion closure, support transition, independent review, or release is
+inferred; wider manuscript and publication criteria remain open.
+
+The next October 11 source pass reviews the full Intent-to-Execution owner.
+It separates accepted obligations, current grants, qualified action admission,
+actual observations, unknown outcomes, and authorized recovery. A competent
+ordinary change workflow may implement the same joins at lower cost. The
+single-use proposal now reserves before effect and does not rearm an unknown
+attempt; its historical record checker is explicitly insufficient for that
+concurrent/crash protocol. Nine existing design rules retain prior wording;
+31 changed candidates and 13 retired dispositions are reconciled. The current
+registry is 4,064 atoms and 4,200 reviewed prose candidates. Core and historical
+outcomes remain literal. Selected Temporal/CaMeL passages ground the comparison
+without a local reproduction. Two diagrams and their keyboard scrolling pass
+three local layouts after the small-label and oversized-canvas defects were
+repaired. The selected chapter resolves 152 routes/anchors and excludes one
+omitted paper page. This advances I03–I05/J01/J02/J05–J07/K07; it adds no catalog
+completion, research result, author approval, support, or public release.
+
+The full Planning source pass then distinguishes credential feasibility,
+current permission, job dispatch, actual attempt, observed/unknown effects, and
+scoped revision. Independent eligible work can continue; conventional workflows
+may supply the same joins at lower burden. A hypothetical capacity calculation
+qualifies critical-path slack, while bounded dependency queries and recorded
+forecasts cannot prove missing-edge absence or causal counterfactuals. Seven
+design rules retain prior wording; 19 changed candidates and 14 retired reviews
+are reconciled. The current registry is 4,064 atoms and 4,205 reviewed prose
+candidates. Twelve source assignments are represented at their actual review
+depths; selected Airflow 3.3.2 passages ground the ordinary comparator. Three
+active Planning/Intent overlays now agree with the source. Two selected pages
+resolve 297 links/anchors and exclude three omitted papers; six local layouts
+inspect the displayed prose, three diagrams and compact narrow breadcrumbs.
+The core, formal scope, finite-world-model result, frozen readers, support and
+release are unchanged. This advances manuscript/source/terminology/accessibility
+work without adding a verified catalog completion or opening a future research
+campaign as a book-completion prerequisite.
+
+The full World Models source continuation separates forecasts, qualified sensor
+reports, beliefs, current grants, attempts, observed/unknown outcomes and open
+attribution. Its hypothetical warehouse trace gives competent reactive control
+a fair case; prediction qualification supplies neither permission nor reality.
+Six existing rules retain exact editorial lineage, fifteen source assignments
+are reconciled at their recorded depths, and a selected conformal follow-up
+clarifies coverage/use conditions. Two diagrams separate assertion lifecycle
+from effects. Literal core, campaign/outcome/test/formal sections and frozen
+P1 custody remain unchanged. The live empirical harness remains future research,
+not a book-completion prerequisite. This advances source/manuscript/terminology
+work; at that pass the verified total remained 28 of 114.
+
+The October 11 J01 outline continuation corrects a misplaced Artifact Graphs
+ownership and eighteen-step mechanism in the thesis drafting arc. Fifteen
+control-spine entries now state their decision, input/output boundary and
+semantically selected overlapping owners through 27 valid local links. The
+guide routes new sources and bugs by the first disputed responsibility. All
+89 jobs and stable IDs remain; the selected source queues/core paragraphs and
+other 74 chapter entries are exact. Chapter prose, claims, proof/evidence,
+reader and frozen custody are unchanged. This advances J01/J05/J06 but does not
+complete J01's 89-owner semantic criterion; the verified total remains 29.
+
+The next J01 outline continuation clarifies 27 governance, security,
+replacement and evidence-inheritance responsibilities with current interface
+readings and 54 valid local overlap links. Constraint, conflict, mandate,
+objective, oversight, human capacity, influence, learned-model attacks,
+privacy, protected computation, custody, release, provenance, generation,
+change admission, replication and method transport remain distinct. Routine
+updates within an applicable lease do not require repeated permission. There
+are now 42 explicitly reconciled outline entries; 47 remain, followed by final
+reader-facing consistency. Source queues/core paragraphs and the other 62
+entries stay exact; chapter, manifest, evidence, reader and frozen custody are
+unchanged. J01/J05/J06 remain open and the verified total remains 29 of 114.
+
+The next J01 continuation reconciles 24 memory, work, social/physical control,
+routing, training and representation outline decisions with 48 valid local
+links. The subsequent scoped repair resolves those seven interface findings
+through sixteen existing rules and one Routing Human replacement. The final
+23 outline entries are now also clarified: all 89 owners state decisions,
+inputs, outputs, boundaries and nearest overlaps through 175 resolving chapter
+links. The final source reading repairs two additional Interfaces ambiguities
+through three existing rules: Planning requests resources and Resource Economics
+allocates; capability identity, current-use qualification, claim continuity and
+accepted support remain separate after an evaluation-integrity finding. Four
+selected desktop Human/AI views display the latter repairs. Exact wording/review
+lineage and current editorial/reader bindings are retained; other canonical
+sections/manifest fields, source assignments, core/proof tables, target meanings
+and recorded outcomes remain literal. Generated proof source-line references
+follow the revised outline. The maintained reader landing now exposes all 89 outline-derived jobs and
+boundaries under 26 native disclosures; its manifest binds the outline bytes.
+All jobs/boundaries display locally, with 264 retained rendered technical links
+and 26 source-resolving narrative routes, six assistant routing walkthroughs
+and three selected keyboard/layout observations. The ten active Interfaces
+replacements were read; one stale VCM support-owner sentence is corrected in
+its existing operation. The subsequent full opening/conclusion reconciliation closes J01 through six
+changes in five units; the original editorial criterion is verified. Broader
+J05/J06 remain open; current verified improvements are 30 of 114. No independent-reader, complete
+accessibility, fresh whole-reader render, Docker, empirical outcome, support
+transition or publication approval is inferred.
+
+The first packet, `IMPROVEMENTS-integrity-001`, occupies the previously empty
+book/maintenance slot. It groups schema correctness, CI prerequisites, strict
+browser execution, bundle source boundaries and staging, and baseline-aware
+mutation diagnostics. C2-EL keeps its separately frozen object-level slot, and
+the two-slot WIP limit remains in force. Later implementation packets replace
+this packet after review of its results; the catalog is not 114 concurrent jobs.
+EM4 and the historical P5-U1 slice stay terminal. An implementation check does
+not admit a prospective task, open protected outcomes, promote support, grant
+external publication authority, spend money, or reopen a release-format gate.
+
+Current locally verified scope is A01-A07, B03-B05, C01, C02,
+C03, C04, C05, C06, D03, D05, D06, F01, J03, K02, K03 and K04 under their named scope. Admission checks pass for both new chapters; all 306 schemas and
+96 fixtures validate; all 62 shared-schema consumers pass; both dated receipt
+families validate against retained commit bytes. The strict browser sweep
+passed 182 technical and 52 reader page-view pairs plus narrow, doubled-text
+and keyboard control checks with inspected screenshots. Bundle replacement
+now uses a single directory exchange; process exits before and after exchange
+leave a complete old or new bundle. That is macOS process-interruption
+verification, not certification of every filesystem or physical power loss.
+
+The packet remains active. Its current reports, handoff, burn-down, prose
+packets and reader/media identity bindings pass after semantic diff review.
+The final strict browser sweep passes all 234 page-view pairs, six narrow/text
+cases and keyboard focus checks. Release-channel staging passes six authored
+transaction tests and an actual local-site build/check. These changes do not
+create or approve media. The runner now preserves aggregate outcomes,
+process-group timeouts, input hashes and bounded logs; nineteen units have
+reviewed execution contracts, while the others honestly remain unreviewed.
+A fresh isolated macOS Python 3.11 schema profile passes all 114 tests. Fresh
+Linux tier replay remains unobserved. At the first October 2 prerequisite
+inspection, Docker was stopped and approximately
+3.2 GiB of free host disk was first observed on October 2 and later declined
+to approximately 2.1 GiB. No capacity or protected
+P2 task was admitted by that observation. The October 8 dependency review
+now has retained official release/diff/advisory observations, but compatibility
+verification and fresh Linux execution remain open. The moving Elan binary
+download has been replaced by an exact release/archive/digest helper; the
+Linux archive verified without execution, and an isolated macOS Elan 4.2.4
+installation built all 133 pinned Lean jobs. Original review dates/deadlines
+remain unchanged; the new archive observation is dated October 2 with Linux
+qualification explicitly pending. Expired reviews block installation before
+execution, and historical audit-date overrides cannot reopen that window. No runtime utility, empirical,
+author-review or formal-adequacy conclusion follows from these maintenance
+checks. Conditional recommendations require an evaluated named consumer or
+prerequisite, with the disposition recorded here before closure.
+
+The transitive proof audit resolves all 3,153 source theorems against the
+elaborated environment, reports 911 without axiom dependencies and 366 with
+native-evaluation dependencies, and rejects unreviewed dependencies. The
+existing proof-artifact consumer re-queries that environment and passes.
+Proof-chapter counts now distinguish all 344 targets from the 330 implemented
+and 14 planned targets. Current P7.1c/P7.2-T1D hash reconciliation records
+these inventory and trust-description edits; original review dates and
+substantive maturity conditions retain their original identity. The current
+negative-inference projection is refreshed separately from its July design
+date. Frozen evidence, theorem premises and chapter support are unchanged.
+
+The registry now has 477 units, including non-writing scaffold and paper-library
+PR gates, and an initial 18-owner current dependency graph. The contributor
+entry point exposes affected outputs, checks, required reviews and 196 units
+with unknown input coverage. A proof-chapter edit selects its prose/maturity
+and current projection consumers; an unrelated proposal-document edit selects
+no rebuild owners. Plans do not approve semantic packets or rewrite terminal
+history. Loaded registry identity is preserved across execution; drift or
+deletion blocks acceptance. The 97 authored infrastructure tests and the
+89-to-90-to-89 dynamic spine replay pass locally. Full dependency coverage,
+chapter birth, domain diagnostics and fresh Linux execution remain open.
+
+D02 now has non-admitted chapter proposals and isolated candidate preparation.
+The candidate preserves all existing manifest owners and support states, uses
+the registered birth consumers, excludes unknown personal/cache files and
+cannot replace its checking machinery. Fifteen focused tests reject malformed
+intent, stale/colliding candidates, copying interruptions, source/patch drift
+and incomplete or mismatched runner receipts. Prepared, rejected and interrupted
+stages remain non-admitted diagnostics. Canonical installation/recovery and an
+actual fully valid birth transaction are still open; no chapter was added by
+these mechanism tests.
+
+Dependency plans now show each selected owner, execution capability, output
+effect and wall-time ceiling without upgrading unknown contracts. The HTML
+entry point previews or executes the canonical Pages workflow's six existing
+post-render interfaces against an already built local site. Authored controls
+reject missing, duplicate or weakened workflow checks, linked/changing site
+inputs and required-check failure. This is post-render checking, not a new
+publication pipeline, clean build provenance or a Linux CI observation.
+
+D05 is locally verified after exercising the four documented change examples
+and the actual six-interface post-render command. A fresh 102-page root HTML
+render corrected stale Appendix G links to the six existing synthesis papers;
+the updated site passes all 234 strict technical/reader page-view pairs. The
+HTML report verifies unchanged site bytes and declared inputs during those
+checks. Complete input/capability metadata and canonical chapter installation
+remain separate open work; no clean publication or Linux result is inferred.
+
+The next B06 component removes destructive reader replacement. A complete
+reader payload is staged outside the publishable tree, inspected against exact
+source/crosswalk bytes and surrounding-site links, then installed by one
+directory exchange. Thirteen authored tests preserve prior custody across
+copy/validation/exchange failures, concurrent edits and abrupt process exits;
+a directory-fsync failure after exchange retains the old tree and an explicit
+durability-uncertain receipt. The existing legacy reader revealed stale
+installed crosswalk metadata despite matching page bytes. A new read-only
+reader-integrity gate joins the canonical HTML workflow. A fresh site includes
+the independently rendered 59-paper library and passes all seven interfaces,
+including 182 technical and 52 reader page/viewport pairs with unchanged site
+bytes and declared inputs. The legacy review site remains preserved. Other substantive
+generators, canonical chapter installation and Linux replay remain open.
+
+The B03 report-acceptance gate now follows the actual browser producer before
+bundling. Its versioned report binds complete site bytes, both canonical route
+owners and producer source; changes during checking reject. The consumer
+requires exact full page/viewport and six control denominators, current hashes
+and consistent reported outcomes. Eight authored report tests, all 97
+infrastructure tests and fourteen static workflow mutations pass locally.
+The expanded eight-interface site replay passes with unchanged site bytes and
+declared inputs: 182 technical, 52 reader and six control observations. The
+aggregate also rejected the earlier mid-run adapter change despite all eight
+individual gates passing. The shared CI runtime now explicitly installs the
+same pinned Node 22 for the infrastructure CLI controls in every tier. This consumer does not
+independently repeat DOM observations or establish human review, clean render
+provenance, Linux success, publication or support movement.
+
+The next B06 component replaces destructive product generation. All product
+bytes are prepared in memory against captured inputs and the existing domain
+consumers, then installed as one complete directory with the shared site lock.
+Thirteen new custody/integration controls and all 114 infrastructure tests pass
+locally, including pure checks, exact legacy adoption, failed preparation,
+source/concurrent drift, process exits and prior-tree retention after uncertain
+fsync. The real review-site payload matched exactly for legacy adoption and
+was migrated without deleting unknown content. Canonical status now uses
+individual-file staging and bounded Git calls. The nineteenth current
+dependency owner and manifest-relative product contract assertions replace
+stale 84-chapter wording. The updated eight-interface HTML replay passes;
+other substantive generators, D02 admission and Linux observations remain open.
+
+The subsequent local replay passed all 234 browser page/viewport pairs and
+six control cases after observing Quarto's completed enlarged-text header
+spacing before tabbing, but its report consumer timed out under host load.
+A 50-call profile found repeated schema-definition checks consuming about 92%
+of runtime. Bounded exact-content definition reuse reduces that local sample
+from 9.365 to 0.503 seconds; instance and domain checks still run every time.
+The existing actual report was accepted separately. All 114 infrastructure
+tests, 306 schemas, 96 fixtures, 17 release records and 62 existing schema
+consumers pass. The final fresh aggregate replay passes all eight interfaces
+with unchanged site bytes and declared inputs: 182 technical, 52 reader and
+six control observations, and report acceptance in 6.4 seconds. Its local
+diagnostic report is `build/book-html-check-ngss0p48/report.json`; earlier
+focus and timeout failures remain retained. This is not Linux CI, a clean
+render attestation, publication approval or support movement.
+
+D02 now also rejects candidate changes to test/acceptance machinery,
+experimental/source/release/authority custody and historical reader snapshots,
+while allowing current reader-route data to be staged without admission.
+Source-root patches and staging nested inside a candidate are refused before
+candidate enumeration. Eighteen proposal/staging controls pass; the separate
+canonical installation/recovery and valid birth obligations remain open.
+
+D02 now has an explicit installation mode that runs the full deep gate itself
+before a manifest-last transaction. It retains original file objects, binds
+candidate/report and source/Git identity, and marks pending installation before
+canonical writes. Participating canonical readers and all three CI renders
+hold directory leases; interrupted installation remains blocked until explicit
+recovery. Rollback preflights all targets, restores the original manifest first
+and refuses to overwrite later edits. Inventory-only registry additions retain
+all checking contracts and existing registrations. Sixteen transaction/lease
+controls and all 130 infrastructure tests pass locally. An actual incomplete
+candidate failed the base gate with all remaining 449 units not run, leaving
+canonical source unchanged and no transaction marker. The successful
+full-runner fixtures are synthetic. Real valid birth, Linux execution and
+physical power-loss qualification remain unobserved; D02 stays active and no
+chapter, support, prospective task, publication or release was admitted.
+
+A subsequent runner recheck retained a process-group permission failure rather
+than suppressing it. Cleanup refusal now produces a failed outcome and retained
+log, halting diagnostic continuation even after a zero-exit leader. A bounded
+Darwin exited-group probe accepts only confirmed disappearance; live/persistent
+and non-Darwin refusals remain failed. Four added controls protect this boundary.
+The dynamic-spine validator also uses declared indexed/registered source instead
+of recursive working-tree copying, with a custody/drift control. All 135
+infrastructure tests pass locally. These repairs do not close C07-C09, portable
+execution, physical durability or D02's real valid birth obligation.
+
+The October 3 custody continuation reproduced two further defects: wrapper
+death released its source lease while the command survived, and generated
+replacement discarded an unexpected empty directory. An independent supervisor
+now retains the lease through owned-group cleanup, including hard wrapper death,
+descriptor closure, SIGTERM refusal and natural leader exit. Shared site
+inventories reject unregistered empty directories and linked ancestry before
+copy/read/replacement. Fresh destinations use exclusive atomic installation.
+Reader, product, bundle and channel installers retain displaced objects and a
+journal when installation raises after a physical exchange or acceptance/fsync
+is uncertain. All 154 authored infrastructure controls pass locally. These are
+cooperating-process and local filesystem observations, with retained stages
+requiring inspection; they do not prove hostile-process containment, Linux
+behavior, hardware durability, a valid chapter birth or publication.
+
+The archive component of B06 now replaces destructive candidate deletion with
+captured source bytes, recomputed bundle integrity, domain acceptance and shared
+directory installation. Unknown objects and existing archive identity are
+preserved; validation and mutation controls do not write into candidates.
+The consumer checks adjacent checksums, source/policy metadata and bounded,
+canonical tar members. A final inventory/policy check covers edits after the
+positive check and preserves them on refusal. Seventeen archive controls and reader/product ownership
+race controls bring the local infrastructure suite to 173 passing tests.
+The registry retains 477 units, adds one owned test artifact (3,307 total), and
+has 20 reviewed execution contracts; archive self-test creates owned temporary
+outputs and does not become a read-only diagnostic. Dynamic fixture-status
+input coverage, other generators, actual clean publication, Linux execution,
+physical durability and D02 valid birth remain open. No release policy, frozen
+record, task allocation or support state changes.
+
+The next October 3 continuation fixes confirmed UTC-expiry and malformed-pin
+inventory failures and passes all 177 local infrastructure tests. Docker Desktop
+was started for owned, network-disabled Linux probes; it remains running.
+Thirty-five existing reader/shared-directory and clock/shape controls pass
+without skips on native ARM64 and emulated x86-64 Linux. This includes actual
+Linux exchange/exclusive-install syscalls and tested process interruptions;
+it does not qualify archive/product integration, chapter admission, the full
+CI tiers or physical power loss. Four upstream action candidates pass 595
+source assertions under isolated Node 24, with the original Python case-timeout
+and explicitly enlarged case budget retained. Its unchanged packaged action
+selects real Python 3.11.17 in both Linux probes. Four Elan archives verify,
+and the two Linux binaries install offline with the expected version/source
+identity; no Lean download or Linux compiler build was performed. The nested
+binary observation is dated October 3 with installer-smoke scope and full tiers
+pending. Original action pins, July review dates and the October 8 deadline
+remain unchanged. These results do not open P2, publish, promote support or
+change the 17 verified recommendation dispositions. The earlier Docker/disk
+and unobserved-Linux statements above are dated observations superseded only
+in these explicitly measured scopes.
+
+The next October 3 continuation passes the complete 180-test infrastructure
+suite on macOS, native ARM64 Linux and emulated x86-64 Linux, including archive,
+product and all twenty canonical admission transaction/lease controls. All
+Linux tests run without skips against independently copied declared sources,
+Python 3.11.17, Node 22.23.3 and Git 2.39.5, with network disabled and owned
+tmpfs mutation targets. The original root-owned tmpfs errors, partial JSON
+readiness race and concurrent x86-64 timeout remain retained; fixture ownership
+and atomic readiness publication are repaired, and the serial x86-64 replay
+passes at the unchanged 300-second budget. This is mechanism qualification,
+not hosted Ubuntu, arbitrary filesystem durability, scientific dependencies
+or a real valid chapter birth.
+
+The improvement catalog is now explicitly registered and declared as an input
+of its existing roadmap consumer. A real-source staging control reproduces
+its previous omission and confirms the repair. The copy boundary still excludes
+unknown private/attempt/cache trees. There are 477 units and 3,308 required
+artifacts; the 93 precise high-impact input contracts, twenty reviewed execution
+contracts and nineteen current projection owners retain their previous scopes.
+The legacy roadmap contract does not thereby acquire complete dependency coverage.
+
+A fresh ARM64 Linux tool home exposed a real prerequisite defect: Elan default
+selection reported success before downloading Lean. The first version check
+began that download and timed out. Setup now provisions the exact toolchain and
+checks both Lean and Lake under explicit selection before reporting success.
+Two rejecting controls and the real fresh Lean 4.31.0 installation pass. The
+first cold library build still timed out after 102 of 133 jobs at its declared
+1,200-second budget. A separate network-disabled continuation completes the
+library and observes the same 3,153 theorem records and trust classifications.
+Its first check correctly rejects the sole stale executor input digest. After
+reviewing that exact difference, the current projection records the actual
+executor identity; a second compiled query passes, as does the actual registered
+LivingBook consumer. All original rejected checks remain retained. This is a
+fresh compiler with a retained partial-build continuation, not a clean
+single-pass cold build or full CI tier. The compiler reports commit
+`68218e876d2a38b1985b8590fff244a83c321783`; the archive fetched by Elan was not
+independently hashed in this probe. Compiler trust, model adequacy, complete
+runtime/tier execution and formal pin-review renewal remain open. Existing
+HTML/bundle receipts keep their previous input identities. The persistent goal
+remains active with 17 of 114 recommendations verified in their named scope.
+
+The chapter-date continuation verifies A06 for declared revision/display
+consistency, bringing the current total to 18 of 114 recommendations in their
+named scope. `last_updated` remains the author-declared substantive prose or
+integration revision; an optional source-review event requires a distinct date
+and bounded scope. The renderer replaces legacy literal date rows and inserts
+just a generated date table in the two prose-only status sections. All 89
+chapter bytes and dates remain identical to their pre-phase identities. A fresh
+102-page technical render and all 89 static chapter-date checks pass. Five
+actual positive renders preserve the intended events and text; four rejecting
+renders enforce date/scope and status-layout guards. The actual complete static
+consumer rejects changed and duplicate dates, then passes with exact site-byte
+restoration. Four desktop/mobile observations use Playwright 1.63.0 and
+installed Chrome 154.0.8037.97, with inspected screenshots. The missing managed
+browser binary and initial renderer failures remain retained.
+
+All 188 local infrastructure tests pass, including actual UTC scaffold creation
+and preservation of declared revision/review events through an explicit
+template rewrite. New drafts no longer inherit the hard-coded June baseline
+date. The previous 180-test Linux receipts are not expanded to cover the eight
+new date controls. The registry has 477 units,
+3,311 artifacts and 21 reviewed execution contracts, with the same 93 precise
+high-impact input contracts and nineteen projection owners. These declarations
+do not establish historical event truth, complete source review or evidence
+reconciliation. The narrow browser observations do not renew the earlier full
+HTML gate, products, tested bundle or clean publication provenance. The same
+implementation packet stays active within its existing WIP slot; full hosted
+tiers, substantive dependency review and the other recommendations stay open.
+
+The October 10 sequence-testing continuation verifies C03 for the existing
+product/archive generated-directory lifecycle, bringing the current total to
+19 of 114 recommendations. All 196 local infrastructure tests pass on current
+code. An independently specified namespace/ownership model predicts acceptance
+before invoking the actual installer, checks complete payload/receipt identity
+and preserves prior objects during refusals, checks and controlled faults.
+Targeted sensitivity machines reject broken ownership and ignored source guards;
+the generated continuations shrink and replay completely against the real
+producer. Fixed regressions retain the concrete lifecycle joins.
+
+The broad search's reset-dominated miss, later refactor-dependent miss and an
+initially incomplete replay parser remain retained and excluded from current
+acceptance. Known sensitivity prefixes are fixed rather than shrunk; no global
+minimality or exhaustive coverage is claimed. The wire format, JSON/SHA-256,
+Python, OS and Hypothesis remain shared dependencies. This is serialized authored
+mechanism evidence, not natural-task benefit, concurrent scheduling, physical
+durability or an independent institution's review. Existing archive-specific
+identity and other directory owners retain their separate consumers.
+
+The publication/schema profile now pins Hypothesis 6.168.3 and SortedContainers
+2.4.0 for configured CI discovery. The registry has 477 units and 3,312 artifacts,
+with the same 93 precise high-impact input contracts, 21 reviewed execution
+contracts and nineteen projection owners. The previous Linux observations do
+not expand to the eight added sequence checks. The current pin gate rejects
+all nine reviews as expired on October 8; the retained earlier upstream and
+compatibility evidence is not a renewal. Complete CI/release qualification and
+substantive review remain open. The same bounded implementation packet stays
+active in its existing slot; frozen research and release authority are unchanged.
+
+The following October 10 C04 repair verifies the archive consumer's member
+completeness/content boundary, bringing the named total to 20 of 114. An owned
+fixture reproduced acceptance of an omitted site file because producer and
+consumer reused the same selector. The consumer now derives the expected members
+from captured bundle bytes, and the added regression rejects omitted site/manifest
+files and rewritten content with self-consistent archive metadata/checksums.
+Preparation refuses before replacing the prior installed candidate. The archive
+owner names the independent oracle and its shared capture, path, serializer,
+policy, schema and custody dependencies. The current infrastructure suite adds
+one test to 197; its preceding 196-test receipt remains retained. The new archive
+control has no current Linux observation.
+
+The same packet also refreshes all nine action/installer release comparisons and
+public advisories. Three newer candidates pass 287 authored assertions on macOS
+Node 24 with source identities preserved. The CI ledger records exact candidate
+commits and limits; setup-node's older v7.0.0 Linux observations do not qualify
+v7.1.0. No pin or July review date changes. The expired current gate, project-tier
+qualification and coordinated review/adoption remain open under A08. These
+mechanism observations do not alter frozen evidence, support or release authority.
+
+The next October 10 continuation reviews eight further exact execution variants
+in the existing registry, bringing the reviewed count to 29 with 448 defaults
+still unreviewed. Plan/preflight consume their capabilities and effects, and the
+selected deep-tier diagnostic starts and passes all eight plus the base gate.
+A Python invocation without site-package loading refuses missing jsonschema
+before running the reviewer validator. The initial out-of-PR-tier harness
+selection is retained as a correct refusal, not treated as a pass; no unit tier
+or assertion changes. Five variants gain source/data/path scopes, with directory
+member identities and referenced existence checks still explicit limitations.
+The registry owner documents the exact argument, runtime, custody and effect
+boundary. Compiler execution, exploits, reviewer contact and experiment replay
+are not implied by metadata checks. C07 and full migration remain open; the
+verified recommendation total stays at 20 of 114, and the same packet owns the
+work without changing frozen evidence, support states or publication authority.
+
+The following October 10 publication-process continuation repairs C08/C09 in the
+existing public-source gate. A retained parent-death probe reproduces a child
+writing after its publication owner was killed. The bounded shared executor now
+captures stdout/stderr separately, preserves interpreter identity and complete Git
+NUL protocol, and ties wrapper/payload lifetime to the publication owner through
+an explicit control pipe and the independent guardian. Deadline and parent-only
+SIGTERM/SIGKILL controls observe readiness, lease release and absent delayed effects.
+The complete 207-test macOS suite passes. Initial root-binding, combined-budget and
+owner-lifetime failures remain retained. Publication diagnostics are fresh ignored
+outputs uploaded by the existing CI workflows. The exact publication contract
+brings the reviewed total to 30; 447 remain unreviewed. Other subprocess callers,
+Linux replay of the 27 newer controls and full tier qualification remain open.
+The actual pinned Lean query preserves all theorem/trust values and refreshes only
+the executor byte identity. Scoped recommendation verification stays at 20 of 114;
+this is mechanism progress within the existing WIP packet and creates no support,
+release, private-input admission or publication effect.
+
+The next proof-process continuation shares owner-lifetime supervision through the
+existing runtime and keeps the source-root lease distinct from a nested command
+cwd. Publication, compiled axiom build/query, ProofEnvelope and LivingBook now
+use it. Library build, compiler version, query and exact-module budgets are
+1,800/30/300/300 seconds; the registered proof audit and LivingBook units allow
+2,700/360 seconds for their complete stages. Exact compiler identity and complete
+compiled-environment protocol remain required after zero exit, with stable failed
+machine outcomes and retained logs. The corrected proof-audit capability contract
+needs stdlib Python and Lake; LivingBook retains jsonschema. Plan/preflight consume
+these declarations, including a real no-site-packages proof preflight.
+All 218 macOS tests pass. The new controls verify nested cwd/root leases, interpreter,
+private descriptors, invalid cwd refusal, parent/deadline cleanup, setup FD closure,
+compiler failure and protocol refusal. The misbound fixture and loose diagnostic
+assertion remain an explicit instrument inadequacy, excluded from final acceptance.
+Actual pinned build/query preserves all theorem/trust values and binds the guardian
+input dependency. The declared-source AST inventory covers 950 scripts, 263 direct
+calls across 191 scripts, and 39 explicit timeout keywords; it is a review signal,
+not transitive effect or budget adequacy proof. Remaining caller migration, 447
+unreviewed defaults, Linux replay of 38 newer tests, full cold/hosted tiers and nine
+expired reviews remain open. Verification stays at 20 of 114 within the existing
+WIP packet, with no support, frozen evidence, private admission or release effect.
+
+The following Linux continuation passes all 219 current infrastructure tests
+without skips on macOS, native ARM64 Linux and emulated x86-64 Linux, closing
+replay of the 39 controls added after the older 180-test observations. Exact
+retained image identities and Python/Node/Git versions are reused; nine pinned
+packages install offline from verified wheel bytes. Fresh declared source excludes
+unknown private attempts, remains readonly and byte-stable, and uses independent
+file objects; mutation targets are owned tmpfs and networking is disabled.
+An initial emulated descriptor failure remains visible: the probe finds Python/
+Rosetta executable handles. The strengthened private-object oracle detects an
+actual leaked source lease and FIFO in a confined broken producer; corrected
+serial replays pass at the same 300-second budget with unchanged production code.
+The original failed replay, wheel-selector refusal and native 218-test observation
+remain retained. Docker's stopped state is restored without image/volume pruning.
+Full scientific/hosted registry tiers, clean cold compilation, 447 unreviewed
+contracts and nine expired reviews still require qualification. This updates the
+existing WIP packet, not chapter/support/release authority; scoped verification
+stays at 20 of 114.
 
 ## 2026-08-10 editorial product architecture and semantic-migration amendment
 

@@ -11,7 +11,7 @@ import sys
 from typing import Any
 
 from build_canonical_public_status import ROOT, load_json, validate_against_schema
-from build_tested_site_bundle import MANIFEST_NAME, build_manifest
+from build_tested_site_bundle import MANIFEST_NAME, build_manifest, file_rows
 
 
 SCHEMA = ROOT / "schemas" / "tested_site_bundle.schema.json"
@@ -64,10 +64,15 @@ def main() -> None:
     errors: list[str] = []
     if not manifest_path.exists() or not site.is_dir():
         raise SystemExit(f"bundle must contain {MANIFEST_NAME} and site/: {bundle}")
-    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     try:
+        before = file_rows(bundle)  # Inspect metadata and ancestry before any read.
+        if {path.name for path in bundle.iterdir()} != {"site", MANIFEST_NAME}:
+            raise ValueError("bundle contains unrecognized objects")
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
         actual = build_manifest(site, allow_local=args.allow_local)
-    except (TypeError, ValueError) as exc:
+        if file_rows(bundle) != before:
+            raise ValueError("tested site bundle changed during validation")
+    except (OSError, TypeError, ValueError) as exc:
         raise SystemExit(f"could not recompute tested site bundle: {exc}") from exc
     errors.extend(compare(manifest, actual, args.expected_commit))
     errors.extend(negative_controls(manifest, actual))

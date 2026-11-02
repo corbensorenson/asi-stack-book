@@ -85,3 +85,9 @@ so a deletion can restart only the affected constituent-model path.
   localized method?
 - How should a governed data engine represent the accuracy, latency, and
   residual-information cost of a deletion decision?
+
+## Selected passage review — 2026-10-10
+
+Reviewed [Section III-B, Definition III.1](https://arxiv.org/html/1912.03817v3), arXiv v3 (December 15, 2020): compare model distributions after removal and under learning without the named data. This is a stipulated model-level target, not external-copy erasure.
+
+This selected definition review grounds Human Reader Unit 21. It adds no SISA execution, deletion request, parametric-removal measurement, privacy result, or reproduction. Existing ingestion and conference metadata remain historical; no full-source rereview or support promotion is implied.

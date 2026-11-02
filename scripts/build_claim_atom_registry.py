@@ -64,6 +64,11 @@ POST_ACTIVATION_ATOM_IDS = {
     "resource-economics-and-token-budgets.mechanism.019",
 }
 POST_ACTIVATION_PROSE_SECTION_HEADINGS: dict[str, set[str]] = {
+    # October 2 current trust description is reviewed by its axiom audit and
+    # P7.1c packet. It is outside P1's activation-era prose discovery census.
+    "executable-specifications-and-lean-proof-envelope": {
+        "Transitive axiom dependencies",
+    },
     "human-intent-as-a-formal-input": {
         "Culture and language are part of the intent contract",
     },

@@ -5,8 +5,8 @@ unit_id: "unit-10"
 
 ## Four Reports About One Patch
 
-The repository change now reaches a controller that operates a low-energy lab
-gantry. The patch adjusts how the gantry slows near the end of its rail. Before
+Continue with a hypothetical controller for a lab gantry. The repository
+change reaches that controller; no physical trial is being reported here. The patch adjusts how the gantry slows near the end of its rail. Before
 the change can run, the team asks a seemingly simple question: did the intended
 controller reach the test and deployment environments?
 
@@ -22,9 +22,8 @@ Three reports appear to support the patch and one contradicts them. A majority
 vote would accept the change. That would be a mistake.
 
 The test runner and reviewer both read artifacts produced from the same stale
-build cache. They are two reports but one causal source. The file-system monitor
-proves that a file exists at a particular location and revision, not that the
-build consumed it. The deployment observer may be stale too; its last sample
+build cache. They are two reports but one causal source. Even an accurate file-system check identifies the bytes read at its target
+and sampling time, not whether the build consumed them. The deployment observer may be stale too; its last sample
 could predate the rollout. None of the four reports is direct access to reality.
 Each is a measurement transformed by an instrument, clock, calibration,
 software path, model, and interpretation.
@@ -41,8 +40,10 @@ An advanced AI stack cannot begin with “the sensor saw it” or “the tool
 reported success.” It needs to know which observation occurred, through which
 path, at what time, under which conditions, with which dependencies, and for
 which decision. Observation trust is not a permanent score attached to a
-source. It is a bounded permission to use a particular report for a particular
-purpose while preserving what remains uncertain.
+source. It is a bounded basis for relying on a particular report for a
+particular purpose while preserving what remains uncertain. That evidentiary
+qualification does not grant permission to inspect another target or cause an
+effect.
 
 The gantry makes the stakes visible. A stale build report may waste a release.
 A stale position estimate can turn the same motor command from admissible to
@@ -71,8 +72,8 @@ could mean. Without them, later consumers cannot distinguish a current
 observation from a cached one, an independent measurement from a repeated
 summary, or a claim about source code from a claim about deployed behavior.
 
-This is why provenance is necessary but insufficient. Provenance can show that
-a report came from the expected process. The expected process can still be
+This is why provenance is necessary but insufficient. Verified provenance can
+support attribution to a process under its identity and trust assumptions. The expected process can still be
 miscalibrated, observe the wrong target, share a hidden dependency, or produce
 an answer outside its competence. A signed test result from the wrong build is
 authentically wrong.
@@ -97,7 +98,8 @@ reasoning.
 The question “is this report trustworthy?” is usually underspecified.
 Trustworthy for what?
 
-The file-system hash may be adequate to prove that a source file was written.
+A bound file read and matching digest may establish which bytes were present
+at the sampled target.
 It is inadequate to prove that the test runner compiled that file. The
 simulation report may support a bounded claim about selected trajectories in a
 particular simulator. It is inadequate to prove that the physical gantry uses
@@ -181,8 +183,10 @@ Suppose the clean-build test runner historically reports ninety percent
 confidence when nine of ten similarly scored patches later pass independent
 review. That relationship can break when the test selector changes, a new
 language enters the repository, generated tests dominate the suite, or the
-review process begins reading the runner's own explanations. The number remains
-well formed while its empirical meaning decays.
+review process begins reading the runner's own explanations. Ten illustrative
+outcomes are too few to certify calibration across the intended workload; the
+cohort, uncertainty, and evaluation method still matter. The number can remain
+well formed while its empirical meaning changes.
 
 Physical perception adds more ways to drift. A camera can move. A lens can
 foul. Temperature can alter a sensor. A new payload can change vibration and
@@ -256,6 +260,7 @@ position estimate may be unusable milliseconds later. Freshness is therefore
 not one global time-to-live. It belongs to the variable, dynamics, consumer,
 consequence, and action horizon.
 
+Use toy ticks to separate the clocks, not to prescribe timing for a plant.
 Suppose the gantry controller receives a move command at tick five. The plant
 lease expires at tick eight. Its state was observed at tick four, with maximum
 permitted age two. Worst-case sensing, estimation, scheduling, and control
@@ -263,6 +268,22 @@ latency must still fit inside the control period. The estimated state interval
 must lie inside the declared envelope, requested force and motion must remain
 within actuator limits, and the stopping-distance bound must fit inside the
 remaining margin.
+
+At tick five, the tick-four measurement has age one; at tick six, age two.
+At tick seven, it has exceeded the toy maximum even though the plant grant has
+not yet reached its tick-eight expiry. The grant therefore cannot fill the
+missing freshness evidence. A new sample or qualified state estimate must be
+identified separately; advancing a prediction does not turn the old measurement
+into a new observation. The timing contract must also cover when the effect is
+actually applied, not just when the request entered the queue.
+
+For the digital reports, a current source-file sample likewise cannot renew a
+stale test of another build. If a fresh replica query resolves the deployment
+identity but no independent test covers the candidate, the identity question
+can close while behavioral qualification remains open. An ordinary deployment
+manifest and clean test report may already preserve those distinctions. The
+larger observation record must improve a decision or handoff that those tools
+would otherwise lose.
 
 The symbolic command can remain identical while those conditions change. If
 latency grows beyond the period or stopping margin shrinks below the bound, the
@@ -301,8 +322,12 @@ inherit the deadline or trust of the faster one.
 
 Control-barrier methods, constrained learning, and advanced-plus-baseline
 switching architectures provide strong ways to construct parts of this system.
-Their guarantees remain conditional. A barrier depends on its model, state
-estimate, safe set, feasibility, and timing. A baseline controller may share
+Their guarantees remain conditional.
+[Ames et al., Section II-B, Theorem 2](https://arxiv.org/html/1903.11199v1)
+states a forward-invariance result for a specified model, a qualifying barrier,
+and an admissible Lipschitz controller. Section III treats actuation constraints.
+That source result does not validate this gantry, its sensing, sampled timing,
+or stop path. Those implementation assumptions require separate qualification. A baseline controller may share
 the failed sensor, power supply, or runtime. Switching can happen too late or
 oscillate. An emergency stop can leave residual energy or an unstable load.
 
@@ -460,23 +485,21 @@ harm.
 
 The technical owners behind this unit have exact but narrow formal results.
 
-The observation model contains thirty-two Lean theorem declarations. Its
-independent consumer checks seven trace splits, forty-six exact-state lifecycle
-mutations, thirteen pair-classification controls, six terminal event kinds, and
-twelve same-summary/opposite-common-cause cases. These results establish
+The observation model and its bounded consumer check authored trace splits,
+exact-state lifecycle mutations, pair classifications, terminal events, and
+same-summary/opposite-common-cause cases. These results establish
 behavior of authored finite records: correlated agreement is not promoted as
 independent, disagreement is retained, invalidated state is terminal, rejected
 events preserve modeled state, and pair labels cannot universally identify a
 larger common cause.
 
-The physical-control model contains forty-one Lean declarations across a
-finite lease admission model and simulation-trial lifecycle. The independent
-consumer rejects thirteen admission-axis mutations and 105 lifecycle
+The physical-control model covers finite lease admission and a simulation-trial
+lifecycle. Its bounded consumer rejects authored admission and lifecycle
 mutations, checks timing and stopping-margin monotonicity, and preserves exact
 identity, receipt, stop, support, and external-effect boundaries through its
 authored trace.
 
-The numbers matter only inside those models. Every channel, calibration,
+The results remain inside those models. Every channel, calibration,
 dependence root, plant, estimator, safe envelope, timing bound, fallback, and
 effect field is authored. No multimodal campaign, natural consequential
 workload, physical plant trial, deadline test, stop-path test, sim-to-hardware
@@ -598,5 +621,11 @@ effects governable rather than invisible.
 The next unit takes these bounded observations and asks how a system organizes
 them into predictions, causal alternatives, and revisable beliefs without
 confusing a plausible internal world with the world itself.
+[Unit 11](unit-11-governed-world-models-and-reality-grounding.qmd) must preserve
+observation age, missingness, dependencies, and unresolved hypotheses in every
+prediction it consumes or produces. Exact finite results remain with the
+[observation-trust](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html)
+and [physical-control](https://corbensorenson.github.io/asi-stack-book/chapters/embodied-agency-real-time-control-and-physical-safety.html)
+owners; neither a report nor its acceptance record establishes physical truth.
 
 {{< include ../generated/unit-10-status.qmd >}}

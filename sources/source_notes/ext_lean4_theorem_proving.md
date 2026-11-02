@@ -52,3 +52,9 @@ Theorem Proving in Lean 4 belongs in the proof-envelope, Circle, Spinoza, and re
 - Which ASI Stack proof targets should graduate from finite-record predicates to richer inductive state machines?
 - What theorem statements would be precise enough to affect a chapter support boundary?
 - How should the book explain the difference between proof assistant success and evidence-state promotion?
+
+## Selected passage review — 2026-10-10
+
+Reviewed the official [Introduction, Section 1.1](https://lean-lang.org/theorem_proving_in_lean4/Introduction/#computers-and-theorem-proving) on proof construction and checking, and the current [Lean language reference, Elaboration and Compilation](https://lean-lang.org/doc/reference/latest/Elaboration-and-Compilation/) on parsing, elaboration, and kernel checking. User syntax is elaborated into core terms; the kernel checks that output under the declaration environment. This supports the stage distinction in Human Reader Unit 15, rather than the inaccurate statement that the kernel directly consumes theorem source.
+
+This is a selected online passage review for explanatory vocabulary. The reference URL is a moving current edition; it is not a certification of the repository's pinned compiler, a full rereview of the source, an imported theorem, or a new proof/build result. The original ingestion metadata and version note remain historical. Model interpretation, implementation correspondence, sensor coverage, and deployment safety are not supplied by these passages.

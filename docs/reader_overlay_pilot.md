@@ -110,6 +110,28 @@ The same medium-priority reader-continuity pass added two active operations to `
 
 Canonical AI/research tables and evidence surfaces remain in the chapter source. Some chapters have narrow subsection-heading anchors so overlays can target a table without replacing an entire mechanism section. AI view keeps the original live/research prose, source mappings, claim labels, support state, proof hooks, test-plan surface, and source crosswalk. Human view and generated reader editions receive the reader-only section prose through the same tracked overlay payload.
 
+## Opening fair-case reconciliation — 2026-10-11
+
+The two active opening Problem/Summary operations now preserve the concrete
+read-only warehouse example, competent conventional controls, current-grant
+reuse, workload and common-failure conditions, and the preference for equal or
+better ordinary behavior at lower burden. They do not absorb an ordinary winner
+into the ASI Stack by definition. Both displayed reading modes were inspected;
+operation IDs and frozen copies remain unchanged. This closes I05's editorial
+comparison/choice criterion, not a comparative experiment or reader release.
+
+## Current displayed-view reconciliation — 2026-10-11
+
+The three existing active Planning lifecycle and Intent validation/interface
+operations retain their IDs and canonical AI-view tables. Their Human-view prose
+now agrees with current-grant reuse, node-local holds, planning/job/effect phase
+boundaries, qualified observation and recovery, permitted history, and separate
+evidence/release owners. The generated embedded asset remains at 75 active
+operations; 75 apply in source validation. The two actual selected HTML pages
+display the corrected paragraphs. Frozen reader snapshots are untouched. These
+are editorial corrections, not new interpretation, runtime, scheduler, semantic
+safety, support or reader-release results.
+
 ## Why These Overlays Exist
 
 The v1.0 roadmap allows the normal reader edition to diverge from the AI/research source for pacing, prose flow, and relaxed reading, while keeping the live book canonical for claims, support states, source boundaries, proof/test status, implementation horizons, and release records. These overlays exercise that path on the opening chapter and on the first table-heavy reader-continuity target before scaling chapter-by-chapter reader editing.

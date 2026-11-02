@@ -8,6 +8,7 @@
       "primary_audience": "interested technical readers",
       "reader_question": "What is the architecture, why does it matter, and how do its pieces fit together?",
       "entry_points": [
+        "reader/index.html",
         "products/narrative-book/index.html",
         "index.html?view=human",
         "products/narrative_product_spine.json",
@@ -18,10 +19,10 @@
         "reader_spine",
         "companion_material"
       ],
-      "navigation_contract": "Part and chapter progression, three-projection unit orientations, direct Human-view routes plus distinct responsibilities and support ceilings for every specialist reference owner, Human Reading Path bridges, summaries, handoffs, glossary, and selected source appendices.",
-      "density_contract": "Open each unit with a plain-language thesis, normative engineering rule, and bounded machine contract; show each specialist owner's distinct responsibility, claim identity, label, and support ceiling without absorbing its claim; hide live status, test, proof-hook, source-crosswalk, and repeated support boilerplate while retaining meaning-changing uncertainty and evidence boundaries.",
+      "navigation_contract": "Current /reader/ narrative with 26 independently authored units, routes to every canonical technical owner, and clear evidence boundaries. The generated product page retains the superseded 22-unit candidate as historical navigation.",
+      "density_contract": "Teach the architecture through concrete examples, bounded conclusions and the independent Human Reader manuscript. Preserve specialist claims and evidence boundaries at linked technical owners; author review and format approval remain separate.",
       "release_profile": "reader_release",
-      "current_status": "generated_22_unit_candidate_route_and_live_human_projection_available_but_not_a_reviewed_reader_release",
+      "current_status": "current_26_unit_independent_human_reader_html_ready_for_author_review_not_a_reviewed_reader_release",
       "review_gate": "Chapter continuity, editorial review, format-specific review, accessibility, figures, and an edition release record.",
       "forbidden_inference": "Human view convenience does not mean a reviewed reader artifact exists."
     },
@@ -75,6 +76,7 @@
     }
   ],
   "shared_rules": [
+    "All products explain three proposed contributions: governed-cognition interface contracts, public claim-state transition discipline, and record/reality reconciliation with residual honesty. The 89 technical chapters support these composition and process proposals; bounded implementation results do not establish general superiority, novelty, or chapter-core support.",
     "All three products derive from one canonical source tree; none may become an untracked parallel manuscript or evidence ledger.",
     "A product projection may omit detail but may not omit uncertainty that changes claim meaning.",
     "Product availability, artifact approval, and support-state evidence are separate states.",

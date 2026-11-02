@@ -1,0 +1,88 @@
+{
+  "scenario_id": "jepa-platonic-and-hnet-triage-2026-11-02",
+  "scenario_scope": "Real external-paper intake confirmed by the user; five reviewed sources routed to existing owners before prose.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "jepa-hnet-governed-world-models-and-reality-grounding",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-world-models-and-reality-grounding",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Latent prediction and representation alignment do not establish causal grounding or action permission.",
+      "required_before_drafting": [
+        "Read selected primary passages and record exact versions/scope; completed before prose."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "External results only; no local reproduction or universal alignment/grounding theorem."
+      ],
+      "non_claims": [
+        "No new owner, implemented controller, combined JEPA/H-Net result, or source-core promotion."
+      ]
+    },
+    {
+      "case_id": "jepa-hnet-replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "JEPA objectives and learned H-Net granularity fit the existing Cognitive Kernel ABI and model-family comparison.",
+      "required_before_drafting": [
+        "Read selected primary passages and record exact versions/scope; completed before prose."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "External results only; no local reproduction or universal alignment/grounding theorem."
+      ],
+      "non_claims": [
+        "No new owner, implemented controller, combined JEPA/H-Net result, or source-core promotion."
+      ]
+    },
+    {
+      "case_id": "jepa-hnet-learning-theory-generalization-and-scaling-science",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "learning-theory-generalization-and-scaling-science",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The PRH theorem belongs with assumptions, identification and bounded sample-efficiency comparisons.",
+      "required_before_drafting": [
+        "Read selected primary passages and record exact versions/scope; completed before prose."
+      ],
+      "evidence_transition_preconditions": [
+        "Separate accepted transition for any stronger architecture/local claim."
+      ],
+      "promotion_blockers": [
+        "External results only; no local reproduction or universal alignment/grounding theorem."
+      ],
+      "non_claims": [
+        "No new owner, implemented controller, combined JEPA/H-Net result, or source-core promotion."
+      ]
+    }
+  ],
+  "validation_boundary": "This records reviewed editorial routing, not scientific validation of the papers, an empirical comparison, or an accepted support transition.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "Raw papers remain local-only; notes/prose are authored summaries.",
+    "JEPA need not be non-Transformer and H-Net remains autoregressive."
+  ]
+}

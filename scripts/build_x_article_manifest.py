@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import re
 from pathlib import Path
@@ -37,7 +38,9 @@ def record(path: Path) -> dict[str, object]:
 
 
 def write(path: Path, data: object) -> None:
-    path.write_text(json.dumps(data, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    body = json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+    if not path.exists() or path.read_text(encoding="utf-8") != body:
+        path.write_text(body, encoding="utf-8")
 
 
 def visible_words(text: str) -> list[str]:
@@ -46,6 +49,9 @@ def visible_words(text: str) -> list[str]:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--check", action="store_true", help="Check local bindings without changing any file or platform draft")
+    args = parser.parse_args()
     required = [ARTICLE, CROSSWALK, HEADER, PROVENANCE, PREFLIGHT] + [ROOT / p for p in INPUTS]
     missing = [str(p.relative_to(ROOT)) for p in required if not p.exists()]
     if missing:
@@ -138,7 +144,11 @@ def main() -> None:
             "No chapter-core support state changed.",
         ],
     }
-    write(OUT / "manifest.json", manifest)
+    if args.check:
+        if json.loads((OUT / "manifest.json").read_text(encoding="utf-8")) != manifest:
+            raise SystemExit("X source manifest is stale; review cited claims, then run scripts/build_x_article_manifest.py. Platform draft still requires separate refresh and review.")
+    else:
+        write(OUT / "manifest.json", manifest)
     print(json.dumps({
         "visible_words": len(words),
         "claim_markers": len(markers),

@@ -12,7 +12,7 @@
 
 ## Thesis
 
-Temporal is the closest durable-execution comparator for the Labor OS chapter because it treats application workflows as long-running, recoverable executions with recorded event histories. It supplies useful vocabulary for durability, worker processes, workflow state, failure recovery, and long-lived orchestration, while leaving ASI Stack-specific authority, approval, claim-ledger, and evidence-readiness semantics unimplemented.
+Temporal is the closest durable-execution comparator for the Labor OS chapter because it treats application workflows as long-running, recoverable executions with recorded event histories. It supplies useful vocabulary for durability, worker processes, workflow state, failure recovery, and long-lived orchestration, while application-specific authority, approval, claim-ledger, and evidence-readiness semantics require explicit application design. The selected overview does not establish that an ordinary Temporal application cannot implement those obligations.
 
 ## Mechanisms
 
@@ -42,7 +42,7 @@ Temporal is the closest durable-execution comparator for the Labor OS chapter be
 
 ## Claims To Add Or Update
 
-- Position Labor OS typed jobs against durable workflow runtimes: Temporal already solves important failure-recovery and event-history problems, while Labor OS adds typed authority, approvals, artifact/evidence receipts, and promotion boundaries for AI work.
+- Position Labor OS typed jobs against durable workflow runtimes: Temporal already solves important failure-recovery and event-history problems, while the proposed Labor OS composition specifies typed authority, approvals, artifact/evidence receipts, and promotion boundaries for AI work. Ordinary application code may supply the same joins; this is not an established novel primitive or a measured advantage.
 - Do not claim a Temporal integration, durable Labor OS runtime, workflow replay, event-history equivalence, or scheduler correctness.
 
 ## Open Questions
@@ -50,3 +50,9 @@ Temporal is the closest durable-execution comparator for the Labor OS chapter be
 - Which `TypedJob` fields would compile naturally into a Temporal workflow, activity, task queue, and event-history record?
 - What extra receipt fields would be needed so a Temporal-backed job can become evidence-ready in the ASI Stack?
 - Can future prototypes replay Temporal event histories into the artifact graph without losing approval and residual semantics?
+
+## Selected documentation follow-up — 2026-10-11
+
+Inspected the official [Activity Definition](https://docs.temporal.io/activity-definition#idempotency), specifically its idempotency and retry discussion. The page distinguishes recorded completion from repeated Activity execution: a worker may finish an action and fail before reporting it. The documentation recommends idempotent Activities and describes operation keys enforced by the called service. Workflow durability therefore must not be cited as exactly-once external effects or current effect authority.
+
+This follow-up grounds the Intent-to-Execution chapter's proposed unknown-outcome and qualified-retry distinction. It does not establish a local Temporal integration, concurrent reservation service, receiver deduplication, present API compatibility, or a comparative result. Only these selected passages were reviewed; the original intake date and original absence of local execution remain historical.

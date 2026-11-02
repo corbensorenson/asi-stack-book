@@ -1,18 +1,20 @@
 #!/usr/bin/env python3
-"""Build the reproducible P7.1a-W3 current-book inheritance audit."""
+"""Replay the retained terminal W3 audit or inspect its current legacy corpus."""
 
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import re
-import subprocess
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
 from visual_chapter_source import canonical_chapter_text
+from visual_chapter_source import canonicalize_chapter_source
+from repository_custody import historical_bytes
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -22,6 +24,9 @@ CLAIM_REGISTRY = ROOT / "evidence_quality/claim_atom_registry.json"
 PROSE_QUEUE = ROOT / "evidence_quality/prose_claim_candidate_queue.json"
 CLAIM_REVIEW_INDEX = ROOT / "evidence_quality/claim_atom_reviews.json"
 BASELINE_COMMIT = "99457770390a4af4848b9e43656907cfe099fd75"
+# Last retained record and inputs that reproduce its two exact token totals.
+# This is a custody anchor, not a claim that August 30 was W3's original closure.
+TERMINAL_CUSTODY_COMMIT = "5ae6da1ef0b653d1248f83ca633e7658ac13dc4e"
 TOKEN = re.compile(r"[A-Za-z0-9_`'-]+")
 CLAIM = re.compile(r"\[[^\]\n]+support:\s*[^\]\n]+\]")
 PROOF_TAG = re.compile(r"lean:[a-z0-9_.-]+")
@@ -56,15 +61,7 @@ def manifest_rows(structure: dict[str, Any]) -> list[dict[str, Any]]:
 
 
 def git_text(commit: str, path: str) -> str:
-    result = subprocess.run(
-        ["git", "show", f"{commit}:{path}"],
-        cwd=ROOT,
-        text=True,
-        capture_output=True,
-    )
-    if result.returncode:
-        raise RuntimeError(result.stderr.strip() or f"cannot read {path} at {commit}")
-    return result.stdout
+    return historical_bytes(commit, path).decode('utf-8')
 
 
 def digest(text: str) -> str:
@@ -252,8 +249,10 @@ def semantic_reviews(
     return reviews
 
 
-def build() -> dict[str, Any]:
-    current_structure = load(STRUCTURE)
+def build(*, current: bool = False) -> dict[str, Any]:
+    def record(path):
+        return load(path) if current else json.loads(git_text(TERMINAL_CUSTODY_COMMIT, str(path.relative_to(ROOT))))
+    current_structure = record(STRUCTURE)
     baseline_structure = json.loads(git_text(BASELINE_COMMIT, "book_structure.json"))
     baseline_manifest = manifest_rows(baseline_structure)
     baseline_ids = {row["id"] for row in baseline_manifest}
@@ -263,7 +262,8 @@ def build() -> dict[str, Any]:
     current_rows = {row["id"]: row for row in current_manifest}
     baseline_rows = {row["id"]: row for row in baseline_manifest}
     current = {
-        row["id"]: canonical_chapter_text(ROOT / row["file"])
+        row["id"]: (canonical_chapter_text(ROOT / row["file"]) if current else
+                    canonicalize_chapter_source(git_text(TERMINAL_CUSTODY_COMMIT, row["file"])))
         for row in current_manifest
     }
     baseline = {
@@ -274,12 +274,12 @@ def build() -> dict[str, Any]:
         raise RuntimeError("W3 corpus must be the same exact 84 manifest chapters before and after")
     reviews = semantic_reviews(baseline, current, baseline_rows, current_rows)
     baseline_registry = json.loads(git_text(BASELINE_COMMIT, "evidence_quality/claim_atom_registry.json"))
-    current_registry = load(CLAIM_REGISTRY)
+    current_registry = record(CLAIM_REGISTRY)
     baseline_queue = json.loads(git_text(BASELINE_COMMIT, "evidence_quality/prose_claim_candidate_queue.json"))
-    current_queue = load(PROSE_QUEUE)
+    current_queue = record(PROSE_QUEUE)
     baseline_candidate_ids = {row["candidate_id"] for row in baseline_queue["candidates"]}
     current_candidate_ids = {row["candidate_id"] for row in current_queue["candidates"]}
-    current_review_index = load(CLAIM_REVIEW_INDEX)
+    current_review_index = record(CLAIM_REVIEW_INDEX)
     before_editorial = ngram_metric(baseline, projection=True)
     after_editorial = ngram_metric(current, projection=True)
     before_raw = ngram_metric(baseline, projection=False)
@@ -475,12 +475,30 @@ def render_report(data: dict[str, Any]) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--current-output', type=Path, help='Diagnostic successor under build/; never replaces the terminal record')
+    parser.add_argument('--write', action='store_true', help='Terminal records cannot be rewritten')
+    args = parser.parse_args()
+    if args.write:
+        raise SystemExit('W3 is terminal; retained evidence cannot be rewritten. Use --current-output below build/.')
+    if args.current_output:
+        output = args.current_output.resolve()
+        if not output.is_relative_to(ROOT / 'build'):
+            raise SystemExit('--current-output must be below ignored build/')
+        data = build(current=True)
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps({'kind': 'current_legacy_corpus_diagnostic',
+                                     'historical_custody_commit': TERMINAL_CUSTODY_COMMIT,
+                                     'scope': 'Current state of the retained 84-owner corpus; new owners use current admission gates.',
+                                     'diagnostic': data}, indent=2) + '\n')
+        print(f'Wrote current legacy-corpus diagnostic: {output}')
+        return
     data = build()
-    ARTIFACT.write_text(json.dumps(data, indent=2) + "\n", encoding="utf-8")
-    REPORT.write_text(render_report(data), encoding="utf-8")
+    if data != load(ARTIFACT):
+        raise SystemExit('W3 terminal record differs from its exact retained custody inputs')
     editorial = data["measurements"]["editorial_narrative"]
     print(
-        "Built P7.1a W3 inheritance audit: "
+        "Replayed P7.1a W3 inheritance audit: "
         f"{editorial['baseline']['distinct_repeated_12_grams']} -> "
         f"{editorial['current']['distinct_repeated_12_grams']} repeated editorial 12-grams."
     )

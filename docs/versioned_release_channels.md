@@ -1,6 +1,6 @@
 # Versioned Release Channels
 
-Last updated: 2026-07-10
+Last updated: 2026-10-03
 
 The root Pages URL remains a compatibility surface. `/latest/` is a full copy
 of the exact tested root site and moves when a newer tested commit is deployed.
@@ -25,6 +25,33 @@ checks policy and release-record commits, enforces URL-plus-digest coupling for
 published site artifacts, compares every latest file with the tested root, and
 owns rejecting controls for an unbacked artifact claim, wrong latest commit,
 and changed latest file.
+
+Channel construction stages the complete root, latest mirror and index in a
+sibling directory, checks copied content and source stability, then installs
+them with one atomic directory exchange. Links, special files, unrecognized
+version content and competing channel writers fail before installation.
+Copy or exchange failure retains the prior tree. Authored interruption tests
+observe complete channels before and after exchange on macOS; fresh Linux
+execution and physical power-loss behavior remain unverified. Other writers
+must not modify the rendered root concurrently with channel installation.
+
+Unknown empty directories and extra latest-mirror paths also reject without
+deletion. If root routes have intentionally been removed, retain the old site
+and assemble a fresh output rather than treating old mirror paths as disposable.
+Displaced bytes and installed bytes are checked after exchange. Exceptions
+after a physical swap and failed directory fsync retain the complete prior tree
+under a sibling `.asi-stack-release-channels-*` stage with an outcome journal.
+An `installation_outcome_unconfirmed` stage requires inspection of both trees;
+it is not authority to restore or delete either one. The legacy latest boundary
+checks path membership and status presence; it cannot establish authorship of
+manual edits at existing mirrored paths. Cooperating writers must use the site
+lock, and source identity checks detect observed changes only.
+
+`python3 scripts/build_release_channels.py --site _site --check` verifies the
+current channels without copying or changing file timestamps. Local diagnostic
+sites additionally require `--allow-local`; that option confers no publication
+authority. A stale mirror reports its owner instead of being rewritten by a
+check.
 
 `build_immutable_site_archive.py` now provides the production path that the
 policy previously described only in prose. It packages the exact tested bundle

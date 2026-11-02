@@ -9,6 +9,9 @@ The repository workflow is now reusable. A new request asks the stack to find
 a vulnerable dependency, propose a patch, verify package resolution, and plan
 rollback.
 
+This is an illustrative continuation of the book's repository-change story,
+not a report of a deployed router or a new experiment.
+
 The organization sends every step to its largest general model. The model
 produces a fluent report and correct patch, but it rereads the repository for
 each question, invents one package-manager flag, and spends most of its context
@@ -16,7 +19,10 @@ reconstructing facts that deterministic tools already know. A small dependency
 analyzer would have found the graph exactly. A coding specialist could have
 generated the patch. A verifier should have checked the lockfile. A retrieval
 system could have preserved exact package documentation. The expensive model
-was capable of every step and well matched to none of their full contracts.
+could contribute to every step, but this workflow did not match its work to
+the complete contracts. A competent general-model baseline can itself call
+those tools and preserve their outputs; this failure does not establish that
+specialist models are necessary.
 
 The obvious response is to route. But routing introduces another system that
 can be wrong. It may choose an unready specialist, leak authority, hide
@@ -58,8 +64,8 @@ A routing request binds task identity, capability requirements, context,
 authority ceiling, risk, deadline, quality and verification needs, resource
 budget, state constraints, privacy, fallback, and residual owner.
 
-The router constructs a candidate denominator rather than selecting from the
-first available models. Candidates include the current baseline, specialists,
+The router declares its candidate population and attempt denominator rather
+than selecting from the first available models. Candidates include the current baseline, specialists,
 tools, humans, compositions, clarification, abstention, and no action where
 appropriate. Rejected candidates retain reasons and predicted costs.
 
@@ -72,8 +78,11 @@ Selection seeks the least powerful and least costly route that is adequately
 qualified for the complete contract. “Least” is multidimensional. A smaller
 model with broad tool authority may be more consequential than a large model
 that only drafts text. A fast specialist may require expensive verification.
+Cost vectors can be incomparable; the consumer’s declared policy resolves that
+tradeoff. The router can prefer a route among examined eligible candidates
+without claiming a global minimum over unexamined implementations.
 
-The route receives an expiring lease. Execution, answer, verification,
+The route receives a lease with a declared lifetime. Execution, answer, verification,
 observation, cost, and residuals return as distinct records. The router learns
 from complete outcomes without awarding itself support or widening authority.
 
@@ -95,10 +104,14 @@ overreach. Training on route labels can reproduce the evaluator’s preferences
 without improving outcomes. The ledger preserves both labels, disagreements,
 and the decision context.
 
-For the repository task, routing the dependency graph to a deterministic tool
-may be correct even if the tool fails on an unsupported manifest. The route
-should then activate a declared fallback. A successful general-model answer
-does not prove that the more expensive route was efficient.
+For the repository task, an unexpected manifest feature may defeat a tool
+whose admitted contract reasonably covered the request. That can be an
+execution failure after an appropriate route choice. Selecting the same tool
+when its incompatibility was already known is a routing error. The failure
+record preserves which information was available at selection; a later success
+cannot rewrite it. Fallback activates only if it is currently qualified and
+authorized for the affected work; otherwise the route narrows or holds. A successful general-model answer does
+not prove that the more expensive route was efficient.
 
 ## Clarification, Abstention, and Fallback Are Routes
 
@@ -143,6 +156,20 @@ consequence shadow tasks, canaries, or duplicated work to uncertain candidates
 without letting them cause the primary effect. Exploration budgets, protected
 populations, stop rules, and data use are explicit. A candidate should not gain
 traffic merely because the routing learner benefits from information.
+
+Even shadow work can expose data, consume resources, or modify shared state.
+Its input purpose, isolation, and effects need admission; withholding the
+primary production action does not make exploration consequence-free.
+
+A toy batch illustrates the label distinction. Suppose the router predicts
+0.8 probability that a tool supports each of ten manifest formats, and eight
+are supported. That batch matches one compatibility prediction. Suppose only
+six of those eight outputs satisfy the independent result check. The answer
+acceptance fraction is six of eight, while attempted-route success is six of
+ten. Neither fraction is interchangeable with compatibility, and none of these
+small invented counts establishes calibration or validates every readiness
+obligation. Unresolved output checks must remain unresolved rather than being
+silently excluded to improve the fraction.
 
 Feedback can be selective. Easy successful routes return clean labels while
 hard failures remain unresolved. The learning record preserves admitted
@@ -347,7 +374,7 @@ Selection should be prospective. Freeze tasks, metrics, exclusions,
 interventions, and stop rules before seeing candidate outcomes. Keep failed
 architectures in the denominator.
 
-## Adoption Is a Reversible Governance Transaction
+## Adoption Binds Authority and Recovery {#adoption-is-a-reversible-governance-transaction}
 
 A winning tournament does not immediately replace the incumbent. Adoption
 binds the capability field, candidate version, evidence, consumers, rollout,
@@ -360,17 +387,22 @@ decision support.
 
 The incumbent remains available until the new route demonstrates recovery and
 the organization has retained enough expertise and infrastructure to return.
-Running two systems has a cost, but deleting the fallback before migration is
-observed converts a reversible trial into a one-way bet.
+Running two systems has a cost. Removing a fallback before migration is
+observed can eliminate a recovery option, but keeping it does not make every
+trial effect reversible. Disclosures, external decisions, shared-state updates,
+and public copies may persist. The contract names what can be restored, what
+requires compensation, and what remains unknown. An incumbent whose affected
+capability is no longer qualified cannot be used merely because it is old.
 
 Adoption also updates threat models, privacy assessments, operational runbooks,
 proof boundaries, and staff competence. A new architecture can introduce side
 channels, opaque state, numerical failures, supply-chain dependencies, and
 unfamiliar incident modes even when task quality improves.
 
-The decision expires. Continued use requires fresh evidence under current
-workloads and versions. Regression, cost growth, concentration, rights impact,
-or a better alternative can narrow or reverse it. Architectural prestige does
+The grant and qualification have declared lifetimes. Continued use must remain
+eligible under current workloads and versions; historical adoption records and
+open recovery duties persist when that eligibility ends. Regression, cost
+growth, concentration, rights impact, or a better alternative can narrow or reverse it. Architectural prestige does
 not create tenure.
 
 Recursive architectural improvement uses the same transaction. A system may
@@ -395,6 +427,33 @@ The stack should therefore preserve an exit path without forcing diversity for
 its own sake. A Transformer may remain the best route for many capabilities.
 Replaceability means alternatives can enter a fair qualification process and
 the incumbent can be replaced when complete evidence justifies it.
+
+## Prediction Targets and Learned Granularity
+
+JEPA and H-Net challenge different fixed choices. A Joint-Embedding Predictive
+Architecture learns to predict representations of related observations.
+I-JEPA uses Vision Transformers; V-JEPA 2 adds a latent action-conditioned
+prediction route; LeJEPA changes collapse prevention through distributional
+regularization. These are training and representation choices, not proof that
+attention has been replaced. The recent Platonic result concerns specified
+alignment measures, not a small encoder outperforming large language models at
+general reasoning.
+
+[H-Net](https://arxiv.org/abs/2507.07955v2) instead learns byte-level chunk
+boundaries within a nested encoder/main/decoder hierarchy. It can use attention
+or state-space blocks and remains autoregressive. Deeper stages process a
+shorter stream; dechunking and residual paths return to byte resolution. The
+paper reports strong matched-data/FLOP results, but also variable-memory and
+batching difficulties and implementation-dependent training slowdown. Fewer
+latent positions are not automatically cheaper useful work.
+
+For the repository specialist, the distinction changes qualification. A JEPA
+embedding must preserve task-relevant information; an H-Net checkpoint must
+preserve boundary/dechunking state and its relation to bytes. Neither supplies
+exact source custody, a semantic compiler or action permission. A combined
+JEPA/H-Net model is a research possibility, not a result of this book or the
+reviewed papers. The [technical substrate owner](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
+keeps the primary references and adoption limits.
 
 ## Recurrence Changes the State Contract
 
@@ -425,7 +484,12 @@ generation.
 
 A complete cyclic address binds residue and winding, or an equivalent epoch.
 The memory record also binds request, source, policy, update, freshness, and
-alias residuals. A stale read cannot be admitted as fresh merely because the
+alias residuals. In this zero-based example, events 7 and 31 have windings 0
+and 3. After event 31 overwrites slot 7, an address for event 7 can detect that
+the slot now belongs to event 31. It cannot recover the evicted payload unless
+another permitted store retained it. The result is missing or stale, followed
+by an admissible source read, qualified fallback, or hold—not a relabeling of
+event 31 as event 7. A stale read cannot be admitted as fresh merely because the
 slot contains valid bytes.
 
 Sparse attention has a related coverage boundary. Structural reachability of
@@ -525,8 +589,10 @@ the parent job and capability identities. The general model cannot release.
 The deterministic analyzer cannot silently edit. The coding specialist’s
 successful patch does not waive independent verification.
 
-If the package analyzer encounters an unsupported manifest, it returns a typed
-failure and activates the general-model fallback. If the coding specialist is
+If an unexpected manifest feature defeats the admitted analyzer, it returns a
+typed failure. The general-model fallback can activate only if its current
+qualification, context, and authority meet the affected contract; the router
+does not infer them from its larger model size. If the coding specialist is
 stale or overloaded, the router selects the baseline or asks for human review.
 Costs and interventions return to the route ledger.
 
@@ -534,6 +600,38 @@ A cyclic-memory candidate may be evaluated for a streaming log-analysis
 subtask. Its structural receipt can admit a benchmark; only measured useful
 outcomes can qualify it for routing. The production task does not become its
 uncontrolled experiment.
+
+## When the Direct Route Wins
+
+Now narrow that same request. The affected dependency is already known, the
+package manager supplies an exact compatible update, and the authorized work
+is confined to the manifest and lockfile. The existing general-model workflow
+can explain the change, run the deterministic resolver, and return the patch
+for its ordinary review. It does not need to rediscover the dependency graph
+or invent a specialist for each step.
+
+The router may still admit this route, but admission need not become a second
+planning project. If dispatching several specialists adds context transfer,
+queue delay, and integration review without changing the accepted result,
+the direct route wins. The governing boundary is the file scope and release
+decision, not the number of models involved. No inference saving has been
+measured in this teaching case; the point is which costs belong in a fair
+comparison.
+
+Widening the request can change the answer. Suppose the package has ambiguous
+compatibility across several services. A specialist may now supply useful
+information the direct workflow lacks. Its contribution must survive the
+extra verification and handoff cost. Or suppose the proposed update requires
+uploading private configuration to an external analyzer. That candidate is
+ineligible under the existing confidentiality boundary, even if its prediction
+looks best. The router can choose an admitted local route or return a precise
+blocked dependency; it cannot buy capability by widening authority.
+
+These outcomes belong to one task contract with explicit amendments. They
+do not turn successful direct work into evidence for universal monoliths,
+or a necessary denial into evidence for universal specialist routing. They
+show how the available information, consequence, and complete bill determine
+whether another boundary does useful work.
 
 ## Failure Cases
 
@@ -598,35 +696,30 @@ valuable independent failure path.
 
 ## What the Current Work Establishes
 
-Routing has five implemented targets and 29 live declarations. Its exact
-refinement includes 25 arbitrary-run theorems, seven stages, 42 routes, and 47
-rejected mutations with route and answer outcomes kept distinct. The broader
-surface includes three routing/runtime schemas, valid and rejecting lease and
-readiness fixtures, a 300-example matched program, and a 60-request ambiguous
-workload. The narrow result concerns route discrimination and exercised non-
-answer behavior, not useful specialist answers or deployed routing.
+The routing work checks finite lifecycle and authority rules while keeping
+route choice separate from answer quality. Authored and synthetic cases
+exercise discrimination, clarification, abstention, and fallback. They do
+not establish useful specialist answers or a deployed routing advantage.
 
-Replaceable Substrates has one implemented ABI target through 23 declarations.
-Synthetic conformance includes twelve event mutations, four common-checkpoint
-omitted-state collisions, and six full-checkpoint mutations. A matched
-heterogeneous-kernel tournament and architectural-improvement lifecycle remain
-unrun. The work does not establish substrate superiority or interchangeability.
+The substrate work checks a bounded ABI and makes omitted checkpoint state
+visible through counterexamples. The heterogeneous-kernel tournament and
+architectural-improvement lifecycle remain unrun. Conformance to the encoded
+boundary does not establish that two implementations are interchangeable
+for a natural workload.
 
-Cyclic Memory has three implemented targets and 34 declarations. Its fixtures
-cover complete residue-plus-winding addresses, alias visibility, freshness,
-sparse-coverage fallback, recurrence budgets, stale paths, trace composition,
-and closure. The independent route reaches 40 states and checks 320 transitions,
-with stale-suffix containment and semantic mutations. These are finite
-structural properties, not retrieval, long-context, speed, memory, reasoning,
-or model-quality results.
+The cyclic-memory work checks addresses, alias visibility, freshness,
+coverage fallback, recurrence budgets, trace composition, and closure. Its
+structural conclusions do not establish retrieval quality, long-context use,
+reasoning, speed, or memory savings. The cyclic-mixer work adds a bounded
+operator-equivalence receipt and finite candidate-lifecycle checks. It does
+not establish trained quality, kernel performance, deployment, or transfer.
 
-Cyclic Mixers has two implemented targets and 23 declarations. A bounded Circle
-receipt records exact dense delta zero and a block-to-dense parameter ratio of
-0.0625 for its declared fixture; the lifecycle checks six trace splits, 35
-reachable states, 700 transitions, 17 retired states, 340 absorbing transitions,
-and 18 semantic mutations. It does not establish trained quality, numerical
-behavior beyond the fixture, kernel performance, context use, deployment, or
-transfer.
+The collapsible research-status panel and its technical-owner links retain
+the exact current artifact and proof inventories. Their role is to make these
+bounded results inspectable, not to turn their volume into evidence that
+diverse computation is better. The practical missing result is a matched
+natural task where the alternative produces an accepted useful outcome at
+an advantage that survives verification, migration, recovery, and maintenance.
 
 The joined chapter does not combine these bounded results into a claim that
 heterogeneous routing or cyclic substrates improve natural tasks.
@@ -699,7 +792,8 @@ or if the governance overhead prevents timely useful work.
 ## What This Establishes
 
 Cognitive capability should be named above implementation. Routing should
-select from a complete denominator under readiness, authority, evidence,
+select from a declared candidate population, retaining the complete attempted
+denominator under readiness, authority, evidence,
 resource, fallback, and recovery constraints. Route correctness, answer
 correctness, and useful outcome remain separate.
 
@@ -713,8 +807,9 @@ candidate-lifecycle properties plus narrow synthetic observations. It does not
 establish that heterogeneous or cyclic systems outperform a strong general
 model.
 
-Selected substrates still have to learn. Unit 20 follows training as a
-governed transaction and then widens the view from model architecture to the
+When a selected substrate will be learned or adapted, its training needs a
+governed transaction. Unit 20 follows that boundary, then widens the view from
+model architecture to the
 topology of evidence, judgment, credit, state, compute, and authority that
 actually produces adaptation.
 

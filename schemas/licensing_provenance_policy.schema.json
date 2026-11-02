@@ -6,7 +6,7 @@
   "required": ["schema_version", "operative_license", "file_set_command", "rules", "default_rule", "non_claims"],
   "properties": {
     "schema_version": { "type": "string", "enum": ["asi_stack.licensing_provenance_policy.v0"] },
-    "operative_license": { "type": "string", "const": "all_rights_reserved_no_permission_granted" },
+    "operative_license": { "type": "string", "enum": ["all_rights_reserved_no_permission_granted", "conditional_v2.0.0_v2.1.0_v2.2.0_and_v2.3.0_path_routed_split_otherwise_all_rights_reserved"] },
     "file_set_command": { "type": "string", "minLength": 1 },
     "rules": {
       "type": "array",

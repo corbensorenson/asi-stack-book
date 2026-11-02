@@ -6,8 +6,8 @@
   "required": ["schema_version", "decision_state", "operative_license", "generated_from", "summary", "files", "non_claims"],
   "properties": {
     "schema_version": { "type": "string", "enum": ["asi_stack.licensing_provenance_inventory.v0"] },
-    "decision_state": { "type": "string", "const": "awaiting_author_decision" },
-    "operative_license": { "type": "string", "const": "all_rights_reserved_no_permission_granted" },
+    "decision_state": { "type": "string", "enum": ["awaiting_author_decision", "decided"] },
+    "operative_license": { "type": "string", "enum": ["all_rights_reserved_no_permission_granted", "conditional_v2.0.0_v2.1.0_v2.2.0_and_v2.3.0_path_routed_split_otherwise_all_rights_reserved"] },
     "generated_from": {
       "type": "object",
       "required": ["policy", "policy_sha256", "file_set_command", "path_set_sha256"],

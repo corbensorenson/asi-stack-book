@@ -382,9 +382,14 @@ The ownership boundary has twelve consumers and producers:
 2. Routing consumes route permissions but cannot promote or widen them.
 3. Benchmark Ratchets and evaluators produce floor, frontier, calibration, and
    transfer evidence but do not authorize use.
-4. Claim Ledgers, Evidence Engineering, and Artifact Graphs own support and
-   lineage; readiness does not promote a book claim.
-5. Runtime Adapters, Humans, and Inter-Stack protocols own dispatch and effects.
+4. Claim Ledgers owns claim identity, contradictions, and belief history;
+   Artifact Graphs owns artifact lineage and receipt custody; Evidence States
+   owns accepted support transitions. Readiness does not promote a book claim.
+5. Labor OS owns typed-job dispatch and lifecycle; Runtime Adapters mediate
+   actual local effects; human workers and remote peers perform their work
+   under applicable grants. Inter-Stack protocols carry bounded requests and
+   responses, not effect permission or proof of completion. Readiness consumes
+   scoped execution and intervention receipts.
 6. Security, Privacy, Rights, Legal, and Constitutional owners supply ceilings
    and vetoes.
 7. Capability Replacement and Rollback owns restoration, compensation,

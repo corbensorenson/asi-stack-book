@@ -82,12 +82,65 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
 
 .callout-note { border-left-color: #b06b2b; background: #fffdf9; }
 .sidebar-navigation a { line-height: 1.35; }
+main.content { overflow-wrap: anywhere; }
+main.content .anchored { position: relative; padding-right: 1em; }
+main.content .anchorjs-link { position: absolute; left: auto !important; right: 0; margin-left: 0 !important; }
+
+.asi-reader-table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #b8c4c9;
+  border-radius: 6px;
+}
+.asi-reader-table:focus-visible { outline: 3px solid #245f73; outline-offset: 3px; }
+.asi-reader-table table { min-width: 40rem; width: 100%; margin-bottom: 0; }
+.asi-reader-table th, .asi-reader-table td { overflow-wrap: normal; word-break: normal; }
+
+.asi-reader-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.75rem 0.25rem;
+  margin: 1.25rem 0 0.75rem;
+  border: 1px solid #b8c4c9;
+  border-radius: 6px;
+}
+.asi-reader-diagram:focus-visible { outline: 3px solid #245f73; outline-offset: 3px; }
+.asi-reader-diagram .cell-output-display { overflow: visible; }
+.asi-reader-diagram svg { width: var(--asi-diagram-width, 40rem); max-width: none !important; height: auto; }
+.asi-reader-diagram svg .nodeLabel,
+.asi-reader-diagram svg .edgeLabel { color: #162b33 !important; }
 
 @media (max-width: 640px) {
   main.content { font-size: 1rem; line-height: 1.68; }
   main.content h1 { font-size: 2rem; }
-  .asi-edition-switch { display: flex; width: 100%; justify-content: space-between; }
+  .asi-edition-switch {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+    margin: 0.75rem auto 1rem;
+    justify-content: flex-start;
+  }
   .asi-edition-switch__label { flex: 1 1 auto; }
+  .page-navigation { flex-direction: column; gap: 0.75rem; align-items: stretch; }
+  .page-navigation .nav-page { width: 100%; max-width: 100%; margin: 0; }
+  .page-navigation .pagination-link { min-width: 0; max-width: 100%; }
+  .page-navigation .nav-page-text { min-width: 0; overflow-wrap: anywhere; }
+  .page-navigation .chapter-title { white-space: normal; }
+  .quarto-secondary-nav .container-fluid { align-items: center; }
+  .quarto-secondary-nav .quarto-page-breadcrumbs { flex: 1 1 auto; min-width: 0; }
+  .quarto-secondary-nav .breadcrumb { flex-wrap: nowrap; margin: 0; }
+  .quarto-secondary-nav .breadcrumb-item:first-child:not(:last-child) { display: none; }
+  .quarto-secondary-nav .breadcrumb-item:last-child { min-width: 0; max-width: 100%; padding-left: 0; }
+  .quarto-secondary-nav .breadcrumb-item:last-child::before { display: none; }
+  .quarto-secondary-nav .breadcrumb-item a { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
 
 @media print { .asi-edition-switch, .asi-reader-skip { display: none !important; } }

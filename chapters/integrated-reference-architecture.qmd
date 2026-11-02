@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-08"
+last_updated: "2026-10-10"
 primary_sources:
   - "viea"
   - "scf"
@@ -73,7 +73,7 @@ The reference architecture is therefore not an orchestration diagram with more b
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** The simpler route treats a passing smoke test as release authority. It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.
+**Concrete lens.** In the local fixture, treating a passing smoke test as release authority admits eight false accepts. That exposes a missing join; it does not establish that a conventional orchestrator with proper authorization and release checks would fail.
 
 After every major layer is named, the machine has to come back together. Intent, planning, memory, routing, verification, execution, evidence, benchmarks, and improvement should cooperate in one inspectable flow.
 
@@ -89,6 +89,25 @@ The whole stack is credible only when its combined behavior stays explainable un
 ## Problem
 
 Readers need to see how the layers operate as one machine from intent to governed action and improvement. A chapter-by-chapter specification is necessary, but it is not sufficient. The architecture becomes real only when a reader can trace one request across the whole stack and identify every artifact, permission check, evidence update, and possible stop condition.
+
+### Follow one request before following every subsystem
+
+Begin with the [patch that passed and still could not ship](#concrete-integration-failure-the-patch-that-passed-and-still-could-not-ship).
+Then read the [worked request trace](#worked-showpiece-trace-one-request-through-the-stack)
+for the proposed handoffs and the [minimum implementation](#minimum-viable-implementation)
+for which pieces actually exist. The [P5 successor](#p5-stateful-service-successor)
+describes a bounded local service result; it is distinct from the showpiece's
+illustrated whole-stack flow. The compiler, precision, learning, and dispatch
+subsections deepen particular joins rather than introduce extra steps every
+request must execute.
+
+Integration owns a question the component chapters cannot answer alone:
+do their outputs refer to the same request, authorized effect, observed
+result, and remaining obligation? [Artifact Graphs](artifact-graphs-audit-logs-and-replay.qmd)
+provides lineage, and [Resource Economics](resource-economics-and-token-budgets.qmd)
+provides the bill. Neither certifies that every join is correct. Conversely,
+a consistent integrated trace does not establish that the underlying planner,
+observer, or evaluator is adequate.
 
 ### Six research objects, one governed cycle
 
@@ -145,6 +164,24 @@ The end-to-end integration point receives the constitutional frame, command-cont
 The integration question has two halves. The happy path asks whether intent can become an artifact without losing context, authority, or evidence. The blocked path asks whether missing authorization, inadequate context, failed verification, excessive residual, or evaluator capture actually stops the flow. A reference architecture that cannot explain the blocked path is not governed; it is only sequenced.
 
 ## Why existing approaches are insufficient
+
+### The conventional orchestrator deserves a fair comparison
+
+A conventional workflow can keep typed task inputs, scoped service credentials,
+durable events, release checks, separately observed effects, and compensating
+actions. Logical responsibilities can live in one process. The stack thesis
+does not require separate services merely to make a diagram's boxes physical.
+For a stable workload under one accountable operator, a compact orchestrator
+may be easier to inspect and recover than a distributed stack.
+
+The proposed integration contract must therefore identify a join that this
+competent alternative loses, or make the same join cheaper to inspect and
+repair. Test both on expired authority, changed context, missing observation,
+failed compensation, and an unavailable dependency as well as successful
+completion. Charge the stack for boundary latency, duplicated state, operator
+work, and new failure paths. Equivalent accountability with lower total burden
+is a reason to prefer the simpler design. The smoke-test-only baseline below
+exposes omissions but cannot settle that stronger comparison.
 
 Layer chapters can still feel disconnected unless the book traces the complete control flow and artifacts.
 

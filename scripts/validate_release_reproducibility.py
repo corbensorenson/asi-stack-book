@@ -15,6 +15,7 @@ CURRENT_CITATION = ROOT / "CITATION.cff"
 HISTORICAL_CITATION = ROOT / "citations" / "v1.0.0.cff"
 DOC = ROOT / "docs" / "release_reproducibility.md"
 LEAN_TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
+RUNTIME_ACTION = ROOT / ".github/actions/validation-runtime/action.yml"
 
 
 REQUIRED_WORKFLOW_FRAGMENTS = [
@@ -24,9 +25,7 @@ REQUIRED_WORKFLOW_FRAGMENTS = [
     'node-version: "22"',
     "uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2",
     'version: "1.9.38"',
-    '$(cat lean/lean-toolchain)',
-    "6737edca3d2ca3dbaa1b47b87769b48b420633ae/elan-init.sh",
-    "a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53",
+    'python3 scripts/install_lean_runtime.py --install --elan-home "$HOME/.elan"',
     "python3 scripts/run_validation_registry.py --tier deep",
     "LANG: C.UTF-8",
     "LC_ALL: C.UTF-8",
@@ -74,14 +73,16 @@ def missing_fragments(text: str, fragments: list[str], label: str) -> list[str]:
 def main() -> None:
     errors: list[str] = []
 
-    for path in [BUILD_WORKFLOW, DEPLOY_WORKFLOW, CURRENT_CITATION, HISTORICAL_CITATION, DOC, LEAN_TOOLCHAIN]:
+    for path in [BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION, CURRENT_CITATION, HISTORICAL_CITATION, DOC, LEAN_TOOLCHAIN]:
         if not path.exists():
             errors.append(f"Missing required release reproducibility file: {path.relative_to(ROOT)}")
 
     if errors:
         fail(errors)
 
-    workflow_text = BUILD_WORKFLOW.read_text(encoding="utf-8", errors="ignore") + "\n" + DEPLOY_WORKFLOW.read_text(encoding="utf-8", errors="ignore")
+    workflow_text = "\n".join(path.read_text(encoding="utf-8") for path in (BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION))
+    if "uses: ./.github/actions/validation-runtime" not in BUILD_WORKFLOW.read_text(encoding="utf-8"):
+        errors.append("publication build does not invoke its shared pinned runtime")
     citation_text = HISTORICAL_CITATION.read_text(encoding="utf-8", errors="ignore")
     current_citation_text = CURRENT_CITATION.read_text(encoding="utf-8", errors="ignore")
     doc_text = DOC.read_text(encoding="utf-8", errors="ignore")

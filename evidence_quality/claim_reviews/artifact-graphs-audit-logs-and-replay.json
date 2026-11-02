@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
     "structured_atoms_reviewed": 81,
-    "prose_candidates_adjudicated": 96,
+    "prose_candidates_adjudicated": 101,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The Decision Capsule and Regret Packet artifact chain is bounded by existing provenance, receipt-reality, append-only history, and independent-authority atoms. Source-reported mechanisms remain proposals. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. The Decision Capsule and Regret Packet artifact chain is bounded by existing provenance, receipt-reality, append-only history, and independent-authority atoms. Source-reported mechanisms remain proposals. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. 2026-10-10 assistant editorial review: Reviewed the new reading route and repository/build-log comparator. The graph is an inspectable relation that may use ordinary records, not a required graph service. Removed the absolute claim that incomplete replay prevents debugging; provenance gaps limit conclusions. No new runtime, causal-completeness, or support result. The 2026-10-11 full source editorial pass reconciles traceability versus truth, purpose-specific replay, bounded dependency queries, permitted retention, canon decisions, and independent evidence/release owners. Twenty changed candidates were reviewed in full paragraph context and fifteen retired reviews retain exact source, text, and disposition lineage. Three existing manifest design rules are clarified with prior wording retained: artifact-graphs-audit-logs-and-replay.mechanism.006 previously \"Version derivations, revisions, merges, splits, semantic patches, alternate derivations, supersession, and invalidation without erasing prior bytes, decisions, failures, or disagreements.\"; now \"Version derivations, revisions, merges, splits, semantic patches, alternate derivations, supersession, and invalidation while preserving permitted historical payloads and disposition records; prohibited payloads are not retained merely for audit convenience.\" | artifact-graphs-audit-logs-and-replay.mechanism.009 previously \"Propagate quarantine, revocation, expiry, rights change, deletion duty, or discovered corruption through every reachable dependent unless a recorded valid alternate derivation preserves that descendant under the current policy.\"; now \"Propagate quarantine, revocation, expiry, rights change, deletion duty, or discovered corruption to affected uses in the declared dependency graph; a valid current-policy alternate derivation may preserve that exact use, while unknown dependencies retain owners and limits.\" | artifact-graphs-audit-logs-and-replay.invariant.006 previously \"Upstream quarantine, revocation, expiry, rights change, deletion duty, or corruption invalidates all reachable dependents unless a valid policy-compatible alternate derivation is recorded.\"; now \"Upstream quarantine, revocation, expiry, rights change, deletion duty, or corruption invalidates affected use eligibility under its governing policy unless a valid alternate derivation preserves that use; historical records and accepted claim support retain their separate dispositions.\". The worked PDF case is hypothetical and defines its requested replay grade; it reports no new render or experiment. The local faithfulness source note was inspected for its recorded selected-passage scope, not rereproduced. No new material atom, source/proof reproduction, runtime, privacy/deletion result, support transition, or release follows. The manifest minimum inventory also replaces its stale forty-three declaration count with the existing twenty-one refinement plus thirty-five retained declarations, confirmed against unchanged source declarations and the recorded proof audit. The exact prior minimum wording remains in its atom non-claim lineage. This is an inventory correction, not a fourth new design rule or fresh Lean result."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Eighteen reviewed assigned sources; two public schemas; 2/6 replay, 1/10 projection-revocation, 1/4 record-reality, 3/6 receipt-faithfulness, four-surface repository-audit, four-challenge, one-live-artifact, four-sampled-artifact, and 3/6 epistemic-TCB records; two historical service observations; eight no-promotion decisions; fifty-six finite Lean theorems across the refinement and legacy modules; and a future natural multi-repository campaign. No deployed graph, complete event collector, open-world observer, reverse-closure service, privacy/deletion runtime, natural causal result, or transfer result is represented.",
       "model": "A versioned artifact-evidence relation over stable content identity, locations, producers, parent work, observed and asserted lineage, transformations, events, canonical state, projections, forward and reverse dependencies, quarantine and revocation, alternate derivations, replay grades and locks, asynchronous terminal receipts, receipt-reality challenges, epistemic trusted computing bases, rights and deletion duties, claim/test consumers, impact closure, cost, and residuals; current implementations are authored records, repository-local observations, service records, and finite consequences rather than a deployed plane.",
       "authority": "Labor OS owns job lifecycle; Context owners own input views; Runtime Adapters own effects; source, data, weight, and supply-chain owners own admission; Verification owns mode-specific validity; Security, Privacy, Rights, Licensing, and accountable humans own access and obligations; Evidence States and Claim Ledgers own support; Procedural Memory owns learned reuse; Replacement, Readiness, and Publication own deployment and release. Artifact Graphs owns durable artifact identity, derivation, record-reality custody, replay grade, and impact closure only.",
-      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization. The 2026-10-11 pass covers the source argument and three named design-rule clarifications; source/proof/effect reviews retain their recorded historical scope.",
       "artifact": "Chapter and manifest contract; eighteen bounded source mappings; schemas/artifact_graph_record.schema.json and schemas/artifact_projection_revocation_record.schema.json; ten validator/observation families and their retained results; eight accepted no-promotion records; GitHub Actions and public-site observations; twenty-one theorems in lean/AsiStackProofs/ArtifactRealityRefinement.lean plus thirty-five retained consequences in lean/AsiStackProofs/ArtifactGraph.lean; future natural lineage labels, observer records, fault traces, ablations, reproduction locks, and transfer artifacts."
     },
     "current_disposition": "retain_argument_pending_natural_multi_repository_causal_reproduction_and_transfer_campaign",
@@ -177,6 +177,12 @@
       "falsifier": "The declared schemas, records, services, or theorems exercise complete deployed capture, independent truth, causal benefit, or transfer.",
       "acceptance_criteria": [
         "Keep exact counts, commands, limits, and the natural campaign as the only argument-exit route."
+      ],
+      "non_claims": [
+        "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
+        "The current schemas, fixture/observation families, no-promotion records, service observations, and fifty-six theorems establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+        "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review.",
+        "2026-10-11 inventory lineage: the prior manifest minimum said \"The current minimum is two public artifact/projection schemas; 2 valid/6 rejecting replay fixtures; 1 valid/10 rejecting projection-revocation records; 1 valid/4 rejecting record-reality sequences; 3 valid/6 rejecting receipt-faithfulness records; a four-surface repository audit with 55 digest checks and five mutations; four deterministic challenges and five mutations; one live artifact with three observation routes and seven mutations; four sampled artifacts with twelve observation routes and eight mutations; 3 valid/6 rejecting epistemic-TCB records; one historical GitHub Actions service record; one historical public-page fetch record; eight accepted no-promotion decisions; and forty-three Lean declarations under ten public targets. These artifacts exercise authored record shape, finite route consequences, current or historical repository observations, digest and command challenges, exact no-promotion boundaries, and service-status facts only. They do not implement a deployed graph, complete event capture, open-world provenance, independent attestation service, transitive revocation runtime, replay engine, privacy/deletion closure, semantic correctness, causal benefit, or transfer.\". The count is reconciled to the existing chapter inventory and 21 + 35 declarations in the unchanged Lean sources; no new Lean build or proof result is claimed."
       ]
     },
     "artifact-graphs-audit-logs-and-replay.beyond_sota.001": {
@@ -217,6 +223,22 @@
       "falsifier": "A reachable dependent remains active or a false alternate path preserves it.",
       "acceptance_criteria": [
         "Exercise cycles, unknown edges, inaccessible copies, shared causes, and legitimate alternates."
+      ],
+      "known_confounds": [
+        "The governed route may receive more metadata, storage, observers, signatures, replay attempts, human review, remediation, or time than simpler comparators.",
+        "Selected repositories may favor deterministic, local, public-safe, content-addressed, reversible, or well-tested artifacts and omit hidden services, private data, hardware, physical effects, and organizational handoffs.",
+        "Producer, event collector, digest tool, object store, command runner, verifier, trust root, and outcome evaluator may share infrastructure or failure modes.",
+        "File existence, digest equality, command success, signed metadata, replay similarity, CI success, and a served page can be mistaken for causal truth or usefulness.",
+        "Unknown descendants, inaccessible copies, privacy work, deletion failures, human repairs, false blocks, stale public surfaces, storage, remediation, and delayed harm can disappear from denominators.",
+        "Aggressive quarantine or non-reuse can lower observed incident rates while increasing missed help and making the governed route look safer.",
+        "Short horizons can miss downstream training contamination, copied artifacts, stale procedures, public caches, delayed rights requests, compromise discovery, and organizational transfer.",
+        "Blanket payload retention can conflict with permitted deletion; invalidation concerns affected use eligibility and cannot silently rewrite accepted support or historical evidence."
+      ],
+      "non_claims": [
+        "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
+        "The current schemas, fixture/observation families, no-promotion records, service observations, and fifty-six theorems establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+        "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review.",
+        "2026-10-11 editorial lineage: prior manifest wording was \"Propagate quarantine, revocation, expiry, rights change, deletion duty, or discovered corruption through every reachable dependent unless a recorded valid alternate derivation preserves that descendant under the current policy.\". Current wording is \"Propagate quarantine, revocation, expiry, rights change, deletion duty, or discovered corruption to affected uses in the declared dependency graph; a valid current-policy alternate derivation may preserve that exact use, while unknown dependencies retain owners and limits.\". This clarifies the existing rights, policy, and owner boundaries at argument support; historical finite outcomes and support states are unchanged."
       ]
     },
     "artifact-graphs-audit-logs-and-replay.mechanism.010": {
@@ -273,6 +295,22 @@
       "falsifier": "A reachable current-policy dependent remains active without a valid alternate derivation.",
       "acceptance_criteria": [
         "Enumerate closure under cycles, copies, unknowns, rights changes, and inaccessible systems."
+      ],
+      "known_confounds": [
+        "The governed route may receive more metadata, storage, observers, signatures, replay attempts, human review, remediation, or time than simpler comparators.",
+        "Selected repositories may favor deterministic, local, public-safe, content-addressed, reversible, or well-tested artifacts and omit hidden services, private data, hardware, physical effects, and organizational handoffs.",
+        "Producer, event collector, digest tool, object store, command runner, verifier, trust root, and outcome evaluator may share infrastructure or failure modes.",
+        "File existence, digest equality, command success, signed metadata, replay similarity, CI success, and a served page can be mistaken for causal truth or usefulness.",
+        "Unknown descendants, inaccessible copies, privacy work, deletion failures, human repairs, false blocks, stale public surfaces, storage, remediation, and delayed harm can disappear from denominators.",
+        "Aggressive quarantine or non-reuse can lower observed incident rates while increasing missed help and making the governed route look safer.",
+        "Short horizons can miss downstream training contamination, copied artifacts, stale procedures, public caches, delayed rights requests, compromise discovery, and organizational transfer.",
+        "Blanket payload retention can conflict with permitted deletion; invalidation concerns affected use eligibility and cannot silently rewrite accepted support or historical evidence."
+      ],
+      "non_claims": [
+        "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
+        "The current schemas, fixture/observation families, no-promotion records, service observations, and fifty-six theorems establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+        "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review.",
+        "2026-10-11 editorial lineage: prior manifest wording was \"Upstream quarantine, revocation, expiry, rights change, deletion duty, or corruption invalidates all reachable dependents unless a valid policy-compatible alternate derivation is recorded.\". Current wording is \"Upstream quarantine, revocation, expiry, rights change, deletion duty, or corruption invalidates affected use eligibility under its governing policy unless a valid alternate derivation preserves that use; historical records and accepted claim support retain their separate dispositions.\". This clarifies the existing rights, policy, and owner boundaries at argument support; historical finite outcomes and support states are unchanged."
       ]
     },
     "artifact-graphs-audit-logs-and-replay.invariant.010": {
@@ -426,19 +464,28 @@
       "acceptance_criteria": [
         "Map every premise to independently generated runtime state, add countermodels and mutations, and prove a refinement or preserve the exact authored-summary ceiling."
       ]
+    },
+    "artifact-graphs-audit-logs-and-replay.mechanism.006": {
+      "current_disposition": "retain_argument_pending_natural_multi_repository_causal_reproduction_and_transfer_campaign",
+      "known_confounds": [
+        "The governed route may receive more metadata, storage, observers, signatures, replay attempts, human review, remediation, or time than simpler comparators.",
+        "Selected repositories may favor deterministic, local, public-safe, content-addressed, reversible, or well-tested artifacts and omit hidden services, private data, hardware, physical effects, and organizational handoffs.",
+        "Producer, event collector, digest tool, object store, command runner, verifier, trust root, and outcome evaluator may share infrastructure or failure modes.",
+        "File existence, digest equality, command success, signed metadata, replay similarity, CI success, and a served page can be mistaken for causal truth or usefulness.",
+        "Unknown descendants, inaccessible copies, privacy work, deletion failures, human repairs, false blocks, stale public surfaces, storage, remediation, and delayed harm can disappear from denominators.",
+        "Aggressive quarantine or non-reuse can lower observed incident rates while increasing missed help and making the governed route look safer.",
+        "Short horizons can miss downstream training contamination, copied artifacts, stale procedures, public caches, delayed rights requests, compromise discovery, and organizational transfer.",
+        "Blanket payload retention can conflict with permitted deletion; invalidation concerns affected use eligibility and cannot silently rewrite accepted support or historical evidence."
+      ],
+      "non_claims": [
+        "A file, digest, signature, event log, provenance edge, replay, command pass, CI record, served page, receipt, or graph conformance does not establish causal truth, completeness, correctness, usefulness, safety, support, learning, or release.",
+        "The current schemas, fixture/observation families, no-promotion records, service observations, and fifty-six theorems establish only their exact authored, repository-local, historical-service, and finite formal boundaries.",
+        "No job, permission, effect, evidence, support, learning, readiness, release, AGI, or ASI state changes through this semantic review.",
+        "2026-10-11 editorial lineage: prior manifest wording was \"Version derivations, revisions, merges, splits, semantic patches, alternate derivations, supersession, and invalidation without erasing prior bytes, decisions, failures, or disagreements.\". Current wording is \"Version derivations, revisions, merges, splits, semantic patches, alternate derivations, supersession, and invalidation while preserving permitted historical payloads and disposition records; prohibited payloads are not retained merely for audit convenience.\". This clarifies the existing rights, policy, and owner boundaries at argument support; historical finite outcomes and support states are unchanged."
+      ]
     }
   },
   "prose_candidate_dispositions": {
-    "artifact-graphs-audit-logs-and-replay.prose.31c0d6b77010": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.d270110190f2": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
-    },
     "artifact-graphs-audit-logs-and-replay.prose.f238937e270e": {
       "state": "duplicate_of_atom",
       "rationale": "Rendered prose restates or specializes an owned structured atom.",
@@ -454,16 +501,6 @@
       "rationale": "Rendered prose restates or specializes an owned structured atom.",
       "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
     },
-    "artifact-graphs-audit-logs-and-replay.prose.43cbf014d049": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.86c07dc182da": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.failure_mode.008"
-    },
     "artifact-graphs-audit-logs-and-replay.prose.3037e172f888": {
       "state": "historical_or_source_report",
       "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
@@ -471,11 +508,6 @@
     "artifact-graphs-audit-logs-and-replay.prose.2982fc9ffbd2": {
       "state": "historical_or_source_report",
       "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.fcee26190628": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
     },
     "artifact-graphs-audit-logs-and-replay.prose.4fb1e58c6d8d": {
       "state": "duplicate_of_atom",
@@ -603,15 +635,6 @@
       "state": "historical_or_source_report",
       "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
     },
-    "artifact-graphs-audit-logs-and-replay.prose.491379ae54ca": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.459a4c2bdc11": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
-    },
     "artifact-graphs-audit-logs-and-replay.prose.99e595f6aa5a": {
       "state": "duplicate_of_atom",
       "rationale": "Rendered prose restates or specializes an owned structured atom.",
@@ -634,10 +657,6 @@
       "state": "nonmaterial_explanation",
       "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
     },
-    "artifact-graphs-audit-logs-and-replay.prose.b8664b738113": {
-      "state": "historical_or_source_report",
-      "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
-    },
     "artifact-graphs-audit-logs-and-replay.prose.ff7142fdbb50": {
       "state": "historical_or_source_report",
       "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
@@ -645,15 +664,6 @@
     "artifact-graphs-audit-logs-and-replay.prose.6650699133a0": {
       "state": "historical_or_source_report",
       "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.44a4585f664f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.29ba40238fee": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
     },
     "artifact-graphs-audit-logs-and-replay.prose.cbc6bace7e82": {
       "state": "nonmaterial_explanation",
@@ -746,31 +756,6 @@
       "rationale": "Rendered prose restates or specializes an owned structured atom.",
       "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.017"
     },
-    "artifact-graphs-audit-logs-and-replay.prose.324cb2e5d84f": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.a3f1ec79bca4": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.c384b55fda31": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.002"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.38a839cb212d": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.004"
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.41e3291e61f0": {
-      "state": "duplicate_of_atom",
-      "rationale": "Rendered prose restates or specializes an owned structured atom.",
-      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
-    },
     "artifact-graphs-audit-logs-and-replay.prose.93535968dfbf": {
       "state": "nonmaterial_explanation",
       "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
@@ -793,17 +778,9 @@
       "rationale": "Restates the chapter minimum that finite formal consequences do not establish semantic or empirical proof of the core claim.",
       "target_atom_id": "artifact-graphs-audit-logs-and-replay.minimum.001"
     },
-    "artifact-graphs-audit-logs-and-replay.prose.f8dfefec315f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Semantic patches are governed artifact transactions` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.beyond_sota.001`, `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.interface.002`."
-    },
     "artifact-graphs-audit-logs-and-replay.prose.853bbe3030ec": {
       "state": "nonmaterial_explanation",
       "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Preserve provenance, route relevance` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.beyond_sota.001`, `artifact-graphs-audit-logs-and-replay.failure_mode.006`."
-    },
-    "artifact-graphs-audit-logs-and-replay.prose.fc2fda0f77ec": {
-      "state": "nonmaterial_explanation",
-      "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Compression and deletion spend replay authority` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.failure_mode.015`, `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.invariant.015`."
     },
     "artifact-graphs-audit-logs-and-replay.prose.b2f6e808c0a2": {
       "state": "nonmaterial_explanation",
@@ -866,6 +843,113 @@
     "artifact-graphs-audit-logs-and-replay.prose.7d7ba7bcb513": {
       "state": "historical_or_source_report",
       "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.073979799832": {
+      "state": "editorial_or_question",
+      "rationale": "2026-10-10 assistant editorial review: Wrapped continuation preserves the existing separation of lineage and claim support."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.9115b75178ae": {
+      "state": "editorial_or_question",
+      "rationale": "2026-10-10 assistant editorial review: Wrapped opening of a conditional correction-descendant example; no measured graph benefit."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.df4985e90434": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Replaces an unmeasured safety implication with inspectability of explicit history; the following sentence retains consumer-specific efficacy as an evidence question.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.05698d34f222": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: No safety or usefulness benefit is inferred from lineage; the ordinary-workflow comparison remains allowed to win.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.018"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: A bounded impact query covers declared edges, not unknown exports. It restates the existing hidden-descendant confound.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.015"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Retained decision history does not permit indefinite prohibited payload retention; this is the existing rights/deletion boundary.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.014"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.224af3383989": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The hypothetical missing-input case keeps its replay limitation. Residualization records missingness and does not recreate an input or upgrade the replay grade.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.007"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The worked example limits a lineage query to recorded relations and does not claim causal completeness.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.003"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Line-wrap fragment of the qualified deletion paragraph: a tombstone neither refutes history nor proves all derivatives removed.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.014"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The full redaction paragraph changes replay capability and current use eligibility; accepted claim support still belongs to Evidence States.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.005"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The digest paragraph distinguishes byte identity from an observed transformation and consumer adequacy; no checksum alone certifies those relations.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.010"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Impact closure is limited to declared reachability; unresolved descendants retain ownership and are not silently counted as absent.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.005"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Scanner fragment after link removal. The complete paragraph cites the shared rule and distinguishes projection/review records from evidence and release authority.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.6975050baea9": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The diagram caption states the bounded query scope, not a complete inventory or deployed reverse-closure result.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.015"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The complete canon/media caption requires an accepted scoped project commitment and declared delivery profile; validator observations do not independently authorize output.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Fragment in the record-review explanation. Evidence and release owners have separate decisions, neither automatically favorable; release approval does not promote support.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.009"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The phrase refers to the unchanged July 5 fetch record and its then-current wording. No new fetch, digest, public page, or attestation is reported."
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.709509c69be6": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Fragment of the trust-dependency qualification; independence is claim-specific and common failure dependencies remain explicit.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.015"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Missing required evidence flags the affected role for its owner while permitted records remain historical; it does not erase accepted support automatically.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.013"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The absorbing finite-model state is not an evergreen operational grant. New dependency information needs a current disposition; no new formal property is claimed.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.018"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: The summary preserves the reviewed competent repository/build-log alternative; a separate graph service is not required by naming the relation.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+    },
+    "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full artifact editorial reconciliation: Line-wrap fragment of the handoff: compression and semantic consumers preserve inherited scope and limits rather than obtaining authority or support from a pointer.",
+      "target_atom_id": "artifact-graphs-audit-logs-and-replay.invariant.012"
     }
   },
   "prose_review_lineage": [
@@ -935,6 +1019,537 @@
       "retirement_reason": "The line-wrapped fragment disappeared when the proof section was rewritten as complete sentences with an explicit formal-proof ceiling.",
       "replacement_candidate_ids": [],
       "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.43cbf014d049",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:104",
+      "retired_sentence": "Untraceable output cannot support promoted claims.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
+      },
+      "retirement_reason": "2026-10-10 editorial narrowing removes an overabsolute statement or weak-baseline inference; structured atoms and evidence remain unchanged.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-10-10"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.86c07dc182da",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:104",
+      "retired_sentence": "Non-replayable workflows cannot be debugged or improved.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.failure_mode.008"
+      },
+      "retirement_reason": "2026-10-10 editorial narrowing removes an overabsolute statement or weak-baseline inference; structured atoms and evidence remain unchanged.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-10-10"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.31c0d6b77010",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:74",
+      "retired_sentence": "The living book should preserve that distinction because later chapters depend on it: compressed artifacts, semantic nodes, benchmark records, reader editions, and prototype reports all become safer when they inherit an explicit artifact history instead of a loose folder convention.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.d270110190f2",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:83",
+      "retired_sentence": "If an AI system edits a file, writes a proof, summarizes a source, or runs a check, the next reviewer should be able to trace what happened.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.fcee26190628",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:111",
+      "retired_sentence": "It does not guarantee truth, but it makes verification possible by preserving what happened.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.f8dfefec315f",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:329",
+      "retired_sentence": "privacy or rights, but it spends replay authority and must downgrade affected",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Semantic patches are governed artifact transactions` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.beyond_sota.001`, `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.interface.002`."
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.fc2fda0f77ec",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:373",
+      "retired_sentence": "were transformed; it does not prove that the summary retained the fact later",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "P6.10 section-level semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent claim. Its substance is bounded by section `Compression and deletion spend replay authority` and reviewed owner atoms `artifact-graphs-audit-logs-and-replay.failure_mode.015`, `artifact-graphs-audit-logs-and-replay.minimum.001`, `artifact-graphs-audit-logs-and-replay.invariant.015`."
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.491379ae54ca",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:796",
+      "retired_sentence": "Record-reality should be read as an authority ladder, not a binary stamp.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.459a4c2bdc11",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:802",
+      "retired_sentence": "This ladder prevents a useful audit",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.b8664b738113",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:882",
+      "retired_sentence": "and required fragments for the record-reality authority ladder, epistemic-TCB",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Reports a bounded fixture, repository observation, external comparator, or no-promotion result rather than adding an independent chapter claim."
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.44a4585f664f",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:906",
+      "retired_sentence": "hidden dependency cannot be replayed, challenged, independently observed, or",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Section transition, line-wrapped fragment, limitation, or handoff already governed by structured atoms and chapter defaults."
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.29ba40238fee",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:907",
+      "retired_sentence": "residualized, the artifact graph may preserve the record but must strip it of",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.mechanism.014"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.324cb2e5d84f",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:1209",
+      "retired_sentence": "a natural multi-repository campaign measures lineage, receipt reality, replay,",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.a3f1ec79bca4",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:1211",
+      "retired_sentence": "cost, causal contribution, independent reproduction, and transfer against",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.c384b55fda31",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:1216",
+      "retired_sentence": "A compressed artifact can only be trusted relative to the full artifact and replay record it points back to.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.002"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.38a839cb212d",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:1216",
+      "retired_sentence": "A semantic node can only be grounded relative to the artifact or source record it cites.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.interface.004"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "artifact-graphs-audit-logs-and-replay.prose.41e3291e61f0",
+      "retired_source": "chapters/artifact-graphs-audit-logs-and-replay.qmd:1216",
+      "retired_sentence": "The graph is therefore not a storage accessory; it is the continuity layer that lets the stack improve without losing the chain of responsibility.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Rendered prose restates or specializes an owned structured atom.",
+        "target_atom_id": "artifact-graphs-audit-logs-and-replay.core"
+      },
+      "retirement_reason": "Full artifact editorial reconciliation corrects provenance/truth, replay/authority, retention, impact eligibility, or evidence/release conflation. Historical outcome and support records remain unchanged.",
+      "replacement_candidate_ids": [
+        "artifact-graphs-audit-logs-and-replay.prose.df4985e90434",
+        "artifact-graphs-audit-logs-and-replay.prose.05698d34f222",
+        "artifact-graphs-audit-logs-and-replay.prose.3e64ab2722cb",
+        "artifact-graphs-audit-logs-and-replay.prose.da86771cb6ab",
+        "artifact-graphs-audit-logs-and-replay.prose.224af3383989",
+        "artifact-graphs-audit-logs-and-replay.prose.f070d1ec6a87",
+        "artifact-graphs-audit-logs-and-replay.prose.12c0f7c01bf6",
+        "artifact-graphs-audit-logs-and-replay.prose.2e3df05fd1e2",
+        "artifact-graphs-audit-logs-and-replay.prose.a0b1ece004d1",
+        "artifact-graphs-audit-logs-and-replay.prose.efe7ab40d67b",
+        "artifact-graphs-audit-logs-and-replay.prose.5c3bd530aae3",
+        "artifact-graphs-audit-logs-and-replay.prose.6975050baea9",
+        "artifact-graphs-audit-logs-and-replay.prose.b617fd9c0e1b",
+        "artifact-graphs-audit-logs-and-replay.prose.0587b193c4be",
+        "artifact-graphs-audit-logs-and-replay.prose.ffe167ef1784",
+        "artifact-graphs-audit-logs-and-replay.prose.709509c69be6",
+        "artifact-graphs-audit-logs-and-replay.prose.4288178ecce7",
+        "artifact-graphs-audit-logs-and-replay.prose.bf455b3ea84a",
+        "artifact-graphs-audit-logs-and-replay.prose.ef81a118157f",
+        "artifact-graphs-audit-logs-and-replay.prose.8f365e56cfde"
+      ],
+      "recorded_on": "2026-10-11"
     }
   ]
 }

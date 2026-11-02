@@ -1,12 +1,23 @@
 # Contribution Novelty Ledger
 
-Last updated: 2026-07-25
+Framing updated: 2026-10-11; signature-idea row assessment: 2026-07-25
 
 This ledger audits the book's signature ideas and coined terms the same way the
 non-core evidence ledger audits measured side lanes: it names the contribution
 claim, closest source-noted comparators, current delta, strongest objection,
 and next artifact. It is not proof of novelty, not an exhaustive prior-art
 review, not external review, and not support-state movement.
+
+The nine rows are signature ideas supporting the current
+[three proposed program contributions](three_defended_contributions.md), not
+nine independent flagship discoveries. “Defended contribution” in the program
+contract means a target selected for scrutiny, not an established novelty
+result. The [current comparison](defended_contribution_prior_art_positioning.md)
+types those targets as architectural composition, public evidence process, and
+observation/accounting composition. An ordinary implementation may supply the
+same joins; equal behavior at lower burden narrows the novelty claim. This
+framing update does not renew the nine dated row assessments or change their
+machine confidence states.
 
 ## Ledger Boundary
 
@@ -19,6 +30,36 @@ review, not external review, and not support-state movement.
   defended novelty language.
 - Current support-state discipline: historical negative labels rehabilitated
   without core movement.
+
+## Contribution type interpretation
+
+This October 11 editorial classification interprets the nine existing rows;
+it does not renew their dated assessments or modify the machine ledger's
+confidence, outcomes, source assignments or support states. Their proposed
+deltas are compositions or evidence processes, not nine established new
+mechanisms. The dated backing artifacts are implementation/evaluation evidence
+at their own scope, not evidence that the proposed composition is novel.
+
+| Signature idea | Proposed contribution type and useful relation | Existing antecedent family | What its dated backing can establish |
+|---|---|---|---|
+| Verification bandwidth | Architectural capacity/accounting proposal: connect checking load to context, routing and claim-admission budgets | Long-context evaluation and benchmark methodology; exact source IDs remain in the row below | A declared capacity model or bounded probe, not a measured universal verification limit |
+| Governed-cognition pattern language | Architectural composition: preserve responsibility, current authority, qualification and recovery across named handoffs | CAIS, structured reporting, risk management and lifecycle governance | A scoped interface/implementation result, not novelty from the shared vocabulary |
+| Verification tax and governance economics | Accounting composition: include verification, fallback, review and displaced work in the route bill | Cost/quality routing, conditional computation and evaluation practice | The exact costed fixture or workload comparison, not general economic superiority |
+| Residual honesty | Evidence/accounting process: carry known unresolved obligations through handoff, discharge review and promotion decisions | Proxy-risk evaluation, benchmark discipline and risk management | The dated storage/replay or conservation checks over recorded residuals, not physical conservation or complete detection of hidden harm |
+| Support-state discipline | Public evidence process: bind exact claims to reviewed evidence and allowed inference across current surfaces | Reporting, reproducibility, proof-carrying code, belief revision and truth maintenance | Accepted transitions and rejecting consistency checks at their recorded scope; historical labels do not expand negative inference |
+| Stable capability fields | Replacement-governance composition: attach current-use qualification and authority limits to a stable capability identity | Versioning, rollout, supply-chain and capability-system practice | Finite identity/transition checks where supplied; the semantic capability identity remains assumption-dependent |
+| Bounded self-improvement | Change-governance composition: keep candidate, evaluator, authority, recovery and release relations distinct through improvement | Corrigibility, shutdown, power-seeking, risk evaluation and supply-chain practice | A qualified bounded change/transition artifact, not natural recursive improvement or safety |
+| Human oversight degradation | Observation/admission composition: make relevant reviewer limitations change a declared dispatch decision | Human-factors and automation literature | Specified fixture routing, not human comprehension, legitimacy or deployed oversight efficacy |
+| Record-reality gap | Observation/assurance composition: let a qualified consumer challenge a report against a bounded target and retain unresolved trust/coverage | Proof-carrying evidence, debate/judge evaluation and zero-trust practice | The named receipt, repository or served-page attestation at its observed scope, not open-world truth or independent external review |
+
+For each row, the proposed value is the relation consumed in a decision, not
+its name. A conventional implementation that supplies that relation can win.
+The closest-source IDs, objections, exact confidence states and next artifacts
+below remain the authoritative dated row assessment. The
+[three-contribution result map](three_defended_contributions.md#contribution-type-and-present-result)
+keeps program proposals separate from their bounded backing. Publication in
+the original paper library preserves author lineage; it does not independently
+establish a mechanism's novelty or reproduce a result.
 
 ## Signature-Idea Rows
 
@@ -36,9 +77,10 @@ review, not external review, and not support-state movement.
 
 ## Current Decision
 
-The book may use these ideas as signature framing, but it should not call them
-defended contributions unless the row's next artifact exists and the relevant
-review, proof, source, or evidence gate passes. The most important still-open
+The book may use these ideas as signature framing and select proposed targets
+for defence. It may report successful defence only at the scope earned by the
+relevant artifact and accepted review, proof, source, or evidence decision;
+selection and a coined name establish neither novelty nor efficacy. The most important still-open
 row is `receipt_faithfulness_gap`: it now has bounded receipt-faithfulness and
 epistemic trusted computing base fixtures, live and randomized local repository
 attestation audits, CI-service and public served-page attestations, plus an

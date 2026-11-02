@@ -4,9 +4,11 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
   - "benchmaxxing"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
   - "rmi"
   - "rgs"
   - "cognitive_loop_closure"
@@ -19,7 +21,27 @@ primary_sources:
   - "theseus_architecture_gate"
   - "theseus_self_evolution_system"
   - "theseus_circle_transfer"
+  - "ext_mem0_2025"
+  - "ext_mlcommons_croissant_1_1_2026"
+  - "ext_inspect_ai_2024"
+  - "ext_agentdojo_2024"
+  - "ext_darwin_godel_machine_2025"
+  - "ext_adas_2024"
+  - "ext_dynamic_compute_recurrent_transformers_2026"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "corbens_trainer_project"
+  - "corbens_best_model_possible_project"
+  - "ext_claw_swe_bench_2026"
+  - "ext_muse_unlearning_2025"
+  - "ext_unlearning_benchmarks_weak_2024"
+  - "ext_openunlearning_2025"
   - "reflexive_router_whitepaper"
+  - "kernel_english_residual_compiler"
+  - "ext_swe_rebench_v2_2026"
+  - "ext_mlperf_training_v6_2026"
   - "relational_dimension_compiler"
   - "ext_cultural_alignment_llms_2024"
   - "ext_multilingual_evaluation_state_2026"
@@ -28,6 +50,12 @@ primary_sources:
   - "capability_ratchet_whitepaper"
   - "attd"
   - "temporal_coil_research"
+  - "regret_engine"
+  - "ext_elizaos_agent_runtime_2026"
+  - "assurance_shift_learning"
+  - "adjudicated_persistence"
+  - "forward_transfer_program_synthesis"
+  - "answerability_atlas_synthesis"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -45,8 +73,8 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-31 |
-| Primary source records | `benchmaxxing`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper` |
+| Last updated | 2026-11-02 |
+| Primary source records | 50 current manifest assignments; the Atlas addition is selected source-reported working-paper evidence, not a fresh review of all assigned sources. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `road_to_agi` |
@@ -133,7 +161,7 @@ Appendix C now records thirty-one exact passage-reviewed mappings across thirty-
 
 ## Mechanism
 
-A benchmark ratchet turns a result into an evidence-state transition, not a celebration. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
+A benchmark ratchet organizes a result for claim-specific evidence review; an accepted support transition retains its separate decision authority. The record captures the run, baseline, frontier state, residuals, regressions, holdouts, contamination checks, and promotion decision before any capability claim is allowed to move.
 
 The ratchet needs evidence states that are harder to confuse than a single pass/fail flag: `candidate_metric`, `schema_fixture_pass`, `synthetic_probe`, `source_reported`, `locally_reproduced`, `regression_floor`, `frontier_probe`, `contaminated`, `blocked`, and `retired`. These states are not all encoded as separate fields in the current minimal schema, but future agents need them as drafting and implementation vocabulary so they cannot spend a fixture pass as benchmark evidence or a source-reported command as local reproduction.
 
@@ -156,7 +184,7 @@ flowchart LR
   J --> K
 ```
 
-**What the benchmark ratchet shows:** The ratchet converts benchmark work into an evidence-state decision, not a celebration of a score. Residuals, regressions, holdouts, transfer checks, mutation, contamination, and negative results all gate whether readiness or a claim can move.
+**What the benchmark ratchet shows:** The ratchet preserves benchmark evidence for a scoped decision rather than treating a score as permission to promote. Residuals, regressions, holdouts, transfer checks, mutation, contamination, and negative results all gate whether readiness or a claim can move.
 
 A benchmark ratchet record tracks benchmark state, baseline, command, environment, mastery threshold, saturation, residuals, regressions, holdouts, mutation/transfer checks, contamination audit, claim support effect, and negative results.
 
@@ -171,6 +199,38 @@ artifact; Evaluator Governance owns the scorer; Claims/Evidence owns support;
 and Readiness/Release owns deployment authority. The Benchmark Instrument
 Lease is the bounded record that lets those owners consume a result without
 turning the benchmark into a truth machine.
+
+### Atlas case: completing the baseline changes the decision {#atlas-baseline-correction}
+
+A retained [Answerability Atlas Project working paper](../papers/answerability_atlas_synthesis.html)
+gives a concrete example of a score remaining positive while its decision
+changes. Its final exploratory screen asked whether a policy given the useful
+component pair, and charged for that information, retained enough advantage to
+justify continuation. The rule required a mean advantage of at least 0.04 and
+an ordinary 95% lower limit above 0.02 at a tested budget. These are normalized
+shortlist-score units, not physical speed or an intelligence scale.
+
+At budget 128, the original six-comparator pool gave reported headroom of
++0.052142. Adding two already available comparators, including buying every
+component, reduced it to +0.035299 and changed proceed to stop. The corrected
+interval, [+0.021985, +0.048655], still lies above zero and includes 0.04.
+Failing the declared point-margin rule therefore does not prove zero benefit
+or a population effect below that margin. It changes the operational decision
+under that rule.
+
+The correction reused the same 24 worlds and fixed seed conditions after
+outcome inspection. It is explicitly post hoc, not a new confirmatory study.
+The earlier proceed artifact was retained and its interpretation superseded.
+The lesson for a ratchet is to preserve the comparator pool, selection rule,
+uncertainty and correction lineage together. The full chronology and estimator
+remain in the paper's Sections 8 and Appendix B; the raw underlying research
+is private and was not reproduced by this book.
+
+The same source shows why calibration needs a regime label. Phase 2's nominal
+80% aggregate coverage genuinely passed at about 0.819, while high-coupling
+coverage was about 0.585. Preserve that aggregate result while rejecting an
+unsupported claim of calibration in every regime. Neither an attractive
+summary statistic nor a useful archive establishes a better discovery policy.
 
 ### A reusable-knowledge benchmark needs causal controls
 
@@ -991,6 +1051,7 @@ result or support transition.
 
 | Source ID | Title | Layer | Planned use | Readiness |
 |---|---|---|---|---|
+| `answerability_atlas_synthesis` | [Answerability Atlas Project (2026)](../papers/answerability_atlas_synthesis.html) | Source-reported corrected comparator screen and aggregate-versus-regime calibration example: the declared continuation rule can fail after stronger comparators are included. Sections 5.3 and 8; same-world post hoc correction, ordinary intervals, normalized score and imperfect reference policy. No universal diagnosis impossibility, new confirmation or local reproduction. |
 | `reflexive_router_whitepaper` | The Reflexive Router | pre_deliberative_reflexive_routing_control_plane | ReflexBench tracks and ingress modes, matched comparator matrix, independent route/outcome/effect evaluation, adversarial controls, complete denominators, and joint usefulness/safety/effect/cost measures. | source note available |
 | `benchmaxxing` | Benchmaxxing: The Performance Ratchet | benchmarks_evidence | Benchmark lifecycle, wall diagnosis, anti-Goodhart safeguards, and regression/frontier discipline. | source note available; local raw cache available |
 | `rmi` | Ratcheting Modular Intelligence | capability_ratchet | Benchmark pressure, residual escrow, verified modular capability, regression preservation. | source note available; local raw cache available |

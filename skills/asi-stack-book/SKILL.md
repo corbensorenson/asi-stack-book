@@ -25,9 +25,18 @@ description: Maintain and write Corben Sorenson's Quarto living book "The ASI St
 3. Read `appendices/G_corben_source_corpus.qmd` when drafting from Corben's own papers, Corben-supplied materials, recovered project records, or local project references; read `appendices/H_external_sources.qmd` when drafting external-literature or third-party citation context by other authors.
 4. Use the source loading queues in `docs/book_outline.md` to decide which primary, supporting, variant, connector, or recovery sources are in scope.
 5. Inspect the relevant chapters and appendices before editing.
-6. If adding, moving, merging, or deleting parts/chapters, edit `book_structure.json` or use:
+6. For moves/merges/removals, edit `book_structure.json` under the update workflow. For new owners, prepare a complete candidate outside canonical admission; these commands prepare intent:
    - `python3 scripts/add_part.py --title "..."`
    - `python3 scripts/add_chapter.py --part <part-id> --title "..."`
+   `add_chapter.py` now produces a non-admitted proposal. Complete required
+   prose, source/concept/claim-at-birth artifacts, adjacent handoffs, reader
+   route and current projections in an isolated candidate; use
+   `prepare_chapter_admission.py` and the staged workflow in
+   `docs/living_update_workflow.md`. A staged pass is not canonical admission.
+   Explicit `--install` runs the full deep gate and manifest-last transaction;
+   use `recover_chapter_admission.py --rollback` for interrupted installation.
+   A real valid birth replay remains open under D02; do not bypass a pending
+   transaction marker or manufacture the missing semantic artifacts.
 7. Run `python3 scripts/sync_scaffold.py` after manifest changes.
 8. Run `python3 scripts/sync_proof_manifest.py` after outline proof-tag changes.
 9. Update chapter prose and source notes only from available source text, clearly labeled design reasoning, or clearly labeled author-intent context.
@@ -51,7 +60,7 @@ When the user brings a new AI-related paper:
 6. Use the Research Backlog Record and New Paper Triage Scenario surfaces to decide whether the source updates an existing chapter, proposes a precise new chapter, belongs in an appendix/backlog, should be deferred until read, or should be rejected as duplicate/out of scope.
 7. Record deduplication state, chapter-decision refs, merge/split policy, required pre-drafting work, evidence-transition preconditions, promotion blockers, and non-claims before strengthening prose.
 8. If it updates a chapter, add the source ID to that chapter's `source_ids` in `book_structure.json`.
-9. If it needs a new chapter, add it to the most fitting part with `scripts/add_chapter.py`, then fill its manifest fields.
+9. If it needs a new chapter, prepare intent for the most fitting part with `scripts/add_chapter.py`, then author and validate the complete isolated candidate before canonical admission.
 10. Keep support state at `argument` unless source ingestion, passage review, accepted evidence transition, proof, or tests justify a stronger state.
 
 Read `references/triage.md` when deciding whether to update an existing chapter or create a new one.

@@ -1,7 +1,72 @@
 {
-  "schema_version":"asi_stack.p7_1c_reader_prose_quality_packet.v1","chapter_id":"intent-to-execution-contracts","chapter_file":"chapters/intent-to-execution-contracts.qmd","chapter_sha256":"6a5eaf5508528c2f9b7c768768515e9f1debf134bbb9f820caa1cf1f803388bf","chapter_role":"thesis-bearing","reader_spine_unit":"unit-07-intent-and-command","review_state":"digest_bound_editorial_pass",
-  "concrete_scene":{"heading":"Worked vertical trace: the output is right, the means are forbidden","actor_or_system":"An accepted public-summary contract, a private repository, a planner, a typed job, an external summarization service, an adapter gate, and residual custody","attempted_action":"Upload private source to produce the requested summary despite a forbidden-means field.","observable_outcome":"The lowering is rejected before effect and replanned locally; if an effect occurred, output quality cannot repair the breach and the lineage quarantines.","failed_or_tested_boundary":"The scene tests whether correct output permits changed means, widened authority, or lost non-goals; it does not.","residual_owner":"Intent, plan, job, authority, adapter, effect, artifact, verifier, delivery, compensation, and residual owners retain each stage.","evidence_boundary":"The finite trace checks payload and custody ordering but does not prove parser correctness, semantic equivalence, authority authenticity, tool safety, observation, or rollback truth."},
-  "worked_trace":{"heading":"Worked vertical trace: the output is right, the means are forbidden","state_labels":["intent_accepted","forbidden_means_bound","external_upload_proposed","dispatch_rejected","local_replan_or_quarantine"],"source_or_fixture_refs":["evidence_quality/proof_model_dossiers/intent-to-execution-contracts.md","scripts/validate_intent_execution_vertical_refinement.py"],"maximum_inference":"Exact identities and event kinds can preserve a vertical contract in authored traces; natural-language meaning, semantic equivalence, enforcement, effects, and recovery remain unproven."},
-  "counterexample_or_simpler_baseline":"The output-only baseline accepts a correct summary. The vertical contract rejects the unauthorized method before judging output quality.","readable_claim":"Execution remains faithful only while every lowering preserves the accepted objective, non-goals, authority, means, stop conditions, evidence, and residuals; a helpful change of means can still violate intent.","normative_rule":"Carry stable contract and authority identities through plan, job, approval, dispatch, effect, observation, artifact, verification, delivery, and feedback. Any changed means, widened authority, lost non-goal, self-verification, or inexact rollback stops the lineage and requires clarification, re-contract, or quarantine.",
-  "formal_binding":{"claim_id":"intent-to-execution-contracts.core","support_state":"argument","anchor":"conformance relation between an accepted intent receipt"},"claim_atom_and_source_links":["intent-to-execution-contracts.core","viea","talos"],"caveat_consolidation":{"local_caveat":"The example states once that vertical record preservation is not semantic or effect truth.","consolidated_disposition":"Intent, semantics, planning, authority, jobs, tools, effects, artifacts, verification, delivery, rollback, support, and release remain distinct.","distinct_limitations_preserved":true},"bookkeeping_surface_disposition":"The forbidden upload stays reader-facing; the ten-stage lineage remains in formal evidence.","semantic_diff":{"unique_claims_preserved":true,"sources_preserved":true,"proof_boundaries_preserved":true,"non_claims_preserved":true,"support_state_effect":"none","release_effect":"none"},"editorial_diagnostics":{"mega_sentence_disposition":"The reader claim separates faithful lowering from the complete conformance schema.","hedge_disposition":"The semantic and effect limits follow the concrete failure.","table_disposition":"Lifecycle tables remain because each stage owns different evidence."},"non_claims":["The trace does not establish natural-language intent understanding.","Correct output does not repair forbidden means or unauthorized effects.","The editorial revision does not move support or release state."]
+  "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
+  "chapter_id": "intent-to-execution-contracts",
+  "chapter_file": "chapters/intent-to-execution-contracts.qmd",
+  "chapter_sha256": "9ac73c115c7da228401c3ed791b8e2a61e0c09cc82f167aa5e01160ad42d5156",
+  "chapter_role": "thesis-bearing",
+  "reader_spine_unit": "unit-07-intent-and-command",
+  "review_state": "digest_bound_editorial_pass",
+  "concrete_scene": {
+    "heading": "Worked vertical trace: the output is right, the means are forbidden",
+    "actor_or_system": "Hypothetical accepted public-summary contract, private repository, planner, typed job, forbidden external upload, current local grant, and recovery owner",
+    "attempted_action": "Upload private source to produce the requested summary despite a forbidden-means field.",
+    "observable_outcome": "The required decision is to hold the forbidden upload and permit an authorized local/source-minimized route. If disclosure occurred, later correct output or local deletion cannot erase recipient access; observed and unknown consequences retain recovery custody.",
+    "failed_or_tested_boundary": "The scene tests whether correct output permits changed means, widened authority, or lost non-goals; it does not.",
+    "residual_owner": "Intent, plan, job, authority, adapter, effect, artifact, verifier, delivery, compensation, and residual owners retain each stage.",
+    "evidence_boundary": "The teaching case adds no upload experiment. Separate existing authored traces check finite payload/custody ordering; the one-shot record checker does not implement pre-effect reservation, concurrent admission, or remote deduplication."
+  },
+  "worked_trace": {
+    "heading": "Worked vertical trace: the output is right, the means are forbidden",
+    "state_labels": [
+      "intent_accepted",
+      "forbidden_means_bound",
+      "external_upload_proposed",
+      "dispatch_rejected",
+      "local_replan_or_quarantine"
+    ],
+    "source_or_fixture_refs": [
+      "evidence_quality/proof_model_dossiers/intent-to-execution-contracts.md",
+      "scripts/validate_intent_execution_vertical_refinement.py"
+    ],
+    "maximum_inference": "Exact identities and event kinds can preserve a vertical contract in authored traces; natural-language meaning, semantic equivalence, enforcement, effects, and recovery remain unproven."
+  },
+  "counterexample_or_simpler_baseline": "A competent reviewed repository workflow with a current scoped grant, pinned inputs, conditional write, diff/test review, observed outcomes and recovery can supply the same joins at lower cost. The prospective comparison is specified, not executed.",
+  "readable_claim": "Execution remains faithful only while every lowering preserves the accepted objective, non-goals, authority, means, stop conditions, evidence, and residuals; a helpful change of means can still violate intent.",
+  "normative_rule": "Preserve the accepted obligations and current authority through each lowering. Continue allowed choices under an existing valid grant; hold the affected action when it exceeds that envelope or lacks required evidence. Record actual effects, unknown outcomes, and recovery separately. A useful output, complete receipt, or recovery plan cannot substitute for those observations.",
+  "formal_binding": {
+    "claim_id": "intent-to-execution-contracts.core",
+    "support_state": "argument",
+    "anchor": "conformance relation between an accepted intent receipt"
+  },
+  "claim_atom_and_source_links": [
+    "intent-to-execution-contracts.core",
+    "viea",
+    "talos"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The example states once that vertical record preservation is not semantic or effect truth.",
+    "consolidated_disposition": "Interpretation, current permission, planning eligibility, qualified admission, attempted effect, scoped observation, artifact evaluation, delivery, recovery, current-use review, support and release retain distinct owners and scopes.",
+    "distinct_limitations_preserved": true
+  },
+  "bookkeeping_surface_disposition": "The forbidden upload stays reader-facing; the ten-stage lineage remains in formal evidence.",
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The operational rule separately names accepted obligations/current grants, affected-action holds, actual effects, unknown outcomes and recovery; it no longer demands fresh approval for every allowed change of means.",
+    "hedge_disposition": "The semantic and effect limits follow the concrete failure.",
+    "table_disposition": "Validation-state tables distinguish planning from dispatch and historical identity from current reuse. A six-stage overview and single-use failure chart have substantive text alternatives; the redundant early-gate flowchart was removed."
+  },
+  "non_claims": [
+    "The trace does not establish natural-language intent understanding.",
+    "Correct output does not repair forbidden means or unauthorized effects.",
+    "The editorial revision does not move support or release state.",
+    "The 2026-10-11 full source reconciliation is an assistant editorial review, not fresh source/proof reproduction, new semantic/concurrent-service evidence, support movement, independent reader or author approval, or public release.",
+    "The October 11 displayed-view reconciliation corrects the active lifecycle/interface overlay prose for this owner against its canonical obligations. Frozen reader copies are unchanged; this is not new interpretation, live effect, independent approval, support or release evidence."
+  ]
 }

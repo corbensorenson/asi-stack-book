@@ -12,6 +12,7 @@
     "status",
     "current_priority",
     "execution_readiness",
+    "project_improvements_implementation",
     "object_level_yield_amendment",
     "editorial_product_migration",
     "quality_uplift_program",
@@ -46,7 +47,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v36"
+      "const": "asi_stack.post_v2_3_maintenance_transfer_publication_status.v37"
     },
     "roadmap_id": {
       "const": "asi-stack-post-v2-3-evidence-competence-transfer-publication-2026-07-17"
@@ -55,7 +56,7 @@
       "const": "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md"
     },
     "snapshot_date": {
-      "const": "2026-08-13"
+      "const": "2026-10-02"
     },
     "authority": {
       "const": "Corben Sorenson"
@@ -65,6 +66,89 @@
     },
     "current_priority": {
       "const": "C2-EL"
+    },
+    "project_improvements_implementation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "authorized_on",
+        "catalog",
+        "recommendation_ids",
+        "state",
+        "active_packet",
+        "active_recommendations",
+        "verified_recommendations",
+        "verification_commands",
+        "remaining_validation",
+        "support_state_effect",
+        "external_authority_effect"
+      ],
+      "properties": {
+        "authorized_on": {
+          "const": "2026-10-02"
+        },
+        "catalog": {
+          "const": "docs/project_improvements.md"
+        },
+        "recommendation_ids": {
+          "type": "array",
+          "minItems": 114,
+          "maxItems": 114,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-N][0-9]{2}$"
+          }
+        },
+        "state": {
+          "enum": [
+            "active",
+            "complete"
+          ]
+        },
+        "active_packet": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "active_recommendations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-N][0-9]{2}$"
+          }
+        },
+        "verified_recommendations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^[A-N][0-9]{2}$"
+          }
+        },
+        "verification_commands": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "remaining_validation": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "support_state_effect": {
+          "const": "none"
+        },
+        "external_authority_effect": {
+          "const": "none"
+        }
+      }
     },
     "execution_readiness": {
       "type": "object",
@@ -119,7 +203,7 @@
           "const": "P2-R3-storage-materialization-and-replacement-qualification"
         },
         "immediate_book_packet": {
-          "type": "null"
+          "const": "IMPROVEMENTS-integrity-001"
         },
         "immediate_formal_packet": {
           "const": "P4.1-consumer-gated-cross-owner-composition"
@@ -326,128 +410,202 @@
       }
     },
     "editorial_product_migration": {
-      "const": {
-        "id": "2026-08-10-editorial-product-architecture-and-semantic-migration",
-        "state": "em4_public_html_deployed_no_support_effect",
-        "review_baseline_commit": "ce5b6181ff923e6183c52e7d78d16657ed289e18",
-        "reconciliation_input_commit": "90f60c9f4bca340f170069d415893797b118252c",
-        "current_reference_chapter_count": 89,
-        "target_main_book_chapter_count": 58,
-        "target_primary_architecture_chapter_count": 56,
-        "target_implementation_method_chapter_count": 2,
-        "target_merge_count": 18,
-        "target_semantic_merge_count": 0,
-        "target_publication_nest_count": 18,
-        "target_profile_count": 7,
-        "target_dossier_owner_count": 5,
-        "target_visible_dossier_count": 2,
-        "target_back_matter_owner_count": 1,
-        "current_narrative_unit_count": 22,
-        "target_narrative_unit_count": 26,
-        "target_narrative_part_count": 3,
-        "target_narrative_owner_route_count": 89,
-        "target_narrative_outline_path": "docs/human_reader_26_unit_outline.md",
-        "target_narrative_outline_state": "canonical_26_unit_manuscript_complete_public_html_deployed",
-        "historical_narrative_spine_path": "products/narrative_product_spine.json",
-        "target_outline_is_completed_manuscript": true,
-        "human_reader_current_manifest_path": "editions/reader_manuscript/current/manifest.json",
-        "human_reader_started_unit_count": 26,
-        "human_reader_target_length_unit_count": 26,
-        "human_reader_visible_word_count": 136415,
-        "deployed_cutover_record_path": "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json",
-        "deployed_source_commit": "d85a1b14fd7f4277a0deb1db22b30f605f3579a8",
-        "deployed_build_run_id": 31747729802,
-        "deployed_pages_run_id": 31749131391,
-        "deployed_owner_route_count": 87,
-        "local_browser_page_view_pair_count": 230,
-        "stale_active_product_count_literal_count": 0,
-        "em0_count_reconciliation_complete": true,
-        "completed_composition_packages": [
-          {
-            "id": "em2-method-detail-pilot",
-            "state": "composed_no_public_cutover",
-            "parent_ids": [
-              "compact-generative-systems-and-residual-honesty",
-              "resource-economics-and-token-budgets"
-            ],
-            "child_ids": [
-              "fast-generation-architectures",
-              "governed-deliberation-and-test-time-scaling",
-              "rankfold-neuralfold-and-artifact-compression"
-            ],
-            "stable_technical_routes_preserved": true,
-            "claim_support_inheritance": false,
-            "support_state_effect": "none",
-            "release_effect": "none"
-          },
-          {
-            "id": "em2-security-custody-publication-nests",
-            "state": "composed_no_public_cutover",
-            "parent_ids": [
-              "model-weight-custody-and-hardware-roots-of-trust",
-              "privacy-data-rights-and-information-flow-governance",
-              "security-kernel-and-digital-scifs"
-            ],
-            "child_ids": [
-              "adversarial-machine-learning-and-model-attack-surface",
-              "ai-supply-chain-integrity-and-lifecycle-provenance",
-              "confidential-and-verifiable-ai-computation",
-              "open-weight-release-and-post-release-control"
-            ],
-            "stable_technical_routes_preserved": true,
-            "claim_support_inheritance": false,
-            "support_state_effect": "none",
-            "release_effect": "none"
-          },
-          {
-            "id": "em2-white-box-evaluation-publication-nest",
-            "state": "composed_no_public_cutover",
-            "parent_ids": [
-              "adversarial-evaluation-sandbagging-and-training-time-deception"
-            ],
-            "child_ids": [
-              "white-box-evidence-interpretability-and-activation-governance"
-            ],
-            "stable_technical_routes_preserved": true,
-            "claim_support_inheritance": false,
-            "support_state_effect": "none",
-            "release_effect": "none"
-          },
-          {
-            "id": "em2-human-intent-and-institutional-governance-publication-nests",
-            "state": "composed_no_public_cutover",
-            "parent_ids": [
-              "constitutional-alignment-substrate",
-              "human-factors-and-meaningful-control-in-oversight",
-              "institutions-international-coordination-and-public-legitimacy",
-              "intent-to-execution-contracts"
-            ],
-            "child_ids": [
-              "human-ai-communication-persuasion-and-epistemic-security",
-              "human-intent-as-a-formal-input",
-              "moral-uncertainty-and-value-conflict",
-              "societal-resilience-and-misuse-defense"
-            ],
-            "stable_technical_routes_preserved": true,
-            "claim_support_inheritance": false,
-            "support_state_effect": "none",
-            "release_effect": "none"
-          },
+      "type": "object",
+      "properties": {
+        "id": {
+          "const": "2026-08-10-editorial-product-architecture-and-semantic-migration"
+        },
+        "state": {
+          "const": "em4_public_html_deployed_no_support_effect"
+        },
+        "review_baseline_commit": {
+          "const": "ce5b6181ff923e6183c52e7d78d16657ed289e18"
+        },
+        "reconciliation_input_commit": {
+          "const": "90f60c9f4bca340f170069d415893797b118252c"
+        },
+        "current_reference_chapter_count": {
+          "const": 89
+        },
+        "target_main_book_chapter_count": {
+          "const": 58
+        },
+        "target_primary_architecture_chapter_count": {
+          "const": 56
+        },
+        "target_implementation_method_chapter_count": {
+          "const": 2
+        },
+        "target_merge_count": {
+          "const": 18
+        },
+        "target_semantic_merge_count": {
+          "const": 0
+        },
+        "target_publication_nest_count": {
+          "const": 18
+        },
+        "target_profile_count": {
+          "const": 7
+        },
+        "target_dossier_owner_count": {
+          "const": 5
+        },
+        "target_visible_dossier_count": {
+          "const": 2
+        },
+        "target_back_matter_owner_count": {
+          "const": 1
+        },
+        "current_narrative_unit_count": {
+          "const": 22
+        },
+        "target_narrative_unit_count": {
+          "const": 26
+        },
+        "target_narrative_part_count": {
+          "const": 3
+        },
+        "target_narrative_owner_route_count": {
+          "const": 89
+        },
+        "target_narrative_outline_path": {
+          "const": "docs/human_reader_26_unit_outline.md"
+        },
+        "target_narrative_outline_state": {
+          "const": "canonical_26_unit_manuscript_complete_public_html_deployed"
+        },
+        "historical_narrative_spine_path": {
+          "const": "products/narrative_product_spine.json"
+        },
+        "target_outline_is_completed_manuscript": {
+          "const": true
+        },
+        "human_reader_current_manifest_path": {
+          "const": "editions/reader_manuscript/current/manifest.json"
+        },
+        "human_reader_started_unit_count": {
+          "const": 26
+        },
+        "human_reader_target_length_unit_count": {
+          "const": 26
+        },
+        "human_reader_visible_word_count": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Current local manuscript count, checked against editions/reader_manuscript/current/manifest.json; not a deployed-release count."
+        },
+        "deployed_cutover_record_path": {
+          "const": "release_records/2026-08-13-human-reader-html-cutover-d85a1b14f.json"
+        },
+        "deployed_source_commit": {
+          "const": "d85a1b14fd7f4277a0deb1db22b30f605f3579a8"
+        },
+        "deployed_build_run_id": {
+          "const": 31747729802
+        },
+        "deployed_pages_run_id": {
+          "const": 31749131391
+        },
+        "deployed_owner_route_count": {
+          "const": 87
+        },
+        "local_browser_page_view_pair_count": {
+          "const": 230
+        },
+        "stale_active_product_count_literal_count": {
+          "const": 0
+        },
+        "em0_count_reconciliation_complete": {
+          "const": true
+        },
+        "completed_composition_packages": {
+          "const": [
+            {
+              "id": "em2-method-detail-pilot",
+              "state": "composed_no_public_cutover",
+              "parent_ids": [
+                "compact-generative-systems-and-residual-honesty",
+                "resource-economics-and-token-budgets"
+              ],
+              "child_ids": [
+                "fast-generation-architectures",
+                "governed-deliberation-and-test-time-scaling",
+                "rankfold-neuralfold-and-artifact-compression"
+              ],
+              "stable_technical_routes_preserved": true,
+              "claim_support_inheritance": false,
+              "support_state_effect": "none",
+              "release_effect": "none"
+            },
+            {
+              "id": "em2-security-custody-publication-nests",
+              "state": "composed_no_public_cutover",
+              "parent_ids": [
+                "model-weight-custody-and-hardware-roots-of-trust",
+                "privacy-data-rights-and-information-flow-governance",
+                "security-kernel-and-digital-scifs"
+              ],
+              "child_ids": [
+                "adversarial-machine-learning-and-model-attack-surface",
+                "ai-supply-chain-integrity-and-lifecycle-provenance",
+                "confidential-and-verifiable-ai-computation",
+                "open-weight-release-and-post-release-control"
+              ],
+              "stable_technical_routes_preserved": true,
+              "claim_support_inheritance": false,
+              "support_state_effect": "none",
+              "release_effect": "none"
+            },
+            {
+              "id": "em2-white-box-evaluation-publication-nest",
+              "state": "composed_no_public_cutover",
+              "parent_ids": [
+                "adversarial-evaluation-sandbagging-and-training-time-deception"
+              ],
+              "child_ids": [
+                "white-box-evidence-interpretability-and-activation-governance"
+              ],
+              "stable_technical_routes_preserved": true,
+              "claim_support_inheritance": false,
+              "support_state_effect": "none",
+              "release_effect": "none"
+            },
+            {
+              "id": "em2-human-intent-and-institutional-governance-publication-nests",
+              "state": "composed_no_public_cutover",
+              "parent_ids": [
+                "constitutional-alignment-substrate",
+                "human-factors-and-meaningful-control-in-oversight",
+                "institutions-international-coordination-and-public-legitimacy",
+                "intent-to-execution-contracts"
+              ],
+              "child_ids": [
+                "human-ai-communication-persuasion-and-epistemic-security",
+                "human-intent-as-a-formal-input",
+                "moral-uncertainty-and-value-conflict",
+                "societal-resilience-and-misuse-defense"
+              ],
+              "stable_technical_routes_preserved": true,
+              "claim_support_inheritance": false,
+              "support_state_effect": "none",
+              "release_effect": "none"
+            },
             {
               "id": "em2-context-organization-and-exchange-publication-nests",
-            "state": "composed_no_public_cutover",
-            "parent_ids": [
-              "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
-              "inter-stack-protocols-identity-and-economic-exchange",
-              "virtual-context-abi"
-            ],
-            "child_ids": [
-              "context-transactions-snapshots-mounts-and-taint",
-              "human-ai-organizations-delegation-and-accountability",
-              "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
-            ],
-            "stable_technical_routes_preserved": true,
-            "claim_support_inheritance": false,
+              "state": "composed_no_public_cutover",
+              "parent_ids": [
+                "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+                "inter-stack-protocols-identity-and-economic-exchange",
+                "virtual-context-abi"
+              ],
+              "child_ids": [
+                "context-transactions-snapshots-mounts-and-taint",
+                "human-ai-organizations-delegation-and-accountability",
+                "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+              ],
+              "stable_technical_routes_preserved": true,
+              "claim_support_inheritance": false,
               "support_state_effect": "none",
               "release_effect": "none"
             },
@@ -481,129 +639,229 @@
               "support_state_effect": "none",
               "release_effect": "none"
             }
-        ],
-        "count_is_editorial_target_not_quality_metric": true,
-        "canonical_graph_owner": "book_structure.json",
-        "new_hand_maintained_source_of_truth_allowed": false,
-        "legacy_ids_preserved": true,
-        "legacy_urls_preserved": true,
-        "support_inheritance_allowed": false,
+          ]
+        },
+        "count_is_editorial_target_not_quality_metric": {
+          "const": true
+        },
+        "canonical_graph_owner": {
+          "const": "book_structure.json"
+        },
+        "new_hand_maintained_source_of_truth_allowed": {
+          "const": false
+        },
+        "legacy_ids_preserved": {
+          "const": true
+        },
+        "legacy_urls_preserved": {
+          "const": true
+        },
+        "support_inheritance_allowed": {
+          "const": false
+        },
         "merge_map": {
-          "adversarial-machine-learning-and-model-attack-surface": "security-kernel-and-digital-scifs",
-          "confidential-and-verifiable-ai-computation": "privacy-data-rights-and-information-flow-governance",
-          "ai-supply-chain-integrity-and-lifecycle-provenance": "model-weight-custody-and-hardware-roots-of-trust",
-          "human-ai-communication-persuasion-and-epistemic-security": "human-factors-and-meaningful-control-in-oversight",
-          "moral-uncertainty-and-value-conflict": "constitutional-alignment-substrate",
-          "societal-resilience-and-misuse-defense": "institutions-international-coordination-and-public-legitimacy",
-          "human-intent-as-a-formal-input": "intent-to-execution-contracts",
-          "context-transactions-snapshots-mounts-and-taint": "virtual-context-abi",
-          "white-box-evidence-interpretability-and-activation-governance": "adversarial-evaluation-sandbagging-and-training-time-deception",
-          "human-ai-organizations-delegation-and-accountability": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
-          "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "inter-stack-protocols-identity-and-economic-exchange",
-          "artifact-steward-agents-and-living-project-governance": "living-book-methodology",
-          "open-weight-release-and-post-release-control": "model-weight-custody-and-hardware-roots-of-trust",
-          "fast-generation-architectures": "resource-economics-and-token-budgets",
-          "governed-deliberation-and-test-time-scaling": "resource-economics-and-token-budgets",
-          "rankfold-neuralfold-and-artifact-compression": "compact-generative-systems-and-residual-honesty",
-          "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
-          "prototype-roadmap": "project-theseus-as-report-first-implementation-reference"
+          "const": {
+            "adversarial-machine-learning-and-model-attack-surface": "security-kernel-and-digital-scifs",
+            "confidential-and-verifiable-ai-computation": "privacy-data-rights-and-information-flow-governance",
+            "ai-supply-chain-integrity-and-lifecycle-provenance": "model-weight-custody-and-hardware-roots-of-trust",
+            "human-ai-communication-persuasion-and-epistemic-security": "human-factors-and-meaningful-control-in-oversight",
+            "moral-uncertainty-and-value-conflict": "constitutional-alignment-substrate",
+            "societal-resilience-and-misuse-defense": "institutions-international-coordination-and-public-legitimacy",
+            "human-intent-as-a-formal-input": "intent-to-execution-contracts",
+            "context-transactions-snapshots-mounts-and-taint": "virtual-context-abi",
+            "white-box-evidence-interpretability-and-activation-governance": "adversarial-evaluation-sandbagging-and-training-time-deception",
+            "human-ai-organizations-delegation-and-accountability": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "inter-stack-protocols-identity-and-economic-exchange",
+            "artifact-steward-agents-and-living-project-governance": "living-book-methodology",
+            "open-weight-release-and-post-release-control": "model-weight-custody-and-hardware-roots-of-trust",
+            "fast-generation-architectures": "resource-economics-and-token-budgets",
+            "governed-deliberation-and-test-time-scaling": "resource-economics-and-token-budgets",
+            "rankfold-neuralfold-and-artifact-compression": "compact-generative-systems-and-residual-honesty",
+            "open-ended-improvement-engines": "recursive-self-improvement-boundaries",
+            "prototype-roadmap": "project-theseus-as-report-first-implementation-reference"
+          }
         },
         "merge_mode_map": {
-          "adversarial-machine-learning-and-model-attack-surface": "publication_nest",
-          "confidential-and-verifiable-ai-computation": "publication_nest",
-          "ai-supply-chain-integrity-and-lifecycle-provenance": "publication_nest",
-          "human-ai-communication-persuasion-and-epistemic-security": "publication_nest",
-          "moral-uncertainty-and-value-conflict": "publication_nest",
-          "societal-resilience-and-misuse-defense": "publication_nest",
-          "human-intent-as-a-formal-input": "publication_nest",
-          "context-transactions-snapshots-mounts-and-taint": "publication_nest",
-          "white-box-evidence-interpretability-and-activation-governance": "publication_nest",
-          "human-ai-organizations-delegation-and-accountability": "publication_nest",
-          "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "publication_nest",
-          "artifact-steward-agents-and-living-project-governance": "publication_nest",
-          "open-weight-release-and-post-release-control": "publication_nest",
-          "fast-generation-architectures": "method_detail_nest",
-          "governed-deliberation-and-test-time-scaling": "publication_nest",
-          "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
-          "open-ended-improvement-engines": "publication_nest",
-          "prototype-roadmap": "publication_nest"
+          "const": {
+            "adversarial-machine-learning-and-model-attack-surface": "publication_nest",
+            "confidential-and-verifiable-ai-computation": "publication_nest",
+            "ai-supply-chain-integrity-and-lifecycle-provenance": "publication_nest",
+            "human-ai-communication-persuasion-and-epistemic-security": "publication_nest",
+            "moral-uncertainty-and-value-conflict": "publication_nest",
+            "societal-resilience-and-misuse-defense": "publication_nest",
+            "human-intent-as-a-formal-input": "publication_nest",
+            "context-transactions-snapshots-mounts-and-taint": "publication_nest",
+            "white-box-evidence-interpretability-and-activation-governance": "publication_nest",
+            "human-ai-organizations-delegation-and-accountability": "publication_nest",
+            "multi-agent-dynamics-collective-intelligence-and-systemic-risk": "publication_nest",
+            "artifact-steward-agents-and-living-project-governance": "publication_nest",
+            "open-weight-release-and-post-release-control": "publication_nest",
+            "fast-generation-architectures": "method_detail_nest",
+            "governed-deliberation-and-test-time-scaling": "publication_nest",
+            "rankfold-neuralfold-and-artifact-compression": "method_detail_nest",
+            "open-ended-improvement-engines": "publication_nest",
+            "prototype-roadmap": "publication_nest"
+          }
         },
         "profile_map": {
-          "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
-          "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
-          "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": "neurotechnology-and-cognitive-sovereignty",
-          "ai-deployment-transition-distribution-and-human-agency": "ai-deployment-distribution-and-human-agency",
-          "scientific-discovery-and-experimental-governance": "scientific-discovery-and-experimental-governance",
-          "content-authenticity-watermarking-and-synthetic-media-integrity": "content-authenticity-and-synthetic-media-integrity",
-          "personal-compute-hives-and-federated-edge-intelligence": "personal-and-federated-edge-intelligence"
+          "const": {
+            "military-ai-autonomous-weapons-and-strategic-stability": "military-ai-and-strategic-stability",
+            "embodied-agency-real-time-control-and-physical-safety": "embodied-agency-and-physical-safety",
+            "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty": "neurotechnology-and-cognitive-sovereignty",
+            "ai-deployment-transition-distribution-and-human-agency": "ai-deployment-distribution-and-human-agency",
+            "scientific-discovery-and-experimental-governance": "scientific-discovery-and-experimental-governance",
+            "content-authenticity-watermarking-and-synthetic-media-integrity": "content-authenticity-and-synthetic-media-integrity",
+            "personal-compute-hives-and-federated-edge-intelligence": "personal-and-federated-edge-intelligence"
+          }
         },
         "dossier_map": {
-          "relational-dimension-compilation-and-polyadic-cognition": "experimental-mathematical-and-relational-substrates",
-          "mathematical-and-search-substrates": "experimental-mathematical-and-relational-substrates",
-          "circle-calculus-and-proof-carrying-ai-contracts": "cyclic-and-proof-carrying-substrates",
-          "coil-attention-cyclic-memory-and-recurrence-contracts": "cyclic-and-proof-carrying-substrates",
-          "coilra-multicoil-rope-and-cyclic-mixers": "cyclic-and-proof-carrying-substrates"
+          "const": {
+            "relational-dimension-compilation-and-polyadic-cognition": "experimental-mathematical-and-relational-substrates",
+            "mathematical-and-search-substrates": "experimental-mathematical-and-relational-substrates",
+            "circle-calculus-and-proof-carrying-ai-contracts": "cyclic-and-proof-carrying-substrates",
+            "coil-attention-cyclic-memory-and-recurrence-contracts": "cyclic-and-proof-carrying-substrates",
+            "coilra-multicoil-rope-and-cyclic-mixers": "cyclic-and-proof-carrying-substrates"
+          }
         },
         "back_matter_map": {
-          "open-research-agenda-and-bibliography-plan": "generated-open-research-registry"
+          "const": {
+            "open-research-agenda-and-bibliography-plan": "generated-open-research-registry"
+          }
         },
-        "implementation_method_ids": [
-          "project-theseus-as-report-first-implementation-reference",
-          "living-book-methodology"
-        ],
+        "implementation_method_ids": {
+          "const": [
+            "project-theseus-as-report-first-implementation-reference",
+            "living-book-methodology"
+          ]
+        },
         "recent_owner_reviews": {
-          "learning-compute-topology-and-adaptive-process-architecture": {
-            "disposition": "retain_primary_architecture_owner",
-            "strongest_neighbors": [
-              "governed-model-training-distributed-optimization-and-scaling",
-              "policy-optimization-and-learning-from-feedback",
-              "resource-economics-and-token-budgets",
-              "routing-heads-and-specialist-cores"
-            ],
-            "exit_test": "independent encoders fail useful topology agreement or matched-resource interventions show no explanatory, control, or outcome value"
-          },
-          "adjudicated-persistence-and-the-adaptive-commit-boundary": {
-            "disposition": "retain_primary_architecture_owner",
-            "strongest_neighbors": [
-              "procedural-memory-and-cognitive-loop-closure",
-              "cognitive-compilation-and-semantic-ir",
-              "data-engines-continual-learning-and-unlearning",
-              "policy-optimization-and-learning-from-feedback"
-            ],
-            "exit_test": "competent fixed-locus or human-reviewed policies match decision quality and recovery at lower whole-lifecycle cost"
+          "const": {
+            "learning-compute-topology-and-adaptive-process-architecture": {
+              "disposition": "retain_primary_architecture_owner",
+              "strongest_neighbors": [
+                "governed-model-training-distributed-optimization-and-scaling",
+                "policy-optimization-and-learning-from-feedback",
+                "resource-economics-and-token-budgets",
+                "routing-heads-and-specialist-cores"
+              ],
+              "exit_test": "independent encoders fail useful topology agreement or matched-resource interventions show no explanatory, control, or outcome value"
+            },
+            "adjudicated-persistence-and-the-adaptive-commit-boundary": {
+              "disposition": "retain_primary_architecture_owner",
+              "strongest_neighbors": [
+                "procedural-memory-and-cognitive-loop-closure",
+                "cognitive-compilation-and-semantic-ir",
+                "data-engines-continual-learning-and-unlearning",
+                "policy-optimization-and-learning-from-feedback"
+              ],
+              "exit_test": "competent fixed-locus or human-reviewed policies match decision quality and recovery at lower whole-lifecycle cost"
+            }
           }
         },
         "source_only_intake_dispositions": {
-          "assurance_shift_learning": "cross_owner_integration_no_new_chapter"
+          "const": {
+            "assurance_shift_learning": "cross_owner_integration_no_new_chapter"
+          }
         },
-        "narrative_unit_21_title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
-        "migration_phases": [
-          "EM0-structural-truth",
-          "EM1-metadata-only-disposition",
-          "EM2-semantic-ownership-migration",
-          "EM3-independent-26-unit-human-narrative",
-          "EM4-redirect-validate-and-release"
-        ],
-        "chapter_retention_tests": [
-          "owned_object",
-          "owned_transition",
-          "irreducible_failure",
-          "broad_reuse",
-          "distinct_neighbor_boundary",
-          "falsifiable_exit"
-        ],
-        "required_primary_chapter_fields": [
-          "local_delta",
-          "owned_object",
-          "owned_transition",
-          "unique_invariants",
-          "unique_failure_modes",
-          "strongest_neighbor",
-          "exit_test"
-        ],
-        "support_state_effect": "none",
-        "release_effect": "none"
-      }
+        "narrative_unit_21_title": {
+          "const": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning"
+        },
+        "migration_phases": {
+          "const": [
+            "EM0-structural-truth",
+            "EM1-metadata-only-disposition",
+            "EM2-semantic-ownership-migration",
+            "EM3-independent-26-unit-human-narrative",
+            "EM4-redirect-validate-and-release"
+          ]
+        },
+        "chapter_retention_tests": {
+          "const": [
+            "owned_object",
+            "owned_transition",
+            "irreducible_failure",
+            "broad_reuse",
+            "distinct_neighbor_boundary",
+            "falsifiable_exit"
+          ]
+        },
+        "required_primary_chapter_fields": {
+          "const": [
+            "local_delta",
+            "owned_object",
+            "owned_transition",
+            "unique_invariants",
+            "unique_failure_modes",
+            "strongest_neighbor",
+            "exit_test"
+          ]
+        },
+        "support_state_effect": {
+          "const": "none"
+        },
+        "release_effect": {
+          "const": "none"
+        }
+      },
+      "required": [
+        "id",
+        "state",
+        "review_baseline_commit",
+        "reconciliation_input_commit",
+        "current_reference_chapter_count",
+        "target_main_book_chapter_count",
+        "target_primary_architecture_chapter_count",
+        "target_implementation_method_chapter_count",
+        "target_merge_count",
+        "target_semantic_merge_count",
+        "target_publication_nest_count",
+        "target_profile_count",
+        "target_dossier_owner_count",
+        "target_visible_dossier_count",
+        "target_back_matter_owner_count",
+        "current_narrative_unit_count",
+        "target_narrative_unit_count",
+        "target_narrative_part_count",
+        "target_narrative_owner_route_count",
+        "target_narrative_outline_path",
+        "target_narrative_outline_state",
+        "historical_narrative_spine_path",
+        "target_outline_is_completed_manuscript",
+        "human_reader_current_manifest_path",
+        "human_reader_started_unit_count",
+        "human_reader_target_length_unit_count",
+        "human_reader_visible_word_count",
+        "deployed_cutover_record_path",
+        "deployed_source_commit",
+        "deployed_build_run_id",
+        "deployed_pages_run_id",
+        "deployed_owner_route_count",
+        "local_browser_page_view_pair_count",
+        "stale_active_product_count_literal_count",
+        "em0_count_reconciliation_complete",
+        "completed_composition_packages",
+        "count_is_editorial_target_not_quality_metric",
+        "canonical_graph_owner",
+        "new_hand_maintained_source_of_truth_allowed",
+        "legacy_ids_preserved",
+        "legacy_urls_preserved",
+        "support_inheritance_allowed",
+        "merge_map",
+        "merge_mode_map",
+        "profile_map",
+        "dossier_map",
+        "back_matter_map",
+        "implementation_method_ids",
+        "recent_owner_reviews",
+        "source_only_intake_dispositions",
+        "narrative_unit_21_title",
+        "migration_phases",
+        "chapter_retention_tests",
+        "required_primary_chapter_fields",
+        "support_state_effect",
+        "release_effect"
+      ],
+      "additionalProperties": false
     },
     "quality_uplift_program": {
       "type": "object",
@@ -1046,7 +1304,7 @@
               "const": "evidence_quality/current_chapter_role_map.json"
             },
             "reference_chapter_count": {
-            "const": 89
+              "const": 89
             },
             "narrative_unit_target": {
               "const": 22

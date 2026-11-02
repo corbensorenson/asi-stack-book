@@ -1,0 +1,13 @@
+# Isolated publication/schema profile, resolved and exercised on Python 3.11.
+# Transitive pins keep the referencing implementation reproducible.
+attrs==26.1.0
+jsonschema==4.24.0
+jsonschema-specifications==2025.9.1
+referencing==0.37.0
+rpds-py==2026.6.3
+typing_extensions==4.16.0
+PyYAML==6.0.3
+
+# Sequence-level infrastructure custody checks (Python >=3.10).
+hypothesis==6.168.3
+sortedcontainers==2.4.0

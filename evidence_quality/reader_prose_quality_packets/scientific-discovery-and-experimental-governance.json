@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "scientific-discovery-and-experimental-governance",
   "chapter_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-  "chapter_sha256": "10a415cf64b0cdcfc3c5fcf763aa0066fc4b1d59f899fb141b2d80778942b896",
+  "chapter_sha256": "966cb5b47ff6351ffccb1d897ce76eaba798892b986cf631194b5a8168cb6b45",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-18-developmental-learning",
   "review_state": "digest_bound_editorial_pass",
@@ -17,18 +17,55 @@
   },
   "worked_trace": {
     "heading": "Worked attempt ledger: positive, null, and inconclusive stay together",
-    "state_labels": ["hypothesis_bound", "confirmatory_preregistered", "positive_null_inconclusive", "protected_outcome_unopened", "bounded_claim_only"],
-    "source_or_fixture_refs": ["tests/fixtures/proof_models/scientific_experiment_dossier.json", "evidence_quality/proof_model_dossiers/scientific-discovery-and-experimental-governance.md"],
+    "state_labels": [
+      "hypothesis_bound",
+      "confirmatory_preregistered",
+      "positive_null_inconclusive",
+      "protected_outcome_unopened",
+      "bounded_claim_only"
+    ],
+    "source_or_fixture_refs": [
+      "tests/fixtures/proof_models/scientific_experiment_dossier.json",
+      "evidence_quality/proof_model_dossiers/scientific-discovery-and-experimental-governance.md"
+    ],
     "maximum_inference": "The finite review demonstrates attempt and preregistration custody, scope invalidation, and non-identifiability of integrity or independence from headline summaries; it establishes no truth, causality, instrument accuracy, reproducibility, discovery, or laboratory safety."
   },
   "counterexample_or_simpler_baseline": "The simpler baseline publishes the positive attempt and calls repeated execution replication. The chapter preserves null and inconclusive attempts and asks whether the confirmatory and replication paths were actually independent.",
   "readable_claim": "A positive experiment is not a discovery when the null and inconclusive attempts disappeared, the confirmatory branch saw the outcome, or the replication shares the same hidden dependency.",
   "normative_rule": "Freeze hypothesis ancestry, exploratory or confirmatory status, outcomes, sampling, stopping, exclusions, analysis, instrument scope, and claim ceiling before protected results open. Preserve every attempt and require independently qualified replication; omitted attempts or outcome exposed confirmation block the claim.",
-  "formal_binding": {"claim_id": "scientific-discovery-and-experimental-governance.core", "support_state": "argument", "anchor": "preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status"},
-  "claim_atom_and_source_links": ["scientific-discovery-and-experimental-governance.core", "ext_autonomous_lab_materials_2023", "aletheia"],
-  "caveat_consolidation": {"local_caveat": "The worked ledger states once that its three attempts and branch fields are authored rather than a laboratory result.", "consolidated_disposition": "Hypothesis ancestry, power, calibration, instrument authority, attempts, stopping, exclusions, analysis, replication, dual use, correction, causality, and safety limits remain distinct.", "distinct_limitations_preserved": true},
+  "formal_binding": {
+    "claim_id": "scientific-discovery-and-experimental-governance.core",
+    "support_state": "argument",
+    "anchor": "preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status"
+  },
+  "claim_atom_and_source_links": [
+    "scientific-discovery-and-experimental-governance.core",
+    "ext_autonomous_lab_materials_2023",
+    "aletheia"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The worked ledger states once that its three attempts and branch fields are authored rather than a laboratory result.",
+    "consolidated_disposition": "Hypothesis ancestry, power, calibration, instrument authority, attempts, stopping, exclusions, analysis, replication, dual use, correction, causality, and safety limits remain distinct.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "Attempt IDs 21–23 remain because denominator custody is the argument; exhaustive 54-axis and lifecycle inventories remain in formal evidence surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and rule separate selective reporting, preregistration, and replication from the full formal contract.", "hedge_disposition": "The authored-dossier boundary is consolidated while truth, causality, instruments, replication, dual use, and laboratory safety remain separate.", "table_disposition": "Attempt and source-role tables remain where they preserve search denominators and evidence authority rather than project status."},
-  "non_claims": ["The three-attempt dossier is not a laboratory experiment or discovery result.", "The finite review does not establish truth, causality, reproducibility, instrument accuracy, or laboratory safety.", "The editorial revision does not move chapter-core support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The reader claim and rule separate selective reporting, preregistration, and replication from the full formal contract.",
+    "hedge_disposition": "The authored-dossier boundary is consolidated while truth, causality, instruments, replication, dual use, and laboratory safety remain separate.",
+    "table_disposition": "Attempt and source-role tables remain where they preserve search denominators and evidence authority rather than project status."
+  },
+  "non_claims": [
+    "The three-attempt dossier is not a laboratory experiment or discovery result.",
+    "The finite review does not establish truth, causality, reproducibility, instrument accuracy, or laboratory safety.",
+    "The editorial revision does not move chapter-core support or release state.",
+    "2026-11-02 selected Atlas working-paper case added after its existing mechanism explanation. Its numbers remain source-reported with inference/private-data limits; original reader claim, rule, core, proof and experiment outcomes retain their scope. The full study stays in the source library. No new model/campaign, independent replication, support movement, author approval or release is inferred."
+  ]
 }

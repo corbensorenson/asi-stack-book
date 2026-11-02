@@ -6,7 +6,7 @@
   "required": ["schema_version", "recorded_date", "scope", "summary", "term_counts", "forbidden_hits", "required_boundary_failures", "blocked_chapter_boundary_failures", "surfaces", "excluded_historical_scope", "non_claims"],
   "properties": {
     "schema_version": {"const": "asi_stack.negative_inference_surface_audit.v1"},
-    "recorded_date": {"const": "2026-07-17"},
+    "recorded_date": {"type": "string", "format": "date", "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"},
     "scope": {
       "type": "object",
       "required": ["surface_count", "chapter_count", "public_and_derivative_surface_count", "historical_transition_files_mutated", "historical_roadmaps_treated_as_current_prose"],

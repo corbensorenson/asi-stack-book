@@ -168,7 +168,21 @@ def main() -> None:
     failures = artifact_errors(artifact)
     rebuilt = load_builder().build()
     if rebuilt != artifact:
-        failures.append("tracked W3 artifact does not match a fresh deterministic rebuild")
+        failures.append("tracked W3 artifact does not match its retained terminal custody inputs")
+    # Today's prose has its own admission check; its token totals cannot rewrite
+    # an authentic historical closure. Preserve actual distinctness and meaning.
+    current = load_builder().build(current=True)
+    measurements = current['measurements']
+    if measurements['editorial_narrative']['current']['distinct_repeated_12_grams']:
+        failures.append('current legacy corpus regressed to inherited high-spread prose')
+    for key in ('mermaid_fingerprints', 'codex_test_table_fingerprints'):
+        if measurements[key]['current']['maximum_chapter_spread']:
+            failures.append(f'current legacy corpus regressed: {key}')
+    for row in current['semantic_diff_review']:
+        if not all(row[key] for key in ('methodology_link_present', 'common_diagram_removed', 'common_test_scaffold_removed')):
+            failures.append(f"{row['chapter_id']}: current distinctness boundary regressed")
+        if any(row['missing_meaning_atoms'].values()) or row['support_state_movement']:
+            failures.append(f"{row['chapter_id']}: current meaning custody changed; explicit review required")
     copied_errors = admission_errors(COPIED.read_text(encoding="utf-8"))
     distinct_errors = admission_errors(DISTINCT.read_text(encoding="utf-8"))
     if not copied_errors:
@@ -210,18 +224,18 @@ def main() -> None:
         ("support moved", lambda value: value["meaning_custody"].__setitem__("chapter_core_support_movements", 1)),
         ("publication invented", lambda value: value.__setitem__("publication_effect", "published")),
     ]
-    baseline_errors = set(artifact_errors(artifact))
-    for label, mutation in mutations:
-        candidate = copy.deepcopy(artifact)
-        mutation(candidate)
-        if not set(artifact_errors(candidate)) - baseline_errors:
-            failures.append(f"negative mutation accepted: {label}")
+    if not artifact_errors(artifact):
+        for label, mutation in mutations:
+            candidate = copy.deepcopy(artifact)
+            mutation(candidate)
+            if not artifact_errors(candidate):
+                failures.append(f"negative mutation accepted: {label}")
     if len(mutations) != artifact["prospective_guard"]["negative_mutations_rejected"]:
         failures.append("negative mutation denominator drifted")
     if failures:
         raise SystemExit("P7.1a W3 inheritance guard failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.1a W3 inheritance guard passed: 84 chapters; editorial repeated "
+        "P7.1a W3 inheritance guard passed: retained 84-chapter custody and current legacy-corpus boundaries; historical editorial repeated "
         "12-grams 812 -> 0; copied diagram/test spread 10 -> 0; copied fixture "
         "rejected; distinct fixture accepted; 18 mutations rejected; support effect none."
     )

@@ -4,7 +4,7 @@ chapter_id: "reflexive-model-world-systems"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "integrated_argument_chapter"
-last_updated: "2026-08-14"
+last_updated: "2026-10-02"
 primary_sources:
   - "reflexive_model_world_systems"
 evidence_level: "argument"
@@ -28,6 +28,8 @@ open_evidence_gaps:
 | Source loading state | Exact author manuscript and bounded source note reviewed; no support promotion |
 | Local reproduction | Not run: the supplied simulation requires unavailable `scikit-learn` |
 
+## Drafting guardrail
+
 ::: {.callout-important title="Evidence boundary"}
 The source package reports three deterministic toy campaigns and supplies their code and result files. Those results are useful mechanistic examples, but they were not reproduced during this intake and do not estimate effects in a deployed social, medical, institutional, or frontier-model system. This chapter therefore remains at `argument` support.
 :::
@@ -37,11 +39,11 @@ The source package reports three deterministic toy campaigns and supplies their 
 
 **Concrete lens.** A hospital alarm prevents the event it predicted, and the next training run mistakes the prevention for a false alarm.
 
-Prediction changes character profoundly when people or institutions react to it. A credit score can change access to credit, a recommendation can reshape taste, and a medical warning can cause treatment that changes the outcome later used as a label. Once those reactions feed a successor model, the system is learning from a world partly made by its own lineage.
+Prediction changes when people or institutions react to what it recommends. A credit score can change access to credit, a recommendation can reshape taste, and a medical warning can cause treatment that changes the outcome later used as a label. When reactions train a successor, it learns from a world partly made by its lineage.
 
 That loop does not make the evidence worthless. It changes what the evidence can answer. An outcome observed after intervention describes the deployed policy, not automatically the world without intervention. A human-written record may still descend from a model if the model selected who was seen, what was measured, or which work received attention. Provenance must therefore include causal ancestry and target regime, not only authorship or file history.
 
-Grounding reserves preserve comparison points that deployment cannot easily absorb: shadow policies, randomized sentinels, independent institutions, protected sensors, archives, or deliberately varied deployments. Each reserve can fail or become stale, so it carries uncertainty and a declared query rather than a blanket badge of independence.
+Grounding reserves preserve comparisons that deployment cannot absorb: shadow policies, randomized sentinels, independent institutions, protected sensors, archives, or deliberately varied deployments. Each reserve can fail or become stale, so it carries uncertainty and a declared query rather than a blanket badge of independence.
 
 Rollback also reaches beyond software. Restoring yesterday's weights cannot restore a vanished comparison group, an altered institution, or years of model-shaped data. A governed lineage must track those persistent effects and admit when the original counterfactual can no longer be recovered.
 :::
@@ -233,7 +235,7 @@ The implementation should also include rejecting fixtures. Remove the deployment
 
 ## Mature Research Target
 
-The mature system is a multi-lineage reflexive-governance plane. It estimates causal influence over evidence, preferences, institutions, and successor systems; maintains diversified grounding as public epistemic infrastructure; detects epistemic capture before on-policy success launders it; runs randomized probes and trajectory stress tests; constrains performative channels; and coordinates socio-technical rollback.
+This research target is a multi-lineage reflexive-governance plane; it is not a current result. It estimates causal influence over evidence, preferences, institutions, and successor systems; maintains diversified grounding as public epistemic infrastructure; detects epistemic capture before on-policy success launders it; runs randomized probes and trajectory stress tests; constrains performative channels; and coordinates socio-technical rollback.
 
 Formal methods may prove finite custody, authority, and rollback obligations. They cannot prove that a social objective is legitimate, a causal graph is complete, a grounding reserve is adequate in the world, or a global trajectory is safe. Those remain empirical and institutional obligations.
 
@@ -252,13 +254,13 @@ The following are planned proof targets, not implemented theorems. Their intende
 
 ## Codex test plan
 
-| Target | Current state | Honest next step |
+| Test | Purpose | Status |
 |---|---|---|
-| Augmented-state finite countermodel | planned | Mechanize two equal external states whose model states imply different successor routes. |
-| Rollback non-restoration | planned | Mechanize persistent institutional state and show model restoration does not recover the initial state. |
-| Supplied simulation reproduction | blocked | Pin `scikit-learn` and all dependencies, rerun every seed, and compare exact summaries. |
-| Evidence-ancestry mutations | planned | Reject missing lineage, target regime, exposure, identification, anchor, and rollback fields. |
-| Reflexive benchmark | planned | Add outcome, exposure, preference, measurement, institution, and cross-lineage interventions. |
+| Augmented-state finite countermodel | Mechanize two equal external states whose model states imply different successor routes. | planned |
+| Rollback non-restoration | Mechanize persistent institutional state and show model restoration does not recover the initial state. | planned |
+| Supplied simulation reproduction | Pin `scikit-learn` and all dependencies, rerun every seed, and compare exact summaries. | blocked |
+| Evidence-ancestry mutations | Reject missing lineage, target regime, exposure, identification, anchor, and rollback fields. | planned |
+| Reflexive benchmark | Add outcome, exposure, preference, measurement, institution, and cross-lineage interventions. | planned |
 
 ## Source crosswalk
 
@@ -282,7 +284,7 @@ These rows keep Reflexive Model-World Systems's manifest assignments visible at 
 
 When a deployed learner helps generate its own future evidence, observation is no longer an automatically independent reality check. The stack must model deployment, world and institutional state, evidence ancestry, successor updates, and interacting lineages as one causal process. It must preserve informative anchors, state which regime each dataset identifies, separate prediction from steering and legitimacy, and roll back persistent consequences rather than only code.
 
-The architecture earns value only when those distinctions alter decisions: which estimand is computed, which evidence is admitted, which experiment is required, which authority may act, and which residual survives rollback. The supplied paper and toy campaigns motivate that contract but do not validate it in deployment. The chapter remains an argument with planned finite proofs, an unreproduced local experiment package, and a clear empirical burden.
+The architecture earns value only when those distinctions alter decisions: which estimand is computed, which evidence is admitted, which experiment is required, which authority may act, and which residual survives rollback. The supplied paper and toy campaigns motivate that contract but do not validate it in deployment. RMWS remains an argument with planned finite proofs, an unreproduced local experiment package, and a clear empirical burden.
 
 ## Handoff
 

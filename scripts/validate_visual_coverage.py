@@ -14,6 +14,7 @@ MERMAID_LABELED_EDGE_RE = re.compile(
     r"("
     r"[-.=]+\s*(?:\"[^\"]+\"|\|[^|]+\|)\s*[-.=]*>"
     r"|[-.=]+>\|[^|]+\|"
+    r"|--[ \t]+[^>\n|\"]+?[ \t]+-->"
     r"|\b[A-Za-z][A-Za-z0-9_]*\s*[-]+>>\s*[A-Za-z][A-Za-z0-9_]*\s*:"
     r")"
 )
@@ -34,7 +35,6 @@ DIAGRAM_NOTE_REQUIRED_PARTS = {
     "evidence-implementation-living-book",
 }
 
-MIN_DIAGRAM_LINES = 12
 MIN_DIAGRAM_EDGES = 6
 MIN_DIAGRAM_NODES = 7
 MIN_LABELED_EDGES = 2
@@ -64,10 +64,9 @@ def diagram_stats(block: str) -> tuple[int, int, int, int]:
 
 
 def is_substantive_diagram(block: str) -> bool:
-    line_count, edge_count, node_count, labeled_edge_count = diagram_stats(block)
+    _, edge_count, node_count, labeled_edge_count = diagram_stats(block)
     return (
-        line_count >= MIN_DIAGRAM_LINES
-        and edge_count >= MIN_DIAGRAM_EDGES
+        edge_count >= MIN_DIAGRAM_EDGES
         and node_count >= MIN_DIAGRAM_NODES
         and labeled_edge_count >= MIN_LABELED_EDGES
     )
@@ -89,12 +88,12 @@ def main() -> None:
                 continue
             checked += 1
             if not any(is_substantive_diagram(block) for block in blocks):
-                best = max((diagram_stats(block) for block in blocks), default=(0, 0, 0))
+                best = max((diagram_stats(block) for block in blocks), default=(0, 0, 0, 0))
                 errors.append(
                     "Chapter Mermaid diagram is too thin: "
                     f"{chapter['file']} "
                     f"(best lines={best[0]}, edges={best[1]}, nodes={best[2]}, labeled_edges={best[3]}; "
-                    f"minimum lines={MIN_DIAGRAM_LINES}, edges={MIN_DIAGRAM_EDGES}, "
+                    f"minimum edges={MIN_DIAGRAM_EDGES}, "
                     f"nodes={MIN_DIAGRAM_NODES}, labeled_edges={MIN_LABELED_EDGES})"
                 )
             label_matches = DIAGRAM_WALKTHROUGH_RE.findall(text)

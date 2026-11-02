@@ -4,6 +4,8 @@
 project:
   type: book
   output-dir: _site
+  pre-render:
+    - python3 scripts/admission_guard.py
   resources:
     - "!chapters/*.html"
     - "!chapters/*_files/**"
@@ -245,6 +247,9 @@ book:
     - appendices/J_release_editions.qmd
     - appendices/K_implementation_horizons.qmd
 
+filters:
+  - assets/filters/chapter-freshness.lua
+
 format:
   html:
     toc: true
@@ -256,6 +261,7 @@ format:
     include-before-body:
       - assets/skip-link.html
     include-after-body:
+      - assets/search-navigation.html
       - assets/reader-overlays.html
       - assets/reading-mode.html
     link-external-newwindow: true

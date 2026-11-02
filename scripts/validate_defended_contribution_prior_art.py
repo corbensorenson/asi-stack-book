@@ -112,7 +112,8 @@ def main() -> None:
 
     print(
         "Defended contribution prior-art validation passed: "
-        f"{len(TRACK_IDS)} tracks positioned against {len(SOURCE_IDS)} source-noted comparators."
+        f"historical {len(TRACK_IDS)}-track/{len(SOURCE_IDS)}-source positioning retained; "
+        "current comparison references are checked by the contribution focus validator."
     )
 
 

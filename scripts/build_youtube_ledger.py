@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 from datetime import datetime, timezone
 from pathlib import Path
@@ -226,11 +227,20 @@ def build() -> dict:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--check', action='store_true', help='Verify ledger without changing tracked files')
+    args = parser.parse_args()
     value = build()
-    OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
+    previous = load(OUT) if OUT.is_file() else None
+    comparable = {**value, 'generated_at_utc': previous['generated_at_utc']} if previous else value
+    changed = previous != comparable
+    if args.check and changed:
+        raise SystemExit('YouTube ledger is stale; reconcile its manifest owner before rebuilding this projection.')
+    if not args.check and changed:
+        OUT.write_text(json.dumps(value, indent=2) + '\n', encoding='utf-8')
     counts = value["counts"]
     print(
-        "Built YouTube ledger: "
+        f"{'Checked' if args.check else 'Reconciled'} YouTube ledger: "
         f"{counts['total_chapters']} chapters, "
         f"{counts['packets_present']} packets, "
         f"{counts['youtube_objects']} platform objects, "

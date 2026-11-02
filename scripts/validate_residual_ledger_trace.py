@@ -2,15 +2,18 @@
 from __future__ import annotations
 
 import argparse
+from datetime import datetime, timezone
 import hashlib
 import json
 import re
 import sys
 from pathlib import Path
 from typing import Any
+from repository_custody import historical_bytes
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CUSTODY_COMMIT = "38a69c05ab310b7c34cacdbe93b70040b26236bd"
 MANIFEST = ROOT / "experiments" / "residual_ledger_trace" / "input" / "artifact_manifest.json"
 RESULT = ROOT / "experiments" / "residual_ledger_trace" / "results" / "2026-07-03-local.json"
 DOC = ROOT / "docs" / "residual_ledger_trace.md"
@@ -113,15 +116,21 @@ def validate_manifest(manifest: dict[str, Any], errors: list[str]) -> None:
             errors.append(f"{rel(MANIFEST)} missing boundary {phrase!r}.")
 
 
-def build_result(errors: list[str]) -> dict[str, Any]:
-    manifest = load_json(MANIFEST)
+def build_result(errors: list[str], *, historical: bool = True) -> dict[str, Any]:
+    def input_bytes(path: Path) -> bytes:
+        return historical_bytes(CUSTODY_COMMIT, rel(path)) if historical else path.read_bytes()
+
+    def input_json(path: Path) -> Any:
+        return json.loads(input_bytes(path))
+
+    manifest = input_json(MANIFEST)
     validate_manifest(manifest, errors)
 
-    resource_flagship = load_json(RESOURCE_FLAGSHIP)
-    resource_workflow = load_json(RESOURCE_WORKFLOW)
-    compact_gvr = load_json(COMPACT_GVR)
-    residual_conservation = load_json(RESIDUAL_CONSERVATION)
-    readiness_text = READINESS_RESULT.read_text(encoding="utf-8")
+    resource_flagship = input_json(RESOURCE_FLAGSHIP)
+    resource_workflow = input_json(RESOURCE_WORKFLOW)
+    compact_gvr = input_json(COMPACT_GVR)
+    residual_conservation = input_json(RESIDUAL_CONSERVATION)
+    readiness_text = input_bytes(READINESS_RESULT).decode("utf-8")
 
     if resource_flagship.get("chapter_core_support_effect") != "none":
         errors.append(f"{rel(RESOURCE_FLAGSHIP)} must preserve chapter_core_support_effect=none.")
@@ -251,7 +260,7 @@ def build_result(errors: list[str]) -> dict[str, Any]:
         "manifest_ref": rel(MANIFEST),
         "result_kind": "cross_artifact_residual_ledger_trace",
         "source_artifact_hashes": {
-            rel(path): sha256_file(path)
+            rel(path): hashlib.sha256(input_bytes(path)).hexdigest()
             for path in [
                 RESOURCE_FLAGSHIP,
                 RESOURCE_WORKFLOW,
@@ -285,15 +294,13 @@ def build_result(errors: list[str]) -> dict[str, Any]:
 def validate_result(expected: dict[str, Any], write_result: bool, errors: list[str]) -> None:
     serialized = json.dumps(expected, indent=2, sort_keys=True) + "\n"
     if write_result:
-        RESULT.parent.mkdir(parents=True, exist_ok=True)
-        RESULT.write_text(serialized, encoding="utf-8")
-        return
+        raise ValueError("dated residual trace is frozen; use --current-output build/residual_ledger_trace/current.json")
     if not RESULT.exists():
-        errors.append(f"Missing {rel(RESULT)}; run {COMMAND} --write-result.")
+        errors.append(f"Missing historical {rel(RESULT)}; restore its exact custody bytes.")
         return
     actual = RESULT.read_text(encoding="utf-8")
     if actual != serialized:
-        errors.append(f"{rel(RESULT)} is stale; run {COMMAND} --write-result.")
+        errors.append(f"{rel(RESULT)} differs from its historical custody recomputation.")
 
 
 def validate_surfaces(errors: list[str]) -> None:
@@ -460,7 +467,10 @@ def validate_lean_shape(errors: list[str]) -> None:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--write-result", action="store_true")
+    parser.add_argument("--current-output", type=Path, help="write a current diagnostic under ignored build/ without rewriting historical evidence")
     args = parser.parse_args()
+    if args.write_result:
+        raise SystemExit("dated residual trace is frozen; use --current-output build/residual_ledger_trace/current.json")
 
     errors: list[str] = []
     for path in [MANIFEST, RESOURCE_FLAGSHIP, RESOURCE_WORKFLOW, COMPACT_GVR, READINESS_RESULT, RESIDUAL_CONSERVATION]:
@@ -469,7 +479,20 @@ def main() -> None:
     if errors:
         fail(errors)
 
-    expected = build_result(errors)
+    expected = build_result(errors, historical=args.current_output is None)
+    if args.current_output:
+        if errors:
+            fail(errors)
+        output = args.current_output.resolve()
+        if (ROOT / "build").resolve() not in output.parents:
+            raise SystemExit("current residual diagnostics must stay under ignored build/")
+        expected["recorded_date"] = datetime.now(timezone.utc).date().isoformat()
+        expected["result_id"] = "current-residual-ledger-trace"
+        expected["result_kind"] = "current_diagnostic_cross_artifact_residual_ledger_trace"
+        output.parent.mkdir(parents=True, exist_ok=True)
+        output.write_text(json.dumps(expected, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+        print(f"Current residual diagnostic written: {output}; historical evidence unchanged.")
+        return
     validate_result(expected, args.write_result, errors)
     if not args.write_result:
         validate_surfaces(errors)
@@ -480,7 +503,7 @@ def main() -> None:
     if errors:
         fail(errors)
     print(
-        "Residual ledger trace validation passed: "
+        "Historical residual ledger trace validation passed (custody 38a69c05ab31): "
         f"{expected['trace_entry_count']} artifact trace entries, "
         "Resource/Compact GVR/Readiness residual surfaces visible, no support-state effect."
     )

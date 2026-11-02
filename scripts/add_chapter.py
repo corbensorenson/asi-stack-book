@@ -2,12 +2,16 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from pathlib import Path
 import re
 
+from projection_files import ProjectionFiles
+
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE_PATH = ROOT / "book_structure.json"
+INVENTORY_PATH = ROOT / "sources/source_inventory.json"
 
 
 def slugify(value: str) -> str:
@@ -18,10 +22,6 @@ def slugify(value: str) -> str:
 def load_structure() -> dict:
     with STRUCTURE_PATH.open(encoding="utf-8") as f:
         return json.load(f)
-
-
-def save_structure(structure: dict) -> None:
-    STRUCTURE_PATH.write_text(json.dumps(structure, indent=2) + "\n", encoding="utf-8")
 
 
 def find_part(structure: dict, part_id: str) -> dict:
@@ -72,7 +72,7 @@ def print_handoff_repair_notes(structure: dict, chapter_id: str) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(description="Add a chapter entry to book_structure.json.")
+    parser = argparse.ArgumentParser(description="Prepare a validated chapter proposal without admitting an incomplete canonical owner.")
     parser.add_argument("--part", required=True, help="Part ID to insert the chapter into.")
     parser.add_argument("--title", required=True, help="Chapter title.")
     parser.add_argument("--id", help="Stable chapter ID. Defaults to a slug from the title.")
@@ -80,6 +80,7 @@ def main() -> None:
     parser.add_argument("--before", help="Insert before this chapter ID within the same part.")
     parser.add_argument("--source", action="append", default=[], help="Source ID to assign. Repeatable.")
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument("--proposal-output", type=Path, help="Optional owned JSON proposal below ignored build/; canonical files are never written")
     args = parser.parse_args()
 
     if args.after and args.before:
@@ -87,9 +88,22 @@ def main() -> None:
 
     structure = load_structure()
     all_ids = {chapter.get("id") for part in structure.get("parts", []) for chapter in part.get("chapters", [])}
-    chapter_id = args.id or slugify(args.title)
+    title = args.title.strip()
+    if not title or any(ord(character) < 32 for character in title):
+        parser.error("title must be nonempty and contain no control characters")
+    chapter_id = args.id if args.id is not None else slugify(title)
+    if not re.fullmatch(r"[a-z][a-z0-9]*(?:-[a-z0-9]+)*", chapter_id):
+        parser.error("chapter ID must be a nonempty lowercase ASCII slug starting with a letter; supply --id when the title cannot produce one")
     if chapter_id in all_ids:
         raise SystemExit(f"Chapter already exists: {chapter_id}")
+    chapter_path = ROOT / f"chapters/{chapter_id}.qmd"
+    if chapter_path.exists() or chapter_path.is_symlink():
+        parser.error("proposed chapter file already exists; reconcile its existing owner before admission")
+    records = json.loads(INVENTORY_PATH.read_text(encoding="utf-8"))
+    known_sources = {record["id"] for record in records}
+    unknown = sorted(set(args.source) - known_sources)
+    if unknown:
+        parser.error(f"unknown source IDs: {unknown}; perform source intake before chapter admission")
 
     part = find_part(structure, args.part)
     chapters = part.setdefault("chapters", [])
@@ -107,7 +121,7 @@ def main() -> None:
 
     chapter = {
         "id": chapter_id,
-        "title": args.title,
+        "title": title,
         "file": f"chapters/{chapter_id}.qmd",
         "status": "conceptual",
         "evidence_level": "argument",
@@ -126,13 +140,41 @@ def main() -> None:
     }
     chapters.insert(insert_at, chapter)
 
-    if args.dry_run:
-        print(json.dumps(chapter, indent=2))
-        print_handoff_repair_notes(structure, chapter_id)
-        return
-
-    save_structure(structure)
-    print(f"Added chapter {chapter_id}. Run: python3 scripts/sync_scaffold.py")
+    proposal = {
+        "schema_version": "asi_stack.chapter_proposal.v1",
+        "admission_state": "not_admitted",
+        "manifest_sha256": hashlib.sha256(STRUCTURE_PATH.read_bytes()).hexdigest(),
+        "source_inventory_sha256": hashlib.sha256(INVENTORY_PATH.read_bytes()).hexdigest(),
+        "part_id": args.part,
+        "insert_at": insert_at,
+        "chapter": chapter,
+        "required_before_admission": [
+            "Complete authored manifest fields and substantive chapter prose",
+            "Valid source intake, chapter/concept/claim ownership and birth artifacts",
+            "Repair both adjacent handoffs and review the reader route",
+            "Inspect the current dependency plan, rebuild applicable projections and pass admission checks",
+            "Install a complete staged transaction; this proposal is not an admission command",
+        ],
+        "support_state_effect": "none",
+    }
+    body = json.dumps(proposal, indent=2, ensure_ascii=False) + "\n"
+    if args.proposal_output:
+        if args.proposal_output.is_symlink() or any(parent.is_symlink() for parent in args.proposal_output.parents):
+            parser.error("--proposal-output must not traverse a symlink")
+        output = args.proposal_output.resolve()
+        if not output.is_relative_to(ROOT / "build") or output.suffix != ".json":
+            parser.error("--proposal-output must be a JSON path below ignored build/")
+        if output.exists():
+            try:
+                previous = json.loads(output.read_text(encoding="utf-8"))
+            except (OSError, ValueError):
+                parser.error("proposal output contains unrecognized content; choose a fresh path")
+            if not isinstance(previous, dict) or previous.get("schema_version") != proposal["schema_version"]:
+                parser.error("proposal output is not owned by this proposal format; choose a fresh path")
+        ProjectionFiles().write(output, body)
+        print(f"Wrote non-admitted proposal: {output.relative_to(ROOT)}")
+    else:
+        print(body, end="")
     print_handoff_repair_notes(structure, chapter_id)
 
 

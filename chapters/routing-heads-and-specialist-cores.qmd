@@ -610,13 +610,19 @@ Each route emits a paired record set around the routing decision.
 
 Twelve ownership interfaces surround those records:
 
-1. Intent, Contracts, and Planning own task meaning and acceptance predicates.
+1. Human Intent owns interpretation; Intent-to-Execution Contracts binds
+   accepted task scope and acceptance predicates; Planning orders the accepted
+   work and requests capabilities. Routing chooses among eligible executors.
 2. Stable Capability Fields owns specialist identity and substitution bounds.
 3. Procedural Memory owns procedure qualification; Routing only selects it.
-4. Virtual Context ABI owns admissible context and memory provenance.
+4. Durable Semantic Memory owns persistent objects; Context Transactions owns
+   snapshot and taint state; Virtual Context ABI materializes bounded packets.
+   Routing requests task-bounded references without granting itself access.
 5. Security, Privacy, Rights, and Legal owners define eligibility constraints.
 6. Runtime, Humans, and Inter-Stack owners execute; a route is not an effect lease.
-7. Verification, Spinoza, Artifact Graphs, and Evidence own result support.
+7. Verification Bandwidth and Spinoza return scoped checks and proof verdicts;
+   Artifact Graphs preserves result identity and custody; Evidence States owns
+   accepted support transitions. Route correctness is not answer correctness.
 8. Resource Economics owns capacity, budget, protected overhead, and value policy.
 9. Readiness, Replacement, and Residual Escrow owns promotion and rollback.
 10. Labor OS and Human Collaboration owns worker roles, intervention, and appeal.

@@ -4,13 +4,15 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
+  - "learning_compute_topology"
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
   - "corben_chatgpt_onecell_theseus_2026"
+  - "deterministic_capability_compilation"
   - "ext_attention_is_all_you_need_2017"
-  - "ext_s4_2022"
   - "ext_mamba2_ssd_2024"
+  - "ext_s4_2022"
   - "ext_mamba3_2026"
   - "ext_gated_deltanet2_2026"
   - "ext_hyperscale_lottery_2026"
@@ -41,14 +43,27 @@ primary_sources:
   - "ext_universal_transformer_2019"
   - "ext_dynamic_compute_recurrent_transformers_2026"
   - "ext_dreamcoder_2020"
+  - "kernel_english_residual_compiler"
   - "relational_dimension_compiler"
   - "ext_llm_in_flash_2024"
   - "ext_powerinfer_2024"
   - "ext_atsinfer_2026"
+  - "ext_test_time_training_2020"
+  - "ext_llada_2025"
+  - "ext_scaling_dllms_2026"
   - "ext_neuromorphic_computing_scale_2025"
   - "ext_photonic_neuromorphic_2024"
   - "ext_quantum_ml_shadows_2024"
   - "ext_organoid_intelligence_2023"
+  - "ext_kimi_k3_2026"
+  - "ext_eggroll_hyperscale_es_2026"
+  - "ext_mezo_2023"
+  - "ext_forward_forward_2022"
+  - "ext_i_jepa_2023"
+  - "ext_lejepa_2025"
+  - "ext_platonic_representation_jepa_2026"
+  - "ext_h_net_2025"
+  - "ext_v_jepa_2_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -67,11 +82,11 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
-| Last updated | 2026-07-23 |
-| Primary source records | 41 bounded assignments spanning author-intent inputs, Transformer and non-Transformer comparators, governed replacement sources, the Relational Dimension Compiler, and three substrate-sensitive paging comparators. |
+| Last updated | 2026-11-02 |
+| Primary source records | 58 current manifest assignments; November 2 additions have the selected passage scopes recorded in their notes, not a fresh review of every earlier source. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`; raw cache: `scf`, `rmi`, `benchmaxxing` |
+| Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`; raw cache: `scf`, `rmi`, `benchmaxxing`; November 2 reviewed notes: `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025` |
 | Test state | Bounded synthetic ABI conformance and malicious-kernel rejection are implemented, including 12 event mutations, four common-checkpoint omitted-state collisions, and six full-checkpoint mutations. The matched heterogeneous-kernel tournament, frozen-core verified-abstraction ratchet, and governed architectural-RSI lifecycle remain preregistered and unrun. |
 | Formal state | The public ABI target is implemented by 23 theorem declarations covering finite transition invariants and a heterogeneous checkpoint information boundary. |
 
@@ -339,6 +354,76 @@ simpler systems match role-sensitive, counterfactual, transfer, and cost
 outcomes, explicit higher-order machinery should be narrowed or removed. If
 order-four or higher primitives repeatedly win after full rescue, the registry
 should admit them instead of defending a dogmatic bound.
+
+## Predictive objectives and learned granularity
+
+A model-family catalog can mix three different decisions: which operator mixes
+state, what the training objective predicts, and which units receive expensive
+computation. JEPA and H-Net make the distinction concrete. Neither requires
+abandoning Transformer components.
+
+::: {.jepa-hnet-comparison role="region" tabindex="0" aria-label="JEPA and H-Net comparison; scroll horizontally on narrow screens"}
+
+| Axis | JEPA examples | H-Net |
+|---|---|---|
+| Prediction target | Learned representations of related or masked observations | Autoregressive byte prediction in the reported language models |
+| Learning recipe | View/mask construction, target or predictor design, collapse prevention | Learned boundary router, chunk ratio, nested processing and dechunking |
+| Mixing blocks | I-JEPA uses Vision Transformers; the objective does not fix the block family | Attention and state-space blocks can inhabit the hierarchy |
+| Consumer obligation | Identify the retained information, predictor and representation versions | Preserve byte/latent correspondence, dynamic state and complete realized cost |
+
+:::
+
+### JEPA is a prediction objective, not a complete agent
+
+[I-JEPA](https://arxiv.org/abs/2301.08243v3) predicts target-region embeddings
+from image context using a Transformer predictor and an EMA target encoder.
+[V-JEPA 2](https://arxiv.org/abs/2506.09985) adds an action-conditioned prediction
+route after video pretraining. [LeJEPA](https://arxiv.org/abs/2511.08544v3) instead
+makes predictive agreement and Sketched Isotropic Gaussian Regularization
+(SIGReg) central to its collapse-prevention recipe; it avoids the teacher–student
+and stop-gradient machinery used in several other variants. A model label must
+therefore resolve the actual objective, view construction, target/predictor
+state, regularizer and downstream task. An embedding encoder is not a drop-in
+replacement for a text-generating reasoner or an authorized controller.
+
+The [2026 Platonic-representation result](https://arxiv.org/abs/2610.39302v1)
+makes view construction consequential: its authors report that a 109M text JEPA
+exceeds evaluated language models through 72B parameters on specified alignment
+measures. That comparison concerns representation geometry, not general
+reasoning or task competence. Its theorem is conditional and uses an identity
+predictor; its practical runs use LeJEPA without exactly meeting the theorem's
+hypotheses. Neither result grants this ABI an implementation or qualification.
+
+### H-Net learns the sequence hierarchy
+
+[H-Net](https://arxiv.org/abs/2507.07955v2), by Hwang, Wang and Gu, attacks a
+different fixed choice: tokenization. Byte-level encoder stages learn boundary
+scores; selected vectors form a shorter stream for a deeper main network.
+Nested stages repeat the process. Smoothing, upsampling and residual paths
+return to byte resolution for autoregressive prediction. A ratio loss helps
+control the chunking pressure. This is a global hierarchy that can contain
+attention or state-space layers, rather than one more mutually exclusive layer
+family. Learned boundaries still reflect the designed architecture and loss;
+they are not automatically human concepts or a semantic compiler.
+
+The paper reports matched-data/FLOP improvements over its tokenized and byte
+baselines. It also reports implementation-dependent training slowdown up to
+roughly twice an isotropic model and dynamic memory/batching difficulties.
+Those caveats matter to adoption: fewer deep-stage positions do not establish
+lower elapsed time, tail latency or memory use. The paper leaves broader
+long-context implications and deeper hierarchies open. Its learned sequence
+compression is not an exact compressed artifact supplied to an auditor.
+
+For a hypothetical repository specialist, a learned chunk containing part of
+`scope=read` cannot replace the exact source bytes needed to check a permission
+string. A qualified boundary must distinguish byte input/output, latent
+segmentation, the boundary-router/dechunking state and any literal source
+reference. Migration and resume checks must preserve the actual learned state;
+changing segmentation can change behavior even if an outer call signature stays
+fixed. These are uses of the existing ABI obligations, not a new implemented
+H-Net adapter. Combining a JEPA objective with a hierarchical encoder is a
+research possibility; none of the reviewed sources or this repository supplies
+a validated combined JEPA/H-Net model.
 
 ## What the recent counterevidence changes
 
@@ -1020,6 +1105,11 @@ interchangeable, safe, or suitable for deployment.
 
 | Source ID | Title | Planned use |
 |---|---|---|
+| `ext_i_jepa_2023` | [Assran et al. (2023), I-JEPA](https://arxiv.org/abs/2301.08243v3) | Masked image-block representation prediction with a Transformer context/target encoder and positional predictor; distinguishes training objective from mixing architecture. Image representation evaluations are source-reported; no pixel decoder, action-conditioned dynamics, local reproduction or general-purpose reasoning result follows. |
+| `ext_lejepa_2025` | [Balestriero and LeCun (2025), LeJEPA](https://arxiv.org/abs/2511.08544v3) | Predictive agreement plus SIGReg distributional anti-collapse; records the regularizer separately from encoder architecture and view policy. Conditional optimization arguments and external evaluations do not establish useful semantics or the full-distribution uniqueness assumed by the 2026 PRH theorem. |
+| `ext_platonic_representation_jepa_2026` | [Balestriero and LeCun (2026), Platonic representations with JEPAs](https://arxiv.org/abs/2610.39302v1) | Conditional shared-positive-kernel theorem and source-reported good-view text-JEPA alignment experiments; separates population theorem, training recipe and measured task. Identity predictor, injective renderings and population/uniqueness assumptions limit the theorem; no learned action-conditioned predictor, general task superiority, local reproduction or architecture-core promotion is established. |
+| `ext_h_net_2025` | [Hwang, Wang and Gu (2025), H-Net](https://arxiv.org/abs/2507.07955v2) | Learned byte-level chunk boundaries, nested encoder/main/decoder hierarchy, smoothing/dechunking and data/FLOP-matched sequence-model comparisons. Global hierarchy can contain attention or state-space layers; it remains autoregressive, and theoretical/FLOP gains do not establish measured speed, exact semantics, unlimited context or local results. |
+| `ext_v_jepa_2_2025` | [Assran et al. (2025), V-JEPA 2](https://arxiv.org/abs/2506.09985) | Existing reviewed note: action-free video representation pretraining, action-conditioned latent prediction and bounded model-predictive-control comparator. Reuses the existing note at its recorded scope; no fresh V-JEPA 2 paper/code review, robot result or control guarantee is added. |
 | `corben_chatgpt_kiss_irreducible_intelligence_2026` | KISS versus Irreducible Intelligence (author-supplied design conversation) | Planned use from inventory/manifest: Corben-supplied design conversation for search-verify-compile, exact-latent separation, a compact recursive kernel, and total-system KISS accounting. Author intent only; not independent evidence or a reproduced architecture. |
 | `corben_chatgpt_onecell_theseus_2026` | OneCell and Theseus Architecture Handoff (author-supplied design conversation) | Planned use from inventory/manifest: Corben-supplied design conversation for a Cognitive Kernel ABI, typed state lanes, inner recurrence, outer exact search, verified abstraction, and Theseus-governed architecture tournaments. Author intent only; OneCell remains an unimplemented falsifiable candidate. |
 | `ext_attention_is_all_you_need_2017` | Attention Is All You Need | Planned use from inventory/manifest: Primary Transformer paper and dense-attention baseline. It supports the historical architecture and parallel sequence-processing comparison, not a claim that Transformers are universally optimal or locally reproduced. |

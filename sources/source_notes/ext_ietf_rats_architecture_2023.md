@@ -87,3 +87,18 @@ vendor, model, or release is trustworthy.
   model, conformance, security, or deployment result is established.
 - The RFC does not make an Attestation Result equivalent to trustworthy hardware,
   uncompromised software, correct policy, safe model behavior, or release merit.
+
+## Selected passage review: 2026-10-10
+
+Read the primary RFC's selected sections below for reader Unit 4. This adds
+passage locations to the earlier architecture review, not a full-text rereview
+or implementation result.
+
+| Passage | Supported proposition and limit |
+|---|---|
+| [Section 3](https://www.rfc-editor.org/rfc/rfc9334.html#section-3) | Evidence, appraisal, and application decisions are separate roles. |
+| [Section 3.4](https://www.rfc-editor.org/rfc/rfc9334.html#section-3.4) | Roles may share an entity; role separation does not establish independent failure domains. |
+| [Section 10](https://www.rfc-editor.org/rfc/rfc9334.html#section-10) | Freshness remains bounded; state can change after evidence generation. |
+
+No protocol, attestation, key release, or root-of-trust assessment ran. Reader
+use preserves the source's architectural scope and current chapter support.

@@ -61,3 +61,14 @@ transmission, site, cooling, water, community, or supply-chain availability.
 - How should workload receipts reconcile with facility and utility meters?
 - Which capacity, cooling, network, and grid failures must narrow authority?
 - How should water, land, materials, decommissioning, and community costs enter?
+
+## Selected passage review — 2026-10-10
+
+Reviewed printed pages 39 and 44 of the
+[official report PDF](https://eta-publications.lbl.gov/sites/default/files/2024-12/us_data_center_energy_usage_report_lbnl-2001637_0.pdf).
+PUE compares facility and IT electricity; site water differs from generation
+water. The cooling/climate simulations assume commissioned operation as
+designed. This grounds Unit 24’s measurement-versus-model distinction, not
+a local footprint. Scope is limited to these passages; the full model, input
+data, facility meters, and newer report versions were not audited or reproduced.
+The original ingestion event remains historical.

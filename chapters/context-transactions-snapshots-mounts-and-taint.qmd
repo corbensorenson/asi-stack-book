@@ -521,14 +521,16 @@ not collapse into that record:
 - Security, Privacy, Authority, Rights, and Licensing owners decide mounts,
   write/delete/export/train grants, declassification, retention, disclosure,
   and prohibited uses.
-- Claim Ledgers and Spinoza own contradiction, evidence, belief, and support
-  transitions. A correction, supersession, deletion, or commit cannot promote
-  or refute a claim by itself.
+- Claim Ledgers owns claim identity, contradictions, and belief-revision
+  history; Spinoza supplies scoped verification verdicts; Evidence States owns
+  accepted support transitions. A correction, supersession, deletion, or
+  commit cannot promote or refute a claim by itself.
 - Artifact Graphs preserve transaction, derivative, cache, backup, fault,
   recovery, and downstream lineage without certifying correctness.
-- Runtime Adapters own jobs, tools, approvals, and external effects. Context
-  abort, restore, or compensation cannot claim rollback of an external effect
-  without separate effect-complete evidence.
+- Labor OS owns typed-job dispatch and lifecycle; approval authorities supply
+  current applicable grants; Runtime Adapters mediate tool calls and external
+  effects. Context abort, restore, or compensation cannot claim rollback of
+  an external effect without separate effect-complete evidence.
 - Data Engines own datasets, model weights, optimizer and scheduler state,
   training caches, checkpoints, descendants, and causal unlearning. Storage
   deletion is not model forgetting, influence removal, privacy erasure, or
@@ -537,9 +539,10 @@ not collapse into that record:
   transaction validity establishes only declared state-transition properties.
 - Resource Economics owns storage, compute, indexing, locking, validation,
   retry, human, recovery, privacy, latency, and opportunity cost.
-- Evidence States and Readiness Gates own support, quarantine, promotion, and
-  release. A green commit, replay, deletion receipt, or restart check has no
-  direct support-state effect.
+- Evidence States owns accepted support transitions; Readiness Gates owns
+  current use-specific eligibility and quarantine; deployment and publication
+  owners retain release authority. A green commit, replay, deletion receipt,
+  or restart check has no direct support-state effect.
 
 Minimum fields:
 

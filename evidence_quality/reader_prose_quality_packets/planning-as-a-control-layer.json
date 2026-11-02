@@ -2,33 +2,71 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "planning-as-a-control-layer",
   "chapter_file": "chapters/planning-as-a-control-layer.qmd",
-  "chapter_sha256": "23932e39744f0ee46df350689d73a6cd05659762dc0b2734751076464dd874f1",
+  "chapter_sha256": "212888b63598a949d37744c0ead0703e67be4f7d74cbc89399f5a1d179c08e7a",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-08-planning",
   "review_state": "digest_bound_editorial_pass",
   "concrete_scene": {
     "heading": "Worked replan: a dependency fails after dispatch",
-    "actor_or_system": "A repository-release planner, a completed render node, a blocked deployment node, and a public verification node",
+    "actor_or_system": "Hypothetical accepted book-publication task, current publisher grant, completed render, dispatched deployment job, missing credential before remote request, blocked public check, and independently eligible local work",
     "attempted_action": "Complete a render, deployment, and public-route verification plan after the hosting credential becomes unavailable.",
-    "observable_outcome": "The deploy node blocks, its dependent verification does not masquerade as executed, and a later authorized deployment route creates a scoped new plan version.",
+    "observable_outcome": "The required decision holds publication while preserving eligible render and independent authorized work. A same-target/artifact route may fit the existing grant; a sent request with a lost reply leaves an unknown effect requiring qualified observation/retry.",
     "failed_or_tested_boundary": "The scene tests whether retrying, rewriting the goal, or hiding the residual can substitute for feedback-before-replan, authority preservation, and downstream blocking; none can.",
-    "residual_owner": "Credential authority stays with its owner; the planner retains the blocked node, skipped verification, changed dependency, and replan evidence.",
-    "evidence_boundary": "The seven-event witness checks finite ordering and custody, not decomposition quality, dependency truth, scheduler optimality, or deployed replanning."
+    "residual_owner": "The credential owner retains feasibility repair; authority and runtime owners retain admission, effects, observation and recovery. Planning retains blocked dependencies, scoped versions and unresolved history.",
+    "evidence_boundary": "The teaching case and resource/slack arithmetic add no observed publication or scheduling result. Separate finite witnesses check authored ordering and custody, not useful decomposition, dependency truth, live effects or optimality."
   },
   "worked_trace": {
     "heading": "Worked replan: a dependency fails after dispatch",
-    "state_labels": ["render_complete", "deploy_blocked", "descendant_frozen", "feedback_recorded", "scoped_replan_admitted"],
-    "source_or_fixture_refs": ["experiments/planning_scheduler_state/results/2026-07-02-local.json", "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json"],
+    "state_labels": [
+      "render_complete",
+      "deploy_blocked",
+      "descendant_frozen",
+      "feedback_recorded",
+      "scoped_replan_admitted"
+    ],
+    "source_or_fixture_refs": [
+      "experiments/planning_scheduler_state/results/2026-07-02-local.json",
+      "experiments/planning_runtime_replan_delta/results/2026-07-02-local.json"
+    ],
     "maximum_inference": "The authored traces preserve ordering, authority ceilings, stops, and residuals; they do not establish planner quality, optimal scheduling, natural-task utility, or deployment behavior."
   },
-  "counterexample_or_simpler_baseline": "The simpler planner retries or declares local completion after deployment fails. The control-layer plan blocks descendants, records the missing authority, and replaces only the failed scope.",
+  "counterexample_or_simpler_baseline": "A competent conventional release workflow can bind the reviewed request, current grant, artifact and target, retain eligible work, hold affected descendants and preserve retry/recovery history at lower burden. Ordinary workflow controls are already documented in Airflow.",
   "readable_claim": "A plan is a revisable control record, not a confident list of future steps. Its value appears when reality disagrees with it and the system changes course without losing authority, evidence, or stop conditions.",
-  "normative_rule": "Dispatch only ready nodes whose dependencies, context, authority, verifier, and receipt requirements pass. On failure, freeze affected descendants, record the observation, and admit a scoped replacement graph only if it preserves the parent ceiling and every unresolved residual.",
-  "formal_binding": {"claim_id": "planning-as-a-control-layer.core", "support_state": "argument", "anchor": "versioned, consumer-relative plan policy"},
-  "claim_atom_and_source_links": ["planning-as-a-control-layer.core", "planforge", "cognitive_compilation"],
-  "caveat_consolidation": {"local_caveat": "The worked replan states once that ordering and custody do not imply planner optimality.", "consolidated_disposition": "Decomposition, dependency, context, routing, authority, scheduling, execution, utility, and transfer remain separate evidence obligations.", "distinct_limitations_preserved": true},
+  "normative_rule": "Request execution only for a node whose required dependencies and current admission conditions hold. When one fails, hold the affected action and dependent uses, preserve eligible work and permitted history, and revise the remaining plan within its accepted envelope. Unknown effects require observation and retry discipline; a new plan version cannot erase them.",
+  "formal_binding": {
+    "claim_id": "planning-as-a-control-layer.core",
+    "support_state": "argument",
+    "anchor": "versioned, consumer-relative plan policy"
+  },
+  "claim_atom_and_source_links": [
+    "planning-as-a-control-layer.core",
+    "planforge",
+    "cognitive_compilation"
+  ],
+  "caveat_consolidation": {
+    "local_caveat": "The worked replan states once that ordering and custody do not imply planner optimality.",
+    "consolidated_disposition": "Proposed graph, current grant, credential feasibility, job dispatch, effect attempt, scoped observation, unknown outcome, eligible reuse and recovery differ. Forecasts do not identify counterfactual outcomes; the finite world-model subclaim does not promote natural planning.",
+    "distinct_limitations_preserved": true
+  },
   "bookkeeping_surface_disposition": "The three-node scene stays in reader prose; exhaustive lifecycle and countermodel inventories stay in formal evidence surfaces.",
-  "semantic_diff": {"unique_claims_preserved": true, "sources_preserved": true, "proof_boundaries_preserved": true, "non_claims_preserved": true, "support_state_effect": "none", "release_effect": "none"},
-  "editorial_diagnostics": {"mega_sentence_disposition": "The reader claim and operational rule separate replanning behavior from the full plan-policy schema.", "hedge_disposition": "The finite-trace limitation is consolidated without weakening distinct planning-quality exclusions.", "table_disposition": "Source tables remain because they separate conceptual planning vocabulary from local trace evidence."},
-  "non_claims": ["The worked plan is not a deployed scheduler run.", "Finite ordering checks do not establish decomposition quality or scheduler optimality.", "The editorial revision does not move support or release state."]
+  "semantic_diff": {
+    "unique_claims_preserved": true,
+    "sources_preserved": true,
+    "proof_boundaries_preserved": true,
+    "non_claims_preserved": true,
+    "support_state_effect": "none",
+    "release_effect": "none"
+  },
+  "editorial_diagnostics": {
+    "mega_sentence_disposition": "The operational rule separates node-local readiness, affected-use holds, preserved eligible work/current grants, scoped revision and unknown-effect duties.",
+    "hedge_disposition": "The finite-trace limitation is consolidated without weakening distinct planning-quality exclusions.",
+    "table_disposition": "Lifecycle tables distinguish planning and dispatched jobs from effects. Source rows cover twelve current assignments without inventing fresh passage reviews; future live tests are separate from implemented finite record checks."
+  },
+  "non_claims": [
+    "The worked plan is not a deployed scheduler run.",
+    "Finite ordering checks do not establish decomposition quality or scheduler optimality.",
+    "The editorial revision does not move support or release state.",
+    "The October 11 assistant source/diagram reconciliation is not a new natural scheduling, credential-repair, publication or causal experiment, formal reproduction, independent reader or author approval, accepted support or release result.",
+    "The October 11 displayed-view reconciliation corrects the active lifecycle/interface overlay prose for this owner against its canonical obligations. Frozen reader copies are unchanged; this is not new interpretation, live effect, independent approval, support or release evidence."
+  ]
 }

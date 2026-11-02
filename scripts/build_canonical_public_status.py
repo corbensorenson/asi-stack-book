@@ -21,6 +21,8 @@ import subprocess
 from typing import Any
 
 from validate_external_sota_positioning import chapter_rows as external_positioning_rows
+from schema_validation import validate_value
+from projection_files import ProjectionFiles
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -70,48 +72,8 @@ def sha256_file(path: Path) -> str:
 
 
 def validate_against_schema(value: Any, schema: dict[str, Any], path: str = "status") -> list[str]:
-    """Validate the JSON Schema keywords used by the canonical-status contract."""
-    errors: list[str] = []
-    expected = schema.get("type")
-    type_ok = {
-        "object": isinstance(value, dict),
-        "array": isinstance(value, list),
-        "string": isinstance(value, str),
-        "integer": isinstance(value, int) and not isinstance(value, bool),
-    }.get(expected, True)
-    if not type_ok:
-        return [f"{path}: expected {expected}, got {type(value).__name__}"]
-    if "enum" in schema and value not in schema["enum"]:
-        errors.append(f"{path}: value {value!r} is not in {schema['enum']!r}")
-    if isinstance(value, str):
-        if len(value) < int(schema.get("minLength", 0)):
-            errors.append(f"{path}: string is shorter than minLength")
-        if "pattern" in schema and not re.search(str(schema["pattern"]), value):
-            errors.append(f"{path}: string does not match {schema['pattern']!r}")
-    if isinstance(value, int) and not isinstance(value, bool) and "minimum" in schema:
-        if value < int(schema["minimum"]):
-            errors.append(f"{path}: value is below minimum {schema['minimum']}")
-    if isinstance(value, list):
-        item_schema = schema.get("items")
-        if isinstance(item_schema, dict):
-            for index, item in enumerate(value):
-                errors.extend(validate_against_schema(item, item_schema, f"{path}[{index}]"))
-    if isinstance(value, dict):
-        required = schema.get("required", [])
-        for key in required if isinstance(required, list) else []:
-            if key not in value:
-                errors.append(f"{path}: missing required key {key!r}")
-        properties = schema.get("properties", {})
-        properties = properties if isinstance(properties, dict) else {}
-        additional = schema.get("additionalProperties", True)
-        for key, child in value.items():
-            if key in properties and isinstance(properties[key], dict):
-                errors.extend(validate_against_schema(child, properties[key], f"{path}.{key}"))
-            elif additional is False:
-                errors.append(f"{path}: unexpected key {key!r}")
-            elif isinstance(additional, dict):
-                errors.extend(validate_against_schema(child, additional, f"{path}.{key}"))
-    return errors
+    """Compatibility entrypoint; share standards validation, not domain policy."""
+    return validate_value(value, schema, path)
 
 
 def run_git(*args: str) -> str:
@@ -122,6 +84,7 @@ def run_git(*args: str) -> str:
         text=True,
         stdout=subprocess.PIPE,
         stderr=subprocess.PIPE,
+        timeout=30,
     )
     return completed.stdout.strip()
 
@@ -361,10 +324,10 @@ def main() -> None:
     body = json.dumps(status, indent=2, ensure_ascii=False) + "\n"
     if args.output:
         output = args.output if args.output.is_absolute() else ROOT / args.output
-        output.parent.mkdir(parents=True, exist_ok=True)
-        output.write_text(body, encoding="utf-8")
+        ProjectionFiles().write(output, body)
+        display = output.relative_to(ROOT) if output.is_relative_to(ROOT) else output
         print(
-            f"Canonical public status wrote {output.relative_to(ROOT)}: "
+            f"Canonical public status wrote {display}: "
             f"{status['counts']['chapters']} chapters, {status['counts']['sources']} sources, "
             f"tree={status['source_tree_state']}."
         )

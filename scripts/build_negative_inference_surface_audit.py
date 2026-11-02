@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import re
+from datetime import date
 from pathlib import Path
 
 from visual_chapter_source import canonical_chapter_text
@@ -83,7 +85,9 @@ def chapter_paths() -> list[str]:
     ]
 
 
-def audit() -> dict:
+def audit(recorded_date: str) -> dict:
+    # Date labels the actual refresh, not the audit's original design date.
+    date.fromisoformat(recorded_date)
     chapters = chapter_paths()
     chapter_set = set(chapters)
     methodology_text = canonical_chapter_text(
@@ -138,7 +142,7 @@ def audit() -> dict:
         })
     return {
         "schema_version": "asi_stack.negative_inference_surface_audit.v1",
-        "recorded_date": "2026-07-17",
+        "recorded_date": recorded_date,
         "scope": {
             "surface_count": len(paths),
             "chapter_count": len(chapters),
@@ -184,7 +188,7 @@ def write_doc(value: dict) -> None:
     counts = summary["accepted_transition_rehabilitation_counts"]
     text = f"""# Negative-Inference Surface Audit
 
-Date: 2026-07-17
+Current projection refreshed: {value['recorded_date']}. Audit introduced July 17, 2026.
 
 This current-prose audit covers {value['scope']['surface_count']} reader-facing
 surfaces, including all {value['scope']['chapter_count']} live chapters. It
@@ -221,7 +225,21 @@ instead of presenting them as scientific conclusions they did not earn.
 
 
 def main() -> None:
-    value = audit()
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--check", action="store_true", help="Compare current inputs without changing tracked outputs")
+    args = parser.parse_args()
+    previous = json.loads(OUT.read_text(encoding="utf-8")) if args.check else None
+    value = audit(previous["recorded_date"] if previous else date.today().isoformat())
+    if args.check:
+        if value != previous:
+            raise SystemExit("Negative-inference projection is stale; review its semantic differences before rebuilding.")
+        print("Negative-inference projection matches current inputs.")
+        return
+    if any(value["summary"][key] for key in (
+        "forbidden_overbroad_phrase_count", "missing_required_rehabilitation_boundary_count",
+        "blocked_chapter_boundary_failure_count",
+    )):
+        raise SystemExit("Current language fails the audit; refusing to replace accepted outputs.")
     OUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
     write_doc(value)
     print(

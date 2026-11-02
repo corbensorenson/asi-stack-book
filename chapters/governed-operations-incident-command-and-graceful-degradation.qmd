@@ -4,7 +4,7 @@ chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-08-08"
+last_updated: "2026-10-11"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -18,7 +18,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The authored control case and two bounded P5 local slices cover declared state, actual model/Adam mutation, descendants, authority narrowing, observation, weights-only rollback rejection, full-state crash/restart recovery, compensation, an owned outbox across one localhost partition, exactly-once retry, and safe hold. One outcome-aware natural publication happy path now preserves source, tested artifact, no-rebuild public deployment, and post-deploy observation. No natural AI-service incident, operator game day, distributed partition, open-world effect inventory, deployed recovery, or prospective causal comparison has run."
+  - "The authored control case and two bounded P5 local slices cover declared state, actual two-parameter predictor/Adam mutation, descendants, authority narrowing, observation, weights-only rollback rejection, full-state crash/restart recovery, compensation, an owned outbox across one localhost partition, deduplicated retry at the authored sink, and safe hold. One outcome-aware natural publication happy path now preserves source, tested artifact, no-rebuild public deployment, and post-deploy observation. No natural AI-service incident, operator game day, distributed partition, open-world effect inventory, deployed recovery, or prospective causal comparison has run."
   - "No adversarial game-day evidence yet calibrates severity and recovery thresholds."
   - "NIST incident-response transfer to autonomous AI has not been independently validated."
   - "The schema, fixture, independent consumer, mutations, and Lean model establish finite declared-record consequences only; they do not establish detector quality, inventory completeness, effect reversal, fallback usefulness, or recovery efficacy."
@@ -32,7 +32,7 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-08-08 |
+| Last updated | 2026-10-11 |
 | Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -53,12 +53,15 @@ rollback, and state-reconciliation mechanisms. None of those records
 establishes that this repository operates an incident system, satisfies NIST
 guidance, reverses external effects, or degrades safely.
 
-The chapter therefore remains **Design rationale + argument**. The implemented
-packet, authored case, route consumer, mutations, and finite Lean model are
-record-shape and route evidence only. The current Theseus flagship gate `T4`
-is still prospective, so the governed-operations argument does not narrate a natural authority-to-
-effect trace or infer any result from one. Game days and empirical comparisons
-remain work to do.
+The chapter therefore remains **Design rationale + argument**. The packet, authored case, route consumer, mutations, and finite Lean model
+supply declared-record consequences. Later bounded P5 slices additionally
+observe subprocess effects, local restoration, actual mutation of a tiny
+predictor and Adam state, and retry against one authored localhost sink. A
+retrospective publication trace observes a source/artifact/deployment chain
+without an incident. These are different evidence lanes, not a deployed AI
+incident system or open-world recovery result. The natural claim-bearing
+Theseus flagship gate `T4` remains prospective; game days and matched empirical
+comparisons are still research obligations.
 
 ::: {.asi-human-only}
 ## Human Reading Path
@@ -881,15 +884,17 @@ performance, safe degradation, usable fallback, complete effect discovery, or
 production recovery. Exact receipts and boundaries are in
 `docs/p5_effect_complete_reference_report.md`.
 
-The stateful successor crosses the next local boundary. Its trainer mutates an
-actual model and Adam state, then crashes before acknowledgement. A new process
+The stateful successor crosses the next local boundary. Its trainer mutates a
+two-parameter predictor and Adam state, then crashes before acknowledgement. A new process
 restores model, optimizer, scheduler, RNG, cache, backup, derived-artifact,
 descendant, and credential state from the prospectively selected checkpoint.
 The weights-only negative control leaves eight mismatches, so a green model
 digest cannot masquerade as recovered service state. A separate HTTP effect
 service exercises one unavailable-service interval, durable outbox ownership,
-exactly-once retry, stale-token rejection, and observation from another
-process.
+deduplicated retry at that authored sink, stale-token rejection, and
+observation from another process. Its durable effect identity and SQLite ledger
+prevent a second application in the named cases; this is not a guarantee for
+arbitrary targets, service state loss, or network histories.
 
 This still does not close the operational minimum. The task is authored, the
 partition is localhost-only, no real operator or independent monitor makes a
@@ -1132,7 +1137,12 @@ The current evidence record supports the following narrow statements:
 - the manifest defines the exclusive job, interfaces, invariants,
   tests, implemented finite formal targets, and open evidence gaps;
 - the authored packet consumer rejects authority widening and incomplete
-  declared recovery while preserving an unknown-effect safe hold; and
+  declared recovery while preserving an unknown-effect safe hold;
+- the bounded P5 subprocess and tiny-predictor slices observe local state/effect
+  restoration and authored-sink retry at the exact scopes in their reports;
+- the retrospective publication development trace observes tested-artifact
+  custody through deployment and a later public graph check, without an
+  incident, prospective comparison, or operator-performance result; and
 - the resulting architecture can be stated coherently enough to expose
   falsifiers, simpler baselines, and implementation obligations.
 
@@ -1144,10 +1154,10 @@ It does **not** support claims that:
   reproduction, or independent review has run;
 - deployed monitoring is complete, calibrated, adversary-resistant, or
   actionable;
-- a kill switch, manual fallback, failover, rollback, compensation, disclosure,
-  or decommissioning path works;
-- any external effect has been reversed or any descendant state has been
-  recovered;
+- a production kill switch, usable manual fallback, qualified failover,
+  open-world rollback or compensation, disclosure, or decommissioning path works;
+- external effects or descendant state outside the declared local P5 inventories
+  have been reversed or recovered;
 - T4 has produced a joined happy or blocked/rollback trace;
 - the finite Lean results establish detector quality, inventory completeness,
   external-effect truth, recovery efficacy, or operational safety;
@@ -1157,10 +1167,12 @@ It does **not** support claims that:
 - chapter completeness, source coverage, or formal structure changes the
   recorded support state.
 
-The three decisive gaps remain a full-state and external-effect rollback
-harness, adversarial game-day evidence that calibrates incident and recovery
-decisions, and independent validation of the transfer from generic
-cybersecurity incident response to autonomous AI services.
+The decisive gaps beyond the bounded references are a representative
+model-serving state/effect recovery instrument, adversarial game days that
+calibrate incident and recovery decisions, and independent validation of the
+transfer from generic cybersecurity incident response to autonomous AI
+services. The existing local instruments do not disappear from history because
+they do not meet those wider obligations.
 
 ## Summary
 
@@ -1181,9 +1193,12 @@ Its distinctive AI adaptation must still earn its cost against strong ordinary
 operations. The honest route is a bounded reference implementation, rejecting
 mutation suites, adversarial game days, matched stop-only and generic-SRE
 baselines, independent outcome truth, complete cost and burden accounting, and
-a competence-gated natural campaign. The authored joined case makes the control
-boundary executable; flagship T4 can eventually supply a natural reader case,
-but only prospectively and never as a substitute for that evidence.
+a competence-gated natural campaign. The authored case and bounded P5 slices make selected record, state, and
+effect boundaries executable. The retrospective publication chain illustrates
+an operational happy path, not incident recovery. Flagship T4 remains a
+prospective natural incident/effect burden. Completing the chapter preserves
+those results and missing obligations without narrating the future campaign as
+finished.
 
 ## Handoff
 

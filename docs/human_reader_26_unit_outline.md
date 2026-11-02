@@ -1,6 +1,12 @@
 # Human Reader Edition: 26-Unit Writing Outline
 
-Status: **canonical 26-unit manuscript complete; tested public HTML deployed**
+Status: **canonical 26-unit maintained manuscript; ready for author review**
+
+Manuscript derivation and local rendering do not establish which bytes are
+publicly deployed. Publication custody is tracked separately. Editorial review
+of mechanisms, alternatives, examples, failures, and conclusions takes
+precedence over using target length as a completion certificate; the ranges
+below remain pacing constraints, and author approval remains unclaimed.
 
 Roadmap owner: `P7.1-EM-87-identity-56-reference-26-unit-editorial-migration`
 
@@ -11,7 +17,7 @@ Historical predecessor: `products/narrative_product_spine.json` (22-unit candida
 ## Purpose and reader promise
 
 This outline is the writing source of truth for the independent human-reader
-edition of *The ASI Stack*. It is not a filtered copy of the 87-chapter
+edition of *The ASI Stack*. It is not a filtered copy of the canonical
 architecture reference. It composes those technical owners into 26 chapters
 that make one cumulative argument: advanced intelligence should be built as a
 governed system of separable responsibilities; those responsibilities can be
@@ -38,7 +44,7 @@ learning, replacement, and recursive-improvement obligations.
 1. Canonical owner routing is editorial composition, not claim absorption. A
    lead chapter does not inherit the support, proof scope, evidence, or
    authority of any routed owner.
-2. Every one of the 87 current technical owners appears exactly once in the
+2. Every current canonical technical owner appears exactly once in the
    primary route below. Cross-references may recur, but ownership does not.
 3. Each unit must preserve the routed owners' distinct objects, strongest
    objections, failure modes, evidence exits, and non-claims while removing
@@ -105,7 +111,8 @@ token reduction, benchmark speed, or smaller models as automatic system-level
 improvement.
 
 **Central question.** Can a governed stack produce more accepted useful work
-per unit of total lifecycle cost than frontier-model-only operation?
+per unit of total lifecycle cost than a competent frontier agent with tools,
+caching, access control, and review?
 
 **Argument moves.** Define accepted useful output; enumerate inference,
 verification, repair, latency, memory, energy, reviewer, residual, and recovery
@@ -113,9 +120,10 @@ costs; introduce routing, caching, specialist computation, and selective
 deliberation as hypotheses; require matched comparisons and explicit defeat
 conditions.
 
-**Running example.** Compare a frontier-model-only repository change with a
-routed path that reuses context, delegates verification, and accounts for
-every repair and review step.
+**Running example.** Compare a competent conventional repository-change agent
+with a routed path that reuses context, delegates verification, and accounts
+for every repair and review step. Use hypothetical full-cost arithmetic without
+presenting it as a measured advantage.
 
 **Strongest objection.** Governance and routing overhead may exceed any savings
 from specialization or reuse.

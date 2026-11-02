@@ -36,19 +36,6 @@ GENERATED_PATHS = (
     Path("appendices/H_external_sources.qmd"),
     Path("appendices/K_implementation_horizons.qmd"),
 )
-IGNORED_COPY_NAMES = (
-    ".git",
-    ".quarto",
-    "_site",
-    "build",
-    "__pycache__",
-    ".pytest_cache",
-    ".mypy_cache",
-    ".DS_Store",
-    ".lake",
-    "raw",
-)
-
 
 def fail(message: str) -> None:
     print(f"Dynamic spine validation failed: {message}")
@@ -87,17 +74,19 @@ def run(workspace: Path, *args: str) -> str:
     return result.stdout
 
 
-def clone_or_copy(source: str, destination: str) -> str:
-    """Use an APFS copy-on-write clone when available, then fall back safely."""
-    clone = subprocess.run(
-        ["cp", "-c", "-p", source, destination],
-        stdout=subprocess.DEVNULL,
-        stderr=subprocess.DEVNULL,
-        check=False,
-    )
-    if clone.returncode == 0:
-        return destination
-    return shutil.copy2(source, destination)
+def copy_source_tree(root: Path, workspace: Path) -> None:
+    """Copy declared source only; never enumerate unknown attempt/cache trees."""
+    import prepare_chapter_admission as admission
+    registry = json.loads(admission.regular_file(root, "validation/registry.json").read_bytes())
+    paths = admission.source_paths(root, registry)
+    before = admission.snapshot(root, paths)
+    source_git = admission.git_identity(root)
+    workspace.mkdir()
+    for name in paths:
+        admission.copy_file(admission.regular_file(root, name), workspace / name)
+    if (admission.source_paths(root, registry) != paths or admission.snapshot(root, paths) != before
+            or admission.git_identity(root) != source_git or admission.snapshot(workspace, paths) != before):
+        raise ValueError("declared source changed while preparing the dynamic-spine workspace")
 
 
 def snapshot(workspace: Path) -> dict[Path, str]:
@@ -226,13 +215,8 @@ def assert_fixture_surfaces(workspace: Path, expected_chapter_count: int) -> Non
 def main() -> None:
     try:
         with tempfile.TemporaryDirectory(prefix="asi-stack-dynamic-spine-") as temp_dir:
-            workspace = Path(temp_dir) / "workspace"
-            shutil.copytree(
-                ROOT,
-                workspace,
-                ignore=shutil.ignore_patterns(*IGNORED_COPY_NAMES),
-                copy_function=clone_or_copy,
-            )
+            workspace = Path(temp_dir).resolve() / "workspace"
+            copy_source_tree(ROOT, workspace)
             run(workspace, "scripts/sync_scaffold.py")
             baseline = snapshot(workspace)
             original_manifest = (workspace / "book_structure.json").read_bytes()
@@ -281,4 +265,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    from admission_guard import canonical_access
+    try:
+        with canonical_access(ROOT):
+            main()
+    except (OSError, ValueError) as error:
+        fail(str(error))

@@ -1,0 +1,69 @@
+<style>
+  .search-result-link > .asi-search-kind {
+    display: block;
+    font-size: .85em;
+    font-weight: 600;
+    line-height: 1.35;
+    margin-bottom: .2em;
+    overflow-wrap: anywhere;
+  }
+  /* Use the book's existing dark blue accent for selected result text. The
+     default light blue gives white small text only about 4:1 contrast. */
+  #quarto-search-results li.aa-Item[aria-selected="true"] .search-item,
+  .aa-DetachedOverlay li.aa-Item[aria-selected="true"] .search-item,
+  #quarto-search-results li.aa-Item[aria-selected="true"] .search-item :is(.search-result-section, .search-result-text, .search-result-title-container, .search-result-text-container),
+  .aa-DetachedOverlay li.aa-Item[aria-selected="true"] .search-item :is(.search-result-section, .search-result-text, .search-result-title-container, .search-result-text-container) {
+    color: #fff;
+    background-color: #175b8c;
+  }
+  #quarto-search-results li.aa-Item[aria-selected="true"] .search-item :is(mark.search-match, .search-match.mark),
+  .aa-DetachedOverlay li.aa-Item[aria-selected="true"] .search-item :is(mark.search-match, .search-match.mark) {
+    color: #fff;
+    background-color: rgba(255, 255, 255, .12);
+  }
+</style>
+<script>
+(() => {
+  const setup = () => {
+    const context = document.getElementById("asi-search-page-kinds");
+    if (!context) return;
+    let kinds;
+    try { kinds = JSON.parse(context.textContent); } catch { return; }
+    const offset = document.querySelector('meta[name="quarto:offset"]')?.content || "./";
+    const project = new URL(offset, window.location.href);
+    const labelResults = () => {
+      document.querySelectorAll(".search-result-link").forEach(link => {
+        const target = new URL(link.href, window.location.href);
+        let label;
+        if (target.origin === project.origin && target.pathname.startsWith(project.pathname)) {
+          const route = decodeURIComponent(target.pathname.slice(project.pathname.length));
+          label = Object.prototype.hasOwnProperty.call(kinds, route) ? kinds[route] : undefined;
+        }
+        let badge = link.querySelector(":scope > .asi-search-kind");
+        if (!label) { badge?.remove(); return; }
+        if (!badge) {
+          badge = document.createElement("span");
+          badge.className = "asi-search-kind search-result-section";
+          link.prepend(badge);
+        }
+        if (badge.textContent !== label) badge.textContent = label;
+      });
+    };
+    let queued = false;
+    const queue = () => {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(() => { queued = false; labelResults(); });
+    };
+    // Quarto creates and replaces result cards as the query changes. Watch its
+    // links as well as child nodes; leave ranking, snippets, URLs, and native
+    // keyboard selection untouched. Unknown/external routes earn no label.
+    new MutationObserver(queue).observe(document.documentElement, {
+      subtree: true, childList: true, attributes: true, attributeFilter: ["href"]
+    });
+    queue();
+  };
+  if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", setup, {once: true});
+  else setup();
+})();
+</script>

@@ -52,6 +52,14 @@ def main() -> None:
     if {row.get("id") for row in contributions} != EXPECTED or len(contributions) != 3:
         errors.append("program must contain exactly the three defended contributions")
     for contribution in contributions:
+        comparison = contribution.get("prospective_ordinary_comparison", {})
+        reference = comparison.get("blueprint_ref", "")
+        path, _, anchor = reference.partition("#")
+        if (comparison.get("status") != "specified_not_executed" or not anchor
+                or path != "docs/defended_contribution_prior_art_positioning.md"):
+            errors.append(f"{contribution.get('id')} lacks its unexecuted ordinary comparison reference")
+        elif f"{{#{anchor}}}" not in (ROOT / path).read_text(encoding="utf-8"):
+            errors.append(f"{contribution.get('id')} conventional blueprint anchor is missing: {anchor}")
         ladder = contribution.get("exit_ladder", {})
         if set(ladder) != EXIT_LADDER_FIELDS:
             errors.append(f"{contribution.get('id')} exit-ladder fields drifted")

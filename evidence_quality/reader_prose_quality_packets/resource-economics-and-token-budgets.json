@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "resource-economics-and-token-budgets",
   "chapter_file": "chapters/resource-economics-and-token-budgets.qmd",
-  "chapter_sha256": "6ff1fc0b391e0174e57748c5f03037fca11e1a2c9d14a7c7cb00848ac74251f5",
+  "chapter_sha256": "f19812dd6def8b05de50593e64e2e0cae349996bad21cb80931ce100f38572c4",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-20-resource-and-recovery-economics",
   "review_state": "digest_bound_editorial_pass",
@@ -30,8 +30,8 @@
     ],
     "maximum_inference": "A bounded selector can reject cheaper ineligible routes and select the lowest-cost adequate route in the tracked synthetic fixture; no production or chapter-core economic conclusion follows."
   },
-  "counterexample_or_simpler_baseline": "A scalar cost sort chooses the 2.3-unit route and calls it efficient. The accepted selector rejects it for failed verification and compares the 14.2 route with a 43.0 adequate baseline.",
-  "readable_claim": "Resource efficiency means the lowest complete cost for a qualified useful outcome\u2014not the fewest tokens, fastest local step, highest cache-hit rate, or cheapest route before verification and repair.",
+  "counterexample_or_simpler_baseline": "The synthetic scalar-cost route omits verification. A competent conventional scheduler with budgets, quality checks, retries and escalation may instead preserve all obligations at lower burden; the new ordinary-budgeting section makes that comparator eligible to win.",
+  "readable_claim": "Resource efficiency means the lowest complete cost for a qualified useful outcome—not the fewest tokens, fastest local step, highest cache-hit rate, or cheapest route before verification and repair.",
   "normative_rule": "Protected safety, rights, verification, recovery, and residual costs enter the ledger before selection. A route that omits them is ineligible, not inexpensive.",
   "formal_binding": {
     "claim_id": "resource-economics-and-token-budgets.core",
@@ -61,11 +61,13 @@
   "editorial_diagnostics": {
     "mega_sentence_disposition": "A readable claim and one-sentence normative rule now precede the retained exact composite claim.",
     "hedge_disposition": "The worked trace carries one scoped synthetic-result limit while distinct cost-domain limits remain local.",
-    "table_disposition": "The compact route ledger is retained as a decision comparison, not as repeated status bookkeeping."
+    "table_disposition": "The compact route ledger is retained as a decision comparison, not as repeated status bookkeeping. 2026-10-10 assistant editorial review compares the exact saved pre-edit chapter with the current chapter: conceptual reading links and a fair conventional comparator are added; existing evidence inventory, schemas, sources, proof limits and support remain unchanged. Retired prose dispositions preserve the two narrowed absolute/weak-baseline statements. This is an assistant editorial pass, not independent reader review."
   },
   "non_claims": [
     "The synthetic route comparison does not establish production savings or economic optimality.",
     "The fixture does not establish deployed routing, model quality, or safety performance.",
-    "The editorial revision does not move the resource-economics chapter-core support state."
+    "The editorial revision does not move the resource-economics chapter-core support state.",
+    "2026-10-11 scoped interface reconciliation: resource requests and allocation decisions, capability identity and use eligibility, and claim continuity and accepted support retain distinct owners. This review covers the corrected interface passages and three existing manifest rules; it is not a full chapter/source/proof review, implementation result, support transition, or publication approval.",
+    "2026-11-02 selected Atlas working-paper case added after its existing mechanism explanation. Its numbers remain source-reported with inference/private-data limits; original reader claim, rule, core, proof and experiment outcomes retain their scope. The full study stays in the source library. No new model/campaign, independent replication, support movement, author approval or release is inferred."
   ]
 }

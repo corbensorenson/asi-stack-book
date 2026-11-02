@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/integrated-reference-architecture.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 108,
+    "prose_candidates_adjudicated": 111,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The new learning-process plane is bounded to an owner-preserving semantic contract between training policy and execution infrastructure; it does not collapse model, learning, execution, or physical topology or claim an integrated runtime result. The hardware-parallelism and schedule-success substitutions are mapped to the chapter's existing owner, join, state, effect, evidence, and integration obligations. The prior Regret Engine return path remains bounded. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. The new learning-process plane is bounded to an owner-preserving semantic contract between training policy and execution infrastructure; it does not collapse model, learning, execution, or physical topology or claim an integrated runtime result. The hardware-parallelism and schedule-success substitutions are mapped to the chapter's existing owner, join, state, effect, evidence, and integration obligations. The prior Regret Engine return path remains bounded. No end-to-end implementation or new support atom, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. 2026-10-10 assistant editorial review: Reviewed the conceptual reading route and competent-orchestrator objection. Logical boundaries may share a process; the weak smoke-test baseline cannot settle the stronger comparison. The illustrative showpiece remains distinct from bounded service results. No new deployment, integration, or support result."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -547,11 +547,6 @@
       "rationale": "The three non-transfers restate the existing rule that learning and self-improvement remain downstream of separate evidence, authority, readiness, residual, and monitoring gates.",
       "target_atom_id": "integrated-reference-architecture.invariant.013"
     },
-    "integrated-reference-architecture.prose.4708d0dce23e": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `integrated-reference-architecture.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "integrated-reference-architecture.insufficiency.001"
-    },
     "integrated-reference-architecture.prose.4432ae092957": {
       "state": "nonmaterial_explanation",
       "rationale": "P7.1c semantic review identifies this scanner hit as a line-wrapped clause rather than a complete independent proposition. The exact digest-bound scene and its evidence boundary remain in `evidence_quality/reader_prose_quality_packets/integrated-reference-architecture.json`."
@@ -579,11 +574,42 @@
       "state": "duplicate_of_atom",
       "rationale": "Restates the no-super-owner invariant: resource optimization cannot inherit or redefine another owner's protected semantics or authority.",
       "target_atom_id": "integrated-reference-architecture.invariant.001"
+    },
+    "integrated-reference-architecture.prose.914a450367ca": {
+      "state": "editorial_or_question",
+      "rationale": "2026-10-10 assistant editorial review: Introduces the existing integration question and owner boundary for navigation."
+    },
+    "integrated-reference-architecture.prose.eefc10de94fd": {
+      "state": "nonmaterial_explanation",
+      "rationale": "2026-10-10 assistant editorial review: Explains logical responsibility versus service placement without asserting efficacy."
+    },
+    "integrated-reference-architecture.prose.0f89d457dffa": {
+      "state": "editorial_or_question",
+      "rationale": "2026-10-10 assistant editorial review: Wrapped opening of the comparator obligation asks for an inspectable join or lower burden; neither is asserted."
+    },
+    "integrated-reference-architecture.prose.1e81e34eb101": {
+      "state": "editorial_or_question",
+      "rationale": "2026-10-10 assistant editorial review: Wrapped continuation limits what the weak baseline establishes about a competent alternative."
     }
   },
   "non_claims": [
     "No diagram, interface, replay, fixture, theorem, mapping, or local slice proves a deployed stack, safety, capability, transfer, AGI, ASI, or SOTA.",
     "The local slice is disposable and internally evaluated.",
     "The argument-exit campaign is not current evidence."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "integrated-reference-architecture.prose.4708d0dce23e",
+      "retired_source": "chapters/integrated-reference-architecture.qmd:76",
+      "retired_sentence": "It is cheaper in the fixture but admits eight false accepts because it omits the joins the chapter claims integration must preserve.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `integrated-reference-architecture.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "integrated-reference-architecture.insufficiency.001"
+      },
+      "retirement_reason": "2026-10-10 editorial narrowing removes an overabsolute statement or weak-baseline inference; structured atoms and evidence remain unchanged.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-10-10"
+    }
   ]
 }

@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 import re
 import unicodedata
@@ -11,7 +12,9 @@ from collections import defaultdict
 from pathlib import Path
 from typing import Any
 
-from visual_chapter_source import canonical_chapter_text
+from visual_chapter_source import canonicalize_chapter_source
+from repository_custody import historical_bytes
+from build_p7_1a_w3_inheritance_guard import TERMINAL_CUSTODY_COMMIT
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -50,8 +53,10 @@ def ngrams(value: str) -> set[tuple[str, ...]]:
 
 
 def build() -> dict[str, Any]:
-    structure = load(STRUCTURE)
-    w3 = load(W3)
+    def retained(path):
+        return historical_bytes(TERMINAL_CUSTODY_COMMIT, str(path.relative_to(ROOT)))
+    structure = json.loads(retained(STRUCTURE))
+    w3 = json.loads(retained(W3))
     historical_ids = set(w3["corpus"]["chapter_ids"])
     rows = [
         chapter
@@ -62,7 +67,7 @@ def build() -> dict[str, Any]:
     if len(rows) != 84:
         raise ValueError(f"expected 84 manifest chapters, found {len(rows)}")
     chapters = {
-        row["id"]: canonical_chapter_text(ROOT / row["file"])
+        row["id"]: canonicalize_chapter_source(retained(ROOT / row['file']).decode('utf-8'))
         for row in rows
     }
     spread: dict[tuple[str, ...], set[str]] = defaultdict(set)
@@ -167,7 +172,7 @@ def build() -> dict[str, Any]:
         },
         "w3_binding": {
             "path": "evidence_quality/p7_1a_w3_inheritance_guard.json",
-            "sha256": hashlib.sha256(W3.read_bytes()).hexdigest(),
+            "sha256": hashlib.sha256(retained(W3)).hexdigest(),
             "raw_repeated_12_gram_count": raw["distinct_repeated_12_grams"],
             "raw_maximum_chapter_spread": raw["maximum_chapter_spread"],
             "reader_facing_repeated_12_gram_count": editorial[
@@ -257,11 +262,16 @@ def report(value: dict[str, Any]) -> str:
 
 
 def main() -> None:
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--write', action='store_true')
+    args = parser.parse_args()
+    if args.write:
+        raise SystemExit('P6.9 raw-scaffold closure is terminal; use a separately reviewed successor for new evidence.')
     value = build()
-    OUTPUT.write_text(json.dumps(value, indent=2) + "\n", encoding="utf-8")
-    REPORT.write_text(report(value), encoding="utf-8")
+    if value != load(OUTPUT):
+        raise SystemExit('Raw-scaffold terminal record differs from its retained custody inputs')
     print(
-        "Built P6.9 raw-scaffold audit: "
+        "Replayed P6.9 raw-scaffold audit: "
         f"{value['summary']['widest_block_count']} widest fingerprints, "
         f"{value['summary']['unjustified_widest_block_count']} unjustified."
     )

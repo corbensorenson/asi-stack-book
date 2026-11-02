@@ -613,7 +613,8 @@ def main() -> None:
             raise SystemExit("Manim v2 production ledger is stale; run without --check")
         print(f"Manim v2 production ledger is current for {len(value['entries'])} canonical chapters.")
         return
-    OUTPUT.write_text(body, encoding="utf-8")
+    if not OUTPUT.is_file() or OUTPUT.read_text(encoding='utf-8') != body:
+        OUTPUT.write_text(body, encoding="utf-8")
     print(f"Wrote {OUTPUT.relative_to(ROOT)} with {len(value['entries'])} entries.")
 
 

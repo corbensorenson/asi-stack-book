@@ -13,5 +13,20 @@ document.addEventListener("DOMContentLoaded", () => {
   if (index >= 0) {
     link.href = window.location.pathname.slice(0, index + 1);
   }
+  const diagrams = Array.from(document.querySelectorAll('.asi-reader-diagram'));
+  if (!diagrams.length) return;
+  let observer;
+  const positionDiagrams = () => {
+    for (const diagram of diagrams) {
+      if (diagram.dataset.positioned || !diagram.querySelector('svg')) continue;
+      const excess = Math.max(0, diagram.scrollWidth - diagram.clientWidth);
+      diagram.scrollLeft = diagram.dataset.initialScroll === 'end' ? excess : excess / 2;
+      diagram.dataset.positioned = 'true';
+    }
+    if (diagrams.every(diagram => diagram.dataset.positioned)) observer.disconnect();
+  };
+  observer = new MutationObserver(() => requestAnimationFrame(positionDiagrams));
+  observer.observe(document.body, {childList: true, subtree: true});
+  requestAnimationFrame(positionDiagrams);
 });
 </script>

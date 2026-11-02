@@ -17,39 +17,21 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Set up Python
-        uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
-        with:
-          python-version: "3.11"
-
       - name: Set up Node
         uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
         with:
           node-version: "22"
 
-      - name: Install pinned post-v2 evidence runtime
-        run: |
-          python3 -m pip install --disable-pip-version-check --no-cache-dir \
-            --index-url https://download.pytorch.org/whl/cpu torch==2.7.1
-          python3 -m pip install --disable-pip-version-check --no-cache-dir \
-            -r ci/post_v2_requirements.txt
+      - name: Set up validation runtime
+        uses: ./.github/actions/validation-runtime
 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@8a96df13519ee81fd526f2dfca5962811136661b # v2
-        with:
-          version: "1.9.38"
-
-      - name: Install Lean
+      - name: Install pinned browser runtime
         run: |
-          curl -fsSL https://raw.githubusercontent.com/leanprover/elan/6737edca3d2ca3dbaa1b47b87769b48b420633ae/elan-init.sh -o /tmp/elan-init.sh
-          echo "a620ff1641616222c8d37c54845492004bb84d6877cdbc944dd65c1aa685bf53  /tmp/elan-init.sh" | sha256sum -c -
-          sh /tmp/elan-init.sh -y --default-toolchain "$(cat lean/lean-toolchain)"
-          echo "$HOME/.elan/bin" >> "$GITHUB_PATH"
+          npm ci --ignore-scripts --prefix ci/browser
+          ./ci/browser/node_modules/.bin/playwright install --with-deps chromium
 
       - name: Check generated scaffold
-        run: |
-          python3 scripts/sync_scaffold.py
-          git diff --exit-code
+        run: python3 scripts/sync_scaffold.py --check
 
       - name: Run deep validation tier
         env:
@@ -65,10 +47,11 @@ jobs:
           LC_ALL: C.UTF-8
         run: |
           rm -rf _site
-          quarto render --to html
-          quarto render editions/reader_manuscript/current --to html
+          python3 scripts/admission_guard.py --run quarto render --to html
+          python3 scripts/admission_guard.py --run quarto render editions/reader_manuscript/current --to html
           python3 scripts/build_human_reader_public_site.py --site _site
-          quarto render papers --to html
+          python3 scripts/build_human_reader_public_site.py --site _site --check
+          python3 scripts/admission_guard.py --run quarto render papers --to html
           python3 scripts/validate_paper_library.py --site _site
 
       - name: Build and validate canonical public status
@@ -84,7 +67,11 @@ jobs:
         run: python3 scripts/validate_live_human_view.py
 
       - name: Browser-smoke live Human view
-        run: node scripts/validate_live_human_view_browser.js
+        env:
+          NODE_PATH: ${{ github.workspace }}/ci/browser/node_modules
+        run: |
+          node scripts/validate_live_human_view_browser.js --strict --all-chapters --all-viewports
+          python3 scripts/validate_live_human_view_browser_report.py --site _site
 
       - name: Build and verify tested artifact
         run: |
@@ -97,4 +84,22 @@ jobs:
           name: pages-tested-${{ github.sha }}
           path: build/pages-tested
           if-no-files-found: error
+          retention-days: 14
+
+      - name: Preserve validation diagnostics
+        if: always()
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: validation-diagnostics-${{ github.workflow }}-${{ github.run_id }}
+          path: |
+            build/validation_registry_report.json
+            build/validation_registry_report-outputs/
+            build/publication-source-*/
+            build/proof-envelope-compile-*/
+            build/living-book-compile-*/
+            build/proof_axiom_audit/
+            build/live_human_view_browser_report.json
+            build/edition-control-*.png
+            build/failure-*.png
+          if-no-files-found: ignore
           retention-days: 14

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
     "structured_atoms_reviewed": 74,
-    "prose_candidates_adjudicated": 124,
+    "prose_candidates_adjudicated": 129,
     "unowned_material_claims": 0,
-    "review_note": "Incremental semantic review on 2026-08-08 maps the elizaOS diagnostic-versus-provider-qualification comparison to existing campaign, observation-independence, and no-promotion atoms. elizaOS was documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The 2026-08-14 forward-transfer pass maps access-versus-effect and factorial library/search controls to existing causal benchmark atoms and classifies four scanner fragments separately. The paper specifies controls but reports no run. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Incremental semantic review on 2026-08-08 maps the elizaOS diagnostic-versus-provider-qualification comparison to existing campaign, observation-independence, and no-promotion atoms. elizaOS was documentation-reviewed but not executed; no support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The 2026-08-14 forward-transfer pass maps access-versus-effect and factorial library/search controls to existing causal benchmark atoms and classifies four scanner fragments separately. The paper specifies controls but reports no run. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-11-02 owner-authorized Atlas integration reviews the new source-attributed case and selected working-paper passages. It preserves positive findings, operational no-go, calibration strata, timing/budget units and post hoc correction without importing independent reproduction or a controller result into this book. This is not a fresh full-chapter/source/proof audit; older review scopes retain their dates."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -259,10 +259,6 @@
       "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
     "benchmark-ratchets-and-anti-goodhart-evidence.prose.ff9aa99c815f": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
-    },
-    "benchmark-ratchets-and-anti-goodhart-evidence.prose.82f29b973d53": {
       "state": "nonmaterial_explanation",
       "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
     },
@@ -629,11 +625,57 @@
     "benchmark-ratchets-and-anti-goodhart-evidence.prose.711bbdf16259": {
       "state": "historical_or_source_report",
       "rationale": "Line-wrapped source-attribution clause for a proposed protocol that reports no completed benchmark run."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.8da1ab1c16c1": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "benchmark-ratchets-and-anti-goodhart-evidence.invariant.014",
+      "rationale": "2026-11-02 Atlas integration corrects the explanatory sentence to the existing boundary: benchmark success opens claim-specific review and cannot automatically move support or other authority."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.77913aae404c": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 selected Answerability Atlas synthesis reading: the full source-attributed case preserves the score/interval, inference stage, regime, private-evidence and no-reproduction limits. This fragment reports or interprets the bounded working-paper result; it is not a new ASI Stack experiment, universal claim, accepted support transition or controller adoption."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.ab69a6ca0720": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 selected Answerability Atlas synthesis reading: the full source-attributed case preserves the score/interval, inference stage, regime, private-evidence and no-reproduction limits. This fragment reports or interprets the bounded working-paper result; it is not a new ASI Stack experiment, universal claim, accepted support transition or controller adoption."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.c6a8613d01e7": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 selected Answerability Atlas synthesis reading: the full source-attributed case preserves the score/interval, inference stage, regime, private-evidence and no-reproduction limits. This fragment reports or interprets the bounded working-paper result; it is not a new ASI Stack experiment, universal claim, accepted support transition or controller adoption."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.dcb1de41032e": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 selected Answerability Atlas synthesis reading: the full source-attributed case preserves the score/interval, inference stage, regime, private-evidence and no-reproduction limits. This fragment reports or interprets the bounded working-paper result; it is not a new ASI Stack experiment, universal claim, accepted support transition or controller adoption."
+    },
+    "benchmark-ratchets-and-anti-goodhart-evidence.prose.e18e32dc3e01": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 selected Answerability Atlas synthesis reading: the full source-attributed case preserves the score/interval, inference stage, regime, private-evidence and no-reproduction limits. This fragment reports or interprets the bounded working-paper result; it is not a new ASI Stack experiment, universal claim, accepted support transition or controller adoption."
     }
   },
   "non_claims": [
     "Completing this semantic review does not promote support or establish a benchmark, capability, safety, readiness, deployment, unlearning, transfer, or SOTA result.",
     "The twenty-nine mappings and synthetic fixtures do not import external or natural benchmark outcomes.",
     "The future campaign remains unexecuted."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "benchmark-ratchets-and-anti-goodhart-evidence.prose.82f29b973d53",
+      "retired_source": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd:159",
+      "retired_sentence": "**What the benchmark ratchet shows:** The ratchet converts benchmark work into an evidence-state decision, not a celebration of a score.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Semantically reviewed as bounded explanation, source/fixture report, lifecycle restatement, scanner fragment, or explicit non-claim; the complete material obligation is already atomized and no independent promoted atom is created."
+      },
+      "retirement_reason": "2026-11-02 clarification: benchmark machinery preserves evidence for a named support decision instead of granting a transition to itself. Original core/proof/evidence outcomes unchanged.",
+      "replacement_candidate_ids": [
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.8da1ab1c16c1",
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.77913aae404c",
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.ab69a6ca0720",
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.c6a8613d01e7",
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.dcb1de41032e",
+        "benchmark-ratchets-and-anti-goodhart-evidence.prose.e18e32dc3e01"
+      ],
+      "recorded_on": "2026-11-02"
+    }
   ]
 }

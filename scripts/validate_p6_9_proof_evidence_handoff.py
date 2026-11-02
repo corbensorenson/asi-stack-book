@@ -144,12 +144,15 @@ def main() -> None:
         ("raw exit", lambda item: item["raw_scaffold_exit"].__setitem__("exit_passed", False)),
         ("support", lambda item: item.__setitem__("support_state_effect", "promoted")),
     ]
-    baseline = set(errors(value))
-    for label, mutation in mutations:
-        candidate = copy.deepcopy(value)
-        mutation(candidate)
-        if not set(errors(candidate)) - baseline:
-            failures.append(f"negative mutation accepted: {label}")
+    # Rejection sensitivity is meaningful only after the complete baseline
+    # (including the deterministic rebuild and reader report) is valid.
+    # Never subtract error strings: two rejected digests can share a message.
+    if not failures:
+        for label, mutation in mutations:
+            candidate = copy.deepcopy(value)
+            mutation(candidate)
+            if not errors(candidate):
+                failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit(
             "P6.9 proof/evidence handoff failed:\n - "

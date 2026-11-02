@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/planning-as-a-control-layer.qmd",
     "structured_atoms_reviewed": 76,
-    "prose_candidates_adjudicated": 48,
+    "prose_candidates_adjudicated": 53,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. All 46 prose candidates are mapped to existing structured ownership, bounded source reporting, or nonmaterial explanation. The new Decision Capsule and comparator-contract prose remains argument-level architecture. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. All 46 prose candidates are mapped to existing structured ownership, bounded source reporting, or nonmaterial explanation. The new Decision Capsule and comparator-contract prose remains argument-level architecture. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-10-11 full source pass reviews the complete planning argument, mechanism, lifecycle, interfaces, invariants, failures, implementation horizon, test plan, formal boundary, finite-world-model result, branch semantics, source crosswalk, summary and handoff. Nineteen new scanner candidates were adjudicated in paragraph context, fourteen retired dispositions preserve exact source/text/review lineage, and seven existing design rules retain prior wording. Credential feasibility differs from permission and unknown effect; competent ordinary workflows may win. Search accounting is bounded, reuse depends on known dependency coverage, independent graph nodes still need capacity, duplicate payloads may represent distinct operations, forecasts are not causal observations, and simulation-state commitment is not external actuality. The scheduling and publication examples are hypothetical. A selected official Airflow 3.3.2 task-lifecycle reading is recorded in the existing note; other source/proof/campaign reviews retain their historical scope. The twelve current source assignments are reconciled without claiming twelve fresh passage reviews. Core, formal scope, finite-world-model outcome and family projection remain literal. No new material/support atom, live planner, source/proof reproduction, scientific campaign, author approval, support movement or public release is introduced. The same October 11 displayed-view follow-up reviews the active lifecycle/interface overlays for this owner against the corrected source in full paragraph context. Current grants, node-local holds, job/effect separation, qualified reuse, unknown effects, permitted retention and independent evidence/release decisions keep their existing atom ownership. The three edited operations across Planning and Intent preserve their IDs and do not alter frozen reader copies, source-report/proof scope, material atom count, support or release. The lifecycle reference also defines the already declared exploratory state from mechanism.010: bounded candidate reasoning/simulation can produce planning material but not new real-observation or effect permission. This is a proposed state definition, not a new implemented model state."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -16,7 +16,7 @@
       "environment": "Nine reviewed assigned source notes; three valid and ten invalid plan-execution fixtures; two valid scheduler traces and seven rejecting mutations; two valid runtime-replan traces and nine rejecting mutations; one valid and three rejected actual-edge graphs; twelve complete graph-transport mutations; two no-change transitions; seventy-one Lean declarations including a reachable lifecycle, vertical refinement, finite graph verifier, and graph-bound admission bridge; and a future preregistered natural multi-planner campaign. No production planner or scheduler is represented.",
       "model": "A versioned consumer-relative plan policy over candidate decompositions, typed obligation graphs, assumptions and observations, dependency and feasibility predicates, route requests, lifecycle, scheduling, dispatch, merge, stop, recovery, replan, denominators, costs, and residuals; current implementations are trusted-field validators and finite routes, not a planner.",
       "authority": "Intent owns accepted semantics; Context and Memory own observations; Compilation owns lowering; Routing and Fields own worker qualification; Labor OS owns jobs; Runtime, Security, and Authority owners decide effects; Verification owns outcomes; Evidence and Readiness own support and release; Rights and Publication owners govern external use. Planning may order, block, request, replan, and residualize, but cannot grant authority or execute.",
-      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization.",
+      "time": "Semantic review current through 2026-08-02; material changes to evidence, authority, population, model, environment, ontology, consumer, source-mined concept prose, or section ownership require reauthorization. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization. The 2026-10-11 source argument and seven-rule clarification review distinguishes twelve current manifest assignments from the earlier recorded source-review scope. Source/proof/effect campaigns retain their original versions and dates; examples and scheduling arithmetic are hypothetical.",
       "artifact": "Chapter and manifest contract; nine reviewed source mappings; plan-graph and PlanForge-DAG fixtures; scheduler and replan traces; two no-change decisions; seven proof targets in two Lean modules; future natural tasks, plans, dependency labels, outcomes, costs, ablations, replications, and transfer bundles."
     },
     "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
@@ -304,6 +304,146 @@
       "acceptance_criteria": [
         "Bind independent quality evaluation to observed escalation, residual custody, retry cost, and terminal outcomes."
       ]
+    },
+    "planning-as-a-control-layer.mechanism.002": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Generate or receive multiple candidate decompositions plus explicit no-plan, clarification, defer, and human-plan options; preserve generator identity, prompt or method, seed, search history, discarded alternatives, and selection denominator.\". Current wording is \"Generate or receive candidate decompositions and applicable no-plan, clarification, defer, and human-plan options in proportion to the declared task and risk. Preserve the actual candidate pool, generator or method identity, search limit, selection denominator, and permitted history; do not claim enumeration of every conceivable plan.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.mechanism.013": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Compute the affected future subgraph from typed dependencies, invalidate stale assumptions, predictions, routes, artifacts, verifiers, and schedules, preserve unaffected work only when its premises still hold, and record counterfactual alternatives.\". Current wording is \"Query the affected future subgraph over known typed dependencies, review stale premises and current uses, and preserve eligible work with adequate coverage for the proposed reuse. Incomplete closure leaves unresolved dependencies owned; permitted historical decisions retain their identities.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.invariant.001": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Every plan is bound to one accepted contract version, consumer, purpose, environment, epoch, horizon, authority and rights ceiling, resource accounts, and support ceiling; material change expires or forks it.\". Current wording is \"Every plan is bound to an accepted contract version, consumer, purpose, environment, epoch, horizon, authority and rights ceiling, resource accounts, and support ceiling. Changes outside the envelope trigger review, a new version, or re-contract; permitted choices may reuse an independently valid current grant.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.invariant.010": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"A replan preserves the accepted contract, authority and rights ceilings, stops, residuals, negative knowledge, and complete history; a material change requires re-contract rather than adaptation by name.\". Current wording is \"A replan preserves accepted obligations, current authority and rights, stops, residuals, considered alternatives, and permitted history. Changes outside the envelope need re-contract; allowed choices may reuse a valid grant.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.invariant.011": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Local repair preserves unaffected work only when dependency and assumption closure prove it remains valid; positional proximity or unchanged bytes are insufficient.\". Current wording is \"Local repair evaluates known dependencies, assumptions, and coverage for the proposed reuse. Unchanged bytes or positional proximity cannot establish validity, and an incomplete query leaves unresolved dependencies owned.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.invariant.013": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Stop, fallback, recovery, escalation, rollback request, compensation, and residual routes have accountable owners and observed consequences; declared paths are not effect evidence.\". Current wording is \"Stop, fallback, recovery, escalation, rollback request, compensation, and residual routes have accountable owners and observations appropriate to their claims. Denial of an unattempted effect needs no effect post-state; replanning cannot turn an unknown effect into no effect.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
+    },
+    "planning-as-a-control-layer.invariant.014": {
+      "current_disposition": "retain_argument_pending_natural_multi_planner_promotion_or_refutation_campaign",
+      "known_confounds": [
+        "Reference decompositions and dependency labels can be incomplete, outcome-informed, culturally narrow, or non-unique.",
+        "Governed planners may receive more tokens, search, calls, tools, context, feedback, repair, or human labor than baselines.",
+        "Planner, dependency adjudicator, route qualifier, verifier, and outcome evaluator may share models, data, code, infrastructure, organizations, or incentives.",
+        "Discarded plans, blocked nodes, retries, replans, merge failures, timeouts, and residuals can be removed from denominators.",
+        "Critical-path estimates can hide coordination, verification, recovery, privacy, rights, and opportunity costs.",
+        "Non-dispatch can reduce observed harm while increasing false denial and missed help.",
+        "Short horizons can miss downstream effects, descendant invalidation, recovery incompleteness, and delayed harm.",
+        "A synthetic schema or finite theorem can be mistaken for an exercised planner mechanism.",
+        "A dependency-closure query is limited by recorded edges and assumptions; shared capacity, unknown effects, and current grants cannot be inferred from a valid graph. Complete search accounting covers declared considered candidates, not all conceivable alternatives or permanently retained prohibited payloads."
+      ],
+      "non_claims": [
+        "A complete plan record, acyclic graph, solver optimum, planner score, selected route, dispatch request, fixture, finite theorem, or no-change transition does not establish dependency truth, plan usefulness, safety, optimality, or production transfer.",
+        "The current eight valid records, twenty-nine rejecting cases, twelve complete graph-transport mutations, two no-change transitions, and seventy-one theorem declarations establish only their exact finite record, route, lifecycle, listed-edge, transport, and non-promotion consequences.",
+        "No plan, job, authority, effect, support state, deployment, publication, AGI, or ASI claim changes without its separate owner and accepted transition.",
+        "2026-10-11 design-rule lineage: prior wording was \"Every alternative, failed decomposition, blocked node, timeout, retry, replan, discarded route, merge failure, dispatch denial, cost, and residual remains in the selection and outcome denominator.\". Current wording is \"Every considered alternative, failed decomposition, blocked node, timeout, retry, replan, discarded route, merge failure, dispatch denial, cost, and residual remains in the declared search and outcome accounting. Preserve permitted records rather than prohibited payloads; bounded search and missing outcomes stay explicit.\". This clarifies the architectural argument; existing finite proofs, records, and support states keep their original scope and do not establish the corrected policy in live operation."
+      ]
     }
   },
   "prose_candidate_dispositions": {
@@ -341,41 +481,6 @@
       "state": "duplicate_of_atom",
       "rationale": "Restates why accepted commands still require planning.",
       "target_atom_id": "planning-as-a-control-layer.problem.001"
-    },
-    "planning-as-a-control-layer.prose.4224e1170326": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the obligation-selection problem.",
-      "target_atom_id": "planning-as-a-control-layer.problem.001"
-    },
-    "planning-as-a-control-layer.prose.2c0832a54e55": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the inspectable and dispatchable plan requirement.",
-      "target_atom_id": "planning-as-a-control-layer.core"
-    },
-    "planning-as-a-control-layer.prose.9f683a5ba683": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates plan-as-versioned-artifact design.",
-      "target_atom_id": "planning-as-a-control-layer.mechanism.010"
-    },
-    "planning-as-a-control-layer.prose.992d30c5437a": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the plan record fields and negative space.",
-      "target_atom_id": "planning-as-a-control-layer.mechanism.003"
-    },
-    "planning-as-a-control-layer.prose.2a6689238dc8": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the intended reduction in downstream surprise.",
-      "target_atom_id": "planning-as-a-control-layer.core"
-    },
-    "planning-as-a-control-layer.prose.94ad1ba75d8e": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates explicit lifecycle and refusal visibility.",
-      "target_atom_id": "planning-as-a-control-layer.mechanism.010"
-    },
-    "planning-as-a-control-layer.prose.f1974526dcac": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Reader explanation of why negative space matters.",
-      "target_atom_id": null
     },
     "planning-as-a-control-layer.prose.7f815347c197": {
       "state": "duplicate_of_atom",
@@ -442,11 +547,6 @@
       "rationale": "Restates the routing and qualification boundary.",
       "target_atom_id": "planning-as-a-control-layer.interface.004"
     },
-    "planning-as-a-control-layer.prose.4a2ea47ffa18": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates residual ownership and observed consequences.",
-      "target_atom_id": "planning-as-a-control-layer.mechanism.015"
-    },
     "planning-as-a-control-layer.prose.88dcd4e469e1": {
       "state": "duplicate_of_atom",
       "rationale": "Restates evidence-owner and proof-boundary separation.",
@@ -492,21 +592,6 @@
       "rationale": "Restates adoption and causal campaign requirements.",
       "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
     },
-    "planning-as-a-control-layer.prose.4469d4dd41dc": {
-      "state": "historical_or_source_report",
-      "rationale": "Reports exact current fixture and finite-route evidence.",
-      "target_atom_id": "planning-as-a-control-layer.minimum.001"
-    },
-    "planning-as-a-control-layer.prose.b02f33cd62ae": {
-      "state": "historical_or_source_report",
-      "rationale": "States that current evidence does not show a good planner.",
-      "target_atom_id": "planning-as-a-control-layer.minimum.001"
-    },
-    "planning-as-a-control-layer.prose.7901923176e3": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates the required natural causal and transfer evidence.",
-      "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
-    },
     "planning-as-a-control-layer.prose.3722417a8956": {
       "state": "duplicate_of_atom",
       "rationale": "Restates complete cost attribution and hidden-repair prevention.",
@@ -526,20 +611,568 @@
       "rationale": "The Regret Engine source-introduction sentence points to the existing planning obligation to freeze decision-relevant information and alternatives; it creates no independent support-bearing claim.",
       "target_atom_id": "planning-as-a-control-layer.problem.001"
     },
-    "planning-as-a-control-layer.prose.2e82fb22bb7d": {
+    "planning-as-a-control-layer.prose.456ad1443b16": {
       "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "planning-as-a-control-layer.failure_mode.011"
+      "rationale": "2026-10-11 full planning source reconciliation: Fragment of the opening: an independently authorized local render may remain useful when a separate publication node is blocked. It supplies no broader grant or release conclusion.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.006"
     },
-    "planning-as-a-control-layer.prose.2dbc440e0ce9": {
+    "planning-as-a-control-layer.prose.3a37011c137f": {
       "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.mechanism.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "planning-as-a-control-layer.mechanism.007"
+      "rationale": "2026-10-11 full planning source reconciliation: The local render cannot substitute for completed publication. The adjacent paragraph keeps useful independent work separate from the accepted final obligation.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.005"
+    },
+    "planning-as-a-control-layer.prose.3ca2f72311ae": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The opening requires affected-dependency review rather than a global freeze; coverage and omitted dependencies remain explicit later in the mechanism.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.013"
+    },
+    "planning-as-a-control-layer.prose.1adee9dc656c": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: Fragment of the human reading path: Planning owns proposed work order and revision, not permission or effects; a checklist can suffice for a small task.",
+      "target_atom_id": "planning-as-a-control-layer.core"
+    },
+    "planning-as-a-control-layer.prose.f837194904fb": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The complete paragraph distinguishes unavailable credentials from missing permission. Repeating an approval cannot by itself repair execution feasibility; this is a hypothetical operational distinction, not a measured delay result.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.006"
+    },
+    "planning-as-a-control-layer.prose.855d4bd979a2": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The objection narrows what records can identify: considered alternatives and forecasts do not supply unobserved causal outcomes or eliminate luck without a comparison.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.018"
+    },
+    "planning-as-a-control-layer.prose.8d1356824ff9": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-10-11 full planning source reconciliation: Selected official Airflow 3.3.2 Relationships/Task Instances passages supply ordinary dependency, retry and waiting-for-input concepts. The existing source note records that bounded reading; no integration, imported efficacy, or novel primitive is claimed."
+    },
+    "planning-as-a-control-layer.prose.3ffa15c73d46": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The operational rule checks current conditions for the particular node. Runtime owns final admission and observation; required receipt types are phase-relative rather than future-effect evidence.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.006"
+    },
+    "planning-as-a-control-layer.prose.c97850e7ada5": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: Unknown effects retain observation/retry/recovery duties. A new plan version cannot turn a sent-but-unobserved action into no effect or newly unused authority.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.013"
+    },
+    "planning-as-a-control-layer.prose.1561de86752d": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The explicitly hypothetical case has a current scoped publication grant and a credential missing before the remote request. Repeating permission does not supply that credential; job dispatch differs from effect attempt.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.006"
+    },
+    "planning-as-a-control-layer.prose.53d89153fca1": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The lost-reply variant needs qualified observation or permitted same-operation retry, not blind new effect admission. It adds no actual publication or retry result.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.013"
+    },
+    "planning-as-a-control-layer.prose.e0bbfed3f2bc": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The paragraph separates frozen forecasts from observed outcomes; record retention supports later study without identifying a missing counterfactual.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.018"
+    },
+    "planning-as-a-control-layer.prose.5e380dc58ce5": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The diagram text alternative preserves separate permission/effect/cost ownership. The chart is a proposed flow rather than an implemented live scheduler.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.017"
+    },
+    "planning-as-a-control-layer.prose.7b4877dc1dce": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The feedback edge can propose a scoped plan, but does not rearm an unknown operation or widen its grant. Independent eligible work may continue.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.013"
+    },
+    "planning-as-a-control-layer.prose.708ce6a584cf": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: Deduplication must preserve requested occurrences and operation identity, not merely equal payloads. The confusable-action discussion remains a proposed merge check, not measured semantic deduplication.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.012"
+    },
+    "planning-as-a-control-layer.prose.0d1ee61c1152": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The five/two/one-minute schedule is explicitly hypothetical. Arithmetic gives 6 minutes with two workers, 8 with one; the equally adequate slower branch yields 6 or 11. It illustrates capacity assumptions rather than observed cost or scheduling advantage.",
+      "target_atom_id": "planning-as-a-control-layer.mechanism.009"
+    },
+    "planning-as-a-control-layer.prose.b660706f5db5": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: Repair validity is conditional on known dependencies, assumptions, and adequate coverage for this reuse; unchanged bytes and an incomplete closure cannot prove omitted-edge absence.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.011"
+    },
+    "planning-as-a-control-layer.prose.dc42df853db1": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: The branch-state paragraph distinguishes a candidate simulation and recorded state claim from the actual external effect. Committing a representation does not produce or certify world truth.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.015"
+    },
+    "planning-as-a-control-layer.prose.5f2e87ddecab": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 full planning source reconciliation: Summary of the bounded repair query; the following sentence preserves available capacity as an additional schedule constraint and forecast/outcome separation.",
+      "target_atom_id": "planning-as-a-control-layer.invariant.011"
     }
   },
   "non_claims": [
     "This semantic review does not promote the chapter above argument or convert schema, fixture, theorem, scheduler trace, replan trace, no-change decision, or green validation into planner-quality, safety, usefulness, or production evidence.",
     "This review does not establish a correct decomposition, true dependency graph, calibrated world model, adequate route, optimal schedule, useful replan, effect-complete recovery, independent evaluator, reproducible transfer, AGI, or ASI.",
     "No external-human prepublication review is required or claimed, and no external publication or release is authorized by this packet."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.4224e1170326",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:63",
+      "retired_sentence": "Once a command is structured, the stack has to decide what work should exist and what kind of intelligence each piece deserves.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the obligation-selection problem.",
+        "target_atom_id": "planning-as-a-control-layer.problem.001"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.2c0832a54e55",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:65",
+      "retired_sentence": "A plan is valuable only if downstream layers can inspect it, reject unsafe steps, dispatch bounded jobs, preserve residual work, and explain why a cheaper route was adequate or why stronger cognition was required.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the inspectable and dispatchable plan requirement.",
+        "target_atom_id": "planning-as-a-control-layer.core"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.9f683a5ba683",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:67",
+      "retired_sentence": "The plan must be an artifact.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates plan-as-versioned-artifact design.",
+        "target_atom_id": "planning-as-a-control-layer.mechanism.010"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.992d30c5437a",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:67",
+      "retired_sentence": "It should show dependencies, assumptions, blocked paths, missing context, route choices, adequacy tests, and stop conditions before any runtime adapter touches the world.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the plan record fields and negative space.",
+        "target_atom_id": "planning-as-a-control-layer.mechanism.003"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.2a6689238dc8",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:69",
+      "retired_sentence": "Good planning reduces surprise by making work visible while changes are still cheap.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the intended reduction in downstream surprise.",
+        "target_atom_id": "planning-as-a-control-layer.core"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.94ad1ba75d8e",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:69",
+      "retired_sentence": "The plan earns trust when it exposes what must be refused, deferred, reviewed, routed differently, or split into a safer path.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates explicit lifecycle and refusal visibility.",
+        "target_atom_id": "planning-as-a-control-layer.mechanism.010"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.f1974526dcac",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:69",
+      "retired_sentence": "It should make the negative space legible: tools not granted, context not loaded, cheap routes rejected, claims not made, and approvals still waiting.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Reader explanation of why negative space matters.",
+        "target_atom_id": null
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.2e82fb22bb7d",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:146",
+      "retired_sentence": "A naive planner retries unrelated commands or rewrites the goal as “local build complete.” The control layer instead marks the deploy node blocked, prevents the public-route check from pretending it ran, and records the missing credential as a residual owned outside the planner.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "planning-as-a-control-layer.failure_mode.011"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.2dbc440e0ce9",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:148",
+      "retired_sentence": "This demonstrates finite ordering and custody; it does not show that the chosen decomposition or scheduler is optimal.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked replan: a dependency fails after dispatch` to existing reviewed atom `planning-as-a-control-layer.mechanism.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "planning-as-a-control-layer.mechanism.007"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.4a2ea47ffa18",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:445",
+      "retired_sentence": "residual routes require owners and observed consequences.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates residual ownership and observed consequences.",
+        "target_atom_id": "planning-as-a-control-layer.mechanism.015"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.fdc62448f305",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:668",
+      "retired_sentence": "paper's laboratory-access trace demonstrates the intended object flow only; it",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the reviewed boundary between an illustrative source trace and local evidence.",
+        "target_atom_id": "planning-as-a-control-layer.core"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.4469d4dd41dc",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:710",
+      "retired_sentence": "The present fixtures and Lean modules show how selected synthetic records route",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Reports exact current fixture and finite-route evidence.",
+        "target_atom_id": "planning-as-a-control-layer.minimum.001"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.b02f33cd62ae",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:711",
+      "retired_sentence": "They do not show that a planner finds good decompositions, true",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "States that current evidence does not show a good planner.",
+        "target_atom_id": "planning-as-a-control-layer.minimum.001"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    },
+    {
+      "retired_candidate_id": "planning-as-a-control-layer.prose.7901923176e3",
+      "retired_source": "chapters/planning-as-a-control-layer.qmd:715",
+      "retired_sentence": "ablations, reproduction, and transfer produce claim-specific evidence.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates the required natural causal and transfer evidence.",
+        "target_atom_id": "planning-as-a-control-layer.beyond_sota.001"
+      },
+      "retirement_reason": "Full source reconciliation corrects credential/permission conflation, weak ordinary comparison, forecast/observation, bounded dependency closure, current grants, capacity and unknown-effect retry semantics. Historical finite outcomes retain their scope.",
+      "replacement_candidate_ids": [
+        "planning-as-a-control-layer.prose.456ad1443b16",
+        "planning-as-a-control-layer.prose.3a37011c137f",
+        "planning-as-a-control-layer.prose.3ca2f72311ae",
+        "planning-as-a-control-layer.prose.1adee9dc656c",
+        "planning-as-a-control-layer.prose.f837194904fb",
+        "planning-as-a-control-layer.prose.855d4bd979a2",
+        "planning-as-a-control-layer.prose.8d1356824ff9",
+        "planning-as-a-control-layer.prose.3ffa15c73d46",
+        "planning-as-a-control-layer.prose.c97850e7ada5",
+        "planning-as-a-control-layer.prose.1561de86752d",
+        "planning-as-a-control-layer.prose.53d89153fca1",
+        "planning-as-a-control-layer.prose.e0bbfed3f2bc",
+        "planning-as-a-control-layer.prose.5e380dc58ce5",
+        "planning-as-a-control-layer.prose.7b4877dc1dce",
+        "planning-as-a-control-layer.prose.708ce6a584cf",
+        "planning-as-a-control-layer.prose.0d1ee61c1152",
+        "planning-as-a-control-layer.prose.b660706f5db5",
+        "planning-as-a-control-layer.prose.dc42df853db1",
+        "planning-as-a-control-layer.prose.5f2e87ddecab"
+      ],
+      "recorded_on": "2026-10-11"
+    }
   ]
 }

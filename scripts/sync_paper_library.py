@@ -17,6 +17,7 @@ import re
 import shutil
 import sys
 from pathlib import Path
+from search_navigation import render_search_navigation
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -391,6 +392,8 @@ def expected_quarto_config(records: list[dict]) -> str:
             "      - cosmo",
             "      - styles.scss",
             "    toc: true",
+            "    include-after-body:",
+            "      - search-navigation.html",
             "    link-external-newwindow: true",
             "",
         ]
@@ -576,6 +579,17 @@ def synchronize(check: bool) -> list[str]:
         INDEX.write_text(index_expected, encoding="utf-8", newline="\n")
 
     config_expected = expected_quarto_config(records)
+    search_kinds = {"index.html": "Paper library guide"}
+    search_kinds.update({f"{row['source_id']}.html":
+                        "Derived synthesis" if row["document_class"] == "derived_synthesis_paper" else "Original author paper"
+                        for row in records})
+    search_expected = render_search_navigation(search_kinds)
+    search_path = ROOT / "papers/search-navigation.html"
+    if check:
+        if not search_path.exists() or search_path.read_text(encoding="utf-8") != search_expected:
+            errors.append("papers/search-navigation.html is missing or stale")
+    else:
+        search_path.write_text(search_expected, encoding="utf-8")
     if check:
         if not QUARTO_CONFIG.exists() or QUARTO_CONFIG.read_text(encoding="utf-8") != config_expected:
             errors.append("papers/_quarto.yml is missing or stale")

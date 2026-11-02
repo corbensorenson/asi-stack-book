@@ -30,6 +30,16 @@ through that boundary.
 
 ## 1. The central mistake: confusing cognition with control
 
+The book's 89 chapters support three proposed contributions: contracts joining
+cognition to current authority and effects; a public process for exact claim
+and evidence transitions; and reconciliation of records with observed reality
+and unresolved obligations. These are architectural compositions and evidence
+processes with bounded implementation results, not 89 independent discoveries.
+A conventional orchestrator, scientific claim register, or incident workflow
+may supply the same relations at lower burden. The
+[contribution comparison](https://corbensorenson.github.io/asi-stack-book/docs/defended_contribution_prior_art_positioning.md)
+specifies those challengers; naming a join does not establish novelty.
+
 A language model can propose a plan, summarize evidence, write code, criticize
 an answer, or choose among tools. None of those abilities determines whether
 the proposal was authorized, whether the evidence was sufficient, whether the

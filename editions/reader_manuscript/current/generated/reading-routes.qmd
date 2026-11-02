@@ -1,0 +1,27 @@
+## Choose a Reading Depth
+
+The links below follow the current owner-to-unit map. Length describes pacing, not editorial approval or strength of evidence.
+
+| Route | Who it serves and prerequisites | Scope and commitment |
+|---|---|---|
+| Short: this repair | A reader familiar with a repository and an ordinary permission check; no formal-methods background required. | About fifteen minutes to orient. Executing recipes and inspecting failures takes additional time. |
+| Intermediate: the three contributions | A practitioner who has read the thesis above and wants authority, claims, and observed effects in one argument. | 5 selected units, 30,016 current words; allow several reading sessions. |
+| Full: [the narrative in order](index.qmd) | A technically curious reader willing to build the concepts cumulatively. | 26 units, 151,719 current words; a book-length commitment, not a quick tutorial. |
+
+For the intermediate route, read:
+
+[Authority, Failure, and Misuse](chapters/unit-03-authority-failure-and-misuse.qmd) → [Human Intent, Control, and Epistemic Security](chapters/unit-06-human-intent-control-and-epistemic-security.qmd) → [Verification Bandwidth, Claim Ledgers, and Proof](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd) → [Artifact Graphs, Runtime Effects, and Operations](chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) → [Integrated Reference Architecture, Project Theseus, and the Living Research Method](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd).
+
+Use the full route when a selected chapter assumes an earlier concept you want to develop. The selection is an entry path, not a replacement argument.
+
+### Practitioner and Research Reference Paths
+
+These paths leave the narrative for the live technical owners. The practitioner path assumes familiarity with a change workflow; the research path assumes comfort with experimental comparisons and formal assumptions. Each is selective reference work with variable depth, not a promised completion time.
+
+**Practitioner — follow a proposed change to its effect and bill.** [Command Contracts: From Intent to Executable Work](https://corbensorenson.github.io/asi-stack-book/chapters/intent-to-execution-contracts.html) → [Planning as a Control Layer: DAGs and Intelligence Arbitrage](https://corbensorenson.github.io/asi-stack-book/chapters/planning-as-a-control-layer.html) → [Artifact Graphs, Audit Logs, and Replay](https://corbensorenson.github.io/asi-stack-book/chapters/artifact-graphs-audit-logs-and-replay.html) → [Resource Economics and Token Budgets](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html) → [Integrated Reference Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html).
+
+**Research — challenge the efficiency, evidence, learning, and proof assumptions.** [The Efficient ASI Hypothesis](https://corbensorenson.github.io/asi-stack-book/chapters/the-efficient-asi-hypothesis.html) → [Evidence States and Claim Discipline](https://corbensorenson.github.io/asi-stack-book/chapters/evidence-states-and-claim-discipline.html) → [Learning–Compute Topology and Adaptive Process Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/learning-compute-topology-and-adaptive-process-architecture.html) → [Executable Specifications and Lean Proof Envelope](https://corbensorenson.github.io/asi-stack-book/chapters/executable-specifications-and-lean-proof-envelope.html) → [Integrated Reference Architecture](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html).
+
+Every path preserves the same evidence boundary: core claims retain their canonical support states; finite proofs, authored fixtures, and source-reported results answer narrower questions. Following more links cannot combine those results into whole-stack validation. The technical owners retain exact assumptions, artifacts, and open obligations.
+
+To revisit a term, use the [narrative concept finder](index.qmd#find-a-concept) or the [working glossary](https://corbensorenson.github.io/asi-stack-book/appendices/B_glossary.html). It distinguishes permission from source precedence, reports from observations and evidence, and restored state from compensation. Each definition routes to its canonical technical owner.

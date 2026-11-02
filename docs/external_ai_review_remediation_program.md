@@ -173,11 +173,17 @@ The three products are:
 2. an architecture reference specification; and
 3. an evidence, proof, and release registry.
 
-The three defended contribution tracks are:
+The three proposed contribution targets selected for defence are:
 
 1. governed-cognition interface contracts;
 2. public claim-state transition discipline; and
 3. record/reality plus residual honesty.
+
+These are composition and public-process proposals with bounded local
+implementation results. The [contribution summary](three_defended_contributions.md)
+and [conventional comparison blueprints](defended_contribution_prior_art_positioning.md)
+own their scope and proposed deltas. Selecting a target establishes neither
+novelty nor general superiority; an ordinary alternative may win.
 
 Verification bandwidth and governance economics are the shared empirical lane.
 Every other chapter must state which product and contribution it serves; it is

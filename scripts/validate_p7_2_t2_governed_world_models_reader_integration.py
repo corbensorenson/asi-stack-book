@@ -62,8 +62,11 @@ def errors(data: dict[str, Any]) -> list[str]:
         out.append("record-contract custody drifted")
 
     assigned = audit["source_crosswalk"]["primary_external_source_ids"] + audit["source_crosswalk"]["supporting_corben_source_ids"]
-    if len(assigned) != 15 or audit["source_crosswalk"].get("assigned_source_count") != 15:
+    expected_sources = chapter_rows[0].get("source_ids", []) if len(chapter_rows) == 1 else []
+    if len(assigned) != len(expected_sources) or audit["source_crosswalk"].get("assigned_source_count") != len(expected_sources):
         out.append("source denominator drifted")
+    if len(set(assigned)) != len(assigned) or set(assigned) != set(expected_sources):
+        out.append("source identities differ from the current manifest assignment")
     inventory = {row["id"]: row for row in data["inventory"]}
     for source_id in assigned:
         if source_id not in inventory or CHAPTER_ID not in inventory[source_id].get("chapter_targets", []):
@@ -147,6 +150,7 @@ def main() -> None:
         ("invent support", lambda value: value["audit"].__setitem__("support_state_effect", "empirical-test-backed")),
         ("invent publication", lambda value: value["audit"].__setitem__("publication_effect", "published")),
         ("erase source target", lambda value: next(row for row in value["inventory"] if row["id"] == "ext_world_models_2018")["chapter_targets"].remove(CHAPTER_ID)),
+        ("duplicate source at the same count", lambda value: value["audit"]["source_crosswalk"]["primary_external_source_ids"].__setitem__(0, value["audit"]["source_crosswalk"]["primary_external_source_ids"][1])),
     ]
     baseline = set(errors(data))
     for label, mutation in mutations:
@@ -160,9 +164,9 @@ def main() -> None:
     if failures:
         raise SystemExit("P7.2-T2 reader integration failed:\n - " + "\n - ".join(failures))
     print(
-        "P7.2-T2 reader integration passed: 1 terminal argument-level chapter, 15 source "
+        f"P7.2-T2 reader integration passed: 1 terminal argument-level chapter, {data['audit']['source_crosswalk']['assigned_source_count']} source "
         "mappings, 2 implemented public proof targets, 32 theorem declarations, 6 arms, "
-        "8 competence gates, protected outcomes closed, 13 integration mutations rejected; "
+        f"8 competence gates, protected outcomes closed, {len(mutations)} integration mutations rejected; "
         "support/release/publication none."
     )
 

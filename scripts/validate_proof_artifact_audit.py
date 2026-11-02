@@ -5,11 +5,12 @@ import argparse
 import copy
 import json
 import re
-import subprocess
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 from typing import Any
+import build_proof_axiom_audit as axiom_audit
+from validation_runtime import execute_guarded, run_directory
 
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
@@ -301,17 +302,20 @@ def validate_proof_lease_lifecycle(errors: list[str]) -> dict[str, int]:
             f"expected {EXPECTED_PROOF_ENVELOPE_THEOREM_COUNT}, got {len(theorem_names)}."
         )
 
-    compile_result = subprocess.run(
-        ["lake", "env", "lean", "AsiStackProofs/ProofEnvelope.lean"],
-        cwd=LEAN_ROOT,
-        capture_output=True,
-        text=True,
-        check=False,
-    )
-    if compile_result.returncode != 0:
+    directory = run_directory(ROOT, "proof-envelope-compile")
+    command = ["lake", "env", "lean", "AsiStackProofs/ProofEnvelope.lean"]
+    outcome = {"status": "running", "inner_command": command, "timeout_seconds": 300,
+               "log": str(directory / "compiler.log"), "scope": "exact ProofEnvelope compilation"}
+    (directory / "result.json").write_text(json.dumps(outcome, indent=2) + "\n")
+    compile_result = execute_guarded(command, source_root=ROOT, cwd=LEAN_ROOT,
+                                    log=directory / "compiler.log", timeout=300)
+    outcome.update(compile_result)
+    (directory / "result.json").write_text(json.dumps(outcome, indent=2) + "\n")
+    print(f"ProofEnvelope compiler diagnostics: {directory}")
+    if compile_result["status"] != "passed":
         errors.append(
-            "ProofEnvelope exact Lean compilation failed: "
-            + (compile_result.stderr or compile_result.stdout).strip()
+            f"ProofEnvelope exact Lean compilation {compile_result['status']} "
+            f"({compile_result['diagnostic_id']}); inspect {directory / 'compiler.log'}"
         )
 
     initial = proof_lease_initial_state()
@@ -480,6 +484,12 @@ def build_report() -> tuple[str, list[str]]:
     target_count = len(records)
 
     errors: list[str] = []
+    expected_axioms = axiom_audit.build()
+    if axiom_audit.OUTPUT.is_file():
+        errors.extend(axiom_audit.errors(read_json(axiom_audit.OUTPUT), expected_axioms))
+    else:
+        errors.append("missing compiled axiom dependency projection; run build_proof_axiom_audit.py")
+    axiom_summary = expected_axioms["summary"]
     warnings: list[str] = []
     target_rows: list[str] = []
     chapter_results: dict[str, dict[str, int]] = defaultdict(lambda: Counter())
@@ -671,6 +681,32 @@ after repeating verification and review, then revokes with ten receipts.
 This alignment proves no theorem meaning, filesystem truth, semantic adequacy,
 implementation refinement, deployed enforcement, support movement, external
 effect, safety, transfer, SOTA, AGI, or ASI.
+
+## Transitive Axiom Dependencies
+
+`proofs/axiom_dependencies.json` records the elaborated dependency set of every
+source-named theorem under the pinned Lean toolchain. The compiler environment
+also contains generated helper theorems; these are traversed as dependencies
+and are not counted as additional authored results. The audit resolves
+{axiom_summary['source_theorem_count']} source declarations in
+{axiom_summary['source_modules_with_theorems']} modules:
+{axiom_summary['axiom_free_theorems']} have no axiom dependencies, and
+{axiom_summary['native_compiler_trust_theorems']} transitively depend on native
+evaluation axioms, including `native_decide` and the native `bv_decide` checker.
+Standard-logic theorem counts are
+`{json.dumps(axiom_summary['standard_axiom_theorem_counts'], sort_keys=True)}`.
+There are {axiom_summary['unreviewed_axiom_theorems']} theorem dependencies
+outside these disclosed classes. A new unreviewed class blocks acceptance.
+
+Axiom-free does not mean assumption-free: a theorem may still assume the
+very property a runtime consumer must establish. These counts do not rank
+proof quality or establish artifact truth, semantic adequacy, implementation
+refinement, safety or support. The current snapshot binds every input source
+hash and keeps each exact qualified theorem and axiom name inspectable.
+Refresh with `python3 scripts/build_proof_axiom_audit.py`; the proof-artifact
+consumer reruns the compiler query in a fresh Lean process before comparing
+the record. It shares the projection builder; this is a reproducibility check,
+not an independent assessment of compiler correctness or semantic adequacy.
 
 ## Module Coverage
 

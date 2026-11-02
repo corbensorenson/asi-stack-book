@@ -2,9 +2,11 @@
 
 Working title: **The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case**
 
-Status: source-of-truth **technical-reference** outline, reconciled 2026-08-12
-against the 89-owner manifest. `book_structure.json` remains its ordering source
-of truth. The superseding three-part, 26-unit human writing specification is
+Status: source-of-truth **technical-reference** outline; 89-owner manifest
+reconciliation dated 2026-08-12, with explicit decisions, inputs, outputs,
+boundaries and nearest overlapping owners for all 89 chapters on 2026-10-11. Other historical drafting
+and research receipts below retain their dates.
+`book_structure.json` remains its ordering source of truth. The superseding three-part, 26-unit human writing specification is
 `docs/human_reader_26_unit_outline.md`; references below to the 22-unit route
 describe the preserved historical candidate, not the current manuscript target.
 
@@ -143,6 +145,16 @@ The stack is efficient because it routes work, compiles context, reuses artifact
 Throughout the outline, `layer` means a logical responsibility and authority boundary, not one required model, service, process, machine, or physical cognitive module. One implementation may place several roles around a monolithic model, split one role across specialists and deterministic tools, or use a hybrid human/AI service graph. The architecture is substrate-neutral; the typed handoffs, authority ceilings, evidence duties, and failure routes are the invariant commitments.
 
 ## How Future Writing Runs Should Use This Outline
+
+Start with the owner decision, then its inputs, outputs and nearest overlap.
+The reconciled entries state those routes explicitly; their links distinguish
+the nearest overlaps rather than infer ownership from chapter order. Choose the
+owner where the first disputed meaning or decision arises; linked downstream
+owners retain their own checks. For example, a misread request belongs to Human
+Intent, a plan that changes an accepted obligation belongs to conformance or
+Planning, and an unknown external outcome belongs to Runtime. A source may
+inform several existing owners; admission still requires a distinct
+responsibility and the established chapter-birth contract, not source volume.
 
 - Use the part-level source queue to load broad context before drafting a part.
 - Use the chapter-level source queue to load only the relevant papers for the chapter in scope.
@@ -403,7 +415,18 @@ Part source loading queue:
 
 Stable ID: `asi-is-a-stack-not-a-model`
 
-Chapter job: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
+Chapter job: Explain and challenge the stack thesis: which logical
+responsibilities must remain inspectable across a handoff, and when a competent
+conventional design is sufficient.
+
+Ownership boundary: Human purposes, constraints and candidate architecture roles
+enter; a responsibility map and conditions for accepting, narrowing or rejecting
+the stack proposal leave. This is the conceptual frame, not an artifact ledger
+or service blueprint. Integrated Reference Architecture owns the joined trace
+across the roles; this opener explains why the distinctions might earn their
+burden.
+
+Nearest overlapping owners: [Integrated Reference Architecture](../chapters/integrated-reference-architecture.qmd).
 
 Core claim: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
 
@@ -420,19 +443,14 @@ Source loading queue:
 | Manifest assignment reconciliation | `ext_embedded_agency_2019` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
-- Ownership: durable artifact identity, derivation, record-reality custody,
-  replay grade, and impact closure. Job lifecycle, context, effects, source
-  admission, verification, evidence, support, learning, readiness, and release
-  remain separately owned.
-- Eighteen-step mechanism: freeze the artifact envelope; separate content
-  identity from location; bind actual lineage; append or supersede events;
-  independently observe reality; version derivations and invalidation;
-  separate canonical state from projections; index dependencies forward and
-  backward; propagate revocation with valid alternate-derivation escape;
-  preserve exact replay grades; lock replay inputs and environments; reconcile
-  terminal receipts; link claim/test consumers without granting support;
-  challenge receipts; bound the epistemic TCB; propagate privacy, rights, and
-  deletion; query impact and remediation; and compare strong matched systems.
+- Ownership: the conceptual argument for explicit logical responsibilities,
+  the common handoff questions, and the fair case for ordinary implementations.
+- Mechanism: show a hypothetical unauthorized write; distinguish accepted
+  intent, current permission, proposed work, observed effects and unresolved
+  outcomes; compare a competent conventional wrapper; state when additional
+  joins might justify their full burden. Artifact identity and replay remain
+  with Artifact Graphs; joined-trace inspection remains with Integrated
+  Reference Architecture.
 
 - Problem: The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance.
 - Insufficiency: A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules.
@@ -486,7 +504,18 @@ Lean proof targets:
 
 Stable ID: `the-efficient-asi-hypothesis`
 
-Chapter job: The architecture needs a non-scale-only theory for how useful capability can increase without spending maximal cognition on every subtask.
+Chapter job: State the conditions under which selective cognition could improve
+accepted useful work per complete resource bill without weakening the task or
+hiding risk.
+
+Ownership boundary: Task quality requirements, candidate routes and full
+cost/outcome accounts enter; a bounded efficiency comparison and its weakening
+conditions leave. Resource Economics owns the accounting and allocation
+contract, while Routing selects an eligible worker. This chapter owns the
+hypothesis about their joint frontier, not an optimizer or a claim that the
+cheaper visible meter wins.
+
+Nearest overlapping owners: [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.qmd); [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.qmd).
 
 Core claim: On repeated workloads with multiple authorized routes, selecting the lowest-cost route that satisfies a fixed quality predicate and compiling reusable work can improve useful-task success per total contract cost over always-maximal and always-cheapest policies, provided authority, verification, residual, and fallback obligations remain intact.
 
@@ -565,7 +594,18 @@ benchmark performance, model quality, compression utility, or support-state prom
 
 Stable ID: `system-boundaries-and-authority`
 
-Chapter job: To test whether cross-layer effects are authorized, the stack needs explicit identities for the principal, execution domain, operation, target, permission class, ceiling, grant lifecycle, delegation, and receipt.
+Chapter job: Define the exact permission relation for a principal, operation,
+target and current grant, including delegation, expiry, revocation and the
+effect ceiling.
+
+Ownership boundary: A requested use and applicable grants enter; the authority
+tuple and admission/denial obligations leave. Runtime Adapters owns the actual
+effect boundary, attempts and outcome observation. Route an incorrectly
+interpreted or widened grant here; route a correctly defined grant that was not
+enforced at the effect boundary to Runtime, preserving both owners when the
+defect crosses them.
+
+Nearest overlapping owners: [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: External-effect authority should be represented as a versioned, revocable tuple binding principal, execution domain, operation, target, permission class, scope, ceiling, grant state, delegation, expiry or revocation epoch, and receipt obligations; capability, context access, route quality, or ambient process power alone confers none of it.
 
@@ -646,7 +686,17 @@ Lean proof targets:
 
 Stable ID: `failure-modes-of-ungoverned-intelligence`
 
-Chapter job: Make governance, reliability, and self-improvement claims challengeable by declaring prospective failure conditions, observable boundary events, evidence records, and owners.
+Chapter job: Define the failure conditions that make an architectural claim
+challengeable, including unmapped events, near misses, recurrence and escape.
+
+Ownership boundary: Declared invariants, threat assumptions and event reports
+enter; a versioned failure map, detection obligations and unresolved
+classifications leave. Operations owns incident response, while Adversarial
+Evaluation owns the validity of a challenge. A taxonomy entry is an obligation
+to investigate, not evidence that a detector found the event or containment
+worked.
+
+Nearest overlapping owners: [Governed Operations, Incident Command, and Graceful Degradation](../chapters/governed-operations-incident-command-and-graceful-degradation.qmd); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](../chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd).
 
 Core claim: A stack-level failure model should represent each named risk as a distinct boundary event with a trigger, protected invariant, detector or observer, receipt, owner, containment action, residual, recurrence state, and escalation or learning path; a taxonomy entry alone establishes neither occurrence nor mitigation.
 
@@ -737,7 +787,17 @@ support movement.
 
 Stable ID: `dangerous-capability-domains-and-misuse-uplift`
 
-Chapter job: Separate dangerous-capability measurement by domain, actor, access, task horizon, elicitation regime, safeguard state, and uplift over a realistic baseline.
+Chapter job: Bound dangerous capability by domain, actor, access, elicitation,
+safeguards and uplift over the declared alternative.
+
+Ownership boundary: Threat models, task cohorts, realistic comparators and
+observations enter; a scoped capability/uplift dossier with uncertainty leaves.
+Capability Thresholds owns the commitment triggered by that dossier; Societal
+Resilience owns defensive response. Route a misleading domain measurement here,
+a wrong trigger consequence to Thresholds, and an inadequate public defense to
+Resilience. The dossier grants no deployment authority.
+
+Nearest overlapping owners: [Capability Thresholds and Deployment Commitments](../chapters/capability-thresholds-and-deployment-commitments.qmd); [Societal Resilience and Misuse Defense](../chapters/societal-resilience-and-misuse-defense.qmd).
 
 Core claim: Dangerous-capability authority should be based on a versioned domain threat model and an uplift dossier that separates latent capability, elicited performance, propensity, safeguard bypass, actor uplift, and realized harm; preserves expertise, tools, assistance, attempts, uncertainty, and sensitive-detail boundaries; and routes only bounded findings into thresholds, release, monitoring, and resilience decisions.
 
@@ -774,10 +834,19 @@ Stable ID: `military-ai-autonomous-weapons-and-strategic-stability`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; proof, empirical, transfer, and deployment evidence remain open.
 
-Chapter job: Govern military AI as a command-and-interaction system whose
-mission, human authority, physical effects, adversary response, legal boundary,
-crisis timing, and escalation pathways cannot be inferred from component
-accuracy or generic dangerous-capability uplift.
+Chapter job: Assess the composed command-and-interaction boundary where military
+AI joins human authority, physical action, adversary response and escalation
+timing.
+
+Ownership boundary: Mission limits, command records, operator and sensor
+evidence, applicable constraints and interaction assumptions enter; a bounded
+strategic/control assessment and unresolved obligations leave. Dangerous
+Capabilities owns actor-level uplift; Embodied Agency owns deadline-bound
+actuation. Neither accurate targeting nor a secure actuator establishes lawful
+command, human comprehension or strategic stability; those remain separate
+judgments.
+
+Nearest overlapping owners: [Dangerous Capability Domains and Misuse Uplift](../chapters/dangerous-capability-domains-and-misuse-uplift.qmd); [Embodied Agency, Real-Time Control, and Physical Safety](../chapters/embodied-agency-real-time-control-and-physical-safety.qmd).
 
 Core claim: Military AI should be governed as a command-and-interaction system: deployment requires a declared mission and legal boundary, preserved accountable human authority, bounded sensing and action, adversarial and escalation analysis, fail-safe behavior, auditable provenance, and prospective off-ramps; component benchmark gains alone establish neither lawful use nor strategic safety.
 
@@ -824,7 +893,18 @@ Lean proof targets:
 
 Stable ID: `evidence-states-and-claim-discipline`
 
-Chapter job: Give the living book a versioned claim lifecycle that separates what an assertion says from what evidence supports it and preserves why each state change was accepted.
+Chapter job: Decide what an exact claim may currently assert from its evidence,
+preserving scope, contrary results and the reason for an accepted state
+transition.
+
+Ownership boundary: Versioned claims, evidence and reviewed transition proposals
+enter; accepted, rejected, narrowed or unchanged support dispositions leave.
+Claim Ledgers owns durable semantic identity and surface continuity; this
+chapter owns support policy and transition meaning. A proof or implementation
+result remains evidence at its exact scope rather than permission to promote a
+parent thesis.
+
+Nearest overlapping owners: [Claim Ledgers and Belief Revision](../chapters/claim-ledgers-and-belief-revision.qmd).
 
 Core claim: Each material claim should have a stable identity, versioned text and scope, claim label, support state, non-aggregating evidence-quality vector, and transition ledger; upward movement is allowed only through an accepted claim-specific transition whose artifacts and evidence roles meet declared gates, while contradiction, failed verification, missing support, and scope mismatch remain eligible to narrow, downgrade, refute, or deprecate the claim.
 
@@ -900,9 +980,18 @@ Lean proof targets:
 
 Stable ID: `scalable-oversight-and-adversarial-ai-control`
 
-Chapter job: Define how limited human or AI supervision can inspect a stronger
-or less transparent system without treating a role label, vote, transcript, or
-favorable protocol score as proof, training authority, or permission to act.
+Chapter job: Specify how a limited supervisor can inspect a stronger or less
+transparent system, with explicit protocol, evidence views and failure
+dependencies.
+
+Ownership boundary: An exact task, supervisor roles, evidence views and protocol
+constraints enter; a bounded oversight outcome, disagreement or abstention
+record leaves. Human Factors owns whether a person has workable information,
+time and intervention capacity; Verification Bandwidth owns checking adequacy.
+An oversight score or vote cannot grant an effect, authorize training or promote
+support.
+
+Nearest overlapping owners: [Human Factors and Meaningful Control in Oversight](../chapters/human-factors-and-meaningful-control-in-oversight.qmd); [Verification Bandwidth and Context Adequacy](../chapters/verification-bandwidth-and-context-adequacy.qmd).
 
 Core claim: A governed stack admits scalable oversight only as a versioned, consumer-bound protocol receipt rather than a vote: it prospectively records task, cohort, risk and authority scope; supervisor and system capability envelopes; evidence views; roles, incentives, and dependency graph; informed direct-review baseline; declared outcome-audit path; calibration, coverage, and abstention semantics; persuasion, correlation, operator-cost, and monitorability residuals; escalation owner; expiry; and requalification triggers. The receipt may inform only its permitted review or training consumer through the owning gate and cannot by itself establish reviewer independence, reliable supervision, correctness, safety, support movement, release readiness, or execution authority.
 
@@ -1055,9 +1144,19 @@ Lean proof targets:
 
 Stable ID: `human-intent-as-a-formal-input`
 
-Chapter job: Convert a person's natural-language request into a contestable,
-versioned interpretation boundary without laundering ambiguity, preference,
-emotion, or helpful inference into authority for downstream effects.
+Chapter job: Make the interpretation of a request contestable: bind the desired
+outcome, permitted means, current authorization, unacceptable effects,
+acceptance and unresolved ambiguity.
+
+Ownership boundary: The human request, session context, applicable grants and
+constraints enter; an accepted interpretation or a specific clarification/hold
+leaves. Intent-to-Execution Contracts owns conformance after that interpretation
+is accepted. Route a changed meaning or invented permission here; route a
+downstream plan or delivery that no longer conforms to the accepted meaning to
+the conformance owner. Applicable authorization need not be requested
+repeatedly.
+
+Nearest overlapping owners: [Command Contracts: From Intent to Executable Work](../chapters/intent-to-execution-contracts.qmd).
 
 Core claim: A governed stack admits human intent only as a versioned interpretation contract that preserves the raw request while separately recording the desired outcome; allowed and forbidden means; authority basis, ceiling, and affected parties; source, privacy, and publication boundaries; acceptance and evidence requirements; field provenance; confirmed assumptions, bounded defaults, contested or open ambiguities; stop, expiry, revocation, appeal, and re-contract conditions; and permitted downstream consumers. The accepted contract may bound planning only after its owning policy and authority gates admit it; it cannot by itself prove the person's complete preference, value alignment, informed consent, satisfaction, affected-party authorization, or permission for training, publication, deployment, spending, tool use, or other external effects.
 
@@ -1193,9 +1292,18 @@ Lean proof targets:
 
 Stable ID: `human-factors-and-meaningful-control-in-oversight`
 
-Chapter job: Define when a human can actually supervise consequential AI work,
-rather than merely appear in an approval loop that withholds the knowledge,
-time, authority, practice, or intervention path needed for control.
+Chapter job: Determine whether the assigned human role has the information,
+time, competence, authority and usable intervention path needed for the proposed
+work.
+
+Ownership boundary: Role requirements, evidence views, workload, timing and
+intervention/recovery conditions enter; a bounded capacity disposition and
+shortfalls leave. Scalable Oversight owns the protocol; Runtime owns the effect
+and actual intervention channel. A nominal approval, training certificate or
+attractive explanation does not establish live control, comprehension or
+permission. Route an infeasible human review window here.
+
+Nearest overlapping owners: [Scalable Oversight and Adversarial AI Control](../chapters/scalable-oversight-and-adversarial-ai-control.qmd); [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: Meaningful oversight is a resource-bounded control contract: the system must preserve an identified human controller's knowledge, authority, time, observability, and effective intervention path, and must degrade or abstain when that control envelope cannot be maintained.
 
@@ -1308,7 +1416,17 @@ failure, non-claim, bounded source role, owner handoff, and claim-addressable
 atom mapping. The disposition has no support-state effect, and any later prose
 change requires a new semantic review. Word count remains diagnostic only.
 
-Chapter job: An AI system can preserve internal evidence discipline and still change beliefs, choices, and institutions through selective framing, personalization, synthetic identity, repetition, and amplification. The stack therefore needs an owner for the complete outbound communication transaction, including correction after a message escapes its original channel.
+Chapter job: Govern consequential outbound influence and the correction
+obligations that follow its actual distribution and reach.
+
+Ownership boundary: Purpose, audience, supported claims, personal-data
+constraints, provenance and channel conditions enter; a scoped influence
+decision and post-delivery duties leave. Privacy owns purpose-compatible data
+use; Content Authenticity owns lineage and disclosure signals. Lawful data use,
+an authenticity mark or a delivery receipt cannot certify an honest message,
+informed consent or successful correction.
+
+Nearest overlapping owners: [Privacy, Data Rights, and Information-Flow Governance](../chapters/privacy-data-rights-and-information-flow-governance.qmd); [Content Authenticity, Watermarking, and Synthetic Media Integrity](../chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd).
 
 Core claim: Consequential AI communication should be eligible for delivery only through an evidence-bounded communication packet whose audience, influence method, amplification authority, provenance, expiry, correction reach, and observed effects remain inspectable; fluent text, factual fragments, user consent, or a successful persuasion score alone establishes neither epistemic safety, autonomy, legitimacy, durable benefit, nor release readiness.
 
@@ -1366,7 +1484,18 @@ Lean proof targets:
 
 Stable ID: `constitutional-alignment-substrate`
 
-Chapter job: Turn contested constitutional commitments into versioned constraints and materially usable correction paths without letting the constitution authorize action, certify its own legitimacy, or approve its own weakening.
+Chapter job: Make versioned constitutional constraints and correction paths
+usable by downstream plans without treating the constitution as its own
+authority or legitimacy certificate.
+
+Ownership boundary: Accepted intent, protected interests, exact rules and
+contested applicability enter; predicate/conflict records and correction
+requirements leave. Moral Uncertainty owns unresolved value conflict;
+Institutions owns public mandate and legitimacy. This chapter applies and
+preserves constraints; it cannot settle their authorship, widen an action grant
+or silently approve a weakening during replacement.
+
+Nearest overlapping owners: [Moral Uncertainty, Value Conflict, and Contestable Governance](../chapters/moral-uncertainty-and-value-conflict.qmd); [Institutions, International Coordination, and Public Legitimacy](../chapters/institutions-international-coordination-and-public-legitimacy.qmd).
 
 Core claim: A constitutional alignment substrate should be represented as a versioned, non-self-authorizing constraint contract that binds each active predicate to its normative source and authorship process, protected scope and affected parties, operational test, precedence and conflict behavior, evidence and uncertainty, authorized interpreters and consumers, pre-effect rights and correction channels, expiry and review cadence, and migration, rollback, appeal, dissent, and residual rules. It may narrow, delay, escalate, block, or require re-contracting of separately authorized work, but it cannot grant action authority or prove moral correctness, legitimacy, dignity preservation, informed consent, reviewer independence, whole-system corrigibility, or deployed safety by itself.
 
@@ -1481,10 +1610,18 @@ failure, non-claim, bounded source role, owner handoff, and claim-addressable
 atom mapping. The disposition has no support-state effect, and any later prose
 change requires a new semantic review. Word count remains diagnostic only.
 
-Chapter job: Own the defeasible case about what a learned policy may be
-optimizing under distribution shift, without inferring objective identity from
-training reward, behavioral compliance, interpretability output, or one
-adversarial test.
+Chapter job: Keep a defeasible account of what a learned policy may optimize
+under shift, without equating training reward or observed compliance with
+objective identity.
+
+Ownership boundary: The outer target, signal lineage, behavioral/white-box
+observations and deployment opportunities enter; competing policy hypotheses,
+use limits and monitoring residuals leave. Objective Formation owns the approved
+target; Adversarial Evaluation owns elicitation and evaluator gaming. A
+favorable integrity test cannot define a goal, certify alignment or issue effect
+permission.
+
+Nearest overlapping owners: [Governed Objective Formation, Value Learning, and Goal Integrity](../chapters/governed-objective-formation-value-learning-and-goal-integrity.qmd); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](../chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd).
 
 Core claim: Consequential deployment requires a Learned-Objective Integrity Record binding the outer target, actual learning signals, model identity, behaviorally equivalent policy hypotheses, internal-optimization evidence, goal-generalization and conditional-policy tests, independent behavioral/interventional/white-box evidence, deployment opportunity, power indicators, mitigation hiding tests, monitoring, rollback, descendant invalidation, costs, residuals, and non-authorities.
 
@@ -1538,7 +1675,17 @@ Lean proof targets:
 
 Stable ID: `moral-uncertainty-and-value-conflict`
 
-Chapter job: Preserve unresolved normative burden and materially usable challenge, remedy, portability, and safe-fork paths without laundering aggregation, review, or record completeness into moral truth, consent, legitimacy, or authority.
+Chapter job: Preserve unresolved normative disagreement and usable challenge,
+remedy and exit paths when a bounded decision must still be made.
+
+Ownership boundary: Conflicting values, protected interests, affected parties
+and current authority constraints enter; a scoped decision record with dissent,
+rights duties and unresolved burden leaves. Constitutional Alignment owns the
+exact constraints; Institutions owns standing and public mandate. Aggregation or
+review does not make disagreement disappear, establish moral truth or repair a
+missing grant.
+
+Nearest overlapping owners: [Constitutional Alignment: Agency, Dignity, and Corrigibility](../chapters/constitutional-alignment-substrate.qmd); [Institutions, International Coordination, and Public Legitimacy](../chapters/institutions-international-coordination-and-public-legitimacy.qmd).
 
 Core claim: A contestable governance layer should represent each action under unresolved value conflict as a versioned decision lease plus a linked rights receipt. The lease binds value propositions and their epistemic status, affected parties and standing, stakes and reversibility, authority and consent boundaries, the declared aggregation or precedence rule, preserved dissent, evidence and uncertainty, permitted and prohibited actions, expiry and revisit triggers, and rollback or redress. The rights receipt binds audit and explanation artifacts, independent-enough custody and review, denial and redaction reasons, appeal and correction routes, exit and export scope, safety-limited fork obligations, portability residuals, and downstream preservation. The pair may narrow or delay separately authorized action but cannot settle moral truth, manufacture consensus, grant authority, establish legal rights or legitimacy, prove material contestability, or guarantee safe exit, export, fork, replacement, self-modification, or deployed governance by itself.
 
@@ -1673,7 +1820,18 @@ source role, owner handoff, and claim-addressable atom mapping. The disposition
 has no support-state effect, and any later prose change requires a new semantic
 review. Word count remains diagnostic only.
 
-Chapter job: The stack has owners for requests, constitutions, value conflict, optimization, planning, and self-improvement, but those layers presuppose an operational objective they do not create. Without a positive objective-formation lifecycle, a temporary request, learned preference estimate, or convenient metric can silently become a durable goal.
+Chapter job: Bind an operational target, its proxies and consumer uses so a
+temporary request or preference estimate cannot silently become an enduring
+system goal.
+
+Ownership boundary: Requests, uncertain preference evidence, constraints,
+normative conflict and bounded authority enter; a versioned objective lease and
+proxy/consumer bindings leave. Human Intent owns request interpretation; Policy
+Optimization owns approved behavior updates against the target. Route an altered
+target meaning here, rather than letting a planner or reward signal author or
+weaken the goal.
+
+Nearest overlapping owners: [Human Intent as a Formal Input](../chapters/human-intent-as-a-formal-input.qmd); [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd).
 
 Core claim: A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.
 
@@ -1735,7 +1893,18 @@ Stable ID: `institutions-international-coordination-and-public-legitimacy`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; legitimacy, compliance, effectiveness, and transfer remain unproved.
 
-Chapter job: ASI-scale systems cross organizations, jurisdictions, borders, public services, and affected populations. Technical permissions and private governance cannot determine who has public authority, whose participation counts, how conflicting rules are resolved, or how international commitments are verified and amended.
+Chapter job: Make mandate, jurisdiction, participation, enforcement and remedy
+explicit when AI governance crosses public bodies, borders and affected
+populations.
+
+Ownership boundary: Claimed mandates, applicable constraints, stakeholder
+challenges and bounded technical evidence enter; institutional decisions,
+accountability duties and unresolved legitimacy leave. Human-AI Organizations
+owns roles inside an organization; System Authority owns technical permission. A
+technically valid grant or safety case cannot appoint its legitimate issuer, and
+an institutional mandate cannot certify a safe effect.
+
+Nearest overlapping owners: [Human-AI Organizations, Delegation, and Accountability](../chapters/human-ai-organizations-delegation-and-accountability.qmd); [System Boundaries and Authority](../chapters/system-boundaries-and-authority.qmd).
 
 Core claim: Public deployment and cross-border coordination should proceed only through a versioned institutional packet that keeps jurisdiction, mandate, participation, scientific evidence, law and standards, verification, enforcement, remedy, capacity, conflict, expiry, and legitimacy residuals distinct; legal text, technical conformance, stakeholder consultation, or an international commitment alone establishes neither lawful authority, effective governance, representative legitimacy, nor safety.
 
@@ -1794,7 +1963,17 @@ Lean proof targets:
 
 Stable ID: `societal-resilience-and-misuse-defense`
 
-Chapter job: Govern the defensive systems that resist, absorb, detect, communicate, recover from, and adapt after AI-enabled misuse at social scale.
+Chapter job: Coordinate bounded defense, response, recovery and remedy across
+organizations and public systems facing AI-enabled misuse.
+
+Ownership boundary: Threat/uplift dossiers, incident reports, institutional
+mandates and information-use limits enter; coordinated defensive requirements,
+capacity shortfalls and harmed-party duties leave. Governed Operations owns the
+provider’s incident loop; Dangerous Capabilities owns the threat measurement.
+Defensive capacity does not itself justify a release or make shared surveillance
+legitimate.
+
+Nearest overlapping owners: [Governed Operations, Incident Command, and Graceful Degradation](../chapters/governed-operations-incident-command-and-graceful-degradation.qmd); [Dangerous Capability Domains and Misuse Uplift](../chapters/dangerous-capability-domains-and-misuse-uplift.qmd).
 
 Core claim: Societal misuse defense should be operated as a domain-specific resist-absorb-recover-adapt network with shared incident identity, lawful minimal telemetry, harmed-party routes, cross-organization escalation, defensive service levels, evidence-preserving response, correction, and residual ownership; prevention metrics alone establish neither resilience nor acceptable harm.
 
@@ -1829,7 +2008,17 @@ Lean proof targets:
 
 Stable ID: `stable-capability-fields`
 
-Chapter job: Define a consumer-relative, time-bounded substitution contract so models, prompts, tools, policies, data, evaluators, dependencies, and runtimes can change without a persistent capability name hiding changed behavior, failure semantics, authority, evidence, state, reliance, or recovery duties.
+Chapter job: Define what a named capability must preserve for a particular
+consumer and use when its implementation changes.
+
+Ownership boundary: Consumer requirements, current use/authority limits,
+dependencies and qualification evidence enter; a substitution contract and
+scoped reliance conditions leave. Capability Replacement owns the actual change
+transaction; Readiness owns admission/quarantine for current use. A stable name
+is neither semantic equivalence nor permission to serve an expired or inadequate
+implementation.
+
+Nearest overlapping owners: [Capability Replacement and Rollback](../chapters/capability-replacement-and-rollback.qmd); [Readiness Gates, Residual Escrow, and Quarantine](../chapters/readiness-gates-residual-escrow-and-quarantine.qmd).
 
 Core claim: A Stable Capability Field should be a versioned, consumer-relative substitution contract rather than a capability name or implementation slot. It binds the field's semantic identity and observable interface—including admissible inputs, outputs, preconditions, postconditions, failures, abstentions, nondeterminism and resource bounds—to an authority ceiling, affected consumers, exact implementation and dependency identities, qualification context and lease, evaluator and evidence lineage, lifecycle and incident state, migration duties, preserved regressions, and effect-complete rollback obligations. A candidate may inherit a field route only for the declared consumer, use, environment, threat model, and epoch when independently checkable evidence shows the required refinement and no unauthorized authority expansion; otherwise it remains shadowed, canaried, quarantined, deprecated, residual, or rejected. The record does not by itself prove semantic equivalence, safe composition, evaluator independence, production safety, or successful rollback.
 
@@ -1919,7 +2108,17 @@ Lean proof targets:
 
 Stable ID: `capability-replacement-and-rollback`
 
-Chapter job: Define a prospectively authorized state-and-effect transaction that distinguishes candidate availability, accepted replacement, commit, monitor success, artifact/state/service/behavior recovery, compensation, and residual closure while measuring useful improvement separately from safe restoration.
+Chapter job: Coordinate an authorized implementation change while distinguishing
+commit, observed performance, restoration, compensation and unresolved effects.
+
+Ownership boundary: The substitution contract, candidate, current grants, known
+state/effect inventory and evaluation/recovery conditions enter; a typed
+replacement disposition and terminal residuals leave. Stable Capability Fields
+owns the identity contract; Recursive Self-Improvement owns admission of a
+self-change proposal. An available checkpoint or restored file does not
+establish recovered behavior, reversed effects or useful improvement.
+
+Nearest overlapping owners: [Stable Capability Fields](../chapters/stable-capability-fields.qmd); [Recursive Self-Improvement Boundaries](../chapters/recursive-self-improvement-boundaries.qmd).
 
 Core claim: Capability replacement should be a prospectively authorized, phase-gated transaction over a declared Stable Capability Field, not a component swap. The transaction binds the exact prior and candidate artifacts and dependencies; field and consumer scope; change class; pre-state, checkpoint authority, state and effect inventory; qualification, regression, adversarial and transfer evidence; authority and approval; evaluator dependencies; isolation and canary exposure; monitor policy, delay and triggers; commit point; rollback, reverse-migration or compensation procedure; affected descendants and external commitments; residual owners; and terminal receipt. Default promotion is permitted only inside the evidenced scope after its declared gates pass and its recovery path is rehearsed to the stated objective. The record cannot make irreversible effects reversible, prove semantic recovery, validate its own monitor or evaluator, grant authority, establish useful improvement, or generalize inventory-exact local restoration to production.
 
@@ -2028,7 +2227,17 @@ Lean proof targets:
 
 Stable ID: `security-kernel-and-digital-scifs`
 
-Chapter job: Govern privileged information flow and effects through a threat-model-bound authority-use transaction while preserving exact non-claims about open-world security.
+Chapter job: Specify threat-bound mediation of privileged information flows and
+effects, including exposure, declassification, revocation and incident limits.
+
+Ownership boundary: A threat model, principals, current capabilities, data
+labels and requested uses enter; bounded admission/denial and flow/effect
+obligations leave. Runtime Adapters owns concrete effect attempts; Adversarial
+Machine Learning owns attacks on learned behavior. Valid receipt shape is not an
+enforced isolation boundary, and sanitization cannot silently become
+declassification authority.
+
+Nearest overlapping owners: [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd); [Adversarial Machine Learning and the Model Attack Surface](../chapters/adversarial-machine-learning-and-model-attack-surface.qmd).
 
 Core claim: Every privileged information flow or effect should execute as a threat-model-bound authority-use transaction through a non-bypassable reference monitor: bind the exact principal, purpose, operation, target, data and taint scope, budget, time, nonce, evaluator and policy identities; admit only minimized context and capabilities into a declared isolation grade; mediate every effect and egress; treat sanitization as explicit declassification; close leases, caches, logs, descendants, and residuals through revocation or incident recovery; and never infer security from the record, handle, compartment, or finite test alone.
 
@@ -2109,7 +2318,17 @@ Stable ID: `adversarial-machine-learning-and-model-attack-surface`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; robustness, defense efficacy, and deployment security remain unproved.
 
-Chapter job: A learned artifact creates attack surfaces that ordinary application security does not fully own. Attackers can shape training data, perturb inference inputs, implant triggers, adapt to defenses, steal behavior through queries, infer sensitive properties, or exploit multimodal and agentic pathways while the surrounding software remains nominally secure.
+Chapter job: Bind attacks and defenses on learned behavior to exact artifacts,
+attacker knowledge, objectives, budgets, adaptation and observed consequences.
+
+Ownership boundary: Build/deployment identity, threat specifications and bounded
+attack/defense observations enter; model-threat findings and defense tradeoffs
+leave. Security Kernel owns application/tool authority boundaries; Adversarial
+Evaluation owns test elicitation and evaluator deception. Authentic provenance
+does not rule out poisoned behavior, and an attack result cannot certify the
+entire system insecure or secure.
+
+Nearest overlapping owners: [Security Kernel and Digital SCIFs](../chapters/security-kernel-and-digital-scifs.qmd); [Adversarial Evaluation, Sandbagging, and Training-Time Deception](../chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd).
 
 Core claim: A learned model should receive security authority only through a versioned model-threat contract and attack/defense ledger that binds checkpoint identity, lifecycle stage, attacker knowledge and capability, surface, budget, objective, adaptation, transfer, observed effect, detection, mitigation, utility cost, recovery, residual, and disclosure; clean accuracy, attack failure, benchmark robustness, red-team coverage, or formal certification alone establishes neither general robustness nor secure deployment.
 
@@ -2167,9 +2386,17 @@ Lean proof targets:
 
 Stable ID: `privacy-data-rights-and-information-flow-governance`
 
-Chapter job: Govern purpose-bounded information use and executable data rights
-across input, context, memory, training, inference, output, audit, sharing,
-derivatives, correction, export, deletion, and retirement.
+Chapter job: Keep purpose compatibility, minimization, information rights and
+remedy duties attached to data use and known derivatives across the lifecycle.
+
+Ownership boundary: Affected parties, purpose/rights constraints, flow lineage
+and privacy evidence enter; scoped use/remedy decisions, propagation duties and
+unresolved exposure leave. Data Engines owns data/training/deletion events;
+Confidential Computation owns protected-execution properties. Encryption,
+consent metadata or a deletion receipt cannot settle purpose legitimacy, privacy
+loss or closure across unknown copies.
+
+Nearest overlapping owners: [Data Engines, Continual Learning, and Unlearning](../chapters/data-engines-continual-learning-and-unlearning.qmd); [Confidential and Verifiable AI Computation](../chapters/confidential-and-verifiable-ai-computation.qmd).
 
 Core claim: An information use is eligible for bounded execution only when a prospectively declared record binds affected parties, exact purpose and processing, claimed authority and jurisdiction, recipients, retention, minimization, complete-enough flow and derivatives, cross-user boundaries, privacy unit, adjacency, accountant and budget where applicable, threat model and attack plan, rights state and remedy, exceptions, residual copies and influence, costs, and non-authorities; no individual control or receipt alone establishes privacy, legal compliance, total erasure, behavioral forgetting, influence removal, support, readiness, release, transfer, or SOTA.
 
@@ -2259,10 +2486,17 @@ Stable ID: `confidential-and-verifiable-ai-computation`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; confidentiality, integrity, attestation, leakage, and end-to-end authorization guarantees remain unproved.
 
-Chapter job: Govern AI execution across distrust boundaries by separating
-input privacy, model privacy, computation integrity, platform identity, output
-authenticity, availability, auditability, and authorization instead of
-laundering them through one secure-compute label.
+Chapter job: Separate privacy, computation integrity, platform identity and
+output authenticity when AI work crosses distrust boundaries.
+
+Ownership boundary: An exact workload, protection goals, adversary assumptions,
+protocol/platform evidence and permitted use enter; a bounded
+protected-execution appraisal and limitations leave. Privacy owns purpose and
+rights; Model-Weight Custody owns keys, assets and roots of trust. A protected
+platform or valid computation proof cannot certify all those properties at once
+or grant the relying party’s action.
+
+Nearest overlapping owners: [Privacy, Data Rights, and Information-Flow Governance](../chapters/privacy-data-rights-and-information-flow-governance.qmd); [Model-Weight Custody and Hardware Roots of Trust](../chapters/model-weight-custody-and-hardware-roots-of-trust.qmd).
 
 Core claim: Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.
 
@@ -2313,10 +2547,17 @@ Lean proof targets:
 
 Stable ID: `model-weight-custody-and-hardware-roots-of-trust`
 
-Chapter job: Govern the full custody lifecycle of model-family assets and
-reconstructable derivatives across storage, key, hardware, vendor, operator,
-recipient, recovery, sanitization, and release boundaries without turning a
-record or technology into a universal trust verdict.
+Chapter job: Track possession, access, copies, derivatives, keys, load state and
+retirement of exact model-family assets across custody boundaries.
+
+Ownership boundary: Asset/holder inventories, current access rules, key state,
+attestation appraisal and copy/load observations enter; scoped custody
+transitions and surviving-copy residuals leave. Supply Chain owns build/supplier
+integrity; Open-Weight Release owns deliberate irreversible distribution.
+Custody or hardware appraisal cannot establish model safety, complete derivative
+discovery or authority to publish the weights.
+
+Nearest overlapping owners: [AI Supply-Chain Integrity and Lifecycle Provenance](../chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd); [Open-Weight Release and Post-Release Control](../chapters/open-weight-release-and-post-release-control.qmd).
 
 Core claim: Every governed model-family custody transition should bind a prospectively declared asset-and-derivative closure to exact artifact and lineage identity, holder and purpose, storage/transfer state, key and metadata lifecycle, Attester/Verifier/Relying-Party roles and policies, reference values and endorsements, freshness, measured target and attesting environments, verifier dependencies, independent-enough effect observation, plaintext and output-extraction exposure, load/use/serve/release authority separation, backup and emergency recovery, copy/recipient/descendant state, incident and revocation semantics, sanitization method and validation, irreversible distribution, privacy/rights/cost residuals, and terminal ownership; missing or failed modeled predicates route to a named non-default state, while no record, encryption, signature, security level, attestation result, hardware root, key action, deletion receipt, or finite proof by itself establishes custody completeness, confidentiality, trustworthy hardware, model safety, release merit, readiness, or deployment authority.
 
@@ -2438,7 +2679,17 @@ Stable ID: `open-weight-release-and-post-release-control`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; no categorical release decision or post-copy control claim follows.
 
-Chapter job: Treat deliberate release of model weights as an irreversible control-boundary change rather than an ordinary deployment.
+Chapter job: Treat deliberate weight distribution as a change in
+controllability, with explicit recall limits and post-release obligations.
+
+Ownership boundary: Exact release artifacts, bounded misuse evidence,
+commitments, institutional decisions and resilience limits enter; a scoped
+release disposition and irreversible residuals leave. Weight Custody owns
+restricted possession/access; Societal Resilience owns downstream defense and
+remedy. Revoking official availability does not retract independent copies, and
+a complete release packet cannot automatically authorize publication.
+
+Nearest overlapping owners: [Model-Weight Custody and Hardware Roots of Trust](../chapters/model-weight-custody-and-hardware-roots-of-trust.qmd); [Societal Resilience and Misuse Defense](../chapters/societal-resilience-and-misuse-defense.qmd).
 
 Core claim: An open-weight release should require a prospective irreversible-release case that binds the exact artifact and license to accessible-frontier comparison, malicious-fine-tuning and scaffolded elicitation, marginal and cumulative risk, benefit and access distribution, downstream safeguard portability, derivative lineage, incident channels, post-release measurement, and residual ownership; after release, governance may inform, patch, coordinate, and support safer derivatives, but it must not claim revocation authority it no longer possesses.
 
@@ -2471,10 +2722,18 @@ Lean proof targets:
 
 Stable ID: `ai-supply-chain-integrity-and-lifecycle-provenance`
 
-Chapter job: Govern consumer-relative AI supply-chain assurance from exact
-subjects and scoped assertions through independently checkable lifecycle
-effects, relation-specific invalidation, restoration, retirement, disclosure,
-and residual closure before custody or readiness review.
+Chapter job: Appraise exact lifecycle subjects and relations under a consumer’s
+integrity policy, including affected paths, invalidation and bounded
+restoration.
+
+Ownership boundary: Build/data/model identities, supplier assertions,
+provenance, advisories and verification policy enter; scoped
+assurance/affected-path decisions and unresolved coverage leave. Artifact Graphs
+preserves general lineage and replay; Weight Custody governs possession/use of
+model-family assets. A signature or BOM is an assertion to appraise, not
+artifact correctness, complete dependency coverage or release permission.
+
+Nearest overlapping owners: [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.qmd); [Model-Weight Custody and Hardware Roots of Trust](../chapters/model-weight-custody-and-hardware-roots-of-trust.qmd).
 
 Core claim: Every governed AI supply-chain decision should bind a prospectively frozen consumer, requested use, threat and assurance model, materiality policy, and relation-specific asset closure to exact subject/content and lineage identity; typed data, code, model, prompt/policy, dependency, build/training/evaluation, environment, hardware/firmware, supplier/service, signer, advisory, transformation, release, recipient, descendant, retention, and retirement state; issuer, verifier, policy, freshness, trust and dependency boundaries; observed artifact and lifecycle effects; append-only invalidation and acknowledged affected-path propagation; restoration, compensation, disclosure, privacy/rights, availability, cost, and terminal residual ownership. Missing, inconsistent, stale, unverifiable, revoked, compromised, materially incomplete, or unresolved-critical predicates should route each affected consumer to a named non-ordinary state, while no graph, BOM, checksum, signature, provenance statement, SLSA level, layout, supplier claim, advisory, quarantine, conformance result, or finite proof by itself establishes world-complete lineage, assertion truth, artifact correctness, absence of compromise, data fitness or rights, model safety, legal compliance, readiness, release merit, or deployment authority.
 
@@ -2595,7 +2854,19 @@ Lean proof targets:
 
 Stable ID: `recursive-self-improvement-boundaries`
 
-Chapter job: The book needs to state when self-improvement is allowed, what it may modify, and which invariants it cannot weaken.
+Chapter job: Admit or reject a self-change proposal while preserving protected
+objectives, evaluator boundaries, current authority and recovery obligations.
+
+Ownership boundary: An exact candidate, invariant/rights reviews, evaluator
+dependencies, qualified evidence, budgets and current change authority enter;
+research-only, rejected, quarantined or replacement-eligible disposition leaves.
+Open-Ended Improvement owns candidate generation; Capability Replacement owns
+the later commit/recovery transaction. Search success or canary entry alone is
+not promotion. Routine updates within an applicable lease do not need repeated
+permission; material changes to the governor or its limits retain separate
+admission.
+
+Nearest overlapping owners: [Open-Ended Improvement Engines](../chapters/open-ended-improvement-engines.qmd); [Capability Replacement and Rollback](../chapters/capability-replacement-and-rollback.qmd).
 
 Core claim: For a prospectively declared self-model, mutable state partition, authority envelope, consumer and use, and evaluation horizon, a system-generated change may enter a live capability field only through a separately authorized transition that binds exact change lineage, protected invariants, evaluator dependencies, full declared state, boundary deltas, matched evidence, staged exposure, outcome delay, rollback and compensation limits, descendant invalidation, and terminal residual ownership; the candidate may contribute proposals and evidence but cannot solely define, alter, judge, or authorize the conditions of its own promotion.
 
@@ -2682,9 +2953,18 @@ Lean proof targets:
 
 Stable ID: `open-ended-improvement-engines`
 
-Chapter job: Govern the generator-evaluator-archive campaigns that propose
-tasks, tools, programs, curricula, designs, or other candidate improvements so
-search pressure cannot become its own admission authority.
+Chapter job: Govern adaptive task/candidate generation and archive history so
+novelty, search pressure and winner-only reporting cannot become admission
+authority.
+
+Ownership boundary: A declared generation/evaluation policy, archive/exposure
+history, hazards and total budgets enter; bounded campaign records and candidate
+handoffs leave. Recursive Self-Improvement owns change admission; Procedural
+Memory owns procedure promotion and retirement. A generated task, growing
+archive or high score does not establish useful improvement or authorize
+changing the campaign’s own governor.
+
+Nearest overlapping owners: [Recursive Self-Improvement Boundaries](../chapters/recursive-self-improvement-boundaries.qmd); [Procedural Memory and Cognitive Loop Closure](../chapters/procedural-memory-and-cognitive-loop-closure.qmd).
 
 Core claim: For a prospectively frozen consumer, purpose, legitimate objective, representation, campaign controller, task and candidate policy, evaluator and exposure policy, archive and hazard policy, resource and opportunity budget, stop authority, and evaluation horizon, open-ended improvement should operate as a bounded adaptive generation campaign in which every task, candidate, evaluation, failure, cost, reuse relation, and terminal outcome retains exact lineage; novelty, diversity, score, archive growth, transfer, self-verification, or search activity never grants authority or establishes useful improvement by itself; only separately qualified candidates may be handed to the existing self-improvement governor, and any change to the campaign's own objective, controller, evaluator authority, bounds, or admission interface is a separately authorized improvement proposal.
 
@@ -2844,7 +3124,18 @@ non-claim, bounded source role, owner handoff, and claim-addressable atom
 mapping. The disposition has no support-state effect, and any later prose
 change requires a new semantic review. Word count remains diagnostic only.
 
-Chapter job: Replication is a composed lifecycle: obtaining resources, copying or reconstructing code and weights, creating identities and credentials, provisioning compute, deploying descendants, persisting, adapting, recruiting help, and resisting recall. The weak links can improve independently, so no adjacent chapter owns the end-to-end chain.
+Chapter job: Assess the composed creation, provisioning, deployment, persistence
+and recall of descendants rather than equating copied weights with autonomous
+replication.
+
+Ownership boundary: Scoped resource/tool permissions, artifact identity,
+provisioning/deployment observations and known descendant lineage enter; a
+bounded replication denominator, census unknowns and containment obligations
+leave. Recursive Self-Improvement owns system change; Weight Custody owns assets
+and copies. Neither a synthetic provisioning call nor a successful recall
+attempt establishes real-provider access or complete descendant containment.
+
+Nearest overlapping owners: [Recursive Self-Improvement Boundaries](../chapters/recursive-self-improvement-boundaries.qmd); [Model-Weight Custody and Hardware Roots of Trust](../chapters/model-weight-custody-and-hardware-roots-of-trust.qmd).
 
 Core claim: Any replication-capable action should be denied by default and become testable only inside a synthetic containment contract that binds parent and descendant identity, authority noninheritance, resources, credentials, networks, copy lineage, persistence, adaptation, human assistance, shutdown and recall, proliferation bounds, residuals, and threshold commitments; component-task success or failure alone establishes neither end-to-end replication capability, containment, safety, nor permission to test real infrastructure.
 
@@ -2902,7 +3193,17 @@ Lean proof targets:
 
 Stable ID: `intent-to-execution-contracts`
 
-Chapter job: Own the consumer-relative conformance relation from an accepted intent receipt through command, plan, job, adapter, observed effect, artifact, verification, delivery, feedback, compensation, and residual custody without taking over intake, planning, compilation, runtime enforcement, or evidence admission.
+Chapter job: Keep an accepted task’s obligations aligned through command, plan,
+job, effect, artifact and delivery without letting one stage certify another.
+
+Ownership boundary: Accepted intent, current constraints and stage-specific
+records enter; conformance decisions and owned gaps leave. Human Intent owns
+interpretation; Planning chooses obligation order; Runtime owns attempts and
+qualified outcomes. A dispatched job is not an effect, and a future outcome
+cannot be demanded as pre-effect evidence. A lost reply retains unknown-effect
+duties rather than rearming the accepted operation.
+
+Nearest overlapping owners: [Human Intent as a Formal Input](../chapters/human-intent-as-a-formal-input.qmd); [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: Intent-to-Execution Contracts should own a versioned, consumer-relative conformance relation between an accepted intent receipt and the complete execution lineage. Before any material dispatch, the relation binds exact objective and non-goals, semantic fields and precedence, authority ceiling and affected parties, state and environmental assumptions, allowed and forbidden means, artifacts and effect postconditions, verification and independence requirements, budgets and stop conditions, failure and compensation behavior, expiry and re-contract triggers, and the required receipts through plan, job, adapter, observed effect, artifact, delivery, feedback, and residual custody. Each lowering or effect must either preserve that relation under independently checkable evidence or stop, narrow, clarify, re-contract, compensate, or leave an explicit residual. The contract cannot infer human intent, grant authority, choose a plan, make a tool safe, prove semantic equivalence, establish verifier correctness, or count non-release as useful execution by itself.
 
@@ -3002,10 +3303,17 @@ Stable ID: `perception-sensor-fusion-and-observation-trust`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; observation correctness, corruption tolerance, calibration, and deployed safety remain unproved.
 
-Chapter job: Own the transition from heterogeneous raw signals to an admitted
-observation, preserving sensor identity, time, calibration, missingness,
-corruption, fusion disagreement, and authority before World Models or Planning
-may treat the result as evidence.
+Chapter job: Qualify fallible measurements and fused hypotheses while preserving
+channel identity, time, calibration, coverage, missingness and disagreement.
+
+Ownership boundary: Raw signals, transformations, quality/integrity checks and
+evidence requirements enter; admitted observation hypotheses, limitations or
+faults leave. World Models owns predictive branches; Embodied Agency owns
+physical action timing and control. Route a stale or misbound channel here and a
+contradicted forecast to World Models, retaining disputed attribution. Neither
+multiple sensors nor a newly admitted reading certifies environmental truth.
+
+Nearest overlapping owners: [Governed World Models and Reality Grounding](../chapters/governed-world-models-and-reality-grounding.qmd); [Embodied Agency, Real-Time Control, and Physical Safety](../chapters/embodied-agency-real-time-control-and-physical-safety.qmd).
 
 Core claim: A consequential observation requires a versioned contract binding task need, sensor and modality identity, calibration, pose, clocks, provenance, coverage, missingness, per-channel hypotheses, alignment, fusion, dependence, disagreement, shift, active observation, freshness, authority, cost, and residuals.
 
@@ -3056,7 +3364,18 @@ Lean proof targets:
 
 Stable ID: `planning-as-a-control-layer`
 
-Chapter job: Own the prospective, consumer-relative choice and revision of obligation order, schedule, observation strategy, and dispatch boundary under uncertainty without taking over semantic conformance, compilation, worker routing, job lifecycle, runtime effects, evaluation, or release.
+Chapter job: Choose and revise obligation order, observation strategy, schedule
+and node-local dispatch readiness under declared uncertainty and capacity.
+
+Ownership boundary: An accepted command, dependencies, predictions, current
+grants and resource/route constraints enter; a versioned plan and scoped
+dispatch/replan requests leave. Cognitive Compilation translates accepted
+obligations, Routing selects an eligible worker, and Runtime admits effects.
+Route ordering, shared-capacity or affected-dependency mistakes here; an
+unavailable credential is feasibility trouble rather than a reason to repeat an
+existing grant.
+
+Nearest overlapping owners: [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.qmd); [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.qmd).
 
 Core claim: Planning as a Control Layer should own a versioned, consumer-relative plan policy that selects and revises a partial order of obligations under uncertainty before execution. The policy binds the accepted command version; candidate decompositions and explicit abstention; typed nodes and dependency semantics; assumptions, observations, predictive-state and error models; context, tool, capability, authority, rights, resource, and verifier requirements; adequacy and utility predicates; lifecycle, dispatch, merge, stop, fallback, recovery, and replan rules; complete alternative and attempt denominators; and expected versus observed cost, latency, risk, and residuals. Only nodes whose dependencies and feasibility predicates are satisfied may request lowering and dispatch, and every feedback-driven change must preserve the contract or produce a scoped re-contract or residual. The plan policy does not grant authority, perform semantic compilation, choose a worker, execute an effect, validate its own predictions, or prove that a decomposition is useful, optimal, safe, or transferable by itself.
 
@@ -3144,9 +3463,18 @@ Proof boundary: the seven public targets group seventy-one theorem declarations:
 
 Stable ID: `governed-world-models-and-reality-grounding`
 
-Chapter job: Govern learned or simulated futures as fallible prediction
-services so Planning can use imagination without treating it as observation,
-causal truth, permission, or evidence that an action is safe.
+Chapter job: Qualify versioned predictive branches for declared planning uses
+and preserve their disagreement with later qualified observations.
+
+Ownership boundary: Admitted observations, uncertain beliefs, model versions and
+rollout requests enter; bounded branch packets and reality-residual records
+leave. Perception owns observation qualification; Planning owns plan revision;
+Runtime retains permission. Reflexive Model-World Systems owns whether
+deployment changed the measurement process or successor evidence. An admitted
+reading is not unquestionable reality, and predictive qualification creates no
+grant.
+
+Nearest overlapping owners: [Perception, Sensor Fusion, and Observation Trust](../chapters/perception-sensor-fusion-and-observation-trust.qmd); [Reflexive Model-World Systems](../chapters/reflexive-model-world-systems.qmd).
 
 Core claim: A world model should be governed as a fallible, versioned prediction service whose state, horizon, uncertainty, provenance, and calibration bound which imagined consequences may influence planning and action; observation must repeatedly reconcile imagination with reality.
 
@@ -3159,6 +3487,7 @@ Source loading queue:
 | Variants | `deterministic_capability_compilation`, `qcsa_whitepaper`, `cognitive_compilation` | Use for versioned admission, heterogeneous substrates, and typed artifacts; none establishes prediction quality. |
 
 
+| November 2026 representation/sequence comparators | `ext_i_jepa_2023`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` | Read the selected passage-bounded notes for JEPA objectives, conditional alignment or learned H-Net granularity as applicable; distinguish external reports from local results and preserve each existing owner boundary. |
 | Manifest assignment reconciliation | `relational_dimension_compiler`, `ext_toward_causal_representation_learning_2021`, `ext_causal_calculus_1995`, `ext_deep_ensembles_2017`, `ext_conformal_prediction_2021`, `ext_wilds_2021` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -3236,10 +3565,19 @@ Lean proof targets:
 
 Stable ID: `reflexive-model-world-systems`
 
-Chapter job: Own the trajectory-level causal contract for model lineages whose
-deployments alter the world, measurement process, preferences, institutions,
-shared evidence, or successor-training inputs, so later observation cannot
-silently masquerade as lineage-independent grounding.
+Chapter job: Track how deployment changes measurement, institutions, preferences
+or successor evidence so on-policy outcomes cannot masquerade as independent
+grounding.
+
+Ownership boundary: Versioned deployments, exposures/interventions, observations
+and successor ancestry enter; target-regime evidence limits, identification
+residuals and persistence-aware rollback duties leave. World Models owns
+forecast qualification; Data Engines owns data lineage and learning/deletion
+events. A later observation can be useful without being lineage-independent, and
+withdrawing a model cannot automatically undo its earlier social or data
+effects.
+
+Nearest overlapping owners: [Governed World Models and Reality Grounding](../chapters/governed-world-models-and-reality-grounding.qmd); [Data Engines, Continual Learning, and Unlearning](../chapters/data-engines-continual-learning-and-unlearning.qmd).
 
 Core claim: A consequential learning lineage should be governed as a reflexive model-world system: deployment, world and regime state, evidence generation, successor update, and interacting lineages must share a time-indexed causal record; every reused evidence channel must declare its deployment ancestry and target regime; protected grounding reserves must preserve informative counterfactual variation; and evaluation must keep baseline fidelity, on-policy fidelity, causal steering, legitimacy, and persistence-aware rollback distinct.
 
@@ -3315,7 +3653,17 @@ Lean proof targets:
 
 Stable ID: `cognitive-compilation-and-semantic-ir`
 
-Chapter job: Own the consumer- and target-relative translation contract that preserves accepted obligations across source, semantic, target, and concrete artifact representations, with explicit pass semantics, post-translation validation, dependency-closed rebuild, and no authority over intent, planning, effects, support, or release.
+Chapter job: Translate accepted obligations into target representations while
+making preservation assumptions, validation and affected rebuilds explicit.
+
+Ownership boundary: Version-bound obligations, source representations and target
+constraints enter; typed IR/artifacts, validation results or translation faults
+leave. Planning owns ordering and Cognitive Method Transfer owns whether a
+source method transports to the target substrate. A successful compile does not
+qualify that method, grant an effect, dispatch a job or establish that an
+omitted dependency is absent.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Cognitive Method Transfer and Qualification](../chapters/cognitive-method-transfer-and-qualification.qmd).
 
 Core claim: Cognitive Compilation should own a versioned, consumer- and target-relative translation contract that lowers an already accepted plan obligation through source, semantic, and target representations into a concrete artifact candidate while preserving addressable obligation, non-goal, authority, rights, assumption, source/context, evidence, resource, verifier, repair, and residual lineage. Every pass binds typed source and target semantics; declared normalization, loss, and ambiguity; preconditions and postconditions; dependencies; deterministic and nondeterministic inputs; compiler and validator identities; costs; receipts; and failure consequences. Acceptance requires post-translation validation against the actual target artifact by an independent-enough evaluator, while repair uses stable semantic identities, observed mutation sets, dependency closure, downstream rebuild, and revalidation. The compiler may block, narrow, request clarification, or residualize a lowering, but it does not reinterpret intent, choose the plan, grant authority, execute effects, self-certify semantic adequacy, or move support or release state.
 
@@ -3387,10 +3735,18 @@ Proof boundary: the three public targets group 45 live declarations across the t
 
 Stable ID: `cognitive-method-transfer-and-qualification`
 
-Chapter job: Own the upstream inheritance boundary that decides whether a human
-or institutional cognitive method's mechanism transports to an AI substrate,
-how the target realization is represented and qualified, and what assurance and
-authority may accompany it before ordinary compilation or runtime use.
+Chapter job: Determine whether a human or institutional method’s mechanism
+transports to an AI realization before its assurance or authority is inherited.
+
+Ownership boundary: A versioned source method, evidence, mechanism hypotheses,
+assumptions and candidate realizations enter; a Cognitive Transfer Record,
+Qualified Cognitive Protocol candidates and qualification residuals leave.
+Cognitive Compilation translates accepted obligations; Procedural Memory
+promotes qualified reusable procedures. Renaming source steps, valid package
+shape or a successful compile cannot establish transferred efficacy or
+permission to use the method.
+
+Nearest overlapping owners: [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.qmd); [Procedural Memory and Cognitive Loop Closure](../chapters/procedural-memory-and-cognitive-loop-closure.qmd).
 
 Core claim: Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-preserving target realizations, compiles an explicitly scoped Qualified Cognitive Protocol, and keeps qualification, execution assurance, and authority independent across inheritance, execution, and evolution.
 
@@ -3465,7 +3821,18 @@ Lean proof targets:
 
 Stable ID: `virtual-context-abi`
 
-Chapter job: Own the static, versioned, consumer- and purpose-relative request-to-materialization contract between durable memory and the actual model- or worker-visible context packet, without taking over memory updates, transactions, adequacy, effects, support, or release.
+Chapter job: Bind a consumer’s declared context request to the actual versioned
+packet it receives, including transformations, omissions, allowed uses and
+faults.
+
+Ownership boundary: Requests and exact durable source/snapshot identities enter;
+a consumer-bound packet, conformance receipt or fault leaves. Durable Memory
+owns stored assertions, Context Transactions owns dynamic consistency and
+mutation, and Verification Bandwidth owns adequacy for a checking attempt. Route
+a wrong materialized packet here; a racing state update or an inadequate
+checking view belongs to its separate owner.
+
+Nearest overlapping owners: [Durable Semantic Memory and Knowledge Lattices](../chapters/durable-semantic-memory-and-knowledge-lattices.qmd); [Context Transactions, Snapshots, Mounts, and Taint](../chapters/context-transactions-snapshots-mounts-and-taint.qmd); [Verification Bandwidth and Context Adequacy](../chapters/verification-bandwidth-and-context-adequacy.qmd).
 
 Core claim: The Virtual Context ABI should own the static, versioned, consumer- and purpose-relative request-to-materialization contract between durable memory and model-visible context. It resolves stable object, semantic-address, version, mount, and snapshot references into finite typed representation candidates, then issues a certificate and receipt that bind exact source and field lineage, transformations, omissions and loss, provenance and taint, authority and rights, permitted and prohibited uses, freshness, lease, revocation, selection and omitted frontier, requested and observed adequacy state, costs, faults, and residuals. Admission means only that the actual packet conforms to the frozen request and policy; it does not establish truth, verification adequacy, model use, usefulness, safety, or support. The ABI may deny, ask, abstain, refresh, broaden, narrow, or return a typed fault, but it does not update durable memory, own transactions, infer execution authority, adjudicate claims, execute effects, or move support or release state.
 
@@ -3565,7 +3932,18 @@ bounded source role, owner handoff, and claim-addressable atom mapping. The
 disposition has no support-state effect, and any later prose change requires a
 new semantic review. Word count remains diagnostic only.
 
-Chapter job: Long-lived AI systems need semantic objects that survive restarts, support graph and associative retrieval, evolve across ontology versions, preserve provenance, merge and retract conflicting assertions, forget under policy, and remain distinguishable from transient context and model weights.
+Chapter job: Preserve durable semantic object/relation identity, ontology
+evolution and retrieval across restarts without confusing stored assertions with
+truth.
+
+Ownership boundary: Admitted semantic events, provenance, ontology versions and
+permitted retention/use enter; addressable objects, retrieval results and
+migration/conflict limits leave. Context Transactions owns state transitions and
+isolated views; Claim Ledgers owns proposition identity and belief history.
+Memory stores and retrieves assertions but cannot decide their support, waive a
+right or qualify a procedure.
+
+Nearest overlapping owners: [Context Transactions, Snapshots, Mounts, and Taint](../chapters/context-transactions-snapshots-mounts-and-taint.qmd); [Claim Ledgers and Belief Revision](../chapters/claim-ledgers-and-belief-revision.qmd).
 
 Core claim: Durable semantic memory should be admitted through a versioned knowledge-lattice contract that binds object and relation identity, ontology, provenance, support state, temporal validity, authority and rights, merge and supersession, contradiction, retrieval route, compaction and forgetting, restart recovery, consumer use, and residual uncertainty; retrieval quality, graph connectivity, model recall, persistence, or a fluent answer alone establishes neither truth, complete memory, safe consolidation, erasure, nor decision authority.
 
@@ -3625,7 +4003,18 @@ Lean proof targets:
 
 Stable ID: `context-transactions-snapshots-mounts-and-taint`
 
-Chapter job: Own the dynamic state-transition boundary for durable context so parallel reads, writes, branches, mounts, derivatives, deletion, revocation, retry, crash, and recovery remain causally and operationally inspectable.
+Chapter job: Coordinate declared durable-context state changes, snapshots,
+mounts, taint, conflicts and crash/recovery outcomes under an explicit
+participant and fault model.
+
+Ownership boundary: Exact prior state, requested operations, current grants and
+consistency constraints enter; committed/faulted views, transition receipts or
+indeterminate outcomes leave. Durable Memory owns semantic objects; the Context
+ABI materializes a consumer packet from the selected view. A valid commit cannot
+establish belief truth, model forgetting, complete deletion or reversal of an
+external effect.
+
+Nearest overlapping owners: [Durable Semantic Memory and Knowledge Lattices](../chapters/durable-semantic-memory-and-knowledge-lattices.qmd); [The Virtual Context ABI: Typed Pages, Cells, and Certificates](../chapters/virtual-context-abi.qmd).
 
 Core claim: Context Transactions should own the dynamic, versioned state-transition contract for durable context memory. Each accepted transaction binds principal, consumer, purpose, operation, base snapshot, branch, mounts, actual read/write/derive/delete/revoke sets, isolation and conflict policy, authority and rights, taint and declassification, durability and recovery model, budget, horizon, and support ceiling to an observed pre-state and a causally ordered attempted, applied, durable, visible, replayed, or recovered post-state. Commit, branch, merge, abort, retry, compaction, deletion, revocation, and recovery must preserve exact identities, obligations, faults, costs, and residuals. The transaction layer may change durable context state, but it does not own static packet materialization, semantic truth, belief revision, model/optimizer state, external effects, artifact correctness, verification adequacy, support, or release.
 
@@ -3696,7 +4085,17 @@ Lean proof targets:
 
 Stable ID: `verification-bandwidth-and-context-adequacy`
 
-Chapter job: Own the prospective, claim-specific obligation-to-capacity contract for a verification attempt after context conformance and transaction validity but before evidence or release decisions.
+Chapter job: Decide whether the available checking view and capacity cover the
+exact verification obligation, including a declared shortfall or escalation.
+
+Ownership boundary: A claim, consumer, required checks, actual context views and
+capacity/dependency information enter; an adequacy, shortfall or abstention
+record leaves. The Virtual Context ABI owns packet conformance; Proof-Carrying
+Claims owns the chosen verification route and bounded verdict. Adequacy says the
+attempt can cover its declared burden, not that the proposition is true or its
+support may move.
+
+Nearest overlapping owners: [The Virtual Context ABI: Typed Pages, Cells, and Certificates](../chapters/virtual-context-abi.qmd); [Proof-Carrying Claims and Adversarial Review](../chapters/spinoza-verification-and-proof-carrying-claims.qmd).
 
 Core claim: Verification Bandwidth should own the prospective, claim-specific adequacy contract for a verification attempt. Before outcomes, it binds target proposition and scope, population and environment, risk and consequence, requested support effect, required positive, negative, boundary, contradiction, counterexample, and transfer obligations, available source units, verification modes, tools, evaluator-dependency graph, authority and rights, budget, horizon, stop rule, and escalation path. After execution, it records every attempted, passed, failed, disputed, unknown, infeasible, and unattempted obligation plus actual artifacts, costs, disagreement, residuals, expiry, and causal-use observations. Adequacy means only that the declared verification program was sufficient for its exact purpose under stated premises; it does not establish claim truth, model cognition, source correctness, formal-model fidelity, useful outcomes, safety, support promotion, or release.
 
@@ -3801,7 +4200,18 @@ Lean proof targets:
 
 Stable ID: `claim-ledgers-and-belief-revision`
 
-Chapter job: Own durable semantic claim identity, append-only belief-state transition history, bounded dependency repair, ontology migration, and exact multi-surface acknowledgment without taking authority over truth, evidence, verification, action, support, or release.
+Chapter job: Preserve exact claim identity, belief-transition history and
+acknowledged current surfaces while keeping dependency repair and permitted
+retention explicit.
+
+Ownership boundary: Versioned propositions, dependencies and accepted decisions
+enter; semantic lineage, affected-use repairs and surface acknowledgements
+leave. Evidence States owns support transitions, while Artifact Graphs owns
+general artifact lineage. Route a claim split, alias, stale surface or migration
+here; a wrong support inference goes to Evidence, and a missing or misidentified
+underlying artifact goes to Artifact Graphs.
+
+Nearest overlapping owners: [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd); [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.qmd).
 
 Core claim: Claim Ledgers should own the durable identity and append-only state-transition history of each material claim and its semantic variants. Every record binds canonical proposition and scope, definitions and assumptions, population and environment, provenance and source roles, evidence and attack refs, support and uncertainty states, contradiction and defeater links, dependencies, ontology version, lifecycle, commitment, authority and rights, surface refs, expiry, residuals, and current materialized view; every proposed update binds trigger, before/after states, transition type, evidence-transition and review refs, affected dependency closure, surface-sync plan, concurrency base, migration, costs, and non-overwrite receipt. The ledger may record or route promotion, downgrade, split, merge, supersession, deprecation, retirement, dispute, or no change only through the owning gates. It does not establish claim truth, source or evidence validity, verification adequacy, semantic equivalence, reviewer competence, formal-model fidelity, action authority, usefulness, safety, support movement, or release.
 
@@ -3904,7 +4314,18 @@ Lean proof targets:
 
 Stable ID: `spinoza-verification-and-proof-carrying-claims`
 
-Chapter job: Own prospective selection, execution, and custody of claim-specific verification and adversarial-review routes plus bounded verdict contracts, while leaving target identity, adequacy, formal or empirical validity, reviewer competence, support, authority, rights, cost, and release with their separate owners.
+Chapter job: Select and execute claim-specific verification/review routes and
+keep bounded verdicts, dissent, artifacts and unresolved checking obligations
+attached to the target.
+
+Ownership boundary: Exact claim identity, evidence views, checking obligations
+and eligible reviewers/tools enter; route results, bounded verdicts and
+residuals leave. Verification Bandwidth owns attempt adequacy; Evidence States
+owns accepted support transitions. A tribunal vote, valid proof or retrieved
+dossier cannot establish evaluator competence, issue effect permission or
+promote the claim by itself.
+
+Nearest overlapping owners: [Verification Bandwidth and Context Adequacy](../chapters/verification-bandwidth-and-context-adequacy.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
 Core claim: Selected claims and artifacts should move through proof-carrying, justification-carrying, or adversarial-review envelopes that record tier, interpretation mapping, evidence dossier, verifier or tribunal result, dissent, limitations, failed attempts, required actions, residuals, and ledger effects.
 
@@ -3977,7 +4398,17 @@ Historical treatment: `unified-adaptive-tribunal-and-adversarial-review` is arch
 
 Stable ID: `labor-os-and-typed-jobs`
 
-Chapter job: Own admission, lifecycle custody, and terminal receipt for one bounded authorized work unit from dispatch request through delivery, evidence-readiness eligibility, compensation, expiry, or retirement, while leaving intent, planning, permissions, effects, artifacts, evidence, support, learning, and release with their owners.
+Chapter job: Keep one authorized work unit’s admission, attempts, delivery and
+terminal receipt distinct from a worker’s process state.
+
+Ownership boundary: A dispatchable plan node, current grants, inputs, acceptance
+and delivery obligations enter; job lifecycle, attempt/artifact links and
+closure or residual receipts leave. Planning owns obligation order; Runtime owns
+effect attempts and observation. Process exit, queue completion and
+evidence-readiness eligibility do not establish delivered work, accepted
+evidence or release approval.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: The execution layer should convert plans into typed jobs managed by a governed labor operating system.
 
@@ -4048,13 +4479,18 @@ Lean proof targets:
 
 Stable ID: `ai-work-surfaces-agent-harnesses-and-organizational-absorption`
 
-Chapter job: Own the architecture and history of work-surface expansion from
-answer and suggestion through task, project, role, team, organization, and
-inter-organizational network. Treat every expansion as a transfer of context,
-persistence, tools, execution custody, authority, review, accountability, and
-residuals. Do not own typed-job execution, runtime effect mediation,
-organizational legitimacy, social distribution, or multi-agent population
-dynamics.
+Chapter job: Make expansion from answers to tasks, projects and organizational
+roles explicit as a change in context, persistence, tools, custody, authority
+and human control.
+
+Ownership boundary: The current work surface, proposed expansion and accountable
+constraints enter; a bounded surface-change/custody decision, alternatives and
+migration residuals leave. Labor OS owns typed jobs; Human-AI Organizations owns
+internal decision rights and accountability. A setting named agent mode or a
+broader tool interface cannot establish legitimate delegation, adequate
+oversight or a completed migration.
+
+Nearest overlapping owners: [Labor OS and Typed Jobs](../chapters/labor-os-and-typed-jobs.qmd); [Human-AI Organizations, Delegation, and Accountability](../chapters/human-ai-organizations-delegation-and-accountability.qmd).
 
 Core claim: Every expansion of an AI work surface should be governed as a versioned abstraction-absorption transition that binds capability, context, state, tools, authority, effects, verification, human control, accountability, and residuals before project-, role-, team-, or organization-scale autonomy is accepted.
 
@@ -4126,9 +4562,18 @@ claim-addressable atom mapping. The disposition has no support-state effect,
 and any later prose change requires a new semantic review. Word count remains
 diagnostic only.
 
-Chapter job: Own the meso-level allocation of decision rights, review duties,
-learning obligations, liability, incentives, and recovery across mixed human-AI
-institutions, rather than reducing governance to a nominal human in the loop.
+Chapter job: Allocate decision, execution, review, intervention and remedy
+duties inside a mixed human-AI organization without treating a role title as
+competence or accountability.
+
+Ownership boundary: Authorized purpose, delegation, role/capacity evidence, work
+receipts and protected interests enter; bounded organizational duties, decisions
+and remedy residuals leave. Work Surfaces owns the technical expansion;
+Institutions owns public mandate and jurisdiction. A completed task does not
+settle liability, and an organization cannot vote itself broader effect
+authority or self-certify public legitimacy.
+
+Nearest overlapping owners: [From Chat to Organizations: AI Work Surfaces and Agent Harnesses](../chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.qmd); [Institutions, International Coordination, and Public Legitimacy](../chapters/institutions-international-coordination-and-public-legitimacy.qmd).
 
 Core claim: Consequential delegation requires a versioned organizational contract binding charter, affected parties, actors, roles, competence, workload, accessibility, information and decision rights, delegation, separation of duties, conflicts, incentives, benefits, escalation, appeal, remedy, contribution, dependence, accountability, succession, dissolution, and residual custody.
 
@@ -4198,9 +4643,18 @@ Stable ID: `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; beneficial complementarity, neural intervention safety, equity, and durable exit remain unproved.
 
-Chapter job: Govern longitudinal bidirectional human-AI coupling in which
-personalization, assistive dependence, neural sensing, inferred mental state,
-or stimulation changes the human and the system across time.
+Chapter job: Assess longitudinal bidirectional human-AI coupling while
+preserving agency, consent, skill, neural-data limits and practical pause/exit
+paths.
+
+Ownership boundary: The population, purpose, coupling method, duration,
+adaptation evidence and protected interests enter; bounded coupled-system
+claims, monitoring and exit duties leave. Human Factors owns usable control
+capacity; Privacy owns information purpose and rights. One performance gain
+cannot establish beneficial complementarity, safe neural intervention, equitable
+access or durable human independence.
+
+Nearest overlapping owners: [Human Factors and Meaningful Control in Oversight](../chapters/human-factors-and-meaningful-control-in-oversight.qmd); [Privacy, Data Rights, and Information-Flow Governance](../chapters/privacy-data-rights-and-information-flow-governance.qmd).
 
 Core claim: Human-AI symbiosis should be evaluated as a reversible coupled-control intervention: the combined system must beat human-alone and AI-alone baselines on declared outcomes while preserving informed consent, mental integrity, cognitive agency, neural-data purpose limits, skill and exit capacity, equitable access, clinical boundaries, and longitudinal monitoring.
 
@@ -4260,7 +4714,18 @@ failure, non-claim, bounded source role, owner handoff, and claim-addressable
 atom mapping. The disposition has no support-state effect, and any later prose
 change requires a new semantic review. Word count remains diagnostic only.
 
-Chapter job: A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.
+Chapter job: Track how deployment distributes benefits, burdens, access and
+practical agency across workers, customers, owners, communities and public
+services over time.
+
+Ownership boundary: Disaggregated task/role changes, costs, ownership, access,
+continuity and institutional constraints enter; population/time-bound transition
+findings and remedy duties leave. Human-AI Organizations owns internal roles;
+Resource Economics owns the resource bill. Aggregate productivity or lower
+compute cost cannot show who benefits, whose options shrink or whether
+service-transition capacity exists.
+
+Nearest overlapping owners: [Human-AI Organizations, Delegation, and Accountability](../chapters/human-ai-organizations-delegation-and-accountability.qmd); [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.qmd).
 
 Core claim: Consequential deployment should advance only through a prospective transition contract that binds a counterfactual baseline, affected-person denominator, task-role-skill changes, adoption, substitution and complementarity, compensation and ownership, access and prices, concentration, critical-service continuity, human decision rights, training and redeployment, delayed outcomes, remedy, pause conditions, and residuals; exposure, productivity, adoption, or aggregate gain alone establishes neither job loss, welfare, fairness, human agency, nor a successful transition.
 
@@ -4318,7 +4783,18 @@ Lean proof targets:
 
 Stable ID: `artifact-graphs-audit-logs-and-replay`
 
-Chapter job: The stack needs durable artifacts and replayable traces so work can be inspected, reused, tested, and improved.
+Chapter job: Preserve artifact identity, derivation, record/reality
+discrepancies, permitted history, replay grade and bounded impact queries across
+reuse and change.
+
+Ownership boundary: Source/job/effect/artifact records and qualified
+observations enter; lineage, replay limitations, affected-use results and
+unresolved custody leave. Labor OS owns job lifecycle; Claim Ledgers owns
+proposition identity; Runtime owns effect attempts and observation. A retained
+receipt is not world truth, a digest is not deleted content, and current-use
+withdrawal need not erase permitted history.
+
+Nearest overlapping owners: [Labor OS and Typed Jobs](../chapters/labor-os-and-typed-jobs.qmd); [Claim Ledgers and Belief Revision](../chapters/claim-ledgers-and-belief-revision.qmd).
 
 Core claim: Execution should produce an artifact graph with audit logs, provenance, replay metadata, and links to claims and tests.
 
@@ -4481,7 +4957,18 @@ batches compose, and admission is absorbing.
 
 Stable ID: `runtime-adapters-tool-permissions-and-human-approval`
 
-Chapter job: Plans become real-world effects only through tools, runtimes, deployment adapters, and approval gates.
+Chapter job: Mediate the actual tool or service effect under current permission
+and preserve attempt, observed/unknown outcome, stop and authorized recovery
+duties.
+
+Ownership boundary: An exact job/action request, current grant, targets and
+adapter conditions enter; admission/denial, attempt, observation and recovery
+receipts leave. System Authority owns the permission relation and Labor OS owns
+job closure. Route a missed effect check, blind retry or unobserved outcome
+here; a worker stopping or an executor report alone does not prove the external
+operation completed.
+
+Nearest overlapping owners: [System Boundaries and Authority](../chapters/system-boundaries-and-authority.qmd); [Labor OS and Typed Jobs](../chapters/labor-os-and-typed-jobs.qmd).
 
 Core claim: Runtime adapters should enforce typed permissions, sandboxing, human approval, and post-action evidence capture.
 
@@ -4619,9 +5106,18 @@ Stable ID: `embodied-agency-real-time-control-and-physical-safety`
 
 Concept-completion state (2026-08-01): eight owner-specific mechanisms are written and exact-digest reviewed at argument support. The 22-declaration finite control-lease model and independent 13-axis mutation validator are implemented; controller stability, sim-to-real transfer, intervention efficacy, and deployed physical safety remain unproved.
 
-Chapter job: Own the transition from an authorized decision to deadline-bound
-physical actuation under uncertain dynamics, independent interlocks, fallback
-control, observed effects, and recovery.
+Chapter job: Admit deadline-bound physical commands under a qualified
+plant/control envelope, preserving uncertainty, interlocks, timing, observed
+effects and recovery limits.
+
+Ownership boundary: An authorized action, time-bound observations, model
+assumptions and current controller/fallback conditions enter; bounded control
+decisions, effect traces or degradation/unknown outcomes leave. Perception
+qualifies measurements; Runtime owns tool/service effect mediation. A software
+restore does not restore the plant, and a stop or hold is not inherently safe
+outside its declared physical envelope.
+
+Nearest overlapping owners: [Perception, Sensor Fusion, and Observation Trust](../chapters/perception-sensor-fusion-and-observation-trust.qmd); [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: Physical execution requires a plant-specific control lease binding embodiment, workspace, state estimator, dynamics, timing, force/space/contact limits, human presence, advanced/baseline/stop controllers, switching and interlocks, exploration, degraded modes, observed effects, compensation, irreversible residuals, costs, and expiry.
 
@@ -4676,10 +5172,18 @@ Lean proof targets:
 
 Stable ID: `inter-stack-protocols-identity-and-economic-exchange`
 
-Chapter job: Govern the versioned contract that lets an intent, task, artifact,
-identity, credential, delegation, economic commitment, receipt, dispute,
-revocation, and residual record cross an independently operated protocol
-boundary without turning a message or peer declaration into ambient authority.
+Chapter job: Preserve accepted scope, identity, delegation, consideration,
+acknowledgement and disputed obligations across an independently operated peer
+boundary.
+
+Ownership boundary: An accepted task, current permissions, peer identities,
+terms and referenced artifacts enter; a bounded exchange record,
+acknowledgement/unknown state and dispute/revocation duties leave. Runtime owns
+local effect admission; Multi-Agent Dynamics owns population interactions beyond
+a pairwise exchange. Interoperability or a peer response cannot issue a grant,
+certify context, prove settlement or establish claim support.
+
+Nearest overlapping owners: [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd); [Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk](../chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd).
 
 Core claim: A governed stack routes each cross-stack request through a versioned exchange contract that binds protocol and schema version, sender and receiver identities, endpoint and capability declaration, requested task or artifact, principal and delegated authority, credential verification, audience, scope, expiry, budget or consideration, expected receipt, dispute and revocation paths, and residual owner; an absent, mismatched, expired, revoked, unverified, or budget-unreserved required record blocks dispatch or routes accountable review, but does not itself establish peer trustworthiness, task or artifact truth, effect safety, payment settlement, legal validity, economic fairness, privacy, authorization correctness, or ASI.
 
@@ -4791,10 +5295,18 @@ Stable ID: `multi-agent-dynamics-collective-intelligence-and-systemic-risk`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; population-level causality, stability, and intervention efficacy remain open.
 
-Chapter job: Own population-level behavior among heterogeneous agents whose
-pairwise exchanges may be valid while incentives, commitments, coalitions,
-collusion, cascades, correlated failure, and aggregate human influence remain
-unsafe or unstable.
+Chapter job: Assess incentives, commitments, coalitions, cascades and correlated
+failure among agents whose individual or pairwise actions may otherwise be
+authorized.
+
+Ownership boundary: Pairwise events, designed roles, topology/lineage, shared
+dependencies and bounded observations enter; population-risk findings,
+intervention requirements and residuals leave. Inter-Stack Protocols owns
+pairwise exchange; Human-AI Organizations owns deliberately assigned internal
+roles. Neither local compliance nor an equilibrium result certifies population
+welfare, stability or legitimate public intervention.
+
+Nearest overlapping owners: [Inter-Stack Protocols, Identity, and Economic Exchange](../chapters/inter-stack-protocols-identity-and-economic-exchange.qmd); [Human-AI Organizations, Delegation, and Accountability](../chapters/human-ai-organizations-delegation-and-accountability.qmd).
 
 Core claim: Expanded multi-agent interaction requires a population contract binding agent/owner/model/organization identities, human participants, interaction and dependency graphs, incentives, information, resources, commitments, decision assumptions, entry/exit/copying/learning, population outcomes, externalities, human influence, interventions, costs, and residuals.
 
@@ -4850,7 +5362,18 @@ Lean proof targets:
 
 Stable ID: `procedural-memory-and-cognitive-loop-closure`
 
-Chapter job: Repeated reasoning trajectories should not be improvised forever when they can become verified procedures or tools.
+Chapter job: Turn eligible repeated work into qualified reusable procedures
+while preserving applicability, monitoring, deoptimization, retirement and
+fallback.
+
+Ownership boundary: Permitted traces, candidate abstractions, task/field
+contracts and evaluation evidence enter; procedure candidates,
+qualification/lifecycle records and unresolved transfer leave. Cognitive
+Compilation owns translation; Adjudicated Persistence owns whether and where a
+lesson may become durable influence. Reuse is not proposition truth or weight
+learning; readiness, support and effect authority remain separately decided.
+
+Nearest overlapping owners: [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.qmd); [Adjudicated Persistence and the Adaptive Commit Boundary](../chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd).
 
 Core claim: Cognitive loop closure compiles repeated reasoning into verified parameterized tools and procedural memory.
 
@@ -4939,7 +5462,17 @@ Part source loading queue:
 
 Stable ID: `routing-heads-and-specialist-cores`
 
-Chapter job: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
+Chapter job: Choose an eligible worker or representation for the exact task
+under quality, cost, current authority and fallback constraints.
+
+Ownership boundary: A capability request, qualified candidate set, current
+leases, capacity and consumer limits enter; selected/rejected routes, fallback
+or abstention and accounting leave. Readiness owns current-use admission;
+Replaceable Substrates owns the kernel interface. A selected route does not
+create permission, qualify its own result or show that its worker is better than
+the declared alternatives.
+
+Nearest overlapping owners: [Readiness Gates, Residual Escrow, and Quarantine](../chapters/readiness-gates-residual-escrow-and-quarantine.qmd); [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd).
 
 Core claim: ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
@@ -5040,12 +5573,18 @@ Lean proof targets:
 
 Stable ID: `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
-Chapter job: Own the learned Cognitive Kernel ABI beneath routing and above
-architecture-specific implementations, so Transformer, state-space, recurrent,
-long-convolution, test-time-state, external-memory, continuous-time, KAN,
-graph/relational, program-learning, exact-search, and hybrid candidates can be compared and
-replaced without rewriting exact memory, authority, evidence, rollback, or
-evaluation contracts.
+Chapter job: Define a common learned-kernel boundary so candidate computation
+families can be compared or replaced without absorbing memory, authority and
+evidence roles.
+
+Ownership boundary: Task/kernel requirements, architecture-specific state,
+capabilities and migration/qualification limits enter; bounded kernel cards,
+interface compatibility and replacement obligations leave. Routing chooses the
+eligible implementation; Learning-Compute Topology organizes adaptation among
+identities. A cleaner ABI, hidden activation or architecture label cannot
+establish useful capability, exact memory or promotion legitimacy.
+
+Nearest overlapping owners: [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.qmd); [Learning–Compute Topology and Adaptive Process Architecture](../chapters/learning-compute-topology-and-adaptive-process-architecture.qmd).
 
 Core claim: For an exact task family, consumer, modality, model and state version, memory contract, hardware/runtime, authority and rights envelope, resource budget, evaluator, fallback, rollback, and time horizon, learned cognition should be supplied through a typed Cognitive Kernel ABI whose implementations are admitted only by matched strong baselines, exact state and memory semantics, proposal-versus-effect separation, evaluator independence, complete lifecycle cost, failure and residual retention, checkpoint compatibility, and causal ablation.
 
@@ -5060,6 +5599,7 @@ Source loading queue:
 | Mutable/external/dynamical/function/graph/program alternatives | `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_neural_message_passing_2017`, `ext_dreamcoder_2020` | Use for online-state custody, fair KAN comparison, memory and topology extrapolation, continuous-time cost, relational processing, and verified abstraction tests. |
 | Hybrid composition | `ext_jamba_2024` | Use to make layer/expert/substrate composition and active-versus-total accounting explicit; do not infer a generally optimal mixture or local result. |
 
+| November 2026 representation/sequence comparators | `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025` | Read the selected passage-bounded notes for JEPA objectives, conditional alignment or learned H-Net granularity as applicable; distinguish external reports from local results and preserve each existing owner boundary. |
 | Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_inkling_2026`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -5154,9 +5694,18 @@ Stable ID: `relational-dimension-compilation-and-polyadic-cognition`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; relational irreducibility, useful higher-order structure, transfer, and primitive-arity sufficiency remain unproved.
 
-Chapter job: Own the lifecycle for typed role-sensitive higher-order relation
-candidates from dimensional IR and lower-order rescue through qualification,
-compilation, routing, demotion, reversible contraction, and RODIE evaluation.
+Chapter job: Qualify role-sensitive higher-order relation candidates and their
+lowerings without equating computational arity, storage structure and semantic
+relation truth.
+
+Ownership boundary: Typed relation requests, role bindings, candidate operators,
+lower-order comparisons and provenance enter; relation/operator qualification,
+contraction/expansion conditions and residuals leave. World Models owns
+branch-local belief and reconciliation; Cognitive Compilation translates
+accepted obligations. High interaction scores, a compiled incidence form or a
+contraction certificate cannot certify the relation as actual-world truth.
+
+Nearest overlapping owners: [Governed World Models and Reality Grounding](../chapters/governed-world-models-and-reality-grounding.qmd); [Cognitive Compilation and Semantic IR](../chapters/cognitive-compilation-and-semantic-ir.qmd).
 
 Core claim: Polyadic cognition should be implemented as a slow-path relational-dimension compiler over stable lower-arity primitives: candidate higher-order structure is typed, role-addressable, denominator-complete, qualified against strong pairwise and sequence baselines, budgeted, reversible, and retained only when it improves held-out relational performance without violating memory, latency, calibration, or governance constraints.
 
@@ -5212,11 +5761,18 @@ Lean proof targets:
 
 Stable ID: `governed-model-training-distributed-optimization-and-scaling`
 
-Chapter job: Own the training-run transaction from prospectively frozen
-architecture, data lease, objective, numerical policy, topology, and resource
-budget through distributed execution, full-state checkpoint and recovery,
-checkpoint-family selection, and an identity-bound handoff to independent
-qualification.
+Chapter job: Execute a declared training-run transaction with exact data
+consumption, numerical policy, distributed state, checkpoint family and
+recovery/accounting boundaries.
+
+Ownership boundary: An authorized objective, architecture/topology, data lease,
+optimizer/numerical policy and budget enter; run/checkpoint identities,
+consumption, failure/recovery costs and a candidate handoff leave. Policy
+Optimization owns feedback/update semantics; Learning-Compute Topology owns
+process organization. Finishing a run cannot repair data rights, redefine its
+target, retroactively authorize spending or grant deployment readiness.
+
+Nearest overlapping owners: [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd); [Learning–Compute Topology and Adaptive Process Architecture](../chapters/learning-compute-topology-and-adaptive-process-architecture.qmd).
 
 Core claim: A model-training candidate is eligible for qualification only when a prospectively frozen run contract binds architecture, data lease and order, objective, optimizer, scheduler, numerical policy, device and parallelism topology, code and environment, budget, stopping and fault policy, complete attempted-run denominator, full declared checkpoint state, commit consistency, resume equivalence class, candidate-checkpoint family, validation-only selection, independent unopened qualification, and residual ownership; a loss reduction, completed job, high utilization, checkpoint file, successful load, recovered run, selected candidate, formal record proof, or source-reported scale result alone establishes neither faithful training, model quality, optimizer superiority, fault tolerance, safety, support, readiness, release, transfer, nor SOTA.
 
@@ -5336,7 +5892,18 @@ support, readiness, release, transfer, SOTA, AGI, or ASI claim.
 
 Stable ID: `learning-compute-topology-and-adaptive-process-architecture`
 
-Chapter job: Own the causal organization of adaptation between model architecture and distributed execution: persistent adaptive identities; typed evidence, judgement, credit, state, artifact, resource, control, and authority channels; integration and lifecycle semantics; topology rewrites; semantic compilation; realization leakage; and topology-specific measurement, experimentation, and governance.
+Chapter job: Specify how adaptive identities, evidence, judgment, credit, state
+and integration are causally organized before that process is compiled onto an
+execution topology.
+
+Ownership boundary: Kernel/state identities, learning/evaluation channels,
+controller constraints and proposed topology changes enter; a versioned
+adaptive-process contract and semantic/realization limits leave. Governed
+Training owns faithful run execution; Replaceable Substrates owns one kernel
+boundary. Parallel scheduling alone does not establish plural learners,
+independent evidence or preserved adaptive semantics.
+
+Nearest overlapping owners: [Governed Model Training, Distributed Optimization, and Scaling](../chapters/governed-model-training-distributed-optimization-and-scaling.qmd); [Replaceable Cognitive Substrates: Beyond Transformer Monoculture](../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd).
 
 Core claim: For an exact task family, adaptive-state boundary, resolution contract, evidence and evaluator policy, credit semantics, lifecycle, integration operators, compute substrate, resource budget, authority, observables, rollback, and time, a self-improving stack should represent the learning process as a typed, versioned, provenance-bearing, rewritable causal topology; compile it through an explicit semantic firewall into execution and physical compute; measure discovery, evaluation, integration, communication, retention, and realization leakage jointly; and admit topology changes only through matched experiments and reversible governance. A branch count, worker count, schedule, normalized graph, bounded theorem, passing reference implementation, toy phase diagram, or source-authored architecture alone establishes neither adaptive plurality, retained learning, safety, superiority, transfer, nor ASI.
 
@@ -5392,7 +5959,17 @@ Stable ID: `learning-theory-generalization-and-scaling-science`
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; generalization, transfer, scaling forecasts, emergence, and regime-change predictions remain unproved.
 
-Chapter job: The stack repeatedly relies on claims that learning will generalize, capabilities will transfer, losses will scale, or phase changes will appear outside observed training support. Those claims require an owner that connects assumptions about data, hypothesis class, optimization, inductive bias, compute, and evaluation to an exact prediction and failure envelope.
+Chapter job: Bind generalization and scaling predictions to explicit data,
+hypothesis, optimization, architecture, compute and evaluation assumptions.
+
+Ownership boundary: Exact run descriptions, measured cohorts, resource accounts
+and modeling assumptions enter; dated forecasts, prediction tests, intervals and
+domain limits leave. Governed Training owns what was run; Benchmark Ratchets
+owns measurement and holdout integrity. A fitted law or favorable extrapolation
+cannot allocate resources, authorize deployment or establish behavior outside
+its qualified regime.
+
+Nearest overlapping owners: [Governed Model Training, Distributed Optimization, and Scaling](../chapters/governed-model-training-distributed-optimization-and-scaling.qmd); [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd).
 
 Core claim: A generalization, transfer, emergence, or scaling assertion should be accepted only through a dated claim contract that binds population and sampling assumptions, data support, hypothesis and algorithm, optimization and inductive bias, complexity or explanatory lens, metric, compute regime, uncertainty, breakpoint tests, held-out prediction, alternatives, and transfer boundary; a bound, fit, interpolation result, compression ratio, benchmark jump, or larger model alone establishes neither broad generalization, capability emergence, safety, nor future scale behavior.
 
@@ -5403,6 +5980,7 @@ Source loading queue:
 | Primary | `ext_scaling_laws_neural_language_models_2020`, `ext_mdl_tutorial_2004`, `ext_weakness_generalization_2023`, `ext_weak_to_strong_generalization_2023`, `ext_information_bottleneck_2000` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
+| November 2026 representation/sequence comparators | `ext_lejepa_2025`, `ext_platonic_representation_hypothesis_2024`, `ext_platonic_representation_jepa_2026` | Read the selected passage-bounded notes for JEPA objectives, conditional alignment or learned H-Net granularity as applicable; distinguish external reports from local results and preserve each existing owner boundary. |
 | Manifest assignment reconciliation | `simulation_scaling`, `ext_valiant_theory_learnable_1984`, `ext_deep_double_descent_2020`, `ext_emergent_abilities_llms_2022`, `ext_emergent_abilities_mirage_2023`, `ext_no_free_lunch_inductive_bias_2024`, `ext_eggroll_hyperscale_es_2026`, `ext_forward_forward_2022`, `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -5451,7 +6029,18 @@ Lean proof targets:
 
 Stable ID: `readiness-gates-residual-escrow-and-quarantine`
 
-Chapter job: Modules need a lifecycle for promotion, quarantine, retirement, split, merge, and residual tracking.
+Chapter job: Decide whether an exact capability is eligible for a named current
+use, preserving qualification expiry, restricted routes, quarantine and
+unresolved obligations.
+
+Ownership boundary: Field identity, scoped evidence, current constraints,
+monitor/recovery conditions and residual owners enter; bounded admission,
+diagnostic-only, hold or retirement dispositions leave. Stable Capability Fields
+owns substitution identity; Runtime checks permission at the effect boundary.
+Availability, reachability, a green fixture or a readiness state cannot promote
+a book claim or grant public release.
+
+Nearest overlapping owners: [Stable Capability Fields](../chapters/stable-capability-fields.qmd); [Runtime Adapters, Tool Permissions, and Human Approval](../chapters/runtime-adapters-tool-permissions-and-human-approval.qmd).
 
 Core claim: For an exact versioned target, consumer, use, workload family, authority and rights envelope, and evaluation horizon, readiness should issue an expiring routability lease only from independently owned gate evidence, complete per-check state, preserved regression floors, inherited residual custody, allowed and blocked routes, monitoring, rollback and fallback obligations, and review triggers; failed, stale, waived, quarantined, superseded, retired, or lineage-invalidated targets cannot enter ordinary use, and split, merge, retrain, replace, rollback, and retirement transitions must preserve affected descendants, artifacts, effects, and residual owners.
 
@@ -5535,7 +6124,18 @@ The twenty-four-declaration reachable readiness refinement proves rejection noni
 
 Stable ID: `personal-compute-hives-and-federated-edge-intelligence`
 
-Chapter job: Own consumer-specific admission and placement of exact jobs across separately governed personal, family, project, and rented portals, workers, stores, authority services, and providers without turning reachability, ownership, or cheap capacity into authority.
+Chapter job: Place exact jobs across separately governed nodes, stores, portals
+and providers without treating cheap capacity or network reachability as
+authority.
+
+Ownership boundary: Typed jobs, context/use limits, qualified node capabilities,
+topology, current leases and complete resource constraints enter;
+placement/abstention and custody/recovery obligations leave. Routing chooses
+eligible capabilities; Inter-Stack Protocols owns the contract crossing a chosen
+peer edge. Device ownership or a free worker cannot grant access to private
+data, spend budget or establish useful federation.
+
+Nearest overlapping owners: [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.qmd); [Inter-Stack Protocols, Identity, and Economic Exchange](../chapters/inter-stack-protocols-identity-and-economic-exchange.qmd).
 
 Core claim: For an exact versioned principal, household or project, job, use, data and tool class, effect envelope, acceptance test, risk budget, deadline, and evaluation horizon, a Personal Compute Hive should admit and place work only through policy-before-optimization: independently attested participants and roles, intersected authority and rights, task-local context and execution leases, least-authority adequate node selection, scoped approval, monitored sandboxed execution, complete artifact/effect/resource receipts, partition-aware denial or quarantine, and effect-complete rollback or residual custody; reachability, ownership, cheap capacity, a passing record schema, or stale authority alone cannot license execution, and federation, dropout, revocation, replacement, requeue, and retirement must preserve affected descendants and residual owners.
 
@@ -5630,7 +6230,19 @@ The 31-declaration reachable refinement proves one-step and arbitrary-run identi
 
 Stable ID: `compact-generative-systems-and-residual-honesty`
 
-Chapter job: Own consumer-specific admission and residual custody for compact, generated, repaired, and semantic representations so visible size reduction cannot hide displaced reconstruction, verification, repair, fallback, source, rights, human, governance, recovery, or residual burden.
+Chapter job: Decide whether compact or generated representations are admissible
+for an exact consumer while keeping loss, reconstruction, verification, fallback
+and displaced burden visible.
+
+Ownership boundary: Source/representation identity, consumer use,
+reconstruction/loss requirements and full cost evidence enter; a bounded use
+envelope, fallback/repair route and residual accounting leave.
+RankFold/NeuralFold owns particular artifact/codec candidates; Resource
+Economics owns the complete bill. Smaller payloads or successful generation
+cannot establish semantic fidelity, useful compression or permission to replace
+an exact source.
+
+Nearest overlapping owners: [RankFold, NeuralFold, and Artifact Compression](../chapters/rankfold-neuralfold-and-artifact-compression.qmd); [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.qmd).
 
 Core claim: For an exact versioned source artifact or state, consumer and use, reconstruction or semantic-adequacy contract, allowed loss, authority and rights envelope, workload distribution, cost boundary, and evaluation horizon, a compact representation should be admitted only when its generator, search, metadata, semantic lease, verifier, repair, fallback, interface, human, governance, recovery, and residual burdens are fully attributed; exactness or scoped loss is independently checked against the consumer contract; source lineage, supersession, and fallback remain executable; and the selected representation improves a preregistered joint utility-and-total-burden frontier over strong matched literal, standard codec, model-compression, retrieval, and semantic baselines. Smaller storage, tokens, parameters, or a finite fixture alone establishes neither useful compression nor semantic adequacy, and any hidden, moved, deferred, or discharged burden must retain state, evidence, owner, due condition, descendants, and reopening triggers.
 
@@ -5730,7 +6342,18 @@ Lean proof targets:
 
 Stable ID: `fast-generation-architectures`
 
-Chapter job: Reduce end-to-end time to useful accepted work without allowing token rate, proxy speed, aggregate throughput, or a cheaper unverified path to masquerade as intelligence, quality, safety, or evidence.
+Chapter job: Choose a request-specific generation mode to reduce time to
+accepted useful work without weakening quality, verification, rights or full
+cost accounting.
+
+Ownership boundary: An exact request, eligible modes, model/context/runtime
+identity and current constraints enter; candidate/acceptance/correction traces,
+fallback costs and bounded outcomes leave. Routing supplies eligible workers;
+Deliberation owns extra inference/search decisions. Token rate or batch
+throughput cannot certify task success, faithful reasoning, release eligibility
+or a permitted external effect.
+
+Nearest overlapping owners: [Routing Heads and Specialist Cores](../chapters/routing-heads-and-specialist-cores.qmd); [Governed Deliberation and Test-Time Scaling](../chapters/governed-deliberation-and-test-time-scaling.qmd).
 
 Core claim: Fast-generation admission is consumer-, workload-, model-, hardware-, serving-policy-, and time-window-specific: a controller may route an eligible request through a named accelerated path only after prospectively binding the context, quality, risk, budget, metric, verifier, fallback, rollback, and expiry contracts; separating attempted, proposed, accepted, verified, delivered, and useful output; fully attributing queueing, prefill, decode, verification, repair, retry, fallback, cache, memory, bandwidth, energy, human, and governance burdens; and showing a meaningful end-to-end improvement over matched quality-equivalent baselines without violating safety, authority, rights, or residual gates. Raw tokens per second, FLOP estimates, aggregate throughput, synthetic templates, or unverified speed lifts alone cannot qualify a route.
 
@@ -5818,9 +6441,17 @@ Cross-chapter aggregate evidence note: the selected Theseus/Fast support lane is
 
 Stable ID: `governed-deliberation-and-test-time-scaling`
 
-Chapter job: The stack needs a control plane for inference-time search,
-revision, verifier use, and stopping that does not mistake extra computation or
-model self-evaluation for evidence or execution authority.
+Chapter job: Lease and stop additional inference, candidate search and verifier
+use while preserving its value, costs, dependencies and abstention boundary.
+
+Ownership boundary: The accepted purpose, current inference permissions,
+candidate/verifier capacity, context and budget enter; a bounded candidate or
+abstention receipt with search/cost/residual history leaves. Fast Generation
+supplies direct candidates; Planning owns obligation decomposition and ordering.
+More inference or self-scoring cannot establish faithful reasoning, accepted
+evidence or permission to execute a tool.
+
+Nearest overlapping owners: [Fast Generation Architectures](../chapters/fast-generation-architectures.qmd); [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd).
 
 Core claim: Governed deliberation is a consumer-, task-, risk-, model-, evaluator-, resource-, and time-specific inference lease: before outcomes, it chooses among direct generation, bounded revision, candidate search, or abstention; binds exact budgets, candidate/history custody, verifier scope and dependence, stop and escalation rules, initially-correct corruption and initially-incorrect repair metrics, downstream consumer, expiry, and residual owner; and admits only a bounded candidate to planning when matched natural and adversarial evidence shows useful gain after all branches, failures, verification, latency, compute, human, and governance costs. A trace, self-score, process reward, benchmark gain, or extra compute never establishes correctness, safety, capability, execution authority, or support movement by itself.
 
@@ -5912,7 +6543,18 @@ Lean proof targets:
 
 Stable ID: `rankfold-neuralfold-and-artifact-compression`
 
-Chapter job: The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
+Chapter job: Bind concrete codec candidates and compressed artifacts to
+reconstruction requirements, access patterns, residuals, literal fallback and
+permitted source retention.
+
+Ownership boundary: An exact artifact, codec/decoder versions, consumer policy,
+rights and access pattern enter; compact/raw/refusal candidates,
+reconstruction/probe records and limits leave. Compact Generative Systems owns
+general representation-use admission; Artifact Graphs owns lineage and replay
+custody. A compact container or a successful toy decode cannot establish general
+compression advantage, semantic adequacy or suitability for exact audit.
+
+Nearest overlapping owners: [Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty](../chapters/compact-generative-systems-and-residual-honesty.qmd); [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.qmd).
 
 Core claim: A compressed artifact may enter a downstream route only through an artifact-, consumer-, use-, access-pattern-, decoder-, platform-, and time-specific admission lease that preserves the full source, separates representation, reconstruction, ratio, utility, latency, and evidentiary-authority claims, counts every byte and operation, exercises probes and fallback, and expires or quarantines on drift; RankFold/NeuralFold remains a bounded candidate implementation, and no compact form inherits the source artifact's authority.
 
@@ -5988,7 +6630,18 @@ Lean proof targets:
 
 Stable ID: `resource-economics-and-token-budgets`
 
-Chapter job: Compute, context, verification, simulation fidelity, and human attention are scarce resources that the architecture must allocate explicitly.
+Chapter job: Allocate scarce compute, context, verification and human capacity
+against consumer value while preserving protected overhead and the complete
+realized bill.
+
+Ownership boundary: Accepted work, eligible alternatives, capacity, deadlines,
+protected floors and cost/fidelity assumptions enter; allocation or deferral,
+bounded simulation-use conditions, actual-versus-estimated costs and residuals
+leave. Planning owns work order and resource requests; Physical Infrastructure
+owns deliverability at a place and time. Cheap proxies, toy simulations and
+unpaid displaced labor cannot establish useful efficiency.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Physical Compute Infrastructure, Energy, and Environmental Constraints](../chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd).
 
 Core claim: Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalates, or rejects work only after protected safety and rights floors, complete direct and displaced costs, uncertainty, useful outcome value, verification capacity, load and tail stability, simulation-transfer limits, recovery, and residual ownership are explicit; throughput, low token count, synthetic success, or a cheap route alone confers no quality, safety, economic-optimality, support, or deployment authority.
 
@@ -6004,6 +6657,7 @@ Source loading queue:
 | Memory and adaptive-compute comparators | `ext_mem0_2025`, `ext_recurrent_transformer_2026`, `ext_dynamic_compute_recurrent_transformers_2026` | Compare token/latency savings, recurrent cache/traffic claims, and difficulty-dependent compute. Require pinned configurations and distinguish allocation from generalization, quality, and safety. |
 
 
+| Atlas working-paper case | `answerability_atlas_synthesis` | Read the November 2 source-note integration addendum for this owner's selected passages; retain retrospective, private-evidence, cost and corrected-decision limits. |
 | Manifest assignment reconciliation | `learning_compute_topology`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_claw_swe_bench_2026`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -6098,7 +6752,18 @@ Stable ID: `physical-compute-infrastructure-energy-and-environmental-constraints
 
 Concept-completion state (2026-07-28): eight owner-specific mechanisms are written and exact-digest reviewed at argument support; local facility, grid, community, and lifecycle effects remain unmeasured.
 
-Chapter job: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.
+Chapter job: Establish where and when a workload can physically run, with
+measured capacity, correlated failures, environmental burdens and
+affected-community constraints.
+
+Ownership boundary: Workload/topology requirements, site and hardware identity,
+power/cooling/network/storage limits and community obligations enter; capacity,
+metering, degradation and dependency receipts leave. Resource Economics owns
+allocation choices; Governed Operations owns live incident command. Bought
+accelerators or lower energy per unit do not establish delivered useful work,
+lower total impact or independent failure domains.
+
+Nearest overlapping owners: [Resource Economics and Token Budgets](../chapters/resource-economics-and-token-budgets.qmd); [Governed Operations, Incident Command, and Graceful Degradation](../chapters/governed-operations-incident-command-and-graceful-degradation.qmd).
 
 Core claim: A compute allocation should be physically eligible only through a workload-to-capacity contract that binds location and time, hardware and interconnect, delivered useful work, facility and grid dependencies, energy attribution, cooling and water, materials, land and community effects, metering uncertainty, resilience and degradation, maintenance, demand response, reuse, retirement, and residuals; nameplate compute, efficiency, low PUE, renewable procurement, or aggregate energy alone establishes neither availability, sustainability, community acceptability, nor lower total impact.
 
@@ -6156,7 +6821,17 @@ Lean proof targets:
 
 Stable ID: `mathematical-and-search-substrates`
 
-Chapter job: The source corpus contains exploratory mathematical/search substrates that may matter but must not be overclaimed.
+Chapter job: Admit an exploratory mathematical or search substrate only for the
+structural, quality and cost axes its exact evidence and consumer permit.
+
+Ownership boundary: A candidate, theorem/implementation bindings, ordinary
+comparators, workloads, costs and intended use enter; axis-specific adoption,
+diagnostic-only, refusal or residual decisions leave. Circle transports bounded
+formal facts; CoilRA evaluates a particular cyclic candidate family. Elegant
+mathematics cannot establish downstream quality, a speed advantage or general
+adoption.
+
+Nearest overlapping owners: [Circle Calculus and Proof-Carrying AI Contracts](../chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd); [CoilRA, MultiCoil RoPE, and Cyclic Mixers](../chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd).
 
 Core claim: Mathematical and Search Substrates owns a consumer-, use-, workload-, claim-axis-, implementation-, baseline-, resource-, and time-specific Substrate Adoption Lease: an unusual calculus, representation, recurrence, search procedure, latent world model, or sequence backbone may affect only the axes and consumers that pass matched ordinary and current baselines, negative controls, complete cost and rights accounting, falsification, fallback, independent reproduction, and transfer; structural elegance, a theorem, a source-reported benchmark, synthetic fixture validity, or one favorable axis alone confers no general quality, efficiency, safety, support, deployment, or SOTA authority.
 
@@ -6218,7 +6893,18 @@ Lean proof targets:
 
 Stable ID: `circle-calculus-and-proof-carrying-ai-contracts`
 
-Chapter job: The stack needs a way to turn selected mathematical and AI-infrastructure claims into theorem-linked, machine-readable contracts without treating proofs as model-quality evidence.
+Chapter job: Transport named formal facts through resolvable, versioned
+proof-contract receipts without enlarging their meaning at the consumer
+boundary.
+
+Ownership boundary: Exact statements, assumptions, declarations, proof policy,
+fingerprints and consumer requirements enter; theorem-resolution/replay status
+and scoped delivery receipts leave. The Proof Envelope owns authorized formal
+interpretation and refinement obligations; Artifact Graphs owns generic identity
+and custody. A valid envelope cannot prove model behavior, repair semantic
+correspondence or qualify a substrate.
+
+Nearest overlapping owners: [Executable Specifications and Lean Proof Envelope](../chapters/executable-specifications-and-lean-proof-envelope.qmd); [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.qmd).
 
 Core claim: Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelope: a finite formal fact may travel only with resolvable proof identity, exact assumptions and semantics, source and toolchain provenance, content fingerprints, deterministic recomputation or replay, least-authority consumer gates, expiry and revocation, and preserved non-claims; theorem validity, receipt readiness, archive integrity, or transport success alone confers no model-quality, runtime, memory, safety, deployment, transfer, support, or SOTA authority.
 
@@ -6288,7 +6974,17 @@ Implemented negative-case theorems now reject downstream-ready receipts missing 
 
 Stable ID: `coil-attention-cyclic-memory-and-recurrence-contracts`
 
-Chapter job: Memory, attention, and recurrence mechanisms need finite structural contracts for aliasing, coverage, freshness, active work, loop exits, and overthinking boundaries.
+Chapter job: Gate cyclic state carry and reuse by exact request, version,
+freshness, coverage, alias and exit conditions rather than a matching memory
+slot.
+
+Ownership boundary: State/request identities, recurrence bounds, structural
+receipts and fallback obligations enter; admissible reuse, miss/refusal or
+bounded recurrence results leave. Virtual Context ABI owns the consumer packet;
+CoilRA owns evaluation of cyclic encoding/mixer candidates. Structural coverage
+cannot establish semantic adequacy, task quality or useful longer reasoning.
+
+Nearest overlapping owners: [The Virtual Context ABI: Typed Pages, Cells, and Certificates](../chapters/virtual-context-abi.qmd); [CoilRA, MultiCoil RoPE, and Cyclic Mixers](../chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd).
 
 Core claim: Coil Attention, Cyclic Memory, and Recurrence Contracts owns a memory-object-, state-version-, request-, consumer-, workload-, structural-axis-, budget-, and time-specific State-Carry and Recurrence Admission Lease: a slot read, cyclic address, KV reuse, sparse edge, fanout schedule, or recurrent step may be admitted only when authority, provenance, residue and winding, freshness, coverage, alias and collision state, active work, progress, exit, fallback, expiry, and residuals satisfy the exact consumer contract; structural validity, synthetic fixtures, receipt replay, cache presence, or reduced scheduled work alone confers no retrieval, reasoning, context-length, quality, speed, memory, safety, deployment, transfer, support, or SOTA authority.
 
@@ -6366,7 +7062,18 @@ Lean proof targets:
 
 Stable ID: `coilra-multicoil-rope-and-cyclic-mixers`
 
-Chapter job: Position encodings, adapters, route heads, and mixers need a place for cyclic or block-cyclic structure that separates structural invariants from quality and runtime claims.
+Chapter job: Evaluate concrete cyclic positional, adapter, route-head and mixer
+changes without collapsing structural diagnostics, workload quality and hardware
+cost.
+
+Ownership boundary: An exact candidate, phase/alias diagnostics, matched
+baselines, runtime bindings and hardware constraints enter; per-axis evidence,
+canary/refusal and fallback obligations leave. Coil owns state-carry contracts;
+Mathematical Substrates owns general adoption. A finite structural pass,
+parameter count or missing metric cannot justify a default architecture or
+quality claim.
+
+Nearest overlapping owners: [Coil Attention, Cyclic Memory, and Recurrence Contracts](../chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd); [Mathematical and Search Substrates](../chapters/mathematical-and-search-substrates.qmd).
 
 Core claim: CoilRA, MultiCoil RoPE, and Cyclic Mixers owns a model-, layer-, mechanism-version-, workload-, baseline-, kernel-, hardware-, claim-axis-, and time-specific Cyclic Mechanism Tradeoff Packet: a cyclic adapter, phase bank, rotary scheme, route head, circulant operator, or block-cyclic mixer may enter a canary only when exact residue/winding, phase horizon, alias/collision/load, dense-reference parity, parameter and operation accounting, numerical error, kernel availability, complete cost, quality, failure, fallback, and rights evidence is matched against strong ordinary controls; equivariance, finite proofs, receipt validity, parameter reduction, or structural parity alone confers no quality, context-length, speed, memory, stability, efficiency, safety, deployment, transfer, support, or SOTA authority.
 
@@ -6496,7 +7203,18 @@ Part source loading queue:
 
 Stable ID: `executable-specifications-and-lean-proof-envelope`
 
-Chapter job: The book needs to decide which architecture claims should become executable specs or Lean proofs.
+Chapter job: Decide what a formal artifact permits a consumer to claim, exposing
+the stated proposition, trusted assumptions, semantic adequacy and unproved
+implementation relation.
+
+Ownership boundary: A prose obligation, exact formal statement,
+proof/specification artifacts and consumer scope enter; a bounded interpretation
+or unusable-for-purpose disposition leaves. Circle owns proof receipt transport;
+Verification Bandwidth owns checking adequacy and evaluator constraints. A
+compiled theorem or valid schema cannot establish that its model matches the
+world or that a represented event occurred.
+
+Nearest overlapping owners: [Circle Calculus and Proof-Carrying AI Contracts](../chapters/circle-calculus-and-proof-carrying-ai-contracts.qmd); [Verification Bandwidth and Context Adequacy](../chapters/verification-bandwidth-and-context-adequacy.qmd).
 
 Core claim: Executable Specifications and Lean Proof Envelope owns a proposition-, predicate-, abstraction-, artifact-, verifier-, consumer-, implementation-, version-, environment-, and time-specific Formal Artifact Authority Lease: a schema, executable model, Lean theorem, model-checking result, runtime monitor, behavior test, benchmark, or external theorem may authorize only the exact consumer statement whose operational semantics, abstraction map and losses, assumptions, dependency closure, verifier result, semantic adequacy, implementation binding, limitations, non-claims, expiry, and revocation path are recorded; artifact existence, field presence, a finite route, proof depth, a green build, a passing fixture, or an external theorem identity alone confers no deployed enforcement, empirical truth, system safety, source correctness, support promotion, transfer, or SOTA authority.
 
@@ -6564,7 +7282,7 @@ Draft deliverables:
 - Implemented Lean predicates: `AsiStackProofs.ProofEnvelope` retains five local finite negative cases and adds a reachable formal-artifact authority-lease lifecycle. Its 23 lifecycle and transport results prove arbitrary-run identity, version, custody, and non-authority invariants; issue, artifact-change, re-review, reissue, revocation, and expiry witnesses; rejection noninterference; absorbing revocation; thin-summary information loss; and complete transport, without claiming broad system proof, semantic adequacy, source correctness, implementation binding, external theorem ownership, model quality, or benchmark evidence.
 - Implemented generated audit: Appendix E summarizes all 330 live proof targets by status, triage class, and recommended route from `proofs/proof_triage.json`; the activation audit separately preserves its historical 298-target baseline.
 - Implemented generated audit and consumer: `docs/proof_artifact_audit.md` checks that all 330 live proof targets are traceable and independently recompiles and consumes the exact 28-declaration `ProofEnvelope` surface through one ten-event trace, all eleven composition splits, 33 rejected route cases, one expiry witness, one thin-summary collision, and mutations to all 19 complete-transport fields. This is not a semantic adequacy, filesystem-truth, or deployed-enforcement review.
-- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 340 proof targets, 133 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
+- Implemented generated audit: `docs/proof_depth_classification.md` records proof-depth classification. Current proof-depth snapshot: 344 proof targets, 135 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present.
 - Implemented Codex test: Proof manifest sync test.
 - Implemented Codex test: Lake build smoke test.
 - Implemented Codex test: Implemented-target missing artifact/build negative case.
@@ -6639,7 +7357,18 @@ chapter core claim.
 
 Stable ID: `benchmark-ratchets-and-anti-goodhart-evidence`
 
-Chapter job: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
+Chapter job: Preserve measurement constructs, task populations, contamination
+boundaries and regression floors as benchmark instruments and model systems
+change.
+
+Ownership boundary: Exact instrument/model ledgers, run universes, baselines,
+scorer limits and selection lineage enter; comparable bounded measurements,
+saturation/retirement status and regression obligations leave. Adversarial
+Evaluation owns context-conditioned observation integrity; Evidence States owns
+accepted support transitions. A pass count, saturated benchmark or hidden-test
+exposure cannot certify general capability or authorize use.
+
+Nearest overlapping owners: [Adversarial Evaluation, Sandbagging, and Training-Time Deception](../chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
 Core claim: Benchmark Ratchets and Anti-Goodhart Evidence owns a construct-, task-, dataset-, metric-, harness-, model-, checkpoint-, output-, evaluator-, baseline-, retry-lineage-, budget-, environment-, claim-axis-, and time-specific Benchmark Instrument Lease: a score or evaluation event may update only the exact claim whose construct validity, target capacity, data and metric provenance, output binding, contamination and public-calibration boundary, strong baselines and negative controls, complete selection and failure lineage, regression floors, frontier state, uncertainty, costs, causal checks, transfer, residuals, and decision authority survive review; a green fixture, synthetic probe, source-reported result, leaderboard gain, held-out score, saturation label, or archived winner alone confers no capability, safety, readiness, deployment, unlearning, support, transfer, or SOTA authority.
 
@@ -6655,6 +7384,7 @@ Source loading queue:
 
 
 
+| Atlas working-paper case | `answerability_atlas_synthesis` | Read the November 2 source-note integration addendum for this owner's selected passages; retain retrospective, private-evidence, cost and corrected-decision limits. |
 | Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -6761,9 +7491,18 @@ Lean proof targets:
 
 Stable ID: `white-box-evidence-interpretability-and-activation-governance`
 
-Chapter job: Turn observations and interventions on internal model state into
-typed, challengeable evidence without letting attractive explanations become
-complete mechanistic understanding, behavioral truth, or action authority.
+Chapter job: Turn internal-state capture and intervention into method-relative,
+challengeable evidence while keeping feature labels, causal effects and
+behavioral truth separate.
+
+Ownership boundary: Exact model/capture identity, access grants, extraction
+method, intervention controls and held-out behavioral observations enter;
+bounded evidence packets, alternatives, collateral effects and expiry leave.
+Perception owns external observation trust; Evidence States owns accepted
+support. A correlated activation or attractive feature label cannot establish
+complete mechanism, intervention safety or release permission.
+
+Nearest overlapping owners: [Perception, Sensor Fusion, and Observation Trust](../chapters/perception-sensor-fusion-and-observation-trust.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
 Core claim: Internal-state observations should enter governance only as typed evidence artifacts with lineage, method assumptions, replication status, causal interventions, stability checks, coverage limits, and explicit non-authority; white-box evidence complements but does not replace behavioral and operational evidence.
 
@@ -6872,10 +7611,18 @@ behavioral utility, reproduction, transfer, support, or ASI.
 
 Stable ID: `capability-thresholds-and-deployment-commitments`
 
-Chapter job: bind a scoped capability assessment to a versioned, predeclared
-deployment response without converting a score, a time-horizon estimate, a
-crossing, or a non-crossing into a general capability, safety, readiness, or
-authority conclusion.
+Chapter job: Bind a scoped capability assessment to its prospectively declared
+safeguard and deployment response, including exceptions and post-release
+triggers.
+
+Ownership boundary: A versioned risk profile, assessment protocol, response
+commitment, safeguard evidence and exception authority enter; a constrained
+deployment path or unresolved assessment disposition leaves. Benchmark Ratchets
+owns instrument validity; Readiness owns current operational admission. Crossing
+or not crossing a threshold cannot establish broad capability, safety, readiness
+or permission.
+
+Nearest overlapping owners: [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd); [Readiness Gates, Residual Escrow, and Quarantine](../chapters/readiness-gates-residual-escrow-and-quarantine.qmd).
 
 Core claim: Capability Thresholds and Deployment Commitments owns a domain-, threat-, assessment-, policy-version-, safeguard-package-, release-path-, authority-, exception-, residual-, and time-specific Capability-to-Deployment Commitment: before outcomes are visible, it binds a scoped crossing, non-crossing, incomparable, or stale assessment to predeclared safeguards, verification criteria, deadlines, access and monitoring constraints, re-evaluation, exceptions, residual custody, rollback, disclosure, and release-path consequences; a score, time-horizon estimate, threshold label, crossing, non-crossing, safeguard record, exception, or green readiness handoff alone confers no general capability, safeguard efficacy, safety, readiness, deployment, support, transfer, or SOTA authority.
 
@@ -6969,9 +7716,18 @@ Lean proof targets:
 
 Stable ID: `adversarial-evaluation-sandbagging-and-training-time-deception`
 
-Chapter job: preserve the elicitation, monitoring, reward, and selection
-conditions of training and evaluation observations so a bounded score or trace
-cannot silently become a capability, safety, or promotion conclusion.
+Chapter job: Bound inference from behavior by preserving elicitation,
+monitoring, reward and selection conditions that can hide, distort or
+strategically shape an observation.
+
+Ownership boundary: Exact evaluation conditions, prompt/monitor/model lineage,
+controls and observed discrepancies enter; observation-integrity status,
+alternative explanations and scoped input restrictions leave. Benchmark Ratchets
+owns instrument validity; Scalable Oversight owns control protocols. A
+suspicious trace cannot prove intent or latent capability, and an integrity
+finding cannot train, promote, quarantine or deploy a system by itself.
+
+Nearest overlapping owners: [Benchmark Ratchets and Anti-Goodhart Evidence](../chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd); [Scalable Oversight and Adversarial AI Control](../chapters/scalable-oversight-and-adversarial-ai-control.qmd).
 
 Core claim: Adversarial Evaluation, Sandbagging, and Training-Time Deception owns a consumer-, decision-, model-, task-, elicitation-, authority-, monitor-, reward-, selection-, evaluator-, hypothesis-, outcome-, lineage-, and time-specific Evaluation Observation Integrity Packet: before outcomes are inspected, it freezes the permitted inference and comparison design, binds every observable and dependency, separates task outcome from behavioral interpretation, preserves discrepancies, alternatives, failures, costs, mitigation descendants, expiry, and downstream invalidation, and routes only a bounded observation-integrity status to existing evidence and decision owners; no score, trace, discrepancy, detector, mitigation, adversarial pass, quarantine, or complete finite packet alone establishes capability, intent, deception, sandbagging prevalence or resistance, reward fidelity, monitor validity, alignment, safety, readiness, deployment, support, transfer, or SOTA.
 
@@ -7045,11 +7801,18 @@ Lean proof targets:
 
 Stable ID: `safety-cases-and-structured-assurance`
 
-Chapter job: compile the stack's scoped claims, evidence, evaluation,
-threshold, safeguard, readiness, provenance, and residual references into a
-versioned assurance argument that exposes dependencies, assumptions,
-countercases, and decision boundaries without claiming the argument establishes
-safety.
+Chapter job: Compile scoped support, assumptions, safeguards and defeaters into
+an inspectable assurance argument without allowing the argument to certify its
+own inputs or safety.
+
+Ownership boundary: Exact claim/evidence/control/threshold references, operating
+scope and unresolved challenges enter; a versioned dependency argument and
+visible gaps leave. Evidence States owns support decisions; Capability
+Thresholds owns predeclared deployment responses. A coherent case cannot accept
+a residual, verify a safeguard, close an incident or grant deployment
+permission.
+
+Nearest overlapping owners: [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd); [Capability Thresholds and Deployment Commitments](../chapters/capability-thresholds-and-deployment-commitments.qmd).
 
 Core claim: Safety Cases and Structured Assurance owns a deployment-context-, hazard-, claim-, strategy-, evidence-, assumption-, defeater-, safeguard-, threshold-, readiness-, authority-, release-path-, residual-, version-, and time-specific Assurance Argument Compilation Packet: it compiles exact governed references and bounded support or challenge relations, preserves alternatives, dissent, staleness, countercases, conflicts, overrides, costs, lineage, and downstream invalidation, and routes only a scoped case status to existing decision owners; a connected, rendered, notation-conformant, reviewed, accepted, or synthetically complete case alone establishes neither hazard completeness, evidence adequacy, argument validity, reviewer independence, control effectiveness, risk, safety, readiness, release authority, deployment, support, transfer, nor SOTA.
 
@@ -7137,7 +7900,18 @@ Lean proof targets:
 
 Stable ID: `content-authenticity-watermarking-and-synthetic-media-integrity`
 
-Chapter job: Keep provenance, watermark detection, semantic truth, consent, distribution, and remedy as separate claims across synthetic-media lifecycles.
+Chapter job: Preserve generated-output and edit provenance, watermark signals
+and their failure limits without treating authenticity as semantic truth or
+missing provenance as synthetic origin.
+
+Ownership boundary: Asset identity, attestations/detectors,
+transformation/channel history, trust policy and affected-person obligations
+enter; bounded authenticity claims, unknowns and remedy references leave. Supply
+Chain owns generator/code/data provenance; Epistemic Security owns communication
+and deception assessment. A signed asset or detected watermark cannot establish
+the depicted event, consent or lawful distribution.
+
+Nearest overlapping owners: [AI Supply-Chain Integrity and Lifecycle Provenance](../chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd); [Human-AI Communication, Persuasion, and Epistemic Security](../chapters/human-ai-communication-persuasion-and-epistemic-security.qmd).
 
 Core claim: Synthetic-media integrity should use a layered authenticity envelope that binds asset identity, generator and editor claims, signed provenance, content bindings, watermark or fingerprint signals, detector outputs, visible disclosure, transformation history, trust policy, uncertainty, and remedy; every signal retains its own semantics, and no missing or valid signal becomes a universal truth judgment.
 
@@ -7172,9 +7946,19 @@ Lean proof targets:
 
 Stable ID: `governed-operations-incident-command-and-graceful-degradation`
 
-Chapter job: Own the post-release control loop from detection through incident
-command, containment, effect-complete rollback or compensation, degraded
-service, recovery evidence, and retained learning.
+Chapter job: Control a live incident from detection and authorized containment
+through degraded operation, effect reconciliation, recovery evidence and
+retained lessons.
+
+Ownership boundary: Exact deployed state, observations, current command grants,
+propagation hypotheses and qualified recovery options enter; observed
+service-mode changes, unresolved effects and restoration/decommission
+dispositions leave. Capability Replacement owns successor/restoration
+transactions; Safety Cases owns the affected assurance argument. Restart,
+acknowledgement or compensation cannot establish recovered governance, reversed
+harm or a true root cause.
+
+Nearest overlapping owners: [Capability Replacement and Rollback](../chapters/capability-replacement-and-rollback.qmd); [Safety Cases and Structured Assurance](../chapters/safety-cases-and-structured-assurance.qmd).
 
 Core claim: Governed operation is a closed incident lifecycle that binds detection, classification, command authority, containment, effect-complete rollback, graceful degradation, recovery evidence, and learning to the exact deployed system and its dependency graph.
 
@@ -7292,11 +8076,18 @@ Lean proof targets:
 
 Stable ID: `adjudicated-persistence-and-the-adaptive-commit-boundary`
 
-Chapter job: Own the prior cross-surface decision that determines whether an
-eligible lesson may become durable causal influence, which persistence locus or
-portfolio should carry it, and which evidence, authority, qualification,
-monitoring, invalidation, deoptimization, descendant, and revocation obligations
-follow.
+Chapter job: Decide whether an eligible lesson should become durable causal
+influence and which persistence locus or portfolio must carry its future
+obligations.
+
+Ownership boundary: A bounded lesson, current evidence/authority, candidate
+loci, carrying costs and invalidation constraints enter; reject, defer,
+transient-use or admitted persistence dispositions leave. Evidence States owns
+support; Policy Optimization and other medium owners realize the accepted
+change. Selecting a locus cannot validate a lesson, execute an update or erase
+descendant/revocation obligations.
+
+Nearest overlapping owners: [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd); [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd).
 
 Core claim: Every transition from experience to durable causal influence should cross an Adaptive Commit Boundary as an authority-bearing adaptation transaction that keeps the experience record, lesson hypothesis, persistence disposition, concrete realization, qualification lease, and authority grant distinct; selects the least-commitment admissible locus portfolio under evidence, authority, observability, recovery, cost, and descendant obligations; and preserves denial, uncertainty, deoptimization, invalidation, and revocation paths.
 
@@ -7409,7 +8200,18 @@ Lean proof targets:
 
 Stable ID: `policy-optimization-and-learning-from-feedback`
 
-Chapter job: A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.
+Chapter job: Construct bounded policy-update candidates from feedback while
+separating the reward proxy, target behavior and qualification of the resulting
+change.
+
+Ownership boundary: Accepted objectives, integrity-bounded feedback,
+data/checkpoint identity, update authority and regression/rollback requirements
+enter; candidate updates and exact evaluation/rollback obligations leave.
+Adjudicated Persistence owns whether a lesson should persist; Governed Training
+owns faithful run execution. Reward gain or a completed run cannot establish
+target improvement, current-use eligibility or support.
+
+Nearest overlapping owners: [Adjudicated Persistence and the Adaptive Commit Boundary](../chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd); [Governed Model Training, Distributed Optimization, and Scaling](../chapters/governed-model-training-distributed-optimization-and-scaling.qmd).
 
 Core claim: Policy Optimization and Learning from Feedback owns a target-policy-, baseline-, objective-, feedback-, evaluator-, dataset-, optimizer-, checkpoint-, rollout-, authority-, resource-, monitor-, rollback-, consumer-, environment-, and time-specific Governed Policy Update Lease: before any update, it freezes the legitimate target behavior, admissible feedback and proxy boundary, strong baselines, update family and budget, drift and authority ceilings, complete evaluation and failure denominators, reward-hacking and causal checks, rollback and monitoring, residuals, expiry, and promotion authority; a reward, preference, verifier score, benchmark gain, loss reduction, synthetic canary, formal route, rollback dry run, or trained checkpoint alone establishes neither reward validity, causal policy improvement, retained capability, alignment, safety, readiness, deployment, support, transfer, nor SOTA.
 
@@ -7521,10 +8323,19 @@ Lean proof targets:
 
 Stable ID: `data-engines-continual-learning-and-unlearning`
 
-Chapter job: Give a self-improving stack one governed lifecycle for learning
-inputs, synthetic descendants, replay, retention, evaluation exclusions, and
-deletion requests without confusing receipt completeness with model quality,
-privacy compliance, verified forgetting, or capability promotion.
+Chapter job: Govern custody and use of learning inputs, synthetic descendants,
+replay, retention and deletion across sequential updates without confusing
+deletion with forgetting.
+
+Ownership boundary: Versioned datasets/state, purpose/rights grants,
+partition/exposure history, descendants and deletion requests enter; bounded
+use/custody leases, lineage and separately scoped erasure/influence evidence
+leave. Policy Optimization owns update semantics; Context Transactions owns
+declared storage-state changes. Removed bytes or changed cohort behavior cannot
+establish influence removal, privacy erasure, preserved utility or complete
+descendant deletion.
+
+Nearest overlapping owners: [Policy Optimization and Learning from Feedback](../chapters/policy-optimization-and-learning-from-feedback.qmd); [Context Transactions, Snapshots, Mounts, and Taint](../chapters/context-transactions-snapshots-mounts-and-taint.qmd).
 
 Core claim: Data Engines, Continual Learning, and Unlearning owns a datum-, cohort-, provenance-, rights-, split-, contamination-, learning-lane-, retention-, checkpoint-authority-, full-state-inventory-, descendant-, deletion-request-, claim-axis-, consumer-, environment-, and time-specific Data-and-Descendant Custody Lease: before learning or deletion, it binds admissible use, evaluation exclusions, synthetic and transformation lineage, coverage and distribution residuals, model/optimizer/scheduler/RNG/cache/backup/descendant state, prospective checkpoint authority, retention and replay, deletion propagation, verification, rollback, expiry, and terminal custody; behavioral cohort change, causal influence reduction, privacy leakage reduction, lineage invalidation, legal compliance, and storage or backup erasure remain separate claims, and no receipt, checksum, exclusion, invalidation, benchmark score, rollback match, or synthetic campaign alone establishes model quality, forgetting, privacy, erasure, safety, readiness, deployment, support, transfer, or SOTA.
 
@@ -7719,7 +8530,18 @@ bounded source role, owner handoff, and claim-addressable atom mapping. The
 disposition has no support-state effect, and any later prose change requires a
 new semantic review. Word count remains diagnostic only.
 
-Chapter job: AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.
+Chapter job: Preserve the scientific design-to-inference bridge through
+prospective protocols, instrument effects, complete outcomes, replication and
+dual-use constraints.
+
+Ownership boundary: A research objective, hypotheses, design/analysis plan,
+instrument grants and replication dependencies enter; protocol-bound outcomes,
+bounded statistical/causal interpretations and disclosure limits leave. Planning
+owns work order; Evidence States owns accepted support. A positive result cannot
+establish discovery when failed attempts vanish, confirmation sees outcomes or
+replication shares an unexamined dependency.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
 Core claim: An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
 
@@ -7733,6 +8555,7 @@ Source loading queue:
 | Supporting | `ext_ai_co_scientist_2025` | Use the multi-agent hypothesis and Elo-style ranking system to distinguish proposal ranking, expert appraisal, and experimental confirmation while preserving provider-report limits. |
 
 
+| Atlas working-paper case | `answerability_atlas_synthesis` | Read the November 2 source-note integration addendum for this owner's selected passages; retain retrospective, private-evidence, cost and corrected-decision limits. |
 | Manifest assignment reconciliation | `aletheia` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
@@ -7780,7 +8603,18 @@ Lean proof targets:
 
 Stable ID: `artifact-steward-agents-and-living-project-governance`
 
-Chapter job: The living architecture needs a project-lifecycle layer for durable artifacts that must preserve mission, memory, roadmap, budget, contributors, compute, evidence, governance, and sunset criteria across many human and AI work cycles.
+Chapter job: Maintain project continuity across work cycles while keeping
+mission, roadmap, resources, contributors, accountable decisions and sunset
+conditions inspectable.
+
+Ownership boundary: A charter, exact project state, current grants, accepted
+obligations, resource limits and contributor/remedy rules enter; owned work,
+continuity records and escalation/exit proposals leave. Planning owns task
+dependencies; Living Book owns publication/change custody for this book. Useful
+maintenance cannot accumulate authority, grant spending or make the steward the
+sole route to human control.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Living Book Methodology](../chapters/living-book-methodology.qmd).
 
 Core claim: Artifact Steward Agents and Living Project Governance owns a project-, artifact-, mission-, owner-, authority-, roadmap-, work-contract-, event-, treasury-, compute-, contributor-, evidence-, governance-, release-, federation-, sunset-, consumer-, environment-, and time-specific Artifact Steward Continuity Lease: it may observe, propose, prepare, coordinate, execute, reverse, archive, or retire only through a versioned charter, taint-aware intake, scoped work contracts, separated contribution ledgers, bounded treasury and compute policy, verification and release gates, appeal and fork or exit paths, effect-complete rollback, and explicit sunset authority; it never acquires ownership, governance legitimacy, evidence authority, funding rights, release authority, legal standing, or permission from useful motion, a green workflow, a vote, a balance, a score, a fixture, a theorem, or its own prior action.
 
@@ -7919,7 +8753,18 @@ Lean proof targets:
 
 Stable ID: `integrated-reference-architecture`
 
-Chapter job: Readers need to see how the layers operate as one machine from intent to governed action and improvement.
+Chapter job: Check that a declared cross-layer trace joins the participating
+owners’ exact inputs, outputs, authority, effects, evidence and residuals
+without taking over their decisions.
+
+Ownership boundary: Owner-specific contracts and stage records enter; a joined
+trace or explicit missing/incompatible handoff leaves. The opener owns the stack
+thesis; each specialist retains its decision. Route a broken relation between
+otherwise identified owner records here, and route a defective owner predicate
+to that owner. A successful local join does not establish whole-stack behavior
+or comparative usefulness.
+
+Nearest overlapping owners: [ASI Is a Stack, Not a Model](../chapters/asi-is-a-stack-not-a-model.qmd).
 
 Core claim: Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-, material-effect-, terminal-receipt-, evaluator-, evidence-, residual-, rollback-, consumer-, environment-, and time-specific Cross-Layer Trace Join Contract: it proves integration only when every participating owner remains distinct and its typed input, output, authority delta, state identity, observed effect, acknowledgement, evaluation, evidence delta, residual, stop, repair, rollback, and non-claim remain joinable across approved, blocked, failed, revoked, rolled-back, and quarantined paths; a diagram, shared prompt, interface name, projection, green service, replay, fixture, theorem, or locally successful slice cannot establish whole-stack execution, semantic preservation, governance enforcement, safety, capability, deployment, transfer, or SOTA.
 
@@ -8065,7 +8910,18 @@ Lean proof targets:
 
 Stable ID: `project-theseus-as-report-first-implementation-reference`
 
-Chapter job: The book needs a concrete implementation-reference chapter for how the ASI stack can be operated as report-first local machinery instead of only conceptual layer diagrams.
+Chapter job: Report the exact inspected Project Theseus implementation and
+consumer acknowledgements without borrowing its activity as capability or
+evidence.
+
+Ownership boundary: A pinned checkout, inspected reports/artifacts, authority
+boundaries and source-provenance records enter; a versioned
+implementation-reference packet, acknowledged edges and missing/currentness
+limits leave. Artifact Graphs owns generic custody; Prototype Roadmap owns phase
+admission. A nearby repository, report digest or accepted handoff cannot
+establish an unobserved result, support or current operational qualification.
+
+Nearest overlapping owners: [Artifact Graphs, Audit Logs, and Replay](../chapters/artifact-graphs-audit-logs-and-replay.qmd); [Prototype Roadmap](../chapters/prototype-roadmap.qmd).
 
 Core claim: Project Theseus as Report-First Implementation Reference owns a source-project-, pinned-revision-, report-family-, command-, environment-, artifact-, lineage-, evidence-state-, replay-, public-safety-, publication-permission-, reviewer-, consumer-, and time-specific Implementation-Reference Evidence Packet: it binds every imported or replayed report, configuration, ledger, work-board summary, registry, gate, crosswalk, trace, retained artifact, command, environment note, digest, missing artifact, decision, residual, and non-claim to source-note-only, imported, replay-ready, replay-failed, locally reproduced, stale, runtime-blocked, or archived lineage; dashboards and latest files are projections only, and no GREEN gate, complete registry, module card, pointer row, metadata snapshot, parity manifest, command replay, fixture, theorem, or sanitized import alone establishes current runtime truth, clean live replay, model quality, capability, benchmark validity, safety, deployment, support, transfer, AGI, ASI, or SOTA.
 
@@ -8167,7 +9023,17 @@ These formal hooks do not prove report truth, clean live replay, current runtime
 
 Stable ID: `prototype-roadmap`
 
-Chapter job: The architecture needs a build sequence that does not introduce agency or self-improvement before auditability and governance are credible.
+Chapter job: Admit, sequence and terminate bounded prototype phases by the exact
+dependencies, consumer gates and authority each phase can unlock.
+
+Ownership boundary: Prospective phase goals, accepted predecessor artifacts,
+current grants, resources and stop/closure criteria enter; go, hold, downgrade
+or terminal phase decisions and successor obligations leave. Planning owns
+within-task work order; Theseus supplies a specific implementation reference. An
+impressive artifact or green checklist cannot establish competence, complete a
+different phase or unlock self-improvement authority.
+
+Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Project Theseus as Report-First Implementation Reference](../chapters/project-theseus-as-report-first-implementation-reference.qmd).
 
 Core claim: Prototype Roadmap owns a program-, roadmap-, phase-, dependency-, artifact-, acceptance-gate-, authority-, evaluator-, evidence-transition-, phase-debt-, residual-, rollback-, reviewer-, consumer-, environment-, and time-specific Evidence-Gated Phase Unlock Contract: it binds every proposed phase to prerequisites, allowed work state, required artifacts, commands, environment, resource bounds, gates, independent evaluation, residuals, debt, rollback, retirement, evidence effect, and non-claims before later work may research, demo, integrate, promote, or release; no roadmap row, milestone, source report, dashboard, task count, passing fixture, theorem, validator, build, or locally useful prototype alone establishes phase completion, safe dependency order, capability, governance effectiveness, deployment, transfer, AGI, ASI, or SOTA.
 
@@ -8225,7 +9091,18 @@ Lean proof targets:
 
 Stable ID: `living-book-methodology`
 
-Chapter job: The book itself must remain a living technical system rather than a static anthology.
+Chapter job: Change the book and its derivatives while preserving stable owner
+identity, source/claim/proof lineage, reader access and explicit publication
+authority.
+
+Ownership boundary: An editorial/source/evidence change, exact affected owners
+and derivative consumers, rights and acceptance obligations enter; reviewed
+source changes, synchronized projections and bounded release/correction records
+leave. Research Agenda owns intake and closure of research items; Artifact
+Steward owns project continuity. Publication, automation activity or a passing
+render cannot promote a scientific claim or imply independent reader approval.
+
+Nearest overlapping owners: [Open Research Agenda and Bibliography Plan](../chapters/open-research-agenda-and-bibliography-plan.qmd); [Artifact Steward Agents and Living Project Governance](../chapters/artifact-steward-agents-and-living-project-governance.qmd).
 
 Core claim: Living Book Methodology owns a book-, edition-, change-, source-, claim-, proof-, test-, render-, audience-, derivative-, release-, rights-, reviewer-, consumer-, environment-, and time-specific Evidence-Preserving Publication Transaction: it binds every substantive intake, structural edit, claim change, proof or test change, render, reader or audio projection, release, correction, rollback, and successor handoff to canonical source state, provenance, authority, validation, evidence effect, residuals, non-claims, and immutable lineage; generated scaffolds, green validators, theorem builds, successful renders, local format artifacts, publication activity, or a polished release never by themselves establish source interpretation, editorial quality, accessibility, reader approval, chapter truth, capability, safety, external reproduction, transfer, AGI, ASI, or SOTA.
 
@@ -8316,7 +9193,18 @@ and full-validation gates; failures return to named existing sections and do
 not become thin chapters. The work is non-displacing relative to P2 and changes
 no support.
 
-Chapter job: The book needs an evidence-gated research backlog that admits and closes papers, local projects, missing artifacts, conflicts, proofs, experiments, reproductions, corrections, and chapter proposals without laundering activity into support.
+Chapter job: Route and close new sources, conflicts, missing artifacts and
+research proposals by their disputed responsibility, evidence need and actual
+consumer.
+
+Ownership boundary: A candidate source/bug/question, inspection state, rights,
+existing owner and closure criterion enter; update, new-boundary proposal, wait,
+duplicate/rejection or owned research work leaves. Living Book owns applied
+change/publication custody; Evidence States owns support decisions. Acquisition,
+source volume or checklist activity cannot require a chapter, establish support
+or satisfy a scientific outcome.
+
+Nearest overlapping owners: [Living Book Methodology](../chapters/living-book-methodology.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
 Core claim: Open Research Agenda and Bibliography Plan owns a research-program-, source-or-gap-, backlog-item-, access-, provenance-, public-safety-, chapter-boundary-, claim-, proof-or-experiment-, deduplication-, evidence-transition-, owner-, next-action-, closure-, consumer-, environment-, and time-specific Research Backlog Admission and Closure Contract: every new paper, local project, missing artifact, conflicting result, proof idea, experiment, reproduction need, correction, or chapter proposal enters through exact intake, triage, assignment, preconditions, blockers, non-claims, and terminal closure before it changes prose or support; no title, citation, source count, inventory row, source note, queue, priority label, backlog size, fixture, theorem, validator, or completed reading task alone establishes citation accuracy, literature completeness, research quality, claim support, reproduction, transfer, AGI, ASI, or SOTA.
 

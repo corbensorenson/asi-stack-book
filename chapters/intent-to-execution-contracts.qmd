@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 layered instruction identity"
-last_updated: "2026-08-09"
+last_updated: "2026-10-11"
 primary_sources:
   - "viea"
   - "talos"
@@ -38,7 +38,7 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 layered instruction identity |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-10-11 (source argument and diagrams; recorded results retain their dates) |
 | Primary source records | `viea`, `talos`, `software_magic_grimoire`, `genesiscode`, `moecot`, `cognitive_compilation`, `ext_camel_prompt_injection_2025`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper` |
 | Claim label | Design rationale |
 | Evidence level | argument |
@@ -67,7 +67,7 @@ survive before tools or runtimes act?
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** The output-only baseline accepts a correct summary. The vertical contract rejects the unauthorized method before judging output quality.
+**Concrete lens.** A correct summary can still use a forbidden method. A competent ordinary workflow checks the requested task, current permission, actual change, and recovery; the proposed contract makes those obligations explicit across several representations and owners.
 
 A person can ask for a complicated thing in ordinary language, with examples,
 hopes, limits, and uncertainty. A system should not treat that ordinary
@@ -86,9 +86,12 @@ been scoped. Now the stack needs a command object that planners, verifiers, job
 runners, runtime adapters, evidence ledgers, and later AI agents can all read
 without guessing.
 
-The contract turns uncertainty into visible fields so downstream layers can
-refuse safely. That visibility keeps tools from acting on guesses or hidden
-permission.
+The contract makes uncertainty available to the owner who must decide what can
+continue. An existing grant may already cover the work. Missing permission for
+an external upload can block that upload while leaving an authorized local
+summary available; it need not turn the entire request into another approval
+form. Recording the distinction helps review, but only an enforced boundary
+can prevent the forbidden action.
 :::
 
 ## Problem
@@ -132,8 +135,39 @@ useful release in either arm, and a frozen denominator error.
 ReAct, PDDL, SHOP2, Temporal, Airflow, BPMN, TLA+, Dafny, and CaMeL remain
 comparators for action traces, explicit planning, durable workflows,
 specification, verification conditions, control/data separation, and
-capability enforcement. They are not local reproduction evidence and do not
-establish the proposed end-to-end conformance relation.
+capability enforcement. They are not local reproduction evidence for this
+repository. An application built with ordinary tools may implement the same
+end-to-end relation; naming it does not establish a new security primitive.
+
+### When ordinary change control is enough
+
+Consider a reviewed repository change with an accepted request, a current
+scoped grant, pinned inputs, a conditional write, a diff and test review, and
+an observed recovery procedure. If the same owner can check all the relevant
+obligations in that workflow, a separate contract service may add only duplicate
+state and maintenance. It should be allowed to win at lower total cost.
+
+The proposed composition becomes a candidate when several lowerers and owners
+must preserve the same non-goals, authority ceiling, criteria, and recovery
+duties. Its prospective comparison is the [conventional authority and change
+workflow](../docs/defended_contribution_prior_art_positioning.md). That comparison
+matches tasks, grants, available tools, useful opportunities, and outcome
+horizons, then asks whether the explicit joins prevent a particular lost
+obligation at an acceptable cost. It has been specified, not executed as a new
+head-to-head comparison.
+
+Two comparators expose different parts of this problem. The [Temporal Activity
+definition documentation](https://docs.temporal.io/activity-definition#idempotency)
+explains that a worker can finish an action and fail before reporting it; a
+retry can then execute the action again. It recommends idempotent Activities
+and describes keys enforced by the called service. Durable orchestration does
+not by itself supply exactly-once external effects. CaMeL's [version-one
+paper](https://arxiv.org/html/2503.18813v1) separates trusted query control from
+untrusted tool data and applies capability policies. Its threat model assumes
+a trusted user prompt, and its reported failure analysis includes query
+misunderstanding and tasks whose actions depend on untrusted data. These are
+useful design comparisons, not local efficacy results or guarantees of correct
+intent interpretation.
 
 ## Core Claim
 
@@ -158,21 +192,37 @@ remains at `argument`.
 
 **Reader claim.** Execution remains faithful only while every lowering preserves the accepted objective, non-goals, authority, means, stop conditions, evidence, and residuals; a helpful change of means can still violate intent.
 
-**Operational rule.** Carry stable contract and authority identities through plan, job, approval, dispatch, effect, observation, artifact, verification, delivery, and feedback. Any changed means, widened authority, lost non-goal, self-verification, or inexact rollback stops the lineage and requires clarification, re-contract, or quarantine.
+**Operational rule.** Preserve the accepted obligations and current authority through each lowering. Continue allowed choices under an existing valid grant; hold the affected action when it exceeds that envelope or lacks required evidence. Record actual effects, unknown outcomes, and recovery separately. A useful output, complete receipt, or recovery plan cannot substitute for those observations.
 
 ### Worked vertical trace: the output is right, the means are forbidden
 
-An accepted contract asks for a public project summary and forbids uploading private source files. Planning lowers the task into a typed job; the job chooses an external summarization service that would receive the entire repository. The service might produce the correct summary, but the dispatch payload violates the forbidden-means field before any effect occurs. The vertical contract rejects the lowering and returns to planning for a local or source-minimized route.
+In this hypothetical teaching case, an accepted contract asks for a public project summary and forbids uploading private source files. Planning lowers the task into a typed job; the job chooses an external summarization service that would receive the entire repository. The service might produce the correct summary, but the dispatch payload violates the forbidden-means field before any effect occurs. The required decision is to reject that upload and return to planning for an authorized local or source-minimized route. Choosing such a route within the accepted envelope needs no new permission merely because the implementation changed.
 
-If an adapter nevertheless sends data, later output quality cannot repair the authority and means breach. The lineage records the attempted effect, observed state if available, compensation limits, and quarantine residual. The local refinement follows nine scenarios containing 89 events and six material effects, with 30 source mutations. It checks exact payload and custody ordering across a ten-event delivery witness, but it trusts the authored semantics, authority, receipts, observations, and rollback fields; it does not prove parser correctness, semantic equivalence, tool safety, or effect truth.
+If an adapter nevertheless sends data, later output quality cannot repair the authority and means breach. The required record separates the attempted upload, what an observer can establish, any unknown disclosure, and the recovery owner's remaining duties. Deleting a local copy cannot undo a recipient's access. Whether quarantine or another recovery action is appropriate depends on that boundary and current authority.
 
-## Draft Key Figure: Intent to Artifact Trace
+The existing local refinement is a separate authored result: it follows nine scenarios containing 89 events and six material effects, with 30 source mutations. It checks exact payload and custody ordering across a ten-event delivery witness, but it trusts the authored semantics, authority, receipts, observations, and rollback fields; it does not prove parser correctness, semantic equivalence, tool safety, or effect truth.
 
-::: {.asi-key-figure}
-![Draft intent-to-artifact trace.](../assets/diagrams/intent-to-artifact-trace.svg){#fig-intent-to-artifact-trace fig-alt="Draft intent-to-artifact trace figure showing accepted intent, command contract, plan graph, typed job, authority gate, adapter effect, artifact node, evidence ledger, replay, feedback, refusal, residual, re-contract, and non-claim boundaries."}
+## Intent to artifact: admission and observation {#draft-key-figure-intent-to-artifact-trace}
+
+**Text version.** Accepted intent supplies the obligations. Planning and typed
+jobs propose how to meet them; their conformance review checks for lost meaning
+or widened scope. The actual candidate action then meets a current authority
+and precondition check at a qualified admission boundary. Denial stops that
+action before effect. An admitted attempt is followed by observation, which
+may establish an effect, establish no effect within its coverage, or leave the
+outcome unknown. Unknown outcomes hold blind retries and go to an accountable
+owner. Artifact evaluation and delivery follow the observations and criteria
+they require. Feedback can reopen an affected decision; evidence support and
+public release still require their separate owners.
+
+::: {.asi-key-figure tabindex="0" role="region" aria-label="Intent-to-artifact diagram; scroll horizontally if needed. The complete text version is above."}
+![Intent-to-artifact admission and observation.](../assets/diagrams/intent-to-artifact-trace.svg){#fig-intent-to-artifact-trace style="min-width: 560px;" fig-alt="Six-stage proposed path from accepted obligations to planning, current authority admission, an attempted action, outcome observation, and artifact evaluation and delivery. Denial holds the action; an unknown outcome holds blind retry. Full text version precedes the figure."}
 :::
 
-**How to read the intent-to-artifact figure:** Follow the allowed path from accepted intent through the command contract, plan graph, typed job, authority gate, adapter effect, artifact node, and evidence ledger. The lower path is equally important: ambiguity, authority overreach, missing approval, failed verification, unreplayable effects, incomplete artifacts, or non-claim boundaries route to refusal, residual custody, or re-contracting instead of quiet execution. The figure is a draft reader aid, not proof of parser correctness, planning quality, dispatcher enforcement, adapter safety, artifact completeness, replay behavior, support-state movement, or release approval.
+**How to read the figure:** The gate precedes the attempted effect, and the
+observer follows it. A plan does not authorize dispatch, and a dispatch receipt
+does not establish completion. The diagram describes proposed responsibilities;
+it is not an implemented service, an evidence transition, or release approval.
 
 ### Intent resolution before command lowering
 
@@ -214,7 +264,9 @@ independently observed effect, effect to artifact, artifact to verification and
 delivery, and delivery to feedback, compensation, and residual custody. Each
 source obligation records its downstream representation, transformation rule,
 permitted loss, consumer, verifier, and failure consequence. A material change
-creates a new contract version or a re-contract request.
+outside the accepted envelope creates a new contract version or a re-contract
+request. A permitted implementation choice records its binding without
+requiring the user to approve the task again.
 
 Conformance is evaluated per consumer and per obligation, not as one document
 status. A lowering can preserve an objective while dropping a forbidden means,
@@ -225,50 +277,51 @@ observer that made the comparison, uncertainty and disagreement, and the
 downstream consequence of failure. Missing information blocks or narrows only
 the affected obligation when that can be done without changing meaning.
 
+Before dispatch, conformance checks the proposed action and its preconditions;
+it cannot require an observation of an effect that has not happened. After an
+attempt, a declared observer checks actual outcomes and their coverage. A
+receipt records an assertion about that check; its identity alone cannot make
+the assertion true or independent.
+
 The lifecycle is also bidirectional. Runtime observations, artifact evaluation,
 delivery failure, user correction, delayed harm, or incomplete compensation can
-invalidate an earlier conformance judgment. The contract then expires the
-affected descendants, preserves prior receipts, and routes a repair,
-re-contract, recovery, or residual instead of rewriting history into a success.
-
-```{mermaid}
-flowchart LR
-  Intent["Accepted intent receipt"]
-  Contract["Versioned contract"]
-  Edge["Conformance map"]
-  Gate["Observed-state authority gate"]
-  Plan["Plan and typed job"]
-  Effect["Attempt and observed effect"]
-  Artifact["Artifact, verifier, delivery"]
-  Evidence["Feedback, compensation, residuals"]
-  Recontract["Block, narrow, or re-contract"]
-  Intent --> Contract
-  Contract --> Edge
-  Edge --> Gate
-  Gate -- "blocked" --> Recontract["Block, narrow, or re-contract"]
-  Gate -- "accepted" --> Plan
-  Plan --> Effect
-  Effect --> Artifact
-  Artifact --> Evidence
-  Recontract --> Evidence
-```
-
-**How to read the flow:** The contract is not a permission token. The
-conformance map and observed-state gate decide whether the proposed lowering
-still refers to the accepted work. Requested, planned, dispatched,
-acknowledged, attempted, observed, compensated, verified, delivered, and useful
-remain distinct states. Any missing or conflicting obligation routes to an
-explicit non-success outcome rather than conversational momentum.
+challenge an earlier conformance judgment. Flag the affected current uses for
+their owners and route repair, re-contract, recovery, or residual custody.
+Historical decisions retain their identities and permitted records; current
+eligibility can change without rewriting an earlier result. Retention duties
+do not override privacy or deletion rules.
 
 ### One-shot privileged action binding
 
-A general command contract is still too broad for a privileged effect. The
-effect approval must be a one-shot capability that binds the exact principal,
-operation, target identity, pre-effect target-state digest, parameter digest,
-policy version, issuance time, expiry, nonce, and authority reference. At
-dispatch, the observed principal, operation, target, state, parameters, policy,
-and nonce must match byte-for-byte. After an effect receipt and post-state are
-recorded, the nonce becomes consumed and every replay attempt is denied.
+A contract describes accepted work; a current grant authorizes a bounded use.
+An existing grant can cover routine actions, permitted implementation choices,
+and declared recovery. Fresh human approval is needed only where the policy
+or changed scope requires it. A one-shot capability is appropriate when the
+policy authorizes one particular transition rather than a reusable bounded
+operation.
+
+For that case, bind an operation identity to the principal, target identity,
+observable precondition, canonical parameters, policy and grant versions,
+expiry, and cumulative budget. A digest compares a declared representation,
+not the entire world or the meaning of the request. The boundary must specify
+what state it can check and how that check remains coupled to the mutation.
+Current authority and revocation are evaluated at that qualified boundary;
+this does not promise instantaneous revocation across disconnected services.
+
+The single-use reservation must precede the effect. Within one local
+transaction, serialize admission and couple the relevant precondition to the
+mutation. Across a remote boundary, require a qualified receiver protocol
+that binds the same operation identity to its deduplication and effect state.
+A local reservation alone cannot guarantee exactly-once behavior at an
+uncooperative remote service.
+
+A permitted transport retry or status query for the same operation is different
+from admitting a second effect. Retry only under the declared receiver's
+idempotency contract and current retry authority. A timeout, missing receipt,
+or expired lease must not silently make an unresolved operation available for
+another effect. Record the unknown outcome, seek qualified observation, and
+assign recovery or residual custody. Any compensating action needs its own
+current authority; it is not a negative entry that erases the first attempt.
 
 The five historical projects supply one local lineage of positive and negative
 design pressure. CCA and MoECOT Manifest motivate typed request/effect records,
@@ -280,32 +333,53 @@ enough unless the exact authorized parameters reach the observed effect. These
 are source-note and roadmap inputs, not five replications or evidence that any
 historical implementation enforced the protocol.
 
+::: {.asi-key-figure .intent-single-use tabindex="0" role="region" aria-label="Proposed single-use lifecycle; scroll horizontally if needed. Full description and hypothetical timeline follow."}
 ```{mermaid}
-stateDiagram-v2
-  [*] --> Requested
-  Requested --> Resolved: exact target and parameters
-  Resolved --> Approved: principal + policy + TTL + nonce
-  Approved --> Dispatched: all bindings still match
-  Dispatched --> EffectObserved: effect receipt + post-state
-  EffectObserved --> Consumed: nonce burned
-  Approved --> Expired: TTL elapsed
-  Approved --> Revoked: authority revoked
-  Requested --> Denied: acknowledgement substituted
-  Consumed --> Denied: replay attempted
+%%{init: {'theme': 'base', 'themeVariables': {'fontSize': '20px', 'primaryTextColor': '#18202a', 'primaryColor': '#f4f8fa', 'primaryBorderColor': '#256b7c', 'lineColor': '#256b7c', 'edgeLabelBackground': '#ffffff'}, 'flowchart': {'nodeSpacing': 16, 'rankSpacing': 32}}}%%
+flowchart TD
+  accTitle: Proposed single-use admission and outcome handling
+  accDescr: Current bindings are checked before a single-use reservation and attempt. Denial prevents the action. Observation distinguishes known outcomes from unknown outcomes, which hold blind retries and require an owner. The diagram is a proposed protocol, not the existing historical record fixture.
+  Check["Current grant,<br/>bindings + precondition"] --> Admit{"Admit one<br/>operation identity?"}
+  Admit -- "no" --> Denied["Deny this action"]
+  Admit -- "yes" --> Reserve["Reserve single use"]
+  Reserve -- "reserved" --> Attempt["Attempt bound action"]
+  Reserve -- "conflict" --> Denied
+  Attempt --> Observe{"Outcome observed<br/>within coverage?"}
+  Observe -- "yes" --> Known["Effect / no effect<br/>Close or recover"]
+  Observe -- "no" --> Unknown["Unknown outcome<br/>Hold blind retry"]
 ```
+:::
 
-**Reading the one-shot lifecycle:** approval is neither a reusable role nor a
-scenario checkbox. It is a short-lived capability for one exact state
-transition. Any identity, state, parameter, policy, time, or nonce mismatch
-routes to denial before effect; successful observation consumes the nonce.
+
+**Reading the proposed lifecycle:** Reservation prevents another local worker
+from treating unresolved authority as unused. Observation determines what can
+be said about the outcome; it does not authorize the action retrospectively.
+The reservation is not rearmed by absence of a success receipt. Qualified
+same-operation retries belong to the receiver protocol, not a fresh
+single-use grant inferred from a timeout.
+
+For example, suppose two workers receive operation `R17`. Worker A reserves it
+and sends the request, then loses the reply. Worker B must not conclude that
+`R17` is unused merely because the final receipt is absent. With qualified
+receiver deduplication, it may query or make an authorized retry using `R17`;
+without that guarantee, the outcome stays unknown. This is a hypothetical
+failure timeline, not a concurrent execution result from this repository.
+
+The historical one-shot fixture follows `requested → resolved → approved →
+dispatched → effect_observed → consumed`. Its validator checks the recorded
+bindings, ordered states, consumed nonce, and denial of a recorded replay. It
+does not implement the pre-effect reservation above, concurrent admission, a
+crash-safe grant service, or receiver deduplication. Keep that implemented
+record check distinct from the stronger proposed protocol.
 
 ### Strongest objection
 
 The strongest objection is that exact digests and a nonce can make an unsafe
 action perfectly replay-resistant. That is correct. Binding proves neither
-that the policy is wise nor that the approver understood the consequence. It
-prevents an approval for one principal, state, parameter set, and policy from
-being silently reused for another. Policy quality, interface comprehension,
+that the policy is wise nor that the approver understood the consequence.
+Enforcing the declared binding is intended to prevent a grant for one
+principal, state, parameter set, and policy from being reused for another;
+merely recording those fields cannot do so. Policy quality, interface comprehension,
 OS enforcement, and effect safety remain separate owners and residuals.
 
 ### Command contract validation states
@@ -318,11 +392,11 @@ Command contracts move through explicit validation states:
 | `field_complete` | Required fields exist but may include inferred/defaulted values. | Validation and review only. |
 | `conflict_detected` | Context, examples, hidden instructions, or fields conflict with explicit constraints. | Residual or clarification. |
 | `authority_inferred` | A means, tool, disclosure, publication, or effect is inferred rather than granted. | Draft-only or re-contract. |
-| `dispatch_blocked` | Required output, verification, failure, approval, or authority field is missing or vague. | No plan node dispatch. |
+| `dispatch_blocked` | A requirement for the proposed effect is missing, vague, or unsatisfied. | Hold that action; permitted planning or narrower work may continue. |
 | `validated_for_planning` | Required fields are concrete and precedence review passed. | May lower into a plan graph. |
-| `superseded` | A newer command contract replaces the current one. | Historical trace only. |
+| `superseded` | A newer command contract replaces the current one. | Preserve permitted history; current reuse requires its own eligibility decision. |
 
-These states are intentionally pre-execution states. They do not say the work is correct. They only say whether the contract is clear enough to become planning input.
+These are pre-execution states. In particular, `validated_for_planning` says that the contract can become planning input; it supplies neither dispatch authority nor evidence of a completed effect.
 
 ### Canonical events and command precedence
 
@@ -467,9 +541,10 @@ evaluation, support movement, and release. Resource Economics owns cumulative
 cost. Rights, privacy, licensing, and publication owners retain their own
 approval surfaces.
 
-The contract's job is to make each handoff testable. Every consumer returns a
+The contract's job is to make each handoff testable. The proposed consumer interfaces return a
 conformance, blocked, attempt, effect, artifact, decision, delivery,
-compensation, or residual receipt. A graph can therefore be complete while
+compensation, or residual receipt appropriate to their stage. Each assertion
+needs an identified producer, observation coverage, and trust dependencies. A graph can therefore be complete while
 semantically wrong; a runtime can enforce an authority token while executing
 the wrong accepted task; and a verifier can accept a file that was never
 delivered to the intended consumer. Those are separate failures, not one green
@@ -505,32 +580,37 @@ decision remains documentation rather than control.
   duties remain traceable through every lowering.
 - Context and untrusted content remain data unless an authorized control
   boundary adopts them; they cannot widen authority.
-- Inferred, defaulted, stale, conflicting, or missing authority cannot
-  authorize a material effect.
+- An inference or default cannot create permission. A default may resolve a
+  reference to an independently valid grant; stale, conflicting, or missing
+  authority cannot authorize a material effect.
 - Every material transformation either satisfies a declared conformance
   relation or produces a loss, ambiguity, repair, narrowing, or re-contract
   record before dispatch.
 - Planning, compilation, routing, retries, fallbacks, and repair remain inside
   the accepted envelope.
-- A privileged effect matches principal, operation, target, pre-state,
-  parameters, policy, capability, environment, expiry, nonce, and authority at
-  observed dispatch time.
+- A privileged effect requires current grant and binding checks at a qualified
+  admission boundary. Where policy requires single use, reserve it before the
+  attempt and prohibit a second effect admission while its outcome is unresolved.
 - Requested, planned, dispatched, acknowledged, attempted, observed,
   compensated, rolled back, verified, delivered, and useful remain distinct.
 - Artifact identity includes contract version, producer lineage, receipts,
   criteria, evaluator, delivery, feedback, and residuals.
 - Verifier dependencies, exposure, criterion version, error, and disagreement
   remain visible; self-report cannot silently become independent acceptance.
-- Every attempt, failure, timeout, abstention, retry, discard, side effect,
-  cost, compensation, and residual remains in the denominator.
+- Account for every attempt, failure, timeout, abstention, retry, discard,
+  side effect, cost, compensation, and residual in the declared denominator.
+  Preserve permitted accounting records rather than retaining forbidden payloads.
 - Resource, privacy, rights, authority, and opportunity costs follow the whole
   lineage and cannot reset at handoffs.
-- Material changes expire the relevant contract and require revalidation or
-  re-contract.
-- Stop, denial, rollback, compensation, quarantine, and re-contract routes
-  require observed effects and accountable residual owners.
-- A complete receipt proves only its exact lineage, not correct interpretation,
-  wise policy, safe tools, useful execution, or production transfer.
+- Material changes outside the accepted envelope trigger review of affected
+  uses, revalidation, or re-contract; permitted choices can continue under a
+  current grant. Historical decisions are not erased.
+- A denial must prevent the denied action; it does not need a post-state for
+  an effect that was never attempted. Stop, rollback, and compensation claims
+  need observations appropriate to their coverage and an owner for residuals.
+- A complete receipt asserts the recorded lineage. Authenticity, truthful
+  observation, correct interpretation, wise policy, safe tools, useful
+  execution, and production transfer need their own evidence.
 - Zero dispatch or release is abstention, not evidence of usefulness or safety
   advantage without an estimable matched denominator.
 - No component may approve its own broader authority, support state, or public
@@ -574,6 +654,10 @@ quarantine without residual custody. The independent consumer also checks the
 complete nine-scenario governed repository-change result, 89 events, six
 effects, six observations, two exact rollbacks, and thirty rejecting source
 mutations.
+
+The one-shot record check likewise validates authored records rather than
+serializing live admission. None of these results exercises the proposed
+concurrent reservation, crash recovery, or qualified remote retry protocol.
 
 This is still a fixed local repository task with trusted event and receipt
 fields. It tests concrete transition and result-schema conformance, not whether
@@ -633,8 +717,10 @@ jurisdictions, threats, and time.
 
 Promotion requires a nonzero useful denominator, effect-bearing controls,
 strong matched baselines, independent evaluation, reproducible raw artifacts,
-and accepted claim-specific transitions. Otherwise the result is narrowed,
-null, negative, refuted, or blocked after full attempt. This remains a research
+and accepted claim-specific transitions. Missing evidence leaves the
+corresponding claim open or blocked. A negative result refutes only the
+proposition and conditions it actually tests; a null comparison does not
+establish either superiority or equivalence. This remains a research
 target, not evidence of reliable intent extraction, safe useful execution,
 production transfer, AGI, or ASI.
 
@@ -905,22 +991,25 @@ claims therefore remain separate evidence lanes.
 
 ## Summary
 
-The conformance layer owns neither intent interpretation nor execution. It owns the
-testable conformance relation between an accepted contract and the complete
-lineage that follows. Meaning, authority, observed effects, artifacts,
-verification, delivery, costs, compensation, and residuals must remain linked
-without collapsing into one green status.
+The proposed conformance layer joins obligations that several owners must
+preserve from accepted intent to delivery. Planning proposes a method; a
+current grant and qualified boundary admit its action; observation establishes
+what can be said about the effect. Recovery remains a separate action with its
+own authority and residuals. Allowed choices within an existing envelope need
+not become repeated approval requests.
 
-The current schemas, fixtures, finite proofs, and local campaigns show how to
-record selected routes and failures. They also show the central negative
-result: explicit contracts do not make weak model outputs useful, and releasing
-nothing does not establish safety. Reliable intent preservation and safer
-useful execution remain open empirical claims requiring natural workloads,
-strong matched baselines, independent observers, effect-bearing controls,
-causal ablations, replication, transfer, and accepted evidence transitions.
+The current schemas, authored traces, finite proofs, and local campaigns
+exercise bounded records and failures. They do not implement the proposed
+concurrent single-use reservation or establish general intent preservation.
+The later held-out policy result has its own narrow claim and cannot repair
+those missing lanes. The historical zero-release campaigns supply no useful
+execution advantage merely by withholding every output.
 
-The contract's present value is making loss, refusal, authority, and effect
-boundaries observable before broader capability claims.
+A competent ordinary workflow may supply the same joins at lower cost. The
+proposal earns broader use only through a matched comparison of lost
+obligations, useful outcomes, unsafe effects, recovery, and total burden.
+Until that comparison and the claim-specific evidence exits are met, this
+chapter remains an architectural argument.
 
 ## Provenance and consolidation history
 
@@ -969,8 +1058,12 @@ Command Contracts: From Intent to Executable Work receives the conceptual
 handoff from **Human Intent as a Formal Input** and hands off directly to
 **Perception, Sensor Fusion, and Observation Trust**.
 
-The Human Intent chapter remains focused on the moment before the
-contract: raw request capture, ambiguity, authority extraction, bounded
-defaults, re-contract triggers, and stop-condition preservation. Perception
-then establishes which environmental signals may enter the contract's planning
-context as admitted observations.
+[Human Intent](human-intent-as-a-formal-input.qmd) supplies the accepted receipt,
+including ambiguity, supplied authority, non-goals, and re-contract triggers.
+[Perception](perception-sensor-fusion-and-observation-trust.qmd) supplies the
+observation contract for environmental signals that planning or effect checks
+consume. An admitted observation is not permission to act on it. The later
+[Planning](planning-as-a-control-layer.qmd) and
+[Runtime Adapters](runtime-adapters-tool-permissions-and-human-approval.qmd)
+owners still have to preserve the accepted envelope and distinguish attempted
+from observed effects.

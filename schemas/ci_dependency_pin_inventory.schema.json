@@ -3,19 +3,42 @@
   "$id": "https://corbensorenson.github.io/asi-stack-book/schemas/ci_dependency_pin_inventory.schema.json",
   "title": "ASI Stack CI Dependency Pin Inventory",
   "type": "object",
-  "required": ["schema_version", "review_policy", "pins", "non_claims"],
+  "required": [
+    "schema_version",
+    "review_policy",
+    "pins",
+    "non_claims"
+  ],
   "properties": {
     "schema_version": {
       "type": "string",
-      "enum": ["asi_stack.ci_dependency_pin_inventory.v0"]
+      "enum": [
+        "asi_stack.ci_dependency_pin_inventory.v0"
+      ]
     },
     "review_policy": {
       "type": "object",
-      "required": ["max_review_age_days", "warning_age_days", "fail_closed_after_due", "as_of_source"],
+      "required": [
+        "max_review_age_days",
+        "warning_age_days",
+        "fail_closed_after_due",
+        "as_of_source"
+      ],
       "properties": {
-        "max_review_age_days": { "type": "integer", "minimum": 1, "maximum": 365 },
-        "warning_age_days": { "type": "integer", "minimum": 1, "maximum": 364 },
-        "fail_closed_after_due": { "type": "boolean", "const": true },
+        "max_review_age_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 365
+        },
+        "warning_age_days": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 364
+        },
+        "fail_closed_after_due": {
+          "type": "boolean",
+          "const": true
+        },
         "as_of_source": {
           "type": "string",
           "const": "UTC system date unless ASI_PIN_REVIEW_AS_OF supplies an explicit YYYY-MM-DD audit date"
@@ -41,18 +64,130 @@
           "residual"
         ],
         "properties": {
-          "id": { "type": "string", "minLength": 1 },
-          "kind": { "type": "string", "enum": ["github_action", "commit_url_installer"] },
-          "repository": { "type": "string", "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)?$" },
-          "pin": { "type": "string", "pattern": "^[0-9a-f]{40}$" },
-          "tag_context": { "type": "string", "minLength": 1 },
-          "artifact_url": { "type": "string", "pattern": "^https://" },
-          "artifact_sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
-          "reviewed_on": { "type": "string", "format": "date" },
-          "review_due_on": { "type": "string", "format": "date" },
-          "review_method": { "type": "string", "minLength": 24 },
-          "update_authority": { "type": "string", "minLength": 24 },
-          "residual": { "type": "string", "minLength": 24 }
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "github_action",
+              "commit_url_installer"
+            ]
+          },
+          "repository": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)?$"
+          },
+          "pin": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{40}$"
+          },
+          "tag_context": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact_url": {
+            "type": "string",
+            "pattern": "^https://"
+          },
+          "artifact_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "reviewed_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "review_due_on": {
+            "type": "string",
+            "format": "date"
+          },
+          "review_method": {
+            "type": "string",
+            "minLength": 24
+          },
+          "update_authority": {
+            "type": "string",
+            "minLength": 24
+          },
+          "residual": {
+            "type": "string",
+            "minLength": 24
+          },
+          "runtime_binary": {
+            "type": "object",
+            "required": [
+              "version",
+              "source_commit",
+              "observed_on",
+              "qualification_state",
+              "source_script_role",
+              "artifacts"
+            ],
+            "properties": {
+              "version": {
+                "type": "string",
+                "pattern": "^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+              },
+              "source_commit": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{40}$"
+              },
+              "observed_on": {
+                "type": "string",
+                "format": "date"
+              },
+              "qualification_state": {
+                "enum": [
+                  "archive_integrity_verified_fresh_linux_execution_pending",
+                  "archive_integrity_verified_linux_installer_smoke_passed_full_tiers_pending"
+                ]
+              },
+              "source_script_role": {
+                "const": "retained_review_context_not_executed"
+              },
+              "artifacts": {
+                "type": "array",
+                "minItems": 4,
+                "maxItems": 4,
+                "items": {
+                  "type": "object",
+                  "required": [
+                    "target",
+                    "url",
+                    "sha256",
+                    "bytes"
+                  ],
+                  "properties": {
+                    "target": {
+                      "enum": [
+                        "aarch64-apple-darwin",
+                        "x86_64-apple-darwin",
+                        "aarch64-unknown-linux-gnu",
+                        "x86_64-unknown-linux-gnu"
+                      ]
+                    },
+                    "url": {
+                      "type": "string",
+                      "pattern": "^https://github\\.com/leanprover/elan/releases/download/v[0-9]+\\.[0-9]+\\.[0-9]+/elan-[A-Za-z0-9_-]+\\.tar\\.gz$"
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[0-9a-f]{64}$"
+                    },
+                    "bytes": {
+                      "type": "integer",
+                      "minimum": 1,
+                      "maximum": 16777216
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              }
+            },
+            "additionalProperties": false
+          }
         },
         "additionalProperties": false
       }
@@ -60,7 +195,10 @@
     "non_claims": {
       "type": "array",
       "minItems": 3,
-      "items": { "type": "string", "minLength": 1 }
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
     }
   },
   "additionalProperties": false

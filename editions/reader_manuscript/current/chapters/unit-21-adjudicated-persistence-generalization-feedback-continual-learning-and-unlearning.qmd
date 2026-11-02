@@ -5,7 +5,8 @@ unit_id: "unit-21"
 
 ## The Same Green Patch, Two Different Lessons
 
-The repository learner sees two patches that produce the same visible result.
+Continue the hypothetical repository story, not a reported learning trial.
+The learner sees two patches that produce the same visible result.
 Both repair a failing dependency upgrade. Both pass the test suite. Both are
 merged after review. If learning means collecting successful examples, the two
 events appear nearly interchangeable.
@@ -21,15 +22,16 @@ its source evidence, may be the smallest durable correction.
 The second patch succeeds only after a reviewer notices that the tool used to
 edit the manifest silently drops an optional field. The maintainer did not lack
 knowledge. The tool violated its contract. Another memory entry would warn
-future agents while leaving the faulty mechanism in place. The smaller and
-stronger correction is a typed tool test that rejects the lossy transformation.
+future agents while leaving the faulty mechanism in place. A typed regression check can block the lossy transformation while the tool is
+repaired or replaced. The check is not the repair itself; an admitted manual
+route may carry the work until the corrected implementation is qualified.
 
 Equal outcomes conceal unequal causes. A system that stores every success in
 memory accumulates folklore. A system that retrains on every success changes
 parameters when a test would have sufficed. A system that compiles every
 repeated behavior into a procedure can preserve an accidental workaround. A
-system that refuses to learn avoids those errors by preserving all of its old
-ones.
+blanket refusal of updates can leave known correctable defects in place.
+Correct restraint after one uninformative success remains a legitimate choice.
 
 The question after an experience is therefore not simply, "What did we learn?"
 It is a sequence of harder questions:
@@ -44,8 +46,9 @@ It is a sequence of harder questions:
 
 This sequence is the adaptive commit boundary. It separates experience from
 durable structure. It is not a single omniscient controller. It is a governed
-decision process whose records can be challenged and whose commitments can be
-reversed.
+decision process whose records can be challenged and whose commitments carry
+correction, retirement, and bounded recovery duties. Reversing one stored
+artifact does not undo every consequence of its earlier use.
 
 ## An Outcome Is Not a Lesson
 
@@ -78,9 +81,8 @@ Failure can be informative without naming a remedy. A mature system should be
 able to record, "The current account is inadequate," while declining to commit
 the first available story.
 
-This matters most when the system is under pressure to improve itself. A
-learning metric rewards visible updates. A governed learning process rewards
-correct restraint as well.
+This matters most when the system is under pressure to improve itself. A metric that rewards visible updates can favor activity over correction.
+A governed learning process should recognize correct restraint as well.
 
 ## Candidate Lessons Need Identity
 
@@ -107,7 +109,9 @@ The second patch yields a different candidate:
 > reject its output when the field is lost.
 
 That lesson points toward executable enforcement, not recollection. Its natural
-qualification is a failing test before the fix and a passing test after it.
+qualification includes a failing regression before the repair, a passing
+regression after it, and checks that the accepted field-preservation rule has
+the intended scope. One passing case does not qualify every transformation.
 
 Candidate identity prevents a common failure in continual learning: later
 evidence cannot revise a lesson that was never stated. It also permits two
@@ -122,6 +126,41 @@ its form. Otherwise descendants become orphaned folklore that cannot be
 reliably withdrawn.
 
 ## The Adaptive Commit Boundary
+
+::: {#adaptive-commit-text}
+**Text version.** Experience may justify proposing a candidate lesson. Scoped
+adjudication checks whether learning is eligible, the causal account is
+adequate, the persistence locus fits, the commitment is proportionate, and
+lifecycle custody is available. A candidate can be deferred, rejected, or sent
+for more evidence. An admitted candidate still needs the qualifications for
+its chosen surface and a current commit grant before durable change. The
+result retains its scope and review or revocation route. This is a proposed
+decision structure; a successful patch neither proves the lesson nor permits
+it to rewrite the evaluator that will judge later changes.
+:::
+
+::: {.asi-reader-diagram tabindex="0" role="region" aria-label="Scrollable adaptive commit decision" aria-describedby="adaptive-commit-text" style="--asi-diagram-width: 38rem;"}
+
+```{mermaid}
+flowchart TD
+  accTitle: Experience is not an automatic durable update
+  accDescr: Experience can produce a candidate lesson. A scoped adjudication checks eligibility, causal adequacy, locus, proportionality, and lifecycle custody. It may defer, reject, or request evidence. If admitted, a qualified change at the chosen locus needs a commit grant before it becomes durable. The committed change retains its scope, review, and revocation route; it cannot ratify itself.
+  E["Experience"] --> L["Candidate lesson"]
+  L --> A{"Scoped adjudication"}
+  A -- "not ready" --> D["Defer, reject, or seek evidence"]
+  A -- "admit candidate" --> Q["Qualified change at chosen locus"]
+  Q --> G{"Commit grant current?"}
+  G -- "no" --> D
+  G -- "yes" --> C["Scoped durable change"]
+```
+
+:::
+
+*Figure. A lesson and a durable change are different objects. Qualification
+and a current commit grant stand between them.*
+
+Scroll inside the frame when needed; the complete text version is above.
+
 
 The adaptive commit boundary receives experience and candidate lessons, then
 decides whether any durable change is warranted. Its output is not merely
@@ -157,8 +196,10 @@ produced a high score.
 Centralizing every decision would create cost, latency, and a new target for
 capture. The practical design is federated adjudication under shared contracts.
 Local authorities can act within explicit scopes; expensive review is reserved
-for high-commitment or cross-surface changes. Every route still emits enough
-evidence to reconstruct why it was chosen.
+for high-commitment or cross-surface changes. Each route retains enough permitted evidence for its declared reconstruction
+claim, recording missingness and retention limits. An existing update policy
+can grant a bounded commit; this need not become a new human approval for every
+memory write or training step.
 
 ## A Good Idea Can Be the Wrong Default
 
@@ -188,8 +229,9 @@ An engineered system has more choices.
 
 The lightest intervention is to supply information during the current task.
 Context is appropriate when the need is temporary, local, or not yet supported
-for reuse. It expires naturally, but repeated retrieval costs attention and can
-fail under context pressure.
+for reuse. Its mounted use ends with the context lease, while stored copies
+need their own disposition. Repeated retrieval costs attention and can fail
+under context pressure.
 
 ### Semantic Memory
 
@@ -316,9 +358,12 @@ For each candidate locus, the adjudicator can estimate a commitment profile:
 | Observability | explicit artifact | latent behavior |
 | Authority | advisory | blocks or initiates action |
 | Coupling | isolated surface | changes evaluators and learners |
-| Deletion | one object | retraining or institutional repeal |
+| Removal target | one stored object | learned influence or prior effects |
 
-The profile determines the evidence burden. One reproducible incident may
+The profile informs the evidence burden. Profiles may be incomparable: one
+route is shorter-lived but harder to observe, while another is explicit but
+more widely enforced. A declared consumer policy chooses among qualified
+examined alternatives; the profile does not prove a universal minimum. One reproducible incident may
 justify a scoped test for the exact failure. It should not justify a universal
 parameter update. A broad update may eventually be warranted, but only after
 holdouts, competing explanations, transfer tests, rollback rehearsals, and
@@ -453,8 +498,9 @@ Their data rights, provenance, representativeness, contamination, and deletion
 obligations remain live. A replay strategy can preserve performance by
 preserving data that should no longer be retained.
 
-Every update should produce a full-state checkpoint sufficient for its stated
-recovery claim. Weights alone may omit optimizer, sampler, random-number,
+Updates should preserve the state and history required by their advertised
+recovery claim. An object version, bounded event log, or scheduled checkpoint
+may suffice; a complete model copy after every gradient step is not required. Weights alone may omit optimizer, sampler, random-number,
 curriculum, memory, evaluator, and descendant state. A learner cannot claim to
 have returned to an earlier state if only one surface moved backward.
 
@@ -516,8 +562,9 @@ belong in the record because they shape what the learner could discover.
 
 Derived data complicates custody. One incident can produce a summary, embedding,
 label, replay example, synthetic variant, evaluation case, and parameter update.
-A later correction must reach every descendant that carries the defect or
-obligation. A flat list of training files is not enough.
+A later correction must address every known descendant carrying the defect or
+obligation and record the discovery gap. A complete local inventory does not
+prove that no unrecorded derivative exists. A flat list of training files is not enough.
 
 The data engine should separate ingestion from admission. Availability does not
 imply eligibility for training, evaluation, or memory. The same item may be
@@ -580,11 +627,27 @@ aggregate utility while damaging a small affected population. Results depend on
 the model, data, attacker, and evaluation distribution. One score should not
 collapse those axes.
 
-Verification has an unavoidable limit: an auditor can inspect tracked systems
-and run bounded probes, but cannot prove a universal negative over every latent
-representation, prompt, future attack, backup, or external recipient. Honest
-unlearning is a structured residual claim. It records what was removed, what was
-tested, what remains uncertain, and who owns further action.
+Model-level guarantees can be stronger than a probe score. In
+[Bourtoule et al., Definition III.1](https://arxiv.org/html/1912.03817v3),
+unlearning compares the distribution from training and then removing the named
+data with the distribution from the specified learning mechanism without that
+data. Equality under that definition is a model-distribution claim, not a
+promise that every related fact disappears from every output or external copy.
+
+Suppose two independently admitted training records contain the same public
+package-compatibility fact, and a removal request names one record. A reference
+model trained without that record may still learn the fact from the other.
+Continued output of the fact alone therefore cannot decide whether the named
+record was removed or whether the updated model matches the reference. A
+request forbidding every representation of the fact has a different target
+and may put both records in scope. The target and admissible baseline must be
+settled before interpreting a successful-looking suppression score.
+
+In open deployment, inspecting tracked systems and bounded probes cannot
+establish absence across unknown backups, recipients, or future access paths.
+A mathematical guarantee quantifies over its stipulated mechanism and state;
+it does not inventory unmodeled stores. Report the proved or tested claim,
+assumptions, uncovered effects, and further-action owner separately.
 
 ## Scientific Discovery Is Governed Revision
 
@@ -653,15 +716,21 @@ Return to the two successful patches.
 
 For the first, the system records the successful edit, the remembered schema
 condition, and two alternatives: the dependency itself may be faulty, or the
-test environment may contain a stale generated file. A clean reproduction
-shows that regeneration order causes the failure in the scoped repository.
+test environment may contain a stale generated file. In this teaching case, matched clean runs vary regeneration order while
+holding the named source, tool, and initial state fixed. They reproduce the
+failure and repair within that scoped case, not across every repository.
 
 The candidate lesson enters a short-lived semantic-memory locus. It is dated,
 scoped to the dependency line, and linked to the reproduction. Why memory rather
 than parameters? The proposition is explicit, narrow, and likely to change with
-the next generator version. Why not a tool test immediately? The team does not
-yet own the upstream generation tool, and the exact invariant across repositories
-is still uncertain.
+the next generator version. Why not a tool test immediately? Lack of upstream ownership does not rule out
+a local guard. If a reliable preflight can enforce this scoped condition at
+lower full cost, it should win. In this variant, the compatibility relation is
+not yet exposed through a stable machine-readable check, and the permitted
+workflow already includes maintainer review of the dated note. Memory is a
+bounded aid to that review. If the task requires reliable automatic enforcement,
+the note is insufficient: narrow or hold that use until an appropriate guard
+is qualified.
 
 The memory lease requires retrieval when dependency D is upgraded. Three later
 upgrades become prospective transfer tests. Two support the rule; one reveals a
@@ -682,8 +751,9 @@ move together.
 
 A parameter update would have been poorly placed. It might teach an agent to
 avoid the tool or reconstruct the dropped field, while other callers remain
-exposed. A memory warning would depend on retrieval. The test changes the
-mechanism at the failure boundary.
+exposed. A memory warning would depend on retrieval. The regression check blocks a known bad output; the repaired tool changes the
+mechanism. Both are needed for the claimed repair, and neither establishes
+correctness outside the checked scope.
 
 Months later the manifest format removes the optional field. The old test now
 blocks a valid migration. Material change invalidates its qualification. The
@@ -710,8 +780,9 @@ replacement by a stronger locus, repeated non-use, or failure to reproduce.
 Expiry should usually trigger review, not silent deletion, when descendants or
 rights are involved.
 
-Deoptimization preserves the record of the decision while removing its active
-effect. This distinction supports accountability without forcing the system to
+Deoptimization preserves permitted decision history while withdrawing or
+narrowing current use. Earlier effects and learned influence may persist, and
+required payload deletion can limit historical reconstruction. This distinction supports accountability without forcing the system to
 carry every past belief forever.
 
 A mature learner measures deletion and recovery as first-class capabilities.
@@ -794,40 +865,35 @@ targets and five experimental suites are planned, not implemented or run. The
 chapter therefore does not establish that persistence adjudication improves
 placement, transfer, deletion, recovery, or safety.
 
-The Learning Theory refinement is narrower and executable. Its validator checks
-a six-transition forecast lifecycle, 45 exact repair cases, finite attempt and
-alternative custody, adverse monotonicity, seven receipt invalidations, two
-non-identifiability results, one rejecting Benchmark Ratchets bridge, and 38
-exact Lean declarations. It does not establish natural generalization,
-transfer, emergence, scaling, safety, support, or release.
+[Learning Theory](https://corbensorenson.github.io/asi-stack-book/chapters/learning-theory-generalization-and-scaling-science.html)
+checks a six-transition authored forecast lifecycle, finite attempt and
+alternative custody, exact repair dispositions, and a rejecting benchmark
+bridge. Its countermodels expose what summaries cannot determine. These are
+record properties, not natural generalization, transfer, emergence, or scaling.
 
-The Policy Optimization refinement begins from a synthetic six-sample,
-five-candidate lease and follows a seven-stage lifecycle. It checks 63 finite
-routes, rejects all 73 authored route mutations and three cross-stage
-mutations, and preserves the reward-target distinction through rollback. A
-deterministic router-policy canary fixture includes holdouts, contamination
-checking, reward-hacking probes, unchanged authority, expected-invalid controls,
-and dry-run rollback. No optimizer, model, natural workload, preference
-dataset, live canary, causal policy improvement, rollback efficacy, or transfer
-was tested. Its support effect is none.
+[Policy Optimization](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html)
+checks a synthetic six-sample, five-candidate lease and finite lifecycle routes.
+Its router-policy fixture distinguishes reward from target, retains holdouts
+and contamination controls, and exercises dry-run rollback. No optimizer,
+model, natural preference dataset, live canary, causal improvement, or rollback
+efficacy was tested. Its support effect is none.
 
-The Data Engine refinement covers an eight-stage composed lifecycle with 82
-finite routes. Its validator rejects all 96 authored route mutations and three
-cross-stage mutations. A full-state bridge checks 24 surfaces, 15 exact local
-rollbacks, prospective checkpoint authority, separated unlearning claims, 12
-Lean theorems, and six rejecting mutations. Bounded local campaigns restore
-tracked state and remove a named cohort from specified surfaces, but they do not
+[Data Engines](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html)
+checks an authored composed lifecycle and a full-state bridge separating
+checkpoint authority, local restoration, and unlearning claims. Bounded local
+campaigns restore tracked state and remove a named cohort from specified
+surfaces, but they do not
 establish deletion, forgetting, influence removal, privacy, rights compliance,
-or external erasure.
+or external erasure. Matching a declared inventory is not open-world closure.
 
-The Scientific Discovery refinement checks an eight-transition lifecycle, 54
-exact repair cases, finite attempt and confirmatory custody, adverse
-monotonicity, seven receipt invalidations, two non-identifiability results, two
-rejecting evidence consumers, and 41 exact Lean declarations. It establishes
-finite record and routing properties, not causal discovery, replication,
-safety, support, release, or external effect.
+[Scientific Discovery](https://corbensorenson.github.io/asi-stack-book/chapters/scientific-discovery-and-experimental-governance.html)
+checks an eight-transition authored lifecycle, attempt and confirmatory
+custody, exact repair, and rejecting evidence consumers. It establishes finite
+record and routing properties, not causal discovery, independent replication,
+safety, support, release, or an external effect. The canonical owners retain
+the exact theorem, route, fixture, mutation, and bounded-campaign inventories.
 
-Together these artifacts establish useful finite control semantics around
+Together these artifacts establish finite control semantics around
 forecasting, update leases, data-state recovery, and scientific records. They
 do not establish the integrated adaptive commit boundary described in this
 unit, and they do not demonstrate a superior continual-learning system.

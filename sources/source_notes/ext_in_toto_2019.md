@@ -10,6 +10,16 @@
 | Published / updated | 2019-08 / 2019-08 |
 | Ingestion basis | Full primary USENIX paper reviewed for its signed layout, functionary/link metadata, material/product inspection, role and threshold model, partial key-compromise analysis, deployment cases, overhead evaluation, historical-incident comparison, and stated integration dependencies. No local in-toto layout, attestation, or verification run was performed. |
 
+## Bounded primary-source recheck — 2026-10-11
+
+Rechecked [the primary paper](https://www.usenix.org/system/files/sec19-torres-arias.pdf),
+§§2.1–2.3 (printed pp. 1394–1395): layout, step metadata, client inspections,
+artifact-flow and role goals, and the declared key/trust assumptions. This
+grounds the ordinary workflow comparison in
+`docs/defended_contribution_prior_art_positioning.md`. It renews no deployment
+or overhead result and adds no local implementation, conformance, safety, or
+support result. The original full-review scope remains historical.
+
 ## Thesis
 
 in-toto lets a project owner declare and sign the required software-supply-chain

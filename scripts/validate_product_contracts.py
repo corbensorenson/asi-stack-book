@@ -51,6 +51,8 @@ def main() -> None:
         if len(set(values)) != 3:
             errors.append(f"all three products must have distinct {field} values")
     narrative = by_id.get("narrative_book", {})
+    if not narrative.get("entry_points") or narrative["entry_points"][0] != "reader/index.html":
+        errors.append("current narrative product must begin at the independent Human Reader")
     reference = by_id.get("architecture_reference", {})
     registry = by_id.get("evidence_registry", {})
     if "index.html?view=human" not in narrative.get("entry_points", []):

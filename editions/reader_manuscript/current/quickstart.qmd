@@ -1,7 +1,8 @@
 ---
-title: "A Fifteen-Minute Route Through the Stack"
 number-sections: false
 ---
+
+# A Fifteen-Minute Route Through the Stack {.unnumbered}
 
 This route is for a reader who wants to see the architecture do something
 before reading the full argument. It follows one real maintenance defect from
@@ -113,6 +114,64 @@ the governed happy path, and to twelve for governed external compensation.
 Those counts expose mechanism cost. They are not measurements of human effort,
 and the local latency and CPU values are not transferable performance results.
 
+## One Repair, Five Possible Endings
+
+The following are **illustrative teaching cases**, not additional P5-U1 trials.
+Keep the same source-link repair in view while changing one relevant condition.
+The recorded twelve-case result above retains its own denominator and scope.
+
+### A simple authorized repair succeeds
+
+The maintainer permits edits to both the generator and its reader configuration.
+The defect and repair are already understood. An ordinary scoped workflow makes
+the two edits, checks their agreement, and returns the patch for review. No
+remote publication is requested. Adding separate planner, specialist, and
+approval services would not improve this decision merely by producing more
+records. The direct route can be the right choice when its existing checks
+cover the actual consequence.
+
+### A useful patch still needs a denial
+
+The patch is correct, but the worker also proposes pushing a release branch
+outside its grant. Passing the source-link check says nothing about permission
+to create that effect. The workflow can retain the useful local patch and
+deny the push, naming the additional authority required. It need not reject
+all work or silently enlarge the grant to make the task look successful.
+
+### Compensation leaves something unresolved
+
+Suppose a premature publication reached a reader before the branch was
+restored. A compensating change can restore the branch content while leaving
+the earlier public history, a cached copy, or a downstream citation untouched.
+The question is then which state was restored and who owns the remaining
+correction. “Compensated” must name that scope. P5-U1 closes its local
+branch-state residual; it does not establish recovery of these additional
+world effects.
+
+### Two observers report different versions
+
+The worker checks its new local files and reports the link repaired. A second
+observer checks a still-old public page and reports it broken. Both observations
+may be accurate for their target and time. Compare the file or page identity,
+revision, observation method, and publication step before judging reliability.
+Until they refer to the same intended result, there is no agreed observation
+of public repair. A vote between the reports cannot substitute for that join.
+
+### Governance costs more than the decision warrants
+
+Now suppose repeated low-risk repairs wait on several duplicate reviews while
+the same permitted edits and ordinary checks already contain the effects.
+Charge that delay and reviewer time to the governed route. Retire a duplicate
+gate if it adds no distinct protection or observation. Keep the boundary that
+actually prevents an unauthorized push or preserves unresolved correction
+work. A simpler process winning is a reason to shrink the apparatus, not to
+redescribe the win as evidence that every proposed layer was necessary.
+
+The lesson is conditional. Useful direct work, a necessary denial, incomplete
+compensation, observer disagreement, and excessive overhead are different
+outcomes. A design should explain each without arranging the story so that
+more architecture always wins.
+
 ## Three Practical Recipes
 
 ### Inspect a claim
@@ -197,7 +256,7 @@ workspaces stay under `build/` and should not become repository evidence.
 | Stable chapter, claim, source, proof, test, artifact, and publication identities | Implemented and validated in repository manifests and ledgers |
 | Local authority, record, crash-recovery, rollback, and compensation examples | Implemented in bounded reference slices, including P5-U1 |
 | Lean proofs for finite interfaces, transitions, rejection, preservation, and selected composition properties | Implemented at their named finite scopes |
-| Independent 26-unit Human Reader and 87-owner technical graph | Implemented as separate maintained prose and research surfaces |
+| Independent Human Reader and canonical technical graph | Implemented as separate maintained prose and research surfaces |
 | Prospective estimate that full governance improves real maintenance utility | Not established; the natural campaign remains unopened |
 | Complete effect discovery, distributed recovery, model-weight custody, or production enforcement | Not established by P5-U1 |
 | Human usability, operator-effort, or learning benefit | Not established by automated proxy checks |
@@ -222,3 +281,5 @@ Continue with [ASI Is a Stack, Not a Model](chapters/unit-01-asi-is-a-stack-not-
 for the full argument, or jump to [Integrated Reference Architecture, Project
 Theseus, and the Living Research Method](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd)
 for the end-to-end reference path.
+
+{{< include generated/reading-routes.qmd >}}

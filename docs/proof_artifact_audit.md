@@ -48,6 +48,32 @@ This alignment proves no theorem meaning, filesystem truth, semantic adequacy,
 implementation refinement, deployed enforcement, support movement, external
 effect, safety, transfer, SOTA, AGI, or ASI.
 
+## Transitive Axiom Dependencies
+
+`proofs/axiom_dependencies.json` records the elaborated dependency set of every
+source-named theorem under the pinned Lean toolchain. The compiler environment
+also contains generated helper theorems; these are traversed as dependencies
+and are not counted as additional authored results. The audit resolves
+3153 source declarations in
+130 modules:
+911 have no axiom dependencies, and
+366 transitively depend on native
+evaluation axioms, including `native_decide` and the native `bv_decide` checker.
+Standard-logic theorem counts are
+`{"Classical.choice": 21, "Quot.sound": 298, "propext": 1993}`.
+There are 0 theorem dependencies
+outside these disclosed classes. A new unreviewed class blocks acceptance.
+
+Axiom-free does not mean assumption-free: a theorem may still assume the
+very property a runtime consumer must establish. These counts do not rank
+proof quality or establish artifact truth, semantic adequacy, implementation
+refinement, safety or support. The current snapshot binds every input source
+hash and keeps each exact qualified theorem and axiom name inspectable.
+Refresh with `python3 scripts/build_proof_axiom_audit.py`; the proof-artifact
+consumer reruns the compiler query in a fresh Lean process before comparing
+the record. It shares the projection builder; this is a reproducibility check,
+not an independent assessment of compiler correctness or semantic adequacy.
+
 ## Module Coverage
 
 | Lean module path | Targets | Theorems | Rationalized targets | Defs | Structures |

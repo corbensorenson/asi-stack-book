@@ -10,7 +10,7 @@
 | Book-agent consumer | Future source selection and scoped chapter integration by the ASI Stack agent |
 | Lifecycle class | Sources and citations; public author-paper library |
 | Publication authority | Owner's 2026-10-25 request to push the prepared book-source material to this repository under Corben's sources |
-| Intake boundary | Source registration, reader route, reviewed source note and suggestions only; no book chapter prose, support state, implementation claim or release state changed |
+| Original intake boundary (2026-10-25) | Source registration, reader route, reviewed source note and suggestions only; no book chapter prose, support state, implementation claim or release state changed |
 
 ## Reading and availability
 
@@ -38,7 +38,11 @@ A map of conditional computational capabilities can be a useful evidence and acc
 
 Independent N is worlds, with fixed seed conditions averaged within worlds. Event counts, integrity repeats, mappings and budgets do not enlarge N. Raw replay, independent replication, public reproducibility and external review are distinct from the source's internal checks.
 
-## Suggested chapter routes, not executed integrations
+## Original chapter suggestions before integration — 2026-10-25
+
+The historical proposal below remains intact. The November 2 integration
+addendum records the three selected current chapter routes; its scope
+supersedes the pending-integration wording in this original intake section.
 
 These are candidate placements for the book agent. `book_structure.json`, chapter prose and Appendix C are unchanged. The source's `source_crosswalk_review_state` remains pending until chapter-level review and integration actually occur.
 
@@ -158,3 +162,21 @@ Checked 25 October 2026 for this synthesis. This is a scoped related-work check,
 | 14 | Original JMLR abstract/metadata: https://www.jmlr.org/papers/v11/cawley10a.html | Selection on finite data can overfit. This does not supply a numerical bias correction or guaranteed interval coverage here. |
 
 The contribution claimed is the particular implementation, controlled record and synthesis of limited findings. Contracts, Pareto fronts, ledgers, compilation, residual representations, interaction models, library learning and metareasoning are not claimed as newly invented. No theorem or external novelty certificate is introduced by this paper.
+
+## Book integration addendum — 2026-11-02
+
+The owner authorized book integration and a push after the source-only intake.
+The earlier eight-route table is retained as the historical intake proposal.
+Three selected integrations are now authored: Benchmark Ratchets (Sections 5.3
+and 8 / Appendix B), Resource Economics (Sections 2.1, 3.2 and 5.2), and
+Scientific Discovery (Sections 2, 6–8 and 11–12). Reader Units 22 and 23 provide
+short routes to the same source. The other five suggestions are not executed
+chapter integrations and do not imply support mappings.
+
+All numbers remain reports from the public working paper. The original text,
+PDF, figures and 27-record evidence index remain byte-identical. Private raw
+research and internal checks were not replayed. Paper attribution remains
+Answerability Atlas Project; no personal authorship, peer review, DOI or new
+scientific result is inferred. No external reference in the source is imported
+as separately reviewed literature. No Atlas controller is adopted or reopened.
+The book's core/support/proof outcomes remain unchanged.

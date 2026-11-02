@@ -3,7 +3,8 @@ title: "Security, Privacy, and AI Artifact Custody"
 unit_id: "unit-04"
 ---
 
-A paper arrives with more than an argument. Its supporting package includes a
+Consider a hypothetical source-ingestion request. A paper arrives with more
+than an argument. Its supporting package includes a
 small evaluation script, a model adapter, a configuration file, example
 prompts, and a link to downloadable weights. The request sounds routine: add
 the paper to the book, run the example, preserve the useful result, and publish
@@ -214,8 +215,11 @@ permitted use and required remedy. The kernel enforces the resulting technical
 scope. If the privacy record requires that prompts never leave a local trust
 domain, the kernel can deny a cloud route. If the kernel cannot observe a
 relevant recipient or derivative, privacy cannot pretend the flow is complete.
-One owner supplies legitimacy; the other supplies mediation. Neither certifies
-the other.
+An accountable privacy owner supplies a decision about permitted use and
+required remedy; that decision remains open to the relevant institutional and
+affected-party challenge. The kernel supplies technical mediation. A completed
+privacy record does not establish legitimate use, just as a denied cloud call
+does not establish that all copies stayed local.
 
 ## Protected Computation Is Evidence, Not Permission
 
@@ -234,12 +238,16 @@ also names the adversary, trust assumptions, allowed leakage, unsupported
 properties, and fallback. Choosing a technology before naming those properties
 often protects the wrong asset.
 
-Remote attestation illustrates the boundary. An attester produces evidence
-about a measured environment. A verifier appraises that evidence against
-reference values and policy. A relying party decides what, if anything, the
-result authorizes. Collapsing those roles lets a platform's statement become
-its own permission. Keeping them separate makes freshness, verifier
-dependencies, reference-value changes, and revocation visible.
+Remote attestation illustrates the boundary.
+[RFC 9334, Section 3](https://www.rfc-editor.org/rfc/rfc9334.html#section-3)
+separates an attester's evidence, a verifier's appraisal, and a relying party's
+application decision. [Section 3.4](https://www.rfc-editor.org/rfc/rfc9334.html#section-3.4)
+allows roles to share an entity; separate role names do not establish independent
+failure domains. [Section 10](https://www.rfc-editor.org/rfc/rfc9334.html#section-10)
+bounds freshness and retains the possibility of state change after evidence was
+produced. Thus an accepted result cannot become perpetual permission. The book's
+additional authority contract must still bind the requested use and its current
+conditions.
 
 Cryptographic proof has a similar semantic limit. A proof may strongly
 establish that an encoded relation held for committed values. The system still
@@ -258,9 +266,12 @@ properties survived.
 For the paper package, a protected execution receipt could bind the exact
 script, model, adapter, configuration, input commitment, environment,
 freshness challenge, verifier policy, output commitment, measured cost,
-fallback state, and unsupported properties. That would make the run
-reconstructible. It would not establish that the paper's data use was lawful,
-that the model output was true, or that the result was safe to publish.
+fallback state, and unsupported properties. That would bind a description of
+the reported run. Reconstruction also requires access to the retained inputs,
+code, dependencies, and relevant state; an input commitment cannot regenerate
+missing or inaccessible data. Neither the receipt nor a successful reconstruction
+establishes that the paper's data use was legitimate, that the model output was
+true, or that the result was appropriate to publish.
 
 ## Model Weights Are a Custody Graph
 
@@ -310,9 +321,11 @@ prompts, policies, build and training steps, environments, hardware and
 firmware, suppliers, services, signers, advisories, transformations, releases,
 recipients, descendants, retention, and retirement.
 
-A digest can establish that two byte sequences match. A signature can establish
-that a key signed a statement. A bill of materials can list components known to
-its producer. None proves that the statement is true, the list is complete, the
+A matching digest is evidence of content identity under the chosen hash
+assumptions. A valid signature binds a statement to a verification key under
+its cryptographic and key-custody assumptions. Neither establishes that the
+claimed person still controls the key. A bill of materials can list components
+known to its producer. None proves that the statement is true, the list is complete, the
 artifact is correct, the data rights are adequate, or the model is safe. The
 graph is valuable because it carries typed claims and invalidations to the
 consumers that depend on them, not because metadata itself creates trust.
@@ -431,6 +444,47 @@ accept a local result while denying a public derivative. This is not
 indecision. It is the ability to produce the largest honest product supported
 by the available authority and evidence.
 
+## When Ordinary Controls Are Enough
+
+Now narrow the hypothetical request. The author wants a note about a public
+paper, not execution of its code or distribution of its weights. The input is
+a published manuscript; the output is a permitted summary with exact source
+attribution. No private prompts, credentials, model artifacts, or remote
+publication action are needed for drafting.
+
+A conventional editor with a bounded source reader, ordinary file permissions,
+version control, and author review may satisfy that task. The reader need not
+receive execution credentials at all. Treating embedded instructions as source
+material and keeping the final write under the editor's existing permission
+boundary addresses the relevant transitions. A remote attestation service or
+confidential-computation proof has no identified distrust boundary to resolve
+in this version of the job. Requiring either would add a dependency without
+improving the requested result. Recording that those mechanisms were unnecessary
+is a legitimate architectural disposition.
+
+Change one requirement: the source includes private evaluation inputs that the
+note must not disclose. The output review now needs the applicable permitted-use
+decision, minimization, and a check on what the summary reveals. Execution
+is still unnecessary. Change another: independently running an untrusted script
+is essential to the claimed result. A scoped executor and observations of its
+effects now have a consumer. If the executor cannot be qualified within the
+available trust and resource boundary, retain the paper's reported result as
+source-reported and leave local reproduction open.
+
+Finally, suppose two parties need computation while withholding their respective
+inputs and weights from each other. A protected route may address that named
+distrust boundary, subject to its actual guarantees and costs. It must compete
+with an alternative such as a mutually acceptable operator or a narrower
+analysis that avoids exchanging the sensitive material. Do not credit the
+protected route simply for producing a more elaborate receipt.
+
+These variants constrain the composition. Add a control when a changed input,
+effect, or trust relation makes its property necessary. Retire it when the
+simpler route preserves the required outcomes with less burden. Evaluation
+must compare against ordinary controls configured competently, including their
+existing access checks and review; stripping those checks would manufacture
+the advantage the stack is supposed to demonstrate.
+
 ## Failure Cases
 
 The first failure is **security-label laundering**. “Sandboxed,” “encrypted,”
@@ -541,7 +595,7 @@ not entitled to complexity merely because its records are precise.
 
 ## From Minimum Implementation to a Mature Security Fabric
 
-The minimum viable implementation can protect one narrow repository task. It
+The proposed minimum implementation should confine one narrow repository task. It
 needs an external tool broker, exact principal and artifact identities, a
 short-lived capability lease, a temporary workspace, denied-by-default network
 and secret access, file-scope enforcement, taint on protected inputs, a separate
@@ -655,6 +709,11 @@ or release is secure.
 Secure custody still does not tell the system what to believe. A perfectly
 mediated experiment can use a weak construct, a biased evaluator, a stale
 source, or an invalid inference. The next chapter turns from control of
-information and effects to the governance of evidence itself: how claims gain,
-lose, and retain support when review capacity is limited and the system being
-evaluated may influence the evaluator.
+information and effects to the governance of evidence itself.
+[Unit 5](unit-05-evidence-states-and-scalable-oversight.qmd) must preserve the exact
+observed configuration, unresolved channels, and source-versus-local-result
+boundary when deciding how a claim gains, loses, or retains support. A clean
+custody record supplies inputs for that judgment; it does not supply the
+judgment. The [security kernel](https://corbensorenson.github.io/asi-stack-book/chapters/security-kernel-and-digital-scifs.html)
+and [protected-computation owner](https://corbensorenson.github.io/asi-stack-book/chapters/confidential-and-verifiable-ai-computation.html)
+retain the detailed admission and guarantee contracts behind this narrative.

@@ -1,6 +1,6 @@
 # Executable Product Projections
 
-Last updated: 2026-07-26
+Last updated: 2026-10-02
 
 The three product contracts now produce concrete, generated navigation
 artifacts rather than only describing intended audiences. They still share the
@@ -9,7 +9,12 @@ release state. No projection is allowed to become a second authority.
 
 ## Narrative technical book
 
-`products/narrative_product_spine.json` defines a 22-unit thesis-to-method
+The generated entry first links to the current `/reader/` Human Reader. Its
+unit and owner counts, review boundary and source-manifest digest are carried
+in the generated `current_reader` record, derived from
+`editions/reader_manuscript/current/manifest.json`.
+
+`products/narrative_product_spine.json` preserves a historical 22-unit thesis-to-method
 route. Each unit uses one representative canonical chapter while routing its
 compound and specialist owners through the complete reference. Each selected
 chapter has one canonical core-claim reference and three explicit projections:
@@ -29,7 +34,7 @@ python3 scripts/build_reader_edition.py \
 ```
 
 The generated orientation is derivative editorial navigation. It adds no
-evidence and changes no support state. The other 67 chapters remain visible in
+evidence and changes no support state. The other canonical owners remain visible in
 the architecture reference and are not rejected or deleted. The candidate is
 not a reviewed reader release; here, "reviewed" means that the final artifact
 gates have not yet been run, not that external-human review is required.
@@ -38,7 +43,7 @@ gates still apply. No external-human review is a prepublication requirement.
 
 `products/narrative_unit_crosswalk.json` assigns every canonical chapter to
 exactly one unit. The generated product page now expands each unit into its
-specialist reference-owner list and gives every one of the 65 owners a direct
+specialist reference-owner list and gives every specialist owner a direct
 Human-view chapter link. Each route also states the owner's canonical distinct
 responsibility, claim identity, claim label, and current support ceiling. This
 changes routing, not ownership: representative
@@ -109,6 +114,40 @@ python3 scripts/build_product_projections.py \
 The product pages are therefore created before the moving `/latest/` mirror
 and tested-site bundle are hashed. The deployment workflow still consumes only
 the exact tested bundle; it does not rebuild product pages.
+
+The builder first captures its named inputs and optional snapshot presence,
+prepares all product bytes in memory, and applies the existing schema, routing,
+responsibility and count consumers. It installs the complete directory using
+the tested-bundle exchange primitive, under the rendered-site writer lock when
+applicable. A failed preparation, drift check or exchange preserves prior
+output. Abrupt process exits leave an explicitly incomplete/prepared staging
+receipt outside the publishable tree; uncertain post-exchange directory fsync
+retains the complete prior tree. These local observations do not certify
+physical power loss or Linux filesystems.
+
+Unexpected empty directories reject alongside unknown files. Fresh outputs
+use an atomic exclusive rename; an intervening destination object is retained.
+After replacement, both displaced and installed inventories and source inputs
+are checked again. A helper exception after a physical exchange keeps the
+stage with `installation_outcome_unconfirmed`; it must be inspected rather
+than treated as unused temporary data. Retained stages add disk cost and have
+no automatic adoption, rollback or deletion authority.
+
+Writes are restricted to `_site/products` or an ignored repository `build/`
+output. Existing unknown content is preserved. A legacy output can be adopted
+only when every payload file exactly matches the inspected current result.
+The generated `projection-install-manifest.json` binds file and input identity;
+it is a family/integrity marker, not authorship, review or release attestation.
+Use the same command with `--check` to verify a current installed projection
+without creating a staging area or changing timestamps. The rendered-site
+validator includes this check before accepting product routes.
+
+For default local status generation, a volatile build timestamp is excluded
+from the status fields consumed by product pages; repeated identical products
+are no-ops. Explicit `--status` bytes remain fully bound. External positioning
+consumes note filenames only, so the builder records note presence without
+reading unused note bodies. Other declared input bytes and dynamic input sets
+are checked again before installation.
 
 ## Validation boundary
 

@@ -5,11 +5,13 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 from pathlib import Path
 import re
 import shlex
 from typing import Optional
+from search_navigation import render_search_navigation
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -25,6 +27,7 @@ EDITION_NAV = GENERATED / "edition-nav.html"
 READER_STYLE = GENERATED / "reader.scss"
 OUTLINE = ROOT / "docs/human_reader_26_unit_outline.md"
 STRUCTURE = ROOT / "book_structure.json"
+OWNER_OUTLINE = ROOT / "docs/book_outline.md"
 
 
 def digest(path: Path) -> str:
@@ -226,6 +229,162 @@ def build_crosswalk(records: list[dict], owner_map: dict[str, dict]) -> dict:
     }
 
 
+# These are editorial entry points, not extra owner assignments. The current
+# owner-to-unit crosswalk supplies filenames; the named heading supplies the
+# existing anchor and is checked before a projection is written.
+CONCEPT_ENTRY_POINTS = [
+    ("Assurance", "What does a safety argument leave unresolved?", "safety-cases-and-structured-assurance", "Assurance Must Be Incremental and Revocable", "assurance"),
+    ("Authority", "Whose permission admits this effect?", "system-boundaries-and-authority", "The Authority Tuple", "authority"),
+    ("Compensation", "What can a new action repair without undoing history?", "governed-operations-incident-command-and-graceful-degradation", "Recovery, Compensation, and Closure", "compensation"),
+    ("Contract", "How does an agreement preserve uncertainty?", "intent-to-execution-contracts", "A Contract Should Preserve Uncertainty", "contract"),
+    ("Evidence", "What does a support state actually mean?", "evidence-states-and-claim-discipline", "Support States Are Not a Confidence Score", "evidence"),
+    ("Layer", "When is a responsibility distinct without being a service?", "asi-is-a-stack-not-a-model", "Logical Layers, Not a Service Tax", "layer"),
+    ("Lease", "How is an effect bounded while its grant remains current?", "runtime-adapters-tool-permissions-and-human-approval", "Effect Leases Bound Action in Time", "lease"),
+    ("Observation", "Which state did an instrument actually inspect?", "perception-sensor-fusion-and-observation-trust", "Observation Is Task-Relative", "observation"),
+    ("Qualification", "Why can compatible components still be ineligible?", "stable-capability-fields", "Compatibility Is Not Qualification", "qualification"),
+    ("Receipt", "What does a recorded event claim establish?", "artifact-graphs-audit-logs-and-replay", "Audit Logs Are Event Claims", "receipt"),
+    ("Residual", "Which obligation remains after a bounded decision?", "readiness-gates-residual-escrow-and-quarantine", "Residual Escrow", "residual"),
+    ("Revocation", "What happens when a grant and an effect race?", "system-boundaries-and-authority", "Revocation Is a Race", "lease"),
+    ("Rollback", "Which controllable state was actually restored?", "governed-operations-incident-command-and-graceful-degradation", "Rollback Is an Effect Claim", "rollback"),
+]
+
+
+def narrative_section_link(records: list[dict], owner_id: str, heading: str) -> str:
+    unit = next(record for record in records if owner_id in record["owner_ids"])
+    source = (EDITION / unit["source_file"]).read_text(encoding="utf-8")
+    if not re.search(rf"^## {re.escape(heading)}(?: \{{[^\n]+\}})?$", source, re.MULTILINE):
+        raise ValueError(f"Concept entry for {owner_id} needs heading {heading!r}")
+    return f"{unit['source_file']}#{slugify(heading)}"
+
+
+def concept_finder(records: list[dict], site_url: str) -> list[str]:
+    glossary = f"{site_url.rstrip('/')}/appendices/B_glossary.html"
+    lines = [
+        "## Find a Concept {#find-a-concept}", "",
+        "These entry points revisit a distinction in the narrative. The working glossary gives the definition and canonical technical owner; neither route adds evidence to the claim.", "",
+    ]
+    for term, question, owner_id, heading, glossary_term in CONCEPT_ENTRY_POINTS:
+        target = narrative_section_link(records, owner_id, heading)
+        lines.extend([
+            f"- **[{term}]{{#concept-{slugify(term)}}}.** [{question}]({target}) · [{term} in the working glossary]({glossary}#term-{glossary_term}).", "",
+        ])
+    lines.extend([
+        "### Return to the Repository Example {#repository-example}", "",
+        "The story is a hypothetical teaching case. Jump to the stage you need; later stages retain their stated assumptions and unresolved effects.", "",
+    ])
+    for label, owner_id, heading in [
+        ("Decompose the request", "asi-is-a-stack-not-a-model", "One Request, Many Commitments"),
+        ("Follow revocation ordering", "system-boundaries-and-authority", "Revocation Is a Race"),
+        ("Separate restoration from downstream remedy", "governed-operations-incident-command-and-graceful-degradation", "Recovery, Compensation, and Closure"),
+        ("Decide whether a lesson becomes durable", "adjudicated-persistence-and-the-adaptive-commit-boundary", "The Adaptive Commit Boundary"),
+        ("Follow the integrated request", "integrated-reference-architecture", "Following the Repository Change"),
+    ]:
+        lines.extend([f"- [{label}]({narrative_section_link(records, owner_id, heading)}).", ""])
+    lines.extend([
+        "Search in this edition covers the current narrative. For specialist contracts, sources, or papers, follow the glossary's technical-owner links or switch to the AI / researcher edition. Historical releases retain their own status; a matching term does not make an old result current.", "",
+    ])
+    return lines
+
+
+def owner_guide(records: list[dict], owner_map: dict[str, dict], site_url: str) -> list[str]:
+    """Expose maintained outline distinctions without inventing owner roles."""
+    jobs = {}
+    for entry in re.split(r"(?m)^### ", OWNER_OUTLINE.read_text(encoding="utf-8"))[1:]:
+        identity = re.search(r"(?m)^Stable ID: `([^`]+)`", entry)
+        if not identity:
+            continue
+        owner_id = identity.group(1)
+        if owner_id not in owner_map or owner_id in jobs:
+            raise ValueError(f"Unknown or duplicate outline owner {owner_id}")
+        fields = {}
+        for label in ("Chapter job", "Ownership boundary", "Nearest overlapping owners"):
+            match = re.search(rf"(?ms)^{label}: (.*?)(?=\n\n|\Z)", entry)
+            if not match:
+                raise ValueError(f"Owner guide needs {label} for {owner_id}")
+            fields[label] = " ".join(match.group(1).split())
+        nearest = re.findall(r"\]\(\.\./chapters/([^/)]+)\.qmd\)", fields["Nearest overlapping owners"])
+        if not nearest or any(n not in owner_map or n == owner_id for n in nearest):
+            raise ValueError(f"Owner guide needs valid nearest owners for {owner_id}")
+        jobs[owner_id] = (fields["Chapter job"], fields["Ownership boundary"], nearest)
+    if list(jobs) != list(owner_map):
+        raise ValueError("Owner guide must preserve exact canonical owner coverage and order")
+
+    def technical_link(owner_id: str) -> str:
+        owner = owner_map[owner_id]
+        target = f"{site_url.rstrip('/')}/{Path(owner['file']).with_suffix('.html').as_posix()}"
+        return f"[{owner['title']}]({target})"
+
+    lines = [
+        "## Find the Owner of a Source or Defect {#find-an-owner}", "",
+        "Choose the responsibility where the first disputed meaning or decision arises. A misread request belongs to Human Intent; a plan that changes an accepted obligation belongs to conformance or Planning; an unknown external outcome belongs to Runtime. A source can inform several owners, and its volume does not create a chapter. A genuinely new responsibility still needs the established chapter-admission review.", "",
+        "Expand a narrative unit below to see the distinct jobs of its technical owners, their inputs and outputs, and the closest neighboring responsibilities. These are authored architectural roles from the maintained book outline, not proof that an implementation or scientific claim is established. A logical owner need not be a separate service, model or institution.", "",
+    ]
+    for unit in records:
+        label = html.escape(f"Unit {unit['order']} — {unit['title']}")
+        lines.extend([f'<details class="owner-routes"><summary>{label}</summary>', "",
+                      f"Read the [narrative explanation]({unit['source_file']}) or follow an exact technical owner:", ""])
+        for owner_id in unit["owner_ids"]:
+            job, boundary, nearest = jobs[owner_id]
+            lines.extend([f"**{technical_link(owner_id)}**", "", job, "", boundary, "",
+                          "**Nearest overlapping owners:** " + "; ".join(technical_link(n) for n in nearest) + ".", ""])
+        lines.extend(["</details>", ""])
+    return lines
+
+
+def reading_routes(records: list[dict], owner_map: dict[str, dict], site_url: str) -> str:
+    """Project reading links from canonical owners and their existing unit routes."""
+    unit_for_owner = {
+        owner_id: record
+        for record in records
+        for owner_id in record["owner_ids"]
+    }
+    contribution_owners = [
+        "system-boundaries-and-authority", "intent-to-execution-contracts",
+        "spinoza-verification-and-proof-carrying-claims",
+        "artifact-graphs-audit-logs-and-replay", "integrated-reference-architecture",
+    ]
+    selected = list({unit_for_owner[owner_id]["unit_id"]: unit_for_owner[owner_id]
+                     for owner_id in contribution_owners}.values())
+    links = " → ".join(f"[{unit['title']}]({unit['source_file']})" for unit in selected)
+    words = sum(unit["visible_word_count"] for unit in selected)
+    total_words = sum(unit["visible_word_count"] for unit in records)
+    lines = [
+        "## Choose a Reading Depth", "",
+        "The links below follow the current owner-to-unit map. Length describes pacing, not editorial approval or strength of evidence.", "",
+        "| Route | Who it serves and prerequisites | Scope and commitment |", "|---|---|---|",
+        "| Short: this repair | A reader familiar with a repository and an ordinary permission check; no formal-methods background required. | About fifteen minutes to orient. Executing recipes and inspecting failures takes additional time. |",
+        f"| Intermediate: the three contributions | A practitioner who has read the thesis above and wants authority, claims, and observed effects in one argument. | {len(selected)} selected units, {words:,} current words; allow several reading sessions. |",
+        f"| Full: [the narrative in order](index.qmd) | A technically curious reader willing to build the concepts cumulatively. | {len(records)} units, {total_words:,} current words; a book-length commitment, not a quick tutorial. |",
+        "", "For the intermediate route, read:", "", links + ".", "",
+        "Use the full route when a selected chapter assumes an earlier concept you want to develop. The selection is an entry path, not a replacement argument.", "",
+        "### Practitioner and Research Reference Paths", "",
+        "These paths leave the narrative for the live technical owners. The practitioner path assumes familiarity with a change workflow; the research path assumes comfort with experimental comparisons and formal assumptions. Each is selective reference work with variable depth, not a promised completion time.", "",
+    ]
+    paths = {
+        "Practitioner — follow a proposed change to its effect and bill": [
+            "intent-to-execution-contracts", "planning-as-a-control-layer",
+            "artifact-graphs-audit-logs-and-replay", "resource-economics-and-token-budgets",
+            "integrated-reference-architecture",
+        ],
+        "Research — challenge the efficiency, evidence, learning, and proof assumptions": [
+            "the-efficient-asi-hypothesis", "evidence-states-and-claim-discipline",
+            "learning-compute-topology-and-adaptive-process-architecture",
+            "executable-specifications-and-lean-proof-envelope", "integrated-reference-architecture",
+        ],
+    }
+    for label, owner_ids in paths.items():
+        links = " → ".join(
+            f"[{owner_map[owner_id]['title']}]({site_url.rstrip('/')}/{Path(owner_map[owner_id]['file']).with_suffix('.html').as_posix()})"
+            for owner_id in owner_ids
+        )
+        lines.extend([f"**{label}.** {links}.", ""])
+    lines.extend([
+        "Every path preserves the same evidence boundary: core claims retain their canonical support states; finite proofs, authored fixtures, and source-reported results answer narrower questions. Following more links cannot combine those results into whole-stack validation. The technical owners retain exact assumptions, artifacts, and open obligations.", "",
+        f"To revisit a term, use the [narrative concept finder](index.qmd#find-a-concept) or the [working glossary]({site_url.rstrip('/')}/appendices/B_glossary.html). It distinguishes permission from source precedence, reports from observations and evidence, and restored state from compensation. Each definition routes to its canonical technical owner.", "",
+    ])
+    return "\n".join(lines)
+
+
 def build() -> tuple[dict, dict[Path, str]]:
     structure = json.loads(STRUCTURE.read_text(encoding="utf-8"))
     owner_map = {
@@ -283,6 +442,8 @@ def build() -> tuple[dict, dict[Path, str]]:
             }
         )
 
+    outputs[GENERATED / "reading-routes.qmd"] = reading_routes(records, owner_map, structure["site_url"])
+
     part_titles = {
         1: "Part I - Why Intelligence Needs a Governed Stack",
         2: "Part II - Building Governed Cognition",
@@ -312,6 +473,21 @@ document.addEventListener("DOMContentLoaded", () => {
   if (index >= 0) {
     link.href = window.location.pathname.slice(0, index + 1);
   }
+  const diagrams = Array.from(document.querySelectorAll('.asi-reader-diagram'));
+  if (!diagrams.length) return;
+  let observer;
+  const positionDiagrams = () => {
+    for (const diagram of diagrams) {
+      if (diagram.dataset.positioned || !diagram.querySelector('svg')) continue;
+      const excess = Math.max(0, diagram.scrollWidth - diagram.clientWidth);
+      diagram.scrollLeft = diagram.dataset.initialScroll === 'end' ? excess : excess / 2;
+      diagram.dataset.positioned = 'true';
+    }
+    if (diagrams.every(diagram => diagram.dataset.positioned)) observer.disconnect();
+  };
+  observer = new MutationObserver(() => requestAnimationFrame(positionDiagrams));
+  observer.observe(document.body, {childList: true, subtree: true});
+  requestAnimationFrame(positionDiagrams);
 });
 </script>
 """
@@ -399,18 +575,74 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
 
 .callout-note { border-left-color: #b06b2b; background: #fffdf9; }
 .sidebar-navigation a { line-height: 1.35; }
+main.content { overflow-wrap: anywhere; }
+main.content .anchored { position: relative; padding-right: 1em; }
+main.content .anchorjs-link { position: absolute; left: auto !important; right: 0; margin-left: 0 !important; }
+
+.asi-reader-table {
+  max-width: 100%;
+  overflow-x: auto;
+  margin: 1.25rem 0;
+  border: 1px solid #b8c4c9;
+  border-radius: 6px;
+}
+.asi-reader-table:focus-visible { outline: 3px solid #245f73; outline-offset: 3px; }
+.asi-reader-table table { min-width: 40rem; width: 100%; margin-bottom: 0; }
+.asi-reader-table th, .asi-reader-table td { overflow-wrap: normal; word-break: normal; }
+
+.asi-reader-diagram {
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 0.75rem 0.25rem;
+  margin: 1.25rem 0 0.75rem;
+  border: 1px solid #b8c4c9;
+  border-radius: 6px;
+}
+.asi-reader-diagram:focus-visible { outline: 3px solid #245f73; outline-offset: 3px; }
+.asi-reader-diagram .cell-output-display { overflow: visible; }
+.asi-reader-diagram svg { width: var(--asi-diagram-width, 40rem); max-width: none !important; height: auto; }
+.asi-reader-diagram svg .nodeLabel,
+.asi-reader-diagram svg .edgeLabel { color: #162b33 !important; }
 
 @media (max-width: 640px) {
   main.content { font-size: 1rem; line-height: 1.68; }
   main.content h1 { font-size: 2rem; }
-  .asi-edition-switch { display: flex; width: 100%; justify-content: space-between; }
+  .asi-edition-switch {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+    margin: 0.75rem auto 1rem;
+    justify-content: flex-start;
+  }
   .asi-edition-switch__label { flex: 1 1 auto; }
+  .page-navigation { flex-direction: column; gap: 0.75rem; align-items: stretch; }
+  .page-navigation .nav-page { width: 100%; max-width: 100%; margin: 0; }
+  .page-navigation .pagination-link { min-width: 0; max-width: 100%; }
+  .page-navigation .nav-page-text { min-width: 0; overflow-wrap: anywhere; }
+  .page-navigation .chapter-title { white-space: normal; }
+  .quarto-secondary-nav .container-fluid { align-items: center; }
+  .quarto-secondary-nav .quarto-page-breadcrumbs { flex: 1 1 auto; min-width: 0; }
+  .quarto-secondary-nav .breadcrumb { flex-wrap: nowrap; margin: 0; }
+  .quarto-secondary-nav .breadcrumb-item:first-child:not(:last-child) { display: none; }
+  .quarto-secondary-nav .breadcrumb-item:last-child { min-width: 0; max-width: 100%; padding-left: 0; }
+  .quarto-secondary-nav .breadcrumb-item:last-child::before { display: none; }
+  .quarto-secondary-nav .breadcrumb-item a { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 }
 
 @media print { .asi-edition-switch, .asi-reader-skip { display: none !important; } }
 """
     outputs[EDITION_NAV] = edition_nav
     outputs[READER_STYLE] = reader_style
+    search_kinds = {"index.html": "Reader guide", "quickstart.html": "Reader guide"}
+    search_kinds.update({str(Path(row["source_file"]).with_suffix(".html")): "Human Reader" for row in records})
+    outputs[GENERATED / "search-navigation.html"] = render_search_navigation(search_kinds)
 
     quarto = (
         "# Generated by scripts/build_human_reader_current.py\n"
@@ -427,6 +659,7 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
         + "\n\nformat:\n  html:\n    toc: true\n    number-sections: true\n"
         "    theme:\n      - cosmo\n      - generated/reader.scss\n"
         "    include-before-body:\n      - generated/edition-nav.html\n"
+        "    include-after-body:\n      - generated/search-navigation.html\n"
         "    link-external-newwindow: true\nlang: en-US\n"
     )
     outputs[QUARTO] = quarto
@@ -434,13 +667,15 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
     index_lines = [
         "# Human Reader Edition {.unnumbered}",
         "",
-        "This is the complete maintained draft of the independent 26-unit Human Reader edition. Every unit is inside its target range and ready for author review; author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
+        "This is the maintained draft of the independent 26-unit Human Reader edition. Every unit is drafted and inside its pacing range. Narrative completeness requires review of the mechanism, alternative, example, failure, and conclusion; target length alone does not establish it. Author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
+        "",
+        "The narrative develops three proposed contributions: **governed-cognition interface contracts**, **public claim-state transition discipline**, and **record/reality reconciliation with residual honesty**. The 89 technical owners support these composition and process proposals; they are not independent discoveries. Bounded local implementation results do not establish general superiority, novelty, or chapter-core support. The [contribution summary](https://corbensorenson.github.io/asi-stack-book/docs/three_defended_contributions.md) and [conventional alternatives](https://corbensorenson.github.io/asi-stack-book/docs/defended_contribution_prior_art_positioning.md) give the scope and challengers.",
         "",
         "Start with [A Fifteen-Minute Route Through the Stack](quickstart.qmd) to run one bounded governed repository change and inspect what is implemented, what remains proposed, and how the three execution routes differ.",
         "",
-        "| Unit | Chapter | State | Words |",
-        "|---:|---|---|---:|",
     ]
+    index_lines.extend(concept_finder(records, structure["site_url"]))
+    index_lines.extend(["## Chapters in Order", "", "| Unit | Chapter | State | Words |", "|---:|---|---|---:|"])
     for record in records:
         title = record["title"]
         if record["state"] != "not_started":
@@ -451,20 +686,24 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
             "not_started": "Not started",
         }[record["state"]]
         index_lines.append(f"| {record['order']} | {title} | {state_label} | {record['visible_word_count']:,} |")
-    outputs[INDEX] = "\n".join(index_lines) + "\n"
+    index_lines.extend(["", *owner_guide(records, owner_map, structure["site_url"])])
+    outputs[INDEX] = "\n".join(index_lines).rstrip() + "\n"
 
     crosswalk = build_crosswalk(records, owner_map)
     crosswalk_text = json.dumps(crosswalk, indent=2, ensure_ascii=False) + "\n"
     outputs[CROSSWALK] = crosswalk_text
 
+    # A source builder observes draft bytes, not the remote publication target.
     manifest = {
         "schema_version": "asi_stack.human_reader_current.v1",
         "edition_id": "human-reader-current",
-        "state": "complete_manuscript_public_html_deployed",
+        "state": "complete_manuscript_ready_for_author_review",
         "source_graph": "book_structure.json",
         "source_outline": "docs/human_reader_26_unit_outline.md",
         "book_structure_sha256": digest(STRUCTURE),
         "outline_sha256": digest(OUTLINE),
+        "owner_guide_source": "docs/book_outline.md",
+        "owner_guide_source_sha256": digest(OWNER_OUTLINE),
         "conclusion_claim_crosswalk": "conclusion_claim_crosswalk.json",
         "conclusion_claim_crosswalk_sha256": digest_text(crosswalk_text),
         "utility_route": "quickstart.qmd",
@@ -498,7 +737,8 @@ def main() -> None:
         GENERATED.mkdir(parents=True, exist_ok=True)
         for path, text in outputs.items():
             path.parent.mkdir(parents=True, exist_ok=True)
-            path.write_text(text, encoding="utf-8")
+            if not path.is_file() or path.read_text(encoding='utf-8') != text:
+                path.write_text(text, encoding="utf-8")
         print(
             f"Wrote Human Reader current: {manifest['started_unit_count']}/26 started, "
             f"{manifest['visible_word_count']} visible words."

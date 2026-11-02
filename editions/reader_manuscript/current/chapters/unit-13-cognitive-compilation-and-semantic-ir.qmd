@@ -5,8 +5,9 @@ unit_id: "unit-13"
 
 ## The Artifact That Followed the Plan
 
-The controller plan now contains an admitted publication obligation: produce a
-technical summary of the failed trial for the project site. The summary must
+Continue the hypothetical controller plan. Assume its current grant admits
+preparation of a public-summary candidate about the failed trial for the project
+site; actual external release remains a separate decision. The summary must
 name the tested controller and observed residuals, link the public evidence,
 exclude private filesystem paths, make no safety claim, and preserve the fact
 that the claim-bearing campaign has not run.
@@ -18,8 +19,9 @@ trace. In the conclusion, “the bounded trial stopped after oscillation” has
 become “the controller safely detected oscillation.” The artifact is
 syntactically excellent and semantically wrong.
 
-The plan did its job. It selected and ordered an accepted obligation. The
-failure occurred while translating that obligation into a target artifact.
+For this example, the source obligation already preserved the relevant limits.
+The failure occurred while translating it into a target artifact. A different
+case could fail earlier through a mistaken contract or incomplete plan.
 Several distinctions disappeared: observation became safety, stopping became
 successful detection, a private source location became public output, and an
 unexecuted evidence lane vanished from the conclusion.
@@ -44,8 +46,8 @@ that a consumer can challenge them.
 ## A Plan Node Is Not Yet an Artifact
 
 Planning decides which obligation should become work and when. It does not
-choose every representation needed to perform that work. “Publish a bounded
-trial summary” remains too abstract for a document generator, privacy checker,
+choose every representation needed to perform that work. “Prepare a public-summary
+candidate” remains too abstract for a document generator, privacy checker,
 claim validator, link checker, and site builder to share precisely.
 
 The compiler receives an admitted plan node plus its exact contract version.
@@ -88,7 +90,9 @@ physical address changes.
 A semantic IR therefore assigns stable identities to obligations, non-goals,
 assumptions, entities, relations, fields, validators, artifacts, and residuals.
 The identity remains distinct from wording, source span, graph position,
-embedding, storage key, route, and support state.
+embedding, storage key, route, and support state. A material meaning change
+still needs a new version or object; stable identity preserves lineage, not a
+right to alter semantics invisibly.
 
 In the summary example, the privacy non-goal has an identity independent of
 the sentence “exclude private filesystem paths.” It maps to source spans,
@@ -191,7 +195,9 @@ possible worlds, evidence states, or scales. Those axes may have the same
 numeric length and entirely different legal operations.
 
 A branch axis cannot be averaged as though alternative worlds were simultaneous
-observations. A directed role axis cannot be pooled as an exchangeable set. A
+observations. A declared probability model may support an expected cost over
+branches, but that output remains a prediction; it is not an observed world
+state. The consumer and transformation determine which reduction is valid. A directed role axis cannot be pooled as an exchangeable set. A
 spatial vector cannot move between frames without a transformation. An
 epistemic score cannot be cast into action authority. A time interval cannot be
 added to a probability because both are floating-point values.
@@ -286,7 +292,7 @@ states the consumer, workload, expected advantage, required baselines, metrics,
 resource envelope, proof or structural facts, failure policy, and fallback.
 Adoption is a versioned decision, not an aesthetic preference.
 
-For the publication obligation, a deterministic template may handle metadata
+For the summary obligation, a deterministic template may handle metadata
 and links, a language model may draft prose, a claim mapper may bind evidence,
 a privacy scanner may reject paths, and a human may resolve a nuanced safety
 statement. Another task may be better served by direct code generation plus
@@ -353,7 +359,7 @@ Trying to jump directly from a human contract to executable detail makes every
 failure global. Progressive lowering introduces levels whose contracts can be
 checked separately.
 
-The source-plan dialect first preserves the publication mandate and its
+The source-plan dialect first preserves the summary-preparation mandate and its
 non-goals. A semantic pass creates stable atoms for the controller identity,
 trial observation, residuals, evidence limit, privacy boundary, approved links,
 audience, and release authority. A document dialect maps those atoms into
@@ -435,6 +441,41 @@ Repair also preserves the failed artifact for diagnosis while preventing it
 from entering the accepted publication surface. History supports learning; it
 does not grant failed outputs another path to use.
 
+## Two Repairs, One Honest Candidate
+
+Make the failed summary's repair concrete. A deterministic target check inspects
+links, tooltips, embedded metadata, and visible text for the prohibited local
+path. It rejects the tooltip independently of whether the conclusion reads
+well. A reviewer then compares the conclusion with the allowed observation and
+finds that stopping has been rewritten as successful safe detection. The two
+failures require different changes: repair the link formatter, and restore the
+bounded claim without the unsupported inference.
+
+Neither check proves completeness. A path rule can miss an unrecognized encoding
+or another disclosure surface. A literal ban on “safely” can miss a paraphrase
+that makes the same claim. The candidate needs the relevant output inventory
+and semantic comparison, rather than a rule that merely forces the generator
+to choose another word.
+
+After repair, inspect the emitted page again. The source edit is not evidence
+that the tooltip changed in the delivered artifact. Preserve the rejected
+candidate in authorized diagnostic custody, and prevent it from entering the
+accepted release surface. The final candidate can pass its declared checks
+while the release decision remains pending under its separate authority.
+
+A competent template plus direct drafting and the same checks may solve this
+small case. The IR route must not receive credit for the privacy scanner or
+reviewer merely because it invoked them; the simpler baseline receives them too.
+Explicit semantic identities may earn value when the same obligation feeds
+several pages, indexes, or target formats and otherwise loses repair lineage.
+If this one page is transparent enough for a diff and review, the lighter route
+can win at lower cost.
+
+This is a hypothetical comparison, not an observed compiler or leak. It gives
+the evaluation a concrete question: does the intermediate representation prevent
+an omitted obligation or improve actual repair and downstream validity after
+its construction and maintenance costs are counted?
+
 ## Reverse Compilation Is Not Mind Reading
 
 Existing repositories and papers often lack semantic IR. A lifter can extract
@@ -482,13 +523,19 @@ while losing every useful mechanism. Asking a second model to "act as a peer
 reviewer" may preserve the title while sharing the first model's evidence,
 training data, incentives, and blind spots.
 
-Before compilation, the stack needs a source record for the method. That record
+Before compilation, the stack needs a source record for the method. The
+method-transfer owner calls it a **Cognitive Technology Record (CTR)**: a record
+of the source practice, proposed mechanism, assumptions, evidence, limits, and
+transport obligations. The name does not qualify the method. That record
 states what problem the method is supposed to solve, how it may work, what
 assumptions it makes, where it fails, what it costs, and which parts depend on
 human judgment or legitimate authority. It also keeps negative records for
 methods that were ineffective, harmful, or impossible to transport.
 
-The target realization then becomes a qualified protocol. It says when the
+The target realization is a candidate **Qualified Cognitive Protocol (QCP)**,
+a typed, versioned execution contract. Despite the artifact's name, its supplied
+record does not establish qualification; that decision needs the indexed
+evidence for the intended use. It says when the
 method applies, what evidence it consumes, which transitions are forbidden,
 who or what owns each step, what independent checks are required, how much it
 may cost, and what it may change. A causal-analysis protocol might forbid a
@@ -496,10 +543,13 @@ correlation from becoming an established causal claim until the declared
 identification checks have passed. A code protocol might prevent commitment
 until the actual tests have run.
 
-Three questions remain separate. **Qualification** asks whether the method
-helped in a declared setting. **Assurance** asks whether it was actually
-performed. **Authority** asks what conclusions, memory writes, tools, or actions
-it may cause. A harmful method can be enforced perfectly. A beneficial method
+Three questions remain separate. Here, **method qualification** asks whether
+the method helped in a declared setting. **Method-performance assurance** is an
+evidence-backed argument that the admitted protocol was actually followed,
+within its assumptions and known observation limits. This specializes the
+book's broader assurance vocabulary; a complete receipt is not enough.
+**Authority** names the admitted decisions and effects, including memory writes
+or tool use. Any change to claim support still needs its own evidence transition. A harmful method can be enforced perfectly. A beneficial method
 can be performed badly. A beneficial and faithful method can still lack the
 right to act.
 
@@ -575,15 +625,19 @@ the domain, a universal cognitive language is unnecessary.
 
 ## What the Current Work Establishes
 
-The three routed technical owners have bounded but distinct results.
+The four routed technical owners have different evidence ceilings.
 
-Cognitive Compilation implements three public targets. Its current finite
-surface contains 45 live Lean declarations across the retained route module and
-the reachable refinement. The refinement validator accepts two fixtures,
-rejects four, follows an eight-event obligation, repair, and fresh-validation
-lifecycle, and rejects 86 mutations. The trace harness retains two valid and
-four expected-invalid compilation records. A separate semantic-preservation
-fixture remains blocked and rejects nine mutations.
+Cognitive Compilation's public targets and reachable refinement cover a
+finite obligation, repair, and fresh-validation lifecycle. Its validators
+accept authored valid fixtures and reject invalid records and mutations. A
+separate semantic-preservation fixture remains blocked. These are bounded
+record checks, not validation of open-ended source-to-target meaning.
+
+Cognitive Method Transfer and Qualification adds the CTR and QCP artifact
+contracts. The supplied package's schemas and example conform to their declared
+shapes. No CMTQ runtime or efficacy test ran, and that conformance does not
+establish useful method transport, faithful execution, legitimacy, security,
+or authority. A protocol that names a human method is still a candidate.
 
 The QCSA-adjacent implementation produced 2,340 deterministic predictions over
 60 synthetic cases, 13 systems, and three seeds, plus one 13-stage reversible
@@ -593,28 +647,26 @@ using 1.913386 times the operations. The matched-advantage and resource gates
 failed. That bounded result does not establish open-domain semantic
 preservation or refute question value generally.
 
-Relational Dimension Compilation's finite lifecycle has 42 exact Lean
-declarations, eight transitions, 54 exact repairs, seven receipt invalidations,
-two non-identifiability results, and three rejecting consumers. It preserves
-typed roles and proposal-denominator custody inside the authored model. It does
+Relational Dimension Compilation's finite lifecycle includes authored repairs,
+receipt invalidation, non-identifiability results, and rejecting consumers.
+It preserves typed roles and proposal-denominator custody inside the authored model. It does
 not establish relational truth, natural higher-order usefulness, efficiency,
 irreducibility, or a universal bounded-arity claim.
 
-Mathematical and Search Substrates has a finite adoption surface with 19 exact
-Lean declarations, four valid traces, and eight expected-invalid controls. It
-checks record and adoption boundaries. No candidate substrate A/B, learned
+Mathematical and Search Substrates has a finite adoption surface with authored
+valid traces and expected-invalid controls. It checks record and adoption boundaries. No candidate substrate A/B, learned
 model, natural workload, kernel benchmark, measured advantage, independent
 reproduction, or heterogeneous transfer is established.
 
-None of these results transfers support to the other owners. All three cores
+None of these results transfers support to the other owners. All four cores
 remain `Design rationale` at `argument`. Together they motivate an interface;
 they do not demonstrate that the joined compiler preserves meaning or improves
 artifacts.
 
 ## From a Minimum Compiler to a Cognitive Toolchain
 
-A minimum implementation can compile one accepted publication obligation into
-one target page. It needs stable obligation and non-goal identities, an
+A minimum implementation can compile one accepted summary obligation into
+one target-page candidate. It needs stable obligation and non-goal identities, an
 ambiguity ledger, field lineage, a small semantic IR, one target dialect,
 pass/failure receipts, requirement-specific validators, observed repair scope,
 dependency-closed rebuild, and retained residuals. Direct generation and a
@@ -698,7 +750,7 @@ Cognitive compilation is the discipline of making transformation accountable.
 It turns one accepted obligation into a chain of representations whose losses,
 ambiguities, validators, repairs, and residuals can be inspected.
 
-The publication artifact failed despite following a valid plan and passing
+The publication candidate failed despite its bounded source obligation and passing
 syntax checks. Semantic identities reveal which privacy and evidence
 obligations were lost. Typed relations preserve who approved what and under
 which lease. Dimension-safe lowering prevents branch or support scope from
@@ -714,5 +766,13 @@ mounts temporary context, preserves durable knowledge, tracks contradiction and
 taint, and forgets what it is no longer allowed to retain. Unit 14 develops
 Virtual Context and Durable Semantic Memory as the information boundary beneath
 the toolchain.
+[Unit 14](unit-14-virtual-context-and-durable-semantic-memory.qmd) must preserve
+input identity, source status, purpose, allowed consumers, and unresolved ambiguity
+while mounting or retaining context. Detailed results and source contracts remain
+with the [compilation](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html),
+[method-transfer](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-method-transfer-and-qualification.html),
+[relational](https://corbensorenson.github.io/asi-stack-book/chapters/relational-dimension-compilation-and-polyadic-cognition.html),
+and [substrate](https://corbensorenson.github.io/asi-stack-book/chapters/mathematical-and-search-substrates.html)
+owners.
 
 {{< include ../generated/unit-13-status.qmd >}}

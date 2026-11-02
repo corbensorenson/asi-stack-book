@@ -5,7 +5,7 @@ Status: **terminal complete** for
 
 ## Result
 
-W3 audits the exact current 84-chapter manifest, separates generated
+W3 audits its retained 84-chapter manifest corpus, separates generated
 source/evidence projections from reader-facing prose, centralizes the shared
 lifecycle method in Living Book Methodology, and replaces one inherited
 ten-chapter scaffold with domain-specific diagrams, interfaces, invariants,
@@ -17,6 +17,15 @@ The raw-QMD diagnostic is also retained (1,921 to 1,319). Its widest families ar
 not misreported as reader-facing editorial repetition.
 
 ## Method and custody
+
+On October 2, 2026 the replay was separated from current prose freshness.
+The last retained inputs at `5ae6da1ef0b653d1248f83ca633e7658ac13dc4e`
+reproduce the existing closure, including both exact token totals; this is
+not a new closure date. The artifact, original measurements and ten semantic
+reviews remain unchanged. The validator separately checks today's retained
+84-owner corpus for inherited prose/diagram/test regressions and preserved
+meaning. New owners use current chapter admission and repeated-prose gates.
+Missing history fails rather than substituting current bytes.
 
 Normalization is Unicode NFKC with CRLF converted to LF. Tokens use
 `[A-Za-z0-9_`'-]+`; n-grams are length 12 and count only
@@ -48,3 +57,7 @@ python3 scripts/build_p7_1a_w3_inheritance_guard.py
 python3 scripts/validate_p7_1a_w3_inheritance_guard.py
 python3 scripts/validate_repeated_prose.py
 ```
+
+The default builder replays without writing. `--write` refuses terminal
+replacement. `--current-output build/w3-current.json` produces an explicitly
+separate diagnostic and does not renew the original semantic reviews.

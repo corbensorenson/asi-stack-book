@@ -25,6 +25,7 @@ from build_product_projections import (
     canonical_chapters,
     sha256_file,
     write_json,
+    build_products,
 )
 from build_reader_edition import (
     filter_structure_for_narrative_spine,
@@ -257,6 +258,10 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     root_path = products / "product-projections.json"
     if not status_path.is_file() or not root_path.is_file():
         return ["rendered site is missing canonical status or product-projections manifest"]
+    try:
+        build_products(products, status_path, check=True)
+    except (ValueError, OSError, KeyError, TypeError) as error:
+        errors.append(f"installed product byte/input integrity failed: {error}")
     status = load(status_path)
     root_manifest = load(root_path)
     errors.extend(validate_against_schema(root_manifest, projection_schema, "rendered product-projections.json"))
@@ -290,6 +295,17 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
         encoding="utf-8",
         errors="ignore",
     )
+    current_reader = load(ROOT / "editions/reader_manuscript/current/manifest.json")
+    current_projection = narrative.get("current_reader", {})
+    if (
+        current_projection.get("unit_count") != current_reader.get("unit_count")
+        or current_projection.get("owner_route_count") != current_reader.get("owner_route_count")
+        or current_projection.get("manifest_sha256") != sha256_file(ROOT / "editions/reader_manuscript/current/manifest.json")
+        or narrative.get("custody_mode") != "historical_candidate_navigation"
+        or 'href="../../reader/"' not in narrative_html
+        or "Historical candidate navigation" not in narrative_html
+    ):
+        errors.append("narrative entry lost the current-reader route or historical-candidate boundary")
     reference_html = (products / "architecture-reference" / "index.html").read_text(
         encoding="utf-8",
         errors="ignore",
@@ -363,7 +379,7 @@ def main() -> None:
     if len(assigned_ids) != len(set(assigned_ids)):
         errors.append("narrative unit crosswalk assigns at least one chapter more than once")
     if set(assigned_ids) != set(canonical_ids) or len(assigned_ids) != len(canonical_ids):
-        errors.append("narrative unit crosswalk does not assign all 84 canonical chapters exactly once")
+        errors.append(f"narrative unit crosswalk does not assign all {len(canonical_ids)} canonical chapters exactly once")
     for unit in units:
         if unit.get("representative_chapter_id") not in unit.get("chapter_ids", []):
             errors.append(f"{unit.get('unit_id')}: representative chapter is absent from its unit")
@@ -376,6 +392,7 @@ def main() -> None:
         errors.append("product projection must preserve all chapter-core support states at argument")
 
     with tempfile.TemporaryDirectory(prefix="asi-products-") as temp:
+        temp = str(Path(temp).resolve())  # Resolve the owned macOS /var temp alias.
         output = Path(temp) / "products"
         output.mkdir(parents=True)
         build_into(output, status)

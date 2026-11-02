@@ -9,6 +9,9 @@ The repository stack begins learning from its patch history. It trains a model
 to predict which dependency changes will require source edits, which tests are
 likely to fail, and which rollback plan fits the release topology.
 
+This learner continues the book's illustrative repository story. The scene
+does not report a natural training run performed by this project.
+
 Halfway through the run, a worker fails. The orchestrator loads the latest
 weight checkpoint on replacement hardware. The file digest matches, the model
 produces sensible outputs, and the loss resumes near its previous value. The
@@ -45,16 +48,26 @@ evaluation, selection, authority, stop conditions, recovery, and non-claims.
 The contract does not prevent every adaptation. It distinguishes planned
 degrees of freedom from changes that create a new run, branch, or amendment.
 Learning-rate tuning within a prospectively declared range may belong to one
-campaign. Changing the data population after inspecting results does not.
+campaign. A declared adaptive data-acquisition rule may also respond to earlier
+observations while remaining within that campaign. An unplanned population
+change, or tuning from the final qualification set, cannot silently inherit
+the original analysis. Record the amendment and assess which comparisons and
+inferences remain valid.
 
 Run identity persists across distributed workers and time. Every artifact
 links to the same contract version or an explicit descendant. Logs, weights,
 optimizer shards, evaluations, interventions, failures, and checkpoints are
-events in the run, not loose files sharing a directory.
+events in the run, not loose files sharing a directory. A frozen contract may
+define an adaptive policy rather than a fixed sequence: for example, it may
+select the next development batch from observed training failures under a
+declared source and resource boundary, while leaving final qualification
+untouched. The policy and each realized choice remain identifiable.
 
 The transaction is append-only. A failed attempt remains in the denominator.
 An operator intervention records what changed and why. A restart does not
-overwrite the earlier trajectory. A selected checkpoint retains the family of
+overwrite the earlier trajectory. Retention remains purpose-bound: event
+history does not authorize copying prohibited training payloads into permanent
+logs, and required deletion may reduce later replay fidelity. A selected checkpoint retains the family of
 candidates from which it was chosen.
 
 This makes a training result challengeable. A reviewer can ask whether the
@@ -95,8 +108,10 @@ scalers, trust ratios, preconditioners, and parameter-group policy.
 
 Changing optimizer is not a cosmetic implementation swap. It changes the
 update rule, memory, communication, numerical sensitivity, and often the
-meaning of hyperparameters. Restoring weights without optimizer state does not
-continue the same trajectory.
+meaning of hyperparameters. If the optimizer requires persistent moments,
+preconditioners, or schedule state, losing that state changes the declared
+continuation. A stateless update rule need not invent additional optimizer
+state merely to fill an inventory; its other required run state still matters.
 
 The optimizer policy card records algorithm and version, equations or
 reference implementation, parameter grouping, precision, schedules, clipping,
@@ -253,10 +268,12 @@ Validators reject missing endpoints, invalid relation roles, authority
 widening, and incompatible lifecycle states.
 
 The source package’s bounded reference implementation parses, validates,
-normalizes, compares, and compiles selected LCT-IR objects. Its eleven unit
-tests passing establishes that finite implementation behavior under those
-tests. It does not establish that the primitive set is complete, that two human
-encoders will agree, or that the representation improves training.
+normalizes, compares, and compiles selected LCT-IR objects. The recorded August 9
+package check passed eleven unit tests, as documented by the
+[LCT technical owner](https://corbensorenson.github.io/asi-stack-book/chapters/learning-compute-topology-and-adaptive-process-architecture.html).
+That dated check concerns selected IR behavior, not a reproduced training run
+or a new execution performed for this editorial pass. It does not establish
+that the primitive set is complete, that two human encoders will agree, or that the representation improves training.
 
 An IR earns adoption when independent teams can encode natural processes,
 disagreements reveal useful ambiguity, interventions map to executable changes,
@@ -346,8 +363,10 @@ adapters, evaluator state, policy, environment, and pending external work.
 
 The inventory is framework- and process-specific. The contract says which
 classes exist and why. Atomicity binds mutually dependent shards to one commit.
-Digests, versions, provenance, and storage receipts make substitution or
-partial restoration detectable.
+Digests, versions, provenance, and storage receipts help detect substitution
+or a partial restoration against that declared inventory. They cannot reveal
+a state class the inventory itself omitted, or establish that an authentic
+saved value is the correct one for the intended continuation.
 
 A weight-and-step summary is not injective over complete run state. Distinct
 optimizer, sampler, or topology states can share the same visible pair. No
@@ -384,6 +403,37 @@ states, storage can lag, and external data may move. The protocol chooses
 coordination and consistency according to consequence and records residual
 windows rather than asserting perfect recovery.
 
+### Two honest ways to continue after the same failure
+
+Return to the checkpoint that loaded without its optimizer and sampler state.
+An optimizer comparison asks whether a method improved the training trajectory.
+For that consumer, resetting momentum and repeating examples changes the
+intervention. A plausible loss curve cannot restore comparability. The team
+must recover the missing state and pass its declared equivalence test, or
+retain the interrupted attempt and label the restart as a different branch.
+
+A service-recovery decision asks a narrower question: can an already admitted
+candidate continue useful operation within its output, authority, and resource
+envelope? A declared recovery policy might permit rebuilding a disposable
+cache and running bounded checks without reproducing every training step.
+If those checks pass, service can resume with the changed state recorded.
+That operational decision does not make the new training trajectory eligible
+for the original optimizer analysis.
+
+Both decisions can be reasonable. They answer different questions about the
+same failure. The expensive mistake is to demand exact experimental replay
+for every operational recovery, or to call a useful restart an equivalent
+experiment because it passed a service check. Neither a richer checkpoint
+nor a larger topology representation settles the consumer's obligation by
+itself. State, tolerance, and permitted use must meet at the recovery decision.
+
+If the framework's ordinary checkpoint already preserves the required state
+and exposes the mismatch, use that mechanism. Add a topology description
+when a consequential relation would otherwise disappear—for example, when
+the replacement workers also share an evaluator that the original independent
+branches did not. Preserve the distinction without building another control
+plane merely to rename the framework's existing one.
+
 ## Checkpoint Selection Is Not Qualification
 
 Validation can choose among checkpoints without authorizing deployment or
@@ -395,8 +445,11 @@ Choosing the best seed or time step and reporting only that result hides
 variance and selection cost. Early stopping is a policy with its own evidence,
 not an innocent implementation detail.
 
-Qualification uses an independently unopened population and separate decision
-authority. It measures the complete capability and risk contract, including
+For a prospective predictive-performance claim, qualification uses a frozen
+assessment population not consumed by checkpoint selection, with a separate
+support or deployment decision. Other obligations may need direct artifact
+inspection, structural checks, or formal evidence rather than another dataset.
+The selected checks must address the complete consumer contract, including
 recovery and cost. A training service hands a candidate to qualification; it
 cannot promote its own model.
 
@@ -424,8 +477,9 @@ unless the system reaches the contracted outcome.
 Transfer needs separate axes. A hyperparameterization that transfers across
 width may not transfer across depth, duration, architecture, data regime, or
 learning topology. A distributed schedule that works on one interconnect may
-fail elsewhere. The receipt states the tested regime and expires when material
-variables change.
+fail elsewhere. The receipt retains the tested regime as a historical observation. Its
+eligibility to support a changed regime requires assessment; changing material
+variables does not erase the earlier result.
 
 Scaling curves describe observations under a family. They do not identify a
 mechanism by themselves. A threshold-like jump can arise from metric
@@ -494,7 +548,9 @@ effective data or deployment route.
 These loci can interact. A memory supplies context to a model; a procedure
 generates traces used for training; an evaluator selects model checkpoints; a
 policy determines which feedback is admissible. The topology records these
-causal edges so a later correction can reach descendants.
+declared connections and observed dependencies so a later correction can reach
+known descendants. A typed arrow proposes a mechanism; it does not by itself
+establish the causal effect of that mechanism.
 
 Not every change should be synchronized. Local memory can preserve minority or
 domain knowledge that global parameters would flatten. A central policy can
@@ -537,8 +593,10 @@ handoff.
 The declared learning topology contains one persistent model lineage, a dated
 semantic-memory store, a procedure candidate branch, two evaluators, and one
 integration authority. Evidence from patch outcomes reaches the evaluators.
-Their judgments assign separate credit to model, memory, and procedure changes.
-No component can commit itself.
+A declared credit policy maps their judgments to proposed model, memory, and
+procedure updates. Admitted updates follow that policy; candidates cannot widen
+the integration mandate or qualify their own broader claims. Autonomous steps
+already authorized by the run contract need not seek a new approval each time.
 
 Execution maps the process across eight workers. A topology change replaces
 synchronous data parallelism with four persistent branches sharing two
@@ -568,13 +626,15 @@ or publication. Material changes route to an accountable amendment or new run.
 Stop conditions include resource ceilings, invalid data custody, contamination,
 unexpected capability, unstable or unsafe behavior, checkpoint inconsistency,
 loss of observation, and evidence that the instrument cannot answer the
-question. Stopping preserves artifacts and residuals for review; it is not a
-failed optimization event to hide.
+question. Stopping preserves permitted artifacts and residuals for review;
+restricted payloads receive their required disposition. A stopped attempt
+remains in the outcome record rather than being hidden as inconvenient data.
 
 Emergency intervention can pause workers, revoke credentials, isolate
-checkpoints, or preserve a safe baseline. The operator records the exact state
-and authority used. Resumption requires fresh custody rather than an automatic
-job retry.
+checkpoints, or preserve a currently admitted baseline. The operator records the exact state
+and authority used. Resumption rechecks current custody and the applicable
+grant. An unchanged valid grant may still permit the retry; stale permission or
+changed scope cannot be renewed merely by rescheduling the job.
 
 At closure, unused grants expire, sensitive artifacts receive disposition,
 costs and failures remain in the denominator, and every candidate enters
@@ -647,10 +707,9 @@ to a small extension of the run manifest.
 
 ## What the Current Work Establishes
 
-Governed Model Training has three implemented public targets through 20 Lean
-declarations. One authored transaction fixture, schema, and independent
-semantic validator check 21 transaction mutations, seven weight-only omitted-
-state collisions, and nine complete-encoding mutations. The finite model
+Governed Model Training uses an authored transaction fixture, schema,
+semantic validator, and finite formal model to expose omitted state and
+check the declared training boundary. The finite model
 establishes run-handoff, complete-checkpoint, selection-separation, and
 checkpoint-information consequences over authored records. It does not train
 a model or establish resume equivalence, optimizer quality, distributed fault
@@ -659,11 +718,12 @@ tolerance, scaling, or deployment.
 The natural five-arm campaign is prospectively specified and unexecuted. No
 outcome from it is reported here.
 
-Learning–Compute Topology contributes a complete source package, seven bounded
-mathematical propositions, a reference LCT-IR implementation whose supplied
-suite passes 11 of 11 tests, manually coded scoped coverage and novelty
-matrices, toy or analytical phase diagrams, and the ABVI proposal. The seven
-propositions have not been independently mechanized in this repository. The
+Learning–Compute Topology contributes a source package with bounded
+mathematical propositions, a reference LCT-IR implementation with a supplied
+test suite, scoped coverage and novelty matrices, toy or analytical phase
+diagrams, and the ABVI proposal. Source-package test results describe the
+supplied implementation, not an independently reproduced training outcome.
+The propositions have not been independently mechanized in this repository. The
 implementation covers bounded IR behavior, not neural training, distributed
 execution, online topology control, prediction, safety, or superiority.
 

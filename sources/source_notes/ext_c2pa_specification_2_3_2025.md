@@ -69,3 +69,9 @@ non-deception.
 - How should systems present partial, invalid, or conflicting histories?
 - How should provenance, watermark, detector, and contextual evidence combine
   without collapsing into one brittle truth score?
+
+## Selected passage review — 2026-10-10
+
+Reviewed C2PA **2.3** [Content Credentials specification](https://spec.c2pa.org/specifications/specifications/2.3/specs/C2PA_Specification.html), Sections 1.2 and 14.1–14.3. Assertion validation, signer-credential trust, and consumer truth assessment are distinct. The manifest states well-formed, valid, and trusted have different validation conditions; none supplies a semantic truth oracle.
+
+This selected review supports Human Reader Unit 22. It does not renew the original July review, claim 2.3 is the latest version, assess later specifications, exercise a signer or validator, or establish repository conformance. Earlier metadata and bounded evidence remain unchanged.

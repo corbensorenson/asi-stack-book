@@ -2,18 +2,18 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "artifact-graphs-audit-logs-and-replay",
   "chapter_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-  "chapter_sha256": "71b335725c29bdb1d54cac7a2750795ac1ce518238c4bf200c67ef5696fb6509",
+  "chapter_sha256": "466a5a57fb57496270c2f6b35697db91fec8d9c7864410cd7b7c22767d94cd84",
   "chapter_role": "implementation-case",
   "reader_spine_unit": "unit-15-labor-and-artifacts",
   "review_state": "digest_bound_editorial_pass",
   "concrete_scene": {
     "heading": "Worked replay: matching output, different tool lineage",
-    "actor_or_system": "Two chapter-PDF builds, one source digest, two renderer environments, a missing font-cache receipt, and an artifact graph",
+    "actor_or_system": "Two hypothetical chapter-PDF builds, one source digest, two renderer environments, a requested pinned-environment replay grade, a missing font-cache receipt, and recorded artifact lineage",
     "attempted_action": "Call matching output bytes a complete causal replay despite changed tool lineage.",
-    "observable_outcome": "Byte equality is recorded, but replay grade remains incomplete and both immutable lineages stay available for challenge.",
+    "observable_outcome": "Digest/byte agreement is recorded in the teaching example, but reconstruction of the original process does not meet its declared grade. Retaining a residual does not recreate a missing input; unrecorded causes remain outside the query.",
     "failed_or_tested_boundary": "The scene tests whether matching bytes establish complete provenance, deterministic tools, or correctness; they do not.",
     "residual_owner": "Artifact, job, source, context, tool, environment, audit, replay, test, and claim owners retain missing dependencies and challenges.",
-    "evidence_boundary": "The repository fixtures trust logged dependencies and do not establish graph completeness, receipt truth, determinism, or artifact correctness."
+    "evidence_boundary": "The teaching example adds no observed PDF experiment. Retained repository fixtures trust their recorded dependencies and do not establish graph completeness, receipt truth, determinism, or artifact correctness."
   },
   "worked_trace": {
     "heading": "Worked replay: matching output, different tool lineage",
@@ -30,9 +30,9 @@
     ],
     "maximum_inference": "Artifact identities, dependencies, replay grades, and challenges can be recorded coherently; causal completeness and artifact truth remain unproven."
   },
-  "counterexample_or_simpler_baseline": "The hash-only baseline calls matching bytes reproduced. The graph records tool and environment lineage and preserves the missing dependency.",
-  "readable_claim": "An artifact is trustworthy only to the extent that its exact parents, inputs, tools, context, tests, observations, and unresolved differences can be followed and challenged.",
-  "normative_rule": "Bind every produced artifact to its parent job, source and context versions, transaction, compiler, tool, claim, test, audit, environment, and replay grade. Replay creates a new observation; it never overwrites the original or turns matching bytes into proof of causal completeness.",
+  "counterexample_or_simpler_baseline": "A hash comparison can answer its identity question without reproducing the original process. A competent repository with pinned inputs, retained build logs and linked corrections may implement all the required relation at lower cost than a separate graph service.",
+  "readable_claim": "A traceable artifact exposes its parents, inputs, tools, context, tests, observations, and unresolved differences for challenge; traceability alone does not establish its truth or fitness for reuse.",
+  "normative_rule": "Bind each admitted artifact revision to its applicable parent job, sources, context, transformations, tools, observations, consumers, and purpose-specific replay grade; unknown or unavailable links stay explicit. Playback inspects retained records, while reexecution produces a new observation within declared coverage. Neither overwrites history or earns support from byte equality. Changed dependencies trigger review of affected uses; authority, evidence transitions, and release decisions remain with their named owners.",
   "formal_binding": {
     "claim_id": "artifact-graphs-audit-logs-and-replay.core",
     "support_state": "argument",
@@ -45,7 +45,7 @@
   ],
   "caveat_consolidation": {
     "local_caveat": "The example states once that graph records trust their inputs.",
-    "consolidated_disposition": "Lineage, event truth, completeness, determinism, replay, tests, claims, artifacts, support, and release remain distinct.",
+    "consolidated_disposition": "Canonical records are not world truth; asserted/observed lineage, replay availability, current reuse eligibility, permitted retention, accepted claim support, and release authority have distinct scopes. The common noninheritance rule is linked rather than inferred from a graph.",
     "distinct_limitations_preserved": true
   },
   "bookkeeping_surface_disposition": "The source, renderer, font-cache, and output identities stay reader-facing; complete graph schemas remain in formal evidence.",
@@ -58,13 +58,14 @@
     "release_effect": "none"
   },
   "editorial_diagnostics": {
-    "mega_sentence_disposition": "The short claim makes challengeable lineage the chapter spine.",
+    "mega_sentence_disposition": "The operational rule separates identity/lineage, purpose-specific replay, current-use review, evidence transitions, and release decisions.",
     "hedge_disposition": "One trust boundary follows the concrete replay.",
-    "table_disposition": "Replay-grade tables remain because byte, causal, and environment replay differ."
+    "table_disposition": "Reference and inventory tables remain; four selected diagrams explain record review, dependency impact, canon/media custody, and separate decision owners rather than decorate field inventories."
   },
   "non_claims": [
     "Matching bytes do not establish complete causal replay.",
     "An artifact graph does not prove its receipts or artifact correctness.",
-    "The editorial revision does not move support or release state."
+    "The editorial revision does not move support or release state.",
+    "The 2026-10-11 full source/diagram and three-design-rule reconciliation is not fresh source/proof reproduction, a new artifact experiment, a deployed graph, deletion closure, accepted support movement, independent review, or release."
   ]
 }

@@ -415,4 +415,9 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    from admission_guard import canonical_access
+    try:
+        with canonical_access(ROOT):
+            main()
+    except (OSError, ValueError) as error:
+        raise SystemExit(f"Book base validation refused: {error}")

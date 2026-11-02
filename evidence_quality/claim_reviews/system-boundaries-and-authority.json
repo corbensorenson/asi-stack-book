@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/system-boundaries-and-authority.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 50,
+    "prose_candidates_adjudicated": 52,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1\u2013C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-10-11 scoped technical terminology review adjudicates changed paragraphs and gate drawings against existing atom scopes, confounds and non-claims; retired sentence reviews remain in prose_review_lineage. Prior source/proof reviews retain their historical scope. No source rereproduction, new theorem, runtime experiment, support transition or release is claimed."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -1158,21 +1158,6 @@
     }
   },
   "prose_candidate_dispositions": {
-    "system-boundaries-and-authority.prose.e5312824e9d2": {
-      "state": "duplicate_of_atom",
-      "rationale": "Plain-language causal motivation for the no-ambient-authority core boundary.",
-      "target_atom_id": "system-boundaries-and-authority.core"
-    },
-    "system-boundaries-and-authority.prose.7606bbf70913": {
-      "state": "duplicate_of_atom",
-      "rationale": "Examples of competence and context failing to create external-effect authority.",
-      "target_atom_id": "system-boundaries-and-authority.core"
-    },
-    "system-boundaries-and-authority.prose.60270d308475": {
-      "state": "duplicate_of_atom",
-      "rationale": "Reader-language restatement of downstream denial and revocation visibility.",
-      "target_atom_id": "system-boundaries-and-authority.invariant.008"
-    },
     "system-boundaries-and-authority.prose.016d905f539a": {
       "state": "duplicate_of_atom",
       "rationale": "Applies the no-ambient-authority core to efficient route selection.",
@@ -1233,11 +1218,6 @@
       "state": "historical_or_source_report",
       "rationale": "VIEA source-synthesis introduction to authority ownership."
     },
-    "system-boundaries-and-authority.prose.762407bddbdd": {
-      "state": "duplicate_of_atom",
-      "rationale": "Names the minimum authority-transition artifact.",
-      "target_atom_id": "system-boundaries-and-authority.minimum.001"
-    },
     "system-boundaries-and-authority.prose.14bedae2c02b": {
       "state": "duplicate_of_atom",
       "rationale": "Restates scope narrowing under delegation.",
@@ -1247,11 +1227,6 @@
       "state": "duplicate_of_atom",
       "rationale": "Replay/trace/grant/revocation identity continuity instance.",
       "target_atom_id": "system-boundaries-and-authority.invariant.004"
-    },
-    "system-boundaries-and-authority.prose.69328909f147": {
-      "state": "duplicate_of_atom",
-      "rationale": "Restates target-domain approval and no ambient inheritance.",
-      "target_atom_id": "system-boundaries-and-authority.invariant.005"
     },
     "system-boundaries-and-authority.prose.24772504fcf1": {
       "state": "duplicate_of_atom",
@@ -1343,10 +1318,6 @@
       "rationale": "Mature-deployment form of downstream denial visibility.",
       "target_atom_id": "system-boundaries-and-authority.invariant.008"
     },
-    "system-boundaries-and-authority.prose.ffa4f64f3d0a": {
-      "state": "nonmaterial_explanation",
-      "rationale": "Current support ceiling and exact evidence required before stronger authority claims."
-    },
     "system-boundaries-and-authority.prose.c4b67b700dac": {
       "state": "editorial_or_question",
       "rationale": "Handoff sentence into the failure-radar chapter rather than a new authority claim."
@@ -1371,31 +1342,264 @@
     },
     "system-boundaries-and-authority.prose.cb57367916f3": {
       "state": "nonmaterial_explanation",
-      "rationale": "Incomplete line-wrap fragment introduced by the C1–C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
+      "rationale": "Incomplete line-wrap fragment introduced by the C1\u2013C8 Phase 1 prose integration. Its complete proposition is already bounded by the chapter's reviewed structured atoms and creates no independent support-bearing claim."
     },
     "system-boundaries-and-authority.prose.689731f414de": {
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.core`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "system-boundaries-and-authority.core"
     },
-    "system-boundaries-and-authority.prose.d96146fa8867": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "system-boundaries-and-authority.failure_mode.007"
-    },
-    "system-boundaries-and-authority.prose.d2af07d4f30f": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked authority check: a scope widens between plan and effect` to existing reviewed atom `system-boundaries-and-authority.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "system-boundaries-and-authority.invariant.003"
-    },
     "system-boundaries-and-authority.prose.ab942ca1d868": {
       "state": "historical_or_source_report",
       "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+    },
+    "system-boundaries-and-authority.prose.ed3440e730d6": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: The full paragraph distinguishes an applicable existing grant from helpfulness alone; it narrows the no-ambient-authority rule without issuing permission.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.e9394641eaf5": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Line-wrap fragment in the neighbor-boundary paragraph. Its complete proposition restates the core\u2019s existing non-claims about well-formed grant records versus authentic enforcement and recovery.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.71119b1f5b33": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: The routing clause restates no silent authority expansion: selection cannot borrow executor power beyond the current grant.",
+      "target_atom_id": "system-boundaries-and-authority.invariant.001"
+    },
+    "system-boundaries-and-authority.prose.0278944ccca6": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Explicit scope limit on the core\u2019s denial record: neither semantic refusal accuracy nor runtime enforcement follows from recorded fields. This is already covered by the core\u2019s confounds and non-claims.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.af2960a46954": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Full operational paragraph requires an applicable grant and distinguishes its finite rejection semantics from qualified runtime enforcement; confidence cannot supply permission.",
+      "target_atom_id": "system-boundaries-and-authority.invariant.003"
+    },
+    "system-boundaries-and-authority.prose.b0108f64f0b7": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Restates the core\u2019s explicit TOCTOU/network/clock confound. The accompanying two orderings are proposed conditions, not a new runtime observation or distributed theorem.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.01d98cd1a8d3": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: The full remote-worker paragraph stays within the core\u2019s existing distributed-revocation exclusion and calls for qualification of a declared offline envelope.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.4e263c619c6e": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Continuation of that remote-worker scope limit: immediate revocation cannot be inferred from stale cached state; no partition experiment is claimed.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.5979b9ebe863": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: The figure explanation restates the conjunction of caller ceiling and matching current grant; it preserves the core\u2019s record-versus-enforcement boundary.",
+      "target_atom_id": "system-boundaries-and-authority.core"
+    },
+    "system-boundaries-and-authority.prose.0a45f6136cb6": {
+      "state": "duplicate_of_atom",
+      "rationale": "2026-10-11 scoped terminology/diagram review: Target-domain authorization may be an existing standing grant; the requirement is not a new approval click per handoff.",
+      "target_atom_id": "system-boundaries-and-authority.invariant.005"
     }
   },
   "non_claims": [
     "Completing this semantic sweep does not establish enforcement, security, safety, live revocation, trusted identity or time, complete mediation, hardware roots, or support promotion.",
     "The five newly manifest-owned obligations and narrowed core are claim repairs, not positive evidence.",
     "Duplicate and source-report dispositions preserve canonical ownership and evidence boundaries; they do not prove the target atoms or source claims."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.e5312824e9d2",
+      "retired_sentence": "The authority boundary prevents efficiency from turning into ambient permission.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Plain-language causal motivation for the no-ambient-authority core boundary.",
+        "target_atom_id": "system-boundaries-and-authority.core"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:58"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.7606bbf70913",
+      "retired_sentence": "A planner can produce a useful plan, a model can produce a plausible answer, and a memory system can surface relevant context, but none of those facts should automatically authorize external action.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Examples of competence and context failing to create external-effect authority.",
+        "target_atom_id": "system-boundaries-and-authority.core"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:58"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.60270d308475",
+      "retired_sentence": "That stop makes permission real because denied authority must stay denied.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Reader-language restatement of downstream denial and revocation visibility.",
+        "target_atom_id": "system-boundaries-and-authority.invariant.008"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:64"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.d96146fa8867",
+      "retired_sentence": "Missing, expired, revoked, over-ceiling, or scope-mismatched authority produces no effect and cannot be repaired by model confidence.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `system-boundaries-and-authority.failure_mode.007`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "system-boundaries-and-authority.failure_mode.007"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:97"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.d2af07d4f30f",
+      "retired_sentence": "If broader work is desirable, a new principal-approved grant must name that repository and operation.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked authority check: a scope widens between plan and effect` to existing reviewed atom `system-boundaries-and-authority.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "system-boundaries-and-authority.invariant.003"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:101"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.762407bddbdd",
+      "retired_sentence": "An Authority Transition Record is the mechanism that must exist before a layer can cross a boundary.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Names the minimum authority-transition artifact.",
+        "target_atom_id": "system-boundaries-and-authority.minimum.001"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:133"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.69328909f147",
+      "retired_sentence": "A cross-domain handoff requires the target domain owner's approval; possession of a source-domain grant is not automatic authority in the target.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Restates target-domain approval and no ambient inheritance.",
+        "target_atom_id": "system-boundaries-and-authority.invariant.005"
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:199"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.ffa4f64f3d0a",
+      "retired_sentence": "The synthetic harnesses exercise narrow transition-gate, ambient-authority, revoked-receipt, expired-approval, SCIF inactive approval, and repository trace behavior, but authority support remains at `argument` until deployed denial paths, live revocation propagation, runtime adapter enforcement, tool-call traces, and adversarial confused-deputy probes show that authority cannot expand silently by implication.",
+      "preserved_disposition": {
+        "state": "nonmaterial_explanation",
+        "rationale": "Current support ceiling and exact evidence required before stronger authority claims."
+      },
+      "replacement_candidate_ids": [
+        "system-boundaries-and-authority.prose.ed3440e730d6",
+        "system-boundaries-and-authority.prose.e9394641eaf5",
+        "system-boundaries-and-authority.prose.71119b1f5b33",
+        "system-boundaries-and-authority.prose.0278944ccca6",
+        "system-boundaries-and-authority.prose.af2960a46954",
+        "system-boundaries-and-authority.prose.b0108f64f0b7",
+        "system-boundaries-and-authority.prose.01d98cd1a8d3",
+        "system-boundaries-and-authority.prose.4e263c619c6e",
+        "system-boundaries-and-authority.prose.5979b9ebe863",
+        "system-boundaries-and-authority.prose.0a45f6136cb6"
+      ],
+      "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
+      "recorded_on": "2026-10-11",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:321"
+    }
   ]
 }

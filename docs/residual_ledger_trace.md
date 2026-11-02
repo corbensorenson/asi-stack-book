@@ -42,5 +42,23 @@ Non-claims:
 - This does not prove safety.
 - This does not promote any chapter core claim.
 - This does not prove model quality or benchmark performance.
-- This improves drift detection and residual-surface accountability for the
-  book's current local artifacts only.
+- This preserves residual-surface accountability for the historical input
+  snapshot; it does not attest current artifact freshness.
+
+## Historical custody and current diagnostics
+
+The dated result was last committed at
+`38a69c05ab310b7c34cacdbe93b70040b26236bd`. All five source-artifact hashes
+match that exact custody snapshot. Default validation recomputes those inputs
+from Git and rejects receipt drift without substituting current ledger bytes.
+The dated file has earlier revisions in Git; preserving its latest committed
+version does not assert that every byte was first recorded on July 3.
+
+For a current-input check, use:
+
+```bash
+python3 scripts/validate_residual_ledger_trace.py --current-output build/residual_ledger_trace/current.json
+```
+
+This writes a dated diagnostic under ignored `build/`, retains the old result,
+and grants no evidence promotion. `--write-result` now fails closed.

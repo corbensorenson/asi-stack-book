@@ -15,6 +15,8 @@ import re
 from pathlib import Path
 
 
+from projection_files import ProjectionFiles
+
 ROOT = Path(__file__).resolve().parents[1]
 STRUCTURE = ROOT / "book_structure.json"
 INVENTORY = ROOT / "sources" / "source_inventory.json"
@@ -105,7 +107,8 @@ def source_rows(source_ids: list[str], inventory: dict[str, dict], chapter: dict
     return "\n".join(rows)
 
 
-def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
+def synchronize_chapter_source_crosswalks(write: bool = False, files: ProjectionFiles | None = None) -> int:
+    files = files if files is not None else ProjectionFiles()
     chapters, inventory = load_records()
     changed = 0
     for chapter in chapters:
@@ -114,9 +117,9 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
         if not isinstance(relative, str) or not source_ids:
             continue
         path = ROOT / relative
-        if not path.exists():
+        if not files.exists(path):
             continue
-        original = path.read_text(encoding="utf-8")
+        original = files.text(path)
         # Older generated blocks could land after a late authored insertion and
         # therefore outside the Source crosswalk. Remove them globally before
         # computing the one canonical block location.
@@ -136,7 +139,7 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
             if text != original:
                 changed += 1
                 if write:
-                    path.write_text(text, encoding="utf-8")
+                    files.write(path, text)
             continue
         replacement = source_rows(missing, inventory, chapter) if missing else ""
         if generated:
@@ -157,7 +160,7 @@ def synchronize_chapter_source_crosswalks(write: bool = False) -> int:
         if updated != original:
             changed += 1
             if write:
-                path.write_text(updated, encoding="utf-8")
+                files.write(path, updated)
     return changed
 
 

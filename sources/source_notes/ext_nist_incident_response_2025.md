@@ -11,6 +11,15 @@
 | DOI | 10.6028/NIST.SP.800-61r3 |
 | Ingestion basis | Official final publication page, abstract, revision notice, and NIST incident-response lifecycle explanation inspected; no compliance assessment, exercise, or local response implementation performed. |
 
+## Bounded primary-source follow-up — 2026-10-11
+
+Read [the final primary PDF](https://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-61r3.pdf),
+§2.1's CSF lifecycle explanation and §2.2's opening roles discussion (printed
+pp. 4–7). These passages ground the conventional lifecycle comparison in
+`docs/defended_contribution_prior_art_positioning.md`. This is a selected
+passage review, not a complete standard assessment. No incident exercise,
+AI-specific transfer, compliance, recovery, or support result was produced.
+
 ## Thesis
 
 Incident response should be integrated into organization-wide cybersecurity

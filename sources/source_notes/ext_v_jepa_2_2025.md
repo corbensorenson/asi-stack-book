@@ -50,6 +50,7 @@ benchmark, robot experiment, or timing result.
 - `data-engines-continual-learning-and-unlearning`
 - `integrated-reference-architecture`
 - `governed-world-models-and-reality-grounding`
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture`
 
 ## Claims To Add Or Update
 
@@ -65,3 +66,10 @@ benchmark, robot experiment, or timing result.
 - What representation-space residuals should block physical action?
 - How should a world-model checkpoint inherit deletion and provenance duties?
 - Which comparator separates predictive state quality from controller quality?
+
+## Mapping Follow-up — 2026-11-02
+
+The substrate owner reuses this existing note for the distinction between video
+representation pretraining, action-conditioned prediction and task/control
+qualification. This adds a chapter route, not a fresh V-JEPA 2 passage review,
+updated performance claim, model execution or support transition.

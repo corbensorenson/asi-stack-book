@@ -10,12 +10,17 @@ import json
 from pathlib import Path
 
 import jsonschema
+from repository_custody import historical_sha256
 
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "release_records/2026-07-14-post-v2-3-handoff-reader-formats-evidence-renewal-no-public-release.json"
 SCHEMA = ROOT / "schemas/post_v2_3_handoff_reader_formats_evidence_renewal_terminal_record.schema.json"
 SUBSTANTIVE_COMMIT = "f93a4d8fa51ac7cafa0db180d7360ee1fb2c498c"
+# Last committed revision of this receipt; all 18 recorded hashes were
+# independently reconciled to this snapshot. The substantive source commit is
+# a different identity and does not contain every later closure document.
+CUSTODY_COMMIT = "a700382b648b65adcf044c126d1313aac696a569"
 CLOSURE_PATHS = [
     "docs/post_v2_3_clean_handoff_receipt.md",
     "docs/post_v2_3_handoff_reader_formats_evidence_renewal_attestation_receipt.md",
@@ -93,7 +98,8 @@ def build() -> dict:
             "support_state_effect": "none",
         },
         "closure_artifacts": [
-            {"path": path, "sha256": sha(ROOT / path)} for path in CLOSURE_PATHS
+            {"path": path, "sha256": historical_sha256(CUSTODY_COMMIT, path)}
+            for path in CLOSURE_PATHS
         ],
         "publication_effect": {
             "source_tag_created": False,
@@ -144,7 +150,7 @@ def main() -> None:
     args = parser.parse_args()
     expected = build()
     if args.write:
-        OUT.write_text(json.dumps(expected, indent=2) + "\n", encoding="utf-8")
+        raise SystemExit("terminal custody is frozen; --write cannot rewrite this historical receipt")
     if not OUT.is_file():
         raise SystemExit("terminal record absent; run with --write")
     actual = load(OUT)
@@ -156,6 +162,7 @@ def main() -> None:
         ("unsafe denominator laundering", lambda x: x["evidence_disposition"].__setitem__("useful_releases", 2)),
         ("erratum erased", lambda x: x["evidence_disposition"].__setitem__("metadata_erratum", "none")),
         ("artifact omission", lambda x: x.__setitem__("closure_artifacts", x["closure_artifacts"][:-1])),
+        ("historical digest substitution", lambda x: x["closure_artifacts"][0].__setitem__("sha256", "0" * 64)),
     ]
     for label, mutate in mutations:
         candidate = copy.deepcopy(actual)
@@ -164,7 +171,7 @@ def main() -> None:
             failures.append(f"negative mutation accepted: {label}")
     if failures:
         raise SystemExit("Post-v2.3 terminal record failed:\n - " + "\n - ".join(failures))
-    print("Post-v2.3 terminal record passed: exact local HTML+DOCX disposition, EPUB/PDF blocked, 4-source/9-control renewal, 32-candidate flagship no-change, YELLOW Theseus import, v2.3.0 unchanged, and 6 rejecting mutations.")
+    print("Post-v2.3 historical terminal custody passed at a700382b648b: exact local HTML+DOCX disposition, EPUB/PDF blocked, 4-source/9-control renewal, 32-candidate flagship no-change, YELLOW Theseus import, v2.3.0 unchanged, and 7 rejecting mutations. This is not current HEAD attestation.")
 
 
 if __name__ == "__main__":

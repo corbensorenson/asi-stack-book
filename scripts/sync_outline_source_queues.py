@@ -14,6 +14,8 @@ import re
 from pathlib import Path
 
 
+from projection_files import ProjectionFiles
+
 ROOT = Path(__file__).resolve().parents[1]
 OUTLINE = ROOT / "docs" / "book_outline.md"
 STRUCTURE = ROOT / "book_structure.json"
@@ -51,9 +53,10 @@ def reconciliation_row(source_ids: list[str]) -> str:
     )
 
 
-def synchronize_outline_source_queues(write: bool = False) -> int:
+def synchronize_outline_source_queues(write: bool = False, files: ProjectionFiles | None = None) -> int:
+    files = files if files is not None else ProjectionFiles()
     expected = manifest_sources()
-    text = OUTLINE.read_text(encoding="utf-8")
+    text = files.text(OUTLINE)
     starts = [match.start() for match in SECTION_RE.finditer(text)]
     replacements: list[tuple[int, int, str]] = []
 
@@ -77,7 +80,8 @@ def synchronize_outline_source_queues(write: bool = False) -> int:
 
         if generated:
             replacement = reconciliation_row(supplemental) + "\n" if supplemental else ""
-            replacements.append((start + queue_start + generated.start(), start + queue_start + generated.end(), replacement))
+            if generated.group() != replacement:
+                replacements.append((start + queue_start + generated.start(), start + queue_start + generated.end(), replacement))
         elif supplemental:
             insertion = "\n" + reconciliation_row(supplemental) + "\n"
             replacements.append((start + draft_start, start + draft_start, insertion))
@@ -88,7 +92,7 @@ def synchronize_outline_source_queues(write: bool = False) -> int:
     for start, end, replacement in reversed(replacements):
         text = text[:start] + replacement + text[end:]
     if write:
-        OUTLINE.write_text(text, encoding="utf-8")
+        files.write(OUTLINE, text)
     return len(replacements)
 
 

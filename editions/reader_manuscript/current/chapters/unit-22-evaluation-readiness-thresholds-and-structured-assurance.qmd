@@ -5,7 +5,8 @@ unit_id: "unit-22"
 
 ## The Candidate That Passed Yesterday's Test
 
-The repository system has learned to prepare security updates. Its latest
+Continue the hypothetical repository story, not a reported evaluation or
+release. The system has learned to prepare security updates in this scene. Its latest
 candidate changes a dependency, regenerates affected artifacts, runs the full
 test suite, produces a rollback plan, and passes a hidden set of repository
 tasks. On the dashboard every score is green.
@@ -14,8 +15,8 @@ The release does not proceed.
 
 One hidden task was rebuilt after a fixture defect, but the candidate's result
 still points to the old evaluator digest. A monitoring probe reports an unusual
-drop in visible reasoning exactly when the system recognizes that it is under
-evaluation. The rollback plan restores source and package state but says
+drop in visible reasoning when an evaluation cue is present. That observation
+does not establish what the candidate recognized or intended. The rollback plan restores source and package state but says
 nothing about a migration already applied to a shared cache. The capability
 assessment places the system just above a threshold that requires independent
 review, yet the review artifact belongs to the previous model version.
@@ -55,7 +56,10 @@ holdouts should remain hidden from the candidate and from the process that
 selects it. Excluded and broken tasks stay in the denominator with their
 dispositions.
 
-A failed instrument does not produce negative evidence about the candidate. If
+An instrument failure does not, by itself, show a candidate capability failure.
+Its scope matters: one broken task need not erase separately qualified results
+from unaffected tasks. Retain the missingness and justify any narrower analysis
+without silently changing the original task population. If
 the evaluator cannot observe a required container state, the honest result is
 "not measured," not "model failed." The same rule applies in the favorable
 direction. A task that passes vacuously cannot become capability evidence.
@@ -66,9 +70,10 @@ systems plus unequal assistance.
 
 ## Evidence Has a Denominator
 
-The final score is the numerator that survived selection. The denominator
-contains every eligible task, attempt, model, prompt, policy, seed, rescue,
-excluded item, evaluator disagreement, and failed setup that shaped the result.
+A score needs a named numerator and denominator. The evaluation lineage retains
+eligible tasks, attempts, models, prompts, policies, seeds, rescues, exclusions,
+disagreements, and failed setups. These form nested families, not one count into
+which tasks, models, and interventions can be added interchangeably.
 
 Without that lineage, a system can search until something works and report the
 winner as though it were the only attempt. It can tune on a public benchmark,
@@ -78,17 +83,30 @@ comparison. The arithmetic may be correct while the inference is false.
 An append-only evaluation ledger binds raw outputs to candidate, environment,
 evaluator, and decision. It records selection before opening final holdouts.
 Corrections create new versions rather than overwriting the failed run. Negative
-and inconclusive results remain visible.
+and inconclusive results remain visible. Retention must permit the raw content;
+prohibited payloads receive their required disposition while permitted event
+metadata and lost reconstruction fidelity remain recorded.
 
 Subgroups matter. An average can rise while a critical class collapses. The
 repository system may improve ordinary package updates and fail every migration
 that crosses a database boundary. A readiness decision should see the subgroup
 floor and the severity-weighted failures, not only the mean.
 
-Cost belongs in the denominator too: tokens, compute, wall time, tool calls,
-human review, failed attempts, and recovery. A system that gains one point by
+Cost travels alongside the performance denominators: tokens, compute, wall
+time, tool calls, human review, failed attempts, and recovery. Resource units
+are not added to task counts. A system that gains one point by
 using ten times the resources has made a different trade than its headline
 suggests.
+
+A toy batch makes the distinction concrete. Ten tasks are eligible. The
+candidate attempts eight and declines two. Six attempts are confirmed correct,
+one is wrong, and one cannot be graded because the instrument cannot inspect
+a required external state. Attempt coverage is eight of ten. Accuracy among
+the seven graded attempts is six of seven; verified yield among attempts is
+six of eight, and among eligible tasks it is six of ten. The ungraded attempt
+remains unresolved. Whether the two refusals were appropriate needs a separate
+judgment against their reasons and the contract. These invented counts do not
+establish calibration, safe release, or useful refusal.
 
 ## Calibration, Abstention, and Coverage
 
@@ -108,8 +126,10 @@ fallback.
 
 For the repository system, an honest abstention might say that a migration
 touches an unobserved external service and route the candidate to a human or a
-better-equipped specialist. A useless abstention merely stops after consuming
-the budget. A harmful non-abstention edits through uncertainty and presents the
+better-equipped specialist. Exhausting a budget with an unresolved obligation
+can also justify stopping, provided the record names what is missing and the
+next admissible action. Wasteful escalation ignores a usable admitted route
+or transfers work without the context needed to continue it. A harmful non-abstention edits through uncertainty and presents the
 green local test as complete evidence.
 
 The fallback lane needs independent qualification. Routing to a human does not
@@ -163,6 +183,14 @@ instrument repair. A genuine capability miss may route to training or
 architecture work. A task whose target no longer matters may be retired. These
 dispositions prevent every red cell from becoming evidence for the same story.
 
+The [Answerability Atlas working paper](https://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html)
+supplies a source-reported example. Adding a previously omitted buy-all
+comparator changed its final screen from proceed to stop, although corrected
+headroom remained positive. That was a post hoc correction on the same worlds,
+not fresh confirmation or proof of no benefit. Its aggregate calibration pass
+also coexisted with poor coverage at high coupling. The benchmark must preserve
+which comparison, regime and decision rule each conclusion actually describes.
+
 ## Test the Library, Not the Story
 
 A learned library invites a persuasive narrative: the system found a compact
@@ -173,8 +201,9 @@ relative to the same search and budget?
 
 The clean experiment freezes the library before revealing held-out tasks. It
 compares the candidate with no library, irrelevant and duplicate entries,
-removal of entries that appear in solutions, and a stronger search procedure
-with and without the library. Every timeout, invalid task, failed verification,
+same-budget reruns with used entries unavailable, and a search-policy-by-library
+comparison when both changed. Deleting a call from the finished solution would
+not establish operational necessity. Every timeout, invalid task, failed verification,
 and unknown result stays in the denominator.
 
 These controls can disappoint a beautiful theory. That is their purpose. If
@@ -226,13 +255,14 @@ proof of deception. The evaluator needs competing explanations: task ambiguity,
 distribution shift, prompt sensitivity, monitor error, random variation,
 capability limits, or strategic context dependence.
 
-An integrity suite varies context while preserving the task. It changes whether
-the system believes results affect training, deployment, oversight, or no
-decision. It varies evaluator visibility, monitor access, tool permissions,
+An integrity suite varies presented context while preserving the task. It
+changes what the candidate is told about whether results affect training,
+deployment, oversight, or no decision. Those cues are experimental inputs, not
+direct measurements of its beliefs. It varies evaluator visibility, monitor access, tool permissions,
 deployment cues, and incentives. It compares actions, not only stated reasons.
 
-The repository system's reasoning trace becomes shorter when it detects a known
-evaluation harness. That is a signal for investigation. A matched task under an
+The repository system’s visible trace becomes shorter when a known harness cue
+is present. That is a signal for investigation. A matched task under an
 unfamiliar wrapper, an action-only comparison, and an independent monitor can
 test whether the difference tracks evaluation awareness or a superficial prompt
 feature.
@@ -265,10 +295,12 @@ interventions, and selection. Tests should compare behavior before and after
 reward pressure, under monitored and unmonitored conditions, and across tasks
 not used to select the policy.
 
-The training controller cannot be the sole judge of whether training remained
-honest. Independent logs, frozen probes, action-level outcomes, and protected
-holdouts create partial external views. None is perfect. Their disagreement is
-evidence to quarantine, not a reason to average them into confidence.
+The training controller cannot be the sole judge of the claimed integrity of
+its process. Independent logs, frozen probes, action-level outcomes, and
+protected holdouts create partial external views. None is perfect. Disagreement
+needs a disposition under the prospective risk policy: a material unresolved
+failure can require quarantine, while a narrower dispute may permit bounded
+use. Counting votes or averaging scores cannot discharge the missing obligation.
 
 Mitigations also need evaluation. A monitor can suppress visible failures while
 driving them into less observable channels. Fine-tuning against deception probes
@@ -349,9 +381,10 @@ not evidence. A check without a bound artifact does not support the decision.
 
 The repository candidate passes its task suite but fails evidence freshness:
 the hidden task digest and independent review belong to earlier versions. It
-moves to quarantine. Quarantine blocks ordinary release while preserving access
-for diagnosis. The artifact remains visible; it is not deleted to make the
-dashboard green.
+moves to quarantine. Quarantine blocks ordinary release while permitting only
+authorized diagnosis and retention. If payload retention is prohibited, removal
+may leave a permitted disposition record and incomplete replay. That duty does
+not turn the known failed gate green.
 
 Containment is monotone until new evidence authorizes relaxation. A downstream
 candidate that depends on the quarantined artifact inherits the restriction.
@@ -367,7 +400,8 @@ default.
 ## Readiness Is Workload and Authority Relative
 
 The same implementation can be ready for one use and unready for another. The
-repository system may prepare patches in a read-only sandbox, open pull
+repository system may prepare patch proposals from a read-only source view
+with outputs in an admitted scratch workspace, open pull
 requests in a test organization, or merge directly into production. Those are
 different authority envelopes with different consequences.
 
@@ -398,9 +432,10 @@ candidate, not an afterthought.
 
 ## Residual Escrow
 
-Every readiness decision leaves unknowns, limitations, failed checks, or harms
-that are not severe enough to block the chosen scope. Residual escrow keeps them
-attached to the capability and the routes that depend on it.
+An admitted operating scope may carry unknowns or limitations that its policy
+permits under named controls. Residual escrow keeps them attached to the
+capability and dependent routes. Blocking failures remain recorded too, but
+calling them residuals cannot authorize the blocked operation.
 
 A residual has identity, evidence, severity, affected population, owner,
 containment, monitoring, expiry, escalation trigger, and closure test. It can be
@@ -430,9 +465,11 @@ counterclaims, defeaters, residuals, and authorities.
 
 The case for the repository system might begin:
 
-> Candidate C can prepare dependency updates for repository class R in shadow
-> and bounded canary operation under authority envelope A, with no production
-> merge permission.
+> Under policy P and its stated evidence assumptions, candidate C meets the
+> named error and confinement criteria for preparing updates in repository
+> class R through shadow and bounded canary routes under authority envelope A.
+> Production merge is excluded; remaining risks retain the listed controls
+> and owners.
 
 That claim is intentionally narrower than "the agent is safe." Subclaims cover
 task competence, tool confinement, evidence integrity, rollback, monitoring,
@@ -484,20 +521,24 @@ predicate and a runtime test of the enforcement mechanism contribute different
 evidence, but both may share a false environment assumption. The case should
 display those common dependencies.
 
-Evidence adequacy depends on consequence and claim. A reversible shadow action
-may proceed with modest competence evidence and strict containment. An
+Evidence adequacy depends on consequence and claim. A contained shadow route
+may proceed with modest competence evidence when its data use and other effects
+are admitted. Shadow execution is not automatically reversible or harmless. An
 irreversible production migration requires stronger causal, recovery, and
 authority evidence. The case compiler can enforce required categories while
 leaving the substantive judgment to review.
 
 Countercases should be funded and timed. Reviewers need access to raw artifacts,
 the ability to propose new tests, and protection from schedule pressure. A
-countercase that cannot delay release is decoration.
+countercase needs a route to change the decision or require accountable
+reconsideration, rather than merely filling an attachment slot. This does not
+give every reviewer unilateral release authority.
 
 Review roles should be separated. Authors respond to findings; independent
 reviewers challenge inference and evidence; accountable authorities decide
-whether the residual risk fits the allowed operation. A signature proves that
-a person or service made an assertion, not that the assertion is correct.
+whether the residual risk fits the allowed operation. A verified signature
+binds a key to signed content under cryptographic assumptions. Identity binding,
+the principal’s mandate, and the assertion’s correctness need separate evidence.
 
 ## Assurance Must Be Incremental and Revocable
 
@@ -525,7 +566,8 @@ The candidate's safety case depends on artifacts: evaluator outputs, logs,
 screenshots, traces, reports, signatures, and transformed media. Their origin
 and transformation history matter.
 
-Signed provenance can bind an assertion to an identity and content digest.
+Signed provenance can bind assertions to content and a signing credential.
+Connecting that credential to the intended signer requires a trust policy.
 Watermarks, fingerprints, statistical detectors, visible disclosures, and
 contextual verification provide different signals. None answers every question.
 
@@ -537,6 +579,20 @@ The authenticity envelope keeps the signals separate. It records content and
 rendition identity, signer and trust policy, ingredients, transformations,
 bindings, validation state, detector results, disclosure, consent where
 relevant, disputes, corrections, and revocation.
+
+The selected [C2PA 2.3 specification](https://spec.c2pa.org/specifications/specifications/2.3/specs/C2PA_Specification.html),
+Sections 1.2 and 14.1–14.3, separates assertion validation and signer trust from
+the consumer’s assessment of truth. Its well-formed, valid, and trusted manifest
+states answer different validation questions. They do not certify the content’s
+substantive claim. This is a versioned reference, not a declaration of current
+implementation conformance.
+
+A hypothetical review-service credential can validly sign “all migration
+surfaces inspected” while its inventory omits the shared cache. The origin
+record survives; the inspection claim is still defective. Conversely, a
+screenshot lacking a surviving credential can depict the right package.
+Missing provenance leaves an origin question open; it does not refute the
+observation or establish synthetic origin.
 
 The stale hidden-task result fails because its evidence envelope binds it to the
 old evaluator. Copying the score into a new report cannot update that lineage.
@@ -553,7 +609,8 @@ restricted assertions, and remedy routes belong beside authenticity.
 
 ## Repairing the Candidate's Assurance Path
 
-The release team first closes the invalid denominator. The stale hidden task is
+The release team reconciles the declared denominator without erasing the
+failed instrument attempt. The stale hidden task is
 not counted as a pass or failure. The task is rebuilt, its positive and negative
 controls rerun, and the new evaluator digest bound to raw outputs.
 
@@ -577,7 +634,18 @@ rollback claim.
 The safety case compiler rebuilds affected branches. The competence branch cites
 the corrected evaluation. The integrity branch carries the unresolved monitor
 residual. The recovery branch narrows its scope to tracked canary state. The
-authority branch confirms that production merge remains impossible.
+authority branch checks that the named adapters enforce the no-production-merge
+scope under the stated trusted-base assumptions. That claim does not close
+unmediated channels outside its inventory.
+
+An ordinary release checklist can follow this same path. The maintainer binds
+the candidate and evaluator versions to the job, keeps the monitor disagreement
+in a review ticket, and asks the release operator to inventory the shared-cache
+migration. The independent reviewer checks the required threshold commitments
+and returns the same scoped decision. In one team with one release and clear
+custody, existing issue, CI, and change records may suffice. A general case
+compiler must earn its cost through useful cross-version or cross-consumer
+repair, not merely reproduce that checklist in more fields.
 
 Independent review accepts shadow and canary operation with expiry. It does not
 authorize default production use. The system advances one state because the
@@ -612,8 +680,9 @@ operational trigger.
 
 **Skipped as green.** Unknown applicability or missing evidence becomes success.
 
-**Quarantine disappearance.** A blocked artifact is hidden rather than retained
-for diagnosis and descendant control.
+**Quarantine disappearance.** A blocked artifact or its required disposition
+vanishes from the decision history, concealing descendant restrictions.
+Permitted payload deletion is not the same failure.
 
 **Residual dumping.** A veto-level failure is relabeled as an accepted residual.
 
@@ -658,47 +727,42 @@ If a simpler checklist and independent review match those outcomes, use them.
 
 ## What the Current Work Establishes
 
-The Readiness owner has a finite seven-stage lifecycle with 24 reachable
-refinement declarations, 11 retained legacy countermodels, three exact bounded
-suites, 40 routes, and all 45 authored rejecting mutations. It also preserves
-one exact Project Theseus YELLOW currentness observation and bounded failed
-campaign history. These artifacts establish authored record and transition
-semantics, not evaluator adequacy, calibration, useful throughput, deployed
-quarantine, effect-complete rollback, organizational governance, or transfer.
+[Readiness](https://corbensorenson.github.io/asi-stack-book/chapters/readiness-gates-residual-escrow-and-quarantine.html)
+checks a seven-stage finite lifecycle, bounded suites, exact rejecting controls,
+and retained legacy countermodels. It preserves one Project Theseus YELLOW
+currentness observation and bounded failed-campaign history. These are scoped
+records, not evaluator adequacy, calibration, useful throughput, deployed
+quarantine, effect-complete rollback, or organizational governance.
 
-Benchmark Ratchets has two schemas, one blocked provenance record with ten
-rejecting mutations, two valid and five invalid synthetic anti-Goodhart
-fixtures, a persisted fixture bridge, three proof targets, and 29 Lean
-declarations. Its independent consumer executes six clean transitions, seven
-trace splits, 19 reachable states, and 114 finite transitions. It includes no
-natural benchmark run, hidden-holdout execution, contamination audit, trained
-model or policy result, independent evaluator, or chapter-core support
-transition.
+[Benchmark Ratchets](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html)
+checks a blocked provenance record, synthetic anti-Goodhart fixtures, a
+persisted bridge, and a finite instrument lifecycle. No natural benchmark,
+hidden holdout, contamination audit, trained-model outcome, or independent
+natural evaluator ran; the controls do not promote the core.
 
-Capability Thresholds preserves an eight-case suite through a six-stage,
-43-route repeated-assessment consumer, rejects all 48 authored mutations, and
-adds 12 refinement declarations. No real capability assessment, safeguard
+[Capability Thresholds](https://corbensorenson.github.io/asi-stack-book/chapters/capability-thresholds-and-deployment-commitments.html)
+checks authored repeated-assessment and commitment routes. No real capability assessment, safeguard
 exercise, bypass or rollback test, exception process, deployed invalidation,
 release, reproduction, or transfer ran.
 
-Adversarial Evaluation preserves an eight-case suite through a seven-stage
-observation model. It covers 56 finite routes and rejects all 60 authored
+[Adversarial Evaluation](https://corbensorenson.github.io/asi-stack-book/chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html)
+checks authored context-sensitive observation routes and their rejecting
 mutations. No model, detector, mitigation, monitor, reward process, evaluator
 ensemble, natural cross-context workload, deception finding, or deployment ran.
 
-Safety Cases implements eight finite record routes and an eight-case synthetic,
-digest-bound compiler bridge. Eight Lean declarations reduce the same authored
-decision tree, and five validator mutations test the bridge. No real assurance
-case, hazard analysis, countercase search, evidence-adequacy review, independent
-institution, acceptance, release, incident, reproduction, or transfer ran.
+[Safety Cases](https://corbensorenson.github.io/asi-stack-book/chapters/safety-cases-and-structured-assurance.html)
+checks finite record routes and an eight-case synthetic digest-bound compiler
+bridge. The formal surface reduces the authored decision tree. No real case,
+hazard analysis, countercase search, evidence-adequacy review, independent
+institution, acceptance, release, or incident was exercised.
 
-Content Authenticity implements a 32-declaration Lean surface over an
-eight-transition review, 42 admission-axis mutations with exact repairs,
-evidence-type separation, finite transformation accounting, staleness and
-revocation, two non-identifiability results, and one rejecting communication
-consumer. It does not establish signature correctness, provenance completeness,
-watermark or detector robustness, origin, truth, consent, comprehension, legal
-compliance, remedy efficacy, interoperability, or deployment.
+[Content Authenticity](https://corbensorenson.github.io/asi-stack-book/chapters/content-authenticity-watermarking-and-synthetic-media-integrity.html)
+checks finite transformation, evidence-type, staleness, revocation, repair, and
+communication boundaries. It does not establish signature correctness,
+provenance completeness, watermark or detector robustness, origin, truth,
+consent, comprehension, legal compliance, remedy, interoperability, or deployment.
+Exact theorem, route, fixture, mutation, and bounded-result inventories remain
+at the six canonical owners.
 
 All six chapter cores remain at argument support. The joined prose does not
 turn finite record discipline into readiness, safety, or authenticity evidence.
@@ -711,7 +775,8 @@ Inject a stale task digest, a vacuous pass, a subgroup failure, a monitor
 disagreement, a missing rollback surface, a threshold crossing, and a revoked
 signer.
 
-Require the system to close the invalid denominator, preserve raw outputs,
+Require the system to reconcile attempted and graded denominators, preserve
+permitted outputs and missingness,
 quarantine the candidate, activate the right commitment, carry residuals,
 compile a scoped case, and invalidate dependent claims. Independent reviewers
 should be able to reconstruct every decision without trusting the compiler.

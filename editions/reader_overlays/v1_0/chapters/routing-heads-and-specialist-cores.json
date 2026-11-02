@@ -18,7 +18,9 @@
         "",
         "The third record is the MoECOT-style orchestration packet. Its role is not to make a runtime brand authoritative. It keeps command intake, route-head choice, specialist lanes, control-plane gates, authority ledgers, readiness gates, replay references, denied routes, failed gates, missing replay references, handoffs, promotion blockers, residuals, and source-claim state visible in one packet.",
         "",
-        "Planning should request capabilities, governance should grant only the task-local authority subset, execution should receive the selected route and its limits, and artifact graphs should preserve the route receipt for later claims. These records do not prove route quality or runtime behavior. They preserve the evidence future route-quality, replay, and runtime tests would need."
+        "Planning should request capabilities, governance should grant only the task-local authority subset, execution should receive the selected route and its limits, and artifact graphs should preserve the route receipt for later claims. These records do not prove route quality or runtime behavior. They preserve the evidence future route-quality, replay, and runtime tests would need.",
+        "",
+        "Human Intent interprets the request; Intent-to-Execution Contracts binds its accepted scope and acceptance predicates; Planning orders that work. Durable Semantic Memory keeps persistent objects, Context Transactions owns snapshot and taint state, and Virtual Context ABI materializes bounded packets. Routing requests eligible references and executors within those limits. Verification Bandwidth and Spinoza return scoped checks and proof verdicts; Artifact Graphs preserves result identity and custody; Evidence States owns accepted support transitions. A valid route cannot declare its answer correct or promote its support."
       ]
     }
   ]

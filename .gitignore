@@ -1,6 +1,7 @@
 .DS_Store
 __pycache__/
 *.pyc
+node_modules/
 .quarto/
 _site/
 build/
@@ -50,3 +51,10 @@ visual_edition/**/*.mp3
 visual_edition/**/*.m4a
 visual_edition/**/*.aac
 visual_edition/**/*.flac
+/.asi-stack-release-channels-*/
+/._site.lock
+/._site-reader-stage-*/
+/._site-product_projections-stage-*/
+
+# Local property-test cache; explicit regressions remain in tests/.
+/.hypothesis/
