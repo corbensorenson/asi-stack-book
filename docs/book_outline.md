@@ -3842,6 +3842,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 coverage join | `ext_recursive_language_models_2025` | Connect externalized prompt inspection and recursive subcalls to materialization, snapshot and omission boundaries; Governed Deliberation retains ownership of compute allocation. Selected passages only; no support promotion. |
 | Primary | `vcm_public` | Read first for the ABI, semantic-page, certificate, admission, adequacy, and typed-fault vocabulary. |
 | Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, claim/evidence cell boundaries, stable identity and plural addresses, and the historical bounded-snapshot/handle lineage. |
 | External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | Compare retrieval, graph/community and associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression. Preserve provenance, actual use, loss, poisoning, update, cost, and local-reproduction limits. |
@@ -8352,6 +8353,7 @@ Source loading queue:
 
 | Role | Source IDs | Loading instruction |
 |---|---|---|
+| November 2 coverage join | `ext_memory_centric_continual_learning_2026` | Join memory state changes to the learning lifecycle without conflating a fixed management policy with a learned policy; Durable Semantic Memory retains ownership of storage and retrieval. Selected passages only; no support promotion. |
 | Primary | `ext_bourtoule_machine_unlearning_2021`, `theseus_synthetic_data_curation` | Read first for deletion-path structure, bounded retraining trade-offs, and the pinned source-reported synthetic-curation control pattern. Do not represent either source as a local execution. |
 | Supporting | `ext_shumailov_model_collapse_2023`, `ext_gerstgrasser_data_accumulation_2024` | Mine for the tension between recursive synthetic-data replacement and accumulation, provenance, coverage, retention, and stated limits; retain workload-specific boundaries. |
 | Data interoperability and provenance | `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026` | Use for entity/activity/agent derivation and machine-readable dataset/resource/field metadata. Conformance does not prove fitness, legality, representativeness, deletion, or safe continual learning. |

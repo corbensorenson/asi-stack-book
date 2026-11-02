@@ -9898,7 +9898,8 @@
             "kernel_english_residual_compiler",
             "ext_pagedattention_vllm_2023",
             "ext_airllm_2023",
-            "ext_hf_accelerate_big_model_inference_2026"
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_recursive_language_models_2025"
           ],
           "source_queue": {
             "primary": [
@@ -9915,7 +9916,8 @@
               "bugbrain_project",
               "qcsa_whitepaper",
               "reflexive_router_whitepaper",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "ext_recursive_language_models_2025"
             ],
             "variants": [
               "ext_graphrag_2024",
@@ -10433,6 +10435,17 @@
                 "sources/source_notes/ext_longllmlingua_2023.md:1-60"
               ],
               "passage_review_note": "Reviewed the bounded primary-record note for context-compression tradeoffs, deleted-evidence risk, and explicit non-reproduction boundary."
+            },
+            {
+              "source_id": "ext_recursive_language_models_2025",
+              "mapped_support": "RLM holds the prompt and intermediate values outside the root context, exposes bounded metadata and lets generated code select material for subcalls. This distinguishes addressable source state from inspected and returned context.",
+              "limits": "The RLM paper does not implement the Virtual Context ABI or establish complete coverage, faithful summaries, adequate sandboxing or unlimited effective context.",
+              "passage_refs": [
+                "sources/source_notes/ext_recursive_language_models_2025.md",
+                "https://arxiv.org/html/2512.24601v3"
+              ],
+              "passage_review_note": "2026-11-02 secondary-owner coverage audit: same selected primary passages as the existing source note; interface interpretation only. No new model run, source-method claim or support promotion.",
+              "passage_review_state": "reviewed"
             }
           ],
           "publication": {
@@ -27442,7 +27455,8 @@
             "ext_curriculum_learning_2009",
             "regret_engine",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_memory_centric_continual_learning_2026"
           ],
           "problem": "A self-improving stack needs to decide which data and feedback may enter future learning without confusing an intake decision with a capability result, a privacy guarantee, or proof that a model has forgotten a record.",
           "insufficient": "Training corpora, synthetic-data pipelines, replay buffers, and deletion requests are often handled as separate operational concerns, leaving provenance, contamination control, retention, distributional trade-offs, downstream descendants, and evidence effects without one governable lifecycle.",
@@ -27604,6 +27618,17 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "ext_memory_centric_continual_learning_2026",
+              "mapped_support": "MCCL separates storage substrate, memory asset and management policy, and distinguishes inner memory-state changes from outer management-policy learning. It proposes separate retention, adaptation and transfer evaluations with matched controls.",
+              "limits": "Memory content can change behavior without weight or management-policy updates. The survey supplies no local continual-learning result or universal memory-scaling law.",
+              "passage_refs": [
+                "sources/source_notes/ext_memory_centric_continual_learning_2026.md",
+                "https://arxiv.org/html/2610.29357v1"
+              ],
+              "passage_review_note": "2026-11-02 secondary-owner coverage audit: same selected primary passages as the existing source note; interface interpretation only. No new model run, source-method claim or support promotion.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -27727,7 +27752,8 @@
               "ext_gerstgrasser_data_accumulation_2024",
               "ext_influence_functions_2017",
               "ext_curriculum_learning_2009",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "ext_memory_centric_continual_learning_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],

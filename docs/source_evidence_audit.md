@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1385 |
-| Exact claim-source mappings | 1177 |
+| Assigned source/chapter pairs | 1387 |
+| Exact claim-source mappings | 1179 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1385 |
-| Source notes listing assigned chapter | 1385 |
-| Passage-reviewed mappings recorded | 1108 |
+| Source notes present for assigned pairs | 1387 |
+| Source notes listing assigned chapter | 1387 |
+| Passage-reviewed mappings recorded | 1110 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -69,7 +69,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `reflexive-model-world-systems` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
 | `cognitive-method-transfer-and-qualification` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
-| `virtual-context-abi` | 31 | 24 | 31 | 31 | 24 | argument | passage review required before source-derived promotion |
+| `virtual-context-abi` | 32 | 25 | 32 | 32 | 25 | argument | passage review required before source-derived promotion |
 | `durable-semantic-memory-and-knowledge-lattices` | 12 | 12 | 12 | 12 | 8 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
 | `verification-bandwidth-and-context-adequacy` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
@@ -114,7 +114,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governed-operations-incident-command-and-graceful-degradation` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 37 | 35 | 37 | 37 | 35 | argument | passage review required before source-derived promotion |
-| `data-engines-continual-learning-and-unlearning` | 19 | 15 | 19 | 19 | 15 | argument | passage review required before source-derived promotion |
+| `data-engines-continual-learning-and-unlearning` | 20 | 16 | 20 | 20 | 16 | argument | passage review required before source-derived promotion |
 | `scientific-discovery-and-experimental-governance` | 7 | 6 | 7 | 7 | 5 | argument | passage review required before source-derived promotion |
 | `artifact-steward-agents-and-living-project-governance` | 24 | 23 | 24 | 24 | 23 | argument | passage review required before source-derived promotion |
 | `integrated-reference-architecture` | 40 | 35 | 40 | 40 | 35 | argument | passage review required before source-derived promotion |
@@ -323,7 +323,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_memgpt_2023` | 2 | yes |
 | `ext_self_rag_2023` | 2 | yes |
 | `ext_longllmlingua_2023` | 2 | yes |
+| `ext_recursive_language_models_2025` | 2 | yes |
 | `ext_titans_2025` | 2 | yes |
+| `ext_memory_centric_continual_learning_2026` | 2 | yes |
 | `ext_gpqa_2023` | 2 | yes |
 | `ext_lean4_theorem_proving` | 2 | yes |
 | `ext_generative_ai_at_work_2025` | 2 | yes |
@@ -430,7 +432,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_coala_2024` | 1 | yes |
 | `ext_rag_2020` | 1 | yes |
 | `ext_lost_in_middle_2023` | 1 | yes |
-| `ext_memory_centric_continual_learning_2026` | 1 | yes |
 | `ext_mempp_organizational_memory_2026` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
 | `ext_agm_belief_revision_1985` | 1 | yes |
@@ -547,7 +548,6 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_layerskip_2024` | 1 | yes |
 | `ext_test_time_compute_scaling_2024` | 1 | yes |
 | `ext_hybrid_reasoning_agents_2026` | 1 | yes |
-| `ext_recursive_language_models_2025` | 1 | yes |
 | `rankfold_compressor` | 1 | yes |
 | `ext_iea_energy_and_ai_2025` | 1 | yes |
 | `ext_lbnl_data_center_energy_2024` | 1 | yes |
@@ -1036,6 +1036,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_pagedattention_vllm_2023` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_airllm_2023` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_hf_accelerate_big_model_inference_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_recursive_language_models_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
@@ -1847,6 +1848,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `regret_engine` | unmapped | note present | chapter listed | not passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `assurance_shift_learning` | mapped | note present | chapter listed | passage-reviewed |
 | `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `data-engines-continual-learning-and-unlearning.core` | `data-engines-continual-learning-and-unlearning` | `ext_memory_centric_continual_learning_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `aletheia` | unmapped | note present | chapter listed | not passage-reviewed |
 | `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_autonomous_lab_materials_2023` | mapped | note present | chapter listed | not passage-reviewed |
 | `scientific-discovery-and-experimental-governance.core` | `scientific-discovery-and-experimental-governance` | `ext_ai_scientist_end_to_end_2026` | mapped | note present | chapter listed | passage-reviewed |

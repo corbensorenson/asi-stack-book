@@ -68,6 +68,16 @@ The strongest baseline receives the same environment, tools, tuning budget,
 retries, rescue process, and evaluation. Otherwise the experiment compares
 systems plus unequal assistance.
 
+A [production-agent rater/drift study](https://arxiv.org/abs/2610.07003v1)
+shows why comparability needs active attention. Its analysis of 2,611
+interviews distinguishes raw trends from trends adjusted using overlapping
+raters, and event time from later reviewer sign-off. A logged model alias
+also need not identify an exact snapshot. The observational findings do not
+establish that an evaluation program caused improvement or give every agent
+one universal expiry interval. They motivate retaining evaluator identity,
+overlap, timing and operational corroboration before yesterday's score is
+used to qualify today's candidate.
+
 ## Evidence Has a Denominator
 
 A score needs a named numerator and denominator. The evaluation lineage retains

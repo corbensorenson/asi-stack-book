@@ -472,6 +472,19 @@ Coordination is purpose-relative. Efficient collusion is not beneficial
 collective intelligence. A population that optimizes an organizational target
 while excluding affected people can be highly capable and poorly governed.
 
+[Muffin](https://arxiv.org/abs/2610.31355v1) supplies a concrete collaboration
+pattern: agents retain private local notes and append selected findings to a
+shared store with agent and step provenance. At dispatch, a worker reads a
+recent window of committed findings from others. A slow worker may therefore
+act on an earlier view while another has already posted a correction. The
+final summarizer can reconcile that disagreement or introduce another error.
+Atomic appends prevent partial records; they do not make the findings true or
+the agents independent. A qualified exchange must retain what each worker
+could see, competing findings and the synthesis step. The paper's reasoning
+and question-answering studies do not qualify tool-using or long-horizon
+teams. This is a useful coordination mechanism to compare, with its shared
+dependencies and communication cost still counted.
+
 ## Competition, Collusion, and Emergence
 
 Competition can expose alternatives and constrain one provider. It can also

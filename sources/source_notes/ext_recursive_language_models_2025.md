@@ -41,6 +41,8 @@ Which tasks justify decomposition rather than direct/full-context processing aft
 
 - `governed-deliberation-and-test-time-scaling`
 
+- `virtual-context-abi` — Connect externalized prompt inspection and recursive subcalls to materialization, snapshot and omission boundaries; Governed Deliberation retains ownership of compute allocation.
+
 ## Chapter Decision
 
 Update the existing owner under

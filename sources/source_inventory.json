@@ -8872,7 +8872,8 @@
     "priority": "external_literature",
     "layer": "recent_mechanisms_and_evaluation_boundaries",
     "chapter_targets": [
-      "durable-semantic-memory-and-knowledge-lattices"
+      "durable-semantic-memory-and-knowledge-lattices",
+      "data-engines-continual-learning-and-unlearning"
     ],
     "url": "https://arxiv.org/abs/2610.29357v1",
     "notes": "Evaluate persistent agent memory through later behavior rather than retrieval success alone. A stored or retrieved record need not improve behavior. A bundled stateful advantage does not identify which memory mechanism helped. Surveyed systems are not independently replicated here.",
@@ -8948,7 +8949,8 @@
     "priority": "external_literature",
     "layer": "recent_mechanisms_and_evaluation_boundaries",
     "chapter_targets": [
-      "governed-deliberation-and-test-time-scaling"
+      "governed-deliberation-and-test-time-scaling",
+      "virtual-context-abi"
     ],
     "url": "https://arxiv.org/abs/2512.24601v3",
     "notes": "Treat long input as an external object that a model can inspect and recursively process with code. Subcalls can explode in cost; guardrails and natural long-context tasks remain open. Stored input does not establish complete coverage, faithful summaries or permission to execute generated code.",

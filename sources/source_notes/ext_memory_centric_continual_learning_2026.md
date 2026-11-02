@@ -41,6 +41,8 @@ Which experience-induced gains survive delay, conflicting updates and held-out t
 
 - `durable-semantic-memory-and-knowledge-lattices`
 
+- `data-engines-continual-learning-and-unlearning` — Join memory state changes to the learning lifecycle without conflating a fixed management policy with a learned policy; Durable Semantic Memory retains ownership of storage and retrieval.
+
 ## Chapter Decision
 
 Update the existing owner under

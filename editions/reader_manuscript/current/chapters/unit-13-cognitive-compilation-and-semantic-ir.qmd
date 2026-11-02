@@ -476,6 +476,18 @@ the evaluation a concrete question: does the intermediate representation prevent
 an omitted obligation or improve actual repair and downstream validity after
 its construction and maintenance costs are counted?
 
+Kernel English proposes one concrete lowering path. Before normalization,
+its compiler protects names, quotations, code and values; it then represents
+contextual senses, roles, scope, negation and ambiguity in a typed Kernel
+packet. Exact objects and surface distinctions remain accessible through
+handles and a hierarchical residual ledger. The reasoner consumes the compact
+view, a renderer produces the answer, and recompilation checks selected
+semantic relations against the packet. A shared compiler error can survive
+that round trip, so source access and independent checks still matter. This
+is an unvalidated proposal, not an established efficient internal language.
+The [technical compiler chapter](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html#protected-sense-aware-lowering-into-a-kernel-packet)
+owns the detailed packet and residual contract.
+
 ## Reverse Compilation Is Not Mind Reading
 
 Existing repositories and papers often lack semantic IR. A lifter can extract

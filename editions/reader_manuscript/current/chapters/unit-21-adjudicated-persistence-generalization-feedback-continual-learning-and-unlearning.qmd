@@ -56,12 +56,10 @@ An outcome is an observation about what happened under particular conditions.
 A lesson is a proposed regularity, cause, policy, or intervention inferred from
 that observation. Confusing the two converts correlation into architecture.
 
-A successful patch may demonstrate that one edit worked once. It does not by
-itself demonstrate why, whether the edit was necessary, whether another edit
-would have worked, whether the test captured the real objective, or whether the
-same rule transfers to a new repository. A failed patch may expose a genuine
-constraint, an unrelated outage, a stale evaluator, a permissions problem, or
-random variation. Reward and blame do not identify cause.
+A successful patch does not explain why it worked, whether it was necessary,
+whether the test captured the objective, or whether it transfers. Failure may
+reflect a constraint, outage, stale evaluator, permission problem or chance.
+Reward and blame do not identify cause.
 
 The experience record should preserve more than a scalar score. It needs the
 decision context available at the time, alternatives that were eligible then,
@@ -75,14 +73,10 @@ epistemic debt visible. A candidate lesson can say that the schema-ordering
 explanation is supported by the event and by a reproduction. It cannot quietly
 upgrade that statement to a universal dependency rule.
 
-Success can be uninformative. If the existing process already predicted the
-outcome, the event may add confidence without justifying structural change.
-Failure can be informative without naming a remedy. A mature system should be
-able to record, "The current account is inadequate," while declining to commit
-the first available story.
-
-This matters most when the system is under pressure to improve itself. A metric that rewards visible updates can favor activity over correction.
-A governed learning process should recognize correct restraint as well.
+Predicted success may add confidence without justifying structural change;
+failure may expose an inadequate account without identifying a remedy.
+Rewarding visible updates favors activity over correction. Correct restraint
+must remain an admissible decision.
 
 ## Candidate Lessons Need Identity
 
@@ -97,11 +91,8 @@ For the first patch, a candidate might be:
 > accepting an upgrade candidate, because the generated interface changes the
 > compatibility test.
 
-That sentence is already more disciplined than "regenerate schemas after
-dependency upgrades." It names a bounded population and a causal hypothesis.
-The record can link the original incident, a reproducing run, a dissenting
-explanation, and the date after which the dependency behavior must be checked
-again.
+Its bounded population and causal hypothesis link to the incident,
+reproduction, dissent and next review date.
 
 The second patch yields a different candidate:
 
@@ -113,11 +104,9 @@ qualification includes a failing regression before the repair, a passing
 regression after it, and checks that the accepted field-preservation rule has
 the intended scope. One passing case does not qualify every transformation.
 
-Candidate identity prevents a common failure in continual learning: later
-evidence cannot revise a lesson that was never stated. It also permits two
-lessons from one incident or one lesson from many incidents without merging
-their histories. Conflicting candidates can coexist while adjudication remains
-open.
+Explicit identity permits later revision, multiple lessons per incident and
+one lesson across incidents without merging histories. Conflicting candidates
+can coexist during adjudication.
 
 The identity should survive realization. If the schema-ordering lesson becomes
 a memory entry, a checklist item, and eventually a tool precondition, each
@@ -285,11 +274,9 @@ defect arises from coordination or authority. It is costly, politically
 consequential, and difficult to reverse, so technical convenience cannot be its
 only justification.
 
-These loci can be combined, but combination is not automatically better. A
-temporary context reminder may support a tool repair while the test is being
-built. The memory should then expire or narrow. Leaving every intervention in
-place creates adaptation debt: duplicated rules, conflicting behavior, hidden
-carrying cost, and no clear source of authority.
+Combining loci creates adaptation debt unless their authority order,
+carrying cost and retirement are explicit. A temporary reminder may support a
+tool repair, then expire when the test replaces it.
 
 ## Locus Is Part of the Claim
 
@@ -299,12 +286,10 @@ retrieved memory, a mandatory procedure step, a blocking test, or a learned
 parameter tendency. The proposition may be similar while its reliability,
 reach, and authority change.
 
-This is why adjudication cannot end with selecting a true sentence. It must
-select an intervention. A causal account can be accurate and still yield a bad
-placement. A parameter update may improve average behavior while making the
-rule impossible to invoke reliably at the exact boundary. A blocking test may
-enforce the rule perfectly while causing unacceptable false rejections outside
-its scope.
+Adjudication selects an intervention, not just a true sentence. An accurate
+causal account can yield a bad placement: a parameter update may improve the
+average while missing the critical boundary; a blocking test may enforce the
+rule but reject legitimate cases outside its scope.
 
 The system should make cross-locus alternatives explicit. For each candidate it
 can ask:
@@ -316,12 +301,10 @@ can ask:
 - Can its active effect and descendants be found later?
 - What evidence would justify moving it to a stronger or broader locus?
 
-These questions reveal when a hybrid route is justified. A temporary memory
-can protect work while a tool repair is implemented. A canary policy can run
-alongside the old policy while the evaluator gathers independent evidence. An
-institutional rule can require a test without prescribing its implementation.
-The combination needs an authority order and retirement plan, or the temporary
-layer becomes permanent duplication.
+A hybrid can be justified: temporary memory protects work during a tool
+repair, a canary gathers independent evidence, or an institutional rule
+requires a test without prescribing implementation. Each combination needs
+an authority order and retirement plan.
 
 Conflicts between loci are normal. Memory may recommend an action that a newer
 tool contract forbids. A learned policy may bypass a procedure. An evaluator
@@ -398,10 +381,8 @@ record. Failed forecasts are not deleted when a later version succeeds.
 Material changes in the learner, data, evaluator, or environment invalidate old
 qualification unless a prospective rule says otherwise.
 
-This discipline blocks an easy path to mythology. Without it, every success is
-called evidence of a general principle while every failure is classified as an
-implementation detail. With it, the system accumulates calibration as well as
-capability.
+Recording failed forecasts prevents a favorable anecdote from becoming a
+general principle immune to counterevidence.
 
 Generalization evidence should travel with the realized lesson. A memory entry
 may be valid for dependency line D but not its successor. A procedure may have
@@ -409,22 +390,48 @@ been qualified with one tool version. A parameter checkpoint may have passed
 one distribution and failed another. Consumers need those boundaries at use
 time, not only in an archived experiment report.
 
+Representation convergence needs an equally specific claim. The
+[2026 JEPA/Platonic Representation paper](https://arxiv.org/abs/2610.39302v1)
+proves a conditional population result for a finite world with injective
+renderings, matched positive pairs and marginals, and an identity predictor.
+Its empirical models do not satisfy every theorem assumption. Similar latent
+geometry therefore supplies neither a generalization guarantee nor evidence
+that the representation supports a new causal intervention. Unit 11 owns the
+grounding question; this chapter keeps theorem conditions separate from a
+forecast about the next task. The external Platonic Representation Hypothesis
+also remains distinct from our proposed Platonic World Model's semantic
+governance contracts.
+
 ## Feedback Is Evidence, Not an Objective
 
 Feedback can come from users, reviewers, automated tests, reward models,
 environmental outcomes, affected parties, or the system's own monitors. Each
 source observes part of the world through incentives and failure modes.
 
-A thumbs-up may reflect task success, politeness, low expectations, or
-persuasion. A test pass may establish an executable property while missing the
-user's objective. A reward model may reproduce annotator preferences and add
-its own exploitable boundary. A business metric may reward engagement while
-degrading autonomy or trust.
+A thumbs-up may reflect politeness or persuasion. A test may miss the user's
+objective; a reward model may reproduce annotator bias; an engagement metric
+may improve while autonomy or trust deteriorate.
 
-The first job is feedback admission. The record should name who or what emitted
-the signal, what they could observe, how they were selected, which incentives
-applied, whether the candidate could influence them, and which target the
-signal is supposed to inform. Conflicting feedback should remain visible.
+Feedback admission records the source, observable scope, selection,
+incentives, candidate influence and intended target. Conflicting feedback
+remains visible.
+
+Two of our proposals make that admission boundary more concrete. The
+[Regret Engine](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html#regret-packets-are-protected-feedback-not-actor-rewards)
+joins the decision-time record, actual outcome, feasible comparators and
+uncertain counterfactuals in a Regret Packet. Incident severity, causal
+contribution and eligibility for learning remain different judgements. The
+actor cannot be the sole judge of its own comparator set, causal blame or
+eligibility for an update. A diagnostic packet is not automatically a reward.
+
+[Assurance-Shift Learning](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html#regret-aware-replay-without-failure-fixation)
+then asks which exceptions still teach a mature learner. Its replay retains
+protected successful cases and a counterexample to an overbroad repair, while
+keeping natural prevalence separate from diagnostic probes. Negative priority
+can decay when the named learner, repair and regression evidence justify it;
+elapsed time alone does not retire the lesson. A changed learner or operating
+region can reactivate the bundle. These are proposed feedback and replay
+contracts, not measured learning gains, parameter unlearning or privacy erasure.
 
 Optimization begins only after this epistemic work, and it must preserve the
 difference between proxy and target. Improving a reward is evidence about the
@@ -487,8 +494,8 @@ failures appear only after old tasks disappear from view.
 The stability-plasticity tradeoff is architectural. Excessive stability
 preserves defects and blocks adaptation. Excessive plasticity overwrites useful
 behavior and creates oscillation. Different persistence loci offer different
-tradeoffs. Semantic memory can add dated knowledge without changing broad model
-behavior. Procedures can isolate repeated methods. Parameters can integrate
+tradeoffs. Semantic memory can add dated knowledge without modifying shared model
+weights. Procedures can isolate repeated methods. Parameters can integrate
 patterns that explicit artifacts cannot capture, at the cost of harder
 attribution and removal.
 
@@ -503,6 +510,18 @@ recovery claim. An object version, bounded event log, or scheduled checkpoint
 may suffice; a complete model copy after every gradient step is not required. Weights alone may omit optimizer, sampler, random-number,
 curriculum, memory, evaluator, and descendant state. A learner cannot claim to
 have returned to an earlier state if only one surface moved backward.
+
+The [Memory-Centric Continual Learning survey](https://arxiv.org/abs/2610.29357v1)
+sharpens this distinction. Updating what memory contains is different from
+learning a new policy for writing, retrieving or forgetting it. A fixed
+policy can store the schema-ordering episode and change the next answer while
+the shared model weights remain fixed. If both content and selector change,
+a better answer alone cannot identify the contribution of either one.
+Retention under interference, adaptation and held-out transfer therefore need
+separate checks, including matched stateful/reset and full-history or static
+retrieval controls. More stored episodes or better retrieval scores do not
+settle those behavioral questions. Nor do model-internal update frequencies,
+discussed in Unit 19, assign the authority of the institutional clocks below.
 
 ## Multiple Update Clocks
 
@@ -668,14 +687,11 @@ discovering a general mechanism. Automated systems are especially capable of
 generating many hypotheses and analyses, which increases both discovery
 capacity and selection bias.
 
-That pressure appears in at least three forms. A laboratory agent can connect a
-plan to a robot and a physical intervention. A computational research agent can
-move from an idea to code, experiments, figures, a paper, and even an automated
-review. A hypothesis system can generate and rank a population of possible
-explanations before any experiment is run. Each is impressive in a different
-way, and each stops at a different evidentiary boundary. A completed robot
-command is not an interpretation. A finished paper is not a confirmed result.
-A highly ranked hypothesis is not a discovery.
+The boundary differs by activity. A laboratory agent executes physical
+interventions; a computational agent produces code, experiments and papers;
+a hypothesis system ranks explanations before testing. A robot command does
+not supply an interpretation, a finished paper is not confirmation, and a
+highly ranked hypothesis is not a discovery.
 
 The larger the search, the more important its denominator becomes. Imagine a
 system that generates ten thousand ideas, tests one hundred, repairs twenty
@@ -685,20 +701,33 @@ failed code, abandoned experiments, pruning rules, compute allocation, and
 human interventions cannot vanish merely because the final manuscript reads as
 if one clean idea led to one clean test.
 
-Review has a similar hidden structure. Five reviewers are not five independent
-checks when they share the same model family, training data, retrieval tools,
-prompts, or scoring habits. Related reviewers can still catch errors and improve
-a draft, but their agreement must not be sold as independent confirmation.
-Independence is a property of the dependency graph, not the number of names in
-a panel.
+[Test-Time Memory Evolution](https://arxiv.org/abs/2610.32046v1) illustrates
+how that history can itself become an adaptive resource. Its fixed-weight
+model updates guidelines and source-case-linked strategies while retaining
+archives, parent links and verifier results. A later proposal can use the
+record of an earlier attempt without a weight update. Its five mathematical
+construction tasks provide evidence about that search setting, not general
+scientific discovery or held-out transfer. Reported method runtime excludes
+candidate evaluation, and some TTT comparisons come from the original papers;
+those distinctions matter when judging the apparent gain.
 
-A venue decision belongs in the record too, but in the right place. Acceptance
-is evidence about what one review process decided under its own incentives,
-standards, and attention limits. It is not a direct measurement of whether the
-paper's claims are true. As automated systems make papers cheaper to produce,
-the scarce resource may become careful appraisal. A governed scientific system
-must account for the burden it places on reviewers as well as the experiments
-it completes.
+Our [Answerability Atlas synthesis](https://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html)
+shows a complementary discipline. Its positive development signal still
+failed the declared advancement criteria, so confirmation was not run. A
+later correction expanded the comparator pool on the same worlds and changed
+the disposition from proceed to stop. That correction improves the account;
+it is not independent confirmation, proof of zero effect, or permission to
+reopen the closed controller line. Useful scientific memory must preserve
+both the promising observation and the decision it actually justified.
+
+Review has similar dependencies. Shared model families, training data,
+retrieval, prompts and scoring habits limit independence. Related reviewers
+can improve a draft, but their agreement is not independent confirmation.
+Count the dependency graph, not the names.
+
+Venue acceptance records one process's decision under its incentives and
+attention limits, not a direct truth measurement. Automated publication also
+consumes scarce reviewer attention, which belongs in the campaign cost.
 
 Independent confirmation should not share every dependency with the discovery
 path. New seeds on the same code and evaluator are useful, but they do not
@@ -931,10 +960,9 @@ own evidence.
 
 ## The Strongest Objection
 
-This architecture may turn ordinary engineering judgment into a costly
-bureaucracy. The locus list can create analysis paralysis. A shared adjudicator
-can centralize power, impose one ontology on unlike domains, and become the
-single gate that an adaptive system learns to manipulate.
+Persistence adjudication risks bureaucracy, analysis paralysis, centralized
+power and one ontology imposed on unlike domains. A shared gate can itself
+become a manipulation target.
 
 That objection has teeth. Most low-risk local changes should remain cheap.
 Standing policies can authorize reversible memory writes and tool tests within

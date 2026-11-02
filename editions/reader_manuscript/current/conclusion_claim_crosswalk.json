@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "1d0e7c49e4f41dc729fdbd370189843c0a4e5a290ae96cbb54e63c6bd9a60445",
+  "book_structure_sha256": "69eee019d2f8c75016e675ffedeae25c82de6ad1b339d3355d749ea260fc5b06",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1385,
+    "source": 1387,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -4082,7 +4082,7 @@
       "order": 13,
       "title": "Cognitive Compilation and Semantic IR",
       "human_reader_source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "human_reader_source_sha256": "b1309fa544aee244f6b039a2c05a93ae3bf95242078f27fd78f415d7fe0c9608",
+      "human_reader_source_sha256": "883210a187acdc8d922257eb61e69502d3d7daca29b31cad375d8c2d2027e2f4",
       "public_path": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
@@ -4515,7 +4515,7 @@
       "order": 14,
       "title": "Virtual Context and Durable Semantic Memory",
       "human_reader_source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
-      "human_reader_source_sha256": "23d0ef2261f7a38cc9be9cf1df6b8cb00f62a31330cdbb0b7e6506cc5d249a92",
+      "human_reader_source_sha256": "b9def4101d51327a27e166a4b488db3bb999499715801c244397f2367243e43f",
       "public_path": "reader/chapters/unit-14-virtual-context-and-durable-semantic-memory.html",
       "central_question": "How should a system mount what it needs now and preserve what it may need later without treating presence, repetition, or retrieval as truth?",
       "conclusion_change": "Simpler retrieval and memory systems matching provenance, contradiction handling, forgetting, transfer, revocation, and cost would justify a thinner layer.",
@@ -4526,7 +4526,7 @@
           "chapter_id": "virtual-context-abi",
           "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
           "technical_source_file": "chapters/virtual-context-abi.qmd",
-          "technical_source_sha256": "93428a43644ea0726b250fe6584f51f4a7d2a7d2e40d0ca9b1da907cc9064990",
+          "technical_source_sha256": "044e6ab7ff8adea8798137ac902f37f7e1e8f5581b1bf49698207cb3557b11e3",
           "live_technical_path": "chapters/virtual-context-abi.html",
           "human_reader_unit_id": "unit-14",
           "core_claim_id": "virtual-context-abi.core",
@@ -4564,7 +4564,8 @@
             "kernel_english_residual_compiler",
             "ext_pagedattention_vllm_2023",
             "ext_airllm_2023",
-            "ext_hf_accelerate_big_model_inference_2026"
+            "ext_hf_accelerate_big_model_inference_2026",
+            "ext_recursive_language_models_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/vcm_public.md",
@@ -4597,7 +4598,8 @@
             "sources/source_notes/kernel_english_residual_compiler.md",
             "sources/source_notes/ext_pagedattention_vllm_2023.md",
             "sources/source_notes/ext_airllm_2023.md",
-            "sources/source_notes/ext_hf_accelerate_big_model_inference_2026.md"
+            "sources/source_notes/ext_hf_accelerate_big_model_inference_2026.md",
+            "sources/source_notes/ext_recursive_language_models_2025.md"
           ],
           "proof_edges": [
             {
@@ -4744,7 +4746,7 @@
           "artifact_refs": [
             {
               "path": "chapters/virtual-context-abi.qmd",
-              "sha256": "93428a43644ea0726b250fe6584f51f4a7d2a7d2e40d0ca9b1da907cc9064990"
+              "sha256": "044e6ab7ff8adea8798137ac902f37f7e1e8f5581b1bf49698207cb3557b11e3"
             },
             {
               "path": "lean/AsiStackProofs/VirtualContextABI.lean",
@@ -6941,7 +6943,7 @@
       "order": 18,
       "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
       "human_reader_source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
-      "human_reader_source_sha256": "45d345f67be857bc805cfbd4fd970985f83a528c69df0238bf96db8765b658be",
+      "human_reader_source_sha256": "c3bac7ff3b9837a0a7430ff24f99f01fd37a396473cfc935fa7619a83db4026a",
       "public_path": "reader/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.html",
       "central_question": "What must accompany a reusable skill or inter-agent transaction so that local validity does not become global permission or systemic safety?",
       "conclusion_change": "Simpler skill stores and agent protocols that preserve retirement, accountability, dispute, and systemic-risk detection at lower cost would justify consolidation.",
@@ -7322,7 +7324,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "231244f33e3334203123505e913881a5407bf1996838e700d679d0f0304f6eab",
+      "human_reader_source_sha256": "8e38f61cff415e09d5face2b1ee33eccfacea4c7a8bb3d1fe36212fa64c47a9c",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -8259,7 +8261,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "0f6a7bed1313f13fb37d340913fe8f75788c7b0adb8d1be5d816523d6aa18662",
+      "human_reader_source_sha256": "f18027816952afb3e5964c05b1f11ee16aa356d3d3ee902331a1eaf53689ecee",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8722,7 +8724,7 @@
           "chapter_id": "data-engines-continual-learning-and-unlearning",
           "title": "Data Engines, Continual Learning, and Unlearning",
           "technical_source_file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-          "technical_source_sha256": "040469c8bcf6dd17c7829db601ba2058bf1163e4667a9bc6d737194f2cfa69fa",
+          "technical_source_sha256": "b598290869995b839abff36706376d9bddeec9b2c4c65999d5da91992e767735",
           "live_technical_path": "chapters/data-engines-continual-learning-and-unlearning.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "data-engines-continual-learning-and-unlearning.core",
@@ -8748,7 +8750,8 @@
             "ext_curriculum_learning_2009",
             "regret_engine",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_memory_centric_continual_learning_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -8769,7 +8772,8 @@
             "sources/source_notes/ext_curriculum_learning_2009.md",
             "sources/source_notes/regret_engine.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/ext_memory_centric_continual_learning_2026.md"
           ],
           "proof_edges": [
             {
@@ -8898,7 +8902,7 @@
           "artifact_refs": [
             {
               "path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-              "sha256": "040469c8bcf6dd17c7829db601ba2058bf1163e4667a9bc6d737194f2cfa69fa"
+              "sha256": "b598290869995b839abff36706376d9bddeec9b2c4c65999d5da91992e767735"
             },
             {
               "path": "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
@@ -9007,7 +9011,7 @@
       "order": 22,
       "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
       "human_reader_source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "human_reader_source_sha256": "b48954538df06ba244bc2c86d580333bd81d8a58f7e225fb2412caf1c0a5e970",
+      "human_reader_source_sha256": "7aa797a1b6144b17c586d7a7973e5861f4f2f2853bbe4047fc14ee55312af9e8",
       "public_path": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html",
       "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
       "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
@@ -9883,7 +9887,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "1809c0b8bffb8fb81e7bbce932040b27b6359083462182e0ed692a2eddd827a7",
+      "human_reader_source_sha256": "44cc0d5161b0326a1c49346f2d9377add83e48a0f27b0baa87c797745b4df68a",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",

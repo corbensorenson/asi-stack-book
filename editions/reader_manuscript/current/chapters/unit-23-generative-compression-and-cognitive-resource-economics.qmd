@@ -232,6 +232,19 @@ fallback, and consumer policy must remain joined. The general frame does not
 inherit a codec result, and the codec does not become a universal answer to
 representation cost.
 
+The Precision Contract extends the same accounting to neural computation.
+Bit width is representation-dependent: rescaling, codebooks or factorization
+can change apparent per-weight precision without preserving or harming the
+same behaviors in a predictable way. The proposed target is the least-cost
+complete executable description that satisfies a named behavioral contract.
+That description includes structure, scales, decoder, residuals, routing and
+verification. A favorable mean cannot replace an explicitly protected rare
+slice. A cheap base representation may add residual precision, fall back or
+abstain where its qualification ends. Both the precision levels and their
+selector need evidence. The [functional-precision section](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html#functional-precision-preserve-behavior-not-coordinates)
+owns the formulation; no universal bit requirement, working compiler or
+behavior-preserving efficiency result is established by the proposal.
+
 ## A Reusable Idea Has a Payback Period
 
 Compression can move work from every future task into one up-front investment.

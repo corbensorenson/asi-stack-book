@@ -303,6 +303,18 @@ and output obligations, state identity, evidence, resource accounting,
 failure, intervention, migration, and recovery. Architecture-specific
 extensions remain typed rather than leaking into every consumer.
 
+Deterministic Capability Compilation proposes a package for this boundary:
+a Neural Capability Object binds a field, compatible base, parameter ownership,
+activation interfaces, evidence, dependencies and lifecycle. Its semantic
+mass-balance rule accounts for each scaffold obligation as preserved, revised,
+residualized or rejected. An imitation loss cannot silently drop a recovery
+or authority obligation. Linking objects still produces a candidate requiring
+qualification; tensor compatibility alone supplies no behavioral preservation.
+This remains a design proposal. [Stable Capability Fields](https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html#capability-fields-as-compilation-units)
+owns the package contract, while this unit owns dispatch and substrate
+replacement. Neither an object format nor a link receipt establishes a working
+capability-preserving compiler.
+
 ## Checkpoints Must Preserve More Than Weights
 
 Replacement often fails because a checkpoint is treated as a weight file.

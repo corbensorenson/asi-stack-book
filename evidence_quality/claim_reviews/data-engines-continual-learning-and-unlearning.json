@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/data-engines-continual-learning-and-unlearning.qmd",
     "structured_atoms_reviewed": 86,
-    "prose_candidates_adjudicated": 82,
+    "prose_candidates_adjudicated": 85,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning\u2013Compute Topology integration. Adaptive lineage, reversible integration, commitment annealing, knowledge placement, salvage, retirement, privacy, influence, and storage-erasure distinctions are bounded by the chapter's existing provenance, full-state, lifecycle, checkpoint-authority, deletion-axis, descendant, rollback, and custody atoms. The prior Regret Engine material remains bounded. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-08-11 Assurance-Shift source integration was re-reviewed against the current chapter; new material propositions map to existing owners and retain the paper's conceptual evidence ceiling."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-09 Learning–Compute Topology integration. Adaptive lineage, reversible integration, commitment annealing, knowledge placement, salvage, retirement, privacy, influence, and storage-erasure distinctions are bounded by the chapter's existing provenance, full-state, lifecycle, checkpoint-authority, deletion-axis, descendant, rollback, and custody atoms. The prior Regret Engine material remains bounded. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-08-11 Assurance-Shift source integration was re-reviewed against the current chapter; new material propositions map to existing owners and retain the paper's conceptual evidence ceiling. November 2 chapter-coverage audit reviewed the added secondary-owner explanation and its selected-source limits. New scanner fragments restate existing contracts or report the source taxonomy; core/support and local outcomes are unchanged. This scoped review is not a fresh whole-chapter or source-method qualification."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -470,6 +470,19 @@
       "state": "duplicate_of_atom",
       "rationale": "The 2026-08-11 Assurance-Shift integration was semantically reviewed as a bounded refinement of the named existing atom. The complete manuscript and source mapping add no separate support-bearing proposition and do not promote support.",
       "target_atom_id": "data-engines-continual-learning-and-unlearning.mechanism.006"
+    },
+    "data-engines-continual-learning-and-unlearning.prose.78b09d51c35a": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 coverage audit: Attributed MCCL inner/outer-loop distinction, with the surrounding text retaining the difference between state change and learning a management policy."
+    },
+    "data-engines-continual-learning-and-unlearning.prose.d320d88c7723": {
+      "state": "historical_or_source_report",
+      "rationale": "2026-11-02 coverage audit: Line-wrapped fragment of MCCL’s proposed evaluation taxonomy. Retention, adaptation and transfer remain separate outcomes, with no local measurement or universal scaling inference."
+    },
+    "data-engines-continual-learning-and-unlearning.prose.ef9d7703b4f9": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "data-engines-continual-learning-and-unlearning.core",
+      "rationale": "2026-11-02 coverage audit: Existing custody core requires exact update state, transformations and descendants. The MCCL example applies that inventory rule to memory content versus selector changes; it adds no material contract or result."
     }
   },
   "prose_review_lineage": [

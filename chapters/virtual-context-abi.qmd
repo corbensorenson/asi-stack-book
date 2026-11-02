@@ -4,21 +4,17 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-02"
 primary_sources:
   - "vcm_public"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
   - "context_engineer"
   - "verification_bandwidth"
   - "viea"
   - "vcm_editable"
   - "moecot"
   - "spinoza"
-  - "cca_project"
-  - "moecot_manifest_project"
-  - "beastbrain_project"
-  - "bugbrain_project"
-  - "qcsa_whitepaper"
-  - "reflexive_router_whitepaper"
   - "ext_graphrag_2024"
   - "ext_hipporag_2024"
   - "ext_raptor_2024"
@@ -31,13 +27,21 @@ primary_sources:
   - "ext_alce_2023"
   - "ext_self_rag_2023"
   - "ext_longllmlingua_2023"
+  - "cca_project"
+  - "moecot_manifest_project"
+  - "beastbrain_project"
+  - "bugbrain_project"
+  - "qcsa_whitepaper"
+  - "reflexive_router_whitepaper"
+  - "kernel_english_residual_compiler"
   - "ext_pagedattention_vllm_2023"
   - "ext_airllm_2023"
   - "ext_hf_accelerate_big_model_inference_2026"
+  - "ext_recursive_language_models_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "The original twenty-four mapped sources are reviewed at their available boundary; seven additional manifest assignments, including three physical-memory comparators, remain metadata-first drafting context. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
+  - "Twenty-five mapped sources, including the RLM secondary-owner join, are reviewed at their recorded boundary; seven other manifest assignments, including three physical-memory comparators, remain metadata-first drafting context. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
   - "Current evidence is exact but narrow: three valid/five rejecting admission fixtures, two valid/nine rejecting resolver routes, one bounded certificate/eleven rejecting mutations, 83 theorem declarations under six targets including an exact 39-theorem request lifecycle and 73-mutation consumer, and mixed bounded QCSA results. None runs a deployed resolver or natural model-facing context campaign."
   - "A full attempt still requires natural source sets, actual emitted packets, independently implemented source-to-packet and use evaluators, strong matched context baselines, staleness/poisoning/omission/authority/cache attacks, complete costs, causal ablations, clean reproduction, and cross-model/cross-backend transfer."
   - "Chapter-core support remains at `argument`; the bounded QCSA mechanism dispositions do not promote the ABI core."
@@ -51,12 +55,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-07-23 |
-| Primary source records | 31 assigned records spanning VCM and adjacent author sources, four pinned projects, QCSA, The Reflexive Router, retrieval and memory comparators, and three physical-memory comparators used only to define the abstraction boundary |
+| Last updated | 2026-11-02 |
+| Primary source records | 32 current manifest assignments; selected primary-passage review is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA and `reflexive_router_whitepaper`; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
-| Source loading state | source notes: `vcm_public`, `deterministic_capability_compilation`, `platonic_world_model`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: `vcm_public`, `deterministic_capability_compilation`, `platonic_world_model`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_recursive_language_models_2025`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
 | Test state | Exact bounded scaffold: 3 valid/5 rejecting admission-adequacy fixtures; 2 valid/9 rejecting resolver/certificate routes; 1 bounded four-project certificate/11 rejecting mutations; exact 39-theorem reachable 4-event materialization and 2-event mandatory-fault model with 8 composition splits and 73/73 rejected mutations; reachable 5-event certificate admission with 12 real certificate projections and 64/64 rejected mutations; 83 live Lean declarations under 6 targets; and QCSA's mixed synthetic identity/address/certificate results. No deployed resolver, natural source-to-packet fidelity test, model-use observation, useful context advantage, transaction isolation, deletion enforcement, VCM-Bench run, or production transfer. |
 
 The executed merge combines two current record families:
@@ -637,6 +641,34 @@ rule that compactness and availability are not adequacy: the source proposes a
 representation protocol, not evidence that any KERC packet is semantically
 complete, cheaper, or useful to a real reasoner.
 
+### Recursive context inspection crosses the materialization boundary
+
+[Recursive Language Models](https://arxiv.org/abs/2512.24601v3) provide a
+concrete inference scaffold for this boundary. The prompt lives in a
+persistent REPL variable rather than entirely in the root model's context.
+The root receives bounded metadata and can generate code that inspects the
+input, selects spans for model subcalls, and assembles intermediate or final
+values. The original source object, material inspected by code, text supplied
+to each submodel, and returned summaries are therefore different objects.
+Storing the whole input does not establish that the answer considered it all.
+
+An ABI adaptation would bind that external object to a source version and
+snapshot; record which selections each subcall actually received; and retain
+the lineage, omissions, uncertainty and dependencies of each derived result.
+A summary of selected passages cannot inherit the coverage of the original
+file. A later subcall that needs omitted evidence must request another
+materialization, and a changed source can invalidate the dependent result.
+These are proposed integration requirements, not features established by the
+RLM paper.
+
+Generated inspection code also crosses an execution boundary. Reading an
+admitted object supplies neither permission to access other files nor an
+authority grant for effects. The sandbox, recursive-call budget, cancellation
+and output handling need separate controls. [Governed Deliberation](governed-deliberation-and-test-time-scaling.qmd#recursive-context-and-hybrid-reasoning)
+owns whether decomposition earns its total cost; this chapter owns the
+context actually made available. Neither ownership establishes complete
+inspection, faithful synthesis or unlimited effective context.
+
 ## Interfaces
 
 The public interface is a static request, candidate set, certificate, packet,
@@ -993,8 +1025,10 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | External comparators for retrieval, graph/community sensemaking, associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression; use to sharpen typed representation, actual use, provenance, loss, update, poisoning, cost, and adequacy boundaries. | bounded primary-record notes available; no local model, memory, benchmark, citation, compression, or production result |
 | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | One historical-project lineage for durable-memory/context separation, frozen and TTL-bounded slices, bounded graph snapshots, generation-leased handles, provenance, expiry, revocation, restore revalidation, and invalid-slice controls. | public-safe pinned notes reviewed; one hand-authored bounded certificate and mutations only, with no historical runtime replay or independent replication |
 
-The original twenty-four mapped sources have first-class Appendix C mappings. The
-mappings support static context ABI and certificate vocabulary. They do not
+Twenty-five sources have first-class Appendix C mappings. The original
+twenty-four support static context ABI and certificate vocabulary; the RLM
+addition explains externalized inspection and recursive subcall boundaries.
+These mappings do not
 support claims of resolver correctness, summary fidelity, certificate
 truthfulness, contradiction-rate improvement, context compiler performance,
 memory-store behavior, or model-facing context quality.
@@ -1012,6 +1046,7 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | `ext_pagedattention_vllm_2023` | Metadata-first comparator: Efficient Memory Management for Large Language Model Serving with PagedAttention. Primary external paper for vLLM/PagedAttention, which treats KV-cache memory management and serving throughput as a distinct acceleration axis. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_recursive_language_models_2025` | Passage-reviewed comparator: Recursive Language Models. RLM holds the prompt and intermediate values outside the root context, exposes bounded metadata and lets generated code select material for subcalls. This distinguishes addressable source state from inspected and returned context. | The RLM paper does not implement the Virtual Context ABI or establish complete coverage, faithful summaries, adequate sandboxing or unlimited effective context. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -120,6 +120,25 @@ objects, unresolved aliases, omitted material, denied sources, stale items,
 conflicts, failed retrievals, truncated fields, and approximations. Silence is
 not evidence that the missing item does not exist.
 
+## Inspecting a Large Input Is a Sequence of Context Decisions
+
+[Recursive Language Models](https://arxiv.org/abs/2512.24601v3) make the
+distinction tangible. Their scaffold keeps the input in a REPL variable;
+the root model receives bounded metadata and writes code that can inspect it,
+send selected material to submodels, and assemble results. The stored input,
+the inspected spans, each submodel's context, and the returned summary are
+different evidence surfaces. Keeping a million-token object available does
+not mean the answer considered every part.
+
+For the release note, a recursive search might inspect the trial summary but
+miss the later withdrawal. A governed adaptation would preserve the source
+snapshot, actual selections, omitted material and subcall dependencies. The
+summary would retain its narrower coverage, and new evidence would require
+another context decision. Generated inspection code also needs bounded
+execution authority. The paper supplies an inference method; it does not
+establish those ABI controls or complete input coverage. Unit 23 returns to
+whether the extra calls earn their cost.
+
 ## Pages, Cells, and Certificates
 
 The Virtual Context ABI provides a shared record shape without requiring every
