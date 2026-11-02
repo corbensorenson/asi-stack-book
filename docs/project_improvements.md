@@ -4,6 +4,8 @@ Prepared for Corben Sorenson on October 2, 2026.
 
 **Status: advisory proposal.** This document collects improvements for author and maintainer decisions. It is not an active roadmap, a completion declaration, an evidence transition, a release gate, or authorization to publish, spend, contact reviewers, open protected tasks, or change a frozen campaign. Selected recommendations enter the existing active roadmap through its normal amendment process. This proposal does not change any chapter claim label or support state.
 
+**Latest substantive book review:** see the [November 2 missing-content review](#november-2-2026-missing-content-review): 32 findings, a 26-unit editorial map, and an ordered book-completion sequence. It distinguishes missing reader explanations from topics already present in the technical edition. It also identifies a reproducible defect in the metric currently called “visible word count.” These findings do not add recommendation IDs to the original 114-item catalog or change its verified count.
+
 The baseline reviewed was commit `5ae6da1ef0b653d1248f83ca633e7658ac13dc4e`. The preceding detailed review exercised all 475 registered validation units in split batches and targeted rechecks: 460 passed and 15 remained failing. Lean built successfully; the technical book, Human Reader and paper library rendered; strict browser checks passed across 234 page/viewport pairs. Those results are dated observations, not a permanently current health declaration. Additional investigation for this proposal inspected admission tools, bundle construction, deployment ordering, registry metadata, formal trust dependencies, reader length distributions and existing planning owners, and consulted the primary technical references cited below.
 
 ## Implementation adoption and progress
@@ -1120,6 +1122,827 @@ Primary owners: [sole active roadmap](post_v2_3_maintenance_transfer_and_publica
 **P2 · Strengthen.** Apply the project's own artifact discipline to this list. Before adding a new field, proof, dashboard, diagram, report or framework, identify the decision it enables and why an existing owner cannot serve it. Prefer extending a working consumer over creating another completeness surface.
 
 **Done when:** an improvement reduces a demonstrated ambiguity, failure or cost, or supports a specific discriminating experiment. Recommendations can be declined or retired with a reason; a long plan is not a mandate to build more machinery.
+
+## November 2, 2026 missing-content review
+
+### Scope, baseline, and interpretation
+
+This review uses `6c89bb57d62c9c0ad186217c3cc8c8f837e9a927` as its
+tracked baseline, after the fifteen-source integration. It examines the book
+as a manuscript: what a reader can understand, reconstruct, question, and use.
+The principal diagnosis is **broad coverage with uneven explanatory depth**.
+The next substantial improvement should make the architecture easier to work
+through, rather than simply expand the source inventory or add more named
+layers.
+
+The review inspected the 89-owner architecture/outline, the section structure
+of all 26 current reader units, substantial selected reader arguments and
+worked examples, selected technical mechanisms and evidence boundaries,
+preface, glossary, quickstart, contribution summary, source audit, and current
+editorial criteria. This is an assistant editorial assessment. It is **not**
+a claim that every paragraph of the complete technical and reader editions,
+every linked paper, or every proof was independently reread. No independent
+reader-comprehension study was performed. Findings below identify their
+actual inspected surface; a proposed addition should first be reconciled
+with its technical owner to avoid duplicating an existing explanation.
+
+The current metadata reports 89 technical owners, 26 reader units, 542 source
+records, and 1,402 source/chapter assignments. The reader manifest reports
+154,492 “visible words.” Finding 30 explains why that last number should be
+treated as the **current source-count metric**, not an independently verified
+count of displayed words. All units pass the existing range check under that
+metric; this does not demonstrate pacing or completeness.
+
+Several easy criticisms would be inaccurate:
+
+- JEPA, H-Net, Platonic representation hypotheses, activation/personality
+  steering, new memory architectures, test-time adaptation, and recent agent
+  control work now have explanatory chapter homes. Their presence alone does
+  not settle whether readers understand their relationships.
+- Ordinary scripts, conventional orchestration, and narrower alternatives
+  are treated as legitimate competitors. Three defended contributions and
+  their bounded evidence are already explicit.
+- The reference architecture already has named artifact fixtures, a denied
+  path, local executed slices, and a long reader trace. The missing piece is
+  a more usable reader-facing presentation, not the invention of a trace.
+- Perception already has technical state-estimation mathematics. Assurance
+  already has a stale-evidence/defeater example. Runtime already distinguishes
+  attempts, effects, observations, recovery, and unresolved exposure.
+- Human authority, institutional legitimacy, political conflict, physical
+  constraints, open-weight release limits, and governance-plane outages are
+  covered. More concrete treatment can be useful without calling them absent.
+- All 89 chapter cores remaining at `argument` is not a manuscript defect
+  that can be repaired by relabeling them. Completing the book does not
+  require demonstrating ASI, reproducing every paper, or running new Docker,
+  training, deployment, or scientific campaigns.
+
+The findings use three editorial priorities. **First** means an especially
+valuable next manuscript batch. **Next** means a substantive improvement
+after the first batch. **Selective** means add it where it earns its space,
+usually by replacing weaker material. These are not severity labels for
+deployed software, new release gates, or another active roadmap. The finding
+numbers are navigation labels, not additions to the A01–N08 catalog.
+
+### Finding 1: Make the ASI horizon an explicit capability argument
+
+**Priority: First. Existing criteria: I01, J02, J07.**
+
+[Reader Unit 1](../editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd)
+clearly says that ASI is the intended horizon, not an achieved result. It also
+explains why cognition includes more than a model. What could be sharper is
+the progression from a helpful assistant to a persistent, tool-using,
+self-modifying system: which additional demands arise at each step, and which
+demands apply just as well to ordinary automation?
+
+Add a short capability-and-obligation progression: bounded answer generation;
+multi-step action; persistent memory and goals; coordination across agents;
+changes to the learner; and replacement of parts of the governing system.
+For each, name the new failure relation and the chapter that addresses it.
+Separate acquiring competence from controlling its use. Explain what this
+book contributes to the ASI question and what remains an account of advanced
+AI governance rather than a demonstrated path to superhuman competence.
+
+**Completion test:** a reader can explain why the stack becomes relevant as
+capability and consequence grow, without inferring that having its records or
+interfaces produces superintelligence. Reuse the existing contribution
+summary; do not introduce a fourth unsupported contribution.
+
+### Finding 2: Supply a small prerequisite bridge
+
+**Priority: First. Existing criteria: J02, J05, K01.**
+
+The audience is technically curious, but later units use embeddings, latent
+state, gradients, checkpoints, calibration, objectives, optimization, and
+distribution shift at very different levels of explanation. The glossary
+does not currently provide entries for several basic terms, including
+embedding and gradient. This is a prerequisite problem, not a request for an
+introductory ML textbook.
+
+Add a compact optional primer or first-use bridge covering training versus
+inference; weights versus temporary state; embeddings versus symbolic
+records; objective versus optimizer; confidence versus calibration; and
+prediction versus intervention. A single simple model, carried from an input
+through an output and one update, would connect the vocabulary. Point to
+deeper technical owners rather than repeating the primer everywhere.
+
+**Completion test:** a reader can follow Units 11, 19, and 20 without having
+to infer what changes during learning or where a latent representation lives.
+Test the explanation with a reader who fits the stated audience; a glossary
+entry count is only a discovery aid.
+
+### Finding 3: Separate the logical architecture, deployment, and trust maps
+
+**Priority: First. Existing criteria: J02, J07, M01.**
+
+Unit 1's “Logical Layers, Not a Service Tax” already prevents the worst
+interpretation that each chapter requires a microservice. Unit 26 also names
+a minimal trusted kernel. Still, following many logical owners can leave a
+reader unsure what actually runs together, what stores state, and what must
+be trusted.
+
+Provide three aligned views of the same small system: logical responsibilities;
+a possible deployment with co-located modules; and the trust boundary, including
+humans, credentials, operating system, providers, and observation channels.
+Mark a model call, a durable store, a control decision, and an external effect
+differently. Show which relationships are required by the proposal and which
+placement choices are merely illustrative.
+
+**Completion test:** a reader can sketch a coherent local implementation and
+identify a common-mode failure shared by two apparently separate layers.
+The diagrams must not imply that a particular deployment has been built or
+qualified.
+
+### Finding 4: Turn adoption tiers into practical migration recipes
+
+**Priority: First. Existing criteria: I02, J07, K01.**
+
+The reader already allows low-risk disposable work, ordinary workflows, and
+larger governance arrangements. What remains less tangible is the transition
+between those levels: what should a small team add first, what can remain a
+plain function or file, and what observation would justify the next layer?
+
+Give two or three short recipes. Start with an ordinary script plus tests;
+add a restricted adapter when effects exceed the script's authority model;
+add persistent claim/evidence relations only when reuse or disputed outcomes
+make their absence costly. Include one case where the team stops at the
+ordinary workflow because the additional machinery does not pay for itself.
+Name the extra maintenance burden at each step.
+
+**Completion test:** the reader can choose a starting configuration and a
+trigger for expansion. This is a writing task, not a commitment to ship a
+general-purpose ASI runtime.
+
+### Finding 5: Expose the existing artifact spine as one inspectable reader example
+
+**Priority: First. Existing criteria: J02, J06, J07, M01.**
+
+[Integrated Reference Architecture](../chapters/integrated-reference-architecture.qmd#current-fixture-trace)
+already carries stable IDs through intent, command, plan, context, route,
+work order, audit, evidence, and no-promotion review. Unit 26 follows a
+repository change through the system in substantial prose. Neither should
+be replaced with another abstract inventory.
+
+Adapt those existing materials into a compact packet-and-transition table:
+the same request ID, current authority, selected state, output artifact,
+observation, permitted claim, and unresolved residual at each step. Include
+one ordinary success, one denial, and one unknown effect. Distinguish the
+existing fixture/local observations from any newly invented teaching values.
+Link each transition to its actual owner.
+
+**Completion test:** a reader can trace one identifier across the cycle and
+explain why a completed job can still leave an unresolved outcome. The table
+should clarify existing evidence, not suggest a newly executed integrated run.
+
+### Finding 6: Work through one observation-to-belief update
+
+**Priority: First. Existing criteria: J02, K01, M01.**
+
+[Perception](../chapters/perception-sensor-fusion-and-observation-trust.qmd)
+already discusses transition and observation models, priors, correlation,
+observability, and state-estimation families. Reader Units 10–11 explain
+missingness and trust well. The bridge from those explanations to a changed
+belief could be more concrete.
+
+Use a small, explicitly hypothetical example: prior belief about a blocked
+gantry; two imperfect observations; their dependence; and a later direct
+check. Show why two reports copied from one sensor do not provide the same
+update as two suitably independent channels. Preserve a disagreement or
+unknown state when the evidence warrants it. Explain how belief can change
+without granting permission to move the gantry.
+
+**Completion test:** the reader can reproduce the toy update and identify
+which assumption would invalidate it. No natural sensor campaign is required.
+
+### Finding 7: Make the forecast-to-intervention distinction operational
+
+**Priority: Next. Existing criteria: J02, J06, K01.**
+
+[Reader Unit 11](../editions/reader_manuscript/current/chapters/unit-11-governed-world-models-and-reality-grounding.qmd)
+already separates prediction, observation, and intervention, and explains why
+JEPA-style representation results do not establish physical grounding. The
+remaining pedagogical opportunity is to show two models agreeing on a forecast
+while implying different consequences for an action.
+
+Extend the physical example with a hidden common cause, an observational
+correlation, and an intervention that distinguishes candidate explanations.
+State what remains unidentified. Explain why representation similarity,
+successful reconstruction, and good held-out prediction answer different
+questions from action-effect identification.
+
+**Completion test:** a reader can give a counterexample to “the model predicts
+well, therefore this action is justified.” Reuse the chapter's existing causal
+sources; do not turn the example into a claim that causal identification is
+solved by an interface.
+
+### Finding 8: Show a planner choosing and revising an actual small plan
+
+**Priority: First. Existing criteria: J02, J06, K01.**
+
+Planning already covers DAGs, dependency identity, uncertainty, ordinary
+workflow competition, and recent latent-world-model planning. The prose is
+stronger on the conditions a valid plan must preserve than on a reader
+performing a complete plan-selection step.
+
+Give a small task graph with durations, one scarce reviewer, a prerequisite,
+an uncertain observation, and two alternatives. Walk through candidate
+construction, feasibility, selection, and one replan after a failed premise.
+Compare with a sensible fixed workflow. Label forecasts, hard constraints,
+and chosen preferences separately; do not combine them into an unexplained
+scalar score.
+
+**Completion test:** a reader can tell why the chosen plan wins, where a
+different budget changes that choice, and which decisions remain runtime
+admission rather than planning. Keep the arithmetic small enough to inspect.
+
+### Finding 9: Give cognitive compilation a complete before-and-after artifact
+
+**Priority: Next. Existing criteria: J02, J03, K01.**
+
+Unit 13 already has two repairs, equivalence obligations, and an argument
+that cognitive compilation is more than prompt wording. Strengthen that
+case with one concise literal input, intermediate representation, selected
+lowering, and resulting constrained operation.
+
+Annotate which semantics are preserved: target, input purpose, authority,
+uncertainty, requested result, and verification obligation. Include a
+plausible optimization rejected because it removes a material distinction.
+Show what a conventional typed workflow or template can do equally well.
+
+**Completion test:** the reader can inspect a transformation and find a
+specific semantic loss. A notation-heavy artifact dump would not satisfy this;
+the example should explain the proposed compiler's useful relation and limits.
+
+### Finding 10: Put memory consistency and forgetting in one visible transaction
+
+**Priority: Next. Existing criteria: J02, J06, K01.**
+
+Unit 14 already treats branch isolation, context transactions, semantic memory,
+taint, and scoped recall; Unit 21 treats unlearning and persistence. These are
+not absent topics. A compact cross-unit transaction would make their
+interaction easier to understand.
+
+Start with two branches using a shared fact. Correct that fact while one
+branch is in flight. Show a rejected merge, affected derived memories,
+permitted metadata retention, and the fate of a cached answer. Distinguish
+invalidating a use, deleting an accessible record, retraining a model, and
+proving erasure. Carry the authority and purpose constraints through recall
+and correction.
+
+**Completion test:** the reader can explain what is actually removed, what
+must be recomputed, and which earlier effects cannot be recalled. Link the
+existing technical mechanisms instead of inventing a new memory subsystem.
+
+### Finding 11: Compute a constrained routing choice
+
+**Priority: First. Existing criteria: J02, J07, K01.**
+
+Unit 19 already has a useful ten-task denominator example and explains load,
+fallback, abstention, readiness, and stateful substrates. What it does not
+yet make equally easy is reconstructing the choice among several eligible
+routes under a concrete budget.
+
+Add three candidates with explicit quality evidence, uncertainty, cost,
+latency, state requirements, and authority limits. First remove ineligible
+routes; then compare the remaining choices under a stated consumer preference.
+Include a case where no route qualifies and a case where a cheap route's
+human-rescue cost changes the ranking. Separate a prediction of adequacy from
+an observed result and from a statistical calibration claim.
+
+**Completion test:** a reader can recompute the choice and explain why a
+different consequence or queue state changes it. Do not imply that a simple
+expected-value calculation makes prohibited harm tradable.
+
+### Finding 12: Teach one learning update before listing optimizer families
+
+**Priority: First. Existing criteria: J02, J03, J05, K01.**
+
+Unit 20 names many optimizers and modern training regimes. That breadth can
+outpace a reader who has not seen a concrete loss, gradient, update, and
+changed behavior. Governance of a training run is more intelligible once
+the reader understands the operation being governed.
+
+Work through one tiny parameter update, then contrast pretraining,
+supervised adaptation, reward-based optimization, in-context adaptation,
+external-memory updates, and test-time parameter updates. Show what state
+changes and what a checkpoint must contain. Keep the optimizer catalog in
+the technical owner or a comparison box with a clear selection purpose.
+
+**Completion test:** a reader can distinguish improving a reward score from
+improving a protected outcome, and a temporary inference state change from
+a persistent weight update. The numerical toy is explanatory, not a training
+result or recommendation to adopt a particular optimizer.
+
+### Finding 13: Unify the modern-model comparisons around state and learning
+
+**Priority: Next. Existing criteria: J02, J05, J06.**
+
+Recent additions correctly distinguish JEPA objectives, H-Net granularity,
+lookup memory, residual routing, recurrence, and learning topology. They are
+distributed across Units 11, 19, 20, and 21, which risks leaving the reader
+with names rather than a comparative mental model.
+
+Add one modest cross-reference table organized by prediction target,
+representation, persistent state, update locus, runtime state, and applicable
+evidence. Explicitly separate learning-process topology from hardware/network
+placement and from routing within a forward pass. Include shared mechanisms;
+these are overlapping design axes, not necessarily mutually exclusive species.
+
+**Completion test:** a reader can explain how a JEPA objective and a learned
+hierarchy might coexist, and why a recurrent inference path is not by itself
+recursive self-improvement. Preserve each paper's selected-version scope.
+
+### Finding 14: Resolve an actual persistence-locus choice
+
+**Priority: First. Existing criteria: J02, J07, K01.**
+
+Unit 21 already offers rich choices among context, procedure, tests, tools,
+memory, policy, and weights. Its next improvement should be a complete
+decision over those choices, not another list of available loci.
+
+Use a recurring failure and compare three repairs: a regression test plus
+procedure, an external memory entry, and a parameter update. State the reuse
+population, repair cost, verification cost, expected durability, possible
+contamination, and recovery burden. Then introduce new evidence that causes
+the selected repair to be narrowed or retired.
+
+**Completion test:** a reader can explain why the smallest adequate persistence
+locus wins in this case and when a broader update would become justified.
+Since Unit 21 is already at the edge of its current length range, replace
+repetitive material rather than automatically extending it.
+
+### Finding 15: Explain the statistics of repeated improvement decisions
+
+**Priority: First. Existing criteria: I04, J02, L02.**
+
+The book repeatedly and correctly asks for frozen comparisons, holdouts,
+denominators, dependence accounting, and full search cost. The inspected
+evaluation material gives less practical guidance on turning many ongoing
+comparisons and repeated looks at results into a justified decision. A
+single-test success criterion does not, by itself, specify that policy.
+
+Add a worked evaluation plan covering the sampling unit, correlated task
+families, uncertainty, missing outcomes, selection among candidates, stopping,
+and reuse of a holdout after feedback. Use the Answerability Atlas correction
+as an existing example of how the permitted conclusion changes with comparator
+scope. Distinguish an illustrative calculation from an actual new analysis.
+
+**Completion test:** a reader can say what claim remains warranted after
+several candidate-selection rounds, why ten related successes are not ten
+independent confirmations, and what needs a fresh evaluation. Selecting a
+particular statistical procedure requires appropriate primary-source
+grounding; this review has not established a universal procedure or carried
+out a new statistical campaign.
+
+### Finding 16: Draw one complete claim–evidence–argument graph
+
+**Priority: First. Existing criteria: J02, M01, M02.**
+
+Unit 22 already states a narrow top claim, lists subclaims, and explains
+defeaters. The technical assurance chapter already walks through a stale
+monitor result and unresolved countercase. These are good foundations for a
+more inspectable graph rather than evidence that assurance is missing.
+
+Instantiate a small graph with a top claim, strategy, two subclaims, actual
+or explicitly hypothetical evidence IDs, an environmental assumption, a
+defeater, and a residual owner. Change one evidence version and mark exactly
+which nodes become stale. Show why passing case compilation still does not
+confer release authority.
+
+**Completion test:** a reader can point to the unsupported edge in a plausible
+but invalid case. Reuse the existing stale-evidence example; no new safety
+qualification is necessary to teach it.
+
+### Finding 17: Make the proof-to-system bridge inspectable
+
+**Priority: Next. Existing criteria: I03, J02, L02.**
+
+Unit 15 already distinguishes mechanized record properties, model adequacy,
+truth, and runtime enforcement. The next step is a small worked bridge from
+a theorem to the system assumptions that make it relevant.
+
+Choose one existing bounded theorem. State the modeled objects and predicate
+in plain language, identify its input representation, and map each important
+premise to an actual control, observation, or unverified assumption. Show a
+system failure that leaves the theorem true because a premise or representation
+no longer matches reality. Explain what proof maintenance would and would
+not repair.
+
+**Completion test:** a reader can distinguish a false theorem, a broken
+implementation, and an adequate proof applied to the wrong world. This calls
+for explanatory reading of existing artifacts, not a new Lean campaign.
+
+### Finding 18: Bring possible AI welfare into the reader's moral argument
+
+**Priority: First. Existing criteria: J02, J06, L02.**
+
+This is a concrete edition gap. The technical
+[Moral Uncertainty chapter](../chapters/moral-uncertainty-and-value-conflict.qmd#possible-artificial-moral-patients)
+has substantive coverage of possible artificial moral patients, uncertainty
+records, attribution errors, and precautions. Reader Unit 7 does not currently
+carry that argument in an explicit, comparably usable form.
+
+Add a bounded reader section distinguishing consciousness, sentience,
+valence, agency, welfare, and moral status. Explain uncertainty without
+treating either self-report or its absence as decisive. Connect the issue to
+personality steering, persistent memory, replication, and identity across
+copies, while preserving human safety and actual authority boundaries.
+
+**Completion test:** a reader understands why the architecture might owe
+precautionary attention without concluding that present models are conscious
+or that an agent may grant itself rights or defeat shutdown. Use the existing
+source and technical owner; a new chapter or speculative consciousness
+detector is not needed.
+
+### Finding 19: Show a value conflict reaching a contestable decision
+
+**Priority: Next. Existing criteria: J02, J06, K01.**
+
+Unit 7 already distinguishes behavior, objective integrity, legitimate
+amendment, and plural values. To make this more than a principled governance
+description, follow one conflict to an actual bounded decision.
+
+Use two defensible but incompatible interests, an authority with limited
+jurisdiction, a factual uncertainty, and an appeal. Show which constraints
+exclude options, which tradeoffs remain, who may choose, what dissent is
+preserved, and what later evidence could reopen the decision. Include a
+case where no legitimate actor has authority to resolve the whole conflict.
+
+**Completion test:** a reader can explain the difference between learning a
+person's preference and authorizing a policy that affects another person.
+Avoid implying that preference aggregation or a scalar utility dissolves
+political disagreement.
+
+### Finding 20: Make the institutional mechanism small enough to inspect
+
+**Priority: Next. Existing criteria: J02, J07, K01.**
+
+Unit 8 already treats representation, affected nonparticipants, partial
+coordination, and a shared-release institution. Its most useful addition
+would be a tightly specified decision cycle within that example.
+
+Identify participants and excluded parties; a proposed rule; access to the
+evidence; voting or adjudication authority; enforcement limits; appeal; and
+a withdrawal or emergency path. Then introduce capture, a dominant participant,
+or a noncooperating outside actor. Explain which institutional power is
+assumed rather than supplied by technical interoperability.
+
+**Completion test:** a reader can identify who bears a cost, who can contest
+it, and what the architecture cannot compel. Treat this as a hypothetical
+institutional design, not legal advice or an assertion about current law.
+
+### Finding 21: Add one sustained transfer case outside repository maintenance
+
+**Priority: Next. Existing criteria: I02, J02, K01.**
+
+The book is not exclusively about software: it includes a physical gantry,
+institutions, energy, work, and scientific discovery. Nevertheless, the most
+continuous example is a repository change. That makes the writing coherent
+but leaves transfer to other epistemic environments less demonstrated.
+
+Add one compact scientific-research case: a hypothesis, a measurement or
+analysis choice, a rival explanation, a failed result, and an admitted or
+rejected memory update. Show how truth uncertainty differs from passing
+software tests and how an irreversible experiment differs from reverting a
+file. Link only the units where that contrast teaches something.
+
+**Completion test:** the example changes the decision logic, not just the
+nouns. Label it hypothetical unless it faithfully adapts an existing scoped
+case. Do not launch a new scientific campaign or add a second full narrative
+through every chapter merely for symmetry.
+
+### Finding 22: Put numbers on net recursive improvement and control burden
+
+**Priority: Next. Existing criteria: I02, J02, J07.**
+
+Unit 25 already covers portfolio limits, bounded liveness, verification
+bandwidth, correlated changes, descendants, and protected recursive depth.
+It correctly denies that evidence compounds automatically. A small net-gain
+example would make the positive claim easier to evaluate.
+
+Compare two hypothetical generations of an improver. Include useful task
+performance, proposal cost, evaluation delay, human review, failures,
+recovery, and displaced direct maintenance. Show a locally better component
+making the complete improvement loop slower or worse. Then identify a change
+that would count as a genuine improvement to the improver.
+
+**Completion test:** a reader can distinguish a larger archive, a better task
+solver, and a better improvement process. No forecast of an intelligence
+explosion or new self-improvement experiment is required.
+
+### Finding 23: Give the trusted kernel an explicit bootstrap and amendment story
+
+**Priority: Next. Existing criteria: J02, J07, N06.**
+
+Unit 26 names the kernel's dependencies, including hardware, OS, providers,
+and human keys; the security and custody owners go deeper. Make the reader
+path more explicit about how the first authority is installed and how that
+authority can later be changed without self-ratification.
+
+In the same small deployment used for Finding 3, identify initial credentials,
+the root policy, trusted clock/state assumptions, who can restore service,
+and which emergency amendments require an external actor. Include lost or
+compromised credentials and unavailable governance. State where a physical
+or institutional trust decision remains unavoidable.
+
+**Completion test:** a reader can identify the assumed trust root and a
+credible recovery boundary. Do not present key management or a narrow kernel
+as a proof against a more capable adversary.
+
+### Finding 24: Demonstrate useful progress under exhausted review capacity
+
+**Priority: Selective. Existing criteria: J02, J07, K01.**
+
+The reader already discusses scarcity, priority, governance outages, queues,
+and bounded liveness. What could be added is one concrete overload case that
+joins those explanations: a burst of low-quality requests competes with an
+incident and a legitimate routine task.
+
+Show admission limits, protected review capacity, deduplication or rejection,
+safe work that can continue, and a terminal response for deferred work. Name
+which observations distinguish overload from deliberate flooding. Preserve
+the possibility that an ordinary queue plus rate limits is the best design.
+
+**Completion test:** the reader can explain how the system avoids both
+uncontrolled effects and indefinite universal quarantine. Add this only if
+it supplies a distinct lesson beyond the existing outage and routing cases;
+it should not become another infrastructure-testing project.
+
+### Finding 25: Close load-bearing source gaps before growing the bibliography
+
+**Priority: First. Existing criteria: I04, L02, L05.**
+
+The current [source evidence audit](source_evidence_audit.md) records 1,194
+exact claim/source mappings and 1,125 passage-reviewed mappings against
+1,402 assignments. That leaves 208 assigned pairs without exact mappings
+and 69 mapped pairs without passage review. Those categories are not
+interchangeable: an unmapped contextual assignment is not automatically an
+unsupported public claim, and a recorded review is not an independent
+reproduction.
+
+Prioritize important claims with thin grounding. Dangerous Capability has
+9 mapped pairs and zero passage-reviewed mappings; Military AI has 4 and
+zero; Open-Weight Release has 7 and zero. Learning Theory has 15 mappings
+but only 7 passage-reviewed. Inspect the claim and actual source role before
+deciding whether to review a passage, narrow the claim, reclassify the source,
+or remove a misleading assignment.
+
+Large assignment/mapping gaps also occur in Resource Economics (25), Fast
+Generation (23), Replaceable Substrates (11), and Benchmark Atlas (11).
+These are triage signals, not a demand to manufacture a mapping for every
+background source. For pivotal claims, provide the selected version,
+section/table/theorem or other locator, the observation actually supported,
+and counterevidence.
+
+**Completion test:** the strongest public assertions can be traced to
+appropriate passages and honest scope. A larger inventory, zero warnings,
+or converting every chapter core to `source-derived` would not satisfy this.
+
+### Finding 26: Give source evolution a visible reader consequence
+
+**Priority: Next. Existing criteria: L01, L03, L05.**
+
+Recent source integration does a good job pinning versions and distinguishing
+selected passage review from reproduction. Preserve that discipline as
+prose accumulates, and make its reader-facing effect more concrete.
+
+Choose one source-backed statement and show how a revision, correction,
+withdrawn claim, changed benchmark denominator, or derivative report would
+affect dependent passages. Distinguish an unchanged URL from unchanged source
+content. Consolidate source families so multiple versions or related reports
+do not look like independent corroboration. Prefer durable section/table
+locators where page numbers shift.
+
+**Completion test:** a reader can find the version that supports a material
+claim and understand what the author would change if it no longer did.
+This is targeted bibliographic/editorial work, not a requirement to fetch
+and reread all 542 sources on every update.
+
+### Finding 27: Build a reader-facing terminology bridge across layers
+
+**Priority: First. Existing criteria: J05, J06, K09.**
+
+The owner map and glossary are substantial. Remaining friction comes from
+nearby words that carry different meanings: grant, lease, mandate, permission,
+readiness, qualification, accepted evidence, residual, effect, artifact, and
+claim. Their distinctions are important, but readers should not have to
+reconstruct them from many owners.
+
+Add a short “do not confuse” table with one common example, owner, and
+non-example per term pair. Audit first uses in the current reader and make
+the glossary point back to those explanations. Distinguish familiar field
+terms from author-defined compositions and historical project aliases.
+Expand only the acronyms that actually appear in the reader path.
+
+**Completion test:** a reader can explain why a qualified route can lack
+authority and why an accepted claim can describe a failed effect. Search
+success and glossary completeness do not substitute for an intelligible
+first explanation.
+
+### Finding 28: Add a few diagrams where they teach missing relationships
+
+**Priority: First. Existing criteria: K04, K07, M01, M02.**
+
+A source scan of the current reader finds embedded visual blocks in four
+units: 1, 15, 17, and 21. This is not proof that the remaining units need a
+diagram, and the earlier four-diagram criterion remains verified in its
+scope. The technical edition already offers many visual materials to adapt.
+
+The best candidates are the three architecture views in Finding 3; a belief,
+observation, and intervention diagram; a plan with a changed dependency; a
+state/update-locus comparison; a routing tradeoff; and the small assurance
+graph. Choose the few that reduce explanation burden the most. Keep labels
+readable, denied paths visible, and a useful text explanation adjacent.
+
+**Completion test:** the figure answers a named question that prose alone
+makes hard to follow. Inspect the actual rendered narrow and enlarged-text
+view when a figure is added. No video-production expansion is needed.
+
+### Finding 29: Rebalance repeated cautions toward chapter-specific mechanisms
+
+**Priority: First. Existing criteria: J03, J04, K01.**
+
+Failure cases, ordinary baselines, evidence limits, objections, minimum
+versions, and changing-the-conclusion sections do useful work. Their repeated
+shape can nevertheless make chapters feel interchangeable and displace
+mechanistic explanation.
+
+A heading-based diagnostic assigns about 35,392 of the current 154,492
+source-counted words, roughly 23%, to these recurring closing-section
+families. This is **not a duplicate-word estimate** or proof that those words
+are unnecessary. It identifies a good place for semantic editing, especially
+where a long closing framework accompanies short central mechanism sections.
+
+Keep local caveats where they change interpretation. Move reusable taxonomy
+to its owner and shorten generic repetitions to precise references. Spend
+the recovered space on the calculations and artifacts above. Do not merely
+replace a familiar template with a different template in all 26 units.
+
+**Completion test:** each unit has a distinctive causal argument and a
+specific objection; essential support boundaries remain close to the claims
+they qualify. Word-count compliance alone is not the acceptance criterion.
+
+### Finding 30: Correct the “visible word count” before using it to drive editing
+
+**Priority: First; reproducible tooling defect. Existing criteria: K01, N02.**
+
+[`visible_word_count`](../scripts/build_human_reader_current.py) strips some
+front matter, comments, fenced blocks, and shortcodes, then counts word-like
+tokens in the remaining source. It does not remove Markdown link destinations.
+These two source strings display the same one-word label:
+
+```markdown
+[route](https://x.test/a)
+[route](https://example.org/very/long/path/with/several/words)
+```
+
+The current function returns **5** and **10**, respectively. Hidden URL
+spelling therefore changes a metric labeled “visible words.” It also removes
+all fenced blocks, so any policy about counting visible code/examples needs
+to be explicit. Unit 21 currently reports 7,499 against an upper range of
+7,500; invisible source details should not determine whether its prose needs
+cutting.
+
+Use a Markdown/Quarto-aware text extraction policy or a clearly named
+source-token metric. Specify treatment of code, tables, captions, citations,
+and generated navigation. Recalculate honestly and retain old observations
+as dated measurements under the old policy. Do not retrospectively invent
+new word-count results or change targets simply to make a gate pass.
+
+**Completion test:** changing only a link destination leaves the displayed-
+prose count unchanged; displayed examples follow the declared policy; all
+consumers use the same definition. This review reproduces the defect but
+does not modify the counter or regenerate manuscript counts.
+
+### Finding 31: Reconcile the introductory support-state list
+
+**Priority: First; small consistency correction. Existing criteria: J05, L01.**
+
+The [preface](../preface.qmd#claim-labels) introduces explicit support states
+with a seven-state list ending at `external-literature-backed`. The maintained
+taxonomy also includes `deprecated` and `refuted`. Reader Unit 5 discusses
+negative evidence and retirement, but the introductory list reads as exhaustive.
+
+Either list all nine states or explicitly label the seven as the positive/
+initial support categories and explain where retirement/refutation fit.
+Check that the glossary and Evidence States owner explain the same lifecycle.
+Keep claim labels separate from support states.
+
+**Completion test:** a reader encountering a refuted or deprecated record
+does not have to infer that the book has introduced an undocumented category.
+Correcting the list must not change any actual claim's state.
+
+### Finding 32: Obtain independent reader and adversarial editorial feedback
+
+**Priority: Next. Existing criteria: K01, K06, N05.**
+
+The repository has extensive consistency, rendering, and browser observations.
+Those are valuable but do not establish that a technically curious reader
+understands the architecture or that a domain expert accepts its comparative
+argument. This review has the same limitation.
+
+Prepare a small feedback packet around the early conceptual path, one
+mechanism-heavy unit, and the integrated trace. Ask a target reader to explain
+the system and make one example decision; ask a relevant expert to identify
+the strongest ordinary alternative and an unsupported inferential step.
+Collect actual confusion and disagreement, not only ratings or approval.
+Distinguish author review, independent comprehension, technical criticism,
+and accessibility observations.
+
+**Completion test:** revisions answer observed misunderstandings and preserve
+substantive objections. This recommendation does not authorize contacting
+anyone or claim that the existing author-review state has been approved.
+
+### Unit-by-unit editorial map
+
+Each row records a useful next review target, not a declaration that the
+entire unit has failed or was reread line by line. “Already present” is
+included deliberately: a gap review should not erase earlier work.
+
+| Unit | Already present and worth preserving | What would most improve the unit | Relevant findings |
+|---|---|---|---|
+| [1: ASI as a stack](../editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd) | Three defended contributions, ordinary competitors, logical rather than mandatory service layers, minimum stack. | Capability progression; one aligned logical/deployment/trust view; early prerequisite and terminology routes. | 1–4, 27–28 |
+| [2: Efficient ASI](../editions/reader_manuscript/current/chapters/unit-02-the-efficient-asi-hypothesis.qmd) | Governance rent, hypothetical complete bill, honest refusal accounting, reuse break-even. | Connect its existing arithmetic to later routing and persistence choices; clarify which costs are measured, assumed, or omitted in a teaching example. | 4, 11, 14, 22 |
+| [3: Authority and misuse](../editions/reader_manuscript/current/chapters/unit-03-authority-failure-and-misuse.qmd) | Technical versus legitimate authority, local revocation race, remote-effect limits. | Carry one concrete authority identity into the integrated trace; tighten passage support for important dangerous-capability and military assertions. | 5, 23, 25 |
+| [4: Security and custody](../editions/reader_manuscript/current/chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd) | Layered attacks, private data versus authority, custody, selected prompt-injection mechanisms. | Reader-facing trust-root map and attack sequence that identifies which control fails, what remains observable, and what cannot be recalled. | 3, 23, 25 |
+| [5: Evidence and oversight](../editions/reader_manuscript/current/chapters/unit-05-evidence-states-and-scalable-oversight.qmd) | Local versus core support, oversight limits, persona/activation steering distinctions, control evaluations. | One claim's full lifecycle including contrary evidence; explain how behavioral steering differs from identifying an objective or moral status. | 17–18, 27, 31 |
+| [6: Human intent and control](../editions/reader_manuscript/current/chapters/unit-06-human-intent-control-and-epistemic-security.qmd) | Reviewable mandates, meaningful control, reviewer epistemic target, reuse of current permission. | Connect mandate wording to one plan and effect; a manipulation/confusion case with a contestable repair rather than generic approval requirements. | 5, 8, 19, 27 |
+| [7: Constitutions and values](../editions/reader_manuscript/current/chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd) | Plural values, learned objectives, behavior versus objective integrity, amendment authority. | Explicit AI-welfare bridge from its technical owner; one unresolved value conflict reaching a bounded institutional decision. | 18–19 |
+| [8: Institutions and resilience](../editions/reader_manuscript/current/chapters/unit-08-institutions-coordination-and-societal-resilience.qmd) | Affected nonparticipants, partial coordination, shared-release institution. | Fully specified small decision cycle, appeal, capture attempt, and enforcement limit; source depth for pivotal public claims. | 20, 25 |
+| [9: Capability fields and replacement](../editions/reader_manuscript/current/chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd) | Capability identity, qualified fallback, replacement transaction, recovery boundaries. | A before/after compatibility table showing a replacement that passes local checks but invalidates one consumer; join it to the artifact spine. | 5, 11, 17 |
+| [10: Perception](../editions/reader_manuscript/current/chapters/unit-10-perception-and-observation-trust.qmd) | Calibration, missingness, channel dependence, physical-effect caution. | Small observation-to-belief calculation; explicit unknown state; visual distinction between measured input, belief, and permission. | 6, 28 |
+| [11: World models](../editions/reader_manuscript/current/chapters/unit-11-governed-world-models-and-reality-grounding.qmd) | Separate world/observation/prediction/intervention states, JEPA and conditional representation claims. | A causal counterexample and a belief-update bridge; explain model uncertainty at a decision point rather than only as a record obligation. | 6–7, 13 |
+| [12: Planning](../editions/reader_manuscript/current/chapters/unit-12-planning-as-a-control-layer.qmd) | Dependency graphs, plan/runtime boundary, latent planning and model exploitation limits. | One small graph with costs, scarce reviewer, rejected alternative, and replan; compare with a competent fixed workflow. | 8, 28 |
+| [13: Cognitive compilation](../editions/reader_manuscript/current/chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd) | Semantic equivalence, two repairs, conventional templates as valid competitors. | Literal input/IR/lowering/output example and one rejected optimization; reduce inventory where it hides the transformation. | 9, 29 |
+| [14: Context and memory](../editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd) | Branch isolation, memory provenance, context transactions, scoped graph recall and editing. | Visible conflict/correction/merge sequence; show downstream invalidation and the limits of forgetting across stores and model state. | 10, 13 |
+| [15: Verification and proof](../editions/reader_manuscript/current/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd) | Verification portfolio, claim continuity, proof/reality distinction, runtime truth, accessible figure. | A small verification-allocation choice with an explicit stopping rule; one proof-to-system assumption bridge. | 15, 17, 24 |
+| [16: Work and organizations](../editions/reader_manuscript/current/chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd) | Capacity versus competence, human agency, skills loss, affected nonusers and transition governance. | One work-surface example with an error, worker challenge, authority repair, and meaningful continued participation; avoid equating review clicks with control. | 19–20, 32 |
+| [17: Artifacts and operations](../editions/reader_manuscript/current/chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd) | Attempt/effect/observation separation, recovery, governance outage, GUI/terminal authority distinction. | Show exact artifact IDs and one unknown remote effect; reuse the existing recovery/outage treatment rather than add another generic incident checklist. | 5, 10, 23–24 |
+| [18: Peer exchange and multi-agent risk](../editions/reader_manuscript/current/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd) | Protocol versioning, economic exchange, systemic interventions, correlated/transmissible failure. | Small two-party disagreement with protocol downgrade or contested evidence; distinguish identity diversity from genuinely different failure lineages. | 15, 20, 24–26 |
+| [19: Routing and substrates](../editions/reader_manuscript/current/chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd) | Separate route/answer correctness, ten-task denominator toy, load, stateful models, JEPA/H-Net and new architecture mechanisms. | Compute a qualified route choice; add cross-architecture state comparison and a visual boundary between forward-pass routing and agent orchestration. | 11, 13, 28 |
+| [20: Training and topology](../editions/reader_manuscript/current/chapters/unit-20-governed-training-and-learning-compute-topology.qmd) | Governed training run, optimizer breadth, causal learning topology, reward hacking and monitor pressure. | One loss/update example; contrast learning topology, model computation, and physical placement; explain one reward-hacking failure through that update. | 12–13, 15 |
+| [21: Persistence and unlearning](../editions/reader_manuscript/current/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd) | Many persistence loci, generalization, feedback, science, commit-boundary diagram. | Resolve one repair portfolio and retirement; replace repetition to make room; correct the counter before enforcing its 7,500-word ceiling. | 10, 14, 29–30 |
+| [22: Evaluation and assurance](../editions/reader_manuscript/current/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd) | Denominators, calibration, readiness, explicit safety-case top claim, hazards before evidence shopping. | Complete small assurance graph; repeated-selection evaluation policy; worked stale-evidence propagation and remaining release boundary. | 15–16, 25 |
+| [23: Generation and resource economics](../editions/reader_manuscript/current/chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd) | Hypothetical multistage budget, full-cost scope, allocation leases, compression and test-time scientific guidance. | Join the existing budget to one actual choice among methods; separate representation/storage/generation compression; trim repeated closing framework before adding mechanisms. | 11, 14, 21, 25, 29 |
+| [24: Physical infrastructure](../editions/reader_manuscript/current/chapters/unit-24-physical-compute-energy-and-infrastructure.qmd) | Demand versus useful capacity, eight-worker toy, water/materials, measurement versus impact models. | Connect its capacity arithmetic to the router's operating envelope; identify accounting boundary and uncertainty rather than add unsupported precision. | 3, 11, 25 |
+| [25: Recursive improvement](../editions/reader_manuscript/current/chapters/unit-25-recursive-improvement-replication-and-containment.qmd) | Portfolio controls, bounded liveness, change velocity, depth boundaries, distinct replication authority. | Net improvement-loop calculation; explicit dependency on evaluator quality; connect possible moral-patient uncertainty without treating it as operational self-authorization. | 18, 22, 24 |
+| [26: Integrated architecture and research method](../editions/reader_manuscript/current/chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd) | Long end-to-end narrative, kernel, interface contracts, profiles, existing quickstart and reference slices. | The inspectable packet spine, aligned deployment/trust maps, practical adoption routes, and a clear final division between finished exposition and open research. | 1, 3–5, 23, 32 |
+
+### Recommended book-completion batches
+
+**Batch 1: repair definitions and the reading contract.** Correct the word
+counter's policy/implementation and the preface taxonomy; supply the small
+prerequisite and terminology bridges; clarify the capability horizon.
+Preserve historical measurements under their original definitions. This
+batch has high reader value without a new research experiment.
+
+**Batch 2: make the whole architecture inspectable.** Adapt the existing
+reference trace into one stable-ID reader table. Pair it with logical,
+deployment, and trust views and a minimal migration recipe. Reuse existing
+fixtures and quickstart evidence at their actual scope. Avoid creating a
+second architecture schema just for the diagram.
+
+**Batch 3: teach decisions.** Add the observation update, small plan, routing
+choice, learning update, persistence decision, and assurance graph. Spread
+these through the appropriate existing units. Replace generic repetition to
+make space. Each example needs an input, assumptions, a choice, the rejected
+alternative, and the consequence of new evidence.
+
+**Batch 4: close edition and evidence gaps.** Bring AI-welfare uncertainty
+into Unit 7 from its existing owner. Deepen passage grounding for the most
+important thinly reviewed claims. Add repeated-evaluation reasoning and the
+proof-to-system bridge. Keep new statistical or other external technical
+claims source-grounded; a review recommendation is not itself a source.
+
+**Batch 5: strengthen transfer and reader judgment.** Select the most useful
+institutional, nonsoftware, and recursive-net-gain cases. Obtain author and
+independent feedback when authorized. Revise the actual confusing passages;
+do not make a larger validator or report inventory the measure of success.
+
+These batches are an editorial recommendation, not a resumed persistent goal
+or a newly admitted roadmap amendment. They do not automatically reopen the
+30 verified catalog items or claim completion of the remaining 84. Specific
+accepted work should use the existing I/J/K/L/M/N owners and their actual
+criteria.
+
+### What “completed book” should mean after this review
+
+A completed edition can still present an ambitious, unproved architecture.
+It should have a clear audience and prerequisite contract; a cumulative
+argument; enough worked mechanisms to reconstruct consequential choices;
+consistent terminology and support labels; inspectable sources at the
+strength of the claims; usable diagrams where they help; and a conclusion
+that separates existing results, proposed composition, and open questions.
+
+Research targets should remain open where the evidence is open. A local
+fixture should remain a local fixture. Possible AI welfare should remain an
+uncertainty argument. A literature comparison should not become independent
+replication. Conversely, those limits should not be used to postpone writing
+a clear explanation indefinitely.
+
+The most valuable next step is therefore **a mechanism-and-integration
+editorial pass**, supported by targeted source work. More chapters, more
+papers, more validation units, and more disclaimers are not substitutes for
+the reader being able to follow and question the architecture.
 
 ## Recommended execution sequence
 

@@ -2,6 +2,40 @@
 
 ## Current independent manuscript review
 
+### November 2 detailed missing-content and explanation review
+
+The latest assistant editorial assessment is recorded in the existing
+[project improvement owner](project_improvements.md#november-2-2026-missing-content-review),
+with 32 findings, a 26-unit map, completion tests, and five suggested
+book-completion batches. The baseline is
+`6c89bb57d62c9c0ad186217c3cc8c8f837e9a927`. The review inspected all 89
+outline-owner responsibilities, all 26 reader section structures, substantial
+selected reader arguments, and selected technical mechanisms, source and
+introductory surfaces. It does not claim a fresh line-by-line reading of both
+complete editions, independent reader comprehension, or full source-method
+review.
+
+The main diagnosis is broad topic coverage with uneven explanatory depth.
+Recommendations prioritize prerequisite/terminology bridges, logical versus
+deployment/trust views, an inspectable adaptation of the existing artifact
+trace, and worked observation, planning, routing, learning, persistence, and
+assurance decisions. Possible AI welfare has substantial technical treatment
+but needs an explicit reader bridge. The review preserves counterexamples to
+false absence claims: JEPA/H-Net/steering coverage, ordinary alternatives,
+bounded reference traces, outage handling, and technical state-estimation and
+assurance mechanisms already exist.
+
+A read-only reproduction found that the function named `visible_word_count`
+counts Markdown link destinations: two links displaying the same one-word
+label return 5 and 10 for different URL spellings. Consequently the earlier
+154,492-word observation is the result of the current source-count policy,
+not a verified count of displayed prose. Historical observations below retain
+their original wording and dates. This review does not change the counter,
+reader text, target ranges, generated counts, source assignments, support
+states, proof targets, scientific results, or verified 30/114 catalog count.
+It neither resumes nor completes the broader improvement goal. No Docker,
+model, training, scientific, or Lean campaign is part of this review.
+
 ### November 2 incorporation of the fifteen additional sources
 
 The user authorized incorporation of the complete shortlist below. Fifteen
