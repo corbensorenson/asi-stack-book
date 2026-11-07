@@ -79,7 +79,7 @@ browser gate. The command surface does not create another publication owner.
 
 The HTML publication workflow installs the pinned Python publication/schema
 dependencies, Node/browser runtime and Quarto. Its source gate checks the book,
-public-safe publication surface, source appendices/mappings, outline, current
+public-safe publication surface, canonical public-status consistency, source appendices/mappings, outline, current
 reader, editorial packets, claim census and executable deployment contract.
 It then renders the technical book, reader and paper library and runs the
 existing status, product, channel, browser and artifact-integrity checks.

@@ -16,6 +16,7 @@ DEPLOY = ROOT / ".github" / "workflows" / "publish.yml"
 PUBLICATION_SOURCE_CHECKS = (
     "python3 scripts/validate_book.py",
     "python3 scripts/validate_publication.py",
+    "python3 scripts/validate_public_status_consistency.py",
     "python3 scripts/validate_source_appendices.py",
     "python3 scripts/validate_source_evidence_audit.py",
     "python3 scripts/validate_outline_consistency.py",

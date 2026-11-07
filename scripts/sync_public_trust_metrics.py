@@ -307,6 +307,27 @@ def sync_public_trust_metrics(files: ProjectionFiles | None = None) -> None:
     )
     files.write(publication_path, publication)
 
+    snapshot_path = ROOT / "docs" / "v1_0_candidate_status.md"
+    snapshot = files.text(snapshot_path)
+    structure = read_json(STRUCTURE)
+    chapter_rows = [chapter for part in structure["parts"] for chapter in part["chapters"]]
+    mappings = [mapping for chapter in chapter_rows for mapping in chapter.get("claim_source_mappings", [])]
+    assigned_pairs = sum(len(chapter.get("source_ids", [])) for chapter in chapter_rows)
+    reviewed = sum(mapping.get("passage_review_state") in {"reviewed", "accepted", "complete"} for mapping in mappings)
+    snapshot = replace_once(
+        snapshot,
+        r"\| Source inventory \| \d+ public-safe source records",
+        f"| Source inventory | {sources} public-safe source records",
+        snapshot_path,
+    )
+    snapshot = replace_once(
+        snapshot,
+        r"\| Claim/source traceability \| \d+ assigned source/chapter pairs, \d+ exact claim-source mappings, \d+ passage-reviewed mappings",
+        f"| Claim/source traceability | {assigned_pairs} assigned source/chapter pairs, {len(mappings)} exact claim-source mappings, {reviewed} passage-reviewed mappings",
+        snapshot_path,
+    )
+    files.write(snapshot_path, snapshot)
+
     block = public_status_summary_block(status)
     for surface in (
         ROOT / "README.md",
