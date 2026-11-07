@@ -504,7 +504,9 @@ html[data-asi-reading-mode="human"] .asi-human-only h2 {
   }
 
   .asi-reading-mode__reader-link {
-    min-width: 6rem;
+    min-width: 0;
+    white-space: normal;
+    overflow-wrap: anywhere;
   }
 
   // Reflow long chapter links when text is enlarged; flex children's default

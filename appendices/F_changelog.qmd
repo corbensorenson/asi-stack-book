@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-06: Fixed the technical edition's reader-book link overflowing at phone width with doubled text. The mobile control now sizes the link to its content and permits wrapping within its boundary. Six width/text-scale keyboard checks and sampled technical/reader browser checks pass locally; the full publication browser gate remains required.
+
 - 2026-11-06: Reconciled the current status snapshot's stale source, source-mapping and manuscript-scale rows after the first complete HTML build exposed a 501-versus-543 source-count contradiction. Scaffold generation now maintains the snapshot's inventory and mapping counts, and publication checks source-level public-status consistency before rendering. This corrects current bookkeeping without renewing historical research evidence.
 
 - 2026-11-06: Separated the HTML publication runtime/source gate from research runtime installation, deep registry execution and Lean rebuilding after the Pages run for `396e959f` failed before rendering on an expired Lean-installer review. The existing workflow retains complete HTML/reader/paper rendering, public-status/product/channel checks, strict browser validation, exact commit-bound artifact verification, deployment selection and attestation. Deep research validation remains separately owned; no installer review, scientific result or support state is renewed by this change.
