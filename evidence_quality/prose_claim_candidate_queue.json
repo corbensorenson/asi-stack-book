@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4238,
+    "candidate_count": 4241,
     "review_state_counts": {
-      "duplicate_of_atom": 2054,
+      "duplicate_of_atom": 2055,
       "editorial_or_question": 66,
-      "historical_or_source_report": 363,
+      "historical_or_source_report": 364,
       "material_atom": 3,
-      "nonmaterial_explanation": 1752
+      "nonmaterial_explanation": 1753
     }
   },
   "candidates": [
@@ -52780,9 +52780,66 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.fad7244915de",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:190",
+      "sentence": "Choosing a tool label does not demonstrate producing correct arguments,",
+      "cues": [
+        "demonstrate"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "2026-11-06: read the complete surrounding sentence. The external C2 task is label selection, so its score alone does not observe argument generation, execution or general retention; this is the task-boundary explanation, not a new architecture capability claim.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.28d66a232212",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:195",
+      "sentence": "It also reduces stored embedding and output structures",
+      "cues": [
+        "reduces"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "2026-11-06: selected pinned push_c2/packer and manifest-matching loader describe reduced stored embedding/output structures in an external experiment. Read with the following task/byte/runtime limits; no local reduction is reported.",
+      "target_atom_id": null
+    },
+    {
+      "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.c199f0584416",
+      "chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:235",
+      "sentence": "serving, or a changed tool population requires different evidence.",
+      "cues": [
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "2026-11-06: read the full preceding sentence. Consumer/task/platform-specific admissibility is the existing artifact-compression core; the external specialist cannot inherit a different use contract.",
+      "target_atom_id": "rankfold-neuralfold-and-artifact-compression.core"
+    },
+    {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.969f689231ce",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:194",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:248",
       "sentence": "Reuse traces can show that a",
       "cues": [
         "show"
@@ -52801,7 +52858,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.5e13b8463512",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:195",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:249",
       "sentence": "candidate entered a solution; removal can show that it was necessary under one",
       "cues": [
         "necessary",
@@ -52821,7 +52878,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.ebba10591448",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:196",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:250",
       "sentence": "search process; only a matched future-task intervention can show marginal",
       "cues": [
         "show"
@@ -52840,7 +52897,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.453a0787d473",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:199",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:253",
       "sentence": "measures transfer, and the resource owner prices the whole route.",
       "cues": [
         "measures",
@@ -52860,7 +52917,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.7a7119057d3a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:217",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:271",
       "sentence": "The source also uses “universal” in several senses that must not collapse:",
       "cues": [
         "must"
@@ -52879,7 +52936,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.eca0c3ece8f7",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:246",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:300",
       "sentence": "A general matrix must pay for",
       "cues": [
         "must"
@@ -52898,7 +52955,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.b497dbfb98c7",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:253",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:307",
       "sentence": "It does not prove the reshaped values are low-rank, low-entropy,",
       "cues": [
         "prove"
@@ -52917,7 +52974,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.5b7f5d20656a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:256",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:310",
       "sentence": "They must beat domain-native views, blocking, and no reshape on actual bytes.",
       "cues": [
         "must"
@@ -52936,7 +52993,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a444f953f830",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:269",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:323",
       "sentence": "Multistage and recursive transforms can be useful, but each new stage must",
       "cues": [
         "must"
@@ -52955,7 +53012,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.472d8f5b7b48",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:270",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:324",
       "sentence": "show marginal actual-byte or utility benefit over the best direct route.",
       "cues": [
         "show"
@@ -52974,7 +53031,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a54acd873a94",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:314",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:368",
       "sentence": "A factorization can reduce squared error and still increase",
       "cues": [
         "increase",
@@ -52994,7 +53051,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.be5021230de9",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:320",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:374",
       "sentence": "It must report bytes, latency, distortion, task behavior, residual",
       "cues": [
         "must"
@@ -53013,7 +53070,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.559f0d19632d",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:337",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:391",
       "sentence": "$Z=(M-UV^\\top)/\\Delta$, an implementation must retain the $1/\\Delta$ gradient",
       "cues": [
         "must"
@@ -53032,7 +53089,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.350609600a70",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:367",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:421",
       "sentence": "should leave a high-entropy residual and route to a conventional codec.",
       "cues": [
         "should"
@@ -53051,7 +53108,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.d2d2b3c70803",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:396",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:450",
       "sentence": "justified only if retention duration, avoided storage, or repeated transfers",
       "cues": [
         "transfers"
@@ -53070,7 +53127,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.735e4cd91209",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:411",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:465",
       "sentence": "requires fixed endianness and rounding, stable bit layouts, bounded output,",
       "cues": [
         "requires"
@@ -53089,7 +53146,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.68577319a654",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:416",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:470",
       "sentence": "upload exposure, but it does not prove privacy or compliance; signed local",
       "cues": [
         "prove"
@@ -53108,7 +53165,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.d3f53093f5cf",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:417",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:471",
       "sentence": "license tokens deter forgery but cannot make client-side code unpatchable.",
       "cues": [
         "cannot"
@@ -53127,7 +53184,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.1ad4dff27ebd",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:423",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:477",
       "sentence": "The system-level claim narrows if the router cannot distinguish",
       "cues": [
         "cannot"
@@ -53146,7 +53203,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a6e26b095ef8",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:474",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:528",
       "sentence": "Four contract classes prevent one evidence style from impersonating another.",
       "cues": [
         "prevent"
@@ -53165,7 +53222,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.639abd7f4413",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:478",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:532",
       "sentence": "requires a predicate over a finite region and states the abstraction and proof",
       "cues": [
         "requires"
@@ -53184,7 +53241,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.44ec7a665026",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:497",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:551",
       "sentence": "raise the mathematical optimum, while strengthening a contract cannot lower",
       "cues": [
         "cannot"
@@ -53203,7 +53260,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.f5114076cf9c",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:502",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:556",
       "sentence": "certificate must not promote that neighborhood into global equivalence.",
       "cues": [
         "must"
@@ -53222,7 +53279,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.efbe01a309dc",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:536",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:590",
       "sentence": "**Measure:** estimate functional and contract-level distortion; treat",
       "cues": [
         "measure"
@@ -53241,7 +53298,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.aeabad7162a4",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:537",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:591",
       "sentence": "curvature and salience as proxies, not guarantees.",
       "cues": [
         "guarantees"
@@ -53260,7 +53317,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.867be40e70cb",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:574",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:628",
       "sentence": "numeric values are **representational bits**; shapes, scales, codebooks,",
       "cues": [
         "scales"
@@ -53279,7 +53336,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.5b8012a7c836",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:583",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:637",
       "sentence": "guarantees, held-out evaluation, calibration-only proxies, and tensor error",
       "cues": [
         "guarantees"
@@ -53298,7 +53355,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.e11eb9926d00",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:584",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:638",
       "sentence": "Lower rungs can guide search but cannot silently",
       "cues": [
         "cannot"
@@ -53317,7 +53374,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.f03c9f4979fa",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:602",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:656",
       "sentence": "surrogate or controller, language models at several scales and architectures,",
       "cues": [
         "scales"
@@ -53336,7 +53393,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.1f5aa0822af2",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:607",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:661",
       "sentence": "A weak round-to-nearest toy can debug this pipeline; it cannot falsify",
       "cues": [
         "cannot"
@@ -53355,7 +53412,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.9a39e206430c",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:616",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:670",
       "sentence": "The probe is the routing boundary: if the compressed form cannot answer the task's needs, the route falls back to the full artifact.",
       "cues": [
         "cannot"
@@ -53374,7 +53431,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.9ce938889f41",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:633",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:687",
       "sentence": "**What the compressed artifact gate shows:** The compressed artifact is a candidate route, not a replacement for the preserved source artifact.",
       "cues": [
         "shows"
@@ -53393,7 +53450,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.6e79635dcbe5",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:638",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:692",
       "sentence": "Reconstruction claim: decoding reproduces the required target under a contract.",
       "cues": [
         "required"
@@ -53412,7 +53469,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a7d990f74acc",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:639",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:693",
       "sentence": "Compression claim: serialized size improves against a baseline after metadata and residuals.",
       "cues": [
         "improves"
@@ -53431,7 +53488,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.2b3f2ce45f15",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:642",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:696",
       "sentence": "The architecture should preserve that separation instead of letting a good ratio imply task utility or a useful lossy representation imply exact reconstruction.",
       "cues": [
         "should"
@@ -53450,7 +53507,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.1bee62fe8361",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:644",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:698",
       "sentence": "That same record says which task family the compressed form serves, what loss or residual is allowed, how fallback is triggered, how often fallback happens, and which non-claims must travel with the artifact.",
       "cues": [
         "must"
@@ -53469,7 +53526,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.27a027bfe9fd",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:708",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:762",
       "sentence": "The artifact graph matters here because the compressed record should never stand alone.",
       "cues": [
         "should"
@@ -53488,7 +53545,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.90e8400933a8",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:708",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:762",
       "sentence": "It should point back to the preserved full artifact, the codec manifest, the source/job that produced it, and any evaluation artifacts used to justify routing.",
       "cues": [
         "should"
@@ -53507,7 +53564,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.159ecdd6b30e",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:720",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:774",
       "sentence": "Compression decisions should be allowed to differ across these patterns.",
       "cues": [
         "should"
@@ -53526,7 +53583,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.5dbb0aa5125a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:731",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:785",
       "sentence": "Failed, uncertain, expired, or out-of-envelope probes cannot route the compact artifact to that consumer.",
       "cues": [
         "cannot"
@@ -53545,7 +53602,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.bafee0882215",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:734",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:788",
       "sentence": "Previews, summaries, and embeddings cannot substitute for source citations or legal evidence without a specific admitted use.",
       "cues": [
         "cannot"
@@ -53564,7 +53621,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.0c450ec92ce7",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:743",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:797",
       "sentence": "Decode accountability is the hardest compression invariant: if the system cannot say what exact target is reconstructed, under which arithmetic and serialization assumptions, then it cannot claim exact compression.",
       "cues": [
         "cannot"
@@ -53583,7 +53640,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.bd1b39f43f57",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:766",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:820",
       "sentence": "Governance and verification tax exceeds any storage or transfer benefit while the compact route remains institutionally sticky.",
       "cues": [
         "transfer"
@@ -53602,7 +53659,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.73d12754aa20",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:768",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:822",
       "sentence": "Probe failure should route to the full artifact.",
       "cues": [
         "should"
@@ -53621,7 +53678,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.d6e7de9a0d6a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:768",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:822",
       "sentence": "Rare-case damage should become a regression.",
       "cues": [
         "should"
@@ -53640,7 +53697,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.23413e379872",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:768",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:822",
       "sentence": "Hidden encoder cost should move into resource accounting.",
       "cues": [
         "should"
@@ -53659,7 +53716,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.d20b7acd1d75",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:768",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:822",
       "sentence": "Decoder drift should block exactness and preserve the full artifact until deterministic replay is restored.",
       "cues": [
         "should"
@@ -53678,7 +53735,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a4f1d556b38a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:778",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:832",
       "sentence": "The MVI establishes record shape, one exact local raw-storage roundtrip, one corrupt-archive rejection, bounded metadata consistency, and modeled lifecycle invariants only.",
       "cues": [
         "establishes"
@@ -53697,7 +53754,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.d174b52e929d",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:780",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:834",
       "sentence": "A first tiny synthetic replay now exists for the local `rfa` CLI, but it is not the adversarial artifact-compression harness required for stronger evidence.",
       "cues": [
         "required"
@@ -53716,7 +53773,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.7f97167fff29",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:780",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:834",
       "sentence": "A fuller toy corpus with ordinary prose, tables, diagrams, citations, code blocks, and provenance metadata should follow.",
       "cues": [
         "should"
@@ -53735,7 +53792,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a10970ba7e6d",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:780",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:834",
       "sentence": "That future harness can ask whether a candidate compressor preserves the required target, reports residuals honestly, and falls back when the probe is outside the declared envelope.",
       "cues": [
         "required"
@@ -53754,7 +53811,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.aee90e81eee1",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:784",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:838",
       "sentence": "It treats compressed forms as routed candidates that must earn each use case instead of inheriting the authority of the full artifact.",
       "cues": [
         "must"
@@ -53773,7 +53830,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.0214e097201d",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:788",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:842",
       "sentence": "Representation, reconstruction, compression-ratio, downstream-utility, latency, exact-replay, fallback-frequency, and decoder-drift claims remain separate so one passing property cannot promote the others.",
       "cues": [
         "cannot"
@@ -53792,7 +53849,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.146d73299249",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:792",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:846",
       "sentence": "The admission claim should remain `argument` until compression receipts, task probes, residual metadata, fallback-route fixtures, baseline comparisons, and reproduced compression reports show that compact artifacts remain useful under the jobs they are asked to support.",
       "cues": [
         "should",
@@ -53812,7 +53869,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.9aaa506b228a",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:796",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:850",
       "sentence": "Independent encoder, decoder, probe, evaluator, cost-meter, security, and fallback implementations must reproduce the predicted signatures.",
       "cues": [
         "must"
@@ -53831,7 +53888,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.1f29219a3445",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:796",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:850",
       "sentence": "Transfer then spans artifacts, modalities, models, languages, organizations, platforms, rights regimes, attacks, updates, and time.",
       "cues": [
         "transfer"
@@ -53850,7 +53907,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.a7d912908d66",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:811",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:865",
       "sentence": "The remaining rows require an actual compressor/decoder or a bounded toy surrogate, plus baseline artifacts and task probes; they are not reported results.",
       "cues": [
         "require"
@@ -53869,7 +53926,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.ee979c6523a9",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:811",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:865",
       "sentence": "When a behavioral test is implemented, future work should link to the command, fixture, environment notes, corpus, and result summary, and Appendix E should be regenerated or updated accordingly.",
       "cues": [
         "should"
@@ -53888,7 +53945,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.3d40c25c37c6",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:823",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:877",
       "sentence": "This finite model does not prove decoder or codec correctness, NeuralFold reproduction, compression advantage, semantic or rare-case preservation, probe validity, downstream utility, behavioral fallback or recovery, security, resource benefit, deployment, transfer, support promotion, or a benchmark/SOTA result.",
       "cues": [
         "prove",
@@ -53908,7 +53965,7 @@
     {
       "candidate_id": "rankfold-neuralfold-and-artifact-compression.prose.434d332ac372",
       "chapter_id": "rankfold-neuralfold-and-artifact-compression",
-      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:836",
+      "source": "chapters/rankfold-neuralfold-and-artifact-compression.qmd:890",
       "sentence": "None of them should be used to report ratios until a decoder and benchmark harness exist.",
       "cues": [
         "should"

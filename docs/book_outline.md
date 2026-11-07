@@ -6585,7 +6585,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The stack needs artifact-level and tensor-level compression strategies that remain honest about residuals and utility.
@@ -8121,7 +8121,7 @@ Source loading queue:
 | External comparator | `ext_bourtoule_machine_unlearning_2021` | Use the source-noted SISA design for one bounded deletion-path comparison: training-time structure can narrow retraining while verified removal and downstream artifacts remain separate obligations. It does not validate cross-surface placement, complete descendant erasure, privacy, or the Adaptive Commit Boundary. |
 
 
-| Manifest assignment reconciliation | `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Open with matched near-miss outcomes caused by a stale memory and a defective

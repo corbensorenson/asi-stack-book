@@ -4,7 +4,7 @@ chapter_id: "adjudicated-persistence-and-the-adaptive-commit-boundary"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 source-complete integrated argument chapter"
-last_updated: "2026-08-11"
+last_updated: "2026-11-06"
 primary_sources:
   - "adjudicated_persistence"
   - "assurance_shift_learning"
@@ -36,7 +36,7 @@ open_evidence_gaps:
 | Primary source | Corben Sorenson's version 1.0 *Adjudicated Persistence* paper and complete package |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | The complete paper package has been passage-reviewed and mined. Its external citations have not been inherited as evidence. |
+| Source loading state | The complete paper package has been passage-reviewed and mined. Its external citations have not been inherited as evidence.; Ten Percent Challenge: selected pinned task/code/receipt and adverse-adjudication review, no model execution. |
 | Test state | Five proof targets and five experimental suites are planned; none has been implemented or run. |
 
 ## Drafting guardrail
@@ -308,6 +308,42 @@ distinguish materially different candidates. When that information is absent,
 `UNKNOWN` is the correct disposition. The system may preserve the incident,
 run bounded probes, or install a temporary guard, but it may not relabel
 uncertainty as permission for a durable broad update.
+
+### Frozen backbone, learned external state: the Ten Percent Challenge {#ten-percent-external-adaptation}
+
+The [Ten Percent Challenge feedback implementation](https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/artifact_code/predict.py)
+(`ext_ten_percent_challenge_2026`) supplies a concrete example of adaptation
+outside backbone weights. A fixed, label-fitted discriminant head scores
+projected option features. Feedback updates per-tool prototype means and
+true/predicted counts in an external memory file. Future decisions depend
+on those statistics even though the backbone checkpoint and prompt tokens
+stay fixed. Calling this “no learning” would miss the causal persistence locus;
+calling it parameter-free would miss the estimated classifier statistics.
+
+The [stage-2 receipt](https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/harness/receipts/REAL_final/stage2.json)
+reports 80.20% accuracy, compared with 79.90% in stage 1, after adding an
+852-byte memory derived from six annotations. The recorded artifact-tree
+digest stays fixed. That identifies one boundary of change; it does not
+isolate the causal value of the annotations. In `decide` and `_scores`,
+nonempty memory also activates the prefit head, which was inactive in stage
+1. The source's
+[feedback results](https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/RESULTS.md)
+explicitly acknowledge that the head accounts for part of the gain.
+
+The [maintainer's rejection of step 5](https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947)
+turns on precisely this external-parameter boundary. That challenge ruling
+does not make external adaptation useless. It means the proposed intervention
+does not meet that challenge's requirement. A book consumer should name the
+head, its activation policy, and the updated statistics as separate parts of
+the candidate. An empty-memory, head-only, and head-plus-memory comparison
+would be needed to distinguish their contributions; this book has not run it.
+
+The existing commit-boundary proposal would additionally ask who may supply
+annotations, which tools and users the update can affect, and how the memory
+can be invalidated or restored. The external project does not implement or
+validate that governance contract. Its
+[compression result](rankfold-neuralfold-and-artifact-compression.qmd#ten-percent-task-scoped-compression)
+also remains a separate claim about a specific task and storage boundary.
 
 ### Cross-surface adaptation assignment
 
@@ -676,6 +712,7 @@ These rows keep Adjudicated Persistence and the Adaptive Commit Boundary's manif
 | Source | Intake role | Boundary |
 |---|---|---|
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds a separate later-version admission step after independent validation and frozen evaluation, preserving valid-but-transfer-negative artifacts without routing them as beneficial defaults. | No admission service, knowledge-version transition, removal test, benchmark result, or support movement was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ten_percent_challenge_2026` | Passage-reviewed comparator: Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback. A frozen backbone plus a fitted discriminant head and updated prototype/count memory illustrates persistent adaptation outside backbone weights and the need to isolate the admitted intervention. | No Adaptive Commit Boundary implementation or parameter-free learning; feedback activates a prefit head, its incremental effect is not isolated, and the maintainer rejects step 5. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Current Evidence and Non-Claims

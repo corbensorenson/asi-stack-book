@@ -8,7 +8,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 40
 - `connector_readable`: 7
-- `source_note_available_public_project`: 30
+- `source_note_available_public_project`: 31
 - `source_note_available_uncached`: 465
 
 ## Records
@@ -557,3 +557,4 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_guidance_ttt_2026` | Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_mage_vl_cowork_2026` | Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_simhack_2026` | SimHack: Predicting the onset of detectable reward hacking before RL training | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ten_percent_challenge_2026` | Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |

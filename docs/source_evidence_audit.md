@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1402 |
-| Exact claim-source mappings | 1194 |
+| Assigned source/chapter pairs | 1404 |
+| Exact claim-source mappings | 1196 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1402 |
-| Source notes listing assigned chapter | 1402 |
-| Passage-reviewed mappings recorded | 1125 |
+| Source notes present for assigned pairs | 1404 |
+| Source notes listing assigned chapter | 1404 |
+| Passage-reviewed mappings recorded | 1127 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -97,7 +97,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 44 | 21 | 44 | 44 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
-| `rankfold-neuralfold-and-artifact-compression` | 8 | 7 | 8 | 8 | 7 | argument | passage review required before source-derived promotion |
+| `rankfold-neuralfold-and-artifact-compression` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 50 | 25 | 50 | 50 | 25 | argument | passage review required before source-derived promotion |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 8 | 3 | 8 | 8 | 1 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
@@ -112,7 +112,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
 | `content-authenticity-watermarking-and-synthetic-media-integrity` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `governed-operations-incident-command-and-graceful-degradation` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
-| `adjudicated-persistence-and-the-adaptive-commit-boundary` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 38 | 36 | 38 | 38 | 36 | argument | passage review required before source-derived promotion |
 | `data-engines-continual-learning-and-unlearning` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
 | `scientific-discovery-and-experimental-governance` | 8 | 7 | 8 | 8 | 6 | argument | passage review required before source-derived promotion |
@@ -356,6 +356,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_cacheblend_2025` | 2 | yes |
 | `ext_deepseek_r1_2025` | 2 | yes |
 | `ext_s_grpo_2025` | 2 | yes |
+| `ext_ten_percent_challenge_2026` | 2 | yes |
 | `temporal_coil_research` | 2 | yes |
 | `ext_influence_functions_2017` | 2 | yes |
 | `ext_mmlu_2020` | 2 | yes |
@@ -1595,6 +1596,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_raptor_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_ten_percent_challenge_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_eggroll_hyperscale_es_2026` | mapped | note present | chapter listed | passage-reviewed |
@@ -1819,6 +1821,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `ext_bourtoule_machine_unlearning_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
+| `adjudicated-persistence-and-the-adaptive-commit-boundary.core` | `adjudicated-persistence-and-the-adaptive-commit-boundary` | `ext_ten_percent_challenge_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `policy-optimization-and-learning-from-feedback.core` | `policy-optimization-and-learning-from-feedback` | `rmi` | mapped | note present | chapter listed | passage-reviewed |

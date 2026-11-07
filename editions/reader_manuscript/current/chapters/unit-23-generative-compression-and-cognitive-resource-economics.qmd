@@ -234,7 +234,28 @@ access. The archive can be admitted for cold storage while being rejected for
 hot lookup. Compression ratio, reconstruction, access utility, latency, and
 evidentiary authority are separate claims.
 
-This is why the technique remains a technical dossier rather than becoming
+The [Ten Percent Challenge case](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html#ten-percent-task-scoped-compression)
+makes the model-size boundary concrete. The project reports packing a
+Qwen2.5-7B-Instruct checkpoint into about 9.4% of its bf16 disk size while
+scoring 79.9%, versus the reference's 76.75%, on 2,000 five-choice
+tool-selection items. Quantization, entropy coding, and task-specific stored
+structures contribute to that result. Selecting a tool label does not
+establish correct argument generation or actual tool execution.
+
+The loader reconstructs large bf16 tensors on the GPU. Smaller disk storage
+therefore does not imply the same reduction in resident memory or parameter
+count. Nor is the full challenge accepted: its maintainer rejects the
+feedback-learning step because it depends on an additional fitted head and
+external parameters. Feedback changes prototype/count statistics while the
+backbone stays fixed, and nonempty memory also turns on the prefit head.
+The stage-to-stage gain consequently mixes interventions.
+
+This is a useful proposed specialist, with distinct storage, runtime, task,
+and learning claims. A consumer should compare those claims with its actual
+requirements. The detailed technical case preserves the source receipts and
+adverse adjudication; no local model experiment is implied.
+
+This is why RankFold/NeuralFold remains a technical dossier rather than becoming
 the general compression argument. RankFold/NeuralFold owns candidate
 transforms, artifact manifests, decoder constraints, access probes, WORM
 assumptions, local replay records, and benchmark burdens. Compact Generative

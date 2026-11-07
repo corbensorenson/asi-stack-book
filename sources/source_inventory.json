@@ -9527,5 +9527,23 @@
     "doi": "10.48550/arXiv.2610.28707",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor."
+  },
+  {
+    "id": "ext_ten_percent_challenge_2026",
+    "title": "Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback",
+    "priority": "external_literature",
+    "layer": "task_scoped_compression_and_adaptive_persistence",
+    "chapter_targets": [
+      "rankfold-neuralfold-and-artifact-compression",
+      "adjudicated-persistence-and-the-adaptive-commit-boundary"
+    ],
+    "url": "https://github.com/Bobliuuu/ten-percent-challenge/tree/dc0475b06c3d7ed7fbae05fb709c19a98537b19e",
+    "notes": "Pinned public software experiment on five-choice tool selection. Separates serialized checkpoint size from reconstructed bf16 runtime state, task accuracy from general capability, and frozen backbone weights from learned external feedback statistics. Maintainer accepts steps 1–4 under relaxed criteria but rejects step 5; no challenge-win or local reproduction claim.",
+    "source_type": "software_repository",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "citation_label": "Bobliuuu and contributors (2026), Ten Percent Challenge",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Selected TASK_C/DECISION, push_c2/pack_artifact, manifest-matching loader, feedback RESULTS, C2 lock, final stage1/stage2 receipts and maintainer comment 6689471947. No GPU, released-weight download, source execution, statistical certification, complete history audit or independent reproduction."
   }
 ]

@@ -2,6 +2,52 @@
 
 ## Current independent manuscript review
 
+### November 6 Ten Percent Challenge source review and integration
+
+Reviewed the user-supplied external repository at commit
+`dc0475b06c3d7ed7fbae05fb709c19a98537b19e`: selected task/decision documents,
+compression builder/packer, feedback loader and results, artifact manifest,
+C2 harness lock, final stage receipts, and the challenge maintainer's response.
+The inspected loader's SHA-256 matches its reported artifact-manifest entry.
+No weights were downloaded and no external code or model was run.
+
+The [source note](../sources/source_notes/ext_ten_percent_challenge_2026.md)
+and standard intake route the case to
+[artifact compression](../chapters/rankfold-neuralfold-and-artifact-compression.qmd#ten-percent-task-scoped-compression)
+and [adaptive persistence](../chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd#ten-percent-external-adaptation),
+with a short explanation in reader Unit 23. The first owner distinguishes
+task-specific disk savings from general capability, parameter count, and
+resident bf16 memory. The second distinguishes a frozen backbone from
+learned external statistics and the activation of a prefit classifier.
+
+The source reports a 9.404%-size checkpoint and a positive five-choice task
+comparison; it does not establish general tenfold model reduction. The
+[maintainer](https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947)
+accepts steps 1–4 under relaxed criteria but rejects step 5. Both chapter
+passages retain that adverse adjudication. The note also records stale MMLU
+criterion context, an unpinned base revision, and the five-row prose claim
+versus fourteen-letter implementation. Those limits are not silently repaired
+or presented as independently certified results.
+
+Metadata now contains 543 sources and 1,404 assignments. The existing reader
+source-count metric is 154,682; its known hidden-URL counting limitation remains.
+This intake adds no new chapter, scientific result, model benchmark, claim
+promotion, or verified catalog completion.
+
+Source, source-appendix, outline, schema/protocol, current-reader, claim-census,
+editorial-packet, publication, visual-coverage and book checks pass. Three new
+scanner fragments were reviewed in context; the census is 4,064 structured
+atoms, 4,241 adjudicated prose candidates and 64 dossiers. The adaptive owner
+is outside the historical scanner and was reviewed directly. Selected local
+HTML/browser observations cover both technical reading modes, the reader
+addition, Appendix H, phone width and enlarged text; the byte-count comparison
+was simplified after inspecting the phone image. These are scoped display
+observations, not whole-site or accessibility approval. The legacy v1 snapshot
+checker still rejects existing Human Reading Path minimums (157 body words,
+9 closing-sentence words) and an overlay-inclusion expectation. All 89 Human
+Reading Path blocks and root Quarto configuration are unchanged from the
+baseline; this source intake does not repair or waive those older constraints.
+
 ### November 2 detailed missing-content and explanation review
 
 The latest assistant editorial assessment is recorded in the existing

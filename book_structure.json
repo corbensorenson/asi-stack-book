@@ -21105,7 +21105,8 @@
             "bugbrain",
             "ext_raptor_2024",
             "precision_contract",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_ten_percent_challenge_2026"
           ],
           "source_queue": {
             "primary": [
@@ -21383,6 +21384,22 @@
                 "papers/source/forward_transfer_program_synthesis.md:954-1062"
               ],
               "passage_review_note": "Reviewed the complete manuscript for compression metrics, grammar-growth cost, counterexamples, and intervention boundaries. No measured codec or forward-transfer result is imported."
+            },
+            {
+              "source_id": "ext_ten_percent_challenge_2026",
+              "mapped_support": "Task-scoped checkpoint quantization, exact symbol coding and reduced stored structures illustrate separate disk-size, runtime-state, accuracy and complete-cost contracts.",
+              "limits": "No RankFold/NeuralFold result, general capability retention, resident-memory reduction, speedup or complete challenge win; source-reported task-specific experiment only.",
+              "passage_refs": [
+                "sources/source_notes/ext_ten_percent_challenge_2026.md",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/commercial/TASK_C.md",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/compress_C/push_c2.py",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/compress_C/pack_artifact.py",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/artifact_code/predict.py",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/harness/receipts/REAL_final/stage1.json",
+                "https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947"
+              ],
+              "passage_review_note": "2026-11-06: selected pinned source/receipt inspection and maintainer adjudication; inspected loader SHA-256 matches the source manifest. No released-weight download, source execution, full history/statistical audit or independent reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
@@ -26585,7 +26602,8 @@
             "viea",
             "talos",
             "ext_bourtoule_machine_unlearning_2021",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_ten_percent_challenge_2026"
           ],
           "problem": "Adaptive systems can convert one ambiguous, noisy, manipulated, or weakly attributed experience into durable causal influence across weights, memory, procedures, tools, orchestration, evaluators, environments, or institutions. The consequential decision is not merely what lesson to learn, but whether it may persist, where it should persist, how strongly it should bind, and how it can later be observed, invalidated, and removed.",
           "insufficient": "A weight update, memory write, generated tool, routing change, policy edit, or organizational rule assumes its persistence locus before the system has justified that choice. Outcome quality and causal attribution do not by themselves determine the least-commitment realization, the authority needed to create it, the evidence needed to qualify it, or the descendant closure needed to revoke it.",
@@ -26804,6 +26822,20 @@
                 "papers/source/forward_transfer_program_synthesis.md:1892-1964"
               ],
               "passage_review_note": "Reviewed the complete manuscript for independent validation, frozen rounds, disposition, future-version admission, and audit schema. The lifecycle remains a proposal."
+            },
+            {
+              "source_id": "ext_ten_percent_challenge_2026",
+              "mapped_support": "A frozen backbone plus a fitted discriminant head and updated prototype/count memory illustrates persistent adaptation outside backbone weights and the need to isolate the admitted intervention.",
+              "limits": "No Adaptive Commit Boundary implementation or parameter-free learning; feedback activates a prefit head, its incremental effect is not isolated, and the maintainer rejects step 5.",
+              "passage_refs": [
+                "sources/source_notes/ext_ten_percent_challenge_2026.md",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/artifact_code/predict.py",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/RESULTS.md",
+                "https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/harness/receipts/REAL_final/stage2.json",
+                "https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947"
+              ],
+              "passage_review_note": "2026-11-06: selected pinned source/receipt inspection and maintainer adjudication; inspected loader SHA-256 matches the source manifest. No released-weight download, source execution, full history/statistical audit or independent reproduction.",
+              "passage_review_state": "reviewed"
             }
           ],
           "lean_module": "AsiStackProofs.AdjudicatedPersistence",

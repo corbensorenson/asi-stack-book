@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-09"
+last_updated: "2026-11-06"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -34,7 +34,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `rankfold_neuralfold`, `rankfold_compressor`; supporting: `bbvca_v9`, `cgs`, `bugbrain` |
-| Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`, `ext_raptor_2024`, `precision_contract`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain` |
+| Source loading state | source notes: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`, `ext_raptor_2024`, `precision_contract`; raw cache: `rankfold_neuralfold`, `rankfold_compressor`, `bbvca_v9`, `cgs`, `bugbrain`; Ten Percent Challenge: selected pinned task/code/receipt and adverse-adjudication review, no model execution. |
 | Test state | The exact fixture, RAW0 replay, NEURAL0 metadata import, and two no-change decisions remain valid. `AsiStackProofs.ArtifactCompressionRefinement` now supplies 27 theorems over eight reachable stages and 53 routes, exact-use and failed-probe fallback witnesses, arbitrary-run identity/non-authority/receipt/fallback invariants, trace composition, closure absorption, and an independent consumer rejecting 143/143 mutations. Two legacy countermodels remain and seventeen projections or flat route consequences are retired. NeuralFold compression reproduction, deployed fallback execution, corpus benchmarking, and downstream utility remain unrun. |
 
 ## Drafting guardrail
@@ -180,6 +180,60 @@ fallback execution, and independent review exist.
 | `cgs` | Compact seeds, generated structure, residual channels, verification contracts, governance interfaces, and hidden-complexity accounting. | Does not prove that any compressed artifact preserves downstream utility or cost advantage. |
 | `bugbrain` | Tiny/local cognition, storage paging, embedded workflow, and edge-efficiency concerns that make artifact size and runtime burden visible. | Speculative prototype-lineage source; no embedded runtime, paging behavior, artifact compressor, or hardware benchmark has been validated. |
 | `ext_raptor_2024` | Recursive abstraction and hierarchical retrieval as a compact-view comparator. | Metadata-first note only; no local tree, fidelity, reconstruction, provenance, utility, or RankFold comparison result. |
+
+### Task-specific checkpoint compression: the Ten Percent Challenge {#ten-percent-task-scoped-compression}
+
+A useful external example is Bobliuuu and contributors' November 2026
+[Ten Percent Challenge submission](https://github.com/Bobliuuu/ten-percent-challenge/tree/dc0475b06c3d7ed7fbae05fb709c19a98537b19e)
+(`ext_ten_percent_challenge_2026`). Its contract is deliberately narrower
+than general conversation: select one of four offered tools or “none fits.”
+Choosing a tool label does not demonstrate producing correct arguments,
+executing the API, or retaining the original model's open-ended capabilities.
+
+The pipeline rotates weights with a Hadamard transform, applies
+calibration-based Hessian-aware quantization, and entropy-codes the resulting
+indices and scales. It also reduces stored embedding and output structures
+for the task. Exact decoding of those symbols does not restore the original
+unquantized model: the quantizer has already discarded distinctions. This is
+a lossy behavioral approximation containing a lossless coding stage.
+
+The [final stage-1 receipt](https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/harness/receipts/REAL_final/stage1.json)
+reports the following comparison on 2,000 C2 tool-selection items:
+
+| Measure | Reported value |
+|---|---:|
+| bf16 disk bytes | 15,231,233,024 |
+| Packed disk bytes | 1,432,412,701 |
+| Exam accuracy: base → packed | 76.75% → 79.90% |
+
+The packed artifact occupies about 9.404% of the reference's counted size.
+The reported paired non-inferiority test allows a one-percentage-point
+margin; it is not a requirement of identical predictions. The boundary counts
+the artifact's tokenizer, decoder, metadata, and feedback head, but excludes
+Python runtime dependencies. These are project-reported observations, not a
+book experiment or an independent statistical certification.
+
+The [manifest-matching loader](https://github.com/Bobliuuu/ten-percent-challenge/blob/dc0475b06c3d7ed7fbae05fb709c19a98537b19e/v2/c2_fb/artifact_code/predict.py)
+rebuilds a bf16 model on the GPU and reconstructs dense weight tensors.
+A 1.43 GB serialized artifact therefore does not establish a 1.43 GB resident
+model, a tenfold reduction in parameter count, or inference on a device with
+that much memory. The same receipt records approximately 81 seconds for the
+base and 217 for the candidate. Those loading-inclusive, differently routed
+timers are not a matched serving benchmark and supply no speedup claim.
+
+The case has a second boundary worth preserving. The
+[challenge maintainer](https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947)
+accepts steps 1–4 under relaxed criteria but rejects step 5, because feedback
+depends on a fitted classifier and external parameters. The
+[adaptive-persistence owner](adjudicated-persistence-and-the-adaptive-commit-boundary.qmd#ten-percent-external-adaptation)
+explains that mechanism. This is a useful compression example with a disputed
+adaptation claim, not a completed challenge win.
+
+For an ASI Stack consumer, the practical choice is consequently conditional:
+the source supplies a candidate for compact storage and a specific decision
+interface. Suitability for general text generation, edge residency, hot
+serving, or a changed tool population requires different evidence. None of
+these observations validates RankFold or NeuralFold.
 
 ### Compression proposes; transfer disposes
 
@@ -843,6 +897,7 @@ These rows keep RankFold, NeuralFold, and Artifact Compression's manifest assign
 |---|---|---|
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Separates retrospective and prospective compression from causal future-task benefit and supplies a finite warning that adding valid vocabulary can worsen bounded discoverability. | No RankFold, NeuralFold, codec, search, or transfer experiment was run; compression remains candidate-generation evidence rather than utility evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ten_percent_challenge_2026` | Passage-reviewed comparator: Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback. Task-scoped checkpoint quantization, exact symbol coding and reduced stored structures illustrate separate disk-size, runtime-state, accuracy and complete-cost contracts. | No RankFold/NeuralFold result, general capability retention, resident-memory reduction, speedup or complete challenge win; source-reported task-specific experiment only. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

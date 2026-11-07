@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "56ce425006fef5e1498cf0b2ce8db121bacf9ba7485ec70ac5e3731b9da927cd",
+  "book_structure_sha256": "4439e4e331a3e877c627b0651ff8142cb29bf519f8cb3281b845f3e2c5b9a243",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1402,
+    "source": 1404,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -8296,7 +8296,7 @@
           "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
           "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
           "technical_source_file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-          "technical_source_sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085",
+          "technical_source_sha256": "f95f68c86cc278d87571cbadedbf28c08a2497357c5468781f2398b2d8304ccb",
           "live_technical_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
@@ -8313,7 +8313,8 @@
             "viea",
             "talos",
             "ext_bourtoule_machine_unlearning_2021",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_ten_percent_challenge_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/adjudicated_persistence.md",
@@ -8325,7 +8326,8 @@
             "sources/source_notes/viea.md",
             "sources/source_notes/talos.md",
             "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md",
-            "sources/source_notes/forward_transfer_program_synthesis.md"
+            "sources/source_notes/forward_transfer_program_synthesis.md",
+            "sources/source_notes/ext_ten_percent_challenge_2026.md"
           ],
           "proof_edges": [
             {
@@ -8394,7 +8396,7 @@
           "artifact_refs": [
             {
               "path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-              "sha256": "d984b1add4c5d7cf499706cf83bb7a2cc5df708f4f4f1e13d05ae79910297085"
+              "sha256": "f95f68c86cc278d87571cbadedbf28c08a2497357c5468781f2398b2d8304ccb"
             }
           ],
           "publication": {
@@ -9917,7 +9919,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "d5e8210a5868fd19e8dc0d24fe9010ec57b881a244f83ae352709bc3fadeabcc",
+      "human_reader_source_sha256": "13ec4055253802afb6764cdd82f0e35c209920cb2eb4d7cffafabd614748f8ca",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
@@ -10597,7 +10599,7 @@
           "chapter_id": "rankfold-neuralfold-and-artifact-compression",
           "title": "RankFold, NeuralFold, and Artifact Compression",
           "technical_source_file": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-          "technical_source_sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3",
+          "technical_source_sha256": "0c8bb6659c6a2ed9fbfcb689344837a91381f83cacd50b377152b0934a492806",
           "live_technical_path": "chapters/rankfold-neuralfold-and-artifact-compression.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "rankfold-neuralfold-and-artifact-compression.core",
@@ -10612,7 +10614,8 @@
             "bugbrain",
             "ext_raptor_2024",
             "precision_contract",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_ten_percent_challenge_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/rankfold_neuralfold.md",
@@ -10622,7 +10625,8 @@
             "sources/source_notes/bugbrain.md",
             "sources/source_notes/ext_raptor_2024.md",
             "sources/source_notes/precision_contract.md",
-            "sources/source_notes/forward_transfer_program_synthesis.md"
+            "sources/source_notes/forward_transfer_program_synthesis.md",
+            "sources/source_notes/ext_ten_percent_challenge_2026.md"
           ],
           "proof_edges": [
             {
@@ -10682,7 +10686,7 @@
           "artifact_refs": [
             {
               "path": "chapters/rankfold-neuralfold-and-artifact-compression.qmd",
-              "sha256": "06cc6fbf956a47526b82f1e130e868452bbbf215489fbe3b2a2b56d5e86e4ce3"
+              "sha256": "0c8bb6659c6a2ed9fbfcb689344837a91381f83cacd50b377152b0934a492806"
             }
           ],
           "publication": {
