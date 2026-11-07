@@ -16,6 +16,7 @@ HISTORICAL_CITATION = ROOT / "citations" / "v1.0.0.cff"
 DOC = ROOT / "docs" / "release_reproducibility.md"
 LEAN_TOOLCHAIN = ROOT / "lean" / "lean-toolchain"
 RUNTIME_ACTION = ROOT / ".github/actions/validation-runtime/action.yml"
+DEEP_WORKFLOW = ROOT / ".github/workflows/deep-validation.yml"
 
 
 REQUIRED_WORKFLOW_FRAGMENTS = [
@@ -43,8 +44,8 @@ REQUIRED_CITATION_FRAGMENTS = [
 REQUIRED_DOC_FRAGMENTS = [
     "# Release Reproducibility",
     "| Quarto | `1.9.38` |",
-    "| Python | `3.11` in CI; Python `3.9.23` is the current local validated interpreter |",
-    "| Node | `22` in CI; `v22.15.0` is the current local validated runtime |",
+    "| Python | `3.11` in CI; Python `3.9.23` was the July 13 local observation |",
+    "| Node | `22` in CI; `v22.15.0` was the July 13 local observation |",
     "| Lean | `leanprover/lean4:v4.31.0` |",
     "| `libreoffice` | not found on `PATH` in the current shell during this audit |",
     "The current shell reports `LANG=C.UTF-8` and `LC_ALL=C`.",
@@ -73,16 +74,18 @@ def missing_fragments(text: str, fragments: list[str], label: str) -> list[str]:
 def main() -> None:
     errors: list[str] = []
 
-    for path in [BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION, CURRENT_CITATION, HISTORICAL_CITATION, DOC, LEAN_TOOLCHAIN]:
+    for path in [BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION, DEEP_WORKFLOW, CURRENT_CITATION, HISTORICAL_CITATION, DOC, LEAN_TOOLCHAIN]:
         if not path.exists():
             errors.append(f"Missing required release reproducibility file: {path.relative_to(ROOT)}")
 
     if errors:
         fail(errors)
 
-    workflow_text = "\n".join(path.read_text(encoding="utf-8") for path in (BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION))
-    if "uses: ./.github/actions/validation-runtime" not in BUILD_WORKFLOW.read_text(encoding="utf-8"):
-        errors.append("publication build does not invoke its shared pinned runtime")
+    workflow_text = "\n".join(path.read_text(encoding="utf-8") for path in (BUILD_WORKFLOW, DEPLOY_WORKFLOW, RUNTIME_ACTION, DEEP_WORKFLOW))
+    if "uses: ./.github/actions/validation-runtime" not in DEEP_WORKFLOW.read_text(encoding="utf-8"):
+        errors.append("deep validation does not invoke its shared pinned research runtime")
+    if "python3 -m pip install --disable-pip-version-check -r ci/publication_requirements.txt" not in BUILD_WORKFLOW.read_text(encoding="utf-8"):
+        errors.append("publication build does not install its pinned publication runtime")
     citation_text = HISTORICAL_CITATION.read_text(encoding="utf-8", errors="ignore")
     current_citation_text = CURRENT_CITATION.read_text(encoding="utf-8", errors="ignore")
     doc_text = DOC.read_text(encoding="utf-8", errors="ignore")

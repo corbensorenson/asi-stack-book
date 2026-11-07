@@ -1,23 +1,32 @@
 # Release Reproducibility
 
-Last updated: 2026-07-13
+Release-baseline observations: 2026-07-13. HTML publication workflow review:
+2026-11-06.
 
 This note records the current toolchain and citation boundary for the completed
 `v2.3.0` release while preserving the tagged `v2.2.0`, `v2.1.0`, and historical
 `v1.0.0` citation records. It is a reproducibility and citability record, not an approval of EPUB,
 DOCX, PDF, e-reader, audio, or curated-reader artifacts.
 
+The November 6 HTML workflow uses the existing pinned publication dependencies,
+Quarto, Node and browser runtime for source, render and artifact checks.
+Research/deep validation retains the separate shared runtime, including Lean.
+This change follows a Pages build that failed before rendering because its
+Lean-installer review expired; it does not renew that review or alter retained
+scientific/proof results. The exact-artifact deployment and public attestation
+boundaries remain in force.
+
 ## CI Toolchain
 
 | Surface | Pinned or controlled value | Source of truth |
 |---|---|---|
-| Quarto | `1.9.38` | `.github/workflows/publish.yml` |
-| Python | `3.11` in CI; Python `3.9.23` is the current local validated interpreter | `.github/workflows/publish.yml`; local command output |
-| Node | `22` in CI; `v22.15.0` is the current local validated runtime | `.github/workflows/publish.yml`; local command output |
+| Quarto | `1.9.38` | `.github/workflows/build-pages-artifact.yml` |
+| Python | `3.11` in CI; Python `3.9.23` was the July 13 local observation | `.github/workflows/build-pages-artifact.yml`; dated local command output |
+| Node | `22` in CI; `v22.15.0` was the July 13 local observation | `.github/workflows/build-pages-artifact.yml`; dated local command output |
 | Lean | `leanprover/lean4:v4.31.0` | `lean/lean-toolchain` |
 | Lake | `Lake version 5.0.0-src+68218e8` with Lean `4.31.0` locally | local command output |
 | elan | `elan 4.2.2` locally | local command output |
-| HTML render locale | `C.UTF-8` in CI render step | `.github/workflows/publish.yml` |
+| HTML render locale | `C.UTF-8` in CI render step | `.github/workflows/build-pages-artifact.yml` |
 | PDF probe locale | `LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8` when running the isolated PDF probe | `docs/reader_pdf_probe_manifest.md`; `docs/reader_format_dry_run.md` |
 
 ## Local Tool Paths Observed

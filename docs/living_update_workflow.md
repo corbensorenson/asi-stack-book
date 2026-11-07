@@ -15,7 +15,7 @@ The book order is manifest-driven.
 registry now records 19 current projection owners and their dependency edges.
 A plan lists changed inputs, affected outputs, rebuild commands, review
 boundaries and registered checks. It also exposes units without declared input
-coverage; targeted checks do not replace the complete CI gate.
+coverage; targeted checks do not replace the complete HTML publication gate.
 Every selected check names the projection or input that selected it and shows
 its capabilities, side effects, review state, prerequisites and wall-time
 ceiling. An unreviewed default remains unknown; a time budget is not an estimate
@@ -76,6 +76,20 @@ governed transactions. The full HTML pipeline remains owned by
 `.github/workflows/build-pages-artifact.yml`, including reader installation,
 paper routes, canonical status, product/channel checks and the mandatory
 browser gate. The command surface does not create another publication owner.
+
+The HTML publication workflow installs the pinned Python publication/schema
+dependencies, Node/browser runtime and Quarto. Its source gate checks the book,
+public-safe publication surface, source appendices/mappings, outline, current
+reader, editorial packets, claim census and executable deployment contract.
+It then renders the technical book, reader and paper library and runs the
+existing status, product, channel, browser and artifact-integrity checks.
+Research runtime installation, the full deep registry and Lean work remain
+owned by the scheduled/manual deep-validation and research workflows. HTML
+publication does not rerun those campaigns or renew their dated evidence.
+This separation prevents an expired research-installer review from blocking
+publication of an otherwise checked manuscript. The deploy workflow still
+accepts only the successful build's exact commit-bound artifact, rechecks
+current-main eligibility, and attests the deployed status.
 
 The public reader installer builds its replacement in a sibling staging
 container outside the publishable site, validates the complete payload,

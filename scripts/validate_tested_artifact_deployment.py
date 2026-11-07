@@ -13,10 +13,20 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD = ROOT / ".github" / "workflows" / "build-pages-artifact.yml"
 DEPLOY = ROOT / ".github" / "workflows" / "publish.yml"
 
+PUBLICATION_SOURCE_CHECKS = (
+    "python3 scripts/validate_book.py",
+    "python3 scripts/validate_publication.py",
+    "python3 scripts/validate_source_appendices.py",
+    "python3 scripts/validate_source_evidence_audit.py",
+    "python3 scripts/validate_outline_consistency.py",
+    "python3 scripts/validate_human_reader_current.py",
+    "python3 scripts/validate_p7_1c_reader_prose_quality.py",
+    "python3 scripts/validate_claim_atom_registry.py",
+)
+
 BUILD_REQUIRED = (
     "name: Build tested Pages artifact",
-    "python3 scripts/run_validation_registry.py --tier deep",
-    "cd lean && lake build",
+    *PUBLICATION_SOURCE_CHECKS,
     "python3 scripts/admission_guard.py --run quarto render --to html",
     "python3 scripts/admission_guard.py --run quarto render papers --to html",
     "python3 scripts/validate_paper_library.py --site _site",
@@ -81,6 +91,16 @@ def workflow_selection_errors(build: str, deploy: str) -> list[str]:
         deployment = by_id["deployment"]
     except (yaml.YAMLError, KeyError, TypeError, AttributeError) as error:
         return [f"deployment selection structure is invalid: {error}"]
+    source_steps = [step for step in build_steps if step.get("name") == "Validate book publication sources"]
+    expected_sources = [shlex.split(command) for command in PUBLICATION_SOURCE_CHECKS]
+    expected_sources.append(["python3", "scripts/validate_tested_artifact_deployment.py"])
+    try:
+        source_commands = [shlex.split(line) for line in source_steps[0].get("run", "").splitlines() if line.strip()] if len(source_steps) == 1 else []
+    except ValueError:
+        source_commands = []
+    if (source_commands != expected_sources or not source_steps or "if" in source_steps[0]
+            or source_steps[0].get("continue-on-error", False)):
+        errors.append("publication source checks must execute unconditionally and require failures")
     if deploy_value.get("concurrency", {}).get("cancel-in-progress") is not False:
         errors.append("a late older completion must not cancel an active current deployment")
     for _, step in (selection, final_selection):
@@ -136,6 +156,10 @@ def workflow_selection_errors(build: str, deploy: str) -> list[str]:
 def negative_controls(build: str, deploy: str) -> list[str]:
     failures: list[str] = []
     controls = {
+        "missing source check": (build.replace("          python3 scripts/validate_book.py\n", "", 1), deploy),
+        "decorative source check": (build.replace("          python3 scripts/validate_book.py", "          echo python3 scripts/validate_book.py", 1), deploy),
+        "conditional source checks": (build.replace("      - name: Validate book publication sources\n", "      - name: Validate book publication sources\n        if: 'false'\n", 1), deploy),
+        "ignored source check failure": (build.replace("      - name: Validate book publication sources\n", "      - name: Validate book publication sources\n        continue-on-error: true\n", 1), deploy),
         "deploy rebuild": (build, deploy + "\n      - run: quarto render\n"),
         "missing paper-library render": (build.replace("          python3 scripts/admission_guard.py --run quarto render papers --to html\n", "", 1), deploy),
         "unguarded canonical render": (build.replace("python3 scripts/admission_guard.py --run quarto render --to html", "quarto render --to html", 1), deploy),
@@ -172,7 +196,7 @@ def main() -> None:
     errors.extend(validate_text(build, deploy))
     errors.extend(negative_controls(build, deploy))
     fail(errors)
-    print("Tested-artifact deployment validation passed: successful-run handoff, exact-main selection, guarded renders, strict browser/report gates, commit binding, no deploy rebuild, and 16 rejecting negative controls.")
+    print("Tested-artifact deployment validation passed: mandatory publication source checks, successful-run handoff, exact-main selection, guarded renders, strict browser/report gates, commit binding, no deploy rebuild, and 20 rejecting negative controls.")
 
 
 def fail(errors: list[str]) -> None:
