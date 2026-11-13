@@ -1,0 +1,62 @@
+{
+  "scenario_id": "emeans-clustering-2026-11-13",
+  "scenario_scope": "e-means and selected clustering and vector-index comparators for two existing owners.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "emeans-virtual-context-abi",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "virtual-context-abi",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The clustering solver changes the candidate frontier of a versioned index. This owner already defines candidate retrieval, materialization, and omitted evidence.",
+      "required_before_drafting": [
+        "Review selected primary source passages and identify the relevant retrieval or codec contract."
+      ],
+      "evidence_transition_preconditions": [
+        "An implementation or workload result requires separately accepted evidence under the applicable claim contract."
+      ],
+      "promotion_blockers": [
+        "Selected external passages and a hypothetical worked example establish the comparison scope. Local benchmark and production evidence remain open."
+      ],
+      "non_claims": [
+        "The worked example is a geometric illustration. Performance figures belong to the cited external experiments."
+      ]
+    },
+    {
+      "case_id": "emeans-rankfold-neuralfold-and-artifact-compression",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "rankfold-neuralfold-and-artifact-compression",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "A codebook can serve lossy vector reconstruction separately from the routing partition. The artifact owner defines cost, reconstruction and consumer-use requirements.",
+      "required_before_drafting": [
+        "Review selected primary source passages and identify the relevant retrieval or codec contract."
+      ],
+      "evidence_transition_preconditions": [
+        "An implementation or workload result requires separately accepted evidence under the applicable claim contract."
+      ],
+      "promotion_blockers": [
+        "Selected external passages and a hypothetical worked example establish the comparison scope. Local benchmark and production evidence remain open."
+      ],
+      "non_claims": [
+        "The worked example is a geometric illustration. Performance figures belong to the cited external experiments."
+      ]
+    }
+  ],
+  "validation_boundary": "Editorial source routing and the arithmetic of a hypothetical example.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "The worked example is a geometric illustration. Performance figures belong to the cited external experiments."
+  ]
+}

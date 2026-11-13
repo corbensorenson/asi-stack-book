@@ -46,3 +46,7 @@ GraphRAG is an external comparator for deriving graph and community-summary laye
 ## Open Questions
 
 - Which paper passages specify provenance, update, and failure behavior that a controlled context system would need to audit?
+
+## 2026-11-13 clustering mechanism review
+
+Hierarchical Leiden communities group an extracted entity graph and provide context for community summaries. Selected method passages only. Edge correctness, graph completeness and local materialization remain open. [Section 3.1.4 and Appendix B](https://arxiv.org/html/2404.16130)

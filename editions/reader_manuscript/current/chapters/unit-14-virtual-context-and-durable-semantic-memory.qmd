@@ -448,6 +448,17 @@ Exact lookup, lexical search, vector retrieval, graph traversal, learned
 navigation, long-context scanning, and hybrid methods are candidate generators.
 They should be evaluated against the consumer's actual need.
 
+Suppose the release-note team rebuilds its search index with e-means, which
+can fit the centers of search buckets in fewer passes. The new buckets can
+fit the collection better on average and still put the rare correction
+just outside the bucket the worker searches. The only account of the trial
+that comes back is the old summary. Rejecting it as stale leaves the worker
+without the current result.
+The worker can look up the trial by its stable ID or search more buckets,
+then check the recovered passage before drafting. If the correction
+remains unavailable, the release note waits.
+[Technical worked example](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#release-note-index-rebuild)
+
 A candidate passes through identity resolution, provenance, freshness,
 contradiction, rights, taint, scope, relevance, and adequacy checks. The result
 may be admitted, denied, quarantined, narrowed, or returned with unresolved

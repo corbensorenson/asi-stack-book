@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-13"
 primary_sources:
   - "vcm_public"
   - "deterministic_capability_compilation"
@@ -41,7 +41,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Twenty-five mapped sources, including the RLM secondary-owner join, are reviewed at their recorded boundary; seven other manifest assignments, including three physical-memory comparators, remain metadata-first drafting context. Mapping completeness does not establish source-to-packet fidelity, context adequacy, model use, or novelty."
+  - "Thirty-seven mapped sources include the RLM join and the vector retrieval and clustering comparisons. Seven other assignments remain drafting context. Each mapping records its review scope."
   - "Current evidence is exact but narrow: three valid/five rejecting admission fixtures, two valid/nine rejecting resolver routes, one bounded certificate/eleven rejecting mutations, 83 theorem declarations under six targets including an exact 39-theorem request lifecycle and 73-mutation consumer, and mixed bounded QCSA results. None runs a deployed resolver or natural model-facing context campaign."
   - "A full attempt still requires natural source sets, actual emitted packets, independently implemented source-to-packet and use evaluators, strong matched context baselines, staleness/poisoning/omission/authority/cache attacks, complete costs, causal ablations, clean reproduction, and cross-model/cross-backend transfer."
   - "Chapter-core support remains at `argument`; the bounded QCSA mechanism dispositions do not promote the ABI core."
@@ -394,6 +394,108 @@ ranker, consumer, and freshness epochs remain compatible. A cache hit cannot
 inherit correctness from the request key. The receipt states whether the
 system reused candidates, a selected packet, physical KV state, or an output,
 and which invalidation checks ran before use.
+
+### Clustering the retrieval index {#clustering-the-retrieval-index}
+
+An inverted file (IVF) puts embeddings in buckets so a query can search a
+few likely buckets before ranking the passages inside them. In Euclidean
+k-means the builder chooses a fixed number of centers, $k$, and aims to
+minimize the mean squared distance from each vector to its nearest center.
+Lloyd's algorithm assigns all vectors to their nearest center, replaces
+each center with the mean of its assigned vectors, and repeats. k-means++
+spreads out the initial centers by favoring points far from those already
+chosen. Flash-KMeans speeds up full-batch assignment and reduction on
+GPUs. SuperKMeans prunes distance calculations and can stop fitting when
+nearest-neighbor recall stops improving on validation queries.
+[Faiss](https://arxiv.org/abs/2401.08281) ·
+[k-means++](https://research.google/pubs/k-means-the-advantages-of-careful-seeding/) ·
+[Flash-KMeans](https://arxiv.org/abs/2603.09229v2) ·
+[SuperKMeans](https://arxiv.org/html/2603.20009v1)
+
+**e-means** fits the same objective with updates after each mini-batch.
+Classic mini-batch k-means accumulates a running mean of assigned points.
+e-means maintains an exponentially decayed sum and count for each center.
+Their ratio gives the new center, with recent points weighted more heavily.
+The recipe lowers the update step over the run, revives underused centers
+by splitting active ones, and sets batch size and initial step from
+empirical scaling rules. Those rules were fitted for embedding workloads
+and are weaker defaults on very small or low-dimensional datasets. The
+labels returned from the last epoch can reflect centers that subsequently
+moved. Budget a fresh assignment pass when the index needs labels tied to
+the final centers. [Bessa et al., §§2–3](https://arxiv.org/html/2611.09501v1) ·
+[Faiss implementation](https://github.com/facebookresearch/faiss/blob/main/contrib/e_means/README.md)
+
+In Table 4 of the preprint, 1.4–2.6 e-means passes reached the held-out
+distortion of Flash-KMeans after 25 iterations, with reported fitting
+speedups of 9.5–45.5× on the tested H100 setups. The billion-vector cells
+used eight GPUs and one seed each. Timings cover warm fitting calls and
+exclude loading, seeding, warm-up, and scoring. Appendix L compares
+Recall@10 at fixed IVF search selectivities and reports reaching comparable
+recall sooner on most tested datasets. For a retrieval service, compare
+total rebuild time, including final assignment and installation, and
+query latency at matched recall. Keep a separate measure of whether the
+required passage reaches the consumer.
+[Preprint, Table 4 and Appendix L](https://arxiv.org/html/2611.09501v1) ·
+[Faiss timing protocol](https://github.com/facebookresearch/faiss/blob/main/benchs/e_means/README.md)
+
+#### Worked example: the release-note correction {#release-note-index-rebuild}
+
+A worker needs the current result of a controller trial. The corrected
+passage says the trial stopped after oscillation. A stale summary says the
+controller safely detected it. The following hypothetical one-dimensional
+index uses two buckets. Its ten coordinates are four copies of 0, the
+correction at 3.6, the stale summary at 4.1, and four copies of 8. The query
+is at 4.0, and the retriever requests two passages from its nearest bucket.
+
+- **Partition A.** Centers at 0 and about 6.617 yield a mean squared
+  error of 2.309. The searched bucket returns the stale summary followed
+  by the correction.
+- **Partition B.** Centers at 0.72 and 7.22 yield a mean squared error
+  of 2.254. The searched bucket returns the stale summary followed by
+  an unrelated passage at 8.
+
+The boundary moves from about 3.308 to 3.970. The correction crosses to
+the unsearched bucket while the query and stale summary stay together.
+Both partitions use the same corpus and the same distance. An exact scan
+over all ten vectors returns the stale summary and the correction in
+distance order. The coordinates illustrate what a change of partition
+can do. They are hypothetical outputs and carry no performance
+comparison between solvers.
+
+The worker's retrieval receipt records the corpus and index versions, the
+searched bucket, and the candidates it returned. With partition B,
+rejecting the stale summary on freshness grounds still leaves the current
+result missing. The resolver can look up the trial by its stable run ID,
+probe both buckets, or search the full snapshot. It checks the retrieved
+correction's provenance, supersession, and permitted use before mounting
+it. If the required evidence remains missing, it records the omission and
+withholds the release note. A bucket label is local to an index version.
+The source and its revision history have their own identities.
+
+#### Choose the grouping by what the reader needs
+
+- **Group normalized embeddings by direction.** Spherical k-means uses cosine similarity to unit-normalized centers. Check whether vector magnitude carries information the task needs. [Dhillon and Modha](https://www.cs.utexas.edu/~inderjit/public_papers/concept_mlj.pdf)
+
+- **Show an actual passage as a representative.** k-medoids chooses an observed item using a dissimilarity measure. Count pairwise comparison cost and check whether the example omits a material exception. [Schubert and Rousseeuw](https://arxiv.org/abs/2008.05171v2)
+
+- **Let one passage contribute to several topics.** RAPTOR uses Gaussian mixtures after dimensionality reduction and allows overlapping membership in summaries. Retain passage lineage across summaries and review omissions. [RAPTOR, §3.1](https://openreview.net/pdf/1414c23eb8af2e30daa25a4f53471f69091f48d9.pdf)
+
+- **Find irregular groups and leave sparse points unassigned.** DBSCAN connects dense neighborhoods at a chosen radius. HDBSCAN extracts stable groups from a density hierarchy. Both infer the number of groups from the data and settings. Check sensitivity to the metric and density parameters. Review rare cases before excluding noise points. [DBSCAN](https://cdn.aaai.org/KDD/1996/KDD96-037.pdf) · [HDBSCAN](https://doi.org/10.1145/2733381)
+
+- **Explore broad groups and finer subgroups.** Agglomerative clustering merges groups into a tree. Ward linkage favors merges with a small increase in within-group squared error. Check what changes with the linkage and where the tree is cut. [Murtagh and Legendre](https://arxiv.org/abs/1111.6285v2)
+
+- **Group entities by their relationships.** GraphRAG uses hierarchical Leiden communities over extracted entity edges. Review missing and spurious edges before relying on the communities. [GraphRAG, §3.1.4](https://arxiv.org/html/2404.16130)
+
+- **Bound bucket population.** Fixed-size k-means constrains the assignment and can place a point in a farther bucket. Measure the effect of balancing on recall and tail latency. Query traffic can remain uneven. [Malinen and Fränti](https://arxiv.org/abs/2501.16113v1)
+
+For nearest-neighbor retrieval, an exact scan provides reference answers
+under the chosen metric. A graph index such as HNSW is an approximate
+lookup alternative that can operate without centroid buckets. Compare
+their build and update costs, storage, query latency, and recall on the
+same corpus and query slices. The artifact compression chapter describes
+the additional choice of [using centers as stored codes](rankfold-neuralfold-and-artifact-compression.qmd#vector-codebook-cost).
+[HNSW](https://arxiv.org/abs/1603.09320) ·
+[Faiss](https://arxiv.org/abs/2401.08281)
 
 ### Certified bounded graph snapshots
 
@@ -1025,13 +1127,11 @@ boundary that keeps those context objects from becoming anonymous prompt mass.
 | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | External comparators for retrieval, graph/community sensemaking, associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression; use to sharpen typed representation, actual use, provenance, loss, update, poisoning, cost, and adequacy boundaries. | bounded primary-record notes available; no local model, memory, benchmark, citation, compression, or production result |
 | `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project` | One historical-project lineage for durable-memory/context separation, frozen and TTL-bounded slices, bounded graph snapshots, generation-leased handles, provenance, expiry, revocation, restore revalidation, and invalid-slice controls. | public-safe pinned notes reviewed; one hand-authored bounded certificate and mutations only, with no historical runtime replay or independent replication |
 
-Twenty-five sources have first-class Appendix C mappings. The original
-twenty-four support static context ABI and certificate vocabulary; the RLM
-addition explains externalized inspection and recursive subcall boundaries.
-These mappings do not
-support claims of resolver correctness, summary fidelity, certificate
-truthfulness, contradiction-rate improvement, context compiler performance,
-memory-store behavior, or model-facing context quality.
+Thirty-seven sources have Appendix C mappings. The clustering sources
+cover center fitting, alternative grouping objectives, and retrieval
+evaluation. The other mappings cover the static context ABI, certificates,
+and externalized inspection. The review scope and remaining evidence
+requirements are recorded with each mapping.
 
 ### Manifest source assignment reconciliation
 
@@ -1047,6 +1147,18 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | `ext_airllm_2023` | Metadata-first comparator: AirLLM: Scaling Large Language Models on Low-End Commodity Computers. Official implementation comparator for layer-wise model sharding, one-layer accelerator residency, next-layer prefetch, optional storage compression, and original-versus-transformed model storage. Maintainer-reported fit and speed claims are not independently reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hf_accelerate_big_model_inference_2026` | Metadata-first comparator: Hugging Face Accelerate: Loading Big Models into Memory. Official implementation documentation for automatic or explicit GPU/CPU/disk device maps and memory-mapped disk tensors. The documented sequential-dispatch, prefetch, and hard-drive-performance limitations make it a baseline, not a qualification result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_recursive_language_models_2025` | Passage-reviewed comparator: Recursive Language Models. RLM holds the prompt and intermediate values outside the root context, exposes bounded metadata and lets generated code select material for subcalls. This distinguishes addressable source state from inspected and returned context. | The RLM paper does not implement the Virtual Context ABI or establish complete coverage, faithful summaries, adequate sandboxing or unlimited effective context. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_emeans_2026` | Passage-reviewed comparator: e-means: outperforming k-means (in one-tenth the epochs). EMA of per-center batch sums and counts fits the standard fixed-k squared-distance objective. Cosine annealing, empirical batch and step defaults, donor splitting, and finalization shape the finite-budget recipe. | The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_kmeans_plus_plus_2007` | Passage-reviewed comparator: k-means++: The Advantages of Careful Seeding. After the first seed, sample each next center with probability proportional to squared distance from the closest seed. Lloyd updates can then refine the centers. | Seeding adds setup cost and leaves the number of centers and the choice of distance to the caller. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_flash_kmeans_2026` | Passage-reviewed comparator: Flash-KMeans: Fast and Memory-Efficient Exact K-Means. Fuses distance calculation with nearest-center selection to avoid writing the full distance matrix and groups centroid updates into reductions. | Exact refers to the algorithmic assignment strategy at the chosen numerical precision. Initialization, stopping, hardware and workload affect a timing comparison. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_superkmeans_2026` | Passage-reviewed comparator: A Super Fast K-means for Indexing Vector Embeddings. Rotates embeddings for probabilistic partial-distance pruning. Optional early termination monitors nearest-neighbor recall on query examples. | Early stopping depends on query representativeness and nearest-neighbor ground truth. Large and small k regimes have different pruning economics. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_spherical_kmeans_2001` | Passage-reviewed comparator: Concept Decompositions for Large Sparse Text Data Using Clustering. Clusters normalized document vectors by cosine similarity to unit-normalized mean directions. | Normalization discards magnitude. Hard assignments can conceal overlap and depend on the geometry of the representation. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_fast_kmedoids_2021` | Passage-reviewed comparator: Fast and Eager k-Medoids Clustering: O(k) Runtime Improvement of the PAM, CLARA, and CLARANS Algorithms. Uses actual observations as representatives and minimizes assigned dissimilarity. FasterPAM improves swap search. | Pairwise dissimilarity can dominate cost. A representative document still needs provenance and can omit important exceptions. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_dbscan_1996` | Passage-reviewed comparator: A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise. Expands groups through connected core neighborhoods under a distance radius and minimum neighbor count. | A single neighborhood scale can merge nearby groups or discard sparse groups. Noise status depends on the metric and settings. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hdbscan_2015` | Passage-reviewed comparator: Hierarchical Density Estimates for Data Clustering, Visualization, and Outlier Detection. Builds a density hierarchy and extracts stable groups, with some points left as noise. | Small groups can be lost under the minimum cluster size. Rare or novel evidence may be labeled noise and needs an independent retention decision. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ward_hierarchical_2014` | Passage-reviewed comparator: Ward’s Hierarchical Clustering Method: Clustering Criterion and Agglomerative Algorithm. Builds a hierarchy by repeatedly merging groups. Ward linkage uses the increase in within-group squared error to choose a merge. | A tree cut and linkage define which groups appear. Early merges affect every coarser level. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_fixed_size_kmeans_2025` | Passage-reviewed comparator: Fixed-sized clusters k-Means. Optimizes squared error subject to declared cluster sizes using a constrained assignment step. | Equal bucket populations do not guarantee equal query traffic. The exact Hungarian assignment is expensive at scale. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_hnsw_2016` | Passage-reviewed comparator: Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. Searches a hierarchy of proximity graphs over vectors. The graph can serve vector lookup without assigning the corpus to centroid buckets. | Evaluate recall, tail latency, graph storage, and updates under the application workload. Search neighbors still require source admission. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_faiss_library_2024` | Passage-reviewed comparator: The Faiss Library. An inverted file uses coarse centroids to organize postings. Vector quantization can instead encode a vector using centroid IDs, including separate subspace codes in product quantization. | A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

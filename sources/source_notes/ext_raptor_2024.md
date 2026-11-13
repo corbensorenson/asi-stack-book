@@ -43,3 +43,7 @@ RAPTOR is a comparator for recursive clustering, summarization, and retrieval ov
 ## Open Questions
 
 - Which source passages expose the conditions under which abstractions should be invalidated or repaired?
+
+## 2026-11-13 clustering mechanism review
+
+Gaussian mixtures after UMAP permit overlapping chunk membership in recursive summaries. Selected method passage only. QA results, summary fidelity and local materialization remain outside this mapping. [ICLR 2024 Section 3.1, clustering method](https://openreview.net/pdf/1414c23eb8af2e30daa25a4f53471f69091f48d9.pdf)

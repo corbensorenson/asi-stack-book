@@ -9545,5 +9545,211 @@
     "citation_label": "Bobliuuu and contributors (2026), Ten Percent Challenge",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Selected TASK_C/DECISION, push_c2/pack_artifact, manifest-matching loader, feedback RESULTS, C2 lock, final stage1/stage2 receipts and maintainer comment 6689471947. No GPU, released-weight download, source execution, statistical certification, complete history audit or independent reproduction."
+  },
+  {
+    "id": "ext_emeans_2026",
+    "title": "e-means: outperforming k-means (in one-tenth the epochs)",
+    "priority": "external_literature",
+    "layer": "embedding_clustering_optimization",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "rankfold-neuralfold-and-artifact-compression"
+    ],
+    "url": "https://arxiv.org/html/2611.09501v1",
+    "notes": "EMA of per-center batch sums and counts fits the standard fixed-k squared-distance objective. Cosine annealing, empirical batch and step defaults, donor splitting, and finalization shape the finite-budget recipe. The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open.",
+    "source_type": "preprint",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "citation_label": "Bessa et al. (2026), e-means",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2–4 and Appendices C, H, J, L and M, plus the Faiss training-label and timing documentation. The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open."
+  },
+  {
+    "id": "ext_kmeans_plus_plus_2007",
+    "title": "k-means++: The Advantages of Careful Seeding",
+    "priority": "external_literature",
+    "layer": "clustering_initialization",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://research.google/pubs/k-means-the-advantages-of-careful-seeding/",
+    "notes": "After the first seed, sample each next center with probability proportional to squared distance from the closest seed. Lloyd updates can then refine the centers. Seeding adds setup cost and leaves the number of centers and the choice of distance to the caller.",
+    "source_type": "conference_paper",
+    "published": "2007",
+    "updated": "2007",
+    "citation_label": "Arthur and Vassilvitskii (2007), k-means++",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Author publication record and Bessa et al., Section 4.1 and Appendix G. Seeding adds setup cost and leaves the number of centers and the choice of distance to the caller."
+  },
+  {
+    "id": "ext_flash_kmeans_2026",
+    "title": "Flash-KMeans: Fast and Memory-Efficient Exact K-Means",
+    "priority": "external_literature",
+    "layer": "gpu_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/abs/2603.09229v2",
+    "notes": "Fuses distance calculation with nearest-center selection to avoid writing the full distance matrix and groups centroid updates into reductions. Exact refers to the algorithmic assignment strategy at the chosen numerical precision. Initialization, stopping, hardware and workload affect a timing comparison.",
+    "source_type": "preprint",
+    "published": "2026-03-10",
+    "updated": "2026-04-09",
+    "citation_label": "Yang et al. (2026), Flash-KMeans",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Version 2 abstract and Bessa et al., Section 4 and Appendix C for the exact comparison configuration. Exact refers to the algorithmic assignment strategy at the chosen numerical precision. Initialization, stopping, hardware and workload affect a timing comparison."
+  },
+  {
+    "id": "ext_superkmeans_2026",
+    "title": "A Super Fast K-means for Indexing Vector Embeddings",
+    "priority": "external_literature",
+    "layer": "vector_index_construction",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/html/2603.20009v1",
+    "notes": "Rotates embeddings for probabilistic partial-distance pruning. Optional early termination monitors nearest-neighbor recall on query examples. Early stopping depends on query representativeness and nearest-neighbor ground truth. Large and small k regimes have different pruning economics.",
+    "source_type": "preprint",
+    "published": "2026-03-20",
+    "updated": "2026-03-20",
+    "citation_label": "Kuffo et al. (2026), SuperKMeans",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 2.3, 3.1–3.3, 4.3 and 4.4. Early stopping depends on query representativeness and nearest-neighbor ground truth. Large and small k regimes have different pruning economics."
+  },
+  {
+    "id": "ext_spherical_kmeans_2001",
+    "title": "Concept Decompositions for Large Sparse Text Data Using Clustering",
+    "priority": "external_literature",
+    "layer": "directional_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://www.cs.utexas.edu/~inderjit/public_papers/concept_mlj.pdf",
+    "notes": "Clusters normalized document vectors by cosine similarity to unit-normalized mean directions. Normalization discards magnitude. Hard assignments can conceal overlap and depend on the geometry of the representation.",
+    "source_type": "journal_article",
+    "published": "2001",
+    "updated": "2001",
+    "citation_label": "Dhillon and Modha (2001), spherical k-means",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Author-hosted paper, abstract and spherical k-means formulation. Normalization discards magnitude. Hard assignments can conceal overlap and depend on the geometry of the representation."
+  },
+  {
+    "id": "ext_fast_kmedoids_2021",
+    "title": "Fast and Eager k-Medoids Clustering: O(k) Runtime Improvement of the PAM, CLARA, and CLARANS Algorithms",
+    "priority": "external_literature",
+    "layer": "exemplar_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/abs/2008.05171v2",
+    "notes": "Uses actual observations as representatives and minimizes assigned dissimilarity. FasterPAM improves swap search. Pairwise dissimilarity can dominate cost. A representative document still needs provenance and can omit important exceptions.",
+    "source_type": "journal_article",
+    "published": "2021",
+    "updated": "2021",
+    "citation_label": "Schubert and Rousseeuw (2021), FasterPAM",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Version 2 abstract and PAM/FasterPAM mechanism description. Pairwise dissimilarity can dominate cost. A representative document still needs provenance and can omit important exceptions."
+  },
+  {
+    "id": "ext_dbscan_1996",
+    "title": "A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise",
+    "priority": "external_literature",
+    "layer": "density_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://cdn.aaai.org/KDD/1996/KDD96-037.pdf",
+    "notes": "Expands groups through connected core neighborhoods under a distance radius and minimum neighbor count. A single neighborhood scale can merge nearby groups or discard sparse groups. Noise status depends on the metric and settings.",
+    "source_type": "conference_paper",
+    "published": "1996",
+    "updated": "1996",
+    "citation_label": "Ester et al. (1996), DBSCAN",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3 and 4 on density reachability, noise and the neighborhood rule. A single neighborhood scale can merge nearby groups or discard sparse groups. Noise status depends on the metric and settings."
+  },
+  {
+    "id": "ext_hdbscan_2015",
+    "title": "Hierarchical Density Estimates for Data Clustering, Visualization, and Outlier Detection",
+    "priority": "external_literature",
+    "layer": "hierarchical_density_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://doi.org/10.1145/2733381",
+    "notes": "Builds a density hierarchy and extracts stable groups, with some points left as noise. Small groups can be lost under the minimum cluster size. Rare or novel evidence may be labeled noise and needs an independent retention decision.",
+    "source_type": "journal_article",
+    "published": "2015",
+    "updated": "2015",
+    "citation_label": "Campello et al. (2015), HDBSCAN",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Primary paper summary and implementation-author documentation on mutual reachability, the condensed tree and cluster extraction. Small groups can be lost under the minimum cluster size. Rare or novel evidence may be labeled noise and needs an independent retention decision."
+  },
+  {
+    "id": "ext_ward_hierarchical_2014",
+    "title": "Ward’s Hierarchical Clustering Method: Clustering Criterion and Agglomerative Algorithm",
+    "priority": "external_literature",
+    "layer": "agglomerative_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/abs/1111.6285v2",
+    "notes": "Builds a hierarchy by repeatedly merging groups. Ward linkage uses the increase in within-group squared error to choose a merge. A tree cut and linkage define which groups appear. Early merges affect every coarser level.",
+    "source_type": "journal_article",
+    "published": "2014",
+    "updated": "2014",
+    "citation_label": "Murtagh and Legendre (2014), Ward linkage",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Version 2 abstract and discussion of the Ward merge criterion. A tree cut and linkage define which groups appear. Early merges affect every coarser level."
+  },
+  {
+    "id": "ext_fixed_size_kmeans_2025",
+    "title": "Fixed-sized clusters k-Means",
+    "priority": "external_literature",
+    "layer": "capacity_constrained_clustering",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/abs/2501.16113v1",
+    "notes": "Optimizes squared error subject to declared cluster sizes using a constrained assignment step. Equal bucket populations do not guarantee equal query traffic. The exact Hungarian assignment is expensive at scale.",
+    "source_type": "preprint",
+    "published": "2025-01-27",
+    "updated": "2025-01-27",
+    "citation_label": "Malinen and Fränti (2025), fixed-size k-means",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Version 1 abstract and fixed-size assignment formulation. Equal bucket populations do not guarantee equal query traffic. The exact Hungarian assignment is expensive at scale."
+  },
+  {
+    "id": "ext_hnsw_2016",
+    "title": "Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs",
+    "priority": "external_literature",
+    "layer": "graph_vector_search",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/abs/1603.09320",
+    "notes": "Searches a hierarchy of proximity graphs over vectors. The graph can serve vector lookup without assigning the corpus to centroid buckets. Evaluate recall, tail latency, graph storage, and updates under the application workload. Search neighbors still require source admission.",
+    "source_type": "preprint",
+    "published": "2016",
+    "updated": "2016",
+    "citation_label": "Malkov and Yashunin (2016), HNSW",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Author preprint abstract and hierarchical proximity graph construction. Evaluate recall, tail latency, graph storage, and updates under the application workload. Search neighbors still require source admission."
+  },
+  {
+    "id": "ext_faiss_library_2024",
+    "title": "The Faiss Library",
+    "priority": "external_literature",
+    "layer": "vector_indexing_and_quantization",
+    "chapter_targets": [
+      "virtual-context-abi",
+      "rankfold-neuralfold-and-artifact-compression"
+    ],
+    "url": "https://arxiv.org/abs/2401.08281",
+    "notes": "An inverted file uses coarse centroids to organize postings. Vector quantization can instead encode a vector using centroid IDs, including separate subspace codes in product quantization. A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets.",
+    "source_type": "preprint",
+    "published": "2024",
+    "updated": "2024",
+    "citation_label": "Douze et al. (2024), Faiss",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Author paper sections on inverted files, graph-based search and compressed codes, with the official Faiss index documentation. A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets."
   }
 ]

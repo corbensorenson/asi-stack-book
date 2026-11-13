@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-13: Added e-means and clustering alternatives to the Virtual Context ABI, with a worked release-note example where a lower-distortion index misses the decisive correction. Artifact Compression now accounts for vector codebooks and reader Unit 14 follows the same retrieval decision. Appendix H records twelve new sources and the existing RAPTOR and GraphRAG notes now point to the reviewed clustering passages.
+
 - 2026-11-06: Fixed the technical edition's reader-book link overflowing at phone width with doubled text. The mobile control now sizes the link to its content and permits wrapping within its boundary. Six width/text-scale keyboard checks and sampled technical/reader browser checks pass locally; the full publication browser gate remains required.
 
 - 2026-11-06: Reconciled the current status snapshot's stale source, source-mapping and manuscript-scale rows after the first complete HTML build exposed a 501-versus-543 source-count contradiction. Scaffold generation now maintains the snapshot's inventory and mapping counts, and publication checks source-level public-status consistency before rendering. This corrects current bookkeeping without renewing historical research evidence.

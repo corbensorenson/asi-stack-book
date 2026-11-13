@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-06"
+last_updated: "2026-11-13"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -115,7 +115,7 @@ or stable URL.
 
 ### Claim-source mapping status
 
-Appendix C carries exact passage-reviewed mappings for all six assigned sources. Five local lineage sources support low-rank/tensor architecture, manifests, deterministic decode obligations, residual and fallback accounting, reconstruction contracts, and resource pressure. RAPTOR supplies a hierarchical-summary comparator. None supports measured RankFold/NeuralFold performance, codec correctness, lossless reconstruction, downstream utility, or local superiority.
+Appendix C records the reviewed mappings for architecture lineage, hierarchical summaries, task-scoped checkpoint packing, and vector quantization. Each mapping states its evidence limits. The local codec observations and their scope are recorded below.
 
 ### Concrete RankFold Artifact Import
 
@@ -427,6 +427,22 @@ parameters against a RankFold-aligned rate proxy while retaining the distortion
 or residual constraint. This is a co-design hypothesis. An adequate field
 model that stores badly and a compact model that violates the reconstruction
 contract both lose.
+
+### Count the vector codebook and its reconstruction error {#vector-codebook-cost}
+
+An inverted file can use a center to route search and keep full vectors
+in each bucket. A vector quantizer can instead store a center ID and
+decode it to the corresponding prototype. Product quantization uses
+separate codebooks for different subvectors. With a fixed-width code
+and 4,096 centers, each ID takes 12 bits before packaging overhead.
+Changing the fitting method to e-means keeps that 12-bit budget at fixed
+$k$. Count the codebook, IDs, metadata, any residuals, and retained full
+vectors, then measure distortion and downstream utility. Exact replay
+requires sufficient residual information or access to the exact source.
+The [retrieval comparison](virtual-context-abi.qmd#clustering-the-retrieval-index)
+explains where e-means can reduce build work.
+[Faiss](https://arxiv.org/abs/2401.08281) ·
+[Bessa et al.](https://arxiv.org/html/2611.09501v1)
 
 ### Probe accuracy is part of compression performance
 
@@ -898,6 +914,8 @@ These rows keep RankFold, NeuralFold, and Artifact Compression's manifest assign
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Separates retrospective and prospective compression from causal future-task benefit and supplies a finite warning that adding valid vocabulary can worsen bounded discoverability. | No RankFold, NeuralFold, codec, search, or transfer experiment was run; compression remains candidate-generation evidence rather than utility evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ten_percent_challenge_2026` | Passage-reviewed comparator: Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback. Task-scoped checkpoint quantization, exact symbol coding and reduced stored structures illustrate separate disk-size, runtime-state, accuracy and complete-cost contracts. | No RankFold/NeuralFold result, general capability retention, resident-memory reduction, speedup or complete challenge win; source-reported task-specific experiment only. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_emeans_2026` | Passage-reviewed comparator: e-means: outperforming k-means (in one-tenth the epochs). Faster fitting at fixed k illustrates the separate budgets for learning a vector codebook and storing or decoding its codes. | The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_faiss_library_2024` | Passage-reviewed comparator: The Faiss Library. IVF and product quantization separate coarse routing, stored codes, and reconstruction costs. | A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

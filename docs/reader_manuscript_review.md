@@ -2,6 +2,23 @@
 
 ## Current independent manuscript review
 
+### November 13 clustering and release-note example
+
+Unit 14 continues the controller trial example through an index rebuild.
+The worker retrieves the old summary and must recover the corrected
+passage before preparing a release note. The technical example uses ten
+invented coordinates to show the bucket boundary and exact-scan result.
+The checked arithmetic is independent of the published e-means timings.
+[Reader Unit 14](../editions/reader_manuscript/current/chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd#retrieval-produces-candidates) ·
+[Technical example](../chapters/virtual-context-abi.qmd#release-note-index-rebuild)
+
+The source review covers the e-means update, Table 4 timing protocol,
+Appendix L vector recall and the selected clustering alternatives. The
+artifact chapter accounts for vector codes separately from index fitting.
+Selected HTML renders verify the new passages and cross-references in
+both technical reading modes and the reader edition.
+[e-means source note](../sources/source_notes/ext_emeans_2026.md)
+
 ### November 6 Ten Percent Challenge source review and integration
 
 Reviewed the user-supplied external repository at commit

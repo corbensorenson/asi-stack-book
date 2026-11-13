@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1404 |
-| Exact claim-source mappings | 1196 |
+| Assigned source/chapter pairs | 1418 |
+| Exact claim-source mappings | 1210 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1404 |
-| Source notes listing assigned chapter | 1404 |
-| Passage-reviewed mappings recorded | 1127 |
+| Source notes present for assigned pairs | 1418 |
+| Source notes listing assigned chapter | 1418 |
+| Passage-reviewed mappings recorded | 1141 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -69,7 +69,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `reflexive-model-world-systems` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
 | `cognitive-compilation-and-semantic-ir` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
 | `cognitive-method-transfer-and-qualification` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
-| `virtual-context-abi` | 32 | 25 | 32 | 32 | 25 | argument | passage review required before source-derived promotion |
+| `virtual-context-abi` | 44 | 37 | 44 | 44 | 37 | argument | passage review required before source-derived promotion |
 | `durable-semantic-memory-and-knowledge-lattices` | 13 | 13 | 13 | 13 | 9 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 23 | 15 | 23 | 23 | 15 | argument | passage review required before source-derived promotion |
 | `verification-bandwidth-and-context-adequacy` | 17 | 16 | 17 | 17 | 16 | argument | passage review required before source-derived promotion |
@@ -97,7 +97,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 44 | 21 | 44 | 44 | 21 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
-| `rankfold-neuralfold-and-artifact-compression` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
+| `rankfold-neuralfold-and-artifact-compression` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 50 | 25 | 50 | 50 | 25 | argument | passage review required before source-derived promotion |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 8 | 3 | 8 | 8 | 1 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
@@ -324,6 +324,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_self_rag_2023` | 2 | yes |
 | `ext_longllmlingua_2023` | 2 | yes |
 | `ext_recursive_language_models_2025` | 2 | yes |
+| `ext_emeans_2026` | 2 | yes |
+| `ext_faiss_library_2024` | 2 | yes |
 | `ext_titans_2025` | 2 | yes |
 | `ext_memory_centric_continual_learning_2026` | 2 | yes |
 | `ext_gpqa_2023` | 2 | yes |
@@ -437,6 +439,16 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_coala_2024` | 1 | yes |
 | `ext_rag_2020` | 1 | yes |
 | `ext_lost_in_middle_2023` | 1 | yes |
+| `ext_kmeans_plus_plus_2007` | 1 | yes |
+| `ext_flash_kmeans_2026` | 1 | yes |
+| `ext_superkmeans_2026` | 1 | yes |
+| `ext_spherical_kmeans_2001` | 1 | yes |
+| `ext_fast_kmedoids_2021` | 1 | yes |
+| `ext_dbscan_1996` | 1 | yes |
+| `ext_hdbscan_2015` | 1 | yes |
+| `ext_ward_hierarchical_2014` | 1 | yes |
+| `ext_fixed_size_kmeans_2025` | 1 | yes |
+| `ext_hnsw_2016` | 1 | yes |
 | `ext_mempp_organizational_memory_2026` | 1 | yes |
 | `ext_ansatz_continual_graph_memory_2026` | 1 | yes |
 | `black_hole_context_manager` | 1 | yes |
@@ -1057,6 +1069,18 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_airllm_2023` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_hf_accelerate_big_model_inference_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `ext_recursive_language_models_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_emeans_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_kmeans_plus_plus_2007` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_flash_kmeans_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_superkmeans_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_spherical_kmeans_2001` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_fast_kmedoids_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_dbscan_1996` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_hdbscan_2015` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_ward_hierarchical_2014` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_fixed_size_kmeans_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_hnsw_2016` | mapped | note present | chapter listed | passage-reviewed |
+| `virtual-context-abi.core` | `virtual-context-abi` | `ext_faiss_library_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `qcsa_whitepaper` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
 | `durable-semantic-memory-and-knowledge-lattices.core` | `durable-semantic-memory-and-knowledge-lattices` | `treellm` | mapped | note present | chapter listed | passage-reviewed |
@@ -1597,6 +1621,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_ten_percent_challenge_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_emeans_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `ext_faiss_library_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `tokenmana` | mapped | note present | chapter listed | passage-reviewed |
 | `resource-economics-and-token-budgets.core` | `resource-economics-and-token-budgets` | `ext_eggroll_hyperscale_es_2026` | mapped | note present | chapter listed | passage-reviewed |

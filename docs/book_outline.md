@@ -3847,11 +3847,11 @@ Source loading queue:
 | Role | Source IDs | Loading instruction |
 |---|---|---|
 | November 2 coverage join | `ext_recursive_language_models_2025` | Connect externalized prompt inspection and recursive subcalls to materialization, snapshot and omission boundaries; Governed Deliberation retains ownership of compute allocation. Selected passages only; no support promotion. |
+| Clustering and vector search | `ext_emeans_2026`, `ext_kmeans_plus_plus_2007`, `ext_flash_kmeans_2026`, `ext_superkmeans_2026`, `ext_spherical_kmeans_2001`, `ext_fast_kmedoids_2021`, `ext_dbscan_1996`, `ext_hdbscan_2015`, `ext_ward_hierarchical_2014`, `ext_fixed_size_kmeans_2025`, `ext_hnsw_2016`, `ext_faiss_library_2024` | Compare fitting cost, grouping objectives and search routes. Use the release-note example to trace index omissions through retrieval and source admission. |
 | Primary | `vcm_public` | Read first for the ABI, semantic-page, certificate, admission, adequacy, and typed-fault vocabulary. |
 | Supporting | `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper` | Mine after primary sources for context supply-chain pressure, verification-capacity limits, execution-spine connections, claim/evidence cell boundaries, stable identity and plural addresses, and the historical bounded-snapshot/handle lineage. |
 | External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | Compare retrieval, graph/community and associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression. Preserve provenance, actual use, loss, poisoning, update, cost, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
-
 
 | Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
@@ -6582,7 +6582,7 @@ Source loading queue:
 | Primary | `rankfold_neuralfold`, `rankfold_compressor`, `precision_contract` | Read first for chapter claims and mechanisms. Use `precision_contract` as the functional rate–distortion, complete-accounting, compiler, and certificate source while preserving its theoretical evidence ceiling. |
 | Supporting | `bbvca_v9`, `cgs`, `bugbrain` | Mine after primary sources for cross-layer connections, variants, and failure modes. |
 | Hierarchical-retrieval comparator | `ext_raptor_2024` | Compare multi-level recursive summaries with artifact compression. Keep benchmark improvement separate from fidelity, source preservation, reversibility, and local RankFold/NeuralFold evidence. |
-
+| Vector codebooks | `ext_emeans_2026`, `ext_faiss_library_2024` | Account for fitting, routing, stored codes, reconstruction and downstream retrieval utility. |
 
 
 | Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |

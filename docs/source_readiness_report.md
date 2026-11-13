@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 465
+- `source_note_available_uncached`: 477
 
 ## Records
 
@@ -558,3 +558,15 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_mage_vl_cowork_2026` | Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_simhack_2026` | SimHack: Predicting the onset of detectable reward hacking before RL training | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_ten_percent_challenge_2026` | Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_emeans_2026` | e-means: outperforming k-means (in one-tenth the epochs) | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_kmeans_plus_plus_2007` | k-means++: The Advantages of Careful Seeding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_flash_kmeans_2026` | Flash-KMeans: Fast and Memory-Efficient Exact K-Means | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_superkmeans_2026` | A Super Fast K-means for Indexing Vector Embeddings | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_spherical_kmeans_2001` | Concept Decompositions for Large Sparse Text Data Using Clustering | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_fast_kmedoids_2021` | Fast and Eager k-Medoids Clustering: O(k) Runtime Improvement of the PAM, CLARA, and CLARANS Algorithms | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dbscan_1996` | A Density-Based Algorithm for Discovering Clusters in Large Spatial Databases with Noise | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hdbscan_2015` | Hierarchical Density Estimates for Data Clustering, Visualization, and Outlier Detection | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ward_hierarchical_2014` | Ward’s Hierarchical Clustering Method: Clustering Criterion and Agglomerative Algorithm | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_fixed_size_kmeans_2025` | Fixed-sized clusters k-Means | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hnsw_2016` | Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_faiss_library_2024` | The Faiss Library | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -1,0 +1,62 @@
+{
+  "backlog_id": "emeans-clustering-2026-11-13",
+  "triage_state": "integrated",
+  "source_or_gap": "Clustering and vector-index alternatives for the e-means intake.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "virtual-context-abi",
+    "rankfold-neuralfold-and-artifact-compression"
+  ],
+  "chapter_action_policy": "Add a worked retrieval comparison, a compact vector-quantization cross-reference and a reader Unit 14 continuation.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/emeans_clustering_2026_11_13.json",
+    "sources/source_notes/ext_emeans_2026.md"
+  ],
+  "merge_or_split_policy": "Use the existing retrieval and artifact compression owners.",
+  "boundary_decision_rationale": "Clustering changes how candidates or codes are produced inside existing layers.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [],
+  "proof_or_test_backlog": [
+    "For a future index substitution, compare total build cost and query latency at matched recall and check decisive passage delivery by query slice."
+  ],
+  "evidence_transition_precondition": [
+    "An implementation or workload result requires separately accepted evidence under the applicable claim contract."
+  ],
+  "required_before_drafting": [
+    "Read the e-means update and benchmark protocol, alternative mechanisms, and the existing Unit 14 case."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_emeans_2026",
+    "ext_kmeans_plus_plus_2007",
+    "ext_flash_kmeans_2026",
+    "ext_superkmeans_2026",
+    "ext_spherical_kmeans_2001",
+    "ext_fast_kmedoids_2021",
+    "ext_dbscan_1996",
+    "ext_hdbscan_2015",
+    "ext_ward_hierarchical_2014",
+    "ext_fixed_size_kmeans_2025",
+    "ext_hnsw_2016",
+    "ext_faiss_library_2024",
+    "ext_raptor_2024",
+    "ext_graphrag_2024"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "Selected external passages and a hypothetical worked example establish the comparison scope. Local benchmark and production evidence remain open."
+  ],
+  "residuals": [
+    "Fixed-budget clustering error, exact vector recall and release-note evidence coverage answer different questions.",
+    "Deployment cost includes setup, reassigning final labels if needed, index installation, and recovery."
+  ],
+  "next_action": "Maintain the worked example and source comparison within the two chapter contracts.",
+  "non_claims": [
+    "The worked example is a geometric illustration. Performance figures belong to the cited external experiments."
+  ]
+}

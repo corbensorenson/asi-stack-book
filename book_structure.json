@@ -9952,7 +9952,19 @@
             "ext_pagedattention_vllm_2023",
             "ext_airllm_2023",
             "ext_hf_accelerate_big_model_inference_2026",
-            "ext_recursive_language_models_2025"
+            "ext_recursive_language_models_2025",
+            "ext_emeans_2026",
+            "ext_kmeans_plus_plus_2007",
+            "ext_flash_kmeans_2026",
+            "ext_superkmeans_2026",
+            "ext_spherical_kmeans_2001",
+            "ext_fast_kmedoids_2021",
+            "ext_dbscan_1996",
+            "ext_hdbscan_2015",
+            "ext_ward_hierarchical_2014",
+            "ext_fixed_size_kmeans_2025",
+            "ext_hnsw_2016",
+            "ext_faiss_library_2024"
           ],
           "source_queue": {
             "primary": [
@@ -10381,13 +10393,14 @@
             },
             {
               "source_id": "ext_graphrag_2024",
-              "mapped_support": "Positions LLM-derived entity graphs, community summaries, and local-to-global corpus questions as a graph-retrieval and representation comparator.",
-              "limits": "Metadata-first note only; no paper passage, benchmark, graph build, corpus run, provenance audit, summary-fidelity result, or local reproduction is established.",
+              "mapped_support": "Positions LLM-derived entity graphs, community summaries, and local-to-global corpus questions as a graph-retrieval and representation comparator. Hierarchical Leiden communities group an extracted entity graph and provide context for community summaries.",
+              "limits": "Selected method passages only. Edge correctness, graph completeness and local materialization remain open.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/source_notes/ext_graphrag_2024.md:1-46"
+                "sources/source_notes/ext_graphrag_2024.md",
+                "https://arxiv.org/html/2404.16130"
               ],
-              "passage_review_note": "Reviewed the bounded primary-record note for GraphRAG representation and retrieval scope, generated-graph fallibility, and explicit non-reproduction boundary."
+              "passage_review_note": "2026-11-13: reviewed Section 3.1.4 and Appendix B for the clustering comparison."
             },
             {
               "source_id": "ext_hipporag_2024",
@@ -10401,13 +10414,14 @@
             },
             {
               "source_id": "ext_raptor_2024",
-              "mapped_support": "Positions recursive clustering, abstractive summarization, and retrieval across multiple abstraction levels as a hierarchical context comparator.",
-              "limits": "Metadata-first note only; no paper result, tree build, QA run, abstraction-fidelity audit, invalidation test, or local reproduction is established.",
+              "mapped_support": "Positions recursive clustering, abstractive summarization, and retrieval across multiple abstraction levels as a hierarchical context comparator. Gaussian mixtures after UMAP permit overlapping chunk membership in recursive summaries.",
+              "limits": "Selected method passage only. QA results, summary fidelity and local materialization remain outside this mapping.",
               "passage_review_state": "reviewed",
               "passage_refs": [
-                "sources/source_notes/ext_raptor_2024.md:1-44"
+                "sources/source_notes/ext_raptor_2024.md",
+                "https://openreview.net/pdf/1414c23eb8af2e30daa25a4f53471f69091f48d9.pdf"
               ],
-              "passage_review_note": "Reviewed the bounded primary-record note for hierarchical retrieval, recursive abstraction, provenance and fidelity risks, and explicit non-reproduction boundary."
+              "passage_review_note": "2026-11-13: reviewed ICLR 2024 Section 3.1, clustering method for the clustering comparison."
             },
             {
               "source_id": "ext_mem0_2025",
@@ -10498,6 +10512,144 @@
                 "https://arxiv.org/html/2512.24601v3"
               ],
               "passage_review_note": "2026-11-02 secondary-owner coverage audit: same selected primary passages as the existing source note; interface interpretation only. No new model run, source-method claim or support promotion.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_emeans_2026",
+              "mapped_support": "EMA of per-center batch sums and counts fits the standard fixed-k squared-distance objective. Cosine annealing, empirical batch and step defaults, donor splitting, and finalization shape the finite-budget recipe.",
+              "limits": "The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open.",
+              "passage_refs": [
+                "sources/source_notes/ext_emeans_2026.md",
+                "https://arxiv.org/html/2611.09501v1",
+                "https://github.com/facebookresearch/faiss/blob/main/contrib/e_means/README.md",
+                "https://github.com/facebookresearch/faiss/blob/main/benchs/e_means/README.md"
+              ],
+              "passage_review_note": "2026-11-13: Sections 2–4 and Appendices C, H, J, L and M, plus the Faiss training-label and timing documentation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_kmeans_plus_plus_2007",
+              "mapped_support": "After the first seed, sample each next center with probability proportional to squared distance from the closest seed. Lloyd updates can then refine the centers.",
+              "limits": "Seeding adds setup cost and leaves the number of centers and the choice of distance to the caller.",
+              "passage_refs": [
+                "sources/source_notes/ext_kmeans_plus_plus_2007.md",
+                "https://research.google/pubs/k-means-the-advantages-of-careful-seeding/",
+                "https://arxiv.org/html/2611.09501v1"
+              ],
+              "passage_review_note": "2026-11-13: Author publication record and Bessa et al., Section 4.1 and Appendix G.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_flash_kmeans_2026",
+              "mapped_support": "Fuses distance calculation with nearest-center selection to avoid writing the full distance matrix and groups centroid updates into reductions.",
+              "limits": "Exact refers to the algorithmic assignment strategy at the chosen numerical precision. Initialization, stopping, hardware and workload affect a timing comparison.",
+              "passage_refs": [
+                "sources/source_notes/ext_flash_kmeans_2026.md",
+                "https://arxiv.org/abs/2603.09229v2"
+              ],
+              "passage_review_note": "2026-11-13: Version 2 abstract and Bessa et al., Section 4 and Appendix C for the exact comparison configuration.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_superkmeans_2026",
+              "mapped_support": "Rotates embeddings for probabilistic partial-distance pruning. Optional early termination monitors nearest-neighbor recall on query examples.",
+              "limits": "Early stopping depends on query representativeness and nearest-neighbor ground truth. Large and small k regimes have different pruning economics.",
+              "passage_refs": [
+                "sources/source_notes/ext_superkmeans_2026.md",
+                "https://arxiv.org/html/2603.20009v1"
+              ],
+              "passage_review_note": "2026-11-13: Sections 2.3, 3.1–3.3, 4.3 and 4.4.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_spherical_kmeans_2001",
+              "mapped_support": "Clusters normalized document vectors by cosine similarity to unit-normalized mean directions.",
+              "limits": "Normalization discards magnitude. Hard assignments can conceal overlap and depend on the geometry of the representation.",
+              "passage_refs": [
+                "sources/source_notes/ext_spherical_kmeans_2001.md",
+                "https://www.cs.utexas.edu/~inderjit/public_papers/concept_mlj.pdf"
+              ],
+              "passage_review_note": "2026-11-13: Author-hosted paper, abstract and spherical k-means formulation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_fast_kmedoids_2021",
+              "mapped_support": "Uses actual observations as representatives and minimizes assigned dissimilarity. FasterPAM improves swap search.",
+              "limits": "Pairwise dissimilarity can dominate cost. A representative document still needs provenance and can omit important exceptions.",
+              "passage_refs": [
+                "sources/source_notes/ext_fast_kmedoids_2021.md",
+                "https://arxiv.org/abs/2008.05171v2"
+              ],
+              "passage_review_note": "2026-11-13: Version 2 abstract and PAM/FasterPAM mechanism description.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dbscan_1996",
+              "mapped_support": "Expands groups through connected core neighborhoods under a distance radius and minimum neighbor count.",
+              "limits": "A single neighborhood scale can merge nearby groups or discard sparse groups. Noise status depends on the metric and settings.",
+              "passage_refs": [
+                "sources/source_notes/ext_dbscan_1996.md",
+                "https://cdn.aaai.org/KDD/1996/KDD96-037.pdf"
+              ],
+              "passage_review_note": "2026-11-13: Sections 3 and 4 on density reachability, noise and the neighborhood rule.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_hdbscan_2015",
+              "mapped_support": "Builds a density hierarchy and extracts stable groups, with some points left as noise.",
+              "limits": "Small groups can be lost under the minimum cluster size. Rare or novel evidence may be labeled noise and needs an independent retention decision.",
+              "passage_refs": [
+                "sources/source_notes/ext_hdbscan_2015.md",
+                "https://doi.org/10.1145/2733381",
+                "https://hdbscan.readthedocs.io/en/latest/how_hdbscan_works.html",
+                "https://hdbscan.readthedocs.io/en/latest/faq.html"
+              ],
+              "passage_review_note": "2026-11-13: Primary paper summary and implementation-author documentation on mutual reachability, the condensed tree and cluster extraction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_ward_hierarchical_2014",
+              "mapped_support": "Builds a hierarchy by repeatedly merging groups. Ward linkage uses the increase in within-group squared error to choose a merge.",
+              "limits": "A tree cut and linkage define which groups appear. Early merges affect every coarser level.",
+              "passage_refs": [
+                "sources/source_notes/ext_ward_hierarchical_2014.md",
+                "https://arxiv.org/abs/1111.6285v2"
+              ],
+              "passage_review_note": "2026-11-13: Version 2 abstract and discussion of the Ward merge criterion.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_fixed_size_kmeans_2025",
+              "mapped_support": "Optimizes squared error subject to declared cluster sizes using a constrained assignment step.",
+              "limits": "Equal bucket populations do not guarantee equal query traffic. The exact Hungarian assignment is expensive at scale.",
+              "passage_refs": [
+                "sources/source_notes/ext_fixed_size_kmeans_2025.md",
+                "https://arxiv.org/abs/2501.16113v1"
+              ],
+              "passage_review_note": "2026-11-13: Version 1 abstract and fixed-size assignment formulation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_hnsw_2016",
+              "mapped_support": "Searches a hierarchy of proximity graphs over vectors. The graph can serve vector lookup without assigning the corpus to centroid buckets.",
+              "limits": "Evaluate recall, tail latency, graph storage, and updates under the application workload. Search neighbors still require source admission.",
+              "passage_refs": [
+                "sources/source_notes/ext_hnsw_2016.md",
+                "https://arxiv.org/abs/1603.09320"
+              ],
+              "passage_review_note": "2026-11-13: Author preprint abstract and hierarchical proximity graph construction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faiss_library_2024",
+              "mapped_support": "An inverted file uses coarse centroids to organize postings. Vector quantization can instead encode a vector using centroid IDs, including separate subspace codes in product quantization.",
+              "limits": "A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets.",
+              "passage_refs": [
+                "sources/source_notes/ext_faiss_library_2024.md",
+                "https://arxiv.org/abs/2401.08281",
+                "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes/aeda38e6c323d6e3f0a207db875918f1185aa7bb"
+              ],
+              "passage_review_note": "2026-11-13: Author paper sections on inverted files, graph-based search and compressed codes, with the official Faiss index documentation.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -21106,7 +21258,9 @@
             "ext_raptor_2024",
             "precision_contract",
             "forward_transfer_program_synthesis",
-            "ext_ten_percent_challenge_2026"
+            "ext_ten_percent_challenge_2026",
+            "ext_emeans_2026",
+            "ext_faiss_library_2024"
           ],
           "source_queue": {
             "primary": [
@@ -21399,6 +21553,31 @@
                 "https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947"
               ],
               "passage_review_note": "2026-11-06: selected pinned source/receipt inspection and maintainer adjudication; inspected loader SHA-256 matches the source manifest. No released-weight download, source execution, full history/statistical audit or independent reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_emeans_2026",
+              "mapped_support": "Faster fitting at fixed k illustrates the separate budgets for learning a vector codebook and storing or decoding its codes.",
+              "limits": "The warm fitting protocol excludes loading, initial-center selection, warm-up and scoring. Default scaling fits are weaker for very small or low-dimensional datasets. Training labels may predate the final centers. Retrieval recall in a vector benchmark leaves downstream evidence delivery and semantic adequacy open.",
+              "passage_refs": [
+                "sources/source_notes/ext_emeans_2026.md",
+                "https://arxiv.org/html/2611.09501v1",
+                "https://github.com/facebookresearch/faiss/blob/main/contrib/e_means/README.md",
+                "https://github.com/facebookresearch/faiss/blob/main/benchs/e_means/README.md"
+              ],
+              "passage_review_note": "2026-11-13: Sections 2–4 and Appendices C, H, J, L and M, plus the Faiss training-label and timing documentation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_faiss_library_2024",
+              "mapped_support": "IVF and product quantization separate coarse routing, stored codes, and reconstruction costs.",
+              "limits": "A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets.",
+              "passage_refs": [
+                "sources/source_notes/ext_faiss_library_2024.md",
+                "https://arxiv.org/abs/2401.08281",
+                "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes/aeda38e6c323d6e3f0a207db875918f1185aa7bb"
+              ],
+              "passage_review_note": "2026-11-13: Author paper sections on inverted files, graph-based search and compressed codes, with the official Faiss index documentation.",
               "passage_review_state": "reviewed"
             }
           ],
