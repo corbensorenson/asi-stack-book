@@ -9751,5 +9751,23 @@
     "citation_label": "Douze et al. (2024), Faiss",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Author paper sections on inverted files, graph-based search and compressed codes, with the official Faiss index documentation. A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets."
+  },
+  {
+    "id": "ext_cram_2026",
+    "title": "Classical Energies Learn to Reason 1,000× Faster than Looped Models",
+    "priority": "external_literature",
+    "layer": "learned_pairwise_constraint_search",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/html/2611.17309v1",
+    "notes": "CRAM fits explicit pairwise energies from solved puzzles and iterates local search at inference. The hand-set controls, timing boundary, and Maze-Hard failure distinguish constraint learning, solve cost, and answer validity.",
+    "source_type": "preprint",
+    "published": "2026-11-12",
+    "updated": "2026-11-12",
+    "citation_label": "Hoover, Blayney, and Whittington (2026), CRAM",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Selected arXiv v1 method, test, cost, and failure passages and pinned fit records. External puzzle-domain evidence."
   }
 ]

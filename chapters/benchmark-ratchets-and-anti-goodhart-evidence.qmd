@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-02"
+last_updated: "2026-11-14"
 primary_sources:
   - "benchmaxxing"
   - "deterministic_capability_compilation"
@@ -60,7 +60,7 @@ primary_sources:
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
-  - "Thirty-two exact passage-reviewed mappings cover the chapter's thirty-nine assigned sources, now including RGS as a same-author precursor and RODIE as a proposed relational instrument family; neither overlap nor an unexecuted proposal is independent result evidence."
+  - "Appendix C records the scope of the mappings for benchmark design, including RGS as a same-author precursor, RODIE as a proposed relational instrument family, and CRAM as an external puzzle benchmark comparison."
   - "The current implementation is two schemas, one blocked provenance record plus ten rejecting mutations, two valid and five invalid synthetic anti-Goodhart fixtures, one persisted fixture bridge, three proof targets, and a 29-declaration finite lifecycle with an independent six-transition/seven-split/19-state/114-transition/12-suffix consumer that rejects 15 lifecycle plus 11 semantic mutations. It includes no natural benchmark run, hidden holdout, contamination audit, empirical baseline matrix, trained model or policy result, independent evaluator, or support transition."
   - "Argument exit requires preregistered natural and adversarial workloads, construct and target-capacity validation, strong matched controls, complete selection and failure lineage, raw output binding, contamination/public-calibration controls, causal and meta-evaluation, independent reproduction, heterogeneous transfer, complete cost and rights accounting, fallback, and a claim-specific transition."
   - "Campaign 5 adds a prospectively frozen two-environment, five-seed, ten-arm causal packet and one bounded non-core synthetic transition; it does not validate the authored simulators, establish general transfer, or promote this chapter core."
@@ -142,7 +142,7 @@ The claim remains at `argument` support. The assigned sources support design dis
 
 ### Claim-source mapping status
 
-Appendix C now records thirty-one exact passage-reviewed mappings across thirty-six assigned sources, including the six historical projects as one related local implementation lineage. Those mappings make the source map traceable enough for drafting and support review, but they do not move the claim above `argument` support. They also do not convert source-reported benchmark commands, local-project status notes, schemas, fixtures, or finite Lean predicates into benchmark evidence.
+Appendix C records the reviewed mappings and their limits, including the six historical projects as one related local implementation lineage. The core claim has `argument` support. Each source-reported comparison applies to its recorded task and protocol.
 
 | Source ID | Reviewed support | Boundary |
 |---|---|---|
@@ -423,6 +423,20 @@ inhibition, observability, recurrence, probe yield, evaluator adequacy, repair
 collateral, train-deployment divergence, compatibility, recovery, and full
 assurance cost. The design includes decisive falsifiers; no condition has run,
 so it is a benchmark specification rather than a result.
+
+#### CRAM and the hand-set puzzle baseline {#cram-puzzle-benchmark}
+
+With the same search as learned CRAM, hand-set costs derived from the
+rules solved every test Sudoku-Extreme puzzle and Maze-Unique maze.
+Keep these tasks as regression checks for constraint recovery, solve
+cost, and the hard tail. To measure broader reasoning, use tasks that
+vary the constraints or require deriving a state representation from
+the input. Report supplied rules and structural priors, time to a fixed
+accuracy under comparable cold or warm conditions, and the cost of
+failed searches. For mazes with multiple shortest paths, report legal
+shortest-path recovery and exact agreement with the reference tie-break
+as separate measurements. [CRAM, §4.3 and Appendices C and F](https://arxiv.org/html/2611.17309v1) ·
+[Technical case](replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd#cram-learned-constraint-search)
 
 ### A benchmark portfolio is a multi-rate control system
 
@@ -1132,6 +1146,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Contributes LocusBench: matched outcomes with different latent defects, per-locus and cross-locus baselines, placement regret, and whole-lifecycle commitment costs. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds causal controls for reusable-knowledge evaluation: frozen rounds, absence and matched placebo conditions, removal and necessity tests, a library-search factorial, exact verifier outcomes, and complete task-lineage denominators. | Experimental blueprint only; no benchmark condition, ablation, transfer effect, or promotion decision was executed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_agent_reliability_rater_drift_2026` | Passage-reviewed comparator: Reliability of AI Agents: Rater Effects, Drift, and the Return to an Evaluation Program. Longitudinal agent evaluation has to separate agent changes from changes in the measurement process. Uses overlapping reviewers, reviewer-adjusted batch estimates, change logs and a separate support-ticket series. Interview date and reviewer sign-off date have different evidentiary meanings. | No randomized evaluation-intensity intervention; sampling mix and unlogged/vendor changes remain concerns. The estimated roughly five-week uncertainty horizon is model- and deployment-specific, not a universal review deadline. Candidate fairness and hiring validity are not established by the reliability rubric. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_cram_2026` | Passage-reviewed comparator: Classical Energies Learn to Reason 1,000× Faster than Looped Models. Hand-set energies and an incorrect fixed point expose separate construct, baseline, and stopping-rule boundaries. | Reported fits and search apply to the tested puzzle recipes. Architecture qualification, end-to-end latency, generalization and local reproduction remain open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

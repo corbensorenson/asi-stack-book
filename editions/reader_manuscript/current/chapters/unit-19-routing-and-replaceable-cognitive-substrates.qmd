@@ -386,6 +386,17 @@ Selection should be prospective. Freeze tasks, metrics, exclusions,
 interventions, and stop rules before seeing candidate outcomes. Keep failed
 architectures in the denominator.
 
+In a maze with a single path from start to finish, the CRAM specialist
+starts by marking every open square. It uses costs learned from solved
+mazes to erase dead ends one square at a time. On a harder maze with
+loops, a version that estimates distance to the goal stopped with six
+extra squares still marked at a dead end. The same error occurred in
+all three runs. A separate path check would catch the extra branch before
+the router passed the answer on. A fair comparison would include an
+ordinary maze solver that already knows the rules and count the cost of
+checking or repairing each answer.
+[Technical case](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#cram-learned-constraint-search)
+
 ## Adoption Binds Authority and Recovery {#adoption-is-a-reversible-governance-transaction}
 
 A winning tournament does not immediately replace the incumbent. Adoption

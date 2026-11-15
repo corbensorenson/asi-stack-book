@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "9f8d21c33078cac08824f7248bf4043b9a3167f5159e4036862ffe2d026082f8",
+  "book_structure_sha256": "f039eb6e2aa07b619a2e84dc399c5452ba0aaa28e75a284a2016e6c6d9820255",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1418,
+    "source": 1420,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -7362,7 +7362,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "d79a9554dfdf64a910e7cde58ca595eb8c90d3e48c6ad7a27dee3f7b7f7df3f3",
+      "human_reader_source_sha256": "cf2cf6ccd3aa1984a970aae51f18973c6f0cd822cd8e3386d96b5130c0c92ab1",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7544,7 +7544,7 @@
           "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
           "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
           "technical_source_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-          "technical_source_sha256": "0556e280c1f6743bf344f229e791e5a72fb34a411be614c938c06e8b75385313",
+          "technical_source_sha256": "b57bc5bde493be5cf7334a682becc0b9dee5c062404341be65c094f9d9293518",
           "live_technical_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -7615,7 +7615,8 @@
             "ext_engram_conditional_memory_2026",
             "ext_mhc_2025",
             "ext_attention_residuals_2026",
-            "ext_mhc_peft_2026"
+            "ext_mhc_peft_2026",
+            "ext_cram_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7681,7 +7682,8 @@
             "sources/source_notes/ext_engram_conditional_memory_2026.md",
             "sources/source_notes/ext_mhc_2025.md",
             "sources/source_notes/ext_attention_residuals_2026.md",
-            "sources/source_notes/ext_mhc_peft_2026.md"
+            "sources/source_notes/ext_mhc_peft_2026.md",
+            "sources/source_notes/ext_cram_2026.md"
           ],
           "proof_edges": [
             {
@@ -7720,7 +7722,7 @@
           "artifact_refs": [
             {
               "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-              "sha256": "0556e280c1f6743bf344f229e791e5a72fb34a411be614c938c06e8b75385313"
+              "sha256": "b57bc5bde493be5cf7334a682becc0b9dee5c062404341be65c094f9d9293518"
             },
             {
               "path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
@@ -9280,7 +9282,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "1e06bf0c638a623e180b41865896ff1514f96944c13ca32df7ac5de70437bc69",
+          "technical_source_sha256": "4d3ba2ffe79292b80ecc6c1d5a546fa5f8405c972d729bfe872ff1588e6db05a",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9338,7 +9340,8 @@
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
             "answerability_atlas_synthesis",
-            "ext_agent_reliability_rater_drift_2026"
+            "ext_agent_reliability_rater_drift_2026",
+            "ext_cram_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/benchmaxxing.md",
@@ -9391,7 +9394,8 @@
             "sources/source_notes/adjudicated_persistence.md",
             "sources/source_notes/forward_transfer_program_synthesis.md",
             "sources/source_notes/answerability_atlas_synthesis.md",
-            "sources/source_notes/ext_agent_reliability_rater_drift_2026.md"
+            "sources/source_notes/ext_agent_reliability_rater_drift_2026.md",
+            "sources/source_notes/ext_cram_2026.md"
           ],
           "proof_edges": [
             {
@@ -9448,7 +9452,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "1e06bf0c638a623e180b41865896ff1514f96944c13ca32df7ac5de70437bc69"
+              "sha256": "4d3ba2ffe79292b80ecc6c1d5a546fa5f8405c972d729bfe872ff1588e6db05a"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",

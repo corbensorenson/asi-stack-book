@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-02"
+last_updated: "2026-11-14"
 primary_sources:
   - "learning_compute_topology"
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
@@ -555,6 +555,54 @@ separate recurrent computation from addressable retrieval; freeze sampling and
 vote budgets; plot marginal utility by recursion step; remove task-identity
 shortcuts; and use progressive mechanism ablations. Parameter count is never a
 substitute for that packet.
+
+### CRAM learns costs for a constrained search {#cram-learned-constraint-search}
+
+Compact Reasoning Associative Memory (CRAM) gives each proposed puzzle
+answer an energy, with costs for individual cell values and pairs of
+values. It fits these costs from solved boards by comparing the correct
+value of one cell with alternatives while the other cells stay fixed.
+This objective, called pseudolikelihood, needs no gradient through the
+search. In Sudoku the clues stay fixed while four search chains revise
+guesses one cell at a time. The authors report that the learned costs
+penalize equal digits on all 810 conflicting cell pairs, despite fitting
+without an explicit row, column, or box graph. The recipe supplies the
+board dimensions, digit relabeling, and a sparsity penalty.
+[Hoover, Blayney, and Whittington, §§3–4 and Appendix C](https://arxiv.org/html/2611.17309v1)
+
+The November 2026 preprint reports 99.996% on Sudoku-Extreme and 100% on
+Maze-Unique. Its 1,000× training comparison uses warm CRAM fits of 42 ms
+and 132 ms on one H200 and cold fits for the looped baselines. The released
+aggregate cold CRAM fits are about 0.59 s and 0.72 s. The looped fits in
+Table 2 took hours. The separate 282× Sudoku comparison counts inference
+arithmetic at matched accuracy against Energy-Based Reasoners (EBR) at
+its best tested accuracy. It covers all search chains and failed searches.
+A latency comparison would also measure costs such as indexing, memory
+movement, and random number generation.
+[Table 2, Figure 2, and Appendix C.2](https://arxiv.org/html/2611.17309v1) ·
+[Sudoku fit record](https://github.com/Prefrontal-AI/CRAM/blob/62bbe830c7d6f87f2ba18f30a28039258b986454/experiments/runs/table/sudoku-extreme__cram-0-fit.json) ·
+[Maze fit record](https://github.com/Prefrontal-AI/CRAM/blob/62bbe830c7d6f87f2ba18f30a28039258b986454/experiments/runs/table/maze-unique__cram-sgd-fg.json)
+
+Maze-Unique starts with every open cell marked and uses shared local
+costs to prune dead ends. On the development mazes, an empty board has
+lower energy than the solution. The initialization and search rule
+therefore matter even if the learned costs are held fixed. Maze-Hard
+contains loops, and the original energy solves zero test mazes there.
+A separate 29-parameter variant first computes a distance-like field.
+Each of three runs matches 999 of 1,000 labeled paths and accepts the
+same incorrect board with an extra six-cell branch.
+A consumer should check that the marked cells form a single legal path
+and verify shortest length when required. The benchmark scores agreement
+with one tie-broken shortest path.
+[Appendices C.4 and F](https://arxiv.org/html/2611.17309v1)
+
+For a specialist comparison, give the learned CRAM, the hand-set energy
+with the same search, and a conventional solver a common output contract.
+For unit-cost mazes, breadth-first search with the benchmark's neighbor
+order supplies a rule-aware baseline. Record who supplied the constraints,
+how much fitting and search cost, which candidates failed the independent
+check, and when the system fell back. The
+[benchmark comparison](benchmark-ratchets-and-anti-goodhart-evidence.qmd#cram-puzzle-benchmark) explains what the score can support.
 
 ### Inkling: a hybrid case, not a component verdict
 
@@ -1264,6 +1312,7 @@ These rows keep Replaceable Cognitive Substrates: Beyond Transformer Monoculture
 | `ext_mhc_2025` | Passage-reviewed comparator: mHC: Manifold-Constrained Hyper-Connections. Adds constrained mixing across multiple residual streams, making network connectivity a design axis beyond token mixing, objectives and expert selection. | Doubly stochastic residual mixing is a scoped mathematical constraint, not a guarantee of whole-network stability or behavior. Efficiency depends on specialized infrastructure. Read with the finetuning counterexample below. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_attention_residuals_2026` | Passage-reviewed comparator: Attention Residuals. Adds learned softmax aggregation over network depth; its block variant trades fine-grained access for lower activation-storage and communication burden. | This is a trained architecture, not a demonstrated post-hoc upgrade to any checkpoint. Depth attention and sequence attention have different scaling variables; quoted overhead needs its distributed implementation and workload. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_mhc_peft_2026` | Passage-reviewed comparator: Manifold-Constrained Hyper-Connections for Parameter-Efficient Finetuning. A necessary counterpoint: frozen-backbone finetuning can benefit from retaining identity residual mixing and learning read/write access instead. Residual topology is not one universally superior recipe. | Standalone mHC does not beat established PEFT baselines overall. Few trainable parameters do not eliminate multi-stream activation costs; LoRA and mHC timing/energy measurements use different GPU types. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_cram_2026` | Passage-reviewed comparator: Classical Energies Learn to Reason 1,000× Faster than Looped Models. A learned pairwise energy and explicit search supply a narrow specialist comparator for tiny recursive models. | Reported fits and search apply to the tested puzzle recipes. Architecture qualification, end-to-end latency, generalization and local reproduction remain open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Non-silicon and non-digital substrate families

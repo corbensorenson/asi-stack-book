@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 477
+- `source_note_available_uncached`: 478
 
 ## Records
 
@@ -570,3 +570,4 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_fixed_size_kmeans_2025` | Fixed-sized clusters k-Means | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_hnsw_2016` | Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_faiss_library_2024` | The Faiss Library | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_cram_2026` | Classical Energies Learn to Reason 1,000× Faster than Looped Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

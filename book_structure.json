@@ -16679,7 +16679,8 @@
             "ext_engram_conditional_memory_2026",
             "ext_mhc_2025",
             "ext_attention_residuals_2026",
-            "ext_mhc_peft_2026"
+            "ext_mhc_peft_2026",
+            "ext_cram_2026"
           ],
           "source_queue": {
             "primary": [
@@ -17295,6 +17296,19 @@
                 "https://arxiv.org/html/2607.18130v2"
               ],
               "passage_review_note": "2026-11-02: Sections 3–5 and Appendix A; current October 7 revision, not the older abstract. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_cram_2026",
+              "mapped_support": "A learned pairwise energy and explicit search supply a narrow specialist comparator for tiny recursive models.",
+              "limits": "Reported fits and search apply to the tested puzzle recipes. Architecture qualification, end-to-end latency, generalization and local reproduction remain open.",
+              "passage_refs": [
+                "sources/source_notes/ext_cram_2026.md",
+                "https://arxiv.org/html/2611.17309v1",
+                "https://github.com/Prefrontal-AI/CRAM/blob/62bbe830c7d6f87f2ba18f30a28039258b986454/experiments/runs/table/sudoku-extreme__cram-0-fit.json",
+                "https://github.com/Prefrontal-AI/CRAM/blob/62bbe830c7d6f87f2ba18f30a28039258b986454/experiments/runs/table/maze-unique__cram-sgd-fg.json"
+              ],
+              "passage_review_note": "2026-11-14: selected arXiv v1 sections, appendices and released timing records reviewed for the stated owner.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -24460,7 +24474,8 @@
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
             "answerability_atlas_synthesis",
-            "ext_agent_reliability_rater_drift_2026"
+            "ext_agent_reliability_rater_drift_2026",
+            "ext_cram_2026"
           ],
           "source_queue": {
             "primary": [
@@ -25009,6 +25024,17 @@
                 "https://arxiv.org/html/2610.07003v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.4, 4 measurement interpretation and Section 6.5/7 limitations. Selected deployment/estimand passages, not independent access to recordings. No full paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_cram_2026",
+              "mapped_support": "Hand-set energies and an incorrect fixed point expose separate construct, baseline, and stopping-rule boundaries.",
+              "limits": "Reported fits and search apply to the tested puzzle recipes. Architecture qualification, end-to-end latency, generalization and local reproduction remain open.",
+              "passage_refs": [
+                "sources/source_notes/ext_cram_2026.md",
+                "https://arxiv.org/html/2611.17309v1"
+              ],
+              "passage_review_note": "2026-11-14: selected arXiv v1 sections, appendices and released timing records reviewed for the stated owner.",
               "passage_review_state": "reviewed"
             }
           ],

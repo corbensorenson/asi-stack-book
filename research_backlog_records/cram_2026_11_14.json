@@ -1,0 +1,50 @@
+{
+  "backlog_id": "cram-2026-11-14",
+  "triage_state": "integrated",
+  "source_or_gap": "CRAM preprint and selected released timing records.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "benchmark-ratchets-and-anti-goodhart-evidence"
+  ],
+  "chapter_action_policy": "Add a technical case, a benchmark cross-reference, and a maze explanation in reader Unit 19.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/cram_2026_11_14.json",
+    "sources/source_notes/ext_cram_2026.md"
+  ],
+  "merge_or_split_policy": "Use the existing architecture and benchmark owners.",
+  "boundary_decision_rationale": "The source adds an architecture candidate and instrument interpretation inside existing owners.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [],
+  "proof_or_test_backlog": [
+    "A future adoption comparison should include rule-aware solvers, a separate path checker, and cold and warm lifecycle costs."
+  ],
+  "evidence_transition_precondition": [
+    "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+  ],
+  "required_before_drafting": [
+    "Inspect selected primary passages on pseudolikelihood, task priors, timing, hand-set energies, and the Maze-Hard failure. Check the released cold fit fields."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_cram_2026",
+    "https://arxiv.org/html/2611.17309v1",
+    "https://github.com/Prefrontal-AI/CRAM/blob/62bbe830c7d6f87f2ba18f30a28039258b986454/REPRODUCING.md"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "The benchmarks have fixed structured representations and task-specific priors. The author-reported performance and fit clocks require scoped comparison."
+  ],
+  "residuals": [
+    "A low energy or a fixed point can retain an invalid branch. Arithmetic counts and inference latency are distinct."
+  ],
+  "next_action": "Maintain the bounded source comparison as the preprint and benchmark evidence evolve.",
+  "non_claims": [
+    "Source comparisons and the reader explanation carry no local reproduction, general reasoning measurement, or support-state effect."
+  ]
+}

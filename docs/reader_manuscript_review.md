@@ -2,6 +2,18 @@
 
 ## Current independent manuscript review
 
+### November 14 CRAM source review
+
+Reader Unit 19 uses the reported Maze-Hard failure to explain why a
+specialist's stop signal and a separate path check serve different
+purposes. The technical case records the original energy's failure on
+Maze-Hard, the distinct latent variant, and the warm versus cold fit
+comparison. Benchmark Ratchets links the hand-set controls to the
+benchmark's role and distinguishes shortest-path validity from exact
+agreement with a tie-broken label.
+[CRAM source note](../sources/source_notes/ext_cram_2026.md) ·
+[Reader Unit 19](../editions/reader_manuscript/current/chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd#architecture-tournaments-need-full-costs)
+
 ### November 13 clustering and release-note example
 
 Unit 14 continues the controller trial example through an index rebuild.
