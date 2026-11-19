@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd",
     "structured_atoms_reviewed": 33,
-    "prose_candidates_adjudicated": 49,
+    "prose_candidates_adjudicated": 48,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the communication-influence formalization on 2026-08-01. Every new claim-bearing sentence is reconciled to the chapter formal atom or classified as nonmaterial proof explanation and boundary prose. No new unowned material claim, support transition, human-outcome inference, delivery decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim."
+    "review_note": "Re-reviewed the complete chapter through the communication-influence formalization on 2026-08-01. Every new claim-bearing sentence is reconciled to the chapter formal atom or classified as nonmaterial proof explanation and boundary prose. No new unowned material claim, support transition, human-outcome inference, delivery decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. November 18 review verified the population, baseline, outcome and uncertainty in the version of record. The approval procedure remains design rationale."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -257,10 +257,6 @@
       "rationale": "Round-21 exact-digest semantic review maps this `audience-vulnerability` proposition to the existing owner atom `human-ai-communication-persuasion-and-epistemic-security.mechanism.002`; it creates no additional atom and does not change support state.",
       "target_atom_id": "human-ai-communication-persuasion-and-epistemic-security.mechanism.002"
     },
-    "human-ai-communication-persuasion-and-epistemic-security.prose.63b0732e69bc": {
-      "state": "historical_or_source_report",
-      "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `audience-vulnerability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
-    },
     "human-ai-communication-persuasion-and-epistemic-security.prose.6919be0a2196": {
       "state": "historical_or_source_report",
       "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `audience-vulnerability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
@@ -336,5 +332,19 @@
     "Semantic review and chapter admission do not establish that the proposed mechanism works.",
     "The chapter remains at argument support until a claim-specific full attempt earns an accepted evidence transition.",
     "No deferred manuscript queue is created by leaving empirical, formal, transfer, or deployment residuals open."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "human-ai-communication-persuasion-and-epistemic-security.prose.63b0732e69bc",
+      "retired_source": "chapters/human-ai-communication-persuasion-and-epistemic-security.qmd:211",
+      "retired_sentence": "**Source grounding.** `ext_conversational_persuasion_gpt4_2025` shows that limited demographic personalization changed outcomes in one bounded debate condition.",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "Round-21 semantic review classified this as a bounded source-grounding statement for `audience-vulnerability`. It reports or limits external evidence and creates no local support-bearing atom or support-state movement."
+      },
+      "retirement_reason": "2026-11-18 replaces a general source-report sentence with the version-of-record effect estimate, its scope and a separately labeled approval procedure.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-18"
+    }
   ]
 }

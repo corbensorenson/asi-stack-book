@@ -217,6 +217,13 @@ into readiness.
 
 ## Alternatives Need a Denominator
 
+The planner reads the oscillation and stop record under a diagnosis-only
+grant. Inspect the recorded trace
+and reproduce the discrepancy in simulation. A changed payload and another
+physical run require a fresh grant and test conditions. Pass the bounded
+observation into the release-note compiler with its attribution intact.
+[Check what the compiler does to the sentence](unit-13-cognitive-compilation-and-semantic-ir.qmd#two-repairs-one-honest-candidate).
+
 A planner that reports only its selected graph hides how the decision was made.
 Candidate decompositions, rejected branches, retries, timeouts, human edits,
 and no-plan options should remain in the denominator.

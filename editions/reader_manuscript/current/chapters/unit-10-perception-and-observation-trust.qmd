@@ -381,6 +381,11 @@ be tested under a slightly less artificial condition.
 
 ## Effect Observation and Recovery
 
+The configuration hash and simulator result identify the candidate and its
+test environment. Reserve a separate observation slot for the physical
+trial's sensor trace and stop event. Those are the records Unit 11 will
+compare with the forecast. [Follow the trial and receipt](unit-11-governed-world-models-and-reality-grounding.qmd#the-trial-and-the-receipt).
+
 Sending a command is not observing its effect. An actuator acknowledgment is
 not proof that the plant moved as intended. Stopping software is not restoring
 the physical world.

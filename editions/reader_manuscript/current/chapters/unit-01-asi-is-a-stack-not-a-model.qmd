@@ -94,6 +94,15 @@ understandable and governable.
 
 ## Why Greater Capability Makes Boundaries More Important
 
+Suppose a maintainer can evaluate four consequential changes per shift. At two
+independent proposals per shift, ordinary file permissions, review and target
+checks can cover the work. At eight proposals per shift, the backlog grows
+by four per shift even if the maintainer keeps pace with the full review
+budget. A faster proposer can still compare candidates in isolation. The
+maintainer limits which candidates enter effect-bearing review, prioritizes
+urgent repairs, and holds publication until the required checks finish.
+The numbers describe a hypothetical queue. [Follow the capacity limit in Unit 25](unit-25-recursive-improvement-replication-and-containment.qmd#improvement-velocity-has-a-control-limit).
+
 Capability defects can be obvious: a system cannot form a plausible plan, use
 a tool, or keep enough context to complete a task. Authority and recovery still
 matter at that stage; a weak system can misuse a credential or erase a file.

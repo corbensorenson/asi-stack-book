@@ -435,6 +435,23 @@ promotion. The candidate cannot use its proposed improvement to ratify itself.
 
 ## Transformer Monoculture Is a Risk, Not a Refutation
 
+Qualify a replacement by the decision it changes. Start with the first
+question the receiving component must answer.
+
+- **I-JEPA.** Does the learned representation preserve a quantity the
+  decision needs, such as the gantry's motion during a stop?
+  [World models and grounding](unit-11-governed-world-models-and-reality-grounding.qmd#the-trial-and-the-receipt).
+- **H-Net.** Can the next component resume across a learned chunk boundary,
+  and what batching cost follows from variable-length groups?
+  [Predictive objectives and learned granularity](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity).
+- **CRAM.** Will the consumer accept the proposed path, and how much work
+  does checking it add? [Three different maze checks](unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd#what-the-maze-verifier-must-solve).
+- **e-means.** At the same search budget, will the next index return the
+  passage the decision needs? [The release-note correction](unit-14-virtual-context-and-durable-semantic-memory.qmd#retrieval-produces-candidates).
+- **Ten Percent Challenge.** Which resource binds, packed bytes or resident
+  memory, and will five-choice selection satisfy the task?
+  [Compression and the five-choice case](unit-23-generative-compression-and-cognitive-resource-economics.qmd#compression-moves-burden).
+
 Transformers are powerful general substrates with mature tooling, scaling
 evidence, and broad deployment. The case for replaceability is not that they
 have failed. It is that one architecture should not define every stable
@@ -667,28 +684,21 @@ can explain the change, run the deterministic resolver, and return the patch
 for its ordinary review. It does not need to rediscover the dependency graph
 or invent a specialist for each step.
 
-The router may still admit this route, but admission need not become a second
-planning project. If dispatching several specialists adds context transfer,
-queue delay, and integration review without changing the accepted result,
-the direct route wins. The governing boundary is the file scope and release
-decision, not the number of models involved. No inference saving has been
-measured in this teaching case; the point is which costs belong in a fair
-comparison.
+Compare a well-tuned general model with deterministic tools, retrieval,
+caching, file-scoped permissions and human escalation. Under
+[Unit 2's hypothetical bill](unit-02-the-efficient-asi-hypothesis.qmd#a-worked-bill-not-a-benchmark),
+its accepted result costs $350. Assume both adaptive outcomes deliver the same
+accepted result and exhaust the possibilities. If the $450 outcome occurs
+with probability $p$, the expected priced cost is $275 plus $175 times $p$.
+The adaptive route costs $318.75 at one in four, $362.50 at one in two, and
+ties at $p = 3/7$, about 43 percent. A delay that the bill leaves unpriced
+can overturn the apparent saving near the tie.
 
-Widening the request can change the answer. Suppose the package has ambiguous
-compatibility across several services. A specialist may now supply useful
-information the direct workflow lacks. Its contribution must survive the
-extra verification and handoff cost. Or suppose the proposed update requires
-uploading private configuration to an external analyzer. That candidate is
-ineligible under the existing confidentiality boundary, even if its prediction
-looks best. The router can choose an admitted local route or return a precise
-blocked dependency; it cannot buy capability by widening authority.
-
-These outcomes belong to one task contract with explicit amendments. They
-do not turn successful direct work into evidence for universal monoliths,
-or a necessary denial into evidence for universal specialist routing. They
-show how the available information, consequence, and complete bill determine
-whether another boundary does useful work.
+Suppose the new route requires sending private configuration to an external
+analyzer outside the grant. Exclude it before pricing the remaining eligible
+routes. A specialist could still earn a place by resolving compatibility
+questions with admitted inputs and checks that preserve the accepted result.
+The calculation is a teaching example with assumed prices and frequencies.
 
 ## Failure Cases
 
@@ -735,21 +745,11 @@ presented as useful learned behavior.
 **Cyclic overreach.** Periodic machinery is applied where the workload has no
 relevant cyclic structure.
 
-## The Strongest Simpler Baseline
+<span id="the-strongest-simpler-baseline"></span>
 
-The strongest baseline is one well-tuned general model with deterministic
-tools, retrieval, caching, explicit permissions, and human escalation. It has
-fewer moving parts, shared context, simpler evaluation, and lower maintenance.
-
-Heterogeneous routing should beat that baseline on accepted useful output,
-risk, latency, compute, memory, energy, human work, recovery, and lifecycle
-cost. Route accuracy alone is insufficient. A specialist system that saves
-inference but doubles verification and maintenance has not shown efficiency.
-
-The architecture should consolidate where one model matches specialists. It
-should preserve deterministic tools where learning adds no value. Novel
-substrates should enter only when they improve a complete route or provide a
-valuable independent failure path.
+The worked decision above compares specialist routing against a general model
+with deterministic tools, explicit permissions and escalation. When those
+tools cover the task, the direct workflow avoids unnecessary handoffs.
 
 ## What the Current Work Establishes
 
@@ -811,40 +811,22 @@ Architectural experimentation could proceed rapidly below the boundary while
 governance, claims, and recovery remain stable above it. Diversity would be an
 empirical option, not a doctrine.
 
-## The Strongest Objection
+## Can the Fallback Survive the Same Failure? {#the-strongest-objection}
 
-Heterogeneous routing can cost more than it saves. The router becomes another
-model to train and attack. Specialists duplicate infrastructure. Interface
-losses remove useful context. Different substrates fail in correlated ways
-while making diagnosis harder. One excellent general model may be more
-controllable and economical.
+Two specialists can share a single index, evaluator or credential service.
+Suppose the primary fails because its index is stale. A fallback reading the
+same snapshot can return the same outdated passage even if it uses different
+weights. Require a fallback to name the dependencies it shares and the
+failure it can actually cover. Evaluate recovery on the served outcome after
+the common dependency fails.
 
-This objection defines the baseline. Replaceability is valuable even when the
-incumbent wins, because it makes the comparison and exit path explicit. But
-actual heterogeneity must earn deployment through complete outcomes.
+## What Would Change the Routing Decision? {#evidence-that-would-change-the-conclusion}
 
-The system should not maintain alternatives as ceremonial insurance. It should
-measure migration and reserve costs, exercise fallbacks, and retire routes that
-do not improve utility or resilience. Simplicity is a system property worth
-optimizing.
-
-## Evidence That Would Change the Conclusion
-
-Matched natural tasks showing no accepted-useful-output, risk, resilience, or
-cost advantage after routing, migration, verification, and maintenance would
-favor the general-model baseline. Evidence that stable fields erase decisive
-architecture semantics would require richer or more specialized interfaces.
-
-The case would strengthen through prospective multi-domain tournaments with
-complete candidate denominators, independent labels, exercised fallback,
-state migration, adversarial routes, hardware accounting, reproduction, and
-longitudinal maintenance. Cyclic systems need trained-model and kernel evidence
-that survives strong recurrent, attention, state-space, and ordinary systems
-baselines.
-
-The conclusion should narrow if diversity increases correlated organizational
-failure, if route learning cannot remain calibrated under changing candidates,
-or if the governance overhead prevents timely useful work.
+An observed recovery advantage under matched cost and acceptance criteria
+would justify keeping the second route. A shared failure would require an
+independent dependency or a safe deferral path. A lost state field during
+migration would require a richer handoff contract or make the replacement
+ineligible.
 
 ## What This Establishes
 
@@ -864,10 +846,8 @@ candidate-lifecycle properties plus narrow synthetic observations. It does not
 establish that heterogeneous or cyclic systems outperform a strong general
 model.
 
-When a selected substrate will be learned or adapted, its training needs a
-governed transaction. Unit 20 follows that boundary, then widens the view from
-model architecture to the
-topology of evidence, judgment, credit, state, compute, and authority that
-actually produces adaptation.
+Before a replacement can learn, hand the learner the accepted checkpoint,
+state schema, validation results, and the authority and recovery limits on
+changing that state. [Unit 20 follows that handoff into the training transaction](unit-20-governed-training-and-learning-compute-topology.qmd#a-training-run-is-an-experimental-transaction).
 
 {{< include ../generated/unit-19-status.qmd >}}

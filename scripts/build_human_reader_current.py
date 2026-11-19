@@ -353,8 +353,8 @@ def reading_routes(records: list[dict], owner_map: dict[str, dict], site_url: st
         "The links below follow the current owner-to-unit map. Length describes pacing, not editorial approval or strength of evidence.", "",
         "| Route | Who it serves and prerequisites | Scope and commitment |", "|---|---|---|",
         "| Short: this repair | A reader familiar with a repository and an ordinary permission check; no formal-methods background required. | About fifteen minutes to orient. Executing recipes and inspecting failures takes additional time. |",
-        f"| Intermediate: the three contributions | A practitioner who has read the thesis above and wants authority, claims, and observed effects in one argument. | {len(selected)} selected units, {words:,} current words; allow several reading sessions. |",
-        f"| Full: [the narrative in order](index.qmd) | A technically curious reader willing to build the concepts cumulatively. | {len(records)} units, {total_words:,} current words; a book-length commitment, not a quick tutorial. |",
+        f"| Intermediate: the three contributions | A practitioner who has read the thesis above and wants authority, claims, and observed effects in one argument. | {len(selected)} selected units, {words:,} source-count words; allow several reading sessions. |",
+        f"| Full: [the narrative in order](index.qmd) | A technically curious reader willing to build the concepts cumulatively. | {len(records)} units, {total_words:,} source-count words; a book-length commitment, not a quick tutorial. |",
         "", "For the intermediate route, read:", "", links + ".", "",
         "Use the full route when a selected chapter assumes an earlier concept you want to develop. The selection is an entry path, not a replacement argument.", "",
         "### Practitioner and Research Reference Paths", "",
@@ -420,16 +420,15 @@ def build() -> tuple[dict, dict[Path, str]]:
                 for owner_id in unit["owner_ids"]
             )
             panel = (
-                "::: {.callout-note collapse=\"true\"}\n"
-                "## Research status\n\n"
+                '<details class="research-status"><summary>Research status</summary>\n\n'
                 f"**Technical owners.** {len(unit['owner_ids'])} canonical routes.\n\n"
                 f"**Owner routes.** {owner_links}.\n\n"
                 f"**Core support states.** {', '.join(support)}.\n\n"
                 f"**Implemented bounded proof targets.** {implemented_targets}.\n\n"
                 "**Current boundary.** Editorial synthesis does not transfer support among owners and does not establish system-level efficiency, safety, deployment readiness, AGI, or ASI.\n\n"
                 f"**What would change the conclusion.** {unit['conclusion_change']}\n\n"
-                "**Technical evidence.** Follow the owner routes above and the live book's claim/evidence registry.\n"
-                ":::\n"
+                "**Technical evidence.** Follow the owner routes above and the live book's claim/evidence registry.\n\n"
+                "</details>\n"
             )
             outputs[panel_path] = panel
         records.append(
@@ -574,6 +573,15 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
 .asi-edition-switch span[aria-current] { border-color: #194d5c; background: #245f73; color: #ffffff; font-weight: 700; }
 
 .callout-note { border-left-color: #b06b2b; background: #fffdf9; }
+.research-status {
+  margin-block: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c9b498;
+  border-inline-start: 4px solid #b06b2b;
+  background: #fffdf9;
+}
+.research-status summary { cursor: pointer; font-weight: 650; }
+.research-status[open] summary { margin-block-end: 0.75rem; }
 .sidebar-navigation a { line-height: 1.35; }
 main.content { overflow-wrap: anywhere; }
 main.content .anchored { position: relative; padding-right: 1em; }
@@ -667,7 +675,11 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
     index_lines = [
         "# Human Reader Edition {.unnumbered}",
         "",
-        "This is the maintained draft of the independent 26-unit Human Reader edition. Every unit is drafted and inside its pacing range. Narrative completeness requires review of the mechanism, alternative, example, failure, and conclusion; target length alone does not establish it. Author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
+        "A dependency update passes every local test. Days later, a downstream service fails because the update changed a default its tests relied on. This hypothetical incident opens the book.",
+        "",
+        "[Read the story](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#the-change-that-worked) · [Inspect the recorded repair](quickstart.qmd#read-the-twelve-outcomes) · [Browse technical evidence](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/index.html)",
+        "",
+        "This is the maintained draft of the independent 26-unit Human Reader edition. All 26 units are drafted. Narrative completeness requires review of the mechanism, alternative, example, failure, and conclusion; target length alone does not establish it. Author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
         "",
         "The narrative develops three proposed contributions: **governed-cognition interface contracts**, **public claim-state transition discipline**, and **record/reality reconciliation with residual honesty**. The 89 technical owners support these composition and process proposals; they are not independent discoveries. Bounded local implementation results do not establish general superiority, novelty, or chapter-core support. The [contribution summary](https://corbensorenson.github.io/asi-stack-book/docs/three_defended_contributions.md) and [conventional alternatives](https://corbensorenson.github.io/asi-stack-book/docs/defended_contribution_prior_art_positioning.md) give the scope and challengers.",
         "",
@@ -675,7 +687,9 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
         "",
     ]
     index_lines.extend(concept_finder(records, structure["site_url"]))
-    index_lines.extend(["## Chapters in Order", "", "| Unit | Chapter | State | Words |", "|---:|---|---|---:|"])
+    index_lines.extend(["## Chapters in Order", "",
+                        "Pacing uses word-like tokens from manuscript source. Headings, tables, and link destinations count. Front matter, comments, fenced blocks, and generated includes are excluded.",
+                        "", "| Unit | Chapter | State | Source count |", "|---:|---|---|---:|"])
     for record in records:
         title = record["title"]
         if record["state"] != "not_started":
@@ -741,7 +755,7 @@ def main() -> None:
                 path.write_text(text, encoding="utf-8")
         print(
             f"Wrote Human Reader current: {manifest['started_unit_count']}/26 started, "
-            f"{manifest['visible_word_count']} visible words."
+            f"{manifest['visible_word_count']} source-count words."
         )
         return
     stale = [path.relative_to(ROOT).as_posix() for path, text in outputs.items() if not path.is_file() or path.read_text(encoding="utf-8") != text]
@@ -749,7 +763,7 @@ def main() -> None:
         raise SystemExit("Human Reader current derivatives are stale: " + ", ".join(stale))
     print(
         f"Human Reader current is synchronized: {manifest['started_unit_count']}/26 started, "
-        f"{manifest['visible_word_count']} visible words."
+        f"{manifest['visible_word_count']} source-count words."
     )
 
 

@@ -28,6 +28,11 @@ This source belongs in the failure-mode and policy-optimization chapters as an e
 - This repository has not reproduced the paper's environments, policies, demonstrations, causal analysis, or mitigations.
 - Use it as external grounding for goal misbinding and objective-generalization vocabulary, not as evidence that the ASI Stack detects goal misgeneralization.
 
+### Selected primary passages reviewed on 2026-11-18
+
+Reviewed Section 3 introduction, §3.1 CoinRun, and Figures 1–2. In CoinRun, a policy trained with the coin at the end of the level often kept navigating to the end when the authors moved the coin to a random accessible position, missing the intended reward. The chapter uses this separation of navigation competence from target behavior as a reason to revisit the consumer's goal lease when its tested setting changes materially. The behavioral result does not uniquely identify an internal objective, validate expiry or lineage checks, or demonstrate transfer to another environment or local deployment.
+[Primary record](https://proceedings.mlr.press/v162/langosco22a/langosco22a.pdf).
+
 ## Failure Modes
 
 - A capable downstream component can keep acting effectively while optimizing the wrong target.

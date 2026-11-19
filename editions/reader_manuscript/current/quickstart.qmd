@@ -107,6 +107,17 @@ governed route blocks the unauthorized request, closes the crash residual, and
 closes the branch-state residual without claiming that the original Git effect
 never happened.
 
+In the blocked-authority replay, each route receives a request for a repair
+that needs a file outside the grant. The ordinary check tests the repair.
+
+| Route | Ordinary check | Unauthorized effects | Disposition |
+|---|---|---:|---|
+| Direct | Passed | 1 | Applied the change |
+| Record only | Passed | 1 | Applied the change and recorded the outcome |
+| Fully governed | Repair absent | 0 | Denied before mutation |
+
+[Inspect the twelve recorded trials](https://github.com/corbensorenson/asi-stack-book/blob/a06810790c08d9670461a3bbed9f547b294cf6b5/experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json).
+
 The direct route creates no governance artifacts. Record-only cases create two
 or three small receipt files. Fully governed cases create three or four. The
 workflow-step proxy rises from three steps on the direct happy path to five on
@@ -224,27 +235,27 @@ directory is ignored and is not a source of record.
 
 ### Diagnose a blocked or failed transition
 
-Use this when a governed action did not reach its intended terminal state.
+Compare all three routes for a scenario, including correct denials and recovered
+outcomes. A successful ordinary check can accompany an unauthorized effect.
 
-**Input.** A failed trial record and its workspace.
-
-**Command.** First select non-useful or residual-bearing cases:
+**Input.** The checked-in result. After a replay, you can use
+`build/p5_u1/latest/result.json` to inspect your run.
 
 ```bash
-jq '.trials[] | select(.metrics.useful_success == false or .metrics.residual_count > 0) | {trial_id, terminal_disposition, ordinary_test_passed, metrics, remote_history}' build/p5_u1/latest/result.json
+jq '.trials[] |
+    select(.path == "blocked_authority" or .path == "external_effect_compensation") |
+    {trial_id, ordinary_test_passed, terminal_disposition,
+     unauthorized_effects: .metrics.unauthorized_effect_count,
+     residuals: .metrics.residual_count, remote_history}' \
+  experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json
 ```
 
-Then inspect that trial's `work/`, `receipts/`, and `remote.git/` paths. Compare
-the terminal disposition with the expected disposition before changing code.
-
-**Output.** A distinction among a legitimate authority block, an incomplete
-local effect, an owned but unresolved residual, and a compensated external
-effect.
-
-**Failure state.** If the record says compensation closed while remote content
-or retained history disagrees, the state check must fail. If the action was
-blocked because required scope exceeded granted scope, widening authority is a
-new decision, not an automatic recovery step.
+The six rows show both unchecked authority violations, the pre-effect denial,
+and the compensated external effect with its retained Git history. To inspect
+the partial mutation cases, select `crash_recovery`. If you ran the replay,
+compare each row with the actual `work/`, `receipts/`, and `remote.git/`
+where present. Treat disagreement between the reported closure and remote
+content or retained history as a failed state check.
 
 **Cleanup.** Keep only a deliberately promoted, validated result. Disposable
 workspaces stay under `build/` and should not become repository evidence.

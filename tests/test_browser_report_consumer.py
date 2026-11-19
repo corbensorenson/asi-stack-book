@@ -81,7 +81,7 @@ class BrowserReportConsumerTests(unittest.TestCase):
                 "url": (self.site / "reader/unit.html").as_uri(), "checks": {"horizontal_overflow_px": 0,
                 "control_visible": True, "control_clipped": False, "research_href": self.site.as_uri(),
                 "research_text": "AI / researcher", "current_text": "Human Reader", "title": "Fixture reader",
-                "main_present": True, "skip_link_present": True, "research_link_label": "AI / researcher", "callout_count": 1}})
+                "main_present": True, "skip_link_present": True, "research_link_label": "AI / researcher", "research_status_keyboard_operable": True}})
         for width in (320, 390, 430):
             for scale in (1, 2):
                 self.report["edition_control_accessibility"].append({"width": width, "text_scale": scale,
@@ -128,6 +128,7 @@ class BrowserReportConsumerTests(unittest.TestCase):
         self.reject(lambda report: report["validated_pages"][0]["checks"]["human_url_mode"]["reader_overlay_runtime"].update(applied=2))
         self.reject(lambda report: report["validated_pages"][0]["checks"]["human_url_mode"]["diagrams"].update(visible_diagram_count=2))
         self.reject(lambda report: report["validated_reader_pages"][0]["checks"].update(skip_link_present=False))
+        self.reject(lambda report: report["validated_reader_pages"][0]["checks"].update(research_status_keyboard_operable=False))
         self.reject(lambda report: report["edition_control_accessibility"][0]["metrics"]["buttons"][0]["rect"].update(height=20))
         self.reject(lambda report: report["edition_control_accessibility"][0]["metrics"].update(scroll_width=800))
         self.reject(lambda report: report["edition_control_accessibility"][0]["metrics"].update(horizontal_overflow_px=float("nan")))

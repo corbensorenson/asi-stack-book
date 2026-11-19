@@ -342,8 +342,10 @@ the dependency under repair; restoring its pointer is not a security recovery.
 
 Call the old vulnerable package A and the patched release candidate B. Suppose
 a retry expects pointer B, but an authorized operator has since installed
-candidate C. A blind restoration to A would discard that intervening repair.
-The recovery step compares its expected current state with the observed one,
+candidate C. Would you permit the retry to restore A?
+
+Hold the mutation. A blind restoration to A would discard the intervening
+repair. The recovery step compares its expected current state with the observed one,
 then either reconciles C under current authority or holds the conflicting
 mutation. The same rule applies to cache cleanup: named objects created by the
 failed attempt may be removable, while an unrelated operator object must not

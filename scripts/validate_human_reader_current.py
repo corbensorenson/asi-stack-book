@@ -505,11 +505,11 @@ UNIT_19_REQUIRED = [
     "## Security and Rights Constrain Substrate Choice",
     "## One Task, Five Qualified Routes",
     "## Failure Cases",
-    "## The Strongest Simpler Baseline",
+    "id=\"the-strongest-simpler-baseline\"",
     "## What the Current Work Establishes",
     "## From a Minimum Router to a Substrate Market",
-    "## The Strongest Objection",
-    "## Evidence That Would Change the Conclusion",
+    "## Can the Fallback Survive the Same Failure?",
+    "## What Would Change the Routing Decision?",
     "## What This Establishes",
     "Structural certification is not model quality",
     "The joined chapter does not combine these bounded results into a claim",
@@ -1084,7 +1084,7 @@ def main() -> None:
     print(
         f"Human Reader current validation passed: {manifest['started_unit_count']}/26 units started, "
         f"{manifest['target_length_unit_count']} at target length, 89 owners routed once, "
-        f"{manifest['visible_word_count']} visible words, and 5 rejecting controls."
+        f"{manifest['visible_word_count']} source-count words, and 5 rejecting controls."
     )
 
 

@@ -2975,13 +2975,14 @@
           "claim_source_mappings": [
             {
               "source_id": "ext_conversational_persuasion_gpt4_2025",
-              "mapped_support": "Preliminary persuasion comparator based on the open Nature Human Behaviour article: a preregistered N=900 controlled debate study compared human and GPT-4 opponents with and without limited sociodemographic personalization. The reported setting is short structured debate with self-reported agreement outcomes; it does not establish general real-world influence, durable behavior change, mitigation efficacy, or a local result.",
-              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
-              "passage_review_state": "reviewed_source_note",
+              "mapped_support": "In the version of record, the preregistered study assigns US adults recruited through Prolific to short structured debates. Personalized GPT-4 versus the human baseline increases the modeled odds of higher post-debate agreement by 81.2% (95% CI 26.0% to 160.7%, N=900). The chapter uses this result to justify evaluating the audience and personalization context in approval workflows.",
+              "limits": "The estimate concerns ordinal self-reported agreement in this study. It does not establish durable behavior change, reviewer approval effects, mitigation efficacy, transfer, or a local result.",
+              "passage_review_state": "reviewed",
               "passage_refs": [
+                "https://pmc.ncbi.nlm.nih.gov/articles/PMC12367540/ (Methods (Participant recruitment and Experimental design), Results (Aggregate results and Table 2), and Discussion (limitations))",
                 "sources/source_notes/ext_conversational_persuasion_gpt4_2025.md"
               ],
-              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+              "passage_review_note": "Selected primary passages reviewed on 2026-11-18 for the stated empirical claim and its distinct design implication."
             },
             {
               "source_id": "ext_anthropic_model_persuasiveness_2024",
@@ -4204,13 +4205,14 @@
             },
             {
               "source_id": "ext_goal_misgeneralization_2022",
-              "mapped_support": "External alignment-control source for distinguishing capability generalization from goal generalization failures, used to ground goal-misbinding and out-of-distribution objective failure language.",
-              "limits": "Source-reported or source-defined material only; no local chapter-core implementation, reproduction, transfer, readiness, release, deployment, or support promotion.",
-              "passage_review_state": "reviewed_source_note",
+              "mapped_support": "In CoinRun, a policy trained with the coin at the end of the level often kept navigating to the end when the authors moved the coin to a random accessible position, missing the intended reward. The chapter uses this separation of navigation competence from target behavior as a reason to revisit the consumer's goal lease when its tested setting changes materially.",
+              "limits": "The behavioral result does not uniquely identify an internal objective, validate expiry or lineage checks, or demonstrate transfer to another environment or local deployment.",
+              "passage_review_state": "reviewed",
               "passage_refs": [
+                "https://proceedings.mlr.press/v162/langosco22a/langosco22a.pdf (Section 3 introduction, §3.1 CoinRun, and Figures 1–2)",
                 "sources/source_notes/ext_goal_misgeneralization_2022.md"
               ],
-              "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+              "passage_review_note": "Selected primary passages reviewed on 2026-11-18 for the stated empirical claim and its distinct design implication."
             },
             {
               "source_id": "ext_learned_optimization_risks_2019",

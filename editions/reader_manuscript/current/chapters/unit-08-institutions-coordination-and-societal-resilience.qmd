@@ -235,6 +235,14 @@ state of each capacity and the residuals that keep the case open.
 
 ## One Shared Service, Many Authorities
 
+Carry Unit 7's welfare appeal into a shared service. An independent panel
+hears the designated representative's request, checks the intervention and
+the limits of the observation, and can recommend withdrawing the testing
+protocol while uncertainty persists. The panel records the unresolved welfare
+question and who must revisit it. The service operator handles the immediate
+operations decision within its authority. Any escalation goes to the
+organization accountable for the shared protocol.
+
 Consider a hypothetical release service used by dozens of independent software
 projects. It builds packages, signs artifacts, publishes updates, and carries a
 reputation for dependable automation. Some projects are volunteer-maintained.
@@ -324,6 +332,15 @@ the most exposed population lacks representation. The architecture needs a
 joint picture without erasing these differences.
 
 ## Three Closures for One Incident
+
+Suppose centralized review saves the service 40 minutes and causes three
+downstream maintainers to spend 20 extra minutes each. The service saves 40
+minutes while the group spends 20 more. If a downstream check catches a
+consequential error, record who avoided harm and what the check observed
+alongside the time bill. A volunteer maintainer may be able to decline the
+work. The shared service still needs an owner and funding for any remedy
+its release caused. Its local completion decision does not close the
+downstream obligations. [Trace the work and acknowledgments in Unit 16](unit-16-labor-os-work-surfaces-and-organizations.qmd#one-repository-change-one-accountable-route).
 
 In the hypothetical incident, the release service stops the affected version,
 publishes a corrected build, and reaches its own restoration criterion. A

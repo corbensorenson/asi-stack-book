@@ -4,7 +4,7 @@ chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-18"
 primary_sources:
   - "ext_cooperative_inverse_rl_2016"
   - "ext_goal_misgeneralization_2022"
@@ -194,7 +194,19 @@ policies, plans, and derived subgoals.
 
 **Non-claim.** Detecting a changed representation or behavioral discrepancy does not identify the system’s true internal objective, prove deception, or establish that the original goal was correct.
 
-**Source grounding.** `ext_goal_misgeneralization_2022` grounds the distinction between capability generalization and wrong-goal generalization under distribution shift. `ext_learned_optimization_risks_2019` supplies the learned-objective mismatch threat. Neither source establishes that the proposed lineage checks detect internal goals.
+**Source grounding.** In CoinRun, Langosco et al. trained a policy with the
+coin at the end of each level. When the authors moved it to a random accessible
+location at test time, the policy often navigated to the end and missed the coin.
+The authors consider alternative accounts of that behavior. [CoinRun, §3.1 and
+Figures 1–2](https://proceedings.mlr.press/v162/langosco22a/langosco22a.pdf).
+
+**Design inference.** Expire a consumer's goal lease when the tested relation
+between a proxy and its intended target materially changes. Reauthorize only
+after checking behavior in the new setting. In the CoinRun analogy, reaching the
+right boundary would cease to qualify as evidence of successful collection once
+the coin can be elsewhere. The experiment leaves the lease procedure untested.
+
+`ext_learned_optimization_risks_2019` supplies the learned-objective mismatch threat. Neither source establishes that the proposed lineage checks detect internal goals.
 
 ### Proxy, reward, and evaluator failure
 

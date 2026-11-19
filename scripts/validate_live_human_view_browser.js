@@ -483,7 +483,6 @@ async function validateReaderPage(page, fileUrl, unit, viewportName) {
       main_present: Boolean(main),
       skip_link_present: Boolean(skip),
       research_link_label: researchLink ? researchLink.getAttribute("aria-label") || researchLink.textContent.trim() : "",
-      callout_count: document.querySelectorAll(".callout-note").length,
     };
   });
   if (metrics.horizontal_overflow_px > 2) throw new Error(`${unit.unit_id}: reader ${viewportName} has horizontal overflow.`);
@@ -492,7 +491,27 @@ async function validateReaderPage(page, fileUrl, unit, viewportName) {
   if (!metrics.research_href || !metrics.research_link_label) throw new Error(`${unit.unit_id}: research-edition return link is inaccessible.`);
   if (metrics.current_text !== "Human Reader") throw new Error(`${unit.unit_id}: Human Reader current-edition state is missing.`);
   if (!metrics.title.includes(unit.title)) throw new Error(`${unit.unit_id}: rendered title differs from the crosswalk.`);
-  if (metrics.callout_count < 1) throw new Error(`${unit.unit_id}: generated research-status panel is missing.`);
+  const status = page.locator("details.research-status");
+  if (await status.count() !== 1) throw new Error(`${unit.unit_id}: research status disclosure is missing or duplicated.`);
+  const summary = status.locator(":scope > summary");
+  await summary.focus();
+  if (!(await summary.evaluate((el) => el === document.activeElement))) {
+    throw new Error(`${unit.unit_id}: research status summary cannot receive focus.`);
+  }
+  await page.keyboard.press("Enter");
+  if (!(await status.evaluate((el) => el.open))) {
+    throw new Error(`${unit.unit_id}: Enter did not open research status.`);
+  }
+  await page.keyboard.press("Tab");
+  if (!(await status.locator("a").first().evaluate((el) => el === document.activeElement))) {
+    throw new Error(`${unit.unit_id}: Tab did not reach the first technical owner.`);
+  }
+  await page.keyboard.press("Shift+Tab");
+  await page.keyboard.press("Space");
+  if (await status.evaluate((el) => el.open)) {
+    throw new Error(`${unit.unit_id}: Space did not close research status.`);
+  }
+  metrics.research_status_keyboard_operable = true;
   return { unit_id: unit.unit_id, viewport: viewportName, url: fileUrl, checks: metrics };
 }
 

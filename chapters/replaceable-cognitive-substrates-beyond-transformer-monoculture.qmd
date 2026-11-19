@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-14"
+last_updated: "2026-11-18"
 primary_sources:
   - "learning_compute_topology"
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
@@ -89,7 +89,7 @@ open_evidence_gaps:
 | Status | conceptual |
 | Manuscript maturity | v0.2 manuscript draft |
 | Last updated | 2026-11-02 |
-| Primary source records | 64 current manifest assignments; selected passage-review scope is recorded per mapping. |
+| Source review scope | Selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source loading state | source notes: `learning_compute_topology`, `corben_chatgpt_kiss_irreducible_intelligence_2026`, `corben_chatgpt_onecell_theseus_2026`, `deterministic_capability_compilation`, `ext_attention_is_all_you_need_2017`, `ext_mamba2_ssd_2024`, `ext_s4_2022`, `ext_mamba3_2026`, `ext_gated_deltanet2_2026`, `ext_hyperscale_lottery_2026`, `ext_gated_deltanet_2024`, `ext_jamba_2024`, `ext_inkling_2026`, `ext_neural_message_passing_2017`, `ext_hyena_hierarchy_2023`, `ext_rwkv_2023`, `ext_xlstm_2024`, `ext_ttt_layers_2024`, `ext_titans_2025`, `ext_kan_2024`, `ext_kan_or_mlp_fairer_comparison_2024`, `ext_neural_turing_machines_2014`, `ext_differentiable_neural_computer_2016`, `ext_liquid_time_constant_networks_2021`, `ext_tiny_recursive_model_2025`, `ext_trm_arc_agi_analysis_2025`, `ext_tiny_autoregressive_recursive_models_2026`, `ext_unimatrix_2026`, `ext_memory_caching_2026`, `scf`, `rmi`, `benchmaxxing`, `ext_mamba_2023`, `ext_retnet_2023`, `ext_universal_transformer_2019`, `ext_dynamic_compute_recurrent_transformers_2026`, `ext_dreamcoder_2020`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`, `ext_test_time_training_2020`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_organoid_intelligence_2023`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_i_jepa_2023`, `ext_lejepa_2025`, `ext_platonic_representation_jepa_2026`, `ext_h_net_2025`, `ext_v_jepa_2_2025`, `ext_nested_learning_hope_2025`, `ext_end_to_end_ttt_long_context_2025`, `ext_engram_conditional_memory_2026`, `ext_mhc_2025`, `ext_attention_residuals_2026`, `ext_mhc_peft_2026`; raw cache: `scf`, `rmi`, `benchmaxxing` |
@@ -98,11 +98,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-This chapter distinguishes three things that architecture discussions routinely
-collapse: a paper's reported result, this book's architecture-neutral contract,
-and a locally reproduced result. The first can position a candidate. The second
-can make candidates comparable and governable. Only the third can move a local
-claim, and no local architecture result exists yet.
+Published results position candidates for comparison. The architecture-neutral
+contract specifies how candidates would enter that comparison. The local
+count-table implementation exercised a single finite interface in two authored
+environments and earned bounded non-core support. A matched comparison of three
+different kernels remains open. [Accepted finite transition](https://github.com/corbensorenson/asi-stack-book/blob/a06810790c08d9670461a3bbed9f547b294cf6b5/evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json).
 
 ::: {.asi-human-only}
 ## Human Reading Path

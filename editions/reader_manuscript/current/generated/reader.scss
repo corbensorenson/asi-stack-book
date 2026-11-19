@@ -81,6 +81,15 @@ main.content table { display: block; width: 100%; max-width: 100%; overflow-x: a
 .asi-edition-switch span[aria-current] { border-color: #194d5c; background: #245f73; color: #ffffff; font-weight: 700; }
 
 .callout-note { border-left-color: #b06b2b; background: #fffdf9; }
+.research-status {
+  margin-block: 1rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid #c9b498;
+  border-inline-start: 4px solid #b06b2b;
+  background: #fffdf9;
+}
+.research-status summary { cursor: pointer; font-weight: 650; }
+.research-status[open] summary { margin-block-end: 0.75rem; }
 .sidebar-navigation a { line-height: 1.35; }
 main.content { overflow-wrap: anywhere; }
 main.content .anchored { position: relative; padding-right: 1em; }

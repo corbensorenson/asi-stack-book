@@ -62,7 +62,7 @@ AI = obj({"visible_live_sections": POSITIVE, "visible_human_blocks": ZERO,
 READER = obj({"horizontal_overflow_px": OVERFLOW, "control_visible": TRUE, "control_clipped": FALSE,
               "research_href": TEXT, "research_text": TEXT, "current_text": {"const": "Human Reader"},
               "title": TEXT, "main_present": TRUE, "skip_link_present": TRUE,
-              "research_link_label": TEXT, "callout_count": POSITIVE})
+              "research_link_label": TEXT, "research_status_keyboard_operable": TRUE})
 TECHNICAL_ROW = obj({"page_id": TEXT, "url": TEXT, "viewport": {"enum": list(VIEWPORTS)},
                      "viewport_size": obj({"width": POSITIVE, "height": POSITIVE}),
                      "checks": obj({"human_url_mode": HUMAN}, extra=True)})

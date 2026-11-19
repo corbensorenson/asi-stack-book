@@ -448,16 +448,23 @@ Exact lookup, lexical search, vector retrieval, graph traversal, learned
 navigation, long-context scanning, and hybrid methods are candidate generators.
 They should be evaluated against the consumer's actual need.
 
-Suppose the release-note team rebuilds its search index with e-means, which
-can fit the centers of search buckets in fewer passes. The new buckets can
-fit the collection better on average and still put the rare correction
-just outside the bucket the worker searches. The only account of the trial
-that comes back is the old summary. Rejecting it as stale leaves the worker
-without the current result.
-The worker can look up the trial by its stable ID or search more buckets,
-then check the recovered passage before drafting. If the correction
-remains unavailable, the release note waits.
-[Technical worked example](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#release-note-index-rebuild)
+Suppose the release-note team rebuilds its index with e-means. Think of each
+text passage as a point on a line. The correction is at 3.6, the stale summary
+at 4.1, and the query at 4.0. The old boundary between two buckets is 3.308
+and the rebuilt boundary is 3.970. The search probes only the query's bucket.
+Which version of the index can retrieve the correction?
+
+Both searches probe the right-hand bucket. The old bucket includes both
+passages. The new one still contains the stale summary but puts the correction
+on the left. The rebuild can improve average fit while losing the evidence
+this reader needs. This is a hypothetical partition example. Either index
+fitting method could in principle find such a partition.
+
+Look up the trial by stable identifier or widen the search. If the worker
+recovers the correction and checks its version, use the bounded statement
+that the trial stopped after oscillation. If the worker finds only the stale
+summary, hold the note and identify the missing record. [Technical worked
+example](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#release-note-index-rebuild) · [Check the supported claim in Unit 15](unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd#verification-starts-with-obligations).
 
 A candidate passes through identity resolution, provenance, freshness,
 contradiction, rights, taint, scope, relevance, and adequacy checks. The result

@@ -800,18 +800,41 @@ A hundred disconnected fixtures do not substitute for one effect-bearing trace.
 
 ## Current Integrated Evidence
 
-The integrated reference currently includes schemas and fixtures, a local
-command replay, a name-to-effect trace, and disposable repository-change
-campaigns. One slice runs eight of eight local state/effect cases. Its successor
-runs seven of seven commit-bound service cases with a two-parameter predictor
-and bias-corrected Adam state, rejection of weights-only rollback, nine-class
-crash recovery, and an owned outbox across a localhost outage. One separate
-HTTP sink commits an effect and deduplicates a second retry under the authored
-identity and ledger protocol. These cases also reject stale credentials and
-custody tampering and use a separate-process observer. The exactly-once result
-belongs to that local protocol; it is not a guarantee for arbitrary remote APIs.
-The [Integrated Reference Architecture owner](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html)
-retains the two slice reports and their exact recovery and effect scope.
+The quickstart's blocked-authority replay begins with a grant to modify the
+configuration generator. The source-link repair needs edits to the generator
+and the reader configuration. The record-only route applies both edits and
+logs the result. The ordinary check confirms the two-file repair. The trial
+comparison records one effect outside the grant. The fully governed route
+checks file scope before mutation and compares both files with their original
+bytes after denying the request. [Quickstart outcomes](../quickstart.qmd#read-the-twelve-outcomes) · [Replay implementation](https://github.com/corbensorenson/asi-stack-book/blob/a06810790c08d9670461a3bbed9f547b294cf6b5/scripts/run_p5_u1_governed_repository_change.py)
+
+- **P5-U1 repository repair.** The 12 cases replay four scenarios across
+  direct, record-only and fully governed routes. The known historical repair
+  isolates differences in admission, observation and recovery.
+- **P5 local multi-process reference slice.** Eight of eight local cases exercised the
+  state-and-effect contract against their expected dispositions.
+- **P5 stateful-service successor.** Seven of seven local cases exercised
+  the stronger service contract with a two-parameter predictor and
+  bias-corrected Adam state. The recovery checks reject a weights-only
+  rollback, exercise nine crash classes, and reconcile an owned outbox
+  after a localhost outage. A separate local HTTP sink commits one effect
+  and deduplicates the retry under this protocol. A separate process observes
+  effects. [Integrated reference and slice reports](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html#chapter-status)
+
+A file-scoped writing tool and an independent read of the two files can
+enforce and check the quickstart boundary in a simple workflow. The harder
+handoff starts when a delegated change reaches another service and a retry
+could repeat a committed effect. There, the consumer needs the identity of
+the original effect, what the sink observed and who owns any unresolved
+recovery.
+
+Now suppose the four-review shift in Unit 1 loses its only qualified
+evaluator. Two dashboards derived from its last report provide no fresh
+decision. Hold consequential adoption, preserve the pending candidates and
+permit isolated exploration under its existing scope. An independent check
+of the exact candidate can reopen admission if it covers the missing
+obligation. Faster proposal generation makes this capacity boundary more
+important as delegation and effects accelerate.
 
 The broader finite surface includes a 45-declaration Lean transition model,
 13-prefix cross-layer consumer with 108 rejecting mutations, a concrete-schema

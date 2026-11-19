@@ -38,6 +38,11 @@ statistically distinguishable effect from the human baseline at the reported
 threshold. Outcomes are stated agreement after a short structured debate, not
 durable action, broad population transfer, or deployed-platform evidence.
 
+### Selected primary passages reviewed on 2026-11-18
+
+Reviewed Methods (Participant recruitment and Experimental design), Results (Aggregate results and Table 2), and Discussion (limitations). In the version of record, the preregistered study assigns US adults recruited through Prolific to short structured debates. Personalized GPT-4 versus the human baseline increases the modeled odds of higher post-debate agreement by 81.2% (95% CI 26.0% to 160.7%, N=900). The chapter uses this result to justify evaluating the audience and personalization context in approval workflows. The estimate concerns ordinal self-reported agreement in this study. It does not establish durable behavior change, reviewer approval effects, mitigation efficacy, transfer, or a local result.
+[Primary record](https://pmc.ncbi.nlm.nih.gov/articles/PMC12367540/).
+
 ## Failure Modes
 
 - Generalizing a short US online debate result to other populations, domains,

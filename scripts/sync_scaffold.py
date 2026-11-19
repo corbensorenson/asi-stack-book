@@ -579,12 +579,14 @@ def public_source_ref(record: dict, label: str = "source") -> str:
 
 
 def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
-    assignments = chapter_assignments(structure)
-    chapter_titles = {
-        chapter["id"]: chapter["title"]
+    chapter_links = {
+        chapter["id"]: f"[{qmd_escape(chapter['title'])}](../{chapter['file']})"
         for chapter in flatten_chapters(structure)
-        if chapter.get("id") and chapter.get("title")
     }
+    assignments = {}
+    for chapter in flatten_chapters(structure):
+        for source_id in source_ids_for(chapter):
+            assignments.setdefault(source_id, []).append(chapter_links[chapter["id"]])
     rows = []
     for record in records:
         if not is_external_literature(record):
@@ -595,8 +597,8 @@ def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
         if not current_targets:
             target_labels = []
             for target in record.get("chapter_targets", []):
-                if target in chapter_titles:
-                    target_labels.append(f"{target} ({chapter_titles[target]})")
+                if target in chapter_links:
+                    target_labels.append(chapter_links[target])
                 elif target:
                     target_labels.append(str(target))
             if target_labels:
@@ -614,15 +616,17 @@ def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
             record_ref = public_source_ref(record)
         if doi:
             record_ref = f"{record_ref}; DOI `{qmd_escape(doi)}`"
-        note_status = "source note available" if (SOURCE_NOTES / f"{record['id']}.md").exists() else "source note pending"
+        note_status = "source note pending"
+        if (SOURCE_NOTES / f"{record['id']}.md").exists():
+            note_status = f"[Source note]({structure['repo_url'].rstrip('/')}/blob/main/sources/source_notes/{record['id']}.md)"
         rows.append(
-            "| `{id}` | {title} | {record_ref} | `{layer}` | {targets} | {note_status} | {notes} |".format(
+            "| `{id}`{{#{id}}} | {title} | {record_ref} | `{layer}` | {targets} | {note_status} | {notes} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 record_ref=record_ref,
                 layer=qmd_escape(record.get("layer", "")),
-                targets=qmd_escape(current_targets),
-                note_status=qmd_escape(note_status),
+                targets=current_targets,
+                note_status=note_status,
                 notes=qmd_escape(record.get("notes", "")),
             )
         )
@@ -964,7 +968,7 @@ machine source is
             "No reviewer-facing promotion path is recorded yet; update docs/per_chapter_evidence_plan.md before any support-state movement.",
         )
         rows.append(
-            f"| `{claim_id}` | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(claim_mapping)} | {qmd_escape(open_gap)} | {qmd_escape(promotion_path)} |"
+            f"| `{claim_id}`{{#{claim_id}}} | `{chapter['id']}` | {qmd_escape(chapter.get('core_claim', 'No manifest core claim declared.'))} | {qmd_escape(claim_label)} | {qmd_escape(chapter.get('evidence_level', 'argument'))} | {source_label} | {qmd_escape(current_evidence)} | {qmd_escape(source_mapping)} | {qmd_escape(claim_mapping)} | {qmd_escape(open_gap)} | {qmd_escape(promotion_path)} |"
         )
     label_rows = "\n".join(f"| {qmd_escape(label)} | {qmd_escape(meaning)} |" for label, meaning in CLAIM_LABELS)
     support_rows = "\n".join(f"| {qmd_escape(state)} | {qmd_escape(meaning)} |" for state, meaning in SUPPORT_STATES)

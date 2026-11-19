@@ -16,7 +16,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Unmapped assigned pairs | 208 |
 | Source notes present for assigned pairs | 1420 |
 | Source notes listing assigned chapter | 1420 |
-| Passage-reviewed mappings recorded | 1143 |
+| Passage-reviewed mappings recorded | 1145 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -43,11 +43,11 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `scalable-oversight-and-adversarial-ai-control` | 11 | 11 | 11 | 11 | 11 | argument | eligible for support review |
 | `human-intent-as-a-formal-input` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `human-factors-and-meaningful-control-in-oversight` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
-| `human-ai-communication-persuasion-and-epistemic-security` | 6 | 3 | 6 | 6 | 0 | argument | passage review required before source-derived promotion |
+| `human-ai-communication-persuasion-and-epistemic-security` | 6 | 3 | 6 | 6 | 1 | argument | passage review required before source-derived promotion |
 | `constitutional-alignment-substrate` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
 | `moral-uncertainty-and-value-conflict` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
-| `governed-objective-formation-value-learning-and-goal-integrity` | 5 | 4 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
+| `governed-objective-formation-value-learning-and-goal-integrity` | 5 | 4 | 5 | 5 | 1 | argument | passage review required before source-derived promotion |
 | `institutions-international-coordination-and-public-legitimacy` | 9 | 5 | 9 | 9 | 3 | argument | passage review required before source-derived promotion |
 | `societal-resilience-and-misuse-defense` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `stable-capability-fields` | 12 | 10 | 12 | 12 | 10 | argument | passage review required before source-derived promotion |
@@ -765,7 +765,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_meaningful_human_control_actionable_2022` | mapped | note present | chapter listed | passage-reviewed |
 | `human-factors-and-meaningful-control-in-oversight.core` | `human-factors-and-meaningful-control-in-oversight` | `ext_agentic_oversight_practice_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `talos` | unmapped | note present | chapter listed | not passage-reviewed |
-| `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `ext_conversational_persuasion_gpt4_2025` | mapped | note present | chapter listed | not passage-reviewed |
+| `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `ext_conversational_persuasion_gpt4_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `ext_anthropic_model_persuasiveness_2024` | mapped | note present | chapter listed | not passage-reviewed |
 | `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `ext_commercial_persuasion_ai_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `human-ai-communication-persuasion-and-epistemic-security.core` | `human-ai-communication-persuasion-and-epistemic-security` | `ext_cultural_alignment_llms_2024` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -808,7 +808,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ext_taking_ai_welfare_seriously_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `alignment_field` | unmapped | note present | chapter listed | not passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_cooperative_inverse_rl_2016` | mapped | note present | chapter listed | not passage-reviewed |
-| `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_goal_misgeneralization_2022` | mapped | note present | chapter listed | not passage-reviewed |
+| `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_goal_misgeneralization_2022` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_learned_optimization_risks_2019` | mapped | note present | chapter listed | not passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_emergent_misalignment_reward_hacking_2025` | mapped | note present | chapter listed | not passage-reviewed |
 | `institutions-international-coordination-and-public-legitimacy.core` | `institutions-international-coordination-and-public-legitimacy` | `coherence_exchange` | unmapped | note present | chapter listed | not passage-reviewed |

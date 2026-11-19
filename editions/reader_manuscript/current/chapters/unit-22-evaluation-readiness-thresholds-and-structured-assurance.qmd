@@ -108,15 +108,17 @@ are not added to task counts. A system that gains one point by
 using ten times the resources has made a different trade than its headline
 suggests.
 
-A toy batch makes the distinction concrete. Ten tasks are eligible. The
-candidate attempts eight and declines two. Six attempts are confirmed correct,
-one is wrong, and one cannot be graded because the instrument cannot inspect
-a required external state. Attempt coverage is eight of ten. Accuracy among
-the seven graded attempts is six of seven; verified yield among attempts is
-six of eight, and among eligible tasks it is six of ten. The ungraded attempt
-remains unresolved. Whether the two refusals were appropriate needs a separate
-judgment against their reasons and the contract. These invented counts do not
-establish calibration, safe release, or useful refusal.
+Ten tasks are eligible. The candidate attempts eight and declines two. Six
+attempts are confirmed correct, one is wrong, and one remains ungraded because
+the instrument could not inspect the external state. Before checking the
+answer, calculate accuracy among graded attempts, verified yield among
+attempts, and verified yield among eligible tasks.
+
+The answers are **6/7, 6/8, and 6/10**. Attempt coverage is **8/10**. If a
+later observation verifies the missing attempt as correct, the three rates
+become 7/8, 7/8 and 7/10. Recovery of that observation can change eligibility
+when a declared yield floor lies between 6/10 and 7/10. Whether the two
+refusals were appropriate remains a separate decision.
 
 ## Calibration, Abstention, and Coverage
 
@@ -503,6 +505,24 @@ one such defeater. A safety case that records only supporting evidence is a
 sales document.
 
 ## Hazards Come Before Evidence Shopping
+
+### Two Reports and One Missing Observation
+
+```{mermaid}
+flowchart LR
+    C["Cached manifest for candidate B"] --> R["Build report"]
+    C --> D["Dashboard"]
+    T["Read of the served artifact"] --> V["Observed revision and bytes"]
+```
+
+The build report and dashboard share the same cached manifest. They can still
+describe the build when the target read is missing. The claim that candidate
+B is currently served remains open. If the read comes from a staging endpoint
+or observes revision A, it still leaves the production candidate B
+unverified. Ask an observer to read the intended endpoint and verify the
+revision and content digest. The release reviewer can continue reviewing the
+build, but publication under a policy that requires a current target
+observation waits for that evidence.
 
 An assurance process should begin by identifying unacceptable outcomes and
 control paths, not by arranging whatever evidence already exists into a

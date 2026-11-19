@@ -73,6 +73,12 @@ can survive correction of an overbroad one.
 
 ## Verification Starts With Obligations
 
+After recovering the gantry record, compare the note with the stop event and
+the available sensor trace. That comparison can support the observed
+sequence. A causal claim that the controller safely detected oscillation
+calls for a different observation that establishes what triggered the stop.
+If the decisive instrument was missing, keep that causal question open.
+
 A verification program begins by asking what could make a claim wrong or
 misleading for its intended consumer. It does not begin with whichever checker
 is convenient.
@@ -104,6 +110,27 @@ reduce every question to prose scoring. The claim determines the obligations;
 the obligations select the routes.
 
 ## Verification Bandwidth Is Qualified Capacity
+
+### What the Maze Verifier Must Solve
+
+A maze specialist returns a board with marked squares. Decide what was
+promised before choosing a check.
+
+1. For a **legal path**, check the start and goal, legal adjacent steps, and
+   absence of repeated cells. For a marked board, require the supplied path
+   to cover exactly the marks. An extra dead-end branch then fails the check.
+2. For a **shortest legal path**, also compare its length with a trusted
+   shortest distance for the same maze. Breadth-first search can compute that
+   distance in an unweighted maze and recover a shortest path in the same
+   search. Charge that work to the verified specialist route. If the consumer
+   pays for that search per instance, it can use the resulting path directly.
+3. For **agreement with a chosen label**, compare against the dataset's
+   exact reference path. An equally short path can fail this last check when
+   the maze has multiple shortest paths.
+
+Ask who supplies the reference distance and how the consumer checks its
+identity. A legal route through the maze and a label match answer different
+questions. [CRAM benchmark caveats](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#cram-puzzle-benchmark).
 
 Verification bandwidth is not the number of tokens spent criticizing an
 answer. It is the claim-specific capacity to perform the checks that matter
