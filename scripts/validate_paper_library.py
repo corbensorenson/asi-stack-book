@@ -9,7 +9,7 @@ import html
 import re
 import sys
 from pathlib import Path
-from urllib.parse import urlsplit
+from urllib.parse import unquote, urlsplit
 
 from sync_paper_library import MANIFEST, RECEIPTS, STRUCTURE, load_json, synchronize
 
@@ -90,10 +90,15 @@ def rendered_errors(site: Path) -> list[str]:
 
     for page in html_pages:
         page_text = page.read_text(encoding="utf-8", errors="ignore")
+        ids = set(re.findall(r'\bid="([^"]+)"', page_text))
         for raw_href in HREF_RE.findall(page_text):
             href = html.unescape(raw_href)
             parsed = urlsplit(href)
-            if parsed.scheme or parsed.netloc or href.startswith(("#", "/")):
+            if href.startswith("#"):
+                if parsed.fragment and unquote(parsed.fragment) not in ids:
+                    errors.append(f"{page.relative_to(site)} has a broken local fragment: {href}")
+                continue
+            if parsed.scheme or parsed.netloc or href.startswith("/"):
                 continue
             if parsed.path.endswith(".qmd"):
                 errors.append(f"{page.relative_to(site)} leaks a source-format .qmd link: {href}")

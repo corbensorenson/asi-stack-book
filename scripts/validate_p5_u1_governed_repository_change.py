@@ -230,6 +230,22 @@ def main() -> None:
         elif stable_projection(load(replay)) != stable_projection(tracked):
             failures.append("tracked result differs from fresh replay outside host-timing fields")
 
+        unrelated = Path(directory) / "unrelated"
+        unrelated.mkdir()
+        marker = unrelated / "keep.txt"
+        marker.write_text("unrelated workspace", encoding="utf-8")
+        rejected = subprocess.run(
+            [sys.executable, str(RUNNER), "--workspace", str(unrelated)],
+            cwd=ROOT,
+            text=True,
+            capture_output=True,
+            timeout=10,
+        )
+        if (rejected.returncode != 2 or "Workspace already exists" not in rejected.stderr
+                or not marker.is_file() or marker.read_text(encoding="utf-8") != "unrelated workspace"
+                or list(unrelated.iterdir()) != [marker]):
+            failures.append("runner did not preserve an existing unrelated workspace")
+
     report = REPORT.read_text(encoding="utf-8")
     for phrase in (
         "P5-U1",

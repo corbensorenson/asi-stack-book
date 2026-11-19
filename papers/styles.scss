@@ -23,3 +23,33 @@ table {
 code {
   overflow-wrap: anywhere;
 }
+
+/* Keep the page in one horizontal viewport. Wide manuscript tables can
+   scroll within their own labeled, keyboard-operable region. */
+main.content, main.content section {
+  min-inline-size: 0;
+  overflow-wrap: anywhere;
+}
+
+.paper-table, main.content pre {
+  max-inline-size: 100%;
+  overflow-x: auto;
+}
+
+.paper-table:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+main.content :is(img, svg) {
+  max-inline-size: 100%;
+}
+
+.navbar-brand {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+main.content :not(pre) > code {
+  white-space: normal;
+}

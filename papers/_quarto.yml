@@ -155,6 +155,8 @@ format:
       - cosmo
       - styles.scss
     toc: true
+    filters:
+      - manuscript-presentation.lua
     include-after-body:
       - search-navigation.html
     link-external-newwindow: true

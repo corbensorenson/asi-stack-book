@@ -392,6 +392,8 @@ def expected_quarto_config(records: list[dict]) -> str:
             "      - cosmo",
             "      - styles.scss",
             "    toc: true",
+            "    filters:",
+            "      - manuscript-presentation.lua",
             "    include-after-body:",
             "      - search-navigation.html",
             "    link-external-newwindow: true",

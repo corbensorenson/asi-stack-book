@@ -33,6 +33,12 @@ separate admissible record establishes the stop, the narrower stop observation
 can survive. Missing sensing does not automatically show that the controller
 failed to stop; it limits what can be inferred about coverage and detection.
 
+The review reconciles the `Gantry-08` coverage field with the interval log
+and discovers the missing stream. Narrow the submitted sentence and
+supersede the older draft. Notify the editor and the owner of any release
+candidate that uses it. If the old wording already reached readers, link its
+correction visibly where it appeared.
+
 A repaired note could say: “This recorded run stopped after the observed
 oscillation. One sensor stream was unavailable during the final interval. The
 record does not establish complete trial coverage or safe detection, and the

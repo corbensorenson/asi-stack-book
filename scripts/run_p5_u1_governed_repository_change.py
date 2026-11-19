@@ -9,7 +9,7 @@ import json
 import os
 from pathlib import Path
 import resource
-import shutil
+import tempfile
 import subprocess
 import time
 from typing import Any
@@ -334,14 +334,21 @@ def governance_rent(trials: list[dict[str, Any]]) -> dict[str, Any]:
 def execute(workspace: Path) -> dict[str, Any]:
     design = json.loads(DESIGN.read_text(encoding="utf-8"))
     commit = design["task"]["pre_fix_commit"]
-    pre_fix_match = all(old_bytes(commit, relative) for relative in SOURCE_FILES)
+    try:
+        pre_fix_match = all(old_bytes(commit, relative) for relative in SOURCE_FILES)
+    except subprocess.CalledProcessError as error:
+        raise ValueError(
+            f"Historical input {commit} is unavailable. Run from a Git clone with the "
+            "repository history. Fetch more history if the clone is shallow."
+        ) from error
     current_fix = (
         GENERATOR_FIX in (ROOT / GENERATOR).read_text(encoding="utf-8")
         and FIX_LINE in (ROOT / CONFIG).read_text(encoding="utf-8")
     )
-    if workspace.exists():
-        shutil.rmtree(workspace)
-    workspace.mkdir(parents=True)
+    try:
+        workspace.mkdir(parents=True)
+    except FileExistsError as error:
+        raise ValueError(f"Workspace already exists: {workspace}. Choose a new path.") from error
     trials = [
         run_trial(workspace, design, route, path)
         for route in design["routes"]
@@ -389,12 +396,20 @@ def execute(workspace: Path) -> dict[str, Any]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--workspace", type=Path, default=ROOT / "build/p5_u1/latest")
+    parser.add_argument("--workspace", type=Path, help="New workspace directory. Existing paths are refused.")
     parser.add_argument("--output", type=Path)
     parser.add_argument("--write-tracked-result", action="store_true")
     args = parser.parse_args()
-    output = TRACKED_RESULT if args.write_tracked_result else (args.output or args.workspace / "result.json")
-    result = execute(args.workspace)
+    workspace = args.workspace
+    if workspace is None:
+        run_root = ROOT / "build" / "p5_u1"
+        run_root.mkdir(parents=True, exist_ok=True)
+        workspace = Path(tempfile.mkdtemp(prefix="run-", dir=run_root)) / "workspace"
+    output = TRACKED_RESULT if args.write_tracked_result else (args.output or workspace / "result.json")
+    try:
+        result = execute(workspace)
+    except ValueError as error:
+        parser.exit(2, f"{error}\n")
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(result, indent=2) + "\n", encoding="utf-8")
     print(f"P5-U1 completed {result['trial_count']} trials; result: {output}")

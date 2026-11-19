@@ -520,9 +520,12 @@ describe the build when the target read is missing. The claim that candidate
 B is currently served remains open. If the read comes from a staging endpoint
 or observes revision A, it still leaves the production candidate B
 unverified. Ask an observer to read the intended endpoint and verify the
-revision and content digest. The release reviewer can continue reviewing the
-build, but publication under a policy that requires a current target
-observation waits for that evidence.
+revision and content digest. Review and authorize the exact tested artifact B. Permit its bounded
+deployment, then read the intended endpoint. Declare B current after the
+endpoint serves B with the expected bytes. A successful upload while the
+endpoint still serves A establishes the upload and leaves propagation open.
+If B appears with unexpected bytes, open a discrepancy. If the target cannot
+be read, leave its state unknown. [Follow the recovery decision in Unit 17](unit-17-artifact-graphs-runtime-effects-and-operations.qmd#expected-effect-and-actual-effect-are-different-records).
 
 An assurance process should begin by identifying unacceptable outcomes and
 control paths, not by arranging whatever evidence already exists into a
@@ -825,39 +828,24 @@ decisions after material change.
 It would still refuse the sentence "the system is safe." Its output would be a
 bounded authority decision with evidence, residuals, expiry, and an appeal path.
 
-## The Strongest Objection
+## Which Decision Changes After the Read? {#the-strongest-objection}
 
-Evaluation suites and safety cases can become performative compliance. Once the
-required fields and tests are known, developers and models optimize the visible
-artifact. Reviewers face large graphs that diffuse responsibility. Novel
-failures occur outside the ontology.
+Candidate B is authorized and the upload passes. The target still shows A.
+Choose which claims to leave open. When the endpoint later serves B with
+the expected bytes, record that observation and resolve the propagation
+obligation. Evidence from the upload alone leaves that decision open.
 
-The objection is correct unless the system remains adversarial and decision-
-focused. Cases should be as small as the claim permits. Raw evidence and
-countercases must remain accessible. Independent reviewers need authority to
-reject the framing, not only inspect field completeness. Incident evidence must
-be able to defeat a previously accepted branch.
+If the independent observation is missing, keep the build review available
+and retain the unresolved target-state obligation. This is how an assurance
+decision stays revisable as evidence arrives.
 
-Some uncertainty cannot be compiled away. The architecture should expose that
-limit and narrow operation, not create more confident prose.
+[]{#evidence-that-would-change-the-conclusion}
 
-## Evidence That Would Change the Conclusion
-
-The integrated layer should contract if competent independent checklist review
-matches its detection, staleness response, quarantine, recovery, and decision
-quality at lower cost. It should also narrow if assurance graphs reduce reviewer
-comprehension, increase false confidence, or create exploitable standardized
-surfaces without catching more consequential defects.
-
-Support would require preregistered natural and adversarial campaigns across
-current models, tools, workloads, organizations, and risk levels; qualified
-instruments; hidden holdouts; complete denominators; independent evaluators;
-real safeguards; causal interventions; incidents; delayed outcomes; rollback
-and remedy; external reproduction; transfer; and full human and compute costs.
-
-Formal proofs can establish finite lifecycle and non-substitution properties.
-They cannot prove construct validity, strategic honesty, safeguard efficacy,
-acceptable risk, content truth, or institutional legitimacy.
+Give the reviewer a way to challenge the scope of the case and inspect
+the underlying evidence. If a competent checklist and an independent read
+produce equivalent decisions at lower cost, use them. Finite proofs can
+preserve the order and scope of the record. A prospective comparison must
+still examine whether the instruments, safeguards and decisions work.
 
 ## What This Establishes
 

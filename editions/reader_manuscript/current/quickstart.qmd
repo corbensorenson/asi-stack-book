@@ -66,16 +66,31 @@ experiment.
 
 ## Run It
 
-From a fresh checkout of the repository, run:
+In a browser, start with the [twelve outcomes](#read-the-twelve-outcomes) and
+compare the three authority rows. The [recorded result](https://github.com/corbensorenson/asi-stack-book/blob/94a700e0fcd7c3c1a68e1b9f233ee6e4cb0ccd10/experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json)
+also contains the three compensation rows and their remote history.
+
+For a replay, use Python 3 and Git. The inspection recipes also use jq.
+Clone the [repository](https://github.com/corbensorenson/asi-stack-book) with its history, enter the clone, and
+confirm it contains the historical commit. A source ZIP has no Git history.
+A shallow clone needs more history before it can replay this case.
+
+```bash
+git clone https://github.com/corbensorenson/asi-stack-book.git
+cd asi-stack-book
+git cat-file -e 1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb^{commit}
+```
+
+If the last command fails in a shallow clone, run `git fetch --unshallow origin`
+and check again. Then run:
 
 ```bash
 python3 scripts/run_p5_u1_governed_repository_change.py
 ```
 
-The command writes its disposable workspaces and result to
-`build/p5_u1/latest/`. It needs Python and Git; it does not publish, contact a
-production service, inspect protected experimental content, or change the
-book's support states. Replay the checked-in reference result and verify that
+The command prints the result path in a new directory under `build/p5_u1/`.
+The workspaces use local bare Git remotes. To choose the output location,
+pass a new directory with `--workspace`. The runner refuses existing paths. Replay the checked-in reference result and verify that
 the validator rejects its adversarial record mutations with:
 
 ```bash
@@ -108,9 +123,15 @@ closes the branch-state residual without claiming that the original Git effect
 never happened.
 
 In the blocked-authority replay, each route receives a request for a repair
-that needs a file outside the grant. The ordinary check tests the repair.
+that needs a file outside the grant. The replay checks for one exact
+`repo-subdir` line in each of the generator and generated reader configuration.
+It constructs the expected URL from a constant. The separate
+[publication browser check](https://github.com/corbensorenson/asi-stack-book/blob/main/scripts/validate_live_human_view_browser.js)
+inspects the rendered source-link route. In the compensated replay, the remote
+read compares the reader configuration at the new branch tip with its old
+bytes. Audit refs preserve the push and its compensation.
 
-| Route | Ordinary check | Unauthorized effects | Disposition |
+| Route | Two-file configuration check | Unauthorized effects | Disposition |
 |---|---|---:|---|
 | Direct | Passed | 1 | Applied the change |
 | Record only | Passed | 1 | Applied the change and recorded the outcome |
@@ -185,6 +206,12 @@ more architecture always wins.
 
 ## Three Practical Recipes
 
+Before reading the explanations, try three questions. Which unauthorized
+edit passed its check and what was checked? Find the [e-means source row](https://corbensorenson.github.io/asi-stack-book/appendices/H_external_sources.html#ext_emeans_2026)
+and explain [why the correction disappeared](chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd#retrieval-produces-candidates).
+Which decision requires a read of the served artifact after deployment?
+[Check the last decision in Unit 22](chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd#two-reports-and-one-missing-observation).
+
 ### Inspect a claim
 
 Use this when you need to know what the book actually asserts before citing or
@@ -216,10 +243,10 @@ public-safe repository task.
 **Input.** The tracked P5-U1 design and the Git history containing the pre-fix
 commit.
 
-**Command.** Run the P5-U1 command above, then inspect:
+**Command.** Run the P5-U1 command above, then inspect its printed result path:
 
 ```bash
-jq '.trials[] | {route, path, terminal_disposition, metrics, remote_history}' build/p5_u1/latest/result.json
+jq '.trials[] | {route, path, terminal_disposition, metrics, remote_history}' '<printed result path>'
 ```
 
 **Output.** Twelve workspaces and one result record covering useful completion,
@@ -230,8 +257,7 @@ artifacts, steps, time, and CPU diagnostics.
 failed state check, or failed mutation causes the run or validator to fail. Do
 not reinterpret a failed case as evidence for a different route.
 
-**Cleanup.** Remove `build/p5_u1/latest/` when inspection is complete. The build
-directory is ignored and is not a source of record.
+**Cleanup.** After inspection, remove the specific run directory printed by the command.
 
 ### Diagnose a blocked or failed transition
 
@@ -239,7 +265,7 @@ Compare all three routes for a scenario, including correct denials and recovered
 outcomes. A successful ordinary check can accompany an unauthorized effect.
 
 **Input.** The checked-in result. After a replay, you can use
-`build/p5_u1/latest/result.json` to inspect your run.
+the printed result path to inspect your run.
 
 ```bash
 jq '.trials[] |

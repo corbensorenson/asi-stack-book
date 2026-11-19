@@ -19,7 +19,7 @@ and [competent conventional alternatives](docs/defended_contribution_prior_art_p
 
 | Product | Best for | Open |
 |---|---|---|
-| Narrative book | An independently authored 26-unit Human Reader, ready for author review. | [Human Reader](https://corbensorenson.github.io/asi-stack-book/reader/) |
+| Narrative book | An independently authored 26-unit Human Reader, with editorial review open. | [Human Reader](https://corbensorenson.github.io/asi-stack-book/reader/) |
 | Architecture reference | Interfaces, invariants, protocols, tests, proofs, and implementation horizons. | [Architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Claims, support states, sources, tests, proofs, releases, and residuals. | [Evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
 | Original paper library | Corben's digest-bound papers and architecture sources, with links to the chapters they informed. | [Read the original papers](https://corbensorenson.github.io/asi-stack-book/papers/) |

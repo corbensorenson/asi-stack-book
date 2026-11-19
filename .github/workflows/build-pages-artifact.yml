@@ -72,6 +72,8 @@ jobs:
       - name: Build and validate canonical public status
         run: |
           python3 scripts/build_canonical_public_status.py --output _site/status/canonical-public-status.json
+          python3 scripts/finalize_public_reading_routes.py --site _site
+          python3 scripts/finalize_public_reading_routes.py --site _site --check
           python3 scripts/build_product_projections.py --output _site/products --status _site/status/canonical-public-status.json
           python3 scripts/build_release_channels.py --site _site
           python3 scripts/validate_product_projections.py --site _site
@@ -80,6 +82,11 @@ jobs:
 
       - name: Validate live Human view
         run: python3 scripts/validate_live_human_view.py
+
+      - name: Check public reading routes
+        env:
+          NODE_PATH: ${{ github.workspace }}/ci/browser/node_modules
+        run: node scripts/validate_public_reading_routes_browser.js _site
 
       - name: Browser-smoke live Human view
         env:

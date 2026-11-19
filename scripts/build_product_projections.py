@@ -28,6 +28,7 @@ PROJECTION_SCHEMA = ROOT / "schemas/product_projection_manifest.schema.json"
 STATUS_SCHEMA = ROOT / "schemas/canonical_public_status.schema.json"
 SPINE_SCHEMA = ROOT / "schemas/narrative_product_spine.schema.json"
 INVENTORY = ROOT / "sources/source_inventory.json"
+P5_U1_RESULT = "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json"
 
 EVIDENCE_GROUPS = [
     {
@@ -69,6 +70,7 @@ EVIDENCE_GROUPS = [
             ["Proof manifest", "proofs/proof_manifest.json"],
             ["Governed workflow result", "experiments/governed_repository_change_slice/results/2026-07-10-local.json"],
             ["Trace-invariant result", "experiments/governed_trace_invariants/results/2026-07-10-local.json"],
+            ["P5-U1 recorded source-link repair", P5_U1_RESULT],
         ],
     },
     {
@@ -264,10 +266,10 @@ main {{ width:min(980px,calc(100% - 2rem)); margin:0 auto; padding:3rem 0 5rem; 
 h1 {{ font-size:clamp(2rem,6vw,4rem); line-height:1.02; margin:.3rem 0 1rem; }} h2 {{ margin-top:2.4rem; }}
 a {{ color:var(--accent); }} .eyebrow {{ color:var(--muted); text-transform:uppercase; letter-spacing:.09em; font-weight:700; font-size:.78rem; }}
 .lead {{ color:var(--muted); font-size:1.15rem; max-width:72ch; }} .status {{ border-left:.3rem solid var(--accent); padding:.65rem 1rem; background:color-mix(in srgb,var(--accent) 8%,transparent); }}
-.grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:1rem; }}
+.grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:1rem; }}
 .card {{ border:1px solid var(--rule); border-radius:.6rem; padding:1rem; }} .card h3 {{ margin:.1rem 0 .55rem; }}
 .meta {{ color:var(--muted); font-size:.92rem; }} nav {{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }}
-code {{ overflow-wrap:anywhere; }}
+main {{ overflow-wrap:anywhere; }}
 </style>
 </head>
 <body><main>
@@ -424,7 +426,7 @@ def build_narrative(
         '<p class="status"><strong>Current Human Reader:</strong> '
         f'<a href="../../reader/">Read the independently authored {manifest["current_reader"]["unit_count"]}-unit book</a>, '
         f'routed to all {manifest["current_reader"]["owner_route_count"]} technical owners. '
-        'HTML is available; the manuscript remains ready for author review. '
+        'HTML is available and editorial review remains open. '
         'This does not approve EPUB, PDF or audio.</p>'
         '<h2>Historical candidate navigation</h2>'
         '<p class="status"><strong>Status:</strong> historical generated twenty-two-unit candidate route. '
@@ -566,6 +568,22 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
     body = (
         f'<p class="status"><strong>Current status:</strong> {status["counts"]["chapters"]} chapters; '
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
+        '<h2>Follow a claim into its evidence</h2>'
+        '<ul><li><strong>Authority at a write.</strong> Read the '
+        '<a href="../../appendices/C_claim_evidence_matrix.html#system-boundaries-and-authority.core">authority claim</a>, '
+        f'then open the <a href="artifacts/{P5_U1_RESULT}">twelve replay records</a>. '
+        'The direct and record-only routes pass the configuration check while admitting an out-of-scope edit. '
+        'The governed denial answers a mechanism question. A competent scoped writer is the open comparison.</li>'
+        '<li><strong>Claim custody.</strong> Compare the '
+        '<a href="../../appendices/C_claim_evidence_matrix.html#evidence-states-and-claim-discipline.core">support discipline claim</a> '
+        'with the <a href="artifacts/claim_decisions/v1_x_core_claim_dispositions.json">recorded core dispositions</a>. '
+        'The ledger identifies what was decided. Whether those joins improve independent review remains open.</li>'
+        '<li><strong>Observed effect and recovery.</strong> Start with '
+        '<a href="../../appendices/C_claim_evidence_matrix.html#artifact-graphs-audit-logs-and-replay.core">the artifact claim</a>. '
+        'Follow the <a href="../../chapters/integrated-reference-architecture.html#p5-stateful-service-successor">local service trial</a> '
+        'and the <a href="../../reader/quickstart.html#read-the-twelve-outcomes">three compensation paths</a>. '
+        'A read of the named target and the retained Git history answer different questions. '
+        'Recovery across other services remains open.</li></ul>'
         + "".join(sections)
     )
     write_text(product_dir / "index.html",

@@ -381,6 +381,10 @@ be tested under a slightly less artificial condition.
 
 ## Effect Observation and Recovery
 
+Give the planned instrumented run the teaching identifier `Gantry-08`.
+The observer hands off a controller identity and a slot for the physical
+trace. Leave sensor coverage provisional until the run returns.
+
 The configuration hash and simulator result identify the candidate and its
 test environment. Reserve a separate observation slot for the physical
 trial's sensor trace and stop event. Those are the records Unit 11 will

@@ -48,7 +48,9 @@
           badge.className = "asi-search-kind search-result-section";
           link.prepend(badge);
         }
-        if (badge.textContent !== label) badge.textContent = label;
+        const scopedResearchLink = target.searchParams.get("view") === "ai";
+        const badgeText = scopedResearchLink ? label + " · Opens AI view" : label;
+        if (badge.textContent !== badgeText) badge.textContent = badgeText;
       });
     };
     let queued = false;

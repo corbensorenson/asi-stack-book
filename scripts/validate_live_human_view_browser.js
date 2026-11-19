@@ -491,6 +491,14 @@ async function validateReaderPage(page, fileUrl, unit, viewportName) {
   if (!metrics.research_href || !metrics.research_link_label) throw new Error(`${unit.unit_id}: research-edition return link is inaccessible.`);
   if (metrics.current_text !== "Human Reader") throw new Error(`${unit.unit_id}: Human Reader current-edition state is missing.`);
   if (!metrics.title.includes(unit.title)) throw new Error(`${unit.unit_id}: rendered title differs from the crosswalk.`);
+  const expectedSource = "https://github.com/corbensorenson/asi-stack-book/blob/main/editions/reader_manuscript/current/"
+    + unit.public_path.replace(/^reader\//, "").replace(/\.html$/, ".qmd");
+  const sourceLinks = await page.locator('.toc-actions a').evaluateAll(
+    (links) => links.filter(link => link.textContent.trim() === "View source").map(link => link.href)
+  );
+  if (sourceLinks.length === 0 || sourceLinks.some(href => href !== expectedSource)) {
+    throw new Error(`${unit.unit_id}: rendered View source link does not match its manuscript path.`);
+  }
   const status = page.locator("details.research-status");
   if (await status.count() !== 1) throw new Error(`${unit.unit_id}: research status disclosure is missing or duplicated.`);
   const summary = status.locator(":scope > summary");

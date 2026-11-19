@@ -629,7 +629,11 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
     margin: 0.75rem auto 1rem;
     justify-content: flex-start;
   }
+  .nav-footer { flex-wrap: wrap; }
+  .nav-footer .nav-footer-center { flex: 1 1 100%; min-width: 0; }
+  .nav-footer .toc-actions a { white-space: normal; overflow-wrap: anywhere; }
   .asi-edition-switch__label { flex: 1 1 auto; }
+  .asi-edition-switch :is(a, span) { max-width: 100%; white-space: normal; overflow-wrap: anywhere; }
   .page-navigation { flex-direction: column; gap: 0.75rem; align-items: stretch; }
   .page-navigation .nav-page { width: 100%; max-width: 100%; margin: 0; }
   .page-navigation .pagination-link { min-width: 0; max-width: 100%; }
@@ -689,13 +693,13 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
     index_lines.extend(concept_finder(records, structure["site_url"]))
     index_lines.extend(["## Chapters in Order", "",
                         "Pacing uses word-like tokens from manuscript source. Headings, tables, and link destinations count. Front matter, comments, fenced blocks, and generated includes are excluded.",
-                        "", "| Unit | Chapter | State | Source count |", "|---:|---|---|---:|"])
+                        "", "| Unit | Chapter | Draft pacing | Source count |", "|---:|---|---|---:|"])
     for record in records:
         title = record["title"]
         if record["state"] != "not_started":
             title = f"[{title}]({record['source_file']})"
         state_label = {
-            "target_length_reached_ready_for_author_review": "Ready for author review",
+            "target_length_reached_ready_for_author_review": "In pacing range",
             "drafting": "Drafting",
             "not_started": "Not started",
         }[record["state"]]

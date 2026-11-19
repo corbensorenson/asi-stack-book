@@ -389,7 +389,7 @@
     const nextMode = normalizeMode(mode);
     document.documentElement.setAttribute("data-asi-reading-mode", nextMode);
     try {
-      window.localStorage.setItem(storageKey, nextMode);
+      if (options.persist !== false) window.localStorage.setItem(storageKey, nextMode);
     } catch (_) {
       /* localStorage may be disabled; the page-level state still applies. */
     }
@@ -506,7 +506,24 @@
     markSupportBoundaryPhrases();
     applyReaderOverlays();
     insertToggle();
-    setMode(initialMode());
+    setMode(initialMode(), { persist: false });
+    revealEvidenceTarget();
   });
+
+  function revealEvidenceTarget() {
+    const target = document.getElementById(targetIdFromHash(window.location.hash));
+    if (!target?.closest('[data-asi-live-section="true"]')) return;
+    if (document.documentElement.getAttribute("data-asi-reading-mode") !== humanMode) return;
+    setMode(aiMode, { persist: false });
+    requestAnimationFrame(() => {
+      target.scrollIntoView();
+      const heading = target.matches("h2,h3,h4") ? target : target.querySelector("h2,h3,h4");
+      if (heading) {
+        heading.setAttribute("tabindex", "-1");
+        heading.focus({ preventScroll: true });
+      }
+    });
+  }
+  window.addEventListener("hashchange", revealEvidenceTarget);
 })();
 </script>

@@ -217,7 +217,7 @@ into readiness.
 
 ## Alternatives Need a Denominator
 
-The planner reads the oscillation and stop record under a diagnosis-only
+The planner reads the `Gantry-08` oscillation and stop record under a diagnosis-only
 grant. Inspect the recorded trace
 and reproduce the discrepancy in simulation. A changed payload and another
 physical run require a fresh grant and test conditions. Pass the bounded

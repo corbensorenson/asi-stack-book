@@ -803,8 +803,10 @@ A hundred disconnected fixtures do not substitute for one effect-bearing trace.
 The quickstart's blocked-authority replay begins with a grant to modify the
 configuration generator. The source-link repair needs edits to the generator
 and the reader configuration. The record-only route applies both edits and
-logs the result. The ordinary check confirms the two-file repair. The trial
-comparison records one effect outside the grant. The fully governed route
+logs the result. The ordinary check finds the expected line in both files.
+The authored comparison counts the extra configuration edit as one effect
+outside the grant. The broken public source link was the original observation.
+Verifying the served link after a deploy requires a separate browser check. The fully governed route
 checks file scope before mutation and compares both files with their original
 bytes after denying the request. [Quickstart outcomes](../quickstart.qmd#read-the-twelve-outcomes) · [Replay implementation](https://github.com/corbensorenson/asi-stack-book/blob/a06810790c08d9670461a3bbed9f547b294cf6b5/scripts/run_p5_u1_governed_repository_change.py)
 
@@ -813,13 +815,14 @@ bytes after denying the request. [Quickstart outcomes](../quickstart.qmd#read-th
   isolates differences in admission, observation and recovery.
 - **P5 local multi-process reference slice.** Eight of eight local cases exercised the
   state-and-effect contract against their expected dispositions.
+  [Local reference slice](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html#p5-local-multi-process-reference-slice).
 - **P5 stateful-service successor.** Seven of seven local cases exercised
   the stronger service contract with a two-parameter predictor and
   bias-corrected Adam state. The recovery checks reject a weights-only
   rollback, exercise nine crash classes, and reconcile an owned outbox
   after a localhost outage. A separate local HTTP sink commits one effect
   and deduplicates the retry under this protocol. A separate process observes
-  effects. [Integrated reference and slice reports](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html#chapter-status)
+  effects. [Integrated reference and slice reports](https://corbensorenson.github.io/asi-stack-book/chapters/integrated-reference-architecture.html#p5-stateful-service-successor)
 
 A file-scoped writing tool and an independent read of the two files can
 enforce and check the quickstart boundary in a simple workflow. The harder
@@ -856,6 +859,21 @@ workflow with competent authorization and release checks would fail. It is not
 a general superiority claim.
 
 ## The Strongest Simpler Baseline
+
+For the two-file case, choose a scoped writer, current approval and an
+independent read of the two touched files if they cover the obligation. Now
+suppose a package sink receives a delayed retry after the original effect
+and after the grant changes. What may it do?
+
+If an ordinary gateway binds the operation key to the original request and
+target, a separate read establishes the outcome, and current permission
+governs any new effect, return the existing disposition when disclosure is
+authorized. Use that smaller workflow if it carries those facts at lower
+total cost. If a handoff drops the operation key or current scope, hold the
+retry and give its unresolved outcome an owner. An explicit handoff contract
+earns its burden only if it preserves the missing join in practice. The
+direct and record-only trials isolate admission at the first write. Both
+omit what this competent baseline already supplies.
 
 The strongest alternative is a competent agent harness or workflow system with
 good tools, sandboxing, tests, human review, logs, and rollback. It may implement
