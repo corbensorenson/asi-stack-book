@@ -75,8 +75,8 @@ python3 scripts/run_p5_u1_governed_repository_change.py
 The command writes its disposable workspaces and result to
 `build/p5_u1/latest/`. It needs Python and Git; it does not publish, contact a
 production service, inspect protected experimental content, or change the
-book's support states. Validate the checked-in reference result and all seven
-adversarial record mutations with:
+book's support states. Replay the checked-in reference result and verify that
+the validator rejects its adversarial record mutations with:
 
 ```bash
 python3 scripts/validate_p5_u1_governed_repository_change.py
