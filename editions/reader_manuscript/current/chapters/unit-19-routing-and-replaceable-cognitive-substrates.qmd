@@ -321,6 +321,10 @@ owns the package contract, while this unit owns dispatch and substrate
 replacement. Neither an object format nor a link receipt establishes a working
 capability-preserving compiler.
 
+### Translate a prompt cache between models
+
+BridgeKV lets the larger model read the prompt and a smaller model generate from a translated cache. Compare all-small, translated, and all-large answers on the same cases. The reported 8B-to-1B speedup of 3.0× was measured against all-large on one A40. The 70B serving comparison was simulated. Test quality again because the small decoder chooses the output. [BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation](https://arxiv.org/pdf/2611.11761v1)
+
 ## Checkpoints Must Preserve More Than Weights
 
 Replacement often fails because a checkpoint is treated as a weight file.
@@ -500,6 +504,10 @@ exact source custody, a semantic compiler or action permission. A combined
 JEPA/H-Net model is a research possibility, not a result of this book or the
 reviewed papers. The [technical substrate owner](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
 keeps the primary references and adoption limits.
+
+### A fixed budget for learned byte boundaries
+
+H-Net learns where a byte sequence should change granularity. ByteFlow gives a related design a fixed budget of boundary positions. With two slots and three meaningful splits, which split disappears? Try recovering the controller identifier afterward. ByteFlow's three-run comparison swapped chunkers inside one 0.6B architecture. Its bits-per-byte result alone cannot establish identifier recovery in another language. [ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer](https://arxiv.org/html/2603.03583v1)
 
 ## Lookup Memory and Residual Routing Change the Kernel
 

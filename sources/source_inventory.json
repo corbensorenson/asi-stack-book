@@ -9871,5 +9871,243 @@
     "citation_label": "Chiatti, Matteucci and Schiaffonati (2026), Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Sections 3–5, especially Table 1 and the response options. The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective."
+  },
+  {
+    "id": "ext_correlated_errors_2025",
+    "title": "Correlated Errors in Large Language Models",
+    "priority": "external_literature",
+    "layer": "correlated_errors",
+    "chapter_targets": [
+      "verification-bandwidth-and-context-adequacy"
+    ],
+    "url": "https://arxiv.org/html/2506.07962v1",
+    "notes": "Compare the probability of matching wrong answers given joint failure with the probability of error given agreement.",
+    "source_type": "preprint",
+    "published": "2025-06-09",
+    "updated": "2025-06-09",
+    "citation_label": "Elliot Kim et al. (2025), Correlated Errors in Large Language Models",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "HELM paired-error analysis. This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter."
+  },
+  {
+    "id": "ext_optimistic_verifiers_2026",
+    "title": "Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle",
+    "priority": "external_literature",
+    "layer": "optimistic_verifiers",
+    "chapter_targets": [
+      "policy-optimization-and-learning-from-feedback"
+    ],
+    "url": "https://arxiv.org/html/2611.21538v1",
+    "notes": "Track a proxy reward against an exact process oracle over the same rollouts.",
+    "source_type": "preprint",
+    "published": "2026-11-16",
+    "updated": "2026-11-16",
+    "citation_label": "Arunkumar V et al. (2026), Optimistic Verifiers Get Hacked",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sufficiency comparison and replication. Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules."
+  },
+  {
+    "id": "ext_mirabench_2026",
+    "title": "MiraBench: Evaluating Action-Conditioned Reliability in Robotic World Models",
+    "priority": "external_literature",
+    "layer": "mirabench",
+    "chapter_targets": [
+      "governed-world-models-and-reality-grounding"
+    ],
+    "url": "https://arxiv.org/html/2605.29360v1",
+    "notes": "Pair predictions from the same initial scene under different commands, including an action expected to fail.",
+    "source_type": "preprint",
+    "published": "2026-05-28",
+    "updated": "2026-05-28",
+    "citation_label": "Tianzhuo Yang et al. (2026), MiraBench",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Action-following and optimism perturbation tests. Predicted episodes can expose errors in the simulator. Physical control needs separate closed-loop evidence."
+  },
+  {
+    "id": "ext_steering_nonidentifiability_2026",
+    "title": "On the Non-Identifiability of Steering Vectors in Large Language Models",
+    "priority": "external_literature",
+    "layer": "steering_nonidentifiability",
+    "chapter_targets": [
+      "white-box-evidence-interpretability-and-activation-governance"
+    ],
+    "url": "https://arxiv.org/html/2602.06801v4",
+    "notes": "Challenge the identity of a proposed steering direction using controlled perturbations and matched controls.",
+    "source_type": "preprint",
+    "published": "2026-02-06",
+    "updated": "2026-04-01",
+    "citation_label": "Sohan Venkatesh et al. (2026), On the Non-Identifiability of Steering Vectors in Large Language Models",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Figure 1 and finite-strength perturbation experiments. Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks."
+  },
+  {
+    "id": "ext_inference_joules_2026",
+    "title": "Where Do the Joules Go? Diagnosing Inference Energy Consumption",
+    "priority": "external_literature",
+    "layer": "inference_joules",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://arxiv.org/html/2601.22076v2",
+    "notes": "Meter GPU energy per request under the actual output-length and batching policy.",
+    "source_type": "preprint",
+    "published": "2026-01-29",
+    "updated": "2026-01-30",
+    "citation_label": "Jae-Won Chung et al. (2026), Where Do the Joules Go? Diagnosing Inference Energy Consumption",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Table 1, Qwen3-32B on one B200. The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions."
+  },
+  {
+    "id": "ext_expert_coupling_2026",
+    "title": "Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling",
+    "priority": "external_literature",
+    "layer": "expert_coupling",
+    "chapter_targets": [
+      "governed-model-training-distributed-optimization-and-scaling"
+    ],
+    "url": "https://arxiv.org/html/2610.09372v1",
+    "notes": "Co-locate frequently co-selected experts and send a token once to each device that hosts its selected experts.",
+    "source_type": "preprint",
+    "published": "2026-10-07",
+    "updated": "2026-10-07",
+    "citation_label": "Radha Gulhane et al. (2026), Expert Coupling in MoE Pretraining",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Megatron-LM placement and dispatch experiments. The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load."
+  },
+  {
+    "id": "ext_ai_skill_formation_2026",
+    "title": "How AI Impacts Skill Formation",
+    "priority": "external_literature",
+    "layer": "ai_skill_formation",
+    "chapter_targets": [
+      "ai-deployment-transition-distribution-and-human-agency"
+    ],
+    "url": "https://arxiv.org/html/2601.20245v2",
+    "notes": "Measure assisted completion and later unaided diagnosis for a comparable task.",
+    "source_type": "preprint",
+    "published": "2026-01-28",
+    "updated": "2026-02-01",
+    "citation_label": "Judy Hanwen Shen et al. (2026), How AI Impacts Skill Formation",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Randomized unfamiliar-library task and subsequent quiz. Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects."
+  },
+  {
+    "id": "ext_explore_then_commit_2026",
+    "title": "Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models",
+    "priority": "external_literature",
+    "layer": "explore_then_commit",
+    "chapter_targets": [
+      "scientific-discovery-and-experimental-governance"
+    ],
+    "url": "https://arxiv.org/html/2610.07620v1",
+    "notes": "Choose a discriminating probe, freeze the observations, and evaluate a fresh analyst's law and forecast.",
+    "source_type": "preprint",
+    "published": "2026-10-06",
+    "updated": "2026-10-06",
+    "citation_label": "Kautik Mandve et al. (2026), Explore, Then Commit",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "NewtonBench trials and coverage-sensitive analysis. The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring."
+  },
+  {
+    "id": "ext_structured_output_benchmark_2026",
+    "title": "The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models",
+    "priority": "external_literature",
+    "layer": "structured_output_benchmark",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/html/2604.25359v1",
+    "notes": "Score schema compliance and correctness against source evidence separately.",
+    "source_type": "preprint",
+    "published": "2026-04-28",
+    "updated": "2026-04-28",
+    "citation_label": "Abhinav Kumar Singh et al. (2026), The Structured Output Benchmark",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Source-normalized evaluation and exact leaf-value metric. All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities."
+  },
+  {
+    "id": "ext_agent_leaderboard_estimands_2026",
+    "title": "What Does an LLM-Agent Leaderboard Rank Actually Compare?",
+    "priority": "external_literature",
+    "layer": "agent_leaderboard_estimands",
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/html/2609.07785v1",
+    "notes": "Define a deployment mixture, a practical margin and an uncertainty rule before comparing releases.",
+    "source_type": "preprint",
+    "published": "2026-09-07",
+    "updated": "2026-09-07",
+    "citation_label": "Wei-Jung Huang (2026), What Does an LLM-Agent Leaderboard Rank Actually Compare?",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Figure 2 and pairwise decision procedure. Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open."
+  },
+  {
+    "id": "ext_byteflow_2026",
+    "title": "ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer",
+    "priority": "external_literature",
+    "layer": "byteflow",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/html/2603.03583v1",
+    "notes": "Use local coding-rate scores to select top-K boundary positions inside a fixed computation shape.",
+    "source_type": "preprint",
+    "published": "2026-03-03",
+    "updated": "2026-03-03",
+    "citation_label": "Chunyuan Deng et al. (2026), ByteFlow",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Section 4.4, Table 3. Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task."
+  },
+  {
+    "id": "ext_bridgekv_2026",
+    "title": "BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation",
+    "priority": "external_literature",
+    "layer": "bridgekv",
+    "chapter_targets": [
+      "fast-generation-architectures"
+    ],
+    "url": "https://arxiv.org/pdf/2611.11761v1",
+    "notes": "A large model processes the prompt, a learned map translates its attention cache, and a small model decodes.",
+    "source_type": "preprint",
+    "published": "2026-11-09",
+    "updated": "2026-11-09",
+    "citation_label": "Payman Behnam et al. (2026), BridgeKV",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Single-A40 measurements and separate serving simulation. The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix."
+  },
+  {
+    "id": "ext_comixkv_2026",
+    "title": "Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems",
+    "priority": "external_literature",
+    "layer": "comixkv",
+    "chapter_targets": [
+      "resource-economics-and-token-budgets"
+    ],
+    "url": "https://arxiv.org/html/2611.10096v1",
+    "notes": "Allocate cache precision jointly across agents and layers as new cache blocks are quantized.",
+    "source_type": "preprint",
+    "published": "2026-11-06",
+    "updated": "2026-11-06",
+    "citation_label": "Weizhong Huang et al. (2026), Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Figure 4, Qwen3-32B cost comparison. New allocations apply to newly quantized blocks. Aggregate accuracy and memory depend on the agents, workload and model."
+  },
+  {
+    "id": "ext_aligning_ai_teams_2026",
+    "title": "Aligning AI Teams",
+    "priority": "external_literature",
+    "layer": "aligning_ai_teams",
+    "chapter_targets": [
+      "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+    ],
+    "url": "https://arxiv.org/html/2611.17820v1",
+    "notes": "Compare team-wide responsibility assignments against group chat and a single agent on the same deliverable.",
+    "source_type": "preprint",
+    "published": "2026-11-13",
+    "updated": "2026-11-13",
+    "citation_label": "Siddarth Srinivasan et al. (2026), Aligning AI Teams",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Team interventions and per-task results. Results varied by model and task. Count work completed, adverse outcomes and total inference spent together."
   }
 ]

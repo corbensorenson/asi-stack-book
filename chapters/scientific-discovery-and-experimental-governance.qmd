@@ -4,7 +4,7 @@ chapter_id: "scientific-discovery-and-experimental-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "aletheia"
   - "ext_autonomous_lab_materials_2023"
@@ -14,6 +14,7 @@ primary_sources:
   - "answerability_atlas_synthesis"
   - "ext_test_time_memory_evolution_2026"
   - "ext_guidance_ttt_2026"
+  - "ext_explore_then_commit_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -30,11 +31,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 concept-complete argument-level manuscript |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-19 |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Passage review notes | Selected passage-review scope is recorded per mapping. |
-| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_coscientist_chemistry_2023`, `ext_ai_co_scientist_2025`, `answerability_atlas_synthesis`, `ext_test_time_memory_evolution_2026`, `ext_guidance_ttt_2026`; raw cache: `aletheia` |
+| Source loading state | source notes: `aletheia`, `ext_autonomous_lab_materials_2023`, `ext_ai_scientist_end_to_end_2026`, `ext_coscientist_chemistry_2023`, `ext_ai_co_scientist_2025`, `answerability_atlas_synthesis`, `ext_test_time_memory_evolution_2026`, `ext_guidance_ttt_2026`; raw cache: `aletheia`. Selected primary passages reviewed for `ext_explore_then_commit_2026`. |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -319,6 +320,12 @@ authority, or convert exploratory novelty into a supported conclusion.
 
 **Source grounding.** `aletheia` motivates claim-native dossiers, explicit unknowns, and verification lineage. `ext_autonomous_lab_materials_2023` supplies a bounded corrected case in which target identity, training overlap, attempted syntheses, and later reinterpretation materially affect what may be said. `ext_ai_scientist_end_to_end_2026` and `ext_ai_co_scientist_2025` make candidate population, tree search, ranking, pruning, compute, and selection dependencies concrete. None establishes that this provenance design improves discovery in a local campaign.
 
+### Spend one measurement to separate two laws
+
+Two observations, (0, 0) and (1, 1), fit both y = x and y = x². A repeat at one costs a measurement and cannot separate those candidates in a noiseless experiment. At two, the predictions are two and four. Choose two, preserve both predictions before observing the result, and suppose the instrument returns four. Hand the three observations to a fresh analyst. A submission of y = x² predicts nine at the held-out input three. Record both the numerical error and whether the submitted law has the expected form. A third law could fit all three observed points, so the inference depends on the candidate family. In a noisy setting, price replicates and specify a tolerance before drawing that conclusion.
+
+Across 576 NewtonBench trials, the interpreter-enabled configuration on medium GPT-4.1-mini tasks averaged 8.6 measurements versus 22.5 for the comparison. The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring. [Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models](https://arxiv.org/html/2610.07620v1)
+
 ### Closed-loop laboratory authority
 
 **Mechanism.** Split the laboratory loop into independently leased roles: hypothesis proposal, protocol authorization, instrument or simulator control, measurement, analysis, and claim adjudication. An instrument lease names operating envelope, calibration state, samples, controls, permitted adaptations, physical hazards, human interventions, and a stop authority outside the agent. Feedback may select the next permitted experiment, but it cannot expand the lease, reinterpret an observation as truth, or expose protected outcomes to a frozen confirmatory branch.
@@ -528,6 +535,7 @@ These rows keep Scientific Discovery and Experimental Governance's manifest assi
 | `ext_ai_co_scientist_2025` | Passage-reviewed comparator: Towards an AI co-scientist. Passage-bounded hypothesis-generation comparator: the proposed multi-agent system generates, reflects on, ranks, evolves, and meta-reviews hypotheses with an Elo-style process and additional inference compute, followed by source-reported expert and selected laboratory appraisal. | Preprint and provider-reported evaluation only; internal rank, expert preference, and laboratory confirmation remain separate evidence objects. No full search population, evaluator independence, experiment, reproduction, transfer, or support result is local. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_test_time_memory_evolution_2026` | Passage-reviewed comparator: Can Test-Time Memory Evolution Outperform Test-Time Training for Scientific Discovery?. Update external lessons and strategies rather than model weights during verifier-guided mathematical search. TTME maintains operational guidelines and source-case-linked strategy families from evaluated candidates. Those memories condition later proposals while the model stays fixed; the discovery framework’s archive, parent selection and verifier are retained. | Verifier validity is defined by successful compilation/scoring, not general scientific truth. Better construction scores and within-search reuse do not establish independent discovery, cross-task continual learning, universal superiority to weight updates or complete wall-time savings. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_guidance_ttt_2026` | Passage-reviewed comparator: Evolving in Thought Space: Training a Small Model at Test Time Unlocks Better Discoveries. Trains a compact strategic-guidance model while a stronger frozen executor implements parent-linked proposals. Adds a distinct adaptation locus beside full-model TTT and external-memory evolution. | Program reward confounds guidance quality with execution failure. Parent selection and learning can concentrate search into a few lineages; four task domains and heterogeneous comparators do not establish general discovery superiority. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_explore_then_commit_2026` | Passage-reviewed comparator: Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models. Choose a discriminating probe, freeze the observations, and evaluate a fresh analyst's law and forecast. | The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

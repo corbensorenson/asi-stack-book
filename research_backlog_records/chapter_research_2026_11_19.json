@@ -1,0 +1,116 @@
+{
+  "backlog_id": "chapter-research-2026-11-19",
+  "triage_state": "integrated",
+  "source_or_gap": "Eight worked examples and six shorter comparisons with reader counterparts.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "verification-bandwidth-and-context-adequacy",
+    "policy-optimization-and-learning-from-feedback",
+    "governed-world-models-and-reality-grounding",
+    "white-box-evidence-interpretability-and-activation-governance",
+    "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "governed-model-training-distributed-optimization-and-scaling",
+    "ai-deployment-transition-distribution-and-human-agency",
+    "scientific-discovery-and-experimental-governance",
+    "cognitive-compilation-and-semantic-ir",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "fast-generation-architectures",
+    "resource-economics-and-token-budgets",
+    "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
+  ],
+  "chapter_action_policy": "Eight worked examples and six short comparisons in both editions. Six other papers retained as research leads in the manuscript review.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/chapter_research_2026_11_19.json",
+    "docs/reader_manuscript_review.md",
+    "sources/source_notes/ext_correlated_errors_2025.md",
+    "sources/source_notes/ext_optimistic_verifiers_2026.md",
+    "sources/source_notes/ext_mirabench_2026.md",
+    "sources/source_notes/ext_steering_nonidentifiability_2026.md",
+    "sources/source_notes/ext_inference_joules_2026.md",
+    "sources/source_notes/ext_expert_coupling_2026.md",
+    "sources/source_notes/ext_ai_skill_formation_2026.md",
+    "sources/source_notes/ext_explore_then_commit_2026.md",
+    "sources/source_notes/ext_structured_output_benchmark_2026.md",
+    "sources/source_notes/ext_agent_leaderboard_estimands_2026.md",
+    "sources/source_notes/ext_byteflow_2026.md",
+    "sources/source_notes/ext_bridgekv_2026.md",
+    "sources/source_notes/ext_comixkv_2026.md",
+    "sources/source_notes/ext_aligning_ai_teams_2026.md"
+  ],
+  "merge_or_split_policy": "Use existing chapter owners.",
+  "boundary_decision_rationale": "Each study changes the interpretation of an existing decision or measurement.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [
+    "Retained leads from the November 18 screen: optimizer-state staleness (2603.16731v2), prefix-normalized policy optimization (2608.01418v1), adaptive targeted dynamic chunking (2605.30080v1), trajectory-based data influence (2608.13515v1), prospective data curation (2611.19698v1), and information disclosure in agent markets (2611.07667v1). Candidate uses and limits are recorded in docs/reader_manuscript_review.md."
+  ],
+  "proof_or_test_backlog": [
+    "Adoption requires a comparison under the intended load, budget, user population or update schedule."
+  ],
+  "evidence_transition_precondition": [
+    "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+  ],
+  "required_before_drafting": [
+    "Review the primary passage and the comparison limits before using the result."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_correlated_errors_2025",
+    "https://arxiv.org/html/2506.07962v1",
+    "ext_optimistic_verifiers_2026",
+    "https://arxiv.org/html/2611.21538v1",
+    "ext_mirabench_2026",
+    "https://arxiv.org/html/2605.29360v1",
+    "ext_steering_nonidentifiability_2026",
+    "https://arxiv.org/html/2602.06801v4",
+    "ext_inference_joules_2026",
+    "https://arxiv.org/html/2601.22076v2",
+    "ext_expert_coupling_2026",
+    "https://arxiv.org/html/2610.09372v1",
+    "ext_ai_skill_formation_2026",
+    "https://arxiv.org/html/2601.20245v2",
+    "ext_explore_then_commit_2026",
+    "https://arxiv.org/html/2610.07620v1",
+    "ext_structured_output_benchmark_2026",
+    "https://arxiv.org/html/2604.25359v1",
+    "ext_agent_leaderboard_estimands_2026",
+    "https://arxiv.org/html/2609.07785v1",
+    "ext_byteflow_2026",
+    "https://arxiv.org/html/2603.03583v1",
+    "ext_bridgekv_2026",
+    "https://arxiv.org/pdf/2611.11761v1",
+    "ext_comixkv_2026",
+    "https://arxiv.org/html/2611.10096v1",
+    "ext_aligning_ai_teams_2026",
+    "https://arxiv.org/html/2611.17820v1"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "Results describe the cited setups, including the declared measurement and population."
+  ],
+  "residuals": [
+    "This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter.",
+    "Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules.",
+    "Predicted episodes can expose errors in the simulator. Physical control needs separate closed-loop evidence.",
+    "Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks.",
+    "The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions.",
+    "The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load.",
+    "Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects.",
+    "The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring.",
+    "All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities.",
+    "Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open.",
+    "Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task.",
+    "The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix.",
+    "New allocations apply to newly quantized blocks. Aggregate accuracy and memory depend on the agents, workload and model.",
+    "Results varied by model and task. Count work completed, adverse outcomes and total inference spent together."
+  ],
+  "next_action": "Revisit cited results when their benchmark or manuscript changes.",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

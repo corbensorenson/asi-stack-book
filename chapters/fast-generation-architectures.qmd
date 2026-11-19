@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-18"
+last_updated: "2026-11-19"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -52,6 +52,7 @@ primary_sources:
   - "precision_contract"
   - "ext_dflash_2026"
   - "ext_d3d_2026"
+  - "ext_bridgekv_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -69,12 +70,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-11-18 |
-| Primary source records | 46 assigned records. The source crosswalk gives the role and limits of each new comparison. |
+| Last updated | 2026-11-19 |
+| Primary source records | 47 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cgs`, `cognitive_loop_closure`, `benchmaxxing`; supporting: the local generation, verification, resource, context, residual, and architecture sources; variants/external literature: acceleration substrates, heterogeneous inference memory, exact-prefix and prompt-module caches, cache-aware scheduling, disaggregated and non-prefix KV reuse, current provider contracts, and semantic response caching |
-| Source loading state | source notes: `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026`, `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `precision_contract`; raw cache: `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`. Passage review of `ext_dflash_2026`, `ext_d3d_2026` is documented in the source crosswalk. |
+| Source loading state | source notes: `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`, `ext_speculative_decoding_2022`, `ext_multi_token_prediction_2024`, `ext_medusa_2024`, `ext_eagle_2024`, `ext_lookahead_decoding_2024`, `ext_layerskip_2024`, `ext_pagedattention_vllm_2023`, `ext_mamba_2023`, `ext_llada_2025`, `ext_scaling_dllms_2026`, `ext_recurrent_transformer_2026`, `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `precision_contract`; raw cache: `cgs`, `cognitive_loop_closure`, `benchmaxxing`, `planforge`, `verification_bandwidth`, `tokenmana`, `talos`, `vcm_public`, `spinoza`, `rmi`. Passage review of `ext_dflash_2026`, `ext_d3d_2026` is documented in the source crosswalk. Selected primary passages reviewed for `ext_bridgekv_2026`. |
 | Test state | `AsiStackProofs.FastGeneration` retains three genuine finite countermodels. `AsiStackProofs.FastGenerationRefinement` adds a seventeen-declaration, eight-stage request-to-closure lifecycle with sixty routes. `python3 scripts/validate_fast_generation_refinement.py` independently reaches every route, rejects 51/51 non-accepting mutations, recompiles Lean, replays the exact 2-valid/4-invalid baseline harness, revalidates the three-route/four-task accounting bundle and 1-valid/6-invalid Theseus import, and digest-binds every consumed fixture and result. One verified witness and one fallback witness reach closure with no support assignment or external-effect authority. Thirty-five projection, assumption-restatement, and copied-summary declarations are physically retired. This is finite authored policy/conformance evidence only: no model-speed, natural-workload usefulness, verifier-independence, deployed-fallback, serving, transfer, SOTA, or support claim. |
 
 ## Drafting guardrail
@@ -275,6 +276,12 @@ The target's acceptance rule governs which tokens enter the output in both desig
 DFlash's depth ablation makes that cost visible even within one design. Its eight-layer drafter produced longer accepted sequences, while the five-layer drafter delivered the greater speedup in the tested configuration. A longer accepted block can still take too long to propose. [DFlash, Table 6](https://arxiv.org/html/2602.06036v2)
 
 Consider a service choosing between one interactive request and a shared batch. With a 1.7B drafter and Qwen3-32B on MATH-500, D3D Table 2 reports 154 aggregate decode tokens/s at one request and 864 at sixteen. Ordinary decoding also benefits from batching, so the relative advantage shrinks from 6.1× to 2.7×. On MT-Bench the sixteen-request gain was 1.5×. A bulk queue can use throughput measured on its workload. To route an interactive customer, measure time to first token and the distribution of inter-token delays at the expected concurrency, including queueing in the first-token clock. [D3D, Table 2](https://arxiv.org/html/2611.06425v1)
+
+### Translate a prompt cache between models
+
+Compare three routes on the same prompts: native small model, translated cache with small decoder, and native large model. Include cache translation and transfer in the clock. Unlike a target that verifies speculative tokens, the large model here does not check each generated token.
+
+The 8B-to-1B route measured 3.0× faster requests on one A40 relative to the larger model. The 70B-to-1B serving estimates came from simulation. The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix. [BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation](https://arxiv.org/pdf/2611.11761v1)
 
 ## Heterogeneous inference memory: residency, paging, and prediction
 
@@ -921,6 +928,7 @@ These rows keep Fast Generation Architectures's manifest assignments visible at 
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dflash_2026` | Passage-reviewed comparator: DFlash: Block Diffusion for Flash Speculative Decoding. Predict a candidate block in one forward pass. The target checks its tokens before the next accepted prefix is established. | Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_d3d_2026` | Passage-reviewed comparator: D3D: Decoupled Diffusion Drafting for Asynchronous Speculative Decoding. Use a prefix-conditioned drafter to prepare successor blocks while the target verifies the current block. Reuse the successor matching the accepted path. | Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_bridgekv_2026` | Passage-reviewed comparator: BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation. A large model processes the prompt, a learned map translates its attention cache, and a small model decodes. | The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

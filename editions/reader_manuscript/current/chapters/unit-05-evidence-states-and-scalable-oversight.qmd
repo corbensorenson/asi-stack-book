@@ -407,6 +407,10 @@ and the intervention site therefore matter more than a striking screenshot.
 The [technical explanation](https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html#personality-and-persona-steering)
 distinguishes neuron edits, distributed persona vectors and projection caps.
 
+### Can two directions pass the same persona test?
+
+A readout that sees only the first coordinate assigns the same increment to (1, 0) and (1, 2). Apply that idea to a persona score: challenge the candidate direction with a perturbation and a norm-matched random control on held-out prompts. Similar scores can support behavioral control while leaving the internal explanation ambiguous. The local linear argument needs a fresh check at the actual steering dose. [On the Non-Identifiability of Steering Vectors in Large Language Models](https://arxiv.org/html/2602.06801v4)
+
 ## One Patch, Three Evidence Paths
 
 Return to the paper-ingestion change. The adapter proposes a mapping from new

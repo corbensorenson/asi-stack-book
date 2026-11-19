@@ -4,7 +4,7 @@ chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
-last_updated: "2026-11-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -27,6 +27,7 @@ primary_sources:
   - "ext_persona_dosing_2026"
   - "ext_lyra_neuron_explorer_2026"
   - "ext_neuronary_2026"
+  - "ext_steering_nonidentifiability_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -43,11 +44,11 @@ open_evidence_gaps:
 | Part | Part IV — Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.5 source-role and method-comparison integrated reader chapter |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-19 |
 | Passage review notes | November 2 persona-steering additions have selected primary-passage/code review only. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017`, `ext_neuron_personality_trait_induction_2024`, `ext_persona_vectors_2025`, `ext_assistant_axis_2026`, `ext_persona_steering_capabilities_2026`, `ext_persona_dosing_2026`, `ext_lyra_neuron_explorer_2026`, `ext_neuronary_2026` |
+| Source loading state | source notes: `deterministic_capability_compilation`, `kernel_english_residual_compiler`, `qcsa_whitepaper`, `platonic_world_model`, `ext_transformer_circuits_2021`, `ext_monosemanticity_2023`, `ext_scaling_sparse_autoencoders_2024`, `ext_circuit_tracing_2025`, `ext_probe_control_tasks_2019`, `ext_interpretability_illusion_bert_2021`, `ext_saebench_2025`, `ext_sae_benchmark_reliability_2026`, `ext_elk_report_2021`, `ext_influence_functions_2017`, `ext_neuron_personality_trait_induction_2024`, `ext_persona_vectors_2025`, `ext_assistant_axis_2026`, `ext_persona_steering_capabilities_2026`, `ext_persona_dosing_2026`, `ext_lyra_neuron_explorer_2026`, `ext_neuronary_2026`. Selected primary passages reviewed for `ext_steering_nonidentifiability_2026`. |
 | Test state | The packet schema, record-shape fixture, independent semantic validator, twelve packet/protocol mutations, a 36-theorem Lean surface, and an independently simulated six-event lifecycle with 51/51 rejected mutations are implemented under two public targets. The claim-bearing campaign is protocol-ready and resource-isolated, not executed; no model-internal outcome or support transition exists. |
 
 ## Drafting guardrail
@@ -428,6 +429,14 @@ Stored weights can remain fixed while the running computation changes. Training
 an auxiliary controller, changing weights during finetuning and applying a
 runtime hook are nevertheless different update processes. They have different
 state, removal and requalification boundaries.
+
+### Can two directions pass the same persona test?
+
+Let a two-coordinate toy readout report only the first coordinate. Adding (1, 0) shifts its score by one. Adding (1, 2) also shifts it by one, even though the interventions differ along the second coordinate. In a model, the analogous local map is the derivative of the output with respect to a layer activation. A perturbation in its null space contributes zero to the first-order output change. This leaves higher-order effects and other readouts open.
+
+For a candidate politeness intervention, compare the original direction, its perturbed version, and a random direction matched to the perturbed vector's norm. Keep layer, dose convention, decoder and held-out prompts fixed. Examine both trait scores and collateral task errors. If two directions match on politeness but disagree on task errors, qualify each for the measured behavior separately. A shared score cannot select a unique internal representation.
+
+The authors found similar semantic scores for perturbed steering vectors across tested traits and prompts. Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks. [On the Non-Identifiability of Steering Vectors in Large Language Models](https://arxiv.org/html/2602.06801v4)
 
 ### What Neuron Explorer and Neuronary contribute {#lyra-neuron-explorer-and-neuronary}
 
@@ -900,6 +909,7 @@ These rows keep White-Box Evidence, Interpretability, and Activation Governance'
 | `ext_persona_dosing_2026` | Passage-reviewed comparator: Persona Dosing: Calibrated Activation Steering for Graded Trait Control. A steering coefficient is not a behavioral trait intensity; calibrated requests require a measured response curve. A shared description-conditioned FLAS flow controller transforms residual activations in a frozen language model. It is trained separately; isotonic fitting and interpolation map requested mean rubric scores to controller strength. | Mean targets do not constrain each answer. Coherence is intelligibility, not factual correctness or safety. Reachable request sets differ between methods, so MAEs are not a paired common-request advantage. Some held-out coherence floors fail; stale-map error after controller update is not measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_lyra_neuron_explorer_2026` | Passage-reviewed comparator: Lyra’s Neuron Explorer: Steering-First Neuron Exploration. Explore what raw MLP coordinates write by steering them, retaining rollouts and comparing matched controls. The inspected runtime hooks the input of down_proj, where gated MLP activations live. Additive and multiplicative edits differ. The log distinguishes output-direction addition from ablation and normalizes additive doses to residual scale. | Code inspection and author logs are not local execution or independent replication. A changed self-description, striking selected rollout or few-coordinate intervention does not identify a unique personality mechanism or stable objective. No provenance or popularity claim beyond the author-linked project is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_neuronary_2026` | Passage-reviewed comparator: Neuronary: A Public Dictionary of Neuron Steering Recipes. Share small MLP-neuron intervention recipes with model names, doses and example outputs. The format records coordinates, add/multiply semantics, hook site, normalization, token scope and optional generation/example metadata. Its runner uses forward pre-hooks with residual-norm/down-column scaling for additive edits; schema and runner capabilities are separate. | A model repository name is not necessarily an exact checkpoint digest. Schema acceptance is not engine support: the inspected runner rejects MoE expert edits and does not implement free-form conditional recipes. Submitted interpretation/confidence or votes do not establish unique feature semantics, alignment or independent reproduction. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_steering_nonidentifiability_2026` | Passage-reviewed comparator: On the Non-Identifiability of Steering Vectors in Large Language Models. Challenge the identity of a proposed steering direction using controlled perturbations and matched controls. | Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Current evidence and non-claims

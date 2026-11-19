@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 484
+- `source_note_available_uncached`: 498
 
 ## Records
 
@@ -577,3 +577,17 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_d3d_2026` | D3D: Decoupled Diffusion Drafting for Asynchronous Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_discobench_2026` | When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_delegation_traces_2026` | Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_correlated_errors_2025` | Correlated Errors in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_optimistic_verifiers_2026` | Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mirabench_2026` | MiraBench: Evaluating Action-Conditioned Reliability in Robotic World Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_steering_nonidentifiability_2026` | On the Non-Identifiability of Steering Vectors in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_inference_joules_2026` | Where Do the Joules Go? Diagnosing Inference Energy Consumption | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_expert_coupling_2026` | Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_ai_skill_formation_2026` | How AI Impacts Skill Formation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_explore_then_commit_2026` | Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_structured_output_benchmark_2026` | The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_agent_leaderboard_estimands_2026` | What Does an LLM-Agent Leaderboard Rank Actually Compare? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_byteflow_2026` | ByteFlow: Language Modeling through Adaptive Byte Compression without a Tokenizer | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_bridgekv_2026` | BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_comixkv_2026` | Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_aligning_ai_teams_2026` | Aligning AI Teams | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

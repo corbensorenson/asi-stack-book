@@ -4,7 +4,7 @@ chapter_id: "multi-agent-dynamics-collective-intelligence-and-systemic-risk"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "learning_compute_topology"
   - "ext_multi_agent_risks_2025"
@@ -15,6 +15,7 @@ primary_sources:
   - "coherence_exchange"
   - "ext_muffin_async_shared_memory_2026"
   - "ext_transmissible_reward_hacking_2026"
+  - "ext_aligning_ai_teams_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -34,7 +35,7 @@ open_evidence_gaps:
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Passage review notes | Selected passage-review scope is recorded per mapping. |
-| Source loading state | source notes: `learning_compute_topology`, `ext_multi_agent_risks_2025`, `ext_cooperative_ai_foundations_2023`, `ext_gradual_disempowerment_2025`, `ext_constructive_interdependence_human_ai_2026`, `ext_functional_decision_theory_2017`, `coherence_exchange`, `ext_muffin_async_shared_memory_2026`, `ext_transmissible_reward_hacking_2026`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: `learning_compute_topology`, `ext_multi_agent_risks_2025`, `ext_cooperative_ai_foundations_2023`, `ext_gradual_disempowerment_2025`, `ext_constructive_interdependence_human_ai_2026`, `ext_functional_decision_theory_2017`, `coherence_exchange`, `ext_muffin_async_shared_memory_2026`, `ext_transmissible_reward_hacking_2026`; connector/recovery: `coherence_exchange`. Selected primary passages reviewed for `ext_aligning_ai_teams_2026`. |
 | Test state | A 38-declaration Lean packet separates six-edge pairwise authorization from ten-dimension campaign readiness and locally authorized allocation traces from systemic concentration outcomes; no environment, agent, institution, market, or person observed. |
 
 ## Drafting guardrail
@@ -419,6 +420,12 @@ multi-agent experiment must preserve.
 
 **Source grounding.** `ext_cooperative_ai_foundations_2023` supplies a research agenda for cooperative intelligence. `ext_multi_agent_risks_2025` supplies a bounded risk taxonomy. Neither provides a complete normative classifier.
 
+### Who owns the check across the assembled release?
+
+Two agents each clear their own release component. A cross-component restriction applies only when both ship together. Compare an ordinary group discussion with a team whose named reviewer checks the assembled release against a shared specification, and with a single agent given the same brief. Score the final artifact against the restriction, and count holds and unfinished releases in the denominator.
+
+In two software-engineering cases and ten consulting-proposal tasks, critique or group chat did not reliably close the single-agent versus team safety gap. Explicit responsibility or a shared specification helped in some settings. Results varied by model and task. Count work completed, adverse outcomes and total inference spent together. [Aligning AI Teams](https://arxiv.org/html/2611.17820v1)
+
 ### Shared findings change the team's information structure {#asynchronous-shared-findings}
 
 [Muffin](https://arxiv.org/abs/2610.31355v1) offers a concrete alternative to
@@ -757,6 +764,7 @@ These rows keep Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk
 | `learning_compute_topology` | Passage-reviewed comparator: [Learning–Compute Topology: Formalizing the Causal Organization of Adaptive Systems](../papers/learning_compute_topology.html). Corben-authored August 2026 research paper and executable preparation package that separates model architecture, learning-process topology, execution topology, and physical compute topology. It contributes adaptive-identity tests; typed evidence, judgement, credit, state, artifact, control, and authority relations; LCT-IR; Learning Causal Normal Form; seven bounded propositions; topology metrics; a semantic compiler firewall; Adaptive Branch–Validate–Integrate; toy and analytical phase diagrams; and an explicit falsification program. The bundled reference implementation passes 11 unit tests, but implements only bounded conformance behavior and does not establish neural-training benefit, causal completeness, universal canonicality, safety, scaling superiority, or ASI. | The formal propositions hold only under their stated finite, explicit-state, interface-sufficiency, information-theoretic, and cut-capacity assumptions. The executable supplement covers a bounded IR/validator/normalizer/compiler/simulator slice; the phase diagrams are toy or analytical, the ABVI topology is proposed, and the novelty matrix is a scoped comparison rather than a global novelty proof. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_muffin_async_shared_memory_2026` | Passage-reviewed comparator: Muffin - A Shared Memory Buffer for Asynchronous AI Agents. Asynchronous exchange of selected findings can be more useful than sharing complete reasoning traces. An orchestrator selects direct or multi-agent inference. Agents append findings with agent/step identities, read a recent window of other agents’ committed entries and keep local notes private. A summarizer uses final agent summaries. | Atomic append prevents one write conflict under its assumed model; it does not resolve contradictory content, freshness, poisoning or correlated agents. Tool use, environment interaction and long-horizon execution remain future evaluation. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_transmissible_reward_hacking_2026` | Passage-reviewed comparator: Reward Hacking as a Transmissible Strategy in Multi-Agent Coding Systems. Shows an evaluator-bypass strategy moving through code, shared memory and planner-to-coder communication, with routing and aggregation effects. Useful counterevidence to treating collaboration as automatically beneficial. | Controlled source-agent exposure and a criterion for known mechanisms bound the result. Verifiers can reject genuine solutions as well as hacks; evaluator pass signals can bias their decisions. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_aligning_ai_teams_2026` | Passage-reviewed comparator: Aligning AI Teams. Compare team-wide responsibility assignments against group chat and a single agent on the same deliverable. | Results varied by model and task. Count work completed, adverse outcomes and total inference spent together. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -4,7 +4,7 @@ chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
-last_updated: "2026-11-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "learning_compute_topology"
   - "beastbrain"
@@ -40,6 +40,7 @@ primary_sources:
   - "ext_mezo_2023"
   - "ext_forward_forward_2022"
   - "ext_simhack_2026"
+  - "ext_expert_coupling_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -58,12 +59,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-19 |
 | Passage review notes | Selected passage-review scope is recorded per mapping. |
 | Local implementation reference | `corbens_trainer_project` supplies a pinned failure-bearing trainer/control-plane comparator; it is not a reproduced training result. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `learning_compute_topology`, `beastbrain`, `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026`, `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019`, `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024`, `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024`, `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_simhack_2026`; raw cache: `beastbrain` |
+| Source loading state | source notes: `learning_compute_topology`, `beastbrain`, `ext_llama3_herd_2024`, `ext_megatron_distributed_training_2021`, `ext_zero_optimizer_2019`, `ext_gspmd_2021`, `ext_datastates_llm_2024`, `ext_pytorch_distributed_checkpoint_2026`, `ext_mlperf_training_v6_2026`, `ext_adam_2015`, `ext_amsgrad_2018`, `ext_adamw_2019`, `ext_adafactor_2018`, `ext_lamb_2019`, `ext_shampoo_2018`, `ext_kfac_2015`, `ext_lion_2023`, `ext_sophia_2023`, `ext_soap_2024`, `ext_schedule_free_2024`, `ext_mup_2022`, `ext_modular_norm_2024`, `ext_muon_scalable_2025`, `ext_muon_spectral_norm_2026`, `corbens_trainer_project`, `ext_proof_of_learning_2021`, `ext_test_time_training_2020`, `ext_curriculum_learning_2009`, `ext_kimi_k3_2026`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `ext_mezo_2023`, `ext_forward_forward_2022`, `ext_simhack_2026`; raw cache: `beastbrain`. Selected primary passages reviewed for `ext_expert_coupling_2026`. |
 | Test state | One authored transaction fixture, a JSON Schema, and an independent semantic validator check 21 transaction mutations, seven weight-only omitted-field collisions, and nine complete-encoding mutations. The natural five-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Three public targets are implemented in `AsiStackProofs.GovernedModelTraining` through 20 theorem declarations. Their ceiling is finite record-route and checkpoint-information semantics. |
 
@@ -712,6 +713,20 @@ policy, kernel modes, determinism class, and tolerance must be frozen. A
 precision change made to survive a loss spike creates a new run segment and a
 declared adjudication; it cannot be edited into the original identity.
 
+### Place four experts on two devices
+
+Suppose the router selects two experts per token. Keep every selection fixed. Count one destination per device receiving a token, including the local device; this is a toy count of destinations, not a network timer.
+
+| Selected pair | Training mix | Changed mix |
+|---|---:|---:|
+| A and B | 6 | 1 |
+| C and D | 2 | 1 |
+| A and C | 2 | 8 |
+
+With A/B together and C/D together, ten tokens generate twelve destinations in the training mix and eighteen in the changed mix. With A/C together and B/D together, the totals are eighteen and twelve. The changed mix favors the second layout on destinations, but its A/C device processes eighteen expert assignments against two on B/D. Time the busiest device, the collective and the entire training step before moving the experts. Actual remote traffic also depends on where tokens originate.
+
+Reported communication speedups reached 2.63× and whole-step speedup reached 1.41× on the tested MI300X cluster. The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load. [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](https://arxiv.org/html/2610.09372v1)
+
 ### Checkpoint authority is staged
 
 A checkpoint progresses through `requested`, `staged`, `durably_committed`,
@@ -1122,6 +1137,7 @@ These rows keep Governed Model Training, Distributed Optimization, and Scaling's
 | `ext_curriculum_learning_2009` | Passage-reviewed comparator: Curriculum Learning. Provides the foundational curriculum-learning hypothesis that example order and difficulty schedules can change optimization outcomes. | Curriculum effects are task-, model-, metric-, and schedule-dependent; easier-first ordering is not a universal improvement rule. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_kimi_k3_2026` | Metadata-first comparator: Kimi K3: Open Frontier Intelligence. Primary technical report and official architecture summary for KDA/Gated-MLA hybrid attention, Attention Residuals, Stable LatentMoE, Quantile Balancing, SiTU-GLU, and Per-Head Muon. The approximately 2.5x scaling-efficiency result is provider-reported for the integrated 2.8T system and does not identify a transferable component effect. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_simhack_2026` | Passage-reviewed comparator: SimHack: Predicting the onset of detectable reward hacking before RL training. Models behavior-state transitions from reference RL runs to forecast the distribution of detectable hacking onset under candidate training recipes. Useful for prospective curriculum-risk comparisons. | Requires reference training data and detectors. Qwen3-0.6B/4B and two loophole suites bound the evidence; delayed detectable onset is not absence of hidden hacking or a general prevention guarantee. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_expert_coupling_2026` | Passage-reviewed comparator: Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling. Co-locate frequently co-selected experts and send a token once to each device that hosts its selected experts. | The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -178,6 +178,10 @@ preserve semantics within tolerance. Replacing independent branches with
 gradient averaging may destroy the very diversity the experiment was designed
 to test.
 
+### Place four experts on two devices
+
+Ten tokens select expert pairs AB six times, CD twice and AC twice. Put AB on one GPU and CD on another. Eight tokens each need one destination, two need both: twelve destinations total. If eight of the next ten select AC instead, reconsider the placement and check the busiest GPU before switching. The expert-coupling paper reports up to 2.63× for communication and 1.41× for the whole step on its tested cluster. Routing choices stayed fixed; moving work changes what the hardware must carry. [Expert Coupling in MoE Pretraining: Reducing All-to-All Overhead with Correlated Placement and Token Shuffling](https://arxiv.org/html/2610.09372v1)
+
 ## Four Topologies Must Stay Separate
 
 Model architecture describes how one model computes and represents: attention,

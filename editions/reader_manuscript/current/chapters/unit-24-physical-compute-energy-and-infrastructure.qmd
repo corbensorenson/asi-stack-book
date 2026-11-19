@@ -231,6 +231,10 @@ from ten to thirty jobs lowers unit cost but raises total energy from twenty
 to thirty units. This demonstrates possible arithmetic, not a measured rebound
 response or proof that efficiency always increases demand.
 
+### From a token meter to an answer bill
+
+On one B200, multiply 627 conversational output tokens by 0.151 GPU joules per token. The result is about 95 J. The problem-solving workload produced 7,035 tokens at 0.312 J/token, about 2.2 kJ. The two maximum batch sizes also differed. To choose a route for tomorrow's queue, give both routes the same work and divide all measured energy, retries included, by accepted answers. Table 1 measured GPU energy; cooling and the local electricity supply enter a facility calculation separately. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
+
 ## Energy Is Capacity, Timing, and Reliability
 
 Electricity is not only a scalar cost. The workload needs capacity at a place

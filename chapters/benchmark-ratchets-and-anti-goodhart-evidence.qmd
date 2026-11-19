@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-14"
+last_updated: "2026-11-19"
 primary_sources:
   - "benchmaxxing"
   - "deterministic_capability_compilation"
@@ -57,6 +57,8 @@ primary_sources:
   - "forward_transfer_program_synthesis"
   - "answerability_atlas_synthesis"
   - "ext_agent_reliability_rater_drift_2026"
+  - "ext_cram_2026"
+  - "ext_agent_leaderboard_estimands_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -74,12 +76,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-19 |
 | Passage review notes | November 2 additions have selected primary-passage review only. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; connector/recovery: `moecot`, `road_to_agi` |
-| Source loading state | source notes: `benchmaxxing`, `deterministic_capability_compilation`, `platonic_world_model`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis`, `answerability_atlas_synthesis`, `ext_agent_reliability_rater_drift_2026`; raw cache: `benchmaxxing`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`, `temporal_coil_research`; connector/recovery: `coherence_exchange`, `moecot` |
+| Source loading state | source notes: `benchmaxxing`, `deterministic_capability_compilation`, `platonic_world_model`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `coherence_exchange`, `tokenmana`, `moecot`, `road_to_agi`, `project_theseus_whitepaper`, `theseus_architecture_gate`, `theseus_self_evolution_system`, `theseus_circle_transfer`, `ext_mem0_2025`, `ext_mlcommons_croissant_1_1_2026`, `ext_inspect_ai_2024`, `ext_agentdojo_2024`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_dynamic_compute_recurrent_transformers_2026`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis`, `answerability_atlas_synthesis`, `ext_agent_reliability_rater_drift_2026`; raw cache: `benchmaxxing`, `rmi`, `rgs`, `cognitive_loop_closure`, `uat`, `tokenmana`, `road_to_agi`, `temporal_coil_research`; connector/recovery: `coherence_exchange`, `moecot`. Selected primary passages reviewed for `ext_agent_leaderboard_estimands_2026`. |
 | Test state | `benchmark_ratchet_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.BenchmarkRatchets` implements three derived readiness-promotion, regression-floor, and contaminated-review consequences; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic saturation, holdout/contamination/mutation-or-transfer, regression-ref, negative-result, and promotion-blocking semantics; `python3 scripts/validate_benchmark_fixture_bridge.py` separately validates `experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json` against 2 valid fixtures and 5 expected-invalid controls. The former copied Lean summary mirror is retired. Empirical benchmark runs, hidden holdout execution, contamination audits, policy-training runs, steward release execution, source-reported replay, and current Theseus report verification remain planned. |
 
 ## Drafting guardrail
@@ -225,6 +227,12 @@ Operational outcomes can corroborate an interpretation while retaining their
 own reporting and selection biases. This adds a reason to renew evidence after
 relevant drift, rather than treating every rising score or dated receipt as
 current proof of improvement.
+
+### Would a one-point lead justify replacement?
+
+If replacement costs make two points the smallest worthwhile gain, a one-point leaderboard lead alone gives no reason to switch. Reweight common tasks to the intended repository mix. Ask whether the uncertainty interval clears the margin and whether it covers one preselected comparison or a search across the leaderboard.
+
+Among 45 pairs selected from the observed SWE-bench Verified top ten, five were stable under pointwise intervals and a two-point margin. Simultaneous intervals resolved none. Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open. [What Does an LLM-Agent Leaderboard Rank Actually Compare?](https://arxiv.org/html/2609.07785v1)
 
 ### Atlas case: completing the baseline changes the decision {#atlas-baseline-correction}
 
@@ -1147,6 +1155,7 @@ These rows keep Benchmark Ratchets and Anti-Goodhart Evidence's manifest assignm
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds causal controls for reusable-knowledge evaluation: frozen rounds, absence and matched placebo conditions, removal and necessity tests, a library-search factorial, exact verifier outcomes, and complete task-lineage denominators. | Experimental blueprint only; no benchmark condition, ablation, transfer effect, or promotion decision was executed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_agent_reliability_rater_drift_2026` | Passage-reviewed comparator: Reliability of AI Agents: Rater Effects, Drift, and the Return to an Evaluation Program. Longitudinal agent evaluation has to separate agent changes from changes in the measurement process. Uses overlapping reviewers, reviewer-adjusted batch estimates, change logs and a separate support-ticket series. Interview date and reviewer sign-off date have different evidentiary meanings. | No randomized evaluation-intensity intervention; sampling mix and unlogged/vendor changes remain concerns. The estimated roughly five-week uncertainty horizon is model- and deployment-specific, not a universal review deadline. Candidate fairness and hiring validity are not established by the reliability rubric. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_cram_2026` | Passage-reviewed comparator: Classical Energies Learn to Reason 1,000× Faster than Looped Models. Hand-set energies and an incorrect fixed point expose separate construct, baseline, and stopping-rule boundaries. | Reported fits and search apply to the tested puzzle recipes. Architecture qualification, end-to-end latency, generalization and local reproduction remain open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_agent_leaderboard_estimands_2026` | Passage-reviewed comparator: What Does an LLM-Agent Leaderboard Rank Actually Compare?. Define a deployment mixture, a practical margin and an uncertainty rule before comparing releases. | Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## The language-by-task denominator

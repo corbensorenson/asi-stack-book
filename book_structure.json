@@ -8890,7 +8890,8 @@
             "ext_i_jepa_2023",
             "ext_platonic_representation_hypothesis_2024",
             "ext_platonic_representation_jepa_2026",
-            "ext_leworldmodel_2026"
+            "ext_leworldmodel_2026",
+            "ext_mirabench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8911,7 +8912,8 @@
               "ext_i_jepa_2023",
               "ext_platonic_representation_hypothesis_2024",
               "ext_platonic_representation_jepa_2026",
-              "ext_leworldmodel_2026"
+              "ext_leworldmodel_2026",
+              "ext_mirabench_2026"
             ],
             "variants": [
               "deterministic_capability_compilation",
@@ -9116,6 +9118,17 @@
                 "https://arxiv.org/html/2603.19312v3"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.2 and Limitations & Future Work; June 3 revision. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_mirabench_2026",
+              "mapped_support": "Pair predictions from the same initial scene under different commands, including an action expected to fail.",
+              "limits": "Predicted episodes can expose errors in the simulator. Physical control needs separate closed-loop evidence.",
+              "passage_refs": [
+                "sources/source_notes/ext_mirabench_2026.md",
+                "https://arxiv.org/html/2605.29360v1"
+              ],
+              "passage_review_note": "2026-11-19. Action-following and optimism perturbation tests. Predicted episodes can expose errors in the simulator. Physical control needs separate closed-loop evidence.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -9400,7 +9413,8 @@
             "ext_translation_validation_1998",
             "kernel_english_residual_compiler",
             "relational_dimension_compiler",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_structured_output_benchmark_2026"
           ],
           "source_queue": {
             "primary": [
@@ -9416,7 +9430,8 @@
               "corbens_best_model_possible_project",
               "qcsa_whitepaper",
               "kernel_english_residual_compiler",
-              "relational_dimension_compiler"
+              "relational_dimension_compiler",
+              "ext_structured_output_benchmark_2026"
             ],
             "variants": [
               "ext_pddl_1998",
@@ -9770,6 +9785,17 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "ext_structured_output_benchmark_2026",
+              "mapped_support": "Score schema compliance and correctness against source evidence separately.",
+              "limits": "All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities.",
+              "passage_refs": [
+                "sources/source_notes/ext_structured_output_benchmark_2026.md",
+                "https://arxiv.org/html/2604.25359v1"
+              ],
+              "passage_review_note": "2026-11-19. Source-normalized evaluation and exact leaf-value metric. All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities.",
+              "passage_review_state": "reviewed"
             }
           ],
           "publication": {
@@ -11395,7 +11421,8 @@
             "ext_ruler_2024",
             "ext_longllmlingua_2023",
             "ext_reluplex_2017",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_correlated_errors_2025"
           ],
           "source_queue": {
             "primary": [
@@ -11410,7 +11437,8 @@
               "ext_gpqa_2023",
               "ext_dont_hallucinate_abstain_2024",
               "ext_reluplex_2017",
-              "kernel_english_residual_compiler"
+              "kernel_english_residual_compiler",
+              "ext_correlated_errors_2025"
             ],
             "variants": [
               "ext_graphrag_2024",
@@ -11750,6 +11778,17 @@
                 "sources/source_notes/ext_dont_hallucinate_abstain_2024.md:12-42"
               ],
               "passage_review_note": "Reviewed the source note's primary ACL summary for knowledge-gap detection, abstention calibration, cooperative and competitive probing, shared blind spots, over-refusal, and extra-call cost.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_correlated_errors_2025",
+              "mapped_support": "Compare the probability of matching wrong answers given joint failure with the probability of error given agreement.",
+              "limits": "This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter.",
+              "passage_refs": [
+                "sources/source_notes/ext_correlated_errors_2025.md",
+                "https://arxiv.org/html/2506.07962v1"
+              ],
+              "passage_review_note": "2026-11-19. HELM paired-error analysis. This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -13533,7 +13572,8 @@
             "coherence_exchange",
             "ext_generative_ai_at_work_2025",
             "ext_ilo_genai_jobs_index_2025",
-            "ext_oecd_ai_infrastructure_competition_2025"
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_ai_skill_formation_2026"
           ],
           "problem": "A useful AI deployment changes tasks, roles, skill, discretion, wages, ownership returns, prices, access, concentration, critical-service continuity, and the practical choices available to people and communities. Aggregate productivity cannot reveal who benefits, who loses, or whether transition capacity exists.",
           "insufficient": "Task benchmarks, exposure indices, adoption counts, productivity averages, job forecasts, and organizational charts describe different levels. Treating any one as a welfare result hides substitution versus complementarity, delayed effects, distribution, bargaining power, ownership, access, deskilling, dependency, and exit.",
@@ -13588,7 +13628,9 @@
               "ext_generative_ai_at_work_2025",
               "ext_ilo_genai_jobs_index_2025"
             ],
-            "supporting": [],
+            "supporting": [
+              "ext_ai_skill_formation_2026"
+            ],
             "variants": [],
             "connector_or_recovery": [],
             "handoff_or_recovery_notes": []
@@ -13613,6 +13655,17 @@
                 "sources/source_notes/ext_ilo_genai_jobs_index_2025.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_ai_skill_formation_2026",
+              "mapped_support": "Measure assisted completion and later unaided diagnosis for a comparable task.",
+              "limits": "Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects.",
+              "passage_refs": [
+                "sources/source_notes/ext_ai_skill_formation_2026.md",
+                "https://arxiv.org/html/2601.20245v2"
+              ],
+              "passage_review_note": "2026-11-19. Randomized unfamiliar-library task and subsequent quiz. Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects.",
+              "passage_review_state": "reviewed"
             }
           ],
           "proof_targets": [
@@ -15362,7 +15415,8 @@
             "ext_functional_decision_theory_2017",
             "coherence_exchange",
             "ext_muffin_async_shared_memory_2026",
-            "ext_transmissible_reward_hacking_2026"
+            "ext_transmissible_reward_hacking_2026",
+            "ext_aligning_ai_teams_2026"
           ],
           "source_queue": {
             "primary": [
@@ -15375,7 +15429,8 @@
             "supporting": [
               "coherence_exchange",
               "ext_muffin_async_shared_memory_2026",
-              "ext_transmissible_reward_hacking_2026"
+              "ext_transmissible_reward_hacking_2026",
+              "ext_aligning_ai_teams_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -15467,6 +15522,17 @@
                 "https://arxiv.org/html/2610.12822v2"
               ],
               "passage_review_note": "2026-11-02: Sections 3.2, 5.4 and 8.2 plus Appendix A; v2 differs from inspected v1 only in date/front matter. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_aligning_ai_teams_2026",
+              "mapped_support": "Compare team-wide responsibility assignments against group chat and a single agent on the same deliverable.",
+              "limits": "Results varied by model and task. Count work completed, adverse outcomes and total inference spent together.",
+              "passage_refs": [
+                "sources/source_notes/ext_aligning_ai_teams_2026.md",
+                "https://arxiv.org/html/2611.17820v1"
+              ],
+              "passage_review_note": "2026-11-19. Team interventions and per-task results. Results varied by model and task. Count work completed, adverse outcomes and total inference spent together.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -16721,7 +16787,8 @@
             "ext_mhc_2025",
             "ext_attention_residuals_2026",
             "ext_mhc_peft_2026",
-            "ext_cram_2026"
+            "ext_cram_2026",
+            "ext_byteflow_2026"
           ],
           "source_queue": {
             "primary": [
@@ -16784,7 +16851,8 @@
               "ext_engram_conditional_memory_2026",
               "ext_mhc_2025",
               "ext_attention_residuals_2026",
-              "ext_mhc_peft_2026"
+              "ext_mhc_peft_2026",
+              "ext_byteflow_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -17351,6 +17419,17 @@
               ],
               "passage_review_note": "2026-11-14: selected arXiv v1 sections, appendices and released timing records reviewed for the stated owner.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_byteflow_2026",
+              "mapped_support": "Use local coding-rate scores to select top-K boundary positions inside a fixed computation shape.",
+              "limits": "Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task.",
+              "passage_refs": [
+                "sources/source_notes/ext_byteflow_2026.md",
+                "https://arxiv.org/html/2603.03583v1"
+              ],
+              "passage_review_note": "2026-11-19. Section 4.4, Table 3. Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -17603,7 +17682,8 @@
             "ext_openai_es_2017",
             "ext_mezo_2023",
             "ext_forward_forward_2022",
-            "ext_simhack_2026"
+            "ext_simhack_2026",
+            "ext_expert_coupling_2026"
           ],
           "source_queue": {
             "primary": [
@@ -17639,7 +17719,8 @@
               "ext_openai_es_2017",
               "ext_mezo_2023",
               "ext_forward_forward_2022",
-              "ext_simhack_2026"
+              "ext_simhack_2026",
+              "ext_expert_coupling_2026"
             ],
             "variants": [
               "ext_amsgrad_2018",
@@ -17979,6 +18060,17 @@
                 "https://arxiv.org/html/2610.28707v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.1–3.2, 4.1 and 7; recipe-level prediction rather than a direct behavior monitor. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_expert_coupling_2026",
+              "mapped_support": "Co-locate frequently co-selected experts and send a token once to each device that hosts its selected experts.",
+              "limits": "The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load.",
+              "passage_refs": [
+                "sources/source_notes/ext_expert_coupling_2026.md",
+                "https://arxiv.org/html/2610.09372v1"
+              ],
+              "passage_review_note": "2026-11-19. Megatron-LM placement and dispatch experiments. The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -20445,7 +20537,8 @@
             "ext_azure_llm_semantic_cache_2026",
             "precision_contract",
             "ext_dflash_2026",
-            "ext_d3d_2026"
+            "ext_d3d_2026",
+            "ext_bridgekv_2026"
           ],
           "source_queue": {
             "primary": [
@@ -20464,7 +20557,8 @@
               "kernel_english_residual_compiler",
               "precision_contract",
               "ext_dflash_2026",
-              "ext_d3d_2026"
+              "ext_d3d_2026",
+              "ext_bridgekv_2026"
             ],
             "variants": [
               "ext_speculative_decoding_2022",
@@ -20958,6 +21052,17 @@
                 "https://arxiv.org/html/2611.06425v1"
               ],
               "passage_review_note": "2026-11-18. Sections 3–4, especially Table 2. Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_bridgekv_2026",
+              "mapped_support": "A large model processes the prompt, a learned map translates its attention cache, and a small model decodes.",
+              "limits": "The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix.",
+              "passage_refs": [
+                "sources/source_notes/ext_bridgekv_2026.md",
+                "https://arxiv.org/pdf/2611.11761v1"
+              ],
+              "passage_review_note": "2026-11-19. Single-A40 measurements and separate serving simulation. The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -21739,7 +21844,8 @@
             "assurance_shift_learning",
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_comixkv_2026"
           ],
           "source_queue": {
             "primary": [
@@ -21761,7 +21867,8 @@
               "precision_contract",
               "assurance_shift_learning",
               "forward_transfer_program_synthesis",
-              "answerability_atlas_synthesis"
+              "answerability_atlas_synthesis",
+              "ext_comixkv_2026"
             ],
             "variants": [
               "ext_eggroll_hyperscale_es_2026",
@@ -22433,6 +22540,17 @@
               ],
               "passage_review_note": "2026-11-02 selected public manuscript/source-guide review. Exact passages are listed in the mapping; retrospective project reports, not a new book experiment or private raw-data audit.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_comixkv_2026",
+              "mapped_support": "Allocate cache precision jointly across agents and layers as new cache blocks are quantized.",
+              "limits": "New allocations apply to newly quantized blocks. Aggregate accuracy and memory depend on the agents, workload and model.",
+              "passage_refs": [
+                "sources/source_notes/ext_comixkv_2026.md",
+                "https://arxiv.org/html/2611.10096v1"
+              ],
+              "passage_review_note": "2026-11-19. Figure 4, Qwen3-32B cost comparison. New allocations apply to newly quantized blocks. Aggregate accuracy and memory depend on the agents, workload and model.",
+              "passage_review_state": "reviewed"
             }
           ],
           "draft_maturity": "v0.4 temporal-access integration",
@@ -22469,7 +22587,8 @@
             "ext_neuromorphic_computing_scale_2025",
             "ext_photonic_neuromorphic_2024",
             "ext_quantum_ml_shadows_2024",
-            "ext_oecd_ai_infrastructure_competition_2025"
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_inference_joules_2026"
           ],
           "problem": "Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.",
           "insufficient": "Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.",
@@ -22524,7 +22643,8 @@
               "ext_lbnl_data_center_energy_2024"
             ],
             "supporting": [
-              "ext_flexible_hardware_enabled_guarantees_2025"
+              "ext_flexible_hardware_enabled_guarantees_2025",
+              "ext_inference_joules_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -22560,6 +22680,17 @@
                 "sources/source_notes/ext_lbnl_data_center_energy_2024.md"
               ],
               "passage_review_note": "The local source note was reviewed for bounded mechanism, evidence, failure, and non-claim use."
+            },
+            {
+              "source_id": "ext_inference_joules_2026",
+              "mapped_support": "Meter GPU energy per request under the actual output-length and batching policy.",
+              "limits": "The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions.",
+              "passage_refs": [
+                "sources/source_notes/ext_inference_joules_2026.md",
+                "https://arxiv.org/html/2601.22076v2"
+              ],
+              "passage_review_note": "2026-11-19. Table 1, Qwen3-32B on one B200. The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions.",
+              "passage_review_state": "reviewed"
             }
           ],
           "proof_targets": [
@@ -24543,7 +24674,8 @@
             "forward_transfer_program_synthesis",
             "answerability_atlas_synthesis",
             "ext_agent_reliability_rater_drift_2026",
-            "ext_cram_2026"
+            "ext_cram_2026",
+            "ext_agent_leaderboard_estimands_2026"
           ],
           "source_queue": {
             "primary": [
@@ -24576,7 +24708,8 @@
               "assurance_shift_learning",
               "forward_transfer_program_synthesis",
               "answerability_atlas_synthesis",
-              "ext_agent_reliability_rater_drift_2026"
+              "ext_agent_reliability_rater_drift_2026",
+              "ext_agent_leaderboard_estimands_2026"
             ],
             "variants": [
               "ext_mlperf_training_v6_2026"
@@ -25104,6 +25237,17 @@
               ],
               "passage_review_note": "2026-11-14: selected arXiv v1 sections, appendices and released timing records reviewed for the stated owner.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_agent_leaderboard_estimands_2026",
+              "mapped_support": "Define a deployment mixture, a practical margin and an uncertainty rule before comparing releases.",
+              "limits": "Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open.",
+              "passage_refs": [
+                "sources/source_notes/ext_agent_leaderboard_estimands_2026.md",
+                "https://arxiv.org/html/2609.07785v1"
+              ],
+              "passage_review_note": "2026-11-19. Figure 2 and pairwise decision procedure. Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -25286,7 +25430,8 @@
             "ext_persona_steering_capabilities_2026",
             "ext_persona_dosing_2026",
             "ext_lyra_neuron_explorer_2026",
-            "ext_neuronary_2026"
+            "ext_neuronary_2026",
+            "ext_steering_nonidentifiability_2026"
           ],
           "source_queue": {
             "primary": [
@@ -25310,7 +25455,8 @@
               "ext_persona_steering_capabilities_2026",
               "ext_persona_dosing_2026",
               "ext_lyra_neuron_explorer_2026",
-              "ext_neuronary_2026"
+              "ext_neuronary_2026",
+              "ext_steering_nonidentifiability_2026"
             ],
             "variants": [
               "qcsa_whitepaper",
@@ -25540,6 +25686,17 @@
                 "https://github.com/lyramakesmusic/neuronary/tree/2ffbfee8826bbc6a66774e28b406d31eae6ef860"
               ],
               "passage_review_note": "2026-11-02: neuronary.org public description; pinned repository 2ffbfee8826bbc6a66774e28b406d31eae6ef860: README/llms.txt, schema/recipe.schema.json lines 1–210 and scripts/run.py lines 1–185. Source/schema inspection only; no account, submission, votes, models, tokens or live backend mutation. No local model execution or independent reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_steering_nonidentifiability_2026",
+              "mapped_support": "Challenge the identity of a proposed steering direction using controlled perturbations and matched controls.",
+              "limits": "Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks.",
+              "passage_refs": [
+                "sources/source_notes/ext_steering_nonidentifiability_2026.md",
+                "https://arxiv.org/html/2602.06801v4"
+              ],
+              "passage_review_note": "2026-11-19. Figure 1 and finite-strength perturbation experiments. Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -27221,7 +27378,8 @@
             "ext_openai_es_2017",
             "assurance_shift_learning",
             "adjudicated_persistence",
-            "ext_catch_reward_hacking_2026"
+            "ext_catch_reward_hacking_2026",
+            "ext_optimistic_verifiers_2026"
           ],
           "problem": "A governed stack needs to convert feedback, verification, benchmark pressure, and failure into better future behavior without allowing reward signals to bypass evidence, authority, or rollback boundaries.",
           "insufficient": "RLHF, preference optimization, and verifier rewards are often treated as model-alignment recipes rather than governed update mechanisms across planners, routers, context policies, execution policies, and generation modes.",
@@ -27678,6 +27836,17 @@
               ],
               "passage_review_note": "2026-11-02: Sections 3.2.2 and 4.3, Limitations; no execution or attack reproduction. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_optimistic_verifiers_2026",
+              "mapped_support": "Track a proxy reward against an exact process oracle over the same rollouts.",
+              "limits": "Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules.",
+              "passage_refs": [
+                "sources/source_notes/ext_optimistic_verifiers_2026.md",
+                "https://arxiv.org/html/2611.21538v1"
+              ],
+              "passage_review_note": "2026-11-19. Sufficiency comparison and replication. Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -27843,7 +28012,8 @@
               "tokenmana",
               "cognitive_loop_closure",
               "assurance_shift_learning",
-              "ext_catch_reward_hacking_2026"
+              "ext_catch_reward_hacking_2026",
+              "ext_optimistic_verifiers_2026"
             ],
             "variants": [
               "ext_trpo_2015",
@@ -28389,7 +28559,8 @@
             "ext_ai_co_scientist_2025",
             "answerability_atlas_synthesis",
             "ext_test_time_memory_evolution_2026",
-            "ext_guidance_ttt_2026"
+            "ext_guidance_ttt_2026",
+            "ext_explore_then_commit_2026"
           ],
           "problem": "AI-assisted science closes a loop from research objective and hypothesis through design, simulation or instrument control, measurement, analysis, causal or statistical claim, replication, dual-use review, and evidence handoff. Generic planning and tool use do not preserve the epistemic controls of that full loop.",
           "insufficient": "A fluent hypothesis, autonomous laboratory, successful synthesis, simulator result, significant p-value, or generated paper can be useful while still hiding HARKing, selective stopping, instrument drift, contaminated controls, analysis flexibility, failed experiments, human intervention, replication gaps, or dual-use risk.",
@@ -28447,7 +28618,8 @@
               "ext_ai_co_scientist_2025",
               "answerability_atlas_synthesis",
               "ext_test_time_memory_evolution_2026",
-              "ext_guidance_ttt_2026"
+              "ext_guidance_ttt_2026",
+              "ext_explore_then_commit_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -28525,6 +28697,17 @@
                 "https://arxiv.org/html/2610.06269v1"
               ],
               "passage_review_note": "2026-11-02: Sections 3.3 and 4.1, Appendix B.3; archive, comparison and credit-assignment scope. Selected contextual representation; no complete paper/code/proof audit or local reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_explore_then_commit_2026",
+              "mapped_support": "Choose a discriminating probe, freeze the observations, and evaluate a fresh analyst's law and forecast.",
+              "limits": "The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring.",
+              "passage_refs": [
+                "sources/source_notes/ext_explore_then_commit_2026.md",
+                "https://arxiv.org/html/2610.07620v1"
+              ],
+              "passage_review_note": "2026-11-19. NewtonBench trials and coverage-sensitive analysis. The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring.",
               "passage_review_state": "reviewed"
             }
           ],

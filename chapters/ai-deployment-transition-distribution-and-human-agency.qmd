@@ -4,11 +4,13 @@ chapter_id: "ai-deployment-transition-distribution-and-human-agency"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-19"
 primary_sources:
+  - "coherence_exchange"
   - "ext_generative_ai_at_work_2025"
   - "ext_ilo_genai_jobs_index_2025"
   - "ext_oecd_ai_infrastructure_competition_2025"
+  - "ext_ai_skill_formation_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -25,10 +27,10 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 concept-complete argument-level manuscript |
-| Last updated | 2026-08-08 |
+| Last updated | 2026-11-19 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `coherence_exchange`, `ext_generative_ai_at_work_2025`, `ext_ilo_genai_jobs_index_2025`, `ext_oecd_ai_infrastructure_competition_2025`; connector/recovery: `coherence_exchange` |
+| Source loading state | source notes: `coherence_exchange`, `ext_generative_ai_at_work_2025`, `ext_ilo_genai_jobs_index_2025`, `ext_oecd_ai_infrastructure_competition_2025`; connector/recovery: `coherence_exchange`. Selected primary passages reviewed for `ext_ai_skill_formation_2026`. |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -219,6 +221,12 @@ of treating launch as an irreversible success declaration.
 
 **Source grounding.** `ext_generative_ai_at_work_2025` motivates separate analysis of productivity, worker experience, learning, and heterogeneity in one workplace. `ext_ilo_genai_jobs_index_2025` motivates task-level exposure rather than job-level simplification. Neither supplies long-run skill-retention evidence or validates these drills.
 
+### Who can diagnose the next failure?
+
+At rollout, compare three training conditions: an assistant supplies a fix, an assistant asks the operator to predict the failure before showing a fix, and an operator uses the ordinary documentation. Randomize comparable learners to conditions and record whether they finish the first task and how long it takes. Later, with assistance removed, present a new failure involving the same underlying concept and blind the scorer to the original condition. If the fastest group cannot diagnose the second failure, its time saving is insufficient evidence that it can own the outage shift. The prediction-first arm and later outage decision are proposed tests, distinct from the published experiment.
+
+The assisted group scored 4.15 points lower on a 27-point follow-up quiz about an unfamiliar asynchronous Python library. Average completion-time improvement was not statistically significant. Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects. [How AI Impacts Skill Formation](https://arxiv.org/html/2601.20245v2)
+
 ### Monitoring, correction, and reachable remedy
 
 **Mechanism.** Keep the transition lease open through delayed observation. Independent monitors track adoption and nonadoption cohorts, subgroup outcomes, complaints, service failures, concentration changes, attrition, and late dependency. Threshold breaches trigger funded actions—training, compensation, accessibility repair, scope reduction, pause, supplier migration, or withdrawal—and closure requires evidence that the remedy reached the affected state, not merely that it was announced.
@@ -363,6 +371,7 @@ These rows keep AI Deployment, Transition, Distribution, and Human Agency's mani
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_ai_skill_formation_2026` | Passage-reviewed comparator: How AI Impacts Skill Formation. Measure assisted completion and later unaided diagnosis for a comparable task. | Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Concentration, bottlenecks, and effective exit

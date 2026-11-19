@@ -456,6 +456,10 @@ the approver rather than the result. High-stakes feedback therefore needs
 independent channels, protected dissent, sampling of affected parties, and
 limits on the candidate's access to the evaluation process.
 
+### A longer justification earns the wrong reward
+
+A signed build and current grant suffice for approval. Append “the log is blue” to that explanation. A sufficiency checker still awards full credit. An exact checker rejects the spurious reason. In the published rule-based task the proxy reached 0.940 as exact faithfulness fell to 0.667 on 96 held-out episodes. Hold the update when the exact score deteriorates. Open-ended preferences rarely supply such an oracle. [Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle](https://arxiv.org/html/2611.21538v1)
+
 ## Policy Updates Are Leased Candidates
 
 A policy update should enter operation through a lease, not a coronation. The
@@ -676,22 +680,7 @@ assumptions, uncovered effects, and further-action owner separately.
 
 ## Scientific Discovery Is Governed Revision
 
-Scientific learning is another persistence path. An observation becomes a
-hypothesis; a hypothesis shapes an experiment; results may revise models,
-procedures, tools, and institutions. The same adaptive boundary applies, with
-additional pressure from researcher degrees of freedom.
-
-A governed discovery campaign freezes the question, hypotheses, admissible
-interventions, measurement plan, analysis, stopping rules, resource budget,
-authority, and non-claims before confirmatory evidence is opened. Exploratory
-work is welcome, but it remains labeled exploratory. Negative results, failed
-attempts, protocol deviations, and discarded hypotheses stay in the record.
-
-The experiment must distinguish observation from intervention and association
-from causal identification. A result may support a local prediction without
-discovering a general mechanism. Automated systems are especially capable of
-generating many hypotheses and analyses, which increases both discovery
-capacity and selection bias.
+An observation can become a hypothesis, shape an experiment and eventually change a procedure. Before opening confirmatory evidence, freeze the question, competing hypotheses, authorized interventions, measurement plan, analysis, stopping rule and budget. Retain failed attempts, deviations and negative results. If the team chooses an explanation after seeing the data, record the observation as exploratory and test its forecast on fresh evidence.
 
 The boundary differs by activity. A laboratory agent executes physical
 interventions; a computational agent produces code, experiments and papers;
@@ -726,24 +715,11 @@ it is not independent confirmation, proof of zero effect, or permission to
 reopen the closed controller line. Useful scientific memory must preserve
 both the promising observation and the decision it actually justified.
 
-Review has similar dependencies. Shared model families, training data,
-retrieval, prompts and scoring habits limit independence. Related reviewers
-can improve a draft, but their agreement is not independent confirmation.
-Count the dependency graph, not the names.
+Independent confirmation needs a separately challenged measurement path. Shared training data, retrieval and evaluators can reproduce the discovery team's mistake. Preserve both attempts. Record reviewer labor, including attention spent on abandoned hypotheses, and reopen the conclusion if a material dependency changes.
 
-Venue acceptance records one process's decision under its incentives and
-attention limits, not a direct truth measurement. Automated publication also
-consumes scarce reviewer attention, which belongs in the campaign cost.
+### Spend one measurement to separate two laws
 
-Independent confirmation should not share every dependency with the discovery
-path. New seeds on the same code and evaluator are useful, but they do not
-provide the same evidence as a separately implemented replication. Material
-changes after confirmation trigger readmission rather than inheriting the old
-label.
-
-Scientific conclusions remain versioned candidates. Later evidence can narrow,
-supersede, or retire them without rewriting history. This is not a weakness of
-the system. It is the mechanism by which correction remains possible.
+Both y = x and y = x² fit (0, 0) and (1, 1). Spend one measurement at two: the predictions are two and four. If four arrives, freeze the observations and ask a fresh analyst for a law and a prediction at three. Nine follows from the square law within this two-law family. On noiseless NewtonBench tasks the published protocol saved measurements; differing batch limits and competitive random acquisition leave the contribution of the selection heuristic unresolved. [Explore, Then Commit: Measurement-Efficient Scientific Law Discovery with Language Models](https://arxiv.org/html/2610.07620v1)
 
 ## Adjudicating the Two Patches
 
@@ -935,34 +911,9 @@ unit, and they do not demonstrate a superior continual-learning system.
 
 ## From Minimum Persistence to a Mature Learning System
 
-A minimum implementation can use the two repository incidents. Build an
-experience packet for each, record causal alternatives, and create candidate
-lessons. Require an adjudicator that can choose among no change, temporary
-context, dated memory, procedure, and typed tool test. It must state why the
-chosen locus is smaller than the rejected alternatives.
+Start with the two repository incidents. For each, record rival explanations and compare a temporary context entry, a dated memory, a procedure, a tool test and leaving the system alone. Challenge the chosen placement with stale evidence, wider scope and failed recovery. Check that the memory expires or the test retires when its assumptions change.
 
-Qualify both lessons prospectively. Inject stale evidence, evaluator conflict,
-scope widening, missing authority, failed rollback, and material change. Verify
-that the memory entry expires and that the tool test retires when the format
-changes. Preserve descendants and non-claims.
-
-The next stage adds policy updates, full-state checkpoints, data lineage, and
-separate unlearning claims. Compare adjudicated placement with memory-only,
-parameter-only, rule-based local, and human-review baselines. Measure whole-
-lifecycle cost, not only immediate task success.
-
-Natural campaigns should span different kinds of learning: software incidents,
-user feedback, model adaptation, evaluator revision, data deletion, and
-scientific hypothesis testing. Independent reviewers should judge causal
-accounts and placement without seeing the architecture label. Failed campaigns
-remain in the denominator.
-
-A mature system would treat every durable adaptation as a typed, leased,
-challengeable commitment. It would choose among loci, compile qualification
-obligations from commitment, preserve prospective forecasts, detect proxy-
-target divergence, trace descendants, restore complete state, and retire stale
-structure. No component would gain durable influence merely by producing its
-own evidence.
+Compare these decisions against fixed-placement and human-review baselines over the full lifecycle. A later campaign can add parameter updates, full-state recovery and descendant-aware deletion. Across domains, use independent reviewers blinded to the architecture label, retain failed campaigns and test whether the forecast transfers.
 
 ## The Strongest Objection
 

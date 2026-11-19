@@ -1,0 +1,362 @@
+{
+  "scenario_id": "chapter-research-2026-11-19",
+  "scenario_scope": "Eight worked examples and six shorter comparisons with reader counterparts.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "ext-correlated-errors-2025",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "verification-bandwidth-and-context-adequacy",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Compare the probability of matching wrong answers given joint failure with the probability of error given agreement.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-optimistic-verifiers-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "policy-optimization-and-learning-from-feedback",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Track a proxy reward against an exact process oracle over the same rollouts.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-mirabench-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-world-models-and-reality-grounding",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Pair predictions from the same initial scene under different commands, including an action expected to fail.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Predicted episodes can expose errors in the simulator. Physical control needs separate closed-loop evidence."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-steering-nonidentifiability-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "white-box-evidence-interpretability-and-activation-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Challenge the identity of a proposed steering direction using controlled perturbations and matched controls.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-inference-joules-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Meter GPU energy per request under the actual output-length and batching policy.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-expert-coupling-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-model-training-distributed-optimization-and-scaling",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Co-locate frequently co-selected experts and send a token once to each device that hosts its selected experts.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The study used one 12-layer model, top-2 and top-6 routing and 2.1B training tokens. Gains depend on traffic, layout and load."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-ai-skill-formation-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "ai-deployment-transition-distribution-and-human-agency",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Measure assisted completion and later unaided diagnosis for a comparable task.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Observed interaction styles were not randomized treatments. A short study cannot estimate lasting workforce effects."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-explore-then-commit-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "scientific-discovery-and-experimental-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Choose a discriminating probe, freeze the observations, and evaluate a fresh analyst's law and forecast.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The simulations are noiseless, batch limits differed, symbolic gains varied, and random acquisition was competitive with disagreement scoring."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-structured-output-benchmark-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "cognitive-compilation-and-semantic-ir",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Score schema compliance and correctness against source evidence separately.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-agent-leaderboard-estimands-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Define a deployment mixture, a practical margin and an uncertainty rule before comparing releases.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-byteflow-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Use local coding-rate scores to select top-K boundary positions inside a fixed computation shape.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-bridgekv-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "fast-generation-architectures",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "A large model processes the prompt, a learned map translates its attention cache, and a small model decodes.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-comixkv-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "resource-economics-and-token-budgets",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Allocate cache precision jointly across agents and layers as new cache blocks are quantized.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "New allocations apply to newly quantized blocks. Aggregate accuracy and memory depend on the agents, workload and model."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-aligning-ai-teams-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Compare team-wide responsibility assignments against group chat and a single agent on the same deliverable.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Results varied by model and task. Count work completed, adverse outcomes and total inference spent together."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    }
+  ],
+  "validation_boundary": "Selected published methods and results, with one chapter assignment per paper.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

@@ -206,6 +206,10 @@ change payload while holding the controller fixed, measure at another point,
 or compare a model with and without the suspected dynamic. A fluent causal
 story is the beginning of experiment design, not the end of inquiry.
 
+### Change the command in the same scene
+
+A simulated carriage starts two increments from contact. Predict the result of advancing two, holding, and advancing one. Only the first should touch. If all three clips show a smooth arrival, two of the three predictions ignored a consequential part of the command. MiraBench tested this kind of optimism across 12 configurations. Record each command and predicted displacement. An attractive simulated arrival supplies little evidence for authorizing the physical move. [MiraBench: Evaluating Action-Conditioned Reliability in Robotic World Models](https://arxiv.org/html/2605.29360v1)
+
 ## Horizon Changes the Claim
 
 A model can be useful one step ahead and misleading twenty steps ahead. Error
@@ -712,26 +716,8 @@ bounded to the tested tasks and environments.
 
 ## What This Establishes
 
-A world model is most useful when the system can disagree with it.
+Freeze forecasts before observing outcomes. Retain the branch, intervention, authority, horizon and eventual residual so a later model can learn from the miss while a reviewer can still reconstruct the decision. In the gantry trial the extra generated file was a representation error. The observed oscillation was a physical error. Each calls for a different repair.
 
-The essential architecture is a disciplined separation: observation, belief,
-prediction, counterfactual branch, intervention, action, actuality, and
-residual keep distinct identities. Forecasts freeze before outcomes. Horizons,
-assumptions, uncertainty, and validity domains travel with predictions.
-Observation can defeat imagination. Model updates preserve history. Neither a
-beautiful rollout nor a favorable predicted value grants authority.
-
-That discipline makes learning possible without turning explanation into
-revisionist history. The failed gantry branch remains a failed prediction, the
-extra generated file becomes a representation residual, and the oscillation
-becomes a physical residual. New models can learn from both while the old
-decision remains replayable.
-
-A governed world model can now compare several possible futures. It still
-cannot decide which future the system should pursue, how dependencies should
-be coordinated, or when a changing situation should abandon the chosen route.
-Those are planning problems. Unit 12 turns imagined branches into challengeable
-control artifacts without mistaking a plan for permission.
 [Unit 12](unit-12-planning-as-a-control-layer.qmd) must preserve branch identity,
 observation cutoff, uncertainty, known misses, and authority ceilings while
 selecting and coordinating work. The

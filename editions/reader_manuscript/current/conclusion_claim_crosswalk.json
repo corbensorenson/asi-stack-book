@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "02803b7fec1ed22d3198ee83f1ec37811711d734f57c5e8be473e8998c6cd9b2",
+  "book_structure_sha256": "3456944a25405c20312ec210fce0bd4495529c6b0f68b1f942898e19e6d04a11",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1426,
+    "source": 1440,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -1534,7 +1534,7 @@
       "order": 5,
       "title": "Evidence States and Scalable Oversight",
       "human_reader_source_file": "chapters/unit-05-evidence-states-and-scalable-oversight.qmd",
-      "human_reader_source_sha256": "e2c8854c3bfe3b830e1c17cbf4f8c391473ceb9f3b8e688acd2c4346c8c42c3e",
+      "human_reader_source_sha256": "b75eb2979bd1ab1cafc0da574e9b2c45e67e6ea56af7c116e681f8a6f60ffe23",
       "public_path": "reader/chapters/unit-05-evidence-states-and-scalable-oversight.html",
       "central_question": "How can limited evaluators learn from behavior, internal signals, proofs, and delegated review without letting any one artifact stand in for truth or safety?",
       "conclusion_change": "Natural correction streams in which simpler review records produce equal calibration, challenge, and error recovery would justify a smaller transition system.",
@@ -1828,7 +1828,7 @@
           "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
           "title": "White-Box Evidence, Interpretability, and Activation Governance",
           "technical_source_file": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-          "technical_source_sha256": "6731b8a1f5e88c6a982a2b9e560d97ede1e0cf002eb82dbdf806df99bfe7a752",
+          "technical_source_sha256": "9072dd4556b9daaa072821de7665f7b5d78520c321713b02bccb18b854e6ab7e",
           "live_technical_path": "chapters/white-box-evidence-interpretability-and-activation-governance.html",
           "human_reader_unit_id": "unit-05",
           "core_claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
@@ -1856,7 +1856,8 @@
             "ext_persona_steering_capabilities_2026",
             "ext_persona_dosing_2026",
             "ext_lyra_neuron_explorer_2026",
-            "ext_neuronary_2026"
+            "ext_neuronary_2026",
+            "ext_steering_nonidentifiability_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/deterministic_capability_compilation.md",
@@ -1879,7 +1880,8 @@
             "sources/source_notes/ext_persona_steering_capabilities_2026.md",
             "sources/source_notes/ext_persona_dosing_2026.md",
             "sources/source_notes/ext_lyra_neuron_explorer_2026.md",
-            "sources/source_notes/ext_neuronary_2026.md"
+            "sources/source_notes/ext_neuronary_2026.md",
+            "sources/source_notes/ext_steering_nonidentifiability_2026.md"
           ],
           "proof_edges": [
             {
@@ -1918,7 +1920,7 @@
           "artifact_refs": [
             {
               "path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-              "sha256": "6731b8a1f5e88c6a982a2b9e560d97ede1e0cf002eb82dbdf806df99bfe7a752"
+              "sha256": "9072dd4556b9daaa072821de7665f7b5d78520c321713b02bccb18b854e6ab7e"
             },
             {
               "path": "lean/AsiStackProofs/WhiteBoxEvidence.lean",
@@ -3712,7 +3714,7 @@
       "order": 11,
       "title": "Governed World Models and Reality Grounding",
       "human_reader_source_file": "chapters/unit-11-governed-world-models-and-reality-grounding.qmd",
-      "human_reader_source_sha256": "53677bb1077558b3bd8e35bd7b63515bb695a4650b874e5004926f9b3df712f6",
+      "human_reader_source_sha256": "1a56e789b7ea579fc705ff5a75137a30870d88d626569bd1f18cdad8f1be0d79",
       "public_path": "reader/chapters/unit-11-governed-world-models-and-reality-grounding.html",
       "central_question": "How can a system reason over possible worlds without confusing a successful simulation or plausible story with actual state?",
       "conclusion_change": "Strong predictive and causal baselines with simpler branch discipline and equal intervention value would justify collapsing the extra machinery.",
@@ -3723,7 +3725,7 @@
           "chapter_id": "governed-world-models-and-reality-grounding",
           "title": "Governed World Models and Reality Grounding",
           "technical_source_file": "chapters/governed-world-models-and-reality-grounding.qmd",
-          "technical_source_sha256": "f28da22f753e168ca886aad30f1058d37734ec2bd8944cb2e3a497be41c9dd86",
+          "technical_source_sha256": "2c0a1d08fda1bf8b4ec39dd71bd3aa2035ee1a749686bd3f795f01cce6ed4f33",
           "live_technical_path": "chapters/governed-world-models-and-reality-grounding.html",
           "human_reader_unit_id": "unit-11",
           "core_claim_id": "governed-world-models-and-reality-grounding.core",
@@ -3749,7 +3751,8 @@
             "ext_i_jepa_2023",
             "ext_platonic_representation_hypothesis_2024",
             "ext_platonic_representation_jepa_2026",
-            "ext_leworldmodel_2026"
+            "ext_leworldmodel_2026",
+            "ext_mirabench_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/platonic_world_model.md",
@@ -3770,7 +3773,8 @@
             "sources/source_notes/ext_i_jepa_2023.md",
             "sources/source_notes/ext_platonic_representation_hypothesis_2024.md",
             "sources/source_notes/ext_platonic_representation_jepa_2026.md",
-            "sources/source_notes/ext_leworldmodel_2026.md"
+            "sources/source_notes/ext_leworldmodel_2026.md",
+            "sources/source_notes/ext_mirabench_2026.md"
           ],
           "proof_edges": [
             {
@@ -3809,7 +3813,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-world-models-and-reality-grounding.qmd",
-              "sha256": "f28da22f753e168ca886aad30f1058d37734ec2bd8944cb2e3a497be41c9dd86"
+              "sha256": "2c0a1d08fda1bf8b4ec39dd71bd3aa2035ee1a749686bd3f795f01cce6ed4f33"
             },
             {
               "path": "lean/AsiStackProofs/GovernedWorldModels.lean",
@@ -4094,7 +4098,7 @@
       "order": 13,
       "title": "Cognitive Compilation and Semantic IR",
       "human_reader_source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "human_reader_source_sha256": "540aa2e1f264e3e0eebdcbf232793c342e73bb6701a19c168d885316263c969e",
+      "human_reader_source_sha256": "c36e5b7fe07bb36db273b0d8cf8d3229e406bbed9c79f9728c3ab20fef586a74",
       "public_path": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
@@ -4105,7 +4109,7 @@
           "chapter_id": "cognitive-compilation-and-semantic-ir",
           "title": "Cognitive Compilation and Semantic IR",
           "technical_source_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-          "technical_source_sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f",
+          "technical_source_sha256": "36a1128791ef7a77222ad40f98abbd5e9faa74ed2c3bf961ed3dd73f098d697f",
           "live_technical_path": "chapters/cognitive-compilation-and-semantic-ir.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "cognitive-compilation-and-semantic-ir.core",
@@ -4133,7 +4137,8 @@
             "ext_translation_validation_1998",
             "kernel_english_residual_compiler",
             "relational_dimension_compiler",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_structured_output_benchmark_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/cognitive_compilation.md",
@@ -4156,7 +4161,8 @@
             "sources/source_notes/ext_translation_validation_1998.md",
             "sources/source_notes/kernel_english_residual_compiler.md",
             "sources/source_notes/relational_dimension_compiler.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/ext_structured_output_benchmark_2026.md"
           ],
           "proof_edges": [
             {
@@ -4219,7 +4225,7 @@
           "artifact_refs": [
             {
               "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-              "sha256": "d0c59efc281afa6bfd2c0ae8fe6b81b759a02cd055d489b0aa476833877ab70f"
+              "sha256": "36a1128791ef7a77222ad40f98abbd5e9faa74ed2c3bf961ed3dd73f098d697f"
             },
             {
               "path": "lean/AsiStackProofs/CognitiveCompilation.lean",
@@ -5087,7 +5093,7 @@
       "order": 15,
       "title": "Verification Bandwidth, Claim Ledgers, and Proof",
       "human_reader_source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
-      "human_reader_source_sha256": "4561f3866765c1ac0cf72c88a4abaf717f75d26c8360bb20ab947ee6a9bd25c9",
+      "human_reader_source_sha256": "cbed682733081b4eccb4cb4733d2d874ff0ea10b8ae67c6070a2cc629542040f",
       "public_path": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
       "central_question": "What must be connected for a claim to remain challengeable, scoped, and correctable as evidence and consumers change?",
       "conclusion_change": "Simpler evidence records that produce equal correction, calibration, proof-scope discipline, and consumer repair would justify consolidation.",
@@ -5098,7 +5104,7 @@
           "chapter_id": "verification-bandwidth-and-context-adequacy",
           "title": "Verification Bandwidth and Context Adequacy",
           "technical_source_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-          "technical_source_sha256": "9a1e744ce115fb2b3df77ddc918d734ded6ecbf1830b66f93525a74dd926139d",
+          "technical_source_sha256": "fc017967a7a2c3ac28e04e6f2fb872f4df0eb34fd568de6839d10fb996a3a6f2",
           "live_technical_path": "chapters/verification-bandwidth-and-context-adequacy.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "verification-bandwidth-and-context-adequacy.core",
@@ -5122,7 +5128,8 @@
             "ext_ruler_2024",
             "ext_longllmlingua_2023",
             "ext_reluplex_2017",
-            "kernel_english_residual_compiler"
+            "kernel_english_residual_compiler",
+            "ext_correlated_errors_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/verification_bandwidth.md",
@@ -5141,7 +5148,8 @@
             "sources/source_notes/ext_ruler_2024.md",
             "sources/source_notes/ext_longllmlingua_2023.md",
             "sources/source_notes/ext_reluplex_2017.md",
-            "sources/source_notes/kernel_english_residual_compiler.md"
+            "sources/source_notes/kernel_english_residual_compiler.md",
+            "sources/source_notes/ext_correlated_errors_2025.md"
           ],
           "proof_edges": [
             {
@@ -5215,7 +5223,7 @@
           "artifact_refs": [
             {
               "path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-              "sha256": "9a1e744ce115fb2b3df77ddc918d734ded6ecbf1830b66f93525a74dd926139d"
+              "sha256": "fc017967a7a2c3ac28e04e6f2fb872f4df0eb34fd568de6839d10fb996a3a6f2"
             },
             {
               "path": "lean/AsiStackProofs/VerificationBandwidth.lean",
@@ -5933,7 +5941,7 @@
       "order": 16,
       "title": "Labor OS, Work Surfaces, and Organizations",
       "human_reader_source_file": "chapters/unit-16-labor-os-work-surfaces-and-organizations.qmd",
-      "human_reader_source_sha256": "e6e4df553ade74942dce269af29df649bd3fe4c0fc91207d2aea38c3b97ff2b8",
+      "human_reader_source_sha256": "5ce8b30519ee283847c58cec9c1397a1be4013b5b09483ba010ccef355652198",
       "public_path": "reader/chapters/unit-16-labor-os-work-surfaces-and-organizations.html",
       "central_question": "How does increasingly autonomous AI absorb work surfaces and organizational roles while accountability and human agency remain real?",
       "conclusion_change": "Conventional issue, CI, organizational, and assistive workflows matching continuity, agency, remedy, and recovery at lower burden would narrow the layer.",
@@ -6290,7 +6298,7 @@
           "chapter_id": "ai-deployment-transition-distribution-and-human-agency",
           "title": "AI Deployment, Transition, Distribution, and Human Agency",
           "technical_source_file": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
-          "technical_source_sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa",
+          "technical_source_sha256": "3aa01eac5669a5d67ec883cff5023b4ebc16228fce3edb9ad14d1413da6b8923",
           "live_technical_path": "chapters/ai-deployment-transition-distribution-and-human-agency.html",
           "human_reader_unit_id": "unit-16",
           "core_claim_id": "ai-deployment-transition-distribution-and-human-agency.core",
@@ -6301,13 +6309,15 @@
             "coherence_exchange",
             "ext_generative_ai_at_work_2025",
             "ext_ilo_genai_jobs_index_2025",
-            "ext_oecd_ai_infrastructure_competition_2025"
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_ai_skill_formation_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/coherence_exchange.md",
             "sources/source_notes/ext_generative_ai_at_work_2025.md",
             "sources/source_notes/ext_ilo_genai_jobs_index_2025.md",
-            "sources/source_notes/ext_oecd_ai_infrastructure_competition_2025.md"
+            "sources/source_notes/ext_oecd_ai_infrastructure_competition_2025.md",
+            "sources/source_notes/ext_ai_skill_formation_2026.md"
           ],
           "proof_edges": [
             {
@@ -6342,7 +6352,7 @@
           "artifact_refs": [
             {
               "path": "chapters/ai-deployment-transition-distribution-and-human-agency.qmd",
-              "sha256": "584e0c6d6e6fd0900e6a04a58730bc04f347087dc8a081a81cb1a981b54199aa"
+              "sha256": "3aa01eac5669a5d67ec883cff5023b4ebc16228fce3edb9ad14d1413da6b8923"
             },
             {
               "path": "lean/AsiStackProofs/DeploymentTransitionGovernance.lean",
@@ -6985,7 +6995,7 @@
       "order": 18,
       "title": "Procedural Memory, Inter-Stack Exchange, and Multi-Agent Risk",
       "human_reader_source_file": "chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.qmd",
-      "human_reader_source_sha256": "079c5e73fe60a5ea503f23eb630f2b616797d2ae93c06d40418ea703a1d30713",
+      "human_reader_source_sha256": "22dd76bc6ac785a3267b8a00c218da12395aad43f20e91ec496698d9257395c4",
       "public_path": "reader/chapters/unit-18-procedural-memory-inter-stack-exchange-and-multi-agent-risk.html",
       "central_question": "What must accompany a reusable skill or inter-agent transaction so that local validity does not become global permission or systemic safety?",
       "conclusion_change": "Simpler skill stores and agent protocols that preserve retirement, accountability, dispute, and systemic-risk detection at lower cost would justify consolidation.",
@@ -7139,7 +7149,7 @@
           "chapter_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
           "title": "Multi-Agent Dynamics, Collective Intelligence, and Systemic Risk",
           "technical_source_file": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-          "technical_source_sha256": "06933f06ded5c7d85e66085143611a9ce83b74903840c3c5959bbb536c4d178e",
+          "technical_source_sha256": "fc2b7d81bcc6f7438eb063ab4fc88fc3e08f0c80a062f820b434a0443db50de0",
           "live_technical_path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html",
           "human_reader_unit_id": "unit-18",
           "core_claim_id": "multi-agent-dynamics-collective-intelligence-and-systemic-risk.core",
@@ -7155,7 +7165,8 @@
             "ext_functional_decision_theory_2017",
             "coherence_exchange",
             "ext_muffin_async_shared_memory_2026",
-            "ext_transmissible_reward_hacking_2026"
+            "ext_transmissible_reward_hacking_2026",
+            "ext_aligning_ai_teams_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7166,7 +7177,8 @@
             "sources/source_notes/ext_functional_decision_theory_2017.md",
             "sources/source_notes/coherence_exchange.md",
             "sources/source_notes/ext_muffin_async_shared_memory_2026.md",
-            "sources/source_notes/ext_transmissible_reward_hacking_2026.md"
+            "sources/source_notes/ext_transmissible_reward_hacking_2026.md",
+            "sources/source_notes/ext_aligning_ai_teams_2026.md"
           ],
           "proof_edges": [
             {
@@ -7199,7 +7211,7 @@
           "artifact_refs": [
             {
               "path": "chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd",
-              "sha256": "06933f06ded5c7d85e66085143611a9ce83b74903840c3c5959bbb536c4d178e"
+              "sha256": "fc2b7d81bcc6f7438eb063ab4fc88fc3e08f0c80a062f820b434a0443db50de0"
             },
             {
               "path": "lean/AsiStackProofs/MultiAgentDynamics.lean",
@@ -7368,7 +7380,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "c9549680e89d2b7b38a0157766e01efc45900a788f452266455eacdc7967ab02",
+      "human_reader_source_sha256": "253a30d141f8b2470ed0550bf923d7269274b291d7194314266097ec7e2aab96",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7550,7 +7562,7 @@
           "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
           "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
           "technical_source_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-          "technical_source_sha256": "871e094aad6abe68c8c8b566a1ce874b222e631853fd50caea6f8af277e54457",
+          "technical_source_sha256": "d388d30b9347f4ee9cbb493781351bf45befe341e69ca8779c28cc43cc45e20c",
           "live_technical_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -7622,7 +7634,8 @@
             "ext_mhc_2025",
             "ext_attention_residuals_2026",
             "ext_mhc_peft_2026",
-            "ext_cram_2026"
+            "ext_cram_2026",
+            "ext_byteflow_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7689,7 +7702,8 @@
             "sources/source_notes/ext_mhc_2025.md",
             "sources/source_notes/ext_attention_residuals_2026.md",
             "sources/source_notes/ext_mhc_peft_2026.md",
-            "sources/source_notes/ext_cram_2026.md"
+            "sources/source_notes/ext_cram_2026.md",
+            "sources/source_notes/ext_byteflow_2026.md"
           ],
           "proof_edges": [
             {
@@ -7728,7 +7742,7 @@
           "artifact_refs": [
             {
               "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-              "sha256": "871e094aad6abe68c8c8b566a1ce874b222e631853fd50caea6f8af277e54457"
+              "sha256": "d388d30b9347f4ee9cbb493781351bf45befe341e69ca8779c28cc43cc45e20c"
             },
             {
               "path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
@@ -8075,7 +8089,7 @@
       "order": 20,
       "title": "Governed Training and Learning-Compute Topology",
       "human_reader_source_file": "chapters/unit-20-governed-training-and-learning-compute-topology.qmd",
-      "human_reader_source_sha256": "0bce36d8759d00bbb4ab41aec5caa1f1605dcc25b4cb8d7dc089bf1cd9e9b822",
+      "human_reader_source_sha256": "9f008a43cd09c4403cfccc02152b44e4071a5aac16ece41c8dd0ca7c1a1918c9",
       "public_path": "reader/chapters/unit-20-governed-training-and-learning-compute-topology.html",
       "central_question": "How can training remain reproducible and governable when learning spans models, memory, tools, evaluators, environments, and institutions?",
       "conclusion_change": "If independent encoders cannot agree on useful topology identity, or matched-resource interventions show no explanatory, control, or outcome value, the layer should be narrowed.",
@@ -8086,7 +8100,7 @@
           "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
           "title": "Governed Model Training, Distributed Optimization, and Scaling",
           "technical_source_file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-          "technical_source_sha256": "3bd3a6831888c2d30b0cbf5d70dfd08cd3372709b466ea9887e0d3e75cee30b1",
+          "technical_source_sha256": "a00c0e7619a58ecb026a084d589ed03a9ee923c3d7a3f8ea580c21b77330f26e",
           "live_technical_path": "chapters/governed-model-training-distributed-optimization-and-scaling.html",
           "human_reader_unit_id": "unit-20",
           "core_claim_id": "governed-model-training-distributed-optimization-and-scaling.core",
@@ -8127,7 +8141,8 @@
             "ext_openai_es_2017",
             "ext_mezo_2023",
             "ext_forward_forward_2022",
-            "ext_simhack_2026"
+            "ext_simhack_2026",
+            "ext_expert_coupling_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -8163,7 +8178,8 @@
             "sources/source_notes/ext_openai_es_2017.md",
             "sources/source_notes/ext_mezo_2023.md",
             "sources/source_notes/ext_forward_forward_2022.md",
-            "sources/source_notes/ext_simhack_2026.md"
+            "sources/source_notes/ext_simhack_2026.md",
+            "sources/source_notes/ext_expert_coupling_2026.md"
           ],
           "proof_edges": [
             {
@@ -8208,7 +8224,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-              "sha256": "3bd3a6831888c2d30b0cbf5d70dfd08cd3372709b466ea9887e0d3e75cee30b1"
+              "sha256": "a00c0e7619a58ecb026a084d589ed03a9ee923c3d7a3f8ea580c21b77330f26e"
             },
             {
               "path": "lean/AsiStackProofs/GovernedModelTraining.lean",
@@ -8317,7 +8333,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "6f744d735da157560884c124310afb9cc8e7a710caf7a07f445b360f3648b24c",
+      "human_reader_source_sha256": "369a70c03a0422d1ce78d844b63062debfc858c512265a128857e193480e6beb",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8548,7 +8564,7 @@
           "chapter_id": "policy-optimization-and-learning-from-feedback",
           "title": "Policy Optimization and Learning from Feedback",
           "technical_source_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-          "technical_source_sha256": "852f747a77fa15233e4f690a31565702e5dd73dc0ebccb653eb9d15ee82f3a08",
+          "technical_source_sha256": "57b5f502b442865457b1e3eaf5a4439c10f5570aab12bc4cbd7e410a4f7eebe6",
           "live_technical_path": "chapters/policy-optimization-and-learning-from-feedback.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "policy-optimization-and-learning-from-feedback.core",
@@ -8593,7 +8609,8 @@
             "ext_openai_es_2017",
             "assurance_shift_learning",
             "adjudicated_persistence",
-            "ext_catch_reward_hacking_2026"
+            "ext_catch_reward_hacking_2026",
+            "ext_optimistic_verifiers_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -8633,7 +8650,8 @@
             "sources/source_notes/ext_openai_es_2017.md",
             "sources/source_notes/assurance_shift_learning.md",
             "sources/source_notes/adjudicated_persistence.md",
-            "sources/source_notes/ext_catch_reward_hacking_2026.md"
+            "sources/source_notes/ext_catch_reward_hacking_2026.md",
+            "sources/source_notes/ext_optimistic_verifiers_2026.md"
           ],
           "proof_edges": [
             {
@@ -8760,7 +8778,7 @@
           "artifact_refs": [
             {
               "path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-              "sha256": "852f747a77fa15233e4f690a31565702e5dd73dc0ebccb653eb9d15ee82f3a08"
+              "sha256": "57b5f502b442865457b1e3eaf5a4439c10f5570aab12bc4cbd7e410a4f7eebe6"
             },
             {
               "path": "experiments/policy_update_lease/results/2026-07-02-local.json",
@@ -8992,7 +9010,7 @@
           "chapter_id": "scientific-discovery-and-experimental-governance",
           "title": "Scientific Discovery and Experimental Governance",
           "technical_source_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-          "technical_source_sha256": "d794d817e762c38aa7861f0c17793d470a70d2fbcd52c35e5005a63c4ed79263",
+          "technical_source_sha256": "d44ae46b5e894db38133084894f7cb8e22ae5a0bda215d75363556e1d61b4aee",
           "live_technical_path": "chapters/scientific-discovery-and-experimental-governance.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "scientific-discovery-and-experimental-governance.core",
@@ -9007,7 +9025,8 @@
             "ext_ai_co_scientist_2025",
             "answerability_atlas_synthesis",
             "ext_test_time_memory_evolution_2026",
-            "ext_guidance_ttt_2026"
+            "ext_guidance_ttt_2026",
+            "ext_explore_then_commit_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/aletheia.md",
@@ -9017,7 +9036,8 @@
             "sources/source_notes/ext_ai_co_scientist_2025.md",
             "sources/source_notes/answerability_atlas_synthesis.md",
             "sources/source_notes/ext_test_time_memory_evolution_2026.md",
-            "sources/source_notes/ext_guidance_ttt_2026.md"
+            "sources/source_notes/ext_guidance_ttt_2026.md",
+            "sources/source_notes/ext_explore_then_commit_2026.md"
           ],
           "proof_edges": [
             {
@@ -9052,7 +9072,7 @@
           "artifact_refs": [
             {
               "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-              "sha256": "d794d817e762c38aa7861f0c17793d470a70d2fbcd52c35e5005a63c4ed79263"
+              "sha256": "d44ae46b5e894db38133084894f7cb8e22ae5a0bda215d75363556e1d61b4aee"
             },
             {
               "path": "lean/AsiStackProofs/ScientificExperimentReview.lean",
@@ -9077,7 +9097,7 @@
       "order": 22,
       "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
       "human_reader_source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "human_reader_source_sha256": "7040525349dc9544d862c47f631290e5e37109bbcf3e65ce3b8ae4bbc482bb07",
+      "human_reader_source_sha256": "16dd8d422a2b4ae0230ec1d1d317fa5e7aca8070878cf51d1b8d654ed918aab7",
       "public_path": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html",
       "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
       "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
@@ -9290,7 +9310,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "3632fcafaa2ae51dfd81d5804abff3cbe3cb2bc468e8211df19c5a84b9e24816",
+          "technical_source_sha256": "688665bea1a683981b92deea5c34679068d56385f1421d39388b54d81b44e8a6",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9349,7 +9369,8 @@
             "forward_transfer_program_synthesis",
             "answerability_atlas_synthesis",
             "ext_agent_reliability_rater_drift_2026",
-            "ext_cram_2026"
+            "ext_cram_2026",
+            "ext_agent_leaderboard_estimands_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/benchmaxxing.md",
@@ -9403,7 +9424,8 @@
             "sources/source_notes/forward_transfer_program_synthesis.md",
             "sources/source_notes/answerability_atlas_synthesis.md",
             "sources/source_notes/ext_agent_reliability_rater_drift_2026.md",
-            "sources/source_notes/ext_cram_2026.md"
+            "sources/source_notes/ext_cram_2026.md",
+            "sources/source_notes/ext_agent_leaderboard_estimands_2026.md"
           ],
           "proof_edges": [
             {
@@ -9460,7 +9482,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "3632fcafaa2ae51dfd81d5804abff3cbe3cb2bc468e8211df19c5a84b9e24816"
+              "sha256": "688665bea1a683981b92deea5c34679068d56385f1421d39388b54d81b44e8a6"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -9955,7 +9977,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "13ec4055253802afb6764cdd82f0e35c209920cb2eb4d7cffafabd614748f8ca",
+      "human_reader_source_sha256": "ea213d393469f9a7a6679f8e39dd63d248afca99461acc44e8c41d6eba685134",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
@@ -10245,7 +10267,7 @@
           "chapter_id": "fast-generation-architectures",
           "title": "Fast Generation Architectures",
           "technical_source_file": "chapters/fast-generation-architectures.qmd",
-          "technical_source_sha256": "231ac64625199275768738a78b63289c655bfdd9cbe42dd8831d246c3eedfd52",
+          "technical_source_sha256": "b367621eb9353b2465e47e2f089201911103b068379ca3bc5c2a608f9632d9dc",
           "live_technical_path": "chapters/fast-generation-architectures.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "fast-generation-architectures.core",
@@ -10298,7 +10320,8 @@
             "ext_azure_llm_semantic_cache_2026",
             "precision_contract",
             "ext_dflash_2026",
-            "ext_d3d_2026"
+            "ext_d3d_2026",
+            "ext_bridgekv_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/cgs.md",
@@ -10346,7 +10369,8 @@
             "sources/source_notes/ext_azure_llm_semantic_cache_2026.md",
             "sources/source_notes/precision_contract.md",
             "sources/source_notes/ext_dflash_2026.md",
-            "sources/source_notes/ext_d3d_2026.md"
+            "sources/source_notes/ext_d3d_2026.md",
+            "sources/source_notes/ext_bridgekv_2026.md"
           ],
           "proof_edges": [
             {
@@ -10465,7 +10489,7 @@
           "artifact_refs": [
             {
               "path": "chapters/fast-generation-architectures.qmd",
-              "sha256": "231ac64625199275768738a78b63289c655bfdd9cbe42dd8831d246c3eedfd52"
+              "sha256": "b367621eb9353b2465e47e2f089201911103b068379ca3bc5c2a608f9632d9dc"
             },
             {
               "path": "scripts/validate_theseus_fast_support_lane.py",
@@ -10748,7 +10772,7 @@
           "chapter_id": "resource-economics-and-token-budgets",
           "title": "Resource Economics and Token Budgets",
           "technical_source_file": "chapters/resource-economics-and-token-budgets.qmd",
-          "technical_source_sha256": "8600aa5e167789411dc7912d4b350038207248e6cf3bb2132fba596c5fe7612e",
+          "technical_source_sha256": "fcf1895279785d5fab00a7f906f89a7082e6bf9ec660bf4a3d39348bd2bffe4b",
           "live_technical_path": "chapters/resource-economics-and-token-budgets.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "resource-economics-and-token-budgets.core",
@@ -10805,7 +10829,8 @@
             "assurance_shift_learning",
             "adjudicated_persistence",
             "forward_transfer_program_synthesis",
-            "answerability_atlas_synthesis"
+            "answerability_atlas_synthesis",
+            "ext_comixkv_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -10857,7 +10882,8 @@
             "sources/source_notes/assurance_shift_learning.md",
             "sources/source_notes/adjudicated_persistence.md",
             "sources/source_notes/forward_transfer_program_synthesis.md",
-            "sources/source_notes/answerability_atlas_synthesis.md"
+            "sources/source_notes/answerability_atlas_synthesis.md",
+            "sources/source_notes/ext_comixkv_2026.md"
           ],
           "proof_edges": [
             {
@@ -11074,7 +11100,7 @@
           "artifact_refs": [
             {
               "path": "chapters/resource-economics-and-token-budgets.qmd",
-              "sha256": "8600aa5e167789411dc7912d4b350038207248e6cf3bb2132fba596c5fe7612e"
+              "sha256": "fcf1895279785d5fab00a7f906f89a7082e6bf9ec660bf4a3d39348bd2bffe4b"
             },
             {
               "path": "scripts/validate_capacity_smoothing.py",
@@ -11151,7 +11177,7 @@
       "order": 24,
       "title": "Physical Compute, Energy, and Infrastructure",
       "human_reader_source_file": "chapters/unit-24-physical-compute-energy-and-infrastructure.qmd",
-      "human_reader_source_sha256": "338b8cc333cfd73c9acf3c5437bd0cbeba0c20c0b8506911b3be96b79924f9cd",
+      "human_reader_source_sha256": "b68433c6c10294e6a99a59f30198d724a8e7dc41abc8cca72b35c08e1e2b9e43",
       "public_path": "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html",
       "central_question": "What physical and social constraints determine whether an efficient cognitive architecture is actually deployable, resilient, and worth its displaced costs?",
       "conclusion_change": "Deployment studies showing physical constraints and topology do not materially affect accepted useful output, resilience, privacy, or total cost would narrow this layer.",
@@ -11410,7 +11436,7 @@
           "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
           "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
           "technical_source_file": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-          "technical_source_sha256": "6c71909679f4bd354fb27a4a5c7cfe0898586a04339c02829b4b3a0215042183",
+          "technical_source_sha256": "78de436b7b8dc01740cc908cee2fcfb3a757cd85af3cc93af2ee88eeb8cb4e26",
           "live_technical_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html",
           "human_reader_unit_id": "unit-24",
           "core_claim_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core",
@@ -11425,7 +11451,8 @@
             "ext_neuromorphic_computing_scale_2025",
             "ext_photonic_neuromorphic_2024",
             "ext_quantum_ml_shadows_2024",
-            "ext_oecd_ai_infrastructure_competition_2025"
+            "ext_oecd_ai_infrastructure_competition_2025",
+            "ext_inference_joules_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/tokenmana.md",
@@ -11435,7 +11462,8 @@
             "sources/source_notes/ext_neuromorphic_computing_scale_2025.md",
             "sources/source_notes/ext_photonic_neuromorphic_2024.md",
             "sources/source_notes/ext_quantum_ml_shadows_2024.md",
-            "sources/source_notes/ext_oecd_ai_infrastructure_competition_2025.md"
+            "sources/source_notes/ext_oecd_ai_infrastructure_competition_2025.md",
+            "sources/source_notes/ext_inference_joules_2026.md"
           ],
           "proof_edges": [
             {
@@ -11470,7 +11498,7 @@
           "artifact_refs": [
             {
               "path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-              "sha256": "6c71909679f4bd354fb27a4a5c7cfe0898586a04339c02829b4b3a0215042183"
+              "sha256": "78de436b7b8dc01740cc908cee2fcfb3a757cd85af3cc93af2ee88eeb8cb4e26"
             },
             {
               "path": "lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean",

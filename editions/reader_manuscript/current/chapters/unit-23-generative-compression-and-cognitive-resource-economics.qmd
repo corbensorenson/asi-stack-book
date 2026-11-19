@@ -331,6 +331,10 @@ A no-cache baseline measures real reuse. A stop-heavy governance baseline
 reveals false refusal and missed help. Every comparison should include the full
 attempt universe, not only accepted successes.
 
+### Which memory saving can fund another job?
+
+Two agents share one cache budget. CoMixKV redistributes precision for new blocks according to sensitivity. In one Qwen3-32B run cache peak fell from 14.64 to 9.94 GiB, while total device peak fell from 79.26 to 74.43 GiB. Budget a new job against measured whole-device headroom at the time it runs. A 32% cache saving is a much smaller fraction of total memory. [Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems](https://arxiv.org/html/2611.10096v1)
+
 ## The Allocation Lease
 
 A useful controller needs more than a cost estimate. It needs a temporary

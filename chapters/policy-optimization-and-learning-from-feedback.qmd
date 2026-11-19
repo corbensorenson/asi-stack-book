@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "learning_compute_topology"
   - "benchmaxxing"
@@ -44,6 +44,7 @@ primary_sources:
   - "assurance_shift_learning"
   - "adjudicated_persistence"
   - "ext_catch_reward_hacking_2026"
+  - "ext_optimistic_verifiers_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -60,12 +61,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-19 |
 | Passage review notes | Selected passage-review scope is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `benchmaxxing`, `rmi`; supporting: `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; external variants: TRPO, PPO, ReMax, DPO, IPO/preference theory, ORPO, KTO, SimPO, REINFORCE-style RLHF, DeepSeek-R1, DAPO, GSPO, S-GRPO, LongRLVR, RLHF limitations; connector/recovery: `moecot`; handoff: `sources/inbox/policy_optimization_browser_note_2026-06-24/` |
-| Source loading state | source notes: `learning_compute_topology`, `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, `ext_trpo_2015`, `ext_ppo_2017`, `ext_remax_2023`, `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024`, `ext_reinforce_style_rlhf_2024`, `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025`, `ext_longrlvr_2026`, `ext_rlhf_limitations_2023`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `assurance_shift_learning`, `adjudicated_persistence`, `ext_catch_reward_hacking_2026`; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot` |
+| Source loading state | source notes: `learning_compute_topology`, `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`, `moecot`, `ext_trpo_2015`, `ext_ppo_2017`, `ext_remax_2023`, `ext_dpo_2023`, `ext_ipo_preference_2023`, `ext_orpo_2024`, `ext_kto_2024`, `ext_simpo_2024`, `ext_reinforce_style_rlhf_2024`, `ext_deepseek_r1_2025`, `ext_dapo_2025`, `ext_gspo_2025`, `ext_s_grpo_2025`, `ext_longrlvr_2026`, `ext_rlhf_limitations_2023`, `ext_muse_unlearning_2025`, `ext_faithfulness_information_flow_2026`, `portia_synapse`, `spider_synapse`, `regret_engine`, `ext_eggroll_hyperscale_es_2026`, `ext_openai_es_2017`, `assurance_shift_learning`, `adjudicated_persistence`, `ext_catch_reward_hacking_2026`; raw cache: `benchmaxxing`, `rmi`, `spinoza`, `verification_bandwidth`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `scf`, `tokenmana`, `cognitive_loop_closure`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_optimistic_verifiers_2026`. |
 | Test state | `policy_optimization_record.valid.json` passes repository-level protocol fixture validation; `AsiStackProofs.PolicyOptimization` implements finite policy-update record and reward/governance promotion gates plus bounded negative cases for missing holdout or contamination checks, reward-proxy promotion without target evaluation, authority-expanding policy updates without approval or rollback, policy-promotion route failures for inadmissible feedback, missing target evaluation, missing reward-hacking probes, governance or authority gaps, missing rollback, and regression/residual gaps, and the policy-update lease fixture bridge; `python3 scripts/validate_benchmark_antigoodhart.py` validates synthetic feedback admissibility, reward-boundary, reward-hacking-probe, evidence-packet, governance-gate, blocked-ratchet, and promotion-gate behavior; `python3 scripts/validate_policy_update_lease_probe.py` validates `experiments/policy_update_lease/results/2026-07-02-local.json`, a deterministic synthetic router-policy canary lease with holdouts, contamination check, reward-hacking probes, unchanged authority, expected-invalid controls, and dry-run rollback. No policy optimization experiment has been run. |
 
 ## Drafting guardrail
@@ -295,6 +296,12 @@ false accepts, false rejects and behavior under continued optimization belong
 in qualification, alongside genuine task performance. [SimHack](governed-model-training-distributed-optimization-and-scaling.qmd#simhack-training-recipe-risk)
 asks a different question: whether reference training histories predict when
 detectable hacking becomes dominant under another recipe.
+
+### A longer justification earns the wrong reward
+
+In a toy release policy, approval requires both a signed build and a current grant. The first explanation cites those two facts. The second adds that the build happened on Tuesday and the log uses blue labels. A checker that awards one point for including a sufficient reason gives both answers 1. An exact-set checker accepts only the first. If the second explanation becomes more common under training, a perfect proxy score can coexist with falling exact agreement. Freeze both checkers and score the same held-out answers before accepting the update. The binary toy scores illustrate the distinction; the paper uses its own faithfulness measure.
+
+The sufficiency proxy reached 0.940 while the exact faithfulness score dropped from 0.731 to 0.667 on 96 held-out episodes. Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules. [Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle](https://arxiv.org/html/2611.21538v1)
 
 ## Method families
 
@@ -674,6 +681,7 @@ These rows keep Policy Optimization and Learning from Feedback's manifest assign
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds the positive-support prerequisite, outcome/process separation, evaluator-first rule, and governed negative-pressure boundary before an informative exception can enter an update lease. | No policy update, anti-tampering effect, or superiority of negative feedback was demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Frames a policy update as one candidate persistence locus selected only after learning eligibility, cross-surface comparison, commitment matching, and explicit authority. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_catch_reward_hacking_2026` | Passage-reviewed comparator: CATCH: A Controllable Analysis Testbed for Reward Hacking in Coding RL. Separates a vulnerable training evaluator from a hardened execution-based audit. It also studies how monitor pressure changes the usefulness of reasoning and comments as evidence. | Constructed software-wrapped algorithmic tasks and Qwen3-4B RL are the tested setting. Known-loophole gold labels do not define every real-repository failure or general deceptive intent. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_optimistic_verifiers_2026` | Passage-reviewed comparator: Optimistic Verifiers Get Hacked: Reward Hacking Under an Exact Process Oracle. Track a proxy reward against an exact process oracle over the same rollouts. | Replication supported the direction of damage more consistently than its magnitude. The exact oracle depends on executable rules. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 real policy-update result

@@ -4,14 +4,17 @@ chapter_id: "physical-compute-infrastructure-energy-and-environmental-constraint
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-19"
 primary_sources:
+  - "tokenmana"
   - "ext_iea_energy_and_ai_2025"
   - "ext_lbnl_data_center_energy_2024"
+  - "ext_flexible_hardware_enabled_guarantees_2025"
   - "ext_neuromorphic_computing_scale_2025"
   - "ext_photonic_neuromorphic_2024"
   - "ext_quantum_ml_shadows_2024"
   - "ext_oecd_ai_infrastructure_competition_2025"
+  - "ext_inference_joules_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -28,10 +31,10 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-08-08 |
+| Last updated | 2026-11-19 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `tokenmana`, `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`; raw cache: `tokenmana` |
+| Source loading state | source notes: `tokenmana`, `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`; raw cache: `tokenmana`. Selected primary passages reviewed for `ext_inference_joules_2026`. |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -231,6 +234,14 @@ carries both a service lease and an impact obligation through retirement.
 
 **Source grounding.** `ext_lbnl_data_center_energy_2024` demonstrates explicit national estimation methods and uncertainty; `ext_iea_energy_and_ai_2025` supplies scenarios. Neither validates this project’s meters or rebound estimate.
 
+### From a token meter to an answer bill
+
+At the common batch size, the per-token ratio is about 1.49. The per-response ratio is about 23.1. Table 1 gives the missing denominators. For conversation at its maximum batch size, 627 output tokens times 0.151 J/token gives roughly 95 J. For problem solving, 7,035 times 0.312 gives roughly 2,195 J, close to the reported 2,192 J after rounding. The maximum batch sizes were 512 and 128.
+
+For a purchasing decision, send the same task mix to both routes with the same acceptance test and latency limit. Divide metered energy for **all attempts**, including failures and retries, by the number of accepted responses. Specify whether the meter covers GPUs, servers or the facility before attaching electricity or carbon quantities to that result.
+
+At batch size 128 the authors report 0.209 and 0.312 GPU joules per token for conversation and problem solving. Their per-response figures are 95 and 2,192 GPU joules. The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
+
 ### Hardware guarantees, coverage, and concentration
 
 **Mechanism.** Express hardware-enabled controls as property-and-coverage contracts: root of trust, measured component and firmware, attestation verifier, key and update authority, tolerated bypasses, covered operators, failure recovery, appeal, and decommissioning. Evaluate whether controls reduce a named risk without creating single-vendor dependence, surveillance, exclusion, or systemic failure. Concentration analysis covers accelerators, fabs, cloud, energy, networking, and verification authorities. Each guarantee names uncovered legacy and off-grid paths.
@@ -376,6 +387,7 @@ These rows keep Physical Compute Infrastructure, Energy, and Environmental Const
 | `ext_photonic_neuromorphic_2024` | Metadata-first comparator: Integrated photonic neuromorphic computing: opportunities and challenges. Review of integrated photonic neuromorphic computing opportunities and challenges. It maps device and systems tradeoffs but does not establish deployment advantage, digital replacement, or favorable full-stack energy and cost. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_quantum_ml_shadows_2024` | Metadata-first comparator: Shadows of quantum machine learning. Peer-reviewed analysis of limitations and benchmarking traps in quantum machine-learning advantage claims. It supports advantage declarations with data-loading, classical-baseline, noise, scale, and end-to-end accounting, not a claim that quantum ML is useless. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_inference_joules_2026` | Passage-reviewed comparator: Where Do the Joules Go? Diagnosing Inference Energy Consumption. Meter GPU energy per request under the actual output-length and batching policy. | The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Beyond digital accelerators: end-to-end substrate accounting

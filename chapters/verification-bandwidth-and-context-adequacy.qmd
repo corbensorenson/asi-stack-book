@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-19"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -22,6 +22,8 @@ primary_sources:
   - "ext_ruler_2024"
   - "ext_longllmlingua_2023"
   - "ext_reluplex_2017"
+  - "kernel_english_residual_compiler"
+  - "ext_correlated_errors_2025"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -39,12 +41,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-15 |
-| Primary source records | `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_dont_hallucinate_abstain_2024`, `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023`, `ext_reluplex_2017` |
+| Last updated | 2026-11-19 |
+| Primary source records | 18 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `verification_bandwidth`, `vcm_public`; supporting: `spinoza`, `treellm`, ALCE, CheckList, GPQA, abstention, Reluplex; variants: GraphRAG, HippoRAG, RAPTOR, LongBench, RULER, LongLLMLingua; connector/recovery: `vcm_editable` |
-| Source loading state | source notes: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_dont_hallucinate_abstain_2024`, `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023`, `ext_reluplex_2017`, `kernel_english_residual_compiler`; raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`, `vcm_editable`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_dont_hallucinate_abstain_2024`, `ext_alce_2023`, `ext_checklist_2020`, `ext_gpqa_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023`, `ext_reluplex_2017`, `kernel_english_residual_compiler`; raw cache: `verification_bandwidth`, `vcm_public`, `spinoza`, `treellm`; connector/recovery: `vcm_editable`. Selected primary passages reviewed for `ext_correlated_errors_2025`. |
 | Test state | Exact authored scaffold: 3 valid/5 rejecting admission records; 2 valid/7 rejecting contradiction traces; 3 valid/5 rejecting capacity traces; one 12-unit/66-obligation/18-checked/48-residual record; one 24-obligation decomposition including 6 boundary checks; a five-stage/twelve-route refinement; and 31/31 rejected evidence-handoff mutations. Four baseline declarations are retired and eight stronger lifecycle declarations added. M8 Campaign 4 added 18 sacrificial tasks and 36 local Qwen3-8B calls across three versioned instruments; its terminal path reached 6/6 eligibility accuracy and perfect required-residual recall but admitted only 3/6 extraction interfaces, so heldout stayed sealed and support did not move. No natural heldout claim, externally independent evaluator, deployed ledger or escalation service, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
@@ -451,6 +453,21 @@ The model also records a valid named-decomposition trace: three clusters of four
 
 This is still a synthetic record model. It does not prove a model verification bandwidth law, does not measure contradiction-rate performance, does not validate an adequacy classifier, does not prove long-context failure in deployed systems, and does not promote any core support state.
 
+### How much evidence is a second opinion?
+
+Suppose two reviewers independently submit one of four labels on each of 20 previously adjudicated records. Here is the full tally against the event log.
+
+| Outcome against the log | Records |
+|---|---:|
+| Both chose the correct label | 12 |
+| Exactly one was wrong | 3 |
+| Both chose the same wrong label | 3 |
+| Both were wrong and chose different labels | 2 |
+
+Among five joint failures, the reviewers agreed three times (60%). Among fifteen agreements, three were wrong (20%). Joint failure itself occurred on five of twenty records (25%). These are illustrative counts. If the next disputed release rests on the same shared summary, spend the next review slot on the original event record. Before using the 20% rate for future releases, check whether their item mix and reviewers match this sample.
+
+In the HELM comparison, pairs chose the same wrong alternative about 60% of the time when both were wrong. Uniform independent selection among three wrong alternatives gives one third. This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter. [Correlated Errors in Large Language Models](https://arxiv.org/html/2506.07962v1)
+
 ### Reachable evidence-gate refinement
 
 The earlier formal route contained an authority leak: its most favorable
@@ -720,6 +737,7 @@ These rows keep Verification Bandwidth and Context Adequacy's manifest assignmen
 | Source | Intake role | Boundary |
 |---|---|---|
 | `kernel_english_residual_compiler` | Metadata-first comparator: [Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning](../papers/kernel_english_residual_compiler.html). Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_correlated_errors_2025` | Passage-reviewed comparator: Correlated Errors in Large Language Models. Compare the probability of matching wrong answers given joint failure with the probability of error given agreement. | This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 evaluator adequacy result
