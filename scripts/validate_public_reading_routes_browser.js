@@ -5,8 +5,17 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
+const live = process.argv[2] === "--live";
 const site = path.resolve(process.argv[2] || "_site");
 const root = "https://corbensorenson.github.io/asi-stack-book/";
+const inlineMathPaper = "papers/treellm.html";
+const displayMathPaper = "papers/deterministic_capability_compilation.html";
+const mathPapers = [
+  inlineMathPaper,
+  "papers/reflexive_router_whitepaper.html",
+  "papers/learning_compute_topology.html",
+  displayMathPaper,
+];
 
 async function serveCandidate(context) {
   // Keep Quarto's canonical origin so same-page links keep their normal
@@ -55,13 +64,57 @@ async function search(browser, root, query, expected) {
   }
 }
 
+async function checkEquationScroll(page, selector) {
+  const equations = page.locator(selector);
+  const index = await equations.evaluateAll(elements =>
+    elements.findIndex(el => el.scrollWidth - el.clientWidth > 40));
+  assert(index >= 0, `expected a wide equation for ${selector}`);
+  const equation = equations.nth(index);
+  await equation.focus();
+  assert(await equation.evaluate(el => document.activeElement === el));
+  await equation.press("ArrowRight");
+  await page.waitForFunction(el => el.scrollLeft > 0, await equation.elementHandle(), { timeout: 5000 });
+  const reachesBothEnds = await equation.evaluate(el => {
+    const math = el.querySelector("mjx-math");
+    el.scrollLeft = 0;
+    const start = math.getBoundingClientRect().left >= el.getBoundingClientRect().left - 1;
+    el.scrollLeft = el.scrollWidth;
+    return start && math.getBoundingClientRect().right <= el.getBoundingClientRect().right + 1;
+  });
+  assert(reachesBothEnds, `equation clipped for ${selector}`);
+}
+
+async function addRenderedMathFixture(page) {
+  // Reproduce the CHTML output structure without fetching third-party assets
+  // during candidate validation. The live pass waits for MathJax itself.
+  await page.evaluate(() => {
+    for (const kind of ["inline", "display"]) {
+      const paragraph = document.createElement("p");
+      const wrapper = document.createElement("span");
+      wrapper.className = "math " + kind;
+      const container = document.createElement("mjx-container");
+      container.className = "MathJax";
+      container.setAttribute("jax", "CHTML");
+      container.tabIndex = 0;
+      if (kind === "display") container.setAttribute("display", "true");
+      const math = document.createElement("mjx-math");
+      math.style.cssText = "display:inline-block; inline-size:48em";
+      math.textContent = "Equation";
+      container.append(math);
+      wrapper.append(container);
+      paragraph.append(wrapper);
+      document.querySelector("main.content").prepend(paragraph);
+    }
+  });
+}
+
 async function main() {
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined,
   });
   try {
     const context = await browser.newContext();
-    await serveCandidate(context);
+    if (!live) await serveCandidate(context);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#clustering-the-retrieval-index$/);
@@ -89,10 +142,23 @@ async function main() {
     for (const [width, scale] of [[1280, 1], [390, 1], [320, 1], [320, 2]]) {
       await page.setViewportSize({ width, height: 820 });
       for (const route of ["", "reader/", "reader/quickstart.html", "products/evidence-registry/",
-          "papers/bugbrain.html", "papers/treellm.html", "papers/reflexive_router_whitepaper.html",
-          "papers/learning_compute_topology.html", "papers/deterministic_capability_compilation.html"]) {
+          "papers/bugbrain.html", ...mathPapers]) {
         await page.goto(root + route);
         if (scale === 2) await page.addStyleTag({ content: "html {font-size:200% !important}" });
+        if (live && mathPapers.includes(route)) {
+          await page.locator("mjx-container").first().waitFor({ state: "attached" });
+          await page.evaluate(async () => { await window.MathJax.startup.promise; });
+        }
+        if (scale === 2 && route === inlineMathPaper && live) {
+          await checkEquationScroll(page, 'main mjx-container:not([display="true"])');
+        }
+        if (scale === 2 && route === displayMathPaper) {
+          if (!live) {
+            await addRenderedMathFixture(page);
+            await checkEquationScroll(page, 'main mjx-container:not([display="true"])');
+          }
+          await checkEquationScroll(page, 'main mjx-container[display="true"]');
+        }
         const overflow = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth);
         assert(overflow <= 2, `${route || "book home"} at ${width}px and ${scale}× text overflows by ${overflow}px`);
       }
@@ -101,7 +167,7 @@ async function main() {
     const table = page.locator(".paper-table").filter({ has: page.locator("table") }).first();
     await table.focus();
     assert(await table.evaluate(el => document.activeElement === el));
-    console.log("Exact citation search, keyboard selection, copied links, paper contents, table focus and reflow passed.");
+    console.log("Exact citation search, keyboard selection, copied links, paper contents, table focus, equation scrolling and reflow passed.");
   } finally {
     await browser.close();
   }
