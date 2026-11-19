@@ -37,7 +37,7 @@ REQUIRED_NON_CLAIMS = [
     "does not prove external review quality",
 ]
 
-ROW_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|\s*`([^`]+)`\s*\|")
+ROW_RE = re.compile(r"^\|\s*`([^`]+)`(?:\{#\1\})?\s*\|\s*`([^`]+)`\s*\|")
 FORBIDDEN_APPENDIX_PHRASES = [
     "automatically promotes",
     "promotion is guaranteed",
@@ -91,7 +91,8 @@ def flatten_chapters(structure: dict[str, Any]) -> list[dict[str, Any]]:
 def parse_appendix_rows() -> list[dict[str, Any]]:
     rows: list[dict[str, Any]] = []
     for line_number, line in enumerate(APPENDIX_C.read_text(encoding="utf-8", errors="ignore").splitlines(), start=1):
-        if not ROW_RE.match(line.strip()):
+        match = ROW_RE.match(line.strip())
+        if not match:
             continue
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
         if len(cells) != 11:
@@ -106,7 +107,7 @@ def parse_appendix_rows() -> list[dict[str, Any]]:
         rows.append(
             {
                 "line_number": line_number,
-                "claim_id": strip_ticks(cells[0]),
+                "claim_id": match.group(1),
                 "chapter_id": strip_ticks(cells[1]),
                 "claim": cells[2],
                 "claim_label": cells[3],

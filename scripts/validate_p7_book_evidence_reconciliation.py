@@ -36,7 +36,7 @@ CURRENT_ROADMAP = "docs/post_v2_3_maintenance_transfer_and_publication_roadmap.m
 P7_START = "<!-- P7-EVIDENCE-RECONCILIATION:START -->"
 P7_END = "<!-- P7-EVIDENCE-RECONCILIATION:END -->"
 SOURCE_ROW_ID_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|", re.MULTILINE)
-CORE_ROW_ID_RE = re.compile(r"^\|\s*`([^`]+\.core)`\s*\|", re.MULTILINE)
+CORE_ROW_ID_RE = re.compile(r"^\|\s*`([^`]+\.core)`(?:\{#\1\})?\s*\|", re.MULTILINE)
 
 ACTIVATION_CHAPTER_COUNT = 55
 ACTIVATION_SOURCE_COUNT = 316

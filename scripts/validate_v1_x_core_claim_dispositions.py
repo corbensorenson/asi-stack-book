@@ -19,7 +19,7 @@ DISPOSITION_REPORT = ROOT / "docs" / "core_claim_disposition_ledger.md"
 ROADMAP = ROOT / "docs" / "v1_x_beyond_sota_roadmap.md"
 
 PLAN_ROW_RE = re.compile(r"^\|\s*([IVX]+)\s*\|\s*`([^`]+)`\s*\|")
-APPENDIX_ROW_RE = re.compile(r"^\|\s*`([^`]+)`\s*\|\s*`([^`]+)`\s*\|")
+APPENDIX_ROW_RE = re.compile(r"^\|\s*`([^`]+)`(?:\{#\1\})?\s*\|\s*`([^`]+)`\s*\|")
 
 REQUIRED_ROADMAP_STRINGS = [
     "Every chapter core claim has an explicit disposition",
@@ -98,12 +98,13 @@ def parse_appendix_rows() -> dict[str, dict[str, str]]:
     rows: dict[str, dict[str, str]] = {}
     duplicates: set[str] = set()
     for line_number, line in enumerate(APPENDIX_C.read_text(encoding="utf-8", errors="ignore").splitlines(), start=1):
-        if not APPENDIX_ROW_RE.match(line.strip()):
+        match = APPENDIX_ROW_RE.match(line.strip())
+        if not match:
             continue
         cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
         if len(cells) != 11:
             raise ValueError(f"{rel(APPENDIX_C)} line {line_number}: expected 11 cells, found {len(cells)}")
-        claim_id = cells[0].strip("`")
+        claim_id = match.group(1)
         if claim_id in rows:
             duplicates.add(claim_id)
         rows[claim_id] = {

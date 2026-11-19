@@ -620,7 +620,7 @@ def external_literature_rows(records: list[dict], structure: dict) -> list[str]:
         if (SOURCE_NOTES / f"{record['id']}.md").exists():
             note_status = f"[Source note]({structure['repo_url'].rstrip('/')}/blob/main/sources/source_notes/{record['id']}.md)"
         rows.append(
-            "| `{id}`{{#{id}}} | {title} | {record_ref} | `{layer}` | {targets} | {note_status} | {notes} |".format(
+            "| `{id}` | [{title}]{{#{id}}} | {record_ref} | `{layer}` | {targets} | {note_status} | {notes} |".format(
                 id=qmd_escape(record.get("id", "")),
                 title=qmd_escape(record.get("title", "")),
                 record_ref=record_ref,
