@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-13"
+last_updated: "2026-11-18"
 primary_sources:
   - "vcm_public"
   - "deterministic_capability_compilation"
@@ -38,6 +38,19 @@ primary_sources:
   - "ext_airllm_2023"
   - "ext_hf_accelerate_big_model_inference_2026"
   - "ext_recursive_language_models_2025"
+  - "ext_emeans_2026"
+  - "ext_kmeans_plus_plus_2007"
+  - "ext_flash_kmeans_2026"
+  - "ext_superkmeans_2026"
+  - "ext_spherical_kmeans_2001"
+  - "ext_fast_kmedoids_2021"
+  - "ext_dbscan_1996"
+  - "ext_hdbscan_2015"
+  - "ext_ward_hierarchical_2014"
+  - "ext_fixed_size_kmeans_2025"
+  - "ext_hnsw_2016"
+  - "ext_faiss_library_2024"
+  - "ext_scale_conditioned_memory_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -55,12 +68,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-11-02 |
+| Last updated | 2026-11-18 |
 | Passage review notes | Selected primary-passage review is recorded per mapping. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: eight author/project notes plus QCSA and `reflexive_router_whitepaper`; connector/recovery: `vcm_editable`, `moecot`; external comparators: graph retrieval, hierarchical abstraction, persistent memory, RAG, long-context use, citations, adaptive retrieval, OS-style tiering, and prompt compression |
-| Source loading state | source notes: `vcm_public`, `deterministic_capability_compilation`, `platonic_world_model`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_recursive_language_models_2025`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot` |
+| Source loading state | source notes: `vcm_public`, `deterministic_capability_compilation`, `platonic_world_model`, `context_engineer`, `verification_bandwidth`, `viea`, `vcm_editable`, `moecot`, `spinoza`, `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_recursive_language_models_2025`; raw cache: `vcm_public`, `context_engineer`, `verification_bandwidth`, `viea`, `spinoza`; connector/recovery: `vcm_editable`, `moecot`. Passage review of `ext_scale_conditioned_memory_2026` is documented in the source crosswalk. |
 | Test state | Exact bounded scaffold: 3 valid/5 rejecting admission-adequacy fixtures; 2 valid/9 rejecting resolver/certificate routes; 1 bounded four-project certificate/11 rejecting mutations; exact 39-theorem reachable 4-event materialization and 2-event mandatory-fault model with 8 composition splits and 73/73 rejected mutations; reachable 5-event certificate admission with 12 real certificate projections and 64/64 rejected mutations; 83 live Lean declarations under 6 targets; and QCSA's mixed synthetic identity/address/certificate results. No deployed resolver, natural source-to-packet fidelity test, model-use observation, useful context advantage, transaction isolation, deletion enforcement, VCM-Bench run, or production transfer. |
 
 The executed merge combines two current record families:
@@ -496,6 +509,12 @@ same corpus and query slices. The artifact compression chapter describes
 the additional choice of [using centers as stored codes](rankfold-neuralfold-and-artifact-compression.qmd#vector-codebook-cost).
 [HNSW](https://arxiv.org/abs/1603.09320) ·
 [Faiss](https://arxiv.org/abs/2401.08281)
+
+### Can the worker still find the correction?
+
+Keep the Gantry-08 correction, its version and its permissions fixed. Add unrelated release histories, rebuild the index, and ask for the same release sentence at each size. Give the worker two retrieval calls. Score the returned sentence and the cited passage together. A stale summary on call one is an incorrect answer within budget. Finding the correction on call three shows that the evidence survived, but the route missed the two-call requirement. A lookup by trial identifier provides a comparison on the same snapshots.
+
+Shao and colleagues used evidence-preserving growth on LongMemEval. HippoRAG stayed inside two calls while its rate of correct answers within budget fell by 16–20 percentage points across the reported settings. More calls would address a different failure from selecting the wrong evidence within the allowance. Their analysis applies the allowance to completed runs. If the service actually cuts the worker off at its second call, exercise that stopping policy separately and record whether it returns an adequate passage or abstains. [Scale-conditioned memory evaluation, §§3–5 and Appendix A.9](https://arxiv.org/html/2605.07313v2)
 
 ### Certified bounded graph snapshots
 
@@ -1159,6 +1178,7 @@ These rows keep The Virtual Context ABI: Typed Pages, Cells, and Certificates's 
 | `ext_fixed_size_kmeans_2025` | Passage-reviewed comparator: Fixed-sized clusters k-Means. Optimizes squared error subject to declared cluster sizes using a constrained assignment step. | Equal bucket populations do not guarantee equal query traffic. The exact Hungarian assignment is expensive at scale. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_hnsw_2016` | Passage-reviewed comparator: Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. Searches a hierarchy of proximity graphs over vectors. The graph can serve vector lookup without assigning the corpus to centroid buckets. | Evaluate recall, tail latency, graph storage, and updates under the application workload. Search neighbors still require source admission. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_faiss_library_2024` | Passage-reviewed comparator: The Faiss Library. An inverted file uses coarse centroids to organize postings. Vector quantization can instead encode a vector using centroid IDs, including separate subspace codes in product quantization. | A routing centroid can coexist with full stored vectors. A quantized reconstruction and search over a subset of postings have separate error and cost budgets. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_scale_conditioned_memory_2026` | Passage-reviewed comparator: When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory. Hold relevant evidence fixed while growing the surrounding history. Count wrong answers inside the call allowance separately from attempts exceeding it. | The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

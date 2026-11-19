@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/human-intent-as-a-formal-input.qmd",
     "structured_atoms_reviewed": 46,
-    "prose_candidates_adjudicated": 55,
+    "prose_candidates_adjudicated": 56,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-08-02 route-transport proof increment. The new proof prose is either an exact restatement of the existing lifecycle, lowering, or route-envelope atoms or an explicit semantic non-claim. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim."
   },
@@ -915,6 +915,11 @@
     "human-intent-as-a-formal-input.prose.6c322f9ab246": {
       "state": "nonmaterial_explanation",
       "rationale": "Explicit non-claim boundary for the finite lifecycle, lowering, and route-transport proof packet."
+    },
+    "human-intent-as-a-formal-input.prose.308515c3fdb3": {
+      "state": "duplicate_of_atom",
+      "rationale": "Resolving a release reference leaves the existing authority requirement for publication in force.",
+      "target_atom_id": "human-intent-as-a-formal-input.core"
     }
   },
   "prose_review_lineage": [

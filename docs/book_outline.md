@@ -1171,7 +1171,7 @@ Source loading queue:
 | External literature variants | `ext_goal_oriented_requirements_engineering_2001`, `ext_cooperative_inverse_rl_2016`, `ext_deep_rl_human_preferences_2017` | Use as requirements-engineering, cooperative objective-uncertainty, and preference-feedback comparators; do not treat them as parser, authority-extraction, or execution evidence. |
 
 
-| Manifest assignment reconciliation | `ext_cultural_alignment_llms_2024` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `ext_cultural_alignment_llms_2024`, `ext_discobench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A natural-language request can mix desired outcome, preferences,
@@ -1315,7 +1315,7 @@ Source loading queue:
 |---|---|---|
 | Primary | `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_meaningful_human_control_actionable_2022` | Read first for human-centered automation, supervisory-control failure, and meaningful-control conditions; preserve their domain and normative limits. |
 | Supporting | `viea`, `talos`, `theseus_operator_os`, `scf` | Use for command, operator, escalation, and governance interfaces; project design does not establish human-factors performance. |
-| Variants | `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_agentic_oversight_practice_2026` | Use for multidimensional allocation, automation-bias evidence, and current agentic practice; do not infer universal thresholds. |
+| Variants | `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_agentic_oversight_practice_2026`, `ext_delegation_traces_2026` | Use for multidimensional allocation, automation-bias evidence, and current agentic practice and intended delegation; do not infer universal thresholds. |
 
 Draft arc:
 
@@ -3853,7 +3853,7 @@ Source loading queue:
 | External memory comparators | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_mem0_2025`, `ext_rag_2020`, `ext_lost_in_middle_2023`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_memgpt_2023`, `ext_alce_2023`, `ext_self_rag_2023`, `ext_longllmlingua_2023` | Compare retrieval, graph/community and associative navigation, hierarchical abstraction, persistent memory, long-context use, citations, adaptive retrieval, OS-style tiering, and compression. Preserve provenance, actual use, loss, poisoning, update, cost, and local-reproduction limits. |
 | Connector or recovery required | `vcm_editable`, `moecot` | Use source notes or connector reads before source-derived claims; no resolver, VCM-Bench, runtime, or benchmark result is promoted from these sources. |
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_pagedattention_vllm_2023`, `ext_airllm_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_scale_conditioned_memory_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a consumer must connect exact durable source state to the actual finite packet it receives without losing identity, lineage, authority, rights, omissions, costs, or faults.
@@ -6397,7 +6397,7 @@ External literature queue:
 | KV-cache and serving-layer accelerators | Compare memory-bandwidth and throughput improvements separately from single-request latency. | source-noted via `ext_pagedattention_vllm_2023`; no local serving benchmark |
 
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_vattention_2025`, `ext_infinigen_2024`, `ext_specache_2025`, `ext_specoffload_2025`, `ext_atsinfer_2026`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_sglang_radixattention_2024`, `ext_prompt_cache_2024`, `ext_mooncake_2025`, `ext_cacheblend_2025`, `ext_azure_llm_semantic_cache_2026`, `ext_dflash_2026`, `ext_d3d_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: token rate and serving throughput are routinely measured outside the consumer, quality, verifier, load, resource, rights, and recovery boundary needed for a useful-work claim.
@@ -8121,7 +8121,7 @@ Source loading queue:
 | External comparator | `ext_bourtoule_machine_unlearning_2021` | Use the source-noted SISA design for one bounded deletion-path comparison: training-time structure can narrow retraining while verified removal and downstream artifacts remain separate obligations. It does not validate cross-surface placement, complete descendant erasure, privacy, or the Adaptive Commit Boundary. |
 
 
-| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026`, `ext_control_map_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Open with matched near-miss outcomes caused by a stale memory and a defective

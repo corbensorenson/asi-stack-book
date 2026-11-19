@@ -281,6 +281,12 @@ candidate is inferior. Deferred and unavailable routes remain in the
 denominator, with the conditions under which they should be reconsidered.
 Absence today is not disqualification tomorrow.
 
+### What does the person in the queue experience?
+
+DFlash drafts a block of tokens together using features from the target model. D3D can use the existing token prefix to prepare several possible next blocks while the target checks the current one. If a guess about the next prefix is wrong, that prepared work goes unused. Both designs leave token acceptance with the target. [DFlash](https://proceedings.mlr.press/v306/chen26bv.html) · [D3D](https://arxiv.org/html/2611.06425v1)
+
+D3D's MATH-500 serving run produced 154 tokens per second for one request and 864 across sixteen concurrent requests, using a 1.7B drafter and a 32B target. Its speedup over ordinary decoding dropped from 6.1× to 2.7× as ordinary decoding also gained from batching. Would you switch the overnight batch? Compare total completion time on its task mix. Would you switch a live assistant with a first-response deadline? Keep its current route until a measurement under load shows how long individual users wait. The aggregate token count cannot answer that question. [D3D, Table 2](https://arxiv.org/html/2611.06425v1)
+
 ## Replaceability Requires an ABI
 
 A Cognitive Kernel ABI defines the boundary between a capability field and a

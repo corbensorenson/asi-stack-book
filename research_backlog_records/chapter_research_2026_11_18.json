@@ -1,0 +1,72 @@
+{
+  "backlog_id": "chapter-research-2026-11-18",
+  "triage_state": "integrated",
+  "source_or_gap": "Six primary papers on adaptation, retrieval, decoding, clarification and oversight.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "adjudicated-persistence-and-the-adaptive-commit-boundary",
+    "virtual-context-abi",
+    "fast-generation-architectures",
+    "human-intent-as-a-formal-input",
+    "human-factors-and-meaningful-control-in-oversight"
+  ],
+  "chapter_action_policy": "Integrate five worked examples with reader counterparts in Units 6, 14, 19 and 21.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/chapter_research_2026_11_18.json",
+    "sources/source_notes/ext_control_map_2026.md",
+    "sources/source_notes/ext_scale_conditioned_memory_2026.md",
+    "sources/source_notes/ext_dflash_2026.md",
+    "sources/source_notes/ext_d3d_2026.md",
+    "sources/source_notes/ext_discobench_2026.md",
+    "sources/source_notes/ext_delegation_traces_2026.md"
+  ],
+  "merge_or_split_policy": "Use existing chapter owners.",
+  "boundary_decision_rationale": "Each study changes the interpretation of an existing decision or measurement.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [],
+  "proof_or_test_backlog": [
+    "Adoption requires a comparison under the intended load, budget, user population or update schedule."
+  ],
+  "evidence_transition_precondition": [
+    "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+  ],
+  "required_before_drafting": [
+    "Review the primary passage and the comparison limits before using the result."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_control_map_2026",
+    "ext_scale_conditioned_memory_2026",
+    "ext_dflash_2026",
+    "ext_d3d_2026",
+    "ext_discobench_2026",
+    "ext_delegation_traces_2026",
+    "https://arxiv.org/html/2610.36109v1",
+    "https://arxiv.org/html/2605.07313v2",
+    "https://proceedings.mlr.press/v306/chen26bv.html",
+    "https://arxiv.org/html/2611.06425v1",
+    "https://arxiv.org/html/2606.27669v2",
+    "https://arxiv.org/html/2610.21948v1"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "Results describe the cited setups, including the declared measurement and population."
+  ],
+  "residuals": [
+    "Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open.",
+    "The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation.",
+    "Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements.",
+    "Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open.",
+    "The user simulator reveals clues in objective question-answering tasks. Preferences, consent and real-user burden require different observations.",
+    "The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective."
+  ],
+  "next_action": "Revisit cited results when their benchmark or manuscript changes.",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

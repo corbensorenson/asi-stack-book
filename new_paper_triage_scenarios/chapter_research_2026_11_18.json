@@ -1,0 +1,162 @@
+{
+  "scenario_id": "chapter-research-2026-11-18",
+  "scenario_scope": "Six primary papers on adaptation, retrieval, decoding, clarification and oversight.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "control-map-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Record the ordered commits visible to each answer. Probe immediate acquisition, later retention and collateral changes independently.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "scale-conditioned-memory-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "virtual-context-abi",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Hold relevant evidence fixed while growing the surrounding history. Count wrong answers inside the call allowance separately from attempts exceeding it.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "dflash-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "fast-generation-architectures",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Predict a candidate block in one forward pass. The target checks its tokens before the next accepted prefix is established.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "d3d-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "fast-generation-architectures",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Use a prefix-conditioned drafter to prepare successor blocks while the target verifies the current block. Reuse the successor matching the accepted path.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "discobench-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "human-intent-as-a-formal-input",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Score the question against the distinguishing clue, the next search decision and the interaction cost.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The user simulator reveals clues in objective question-answering tasks. Preferences, consent and real-user burden require different observations."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "delegation-traces-chapter",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Measure trust and the chosen future delegation policy separately. To establish enacted oversight, inspect a decision and the independent observation on which it depended.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    }
+  ],
+  "validation_boundary": "Selected published methods and results, with one chapter assignment per paper.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

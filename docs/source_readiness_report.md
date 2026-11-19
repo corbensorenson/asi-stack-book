@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 478
+- `source_note_available_uncached`: 484
 
 ## Records
 
@@ -571,3 +571,9 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_hnsw_2016` | Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_faiss_library_2024` | The Faiss Library | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_cram_2026` | Classical Energies Learn to Reason 1,000× Faster than Looped Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_control_map_2026` | Beyond Update Counts: A Control Map for Evaluating Test-Time Model Updates | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_scale_conditioned_memory_2026` | When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dflash_2026` | DFlash: Block Diffusion for Flash Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_d3d_2026` | D3D: Decoupled Diffusion Drafting for Asynchronous Speculative Decoding | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_discobench_2026` | When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_delegation_traces_2026` | Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

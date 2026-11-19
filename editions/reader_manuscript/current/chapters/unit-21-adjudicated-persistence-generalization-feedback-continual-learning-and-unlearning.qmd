@@ -190,6 +190,12 @@ claim, recording missingness and retention limits. An existing update policy
 can grant a bounded commit; this need not become a new human approval for every
 memory write or training step.
 
+### Which edit came first?
+
+A controller learns a corrected limit. In one run you ask for the limit before installing an update for a neighboring device. In another you ask after both edits. Both runs end with two updates. Only the second answer tests whether the correction survives the neighboring update. Now ask about the neighbor itself. If it has inherited the first controller’s limit, keep the broader change out of the shared model even though the corrected answer survived.
+
+Control Map found this distinction mattered in a factual-editing experiment. ROME retained the requested edit at all 13 settings examined, and its effects on unrelated probes exceeded the study’s tolerance at each one. Your choice of unaffected devices and acceptable damage has to be set for your own deployment. [Control Map](https://arxiv.org/html/2610.36109v1)
+
 ## A Good Idea Can Be the Wrong Default
 
 A reusable abstraction can be true, elegant, and well verified without
@@ -960,20 +966,7 @@ own evidence.
 
 ## The Strongest Objection
 
-Persistence adjudication risks bureaucracy, analysis paralysis, centralized
-power and one ontology imposed on unlike domains. A shared gate can itself
-become a manipulation target.
-
-That objection has teeth. Most low-risk local changes should remain cheap.
-Standing policies can authorize reversible memory writes and tool tests within
-bounded scopes. Human review may outperform automated causal adjudication for
-rare, ambiguous changes. Domain owners should retain authority over meanings
-that a generic service cannot infer.
-
-The architecture should therefore scale review with commitment. It should
-federate authority, expose dissent, and permit consumers to use only the
-contracts they need. Its purpose is not to maximize process. It is to prevent a
-success signal from silently becoming an irreversible cross-system change.
+Review itself costs time and concentrates power. Give domain owners standing permission for inexpensive, reversible changes within their scope. Reserve independent review for changes that cross that scope. A team that disputes the proposed lesson needs a way to record dissent and continue under its existing contract.
 
 ## Evidence That Would Change the Conclusion
 
@@ -995,24 +988,8 @@ or that every descendant has been erased.
 
 ## What This Establishes
 
-Experience, feedback, and reward are inputs to learning, not permission to
-change durable structure. A candidate lesson needs identity, causal alternatives,
-scope, lineage, and a lifecycle.
-
-Context, memory, procedure, tool, parameter, evaluator, environment, and
-institution are different persistence loci. The least consequential sufficient
-locus should be preferred, with evidence matched to reach, duration, authority,
-and reversibility.
-
-Generalization is a prospective forecast. Policy updates are leased candidates.
-Continual learning requires full-state and descendant custody. Unlearning is a
-family of bounded claims, not a synonym for suppression or file deletion.
-Scientific discovery remains governed revision rather than self-certifying
-output.
-
-The repository has finite formal and executable controls for several pieces of
-this lifecycle. It does not yet implement or validate the integrated
-adjudicator.
+Preserve the incident, its competing explanations and the smallest change that might help the next case. The repository exercises parts of that lifecycle. It does not yet implement or validate the integrated
+adjudicator. Compare candidate placements prospectively and retain a recovery path.
 
 A candidate lesson still cannot decide whether it is safe to promote. Unit 22
 assembles adversarial evaluation, readiness thresholds, residual custody, and a

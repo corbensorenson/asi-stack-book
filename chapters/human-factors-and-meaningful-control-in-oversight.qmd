@@ -4,7 +4,7 @@ chapter_id: "human-factors-and-meaningful-control-in-oversight"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 terminal structural draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-18"
 primary_sources:
   - "viea"
   - "talos"
@@ -16,6 +16,7 @@ primary_sources:
   - "ext_complacency_bias_automation_2010"
   - "ext_meaningful_human_control_actionable_2022"
   - "ext_agentic_oversight_practice_2026"
+  - "ext_delegation_traces_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -33,11 +34,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 terminal structural draft |
-| Last updated | 2026-07-19 |
-| Primary source records | `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026` |
+| Last updated | 2026-11-18 |
+| Primary source records | 11 assigned records. The source crosswalk gives the role and limits of each new comparison. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026`; raw cache: `viea`, `talos`, `scf` |
+| Source loading state | source notes: `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026`; raw cache: `viea`, `talos`, `scf`. Passage review of `ext_delegation_traces_2026` is documented in the source crosswalk. |
 | Test state | The control-envelope schema, safe-hold fixture, independent semantic validator, rejecting mutations, and two public Lean targets through thirty-two declarations are implemented. The formal layer includes a reachable review lifecycle, arbitrary-run invariants and identity custody, one complete witness, and thirteen rejecting lifecycle countermodels. The four-arm human-subjects campaign is protocol-ready but requires exact ethics, privacy, participant, and resource authority before recruitment; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -435,6 +436,12 @@ enters safe hold when no qualified authority is available. Throughput,
 intervention success, missed hazards, false holds, queue delay, reviewer
 burden, and appeal outcomes must be reported together. Human attention is not
 free verification, and a design that needs unlimited review does not scale.
+
+### What did the reviewer actually verify?
+
+Chiatti and colleagues asked 56 AI-literate participants to inspect answers about videos. Each participant completed seven trials, rated trust and chose a policy for an analogous future task. Independent verification was a common intended choice even at high trust. The 392 trials are repeated observations from those 56 people. Participants reported what they would do next time. The authors propose studying how that intention translates into action. [Following Delegation Traces, §§3–5](https://arxiv.org/html/2610.21948v1)
+
+Suppose a reviewer trusts the gantry summary and selects “I will verify.” The independent event log shows a gap in the final sensor interval. An access record can establish that the reviewer opened the log. A review note identifying the gap and a revised decision limiting the release sentence to the observed interval show how the check affected the outcome. If only the intention or file-open event is recorded, keep the substantive verification outstanding. A short decision record suffices here without collecting a person's unrelated activity.
 
 ## Interfaces
 
@@ -841,6 +848,15 @@ This chapter does **not** claim:
 | `ext_meaningful_human_control_actionable_2022` | Meaningful human control: actionable properties for AI system development | Operating domain, compatible representations, authority and ability, responsibility, and traceability boundary. | Abstract, four properties, methods, and limitations inspected; no local study and no proof of a particular gate. |
 | `ext_agentic_oversight_practice_2026` | Human oversight of agentic systems in practice | Preventive control, co-planning, live monitoring, post hoc review, and situated oversight-work hypotheses. | Abstract, methods overview, findings, and limitations inspected; interview data not reanalyzed; exploratory preprint, not causal efficacy evidence. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Human Factors and Meaningful Control in Oversight's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_delegation_traces_2026` | Passage-reviewed comparator: Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI. Measure trust and the chosen future delegation policy separately. To establish enacted oversight, inspect a decision and the independent observation on which it depended. | The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Human oversight is a control relationship, not a UI ornament. The relationship

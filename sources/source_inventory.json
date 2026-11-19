@@ -9769,5 +9769,107 @@
     "citation_label": "Hoover, Blayney, and Whittington (2026), CRAM",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Selected arXiv v1 method, test, cost, and failure passages and pinned fit records. External puzzle-domain evidence."
+  },
+  {
+    "id": "ext_control_map_2026",
+    "title": "Beyond Update Counts: A Control Map for Evaluating Test-Time Model Updates",
+    "priority": "external_literature",
+    "layer": "test_time_update_evaluation",
+    "chapter_targets": [
+      "adjudicated-persistence-and-the-adaptive-commit-boundary"
+    ],
+    "url": "https://arxiv.org/html/2610.36109v1",
+    "notes": "Record the ordered commits visible to each answer. Probe immediate acquisition, later retention and collateral changes independently.",
+    "source_type": "preprint",
+    "published": "2026-10-26",
+    "updated": "2026-10-26",
+    "citation_label": "Zhao et al. (2026), Beyond Update Counts",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3–6. Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open."
+  },
+  {
+    "id": "ext_scale_conditioned_memory_2026",
+    "title": "When Stored Evidence Stops Being Usable: Scale-Conditioned Evaluation of Agent Memory",
+    "priority": "external_literature",
+    "layer": "retrieval_budget_evaluation",
+    "chapter_targets": [
+      "virtual-context-abi"
+    ],
+    "url": "https://arxiv.org/html/2605.07313v2",
+    "notes": "Hold relevant evidence fixed while growing the surrounding history. Count wrong answers inside the call allowance separately from attempts exceeding it.",
+    "source_type": "preprint",
+    "published": "2026-05-08",
+    "updated": "2026-10-29",
+    "citation_label": "Shao et al. (2026), When Stored Evidence Stops Being Usable",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3–5 and Appendix A.9. The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation."
+  },
+  {
+    "id": "ext_dflash_2026",
+    "title": "DFlash: Block Diffusion for Flash Speculative Decoding",
+    "priority": "external_literature",
+    "layer": "parallel_diffusion_drafting",
+    "chapter_targets": [
+      "fast-generation-architectures"
+    ],
+    "url": "https://proceedings.mlr.press/v306/chen26bv.html",
+    "notes": "Predict a candidate block in one forward pass. The target checks its tokens before the next accepted prefix is established.",
+    "source_type": "conference_paper",
+    "published": "2026-07",
+    "updated": "2026-07",
+    "citation_label": "Jian Chen, Yesheng Liang and Zhijian Liu (2026), DFlash",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "ICML proceedings abstract and arXiv v2 method and Table 6. Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements."
+  },
+  {
+    "id": "ext_d3d_2026",
+    "title": "D3D: Decoupled Diffusion Drafting for Asynchronous Speculative Decoding",
+    "priority": "external_literature",
+    "layer": "asynchronous_speculative_decoding",
+    "chapter_targets": [
+      "fast-generation-architectures"
+    ],
+    "url": "https://arxiv.org/html/2611.06425v1",
+    "notes": "Use a prefix-conditioned drafter to prepare successor blocks while the target verifies the current block. Reuse the successor matching the accepted path.",
+    "source_type": "preprint",
+    "published": "2026-11-04",
+    "updated": "2026-11-04",
+    "citation_label": "Baoyou Chen et al. (2026), D3D",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3–4, especially Table 2. Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open."
+  },
+  {
+    "id": "ext_discobench_2026",
+    "title": "When Search Agents Should Ask: DiscoBench for Clarification-Aware Deep Search",
+    "priority": "external_literature",
+    "layer": "interactive_intent_clarification",
+    "chapter_targets": [
+      "human-intent-as-a-formal-input"
+    ],
+    "url": "https://arxiv.org/html/2606.27669v2",
+    "notes": "Score the question against the distinguishing clue, the next search decision and the interaction cost.",
+    "source_type": "preprint",
+    "published": "2026-06-26",
+    "updated": "2026-07-01",
+    "citation_label": "Tao et al. (2026), When Search Agents Should Ask",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 4–5 and limitations. The user simulator reveals clues in objective question-answering tasks. Preferences, consent and real-user burden require different observations."
+  },
+  {
+    "id": "ext_delegation_traces_2026",
+    "title": "Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI",
+    "priority": "external_literature",
+    "layer": "human_oversight_measurement",
+    "chapter_targets": [
+      "human-factors-and-meaningful-control-in-oversight"
+    ],
+    "url": "https://arxiv.org/html/2610.21948v1",
+    "notes": "Measure trust and the chosen future delegation policy separately. To establish enacted oversight, inspect a decision and the independent observation on which it depended.",
+    "source_type": "preprint",
+    "published": "2026-10-15",
+    "updated": "2026-10-15",
+    "citation_label": "Chiatti, Matteucci and Schiaffonati (2026), Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Sections 3–5, especially Table 1 and the response options. The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective."
   }
 ]

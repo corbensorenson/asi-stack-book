@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "7923f81259a83e9f6647dc3e8d60c4f747558fb0a6733867b799b8fdc4258dd7",
+  "book_structure_sha256": "02803b7fec1ed22d3198ee83f1ec37811711d734f57c5e8be473e8998c6cd9b2",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1420,
+    "source": 1426,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -1943,7 +1943,7 @@
       "order": 6,
       "title": "Human Intent, Control, and Epistemic Security",
       "human_reader_source_file": "chapters/unit-06-human-intent-control-and-epistemic-security.qmd",
-      "human_reader_source_sha256": "bacdde3de29b0317f2831c4307f4d5f6a4a614f939d3c982a25e32b3d275a9ca",
+      "human_reader_source_sha256": "077fdeee3b284aa9288919acfa37e25fea578bfc1afaea8af64d3f1fd105750f",
       "public_path": "reader/chapters/unit-06-human-intent-control-and-epistemic-security.html",
       "central_question": "How does an ambiguous human request become bounded work without inventing permission or manipulating the person who must approve it?",
       "conclusion_change": "User studies showing lighter clarification and control mechanisms produce fewer consequential intent and manipulation failures at lower burden would narrow the contract.",
@@ -1954,7 +1954,7 @@
           "chapter_id": "human-intent-as-a-formal-input",
           "title": "Human Intent as a Formal Input",
           "technical_source_file": "chapters/human-intent-as-a-formal-input.qmd",
-          "technical_source_sha256": "17cb6cbf22eaf10623a190ae645ac628dba5b1fb8721fcaf2400feb1c8013766",
+          "technical_source_sha256": "ffc38ab333089978dff6414e7e73a258e2ea56e452da50f4a5f3c4979d64ee00",
           "live_technical_path": "chapters/human-intent-as-a-formal-input.html",
           "human_reader_unit_id": "unit-06",
           "core_claim_id": "human-intent-as-a-formal-input.core",
@@ -1970,7 +1970,8 @@
             "ext_goal_oriented_requirements_engineering_2001",
             "ext_cooperative_inverse_rl_2016",
             "ext_deep_rl_human_preferences_2017",
-            "ext_cultural_alignment_llms_2024"
+            "ext_cultural_alignment_llms_2024",
+            "ext_discobench_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/viea.md",
@@ -1981,7 +1982,8 @@
             "sources/source_notes/ext_goal_oriented_requirements_engineering_2001.md",
             "sources/source_notes/ext_cooperative_inverse_rl_2016.md",
             "sources/source_notes/ext_deep_rl_human_preferences_2017.md",
-            "sources/source_notes/ext_cultural_alignment_llms_2024.md"
+            "sources/source_notes/ext_cultural_alignment_llms_2024.md",
+            "sources/source_notes/ext_discobench_2026.md"
           ],
           "proof_edges": [
             {
@@ -2086,7 +2088,7 @@
           "artifact_refs": [
             {
               "path": "chapters/human-intent-as-a-formal-input.qmd",
-              "sha256": "17cb6cbf22eaf10623a190ae645ac628dba5b1fb8721fcaf2400feb1c8013766"
+              "sha256": "ffc38ab333089978dff6414e7e73a258e2ea56e452da50f4a5f3c4979d64ee00"
             },
             {
               "path": "lean/AsiStackProofs/IntentContracts.lean",
@@ -2112,7 +2114,7 @@
           "chapter_id": "human-factors-and-meaningful-control-in-oversight",
           "title": "Human Factors and Meaningful Control in Oversight",
           "technical_source_file": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-          "technical_source_sha256": "56faca92fd7591844209f7096df261f5b092da25cd6252586e5f658a74833c27",
+          "technical_source_sha256": "d7f3a0fdd9fe00d82d3e99c2d1c4964ce34c683f3811c46f4b38a2e1a2e13fef",
           "live_technical_path": "chapters/human-factors-and-meaningful-control-in-oversight.html",
           "human_reader_unit_id": "unit-06",
           "core_claim_id": "human-factors-and-meaningful-control-in-oversight.core",
@@ -2129,7 +2131,8 @@
             "ext_levels_automation_2000",
             "ext_complacency_bias_automation_2010",
             "ext_meaningful_human_control_actionable_2022",
-            "ext_agentic_oversight_practice_2026"
+            "ext_agentic_oversight_practice_2026",
+            "ext_delegation_traces_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/viea.md",
@@ -2141,7 +2144,8 @@
             "sources/source_notes/ext_levels_automation_2000.md",
             "sources/source_notes/ext_complacency_bias_automation_2010.md",
             "sources/source_notes/ext_meaningful_human_control_actionable_2022.md",
-            "sources/source_notes/ext_agentic_oversight_practice_2026.md"
+            "sources/source_notes/ext_agentic_oversight_practice_2026.md",
+            "sources/source_notes/ext_delegation_traces_2026.md"
           ],
           "proof_edges": [
             {
@@ -2180,7 +2184,7 @@
           "artifact_refs": [
             {
               "path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-              "sha256": "56faca92fd7591844209f7096df261f5b092da25cd6252586e5f658a74833c27"
+              "sha256": "d7f3a0fdd9fe00d82d3e99c2d1c4964ce34c683f3811c46f4b38a2e1a2e13fef"
             },
             {
               "path": "lean/AsiStackProofs/HumanFactorsOversight.lean",
@@ -4523,7 +4527,7 @@
       "order": 14,
       "title": "Virtual Context and Durable Semantic Memory",
       "human_reader_source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
-      "human_reader_source_sha256": "50fb0c71368e325d3560885cefd5c0ea81f0e6ecbe2cfff00ef48fb3953785c4",
+      "human_reader_source_sha256": "0d15fc4862fe198b41aabd28e08675f172c0adef362fd39820e97037578fab64",
       "public_path": "reader/chapters/unit-14-virtual-context-and-durable-semantic-memory.html",
       "central_question": "How should a system mount what it needs now and preserve what it may need later without treating presence, repetition, or retrieval as truth?",
       "conclusion_change": "Simpler retrieval and memory systems matching provenance, contradiction handling, forgetting, transfer, revocation, and cost would justify a thinner layer.",
@@ -4534,7 +4538,7 @@
           "chapter_id": "virtual-context-abi",
           "title": "The Virtual Context ABI: Typed Pages, Cells, and Certificates",
           "technical_source_file": "chapters/virtual-context-abi.qmd",
-          "technical_source_sha256": "f8fce291b0e00b10fcd769fe73f0dd283d96dc82cac1966de47e4a22f8b9b0c5",
+          "technical_source_sha256": "3acdbbe6f0e7be7fe30056e0bce3a801be77892d5a1ee71ce7dc97374a602fd6",
           "live_technical_path": "chapters/virtual-context-abi.html",
           "human_reader_unit_id": "unit-14",
           "core_claim_id": "virtual-context-abi.core",
@@ -4585,7 +4589,8 @@
             "ext_ward_hierarchical_2014",
             "ext_fixed_size_kmeans_2025",
             "ext_hnsw_2016",
-            "ext_faiss_library_2024"
+            "ext_faiss_library_2024",
+            "ext_scale_conditioned_memory_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/vcm_public.md",
@@ -4631,7 +4636,8 @@
             "sources/source_notes/ext_ward_hierarchical_2014.md",
             "sources/source_notes/ext_fixed_size_kmeans_2025.md",
             "sources/source_notes/ext_hnsw_2016.md",
-            "sources/source_notes/ext_faiss_library_2024.md"
+            "sources/source_notes/ext_faiss_library_2024.md",
+            "sources/source_notes/ext_scale_conditioned_memory_2026.md"
           ],
           "proof_edges": [
             {
@@ -4778,7 +4784,7 @@
           "artifact_refs": [
             {
               "path": "chapters/virtual-context-abi.qmd",
-              "sha256": "f8fce291b0e00b10fcd769fe73f0dd283d96dc82cac1966de47e4a22f8b9b0c5"
+              "sha256": "3acdbbe6f0e7be7fe30056e0bce3a801be77892d5a1ee71ce7dc97374a602fd6"
             },
             {
               "path": "lean/AsiStackProofs/VirtualContextABI.lean",
@@ -7362,7 +7368,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "58176078d0b5961d48998f06e8ebc76279852eaaa2408e78357cebe55c0af7d0",
+      "human_reader_source_sha256": "c9549680e89d2b7b38a0157766e01efc45900a788f452266455eacdc7967ab02",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -8311,7 +8317,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "f18027816952afb3e5964c05b1f11ee16aa356d3d3ee902331a1eaf53689ecee",
+      "human_reader_source_sha256": "6f744d735da157560884c124310afb9cc8e7a710caf7a07f445b360f3648b24c",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8322,7 +8328,7 @@
           "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
           "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
           "technical_source_file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-          "technical_source_sha256": "f95f68c86cc278d87571cbadedbf28c08a2497357c5468781f2398b2d8304ccb",
+          "technical_source_sha256": "bec89f666d2ae1f630c3d9901b694435f6ab445808ff04c100137d9b5b35e5c8",
           "live_technical_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
@@ -8340,7 +8346,8 @@
             "talos",
             "ext_bourtoule_machine_unlearning_2021",
             "forward_transfer_program_synthesis",
-            "ext_ten_percent_challenge_2026"
+            "ext_ten_percent_challenge_2026",
+            "ext_control_map_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/adjudicated_persistence.md",
@@ -8353,7 +8360,8 @@
             "sources/source_notes/talos.md",
             "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md",
             "sources/source_notes/forward_transfer_program_synthesis.md",
-            "sources/source_notes/ext_ten_percent_challenge_2026.md"
+            "sources/source_notes/ext_ten_percent_challenge_2026.md",
+            "sources/source_notes/ext_control_map_2026.md"
           ],
           "proof_edges": [
             {
@@ -8422,7 +8430,7 @@
           "artifact_refs": [
             {
               "path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-              "sha256": "f95f68c86cc278d87571cbadedbf28c08a2497357c5468781f2398b2d8304ccb"
+              "sha256": "bec89f666d2ae1f630c3d9901b694435f6ab445808ff04c100137d9b5b35e5c8"
             }
           ],
           "publication": {
@@ -10237,7 +10245,7 @@
           "chapter_id": "fast-generation-architectures",
           "title": "Fast Generation Architectures",
           "technical_source_file": "chapters/fast-generation-architectures.qmd",
-          "technical_source_sha256": "db35da182c21deaef62e7f4c67615fba65dd05ebc0503dc427dd22c3e57abbd9",
+          "technical_source_sha256": "231ac64625199275768738a78b63289c655bfdd9cbe42dd8831d246c3eedfd52",
           "live_technical_path": "chapters/fast-generation-architectures.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "fast-generation-architectures.core",
@@ -10288,7 +10296,9 @@
             "ext_mooncake_2025",
             "ext_cacheblend_2025",
             "ext_azure_llm_semantic_cache_2026",
-            "precision_contract"
+            "precision_contract",
+            "ext_dflash_2026",
+            "ext_d3d_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/cgs.md",
@@ -10334,7 +10344,9 @@
             "sources/source_notes/ext_mooncake_2025.md",
             "sources/source_notes/ext_cacheblend_2025.md",
             "sources/source_notes/ext_azure_llm_semantic_cache_2026.md",
-            "sources/source_notes/precision_contract.md"
+            "sources/source_notes/precision_contract.md",
+            "sources/source_notes/ext_dflash_2026.md",
+            "sources/source_notes/ext_d3d_2026.md"
           ],
           "proof_edges": [
             {
@@ -10453,7 +10465,7 @@
           "artifact_refs": [
             {
               "path": "chapters/fast-generation-architectures.qmd",
-              "sha256": "db35da182c21deaef62e7f4c67615fba65dd05ebc0503dc427dd22c3e57abbd9"
+              "sha256": "231ac64625199275768738a78b63289c655bfdd9cbe42dd8831d246c3eedfd52"
             },
             {
               "path": "scripts/validate_theseus_fast_support_lane.py",

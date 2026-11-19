@@ -2372,7 +2372,8 @@
             "ext_goal_oriented_requirements_engineering_2001",
             "ext_cooperative_inverse_rl_2016",
             "ext_deep_rl_human_preferences_2017",
-            "ext_cultural_alignment_llms_2024"
+            "ext_cultural_alignment_llms_2024",
+            "ext_discobench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -2382,7 +2383,8 @@
               "software_magic_grimoire",
               "planforge",
               "cognitive_compilation",
-              "talos"
+              "talos",
+              "ext_discobench_2026"
             ],
             "variants": [
               "ext_goal_oriented_requirements_engineering_2001",
@@ -2502,6 +2504,17 @@
                 "sources/source_notes/ext_deep_rl_human_preferences_2017.md:13-60"
               ],
               "passage_review_note": "Reviewed the source note backed by public arXiv abstract and metadata for preference-feedback positioning; no task, feedback, reward-model, policy, or evaluation result was reproduced."
+            },
+            {
+              "source_id": "ext_discobench_2026",
+              "mapped_support": "Score the question against the distinguishing clue, the next search decision and the interaction cost.",
+              "limits": "The user simulator reveals clues in objective question-answering tasks. Preferences, consent and real-user burden require different observations.",
+              "passage_refs": [
+                "sources/source_notes/ext_discobench_2026.md",
+                "https://arxiv.org/html/2606.27669v2"
+              ],
+              "passage_review_note": "2026-11-18. Sections 4–5 and limitations. The user simulator reveals clues in objective question-answering tasks. Preferences, consent and real-user burden require different observations.",
+              "passage_review_state": "reviewed"
             }
           ],
           "mechanism": [
@@ -2671,7 +2684,8 @@
             "ext_levels_automation_2000",
             "ext_complacency_bias_automation_2010",
             "ext_meaningful_human_control_actionable_2022",
-            "ext_agentic_oversight_practice_2026"
+            "ext_agentic_oversight_practice_2026",
+            "ext_delegation_traces_2026"
           ],
           "source_queue": {
             "primary": [
@@ -2683,7 +2697,8 @@
               "viea",
               "talos",
               "theseus_operator_os",
-              "scf"
+              "scf",
+              "ext_delegation_traces_2026"
             ],
             "variants": [
               "ext_levels_automation_2000",
@@ -2797,6 +2812,17 @@
                 "sources/source_notes/ext_agentic_oversight_practice_2026.md"
               ],
               "passage_review_note": "Reviewed source note; treated as contemporary practice context.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_delegation_traces_2026",
+              "mapped_support": "Measure trust and the chosen future delegation policy separately. To establish enacted oversight, inspect a decision and the independent observation on which it depended.",
+              "limits": "The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective.",
+              "passage_refs": [
+                "sources/source_notes/ext_delegation_traces_2026.md",
+                "https://arxiv.org/html/2610.21948v1"
+              ],
+              "passage_review_note": "2026-11-18. Sections 3–5, especially Table 1 and the response options. The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -9966,7 +9992,8 @@
             "ext_ward_hierarchical_2014",
             "ext_fixed_size_kmeans_2025",
             "ext_hnsw_2016",
-            "ext_faiss_library_2024"
+            "ext_faiss_library_2024",
+            "ext_scale_conditioned_memory_2026"
           ],
           "source_queue": {
             "primary": [
@@ -9984,7 +10011,8 @@
               "qcsa_whitepaper",
               "reflexive_router_whitepaper",
               "kernel_english_residual_compiler",
-              "ext_recursive_language_models_2025"
+              "ext_recursive_language_models_2025",
+              "ext_scale_conditioned_memory_2026"
             ],
             "variants": [
               "ext_graphrag_2024",
@@ -10652,6 +10680,17 @@
                 "https://github.com/facebookresearch/faiss/wiki/Faiss-indexes/aeda38e6c323d6e3f0a207db875918f1185aa7bb"
               ],
               "passage_review_note": "2026-11-13: Author paper sections on inverted files, graph-based search and compressed codes, with the official Faiss index documentation.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_scale_conditioned_memory_2026",
+              "mapped_support": "Hold relevant evidence fixed while growing the surrounding history. Count wrong answers inside the call allowance separately from attempts exceeding it.",
+              "limits": "The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation.",
+              "passage_refs": [
+                "sources/source_notes/ext_scale_conditioned_memory_2026.md",
+                "https://arxiv.org/html/2605.07313v2"
+              ],
+              "passage_review_note": "2026-11-18. Sections 3–5 and Appendix A.9. The authors scored completed trajectories against a call budget. Enforcing a hard stop changes the interaction and requires a separate evaluation.",
               "passage_review_state": "reviewed"
             }
           ],
@@ -20404,7 +20443,9 @@
             "ext_mooncake_2025",
             "ext_cacheblend_2025",
             "ext_azure_llm_semantic_cache_2026",
-            "precision_contract"
+            "precision_contract",
+            "ext_dflash_2026",
+            "ext_d3d_2026"
           ],
           "source_queue": {
             "primary": [
@@ -20421,7 +20462,9 @@
               "spinoza",
               "rmi",
               "kernel_english_residual_compiler",
-              "precision_contract"
+              "precision_contract",
+              "ext_dflash_2026",
+              "ext_d3d_2026"
             ],
             "variants": [
               "ext_speculative_decoding_2022",
@@ -20893,6 +20936,29 @@
                 "source-note:sources/source_notes/ext_recurrent_transformer_2026.md:thesis-mechanisms-evidence-and-chapter-use"
               ],
               "passage_review_note": "Reviewed the repository source note for layerwise recurrent KV memory, exact tiling, effective-depth/width, cache pressure, and decoding-cost framing. It remains a contextual comparator; no paper result, checkpoint, implementation, quality result, latency result, cache result, or production behavior is reproduced."
+            },
+            {
+              "source_id": "ext_dflash_2026",
+              "mapped_support": "Predict a candidate block in one forward pass. The target checks its tokens before the next accepted prefix is established.",
+              "limits": "Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements.",
+              "passage_refs": [
+                "sources/source_notes/ext_dflash_2026.md",
+                "https://proceedings.mlr.press/v306/chen26bv.html",
+                "https://arxiv.org/html/2602.06036v2"
+              ],
+              "passage_review_note": "2026-11-18. ICML proceedings abstract and arXiv v2 method and Table 6. Preserving the target decoding distribution depends on the verification rule. Output correctness and service-level latency need their own measurements.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_d3d_2026",
+              "mapped_support": "Use a prefix-conditioned drafter to prepare successor blocks while the target verifies the current block. Reuse the successor matching the accepted path.",
+              "limits": "Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open.",
+              "passage_refs": [
+                "sources/source_notes/ext_d3d_2026.md",
+                "https://arxiv.org/html/2611.06425v1"
+              ],
+              "passage_review_note": "2026-11-18. Sections 3–4, especially Table 2. Table 2 measures aggregate decode throughput on the authors’ backend. It leaves the per-request latency distribution, queueing and other workloads open.",
+              "passage_review_state": "reviewed"
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
@@ -26810,7 +26876,8 @@
             "talos",
             "ext_bourtoule_machine_unlearning_2021",
             "forward_transfer_program_synthesis",
-            "ext_ten_percent_challenge_2026"
+            "ext_ten_percent_challenge_2026",
+            "ext_control_map_2026"
           ],
           "problem": "Adaptive systems can convert one ambiguous, noisy, manipulated, or weakly attributed experience into durable causal influence across weights, memory, procedures, tools, orchestration, evaluators, environments, or institutions. The consequential decision is not merely what lesson to learn, but whether it may persist, where it should persist, how strongly it should bind, and how it can later be observed, invalidated, and removed.",
           "insufficient": "A weight update, memory write, generated tool, routing change, policy edit, or organizational rule assumes its persistence locus before the system has justified that choice. Outcome quality and causal attribution do not by themselves determine the least-commitment realization, the authority needed to create it, the evidence needed to qualify it, or the descendant closure needed to revoke it.",
@@ -26917,7 +26984,8 @@
               "platonic_world_model",
               "viea",
               "talos",
-              "forward_transfer_program_synthesis"
+              "forward_transfer_program_synthesis",
+              "ext_control_map_2026"
             ],
             "variants": [
               "ext_bourtoule_machine_unlearning_2021"
@@ -27042,6 +27110,17 @@
                 "https://github.com/DeusExperiments/ten-percent-challenge/issues/2#issuecomment-6689471947"
               ],
               "passage_review_note": "2026-11-06: selected pinned source/receipt inspection and maintainer adjudication; inspected loader SHA-256 matches the source manifest. No released-weight download, source execution, full history/statistical audit or independent reproduction.",
+              "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_control_map_2026",
+              "mapped_support": "Record the ordered commits visible to each answer. Probe immediate acquisition, later retention and collateral changes independently.",
+              "limits": "Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open.",
+              "passage_refs": [
+                "sources/source_notes/ext_control_map_2026.md",
+                "https://arxiv.org/html/2610.36109v1"
+              ],
+              "passage_review_note": "2026-11-18. Sections 3–6. Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open.",
               "passage_review_state": "reviewed"
             }
           ],

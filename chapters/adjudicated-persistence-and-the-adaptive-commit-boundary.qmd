@@ -4,7 +4,7 @@ chapter_id: "adjudicated-persistence-and-the-adaptive-commit-boundary"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 source-complete integrated argument chapter"
-last_updated: "2026-11-06"
+last_updated: "2026-11-18"
 primary_sources:
   - "adjudicated_persistence"
   - "assurance_shift_learning"
@@ -15,6 +15,9 @@ primary_sources:
   - "viea"
   - "talos"
   - "ext_bourtoule_machine_unlearning_2021"
+  - "forward_transfer_program_synthesis"
+  - "ext_ten_percent_challenge_2026"
+  - "ext_control_map_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -32,11 +35,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | source-complete integrated argument |
-| Last updated | 2026-08-11 |
+| Last updated | 2026-11-18 |
 | Primary source | Corben Sorenson's version 1.0 *Adjudicated Persistence* paper and complete package |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | The complete paper package has been passage-reviewed and mined. Its external citations have not been inherited as evidence.; Ten Percent Challenge: selected pinned task/code/receipt and adverse-adjudication review, no model execution. |
+| Source loading state | The complete paper package has been passage-reviewed and mined. Its external citations have not been inherited as evidence.; Ten Percent Challenge: selected pinned task/code/receipt and adverse-adjudication review, no model execution. Passage review of `ext_control_map_2026` is documented in the source crosswalk. |
 | Test state | Five proof targets and five experimental suites are planned; none has been implemented or run. |
 
 ## Drafting guardrail
@@ -496,6 +499,14 @@ replays the applicable evidence and authority obligations, and identifies
 which descendants migrate. Historical reconstruction remains possible, but
 current consumers receive only a specifically qualified version.
 
+### Which edits reached this answer?
+
+Two runs commit the same two edits. In run A the system installs a controller correction, answers a question about the controller, then edits a different device record. In run B it installs both edits before answering. A log saying “two edits completed” describes both finished runs. Only B's answer could have been affected by the device edit. Record the ordered updates visible at the instant of each probe.
+
+Control Map illustrates the cost of discarding that information. Across 24 schedules with equal update counts at one 760M checkpoint, the authors report 19.7%–34.2% accuracy. In a separate editor comparison, ROME passed the retention check at all 13 tested operating points and failed the locality criterion at every one. Locality here measures damage to behavior on other probes under a specified tolerance. [Control Map, §§3–6](https://arxiv.org/html/2610.36109v1)
+
+For a proposed persistent edit, freeze the correction probe, the later replay point, a set of unaffected device questions and an acceptable damage threshold before testing. Suppose the correction survives but a neighboring controller now inherits its limit. Hold the wider rollout and keep the last qualified model serving the neighboring device. The scoped evidence supports retention of that answer. A narrower placement can be tried against the same probes.
+
 ## Interfaces
 
 The chapter coordinates existing owners without replacing them.
@@ -713,6 +724,7 @@ These rows keep Adjudicated Persistence and the Adaptive Commit Boundary's manif
 |---|---|---|
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Adds a separate later-version admission step after independent validation and frozen evaluation, preserving valid-but-transfer-negative artifacts without routing them as beneficial defaults. | No admission service, knowledge-version transition, removal test, benchmark result, or support movement was implemented. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_ten_percent_challenge_2026` | Passage-reviewed comparator: Ten Percent Challenge: Task-Scoped Checkpoint Compression and External Feedback. A frozen backbone plus a fitted discriminant head and updated prototype/count memory illustrates persistent adaptation outside backbone weights and the need to isolate the admitted intervention. | No Adaptive Commit Boundary implementation or parameter-free learning; feedback activates a prefit head, its incremental effect is not isolated, and the maintainer rejects step 5. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_control_map_2026` | Passage-reviewed comparator: Beyond Update Counts: A Control Map for Evaluating Test-Time Model Updates. Record the ordered commits visible to each answer. Probe immediate acquisition, later retention and collateral changes independently. | Locality depends on the test prompts and damage threshold. These model- and task-specific checks leave transfer to other settings open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Current Evidence and Non-Claims
