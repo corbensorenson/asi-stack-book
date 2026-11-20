@@ -1,0 +1,164 @@
+{
+  "profiles": [
+    {
+      "profile": "clean-control",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 90000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 35000
+    },
+    {
+      "profile": "clean-control",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 60000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 41000
+    },
+    {
+      "profile": "copy-09-shared-miss",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 55000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 26000
+    },
+    {
+      "profile": "copy-09-shared-miss",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 36000
+    },
+    {
+      "profile": "record-change-negative-flips",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 29000
+    },
+    {
+      "profile": "record-change-negative-flips",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 53000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 36000
+    },
+    {
+      "profile": "missing-must-pass",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 21000
+    },
+    {
+      "profile": "missing-must-pass",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 31000
+    },
+    {
+      "profile": "shared-dashboard-agreement",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 22000
+    },
+    {
+      "profile": "shared-dashboard-agreement",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 34000
+    },
+    {
+      "profile": "separate-observer-disagrees",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 52000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 22000
+    },
+    {
+      "profile": "separate-observer-disagrees",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 51000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 35000
+    },
+    {
+      "profile": "separate-observers-agree",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 53000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 21000
+    },
+    {
+      "profile": "separate-observers-agree",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 50000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 32000
+    },
+    {
+      "profile": "update-notified",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 50000,
+      "update_cpu_ns": 9000,
+      "lookup_cpu_ns": 38000
+    },
+    {
+      "profile": "update-notified",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 49000,
+      "update_cpu_ns": 9000,
+      "lookup_cpu_ns": 49000
+    },
+    {
+      "profile": "update-notification-missed",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 49000,
+      "update_cpu_ns": 8000,
+      "lookup_cpu_ns": 37000
+    },
+    {
+      "profile": "update-notification-missed",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 50000,
+      "update_cpu_ns": 8000,
+      "lookup_cpu_ns": 51000
+    },
+    {
+      "profile": "fallback-expires",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 49000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 56000
+    },
+    {
+      "profile": "fallback-expires",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 50000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 72000
+    },
+    {
+      "profile": "revision-index-unavailable",
+      "arm": "conventional_memoization",
+      "setup_cpu_ns": 49000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 23000
+    },
+    {
+      "profile": "revision-index-unavailable",
+      "arm": "retained_qualification",
+      "setup_cpu_ns": 49000,
+      "update_cpu_ns": 0,
+      "lookup_cpu_ns": 32000
+    }
+  ],
+  "environment": {
+    "python": "3.12.5",
+    "system": "Darwin",
+    "architecture": "arm64"
+  },
+  "boundary": "First-run process CPU diagnostics. Deterministic operation counts are recorded separately."
+}
