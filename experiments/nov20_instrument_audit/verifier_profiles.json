@@ -1,0 +1,19 @@
+{
+  "must_pass": {
+    "public-copy": ["copy-09"],
+    "record-change": ["record-01", "record-02", "record-03", "record-04", "record-05", "record-06", "record-07", "record-08", "record-09"]
+  },
+  "profiles": {
+    "clean-control": ["candidate", "candidate", "candidate"],
+    "copy-09-shared-miss": ["specialist", "specialist", "specialist"],
+    "record-change-negative-flips": ["prior", "prior", "prior"],
+    "missing-must-pass": ["specialist", "specialist", "specialist"],
+    "shared-dashboard-agreement": ["prior", "prior", "prior"],
+    "separate-observer-disagrees": ["prior", "prior", "prior"],
+    "separate-observers-agree": ["candidate", "candidate", "candidate"],
+    "update-notified": ["candidate", "prior", "prior"],
+    "update-notification-missed": ["candidate", "prior", "prior"],
+    "fallback-expires": ["candidate", "specialist", "specialist"],
+    "revision-index-unavailable": ["candidate", "specialist", "candidate"]
+  }
+}
