@@ -1,0 +1,10 @@
+[
+  {"id":"h01","lineage":"legacy-padding","task":"encode blank footer inverted row","program":["left","flip","odd"]},
+  {"id":"h02","lineage":"legacy-padding","task":"encode inverted prefix flag right","program":["left","flip","right"]},
+  {"id":"h03","lineage":"legacy-header","task":"repair packet cyclic header low mask","program":["rotate","low","odd"]},
+  {"id":"h04","lineage":"legacy-header","task":"packet rotate low marker high bit","program":["rotate","low","high"]},
+  {"id":"h05","lineage":"legacy-transit","task":"transit inverted left marker high bit","program":["left","flip","high"]},
+  {"id":"h06","lineage":"legacy-transit","task":"transit cyclic low field polarity","program":["rotate","low","flip"]},
+  {"id":"h07","lineage":"legacy-flags","task":"flip bank and then rotate flag","program":["high","rotate"]},
+  {"id":"h08","lineage":"legacy-flags","task":"flip high marker right cyclic shift","program":["high","right","rotate"]}
+]
