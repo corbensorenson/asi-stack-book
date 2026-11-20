@@ -61,6 +61,25 @@ Contracts, Recursive Self-Improvement Boundaries, and Integrated Reference
 Architecture. The other assigned chapters supply mechanisms or integration;
 they are not separate flagship contributions.
 
+### The receiver comparison in the living book
+
+The original Git replay observes local and remote file effects. The separate
+receiver study compares how two workflows handle uncertainty about an
+operation. Ordinary scoped change control closed 12 of 16 cases and held
+four ambiguous replies. Reading the receiving journal closed all 16 in the
+same scripted setting. It adds evidence about a recorded effect without
+repeating that effect in the four observed cases. Authored tasks and a
+local receiver define the population and effect boundary. They supply no
+estimate of human labor or natural workload benefit. [Frozen protocol](../experiments/p5_u1_governed_repository_change/fresh_task_protocol.md) · [Complete paired results](../experiments/p5_u1_governed_repository_change/results/2026-11-20-fresh-effect-comparison.json) · [Quickstart](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#fresh-effect-comparison)
+
+The crossed receiver comparison adds a competent conventional status lookup.
+It finds 128 useful closures for that workflow and 144 for the additional
+observation route across 160 paired cases, with no repeat effects or false
+closures. Equal access to fresh status yields equal outcomes. The extra
+closures isolate a particular difference in evidence availability within the
+scripted model. Both observation paths derive from one simulated journal.
+[Crossed protocol](../experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md) · [Raw outcomes](../experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json)
+
 ## Public claim-state transition discipline
 
 The defended target is a living technical work that makes claim identity,

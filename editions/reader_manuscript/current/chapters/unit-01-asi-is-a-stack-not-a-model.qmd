@@ -5,55 +5,51 @@ unit_id: "unit-01"
 
 ## The Change That Worked
 
-Consider a hypothetical repository change, not a reported incident. A software
-team asks an AI assistant to update a dependency. The assistant selects the
-requested version, edits the repository, runs the visible tests, and reports
-success. The patch passes those checks. Days later, a production failure reveals that
-the update changed a default used by a service whose tests were not present in
-the assistant's checkout.
+On Monday, a maintainer approves a dependency upgrade prepared by an AI
+assistant. Every test in the repository passes. On Thursday, a downstream
+service fails. It relied on a default the upgrade changed, and its test ran
+in another repository. This is a hypothetical incident.
 
-The team tries to reconstruct what happened. Which source defined the task?
-What repository state did the assistant see? Did it know that the absent service
-depended on the default? Who authorized the edit? Which plan was admitted under the grant? Which
-tests ran, under which environment? Did the assistant observe the actual remote
-repository or only the exit status of a command? What did it retain as a lesson?
+The maintainer opens the change record. She can see the approved patch, the
+green checks, and the version running in production. She still needs to know
+whether the downstream test had been run. If it passed, she would investigate
+what differed in production. If it never ran, she would try the affected
+service against both versions before reopening the change. The local test log
+has no entry for that service. The approved patch and the passing tests are
+genuine, and they leave her question open.
 
-There are logs, but they are incomplete. The prompt appears in one system, tool
-calls in another, and test output in a third. A model summary says the change was
-safe. No record says what "safe" meant. The pull request identifies the final
-bytes but not the context that justified them. The initially successful report cannot be
-reconstructed as a chain of accountable decisions.
+She can restore the old version under the incident procedure. The rollback
+command reports success. She asks the service owner to read the running
+version and exercise the request that failed. One observation checks what
+was restored. The other checks whether the service recovered. If the request
+still fails, the incident stays open while the two owners investigate the
+remaining effect.
 
-The missing account exposes an architectural defect without identifying the
-whole cause of the production failure. The model may have reasoned well from
-incomplete input, or failed to investigate a discoverable dependency. The
-system collapsed
-several different responsibilities into one apparently competent act: resolve
-the request, gather context, plan work, receive authority, modify state,
-observe consequences, evaluate evidence, declare readiness, and learn.
+The same problem appears earlier, while the assistant is preparing the change.
+It can find a dependency, propose a patch, and run the local tests. The team
+still needs someone to judge what those tests cover and decide whether to
+release. A more capable model could help find the missing test. The decision
+about what the resulting evidence permits belongs to the people and controls
+responsible for the service.
 
-A stronger model could find more dependencies, but that alone would not restore
-the missing authority and evidence account. A
-larger model might infer the hidden dependency. It might also make a more
-persuasive case for the same mistake. The important question is not only how
-capable the model is. It is what system turns capability into consequence.
-
-This case motivates the book’s central design thesis: advanced intelligence should be
-engineered as a governed stack of distinct responsibilities and transitions,
-not treated as one undifferentiated model.
-
-That claim does not require one service for every responsibility. It does not
-deny that end-to-end learning can discover useful representations. It says that
-the responsibilities must remain externally distinguishable wherever their
-authority, evidence, failure, or replacement conditions differ.
-
-“ASI” names the book’s intended advanced-system horizon; it is not an achieved
-capability label for this repository. The immediate argument applies to
-consequential AI systems already built from models, tools, people, and
-infrastructure. Whether this design helps a more capable future system is a
-separate empirical question.
+The book calls those distinguishable responsibilities a stack. Permission to
+change a dependency, evidence that the change works, and observation that
+recovery succeeded can each come from a different place. A team can keep them
+separate inside an ordinary change-control service. More capable systems make
+the same distinctions consequential across more tools, longer jobs, and more
+people. The book uses advanced AI, up to artificial superintelligence, as the
+stress case for that design.
 
 {{< include ../generated/unit-01-status.qmd >}}
+
+### Let the maintainer make the next call
+
+The maintainer can restore the dependency under her existing grant. She can
+inspect the running version herself, and the downstream owner can exercise
+the same request that failed on Thursday. That suffices to make a narrow
+recovery decision for this incident. If one person can perform both checks
+with the right access, these roles can share a desk or a process. What matters
+is that each question has an answer the next decision can use.
 
 ## The Wrong Unit of Analysis
 
@@ -101,7 +97,7 @@ by four per shift even if the maintainer keeps pace with the full review
 budget. A faster proposer can still compare candidates in isolation. The
 maintainer limits which candidates enter effect-bearing review, prioritizes
 urgent repairs, and holds publication until the required checks finish.
-The numbers describe a hypothetical queue. [Follow the capacity limit in Unit 25](unit-25-recursive-improvement-replication-and-containment.qmd#improvement-velocity-has-a-control-limit).
+The numbers describe a hypothetical queue. [Follow the same queue as it saturates and the verifier changes in Unit 25](unit-25-recursive-improvement-replication-and-containment.qmd#three-speeds-of-verifier-change).
 
 Capability defects can be obvious: a system cannot form a plausible plan, use
 a tool, or keep enough context to complete a task. Authority and recovery still

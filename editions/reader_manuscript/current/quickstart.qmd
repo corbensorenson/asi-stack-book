@@ -221,6 +221,51 @@ python3 scripts/compare_fresh_effect_workflows.py
 
 [Protocol](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/fresh_task_protocol.md) · [Execution plan](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/fresh_task_execution_plan.md) · [All pairs and sink observations](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/results/2026-11-20-fresh-effect-comparison.json)
 
+## Give ordinary change control a status check {#crossed-receiver-comparison}
+
+The first receiver comparison fixed deduplication by task. The follow-up
+runs every task with both receiver contracts. It also gives conventional
+change control a status lookup, the same retry budget and the same deadline.
+The second workflow adds a receiving-side read when that status is stale
+or unavailable. The protocol and inputs were fixed locally before the paired
+run. All fourteen calibration checks passed.
+
+| Status and receiving-side read | Conventional status, closures | With the extra read, closures |
+|---|---:|---:|
+| Both fresh | 32/32 | 32/32 |
+| Both stale | 24/32 | 24/32 |
+| Both unavailable | 24/32 | 24/32 |
+| Status stale, receiving-side read fresh | 24/32 | 32/32 |
+| Status unavailable, receiving-side read fresh | 24/32 | 32/32 |
+| All conditions | 128/160 | 144/160 |
+
+The 16 additional closures were at receivers without deduplication. With
+deduplication, both workflows closed every case. The added read reduced
+retries in the two profiles where only that read was fresh. Neither workflow
+repeated an effect, falsely reported closure or blocked authorized work in
+the 160 pairs. Every unclosed case remained on safe hold.
+
+Use ordinary status when it can establish the original effect. A separate
+read earns its place when it supplies fresh, exact evidence that ordinary
+status cannot. When neither source can settle the outcome, keep the hold
+unless the receiver can safely deduplicate a retry. The two routes here are
+controlled views of one simulated journal. The study measures those
+assumptions, leaving physical fault isolation and human effort open.
+
+Saltzer, Reed and Clark give the underlying design question. Which endpoint
+can check the property the caller cares about? The journal in this experiment
+can witness a commit. If the claim is that someone received or used the
+result, the check has to reach the intended recipient. [End-to-End Arguments
+in System Design](https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf)
+
+```bash
+python3 scripts/compare_crossed_receiver_workflows.py --compact
+```
+
+[Protocol](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md) · [Frozen inputs and code](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/crossed_receiver_lock.json) · [All pairs and raw observations](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json)
+
+[Inspect the first receiver comparison](#fresh-effect-comparison).
+
 ## One Repair, Five Possible Endings
 
 The following are **illustrative teaching cases**, not additional P5-U1 trials.

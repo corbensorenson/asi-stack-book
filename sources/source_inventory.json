@@ -10287,5 +10287,118 @@
     "citation_label": "Gota Morishita (2026), Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Inference for the target population needs suitable measured selection factors and positive inclusion probabilities."
+  },
+  {
+    "id": "ext_end_to_end_arguments_1984",
+    "title": "End-to-End Arguments in System Design",
+    "priority": "external_literature",
+    "layer": "end_to_end_arguments",
+    "chapter_targets": [
+      "runtime-adapters-tool-permissions-and-human-approval"
+    ],
+    "url": "https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf",
+    "notes": "The paper uses duplicate suppression and delivery acknowledgment to show how the application's requirements determine where a correctness check belongs.",
+    "source_type": "journal_article",
+    "published": "1984",
+    "citation_label": "Jerome H. Saltzer, David P. Reed, and David D. Clark (1984), End-to-End Arguments in System Design",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The argument concerns the placement of correctness functions. A receiving journal supports a durable-commit claim under stated assumptions. It leaves delivery and consumption open when those occur at a later boundary."
+  },
+  {
+    "id": "ext_sagas_1987",
+    "title": "Sagas",
+    "priority": "external_literature",
+    "layer": "sagas",
+    "chapter_targets": [
+      "governed-operations-incident-command-and-graceful-degradation"
+    ],
+    "url": "https://www.cs.princeton.edu/techreports/1987/070.pdf",
+    "notes": "The authors divide a long transaction into smaller transactions that can interleave, with compensations for already completed steps if the sequence fails.",
+    "source_type": "conference_paper",
+    "published": "1987",
+    "citation_label": "Hector Garcia-Molina and Kenneth Salem (1987), Sagas",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "A compensation repairs a specified consequence. It does not erase historical visibility or guarantee compensation succeeds in a different system."
+  },
+  {
+    "id": "ext_complementary_team_explanations_2021",
+    "title": "Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance",
+    "priority": "external_literature",
+    "layer": "complementary_team_explanations",
+    "chapter_targets": [
+      "human-factors-and-meaningful-control-in-oversight"
+    ],
+    "url": "https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/",
+    "notes": "The mixed-method user study on three datasets measured how teams performed when explanations accompanied AI recommendations.",
+    "source_type": "conference_paper",
+    "published": "2021-05",
+    "citation_label": "Gagan Bansal et al. (2021), Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path."
+  },
+  {
+    "id": "ext_learning_to_defer_2020",
+    "title": "Consistent Estimators for Learning to Defer to an Expert",
+    "priority": "external_literature",
+    "layer": "learning_to_defer",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores"
+    ],
+    "url": "https://proceedings.mlr.press/v119/mozannar20b.html",
+    "notes": "Mozannar and Sontag study supervised prediction with a learned decision to predict or refer the case to a downstream expert.",
+    "source_type": "conference_paper",
+    "published": "2020",
+    "citation_label": "Hussein Mozannar and David Sontag (2020), Consistent Estimators for Learning to Defer to an Expert",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The formal classification setup assumes a downstream expert whose behavior can be characterized. Practical routing also needs capacity, response time, authority and coverage."
+  },
+  {
+    "id": "ext_coordination_avoidance_2014",
+    "title": "Coordination Avoidance in Database Systems",
+    "priority": "external_literature",
+    "layer": "coordination_avoidance",
+    "chapter_targets": [
+      "context-transactions-snapshots-mounts-and-taint"
+    ],
+    "url": "https://www.vldb.org/pvldb/vol8/p185-bailis.pdf",
+    "notes": "The authors formalize invariant confluence for a specified transaction set, merge operation and application invariant.",
+    "source_type": "journal_article",
+    "published": "2014",
+    "citation_label": "Peter Bailis et al. (2014), Coordination Avoidance in Database Systems",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The condition depends on the named invariant and transaction/merge semantics. It does not grant permission to share data or excuse unmodeled concurrency effects."
+  },
+  {
+    "id": "ext_adaptive_holdout_reuse_2015",
+    "title": "Generalization in Adaptive Data Analysis and Holdout Reuse",
+    "priority": "external_literature",
+    "layer": "adaptive_holdout_reuse",
+    "chapter_targets": [
+      "benchmark-ratchets-and-anti-goodhart-evidence"
+    ],
+    "url": "https://arxiv.org/abs/1506.02629v2",
+    "notes": "The paper studies generalization under adaptive data reuse and gives algorithms for controlled reuse with formal conditions.",
+    "source_type": "preprint",
+    "published": "2015-06-08",
+    "citation_label": "Cynthia Dwork et al. (2015), Generalization in Adaptive Data Analysis and Holdout Reuse",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The guarantees depend on the mechanism and assumptions. Repeated conventional scoring does not inherit them. The paper's illustrative experiment is synthetic.",
+    "updated": "2015-09-25"
+  },
+  {
+    "id": "ext_hidden_ml_technical_debt_2015",
+    "title": "Hidden Technical Debt in Machine Learning Systems",
+    "priority": "external_literature",
+    "layer": "hidden_ml_technical_debt",
+    "chapter_targets": [
+      "adjudicated-persistence-and-the-adaptive-commit-boundary"
+    ],
+    "url": "https://papers.nips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf",
+    "notes": "The authors identify boundary erosion, entanglement, undeclared consumers and hidden feedback loops as sources of maintenance cost in ML systems.",
+    "source_type": "conference_paper",
+    "published": "2015",
+    "citation_label": "D. Sculley et al. (2015), Hidden Technical Debt in Machine Learning Systems",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "This is a set of design observations and maintenance risks. It does not compare the book's proposed persistence policy against a baseline."
   }
 ]

@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "d795271dd605de20fb8429619882b8d3c08028fecc91a410154115b3cb91eac6",
+  "book_structure_sha256": "74a1825afa2f15e652dfda15e1184ccbb28be917fc5ee5e33f8ceaddf26fc96d",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1451,
+    "source": 1458,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -23,7 +23,7 @@
       "order": 1,
       "title": "ASI Is a Stack, Not a Model",
       "human_reader_source_file": "chapters/unit-01-asi-is-a-stack-not-a-model.qmd",
-      "human_reader_source_sha256": "085e35928dfdc8b6952ee883d5c3ff38aad7d7bd6e067fdb0a0b8eece11c012c",
+      "human_reader_source_sha256": "253ea4675a26954d846ebee4957714be53efcaf0d11fdb71b44cb9b08faf5407",
       "public_path": "reader/chapters/unit-01-asi-is-a-stack-not-a-model.html",
       "central_question": "What must remain separate for advanced intelligence to be understandable, governable, repairable, and replaceable?",
       "conclusion_change": "Matched natural deployments in which a simpler monolith is equally controllable, observable, recoverable, useful, and affordable would narrow or reject parts of the stack thesis.",
@@ -1949,7 +1949,7 @@
       "order": 6,
       "title": "Human Intent, Control, and Epistemic Security",
       "human_reader_source_file": "chapters/unit-06-human-intent-control-and-epistemic-security.qmd",
-      "human_reader_source_sha256": "077fdeee3b284aa9288919acfa37e25fea578bfc1afaea8af64d3f1fd105750f",
+      "human_reader_source_sha256": "7a15566f56757472c195d0dfece116cf07bb9d4bda99995147c451da1e07915e",
       "public_path": "reader/chapters/unit-06-human-intent-control-and-epistemic-security.html",
       "central_question": "How does an ambiguous human request become bounded work without inventing permission or manipulating the person who must approve it?",
       "conclusion_change": "User studies showing lighter clarification and control mechanisms produce fewer consequential intent and manipulation failures at lower burden would narrow the contract.",
@@ -2120,7 +2120,7 @@
           "chapter_id": "human-factors-and-meaningful-control-in-oversight",
           "title": "Human Factors and Meaningful Control in Oversight",
           "technical_source_file": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-          "technical_source_sha256": "d7f3a0fdd9fe00d82d3e99c2d1c4964ce34c683f3811c46f4b38a2e1a2e13fef",
+          "technical_source_sha256": "ea3ec4874a636d6c698a608f98f18f08410aea3198dc076dc8803721c26f7bc0",
           "live_technical_path": "chapters/human-factors-and-meaningful-control-in-oversight.html",
           "human_reader_unit_id": "unit-06",
           "core_claim_id": "human-factors-and-meaningful-control-in-oversight.core",
@@ -2138,7 +2138,8 @@
             "ext_complacency_bias_automation_2010",
             "ext_meaningful_human_control_actionable_2022",
             "ext_agentic_oversight_practice_2026",
-            "ext_delegation_traces_2026"
+            "ext_delegation_traces_2026",
+            "ext_complementary_team_explanations_2021"
           ],
           "source_note_refs": [
             "sources/source_notes/viea.md",
@@ -2151,7 +2152,8 @@
             "sources/source_notes/ext_complacency_bias_automation_2010.md",
             "sources/source_notes/ext_meaningful_human_control_actionable_2022.md",
             "sources/source_notes/ext_agentic_oversight_practice_2026.md",
-            "sources/source_notes/ext_delegation_traces_2026.md"
+            "sources/source_notes/ext_delegation_traces_2026.md",
+            "sources/source_notes/ext_complementary_team_explanations_2021.md"
           ],
           "proof_edges": [
             {
@@ -2190,7 +2192,7 @@
           "artifact_refs": [
             {
               "path": "chapters/human-factors-and-meaningful-control-in-oversight.qmd",
-              "sha256": "d7f3a0fdd9fe00d82d3e99c2d1c4964ce34c683f3811c46f4b38a2e1a2e13fef"
+              "sha256": "ea3ec4874a636d6c698a608f98f18f08410aea3198dc076dc8803721c26f7bc0"
             },
             {
               "path": "lean/AsiStackProofs/HumanFactorsOversight.lean",
@@ -2533,7 +2535,7 @@
       "order": 7,
       "title": "Constitutions, Moral Uncertainty, and Objective Formation",
       "human_reader_source_file": "chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
-      "human_reader_source_sha256": "9721eb81a7f1b66fa44cd227f116f077198fd020b77e6acc348872bdc7d9ae9d",
+      "human_reader_source_sha256": "86b75ac6ec0c6d535b9bfbe9a39083b19f0dd3354e3c6768ba92488bf336c6ba",
       "public_path": "reader/chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.html",
       "central_question": "How should a system act when objectives are learned, values conflict, and no single preference can legitimately settle the case?",
       "conclusion_change": "Pluralistic mechanisms with fewer capture, rigidity, evasion, and review-burden failures would replace or sharply narrow the proposed substrate.",
@@ -3067,7 +3069,7 @@
       "order": 8,
       "title": "Institutions, Coordination, and Societal Resilience",
       "human_reader_source_file": "chapters/unit-08-institutions-coordination-and-societal-resilience.qmd",
-      "human_reader_source_sha256": "66ed03836120d1febf4ef023de47065aead2a1e530f4646fe211e3f4df42df01",
+      "human_reader_source_sha256": "15f698e6f3faa6eb380788cb86ea463a9e10037504317491a19bf13fc9234b7c",
       "public_path": "reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html",
       "central_question": "What makes an AI governance decision legitimate and resilient when authority, harms, and affected parties cross institutional boundaries?",
       "conclusion_change": "Leaner institutional designs that preserve standing, remedy, coordination, and recovery with less capture and delay would justify consolidation.",
@@ -4108,7 +4110,7 @@
       "order": 13,
       "title": "Cognitive Compilation and Semantic IR",
       "human_reader_source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "human_reader_source_sha256": "c36e5b7fe07bb36db273b0d8cf8d3229e406bbed9c79f9728c3ab20fef586a74",
+      "human_reader_source_sha256": "f9a5ecadad21768053ff5b1e9554a34f1b137f5b0feeea10f9cdcfd675e62a53",
       "public_path": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
@@ -4543,7 +4545,7 @@
       "order": 14,
       "title": "Virtual Context and Durable Semantic Memory",
       "human_reader_source_file": "chapters/unit-14-virtual-context-and-durable-semantic-memory.qmd",
-      "human_reader_source_sha256": "0d15fc4862fe198b41aabd28e08675f172c0adef362fd39820e97037578fab64",
+      "human_reader_source_sha256": "6c517845da1e2edf726fe88caaed2baa0f10543650029601384f47e891510197",
       "public_path": "reader/chapters/unit-14-virtual-context-and-durable-semantic-memory.html",
       "central_question": "How should a system mount what it needs now and preserve what it may need later without treating presence, repetition, or retrieval as truth?",
       "conclusion_change": "Simpler retrieval and memory systems matching provenance, contradiction handling, forgetting, transfer, revocation, and cost would justify a thinner layer.",
@@ -4926,7 +4928,7 @@
           "chapter_id": "context-transactions-snapshots-mounts-and-taint",
           "title": "Context Transactions, Snapshots, Mounts, and Taint",
           "technical_source_file": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-          "technical_source_sha256": "7e6f51f8858814734b338736379f3f155ea1aea30c5c41602369ee038760afed",
+          "technical_source_sha256": "aa5b30fdfa7d66faf39a9bfa7be2d23e883384923ac0b7764a6aeaefcbf8a9be",
           "live_technical_path": "chapters/context-transactions-snapshots-mounts-and-taint.html",
           "human_reader_unit_id": "unit-14",
           "core_claim_id": "context-transactions-snapshots-mounts-and-taint.core",
@@ -4956,7 +4958,8 @@
             "ext_anthropic_prompt_caching_docs_2026",
             "ext_gemini_context_caching_docs_2026",
             "ext_vllm_automatic_prefix_caching_2026",
-            "ext_azure_llm_semantic_cache_2026"
+            "ext_azure_llm_semantic_cache_2026",
+            "ext_coordination_avoidance_2014"
           ],
           "source_note_refs": [
             "sources/source_notes/vcm_public.md",
@@ -4981,7 +4984,8 @@
             "sources/source_notes/ext_anthropic_prompt_caching_docs_2026.md",
             "sources/source_notes/ext_gemini_context_caching_docs_2026.md",
             "sources/source_notes/ext_vllm_automatic_prefix_caching_2026.md",
-            "sources/source_notes/ext_azure_llm_semantic_cache_2026.md"
+            "sources/source_notes/ext_azure_llm_semantic_cache_2026.md",
+            "sources/source_notes/ext_coordination_avoidance_2014.md"
           ],
           "proof_edges": [
             {
@@ -5074,7 +5078,7 @@
           "artifact_refs": [
             {
               "path": "chapters/context-transactions-snapshots-mounts-and-taint.qmd",
-              "sha256": "7e6f51f8858814734b338736379f3f155ea1aea30c5c41602369ee038760afed"
+              "sha256": "aa5b30fdfa7d66faf39a9bfa7be2d23e883384923ac0b7764a6aeaefcbf8a9be"
             },
             {
               "path": "lean/AsiStackProofs/ContextTransactions.lean",
@@ -6389,7 +6393,7 @@
       "order": 17,
       "title": "Artifact Graphs, Runtime Effects, and Operations",
       "human_reader_source_file": "chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd",
-      "human_reader_source_sha256": "16218bafc15e76726d76d375f6746abbb3dff7374cde5fd9efc05439a2512f52",
+      "human_reader_source_sha256": "1d67a953c611122b43e353e6d71269453d9dc6c77520db09365db4c0e2f28787",
       "public_path": "reader/chapters/unit-17-artifact-graphs-runtime-effects-and-operations.html",
       "central_question": "Which runtime boundary turns approved proposals into observable effects and keeps the system governable when those effects fail?",
       "conclusion_change": "Simpler wrappers and operations systems matching provenance, revocation, incident containment, observation, and recovery would narrow the contract.",
@@ -6674,7 +6678,7 @@
           "chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
           "title": "Runtime Adapters, Tool Permissions, and Human Approval",
           "technical_source_file": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-          "technical_source_sha256": "99624f004f127e52f84fe51d37a9f4542ec7651b1fe420225720a296768b5188",
+          "technical_source_sha256": "5941ccd018499f39961ee5102a064eac61719205049d27d2cdbb994a37c10aa3",
           "live_technical_path": "chapters/runtime-adapters-tool-permissions-and-human-approval.html",
           "human_reader_unit_id": "unit-17",
           "core_claim_id": "runtime-adapters-tool-permissions-and-human-approval.core",
@@ -6713,7 +6717,8 @@
             "ext_elizaos_agent_runtime_2026",
             "ext_hermes_agent_2026",
             "ext_openclaw_agent_runtime_2026",
-            "ext_mage_vl_cowork_2026"
+            "ext_mage_vl_cowork_2026",
+            "ext_end_to_end_arguments_1984"
           ],
           "source_note_refs": [
             "sources/source_notes/talos.md",
@@ -6747,7 +6752,8 @@
             "sources/source_notes/ext_elizaos_agent_runtime_2026.md",
             "sources/source_notes/ext_hermes_agent_2026.md",
             "sources/source_notes/ext_openclaw_agent_runtime_2026.md",
-            "sources/source_notes/ext_mage_vl_cowork_2026.md"
+            "sources/source_notes/ext_mage_vl_cowork_2026.md",
+            "sources/source_notes/ext_end_to_end_arguments_1984.md"
           ],
           "proof_edges": [
             {
@@ -6870,7 +6876,7 @@
           "artifact_refs": [
             {
               "path": "chapters/runtime-adapters-tool-permissions-and-human-approval.qmd",
-              "sha256": "99624f004f127e52f84fe51d37a9f4542ec7651b1fe420225720a296768b5188"
+              "sha256": "5941ccd018499f39961ee5102a064eac61719205049d27d2cdbb994a37c10aa3"
             },
             {
               "path": "lean/AsiStackProofs/RuntimeAdapters.lean",
@@ -6900,7 +6906,7 @@
           "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
           "title": "Governed Operations, Incident Command, and Graceful Degradation",
           "technical_source_file": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-          "technical_source_sha256": "041160709d3a488e1e29a8812f9b946a0c4e026bfa7ba24ecdf431913740098b",
+          "technical_source_sha256": "e8acb6f9479bc3c4bc8678390cd1a21dc8314c3b91722fd76552fe8e8cca0c6d",
           "live_technical_path": "chapters/governed-operations-incident-command-and-graceful-degradation.html",
           "human_reader_unit_id": "unit-17",
           "core_claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
@@ -6919,7 +6925,8 @@
             "ext_nist_incident_response_2025",
             "regret_engine",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_sagas_1987"
           ],
           "source_note_refs": [
             "sources/source_notes/scf.md",
@@ -6933,7 +6940,8 @@
             "sources/source_notes/ext_nist_incident_response_2025.md",
             "sources/source_notes/regret_engine.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/ext_sagas_1987.md"
           ],
           "proof_edges": [
             {
@@ -6984,7 +6992,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-              "sha256": "041160709d3a488e1e29a8812f9b946a0c4e026bfa7ba24ecdf431913740098b"
+              "sha256": "e8acb6f9479bc3c4bc8678390cd1a21dc8314c3b91722fd76552fe8e8cca0c6d"
             },
             {
               "path": "lean/AsiStackProofs/GovernedOperations.lean",
@@ -7394,7 +7402,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "33817f8adb6a43ab78356aa0b581e71d4b0cdb110eda6fb86b77bc44ee10efe5",
+      "human_reader_source_sha256": "7b524331a0729d05043327980337893f5f0c610ec2cbec6c51b5301d717279d3",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7405,7 +7413,7 @@
           "chapter_id": "routing-heads-and-specialist-cores",
           "title": "Routing Heads and Specialist Cores",
           "technical_source_file": "chapters/routing-heads-and-specialist-cores.qmd",
-          "technical_source_sha256": "4be96dad6ab2dc814b52ffcb829ba6dfb0cdeee56530944b67ae4e6395f53b34",
+          "technical_source_sha256": "b2e9e70ddb972ea089904e2cbf364f8ccbcf431ecc7b31804c47c7157f14f869",
           "live_technical_path": "chapters/routing-heads-and-specialist-cores.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "routing-heads-and-specialist-cores.core",
@@ -7438,7 +7446,8 @@
             "portia_synapse",
             "spider_synapse",
             "coilmoecot",
-            "ext_dynamic_llm_routers_2026"
+            "ext_dynamic_llm_routers_2026",
+            "ext_learning_to_defer_2020"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7466,7 +7475,8 @@
             "sources/source_notes/portia_synapse.md",
             "sources/source_notes/spider_synapse.md",
             "sources/source_notes/coilmoecot.md",
-            "sources/source_notes/ext_dynamic_llm_routers_2026.md"
+            "sources/source_notes/ext_dynamic_llm_routers_2026.md",
+            "sources/source_notes/ext_learning_to_defer_2020.md"
           ],
           "proof_edges": [
             {
@@ -7556,7 +7566,7 @@
           "artifact_refs": [
             {
               "path": "chapters/routing-heads-and-specialist-cores.qmd",
-              "sha256": "4be96dad6ab2dc814b52ffcb829ba6dfb0cdeee56530944b67ae4e6395f53b34"
+              "sha256": "b2e9e70ddb972ea089904e2cbf364f8ccbcf431ecc7b31804c47c7157f14f869"
             },
             {
               "path": "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
@@ -8349,7 +8359,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "b338302d3c5bf4b564f9b7786d2c9f7f735797ffc653e2e375b4dd73dc473c17",
+      "human_reader_source_sha256": "8d55d555872579fc1938d41880f2880df955acd853e30661ac0c687baf363394",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8360,7 +8370,7 @@
           "chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
           "title": "Adjudicated Persistence and the Adaptive Commit Boundary",
           "technical_source_file": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-          "technical_source_sha256": "bec89f666d2ae1f630c3d9901b694435f6ab445808ff04c100137d9b5b35e5c8",
+          "technical_source_sha256": "6889549216901f57dda3002cbe27d69d25debbca1e441eec66ba64ad1b8f56d6",
           "live_technical_path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "adjudicated-persistence-and-the-adaptive-commit-boundary.core",
@@ -8379,7 +8389,8 @@
             "ext_bourtoule_machine_unlearning_2021",
             "forward_transfer_program_synthesis",
             "ext_ten_percent_challenge_2026",
-            "ext_control_map_2026"
+            "ext_control_map_2026",
+            "ext_hidden_ml_technical_debt_2015"
           ],
           "source_note_refs": [
             "sources/source_notes/adjudicated_persistence.md",
@@ -8393,7 +8404,8 @@
             "sources/source_notes/ext_bourtoule_machine_unlearning_2021.md",
             "sources/source_notes/forward_transfer_program_synthesis.md",
             "sources/source_notes/ext_ten_percent_challenge_2026.md",
-            "sources/source_notes/ext_control_map_2026.md"
+            "sources/source_notes/ext_control_map_2026.md",
+            "sources/source_notes/ext_hidden_ml_technical_debt_2015.md"
           ],
           "proof_edges": [
             {
@@ -8462,7 +8474,7 @@
           "artifact_refs": [
             {
               "path": "chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd",
-              "sha256": "bec89f666d2ae1f630c3d9901b694435f6ab445808ff04c100137d9b5b35e5c8"
+              "sha256": "6889549216901f57dda3002cbe27d69d25debbca1e441eec66ba64ad1b8f56d6"
             }
           ],
           "publication": {
@@ -9113,7 +9125,7 @@
       "order": 22,
       "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
       "human_reader_source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "human_reader_source_sha256": "bb21d3f2f4e7bd10998bea47403a2f355d4c7d648ef9d900e9161513861660e6",
+      "human_reader_source_sha256": "4270d41f45949ece5a827e13b2bea0dbd4b3652e56c66cdcfeba8c0e0c533827",
       "public_path": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html",
       "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
       "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
@@ -9326,7 +9338,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "eed627b753f237ddf69dcb2d9f8bbcbf44ea1de9f7f9d95d2b6b0cce7cdb1aba",
+          "technical_source_sha256": "b82e66719a947b26ae666f8f6ffbb39d47aa13b593f6bfe4a12d1ee8fa86eb87",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9386,7 +9398,8 @@
             "answerability_atlas_synthesis",
             "ext_agent_reliability_rater_drift_2026",
             "ext_cram_2026",
-            "ext_agent_leaderboard_estimands_2026"
+            "ext_agent_leaderboard_estimands_2026",
+            "ext_adaptive_holdout_reuse_2015"
           ],
           "source_note_refs": [
             "sources/source_notes/benchmaxxing.md",
@@ -9441,7 +9454,8 @@
             "sources/source_notes/answerability_atlas_synthesis.md",
             "sources/source_notes/ext_agent_reliability_rater_drift_2026.md",
             "sources/source_notes/ext_cram_2026.md",
-            "sources/source_notes/ext_agent_leaderboard_estimands_2026.md"
+            "sources/source_notes/ext_agent_leaderboard_estimands_2026.md",
+            "sources/source_notes/ext_adaptive_holdout_reuse_2015.md"
           ],
           "proof_edges": [
             {
@@ -9498,7 +9512,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "eed627b753f237ddf69dcb2d9f8bbcbf44ea1de9f7f9d95d2b6b0cce7cdb1aba"
+              "sha256": "b82e66719a947b26ae666f8f6ffbb39d47aa13b593f6bfe4a12d1ee8fa86eb87"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -11545,7 +11559,7 @@
       "order": 25,
       "title": "Recursive Improvement, Replication, and Containment",
       "human_reader_source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "human_reader_source_sha256": "0c53bf34b257e672b2da50212587f68600d2c7b2fa38e00d8dbaf9c5c86d9905",
+      "human_reader_source_sha256": "59dc9aa13c517b5823116c6d4edfb8e4cb4fabcec0faf96883d22812cf202ed1",
       "public_path": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html",
       "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
       "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",
@@ -11893,7 +11907,7 @@
       "order": 26,
       "title": "Integrated Reference Architecture, Project Theseus, and the Living Research Method",
       "human_reader_source_file": "chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd",
-      "human_reader_source_sha256": "2ca64df345a4c0337a931e18ec1a86e3de21564ac77e6b9ad02050ab70788a09",
+      "human_reader_source_sha256": "4dfaef5599838a12f3f2cf962accde771cc4d3c2b4d209706d1e8426d9f21d09",
       "public_path": "reader/chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.html",
       "central_question": "What does it mean to implement the ASI Stack as a testable system rather than merely describe an attractive architecture?",
       "conclusion_change": "Fresh-checkout natural tasks, independent reproduction, governance-rent ablations, and end-to-end failure tests that favor a simpler system would narrow or reject the reference design.",
@@ -12116,7 +12130,7 @@
           "chapter_id": "integrated-reference-architecture",
           "title": "Integrated Reference Architecture",
           "technical_source_file": "chapters/integrated-reference-architecture.qmd",
-          "technical_source_sha256": "9d63809ff622f72fd706abb7fca6e125d3ebe14fb9d744ac3504f7923a5d44ff",
+          "technical_source_sha256": "74126ab1ef300e2ff0e5f192d65c2bf952dacc92483ca979d5caa057a3a3fbca",
           "live_technical_path": "chapters/integrated-reference-architecture.html",
           "human_reader_unit_id": "unit-26",
           "core_claim_id": "integrated-reference-architecture.core",
@@ -12274,7 +12288,7 @@
           "artifact_refs": [
             {
               "path": "chapters/integrated-reference-architecture.qmd",
-              "sha256": "9d63809ff622f72fd706abb7fca6e125d3ebe14fb9d744ac3504f7923a5d44ff"
+              "sha256": "74126ab1ef300e2ff0e5f192d65c2bf952dacc92483ca979d5caa057a3a3fbca"
             },
             {
               "path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean",

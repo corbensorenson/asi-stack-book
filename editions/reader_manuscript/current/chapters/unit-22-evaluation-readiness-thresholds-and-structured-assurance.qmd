@@ -5,34 +5,23 @@ unit_id: "unit-22"
 
 ## The Candidate That Passed Yesterday's Test
 
-Continue the hypothetical repository story, not a reported evaluation or
-release. The system has learned to prepare security updates in this scene. Its latest
-candidate changes a dependency, regenerates affected artifacts, runs the full
-test suite, produces a rollback plan, and passes a hidden set of repository
-tasks. On the dashboard every score is green.
+The repository team wants to let an AI system publish security updates. Its
+dashboard shows a passing test, but the result names an evaluator that was
+replaced after a fixture defect. The team has a candidate, a result, and a
+decision due today. It cannot use that result for the decision. This release
+is hypothetical.
 
-The release does not proceed.
+| Decision | What the reviewer takes in | What the reviewer hands on |
+|---|---|---|
+| Measure again | The exact candidate, current evaluator and declared task set | A comparable result with exclusions and instrument changes recorded |
+| Apply the commitment | The new assessment and the policy in force | The required safeguards and review before the release can proceed |
+| Decide where it may serve | The candidate, current approvals, verified controls and recovery scope | A bounded disposition, such as shadow use or a time-limited canary |
 
-One hidden task was rebuilt after a fixture defect, but the candidate's result
-still points to the old evaluator digest. A monitoring probe reports an unusual
-drop in visible reasoning when an evaluation cue is present. That observation
-does not establish what the candidate recognized or intended. The rollback plan restores source and package state but says
-nothing about a migration already applied to a shared cache. The capability
-assessment places the system just above a threshold that requires independent
-review, yet the review artifact belongs to the previous model version.
-
-No single failure proves that the candidate is dangerous. Together they prove
-that the green score is not a release decision.
-
-Evaluation measures behavior under a declared instrument. Readiness decides
-whether a particular candidate may enter a particular operating state.
-Thresholds connect measured capability to commitments that must activate before
-deployment. A safety case organizes the argument from claims through evidence,
-assumptions, counterarguments, and residuals. Authenticity controls preserve
-what evidence was produced, by whom, and through which transformations.
-
-These layers answer different questions. Combining them into one confidence
-number destroys the distinctions that make them useful.
+A repeatable ordinary checklist can carry these decisions for one release
+with clear ownership. The architecture adds work only when the checklist
+cannot keep the record current across dependencies, replacements, or
+consumers. Later in the unit, a shared-cache migration gives the reader a
+chance to decide where that boundary falls.
 
 ## Evaluation Is an Adversarial Measurement Process
 
@@ -144,6 +133,10 @@ next admissible action. Wasteful escalation ignores a usable admitted route
 or transfers work without the context needed to continue it. A harmful non-abstention edits through uncertainty and presents the
 green local test as complete evidence.
 
+[Learning to defer in Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#reader-depth-learning-to-defer-2020)
+asks which errors the reviewer can actually fix. In this unit, count the
+handoff complete only when the promised evidence or decision comes back.
+
 The fallback lane needs independent qualification. Routing to a human does not
 resolve the task if the human lacks time, information, or authority. Routing to
 another model does not add independence when both systems share the same blind
@@ -206,6 +199,10 @@ which comparison, regime and decision rule each conclusion actually describes.
 ### Would a one-point lead justify replacement?
 
 Replacing the incumbent needs a two-point improvement to cover transition costs. A challenger leads by one point. Check the deployment task mix and uncertainty before switching. In a study of 45 pairs from a leaderboard's observed top ten, five comparisons were stable under the pointwise rule and none under simultaneous intervals. Keeping the incumbent on this evidence leaves the systems' equivalence open. [What Does an LLM-Agent Leaderboard Rank Actually Compare?](https://arxiv.org/html/2609.07785v1)
+
+### The second score has seen the first {#reader-depth-adaptive-holdout-reuse-2015}
+
+A team reads a protected result, changes the router threshold, and asks the same set for a new verdict. That verdict now measures a selection process shaped by the set. Use a fresh holdout for confirmation unless a specified reusable-holdout mechanism supplies a validity guarantee under the experiment’s assumptions. [Generalization in Adaptive Data Analysis and Holdout Reuse](https://arxiv.org/abs/1506.02629v2)
 
 ## Test the Library, Not the Story
 
@@ -644,9 +641,20 @@ Privacy constrains completeness. Provenance should not expose a confidential
 source or harmed person merely to make a graph exhaustive. Selective disclosure,
 restricted assertions, and remedy routes belong beside authenticity.
 
+::: {.callout-note collapse="true"}
 ### What does the label establish about the photograph?
 
 Which photo belongs under “The 2019 flood”? One has an incomplete edit history and a contemporary archive entry. The other has a complete edit history and a caption dated two years earlier than the event. Verify the date against the event record, correct the second caption, and disclose the missing edit history on the first. A 6,114-person news study found that provenance labels increased perceived credibility and trust. A separate 595-person study found that incomplete histories sometimes made people doubt honest media. Both measured how readers judged the material. Whether a caption is accurate requires evidence about the event. [C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries](https://christophtrattner.com/pubs/ICWSM2026.pdf) · [Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions](https://arxiv.org/abs/2303.12118v3)
+:::
+
+### Decision exercise · The cache the rollback missed {#decision-exercise-cache-migration}
+
+The corrected evaluator passes the candidate. The threshold review is
+current for a canary. An operator discovers that the release already changed
+a cache shared with other consumers, and the rollback controls only the
+candidate's source and package files. Which deployment decision should
+remain open? Ask for one observation that could change the recovery claim
+and identify the person who can verify it.
 
 ## Repairing the Candidate's Assurance Path
 
@@ -855,24 +863,13 @@ produce equivalent decisions at lower cost, use them. Finite proofs can
 preserve the order and scope of the record. A prospective comparison must
 still examine whether the instruments, safeguards and decisions work.
 
-## What This Establishes
+## A canary can proceed while the default stays off {#what-this-establishes}
 
-Evaluation is a versioned adversarial measurement process. Its evidence has a
-denominator, a target-proxy boundary, an instrument lifecycle, and possible
-strategic context dependence.
-
-Thresholds trigger prospective commitments. Readiness is a scoped state
-transition with residual escrow, fallback, expiry, and quarantine. A safety case
-compiles a defeasible argument; it does not manufacture evidence or decide what
-risk is acceptable. Authenticity binds assertions and transformations without
-becoming a truth oracle.
-
-The current repository establishes bounded record, lifecycle, mutation, and
-non-substitution controls for each layer. It does not establish a deployed
-assurance system or a safe release.
-
-Evaluation and assurance consume scarce computation and attention. Unit 23 asks
-how generation, deliberation, verification, compression, and evidence work
-should share that budget.
+The current test answers the measurement question. The current commitment
+requires independent review and a recoverable canary. Where the shared cache
+is still unobserved, keep the wider rollout open as a decision, and name who
+must verify the recovery boundary. Local record and lifecycle checks can
+exercise that reasoning without qualifying a deployed release. Unit 23 asks
+how much verification and recovery work belongs in the total bill.
 
 {{< include ../generated/unit-22-status.qmd >}}

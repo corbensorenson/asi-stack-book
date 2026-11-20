@@ -1,0 +1,81 @@
+{
+  "backlog_id": "editorial-depth-sources-2026-11-20",
+  "triage_state": "integrated",
+  "source_or_gap": "Seven primary sources used to sharpen decisions in the November 20 developmental edit.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "runtime-adapters-tool-permissions-and-human-approval",
+    "governed-operations-incident-command-and-graceful-degradation",
+    "human-factors-and-meaningful-control-in-oversight",
+    "routing-heads-and-specialist-cores",
+    "context-transactions-snapshots-mounts-and-taint",
+    "benchmark-ratchets-and-anti-goodhart-evidence",
+    "adjudicated-persistence-and-the-adaptive-commit-boundary"
+  ],
+  "chapter_action_policy": "Seven primary sources used to sharpen decisions in the November 20 developmental edit.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/editorial_depth_sources_2026_11_20.json",
+    "docs/reader_manuscript_review.md",
+    "sources/source_notes/ext_end_to_end_arguments_1984.md",
+    "sources/source_notes/ext_sagas_1987.md",
+    "sources/source_notes/ext_complementary_team_explanations_2021.md",
+    "sources/source_notes/ext_learning_to_defer_2020.md",
+    "sources/source_notes/ext_coordination_avoidance_2014.md",
+    "sources/source_notes/ext_adaptive_holdout_reuse_2015.md",
+    "sources/source_notes/ext_hidden_ml_technical_debt_2015.md"
+  ],
+  "merge_or_split_policy": "Use existing chapter owners.",
+  "boundary_decision_rationale": "Each study changes the interpretation of an existing decision or measurement.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [
+    "Retained leads from the November 18 screen: optimizer-state staleness (2603.16731v2), prefix-normalized policy optimization (2608.01418v1), adaptive targeted dynamic chunking (2605.30080v1), trajectory-based data influence (2608.13515v1), prospective data curation (2611.19698v1), and information disclosure in agent markets (2611.07667v1). Candidate uses and limits are recorded in docs/reader_manuscript_review.md."
+  ],
+  "proof_or_test_backlog": [
+    "Adoption requires a comparison under the intended load, budget, user population or update schedule."
+  ],
+  "evidence_transition_precondition": [
+    "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+  ],
+  "required_before_drafting": [
+    "Review the primary passage and the comparison limits before using the result."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_end_to_end_arguments_1984",
+    "https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf",
+    "ext_sagas_1987",
+    "https://www.cs.princeton.edu/techreports/1987/070.pdf",
+    "ext_complementary_team_explanations_2021",
+    "https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/",
+    "ext_learning_to_defer_2020",
+    "https://proceedings.mlr.press/v119/mozannar20b.html",
+    "ext_coordination_avoidance_2014",
+    "https://www.vldb.org/pvldb/vol8/p185-bailis.pdf",
+    "ext_adaptive_holdout_reuse_2015",
+    "https://arxiv.org/abs/1506.02629v2",
+    "ext_hidden_ml_technical_debt_2015",
+    "https://papers.nips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "Results describe the cited setups, including the declared measurement and population."
+  ],
+  "residuals": [
+    "The argument concerns the placement of correctness functions. A receiving journal supports a durable-commit claim under stated assumptions. It leaves delivery and consumption open when those occur at a later boundary.",
+    "A compensation repairs a specified consequence. It does not erase historical visibility or guarantee compensation succeeds in a different system.",
+    "These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path.",
+    "The formal classification setup assumes a downstream expert whose behavior can be characterized. Practical routing also needs capacity, response time, authority and coverage.",
+    "The condition depends on the named invariant and transaction/merge semantics. It does not grant permission to share data or excuse unmodeled concurrency effects.",
+    "The guarantees depend on the mechanism and assumptions. Repeated conventional scoring does not inherit them. The paper's illustrative experiment is synthetic.",
+    "This is a set of design observations and maintenance risks. It does not compare the book's proposed persistence policy against a baseline."
+  ],
+  "next_action": "Revisit cited results when their benchmark or manuscript changes.",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

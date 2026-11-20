@@ -4,7 +4,7 @@ chapter_id: "human-factors-and-meaningful-control-in-oversight"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 terminal structural draft"
-last_updated: "2026-11-18"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "talos"
@@ -17,6 +17,7 @@ primary_sources:
   - "ext_meaningful_human_control_actionable_2022"
   - "ext_agentic_oversight_practice_2026"
   - "ext_delegation_traces_2026"
+  - "ext_complementary_team_explanations_2021"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -34,11 +35,11 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 terminal structural draft |
-| Last updated | 2026-11-18 |
-| Primary source records | 11 assigned records. The source crosswalk gives the role and limits of each new comparison. |
+| Last updated | 2026-11-20 |
+| Primary source records | 12 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026`; raw cache: `viea`, `talos`, `scf`. Passage review of `ext_delegation_traces_2026` is documented in the source crosswalk. |
+| Source loading state | source notes: `viea`, `talos`, `theseus_operator_os`, `scf`, `ext_humans_automation_1997`, `ext_ironies_automation_1983`, `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_meaningful_human_control_actionable_2022`, `ext_agentic_oversight_practice_2026`; raw cache: `viea`, `talos`, `scf`. Passage review of `ext_delegation_traces_2026` is documented in the source crosswalk. Selected primary passages reviewed for `ext_complementary_team_explanations_2021`. |
 | Test state | The control-envelope schema, safe-hold fixture, independent semantic validator, rejecting mutations, and two public Lean targets through thirty-two declarations are implemented. The formal layer includes a reachable review lifecycle, arbitrary-run invariants and identity custody, one complete witness, and thirteen rejecting lifecycle countermodels. The four-arm human-subjects campaign is protocol-ready but requires exact ethics, privacy, participant, and resource authority before recruitment; protected outcomes remain closed. |
 
 ## Drafting guardrail
@@ -207,10 +208,16 @@ time, alternatives, or an effective intervention channel, the stack has strong
 evidence against calling that episode meaningful control. Passing all checks
 removes some known defeaters; it does not prove the larger normative judgment.
 
+### Count which recommendations a reviewer accepts {#depth-complementary-team-explanations-2021}
+
+When comparing two approval screens, record accepted correct advice and accepted incorrect advice separately. A rise in acceptance can help one subgroup and harm the other. For the release review, show the candidate timestamp and the route to the underlying build record. Compare interventions with similar time and authority. Score whether the reviewer discovers the stale fact and can stop publication before it acts.
+
+The mixed-method user study on three datasets measured how teams performed when explanations accompanied AI recommendations. These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path. [Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance](https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/)
+
 ### Claim-source mapping status
 
-Appendix C maps the core claim to all ten assigned sources. The mappings support
-different parts of the design and retain distinct limits.
+Appendix C lists the assigned sources and their limits. The table below
+summarizes the roles of several sources.
 
 | Source | Mapped support | Limit retained here |
 |---|---|---|
@@ -855,6 +862,7 @@ These rows keep Human Factors and Meaningful Control in Oversight's manifest ass
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_delegation_traces_2026` | Passage-reviewed comparator: Following Delegation Traces to Study Human Oversight in Interaction with Multimodal AI. Measure trust and the chosen future delegation policy separately. To establish enacted oversight, inspect a decision and the independent observation on which it depended. | The 392 trials are repeated observations. The future policy was self-reported, and the proposed study of enacted delegation is prospective. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_complementary_team_explanations_2021` | Passage-reviewed comparator: Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance. The mixed-method user study on three datasets measured how teams performed when explanations accompanied AI recommendations. | These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

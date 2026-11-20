@@ -316,6 +316,30 @@ interface can omit an unknown consequence. Authority can be legally or
 socially contested. The checks remove known defeaters and make failures
 inspectable. They do not certify the quality of human judgment.
 
+### Two proposals and one reviewer
+
+The release reviewer has two minutes. The first suggestion names a build
+and the correct deployment branch. The second labels a cached record
+“current” and proposes publishing a summary from it. The reviewer can
+compare one entry against the release log before the deadline. An
+illustrative pair of review outcomes makes the cost of that choice visible.
+
+| Review path | First proposal | Second proposal |
+|---|---|---|
+| Read both explanations and click once | Accept the correct recommendation | Accept the cached recommendation without checking the timestamp |
+| Check the uncertain fact and narrow the action | Leave the change in draft for its separate release decision | Discover the old timestamp and hold publication until the observed build is identified |
+
+A team comparing the interfaces should record accepted correct and
+incorrect recommendations, time to usable action, and how often work
+remains unresolved after the handoff. It can preserve local preparation
+when publication needs more review. When neither the log nor a qualified
+reviewer is available before the deadline, hold the effect. The cases
+give no measured advantage to either interface.
+
+### Measure the mistakes a reviewer actually catches {#reader-depth-complementary-team-explanations-2021}
+
+In Bansal and colleagues' study, explanations made people more likely to accept recommendations regardless of whether the recommendation was correct. A release approval test should record accepted correct and incorrect suggestions separately. Ask whether the reviewer saw the stale timestamp and still had time and authority to stop the effect. [Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance](https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/)
+
 ### A promise to check
 
 A reviewer reads the release summary and says, “I trust it. I'll check the event log.” What would you enter in the decision record now? You have their stated intention. Later they cite the missing sensor interval and narrow the published sentence. Now you also have the discrepancy they found and the action they changed. An open-file event alone would leave that question unresolved.

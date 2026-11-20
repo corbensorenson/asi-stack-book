@@ -37,6 +37,18 @@ joins expected and actual state with incident command and recovery. None makes
 logs identical to reality. Their purpose is to make the gap visible and
 actionable.
 
+### Decide whether to retry, hold, or close
+
+Keep this decision open while following the chapter. The two green reports
+agree about a release record. An operator first checks the served package at
+the affected endpoint. If it still serves the old version, keep the incident
+open and examine the delivery step. If the receipt says the original request
+committed but the endpoint remains unknown, keep the operation identity for
+recovery and avoid an uninformed second release. When a verified read of the
+original target and a scoped revert resolve the whole case, the conventional
+workflow suffices. A new action becomes necessary if some user-visible effect
+survives the revert.
+
 ## Artifacts Form a Graph, Not a Folder
 
 A repository tree shows where files are stored. An artifact graph shows how a
@@ -296,6 +308,10 @@ No-mutation evidence also has scope. A denied adapter call may demonstrate that
 its own dispatch function did not run. It may not establish that another
 worker or stale process caused no effect.
 
+### Which record can witness delivery? {#reader-depth-end-to-end-arguments-1984}
+
+After a timeout, mark three separate questions: did the sender try, did the receiver commit, and did the user get the result? A journal can settle the second. Inspect the rendered link for the third. Saltzer, Reed, and Clark locate the check at the endpoint that can observe the promised property. [End-to-End Arguments in System Design](https://web.mit.edu/saltzer/www/publications/endtoend/endtoend.pdf)
+
 ## Observation Has a Budget and a Failure Policy
 
 Actual-state observation consumes storage, compute, network capacity, operator
@@ -508,6 +524,10 @@ Root-cause confidence is not required for containment, but causal claims at
 closure should match the evidence. “Replication failure caused the incident”
 may remain a hypothesis while the system accurately records which controls
 failed and which repairs worked.
+
+### A compensation makes a new change {#reader-depth-sagas-1987}
+
+If step one lists a release and step two fails to notify its users, a new edit can remove the listing. A user who saved the earlier link may still need a correction. In a saga, completed steps can be interleaved with other work. Compensation addresses the specified effect while preserving the history that produced it. [Sagas](https://www.cs.princeton.edu/techreports/1987/070.pdf)
 
 ## Operations Must Survive the Governance Plane
 
@@ -787,25 +807,14 @@ revocation, and escape attempts. Operations claims would strengthen if the
 system detects divergence earlier, contains harm, preserves essential service,
 and closes fewer incidents with hidden residuals.
 
-## What This Establishes
+## Close the incident when the observed effect is settled {#what-this-establishes}
 
-Consequential work needs a trace from purpose and source to artifact, authority,
-effect, observation, incident, recovery, and residual. Artifact edges need
-roles. Logs are event claims. Replay has grades. Approval and effect leases are
-scoped inputs. Command success is not actual-state truth. Rollback is a bounded
-effect claim.
-
-Governed operations begins when expected and observed state diverge. It assigns
-command authority, contains propagation, chooses a consequence-specific
-degradation envelope, recovers from observed state, compensates irreversible
-effects, and preserves unknowns.
-
-The current repository proves and executes selected finite parts of these
-routes. It does not establish open-world faithfulness, deployed containment, or
-incident efficacy.
-
-A repaired operational route may become a reusable procedure. Unit 18 asks
-when an episode may earn that promotion and what procedures, artifacts, and
-scoped authority can carry across stack boundaries.
+The operator can reconcile the approved release with the package the
+affected endpoint actually served. If restoring the pointer leaves cached
+files or downstream copies, keep those effects visible and give each an
+owner. A scoped Git workflow is sufficient when its observed state covers
+the full recovery obligation. The local results and finite proofs exercise
+selected paths and leave open-world containment untested. Unit 18 asks
+whether this episode supplies a procedure another operator can safely reuse.
 
 {{< include ../generated/unit-17-status.qmd >}}

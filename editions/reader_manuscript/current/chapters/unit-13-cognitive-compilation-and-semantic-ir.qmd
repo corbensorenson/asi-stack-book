@@ -43,6 +43,24 @@ that the source contract failed to preserve. Its value is narrower: make
 interpretation, transformation, loss, validation, and repair inspectable enough
 that a consumer can challenge them.
 
+### Check one small translation before accepting the page
+
+The approved sentence is “Report that the trial stopped after oscillation
+and link the public evidence.” The release rule also excludes private paths.
+Reduce the translation to three fields and review the candidate beside it.
+
+| Field | Source obligation | First candidate | Repair |
+|---|---|---|---|
+| Finding | Report an observed stop after oscillation | Controller detected oscillation safely | Trial stopped after oscillation |
+| Link target | Public evidence note | Public evidence note | Public evidence note |
+| Tooltip | Public title only | Local trace location | Public evidence title |
+
+The link passes. The finding and tooltip fail for different reasons. Fix
+the two generating rules and rebuild their affected previews. Inspect what
+readers will receive before preparing a release. For a single page, a static
+template plus a source check may cover all three obligations. Keep that
+simpler workflow while it can recover the same distinctions after edits.
+
 ## A Plan Node Is Not Yet an Artifact
 
 Planning decides which obligation should become work and when. It does not
@@ -770,35 +788,14 @@ showing that conventional representations dominate proposed substrates would
 retire those candidates. The system should preserve the compiler boundary only
 where it earns observable value.
 
-## What This Establishes
+## Release only the checked summary {#what-this-establishes}
 
-Cognitive compilation is the discipline of making transformation accountable.
-It turns one accepted obligation into a chain of representations whose losses,
-ambiguities, validators, repairs, and residuals can be inspected.
-
-The publication candidate failed despite its bounded source obligation and passing
-syntax checks. Semantic identities reveal which privacy and evidence
-obligations were lost. Typed relations preserve who approved what and under
-which lease. Dimension-safe lowering prevents branch or support scope from
-collapsing into actuality. Target validation rejects the concrete page. Repair
-changes the addressed nodes and rebuilds their descendants.
-
-None of that proves the compiler understood the source. It creates specific
-places where misunderstanding can be found, measured, and corrected. Where a
-simpler route performs as well, the compiler should step aside.
-
-Compiled work still depends on exact inputs. The next question is how a system
-mounts temporary context, preserves durable knowledge, tracks contradiction and
-taint, and forgets what it is no longer allowed to retain. Unit 14 develops
-Virtual Context and Durable Semantic Memory as the information boundary beneath
-the toolchain.
-[Unit 14](unit-14-virtual-context-and-durable-semantic-memory.qmd) must preserve
-input identity, source status, purpose, allowed consumers, and unresolved ambiguity
-while mounting or retaining context. Detailed results and source contracts remain
-with the [compilation](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html),
-[method-transfer](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-method-transfer-and-qualification.html),
-[relational](https://corbensorenson.github.io/asi-stack-book/chapters/relational-dimension-compilation-and-polyadic-cognition.html),
-and [substrate](https://corbensorenson.github.io/asi-stack-book/chapters/mathematical-and-search-substrates.html)
-owners.
+Return to the prepared controller page. Keep the public evidence link, replace
+the unsupported conclusion, and remove the local path from the rendered
+tooltip. The release reviewer still owns the decision to publish. The
+compilation process can supply a checked candidate with its remaining
+obligations. The book's bounded records do not establish general semantic
+preservation or fully automatic repair. Unit 14 asks which source and
+correction the next worker actually receives.
 
 {{< include ../generated/unit-13-status.qmd >}}

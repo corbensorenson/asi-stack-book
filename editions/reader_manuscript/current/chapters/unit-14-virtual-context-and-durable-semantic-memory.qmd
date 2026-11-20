@@ -238,6 +238,10 @@ old snapshot does not reauthorize its contents. Refreshing does not erase the
 old basis. A governed system needs both to explain why a decision occurred and
 why the same decision should or should not occur now.
 
+### Which writes can merge safely? {#reader-depth-coordination-avoidance-2014}
+
+Two writers can append notes with disjoint IDs and preserve uniqueness. Two writers can each reserve the last review slot and violate capacity when their branches merge. Bailis and colleagues show why the decision depends on the invariant, operations, and merge. Coordination earns its cost where a valid local write can make the joined state invalid. [Coordination Avoidance in Database Systems](https://www.vldb.org/pvldb/vol8/p185-bailis.pdf)
+
 ## Context Changes Are Transactions
 
 Mounting context changes the effective input to cognition. It should have

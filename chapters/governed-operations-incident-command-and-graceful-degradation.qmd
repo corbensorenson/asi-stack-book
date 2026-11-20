@@ -4,7 +4,7 @@ chapter_id: "governed-operations-incident-command-and-graceful-degradation"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 integrated reader chapter"
-last_updated: "2026-10-11"
+last_updated: "2026-11-20"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -15,6 +15,10 @@ primary_sources:
   - "ext_nist_ai_rmf_1_0_2023"
   - "ext_nist_deployed_ai_monitoring_2026"
   - "ext_nist_incident_response_2025"
+  - "regret_engine"
+  - "assurance_shift_learning"
+  - "adjudicated_persistence"
+  - "ext_sagas_1987"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -32,11 +36,11 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.4 integrated reader chapter |
-| Last updated | 2026-10-11 |
-| Primary source records | `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025` |
+| Last updated | 2026-11-20 |
+| Primary source records | 13 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025`, `regret_engine`; raw cache: `scf`, `viea`, `talos` |
+| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `theseus_operator_os`, `viea`, `talos`, `platonic_world_model`, `ext_nist_ai_rmf_1_0_2023`, `ext_nist_deployed_ai_monitoring_2026`, `ext_nist_incident_response_2025`, `regret_engine`; raw cache: `scf`, `viea`, `talos`. Selected primary passages reviewed for `ext_sagas_1987`. |
 | Test state | The governed-operations packet schema, authored safe-hold fixture, independent route consumer, completed positive recovery control, and eighteen rejecting mutations are implemented. The first P5 slice adds 8/8 real-subprocess authority/effect/recovery cases. The second adds 7/7 commit-bound service cases with actual learning state, weights-only rollback rejection, crash/restart restoration, localhost partition/outbox retry, one external effect, stale-credential and custody-tamper rejection, and separate-process observation. A retrospective natural publication-service development trace adds an exact source/build/artifact/no-rebuild deploy/public-monitor chain and thirteen rejecting semantic mutations. The claim-bearing natural-service campaign remains unexecuted; no flagship T4 trace, natural AI-service incident, operator game day, distributed partition, deployed recovery, matched comparison, or external reproduction is recorded. |
 | Formal state | Three public targets are implemented through twenty-six theorem declarations in `AsiStackProofs.GovernedOperations` and `AsiStackProofs.GovernedOperationsRefinement`. The refinement adds an eight-stage incident lifecycle and two explicit composition theorems into the original degradation and recovery predicates. Their maximum inference remains finite declared-record routing and lifecycle refinement only. |
 
@@ -535,6 +539,12 @@ the service can become Restored, the emergency command lease must expire or be
 replaced by ordinary authority; the safety case and readiness records affected
 by the incident must receive invalidation or refresh dispositions; and every
 remaining residual must have an owner and deadline.
+
+### What can a compensating action restore? {#depth-sagas-1987}
+
+Suppose publishing an index succeeds but notifying its consumers fails. A new index revision can remove the listing. Keep both revisions and verify which consumers saw the earlier one. A failed notification can require a corrected message or a pending remedy even after the index is restored. Partial work has an observed history, and each compensating effect requires its own authority and check.
+
+The authors divide a long transaction into smaller transactions that can interleave, with compensations for already completed steps if the sequence fails. A compensation repairs a specified consequence. It does not erase historical visibility or guarantee compensation succeeds in a different system. [Sagas](https://www.cs.princeton.edu/techreports/1987/070.pdf)
 
 ### Closure, disclosure, learning, and decommissioning
 
@@ -1124,6 +1134,7 @@ These rows keep Governed Operations, Incident Command, and Graceful Degradation'
 | `regret_engine` | Passage-reviewed Corben architecture source: [The Regret Engine: Governed Counterfactual Learning Signals for Continual Adaptation, Prospective Risk Control, and Self-Correction in Artificial Agents](../papers/regret_engine.html). Corben-authored August 2026 conceptual architecture and research program for decision-time-fair Governed Counterfactual Regret, immutable Decision Capsules, admissible comparator contracts, sparse Regret Tensors, append-only Regret Packets, prospective regret control, regret-aware replay, regret-to-rule compilation, three update clocks, root-cause adjudication, and bounded update leases. Existing chapters are upgraded first; no implementation, experiment, reproduction, causal-identification result, formal proof, safety result, support transition, SOTA, AGI, or ASI is inferred. | The bibliography and Markdown figure companions were not supplied; the DOCX embeds its visual material. All propositions, algorithms, experiments, and architecture claims remain proposed rather than independently validated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds fast containment versus slow consolidation, recovery effectiveness as a coequal metric, and a prohibition on direct incident-to-gradient transitions. | No deployed detection, containment, recovery, consolidation, or recurrence result was observed. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Adjudicated Persistence: Governing the Transition from Experience to Durable Structure in Adaptive Systems](../papers/adjudicated_persistence.html). Adds a governed incident-learning handoff that preserves fast containment while adjudicating whether and where lessons may become durable changes. | Conceptual author framework and benchmark proposal; no local implementation, empirical result, independently checked proof, safety result, or support movement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_sagas_1987` | Passage-reviewed comparator: Sagas. The authors divide a long transaction into smaller transactions that can interleave, with compensations for already completed steps if the sequence fails. | A compensation repairs a specified consequence. It does not erase historical visibility or guarantee compensation succeeds in a different system. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Evidence and non-claims

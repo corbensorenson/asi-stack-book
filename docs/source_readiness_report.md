@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 509
+- `source_note_available_uncached`: 516
 
 ## Records
 
@@ -602,3 +602,10 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_llm_42_2026` | LLM-42: Enabling Determinism in LLM Inference with Verified Speculation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_conformal_missing_modalities_2026` | Conformal Fusion Under Missing Modalities | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_who_trains_matters_2026` | Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_end_to_end_arguments_1984` | End-to-End Arguments in System Design | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_sagas_1987` | Sagas | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_complementary_team_explanations_2021` | Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_learning_to_defer_2020` | Consistent Estimators for Learning to Defer to an Expert | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_coordination_avoidance_2014` | Coordination Avoidance in Database Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_adaptive_holdout_reuse_2015` | Generalization in Adaptive Data Analysis and Holdout Reuse | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_hidden_ml_technical_debt_2015` | Hidden Technical Debt in Machine Learning Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

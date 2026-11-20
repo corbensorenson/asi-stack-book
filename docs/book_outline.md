@@ -1317,6 +1317,8 @@ Source loading queue:
 | Supporting | `viea`, `talos`, `theseus_operator_os`, `scf` | Use for command, operator, escalation, and governance interfaces; project design does not establish human-factors performance. |
 | Variants | `ext_levels_automation_2000`, `ext_complacency_bias_automation_2010`, `ext_agentic_oversight_practice_2026`, `ext_delegation_traces_2026` | Use for multidimensional allocation, automation-bias evidence, and current agentic practice and intended delegation; do not infer universal thresholds. |
 
+
+| Manifest assignment reconciliation | `ext_complementary_team_explanations_2021` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a formally authorized action can remain practically uncontrollable
@@ -4037,7 +4039,7 @@ Source loading queue:
 | Connector or recovery required | `vcm_editable`, `ext_bourtoule_machine_unlearning_2021` | Use editable VCM for vocabulary only and Machine Unlearning to separate storage deletion from parametric influence, privacy, behavioral forgetting, and downstream erasure. |
 
 
-| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_azure_llm_semantic_cache_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `platonic_world_model`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_azure_llm_semantic_cache_2026`, `ext_coordination_avoidance_2014` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Parallel and long-lived context mutation cannot be governed from retrieval results or success-shaped logs.
@@ -4994,7 +4996,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `ext_elizaos_agent_runtime_2026`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `ext_elizaos_agent_runtime_2026`, `ext_hermes_agent_2026`, `ext_openclaw_agent_runtime_2026`, `ext_end_to_end_arguments_1984` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Ownership: exact leased effect dispatch, independent effect observation,
@@ -5500,7 +5502,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`, `ext_dynamic_llm_routers_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `learning_compute_topology`, `deterministic_capability_compilation`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`, `ext_dynamic_llm_routers_2026`, `ext_learning_to_defer_2020` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs to allocate cognition across specialists rather than force one system to do every task.
@@ -7403,7 +7405,7 @@ Source loading queue:
 
 | Atlas working-paper case | `answerability_atlas_synthesis` | Read the November 2 source-note integration addendum for this owner's selected passages; retain retrospective, private-evidence, cost and corrected-decision limits. |
 | Puzzle benchmark comparator | `ext_cram_2026` | Use the hand-set controls and Maze-Hard failure to distinguish regression checks, construct validity, and stopping accuracy. |
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis`, `ext_agent_leaderboard_estimands_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `rgs`, `ext_claw_swe_bench_2026`, `ext_muse_unlearning_2025`, `ext_unlearning_benchmarks_weak_2024`, `ext_openunlearning_2025`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_swe_rebench_v2_2026`, `ext_mlperf_training_v6_2026`, `relational_dimension_compiler`, `ext_cultural_alignment_llms_2024`, `ext_multilingual_evaluation_state_2026`, `portia_synapse`, `spider_synapse`, `capability_ratchet_whitepaper`, `attd`, `temporal_coil_research`, `regret_engine`, `ext_elizaos_agent_runtime_2026`, `assurance_shift_learning`, `adjudicated_persistence`, `forward_transfer_program_synthesis`, `ext_agent_leaderboard_estimands_2026`, `ext_adaptive_holdout_reuse_2015` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: The architecture needs a way to move capability claims through evidence without overfitting to fixed benchmarks.
@@ -7990,7 +7992,7 @@ Source loading queue:
 | Variants | `deterministic_capability_compilation`, `platonic_world_model` | Use for release identity, revocation, state lineage, and model/reality residuals; neither reverses external effects. |
 
 
-| Manifest assignment reconciliation | `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `regret_engine`, `assurance_shift_learning`, `adjudicated_persistence`, `ext_sagas_1987` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: a pre-deployment case can be overtaken by drift, dependency failure,
@@ -8121,7 +8123,7 @@ Source loading queue:
 | External comparator | `ext_bourtoule_machine_unlearning_2021` | Use the source-noted SISA design for one bounded deletion-path comparison: training-time structure can narrow retraining while verified removal and downstream artifacts remain separate obligations. It does not validate cross-surface placement, complete descendant erasure, privacy, or the Adaptive Commit Boundary. |
 
 
-| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026`, `ext_control_map_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `forward_transfer_program_synthesis`, `ext_ten_percent_challenge_2026`, `ext_control_map_2026`, `ext_hidden_ml_technical_debt_2015` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Open with matched near-miss outcomes caused by a stale memory and a defective

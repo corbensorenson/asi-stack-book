@@ -1,0 +1,187 @@
+{
+  "scenario_id": "editorial-depth-sources-2026-11-20",
+  "scenario_scope": "Seven primary sources used to sharpen decisions in the November 20 developmental edit.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "ext-end-to-end-arguments-1984",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "runtime-adapters-tool-permissions-and-human-approval",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The paper uses duplicate suppression and delivery acknowledgment to show how the application's requirements determine where a correctness check belongs.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The argument concerns the placement of correctness functions. A receiving journal supports a durable-commit claim under stated assumptions. It leaves delivery and consumption open when those occur at a later boundary."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-sagas-1987",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "governed-operations-incident-command-and-graceful-degradation",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The authors divide a long transaction into smaller transactions that can interleave, with compensations for already completed steps if the sequence fails.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "A compensation repairs a specified consequence. It does not erase historical visibility or guarantee compensation succeeds in a different system."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-complementary-team-explanations-2021",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "human-factors-and-meaningful-control-in-oversight",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The mixed-method user study on three datasets measured how teams performed when explanations accompanied AI recommendations.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-learning-to-defer-2020",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "routing-heads-and-specialist-cores",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Mozannar and Sontag study supervised prediction with a learned decision to predict or refer the case to a downstream expert.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The formal classification setup assumes a downstream expert whose behavior can be characterized. Practical routing also needs capacity, response time, authority and coverage."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-coordination-avoidance-2014",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "context-transactions-snapshots-mounts-and-taint",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The authors formalize invariant confluence for a specified transaction set, merge operation and application invariant.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The condition depends on the named invariant and transaction/merge semantics. It does not grant permission to share data or excuse unmodeled concurrency effects."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-adaptive-holdout-reuse-2015",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The paper studies generalization under adaptive data reuse and gives algorithms for controlled reuse with formal conditions.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The guarantees depend on the mechanism and assumptions. Repeated conventional scoring does not inherit them. The paper's illustrative experiment is synthetic."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-hidden-ml-technical-debt-2015",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "The authors identify boundary erosion, entanglement, undeclared consumers and hidden feedback loops as sources of maintenance cost in ML systems.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "This is a set of design observations and maintenance risks. It does not compare the book's proposed persistence policy against a baseline."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    }
+  ],
+  "validation_boundary": "Selected published methods and results, with one chapter assignment per paper.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

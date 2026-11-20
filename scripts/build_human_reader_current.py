@@ -679,15 +679,16 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
     index_lines = [
         "# Human Reader Edition {.unnumbered}",
         "",
-        "A dependency update passes every local test. Days later, a downstream service fails because the update changed a default its tests relied on. This hypothetical incident opens the book.",
+        "When an AI system helps change something people rely on, who may approve the change, what shows it worked, and who can put things right?",
         "",
-        "[Read the story](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#the-change-that-worked) · [Inspect the recorded repair](quickstart.qmd#read-the-twelve-outcomes) · [Browse technical evidence](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/index.html)",
+        "## Two ways into the book",
         "",
-        "This is the maintained draft of the independent 26-unit Human Reader edition. All 26 units are drafted. Narrative completeness requires review of the mechanism, alternative, example, failure, and conclusion; target length alone does not establish it. Author approval and major-version release remain separate gates. The live technical book remains the claim, proof, evidence, and source authority.",
+        "- [Follow the maintainer through a failed upgrade](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#the-change-that-worked). The hypothetical incident shows why a patch can pass its tests and still leave the team with an unresolved failure.",
+        "- [Inspect the receiver comparison](quickstart.qmd#crossed-receiver-comparison). The local experiment measures when a second check helps after a request times out and the receiving service may already have acted.",
         "",
-        "The narrative develops three proposed contributions: **governed-cognition interface contracts**, **public claim-state transition discipline**, and **record/reality reconciliation with residual honesty**. The 89 technical owners support these composition and process proposals; they are not independent discoveries. Bounded local implementation results do not establish general superiority, novelty, or chapter-core support. The [contribution summary](https://corbensorenson.github.io/asi-stack-book/docs/three_defended_contributions.md) and [conventional alternatives](https://corbensorenson.github.io/asi-stack-book/docs/defended_contribution_prior_art_positioning.md) give the scope and challengers.",
+        "For a first sitting, read [Unit 1](chapters/unit-01-asi-is-a-stack-not-a-model.qmd), then [Unit 3 on authority](chapters/unit-03-authority-failure-and-misuse.qmd#proposal-approval-effect-and-release). Run or inspect [the Quickstart](quickstart.qmd) and follow the repair through [Unit 26](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd#following-the-repository-change).",
         "",
-        "Start with [A Fifteen-Minute Route Through the Stack](quickstart.qmd) to run one bounded governed repository change and inspect what is implemented, what remains proposed, and how the three execution routes differ.",
+        "The 26-unit reader manuscript is a maintained draft. The [technical evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/index.html) links the claims, proofs, sources, and retained results behind it.",
         "",
     ]
     index_lines.extend(concept_finder(records, structure["site_url"]))

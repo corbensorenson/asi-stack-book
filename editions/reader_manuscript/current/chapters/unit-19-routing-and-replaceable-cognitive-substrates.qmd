@@ -36,6 +36,21 @@ the job contract above implementations. Governed routing chooses among
 qualified candidates under cost, authority, evidence, and recovery. The stack
 can explore new substrates without letting novelty inherit readiness.
 
+### Three checks before switching routes
+
+First ask which routes may read the lockfile and which may approve a
+publication. For a local dependency report, an authorized deterministic
+reader and a general model with tools can both compete. Then compare the
+chosen eligible pair at the same spend. [A two-model random baseline](#does-the-router-beat-a-coin-toss-at-the-same-price)
+gives the learned router a concrete result to beat. Finally, interrupt both
+candidates after preserving a partially reviewed report. A faster candidate
+whose checkpoint cannot resume that report earns a fresh-request route at
+most. [Follow the checkpoint decision](#checkpoints-must-preserve-more-than-weights).
+
+The later architecture comparisons answer narrower questions about
+granularity, accessible state and the work needed to decode or recover it.
+Use them when they change one of those three checks.
+
 ## Capability Identity Is Not Model Identity
 
 A capability field names a promise such as dependency-graph extraction,
@@ -136,6 +151,10 @@ more useful fallback.
 
 Fallback activation should be exercised. A route listed only in configuration
 is not operational evidence.
+
+### Which errors can the fallback fix? {#reader-depth-learning-to-defer-2020}
+
+A reviewer can catch a missing field while sharing the model's blind spot about an unavailable source. Measure both on the same cases. Learning to defer treats the downstream expert's outcomes as part of the decision. Coverage and time to a usable answer still have to be checked. [Consistent Estimators for Learning to Defer to an Expert](https://proceedings.mlr.press/v119/mozannar20b.html)
 
 ## Calibration Belongs to the Route and the Answer
 
@@ -850,26 +869,13 @@ independent dependency or a safe deferral path. A lost state field during
 migration would require a richer handoff contract or make the replacement
 ineligible.
 
-## What This Establishes
+## Switch only the route that survived the checkpoint {#what-this-establishes}
 
-Cognitive capability should be named above implementation. Routing should
-select from a declared candidate population, retaining the complete attempted
-denominator under readiness, authority, evidence,
-resource, fallback, and recovery constraints. Route correctness, answer
-correctness, and useful outcome remain separate.
-
-Replaceability needs a substrate-neutral ABI, complete checkpoint state,
-qualified migration, matched tournaments, and retirement. Recurrence and
-cyclic memory create useful structural possibilities and exact freshness and
-alias obligations. Structural proof is not learned quality.
-
-The current repository establishes finite routing, ABI, cyclic-address, and
-candidate-lifecycle properties plus narrow synthetic observations. It does not
-establish that heterogeneous or cyclic systems outperform a strong general
-model.
-
-Before a replacement can learn, hand the learner the accepted checkpoint,
-state schema, validation results, and the authority and recovery limits on
-changing that state. [Unit 20 follows that handoff into the training transaction](unit-20-governed-training-and-learning-compute-topology.qmd#a-training-run-is-an-experimental-transaction).
+Keep a route that saves money on eligible fresh requests when its useful
+outcomes beat the same-cost comparator. For a resumed review, retain the
+incumbent until a matched interruption shows that the candidate preserves
+the required checkpoint and fallback. The book's finite ABI and cyclic
+properties leave comparative workload performance open. [Unit 20 follows
+the accepted checkpoint into the training transaction](unit-20-governed-training-and-learning-compute-topology.qmd#a-training-run-is-an-experimental-transaction).
 
 {{< include ../generated/unit-19-status.qmd >}}

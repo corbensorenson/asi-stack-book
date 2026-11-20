@@ -4,7 +4,7 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "learning_compute_topology"
   - "octopus_router"
@@ -32,6 +32,7 @@ primary_sources:
   - "spider_synapse"
   - "coilmoecot"
   - "ext_dynamic_llm_routers_2026"
+  - "ext_learning_to_defer_2020"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -48,12 +49,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-11-19 |
-| Primary source records | 26 assignments. See the source crosswalk for individual roles and limits. |
+| Last updated | 2026-11-20 |
+| Primary source records | 27 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; variant: `moecot_md`; connector/recovery: `moecot` |
-| Source loading state | source notes: `learning_compute_topology`, `octopus_router`, `deterministic_capability_compilation`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `ext_hipporag_2024`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `coilmoecot`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_dynamic_llm_routers_2026`. |
+| Source loading state | source notes: `learning_compute_topology`, `octopus_router`, `deterministic_capability_compilation`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `ext_hipporag_2024`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `coilmoecot`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_dynamic_llm_routers_2026`. Selected primary passages reviewed for `ext_learning_to_defer_2020`. |
 | Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and twenty-nine live family declarations. The refinement contributes an exact twenty-five-theorem arbitrary finite-run surface, retains four load-bearing legacy routes, and physically retires sixteen projection/fixture declarations. Its independent consumer recompiles the exact surface, covers seven stages and all 42 routes, and rejects 47/47 mutations while keeping route and answer outcomes separately represented and balanced. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
 ## Drafting guardrail
@@ -593,6 +594,12 @@ source reports an implementation and tests, but its conflicting test counts
 and incomplete integration/benchmark milestones prevent the book from
 treating "compiles," "finite loss," or "stable steps" as learned routing.
 
+### Escalate cases an expert can actually resolve {#depth-learning-to-defer-2020}
+
+A manifest reviewer catches missing license fields but cannot recover an unavailable upstream archive. Train or assess the route on paired model and reviewer outcomes for the same eligible workload. Include unavailable reviewers and unresolved handoffs. Compare deferral with a model-only route and with always using the reviewer. This comparison can distinguish a useful expert from a queue that merely inherits the difficult cases.
+
+Mozannar and Sontag study supervised prediction with a learned decision to predict or refer the case to a downstream expert. The formal classification setup assumes a downstream expert whose behavior can be characterized. Practical routing also needs capacity, response time, authority and coverage. [Consistent Estimators for Learning to Defer to an Expert](https://proceedings.mlr.press/v119/mozannar20b.html)
+
 ### P4/M6 held-out routing result
 
 The completed P4/M6 campaign supplies a bounded mixed result, not chapter-core
@@ -1039,6 +1046,7 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 | `spider_synapse` | Passage-reviewed comparator: [SpiderSynapse: A Multi-Hypothesis Reasoning Architecture](../papers/spider_synapse.html). Failed predecessor case for multi-hypothesis routing, repeated refinement, mutable working memory, selection, typed output heads, path diagnostics, and one-path recovery. | Its reported plateau does not identify branching, refinement, memory, selector credit, label smoothing, or supervision geometry as the cause and has not been locally reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `coilmoecot` | Passage-reviewed comparator: CoilMoECOT Whitepaper v2.0. Full composite connector text section-audited. Retains prime-temporal trace features, Graph/Trace-first placement, ledger-derived diagnostic tuples, removable shadow lanes, explicit pre-planner/post-plan/post-run insertion points, anti-experts as visible penalty signals, bounded update slices, and benchmark/canary/rollback promotion. Repeated MoECOT, packaging, and task-system appendices are treated as shared substrate rather than independent evidence. | Design and implementation specification only; no local route, ablation, benchmark, canary, rollback, model-quality, safety, latency, or cost result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_dynamic_llm_routers_2026` | Passage-reviewed comparator: Dynamic LLM Routers are Often Misguided. Compare learned assignment with random assignment between a fixed, well-chosen eligible pair at matched spend. | The comparisons concern whole-model inference services with particular rosters, prices and tasks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_learning_to_defer_2020` | Passage-reviewed comparator: Consistent Estimators for Learning to Defer to an Expert. Mozannar and Sontag study supervised prediction with a learned decision to predict or refer the case to a downstream expert. | The formal classification setup assumes a downstream expert whose behavior can be characterized. Practical routing also needs capacity, response time, authority and coverage. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

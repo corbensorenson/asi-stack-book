@@ -50,6 +50,21 @@ decision process whose records can be challenged and whose commitments carry
 correction, retirement, and bounded recovery duties. Reversing one stored
 artifact does not undo every consequence of its earlier use.
 
+### Decide the two patches while the evidence is in view
+
+For the schema prerequisite, preserve a dated fact tied to the affected
+dependency. Have the maintainer check its effective version while the team
+looks for a reliable preflight. For the dropped field, block or replace the
+lossy tool and add a round-trip test. A reminder can inform the next agent,
+but the faulty mapping is still active in every other caller. Keep the
+ordinary maintenance practice if it supplies the same version check or
+tool guard with less work.
+
+Both dispositions are provisional. A new generator version can narrow the
+first rule, and a test that blocks a valid migration can reopen the second.
+[The later follow-through](#adjudicating-the-two-patches) shows what to do
+when those challenges appear.
+
 ## An Outcome Is Not a Lesson
 
 An outcome is an observation about what happened under particular conditions.
@@ -217,72 +232,60 @@ claim about the evidence for this use, distribution, search method, and budget.
 
 ## Eight Places a Lesson Can Live
 
-Learning discussions often jump from experience directly to parameter update.
-An engineered system has more choices.
+Use the table when the first placement cannot preserve the obligation.
+The first three examples follow from the two patches.
+
+| Placement | When to try it | What would change the decision |
+|---|---|---|
+| [Context](#context) | Supply the current build's rule for one review. | Retain a dated record if a recurring need survives the task. |
+| [Semantic memory](#semantic-memory) | Store a versioned compatibility fact with its source and expiry. | Add a check when success depends on retrieving the fact every time. |
+| [Procedure](#procedure) | Run a fresh-code or version check immediately before use. | Move to the tool or interface if callers can bypass the procedure. |
+| [Tool or test](#tool-or-test) | Repair a shared transformation and reject the known regression. | Requalify on a legitimate input the guard currently blocks. |
+| [Model parameters](#model-parameters) | Compare changes to broad repeated behavior after narrower candidates are tested. | Escalate scrutiny when neighboring behavior or recovery changes. |
+| [Evaluator](#evaluator) | Repair an instrument that rewards the wrong outcome. | Require independent review if it qualifies its own successors. |
+| [Environment](#environment) | Change a supported condition of the task, such as making required facts observable. | Recheck if the modified environment hides the original failure. |
+| [Institution](#institution) | Revise who may approve, appeal or review the work. | Reopen when people who bear the effects cannot exercise those rights. |
 
 ### Context
 
-The lightest intervention is to supply information during the current task.
-Context is appropriate when the need is temporary, local, or not yet supported
-for reuse. Its mounted use ends with the context lease, while stored copies
-need their own disposition. Repeated retrieval costs attention and can fail
-under context pressure.
+During one dependency review, mount the rule for the exact revision. Context
+can expire with that review while the source remains available for its owner.
 
 ### Semantic Memory
 
-Memory preserves a proposition across tasks. It is useful when later decisions
-need dated, challengeable knowledge. Memory writes should retain provenance,
-scope, confidence, conflicts, review conditions, and deletion obligations.
-Memory can be corrected more directly than parameters, but stale or
-overgeneralized entries can influence many actions invisibly.
+The dated rule supports a later review. It needs a source and an effective
+interval, and a conflict should surface to the maintainer before use.
 
 ### Procedure
 
-A procedure preserves an ordered method: checks, branches, stop conditions,
-and recovery. It fits recurrent work whose control flow is understood.
-Procedural memory saves reasoning effort but can harden yesterday's workaround
-into tomorrow's default.
+The procedure checks the current code or dependency before applying the rule.
+It earns continuing use by working on fresh cases under the same scope.
 
 ### Tool or Test
 
-A tool changes what actions are possible; a test changes what artifacts may
-pass. These are strong loci when the lesson describes a machine-checkable
-invariant. They provide direct feedback and often precise rollback. They can
-also encode a mistaken rule with high authority.
+A round-trip regression catches the dropped field. A corrected tool must
+also preserve the surrounding inputs callers depend on.
 
 ### Model Parameters
 
-Parameter changes can alter broad behavior where explicit rules or retrieval
-are inadequate. Their reach is also their danger. The changed knowledge may be
-hard to locate, explain, delete, or reverse without collateral effects. A
-parameter update requires evidence beyond the convenience of having a training
-pipeline.
+Use the [policy update comparison](#policy-updates-are-leased-candidates) to
+check the value of a broader change against its collateral effects.
 
 ### Evaluator
 
-Sometimes the failure is not generation but judgment. An evaluator may need new
-tests, examples, calibrations, independence rules, or adversarial probes.
-Changing the evaluator changes what future learning optimizes, so it cannot be
-treated as neutral maintenance.
+The [longer-justification example](#a-longer-justification-earns-the-wrong-reward)
+shows how a learner can improve the score while harming the property the
+score is supposed to measure.
 
 ### Environment
 
-The best lesson may be to change the world around the agent: repair an API,
-remove an ambiguous interface, restrict an unsafe capability, improve
-observability, or redesign a workflow. Agent adaptation should not compensate
-forever for a defective environment.
+[Data ancestry](#the-data-may-descend-from-the-policy) matters when the change
+also alters which outcomes the system will learn from.
 
 ### Institution
 
-Organizations learn through roles, permissions, review duties, escalation
-rules, incentives, and norms. Institutional change is appropriate when the
-defect arises from coordination or authority. It is costly, politically
-consequential, and difficult to reverse, so technical convenience cannot be its
-only justification.
-
-Combining loci creates adaptation debt unless their authority order,
-carrying cost and retirement are explicit. A temporary reminder may support a
-tool repair, then expire when the test replaces it.
+A new decision right belongs to the institution that can justify it.
+[Follow dissent and appeal in Unit 7](unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd#dissent-appeal-and-rights).
 
 ## Locus Is Part of the Claim
 
@@ -774,6 +777,10 @@ new format through a fresh versioned contract.
 The two paths begin with equal green outcomes and end with different durable
 structures. That difference is the work of learning.
 
+### A workaround gains a second consumer {#reader-depth-hidden-ml-technical-debt-2015}
+
+A temporary feature default helps one tool. Two models begin depending on it. Compare a dated local exception with correcting the shared feature. Read both models' inputs before retiring the workaround. Sculley and colleagues describe how undeclared consumers and dependencies create maintenance costs. [Hidden Technical Debt in Machine Learning Systems](https://papers.nips.cc/paper_files/paper/2015/file/86df7dcfd896fcaf2674f757a2463eba-Paper.pdf)
+
 ## Deoptimization and Retirement
 
 Adaptive systems need a way to become less committed. Deoptimization removes
@@ -846,26 +853,12 @@ the update.
 
 ## The Strongest Simpler Baseline
 
-The strongest baseline is not a self-modifying system with elaborate central
-adjudication. It is a competent human-reviewed process with versioned memory,
-ordinary tests, reproducible training, explicit model releases, data lineage,
-and deletion tickets.
-
-Local owners know their surfaces. A tool maintainer can often place a fix faster
-than a general persistence service. Mature machine-learning platforms already
-provide experiment tracking, checkpointing, canaries, and rollback. Scientific
-teams already use preregistration and independent replication when incentives
-permit.
-
-The adaptive commit boundary earns its cost only if it improves decisions
-across those surfaces. It should be compared on placement accuracy, time to
-useful correction, transfer, collateral change, retained capability, deletion,
-recovery, lifecycle cost, human comprehension, and resistance to manipulated
-feedback.
-
-If fixed-locus or human-reviewed policies match those outcomes at lower cost,
-the boundary should contract. Shared contracts and descendant records may still
-be useful without a general adjudicator.
+Give both cases to competent local owners with versioned notes, ordinary
+tests, training records and deletion tickets. Compare placement accuracy,
+useful correction, transfer, collateral change, recovery, cost and human
+comprehension. Keep the local process where it can meet those obligations.
+A shared adjudicator earns its cost when a lesson crosses surfaces and a
+local decision loses something another owner needs to verify or undo.
 
 ## What the Current Work Establishes
 
@@ -911,31 +904,26 @@ unit, and they do not demonstrate a superior continual-learning system.
 
 ## From Minimum Persistence to a Mature Learning System
 
-Start with the two repository incidents. For each, record rival explanations and compare a temporary context entry, a dated memory, a procedure, a tool test and leaving the system alone. Challenge the chosen placement with stale evidence, wider scope and failed recovery. Check that the memory expires or the test retires when its assumptions change.
-
-Compare these decisions against fixed-placement and human-review baselines over the full lifecycle. A later campaign can add parameter updates, full-state recovery and descendant-aware deletion. Across domains, use independent reviewers blinded to the architecture label, retain failed campaigns and test whether the forecast transfers.
+Compare a temporary reminder, dated record, procedure, tool test and leaving
+the two incidents alone. Challenge the chosen placement with stale evidence,
+wider scope and failed recovery. Extend a later comparison to parameter
+updates only when it can observe the resulting behavior and recovery.
 
 ## The Strongest Objection
 
-Review itself costs time and concentrates power. Give domain owners standing permission for inexpensive, reversible changes within their scope. Reserve independent review for changes that cross that scope. A team that disputes the proposed lesson needs a way to record dissent and continue under its existing contract.
+Adjudication can waste reviewer time and concentrate power. Give local
+owners standing permission for bounded reversible changes. Require
+independent review when a decision crosses that scope, and preserve
+a way to record dissent while keeping the existing workflow usable.
 
 ## Evidence That Would Change the Conclusion
 
-The adaptive commit boundary should narrow or be retired if competent fixed-
-locus policies or human review match its placement quality, transfer,
-retention, deletion, recovery, and safety at lower lifecycle cost.
-
-Support would require prospective natural campaigns with matched resources,
-independent causal and placement assessment, real competing baselines,
-cross-domain transfer, adversarial feedback, long-horizon forgetting and
-deoptimization, descendant-aware deletion, full-state recovery, and external
-reproduction. The studies must report abstentions, failed updates, human labor,
-compute, latency, and residual harm.
-
-No finite Lean model can establish those empirical effects. Formal work can
-prove that authored records obey stated commitment and revocation rules; it
-cannot prove that the chosen lesson is true, that the evaluator is legitimate,
-or that every descendant has been erased.
+On fresh work, compare human-reviewed and fixed-placement policies with
+the proposed adjudicator under equal resources. Keep failed updates,
+abstentions, labor and residual harm in the record. Use a separate
+assessment for causal transfer, full-state recovery and descendant deletion.
+Finite models can check a recorded commitment or revocation. The intended
+effects still need observation.
 
 ### Decision exercise · Where should the lesson live? {#decision-exercise-where-should-the-lesson-live}
 
@@ -944,13 +932,15 @@ week. Two unrelated failures suggest the workflow also skips a fresh-code
 check. Decide what to retain about this incident and what might become a
 procedure. Name one fresh test before adopting the procedure.
 
-## What This Establishes
+## Keep each lesson where its cause can be checked {#what-this-establishes}
 
-Preserve the incident, its competing explanations and the smallest change that might help the next case. The repository exercises parts of that lifecycle. It does not yet implement or validate the integrated
-adjudicator. Compare candidate placements prospectively and retain a recovery path.
-
-A candidate lesson still cannot decide whether it is safe to promote. Unit 22
-assembles adversarial evaluation, readiness thresholds, residual custody, and a
-structured assurance case for that decision.
+Keep the schema prerequisite dated and retrievable until a qualified check
+can enforce it. Repair the tool that drops a field and let the regression
+test protect that fix. Retire either safeguard when its assumptions fail
+and preserve the history that explains why it existed. The repository
+exercises parts of this lifecycle. It does not yet implement or validate the integrated
+adjudicator. The choice of placements still needs a
+prospective comparison and a recovery path. Unit 22 asks which evidence can
+qualify such a change for use.
 
 {{< include ../generated/unit-21-status.qmd >}}

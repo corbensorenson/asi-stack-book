@@ -4,7 +4,7 @@ chapter_id: "context-transactions-snapshots-mounts-and-taint"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "vcm_public"
   - "platonic_world_model"
@@ -29,6 +29,7 @@ primary_sources:
   - "ext_gemini_context_caching_docs_2026"
   - "ext_vllm_automatic_prefix_caching_2026"
   - "ext_azure_llm_semantic_cache_2026"
+  - "ext_coordination_avoidance_2014"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -47,12 +48,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-07-23 |
-| Primary source records | 23 assigned records spanning transactional context, state and branch semantics, historical project recovery, exact-prefix cache contracts, tenant-partitioned KV reuse, and semantic-response-cache validity |
+| Last updated | 2026-11-20 |
+| Primary source records | 24 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `vcm_public`; supporting: the local context, semantic-basis, transaction, recovery, and residual sources; variants: GraphRAG, Mem0, and the four current prefix-cache contracts; connector/recovery: editable VCM, machine unlearning, and semantic response caching |
-| Source loading state | source notes: `vcm_public`, `platonic_world_model`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `ext_graphrag_2024`, `ext_mem0_2025`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `ext_bourtoule_machine_unlearning_2021`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_azure_llm_semantic_cache_2026`; raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable` |
+| Source loading state | source notes: `vcm_public`, `platonic_world_model`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`, `vcm_editable`, `ext_graphrag_2024`, `ext_mem0_2025`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_txfs_2018`, `ext_bourtoule_machine_unlearning_2021`, `cca_project`, `moecot_manifest_project`, `beastbrain_project`, `bugbrain_project`, `corbens_best_model_possible_project`, `reflexive_router_whitepaper`, `kernel_english_residual_compiler`, `ext_openai_prompt_caching_docs_2026`, `ext_anthropic_prompt_caching_docs_2026`, `ext_gemini_context_caching_docs_2026`, `ext_vllm_automatic_prefix_caching_2026`, `ext_azure_llm_semantic_cache_2026`; raw cache: `vcm_public`, `ladon_manhattan`, `context_engineer`, `black_hole_context_manager`; connector/recovery: `vcm_editable`. Selected primary passages reviewed for `ext_coordination_avoidance_2014`. |
 | Test state | Exact authored scaffold: 3 valid/6 rejecting memory-store records; 2 valid/4 rejecting ordered sequences; 1 bounded five-project restart lifecycle/10 rejecting mutations; reachable 6-event transaction execution with 81/81 rejected mutations; 52 live Lean declarations under 4 targets, including 35 in the reachable refinement. No concurrent store, actual process crash, filesystem-journal recovery, distributed commit, natural model-backed workload, useful advantage, or chapter-core support effect. |
 
 ## Drafting guardrail
@@ -318,6 +319,12 @@ continuity: each attempt retains its causal parents, observed effects, unresolve
 participants, and total cost. That record leaves storage truth available to
 independent observers without assigning the transaction producer authority over
 claim truth, usefulness, or publication.
+
+### Check whether two valid local writes still merge safely {#depth-coordination-avoidance-2014}
+
+Consider two branches appending independently named notes. Under a uniqueness-by-ID invariant and disjoint IDs, merging the notes preserves the invariant. Now let each branch allocate the last available review slot. Both allocations pass their local checks and the merged state allocates two slots. That contract needs a coordinating reservation or an allocation rule that makes the conflicting writes impossible. Give the merge rule and counterexample before paying for uniform coordination.
+
+The authors formalize invariant confluence for a specified transaction set, merge operation and application invariant. The condition depends on the named invariant and transaction/merge semantics. It does not grant permission to share data or excuse unmodeled concurrency effects. [Coordination Avoidance in Database Systems](https://www.vldb.org/pvldb/vol8/p185-bailis.pdf)
 
 ### Material transitions and restart recovery
 
@@ -852,6 +859,7 @@ These rows keep Context Transactions, Snapshots, Mounts, and Taint's manifest as
 | `ext_gemini_context_caching_docs_2026` | Metadata-first comparator: Context caching. Current official provider contract for implicit and explicit context caching, common-prefix placement, cached-token usage reporting, time-to-live, and storage charges. Product behavior and prices are time-sensitive; inspected 2026-07-23. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_vllm_automatic_prefix_caching_2026` | Metadata-first comparator: Automatic Prefix Caching. Official vLLM design documentation for block-hash exact-prefix KV reuse, least-recently-used eviction, multi-modal and adapter identity, and tenant cache-salt protection against timing inference. No local serving benchmark was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_azure_llm_semantic_cache_2026` | Metadata-first comparator: Azure API Management LLM semantic cache lookup policy. Official semantic-response-cache policy documentation. It treats vector similarity as an approximate response-reuse decision and warns that a hit can return an incorrect, outdated, or unsafe answer. No local semantic-cache deployment was run. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_coordination_avoidance_2014` | Passage-reviewed comparator: Coordination Avoidance in Database Systems. The authors formalize invariant confluence for a specified transaction set, merge operation and application invariant. | The condition depends on the named invariant and transaction/merge semantics. It does not grant permission to share data or excuse unmodeled concurrency effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

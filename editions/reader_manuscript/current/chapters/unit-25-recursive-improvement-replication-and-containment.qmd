@@ -706,6 +706,20 @@ system and what evidence would reopen change; unexplained slowing invites the
 same metric gaming as unexplained acceleration.
 The bound itself remains versioned, reviewable, and subject to evidence.
 
+### One verifier, three speeds of change {#three-speeds-of-verifier-change}
+
+| Stage | Who reviews | What they observe | What stops effect-bearing change |
+|---|---|---|---|
+| Two proposals per shift, four review places | The maintainer and service owner | Candidate-specific tests and one observed effect per adopted patch | A required check fails or a residual is left unowned |
+| Eight proposals per shift, four review places | The same maintainers, with capacity reserved for recovery | Queue age, completed independent reviews and service effects | Admission stops when any additional effect would exceed review or recovery capacity |
+| A proposal changes the verifier itself | An owner outside the candidate's update path, with a separately qualified challenge | Old and proposed verifiers on frozen cases, including a known failure of each and the intended downstream decision | The only evidence for promotion comes from the verifier or process seeking adoption |
+
+A faster search can still run in isolation during the second and third
+stages. The numbers and escalating powers are stress assumptions drawn from
+the [queue in Unit 1](unit-01-asi-is-a-stack-not-a-model.qmd#why-greater-capability-makes-boundaries-more-important).
+The book's finite tests and local replays exercise selected controls.
+They supply no observed trajectory through these three stages.
+
 ## Recursive Depth and Protected Boundaries
 
 Some surfaces should be harder to change than others. A candidate may rewrite a

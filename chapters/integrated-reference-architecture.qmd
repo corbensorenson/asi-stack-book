@@ -119,6 +119,25 @@ proposed joins. The separate [budget-clamp experiment](#governed-repository-chan
 uses a different task and baseline. Keep those observations with their own
 cases.
 
+A separate scripted comparison advances the case beyond Git. When a
+receiving service leaves an ambiguous reply, the operator needs a way
+to identify the intended effect. Ordinary scoped change control closed
+12 of 16 paired cases and left four safe holds. A read of the receiving
+journal closed those four cases without a second commit. Both routes
+closed all eight cases with deduplication. This receiver relies on local
+SQLite and logical ticks. The record concerns a committed effect in that
+setting. It leaves delivery to a later consumer, human effort and
+production frequency open. [Quickstart protocol and paired outcomes](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#fresh-effect-comparison)
+
+In the crossed follow-up, both routes close all 32 cases with fresh
+ordinary status. Across 160 paired cases, the conventional status route
+closes 128 and the added observation route closes 144. The difference
+occurs only when status is stale or unavailable, the receiving-side
+read stays fresh and the receiver lacks deduplication. When both read
+paths fail together, the extra route leaves the same holds. The test
+models two read paths to one journal, so the gains depend on evidence
+availability in the declared scenarios. [Crossed design and complete results](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#crossed-receiver-comparison)
+
 ### Six research objects, one governed cycle
 
 The 89-owner reference can be compressed into six research objects without
