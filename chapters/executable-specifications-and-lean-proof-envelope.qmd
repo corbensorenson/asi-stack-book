@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-10-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -18,6 +18,10 @@ primary_sources:
   - "cca_project"
   - "moecot_manifest_project"
   - "corbens_best_model_possible_project"
+  - "precision_contract"
+  - "ext_reluplex_2017"
+  - "forward_transfer_program_synthesis"
+  - "ext_beyond_compilation_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -34,12 +38,12 @@ open_evidence_gaps:
 | Part | Part IV - Evidence, Implementation, and the Living Book |
 | Status | conceptual |
 | Manuscript maturity | v0.3 manuscript draft |
-| Last updated | 2026-10-02 |
-| Primary source records | `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
+| Last updated | 2026-11-19 |
+| Primary source records | 16 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `genesiscode`; supporting: `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project` |
-| Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `precision_contract`, `ext_reluplex_2017`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea` |
+| Source loading state | source notes: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`, `circle_calculus_core`, `circle_ai_contract_suite`, `rope_position_certifier`, `proof_carrying_circular_computation`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `precision_contract`, `ext_reluplex_2017`; raw cache: `genesiscode`, `spinoza`, `scf`, `talos`, `viea`. Selected primary passages reviewed for `ext_beyond_compilation_2026`. |
 | Test state | Proof manifest sync, local Lean build, protocol fixtures, depth and adequacy audits, and the formal semantic-depth record pass locally. The proof-artifact audit independently recompiles the exact 28-declaration `AsiStackProofs.ProofEnvelope` surface, executes a ten-event authority-lease trace, checks eleven composition splits, rejects 33 route cases, exercises expiry and a thin-summary collision, and rejects 19 complete-transport mutations; no artifact truth, arbitrary theorem adequacy, implementation refinement, support movement, or deployed enforcement is established. |
 
 ## Drafting guardrail
@@ -91,6 +95,14 @@ Semantic proof drift is the proof-envelope risk. A finite predicate can be corre
 **Reader claim.** A theorem proves exactly its proposition under its assumptions; it does not automatically prove that the implementation, environment, or world matches the formal model.
 
 **Operational rule.** Bind every formal artifact to operational semantics, abstraction map, losses, assumptions, dependencies, verifier, implementation version, consumer statement, expiry, and revocation. If the binding is absent or stale, downgrade to a formal-model result rather than a deployed-system claim.
+
+### Who has to approve the export?
+
+The requirement reads “Every exported record has approval from its owner.” Consider two candidate specifications. In the first, an export implies that *some person* approved the record. In the second, it implies that *the record's owner* approved it. Give both specifications the same witness: Mira owns record 17, Jo approved it, Mira did not, and the system exported it. The first accepts the trace. The second flags the export. An implementation that always obtains Jo's approval could satisfy the first specification perfectly.
+
+Before looking at a proof, ask the policy owner to label that witness. Keep the witness and the chosen statement beside the theorem, then check the adapter described below. A failure on the witness calls for changing the statement even if the implementation faithfully enforces it.
+
+Version 4 of *Beyond Compilation* evaluates 227 university-level mathematics statements. The tool-assisted agent produced compiling statements for 87.2% and passed compilation plus two semantic judges for 57.7%. Human review attributed 23.8 percentage points of that 29.5-point gap to actual translation errors. Judges also rejected faithful translations. The benchmark measures translation of mathematics into Lean. The export witness illustrates an independent check for the book’s policy setting. [Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization](https://arxiv.org/html/2606.31002v4)
 
 ### Worked proof envelope: the theorem holds, the adapter differs
 
@@ -725,6 +737,7 @@ These rows keep Executable Specifications and Lean Proof Envelope's manifest ass
 | `precision_contract` | Metadata-first comparator: [The Precision Contract: A Functional Rate–Distortion Theory for Behavior-Preserving Neural Computation](../papers/precision_contract.html). Corben-authored July 2026 theoretical and systems paper replacing universal per-weight precision questions with a contract-relative functional rate-distortion problem over complete executable descriptions. It proposes representation canonicalization, protected-behavior contracts, precision fields, progressive base/residual encoding, dynamic routing, full physical and assurance-cost accounting, a Functional Precision Compiler, and scoped precision certificates. Existing chapters are upgraded first; no universal bit bound, implemented compiler, preserved-behavior result, efficiency result, certificate validity, support promotion, SOTA, AGI, or ASI claim is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies a concrete neural-network verification case in which a solver checks a stated property over a bounded ReLU network region. | The theorem concerns only the encoded network, property, arithmetic semantics, and region; it does not prove model intent, data quality, whole-system safety, or deployed implementation binding. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis](../papers/forward_transfer_program_synthesis.html). Separates a verified semantic abstraction from verified lowering, emitted-artifact validity, and measured forward transfer, and supplies exact outcome and verification-level vocabularies for each boundary. | No Lean theorem, solver run, certificate check, compiler validation, emitted-artifact validation, or transfer experiment was executed for this source. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_beyond_compilation_2026` | Passage-reviewed comparator: Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization. Use a counterexample to test the translated statement before checking the implementation binding. | The dataset contains mathematics statements. Human audit found some faithful translations among the rejections. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -4,9 +4,11 @@ chapter_id: "routing-heads-and-specialist-cores"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-09"
+last_updated: "2026-11-19"
 primary_sources:
+  - "learning_compute_topology"
   - "octopus_router"
+  - "deterministic_capability_compilation"
   - "rmi"
   - "beastbrain"
   - "cognitive_loop_closure"
@@ -25,9 +27,11 @@ primary_sources:
   - "qcsa_whitepaper"
   - "reflexive_router_whitepaper"
   - "relational_dimension_compiler"
+  - "ext_kimi_k3_2026"
   - "portia_synapse"
   - "spider_synapse"
   - "coilmoecot"
+  - "ext_dynamic_llm_routers_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -44,12 +48,12 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-08-02 |
-| Primary source records | 20 assigned records with 18 exact mappings, including relational operator, order, topology, fallback, and abstention routing |
+| Last updated | 2026-11-19 |
+| Primary source records | 26 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `octopus_router`, `rmi`, `benchmaxxing`; supporting: `beastbrain`, `cognitive_loop_closure`, `rgs`, `viea`, `scf`, `talos`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `reflexive_router_whitepaper`, `relational_dimension_compiler`; variant: `moecot_md`; connector/recovery: `moecot` |
-| Source loading state | source notes: `learning_compute_topology`, `octopus_router`, `deterministic_capability_compilation`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `ext_hipporag_2024`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `coilmoecot`; connector/recovery: `moecot` |
+| Source loading state | source notes: `learning_compute_topology`, `octopus_router`, `deterministic_capability_compilation`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `moecot`, `project_theseus_whitepaper`, `theseus_operator_os`, `theseus_architecture_gate`, `ext_hipporag_2024`, `ext_dont_hallucinate_abstain_2024`, `qcsa_whitepaper`, `reflexive_router_whitepaper`, `relational_dimension_compiler`, `ext_kimi_k3_2026`, `portia_synapse`, `spider_synapse`, `coilmoecot`; raw cache: `octopus_router`, `rmi`, `beastbrain`, `cognitive_loop_closure`, `rgs`, `benchmaxxing`, `viea`, `scf`, `talos`, `moecot_md`, `coilmoecot`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_dynamic_llm_routers_2026`. |
 | Test state | Three routing/runtime schemas; 3/7 route-lease and 4/5 readiness fixtures; a 300-example matched three-seed program; one 60-request ambiguous single-model workload; two conservative dispositions; and twenty-nine live family declarations. The refinement contributes an exact twenty-five-theorem arbitrary finite-run surface, retains four load-bearing legacy routes, and physically retires sixteen projection/fixture declarations. Its independent consumer recompiles the exact surface, covers seven stages and all 42 routes, and rejects 47/47 mutations while keeping route and answer outcomes separately represented and balanced. The only current narrow empirical result remains route discrimination plus exercised non-answer behavior, not useful specialist answers. |
 
 ## Drafting guardrail
@@ -604,6 +608,21 @@ earn a safe or generally useful router claim. All seventeen control classes and
 fifteen historical harm regressions remain visible; the accepted disposition
 retains and narrows the result with no support promotion and no new chapter.
 
+### Does the router beat a coin toss at the same price?
+
+Suppose a cheap eligible model costs one credit per request and a stronger one costs five. On 100 held-out requests, a budget of 200 credits buys 25 escalations. Fix the pair on development data and record both models' answers on the evaluation set. A simple baseline randomly picks 25 requests for the stronger model. The learned router can spend its 25 escalations where it expects a different outcome.
+
+| Illustrative route | Spend | Correct out of 100 |
+|---|---:|---:|
+| Always cheap | 100 | 70 |
+| Randomly assign 25 escalations, one draw | 200 | 75 |
+| Learned assignment of 25 escalations | 200 | 74 |
+| Always strong | 500 | 86 |
+
+One random draw is noisy. Repeat the assignment on the saved answers, report uncertainty and inspect which task groups gain or lose. In a metered service, match realized spend including token lengths and routing overhead. Apply eligibility first in every arm: a cheap route without permission is outside the comparison.
+
+Across six commercial routers and 14 settings, *Dynamic LLM Routers are Often Misguided* found no router that beat a random mixture of two well-chosen models at matched cost on its benchmark. Those comparisons concern whole-model services. Expert selection within a model and routing under permissions or deadlines have additional constraints. [Dynamic LLM Routers are Often Misguided](https://arxiv.org/html/2610.02762v1)
+
 ## Interfaces
 
 Each route emits a paired record set around the routing decision.
@@ -1019,6 +1038,7 @@ These rows keep Routing Heads and Specialist Cores's manifest assignments visibl
 | `portia_synapse` | Passage-reviewed comparator: [PortiaSynapse: A Cognitive Spider Architecture for DKL Navigation](../papers/portia_synapse.html). TreeLLM successor architecture for a replacement-compatible Scout, Focus, refinement, coordinate, edge, and confidence route with phased training, diagnostics, stable traits, registry selection, and fallback. | Conflicting source test counts, incomplete integration and comparative benchmarking, possible batch-coupled attention, mutable-memory isolation, and weak exact task metrics remain unresolved; no local route learning is established. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `spider_synapse` | Passage-reviewed comparator: [SpiderSynapse: A Multi-Hypothesis Reasoning Architecture](../papers/spider_synapse.html). Failed predecessor case for multi-hypothesis routing, repeated refinement, mutable working memory, selection, typed output heads, path diagnostics, and one-path recovery. | Its reported plateau does not identify branching, refinement, memory, selector credit, label smoothing, or supervision geometry as the cause and has not been locally reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `coilmoecot` | Passage-reviewed comparator: CoilMoECOT Whitepaper v2.0. Full composite connector text section-audited. Retains prime-temporal trace features, Graph/Trace-first placement, ledger-derived diagnostic tuples, removable shadow lanes, explicit pre-planner/post-plan/post-run insertion points, anti-experts as visible penalty signals, bounded update slices, and benchmark/canary/rollback promotion. Repeated MoECOT, packaging, and task-system appendices are treated as shared substrate rather than independent evidence. | Design and implementation specification only; no local route, ablation, benchmark, canary, rollback, model-quality, safety, latency, or cost result. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_dynamic_llm_routers_2026` | Passage-reviewed comparator: Dynamic LLM Routers are Often Misguided. Compare learned assignment with random assignment between a fixed, well-chosen eligible pair at matched spend. | The comparisons concern whole-model inference services with particular rosters, prices and tasks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 matched routing result

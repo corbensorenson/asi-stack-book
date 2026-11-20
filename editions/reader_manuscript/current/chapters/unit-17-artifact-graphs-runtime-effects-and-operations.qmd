@@ -156,6 +156,10 @@ objects under a currently admissible recovery plan. Restoring an old vulnerable
 package may explain state recovery but cannot satisfy the security objective.
 Each result addresses a different obligation.
 
+### Why can a pinned model emit different tokens?
+
+The same prompt goes to the same model twice. Another request joins the second batch. Changing the order of floating-point operations can break a near tie between next tokens. LLM-42 checks tokens using a fixed-shape computation and rolls back divergent work in its serving environment. If your claim is that the same release was applied, inspecting the tokens still leaves the tool invocation and its effect to verify. Specify the hardware and execution conditions for any exact replay claim. [LLM-42: Enabling Determinism in LLM Inference with Verified Speculation](https://arxiv.org/html/2601.17768v2)
+
 ## Runtime Adapters Are Effect Boundaries
 
 The model or planner should propose an action. A runtime adapter interprets

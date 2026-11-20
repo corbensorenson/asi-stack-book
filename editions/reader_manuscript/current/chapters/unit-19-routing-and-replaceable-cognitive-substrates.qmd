@@ -113,6 +113,10 @@ cannot rewrite it. Fallback activates only if it is currently qualified and
 authorized for the affected work; otherwise the route narrows or holds. A successful general-model answer does
 not prove that the more expensive route was efficient.
 
+### Does the router beat a coin toss at the same price?
+
+On 100 requests you can afford the expensive model 25 times. Select two eligible models on development data, then freeze the pair. Compare spending those 25 calls on randomly chosen requests with letting the router choose. In an illustrative run the random choice gets 75 right and learned assignment gets 74. Repeat the draw and inspect the costly misses before paying for the router. Across 14 tested settings, six commercial routers failed to beat a well-chosen random two-model mixture at matched cost. That result concerns whole models. A request requiring special permission still has to clear the eligibility check first. [Dynamic LLM Routers are Often Misguided](https://arxiv.org/html/2610.02762v1)
+
 ## Clarification, Abstention, and Fallback Are Routes
 
 A capable router should sometimes decline to choose a cognitive substrate.

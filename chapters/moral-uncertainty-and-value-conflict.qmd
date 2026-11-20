@@ -4,9 +4,10 @@ chapter_id: "moral-uncertainty-and-value-conflict"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v1.x consolidated manuscript"
-last_updated: "2026-08-02"
+last_updated: "2026-11-19"
 primary_sources:
   - "ethica_mechanica"
+  - "platonic_world_model"
   - "alignment_field"
   - "coherence_exchange"
   - "uat"
@@ -19,6 +20,7 @@ primary_sources:
   - "ext_corrigibility_2015"
   - "ext_off_switch_game_2016"
   - "ext_taking_ai_welfare_seriously_2024"
+  - "ext_pluralistic_moral_gap_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -324,6 +326,10 @@ fork, missing redaction appeal, replacement that drops residuals,
 support-promotion overclaim, and missing non-claims. It does not prove moral
 correctness, legal rights, reviewer independence, export usability, fork
 safety, deployed governance, or support-state promotion.
+
+### What disappears behind a majority verdict?
+
+Two ten-person panels favor releasing the redacted care record. One votes 9–1 and the other 6–4. Both summaries say “release.” Preserve the split and a dissenting reason: someone named in the record could still be recognized from the dates. The decision owner can check that risk and explain any further redaction to the appellant. In a study of 1,618 dilemmas from an online community, model judgments agreed less well with the distribution of human judgments on disputed cases, and the models expressed a narrower range of values in their rationales. Distributional agreement describes whose judgments were represented in that sample. Authority to release the record still follows the applicable decision process. [The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models](https://aclanthology.org/2026.eacl-long.305/)
 
 ### Semantic pluralism without value collapse
 
@@ -789,6 +795,7 @@ These rows keep Moral Uncertainty, Value Conflict, and Contestable Governance's 
 |---|---|---|
 | `platonic_world_model` | Metadata-first comparator: [The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence](../papers/platonic_world_model.html). Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_taking_ai_welfare_seriously_2024` | Passage-reviewed comparator: Taking AI Welfare Seriously. Provides an interdisciplinary precautionary case for separating uncertainty about artificial consciousness, robust agency, welfare, and moral patienthood from operational convenience and ordinary alignment judgments. | The report does not establish that present systems are conscious, have welfare, or merit a particular moral or legal status; this repository performs no consciousness or welfare assessment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_pluralistic_moral_gap_2026` | Passage-reviewed comparator: The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models. Retain the vote distribution and dissenting rationales when recording a contested decision. | Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

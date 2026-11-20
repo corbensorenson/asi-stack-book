@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 hardware-profile integration"
-last_updated: "2026-08-08"
+last_updated: "2026-11-19"
 primary_sources:
   - "beastbrain"
   - "field_of_god_ai_constitution"
@@ -38,6 +38,7 @@ primary_sources:
   - "ext_llm_in_flash_2024"
   - "ext_powerinfer_2024"
   - "ext_atsinfer_2026"
+  - "ext_who_trains_matters_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -54,11 +55,11 @@ open_evidence_gaps:
 | Chapter ID | `personal-compute-hives-and-federated-edge-intelligence` |
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
-| Last updated | 2026-08-08 |
-| Primary source records | 32 assigned records: twelve local architecture sources, twelve network/cluster/federation and partition comparators, and eight heterogeneous-memory implementation or paper comparators |
+| Last updated | 2026-11-19 |
+| Primary source records | 33 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `beastbrain`, `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, `ext_tailscale_docs_2025`, `ext_kubernetes_overview_docs`, `ext_k3s_docs_2026`, `ext_nomad_docs`, `ext_ray_core_docs_2026`, `ext_boinc_home_2026`, `ext_syncthing_home`, `ext_ipfs_docs`, `ext_akash_docs_2026`, `ext_golem_docs_2025`, `ext_github_self_hosted_runners_docs`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`; raw cache: `beastbrain`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `ladon_manhattan` |
+| Source loading state | source notes: `beastbrain`, `field_of_god_ai_constitution`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `project_theseus_whitepaper`, `theseus_operator_os`, `ladon_manhattan`, `ext_tailscale_docs_2025`, `ext_kubernetes_overview_docs`, `ext_k3s_docs_2026`, `ext_nomad_docs`, `ext_ray_core_docs_2026`, `ext_boinc_home_2026`, `ext_syncthing_home`, `ext_ipfs_docs`, `ext_akash_docs_2026`, `ext_golem_docs_2025`, `ext_github_self_hosted_runners_docs`, `ext_cap_theorem_gilbert_lynch_2002`, `ext_airllm_2023`, `ext_deepspeed_inference_2022`, `ext_flexgen_2023`, `ext_hf_accelerate_big_model_inference_2026`, `ext_llama_cpp_memory_mapping_2026`, `ext_llm_in_flash_2024`, `ext_powerinfer_2024`, `ext_atsinfer_2026`; raw cache: `beastbrain`, `scf`, `talos`, `vcm_public`, `planforge`, `octopus_router`, `rmi`, `tokenmana`, `ladon_manhattan`. Selected primary passages reviewed for `ext_who_trains_matters_2026`. |
 | Test state | Seven public record schemas validate. The exact 2/8 Hive-admission and 3/6 partitioned-authority suites remain passing. The refinement recompiles 31 theorems, executes six accepted events, verifies seven trace splits, covers all 47 routes, rejects all six post-closure event kinds, and rejects 144/144 mutations. Thirty-one refinement declarations and 21 retained legacy consequences remain live; five projections/fixture declarations are retired. No live scheduler, registry, portal, authority service, network overlay, federation, partition run, runtime enforcement, rented-node sandbox, energy measurement, dropout recovery, security, privacy, availability, useful-work, or transfer result has been run. |
 
 ## Drafting guardrail
@@ -421,6 +422,10 @@ Hive scheduling should classify work before it asks for bids. The classes can st
 
 Federation should also be explicit. A personal hive uses one person's devices. A family hive has shared and private zones. A site hive binds a physical place such as a home or workshop. A joined private hive lets collaborators cooperate under a contract. A public project hive accepts temporary issue or benchmark work. A market hive exposes spare capacity for payment or credit. An emergency hive prioritizes local continuity when ordinary internet paths fail. Each mode changes what a lease may contain.
 
+### Which devices could ever contribute to training?
+
+For a federated training job, count three populations. Suppose the target is 1,000 devices, 600 enroll and 120 return an update this round. Adjusting weights for charging and connectivity among the 600 can address unequal participation. If an older device class cannot enroll at all, those weights supply no observations about that class. Who Trains Matters derives inverse-probability weights for both stages when relevant selection factors are accounted for and inclusion probabilities are positive. Its empirical test uses synthetic federated logistic regression. For a missing class, seek representative evidence with authorization or narrow the target population. Dispatching inference to an available device poses a different scheduling question. [Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases](https://arxiv.org/html/2604.26604v1)
+
 ## Family and project mediation
 
 Family governance is the place where a personal hive can become genuinely useful or genuinely abusive. The useful version keeps parents, guardians, and children in the loop for boundary decisions without turning every interaction into monitoring. A child-facing portal should classify the topic, choose an age-appropriate explanation when ordinary, escalate sensitive boundaries to a guardian when required, and record only the minimum policy event needed for review. The child should receive a dignified response, not a cryptic refusal whose real audience is an audit log.
@@ -624,6 +629,7 @@ These rows keep Personal Compute Hives and Federated Edge Intelligence's manifes
 | `ext_llm_in_flash_2024` | Metadata-first comparator: LLM in a Flash: Efficient Large Language Model Inference with Limited Memory. Primary flash-aware inference source for on-demand parameter loading, I/O cost modeling, transfer reduction, contiguous reads, windowing, and row-column bundling. Sparse/context-adaptive loading is not an exact dense paging result. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_powerinfer_2024` | Metadata-first comparator: PowerInfer: Fast Large Language Model Serving with a Consumer-Grade GPU. Primary consumer-inference source for source-reported power-law neuron locality, hot-GPU/cold-CPU placement, adaptive predictors, and sparse operators. Architecture transfer and performance are not locally reproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_atsinfer_2026` | Metadata-first comparator: Automated Tensor Scheduling for Hybrid CPU-GPU LLM Inference on Consumer Devices. Very recent preprint comparator for tensor-granular static placement, load-aware dynamic transfer, and asynchronous CPU-GPU coordination on consumer devices. Only abstract/metadata were reviewed; reported results are provisional and unreproduced. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_who_trains_matters_2026` | Passage-reviewed comparator: Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases. Separate enrollment in the reachable pool from participation in an individual training round. | Inference for the target population needs suitable measured selection factors and positive inclusion probabilities. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## External literature and tooling queue

@@ -1,0 +1,287 @@
+{
+  "scenario_id": "chapter-decisions-2026-11-19",
+  "scenario_scope": "Six worked decisions and four shorter comparisons from eleven papers, with reader counterparts.",
+  "case_validity_state": "reviewed",
+  "cases": [
+    {
+      "case_id": "ext-muscle-2024",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "capability-replacement-and-rollback",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Compare both versions on identical adjudicated cases and count previously correct cases that regress.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Instance regressions depend on the grading criterion, versions and task."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-beyond-compilation-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "executable-specifications-and-lean-proof-envelope",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Use a counterexample to test the translated statement before checking the implementation binding.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The dataset contains mathematics statements. Human audit found some faithful translations among the rejections."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-agentciscope-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "privacy-data-rights-and-information-flow-governance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Check each protected attribute against its destination separately from completing the requested task.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The tasks use synthesized, explicit disclosure constraints and single-agent environments."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-c2pa-news-labels-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Distinguish increased trust after seeing provenance metadata from evidence that the image supports its caption.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Credibility and trust ratings on the studied previews do not measure historical caption accuracy."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-provenance-enabled-media-2023",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Test how people interpret incomplete provenance on an honest image.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The experiment measured reactions to particular media and provenance displays."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-dynamic-llm-routers-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "routing-heads-and-specialist-cores",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Compare learned assignment with random assignment between a fixed, well-chosen eligible pair at matched spend.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The comparisons concern whole-model inference services with particular rosters, prices and tasks."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-dataset-licensing-audit-2024",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Trace upstream components and attribution before relying on a collection-level label.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The metadata audit does not decide permissions for an individual use of a particular artifact."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-pluralistic-moral-gap-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "moral-uncertainty-and-value-conflict",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Retain the vote distribution and dissenting rationales when recording a contested decision.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-llm-42-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "artifact-graphs-audit-logs-and-replay",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Bind token replay to the numerical execution schedule and scope of the serving environment.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The inference study does not establish cross-hardware identity or reproduction of external tool effects."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-conformal-missing-modalities-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "perception-sensor-fusion-and-observation-trust",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Check prediction-set coverage and set size separately for each observed combination of input streams.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    },
+    {
+      "case_id": "ext-who-trains-matters-2026",
+      "intake_kind": "external_literature",
+      "access_state": "source_note_available",
+      "source_storage_policy": "repo_public_note_only",
+      "public_safety_state": "public_safe",
+      "deduplication_state": "overlaps_existing_chapter",
+      "candidate_decision": "update_existing_chapter",
+      "chapter_manifest_action": "add_source_to_existing_chapter",
+      "existing_chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
+      "proposed_chapter_id": "not_applicable",
+      "decision_rationale": "Separate enrollment in the reachable pool from participation in an individual training round.",
+      "required_before_drafting": [
+        "Review the primary passage and the comparison limits before using the result."
+      ],
+      "evidence_transition_preconditions": [
+        "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+      ],
+      "promotion_blockers": [
+        "Inference for the target population needs suitable measured selection factors and positive inclusion probabilities."
+      ],
+      "non_claims": [
+        "Worked examples are editorial applications. Published results provide contextual evidence."
+      ]
+    }
+  ],
+  "validation_boundary": "Selected published methods and results, with one chapter assignment per paper.",
+  "support_state_effect": "record_shape_only",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}

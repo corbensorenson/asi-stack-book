@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1440 |
-| Exact claim-source mappings | 1232 |
+| Assigned source/chapter pairs | 1451 |
+| Exact claim-source mappings | 1243 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1440 |
-| Source notes listing assigned chapter | 1440 |
-| Passage-reviewed mappings recorded | 1165 |
+| Source notes present for assigned pairs | 1451 |
+| Source notes listing assigned chapter | 1451 |
+| Passage-reviewed mappings recorded | 1176 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -46,24 +46,24 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `human-ai-communication-persuasion-and-epistemic-security` | 6 | 3 | 6 | 6 | 1 | argument | passage review required before source-derived promotion |
 | `constitutional-alignment-substrate` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `inner-alignment-mesa-optimization-and-learned-objective-integrity` | 8 | 8 | 8 | 8 | 8 | argument | eligible for support review |
-| `moral-uncertainty-and-value-conflict` | 14 | 13 | 14 | 14 | 13 | argument | passage review required before source-derived promotion |
+| `moral-uncertainty-and-value-conflict` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
 | `governed-objective-formation-value-learning-and-goal-integrity` | 5 | 4 | 5 | 5 | 1 | argument | passage review required before source-derived promotion |
 | `institutions-international-coordination-and-public-legitimacy` | 9 | 5 | 9 | 9 | 3 | argument | passage review required before source-derived promotion |
 | `societal-resilience-and-misuse-defense` | 5 | 5 | 5 | 5 | 0 | argument | passage review required before source-derived promotion |
 | `stable-capability-fields` | 12 | 10 | 12 | 12 | 10 | argument | passage review required before source-derived promotion |
-| `capability-replacement-and-rollback` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
+| `capability-replacement-and-rollback` | 15 | 13 | 15 | 15 | 13 | argument | passage review required before source-derived promotion |
 | `security-kernel-and-digital-scifs` | 19 | 16 | 19 | 19 | 16 | argument | passage review required before source-derived promotion |
 | `adversarial-machine-learning-and-model-attack-surface` | 7 | 6 | 7 | 7 | 2 | argument | passage review required before source-derived promotion |
-| `privacy-data-rights-and-information-flow-governance` | 12 | 10 | 12 | 12 | 10 | argument | passage review required before source-derived promotion |
+| `privacy-data-rights-and-information-flow-governance` | 13 | 11 | 13 | 13 | 11 | argument | passage review required before source-derived promotion |
 | `confidential-and-verifiable-ai-computation` | 3 | 3 | 3 | 3 | 0 | argument | passage review required before source-derived promotion |
 | `model-weight-custody-and-hardware-roots-of-trust` | 16 | 10 | 16 | 16 | 10 | argument | passage review required before source-derived promotion |
 | `open-weight-release-and-post-release-control` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
-| `ai-supply-chain-integrity-and-lifecycle-provenance` | 15 | 13 | 15 | 15 | 13 | argument | passage review required before source-derived promotion |
+| `ai-supply-chain-integrity-and-lifecycle-provenance` | 16 | 14 | 16 | 16 | 14 | argument | passage review required before source-derived promotion |
 | `recursive-self-improvement-boundaries` | 20 | 16 | 20 | 20 | 16 | argument | passage review required before source-derived promotion |
 | `open-ended-improvement-engines` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `autonomous-replication-proliferation-and-containment` | 2 | 1 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
-| `perception-sensor-fusion-and-observation-trust` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
+| `perception-sensor-fusion-and-observation-trust` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `planning-as-a-control-layer` | 13 | 10 | 13 | 13 | 10 | argument | passage review required before source-derived promotion |
 | `governed-world-models-and-reality-grounding` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `reflexive-model-world-systems` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
@@ -80,20 +80,20 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `human-ai-organizations-delegation-and-accountability` | 10 | 7 | 10 | 10 | 7 | argument | passage review required before source-derived promotion |
 | `human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
 | `ai-deployment-transition-distribution-and-human-agency` | 5 | 3 | 5 | 5 | 1 | argument | passage review required before source-derived promotion |
-| `artifact-graphs-audit-logs-and-replay` | 25 | 22 | 25 | 25 | 22 | argument | passage review required before source-derived promotion |
+| `artifact-graphs-audit-logs-and-replay` | 26 | 23 | 26 | 26 | 23 | argument | passage review required before source-derived promotion |
 | `runtime-adapters-tool-permissions-and-human-approval` | 32 | 29 | 32 | 32 | 29 | argument | passage review required before source-derived promotion |
 | `embodied-agency-real-time-control-and-physical-safety` | 10 | 10 | 10 | 10 | 10 | argument | eligible for support review |
 | `inter-stack-protocols-identity-and-economic-exchange` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 10 | 9 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 30 | 24 | 30 | 30 | 24 | argument | passage review required before source-derived promotion |
-| `routing-heads-and-specialist-cores` | 25 | 20 | 25 | 25 | 20 | argument | passage review required before source-derived promotion |
+| `routing-heads-and-specialist-cores` | 26 | 21 | 26 | 26 | 21 | argument | passage review required before source-derived promotion |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 66 | 55 | 66 | 66 | 55 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `governed-model-training-distributed-optimization-and-scaling` | 35 | 33 | 35 | 35 | 33 | argument | passage review required before source-derived promotion |
 | `learning-compute-topology-and-adaptive-process-architecture` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `learning-theory-generalization-and-scaling-science` | 17 | 15 | 17 | 17 | 7 | argument | passage review required before source-derived promotion |
 | `readiness-gates-residual-escrow-and-quarantine` | 24 | 21 | 24 | 24 | 21 | argument | passage review required before source-derived promotion |
-| `personal-compute-hives-and-federated-edge-intelligence` | 32 | 24 | 32 | 32 | 24 | argument | passage review required before source-derived promotion |
+| `personal-compute-hives-and-federated-edge-intelligence` | 33 | 25 | 33 | 33 | 25 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
 | `fast-generation-architectures` | 47 | 24 | 47 | 47 | 24 | argument | passage review required before source-derived promotion |
 | `governed-deliberation-and-test-time-scaling` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
@@ -104,13 +104,13 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
 | `coilra-multicoil-rope-and-cyclic-mixers` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
-| `executable-specifications-and-lean-proof-envelope` | 15 | 14 | 15 | 15 | 14 | argument | passage review required before source-derived promotion |
+| `executable-specifications-and-lean-proof-envelope` | 16 | 15 | 16 | 16 | 15 | argument | passage review required before source-derived promotion |
 | `benchmark-ratchets-and-anti-goodhart-evidence` | 53 | 42 | 53 | 53 | 42 | argument | passage review required before source-derived promotion |
 | `white-box-evidence-interpretability-and-activation-governance` | 22 | 22 | 22 | 22 | 22 | argument | eligible for support review |
 | `capability-thresholds-and-deployment-commitments` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
 | `adversarial-evaluation-sandbagging-and-training-time-deception` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `safety-cases-and-structured-assurance` | 4 | 4 | 4 | 4 | 4 | argument | eligible for support review |
-| `content-authenticity-watermarking-and-synthetic-media-integrity` | 4 | 4 | 4 | 4 | 0 | argument | passage review required before source-derived promotion |
+| `content-authenticity-watermarking-and-synthetic-media-integrity` | 6 | 6 | 6 | 6 | 2 | argument | passage review required before source-derived promotion |
 | `governed-operations-incident-command-and-graceful-degradation` | 12 | 11 | 12 | 12 | 11 | argument | passage review required before source-derived promotion |
 | `adjudicated-persistence-and-the-adaptive-commit-boundary` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `policy-optimization-and-learning-from-feedback` | 39 | 37 | 39 | 39 | 37 | argument | passage review required before source-derived promotion |
@@ -386,6 +386,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_persona_selection_model_2026` | 1 | yes |
 | `ext_reinforcement_learning_moral_uncertainty_2020` | 1 | yes |
 | `ext_taking_ai_welfare_seriously_2024` | 1 | yes |
+| `ext_pluralistic_moral_gap_2026` | 1 | yes |
 | `ext_un_global_digital_compact_2024` | 1 | yes |
 | `ext_council_europe_ai_convention_2024` | 1 | yes |
 | `ext_capability_based_computer_systems_1984` | 1 | yes |
@@ -395,6 +396,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_feature_toggles_fowler` | 1 | yes |
 | `ext_google_cloud_mlops_cd` | 1 | yes |
 | `ext_kubernetes_deployments_docs` | 1 | yes |
+| `ext_muscle_2024` | 1 | yes |
 | `ext_owasp_llm_top_10_2025` | 1 | yes |
 | `ext_nist_zero_trust_architecture_2020` | 1 | yes |
 | `ext_saltzer_schroeder_protection_1975` | 1 | yes |
@@ -408,6 +410,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_choquette_choo_label_only_mia_2021` | 1 | yes |
 | `ext_nist_differential_privacy_2025` | 1 | yes |
 | `ext_mahloujifar_fdp_audit_2025` | 1 | yes |
+| `ext_agentciscope_2026` | 1 | yes |
 | `ext_zkllm_2024` | 1 | yes |
 | `ext_nist_confidential_computing_2026` | 1 | yes |
 | `ext_nvidia_confidential_model_lifecycle_2026` | 1 | yes |
@@ -417,12 +420,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_slsa_build_track_1_2` | 1 | yes |
 | `ext_openssf_model_signing_spec_2025` | 1 | yes |
 | `ext_spdx_ai_profile_3_0_1` | 1 | yes |
+| `ext_dataset_licensing_audit_2024` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
 | `ext_replibench_2025` | 1 | yes |
 | `ext_multimodal_machine_learning_taxonomy_2019` | 1 | yes |
 | `ext_imagebind_2023` | 1 | yes |
 | `ext_3d_detection_corruptions_2023` | 1 | yes |
+| `ext_conformal_missing_modalities_2026` | 1 | yes |
 | `ext_reinforced_planning_rp1_2026` | 1 | yes |
 | `ext_world_models_2018` | 1 | yes |
 | `ext_dreamer_v3_2025` | 1 | yes |
@@ -482,6 +487,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_ilo_genai_jobs_index_2025` | 1 | yes |
 | `ext_ai_skill_formation_2026` | 1 | yes |
 | `spinoza_composer` | 1 | yes |
+| `ext_llm_42_2026` | 1 | yes |
 | `ext_mage_vl_cowork_2026` | 1 | yes |
 | `ext_foundation_robotics_physical_risk_2025` | 1 | yes |
 | `ext_control_barrier_functions_2019` | 1 | yes |
@@ -501,6 +507,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_transmissible_reward_hacking_2026` | 1 | yes |
 | `ext_aligning_ai_teams_2026` | 1 | yes |
 | `ext_toolformer_2023` | 1 | yes |
+| `ext_dynamic_llm_routers_2026` | 1 | yes |
 | `corben_chatgpt_kiss_irreducible_intelligence_2026` | 1 | yes |
 | `corben_chatgpt_onecell_theseus_2026` | 1 | yes |
 | `ext_attention_is_all_you_need_2017` | 1 | yes |
@@ -574,6 +581,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_boinc_home_2026` | 1 | yes |
 | `ext_syncthing_home` | 1 | yes |
 | `ext_ipfs_docs` | 1 | yes |
+| `ext_who_trains_matters_2026` | 1 | yes |
 | `bbvca_main` | 1 | yes |
 | `orcp_moecot` | 1 | yes |
 | `ext_speculative_decoding_2022` | 1 | yes |
@@ -593,6 +601,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_lbnl_data_center_energy_2024` | 1 | yes |
 | `ext_inference_joules_2026` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
+| `ext_beyond_compilation_2026` | 1 | yes |
 | `ext_agent_reliability_rater_drift_2026` | 1 | yes |
 | `ext_agent_leaderboard_estimands_2026` | 1 | yes |
 | `ext_transformer_circuits_2021` | 1 | yes |
@@ -618,6 +627,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_gsn_community_standard_2011` | 1 | yes |
 | `ext_evaluations_safety_cases_scheming_2024` | 1 | yes |
 | `ext_aisi_safety_cases_2024` | 1 | yes |
+| `ext_c2pa_news_labels_2026` | 1 | yes |
+| `ext_provenance_enabled_media_2023` | 1 | yes |
 | `ext_nist_deployed_ai_monitoring_2026` | 1 | yes |
 | `ext_control_map_2026` | 1 | yes |
 | `ext_trpo_2015` | 1 | yes |
@@ -828,6 +839,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ext_corrigibility_2015` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ext_off_switch_game_2016` | mapped | note present | chapter listed | passage-reviewed |
 | `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ext_taking_ai_welfare_seriously_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `moral-uncertainty-and-value-conflict.core` | `moral-uncertainty-and-value-conflict` | `ext_pluralistic_moral_gap_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `alignment_field` | unmapped | note present | chapter listed | not passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_cooperative_inverse_rl_2016` | mapped | note present | chapter listed | not passage-reviewed |
 | `governed-objective-formation-value-learning-and-goal-integrity.core` | `governed-objective-formation-value-learning-and-goal-integrity` | `ext_goal_misgeneralization_2022` | mapped | note present | chapter listed | passage-reviewed |
@@ -873,6 +885,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `ext_google_cloud_mlops_cd` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `ext_kubernetes_deployments_docs` | mapped | note present | chapter listed | passage-reviewed |
 | `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `ext_txfs_2018` | mapped | note present | chapter listed | passage-reviewed |
+| `capability-replacement-and-rollback.core` | `capability-replacement-and-rollback` | `ext_muscle_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `ladon_manhattan` | mapped | note present | chapter listed | passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `security-kernel-and-digital-scifs.core` | `security-kernel-and-digital-scifs` | `context_engineer` | mapped | note present | chapter listed | passage-reviewed |
@@ -911,6 +924,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `theseus_synthetic_data_curation` | mapped | note present | chapter listed | passage-reviewed |
 | `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_nist_privacy_enhancing_cryptography_2026` | unmapped | note present | chapter listed | not passage-reviewed |
 | `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_who_neurotechnology_landscape_2025` | unmapped | note present | chapter listed | not passage-reviewed |
+| `privacy-data-rights-and-information-flow-governance.core` | `privacy-data-rights-and-information-flow-governance` | `ext_agentciscope_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `confidential-and-verifiable-ai-computation.core` | `confidential-and-verifiable-ai-computation` | `ext_nist_privacy_enhancing_cryptography_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `confidential-and-verifiable-ai-computation.core` | `confidential-and-verifiable-ai-computation` | `ext_zkllm_2024` | mapped | note present | chapter listed | not passage-reviewed |
 | `confidential-and-verifiable-ai-computation.core` | `confidential-and-verifiable-ai-computation` | `ext_ietf_rats_architecture_2023` | mapped | note present | chapter listed | not passage-reviewed |
@@ -952,6 +966,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_owasp_agentic_top_10_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_proof_of_learning_2021` | mapped | note present | chapter listed | passage-reviewed |
 | `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_c2pa_specification_2_3_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `ai-supply-chain-integrity-and-lifecycle-provenance.core` | `ai-supply-chain-integrity-and-lifecycle-provenance` | `ext_dataset_licensing_audit_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1003,6 +1018,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `perception-sensor-fusion-and-observation-trust.core` | `perception-sensor-fusion-and-observation-trust` | `ext_adversarial_sensor_fusion_2022` | mapped | note present | chapter listed | passage-reviewed |
 | `perception-sensor-fusion-and-observation-trust.core` | `perception-sensor-fusion-and-observation-trust` | `ext_gemini_robotics_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `perception-sensor-fusion-and-observation-trust.core` | `perception-sensor-fusion-and-observation-trust` | `platonic_world_model` | mapped | note present | chapter listed | passage-reviewed |
+| `perception-sensor-fusion-and-observation-trust.core` | `perception-sensor-fusion-and-observation-trust` | `ext_conformal_missing_modalities_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `planforge` | mapped | note present | chapter listed | passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `planning-as-a-control-layer.core` | `planning-as-a-control-layer` | `viea` | mapped | note present | chapter listed | passage-reviewed |
@@ -1266,6 +1282,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_openclaw_agent_runtime_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `assurance_shift_learning` | mapped | note present | chapter listed | passage-reviewed |
 | `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
+| `artifact-graphs-audit-logs-and-replay.core` | `artifact-graphs-audit-logs-and-replay` | `ext_llm_42_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `talos` | mapped | note present | chapter listed | passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `runtime-adapters-tool-permissions-and-human-approval.core` | `runtime-adapters-tool-permissions-and-human-approval` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1385,6 +1402,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `portia_synapse` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `spider_synapse` | mapped | note present | chapter listed | passage-reviewed |
 | `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `coilmoecot` | unmapped | note present | chapter listed | not passage-reviewed |
+| `routing-heads-and-specialist-cores.core` | `routing-heads-and-specialist-cores` | `ext_dynamic_llm_routers_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `corben_chatgpt_kiss_irreducible_intelligence_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `corben_chatgpt_onecell_theseus_2026` | mapped | note present | chapter listed | passage-reviewed |
@@ -1567,6 +1585,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_llm_in_flash_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_powerinfer_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_atsinfer_2026` | unmapped | note present | chapter listed | not passage-reviewed |
+| `personal-compute-hives-and-federated-edge-intelligence.core` | `personal-compute-hives-and-federated-edge-intelligence` | `ext_who_trains_matters_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `cgs` | mapped | note present | chapter listed | passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `compact-generative-systems-and-residual-honesty.core` | `compact-generative-systems-and-residual-honesty` | `rgs` | mapped | note present | chapter listed | passage-reviewed |
@@ -1764,6 +1783,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `precision_contract` | unmapped | note present | chapter listed | not passage-reviewed |
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `ext_reluplex_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
+| `executable-specifications-and-lean-proof-envelope.core` | `executable-specifications-and-lean-proof-envelope` | `ext_beyond_compilation_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `benchmaxxing` | mapped | note present | chapter listed | passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `deterministic_capability_compilation` | unmapped | note present | chapter listed | not passage-reviewed |
 | `benchmark-ratchets-and-anti-goodhart-evidence.core` | `benchmark-ratchets-and-anti-goodhart-evidence` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1865,6 +1885,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `ext_eu_article_50_transparency_guidelines_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `ext_international_ai_safety_report_2026` | mapped | note present | chapter listed | not passage-reviewed |
 | `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `deterministic_capability_compilation` | mapped | note present | chapter listed | not passage-reviewed |
+| `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `ext_c2pa_news_labels_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `content-authenticity-watermarking-and-synthetic-media-integrity.core` | `content-authenticity-watermarking-and-synthetic-media-integrity` | `ext_provenance_enabled_media_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `scf` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `deterministic_capability_compilation` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-operations-incident-command-and-graceful-degradation.core` | `governed-operations-incident-command-and-graceful-degradation` | `theseus_operator_os` | mapped | note present | chapter listed | passage-reviewed |

@@ -483,6 +483,10 @@ property for one checkpoint, preprocessing pipeline, input region, arithmetic
 semantics, and output predicate. It does not establish natural-distribution
 robustness, model intent, privacy, or whole-agent safety.
 
+### Who has to approve the export?
+
+Mira owns a record and Jo signs its export. The rule says the owner must approve. Read the proposed theorem aloud: “Every export has an approver.” Jo is a witness for the theorem even as the export violates the rule. Ask for an example the rule would reject, and try it against the statement before accepting the proof. On 227 mathematics statements in version 4 of *Beyond Compilation*, a tool-assisted agent compiled 87.2% and passed the two-judge semantic check as well on 57.7%. Human review confirmed many translation errors and also found faithful statements among the rejections. [Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization](https://arxiv.org/html/2606.31002v4)
+
 ## Proof and Use Answer Different Questions
 
 Suppose a system discovers a reusable sorting routine and proves it correct.

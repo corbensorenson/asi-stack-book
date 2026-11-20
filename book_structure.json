@@ -3748,7 +3748,8 @@
             "ext_collective_constitutional_ai_2024",
             "ext_corrigibility_2015",
             "ext_off_switch_game_2016",
-            "ext_taking_ai_welfare_seriously_2024"
+            "ext_taking_ai_welfare_seriously_2024",
+            "ext_pluralistic_moral_gap_2026"
           ],
           "source_queue": {
             "primary": [
@@ -3760,7 +3761,8 @@
               "uat",
               "spinoza",
               "field_of_god_ai_constitution",
-              "ladon_manhattan"
+              "ladon_manhattan",
+              "ext_pluralistic_moral_gap_2026"
             ],
             "variants": [
               "ext_reinforcement_learning_moral_uncertainty_2020",
@@ -4130,6 +4132,17 @@
                 "sources/source_notes/ext_taking_ai_welfare_seriously_2024.md"
               ],
               "passage_review_note": "Reviewed the primary-report-backed note for its precautionary moral-status frame and explicit uncertainty; no patienthood, consciousness, welfare, or rights conclusion is promoted."
+            },
+            {
+              "source_id": "ext_pluralistic_moral_gap_2026",
+              "mapped_support": "Retain the vote distribution and dissenting rationales when recording a contested decision.",
+              "limits": "Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community.",
+              "passage_refs": [
+                "sources/source_notes/ext_pluralistic_moral_gap_2026.md",
+                "https://aclanthology.org/2026.eacl-long.305/"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. On 1,618 dilemmas, alignment declined as human disagreement rose and models expressed a narrower range of values. Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community."
             }
           ],
           "publication": {
@@ -4916,7 +4929,8 @@
             "ext_feature_toggles_fowler",
             "ext_google_cloud_mlops_cd",
             "ext_kubernetes_deployments_docs",
-            "ext_txfs_2018"
+            "ext_txfs_2018",
+            "ext_muscle_2024"
           ],
           "source_queue": {
             "primary": [
@@ -4927,7 +4941,8 @@
             "supporting": [
               "cognitive_loop_closure",
               "talos",
-              "capability_ratchet_whitepaper"
+              "capability_ratchet_whitepaper",
+              "ext_muscle_2024"
             ],
             "variants": [
               "ext_corrigibility_2015",
@@ -5239,6 +5254,17 @@
               ],
               "passage_review_note": "Reviewed the source note's primary USENIX summary for journaling-backed transactions, isolation, conflict handling, transaction bounds, Git/SQLite evaluation, and the gap between byte restoration and broader recovery.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_muscle_2024",
+              "mapped_support": "Compare both versions on identical adjudicated cases and count previously correct cases that regress.",
+              "limits": "Instance regressions depend on the grading criterion, versions and task.",
+              "passage_refs": [
+                "sources/source_notes/ext_muscle_2024.md",
+                "https://machinelearning.apple.com/research/model-compatibility"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. The compatibility adapter reduced negative flips by up to 40% for tested update and task configurations. Instance regressions depend on the grading criterion, versions and task."
             }
           ],
           "publication": {
@@ -5829,7 +5855,8 @@
             "ext_mahloujifar_fdp_audit_2025",
             "theseus_synthetic_data_curation",
             "ext_nist_privacy_enhancing_cryptography_2026",
-            "ext_who_neurotechnology_landscape_2025"
+            "ext_who_neurotechnology_landscape_2025",
+            "ext_agentciscope_2026"
           ],
           "source_queue": {
             "primary": [
@@ -5844,7 +5871,8 @@
               "ext_mahloujifar_fdp_audit_2025"
             ],
             "supporting": [
-              "theseus_synthetic_data_curation"
+              "theseus_synthetic_data_curation",
+              "ext_agentciscope_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -5955,6 +5983,17 @@
               ],
               "passage_review_note": "Reviewed the pinned local-project documentation and its source-reported policy boundaries. No Theseus command, dataset, model, privacy mechanism, rights workflow, or outcome was rerun or imported into this chapter.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_agentciscope_2026",
+              "mapped_support": "Check each protected attribute against its destination separately from completing the requested task.",
+              "limits": "The tasks use synthesized, explicit disclosure constraints and single-agent environments.",
+              "passage_refs": [
+                "sources/source_notes/ext_agentciscope_2026.md",
+                "https://arxiv.org/html/2610.19158v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. Across 12 agents, single-run leakage affected 32.5% to 94.4% of the 936 benchmark tasks. The tasks use synthesized, explicit disclosure constraints and single-agent environments."
             }
           ],
           "mechanism": [
@@ -6676,7 +6715,8 @@
             "ext_in_toto_2019",
             "ext_owasp_agentic_top_10_2026",
             "ext_proof_of_learning_2021",
-            "ext_c2pa_specification_2_3_2025"
+            "ext_c2pa_specification_2_3_2025",
+            "ext_dataset_licensing_audit_2024"
           ],
           "source_queue": {
             "primary": [
@@ -6694,7 +6734,8 @@
               "cca_project",
               "moecot_manifest_project",
               "corbens_trainer_project",
-              "ext_owasp_agentic_top_10_2026"
+              "ext_owasp_agentic_top_10_2026",
+              "ext_dataset_licensing_audit_2024"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -6833,6 +6874,17 @@
               ],
               "passage_review_note": "Reviewed the complete metadata-first source note as supporting threat vocabulary only; no local OWASP assessment, control implementation, or adversarial validation ran.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dataset_licensing_audit_2024",
+              "mapped_support": "Trace upstream components and attribution before relying on a collection-level label.",
+              "limits": "The metadata audit does not decide permissions for an individual use of a particular artifact.",
+              "passage_refs": [
+                "sources/source_notes/ext_dataset_licensing_audit_2024.md",
+                "https://www.media.mit.edu/publications/a-large-scale-audit-of-dataset-licensing-and-attribution-in-ai/"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. An audit tracing over 1,800 text datasets found frequent license omissions and errors on hosting sites. The metadata audit does not decide permissions for an individual use of a particular artifact."
             }
           ],
           "problem": "A model artifact can have a valid custody record while the data and rights, code, prompts and policies, dependencies, containers, hardware/firmware, build and training environments, evaluation packages, suppliers and services, signers, advisories, transformations, releases, recipients, descendants, incidents, and retirement conditions that produced or surround it remain unbound, stale, unverifiable, undisclosed, or unable to trigger observed downstream response.",
@@ -8318,7 +8370,8 @@
             "ext_3d_detection_corruptions_2023",
             "ext_adversarial_sensor_fusion_2022",
             "ext_gemini_robotics_2025",
-            "platonic_world_model"
+            "platonic_world_model",
+            "ext_conformal_missing_modalities_2026"
           ],
           "source_queue": {
             "primary": [
@@ -8329,7 +8382,8 @@
               "ext_gemini_robotics_2025"
             ],
             "supporting": [
-              "platonic_world_model"
+              "platonic_world_model",
+              "ext_conformal_missing_modalities_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -8400,6 +8454,17 @@
               ],
               "passage_review_note": "Reviewed as representation and grounding lineage only; no empirical support promotion.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_conformal_missing_modalities_2026",
+              "mapped_support": "Check prediction-set coverage and set size separately for each observed combination of input streams.",
+              "limits": "The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift.",
+              "passage_refs": [
+                "sources/source_notes/ext_conformal_missing_modalities_2026.md",
+                "https://arxiv.org/html/2608.07183v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. The method calibrates a threshold for each modality-presence pattern on the studied classification tasks. The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift."
             }
           ],
           "mechanism": [
@@ -13721,7 +13786,8 @@
             "regret_engine",
             "ext_openclaw_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_llm_42_2026"
           ],
           "source_queue": {
             "primary": [
@@ -13739,7 +13805,8 @@
               "corbens_trainer_project",
               "corbens_best_model_possible_project",
               "regret_engine",
-              "assurance_shift_learning"
+              "assurance_shift_learning",
+              "ext_llm_42_2026"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -14011,6 +14078,17 @@
                 "papers/adjudicated_persistence.qmd"
               ],
               "passage_review_note": "Reviewed the complete author manuscript and supplied package. Propositions, conjectures, algorithms, architecture, and LocusBench remain conceptual or bounded; cited external results are not inherited as evidence."
+            },
+            {
+              "source_id": "ext_llm_42_2026",
+              "mapped_support": "Bind token replay to the numerical execution schedule and scope of the serving environment.",
+              "limits": "The inference study does not establish cross-hardware identity or reproduction of external tool effects.",
+              "passage_refs": [
+                "sources/source_notes/ext_llm_42_2026.md",
+                "https://arxiv.org/html/2601.17768v2"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. The verifier checks candidate tokens at a fixed shape and rolls back work when the fast path diverges. The inference study does not establish cross-hardware identity or reproduction of external tool effects."
             }
           ],
           "mechanism": [
@@ -16216,7 +16294,8 @@
             "ext_kimi_k3_2026",
             "portia_synapse",
             "spider_synapse",
-            "coilmoecot"
+            "coilmoecot",
+            "ext_dynamic_llm_routers_2026"
           ],
           "source_queue": {
             "primary": [
@@ -16240,7 +16319,8 @@
               "reflexive_router_whitepaper",
               "relational_dimension_compiler",
               "ext_kimi_k3_2026",
-              "coilmoecot"
+              "coilmoecot",
+              "ext_dynamic_llm_routers_2026"
             ],
             "variants": [
               "moecot_md"
@@ -16541,6 +16621,17 @@
                 "sources/source_notes/spider_synapse.md"
               ],
               "passage_review_note": "Reviewed the complete authenticated Drive paper, preserving its negative result, proposed recovery, causal uncertainty, and generalization limits."
+            },
+            {
+              "source_id": "ext_dynamic_llm_routers_2026",
+              "mapped_support": "Compare learned assignment with random assignment between a fixed, well-chosen eligible pair at matched spend.",
+              "limits": "The comparisons concern whole-model inference services with particular rosters, prices and tasks.",
+              "passage_refs": [
+                "sources/source_notes/ext_dynamic_llm_routers_2026.md",
+                "https://arxiv.org/html/2610.02762v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. None of six commercial routers across 14 settings beat the matched-cost two-model random baseline on the benchmark. The comparisons concern whole-model inference services with particular rosters, prices and tasks."
             }
           ],
           "mechanism": [
@@ -19274,7 +19365,8 @@
             "ext_llama_cpp_memory_mapping_2026",
             "ext_llm_in_flash_2024",
             "ext_powerinfer_2024",
-            "ext_atsinfer_2026"
+            "ext_atsinfer_2026",
+            "ext_who_trains_matters_2026"
           ],
           "source_queue": {
             "primary": [
@@ -19291,7 +19383,8 @@
               "rmi",
               "tokenmana",
               "theseus_operator_os",
-              "ladon_manhattan"
+              "ladon_manhattan",
+              "ext_who_trains_matters_2026"
             ],
             "variants": [
               "ext_tailscale_docs_2025",
@@ -19618,6 +19711,17 @@
                 "source-note:sources/source_notes/ext_cap_theorem_gilbert_lynch_2002.md:thesis-and-chapter-use"
               ],
               "passage_review_note": "Reviewed the repository source note for Gilbert and Lynch's formal CAP result and its safety/liveness distinction. It is used only as a comparator for authority behavior under partition; the book does not infer a working distributed authority implementation or a real partition result from the theorem."
+            },
+            {
+              "source_id": "ext_who_trains_matters_2026",
+              "mapped_support": "Separate enrollment in the reachable pool from participation in an individual training round.",
+              "limits": "Inference for the target population needs suitable measured selection factors and positive inclusion probabilities.",
+              "passage_refs": [
+                "sources/source_notes/ext_who_trains_matters_2026.md",
+                "https://arxiv.org/html/2604.26604v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. The authors analyze two-stage inverse-probability weighting and evaluate it on synthetic federated logistic regression. Inference for the target population needs suitable measured selection factors and positive inclusion probabilities."
             }
           ],
           "mechanism": [
@@ -24183,7 +24287,8 @@
             "corbens_best_model_possible_project",
             "precision_contract",
             "ext_reluplex_2017",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_beyond_compilation_2026"
           ],
           "source_queue": {
             "primary": [
@@ -24203,7 +24308,8 @@
               "corbens_best_model_possible_project",
               "precision_contract",
               "ext_reluplex_2017",
-              "forward_transfer_program_synthesis"
+              "forward_transfer_program_synthesis",
+              "ext_beyond_compilation_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -24419,6 +24525,17 @@
                 "papers/source/forward_transfer_program_synthesis.md:852-1062"
               ],
               "passage_review_note": "Reviewed the complete manuscript for verification levels, exact outcomes, source-to-artifact boundaries, and formal counterexamples. None is represented as an independently checked local proof."
+            },
+            {
+              "source_id": "ext_beyond_compilation_2026",
+              "mapped_support": "Use a counterexample to test the translated statement before checking the implementation binding.",
+              "limits": "The dataset contains mathematics statements. Human audit found some faithful translations among the rejections.",
+              "passage_refs": [
+                "sources/source_notes/ext_beyond_compilation_2026.md",
+                "https://arxiv.org/html/2606.31002v4"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. In revision 4 the tool-augmented system compiled 87.2% of 227 statements and passed both semantic judges plus compilation on 57.7%. The dataset contains mathematics statements. Human audit found some faithful translations among the rejections."
             }
           ],
           "mechanism": [
@@ -26615,7 +26732,9 @@
             "ext_c2pa_specification_2_3_2025",
             "ext_eu_article_50_transparency_guidelines_2026",
             "ext_international_ai_safety_report_2026",
-            "deterministic_capability_compilation"
+            "deterministic_capability_compilation",
+            "ext_c2pa_news_labels_2026",
+            "ext_provenance_enabled_media_2023"
           ],
           "problem": "The stack tracks model and software provenance but lacks an owner for the provenance, disclosure, detectability, transformation history, and downstream interpretation of generated or manipulated outputs.",
           "insufficient": "Metadata, one watermark, a detector score, visible label, signature, or platform policy can be stripped, forged, misunderstood, or lost during transformation. None alone proves that content is true, false, human-made, AI-made, authorized, or harmless.",
@@ -26672,7 +26791,9 @@
             ],
             "supporting": [
               "ext_international_ai_safety_report_2026",
-              "deterministic_capability_compilation"
+              "deterministic_capability_compilation",
+              "ext_c2pa_news_labels_2026",
+              "ext_provenance_enabled_media_2023"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -26718,6 +26839,28 @@
                 "sources/source_notes/deterministic_capability_compilation.md"
               ],
               "passage_review_note": "Reviewed for artifact identity, transformation lineage, verifier boundaries, and residual-preserving compilation concepts."
+            },
+            {
+              "source_id": "ext_c2pa_news_labels_2026",
+              "mapped_support": "Distinguish increased trust after seeing provenance metadata from evidence that the image supports its caption.",
+              "limits": "Credibility and trust ratings on the studied previews do not measure historical caption accuracy.",
+              "passage_refs": [
+                "sources/source_notes/ext_c2pa_news_labels_2026.md",
+                "https://christophtrattner.com/pubs/ICWSM2026.pdf"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. In the six-outlet news-preview experiment, 6,114 participants in three countries judged labeled material more favorably. Credibility and trust ratings on the studied previews do not measure historical caption accuracy."
+            },
+            {
+              "source_id": "ext_provenance_enabled_media_2023",
+              "mapped_support": "Test how people interpret incomplete provenance on an honest image.",
+              "limits": "The experiment measured reactions to particular media and provenance displays.",
+              "passage_refs": [
+                "sources/source_notes/ext_provenance_enabled_media_2023.md",
+                "https://arxiv.org/abs/2303.12118v3"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-19. In an experiment with 595 US and UK participants, incomplete or invalid provenance sometimes reduced belief in honest media. The experiment measured reactions to particular media and provenance displays."
             }
           ],
           "proof_targets": [

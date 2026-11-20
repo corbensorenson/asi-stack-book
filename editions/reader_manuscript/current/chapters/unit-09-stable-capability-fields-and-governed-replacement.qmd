@@ -158,6 +158,10 @@ qualification, authority, and required dependencies remain current. The
 candidate may earn a broader lease later, but it cannot borrow one from its
 name.
 
+### Which five cases did the upgrade break?
+
+Two patch verifiers grade the same 100 cases. Both get 75 right and both miss eight. The new verifier fixes twelve and breaks five. Would you increase its traffic? Its score rose from 80 to 87, yet five of the 80 previously reliable cases now fail. Open those five records. If one allowed an export requiring owner approval, hold the rollout until that requirement passes again. MUSCLE observed such reversals in downstream tasks after base-model updates. Its best reported reduction in reversals depended on the versions, task and grading rule. [MUSCLE: A Model Update Strategy for Compatible LLM Evolution](https://machinelearning.apple.com/research/model-compatibility)
+
 ## The Patch Verifier Replacement
 
 Now return to the proposed upgrade. The team wants the new verifier because it

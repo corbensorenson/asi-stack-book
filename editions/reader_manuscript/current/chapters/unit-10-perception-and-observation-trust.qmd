@@ -215,6 +215,10 @@ together. The point is not to force every downstream component to process raw
 sensor streams. It is to keep the information that determines whether the
 summary is fit for the proposed decision.
 
+### How often is the true state inside the prediction set?
+
+In 87 of 90 two-sensor frames the prediction set contains the true state. With the camera alone it succeeds five times out of ten. Pooling them gives 92%, a poor guide during encoder loss. Report each sensor pattern and how many possible states its sets usually contain. Conformal fusion can calibrate within each pattern when calibration and future cases are exchangeable there. If vibration removes the encoder precisely on difficult runs, measure those runs separately. [Conformal Fusion Under Missing Modalities](https://arxiv.org/html/2608.07183v1)
+
 ## Disagreement Is a Routing Signal
 
 Fusion systems are often rewarded for producing one answer. Consequential

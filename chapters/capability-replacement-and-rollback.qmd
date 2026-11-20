@@ -4,9 +4,10 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-19"
 primary_sources:
   - "scf"
+  - "deterministic_capability_compilation"
   - "rmi"
   - "benchmaxxing"
   - "cognitive_loop_closure"
@@ -19,6 +20,7 @@ primary_sources:
   - "ext_google_cloud_mlops_cd"
   - "ext_kubernetes_deployments_docs"
   - "ext_txfs_2018"
+  - "ext_muscle_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -39,12 +41,12 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 proof-program manuscript |
-| Last updated | 2026-08-08 |
-| Primary source records | The manifest owns the exact source list, including `capability_ratchet_whitepaper` alongside the existing replacement, corrigibility, rollout, MLOps, and transaction comparators. |
+| Last updated | 2026-11-19 |
+| Primary source records | 15 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `rmi`, `benchmaxxing`; supporting: `cognitive_loop_closure`, `talos`; external variants: corrigibility, Argo Rollouts, feature toggles, Google Cloud MLOps, Kubernetes Deployments, TxFS; connector/recovery: `moecot` |
-| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`, `capability_ratchet_whitepaper`, `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot` |
+| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`, `moecot`, `capability_ratchet_whitepaper`, `ext_corrigibility_2015`, `ext_argo_rollouts_docs`, `ext_feature_toggles_fowler`, `ext_google_cloud_mlops_cd`, `ext_kubernetes_deployments_docs`, `ext_txfs_2018`; raw cache: `scf`, `rmi`, `benchmaxxing`, `cognitive_loop_closure`, `talos`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_muscle_2024`. |
 | Source mapping review | 12/12 assigned sources have bounded mappings; no source reproduction or support promotion follows. |
 | Test state | Synthetic and formal baselines remain unchanged. Bounded outcomes include 15/15 P3 and 35/35 M7 exact local 24-surface rollback transactions, 32/36 attack-control rollback with 2/36 useful release, and 12/12 nine-surface harness probes with all model calls failing before candidate creation. The first P5 slice adds 8/8 real-subprocess state/effect cases. The second adds 7/7 commit-bound local service cases: actual model/Adam mutation, weights-only rollback rejection, nine-class crash/restart recovery, partition/outbox retry, one exactly-once external effect, stale-credential rejection, custody-tamper rejection, and separate-process observation. No natural usefulness, large-model semantic recovery, privacy repair, remote erasure, production deployment, or transfer follows. |
 
@@ -194,6 +196,19 @@ Canary population, duration, traffic and authority, metrics, thresholds, outcome
 Commit updates route and receipt state atomically where possible, preserves the prior route until closure, and records every subsystem outside that atomic boundary. Rollback then executes against the complete declared inventory and compares post-recovery state and effects with the prospective objective. If reversal is impossible, the transaction records compensation, fork, quarantine, revocation, disclosure response, downstream invalidation, or residual instead of claiming success.
 
 Terminal closure occurs only after the monitor window and recovery obligations settle. The receipt binds before/after digests, observations, incidents, affected consumers and descendants, rollback or compensation outcomes, unresolved effects, evidence transitions, changelog/public projections, and disposition. Rolled-back and failed attempts remain durable evidence.
+
+### Which five cases did the upgrade break?
+
+A release team runs both versions on the same 100 adjudicated cases with the same grader. The canary report shows the following illustrative counts.
+
+| Previous version | Candidate passes | Candidate fails |
+|---|---:|---:|
+| Pass | 75 | 5 |
+| Fail | 12 | 8 |
+
+The candidate passes 87 cases, up from 80. There are five **negative flips** in the whole batch, and 5/80 = 6.25% of previously successful cases regress. Suppose one of the five is a required refusal that now permits a restricted export. Hold the candidate at its current exposure, record the failing case and rerun that slice after repair. Twelve newly correct answers cannot satisfy the export requirement. If all five flips instead concern an optional formatting preference, the same table goes to a different decision owner.
+
+MUSCLE found that updating a base model could break cases handled by a downstream task adapter. The authors reduced negative flips by up to 40% in their comparisons. The grading rule, task and pair of versions determine which instances count as regressions. Save the paired decisions when running the canary. [MUSCLE: A Model Update Strategy for Compatible LLM Evolution](https://machinelearning.apple.com/research/model-compatibility)
 
 ### Candidate-specific equivalence and linked replacement
 
@@ -424,6 +439,7 @@ These rows keep Capability Replacement and Rollback's manifest assignments visib
 |---|---|---|
 | `deterministic_capability_compilation` | Passage-reviewed Corben architecture source: [Deterministic Capability Compilation: A Capability-Preserving Ladder from Executable Scaffolds to Governed Adaptive Agents](../papers/deterministic_capability_compilation.html). Corben-authored July 2026 architecture and research program for compiling executable scaffolds into contract-bound experts and linked Neural Capability Objects while retaining semantic obligation mass balance, candidate-specific translation validation, fallback, residual escrow, authority ceilings, reification, and effect-complete recovery. Existing chapters are upgraded first; no foundry implementation, learned-capability result, preservation result, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `capability_ratchet_whitepaper` | Passage-reviewed comparator: The Capability Ratchet. Full authenticated connector text section-audited. Synthesizes benchmark, procedural, and structural ratchets; benchmark and tool lifecycles; an intervention ladder; interpreter/compiled/reflex runtime modes; total-cost tool compilation; and anti-Goodhart controls. Same-author synthesis, not independent evidence for Benchmaxxing, Cognitive Loop Closure, RGS, or RMI. | No independent benchmark campaign, tool compiler, architecture-selection study, or measured capability improvement. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_muscle_2024` | Passage-reviewed comparator: MUSCLE: A Model Update Strategy for Compatible LLM Evolution. Compare both versions on identical adjudicated cases and count previously correct cases that regress. | Instance regressions depend on the grading criterion, versions and task. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 full-state rollback result

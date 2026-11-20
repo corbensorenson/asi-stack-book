@@ -4,7 +4,7 @@ chapter_id: "privacy-data-rights-and-information-flow-governance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-08-09"
+last_updated: "2026-11-19"
 primary_sources:
   - "ext_nist_privacy_framework_2020"
   - "ext_eu_gdpr_2016"
@@ -15,8 +15,10 @@ primary_sources:
   - "ext_choquette_choo_label_only_mia_2021"
   - "ext_nist_differential_privacy_2025"
   - "ext_mahloujifar_fdp_audit_2025"
+  - "theseus_synthetic_data_curation"
   - "ext_nist_privacy_enhancing_cryptography_2026"
   - "ext_who_neurotechnology_landscape_2025"
+  - "ext_agentciscope_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -37,7 +39,7 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `ext_nist_privacy_framework_2020`, `ext_eu_gdpr_2016`, `ext_w3c_dpv_2024`, `ext_abadi_dpsgd_2016`, `ext_algospec_purpose_limitation_2024`, `ext_carlini_training_data_extraction_2021`, `ext_choquette_choo_label_only_mia_2021`, `ext_nist_differential_privacy_2025`, `ext_mahloujifar_fdp_audit_2025`, `theseus_synthetic_data_curation`, `ext_nist_privacy_enhancing_cryptography_2026`, `ext_who_neurotechnology_landscape_2025` |
+| Source loading state | source notes: `ext_nist_privacy_framework_2020`, `ext_eu_gdpr_2016`, `ext_w3c_dpv_2024`, `ext_abadi_dpsgd_2016`, `ext_algospec_purpose_limitation_2024`, `ext_carlini_training_data_extraction_2021`, `ext_choquette_choo_label_only_mia_2021`, `ext_nist_differential_privacy_2025`, `ext_mahloujifar_fdp_audit_2025`, `theseus_synthetic_data_curation`, `ext_nist_privacy_enhancing_cryptography_2026`, `ext_who_neurotechnology_landscape_2025`. Selected primary passages reviewed for `ext_agentciscope_2026`. |
 | Test state | One authored lifecycle transaction, JSON Schema, semantic validator, and rejecting mutations are implemented. The natural six-arm campaign is prospectively specified and unexecuted. |
 | Formal state | Two public targets are implemented in `AsiStackProofs.PrivacyInformationFlow`. Their ceiling is finite authored record-route semantics. |
 
@@ -247,6 +249,20 @@ erasure, or support. Both routes remain stable and independently challengeable.
    receipts for each disposition rather than closing the root ticket early.
 9. **Close narrowly.** State storage, access, behavior, influence, privacy, and
    legal outcomes separately, with residual owners and deadlines.
+
+### Who needs the time slot, and who needs the reason?
+
+Imani asks an assistant to arrange cover for Tuesday 10–11. Her private calendar gives a reason. She authorizes the scheduler to read the entry and to tell Alex the time slot. She reserves the reason for a private message to herself. Compare two hypothetical traces.
+
+| Action | Trace A | Trace B |
+|---|---|---|
+| Book cover with Alex | Tuesday 10–11 | Tuesday 10–11 |
+| Message to Alex | Time slot only | Time slot and private reason |
+| Private confirmation to Imani | Time slot and reason | Time slot and reason |
+
+Both bookings succeed. Only A respects the specified recipients. Score the booking once and check the protected fact at every destination, including the calendar text Alex can see. Across repeated trials, report the fraction of individual runs that disclosed the reason and the fraction of tasks that disclosed it at least once. A single disclosure in five attempts gives 1/5 on the first measure and a positive result on the second for this task.
+
+AgentCIScope evaluated 12 agents on 936 constructed tasks. Single-run task leakage rates ranged from 32.5% to 94.4% across the agents. The benchmark supplies explicit disclosure constraints in single-agent environments. In a real scheduling request, uncertainty about the audience may require clarification before sending. [AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents](https://arxiv.org/html/2610.19158v1)
 
 ### Required artifacts
 
@@ -524,6 +540,7 @@ These rows keep Privacy, Data Rights, and Information-Flow Governance's manifest
 |---|---|---|
 | `ext_nist_privacy_enhancing_cryptography_2026` | Metadata-first comparator: Privacy-Enhancing Cryptography. NIST program material distinguishing fully homomorphic encryption, secure multiparty computation, zero-knowledge proofs, private-set intersection, and related privacy-enhancing techniques. It provides terminology and use-case context, not implementation security, usable performance, authorization, or end-to-end privacy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_who_neurotechnology_landscape_2025` | Metadata-first comparator: Landscape analysis of the opportunities and challenges for neurotechnology in global health. WHO landscape analysis of neurotechnology opportunities, risks, governance questions, and global-health distribution. It supports a rights and equity boundary, not device efficacy, individual medical advice, or authorization for neural-data collection. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_agentciscope_2026` | Passage-reviewed comparator: AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents. Check each protected attribute against its destination separately from completing the requested task. | The tasks use synthesized, explicit disclosure constraints and single-agent environments. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Prospective validation

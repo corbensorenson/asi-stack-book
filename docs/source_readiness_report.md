@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 498
+- `source_note_available_uncached`: 509
 
 ## Records
 
@@ -591,3 +591,14 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_bridgekv_2026` | BridgeKV: Large-Model Prefill and Small-Model Decoding for LLM Inference via KV Cache Translation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_comixkv_2026` | Coordinated Mixed-Precision KV Cache Quantization for Efficient LLM-based Multi-agent Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_aligning_ai_teams_2026` | Aligning AI Teams | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_muscle_2024` | MUSCLE: A Model Update Strategy for Compatible LLM Evolution | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_beyond_compilation_2026` | Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_agentciscope_2026` | AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_c2pa_news_labels_2026` | C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_provenance_enabled_media_2023` | Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dynamic_llm_routers_2026` | Dynamic LLM Routers are Often Misguided | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dataset_licensing_audit_2024` | A large-scale audit of dataset licensing and attribution in AI | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_pluralistic_moral_gap_2026` | The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_llm_42_2026` | LLM-42: Enabling Determinism in LLM Inference with Verified Speculation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_conformal_missing_modalities_2026` | Conformal Fusion Under Missing Modalities | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_who_trains_matters_2026` | Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

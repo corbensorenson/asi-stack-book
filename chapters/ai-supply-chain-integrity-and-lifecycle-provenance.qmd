@@ -4,9 +4,11 @@ chapter_id: "ai-supply-chain-integrity-and-lifecycle-provenance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-19"
 primary_sources:
   - "ext_nist_cscrm_2022"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
   - "ext_slsa_build_track_1_2"
   - "ext_openssf_model_signing_spec_2025"
   - "ext_spdx_ai_profile_3_0_1"
@@ -17,6 +19,9 @@ primary_sources:
   - "ext_mlcommons_croissant_1_1_2026"
   - "ext_in_toto_2019"
   - "ext_owasp_agentic_top_10_2026"
+  - "ext_proof_of_learning_2021"
+  - "ext_c2pa_specification_2_3_2025"
+  - "ext_dataset_licensing_audit_2024"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -33,12 +38,12 @@ open_evidence_gaps:
 | Chapter ID | `ai-supply-chain-integrity-and-lifecycle-provenance` |
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
-| Last updated | 2026-08-02 |
+| Last updated | 2026-11-19 |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Primary source records | eleven reviewed mappings: NIST C-SCRM; SLSA; OpenSSF Model Signing; SPDX AI; W3C PROV-O; MLCommons Croissant; in-toto; OWASP Agentic; and three local-project implementation-context notes |
+| Primary source records | 16 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `ext_nist_cscrm_2022`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1`, `cca_project`, `moecot_manifest_project`, `corbens_trainer_project`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `ext_owasp_agentic_top_10_2026`, `ext_proof_of_learning_2021`, `ext_c2pa_specification_2_3_2025` |
+| Source loading state | source notes: `ext_nist_cscrm_2022`, `deterministic_capability_compilation`, `platonic_world_model`, `ext_slsa_build_track_1_2`, `ext_openssf_model_signing_spec_2025`, `ext_spdx_ai_profile_3_0_1`, `cca_project`, `moecot_manifest_project`, `corbens_trainer_project`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `ext_owasp_agentic_top_10_2026`, `ext_proof_of_learning_2021`, `ext_c2pa_specification_2_3_2025`. Selected primary passages reviewed for `ext_dataset_licensing_audit_2024`. |
 | Test state | Exact finite boundary: one quarantined three-project affected-path record, ten rejecting fixture mutations, eleven independently encoded lifecycle controls with exact state preservation, all 24 permutations of a four-component inventory, five rejected event kinds after revocation, and 34 Lean declarations under six manifest targets. The consumer recompiles the module, checks clean admit/revoke and critical-advisory quarantine runs, and distinguishes exact component identity from equal-cardinality substitutions. No real artifact/content verification, dataset, supplier, build/training execution, signature, advisory feed, dependency discovery, propagation/restoration effect, recipient notice, sanitization, privacy/rights, availability, or security metric was exercised. |
 
 ## Drafting guardrail
@@ -175,6 +180,19 @@ assertion, verification, inheritance, applicability, propagation, restoration,
 privacy/rights, availability, cost, or residual rule. Its proposed advantage
 fails when a simpler matched baseline produces every frozen effect at lower
 joint cost.
+
+### Which source record travels with the mixture?
+
+A team wants to use a two-component text collection for internal training and later publish a copy. The collection card lists one license. Component A has a dated upstream statement identifying its creator, version, terms and attribution requirement. Component B came through a mirror that names neither the original source nor its terms.
+
+| Proposed use | Component A | Component B |
+|---|---|---|
+| Internal training | Compare this use against the upstream terms and record the review | Identify the upstream version and obtain terms or another documented basis |
+| Redistribute the texts | Check redistribution conditions and carry forward the required credit | Hold this component out of the release pending review |
+
+Freeze the reviewed component versions and the reason for each decision. If the team needs a public artifact now, construct a separate manifest for the cleared subset once A's review passes. A digest for the mixed archive identifies bytes while leaving B's origin unresolved.
+
+A multidisciplinary audit traced more than 1,800 text datasets and found frequent missing and incorrect license labels on popular hosting sites. The audit concerns the quality of metadata in the studied collections. A rights decision still depends on the actual component, terms and intended use. [A large-scale audit of dataset licensing and attribution in AI](https://www.media.mit.edu/publications/a-large-scale-audit-of-dataset-licensing-and-attribution-in-ai/)
 
 ## Mechanism
 
@@ -809,6 +827,7 @@ These rows keep AI Supply-Chain Integrity and Lifecycle Provenance's manifest as
 | `platonic_world_model` | Metadata-first comparator: [The Platonic World Model: A Semantic Constitution for Grounded, Proof-Carrying, Self-Editing Artificial Intelligence](../papers/platonic_world_model.html). Corben-authored July 2026 conceptual architecture and falsifiable research program for semantic continuity through stable Form lineages, immutable semantic versions, typed Essence Contracts, six mutually constraining planes, explicit proposition-attestation-commitment-proof separation, branch-protected world dynamics, qualified grounding, semantic transactions, runtime packet compilation, and federated mappings. Existing chapters are upgraded first; no implemented substrate, benchmark result, philosophical solution to grounding, safety result, SOTA result, AGI, ASI, or support-state promotion is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_proof_of_learning_2021` | Passage-reviewed comparator: Proof-of-Learning: Definitions and Practice. Provides a protocol-level comparator for checking that a claimed training process is tied to an ordered sequence of intermediate states. | A proof-of-learning transcript is not proof of data rights, objective validity, absence of hidden computation, reproducibility, model quality, or safety. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_c2pa_specification_2_3_2025` | Passage-reviewed comparator: C2PA Content Credentials Technical Specification 2.3. Supplies an interoperable content-provenance and authenticity manifest comparator for signed lifecycle assertions. | Signed provenance can be missing, stripped, misleading, compromised, or truthful about harmful content; it does not prove semantic truth. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_dataset_licensing_audit_2024` | Passage-reviewed comparator: A large-scale audit of dataset licensing and attribution in AI. Trace upstream components and attribution before relying on a collection-level label. | The metadata audit does not decide permissions for an individual use of a particular artifact. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

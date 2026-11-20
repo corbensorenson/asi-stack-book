@@ -4,13 +4,15 @@ chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-19"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
   - "ext_3d_detection_corruptions_2023"
   - "ext_adversarial_sensor_fusion_2022"
   - "ext_gemini_robotics_2025"
+  - "platonic_world_model"
+  - "ext_conformal_missing_modalities_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -30,7 +32,7 @@ open_evidence_gaps:
 | Manuscript maturity | v0.1 integrated argument chapter |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `ext_multimodal_machine_learning_taxonomy_2019`, `ext_imagebind_2023`, `ext_3d_detection_corruptions_2023`, `ext_adversarial_sensor_fusion_2022`, `ext_gemini_robotics_2025`, `platonic_world_model` |
+| Source loading state | source notes: `ext_multimodal_machine_learning_taxonomy_2019`, `ext_imagebind_2023`, `ext_3d_detection_corruptions_2023`, `ext_adversarial_sensor_fusion_2022`, `ext_gemini_robotics_2025`, `platonic_world_model`. Selected primary passages reviewed for `ext_conformal_missing_modalities_2026`. |
 | Test state | Exact 32-theorem correlated-evidence and observation-custody model formalized in Lean and independently replayed; claim-bearing sensor campaign remains unexecuted. |
 
 ## Drafting guardrail
@@ -311,6 +313,10 @@ flowchart LR
     O -->|no| H["Plural hypotheses / abstain / safe hold"]
 ```
 
+### How often is the true state inside the prediction set?
+
+Suppose 90 camera-plus-encoder frames yield 87 sets containing the true state, while ten camera-only frames yield five. Pooled coverage is 92%, but camera-only coverage is 50%. Record an encoder-only row as unmeasured until observations exist. Also report set size in each row: returning every state gives perfect coverage and little guidance. Modality-conditioned conformal calibration groups cases by the inputs present. Its coverage guarantee assumes exchangeable calibration and test cases within each group. If vibration disables the encoder specifically during difficult maneuvers, collect representative camera-only episodes before using that row to qualify operation. [Conformal Fusion Under Missing Modalities](https://arxiv.org/html/2608.07183v1)
+
 ### Required artifacts
 
 ```text
@@ -585,6 +591,15 @@ Theseus work; support remains `argument`.
 | `ext_gemini_robotics_2025` | Integrated perception/reasoning/action capability context. | No independent safety or local transfer result. |
 | `platonic_world_model` | Corben design lineage for separating observations, representations, and a revisable world state. | Speculative architecture source; no sensor-fusion, calibration, or trust result. |
 
+### Manifest source assignment reconciliation
+
+These rows keep Perception, Sensor Fusion, and Observation Trust's manifest assignments visible at their recorded review boundary. Passage review does not establish local reproduction, performance, safety, deployment, or support-state movement.
+
+| Source | Intake role | Boundary |
+|---|---|---|
+| `ext_conformal_missing_modalities_2026` | Passage-reviewed comparator: Conformal Fusion Under Missing Modalities. Check prediction-set coverage and set size separately for each observed combination of input streams. | The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+
+<!-- manifest-source-reconciliation:end -->
 ## Summary
 
 Perception is the governed transition from physical or digital signals to

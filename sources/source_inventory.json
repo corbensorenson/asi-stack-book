@@ -10109,5 +10109,183 @@
     "citation_label": "Siddarth Srinivasan et al. (2026), Aligning AI Teams",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Team interventions and per-task results. Results varied by model and task. Count work completed, adverse outcomes and total inference spent together."
+  },
+  {
+    "id": "ext_muscle_2024",
+    "title": "MUSCLE: A Model Update Strategy for Compatible LLM Evolution",
+    "priority": "external_literature",
+    "layer": "muscle",
+    "chapter_targets": [
+      "capability-replacement-and-rollback"
+    ],
+    "url": "https://machinelearning.apple.com/research/model-compatibility",
+    "notes": "Compare both versions on identical adjudicated cases and count previously correct cases that regress.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "citation_label": "Jessica Echterhoff et al. (2024), MUSCLE: A Model Update Strategy for Compatible LLM Evolution",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Instance regressions depend on the grading criterion, versions and task."
+  },
+  {
+    "id": "ext_beyond_compilation_2026",
+    "title": "Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization",
+    "priority": "external_literature",
+    "layer": "beyond_compilation",
+    "chapter_targets": [
+      "executable-specifications-and-lean-proof-envelope"
+    ],
+    "url": "https://arxiv.org/html/2606.31002v4",
+    "notes": "Use a counterexample to test the translated statement before checking the implementation binding.",
+    "source_type": "preprint",
+    "published": "2026-06-30",
+    "citation_label": "Ke Zhang et al. (2026), Beyond Compilation: Evaluating Faithful Natural-Language-to-Lean Statement Formalization",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The dataset contains mathematics statements. Human audit found some faithful translations among the rejections.",
+    "updated": "2026-10-15"
+  },
+  {
+    "id": "ext_agentciscope_2026",
+    "title": "AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents",
+    "priority": "external_literature",
+    "layer": "agentciscope",
+    "chapter_targets": [
+      "privacy-data-rights-and-information-flow-governance"
+    ],
+    "url": "https://arxiv.org/html/2610.19158v1",
+    "notes": "Check each protected attribute against its destination separately from completing the requested task.",
+    "source_type": "preprint",
+    "published": "2026-10-13",
+    "citation_label": "Chengquan Guo et al. (2026), AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The tasks use synthesized, explicit disclosure constraints and single-agent environments."
+  },
+  {
+    "id": "ext_c2pa_news_labels_2026",
+    "title": "C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries",
+    "priority": "external_literature",
+    "layer": "c2pa_news_labels",
+    "chapter_targets": [
+      "content-authenticity-watermarking-and-synthetic-media-integrity"
+    ],
+    "url": "https://christophtrattner.com/pubs/ICWSM2026.pdf",
+    "notes": "Distinguish increased trust after seeing provenance metadata from evidence that the image supports its caption.",
+    "source_type": "conference_paper",
+    "published": "2026-05-25",
+    "citation_label": "Christoph Trattner et al. (2026), C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Credibility and trust ratings on the studied previews do not measure historical caption accuracy."
+  },
+  {
+    "id": "ext_provenance_enabled_media_2023",
+    "title": "Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions",
+    "priority": "external_literature",
+    "layer": "provenance_enabled_media",
+    "chapter_targets": [
+      "content-authenticity-watermarking-and-synthetic-media-integrity"
+    ],
+    "url": "https://arxiv.org/abs/2303.12118v3",
+    "notes": "Test how people interpret incomplete provenance on an honest image.",
+    "source_type": "conference_paper",
+    "published": "2023",
+    "citation_label": "K. J. Kevin Feng et al. (2023), Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The experiment measured reactions to particular media and provenance displays."
+  },
+  {
+    "id": "ext_dynamic_llm_routers_2026",
+    "title": "Dynamic LLM Routers are Often Misguided",
+    "priority": "external_literature",
+    "layer": "dynamic_llm_routers",
+    "chapter_targets": [
+      "routing-heads-and-specialist-cores"
+    ],
+    "url": "https://arxiv.org/html/2610.02762v1",
+    "notes": "Compare learned assignment with random assignment between a fixed, well-chosen eligible pair at matched spend.",
+    "source_type": "preprint",
+    "published": "2026-10-02",
+    "citation_label": "Sam Wang et al. (2026), Dynamic LLM Routers are Often Misguided",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The comparisons concern whole-model inference services with particular rosters, prices and tasks."
+  },
+  {
+    "id": "ext_dataset_licensing_audit_2024",
+    "title": "A large-scale audit of dataset licensing and attribution in AI",
+    "priority": "external_literature",
+    "layer": "dataset_licensing_audit",
+    "chapter_targets": [
+      "ai-supply-chain-integrity-and-lifecycle-provenance"
+    ],
+    "url": "https://www.media.mit.edu/publications/a-large-scale-audit-of-dataset-licensing-and-attribution-in-ai/",
+    "notes": "Trace upstream components and attribution before relying on a collection-level label.",
+    "source_type": "journal_article",
+    "published": "2024-08-30",
+    "citation_label": "Shayne Longpre et al. (2024), A large-scale audit of dataset licensing and attribution in AI",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The metadata audit does not decide permissions for an individual use of a particular artifact."
+  },
+  {
+    "id": "ext_pluralistic_moral_gap_2026",
+    "title": "The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models",
+    "priority": "external_literature",
+    "layer": "pluralistic_moral_gap",
+    "chapter_targets": [
+      "moral-uncertainty-and-value-conflict"
+    ],
+    "url": "https://aclanthology.org/2026.eacl-long.305/",
+    "notes": "Retain the vote distribution and dissenting rationales when recording a contested decision.",
+    "source_type": "conference_paper",
+    "published": "2026-03",
+    "citation_label": "Giuseppe Russo et al. (2026), The Pluralistic Moral Gap: Understanding Moral Judgment and Value Differences between Humans and Large Language Models",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community."
+  },
+  {
+    "id": "ext_llm_42_2026",
+    "title": "LLM-42: Enabling Determinism in LLM Inference with Verified Speculation",
+    "priority": "external_literature",
+    "layer": "llm_42",
+    "chapter_targets": [
+      "artifact-graphs-audit-logs-and-replay"
+    ],
+    "url": "https://arxiv.org/html/2601.17768v2",
+    "notes": "Bind token replay to the numerical execution schedule and scope of the serving environment.",
+    "source_type": "preprint",
+    "published": "2026-01-25",
+    "citation_label": "Raja Gond et al. (2026), LLM-42: Enabling Determinism in LLM Inference with Verified Speculation",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The inference study does not establish cross-hardware identity or reproduction of external tool effects.",
+    "updated": "2026-01-30"
+  },
+  {
+    "id": "ext_conformal_missing_modalities_2026",
+    "title": "Conformal Fusion Under Missing Modalities",
+    "priority": "external_literature",
+    "layer": "conformal_missing_modalities",
+    "chapter_targets": [
+      "perception-sensor-fusion-and-observation-trust"
+    ],
+    "url": "https://arxiv.org/html/2608.07183v1",
+    "notes": "Check prediction-set coverage and set size separately for each observed combination of input streams.",
+    "source_type": "preprint",
+    "published": "2026-08-07",
+    "citation_label": "Alireza Moayedikia (2026), Conformal Fusion Under Missing Modalities",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift."
+  },
+  {
+    "id": "ext_who_trains_matters_2026",
+    "title": "Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases",
+    "priority": "external_literature",
+    "layer": "who_trains_matters",
+    "chapter_targets": [
+      "personal-compute-hives-and-federated-edge-intelligence"
+    ],
+    "url": "https://arxiv.org/html/2604.26604v1",
+    "notes": "Separate enrollment in the reachable pool from participation in an individual training round.",
+    "source_type": "preprint",
+    "published": "2026-04-29",
+    "citation_label": "Gota Morishita (2026), Who Trains Matters: Federated Learning under Enrollment and Participation Selection Biases",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Inference for the target population needs suitable measured selection factors and positive inclusion probabilities."
   }
 ]

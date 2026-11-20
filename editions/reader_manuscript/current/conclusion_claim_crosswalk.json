@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "3456944a25405c20312ec210fce0bd4495529c6b0f68b1f942898e19e6d04a11",
+  "book_structure_sha256": "30f587727e5b2d2392a22972c2d56354107eaace414579061d9a63e6761571f7",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1440,
+    "source": 1451,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -771,7 +771,7 @@
       "order": 4,
       "title": "Security, Privacy, and AI Artifact Custody",
       "human_reader_source_file": "chapters/unit-04-security-privacy-and-ai-artifact-custody.qmd",
-      "human_reader_source_sha256": "d9c93d629ae86e5fcce5d225775b4740dc89bf853deba5d3be959e5b9c1d83c4",
+      "human_reader_source_sha256": "402976b45c16196c7720dd427e371753cb59f2895245bb2e208b880766e7be6b",
       "public_path": "reader/chapters/unit-04-security-privacy-and-ai-artifact-custody.html",
       "central_question": "What must remain outside the model so that untrusted content, compromised components, private data, and irreversible releases do not silently acquire authority?",
       "conclusion_change": "Evidence that a materially smaller trusted base preserves confidentiality, integrity, revocation, provenance, and post-release risk at lower burden would narrow the design.",
@@ -1012,7 +1012,7 @@
           "chapter_id": "privacy-data-rights-and-information-flow-governance",
           "title": "Privacy, Data Rights, and Information-Flow Governance",
           "technical_source_file": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
-          "technical_source_sha256": "5b2ddad92379356d01323d41195683375da38d9238a51247fa29e0a315381e1a",
+          "technical_source_sha256": "266e45c64bd8dc1078dae847142af6753d112f8d595fd396c43c9c6275d63ed1",
           "live_technical_path": "chapters/privacy-data-rights-and-information-flow-governance.html",
           "human_reader_unit_id": "unit-04",
           "core_claim_id": "privacy-data-rights-and-information-flow-governance.core",
@@ -1031,7 +1031,8 @@
             "ext_mahloujifar_fdp_audit_2025",
             "theseus_synthetic_data_curation",
             "ext_nist_privacy_enhancing_cryptography_2026",
-            "ext_who_neurotechnology_landscape_2025"
+            "ext_who_neurotechnology_landscape_2025",
+            "ext_agentciscope_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_nist_privacy_framework_2020.md",
@@ -1045,7 +1046,8 @@
             "sources/source_notes/ext_mahloujifar_fdp_audit_2025.md",
             "sources/source_notes/theseus_synthetic_data_curation.md",
             "sources/source_notes/ext_nist_privacy_enhancing_cryptography_2026.md",
-            "sources/source_notes/ext_who_neurotechnology_landscape_2025.md"
+            "sources/source_notes/ext_who_neurotechnology_landscape_2025.md",
+            "sources/source_notes/ext_agentciscope_2026.md"
           ],
           "proof_edges": [
             {
@@ -1078,7 +1080,7 @@
           "artifact_refs": [
             {
               "path": "chapters/privacy-data-rights-and-information-flow-governance.qmd",
-              "sha256": "5b2ddad92379356d01323d41195683375da38d9238a51247fa29e0a315381e1a"
+              "sha256": "266e45c64bd8dc1078dae847142af6753d112f8d595fd396c43c9c6275d63ed1"
             },
             {
               "path": "lean/AsiStackProofs/PrivacyInformationFlow.lean",
@@ -1393,7 +1395,7 @@
           "chapter_id": "ai-supply-chain-integrity-and-lifecycle-provenance",
           "title": "AI Supply-Chain Integrity and Lifecycle Provenance",
           "technical_source_file": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-          "technical_source_sha256": "ae3123b7be8f479e5c92534eb3bb50912a08cd84a7a7be9697c8afad555f0a38",
+          "technical_source_sha256": "caaaf0b798a0595966ca003d46a3f25f1e2755ef32b1e818af9574e1ca3173f8",
           "live_technical_path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.html",
           "human_reader_unit_id": "unit-04",
           "core_claim_id": "ai-supply-chain-integrity-and-lifecycle-provenance.core",
@@ -1415,7 +1417,8 @@
             "ext_in_toto_2019",
             "ext_owasp_agentic_top_10_2026",
             "ext_proof_of_learning_2021",
-            "ext_c2pa_specification_2_3_2025"
+            "ext_c2pa_specification_2_3_2025",
+            "ext_dataset_licensing_audit_2024"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_nist_cscrm_2022.md",
@@ -1432,7 +1435,8 @@
             "sources/source_notes/ext_in_toto_2019.md",
             "sources/source_notes/ext_owasp_agentic_top_10_2026.md",
             "sources/source_notes/ext_proof_of_learning_2021.md",
-            "sources/source_notes/ext_c2pa_specification_2_3_2025.md"
+            "sources/source_notes/ext_c2pa_specification_2_3_2025.md",
+            "sources/source_notes/ext_dataset_licensing_audit_2024.md"
           ],
           "proof_edges": [
             {
@@ -1509,7 +1513,7 @@
           "artifact_refs": [
             {
               "path": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd",
-              "sha256": "ae3123b7be8f479e5c92534eb3bb50912a08cd84a7a7be9697c8afad555f0a38"
+              "sha256": "caaaf0b798a0595966ca003d46a3f25f1e2755ef32b1e818af9574e1ca3173f8"
             },
             {
               "path": "lean/AsiStackProofs/SupplyChainIntegrity.lean",
@@ -2529,7 +2533,7 @@
       "order": 7,
       "title": "Constitutions, Moral Uncertainty, and Objective Formation",
       "human_reader_source_file": "chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.qmd",
-      "human_reader_source_sha256": "c1077907921eb9b4816e774a63adefec720ba77624a785b0f78d3c0b1e9f157b",
+      "human_reader_source_sha256": "9721eb81a7f1b66fa44cd227f116f077198fd020b77e6acc348872bdc7d9ae9d",
       "public_path": "reader/chapters/unit-07-constitutions-moral-uncertainty-and-objective-formation.html",
       "central_question": "How should a system act when objectives are learned, values conflict, and no single preference can legitimately settle the case?",
       "conclusion_change": "Pluralistic mechanisms with fewer capture, rigidity, evasion, and review-burden failures would replace or sharply narrow the proposed substrate.",
@@ -2810,7 +2814,7 @@
           "chapter_id": "moral-uncertainty-and-value-conflict",
           "title": "Moral Uncertainty, Value Conflict, and Contestable Governance",
           "technical_source_file": "chapters/moral-uncertainty-and-value-conflict.qmd",
-          "technical_source_sha256": "b6f5e8c2dd9f4e426cc3015b2b7af04111c1d85b71cadfc22d06426bf0f09d3c",
+          "technical_source_sha256": "34d257d3b8e90bd9750f50adc1b18dc601908319e4516c8eeaf6b0016347ab8c",
           "live_technical_path": "chapters/moral-uncertainty-and-value-conflict.html",
           "human_reader_unit_id": "unit-07",
           "core_claim_id": "moral-uncertainty-and-value-conflict.core",
@@ -2831,7 +2835,8 @@
             "ext_collective_constitutional_ai_2024",
             "ext_corrigibility_2015",
             "ext_off_switch_game_2016",
-            "ext_taking_ai_welfare_seriously_2024"
+            "ext_taking_ai_welfare_seriously_2024",
+            "ext_pluralistic_moral_gap_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/ethica_mechanica.md",
@@ -2847,7 +2852,8 @@
             "sources/source_notes/ext_collective_constitutional_ai_2024.md",
             "sources/source_notes/ext_corrigibility_2015.md",
             "sources/source_notes/ext_off_switch_game_2016.md",
-            "sources/source_notes/ext_taking_ai_welfare_seriously_2024.md"
+            "sources/source_notes/ext_taking_ai_welfare_seriously_2024.md",
+            "sources/source_notes/ext_pluralistic_moral_gap_2026.md"
           ],
           "proof_edges": [
             {
@@ -2964,7 +2970,7 @@
           "artifact_refs": [
             {
               "path": "chapters/moral-uncertainty-and-value-conflict.qmd",
-              "sha256": "b6f5e8c2dd9f4e426cc3015b2b7af04111c1d85b71cadfc22d06426bf0f09d3c"
+              "sha256": "34d257d3b8e90bd9750f50adc1b18dc601908319e4516c8eeaf6b0016347ab8c"
             }
           ],
           "publication": {
@@ -3240,7 +3246,7 @@
       "order": 9,
       "title": "Stable Capability Fields and Governed Replacement",
       "human_reader_source_file": "chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
-      "human_reader_source_sha256": "fd348fd0dfd5aaafd9593d96d78c91b9a1cce5ea3bad1239787a05274635d52b",
+      "human_reader_source_sha256": "3eca31d56ebc3aeadfbd3e84f8fa8cd5a1b0b4570e3fb8f6829fab5510dd7197",
       "public_path": "reader/chapters/unit-09-stable-capability-fields-and-governed-replacement.html",
       "central_question": "How can a system change its models, tools, memories, and substrates without losing the contract that makes those changes governable?",
       "conclusion_change": "Natural replacement studies showing no continuity, challenge, or recovery benefit beyond conventional versioning would weaken the abstraction.",
@@ -3381,7 +3387,7 @@
           "chapter_id": "capability-replacement-and-rollback",
           "title": "Capability Replacement and Rollback",
           "technical_source_file": "chapters/capability-replacement-and-rollback.qmd",
-          "technical_source_sha256": "9d307b9a44b8442d1f895f2b483a8bcf9341c960c8dcabb694d671179f72a59b",
+          "technical_source_sha256": "67d316472a40f2f8e4b21ea4dcd50c9d652601838582ace2ccc3ac92c58c43d1",
           "live_technical_path": "chapters/capability-replacement-and-rollback.html",
           "human_reader_unit_id": "unit-09",
           "core_claim_id": "capability-replacement-and-rollback.core",
@@ -3402,7 +3408,8 @@
             "ext_feature_toggles_fowler",
             "ext_google_cloud_mlops_cd",
             "ext_kubernetes_deployments_docs",
-            "ext_txfs_2018"
+            "ext_txfs_2018",
+            "ext_muscle_2024"
           ],
           "source_note_refs": [
             "sources/source_notes/scf.md",
@@ -3418,7 +3425,8 @@
             "sources/source_notes/ext_feature_toggles_fowler.md",
             "sources/source_notes/ext_google_cloud_mlops_cd.md",
             "sources/source_notes/ext_kubernetes_deployments_docs.md",
-            "sources/source_notes/ext_txfs_2018.md"
+            "sources/source_notes/ext_txfs_2018.md",
+            "sources/source_notes/ext_muscle_2024.md"
           ],
           "proof_edges": [
             {
@@ -3505,7 +3513,7 @@
           "artifact_refs": [
             {
               "path": "chapters/capability-replacement-and-rollback.qmd",
-              "sha256": "9d307b9a44b8442d1f895f2b483a8bcf9341c960c8dcabb694d671179f72a59b"
+              "sha256": "67d316472a40f2f8e4b21ea4dcd50c9d652601838582ace2ccc3ac92c58c43d1"
             },
             {
               "path": "experiments/capability_replacement_trace/results/2026-07-02-local.json",
@@ -3546,7 +3554,7 @@
       "order": 10,
       "title": "Perception and Observation Trust",
       "human_reader_source_file": "chapters/unit-10-perception-and-observation-trust.qmd",
-      "human_reader_source_sha256": "f4415e1844a54f87aeafd62afbb06813e34f8389f2195408cecc6e8b2ab163f4",
+      "human_reader_source_sha256": "c389a43629c509618dc9f63a81ad743bd779899cd260a2171e0244bfc4ecc24c",
       "public_path": "reader/chapters/unit-10-perception-and-observation-trust.html",
       "central_question": "When may a system treat sensor, tool, human, or environmental reports as independent-enough evidence about actual state?",
       "conclusion_change": "Simpler fusion and control systems with equal calibration, contradiction detection, latency, and recovery would justify a thinner trust model.",
@@ -3557,7 +3565,7 @@
           "chapter_id": "perception-sensor-fusion-and-observation-trust",
           "title": "Perception, Sensor Fusion, and Observation Trust",
           "technical_source_file": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-          "technical_source_sha256": "c067b3a4897285280a1e6c9a1efec1f609f5ee5cb3c499f2dba342caa55e2fa7",
+          "technical_source_sha256": "94230fa488c12eae5df97981bba07739f5db9c493d2acf61d90c611805fc39d7",
           "live_technical_path": "chapters/perception-sensor-fusion-and-observation-trust.html",
           "human_reader_unit_id": "unit-10",
           "core_claim_id": "perception-sensor-fusion-and-observation-trust.core",
@@ -3570,7 +3578,8 @@
             "ext_3d_detection_corruptions_2023",
             "ext_adversarial_sensor_fusion_2022",
             "ext_gemini_robotics_2025",
-            "platonic_world_model"
+            "platonic_world_model",
+            "ext_conformal_missing_modalities_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_multimodal_machine_learning_taxonomy_2019.md",
@@ -3578,7 +3587,8 @@
             "sources/source_notes/ext_3d_detection_corruptions_2023.md",
             "sources/source_notes/ext_adversarial_sensor_fusion_2022.md",
             "sources/source_notes/ext_gemini_robotics_2025.md",
-            "sources/source_notes/platonic_world_model.md"
+            "sources/source_notes/platonic_world_model.md",
+            "sources/source_notes/ext_conformal_missing_modalities_2026.md"
           ],
           "proof_edges": [
             {
@@ -3611,7 +3621,7 @@
           "artifact_refs": [
             {
               "path": "chapters/perception-sensor-fusion-and-observation-trust.qmd",
-              "sha256": "c067b3a4897285280a1e6c9a1efec1f609f5ee5cb3c499f2dba342caa55e2fa7"
+              "sha256": "94230fa488c12eae5df97981bba07739f5db9c493d2acf61d90c611805fc39d7"
             },
             {
               "path": "lean/AsiStackProofs/ObservationTrust.lean",
@@ -5093,7 +5103,7 @@
       "order": 15,
       "title": "Verification Bandwidth, Claim Ledgers, and Proof",
       "human_reader_source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
-      "human_reader_source_sha256": "cbed682733081b4eccb4cb4733d2d874ff0ea10b8ae67c6070a2cc629542040f",
+      "human_reader_source_sha256": "86522793b62000cbb7fc63404a17f7d3e0806d9929e1f5af12f5a929e321f70b",
       "public_path": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
       "central_question": "What must be connected for a claim to remain challengeable, scoped, and correctable as evidence and consumers change?",
       "conclusion_change": "Simpler evidence records that produce equal correction, calibration, proof-scope discipline, and consumer repair would justify consolidation.",
@@ -5772,7 +5782,7 @@
           "chapter_id": "executable-specifications-and-lean-proof-envelope",
           "title": "Executable Specifications and Lean Proof Envelope",
           "technical_source_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-          "technical_source_sha256": "d734c5dfba2c1819c8312a684eb318d4e34833c9d7845738dd37732c45bd41bb",
+          "technical_source_sha256": "02053400204da2aaaa030a07a8b6bd7371c82d6cd3ea2a1049a749ef56d60fc4",
           "live_technical_path": "chapters/executable-specifications-and-lean-proof-envelope.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "executable-specifications-and-lean-proof-envelope.core",
@@ -5794,7 +5804,8 @@
             "corbens_best_model_possible_project",
             "precision_contract",
             "ext_reluplex_2017",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_beyond_compilation_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/genesiscode.md",
@@ -5811,7 +5822,8 @@
             "sources/source_notes/corbens_best_model_possible_project.md",
             "sources/source_notes/precision_contract.md",
             "sources/source_notes/ext_reluplex_2017.md",
-            "sources/source_notes/forward_transfer_program_synthesis.md"
+            "sources/source_notes/forward_transfer_program_synthesis.md",
+            "sources/source_notes/ext_beyond_compilation_2026.md"
           ],
           "proof_edges": [
             {
@@ -5904,7 +5916,7 @@
           "artifact_refs": [
             {
               "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-              "sha256": "d734c5dfba2c1819c8312a684eb318d4e34833c9d7845738dd37732c45bd41bb"
+              "sha256": "02053400204da2aaaa030a07a8b6bd7371c82d6cd3ea2a1049a749ef56d60fc4"
             },
             {
               "path": "lean/AsiStackProofs/ProofEnvelope.lean",
@@ -6377,7 +6389,7 @@
       "order": 17,
       "title": "Artifact Graphs, Runtime Effects, and Operations",
       "human_reader_source_file": "chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd",
-      "human_reader_source_sha256": "900822fb38580b7a639f5ffae83d6f27f99262f0e3c9695d267b9ec70548414f",
+      "human_reader_source_sha256": "16218bafc15e76726d76d375f6746abbb3dff7374cde5fd9efc05439a2512f52",
       "public_path": "reader/chapters/unit-17-artifact-graphs-runtime-effects-and-operations.html",
       "central_question": "Which runtime boundary turns approved proposals into observable effects and keeps the system governable when those effects fail?",
       "conclusion_change": "Simpler wrappers and operations systems matching provenance, revocation, incident containment, observation, and recovery would narrow the contract.",
@@ -6388,7 +6400,7 @@
           "chapter_id": "artifact-graphs-audit-logs-and-replay",
           "title": "Artifact Graphs, Audit Logs, and Replay",
           "technical_source_file": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-          "technical_source_sha256": "466a5a57fb57496270c2f6b35697db91fec8d9c7864410cd7b7c22767d94cd84",
+          "technical_source_sha256": "60402176ff19016dc9efceb32facd3f914cfc1cae11767c92b165aecdc705969",
           "live_technical_path": "chapters/artifact-graphs-audit-logs-and-replay.html",
           "human_reader_unit_id": "unit-17",
           "core_claim_id": "artifact-graphs-audit-logs-and-replay.core",
@@ -6420,7 +6432,8 @@
             "regret_engine",
             "ext_openclaw_agent_runtime_2026",
             "assurance_shift_learning",
-            "adjudicated_persistence"
+            "adjudicated_persistence",
+            "ext_llm_42_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/talos.md",
@@ -6447,7 +6460,8 @@
             "sources/source_notes/regret_engine.md",
             "sources/source_notes/ext_openclaw_agent_runtime_2026.md",
             "sources/source_notes/assurance_shift_learning.md",
-            "sources/source_notes/adjudicated_persistence.md"
+            "sources/source_notes/adjudicated_persistence.md",
+            "sources/source_notes/ext_llm_42_2026.md"
           ],
           "proof_edges": [
             {
@@ -6606,7 +6620,7 @@
           "artifact_refs": [
             {
               "path": "chapters/artifact-graphs-audit-logs-and-replay.qmd",
-              "sha256": "466a5a57fb57496270c2f6b35697db91fec8d9c7864410cd7b7c22767d94cd84"
+              "sha256": "60402176ff19016dc9efceb32facd3f914cfc1cae11767c92b165aecdc705969"
             },
             {
               "path": "scripts/validate_artifact_graph_record_reality_sequence.py",
@@ -7380,7 +7394,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "253a30d141f8b2470ed0550bf923d7269274b291d7194314266097ec7e2aab96",
+      "human_reader_source_sha256": "33817f8adb6a43ab78356aa0b581e71d4b0cdb110eda6fb86b77bc44ee10efe5",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7391,7 +7405,7 @@
           "chapter_id": "routing-heads-and-specialist-cores",
           "title": "Routing Heads and Specialist Cores",
           "technical_source_file": "chapters/routing-heads-and-specialist-cores.qmd",
-          "technical_source_sha256": "dabe868172a4b70c8649743b90232163c6cc01ae98b4de8d38a9dee11eb9203f",
+          "technical_source_sha256": "4be96dad6ab2dc814b52ffcb829ba6dfb0cdeee56530944b67ae4e6395f53b34",
           "live_technical_path": "chapters/routing-heads-and-specialist-cores.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "routing-heads-and-specialist-cores.core",
@@ -7423,7 +7437,8 @@
             "ext_kimi_k3_2026",
             "portia_synapse",
             "spider_synapse",
-            "coilmoecot"
+            "coilmoecot",
+            "ext_dynamic_llm_routers_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7450,7 +7465,8 @@
             "sources/source_notes/ext_kimi_k3_2026.md",
             "sources/source_notes/portia_synapse.md",
             "sources/source_notes/spider_synapse.md",
-            "sources/source_notes/coilmoecot.md"
+            "sources/source_notes/coilmoecot.md",
+            "sources/source_notes/ext_dynamic_llm_routers_2026.md"
           ],
           "proof_edges": [
             {
@@ -7540,7 +7556,7 @@
           "artifact_refs": [
             {
               "path": "chapters/routing-heads-and-specialist-cores.qmd",
-              "sha256": "dabe868172a4b70c8649743b90232163c6cc01ae98b4de8d38a9dee11eb9203f"
+              "sha256": "4be96dad6ab2dc814b52ffcb829ba6dfb0cdeee56530944b67ae4e6395f53b34"
             },
             {
               "path": "evidence_transitions/v1_x_measured/routing_decision_lease_no_change.json",
@@ -9097,7 +9113,7 @@
       "order": 22,
       "title": "Evaluation, Readiness, Thresholds, and Structured Assurance",
       "human_reader_source_file": "chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd",
-      "human_reader_source_sha256": "16dd8d422a2b4ae0230ec1d1d317fa5e7aca8070878cf51d1b8d654ed918aab7",
+      "human_reader_source_sha256": "bb21d3f2f4e7bd10998bea47403a2f355d4c7d648ef9d900e9161513861660e6",
       "public_path": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html",
       "central_question": "What evidence is sufficient to advance a capability when the candidate may game tests, hide competence, corrupt provenance, or change after evaluation?",
       "conclusion_change": "Leaner readiness methods that detect deception, staleness, provenance failure, and deployment risk equally well under adaptive pressure would justify consolidation.",
@@ -9890,7 +9906,7 @@
           "chapter_id": "content-authenticity-watermarking-and-synthetic-media-integrity",
           "title": "Content Authenticity, Watermarking, and Synthetic Media Integrity",
           "technical_source_file": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
-          "technical_source_sha256": "5c9f9fdb9a4cfa2ad59fe0418b22aa6ec33628e4837585a9649acc575aaf6d80",
+          "technical_source_sha256": "0a93e02b760910ad7dbb07e72c5490b47ba4f99c5df2e8214c41bb11d9f76044",
           "live_technical_path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "content-authenticity-watermarking-and-synthetic-media-integrity.core",
@@ -9901,13 +9917,17 @@
             "ext_c2pa_specification_2_3_2025",
             "ext_eu_article_50_transparency_guidelines_2026",
             "ext_international_ai_safety_report_2026",
-            "deterministic_capability_compilation"
+            "deterministic_capability_compilation",
+            "ext_c2pa_news_labels_2026",
+            "ext_provenance_enabled_media_2023"
           ],
           "source_note_refs": [
             "sources/source_notes/ext_c2pa_specification_2_3_2025.md",
             "sources/source_notes/ext_eu_article_50_transparency_guidelines_2026.md",
             "sources/source_notes/ext_international_ai_safety_report_2026.md",
-            "sources/source_notes/deterministic_capability_compilation.md"
+            "sources/source_notes/deterministic_capability_compilation.md",
+            "sources/source_notes/ext_c2pa_news_labels_2026.md",
+            "sources/source_notes/ext_provenance_enabled_media_2023.md"
           ],
           "proof_edges": [
             {
@@ -9952,7 +9972,7 @@
           "artifact_refs": [
             {
               "path": "chapters/content-authenticity-watermarking-and-synthetic-media-integrity.qmd",
-              "sha256": "5c9f9fdb9a4cfa2ad59fe0418b22aa6ec33628e4837585a9649acc575aaf6d80"
+              "sha256": "0a93e02b760910ad7dbb07e72c5490b47ba4f99c5df2e8214c41bb11d9f76044"
             },
             {
               "path": "lean/AsiStackProofs/ContentAuthenticityReview.lean",
@@ -11177,7 +11197,7 @@
       "order": 24,
       "title": "Physical Compute, Energy, and Infrastructure",
       "human_reader_source_file": "chapters/unit-24-physical-compute-energy-and-infrastructure.qmd",
-      "human_reader_source_sha256": "b68433c6c10294e6a99a59f30198d724a8e7dc41abc8cca72b35c08e1e2b9e43",
+      "human_reader_source_sha256": "8926a69e5c8bfc8f70c81e6b45b5bcdabe12042a8e1145c931c29a8a2d1afe3d",
       "public_path": "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html",
       "central_question": "What physical and social constraints determine whether an efficient cognitive architecture is actually deployable, resilient, and worth its displaced costs?",
       "conclusion_change": "Deployment studies showing physical constraints and topology do not materially affect accepted useful output, resilience, privacy, or total cost would narrow this layer.",
@@ -11188,7 +11208,7 @@
           "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
           "title": "Personal Compute Hives and Federated Edge Intelligence",
           "technical_source_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-          "technical_source_sha256": "81bc86e40145b73a6693d3efc3c85028cbc5c48711e9f756acc2b9d5828d04b0",
+          "technical_source_sha256": "9a95bf479fe6d8aa65b2ed84f5341bc9ba0d9fe9251c3400e37a452810674835",
           "live_technical_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.html",
           "human_reader_unit_id": "unit-24",
           "core_claim_id": "personal-compute-hives-and-federated-edge-intelligence.core",
@@ -11227,7 +11247,8 @@
             "ext_llama_cpp_memory_mapping_2026",
             "ext_llm_in_flash_2024",
             "ext_powerinfer_2024",
-            "ext_atsinfer_2026"
+            "ext_atsinfer_2026",
+            "ext_who_trains_matters_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/beastbrain.md",
@@ -11261,7 +11282,8 @@
             "sources/source_notes/ext_llama_cpp_memory_mapping_2026.md",
             "sources/source_notes/ext_llm_in_flash_2024.md",
             "sources/source_notes/ext_powerinfer_2024.md",
-            "sources/source_notes/ext_atsinfer_2026.md"
+            "sources/source_notes/ext_atsinfer_2026.md",
+            "sources/source_notes/ext_who_trains_matters_2026.md"
           ],
           "proof_edges": [
             {
@@ -11418,7 +11440,7 @@
           "artifact_refs": [
             {
               "path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-              "sha256": "81bc86e40145b73a6693d3efc3c85028cbc5c48711e9f756acc2b9d5828d04b0"
+              "sha256": "9a95bf479fe6d8aa65b2ed84f5341bc9ba0d9fe9251c3400e37a452810674835"
             }
           ],
           "publication": {

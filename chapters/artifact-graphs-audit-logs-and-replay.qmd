@@ -4,9 +4,11 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-10-11"
+last_updated: "2026-11-19"
 primary_sources:
   - "talos"
+  - "deterministic_capability_compilation"
+  - "platonic_world_model"
   - "viea"
   - "cognitive_compilation"
   - "spinoza_composer"
@@ -24,6 +26,12 @@ primary_sources:
   - "ext_claw_swe_bench_2026"
   - "ext_txfs_2018"
   - "ext_faithfulness_information_flow_2026"
+  - "ext_swe_rebench_v2_2026"
+  - "regret_engine"
+  - "ext_openclaw_agent_runtime_2026"
+  - "assurance_shift_learning"
+  - "adjudicated_persistence"
+  - "ext_llm_42_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -40,12 +48,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-10-11 |
-| Primary source records | eighteen primary records plus supplemental manifest assignments, each at its recorded source-crosswalk boundary |
+| Last updated | 2026-11-19 |
+| Primary source records | 26 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `talos`, `viea`; supporting and historical: sixteen additional assigned comparators and project lineages |
-| Source loading state | source notes: `talos`, `deterministic_capability_compilation`, `platonic_world_model`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `cca_project`, `moecot_manifest_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026`, `regret_engine`, `ext_openclaw_agent_runtime_2026`; raw cache: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot` |
+| Source loading state | source notes: `talos`, `deterministic_capability_compilation`, `platonic_world_model`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`, `moecot`, `ext_w3c_prov_o_2013`, `ext_mlcommons_croissant_1_1_2026`, `ext_in_toto_2019`, `cca_project`, `moecot_manifest_project`, `bugbrain_project`, `corbens_trainer_project`, `corbens_best_model_possible_project`, `ext_claw_swe_bench_2026`, `ext_txfs_2018`, `ext_faithfulness_information_flow_2026`, `ext_swe_rebench_v2_2026`, `regret_engine`, `ext_openclaw_agent_runtime_2026`; raw cache: `talos`, `viea`, `cognitive_compilation`, `spinoza_composer`, `genesiscode`, `cognitive_loop_closure`; connector/recovery: `moecot`. Selected primary passages reviewed for `ext_llm_42_2026`. |
 | Test state | `AsiStackProofs.ArtifactRealityRefinement` exposes twenty-one theorems over arbitrary finite runs: exact thirteen-field identity custody, rejected-event noninterference, batch composition, absorbing admission, and zero support/effect authority. `python3 scripts/validate_artifact_reality_refinement.py` recompiles that exact surface and independently recomputes eight suites: artifact replay 2/6, record reality 1/4, receipt faithfulness 3/6, repository audit 4/5, repository challenge 4/5, live attestation 1/7, randomized attestation 4/8, and epistemic TCB 3/6; it rejects 53/53 mutations across thirty-three routes and seven stages. Fifty-six theorems remain live across `ArtifactRealityRefinement` and `ArtifactGraph`: twenty-one refinement theorems and thirty-five retained consequences; eight weak summaries or projections were retired. No open-world provenance, deployed replay/revocation/attestation, independent reproduction, or support-state claim follows. |
 
 ## Drafting guardrail
@@ -161,6 +169,10 @@ In this hypothetical example, a chapter PDF is rebuilt from the same source dige
 If a later reader challenges a claim tied to the figure, the graph can identify the recorded source, renderer, test, and observation for each edition without rewriting history. Unrecorded causes remain outside that query. Receipt-faithfulness and repository-challenge fixtures exercise this record boundary, but they trust the recorded events and dependencies. The example shows why replay needs lineage and grade; it does not establish that the graph is complete, the receipts are true, the tool is deterministic, or the artifact is correct.
 
 The claim remains at `argument` support. Talos supplies execution evidence and replay pressure; VIEA supplies artifact and feedback ledgers; Cognitive Compilation supplies build-graph and repair-locality pressure; Spinoza Composer supplies state/history preservation patterns; GenesisCode supplies effect logs, provenance hashes, and obligations; Cognitive Loop Closure explains why traces become procedural memory. Those six mappings now point to reviewed local raw-cache passages. MoECOT remains implementation-reference context until its runtime artifacts, ledgers, logs, or benchmark records are imported and inspected.
+
+### Why can a pinned model emit different tokens?
+
+Send the same prompt to the same model with greedy decoding twice. In one run a neighboring request changes the batch shape. A different floating-point reduction order can tip a close token choice and change the rest of the sequence. LLM-42 verifies candidate tokens against a fixed-shape schedule and rolls back divergent work. A claim of exact token replay therefore needs a specified numerical execution environment as well as the model and prompt. To replay a release action, also retain the tool version, input state and observed effect. The paper studies inference on its serving stack. Equal tokens across different hardware or equal external effects require evidence of their own. [LLM-42: Enabling Determinism in LLM Inference with Verified Speculation](https://arxiv.org/html/2601.17768v2)
 
 ### Claim-source mapping status
 
@@ -1166,6 +1178,7 @@ These rows keep Artifact Graphs, Audit Logs, and Replay's manifest assignments v
 | `ext_openclaw_agent_runtime_2026` | Passage-reviewed comparator: OpenClaw Gateway, Agent Runtime, ACP, and Self-Learning Architecture. Supplies a current implementation comparator for serialized per-session execution, session-generation-checked transcript writes, bounded lifecycle/tool audit projection, and the separation between OpenClaw session identity and external ACP harness resume identity. | Official software and documentation review only; metadata-only audit projection is not replay-complete, ACP execution is not wrapped by the OpenClaw sandbox, and no trace, effect, replay, reliability, or security result was reproduced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `assurance_shift_learning` | Passage-reviewed comparator: [When Success Stops Teaching: Assurance-Shift Learning and Governed Residual Boundary Learning for Mature AI Systems](../papers/assurance_shift_learning.html). Adds Boundary Evidence Bundle lineage, append-only lifecycle, supersession, repair descendants, preserved prefixes, counterexamples, and replay provenance. | A complete-looking bundle does not establish source truth, causal adequacy, or receipt faithfulness. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Lineage for persistence transactions](../papers/adjudicated_persistence.html). Adds lineage requirements connecting experience, lesson, disposition, realization, qualification, authority, descendants, invalidation, and residuals. | Used only to specify lineage links among persistence objects and descendants; no replay completeness, causal recovery, or residual closure was demonstrated. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_llm_42_2026` | Passage-reviewed comparator: LLM-42: Enabling Determinism in LLM Inference with Verified Speculation. Bind token replay to the numerical execution schedule and scope of the serving environment. | The inference study does not establish cross-hardware identity or reproduction of external tool effects. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 record/reality result

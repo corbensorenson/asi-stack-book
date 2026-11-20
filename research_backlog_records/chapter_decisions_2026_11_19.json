@@ -1,0 +1,100 @@
+{
+  "backlog_id": "chapter-decisions-2026-11-19",
+  "triage_state": "integrated",
+  "source_or_gap": "Six worked decisions and four shorter comparisons from eleven papers, with reader counterparts.",
+  "access_state": "source_note_available",
+  "source_storage_policy": "repo_public_note_only",
+  "public_safety_state": "public_safe",
+  "deduplication_state": "overlaps_existing_chapter",
+  "assigned_chapters": [
+    "capability-replacement-and-rollback",
+    "executable-specifications-and-lean-proof-envelope",
+    "privacy-data-rights-and-information-flow-governance",
+    "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "routing-heads-and-specialist-cores",
+    "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "moral-uncertainty-and-value-conflict",
+    "artifact-graphs-audit-logs-and-replay",
+    "perception-sensor-fusion-and-observation-trust",
+    "personal-compute-hives-and-federated-edge-intelligence"
+  ],
+  "chapter_action_policy": "Six worked decisions and four shorter comparisons from eleven papers, with reader counterparts.",
+  "chapter_decision_refs": [
+    "new_paper_triage_scenarios/chapter_decisions_2026_11_19.json",
+    "docs/reader_manuscript_review.md",
+    "sources/source_notes/ext_muscle_2024.md",
+    "sources/source_notes/ext_beyond_compilation_2026.md",
+    "sources/source_notes/ext_agentciscope_2026.md",
+    "sources/source_notes/ext_c2pa_news_labels_2026.md",
+    "sources/source_notes/ext_provenance_enabled_media_2023.md",
+    "sources/source_notes/ext_dynamic_llm_routers_2026.md",
+    "sources/source_notes/ext_dataset_licensing_audit_2024.md",
+    "sources/source_notes/ext_pluralistic_moral_gap_2026.md",
+    "sources/source_notes/ext_llm_42_2026.md",
+    "sources/source_notes/ext_conformal_missing_modalities_2026.md",
+    "sources/source_notes/ext_who_trains_matters_2026.md"
+  ],
+  "merge_or_split_policy": "Use existing chapter owners.",
+  "boundary_decision_rationale": "Each study changes the interpretation of an existing decision or measurement.",
+  "source_note_state": "available",
+  "claim_mapping_state": "complete",
+  "passage_review_state": "partial",
+  "external_literature_need": [
+    "Retained leads from the November 18 screen: optimizer-state staleness (2603.16731v2), prefix-normalized policy optimization (2608.01418v1), adaptive targeted dynamic chunking (2605.30080v1), trajectory-based data influence (2608.13515v1), prospective data curation (2611.19698v1), and information disclosure in agent markets (2611.07667v1). Candidate uses and limits are recorded in docs/reader_manuscript_review.md."
+  ],
+  "proof_or_test_backlog": [
+    "Adoption requires a comparison under the intended load, budget, user population or update schedule."
+  ],
+  "evidence_transition_precondition": [
+    "Adoption or stronger capability claims require the appropriate matched comparison and an accepted evidence transition."
+  ],
+  "required_before_drafting": [
+    "Review the primary passage and the comparison limits before using the result."
+  ],
+  "insertion_decision": "update_existing_chapter",
+  "source_refs": [
+    "ext_muscle_2024",
+    "https://machinelearning.apple.com/research/model-compatibility",
+    "ext_beyond_compilation_2026",
+    "https://arxiv.org/html/2606.31002v4",
+    "ext_agentciscope_2026",
+    "https://arxiv.org/html/2610.19158v1",
+    "ext_c2pa_news_labels_2026",
+    "https://christophtrattner.com/pubs/ICWSM2026.pdf",
+    "ext_provenance_enabled_media_2023",
+    "https://arxiv.org/abs/2303.12118v3",
+    "ext_dynamic_llm_routers_2026",
+    "https://arxiv.org/html/2610.02762v1",
+    "ext_dataset_licensing_audit_2024",
+    "https://www.media.mit.edu/publications/a-large-scale-audit-of-dataset-licensing-and-attribution-in-ai/",
+    "ext_pluralistic_moral_gap_2026",
+    "https://aclanthology.org/2026.eacl-long.305/",
+    "ext_llm_42_2026",
+    "https://arxiv.org/html/2601.17768v2",
+    "ext_conformal_missing_modalities_2026",
+    "https://arxiv.org/html/2608.07183v1",
+    "ext_who_trains_matters_2026",
+    "https://arxiv.org/html/2604.26604v1"
+  ],
+  "support_state_effect": "none",
+  "promotion_blockers": [
+    "Results describe the cited setups, including the declared measurement and population."
+  ],
+  "residuals": [
+    "Instance regressions depend on the grading criterion, versions and task.",
+    "The dataset contains mathematics statements. Human audit found some faithful translations among the rejections.",
+    "The tasks use synthesized, explicit disclosure constraints and single-agent environments.",
+    "Credibility and trust ratings on the studied previews do not measure historical caption accuracy.",
+    "The experiment measured reactions to particular media and provenance displays.",
+    "The comparisons concern whole-model inference services with particular rosters, prices and tasks.",
+    "The metadata audit does not decide permissions for an individual use of a particular artifact.",
+    "Judgments reflect a particular online community. Representing a distribution supplies no authority to decide for that community.",
+    "The inference study does not establish cross-hardware identity or reproduction of external tool effects.",
+    "The guarantee assumes exchangeability within the pattern. The study did not measure deployment acquisition drift.",
+    "Inference for the target population needs suitable measured selection factors and positive inclusion probabilities."
+  ],
+  "next_action": "Revisit cited results when their benchmark or manuscript changes.",
+  "non_claims": [
+    "Worked examples are editorial applications. Published results provide contextual evidence."
+  ]
+}
