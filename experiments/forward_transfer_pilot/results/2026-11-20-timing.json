@@ -1,0 +1,264 @@
+{
+  "indexing_cpu_ns": 44000,
+  "discovery_cpu_ns": 22000,
+  "tasks": [
+    {
+      "task": "p01",
+      "arm": "no_library",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 327000,
+      "verification_cpu_ns": 19000
+    },
+    {
+      "task": "p01",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 12000,
+      "search_cpu_ns": 455000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "p01",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 269000,
+      "verification_cpu_ns": 16000
+    },
+    {
+      "task": "p02",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 354000,
+      "verification_cpu_ns": 15000
+    },
+    {
+      "task": "p02",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 284000,
+      "verification_cpu_ns": 18000
+    },
+    {
+      "task": "p02",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 268000,
+      "verification_cpu_ns": 14000
+    },
+    {
+      "task": "p03",
+      "arm": "no_library",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 284000,
+      "verification_cpu_ns": 14000
+    },
+    {
+      "task": "p03",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 9000,
+      "search_cpu_ns": 312000,
+      "verification_cpu_ns": 18000
+    },
+    {
+      "task": "p03",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 266000,
+      "verification_cpu_ns": 15000
+    },
+    {
+      "task": "w01",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 69000,
+      "verification_cpu_ns": 8000
+    },
+    {
+      "task": "w01",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 9000,
+      "search_cpu_ns": 100000,
+      "verification_cpu_ns": 8000
+    },
+    {
+      "task": "w01",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 93000,
+      "verification_cpu_ns": 8000
+    },
+    {
+      "task": "w02",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 263000,
+      "verification_cpu_ns": 10000
+    },
+    {
+      "task": "w02",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 7000,
+      "search_cpu_ns": 320000,
+      "verification_cpu_ns": 13000
+    },
+    {
+      "task": "w02",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 295000,
+      "verification_cpu_ns": 10000
+    },
+    {
+      "task": "w03",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 378000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "w03",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 342000,
+      "verification_cpu_ns": 12000
+    },
+    {
+      "task": "w03",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 360000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m01",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 322000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m01",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 294000,
+      "verification_cpu_ns": 18000
+    },
+    {
+      "task": "m01",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 358000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m02",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 323000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m02",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 9000,
+      "search_cpu_ns": 278000,
+      "verification_cpu_ns": 11000
+    },
+    {
+      "task": "m02",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 346000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m03",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 312000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "m03",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 276000,
+      "verification_cpu_ns": 11000
+    },
+    {
+      "task": "m03",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 2000,
+      "search_cpu_ns": 344000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a01",
+      "arm": "no_library",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 306000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a01",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 358000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a01",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 2000,
+      "search_cpu_ns": 360000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a02",
+      "arm": "no_library",
+      "selection_cpu_ns": 2000,
+      "search_cpu_ns": 311000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a02",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 14000,
+      "search_cpu_ns": 363000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a02",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 350000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a03",
+      "arm": "no_library",
+      "selection_cpu_ns": 0,
+      "search_cpu_ns": 316000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a03",
+      "arm": "ordinary_retrieval",
+      "selection_cpu_ns": 8000,
+      "search_cpu_ns": 361000,
+      "verification_cpu_ns": 0
+    },
+    {
+      "task": "a03",
+      "arm": "reusable_routines",
+      "selection_cpu_ns": 1000,
+      "search_cpu_ns": 345000,
+      "verification_cpu_ns": 0
+    }
+  ],
+  "environment": {
+    "python": "3.12.5",
+    "architecture": "arm64",
+    "system": "Darwin"
+  },
+  "boundary": "Single first-run process CPU diagnostics; logical work counters are in the paired result."
+}

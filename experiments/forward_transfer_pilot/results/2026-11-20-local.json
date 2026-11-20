@@ -1,0 +1,1395 @@
+{
+  "frozen_inputs": {
+    "protocol.md": "7f7955236ff460ea2945b2d5560322111c64bba5c4d4851496e70e8cb9c75201",
+    "history.json": "bb556cbf41523ded1bb9bebfd6db4462d0e402322c2e0e095073a1b222496c57",
+    "heldout.py": "a1cbda7907cbe5de73a2ab70bc41ef47b2a6984f474377b211a6c0296b9d50d7",
+    "run.py": "d8b49d61014d401dfd873e474aa8391349b75e6c3a0a7718589f1a434d6444ee"
+  },
+  "calibration": {
+    "known_good_full_domain": true,
+    "known_wrong_candidate_rejected": true,
+    "unique_later_ids": true,
+    "disjoint_ids_and_lineages": true,
+    "disjoint_full_output_vectors": true
+  },
+  "search_budget": 96,
+  "setup": {
+    "historical_programs_indexed": 8,
+    "adjacent_patterns_examined": 15,
+    "routines": [
+      [
+        "routine-1",
+        [
+          "left",
+          "flip"
+        ]
+      ],
+      [
+        "routine-2",
+        [
+          "rotate",
+          "low"
+        ]
+      ]
+    ]
+  },
+  "totals": {
+    "no_library": {
+      "verified": 5,
+      "budget_exhausted": 7,
+      "counterexamples": 0,
+      "attempts": 1026,
+      "queue_insertions": 7159,
+      "screening_primitive_steps": 18560,
+      "full_checks": 5,
+      "checker_primitive_steps": 224,
+      "retrieval_similarities": 0
+    },
+    "ordinary_retrieval": {
+      "verified": 8,
+      "budget_exhausted": 4,
+      "counterexamples": 0,
+      "attempts": 977,
+      "queue_insertions": 8703,
+      "screening_primitive_steps": 20000,
+      "full_checks": 8,
+      "checker_primitive_steps": 480,
+      "retrieval_similarities": 96
+    },
+    "reusable_routines": {
+      "verified": 5,
+      "budget_exhausted": 7,
+      "counterexamples": 0,
+      "attempts": 1003,
+      "queue_insertions": 8764,
+      "screening_primitive_steps": 18296,
+      "full_checks": 5,
+      "checker_primitive_steps": 224,
+      "retrieval_similarities": 0
+    }
+  },
+  "tasks": [
+    {
+      "family": "retained-parity",
+      "task": "p01",
+      "description": "inverted left parity cyclic footer",
+      "full_reference": [
+        15,
+        11,
+        7,
+        3,
+        14,
+        10,
+        6,
+        2,
+        15,
+        11,
+        7,
+        3,
+        14,
+        10,
+        6,
+        2
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 76,
+          "queue_insertions": 526,
+          "screening_primitive_steps": 1296,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "left",
+            "rotate",
+            "flip"
+          ],
+          "expanded_program": [
+            "left",
+            "rotate",
+            "flip"
+          ],
+          "expanded_length": 3
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h01",
+              [
+                "left",
+                "flip",
+                "odd"
+              ]
+            ],
+            [
+              "h05",
+              [
+                "left",
+                "flip",
+                "high"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 861,
+          "screening_primitive_steps": 2096,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 74,
+          "queue_insertions": 641,
+          "screening_primitive_steps": 1248,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "routine-1",
+            "rotate"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "rotate"
+          ],
+          "expanded_length": 3
+        }
+      }
+    },
+    {
+      "family": "retained-parity",
+      "task": "p02",
+      "description": "masked inverted left field",
+      "full_reference": [
+        7,
+        5,
+        3,
+        1,
+        7,
+        5,
+        3,
+        1,
+        7,
+        5,
+        3,
+        1,
+        7,
+        5,
+        3,
+        1
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 89,
+          "queue_insertions": 617,
+          "screening_primitive_steps": 1608,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "left",
+            "flip",
+            "low"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "low"
+          ],
+          "expanded_length": 3
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h05",
+              [
+                "left",
+                "flip",
+                "high"
+              ]
+            ],
+            [
+              "h01",
+              [
+                "left",
+                "flip",
+                "odd"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 77,
+          "queue_insertions": 683,
+          "screening_primitive_steps": 1464,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h05",
+            "low"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "high",
+            "low"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 75,
+          "queue_insertions": 649,
+          "screening_primitive_steps": 1272,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "routine-1",
+            "low"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "low"
+          ],
+          "expanded_length": 3
+        }
+      }
+    },
+    {
+      "family": "retained-parity",
+      "task": "p03",
+      "description": "left flag from inverted shifted word",
+      "full_reference": [
+        14,
+        10,
+        6,
+        2,
+        14,
+        10,
+        6,
+        2,
+        14,
+        10,
+        6,
+        2,
+        14,
+        10,
+        6,
+        2
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 86,
+          "queue_insertions": 596,
+          "screening_primitive_steps": 1536,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "left",
+            "flip",
+            "left"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "left"
+          ],
+          "expanded_length": 3
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h02",
+              [
+                "left",
+                "flip",
+                "right"
+              ]
+            ],
+            [
+              "h05",
+              [
+                "left",
+                "flip",
+                "high"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 83,
+          "queue_insertions": 737,
+          "screening_primitive_steps": 1688,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h05",
+            "left"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "high",
+            "left"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 72,
+          "queue_insertions": 624,
+          "screening_primitive_steps": 1200,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "routine-1",
+            "left"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "left"
+          ],
+          "expanded_length": 3
+        }
+      }
+    },
+    {
+      "family": "wrapped-coordinate",
+      "task": "w01",
+      "description": "cyclic low field then multiply coordinate",
+      "full_reference": [
+        0,
+        4,
+        8,
+        12,
+        0,
+        4,
+        8,
+        12,
+        2,
+        6,
+        10,
+        14,
+        2,
+        6,
+        10,
+        14
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 23,
+          "queue_insertions": 155,
+          "screening_primitive_steps": 296,
+          "full_checks": 1,
+          "checker_primitive_steps": 32,
+          "counterexamples": [],
+          "operator_handles": [
+            "rotate",
+            "left"
+          ],
+          "expanded_program": [
+            "rotate",
+            "left"
+          ],
+          "expanded_length": 2
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h06",
+              [
+                "rotate",
+                "low",
+                "flip"
+              ]
+            ],
+            [
+              "h03",
+              [
+                "rotate",
+                "low",
+                "odd"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 29,
+          "queue_insertions": 253,
+          "screening_primitive_steps": 472,
+          "full_checks": 1,
+          "checker_primitive_steps": 32,
+          "counterexamples": [],
+          "operator_handles": [
+            "rotate",
+            "left"
+          ],
+          "expanded_program": [
+            "rotate",
+            "left"
+          ],
+          "expanded_length": 2
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 28,
+          "queue_insertions": 238,
+          "screening_primitive_steps": 408,
+          "full_checks": 1,
+          "checker_primitive_steps": 32,
+          "counterexamples": [],
+          "operator_handles": [
+            "rotate",
+            "left"
+          ],
+          "expanded_program": [
+            "rotate",
+            "left"
+          ],
+          "expanded_length": 2
+        }
+      }
+    },
+    {
+      "family": "wrapped-coordinate",
+      "task": "w02",
+      "description": "fold wrapped low field into pair",
+      "full_reference": [
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3,
+        0,
+        1,
+        2,
+        3
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 80,
+          "queue_insertions": 554,
+          "screening_primitive_steps": 1392,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "left",
+            "low",
+            "right"
+          ],
+          "expanded_program": [
+            "left",
+            "low",
+            "right"
+          ],
+          "expanded_length": 3
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h06",
+              [
+                "rotate",
+                "low",
+                "flip"
+              ]
+            ],
+            [
+              "h03",
+              [
+                "rotate",
+                "low",
+                "odd"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 84,
+          "queue_insertions": 746,
+          "screening_primitive_steps": 1720,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h03",
+            "right"
+          ],
+          "expanded_program": [
+            "rotate",
+            "low",
+            "odd",
+            "right"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "verified",
+          "attempts": 82,
+          "queue_insertions": 711,
+          "screening_primitive_steps": 1456,
+          "full_checks": 1,
+          "checker_primitive_steps": 48,
+          "counterexamples": [],
+          "operator_handles": [
+            "routine-2",
+            "right"
+          ],
+          "expanded_program": [
+            "rotate",
+            "low",
+            "right"
+          ],
+          "expanded_length": 3
+        }
+      }
+    },
+    {
+      "family": "wrapped-coordinate",
+      "task": "w03",
+      "description": "wrapped low coordinate with two flags",
+      "full_reference": [
+        9,
+        11,
+        13,
+        15,
+        9,
+        11,
+        13,
+        15,
+        8,
+        10,
+        12,
+        14,
+        8,
+        10,
+        12,
+        14
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h06",
+              [
+                "rotate",
+                "low",
+                "flip"
+              ]
+            ],
+            [
+              "h03",
+              [
+                "rotate",
+                "low",
+                "odd"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 89,
+          "queue_insertions": 791,
+          "screening_primitive_steps": 1880,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h03",
+            "high"
+          ],
+          "expanded_program": [
+            "rotate",
+            "low",
+            "odd",
+            "high"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "mixed-signal",
+      "task": "m01",
+      "description": "transit inverted marker high bit polarity",
+      "full_reference": [
+        6,
+        4,
+        2,
+        0,
+        14,
+        12,
+        10,
+        8,
+        6,
+        4,
+        2,
+        0,
+        14,
+        12,
+        10,
+        8
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h05",
+              [
+                "left",
+                "flip",
+                "high"
+              ]
+            ],
+            [
+              "h04",
+              [
+                "rotate",
+                "low",
+                "high"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 79,
+          "queue_insertions": 701,
+          "screening_primitive_steps": 1528,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h05",
+            "odd"
+          ],
+          "expanded_program": [
+            "left",
+            "flip",
+            "high",
+            "odd"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "mixed-signal",
+      "task": "m02",
+      "description": "packet rotate low marker high bit cyclic",
+      "full_reference": [
+        1,
+        5,
+        9,
+        13,
+        1,
+        5,
+        9,
+        13,
+        3,
+        7,
+        11,
+        15,
+        3,
+        7,
+        11,
+        15
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h04",
+              [
+                "rotate",
+                "low",
+                "high"
+              ]
+            ],
+            [
+              "h03",
+              [
+                "rotate",
+                "low",
+                "odd"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 76,
+          "queue_insertions": 674,
+          "screening_primitive_steps": 1432,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h04",
+            "rotate"
+          ],
+          "expanded_program": [
+            "rotate",
+            "low",
+            "high",
+            "rotate"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "mixed-signal",
+      "task": "m03",
+      "description": "flip high marker right cyclic shift twice",
+      "full_reference": [
+        1,
+        1,
+        5,
+        5,
+        9,
+        9,
+        13,
+        13,
+        0,
+        0,
+        4,
+        4,
+        8,
+        8,
+        12,
+        12
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h08",
+              [
+                "high",
+                "right",
+                "rotate"
+              ]
+            ],
+            [
+              "h04",
+              [
+                "rotate",
+                "low",
+                "high"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "verified",
+          "attempts": 76,
+          "queue_insertions": 674,
+          "screening_primitive_steps": 1432,
+          "full_checks": 1,
+          "checker_primitive_steps": 64,
+          "counterexamples": [],
+          "operator_handles": [
+            "h08",
+            "rotate"
+          ],
+          "expanded_program": [
+            "high",
+            "right",
+            "rotate",
+            "rotate"
+          ],
+          "expanded_length": 4
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "out-of-family",
+      "task": "a01",
+      "description": "square ordinal with modular carry",
+      "full_reference": [
+        0,
+        1,
+        4,
+        9,
+        0,
+        9,
+        4,
+        1,
+        0,
+        1,
+        4,
+        9,
+        0,
+        9,
+        4,
+        1
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h01",
+              [
+                "left",
+                "flip",
+                "odd"
+              ]
+            ],
+            [
+              "h02",
+              [
+                "left",
+                "flip",
+                "right"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 861,
+          "screening_primitive_steps": 2096,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "out-of-family",
+      "task": "a02",
+      "description": "count flags in the word",
+      "full_reference": [
+        0,
+        1,
+        1,
+        2,
+        1,
+        2,
+        2,
+        3,
+        1,
+        2,
+        2,
+        3,
+        2,
+        3,
+        3,
+        4
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h01",
+              [
+                "left",
+                "flip",
+                "odd"
+              ]
+            ],
+            [
+              "h02",
+              [
+                "left",
+                "flip",
+                "right"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 861,
+          "screening_primitive_steps": 2096,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    },
+    {
+      "family": "out-of-family",
+      "task": "a03",
+      "description": "reverse four coordinate bits",
+      "full_reference": [
+        0,
+        8,
+        4,
+        12,
+        2,
+        10,
+        6,
+        14,
+        1,
+        9,
+        5,
+        13,
+        3,
+        11,
+        7,
+        15
+      ],
+      "outcomes": {
+        "no_library": {
+          "library_entries": [],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 673,
+          "screening_primitive_steps": 1776,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "ordinary_retrieval": {
+          "library_entries": [
+            [
+              "h01",
+              [
+                "left",
+                "flip",
+                "odd"
+              ]
+            ],
+            [
+              "h02",
+              [
+                "left",
+                "flip",
+                "right"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 8,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 861,
+          "screening_primitive_steps": 2096,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        },
+        "reusable_routines": {
+          "library_entries": [
+            [
+              "routine-1",
+              [
+                "left",
+                "flip"
+              ]
+            ],
+            [
+              "routine-2",
+              [
+                "rotate",
+                "low"
+              ]
+            ]
+          ],
+          "retrieval_similarities": 0,
+          "terminal": "budget_exhausted",
+          "attempts": 96,
+          "queue_insertions": 843,
+          "screening_primitive_steps": 1816,
+          "full_checks": 0,
+          "checker_primitive_steps": 0,
+          "counterexamples": [],
+          "operator_handles": null,
+          "expanded_program": null,
+          "expanded_length": null
+        }
+      }
+    }
+  ]
+}
