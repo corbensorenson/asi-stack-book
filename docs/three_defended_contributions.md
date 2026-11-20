@@ -49,6 +49,14 @@ controls, results and support ceilings.
 
 ## Governed-cognition interface contracts
 
+Start with the strongest comparison that ran. Scoped Git and the governed
+route accepted the same two authorized repairs in four local paths. Both
+restored the remote files and scoped Git retained the original effect in its
+branch ancestry. Prefer that route for the known repair. Then ask whether a
+separate component improves fault localization or recovery at the same
+authority, observations, and recovery capability. Charge the added handoff
+and coordination work. [Scoped Git study](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective)
+
 The defended target is the join between responsibility, authority, context,
 planning, verification, execution, replacement, and review: typed contracts
 should preserve refusal, narrowing, rollback, and accountable handoff state.
@@ -130,18 +138,12 @@ next consumer.
 
 These ladders describe bounded implementation checks and mechanism ablations.
 They do not establish superiority over competent conventional architectures.
-The contract's `prospective_ordinary_comparison` references the unexecuted
-challenger blueprint for each target. Broader comparative claims require their
-own eligible evaluation; the existing routes and frozen protocol keep their
-recorded identities.
-
-For governed-cognition contracts, the current comparator is the P5-U1 record-only route
-and the simplest baseline is direct execution with the
-ordinary source-link check. The behaviors isolated by the full route are
-admission, recovery, and compensation; the replay does not establish their
-novelty. Because the successful repair was known
-before replay, the current result remains bounded local implementation evidence
-and cannot estimate natural-task utility.
+The contract's `prospective_ordinary_comparison` names the broader
+cross-owner and replacement comparisons still to be run. The scoped Git
+parity result supplies the best tested conventional comparator for the
+known repair. The P5-U1 record-only route remains a mechanism ablation. Direct
+execution with the source-link check remains a calibration control. The
+retrospective design leaves natural-task utility open.
 
 For claim-state discipline, the simplest baseline is **JSON Schema validation**
 without exact claim-identity, competence, and maximum-inference checks. The

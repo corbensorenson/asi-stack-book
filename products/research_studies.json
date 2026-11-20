@@ -21,33 +21,33 @@
       "reader_anchor": "crossed-receiver-comparison",
       "claim": {
         "id": "artifact-graphs-audit-logs-and-replay.core",
-        "scope": "The crossed study tests exact receiver status under named logical-time and deduplication conditions."
+        "scope": "The crossed study tests exact receiver status under named conditions. Its rescore separates whether the workflow held from which effect actually committed."
       },
-      "featured_run": "receiver-crossed"
+      "featured_run": "receiver-effect-audit"
     },
     {
       "id": "verifier-rollout",
       "title": "Which scope earns a verifier rollout?",
       "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
-      "change": "Place the same expiry and invalidation behavior in a conventional cached rollout. Keep the simpler implementation if exact dispositions and total work match. Test a bound handoff only where an additional consumer changes an evidence or authority dependency.",
+      "change": "Test a consumer that crosses an actual ownership or process boundary. Measure both provenance and failure recovery at the same freshness and cost as an ordinary memo.",
       "reader_anchor": "verifier-replacement-replay",
       "claim": {
         "id": "stable-capability-fields.core",
         "scope": "The replay tests scoped admission and fallback decisions for a synthetic verifier replacement."
       },
-      "featured_run": "verifier-paired"
+      "featured_run": "verifier-floor-cache"
     },
     {
       "id": "forward-transfer",
       "title": "Did extracted routines help on later synthesis tasks?",
       "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
-      "change": "Repeat on new task lineages with an independent task author and a measured end-to-end cost budget. Separate indexing cost from repeated search. Change a reuse default only when the effect persists across the relevant resources and task groups.",
+      "change": "Repeat the full scheduler and resource comparison on new task lineages with an independent task author and measured end-to-end cost. Change a reuse default only when the effect persists across the intended schedulers, budgets and tasks.",
       "paper": "papers/forward_transfer_program_synthesis.html",
       "claim": {
         "id": "cognitive-method-transfer-and-qualification.core",
         "scope": "The synthetic studies test verified later task outcomes under fixed schedules, grammars and resource limits."
       },
-      "featured_run": "transfer-factorial",
+      "featured_run": "transfer-scheduler-audit",
       "spotlight": {
         "run": "transfer-pilot",
         "case": "p01",
@@ -81,7 +81,7 @@
       "date": "2026-11-20",
       "method": "Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.",
       "result_summary": "Conventional status closed {ordinary} of {pairs} matched cases. The added read closed {extra_route}. All {additional} extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed {fresh} cases each when both observations were fresh.",
-      "limit": "Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open.",
+      "limit": "Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction.",
       "command": "python3 scripts/compare_crossed_receiver_workflows.py --compact",
       "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json",
       "inputs": [
@@ -102,8 +102,8 @@
     {
       "date": "2026-11-20",
       "method": "Train two small text verifiers on authored cases. Give the conventional and retained-qualification workflows identical candidate results, approvals, monitors, fallback evidence and rules across seven observation profiles and two scopes.",
-      "result_summary": "Public-copy correctness rose from {prior_public} to {candidate_public} of {public_cases}. Protected record-change correctness fell from {prior_protected} to {candidate_protected} of {protected_cases}. Both workflows matched the authored decision at all {pairs} checkpoints. Document inspections went from {ordinary_reads} to {retained_reads}, with {writes} added writes.",
-      "limit": "The rollout arms share policy and evidence. Inspections count scripted access, without index maintenance or human time. Conventional release tooling can retain and invalidate the same decision.",
+      "result_summary": "Public-copy correctness rose from {prior_public} to {candidate_public} of {public_cases}. Protected record-change correctness fell from {prior_protected} to {candidate_protected} of {protected_cases}. Both workflows matched the authored decision at all {pairs} checkpoints. Post-hash document inspections went from {ordinary_reads} to {retained_reads}, with {writes} added writes.",
+      "limit": "Both workflows built and hashed the full evidence bundle before any cache check. The 140 and 80 counts describe subsequent inspections. The replay uses a relative regression rule and misses a shared error on copy-09. The follow-up adds a must-pass floor and conventional memoization.",
       "command": "python3 scripts/compare_verifier_replacements.py",
       "result": "experiments/verifier_replacement_comparison/results/2026-11-20-local.json",
       "inputs": [
@@ -151,8 +151,8 @@
       "date": "2026-11-20",
       "protocol": "experiments/forward_transfer_factorial/protocol.md",
       "method": "Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker.",
-      "result_summary": "With descriptive queries and a proposal cap, query-aware whole programs verified {proposal_whole} of {stratum_cells} cells and routines verified {proposal_routine}. Under the expanded-work cap, the order reversed: {expanded_whole} for whole programs and {expanded_routine} for routines. All arms exhausted their budgets on the adverse family.",
-      "limit": "The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately.",
+      "result_summary": "With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified {proposal_whole} of {stratum_cells} cells and routines verified {proposal_routine}. Under the expanded-work cap, the order reversed: {expanded_whole} for whole programs and {expanded_routine} for routines. All arms exhausted their budgets on the adverse family.",
+      "limit": "The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself.",
       "disposition": "Retain whole-program retrieval as a comparator. In this follow-up, the routine-versus-whole ranking depends on the resource cap. Treat selection and representation as separate decisions, and keep the recommendation conditional on language cues and the full work budget.",
       "command": "python3 experiments/forward_transfer_factorial/run.py",
       "result": "experiments/forward_transfer_factorial/results/2026-11-20-local.json",
@@ -164,6 +164,71 @@
       ],
       "source_commit": "e9ee7d0f7e6f58294de860149d0bbd1c8b5bf0c9",
       "protocol_sha256": "e6f2d97d8f7e55553d1e692d4b55447f753b1314ddfedcf152a5ce6c1bb4100b"
+    },
+    {
+      "id": "receiver-effect-audit",
+      "study": "crossed-receiver",
+      "format": "receiver_effect_audit_v2",
+      "title": "Disposition and observed effect",
+      "date": "2026-11-20",
+      "protocol": "experiments/nov20_instrument_audit/protocol.md",
+      "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+      "method": "Apply separate disposition and exact-effect scoring to the retained journal. Check committed operation, destination and payload against the locked task identity. Exercise seven controls before rescoring.",
+      "result_summary": "All {controls} controls passed, including a held case with one wrong effect. The stricter scorer changed {wrong_holds} historical hold labels. In the {pairs} retained pairs, conventional status still closed {ordinary} and the added read closed {extra}.",
+      "limit": "Retrospective rescore of the same journal and retained local patch flag. The wrong-effect case is an isolated instrument control. Neither status path was tested against an independently operated production service.",
+      "disposition": "Carry disposition and observed effect as distinct fields. Treat a wrong or repeated effect as adverse even when the workflow holds.",
+      "command": "python3 experiments/nov20_instrument_audit/run_receiver.py",
+      "result": "experiments/nov20_instrument_audit/results/receiver-2026-11-20.json",
+      "result_sha256": "b0254b1ab00b2b4a2d9430bd06e951020c690bed6abede6fa725287b11cdfac3",
+      "inputs": [
+        "experiments/nov20_instrument_audit/input_lock.json",
+        "experiments/nov20_instrument_audit/run_receiver.py"
+      ],
+      "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d"
+    },
+    {
+      "id": "verifier-floor-cache",
+      "study": "verifier-rollout",
+      "format": "verifier_policy_audit_v2",
+      "title": "Absolute floor and equal memoization",
+      "date": "2026-11-20",
+      "protocol": "experiments/nov20_instrument_audit/protocol.md",
+      "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+      "method": "Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.",
+      "result_summary": "The shared copy-09 failure routed to a specialist. Both workflows made all {pairs} expected decisions and each read {ordinary_reads} evidence documents. The serialized handoff added {handoff_bytes} bytes. Both caught a missed invalidation on the next index lookup.",
+      "limit": "Counts include fixture document construction, hashing, index work and reads. CPU timings are diagnostic. Positive controls stipulate known-good observations. The direct review uses a separate input in this replay and supplies no claim of external human review or production fault isolation.",
+      "disposition": "Use ordinary memoization at the tested boundary. Keep a serialized handoff only for a consumer that needs it. Treat absent or failed must-pass evidence as a stop reason for the candidate and fallback.",
+      "command": "python3 experiments/nov20_instrument_audit/run_verifier.py",
+      "result": "experiments/nov20_instrument_audit/results/verifier-2026-11-20.json",
+      "result_sha256": "75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75",
+      "inputs": [
+        "experiments/nov20_instrument_audit/input_lock.json",
+        "experiments/nov20_instrument_audit/run_verifier.py",
+        "experiments/nov20_instrument_audit/verifier_profiles.json",
+        "experiments/nov20_instrument_audit/results/verifier-timing-2026-11-20.json"
+      ],
+      "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d"
+    },
+    {
+      "id": "transfer-scheduler-audit",
+      "study": "forward-transfer",
+      "format": "transfer_scheduler_v1",
+      "title": "Scheduler sensitivity at matched caps",
+      "date": "2026-11-20",
+      "protocol": "experiments/nov20_instrument_audit/protocol.md",
+      "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+      "method": "Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.",
+      "result_summary": "In {stratum} descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from {whole_prior} to {whole_reordered} verified cells. Query-aware routines verified {routines_prior} and {routines_reordered}. The earlier ranking depended on the scheduler as well as the cap.",
+      "limit": "The {pairs} matched cells reuse the earlier sixteen authored tasks. The read-only audit observed the focal pattern before this pinned rerun. Neither priority rule establishes a representation advantage on unseen families.",
+      "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+      "command": "python3 experiments/nov20_instrument_audit/run_schedulers.py",
+      "result": "experiments/nov20_instrument_audit/results/schedulers-2026-11-20.json",
+      "result_sha256": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+      "inputs": [
+        "experiments/nov20_instrument_audit/input_lock.json",
+        "experiments/nov20_instrument_audit/run_schedulers.py"
+      ],
+      "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d"
     }
   ],
   "agenda": [
@@ -176,19 +241,19 @@
       "backlog": "research_backlog_records/editorial_depth_sources_2026_11_20.json"
     },
     {
-      "question": "Does a bound qualification help once ordinary rollout also memoizes?",
+      "question": "When does a serialized qualification help across a real consumer boundary?",
       "study": "verifier-rollout",
-      "rival": "Cache invalidation explains the saved inspections. Conventional rollout code can enforce the same evidence identities and expiry.",
-      "test": "Add ordinary memoization, then introduce the same expiry, refresh, and one changed reviewer dependency at a second consumer. Compare wrong dispositions and all reads, writes, and invalidation work.",
-      "decisions": "Use ordinary memoization if it keeps dispositions and costs equivalent. Keep an explicit handoff for the consumer that needs it if the paired case proves a distinct benefit. Hold adoption if either route serves expired evidence.",
+      "rival": "The current equal-memoization replay already matches work and decisions. A transportable record matters only where consumers cannot share one in-process memo and still enforce freshness.",
+      "test": "Run matched second-consumer decisions over a process boundary. Inject a late or missed invalidation and charge the full work of observation, serialization, exchange and recovery.",
+      "decisions": "Keep ordinary memoization when it meets the contract. Admit a handoff only for a consumer with a measured benefit that survives expiry and missed notifications. Hold if either route serves ineligible evidence.",
       "backlog": "research_backlog_records/chapter_decisions_2026_11_19.json"
     },
     {
-      "question": "Does the budget-dependent reuse result transfer to a new task author and a full-work budget?",
+      "question": "Does the measured reuse advantage survive independently authored tasks and different schedulers?",
       "study": "forward-transfer",
-      "rival": "The descriptive queries and fixed queue favor different representations at different caps. An isolated representation advantage may disappear under an independently authored workload and full-cost accounting.",
-      "test": "Keep both selection policies and both representations on fresh independently authored lineages. Price indexing and queue work as well as executed steps. Freeze how families and repeated ordering cells are summarized.",
-      "decisions": "Choose a representation only for the workload and resource regime where its paired advantage persists. Keep both comparators if the ordering depends on budget. Change the earlier interpretation if cost, errors, or new families reverse it.",
+      "rival": "Counting archived routines as one handle moves whole programs earlier in one queue, even when they expand to more work. Descriptive cues and the task family may also drive the result.",
+      "test": "Use independent task authors and compare both representations and query policies at matched library size, scheduler and time budget. Freeze resource caps and the full-cost accounting before opening outcomes.",
+      "decisions": "Choose a representation only where an advantage persists for the intended schedule and resource cap. Keep both comparators where the ranking changes. Record exhaustion, regressions and costs.",
       "backlog": "research_backlog_records/forward_transfer_program_synthesis_2026_08_14.json"
     }
   ],

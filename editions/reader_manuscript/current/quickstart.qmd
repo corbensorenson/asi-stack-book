@@ -287,13 +287,20 @@ python3 scripts/compare_crossed_receiver_workflows.py --compact
 
 [Inspect the first receiver comparison](#fresh-effect-comparison).
 
+The [effect-score follow-up](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-effect-audit)
+checks workflow disposition separately from the effect in the journal. A hold
+after one wrong document effect fails the `safe_hold` check. Seven instrument
+controls pass. The stricter rule leaves all 160 retained paired labels intact.
+
 ## Decide where a new verifier may serve {#verifier-replacement-replay}
 
 The small text verifier in [Unit 9](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd#verifier-replacement-paired-cases)
 is trained on authored examples. Its update gains two correct decisions on
 twelve public-copy cases and loses four on twelve protected record changes.
-A release owner can consider public copy separately. The protected scope
-fails the paired regression floor.
+Both versions miss the public-copy case `copy-09`, which required specialist
+review. The original rules still let public copy proceed in some profiles.
+The follow-up applies a designated must-pass floor and sends that shared
+failure to a specialist.
 
 The offline replay gives both arms the same written rule and observations.
 It evaluates two scopes, seven evidence profiles and two decision points.
@@ -307,7 +314,7 @@ it while those records remain current.
 | Wrong holds | 0 | 0 |
 | Wrong fallback decisions | 0 | 0 |
 | Revision index lookups | 28 | 28 |
-| Logical evidence document inspections | 140 | 80 |
+| Evidence inspections after full-bundle construction and hashing | 140 | 80 |
 | Policy evaluations | 28 | 16 |
 | Additional qualification writes | 0 | 16 |
 
@@ -316,14 +323,15 @@ to a specialist when the prior verifier expires and both defer changes to
 the admission gate that lack independent review. Five decisions permit the
 public-copy rollout. A newly available monitor changes just one decision.
 
-The two arms share the admission rule. This isolates repeated assembly and
-reuse. The inspections are scripted accesses to local records. The replay
-does not measure human effort or physical reads, and it gives no cost for
-maintaining the revision index, training at scale, or operating a deployment.
-An ordinary release system can cache the same qualified decision when it can
-reliably invalidate it. Evidence identities and reviewer qualifications are
-authored record fields. The replay ran locally without an authentication
-service or live deployment.
+The original arms both construct and hash the full evidence bundle before
+that inspection count starts. The count shows reuse after the hash.
+
+The [equal-cache follow-up](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache)
+gives both arms conventional memoization over the same revision index. Both
+make all 66 expected decisions, read 75 documents and recheck once after a
+missed invalidation. A serialized handoff adds 2,367 bytes in this replay.
+Its cost table shows construction, hashing, index reads and invalidation.
+This local fixture leaves human effort and cross-process deployment cost open.
 
 ```bash
 python3 scripts/compare_verifier_replacements.py

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "asi-is-a-stack-not-a-model",
   "chapter_file": "chapters/asi-is-a-stack-not-a-model.qmd",
-  "chapter_sha256": "b6b3aa7845a431284c2fe5b38df3c5c63563a009ff746bf3ea5916d621661c64",
+  "chapter_sha256": "dc258e92d8d1c49ece62596ecbe90abdcddb99209ecdfeb44884e135f79a6b86",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-01-stack-thesis",
   "review_state": "digest_bound_editorial_pass",
@@ -30,12 +30,12 @@
     "maximum_inference": "The illustrative trace demonstrates the intended separation of capability, plan, authority, effect, and receipt projections; it is not empirical evidence that the ASI Stack outperforms a monolith."
   },
   "counterexample_or_simpler_baseline": "A competent monolithic agent or conventional orchestrator with scoped tools, current grants, target observation, review and recovery may preserve the accepted relations at lower burden. The single-call shell route is only a thin control unless its declared task and sandbox make it adequate.",
-  "readable_claim": "The stack earns its name only when it gives each transition a separate owner and a visible denial path.",
+  "readable_claim": "A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs.",
   "normative_rule": "A new mechanism belongs in the stack only when it lowers confusion at a boundary: it clarifies who owns a decision, what artifact crosses the interface, which authority is available, which evidence state is possible, and what rollback path exists if the mechanism fails.",
   "formal_binding": {
     "claim_id": "asi-is-a-stack-not-a-model.core",
     "support_state": "argument",
-    "anchor": "governed stack of cooperating layers"
+    "anchor": "preserve authority, verification, effect observation, and recovery across consequential handoffs"
   },
   "claim_atom_and_source_links": [
     "asi-is-a-stack-not-a-model.core",

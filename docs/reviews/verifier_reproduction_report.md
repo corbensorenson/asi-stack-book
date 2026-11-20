@@ -1,9 +1,11 @@
 # Independent verifier reproduction report
 
-Choose one check and identify the exact run. The current replay is
+Choose one check and identify the exact run. The standalone ZIP replays
 `verifier-paired` at evidence commit
 `21a8b4eab72edd9593f5de9c982fecaf51f639d8`. Record the result digest and,
 when used, the standalone ZIP digest displayed on the study page.
+Use the `verifier-floor-cache` run for the absolute floor, provenance
+controls and equal-memoization comparison.
 
 | Check | What to send |
 |---|---|

@@ -2,6 +2,30 @@
 
 ## Current independent manuscript review
 
+### November 20 instrument and teaching corrections
+
+- The verifier follow-up requires designated checks for the candidate and
+  fallback. Both trained variants missed `copy-09`, so its scope routes to
+  a specialist. Shared dashboard agreement supplies one observation path.
+  A separate fixture check can dispute it. At equal memoization both arms
+  make the same 66 decisions and read 75 evidence documents. Both detect
+  the missed invalidation. The serialized handoff adds 2,367 bytes.
+  [Verifier follow-up](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache)
+- The receiver score now accounts for exact, wrong and repeated effects
+  separately from workflow disposition. All seven instrument controls pass.
+  The retained journal changes zero safe-hold labels across the 160 pairs.
+  [Receiver rescore](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-effect-audit)
+- The scheduler rerun reproduces all archived conditions. Expanded-length
+  priority takes query-aware whole programs from 28 to 8 verified cells under
+  the descriptive proposal cap. Routines still verify 20. This is a
+  sensitivity check on existing five-bit tasks.
+  [Scheduler comparison](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit)
+- Unit 1 and the technical thesis now lead with parity on the known repair
+  and specify a matched decomposition comparison. Units 7 and 8 follow a
+  provisional hold through dispatch silence and a missed ride without a
+  replacement. The scenario assigns a duty coordinator before the cutoff
+  and a remedy officer afterward.
+
 ### November 20 first-sitting, replacement, and continuity follow-up
 
 The [first sitting](../editions/reader_manuscript/current/quickstart.qmd#first-sitting)

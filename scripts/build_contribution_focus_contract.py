@@ -31,7 +31,7 @@ CONTRIBUTIONS: dict[str, dict[str, Any]] = {
         "legacy_subtracks": ["governed-self-improvement-boundary"],
         "exit_ladder": {
             "bounded_claim_slice": "For the tracked Human Reader source-link repair, full governed admission blocks the declared out-of-scope mutation before effect and reaches the expected residual-free terminal state after a partial-effect crash or compensable external Git effect.",
-            "closest_implemented_comparator": "The P5-U1 record-only route captures intent, partial effects, external effects, and outcomes without adding admission, recovery, or compensation policy.",
+            "closest_implemented_comparator": "The matched scoped Git workflow checks the grant and rendered configuration, recovers interrupted work, and uses revert. It matches observed authorized outcomes in the four local repair paths. The record-only route is a mechanism ablation.",
             "simplest_credible_baseline": "The P5-U1 direct route applies the repair and runs its ordinary two-file source-link check without governance records.",
             "positive_and_instrument_controls": "All three routes must complete the happy path; twelve state checks and seven validator-level mutations must detect route loss, false state, authority, compensation, classification, and support-record corruption.",
             "distinctive_mechanism_ablation": "Remove admission and governed recovery while preserving record capture, yielding the record-only route on the same four paths.",
@@ -97,7 +97,7 @@ CONTRIBUTIONS: dict[str, dict[str, Any]] = {
         },
         "exit_ladder": {
             "bounded_claim_slice": "For the tracked P5-U1 external-effect and crash paths, terminal disposition must agree with independently read Git state, unresolved local or remote effects must remain counted as residuals, and compensation may close branch content only while preserving effect history.",
-            "closest_implemented_comparator": "The P5-U1 record-only route records the executor's partial and remote effects but leaves one residual open in each affected path.",
+            "closest_implemented_comparator": "The crossed conventional status route closes 128 of 160 local cases and matches the added read when both have fresh evidence. The record-only route remains a mechanism ablation.",
             "simplest_credible_baseline": "The direct route relies on the ordinary source-link test and process result without a separate effect receipt or residual owner.",
             "positive_and_instrument_controls": "The happy path must reconcile as useful on every route; remote-content, retained-history, compensation-closure, residual-count, and false-record mutations must be observable and rejecting.",
             "distinctive_mechanism_ablation": "Remove independent terminal-state reads and residual conservation while retaining the executor's outcome record.",

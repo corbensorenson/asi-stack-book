@@ -428,7 +428,7 @@ burden.
 
 Nearest overlapping owners: [Integrated Reference Architecture](../chapters/integrated-reference-architecture.qmd).
 
-Core claim: Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
+Core claim: A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs. Separate components should justify their coordination cost by improving those outcomes under matched controls.
 
 Source loading queue:
 

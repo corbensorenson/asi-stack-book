@@ -74,10 +74,17 @@ was allowed to stand in for authority, a plan for an effect, and a successful
 receipt for the world being in the requested state. The residual is a stale
 permission plus an unverified destructive effect.
 
-The point is not that a monolith would necessarily do better. A single system
-with the same stale credential could make the same mistake while making the
-boundary harder to locate. The stack earns its name only when it gives each
-transition a separate owner and a visible denial path.
+A matched repair gives us a useful starting point. Scoped Git change control
+and the more elaborate workflow accepted the same two authorized repairs and
+restored the remote file state across four local paths. Ordinary Git retained
+the original effect in branch ancestry. For this known repair, the simpler
+workflow supplied the needed controls. [Scoped Git study](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective)
+
+A single service and several cooperating services can each check current
+authority, observe effects, and recover. Compare them at the same authority,
+evidence access, and recovery capability. Then measure whether separation
+improves failure isolation, time to find an owner, or the safety of a
+replacement enough to repay coordination and recovery costs.
 
 ### Worked trace: three projections, one denied effect
 
@@ -102,7 +109,7 @@ Advanced AI systems that plan, remember, verify, act, route work, compress repre
 
 The first boundary is conceptual. An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress. Those are components and measurements. The architecture is the set of contracts that decides how intent becomes work, how memory becomes context, how reasoning becomes claims, how claims become authority, how authority becomes execution, and how execution becomes evidence for future change.
 
-The unit of analysis has to be fixed before the book starts adding layers. The unit is not "the model." The unit is a governed stack of cooperating layers. Each layer has a responsibility, an interface, a durable artifact, an invariant, a failure mode, and a promotion rule. Later layers can add detail only because the stack frame says what it means for those details to compose.
+The unit of analysis is the system that can produce an effect. A logical responsibility has an owner and an interface. A single implementation can keep several such responsibilities inspectable. A split requires an additional test: check what it improves and what it costs after an interrupted handoff.
 
 That frame also gives the reader a way to judge the rest of the book. A new mechanism belongs in the stack only when it lowers confusion at a boundary: it clarifies who owns a decision, what artifact crosses the interface, which authority is available, which evidence state is possible, and what rollback path exists if the mechanism fails. If it cannot answer those questions, it may still be an idea, but it is not yet an architectural layer.
 
@@ -129,7 +136,7 @@ External positioning: the opening stack frame is still a synthetic orientation c
 
 ## Core Claim
 
-[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.
+[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs. Separate components should justify their coordination cost by improving those outcomes under matched controls.
 
 The claim remains at `argument` support. VIEA supports the intent-to-execution spine, BeastBrain supports the local stateful stack vocabulary, Aletheia supports the trusted-output and verification boundary, Talos supports the labor/execution layer, SCF supports governed replacement, and MoECOT remains implementation-reference context rather than reproduced evidence. CAIS grounds service-centered composition and R&D automation, while the other external architecture sources ground surrounding vocabulary for modular systems, LLM agents, cognitive architectures, and layered control. None reproduces or validates the ASI Stack.
 

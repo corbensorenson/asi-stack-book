@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4274,
+    "candidate_count": 4277,
     "review_state_counts": {
-      "duplicate_of_atom": 2073,
+      "duplicate_of_atom": 2075,
       "editorial_or_question": 62,
       "historical_or_source_report": 373,
       "material_atom": 3,
-      "nonmaterial_explanation": 1763
+      "nonmaterial_explanation": 1764
     }
   },
   "candidates": [
@@ -90,9 +90,28 @@
       "target_atom_id": "asi-is-a-stack-not-a-model.mechanism.001"
     },
     {
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.58b827414a30",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:86",
+      "sentence": "improves failure isolation, time to find an owner, or the safety of a",
+      "cues": [
+        "improves"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Scanner fragment of the test question about fault localization and coordination cost.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.19fa85de1ffc",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:101",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:108",
       "sentence": "Advanced AI systems that plan, remember, verify, act, route work, compress representations, and improve under governance need one architecture frame.",
       "cues": [
         "improve"
@@ -111,7 +130,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.839c2c136f89",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:103",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:110",
       "sentence": "An ASI system should not be described only by the model that generates tokens, the agent loop that calls tools, or the benchmark score that reports progress.",
       "cues": [
         "should"
@@ -128,9 +147,29 @@
       "target_atom_id": "asi-is-a-stack-not-a-model.core"
     },
     {
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.49b0ebaca56e",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:112",
+      "sentence": "A split requires an additional test: check what it improves and what it costs after an interrupted handoff.",
+      "cues": [
+        "improves",
+        "requires"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Applies the scoped cost test already stated in the opening claim.",
+      "target_atom_id": "asi-is-a-stack-not-a-model.core"
+    },
+    {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.de4130a3c23c",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:107",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:114",
       "sentence": "If it cannot answer those questions, it may still be an idea, but it is not yet an architectural layer.",
       "cues": [
         "cannot"
@@ -149,7 +188,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.9233fb8b203a",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:109",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:116",
       "sentence": "Later chapters should not inflate ordinary reuse of the pattern into separate novelty claims; they should state their local delta, such as a new artifact type, invariant, failure mode, proof/evidence lane, or implementation horizon.",
       "cues": [
         "should"
@@ -168,7 +207,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.3258c1d971d9",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:115",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:122",
       "sentence": "A retrieval system can surface a source without proving that the source is current, permitted, or sufficient for the task.",
       "cues": [
         "sufficient"
@@ -187,7 +226,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.21db0e0db80d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:115",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:122",
       "sentence": "A benchmark can improve while hiding new failure cases.",
       "cues": [
         "improve"
@@ -206,7 +245,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.c47a09fc55aa",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:115",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:122",
       "sentence": "Adding more parameters may improve a component, but it does not by itself record what changed, who approved it, what evidence exists, or what should happen if the change fails.",
       "cues": [
         "improve",
@@ -226,7 +265,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.073c75d0dc10",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:117",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:124",
       "sentence": "It should not silently become the constitution, the memory authority, the deployment authority, the approval body, and the evidence registry at the same time.",
       "cues": [
         "should"
@@ -245,7 +284,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.2cb1eb1cb869",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:119",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:126",
       "sentence": "A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module.",
       "cues": [
         "required"
@@ -264,7 +303,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.91d0b0ed754d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:128",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:135",
       "sentence": "MRKL Systems (`ext_mrkl_systems_2022`) show model-plus-expert-module decomposition, the LLM-agent survey (`ext_llm_agents_survey_2023`) organizes language-model agents around memory, planning, and action components, the Standard Model of the Mind (`ext_standard_model_mind_2017`) supplies cognitive-architecture lineage, and Brooks' layered robot-control work (`ext_subsumption_architecture_1986`) gives a historical layered-control comparator.",
       "cues": [
         "show"
@@ -281,10 +320,10 @@
       "target_atom_id": null
     },
     {
-      "candidate_id": "asi-is-a-stack-not-a-model.prose.4f86f4293582",
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.c9978fbd02c7",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:132",
-      "sentence": "[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:139",
+      "sentence": "[asi-is-a-stack-not-a-model.core, label: Design rationale, support: argument] A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs.",
       "cues": [
         "should"
       ],
@@ -296,13 +335,32 @@
         "editorial_or_question",
         "historical_or_source_report"
       ],
-      "disposition_rationale": "Literal rendered core-claim marker.",
+      "disposition_rationale": "Restates the opening claim support marker and first clause.",
+      "target_atom_id": "asi-is-a-stack-not-a-model.core"
+    },
+    {
+      "candidate_id": "asi-is-a-stack-not-a-model.prose.91badced9f2a",
+      "chapter_id": "asi-is-a-stack-not-a-model",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:139",
+      "sentence": "Separate components should justify their coordination cost by improving those outcomes under matched controls.",
+      "cues": [
+        "should"
+      ],
+      "review_state": "duplicate_of_atom",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Restates the matched-control clause of the opening claim.",
       "target_atom_id": "asi-is-a-stack-not-a-model.core"
     },
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.c8cba9daf425",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:138",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:145",
       "sentence": "those relations; the proposed decomposition must earn its additional cost.",
       "cues": [
         "must"
@@ -321,7 +379,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b0d9962f1a90",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:164",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:171",
       "sentence": "does not inherit qualification; and a self-improvement proposal cannot confer",
       "cues": [
         "cannot"
@@ -340,7 +398,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.e6cfa5ba0e8f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:181",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:188",
       "sentence": "designers what must remain separate, and the machine projection tells an",
       "cues": [
         "must"
@@ -359,7 +417,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.57bbfab11396",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:182",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:189",
       "sentence": "implementation what record must cross a boundary.",
       "cues": [
         "must"
@@ -378,7 +436,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.c90dad94ad0e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:196",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:203",
       "sentence": "This prevents a long context window or a",
       "cues": [
         "prevents"
@@ -397,7 +455,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.107cedc648b5",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:207",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:214",
       "sentence": "able to contradict them, and unresolved discrepancies must survive as owned",
       "cues": [
         "must"
@@ -416,7 +474,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.9351e9725aaa",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:222",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:229",
       "sentence": "own code, objectives, evaluators, or constitution, but it cannot be the sole",
       "cues": [
         "cannot"
@@ -435,7 +493,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.fb6809f3ad10",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:239",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:246",
       "sentence": "tooling, provenance logs, and release engineering may provide the necessary",
       "cues": [
         "necessary"
@@ -454,7 +512,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.579812d2d680",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:241",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:248",
       "sentence": "produce excellent records while failing to improve the external outcomes that",
       "cues": [
         "improve"
@@ -473,7 +531,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.3a7c778eac23",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:244",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:251",
       "sentence": "independent failure protection; duplicated checks may increase operator work",
       "cues": [
         "increase"
@@ -492,7 +550,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.caa2d349818c",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:251",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:258",
       "sentence": "would measure useful completion, unsafe or unauthorized effect, false refusal,",
       "cues": [
         "measure"
@@ -511,7 +569,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.d3c54fc1895e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:257",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:264",
       "sentence": "Any boundary should be narrowed wherever a simpler design performs equally",
       "cues": [
         "should"
@@ -530,7 +588,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.8a6c2760ece2",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:263",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:270",
       "sentence": "layers; each layer must own a distinct failure family or measurable interface",
       "cues": [
         "must"
@@ -549,7 +607,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.35dd3c20d72f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:267",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:274",
       "sentence": "natural traces in which explicit boundaries prevent or recover failures that",
       "cues": [
         "prevent"
@@ -568,7 +626,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.08baaf0ce833",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:315",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:322",
       "sentence": "it does not require a service for every box.",
       "cues": [
         "require"
@@ -587,7 +645,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.133525fbc357",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:318",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:325",
       "sentence": "Component changes still require current authority,",
       "cues": [
         "require"
@@ -606,7 +664,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.267111fe697d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:319",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:326",
       "sentence": "qualification, and recovery appropriate to the accepted task; a diagram cannot",
       "cues": [
         "cannot"
@@ -625,7 +683,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.7cdc971f6060",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:326",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:333",
       "sentence": "The artifact is a Layer Boundary Record, and a chapter is mature only when it can answer the same recurring questions: what lifecycle state is this layer in, who owns the boundary, which chapters currently carry it, what responsibility does the layer own, what artifact does it emit, how does handoff work, what authority does it have and lack, what invariant must survive implementation changes, what new-source integration decision applies, and what evidence would justify promotion, replacement, or rollback.",
       "cues": [
         "must"
@@ -644,7 +702,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.4ac94161694f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:330",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:337",
       "sentence": "The stack around it decides when those operations count as evidence, when they require verification, when they are only suggestions, and when they may trigger external action.",
       "cues": [
         "require"
@@ -663,7 +721,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.3230238081c0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:332",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:339",
       "sentence": "Render and validation gates prevent the public book from drifting away from the repository that defines it.",
       "cues": [
         "prevent"
@@ -682,7 +740,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f2585203b08b",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:347",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:354",
       "sentence": "Prose can improve, chapters can move, and implementations can be replaced, but the contract must continue to say what the layer owns and what it is not allowed to claim.",
       "cues": [
         "improve",
@@ -702,7 +760,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.55051a33d86d",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:377",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:384",
       "sentence": "If an adjacent layer cannot identify its input artifact or authority ceiling, the right behavior is not improvisation.",
       "cues": [
         "cannot"
@@ -721,7 +779,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.42f477c812af",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:379",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:386",
       "sentence": "A new chapter can be added when it introduces a genuinely new contract, invariant, or artifact type; otherwise it should merge into the layer that already owns the boundary.",
       "cues": [
         "should"
@@ -740,7 +798,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.8a22bd4fd15f",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:381",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:388",
       "sentence": "The book should therefore be edited like a stack, not like a table of contents.",
       "cues": [
         "should"
@@ -759,7 +817,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b95183464fc6",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:381",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:388",
       "sentence": "If it changes a contract, the outline, chapter, schema, proof target, and crosswalk should move together.",
       "cues": [
         "should"
@@ -778,7 +836,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.941a90f851e0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:387",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:394",
       "sentence": "approves an authority level no higher than the caller ceiling, requires a",
       "cues": [
         "requires"
@@ -797,7 +855,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.e83ad4cc8162",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:390",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:397",
       "sentence": "Lean now proves that every accepted finite run preserves",
       "cues": [
         "proves"
@@ -816,7 +874,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.bd8fb9e6de51",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:441",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:448",
       "sentence": "Scale-first systems can improve component capability, but model weights do not carry authority ceilings, source adequacy, rollback ownership, or support-state transitions.",
       "cues": [
         "improve",
@@ -836,7 +894,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.30bd19f7ccad",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:441",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:448",
       "sentence": "Compound and modular systems such as MRKL-style architectures show that model-plus-expert decomposition is real architecture vocabulary, but decomposition alone does not create claim ledgers, replacement transactions, or recursive-improvement boundaries.",
       "cues": [
         "show"
@@ -855,7 +913,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.1819a04274c3",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:443",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:450",
       "sentence": "Cognitive-architecture and layered-control lineages become useful comparators, but the ASI Stack adds a stricter obligation: every layer must name its responsibility, interface artifact, invariant, failure mode, promotion rule, non-claims, and rollback path before it can be treated as part of the governed machine.",
       "cues": [
         "must"
@@ -874,7 +932,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.226f59300f5e",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:445",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:452",
       "sentence": "Planning, memory, reasoning, execution, routing, compression, and evidence should exchange typed artifacts rather than hidden state.",
       "cues": [
         "should"
@@ -893,7 +951,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.369689b7d708",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:447",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:454",
       "sentence": "It stays at `argument` support until layer-boundary records, source-to-layer reviews, handoff-denial fixtures, traceability audits, and governed replacement examples show that stack separation survives real integration pressure.",
       "cues": [
         "show"
@@ -912,7 +970,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.50ffb9d25687",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:469",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:476",
       "sentence": "Recorded identities, artifact digests, approvals, and receipts remain trusted inputs, and the result does not prove authentic authority, complete effects, distributed execution, architectural necessity or superiority, whole-system safety, capability, source interpretation, support-state promotion, reproduction, transfer, or deployed layer enforcement.",
       "cues": [
         "prove",
@@ -932,7 +990,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.0dbff04c3469",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:502",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:509",
       "sentence": "That stance also changes how capability should be measured.",
       "cues": [
         "should"
@@ -951,7 +1009,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f4b2bd909f75",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:502",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:509",
       "sentence": "The efficiency hypothesis follows naturally: capability should grow by routing, reusing, compressing, and verifying cognition at the right boundary, not by spending maximum cognition everywhere and hoping governance can be added afterward.",
       "cues": [
         "should"
@@ -970,7 +1028,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.f25144b16387",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:540",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:547",
       "sentence": "If explicit boundaries cannot route and reuse cognition more",
       "cues": [
         "cannot"
@@ -989,7 +1047,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.5d005b8d7b83",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:542",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:549",
       "sentence": "verification, repair, and governance cost, the stack should become smaller.",
       "cues": [
         "should"
@@ -1008,7 +1066,7 @@
     {
       "candidate_id": "asi-is-a-stack-not-a-model.prose.b81edb0329f0",
       "chapter_id": "asi-is-a-stack-not-a-model",
-      "source": "chapters/asi-is-a-stack-not-a-model.qmd:553",
+      "source": "chapters/asi-is-a-stack-not-a-model.qmd:560",
       "sentence": "blind spot; it cannot prove that no blind spot exists.",
       "cues": [
         "cannot",

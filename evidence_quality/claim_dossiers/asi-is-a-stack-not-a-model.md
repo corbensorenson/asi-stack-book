@@ -10,7 +10,7 @@ This dossier is generated from the manifest and review overlay. Inclusion is not
 
 | Atom | Role | Type | Review | Proposition |
 |---|---|---|---|---|
-| `asi-is-a-stack-not-a-model.core` | `core` | `composite` | `semantically_reviewed` | Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model. |
+| `asi-is-a-stack-not-a-model.core` | `core` | `composite` | `semantically_reviewed` | A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs. Separate components should justify their coordination cost by improving those outcomes under matched controls. |
 | `asi-is-a-stack-not-a-model.problem.001` | `problem` | `normative` | `semantically_reviewed` | The book needs a single architecture frame for advanced AI systems that must plan, remember, verify, act, route work, compress representations, and improve under governance. |
 | `asi-is-a-stack-not-a-model.insufficiency.001` | `insufficiency` | `source-synthesis` | `semantically_reviewed` | A larger model, a prompt wrapper, or an agent loop does not by itself define authority boundaries, memory discipline, evidence ledgers, tool permissions, or safe replacement rules. |
 | `asi-is-a-stack-not-a-model.minimum.001` | `minimum` | `executable` | `semantically_reviewed` | The smallest honest implementation boundary for ASI Is a Stack, Not a Model is: A stack map, layer-boundary table, source crosswalk, and claim ledger that make the architecture navigable before prose is complete. |

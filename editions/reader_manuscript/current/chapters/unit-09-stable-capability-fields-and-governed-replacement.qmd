@@ -172,9 +172,11 @@ record-change cases, it falls from 12 to 8. All four losses send drafts that
 needed specialist review to ordinary review. These are authored test cases.
 
 Keep the two scopes in the qualification record. The next owner needs the
-candidate and prior versions, the affected consumer, and the four changed
-case decisions. The public-copy result supports considering a bounded
-rollout. The record-change result fails the protected regression floor.
+versions, the affected consumer, and the protected cases each version fails.
+Both verifiers missed `copy-09`, a case that required specialist review.
+Hold the public-copy candidate despite its higher total. The prior version
+missed the same check, so send that scope to a specialist. The candidate
+also fails the record-change floor.
 [Choose a route in Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#verifier-replacement-route)
 or [inspect the replay](../quickstart.qmd#verifier-replacement-replay).
 

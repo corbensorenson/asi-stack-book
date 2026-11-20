@@ -103,6 +103,21 @@ def metrics(format_id: str, result: dict) -> dict:
             "cells": len(result["cases"]), "unique_tasks": result["unique_task_count"],
             "adverse_verified": sum(row["verified"] for row in result["by_family"]["adverse-mixing"]["arms"].values()),
         }
+    if format_id == "receiver_effect_audit_v2":
+        old, new = (result["totals"][arm] for arm in ("conventional_status", "additional_observation"))
+        return {"controls": len(result["controls"]), "pairs": len(result["pairs"]),
+                "ordinary": old["accepted_useful"], "extra": new["accepted_useful"],
+                "wrong_holds": old["changed_safe_holds"] + new["changed_safe_holds"]}
+    if format_id == "verifier_policy_audit_v2":
+        ordinary, retained = (result["totals"][arm] for arm in ("conventional_memoization", "retained_qualification"))
+        return {"pairs": result["paired_checkpoints"], "ordinary_wrong": ordinary["wrong_routes"],
+                "retained_wrong": retained["wrong_routes"], "ordinary_reads": ordinary["document_reads"],
+                "retained_reads": retained["document_reads"], "handoff_bytes": retained["handoff_bytes_serialized"]}
+    if format_id == "transfer_scheduler_v1":
+        arms = result["summary"]["proposals/descriptive"]["arms"]
+        return {"pairs": len(result["cases"]), "stratum": result["summary"]["proposals/descriptive"]["cells"],
+                "whole_prior": arms["aware_whole__handle-depth"], "whole_reordered": arms["aware_whole__expanded-length"],
+                "routines_prior": arms["aware_routine__handle-depth"], "routines_reordered": arms["aware_routine__expanded-length"]}
     raise ValueError(f"unknown research evidence format {format_id}")
 
 

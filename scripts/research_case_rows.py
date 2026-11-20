@@ -62,6 +62,10 @@ def crossed_receiver(result):
             steps = [action["action"] for action in receipt["actions"]]
             signature = (receipt["disposition"], receipt["effect_commits"], receipt["false_closure"], receipt["wrongful_block"])
             outcome = f'{receipt["disposition"]}, {receipt["effect_commits"]} committed effects'
+            if "observed_effect" in receipt:
+                observed = receipt["observed_effect"]
+                signature += (observed, receipt["safe_hold"])
+                outcome = f'{receipt["disposition"]} · {observed.replace("_", " ")}'
             if receipt["false_closure"] or receipt["wrongful_block"]:
                 outcome += f', {int(receipt["false_closure"])} false closures, {int(receipt["wrongful_block"])} wrong blocks'
             arms[route] = arm(outcome, f'{steps.count("retry")} retries, {steps.count("receive_read")} additional reads', signature)
@@ -85,6 +89,25 @@ def verifier_rollout(result):
                 arms[route] = arm(f'{receipt["decision"]} → {receipt["route"]}', work,
                                   (receipt["decision"], receipt["route"]))
             yield case(name, condition, arms)
+
+
+def verifier_policy_audit(result):
+    for profile in result["cases"]:
+        names = tuple(profile["arms"])
+        for decisions in zip(*(profile["arms"][name]["decisions"] for name in names), strict=True):
+            head = decisions[0]
+            identity = (head["tick"], head["consumer"], head["expected"], head["revision"])
+            if any((d["tick"], d["consumer"], d["expected"], d["revision"]) != identity for d in decisions):
+                raise ValueError("cache comparison lost its matched input")
+            label = f'{profile["id"]} · tick {head["tick"]} · {head["consumer"]} · expected {head["expected"]}'
+            arms = {}
+            for name, row in zip(names, decisions, strict=True):
+                cost = profile["arms"][name]["work"]
+                work = f'Profile total: {cost["document_reads"]} document reads, {cost["policy_evaluations"]} policy evaluations'
+                if row["reasons"]:
+                    work += " · " + ", ".join(row["reasons"])
+                arms[name] = arm(row["route"], work, row["route"])
+            yield case(label, label, arms)
 
 
 def synthesis_case_records(result, factorial):
@@ -119,12 +142,14 @@ def synthesis_case_records(result, factorial):
 def rows_for(format_id, result):
     if format_id == "scoped_git_v1":
         rows = scoped_git(result)
-    elif format_id == "receiver_crossed_v1":
+    elif format_id in {"receiver_crossed_v1", "receiver_effect_audit_v2"}:
         rows = crossed_receiver(result)
     elif format_id == "verifier_rollout_v1":
         rows = verifier_rollout(result)
-    elif format_id in {"transfer_pilot_v1", "transfer_factorial_v1"}:
-        rows = synthesis_case_records(result, format_id == "transfer_factorial_v1")
+    elif format_id == "verifier_policy_audit_v2":
+        rows = verifier_policy_audit(result)
+    elif format_id in {"transfer_pilot_v1", "transfer_factorial_v1", "transfer_scheduler_v1"}:
+        rows = synthesis_case_records(result, format_id != "transfer_pilot_v1")
     else:
         raise ValueError(f"unsupported research case format: {format_id}")
     ordered = sorted(rows, key=lambda row: (not row["disagrees"], row["id"]))

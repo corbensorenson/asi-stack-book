@@ -26,12 +26,11 @@ chance to decide where that boundary falls.
 ### Authorize only the version the monitor can observe {#verifier-replacement-serving}
 
 The [route from Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#verifier-replacement-route)
-names the text verifier, public-copy scope, and qualified fallback. The release
-owner must also see a current approval and a monitor for that exact version
-and scope. A healthy monitor for a different version leaves the rollout on
-hold. In the offline recovery case, publishing the matching monitor observation
-at the next decision lets public copy proceed. Record changes still fail their
-regression floor.
+names the public-copy specialist, the prior record-change verifier, and the
+candidate's mandatory failures. The release owner also needs current approval
+and a monitor for the exact version and scope. A fresh monitor for the same
+candidate can restore monitoring eligibility. The candidate still needs
+evidence that it meets the must-pass floor before it may serve.
 
 Issue a scoped disposition naming the observed monitor, the stop condition,
 and the next eligible route. Loss of the current monitor stops the candidate.

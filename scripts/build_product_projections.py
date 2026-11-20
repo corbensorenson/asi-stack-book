@@ -521,7 +521,14 @@ ARM_LABELS = {
     "ordinary_retrieval": "Ordinary retrieval", "reusable_routines": "Extracted routines",
     "aware_whole": "Query-aware whole", "aware_routine": "Query-aware routine",
     "blind_whole": "Query-blind whole", "blind_routine": "Query-blind routine",
+    "conventional_memoization": "Conventional memoization",
+    "retained_qualification": "Serialized handoff",
 }
+
+
+def study_arm_label(key: str) -> str:
+    arm, _, scheduler = key.partition("__")
+    return f"{ARM_LABELS[arm]} · {scheduler.replace('-', ' ')}" if scheduler else ARM_LABELS[arm]
 
 
 def study_table(label: str, headings: list[str], rows: str) -> str:
@@ -548,12 +555,12 @@ def paired_case_table(run: dict, cases: list[dict]) -> str:
     return (
         f'<h4>Paired cases</h4><p>{len(cases)} cases. {differences} with differing outcomes appear first. '
         f'<a href="cases-{run["id"]}.csv" download>Download paired-case CSV</a>.</p>'
-        + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(ARM_LABELS[key] for key in cases[0]["arms"])],
+        + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(study_arm_label(key) for key in cases[0]["arms"])],
                       "".join(rows))
     )
 
 
-def synthesis_outcomes(format_id: str, result: dict) -> str:
+def study_outcomes(format_id: str, result: dict) -> str:
     if format_id == "transfer_pilot_v1":
         totals = result["totals"]
         fields = ("verified", "budget_exhausted", "attempts", "screening_primitive_steps", "checker_primitive_steps")
@@ -579,6 +586,48 @@ def synthesis_outcomes(format_id: str, result: dict) -> str:
             + '<p>Neutral queries contain no matching terms. Their residual differences reflect the fixed tie-break and task-ID control. '
               'The raw result separates screening, verification, queue and indexing work. The timing artifact reports CPU diagnostics.</p>'
         )
+    if format_id == "transfer_scheduler_v1":
+        keys = tuple(arm + "__" + order for arm in ("no_library", "aware_whole", "aware_routine")
+                     for order in ("handle-depth", "expanded-length"))
+        rows = "".join(
+            f'<tr><th scope="row">{escape(label)}</th><td>{item["cells"]}</td>'
+            + "".join(f'<td>{item["arms"][key]}</td>' for key in keys) + '</tr>'
+            for label, item in result["summary"].items()
+        )
+        return study_table("Verified cells under each scheduler", ["Resource and query", "Cells",
+                            *(study_arm_label(key) for key in keys)], rows)
+    if format_id == "verifier_policy_audit_v2":
+        arms = result["totals"]
+        measures = {
+            "documents_constructed": "Documents constructed",
+            "document_bytes_serialized": "Document bytes serialized",
+            "document_bytes_hashed": "Document bytes hashed",
+            "index_hashes": "Index hashes",
+            "index_bytes_hashed": "Index bytes hashed",
+            "index_reads": "Index reads",
+            "document_reads": "Evidence document reads",
+            "policy_evaluations": "Policy evaluations",
+            "notification_invalidations": "Delivered invalidations",
+            "expiry_invalidations": "Expiry invalidations",
+            "missed_update_recoveries": "Missed updates recovered",
+            "cache_writes": "Cache writes",
+            "handoff_bytes_serialized": "Handoff bytes serialized",
+        }
+        rows = "".join(
+            f'<tr><th scope="row">{label}</th>'
+            + "".join(f'<td>{values.get(key, 0):,}</td>' for values in arms.values()) + '</tr>'
+            for key, label in measures.items()
+        )
+        return study_table("Recorded work across all eleven profiles", ["Work", *(study_arm_label(key) for key in arms)], rows)
+    if format_id == "receiver_effect_audit_v2":
+        rows = "".join(
+            f'<tr id="receiver-control-{escape(c["id"])}"><th scope="row">{escape(c["id"])}</th>'
+            f'<td>{escape(c["observed_effect"].replace("_", " "))}</td>'
+            f'<td>{"Yes" if c["safe_hold"] else "No"}</td>'
+            f'<td>{"Yes" if c["false_closure"] else "No"}</td></tr>'
+            for c in result["controls"]
+        )
+        return study_table("Receiver score controls", ["Control", "Observed effect", "Safe hold", "False closure"], rows)
     return ""
 
 
@@ -595,7 +644,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict]) -> str:
     return (
         f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
         f'<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
-        f'{synthesis_outcomes(row["format"], result)}'
+        f'{study_outcomes(row["format"], result)}'
         f'<h4>Scope and limits</h4><p>{escape(row["limit"])}</p>'
         f'<h4>Disposition</h4><p>{escape(row["disposition"])}</p>'
         '<h4>Replay</h4><p>Run from a checkout at this evidence revision. '
@@ -682,8 +731,9 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             links += f'<p><a href="#{target}">{escape(spot["label"])}</a>.</p>'
         if study["id"] == "verifier-rollout":
             links += (
-                '<p><a href="verifier-replay.zip">Download the standalone verifier replay</a>. '
+                '<p><a href="verifier-replay.zip">Download the original verifier replay</a>. '
                 f'Package SHA-256 <code>{hashlib.sha256(archive).hexdigest()}</code>. '
+                'The follow-up below supplies the absolute floor and shared-source controls. '
                 '<a href="#independent-checks">Report an independent check</a>.</p>'
             )
         claim = study["claim"]

@@ -41,10 +41,11 @@ Use them when they change one of those three checks.
 ### Route around the verifier regression {#verifier-replacement-route}
 
 The text verifier's [paired result in Unit 9](unit-09-stable-capability-fields-and-governed-replacement.qmd#verifier-replacement-paired-cases)
-leaves the update eligible for consideration on public copy. Keep record
-changes on the qualified prior route. If its qualification expires, send
-them to the specialist. Hand the release reviewer a route decision naming the
-scope, candidate version, fallback version and expiry. [Decide what may serve
+shows why routing needs an absolute floor. Both versions miss a required
+public-copy case, so the specialist owns that scope. Record changes can
+use the qualified prior verifier until its eligibility expires. Hand the
+release reviewer the mandatory case failures, the scope, and the eligible
+fallback with its expiry. [Decide what may serve
 in Unit 22](unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd#verifier-replacement-serving).
 
 ## Capability Identity Is Not Model Identity

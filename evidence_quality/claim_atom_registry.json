@@ -98,13 +98,13 @@
     "review_state_counts": {
       "semantically_reviewed": 4064
     },
-    "prose_candidate_count": 4274,
+    "prose_candidate_count": 4277,
     "prose_review_state_counts": {
-      "duplicate_of_atom": 2073,
+      "duplicate_of_atom": 2075,
       "editorial_or_question": 62,
       "historical_or_source_report": 373,
       "material_atom": 3,
-      "nonmaterial_explanation": 1763
+      "nonmaterial_explanation": 1764
     },
     "support_state_effect": "none"
   },
@@ -117,7 +117,7 @@
       "role": "core",
       "ordinal": 1,
       "manifest_pointer": "core",
-      "proposition": "Efficient ASI should be modeled as a governed stack of cooperating layers rather than as one undifferentiated model.",
+      "proposition": "A governed AI system should preserve authority, verification, effect observation, and recovery across consequential handoffs. Separate components should justify their coordination cost by improving those outcomes under matched controls.",
       "proposition_type": "composite",
       "claim_label": "Design rationale",
       "support_state": "argument",
@@ -146,8 +146,8 @@
         "asi-is-a-stack-not-a-model.invariant.003",
         "the-efficient-asi-hypothesis.core"
       ],
-      "strongest_counterclaim": "One undifferentiated model or agent service can internally implement every required authority, evidence, memory, rollback, and routing duty, making an explicit governed-stack specification unnecessary or strictly more costly.",
-      "falsifier": "A matched, independently observed comparator with no explicit logical layer contracts preserves the same authority ceilings, evidence transitions, rollback closure, residual accounting, and useful-task quality while the stack adds no joint-frontier benefit, or the proposed responsibilities cannot be separated without contradiction.",
+      "strongest_counterclaim": "An integrated service can keep the same logical responsibilities inspectable with less coordination burden. Separate components may add failure modes without improving observation or recovery.",
+      "falsifier": "At matched authority, observations, and recovery, an integrated service matches the useful outcomes, fault localization and recovery of separate components at lower burden. That result rejects the added split for the workload.",
       "required_lanes": [
         {
           "lane": "source-synthesis",
@@ -193,7 +193,7 @@
       ],
       "acceptance_criteria": [
         "The reference architecture assigns every load-bearing responsibility one canonical authority/evidence owner and composes at least the governed-work, learning, and assurance slices without ambiguous ownership.",
-        "A preregistered matched comparison shows the explicit stack is not dominated on the declared joint frontier and its claimed governance properties remain observable under transfer."
+        "A preregistered comparison gives both topologies the same controls and shows that a named benefit from separation pays for its extra coordination and recovery work."
       ],
       "narrowing_criteria": [
         "Narrow the claim when only repository traceability, finite handoff denial, or one implementation slice is established rather than the full architecture or efficiency consequence.",
@@ -2116,8 +2116,8 @@
       "chapter_title": "ASI Is a Stack, Not a Model",
       "owner": "asi-is-a-stack-not-a-model",
       "role": "prose",
-      "ordinal": 13,
-      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:119",
+      "ordinal": 15,
+      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:126",
       "proposition": "A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module.",
       "proposition_type": "normative",
       "claim_label": "Design rationale",
@@ -2150,7 +2150,7 @@
       ],
       "evidence_refs": {
         "chapter": "chapters/asi-is-a-stack-not-a-model.qmd",
-        "manifest": "book_structure.json#chapter:asi-is-a-stack-not-a-model/prose:13",
+        "manifest": "book_structure.json#chapter:asi-is-a-stack-not-a-model/prose:15",
         "source_mappings": "book_structure.json#chapter:asi-is-a-stack-not-a-model/claim_source_mappings",
         "proof_targets": null,
         "test_specs": null
@@ -2203,8 +2203,8 @@
       "chapter_title": "ASI Is a Stack, Not a Model",
       "owner": "asi-is-a-stack-not-a-model",
       "role": "prose",
-      "ordinal": 37,
-      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:377",
+      "ordinal": 40,
+      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:384",
       "proposition": "A handoff whose consumer cannot identify its required input artifact or authority ceiling should fail closed with an explicit missing-contract record.",
       "proposition_type": "executable",
       "claim_label": "Design rationale",
@@ -2244,7 +2244,7 @@
       ],
       "evidence_refs": {
         "chapter": "chapters/asi-is-a-stack-not-a-model.qmd",
-        "manifest": "book_structure.json#chapter:asi-is-a-stack-not-a-model/prose:37",
+        "manifest": "book_structure.json#chapter:asi-is-a-stack-not-a-model/prose:40",
         "source_mappings": "book_structure.json#chapter:asi-is-a-stack-not-a-model/claim_source_mappings",
         "proof_targets": null,
         "test_specs": null
