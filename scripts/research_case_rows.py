@@ -1,0 +1,151 @@
+"""Normalize paired research rows while preserving each run's units of work."""
+
+from __future__ import annotations
+
+import csv
+from io import StringIO
+import re
+
+
+def slug(value: str) -> str:
+    return re.sub(r"[^a-z0-9-]+", "-", value.lower()).strip("-")
+
+
+def case(case_id, condition, arms):
+    outcome_signatures = {value["signature"] for value in arms.values()}
+    return {
+        "id": slug(case_id), "condition": condition, "arms": arms,
+        "disagrees": len(outcome_signatures) > 1,
+    }
+
+
+def arm(outcome, work, signature):
+    return {"outcome": outcome, "work": work, "signature": signature}
+
+
+def scoped_git(result):
+    by_case = {}
+    for row in result["trials"]:
+        trials = by_case.setdefault(row["path"], {})
+        if row["route"] in trials:
+            raise ValueError("duplicate Git case/arm")
+        trials[row["route"]] = row
+    for name, trials in by_case.items():
+        if set(trials) != {"conventional", "full_governed"}:
+            raise ValueError("unmatched Git case")
+        arms = {}
+        for route in ("conventional", "full_governed"):
+            row = trials[route]
+            checks = (
+                row["accepted_useful_repair"], row["false_block"], row["unauthorized_terminal_change"],
+                row["unresolved_terminal_state"], row["compensation_verified"], row["effect_is_ancestor_of_tip"],
+            )
+            labels = ["Accepted repair" if checks[0] else "No accepted repair"]
+            for observed, label in zip(checks[1:5], (
+                "wrong hold", "unauthorized terminal change", "unresolved terminal state", "compensation verified"
+            ), strict=True):
+                if observed:
+                    labels.append(label)
+            if checks[5] is not None:
+                labels.append("effect in branch ancestry" if checks[5] else "effect outside branch ancestry")
+            arms[route] = arm("; ".join(labels),
+                              f'{row["sidecar_receipt_files"]} receipt files, {row["sidecar_receipt_bytes"]} bytes', checks)
+        yield case(name, name.replace("_", " "), arms)
+
+
+def crossed_receiver(result):
+    for row in result["pairs"]:
+        sink = "deduplicating" if row["sink_idempotent"] else "non-deduplicating"
+        condition = f'{row["task"]} · {sink} · {row["scenario"]} · {row["observation_profile"]}'
+        arms = {}
+        for route, receipt in row["arms"].items():
+            steps = [action["action"] for action in receipt["actions"]]
+            signature = (receipt["disposition"], receipt["effect_commits"], receipt["false_closure"], receipt["wrongful_block"])
+            outcome = f'{receipt["disposition"]}, {receipt["effect_commits"]} committed effects'
+            if receipt["false_closure"] or receipt["wrongful_block"]:
+                outcome += f', {int(receipt["false_closure"])} false closures, {int(receipt["wrongful_block"])} wrong blocks'
+            arms[route] = arm(outcome, f'{steps.count("retry")} retries, {steps.count("receive_read")} additional reads', signature)
+        yield case(condition, condition, arms)
+
+
+def verifier_rollout(result):
+    for pair in result["pairs"]:
+        for expected, ordinary, retained in zip(
+            pair["expected_routes"], pair["arms"]["conventional"], pair["arms"]["bound_handoff"], strict=True
+        ):
+            if (ordinary["tick"], ordinary["evidence_sha256"]) != (retained["tick"], retained["evidence_sha256"]):
+                raise ValueError("verifier arms do not share paired evidence")
+            name = f'{pair["scope"]}-{pair["profile"]}-tick-{ordinary["tick"]}'
+            condition = f'{pair["scope"]} · {pair["profile"]} · tick {ordinary["tick"]} · expected {expected}'
+            arms = {}
+            for route, receipt in (("conventional", ordinary), ("bound_handoff", retained)):
+                work = f'{receipt["evidence_document_reads"]} inspections, {receipt["handoff_writes"]} writes'
+                if receipt["gaps"]:
+                    work += " · " + ", ".join(receipt["gaps"])
+                arms[route] = arm(f'{receipt["decision"]} → {receipt["route"]}', work,
+                                  (receipt["decision"], receipt["route"]))
+            yield case(name, condition, arms)
+
+
+def synthesis_case_records(result, factorial):
+    for row in result["cases" if factorial else "tasks"]:
+        condition = f'{row["task"]} · {row["family"]}'
+        name = row["task"]
+        if factorial:
+            budget = row["budget"]
+            cap = result["budget_caps"][budget]
+            name = f'{name}-{row["phrasing"]}-{budget}-{row["order"]}'
+            unit = "proposals" if budget == "proposals" else "expanded execution steps"
+            condition += f' · {row["phrasing"]} · {cap} {unit} · {row["order"]}'
+        else:
+            condition += f' · {result["search_budget"]} proposals · {row["description"]}'
+        arms = {}
+        for label, trial in row["arms" if factorial else "outcomes"].items():
+            library = trial["library" if factorial else "library_entries"]
+            proposals = trial["proposals" if factorial else "attempts"]
+            screen = trial["screening_steps" if factorial else "screening_primitive_steps"]
+            check = trial["verification_steps" if factorial else "checker_primitive_steps"]
+            expanded = (trial["solution"] or {}).get("expanded") if factorial else trial["expanded_program"]
+            work = f'{proposals} proposals, {screen + check} executed steps'
+            if library:
+                work += " · library " + ", ".join(f'{entry} ({" → ".join(ops)})' for entry, ops in library)
+            if expanded is not None:
+                work += " · solution " + (" → ".join(expanded) or "identity")
+            terminal = trial["terminal"]
+            arms[label] = arm(terminal.replace("_", " "), work, terminal == "verified")
+        yield case(name, condition, arms)
+
+
+def rows_for(format_id, result):
+    if format_id == "scoped_git_v1":
+        rows = scoped_git(result)
+    elif format_id == "receiver_crossed_v1":
+        rows = crossed_receiver(result)
+    elif format_id == "verifier_rollout_v1":
+        rows = verifier_rollout(result)
+    elif format_id in {"transfer_pilot_v1", "transfer_factorial_v1"}:
+        rows = synthesis_case_records(result, format_id == "transfer_factorial_v1")
+    else:
+        raise ValueError(f"unsupported research case format: {format_id}")
+    ordered = sorted(rows, key=lambda row: (not row["disagrees"], row["id"]))
+    if not ordered or len(ordered) != len({row["id"] for row in ordered}):
+        raise ValueError("research cases are empty or have colliding identities")
+    if any(tuple(row["arms"]) != tuple(ordered[0]["arms"]) for row in ordered):
+        raise ValueError("research cases have inconsistent arm order")
+    return ordered
+
+
+def anchor(run_id: str, case_id: str | None = None) -> str:
+    stem = f"run-{run_id}"
+    return f"{stem}--case-{case_id}" if case_id else stem
+
+
+def export_csv(run_id, rows):
+    out = StringIO(newline="")
+    writer = csv.writer(out, lineterminator="\n")
+    writer.writerow(["run_id", "case_id", "fragment", "condition", "outcomes_differ", "arm", "outcome", "work"])
+    for row in rows:
+        for name, trial in row["arms"].items():
+            writer.writerow([run_id, row["id"], anchor(run_id, row["id"]), row["condition"],
+                             int(row["disagrees"]), name, trial["outcome"], trial["work"]])
+    return out.getvalue().encode()

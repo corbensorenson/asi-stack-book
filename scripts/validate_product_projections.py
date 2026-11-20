@@ -12,6 +12,7 @@ from pathlib import Path
 import tempfile
 
 import research_studies as research
+from research_case_rows import anchor as research_anchor, export_csv, rows_for
 from build_canonical_public_status import ROOT, build_status, validate_against_schema
 from build_product_projections import (
     CONTRACTS,
@@ -127,10 +128,16 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
     studies = research.studies_from(manifest, read)
     paths = {
         "research-studies.json": json.dumps({
-            "source_commit": source_commit, "studies": studies, "agenda": manifest["agenda"],
+            "schema_version": manifest["schema_version"], "source_commit": source_commit,
+            "studies": studies, "agenda": manifest["agenda"], "independent_reports": manifest["independent_reports"],
         }, indent=2, ensure_ascii=False).encode() + b"\n",
         "verifier-replay.zip": research.verifier_archive(read),
     }
+    case_rows = {
+        run["id"]: rows_for(run["format"], json.loads(read(Path(run["result"]))))
+        for study in studies for run in study["runs"]
+    }
+    paths.update({f"cases-{run_id}.csv": export_csv(run_id, rows) for run_id, rows in case_rows.items()})
     errors = [
         f"research projection is missing or stale: {name}" for name, expected in paths.items()
         if not (registry / name).is_file() or (registry / name).read_bytes() != expected
@@ -150,10 +157,36 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
     for study in studies:
         name = research.study_page(study["id"])
         page = registry / name
-        if (f'href="{name}"' not in index or not page.is_file() or escape(study["summary"]) not in index
-                or escape(study["summary"]) not in page.read_text() or study["result_sha256"] not in page.read_text()):
+        page_html = page.read_text() if page.is_file() else ""
+        if (f'href="{name}"' not in index or escape(study["summary"]) not in index
+                or escape(study["summary"]) not in page_html or study["result_sha256"] not in page_html):
             errors.append(f"study page or registry summary is missing or stale: {name}")
+        claim = study["claim"]["id"]
+        claim_route = f"appendices/C_claim_evidence_matrix.html#{claim}"
+        if f'href="../../{claim_route}"' not in page_html:
+            errors.append(f"missing scoped claim route: {name}")
+        for run in study["runs"]:
+            run_fragment = research_anchor(run["id"])
+            run_text = f'id="{run_fragment}"'
+            amount = page_html.count(run_text)
+            if amount != 1 or run["result_sha256"] not in page_html:
+                errors.append(f"missing or duplicate pinned run: {run['id']}")
+            starts = [
+                page_html.find(f'id="{research_anchor(run["id"], row["id"])}"')
+                for row in case_rows[run["id"]]
+            ]
+            if any(start < 0 for start in starts) or starts != sorted(set(starts)):
+                errors.append(f"missing or unordered paired cases: {run['id']}")
+            if f'href="cases-{run["id"]}.csv"' not in page_html:
+                errors.append(f"study page lacks its paired export: {run['id']}")
+        if study["id"] == "verifier-rollout":
+            if ('id="independent-checks"' not in page_html
+                    or f'/{source_commit}/{research.REPORT_TEMPLATE.as_posix()}' not in page_html):
+                errors.append("verifier page lost its independent review route")
         if site is not None:
+            matrix = site / "appendices/C_claim_evidence_matrix.html"
+            if not matrix.is_file() or f'id="{claim}"' not in matrix.read_text():
+                errors.append(f"scoped claim anchor is absent from Appendix C: {claim}")
             surfaces = [(site / "reader/quickstart.html", research.PUBLIC_REGISTRY)]
             if study["id"] != "forward-transfer":
                 surfaces.append((site / "index.html", research.SITE_REGISTRY))
@@ -168,6 +201,46 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 paper = site / study["paper"]
                 if not paper.is_file() or f'href="{research.PUBLIC_REGISTRY}/{name}"' not in paper.read_text():
                     errors.append(f"rendered paper lost its study link: {study['paper']}")
+    return errors
+
+
+def run_history_controls() -> list[str]:
+    manifest = load(ROOT / research.RECORDS)
+    earlier = next(row for row in manifest["runs"] if row["format"] == "transfer_pilot_v1")
+    original = (ROOT / earlier["result"]).read_bytes()
+    result = json.loads(original)
+    for row in result["tasks"]:
+        outcomes = row["outcomes"]
+        if outcomes["ordinary_retrieval"]["terminal"] == "verified":
+            outcomes["reusable_routines"] = copy.deepcopy(outcomes["ordinary_retrieval"])
+    routine = result["totals"]["reusable_routines"]
+    won = sum(row["outcomes"]["reusable_routines"]["terminal"] == "verified" for row in result["tasks"])
+    routine["verified"] = won
+    routine["budget_exhausted"] = len(result["tasks"]) - won
+    test_result = json.dumps(result).encode()
+    added = {
+        **earlier, "id": "control-later-run", "result": "control-later.json",
+        "result_sha256": hashlib.sha256(test_result).hexdigest(), "result_summary": "Routines verified {routines}.",
+    }
+    manifest["runs"].append(added)
+    study = next(row for row in manifest["studies"] if row["id"] == earlier["study"])
+    study["featured_run"] = added["id"]
+
+    def read(path):
+        return test_result if path.name == added["result"] else (ROOT / path).read_bytes()
+
+    candidate = next(row for row in research.studies_from(manifest, read) if row["id"] == study["id"])
+    errors = []
+    if (candidate["metrics"]["routines"] <= candidate["metrics"]["retrieval"]
+            or not any(row["result_sha256"] == earlier["result_sha256"] for row in candidate["runs"])):
+        errors.append("run history cannot accept changed results while preserving the earlier citation")
+    try:
+        research.studies_from(manifest, lambda path: original + b" " if path.as_posix() == earlier["result"] else read(path))
+    except ValueError as exc:
+        if "pinned run bytes changed" not in str(exc):
+            errors.append(f"run history rejected a mutation for the wrong reason: {exc}")
+    else:
+        errors.append("run history accepted changed bytes under an earlier citation")
     return errors
 
 
@@ -405,6 +478,7 @@ def main() -> None:
     parser.add_argument("--site", type=Path, help="also validate generated product pages inside a rendered site")
     args = parser.parse_args()
     errors: list[str] = []
+    errors.extend(run_history_controls())
     required = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS, SPINE_SCHEMA, PROJECTION_SCHEMA, DOC]
     for path in required:
         if not path.exists():
@@ -627,7 +701,7 @@ def main() -> None:
         f"{len(canonical) - len(selected_ids)} reference-routed omissions, "
         f"{len(canonical) - len(selected_ids)} visible specialist-owner routes, "
         f"{len(canonical)} reference chapters, {evidence['entry_count']} evidence routes, "
-        "and 8 rejecting negative controls."
+        "and research-history mutation controls."
     )
 
 

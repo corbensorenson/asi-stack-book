@@ -32,45 +32,41 @@ HOME_EXCERPT = Path("assets/research-studies.qmd")
 READER_EXCERPT = Path("editions/reader_manuscript/current/generated/research-studies.qmd")
 
 
+REPORT_TEMPLATE = Path("docs/reviews/verifier_reproduction_report.md")
+REPORT_KINDS = {"rerun", "reanalysis", "changed-assumption"}
+REPORT_DISPOSITIONS = {"confirmed", "narrowed", "disputed", "unresolved"}
+
+
 def input_paths(manifest: dict) -> set[Path]:
-    return {RECORDS, Path(__file__).relative_to(ROOT), *VERIFIER_PACKAGE.values()} | {
-        Path(path) for study in manifest["studies"] for path in [study["result"], *study["inputs"]]
-    } | {Path(item["backlog"]) for item in manifest["agenda"]}
+    return {RECORDS, Path(__file__).relative_to(ROOT), Path("scripts/research_case_rows.py"),
+            REPORT_TEMPLATE, *VERIFIER_PACKAGE.values()} | {
+        Path(path) for run in manifest["runs"] for path in [run["result"], run["protocol"], *run["inputs"]]
+    } | {Path(item["backlog"]) for item in manifest["agenda"]} | {
+        Path(item["artifact"]) for item in manifest["independent_reports"]
+    }
 
 
-def metrics(study_id: str, result: dict) -> dict:
-    if study_id == "scoped-git":
-        groups = {arm: [r for r in result["trials"] if r["route"] == arm]
-                  for arm in ("conventional", "full_governed")}
-        conventional, governed = groups.values()
-        if {r["path"] for r in conventional} != {r["path"] for r in governed}:
-            raise ValueError("scoped Git study has unmatched cases")
-        for group in (conventional, governed):
-            if (any(r["unresolved_terminal_state"] or r["false_block"] or r["unauthorized_terminal_change"] for r in group)
-                    or sum(r["accepted_useful_repair"] for r in group) != 2
-                    or not any(r["compensation_verified"] for r in group)):
-                raise ValueError("scoped Git study disposition changed")
+def metrics(format_id: str, result: dict) -> dict:
+    if format_id == "scoped_git_v1":
+        conventional, governed = (
+            [r for r in result["trials"] if r["route"] == arm] for arm in ("conventional", "full_governed")
+        )
         return {
             "pairs": len(conventional), "accepted": sum(r["accepted_useful_repair"] for r in conventional),
+            "governed_accepted": sum(r["accepted_useful_repair"] for r in governed),
             "ordinary_files": sum(r["sidecar_receipt_files"] for r in conventional),
             "governed_files": sum(r["sidecar_receipt_files"] for r in governed),
         }
-    if study_id == "crossed-receiver":
+    if format_id == "receiver_crossed_v1":
         pairs = result["pairs"]
         normal, more = "conventional_status", "additional_observation"
-        differences = [r for r in pairs if r["arms"][more]["accepted_useful"] != r["arms"][normal]["accepted_useful"]]
-        if any(r["sink_idempotent"] or r["observation_profile"] not in {"stale_status", "unavailable_status"}
-               or r["arms"][normal]["accepted_useful"] for r in differences):
-            raise ValueError("crossed receiver closure boundary changed")
         ordinary, extra = (sum(r["arms"][arm]["accepted_useful"] for r in pairs) for arm in (normal, more))
         fresh = sum(r["arms"][normal]["accepted_useful"] for r in pairs if r["observation_profile"] == "shared_fresh")
         return {"ordinary": ordinary, "extra_route": extra, "additional": extra - ordinary,
                 "pairs": len(pairs), "fresh": fresh}
-    if study_id == "verifier-rollout":
+    if format_id == "verifier_rollout_v1":
         conventional = result["summary"]["conventional"]
         retained = result["summary"]["bound_handoff"]
-        if any(row["wrong_route"] or row["wrong_hold"] or row["wrong_promotion"] for row in (conventional, retained)):
-            raise ValueError("verifier disposition changed")
         public = result["model_results"]["public-copy"]
         protected = result["model_results"]["record-change"]
         return {
@@ -79,46 +75,102 @@ def metrics(study_id: str, result: dict) -> dict:
             "candidate_protected": protected["candidate_correct"], "protected_cases": protected["cases"],
             "pairs": result["paired_checkpoints"], "ordinary_reads": conventional["evidence_document_reads"],
             "retained_reads": retained["evidence_document_reads"], "writes": retained["handoff_writes"],
+            "ordinary_wrong_routes": conventional["wrong_route"], "retained_wrong_routes": retained["wrong_route"],
         }
-    if study_id == "forward-transfer":
+    if format_id == "transfer_pilot_v1":
         totals = result["totals"]
         rows = result["tasks"]
         base, retrieval, routines = "no_library", "ordinary_retrieval", "reusable_routines"
-        if any(not value for value in result["calibration"].values()):
-            raise ValueError("forward transfer study failed calibration")
+
         def verified(task, arm):
             return task["outcomes"][arm]["terminal"] == "verified"
-        if any(verified(row, base) != verified(row, routines) for row in rows):
-            raise ValueError("forward transfer routine comparison changed")
-        adverse = [r for r in rows if r["family"] == "out-of-family"]
-        if any(verified(r, arm) for r in adverse for arm in (base, retrieval, routines)):
-            raise ValueError("forward transfer adverse trial improved")
+
         return {
             "basic": totals[base]["verified"], "retrieval": totals[retrieval]["verified"],
-            "tasks": len(rows), "adverse": len(adverse),
+            "routines": totals[routines]["verified"], "tasks": len(rows),
+            "adverse": sum(r["family"] == "out-of-family" for r in rows),
             "missed": sum(verified(r, base) and not verified(r, retrieval) for r in rows),
             "solved": sum(not verified(r, base) and verified(r, retrieval) for r in rows),
         }
-    raise ValueError(f"unknown study {study_id}")
+    if format_id == "transfer_factorial_v1":
+        proposal = result["summary"]["proposals/descriptive"]
+        expanded = result["summary"]["expanded/descriptive"]
+        return {
+            "stratum_cells": proposal["cells"], "proposal_whole": proposal["arms"]["aware_whole"]["verified"],
+            "proposal_routine": proposal["arms"]["aware_routine"]["verified"],
+            "expanded_whole": expanded["arms"]["aware_whole"]["verified"],
+            "expanded_routine": expanded["arms"]["aware_routine"]["verified"],
+            "cells": len(result["cases"]), "unique_tasks": result["unique_task_count"],
+            "adverse_verified": sum(row["verified"] for row in result["by_family"]["adverse-mixing"]["arms"].values()),
+        }
+    raise ValueError(f"unknown research evidence format {format_id}")
+
+
+def research_id(identity: str) -> bool:
+    return re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", identity) is not None
+
+
+def pinned_commit(value: str) -> bool:
+    return re.fullmatch("[a-f0-9]{40}", value) is not None
+
+
+def report_errors(reports: list[dict], runs: set[str]) -> list[str]:
+    seen = set()
+    errors = []
+    for row in reports:
+        identity = (row["id"], row["revision"])
+        if (identity in seen or not research_id(row["id"]) or type(row["revision"]) is not int
+                or row["revision"] < 1 or row["run"] not in runs or row["kind"] not in REPORT_KINDS
+                or row["disposition"] not in REPORT_DISPOSITIONS or row["permission"] != "public"
+                or not pinned_commit(row["source_commit"]) or not row["artifact"]
+                or not re.fullmatch("[a-f0-9]{64}", row["artifact_sha256"])
+                or not row["reported_result"].strip() or not row["decision"].strip()):
+            errors.append(f"invalid independent report {identity}")
+        seen.add(identity)
+    return errors
 
 
 def studies_from(manifest: dict, read) -> list[dict]:
-    studies = []
-    published = set()
-    for entry in manifest["studies"]:
+    if manifest.get("schema_version") != "asi_stack.research_history.v1":
+        raise ValueError("unknown research history format")
+    questions = {row["id"]: row for row in manifest["studies"]}
+    if len(questions) != len(manifest["studies"]) or not all(map(research_id, questions)):
+        raise ValueError("duplicate or invalid study identity")
+    runs = {}
+    for entry in manifest["runs"]:
         identity = entry["id"]
-        if identity in published or not re.fullmatch(r"[a-z0-9-]+", identity):
-            raise ValueError(f"duplicate or invalid study identity {identity}")
-        if not re.fullmatch("[a-f0-9]{40}", entry["source_commit"]):
+        if identity in runs or not research_id(identity) or entry["study"] not in questions:
+            raise ValueError(f"duplicate or unowned run identity {identity}")
+        if not pinned_commit(entry["source_commit"]):
             raise ValueError(f"invalid citation for {identity}")
         content = read(Path(entry["result"]))
-        values = metrics(identity, json.loads(content))
-        studies.append({
-            **entry, "summary": entry["result_summary"].format_map(values), "metrics": values,
-            "result_sha256": hashlib.sha256(content).hexdigest(),
-        })
-        published.add(identity)
-    if len(manifest["agenda"]) != 3 or not all(item["study"] in published for item in manifest["agenda"]):
+        if hashlib.sha256(content).hexdigest() != entry["result_sha256"]:
+            raise ValueError(f"pinned run bytes changed: {identity}; add a separate run")
+        if hashlib.sha256(read(Path(entry["protocol"]))).hexdigest() != entry["protocol_sha256"]:
+            raise ValueError(f"pinned protocol bytes changed: {identity}; add a separate run")
+        raw = json.loads(content)
+        if "calibration" in raw and not all(raw["calibration"].values()):
+            raise ValueError(f"run {identity} failed instrument calibration")
+        values = metrics(entry["format"], raw)
+        runs[identity] = {**entry, "summary": entry["result_summary"].format_map(values), "metrics": values}
+
+    errors = report_errors(manifest["independent_reports"], set(runs))
+    if errors:
+        raise ValueError("; ".join(errors))
+    for row in manifest["independent_reports"]:
+        if hashlib.sha256(read(Path(row["artifact"]))).hexdigest() != row["artifact_sha256"]:
+            raise ValueError(f'independent report artifact changed: {row["id"]} revision {row["revision"]}')
+    studies = []
+    for entry in questions.values():
+        history = [run for run in runs.values() if run["study"] == entry["id"]]
+        featured = next((run for run in history if run["id"] == entry["featured_run"]), None)
+        if featured is None:
+            raise ValueError(f"study {entry['id']} does not own its featured run")
+        # Retain the earlier public summary and artifact fields as the featured
+        # projection. The nested history is authoritative for exact citations.
+        projection = {key: value for key, value in featured.items() if key not in {"id", "study", "title"}}
+        studies.append({**entry, **projection, "runs": history})
+    if len(manifest["agenda"]) != 3 or any(item["study"] not in questions for item in manifest["agenda"]):
         raise ValueError("active agenda must identify three current studies")
     return studies
 

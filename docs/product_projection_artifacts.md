@@ -101,13 +101,21 @@ snapshots with SHA-256 digests; rendered Quarto pages remain links to their
 owning public surfaces. A snapshot proves byte identity only, not claim truth,
 reviewer competence, or open-world record faithfulness.
 
-`products/research_studies.json` owns the public study questions, evidence
-paths, citation commits, and three active research decisions. The result
-files supply the displayed counts. When changing a study, run
+`products/research_studies.json` owns the stable study questions, pinned
+runs, scoped claim links, and three active research decisions. Give a later
+protocol or result a new run ID. Keep the earlier protocol and result hashes.
+Each run records its interpretation and evidence disposition. The result
+files supply the displayed counts and disagreement-first case exports.
+When changing a study, run
 `python3 scripts/research_studies.py --write` to refresh the homepage and
 Quickstart summaries. The product builder publishes the study pages, agenda,
-machine data, and verifier ZIP. The product validator compares these with
-their source inputs and the rendered book and paper routes.
+machine data, case CSVs, and verifier ZIP. Case links use a run ID and an
+identity derived from the retained paired conditions. The product validator
+compares these with their source inputs and the rendered book and paper
+routes and tests publication of a different later outcome. The versioned
+independent-report list is empty until a public report is cleared for intake.
+Use the [verifier report template](reviews/verifier_reproduction_report.md)
+for the review record and separate disposition.
 
 ## Build and release integration
 

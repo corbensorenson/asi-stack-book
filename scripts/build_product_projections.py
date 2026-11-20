@@ -15,6 +15,7 @@ from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
 from projection_files import ProjectionFiles
 import research_studies as research
+from research_case_rows import anchor as research_anchor, export_csv, rows_for
 
 
 STRUCTURE = ROOT / "book_structure.json"
@@ -513,6 +514,127 @@ def build_reference(
     return manifest
 
 
+ARM_LABELS = {
+    "conventional": "Conventional", "full_governed": "Governed",
+    "conventional_status": "Conventional status", "additional_observation": "Additional observation",
+    "bound_handoff": "Retained qualification", "no_library": "No library",
+    "ordinary_retrieval": "Ordinary retrieval", "reusable_routines": "Extracted routines",
+    "aware_whole": "Query-aware whole", "aware_routine": "Query-aware routine",
+    "blind_whole": "Query-blind whole", "blind_routine": "Query-blind routine",
+}
+
+
+def study_table(label: str, headings: list[str], rows: str) -> str:
+    header = "".join(f'<th scope="col">{escape(heading)}</th>' for heading in headings)
+    return (
+        f'<div class="table-scroll" role="region" aria-label="{escape(label)}" tabindex="0"><table>'
+        f'<caption>{escape(label)}</caption><thead><tr>{header}</tr></thead><tbody>{rows}</tbody></table></div>'
+    )
+
+
+def paired_case_table(run: dict, cases: list[dict]) -> str:
+    rows = []
+    for row in cases:
+        fragment = research_anchor(run["id"], row["id"])
+        outcomes = "".join(
+            f'<td>{escape(value["outcome"])}<br><small>{escape(value["work"])}</small></td>'
+            for value in row["arms"].values()
+        )
+        rows.append(
+            f'<tr id="{fragment}"><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a></th>'
+            f'<td>{escape(row["condition"])}</td>{outcomes}</tr>'
+        )
+    differences = sum(row["disagrees"] for row in cases)
+    return (
+        f'<h4>Paired cases</h4><p>{len(cases)} cases. {differences} with differing outcomes appear first. '
+        f'<a href="cases-{run["id"]}.csv" download>Download paired-case CSV</a>.</p>'
+        + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(ARM_LABELS[key] for key in cases[0]["arms"])],
+                      "".join(rows))
+    )
+
+
+def synthesis_outcomes(format_id: str, result: dict) -> str:
+    if format_id == "transfer_pilot_v1":
+        totals = result["totals"]
+        fields = ("verified", "budget_exhausted", "attempts", "screening_primitive_steps", "checker_primitive_steps")
+        rows = "".join(
+            f'<tr><th scope="row">{ARM_LABELS[arm]}</th>'
+            + "".join(f'<td>{record[key]:,}</td>' for key in fields) + '</tr>'
+            for arm, record in totals.items()
+        )
+        return study_table("Search and verification work across the twelve later tasks",
+                           ["Arm", "Verified", "Exhausted", "Proposals", "Screening steps", "Verification steps"], rows)
+    if format_id == "transfer_factorial_v1":
+        arms = result["summary"]["all"]["arms"]
+        rows = "".join(
+            f'<tr><th scope="row">{escape(name)}</th><td>{stratum["cells"]}</td>'
+            + "".join(f'<td>{stratum["arms"][arm]["verified"]}</td>' for arm in arms) + '</tr>'
+            for name, stratum in result["summary"].items() if name != "all"
+        )
+        order = ", ".join(f"{ARM_LABELS[arm]} {count}" for arm, count in result["ordering_success_changes"].items())
+        return (
+            study_table("Verified design cells by resource and query",
+                        ["Resource and query", "Cells", *(ARM_LABELS[arm] for arm in arms)], rows)
+            + f"<p>Outcome changed with operator ordering in these counts of task, query and budget combinations: {order}.</p>"
+            + '<p>Neutral queries contain no matching terms. Their residual differences reflect the fixed tie-break and task-ID control. '
+              'The raw result separates screening, verification, queue and indexing work. The timing artifact reports CPU diagnostics.</p>'
+        )
+    return ""
+
+
+def render_run(study: dict, row: dict, result: dict, cases: list[dict]) -> str:
+    source = f'{research.REPO}/blob/{row["source_commit"]}'
+    artifacts = [("Raw paired result", row["result"]), ("Pinned protocol", row["protocol"]), *(
+        (Path(target).name, target) for target in row["inputs"] if target != row["protocol"]
+    )]
+    artifact_links = "".join(
+        f'<li><a href="{escape(source + "/" + target)}">{escape(label)}</a></li>'
+        for label, target in artifacts
+    )
+    fragment = research_anchor(row["id"])
+    return (
+        f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
+        f'<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
+        f'{synthesis_outcomes(row["format"], result)}'
+        f'<h4>Scope and limits</h4><p>{escape(row["limit"])}</p>'
+        f'<h4>Disposition</h4><p>{escape(row["disposition"])}</p>'
+        '<h4>Replay</h4><p>Run from a checkout at this evidence revision. '
+        'The Git repair also needs its pre-fix history.</p>'
+        f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>'
+        f'<h4>Cite this run</h4><p>Corben Sorenson. “{escape(study["title"])}.” '
+        f'<em>The ASI Stack</em>, {escape(row["date"])}. Run <code>{row["id"]}</code>, evidence revision '
+        f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
+        f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
+        + paired_case_table(row, cases) + "</section>"
+    )
+
+
+def independent_reports(reports: list[dict], study: dict, status: dict) -> str:
+    runs = {row["id"] for row in study["runs"]}
+    relevant = [row for row in reports if row["run"] in runs]
+    if study["id"] != "verifier-rollout" and not relevant:
+        return ""
+    template = f'{research.REPO}/blob/{status["source_commit"]}/{research.REPORT_TEMPLATE.as_posix()}'
+    body = (
+        '<h2 id="independent-checks">Independent checks</h2>'
+        f'<p>Use the <a href="{escape(template)}">independent check report template</a> for an exact rerun, '
+        'independent reanalysis or changed assumption. Each published revision preserves the report and its disposition.</p>'
+    )
+    if not relevant:
+        return body + '<p>No independent check reports have been published for this study.</p>'
+    for row in relevant:
+        source = f'{research.REPO}/blob/{row["source_commit"]}/{row["artifact"]}'
+        report_id = f'{row["id"]}-revision-{row["revision"]}'
+        body += (
+            f'<section id="report-{report_id}"><h3>{escape(report_id)}</h3>'
+            f'<p>{escape(row["kind"])} · <a href="#{research_anchor(row["run"])}">{escape(row["run"])}</a> · '
+            f'<a href="{escape(source)}">Pinned report</a> · SHA-256 <code>{row["artifact_sha256"]}</code></p>'
+            f'<p>{escape(row["reported_result"])}</p>'
+            f'<p><strong>{escape(row["disposition"])}</strong> {escape(row["decision"])}</p></section>'
+        )
+    return body
+
+
 def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None,
                    payload: ProductPayload | None) -> tuple[list[dict], str]:
     def read(name):
@@ -520,8 +642,10 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
 
     manifest = inputs.research_manifest if inputs else json.loads(read(research.RECORDS))
     studies = research.studies_from(manifest, read)
+    reports = manifest["independent_reports"]
     write_json(product_dir / "research-studies.json", {
-        "source_commit": status["source_commit"], "studies": studies, "agenda": manifest["agenda"],
+        "schema_version": manifest["schema_version"], "source_commit": status["source_commit"],
+        "studies": studies, "agenda": manifest["agenda"], "independent_reports": reports,
     }, payload)
     archive = research.verifier_archive(read)
     archive_path = product_dir / "verifier-replay.zip"
@@ -530,64 +654,51 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
     else:
         payload.write(archive_path, archive)
 
-    for row in studies:
-        source = f'{research.REPO}/blob/{row["source_commit"]}'
-        artifacts = [("Raw paired result", row["result"]), *(
-            (Path(target).name, target) for target in row["inputs"]
-        )]
-        artifact_links = "".join(
-            f'<li><a href="{escape(source + "/" + target)}">{escape(label)}</a></li>'
-            for label, target in artifacts
-        )
-        extra = ""
-        outcomes = ""
-        if row.get("reader_anchor"):
-            extra += f'<p><a href="../../reader/quickstart.html#{escape(row["reader_anchor"])}">Follow the worked comparison in the reader</a>.</p>'
-        if row.get("paper"):
-            extra += f'<p><a href="../../{escape(row["paper"])}">Read the original paper</a>.</p>'
-        if row["id"] == "verifier-rollout":
-            extra += (
-                '<p><a href="verifier-replay.zip">Download the standalone verifier replay</a>. '
-                'Includes the paired CSV and fallback-expiry extension. Package SHA-256 '
-                f'<code>{hashlib.sha256(archive).hexdigest()}</code>.</p>'
-            )
-        if row["id"] == "forward-transfer":
+    for study in studies:
+        sections = []
+        run_index = []
+        for row in study["runs"]:
             result = json.loads(read(Path(row["result"])))
-            totals = result["totals"]
-            fields = ("verified", "budget_exhausted", "attempts", "screening_primitive_steps", "checker_primitive_steps")
-            rows = "".join(
-                f'<tr><th scope="row">{label}</th>'
-                + "".join(f'<td>{totals[arm][key]:,}</td>' for key in fields) + '</tr>'
-                for arm, label in (("no_library", "No library"), ("ordinary_retrieval", "Ordinary retrieval"),
-                                   ("reusable_routines", "Extracted routines"))
+            cases = rows_for(row["format"], result)
+            csv_path = product_dir / f'cases-{row["id"]}.csv'
+            export = export_csv(row["id"], cases)
+            if payload is None:
+                csv_path.write_bytes(export)
+            else:
+                payload.write(csv_path, export)
+            sections.append(render_run(study, row, result, cases))
+            label = " · featured" if row["id"] == study["featured_run"] else ""
+            run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
+        links = ""
+        if study.get("reader_anchor"):
+            links += f'<p><a href="../../reader/quickstart.html#{escape(study["reader_anchor"])}">Worked reader comparison</a></p>'
+        if study.get("paper"):
+            links += f'<p><a href="../../{escape(study["paper"])}">Original paper</a>.</p>'
+        if study.get("spotlight"):
+            spot = study["spotlight"]
+            target = research_anchor(spot["run"], spot["case"])
+            if not any(f'id="{target}"' in section for section in sections):
+                raise ValueError(f"study spotlight does not name a case: {target}")
+            links += f'<p><a href="#{target}">{escape(spot["label"])}</a>.</p>'
+        if study["id"] == "verifier-rollout":
+            links += (
+                '<p><a href="verifier-replay.zip">Download the standalone verifier replay</a>. '
+                f'Package SHA-256 <code>{hashlib.sha256(archive).hexdigest()}</code>. '
+                '<a href="#independent-checks">Report an independent check</a>.</p>'
             )
-            outcomes = (
-                '<div class="table-scroll" role="region" aria-label="Search and verification work" tabindex="0">'
-                '<table><caption>Search and verification work across the twelve later tasks</caption>'
-                '<thead><tr><th scope="col">Arm</th><th scope="col">Verified</th><th scope="col">Exhausted</th>'
-                '<th scope="col">Proposals</th><th scope="col">Screening steps</th><th scope="col">Verification steps</th>'
-                f'</tr></thead><tbody>{rows}</tbody></table></div>'
-                f'<p>Routine extraction examined {result["setup"]["adjacent_patterns_examined"]} adjacent pairs. '
-                f'Retrieval indexed {result["setup"]["historical_programs_indexed"]} historical programs and scored '
-                f'{totals["ordinary_retrieval"]["retrieval_similarities"]} similarities. '
-                'The timing artifact records setup, retrieval, search and verification separately.</p>'
-            )
+        claim = study["claim"]
         body = (
             '<p><a href="index.html">Return to the Evidence Registry</a></p>'
-            f'<h2>Question and method</h2><p>{escape(row["question"])}</p><p>{escape(row["method"])}</p>'
-            f'<h2>Result</h2><p>{escape(row["summary"])}</p>{outcomes}'
-            f'<h2>Scope and limits</h2><p>{escape(row["limit"])}</p>'
-            f'<h2>What would change the decision</h2><p>{escape(row["change"])}</p>'
-            '<h2>Replay</h2><p>Run from a checkout at the evidence revision cited below. '
-            'The Git repair also needs its pre-fix history.</p>'
-            f'<pre><code>{escape(row["command"])}</code></pre>{extra}<ul>{artifact_links}</ul>'
-            f'<h2>Cite this result</h2><p>Corben Sorenson. “{escape(row["title"])}.” '
-            f'<em>The ASI Stack</em>, {escape(row["date"])}. Evidence revision '
-            f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
-            f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
+            f'<h2>Question</h2><p>{escape(study["question"])}</p>{links}'
+            '<h2 id="related-claim">What this evidence bears on</h2>'
+            f'<p>{escape(claim["scope"])} '
+            f'<a href="../../appendices/C_claim_evidence_matrix.html#{escape(claim["id"])}">Related book claim and support state</a>.</p>'
+            f'<h2>What would change the decision</h2><p>{escape(study["change"])}</p>'
+            f'<h2 id="run-history">Run history</h2><ul>{"".join(run_index)}</ul>'
+            + "".join(sections) + independent_reports(reports, study, status)
         )
-        write_text(product_dir / research.study_page(row["id"]),
-                   page(row["title"], "Methods, evidence, replay and citation.", body,
+        write_text(product_dir / research.study_page(study["id"]),
+                   page(study["title"], "Run history, case evidence, and citations.", body,
                         "research-studies.json", show_portfolio=False), payload)
 
     questions = []
