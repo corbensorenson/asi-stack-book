@@ -53,3 +53,14 @@ retrieval effort and optional measured CPU separately. This fixed collection
 does not estimate a natural workload probability or general model advantage.
 Advance a specific reuse assumption only if its paired evidence is favorable
 under both resource regimes and no adverse tradeoff overturns it.
+
+## Calibration amendment
+
+The first lock at commit `2dc1d19b` stopped before any paired search. The
+target vector for `b22` was equivalent to historical programs `h22` and
+`h28`. The vector for `d21` matched `h30`. The other four calibration
+checks passed. Replace the duplicated targets with the flagged and
+twice-rotated variants now specified in the oracle. Keep both task IDs and
+family assignments. This amendment changes neither search nor prior
+definitions and precedes opening any outcomes. Retain the failed gate as
+an instrument preparation event.

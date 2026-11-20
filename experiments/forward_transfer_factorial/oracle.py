@@ -11,7 +11,7 @@ def inv(x):
 FAMILIES = {
     "board-routing": {
         "b21": ("inverted shift mirror board rotate twice", lambda x: rol(rol(inv((2*x) % 32)))),
-        "b22": ("mirror complementary board suffix masked", lambda x: ((inv((2*x) % 32) ^ 1) // 2) % 16),
+        "b22": ("mirror complementary board suffix clipped and flagged", lambda x: (((inv((2*x) % 32) ^ 1) // 2) % 16) ^ 16),
         "b23": ("gray shade rotated palette rise", lambda x: (2 * inv(rol(x))) % 32),
         "b24": ("inverse pulse serial track right mask", lambda x: inv(rol(x ^ 1)) // 2),
     },
@@ -22,7 +22,7 @@ FAMILIES = {
         "c24": ("register intake right fold tag", lambda x: rol((x ^ 16) // 2) ^ 1),
     },
     "display-code": {
-        "d21": ("right shifted marker parity offset", lambda x: (2 * ((x // 2) ^ 1)) % 32),
+        "d21": ("right shifted marker parity rotated twice", lambda x: rol(rol((x // 2) ^ 1))),
         "d22": ("offset right parity under clipping", lambda x: inv((x // 2) ^ 1) % 16),
         "d23": ("serial odd pulse track inversion", lambda x: inv(rol(x ^ 1)) ^ 16),
         "d24": ("shade rotate palette complementary flag", lambda x: (inv(rol(x)) ^ 1) ^ 16),
