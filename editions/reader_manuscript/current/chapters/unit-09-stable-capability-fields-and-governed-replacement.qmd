@@ -162,6 +162,22 @@ name.
 
 Two patch verifiers grade the same 100 cases. Both get 75 right and both miss eight. The new verifier fixes twelve and breaks five. Would you increase its traffic? Its score rose from 80 to 87, yet five of the 80 previously reliable cases now fail. Open those five records. If one allowed an export requiring owner approval, hold the rollout until that requirement passes again. MUSCLE observed such reversals in downstream tasks after base-model updates. Its best reported reduction in reversals depended on the versions, task and grading rule. [MUSCLE: A Model Update Strategy for Compatible LLM Evolution](https://machinelearning.apple.com/research/model-compatibility)
 
+### One text verifier, two scopes {#verifier-replacement-paired-cases}
+
+A small trained verifier decides whether a draft can enter ordinary review or
+needs a specialist. Ordinary clearance still leaves a person responsible for
+publication. In the offline comparison, adding training examples improves
+the candidate from 9 to 11 correct on twelve public-copy cases. On twelve
+record-change cases, it falls from 12 to 8. All four losses send drafts that
+needed specialist review to ordinary review. These are authored test cases.
+
+Keep the two scopes in the qualification record. The next owner needs the
+candidate and prior versions, the affected consumer, and the four changed
+case decisions. The public-copy result supports considering a bounded
+rollout. The record-change result fails the protected regression floor.
+[Choose a route in Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#verifier-replacement-route)
+or [inspect the replay](../quickstart.qmd#verifier-replacement-replay).
+
 ## The Patch Verifier Replacement
 
 Now return to the proposed upgrade. The team wants the new verifier because it

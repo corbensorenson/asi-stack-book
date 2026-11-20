@@ -4,16 +4,30 @@ number-sections: false
 
 # A Fifteen-Minute Route Through the Stack {.unnumbered}
 
-This route is for a reader who wants to see the architecture do something
-before reading the full argument. It follows one real maintenance defect from
-discovery to a tested repair, then compares what happens when the same change
-is executed directly, recorded without admission control, or governed through
-explicit authority and recovery boundaries.
+## Your first sitting {#first-sitting}
 
-The example is deliberately small. It does not demonstrate ASI, production
-safety, or general usefulness. It does show why the book separates a useful
-change from permission to make it, a process report from observed state, and a
-rollback from compensation for an effect that already crossed a boundary.
+A published **View source** link sent readers to a path that did not exist.
+Fixing it required a change in the configuration generator and the generated
+configuration. In one replay, the maintainer had granted permission to change
+only the generator. The worker knows the two-file repair and can make its
+configuration test pass.
+
+**You are reviewing the change.** Do you let the worker apply the repair,
+apply only the permitted edit, or hold the change and ask for a grant covering
+both files? Decide before opening the observed result. What evidence would
+change your choice?
+
+[Inspect the observed authority decision](#blocked-authority-result). The
+table shows the test result, the unauthorized effect count, and what each
+workflow actually did. These were local Git replays of a known repair.
+
+**Stop here once you can explain what the passing test established and what
+the reviewer still needed.** Then follow [the same repair through the
+architecture](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd#following-the-repository-change)
+or inspect the stronger [scoped Git baseline](#ordinary-change-control-comparison).
+
+[Replay commands](#run-it) · [All twelve outcomes](#read-the-twelve-outcomes)
+· [Receiver comparison with competent status checks](#crossed-receiver-comparison)
 
 ## The Thesis in One Page
 
@@ -122,6 +136,8 @@ governed route blocks the unauthorized request, closes the crash residual, and
 closes the branch-state residual without claiming that the original Git effect
 never happened.
 
+### The repair passes, the grant does not {#blocked-authority-result}
+
 In the blocked-authority replay, each route receives a request for a repair
 that needs a file outside the grant. The replay checks for one exact
 `repo-subdir` line in each of the generator and generated reader configuration.
@@ -138,6 +154,11 @@ bytes. Audit refs preserve the push and its compensation.
 | Fully governed | Repair absent | 0 | Denied before mutation |
 
 [Inspect the twelve recorded trials](https://github.com/corbensorenson/asi-stack-book/blob/a06810790c08d9670461a3bbed9f547b294cf6b5/experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json).
+
+The passing test confirms that both files describe the same source location.
+The grant still covers only one file. Hold the coupled repair until the
+maintainer permits both changes or the reviewer verifies a repair that fits
+the existing grant. [Return to the first sitting](#first-sitting).
 
 The direct route creates no governance artifacts. Record-only cases create two
 or three small receipt files. Fully governed cases create three or four. The
@@ -265,6 +286,52 @@ python3 scripts/compare_crossed_receiver_workflows.py --compact
 [Protocol](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md) · [Frozen inputs and code](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/crossed_receiver_lock.json) · [All pairs and raw observations](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json)
 
 [Inspect the first receiver comparison](#fresh-effect-comparison).
+
+## Decide where a new verifier may serve {#verifier-replacement-replay}
+
+The small text verifier in [Unit 9](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd#verifier-replacement-paired-cases)
+is trained on authored examples. Its update gains two correct decisions on
+twelve public-copy cases and loses four on twelve protected record changes.
+A release owner can consider public copy separately. The protected scope
+fails the paired regression floor.
+
+The offline replay gives both arms the same written rule and observations.
+It evaluates two scopes, seven evidence profiles and two decision points.
+An ordinary rollout checks versioned evidence at each decision. The second
+workflow retains a qualification with exact evidence identities and reuses
+it while those records remain current.
+
+| Across 28 matched decision points | Conventional rollout | Bound qualification |
+|---|---:|---:|
+| Wrong promotions | 0 | 0 |
+| Wrong holds | 0 | 0 |
+| Wrong fallback decisions | 0 | 0 |
+| Revision index lookups | 28 | 28 |
+| Logical evidence document inspections | 140 | 80 |
+| Policy evaluations | 28 | 16 |
+| Additional qualification writes | 0 | 16 |
+
+Both hold the candidate when its monitor names another version. Both route
+to a specialist when the prior verifier expires and both defer changes to
+the admission gate that lack independent review. Five decisions permit the
+public-copy rollout. A newly available monitor changes just one decision.
+
+The two arms share the admission rule. This isolates repeated assembly and
+reuse. The inspections are scripted accesses to local records. The replay
+does not measure human effort or physical reads, and it gives no cost for
+maintaining the revision index, training at scale, or operating a deployment.
+An ordinary release system can cache the same qualified decision when it can
+reliably invalidate it. Evidence identities and reviewer qualifications are
+authored record fields. The replay ran locally without an authentication
+service or live deployment.
+
+```bash
+python3 scripts/compare_verifier_replacements.py
+```
+
+[Protocol](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/verifier_replacement_comparison/protocol.md)
+· [Frozen inputs](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/verifier_replacement_comparison/input_lock.json)
+· [All paired decisions](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/verifier_replacement_comparison/results/2026-11-20-local.json)
 
 ## One Repair, Five Possible Endings
 

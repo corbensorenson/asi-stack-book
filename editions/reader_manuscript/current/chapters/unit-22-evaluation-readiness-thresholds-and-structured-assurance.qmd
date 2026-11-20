@@ -23,6 +23,21 @@ cannot keep the record current across dependencies, replacements, or
 consumers. Later in the unit, a shared-cache migration gives the reader a
 chance to decide where that boundary falls.
 
+### Authorize only the version the monitor can observe {#verifier-replacement-serving}
+
+The [route from Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#verifier-replacement-route)
+names the text verifier, public-copy scope, and qualified fallback. The release
+owner must also see a current approval and a monitor for that exact version
+and scope. A healthy monitor for a different version leaves the rollout on
+hold. In the offline recovery case, publishing the matching monitor observation
+at the next decision lets public copy proceed. Record changes still fail their
+regression floor.
+
+Issue a scoped disposition naming the observed monitor, the stop condition,
+and the next eligible route. Loss of the current monitor stops the candidate.
+Loss of fallback qualification sends the work to the named specialist.
+[Follow the decision when the release gate itself changes](unit-25-recursive-improvement-replication-and-containment.qmd#verifier-replacement-independent-review).
+
 ## Evaluation Is an Adversarial Measurement Process
 
 An evaluation is a measurement system, not a bag of questions. It has a target

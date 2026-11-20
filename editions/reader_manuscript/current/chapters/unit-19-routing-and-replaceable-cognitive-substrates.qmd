@@ -12,24 +12,11 @@ rollback.
 This is an illustrative continuation of the book's repository-change story,
 not a report of a deployed router or a new experiment.
 
-The organization sends every step to its largest general model. The model
-produces a fluent report and correct patch, but it rereads the repository for
-each question, invents one package-manager flag, and spends most of its context
-reconstructing facts that deterministic tools already know. A small dependency
-analyzer would have found the graph exactly. A coding specialist could have
-generated the patch. A verifier should have checked the lockfile. A retrieval
-system could have preserved exact package documentation. The expensive model
-could contribute to every step, but this workflow did not match its work to
-the complete contracts. A competent general-model baseline can itself call
-those tools and preserve their outputs; this failure does not establish that
-specialist models are necessary.
-
-The obvious response is to route. But routing introduces another system that
-can be wrong. It may choose an unready specialist, leak authority, hide
-fallback costs, or optimize the route label rather than the answer. A catalog
-of architectures creates more maintenance and correlated failure. A novel
-memory or cyclic mixer can satisfy elegant structural properties without
-improving one real task.
+The largest general model writes a correct patch but invents a package-manager
+flag. A deterministic analyzer can read the lockfile, including when the
+general model calls it itself. Routing has to earn its cost against that
+competent alternative. It can also choose an unready specialist or hide the
+cost of fallback.
 
 Replaceability therefore needs two boundaries. Stable capability fields keep
 the job contract above implementations. Governed routing chooses among
@@ -50,6 +37,15 @@ most. [Follow the checkpoint decision](#checkpoints-must-preserve-more-than-weig
 The later architecture comparisons answer narrower questions about
 granularity, accessible state and the work needed to decode or recover it.
 Use them when they change one of those three checks.
+
+### Route around the verifier regression {#verifier-replacement-route}
+
+The text verifier's [paired result in Unit 9](unit-09-stable-capability-fields-and-governed-replacement.qmd#verifier-replacement-paired-cases)
+leaves the update eligible for consideration on public copy. Keep record
+changes on the qualified prior route. If its qualification expires, send
+them to the specialist. Hand the release reviewer a route decision naming the
+scope, candidate version, fallback version and expiry. [Decide what may serve
+in Unit 22](unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd#verifier-replacement-serving).
 
 ## Capability Identity Is Not Model Identity
 

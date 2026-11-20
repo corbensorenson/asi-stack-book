@@ -51,12 +51,12 @@ efficiency. They also determine which costs cannot be optimized away.
 
 ## The Complete Bill
 
-Resource accounting starts with direct costs: model tokens, wall-clock time,
-memory, storage, network transfer, tool calls, and money. Those are easy to
-observe and therefore easy to overvalue. The complete bill also includes
-queueing, context construction, verification, rejected candidates, repairs,
-fallbacks, reviewer attention, residual ownership, rollback, and the useful
-work displaced while scarce resources were occupied.
+Unit 2 asks [whether allocation and reuse pay off at all](unit-02-the-efficient-asi-hypothesis.qmd#three-policies-compete).
+Here you have to choose an offer. Record the direct price of each route, then
+add three estimates: the queue and verifier time required before use, the
+frequency and cost of repair or fallback, and the upkeep needed to keep the
+route qualified. Assign an owner to each cost. Leave an unmeasured line open
+when you cannot price it.
 
 Suppose a fast unverified transform costs 2.3 synthetic units, a route that
 hides a residual costs 8.2, a bounded transform plus verifier costs 14.2, and a

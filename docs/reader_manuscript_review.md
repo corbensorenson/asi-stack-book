@@ -2,6 +2,32 @@
 
 ## Current independent manuscript review
 
+### November 20 first-sitting, replacement, and continuity follow-up
+
+The [first sitting](../editions/reader_manuscript/current/quickstart.qmd#first-sitting)
+gives readers one observed authority decision to make before viewing the
+replay. The answer links to the recorded outcome and the original replay
+command. Units 2 and 23 now share one accounting route from the falsifiable
+hypothesis to the worked bill. Unit 26 places the repository decision before
+the reference map.
+
+The verifier case passes a paired regression record, a scoped route
+decision, and a readiness disposition from Unit 9 through Units 19, 22,
+and 25. The [offline replay](../experiments/verifier_replacement_comparison/protocol.md)
+compares decisions under equal evidence access. Both workflows match the
+authored disposition on all 28 checkpoints. Retaining a qualification
+reduces logical document inspections from 140 to 80, with 16 extra writes.
+This is an accounting comparison between scripted workflows. It establishes
+no effect on independent review time or production decisions.
+
+The [participant prompts](reviews/reader_decision_trial.md) keep the answer key
+in this review. A browser dry run exercised the first-sitting decision and
+its result at desktop and mobile widths, and the six participant links
+resolved in the rendered manuscript. Reader completion time and independent
+responses remain unmeasured. Retain the exact viewed revision when responses
+become available, and record the passage revision separately from the response
+that prompted it.
+
 ### November 20 editorial depth and source review
 
 I reviewed the live reader entry points and the manuscript at `d547f8ac`, surveyed the openings, section structure and conclusion pattern across all 26 reader units, and read selected teaching passages and technical chapters in depth. I checked the flagship comparison against its scripts, fixtures and retained outcomes, and screened candidate sources against the current inventory and manuscript. This is a targeted developmental edit and source review. The source checks below are scoped to the selected passages.

@@ -119,48 +119,16 @@ silently redefining what counts as done.
 
 ## The Complete Bill
 
-The denominator is total contract cost across the lifecycle of the decision.
-Inference cost is one line, not the bill.
+The denominator is the work required to produce and sustain an accepted
+outcome. Compare both routes over the same horizon. In the repository
+campaign, count the repair team's time and the maintenance of any reusable
+tests alongside generation and verification. If the apparent saving
+disappears, the hypothesis has lost that comparison.
 
-**Generation cost** includes model execution, search, sampling, and candidate
-production.
-
-**Context cost** includes retrieval, rights checks, freshness, summarization,
-conflict handling, and moving information into the worker's usable form.
-
-**Routing cost** includes profiling the task, selecting a route, handling load,
-and maintaining the policy that makes the selection.
-
-**Verification cost** includes deterministic checks, model critics, formal
-methods, independent observation, security review, and the work required to
-qualify those instruments.
-
-**Repair and fallback cost** includes retries, stronger models, human
-intervention, rollback, compensation, and the opportunity cost of delayed work.
-
-**Human cost** includes review time, interruption, explanation, coordination,
-and responsibility. Human attention is not free because it appears outside the
-accelerator invoice.
-
-**Persistence cost** includes storing, indexing, validating, updating, and
-eventually deleting memories, tools, procedures, tests, and models.
-
-**Failure cost** includes incidents, delayed discovery, duplicate effects,
-rights violations, lost trust, and residual obligations. Expected cost must
-account for rare expensive tails, not only the average successful route.
-
-**Physical cost** includes energy, memory movement, hardware occupation,
-networking, water and material burdens where measured, and the capacity denied
-to other work.
-
-**Governance cost** includes approvals, audits, evidence maintenance, incident
-response, and keeping authority and recovery mechanisms current.
-
-Some costs are difficult to price on one scale. The architecture should not
-hide that difficulty by converting every dimension into dollars or tokens. It
-can preserve a vector of cost and report the tradeoff frontier. A route that is
-faster but uses more reviewer attention is not simply cheaper; it occupies a
-different point.
+Fix the accounting boundary together with the quality floor. Keep costs in
+their original units when the decision maker has given no exchange rate
+between them. An hour of maintainer attention and a watt-hour can both
+matter without being interchangeable. [Follow the worked bill in Unit 23](unit-23-generative-compression-and-cognitive-resource-economics.qmd#the-complete-bill).
 
 ## Cost Moves Through Time and Organizations
 
@@ -467,48 +435,19 @@ local meter.
 
 ## Compression Moves Burden
 
-Compression is a particularly revealing case because it can make savings
-visible while hiding repair.
-
-A compressed context, memory, model, artifact, or intermediate representation
-is adequate only relative to downstream use. The system needs a reconstruction
-or behavior contract, a verifier, residual representation, and fallback. Bits
-saved before those costs are counted are not a system-level result.
-
-Consider a generated code representation that stores a compact seed plus a
-deterministic reconstruction procedure. If reconstruction is exact and cheaper
-over the lifecycle, the saving may be real. If a repair stream must restore
-exceptions, the repair bytes and computation belong in the denominator. If
-verification samples only common cases, rare failures remain a residual rather
-than disappearing into the ratio.
-
-Functional precision follows the same logic. Lower precision can save memory
-movement and compute for one behavior contract while failing another. The
-router can choose precision, residual correction, a reference kernel, or
-abstention. The objective is preserved useful behavior per complete cost, not
-the smallest visible checkpoint.
+Count a compression saving only after the intended user can recover the
+required behavior and after the cost of checking, repairing, or using a
+fallback is included. If the system repeatedly falls back at the same
+operating point, a larger checkpoint may complete the work more cheaply.
+[See the reconstruction and precision choices in Unit 23](unit-23-generative-compression-and-cognitive-resource-economics.qmd#compression-moves-burden).
 
 ## Selective Deliberation
 
-More reasoning is not automatically better. Additional search or deliberation
-can improve difficult decisions, but it can also amplify a mistaken premise,
-consume verifier bandwidth, or produce persuasive rationalization.
-
-A governed deliberation route begins with a decision predicate and stop rule.
-It records candidate history, corruption or repair, verifier scope, cost, and
-residual uncertainty. Easy tasks should not receive expensive search merely
-because the system can perform it. Hard tasks should not be forced through a
-cheap route merely because average latency improved.
-
-The efficient policy learns where marginal cognition changes accepted outcomes.
-If five more reasoning steps do not improve the qualified decision, their cost
-is waste. If one independent check catches a high-cost failure, its apparent
-overhead may be efficient over the lifecycle.
-
-The same argument applies to human review. A person should not be used as a
-universal verifier for machine output. Review should be routed to decisions
-where human authority, expertise, legitimacy, or contextual judgment is
-actually required, with enough information and time to matter.
+Ask whether another step could change the qualified decision. The hypothesis
+loses if a fixed budget produces as much accepted work for the same total
+cost. Preserve cases where more reasoning damages an already adequate result
+and charge both the extra attempt and its recovery. [Try the stopping decision
+in Unit 23](unit-23-generative-compression-and-cognitive-resource-economics.qmd#deliberation-has-a-failure-surface).
 
 ## Scaling Is a Variable, Not a Destiny
 

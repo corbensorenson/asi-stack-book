@@ -1,0 +1,1301 @@
+{
+  "frozen_inputs": {
+    "experiments/verifier_replacement_comparison/protocol.md": "56f93f82084d1516e1987198bb05cc28d834a8e8095af67359818dc29458e995",
+    "experiments/verifier_replacement_comparison/model_cases.json": "f9ffafafbd164c9502d2361333150094059c691b909d99a4e88c4378e4db2e2b",
+    "scripts/compare_verifier_replacements.py": "4dc0b07f31808e07d710a5ae03ad7ab43a61aba94f5a036e1d53baf837d66ca2"
+  },
+  "calibration": {
+    "clean_public_promotion": true,
+    "protected_regression_observed": true,
+    "fresh_monitor_recovers": true,
+    "expired_fallback_uses_specialist": true
+  },
+  "model_results": {
+    "public-copy": {
+      "cases": 12,
+      "prior_correct": 9,
+      "candidate_correct": 11,
+      "negative_flips": [],
+      "protected_negative_flips": [],
+      "paired_decisions": [
+        {
+          "case": "copy-01",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-02",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-03",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-04",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-05",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-06",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-07",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "copy-08",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "copy-09",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "review"
+        },
+        {
+          "case": "copy-10",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "copy-11",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "copy-12",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        }
+      ]
+    },
+    "record-change": {
+      "cases": 12,
+      "prior_correct": 12,
+      "candidate_correct": 8,
+      "negative_flips": [
+        "record-01",
+        "record-02",
+        "record-04",
+        "record-05"
+      ],
+      "protected_negative_flips": [
+        "record-01",
+        "record-02",
+        "record-04",
+        "record-05"
+      ],
+      "paired_decisions": [
+        {
+          "case": "record-01",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "review"
+        },
+        {
+          "case": "record-02",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "review"
+        },
+        {
+          "case": "record-03",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "record-04",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "review"
+        },
+        {
+          "case": "record-05",
+          "prior": "review",
+          "candidate": "clear",
+          "label": "review"
+        },
+        {
+          "case": "record-06",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "record-07",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "record-08",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "record-09",
+          "prior": "review",
+          "candidate": "review",
+          "label": "review"
+        },
+        {
+          "case": "record-10",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "record-11",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        },
+        {
+          "case": "record-12",
+          "prior": "clear",
+          "candidate": "clear",
+          "label": "clear"
+        }
+      ]
+    }
+  },
+  "paired_checkpoints": 28,
+  "effort_scope": "scripted reads, evaluations and writes only; no human effort measured",
+  "summary": {
+    "conventional": {
+      "wrong_promotion": 0,
+      "wrong_hold": 0,
+      "wrong_route": 0,
+      "revision_index_reads": 28,
+      "evidence_document_reads": 140,
+      "policy_evaluations": 28,
+      "handoff_writes": 0
+    },
+    "bound_handoff": {
+      "wrong_promotion": 0,
+      "wrong_hold": 0,
+      "wrong_route": 0,
+      "revision_index_reads": 28,
+      "evidence_document_reads": 80,
+      "policy_evaluations": 16,
+      "handoff_writes": 16
+    }
+  },
+  "pairs": [
+    {
+      "scope": "public-copy",
+      "profile": "current",
+      "expected_routes": [
+        "candidate",
+        "candidate"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "stale_approval",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "target approval"
+            ],
+            "evidence_sha256": "d4f0dff38651d9fb6fe942c7ebd1db8ab0e46190a23cf7dee70dcb433b436ab1",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "target approval"
+            ],
+            "evidence_sha256": "d4f0dff38651d9fb6fe942c7ebd1db8ab0e46190a23cf7dee70dcb433b436ab1",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "target approval"
+            ],
+            "evidence_sha256": "d4f0dff38651d9fb6fe942c7ebd1db8ab0e46190a23cf7dee70dcb433b436ab1",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "target approval"
+            ],
+            "evidence_sha256": "d4f0dff38651d9fb6fe942c7ebd1db8ab0e46190a23cf7dee70dcb433b436ab1",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "wrong_monitor",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "62cd6fa71e7b8363417c95f8f0d0049309f187580effe9193a2631aecfbb00f3",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "62cd6fa71e7b8363417c95f8f0d0049309f187580effe9193a2631aecfbb00f3",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "62cd6fa71e7b8363417c95f8f0d0049309f187580effe9193a2631aecfbb00f3",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "62cd6fa71e7b8363417c95f8f0d0049309f187580effe9193a2631aecfbb00f3",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "fallback_expired",
+      "expected_routes": [
+        "specialist",
+        "specialist"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "qualified fallback"
+            ],
+            "evidence_sha256": "78b95fe266b63f3c86027f2edcaa49fb9e1d31037f22d847c806fc88008fa566",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "qualified fallback"
+            ],
+            "evidence_sha256": "78b95fe266b63f3c86027f2edcaa49fb9e1d31037f22d847c806fc88008fa566",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "qualified fallback"
+            ],
+            "evidence_sha256": "78b95fe266b63f3c86027f2edcaa49fb9e1d31037f22d847c806fc88008fa566",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "qualified fallback"
+            ],
+            "evidence_sha256": "78b95fe266b63f3c86027f2edcaa49fb9e1d31037f22d847c806fc88008fa566",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "successor_self_review",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "review authority"
+            ],
+            "evidence_sha256": "c321e9aa5c8885a4a93d902356afc0bbb26ddba9716448085ea4e67595018269",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "review authority"
+            ],
+            "evidence_sha256": "c321e9aa5c8885a4a93d902356afc0bbb26ddba9716448085ea4e67595018269",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "review authority"
+            ],
+            "evidence_sha256": "c321e9aa5c8885a4a93d902356afc0bbb26ddba9716448085ea4e67595018269",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "review authority"
+            ],
+            "evidence_sha256": "c321e9aa5c8885a4a93d902356afc0bbb26ddba9716448085ea4e67595018269",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "independent_successor_review",
+      "expected_routes": [
+        "candidate",
+        "candidate"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "81485e808ebcd93175b13fb307f43997488caa246022776c719be98752fd7937",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "81485e808ebcd93175b13fb307f43997488caa246022776c719be98752fd7937",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "81485e808ebcd93175b13fb307f43997488caa246022776c719be98752fd7937",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "81485e808ebcd93175b13fb307f43997488caa246022776c719be98752fd7937",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "public-copy",
+      "profile": "monitor_recovers",
+      "expected_routes": [
+        "prior",
+        "candidate"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "91b6653ddb28780c490bf22554898d22df572fed904aecba017117852314620b",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "current monitor"
+            ],
+            "evidence_sha256": "91b6653ddb28780c490bf22554898d22df572fed904aecba017117852314620b",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "promote",
+            "route": "candidate",
+            "gaps": [],
+            "evidence_sha256": "10ad99b681b79ea0af674aec6910ee5e877f2248b0982a271f17ad7017d26421",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "current",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "stale_approval",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "target approval"
+            ],
+            "evidence_sha256": "7dcaccbe353ae5d0448bd69b6a9f2a5d1e0e85e03ef52b0acb92c875642ce6b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "target approval"
+            ],
+            "evidence_sha256": "7dcaccbe353ae5d0448bd69b6a9f2a5d1e0e85e03ef52b0acb92c875642ce6b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "target approval"
+            ],
+            "evidence_sha256": "7dcaccbe353ae5d0448bd69b6a9f2a5d1e0e85e03ef52b0acb92c875642ce6b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "target approval"
+            ],
+            "evidence_sha256": "7dcaccbe353ae5d0448bd69b6a9f2a5d1e0e85e03ef52b0acb92c875642ce6b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "wrong_monitor",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "ba3e60911ac24a5bbcadfd0853311a758543a9caa3335e6709e92ea6d6a04863",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "ba3e60911ac24a5bbcadfd0853311a758543a9caa3335e6709e92ea6d6a04863",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "ba3e60911ac24a5bbcadfd0853311a758543a9caa3335e6709e92ea6d6a04863",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "ba3e60911ac24a5bbcadfd0853311a758543a9caa3335e6709e92ea6d6a04863",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "fallback_expired",
+      "expected_routes": [
+        "specialist",
+        "specialist"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "paired regression",
+              "qualified fallback"
+            ],
+            "evidence_sha256": "2f1431257dcd8f256918b2b25106ecab4e8d2d73bff78b33b0595a308ccc8bce",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "paired regression",
+              "qualified fallback"
+            ],
+            "evidence_sha256": "2f1431257dcd8f256918b2b25106ecab4e8d2d73bff78b33b0595a308ccc8bce",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "paired regression",
+              "qualified fallback"
+            ],
+            "evidence_sha256": "2f1431257dcd8f256918b2b25106ecab4e8d2d73bff78b33b0595a308ccc8bce",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "specialist",
+            "gaps": [
+              "paired regression",
+              "qualified fallback"
+            ],
+            "evidence_sha256": "2f1431257dcd8f256918b2b25106ecab4e8d2d73bff78b33b0595a308ccc8bce",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "successor_self_review",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "review authority"
+            ],
+            "evidence_sha256": "353342bd5ac86b037e8b3c938f1bf99092bc94743c9bc50eac2a7a3c173d329d",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "review authority"
+            ],
+            "evidence_sha256": "353342bd5ac86b037e8b3c938f1bf99092bc94743c9bc50eac2a7a3c173d329d",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "review authority"
+            ],
+            "evidence_sha256": "353342bd5ac86b037e8b3c938f1bf99092bc94743c9bc50eac2a7a3c173d329d",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "review authority"
+            ],
+            "evidence_sha256": "353342bd5ac86b037e8b3c938f1bf99092bc94743c9bc50eac2a7a3c173d329d",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "independent_successor_review",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "fa7ef1d5da47c27b3c5b64876d5a41ff7aecdc4a9340328f731fc14ab7774bba",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "fa7ef1d5da47c27b3c5b64876d5a41ff7aecdc4a9340328f731fc14ab7774bba",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "fa7ef1d5da47c27b3c5b64876d5a41ff7aecdc4a9340328f731fc14ab7774bba",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "fa7ef1d5da47c27b3c5b64876d5a41ff7aecdc4a9340328f731fc14ab7774bba",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 0,
+            "policy_evaluations": 0,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    },
+    {
+      "scope": "record-change",
+      "profile": "monitor_recovers",
+      "expected_routes": [
+        "prior",
+        "prior"
+      ],
+      "arms": {
+        "conventional": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "b516d4a5d27c01fa31f53872b8bcb4c74dee6a0a6841e6f649c4ff09bd1a26b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 0,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ],
+        "bound_handoff": [
+          {
+            "tick": 0,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression",
+              "current monitor"
+            ],
+            "evidence_sha256": "b516d4a5d27c01fa31f53872b8bcb4c74dee6a0a6841e6f649c4ff09bd1a26b8",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          },
+          {
+            "tick": 1,
+            "decision": "hold",
+            "route": "prior",
+            "gaps": [
+              "paired regression"
+            ],
+            "evidence_sha256": "438cf20feed2df27b57a640f8c4fc26cc5a972ca5e2b8ba7330fe37888ea2d5f",
+            "revision_index_reads": 1,
+            "evidence_document_reads": 5,
+            "policy_evaluations": 1,
+            "handoff_writes": 1,
+            "wrong_promotion": 0,
+            "wrong_hold": 0,
+            "wrong_route": 0
+          }
+        ]
+      }
+    }
+  ]
+}
