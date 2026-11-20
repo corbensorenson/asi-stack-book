@@ -1,0 +1,14 @@
+[
+  {"id":"h21","group":"mirror","description":"inverted complement shift mirror board","program":["left","flip","odd"]},
+  {"id":"h22","group":"mirror","description":"inverted shift polarity mirror suffix","program":["left","flip","right"]},
+  {"id":"h23","group":"coordinate","description":"rolled coordinate low mask grid","program":["roll","low","high"]},
+  {"id":"h24","group":"coordinate","description":"cyclic coordinate low grid marker","program":["roll","low","odd"]},
+  {"id":"h25","group":"intake","description":"high intake right register fold","program":["high","right","roll"]},
+  {"id":"h26","group":"intake","description":"intake bank right register flag","program":["high","right","flip"]},
+  {"id":"h27","group":"shade","description":"rotated complementary shade palette","program":["roll","flip","odd"]},
+  {"id":"h28","group":"shade","description":"rotate inverted shade gray palette","program":["roll","flip","right"]},
+  {"id":"h29","group":"offset","description":"right shifted offset marker parity","program":["right","odd","flip"]},
+  {"id":"h30","group":"offset","description":"right offset marker stream parity","program":["right","odd","roll"]},
+  {"id":"h31","group":"serial","description":"serial odd pulse cyclic track","program":["odd","roll","flip"]},
+  {"id":"h32","group":"serial","description":"odd serial cyclic pulse checksum","program":["odd","roll","low"]}
+]
