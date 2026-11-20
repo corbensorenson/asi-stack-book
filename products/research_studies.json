@@ -1,0 +1,105 @@
+{
+  "studies": [
+    {
+      "id": "scoped-git",
+      "title": "When scoped Git change control is enough",
+      "date": "2026-11-20",
+      "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+      "method": "Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.",
+      "result_summary": "Both workflows accepted {accepted} authorized repairs in {pairs} matched paths. Both restored the remote file state. Scoped Git retained the original effect in ordinary branch ancestry and created {ordinary_files} additional receipt files. The governed arm retained it on an audit ref and created {governed_files} additional receipt files.",
+      "limit": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+      "change": "Use a fresh maintenance task spanning independent owners. Retain the simpler workflow if it produces the same authorized outcomes and recoverable history with less total review and recovery work.",
+      "command": "python3 scripts/compare_repository_change_workflows.py",
+      "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-conventional-comparison.json",
+      "inputs": [
+        "scripts/compare_repository_change_workflows.py",
+        "experiments/p5_u1_governed_repository_change/design.json"
+      ],
+      "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+      "reader_anchor": "ordinary-change-control-comparison"
+    },
+    {
+      "id": "crossed-receiver",
+      "title": "When a second receiver check changes closure",
+      "date": "2026-11-20",
+      "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+      "method": "Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.",
+      "result_summary": "Conventional status closed {ordinary} of {pairs} matched cases. The added read closed {extra_route}. All {additional} extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed {fresh} cases each when both observations were fresh.",
+      "limit": "Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open.",
+      "change": "Run the same cases with an independently operated status channel and equal freshness. Prefer one channel if recovery dispositions match. Record a narrower advantage only where a separately available observation changes the outcome.",
+      "command": "python3 scripts/compare_crossed_receiver_workflows.py --compact",
+      "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json",
+      "inputs": [
+        "experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md",
+        "experiments/p5_u1_governed_repository_change/crossed_receiver_lock.json",
+        "scripts/compare_crossed_receiver_workflows.py"
+      ],
+      "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+      "reader_anchor": "crossed-receiver-comparison"
+    },
+    {
+      "id": "verifier-rollout",
+      "title": "Which scope earns a verifier rollout?",
+      "date": "2026-11-20",
+      "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+      "method": "Train two small text verifiers on authored cases. Give the conventional and retained-qualification workflows identical candidate results, approvals, monitors, fallback evidence and rules across seven observation profiles and two scopes.",
+      "result_summary": "Public-copy correctness rose from {prior_public} to {candidate_public} of {public_cases}. Protected record-change correctness fell from {prior_protected} to {candidate_protected} of {protected_cases}. Both workflows matched the authored decision at all {pairs} checkpoints. Document inspections went from {ordinary_reads} to {retained_reads}, with {writes} added writes.",
+      "limit": "The rollout arms share policy and evidence. Inspections count scripted access, without index maintenance or human time. Conventional release tooling can retain and invalidate the same decision.",
+      "change": "Place the same expiry and invalidation behavior in a conventional cached rollout. Keep the simpler implementation if exact dispositions and total work match. Test a bound handoff only where an additional consumer changes an evidence or authority dependency.",
+      "command": "python3 scripts/compare_verifier_replacements.py",
+      "result": "experiments/verifier_replacement_comparison/results/2026-11-20-local.json",
+      "inputs": [
+        "experiments/verifier_replacement_comparison/protocol.md",
+        "experiments/verifier_replacement_comparison/input_lock.json",
+        "scripts/compare_verifier_replacements.py"
+      ],
+      "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+      "reader_anchor": "verifier-replacement-replay"
+    },
+    {
+      "id": "forward-transfer",
+      "title": "Did extracted routines help on later synthesis tasks?",
+      "date": "2026-11-20",
+      "question": "Does making two previously discovered routines available improve verified synthesis on later task families at fixed proposal budget?",
+      "method": "Compare no library, Jaccard retrieval of two historical programs, and two repeated adjacent routines extracted from earlier lineages. All arms use the same breadth-first enumerator, eight visible examples, a 96-proposal cap, and an independently implemented full-domain checker.",
+      "result_summary": "The no-library and extracted-routine arms each verified {basic} of {tasks} tasks. Ordinary retrieval verified {retrieval}. Retrieval exhausted its budget on {missed} case the other arms solved and solved {solved} they missed. All three exhausted their budgets on the {adverse} out-of-family cases. Retain ordinary retrieval for the next pilot at this scope.",
+      "limit": "Fixed, authored four-bit transformations with disjoint fixture identities, lineages and full target vectors. Search order, operator footprint, and lexical clues all matter. Candidate budgets match. The result preserves setup, proposal, screening and full-check costs. It supplies no evidence about scale or natural programs.",
+      "change": "Compare query-blind retrieval and exact library-size controls on newly authored families, with lexical overlap stratified up front and multiple declared proposal budgets. Qualify an extracted routine only if it improves full-domain verification over the strongest retriever after including setup and verification.",
+      "command": "python3 experiments/forward_transfer_pilot/run.py",
+      "result": "experiments/forward_transfer_pilot/results/2026-11-20-local.json",
+      "inputs": [
+        "experiments/forward_transfer_pilot/protocol.md",
+        "experiments/forward_transfer_pilot/input_lock.json",
+        "experiments/forward_transfer_pilot/results/2026-11-20-timing.json"
+      ],
+      "source_commit": "ba85f30ebd59cbbce91bdd2e30240e18f8c23474",
+      "paper": "papers/forward_transfer_program_synthesis.html"
+    }
+  ],
+  "agenda": [
+    {
+      "question": "Does independently available receiver status settle outcomes ordinary status cannot?",
+      "study": "crossed-receiver",
+      "rival": "The earlier benefit reflects access to fresh information. One conventional endpoint with the same access ought to suffice.",
+      "test": "At the same fault and retry budget, serve exact-operation status from two separately operated readers. Compare one reader against both, keeping receiver deduplication crossed.",
+      "decisions": "Keep a separate read only where it adds verified closures with acceptable cost and no repeated effects. Adopt one channel on parity. Narrow the architecture claim if the extra path makes holds or duplicates worse.",
+      "backlog": "research_backlog_records/editorial_depth_sources_2026_11_20.json"
+    },
+    {
+      "question": "Does a bound qualification help once ordinary rollout also memoizes?",
+      "study": "verifier-rollout",
+      "rival": "Cache invalidation explains the saved inspections. Conventional rollout code can enforce the same evidence identities and expiry.",
+      "test": "Add ordinary memoization, then introduce the same expiry, refresh, and one changed reviewer dependency at a second consumer. Compare wrong dispositions and all reads, writes, and invalidation work.",
+      "decisions": "Use ordinary memoization if it keeps dispositions and costs equivalent. Keep an explicit handoff for the consumer that needs it if the paired case proves a distinct benefit. Hold adoption if either route serves expired evidence.",
+      "backlog": "research_backlog_records/chapter_decisions_2026_11_19.json"
+    },
+    {
+      "question": "Do extracted routines transfer beyond what ordinary retrieval can use?",
+      "study": "forward-transfer",
+      "rival": "Word overlap with old tasks makes complete retrieved programs a better fit, and expanded routines can change queue order without improving solutions.",
+      "test": "Predeclare new families with low and high description overlap. Compare exact-size libraries and queue ordering at several fixed proposal budgets. Record full verification and complete cost.",
+      "decisions": "Admit only a routine that beats the strongest adequate retrieval comparator under the tested scope. Keep retrieval on a tie or loss. Retain verified-but-transfer-negative routines as research artifacts and remove default promotion on that evidence.",
+      "backlog": "research_backlog_records/forward_transfer_program_synthesis_2026_08_14.json"
+    }
+  ]
+}

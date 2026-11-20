@@ -101,6 +101,14 @@ snapshots with SHA-256 digests; rendered Quarto pages remain links to their
 owning public surfaces. A snapshot proves byte identity only, not claim truth,
 reviewer competence, or open-world record faithfulness.
 
+`products/research_studies.json` owns the public study questions, evidence
+paths, citation commits, and three active research decisions. The result
+files supply the displayed counts. When changing a study, run
+`python3 scripts/research_studies.py --write` to refresh the homepage and
+Quickstart summaries. The product builder publishes the study pages, agenda,
+machine data, and verifier ZIP. The product validator compares these with
+their source inputs and the rendered book and paper routes.
+
 ## Build and release integration
 
 After a clean Quarto render and canonical-status build, release CI runs:

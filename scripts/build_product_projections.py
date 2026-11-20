@@ -14,6 +14,7 @@ import build_canonical_public_status as status_builder
 from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
 from projection_files import ProjectionFiles
+import research_studies as research
 
 
 STRUCTURE = ROOT / "book_structure.json"
@@ -130,6 +131,10 @@ class ProductInputs:
                                                 "scripts/validate_product_projections.py", "scripts/schema_validation.py", "scripts/admission_guard.py"))
         for path in required:
             self.capture(path)
+        self.capture(ROOT / research.RECORDS)
+        self.research_manifest = self.json(ROOT / research.RECORDS)
+        for name in sorted(research.input_paths(self.research_manifest)):
+            self.capture(ROOT / relative(name.as_posix()))
         for group in EVIDENCE_GROUPS:
             for _, target in group["entries"]:
                 self.capture(ROOT / relative(target), optional=True)
@@ -251,7 +256,14 @@ def safe_rel_link(from_product_dir: str, target: str) -> str:
     return "../" * depth + target
 
 
-def page(title: str, subtitle: str, body: str, manifest_link: str) -> str:
+def page(title: str, subtitle: str, body: str, manifest_link: str, *, show_portfolio: bool = True) -> str:
+    portfolio = (
+        '<p>Three proposed contributions organize all three products: <strong>governed-cognition interface contracts</strong>, '
+        '<strong>public claim-state transition discipline</strong>, and <strong>record/reality reconciliation with residual honesty</strong>. '
+        'The 89 technical chapters support composition and process proposals with bounded local implementation results. '
+        'Selection establishes neither novelty nor chapter-core support. Read the <a href="../../docs/three_defended_contributions.md">contribution summary</a> '
+        'and <a href="../../docs/defended_contribution_prior_art_positioning.md">competent conventional alternatives</a>.</p>'
+    )
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -269,6 +281,7 @@ a {{ color:var(--accent); }} .eyebrow {{ color:var(--muted); text-transform:uppe
 .grid {{ display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr)); gap:1rem; }}
 .card {{ border:1px solid var(--rule); border-radius:.6rem; padding:1rem; }} .card h3 {{ margin:.1rem 0 .55rem; }}
 .meta {{ color:var(--muted); font-size:.92rem; }} nav {{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }}
+pre, .table-scroll {{ overflow:auto; }} table {{ border-collapse:collapse; }} th, td {{ padding:.35rem .6rem; border:1px solid var(--rule); }}
 main {{ overflow-wrap:anywhere; }}
 </style>
 </head>
@@ -277,7 +290,7 @@ main {{ overflow-wrap:anywhere; }}
 <div class="eyebrow">Product projection</div>
 <h1>{escape(title)}</h1>
 <p class="lead">{escape(subtitle)}</p>
-<p>Three proposed contributions organize all three products: <strong>governed-cognition interface contracts</strong>, <strong>public claim-state transition discipline</strong>, and <strong>record/reality reconciliation with residual honesty</strong>. The 89 technical chapters support composition and process proposals with bounded local implementation results. Selection establishes neither novelty nor chapter-core support. Read the <a href="../../docs/three_defended_contributions.md">contribution summary</a> and <a href="../../docs/defended_contribution_prior_art_positioning.md">competent conventional alternatives</a>.</p>
+{portfolio if show_portfolio else ""}
 {body}
 </main></body></html>
 """
@@ -500,9 +513,110 @@ def build_reference(
     return manifest
 
 
+def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None,
+                   payload: ProductPayload | None) -> tuple[list[dict], str]:
+    def read(name):
+        return inputs.data[ROOT / name] if inputs else (ROOT / name).read_bytes()
+
+    manifest = inputs.research_manifest if inputs else json.loads(read(research.RECORDS))
+    studies = research.studies_from(manifest, read)
+    write_json(product_dir / "research-studies.json", {
+        "source_commit": status["source_commit"], "studies": studies, "agenda": manifest["agenda"],
+    }, payload)
+    archive = research.verifier_archive(read)
+    archive_path = product_dir / "verifier-replay.zip"
+    if payload is None:
+        archive_path.write_bytes(archive)
+    else:
+        payload.write(archive_path, archive)
+
+    for row in studies:
+        source = f'{research.REPO}/blob/{row["source_commit"]}'
+        artifacts = [("Raw paired result", row["result"]), *(
+            (Path(target).name, target) for target in row["inputs"]
+        )]
+        artifact_links = "".join(
+            f'<li><a href="{escape(source + "/" + target)}">{escape(label)}</a></li>'
+            for label, target in artifacts
+        )
+        extra = ""
+        outcomes = ""
+        if row.get("reader_anchor"):
+            extra += f'<p><a href="../../reader/quickstart.html#{escape(row["reader_anchor"])}">Follow the worked comparison in the reader</a>.</p>'
+        if row.get("paper"):
+            extra += f'<p><a href="../../{escape(row["paper"])}">Read the original paper</a>.</p>'
+        if row["id"] == "verifier-rollout":
+            extra += (
+                '<p><a href="verifier-replay.zip">Download the standalone verifier replay</a>. '
+                'Includes the paired CSV and fallback-expiry extension. Package SHA-256 '
+                f'<code>{hashlib.sha256(archive).hexdigest()}</code>.</p>'
+            )
+        if row["id"] == "forward-transfer":
+            result = json.loads(read(Path(row["result"])))
+            totals = result["totals"]
+            fields = ("verified", "budget_exhausted", "attempts", "screening_primitive_steps", "checker_primitive_steps")
+            rows = "".join(
+                f'<tr><th scope="row">{label}</th>'
+                + "".join(f'<td>{totals[arm][key]:,}</td>' for key in fields) + '</tr>'
+                for arm, label in (("no_library", "No library"), ("ordinary_retrieval", "Ordinary retrieval"),
+                                   ("reusable_routines", "Extracted routines"))
+            )
+            outcomes = (
+                '<div class="table-scroll" role="region" aria-label="Search and verification work" tabindex="0">'
+                '<table><caption>Search and verification work across the twelve later tasks</caption>'
+                '<thead><tr><th scope="col">Arm</th><th scope="col">Verified</th><th scope="col">Exhausted</th>'
+                '<th scope="col">Proposals</th><th scope="col">Screening steps</th><th scope="col">Verification steps</th>'
+                f'</tr></thead><tbody>{rows}</tbody></table></div>'
+                f'<p>Routine extraction examined {result["setup"]["adjacent_patterns_examined"]} adjacent pairs. '
+                f'Retrieval indexed {result["setup"]["historical_programs_indexed"]} historical programs and scored '
+                f'{totals["ordinary_retrieval"]["retrieval_similarities"]} similarities. '
+                'The timing artifact records setup, retrieval, search and verification separately.</p>'
+            )
+        body = (
+            '<p><a href="index.html">Return to the Evidence Registry</a></p>'
+            f'<h2>Question and method</h2><p>{escape(row["question"])}</p><p>{escape(row["method"])}</p>'
+            f'<h2>Result</h2><p>{escape(row["summary"])}</p>{outcomes}'
+            f'<h2>Scope and limits</h2><p>{escape(row["limit"])}</p>'
+            f'<h2>What would change the decision</h2><p>{escape(row["change"])}</p>'
+            '<h2>Replay</h2><p>Run from a checkout at the evidence revision cited below. '
+            'The Git repair also needs its pre-fix history.</p>'
+            f'<pre><code>{escape(row["command"])}</code></pre>{extra}<ul>{artifact_links}</ul>'
+            f'<h2>Cite this result</h2><p>Corben Sorenson. “{escape(row["title"])}.” '
+            f'<em>The ASI Stack</em>, {escape(row["date"])}. Evidence revision '
+            f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
+            f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
+        )
+        write_text(product_dir / research.study_page(row["id"]),
+                   page(row["title"], "Methods, evidence, replay and citation.", body,
+                        "research-studies.json", show_portfolio=False), payload)
+
+    questions = []
+    for row in manifest["agenda"]:
+        questions.append(
+            f'<h2>{escape(row["question"])}</h2><p><strong>Strongest rival.</strong> {escape(row["rival"])}</p>'
+            f'<p><strong>Cheapest discriminating test.</strong> {escape(row["test"])}</p>'
+            f'<p><strong>Decisions.</strong> {escape(row["decisions"])}</p>'
+            f'<p><a href="{research.study_page(row["study"])}">Current study</a> · '
+            f'<a href="{research.REPO}/blob/main/{escape(row["backlog"])}">Related backlog record</a></p>'
+        )
+    write_text(product_dir / "research-agenda.html", page(
+        "Active research agenda", "Three questions that can change what the book recommends.",
+        '<p><a href="index.html">Return to the Evidence Registry</a></p>' + "".join(questions),
+        "research-studies.json", show_portfolio=False,
+    ), payload)
+    cards = "".join(
+        f'<article class="card"><h3><a href="{research.study_page(row["id"])}">{escape(row["title"])}</a></h3>'
+        f'<p>{escape(row["summary"])}</p></article>' for row in studies
+    )
+    return studies, cards
+
+
 def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
                    payload: ProductPayload | None = None) -> dict[str, Any]:
     product_dir = output / "evidence-registry"
+    if payload is None:
+        product_dir.mkdir(parents=True, exist_ok=True)
+    studies, study_cards = build_research(product_dir, status, inputs, payload)
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:
         published_entries: list[dict[str, Any]] = []
@@ -547,6 +661,8 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         "source_count": status["counts"]["sources"],
         "core_claim_distribution": status["claim_state_distribution"]["support_states"],
         "groups": published_groups,
+        "studies": [research.study_page(row["id"]) for row in studies],
+        "active_research_agenda": "research-agenda.html",
         "non_claims": [
             "Record availability, count, or schema validity does not establish claim truth.",
             "Internal validators are not independent review.",
@@ -568,12 +684,17 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
     body = (
         f'<p class="status"><strong>Current status:</strong> {status["counts"]["chapters"]} chapters; '
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
+        '<h2>Research studies and replays</h2>'
+        '<p><a href="research-agenda.html">Active research agenda</a> · '
+        '<a href="research-studies.json">Study data and citations</a></p>'
+        f'<div class="grid">{study_cards}</div>'
         '<h2>Follow a claim into its evidence</h2>'
         '<ul><li><strong>Authority at a write.</strong> Read the '
         '<a href="../../appendices/C_claim_evidence_matrix.html#system-boundaries-and-authority.core">authority claim</a>, '
         f'then open the <a href="artifacts/{P5_U1_RESULT}">twelve replay records</a>. '
         'The direct and record-only routes pass the configuration check while admitting an out-of-scope edit. '
-        'The governed denial answers a mechanism question. A competent scoped writer is the open comparison.</li>'
+        'The governed denial answers a mechanism question. The '
+        '<a href="study-scoped-git.html">matched scoped Git run</a> checks the stronger alternative.</li>'
         '<li><strong>Claim custody.</strong> Compare the '
         '<a href="../../appendices/C_claim_evidence_matrix.html#evidence-states-and-claim-discipline.core">support discipline claim</a> '
         'with the <a href="artifacts/claim_decisions/v1_x_core_claim_dispositions.json">recorded core dispositions</a>. '

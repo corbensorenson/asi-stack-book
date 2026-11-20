@@ -11,6 +11,7 @@ import json
 from pathlib import Path
 import tempfile
 
+import research_studies as research
 from build_canonical_public_status import ROOT, build_status, validate_against_schema
 from build_product_projections import (
     CONTRACTS,
@@ -114,6 +115,59 @@ def snapshot_errors(output: Path, evidence: dict) -> list[str]:
             canonical = ROOT / str(entry.get("canonical_path", ""))
             if canonical.is_file() and sha256(canonical) != entry.get("sha256"):
                 errors.append(f"evidence snapshot is stale against canonical source {entry['canonical_path']}")
+    return errors
+
+
+def research_projection_errors(output: Path, source_commit: str, site: Path | None = None) -> list[str]:
+    def read(path):
+        return (ROOT / path).read_bytes()
+
+    registry = output / "evidence-registry"
+    manifest = json.loads(read(research.RECORDS))
+    studies = research.studies_from(manifest, read)
+    paths = {
+        "research-studies.json": json.dumps({
+            "source_commit": source_commit, "studies": studies, "agenda": manifest["agenda"],
+        }, indent=2, ensure_ascii=False).encode() + b"\n",
+        "verifier-replay.zip": research.verifier_archive(read),
+    }
+    errors = [
+        f"research projection is missing or stale: {name}" for name, expected in paths.items()
+        if not (registry / name).is_file() or (registry / name).read_bytes() != expected
+    ]
+    first = research.excerpt(studies, research.SITE_REGISTRY, home=True)
+    reader = research.excerpt(studies, "../" + research.SITE_REGISTRY, home=False)
+    for name, data in [(research.HOME_EXCERPT, first), (research.READER_EXCERPT, reader)]:
+        if read(name) != data.encode():
+            errors.append(f"shared research excerpt is stale: {name}")
+
+    index = (registry / "index.html").read_text()
+    agenda = registry / "research-agenda.html"
+    if "is the open comparison" in index or not agenda.is_file() or 'href="research-agenda.html"' not in index:
+        errors.append("research registry lost its current agenda or retained a stale baseline")
+    elif any(escape(row["question"]) not in agenda.read_text() for row in manifest["agenda"]):
+        errors.append("active agenda lost a research question")
+    for study in studies:
+        name = research.study_page(study["id"])
+        page = registry / name
+        if (f'href="{name}"' not in index or not page.is_file() or escape(study["summary"]) not in index
+                or escape(study["summary"]) not in page.read_text() or study["result_sha256"] not in page.read_text()):
+            errors.append(f"study page or registry summary is missing or stale: {name}")
+        if site is not None:
+            surfaces = [site / "reader/quickstart.html"]
+            if study["id"] != "forward-transfer":
+                surfaces.append(site / "index.html")
+            for target in surfaces:
+                if not target.is_file():
+                    errors.append(f"rendered research surface missing: {target.relative_to(site)}")
+                    continue
+                html = " ".join(target.read_text().split())
+                if f"{research.SITE_REGISTRY}/{name}" not in html or escape(study["summary"]) not in html:
+                    errors.append(f"rendered research summary missing or stale: {target.relative_to(site)} for {name}")
+            if study.get("paper"):
+                paper = site / study["paper"]
+                if not paper.is_file() or f"{research.SITE_REGISTRY}/{name}" not in paper.read_text():
+                    errors.append(f"rendered paper lost its study link: {study['paper']}")
     return errors
 
 
@@ -326,6 +380,7 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
         )
     )
     errors.extend(snapshot_errors(products, evidence))
+    errors.extend(research_projection_errors(products, status["source_commit"], site))
     for row in narrative.get("chapters", []):
         if not (site / row.get("public_path", "")).is_file():
             errors.append(f"rendered narrative route target missing: {row.get('public_path')!r}")
@@ -424,6 +479,7 @@ def main() -> None:
         if reference.get("chapter_count") != len(canonical):
             errors.append("architecture-reference chapter count mismatch")
         errors.extend(snapshot_errors(output, evidence))
+        errors.extend(research_projection_errors(output, status["source_commit"]))
         if evidence.get("chapter_count") != len(canonical) or evidence.get("source_count") != status["counts"]["sources"]:
             errors.append("evidence-registry projection does not match canonical counts")
         for relative in (

@@ -179,6 +179,8 @@ def render_body(
 
 
 def expected_page(record: dict, inventory_record: dict, structure: dict, exact_bytes: bytes) -> str:
+    from research_studies import RECORDS, SITE_REGISTRY, study_page
+
     source_copy = ROOT / record["published_source"]
     canonical_asset_root = resolved_asset_root(record)
     body, missing_images, stripped_front_matter = render_body(
@@ -189,6 +191,15 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
     )
     chapter_refs = chapter_links(record, structure, from_paper=True)
     chapter_text = ", ".join(chapter_refs) if chapter_refs else "No current chapter assignment."
+    related = [
+        study for study in load_json(ROOT / RECORDS)["studies"]
+        if study.get("paper") == html_path(record.get("page", ""))
+    ] if record.get("page") else []
+    study_links = "".join(
+        f"- [{study['title']}](../{SITE_REGISTRY}/{study_page(study['id'])})\n"
+        for study in related
+    )
+    followup = f"\n\n## Follow-up research\n\n{study_links.rstrip()}" if study_links else ""
     date = inventory_record.get("published") or inventory_record.get("updated") or "Date not normalized"
     updated = inventory_record.get("updated") or "Not separately recorded"
     source_type = inventory_record.get("source_type", "author paper")
@@ -278,7 +289,7 @@ description: {yaml_string(description)}
 
 ## {route_heading}
 
-{chapter_text}
+{chapter_text}{followup}
 
 <hr>
 
