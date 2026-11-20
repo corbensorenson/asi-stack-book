@@ -136,7 +136,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if not (registry / name).is_file() or (registry / name).read_bytes() != expected
     ]
     first = research.excerpt(studies, research.SITE_REGISTRY, home=True)
-    reader = research.excerpt(studies, "../" + research.SITE_REGISTRY, home=False)
+    reader = research.excerpt(studies, research.PUBLIC_REGISTRY, home=False)
     for name, data in [(research.HOME_EXCERPT, first), (research.READER_EXCERPT, reader)]:
         if read(name) != data.encode():
             errors.append(f"shared research excerpt is stale: {name}")
@@ -154,19 +154,19 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 or escape(study["summary"]) not in page.read_text() or study["result_sha256"] not in page.read_text()):
             errors.append(f"study page or registry summary is missing or stale: {name}")
         if site is not None:
-            surfaces = [site / "reader/quickstart.html"]
+            surfaces = [(site / "reader/quickstart.html", research.PUBLIC_REGISTRY)]
             if study["id"] != "forward-transfer":
-                surfaces.append(site / "index.html")
-            for target in surfaces:
+                surfaces.append((site / "index.html", research.SITE_REGISTRY))
+            for target, prefix in surfaces:
                 if not target.is_file():
                     errors.append(f"rendered research surface missing: {target.relative_to(site)}")
                     continue
                 html = " ".join(target.read_text().split())
-                if f"{research.SITE_REGISTRY}/{name}" not in html or escape(study["summary"]) not in html:
+                if f'href="{prefix}/{name}"' not in html or escape(study["summary"]) not in html:
                     errors.append(f"rendered research summary missing or stale: {target.relative_to(site)} for {name}")
             if study.get("paper"):
                 paper = site / study["paper"]
-                if not paper.is_file() or f"{research.SITE_REGISTRY}/{name}" not in paper.read_text():
+                if not paper.is_file() or f'href="{research.PUBLIC_REGISTRY}/{name}"' not in paper.read_text():
                     errors.append(f"rendered paper lost its study link: {study['paper']}")
     return errors
 

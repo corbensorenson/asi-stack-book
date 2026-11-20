@@ -16,6 +16,7 @@ from zipfile import ZipFile, ZipInfo
 ROOT = Path(__file__).resolve().parents[1]
 RECORDS = Path("products/research_studies.json")
 SITE_REGISTRY = "products/evidence-registry"
+PUBLIC_REGISTRY = "https://corbensorenson.github.io/asi-stack-book/" + SITE_REGISTRY
 REPO = "https://github.com/corbensorenson/asi-stack-book"
 VERIFIER = Path("experiments/verifier_replacement_comparison")
 VERIFIER_RESULT = VERIFIER / "results/2026-11-20-local.json"
@@ -186,7 +187,7 @@ def main() -> None:
     studies = studies_from(manifest, read)
     pages = {
         HOME_EXCERPT: excerpt(studies, SITE_REGISTRY, home=True),
-        READER_EXCERPT: excerpt(studies, "../" + SITE_REGISTRY, home=False),
+        READER_EXCERPT: excerpt(studies, PUBLIC_REGISTRY, home=False),
     }
     for path, text in pages.items():
         if args.write:

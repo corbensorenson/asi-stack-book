@@ -179,7 +179,7 @@ def render_body(
 
 
 def expected_page(record: dict, inventory_record: dict, structure: dict, exact_bytes: bytes) -> str:
-    from research_studies import RECORDS, SITE_REGISTRY, study_page
+    from research_studies import PUBLIC_REGISTRY, RECORDS, study_page
 
     source_copy = ROOT / record["published_source"]
     canonical_asset_root = resolved_asset_root(record)
@@ -196,7 +196,7 @@ def expected_page(record: dict, inventory_record: dict, structure: dict, exact_b
         if study.get("paper") == html_path(record.get("page", ""))
     ] if record.get("page") else []
     study_links = "".join(
-        f"- [{study['title']}](../{SITE_REGISTRY}/{study_page(study['id'])})\n"
+        f"- [{study['title']}]({PUBLIC_REGISTRY}/{study_page(study['id'])})\n"
         for study in related
     )
     followup = f"\n\n## Follow-up research\n\n{study_links.rstrip()}" if study_links else ""
