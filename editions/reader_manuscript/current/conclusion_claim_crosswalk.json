@@ -4,7 +4,7 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "30f587727e5b2d2392a22972c2d56354107eaace414579061d9a63e6761571f7",
+  "book_structure_sha256": "d795271dd605de20fb8429619882b8d3c08028fecc91a410154115b3cb91eac6",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
@@ -3246,7 +3246,7 @@
       "order": 9,
       "title": "Stable Capability Fields and Governed Replacement",
       "human_reader_source_file": "chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd",
-      "human_reader_source_sha256": "3eca31d56ebc3aeadfbd3e84f8fa8cd5a1b0b4570e3fb8f6829fab5510dd7197",
+      "human_reader_source_sha256": "4610d645d5aae61204a8b70ad7c21c433e117a5d12285ce4d7f9fcb1bc00378a",
       "public_path": "reader/chapters/unit-09-stable-capability-fields-and-governed-replacement.html",
       "central_question": "How can a system change its models, tools, memories, and substrates without losing the contract that makes those changes governable?",
       "conclusion_change": "Natural replacement studies showing no continuity, challenge, or recovery benefit beyond conventional versioning would weaken the abstraction.",
@@ -3735,7 +3735,7 @@
           "chapter_id": "governed-world-models-and-reality-grounding",
           "title": "Governed World Models and Reality Grounding",
           "technical_source_file": "chapters/governed-world-models-and-reality-grounding.qmd",
-          "technical_source_sha256": "2c0a1d08fda1bf8b4ec39dd71bd3aa2035ee1a749686bd3f795f01cce6ed4f33",
+          "technical_source_sha256": "8dd25c5dd07e9ff8f3741310f47b819f99285da581e4d3f993d6a081dd8ac707",
           "live_technical_path": "chapters/governed-world-models-and-reality-grounding.html",
           "human_reader_unit_id": "unit-11",
           "core_claim_id": "governed-world-models-and-reality-grounding.core",
@@ -3823,7 +3823,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-world-models-and-reality-grounding.qmd",
-              "sha256": "2c0a1d08fda1bf8b4ec39dd71bd3aa2035ee1a749686bd3f795f01cce6ed4f33"
+              "sha256": "8dd25c5dd07e9ff8f3741310f47b819f99285da581e4d3f993d6a081dd8ac707"
             },
             {
               "path": "lean/AsiStackProofs/GovernedWorldModels.lean",
@@ -4394,7 +4394,7 @@
           "chapter_id": "mathematical-and-search-substrates",
           "title": "Mathematical and Search Substrates",
           "technical_source_file": "chapters/mathematical-and-search-substrates.qmd",
-          "technical_source_sha256": "7d7e581f698309eb761016082d09ccef2a69d1e10a88726a9ec142f0aff9886f",
+          "technical_source_sha256": "5fbb340a580c253a2398b890470a52b2c56c877a711ac3b86eb7307258f3e89d",
           "live_technical_path": "chapters/mathematical-and-search-substrates.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "mathematical-and-search-substrates.core",
@@ -4514,7 +4514,7 @@
           "artifact_refs": [
             {
               "path": "chapters/mathematical-and-search-substrates.qmd",
-              "sha256": "7d7e581f698309eb761016082d09ccef2a69d1e10a88726a9ec142f0aff9886f"
+              "sha256": "5fbb340a580c253a2398b890470a52b2c56c877a711ac3b86eb7307258f3e89d"
             },
             {
               "path": "lean/AsiStackProofs/SearchSubstrates.lean",
@@ -5103,7 +5103,7 @@
       "order": 15,
       "title": "Verification Bandwidth, Claim Ledgers, and Proof",
       "human_reader_source_file": "chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd",
-      "human_reader_source_sha256": "86522793b62000cbb7fc63404a17f7d3e0806d9929e1f5af12f5a929e321f70b",
+      "human_reader_source_sha256": "64ed406a2d91bc236146ffcfac0f0ad1e6f8c7d8e25c8445c4e5db84e4c895cf",
       "public_path": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
       "central_question": "What must be connected for a claim to remain challengeable, scoped, and correctable as evidence and consumers change?",
       "conclusion_change": "Simpler evidence records that produce equal correction, calibration, proof-scope discipline, and consumer repair would justify consolidation.",
@@ -5782,7 +5782,7 @@
           "chapter_id": "executable-specifications-and-lean-proof-envelope",
           "title": "Executable Specifications and Lean Proof Envelope",
           "technical_source_file": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-          "technical_source_sha256": "02053400204da2aaaa030a07a8b6bd7371c82d6cd3ea2a1049a749ef56d60fc4",
+          "technical_source_sha256": "7519d324ca66f4e678e2997298dcb22a8cbf6e8051d0688ff36d0bbbfc869bce",
           "live_technical_path": "chapters/executable-specifications-and-lean-proof-envelope.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "executable-specifications-and-lean-proof-envelope.core",
@@ -5916,7 +5916,7 @@
           "artifact_refs": [
             {
               "path": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
-              "sha256": "02053400204da2aaaa030a07a8b6bd7371c82d6cd3ea2a1049a749ef56d60fc4"
+              "sha256": "7519d324ca66f4e678e2997298dcb22a8cbf6e8051d0688ff36d0bbbfc869bce"
             },
             {
               "path": "lean/AsiStackProofs/ProofEnvelope.lean",
@@ -6900,7 +6900,7 @@
           "chapter_id": "governed-operations-incident-command-and-graceful-degradation",
           "title": "Governed Operations, Incident Command, and Graceful Degradation",
           "technical_source_file": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-          "technical_source_sha256": "8056e29ad2fa70d8a5234d6f4f8e8ac0539445a068a8af543a33a391828e69be",
+          "technical_source_sha256": "041160709d3a488e1e29a8812f9b946a0c4e026bfa7ba24ecdf431913740098b",
           "live_technical_path": "chapters/governed-operations-incident-command-and-graceful-degradation.html",
           "human_reader_unit_id": "unit-17",
           "core_claim_id": "governed-operations-incident-command-and-graceful-degradation.core",
@@ -6984,7 +6984,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-operations-incident-command-and-graceful-degradation.qmd",
-              "sha256": "8056e29ad2fa70d8a5234d6f4f8e8ac0539445a068a8af543a33a391828e69be"
+              "sha256": "041160709d3a488e1e29a8812f9b946a0c4e026bfa7ba24ecdf431913740098b"
             },
             {
               "path": "lean/AsiStackProofs/GovernedOperations.lean",
@@ -7578,7 +7578,7 @@
           "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
           "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
           "technical_source_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-          "technical_source_sha256": "d388d30b9347f4ee9cbb493781351bf45befe341e69ca8779c28cc43cc45e20c",
+          "technical_source_sha256": "1f6e480d7c2ba7952bb28d5cbe038aaf52541787cc112b85274a72c28b79cc8f",
           "live_technical_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -7758,7 +7758,7 @@
           "artifact_refs": [
             {
               "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-              "sha256": "d388d30b9347f4ee9cbb493781351bf45befe341e69ca8779c28cc43cc45e20c"
+              "sha256": "1f6e480d7c2ba7952bb28d5cbe038aaf52541787cc112b85274a72c28b79cc8f"
             },
             {
               "path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
@@ -7780,7 +7780,7 @@
           "chapter_id": "coil-attention-cyclic-memory-and-recurrence-contracts",
           "title": "Coil Attention, Cyclic Memory, and Recurrence Contracts",
           "technical_source_file": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-          "technical_source_sha256": "a1c1c145eff27d82f32b696933ffdc17b3c6565fbe068c0e6f4e78707d542d54",
+          "technical_source_sha256": "fd9d5effc002f79e7dcd3a6b14a12bc6fb9df29d477a2d0d3257373160519003",
           "live_technical_path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "coil-attention-cyclic-memory-and-recurrence-contracts.core",
@@ -7908,7 +7908,7 @@
           "artifact_refs": [
             {
               "path": "chapters/coil-attention-cyclic-memory-and-recurrence-contracts.qmd",
-              "sha256": "a1c1c145eff27d82f32b696933ffdc17b3c6565fbe068c0e6f4e78707d542d54"
+              "sha256": "fd9d5effc002f79e7dcd3a6b14a12bc6fb9df29d477a2d0d3257373160519003"
             },
             {
               "path": "lean/AsiStackProofs/CoilAttentionMemory.lean",
@@ -7954,7 +7954,7 @@
           "chapter_id": "coilra-multicoil-rope-and-cyclic-mixers",
           "title": "CoilRA, MultiCoil RoPE, and Cyclic Mixers",
           "technical_source_file": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-          "technical_source_sha256": "b9a4deafe7c0042afa5ea1c9b19493b617beb1519ee78aa3e04eea374e05b16d",
+          "technical_source_sha256": "6aa82c088adeeb95285d10f45fbc6afd7873fc3b2e9f179b005275b0210f474d",
           "live_technical_path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "coilra-multicoil-rope-and-cyclic-mixers.core",
@@ -8068,7 +8068,7 @@
           "artifact_refs": [
             {
               "path": "chapters/coilra-multicoil-rope-and-cyclic-mixers.qmd",
-              "sha256": "b9a4deafe7c0042afa5ea1c9b19493b617beb1519ee78aa3e04eea374e05b16d"
+              "sha256": "6aa82c088adeeb95285d10f45fbc6afd7873fc3b2e9f179b005275b0210f474d"
             },
             {
               "path": "lean/AsiStackProofs/CyclicMixers.lean",
@@ -8349,7 +8349,7 @@
       "order": 21,
       "title": "Adjudicated Persistence, Generalization, Feedback, Continual Learning, and Unlearning",
       "human_reader_source_file": "chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd",
-      "human_reader_source_sha256": "369a70c03a0422d1ce78d844b63062debfc858c512265a128857e193480e6beb",
+      "human_reader_source_sha256": "b338302d3c5bf4b564f9b7786d2c9f7f735797ffc653e2e375b4dd73dc473c17",
       "public_path": "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
       "central_question": "What durable thing, if any, should change after a system succeeds, fails, receives feedback, or discovers a new regularity?",
       "conclusion_change": "If competent fixed-locus or human-reviewed policies match decision quality, transfer, deletion, and recovery at lower whole-lifecycle cost, the adaptive commit boundary should be narrowed or retired.",
@@ -8580,7 +8580,7 @@
           "chapter_id": "policy-optimization-and-learning-from-feedback",
           "title": "Policy Optimization and Learning from Feedback",
           "technical_source_file": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-          "technical_source_sha256": "57b5f502b442865457b1e3eaf5a4439c10f5570aab12bc4cbd7e410a4f7eebe6",
+          "technical_source_sha256": "2f50be1bbbeb8c0ad2f1a0122c8b03ccb633f98efae17b0ac7aff5147b83dc1f",
           "live_technical_path": "chapters/policy-optimization-and-learning-from-feedback.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "policy-optimization-and-learning-from-feedback.core",
@@ -8794,7 +8794,7 @@
           "artifact_refs": [
             {
               "path": "chapters/policy-optimization-and-learning-from-feedback.qmd",
-              "sha256": "57b5f502b442865457b1e3eaf5a4439c10f5570aab12bc4cbd7e410a4f7eebe6"
+              "sha256": "2f50be1bbbeb8c0ad2f1a0122c8b03ccb633f98efae17b0ac7aff5147b83dc1f"
             },
             {
               "path": "experiments/policy_update_lease/results/2026-07-02-local.json",
@@ -8820,7 +8820,7 @@
           "chapter_id": "data-engines-continual-learning-and-unlearning",
           "title": "Data Engines, Continual Learning, and Unlearning",
           "technical_source_file": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-          "technical_source_sha256": "6c7a2f9659318c67bd253cf0440d2277fe94d6deee7b045b69214d75416afaad",
+          "technical_source_sha256": "0cb301e9c77bef885a61a8c44f6fa8ca230ac568091682d806b9322c1868f116",
           "live_technical_path": "chapters/data-engines-continual-learning-and-unlearning.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "data-engines-continual-learning-and-unlearning.core",
@@ -9000,7 +9000,7 @@
           "artifact_refs": [
             {
               "path": "chapters/data-engines-continual-learning-and-unlearning.qmd",
-              "sha256": "6c7a2f9659318c67bd253cf0440d2277fe94d6deee7b045b69214d75416afaad"
+              "sha256": "0cb301e9c77bef885a61a8c44f6fa8ca230ac568091682d806b9322c1868f116"
             },
             {
               "path": "experiments/data_admission_receipt_probe/results/2026-07-10-local.json",
@@ -9026,11 +9026,11 @@
           "chapter_id": "scientific-discovery-and-experimental-governance",
           "title": "Scientific Discovery and Experimental Governance",
           "technical_source_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-          "technical_source_sha256": "d44ae46b5e894db38133084894f7cb8e22ae5a0bda215d75363556e1d61b4aee",
+          "technical_source_sha256": "d3de9caf83eb8c426888058b1a9a678306fb573dddfe64acccb90d54bbf932a2",
           "live_technical_path": "chapters/scientific-discovery-and-experimental-governance.html",
           "human_reader_unit_id": "unit-21",
           "core_claim_id": "scientific-discovery-and-experimental-governance.core",
-          "core_claim": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.",
+          "core_claim": "AI-generated hypotheses and exploratory observations should enter the record with their provenance and the decisions made after outcome access. Admitting a confirmatory claim requires a prospectively registered experimental contract that binds hypothesis lineage, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling. Causal truth, general discovery, reproducibility, safety, and transfer each require evidence fitted to the claim.",
           "claim_label": "Design rationale",
           "support_state": "argument",
           "source_ids": [
@@ -9088,7 +9088,7 @@
           "artifact_refs": [
             {
               "path": "chapters/scientific-discovery-and-experimental-governance.qmd",
-              "sha256": "d44ae46b5e894db38133084894f7cb8e22ae5a0bda215d75363556e1d61b4aee"
+              "sha256": "d3de9caf83eb8c426888058b1a9a678306fb573dddfe64acccb90d54bbf932a2"
             },
             {
               "path": "lean/AsiStackProofs/ScientificExperimentReview.lean",
@@ -9326,7 +9326,7 @@
           "chapter_id": "benchmark-ratchets-and-anti-goodhart-evidence",
           "title": "Benchmark Ratchets and Anti-Goodhart Evidence",
           "technical_source_file": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-          "technical_source_sha256": "688665bea1a683981b92deea5c34679068d56385f1421d39388b54d81b44e8a6",
+          "technical_source_sha256": "eed627b753f237ddf69dcb2d9f8bbcbf44ea1de9f7f9d95d2b6b0cce7cdb1aba",
           "live_technical_path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "benchmark-ratchets-and-anti-goodhart-evidence.core",
@@ -9498,7 +9498,7 @@
           "artifact_refs": [
             {
               "path": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd",
-              "sha256": "688665bea1a683981b92deea5c34679068d56385f1421d39388b54d81b44e8a6"
+              "sha256": "eed627b753f237ddf69dcb2d9f8bbcbf44ea1de9f7f9d95d2b6b0cce7cdb1aba"
             },
             {
               "path": "experiments/benchmark_antigoodhart/results/2026-07-02-fixture-bridge.json",
@@ -9532,7 +9532,7 @@
           "chapter_id": "capability-thresholds-and-deployment-commitments",
           "title": "Capability Thresholds and Deployment Commitments",
           "technical_source_file": "chapters/capability-thresholds-and-deployment-commitments.qmd",
-          "technical_source_sha256": "0997c12f83c6da4d661542ccf9c39da56e963f90c2fd63d2679b2b064d4979e1",
+          "technical_source_sha256": "7802594d476f282016540e2217d36a47668f32dfe246f5b4b8c4b666a993534f",
           "live_technical_path": "chapters/capability-thresholds-and-deployment-commitments.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "capability-thresholds-and-deployment-commitments.core",
@@ -9636,7 +9636,7 @@
           "artifact_refs": [
             {
               "path": "chapters/capability-thresholds-and-deployment-commitments.qmd",
-              "sha256": "0997c12f83c6da4d661542ccf9c39da56e963f90c2fd63d2679b2b064d4979e1"
+              "sha256": "7802594d476f282016540e2217d36a47668f32dfe246f5b4b8c4b666a993534f"
             }
           ],
           "publication": {
@@ -9654,7 +9654,7 @@
           "chapter_id": "adversarial-evaluation-sandbagging-and-training-time-deception",
           "title": "Adversarial Evaluation, Sandbagging, and Training-Time Deception",
           "technical_source_file": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
-          "technical_source_sha256": "af2ee629e864bcfcb7c8e66162bdc87a7d61098e5a49b7379743766d7ba55fa0",
+          "technical_source_sha256": "2c88fb98d6b281d03dad0b58ba150488890aff98833d1736f98b6cc6903615bc",
           "live_technical_path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "adversarial-evaluation-sandbagging-and-training-time-deception.core",
@@ -9765,7 +9765,7 @@
           "artifact_refs": [
             {
               "path": "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
-              "sha256": "af2ee629e864bcfcb7c8e66162bdc87a7d61098e5a49b7379743766d7ba55fa0"
+              "sha256": "2c88fb98d6b281d03dad0b58ba150488890aff98833d1736f98b6cc6903615bc"
             }
           ],
           "publication": {
@@ -9783,7 +9783,7 @@
           "chapter_id": "safety-cases-and-structured-assurance",
           "title": "Safety Cases and Structured Assurance",
           "technical_source_file": "chapters/safety-cases-and-structured-assurance.qmd",
-          "technical_source_sha256": "ca80519a5d7aa8ec9eb269ddd4fab233cea73a1122de86292805a4403b430ef4",
+          "technical_source_sha256": "755555f27ed12b13af610f44a2d3462a1cc161e4b5e3ebea2ab811740afe1b57",
           "live_technical_path": "chapters/safety-cases-and-structured-assurance.html",
           "human_reader_unit_id": "unit-22",
           "core_claim_id": "safety-cases-and-structured-assurance.core",
@@ -9888,7 +9888,7 @@
           "artifact_refs": [
             {
               "path": "chapters/safety-cases-and-structured-assurance.qmd",
-              "sha256": "ca80519a5d7aa8ec9eb269ddd4fab233cea73a1122de86292805a4403b430ef4"
+              "sha256": "755555f27ed12b13af610f44a2d3462a1cc161e4b5e3ebea2ab811740afe1b57"
             }
           ],
           "publication": {
@@ -9997,7 +9997,7 @@
       "order": 23,
       "title": "Generative Compression and Cognitive Resource Economics",
       "human_reader_source_file": "chapters/unit-23-generative-compression-and-cognitive-resource-economics.qmd",
-      "human_reader_source_sha256": "ea213d393469f9a7a6679f8e39dd63d248afca99461acc44e8c41d6eba685134",
+      "human_reader_source_sha256": "6445453ab7c9a5be9d1826550a1d2b261638eb1fb25ad438babde722eb2d8a26",
       "public_path": "reader/chapters/unit-23-generative-compression-and-cognitive-resource-economics.html",
       "central_question": "When should a system spend more computation, compress an artifact, use a faster approximation, deliberate, verify, or fall back?",
       "conclusion_change": "Matched effect-complete studies showing static budgets or one general model equal or outperform governed allocation would narrow the resource layer.",
@@ -10008,7 +10008,7 @@
           "chapter_id": "compact-generative-systems-and-residual-honesty",
           "title": "Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty",
           "technical_source_file": "chapters/compact-generative-systems-and-residual-honesty.qmd",
-          "technical_source_sha256": "5e091bee1a66527204272f4ca71ce03b9badb57be5d5e65622f7c4383f032a1d",
+          "technical_source_sha256": "e0aacd14aad9c3650292ab732ad7c00dbb893def935707253ecf8cde2c2d49d2",
           "live_technical_path": "chapters/compact-generative-systems-and-residual-honesty.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "compact-generative-systems-and-residual-honesty.core",
@@ -10249,7 +10249,7 @@
           "artifact_refs": [
             {
               "path": "chapters/compact-generative-systems-and-residual-honesty.qmd",
-              "sha256": "5e091bee1a66527204272f4ca71ce03b9badb57be5d5e65622f7c4383f032a1d"
+              "sha256": "e0aacd14aad9c3650292ab732ad7c00dbb893def935707253ecf8cde2c2d49d2"
             },
             {
               "path": "scripts/validate_circle_seed_rule_receipt_slice.py",
@@ -10792,7 +10792,7 @@
           "chapter_id": "resource-economics-and-token-budgets",
           "title": "Resource Economics and Token Budgets",
           "technical_source_file": "chapters/resource-economics-and-token-budgets.qmd",
-          "technical_source_sha256": "fcf1895279785d5fab00a7f906f89a7082e6bf9ec660bf4a3d39348bd2bffe4b",
+          "technical_source_sha256": "0370bee879dad42e77b7b71034942ac47ac52aa163a2f2381fe129b3b9cc3bff",
           "live_technical_path": "chapters/resource-economics-and-token-budgets.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "resource-economics-and-token-budgets.core",
@@ -11120,7 +11120,7 @@
           "artifact_refs": [
             {
               "path": "chapters/resource-economics-and-token-budgets.qmd",
-              "sha256": "fcf1895279785d5fab00a7f906f89a7082e6bf9ec660bf4a3d39348bd2bffe4b"
+              "sha256": "0370bee879dad42e77b7b71034942ac47ac52aa163a2f2381fe129b3b9cc3bff"
             },
             {
               "path": "scripts/validate_capacity_smoothing.py",
@@ -11208,7 +11208,7 @@
           "chapter_id": "personal-compute-hives-and-federated-edge-intelligence",
           "title": "Personal Compute Hives and Federated Edge Intelligence",
           "technical_source_file": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-          "technical_source_sha256": "9a95bf479fe6d8aa65b2ed84f5341bc9ba0d9fe9251c3400e37a452810674835",
+          "technical_source_sha256": "acb8d310eb3ff26adb162c58b8b2cbc6deb7e664acf22ed9096e4952722ff1ca",
           "live_technical_path": "chapters/personal-compute-hives-and-federated-edge-intelligence.html",
           "human_reader_unit_id": "unit-24",
           "core_claim_id": "personal-compute-hives-and-federated-edge-intelligence.core",
@@ -11440,7 +11440,7 @@
           "artifact_refs": [
             {
               "path": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
-              "sha256": "9a95bf479fe6d8aa65b2ed84f5341bc9ba0d9fe9251c3400e37a452810674835"
+              "sha256": "acb8d310eb3ff26adb162c58b8b2cbc6deb7e664acf22ed9096e4952722ff1ca"
             }
           ],
           "publication": {
@@ -11893,7 +11893,7 @@
       "order": 26,
       "title": "Integrated Reference Architecture, Project Theseus, and the Living Research Method",
       "human_reader_source_file": "chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd",
-      "human_reader_source_sha256": "91ea80781980d0540a502ef78e0cb1c46380909bb51d55cfe55ca67e96d0fdbe",
+      "human_reader_source_sha256": "2ca64df345a4c0337a931e18ec1a86e3de21564ac77e6b9ad02050ab70788a09",
       "public_path": "reader/chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.html",
       "central_question": "What does it mean to implement the ASI Stack as a testable system rather than merely describe an attractive architecture?",
       "conclusion_change": "Fresh-checkout natural tasks, independent reproduction, governance-rent ablations, and end-to-end failure tests that favor a simpler system would narrow or reject the reference design.",
@@ -11904,7 +11904,7 @@
           "chapter_id": "artifact-steward-agents-and-living-project-governance",
           "title": "Artifact Steward Agents and Living Project Governance",
           "technical_source_file": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
-          "technical_source_sha256": "c2dd1dd179a2d341995b3b901800ca102c54f41d20f3db1bd236b24030aeeb63",
+          "technical_source_sha256": "1ce13d0119b40de4fca1a44e90182e201c88e472396f7a326e617c22592890bf",
           "live_technical_path": "chapters/artifact-steward-agents-and-living-project-governance.html",
           "human_reader_unit_id": "unit-26",
           "core_claim_id": "artifact-steward-agents-and-living-project-governance.core",
@@ -12090,7 +12090,7 @@
           "artifact_refs": [
             {
               "path": "chapters/artifact-steward-agents-and-living-project-governance.qmd",
-              "sha256": "c2dd1dd179a2d341995b3b901800ca102c54f41d20f3db1bd236b24030aeeb63"
+              "sha256": "1ce13d0119b40de4fca1a44e90182e201c88e472396f7a326e617c22592890bf"
             },
             {
               "path": "lean/AsiStackProofs/ArtifactStewardAgents.lean",
@@ -12116,7 +12116,7 @@
           "chapter_id": "integrated-reference-architecture",
           "title": "Integrated Reference Architecture",
           "technical_source_file": "chapters/integrated-reference-architecture.qmd",
-          "technical_source_sha256": "79f1aa7a4bdcdc31702adab246f481fa97cc0a7cb7c334f4e4ad28706b7f8ef2",
+          "technical_source_sha256": "9d63809ff622f72fd706abb7fca6e125d3ebe14fb9d744ac3504f7923a5d44ff",
           "live_technical_path": "chapters/integrated-reference-architecture.html",
           "human_reader_unit_id": "unit-26",
           "core_claim_id": "integrated-reference-architecture.core",
@@ -12274,7 +12274,7 @@
           "artifact_refs": [
             {
               "path": "chapters/integrated-reference-architecture.qmd",
-              "sha256": "79f1aa7a4bdcdc31702adab246f481fa97cc0a7cb7c334f4e4ad28706b7f8ef2"
+              "sha256": "9d63809ff622f72fd706abb7fca6e125d3ebe14fb9d744ac3504f7923a5d44ff"
             },
             {
               "path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean",

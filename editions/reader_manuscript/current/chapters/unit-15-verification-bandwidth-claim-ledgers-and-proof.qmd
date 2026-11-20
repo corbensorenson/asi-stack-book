@@ -861,6 +861,16 @@ solve the same failures without persistent ledgers, or if most downstream
 repair can be handled reliably through ordinary version control and release
 practice.
 
+### Decision exercise · Two logs agree on a shipment {#decision-exercise-two-logs-agree-on-a-shipment}
+
+A supplier website and a dashboard both display “shipment received.” The
+dashboard imports the supplier's webhook. The claim under review says the
+boxes reached the receiving dock by noon. No dock scan is attached. You have
+one additional check before the cutoff.
+
+State the narrowest claim you can currently support. Choose the next check
+and describe the result that would let you support the noon arrival claim.
+
 ## What This Establishes
 
 A challengeable claim needs more than evidence nearby. It needs stable

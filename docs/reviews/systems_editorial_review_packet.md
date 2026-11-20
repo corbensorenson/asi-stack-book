@@ -2,6 +2,39 @@
 
 Status: ready for assignment; no reviewer assigned. Last updated: 2026-07-10.
 
+## Focused post-publication review of effect reconciliation
+
+**Purpose.** Assess the finding that receiving-service observation closes
+some ambiguous operations that ordinary scoped Git change control correctly
+leaves on hold. This request focuses on one comparison and its inference.
+
+Use the source commit named by the snapshot invitation. From a clean checkout
+with Python 3 and Git, run:
+
+```bash
+python3 scripts/compare_fresh_effect_workflows.py > /tmp/asi-fresh-effect-result.json
+cmp /tmp/asi-fresh-effect-result.json \
+  experiments/p5_u1_governed_repository_change/results/2026-11-20-fresh-effect-comparison.json
+```
+
+1. Reproduce the ten known-answer calibration cases and all 16 pairs.
+   Report the commit, runtime versions, any failed reproduction, and the
+   smallest record that exposes a discrepancy.
+2. Inspect the conventional workflow's safe hold and deduplicated retry.
+   Identify a competent conventional control that could close the four
+   additional cases with similar observer access or less work. Separate its
+   requirements from changes to the task or sink contract.
+3. Check whether the receiving observation proves the effect with the
+   payload and destination the request authorized. Identify a counterexample
+   that would require a stronger receipt or a narrower claim.
+4. Review the public wording against the denominator. The receiver is a
+   scripted SQLite journal and the tasks are authored. Estimate neither
+   production incidence nor human labor from these results.
+
+Include independence or conflicts, evidence for each finding, and permission
+to quote or publish your response. The project will record what changed
+against the pinned revision. [Protocol](../../experiments/p5_u1_governed_repository_change/fresh_task_protocol.md) · [Raw paired outcomes](../../experiments/p5_u1_governed_repository_change/results/2026-11-20-fresh-effect-comparison.json)
+
 ## Reviewer capacity and independence
 
 Use the `systems_editorial_reviewer` capacity role. The reviewer should cover

@@ -243,6 +243,12 @@ global claim that formal methods make the stack correct.
 
 ### Eighteen-stage formal-artifact lifecycle
 
+Review the translated proposition before proving it. Bind the checked result to the deployed implementation and reopen the binding when the adapter, assumptions, or consumer changes.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The lifecycle registers the exact proposition, quantifiers, scope, owner,
 consumer language, authority sought, versions, environment, and expiry; then
 decomposes the broad claim and preserves its unproved remainder. It routes the
@@ -274,6 +280,8 @@ independent formalizations, tools, implementations, and evaluators before
 transfer; material change expires the lease while lineage, countermodels,
 negative results, semantic losses, unproved remainders, and residual owners
 remain visible.
+
+</details>
 
 ### Governed Transition Calculus
 
@@ -742,7 +750,7 @@ These rows keep Executable Specifications and Lean Proof Envelope's manifest ass
 <!-- manifest-source-reconciliation:end -->
 ## Summary
 
-The proof envelope makes formality useful by staying small, operational, and bounded. Lean proves only what Lean checks. Schemas validate shape. Tests validate behavior. Benchmarks validate measured claims. The living book must keep those lanes separate.
+The proof envelope makes formality useful by staying small, operational, and bounded. A schema checks record shape. A proof establishes the encoded proposition under its assumptions. A behavioral test observes selected executions, and a benchmark estimates performance for a defined population and instrument. The export example adds a check before any of these: confirm that the proposition expresses the policy. [Evidence States](evidence-states-and-claim-discipline.qmd) owns the decision about what these observations support.
 
 The same separation applies to performance pressure. A benchmark result can raise confidence only when its run record, baseline, residuals, regression floor, and anti-Goodhart checks are explicit.
 

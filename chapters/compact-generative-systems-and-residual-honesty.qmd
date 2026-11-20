@@ -614,7 +614,15 @@ cost, and independence limitations remain durable artifacts. The existing
 
 ### Eighteen-stage representation lifecycle
 
+Serialize the complete representation, decode it independently, and test the consumer obligation. Charge mismatches to repair or fallback and include those costs when deciding whether compactness helped.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The governed lifecycle is: (1) freeze source, consumer, contract, allowed loss, authority, rights, workload, baselines, budgets, and horizon; (2) inventory literal data, codecs, generators, search, models, prompts, indexes, metadata, semantic leases, verifiers, repair, fallback, humans, and consumers separately; (3) bind exact lineage, versions, environment, policy, expiry, and descendants; (4) run bounded candidate search with all attempts retained; (5) compute proxy rate only as a diagnostic; (6) serialize the complete package; (7) independently decode and apply exact or scoped-loss comparison; (8) challenge verifier scope and independence; (9) record mismatches, uncertainty, repair, and consumer invalidity; (10) execute and cost repair or fallback; (11) issue provenance-bound semantic leases; (12) test hierarchy, collision, source-change, and migration behavior; (13) run real downstream consumers; (14) preserve residual state, ownership, due conditions, descendants, and reopening; (15) compare strong matched baselines; (16) measure the joint utility-and-total-burden frontier; (17) causally ablate claimed mechanisms and quarantine or retire failures; and (18) reproduce independently and transfer before promotion.
+
+</details>
 
 ### Twelve interface owners
 

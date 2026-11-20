@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "scientific-discovery-and-experimental-governance",
   "chapter_file": "chapters/scientific-discovery-and-experimental-governance.qmd",
-  "chapter_sha256": "d44ae46b5e894db38133084894f7cb8e22ae5a0bda215d75363556e1d61b4aee",
+  "chapter_sha256": "d3de9caf83eb8c426888058b1a9a678306fb573dddfe64acccb90d54bbf932a2",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-18-developmental-learning",
   "review_state": "digest_bound_editorial_pass",
@@ -32,11 +32,11 @@
   },
   "counterexample_or_simpler_baseline": "The simpler baseline publishes the positive attempt and calls repeated execution replication. The chapter preserves null and inconclusive attempts and asks whether the confirmatory and replication paths were actually independent.",
   "readable_claim": "A positive experiment is not a discovery when the null and inconclusive attempts disappeared, the confirmatory branch saw the outcome, or the replication shares the same hidden dependency.",
-  "normative_rule": "Freeze hypothesis ancestry, exploratory or confirmatory status, outcomes, sampling, stopping, exclusions, analysis, instrument scope, and claim ceiling before protected results open. Preserve every attempt and require independently qualified replication; omitted attempts or outcome exposed confirmation block the claim.",
+  "normative_rule": "Keep exploratory observations and failed attempts with their provenance. Before opening protected confirmatory results, freeze hypothesis ancestry, outcomes, sampling, stopping, exclusions, analysis, instrument scope, and the inference the experiment is meant to support. Record any later change. A hypothesis revised after seeing the outcome returns to exploration and needs a fresh confirmatory test.",
   "formal_binding": {
     "claim_id": "scientific-discovery-and-experimental-governance.core",
     "support_state": "argument",
-    "anchor": "preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status"
+    "anchor": "Admitting a confirmatory claim requires a prospectively registered experimental contract that binds hypothesis lineage"
   },
   "claim_atom_and_source_links": [
     "scientific-discovery-and-experimental-governance.core",

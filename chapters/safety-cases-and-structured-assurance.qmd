@@ -154,6 +154,12 @@ underlying scientific uncertainty remains.
 
 ### Eighteen-stage assurance lifecycle
 
+Track which claims depend on each piece of evidence. A stale result or new defeater reopens the affected branch of the argument and the deployment decision that depended on it.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The full lifecycle freezes the case boundary; compiles typed nodes; gives every
 edge an explicit bounded meaning; binds exact evidence identity and scope;
 records assumptions and justifications; maps hazards and the outside envelope;
@@ -196,6 +202,8 @@ affected release blocked, or a bounded input to the existing readiness gate.
 It never produces release authority. Acceptance and release remain separate
 records with their own owners, and a case revision is a reason to re-review the
 affected path rather than a way to overwrite prior uncertainty.
+
+</details>
 
 ### Case lifecycle and identity
 

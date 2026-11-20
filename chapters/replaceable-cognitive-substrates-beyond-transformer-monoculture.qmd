@@ -109,49 +109,44 @@ different kernels remains open. [Accepted finite transition](https://github.com/
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** A tensor-shape adapter calls two kernels interchangeable. The governed ABI asks whether state, checkpoint, calibration, assistance, cost, failure, rollback, and effect boundaries survive the swap.
-
-Treat learned architecture as a replaceable engine inside a stable vehicle, not as a tournament already won. Transformers, state-space models, recurrent networks, KANs, continuous-time systems, program learners, and future designs offer computational affordances. None should define intelligence merely because it dominates one workload or hardware generation.
-
-The stable contract belongs around the learned engine. A request names the task, context, exact state, authority ceiling, budget, evidence obligation, and fallback. A response remains a proposal carrying model identity, mutable-state lineage, costs, assistance, uncertainty, and requested effects. Reflex, reaction, deliberation, and specialist routes can then choose a qualified implementation without granting it control over approval, memory truth, or external action.
-
-That boundary changes recursive self-improvement. Re-training weights is one mechanism, but architectural improvement requires proposing a new substrate, testing it against strong alternatives, shadowing it without authority, canarying it with rollback, and retiring it only after migration succeeds. Simplicity must cover the system, including adapters, retrieval, tools, search, verification, maintenance, and failures. A compact cell is simpler only when surrounding machinery does not hide the intelligence or cost it claims to remove.
+**Concrete lens.** A tensor-shape adapter calls two kernels interchangeable.
+Test what happens to the checkpoint, calibration and rollback before serving
+the replacement.
 :::
 
 ## Problem
 
-The stack can claim replaceability while silently baking Transformer token, state, memory, checkpoint, and serving assumptions into every surrounding layer, making architectural improvement expensive, unsafe, and self-ratifying.
+A faster candidate accepts the same input shape but stores mutable state in a
+different representation. If the recovery path cannot restore what the prior
+consumer relied on, keep the incumbent or limit the candidate to a stateless
+route. A matched migration and rollback trial could reverse that decision.
 
-That coupling is easy to miss because two systems may expose similar text-in,
-text-out demonstrations while depending on incompatible internal state. An
-attention cache, recurrent state, test-time learner, external memory, or exact
-program store has different meanings for restore, deletion, calibration,
-revocation, and failure recovery. Treating them as interchangeable pushes the
-real incompatibility into adapters that are rarely measured or governed.
-
-The deeper problem is architectural lock-in at the control boundary. If routing,
-authority, evidence, and rollback assume one learned substrate, a system cannot
-safely test a successor without rebuilding its operating environment. It also
-cannot distinguish genuine substrate improvement from a result supplied by
-extra retrieval, search, tools, hidden state, or specialized hardware.
+Take a worker that carries document state across requests. The incumbent can
+restart from a checkpoint taken before the last approval. The candidate can
+reload its weights but has no record of which document version its recurrent
+state represents. Both can answer a fresh prompt. Only the incumbent currently
+supplies the evidence needed to resume this work after interruption. Keep the
+two deployment decisions separate. The candidate can compete for fresh tasks
+while the team checks whether a migration preserves pending work and access
+boundaries for the stateful route.
 
 ## Why existing approaches are insufficient
 
-An architecture catalog, parameter-count comparison, asymptotic complexity claim, single benchmark, synthetic recall result, source-reported win, or tiny central model with hidden retrieval/search/tool burden does not establish a simpler, better, safer, or replaceable cognitive substrate.
+Throughput, perplexity and parameter counts describe specific comparisons.
+A replacement decision also needs the consumer's state, external assistance,
+calibration and full lifecycle cost. Begin at the
+[Cognitive Kernel ABI](#the-cognitive-kernel-abi). Use the
+[CRAM maze comparison](#cram-learned-constraint-search) to see why a specialist's
+reported gain remains task-scoped, and consult the
+[qualification checks](#codex-test-plan) for a broader adoption.
 
-Architecture papers usually optimize a bounded comparison: perplexity,
-throughput, memory, scaling, a task suite, or theoretical complexity. Those
-measurements can be valuable without answering whether state can migrate,
-authority stays bounded, assistance is disclosed, failed effects roll back, or
-the implementation remains useful under the stack's actual consumers and
-hardware. A paper-level result therefore positions a candidate; it does not
-qualify a governed replacement.
-
-Interface standardization alone is also insufficient. A lowest-common-
-denominator API can erase exactly the distinctions that matter, such as mutable
-test-time state or incompatible checkpoint semantics. The required abstraction
-must standardize obligations and receipts while allowing implementations to
-declare irreducible differences and reject routes they cannot faithfully serve.
+An adapter that translates the input and output arrays can still hide extra
+work. One candidate may re-read the entire document on every call while the
+other resumes from a checkpoint. Count the retrieval, reprocessing and recovery
+each candidate needs to satisfy the same request. Run the interruption at the
+same point under both implementations and inspect the resumed artifact against
+the last accepted state. That comparison gives the consumer a basis for
+switching a route it already relies on.
 
 ## Core Claim
 

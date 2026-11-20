@@ -188,6 +188,12 @@ still decides whether any later action is allowed.
 
 ### Eighteen-stage commitment lifecycle
 
+Freeze the commitment before measuring the candidate. If evidence crosses its trigger, check that the named safeguard and any exception are current before handing the result to readiness.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The lifecycle registers the domain, threat, affected assets and populations,
 prohibited generalizations, release path, owner, authority, rights,
 environment, and expiry. It freezes a versioned assessment envelope and
@@ -216,6 +222,8 @@ stale acceptance, exception misuse, false safeguard assurance, latency,
 burden, cost, residual age, and route outcomes before issuing a least-authority
 readiness handoff. Drift monitoring, independent institutional reproduction,
 transfer, and expiry or revocation close the lifecycle.
+
+</details>
 
 ### Worked trace: the crossed cyber threshold with a stale exception
 

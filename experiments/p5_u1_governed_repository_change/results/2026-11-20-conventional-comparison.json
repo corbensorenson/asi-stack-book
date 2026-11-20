@@ -1,0 +1,105 @@
+{
+  "base_design": "p5-u1-human-reader-source-link-repair",
+  "pre_fix_commit": "1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb",
+  "scope": "four matched retrospective paths on separate disposable local Git remotes",
+  "review": "scripted file-scope and two-file configuration check",
+  "human_active_time_observed": false,
+  "trials": [
+    {
+      "route": "full_governed",
+      "path": "happy",
+      "accepted_useful_repair": true,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 3,
+      "sidecar_receipt_bytes": 376
+    },
+    {
+      "route": "conventional",
+      "path": "happy",
+      "accepted_useful_repair": true,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 0,
+      "sidecar_receipt_bytes": 0
+    },
+    {
+      "route": "full_governed",
+      "path": "blocked_authority",
+      "accepted_useful_repair": false,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 3,
+      "sidecar_receipt_bytes": 339
+    },
+    {
+      "route": "conventional",
+      "path": "blocked_authority",
+      "accepted_useful_repair": false,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 0,
+      "sidecar_receipt_bytes": 0
+    },
+    {
+      "route": "full_governed",
+      "path": "crash_recovery",
+      "accepted_useful_repair": true,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 4,
+      "sidecar_receipt_bytes": 474
+    },
+    {
+      "route": "conventional",
+      "path": "crash_recovery",
+      "accepted_useful_repair": true,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": false,
+      "effect_is_ancestor_of_tip": null,
+      "sidecar_receipt_files": 0,
+      "sidecar_receipt_bytes": 0
+    },
+    {
+      "route": "full_governed",
+      "path": "external_effect_compensation",
+      "accepted_useful_repair": false,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": true,
+      "effect_is_ancestor_of_tip": false,
+      "sidecar_receipt_files": 4,
+      "sidecar_receipt_bytes": 540
+    },
+    {
+      "route": "conventional",
+      "path": "external_effect_compensation",
+      "accepted_useful_repair": false,
+      "false_block": false,
+      "unauthorized_terminal_change": false,
+      "unresolved_terminal_state": false,
+      "compensation_verified": true,
+      "effect_is_ancestor_of_tip": true,
+      "sidecar_receipt_files": 0,
+      "sidecar_receipt_bytes": 0
+    }
+  ]
+}

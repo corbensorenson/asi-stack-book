@@ -92,22 +92,32 @@ Readers need to see how the layers operate as one machine from intent to governe
 
 ### Follow one request before following every subsystem
 
-Begin with the [patch that passed and still could not ship](#concrete-integration-failure-the-patch-that-passed-and-still-could-not-ship).
-Then read the [worked request trace](#worked-showpiece-trace-one-request-through-the-stack)
-for the proposed handoffs and the [minimum implementation](#minimum-viable-implementation)
-for which pieces actually exist. The [P5 successor](#p5-stateful-service-successor)
-describes a bounded local service result; it is distinct from the showpiece's
-illustrated whole-stack flow. The compiler, precision, learning, and dispatch
-subsections deepen particular joins rather than introduce extra steps every
-request must execute.
+**Decision.** Can the worker repair the reader's broken source link when its
+grant names only the generator? The fix needs that file and the generated
+configuration. Both can pass their check after an unauthorized edit. Follow
+the observed replay before consulting the full architecture.
 
-Integration owns a question the component chapters cannot answer alone:
-do their outputs refer to the same request, authorized effect, observed
-result, and remaining obligation? [Artifact Graphs](artifact-graphs-audit-logs-and-replay.qmd)
-provides lineage, and [Resource Economics](resource-economics-and-token-budgets.qmd)
-provides the bill. Neither certifies that every join is correct. Conversely,
-a consistent integrated trace does not establish that the underlying planner,
-observer, or evaluator is adequate.
+| Handoff | Record from the executed Quickstart case |
+|---|---|
+| Intent to permission | The requested repair names two files. The blocked-case grant names one. |
+| Permission to effect | The governed route denies the change before writing. The record-only route changes both files. |
+| Effect to observation | The replay inspects the two files. A separate browser check covers the rendered link. |
+| Recovery to history | The interruption case restores and reapplies locally. Remote compensation is checked against the original file contents and the retained Git effect. |
+
+The matched follow-up gives ordinary change control the same four scenarios
+and inputs. Both routes complete two authorized repairs, block the restricted
+change, and restore the compensated branch's file contents. Git revert also
+keeps the effect in the branch's ancestry. For this job, those observations
+favor the simpler workflow when branch history is required. A remote effect
+with an unknown outcome after timeout would reopen the comparison.
+[Quickstart and matched replay](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#ordinary-change-control-comparison)
+
+The [fixture](#current-fixture-trace) checks record shape, the
+[validator replay](#replayed-command-trace) captures a real local command, and
+the [showpiece](#worked-showpiece-trace-one-request-through-the-stack) maps
+proposed joins. The separate [budget-clamp experiment](#governed-repository-change-slice)
+uses a different task and baseline. Keep those observations with their own
+cases.
 
 ### Six research objects, one governed cycle
 
@@ -127,14 +137,14 @@ hide residuals, or weaken evidence, rights, authority, recovery, or fallback.
 Every stage returns burdens, dissent, rights events, incidents, and outcomes to
 constitutional review.
 
-This cycle is useful because every arrow carries a forbidden inference. Social
-approval is not truth or execution authority. Context presence is not truth or
-permission. Execution success is not a belief update. A supported belief does
-not select its persistence locus. Ordinary adaptation evidence cannot ratify a
-new evaluator. A cheaper representation cannot redefine protected behavior.
-Technical success cannot establish legitimacy. The six-paper compression is
-therefore an index over the stack, not a smaller authority that replaces its
-specialist owners.
+In the repository trace that follows, each stage leaves a different record.
+The accepted intent fixes what may change. The context snapshot identifies
+what the worker saw. The runtime receipt records the observed effect. The
+claim ledger carries the current conclusion and its evidence. A change to
+future behavior then needs a separate decision about where to persist the
+lesson. If it would change the evaluator itself, the self-improvement review
+must examine that evaluator. At every step, a cheaper representation is
+eligible only while it preserves the obligations the next owner depends on.
 
 ### Concrete integration failure: the patch that passed and still could not ship
 
@@ -537,6 +547,12 @@ deployment result.
 
 ### Eighteen-stage cross-layer join lifecycle
 
+At each handoff, match the received artifact to the original request and authorized effect. On a mismatch, record which join failed and identify who can reconcile the observed result.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The contract (1) freezes purpose, request, intent, affected parties, consumers,
 environments, owners, effects, acceptance, and non-claims; (2) binds authority,
 delegation, ceilings, approvals, revocation, stops, exceptions, and terminal
@@ -563,6 +579,8 @@ changes; (17) monitors join completeness, orphans, drift, unacknowledged
 effects, evaluator capture, latency, residual age, rollback, usefulness,
 failures, and cost; and (18) expires after material interface or environment
 change.
+
+</details>
 
 ```{mermaid}
 sequenceDiagram

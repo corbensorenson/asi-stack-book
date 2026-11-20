@@ -146,6 +146,81 @@ the governed happy path, and to twelve for governed external compensation.
 Those counts expose mechanism cost. They are not measurements of human effort,
 and the local latency and CPU values are not transferable performance results.
 
+## Compare with ordinary change control {#ordinary-change-control-comparison}
+
+The twelve trials establish why a test alone is insufficient. A second local
+replay compares a stronger alternative on the same defect and four scenarios.
+It checks the proposed files against the grant, reviews the actual diff with
+the two-file configuration test, restarts from the baseline after interruption,
+and uses a Git revert if an already-published change must be undone.
+
+| Observed outcome across four cases per route | Fully governed | Scoped Git workflow |
+|---|---:|---:|
+| Authorized local repairs accepted | 2 | 2 |
+| Authorized local repairs wrongly blocked | 0 | 0 |
+| Out-of-scope case with a changed terminal state | 0 | 0 |
+| Cases with unresolved terminal file or branch content | 0 | 0 |
+| Remote compensation observed | 1 | 1 |
+| Original effect still an ancestor of the compensated branch | 0 | 1 |
+| Extra receipt files across the four cases | 14 | 0 |
+
+Both remote tips have the original file contents after compensation. The fully
+governed replay retains the changed commit on an audit ref; the Git revert
+also preserves it in ordinary branch history. If the job requires both
+restored bytes and an auditable main branch, the scoped Git workflow passes
+both checks in this case. Choose it when those checks cover the job. A
+delegated external service that can commit an effect after a timeout would
+change that decision: first establish what the service observed and how a
+retry is identified.
+
+Ordinary Git history and refs are outside the extra receipt count. The
+replay reused the known fix, isolated local repositories and scripted review. It measures terminal state and history. Human review time, concurrent
+writers and unobserved effects remain outside this comparison.
+
+```bash
+python3 scripts/compare_repository_change_workflows.py
+```
+
+[Follow the same repair through Unit 26](chapters/unit-26-integrated-reference-architecture-project-theseus-and-the-living-research-method.qmd#following-the-repository-change) · [Inspect the comparison record](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/results/2026-11-20-conventional-comparison.json)
+
+## Check the receiver after an ambiguous reply {#fresh-effect-comparison}
+
+The source-link case ends at a Git branch whose state both workflows can
+inspect. Now give each workflow four fresh authored maintenance tasks and
+four receiving-service scenarios per task. Every pair starts from the same
+Git files, permission, approval decision and logical deadline. A receiver may
+commit even when its acknowledgment never reaches the caller.
+
+| Outcome across 16 cases per workflow | Ordinary scoped change control | With receiving-service observation |
+|---|---:|---:|
+| Useful changes with the exact effect resolved | 12 | 16 |
+| Safe holds with terminal effect unresolved by the workflow | 4 | 0 |
+| Repeated effects | 0 | 0 |
+| False closures | 0 | 0 |
+| Wrongful blocks | 0 | 0 |
+| Retries | 10 | 4 |
+| Additional receiver reads | 0 | 12 |
+
+Four cases account for the difference: lost acknowledgments or delayed
+commits at the two receivers without deduplication. The ordinary workflow
+held because it lacked enough evidence to retry safely. The second workflow
+read the receiver's journal and closed the case only once it saw the intended
+effect committed. Both workflows closed all eight cases on receivers with
+deduplication. Both retried an affirmative failure before commit. That
+distinction tells a maintainer what to check before adding another component.
+
+The four task definitions, fault schedule and calibration rules were fixed
+locally before the first paired run. The receiver uses SQLite and logical
+ticks. These observations expose a mechanism under the tested conditions.
+They leave human time, production incidence and behavior on natural
+workloads open.
+
+```bash
+python3 scripts/compare_fresh_effect_workflows.py
+```
+
+[Protocol](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/fresh_task_protocol.md) · [Execution plan](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/fresh_task_execution_plan.md) · [All pairs and sink observations](https://github.com/corbensorenson/asi-stack-book/blob/main/experiments/p5_u1_governed_repository_change/results/2026-11-20-fresh-effect-comparison.json)
+
 ## One Repair, Five Possible Endings
 
 The following are **illustrative teaching cases**, not additional P5-U1 trials.

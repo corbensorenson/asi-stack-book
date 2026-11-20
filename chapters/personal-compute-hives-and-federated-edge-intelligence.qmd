@@ -192,6 +192,12 @@ This mechanism turns household and project machines into a policy-first compute 
 
 ### Eighteen-stage governed job lifecycle
 
+Admit the job only on an eligible worker with enough local capacity and the required data rights. Verify the returned artifact. A partition can invalidate placement or require recovery before migration.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The operational claim is meaningful only if the whole job lifecycle has an owner and a rejecting path. The reference lifecycle is:
 
 1. Freeze the exact principal, household or project, job, use, acceptance predicate, risk budget, cost and energy budget, deadline, and evaluation horizon.
@@ -212,6 +218,8 @@ The operational claim is meaningful only if the whole job lifecycle has an owner
 16. Roll back, requeue, compensate, or quarantine affected work and invalidate descendants when execution, authority, evaluation, node state, or evidence fails.
 17. Update scoped reliability, readiness, and reputation from adjudicated evidence without creating standing authority or deleting failures and residuals.
 18. Replay natural and adversarial campaigns against matched baselines and transfer settings before promoting any efficacy, safety, privacy, availability, efficiency, or federation claim.
+
+</details>
 
 ### Twelve interface owners
 

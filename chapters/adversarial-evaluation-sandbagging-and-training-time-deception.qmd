@@ -157,6 +157,12 @@ authority, or support movement.
 
 ### Eighteen-stage observation lifecycle
 
+Freeze the hypotheses that could explain the score change. Separate a result about behavior under observation from a claim about why the model behaved that way. Reopen the evaluation when the monitor or exposure changes.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The complete lifecycle freezes the consumer, decision, permitted inference,
 hypotheses, alternatives, consequence, power, independence floor, disclosure,
 and stop authority; binds model, task, scaffold, prompt, tool, authority,
@@ -201,6 +207,8 @@ trigger a rerun, a narrower capability description, a quarantine state, or a
 request for independent review. It must not become a diagnosis of intent
 without additional evidence. This keeps operational control separate from
 speculative psychology while preserving a hard stop for promotion.
+
+</details>
 
 ```{mermaid}
 flowchart LR

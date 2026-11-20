@@ -226,6 +226,12 @@ not inspection of a corpus or validation of a data source.
 
 ### Eighteen-stage custody lifecycle
 
+Follow a datum through its uses and derivatives. When a deletion request arrives, verify storage disposition separately from checkpoint rollback and any change in learned behavior.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The lease makes the mechanism eighteen reviewable stages rather than one
 admission decision. It (1) freezes consumer, purpose, cohort, learning lane,
 claim axes, rights, state inventory, and deletion scope; (2) binds source,
@@ -258,6 +264,8 @@ monitors natural utility, calibration, tails, forgetting, interference,
 privacy, poisoning, drift, incidents, sequential deletion, regrowth, residual
 age, and descendants, then (18) expires, narrows, refutes, revokes, restores,
 archives, or retires the lease after any material change.
+
+</details>
 
 ```{mermaid}
 flowchart LR

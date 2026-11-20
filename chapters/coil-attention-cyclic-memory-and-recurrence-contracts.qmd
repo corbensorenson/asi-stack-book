@@ -175,6 +175,12 @@ The contract also needs an admission state: admissible as structural guardrail, 
 
 ### Eighteen-stage state-carry lifecycle
 
+Bind the state carry to a model, request and epoch. On stale or missing state, stop or fall back and invalidate derived states that relied on that carry.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The mature lease registers object, state/model version, request, tenant,
 consumer, workload, authority, rights, axes, budget, and non-claims; binds
 source/VCM lineage, epochs, model, tokenizer, layout, device, and revocation;
@@ -190,6 +196,8 @@ ablations; monitors leakage, poisoning, drift, gaps, overthinking, and displaced
 work; refuses, repairs, recomputes, falls back, quarantines, rolls back, or
 terminates; invalidates all descendants; reproduces independently and transfers;
 then expires the lease and assigns every residual.
+
+</details>
 
 ## Interfaces
 

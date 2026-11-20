@@ -122,3 +122,21 @@ LANG=en_US.UTF-8 LC_ALL=en_US.UTF-8 python3 scripts/render_reader_formats.py --o
 ## Non-Claims
 
 This file does not claim that a DOI exists, that EPUB/DOCX/PDF/audio artifacts are approved, that local reader-format probes are release artifacts, that Lean proves broad system safety, or that any chapter core support state moved above `argument`.
+
+
+## Candidate archive for the effect-reconciliation evaluation
+
+Archive a public tested revision with the rendered book, exact Git source
+commit, and independently inspectable inputs and outputs for the finding. The
+evidence cutoff for the fresh-task comparison is the retained 2026-11-20
+result. Include its protocol, execution plan and lock, task fixtures, runner,
+clean-checkout reproduction command, and all paired outcomes. Preserve the
+separate historical source-link replay and its competent Git comparator where
+the book cites both results.
+
+Use a version-specific record for citation. Verify the archive bytes and
+manifest against the deployed commit before deposit. Record the issued DOI,
+archive checksum, date, source commit and evidence cutoff together, and update
+the live citation route after the DOI resolves. The identifier in
+`CITATION.cff` should continue to cite the latest completed immutable archive
+until the successor has been published and verified. [Zenodo deposit guide](https://help.zenodo.org/docs/deposit/create-new-upload/)

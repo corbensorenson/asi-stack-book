@@ -5,7 +5,7 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/personal-compute-hives-and-federated-edge-intelligence.qmd",
     "structured_atoms_reviewed": 77,
-    "prose_candidates_adjudicated": 71,
+    "prose_candidates_adjudicated": 73,
     "unowned_material_claims": 0,
     "review_note": "Re-reviewed the complete chapter through the 2026-08-02 Hive lifecycle proof refinement. The new theorem-summary sentence maps to the existing work-admission lifecycle target, and the revised exclusion sentence remains a bounded non-claim. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
   },
@@ -495,6 +495,16 @@
       "state": "historical_or_source_report",
       "rationale": "Zero inclusion probability violates the selection-positivity assumption of the cited statistical result.",
       "target_atom_id": null
+    },
+    "personal-compute-hives-and-federated-edge-intelligence.prose.bbf088c28ec9": {
+      "state": "duplicate_of_atom",
+      "rationale": "The chapter core already binds workers to placement eligibility, capacity and rights.",
+      "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.core"
+    },
+    "personal-compute-hives-and-federated-edge-intelligence.prose.8ee3a214ad56": {
+      "state": "duplicate_of_atom",
+      "rationale": "The partition case applies the existing placement and recovery obligations.",
+      "target_atom_id": "personal-compute-hives-and-federated-edge-intelligence.core"
     }
   },
   "prose_review_lineage": [

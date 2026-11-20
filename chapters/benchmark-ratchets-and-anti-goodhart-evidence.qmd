@@ -481,6 +481,12 @@ claim that another layer can evaluate.
 
 ### Eighteen-stage benchmark-instrument lifecycle
 
+Review the instrument before comparing runs. Reopen comparability when the evaluator or exposure changes, retain earlier attempts, and carry the narrowed inference into the decision that consumes the score.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The lifecycle registers the construct, movable claim, task population, data,
 metric, harness, model, checkpoint, output path, evaluator, baselines, budget,
 authority, environment, and expiry. It validates that the architecture and
@@ -519,6 +525,8 @@ evaluators, data custody, implementations, and organizations must reproduce a
 decisive result before heterogeneous transfer. Material change or failure
 expires, quarantines, narrows, downgrades, refutes, supersedes, or retires the
 instrument while preserving evidence and lineage.
+
+</details>
 
 ### Metric provenance and closure inheritance
 

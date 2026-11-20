@@ -1,0 +1,42 @@
+{
+  "protocol_sha256": "63e244c76de28769ca28d0c8994acc988a5246559ca82944cd8dcbea361e6c33",
+  "scenarios": ["acknowledged", "commit_ack_lost", "pending_then_commit", "failed_before_commit"],
+  "tasks": [
+    {
+      "id": "reading-route",
+      "files": {"routes.json": "{\"start\": \"/guide/old\"}\n", "README.md": "See the guide at /guide/old.\n"},
+      "write_scope": ["routes.json", "README.md"],
+      "expected": {"routes.json": "{\"start\": \"/guide/current\"}\n", "README.md": "See the guide at /guide/current.\n"},
+      "destination": "reader-preview",
+      "effect": "Update the start route for the reader preview.",
+      "sink_idempotent": true
+    },
+    {
+      "id": "archive-index",
+      "files": {"archive.json": "{\"channel\": \"draft\", \"available\": false}\n", "MANIFEST.md": "Archive channel: draft.\n"},
+      "write_scope": ["archive.json", "MANIFEST.md"],
+      "expected": {"archive.json": "{\"channel\": \"review\", \"available\": true}\n", "MANIFEST.md": "Archive channel: review.\n"},
+      "destination": "archive-preview",
+      "effect": "Announce the archive index to the review queue.",
+      "sink_idempotent": false
+    },
+    {
+      "id": "caption-correction",
+      "files": {"figures/labels.json": "{\"diagram\": \"Figure 4\"}\n", "guide.md": "See Figure 4.\n"},
+      "write_scope": ["figures/labels.json", "guide.md"],
+      "expected": {"figures/labels.json": "{\"diagram\": \"Figure 5\"}\n", "guide.md": "See Figure 5.\n"},
+      "destination": "illustration-preview",
+      "effect": "Queue validation of the corrected figure reference.",
+      "sink_idempotent": false
+    },
+    {
+      "id": "artifact-index",
+      "files": {"artifact.json": "{\"revision\": 8, \"path\": \"case-8.json\"}\n", "note.md": "Reference: case-8.json.\n"},
+      "write_scope": ["artifact.json", "note.md"],
+      "expected": {"artifact.json": "{\"revision\": 9, \"path\": \"case-9.json\"}\n", "note.md": "Reference: case-9.json.\n"},
+      "destination": "evidence-preview",
+      "effect": "Refresh the evidence-preview index.",
+      "sink_idempotent": true
+    }
+  ]
+}

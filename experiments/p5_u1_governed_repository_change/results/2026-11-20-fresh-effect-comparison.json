@@ -1,0 +1,1321 @@
+{
+  "frozen_inputs": {
+    "fresh_task_protocol.md": "63e244c76de28769ca28d0c8994acc988a5246559ca82944cd8dcbea361e6c33",
+    "fresh_tasks.json": "5bb664dc43a7eaab32e511002e616e34fc8ffb6f4b40b0d8b92f01bf90ba5973",
+    "compare_fresh_effect_workflows.py": "f08bc67210375fd7a9c393dcff6f676599fe98b7a3a61cce297790bbce21c133",
+    "fresh_task_execution_plan.md": "8241df10b3183c65f03b7490f80ccb0bae1b2f70c3e92111c94611c30943911c"
+  },
+  "calibration": {
+    "pending": true,
+    "wrong_operation": true,
+    "wrong_destination": true,
+    "wrong_payload": true,
+    "stale": true,
+    "missing": true,
+    "committed": true,
+    "explicit_failure": true,
+    "ordinary_urgent_without_approval": true,
+    "reconciliation_urgent_without_approval": true
+  },
+  "human_time_measured": false,
+  "pairs": [
+    {
+      "task": "reading-route",
+      "scenario": "acknowledged",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "reading-route",
+      "scenario": "commit_ack_lost",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "reading-route",
+                  "destination": "reader-preview",
+                  "payload_sha256": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92"
+                },
+                "tick": 2,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "reading-route",
+      "scenario": "pending_then_commit",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 4,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "reading-route",
+                  "destination": "reader-preview",
+                  "payload_sha256": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92"
+                },
+                "tick": 2,
+                "state": "pending"
+              }
+            },
+            {
+              "tick": 4,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "reading-route",
+                  "destination": "reader-preview",
+                  "payload_sha256": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92"
+                },
+                "tick": 4,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "reading-route",
+      "scenario": "failed_before_commit",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "reading-route",
+              "destination": "reader-preview",
+              "payload": "fb438c9f826a10c53061b3e05f82488970a6eb0bfd07bed0e1b31445259bad92",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "archive-index",
+      "scenario": "acknowledged",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "archive-index",
+      "scenario": "commit_ack_lost",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "hold",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": false,
+          "false_closure": false,
+          "safe_hold": true,
+          "wrongful_block": false,
+          "unresolved": true,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "archive-index",
+                  "destination": "archive-preview",
+                  "payload_sha256": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938"
+                },
+                "tick": 2,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "archive-index",
+      "scenario": "pending_then_commit",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "hold",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": false,
+          "false_closure": false,
+          "safe_hold": true,
+          "wrongful_block": false,
+          "unresolved": true,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "archive-index",
+                  "destination": "archive-preview",
+                  "payload_sha256": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938"
+                },
+                "tick": 2,
+                "state": "pending"
+              }
+            },
+            {
+              "tick": 4,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "archive-index",
+                  "destination": "archive-preview",
+                  "payload_sha256": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938"
+                },
+                "tick": 4,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "archive-index",
+      "scenario": "failed_before_commit",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "archive-index",
+              "destination": "archive-preview",
+              "payload": "bf2dbf77cbe07a7bd452dc768d2b59405e880eaaaf68cb391676655f98413938",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "caption-correction",
+      "scenario": "acknowledged",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "caption-correction",
+      "scenario": "commit_ack_lost",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "hold",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": false,
+          "false_closure": false,
+          "safe_hold": true,
+          "wrongful_block": false,
+          "unresolved": true,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "caption-correction",
+                  "destination": "illustration-preview",
+                  "payload_sha256": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f"
+                },
+                "tick": 2,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "caption-correction",
+      "scenario": "pending_then_commit",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "hold",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": false,
+          "false_closure": false,
+          "safe_hold": true,
+          "wrongful_block": false,
+          "unresolved": true,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "caption-correction",
+                  "destination": "illustration-preview",
+                  "payload_sha256": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f"
+                },
+                "tick": 2,
+                "state": "pending"
+              }
+            },
+            {
+              "tick": 4,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "caption-correction",
+                  "destination": "illustration-preview",
+                  "payload_sha256": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f"
+                },
+                "tick": 4,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "caption-correction",
+      "scenario": "failed_before_commit",
+      "sink_idempotent": false,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "caption-correction",
+              "destination": "illustration-preview",
+              "payload": "09f0dfbab0cb8b82cd15f58920861af658d33f1a9dd94cdcc91cec91d51bae4f",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "artifact-index",
+      "scenario": "acknowledged",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "artifact-index",
+      "scenario": "commit_ack_lost",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "artifact-index",
+                  "destination": "evidence-preview",
+                  "payload_sha256": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee"
+                },
+                "tick": 2,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "artifact-index",
+      "scenario": "pending_then_commit",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 4,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "ambiguous"
+            },
+            {
+              "tick": 2,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "artifact-index",
+                  "destination": "evidence-preview",
+                  "payload_sha256": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee"
+                },
+                "tick": 2,
+                "state": "pending"
+              }
+            },
+            {
+              "tick": 4,
+              "action": "observe",
+              "receipt": {
+                "operation": {
+                  "key": "artifact-index",
+                  "destination": "evidence-preview",
+                  "payload_sha256": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee"
+                },
+                "tick": 4,
+                "state": "committed"
+              }
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "task": "artifact-index",
+      "scenario": "failed_before_commit",
+      "sink_idempotent": true,
+      "arms": {
+        "ordinary": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        },
+        "reconciliation": {
+          "disposition": "closed",
+          "actions": [
+            {
+              "tick": 1,
+              "action": "submit",
+              "response": "failed"
+            },
+            {
+              "tick": 2,
+              "action": "retry",
+              "response": "committed"
+            }
+          ],
+          "scripted_approvals": 1,
+          "correct_in_scope_patch": true,
+          "effect_commits": 1,
+          "accepted_useful": true,
+          "false_closure": false,
+          "safe_hold": false,
+          "wrongful_block": false,
+          "unresolved": false,
+          "terminal_sink_journal": [
+            {
+              "attempt": 1,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "failed",
+              "tick": 1
+            },
+            {
+              "attempt": 2,
+              "operation": "artifact-index",
+              "destination": "evidence-preview",
+              "payload": "126ff83f2d64f1af5f1d52c8a3339c179d626c258f537d207af9ab45a5a890ee",
+              "state": "committed",
+              "tick": 2
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

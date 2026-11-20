@@ -248,7 +248,7 @@ count. Nor is the full challenge accepted: its maintainer rejects the
 feedback-learning step because it depends on an additional fitted head and
 external parameters. Feedback changes prototype/count statistics while the
 backbone stays fixed, and nonempty memory also turns on the prefit head.
-The stage-to-stage gain consequently mixes interventions.
+The stage-to-stage gain consequently mixes interventions. [Unit 21](unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.qmd#candidate-lessons-need-identity) explains the decision this leaves open: which adaptive state should carry the lesson into a new task, and what would qualify that placement?
 
 This is a useful proposed specialist, with distinct storage, runtime, task,
 and learning claims. A consumer should compare those claims with its actual

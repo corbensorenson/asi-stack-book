@@ -1,14 +1,20 @@
-## Living Book Baseline {.unnumbered}
+## The ASI Stack {.unnumbered}
 
-A dependency update passes every local test. Days later, a downstream service fails because the update changed a default its tests relied on. This hypothetical incident opens the book.
+The ASI Stack is Corben Sorenson's living technical book on governed AI
+systems. It asks when ordinary change control is enough and what extra
+controls earn their cost.
 
-[Read the story](reader/chapters/unit-01-asi-is-a-stack-not-a-model.html#the-change-that-worked) · [Inspect the recorded repair](reader/quickstart.html#read-the-twelve-outcomes) · [Browse technical evidence](products/evidence-registry/index.html)
+### When a request times out after it takes effect
 
-<!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **89 manifest chapters; 587 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
-<!-- canonical-status:generated-end -->
+In a local comparison across 16 matched scenarios, ordinary scoped change
+control closed 12. A read of the receiving service's durable record closed
+four additional cases that the ordinary workflow correctly left on hold.
+Those cases involved ambiguous replies at receivers without deduplication.
+Both workflows avoided repeated effects and false closures. The experiment
+used authored Git tasks and a scripted receiving service. The routine cases
+give a concrete example of where ordinary controls sufficed.
 
-**The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** is a living technical book by Corben Sorenson.
+[See the result and rerun it](reader/quickstart.html#fresh-effect-comparison) · [Read the book](reader/index.html)
 
 ## Choose the product you need
 
@@ -34,6 +40,10 @@ All three products derive from one canonical source tree; their density, navigat
 ![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}
 
 ## Current status
+
+<!-- canonical-status:generated-begin -->
+_Current canonical metrics (generated from machine records): **89 manifest chapters; 587 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+<!-- canonical-status:generated-end -->
 
 ::: {.living-dashboard}
 <div>

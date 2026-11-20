@@ -1176,11 +1176,13 @@ they do not meet those wider obligations.
 
 ## Summary
 
-Governed operations begins where readiness ends: after an admitted system
-starts changing the world. Its job is to keep exact deployment identity,
-field observability, incident hypotheses, command authority, containment,
-service mode, internal state, external effects, recovery evidence, disclosure,
-and residual ownership connected through one closed lifecycle.
+Governed operations begins when an admitted system starts changing the world.
+[Readiness](readiness-gates-residual-escrow-and-quarantine.qmd) still bounds
+which uses are eligible. A failed monitor or a changed dependency can remove
+that eligibility. Operations contains the effects, records the cause and
+limits of recovery, and returns the restored or replacement candidate for
+qualification before normal traffic resumes. Incident command retains the
+observations, authority, disclosure, and unresolved effects throughout.
 
 The architecture refuses several convenient substitutions. Monitoring is not
 command. A kill switch is not containment. A backup is not an independent

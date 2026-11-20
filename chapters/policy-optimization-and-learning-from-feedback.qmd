@@ -159,6 +159,12 @@ Appendix C records passage-reviewed mappings for policy optimization. The intern
 
 ### Eighteen-stage update lifecycle
 
+Freeze the target and feedback procedure before training. Compare the candidate on the target, the proxy and collateral outcomes. Send a viable candidate to readiness with its exact checkpoint and recovery obligations.
+[Shared lifecycle method](living-book-methodology.qmd#shared-chapter-lifecycle-method)
+
+<details>
+<summary>Full lifecycle reference</summary>
+
 The complete lifecycle freezes the legitimate target and consumer; binds exact
 policy, model, data, tool, runtime, and authority identities; classifies
 feedback provenance and its proxy boundary; selects an update family only after
@@ -173,6 +179,8 @@ quality, safety, rights, authority, resources, residuals, reproduction, and
 transfer jointly.
 
 Policy optimization enters the stack as a governed update ledger. Before any behavior is changed, the stack records the update state, which policy is being updated, the proposed policy delta, which feedback artifact is admissible, the reward boundary, what drift bound applies, how reward hacking will be probed, which holdouts and regressions constrain the update, what authority effect is allowed, which residuals remain, and which governance gate can promote or reject the update.
+
+</details>
 
 ```{mermaid}
 flowchart LR
@@ -715,7 +723,7 @@ improvement, or deployment evidence, so the core disposition remains
 
 ## Summary
 
-Policy optimization is the learning actuator. Benchmarks and verifiers create pressure, policy optimization proposes behavior changes, and SCF governance decides whether those changes survive.
+Policy optimization uses benchmark and verifier feedback to propose a candidate update. [Stable Capability Fields](stable-capability-fields.qmd) supplies the behavior and recovery contract. [Readiness](readiness-gates-residual-escrow-and-quarantine.qmd) determines where the exact candidate is eligible to serve. [Capability Replacement](capability-replacement-and-rollback.qmd) governs the authorized change to the serving route and its rollback.
 
 The boundary is strict: a reward signal is not a truth signal, a training run is not a governance grant, and a benchmark improvement is not a deployment right. The system may learn from feedback only through recorded reward sources, update constraints, evaluations, residuals, rollback, and governance gates.
 

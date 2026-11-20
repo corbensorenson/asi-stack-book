@@ -104,13 +104,14 @@ flowchart LR
 inconclusive attempts disappeared, the confirmatory branch saw the outcome, or
 the replication shares the same hidden dependency.
 
-**Operational rule.** Freeze hypothesis ancestry, exploratory or confirmatory
-status, outcomes, sampling, stopping, exclusions, analysis, instrument scope,
-and claim ceiling before protected results open. Preserve every attempt and
-require independently qualified replication; omitted attempts or outcome
-exposed confirmation block the claim.
+**Operational rule.** Keep exploratory observations and failed attempts with
+their provenance. Before opening protected confirmatory results, freeze
+hypothesis ancestry, outcomes, sampling, stopping, exclusions, analysis,
+instrument scope, and the inference the experiment is meant to support.
+Record any later change. A hypothesis revised after seeing the outcome
+returns to exploration and needs a fresh confirmatory test.
 
-[scientific-discovery-and-experimental-governance.core, label: Design rationale, support: argument] An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
+[scientific-discovery-and-experimental-governance.core, label: Design rationale, support: argument] AI-generated hypotheses and exploratory observations should enter the record with their provenance and the decisions made after outcome access. Admitting a confirmatory claim requires a prospectively registered experimental contract that binds hypothesis lineage, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling. Causal truth, general discovery, reproducibility, safety, and transfer each require evidence fitted to the claim.
 
 ## Mechanism
 

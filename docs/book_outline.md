@@ -8565,7 +8565,7 @@ replication shares an unexamined dependency.
 
 Nearest overlapping owners: [Planning as a Control Layer: DAGs and Intelligence Arbitrage](../chapters/planning-as-a-control-layer.qmd); [Evidence States and Claim Discipline](../chapters/evidence-states-and-claim-discipline.qmd).
 
-Core claim: An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.
+Core claim: AI-generated hypotheses and exploratory observations should enter the record with their provenance and the decisions made after outcome access. Admitting a confirmatory claim requires a prospectively registered experimental contract that binds hypothesis lineage, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling. Causal truth, general discovery, reproducibility, safety, and transfer each require evidence fitted to the claim.
 
 Source loading queue:
 

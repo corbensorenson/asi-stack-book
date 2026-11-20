@@ -5,7 +5,7 @@
   "state": "terminal_complete",
   "source_contract": {
     "path": "evidence_quality/chapter_substance_contract.json",
-    "sha256": "6d0b42f18f89eeabb6aca21ef0e854f243788fd9dd7928a779ff3e7e948aedba",
+    "sha256": "f7e169e137973e7f076ff37e83435087268bf7423784e32eca10f2f9ba964187",
     "contract_id": "P6.9-R21-concept-complete-depth-and-atom-adequacy"
   },
   "raw_scaffold_exit": {
@@ -7248,7 +7248,7 @@
               "atom_id": "scientific-discovery-and-experimental-governance.core",
               "atom_source_path": "evidence_quality/claim_atom_registry.json",
               "owner": "scientific-discovery-and-experimental-governance",
-              "proposition": "An AI-generated scientific claim should enter the evidence stack only through a preregistered experimental contract that binds hypothesis lineage, exploratory versus confirmatory status, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling; experimental completion, significance, synthesis, instrument output, or formal workflow validity alone establishes neither causal truth, general scientific discovery, reproducibility, safety, nor transfer.",
+              "proposition": "AI-generated hypotheses and exploratory observations should enter the record with their provenance and the decisions made after outcome access. Admitting a confirmatory claim requires a prospectively registered experimental contract that binds hypothesis lineage, design and power, instrument or simulator authority, calibration, sample and protocol lineage, blinding and holdouts, stopping and exclusions, analysis, complete attempts, independent replication, dual-use disposition, and claim ceiling. Causal truth, general discovery, reproducibility, safety, and transfer each require evidence fitted to the claim.",
               "falsifier": "A reachable trace violates a load-bearing Scientific Discovery and Experimental Governance invariant, a required field has no exercised consumer, or a competent matched simpler system dominates the chapter's joint usefulness/safety/cost frontier.",
               "evidence_lanes": [
                 "source-synthesis",
