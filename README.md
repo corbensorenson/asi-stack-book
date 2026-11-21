@@ -22,6 +22,7 @@ and [competent conventional alternatives](docs/defended_contribution_prior_art_p
 | Narrative book | An independently authored 26-unit Human Reader, with editorial review open. | [Human Reader](https://corbensorenson.github.io/asi-stack-book/reader/) |
 | Architecture reference | Interfaces, invariants, protocols, tests, proofs, and implementation horizons. | [Architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Claims, support states, sources, tests, proofs, releases, and residuals. | [Evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
+| Knowledge graph | Search concepts and follow their links to the book, its claims, and bounded evidence. | [Knowledge graph](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/) |
 | Original paper library | Corben's digest-bound papers and architecture sources, with links to the chapters they informed. | [Read the original papers](https://corbensorenson.github.io/asi-stack-book/papers/) |
 
 Projection boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md).

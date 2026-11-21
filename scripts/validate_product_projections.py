@@ -4,14 +4,20 @@
 from __future__ import annotations
 
 import argparse
+from collections import defaultdict
 import copy
+import gzip
 import hashlib
-from html import escape
+from html import escape, unescape
 import json
 from pathlib import Path
+import re
 import tempfile
+from urllib.parse import unquote, urlsplit
 
 import research_studies as research
+import build_knowledge_graph_companion as knowledge
+import validate_book_knowledge_graph as graph_checks
 from research_case_rows import anchor as research_anchor, export_csv, rows_for
 from build_canonical_public_status import ROOT, build_status, validate_against_schema
 from build_product_projections import (
@@ -418,6 +424,25 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     narrative = load(narrative_path)
     reference = load(reference_path)
     evidence = load(evidence_path)
+    graph_manifest = products / knowledge.COMPANION_DIR / "manifest.json"
+    graph_home = products / knowledge.COMPANION_DIR / "index.html"
+    if not graph_manifest.is_file() or not graph_home.is_file():
+        errors.append("rendered evidence registry is missing the knowledge graph companion")
+    else:
+        graph = load(graph_manifest)
+        expected = {"entry_path": "knowledge-graph/index.html", "manifest_path": "knowledge-graph/manifest.json",
+                    "snapshot_id": graph.get("snapshot_id")}
+        if (evidence.get("knowledge_graph") != expected or graph.get("source_commit") != status.get("source_commit")
+                or graph.get("authority") != "navigation_only"):
+            errors.append("knowledge graph identity or navigation authority differs from the rendered registry")
+        registry = evidence_path.with_name("index.html").read_text(encoding="utf-8")
+        home = (site / "index.html").read_text(encoding="utf-8")
+        if 'href="knowledge-graph/index.html"' not in registry or knowledge.COMPANION_DIR + "/index.html" not in home:
+            errors.append("knowledge graph is missing from the book home or Evidence Registry")
+        archive_path = graph_manifest.with_name("graph.json.gz")
+        if archive_path.is_file():
+            with gzip.open(archive_path, "rt", encoding="utf-8") as stream:
+                errors.extend(graph_route_errors(site, json.load(stream)))
     narrative_html = (products / "narrative-book" / "index.html").read_text(
         encoding="utf-8",
         errors="ignore",
@@ -473,11 +498,37 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
     return errors
 
 
+def graph_route_errors(site: Path, graph: dict) -> list[str]:
+    routes = defaultdict(set)
+    errors = []
+    urls = (row.get("url") for row in (
+        *graph["nodes"], *(edge["qualifiers"] for edge in graph["edges"])
+    ))
+    for url in filter(None, urls):
+        parts = urlsplit(url)
+        path = Path(parts.path)
+        if parts.scheme or parts.netloc or path.is_absolute() or ".." in path.parts:
+            errors.append(f"unsafe internal knowledge graph route: {url}")
+            continue
+        routes[path].add(unquote(parts.fragment))
+    for path, fragments in routes.items():
+        page = site / path
+        if not page.is_file():
+            errors.append(f"missing knowledge graph destination: {path}")
+            continue
+        if fragments - {""}:
+            ids = set(map(unescape, re.findall(r'\sid=["\']([^"\']+)', page.read_text(encoding="utf-8"))))
+            errors.extend(f"missing knowledge graph anchor: {path}#{fragment}"
+                          for fragment in sorted(fragments - ids - {""}))
+    return errors
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--site", type=Path, help="also validate generated product pages inside a rendered site")
     args = parser.parse_args()
     errors: list[str] = []
+    graph_checks.main()
     errors.extend(run_history_controls())
     required = [STRUCTURE, CONTRACTS, SPINE, UNIT_CROSSWALK, CONTRIBUTIONS, SPINE_SCHEMA, PROJECTION_SCHEMA, DOC]
     for path in required:

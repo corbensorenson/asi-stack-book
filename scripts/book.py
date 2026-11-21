@@ -17,6 +17,7 @@ import tempfile
 from run_validation_registry import execution_contract, select_units
 from validation_projection_plan import plan
 from validation_runtime import capability_error, execute, identity
+from build_knowledge_graph_companion import input_paths as knowledge_graph_inputs
 from build_tested_site_bundle import file_rows
 
 
@@ -103,6 +104,8 @@ def html_inputs(root: Path, checks: list[dict]) -> dict:
               "scripts/build_tested_site_bundle.py", "scripts/build_release_channels.py",
               "scripts/build_canonical_public_status.py", "schemas/product_projection_manifest.schema.json",
               "schemas/canonical_public_status.schema.json", "schemas/narrative_product_spine.schema.json",
+              "scripts/validate_public_reading_routes_browser.js",
+              *knowledge_graph_inputs(lambda name: (root / name).read_bytes()),
               *[f"scripts/{row['script']}" for row in checks],
               *[path.relative_to(root).as_posix() for path in (root / "chapters").glob("*.qmd")],
               *[path.relative_to(root).as_posix() for path in (root / "editions/reader_manuscript/current").glob("*.qmd")]]

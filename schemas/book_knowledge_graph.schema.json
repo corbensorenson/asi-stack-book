@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ASI Stack knowledge graph",
+  "type": "object",
+  "required": ["schema_version", "source_commit", "snapshot_id", "worktree", "authority", "inputs_sha256", "coverage", "nodes", "edges", "unresolved"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {"const": "asi-stack.knowledge-graph.v1"},
+    "source_commit": {"type": "string", "pattern": "^[0-9a-f]{40}$"},
+    "snapshot_id": {"$ref": "#/$defs/digest"},
+    "worktree": {"type": "boolean"},
+    "authority": {"const": "navigation_only"},
+    "inputs_sha256": {"type": "object", "minProperties": 1, "additionalProperties": {"$ref": "#/$defs/digest"}},
+    "coverage": {
+      "type": "object", "required": ["nodes", "edges", "unresolved"], "additionalProperties": false,
+      "properties": {
+        "nodes": {"$ref": "#/$defs/counts"}, "edges": {"$ref": "#/$defs/counts"},
+        "unresolved": {"type": "integer", "minimum": 0}
+      }
+    },
+    "nodes": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/node"}},
+    "edges": {"type": "array", "items": {"$ref": "#/$defs/edge"}},
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "object", "required": ["from", "predicate", "target_ref", "origin", "reason"], "additionalProperties": false,
+        "properties": {
+          "from": {"$ref": "#/$defs/id"}, "predicate": {"type": "string"}, "target_ref": {"type": "string"},
+          "origin": {"$ref": "#/$defs/origin"}, "reason": {"type": "string"}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "counts": {"type": "object", "additionalProperties": {"type": "integer", "minimum": 0}},
+    "id": {"type": "string", "pattern": "^[a-z_]+:[^\\s]+$"},
+    "digest": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "origin": {
+      "type": "object", "required": ["path", "locator"], "additionalProperties": false,
+      "properties": {
+        "path": {"type": "string", "minLength": 1}, "locator": {"type": "string", "minLength": 1}
+      }
+    },
+    "node": {
+      "type": "object", "required": ["id", "kind", "title", "origin"],
+      "properties": {
+        "id": {"$ref": "#/$defs/id"}, "kind": {"type": "string"}, "title": {"type": "string", "minLength": 1},
+        "url": {"type": "string"}, "primary_url": {"type": "string"}, "origin": {"$ref": "#/$defs/origin"},
+        "publication_origin": {"$ref": "#/$defs/origin"},
+        "implementation_origin": {"$ref": "#/$defs/origin"},
+        "transition_origin": {"$ref": "#/$defs/origin"}
+      }
+    },
+    "edge": {
+      "type": "object", "required": ["from", "predicate", "to", "origin", "qualifiers"], "additionalProperties": false,
+      "properties": {
+        "from": {"$ref": "#/$defs/id"}, "predicate": {"type": "string"}, "to": {"$ref": "#/$defs/id"},
+        "origin": {"$ref": "#/$defs/origin"}, "qualifiers": {"type": "object"}
+      },
+      "if": {"properties": {"predicate": {"enum": ["proxy_for", "subclaim_of"]}}},
+      "then": {
+        "properties": {
+          "qualifiers": {
+            "required": ["parent_support_state_effect", "scope"],
+            "properties": {"parent_support_state_effect": {"const": "none"}, "scope": {"type": "object"}}
+          }
+        }
+      }
+    }
+  }
+}

@@ -167,7 +167,10 @@ def studies_from(manifest: dict, read) -> list[dict]:
         if "calibration" in raw and not all(raw["calibration"].values()):
             raise ValueError(f"run {identity} failed instrument calibration")
         values = metrics(entry["format"], raw)
-        runs[identity] = {**entry, "summary": entry["result_summary"].format_map(values), "metrics": values}
+        runs[identity] = {
+            **entry, "summary": entry["result_summary"].format_map(values),
+            "limit": entry["limit"].format_map(values), "metrics": values,
+        }
 
     errors = report_errors(manifest["independent_reports"], set(runs))
     if errors:

@@ -108,6 +108,43 @@ async function addRenderedMathFixture(page) {
   });
 }
 
+async function checkKnowledgeGraph(context, root) {
+  const page = await context.newPage();
+  const requests = [];
+  const errors = [];
+  page.on("request", request => requests.push(new URL(request.url()).pathname));
+  page.on("pageerror", error => errors.push(error.message));
+  try {
+    const route = root + "products/evidence-registry/knowledge-graph/";
+    await page.setViewportSize({ width: 390, height: 820 });
+    await page.goto(route);
+    await page.getByRole("heading", { name: "Receipt", exact: true }).waitFor();
+    assert(await page.getByRole("heading", { name: "Evidence limit", exact: true }).isVisible());
+    await page.getByRole("searchbox", { name: "Search the graph" }).fill("e-means");
+    await page.getByRole("button", { name: "Search", exact: true }).click();
+    await page.locator("#results a").first().click();
+    await page.getByRole("heading", { name: /^e-means: outperforming k-means/i }).waitFor();
+    assert(await page.getByText("Assigned chapters (2)", { exact: true }).isVisible());
+    await page.getByRole("searchbox", { name: "Search the graph" }).fill("source:answerability_atlas_synthesis");
+    await page.getByRole("button", { name: "Search", exact: true }).click();
+    await page.locator("#results a").first().click();
+    await page.getByRole("heading", { name: /^What an Answerability Atlas Can and Cannot Do/i }).waitFor();
+    assert.equal(await page.getByRole("link", { name: "Open in the book" }).getAttribute("href"),
+      root + "papers/answerability_atlas_synthesis.html");
+    await page.getByRole("link", { name: "Verifier rollout", exact: true }).click();
+    await page.getByRole("heading", { name: "Which scope earns a verifier rollout?" }).waitFor();
+    assert.equal(await page.getByText("Study runs (2)", { exact: true }).count(), 1);
+    await page.reload();
+    await page.getByRole("heading", { name: "Which scope earns a verifier rollout?" }).waitFor();
+    assert(requests.some(pathname => /\/nodes\/[0-9a-f]{2}\.json$/.test(pathname)));
+    assert(!requests.some(pathname => pathname.endsWith("/graph.json.gz")), "lookup downloaded the complete graph");
+    assert.deepEqual(errors, []);
+    console.log("Knowledge graph search, evidence limits, scoped results, and shareable links passed.");
+  } finally {
+    await page.close();
+  }
+}
+
 async function main() {
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined,
@@ -118,6 +155,7 @@ async function main() {
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#clustering-the-retrieval-index$/);
+    if (!live) await checkKnowledgeGraph(context, root);
 
     const page = await context.newPage();
     await page.setViewportSize({ width: 1280, height: 860 });
@@ -142,6 +180,7 @@ async function main() {
     for (const [width, scale] of [[1280, 1], [390, 1], [320, 1], [320, 2]]) {
       await page.setViewportSize({ width, height: 820 });
       for (const route of ["", "reader/", "reader/quickstart.html", "products/evidence-registry/",
+          ...(!live ? ["products/evidence-registry/knowledge-graph/"] : []),
           "papers/bugbrain.html", ...mathPapers]) {
         await page.goto(root + route);
         if (scale === 2) await page.addStyleTag({ content: "html {font-size:200% !important}" });

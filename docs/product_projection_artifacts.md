@@ -119,6 +119,48 @@ for the review record and separate disposition.
 
 ## Build and release integration
 
+### Knowledge graph companion
+
+The Evidence Registry includes the knowledge graph at
+`products/evidence-registry/knowledge-graph/`. It indexes the current
+chapters, reader routes, and glossary alongside retained claim records, source
+assignments and passage mappings, proof targets, evidence transitions, and
+pinned study runs. Each relationship identifies its source record. The graph
+keeps ambiguous or unresolved identifiers in the snapshot with a reason.
+Its ID hashes the canonical JSON content before the ID field is added.
+The snapshot also carries its source commit, whether it came from a local
+worktree, and the captured input hashes.
+
+The [browser explorer](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/)
+loads a search catalog and the shard for each selected result. Use
+`manifest.json` to find the resource paths, digests, coverage counts, and
+preview limits. In `search.json`, each row contains the stable record ID,
+an index into the `kinds` list, a title excerpt, and the shard key.
+`nodes/{shard}.json` returns the full record and up to four neighboring
+records per relation and 28 per record. Counts on each relation describe
+the complete neighborhood. Open the downloaded `graph.json.gz` to traverse
+the remaining edges offline. The graph also links eligible source records
+directly to the manuscripts in the book's paper library.
+
+```bash
+python3 scripts/book_knowledge_graph.py --snapshot graph.json.gz --find e-means --kind source
+python3 scripts/book_knowledge_graph.py --snapshot graph.json.gz --node study:verifier-rollout --predicate retains_run
+python3 scripts/validate_book_knowledge_graph.py
+```
+
+Source assignments help with discovery. Reviewed mappings retain their
+passages, scope, and limits. Proof targets keep the status from the proof
+manifest. Subclaim and proxy relations preserve the recorded parent-support
+effect. The graph provides navigation under the book's existing evidence
+policy.
+
+The [navigation experiment](../experiments/knowledge_graph_navigation/protocol.md)
+compares this explorer with the existing editions' Quarto search and the
+Evidence Registry. It records paired results for exact citations, navigation
+between editions, and evidence limits on the same study run. The first
+[local comparison](../experiments/knowledge_graph_navigation/results-2026-11-21.md)
+covers twenty tasks.
+
 After a clean Quarto render and canonical-status build, release CI runs:
 
 ```bash

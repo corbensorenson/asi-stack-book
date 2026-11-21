@@ -1,0 +1,22 @@
+[
+  {"id":"source-platonic","kind":"named","entry":"technical","query":"Proving and Improving the Platonic Representation Hypothesis with JEPAs","target":"source:ext_platonic_representation_jepa_2026"},
+  {"id":"source-hnet","kind":"named","entry":"technical","query":"ext_h_net_2025","target":"source:ext_h_net_2025"},
+  {"id":"source-discobench","kind":"named","entry":"technical","query":"DiscoBench","target":"source:ext_discobench_2026"},
+  {"id":"source-vjepa","kind":"named","entry":"technical","query":"V-JEPA 2","target":"source:ext_v_jepa_2_2025"},
+  {"id":"concept-receipt","kind":"named","entry":"technical","query":"Receipt","target":"concept:receipt"},
+  {"id":"chapter-objectives","kind":"named","entry":"technical","query":"Governed Objective Formation, Value Learning, and Goal Integrity","target":"chapter:governed-objective-formation-value-learning-and-goal-integrity"},
+  {"id":"reader-compilation","kind":"cross-edition","entry":"technical","query":"Cognitive Compilation and Semantic IR","target":"reader_unit:unit-13","owner":"chapter:cognitive-compilation-and-semantic-ir"},
+  {"id":"reader-context","kind":"cross-edition","entry":"technical","query":"Virtual Context ABI","target":"reader_unit:unit-14","owner":"chapter:virtual-context-abi"},
+  {"id":"reader-replay","kind":"cross-edition","entry":"technical","query":"Artifact Graphs, Audit Logs, and Replay","target":"reader_unit:unit-17","owner":"chapter:artifact-graphs-audit-logs-and-replay"},
+  {"id":"technical-replacement","kind":"cross-edition","entry":"reader","query":"Stable Capability Fields and Governed Replacement","target":"chapter:capability-replacement-and-rollback","owner":"reader_unit:unit-09"},
+  {"id":"technical-grounding","kind":"cross-edition","entry":"reader","query":"Governed World Models and Reality Grounding","target":"chapter:governed-world-models-and-reality-grounding","owner":"reader_unit:unit-11"},
+  {"id":"technical-intent","kind":"cross-edition","entry":"reader","query":"Human Intent, Control, and Epistemic Security","target":"chapter:human-intent-as-a-formal-input","owner":"reader_unit:unit-06"},
+  {"id":"claim-replay","kind":"evidence","entry":"technical","query":"artifact-graphs-audit-logs-and-replay.core","target":"claim:artifact-graphs-audit-logs-and-replay.core","owner":"chapter:artifact-graphs-audit-logs-and-replay"},
+  {"id":"claim-replacement","kind":"evidence","entry":"technical","query":"capability-replacement-and-rollback.core","target":"claim:capability-replacement-and-rollback.core","owner":"chapter:capability-replacement-and-rollback"},
+  {"id":"claim-context","kind":"evidence","entry":"technical","query":"context-transactions-snapshots-mounts-and-taint.core","target":"claim:context-transactions-snapshots-mounts-and-taint.core","owner":"chapter:context-transactions-snapshots-mounts-and-taint"},
+  {"id":"git-limit","kind":"evidence","entry":"registry","query":"When scoped Git change control is enough","target":"study_run:git-retrospective","owner":"study:scoped-git","limit":"approval is scripted"},
+  {"id":"receiver-original","kind":"evidence","entry":"registry","query":"Crossed receiver study","target":"study_run:receiver-crossed","owner":"study:crossed-receiver","limit":"one simulated SQLite journal"},
+  {"id":"receiver-rescore","kind":"evidence","entry":"registry","query":"Disposition and observed effect","target":"study_run:receiver-effect-audit","owner":"study:crossed-receiver","limit":"four authored task fixtures"},
+  {"id":"transfer-factorial","kind":"evidence","entry":"registry","query":"Selection × representation on five-bit maps","target":"study_run:transfer-factorial","owner":"study:forward-transfer","limit":"reuse 16 authored five-bit tasks"},
+  {"id":"transfer-scheduler","kind":"evidence","entry":"registry","query":"Scheduler sensitivity at matched caps","target":"study_run:transfer-scheduler-audit","owner":"study:forward-transfer","limit":"repeat conditions over sixteen authored tasks"}
+]

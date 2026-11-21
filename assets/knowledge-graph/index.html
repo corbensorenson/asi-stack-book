@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Follow concepts, claims, sources, and study results through The ASI Stack.">
+  <title>Knowledge Graph · The ASI Stack</title>
+  <link rel="stylesheet" href="explorer.css">
+  <link rel="alternate" type="application/json" title="Knowledge graph manifest" href="manifest.json">
+  <script src="explorer.js" defer></script>
+</head>
+<body>
+  <a class="skip" href="#lookup">Skip to lookup</a>
+  <header class="site-header">
+    <div class="frame masthead">
+      <a class="wordmark" href="../../../index.html">The ASI Stack</a>
+      <nav aria-label="Book navigation">
+        <a href="../../../reader/index.html">Human Reader</a>
+        <a href="../index.html">Evidence Registry</a>
+        <a href="manifest.json">Machine manifest</a>
+      </nav>
+    </div>
+  </header>
+  <main class="frame">
+    <section class="intro" aria-labelledby="title">
+      <h1 id="title">Knowledge graph</h1>
+      <p>Find where an idea is explained, then follow the claims, sources, and study results connected to it.</p>
+      <ul class="entry-points" aria-label="Example starting points">
+        <li><a href="?node=concept%3Areceipt" data-example="concept:receipt">Receipt</a></li>
+        <li><a href="?node=source%3Aext_emeans_2026" data-example="source:ext_emeans_2026">e-means</a></li>
+        <li><a href="?node=study%3Averifier-rollout" data-example="study:verifier-rollout">Verifier rollout</a></li>
+        <li><a href="?node=concept%3Arevocation" data-example="concept:revocation">Revocation</a></li>
+      </ul>
+    </section>
+    <form id="lookup" role="search">
+      <label for="query">Search the graph</label>
+      <div class="controls">
+        <input id="query" name="q" type="search" placeholder="Topic, title, or record ID" autocomplete="off" maxlength="180">
+        <select id="kind" aria-label="Record type"><option value="">All record types</option></select>
+        <button type="submit">Search</button>
+      </div>
+    </form>
+    <noscript>
+      <p>The browser explorer requires JavaScript. Open the <a href="../../../appendices/B_glossary.html">working glossary</a>,
+        the <a href="../index.html">Evidence Registry</a>, or download the <a href="graph.json.gz">complete graph</a>.</p>
+    </noscript>
+    <p class="status" id="status" role="status"></p>
+    <div class="workspace">
+      <section class="results" aria-labelledby="results-title">
+        <h2 id="results-title">Search results</h2>
+        <ul id="results"></ul>
+        <button class="more" id="more" type="button" hidden>Show more results</button>
+      </section>
+      <article class="record" aria-labelledby="record-title">
+        <h2 id="record-title" tabindex="-1">Choose a record</h2>
+        <div id="record"></div>
+      </article>
+    </div>
+    <footer>
+      <a href="graph.json.gz" download>Download full graph (compressed JSON)</a>
+      <span id="snapshot"></span>
+    </footer>
+  </main>
+</body>
+</html>

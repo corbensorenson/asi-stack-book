@@ -10,6 +10,7 @@ import json
 from pathlib import Path
 from typing import Any
 
+import build_knowledge_graph_companion as knowledge
 import build_canonical_public_status as status_builder
 from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
@@ -136,6 +137,8 @@ class ProductInputs:
         self.research_manifest = self.json(ROOT / research.RECORDS)
         for name in sorted(research.input_paths(self.research_manifest)):
             self.capture(ROOT / relative(name.as_posix()))
+        for name in knowledge.input_paths(lambda path: self.data[ROOT / relative(path)]):
+            self.capture(ROOT / relative(name))
         for group in EVIDENCE_GROUPS:
             for _, target in group["entries"]:
                 self.capture(ROOT / relative(target), optional=True)
@@ -773,7 +776,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
 
 
 def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
-                   payload: ProductPayload | None = None) -> dict[str, Any]:
+                   payload: ProductPayload | None = None, companion: dict | None = None) -> dict[str, Any]:
     product_dir = output / "evidence-registry"
     if payload is None:
         product_dir.mkdir(parents=True, exist_ok=True)
@@ -830,7 +833,18 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
             "The registry does not promote any chapter-core support state.",
         ],
     }
-    write_json(product_dir / "manifest.json", manifest, payload)
+    companion_intro = ""
+    if companion is not None:
+        manifest["knowledge_graph"] = {
+            "entry_path": "knowledge-graph/index.html",
+            "manifest_path": "knowledge-graph/manifest.json",
+            "snapshot_id": companion["snapshot_id"],
+        }
+        companion_intro = (
+            '<h2>Browse the book as a knowledge graph</h2>'
+            '<p><a href="knowledge-graph/index.html">Open the knowledge graph</a> to follow concepts, claims, and evidence. '
+            '<a href="knowledge-graph/manifest.json">Agent manifest</a>.</p>'
+        )
     sections = []
     for group in published_groups:
         cards = []
@@ -866,7 +880,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         'and the <a href="../../reader/quickstart.html#read-the-twelve-outcomes">three compensation paths</a>. '
         'A read of the named target and the retained Git history answer different questions. '
         'Recovery across other services remains open.</li></ul>'
-        + "".join(sections)
+        + companion_intro + "".join(sections)
     )
     write_text(product_dir / "index.html",
         page("Evidence, proof, and release registry", "Structured routes to what is supported, by which artifacts, under which limits, and with which unresolved residuals.", body, "manifest.json"),
@@ -888,7 +902,13 @@ def prepare_payload(output: Path, inputs: ProductInputs) -> ProductPayload:
     assignments = {row["chapter_id"]: row for row in contribution_data["chapter_assignments"]}
     narrative = build_narrative(output, canonical, spine, assignments, inputs=inputs, payload=payload)
     reference = build_reference(output, canonical, assignments, payload=payload)
-    evidence = build_evidence(output, status, inputs=inputs, payload=payload)
+    graph_files = knowledge.prepare(lambda p: inputs.data[ROOT / relative(p)],
+                                    source_commit=status["source_commit"],
+                                    worktree=status["source_tree_state"] != "clean")
+    for name, data in graph_files.items():
+        payload.write(output / knowledge.COMPANION_DIR / name, data)
+    evidence = build_evidence(output, status, inputs=inputs, payload=payload,
+                              companion=json.loads(graph_files["manifest.json"]))
     product_rows = [
         {
             "id": "narrative_book",

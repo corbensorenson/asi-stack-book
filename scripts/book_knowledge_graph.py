@@ -1,0 +1,464 @@
+#!/usr/bin/env python3
+"""Compile the book's public records into a reproducible navigation graph."""
+
+from __future__ import annotations
+
+import argparse
+from collections import Counter, deque
+import gzip
+from hashlib import sha256
+import json
+from pathlib import Path
+import re
+import subprocess
+import sys
+from urllib.parse import urlsplit
+
+from build_human_reader_current import CONCEPT_ENTRY_POINTS, slugify
+from research_case_rows import anchor as run_anchor
+import research_studies
+
+
+ROOT = Path(__file__).resolve().parents[1]
+STRUCTURE = "book_structure.json"
+INVENTORY = "sources/source_inventory.json"
+PAPER_LIBRARY = "papers/paper_library.json"
+GLOSSARY = "appendices/B_glossary.qmd"
+READER = "editions/reader_manuscript/current/"
+READER_MANIFEST = READER + "manifest.json"
+CROSSWALK = READER + "conclusion_claim_crosswalk.json"
+CLAIMS = "evidence_quality/claim_atom_registry.json"
+IDENTITIES = "evidence_quality/claim_identity_graph.json"
+PROOFS = "proofs/proof_manifest.json"
+STUDIES = "products/research_studies.json"
+CLAIM_ADDENDA = (
+    "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json",
+    "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json",
+    "evidence_quality/round_18_breadth_completion_claim_atoms.json",
+    "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json",
+    "evidence_quality/round20_four_chapter_claim_atom_addendum.json",
+    "evidence_quality/round22_concept_linked_claim_atom_addendum.json",
+)
+SOURCE_TARGET_ALIASES = {
+    "fast-generation": "fast-generation-architectures",
+    "resource-economics": "resource-economics-and-token-budgets",
+    "math-substrates": "mathematical-and-search-substrates",
+}
+SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
+LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
+NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "retains_run", "investigates",
+                       "defined_by", "explained_by", "contains", "maps_source_passage", "assigned_to")
+
+
+class Graph:
+    def __init__(self, read):
+        self.read = read
+        self.inputs = {}
+        self.nodes = {}
+        self.edges = []
+        self.unresolved = []
+
+    def text(self, path):
+        raw = self.read(path)
+        self.inputs[path] = sha256(raw).hexdigest()
+        return raw.decode("utf-8")
+
+    def data(self, path):
+        return json.loads(self.text(path))
+
+    def node(self, kind, identity, path, locator, **fields):
+        key = f"{kind}:{identity}"
+        if key in self.nodes:
+            raise ValueError(f"duplicate graph identity: {key}")
+        self.nodes[key] = {"id": key, "kind": kind, "origin": source(path, locator), **fields}
+        return key
+
+    def edge(self, head, relation, tail, path, locator, **qualifiers):
+        self.edges.append({"from": head, "predicate": relation, "to": tail,
+                           "origin": source(path, locator), "qualifiers": qualifiers})
+
+    def gap(self, source_id, relation, target, path, locator, reason):
+        self.unresolved.append({"from": source_id, "predicate": relation, "target_ref": target,
+                                "origin": source(path, locator), "reason": reason})
+
+
+def source(path, locator):
+    return {"path": path, "locator": locator}
+
+
+def html_path(path):
+    return str(Path(path).with_suffix(".html"))
+
+
+def passage_refs(values):
+    result = []
+    for ref in values:
+        url = urlsplit(ref)
+        if url.scheme == "https" and url.hostname and not url.username and not url.password:
+            result.append(ref)
+        elif re.fullmatch(r"sources/source_notes/[a-zA-Z0-9_-]+\.md(?:#[^\s]+)?", ref):
+            result.append(ref)
+    return result
+
+
+def chapter_records(graph):
+    by_id = {}
+    for part_i, part in enumerate(graph.data(STRUCTURE)["parts"]):
+        pointer = f"/parts/{part_i}"
+        parent = graph.node("part", part["id"], STRUCTURE, pointer, title=part["title"])
+        for i, chapter in enumerate(part["chapters"]):
+            locator = f"{pointer}/chapters/{i}"
+            slug = chapter["id"]
+            url = html_path(chapter["file"])
+            owner = graph.node("chapter", slug, STRUCTURE, locator, title=chapter["title"], url=url)
+            claim_id = slug + ".core"
+            claim = graph.node("claim", claim_id, STRUCTURE, locator + "/core_claim",
+                               title=chapter["core_claim"], role="core", state=chapter["evidence_level"],
+                               label=chapter["claim_label"], record_version="current",
+                               url="appendices/C_claim_evidence_matrix.html#" + claim_id)
+            graph.edge(parent, "contains", owner, STRUCTURE, locator, order=i + 1)
+            graph.edge(owner, "owns_claim", claim, STRUCTURE, locator + "/core_claim")
+            by_id[slug] = (chapter, locator)
+    return by_id
+
+
+def reader_records(graph):
+    manifest = graph.data(READER_MANIFEST)
+    crosswalk = graph.data(CROSSWALK)
+    by_id = {entry["unit_id"]: entry for entry in manifest["units"]}
+    owners = {}
+    seen = set()
+    for i, unit in enumerate(crosswalk["units"]):
+        unit_id = unit["unit_id"]
+        locator = f"/units/{i}"
+        row = by_id[unit_id]
+        ids = [owner["chapter_id"] for owner in unit["owners"]]
+        if unit_id in seen or ids != row["owner_ids"]:
+            raise ValueError(f"reader crosswalk differs from the current manifest: {unit_id}")
+        seen.add(unit_id)
+        key = graph.node("reader_unit", unit_id, CROSSWALK, locator,
+                         title=unit["title"], url=unit["public_path"], order=row["order"])
+        for j, slug in enumerate(ids):
+            if slug in owners:
+                raise ValueError(f"duplicate reader owner: {slug}")
+            owners[slug] = (key, row, unit["public_path"])
+            graph.edge(key, "teaches_chapter", f"chapter:{slug}", CROSSWALK, f"{locator}/owners/{j}")
+    if seen != set(by_id):
+        raise ValueError("reader crosswalk omits a current unit")
+    return owners
+
+
+def source_records(graph, chapters):
+    papers = {row["source_id"]: i for i, row in enumerate(graph.data(PAPER_LIBRARY)["records"])}
+    for i, row in enumerate(graph.data(INVENTORY)):
+        locator = f"/{i}"
+        external = row["priority"] == "external_literature"
+        fields = {"title": row["title"], "category": row["priority"],
+                  "url": ("appendices/H_external_sources.html#" + row["id"] if external
+                          else "appendices/G_corben_source_corpus.html")}
+        if row["id"] in papers:
+            fields.update(url=f"papers/{row['id']}.html",
+                          publication_origin=source(PAPER_LIBRARY, f"/records/{papers[row['id']]}"))
+        for key in ("source_type", "published", "citation_label"):
+            if row.get(key):
+                fields[key] = row[key]
+        if row.get("passage_review_limits"):
+            fields["limit"] = row["passage_review_limits"]
+        url = urlsplit(row.get("url") or "")
+        if external and url.scheme in {"http", "https"} and url.hostname and not url.username and not url.password:
+            fields["primary_url"] = row["url"]
+        key = graph.node("source", row["id"], INVENTORY, locator, **fields)
+        for j, token in enumerate(row.get("chapter_targets", [])):
+            pointer = f"{locator}/chapter_targets/{j}"
+            slug = SOURCE_TARGET_ALIASES.get(token, token)
+            # Alias use is corroborated by the destination's current source list.
+            corroborated = slug in chapters and (
+                slug == token or row["id"] in chapters[slug][0]["source_ids"]
+            )
+            if not corroborated:
+                graph.gap(key, "assigned_to", token, INVENTORY, pointer, "no corroborated current chapter")
+                continue
+            graph.edge(key, "assigned_to", f"chapter:{slug}", INVENTORY, pointer,
+                       recorded_target=token, via_alias=token != slug)
+
+    for slug, (chapter, locator) in chapters.items():
+        owner = f"chapter:{slug}"
+        for i, identity in enumerate(chapter["source_ids"]):
+            graph.edge(owner, "lists_source", f"source:{identity}", STRUCTURE, f"{locator}/source_ids/{i}")
+        for i, mapping in enumerate(chapter.get("claim_source_mappings", [])):
+            graph.edge(owner, "maps_source_passage", f"source:{mapping['source_id']}", STRUCTURE,
+                       f"{locator}/claim_source_mappings/{i}",
+                       review_state=mapping.get("passage_review_state", "unspecified"),
+                       mapped_support=mapping["mapped_support"], limit=mapping["limits"],
+                       passages=passage_refs(mapping.get("passage_refs", ())),
+                       evidence_effect="none")
+
+
+def concept_records(graph, owners):
+    for number, line in enumerate(graph.text(GLOSSARY).splitlines(), start=1):
+        if not line.startswith("| ") or line.startswith(("| Term |", "|---")):
+            continue
+        cells = re.split(r"(?<!\\)\|", line)[1:-1]
+        if len(cells) != 4:
+            raise ValueError(f"unexpected glossary row at line {number}")
+        name, meaning, third, fourth = (cell.strip() for cell in cells)
+        anchored = re.fullmatch(r"\[(.+)\]\{#term-([a-z0-9-]+)\}", name)
+        if anchored:
+            name, identity = anchored.groups()
+            url = "appendices/B_glossary.html#term-" + identity
+            chapter_links, limit = fourth, third
+        else:
+            identity = slugify(name)
+            url = "appendices/B_glossary.html#architecture-and-source-terms"
+            chapter_links, limit = third, fourth
+        pointer = f"line:{number}"
+        key = graph.node("concept", identity, GLOSSARY, pointer, title=name, definition=meaning,
+                         limit=limit, url=url)
+        for slug in dict.fromkeys(LINK.findall(chapter_links)):
+            graph.edge(key, "defined_by" if not anchored else "explained_by", f"chapter:{slug}", GLOSSARY, pointer)
+
+    for title, question, owner, heading, glossary_id in CONCEPT_ENTRY_POINTS:
+        unit, row, url = owners[owner]
+        path = READER + row["source_file"]
+        match = re.search(rf"^## {re.escape(heading)}(?: \{{([^\n]+)\}})?$", graph.text(path), re.MULTILINE)
+        if not match:
+            raise ValueError(f"reader concept heading is missing: {heading}")
+        explicit = re.search(r"(?:^|\s)#([\w-]+)", match[1] or "")
+        fragment = explicit[1] if explicit else slugify(heading)
+        slug = slugify(title)
+        if f"concept:{slug}" not in graph.nodes:
+            graph.node("concept", slug, "scripts/build_human_reader_current.py", "CONCEPT_ENTRY_POINTS:" + slug,
+                       title=title, url="reader/index.html#concept-" + slug)
+        graph.edge(f"concept:{slug}", "reader_example", unit, path, "#" + fragment,
+                   url=url + "#" + fragment, question=question)
+        if slug != glossary_id:
+            graph.edge(f"concept:{slug}", "related_term", f"concept:{glossary_id}",
+                       "scripts/build_human_reader_current.py", "CONCEPT_ENTRY_POINTS:" + slug)
+
+def claim_records(graph, chapters):
+    staged = []
+    for path in (CLAIMS, *CLAIM_ADDENDA):
+        for i, row in enumerate(graph.data(path)["atoms"]):
+            identity = row.get("atom_id") or row.get("id") or row["stable_claim_identity"]
+            owner = row.get("chapter_id") or row.get("chapter_owner")
+            statement = row.get("proposition") or row.get("claim") or row["claim_text"]
+            pointer = f"/atoms/{i}"
+            existing = "claim:" + identity in graph.nodes
+            kind = "claim_record" if existing else "claim"
+            key = graph.node(kind, f"{Path(path).stem}:{identity}" if existing else identity,
+                             path, pointer, title=statement, label=row.get("claim_label"),
+                             state=row.get("support_state"), role=row.get("role"), scope=row.get("scope"),
+                             record_version="retained", owner_ref=owner)
+            if existing:
+                graph.edge(key, "retained_record_for", "claim:" + identity, path, pointer,
+                           evidence_effect="none")
+            elif owner in chapters:
+                graph.edge(f"chapter:{owner}", "owns_claim", key, path, pointer)
+            elif owner:
+                graph.gap(key, "owned_by", owner, path, pointer, "retained chapter ID outside the current manifest")
+            if row.get("concept_id") and owner in chapters:
+                identity = f"{owner}.{row['concept_id']}"
+                concept = graph.node("concept", identity, path, pointer + "/concept_id",
+                                     title=row["heading"], record_version="retained",
+                                     url=html_path(chapters[owner][0]["file"]))
+                graph.edge(concept, "has_concept_claim", key, path, pointer)
+                graph.edge(concept, "explained_by", f"chapter:{owner}", path, pointer)
+            staged.append((key, path, pointer, row))
+    for key, path, pointer, row in staged:
+        for i, dependency in enumerate(row.get("dependencies", [])):
+            locator = f"{pointer}/dependencies/{i}"
+            candidates = [f"{kind}:{dependency}" for kind in ("claim", "chapter", "source", "proof_target")
+                          if f"{kind}:{dependency}" in graph.nodes]
+            if len(candidates) == 1:
+                graph.edge(key, "declares_dependency", candidates[0], path, locator,
+                           target_kind=graph.nodes[candidates[0]]["kind"], evidence_effect="none")
+            else:
+                reason = "ambiguous retained reference" if candidates else "unresolved retained reference"
+                graph.gap(key, "declares_dependency", dependency, path, locator, reason)
+
+
+def evidence_records(graph):
+    for i, row in enumerate(graph.data(PROOFS)["records"]):
+        locator = f"/records/{i}"
+        key = graph.node("proof_target", row["tag"], PROOFS, locator, title=row["formal_target"],
+                         status=row["status"], module=row["module"])
+        if row["status"] == "implemented":
+            graph.nodes[key]["implementation_origin"] = source(row["module_path"], "/")
+        graph.edge(f"chapter:{row['chapter_id']}", "declares_proof_target", key, PROOFS, locator)
+
+    for i, row in enumerate(graph.data(IDENTITIES)["records"]):
+        locator = f"/records/{i}"
+        key = graph.node("transition", row["transition_id"], IDENTITIES, locator,
+                         title=row["claim_id"], record_sha256=row["transition_sha256"],
+                         transition_origin=source(row["transition_path"], "/"))
+        relation = row["primary_relation"]
+        effect = row["parent_support_state_effect"]
+        if relation in {"proxy_for", "subclaim_of"} and effect != "none":
+            raise ValueError(f"{row['transition_id']}: non-exact relation carries a parent support effect")
+        graph.edge(key, relation, "claim:" + row["canonical_parent_id"], IDENTITIES, locator,
+                   parent_support_state_effect=effect, scope=row["identity_scope"])
+
+    manifest = graph.data(STUDIES)
+    for i, study in enumerate(research_studies.studies_from(manifest, lambda p: graph.text(str(p)).encode("utf-8"))):
+        locator = f"/studies/{i}"
+        url = f"products/evidence-registry/study-{study['id']}.html"
+        key = graph.node("study",study["id"],STUDIES,locator,title=study["title"],
+                         question=study["question"],url=url)
+        if study.get("claim"):
+            graph.edge(key,"investigates","claim:"+study["claim"]["id"],STUDIES,locator+"/claim",
+                       scope=study["claim"]["scope"],evidence_effect="none")
+        for run in study["runs"]:
+            record_index = next(i for i, declared in enumerate(manifest["runs"]) if declared["id"] == run["id"])
+            run_locator = f"/runs/{record_index}"
+            identity = graph.node("study_run",run["id"],STUDIES,run_locator,title=run["title"],
+                                  url=url+"#"+run_anchor(run["id"]),limit=run["limit"],summary=run["summary"],
+                                  result_sha256=run["result_sha256"], protocol_sha256=run["protocol_sha256"],
+                                  source_commit=run["source_commit"], disposition=run["disposition"])
+            graph.edge(key,"retains_run",identity,STUDIES,run_locator,featured=study["featured_run"]==run["id"])
+
+
+def compile_graph(read, *, source_commit, worktree):
+    graph = Graph(read)
+    for path in ("scripts/book_knowledge_graph.py", "scripts/build_human_reader_current.py",
+                 "scripts/research_studies.py", "scripts/research_case_rows.py"):
+        graph.text(path)
+    chapters = chapter_records(graph)
+    owners = reader_records(graph)
+    if set(owners) != set(chapters):
+        raise ValueError("current reader owners differ from canonical chapters")
+    source_records(graph, chapters)
+    concept_records(graph, owners)
+    claim_records(graph, chapters)
+    evidence_records(graph)
+    for edge in graph.edges:
+        if edge["from"] not in graph.nodes or edge["to"] not in graph.nodes:
+            raise ValueError(f"graph edge has an unknown endpoint: {edge}")
+    payload = {
+        "schema_version": SCHEMA_VERSION, "source_commit": source_commit, "worktree": worktree,
+        "authority": "navigation_only", "inputs_sha256": graph.inputs,
+        "coverage": {"nodes": dict(Counter(n["kind"] for n in graph.nodes.values())),
+                     "edges": dict(Counter(e["predicate"] for e in graph.edges)),
+                     "unresolved": len(graph.unresolved)},
+        "nodes": sorted(graph.nodes.values(), key=lambda n: n["id"]),
+        "edges": sorted(graph.edges, key=lambda e: (e["from"], e["predicate"], e["to"], e["origin"]["locator"])),
+        "unresolved": graph.unresolved,
+    }
+    return {**payload, "snapshot_id": sha256(json_bytes(payload)).hexdigest()}
+
+
+def json_bytes(value):
+    return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
+
+
+def search(graph, query, *, kind=None, limit=8):
+    typed_query = query.strip()
+    query = slugify(query)
+    if not query:
+        raise ValueError("search needs at least one letter or digit")
+    words = set(query.split("-"))
+    hits = []
+    for entry in graph["nodes"]:
+        if kind and entry["kind"] != kind:
+            continue
+        identity = slugify(entry["id"].split(":", 1)[1])
+        title = slugify(entry["title"])
+        fields = set(identity.split("-")) | set(title.split("-"))
+        if typed_query == entry["id"]:
+            score = 5
+        elif query in {identity, title}:
+            score = 4
+        elif title.startswith(query + "-"):
+            score = 3
+        elif f"-{query}-" in f"-{title}-":
+            score = 2
+        else:
+            score = int(words <= fields)
+        if score:
+            hits.append((-score, len(title), entry["id"], entry))
+    hits.sort()
+    return {"snapshot": graph["snapshot_id"], "matches": [hit[-1] for hit in hits[:limit]],
+            "total_matches": len(hits)}
+
+
+def neighborhood(graph, node_id, *, depth=1, limit=24, predicates=()):
+    nodes = {row["id"]: row for row in graph["nodes"]}
+    seed = nodes[node_id]
+    adjacent = {}
+    for edge in graph["edges"]:
+        if not predicates or edge["predicate"] in predicates:
+            adjacent.setdefault(edge["from"], []).append((edge, edge["to"]))
+            adjacent.setdefault(edge["to"], []).append((edge, edge["from"]))
+    priority = {predicate: i for i, predicate in enumerate(NAVIGATION_PRIORITY)}
+    frontier = [node_id]
+    visited = {node_id}
+    selected = {}
+    truncated = False
+    for _ in range(depth):
+        next_frontier = []
+        # Give each vertex in a layer one turn before returning to its neighbors.
+        # A heavily linked chapter should not exhaust the whole budget alone.
+        pending = deque(iter(sorted(adjacent.get(vertex, ()), key=lambda pair: (
+            priority.get(pair[0]["predicate"], len(priority)), pair[1]
+        ))) for vertex in frontier)
+        while pending:
+            iterator = pending.popleft()
+            pair = next(iterator, None)
+            if pair is None:
+                continue
+            pending.append(iterator)
+            edge, target = pair
+            key = (edge["from"], edge["predicate"], edge["to"], edge["origin"]["locator"])
+            if key in selected:
+                continue
+            if len(selected) == limit:
+                truncated = True
+                break
+            selected[key] = edge
+            if target not in visited:
+                visited.add(target)
+                next_frontier.append(target)
+        frontier = next_frontier
+        if not frontier or truncated:
+            break
+    return {"snapshot": graph["snapshot_id"], "seed": seed, "nodes": [nodes[key] for key in sorted(visited)],
+            "edges": list(selected.values()), "depth": depth, "truncated": truncated}
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    option = parser.add_mutually_exclusive_group()
+    option.add_argument("--find", metavar="TEXT", help="Find nodes by title or stable ID")
+    option.add_argument("--node", metavar="ID", help="Read a bounded neighborhood")
+    parser.add_argument("--kind", help="Limit search to one node kind")
+    parser.add_argument("--predicate", action="append", default=[], help="Permit a relation during traversal")
+    parser.add_argument("--depth", type=int, choices=(1, 2), default=1)
+    parser.add_argument("--limit", type=int, default=24, help="Maximum matches or edges (1–100)")
+    parser.add_argument("--snapshot", type=Path, help="Query a previously compiled JSON snapshot")
+    args = parser.parse_args()
+    if not 1 <= args.limit <= 100:
+        parser.error("--limit must be between 1 and 100")
+    if args.snapshot:
+        raw = args.snapshot.read_bytes()
+        if raw.startswith(b"\x1f\x8b"):
+            raw = gzip.decompress(raw)
+        graph = json.loads(raw)
+        if graph.get("schema_version") != SCHEMA_VERSION:
+            parser.error("unsupported snapshot format")
+    else:
+        commit = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=ROOT, text=True).strip()
+        graph = compile_graph(lambda p: (ROOT / p).read_bytes(), source_commit=commit, worktree=True)
+    if args.find is not None:
+        try:
+            graph = search(graph, args.find, kind=args.kind, limit=args.limit)
+        except ValueError as error:
+            parser.error(str(error))
+    elif args.node is not None:
+        try:
+            graph = neighborhood(graph, args.node, depth=args.depth, limit=args.limit, predicates=args.predicate)
+        except KeyError:
+            parser.error(f"unknown node: {args.node}")
+    sys.stdout.buffer.write(json_bytes(graph))
+
+
+if __name__ == "__main__":
+    main()
