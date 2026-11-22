@@ -1,0 +1,404 @@
+{
+  "cases": [
+    {
+      "case": "commit_then_revoke",
+      "arms": {
+        "cached_permission_only": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "committed"
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            }
+          ],
+          "effect": {
+            "effect": "hold-for-editor",
+            "tick": 1,
+            "used_revision": 1,
+            "live_revision": 1,
+            "live_active": 1,
+            "deadline": 2
+          },
+          "outcome": "authorized",
+          "revision_at_observation": 2
+        },
+        "transactional_memo": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "committed"
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            }
+          ],
+          "effect": {
+            "effect": "hold-for-editor",
+            "tick": 1,
+            "used_revision": 1,
+            "live_revision": 1,
+            "live_active": 1,
+            "deadline": 2
+          },
+          "outcome": "authorized",
+          "revision_at_observation": 2
+        },
+        "transactional_receipt": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "committed"
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            }
+          ],
+          "effect": {
+            "effect": "hold-for-editor",
+            "tick": 1,
+            "used_revision": 1,
+            "live_revision": 1,
+            "live_active": 1,
+            "deadline": 2
+          },
+          "outcome": "authorized",
+          "revision_at_observation": 2
+        }
+      }
+    },
+    {
+      "case": "revoke_then_check",
+      "arms": {
+        "cached_permission_only": {
+          "trace": [
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "check",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 2
+        },
+        "transactional_memo": {
+          "trace": [
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "check",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 2
+        },
+        "transactional_receipt": {
+          "trace": [
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "check",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 2
+        }
+      }
+    },
+    {
+      "case": "revoke_between_check_and_effect",
+      "arms": {
+        "cached_permission_only": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "committed"
+              }
+            }
+          ],
+          "effect": {
+            "effect": "hold-for-editor",
+            "tick": 1,
+            "used_revision": 1,
+            "live_revision": 2,
+            "live_active": 0,
+            "deadline": 2
+          },
+          "outcome": "unauthorized",
+          "revision_at_observation": 2
+        },
+        "transactional_memo": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 2
+        },
+        "transactional_receipt": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "revoke",
+              "observation": {
+                "active": false,
+                "revision": 2,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 2
+        }
+      }
+    },
+    {
+      "case": "expire_between_check_and_effect",
+      "arms": {
+        "cached_permission_only": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "committed"
+              }
+            }
+          ],
+          "effect": {
+            "effect": "hold-for-editor",
+            "tick": 3,
+            "used_revision": 1,
+            "live_revision": 1,
+            "live_active": 1,
+            "deadline": 2
+          },
+          "outcome": "unauthorized",
+          "revision_at_observation": 1
+        },
+        "transactional_memo": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 1
+        },
+        "transactional_receipt": {
+          "trace": [
+            {
+              "event": "check",
+              "observation": {
+                "active": true,
+                "revision": 1,
+                "scope": "public-copy",
+                "valid_through": 2
+              }
+            },
+            {
+              "event": "effect",
+              "observation": {
+                "route": "hold"
+              }
+            }
+          ],
+          "effect": null,
+          "outcome": "absent",
+          "revision_at_observation": 1
+        }
+      }
+    }
+  ]
+}
