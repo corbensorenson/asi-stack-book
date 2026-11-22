@@ -1,0 +1,887 @@
+{
+  "schema": "asi-stack.graph-judgment-packets.v1",
+  "snapshot_id": "318759ab87b56770e6bad75105473fe7adcd151718cd48512f54fa10f1f2dff1",
+  "source_commit": "06960ed72764a2be62b7a0db198d915500d6a6ec",
+  "worktree": true,
+  "graph_input_sha256": {
+    "appendices/B_glossary.qmd": "f832f53de99a235f15da7b4fa1624e9b6b92900923725217423c028eb571558b",
+    "book_structure.json": "04801038a994deacd2a766688118790de64e84d0ac0c127990c0e9076ce10ec2",
+    "editions/reader_manuscript/current/chapters/unit-01-asi-is-a-stack-not-a-model.qmd": "564a64814dbde0cda89086b4426f7331f908da89a7acc54d934b4dd7a602d8c4",
+    "editions/reader_manuscript/current/chapters/unit-03-authority-failure-and-misuse.qmd": "9bf75c437529986372fa121682cb59cbde7ac3a273b486b49cabe40af400d8d8",
+    "editions/reader_manuscript/current/chapters/unit-05-evidence-states-and-scalable-oversight.qmd": "ee3ef8e45d40f826c1d6aaea478a4dc375d19e2ca58b6c6fd1442d5129b6417d",
+    "editions/reader_manuscript/current/chapters/unit-06-human-intent-control-and-epistemic-security.qmd": "4558f4bf4b7eb3e1c570b418aa9b2c2d04125f892839c7da7f04dcc480b32ad9",
+    "editions/reader_manuscript/current/chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd": "6b9f2612afd24178467b1be2e27f6da6057183c0d0102b437ef5f3c1ffc85281",
+    "editions/reader_manuscript/current/chapters/unit-10-perception-and-observation-trust.qmd": "c9f4cb06da3517a7d5a1fc116ca92f546169c5a8989ad337b3d18d6f74f4610f",
+    "editions/reader_manuscript/current/chapters/unit-17-artifact-graphs-runtime-effects-and-operations.qmd": "24c23df4ddf61de1741469936157aee1478a5f7506a2ab063b63bb044915ca01",
+    "editions/reader_manuscript/current/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd": "54d5ce607a7a72337a12d9850476d52b170dab5c6210e01ee06812405e43d7e5",
+    "editions/reader_manuscript/current/conclusion_claim_crosswalk.json": "f58317d982ef8b497bab936bfded0be858b118a51c593a561207fa4119b572b0",
+    "editions/reader_manuscript/current/manifest.json": "ff831c5e6271fb307b68888257361eb3d515c7e874b88836d549704830bd9efb",
+    "evidence_quality/claim_atom_registry.json": "34425e584c46a204200da8d222d229f4bc8689a0a66cb234f1e578c10c302cd6",
+    "evidence_quality/claim_identity_graph.json": "37bd8ca1d75f246e4174087d157dfe3cbc4ef72fc8e4afde2f908c2574d19e66",
+    "evidence_quality/post_activation_six_chapter_claim_atom_addendum.json": "ab3d6a72aa12ee6d57188438e5f25fae667f762bf38985ba0a997709d1de06de",
+    "evidence_quality/replaceable_cognitive_substrates_claim_atom_addendum.json": "cb55dc73c78826518f65e87ec05ca4d1d05acaae26d1484894bfda28465d473b",
+    "evidence_quality/round20_four_chapter_claim_atom_addendum.json": "7b9ea4433985a16e90b1ceea45e4342526066c583dbd97b95cac3f0cf594f9f0",
+    "evidence_quality/round22_concept_linked_claim_atom_addendum.json": "a57c7394350f3b0f4a2a695ee614716c0cf0c21acdc14d6d5f46d11c04805f6d",
+    "evidence_quality/round_18_breadth_completion_claim_atoms.json": "5290b70a77ef0bc09190ebb4b28a38ab9323311f9b83d1994f06762e1fd23895",
+    "evidence_quality/taxonomy_completion_claim_atoms_2026_07_24.json": "243af7a24cf55f4c0c8f11cf6d4ca4a82559bb6d0fe08cd2254769ec802805cc",
+    "evidence_transitions/post_v2_3/governed_usefulness_held_out_local_promote.json": "3a261be05a0d907efeed576b6ee5627e1d6722f41964af1ced00cb840d15f594",
+    "evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json": "6db041e9ccd4ab28b265e78232b41f610f4e5be1888a514bd1159e4b98327e26",
+    "evidence_transitions/post_v2_3/p5_authority_no_silent_expansion_synthetic_test_backed.json": "25ac5cf10d1b5adade9b4ab1c4f58d8f5f34517a50fca5ca688cf532545ce324",
+    "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json": "a0295057fc97b3aabc4d48477021416ae3a076dde0963231f5cdc4d25ff0fb05",
+    "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json": "4cdbec3d797ba0bd5d31514cb4a07e065d3e0268dd47de9cc1614f90153160f1",
+    "evidence_transitions/v1_0_measured/costed_route_resource_slice_synthetic_test_backed.json": "1237dc624688ab72fbe2ffde360df957b9945df64cd8999a10490fe4e82fddb4",
+    "evidence_transitions/v1_x_measured/planning_scheduler_state_probe_no_change.json": "6f2e3e702dc3647b419601fdd98e547f4c9a29d6fd1c303f886997f327870992",
+    "experiments/authority_effect_refinement/results/2026-07-15-local.json": "ed7dbc8ddf36aa7027b4496a8a3176aec11dc89cde992cf33c5705244abd508c",
+    "experiments/costed_route_resource_slice/results/2026-06-29-local.json": "075febf47d0135491f418adccd4890d4a969e18fe0855fc12d820d31e70a53fd",
+    "experiments/forward_transfer_factorial/protocol.md": "e6f2d97d8f7e55553d1e692d4b55447f753b1314ddfedcf152a5ce6c1bb4100b",
+    "experiments/forward_transfer_factorial/results/2026-11-20-local.json": "f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89",
+    "experiments/forward_transfer_pilot/protocol.md": "7f7955236ff460ea2945b2d5560322111c64bba5c4d4851496e70e8cb9c75201",
+    "experiments/forward_transfer_pilot/results/2026-11-20-local.json": "56a03a24fb560b4842f212da6554680b3e356eecb5f76fc68683dd3d2b05829e",
+    "experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md": "cee38db019ad79211c43df01014b5ee559aee01aac38308e484dc0bb9149b67d",
+    "experiments/nov20_instrument_audit/protocol.md": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+    "experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json": "e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e",
+    "experiments/nov20_instrument_audit/results/receiver-2026-11-20.json": "b0254b1ab00b2b4a2d9430bd06e951020c690bed6abede6fa725287b11cdfac3",
+    "experiments/nov20_instrument_audit/results/schedulers-2026-11-20.json": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+    "experiments/nov20_instrument_audit/results/verifier-2026-11-20.json": "75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75",
+    "experiments/p4_governed_usefulness/results/confirmatory_result.json": "d2f6d127a47172a5ff524e23153dc05a7aa3935388b831c9b3a1ec95b60c4f06",
+    "experiments/p4_kerc_runtime/results/confirmatory_result.json": "027507a0360c8b3749db4c081aa68d9d7a5f2d149dbd66a20a8815a2b28c259b",
+    "experiments/p4_situated_world_model/results/confirmatory_result.json": "ba1039167a898b08607213aa007b268918a305af2cd0479ed66b4c6315deaa67",
+    "experiments/p5_terminal_batch/results/result.json": "c8ce628ade662d9b3d56ceb43b62141de1e86a73ec3b64a8af8f93453564e16f",
+    "experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md": "04d6a6c87cc3063aee321efee402d6faa615e185eac8590d69e7b299e6db1874",
+    "experiments/p5_u1_governed_repository_change/design.json": "6c2d52bc41c3878b80f3dc2c91ee6307f4076a2b92e9206ce7b55134ee12ee4a",
+    "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+    "experiments/p5_u1_governed_repository_change/results/2026-11-20-conventional-comparison.json": "d8e6d23c5f619e082e46a6c75d88e205d15e274e79dc5f36916309c65836ea62",
+    "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json": "ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed",
+    "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+    "experiments/planning_scheduler_state/results/2026-07-02-local.json": "a62ec05320e23c32d3660956bbbe90b8e10ed46e3d7c51af4f0bf45f0e92c9bf",
+    "experiments/verifier_replacement_comparison/protocol.md": "56f93f82084d1516e1987198bb05cc28d834a8e8095af67359818dc29458e995",
+    "experiments/verifier_replacement_comparison/results/2026-11-20-local.json": "dabc21e8c7e07ca146729268aae6c85d740ba6cf5f069895099a08bbf8ed9e28",
+    "papers/paper_library.json": "dea4a1dc161a2e1d046f7c613b9461ce16473ed0c52b141aad6b1d2993f3d32e",
+    "products/claim_citations.json": "ef8be6e2db0ae85a93f25b48b41ed6e9aae9b92bf6f38aa68106130d5311608e",
+    "products/research_studies.json": "0b97973195f2d368edec63b05271b04769fb5baf3c281a9844076148ac1eb3b7",
+    "proofs/proof_manifest.json": "725bb3bc88fcee463d28fb70eb517a487eb7fa687a031d189d424d06a3df1d92",
+    "scripts/book_knowledge_graph.py": "77edeefa0c64543fb2e34bb47d504fa57650ecc23d7dfc1cfd61f0b3050163c4",
+    "scripts/build_human_reader_current.py": "7f3be2fbf491726d4fc40e21b9db71f944c5eecb50711971ea9024c217b4512f",
+    "scripts/research_case_rows.py": "129f454fbf4cd821e88ccec371cd21b837eb9f393a44238e34fcd7df38975d2a",
+    "scripts/research_studies.py": "6ebc454503b28b210da287f6db48e7a4202503d3b691993b88656f965767b909",
+    "sources/source_inventory.json": "99cde22475a36d12ff980d4beafbca82c7f9738f0004a4566e5abf6c22636bee"
+  },
+  "reader_search_sha256": "f93740bc16212d3edc56ac1d80bbbdcfcf0f6c9a9c1522732fb63592c9a5f646",
+  "search_sha256": "e90a999b6c9a4f02ab5ee548ec36a126eb76073ad3ac9cf90f502e3848096643",
+  "graph_search_sha256": "297834bb97fa9f20a7a841c6c4c9ec950eb31ad8d4539ca1b191cfb0d1498f87",
+  "registry_sha256": "e7fcd551e2ed59d382cab83be4b6f0d369b9cf0205998636930152e32ed5edcb",
+  "tasks_sha256": "8ce88a45163b25d4b21ddb3d23828f7ef3840975b3d9f5a3ce3f76f612fe460a",
+  "runner_sha256": "c71cfced0397a813d54a20dd4fb9c2e340e9c0c51d722ba7eada29aeb9977a9c",
+  "protocol_sha256": "d7d8e0555662f1b791552894c7f55d92217216022ad80962ca5a4ae302e618a4",
+  "browser": "157.0.8103.80",
+  "budget": {
+    "primary": 4,
+    "follow": 4,
+    "excerpt_bytes": 1000
+  },
+  "results": [
+    {
+      "task": "J01",
+      "question": "A team wants to use the local governed-usefulness result to certify another team's deployment. What can the reported comparison support, and what evidence would be missing?",
+      "order": [
+        "baseline",
+        "graph"
+      ],
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 4024,
+        "primary": [
+          {
+            "route": "appendices/C_claim_evidence_matrix.html#p4m5-governed-usefulness-reconciliation-2026-07-16",
+            "id": null,
+            "label": "Evidence registry Appendix C — Claim/Evidence Matrix C.2 P4/M5 Governed-Usefulness Reconciliation (2026-07-16) C.2 P4/M5 Governed-Usefulness Reconciliation (2026-07-16) The prospectively frozen confirmatory campaign reached an informative bounded local regime after preserving two instrument failures and a separate tuning stage. On the fresh 16-task held-out denominator, 15 candidate decisions were schema-admissible. Full governance released 9 useful and 0 unsafe decisions; the simple baseline released 0 useful and 0 unsafe decisions; removing evidence freshness exposed 1 unsafe release. Two independent evaluator implementations agreed on all scored cases, and all six preregistered co-primary checks passed. This accepts only the non-core claim governed-usefulness.held-out-local-policy-effect at bounded synthetic-test-backed scope. The campaign used a local model, authored tasks, an internal policy, synthetic effects, and no independent external evaluator or transfer setting. It does n",
+            "status": 200,
+            "anchor": true,
+            "text": "C.2 P4/M5 Governed-Usefulness Reconciliation (2026-07-16) The prospectively frozen confirmatory campaign reached an informative bounded local regime after preserving two instrument failures and a separate tuning stage. On the fresh 16-task held-out denominator, 15 candidate decisions were schema-admissible. Full governance released 9 useful and 0 unsafe decisions; the simple baseline released 0 useful and 0 unsafe decisions; removing evidence freshness exposed 1 unsafe release. Two independent evaluator implementations agreed on all scored cases, and all six preregistered co-primary checks passed. This accepts only the non-core claim governed-usefulness.held-out-local-policy-effect at bounded synthetic-test-backed scope. The campaign used a local model, authored tasks, an internal policy, synthetic effects, and no independent external evaluator or transfer setting. It does not promote a chapter-core claim, establish broad usefulness, acceptable governance cost, deployment safety, model"
+          },
+          {
+            "route": "appendices/F_changelog.html#p4-governed-usefulness-held-out-result",
+            "id": null,
+            "label": "History Appendix F — Changelog F.138 2026-07-16 — P4 governed-usefulness held-out result F.138 2026-07-16 — P4 governed-usefulness held-out result Preserved four additional tuning identities after the first non-estimable sweep. V2 nearly populated the four-cell operating range, V3 exposed an over-conjunctive utility construct, V4 obtained the missing useful-unsafe observation but retained seven invalid decision enums as exclusions, and V5 restored schema admission without normalizing any prior output. Passed the prospectively frozen cumulative tuning gate at 32/40 admitted candidates: 9 useful-safe, 2 useful-unsafe, 10 useless-safe, and 11 useless-unsafe, with zero evaluator disagreement and 20 bounded local effect probes. Tuning remains non-evidentiary. Froze and executed a disjoint 16-task held-out campaign with one identity-pinned local quantized Qwen3-8B run, no retries, shared candidates across six policy arms, and two evaluator implementations. Fifteen candidates were admit",
+            "status": 200,
+            "anchor": true,
+            "text": "F.138 2026-07-16 — P4 governed-usefulness held-out result"
+          },
+          {
+            "route": "appendices/F_changelog.html#post-v2.1-empirical-execution-and-reconciliation",
+            "id": null,
+            "label": "History F.235 2026-07-11 - Post-v2.1 empirical execution and reconciliation governed usefulness/rollback: registered unsafe releases fell from 24/36 direct to 0/36 governed, but useful releases remained 2/36 and exact attack-control rollback was 32/36, below both registered thresholds. Narrowed…",
+            "status": 200,
+            "anchor": true,
+            "text": "F.235 2026-07-11 - Post-v2.1 empirical execution and reconciliation"
+          },
+          {
+            "route": "appendices/F_changelog.html#remove-hosted-chat-dependencies-from-the-active-roadmap",
+            "id": null,
+            "label": "History F.140 2026-07-16 — Remove hosted-chat dependencies from the active roadmap F.140 2026-07-16 — Remove hosted-chat dependencies from the active roadmap Replaced the unfinished Chat Pro v3/action-time-approval gate with a self-contained local instrument-qualification path. Historical v1/v2 Chat Pro receipts remain immutable instrument-failure evidence and are not rescored, repeated, or treated as claim attempts. Added a machine-enforced execution contract: no ChatGPT or other conversational browser session, outside participant, optional model, or fresh approval for safe reversible local work may block roadmap completion. Candidate roles may be filled prospectively by Codex, locally available/open-weight models, deterministic fixtures, or a frozen mixture, with exact identity, limitations, and claim ceiling recorded. Rebound the governed-usefulness sweep design and runner to a future local qualification receipt with candidate-before-label closure, independently implemented eval",
+            "status": 200,
+            "anchor": true,
+            "text": "F.140 2026-07-16 — Remove hosted-chat dependencies from the active roadmap"
+          }
+        ],
+        "followed": [
+          {
+            "route": "appendices/A_source_matrix.html",
+            "id": null,
+            "label": "Appendices",
+            "status": 200,
+            "anchor": false,
+            "text": "This matrix is generated from sources/source_inventory.json and dynamic chapter assignments in book_structure.json. Source status is deliberately conservative. A source note means the source has been mined for drafting context; it does not by itself promote any chapter claim above argument."
+          },
+          {
+            "route": "appendices/C_claim_evidence_matrix.html",
+            "id": null,
+            "label": "C Claim/Evidence Matrix",
+            "status": 200,
+            "anchor": false,
+            "text": "This matrix contains one core claim per dynamic chapter and records the conservative evidence state used by the current manuscript. The support state is the compact authoritative summary, not a complete quality score. The separate evidence-quality vector contract tracks independence, reproducibility, recency, coverage, adversarial strength, validity, artifact access, and transfer distance for every chapter-core claim without aggregating them or changing support. Each claim has two separate classifications: a claim label that describes what kind of statement it is, and a support state that describes what currently supports it. No chapter core claim is marked source-derived, prototype-backed, synthetic-test-backed, empirical-test-backed, or external-literature-backed yet. A source note means the source has been mined for drafting context; it does not by itself promote the claim. Current generated coverage: 89 chapter core claims, 1250 exact claim-source mappings, 1183 passage-reviewed ma"
+          },
+          {
+            "route": "appendices/C_claim_evidence_matrix.html#qcsa-p2p3-evidence-reconciliation-2026-07-13",
+            "id": null,
+            "label": "",
+            "status": 200,
+            "anchor": true,
+            "text": "C.1 QCSA P2–P3 Evidence Reconciliation (2026-07-13) This overlay supersedes pre-implementation QCSA limits in earlier snapshots. The exact local result is bounded synthetic/internal evidence; every chapter- core state below remains argument. Canonical records: experiments/qcsa_reference/results/evaluation_results.json, claim_decisions/qcsa_reference_evaluation_dispositions.json, docs/qcsa_reference_evaluation_report.md, experiments/qcsa_vertical_reference/results/vertical_result.json, and docs/qcsa_governed_vertical_reference_report.md. Five exact non-core mechanism findings are marked promote for bounded evidence review, but no automatic support-state transition has occurred."
+          },
+          {
+            "route": "appendices/C_claim_evidence_matrix.html#r16-a-post-activation-claim-organization-2026-07-26",
+            "id": null,
+            "label": "",
+            "status": 200,
+            "anchor": true,
+            "text": "C.3 R16-A Post-Activation Claim Organization (2026-07-26) Six chapters admitted after the frozen activation registry now have a separate, reviewed claim-identity projection. The packet contains 30 atoms: one exact chapter core, one boundary, one mechanism, one failure/noninheritance rule, and one argument-exit target per chapter. Every atom has an owner, scope, falsifier, acceptance criterion, promotion ceiling, evidence-plan route, and explicit non-claims. This is organization, not evidence. All six chapter cores and all thirty atoms remain at argument; the packet moves no support or release state. It also leaves the historical 3,730-atom activation denominator, the current 4,058-atom registry, and the historical 15-atom addendum unchanged. The machine source is evidence_quality/post_activation_six_chapter_claim_atom_addendum.json."
+          }
+        ]
+      },
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 1488,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "transition:post_v2_3.governed_usefulness_held_out_local.promote",
+            "label": "governed-usefulness.held-out-local-policy-effect Evidence transition",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/claim-citations.html#governed-usefulness.held-out-local-policy-effect",
+            "text": "Evidence transition transition:post_v2_3.governed_usefulness_held_out_local.promote Reported result On one fixed 16-task authored held-out corpus and one local quantized Qwen3-8B run, the frozen full-governance policy released 9 useful and 0 unsafe candidates versus 0 useful and 0 unsafe releases under the candidate self-release baseline; the evidence-freshness ablation released one additional useful-unsafe candidate."
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "transition:post_v2_1.governed_usefulness_rollback.narrow",
+            "label": "post_v2_1.governed_usefulness_rollback.bounded_result Evidence transition",
+            "status": 200,
+            "anchor": false,
+            "text": "Evidence transition transition:post_v2_1.governed_usefulness_rollback.narrow"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:recursive-self-improvement-boundaries.beyond_sota.001",
+            "label": "The mature target is a governed self-improvement market in which system-generated changes can be tested quickly without acquiring permission to define or ratify their own success.… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:recursive-self-improvement-boundaries.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:intent-to-execution-contracts.minimum.001",
+            "label": "The smallest honest implementation boundary for Command Contracts: From Intent to Executable Work is: The current minimum is a record-and-route scaffold plus one substantive finit… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:intent-to-execution-contracts.minimum.001"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/claim-citations.html#governed-usefulness.held-out-local-policy-effect",
+            "id": null,
+            "label": "Open in the book",
+            "status": 200,
+            "anchor": true,
+            "text": "Policy effects on one held-out local corpus On one fixed 16-task authored held-out corpus and one local quantized Qwen3-8B run, the frozen full-governance policy released 9 useful and 0 unsafe candidates versus 0 useful and 0 unsafe releases under the candidate self-release baseline; the evidence-freshness ablation released one additional useful-unsafe candidate. Recorded support synthetic-test-backed. Relation to the chapter claim is proxy_for. Effect on parent support none. Exact result · Recorded evidence decision Scope and limits Result SHA-256 d2f6d127a47172a5ff524e23153dc05a7aa3935388b831c9b3a1ec95b60c4f06"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:resource-economics-and-token-budgets.core",
+            "label": "Resource Economics owns a consumer-, task-, risk-, workload-, organization-, resource-, and time-specific allocation lease that admits, prices, schedules, defers, shrinks, escalat…",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "appendices/C_claim_evidence_matrix.html#resource-economics-and-token-budgets.core",
+            "text": "Claim · argument claim:resource-economics-and-token-budgets.core"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:recursive-self-improvement-boundaries",
+            "label": "Recursive Self-Improvement Boundaries",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/recursive-self-improvement-boundaries.html",
+            "text": "Technical chapter chapter:recursive-self-improvement-boundaries"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:artifact-graphs-audit-logs-and-replay",
+            "label": "Artifact Graphs, Audit Logs, and Replay",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/artifact-graphs-audit-logs-and-replay.html",
+            "text": "Technical chapter chapter:artifact-graphs-audit-logs-and-replay"
+          }
+        ]
+      }
+    },
+    {
+      "task": "J02",
+      "question": "Two checks return different receipts derived from the same revision observation. Does their agreement establish two independent observations about the effect? State the verification consequence.",
+      "order": [
+        "graph",
+        "baseline"
+      ],
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 694,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:governed-deliberation-and-test-time-scaling.invariant.006",
+            "label": "Generator, selector, verifier, evaluator, planner, and executor roles remain distinct; shared dependencies are declared and tested before independence language. Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:governed-deliberation-and-test-time-scaling.invariant.006"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:artifact-graphs-audit-logs-and-replay.failure_mode.013",
+            "label": "For Artifact Graphs, Audit Logs, and Replay, a material failure mode is: Trust recursion and verifier capture extend confidence indefinitely through fluent summaries, shared evalu… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:artifact-graphs-audit-logs-and-replay.failure_mode.013"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion",
+            "label": "Missing provenance, replay, observation, cross-check, trap, attestation-limit, trust-root, verifier-separation, recursion-stop, residual, revocation, or consumer obligations block… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:artifact-graphs-audit-logs-and-replay.formal.artifacts-graph-failure-blocks-promotion"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:compact-generative-systems-and-residual-honesty.failure_mode.005",
+            "label": "For Compact Generative Systems: Generate, Verify, Repair, and Residual Honesty, a material failure mode is: Verifier capture, shared bugs, wrong-contract verification, reward hack… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:compact-generative-systems-and-residual-honesty.failure_mode.005"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:governed-deliberation-and-test-time-scaling",
+            "label": "Governed Deliberation and Test-Time Scaling",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/governed-deliberation-and-test-time-scaling.html",
+            "text": "Technical chapter chapter:governed-deliberation-and-test-time-scaling"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:artifact-graphs-audit-logs-and-replay",
+            "label": "Artifact Graphs, Audit Logs, and Replay",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/artifact-graphs-audit-logs-and-replay.html",
+            "text": "Technical chapter chapter:artifact-graphs-audit-logs-and-replay"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:benchmark-ratchets-and-anti-goodhart-evidence",
+            "label": "Benchmark Ratchets and Anti-Goodhart Evidence",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
+            "text": "Technical chapter chapter:benchmark-ratchets-and-anti-goodhart-evidence"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:claim-ledgers-and-belief-revision",
+            "label": "Claim Ledgers and Belief Revision",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/claim-ledgers-and-belief-revision.html",
+            "text": "Technical chapter chapter:claim-ledgers-and-belief-revision"
+          }
+        ]
+      },
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      }
+    },
+    {
+      "task": "J03",
+      "question": "A reuse policy that looked best under a proposal budget is about to be adopted with an expanded-work cap. Which comparison should decide whether to keep the policy?",
+      "order": [
+        "baseline",
+        "graph"
+      ],
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      },
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 5874,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study:forward-transfer",
+            "label": "Did extracted routines help on later synthesis tasks? Study",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-forward-transfer.html",
+            "text": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Study study:forward-transfer Research question When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits? Current decision Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks. Reported result"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study_run:transfer-scheduler-audit",
+            "label": "Scheduler sensitivity at matched caps Study run",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit",
+            "text": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Study run study_run:transfer-scheduler-audit Reported result In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Evidence limit The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Disposition"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "source:forward_transfer_program_synthesis",
+            "label": "From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis Source",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "papers/forward_transfer_program_synthesis.html",
+            "text": "The complete Markdown manuscript, supplied DOCX, and 31-entry bibliography were reviewed. The paper reports definitions, counterexamples, hypotheses, protocols, and a reporting schema rather than empirical results. Its cited external results are not inherited as book evidence and require their own full source-note review. Source source:forward_transfer_program_synthesis Citation Sorenson (2026), From Compression to Forward Transfer Evidence limit The complete Markdown manuscript, supplied DOCX, and 31-entry bibliography were reviewed. The paper reports definitions, counterexamples, hypotheses, protocols, and a reporting schema rather than empirical results. Its cited external results are not inherited as book evidence and require their own full source-note review."
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "source:governed_intelligence_causal_adaptation",
+            "label": "Causal Adaptation in AI Systems: Learning-Process Topology, Persistence Placement, and Verified Forward Transfer Source",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "papers/governed_intelligence_causal_adaptation.html",
+            "text": "The complete manuscript and supplied integration packet were reviewed. Its three benchmark families remain proposed; no adaptation-placement, learning-topology, procedure, transfer, or resource result was run or established here. Source source:governed_intelligence_causal_adaptation Citation Sorenson (2026), Causal Adaptation in AI Systems Evidence limit The complete manuscript and supplied integration packet were reviewed. Its three benchmark families remain proposed; no adaptation-placement, learning-topology, procedure, transfer, or resource result was run or established here."
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:cognitive-method-transfer-and-qualification.core",
+            "label": "Civilizational methods should enter an AI stack only through a governed transfer-and-qualification pipeline that preserves a source Cognitive Technology Record, tests mechanism-pr…",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "appendices/C_claim_evidence_matrix.html#cognitive-method-transfer-and-qualification.core",
+            "text": "Claim · argument claim:cognitive-method-transfer-and-qualification.core"
+          },
+          {
+            "route": "products/evidence-registry/study-forward-transfer.html",
+            "id": null,
+            "label": "Open in the book",
+            "status": 200,
+            "anchor": false,
+            "text": "Current decision Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks. In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope and limits. The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Inspect the featured run and its conditions."
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study_run:transfer-factorial",
+            "label": "Selection × representation on five-bit maps",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-forward-transfer.html#run-transfer-factorial",
+            "text": "The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Study run study_run:transfer-factorial Reported result With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Evidence limit The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibili"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study_run:transfer-pilot",
+            "label": "Original four-bit pilot",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-forward-transfer.html#run-transfer-pilot",
+            "text": "Fixed, authored four-bit transformations with disjoint fixture identities, lineages and full target vectors. Search order, operator footprint, and lexical clues all matter. Candidate budgets match. The result preserves setup, proposal, screening and full-check costs. It supplies no evidence about scale or natural programs. Study run study_run:transfer-pilot Reported result The no-library and extracted-routine arms each verified 5 of 12 tasks. Ordinary retrieval verified 8. Retrieval exhausted its budget on 1 case the other arms solved and solved 4 they missed. All three exhausted their budgets on the 3 out-of-family cases. Retain ordinary retrieval for the next pilot at this scope. Evidence limit Fixed, authored four-bit transformations with disjoint fixture identities, lineages and full target vectors. Search order, operator footprint, and lexical clues all matter. Candidate budgets match. The result preserves setup, proposal, screening and full-check costs. It supplies no evidence ab"
+          }
+        ]
+      }
+    },
+    {
+      "task": "J04",
+      "question": "Both consumers can use the second status projection. Should an operator expect the gateway to close more requests in the matched run? What measurable cost moved?",
+      "order": [
+        "graph",
+        "baseline"
+      ],
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 2913,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study_run:receiver-availability",
+            "label": "Matched access through one or two endpoints Study run",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability",
+            "text": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Study run study_run:receiver-availability Reported result Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Evidence limit The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies truste"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study:crossed-receiver",
+            "label": "When a second receiver check changes closure",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-crossed-receiver.html",
+            "text": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Study study:crossed-receiver Research question When can an additional receiving-side read resolve a timeout after competent conventional status checking? Current decision Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport. Reported result"
+          },
+          {
+            "route": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability",
+            "id": null,
+            "label": "Open in the book",
+            "status": 200,
+            "anchor": true,
+            "text": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Matched access through one or two endpoints # Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately. Result Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional "
+          }
+        ]
+      },
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      }
+    },
+    {
+      "task": "J05",
+      "question": "A write was observed after revocation. Can the late read establish it occurred without authority? Which record and ordering decide?",
+      "order": [
+        "baseline",
+        "graph"
+      ],
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      },
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 2441,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study_run:authority-commit-ordering",
+            "label": "Grant revocation and delayed effect observation Study run",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering",
+            "text": "Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Study run study_run:authority-commit-ordering Reported result The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Evidence limit Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Disposition"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:artifact-graphs-audit-logs-and-replay.beyond_sota.001",
+            "label": "A mature artifact-evidence plane runs a versioned content-addressed graph over natural multi-step AI work and independently observed effects. It compares folders, version control,… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:artifact-graphs-audit-logs-and-replay.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:prototype-roadmap.invariant.008",
+            "label": "Authority is monotone non-widening across dependencies; denial, revocation, expiry, quarantine, or stop reaches every dependent phase before effect. Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:prototype-roadmap.invariant.008"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:system-boundaries-and-authority.failure_mode.004",
+            "label": "Forking grant, budget, trace, replay, or revocation identity can let subsystems accept locally valid records that no longer describe one authorized effect. Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:system-boundaries-and-authority.failure_mode.004"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:system-boundaries-and-authority.mechanism.004",
+            "label": "Bind principal, execution domain, operation, target, permission class, scope, budget account, trace, replay identity, grant, policy version, revocation epoch, and expiry in one au…",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:system-boundaries-and-authority.mechanism.004"
+          },
+          {
+            "route": "products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering",
+            "id": null,
+            "label": "Open in the book",
+            "status": 200,
+            "anchor": true,
+            "text": "Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Grant revocation and delayed effect observation # Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt. Result The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Scope and limits Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Disposition"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "study:scoped-git",
+            "label": "When scoped Git change control is enough",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/study-scoped-git.html",
+            "text": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review. Study study:scoped-git Research question Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer? Current decision Keep scoped Git for the observed repair when its grant checks and recoverable branch history suffice. Reported result"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:artifact-graphs-audit-logs-and-replay",
+            "label": "Artifact Graphs, Audit Logs, and Replay",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/artifact-graphs-audit-logs-and-replay.html",
+            "text": "Technical chapter chapter:artifact-graphs-audit-logs-and-replay"
+          }
+        ]
+      }
+    },
+    {
+      "task": "J06",
+      "question": "An audit consumer sees one compiled Circle target and a passing receipt check. Does that establish general proof transport? What is the retained evidence boundary?",
+      "order": [
+        "graph",
+        "baseline"
+      ],
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 877,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+            "label": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003 Evidence transition",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+            "text": "Evidence transition transition:post_v2_3.p5.circle_named_target_receipt.promote Reported result One pinned Circle rope formal target compiled and retained exact command/result receipts, a proof boundary, and a finite public consumer gate with four rejecting controls."
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+            "label": "Build or verify the named formal target and retain command, environment, logs, failures, proof boundary, and compiled-declaration receipt rather than trusting a theorem label. Claim",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+            "text": "Claim · Retained record · prototype-backed claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.009",
+            "label": "Validate receipt and proof-target schemas, required fields, state transitions, provenance closure, consumer policy, staleness policy, failure behavior, and support-state effect. Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.009"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:circle-calculus-and-proof-carrying-ai-contracts",
+            "label": "Circle Calculus and Proof-Carrying AI Contracts Technical chapter",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/circle-calculus-and-proof-carrying-ai-contracts.html",
+            "text": "Technical chapter chapter:circle-calculus-and-proof-carrying-ai-contracts"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.core",
+            "label": "Circle Calculus and Proof-Carrying AI Contracts owns a theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, and time-specific Proof Contract Transport Envelo…",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "appendices/C_claim_evidence_matrix.html#circle-calculus-and-proof-carrying-ai-contracts.core",
+            "text": "Claim · argument claim:circle-calculus-and-proof-carrying-ai-contracts.core"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.failure_mode.001",
+            "label": "For Circle Calculus and Proof-Carrying AI Contracts, a material failure mode is: A theorem name, badge, diagram, proof count, or green build creates authority beyond the exact sta…",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:circle-calculus-and-proof-carrying-ai-contracts.failure_mode.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.failure_mode.002",
+            "label": "For Circle Calculus and Proof-Carrying AI Contracts, a material failure mode is: A theorem ID resolves to the wrong declaration, changed statement, different assumptions, stale so…",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:circle-calculus-and-proof-carrying-ai-contracts.failure_mode.002"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "reader_unit:unit-15",
+            "label": "Verification Bandwidth, Claim Ledgers, and Proof",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
+            "text": "Reader unit reader_unit:unit-15"
+          }
+        ]
+      },
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      }
+    },
+    {
+      "task": "J07",
+      "question": "Does the corrected Atlas screen warrant proceeding at budget 128? Explain how a positive estimate can coexist with that decision.",
+      "order": [
+        "baseline",
+        "graph"
+      ],
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      },
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 630,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:constitutional-alignment-substrate.beyond_sota.001",
+            "label": "A mature constitutional control plane compares model-level constitutions, public-input processes, direct policy/runtime controls, corrigibility and off-switch baselines, and modul… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:constitutional-alignment-substrate.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:human-intent-as-a-formal-input.beyond_sota.001",
+            "label": "A mature intent control plane combines humane conversational intake with an independently challengeable, versioned authorization boundary. It evaluates natural and adversarial req… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:human-intent-as-a-formal-input.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:integrated-reference-architecture.beyond_sota.001",
+            "label": "The mature operational contract requires an argument-exit campaign that executes natural heterogeneous tasks through independently operated layer services and matched direct, mono… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:integrated-reference-architecture.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:project-theseus-as-report-first-implementation-reference.beyond_sota.001",
+            "label": "The mature operational contract requires an argument-exit campaign that freezes a public-safe Project Theseus release or report bundle and supports independent clean-room replay f… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:project-theseus-as-report-first-implementation-reference.beyond_sota.001"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:constitutional-alignment-substrate",
+            "label": "Constitutional Alignment: Agency, Dignity, and Corrigibility",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/constitutional-alignment-substrate.html",
+            "text": "Technical chapter chapter:constitutional-alignment-substrate"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:constitutional-alignment-substrate.core",
+            "label": "A constitutional alignment substrate should be represented as a versioned, non-self-authorizing constraint contract that binds each active predicate to its normative source and au…",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "appendices/C_claim_evidence_matrix.html#constitutional-alignment-substrate.core",
+            "text": "Claim · argument claim:constitutional-alignment-substrate.core"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:integrated-reference-architecture.core",
+            "label": "Integrated Reference Architecture owns a trace-, run-, request-, intent-, authority-, artifact-, parentage-, layer-, canonical-state-, material-effect-, terminal-receipt-, evaluat…",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "appendices/C_claim_evidence_matrix.html#integrated-reference-architecture.core",
+            "text": "Claim · argument claim:integrated-reference-architecture.core"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:human-intent-as-a-formal-input",
+            "label": "Human Intent as a Formal Input",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/human-intent-as-a-formal-input.html",
+            "text": "Technical chapter chapter:human-intent-as-a-formal-input"
+          }
+        ]
+      }
+    },
+    {
+      "task": "J08",
+      "question": "How many minutes of active operator time does the serialized verifier save in a deployed service? Give the strongest defensible answer and cite its scope.",
+      "order": [
+        "graph",
+        "baseline"
+      ],
+      "graph": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 575,
+        "primary": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:governed-deliberation-and-test-time-scaling.mechanism.012",
+            "label": "Measure final useful correctness, unsafe handoff, selective risk, calibration, abstention, latency, branch count, verifier cost, operator burden, and residual custody over the com… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:governed-deliberation-and-test-time-scaling.mechanism.012"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:compact-generative-systems-and-residual-honesty.beyond_sota.001",
+            "label": "A mature compact-representation campaign preregisters heterogeneous natural corpora, modalities, mutable artifacts, semantic and exact consumers, downstream tasks, rights regimes,… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:compact-generative-systems-and-residual-honesty.beyond_sota.001"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "claim:model-weight-custody-and-hardware-roots-of-trust.beyond_sota.001",
+            "label": "The mature operational contract is a target tested through this program: Run a preregistered promotion-or-refutation campaign using a public-safe but effect-bearing model-family a… Claim",
+            "status": 200,
+            "anchor": false,
+            "text": "Claim · Retained record · argument claim:model-weight-custody-and-hardware-roots-of-trust.beyond_sota.001"
+          }
+        ],
+        "followed": [
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:governed-deliberation-and-test-time-scaling",
+            "label": "Governed Deliberation and Test-Time Scaling",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/governed-deliberation-and-test-time-scaling.html",
+            "text": "Technical chapter chapter:governed-deliberation-and-test-time-scaling"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:artifact-graphs-audit-logs-and-replay",
+            "label": "Artifact Graphs, Audit Logs, and Replay",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/artifact-graphs-audit-logs-and-replay.html",
+            "text": "Technical chapter chapter:artifact-graphs-audit-logs-and-replay"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:benchmark-ratchets-and-anti-goodhart-evidence",
+            "label": "Benchmark Ratchets and Anti-Goodhart Evidence",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html",
+            "text": "Technical chapter chapter:benchmark-ratchets-and-anti-goodhart-evidence"
+          },
+          {
+            "route": "products/evidence-registry/knowledge-graph/index.html",
+            "id": "chapter:claim-ledgers-and-belief-revision",
+            "label": "Claim Ledgers and Belief Revision",
+            "status": 200,
+            "anchor": false,
+            "cited_route": "chapters/claim-ledgers-and-belief-revision.html",
+            "text": "Technical chapter chapter:claim-ledgers-and-belief-revision"
+          }
+        ]
+      },
+      "baseline": {
+        "primary_exact": false,
+        "exact": false,
+        "first_exact_rank": null,
+        "owner": false,
+        "same_record_limit": null,
+        "excerpt_bytes": 0,
+        "primary": [],
+        "followed": []
+      }
+    }
+  ]
+}

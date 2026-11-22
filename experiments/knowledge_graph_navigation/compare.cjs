@@ -8,15 +8,22 @@ const { gunzipSync } = require("node:zlib");
 const { chromium } = require("../../ci/browser/node_modules/playwright");
 
 const [siteArgument, output, mode] = process.argv.slice(2);
-assert(siteArgument && output && (!mode || mode === "judgment"),
-  "usage: node compare.cjs SITE OUTPUT.json [judgment]");
-const judgment = mode === "judgment";
+assert(siteArgument && output && (!mode || ["judgment", "judgment-short-queries"].includes(mode)),
+  "usage: node compare.cjs SITE OUTPUT.json [judgment|judgment-short-queries]");
+const judgment = !!mode;
 const site = path.resolve(siteArgument);
 const root = "https://corbensorenson.github.io/asi-stack-book/";
 const graphBase = root + "products/evidence-registry/knowledge-graph/";
 const registry = root + "products/evidence-registry/";
 const taskBytes = fs.readFileSync(path.join(__dirname, judgment ? "judgment_tasks.json" : "tasks.json"));
 const tasks = JSON.parse(taskBytes);
+const shortQueries = mode === "judgment-short-queries"
+  ? fs.readFileSync(path.join(__dirname, "judgment_short_queries.json")) : null;
+if (shortQueries) {
+  const queries = JSON.parse(shortQueries);
+  assert.deepEqual(Object.keys(queries).sort(), tasks.map(task => task.id).sort());
+  for (const task of tasks) task.query = queries[task.id];
+}
 const hash = data => createHash("sha256").update(data).digest("hex");
 const readSite = name => fs.readFileSync(path.join(site, name));
 const graph = JSON.parse(gunzipSync(readSite("products/evidence-registry/knowledge-graph/graph.json.gz")));
@@ -218,6 +225,7 @@ async function main() {
       graph_search_sha256: hash(readSite(catalog)), registry_sha256: hash(readSite("products/evidence-registry/index.html")),
       tasks_sha256: hash(taskBytes), runner_sha256: hash(fs.readFileSync(__filename)),
       protocol_sha256: hash(fs.readFileSync(path.join(__dirname, judgment ? "judgment_protocol.md" : "protocol.md"))),
+      short_queries_sha256: shortQueries ? hash(shortQueries) : undefined,
       browser: browser.version(), budget, results,
     };
     fs.writeFileSync(output, JSON.stringify(report, null, 2) + "\n");
