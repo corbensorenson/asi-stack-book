@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/security-kernel-and-digital-scifs.qmd",
     "structured_atoms_reviewed": 66,
-    "prose_candidates_adjudicated": 68,
+    "prose_candidates_adjudicated": 69,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 canonical descendant-revocation proof increment. The exact 56-theorem surface now includes rejected-state noninterference, arbitrary-run descendant-inventory and trace custody, terminal revocation, twelve state-preserving rejecting controls, six inventory permutations, and a count-only impossibility result. Every newly scanned sentence remains owned by an existing formal target or explicit non-claim boundary. No new support atom, runtime-security inference, evidence transition, release decision, or publication claim was introduced. The security/custody EM2 publication-composition additions were re-reviewed; scanner deltas are line-wrapped ownership or non-inference clauses, and the composition adds no new material or support-bearing claim."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 canonical descendant-revocation proof increment. The exact 56-theorem surface now includes rejected-state noninterference, arbitrary-run descendant-inventory and trace custody, terminal revocation, twelve state-preserving rejecting controls, six inventory permutations, and a count-only impossibility result. Every newly scanned sentence remains owned by an existing formal target or explicit non-claim boundary. No new support atom, runtime-security inference, evidence transition, release decision, or publication claim was introduced. The security/custody EM2 publication-composition additions were re-reviewed; scanner deltas are line-wrapped ownership or non-inference clauses, and the composition adds no new material or support-bearing claim. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -519,6 +519,10 @@
     "security-kernel-and-digital-scifs.prose.1cf372259a97": {
       "state": "nonmaterial_explanation",
       "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
+    },
+    "security-kernel-and-digital-scifs.prose.9b2198b3919e": {
+      "state": "historical_or_source_report",
+      "rationale": "This limits the unlink probe to the path observation. It supplies no recoverability result."
     }
   },
   "prose_review_lineage": [

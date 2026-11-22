@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 42,
     "prose_candidates_adjudicated": 62,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, source boundaries, diagrams, tables, all three current formal targets, every scanner candidate, and unscanned evidence-cell and embedded-agency prose. The sweep narrows the core to a versioned atom-level transition contract; protects plain, normative, and machine claim projections; keeps evidence dimensions non-aggregating; and preserves finite-record and noninheritance limits. The 2026-07-26 consolidation replaces four artificial audit-mirror targets with one reachable six-stage transition lifecycle and an independent executable consumer. Historical audits remain executable consumers and no support state changes. The 2026-10-11 scoped technical terminology review adjudicates changed paragraphs and gate drawings against existing atom scopes, confounds and non-claims; retired sentence reviews remain in prose_review_lineage. Prior source/proof reviews retain their historical scope. No source rereproduction, new theorem, runtime experiment, support transition or release is claimed."
+    "review_note": "Reviewed the complete chapter, source boundaries, diagrams, tables, all three current formal targets, every scanner candidate, and unscanned evidence-cell and embedded-agency prose. The sweep narrows the core to a versioned atom-level transition contract; protects plain, normative, and machine claim projections; keeps evidence dimensions non-aggregating; and preserves finite-record and noninheritance limits. The 2026-07-26 consolidation replaces four artificial audit-mirror targets with one reachable six-stage transition lifecycle and an independent executable consumer. Historical audits remain executable consumers and no support state changes. The 2026-10-11 scoped technical terminology review adjudicates changed paragraphs and gate drawings against existing atom scopes, confounds and non-claims; retired sentence reviews remain in prose_review_lineage. Prior source/proof reviews retain their historical scope. No source rereproduction, new theorem, runtime experiment, support transition or release is claimed. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -751,11 +751,6 @@
       "rationale": "Restates the accepted claim-specific transition gate.",
       "target_atom_id": "evidence-states-and-claim-discipline.core"
     },
-    "evidence-states-and-claim-discipline.prose.6b597c490644": {
-      "state": "duplicate_of_atom",
-      "rationale": "Figure walkthrough of transition authority and required lineage.",
-      "target_atom_id": "evidence-states-and-claim-discipline.interface.003"
-    },
     "evidence-states-and-claim-discipline.prose.3007b34b577d": {
       "state": "duplicate_of_atom",
       "rationale": "Restates the test-backed evidence bundle requirements.",
@@ -944,6 +939,11 @@
       "state": "duplicate_of_atom",
       "rationale": "2026-10-11 scoped terminology/diagram review: Corrected summary now requires exact mappings/artifacts, satisfied gates, and an accepted decision, matching the core rather than automatic promotion from artifact presence.",
       "target_atom_id": "evidence-states-and-claim-discipline.core"
+    },
+    "evidence-states-and-claim-discipline.prose.82d23fbb2588": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "evidence-states-and-claim-discipline.interface.003",
+      "rationale": "The review disposition reuses the named transition authority and its exact claim scope."
     }
   },
   "non_claims": [
@@ -1042,6 +1042,19 @@
       "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
       "recorded_on": "2026-10-11",
       "retired_source": "chapters/evidence-states-and-claim-discipline.qmd:438"
+    },
+    {
+      "retired_candidate_id": "evidence-states-and-claim-discipline.prose.6b597c490644",
+      "retired_source": "chapters/evidence-states-and-claim-discipline.qmd:154",
+      "retired_sentence": "A promotion requires a recorded transition with an exact claim mapping, evidence artifact, command or review reference, scope boundary, blockers, downgrade triggers, and non-claims.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Figure walkthrough of transition authority and required lineage.",
+        "target_atom_id": "evidence-states-and-claim-discipline.interface.003"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ]
 }

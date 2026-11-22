@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 34,
     "prose_candidates_adjudicated": 35,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the P6.9 concept expansion on 2026-07-28. Every new claim-bearing sentence is reconciled to the exact concept-to-atom ownership recorded by the current-digest chapter substance contract, or classified as bounded source reporting. No new atom, unowned material claim, support transition, efficacy inference, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the P6.9 concept expansion on 2026-07-28. Every new claim-bearing sentence is reconciled to the exact concept-to-atom ownership recorded by the current-digest chapter substance contract, or classified as bounded source reporting. No new atom, unowned material claim, support transition, efficacy inference, release decision, or publication claim was introduced. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -261,15 +261,29 @@
       "rationale": "P6.9 exact-digest semantic review maps this `hardware-guarantees-concentration` proposition to the existing owner atom `physical-compute-infrastructure-energy-and-environmental-constraints.core`; it creates no additional atom and does not change support state.",
       "target_atom_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core"
     },
-    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.fb6f55a296e7": {
+    "physical-compute-infrastructure-energy-and-environmental-constraints.prose.bbe1ea1bd604": {
       "state": "historical_or_source_report",
-      "rationale": "The cited comparison measures GPU electricity. Other facility loads and carbon intensity lie outside the measurement.",
-      "target_atom_id": null
+      "rationale": "This qualifies the source-reported energy table by its joint change in mode and task mixture."
     }
   },
   "non_claims": [
     "Semantic review and chapter admission do not establish that the proposed mechanism works.",
     "The chapter remains at argument support until a claim-specific full attempt earns an accepted evidence transition.",
     "No deferred manuscript queue is created by leaving empirical, formal, transfer, or deployment residuals open."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "physical-compute-infrastructure-energy-and-environmental-constraints.prose.fb6f55a296e7",
+      "retired_source": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd:243",
+      "retired_sentence": "GPU energy excludes other facility loads and cannot by itself determine emissions. [Where Do the Joules Go?",
+      "preserved_disposition": {
+        "state": "historical_or_source_report",
+        "rationale": "The cited comparison measures GPU electricity. Other facility loads and carbon intensity lie outside the measurement.",
+        "target_atom_id": null
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    }
   ]
 }

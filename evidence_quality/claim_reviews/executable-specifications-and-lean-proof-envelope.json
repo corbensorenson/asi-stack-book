@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/executable-specifications-and-lean-proof-envelope.qmd",
     "structured_atoms_reviewed": 73,
-    "prose_candidates_adjudicated": 93,
+    "prose_candidates_adjudicated": 92,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 ProofEnvelope lifecycle expansion. The new prose reports exact authored finite-record theorem and independent-consumer results while preserving artifact-truth, semantic-adequacy, implementation-refinement, deployed-enforcement, support, transfer, and SOTA non-claims. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The 2026-08-14 forward-transfer pass maps outcome-bound verification receipts to the existing authority-lease mechanism and records seven line-wrap or explicit non-mechanization fragments. No new Lean result or support change is claimed. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-03 ProofEnvelope lifecycle expansion. The new prose reports exact authored finite-record theorem and independent-consumer results while preserving artifact-truth, semantic-adequacy, implementation-refinement, deployed-enforcement, support, transfer, and SOTA non-claims. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. The 2026-08-14 forward-transfer pass maps outcome-bound verification receipts to the existing authority-lease mechanism and records seven line-wrap or explicit non-mechanization fragments. No new Lean result or support change is claimed. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -477,16 +477,6 @@
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.invariant.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "executable-specifications-and-lean-proof-envelope.invariant.003"
     },
-    "executable-specifications-and-lean-proof-envelope.prose.521bcc65943b": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.invariant.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "executable-specifications-and-lean-proof-envelope.invariant.004"
-    },
-    "executable-specifications-and-lean-proof-envelope.prose.440a76d75620": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.failure_mode.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "executable-specifications-and-lean-proof-envelope.failure_mode.012"
-    },
     "executable-specifications-and-lean-proof-envelope.prose.f7d1e841e62d": {
       "state": "nonmaterial_explanation",
       "rationale": "Line-wrapped opening of the distinction between artifact verification and transfer evidence."
@@ -525,11 +515,44 @@
       "state": "duplicate_of_atom",
       "target_atom_id": "executable-specifications-and-lean-proof-envelope.core",
       "rationale": "The existing proof envelope bounds the theorem to its encoded proposition and assumptions."
+    },
+    "executable-specifications-and-lean-proof-envelope.prose.eb3dedcb7734": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "executable-specifications-and-lean-proof-envelope.mechanism.004",
+      "rationale": "The proof-envelope abstraction map binds the repaired representation to the affected consumer."
     }
   },
   "non_claims": [
     "Completing this semantic review does not prove the stack, promote support, or establish deployed enforcement, refinement, safety, capability, performance, transfer, or SOTA.",
     "The 298-target and 1,151-declaration counts are inventory and classification facts, not semantic proof.",
     "The future rationalization campaign is a required full-attempt specification, not a completed outcome."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "executable-specifications-and-lean-proof-envelope.prose.440a76d75620",
+      "retired_source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:111",
+      "retired_sentence": "A green theorem build cannot supply those facts.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.failure_mode.012`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "executable-specifications-and-lean-proof-envelope.failure_mode.012"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "executable-specifications-and-lean-proof-envelope.prose.521bcc65943b",
+      "retired_source": "chapters/executable-specifications-and-lean-proof-envelope.qmd:111",
+      "retired_sentence": "Repair requires an explicit abstraction map, a conformance test against the actual adapter version, and a new consumer binding.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked proof envelope: the theorem holds, the adapter differs` to existing reviewed atom `executable-specifications-and-lean-proof-envelope.invariant.004`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "executable-specifications-and-lean-proof-envelope.invariant.004"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    }
   ]
 }

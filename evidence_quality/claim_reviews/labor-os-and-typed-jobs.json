@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 76,
     "prose_candidates_adjudicated": 40,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -315,11 +315,6 @@
       "rationale": "Restates the non-collapsing lifecycle problem.",
       "target_atom_id": "labor-os-and-typed-jobs.invariant.003"
     },
-    "labor-os-and-typed-jobs.prose.dd861a2785c1": {
-      "state": "duplicate_of_atom",
-      "rationale": "Explains the insufficiency atom's missing execution properties.",
-      "target_atom_id": "labor-os-and-typed-jobs.insufficiency.001"
-    },
     "labor-os-and-typed-jobs.prose.05e8066d9f90": {
       "state": "historical_or_source_report",
       "rationale": "External baseline positioning; neither source is assigned as local evidence here."
@@ -458,15 +453,17 @@
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `labor-os-and-typed-jobs.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "labor-os-and-typed-jobs.failure_mode.001"
     },
-    "labor-os-and-typed-jobs.prose.c1d614f27fd0": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.failure_mode.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "labor-os-and-typed-jobs.failure_mode.003"
+    "labor-os-and-typed-jobs.prose.28d200324d96": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
     },
-    "labor-os-and-typed-jobs.prose.221fba3520d4": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.mechanism.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "labor-os-and-typed-jobs.mechanism.011"
+    "labor-os-and-typed-jobs.prose.fe5d5ba1c5ee": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
+    },
+    "labor-os-and-typed-jobs.prose.31ee73a717a9": {
+      "state": "historical_or_source_report",
+      "rationale": "The chapter reports an existing finite model result for logical task identities and lifecycle states, separate from external effect uniqueness."
     }
   },
   "prose_review_lineage": [
@@ -494,6 +491,45 @@
       "retirement_reason": "The chapter proof surface was rewritten during the active refinement; this sentence is no longer current prose and no current scanner candidate is its semantic replacement.",
       "replacement_candidate_ids": [],
       "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "labor-os-and-typed-jobs.prose.221fba3520d4",
+      "retired_source": "chapters/labor-os-and-typed-jobs.qmd:115",
+      "retired_sentence": "These finite records do not prove scheduler behavior, useful work, effect truth, recovery, or deployed idempotence.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.mechanism.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "labor-os-and-typed-jobs.mechanism.011"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "labor-os-and-typed-jobs.prose.c1d614f27fd0",
+      "retired_source": "chapters/labor-os-and-typed-jobs.qmd:115",
+      "retired_sentence": "A retry with the same idempotency key cannot create a second logical completion, and cancellation or mutation after closure is rejected.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked job lifecycle: output exists, acknowledgment does not` to existing reviewed atom `labor-os-and-typed-jobs.failure_mode.003`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "labor-os-and-typed-jobs.failure_mode.003"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "labor-os-and-typed-jobs.prose.dd861a2785c1",
+      "retired_source": "chapters/labor-os-and-typed-jobs.qmd:91",
+      "retired_sentence": "It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Explains the insufficiency atom's missing execution properties.",
+        "target_atom_id": "labor-os-and-typed-jobs.insufficiency.001"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ],
   "non_claims": [

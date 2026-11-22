@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/claim-ledgers-and-belief-revision.qmd",
     "structured_atoms_reviewed": 73,
-    "prose_candidates_adjudicated": 46,
+    "prose_candidates_adjudicated": 47,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Every scanned sentence is covered by bounded existing claim ownership or classified as source text or a non-independent line-wrap fragment. The Regret Ledger and Claim Ledger separation remains an argument-level ownership boundary. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-04 Regret Engine source integration. Every scanned sentence is covered by bounded existing claim ownership or classified as source text or a non-independent line-wrap fragment. The Regret Ledger and Claim Ledger separation remains an argument-level ownership boundary. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -554,6 +554,14 @@
     "claim-ledgers-and-belief-revision.prose.a5d0f822ef42": {
       "state": "nonmaterial_explanation",
       "rationale": "This is the first line of a wrapped sentence about model-conditioned counterfactual estimates and defeasible root-cause conclusions. The complete proposition is already bounded by the chapter's uncertainty, provenance, and support-state separation invariants."
+    },
+    "claim-ledgers-and-belief-revision.prose.f884337fdb6b": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
+    },
+    "claim-ledgers-and-belief-revision.prose.056daea60f5e": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
     }
   },
   "prose_review_lineage": [
@@ -705,6 +713,19 @@
         "claim-ledgers-and-belief-revision.prose.ca66e229f3bc"
       ],
       "recorded_on": "2026-07-15"
+    },
+    {
+      "retired_candidate_id": "claim-ledgers-and-belief-revision.prose.b020800941b6",
+      "retired_source": "chapters/claim-ledgers-and-belief-revision.qmd:113",
+      "retired_sentence": "useful and may be sufficient for a small, manually audited system; it records",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "The version-control baseline comparison restates the claim-ledger core's semantic-propagation distinction and adds no support result.",
+        "target_atom_id": "claim-ledgers-and-belief-revision.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ],
   "non_claims": [

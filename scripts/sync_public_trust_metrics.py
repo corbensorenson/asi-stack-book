@@ -269,28 +269,6 @@ def sync_public_trust_metrics(files: ProjectionFiles | None = None) -> None:
     )
     files.write(readme_path, readme)
 
-    index_path = ROOT / "index.qmd"
-    index = files.text(index_path)
-    index = replace_once(
-        index,
-        r"\d+ public-safe records; \d+/\d+ chapters externally positioned",
-        f"{sources} public-safe records; {externally_positioned}/{chapters} chapters externally positioned",
-        index_path,
-    )
-    index = replace_once(
-        index,
-        r"The inventory has \d+ public-safe records; \d+/\d+ chapters are externally positioned",
-        f"The inventory has {sources} public-safe records; {externally_positioned}/{chapters} chapters are externally positioned",
-        index_path,
-    )
-    index = replace_once(
-        index,
-        r"All \d+ chapter core claims remain at `argument`; \[`the core-claim disposition ledger`\]\(docs/core_claim_disposition_ledger\.md\) records \d+ per-chapter core-claim dispositions, \d+ accepted no-change transition dispositions, \d+ accepted no-promotion dispositions",
-        f"All {chapters} chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records {disposition_chapters} per-chapter core-claim dispositions, {transitions} accepted no-change transition dispositions, {no_promotions} accepted no-promotion dispositions",
-        index_path,
-    )
-    files.write(index_path, index)
-
     publication_path = ROOT / "docs" / "publication_readiness.md"
     publication = files.text(publication_path)
     publication = replace_once(

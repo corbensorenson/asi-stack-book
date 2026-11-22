@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 69,
     "prose_candidates_adjudicated": 67,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, all eleven assigned source notes and mapping limits, the one-record three-project affected-path fixture, all ten rejecting fixture mutations, all eleven independently encoded lifecycle controls, all 24 four-component inventory permutations, all five revoked-state event kinds, all 34 SupplyChainIntegrity theorem declarations under six manifest targets, every manifest atom, all prose scanner candidates, the lifecycle diagram, test plan, source crosswalk, summary, and handoff. The 2026-08-03 formal refinement binds canonical duplicate-free component identity, preserves exact artifact/provenance/component inventory across arbitrary accepted runs, preserves exact state on rejection, requires exact component revocation closure, makes revocation terminal, rejects equal-cardinality substitutions, and proves that count-only classification cannot recover exact identity while retaining the prior route, stage, authority, non-authority, trace, composition, receipt, quarantine, and witness results. All event fields remain authored, and inventory discovery/completeness, supplier truth, signature genuineness, advisory accuracy, deployed effects, security, readiness, support, and ASI remain unproved. The wider sweep preserves the prospectively frozen consumer-relative assurance transaction; separates asserted provenance, verification, actual content and transformation effects, replay, reproducibility, semantic equivalence, data fitness/rights, advisory applicability, downstream authority, quarantine, restoration, retirement, and world erasure; retains exact supplier/service dependency, relation-specific inheritance, acknowledged propagation, disclosure minimization, privacy/rights, availability, compensation, cost, and regression-memory semantics; and preserves zero chapter-core support effect. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The security/custody EM2 publication-composition additions were re-reviewed; scanner deltas are line-wrapped ownership or non-inference clauses, and the composition adds no new material or support-bearing claim."
+    "review_note": "Reviewed the complete chapter, all eleven assigned source notes and mapping limits, the one-record three-project affected-path fixture, all ten rejecting fixture mutations, all eleven independently encoded lifecycle controls, all 24 four-component inventory permutations, all five revoked-state event kinds, all 34 SupplyChainIntegrity theorem declarations under six manifest targets, every manifest atom, all prose scanner candidates, the lifecycle diagram, test plan, source crosswalk, summary, and handoff. The 2026-08-03 formal refinement binds canonical duplicate-free component identity, preserves exact artifact/provenance/component inventory across arbitrary accepted runs, preserves exact state on rejection, requires exact component revocation closure, makes revocation terminal, rejects equal-cardinality substitutions, and proves that count-only classification cannot recover exact identity while retaining the prior route, stage, authority, non-authority, trace, composition, receipt, quarantine, and witness results. All event fields remain authored, and inventory discovery/completeness, supplier truth, signature genuineness, advisory accuracy, deployed effects, security, readiness, support, and ASI remain unproved. The wider sweep preserves the prospectively frozen consumer-relative assurance transaction; separates asserted provenance, verification, actual content and transformation effects, replay, reproducibility, semantic equivalence, data fitness/rights, advisory applicability, downstream authority, quarantine, restoration, retirement, and world erasure; retains exact supplier/service dependency, relation-specific inheritance, acknowledged propagation, disclosure minimization, privacy/rights, availability, compensation, cost, and regression-memory semantics; and preserves zero chapter-core support effect. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The security/custody EM2 publication-composition additions were re-reviewed; scanner deltas are line-wrapped ownership or non-inference clauses, and the composition adds no new material or support-bearing claim. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -498,19 +498,34 @@
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.invariant.010"
     },
-    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.3ae83c968bcf": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked revocation: one component reaches three projects` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001"
-    },
     "ai-supply-chain-integrity-and-lifecycle-provenance.prose.6736a31cc46d": {
       "state": "historical_or_source_report",
       "rationale": "P7.1c semantic review identifies this as an explicit bounded-fixture or evidence-limit report. It narrows inference and creates no separate support-bearing proposition."
+    },
+    "ai-supply-chain-integrity-and-lifecycle-provenance.prose.44c14be0daf0": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.mechanism.011",
+      "rationale": "The supply-chain correction mechanism owns the distinction between delivery acknowledgment and a terminal downstream effect."
     }
   },
   "non_claims": [
     "This semantic sweep does not promote the chapter, prove novelty or conformance, or authorize custody, readiness, deployment, distribution, supplier trust, or compliance.",
     "No graph, BOM, checksum, signature, provenance statement, level, layout, dataset record, supplier claim, advisory, schema, theorem, quarantine, or clean route is counted beyond its exact frozen scope.",
     "Negative, null, missed-edge, false-assertion, false-quarantine, propagation, restoration, availability, disclosure, privacy/rights, labor, supplier, compensation, and irreversible outcomes remain visible and cannot be relabeled as successful integrity."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "ai-supply-chain-integrity-and-lifecycle-provenance.prose.3ae83c968bcf",
+      "retired_source": "chapters/ai-supply-chain-integrity-and-lifecycle-provenance.qmd:173",
+      "retired_sentence": "One project cannot clear the incident merely because its direct package list omits the dependency; lineage through a build image still counts.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked revocation: one component reaches three projects` to existing reviewed atom `ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "ai-supply-chain-integrity-and-lifecycle-provenance.failure_mode.001"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    }
   ]
 }

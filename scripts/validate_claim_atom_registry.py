@@ -193,8 +193,10 @@ def errors(
             str(row.get("candidate_id"))
             for row in candidates_by_chapter.get(chapter_id, [])
         }
+        lineage_rows = packet.get("prose_review_lineage", [])
+        retired_dates = {row.get("retired_candidate_id"): row.get("recorded_on", "") for row in lineage_rows}
         retired_ids: set[str] = set()
-        for lineage in packet.get("prose_review_lineage", []):
+        for lineage in lineage_rows:
             retired_id = str(lineage.get("retired_candidate_id", ""))
             if retired_id in retired_ids:
                 out.append(f"{path}: prose review lineage duplicates retired ID {retired_id}")
@@ -212,8 +214,9 @@ def errors(
             if retired_id in current_candidate_ids:
                 out.append(f"{path}: current prose candidate is incorrectly recorded as retired: {retired_id}")
             for replacement_id in lineage.get("replacement_candidate_ids", []):
-                if replacement_id not in current_candidate_ids:
-                    out.append(f"{path}: prose lineage replacement is not a current chapter candidate: {replacement_id}")
+                later_retirement = retired_dates.get(replacement_id, "") > lineage.get("recorded_on", "")
+                if replacement_id not in current_candidate_ids and not later_retirement:
+                    out.append(f"{path}: prose lineage replacement is missing or lacks a later retirement: {replacement_id}")
             preserved = lineage.get("preserved_disposition", {})
             if preserved.get("state") == "duplicate_of_atom":
                 target = preserved.get("target_atom_id")

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "scalable-oversight-and-adversarial-ai-control",
   "chapter_file": "chapters/scalable-oversight-and-adversarial-ai-control.qmd",
-  "chapter_sha256": "101724333d51ef005e85ac71606e512ea8c2750e00388fa95688a7b8db9c3f97",
+  "chapter_sha256": "0851e62e11599277815cf3e7f67bcbe0c2a706573af90e6f03df8a8c68235772",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-04-evidence-and-noninheritance",
   "review_state": "digest_bound_editorial_pass",
@@ -33,7 +33,7 @@
   },
   "counterexample_or_simpler_baseline": "The direct-review baseline is a human reading the complete frozen report without model assistance; the assisted protocol earns credit only if it improves omission detection or quarantine under the same evidence and cost envelope.",
   "readable_claim": "This trace separates four achievements that are often collapsed. The protocol can expose a defect; the auditor can verify it; the evidence system can record it; and the authority layer can block release.",
-  "normative_rule": "The assisted path is credited only if it finds the omission or reaches the correct quarantine decision more reliably under the same evidence and cost envelope.",
+  "normative_rule": "The direct-review baseline is a human reading the complete frozen report without model assistance; the assisted protocol earns credit only if it improves omission detection or quarantine under the same evidence and cost envelope.",
   "formal_binding": {
     "claim_id": "scalable-oversight-and-adversarial-ai-control.core",
     "support_state": "argument",

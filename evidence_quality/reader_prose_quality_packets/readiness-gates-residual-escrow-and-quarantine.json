@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "readiness-gates-residual-escrow-and-quarantine",
   "chapter_file": "chapters/readiness-gates-residual-escrow-and-quarantine.qmd",
-  "chapter_sha256": "d9867f34ae4f2a90873b2a40154be283d4779f8eb54b548410fb8d68da4068bf",
+  "chapter_sha256": "d17573e4ea6a1b13ff10a10323fcdf37835558ef2fcbe6f40ca12b55f7414dc7",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-19-readiness-and-liveness",
   "review_state": "digest_bound_editorial_pass",
@@ -32,7 +32,7 @@
   },
   "counterexample_or_simpler_baseline": "The badge baseline carries readiness across a minor version. The lease path binds evidence to the exact executable target and expires on change.",
   "readable_claim": "Readiness is an expiring permission for one target and use, not a permanent badge attached to a model name.",
-  "normative_rule": "Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. Any target change or stale gate blocks ordinary use until rerun; quarantine always carries a working fallback and residual owner.",
+  "normative_rule": "Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. A stale gate blocks ordinary use. Quarantine requires a residual owner and a decision about available fallback. Hold or send the case to a qualified specialist if no fallback is eligible.",
   "formal_binding": {
     "claim_id": "readiness-gates-residual-escrow-and-quarantine.core",
     "support_state": "argument",

@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "routing-heads-and-specialist-cores",
   "chapter_file": "chapters/routing-heads-and-specialist-cores.qmd",
-  "chapter_sha256": "b2e9e70ddb972ea089904e2cbf364f8ccbcf431ecc7b31804c47c7157f14f869",
+  "chapter_sha256": "7ffc92602c101891df238c1b4b319fdc62195643e477d5434f46a4008a7d4835",
   "chapter_role": "load-bearing-reference",
   "reader_spine_unit": "unit-17-routing-and-substrates",
   "review_state": "digest_bound_editorial_pass",
@@ -31,7 +31,7 @@
     "maximum_inference": "Authority, readiness, candidate evidence, fallback, and abstention can constrain routing records; actual routing competence and system utility remain unproven."
   },
   "counterexample_or_simpler_baseline": "The confidence-only router selects the familiar deployment specialist. The governed router abstains because local deletion and public withdrawal require different authority.",
-  "readable_claim": "A router should choose the least capable qualified route that meets the task, and it should abstain when ambiguity makes specialist selection unsafe.",
+  "readable_claim": "Least-capable adequate routing keeps specialist selection governed. The router should not select a stronger, broader, or more privileged specialist unless the task's risk, context demand, verifier requirement, or fallback policy justifies it.",
   "normative_rule": "Bind the request, candidate denominator, capability need, authority ceiling, readiness lease, context, cost-quality record, fallback, rejected candidates, and residual owner. Authority mismatch or failed readiness blocks selection; unresolved ambiguity routes to clarification or a safe generalist.",
   "formal_binding": {
     "claim_id": "routing-heads-and-specialist-cores.core",

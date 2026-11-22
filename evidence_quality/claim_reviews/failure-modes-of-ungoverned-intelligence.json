@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
     "structured_atoms_reviewed": 33,
-    "prose_candidates_adjudicated": 75,
+    "prose_candidates_adjudicated": 74,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the complete chapter, manifest semantics, tables and diagrams, all five formal targets, every scanner candidate, and unscanned taxonomy bullets. The sweep replaced a dramatic risk list with a versioned Failure Boundary Map; separated named risk, observed event, detection, containment, and mitigation; added explicit unmapped-event, evaluator-independence, negative-evidence, recurrence, ownership-transfer, and revalidation obligations; expanded six prose-only failure obligations into manifest ownership; and preserved zero support-state effect. The 2026-08-03 proof reconciliation now covers the exact 44-theorem detector-to-recovery surface, three admitted observation classes, 26 named rejection controls, 256 exhaustive observation combinations, arbitrary successful-run identity and authority custody, receipt and lifecycle-count accounting, residual opening and discharge, effect and promotion disablement, trace validity, batch composition, five accepted recovery transitions, all six lifecycle splits, and 117 state-preserving recovery rejections without changing chapter support. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced."
+    "review_note": "Reviewed the complete chapter, manifest semantics, tables and diagrams, all five formal targets, every scanner candidate, and unscanned taxonomy bullets. The sweep replaced a dramatic risk list with a versioned Failure Boundary Map; separated named risk, observed event, detection, containment, and mitigation; added explicit unmapped-event, evaluator-independence, negative-evidence, recurrence, ownership-transfer, and revalidation obligations; expanded six prose-only failure obligations into manifest ownership; and preserved zero support-state effect. The 2026-08-03 proof reconciliation now covers the exact 44-theorem detector-to-recovery surface, three admitted observation classes, 26 named rejection controls, 256 exhaustive observation combinations, arbitrary successful-run identity and authority custody, receipt and lifecycle-count accounting, residual opening and discharge, effect and promotion disablement, trace validity, batch composition, five accepted recovery transitions, all six lifecycle splits, and 117 state-preserving recovery rejections without changing chapter support. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -1339,6 +1339,10 @@
       "state": "duplicate_of_atom",
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Human Reading Path` to existing reviewed atom `failure-modes-of-ungoverned-intelligence.insufficiency.001`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "failure-modes-of-ungoverned-intelligence.insufficiency.001"
+    },
+    "failure-modes-of-ungoverned-intelligence.prose.4630820e617a": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
     }
   },
   "prose_review_lineage": [
@@ -1409,6 +1413,32 @@
         "failure-modes-of-ungoverned-intelligence.prose.2694cda1b995"
       ],
       "recorded_on": "2026-08-03"
+    },
+    {
+      "retired_candidate_id": "failure-modes-of-ungoverned-intelligence.prose.757e0d2d8832",
+      "retired_source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:103",
+      "retired_sentence": "or who must close the residual.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "The flat-incident-log comparison restates the chapter's residual-closure requirement without adding an empirical claim.",
+        "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "failure-modes-of-ungoverned-intelligence.prose.abc35ce4b0b4",
+      "retired_source": "chapters/failure-modes-of-ungoverned-intelligence.qmd:102",
+      "retired_sentence": "it cannot by itself say which boundary failed, which invariant was protected,",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "The flat-incident-log comparison restates the chapter's boundary-event and owner requirements without adding an empirical claim.",
+        "target_atom_id": "failure-modes-of-ungoverned-intelligence.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ],
   "non_claims": [

@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/human-intent-as-a-formal-input.qmd",
     "structured_atoms_reviewed": 46,
-    "prose_candidates_adjudicated": 56,
+    "prose_candidates_adjudicated": 55,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 route-transport proof increment. The new proof prose is either an exact restatement of the existing lifecycle, lowering, or route-envelope atoms or an explicit semantic non-claim. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim."
+    "review_note": "Re-reviewed the complete chapter through the 2026-08-02 route-transport proof increment. The new proof prose is either an exact restatement of the existing lifecycle, lowering, or route-envelope atoms or an explicit semantic non-claim. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -694,11 +694,6 @@
       "state": "historical_or_source_report",
       "rationale": "Bounded Software Magic Grimoire source report."
     },
-    "human-intent-as-a-formal-input.prose.3da0fc91d211": {
-      "state": "duplicate_of_atom",
-      "rationale": "Draft-or-clarify route.",
-      "target_atom_id": "human-intent-as-a-formal-input.mechanism.009"
-    },
     "human-intent-as-a-formal-input.prose.7f29139e26ad": {
       "state": "duplicate_of_atom",
       "rationale": "Human texture is evidence, not authority.",
@@ -866,11 +861,6 @@
       "rationale": "Comparator/metric fragment.",
       "target_atom_id": "human-intent-as-a-formal-input.beyond_sota.001"
     },
-    "human-intent-as-a-formal-input.prose.2db9dde64d09": {
-      "state": "duplicate_of_atom",
-      "rationale": "Downstream authority traceability.",
-      "target_atom_id": "human-intent-as-a-formal-input.interface.004"
-    },
     "human-intent-as-a-formal-input.prose.7482aace2909": {
       "state": "duplicate_of_atom",
       "rationale": "Restates the mature campaign's joint usefulness requirement.",
@@ -916,10 +906,13 @@
       "state": "nonmaterial_explanation",
       "rationale": "Explicit non-claim boundary for the finite lifecycle, lowering, and route-transport proof packet."
     },
-    "human-intent-as-a-formal-input.prose.308515c3fdb3": {
-      "state": "duplicate_of_atom",
-      "rationale": "Resolving a release reference leaves the existing authority requirement for publication in force.",
-      "target_atom_id": "human-intent-as-a-formal-input.core"
+    "human-intent-as-a-formal-input.prose.595b7974f647": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
+    },
+    "human-intent-as-a-formal-input.prose.60268acf2c33": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The scanner captured a clause from a worked example, comparison design, or limitation. Its full paragraph supplies the applicable condition and scope."
     }
   },
   "prose_review_lineage": [
@@ -935,6 +928,45 @@
       "retirement_reason": "The handoff now routes first through the newly admitted Human Factors chapter before Constitutional Alignment while preserving the original non-authority boundary.",
       "replacement_candidate_ids": [],
       "recorded_on": "2026-07-19"
+    },
+    {
+      "retired_candidate_id": "human-intent-as-a-formal-input.prose.2db9dde64d09",
+      "retired_source": "chapters/human-intent-as-a-formal-input.qmd:520",
+      "retired_sentence": "A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Downstream authority traceability.",
+        "target_atom_id": "human-intent-as-a-formal-input.interface.004"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "human-intent-as-a-formal-input.prose.308515c3fdb3",
+      "retired_source": "chapters/human-intent-as-a-formal-input.qmd:249",
+      "retired_sentence": "Publishing a customer statement still requires the appropriate grant.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Resolving a release reference leaves the existing authority requirement for publication in force.",
+        "target_atom_id": "human-intent-as-a-formal-input.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "human-intent-as-a-formal-input.prose.3da0fc91d211",
+      "retired_source": "chapters/human-intent-as-a-formal-input.qmd:85",
+      "retired_sentence": "If the request is emotionally clear but operationally ambiguous, the stack may still help by producing a draft, option set, or clarification artifact, but it should not silently expand the lease.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "Draft-or-clarify route.",
+        "target_atom_id": "human-intent-as-a-formal-input.mechanism.009"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ],
   "non_claims": [

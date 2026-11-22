@@ -7,7 +7,7 @@
     "structured_atoms_reviewed": 52,
     "prose_candidates_adjudicated": 60,
     "unowned_material_claims": 0,
-    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim."
+    "review_note": "Re-reviewed the complete chapter through the 2026-07-31 P6.10 paper and connector-source mining expansion. Every newly scanned sentence is covered by an exact section digest and bounded existing claim ownership, or classified as status text or a non-independent line-wrap fragment. Source-reported results remain source reports. No new support atom, efficacy inference, evidence transition, release decision, or publication claim was introduced. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The human-intent and institutional-governance EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The completed EM2 publication-composition additions were re-reviewed; every scanner delta is a line-wrapped ownership or non-inference clause, and the composition adds no new material or support-bearing claim. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -991,11 +991,6 @@
       "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Core Claim` to existing reviewed atom `constitutional-alignment-substrate.invariant.009`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
       "target_atom_id": "constitutional-alignment-substrate.invariant.009"
     },
-    "constitutional-alignment-substrate.prose.3cbc1f966a52": {
-      "state": "duplicate_of_atom",
-      "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked amendment: fewer predicates, broader power` to existing reviewed atom `constitutional-alignment-substrate.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
-      "target_atom_id": "constitutional-alignment-substrate.failure_mode.011"
-    },
     "constitutional-alignment-substrate.prose.91abf2b0ecb5": {
       "state": "nonmaterial_explanation",
       "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
@@ -1003,11 +998,30 @@
     "constitutional-alignment-substrate.prose.c2872320d27d": {
       "state": "nonmaterial_explanation",
       "rationale": "EM2 publication-composition semantic review identifies this scanner hit as a line-wrapped clause from an explicit ownership or non-inference boundary, not a complete independent proposition. The surrounding chapter preserves local claim, source, proof, test, evidence, authority, and support ownership without creating a new support-bearing atom."
+    },
+    "constitutional-alignment-substrate.prose.4883d52cc358": {
+      "state": "nonmaterial_explanation",
+      "rationale": "The isolated instruction concerns the proposed counterfactual evaluation of a governance change."
     }
   },
   "non_claims": [
     "This sweep establishes claim ownership and test obligations only; it does not establish constitutional alignment.",
     "The added obligations are requirements to challenge, not evidence of legitimacy, consent, dignity, correction, rights usability, reviewer independence, safety, or SOTA performance.",
     "Source review, finite Lean routes, deterministic fixtures, and internal adjudication create no support-state movement or external authority."
+  ],
+  "prose_review_lineage": [
+    {
+      "retired_candidate_id": "constitutional-alignment-substrate.prose.3cbc1f966a52",
+      "retired_source": "chapters/constitutional-alignment-substrate.qmd:178",
+      "retired_sentence": "One collision shows that equal predicate counts cannot identify protected scope.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "P7.1c semantic review maps this complete reader-facing proposition in `Worked amendment: fewer predicates, broader power` to existing reviewed atom `constitutional-alignment-substrate.failure_mode.011`. The digest-bound packet preserves its actor, action, outcome, failed boundary, residual owner, simpler baseline, and inference ceiling; the prose does not create or promote a separate claim.",
+        "target_atom_id": "constitutional-alignment-substrate.failure_mode.011"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    }
   ]
 }

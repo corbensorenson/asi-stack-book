@@ -2,7 +2,7 @@
   "schema_version": "asi_stack.p7_1c_reader_prose_quality_packet.v1",
   "chapter_id": "failure-modes-of-ungoverned-intelligence",
   "chapter_file": "chapters/failure-modes-of-ungoverned-intelligence.qmd",
-  "chapter_sha256": "ea8ab0f86102b9374955a80e349c811c38e0cefb2610ad081427a9c118b37c36",
+  "chapter_sha256": "74ea7e534aa00791129783b6d376a4821b01471d811c9f960f1b0e0729a7c0e5",
   "chapter_role": "thesis-bearing",
   "reader_spine_unit": "unit-03-authority-and-failure",
   "review_state": "digest_bound_editorial_pass",
@@ -22,7 +22,7 @@
     "maximum_inference": "The illustrative trace shows how one fallback event should acquire detector, receipt, containment, owner, residual, and learning-path fields; it is not incident or mitigation evidence."
   },
   "counterexample_or_simpler_baseline": "A flat incident log can preserve timestamps and messages but cannot by itself identify the failed boundary, protected invariant, containment decision, residual owner, or recurrence route.",
-  "readable_claim": "The stack-level taxonomy is valuable only if the row points to a detector, a receipt, a containment action, and a learning path.",
+  "readable_claim": "The operating rule is that a failure is not only an outcome. It is a missed or triggered boundary event with a receipt, owner, containment action, and downstream learning path.",
   "normative_rule": "An admitted taxonomy row should map to an invariant, a detector or observer, an evidence record, and a containment path.",
   "formal_binding": {"claim_id": "failure-modes-of-ungoverned-intelligence.core", "support_state": "argument", "anchor": "distinct boundary event with a trigger"},
   "claim_atom_and_source_links": ["failure-modes-of-ungoverned-intelligence.core", "ext_concrete_ai_safety_2016", "ext_goal_misgeneralization_2022", "ext_goodhart_variants_2018"],

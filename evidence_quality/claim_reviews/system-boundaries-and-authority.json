@@ -5,9 +5,9 @@
   "semantic_sweep": {
     "reviewed_source": "chapters/system-boundaries-and-authority.qmd",
     "structured_atoms_reviewed": 35,
-    "prose_candidates_adjudicated": 52,
+    "prose_candidates_adjudicated": 50,
     "unowned_material_claims": 0,
-    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1\u2013C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-10-11 scoped technical terminology review adjudicates changed paragraphs and gate drawings against existing atom scopes, confounds and non-claims; retired sentence reviews remain in prose_review_lineage. Prior source/proof reviews retain their historical scope. No source rereproduction, new theorem, runtime experiment, support transition or release is claimed."
+    "review_note": "Reviewed the full chapter, manifest fields, diagrams and tables, all four formal targets, all 46 scanner candidates, and every unscanned invariant and failure-mode bullet. The 2026-08-03 reconciliation reviewed the exact 31-theorem reachable grant-to-effect model and exact 59-theorem authority surface, including arbitrary-run delegation custody, attenuation, epoch/expiry continuity, non-authority, composition, a two-hop witness, exact substitutions, thin-summary information loss, complete transport, 67 state-noninterfering semantic mutations, and zero chapter-core support effect. The 2026-07-25 C1–C8 reconciliation classifies scanner-only line-wrap fragments as nonmaterial and changes no support state. The 2026-08-09 P7.1c pass then re-reviewed every new reader claim, operational rule, concrete lens, worked-scene proposition, line-wrap fragment, and explicit inference limit is bound to the current chapter and digest-bound editorial packet. Complete propositions map to existing reviewed atoms; fixture reports and fragments remain separately classified. No support-state, evidence, release, SOTA, AGI, or ASI promotion is introduced. The 2026-10-11 scoped technical terminology review adjudicates changed paragraphs and gate drawings against existing atom scopes, confounds and non-claims; retired sentence reviews remain in prose_review_lineage. Prior source/proof reviews retain their historical scope. No source rereproduction, new theorem, runtime experiment, support transition or release is claimed. The November 22 manuscript review reconciled changed prose fragments, scoped fixture and source reports, and restated controls to the current chapter written for the living book. The prior dispositions of removed scanner sentences are retained in the lineage. Claim support and stable atom identities retain their recorded scope."
   },
   "chapter_defaults": {
     "review_state": "semantically_reviewed",
@@ -1378,21 +1378,6 @@
       "rationale": "2026-10-11 scoped terminology/diagram review: Full operational paragraph requires an applicable grant and distinguishes its finite rejection semantics from qualified runtime enforcement; confidence cannot supply permission.",
       "target_atom_id": "system-boundaries-and-authority.invariant.003"
     },
-    "system-boundaries-and-authority.prose.b0108f64f0b7": {
-      "state": "duplicate_of_atom",
-      "rationale": "2026-10-11 scoped terminology/diagram review: Restates the core\u2019s explicit TOCTOU/network/clock confound. The accompanying two orderings are proposed conditions, not a new runtime observation or distributed theorem.",
-      "target_atom_id": "system-boundaries-and-authority.core"
-    },
-    "system-boundaries-and-authority.prose.01d98cd1a8d3": {
-      "state": "duplicate_of_atom",
-      "rationale": "2026-10-11 scoped terminology/diagram review: The full remote-worker paragraph stays within the core\u2019s existing distributed-revocation exclusion and calls for qualification of a declared offline envelope.",
-      "target_atom_id": "system-boundaries-and-authority.core"
-    },
-    "system-boundaries-and-authority.prose.4e263c619c6e": {
-      "state": "duplicate_of_atom",
-      "rationale": "2026-10-11 scoped terminology/diagram review: Continuation of that remote-worker scope limit: immediate revocation cannot be inferred from stale cached state; no partition experiment is claimed.",
-      "target_atom_id": "system-boundaries-and-authority.core"
-    },
     "system-boundaries-and-authority.prose.5979b9ebe863": {
       "state": "duplicate_of_atom",
       "rationale": "2026-10-11 scoped terminology/diagram review: The figure explanation restates the conjunction of caller ceiling and matching current grant; it preserves the core\u2019s record-versus-enforcement boundary.",
@@ -1402,6 +1387,11 @@
       "state": "duplicate_of_atom",
       "rationale": "2026-10-11 scoped terminology/diagram review: Target-domain authorization may be an existing standing grant; the requirement is not a new approval click per handoff.",
       "target_atom_id": "system-boundaries-and-authority.invariant.005"
+    },
+    "system-boundaries-and-authority.prose.c79e69fe0690": {
+      "state": "duplicate_of_atom",
+      "target_atom_id": "system-boundaries-and-authority.interface.002",
+      "rationale": "The trace illustrates the existing execution interface by applying the bound grant at the effect boundary."
     }
   },
   "non_claims": [
@@ -1600,6 +1590,45 @@
       "retirement_reason": "Scoped technical terminology edit corrects or consolidates this wording. Its prior review remains historical; no accepted support state or frozen experiment is rewritten.",
       "recorded_on": "2026-10-11",
       "retired_source": "chapters/system-boundaries-and-authority.qmd:321"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.01d98cd1a8d3",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:126",
+      "retired_sentence": "offline envelope, expiry, and reconciliation policy must be qualified for the",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "2026-10-11 scoped terminology/diagram review: The full remote-worker paragraph stays within the core’s existing distributed-revocation exclusion and calls for qualification of a declared offline envelope.",
+        "target_atom_id": "system-boundaries-and-authority.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.4e263c619c6e",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:127",
+      "retired_sentence": "claim; an immediately revocable action cannot simply assume fresh state during",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "2026-10-11 scoped terminology/diagram review: Continuation of that remote-worker scope limit: immediate revocation cannot be inferred from stale cached state; no partition experiment is claimed.",
+        "target_atom_id": "system-boundaries-and-authority.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
+    },
+    {
+      "retired_candidate_id": "system-boundaries-and-authority.prose.b0108f64f0b7",
+      "retired_source": "chapters/system-boundaries-and-authority.qmd:122",
+      "retired_sentence": "A preflight check alone cannot exclude a later revocation race.",
+      "preserved_disposition": {
+        "state": "duplicate_of_atom",
+        "rationale": "2026-10-11 scoped terminology/diagram review: Restates the core’s explicit TOCTOU/network/clock confound. The accompanying two orderings are proposed conditions, not a new runtime observation or distributed theorem.",
+        "target_atom_id": "system-boundaries-and-authority.core"
+      },
+      "retirement_reason": "The November manuscript edit replaced or removed this exact scanner sentence. Its earlier materiality review is retained as historical lineage.",
+      "replacement_candidate_ids": [],
+      "recorded_on": "2026-11-22"
     }
   ]
 }

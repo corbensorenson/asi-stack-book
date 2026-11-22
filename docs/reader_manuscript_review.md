@@ -7,6 +7,12 @@ public introduction, and four evidence studies. Each passage below records
 the claim or comparison reviewed and the change made or the evidence still
 needed.
 
+The November 22 publication reconciliation bound the editorial packets to
+all 89 revised technical chapters. It replaced outdated anchors and rules
+where the review changed the teaching example. The claim registry classified
+68 changed scanner entries and retained 38 previous reviews in sentence
+lineage. Claim IDs and support states retain their recorded scope.
+
 The follow-up on [verifier revision freshness](../experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md)
 tested 30 matched checkpoints in five authored profiles. Both workflows took
 the required route at every checkpoint, including eight specialist decisions
