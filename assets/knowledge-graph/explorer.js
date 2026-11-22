@@ -4,6 +4,7 @@ const byId = (id) => document.getElementById(id);
 const query = byId("query");
 const kind = byId("kind");
 const results = byId("results");
+const resultsPanel = byId("results-panel");
 const more = byId("more");
 const record = byId("record");
 const recordTitle = byId("record-title");
@@ -11,7 +12,11 @@ const status = byId("status");
 const selectedClass = "aria-current";
 const PAGE_SIZE = 10;
 const bookRoot = new URL("../../../", document.baseURI);
-const shards = new Map();
+const packets = new Map();
+const stopWords = new Set(
+  ("a an are about can did does find for how i in is it of on or paper show study the to used was were " +
+   "what when where which with").split(" ")
+);
 const recordKinds = {
   chapter: "Technical chapter", claim: "Claim", claim_record: "Retained claim record",
   concept: "Concept", part: "Part", proof_target: "Proof target", reader_unit: "Reader unit",
@@ -83,15 +88,43 @@ function label(kindId) {
   return recordKinds[kindId] || kindId.replaceAll("_", " ");
 }
 
-function grade(row, value, normalized, tokens) {
-  if (row[0] === value) return 5;
+function terms(normalized) {
+  return new Set(normalized.split("-").filter(word => word && !stopWords.has(word))
+    .map(word => word.length > 4 && word.endsWith("s") ? word.slice(0, -1) : word));
+}
+
+function grade(row, value, normalized, words) {
+  if (row[0] === value) return 1000;
   const identity = slug(row[0].slice(row[0].indexOf(":") + 1));
   const title = slug(row[2]);
-  if (identity === normalized || title === normalized) return 4;
-  if (title.startsWith(normalized + "-")) return 3;
-  if (("-" + title + "-").includes("-" + normalized + "-")) return 2;
-  const fields = new Set([...(identity.split("-")), ...(title.split("-"))]);
-  return tokens.every((token) => fields.has(token)) ? 1 : 0;
+  const alias = row[4] || "";
+  if (identity === normalized || title === normalized) return 900;
+  if (alias === normalized) return 870;
+  if (title.startsWith(normalized + "-")) return 830;
+  if (("-" + title + "-").includes("-" + normalized + "-")) return 800;
+  if (alias.length >= 3 && ("-" + normalized + "-").includes("-" + alias + "-")) return 780;
+  const primary = terms([identity, title, alias].join("-"));
+  const context = terms(row[5] || "");
+  let direct = 0;
+  let covered = 0;
+  for (const word of words) {
+    if (primary.has(word)) direct++;
+    if (primary.has(word) || context.has(word)) covered++;
+  }
+  if (!covered || covered * 100 < words.size * 55) return 0;
+  return Math.floor(200 * covered / words.size) + Math.floor(140 * direct / words.size);
+}
+
+function rankMatches(items, value, rowFor) {
+  const normalized = slug(value);
+  const words = terms(normalized);
+  return items.map(item => {
+    const row = rowFor(item);
+    return {item, row, score: normalized ? grade(row, value, normalized, words) : 1};
+  }).filter(({score}) => score)
+    .sort((left, right) => right.score - left.score || left.row[2].length - right.row[2].length ||
+      (left.row[0] < right.row[0] ? -1 : left.row[0] > right.row[0] ? 1 : 0))
+    .map(({item}) => item);
 }
 
 function showMatches() {
@@ -103,29 +136,25 @@ function showMatches() {
     results.append(option);
   }
   shown = Math.min(matches.length, shown + PAGE_SIZE);
+  resultsPanel.hidden = !matches.length;
   more.hidden = shown >= matches.length;
   status.textContent = matches.length ? `Showing ${shown} of ${matches.length} results.` :
-    "No matching records. Try the term alone or choose another record type.";
+    "No matching records. Try a shorter phrase, a paper name, or a record ID.";
 }
 
 function lookup() {
   const value = query.value.trim();
   const normalized = slug(value);
   results.replaceChildren();
+  resultsPanel.hidden = true;
   shown = 0;
   if (value && !normalized) {
     more.hidden = true;
     status.textContent = "Enter a title, term, or record ID.";
     return;
   }
-  const tokens = normalized.split("-");
-  matches = catalog.records.filter((row) => !kind.value || catalog.kinds[row[1]] === kind.value)
-    .map((row) => ({row, score: normalized ? grade(row, value, normalized, tokens) : 1}))
-    .filter(({score}) => score)
-    .sort((left, right) => right.score - left.score || left.row[2].length - right.row[2].length ||
-      left.row[2].localeCompare(right.row[2]) ||
-      left.row[0].localeCompare(right.row[0]))
-    .map(({row}) => row);
+  const candidates = catalog.records.filter(row => !kind.value || catalog.kinds[row[1]] === kind.value);
+  matches = rankMatches(candidates, value, row => row);
   showMatches();
 }
 
@@ -147,7 +176,9 @@ function provenance(origin, heading = "Record location") {
   detail.append(el("summary", heading), cite);
   if (!manifest.worktree && /^[0-9a-f]{40}$/.test(manifest.source_commit) &&
       /^[a-zA-Z0-9_.\/-]+$/.test(origin.path) && !origin.path.startsWith("/") && !origin.path.includes("..")) {
-    detail.append(link("Open source record", `https://github.com/corbensorenson/asi-stack-book/blob/${manifest.source_commit}/${origin.path}`));
+    const line = /^line:(\d+)$/.exec(origin.locator);
+    const fragment = line ? "#L" + line[1] : "";
+    detail.append(link("Open source record", `https://github.com/corbensorenson/asi-stack-book/blob/${manifest.source_commit}/${origin.path}${fragment}`));
   }
   return detail;
 }
@@ -184,36 +215,150 @@ function scopeDetails(scope) {
   return details;
 }
 
+function renderRelation(item) {
+  const row = el("li");
+  row.append(nodeLink(item.id, item.title));
+  const q = item.qualifiers;
+  if (q.mapped_support) row.append(el("p", q.mapped_support));
+  if (q.limit) row.append(el("p", q.limit, "limit"));
+  if (typeof q.scope === "string") row.append(el("p", q.scope));
+  if (q.parent_support_state_effect) {
+    row.append(el("p", `Parent support effect · ${q.parent_support_state_effect}`, "metadata"));
+  }
+  if (q.scope && typeof q.scope === "object") row.append(scopeDetails(q.scope));
+  if (q.url && localLink(q.url)) row.append(link("Open the reader example", localLink(q.url)));
+  if (q.review_state) row.append(el("p", `Passage review · ${q.review_state}`, "metadata"));
+  passageList(row, q.passages);
+  row.append(provenance(item.origin, "Relationship source"));
+  return row;
+}
+
+function pageAt([file, offset]) {
+  return packetFile(`relationships/${file}.json`).then(data => {
+    if (!Array.isArray(data.pages[offset])) throw new Error("This relationship page is unavailable");
+    return data.pages[offset];
+  });
+}
+
+function pager(list, render, addresses, total, label = "Show more links") {
+  const controls = el("div", undefined, "relationship-pager");
+  const state = el("p", `Showing ${list.children.length} of ${total}`, "metadata");
+  state.setAttribute("role", "status");
+  const button = el("button", label, "secondary");
+  button.type = "button";
+  controls.append(button, state);
+  let position = 0;
+  button.addEventListener("click", async event => {
+    button.disabled = true;
+    try {
+      const rows = (await pageAt(addresses[position])).map(render);
+      list.append(...rows);
+      position++;
+      state.textContent = `Showing ${list.children.length} of ${total}`;
+      if (position === addresses.length) {
+        button.hidden = true;
+        if (!event.detail) {
+          const destination = rows[0]?.querySelector("a") || state;
+          if (destination === state) state.tabIndex = -1;
+          destination.focus();
+        }
+      }
+    } catch {
+      state.textContent = "More links could not load. Try again or reload the graph.";
+    } finally {
+      button.disabled = false;
+    }
+  });
+  return controls;
+}
+
+function groupFilter(group, label, rows, controls) {
+  const form = el("form", undefined, "relationship-filter");
+  const field = el("input");
+  field.type = "search";
+  field.maxLength = 180;
+  field.setAttribute("aria-label", `Filter ${label.toLowerCase()}`);
+  field.placeholder = "Title, name, or ID";
+  const submit = el("button", "Filter links", "secondary");
+  const reset = el("button", "Clear", "secondary");
+  reset.type = "reset";
+  reset.hidden = true;
+  form.append(field, submit, reset);
+  const state = el("p", undefined, "metadata");
+  state.setAttribute("role", "status");
+  const list = el("ul");
+  let token = 0;
+
+  function showPreview() {
+    token++;
+    list.replaceChildren();
+    state.textContent = "";
+    reset.hidden = true;
+    rows.hidden = controls.hidden = false;
+  }
+
+  form.addEventListener("reset", () => {
+    showPreview();
+    field.focus();
+  });
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    const value = field.value.trim();
+    if (!slug(value)) {
+      showPreview();
+      return;
+    }
+    const request = ++token;
+    rows.hidden = controls.hidden = false;
+    list.replaceChildren();
+    reset.hidden = false;
+    state.textContent = "Finding related records…";
+    try {
+      const members = await pageAt(group.member_index);
+      const ranked = rankMatches(members.map((_, index) => index), value, index => catalog.records[members[index]]);
+      const shown = ranked.slice(0, 6);
+      const previews = group.neighbors.length;
+      const pageSize = manifest.limits.relationship_page_size;
+      const hits = await Promise.all(shown.map(async index => {
+        if (index < previews) return group.neighbors[index];
+        const offset = index - previews;
+        const page = await pageAt(group.pages[Math.floor(offset / pageSize)]);
+        return page[offset % pageSize];
+      }));
+      if (request !== token) return;
+      list.append(...hits.map(renderRelation));
+      rows.hidden = controls.hidden = true;
+      state.textContent = ranked.length ? `Showing ${shown.length} of ${ranked.length} matching links.` :
+        "No links in this group match. Try a shorter title or an exact ID.";
+    } catch {
+      if (request === token) state.textContent = "This filter could not load. Try again or reload the graph.";
+    }
+  });
+  return [form, state, list];
+}
+
 function renderGroup(group, open) {
   const pane = el("details");
   pane.open = open;
   const labels = relations[group.predicate] || [group.predicate, group.predicate];
-  pane.append(el("summary", `${labels[group.direction === "out" ? 0 : 1]} (${group.total})`));
+  const label = labels[group.direction === "out" ? 0 : 1];
+  pane.append(el("summary", `${label} (${group.total})`));
   const list = el("ul");
-  for (const item of group.neighbors) {
-    const row = el("li");
-    row.append(nodeLink(item.id, item.title));
-    const q = item.qualifiers;
-    if (q.mapped_support) row.append(el("p", q.mapped_support));
-    if (q.limit) row.append(el("p", q.limit, "limit"));
-    if (typeof q.scope === "string") row.append(el("p", q.scope));
-    if (q.parent_support_state_effect) {
-      row.append(el("p", `Parent support effect · ${q.parent_support_state_effect}`, "metadata"));
-    }
-    if (q.scope && typeof q.scope === "object") row.append(scopeDetails(q.scope));
-    if (q.url && localLink(q.url)) row.append(link("Open the reader example", localLink(q.url)));
-    if (q.review_state) row.append(el("p", `Passage review · ${q.review_state}`, "metadata"));
-    passageList(row, q.passages);
-    row.append(provenance(item.origin, "Relationship source"));
-    list.append(row);
-  }
-  pane.append(list);
-  const omitted = group.total - group.neighbors.length;
-  if (omitted) {
-    pane.append(el("p", `${omitted} more in the `, "metadata"));
-    pane.lastChild.append(link("complete graph", "graph.json.gz"), document.createTextNode("."));
+  list.append(...group.neighbors.map(renderRelation));
+  if (group.pages) {
+    const controls = pager(list, renderRelation, group.pages, group.total);
+    if (group.member_index) pane.append(...groupFilter(group, label, list, controls));
+    pane.append(list, controls);
+  } else {
+    pane.append(list);
   }
   return pane;
+}
+
+function renderGap(gap) {
+  const row = el("li");
+  row.append(el("code", gap.target_ref), el("p", gap.reason), provenance(gap.origin, "Reference location"));
+  return row;
 }
 
 function renderRecord(packet) {
@@ -263,22 +408,29 @@ function renderRecord(packet) {
     for (const [index, group] of groups.entries()) region.append(renderGroup(group, index < 2));
     record.append(region);
   }
-  if (packet.unresolved) record.append(el("p", `${packet.unresolved} unresolved references in the source record.`, "metadata"));
+  if (packet.unresolved_pages) {
+    const unresolved = el("details", undefined, "unresolved");
+    const list = el("ul");
+    unresolved.append(el("summary", `Unresolved references (${packet.unresolved})`),
+      el("p", "These references have no confirmed destination in this snapshot."), list,
+      pager(list, renderGap, packet.unresolved_pages, packet.unresolved, "Load references"));
+    record.append(unresolved);
+  }
 }
 
-function loadShard(key) {
-  if (!shards.has(key)) {
-    const request = readJSON(`nodes/${key}.json`).then((data) => {
+function packetFile(path) {
+  if (!packets.has(path)) {
+    const request = readJSON(path).then((data) => {
       if (data.snapshot_id !== manifest.snapshot_id) throw new Error("The graph changed during lookup");
       return data;
     }).catch((error) => {
-      shards.delete(key);
+      packets.delete(path);
       throw error;
     });
-    shards.set(key, request);
-    if (shards.size > 12) shards.delete(shards.keys().next().value);
+    packets.set(path, request);
+    if (packets.size > 12) packets.delete(packets.keys().next().value);
   }
-  return shards.get(key);
+  return packets.get(path);
 }
 
 async function openRecord(id, focus) {
@@ -297,7 +449,7 @@ async function openRecord(id, focus) {
   recordTitle.textContent = "Loading record…";
   record.replaceChildren();
   try {
-    const data = await loadShard(row[3]);
+    const data = await packetFile(`nodes/${row[3]}.json`);
     if (token !== requestToken) return;
     renderRecord(data.records[id]);
   } catch (error) {
@@ -315,6 +467,7 @@ function applyLocation() {
   if (params.has("q") || kind.value) lookup();
   else {
     results.replaceChildren();
+    resultsPanel.hidden = true;
     more.hidden = true;
     status.textContent = "Choose an example or search for a record.";
   }
@@ -338,9 +491,10 @@ async function start() {
       url.searchParams.set("q", query.value.trim());
       if (kind.value) url.searchParams.set("kind", kind.value);
       else url.searchParams.delete("kind");
-      history.pushState(null, "", url);
+      if (url.href !== location.href) history.pushState(null, "", url);
       lookup();
     });
+    kind.addEventListener("change", () => byId("lookup").requestSubmit());
     more.addEventListener("click", showMatches);
     window.addEventListener("popstate", applyLocation);
     document.addEventListener("click", (event) => {

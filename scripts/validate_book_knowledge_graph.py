@@ -3,10 +3,68 @@
 
 from __future__ import annotations
 
-from collections import Counter
+from collections import Counter, defaultdict
 import json
 
 import book_knowledge_graph as kg
+
+
+RETRIEVAL_TASKS = "experiments/knowledge_graph_navigation/retrieval_tasks.json"
+
+
+def check_published_packets(directory, graph, manifest):
+    snapshot = graph["snapshot_id"]
+    assert manifest["snapshot_id"] == snapshot, "Archive snapshot identity differs from the companion"
+    catalog = json.loads((directory / manifest["search"]).read_bytes())
+    assert catalog["snapshot_id"] == snapshot
+    positions = [row[0] for row in catalog["records"]]
+    assert positions == [node["id"] for node in graph["nodes"]]
+    limits = manifest["limits"]
+    files = {}
+    packets = {}
+    for path in manifest["files"]:
+        if path.startswith("relationships/") or path.startswith("nodes/"):
+            raw = (directory / path).read_bytes()
+            data = json.loads(raw)
+            assert data["snapshot_id"] == snapshot, path
+            if "pages" in data:
+                assert len(raw) <= limits["relationship_file_bytes"], path
+                files[path] = data["pages"]
+            else:
+                packets.update(data["records"])
+    assert set(packets) == set(positions)
+
+    def page(address):
+        file, position = address
+        return files[f"relationships/{file}.json"][position]
+
+    adjacent = defaultdict(Counter)
+    for edge in graph["edges"]:
+        for direction, head, tail in (("out", "from", "to"), ("in", "to", "from")):
+            row = {"id": edge[tail], "origin": edge["origin"], "qualifiers": edge["qualifiers"]}
+            adjacent[edge[head], edge["predicate"], direction][kg.json_bytes(row)] += 1
+    for key, packet in packets.items():
+        assert sum(len(group["neighbors"]) for group in packet["relations"]) <= limits["preview_edges_per_node"], key
+        for group in packet["relations"]:
+            preview = group["neighbors"]
+            assert len(preview) <= limits["preview_per_relation"], key
+            pages = [page(address) for address in group.get("pages", ())]
+            assert all(0 < len(rows) <= limits["relationship_page_size"] for rows in pages), key
+            assert all(len(rows) == limits["relationship_page_size"] for rows in pages[:-1]), key
+            rows = [*preview, *(row for segment in pages for row in segment)]
+            relation = key, group["predicate"], group["direction"]
+            actual = Counter(kg.json_bytes({k: v for k, v in row.items() if k != "title"}) for row in rows)
+            assert len(rows) == group["total"] and adjacent.pop(relation) == actual, relation
+            if len(rows) > limits["relationship_page_size"]:
+                members = [positions[index] for index in page(group["member_index"])]
+                assert members == [row["id"] for row in rows], relation
+    assert not adjacent, "Published pages omit relationships from the archive"
+    omitted = defaultdict(list)
+    for gap in graph["unresolved"]:
+        omitted[gap["from"]].append(gap)
+    for key, packet in packets.items():
+        gaps = [row for address in packet.get("unresolved_pages", ()) for row in page(address)]
+        assert gaps == omitted[key] and len(gaps) == packet["unresolved"], key
 
 
 def main():
@@ -59,6 +117,21 @@ def main():
         "claim:stable-capability-fields.core", "study_run:verifier-floor-cache", "study_run:verifier-paired",
     }
     assert nodes["claim:stable-capability-fields.core"]["state"] == "argument"
+    for task in json.loads(read(RETRIEVAL_TASKS)):
+        hits = kg.search(graph, task["query"], kind=task["kind"], limit=3)["matches"]
+        assert task["target"] in {hit["id"] for hit in hits}, task["query"]
+    assert not kg.search(graph, "zzzxxy unrelated nonexistent term")["matches"]
+
+    start, end = "reader_unit:unit-09", "study_run:verifier-floor-cache"
+    route = kg.connection(graph, start, end)
+    assert route["status"] == "found" and route["authority"] == "navigation_only"
+    assert [row["predicate"] for row in route["edges"]] == [
+        "teaches_chapter", "owns_claim", "investigates", "retains_run",
+    ]
+    assert nodes[end]["limit"] and nodes[end]["result_sha256"]
+    assert kg.connection(graph, end, start)["nodes"] == list(reversed(route["nodes"]))
+    assert kg.connection(graph, start, end, depth=3)["status"] == "no_route_within_depth"
+    assert not kg.connection(graph, start, end, predicates=("atom",))["edges"]
 
     def changed_bytes(path):
         return read(path) + (b"\n" if path == kg.STRUCTURE else b"")

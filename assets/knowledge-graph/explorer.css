@@ -11,6 +11,7 @@
 }
 
 * { box-sizing: border-box; }
+[hidden] { display: none !important; }
 body { margin: 0; color: var(--ink); background: var(--paper); }
 a { color: var(--blue); text-underline-offset: .16em; }
 :focus-visible { outline: 3px solid var(--trace); outline-offset: 3px; }
@@ -23,9 +24,9 @@ button { cursor: pointer; }
 .masthead { display: flex; gap: 1rem; align-items: baseline; justify-content: space-between; padding-block: .85rem; }
 .masthead nav { display: flex; flex-wrap: wrap; gap: .4rem 1.25rem; font-size: .9rem; }
 .wordmark { font: bold 1.2rem Georgia, serif; color: var(--ink); }
-.intro { padding: 2.9rem 0 1.7rem; border-bottom: 3px double var(--blue); }
-h1 { font: 500 clamp(2.4rem, 7.5vw, 5.8rem)/.98 Georgia, serif; letter-spacing: -.045em; margin: 0; overflow-wrap: anywhere; }
-.intro p { max-width: 47ch; margin: 1rem 0; font-size: clamp(1rem, 2.4vw, 1.2rem); }
+.intro { padding: 1.7rem 0 1.05rem; border-bottom: 3px double var(--blue); }
+h1 { font: 500 clamp(2.2rem, 6vw, 4.4rem)/1.02 Georgia, serif; letter-spacing: -.045em; margin: 0; overflow-wrap: anywhere; }
+.intro p { max-width: 63ch; margin: .7rem 0; font-size: clamp(1rem, 2.4vw, 1.15rem); }
 .entry-points { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding: 0; margin: 0; list-style: none; }
 .entry-points a { padding: .25rem .54rem; display: inline-block; background: var(--wash); }
 form { margin-top: 1.35rem; }
@@ -44,6 +45,7 @@ button { background: var(--blue); color: white; }
 .results a[aria-current] { background: var(--wash); border-inline-start: 3px solid var(--blue); }
 .more { margin-top: .5rem; background: white; color: var(--blue); }
 .record { min-width: 0; overflow-wrap: anywhere; padding: 1.05rem 0 1.5rem 1.5rem; }
+.workspace:has(.results[hidden]) .record { grid-column: 1 / -1; padding-inline-start: 0; }
 .record h2 { font: 500 clamp(1.55rem, 3vw, 2.35rem)/1.15 Georgia, serif; margin: 0 0 .75rem; }
 .record h3 { font-size: .98rem; margin: 1.15rem 0 .4rem; }
 .metadata, .result-kind { color: var(--muted); font-size: .84rem; }
@@ -55,6 +57,14 @@ summary { cursor: pointer; font-weight: 645; }
 .relations ul { list-style: none; padding-left: .6rem; }
 .relations li { margin-bottom: .75rem; }
 .relations p { margin: .28rem 0; }
+.relationship-filter, .relationship-pager { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+.relationship-filter { margin: .7rem 0 .35rem; }
+.relationship-filter input { flex: 1 1 12rem; max-width: 100%; }
+.relationship-pager { margin: .5rem 0; }
+.relationship-pager p { margin: .2rem .3rem; }
+.secondary { background: white; color: var(--blue); }
+.unresolved { margin-top: .75rem; }
+.unresolved ul { padding-inline-start: 1.2rem; }
 code { font: .86em ui-monospace, monospace; overflow-wrap: anywhere; }
 footer { border-top: 1px solid var(--rule); display: flex; justify-content: space-between; flex-wrap: wrap; gap: .5rem 1rem; padding: 1rem 0 2rem; }
 #snapshot { color: var(--muted); font-size: .88rem; }
@@ -62,7 +72,7 @@ footer { border-top: 1px solid var(--rule); display: flex; justify-content: spac
 @media (max-width: 44rem) {
   .frame { width: calc(100% - 1.5rem); }
   .masthead { flex-direction: column; gap: .6rem; }
-  .intro { padding-top: 2.15rem; }
+  .intro { padding-top: 1.2rem; }
   .controls { grid-template-columns: minmax(0, 1fr) auto; }
   .controls input { grid-column: 1 / -1; }
   .workspace { display: block; }

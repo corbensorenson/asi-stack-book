@@ -442,7 +442,12 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
         archive_path = graph_manifest.with_name("graph.json.gz")
         if archive_path.is_file():
             with gzip.open(archive_path, "rt", encoding="utf-8") as stream:
-                errors.extend(graph_route_errors(site, json.load(stream)))
+                archive = json.load(stream)
+            errors.extend(graph_route_errors(site, archive))
+            try:
+                graph_checks.check_published_packets(graph_manifest.parent, archive, graph)
+            except (AssertionError, KeyError, IndexError, OSError, ValueError) as error:
+                errors.append(f"Knowledge graph packet integrity failed: {error}")
     narrative_html = (products / "narrative-book" / "index.html").read_text(
         encoding="utf-8",
         errors="ignore",

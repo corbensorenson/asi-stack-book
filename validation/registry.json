@@ -1042,6 +1042,7 @@
     "experiments/metric_provenance/fixtures/invalid_vacuous_admissible.json",
     "experiments/model_weight_custody_lifecycle/fixtures/cases.json",
     "experiments/model_weight_custody_lifecycle/results/2026-07-13-local.json",
+    "experiments/knowledge_graph_navigation/retrieval_tasks.json",
     "experiments/name_to_effect_trace/fixtures/invalid_effect_digest_mismatch.json",
     "experiments/name_to_effect_trace/fixtures/invalid_false_evaluator_independence.json",
     "experiments/name_to_effect_trace/fixtures/invalid_fixture_support_promotion.json",
@@ -7807,6 +7808,7 @@
         "scripts/book_knowledge_graph.py",
         "scripts/build_knowledge_graph_companion.py",
         "scripts/validate_book_knowledge_graph.py",
+        "experiments/knowledge_graph_navigation/retrieval_tasks.json",
         "appendices/B_glossary.qmd",
         "papers/paper_library.json",
         "sources/source_inventory.json",
@@ -20222,7 +20224,7 @@
   ],
   "summary": {
     "unit_count": 477,
-    "required_artifact_count": 3326
+    "required_artifact_count": 3327
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",

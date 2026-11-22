@@ -136,10 +136,50 @@ async function checkKnowledgeGraph(context, root) {
     assert.equal(await page.getByText("Study runs (2)", { exact: true }).count(), 1);
     await page.reload();
     await page.getByRole("heading", { name: "Which scope earns a verifier rollout?" }).waitFor();
+    const tasks = JSON.parse(fs.readFileSync(path.join(__dirname, "../experiments/knowledge_graph_navigation/retrieval_tasks.json")));
+    for (const task of tasks) {
+      await page.getByRole("combobox", { name: "Record type" }).selectOption(task.kind);
+      await page.getByRole("searchbox", { name: "Search the graph" }).fill(task.query);
+      await page.getByRole("button", { name: "Search", exact: true }).click();
+      const hits = await page.locator("#results a").evaluateAll(links => links.slice(0, 3).map(link => link.dataset.node));
+      assert(hits.includes(task.target), `graph search missed ${task.query}`);
+    }
+
+    await page.goto(route + "?node=reader_unit%3Aunit-09");
+    await page.getByRole("link", { name: "Stable Capability Fields", exact: true }).click();
+    await page.getByRole("heading", { name: "Stable Capability Fields", exact: true }).waitFor();
+    const claims = page.locator("#record .relations > details > summary").filter({ hasText: /^Claims \(\d+\)$/ });
+    const core = claims.locator("..").locator("li > a").first();
+    assert.equal(await core.getAttribute("data-node"), "claim:stable-capability-fields.core");
+    await core.click();
+    await page.getByRole("link", { name: "Which scope earns a verifier rollout?", exact: true }).click();
+    await page.getByRole("link", { name: "Absolute floor and equal memoization", exact: true }).click();
+    await page.getByRole("heading", { name: "Evidence limit", exact: true }).waitFor();
+
+    await page.goto(route + "?node=chapter%3Avirtual-context-abi");
+    const sources = page.locator("#record .relations > details > summary").filter({ hasText: /^Source mappings \(\d+\)$/ });
+    const group = sources.locator("..");
+    await sources.waitFor();
+    if (!(await group.evaluate(node => node.open))) await sources.click();
+    assert.equal(await group.locator(":scope > ul > li > a[data-node='source:ext_emeans_2026']").count(), 0);
+    await group.getByRole("button", { name: "Show more links" }).click();
+    await group.getByText(/^Showing 20 of \d+$/).waitFor();
+    await group.getByRole("searchbox", { name: "Filter source mappings" }).fill("source:ext_emeans_2026");
+    await group.getByRole("button", { name: "Filter links" }).click();
+    await group.locator("a[data-node='source:ext_emeans_2026']:visible").first().waitFor();
+    await group.getByText("Passage review · reviewed", { exact: true }).first().waitFor();
+    await group.getByRole("button", { name: "Clear" }).click();
+    await group.getByText(/^Showing 20 of \d+$/).waitFor();
+
+    await page.goto(route + "?node=source%3Aviea");
+    await page.getByText("Unresolved references (4)", { exact: true }).click();
+    await page.getByRole("button", { name: "Load references" }).click();
+    await page.getByText("no corroborated current chapter", { exact: true }).first().waitFor();
     assert(requests.some(pathname => /\/nodes\/[0-9a-f]{2}\.json$/.test(pathname)));
+    assert(requests.some(pathname => /\/relationships\/\d+\.json$/.test(pathname)));
     assert(!requests.some(pathname => pathname.endsWith("/graph.json.gz")), "lookup downloaded the complete graph");
     assert.deepEqual(errors, []);
-    console.log("Knowledge graph search, evidence limits, scoped results, and shareable links passed.");
+    console.log("Knowledge graph search, evidence trail, full relationships, unresolved references, and shareable links passed.");
   } finally {
     await page.close();
   }
@@ -161,6 +201,18 @@ async function main() {
     await page.setViewportSize({ width: 1280, height: 860 });
     const chapter = root + "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html";
     await page.goto(chapter);
+    if (!live) {
+      const graphLink = page.getByRole("link", { name: "Explore in graph", exact: true });
+      await page.waitForFunction(link => {
+        const url = new URL(link.href);
+        return url.searchParams.get("node") === "chapter:replaceable-cognitive-substrates-beyond-transformer-monoculture";
+      }, await graphLink.elementHandle());
+      await graphLink.click();
+      await page.getByRole("heading", { name: "Replaceable Cognitive Substrates: Beyond Transformer Monoculture", exact: true }).waitFor();
+      await page.goto(root + "appendices/H_external_sources.html");
+      assert.equal(await page.locator("[data-asi-reader-edition]").getAttribute("href"), root + "reader/");
+      await page.goto(chapter);
+    }
     await page.locator('[data-asi-reading-choice="human"]').click();
     await page.goto(chapter + "#source-crosswalk");
     assert(await page.locator("#source-crosswalk").isVisible(), "copied citation is hidden");

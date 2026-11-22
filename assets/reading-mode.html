@@ -440,21 +440,32 @@
     }
   }
 
-  function readerEditionBaseUrl() {
+  function bookBaseUrl() {
+    const offset = document.querySelector('meta[name="quarto:offset"]')?.content;
+    if (offset) return new URL(offset, window.location.href);
     const brand = document.querySelector("a.navbar-brand");
-    if (brand && brand.href) return new URL("reader/", brand.href);
-    const marker = "/chapters/";
-    const index = window.location.pathname.indexOf(marker);
-    if (index >= 0) {
-      return new URL(`${window.location.pathname.slice(0, index + 1)}reader/`, window.location.origin);
+    if (brand && brand.href) return new URL("./", brand.href);
+    const marker = window.location.pathname.match(/^(.*\/)(?:chapters|appendices)\//);
+    if (marker) {
+      return new URL(marker[1], window.location.origin);
     }
-    return new URL("reader/", window.location.href);
+    return new URL("./", window.location.href);
   }
 
-  function resolveReaderEditionLink(link) {
-    const base = readerEditionBaseUrl();
+  function resolveEditionLinks(link) {
+    const book = bookBaseUrl();
+    const base = new URL("reader/", book);
     link.href = base.href;
     const sourceFile = currentSourceFile();
+    let graphLink;
+    const graph = new URL("products/evidence-registry/knowledge-graph/", book);
+    if (sourceFile.startsWith("chapters/")) {
+      graphLink = document.createElement("a");
+      graphLink.className = "asi-reading-mode__reader-link";
+      graphLink.textContent = "Explore in graph";
+      graphLink.href = graph.href;
+      link.after(graphLink);
+    }
     if (!sourceFile || typeof window.fetch !== "function") return;
     window.fetch(new URL("route-map.json", base))
       .then((response) => {
@@ -464,6 +475,10 @@
       .then((payload) => {
         const route = (payload.routes || []).find((row) => row.technical_source_file === sourceFile);
         if (route && route.reader_path) link.href = new URL(route.reader_path, base).href;
+        if (route && graphLink && route.chapter_id) {
+          graph.searchParams.set("node", "chapter:" + route.chapter_id);
+          graphLink.href = graph.href;
+        }
       })
       .catch(() => {
         /* Keep the reader index fallback when the route map is unavailable. */
@@ -489,7 +504,7 @@
       button.addEventListener("click", () => setMode(button.getAttribute("data-asi-reading-choice"), { updateUrl: true }));
     });
     const readerLink = control.querySelector("[data-asi-reader-edition]");
-    if (readerLink) resolveReaderEditionLink(readerLink);
+    if (readerLink) resolveEditionLinks(readerLink);
     if (target.matches && target.matches("header#title-block-header")) {
       target.insertAdjacentElement("afterend", control);
     } else {

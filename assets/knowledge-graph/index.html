@@ -17,6 +17,7 @@
       <nav aria-label="Book navigation">
         <a href="../../../reader/index.html">Human Reader</a>
         <a href="../index.html">Evidence Registry</a>
+        <a href="graph.json.gz" download aria-label="Download full graph (compressed JSON)">Download graph</a>
         <a href="manifest.json">Machine manifest</a>
       </nav>
     </div>
@@ -24,7 +25,7 @@
   <main class="frame">
     <section class="intro" aria-labelledby="title">
       <h1 id="title">Knowledge graph</h1>
-      <p>Find where an idea is explained, then follow the claims, sources, and study results connected to it.</p>
+      <p>Search the book’s concepts, claims, and sources. Follow a study result to see what it measured and where it applies.</p>
       <ul class="entry-points" aria-label="Example starting points">
         <li><a href="?node=concept%3Areceipt" data-example="concept:receipt">Receipt</a></li>
         <li><a href="?node=source%3Aext_emeans_2026" data-example="source:ext_emeans_2026">e-means</a></li>
@@ -35,7 +36,7 @@
     <form id="lookup" role="search">
       <label for="query">Search the graph</label>
       <div class="controls">
-        <input id="query" name="q" type="search" placeholder="Topic, title, or record ID" autocomplete="off" maxlength="180">
+        <input id="query" name="q" type="search" placeholder="Question, title, paper name, or record ID" autocomplete="off" maxlength="180">
         <select id="kind" aria-label="Record type"><option value="">All record types</option></select>
         <button type="submit">Search</button>
       </div>
@@ -46,7 +47,7 @@
     </noscript>
     <p class="status" id="status" role="status"></p>
     <div class="workspace">
-      <section class="results" aria-labelledby="results-title">
+      <section class="results" id="results-panel" aria-labelledby="results-title" hidden>
         <h2 id="results-title">Search results</h2>
         <ul id="results"></ul>
         <button class="more" id="more" type="button" hidden>Show more results</button>
@@ -57,7 +58,6 @@
       </article>
     </div>
     <footer>
-      <a href="graph.json.gz" download>Download full graph (compressed JSON)</a>
       <span id="snapshot"></span>
     </footer>
   </main>

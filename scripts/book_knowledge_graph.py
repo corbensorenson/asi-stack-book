@@ -46,8 +46,15 @@ SOURCE_TARGET_ALIASES = {
 }
 SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
 LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
-NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "retains_run", "investigates",
-                       "defined_by", "explained_by", "contains", "maps_source_passage", "assigned_to")
+NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
+                       "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
+                       "defined_by", "explained_by", "contains", "assigned_to")
+PATH_PREDICATES = frozenset(NAVIGATION_PRIORITY) - {"contains", "assigned_to"}
+PATH_VISIT_LIMIT = 1000
+SEARCH_STOP_WORDS = frozenset(
+    "a an are about can did does find for how i in is it of on or paper show study the to used was were "
+    "what when where which with".split()
+)
 
 
 class Graph:
@@ -350,34 +357,65 @@ def json_bytes(value):
     return (json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":")) + "\n").encode("utf-8")
 
 
+def search_metadata(node, display_title):
+    citation = node.get("citation_label", "")
+    alias = re.split(r"\([0-9]{4}[a-z]?\)[,.:]?\s*", citation, maxsplit=1)[-1] if citation else ""
+    context = [node.get(field, "") for field in ("definition", "question", "summary")]
+    context.extend((citation, node["title"][len(display_title) - 1:] if display_title != node["title"] else ""))
+    return slugify(alias), slugify(" ".join(context))
+
+
+def search_terms(text):
+    return {word[:-1] if len(word) > 4 and word.endswith("s") else word
+            for word in text.split("-") if word and word not in SEARCH_STOP_WORDS}
+
+
+def search_score(typed_query, query, words, key, title, alias, context):
+    identity = slugify(key.split(":", 1)[1])
+    title = slugify(title)
+    if typed_query == key:
+        return 1000
+    if query in {identity, title}:
+        return 900
+    if query == alias:
+        return 870
+    if title.startswith(query + "-"):
+        return 830
+    if f"-{query}-" in f"-{title}-":
+        return 800
+    if len(alias) >= 3 and f"-{alias}-" in f"-{query}-":
+        return 780
+    primary = words & search_terms("-".join((identity, title, alias)))
+    covered = primary | (words & search_terms(context))
+    if not covered or len(covered) * 100 < len(words) * 55:
+        return 0
+    return 200 * len(covered) // len(words) + 140 * len(primary) // len(words)
+
+
 def search(graph, query, *, kind=None, limit=8):
     typed_query = query.strip()
     query = slugify(query)
     if not query:
         raise ValueError("search needs at least one letter or digit")
-    words = set(query.split("-"))
+    words = search_terms(query)
     hits = []
     for entry in graph["nodes"]:
         if kind and entry["kind"] != kind:
             continue
-        identity = slugify(entry["id"].split(":", 1)[1])
-        title = slugify(entry["title"])
-        fields = set(identity.split("-")) | set(title.split("-"))
-        if typed_query == entry["id"]:
-            score = 5
-        elif query in {identity, title}:
-            score = 4
-        elif title.startswith(query + "-"):
-            score = 3
-        elif f"-{query}-" in f"-{title}-":
-            score = 2
-        else:
-            score = int(words <= fields)
+        title = title_excerpt(entry["title"])
+        alias, context = search_metadata(entry, title)
+        score = search_score(typed_query, query, words, entry["id"], title, alias, context)
         if score:
             hits.append((-score, len(title), entry["id"], entry))
     hits.sort()
     return {"snapshot": graph["snapshot_id"], "matches": [hit[-1] for hit in hits[:limit]],
             "total_matches": len(hits)}
+
+
+def title_excerpt(value, cap=180):
+    if len(value) <= cap:
+        return value
+    return value[:cap - 1] + "…"
 
 
 def neighborhood(graph, node_id, *, depth=1, limit=24, predicates=()):
@@ -407,7 +445,7 @@ def neighborhood(graph, node_id, *, depth=1, limit=24, predicates=()):
                 continue
             pending.append(iterator)
             edge, target = pair
-            key = (edge["from"], edge["predicate"], edge["to"], edge["origin"]["locator"])
+            key = (edge["from"], edge["predicate"], edge["to"], edge["origin"]["path"], edge["origin"]["locator"])
             if key in selected:
                 continue
             if len(selected) == limit:
@@ -424,19 +462,87 @@ def neighborhood(graph, node_id, *, depth=1, limit=24, predicates=()):
             "edges": list(selected.values()), "depth": depth, "truncated": truncated}
 
 
+def connection(graph, start, end, *, predicates=(), depth=4):
+    nodes = {node["id"]: node for node in graph["nodes"]}
+    for key in (start, end):
+        if key not in nodes:
+            raise KeyError(key)
+    eligible = frozenset(predicates) if predicates else PATH_PREDICATES
+    adjacent = {}
+    for edge in graph["edges"]:
+        if edge["predicate"] in eligible:
+            adjacent.setdefault(edge["from"], []).append((edge["to"], edge))
+            adjacent.setdefault(edge["to"], []).append((edge["from"], edge))
+    priority = {predicate: i for i, predicate in enumerate(NAVIGATION_PRIORITY)}
+    parents = [{start: None}, {end: None}]
+    frontiers = [[start], [end]]
+    meeting = start if start == end else None
+    capped = False
+    for _ in range(depth):
+        if meeting or capped or not all(frontiers):
+            break
+        side = int(len(frontiers[1]) < len(frontiers[0]))
+        next_frontier = []
+        for vertex in frontiers[side]:
+            ordered = sorted(adjacent.get(vertex, ()), key=lambda item: (
+                priority.get(item[1]["predicate"], len(priority)), item[0]
+            ))
+            for neighbor, edge in ordered:
+                if neighbor in parents[side]:
+                    continue
+                if neighbor in parents[1 - side]:
+                    parents[side][neighbor] = vertex, edge
+                    meeting = neighbor
+                    break
+                if sum(map(len, parents)) >= PATH_VISIT_LIMIT:
+                    capped = True
+                    break
+                parents[side][neighbor] = vertex, edge
+                next_frontier.append(neighbor)
+            if meeting or capped:
+                break
+        frontiers[side] = next_frontier
+
+    path_nodes, path_edges = [], []
+    if meeting:
+        cursor = meeting
+        while cursor != start:
+            path_nodes.append(nodes[cursor])
+            cursor, edge = parents[0][cursor]
+            path_edges.append(edge)
+        path_nodes.append(nodes[start])
+        path_nodes.reverse()
+        path_edges.reverse()
+        cursor = meeting
+        while cursor != end:
+            cursor, edge = parents[1][cursor]
+            path_nodes.append(nodes[cursor])
+            path_edges.append(edge)
+    return {
+        "snapshot": graph["snapshot_id"], "authority": "navigation_only", "start": start, "end": end,
+        "status": "found" if meeting else "visit_limit_reached" if capped else "no_route_within_depth",
+        "depth_limit": depth, "visit_limit": PATH_VISIT_LIMIT,
+        "predicates": sorted(eligible), "nodes": path_nodes, "edges": path_edges,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     option = parser.add_mutually_exclusive_group()
     option.add_argument("--find", metavar="TEXT", help="Find nodes by title or stable ID")
     option.add_argument("--node", metavar="ID", help="Read a bounded neighborhood")
+    option.add_argument("--path", nargs=2, metavar=("FROM", "TO"), help="Find a short citation or reading route")
     parser.add_argument("--kind", help="Limit search to one node kind")
     parser.add_argument("--predicate", action="append", default=[], help="Permit a relation during traversal")
-    parser.add_argument("--depth", type=int, choices=(1, 2), default=1)
+    parser.add_argument("--depth", type=int, choices=(1, 2, 3, 4),
+                        help="Default depth is 1 for --node and 4 for --path")
     parser.add_argument("--limit", type=int, default=24, help="Maximum matches or edges (1–100)")
     parser.add_argument("--snapshot", type=Path, help="Query a previously compiled JSON snapshot")
     args = parser.parse_args()
     if not 1 <= args.limit <= 100:
         parser.error("--limit must be between 1 and 100")
+    if args.node and args.depth and args.depth > 2:
+        parser.error("--node supports depth 1 or 2. Use --path for longer routes.")
     if args.snapshot:
         raw = args.snapshot.read_bytes()
         if raw.startswith(b"\x1f\x8b"):
@@ -452,9 +558,12 @@ def main():
             graph = search(graph, args.find, kind=args.kind, limit=args.limit)
         except ValueError as error:
             parser.error(str(error))
-    elif args.node is not None:
+    elif args.node is not None or args.path is not None:
         try:
-            graph = neighborhood(graph, args.node, depth=args.depth, limit=args.limit, predicates=args.predicate)
+            if args.path:
+                graph = connection(graph, *args.path, depth=args.depth or 4, predicates=args.predicate)
+            else:
+                graph = neighborhood(graph, args.node, depth=args.depth or 1, limit=args.limit, predicates=args.predicate)
         except KeyError:
             parser.error(f"unknown node: {args.node}")
     sys.stdout.buffer.write(json_bytes(graph))

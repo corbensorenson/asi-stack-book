@@ -132,21 +132,43 @@ The snapshot also carries its source commit, whether it came from a local
 worktree, and the captured input hashes.
 
 The [browser explorer](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/)
-loads a search catalog and the shard for each selected result. Use
-`manifest.json` to find the resource paths, digests, coverage counts, and
-preview limits. In `search.json`, each row contains the stable record ID,
-an index into the `kinds` list, a title excerpt, and the shard key.
-`nodes/{shard}.json` returns the full record and up to four neighboring
-records per relation and 28 per record. Counts on each relation describe
-the complete neighborhood. Open the downloaded `graph.json.gz` to traverse
-the remaining edges offline. The graph also links eligible source records
-directly to the manuscripts in the book's paper library.
+accepts paper names, titles, IDs and questions that use vocabulary from
+the book's definitions, study questions and results. Select a record type
+to narrow the lookup. Open a relationship to read its provenance and
+qualifiers. Show more links to browse the rest, or filter a large
+relationship by its target's name or exact ID. The same record panel
+can show unresolved references and their original locators.
+The technical chapter's **Explore in graph** link opens its record using
+the current reader route map.
+
+For agents, `manifest.json` names the resources, digests and limits.
+Every row in the `search.json` catalog carries a stable ID, kind index,
+title excerpt, shard key, normalized citation alias and normalized
+search context. `nodes/{shard}.json` returns the record and up to four
+neighbors per relation and 28 per record. Each relationship group includes
+its complete count and any continuation addresses. An address
+`[file, offset]` points to `pages[offset]` in `relationships/{file}.json`.
+Relationship pages have up to 16 entries each, and every file in that
+directory is at most 96 KiB. A large group's `member_index` address
+resolves to catalog row numbers in relationship order. Packet validation
+checks that both directions of every archive relationship retain the same
+provenance and qualifiers.
+
+The compressed `graph.json.gz` supports offline traversal. The graph also
+links eligible source records directly to their manuscripts in the paper
+library.
 
 ```bash
 python3 scripts/book_knowledge_graph.py --snapshot graph.json.gz --find e-means --kind source
 python3 scripts/book_knowledge_graph.py --snapshot graph.json.gz --node study:verifier-rollout --predicate retains_run
+python3 scripts/book_knowledge_graph.py --snapshot graph.json.gz --path reader_unit:unit-09 study_run:verifier-floor-cache
 python3 scripts/validate_book_knowledge_graph.py
 ```
+
+The `--path` example follows the Reader unit through its technical owner,
+current claim, study, and pinned run. The command uses selected reading and
+evidence relations, with a four-hop limit and a visit budget. Each edge
+retains its direction, provenance, and recorded effect on support.
 
 Source assignments help with discovery. Reviewed mappings retain their
 passages, scope, and limits. Proof targets keep the status from the proof
@@ -159,7 +181,8 @@ compares this explorer with the existing editions' Quarto search and the
 Evidence Registry. It records paired results for exact citations, navigation
 between editions, and evidence limits on the same study run. The first
 [local comparison](../experiments/knowledge_graph_navigation/results-2026-11-21.md)
-covers twenty tasks.
+covers twenty tasks. The [usability follow-up](../experiments/knowledge_graph_navigation/usability-followup-2026-11-21.md)
+covers research questions, large relationships, and a full evidence trail.
 
 After a clean Quarto render and canonical-status build, release CI runs:
 
