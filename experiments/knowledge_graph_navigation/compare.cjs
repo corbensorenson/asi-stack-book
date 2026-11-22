@@ -7,13 +7,15 @@ const path = require("node:path");
 const { gunzipSync } = require("node:zlib");
 const { chromium } = require("../../ci/browser/node_modules/playwright");
 
-const [siteArgument, output] = process.argv.slice(2);
-assert(siteArgument && output, "usage: node compare.cjs SITE OUTPUT.json");
+const [siteArgument, output, mode] = process.argv.slice(2);
+assert(siteArgument && output && (!mode || mode === "judgment"),
+  "usage: node compare.cjs SITE OUTPUT.json [judgment]");
+const judgment = mode === "judgment";
 const site = path.resolve(siteArgument);
 const root = "https://corbensorenson.github.io/asi-stack-book/";
 const graphBase = root + "products/evidence-registry/knowledge-graph/";
 const registry = root + "products/evidence-registry/";
-const taskBytes = fs.readFileSync(path.join(__dirname, "tasks.json"));
+const taskBytes = fs.readFileSync(path.join(__dirname, judgment ? "judgment_tasks.json" : "tasks.json"));
 const tasks = JSON.parse(taskBytes);
 const hash = data => createHash("sha256").update(data).digest("hex");
 const readSite = name => fs.readFileSync(path.join(site, name));
@@ -126,7 +128,8 @@ async function inspect(page, link) {
     const record = id ? document.querySelector("#record") : document.querySelector("main");
     const fragment = decodeURIComponent(location.hash.slice(1));
     const anchor = fragment ? document.getElementById(fragment) : null;
-    const scope = id ? record : anchor?.closest("section,tr") || anchor || record;
+    const scope = id ? record : anchor?.closest("section,tr,article") || anchor ||
+      record?.querySelector("#current-decision") || record;
     const headings = id ? "h3" : "h4";
     const evidenceLimit = [...(scope?.querySelectorAll(headings) || [])]
       .find(heading => /^(Evidence limit|Scope and limits)$/.test(heading.textContent));
@@ -136,7 +139,7 @@ async function inspect(page, link) {
     const links = sourceLinks.map(a => ({href: a.href, label: (a.innerText || a.textContent || "").trim()}));
     return {anchor: !!anchor, text: [evidenceLimit?.nextElementSibling?.innerText, ...core].filter(Boolean).join(" "), links};
   }, id);
-  return {route, id, label: excerpt(link.label), status, anchor: detail.anchor,
+  return {route, id, label: excerpt(link.label), status, anchor: detail.anchor, cited_route: nodes.get(id)?.url,
     text: excerpt(detail.text), links: detail.links};
 }
 function matches(record, node) {
@@ -188,7 +191,7 @@ async function compare(context, task, method) {
 async function main() {
   assert(new Set(tasks.map(task => task.id)).size === tasks.length);
   for (const task of tasks) {
-    assert(nodes.get(task.target)?.url, task.id);
+    if (!judgment) assert(nodes.get(task.target)?.url, task.id);
     if (task.owner) assert(nodes.get(task.owner)?.url, task.id);
     if (task.limit) assert(slug(nodes.get(task.target).limit).includes(slug(task.limit)), task.id);
   }
@@ -199,20 +202,22 @@ async function main() {
     await candidate(context);
     const results = [];
     for (const [index, task] of tasks.entries()) {
-      const row = {task: task.id, kind: task.kind};
-      for (const method of (index % 2 ? ["graph", "baseline"] : ["baseline", "graph"])) {
+      const order = index % 2 ? ["graph", "baseline"] : ["baseline", "graph"];
+      const row = {task: task.id, kind: task.kind, question: task.question, order: judgment ? order : undefined};
+      for (const method of order) {
         row[method] = await compare(context, task, method);
       }
       results.push(row);
       console.log(task.id, row.baseline.error || row.baseline.first_exact_rank, row.graph.error || row.graph.first_exact_rank);
     }
     const report = {
-      schema: "asi-stack.graph-navigation-comparison.v1", snapshot_id: graph.snapshot_id,
+      schema: judgment ? "asi-stack.graph-judgment-packets.v1" : "asi-stack.graph-navigation-comparison.v1",
+      snapshot_id: graph.snapshot_id,
       source_commit: graph.source_commit, worktree: graph.worktree, graph_input_sha256: graph.inputs_sha256,
       reader_search_sha256: hash(readSite("reader/search.json")), search_sha256: hash(readSite("search.json")),
       graph_search_sha256: hash(readSite(catalog)), registry_sha256: hash(readSite("products/evidence-registry/index.html")),
       tasks_sha256: hash(taskBytes), runner_sha256: hash(fs.readFileSync(__filename)),
-      protocol_sha256: hash(fs.readFileSync(path.join(__dirname, "protocol.md"))),
+      protocol_sha256: hash(fs.readFileSync(path.join(__dirname, judgment ? "judgment_protocol.md" : "protocol.md"))),
       browser: browser.version(), budget, results,
     };
     fs.writeFileSync(output, JSON.stringify(report, null, 2) + "\n");
