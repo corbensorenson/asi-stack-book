@@ -1,0 +1,18 @@
+{
+  "schema_version": "asi_stack.prospective_receiver_availability.v1",
+  "protocol": "prospective_receiver_availability_protocol.md",
+  "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+  "arms": ["conventional_status", "additional_endpoint", "matched_conventional_access"],
+  "observations": ["fresh", "stale", "unavailable"],
+  "initial_states": ["exact_effect", "pre_effect_failure", "wrong_effect", "repeat_effect"],
+  "deduplication": [false, true],
+  "deadline_tick": 3,
+  "retry_allowance": 1,
+  "paired_cells": 288,
+  "tasks": [
+    {"operation": "review-metadata", "target": "minutes/approved", "payload": "Approved for internal circulation."},
+    {"operation": "catalog-label", "target": "catalog/description", "payload": "Superseded entries remain discoverable."},
+    {"operation": "release-summary", "target": "summary/changelog", "payload": "Document the correction to the filter."},
+    {"operation": "table-caption", "target": "guide/figure-caption", "payload": "Comparison at matched observation budgets."}
+  ]
+}
