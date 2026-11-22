@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-18"
+last_updated: "2026-11-20"
 primary_sources:
   - "vcm_public"
   - "deterministic_capability_compilation"
@@ -196,6 +196,13 @@ effects, or move support or release state.
 ### Worked materialization: the summary omits the one blocking fact
 
 A planner requests a compact project-status packet for release planning. The materializer selects recent build and test records but omits an older unresolved rights restriction because it falls outside the default recency window. The resulting prose is fluent and factually consistent with its selected fields, yet it is inadequate for release use. The certificate exposes the omitted frontier and the request’s mandatory rights field, so admission fails with a typed context-miss fault.
+
+This fault is detectable because the request names the rights field. An
+empty result from an index could also mean the index is stale or omits a
+source. Distinguish a current authoritative answer of “no restriction” from
+a missing answer. Compare the certificate with a direct, versioned rights
+lookup and ordinary retrieval of the same records. Test whether the
+certificate helps when several consumers materialize different views of them.
 
 A diagnostic consumer that asked only for recent build health could admit the same representation under a different purpose and support ceiling. The summary’s authority cannot exceed its sources, and a new materialization cannot silently erase taint or revocation. The local fixture families check admission, resolver, and certificate routes, but they do not establish natural source-to-packet fidelity, truth, useful model use, verification adequacy, or cross-store transfer.
 

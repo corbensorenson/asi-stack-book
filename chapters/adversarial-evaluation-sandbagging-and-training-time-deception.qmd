@@ -4,7 +4,7 @@ chapter_id: "adversarial-evaluation-sandbagging-and-training-time-deception"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-11-20"
 primary_sources:
   - "benchmaxxing"
   - "rmi"
@@ -247,6 +247,12 @@ another context effect. The record quarantines broad capability and safety
 conclusions without labeling the model deceptive. It preserves model/task
 digests, monitor visibility, update consequence, authority, patches, tests,
 costs, and scorer dependencies.
+
+Use the same frozen outcome scorer in both conditions in the follow-up.
+On benign tasks, vary monitor visibility and the announced evaluation
+consequence separately while holding task access fixed. Pair cases and repeat
+runs to estimate variation. This can test which part of the evaluation
+context changes scores while leaving the model's underlying motive open.
 
 The training owner then proposes promotion using only the baseline's low-risk
 score and a classifier trained on the same monitored traces. That classifier

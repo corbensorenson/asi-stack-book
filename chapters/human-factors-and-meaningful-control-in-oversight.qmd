@@ -210,9 +210,17 @@ removes some known defeaters; it does not prove the larger normative judgment.
 
 ### Count which recommendations a reviewer accepts {#depth-complementary-team-explanations-2021}
 
-When comparing two approval screens, record accepted correct advice and accepted incorrect advice separately. A rise in acceptance can help one subgroup and harm the other. For the release review, show the candidate timestamp and the route to the underlying build record. Compare interventions with similar time and authority. Score whether the reviewer discovers the stale fact and can stop publication before it acts.
+When comparing approval screens, keep the recommendations fixed and report
+the acceptance rate among correct recommendations and among incorrect ones.
+Use the same time, authority, and access to the underlying build record. Score
+whether the reviewer discovers the stale fact and can prevent publication
+before the effect commits.
 
-The mixed-method user study on three datasets measured how teams performed when explanations accompanied AI recommendations. These decision tasks have specific participants, models and interfaces. The result does not establish the effect of explanations on high-stakes approval or the quality of a real intervention path. [Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance](https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/)
+Bansal and colleagues found that the tested explanations increased acceptance
+of both correct and incorrect advice without improving the complementary
+accuracy gains of the team. The three datasets in that study leave open whether
+other explanations help reviewers exercise authority before a real deadline.
+[Does the Whole Exceed its Parts? The Effect of AI Explanations on Complementary Team Performance](https://www.microsoft.com/en-us/research/publication/does-the-whole-exceed-its-parts-the-effect-of-ai-explanations-on-complementary-team-performance/)
 
 ### Claim-source mapping status
 
@@ -710,6 +718,15 @@ control, high-stakes transfer, moral responsibility, or safety.
 | Cost and harm accounting | Participant time, training, review latency, queue cost, false holds, false interventions, privacy burden, accessibility burden, compute, and residual recovery cost. |
 | Stop and rescue rules | Stop for adverse events, failed ground truth, failed positive controls, unusable interface, excessive differential burden, privacy breach, or evaluator leakage. Follow the rescue ladder below before interpreting a null or negative result. |
 | Negative-inference ceiling | A failed study can refute or narrow the proposed design only in the frozen task, population, interface, model, and intervention regime after apparatus competence passes. It cannot establish that meaningful control is impossible in general. |
+
+Start the main comparison from all assigned episodes. Keep cases the gate
+held before review, timed out, or sent to fallback in the outcome denominator.
+For example, an interface that holds every difficult case might improve
+accuracy among completed reviews while preventing little and delaying useful
+work. Record whether a hold prevented a known wrong effect, blocked a valid
+action, or left the outcome unresolved. Track time through fallback and
+recovery. Report the completed-review subset separately to explain how people
+responded to the interface they actually saw.
 
 ### Positive controls and rescue ladder
 

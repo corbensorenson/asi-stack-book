@@ -4,7 +4,7 @@ chapter_id: "planning-as-a-control-layer"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "planforge"
   - "platonic_world_model"
@@ -756,14 +756,19 @@ The governed arm reached hidden-state accuracy 0.7933 in the workshop and
 unsafe-action rates were 0.1000 and 0.1133, versus 0.2333 and 0.2733 for the
 ungoverned predictive arm. That safety improvement was not free: task success
 was lower than the ungoverned predictive arm by 0.0233 and 0.0300 because the
-governed path escalated uncertain cases.
+governed path escalated uncertain cases. An escalation changes who owns the
+decision. A deployed comparison must still follow those cases to resolution,
+including operator time, missed deadlines, and any effects during the hold.
 
 The causal packet matters more than the headline. Removing the uncertainty
 gate raised unsafe action in both environments; removing intervention or
 consolidation reduced accuracy in both; merging observation into belief
 worsened Brier score in both. Active information gathering was heterogeneous:
 slightly harmful in the workshop and helpful in the service mesh. Shift
-detection remained only 0.1667 and 0.2200. Planning should therefore consume a
+detection remained only 0.1667 and 0.2200. The comparisons condition on the
+authored simulators and their outcome rules. Different scenarios and matched
+escalation budgets are needed to find where the policy beats a conventional
+controller with the same ability to defer. Planning should therefore consume a
 world-model interface as fallible state estimation with explicit uncertainty,
 intervention cost, escalation, and shift residuals—not as a learned oracle.
 

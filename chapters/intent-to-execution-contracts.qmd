@@ -4,7 +4,7 @@ chapter_id: "intent-to-execution-contracts"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 layered instruction identity"
-last_updated: "2026-10-11"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "talos"
@@ -201,6 +201,20 @@ In this hypothetical teaching case, an accepted contract asks for a public proje
 If an adapter nevertheless sends data, later output quality cannot repair the authority and means breach. The required record separates the attempted upload, what an observer can establish, any unknown disclosure, and the recovery owner's remaining duties. Deleting a local copy cannot undo a recipient's access. Whether quarantine or another recovery action is appropriate depends on that boundary and current authority.
 
 The existing local refinement is a separate authored result: it follows nine scenarios containing 89 events and six material effects, with 30 source mutations. It checks exact payload and custody ordering across a ten-event delivery witness, but it trusts the authored semantics, authority, receipts, observations, and rollback fields; it does not prove parser correctness, semantic equivalence, tool safety, or effect truth.
+
+### Hand off the approved effect {#grant-to-effect-command}
+
+In the [grant ordering trace](system-boundaries-and-authority.qmd#grant-to-effect-authority),
+the command receives approval for `hold-for-editor` in `public-copy` and
+the receipt for active revision 1 through tick 2. Emit the exact effect
+request with that binding. A changed scope or action returns to command
+review. Revocation or expiry invalidates use of the grant even when the
+command still describes the approved action.
+
+[Runtime](runtime-adapters-tool-permissions-and-human-approval.qmd#grant-to-effect-runtime)
+owns the effect-time decision. The local regression exercises the grant
+receipt and the stored effect. A live command contract would also bind
+the accepted intent, principal, target, and observation obligation.
 
 ## Intent to artifact: admission and observation {#draft-key-figure-intent-to-artifact-trace}
 
@@ -932,11 +946,11 @@ rollbacks, completed eight exactly, and kept two sabotaged rollbacks in
 quarantine. See `docs/post_v2_governed_work_flagship.md` and
 `python3 scripts/validate_post_v2_governed_work_flagship.py`.
 
-This result supports the usefulness of binding authority, observed effects,
-receipts, residuals, and rollback to a command trace, but it also records a
-zero-throughput failure. It therefore leaves the core claim at `argument` via
-an accepted `no_change` decision. Eight local tasks do not establish deployed
-intent parsing, approval enforcement, sandboxing, or production transfer.
+The result shows that the combined governed route refused releases that the
+visible-test-only route admitted. It also refused every candidate. This
+comparison cannot isolate which control mattered or tell whether a
+conventional workflow with authority checks and recovery would do as well.
+The accepted `no_change` decision retains the core claim at `argument`.
 
 ## Post-v2.1 usefulness frontier
 
@@ -945,9 +959,11 @@ transactions and deliberately measures usefulness with safety. The command
 policy chose the registered route on 36/36, yet only 2/36 model candidates were
 correct. Direct execution released 26 candidates—two useful and 24 unsafe—
 while the governed transaction released the two useful candidates and no
-unsafe candidate. Governance therefore improved the registered safety
-frontier without improving useful throughput; four attack-control rollbacks
-also remained inexact. The accepted `narrow` transition is
+unsafe candidate. On these fixed candidates, the governed route admitted
+fewer unsafe releases and the same two useful releases as direct execution.
+Four attack-control rollbacks remained inexact. Testing the benefit of the
+command lineage itself would require a comparator with the same enforcement
+and recovery tools. The accepted `narrow` transition is
 `evidence_transitions/post_v2_1/governed_usefulness_rollback_narrow.json`.
 This is bounded evidence for fail-closed command handling, not evidence that
 the stack can reliably turn intent into useful executable work.

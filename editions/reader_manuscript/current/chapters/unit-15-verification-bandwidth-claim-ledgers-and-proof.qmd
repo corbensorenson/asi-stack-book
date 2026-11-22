@@ -224,6 +224,16 @@ packets.
 
 Two reviewers agree on fifteen of twenty labeled releases. Twelve agreements are correct and three are wrong. On the remaining five, they disagree, with both wrong twice. Asked how often they pick the same wrong answer *when both fail*, report 3/5. Asked how often an agreement is wrong, report 3/15. The HELM study measured about 60% on the first question. For Gantry-08, consulting the original sensor record buys a different source of evidence from asking another model to reread the disputed summary. [Correlated Errors in Large Language Models](https://arxiv.org/html/2506.07962v1)
 
+### Decision exercise · Two logs agree on a shipment {#decision-exercise-two-logs-agree-on-a-shipment}
+
+A supplier website and a dashboard both display “shipment received.” The
+dashboard imports the supplier's webhook. The claim under review says the
+boxes reached the receiving dock by noon. No dock scan is attached. You have
+one additional check before the cutoff.
+
+State the narrowest claim you can currently support. Choose the next check
+and describe the result that would let you support the noon arrival claim.
+
 ## Context Adequacy Is Claim-Relative
 
 The previous unit built coherent context transactions. Coherence is necessary
@@ -542,11 +552,13 @@ service can consume a revocation invariant without inferring that every copy
 was found. A routing service can consume a structural tensor property without
 inferring model-quality advantage.
 
-Circle Calculus supplies one source family and external receipt lineage for
-this idea. The ASI Stack's local consumer can check pinned receipt boundaries,
-mutations, and finite lifecycle properties. That does not mean this repository
-built the external calculus, resolved every theorem from source, or validated
-downstream model behavior.
+Take the Circle Calculus receipt for rotary-position bookkeeping. Its
+consumer checks the pinned receipt, and a separate rebuild of the exact Circle
+source resolves the seven theorem declarations the receipt requires. Those
+statements concern finite position and margin properties. Approve the bounded
+diagnostic on that evidence. To decide whether a trained model handles
+longer context better, ask for a model workload and its comparator.
+[Circle rebuild and acceptance results](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/circle_external_receipt_slice.md#november-20-receipt-replay)
 
 A proof receipt should make overclaiming harder. If a consumer can drop the
 non-claims or reuse the receipt after its source or implementation changes, the
@@ -647,6 +659,11 @@ record irreversible residual.
 The ledger tracks proposed scope and observed mutations. A surface can
 acknowledge the new claim, dispute applicability, or remain unreachable. The
 central transition is not complete simply because one database row changed.
+
+Keep the reason for the change with its scope. If an older sentence accurately
+described yesterday's release policy, retire its use as current guidance and
+preserve it in the versioned history. If the sentence misdescribed that policy
+when written, correct the historical claim too.
 
 For the release note, the missing sensor stream may require revised wording in
 the technical chapter, public summary, release note, memory object, and future
@@ -816,81 +833,32 @@ protects a real consumer.
 
 ## The Strongest Objection
 
-Rich ledgers and proofs can preserve impeccable metadata around a false or
-irrelevant conclusion. They can also consume the verification bandwidth they
-are meant to manage. Reviewers may spend more time checking receipts than
-examining the world.
-
-The objection is correct. Traceability cannot rescue a bad ontology, omitted
-obligation, weak evaluator, or irrelevant theorem. Formal precision can make a
-mistake look authoritative. A complicated support workflow can discourage
-small corrections and shift power toward whoever controls the ledger.
-
-The architecture responds by treating obligation discovery, context use,
-reviewer competence, outcome quality, and total burden as empirical questions.
-It allows thin records, low-consequence fast paths, bounded review cycles, and
-ordinary tools. It forbids theorem counts, packet completeness, or approval
-counts from becoming outcome metrics.
-
-The ledger should be judged by whether consequential errors are found earlier,
-claims are scoped more accurately, corrections reach consumers, and residuals
-remain visible at acceptable cost. If it does not improve those outcomes, it
-should contract.
+A ledger can keep a clean history of the wrong claim. In the shipment
+exercise, a perfect log of the mirrored webhook leaves dock arrival
+unobserved. Extra paperwork may also delay a routine correction. Compare
+whether the ledger finds consequential errors sooner and reaches affected
+consumers at a cost ordinary issue tracking cannot match.
 
 ## Evidence That Would Change the Conclusion
 
-Simpler evidence records that produce equal correction, calibration, proof-
-scope discipline, consumer repair, and reviewer independence at lower total
-cost would justify consolidation. Evidence that formal envelopes systematically
-increase deference or hide semantic mismatch would narrow where they should be
-used.
-
-Support for the broader design would require prospective natural claim
-campaigns with independent semantic and outcome labels, competent simple
-baselines, matched context, explicit obligation denominators, causal ablations,
-concurrent revisions, downgrade propagation, complete costs, reproduction, and
-transfer across domains, models, evaluators, institutions, and consumers.
-
-Formal bridges would need to show that selected executable specifications match
-their prose claims, implementations refine the models at the checked boundary,
-and runtime observations preserve build and environment identity. No one bridge
-would establish the whole system.
-
-The conclusion should narrow if better reviewer training and source access
-solve the same failures without persistent ledgers, or if most downstream
-repair can be handled reliably through ordinary version control and release
-practice.
-
-### Decision exercise · Two logs agree on a shipment {#decision-exercise-two-logs-agree-on-a-shipment}
-
-A supplier website and a dashboard both display “shipment received.” The
-dashboard imports the supplier's webhook. The claim under review says the
-boxes reached the receiving dock by noon. No dock scan is attached. You have
-one additional check before the cutoff.
-
-State the narrowest claim you can currently support. Choose the next check
-and describe the result that would let you support the noon arrival claim.
+Give teams the same source access, reviewer time, and independent semantic
+labels. Compare ordinary versioned review with the proposed workflow on
+prospectively selected claims. Measure omissions found, unsupported decisions,
+time to correct, and repair at consumers. Check any formal bridge at the
+specific implementation boundary its proof covers. If ordinary version
+control and source access produce equivalent corrections at lower cost,
+reduce the protocol.
 
 ## What This Establishes
 
-A challengeable claim needs more than evidence nearby. It needs stable
-identity, explicit obligations, qualified verification capacity, adequate
-context, bounded artifacts, objections, maximum inference, an authorized
-belief transition, and repair to known consumers.
+Two displays of the supplier's report support one reported event. To decide
+whether the shipment reached the dock by noon, spend the next check on
+an observation tied to that shipment, place, and time. Keep the narrower
+claim and the open obligation until the result arrives.
 
-Schemas, tests, benchmarks, proofs, runtime observations, sources, and human
-review answer different questions. Lean proves the encoded proposition.
-Proof-carrying claims bind interpretation and non-claims. Tribunals structure
-challenge. Claim ledgers preserve revision without claiming truth.
-
-The current repository shows that many of these record and lifecycle
-boundaries can be stated and checked over finite authored cases. It does not
-show that the joined system verifies natural claims correctly or improves
-decisions.
-
-Accepted claims and plans still need accountable work. Unit 16 turns the
-architecture into typed jobs, work surfaces, and organizations while
-preserving the evidence and authority constraints that made the work
-admissible.
+The current repository checks finite record and lifecycle properties on
+authored cases. [Unit 16](unit-16-labor-os-work-surfaces-and-organizations.qmd)
+carries an accepted decision into a job whose owner, authority, and effects
+can be checked.
 
 {{< include ../generated/unit-15-status.qmd >}}

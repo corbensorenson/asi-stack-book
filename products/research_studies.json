@@ -17,19 +17,19 @@
       "id": "crossed-receiver",
       "title": "When a second receiver check changes closure",
       "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
-      "change": "Run the same cases with an independently operated status channel and equal freshness. Prefer one channel if recovery dispositions match. Record a narrower advantage only where a separately available observation changes the outcome.",
+      "change": "Measure how often a separately operated projection remains fresh when ordinary status fails. Compare caller requests, total transport, time held and recovery effort before choosing where to place the second lookup.",
       "reader_anchor": "crossed-receiver-comparison",
       "claim": {
         "id": "artifact-graphs-audit-logs-and-replay.core",
-        "scope": "The crossed study tests exact receiver status under named conditions. Its rescore separates whether the workflow held from which effect actually committed."
+        "scope": "The crossed study and its prospective follow-up test exact receiver status under prescribed schedules. They score verified effects separately from caller disposition and measure local lookup burden."
       },
-      "featured_run": "receiver-effect-audit"
+      "featured_run": "receiver-availability"
     },
     {
       "id": "verifier-rollout",
       "title": "Which scope earns a verifier rollout?",
       "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
-      "change": "Test a consumer that crosses an actual ownership or process boundary. Measure both provenance and failure recovery at the same freshness and cost as an ordinary memo.",
+      "change": "The local process check matched ordinary memoization. Test a separately operated consumer, including changes between lookup and relying on the result. Compare provenance, recovery and end-to-end cost under the same freshness requirement.",
       "reader_anchor": "verifier-replacement-replay",
       "claim": {
         "id": "stable-capability-fields.core",
@@ -56,6 +56,24 @@
     }
   ],
   "runs": [
+    {
+      "id": "authority-commit-ordering",
+      "study": "scoped-git",
+      "date": "2026-11-20",
+      "format": "authority_ordering_v1",
+      "title": "Grant revocation and delayed effect observation",
+      "method": "Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt.",
+      "result_summary": "The version-checked transaction and the serialized receipt agree on {schedules} schedules. An observation after revocation finds the valid earlier commit. Cached permission admits {unauthorized} unauthorized effects when the grant changes or expires before commit.",
+      "limit": "Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open.",
+      "disposition": "Check authority at the write, and use the effect journal to establish what committed.",
+      "command": "python3 experiments/nov20_instrument_audit/check_authority_effect_ordering.py",
+      "result": "experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json",
+      "inputs": ["experiments/nov20_instrument_audit/check_authority_effect_ordering.py"],
+      "protocol": "experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md",
+      "result_sha256": "e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e",
+      "protocol_sha256": "cee38db019ad79211c43df01014b5ee559aee01aac38308e484dc0bb9149b67d",
+      "source_commit": "bc705e8eb7c1a7026b6d6909ce901a8a4c131277"
+    },
     {
       "date": "2026-11-20",
       "method": "Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.",
@@ -175,7 +193,7 @@
       "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
       "method": "Apply separate disposition and exact-effect scoring to the retained journal. Check committed operation, destination and payload against the locked task identity. Exercise seven controls before rescoring.",
       "result_summary": "All {controls} controls passed, including a held case with one wrong effect. The stricter scorer changed {wrong_holds} historical hold labels. In the {pairs} retained pairs, conventional status still closed {ordinary} and the added read closed {extra}.",
-      "limit": "Retrospective rescore of the same journal and retained local patch flag. The wrong-effect case is an isolated instrument control. Neither status path was tested against an independently operated production service.",
+      "limit": "This rescores the same journal and retained local patch flag. The 160 pairs cross four authored task fixtures with forty conditions per task, so the closure counts describe this design. The wrong-effect case is an isolated instrument control. Both status paths use one simulated journal and clock. In a separate local check, an old failure with the current response tick causes a second commit without deduplication. A trusted source revision prevents that retry in the authored case.",
       "disposition": "Carry disposition and observed effect as distinct fields. Treat a wrong or repeated effect as adverse even when the workflow holds.",
       "command": "python3 experiments/nov20_instrument_audit/run_receiver.py",
       "result": "experiments/nov20_instrument_audit/results/receiver-2026-11-20.json",
@@ -187,6 +205,28 @@
       "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d"
     },
     {
+      "id": "receiver-availability",
+      "study": "crossed-receiver",
+      "format": "receiver_availability_v3",
+      "title": "Matched access through one or two endpoints",
+      "date": "2026-11-22",
+      "protocol": "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+      "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+      "method": "Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.",
+      "result_summary": "Primary-only status verified {primary} of {pairs} paired cells. The two routes with second-projection access each verified {additional}. They agreed on disposition in all {agreement} cells. The gateway used {matched_calls} caller requests and {matched_bytes:,} status payload bytes. The additional endpoint used {additional_calls} caller requests and {additional_bytes:,} bytes.",
+      "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+      "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+      "command": "python3 experiments/p5_u1_governed_repository_change/run_prospective_receiver_availability.py",
+      "result": "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
+      "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+      "inputs": [
+        "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_inputs.json",
+        "experiments/p5_u1_governed_repository_change/run_prospective_receiver_availability.py",
+        "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_results.md"
+      ],
+      "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617"
+    },
+    {
       "id": "verifier-floor-cache",
       "study": "verifier-rollout",
       "format": "verifier_policy_audit_v2",
@@ -195,9 +235,9 @@
       "protocol": "experiments/nov20_instrument_audit/protocol.md",
       "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
       "method": "Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.",
-      "result_summary": "The shared copy-09 failure routed to a specialist. Both workflows made all {pairs} expected decisions and each read {ordinary_reads} evidence documents. The serialized handoff added {handoff_bytes} bytes. Both caught a missed invalidation on the next index lookup.",
-      "limit": "Counts include fixture document construction, hashing, index work and reads. CPU timings are diagnostic. Positive controls stipulate known-good observations. The direct review uses a separate input in this replay and supplies no claim of external human review or production fault isolation.",
-      "disposition": "Use ordinary memoization at the tested boundary. Keep a serialized handoff only for a consumer that needs it. Treat absent or failed must-pass evidence as a stop reason for the candidate and fallback.",
+      "result_summary": "The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at {pairs} scripted checkpoints and each read {ordinary_reads} evidence documents. The serialized handoff wrote {handoff_bytes} bytes. Both caught a missed invalidation when the index next returned the current revision.",
+      "limit": "Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+      "disposition": "Use ordinary memoization at the tested boundary. Before routing on submitted predictions, check the complete set of case IDs and labels against a separately controlled reference. Require evidence of freshness and hold when it cannot be established.",
       "command": "python3 experiments/nov20_instrument_audit/run_verifier.py",
       "result": "experiments/nov20_instrument_audit/results/verifier-2026-11-20.json",
       "result_sha256": "75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75",
@@ -219,7 +259,7 @@
       "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
       "method": "Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.",
       "result_summary": "In {stratum} descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from {whole_prior} to {whole_reordered} verified cells. Query-aware routines verified {routines_prior} and {routines_reordered}. The earlier ranking depended on the scheduler as well as the cap.",
-      "limit": "The {pairs} matched cells reuse the earlier sixteen authored tasks. The read-only audit observed the focal pattern before this pinned rerun. Neither priority rule establishes a representation advantage on unseen families.",
+      "limit": "The {pairs} matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
       "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
       "command": "python3 experiments/nov20_instrument_audit/run_schedulers.py",
       "result": "experiments/nov20_instrument_audit/results/schedulers-2026-11-20.json",
@@ -236,7 +276,7 @@
       "question": "Does independently available receiver status settle outcomes ordinary status cannot?",
       "study": "crossed-receiver",
       "rival": "The earlier benefit reflects access to fresh information. One conventional endpoint with the same access ought to suffice.",
-      "test": "At the same fault and retry budget, serve exact-operation status from two separately operated readers. Compare one reader against both, keeping receiver deduplication crossed.",
+      "test": "At the same fault and retry budget, compare one conventional status endpoint with a workflow that adds a separately operated reader. Give the single-endpoint baseline all evidence it could ordinarily obtain. Cross receiver deduplication with shared and separate upstream failures. Record verified and false closures, wrong and repeated effects, time to resolution and operating cost.",
       "decisions": "Keep a separate read only where it adds verified closures with acceptable cost and no repeated effects. Adopt one channel on parity. Narrow the architecture claim if the extra path makes holds or duplicates worse.",
       "backlog": "research_backlog_records/editorial_depth_sources_2026_11_20.json"
     },
@@ -244,8 +284,8 @@
       "question": "When does a serialized qualification help across a real consumer boundary?",
       "study": "verifier-rollout",
       "rival": "The current equal-memoization replay already matches work and decisions. A transportable record matters only where consumers cannot share one in-process memo and still enforce freshness.",
-      "test": "Run matched second-consumer decisions over a process boundary. Inject a late or missed invalidation and charge the full work of observation, serialization, exchange and recovery.",
-      "decisions": "Keep ordinary memoization when it meets the contract. Admit a handoff only for a consumer with a measured benefit that survives expiry and missed notifications. Hold if either route serves ineligible evidence.",
+      "test": "The local process check gave both arms the same revision authority and pipe traffic. Next compare independently operated consumers with the same freshness bound. Vary delayed notification, no response, successful stale responses, and an update concurrent with use. Charge for freshness, evidence access, encoding, exchange, and recovery.",
+      "decisions": "Keep ordinary memoization when it meets the contract. Admit a handoff only for a consumer with a measured benefit under the same stale-read and expiry conditions. Hold when freshness or regression evidence cannot be verified.",
       "backlog": "research_backlog_records/chapter_decisions_2026_11_19.json"
     },
     {

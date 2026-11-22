@@ -4,7 +4,7 @@ chapter_id: "living-book-methodology"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "benchmaxxing"
   - "viea"
@@ -104,7 +104,14 @@ The audience split makes this stricter, not looser. AI assistants need structure
 
 ### Worked structural edit: insert a chapter without renaming its neighbors
 
-A new chapter is inserted between display positions 20 and 21. The manifest compiler assigns contiguous display ordinals, but the stable IDs and file identities of every existing chapter remain unchanged. Cross-references, evidence packets, videos, and citations continue to address those IDs rather than old ordinal numbers. A thin summary containing only the new manifest digest and chapter count cannot decide whether all required editorial, render, rights, and release gates passed.
+A new chapter is inserted between display positions 20 and 21. The manifest
+compiler assigns contiguous display ordinals and preserves existing chapter
+IDs and file identities on insertion. References stay valid where paths and
+anchors are preserved. Renames and heading edits require their own link
+checks and redirects where applicable. Compare a manifest insert with a
+manual Quarto edit under the same published paths and link checks. Check
+incoming links and whether unrelated pages changed, then record editor
+effort and review findings separately from the build outcome.
 
 The local change-packet harness checks three valid and six invalid packets, a middle insertion, five trace splits, nine reachable states through 162 transitions, and five terminal states through 90 absorbing transitions. It rejects fifteen semantic mutations. These repository-process checks establish deterministic structure and custody for the authored workflow; they do not establish source interpretation, prose quality, accessibility, public availability, reader approval, or chapter truth.
 

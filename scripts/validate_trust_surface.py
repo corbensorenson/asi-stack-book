@@ -264,23 +264,19 @@ def main() -> None:
     publication = read_text(PUBLICATION)
     non_core_ledger = read_text(NON_CORE_LEDGER)
 
-    for name, text in {
-        "README.md": readme,
-        "index.qmd": index,
-    }.items():
-        assert_surface(
-            errors,
-            name=name,
-            text=text,
-            chapters=chapters,
-            sources=sources,
-            high=high,
-            medium=medium,
-            long_paragraphs=long_paragraphs,
-            active_overlays=active_overlays,
-            dispositions=dispositions,
-            no_promotion_decisions=no_promotion_decisions,
-        )
+    assert_surface(
+        errors,
+        name="README.md",
+        text=readme,
+        chapters=chapters,
+        sources=sources,
+        high=high,
+        medium=medium,
+        long_paragraphs=long_paragraphs,
+        active_overlays=active_overlays,
+        dispositions=dispositions,
+        no_promotion_decisions=no_promotion_decisions,
+    )
 
     readme_current_needles = [
         f"canonical current book is the live **{chapters}-chapter** site",
@@ -293,12 +289,18 @@ def main() -> None:
 
     normalized_index = re.sub(r"\s+", " ", index)
     for needle in (
-        f"canonical current **{chapters}-chapter** book",
         f"contain all {chapters} manifest chapters",
-        f"{len(EXPECTED_NON_CORE)} narrow non-core evidence transitions accepted",
+        "The chapter theses are design arguments.",
+        "docs/publication_readiness.md",
+        "status/canonical-public-status.json",
+        "versions/index.json",
+        "appendices/C_claim_evidence_matrix.qmd",
     ):
         if needle not in normalized_index:
             errors.append(f"index.qmd missing current reader/publication truth: {needle}")
+    for phrase in FORBIDDEN_OVERCLAIMS:
+        if phrase.lower() in normalized_index.lower():
+            errors.append(f"index.qmd contains an overclaim phrase: {phrase}")
 
     # Independent-reader coverage comes from its owner, not the superseded
     # generated all-chapter manuscript's descriptive sentence.

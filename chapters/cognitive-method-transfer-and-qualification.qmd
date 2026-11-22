@@ -4,7 +4,7 @@ chapter_id: "cognitive-method-transfer-and-qualification"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "integrated_argument_chapter"
-last_updated: "2026-10-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "compiling_civilization_cmtq"
 evidence_level: "argument"
@@ -214,6 +214,16 @@ Selection is a metareasoning problem: expected benefit must exceed resource cost
 
 The router itself needs qualification, calibration, abstention, fallback, and audit. A valid method invoked on the wrong task is still a system failure.
 
+The [forward-transfer study](../products/evidence-registry/study-forward-transfer.html)
+shows how the evaluation can depend on search. With descriptive queries and
+a fixed proposal cap, whole-program retrieval verified 28 of 64 cells and
+extracted routines verified 20. Prioritizing expanded length reduced the
+whole-program count to 8 and left routines at 20. The cells repeat conditions
+over sixteen authored five-bit synthesis tasks. Both representations should
+remain in the comparison. To qualify transfer of a human method, test its
+mechanism and usefulness on new tasks against an ordinary structured procedure
+with the same evaluator and total work budget.
+
 ### Translating representative methods
 
 The framework changes familiar translations:
@@ -273,7 +283,7 @@ CMTQ is weakened if prose possession matches compiled fidelity, effects transfer
 
 An agent is asked whether a hospital alarm improved outcomes. Retrieval finds a respected paper describing causal adjustment, and the agent produces a fluent answer that treats the observed post-treatment outcome as the untreated baseline. The method was present in the context, but its assumptions, required variables, diagnostic checks, and stop conditions never became executable obligations.
 
-Under CMTQ, the paper first becomes a Cognitive Technology Record that preserves provenance, purpose, prerequisites, invariants, failure modes, and unresolved translation choices. A compiler then emits a Qualified Cognitive Protocol whose preflight rejects the task if treatment assignment, intervention timing, target regime, or overlap diagnostics are missing. The protocol may improve procedural custody, but qualification, assurance, and authority remain separate: a well-formed protocol is not evidence that the causal method is correct, that its assumptions hold, or that the agent may make a clinical decision.
+Under CMTQ, the paper first becomes a Cognitive Technology Record that preserves provenance, purpose, prerequisites, invariants, failure modes, and unresolved translation choices. Compilation emits a candidate protocol with a preflight check for treatment assignment, intervention timing, target regime, and overlap diagnostics. Scope-specific evaluation is needed before qualification. Even then, passing preflight supplies only the declared inputs and checks. Whether the assumptions hold and who has authority to act remain separate decisions.
 
 ### Worked trace: from method claim to qualified protocol
 

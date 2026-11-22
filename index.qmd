@@ -4,91 +4,57 @@ The ASI Stack is Corben Sorenson's living technical book on governed AI
 systems. It asks when ordinary change control is enough and what extra
 controls earn their cost.
 
+## Choose the product you need
+
+:::: {.living-dashboard #book-start}
+::: {.book-route}
+**[Read the book](reader/index.html)**
+
+Follow the 26-unit Human Reader. The [first sitting](reader/quickstart.html#first-sitting)
+starts with one approval decision and its replay.
+:::
+
+::: {.book-route}
+**[Inspect a result](products/evidence-registry/study-crossed-receiver.html#current-decision)**
+
+In a 288-case local replay, two designs with a second status source each
+verified 80 closures. Primary-only status verified 48. See what each design
+cost and where the result applies.
+:::
+
+::: {.book-route}
+**[Find a technical contract](products/architecture-reference/index.html)**
+
+Find the chapter that owns an interface, invariant, or failure
+boundary. Follow its sources, proofs, and tests.
+:::
+::::
+
 ### What the current comparisons found {#when-a-request-times-out-after-it-takes-effect}
 
-These studies compare ordinary controls with additional observation or
-qualification. The study pages link the exact result, evidence limits,
-and replay.
+The study links lead to the current decision, its evidence limits, and
+the commands and records for inspecting the result.
 
 {{< include assets/research-studies.qmd >}}
 
-[Read the original 16-pair receiver comparison](reader/quickstart.html#fresh-effect-comparison) · [Read the book](reader/index.html)
-
-## Choose the product you need
-
-| Product | Best for | Start here |
-|---|---|---|
-| Narrative book | An independently authored 26-unit Human Reader with routes to all 89 technical owners; editorial review remains open. | [Read the Human Reader](reader/index.html) |
-| Architecture reference | Interfaces, invariants, failure routes, protocols, tests, proofs, and implementation horizons across all 89 working-manifest chapters. | [Open the architecture index](products/architecture-reference/index.html) |
-| Evidence registry | Current commit/count state, claim support, sources, tests, proofs, releases, and residuals. | [Open the evidence registry](products/evidence-registry/index.html) or [inspect the claim matrix](appendices/C_claim_evidence_matrix.qmd) |
-| Knowledge graph | Follow a concept from its reader explanation to technical claims, sources, and study results. | [Explore the knowledge graph](products/evidence-registry/knowledge-graph/index.html) |
-| Paper and synthesis library | Corben's exact source manuscripts plus clearly labeled compact syntheses, with provenance and evidence roles kept separate. | [Read the papers and their chapter lineage](papers/index.html) |
-
 ## Read the current book
 
-This live site is the canonical current **89-chapter** book. Use
-[Human Reader](reader/index.html) for the narrative, [Human view](index.html?view=human) for technical prose with scaffolding hidden, or the
-[89-chapter architecture index](products/architecture-reference/index.html)
-for direct technical lookup. The independent narrative has 26 units and 89 owner routes. HTML availability
-does not approve EPUB, PDF or audio derivatives. Older downloadable
-artifacts remain in the GitHub release archive, but they are not the complete
-current book and therefore are not presented here as the current edition.
-
-All three products derive from one canonical source tree; their density, navigation, artifact, and review boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md), with executable projection details in [`docs/product_projection_artifacts.md`](docs/product_projection_artifacts.md). The [`Post-v2.3 Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md) is complete with an exact [`terminal no-public-release record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json). The [`Post-v2.3 Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md) is the sole active successor, with machine authority in [`roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json), an [`N0–N5 claim-bearing experiment standard`](docs/claim_bearing_experiment_competence_standard.md), and a [`complete accepted-transition identity crosswalk`](docs/claim_identity_graph_reconciliation.md). All 115 accepted transitions now resolve through 25 exact atom, 61 bounded subclaim, and 29 proxy relations with zero indirect parent support movement. The competence contract prevents weak implementations, invalid instruments, bad proxies, and underpowered tests from becoming negative evidence about an architecture. The live working tree has 89/89 chapter-core claims at `argument`, zero chapter-core promotions, zero external reproductions, and no SOTA support; the local X synopsis source is current, but its older unpublished platform draft is stale and must be refreshed before publication. `v2.3.0` remains the latest immutable public living-book release. <!-- canonical-status:historical -->
-
-![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}
-
-## Current status
-
-<!-- canonical-status:generated-begin -->
-_Current canonical metrics (generated from machine records): **89 manifest chapters; 594 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
-<!-- canonical-status:generated-end -->
-
-::: {.living-dashboard}
-<div>
-<strong>Book state</strong>
-<span>v2.3.0 is the latest completed immutable HTML release</span>
-</div>
-<div>
-<strong>Sources</strong>
-<span>594 public-safe records; 89/89 chapters externally positioned</span>
-</div>
-<div>
-<strong>Claims</strong>
-<span>89 chapter core claims remain argument-level</span>
-</div>
-<div>
-<strong>Tests</strong>
-<span>25 narrow non-core evidence transitions accepted; no chapter-core promotion</span>
-</div>
-:::
-
-<!-- BEGIN MANAGED VISUAL PREVIEW ROSTER -->
-## Visual edition preview
-
-No visual abstracts are currently linked from the living book. The first-generation 1–12 predecessors were withdrawn from the current projection and preserved as historical custody while generation-two replacements are reviewed. Chapters 13–18 have no YouTube object yet; generation-two 19–24 are unlisted candidates, not current embeds.
-
-::: {.asi-visual-preview-roster}
-:::
-<!-- END MANAGED VISUAL PREVIEW ROSTER -->
-
-## 60-Second Trust Surface
-
-**What this is.** This is a public living-book research program for governed advanced-AI systems, with ASI used as the extreme stress case. It develops three proposed contributions: **governed-cognition interface contracts**, **public claim-state transition discipline**, and **record/reality reconciliation with residual honesty**. The 89 chapters supply responsibilities supporting those targets. The [contribution summary](docs/three_defended_contributions.md) separates architectural composition, public evidence process, and bounded implementation results; the [conventional alternatives](docs/defended_contribution_prior_art_positioning.md) state what each proposal would have to add. Selection is not proof of novelty or chapter-core support.
-
-**What this is not.** This is not a validated ASI implementation, not a deployed safety system, not a benchmark-proven architecture, and not a claim that the chapter theses are already externally proven.
-
-**Auditable current state.** The inventory has 594 public-safe records; 89/89 chapters are externally positioned with 0 explicit external-baseline exceptions. All 89 chapter core claims remain at `argument`; [`the core-claim disposition ledger`](docs/core_claim_disposition_ledger.md) records 89 per-chapter core-claim dispositions, 22 accepted no-change transition dispositions, 67 accepted no-promotion dispositions, and 0 promoted core claims. The 25 accepted non-core upward evidence transitions are recorded in [`the non-core evidence ledger`](docs/non_core_evidence_ledger.md), alongside 61 accepted `blocks_promotion` decisions and three historical `refuted` labels. The competence audit classifies all 90 accepted negative/no-change records as 1 N0, 15 N1, 74 N2, and 0 N3–N5, so no exact, broad, parent, or chapter-core refutation currently follows.
-
-**Boundaries readers should keep in view.** Appendix C is the claim/support-state ledger. [Appendix G](appendices/G_corben_source_corpus.qmd) separates Corben-authored, Corben-supplied, and local-project sources from [Appendix H](appendices/H_external_sources.qmd), which holds external literature; external positioning is not exhaustive literature synthesis. The [paper library](papers/index.html) makes 60 digest-bound entries—54 source manuscripts and six clearly labeled derived syntheses—readable in the live book and shows which chapters they informed. Those pages preserve intellectual lineage; they do not make a historical paper's claims current, correct, reproduced, novel, or evidence-promoted. [`Novelty positioning`](docs/contribution_novelty_ledger.md) is not proof of novelty. Human view is a convenience projection, not a reviewed reader-release manuscript; its current heuristic queue is in [`the reader continuity audit`](docs/reader_continuity_audit.md). By author decision, no external-human review or outreach is a prepublication gate; the preserved specialist packets may be used only after completion, and no independent review is claimed in [`the review ledger`](docs/external_review_status.md).
-
-**Fast audit path.** Start with the machine-readable [`canonical public status`](status/canonical-public-status.json), the active [`Evidence Competence, Transfer, and Publication Roadmap`](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md), its [`experiment-competence standard`](docs/claim_bearing_experiment_competence_standard.md), and its machine [`status`](roadmap_records/post_v2_3_maintenance_transfer_and_publication_status.json); then the completed [`Claim Proof, Causal Validation, and SOTA-Challenge Roadmap`](docs/post_v2_3_claim_proof_and_sota_challenge_roadmap.md), its machine [`status`](roadmap_records/post_v2_3_claim_proof_and_sota_challenge_status.json), and [`terminal record`](release_records/2026-07-16-post-v2-3-claim-proof-sota-roadmap-complete-no-public-release.json); then the [`v2.3.0 completion declaration`](docs/v2_3_completion_declaration.md), exact [`release record`](release_records/2026-07-13-v2.3.0-qcsa-e2766116.json), historical [`v1.x roadmap`](docs/v1_x_beyond_sota_roadmap.md), [`v1.0 candidate status`](docs/v1_0_candidate_status.md), claim ledgers, and Appendices C, G, and H. All 89 chapter-core claims remain at `argument`. CI rejects contradictory counts, release or roadmap identity drift, manifest/rendered navigation drift, duplicate chapter links or titles, missing chapter pages, and multiple-H1 chapter pages. <!-- canonical-status:historical -->
+[Explore the knowledge graph](products/evidence-registry/knowledge-graph/index.html)
+to follow a concept into claims, sources, and study runs.
+[Read the original papers and syntheses](papers/index.html) for the author’s
+source material and its chapter links.
+[Switch to Condensed view](index.html?view=human) for the technical prose.
 
 ## Core thesis
 
-Efficient ASI should not be treated as one giant opaque model. It should be treated as a governed cognitive stack: alignment, governance, planning, memory, reasoning, execution, routing, compression, evidence, and recursive self-improvement cooperating through typed boundaries, verification, artifact memory, and bounded authority.
+A governed AI system should preserve authority, verification, effect
+observation, and recovery across consequential handoffs. A single application
+can enforce many of these boundaries. An additional component earns its place
+when it improves those outcomes enough to justify the coordination, latency,
+and failure modes it adds. Compare against the simplest workflow that already
+meets the same requirements. [Read the thesis chapter](chapters/asi-is-a-stack-not-a-model.qmd).
 
-The central design move is simple: never let intelligence, authority, memory, evidence, and execution collapse into one undifferentiated loop. A capable system can generate, plan, retrieve, reason, route, and act; a governed system also records which layer had permission to do each thing, which artifact carried the decision, which evidence justified it, and which rollback path remains available.
+![Layered conceptual architecture for the ASI Stack](assets/images/asi-stack-hero.png){#fig-asi-stack-hero fig-alt="A light technical illustration of a layered transparent systems stack with routing nodes, ledgers, and controlled feedback loops."}
 
 ## Architecture at a glance
 
@@ -208,7 +174,7 @@ the immutable historical baseline for its 60-chapter editorial pass.
 
 The shortest path through the book is:
 
-1. **Why a stack:** ASI must be decomposed into governed layers before it can be made efficient, testable, or corrigible.
+1. **Why a stack:** what separate responsibilities contribute when a system acts under limited authority and evidence.
 2. **How work moves:** human intent becomes command contracts, plans, context packets, claims, jobs, artifacts, and evidence records.
 3. **How capability grows:** routing, compression, procedural memory, benchmarks, and stable capability fields let the system improve without erasing its safety boundary.
 4. **How the book stays alive:** claims, proofs, schemas, tests, source notes, and public renders form the book's own evidence ratchet.
@@ -236,3 +202,28 @@ surfaces and contain all 89 manifest chapters. Versioned tags and GitHub
 Releases are immutable historical snapshots for exact citation and
 reproduction; they do not override the current chapter count, order, source
 inventory, or claim state.
+
+## Current status
+
+<!-- canonical-status:generated-begin -->
+_Current canonical metrics (generated from machine records): **89 manifest chapters; 594 public-safe records; 89 chapter-core claims; 89/89 chapters externally positioned; 0 promoted core claims; 115/115 accepted transitions identity-resolved (25 direct, 61 subclaim, 29 proxy; 0 parent movements).**_
+<!-- canonical-status:generated-end -->
+
+## Status and evidence {#60-second-trust-surface}
+
+The chapter theses are design arguments. The Evidence Registry links
+the bounded results and open questions that bear on them.
+
+- [Evidence Registry](products/evidence-registry/index.html) and [claim matrix](appendices/C_claim_evidence_matrix.qmd)
+- [Publication readiness](docs/publication_readiness.md) and [current roadmap](docs/post_v2_3_maintenance_transfer_and_publication_roadmap.md)
+- [Canonical public status](status/canonical-public-status.json) and [version channels](versions/index.json)
+- [Product contracts](docs/product_contracts.md)
+
+<!-- BEGIN MANAGED VISUAL PREVIEW ROSTER -->
+## Visual edition preview
+
+No visual abstracts are currently linked from the living book. The first-generation 1–12 predecessors were withdrawn from the current projection and preserved as historical custody while generation-two replacements are reviewed. Chapters 13–18 have no YouTube object yet; generation-two 19–24 are unlisted candidates, not current embeds.
+
+::: {.asi-visual-preview-roster}
+:::
+<!-- END MANAGED VISUAL PREVIEW ROSTER -->

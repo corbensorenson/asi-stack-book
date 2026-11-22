@@ -264,8 +264,10 @@ the same process that wrote the adapter.
 A useful oversight record exposes those dependencies. It names what each role
 could observe, what it could not observe, which incentives and tools it shared,
 and what outcome could later reveal whether the review was right. The protocol
-is compared with a competent simpler baseline, such as one informed human
-reviewing the complete frozen report without model advocacy.
+is compared with a simpler workflow using the complete frozen report. Give
+that reviewer a coverage check against the declared manifest. If a model
+critic finds the same omission, the comparison has to show what it adds
+after the coverage check.
 
 The protocol can then earn a narrow result. Perhaps the critic notices that
 the passing example used a source category excluded from the book's actual
@@ -339,9 +341,9 @@ conflicts, and whether a stop would have changed the system's behavior.
 
 ### Two reviewers can inherit one mistake {#shared-dashboard-control}
 
-In a verifier review control, two people read copies of a dashboard that
-omits the field they are checking. Both say the draft can pass. The receipts
-identify two people and one observation path. Hold the decision. A direct
+In a synthetic verifier control, two reviewer records report clearance from
+copies of a dashboard that omits the field under review. The receipts identify
+two reviewers and one observation path. Hold the decision. A direct
 check of a separate fixture artifact finds the omitted field and disputes the
 dashboard. A separate-source positive control can proceed once the checks
 agree. The replay tests declared paths and fixture observations. [Verifier controls](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache)

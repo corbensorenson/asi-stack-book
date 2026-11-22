@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "scf"
   - "viea"
@@ -43,7 +43,11 @@ open_evidence_gaps:
 
 ## Drafting guardrail
 
-Stable Capability Fields are proposed governed substitution boundaries. The current repository establishes only schema discipline, synthetic record and transition rejection, and finite formal consequences. It does not establish that two real implementations mean the same thing, compose safely, preserve authority, or can be rolled back after consequential use.
+Stable Capability Fields specify what a replacement must preserve for a
+particular consumer. The repository checks selected record and transition
+rules, proves consequences of the formal model, and exercises a small
+trained verifier on authored cases. Replacement behavior on live workloads,
+including recovery from consequential effects, remains an empirical question.
 
 It follows governance rights because rights cannot survive implementation churn unless the capability boundary has a stable identity, stable authority ceiling, and explicit replacement policy.
 
@@ -52,17 +56,13 @@ This is the stack's first explicit memory system for capability identity. Before
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** A mutable registry flag marks the new implementation default after tests pass. The field instead grants only a scoped canary lease because the runtime replay, evaluator independence, and default-route obligations remain unresolved.
-
-Governance rights ask what must survive institutional change across long time horizons. Stable Capability Fields ask what must survive technical change. If a capability is replaced, the surrounding system needs to know what identity, authority, evidence, and rollback obligations stayed stable. A capability name is a promise only if the boundary behind the name is conserved.
-
-This is the bridge from governance into recursive improvement. The stack can allow better implementations only if "better" does not mean the capability silently changed its job, widened its authority, or lost its audit history. The human version is simple: upgrades should improve the machinery without moving the terms of trust.
-
-Continuity is the promise that lets replacement become progress rather than disguise.
-
-The field is stable only if reviewers can see what remained the same. Stable identity is what lets improvement happen without losing the promises users relied on.
-
-That continuity turns replacement into a reversible qualification problem: reviewers need the field identity, evidence history, and rollback obligations before a new implementation can inherit public trust.
+A team updates a text verifier that routes drafts to ordinary review or a
+specialist. The candidate improves from 9 to 11 correct on twelve public-copy
+cases. Both versions still miss a required specialist referral. For that
+scope, the candidate and the fallback fail the same requirement. Route to
+a specialist and keep the failed case in the next comparison. The requirement
+belongs to the consumer and survives another model upgrade. [Paired cases in
+Unit 9](https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-09-stable-capability-fields-and-governed-replacement.html#verifier-replacement-paired-cases).
 :::
 
 ## Problem
@@ -77,7 +77,14 @@ This distinction matters for governance rights as well as engineering. If a succ
 
 ## Why existing approaches are insufficient
 
-Plugin APIs and model registries identify things that can be invoked, but do not establish equivalence. Semantic Versioning can signal public-interface changes without detecting changed failure behavior or authority. Capability-security references discipline authority-bearing access without defining semantic capability identity. SLSA-style provenance can establish where an artifact came from without showing that it satisfies its field. Benchmark leaderboards compare selected outcomes without owning historical incidents, evaluator independence, downstream reliance, or recovery. Canaries and rollback runbooks may limit exposure while leaving durable state and side effects untouched.
+A deployment team can already combine a registry, compatibility tests,
+provenance, canary criteria, and a recovery runbook. Use that combined
+workflow as the baseline for an explicit substitution contract. Put the same
+requirements, traffic and failure conditions in both arms. Then test whether
+binding those checks to one versioned decision helps the downstream consumer
+detect stale or inconsistent evidence, or recover with less work. If both
+workflows preserve the same obligations at the same cost, the comparison
+gives no reason to add a new interface.
 
 The missing predicate is stronger than “new passes its tests”: does this exact candidate, dependency graph, environment, evaluator, consumer, use, and epoch refine every required observable and authority obligation of the field, preserve its regressions and incident memory, remain inside the granted ceiling, migrate state without prohibited loss, compose with its neighbors, and retain a recovery path for the effects it can create? A negative or unknown answer routes the candidate away from default use.
 
@@ -468,6 +475,34 @@ Causal ablations remove identity binding, authority checks, leases, evaluator se
 This program is beyond the current evidence. It does not establish that SCFs are novel, outperform conventional replacement, preserve real capability identity, or make recursive improvement safe.
 
 ## Codex test plan
+
+The rollout decision depends on the integrity of its test packet. In the
+[equal-cache replay](../products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache),
+indexing regressions by case ID let a later row erase a failed must-pass
+observation. A prediction could also pass when the row supplied a substituted
+reference label. Bind the case IDs, expected labels and required checks to a
+reference owned by the evaluator. Require complete, unique results for both
+versions before applying the absolute floor or the relative comparison.
+The [separate intake check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/check_verifier_regression_intake.py)
+exercises that rule on the synthetic fixture. The archived cache replay
+assumes successful lookups return the current revision. A
+[separate revision check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md)
+supplies the current revision to each request and then varies what the index
+returns. Across 30 paired checkpoints, both workflows send eight decisions
+to a specialist when evidence is stale, absent, or lacks a trusted revision.
+Both read 50 evidence documents. The serialized arm writes 1,150 handoff
+bytes. The current revision is an input to the fixture. A deployed system
+still needs a source that can establish freshness across process boundaries.
+
+In a [local process comparison](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md),
+a separate process owns the scoped revision pointer and answers each request.
+Both workflows match the expected route at 38 checkpoints, including two
+specialist decisions after the fallback expires. Each reads 70 evidence
+documents and exchanges 164 pipe messages carrying 16,816 payload bytes.
+The retained arm encodes 1,616 bytes into its local cache. The processes
+share an owner. The controller orders revocation between decisions, so the
+comparison leaves concurrent authorization and effects, network delivery,
+and independent operation open.
 
 | Test | Purpose | Status |
 |---|---|---|

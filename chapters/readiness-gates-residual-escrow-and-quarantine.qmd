@@ -4,7 +4,7 @@ chapter_id: "readiness-gates-residual-escrow-and-quarantine"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "rmi"
   - "rgs"
@@ -97,13 +97,24 @@ The missing primitive is a transition record. A lifecycle move should say what c
 
 **Reader claim.** Readiness is an expiring permission for one target and use, not a permanent badge attached to a model name.
 
-**Operational rule.** Bind every lease to exact version, consumer, workload, authority, gates, regression floors, residuals, allowed routes, monitoring, fallback, rollback, and expiry. Any target change or stale gate blocks ordinary use until rerun; quarantine always carries a working fallback and residual owner.
+**Operational rule.** Bind every lease to exact version, consumer, workload,
+authority, gates, regression floors, residuals, allowed routes, monitoring,
+fallback, rollback, and expiry. A stale gate blocks ordinary use. Quarantine
+requires a residual owner and a decision about available fallback. Hold or
+send the case to a qualified specialist if no fallback is eligible.
 
 ### Worked stale gate: the model changed after qualification
 
 Model version `v7` passes its required gates for a read-only coding workload and receives a bounded ordinary-use lease. A tokenizer patch produces version `v7.1` without changing the marketing name. The prior functional score still looks relevant, but the target identity and some downstream artifacts changed. Reusing the old lease would detach evidence from the executable target, so `v7.1` enters diagnostic-only quarantine until affected gates and regression floors rerun.
 
-The fallback returns traffic to `v7`; the residual escrow names the tokenizer change, dependent caches, unrerun checks, and owners. If `v7.1` later qualifies, it receives a new expiring lease rather than inheriting the old badge. The finite lifecycle rejects stale-gate reuse, ordinary routing from quarantine, missing regression floors, unsupported supersession, and retirement without receipts. These checks preserve readiness state; they do not establish gate adequacy, evaluator independence, natural-workload safety, monitoring efficacy, or deployment merit.
+Traffic can return to `v7` if its lease is current and it still meets the
+applicable floor. A regression shared by both versions can disqualify both.
+The residual record names the tokenizer change, dependent caches, unrerun
+checks, and owners. If `v7.1` later qualifies, it receives a new expiring lease.
+The finite lifecycle rejects stale-gate reuse, ordinary routing from
+quarantine, missing regression floors, unsupported supersession, and
+retirement without receipts. Operational qualification needs evidence that
+the gates detect material failures on the intended workload.
 
 The claim remains at `argument` support. The assigned sources support the design vocabulary of benchmark lifecycle, residual escrow, lifecycle state, readiness gates, and route validity, but no particular module is claimed to currently pass those gates.
 

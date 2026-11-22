@@ -4,7 +4,7 @@ chapter_id: "claim-ledgers-and-belief-revision"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.4 manuscript draft"
-last_updated: "2026-07-31"
+last_updated: "2026-11-20"
 primary_sources:
   - "spinoza"
   - "viea"
@@ -72,7 +72,9 @@ achievement is reconstructable belief-state continuity under declared owners.
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** Version control is the strongest simpler baseline and may be enough for a small manual system, but it records changed bytes rather than fallible semantic identity, dependency closure, or stale downstream authority.
+**Concrete lens.** An editor can already version the policy and track its
+published copies. The ledger needs to improve that work when paraphrases,
+dependent statements, or stale uses are easy to miss.
 
 Once verification adequacy is visible, claims need a durable revision home. Important statements become ledgered objects that can be supported, challenged, downgraded, split, merged, promoted, or retired without losing their identity.
 
@@ -105,16 +107,15 @@ unreconciled downstream surface that can continue to authorize the old action.
 |---|---|---|
 | `L0 candidate` | Register the exact proposition, scope, source, and surface refs. | Registration is not truth or support. |
 | `L1 challenge` | Attach the policy-18 source and a scope-difference attack. | Provenance does not validate the source. |
-| `L2 downgrade` | Evidence owner accepts a support transition; the old claim is downgraded. | The ledger records the transition but cannot authorize it itself. |
+| `L2 supersession` | The new policy replaces the old rule for the affected class. | The older claim can remain supported as a description of policy 17. |
 | `L3 propagation` | Mark the briefing and prompt as stale and block release until reconciled. | Surface repair is not semantic equivalence. |
 | `L4 closure` | Publish the new bounded claim and retain the rejected proposal. | The current view is reproducible from append-only events. |
 
-The simpler baseline is version control over the playbook. Version control is
-useful and may be sufficient for a small, manually audited system; it records
-changed bytes but does not, by itself, identify that two differently worded
-sentences refer to the same claim or that a downstream surface still carries
-the old scope. The ledger earns its extra machinery only when that semantic
-and propagation burden is real and measured.
+Compare with version control, a map of published copies, and an editor who
+owns follow-up. Give both workflows the same policy versions and readers.
+Measure missed stale statements, mistaken changes to historical statements,
+and review effort. Preserve whether the policy changed or whether the original
+statement misdescribed policy 17. Those events require different corrections.
 
 A claim can be repeated, paraphrased, narrowed, challenged, contradicted,
 split, merged, downgraded, superseded, or published across many surfaces

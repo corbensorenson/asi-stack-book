@@ -4,7 +4,7 @@ chapter_id: "coil-attention-cyclic-memory-and-recurrence-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "coil_attention_memory"
   - "circle_ai_contract_suite"
@@ -104,6 +104,11 @@ External positioning: Coil Attention now has source-noted recurrence and long-co
 Consider a long-context request whose live memory has wrapped around a finite ring. The requested token maps to residue slot `7`, but events at logical addresses `7`, `15`, `23`, and `31` all share that residue. A residue-only lookup returns fluent text from the wrong winding. The contract therefore binds the winding and request version before reuse; after stale detection, every suffix is barred from being relabeled fresh and is sent through the declared fallback.
 
 The local finite model makes this boundary inspectable. It contains 40 reachable states and 320 checked transitions, including 24 stale-suffix states and 192 containment transitions. Three mismatch paths reach fallback, while 11 lifecycle mutations and 17 semantic mutations reject attempts to hide aliasing, omit exit or budget state, promote structural coverage to retrieval quality, or admit a stale read as fresh. These are authored finite-state checks, not a long-context quality result. They show why a cache entry needs custody metadata even when its content looks plausible.
+
+An ordinary generation-tagged ring cache can also reject stale reads. Give
+both implementations the same exact request and version keys, capacity, and
+wraparound and invalidation workload. Compare wrong and refused reads,
+fallback work, and delivery latency under the same retrieval criterion.
 
 The distinct owner is structural admission of a named carried state or recurrent
 step. VCM retains semantic object and authority truth; Runtime and Serving retain
@@ -431,7 +436,7 @@ The Circle recurrence slice gives the chapter one concrete loop-schedule receipt
 
 The same receipt records the whole-period shift boundary: `periodic_shift_base_token=7`, `periodic_shift_passes=3`, `periodic_shift_amount=15`, `periodic_shifted_token=22`, `periodic_shift_required_steps_invariant=true`, `periodic_shift_recurrence_budget_invariant=true`, `periodic_shift_training_free_budget_invariant=true`, `periodic_shift_exit_step_invariant=true`, `periodic_shift_overthinking_boundary_invariant=true`, and `periodic_shift_active_at_step_invariant=true`. The strict Circle receipt accepted theorem IDs `AIM-T0026`, `AIM-T0130`, and `AIM-T0159`, recorded `theorem_count=64`, required recommendations `RECURRENCE-USE-ACTIVE-TOKEN-WORK-SCHEDULE` and `RECURRENCE-REUSE-WHOLE-PERIOD-SHIFT`, and recorded contract fingerprint `571edd5dce4f7b64441806de323295218a3e2293b3b540dd4772ba34b9371515`. The Circle CLI test command reported `2 passed in 2.37s`. The ASI-side validator `python3 scripts/validate_circle_recurrence_receipt_slice.py` checks these facts against `docs/circle_recurrence_receipt_slice.md`, the tracked result record, and no-promotion decision `circle_recurrence_receipt_no_change.json`.
 
-This receipt is useful because it makes active token work, scheduled work saving, and whole-period shift reuse inspectable. It does not promote any chapter core claim above `argument`, does not create a support-state transition, and does not prove deployed recurrence behavior, reasoning quality, retrieval quality, learned-memory behavior, convergence, model quality, context length, speed, memory savings, deployment safety, transfer, benchmark performance, or ASI.
+The schedule counts 21 active token steps out of 40. A dense kernel could still evaluate all 40 positions before applying a mask. Compare actual kernel work, wall time, and accepted task results to judge the efficiency of a deployed recurrence controller. The receipt remains structural evidence.
 
 ## Summary
 

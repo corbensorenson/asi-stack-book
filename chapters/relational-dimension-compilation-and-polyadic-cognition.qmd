@@ -4,7 +4,7 @@ chapter_id: "relational-dimension-compilation-and-polyadic-cognition"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "relational_dimension_compiler"
   - "ext_neural_message_passing_2017"
@@ -104,7 +104,14 @@ system may have paid an unbounded search bill upstream.
 
 ### Worked ternary compilation: three roles, one qualified candidate
 
-Take the relation “Alice gives Bob the key if Carol releases the file.” The compiler binds three required role IDs—giver `1`, recipient `2`, and condition-holder `3`—to entities `101`, `102`, and `103`. It tests three candidate representations, IDs `201`, `202`, and `203`, while retaining all three outcomes. Only candidate `202` qualifies; the other two remain visible rather than disappearing from the denominator. Pairwise edges, message passing, sequence, retrieval, tool, reified-node, and ordinary-model rescues receive matched budgets before the higher-order candidate is eligible.
+Take the relation “Alice gives Bob the key if Carol releases the file.” The
+fixture binds three required role IDs to the giver, recipient, and condition
+holder. It supplies three candidate records and authored outcomes. Only
+candidate `202` passes the encoded gate. In a task experiment, give a reified
+event node with labeled edges and the higher-order representation the same
+facts, including the condition. Hold out relation templates and role swaps.
+Measure whether each method answers correctly, and count the memory and
+compute used to encode and query the facts.
 
 The finite review then tracks two descendants of relation `202`: artifact `301` is invalidated and artifact `302` is recompiled. An active descendant blocks contraction, and seven scope changes invalidate the receipt. All 54 admission-axis mutations receive exact repair or refusal dispositions. The exercise proves that typed roles, candidate custody, fallback, and invalidation can be modeled coherently; it does not prove that the ternary representation is irreducible, useful, efficient, or superior on natural tasks.
 

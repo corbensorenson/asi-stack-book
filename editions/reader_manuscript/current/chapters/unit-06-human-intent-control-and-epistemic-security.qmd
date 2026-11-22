@@ -272,7 +272,13 @@ have merely been hidden.
 
 “Use the release we showed the customer.” You can inspect both branches, and one permits a higher limit. If the demo record identifies the build, read it. If both builds were available and the record is silent, ask for the build ID shown on screen. Until the answer distinguishes them, give conditional limits or hold the statement. Getting the build ID also leaves the permission to publish for a separate decision.
 
-DiscoBench used simulated users to test whether a search agent recognized ambiguity and whether its next question elicited a useful clue. Try the same distinction here. “Can you tell me more?” detects a problem. “Which build ID was on screen?” tells the requester exactly what would settle it. The benchmark measured factual search tasks. The interruption cost for this particular customer is a judgment for the team. [DiscoBench](https://arxiv.org/html/2606.27669v2)
+DiscoBench distinguishes noticing ambiguity from asking a question that would
+resolve it. “Can you tell me more?” raises a problem. “Which build ID was on
+screen?” tells the requester what would settle it. The benchmark uses an
+auxiliary model as both simulated user and judge of intermediate steps. To
+test the approach with people, use a separate source to check which build they
+meant, and count interruptions as well as correct resolutions.
+[DiscoBench, Appendix F](https://arxiv.org/html/2606.27669v2)
 
 ## Meaningful Control Is a Resource Condition
 
@@ -329,9 +335,10 @@ illustrative pair of review outcomes makes the cost of that choice visible.
 | Read both explanations and click once | Accept the correct recommendation | Accept the cached recommendation without checking the timestamp |
 | Check the uncertain fact and narrow the action | Leave the change in draft for its separate release decision | Discover the old timestamp and hold publication until the observed build is identified |
 
-A team comparing the interfaces should record accepted correct and
-incorrect recommendations, time to usable action, and how often work
-remains unresolved after the handoff. It can preserve local preparation
+A team comparing the interfaces should record the acceptance rate among
+correct suggestions and among incorrect ones. Count time and unresolved work
+across all assigned episodes, including holds and work sent to another
+reviewer. The team can preserve local preparation
 when publication needs more review. When neither the log nor a qualified
 reviewer is available before the deadline, hold the effect. The cases
 give no measured advantage to either interface.

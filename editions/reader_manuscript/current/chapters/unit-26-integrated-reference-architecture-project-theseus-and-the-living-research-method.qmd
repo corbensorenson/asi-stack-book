@@ -53,7 +53,20 @@ The Git comparison ends at a branch whose contents and history can be read
 back. A worker sending an update to another service may instead receive a
 timeout. The worker can retry safely when the destination deduplicates the
 same operation. An affirmative failure before commit also permits a bounded
-retry. An ambiguous reply from a receiver without deduplication calls for
+retry when it refers to the current receiver state. A new response may carry
+an old failed attempt after a later attempt committed. In the local check,
+retrying on that response produced two commits without deduplication.
+Checking the source revision left the caller waiting with one observed commit.
+[Local projection check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/receiver_projection_freshness_protocol.md)
+
+The next test asks where the check runs. When a conventional endpoint and
+the caller can consult the same fresh second projection, each verifies 80
+closures in 288 paired cases. The gateway reduces calls from the client
+while increasing total status bytes. The change in closure comes from
+access to usable evidence. The cost comparison decides where to put the
+lookup. [Matched access comparison](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability)
+
+An ambiguous reply from a receiver without deduplication calls for
 a hold until another observation identifies the original effect.
 
 In the separate 16-pair scripted series, ordinary scoped change control
@@ -70,7 +83,10 @@ receiving-side read closed 16 further operations over the full 160 pairs,
 each when ordinary status was stale or unavailable and the receiver lacked
 deduplication. When both read paths failed, the extra one closed no
 additional cases. That distinction makes the adoption question concrete:
-look for evidence the ordinary workflow cannot already obtain.
+look for evidence the ordinary workflow cannot already obtain. The designed
+160 pairs give those scenarios chosen frequencies. Estimate savings on a
+service's own request history, counting holds and operator time, before
+using the comparison to justify a rollout.
 [Crossed receiver comparison](../quickstart.qmd#crossed-receiver-comparison)
 
 ## The Reference Path
@@ -415,10 +431,10 @@ accelerator-manifest imports, and a book crosswalk.
 
 Several narrow import claims have moved to `prototype-backed` support. They
 establish that selected records were represented, bounded, and replayed under
-their validators. They do not establish clean live whole-project replay, model
-quality, generation speed, benchmark validity, full accelerator parity,
-production routing, module capability, deployment, self-evolution safety,
-alignment, transfer, AGI, or ASI.
+their validators. The public artifact-retention check validates the imported
+record of a payload match. The archive itself stays private. To test whether
+those bytes can still be recovered, an authorized reviewer needs the archive,
+the original decoding procedure, and the recorded expected digest.
 
 The current formal module contains 11 finite theorem declarations after 43
 summary mirrors and nine targets were retired. The retained declarations guard

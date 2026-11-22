@@ -1,0 +1,17 @@
+{
+  "origin_commit": "1f6c8352c0e8ebcd6e9d7e70d33e9152d0f6fdcb",
+  "files": {
+    "scripts/build_human_reader_current.py": {
+      "path": "experiments/p5_u1_governed_repository_change/standalone_inputs/build_human_reader_current.py.fixture",
+      "sha256": "d97c15cff53e04a1c9cbae430a0a276b502c2ae1e9a06d6a6d564da6e69842e0"
+    },
+    "editions/reader_manuscript/current/_quarto.yml": {
+      "path": "experiments/p5_u1_governed_repository_change/standalone_inputs/_quarto.yml.fixture",
+      "sha256": "d1129c71a7b997f5b300109c6aa2df42f2bad06109e5c85c468fef6eb115dedc"
+    }
+  },
+  "runners": {
+    "scripts/compare_repository_change_workflows.py": "ff1ee3729ec2f2a0f76180bf508caaca534b949b530120dba396203ccc1a91fb",
+    "scripts/run_p5_u1_governed_repository_change.py": "0e6b03ffe876ea368374949b947e6a610deb50100557c4a26cc1ca240e017cc2"
+  }
+}

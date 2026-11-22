@@ -1,6 +1,6 @@
 # Three Defended Contributions
 
-Last updated: 2026-10-11
+Last updated: 2026-11-20
 
 The book remains broad, but the research program now permits exactly three
 program-level defended contributions. The older five-track portfolio remains
@@ -87,6 +87,14 @@ closures. Equal access to fresh status yields equal outcomes. The extra
 closures isolate a particular difference in evidence availability within the
 scripted model. Both observation paths derive from one simulated journal.
 [Crossed protocol](../experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md) · [Raw outcomes](../experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json)
+
+In a separate check, a current response timestamp carries an old failed
+state. The timestamp-only workflow repeats a commit without receiver
+deduplication. The revision-checked workflow holds after finding that the
+source revision differs from the expected one. Both still retry a genuine
+current failure. This fixture supplies the expected source revision. An
+ordinary status endpoint with equally fresh evidence remains the comparator.
+[Projection freshness protocol](../experiments/nov20_instrument_audit/receiver_projection_freshness_protocol.md)
 
 ## Public claim-state transition discipline
 

@@ -106,12 +106,13 @@ prediction route after video pretraining. Useful latent prediction still needs
 the observation, horizon and control qualifications discussed here.
 
 The [October 2026 Platonic-representation paper](https://arxiv.org/abs/2610.39302v1)
-asks when independently trained encoders agree up to a rotation. Its theorem
+asks when separately trained encoders agree up to an orthogonal transformation. Its theorem
 assumes an idealized population setting and an identity predictor; it explicitly
 does not cover learned action-conditioned predictors. Its authors report strong
-alignment from different observations of a scene, while acknowledging that the
-experiments do not exactly satisfy the theorem's hypotheses. This supports a
-training research direction, not a certificate of physical understanding.
+alignment from different observations of a scene. Some captions in the
+larger study were produced by an image-conditioned model, and the experiments
+do not exactly satisfy the theorem's hypotheses. To evaluate a controller,
+test the decisions that depend on the predicted features.
 A camera pose can be nuisance for caption alignment and essential for the gantry.
 The controller still has to preserve what its own task needs. This external
 statistical result is also distinct from Sorenson's *Platonic World Model*
@@ -452,7 +453,9 @@ sampling, measurement, preferences, categories, institutions, and other model
 lineages. Each training channel states which policy regime it identifies. The
 system also protects a grounding reserve: archives, randomized sentinels,
 shadow policies, independent measurements, or other informative channels the
-active lineage cannot freely reshape.
+active lineage cannot freely reshape. A reserve that never observes the
+conditions where two policies disagree will still leave their difference
+unidentified. Keep that limitation attached to the data used for retraining.
 
 Any sentinel, shadow policy, or independent measurement still needs an
 admitted purpose, exposure boundary, and data-use authority. Evidence

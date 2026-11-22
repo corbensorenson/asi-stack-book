@@ -4,7 +4,7 @@ chapter_id: "personal-compute-hives-and-federated-edge-intelligence"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 hardware-profile integration"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "beastbrain"
   - "field_of_god_ai_constitution"
@@ -154,6 +154,13 @@ The scheduler rejects the faster node before optimization because the job is
 authorizes only this local render and explicitly denies rented-node, external-
 network, and private-export permissions. The desktop wins after policy
 filtering, not because the fixture claims it is globally better hardware.
+
+The fifteen minutes is an estimate. Compare the proposed scheduler against
+a conventional local worker that already enforces the same placement policy.
+Time approval, queueing, execution, and any recovery through the observed
+accepted render. If the desktop goes offline, its last estimate supplies no
+evidence of completion, and the work does not become eligible for the rented
+node by default.
 
 The result records two valid synthetic scenarios and rejects eight controls,
 including private data on a rented node, missing high-risk approval, child-

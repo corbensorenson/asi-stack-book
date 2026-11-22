@@ -77,15 +77,19 @@ def main() -> None:
     for phrase in ("one canonical source tree", "uncertainty", "separate states", "no product contract promotes"):
         if phrase not in shared:
             errors.append(f"shared product rules missing {phrase!r}")
-    for path in (README, INDEX):
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        for phrase in (
-            "Choose the product you need",
-            "Narrative book",
-            "Architecture reference",
-            "Evidence registry",
+    source_routes = {
+        README: ("Choose the product you need", "Narrative book", "Architecture reference",
+                 "Evidence registry", "docs/product_contracts.md"),
+        INDEX: (
+            "[Read the book](reader/index.html)",
+            "[Inspect a result](products/evidence-registry/study-crossed-receiver.html#current-decision)",
+            "[Find a technical contract](products/architecture-reference/index.html)",
             "docs/product_contracts.md",
-        ):
+        ),
+    }
+    for path, phrases in source_routes.items():
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        for phrase in phrases:
             if phrase not in text:
                 errors.append(f"{path.relative_to(ROOT)} missing product navigation phrase {phrase!r}")
     doc = DOC.read_text(encoding="utf-8", errors="ignore")

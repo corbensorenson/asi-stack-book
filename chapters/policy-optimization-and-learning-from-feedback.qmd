@@ -4,7 +4,7 @@ chapter_id: "policy-optimization-and-learning-from-feedback"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "learning_compute_topology"
   - "benchmaxxing"
@@ -140,6 +140,13 @@ conflation; they do not prove reward adequacy or policy improvement.
 A router policy is trained to reduce latency. Its scalar reward improves because it learns to skip expensive verification. On the training distribution, requests finish faster and the reward curve is clean. On a frozen target evaluation, however, unsupported releases increase. The update therefore fails even though the optimizer, checkpoint, and reward receipt are all valid. The previous policy remains the default and the reward design is recorded as the primary residual.
 
 The composed local refinement starts from a six-sample, five-candidate lease and follows a seven-stage update lifecycle. It checks 63 routes, rejects 73 route mutations and three cross-stage mutations, and preserves the reward/target distinction through rollback. This makes proxy failure visible but does not establish that the target metric is legitimate, the evaluator is independent, the rollback reverses every effect, or the policy improved causally.
+
+Give an ordinary tuned routing policy the same verifier and operating budget.
+Compare candidate and baseline on the same protected requests. Report
+unsupported releases, valid completions, holds, and latency over all assigned
+requests. Latency among completions alone can improve when the update drops
+the jobs that need review. The local refinement exercises decisions over
+authored records. This comparison would measure an actual policy update.
 
 The claim remains at `argument` support. The assigned ASI Stack sources support benchmark pressure, residual escrow, proof/verification discipline, context adequacy, execution ledgers, routing, resource budgets, and stable capability gates. The external RL literature records source-note method families and failure cautions, but no external-literature-backed support state is claimed yet.
 

@@ -4,7 +4,7 @@ chapter_id: "evidence-states-and-claim-discipline"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-10-11"
+last_updated: "2026-11-20"
 primary_sources:
   - "benchmaxxing"
   - "spinoza"
@@ -145,16 +145,18 @@ The claim remains at `argument` support. Appendix C records claim-level source-n
 | `verification_bandwidth` | The gap between context length and verification workspace supports the rule that source ingestion or context loading is not claim verification. | Contradiction-rate tests and proposed theory remain unrun here. |
 | Six-project local lineage | CCA, MoECOT Manifest, BeastBrain, BugBrain, Corben's Trainer, and Corben's Best Model Possible expose recurring gaps between declared architecture and observed effects: fixed versus updated state, internal versus independent checks, queued versus completed work, ownership versus capability, and reports versus causal receipts. | The projects share authorship and mechanisms, were not reproduced as one controlled workload here, and are not six independent confirmations. They supply design and negative-case lineage only. |
 
-## Draft Key Figure: Evidence State Ladder
+## Draft Key Figure on Claim Review {#draft-key-figure-evidence-state-ladder}
 
 ::: {.asi-key-figure}
-![Draft evidence-state ladder.](../assets/diagrams/evidence-state-ladder.svg){#fig-evidence-state-ladder fig-alt="Draft evidence-state ladder figure separating claim labels from support states and showing transition review, promotion, no change, demotion or refutation, blockers, residuals, non-claims, and public ledger updates."}
+![Draft diagram of claim review and support changes.](../assets/diagrams/evidence-state-ladder.svg){#fig-evidence-state-ladder fig-alt="Claim label and current support are separate. Review maps evidence to an exact claim and can strengthen, retain, narrow or reduce support. The public ledger records the decision and its scope."}
 :::
 
-**How to read the evidence-state figure:** Read the figure as two parallel axes, not as one confidence meter. The claim label says what kind of assertion the book is making, while the support state says what currently backs that assertion. A promotion requires a recorded transition with an exact claim mapping, evidence artifact, command or review reference, scope boundary, blockers, downgrade triggers, and non-claims. Better prose, a nearby source, or a shape-valid fixture can leave the support state unchanged. Adverse evidence enters review for its affected claim and can trigger a hold,
-narrowing, downgrade, refutation, blocker, or residual under the declared policy.
-A failed attempt is not automatically a counterexample or a downward state
-transition. The figure is a draft reader aid, not an accepted evidence transition, external review, proof result, test result, or release approval.
+**How to read the figure.** The label describes the kind of assertion. The
+support state identifies the evidence behind it. A source-derived claim and
+a synthetic-test-backed claim may have the same label and answer different
+questions. The recorded decision depends on the exact claim and scope the
+artifact can test. The KERC result above remains valid evidence about the
+frozen proxy even after the review narrows the refutation.
 
 ## Mechanism
 

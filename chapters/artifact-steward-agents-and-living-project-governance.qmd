@@ -4,7 +4,7 @@ chapter_id: "artifact-steward-agents-and-living-project-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.4 manuscript draft"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "talos"
@@ -156,6 +156,12 @@ or no-promotion fields. These are decision-envelope results, not a running
 steward. The probe moves no money, merges no branch, publishes no release,
 dispatches no worker, and acquires no authority for the agent that computed the
 route.
+
+Compare the steward with ordinary maintainer review that already uses
+repository roles, issue history, and a spending approval queue. Send both
+the same stale and current requests. Observe time to prepare a valid action,
+repeated work after a maintainer handoff, and mistaken approvals or holds.
+Execution outcomes require a separate test with authorized effects.
 
 The `Artifact Steward Charter` binds the steward to a particular artifact. It records mission, non-goals, protected principles, maintainers, governance model, authority ceiling, budget policy, compute policy, source/evidence policy, release policy, contribution policy, federation policy, and sunset criteria. The charter is the steward's constitution. If the charter does not permit an action, the steward cannot infer authority from convenience.
 

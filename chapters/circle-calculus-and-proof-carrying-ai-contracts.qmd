@@ -4,7 +4,7 @@ chapter_id: "circle-calculus-and-proof-carrying-ai-contracts"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "circle_calculus_core"
   - "circle_ai_contract_suite"
@@ -166,10 +166,18 @@ authority requested by the consumer, so proof transport cannot collapse into a
 single green badge. A valid receipt can be enough for a diagnostic and
 insufficient for adoption at the same time.
 
-The simpler baseline is to paste a theorem name into an architecture proposal
-and call the proposal “verified.” The transport envelope instead makes the
-requested downstream claim explicit, checks whether the receipt actually owns
-that claim, and leaves the missing workload evidence as an open residual.
+A direct alternative is a theorem locator pinned to the full source revision
+and toolchain, with a reviewer who inspects the statement and can rebuild it.
+Compare both workflows on the same source change and both consumer requests.
+Measure mistaken acceptance, mistaken rejection, and reviewer time. The
+recorded external Lean build supplies provenance for this receipt. The local
+ASI validator checks consumer use of the pinned record. A replay from the
+exact exported Circle revision also matched the recorded contract and
+fingerprints. A fresh local build with the pinned Lean toolchain resolved
+all seven theorem declarations and found no `sorryAx` dependency in them.
+The declarations bind finite position and margin properties. Measured model
+behavior would require a separate comparison.
+[Circle replay record](https://github.com/corbensorenson/asi-stack-book/blob/main/docs/circle_external_receipt_slice.md#november-20-receipt-replay)
 
 ### Concrete Circle Receipt Boundary
 

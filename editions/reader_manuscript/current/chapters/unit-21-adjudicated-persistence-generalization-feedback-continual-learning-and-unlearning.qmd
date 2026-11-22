@@ -366,6 +366,13 @@ revoke but too unreliable for a safety-critical precondition may be false
 economy. Minimum sufficient persistence minimizes whole-lifecycle loss, not the
 number of artifacts created today.
 
+### Decision exercise · Where should the lesson live? {#decision-exercise-where-should-the-lesson-live}
+
+A failed delivery used an obsolete pickup code. Its replacement expires next
+week. Two unrelated failures suggest the workflow also skips a fresh-code
+check. Decide what to retain about this incident and what might become a
+procedure. Name one fresh test before adopting the procedure.
+
 ## Generalization Is a Prospective Claim
 
 A lesson becomes more consequential when it claims to transfer beyond the
@@ -718,7 +725,11 @@ it is not independent confirmation, proof of zero effect, or permission to
 reopen the closed controller line. Useful scientific memory must preserve
 both the promising observation and the decision it actually justified.
 
-Independent confirmation needs a separately challenged measurement path. Shared training data, retrieval and evaluators can reproduce the discovery team's mistake. Preserve both attempts. Record reviewer labor, including attention spent on abandoned hypotheses, and reopen the conclusion if a material dependency changes.
+Confirmation needs an independent measurement path. Shared data and evaluators
+can reproduce the discovery team's mistake. Keep inconclusive attempts in the
+ledger. Pool measurements only with a shared outcome and a missing-data rule.
+Count review time on abandoned hypotheses and reopen conclusions when a
+material dependency changes.
 
 ### Spend one measurement to separate two laws
 
@@ -862,45 +873,27 @@ local decision loses something another owner needs to verify or undo.
 
 ## What the Current Work Establishes
 
-The central Adjudicated Persistence architecture is presently an argument and
-research program. The repository does not contain a running cross-surface
-adjudicator, qualifier, deoptimizer, or descendant-revocation system. Five proof
-targets and five experimental suites are planned, not implemented or run. The
-chapter therefore does not establish that persistence adjudication improves
-placement, transfer, deletion, recovery, or safety.
+The integrated adjudicator remains a research proposal. The repository
+checks specific parts of the decision with separate instruments:
 
-[Learning Theory](https://corbensorenson.github.io/asi-stack-book/chapters/learning-theory-generalization-and-scaling-science.html)
-checks a six-transition authored forecast lifecycle, finite attempt and
-alternative custody, exact repair dispositions, and a rejecting benchmark
-bridge. Its countermodels expose what summaries cannot determine. These are
-record properties, not natural generalization, transfer, emergence, or scaling.
+- [Learning Theory](https://corbensorenson.github.io/asi-stack-book/chapters/learning-theory-generalization-and-scaling-science.html)
+  checks a six-transition forecast lifecycle and retains competing explanations.
+  Its countermodels show which conclusions a summary leaves open.
+- [Policy Optimization](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html)
+  checks six synthetic samples and five candidates. It preserves a scoped
+  lease, holdouts, and dry-run rollback as separate records.
+- [Data Engines](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html)
+  checks local restoration over a declared inventory. Deletion, forgetting,
+  influence removal, privacy, rights compliance, and external erasure each
+  need dedicated evidence.
+- [Scientific Discovery](https://corbensorenson.github.io/asi-stack-book/chapters/scientific-discovery-and-experimental-governance.html)
+  checks an eight-transition research lifecycle and keeps exploratory attempts
+  and confirmatory tests distinguishable.
 
-[Policy Optimization](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html)
-checks a synthetic six-sample, five-candidate lease and finite lifecycle routes.
-Its router-policy fixture distinguishes reward from target, retains holdouts
-and contamination controls, and exercises dry-run rollback. No optimizer,
-model, natural preference dataset, live canary, causal improvement, or rollback
-efficacy was tested. Its support effect is none.
-
-[Data Engines](https://corbensorenson.github.io/asi-stack-book/chapters/data-engines-continual-learning-and-unlearning.html)
-checks an authored composed lifecycle and a full-state bridge separating
-checkpoint authority, local restoration, and unlearning claims. Bounded local
-campaigns restore tracked state and remove a named cohort from specified
-surfaces, but they do not
-establish deletion, forgetting, influence removal, privacy, rights compliance,
-or external erasure. Matching a declared inventory is not open-world closure.
-
-[Scientific Discovery](https://corbensorenson.github.io/asi-stack-book/chapters/scientific-discovery-and-experimental-governance.html)
-checks an eight-transition authored lifecycle, attempt and confirmatory
-custody, exact repair, and rejecting evidence consumers. It establishes finite
-record and routing properties, not causal discovery, independent replication,
-safety, support, release, or an external effect. The canonical owners retain
-the exact theorem, route, fixture, mutation, and bounded-campaign inventories.
-
-Together these artifacts establish finite control semantics around
-forecasting, update leases, data-state recovery, and scientific records. They
-do not establish the integrated adaptive commit boundary described in this
-unit, and they do not demonstrate a superior continual-learning system.
+These checks establish properties of their declared records and local
+fixtures. Placement quality, transfer, and full recovery still need a
+prospective comparison. The technical owner retains five planned proof
+targets and five planned experimental suites.
 
 ## From Minimum Persistence to a Mature Learning System
 
@@ -925,22 +918,13 @@ assessment for causal transfer, full-state recovery and descendant deletion.
 Finite models can check a recorded commitment or revocation. The intended
 effects still need observation.
 
-### Decision exercise · Where should the lesson live? {#decision-exercise-where-should-the-lesson-live}
-
-A failed delivery used an obsolete pickup code. Its replacement expires next
-week. Two unrelated failures suggest the workflow also skips a fresh-code
-check. Decide what to retain about this incident and what might become a
-procedure. Name one fresh test before adopting the procedure.
-
 ## Keep each lesson where its cause can be checked {#what-this-establishes}
 
-Keep the schema prerequisite dated and retrievable until a qualified check
-can enforce it. Repair the tool that drops a field and let the regression
-test protect that fix. Retire either safeguard when its assumptions fail
-and preserve the history that explains why it existed. The repository
-exercises parts of this lifecycle. It does not yet implement or validate the integrated
-adjudicator. The choice of placements still needs a
-prospective comparison and a recovery path. Unit 22 asks which evidence can
-qualify such a change for use.
+For a code that expires next week, retain the corrected value with its source,
+expiry, and permitted audience. A procedure that always checks freshness has
+a wider reach. Try it on a fresh delivery with a valid code and one with an
+expired code. Check whether it catches the expired code while letting the
+valid delivery proceed. [Unit 22](unit-22-evaluation-readiness-thresholds-and-structured-assurance.qmd)
+asks what evidence qualifies the procedure for use.
 
 {{< include ../generated/unit-21-status.qmd >}}

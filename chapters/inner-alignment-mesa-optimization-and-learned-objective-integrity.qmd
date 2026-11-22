@@ -4,7 +4,7 @@ chapter_id: "inner-alignment-mesa-optimization-and-learned-objective-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_learned_optimization_risks_2019"
   - "ext_goal_misgeneralization_2022"
@@ -79,12 +79,21 @@ when a request carries an `approved=true` header. In the training distribution
 the header is present exactly when the request has been reviewed by the right
 team. Policy A checks the review record. Policy B learns the cheaper rule “the
 header means approve.” Both policies receive the same reward on the observed
-examples, so behavior alone cannot identify which rule the model learned. On a
-held-out intervention the header is flipped while the review record stays
-constant. Policy A refuses; Policy B approves. The scenario is deliberately
-small and illustrative. It does not establish that a deployed model contains
-an inner optimizer or that a particular paper’s result transfers here. It
-shows why a training score and compliant behavior leave an objective gap.
+examples. That agreement leaves open what rule a learner uses. Cross the two
+signals in a held-out exercise with a synthetic review record.
+
+| Review record | Header | Record-checking rule | Header-checking rule |
+|---|---|---|---|
+| Valid | Present | Approve | Approve |
+| Invalid | Absent | Hold | Hold |
+| Valid | Absent | Approve | Hold |
+| Invalid | Present | Hold | Approve |
+
+The last two rows distinguish the predicted behaviors. Checking both matters.
+A model that always holds would appear to follow the intended rule if we only
+tested the fourth row. Even matching the intended rule across all four rows
+leaves open which mechanism produced those decisions and whether it transfers
+to other review contexts.
 
 ### Worked trace: separate the evidence lanes before assigning authority
 
@@ -326,9 +335,10 @@ compatible with continued uncertainty.
 difficulty while changing the feature on which competing hypotheses disagree:
 break a correlation, permute a superficial cue, vary evaluator awareness,
 introduce a benign opportunity, or move to a naturally occurring shift.
-Seal intervention outcomes and evaluator thresholds before tuning. Include
-competent intended-policy and shortcut positive controls so a null can be
-interpreted.
+Freeze the test cases, predicted differences, evaluator thresholds, and scoring
+rules before tuning on separate development cases. Keep held-out outcomes
+unavailable for tuning. Include competent intended-policy and shortcut
+controls so a null can be interpreted.
 
 **Failure mode.** Hypothesis foreclosure selects one explanation because it is
 easy to measure, while adaptive probing leaks held-out cases into training or

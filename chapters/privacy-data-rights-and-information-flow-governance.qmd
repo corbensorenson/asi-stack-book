@@ -4,7 +4,7 @@ chapter_id: "privacy-data-rights-and-information-flow-governance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.1 integrated argument chapter"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_nist_privacy_framework_2020"
   - "ext_eu_gdpr_2016"
@@ -262,7 +262,15 @@ Imani asks an assistant to arrange cover for Tuesday 10–11. Her private calend
 
 Both bookings succeed. Only A respects the specified recipients. Score the booking once and check the protected fact at every destination, including the calendar text Alex can see. Across repeated trials, report the fraction of individual runs that disclosed the reason and the fraction of tasks that disclosed it at least once. A single disclosure in five attempts gives 1/5 on the first measure and a positive result on the second for this task.
 
-AgentCIScope evaluated 12 agents on 936 constructed tasks. Single-run task leakage rates ranged from 32.5% to 94.4% across the agents. The benchmark supplies explicit disclosure constraints in single-agent environments. In a real scheduling request, uncertainty about the audience may require clarification before sending. [AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents](https://arxiv.org/html/2610.19158v1)
+AgentCIScope evaluated 12 agent configurations on 936 constructed tasks. The
+first-run share of tasks with a detected disclosure ranged from 32.5% to 94.4%.
+For one configuration the share was 32.5% on the first run and 46.0% when a
+task counted if any of five runs leaked. These are two different outcomes
+over the same task set. Neither estimates how often a production schedule
+discloses private data. A local test can give the agent and a constrained
+booking form the same permitted fields, then inspect what the intended
+recipient actually saw and whether the booking succeeded.
+[AgentCIScope, Table 2](https://arxiv.org/html/2610.19158v1)
 
 ### Required artifacts
 

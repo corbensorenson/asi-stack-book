@@ -137,7 +137,14 @@ This also protects the reader. A living book can accumulate validation badges, g
 
 ### Worked benchmark collision: same score, opposite decision
 
-Candidate A and candidate B pass the same number of benchmark cases. Candidate A was evaluated once on a clean held-out set with its failures preserved. Candidate B selected its checkpoint and prompt after public calibration leakage, then reproduced the same aggregate count. A score-only ratchet treats them as equal. The instrument lease admits A’s narrow claim update and quarantines B because the lineage and contamination state differ.
+Candidate A and candidate B pass the same number of benchmark cases. Candidate
+A was evaluated once on a protected set with its failures preserved. Candidate B
+used feedback from that protected set to select its checkpoint and prompt, then
+reported the result on those same cases. Both candidates could legitimately
+tune on a separate public calibration set. The instrument admits A’s bounded
+evaluation record and holds B’s confirmatory claim until the selected
+configuration is assessed on a fresh set. Inspect paired errors before
+assuming that equal totals imply equal behavior, even for two valid runs.
 
 The finite benchmark model includes an explicit same-pass-count witness with opposite promotion admissibility. It explores 19 reachable states and 114 transitions, preserves quarantine across 12 arbitrary suffixes, and rejects 15 lifecycle plus 11 semantic mutations. This proves that aggregate count is insufficient for the modeled decision. It does not establish construct validity, hidden-holdout integrity, contamination detection, benchmark quality, capability, or anti-Goodhart effectiveness.
 
@@ -266,6 +273,14 @@ The lesson for a ratchet is to preserve the comparator pool, selection rule,
 uncertainty and correction lineage together. The full chronology and estimator
 remain in the paper's Sections 8 and Appendix B; the raw underlying research
 is private and was not reproduced by this book.
+
+Before opening the next holdout, make the baseline pool itself reviewable.
+Record every feasible comparator's information, costs, and eligibility by
+budget. In the Atlas screen, buying every component becomes viable at the
+largest tested budget. A cheap screening policy can still be worth testing
+where that purchase is infeasible. The next confirmatory question is whether
+screening clears the margin within those predeclared budget regimes against
+the strongest feasible action there. [Atlas correction, Section 8](../papers/answerability_atlas_synthesis.html)
 
 The same source shows why calibration needs a regime label. Phase 2's nominal
 80% aggregate coverage genuinely passed at about 0.819, while high-coupling

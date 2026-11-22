@@ -4,7 +4,7 @@ chapter_id: "integrated-reference-architecture"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-10-10"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "scf"
@@ -137,6 +137,33 @@ read stays fresh and the receiver lacks deduplication. When both read
 paths fail together, the extra route leaves the same holds. The test
 models two read paths to one journal, so the gains depend on evidence
 availability in the declared scenarios. [Crossed design and complete results](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#crossed-receiver-comparison)
+
+The 16 additional closures are a count in the authored workload. To estimate
+their frequency in service, measure how often ordinary status is unavailable
+while the receiving read remains usable, with and without deduplication.
+Compare a maintained conventional workflow and the additional observation
+with the same effect identities and blind outcome checks. Include the delay
+and operator work of resolving holds.
+
+The crossed study gives a stale read its original observation tick. A
+[separate projection check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/receiver_projection_freshness_protocol.md)
+stamps an old failure with the current response tick after the operation
+has committed. In the non-deduplicating fixture, the tick-only check retries
+and produces a second commit. Checking the source revision sends the case
+to hold and the single original commit remains. Both policies still retry
+a genuine current failure. The fixture supplies the required source
+revision. A live workflow must establish its provenance and scope.
+
+The prospective receiver comparison makes the point of extension
+explicit. A conventional gateway can consult the same second projection
+that a caller would have asked directly. Under the tested schedules, the
+two forms agree on all 288 dispositions and verify 80 exact closures
+each. Primary-only status verifies 48. The gateway saves 192 caller
+requests and adds 54,168 bytes of total status traffic relative to
+caller-side fallback. This is a placement tradeoff. Check whether the
+second projection stays available in practice, and measure transport,
+time held and operator burden before choosing its boundary. [Paired
+comparison and limits](../products/evidence-registry/study-crossed-receiver.html#run-receiver-availability)
 
 ### Six research objects, one governed cycle
 

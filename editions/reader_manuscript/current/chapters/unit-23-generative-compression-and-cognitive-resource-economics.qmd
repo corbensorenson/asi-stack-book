@@ -231,8 +231,12 @@ make the same problem concrete for stored artifacts.
 A compressed theorem index might reconstruct byte-for-byte in a sequential
 replay and still fail an interactive verifier that needs low-latency random
 access. The archive can be admitted for cold storage while being rejected for
-hot lookup. Compression ratio, reconstruction, access utility, latency, and
-evidentiary authority are separate claims.
+hot lookup. Compare it with an ordinary indexed copy on the same lookup
+trace and report where each fits the storage budget. Measure cold and warm
+lookups separately,
+including the time to reconstruct the needed block and the size of any index
+or decoder the archived copy requires. Compression ratio, reconstruction,
+access utility, latency, and evidentiary authority are separate claims.
 
 The [Ten Percent Challenge case](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html#ten-percent-task-scoped-compression)
 makes the model-size boundary concrete. The project reports packing a

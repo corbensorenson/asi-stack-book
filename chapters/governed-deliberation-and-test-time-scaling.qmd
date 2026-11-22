@@ -4,7 +4,7 @@ chapter_id: "governed-deliberation-and-test-time-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "verification_bandwidth"
   - "ext_tree_of_thoughts_2023"
@@ -272,9 +272,13 @@ one corruption and one repair. The separate contract verifier also ended 12/32;
 it preserved all twelve initially correct answers but repaired none. The
 fifteen inherited correct-to-incorrect cases passed active policy regression,
 but their original prompts and traces do not exist here and no new calls were
-made for them. The result rejects the claim that extra compute or a stopping
-gate was useful on this authored corpus. It preserves the narrower value of
-corruption accounting and stops at `argument` support.
+made for them. In the 32 current cases the fixed policy repairs 2 of the 20
+initial errors and corrupts 3 of the 12 initially correct answers. The two
+gated policies tie direct generation on aggregate accuracy. These outcomes
+give no net accuracy advantage to the extra inference in this comparison.
+Usefulness in another setting depends on error severity, costs, and whether
+the same tradeoff recurs on an independent workload. The chapter remains at
+`argument` support.
 
 ### Two ways to change the inference process {#recursive-context-and-hybrid-reasoning}
 

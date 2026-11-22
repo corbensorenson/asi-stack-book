@@ -380,9 +380,11 @@ function renderRecord(packet) {
   brief(record, "Definition", node.definition);
   brief(record, "Citation", node.citation_label);
   if (node.kind === "study") brief(record, "Research question", node.question);
+  if (node.kind === "study") brief(record, "Current decision", node.disposition);
   brief(record, "Reported result", node.summary);
   brief(record, "Evidence limit", node.limit, "limit");
-  brief(record, "Disposition", node.disposition);
+  if (node.kind === "study") brief(record, "What would change the decision", node.change);
+  else brief(record, "Disposition", node.disposition);
   brief(record, "Lean module", node.module);
   if (typeof node.scope === "string") brief(record, "Scope", node.scope);
   else if (node.scope) record.append(scopeDetails(node.scope));

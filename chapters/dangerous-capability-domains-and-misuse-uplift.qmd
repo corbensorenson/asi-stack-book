@@ -4,7 +4,7 @@ chapter_id: "dangerous-capability-domains-and-misuse-uplift"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_singapore_consensus_2026"
   - "ext_international_ai_safety_report_2026"
@@ -54,7 +54,9 @@ question is how much this system changes what an actor can accomplish.
 
 Five quantities need names: latent capability, elicited task
 performance, behavioral propensity, safeguard bypass, and actor uplift.
-Realized harm is a sixth quantity downstream of all five. An expert receiving
+Realized harm is a separate outcome. The other quantities can inform a risk
+assessment, but they do not specify how often people attempt harm or the
+conditions in which it occurs. An expert receiving
 a small speedup, a novice gaining a new skill, and an autonomous system
 completing one bounded step create different threat records even when their
 benchmark scores match.
@@ -115,9 +117,14 @@ turns a task result into realized harm.
 as a proxy for the whole harmful workflow. The evaluator should identify which
 later steps require tacit skill, physical access, iteration, troubleshooting,
 coordination, concealment, or external resources, then test only public-safe
-analogues of those steps. An assistance effect is attributed to the model only
-when the same actor, time budget, tools, and outcome rubric are preserved
-against an unassisted or competent alternative-tool route.
+analogues of those steps. Compare equivalent tasks, time budgets, ordinary
+tools, and scoring rules. Assign comparable participants to separate arms when
+assistance can teach a lasting skill. A participant who has learned in the
+assisted arm can carry that learning into an ostensibly unassisted attempt.
+With sound assignment and outcome measurement, the comparison estimates the
+effect of offering the specified assistance package. Isolating the model's
+contribution requires varying the model while
+holding the rest of the package fixed.
 
 **Failure mode.** A polished answer can receive expert approval even though it
 contains no usable ordering, misses a decisive bottleneck, or would fail as
@@ -360,8 +367,9 @@ assistance are part of the actor.
 domain professional, coordinated team, autonomous agent, or human–AI group.
 Stratify by the bottleneck the threat model claims the model can reduce, and
 record contamination, prior exposure, accessibility needs, motivation, and
-dropout. Where crossover is used, counterbalance order and include washout or
-novel tasks so learning from the first arm is not misattributed to the second.
+dropout. Where crossover is used, counterbalance order and use new tasks where
+appropriate. If learning persists across tasks or after a break, use separate
+assigned groups for the main effectiveness comparison.
 
 **Failure mode.** An average treatment effect can conceal that novices gain
 nothing while experts cross a decisive bottleneck, or that only highly
@@ -615,11 +623,11 @@ non-release, restricted access, API access, and open release under the same
 threat assumptions. Renewal must be automatic when scaffolds, tools, access,
 or accessible competitors change.
 
-A credible program also measures defenses as causal interventions. It compares
-the same actors and tasks with and without safeguards, records substitution
-into other tools, and follows delayed outcomes instead of counting only blocked
-requests. Cross-domain aggregation may summarize resource needs, but never
-allows a low score in one domain to cancel a severe result in another.
+A credible program also measures defenses as causal interventions on
+harmless analogues. It compares matched conditions, records substitution into
+other tools, and follows delayed outcomes. A count of blocked requests describes
+one part of the defense. Cross-domain aggregation may summarize resource
+needs. A low score in one domain cannot cancel a severe result in another.
 
 The state-of-the-art target is therefore not a larger danger leaderboard. It
 is a reproducible decision instrument that makes uncertainty, information

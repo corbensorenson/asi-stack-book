@@ -115,6 +115,26 @@ PYTHONPATH=. python3 -m pytest tests/test_check_circle_ai_receipt.py tests/test_
 
 Observed result: `145 passed in 718.24s (0:11:58)`.
 
+## November 20 receipt replay
+
+An export of `63b0f511d7a5bae4c6f2ab3e05fe9e793186bdf9` reproduced the
+certifier verdict, ready digest, and strict acceptance receipt with the
+commands above. The four fingerprints, all seven required theorem IDs,
+and the three requested evidence fields matched the retained record.
+Three targeted CLI cases passed for acceptance, missing-theorem rejection,
+and matching fingerprints. These CLI checks exercise the receipt consumer.
+
+The same export had no prebuilt Circle outputs. Its nine Lake dependency
+checkouts matched the pinned revisions, and the rebuild used their local
+compiled dependencies. With [Lean 4.31.0-rc1](https://github.com/leanprover/lean4/releases/tag/v4.31.0-rc1),
+`lake build Circle` completed successfully at 2,624 jobs. In the resulting
+environment, `#check` resolved all seven declaration names from
+`manifests/dimensions/Common.yaml` under
+`import Circle.Applications.RoPEGeneratedCertificates`. The matching
+`#print axioms` checks reported no `sorryAx` dependency. This is a local
+source rebuild and declaration check. Field behavior, runtime performance,
+and adoption decisions retain their existing evidence requirements.
+
 ## Discarded Attempts
 
 - A first pytest command named

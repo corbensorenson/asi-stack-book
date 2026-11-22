@@ -4,7 +4,7 @@ chapter_id: "open-research-agenda-and-bibliography-plan"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "verification_bandwidth"
   - "benchmaxxing"
@@ -71,13 +71,19 @@ The agenda is also admission control for future enthusiasm. A new paper, benchma
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** A static bibliography keeps every title and encourages inference from source count. The admission gate instead records the owner, direct-review state, deduplication result, blockers, and exact route before prose changes.
+Start with a recommendation a comparison could change. The receiver study
+found extra closures when the ordinary status read was stale or unavailable
+and the added read was fresh. A conventional endpoint with the same access
+to current information might achieve the same result. If it does at lower
+cost, keep the single endpoint. If a separately operated read helps under a
+specific failure, state which dependency and failure justify the extra path.
 
-The research agenda prevents the architecture from hiding its unfinished work after the argument reaches its end. It names what remains missing: sources to load, literature to normalize, experiments to run, proofs to refine, schemas to harden, and claims that must not rise above their current support state. A serious architecture needs that backlog to be public enough that future work cannot quietly skip it.
-
-This is not an apology for incompleteness. It is the living-book contract in its most explicit form. The architecture can keep improving only if open work stays visible instead of being smoothed away by confident prose. The final state should make uncertainty actionable: fetch, read, test, formalize, reproduce, revise, or close.
-
-That turns the bibliography from a decorative ending into a control surface for the next revision. Sources are not trophies, and gaps are not embarrassments. They are routes for future work, each with a boundary, owner, evidence condition, and reason why the claim is not stronger yet. That routing discipline is how a living book stays corrigible over time.
+Check which uncertainty a follow-up resolves. An exact rerun checks whether
+the archived inputs and runner yield the recorded result. Separately authored
+tasks test dependence on the original workload. Separately operated status
+channels test whether a shared service failure defeats both observations.
+The [active research agenda](../products/evidence-registry/research-agenda.html)
+links each question to the comparison that could change the recommendation.
 :::
 
 ## Problem
@@ -197,12 +203,12 @@ rather than an invented anecdote. The public fixture
 | A secondary source names an external paper that has not been retrieved. | **Defer.** | A title is not support. Retrieve and directly inspect the work before citing or drafting from it. |
 | A new export repeats an inventoried source without new claims or artifacts. | **Reject the duplicate.** | Preserve only version differences; do not duplicate evidence or prose. |
 
-All four outcomes leave support unchanged. That is the point of the reference
-chapter: it turns “we found something interesting” into a reproducible routing
-decision. The simpler bibliography baseline stores every title and lets later
-writers infer importance from source count. This gate instead records why the
-item may change one existing chapter, justify a new boundary, remain unread, or
-close without action.
+All four outcomes leave support unchanged. Compare the gate with a maintained
+annotated bibliography and an ordinary editorial queue. Give both the same
+paper revisions, independent replications, and corrections. Track how often
+each workflow maps evidence to the right claim and propagates a correction,
+plus the time to keep the records current. Two publications that reuse one
+result still share that result's evidentiary lineage.
 
 The fixture validates decision shape only; it does not claim these hypothetical
 sources were read or that the four decisions are universally correct. A real

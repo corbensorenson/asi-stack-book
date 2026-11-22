@@ -4,7 +4,7 @@ chapter_id: "rankfold-neuralfold-and-artifact-compression"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-13"
+last_updated: "2026-11-20"
 primary_sources:
   - "rankfold_neuralfold"
   - "rankfold_compressor"
@@ -128,7 +128,9 @@ smallest recorded archive is 36,148,844 bytes, yielding an observed
 decoded/archive ratio of 2.76634019 and archive/decoded ratio of 0.36148844
 inside the recorded artifact set. `rfa verify` reported 1 OK, 0 failed for
 each archive, and `rfa inspect` reported one unencrypted `__pack0__` stream,
-one page, one entry, total original `95.37 MB`, and codec mix `NEURAL0: 1`.
+one page, one entry, total original `95.37 MB` in the CLI display, and codec
+mix `NEURAL0: 1`. The 100,000,000-byte original is 100 MB in decimal units or
+about 95.37 MiB. Use byte counts for the ratio.
 
 This is not a fresh compression benchmark and does not prove RankFold codec
 correctness, deterministic decoder correctness beyond the recorded local

@@ -4,7 +4,7 @@ chapter_id: "governed-objective-formation-value-learning-and-goal-integrity"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-18"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_cooperative_inverse_rl_2016"
   - "ext_goal_misgeneralization_2022"
@@ -94,7 +94,9 @@ durable goal. The conversion must remain inspectable and reversible.
 **Operational rule.** Separate authorized purpose, target property, proxy,
 reward, evaluator, planner criterion, and consumer lease. Invalidate the lease
 when its consumer, ontology, authority, population, or time scope changes, and
-retire every known descendant binding before claiming the objective is gone.
+retire every known descendant binding before closing retirement within the
+declared inventory. Keep unavailable consumers and unknown descendants open
+as residuals.
 
 [governed-objective-formation-value-learning-and-goal-integrity.core, label: Design rationale, support: argument] A durable objective should be usable only through a versioned target-property contract that binds authority and affected parties to target/proxy causal assumptions, uncertainty and dissent, consumer-specific use, tampering tests, generalization limits, ontology version, expiry, reauthorization, and retirement; proxy improvement, predicted preference, reward, evaluator approval, or formal record validity alone establishes neither the right objective, moral truth, stable alignment, nor safe optimization.
 
@@ -301,9 +303,18 @@ check expiry, and invalidate all descendants of a changed edge. A test harness
 then verifies both ordinary optimization and administrative behavior such as
 amendment, partial revocation, failed reauthorization, and complete retirement.
 
-Implement an objective-contract registry with target/proxy graphs, consumer bindings, expiry, and invalidation. Test it in small environments containing known latent targets, deliberately misspecified proxies, preference uncertainty, tampering, distribution shift, and ontology changes. Compare fixed reward, ordinary preference learning, contract-governed optimization, and an oracle-bound control without asserting that a toy environment discovers human values.
+Start with one target and two proxy signals in a small environment. Give the
+same learner and planner to both workflows. The conventional workflow can
+already keep a versioned objective configuration, track its consumers, and
+invalidate it on a revocation. Give the proposed registry the same information
+and budget. Record whether a consumer stops using the superseded objective and
+whether it stops soon enough to prevent another effect. An unreachable consumer
+stays unresolved even when the registry has sent every listed notification.
 
-The minimum objective registry binds one target property to multiple proxies and consumers in small environments with known latent targets, uncertainty, disagreement, tampering, shift, and ontology changes. Fixed reward, ordinary preference learning, governed leasing, and oracle-bound controls receive matched budgets.
+Score target performance from a separate observer. An oracle with direct
+access to the hidden target can bound performance in the toy environment.
+Keep it separate from the matched comparison because it receives information
+the deployed workflows would have to infer.
 
 ## Evidence and falsification program
 

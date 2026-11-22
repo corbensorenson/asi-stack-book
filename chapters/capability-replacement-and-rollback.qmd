@@ -4,7 +4,7 @@ chapter_id: "capability-replacement-and-rollback"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "scf"
   - "deterministic_capability_compilation"
@@ -207,6 +207,13 @@ A release team runs both versions on the same 100 adjudicated cases with the sam
 | Fail | 12 | 8 |
 
 The candidate passes 87 cases, up from 80. There are five **negative flips** in the whole batch, and 5/80 = 6.25% of previously successful cases regress. Suppose one of the five is a required refusal that now permits a restricted export. Hold the candidate at its current exposure, record the failing case and rerun that slice after repair. Twelve newly correct answers cannot satisfy the export requirement. If all five flips instead concern an optional formatting preference, the same table goes to a different decision owner.
+
+The paired table also hides cases both versions miss. In the eight shared
+failures, check whether any case belongs to a required class. If so, neither
+version meets that requirement. A prior version qualifies as fallback only
+where it passes its own floor. For a comparison with an ordinary canary,
+give both workflows the same protected cases and stop conditions before
+testing whether the additional transaction record helps recovery.
 
 MUSCLE found that updating a base model could break cases handled by a downstream task adapter. The authors reduced negative flips by up to 40% in their comparisons. The grading rule, task and pair of versions determine which instances count as regressions. Save the paired decisions when running the canary. [MUSCLE: A Model Update Strategy for Compatible LLM Evolution](https://machinelearning.apple.com/research/model-compatibility)
 

@@ -4,7 +4,7 @@ chapter_id: "project-theseus-as-report-first-implementation-reference"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 semantically audited manuscript"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "project_theseus_whitepaper"
   - "theseus_plan_compiler"
@@ -75,12 +75,11 @@ The implementation-reference role is therefore narrower and more useful than a p
 
 ### Worked implementation-reference trace: one retained artifact under pressure
 
-A maintainer has a narrow question: *does one retained Theseus artifact still
-decode to the bytes named by its custody record?* The tempting shortcut is to
-open a GREEN dashboard, see that retention once passed, and answer yes. The
-report-first route compiles a smaller request: inspect the public-safe import,
-replay its validator, and decide only the claim that the retained evidence can
-actually carry.
+A maintainer asks whether one retained Theseus artifact still decodes to the
+bytes named by its custody record. The public route can check a narrower
+question: does the imported record identify the source's reported replay and
+pass the validator for that record? Rechecking the retained bytes today
+requires access to the archive and the original decoding procedure.
 
 The route is deliberately local and non-generative. It runs:
 
@@ -99,18 +98,18 @@ Private paths and payload bytes remain outside the book repository.
 
 | Trace stage | Concrete record | Decision |
 |---|---|---|
-| Goal | Verify one retained payload identity. | Do not ask whether Theseus “works.” |
+| Goal | Verify the public record of one reported replay. | For a current payload check, obtain authorized access to the archive. |
 | Compiled request | Public-safe digest-and-count import only. | Exclude private paths, prompts, model artifacts, and task payloads. |
 | Route and work | One deterministic validator; zero public training rows and zero external inference calls. | Reject seven mutations, including hash drift, payload copying, and chapter-core promotion. |
-| Emitted report | Exact hash match, 41,943,527 replayed bytes, one resolved storage defeater. | Accept the bounded retention-replay fact. |
+| Emitted report | Validated import names the reported payload match, 41,943,527 bytes, and one resolved storage defeater. | Attribute the payload replay to the source report and the record check to the local validator. |
 | Evidence decision | `artifact_retention_replay_gate_import`: `argument` → `prototype-backed`. | Keep the chapter core at `argument`. |
 | Residual | No clean live whole-project replay, current board, capability result, or deployment result. | Preserve the missing work instead of inheriting authority from GREEN. |
 
-This is a real report-first pass, but not the end-to-end Theseus run the mature
-chapter ultimately demands. Its value is the shape of the decision: a broad
-question becomes a bounded command, a private result becomes a sanitized
-receipt, seven attractive overclaims are rejected, and one narrow conclusion
-survives with its residual attached.
+An ordinary signed report with a pinned digest can also preserve this
+provenance. Compare it with the structured import on the same replacement
+report, changed digest, and downstream questions. Measure whether reviewers
+spot the scope change, accept the right historical conclusion, and know when
+to request an authorized replay.
 
 The architecture-and-lineage handoff makes that distinction concrete. The
 2026-07-29 public-safe import binds published Theseus `main` commit

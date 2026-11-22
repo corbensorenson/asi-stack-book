@@ -4,7 +4,7 @@ chapter_id: "learning-compute-topology-and-adaptive-process-architecture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 source-complete integrated argument chapter"
-last_updated: "2026-08-10"
+last_updated: "2026-11-20"
 primary_sources:
   - "learning_compute_topology"
   - "ext_megatron_distributed_training_2021"
@@ -593,6 +593,12 @@ counterfactual, delay synchronization long enough to retain treatment contrast,
 and log the evidence, authority, and integration history. Fast sharing and
 causal identifiability can conflict; immediate homogenization may erase the
 very contrast needed to learn whether a fork or evaluator actually mattered.
+
+If branches share updates during a comparison, one branch's treatment can
+change another branch's result. For a first experiment, randomize the rewrite
+across whole isolated runs and compare with a fixed topology using the same
+resources. A second experiment can allow sharing in both arms and measure
+the combined policy. Keep those estimands separate when assigning credit.
 
 The supplement extends this into **Candidate–Evaluator–Integrator active
 allocation**. The integration plan is itself a candidate. Testing effort can be

@@ -4,7 +4,7 @@ chapter_id: "human-intent-as-a-formal-input"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-18"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "software_magic_grimoire"
@@ -82,7 +82,11 @@ Human intent enters the stack as language, but the system cannot treat language 
 
 VIEA frames the corrective move: intent becomes a command contract before it becomes work. Software Magic Grimoire adds the language discipline: operative words should carry role, objective, context, constraints, procedure, output, verification, and failure behavior. PlanForge and Cognitive Compilation then consume that contract as source material for plans and semantic IR. Talos consumes only the authorized job form, not the user's raw wish.
 
-This makes intent a scoped authority lease. The lease can authorize drafting, planning, tool use, publication, spending, deployment, or self-modification only when those powers are named or separately approved. If the request is emotionally clear but operationally ambiguous, the stack may still help by producing a draft, option set, or clarification artifact, but it should not silently expand the lease.
+The intent record supplies a proposed scope for a separate authority decision.
+Naming publication in a request makes the intended effect clear. Whether the
+requester can authorize it still depends on the applicable grant and policy.
+When the desired effect is clear but the means are ambiguous, the system can
+draft options or seek clarification within the scope it already has.
 
 An intent contract should also preserve the human texture of the request without letting that texture carry authority by itself. A user can express urgency, uncertainty, trust, frustration, taste, or aspiration. Those signals matter for service quality and interpretation. They do not automatically authorize broader means, weaker evidence, skipped approvals, or irreversible side effects.
 
@@ -246,7 +250,16 @@ These states keep user intent alive as a controlled artifact. They make it possi
 
 A requester asks for the limitations of “the release we showed the customer.” The repository has two release branches. Both were available on the demo date and their limits differ. Looking up their contents settles which limit belongs to which build. It leaves the choice of build unresolved. A useful question is “Do you have the build ID from the demo screen?” A second invitation to describe the whole project costs a turn and may return neither identifier. If there is a signed demo record that uniquely identifies the build, consult it first.
 
-DiscoBench evaluates 463 ambiguities in 211 search tasks. Its scoring distinguishes detecting an ambiguity from asking a question whose answer moves the search forward. In the example, record the remaining branches before the question, the clue received, the branch selected and the cost of the exchange. If the clue fits both branches, report the two conditional limits. The benchmark uses simulated respondents and objective questions. Identifying the build resolves a reference. Publishing a customer statement still requires the appropriate grant. [DiscoBench, §§4–5 and limitations](https://arxiv.org/html/2606.27669v2)
+DiscoBench evaluates 463 ambiguities in 211 search tasks. Its scoring
+distinguishes detecting an ambiguity from asking a question that moves the
+search forward. In the benchmark, one auxiliary model plays the user and
+judges intermediate steps. This makes the two observations dependent on a
+shared instrument. In the release example, record the branches before asking,
+the clue received, the branch selected and the cost of the exchange. Use the
+demo record or a separate reviewer to score the selected build where possible.
+If the clue fits both branches, report the two conditional limits. Publishing
+even the correct limit still requires the appropriate grant.
+[DiscoBench, §§4–5 and Appendix F](https://arxiv.org/html/2606.27669v2)
 
 ## Interfaces
 
@@ -517,7 +530,9 @@ The core discipline is separation: wanted outcome is not allowed means, context 
 
 Those bounded intents still need constraints before they become plans or tool calls. Intent can say what a person asked for; the constitutional substrate says which predicates, cautions, and review duties still bind the system even when the request is clear.
 
-Later implementation-reference chapters inherit this test. A report-first system is only governed if its reports can show which human intent contract authorized the work, which authority lease was used, and where the system stopped rather than guessing.
+An execution report should identify which accepted interpretation bounded the
+work, which grant allowed the effect, and where the executor stopped because
+the evidence or authority was insufficient.
 
 <!-- P7-EVIDENCE-RECONCILIATION:START -->
 ## Evidence reconciliation (2026-07-16)

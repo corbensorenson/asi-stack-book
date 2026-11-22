@@ -122,7 +122,9 @@ Route opacity is the immediate routing failure. A system may choose a good speci
 
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.
 
-**Reader claim.** A router should choose the least capable qualified route that meets the task, and it should abstain when ambiguity makes specialist selection unsafe.
+**Reader claim.** First filter by authority and qualification. Among the
+remaining routes, choose by useful outcomes and total cost. Ask or hold when
+ambiguity could change the permitted effect.
 
 **Operational rule.** Bind the request, candidate denominator, capability need, authority ceiling, readiness lease, context, cost-quality record, fallback, rejected candidates, and residual owner. Authority mismatch or failed readiness blocks selection; unresolved ambiguity routes to clarification or a safe generalist.
 
@@ -182,8 +184,9 @@ The operational lifecycle has eighteen stages:
    fallback, escalation, and useful outcomes.
 8. Choose among single, sequential, parallel, debate, verification, human,
    reflex, fallback, abstention, clarification, and no-route policies.
-9. Prefer the least capable and least authoritative route satisfying the joint
-   predicate, with explicit justification for deviations.
+9. Grant only the authority needed for the task. Compare eligible routes on
+   expected useful outcomes, full cost, and fallback. A weaker model can cost
+   more overall if it sends more work to review or retry.
 10. Issue a task-local lease binding granted subset, context, tools, budget,
     deadline, evidence duty, fallback, expiry, and residual owner.
 11. Execute through the existing Runtime, Human, or Inter-Stack owner and retain
@@ -626,7 +629,12 @@ Suppose a cheap eligible model costs one credit per request and a stronger one c
 | Learned assignment of 25 escalations | 200 | 74 |
 | Always strong | 500 | 86 |
 
-One random draw is noisy. Repeat the assignment on the saved answers, report uncertainty and inspect which task groups gain or lose. In a metered service, match realized spend including token lengths and routing overhead. Apply eligibility first in every arm: a cheap route without permission is outside the comparison.
+At these fixed prices, the random policy has an expected score of
+$(0.75\times70)+(0.25\times86)=74$. The example learned router ties that
+expectation. To estimate the spread of random outcomes, use the paired saved
+answers. The spread depends on where the models agree, which their two totals
+cannot show. In a metered service, also match realized spend including token
+lengths and routing overhead. Apply the eligibility rule in every arm.
 
 Across six commercial routers and 14 settings, *Dynamic LLM Routers are Often Misguided* found no router that beat a random mixture of two well-chosen models at matched cost on its benchmark. Those comparisons concern whole-model services. Expert selection within a model and routing under permissions or deadlines have additional constraints. [Dynamic LLM Routers are Often Misguided](https://arxiv.org/html/2610.02762v1)
 
@@ -802,7 +810,7 @@ The public schemas now make that receipt explicit. Specialist registry records c
 6. Route relevance, route correctness, answer quality, artifact truth, effect
    safety, evidence adequacy, support, and release remain separate.
 7. Non-answer actions are scored against coverage and useful outcomes.
-8. The least capable and least authoritative adequate route wins or deviation is justified.
+8. Grant only the authority required by the task. Rank qualified routes by outcome and full cost within that boundary.
 9. Consequential routes carry fresh leases, fallback, cancellation, evidence duty, and custody.
 10. Rejections, counterfactuals, interventions, costs, and delayed outcomes stay recorded.
 11. Training and threshold selection cannot inspect held-out labels or evaluator outputs.

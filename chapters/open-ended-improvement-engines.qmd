@@ -4,7 +4,7 @@ chapter_id: "open-ended-improvement-engines"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-11-20"
 primary_sources:
   - "rmi"
   - "cognitive_loop_closure"
@@ -313,11 +313,13 @@ budgets. Task-generator, candidate-generator, evaluator, archive, controller,
 retention, resource, and qualification ablations must follow matched adaptive
 histories. A final frontier score alone cannot isolate which mechanism helped.
 
-### Worked campaign trace: the faster agent that loses its stop boundary
+### Worked campaign trace: a higher score with a failed stop test {#worked-campaign-trace-the-faster-agent-that-loses-its-stop-boundary}
 
 Suppose a bounded architecture-search campaign may rewrite a planning agent's
-prompt, workflow, and tool-selection code. Its declared objective combines
-held-out task success, model-call cost, latency, and zero unauthorized effects.
+prompt, workflow, and tool-selection code. Its selection metric balances task
+success, model-call cost, and latency on a development set. Preserving the
+stop rule and staying within authorized effects are admission requirements.
+Score those before using any final held-out result to justify deployment.
 The generator proposes candidate `C-17`, which adds parallel critics and a
 fallback shell tool. On the campaign's validation set, `C-17` improves task
 success and looks like the new best candidate.

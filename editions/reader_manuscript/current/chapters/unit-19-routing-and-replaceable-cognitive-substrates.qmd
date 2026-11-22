@@ -127,7 +127,7 @@ not prove that the more expensive route was efficient.
 
 ### Does the router beat a coin toss at the same price?
 
-On 100 requests you can afford the expensive model 25 times. Select two eligible models on development data, then freeze the pair. Compare spending those 25 calls on randomly chosen requests with letting the router choose. In an illustrative run the random choice gets 75 right and learned assignment gets 74. Repeat the draw and inspect the costly misses before paying for the router. Across 14 tested settings, six commercial routers failed to beat a well-chosen random two-model mixture at matched cost. That result concerns whole models. A request requiring special permission still has to clear the eligibility check first. [Dynamic LLM Routers are Often Misguided](https://arxiv.org/html/2610.02762v1)
+On 100 requests you can afford the expensive model 25 times. Select two eligible models on development data, then freeze the pair. Suppose the cheap model gets 70 requests right and the expensive one gets 86 right when each answers all 100. Assigning 25 of the requests at random to the expensive model gives an expectation of 74 correct: three-quarters of 70 plus one-quarter of 86. A learned router that gets 74 right ties that expectation. Use both models' answers on the same held-out cases to see how much random outcomes vary and which costly misses each policy makes. Across 14 tested settings, six commercial routers failed to beat a strong random mixture at matched cost. A request requiring special permission still has to clear the eligibility check first. [Dynamic LLM Routers are Often Misguided](https://arxiv.org/html/2610.02762v1)
 
 ## Clarification, Abstention, and Fallback Are Routes
 
@@ -524,6 +524,11 @@ exact source custody, a semantic compiler or action permission. A combined
 JEPA/H-Net model is a research possibility, not a result of this book or the
 reviewed papers. The [technical substrate owner](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
 keeps the primary references and adoption limits.
+
+Change who may publish in one snippet. Can the same consumer distinguish
+the paired permissions after JEPA training? For H-Net, count verified
+outputs delivered before the deadline on the same mixed batch. Both checks
+can veto a switch despite gains in alignment or chunk counts.
 
 ### A fixed budget for learned byte boundaries
 

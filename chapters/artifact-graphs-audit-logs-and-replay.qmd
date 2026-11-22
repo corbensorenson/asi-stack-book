@@ -4,7 +4,7 @@ chapter_id: "artifact-graphs-audit-logs-and-replay"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "talos"
   - "deterministic_capability_compilation"
@@ -119,6 +119,12 @@ External agent and software-evaluation baselines show what provenance must survi
 The artifact graph preserves the system's account of work, together with observations and gaps. That account supports verification only within its actual coverage; it is not a complete record of reality by construction.
 
 An ordinary repository, workflow history, and issue tracker can already encode parents, pinned tools, retained observations, and review blockers. Where those records are insufficient, the proposed graph makes claim relevance, source scope, replay limits, and affected consumers explicit. The absence of a graph service is not itself a provenance failure. The artifact graph is the layer that makes those fragments usable by evidence ledgers, regression suites, and future agents without requiring every reader to infer the workflow from prose.
+
+Give both workflows the same retention and access policy. A digest can
+check the identity of a returned artifact, but cannot reconstruct material
+that was deleted or is unavailable to the reviewer. Have an independent
+reviewer attempt the declared replay with the materials they can actually
+obtain. Count blocked replays and missing links alongside any time saved.
 
 ### Follow one artifact before reading the inventory
 

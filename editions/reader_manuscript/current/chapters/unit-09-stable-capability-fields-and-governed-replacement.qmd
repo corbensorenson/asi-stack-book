@@ -162,6 +162,17 @@ name.
 
 Two patch verifiers grade the same 100 cases. Both get 75 right and both miss eight. The new verifier fixes twelve and breaks five. Would you increase its traffic? Its score rose from 80 to 87, yet five of the 80 previously reliable cases now fail. Open those five records. If one allowed an export requiring owner approval, hold the rollout until that requirement passes again. MUSCLE observed such reversals in downstream tasks after base-model updates. Its best reported reduction in reversals depended on the versions, task and grading rule. [MUSCLE: A Model Update Strategy for Compatible LLM Evolution](https://machinelearning.apple.com/research/model-compatibility)
 
+### Decision exercise · A stronger route with an expired check {#decision-exercise-a-stronger-route-with-an-expired-check}
+
+A candidate passes 96 of 100 held-out cases, up from 90. Seven cases improve, five on optional formatting. One formerly passing case
+now sends a stale notice. The canary grant covers only internal drafts and
+has one day left. The customer-delivery check expired yesterday. The team
+asks to turn on customer delivery this afternoon.
+
+Choose the next rollout action. Name which facts matter for internal drafts,
+which matter for customer delivery, and one observation that could change
+your decision.
+
 ### One text verifier, two scopes {#verifier-replacement-paired-cases}
 
 A small trained verifier decides whether a draft can enter ordinary review or
@@ -177,6 +188,30 @@ Both verifiers missed `copy-09`, a case that required specialist review.
 Hold the public-copy candidate despite its higher total. The prior version
 missed the same check, so send that scope to a specialist. The candidate
 also fails the record-change floor.
+
+Now suppose the result packet contains two rows for `copy-09`. The first
+records a miss and the second records a pass. The replay kept the last row
+and chose the candidate. It also accepted a
+wrong decision when the same row supplied a label that matched it. Keep the
+case list and expected labels under the evaluation owner's control. Require
+one result for each declared case, then apply the same floor to the candidate
+and the fallback. The separate [fixture check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/check_verifier_regression_intake.py)
+rejects both packets and preserves the routes for valid evidence in its controls.
+
+Now revoke the candidate's approval. The index responds with the old
+revision and its previously valid approval. If the request names the current
+revision from a trusted source, both caches take the specialist route until
+the index returns matching evidence. The local check gives both workflows
+that trusted input. Without it, this policy holds even when the index happens
+to return the current data. [Revision check protocol](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md)
+
+A second check gives the revision pointer to a separate local process. Both
+workflows ask it for the current revision before reading the cache. They
+match on all 38 scripted checkpoints and exchange the same payload bytes
+over their pipes. Give the two processes independent operators or let a
+revocation race with an effect, and this result leaves the outcome open.
+[Process comparison](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md)
+
 [Choose a route in Unit 19](unit-19-routing-and-replaceable-cognitive-substrates.qmd#verifier-replacement-route)
 or [inspect the replay](../quickstart.qmd#verifier-replacement-replay).
 
@@ -484,69 +519,28 @@ retain as knowledge.
 
 ## The Strongest Simpler Baseline
 
-The strongest objection is not that change should be ungoverned. It is that
-ordinary disciplined engineering may already be enough.
+Start with a versioned registry, a protected regression suite, progressive
+delivery, and a rehearsed recovery path. Give the team the same evidence
+and the same right to stop a canary. For a stateless public-copy tool, the
+existing registry may already carry its interface, tests, expiry, owner, and
+fallback. Keep it if those records support the decisions at lower cost.
 
-A competent team can use versioned interfaces, provenance, model registries,
-feature flags, progressive delivery, canaries, regression suites, MLOps
-pipelines, rollback rehearsal, incident response, and human approval. Adding a
-stable-field object and a larger transaction may duplicate those practices,
-slow useful upgrades, create new paperwork, and give a false impression that
-semantic continuity has been certified.
-
-This objection has force. The field should not survive merely because it can
-describe more metadata. It must improve decisions that matter: detecting
-semantic drift, preventing authority expansion, preserving rare regressions,
-calibrating evidence expiry, exposing evaluator dependence, recovering more of
-the declared state and effects, reducing repeated incidents, or making a failed
-replacement easier to understand and contain. Those gains must be compared
-against latency, compute, operator work, evaluator work, storage, missed help,
-false blocking, and residual burden.
-
-The architecture should also be allowed to shrink. A low-risk, stateless tool
-with no privileged effects may need only a small field: interface, provenance,
-tests, owner, expiry, and fallback. A high-risk verifier that influences release
-authority needs more. Governance proportionality is part of the design. If the
-same packet is required for every change, the system will either stop changing
-or learn to fill forms without learning anything.
+The field contract earns more work when a consumer needs to know which
+obligations survived a change, which evidence expired, and whether fallback
+can still restore a named state. Compare failures found, useful upgrades held,
+and recovery work alongside latency, evaluator effort, and storage.
 
 ## From a Minimum Record to a Replacement Fabric
 
-The minimum useful implementation is modest. Give one capability a stable ID
-and versioned contract. Name its consumers, accepted inputs, required outputs,
-abstentions, errors, side effects, authority ceiling, historical regressions,
-candidate identity, evaluator, evidence lease, lifecycle state, fallback or
-a named hold disposition, and rollback owner. Validate that missing identity, stale evidence, authority
-widening, failed regressions, self-evaluation, absent fallback, or unowned
-irreversible effects block the default route.
+Pilot the patch verifier. Before exposure, record which grant, checks, and
+dependencies qualify the candidate for a named use. Give the canary an
+observable stop condition and rehearse recovery against the affected state.
+Count a fallback only while its own qualification remains current.
 
-Then run one prospective replacement. Freeze the rules before results. Keep the
-candidate isolated. Use a narrow canary with a real stop condition. Exercise
-rollback before default. Compare the declared inventory after recovery. Keep
-negative and null outcomes. This does not prove the architecture, but it turns
-“upgrade” into a decision that can be inspected.
-
-The mature system is a replacement fabric spanning models, tools, memory,
-policies, data, evaluators, runtimes, and organizational procedures. Fields are
-versioned and consumer-relative. Qualification evidence decays. Historical
-incidents follow the field. Dependency changes trigger revalidation. Candidates
-can remain shadowed or canaried without pressure to become default. Monitoring,
-rollback, compensation, descendant invalidation, and retirement share one
-lineage.
-
-A serious research campaign would compare this fabric with registries,
-interface-only checks, provenance-only admission, benchmark promotion,
-progressive delivery, conventional MLOps, snapshot restoration, and the best
-ordinary change-management baseline. It would use real stateful and
-side-effecting capabilities, ambiguous boundaries, delayed outcomes,
-irreversible effects, heterogeneous consumers, captured evaluators, and stale
-evidence. It would measure useful improvement and blocked harm together.
-
-The proposal should advance only if it is not dominated on that joint frontier.
-If conventional methods preserve continuity and recovery at lower cost, the
-field should narrow. If a mechanism adds paperwork without changing decisions,
-remove it. If field boundaries prove too ambiguous for independent reviewers to
-agree, do not disguise disagreement as a stable interface.
+Later replacements may touch several capabilities and consumers. Compare
+whether shared lineage helps them discover broken dependencies and finish
+recovery. Reduce the record when ordinary delivery controls preserve those
+joins with less work.
 
 ## Which Decisions Need Reopening? {#the-strongest-objection}
 
@@ -569,47 +563,19 @@ change so a missing effect stays visible. No finite proof, schema, fixture, or c
 question alone. Compare natural replacements with conventional progressive
 delivery and measure the burden of keeping those distinctions.
 
-### Decision exercise · A stronger route with an expired check {#decision-exercise-a-stronger-route-with-an-expired-check}
-
-A candidate passes 96 of 100 held-out cases, up from 90. Seven cases improve, five on optional formatting. One formerly passing case
-now sends a stale notice. The canary grant covers only internal drafts and
-has one day left. The customer-delivery check expired yesterday. The team
-asks to turn on customer delivery this afternoon.
-
-Choose the next rollout action. Name which facts matter for internal drafts,
-which matter for customer delivery, and one observation that could change
-your decision.
-
 ## What This Establishes
 
-An improving system needs stable promises and replaceable machinery. Confusing
-the two produces either stagnation or trust laundering.
+A better aggregate score leaves the customer-delivery decision open when the
+delivery check has expired. Renew the evidence and obtain authority for that
+use. The unexpired internal-draft grant still governs its own scope. A failed
+canary stops further exposure. A permitted fallback or hold still leaves an
+owner responsible for any effect that has already occurred.
 
-Stable Capability Fields put identity, observable obligations, authority,
-incident memory, evidence scope, and recovery duties above any one
-implementation. Governed replacement turns an upgrade into a prospective,
-staged transaction whose failures, partial reversals, and irreversible effects
-remain visible. Together they make improvement contestable and reversible
-where possible without pretending that a name, benchmark, or rollback command
-proves equivalence.
-
-The patch verifier may change. Its promise cannot change invisibly. The new
-implementation earns only the route its evidence supports, for the consumers
-and uses that were actually examined, during the period in which that evidence
-remains current. When the canary fails, the system stops exposure, selects a currently
-qualified route or holds the affected use, keeps the failed result, and owns
-what could not be undone.
-
-That is the handoff to the next problem. A replaceable capability can preserve
-its contract and still reason from bad observations. Unit 10 begins the
-cognitive path by asking what a system is entitled to believe about the world
-it senses.
 [Unit 10](unit-10-perception-and-observation-trust.qmd) takes over observation
-identity, coverage, missingness, and disagreement. It must supply the evidence
-that replacement qualification and recovery decisions actually consume. The
+identity, coverage, missingness, and disagreement. The
 [stable-field owner](https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html)
 and [replacement owner](https://corbensorenson.github.io/asi-stack-book/chapters/capability-replacement-and-rollback.html)
-retain exact field contracts, finite transition results, and the bounded local
-restoration outcomes described above.
+retain the field contracts, finite transition results, and local restoration
+outcomes.
 
 {{< include ../generated/unit-09-status.qmd >}}

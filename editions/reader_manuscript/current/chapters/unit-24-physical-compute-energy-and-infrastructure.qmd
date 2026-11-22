@@ -233,7 +233,7 @@ response or proof that efficiency always increases demand.
 
 ### From a token meter to an answer bill
 
-On one B200, multiply 627 conversational output tokens by 0.151 GPU joules per token. The result is about 95 J. The problem-solving workload produced 7,035 tokens at 0.312 J/token, about 2.2 kJ. The two maximum batch sizes also differed. To choose a route for tomorrow's queue, give both routes the same work and divide all measured energy, retries included, by accepted answers. Table 1 measured GPU energy; cooling and the local electricity supply enter a facility calculation separately. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
+On one B200, multiply 627 conversational output tokens by 0.151 GPU joules per token. The result is about 95 J. The problem-solving workload produced 7,035 tokens at 0.312 J/token, about 2.2 kJ. These totals use each workload's own maximum batch size. At a common batch size of 128 the rates were 0.209 and 0.312 J/token. The task mix and generation mode also changed together. To measure the effect of switching modes, give both routes the same questions and acceptance criteria, then divide the energy for all attempts, retries included, by accepted answers. The paper measured GPU energy. Cooling and the local electricity supply enter a facility calculation separately. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
 
 ## Energy Is Capacity, Timing, and Reliability
 

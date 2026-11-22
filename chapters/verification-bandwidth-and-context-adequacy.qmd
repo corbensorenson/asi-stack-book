@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -151,6 +151,14 @@ obligation denominator and mode-specific ceilings across all of these routes.
 A high-risk claim arrives with a large context packet, several supporting sources, and a passing formal check. Its adequacy contract also requires an independent contradiction search against a named negative source unit. The budget expires before that obligation is attempted. The packet is context-rich but verification-inadequate, so it may remain a draft or disputed claim; it cannot receive the requested verified-support route.
 
 If the contradiction search later finds a conflict, adding more positive sources does not cancel it. The five-stage refinement checks twelve routes, including three of five admission cases, two of seven contradiction cases, and three of five capacity cases, and rejects 87 mutations. This finite behavior preserves attempt denominators and escalation. It does not establish claim truth, source correctness, evaluator competence, formal-model fidelity, useful outcomes, or safety.
+
+The named obligation tells the fixture what to check. To test whether the
+verification program finds missing obligations, give a conventional reviewer
+and the proposed workflow the same dossier and time budget. Include an
+independently authored counterexample whose location is hidden from both.
+Record whether each route finds it, recognizes that a required check is still
+open, or declares a pass with insufficient evidence. The percentage of checks
+completed is meaningful only alongside what those checks cover.
 
 The claim remains at `argument`. Current evidence establishes authored record
 checks, finite route behavior, a conservative obligation-count example, and

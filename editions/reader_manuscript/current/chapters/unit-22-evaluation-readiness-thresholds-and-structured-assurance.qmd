@@ -205,8 +205,10 @@ dispositions prevent every red cell from becoming evidence for the same story.
 The [Answerability Atlas working paper](https://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html)
 supplies a source-reported example. Adding a previously omitted buy-all
 comparator changed its final screen from proceed to stop, although corrected
-headroom remained positive. That was a post hoc correction on the same worlds,
-not fresh confirmation or proof of no benefit. Its aggregate calibration pass
+headroom remained positive. At budget 128 it fell from about 0.052 to 0.035
+against a required mean gain of 0.04. Before running a fresh screen, write down
+which ordinary actions fit each budget and challenge any omission. The original
+correction reused the same worlds after inspection. Its aggregate calibration pass
 also coexisted with poor coverage at high coupling. The benchmark must preserve
 which comparison, regime and decision rule each conclusion actually describes.
 
@@ -381,6 +383,11 @@ conservative confidence bound, require repeated crossings, or open a preparation
 state before formal crossing. Choosing the rule after seeing a result lets
 release pressure decide the measurement.
 
+Suppose the rule requires a safeguard whenever the upper confidence bound
+reaches the operational threshold. An interval that straddles the threshold
+then triggers the safeguard while leaving the true capability level uncertain.
+Record the policy decision and the uncertainty together.
+
 False clears and false blocks have different costs. A false clear can expose an
 unprepared organization to a capability. A false block can delay useful work,
 concentrate development in less transparent settings, or consume scarce review.
@@ -450,6 +457,12 @@ cannot route its plan to a helper that holds production credentials. A human
 review step does not authorize the system to expand the human's scope. Every
 handoff preserves the original principal, purpose, and maximum effect unless a
 separate grant explicitly changes them.
+
+A previous fallback approval can expire on its own. It can also depend on
+the same stale reference or service that disqualified the primary route.
+Check that shared dependency and the fallback's current lease before sending
+work to it. If both routes fail the same requirement, hold the work for a
+qualified specialist.
 
 Readiness also has an operational capacity dimension. A monitoring and review
 team that can supervise ten canaries is not ready for ten thousand. Queue
@@ -658,7 +671,7 @@ restricted assertions, and remedy routes belong beside authenticity.
 ::: {.callout-note collapse="true"}
 ### What does the label establish about the photograph?
 
-Which photo belongs under “The 2019 flood”? One has an incomplete edit history and a contemporary archive entry. The other has a complete edit history and a caption dated two years earlier than the event. Verify the date against the event record, correct the second caption, and disclose the missing edit history on the first. A 6,114-person news study found that provenance labels increased perceived credibility and trust. A separate 595-person study found that incomplete histories sometimes made people doubt honest media. Both measured how readers judged the material. Whether a caption is accurate requires evidence about the event. [C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries](https://christophtrattner.com/pubs/ICWSM2026.pdf) · [Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions](https://arxiv.org/abs/2303.12118v3)
+Which photo belongs under “The 2019 flood”? One has an incomplete edit history and a contemporary archive entry. The other has a complete edit history, but its caption presents a 2021 event as the 2019 flood. Verify the date against the event record, correct the second caption, and disclose the missing edit history on the first. A 6,114-person news study found that provenance labels increased perceived credibility and trust. A separate 595-person study found that incomplete histories sometimes made people doubt honest media. To test an archive label, score the reader’s answer against the event date and ask about trust separately. [C2PA Provenance Labels Increase Trust in Digital News Platforms Across Western Countries](https://ojs.aaai.org/index.php/ICWSM/article/view/42749) · [Examining the Impact of Provenance-Enabled Media on Trust and Accuracy Perceptions](https://arxiv.org/abs/2303.12118v3)
 :::
 
 ### Decision exercise · The cache the rollback missed {#decision-exercise-cache-migration}

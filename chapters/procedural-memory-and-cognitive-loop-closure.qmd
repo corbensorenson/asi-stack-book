@@ -4,7 +4,7 @@ chapter_id: "procedural-memory-and-cognitive-loop-closure"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "cognitive_loop_closure"
   - "rmi"
@@ -110,6 +110,14 @@ Current agent systems often blur those modes. A workflow gets repeated because i
 An agent repeatedly repairs broken chapter links by replacing an old filename with a new canonical slug. After several successful traces it proposes a reusable repair tool. Positive examples pass, but a negative case contains the old filename inside a quoted historical passage where replacement would corrupt the text. The first generated tool performs a global substitution and fails that regression, so it remains quarantined rather than becoming a routable reflex.
 
 The repaired procedure parses links, restricts edits to link targets, records changed locations, preserves a dry-run diff, and falls back to review on ambiguous markup. Its source traces, parameters, closure artifact, verifier result, benchmark floor, readiness state, monitor, and retirement trigger remain linked. The finite route checks distinguish routable, quarantined, and retired procedural records; they do not establish that the extracted procedure is complete, useful on natural workloads, secure, or better than fresh reasoning.
+
+Compare the generated procedure with a hand-written link checker and an
+ordinary reviewed repair. Freeze the procedure before testing on new source
+trees. Count the work needed to build, review, maintain, and retire it, and
+keep cases where it defers in the denominator. Reusing a shortcut pays off
+only if it saves work across those tasks at the same correctness and disclosure
+requirements. The [forward-transfer comparison](../products/evidence-registry/study-forward-transfer.html)
+illustrates why search order and the work cap also need to be held explicit.
 
 The claim remains at `argument` support. Cognitive Loop Closure supplies trajectory logging, loop detection, abstraction, parameter discovery, tool synthesis, verification, registry, routing, monitoring, and retirement vocabulary. RMI, RGS, and Benchmaxxing supply ratchet and regression pressure. Talos supplies execution traces and audit discipline. Project Theseus sources supply implementation-lineage pressure, not local proof of unattended self-evolution. The complete authenticated `moecot` connector text is passage-reviewed; its runtime artifacts remain unimported and unreproduced.
 

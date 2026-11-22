@@ -303,13 +303,37 @@ positive control—without touching a held-out denominator—and verifies that a
 fully dispositioned effect plus fresh checks and expired emergency authority
 can reach `accept_recovery`.
 
-This is an authored joined authority-to-effect case, not the natural Theseus
-flagship `T4` trace and not an incident-response result. It proves neither that
-the eleven declared classes are complete nor that any external effect was
-really reversed. Its value is narrower: a named authority widening, missing
-state class, unknown effect, stale check, dependent verifier, active emergency
-lease, unqualified fallback, or authority-laundering request changes the route
-rather than disappearing inside prose.
+In a matched incident drill, give both a competent on-call team and the
+proposed controller equivalent access to the external notification provider's
+records. Score whether a notification occurred and whether the service
+reopened separately, with the effect label taken from independent observation.
+Keeping the service in a justified hold costs downtime. Report that alongside
+premature reopenings and duplicated notifications.
+
+This authored fixture provides record-shape and route evidence only. Its
+validator changes the route in response to attempted authority widening,
+missing declared state, an unknown effect, a stale check, a dependent verifier,
+an active emergency lease, an unqualified fallback, or an authority-laundering
+request. Completeness of the state inventory and actual effect reversal
+require evidence from an observed incident or recovery drill.
+
+### Recover from the observed effect {#grant-to-effect-recovery}
+
+Operations receives the attempt disposition from [Runtime](runtime-adapters-tool-permissions-and-human-approval.qmd#grant-to-effect-runtime)
+and checks the target journal for `hold-for-editor` in the shared
+[grant ordering trace](system-boundaries-and-authority.qmd#grant-to-effect-authority).
+The late read in the commit-first case sees current revision 2 and a
+stored effect committed under active revision 1 at tick 1. Preserve that
+effect history and close the question of whether the hold was recorded.
+Any later change to the hold requires its own authority.
+
+The revoked-before-write cases leave the version-checked worker on hold.
+With the matching journal observation, record that the effect is absent
+in this fixture. If the journal cannot be read, keep the effect question
+open and assign the next check. A stale observation cannot settle that
+disposition. The incident owner decides whether remaining effects need
+compensation or whether service may resume. This local regression ends
+at observation of the synthetic row.
 
 ### Incident state machine
 

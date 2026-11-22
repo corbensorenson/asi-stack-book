@@ -9,7 +9,7 @@
 | Citation label | Salvi et al. (2025), Conversational Persuasiveness of GPT-4 |
 | Published / updated | 2025-05-19 / 2025-05-19 |
 | DOI | 10.1038/s41562-025-02194-6 |
-| Review state | Preliminary second-tranche audit note; the proposed chapter remains unadmitted. |
+| Review state | Selected primary passages reviewed for the communication chapter. |
 | Ingestion basis | Official open article abstract, experimental-design, aggregate-result, limitations, ethics, and citation passages inspected. Supplementary files, released debate data, code, individual transcripts, and downstream replications were not audited or reproduced locally. |
 
 ## Thesis
@@ -43,6 +43,12 @@ durable action, broad population transfer, or deployed-platform evidence.
 Reviewed Methods (Participant recruitment and Experimental design), Results (Aggregate results and Table 2), and Discussion (limitations). In the version of record, the preregistered study assigns US adults recruited through Prolific to short structured debates. Personalized GPT-4 versus the human baseline increases the modeled odds of higher post-debate agreement by 81.2% (95% CI 26.0% to 160.7%, N=900). The chapter uses this result to justify evaluating the audience and personalization context in approval workflows. The estimate concerns ordinal self-reported agreement in this study. It does not establish durable behavior change, reviewer approval effects, mitigation efficacy, transfer, or a local result.
 [Primary record](https://pmc.ncbi.nlm.nih.gov/articles/PMC12367540/).
 
+The headline contrast changes both the opponent type and access to
+personalization. Estimating an effect of personalization alone requires
+comparing opponents of the same type. The contrast also reports relative
+odds of a higher ordinal response, leaving absolute changes in probabilities
+dependent on the response distribution.
+
 ## Failure Modes
 
 - Generalizing a short US online debate result to other populations, domains,
@@ -56,7 +62,7 @@ Reviewed Methods (Participant recruitment and Experimental design), Results (Agg
 
 ## Book Chapters Supported
 
-- Proposed: `human-ai-communication-persuasion-and-epistemic-security`
+- Applied in `human-ai-communication-persuasion-and-epistemic-security`
 - Existing boundary owners: `human-factors-and-meaningful-control-in-oversight`,
   `scalable-oversight-and-adversarial-ai-control`,
   `claim-ledgers-and-belief-revision`, `moral-uncertainty-and-value-conflict`,

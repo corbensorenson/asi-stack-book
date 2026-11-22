@@ -160,6 +160,10 @@ components, expected observations, tolerances, missingness, external effects,
 and result. Partial replay can be valuable. It must not be promoted into a
 stronger grade.
 
+A digest can confirm a recovered input is the one the run used. It cannot
+stand in for that input if the reviewer has no access to it. Count an exact
+rerun that could not start separately from one that ran and disagreed.
+
 For the security release, byte-exact rebuild answers whether the source can
 produce the package. A separate deployment replay exercises the adapter and
 replication path in an isolated environment. An actual-state probe inspects the
@@ -268,10 +272,12 @@ consequential effects without fresh authority, quarantine the result, restrict
 operations to a safe subset, or accept a named residual under institutional
 authority.
 
-The grant/effect race needs custody. Revocation after dispatch cannot make an
-already caused effect disappear. The receipt records whether execution began,
-which mutations were observed, and who owns compensation. A timeout is not
-evidence of nonexecution.
+In a local check, the worker caches approval and the authority revokes it
+before the write. The cached-only worker still writes. An ordinary database
+transaction checks the current grant with the write and holds. A serialized
+receipt follows the same rule and reaches the same result. Reverse the order
+and the valid write remains visible after revocation. Record the commit order
+and the observer's evidence separately. [Local ordering check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md)
 
 Other chapters use leases for other objects. A resource allocation lease
 reserves capacity under a task budget. A purpose lease bounds an information

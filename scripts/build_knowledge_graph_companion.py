@@ -17,7 +17,7 @@ ASSET_NAMES = ("index.html", "explorer.css", "explorer.js")
 GRAPH_SCHEMA = "schemas/book_knowledge_graph.schema.json"
 COMPILER_INPUTS = (
     kg.STRUCTURE, kg.INVENTORY, kg.PAPER_LIBRARY, kg.GLOSSARY, kg.READER_MANIFEST, kg.CROSSWALK,
-    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.PROOFS, kg.STUDIES,
+    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PROOFS, kg.STUDIES,
     "scripts/book_knowledge_graph.py", "scripts/build_knowledge_graph_companion.py",
     "scripts/build_human_reader_current.py", "scripts/research_case_rows.py",
     "scripts/research_studies.py", GRAPH_SCHEMA, *(WEB + name for name in ASSET_NAMES),
@@ -31,7 +31,9 @@ RELATION_FILE_LIMIT = 96 * 1024
 
 def input_paths(read):
     manifest = json.loads(read(kg.READER_MANIFEST))
-    return (*COMPILER_INPUTS, *(kg.READER + row["source_file"] for row in manifest["units"]))
+    return (*COMPILER_INPUTS, *(kg.READER + row["source_file"] for row in manifest["units"]),
+            *(path for row, identity in kg.citation_inputs(read)
+              for path in (row["run"], identity["transition_path"])))
 
 
 def shard_id(node_id):

@@ -148,6 +148,11 @@ inputs changed, what authority remains, and whether external effects from the
 first attempt need compensation. Idempotence is demonstrated at the relevant
 boundary, not assumed from an API label.
 
+Count how many times the receiver actually applied the operation. A job can
+have one completion in the scheduler while its receiver has two effects.
+If the receiver acted but its acknowledgment was lost, a retry requires
+qualified status or a receiver contract that handles the same operation ID.
+
 ## Results Are Not Outcomes
 
 Workers should be accountable for results they can produce and evidence they
@@ -198,6 +203,11 @@ durable state, and handoff behavior. The
 [Work Surfaces technical owner](https://corbensorenson.github.io/asi-stack-book/chapters/ai-work-surfaces-agent-harnesses-and-organizational-absorption.html)
 retains the detailed historical and product positioning; it reports no matched
 cross-surface execution study.
+
+To compare two harnesses, hold the model, assigned work, permissions, and
+available review time fixed. If one harness can run extra tools, measure
+that change separately before crediting the interface. Count the human work
+that remains after each harness reports completion.
 
 The architectural possibility matters more than a product list. A surface may
 absorb text, file, project, tool, workflow, or coordination duties. Moving one

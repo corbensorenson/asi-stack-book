@@ -4,7 +4,7 @@ chapter_id: "model-weight-custody-and-hardware-roots-of-trust"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-08-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_rand_model_weight_security_2024"
   - "ext_nist_confidential_computing_2026"
@@ -433,17 +433,17 @@ The requesting host returns a cryptographically valid attestation for `M-22`.
 That favorable fact is insufficient. The transfer receipt names bundle `W-17b`,
 a derivative repackaging produced after `P-4` was approved. Its signature is
 valid, but the policy record contains no lineage edge or review disposition for
-the new bundle. A simplistic system sees “valid attestation” and “valid
-signature” and releases the key. The custody route instead reports a lineage
-mismatch, keeps the key unreleased, records the affected request and recipient,
-and sends the artifact to custody repair. No claim is made that the environment
-is compromised; the block follows from a missing relation between the approved
-policy and requested artifact.
+the new bundle. A conventional key release policy pinned to the approved
+artifact digest would already reject the request. Compare that policy with the
+proposed custody workflow after introduction of a legitimate derivative. Give
+both workflows the same approvals and artifact records. Measure whether the
+lineage record reduces repair work or helps identify which subsequent loads
+must be reconsidered when an approval changes.
 
 Suppose repair establishes the derivative lineage and a second request reaches
 the load boundary. An independent observer records that the encrypted bundle
 was decrypted inside the declared environment. That receipt can support the
-narrow statement that one requested artifact crossed one modeled load boundary.
+narrow statement that one requested artifact was decrypted at the observed boundary.
 It cannot establish that plaintext was never exposed elsewhere, that inference
 outputs cannot exfiltrate protected information, that the model is safe, or that
 runtime tools are authorized. Those questions route to their own controls.

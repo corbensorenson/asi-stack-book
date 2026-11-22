@@ -140,6 +140,25 @@ The distributed version of the same problem is partitioned authority. If an adap
 
 In this hypothetical explanation of the finite ordering, a repository adapter holds a scoped grant to update one generated file. Before dispatch it binds the caller, target, permission, active epoch, any required secret handle, pre-state, and recovery path. The write commits and a separate read observes the bytes. Revocation is admitted before a queued second write reaches the same serialized gate, so that write is denied without mutation. Restoration of the first file uses separately applicable recovery authority and checks that no intervening edit makes the baseline inappropriate. If another actor has changed the file, or a remote attempt may have committed during a partition, the route holds and reconciles instead of promising exact restoration.
 
+### Make the effect-time decision {#grant-to-effect-runtime}
+
+In the [command handoff](intent-to-execution-contracts.qmd#grant-to-effect-command),
+the worker receives the request to record `hold-for-editor` for
+`public-copy` with revision 1. The transaction compares the received
+grant to the current grant and checks the deadline before it writes.
+An inactive revision 2 or tick 3 past the deadline yields a hold.
+The write at tick 1 under current revision 1 records the effect, used
+revision, live revision and deadline together.
+
+Ordinary transactional memoization and the serialized receipt produced
+the same outcomes under all four schedules in the [shared
+regression](system-boundaries-and-authority.qmd#grant-to-effect-authority).
+Cached permission alone allowed two unauthorized writes. The worker
+emits a committed or held disposition. [Operations](governed-operations-incident-command-and-graceful-degradation.qmd#grant-to-effect-recovery)
+checks the effect journal separately, including when the grant changes
+before that read. An effect outside this transactional store requires
+evidence from its own enforcement and observation boundary.
+
 The local model contains a six-event witness to exact modeled baseline restoration and eleven countermodels covering permission, identity, authority, expiry, secrets, dispatch, pre-state, revocation, and rollback failures. The harness also checks two valid and seven expected-invalid fixtures. It trusts its OS, sandbox, secret, service, and observer fields, so the trace does not establish hardware enforcement, reviewer competence, distributed revocation, target-service truth, or effect-complete rollback.
 
 The claim remains at `argument` support. Talos supplies adapter and approval discipline; VIEA supplies intent-to-runtime and feedback boundaries; Ladon/Manhattan supplies handle-mediated secret use; GenesisCode supplies capability-mediated effects and replay logs; Software Magic Grimoire and Theseus Operator OS supply workflow and operator-surface pressure. MoECOT remains a connector implementation-reference route, not local execution evidence.

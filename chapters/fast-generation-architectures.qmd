@@ -4,7 +4,7 @@ chapter_id: "fast-generation-architectures"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "cgs"
   - "cognitive_loop_closure"
@@ -276,6 +276,12 @@ The target's acceptance rule governs which tokens enter the output in both desig
 DFlash's depth ablation makes that cost visible even within one design. Its eight-layer drafter produced longer accepted sequences, while the five-layer drafter delivered the greater speedup in the tested configuration. A longer accepted block can still take too long to propose. [DFlash, Table 6](https://arxiv.org/html/2602.06036v2)
 
 Consider a service choosing between one interactive request and a shared batch. With a 1.7B drafter and Qwen3-32B on MATH-500, D3D Table 2 reports 154 aggregate decode tokens/s at one request and 864 at sixteen. Ordinary decoding also benefits from batching, so the relative advantage shrinks from 6.1× to 2.7×. On MT-Bench the sixteen-request gain was 1.5×. A bulk queue can use throughput measured on its workload. To route an interactive customer, measure time to first token and the distribution of inter-token delays at the expected concurrency, including queueing in the first-token clock. [D3D, Table 2](https://arxiv.org/html/2611.06425v1)
+
+Use the same arrival trace, request mix, target policy, and hardware budget
+for the ordinary and speculative routes. Allow each a tuned batching policy
+under the same deadline. Report admitted and completed requests, timeouts,
+and the latency distribution together. A higher decode rate can accompany
+more missed deadlines if the drafter consumes memory needed to serve the queue.
 
 ### Translate a prompt cache between models
 

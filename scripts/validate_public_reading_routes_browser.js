@@ -185,6 +185,75 @@ async function checkKnowledgeGraph(context, root) {
   }
 }
 
+async function checkStudyCases(context) {
+  const page = await context.newPage({ viewport: { width: 390, height: 820 } });
+  try {
+    const url = root + "products/evidence-registry/study-forward-transfer.html";
+    await page.goto(url);
+    const run = page.locator("#run-transfer-factorial");
+    const drawer = run.locator("details[data-study-cases]");
+    assert.equal(await drawer.evaluate(el => el.open), false);
+    await drawer.locator("summary").click();
+    const filter = drawer.getByLabel("Filter paired cases");
+    await filter.selectOption("exhausted");
+    const rows = drawer.locator("tbody tr:visible");
+    assert(await rows.count() > 0 && await rows.count() < 256);
+    assert(await rows.evaluateAll(values => values.every(el => el.hasAttribute("data-exhausted"))));
+    await filter.selectOption("adverse");
+    assert(await rows.count() > 0 && await rows.evaluateAll(values => values.every(el => el.hasAttribute("data-adverse"))));
+    const target = await drawer.locator("tbody tr:not([data-adverse])").first().getAttribute("id");
+    await page.evaluate(id => { location.hash = id; }, target);
+    await page.locator(`#${target}`).waitFor({ state: "visible" });
+    assert.equal(await filter.inputValue(), "all");
+    await page.reload();
+    await page.locator(`#${target}`).waitFor({ state: "visible" });
+  } finally {
+    await page.close();
+  }
+}
+
+async function checkEditorialRoutes(context) {
+  const page = await context.newPage();
+  try {
+    await page.setViewportSize({ width: 390, height: 820 });
+    await page.goto(root);
+    const entry = page.locator("#book-start");
+    const labels = ["Read the book", "Inspect a result", "Find a technical contract"];
+    const primaryLinks = entry.locator(".book-route strong a");
+    assert.deepEqual(await primaryLinks.allTextContents(), labels);
+    assert.match(await entry.innerText(), /verified 80 closures/);
+    const routes = await primaryLinks.evaluateAll(links => links.map(link => link.href));
+    for (const href of routes) {
+      const response = await page.goto(href);
+      assert(response.ok(), href);
+    }
+
+    const trace = [
+      ["system-boundaries-and-authority", "authority"],
+      ["intent-to-execution-contracts", "command"],
+      ["runtime-adapters-tool-permissions-and-human-approval", "runtime"],
+      ["governed-operations-incident-command-and-graceful-degradation", "recovery"],
+    ];
+    for (const [chapter, step] of trace) {
+      await page.goto(root + `chapters/${chapter}.html#grant-to-effect-${step}`);
+      assert(await page.locator(`#grant-to-effect-${step}`).isVisible(), step);
+    }
+
+    const registry = root + "products/evidence-registry/";
+    const claim = "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003";
+    await page.goto(registry + "knowledge-graph/?node=" + encodeURIComponent("claim:" + claim));
+    const citation = page.locator("#record").getByRole("link", { name: "Open in the book", exact: true });
+    await citation.click();
+    const span = page.locator(`[id="${claim}"]`);
+    assert(await span.isVisible());
+    assert.match(await span.innerText(), /one pinned Circle/i);
+    const result = await span.getByRole("link", { name: "Exact result" }).evaluate(link => link.href);
+    assert((await page.goto(result)).ok(), result);
+  } finally {
+    await page.close();
+  }
+}
+
 async function main() {
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined,
@@ -195,7 +264,11 @@ async function main() {
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#clustering-the-retrieval-index$/);
-    if (!live) await checkKnowledgeGraph(context, root);
+    if (!live) {
+      await checkKnowledgeGraph(context, root);
+      await checkStudyCases(context);
+      await checkEditorialRoutes(context);
+    }
 
     const page = await context.newPage();
     await page.setViewportSize({ width: 1280, height: 860 });

@@ -292,6 +292,30 @@ checks workflow disposition separately from the effect in the journal. A hold
 after one wrong document effect fails the `safe_hold` check. Seven instrument
 controls pass. The stricter rule leaves all 160 retained paired labels intact.
 
+The response timestamp can be current while the projected state is old. In
+a [separate local check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/receiver_projection_freshness_protocol.md),
+the operation has already committed, but the status response returns an older
+failure. Retrying produces a second commit when the receiver cannot
+deduplicate. A check of the source revision instead leaves one committed
+effect and an unresolved caller hold. Both workflows still retry a genuine
+current failure. This fixture supplies the trusted revision.
+
+### Choose where the extra check runs {#matched-receiver-access}
+
+A prospective local comparison gives the ordinary endpoint the same
+access to a second projection as the caller who asks twice. Across 288
+paired cases, the primary-only endpoint verifies 48 closures. Both routes
+with the second projection verify 80. The difference appears when
+primary status is stale or unavailable and the second projection is fresh.
+
+Which route costs less depends on the boundary you count. The gateway
+reduces caller requests from 480 to 288. Total status payload grows from
+75,960 to 130,128 bytes in these local processes. Both forms make the same
+decisions. Choose the primary-only route with adequate coverage, then
+compare the full burden of the two placements if the second source
+materially changes closure. Separate operation and human effort remain
+open. [Exact paired run](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability)
+
 ## Decide where a new verifier may serve {#verifier-replacement-replay}
 
 The small text verifier in [Unit 9](chapters/unit-09-stable-capability-fields-and-governed-replacement.qmd#verifier-replacement-paired-cases)
@@ -328,10 +352,24 @@ that inspection count starts. The count shows reuse after the hash.
 
 The [equal-cache follow-up](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache)
 gives both arms conventional memoization over the same revision index. Both
-make all 66 expected decisions, read 75 documents and recheck once after a
-missed invalidation. A serialized handoff adds 2,367 bytes in this replay.
-Its cost table shows construction, hashing, index reads and invalidation.
-This local fixture leaves human effort and cross-process deployment cost open.
+match the expected route at 66 scripted checkpoints and read 75 evidence
+documents. A serialized handoff writes 2,367 bytes. Both catch a missed
+notification when the next lookup returns the current revision.
+
+A [separate revision check](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md)
+includes an index that replies successfully with an old revision. With the
+required revision supplied by the request, both workflows send eight of 30
+scripted decisions to a specialist. Both read 50 evidence documents. The
+serialized workflow writes 1,150 handoff bytes. Obtaining a trustworthy
+revision, cross-process costs, and human effort remain separate questions.
+
+In a [local process comparison](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md),
+a separate authority process supplies the current revision for every
+request. Both workflows match all 38 expected routes and send the same
+16,816 payload bytes across their pipes. The serialized workflow encodes
+1,616 bytes into its local cache. A stronger comparison needs separate
+operators and an update that can race with a request. The pipe counts omit
+startup, elapsed time, and human work.
 
 ```bash
 python3 scripts/compare_verifier_replacements.py

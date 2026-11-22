@@ -4,7 +4,7 @@ chapter_id: "physical-compute-infrastructure-energy-and-environmental-constraint
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "tokenmana"
   - "ext_iea_energy_and_ai_2025"
@@ -117,6 +117,12 @@ single extra unit on any dimension breaks eligibility even if the accelerator's
 nameplate FLOPs remain unchanged. The impact ledger separately attributes
 totals of 12 and 15, including facility overhead, backup energy, and cooling;
 hiding backup energy rejects the accounting claim.
+
+The arithmetic assumes the demands coincide within the declared interval.
+If the service deadline allows, a conventional scheduler could stagger the
+peaks. Give that scheduler the same constraints and metering, then compare
+accepted work and missed deadlines. State the idle-power baseline separately
+when estimating energy attributable to the added workload.
 
 The six-transition review also invalidates the receipt when workload, site,
 interval, hardware, or meter version changes. Its counterexamples show why two
@@ -236,11 +242,11 @@ carries both a service lease and an impact obligation through retirement.
 
 ### From a token meter to an answer bill
 
-At the common batch size, the per-token ratio is about 1.49. The per-response ratio is about 23.1. Table 1 gives the missing denominators. For conversation at its maximum batch size, 627 output tokens times 0.151 J/token gives roughly 95 J. For problem solving, 7,035 times 0.312 gives roughly 2,195 J, close to the reported 2,192 J after rounding. The maximum batch sizes were 512 and 128.
+At their respective maximum batch sizes, the workloads differ by about 23.1× in GPU energy per response. For conversation at batch size 512, 627 output tokens times 0.151 J/token gives roughly 95 J. For problem solving at batch size 128, 7,035 times 0.312 gives roughly 2,195 J, close to the reported 2,192 J after rounding.
 
 For a purchasing decision, send the same task mix to both routes with the same acceptance test and latency limit. Divide metered energy for **all attempts**, including failures and retries, by the number of accepted responses. Specify whether the meter covers GPUs, servers or the facility before attaching electricity or carbon quantities to that result.
 
-At batch size 128 the authors report 0.209 and 0.312 GPU joules per token for conversation and problem solving. Their per-response figures are 95 and 2,192 GPU joules. The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
+At a common batch size of 128 the authors report 0.209 and 0.312 GPU joules per token for conversation and problem solving, a ratio of about 1.49. Task mix and generation mode also vary together, so this table cannot isolate the energy effect of switching modes on identical questions. GPU energy excludes other facility loads. [Where Do the Joules Go? Diagnosing Inference Energy Consumption](https://arxiv.org/html/2601.22076v2)
 
 ### Hardware guarantees, coverage, and concentration
 

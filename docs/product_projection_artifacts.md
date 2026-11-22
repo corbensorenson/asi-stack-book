@@ -109,7 +109,11 @@ files supply the displayed counts and disagreement-first case exports.
 When changing a study, run
 `python3 scripts/research_studies.py --write` to refresh the homepage and
 Quickstart summaries. The product builder publishes the study pages, agenda,
-machine data, case CSVs, and verifier ZIP. Case links use a run ID and an
+machine data, case CSVs, original verifier ZIP, and featured instrument
+audit ZIP. The featured kit supplies exact verifier, receiver, and
+scheduler replays plus separate follow-up checks or a reanalysis of
+retained rows. Study pages show the featured decision, result, scope, and
+run link together before the long case tables. Case links use a run ID and an
 identity derived from the retained paired conditions. The product validator
 compares these with their source inputs and the rendered book and paper
 routes and tests publication of a different later outcome. The versioned

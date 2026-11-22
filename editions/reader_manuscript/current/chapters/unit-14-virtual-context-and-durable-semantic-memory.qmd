@@ -270,7 +270,9 @@ Crash behavior belongs in the contract. A crash before event append should
 leave the old view current. A crash after append but before index update should
 be recoverable through replay. A crash after materialization but before
 consumer acknowledgment should not create an untracked use. Every ambiguous
-boundary becomes a residual rather than an assumed success.
+boundary becomes a residual rather than an assumed success. After recovery,
+read the actual mounted view as the consumer would. A restored database can
+coexist with a cache that still serves an invalidated summary.
 
 ## Branches Need Context Isolation
 

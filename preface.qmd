@@ -1,19 +1,17 @@
 # Preface {.unnumbered}
 
-This book argues that advanced AI should be built as a governed stack rather
-than trusted as a single opaque model. The stack is not a metaphor for a table
-of contents. It is a proposed systems architecture: human intent is bounded
-before action, authority is explicit before delegation, context carries
-provenance, work becomes typed artifacts, claims move through evidence states,
-and self-improvement proceeds only through reviewable change records.
+This book asks how advanced AI systems can preserve authority, verification,
+observation of effects, and recovery when work passes between people, models,
+and tools. A single application can enforce many of these boundaries. Separate
+components have to improve an outcome enough to justify their coordination and
+failure costs. The evidence ranges from architectural arguments to local tests
+of specific decisions and handoffs.
 
-The project began as a unification pass across AI papers, local prototypes,
-conversation-mined design notes, and implementation references. It is not a
-static anthology. The source material is treated as fragments of one
-architecture for governed, efficient, self-improving AI: alignment,
-governance, planning, memory, reasoning, execution, routing, compression,
-evidence, and recursive improvement are separate layers with explicit
-interfaces between them.
+The project began by comparing papers, local prototypes, and design notes.
+The resulting architecture assigns responsibilities for governance, planning,
+memory, reasoning, execution, routing, compression, evidence, and improvement.
+The interfaces describe what must hold across handoffs. Specific systems can
+combine responsibilities when their checks remain enforceable.
 
 This repository now contains the canonical current 89-chapter living book.
 The mutable root site and `/latest/` track the current manifest; versioned tags

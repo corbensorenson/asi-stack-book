@@ -119,13 +119,43 @@ finite model, missing, expired, revoked, over-ceiling, or scope-mismatched
 authority rejects the transition. Runtime no-effect claims additionally require
 qualified enforcement and observation; model confidence cannot supply a grant.
 
-A preflight check alone cannot exclude a later revocation race. A local design
-can serialize grant use and revocation at the effect commit: revocation first
-rejects the use; an admitted effect first remains a historical effect with any
-recovery duties. A remote worker may not yet know about revocation. Its allowed
-offline envelope, expiry, and reconciliation policy must be qualified for the
-claim; an immediately revocable action cannot simply assume fresh state during
-a partition. These are proposed ordering conditions, not a new runtime trial.
+### The grant can change before effect {#grant-to-effect-authority}
+
+Follow one request to record `hold-for-editor` in the `public-copy` scope.
+The local regression begins with grant revision 1, active through tick 2.
+The authority service receives a read or revocation request and emits the
+current scope, revision, active bit and deadline. Revocation writes inactive
+revision 2. A worker that read revision 1 still holds the old receipt.
+
+[Command Contracts](intent-to-execution-contracts.qmd#grant-to-effect-command)
+binds that receipt to the exact requested effect and sends it to the
+adapter. The adapter must resolve whether the grant applies at commit.
+The observer can learn about the committed effect later.
+
+```{mermaid}
+flowchart TD
+  A["Authority reads active public-copy revision 1"] --> B["Command binds hold-for-editor and revision 1"]
+  B --> C{"Runtime checks grant at commit"}
+  C -->|"Revision 1 current at tick 1"| D["One authorized hold recorded"]
+  C -->|"Revision 2 inactive or tick 3 past expiry"| E["Write withheld"]
+  D --> F["Operations sees the earlier row after revocation"]
+  E --> G["Operations checks whether any effect occurred"]
+```
+
+An authorized write at tick 1 stays in history after revision 2 revokes
+future use. An expired or revoked grant leaves the version-checked
+transaction on hold. The regression controls order in one database shared
+by two local processes under one operator. A partitioned remote sink
+needs a separately qualified authority and observation contract.
+
+```sh
+python3 experiments/nov20_instrument_audit/check_authority_effect_ordering.py > ordering.json
+cmp ordering.json experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json
+```
+
+[Pinned protocol](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md)
+· [Exact regression results](https://github.com/corbensorenson/asi-stack-book/blob/bc705e8eb7c1a7026b6d6909ce901a8a4c131277/experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json)
+· [Compare the four schedules](../products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering)
 
 ### Worked authority check: a scope widens between plan and effect
 

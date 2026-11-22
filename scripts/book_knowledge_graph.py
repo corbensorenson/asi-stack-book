@@ -29,6 +29,8 @@ READER_MANIFEST = READER + "manifest.json"
 CROSSWALK = READER + "conclusion_claim_crosswalk.json"
 CLAIMS = "evidence_quality/claim_atom_registry.json"
 IDENTITIES = "evidence_quality/claim_identity_graph.json"
+CITATIONS = "products/claim_citations.json"
+CITATION_PAGE = "products/evidence-registry/claim-citations.html"
 PROOFS = "proofs/proof_manifest.json"
 STUDIES = "products/research_studies.json"
 CLAIM_ADDENDA = (
@@ -284,6 +286,40 @@ def claim_records(graph, chapters):
                 graph.gap(key, "declares_dependency", dependency, path, locator, reason)
 
 
+def citation_inputs(read):
+    selections = json.loads(read(CITATIONS))
+    selected = {row["id"]: row for row in selections}
+    if len(selected) != len(selections):
+        raise ValueError("duplicate claim citation")
+    identities = {}
+    for row in json.loads(read(IDENTITIES))["records"]:
+        identity = row["claim_id"]
+        if identity in selected:
+            if identity in identities:
+                raise ValueError(f"ambiguous citation transition: {identity}")
+            if selected[identity]["run"] not in row["identity_scope"]["artifact"]:
+                raise ValueError(f"citation run is outside the retained identity scope: {identity}")
+            identities[identity] = row
+    if selected.keys() != identities.keys():
+        raise ValueError("claim citation lacks a retained transition")
+    return [(selection, identities[identity]) for identity, selection in selected.items()]
+
+
+def claim_citations(read):
+    for selection, identity in citation_inputs(read):
+        record = read(identity["transition_path"])
+        if sha256(record).hexdigest() != identity["transition_sha256"]:
+            raise ValueError(f"citation transition digest changed: {selection['id']}")
+        transition = json.loads(record)
+        yield {**selection, "transition": identity["transition_path"],
+               "transition_id": identity["transition_id"], "relation": identity["primary_relation"],
+               "url": f"{CITATION_PAGE}#{selection['id']}", "parent": identity["canonical_parent_id"],
+               "parent_effect": identity["parent_support_state_effect"],
+               "proposition": transition["scope_boundary"], "state": transition["new_support_state"],
+               "decision": transition["transition_effect"], "limits": transition["limitations"],
+               "run_sha256": sha256(read(selection["run"])).hexdigest()}
+
+
 def evidence_records(graph):
     for i, row in enumerate(graph.data(PROOFS)["records"]):
         locator = f"/records/{i}"
@@ -305,12 +341,26 @@ def evidence_records(graph):
         graph.edge(key, relation, "claim:" + row["canonical_parent_id"], IDENTITIES, locator,
                    parent_support_state_effect=effect, scope=row["identity_scope"])
 
+    def citation_bytes(path):
+        return graph.text(path).encode("utf-8")
+
+    for citation in claim_citations(citation_bytes):
+        transition = graph.nodes["transition:" + citation["transition_id"]]
+        transition["url"] = citation["url"]
+        transition["summary"] = citation["proposition"]
+        claim = graph.nodes.get("claim:" + citation["id"])
+        if claim is not None and claim["role"] != "core":
+            claim["url"] = citation["url"]
+
     manifest = graph.data(STUDIES)
     for i, study in enumerate(research_studies.studies_from(manifest, lambda p: graph.text(str(p)).encode("utf-8"))):
         locator = f"/studies/{i}"
         url = f"products/evidence-registry/study-{study['id']}.html"
-        key = graph.node("study",study["id"],STUDIES,locator,title=study["title"],
-                         question=study["question"],url=url)
+        key = graph.node(
+            "study", study["id"], STUDIES, locator, title=study["title"], question=study["question"], url=url,
+            featured_run="study_run:" + study["featured_run"], summary=study["summary"],
+            limit=study["limit"], disposition=study["disposition"], change=study["change"],
+        )
         if study.get("claim"):
             graph.edge(key,"investigates","claim:"+study["claim"]["id"],STUDIES,locator+"/claim",
                        scope=study["claim"]["scope"],evidence_effect="none")

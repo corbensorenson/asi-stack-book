@@ -127,8 +127,10 @@ special-case tool. It simply should not become the default on a claim the
 evidence did not support. Corben’s
 [From Compression to Forward Transfer](https://corbensorenson.github.io/asi-stack-book/papers/forward_transfer_program_synthesis.html),
 especially Sections 6.1–6.6, proposes this protocol and concrete program-synthesis
-experiments. It is an experimental blueprint, not a report of completed
-transfer results for this book.
+experiments. The book's [pinned synthesis comparisons](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html)
+test part of that blueprint on authored tasks. Whole-program and routine
+rankings change with the search queue and work cap. That is a reason to keep
+both baselines when testing whether a shortcut helps on new task lineages.
 
 ## Discovery Must Preserve the Denominator
 

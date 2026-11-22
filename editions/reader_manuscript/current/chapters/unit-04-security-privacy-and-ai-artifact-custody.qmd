@@ -182,7 +182,7 @@ should be promoted into the other.
 An agent that refuses every tool-provided instruction may resist injection
 while failing legitimate work. RAISED trains on clean and injected tool
 histories using the same clean teacher targets, seeking resistance without
-that behavioral drift. It also preserves the clean teacher's mistakes.
+that behavioral drift. The teacher targets still need their own accuracy check.
 Attack success, authorized completion and general utility therefore remain
 separate measurements. Such training can improve a model component within
 the tested setting; it does not supply the kernel's actual access controls
@@ -233,7 +233,14 @@ does not establish that all copies stayed local.
 
 ### Who needs the time slot, and who needs the reason?
 
-You ask for cover on Tuesday from ten to eleven. The calendar gives a private reason for your absence. Alex needs the hour. You want the reason kept in your own confirmation. A booking can succeed while the shared invitation reveals the reason in its title. Read the invitation as Alex would see it and grade two outcomes: was cover booked, and did the private fact reach Alex? AgentCIScope found single-run leakage on 32.5% to 94.4% of tasks across 12 agents in its constructed environments. Applying this check elsewhere requires knowing the intended audience and disclosure rule. [AgentCIScope: Grounded Contextual Integrity Evaluation for LLM Agents](https://arxiv.org/html/2610.19158v1)
+You ask for cover on Tuesday from ten to eleven. The calendar gives a private
+reason for your absence. Alex needs only the hour. A booking can succeed
+while the shared invitation reveals the reason in its title. Read the
+invitation as Alex would see it and score the booking and disclosure as
+separate outcomes. In AgentCIScope, one agent configuration leaked on 32.5%
+of tasks on its first run and on 46.0% of the same tasks at least once in five
+runs. Use the same disclosure rule and retry budget when comparing agents.
+[AgentCIScope, Table 2](https://arxiv.org/html/2610.19158v1)
 
 ## Protected Computation Is Evidence, Not Permission
 
@@ -255,9 +262,10 @@ often protects the wrong asset.
 Remote attestation illustrates the boundary.
 [RFC 9334, Section 3](https://www.rfc-editor.org/rfc/rfc9334.html#section-3)
 separates an attester's evidence, a verifier's appraisal, and a relying party's
-application decision. [Section 3.4](https://www.rfc-editor.org/rfc/rfc9334.html#section-3.4)
+application decision. [Section 12.2](https://www.rfc-editor.org/rfc/rfc9334.html#section-12.2)
 allows roles to share an entity; separate role names do not establish independent
-failure domains. [Section 10](https://www.rfc-editor.org/rfc/rfc9334.html#section-10)
+failure domains. An appraisal of the environment still leaves open whether
+that environment handled a particular request. [Section 10](https://www.rfc-editor.org/rfc/rfc9334.html#section-10)
 bounds freshness and retains the possibility of state change after evidence was
 produced. Thus an accepted result cannot become perpetual permission. The book's
 additional authority contract must still bind the requested use and its current

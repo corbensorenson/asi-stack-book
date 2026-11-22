@@ -612,9 +612,11 @@ sampler and optimizer mismatch the checkpoint family. The system refuses
 equivalent-resume status and records a new branch. It can continue useful work
 without laundering the experiment.
 
-At the end, validation selects a checkpoint family. The final qualification
-set remains unopened. The run has produced a candidate and evidence, not a
-deployment decision.
+At the end, the frozen validation rule selects a checkpoint from its recorded
+family. The final qualification set remains unopened until that choice is
+fixed. Opening it to decide between two remaining checkpoints would turn it
+into another validation set. A deployment decision also needs checks for the
+intended harness, failure behavior, and operating budget.
 
 ## Predicted Hacking Risk Still Needs an Outcome Audit
 

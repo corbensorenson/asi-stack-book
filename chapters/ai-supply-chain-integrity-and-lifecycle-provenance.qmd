@@ -4,7 +4,7 @@ chapter_id: "ai-supply-chain-integrity-and-lifecycle-provenance"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_nist_cscrm_2022"
   - "deterministic_capability_compilation"
@@ -170,7 +170,13 @@ invalidation reaches declared downstream decisions without rewriting history.
 
 ### Worked revocation: one component reaches three projects
 
-A critical advisory revokes one dependency used by three projects. The current component inventory identifies the exact artifact digest and its three affected paths. The supply-chain controller appends the advisory and revocation, moves all three consumers out of ordinary use, assigns response owners, and keeps them quarantined until rebuilt, replaced, retired, or explicitly residualized. One project cannot clear the incident merely because its direct package list omits the dependency; lineage through a build image still counts.
+An advisory concerns a dependency used by three projects. The policy owner
+checks applicability to the exact artifact digest and orders quarantine for
+the affected uses. The controller records both the advisory and the decision.
+One project reaches the dependency through a build image, so inspecting only
+its direct packages would miss an affected path. For each consumer, track
+receipt of the decision and separately observe whether ordinary use ceased.
+An acknowledgment alone cannot show that a cached image stopped serving.
 
 The local affected-path harness preserves one quarantined three-project record. It rejects ten fixture mutations and eleven lifecycle controls, checks 24 component-inventory permutations, and refuses five event kinds after revocation. Removing a descendant, substituting the digest, overwriting history, admitting a stale bill of materials, or recording custody after invalidation all fail without changing accepted state. These checks show finite propagation behavior, not world-complete lineage, signature truth, absence of compromise, model safety, or legal compliance.
 

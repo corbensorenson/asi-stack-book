@@ -4,7 +4,7 @@ chapter_id: "human-ai-organizations-delegation-and-accountability"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_nist_ai_rmf_1_0_2023"
   - "ext_moral_crumple_zones_2019"
@@ -177,6 +177,13 @@ organizational resilience, support, readiness, release, transfer, nor SOTA.
 Principal `1` grants bounded operation authority to owner `2` with ceiling `4`. Owner `2` delegates to owner `3` at ceiling `3`, then owner `3` delegates to owner `4` at ceiling `1`. Each handoff changes the reviewer and evidence custodian, transfers intervention, appeal, and remedy paths, and carries an acknowledgment receipt. The final accountable owner and current delegate both equal `4`; prior owners remain visible as residual owners `[3, 2]` rather than disappearing from the audit trail.
 
 The compositional model rejects a handoff when responsibility moves without the matching authority transition, when reviewer and evidence roles collapse, when a ceiling widens, or when a remedy path disappears. Across the larger lifecycle, one adverse nine-event trace closes after contestation and remedy with authority reduced to zero. The consumer checks 39 routes, 156 lifecycle mutations, and 50 bridge mutations. These finite checks preserve organizational custody; they do not establish human control, legal accountability, remedy efficacy, or good organizational outcomes.
+
+An acknowledgment can name a new duty while the recipient still lacks time
+or access to perform it. Compare this handoff with an ordinary assignment
+and on-call rota that already records escalation. Give both teams the same
+workload and access. Exercise a handoff when the new recipient is unavailable
+and observe whether someone with authority can respond before the deadline.
+Keep prior promises owed to affected people visible during reassignment.
 
 ### Accountable organizations beneath evolving work surfaces
 

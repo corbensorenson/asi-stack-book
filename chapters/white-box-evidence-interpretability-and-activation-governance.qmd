@@ -4,7 +4,7 @@ chapter_id: "white-box-evidence-interpretability-and-activation-governance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.5 source-role and method-comparison integrated reader chapter"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "deterministic_capability_compilation"
   - "kernel_english_residual_compiler"
@@ -158,7 +158,18 @@ or proof that an activation intervention is safe.
 
 ### Worked activation packet: a “deception feature” that tracks topic
 
-An interpretability method finds one activation that is higher on a deception benchmark and labels it “deception.” Ablating the feature reduces deceptive answers, but it also suppresses discussion of hypothetical agents across both deceptive and honest examples. A matched topic-control set reveals that the activation tracks the subject matter more broadly than the behavioral label. The packet therefore routes those cases to extra review but blocks the claim that a deception mechanism was isolated.
+In this hypothetical example, an interpretability method finds one activation
+that is higher on a deception benchmark and labels it “deception.” Ablating
+the feature reduces deceptive answers and discussion of hypothetical agents
+in both deceptive and honest examples. A topic-control set reveals that the
+activation also tracks subject matter. The packet routes those cases to extra
+review and withholds any conclusion that a deception mechanism was isolated.
+
+For a follow-up, cross topic with the labeled behavior on new prompts.
+Compare the intervention with an unmodified model and a matched control
+intervention. Count task completions, incorrect answers, refusals, and changes
+of topic separately. Fewer observed deceptive answers could follow from
+fewer substantive answers overall.
 
 The result keeps the capture population, feature identity, label provenance, reconstruction error, intervention, comparator, output changes, side effects, and unexplained residuals together. A later circuit-level intervention may strengthen or refute the hypothesis, but it receives a new packet. The record discipline does not establish semantic truth, causal completeness, whole-model safety, or readiness from an activation, attribution graph, or steering result.
 
@@ -436,7 +447,7 @@ Let a two-coordinate toy readout report only the first coordinate. Adding (1, 0)
 
 For a candidate politeness intervention, compare the original direction, its perturbed version, and a random direction matched to the perturbed vector's norm. Keep layer, dose convention, decoder and held-out prompts fixed. Examine both trait scores and collateral task errors. If two directions match on politeness but disagree on task errors, qualify each for the measured behavior separately. A shared score cannot select a unique internal representation.
 
-The authors found similar semantic scores for perturbed steering vectors across tested traits and prompts. Equality under a local first-order map is a mathematical condition. Finite interventions and new prompt distributions require behavioral checks. [On the Non-Identifiability of Steering Vectors in Large Language Models](https://arxiv.org/html/2602.06801v4)
+The authors report similar semantic scores under many tested perturbations. In Appendix B, the perturbed vectors also produce smaller logit shifts than the reported random-direction controls, with nonzero distances in every reported model–trait condition. A vector orthogonal to the original steering direction can still affect the local readout. Exact first-order equality requires a perturbation in the null space of that readout. Finite interventions and new prompt distributions require behavioral checks. [On the Non-Identifiability of Steering Vectors in Large Language Models](https://arxiv.org/html/2602.06801v4)
 
 ### What Neuron Explorer and Neuronary contribute {#lyra-neuron-explorer-and-neuronary}
 

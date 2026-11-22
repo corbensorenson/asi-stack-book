@@ -550,9 +550,12 @@ the rational default. Verification can become the bottleneck, making cheap
 generation irrelevant. Human reviewers may struggle more with fragmented
 artifacts than with one coherent answer.
 
-These objections have teeth. The adaptive policy should not be presumed best.
-Its value must appear after full lifecycle accounting and against a competent
-monolith, not in an architecture diagram.
+Compare the adaptive policy with a capable single-model workflow and an
+ordinary cascade that already tries a cheap route and escalates when needed.
+Give each the same evidence, reviewer budget, and tested tools. A route
+selected after all the results are known tells us the best we could have done
+with hindsight. A router has to decide earlier and pay for its mistakes,
+including late repair. Compare those costs over the same workload.
 
 ## What the Current Work Establishes
 

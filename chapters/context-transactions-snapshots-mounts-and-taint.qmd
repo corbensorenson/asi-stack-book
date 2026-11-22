@@ -149,6 +149,14 @@ A transaction reads a customer record, derives a summary, stores it on a working
 
 The transaction therefore closes in two lanes: exact modeled context rollback and an open external-effect compensation record owned by the runtime and incident paths. A naive rollback flag would hide the recipient’s copy and falsely imply full reversal. The local transaction model checks snapshot, branch, mount, read-set, taint, deletion, replay, and support-boundary routes. It can prove finite state ordering for authored records; it does not prove semantic truth, unknown-copy discovery, external compensation, artifact correctness, or effect reversal.
 
+In an implementation test, observe which version a consumer can actually
+read after restoring the snapshot. A database can restore its base state
+while a cache still serves the derived summary. Give a conventional database
+workflow and the proposed transaction system the same recovery and cache
+invalidation tools. Score the visible reads after an interrupted recovery
+and separately track the external effect. A receipt for the storage operation
+answers neither question on its own.
+
 The claim remains at `argument`. Current artifacts establish record shape,
 finite routing, authored failure rejection, and explicit non-claim boundaries.
 They do not establish a deployed store, concurrency semantics, crash durability,

@@ -231,10 +231,10 @@ def reconcile_roster(source: str, preview: dict) -> tuple[str, str | None]:
     if current:
         updated = source[:current.start()] + expected + source[current.end():]
     else:
-        marker = "## 60-Second Trust Surface"
-        at = source.find(marker)
-        if at < 0:
+        marker = re.search(r"^## .*\{#60-second-trust-surface\}$", source, re.MULTILINE)
+        if marker is None:
             raise ValueError("landing page lacks the Trust Surface insertion point")
+        at = marker.start()
         updated = source[:at] + expected + "\n\n" + source[at:]
     if updated != source:
         return updated, "landing-page preview roster is absent or stale"

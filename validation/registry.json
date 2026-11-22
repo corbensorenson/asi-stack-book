@@ -71,6 +71,7 @@
     "assets/reading-mode.html",
     "assets/skip-link.html",
     "assets/styles.scss",
+    "assets/study-case-browser.js",
     "book_structure.json",
     "chapters",
     "chapters/adversarial-evaluation-sandbagging-and-training-time-deception.qmd",
@@ -7826,7 +7827,16 @@
         "editions/reader_manuscript/current/chapters/*.qmd",
         "scripts/build_human_reader_current.py",
         "scripts/research_studies.py",
-        "scripts/research_case_rows.py"
+        "scripts/research_case_rows.py",
+        "assets/study-case-browser.js",
+        "products/claim_citations.json",
+        "experiments/nov20_instrument_audit/replay_featured.py",
+        "experiments/nov20_instrument_audit/standalone.md",
+        "experiments/p5_u1_governed_repository_change/replay_scoped_git.py",
+        "experiments/p5_u1_governed_repository_change/standalone_inputs/*",
+        "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_inputs.json",
+        "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+        "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json"
       ],
       "output_assertions": [
         "22 retained candidate units and all other canonical chapters reference-routed",
@@ -7834,7 +7844,7 @@
         "all 22 units expose separate plain-language, engineering-rule, and bounded machine-contract projections",
         "All canonical chapters assigned exactly once across the narrative units",
         "All canonical reference chapters with distinct responsibilities, claim identities, labels, and support ceilings",
-        "17 evidence routes",
+        "18 evidence routes and stable targets for selected non-core citations",
         "all core support remains argument",
         "content-addressed snapshots and the narrative-unit crosswalk digest match",
         "with --site, complete installed file/input identity is current and no checking writes occur",
@@ -20224,7 +20234,7 @@
   ],
   "summary": {
     "unit_count": 477,
-    "required_artifact_count": 3327
+    "required_artifact_count": 3328
   },
   "non_claims": [
     "Registry coverage does not establish semantic adequacy of every validator.",
@@ -20822,6 +20832,7 @@
         "assets/knowledge-graph/explorer.css",
         "assets/knowledge-graph/explorer.js",
         "assets/knowledge-graph/index.html",
+        "assets/study-case-browser.js",
         "book_structure.json",
         "chapters/*.qmd",
         "claim_decisions/v1_x_core_claim_dispositions.json",
@@ -20845,6 +20856,10 @@
         "evidence_transitions/v1_x_measured/*.json",
         "experiments/governed_repository_change_slice/results/2026-07-10-local.json",
         "experiments/governed_trace_invariants/results/2026-07-10-local.json",
+        "experiments/nov20_instrument_audit/replay_featured.py",
+        "experiments/nov20_instrument_audit/standalone.md",
+        "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_*",
+        "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
         "papers/paper_library.json",
         "products/*.json",
         "products/research_studies.json",

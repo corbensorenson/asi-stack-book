@@ -4,7 +4,7 @@ chapter_id: "replaceable-cognitive-substrates-beyond-transformer-monoculture"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "learning_compute_topology"
   - "corben_chatgpt_kiss_irreducible_intelligence_2026"
@@ -448,6 +448,12 @@ lower elapsed time, tail latency or memory use. The paper leaves broader
 long-context implications and deeper hierarchies open. Its learned sequence
 compression is not an exact compressed artifact supplied to an auditor.
 
+For an H-Net comparison, run the same raw inputs at the same quality target.
+Measure the distribution of chunk counts, peak memory, and end-to-end latency
+at batch sizes the service actually uses. An average reduction in deep-stage
+positions can coexist with a slow batch dominated by one finely segmented
+input. Keep matched training FLOPs and measured serving cost as separate results.
+
 For a hypothetical repository specialist, a learned chunk containing part of
 `scope=read` cannot replace the exact source bytes needed to check a permission
 string. A qualified boundary must distinguish byte input/output, latent
@@ -458,6 +464,18 @@ fixed. These are uses of the existing ABI obligations, not a new implemented
 H-Net adapter. Combining a JEPA objective with a hierarchical encoder is a
 research possibility; none of the reviewed sources or this repository supplies
 a validated combined JEPA/H-Net model.
+
+Run the smallest comparison that could change the replacement decision.
+For a JEPA encoder, hold the downstream consumer fixed and vary how positive
+views are paired. Include a changed-permission pair that shares the surrounding
+text, then measure both alignment and whether the consumer can recover the
+changed decision. For H-Net, keep the exact byte stream and the incumbent's
+quality requirement and compare released outputs per unit of elapsed time,
+including fallback on the same mixed-length batches. An alignment win with a
+missed permission change supports keeping the incumbent consumer. A shorter
+deep stream earns a serving change only if useful throughput improves under
+the applicable latency and memory limits. [Platonic representation with JEPAs](https://arxiv.org/abs/2610.39302v1)
+· [Dynamic Chunking](https://arxiv.org/abs/2507.07955v2)
 
 ### A fixed budget for learned byte boundaries
 
@@ -596,7 +614,9 @@ Each of three runs matches 999 of 1,000 labeled paths and accepts the
 same incorrect board with an extra six-cell branch.
 A consumer should check that the marked cells form a single legal path
 and verify shortest length when required. The benchmark scores agreement
-with one tie-broken shortest path.
+with one tie-broken shortest path. In a follow-up, score exact agreement with
+the reference and valid shortest paths separately. A different shortest path
+can fail the first metric, while a branched board must fail the second.
 [Appendices C.4 and F](https://arxiv.org/html/2611.17309v1)
 
 For a specialist comparison, give the learned CRAM, the hand-set energy

@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
-  <title id="title">Evidence state ladder draft figure</title>
+  <title id="title">Claim review and support changes</title>
   <desc id="desc">A draft systems diagram separating claim labels from support states, showing promotion, no-change, demotion, refutation, blockers, and non-claims as recorded evidence transitions.</desc>
   <defs>
     <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="strokeWidth">
@@ -32,8 +32,8 @@
   </defs>
 
   <rect class="bg" width="1200" height="760" rx="24"/>
-  <text class="ink label" x="58" y="62">Evidence State Ladder</text>
-  <text class="muted caption" x="58" y="92">Draft key figure. Claim type and support state are separate axes; confidence moves only by recorded transition.</text>
+  <text class="ink label" x="58" y="62">Claim Review and Support Changes</text>
+  <text class="muted caption" x="58" y="92">Support changes after review.</text>
 
   <rect class="panel" x="54" y="126" width="214" height="132" rx="12" filter="url(#soft-shadow)"/>
   <text class="ink small" x="82" y="162">Claim surface</text>
@@ -70,10 +70,10 @@
   <text class="muted tiny" x="964" y="340">source, or weak fixture</text>
 
   <rect class="bad" x="936" y="420" width="210" height="148" rx="12" filter="url(#soft-shadow)"/>
-  <text class="ink small" x="964" y="458">Demote or refute</text>
-  <text class="muted tiny" x="964" y="490">contradiction, failed test,</text>
-  <text class="muted tiny" x="964" y="514">scope break, terminal</text>
-  <text class="muted tiny" x="964" y="538">negative evidence</text>
+  <text class="ink small" x="964" y="458">Narrow or weaken</text>
+  <text class="muted tiny" x="964" y="490">claim contradicted or</text>
+  <text class="muted tiny" x="964" y="514">supported over a</text>
+  <text class="muted tiny" x="964" y="538">smaller scope</text>
 
   <rect class="bad" x="628" y="466" width="252" height="122" rx="12"/>
   <text class="ink small" x="656" y="504">Blocker / residual</text>

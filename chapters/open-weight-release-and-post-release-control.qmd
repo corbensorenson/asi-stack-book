@@ -4,7 +4,7 @@ chapter_id: "open-weight-release-and-post-release-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_international_ai_safety_report_2026"
   - "ext_openai_worst_case_open_weight_risks_2025"
@@ -141,9 +141,19 @@ derivatives, but it must not claim revocation authority it no longer possesses.
 
 ### Worked release boundary: one public copy defeats universal recall
 
-A harmless test artifact completes a release-case review and is copied once outside the official channel. The official publisher later revokes the release and patches its own repository. Those actions may reduce future official distribution, but the public copy count remains positive and cannot be made universally zero by an internal state transition. The post-release record therefore says “official distribution withdrawn; universal recall unavailable” rather than “artifact revoked everywhere.”
+A harmless test artifact completes a release-case review. A recipient outside
+the official channel keeps a usable copy. The publisher withdraws the official
+release and patches its repository. People with independent copies may delete
+or update them, but the publisher's action does not establish whether they did.
+Record official withdrawal and any confirmed actions by known recipients.
+Keep the status of copies outside observation open.
 
-The finite review gives exact dispositions to 36 admission-axis mutations and proves the public-copy incompatibility is monotone as copies do not decrease. It also shows that official lineage does not identify universal copy control and default evaluation does not identify downstream safeguard state. These results clarify irreversibility; they do not perform a release, observe real copies, enforce a license, erase derivatives, establish safety, or prove benefit and risk claims.
+The finite review gives exact dispositions to 36 admission-axis mutations.
+Its recall result is conditional on the modeled copy count staying positive.
+It also distinguishes publication lineage from control over later copies and
+default evaluations from downstream safeguard state. An empirical study of
+patch coordination would count acknowledgments and observed adoption among
+known recipients, with unobserved recipients reported separately.
 
 ## Mechanism
 

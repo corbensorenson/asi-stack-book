@@ -4,7 +4,7 @@ chapter_id: "confidential-and-verifiable-ai-computation"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_nist_privacy_enhancing_cryptography_2026"
   - "ext_zkllm_2024"
@@ -117,13 +117,23 @@ system should retain the simpler governed route.
 
 [confidential-and-verifiable-ai-computation.core, label: Design rationale, support: argument] Confidential and verifiable AI requires a compositional execution contract that names the adversary, protected assets, permitted leakage, trust anchors, proof or attestation statement, verifier policy, freshness, revocation, performance budget, and authorization boundary; no primitive or attestation may be treated as proof of semantic correctness, legitimate purpose, or end-to-end privacy.
 
-**Reader claim.** An attested enclave can prove which code ran while the overall service still leaks through inputs, outputs, metadata, fallback, or an unauthorized purpose.
+**Reader claim.** Attestation reports evidence about a measured environment.
+Attributing a particular response to that environment also requires evidence
+that binds the response to the protected execution. A service may disclose
+data through fallback, outputs, or metadata even when the measurement is valid.
 
 **Operational rule.** Compose confidentiality, integrity, proof statement, trust anchors, freshness, leakage channels, verifier policy, authorization, observable fallback, revocation, and cost at the transaction boundary. Reject any unprotected fallback unless separately authorized and disclosed; never let attestation imply semantic correctness or end-to-end privacy.
 
 ### Worked protected computation: the enclave is valid, the fallback leaks
 
-A service attests that the expected model code ran inside a protected environment and returns a valid proof about the encoded computation. Under load, the protected path exceeds its latency budget and silently falls back to an ordinary worker. The answer remains correct, but the prompt and intermediate state now cross a boundary the consumer did not authorize. The compositional contract rejects the transaction because fallback protection and disclosure are part of the guarantee, not operational trivia.
+A service presents a favorable appraisal for its protected environment.
+Under load, an ordinary worker handles one request and returns a correct
+answer. The environment appraisal can still be valid while the response came
+from somewhere else. If a proof accompanies the answer, inspect the exact
+relation. A proof of the output for a committed input need not establish where
+the computation ran. The proposed contract requires evidence about the path
+that handled the request. It also records any unauthorized disclosure that
+already happened, even when a later gate refuses the response.
 
 Even on the protected path, output length and timing may exceed the declared leakage allowance, and a valid attestation says nothing about whether the user’s purpose was legitimate. The finite review gives exact repair or refusal dispositions to 48 admission-axis mutations, tracks arbitrary leakage-channel lists, invalidates receipts under five scope changes, rejects two unprotected fallbacks, and preserves non-substitution between evidence types. It does not establish cryptographic soundness, hardware trust, side-channel resistance, leakage measurement, authorization, privacy, or acceptable cost.
 
@@ -146,7 +156,7 @@ The execution contract therefore begins with a vector:
 | Input confidentiality | Who can learn prompts, records, retrieved context, or features? | FHE, MPC, confidential execution, local computation | Outputs, access patterns, timing, and logs may still leak |
 | Model confidentiality | Who can recover weights, adapters, system prompts, or proprietary preprocessing? | Confidential execution, MPC, ZK-compatible commitments, access control | Query extraction and output leakage remain |
 | Computation integrity | Was the committed function evaluated on committed inputs? | ZK proofs, authenticated computation, replicated checks | A faithful computation can encode the wrong function |
-| Platform identity | What code and configuration ran on what measured environment? | Remote attestation | The measured artifact and appraisal policy may be flawed |
+| Platform identity | What configuration or state did the attester measure, and when? | Remote attestation | Binding a specific execution or response requires additional evidence |
 | Output authenticity | Did this result come from the named transaction and artifact? | Signatures, commitments, authenticated channels | Authentic output need not be true or safe |
 | Usage privacy | What is learned across repeated queries? | Differential privacy, rate limits, aggregation, query policy | Utility and group leakage remain |
 | Availability and recovery | What happens when protected execution fails or becomes too slow? | Redundancy, explicit fallback, checkpointing, revocation | Silent downgrade can erase every other guarantee |
@@ -366,7 +376,7 @@ No owner becomes a universal security oracle.
 ## Invariants
 
 - Every protected execution declares its adversary, assets, leakage, trust assumptions, freshness condition, and unsupported properties.
-- An attestation proves only the appraised statement about a measured environment; it does not prove trustworthy intent, correct policy, or correct output meaning.
+- An attestation result supports the appraised claims about the attester under the named measurement and trust assumptions. The relying party makes the application decision.
 - A zero-knowledge proof proves only the encoded relation under its cryptographic assumptions; the circuit-to-semantics gap remains explicit.
 - Confidentiality mechanisms do not override consent, purpose, deletion, contestability, or downstream-use constraints.
 - Fallback from protected to unprotected execution requires explicit authorization and cannot occur silently.

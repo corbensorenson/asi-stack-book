@@ -4,7 +4,7 @@ chapter_id: "reflexive-model-world-systems"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "integrated_argument_chapter"
-last_updated: "2026-10-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "reflexive_model_world_systems"
 evidence_level: "argument"
@@ -173,7 +173,7 @@ The examples demonstrate that the proposed distinctions can produce observably d
 
 #### Concrete scene: the successful alarm erases its own label
 
-A hospital deploys a deterioration model that triggers earlier observation and treatment. For one patient, the model predicts a severe event, the care team intervenes, and the event does not occur. A naive retraining pipeline records the prediction beside the observed non-event and classifies the case as a false positive. The next model is then trained to suppress alarms in cases like the one where intervention succeeded.
+A hospital deploys a deterioration model that triggers earlier observation and treatment. For one patient, the model predicts a severe event, the care team intervenes, and the event does not occur. A retraining pipeline that treats every non-event as a negative example will train the next model to suppress similar alarms. The record cannot tell whether the intervention prevented the event in this case.
 
 The reflexive record keeps two questions separate: what happened under the deployed intervention, and what would likely have happened under the declared no-intervention baseline. It binds the model version, alarm, treatment, observation process, outcome, target regime, and uncertainty into one lineage-relative record. The care team still owns clinical authority; the causal model owns an estimate rather than a fact; the evidence ledger retains the non-identification residual. The architecture prevents an on-policy outcome from silently masquerading as a baseline label, but it does not establish that the alarm was causally effective or clinically safe.
 
@@ -227,7 +227,14 @@ A second failure is governance theater: a system can fill every ancestry field w
 
 ## Minimum Viable Implementation
 
-Use one bounded decision-support simulation. Version the lineage, declare baseline and on-policy targets, record every policy and treatment exposure, label evidence ancestry, and preserve one randomized or shadow-policy anchor. Compare naive retraining with a causal-aware baseline under identical seeds and data. Emit the exact dependency lock, summaries, figures, and discrepancy report. Add a rollback dossier naming descendant-data treatment and persistent-state limits.
+Use one bounded decision-support simulation. Compare a workflow that already
+logs policy and exposure and uses the available counterfactual evaluation
+method with the proposed ancestry and reserve rules. Give both workflows the
+same observations and intervention budget. Use the simulator's separately
+held reference only to score error. Report cases where the interventions never
+produce data for an alternative policy. Logging ancestry can expose that gap,
+but cannot fill it. Emit the dependency lock, summaries, figures, and
+discrepancy report. Record what persists after policy withdrawal.
 
 The first acceptance criterion is not a favorable result. It is a reproducible result whose causal target and limitations remain intact.
 

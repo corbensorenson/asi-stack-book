@@ -4,7 +4,7 @@ chapter_id: "coilra-multicoil-rope-and-cyclic-mixers"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-08"
+last_updated: "2026-11-20"
 primary_sources:
   - "coilra_multicoil_rope"
   - "rope_position_certifier"
@@ -158,15 +158,18 @@ The decision is therefore split rather than vaguely “promising”:
 2. **Reject for route or canary authority:** workload and hardware ledgers are
    empty.
 3. **Name the next comparison:** dense, LoRA, ordinary RoPE or learned-position,
-   and nonperiodic controls under the same model, layer, data, kernel, and
-   budget.
+   and nonperiodic controls with matched task, data, accelerator, and tuning
+   budget. Let each method use its appropriate optimized kernel. Compare
+   measured memory and time at a shared quality floor, including any dense
+   materialization or padding that the structured path needs.
 4. **Retain the fallback:** if quality, stability, or actual cost loses, keep
    or restore the ordinary substrate.
 
-The simpler parameter-count baseline would declare a 16× reduction and stop.
-The adoption ledger records that reduction as one entry. Adoption remains
-blocked because a small parameter tensor can still be slower on real hardware,
-harder to optimize, or worse for the target workload.
+The declared dense operator has 16 times the stored parameters of the
+block-cyclic operator. The configured LoRA operator has 4.5 times as many.
+Both ratios depend on the chosen operator shapes. Record optimizer and
+activation memory separately when evaluating training, and measure serving
+cost on the actual workload.
 
 ### Recorded RoPE Receipt Boundary
 

@@ -4,7 +4,7 @@ chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "learning_compute_topology"
   - "beastbrain"
@@ -249,7 +249,13 @@ comparators, concrete fault injection, hidden qualification, and joint cost.
 
 A distributed training job saves model weights at step 10,000 and restarts after a worker failure. The optimizer moments, scheduler position, data-sampler cursor, and per-worker RNG states were not committed with the weights. Loading succeeds and the first loss looks plausible, but batches arrive in a new order, dropout masks differ, and the learning rate repeats an earlier segment. The artifact is a warm start, not an equivalent resume.
 
-The run record keeps both trajectories, marks the resume class non-equivalent, and prevents the restarted checkpoint from being compared as though it continued the same experiment. A faithful path needs one atomic commit across full declared state plus an equivalence test under the prospectively chosen tolerance. Even then, qualification must use an independently unopened set rather than validation-selected checkpoints. This contract does not establish optimizer superiority, distributed fault tolerance, model quality, or scaling behavior.
+Record the restart as non-equivalent. A checkpoint needs one visible commit
+for a consistent training step. Shards may be written separately if readers
+can load only a complete, durable manifest for that step. Compare subsequent
+output with an uninterrupted run under the declared tolerance. Choose the
+checkpoint on validation data, then evaluate that chosen checkpoint on the
+unopened qualification set. Resume equivalence and model quality are two
+different tests.
 
 ## Mechanism
 

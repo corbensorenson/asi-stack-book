@@ -15,7 +15,12 @@ Result record:
 
 ## Purpose
 
-The SCIF sanitized commit replay probe checks a narrow local boundary for Security Kernel and Digital SCIFs: a generated public-safe synthetic secret is substituted inside a temporary local SCIF-like workspace, sanitized commit output is hashed, the temporary secret file is zeroized, and expected-invalid outputs are blocked before commit.
+The probe writes a synthetic canary to a temporary file, evaluates authored
+output candidates, hashes admitted fixture outputs, and rejects candidates
+with missing or failed declared conditions. After any admitted output is
+written, the runner unlinks the temporary file. The historical
+`secret_file_zeroized` field records that the path no longer exists. It
+provides no test of data recoverability or cleanup-before-commit enforcement.
 
 The probe records hashes, output classes, route decisions, and no-effect markers. It does not publish the synthetic secret canary, does not publish the live handle string, and does not record local temp paths.
 

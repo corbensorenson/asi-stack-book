@@ -4,7 +4,7 @@ chapter_id: "spinoza-verification-and-proof-carrying-claims"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "spinoza"
   - "genesiscode"
@@ -162,6 +162,14 @@ before a claim receives stronger standing?
 A high-risk artifact receives an accepted tribunal verdict after independent review and adversarial probes. The verdict records one unresolved dissent but constrains use to a narrow read-only environment. A later artifact version changes its tool interface and adds new evidence. A status-only system reuses the old “accepted” label. The proof-carrying envelope instead detects the artifact and evidence digest changes, preserves the prior verdict, and routes the successor to new probes and review.
 
 If the dissent was never recorded, the route cannot call the earlier review complete. If the new verdict requires actions, those actions need explicit constraints and owners before any downstream ledger change. The finite record model rejects passed verifiers without artifacts, negative results with promotion, high-risk acceptance without probes or independence, changed-evidence reuse, missing dissent, and unconstrained action verdicts. It does not prove verifier correctness, reviewer independence, semantic mapping, evidence truth, or artifact safety.
+
+A conventional review can already bind approval to a version and its
+evidence. Give it the same records and require it to keep dissent visible.
+Then test whether the envelope improves the handoff to a different verifier
+or consumer. Include a change outside the accepted evidence boundary and a
+benign change covered by a declared reuse rule. Measure missed invalidations,
+unnecessary repeated reviews, and whether the consumer can recover the exact
+proposition on which the earlier verdict relied.
 
 The claim remains at `argument` support. Spinoza supplies the central
 discipline: neural systems may propose, but structured verifiers decide; formal

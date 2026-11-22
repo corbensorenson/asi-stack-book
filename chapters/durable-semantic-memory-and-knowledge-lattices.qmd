@@ -4,7 +4,7 @@ chapter_id: "durable-semantic-memory-and-knowledge-lattices"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "qcsa_whitepaper"
   - "vcm_public"
@@ -136,6 +136,14 @@ receipts when object, ontology, evidence epoch, or purpose changes. The test
 does not show that either stored claim is true or that retrieval is useful. It
 shows the narrower mechanism the chapter needs: history can remain available
 while a lossy revision stops silently flowing to a dependent consumer.
+
+The fixture supplies the migration classification. A separate test needs
+to identify whether a meaning changed. Use cases where the old definition
+joins two entities that the new one separates. Ask an independent reviewer
+whether a stored assertion can be mapped to either new entity from its
+original evidence. If that cannot be established, retain the old assertion
+under its old definition and block automatic reuse. Compare with a versioned
+database that already records migrations and invalidates dependent queries.
 
 The lattice is event-sourced. Admission creates an immutable semantic event
 plus a current view; later evidence adds contradiction, support, supersession,

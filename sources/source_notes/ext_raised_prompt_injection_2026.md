@@ -27,7 +27,9 @@ The selected threat model, objective and limitations explain the security–util
 
 ## Failure Modes
 
-Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee.
+Clean-context teacher targets do not independently validate the teacher's
+decisions. Measure security, benign task completion, and general utility
+separately.
 
 ## Claims To Add Or Update
 

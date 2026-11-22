@@ -4,7 +4,7 @@ chapter_id: "inter-stack-protocols-identity-and-economic-exchange"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-08-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_mcp_protocol_2025_11_25"
   - "ext_a2a_protocol_1_0_0"
@@ -528,6 +528,14 @@ integration can acquire meaning it has not earned:
    contract rather than optional polish.
 
 ## Strongest objections and surviving residuals
+
+Compare the exchange contract with a conventional service integration that
+already binds request identity, authenticates peers, checks current policy,
+and distinguishes payment reservation from settlement. Use the same evidence
+and dispute rights in both workflows. A delayed task can arrive after its
+authorization expires, and a signed completion can leave quality disputed.
+Test whether the proposed receipt changes how either party reconciles those
+cases, and measure the cost of maintaining the additional fields.
 
 **"This is merely application authorization around existing standards."** The
 chapter does not invent a new wire format. Its distinct job is to preserve

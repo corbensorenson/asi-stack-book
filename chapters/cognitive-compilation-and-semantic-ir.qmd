@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "cognitive_compilation"
   - "deterministic_capability_compilation"
@@ -167,11 +167,22 @@ An accepted plan requires a public summary and carries a non-goal: no local file
 
 Repair changes the tooltip generator, records the observed mutation set, rebuilds dependent outputs, and reruns both format and privacy checks. The compiler cannot simply delete the failed obligation or claim the user intended publication at any cost. The finite route model checks source-plan, atom, dependency, authority, validator, receipt, obligation-loss, repair-ledger, and residual boundaries. It does not prove arbitrary semantic equivalence, compiler correctness, natural-language understanding, or independent evaluator competence.
 
+A conventional template build with an output linter can catch an absolute
+path in a tooltip. Give it the same source, disclosure rule, and access to
+the release artifact. Once both routes reject the disclosure, compare the
+work needed to locate the responsible generator, rebuild all affected
+outputs, and check that the repair preserves the citations. The validator
+should inspect the delivered HTML, including attributes and metadata, so a
+clean intermediate record cannot stand in for a clean release.
+
 ### A valid field can hold the wrong limit
 
 A release record with a numeric limit of 40 passes the same schema as one with a limit of 4. If the signed source says 4, both parse but only one value is grounded. Retain the field path, unit and source span so that the reviewer can localize the error.
 
-Best exact leaf-value accuracy across 21 models reached 83.0% on the text set and 23.7% on the audio-derived set. All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities. [The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models](https://arxiv.org/html/2604.25359v1)
+Among 21 models, the best exact leaf-value accuracy reached 83.0% on the text
+set and 23.7% on the audio-derived set. The audio-derived inputs were meeting
+transcripts. These are maxima on separate task sets. Task and context
+differences leave open what caused the gap. [The Structured Output Benchmark](https://arxiv.org/html/2604.25359v1)
 
 ### Claim-source mapping status
 

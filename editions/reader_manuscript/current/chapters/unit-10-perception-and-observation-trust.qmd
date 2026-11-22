@@ -503,6 +503,12 @@ expiry. A physical control packet needs much more. Proportionality is part of
 observation trust because the sensing and recording machinery can itself cause
 harm.
 
+Check the unit behind a coverage rate. Ten neighboring frames from one
+maneuver describe one episode of operation. If the controller must stay
+within its limits through a maneuver, hold out whole maneuvers and score that
+outcome. Report separately on the episodes where an input is missing.
+[Worked calculation in the observation chapter](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html#how-often-is-the-true-state-inside-the-prediction-set)
+
 ## What the Current Work Establishes
 
 The technical owners behind this unit have exact but narrow formal results.
@@ -634,6 +640,11 @@ command depends on current state, observation age, latency, plant envelope,
 actuator limits, stopping margin, human presence, and an independently
 reachable fallback. The same symbolic action can become invalid one tick later.
 Stopping software is not physical recovery, and a simulation is not the plant.
+
+In the physical-control chapter's fixture, a reading taken at tick 4 passes
+the age check at tick 5. At tick 7 it would be too old. A latency budget that
+passes on its own cannot make the earlier reading current when the command
+takes effect.
 
 This discipline does not guarantee reality. It preserves the path by which a
 claim about reality was formed and the conditions under which that claim may be

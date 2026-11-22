@@ -572,9 +572,8 @@ UNIT_21_REQUIRED = [
     "## The Strongest Objection",
     "## Evidence That Would Change the Conclusion",
     "## Keep each lesson where its cause can be checked {#what-this-establishes}",
-    "The central Adjudicated Persistence architecture is presently an argument and\nresearch program",
-    "they do not\nestablish deletion, forgetting, influence removal, privacy, rights compliance,\nor external erasure",
-    "It does not yet implement or validate the integrated\nadjudicator",
+    "The integrated adjudicator remains a research proposal.",
+    "Deletion, forgetting,\n  influence removal, privacy, rights compliance, and external erasure each\n  need dedicated evidence.",
 ]
 UNIT_22_REQUIRED = [
     "## The Candidate That Passed Yesterday's Test",

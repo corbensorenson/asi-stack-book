@@ -1,6 +1,6 @@
 # The ASI Stack
 
-**The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** is Corben Sorenson's living technical book about building advanced AI as an auditable system rather than an unconstrained model.
+**The ASI Stack: A Governed Systems Architecture for Advanced AI, with ASI as the Stress Case** is Corben Sorenson's living technical book about how advanced AI systems can preserve authority, verification, effect observation, and recovery across consequential handoffs.
 
 - [Read the living book](https://corbensorenson.github.io/asi-stack-book/)
 - [Browse the public repository](https://github.com/corbensorenson/asi-stack-book)
@@ -19,7 +19,7 @@ and [competent conventional alternatives](docs/defended_contribution_prior_art_p
 
 | Product | Best for | Open |
 |---|---|---|
-| Narrative book | An independently authored 26-unit Human Reader, with editorial review open. | [Human Reader](https://corbensorenson.github.io/asi-stack-book/reader/) |
+| Narrative book | A separately written 26-unit Human Reader, with editorial review open. | [Human Reader](https://corbensorenson.github.io/asi-stack-book/reader/) |
 | Architecture reference | Interfaces, invariants, protocols, tests, proofs, and implementation horizons. | [Architecture index](https://corbensorenson.github.io/asi-stack-book/products/architecture-reference/) |
 | Evidence registry | Claims, support states, sources, tests, proofs, releases, and residuals. | [Evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/) |
 | Knowledge graph | Search concepts and follow their links to the book, its claims, and bounded evidence. | [Knowledge graph](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/) |

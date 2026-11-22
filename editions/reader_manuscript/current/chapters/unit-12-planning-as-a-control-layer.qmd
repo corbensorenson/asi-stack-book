@@ -351,6 +351,11 @@ from typed dependencies, marks stale assumptions and artifacts, preserves
 unaffected work only when its premises still hold, and records the old and new
 graphs.
 
+If the downstream test was already dispatched, changing the plan does not
+determine whether it stopped. Ask the executor which version it received and
+what happened before acting on a result or scheduling another run. Keep the
+old job's disposition in the record while planning the replacement work.
+
 The delta explains added, removed, split, merged, blocked, and rescheduled
 nodes; changed edges and assumptions; invalidated context, routes, authority,
 rights, resources, and verifiers; and new residuals. It also states whether the

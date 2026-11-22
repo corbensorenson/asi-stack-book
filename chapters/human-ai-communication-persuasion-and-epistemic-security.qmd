@@ -4,7 +4,7 @@ chapter_id: "human-ai-communication-persuasion-and-epistemic-security"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-18"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_conversational_persuasion_gpt4_2025"
   - "ext_anthropic_model_persuasiveness_2024"
@@ -212,11 +212,14 @@ unreachable descendants remain an explicit residual.
 through Prolific across short debate conditions. Compared with the human
 baseline without personalization, personalized GPT-4 was associated with
 81.2% higher modeled odds of greater post-debate agreement (95% CI 26.0%
-to 160.7%). This is an ordinal agreement outcome after the debate.
-Our proposed approval procedure freezes the claim and source packet,
+to 160.7%). The comparison changes both the opponent and their access to
+personalization. A claim about the effect of personalization alone needs a
+comparison that holds the opponent type fixed. The outcome is self-reported
+agreement after the debate. It leaves lasting belief, later action, and harm
+open. Our proposed approval procedure freezes the claim and source packet,
 makes the personalization inputs reviewable, and gives the reviewer a
 separate way to inspect the evidence. The study did not test that procedure.
-[Methods, aggregate results, and Table 2](https://pmc.ncbi.nlm.nih.gov/articles/PMC12367540/).
+[Methods and aggregate results](https://doi.org/10.1038/s41562-025-02194-6).
 
 `ext_commercial_persuasion_ai_2026` motivates concern about steering inside apparently helpful shopping dialogue. Neither establishes general vulnerability effects or a mitigation.
 
@@ -327,7 +330,14 @@ usable while exposing where the policy changes behavior.
 
 A useful first implementation is a communication-packet schema plus a delivery proxy that rejects evidence overstatement, denied personalization, undisclosed sponsorship, unbounded amplification, missing expiry, and unreachable correction routes. A benign held-out study can compare neutral assistance, bounded personalization, disclosure, and correction variants while measuring comprehension and autonomy as well as persuasion. It must not optimize vulnerable users or treat short-horizon self-report as durable welfare.
 
-The minimum study uses benign consequential messages with frozen audiences, languages, channels, disclosure policies, and correction mechanisms. It compares ordinary generation, factuality-only checks, static disclosure, and the communication packet on comprehension, calibration, reliance, autonomy, reach, correction, burden, and latency.
+The minimum study uses benign consequential messages with declared audiences,
+languages, channels, disclosure policies, and correction procedures. Compare
+the proposed packet with an ordinary editorial workflow that already reviews
+facts, discloses relevant interests, and can issue a correction through the
+same channel. Measure who received the original, who could be reached by the
+correction, and whose understanding or reliance changed. Report unknown reach
+and nonresponses alongside the observed results. Keep audience privacy and
+operator time within the same budget across arms.
 
 ## Evidence and falsification program
 

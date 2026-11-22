@@ -117,6 +117,9 @@ def main():
         "claim:stable-capability-fields.core", "study_run:verifier-floor-cache", "study_run:verifier-paired",
     }
     assert nodes["claim:stable-capability-fields.core"]["state"] == "argument"
+    for study in (node for node in nodes.values() if node["kind"] == "study"):
+        run = nodes[study["featured_run"]]
+        assert all(study[field] == run[field] for field in ("summary", "limit", "disposition")), study["id"]
     for task in json.loads(read(RETRIEVAL_TASKS)):
         hits = kg.search(graph, task["query"], kind=task["kind"], limit=3)["matches"]
         assert task["target"] in {hit["id"] for hit in hits}, task["query"]

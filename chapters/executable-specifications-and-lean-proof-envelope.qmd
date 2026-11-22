@@ -4,7 +4,7 @@ chapter_id: "executable-specifications-and-lean-proof-envelope"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "genesiscode"
   - "spinoza"
@@ -108,7 +108,13 @@ Version 4 of *Beyond Compilation* evaluates 227 university-level mathematics sta
 
 A Lean theorem shows that an allowed transition never exceeds an encoded authority ceiling. The proof compiles, and its finite record model is internally valid. The production adapter, however, maps one permission class to a broader operation than the formal abstraction. The theorem remains true; the implementation-binding claim fails. The proof envelope therefore permits the statement “the encoded transition preserves the encoded ceiling” and blocks “the deployed adapter enforces least authority.”
 
-Repair requires an explicit abstraction map, a conformance test against the actual adapter version, and a new consumer binding. A green theorem build cannot supply those facts. The chapter’s finite target and rejection checks distinguish implemented Lean artifacts, non-Lean artifacts, external theorems, and unsupported promotion requests. They establish proof and claim custody, not source correctness, semantic adequacy, implementation conformance, empirical truth, enforcement, or safety.
+Repair requires an explicit abstraction map and a new consumer binding. Run a
+conformance test against the actual adapter version, with witnesses for both
+allowed and rejected effects. A passing set of witnesses covers the exercised
+cases. A general enforcement claim also needs an argument that each
+implementation effect on the claimed path corresponds to a modeled
+transition, including through error paths. The chapter’s finite target and
+rejection checks cover proof and claim custody for their authored records.
 
 The claim remains at `argument` support. The current generated proof manifest contains 330 implemented narrow formal obligations and 14 planned targets without claimed theorems; the activation audit separately preserves its historical 298-target baseline. Current proof-depth snapshot: 344 proof targets, 135 Lean modules, 3153 theorem declarations, 1978 derived/decomposed, 447 direct/projection, 728 unknown/mixed, and 2/2 safety-critical chapter classifications present. That coverage does not prove broad chapter claims, source interpretation, deployed enforcement, model quality, semantic adequacy, or benchmark performance.
 

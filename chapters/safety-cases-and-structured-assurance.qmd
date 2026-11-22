@@ -4,7 +4,7 @@ chapter_id: "safety-cases-and-structured-assurance"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_gsn_community_standard_2011"
   - "ext_evaluations_safety_cases_scheming_2024"
@@ -253,6 +253,13 @@ blocks the affected readiness route until accountable review. Neither is a
 scientific conclusion about system safety. The route records what the process
 must do next and preserves enough history to audit whether the response was
 appropriate.
+
+Use an ordinary versioned assurance case with dependency links as the
+comparison. Give both workflows the same updated monitor result and adapter
+challenge. Count whether reviewers reopen the affected conclusion, leave
+unrelated branches alone, and carry the unresolved record through handoff.
+The compiled case would have to earn any advantage on those outcomes or on
+review time.
 
 ```{mermaid}
 flowchart LR

@@ -11,11 +11,12 @@ def slug(value: str) -> str:
     return re.sub(r"[^a-z0-9-]+", "-", value.lower()).strip("-")
 
 
-def case(case_id, condition, arms):
+def case(case_id, condition, arms, *, exhausted=False, adverse=False):
     outcome_signatures = {value["signature"] for value in arms.values()}
     return {
         "id": slug(case_id), "condition": condition, "arms": arms,
         "disagrees": len(outcome_signatures) > 1,
+        "exhausted": exhausted, "adverse": adverse,
     }
 
 
@@ -50,7 +51,24 @@ def scoped_git(result):
                 labels.append("effect in branch ancestry" if checks[5] else "effect outside branch ancestry")
             arms[route] = arm("; ".join(labels),
                               f'{row["sidecar_receipt_files"]} receipt files, {row["sidecar_receipt_bytes"]} bytes', checks)
-        yield case(name, name.replace("_", " "), arms)
+        yield case(name, name.replace("_", " "), arms, adverse=any(
+            row["false_block"] or row["unauthorized_terminal_change"] or row["unresolved_terminal_state"]
+            for row in trials.values()
+        ))
+
+
+def authority_ordering(result):
+    for row in result["cases"]:
+        arms = {}
+        for name, observation in row["arms"].items():
+            effect = observation["effect"]
+            order = (f'Commit tick {effect["tick"]}, used revision {effect["used_revision"]}'
+                     if effect else "No committed effect")
+            order += f'; observed revision {observation["revision_at_observation"]}'
+            arms[name] = arm(observation["outcome"], order, observation["outcome"])
+        identity = row["case"]
+        yield case(identity, identity.replace("_", " "), arms,
+                   adverse=any(observation["outcome"] == "unauthorized" for observation in row["arms"].values()))
 
 
 def crossed_receiver(result):
@@ -69,7 +87,10 @@ def crossed_receiver(result):
             if receipt["false_closure"] or receipt["wrongful_block"]:
                 outcome += f', {int(receipt["false_closure"])} false closures, {int(receipt["wrongful_block"])} wrong blocks'
             arms[route] = arm(outcome, f'{steps.count("retry")} retries, {steps.count("receive_read")} additional reads', signature)
-        yield case(condition, condition, arms)
+        yield case(condition, condition, arms, adverse=any(
+            receipt["false_closure"] or receipt["wrongful_block"] or receipt["effect_commits"] > 1
+            or receipt.get("observed_effect") == "wrong_effect" for receipt in row["arms"].values()
+        ))
 
 
 def verifier_rollout(result):
@@ -88,7 +109,26 @@ def verifier_rollout(result):
                     work += " · " + ", ".join(receipt["gaps"])
                 arms[route] = arm(f'{receipt["decision"]} → {receipt["route"]}', work,
                                   (receipt["decision"], receipt["route"]))
-            yield case(name, condition, arms)
+            yield case(name, condition, arms, adverse=any(row["route"] != expected for row in (ordinary, retained)))
+
+
+def receiver_availability(result):
+    for pair in result["pairs"]:
+        condition = (f'{pair["task"]} · primary {pair["primary"]} · secondary {pair["secondary"]} · '
+                     f'{pair["initial_state"].replace("_", " ")} · '
+                     f'{"deduplicating" if pair["deduplication"] else "non-deduplicating"}')
+        arms = {}
+        for name in ("conventional_status", "additional_endpoint", "matched_conventional_access"):
+            trial = pair["arms"][name]
+            qualifiers = [trial["disposition"]]
+            for field in ("verified_closure", "false_closure", "wrong_effect", "repeat_effect"):
+                if trial[field]:
+                    qualifiers.append(field.replace("_", " "))
+            work = (f'{trial["logical_status_reads"]} reads, {trial["caller_status_calls"]} caller requests, '
+                    f'{trial["retries"]} retries, {trial["status_payload_bytes"]} status bytes')
+            arms[name] = arm(" · ".join(qualifiers), work, tuple(qualifiers))
+        yield case(f'pair-{pair["id"]:03}', condition, arms,
+                   adverse=pair["initial_state"] in {"wrong_effect", "repeat_effect"})
 
 
 def verifier_policy_audit(result):
@@ -107,7 +147,7 @@ def verifier_policy_audit(result):
                 if row["reasons"]:
                     work += " · " + ", ".join(row["reasons"])
                 arms[name] = arm(row["route"], work, row["route"])
-            yield case(label, label, arms)
+            yield case(label, label, arms, adverse=any(row["route"] != row["expected"] for row in decisions))
 
 
 def synthesis_case_records(result, factorial):
@@ -123,7 +163,8 @@ def synthesis_case_records(result, factorial):
         else:
             condition += f' · {result["search_budget"]} proposals · {row["description"]}'
         arms = {}
-        for label, trial in row["arms" if factorial else "outcomes"].items():
+        outcomes = row["arms" if factorial else "outcomes"]
+        for label, trial in outcomes.items():
             library = trial["library" if factorial else "library_entries"]
             proposals = trial["proposals" if factorial else "attempts"]
             screen = trial["screening_steps" if factorial else "screening_primitive_steps"]
@@ -136,14 +177,20 @@ def synthesis_case_records(result, factorial):
                 work += " · solution " + (" → ".join(expanded) or "identity")
             terminal = trial["terminal"]
             arms[label] = arm(terminal.replace("_", " "), work, terminal == "verified")
-        yield case(name, condition, arms)
+        yield case(name, condition, arms,
+                   exhausted=any(item["terminal"].endswith("budget_exhausted") for item in outcomes.values()),
+                   adverse=row["family"] in {"out-of-family", "adverse-mixing"})
 
 
 def rows_for(format_id, result):
     if format_id == "scoped_git_v1":
         rows = scoped_git(result)
+    elif format_id == "authority_ordering_v1":
+        rows = authority_ordering(result)
     elif format_id in {"receiver_crossed_v1", "receiver_effect_audit_v2"}:
         rows = crossed_receiver(result)
+    elif format_id == "receiver_availability_v3":
+        rows = receiver_availability(result)
     elif format_id == "verifier_rollout_v1":
         rows = verifier_rollout(result)
     elif format_id == "verifier_policy_audit_v2":

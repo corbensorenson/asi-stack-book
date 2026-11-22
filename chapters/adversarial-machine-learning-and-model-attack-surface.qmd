@@ -4,7 +4,7 @@ chapter_id: "adversarial-machine-learning-and-model-attack-surface"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "deterministic_capability_compilation"
   - "ext_nist_adversarial_ml_2024"
@@ -272,6 +272,13 @@ enforce permission.
 
 **Non-claim.** Surviving the named adaptive suite is not a certificate against untested attacks, budgets, or deployments.
 
+Score the outcomes over all assigned harmless test episodes. A defense can
+lower the number of observed adverse effects by leaving every task unfinished.
+Report useful completions, correct refusals, false refusals, failures to finish,
+and adverse effects under the same task budget. For experiments that repeat an
+episode, report the chance of any adverse outcome within the stated repeat
+budget separately from the observed rate per run.
+
 **Source grounding.** `ext_nist_adversarial_ml_2024` motivates attacker-capability and lifecycle distinctions. `ext_reluplex_2017` demonstrates property-specific verification for bounded ReLU networks, not general model safety or an adaptive empirical result in this project.
 
 ### Evasion and semantic or physical reachability
@@ -471,7 +478,7 @@ These rows keep Adversarial Machine Learning and the Model Attack Surface's mani
 | Source | Intake role | Boundary |
 |---|---|---|
 | `ext_reluplex_2017` | Passage-reviewed comparator: Reluplex: An Efficient SMT Solver for Verifying Deep Neural Networks. Supplies an early neural-network verification comparator for exact property checking over a bounded network and input region. | A bounded verifier result is architecture-, property-, implementation-, and region-specific and does not establish empirical robustness or secure deployment. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
-| `ext_raised_prompt_injection_2026` | Passage-reviewed comparator: RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents. Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence. | Self-distillation preserves the clean teacher’s mistakes too. Security, benign task completion and general utility need separate measurements; this is no general alignment or arbitrary-adaptive-attack guarantee. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_raised_prompt_injection_2026` | Passage-reviewed comparator: RAISED: Self-Distillation for Robustness to Prompt Injection in LLM Agents. Clean-context teacher distributions supervise both clean and injected tool histories. Useful for explaining why authorized guidance from tools should remain usable while injected instructions lose influence. | Clean-context supervision does not independently check the teacher's task decisions. Measure security, benign task completion, and general utility separately. The study supplies no local result. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

@@ -307,8 +307,8 @@ def validate_surface(processes: PublicationProcesses) -> None:
         "index.qmd": [
             f"{source_count} public-safe records",
             f"{chapter_count}/{chapter_count} chapters externally positioned",
-            "0 explicit external-baseline exceptions",
-            "The 25 accepted non-core upward evidence transitions are recorded in",
+            "[Publication readiness](docs/publication_readiness.md)",
+            "[Evidence Registry](products/evidence-registry/index.html)",
         ],
         "README.md": [
             f"{chapter_count}/{chapter_count} chapters are externally positioned",

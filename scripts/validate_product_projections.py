@@ -16,6 +16,7 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 
 import research_studies as research
+import book_knowledge_graph as graph
 import build_knowledge_graph_companion as knowledge
 import validate_book_knowledge_graph as graph_checks
 from research_case_rows import anchor as research_anchor, export_csv, rows_for
@@ -138,6 +139,10 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             "studies": studies, "agenda": manifest["agenda"], "independent_reports": manifest["independent_reports"],
         }, indent=2, ensure_ascii=False).encode() + b"\n",
         "verifier-replay.zip": research.verifier_archive(read),
+        "study-case-browser.js": read(Path("assets/study-case-browser.js")),
+        research.AUDIT_PACKAGE: research.audit_replay_archive(manifest, read),
+        research.RECEIVER_PACKAGE: research.receiver_replay_archive(manifest, read),
+        research.GIT_PACKAGE: research.git_replay_archive(manifest, read),
     }
     case_rows = {
         run["id"]: rows_for(run["format"], json.loads(read(Path(run["result"]))))
@@ -148,6 +153,25 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         f"research projection is missing or stale: {name}" for name, expected in paths.items()
         if not (registry / name).is_file() or (registry / name).read_bytes() != expected
     ]
+    citations = list(graph.claim_citations(read))
+    citation_page = registry / "claim-citations.html"
+    citation_data = registry / "claim-citations.json"
+    if not citation_page.is_file() or not citation_data.is_file() or load(citation_data) != citations:
+        errors.append("non-core citation data differs from the retained evidence decisions")
+    else:
+        html = citation_page.read_text()
+        for citation in citations:
+            identity = citation["id"]
+            record = html.partition(f'<section id="{identity}">')[2].partition("</section>")[0]
+            if (escape(citation["proposition"]) not in record
+                    or any(escape(limit) not in record for limit in citation["limits"])
+                    or f'#{citation["parent"]}' not in record):
+                errors.append(f"non-core citation lost proposition, parent, or scope: {identity}")
+            for name in (citation["run"], citation["transition"]):
+                snapshot = registry / "artifacts" / name
+                if (f'href="artifacts/{name}"' not in record or not snapshot.is_file()
+                        or snapshot.read_bytes() != read(name)):
+                    errors.append(f"non-core citation target differs from its retained bytes: {name}")
     first = research.excerpt(studies, research.SITE_REGISTRY, home=True)
     reader = research.excerpt(studies, research.PUBLIC_REGISTRY, home=False)
     for name, data in [(research.HOME_EXCERPT, first), (research.READER_EXCERPT, reader)]:
@@ -167,6 +191,15 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if (f'href="{name}"' not in index or escape(study["summary"]) not in index
                 or escape(study["summary"]) not in page_html or study["result_sha256"] not in page_html):
             errors.append(f"study page or registry summary is missing or stale: {name}")
+        if ('src="study-case-browser.js"' not in page_html
+                or page_html.count("<details data-study-cases open>") != len(study["runs"])):
+            errors.append(f"case view lost its disclosure or filter: {name}")
+        decision = page_html.partition('<section id="current-decision">')[2].partition("</section>")[0]
+        featured = research_anchor(study["featured_run"])
+        if (any(escape(study[key]) not in decision for key in ("disposition", "summary", "limit"))
+                or f'href="#{featured}"' not in decision
+                or not (0 <= page_html.find('id="current-decision"') < page_html.find('id="run-history"'))):
+            errors.append(f"featured decision, evidence limit, or run link is stale: {name}")
         claim = study["claim"]["id"]
         claim_route = f"appendices/C_claim_evidence_matrix.html#{claim}"
         if f'href="../../{claim_route}"' not in page_html:
@@ -183,8 +216,17 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             ]
             if any(start < 0 for start in starts) or starts != sorted(set(starts)):
                 errors.append(f"missing or unordered paired cases: {run['id']}")
+            for position, row in zip(starts, case_rows[run["id"]], strict=True):
+                opening = page_html[position:page_html.find(">", position)]
+                if any((f" data-{key}" in opening) != row[key] for key in ("disagrees", "exhausted", "adverse")):
+                    errors.append(f"case filter tags differ from retained outcomes: {run['id']} {row['id']}")
             if f'href="cases-{run["id"]}.csv"' not in page_html:
                 errors.append(f"study page lacks its paired export: {run['id']}")
+            kit = (research.AUDIT_PACKAGE if run["id"] in research.AUDIT_REPLAYS
+                   else research.RECEIVER_PACKAGE if run["id"] == research.RECEIVER_REPLAY_ID else None)
+            fragment_html = page_html.partition(f'<section {run_text}>')[2].partition("</section>")[0]
+            if kit and (f'href="{kit}"' not in fragment_html or f'python3 replay.py {run["id"]}' not in fragment_html):
+                errors.append(f"standalone replay kit or command is missing: {run['id']}")
         if study["id"] == "verifier-rollout":
             if ('id="independent-checks"' not in page_html
                     or f'/{source_commit}/{research.REPORT_TEMPLATE.as_posix()}' not in page_html):

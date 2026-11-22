@@ -46,9 +46,11 @@ An **approval** is a decision by an accountable principal under a defined
 policy. It names scope, conditions, expiry, and what remains prohibited. An
 approval can authorize review without authorizing execution.
 
-An **effect** is an attempted change to state. It requires a current grant at
-the boundary where the effect can occur. The executor does not inherit every
-power held by the approving institution.
+An **attempt** asks an executor or receiver to perform an operation. It needs
+a current grant at the boundary where the change can occur. An **effect** is
+the resulting change to state. A timed-out attempt can leave the effect
+unknown until an observation establishes what happened. The executor acts
+within the scope of the grant it received.
 
 An **observation** records what state can be measured after the attempt. It is
 not supplied solely by the actor whose success is in question when the

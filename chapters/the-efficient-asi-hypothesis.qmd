@@ -4,7 +4,7 @@ chapter_id: "the-efficient-asi-hypothesis"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-07-16"
+last_updated: "2026-11-20"
 primary_sources:
   - "viea"
   - "rmi"
@@ -99,10 +99,12 @@ needs it, and make every saved unit of work carry its remaining burden. The
 normative rule is to compare routes on accepted quality, total contract cost,
 and residuals together. The formal binding is the route record’s predicate,
 authority ceiling, verification outcome, fallback, and residual fields. The
-strongest simpler baseline is always-maximal routing. It can be better on a
-small or novel workload, which is why the hypothesis is conditional on
-repetition, route diversity, and a fixed predicate rather than a promise that
-the stack always wins.
+always-maximal route is one reference point and can win on a small or novel
+workload. The closer baseline is an ordinary cascade that checks the cheaper
+route's coverage, escalates uncertain cases, and reuses tested procedures.
+Both arms should get the same inputs and fallback opportunities. The
+comparison then tests whether the stack's routing and accounting controls
+improve the accepted outcomes or lifecycle cost beyond an existing cascade.
 
 The architecture needs a non-scale-only theory for how useful capability can increase without spending maximal cognition on every subtask.
 
@@ -170,14 +172,13 @@ creates a heavy tail of rare but expensive failures. A route is efficient only
 relative to a named task distribution, risk tier, baseline family, time
 horizon, and failure-accounting policy.
 
-The comparison must include both obvious degenerate policies. An
-`always_maximal` policy asks the strongest available route to do every task; it
-can waste cognition and prevent reuse, but it supplies a serious quality
-baseline. An `always_cheapest` policy minimizes visible inference cost; it
-exposes whether governance is merely adding ceremony to a route that was
-already adequate. The proposed adaptive policy earns credit only if it
-improves useful accepted work per total contract cost over both, with matched
-task access, tuning effort, verification, fallback, and outcome observation.
+Use `always_maximal` and `always_cheapest` to show the extremes of using one
+route. Tune a conventional cascade as the main comparison. Give it the same
+candidate models, ordinary caching, verification, and repair paths. Freeze
+what the router can know before choosing. A minimum calculated after seeing
+all route outcomes is an oracle reference. A deployable policy estimates
+which route is adequate from evidence available at that point and pays for
+verification and fallback when its estimate is wrong.
 
 Compilation and memory add a temporal dimension. The first execution of a
 procedure may cost more because the system creates a tested tool, cache,
@@ -261,9 +262,10 @@ and governance costs erase the savings once human time and long-tail repair are
 measured honestly.
 
 A competent test must make those explanations compete. Freeze a natural task
-cohort before final evaluation; tune adaptive, always-maximal, always-cheapest,
-and strong monolithic-with-tools baselines under matched budgets; prevent
-outcome-aware rescue; and report the joint frontier of accepted-task success,
+cohort before final evaluation. Tune the proposed route, conventional cascade,
+and strong single-model workflow under matched budgets. Retain always-maximal
+and always-cheapest as reference points. Restrict the decision to information
+available before routing and report the joint frontier of accepted-task success,
 unsafe release, false refusal, latency, compute, reviewer burden, repair,
 rollback, and maintenance. Route-selection accuracy is secondary: a router can
 choose the nominal expert and still produce no useful answer.

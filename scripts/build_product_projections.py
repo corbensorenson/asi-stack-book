@@ -11,6 +11,7 @@ from pathlib import Path
 from typing import Any
 
 import build_knowledge_graph_companion as knowledge
+import book_knowledge_graph as graph
 import build_canonical_public_status as status_builder
 from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
@@ -134,9 +135,18 @@ class ProductInputs:
         for path in required:
             self.capture(path)
         self.capture(ROOT / research.RECORDS)
+        self.capture(ROOT / "assets/study-case-browser.js")
         self.research_manifest = self.json(ROOT / research.RECORDS)
         for name in sorted(research.input_paths(self.research_manifest)):
             self.capture(ROOT / relative(name.as_posix()))
+        self.capture(ROOT / research.AUDIT_LOCK)
+        for name in sorted(research.audit_replay_paths(lambda path: self.data[ROOT / path])):
+            self.capture(ROOT / relative(name.as_posix()))
+        self.capture(ROOT / research.GIT_LOCK)
+        for name in sorted(research.git_replay_paths(lambda path: self.data[ROOT / path])):
+            self.capture(ROOT / relative(name.as_posix()))
+        for name in (graph.CITATIONS, graph.IDENTITIES):
+            self.capture(ROOT / name)
         for name in knowledge.input_paths(lambda path: self.data[ROOT / relative(path)]):
             self.capture(ROOT / relative(name))
         for group in EVIDENCE_GROUPS:
@@ -286,6 +296,10 @@ a {{ color:var(--accent); }} .eyebrow {{ color:var(--muted); text-transform:uppe
 .card {{ border:1px solid var(--rule); border-radius:.6rem; padding:1rem; }} .card h3 {{ margin:.1rem 0 .55rem; }}
 .meta {{ color:var(--muted); font-size:.92rem; }} nav {{ display:flex; gap:1rem; flex-wrap:wrap; margin-bottom:2rem; }}
 pre, .table-scroll {{ overflow:auto; }} table {{ border-collapse:collapse; }} th, td {{ padding:.35rem .6rem; border:1px solid var(--rule); }}
+details[data-study-cases] {{ border-block:1px solid var(--rule); padding:.55rem 0; }}
+details[data-study-cases] summary {{ cursor:pointer; font-weight:600; }}
+details[data-study-cases] select {{ font:inherit; max-width:100%; }}
+tr:target {{ outline:2px solid var(--accent); outline-offset:-2px; }}
 main {{ overflow-wrap:anywhere; }}
 </style>
 </head>
@@ -520,12 +534,16 @@ def build_reference(
 ARM_LABELS = {
     "conventional": "Conventional", "full_governed": "Governed",
     "conventional_status": "Conventional status", "additional_observation": "Additional observation",
+    "additional_endpoint": "Additional endpoint", "matched_conventional_access": "One endpoint with matched access",
     "bound_handoff": "Retained qualification", "no_library": "No library",
     "ordinary_retrieval": "Ordinary retrieval", "reusable_routines": "Extracted routines",
     "aware_whole": "Query-aware whole", "aware_routine": "Query-aware routine",
     "blind_whole": "Query-blind whole", "blind_routine": "Query-blind routine",
     "conventional_memoization": "Conventional memoization",
     "retained_qualification": "Serialized handoff",
+    "cached_permission_only": "Cached permission",
+    "transactional_memo": "Version-checked transaction",
+    "transactional_receipt": "Transaction with serialized receipt",
 }
 
 
@@ -550,16 +568,26 @@ def paired_case_table(run: dict, cases: list[dict]) -> str:
             f'<td>{escape(value["outcome"])}<br><small>{escape(value["work"])}</small></td>'
             for value in row["arms"].values()
         )
+        attributes = "".join(f" data-{name}" for name in ("disagrees", "exhausted", "adverse") if row[name])
         rows.append(
-            f'<tr id="{fragment}"><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a></th>'
+            f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a></th>'
             f'<td>{escape(row["condition"])}</td>{outcomes}</tr>'
         )
     differences = sum(row["disagrees"] for row in cases)
+    options = [("all", "All cases")]
+    options.extend((key, label) for key, label in (
+        ("disagrees", "Different outcomes"), ("exhausted", "Budget exhausted"), ("adverse", "Adverse cases")
+    ) if any(row[key] for row in cases))
+    selectors = "".join(f'<option value="{key}">{label}</option>' for key, label in options)
     return (
-        f'<h4>Paired cases</h4><p>{len(cases)} cases. {differences} with differing outcomes appear first. '
+        f'<h4>Paired cases</h4><p>{differences} of {len(cases)} cases have differing outcomes. '
         f'<a href="cases-{run["id"]}.csv" download>Download paired-case CSV</a>.</p>'
+        f'<details data-study-cases open><summary>Inspect {len(cases)} paired cases</summary>'
+        f'<p><label hidden>Filter paired cases <select>{selectors}</select></label> '
+        f'<span role="status" data-case-count></span></p>'
         + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(study_arm_label(key) for key in cases[0]["arms"])],
                       "".join(rows))
+        + "</details>"
     )
 
 
@@ -634,7 +662,7 @@ def study_outcomes(format_id: str, result: dict) -> str:
     return ""
 
 
-def render_run(study: dict, row: dict, result: dict, cases: list[dict]) -> str:
+def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: str = "") -> str:
     source = f'{research.REPO}/blob/{row["source_commit"]}'
     artifacts = [("Raw paired result", row["result"]), ("Pinned protocol", row["protocol"]), *(
         (Path(target).name, target) for target in row["inputs"] if target != row["protocol"]
@@ -653,11 +681,49 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict]) -> str:
         '<h4>Replay</h4><p>Run from a checkout at this evidence revision. '
         'The Git repair also needs its pre-fix history.</p>'
         f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>'
+        + replay +
         f'<h4>Cite this run</h4><p>Corben Sorenson. “{escape(study["title"])}.” '
         f'<em>The ASI Stack</em>, {escape(row["date"])}. Run <code>{row["id"]}</code>, evidence revision '
         f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
         f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
         + paired_case_table(row, cases) + "</section>"
+    )
+
+
+def current_study_decision(study: dict) -> str:
+    run = research_anchor(study["featured_run"])
+    return (
+        '<section id="current-decision"><h2>Current decision</h2>'
+        f'<p class="status"><strong>{escape(study["disposition"])}</strong></p>'
+        f'<p>{escape(study["summary"])}</p>'
+        f'<p><strong>Scope and limits.</strong> {escape(study["limit"])}</p>'
+        f'<p><a href="#{run}">Inspect the featured run and its conditions</a>.</p></section>'
+    )
+
+
+def forward_transfer_choices(study: dict) -> str:
+    by_format = {run["format"]: run for run in study["runs"]}
+    factorial = by_format["transfer_factorial_v1"]["metrics"]
+    scheduler = by_format["transfer_scheduler_v1"]["metrics"]
+    conditions = (
+        ("Handle depth, proposal cap", factorial["stratum_cells"],
+         factorial["proposal_whole"], factorial["proposal_routine"], by_format["transfer_factorial_v1"]),
+        ("Handle depth, expanded-work cap", factorial["stratum_cells"],
+         factorial["expanded_whole"], factorial["expanded_routine"], by_format["transfer_factorial_v1"]),
+        ("Expanded-length priority, proposal cap", scheduler["stratum"],
+         scheduler["whole_reordered"], scheduler["routines_reordered"], by_format["transfer_scheduler_v1"]),
+    )
+    rows = "".join(
+        f'<tr><th scope="row"><a href="#{research_anchor(run["id"])}">{escape(label)}</a></th>'
+        f'<td>{whole} / {cells}</td><td>{routine} / {cells}</td></tr>'
+        for label, cells, whole, routine, run in conditions
+    )
+    return (
+        '<h3>Which representation wins under a different budget?</h3>'
+        '<p>These comparisons use descriptive queries and the same five-bit task lineages. '
+        'Each denominator counts design cells and repeated conditions.</p>'
+        + study_table("Verified cells under three search conditions",
+                      ["Scheduler and cap", "Query-aware whole programs", "Query-aware routines"], rows)
     )
 
 
@@ -693,6 +759,12 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         return inputs.data[ROOT / name] if inputs else (ROOT / name).read_bytes()
 
     manifest = inputs.research_manifest if inputs else json.loads(read(research.RECORDS))
+    case_browser = product_dir / "study-case-browser.js"
+    case_browser_source = read(Path("assets/study-case-browser.js"))
+    if payload is None:
+        case_browser.write_bytes(case_browser_source)
+    else:
+        payload.write(case_browser, case_browser_source)
     studies = research.studies_from(manifest, read)
     reports = manifest["independent_reports"]
     write_json(product_dir / "research-studies.json", {
@@ -705,6 +777,26 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         archive_path.write_bytes(archive)
     else:
         payload.write(archive_path, archive)
+    audit = research.audit_replay_archive(manifest, read)
+    receiver = research.receiver_replay_archive(manifest, read)
+    scoped_git = research.git_replay_archive(manifest, read)
+    for name, content in ((research.AUDIT_PACKAGE, audit), (research.RECEIVER_PACKAGE, receiver),
+                          (research.GIT_PACKAGE, scoped_git)):
+        if payload is None:
+            (product_dir / name).write_bytes(content)
+        else:
+            payload.write(product_dir / name, content)
+    replay_links = {}
+    for run, package, content in (
+        *((identity, research.AUDIT_PACKAGE, audit) for identity in research.AUDIT_REPLAYS),
+        (research.RECEIVER_REPLAY_ID, research.RECEIVER_PACKAGE, receiver),
+        (research.GIT_REPLAY_ID, research.GIT_PACKAGE, scoped_git),
+    ):
+        replay_links[run] = (
+            f'<p><a href="{package}" download>Download the standalone replay kit</a>. '
+            f'Run <code>python3 replay.py {run}</code>. '
+            f'Kit SHA-256 <code>{hashlib.sha256(content).hexdigest()}</code>.</p>'
+        )
 
     for study in studies:
         sections = []
@@ -718,7 +810,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                 csv_path.write_bytes(export)
             else:
                 payload.write(csv_path, export)
-            sections.append(render_run(study, row, result, cases))
+            sections.append(render_run(study, row, result, cases, replay_links.get(row["id"], "")))
             label = " · featured" if row["id"] == study["featured_run"] else ""
             run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
         links = ""
@@ -726,6 +818,12 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             links += f'<p><a href="../../reader/quickstart.html#{escape(study["reader_anchor"])}">Worked reader comparison</a></p>'
         if study.get("paper"):
             links += f'<p><a href="../../{escape(study["paper"])}">Original paper</a>.</p>'
+        if study["id"] == "scoped-git":
+            links += (
+                '<p><a href="#run-authority-commit-ordering">Inspect the separate authority-ordering check</a>. '
+                'Its <a href="../../chapters/system-boundaries-and-authority.html#grant-to-effect-authority">'
+                'shared trace</a> follows a grant, an effect and a later observation.</p>'
+            )
         if study.get("spotlight"):
             spot = study["spotlight"]
             target = research_anchor(spot["run"], spot["case"])
@@ -739,9 +837,12 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                 'The follow-up below supplies the absolute floor and shared-source controls. '
                 '<a href="#independent-checks">Report an independent check</a>.</p>'
             )
+        links += replay_links.get(study["featured_run"], "")
         claim = study["claim"]
+        comparison = forward_transfer_choices(study) if study["id"] == "forward-transfer" else ""
         body = (
             '<p><a href="index.html">Return to the Evidence Registry</a></p>'
+            + current_study_decision(study) + comparison +
             f'<h2>Question</h2><p>{escape(study["question"])}</p>{links}'
             '<h2 id="related-claim">What this evidence bears on</h2>'
             f'<p>{escape(claim["scope"])} '
@@ -749,6 +850,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             f'<h2>What would change the decision</h2><p>{escape(study["change"])}</p>'
             f'<h2 id="run-history">Run history</h2><ul>{"".join(run_index)}</ul>'
             + "".join(sections) + independent_reports(reports, study, status)
+            + '<script src="study-case-browser.js" defer></script>'
         )
         write_text(product_dir / research.study_page(study["id"]),
                    page(study["title"], "Run history, case evidence, and citations.", body,
@@ -770,9 +872,47 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
     ), payload)
     cards = "".join(
         f'<article class="card"><h3><a href="{research.study_page(row["id"])}">{escape(row["title"])}</a></h3>'
-        f'<p>{escape(row["summary"])}</p></article>' for row in studies
+        f'<p>{escape(row["disposition"])}</p><p>{escape(row["summary"])}</p>'
+        f'<p><a href="{research.study_page(row["id"])}#current-decision">Read the decision and its limits</a></p></article>'
+        for row in studies
     )
     return studies, cards
+
+
+def build_claim_citations(product_dir, inputs, payload):
+    def read(name):
+        path = ROOT / relative(name)
+        return inputs.data[path] if inputs else path.read_bytes()
+
+    citations = list(graph.claim_citations(read))
+    sections = []
+    for citation in citations:
+        for source in (citation["transition"], citation["run"]):
+            target = product_dir / "artifacts" / source
+            data = read(source)
+            if payload is None:
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(data)
+            else:
+                payload.write(target, data)
+        limits = "".join(f"<li>{escape(limit)}</li>" for limit in citation["limits"])
+        sections.append(
+            f'<section id="{escape(citation["id"])}"><h2>{escape(citation["title"])}</h2>'
+            f'<p>{escape(citation["proposition"])}</p>'
+            f'<p>Recorded support <strong>{escape(citation["state"])}</strong>. '
+            f'Relation to the <a href="../../appendices/C_claim_evidence_matrix.html#{escape(citation["parent"])}">'
+            f'chapter claim</a> is <code>{escape(citation["relation"])}</code>. '
+            f'Effect on parent support <strong>{escape(citation["parent_effect"])}</strong>.</p>'
+            f'<p><a href="artifacts/{escape(citation["run"])}">Exact result</a> · '
+            f'<a href="artifacts/{escape(citation["transition"])}">Recorded evidence decision</a></p>'
+            f'<h3>Scope and limits</h3><ul>{limits}</ul>'
+            f'<p>Result SHA-256 <code>{citation["run_sha256"]}</code></p></section>'
+        )
+    write_text(product_dir / "claim-citations.html",
+               page("Selected non-core claims", "Cite a bounded proposition, its exact run, and the recorded limits.",
+                    "".join(sections), "claim-citations.json"), payload)
+    write_json(product_dir / "claim-citations.json", citations, payload)
+    return len(citations)
 
 
 def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
@@ -781,6 +921,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
     if payload is None:
         product_dir.mkdir(parents=True, exist_ok=True)
     studies, study_cards = build_research(product_dir, status, inputs, payload)
+    citation_count = build_claim_citations(product_dir, inputs, payload)
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:
         published_entries: list[dict[str, Any]] = []
@@ -827,6 +968,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         "groups": published_groups,
         "studies": [research.study_page(row["id"]) for row in studies],
         "active_research_agenda": "research-agenda.html",
+        "claim_citations": {"page": "claim-citations.html", "data": "claim-citations.json", "count": citation_count},
         "non_claims": [
             "Record availability, count, or schema validity does not establish claim truth.",
             "Internal validators are not independent review.",
@@ -864,6 +1006,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         '<a href="research-studies.json">Study data and citations</a></p>'
         f'<div class="grid">{study_cards}</div>'
         '<h2>Follow a claim into its evidence</h2>'
+        '<p><a href="claim-citations.html">Cite a selected non-core claim</a> with its recorded scope and exact result.</p>'
         '<ul><li><strong>Authority at a write.</strong> Read the '
         '<a href="../../appendices/C_claim_evidence_matrix.html#system-boundaries-and-authority.core">authority claim</a>, '
         f'then open the <a href="artifacts/{P5_U1_RESULT}">twelve replay records</a>. '

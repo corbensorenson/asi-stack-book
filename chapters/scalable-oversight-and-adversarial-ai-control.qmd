@@ -4,7 +4,7 @@ chapter_id: "scalable-oversight-and-adversarial-ai-control"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 depth-leveled chapter"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_weak_to_strong_generalization_2023"
   - "ext_scalable_oversight_weak_llms_2024"
@@ -255,22 +255,22 @@ critic, a human operator as judge, and a separate evaluation harness as outcome
 auditor.
 
 The protocol record first exposes an access mismatch. The proposer can query
-per-cohort results and training lineage; the critic initially sees only the
-summary. Calling those roles adversarial would overstate the check. The route
-withholds independence language until the critic receives the frozen cohort
-manifest, exact candidate digest, and regression artifacts used by the
-proposer. It also records that both models share a base family and retrieval
-corpus, leaving correlated blind spots even after access is repaired.
+per-cohort results and training lineage. The critic initially sees only the
+summary. Give the critic the frozen cohort manifest, exact candidate digest,
+and regression artifacts used by the proposer. Access to the same record makes
+the omissions inspectable. The models still share a base family and retrieval
+corpus, so the record must name which faults could affect both reviewers.
 
 The agents precommit to opposite claims: “the candidate meets the replacement
 gate” and “the packet is insufficient.” During review, the critic identifies a
 missing high-impact cohort. The proposer replies that the aggregate score is
 unchanged when that cohort is restored, but the outcome auditor detects two
 new unsafe releases inside it. Debate has surfaced the decisive branch; it has
-not settled the deployment decision. The direct-review baseline is the human
-operator reading the complete frozen report without assistance. The assisted
-path is credited only if it finds the omission or reaches the correct quarantine
-decision more reliably under the same evidence and cost envelope.
+not settled the deployment decision. Test a direct review aided by a comparison
+of expected and reported cohort IDs before attributing value to the debate.
+Give both workflows the same report, cohort manifest, outcome audit and time
+budget. Once coverage is established in both arms, test whether debate reveals
+an effect, exception or disagreement that the simpler check leaves unresolved.
 
 The resulting record routes to quarantine. It preserves the candidate, winning
 and losing arguments, omitted cohort, two unsafe outcomes, shared-family

@@ -4,7 +4,7 @@ chapter_id: "learning-theory-generalization-and-scaling-science"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-02"
+last_updated: "2026-11-20"
 primary_sources:
   - "simulation_scaling"
   - "ext_scaling_laws_neural_language_models_2020"
@@ -115,6 +115,14 @@ flowchart LR
 A scaling study observes one metric over a bounded compute range and proposes two candidate families, model `1` and model `2`. Both are preregistered and both must be scored on the held-out scale; attempts `11`, `12`, and `13` remain in the denominator even if one run failed. The population, sample process, algorithm, architecture, metric `11`, compute regime `13`, and horizon `17` are frozen before the held-out result is opened.
 
 If the final report shows only the winning curve, changes the metric after inspection, or applies the receipt to a new architecture or compute regime, the forecast is not prospective evidence. The finite review gives exact repair or refusal dispositions to all 45 admission-axis mutations and invalidates receipts under seven population or regime changes. It also shows that retrospective fit does not identify prospective coverage and that a threshold jump does not identify a mechanism change. The result governs claim custody; it does not establish generalization, emergence, transfer, future scaling accuracy, or safety.
+
+Before the run, define what a failed attempt means for the forecast. A run
+that never finishes may leave no quality value to compare. Report completion
+and forecast error conditional on completion alongside one another. Where the
+decision depends on achieving a quality threshold within budget, count failure
+to finish against that outcome. Compare the curve with a last-observed-scale
+forecast under the same rule. A single held-out scale can reveal a miss but
+cannot estimate coverage throughout the extrapolation range.
 
 ## Mechanism
 

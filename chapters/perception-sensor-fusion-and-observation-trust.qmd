@@ -4,7 +4,7 @@ chapter_id: "perception-sensor-fusion-and-observation-trust"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-19"
+last_updated: "2026-11-20"
 primary_sources:
   - "ext_multimodal_machine_learning_taxonomy_2019"
   - "ext_imagebind_2023"
@@ -188,7 +188,7 @@ release, transfer, nor SOTA.
 
 The local observation fixture starts with two agreeing channels whose declared
 dependence roots are 7 and 9. Inside the pairwise classifier, distinct roots
-count as two independent items; matching roots would count as one, and
+pass its declared separation rule. Matching roots count as one, and
 different hypotheses would remain disagreement. That is already stricter than
 sensor-count voting, but it is not enough.
 
@@ -315,7 +315,19 @@ flowchart LR
 
 ### How often is the true state inside the prediction set?
 
-Suppose 90 camera-plus-encoder frames yield 87 sets containing the true state, while ten camera-only frames yield five. Pooled coverage is 92%, but camera-only coverage is 50%. Record an encoder-only row as unmeasured until observations exist. Also report set size in each row: returning every state gives perfect coverage and little guidance. Modality-conditioned conformal calibration groups cases by the inputs present. Its coverage guarantee assumes exchangeable calibration and test cases within each group. If vibration disables the encoder specifically during difficult maneuvers, collect representative camera-only episodes before using that row to qualify operation. [Conformal Fusion Under Missing Modalities](https://arxiv.org/html/2608.07183v1)
+Suppose 90 camera-plus-encoder frames yield 87 sets containing the true state,
+while ten camera-only frames yield five. Pooled coverage is 92% and camera-only
+coverage is 50%. Report set sizes and mark encoder-only operation as unmeasured.
+A set containing every state always covers the truth and supplies little
+guidance. If all ten camera-only frames came from one maneuver, the 50%
+describes those frames. It gives little evidence about the next maneuver.
+
+Modality-conditioned conformal calibration groups cases by which inputs are
+present. The guarantee assumes exchangeable calibration and test points
+within a group and concerns coverage across that group. If vibration disables
+the encoder during difficult maneuvers, evaluate on separate representative
+episodes. Match the reported unit to the decision, such as coverage of a
+single state or an entire maneuver. [Conformal Fusion Under Missing Modalities, §3.4](https://arxiv.org/html/2608.07183v1)
 
 ### Required artifacts
 

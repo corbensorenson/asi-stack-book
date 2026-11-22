@@ -4,7 +4,7 @@ chapter_id: "labor-os-and-typed-jobs"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-08-09"
+last_updated: "2026-11-20"
 primary_sources:
   - "talos"
   - "viea"
@@ -86,9 +86,10 @@ The job boundary is also where the stack distinguishes work from evidence. A job
 
 ## Why existing approaches are insufficient
 
-Chat outputs do not provide deterministic job lifecycle, tool isolation, auditability, or repeatable cognitive manufacturing.
-
-Chat is not a factory. It does not lock a contract, isolate tools, enforce permission boundaries, require approvals, preserve logs, or tell a later verifier how to replay what happened. Without jobs, the system has vibes and side effects instead of controlled work.
+A conversation can propose work. A workflow engine can already schedule it,
+retain attempt history, and require a verifier or recipient to acknowledge a
+particular artifact. Use that workflow to test whether typed job receipts
+improve custody when a job and its evidence pass between several owners.
 
 AutoGen (`ext_autogen_2023`) gives an external multi-agent workflow baseline, and SWE-bench (`ext_swe_bench_2023`) gives an external software-task benchmark baseline with repository-scale context and patch evaluation. Labor OS uses those comparison points to ask for typed job lifecycles, artifact receipts, replay, and approval boundaries around agentic work. The baseline references do not claim that Talos jobs reproduce AutoGen workflows or solve SWE-bench tasks.
 
@@ -112,7 +113,13 @@ The same failure can happen in a single-agent workflow. A model may create files
 
 A worker receives a typed job to render one chapter. The contract names the plan node, input digest, renderer version, output path, authority ceiling, scheduler lease, cancellation token, verifier, idempotency key, and expected completion receipt. The render succeeds and the output file exists, but the artifact digest has not been verified and the consumer has not acknowledged delivery. A process-based baseline would mark the job complete when the command exits `0`; the labor OS keeps it in delivered-but-unacknowledged state.
 
-After verification binds the output digest and the consumer acknowledges the exact job version, the six-event modeled run reaches closure. A retry with the same idempotency key cannot create a second logical completion, and cancellation or mutation after closure is rejected. The refinement checks 29 routes and rejects 42 mutations across approval, lease, retry, cancellation, evidence, identity, replay, authority, receipts, and residuals. These finite records do not prove scheduler behavior, useful work, effect truth, recovery, or deployed idempotence.
+After verification binds the output digest and the consumer acknowledges the exact job version, the six-event modeled run reaches closure. The model prevents a second logical completion under the same identity and rejects cancellation or mutation after closure. The refinement checks 29 routes and rejects 42 mutations across approval, lease, retry, cancellation, evidence, identity, replay, authority, receipts, and residuals.
+
+Exercise a separate failure in an implementation test. Let the consumer
+receive the output, then interrupt the acknowledgment. A scheduler can
+record one closed job even if the receiver applies an operation twice. Score
+logical closure and the receiver's observed effects separately. Give both
+workflow designs the same receiver status and deduplication contract.
 
 The claim remains at `argument` support. Talos supplies the labor-OS frame, contract-lock discipline, job pipeline, evidence-bound artifact, audit, replay, and explicit non-claim boundaries. VIEA supplies the intent-to-artifact-to-runtime trace, permission envelopes, approval roles, side-effect classes, runtime-adapter maturity levels, and feedback loop. GenesisCode supplies the proposal/effect separation, host-provided capability boundary, deterministic effect logs, replay semantics, obligations, provenance, and semantic patch discipline. Software Magic Grimoire supplies workflow guard vocabulary for bounded instruction artifacts, output contracts, verification, failure behavior, and gated spell stacks. The Markdown Talos release remains a variant context; the complete authenticated MoECOT connector text is passage-reviewed, but neither supplies reproduced runtime evidence.
 
