@@ -43,6 +43,7 @@ for (const edge of graph.edges) {
 }
 const rank = matcher.index(evidence.records);
 const citable = new Set(evidence.records.map(row => row.id));
+const tasksDigest = createHash("sha256").update(tasksRaw).digest("hex");
 
 function packetText(row) {
   return [row.title, row.summary, row.definition, row.limit, row.disposition, ...(row.unmeasured || [])]
@@ -125,6 +126,17 @@ async function manualSession(task, linked, code) {
     await consoleInput.question("Ready to start the timed review? Press Enter. ");
     const start = performance.now();
     let paused = 0;
+    let pauses = 0;
+    const timedQuestion = async prompt => {
+      for (;;) {
+        const value = (await consoleInput.question(prompt)).trim();
+        if (value.toLowerCase() !== "pause") return value;
+        const waitStart = performance.now();
+        await consoleInput.question("Press Enter to resume. ");
+        paused += performance.now() - waitStart;
+        pauses++;
+      }
+    };
     const seen = new Set(task.initial);
     const show = key => {
       const row = records.get(key);
@@ -134,44 +146,45 @@ async function manualSession(task, linked, code) {
     console.log(task.question);
     for (const key of seen) show(key);
     while (seen.size - task.initial.length < 2) {
-      const choices = new Map();
+      const search = rank(task.lookup).filter(hit => !seen.has(hit.record.id)).slice(0, 10);
+      const choices = new Map(search.map((hit, i) => [String(i + 1), hit.record.id]));
+      console.log("\nRegister search");
+      search.forEach((hit, i) => console.log(`${i + 1}. ${records.get(hit.record.id).title}`));
       if (linked) {
-        for (const edge of typedChoices(seen)) choices.set(edge.id, edge.predicate.replaceAll("_", " "));
-      }
-      for (const hit of rank(task.lookup)) {
-        if (!seen.has(hit.record.id) && !choices.has(hit.record.id)) choices.set(hit.record.id, "register search");
+        const links = [...new Map(typedChoices(seen).map(edge => [edge.id, edge])).values()].slice(0, 10);
+        console.log("\nRelated records");
+        links.forEach((edge, i) => {
+          const key = "l" + (i + 1);
+          choices.set(key, edge.id);
+          console.log(`${key}. ${records.get(edge.id).title} (${edge.predicate.replaceAll("_", " ")})`);
+        });
       }
       if (!choices.size) break;
-      const ordered = [...choices.entries()].slice(0, 10);
-      ordered.forEach(([key, relation], i) => console.log(`${i + 1}. ${records.get(key).title} (${relation})`));
-      const input = (await consoleInput.question("Open a record by number, pause, or finish. ")).trim();
+      const input = (await timedQuestion("Choose a record number, pause, or finish. ")).toLowerCase();
       if (input === "finish") break;
-      if (input === "pause") {
-        const waitStart = performance.now();
-        await consoleInput.question("Press Enter to resume. ");
-        paused += performance.now() - waitStart;
-        continue;
-      }
-      const selected = ordered[Number(input) - 1];
+      const selected = choices.get(input);
       if (!selected) continue;
-      seen.add(selected[0]);
-      show(selected[0]);
+      seen.add(selected);
+      show(selected);
     }
     let disposition;
     const allowed = task.study === "claim" ? ["accept", "revise", "hold"] : ["locate", "hold"];
     while (!allowed.includes(disposition)) {
-      disposition = (await consoleInput.question(`Disposition (${allowed.join(", ")}). `)).trim().toLowerCase();
+      disposition = (await timedQuestion(`Disposition (${allowed.join(", ")}). `)).toLowerCase();
     }
-    const reason = await consoleInput.question("What evidence supports your decision or your abstention? ");
-    const scope = await consoleInput.question("What limit does the evidence retain? ");
-    const citations = await consoleInput.question("Cite the exact opened records by ID. ");
+    const reason = await timedQuestion("What evidence supports your decision or your abstention? ");
+    const scope = await timedQuestion("What limit does the evidence retain? ");
+    const citations = await timedQuestion("Cite the exact opened records by ID. ");
     fs.writeFileSync(process.argv[3], JSON.stringify({
       session_code: code, task: task.id, source_commit: status.source_commit, snapshot_id: evidence.snapshot_id,
+      tasks_sha256: tasksDigest,
       opened_ids: [...seen], disposition, reason, scope, citations,
       active_review_ms: Math.round(performance.now() - start - paused),
+      pauses,
     }, null, 2) + "\n", {flag: "wx"});
   } finally {
     consoleInput.close();
+    process.stdin.unref?.();
   }
 }
 
@@ -199,7 +212,7 @@ if (session) {
   fs.writeFileSync(process.argv[3], JSON.stringify({
     source_commit: status.source_commit,
     snapshot_id: evidence.snapshot_id,
-    tasks_sha256: createHash("sha256").update(tasksRaw).digest("hex"),
+    tasks_sha256: tasksDigest,
     wall_time_units: "program milliseconds",
     human_review_time_ms: null,
     packets,

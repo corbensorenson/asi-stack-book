@@ -15,6 +15,10 @@ The wrong and unavailable reads are offline perturbations of collected observati
 
 Replay the read-only observation protocol with a new output file to collect a different snapshot.
 
+The [live transport follow-up](transport-result.md) used eight fresh
+lineages and measured the caller-to-decision interval and HTTP response
+traffic through a real loopback hop.
+
 ```sh
 python3 experiments/p5_u1_governed_repository_change/public_distribution_observation/run.py /tmp/asi-receiver-observation.json
 ```
