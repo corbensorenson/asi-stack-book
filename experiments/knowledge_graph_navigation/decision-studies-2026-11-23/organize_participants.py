@@ -3,6 +3,7 @@
 
 import argparse
 from collections import Counter, defaultdict
+import gzip
 from hashlib import sha256
 from html.parser import HTMLParser
 import json
@@ -89,7 +90,18 @@ def blind(site, allocation_file, responses_dir, output, key_output):
         raise ValueError("Allocation and tested site disagree")
     planned = {row["session_code"]: row for row in allocation["assignments"]}
     tasks = {row["id"]: row for row in load(HERE / "tasks.json")}
-    urls = {row["id"]: row.get("url") for row in load(site / EVIDENCE)["records"]}
+    catalog = load(site / EVIDENCE)
+    evidence_urls = {row["id"]: row.get("url") for row in catalog["records"]}
+    companion = (site / EVIDENCE).parent
+    manifest = load(companion / "manifest.json")
+    archive = (companion / "graph.json.gz").read_bytes()
+    if sha256(archive).hexdigest() != manifest["files"]["graph.json.gz"]["sha256"]:
+        raise ValueError("The graph archive hash does not match the manifest")
+    graph = json.loads(gzip.decompress(archive))
+    if graph["snapshot_id"] != binding["snapshot_id"]:
+        raise ValueError("The graph and evidence catalog disagree")
+    urls = {row["id"]: row.get("url") for row in graph["nodes"]}
+    urls.update(evidence_urls)
     responses = []
     key_rows = []
     completed = set()
@@ -111,7 +123,7 @@ def blind(site, allocation_file, responses_dir, output, key_output):
         starts = task["initial"]
         allowed = {"accept", "revise", "hold"} if task["study"] == "claim" else {"locate", "hold"}
         if (not isinstance(opened, list) or opened[:len(starts)] != starts or len(set(opened)) != len(opened)
-                or len(opened) > len(starts) + 2 or any(key not in urls for key in opened[len(starts):])
+                or len(opened) > len(starts) + 2 or any(key not in evidence_urls for key in opened[len(starts):])
                 or answer["disposition"] not in allowed):
             raise ValueError(f"{path.name} has invalid evidence opens or disposition")
         citations = []
