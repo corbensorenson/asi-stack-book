@@ -1,0 +1,1010 @@
+{
+  "scope": "public-copy",
+  "frozen_inputs": {
+    "experiments/nov20_instrument_audit/protocol.md": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+    "experiments/nov20_instrument_audit/locked.py": "47aaa7aded0f034bb69fa4e0af90471a0ccf5d6725183b44d9377bca291840e0",
+    "experiments/nov20_instrument_audit/run_receiver.py": "fbc2634a25ce0cb284bdcd59e1b7345098735c1e33bcdff1043251061daecad5",
+    "experiments/nov20_instrument_audit/run_verifier.py": "4fb74b8ddce35451f98ea083ba38593cabc17fe6c2f397241909efb9844c02b1",
+    "experiments/nov20_instrument_audit/run_schedulers.py": "4d269565d8c2d507b79122ec8930676c4a1465ae55164f1e67ee1ee473f1d597",
+    "experiments/nov20_instrument_audit/verifier_profiles.json": "23984257e76fa52f574a8a1c0584889b673a8d23b3a8d5914121e07656f6751f",
+    "scripts/compare_fresh_effect_workflows.py": "f08bc67210375fd7a9c393dcff6f676599fe98b7a3a61cce297790bbce21c133",
+    "scripts/run_p5_u1_governed_repository_change.py": "0e6b03ffe876ea368374949b947e6a610deb50100557c4a26cc1ca240e017cc2",
+    "scripts/compare_verifier_replacements.py": "4dc0b07f31808e07d710a5ae03ad7ab43a61aba94f5a036e1d53baf837d66ca2",
+    "experiments/verifier_replacement_comparison/model_cases.json": "f9ffafafbd164c9502d2361333150094059c691b909d99a4e88c4378e4db2e2b",
+    "experiments/p5_u1_governed_repository_change/fresh_tasks.json": "5bb664dc43a7eaab32e511002e616e34fc8ffb6f4b40b0d8b92f01bf90ba5973",
+    "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json": "ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed",
+    "experiments/forward_transfer_factorial/run.py": "5d20bb2ffcea59e101dee8ffd0a923de7e8990bb3c9d92bfab541ebf41774e0c",
+    "experiments/forward_transfer_factorial/oracle.py": "fa6954e4baa14e4b00158cb93b39cf97bfe4493eba8a0f1baade95ec05e21af4",
+    "experiments/forward_transfer_factorial/results/2026-11-20-local.json": "f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89"
+  },
+  "paired_checkpoints": 38,
+  "cases": [
+    {
+      "case": "current_after_missed_notification",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1702
+          },
+          "work": {
+            "cache_hits": 4,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1702
+          },
+          "work": {
+            "cache_hits": 4,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "handoff_bytes": 230,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "successful_stale_lookup",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1742
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1742
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "handoff_bytes": 230,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "index_unavailable",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": null,
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "index unavailable",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": null,
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "index unavailable",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1688
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": null,
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "index unavailable",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": null,
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "index unavailable",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1688
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "handoff_bytes": 230,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "request_lacks_current_revision",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "no authoritative revision for this request",
+              "revision": null
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "no authoritative revision for this request",
+              "revision": null
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 873
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1500
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "no authoritative revision for this request",
+              "revision": null
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "no authoritative revision for this request",
+              "revision": null
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 873
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1500
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "handoff_bytes": 230,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "regression_after_current_lookup",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1742
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "returned revision differs from request",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 14,
+            "payload_bytes": 995
+          },
+          "worker_pipe": {
+            "messages": 12,
+            "payload_bytes": 1742
+          },
+          "work": {
+            "cache_hits": 2,
+            "cache_writes": 2,
+            "document_reads": 10,
+            "handoff_bytes": 230,
+            "index_lookups": 6,
+            "policy_evaluations": 2
+          }
+        }
+      }
+    },
+    {
+      "case": "fallback_expired",
+      "arms": {
+        "conventional_memoization": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 3,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 3,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 18,
+            "payload_bytes": 1309
+          },
+          "worker_pipe": {
+            "messages": 16,
+            "payload_bytes": 2280
+          },
+          "work": {
+            "cache_hits": 4,
+            "cache_writes": 4,
+            "document_reads": 20,
+            "index_lookups": 8,
+            "policy_evaluations": 4
+          }
+        },
+        "retained_qualification": {
+          "decisions": [
+            {
+              "tick": 0,
+              "consumer": "release-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "evaluated verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 0,
+              "consumer": "serving-check",
+              "observed_index_version": "approved",
+              "expected_route": "candidate",
+              "route": "candidate",
+              "reason": "reused verified evidence",
+              "revision": "0968a80286d79f0b4b575e188385b6f05931a10f21a278728279db985af3fae8"
+            },
+            {
+              "tick": 1,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 1,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 2,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "prior",
+              "route": "prior",
+              "reason": "reused verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 3,
+              "consumer": "release-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            },
+            {
+              "tick": 3,
+              "consumer": "serving-check",
+              "observed_index_version": "revoked",
+              "expected_route": "specialist",
+              "route": "specialist",
+              "reason": "evaluated verified evidence",
+              "revision": "03c2a3c833ac2db20bc89d7324709dba373bf10e98af81770a1bf602e837ac57"
+            }
+          ],
+          "authority_pipe": {
+            "messages": 18,
+            "payload_bytes": 1309
+          },
+          "worker_pipe": {
+            "messages": 16,
+            "payload_bytes": 2280
+          },
+          "work": {
+            "cache_hits": 4,
+            "cache_writes": 4,
+            "document_reads": 20,
+            "handoff_bytes": 466,
+            "index_lookups": 8,
+            "policy_evaluations": 4
+          }
+        }
+      }
+    }
+  ],
+  "totals": {
+    "conventional_memoization": {
+      "work": {
+        "cache_hits": 16,
+        "cache_writes": 14,
+        "document_reads": 70,
+        "index_lookups": 38,
+        "policy_evaluations": 14
+      },
+      "wire": {
+        "messages": 164,
+        "payload_bytes": 16816
+      },
+      "routes": {
+        "candidate": 12,
+        "prior": 16,
+        "specialist": 10
+      }
+    },
+    "retained_qualification": {
+      "work": {
+        "cache_hits": 16,
+        "cache_writes": 14,
+        "document_reads": 70,
+        "handoff_bytes": 1616,
+        "index_lookups": 38,
+        "policy_evaluations": 14
+      },
+      "wire": {
+        "messages": 164,
+        "payload_bytes": 16816
+      },
+      "routes": {
+        "candidate": 12,
+        "prior": 16,
+        "specialist": 10
+      }
+    }
+  }
+}
