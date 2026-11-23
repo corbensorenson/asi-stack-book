@@ -15,6 +15,10 @@ def show(read):
     print(f"Status {read['error'] or read['http_status']} | sha256 {read['body_sha256'] or 'unavailable'}")
 
 
+def matches(read, reference):
+    return bool(reference and read["error"] is None and read["body_sha256"] == reference)
+
+
 def choose(choices):
     while True:
         answer = input(f"Choose {' or '.join(choices)}. ").strip().lower()
@@ -56,17 +60,17 @@ def main():
         show(primary)
         choices = ["verify", "hold"]
         attended = [primary]
-        choice = choose(choices if args.arm == "primary_only" else [*choices, "second"])
+        if args.arm == "gateway_fallback" and not matches(primary, reference):
+            print("Gateway returned a second observation.")
+            show(secondary)
+            attended.append(secondary)
+        choice = choose([*choices, "second"] if args.arm == "caller_fallback" else choices)
         if choice == "second":
-            if args.arm == "gateway_fallback":
-                print("Gateway returned a second observation.")
             show(secondary)
             attended.append(secondary)
             choice = choose(choices)
         elapsed = round((perf_counter() - started) * 1000)
-        supports_closure = bool(reference and any(
-            value["error"] is None and value["body_sha256"] == reference for value in attended
-        ))
+        supports_closure = any(matches(value, reference) for value in attended)
         output.append({"package": row["name"], "version": row["version"],
                        "decision": choice, "observations": len(attended), "active_ms": elapsed,
                        "false_closure": choice == "verify" and not supports_closure})
