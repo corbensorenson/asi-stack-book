@@ -64,7 +64,7 @@ function decision(question, records) {
 
 function typedChoices(seen, type) {
   return [...seen].flatMap(from => (adjacency.get(from) || [])
-    .filter(edge => type.includes(edge.predicate) && citable.has(edge.id) && !seen.has(edge.id))
+    .filter(edge => (!type || type.includes(edge.predicate)) && citable.has(edge.id) && !seen.has(edge.id))
     .map(edge => ({...edge, from})));
 }
 
@@ -136,7 +136,7 @@ async function manualSession(task, linked, code) {
     while (seen.size - task.initial.length < 2) {
       const choices = new Map();
       if (linked) {
-        for (const edge of typedChoices(seen, task.type)) choices.set(edge.id, edge.predicate.replaceAll("_", " "));
+        for (const edge of typedChoices(seen)) choices.set(edge.id, edge.predicate.replaceAll("_", " "));
       }
       for (const hit of rank(task.lookup)) {
         if (!seen.has(hit.record.id) && !choices.has(hit.record.id)) choices.set(hit.record.id, "register search");
