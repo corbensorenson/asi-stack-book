@@ -1,0 +1,601 @@
+{
+  "source_commit": "a2464c16f3e58500fc9ec98e3eefa9acc699ce21",
+  "snapshot_id": "da3399ee9ec0f2cdaf1ef0d917cf519a1553c3563eb42bf35abbf46e235f9037",
+  "tasks_sha256": "a0628afe3520bea36350a73ac9e70e20ff42d6cb7e65012d5b85468be490b9c0",
+  "chromium": "157.0.8103.80",
+  "query_condition": "full question",
+  "results": [
+    {
+      "id": "H01",
+      "order": [
+        "ordinary",
+        "graph"
+      ],
+      "query": "The whole-program search consumed the entire expanded-work budget on a descriptive routing problem. Did the short reusable routine prove anything about solvability?",
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F#run-transfer-factorial--case-b23-descriptive-expanded-forward",
+            "excerpt": "Technical reference Extracted routine verifies within an expanded-work cap Paired case · Authored paired case No library: screen budget exhausted. Query-aware whole: screen budget exhausted. Query-aware routine: verified. Scope One authored board-routing case with a descriptive query and forward order. Exhaustion leaves solvability open. Matched terms: whole, program, expanded, work, budget, descriptive"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed",
+            "excerpt": "The same whole program under two queue priorities Paired case · Authored paired case Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted. Scope One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs. Matched terms: whole, program, expanded, budget, descriptive, routing"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F#run-transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run · Measured under stated conditions With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: whole, program, expanded, work, budget, descriptive"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F",
+            "excerpt": "Did extracted routines help on later synthesis tasks? Research study In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: whole, program, expanded, budget, descriptive, routine"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial--case-b23-descriptive-expanded-forward",
+            "status": 200,
+            "visible": true,
+            "excerpt": "b23-descriptive-expanded-forward Open in the graph b23 · board-routing · descriptive · 1450 expanded execution steps · forward screen budget exhausted 82 proposals, 1440 executed steps screen budget exhausted 76 proposals, 1432 executed steps · library shade (roll → flip → odd), coordinate (roll → low → high) verified 72 proposals, 1296 executed steps · library shade (roll → flip), coordinate (roll → low) · solution roll → flip → left screen budget exhausted 76 proposals, 1432 executed steps · library shade (roll → flip → odd), intake (high → right → roll) verified 72 proposals, 1296 executed steps · library shade (roll → flip), intake (high → right) · solution roll → flip → left"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed",
+            "status": 200,
+            "visible": true,
+            "excerpt": "b24-descriptive-proposals-both-reversed Open in the graph b24 · board-routing · descriptive · 96 proposals · both-reversed screen budget exhausted 96 proposals, 1776 executed steps screen budget exhausted 96 proposals, 1776 executed steps verified 88 proposals, 1976 executed steps · library serial (odd → roll → flip), offset (right → odd → flip) · solution odd → roll → flip → right screen budget exhausted 96 proposals, 1776 executed steps · library serial (odd → roll → flip), offset (right → odd → flip) screen budget exhausted 96 proposals, 1816 executed steps · library serial (odd → roll), offset (right → odd) screen budget exhausted 96 proposals, 1776 executed steps · library serial (odd → roll), offset (right → odd) screen budget exhausted 96 proposals, 2096 executed steps · library offset (right → odd → flip), intake (high → right → roll) screen budget exhausted 96 proposals, 1776 executed steps · library offset (right → odd → flip), intake (high → right → roll) screen budget exhausted 96 proposals, 1824 executed steps · library offset (right → odd), intake (high → right) screen budget exhausted 96 proposals, 1776 executed steps · library offset (right → odd), intake (high → right)"
+          }
+        ]
+      },
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F&node=evidence_case%3Atransfer-factorial--b23-descriptive-expanded-forward",
+            "id": "evidence_case:transfer-factorial--b23-descriptive-expanded-forward",
+            "excerpt": "Extracted routine verifies within an expanded-work cap Paired case No library: screen budget exhausted. Query-aware whole: screen budget exhausted. Query-aware routine: verified. Scope · One authored board-routing case with a descriptive query and forward order. Exhaustion leaves solvability open. Matched terms: whole, program, expanded, work, budget, descriptive"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F&node=evidence_case%3Atransfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+            "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+            "excerpt": "The same whole program under two queue priorities Paired case Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted. Scope · One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs. Matched terms: whole, program, expanded, budget, descriptive, routing"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F&node=study_run%3Atransfer-factorial",
+            "id": "study_run:transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope · The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: whole, program, expanded, work, budget, descriptive"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=The+whole-program+search+consumed+the+entire+expanded-work+budget+on+a+descriptive+routing+problem.+Did+the+short+reusable+routine+prove+anything+about+solvability%3F&node=study%3Aforward-transfer",
+            "id": "study:forward-transfer",
+            "excerpt": "Did extracted routines help on later synthesis tasks? Study In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope · The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: whole, program, expanded, budget, descriptive, routine"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial--case-b23-descriptive-expanded-forward",
+            "status": 200,
+            "visible": true,
+            "excerpt": "b23-descriptive-expanded-forward Open in the graph b23 · board-routing · descriptive · 1450 expanded execution steps · forward screen budget exhausted 82 proposals, 1440 executed steps screen budget exhausted 76 proposals, 1432 executed steps · library shade (roll → flip → odd), coordinate (roll → low → high) verified 72 proposals, 1296 executed steps · library shade (roll → flip), coordinate (roll → low) · solution roll → flip → left screen budget exhausted 76 proposals, 1432 executed steps · library shade (roll → flip → odd), intake (high → right → roll) verified 72 proposals, 1296 executed steps · library shade (roll → flip), intake (high → right) · solution roll → flip → left",
+            "preview": "Paired case evidence_case:transfer-factorial--b23-descriptive-expanded-forward Open in the book Research question Can the whole-program arm and the extracted-routine arm finish the same task within the same expanded-work cap? Reported result No library: screen budget exhausted. Query-aware whole: screen budget exhausted. Query-aware routine: verified. Evidence limit One authored board-routing case with a descriptive query and forward order. Exhaustion leaves solvability open. Measurement Authored paired case Copy citation Record location Pinned study artifacts"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed",
+            "status": 200,
+            "visible": true,
+            "excerpt": "b24-descriptive-proposals-both-reversed Open in the graph b24 · board-routing · descriptive · 96 proposals · both-reversed screen budget exhausted 96 proposals, 1776 executed steps screen budget exhausted 96 proposals, 1776 executed steps verified 88 proposals, 1976 executed steps · library serial (odd → roll → flip), offset (right → odd → flip) · solution odd → roll → flip → right screen budget exhausted 96 proposals, 1776 executed steps · library serial (odd → roll → flip), offset (right → odd → flip) screen budget exhausted 96 proposals, 1816 executed steps · library serial (odd → roll), offset (right → odd) screen budget exhausted 96 proposals, 1776 executed steps · library serial (odd → roll), offset (right → odd) screen budget exhausted 96 proposals, 2096 executed steps · library offset (right → odd → flip), intake (high → right → roll) screen budget exhausted 96 proposals, 1776 executed steps · library offset (right → odd → flip), intake (high → right → roll) screen budget exhausted 96 proposals, 1824 executed steps · library offset (right → odd), intake (high → right) screen budget exhausted 96 proposals, 1776 executed steps · library offset (right → odd), intake (high → right)",
+            "preview": "Paired case evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed Open in the book Research question Can changing only the queue priority remove a verified result within the same proposal cap? Reported result Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted. Evidence limit One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs. Measurement Authored paired case Copy citation Record location Pinned study artifacts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H02",
+      "order": [
+        "graph",
+        "ordinary"
+      ],
+      "query": "Could the cached permission route still write when a grant expired before commit, and which transaction check prevented that?",
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F&node=study_run%3Aauthority-commit-ordering",
+            "id": "study_run:authority-commit-ordering",
+            "excerpt": "Grant revocation and delayed effect observation Study run The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Scope · Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Matched terms: cached, permission, write, grant, before, commit"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F&node=evidence_case%3Aauthority-commit-ordering--commit-then-revoke",
+            "id": "evidence_case:authority-commit-ordering--commit-then-revoke",
+            "excerpt": "An earlier authorized write observed after revocation Paired case Cached permission: authorized. Version-checked transaction: authorized. Transaction with serialized receipt: authorized. Scope · One schedule in a same-owner local database. A later observation does not change the grant that was in force when the effect committed. Matched terms: cached, permission, write, grant, commit, transaction"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F&node=evidence_passage%3Agrant-at-effect",
+            "id": "evidence_passage:grant-at-effect",
+            "excerpt": "Grant at commit and delayed observation Evidence passage The effect at tick 1 used the active grant. A later observation of that journal row after revision 2 did not invalidate the earlier write. Both checked transactions withheld a write after expiry or revocation. Scope · Four ordered schedules in a shared local database under one operator. A partitioned remote sink, production enforcement, and distributed failure behavior remain outside the comparison. Matched terms: write, grant, commit, transaction, check"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F&node=study_run%3Areceiver-effect-audit",
+            "id": "study_run:receiver-effect-audit",
+            "excerpt": "Disposition and observed effect Study run All 7 controls passed, including a held case with one wrong effect. The stricter scorer changed 0 historical hold labels. In the 160 retained pairs, conventional status still closed 128 and the added read closed 144. Scope · This rescores the same journal and retained local patch flag. The 160 pairs cross four authored task fixtures with forty conditions per task, so the closure counts describe this design. The wrong-effect case is an isolated instrument control. Both status paths use one simulated journal and clock. In a separate local check, an old failure with the current response tick causes a second commit without deduplication. A trusted source revision prevents that retry in the authored case. Matched terms: still, before, commit, check"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Grant revocation and delayed effect observation # Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt. Result The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Scope and limits Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Open in the graph Disposition Check authority at the write, and use the effect journal to establish what committed. Replay Run from a checkout at this evidence revision. python3 experiments/nov20_instrument_audit/check_authority_effect_ordering.py Raw paired result Pinned protocol check_authority_effect_ordering.py Cite this run Corben Sorenson. “When scoped Git change control is enough.” The ASI Stack, 2026-11-20. Run authority-commit-ordering, evidence revision bc705e8eb7c1a7026b6d6909ce901a8a4c131277. Result SHA-256 e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e. Paired cases 2 of 4 cases have differing outcomes. Download paired-case CSV. Inspect 4 paired cases",
+            "preview": "Study run study_run:authority-commit-ordering Open in the book Research question Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer? Reported result The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Evidence limit Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Measurement Measured under stated conditions Copy citation Disposition Check authority at the write, and use the effect journal to establish what committed. Record location Pinned study artifacts"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering--case-commit-then-revoke",
+            "status": 200,
+            "visible": true,
+            "excerpt": "commit-then-revoke Open in the graph commit then revoke authorized Commit tick 1, used revision 1; observed revision 2 authorized Commit tick 1, used revision 1; observed revision 2 authorized Commit tick 1, used revision 1; observed revision 2",
+            "preview": "Paired case evidence_case:authority-commit-ordering--commit-then-revoke Open in the book Research question What does the journal show about a write that precedes revocation and is observed later? Reported result Cached permission: authorized. Version-checked transaction: authorized. Transaction with serialized receipt: authorized. Evidence limit One schedule in a same-owner local database. A later observation does not change the grant that was in force when the effect committed. Measurement Authored paired case Copy citation Record location Pinned study artifacts"
+          }
+        ]
+      },
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html?q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F#run-authority-commit-ordering",
+            "excerpt": "Grant revocation and delayed effect observation Study run · Measured under stated conditions The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Scope Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Matched terms: cached, permission, write, grant, before, commit"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html?q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F#run-authority-commit-ordering--case-commit-then-revoke",
+            "excerpt": "An earlier authorized write observed after revocation Paired case · Authored paired case Cached permission: authorized. Version-checked transaction: authorized. Transaction with serialized receipt: authorized. Scope One schedule in a same-owner local database. A later observation does not change the grant that was in force when the effect committed. Matched terms: cached, permission, write, grant, commit, transaction"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/system-boundaries-and-authority.html?q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F#grant-to-effect-authority",
+            "excerpt": "Grant at commit and delayed observation Evidence passage The effect at tick 1 used the active grant. A later observation of that journal row after revision 2 did not invalidate the earlier write. Both checked transactions withheld a write after expiry or revocation. Scope Four ordered schedules in a shared local database under one operator. A partitioned remote sink, production enforcement, and distributed failure behavior remain outside the comparison. Matched terms: write, grant, commit, transaction, check"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html?q=Could+the+cached+permission+route+still+write+when+a+grant+expired+before+commit%2C+and+which+transaction+check+prevented+that%3F#run-receiver-effect-audit",
+            "excerpt": "Disposition and observed effect Study run · Measured under stated conditions All 7 controls passed, including a held case with one wrong effect. The stricter scorer changed 0 historical hold labels. In the 160 retained pairs, conventional status still closed 128 and the added read closed 144. Scope This rescores the same journal and retained local patch flag. The 160 pairs cross four authored task fixtures with forty conditions per task, so the closure counts describe this design. The wrong-effect case is an isolated instrument control. Both status paths use one simulated journal and clock. In a separate local check, an old failure with the current response tick causes a second commit without deduplication. A trusted source revision prevents that retry in the authored case. Matched terms: still, before, commit, check"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Grant revocation and delayed effect observation # Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt. Result The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit. Scope and limits Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open. Open in the graph Disposition Check authority at the write, and use the effect journal to establish what committed. Replay Run from a checkout at this evidence revision. python3 experiments/nov20_instrument_audit/check_authority_effect_ordering.py Raw paired result Pinned protocol check_authority_effect_ordering.py Cite this run Corben Sorenson. “When scoped Git change control is enough.” The ASI Stack, 2026-11-20. Run authority-commit-ordering, evidence revision bc705e8eb7c1a7026b6d6909ce901a8a4c131277. Result SHA-256 e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e. Paired cases 2 of 4 cases have differing outcomes. Download paired-case CSV. Inspect 4 paired cases"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering--case-commit-then-revoke",
+            "status": 200,
+            "visible": true,
+            "excerpt": "commit-then-revoke Open in the graph commit then revoke authorized Commit tick 1, used revision 1; observed revision 2 authorized Commit tick 1, used revision 1; observed revision 2 authorized Commit tick 1, used revision 1; observed revision 2"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H03",
+      "order": [
+        "ordinary",
+        "graph"
+      ],
+      "query": "If a status read is stale but a separate projection has the right revision for an earlier write, must the client retry the write to finish review?",
+      "ordinary": {
+        "rank": 2,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html?q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F#run-receiver-availability",
+            "excerpt": "Matched access through one or two endpoints Study run · Measured under stated conditions Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Scope The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Matched terms: statu, read, separate, projection, revision, retry"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html?q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F#run-receiver-availability--case-pair-024",
+            "excerpt": "A fresh second projection closes an already committed request Paired case · Authored paired case Conventional status: hold. Additional endpoint: closed · verified closure. One endpoint with matched access: closed · verified closure. Scope One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition. Matched terms: statu, stale, projection, review"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html?q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F#run-receiver-crossed",
+            "excerpt": "Crossed receiver study Study run · Measured under stated conditions Conventional status closed 128 of 160 matched cases. The added read closed 144. All 16 extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed 32 cases each when both observations were fresh. Scope Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction. Matched terms: statu, read, stale, separate, retry"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html?q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F#run-verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run · Measured under stated conditions The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: read, stale, separate, revision, must"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Matched access through one or two endpoints # Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately. Result Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Scope and limits The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Open in the graph Disposition Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status tr"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024",
+            "status": 200,
+            "visible": true,
+            "excerpt": "pair-024 Open in the graph review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating hold 1 reads, 1 caller requests, 0 retries, 167 status bytes closed · verified closure 2 reads, 2 caller requests, 0 retries, 410 status bytes closed · verified closure 2 reads, 1 caller requests, 0 retries, 653 status bytes"
+          }
+        ]
+      },
+      "graph": {
+        "rank": 2,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F&node=study_run%3Areceiver-availability",
+            "id": "study_run:receiver-availability",
+            "excerpt": "Matched access through one or two endpoints Study run Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Scope · The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Matched terms: statu, read, separate, projection, revision, retry"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F&node=evidence_case%3Areceiver-availability--pair-024",
+            "id": "evidence_case:receiver-availability--pair-024",
+            "excerpt": "A fresh second projection closes an already committed request Paired case Conventional status: hold. Additional endpoint: closed · verified closure. One endpoint with matched access: closed · verified closure. Scope · One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition. Matched terms: statu, stale, projection, review"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F&node=study_run%3Areceiver-crossed",
+            "id": "study_run:receiver-crossed",
+            "excerpt": "Crossed receiver study Study run Conventional status closed 128 of 160 matched cases. The added read closed 144. All 16 extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed 32 cases each when both observations were fresh. Scope · Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction. Matched terms: statu, read, stale, separate, retry"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+a+status+read+is+stale+but+a+separate+projection+has+the+right+revision+for+an+earlier+write%2C+must+the+client+retry+the+write+to+finish+review%3F&node=study_run%3Averifier-floor-cache",
+            "id": "study_run:verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope · Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: read, stale, separate, revision, must"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Matched access through one or two endpoints # Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately. Result Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Scope and limits The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Open in the graph Disposition Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status tr",
+            "preview": "Study run study_run:receiver-availability Open in the book Research question When can an additional receiving-side read resolve a timeout after competent conventional status checking? Reported result Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes. Evidence limit The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open. Measurement Measured under stated conditions Copy citation Disposition Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport. Record location Pinned study artifacts"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024",
+            "status": 200,
+            "visible": true,
+            "excerpt": "pair-024 Open in the graph review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating hold 1 reads, 1 caller requests, 0 retries, 167 status bytes closed · verified closure 2 reads, 2 caller requests, 0 retries, 410 status bytes closed · verified closure 2 reads, 1 caller requests, 0 retries, 653 status bytes",
+            "preview": "Paired case evidence_case:receiver-availability--pair-024 Open in the book Research question What happens when an exact effect is present, the primary projection is stale and the second is fresh? Reported result Conventional status: hold. Additional endpoint: closed · verified closure. One endpoint with matched access: closed · verified closure. Evidence limit One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition. Measurement Authored paired case Copy citation Record location Pinned study artifacts"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H04",
+      "order": [
+        "graph",
+        "ordinary"
+      ],
+      "query": "If two views line up in representation space, can I drop camera pose before deploying a controller?",
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F&node=evidence_passage%3Ajepa-alignment-boundary",
+            "id": "evidence_passage:jepa-alignment-boundary",
+            "excerpt": "Platonic JEPA alignment and downstream competence Evidence passage The paper measures specified representation alignment. Its conditional theorem uses an identity predictor. Task-preserving replacement calls for a separate downstream comparison. Scope · The source-reported alignment comparison does not qualify a controller or a deployed reasoner. Action-conditioned prediction requires its own evidence. Matched terms: view, representation, controller"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F&node=study_run%3Atransfer-factorial",
+            "id": "study_run:transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope · The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: two, up, representation"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F&node=study_run%3Atransfer-scheduler-audit",
+            "id": "study_run:transfer-scheduler-audit",
+            "excerpt": "Scheduler sensitivity at matched caps Study run In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope · The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: two, representation, before"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F&node=study_run%3Averifier-floor-cache",
+            "id": "study_run:verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope · Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: two, up, before"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#jepa-is-a-prediction-objective-not-a-complete-agent",
+            "status": 200,
+            "visible": true,
+            "excerpt": "55.11.1 JEPA is a prediction objective, not a complete agent I-JEPA predicts target-region embeddings from image context using a Transformer predictor and an EMA target encoder. V-JEPA 2 adds an action-conditioned prediction route after video pretraining. LeJEPA instead makes predictive agreement and Sketched Isotropic Gaussian Regularization (SIGReg) central to its collapse-prevention recipe; it avoids the teacher–student and stop-gradient machinery used in several other variants. A model label must therefore resolve the actual objective, view construction, target/predictor state, regularizer and downstream task. An embedding encoder is not a drop-in replacement for a text-generating reasoner or an authorized controller. The 2026 Platonic-representation result makes view construction consequential: its authors report that a 109M text JEPA exceeds evaluated language models through 72B parameters on specified alignment measures. That comparison concerns representation geometry, not general reasoning or task competence. Its theorem is conditional and uses an identity predictor; its practical runs use LeJEPA without exactly meeting the theorem’s hypotheses. Neither result grants this ABI an implementation or qualification.",
+            "preview": "Evidence passage evidence_passage:jepa-alignment-boundary Open in the book Source locator Platonic JEPA, Sections 2.1–2.3 (theorem and conditions), 4.2–4.3 (alignment) and 7 (limits). Research question Does JEPA alignment establish action-conditioned prediction or reasoning ability? Reported result The paper measures specified representation alignment. Its conditional theorem uses an identity predictor. Task-preserving replacement calls for a separate downstream comparison. Evidence limit The source-reported alignment comparison does not qualify a controller or a deployed reasoner. Action-conditioned prediction requires its own evidence. Measurement Source-reported comparison Copy citation Disposition Keep the downstream consumer fixed and test whether the representation preserves the differences that determine the task. Record location"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Selection × representation on five-bit maps # Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker. Result With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Verified design cells by resource and query Resource and query Cells No library Query-aware whole Query-aware routine Query-blind whole Query-blind routine proposals/descriptive 64 8 28 20 12 12 proposals/neutral 64 8 12 12 12 12 expanded/descriptive 64 6 4 16 4 8 expanded/neutral 64 6 4 10 4 8 Outcome changed with operator ordering in these counts of task, query and budget combinations: No library 6, Query-aware whole 0, Query-aware routine 3, Query-blind whole 0, Query-blind routine 4. Neutral queries contain no matching terms. Their residual differences reflect the fixed tie-break and task-ID control. The raw result separates screening, verification, queue and indexing work. The timing artifact reports CPU diagnostics. Scope and limits The 256 design cells reuse 16 authored f",
+            "preview": "Study run study_run:transfer-factorial Open in the book Research question When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits? Reported result With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Evidence limit The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Measurement Measured under stated conditions Copy citation Disposition Retain whole-program retrieval as a comparator. In this follow-up, the routine-versus-whole ranking depends on the resource cap. Treat selection and representation as separate decisions, and keep the recommendation conditional on language cues and the full work budget. Record location Pinned study artifacts"
+          }
+        ]
+      },
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html?q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F#jepa-is-a-prediction-objective-not-a-complete-agent",
+            "excerpt": "Platonic JEPA alignment and downstream competence Evidence passage · Source-reported comparison The paper measures specified representation alignment. Its conditional theorem uses an identity predictor. Task-preserving replacement calls for a separate downstream comparison. Scope The source-reported alignment comparison does not qualify a controller or a deployed reasoner. Action-conditioned prediction requires its own evidence. Matched terms: view, representation, controller"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F#run-transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run · Measured under stated conditions With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: two, up, representation"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F#run-transfer-scheduler-audit",
+            "excerpt": "Scheduler sensitivity at matched caps Study run · Measured under stated conditions In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: two, representation, before"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html?q=If+two+views+line+up+in+representation+space%2C+can+I+drop+camera+pose+before+deploying+a+controller%3F#run-verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run · Measured under stated conditions The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: two, up, before"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#jepa-is-a-prediction-objective-not-a-complete-agent",
+            "status": 200,
+            "visible": true,
+            "excerpt": "55.11.1 JEPA is a prediction objective, not a complete agent I-JEPA predicts target-region embeddings from image context using a Transformer predictor and an EMA target encoder. V-JEPA 2 adds an action-conditioned prediction route after video pretraining. LeJEPA instead makes predictive agreement and Sketched Isotropic Gaussian Regularization (SIGReg) central to its collapse-prevention recipe; it avoids the teacher–student and stop-gradient machinery used in several other variants. A model label must therefore resolve the actual objective, view construction, target/predictor state, regularizer and downstream task. An embedding encoder is not a drop-in replacement for a text-generating reasoner or an authorized controller. The 2026 Platonic-representation result makes view construction consequential: its authors report that a 109M text JEPA exceeds evaluated language models through 72B parameters on specified alignment measures. That comparison concerns representation geometry, not general reasoning or task competence. Its theorem is conditional and uses an identity predictor; its practical runs use LeJEPA without exactly meeting the theorem’s hypotheses. Neither result grants this ABI an implementation or qualification."
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Selection × representation on five-bit maps # Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker. Result With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Verified design cells by resource and query Resource and query Cells No library Query-aware whole Query-aware routine Query-blind whole Query-blind routine proposals/descriptive 64 8 28 20 12 12 proposals/neutral 64 8 12 12 12 12 expanded/descriptive 64 6 4 16 4 8 expanded/neutral 64 6 4 10 4 8 Outcome changed with operator ordering in these counts of task, query and budget combinations: No library 6, Query-aware whole 0, Query-aware routine 3, Query-blind whole 0, Query-blind routine 4. Neutral queries contain no matching terms. Their residual differences reflect the fixed tie-break and task-ID control. The raw result separates screening, verification, queue and indexing work. The timing artifact reports CPU diagnostics. Scope and limits The 256 design cells reuse 16 authored f"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H05",
+      "order": [
+        "ordinary",
+        "graph"
+      ],
+      "query": "A new clustering method fits faster. Can our release-note index lose expiration metadata, as long as the dense-vector recall looks good?",
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html?q=A+new+clustering+method+fits+faster.+Can+our+release-note+index+lose+expiration+metadata%2C+as+long+as+the+dense-vector+recall+looks+good%3F#clustering-the-retrieval-index",
+            "excerpt": "e-means and the release-note retrieval index rebuild Evidence passage · Authored comparison design Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable. Scope The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection. Matched terms: clustering, release, note, index, metadata, as"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#clustering-the-retrieval-index",
+            "status": 200,
+            "visible": true,
+            "excerpt": "37.7.3 Clustering the retrieval index An inverted file (IVF) puts embeddings in buckets so a query can search a few likely buckets before ranking the passages inside them. In Euclidean k-means the builder chooses a fixed number of centers, \\(k\\), and aims to minimize the mean squared distance from each vector to its nearest center. Lloyd’s algorithm assigns all vectors to their nearest center, replaces each center with the mean of its assigned vectors, and repeats. k-means++ spreads out the initial centers by favoring points far from those already chosen. Flash-KMeans speeds up full-batch assignment and reduction on GPUs. SuperKMeans prunes distance calculations and can stop fitting when nearest-neighbor recall stops improving on validation queries. Faiss · k-means++ · Flash-KMeans · SuperKMeans e-means fits the same objective with updates after each mini-batch. Classic mini-batch k-means accumulates a running mean of assigned points. e-means maintains an exponentially decayed sum and count for each center. Their ratio gives the new center, with recent points weighted more heavily. The recipe lowers the update step over the run, revives underused centers by splitting active ones, and sets batch size and initial step from empirical scaling rules. Those rules were fitted for embedding workloads and are weaker defaults on very small or low-dimensional datasets. The labels ret"
+          }
+        ]
+      },
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=A+new+clustering+method+fits+faster.+Can+our+release-note+index+lose+expiration+metadata%2C+as+long+as+the+dense-vector+recall+looks+good%3F&node=evidence_passage%3Aemeans-retrieval-rebuild",
+            "id": "evidence_passage:emeans-retrieval-rebuild",
+            "excerpt": "e-means and the release-note retrieval index rebuild Evidence passage Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable. Scope · The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection. Matched terms: clustering, release, note, index, metadata, as"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#clustering-the-retrieval-index",
+            "status": 200,
+            "visible": true,
+            "excerpt": "37.7.3 Clustering the retrieval index An inverted file (IVF) puts embeddings in buckets so a query can search a few likely buckets before ranking the passages inside them. In Euclidean k-means the builder chooses a fixed number of centers, \\(k\\), and aims to minimize the mean squared distance from each vector to its nearest center. Lloyd’s algorithm assigns all vectors to their nearest center, replaces each center with the mean of its assigned vectors, and repeats. k-means++ spreads out the initial centers by favoring points far from those already chosen. Flash-KMeans speeds up full-batch assignment and reduction on GPUs. SuperKMeans prunes distance calculations and can stop fitting when nearest-neighbor recall stops improving on validation queries. Faiss · k-means++ · Flash-KMeans · SuperKMeans e-means fits the same objective with updates after each mini-batch. Classic mini-batch k-means accumulates a running mean of assigned points. e-means maintains an exponentially decayed sum and count for each center. Their ratio gives the new center, with recent points weighted more heavily. The recipe lowers the update step over the run, revives underused centers by splitting active ones, and sets batch size and initial step from empirical scaling rules. Those rules were fitted for embedding workloads and are weaker defaults on very small or low-dimensional datasets. The labels ret",
+            "preview": "Evidence passage evidence_passage:emeans-retrieval-rebuild Open in the book Source locator e-means, Table 4 (fitting) and Appendix L (retrieval recall at fixed selectivity). Research question What should survive an e-means release-note index rebuild? Reported result Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable. Evidence limit The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection. Measurement Authored comparison design Copy citation Disposition Treat the cluster index as a replaceable retrieval aid and verify prompt-independent access to the underlying authoritative notes. Record location"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H06",
+      "order": [
+        "graph",
+        "ordinary"
+      ],
+      "query": "What network latency improvement should I budget for the serialized cache when the revision service is remotely operated?",
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F&node=study_run%3Averifier-process-boundary",
+            "id": "study_run:verifier-process-boundary",
+            "excerpt": "Verifier freshness with a separate revision authority process Study run Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache. Scope · The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement. Matched terms: network, latency, serialized, cache, revision, service"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F&node=evidence_passage%3Averifier-measurement-boundary",
+            "id": "evidence_passage:verifier-measurement-boundary",
+            "excerpt": "Verifier revision checks and measured work Evidence passage The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes. Scope · Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup. Matched terms: serialized, cache, revision, operated"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F&node=study_run%3Averifier-floor-cache",
+            "id": "study_run:verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope · Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: serialized, cache, revision"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F&node=study_run%3Averifier-revision-freshness",
+            "id": "study_run:verifier-revision-freshness",
+            "excerpt": "Verifier revision freshness on a successful stale lookup Study run Both formats took the expected route at all 30 paired checkpoints, including 8 specialist decisions. Each read 50 evidence documents. The serialized arm wrote 1,150 cached handoff bytes. A successful response carrying an old revision sent both arms to a specialist. Scope · One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement. Matched terms: serialized, cache, revision"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Verifier freshness with a separate revision authority process # Follow-up to Verifier revision freshness on a successful stale lookup. Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport. Result Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache. Paired decisions and recorded work Measure Conventional memoization Serialized handoff Specialist decisions 10 10 Evidence documents read 70 70 Local cache serialization bytes 0 1,616 Authority and worker pipe messages 164 164 Authority and worker pipe payload bytes 16,816 16,816 Scope and limits The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement. Open in the graph Disposition Keep ordinary memoization where it satisfies the same freshness and fallback rules. M",
+            "preview": "Study run study_run:verifier-process-boundary Open in the book Research question Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work? Reported result Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache. Evidence limit The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement. Measurement Measured under stated conditions Copy citation Outside measurement active operator time, network latency, production fault isolation, cache restart behavior, concurrent authorization and effect Disposition Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff. Record location Pinned study artifacts"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html?view=ai#codex-test-plan",
+            "status": 200,
+            "visible": true,
+            "excerpt": "18.13 Codex test plan The rollout decision depends on the integrity of its test packet. In the equal-cache replay, indexing regressions by case ID let a later row erase a failed must-pass observation. A prediction could also pass when the row supplied a substituted reference label. Bind the case IDs, expected labels and required checks to a reference owned by the evaluator. Require complete, unique results for both versions before applying the absolute floor or the relative comparison. The separate intake check exercises that rule on the synthetic fixture. The archived cache replay assumes successful lookups return the current revision. A separate revision check supplies the current revision to each request and then varies what the index returns. Across 30 paired checkpoints, both workflows send eight decisions to a specialist when evidence is stale, absent, or lacks a trusted revision. Both read 50 evidence documents. The serialized arm writes 1,150 handoff bytes. The current revision is an input to the fixture. A deployed system still needs a source that can establish freshness across process boundaries. In a local process comparison, a separate process owns the scoped revision pointer and answers each request. Both workflows match the expected route at 38 checkpoints, including two specialist decisions after the fallback expires. Each reads 70 evidence documents and exchange",
+            "preview": "Evidence passage evidence_passage:verifier-measurement-boundary Open in the book Research question How many minutes of operator time did serialized verifier handoff save in production? Reported result The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes. Evidence limit Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup. Measurement Outside measurement for operator time Copy citation Outside measurement active operator time, production labor savings Disposition Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload. Record location"
+          }
+        ]
+      },
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html?q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F#run-verifier-process-boundary",
+            "excerpt": "Verifier freshness with a separate revision authority process Study run · Measured under stated conditions Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache. Scope The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement. Matched terms: network, latency, serialized, cache, revision, service"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html?view=ai&q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F#codex-test-plan",
+            "excerpt": "Technical reference · Opens AI view Verifier revision checks and measured work Evidence passage · Outside measurement for operator time The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes. Scope Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup. Matched terms: serialized, cache, revision, operated"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html?q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F#run-verifier-floor-cache",
+            "excerpt": "Absolute floor and equal memoization Study run · Measured under stated conditions The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision. Scope Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic. Matched terms: serialized, cache, revision"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html?q=What+network+latency+improvement+should+I+budget+for+the+serialized+cache+when+the+revision+service+is+remotely+operated%3F#run-verifier-revision-freshness",
+            "excerpt": "Verifier revision freshness on a successful stale lookup Study run · Measured under stated conditions Both formats took the expected route at all 30 paired checkpoints, including 8 specialist decisions. Each read 50 evidence documents. The serialized arm wrote 1,150 cached handoff bytes. A successful response carrying an old revision sent both arms to a specialist. Scope One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement. Matched terms: serialized, cache, revision"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Verifier freshness with a separate revision authority process # Follow-up to Verifier revision freshness on a successful stale lookup. Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport. Result Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache. Paired decisions and recorded work Measure Conventional memoization Serialized handoff Specialist decisions 10 10 Evidence documents read 70 70 Local cache serialization bytes 0 1,616 Authority and worker pipe messages 164 164 Authority and worker pipe payload bytes 16,816 16,816 Scope and limits The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement. Open in the graph Disposition Keep ordinary memoization where it satisfies the same freshness and fallback rules. M"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html?view=ai#codex-test-plan",
+            "status": 200,
+            "visible": true,
+            "excerpt": "18.13 Codex test plan The rollout decision depends on the integrity of its test packet. In the equal-cache replay, indexing regressions by case ID let a later row erase a failed must-pass observation. A prediction could also pass when the row supplied a substituted reference label. Bind the case IDs, expected labels and required checks to a reference owned by the evaluator. Require complete, unique results for both versions before applying the absolute floor or the relative comparison. The separate intake check exercises that rule on the synthetic fixture. The archived cache replay assumes successful lookups return the current revision. A separate revision check supplies the current revision to each request and then varies what the index returns. Across 30 paired checkpoints, both workflows send eight decisions to a specialist when evidence is stale, absent, or lacks a trusted revision. Both read 50 evidence documents. The serialized arm writes 1,150 handoff bytes. The current revision is an input to the fixture. A deployed system still needs a source that can establish freshness across process boundaries. In a local process comparison, a separate process owns the scoped revision pointer and answers each request. Both workflows match the expected route at 38 checkpoints, including two specialist decisions after the fallback expires. Each reads 70 evidence documents and exchange"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H07",
+      "order": [
+        "ordinary",
+        "graph"
+      ],
+      "query": "A second activation direction changes a persona about as well. Does that identify the unique neuron responsible for the trait?",
+      "ordinary": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html?q=A+second+activation+direction+changes+a+persona+about+as+well.+Does+that+identify+the+unique+neuron+responsible+for+the+trait%3F#personality-and-persona-steering",
+            "excerpt": "Persona steering and neuron-level attribution Evidence passage · Source-reported perturbation experiment A successful activation intervention can demonstrate a behavioral change for the tested prompts. Persona-level control can be distributed, and several directions can exhibit similar effects. Scope Model revision, layer, intervention magnitude, prompt distribution and behavioral tests constrain attribution. A local steering effect does not establish a universal personality coordinate. Matched terms: activation, direction, change, persona, identify, neuron"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html#personality-and-persona-steering",
+            "status": 200,
+            "visible": true,
+            "excerpt": "74.10.8 Neuron-level personality steering and distributed persona control The October Neuron Explorer and Neuronary projects linked from Lyra’s website make a concrete phenomenon accessible: changing a small set of MLP activation coordinates can substantially alter a model’s expressed character, tone and self-description. The linked “Evil Qwen” example is a community demonstration of such a change. It is useful as an intervention lead, without establishing a universal “evil switch,” a new desire or the complete mechanism behind the persona. The earlier research below and the recent tools have distinct contributions and evidence scopes. Three intervention objects are easy to confuse: Raw MLP coordinates. NPTI contrasts activation probabilities under opposing Big Five trait prompts, then suppresses selected coordinates and increases others during inference. “Neuron” names an architectural coordinate at a specified site. It does not imply that one unit contains an entire human personality. Its identification statistic uses the nonlinear gate output, which is not the same signal as the gated product entering down_proj in Lyra’s inspected runtime. Distributed directions. Persona Vectors differences mean residual-stream activations from filtered contrastive responses. Adding that vector is a distributed intervention; projecting onto it is a measurement. Neither is a"
+          }
+        ]
+      },
+      "graph": {
+        "rank": 1,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=A+second+activation+direction+changes+a+persona+about+as+well.+Does+that+identify+the+unique+neuron+responsible+for+the+trait%3F&node=evidence_passage%3Apersona-steering-attribution",
+            "id": "evidence_passage:persona-steering-attribution",
+            "excerpt": "Persona steering and neuron-level attribution Evidence passage A successful activation intervention can demonstrate a behavioral change for the tested prompts. Persona-level control can be distributed, and several directions can exhibit similar effects. Scope · Model revision, layer, intervention magnitude, prompt distribution and behavioral tests constrain attribution. A local steering effect does not establish a universal personality coordinate. Matched terms: activation, direction, change, persona, identify, neuron"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html#personality-and-persona-steering",
+            "status": 200,
+            "visible": true,
+            "excerpt": "74.10.8 Neuron-level personality steering and distributed persona control The October Neuron Explorer and Neuronary projects linked from Lyra’s website make a concrete phenomenon accessible: changing a small set of MLP activation coordinates can substantially alter a model’s expressed character, tone and self-description. The linked “Evil Qwen” example is a community demonstration of such a change. It is useful as an intervention lead, without establishing a universal “evil switch,” a new desire or the complete mechanism behind the persona. The earlier research below and the recent tools have distinct contributions and evidence scopes. Three intervention objects are easy to confuse: Raw MLP coordinates. NPTI contrasts activation probabilities under opposing Big Five trait prompts, then suppresses selected coordinates and increases others during inference. “Neuron” names an architectural coordinate at a specified site. It does not imply that one unit contains an entire human personality. Its identification statistic uses the nonlinear gate output, which is not the same signal as the gated product entering down_proj in Lyra’s inspected runtime. Distributed directions. Persona Vectors differences mean residual-stream activations from filtered contrastive responses. Adding that vector is a distributed intervention; projecting onto it is a measurement. Neither is a",
+            "preview": "Evidence passage evidence_passage:persona-steering-attribution Open in the book Source locator Steering non-identifiability, Figure 1 and Appendices B and C. Research question Does changing a model persona identify one personality neuron? Reported result A successful activation intervention can demonstrate a behavioral change for the tested prompts. Persona-level control can be distributed, and several directions can exhibit similar effects. Evidence limit Model revision, layer, intervention magnitude, prompt distribution and behavioral tests constrain attribution. A local steering effect does not establish a universal personality coordinate. Measurement Source-reported perturbation experiment Copy citation Disposition Test matched and random controls, prompts outside the steering set, and unintended changes before relying on a steering policy. Record location"
+          }
+        ]
+      }
+    },
+    {
+      "id": "H08",
+      "order": [
+        "graph",
+        "ordinary"
+      ],
+      "query": "Can 256 successful and failed design cells establish a routine's win rate over 256 independent tasks?",
+      "graph": {
+        "rank": 3,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F&node=study%3Aforward-transfer",
+            "id": "study:forward-transfer",
+            "excerpt": "Did extracted routines help on later synthesis tasks? Study In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope · The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: 256, design, cell, routine, over, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F&node=study_run%3Atransfer-scheduler-audit",
+            "id": "study_run:transfer-scheduler-audit",
+            "excerpt": "Scheduler sensitivity at matched caps Study run In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope · The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: 256, design, cell, routine, over, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F&node=study_run%3Atransfer-factorial",
+            "id": "study_run:transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope · The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: 256, design, cell, establish, routine, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/?kind=evidence&q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F&node=evidence_passage%3Aemeans-retrieval-rebuild",
+            "id": "evidence_passage:emeans-retrieval-rebuild",
+            "excerpt": "e-means and the release-note retrieval index rebuild Evidence passage Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable. Scope · The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection. Matched terms: design, establish, independent, task"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Did extracted routines help on later synthesis tasks?",
+            "preview": "Study study:forward-transfer Open in the book Research question When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits? Current decision Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks. Reported result In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Evidence limit The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Copy citation What would change the decision Repeat the full scheduler and resource comparison on new task lineages with an independent task author and measured end-to-end cost. Change a reuse default only when the effect persists across the intended schedulers, budgets and tasks. Record location"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Scheduler sensitivity at matched caps # Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps. Result In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Verified cells under each scheduler Resource and query Cells No library · handle depth No library · expanded length Query-aware whole · handle depth Query-aware whole · expanded length Query-aware routine · handle depth Query-aware routine · expanded length proposals/descriptive 64 8 8 28 8 20 20 proposals/neutral 64 8 8 12 8 12 12 expanded/descriptive 64 6 6 4 4 16 16 expanded/neutral 64 6 6 4 4 10 10 Scope and limits The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Open in the graph Disposition Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists acros",
+            "preview": "Study run study_run:transfer-scheduler-audit Open in the book Research question When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits? Reported result In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Evidence limit The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Measurement Measured under stated conditions Copy citation Disposition Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks. Record location Pinned study artifacts"
+          }
+        ]
+      },
+      "ordinary": {
+        "rank": 3,
+        "items": [
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F",
+            "excerpt": "Technical reference Did extracted routines help on later synthesis tasks? Research study In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: 256, design, cell, routine, over, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F#run-transfer-scheduler-audit",
+            "excerpt": "Scheduler sensitivity at matched caps Study run · Measured under stated conditions In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Scope The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Matched terms: 256, design, cell, routine, over, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html?q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F#run-transfer-factorial",
+            "excerpt": "Selection × representation on five-bit maps Study run · Measured under stated conditions With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family. Scope The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself. Matched terms: 256, design, cell, establish, routine, independent"
+          },
+          {
+            "href": "https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html?q=Can+256+successful+and+failed+design+cells+establish+a+routine%27s+win+rate+over+256+independent+tasks%3F#clustering-the-retrieval-index",
+            "excerpt": "e-means and the release-note retrieval index rebuild Evidence passage · Authored comparison design Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable. Scope The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection. Matched terms: design, establish, independent, task"
+          }
+        ],
+        "routes": [
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Did extracted routines help on later synthesis tasks?"
+          },
+          {
+            "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit",
+            "status": 200,
+            "visible": true,
+            "excerpt": "Scheduler sensitivity at matched caps # Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps. Result In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap. Verified cells under each scheduler Resource and query Cells No library · handle depth No library · expanded length Query-aware whole · handle depth Query-aware whole · expanded length Query-aware routine · handle depth Query-aware routine · expanded length proposals/descriptive 64 8 8 28 8 20 20 proposals/neutral 64 8 8 12 8 12 12 expanded/descriptive 64 6 6 4 4 16 16 expanded/neutral 64 6 6 4 4 10 10 Scope and limits The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families. Open in the graph Disposition Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists acros"
+          }
+        ]
+      }
+    }
+  ]
+}
