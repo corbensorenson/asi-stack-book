@@ -1,0 +1,74 @@
+[
+  {
+    "id": "N01", "entry": "paper",
+    "query": "A positive interval reaches the old continuation margin after the comparator pool expands. Would you continue allocation at 128 and why?",
+    "target": "evidence_passage:atlas-corrected-decision",
+    "answer": "Stop under the mean-margin rule. The corrected estimated mean, 0.035299, is below 0.04 even though the ordinary interval is positive and includes the margin.",
+    "scope": "Post hoc same-world correction on 24 authored worlds, without fresh confirmation or evidence of zero benefit."
+  },
+  {
+    "id": "N02", "entry": "technical",
+    "query": "Suppose an effect has already committed, but neither projected status view can be contacted. Is a safe hold still the expected route?",
+    "target": "evidence_case:receiver-availability--pair-064",
+    "answer": "All three paths hold in that cell despite the exact prior effect.",
+    "scope": "One authored case with both projections unavailable. The result supplies no rate for real outages or production holds."
+  },
+  {
+    "id": "N03", "entry": "reader",
+    "query": "The verifier cache service replied without an error but was behind a release revocation. Which decision do the two comparators make?",
+    "target": "evidence_case:verifier-revision-freshness--successful-stale-lookup-1-release-check",
+    "answer": "Both arms call the specialist when the successful index response is stale under the current revocation.",
+    "scope": "The matched authored decision supplies the currently required revision. It does not establish how independent revocation delivery behaves."
+  },
+  {
+    "id": "N04", "entry": "technical",
+    "query": "An earlier verifier certificate has aged out by the serving deadline across separate local processes. What happens to its fallback?",
+    "target": "evidence_case:verifier-process-boundary--fallback-expired-3-serving-check",
+    "answer": "Both arms defer to the specialist after the fallback expiry at logical tick 3.",
+    "scope": "Same-owner process separation and one authored decision. It does not address a production race between authorization and use."
+  },
+  {
+    "id": "N05", "entry": "technical",
+    "query": "Has a whole board program ever stopped verifying solely because its queue prioritizes expanded length, with the number of proposals fixed?",
+    "target": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+    "answer": "Yes in the b24 cell. Handle depth verifies and expanded length exhausts under the fixed 96-proposal budget.",
+    "scope": "A descriptive query and one authored routing case. Exhaustion under one priority does not show infeasibility or establish a general ranking."
+  },
+  {
+    "id": "N06", "entry": "reader",
+    "query": "Both shipment dashboards show the same supplier delivery alert before cutoff. What new observation would justify recording physical receipt?",
+    "target": "evidence_passage:shipment-shared-observation",
+    "answer": "A separate dock observation of this shipment before cutoff could corroborate delivery. The replicated alert supports one reported event.",
+    "scope": "Authored provenance exercise. The observations must refer to the same shipment and cutoff, and the result supplies no field reliability estimate."
+  },
+  {
+    "id": "N07", "entry": "paper",
+    "query": "Deep slots are fewer when chunk boundaries are learned. Can our serving team budget a fixed throughput gain on heterogeneous batches?",
+    "target": "evidence_passage:h-net-serving",
+    "answer": "Abstain on the throughput gain. Deep shortening is compatible with variable chunk counts and different batching and memory costs.",
+    "scope": "The paper's evaluation compares model/data/compute conditions. It does not measure an end-to-end service with the proposed length distribution.",
+    "requires_abstention": true
+  },
+  {
+    "id": "N08", "entry": "technical",
+    "query": "The proof checks that an audit consumer rejects a receipt making a deployed-transport overclaim. Can that prove a different compiled program safe?",
+    "target": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+    "answer": "No. The local formal target concerns the finite gate and its overclaim or mutation-control rejection rules.",
+    "scope": "Separate the finite modeled consumer acceptance contract and its authored controls from the external named compile receipt and from any general deployment safety claim."
+  },
+  {
+    "id": "N09", "entry": "technical",
+    "query": "What is the expected person-time saving per incident at a production receiver when we move the second status call into the gateway?",
+    "target": "study_run:receiver-availability",
+    "answer": "Abstain on person-time. The evidence records equal matched closure and a tradeoff between caller requests and status bytes.",
+    "scope": "Four authored tasks in local same-owner conditions. No operator-time or production rate measurement.",
+    "requires_abstention": true
+  },
+  {
+    "id": "N10", "entry": "reader",
+    "query": "The sensor drops out in the violent part of a maneuver. Does a good average frame-level prediction-set rate certify the complete episode?",
+    "target": "evidence_passage:conformal-coverage-unit",
+    "answer": "No. Calibrate and evaluate for the maneuver-level decision using the relevant grouping and missingness regime.",
+    "scope": "Coverage has a defined unit, conditions and population. Informative missingness and dependence block automatic transfer from frames to episodes."
+  }
+]
