@@ -650,6 +650,24 @@ def study_outcomes(format_id: str, result: dict) -> str:
             for key, label in measures.items()
         )
         return study_table("Recorded work across all eleven profiles", ["Work", *(study_arm_label(key) for key in arms)], rows)
+    if format_id == "verifier_freshness_v1":
+        arms = research.freshness_work(result)
+        measures = [
+            ("routes", "specialist", "Specialist decisions"),
+            ("work", "document_reads", "Evidence documents read"),
+            ("work", "handoff_bytes", "Local cache serialization bytes"),
+        ]
+        if any(values["wire"] for values in arms.values()):
+            measures += [
+                ("wire", "messages", "Authority and worker pipe messages"),
+                ("wire", "payload_bytes", "Authority and worker pipe payload bytes"),
+            ]
+        rows = "".join(
+            f'<tr><th scope="row">{label}</th>'
+            + "".join(f'<td>{values[group].get(key, 0):,}</td>' for values in arms.values()) + '</tr>'
+            for group, key, label in measures
+        )
+        return study_table("Paired decisions and recorded work", ["Measure", *(study_arm_label(key) for key in arms)], rows)
     if format_id == "receiver_effect_audit_v2":
         rows = "".join(
             f'<tr id="receiver-control-{escape(c["id"])}"><th scope="row">{escape(c["id"])}</th>'
@@ -672,14 +690,17 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
         for label, target in artifacts
     )
     fragment = research_anchor(row["id"])
+    predecessor = row.get("follow_up_to")
+    follows = (f'<p>Follow-up to <a href="#{research_anchor(predecessor)}">{escape(next(run["title"] for run in study["runs"] if run["id"] == predecessor))}</a>.</p>'
+               if predecessor else "")
+    replay_note = (" The Git repair also needs its pre-fix history." if row["format"] == "scoped_git_v1" else "")
     return (
         f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
-        f'<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
+        f'{follows}<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
         f'{study_outcomes(row["format"], result)}'
         f'<h4>Scope and limits</h4><p>{escape(row["limit"])}</p>'
         f'<h4>Disposition</h4><p>{escape(row["disposition"])}</p>'
-        '<h4>Replay</h4><p>Run from a checkout at this evidence revision. '
-        'The Git repair also needs its pre-fix history.</p>'
+        f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'
         f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>'
         + replay +
         f'<h4>Cite this run</h4><p>Corben Sorenson. “{escape(study["title"])}.” '

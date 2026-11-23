@@ -44,6 +44,8 @@ async function search(browser, root, query, expected) {
     const result = page.locator("li.aa-Item a.search-result-link").first();
     await result.waitFor();
     assert.match(await result.getAttribute("href"), expected, query);
+    const resultUrl = new URL(await result.evaluate(link => link.href));
+    assert.deepEqual(resultUrl.searchParams.getAll("q"), [query]);
     const firstUseful = performance.now() - start;
     const timing = await page.evaluate(async () => {
       const resource = performance.getEntriesByType("resource").find(entry => entry.name.endsWith("/search.json"));
@@ -54,7 +56,10 @@ async function search(browser, root, query, expected) {
     });
     await input.focus();
     if (!(await page.locator('li.aa-Item[aria-selected="true"]').count())) await page.keyboard.press("ArrowDown");
+    const navigation = page.waitForRequest(request =>
+      request.isNavigationRequest() && new URL(request.url()).pathname === resultUrl.pathname);
     await page.keyboard.press("Enter");
+    assert.deepEqual(new URL((await navigation).url()).searchParams.getAll("q"), [query]);
     await page.waitForURL(expected);
     const target = decodeURIComponent(new URL(page.url()).hash.slice(1));
     assert(await page.locator("#" + target.replace(".", "\\.")).first().isVisible(), query);
@@ -133,7 +138,7 @@ async function checkKnowledgeGraph(context, root) {
       root + "papers/answerability_atlas_synthesis.html");
     await page.getByRole("link", { name: "Verifier rollout", exact: true }).click();
     await page.getByRole("heading", { name: "Which scope earns a verifier rollout?" }).waitFor();
-    assert.equal(await page.getByText("Study runs (2)", { exact: true }).count(), 1);
+    assert.equal(await page.getByText("Study runs (4)", { exact: true }).count(), 1);
     await page.reload();
     await page.getByRole("heading", { name: "Which scope earns a verifier rollout?" }).waitFor();
     const tasks = JSON.parse(fs.readFileSync(path.join(__dirname, "../experiments/knowledge_graph_navigation/retrieval_tasks.json")));
@@ -265,6 +270,14 @@ async function main() {
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#clustering-the-retrieval-index$/);
     if (!live) {
+      await search(context, root, "Verifier freshness with a separate revision authority process",
+        /study-verifier-rollout\.html[^#]*#run-verifier-process-boundary$/);
+      await search(context, root, "Verifier revision checks and measured work",
+        /stable-capability-fields\.html\?view=ai&[^#]*#codex-test-plan$/);
+      await search(context, root + "reader/", "Two shipment receipts from a shared webhook",
+        /unit-15-verification-bandwidth-claim-ledgers-and-proof\.html[^#]*#what-this-establishes$/);
+      await search(context, root + "papers/", "H-Net dynamic chunking and batched serving cost",
+        /replaceable-cognitive-substrates-beyond-transformer-monoculture\.html[^#]*#h-net-learns-the-sequence-hierarchy$/);
       await checkKnowledgeGraph(context, root);
       await checkStudyCases(context);
       await checkEditorialRoutes(context);

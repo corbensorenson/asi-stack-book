@@ -17,6 +17,8 @@ def check_published_packets(directory, graph, manifest):
     assert manifest["snapshot_id"] == snapshot, "Archive snapshot identity differs from the companion"
     catalog = json.loads((directory / manifest["search"]).read_bytes())
     assert catalog["snapshot_id"] == snapshot
+    evidence = json.loads((directory / manifest["evidence_catalog"]).read_bytes())
+    assert evidence == kg.evidence_catalog(graph)
     positions = [row[0] for row in catalog["records"]]
     assert positions == [node["id"] for node in graph["nodes"]]
     limits = manifest["limits"]
@@ -115,7 +117,17 @@ def main():
     rollout = kg.neighborhood(graph, "study:verifier-rollout", predicates=("retains_run", "investigates"))
     assert {edge["to"] for edge in rollout["edges"]} == {
         "claim:stable-capability-fields.core", "study_run:verifier-floor-cache", "study_run:verifier-paired",
+        "study_run:verifier-revision-freshness", "study_run:verifier-process-boundary",
     }
+    cases = kg.neighborhood(graph, "study_run:verifier-process-boundary", predicates=("follows_up",))
+    assert [edge["to"] for edge in cases["edges"]] == ["study_run:verifier-revision-freshness"]
+    assert "active operator time" in nodes["study_run:verifier-process-boundary"]["unmeasured"]
+    for query, identity in [
+        ("shipment", "evidence_passage:shipment-shared-observation"),
+        ("Why did the Atlas stop after adding the buy-all baseline?", "evidence_passage:atlas-corrected-decision"),
+    ]:
+        catalog_hits = kg.search(graph, query, kind="evidence_passage", limit=3)["matches"]
+        assert identity in {hit["id"] for hit in catalog_hits}
     assert nodes["claim:stable-capability-fields.core"]["state"] == "argument"
     for study in (node for node in nodes.values() if node["kind"] == "study"):
         run = nodes[study["featured_run"]]

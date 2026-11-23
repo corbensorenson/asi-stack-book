@@ -31,6 +31,7 @@ CLAIMS = "evidence_quality/claim_atom_registry.json"
 IDENTITIES = "evidence_quality/claim_identity_graph.json"
 CITATIONS = "products/claim_citations.json"
 CITATION_PAGE = "products/evidence-registry/claim-citations.html"
+PASSAGES = "products/evidence_passages.json"
 PROOFS = "proofs/proof_manifest.json"
 STUDIES = "products/research_studies.json"
 CLAIM_ADDENDA = (
@@ -49,6 +50,7 @@ SOURCE_TARGET_ALIASES = {
 SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
 LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
 NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
+                       "examines_run", "discusses_claim", "cites_source", "follows_up",
                        "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
                        "defined_by", "explained_by", "contains", "assigned_to")
 PATH_PREDICATES = frozenset(NAVIGATION_PRIORITY) - {"contains", "assigned_to"}
@@ -348,6 +350,9 @@ def evidence_records(graph):
         transition = graph.nodes["transition:" + citation["transition_id"]]
         transition["url"] = citation["url"]
         transition["summary"] = citation["proposition"]
+        transition["limit"] = ". ".join(item.rstrip(".") for item in citation["limits"]) + "."
+        transition["citation_title"] = citation["title"]
+        transition["state"] = citation["state"]
         claim = graph.nodes.get("claim:" + citation["id"])
         if claim is not None and claim["role"] != "core":
             claim["url"] = citation["url"]
@@ -359,7 +364,7 @@ def evidence_records(graph):
         key = graph.node(
             "study", study["id"], STUDIES, locator, title=study["title"], question=study["question"], url=url,
             featured_run="study_run:" + study["featured_run"], summary=study["summary"],
-            limit=study["limit"], disposition=study["disposition"], change=study["change"],
+            limit=study["limit"], disposition=study["disposition"], change=study["change"], date=study["date"],
         )
         if study.get("claim"):
             graph.edge(key,"investigates","claim:"+study["claim"]["id"],STUDIES,locator+"/claim",
@@ -370,8 +375,26 @@ def evidence_records(graph):
             identity = graph.node("study_run",run["id"],STUDIES,run_locator,title=run["title"],
                                   url=url+"#"+run_anchor(run["id"]),limit=run["limit"],summary=run["summary"],
                                   result_sha256=run["result_sha256"], protocol_sha256=run["protocol_sha256"],
-                                  source_commit=run["source_commit"], disposition=run["disposition"])
+                                  source_commit=run["source_commit"], disposition=run["disposition"],
+                                  unmeasured=run.get("unmeasured", []), date=run["date"],
+                                  method=run["method"], protocol=run["protocol"], result=run["result"],
+                                  question=study["question"], featured=study["featured_run"] == run["id"])
             graph.edge(key,"retains_run",identity,STUDIES,run_locator,featured=study["featured_run"]==run["id"])
+            if run.get("follow_up_to"):
+                graph.edge(identity, "follows_up", "study_run:" + run["follow_up_to"], STUDIES,
+                           run_locator + "/follow_up_to", evidence_effect="none")
+
+
+def evidence_passages(graph):
+    for i, passage in enumerate(graph.data(PASSAGES)):
+        locator = f"/{i}"
+        fields = {name: value for name, value in passage.items() if name not in {"id", "links"}}
+        key = graph.node("evidence_passage", passage["id"], PASSAGES, locator, **fields)
+        for j, link in enumerate(passage["links"]):
+            if link["predicate"] not in {"cites_source", "discusses_claim", "examines_run", "explained_by"}:
+                raise ValueError(f"invalid evidence passage relation: {link['predicate']}")
+            graph.edge(key, link["predicate"], link["target"], PASSAGES, f"{locator}/links/{j}",
+                       evidence_effect="none")
 
 
 def compile_graph(read, *, source_commit, worktree):
@@ -387,6 +410,7 @@ def compile_graph(read, *, source_commit, worktree):
     concept_records(graph, owners)
     claim_records(graph, chapters)
     evidence_records(graph)
+    evidence_passages(graph)
     for edge in graph.edges:
         if edge["from"] not in graph.nodes or edge["to"] not in graph.nodes:
             raise ValueError(f"graph edge has an unknown endpoint: {edge}")
@@ -410,9 +434,25 @@ def json_bytes(value):
 def search_metadata(node, display_title):
     citation = node.get("citation_label", "")
     alias = re.split(r"\([0-9]{4}[a-z]?\)[,.:]?\s*", citation, maxsplit=1)[-1] if citation else ""
-    context = [node.get(field, "") for field in ("definition", "question", "summary")]
+    context = [node.get(field, "") for field in ("definition", "question", "summary", "citation_title",
+                                                  "disposition", "limit")]
+    context.extend(node.get("aliases", []))
+    context.extend(node.get("unmeasured", []))
     context.extend((citation, node["title"][len(display_title) - 1:] if display_title != node["title"] else ""))
     return slugify(alias), slugify(" ".join(context))
+
+
+def evidence_catalog(graph):
+    """Expose the same bounded records used to build the graph's search index."""
+    kinds = {"study", "study_run", "evidence_passage", "transition"}
+    records = [node for node in graph["nodes"] if node["kind"] in kinds and node.get("url")]
+    return {
+        "schema_version": "asi-stack.evidence-catalog.v1",
+        "source_commit": graph["source_commit"],
+        "snapshot_id": graph["snapshot_id"],
+        "authority": graph["authority"],
+        "records": records,
+    }
 
 
 def search_terms(text):

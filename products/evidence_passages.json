@@ -1,0 +1,156 @@
+[
+  {
+    "id": "atlas-corrected-decision",
+    "title": "Answerability Atlas baseline correction at budget 128",
+    "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction",
+    "question": "Why did the Atlas stop after adding the buy-all baseline?",
+    "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+    "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+    "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+    "aliases": ["buy all baseline", "Atlas comparator correction", "0.035299", "headroom threshold"],
+    "links": [
+      {"predicate": "discusses_claim", "target": "claim:benchmark-ratchets-and-anti-goodhart-evidence.core"},
+      {"predicate": "cites_source", "target": "source:answerability_atlas_synthesis"}
+    ],
+    "locators": [
+      {"label": "Corrected comparator pool and Table 5", "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"},
+      {"label": "Reader decision", "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"}
+    ]
+  },
+  {
+    "id": "shipment-shared-observation",
+    "title": "Two shipment receipts from a shared webhook",
+    "url": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#what-this-establishes",
+    "question": "Do two receipts from one webhook independently verify delivery?",
+    "summary": "The dashboard mirrors the supplier webhook. The two displays establish one reported event. A dock observation tied to this shipment and cutoff could establish receipt independently.",
+    "limit": "This is an authored exercise about observation lineage. It provides no field estimate of error correlation or the benefit of independent audits.",
+    "disposition": "Retain the narrower reported-event claim and seek a separate observation of arrival.",
+    "aliases": ["shipment", "shared webhook", "two logs agree", "independent corroboration", "shared observation"],
+    "links": [
+      {"predicate": "explained_by", "target": "reader_unit:unit-15"},
+      {"predicate": "discusses_claim", "target": "claim:verification-bandwidth-and-context-adequacy.core"}
+    ],
+    "locators": [
+      {"label": "Try the decision exercise", "url": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#decision-exercise-two-logs-agree-on-a-shipment"}
+    ]
+  },
+  {
+    "id": "grant-at-effect",
+    "title": "Grant at commit and delayed observation",
+    "url": "chapters/system-boundaries-and-authority.html#grant-to-effect-authority",
+    "question": "Was the write unauthorized if it was observed after revocation?",
+    "summary": "The effect at tick 1 used the active grant. A later observation of that journal row after revision 2 did not invalidate the earlier write. Both checked transactions withheld a write after expiry or revocation.",
+    "limit": "Four ordered schedules in a shared local database under one operator. A partitioned remote sink, production enforcement, and distributed failure behavior remain outside the comparison.",
+    "disposition": "Check the grant at commit and cite the observation of the exact effect separately.",
+    "aliases": ["grant may change", "revocation delayed effect", "late observation", "grant-to-effect trace"],
+    "links": [
+      {"predicate": "discusses_claim", "target": "claim:system-boundaries-and-authority.core"},
+      {"predicate": "explained_by", "target": "chapter:system-boundaries-and-authority"},
+      {"predicate": "examines_run", "target": "study_run:authority-commit-ordering"}
+    ],
+    "locators": [
+      {"label": "Command handoff", "url": "chapters/intent-to-execution-contracts.html#grant-to-effect-command"},
+      {"label": "Runtime handoff", "url": "chapters/runtime-adapters-tool-permissions-and-human-approval.html#grant-to-effect-runtime"},
+      {"label": "Recovery handoff", "url": "chapters/governed-operations-incident-command-and-graceful-degradation.html#grant-to-effect-recovery"}
+    ]
+  },
+  {
+    "id": "receiver-matched-access",
+    "title": "Receiver gateway with matched status access",
+    "url": "reader/quickstart.html#matched-receiver-access",
+    "question": "Does one gateway close more requests when both routes have a second status source?",
+    "summary": "Both second-source designs verified 80 of 288 closures. Primary-only status verified 48. Relaying status through a gateway saved 192 caller requests and added 54,168 status payload bytes.",
+    "limit": "Four authored tasks and controlled projections under local same-owner services. Incident frequencies, independent faults and active operator time remain open.",
+    "disposition": "Retain primary-only status where its evidence is sufficient. Compare end-to-end costs and actual availability before choosing a second-source placement.",
+    "aliases": ["receiver availability", "gateway versus caller", "two status sources", "matched receiver"],
+    "links": [
+      {"predicate": "examines_run", "target": "study_run:receiver-availability"},
+      {"predicate": "discusses_claim", "target": "claim:artifact-graphs-audit-logs-and-replay.core"}
+    ]
+  },
+  {
+    "id": "verifier-measurement-boundary",
+    "title": "Verifier revision checks and measured work",
+    "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan",
+    "question": "How many minutes of operator time did serialized verifier handoff save in production?",
+    "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+    "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+    "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+    "aliases": ["verifier operator time", "production operator minutes", "verifier revision freshness", "serialized handoff work"],
+    "links": [
+      {"predicate": "discusses_claim", "target": "claim:stable-capability-fields.core"},
+      {"predicate": "examines_run", "target": "study_run:verifier-revision-freshness"},
+      {"predicate": "examines_run", "target": "study_run:verifier-process-boundary"}
+    ]
+  },
+  {
+    "id": "h-net-serving",
+    "title": "H-Net dynamic chunking and batched serving cost",
+    "url": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#h-net-learns-the-sequence-hierarchy",
+    "question": "Do fewer deep-stage positions make H-Net cheaper to serve?",
+    "summary": "Learned chunking can shorten the deep sequence. Variable chunk counts change batching and memory, and the paper's matched data and FLOP comparisons do not determine wall time.",
+    "limit": "The paper reports implementation-dependent slowdown and batching difficulties. Mixed-length serving throughput at a shared quality target remains an adoption test.",
+    "disposition": "Compare verified outputs per unit of elapsed time on matched raw inputs and mixed-length batches, including fallback and peak memory.",
+    "aliases": ["H-Net serving", "dynamic chunking", "deep-stage byte positions", "batched latency"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_h_net_2025"},
+      {"predicate": "explained_by", "target": "chapter:replaceable-cognitive-substrates-beyond-transformer-monoculture"}
+    ]
+  },
+  {
+    "id": "jepa-alignment-boundary",
+    "title": "Platonic JEPA alignment and downstream competence",
+    "url": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#jepa-is-a-prediction-objective-not-a-complete-agent",
+    "question": "Does JEPA alignment establish action-conditioned prediction or reasoning ability?",
+    "summary": "The paper measures specified representation alignment. Its conditional theorem uses an identity predictor. Task-preserving replacement calls for a separate downstream comparison.",
+    "limit": "The source-reported alignment comparison does not qualify a controller or a deployed reasoner. Action-conditioned prediction requires its own evidence.",
+    "disposition": "Keep the downstream consumer fixed and test whether the representation preserves the differences that determine the task.",
+    "aliases": ["Platonic JEPA", "good views", "identity predictor", "actions after representation alignment"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_platonic_representation_jepa_2026"},
+      {"predicate": "explained_by", "target": "chapter:replaceable-cognitive-substrates-beyond-transformer-monoculture"}
+    ]
+  },
+  {
+    "id": "conformal-coverage-unit",
+    "title": "Conformal coverage with missing sensors during a maneuver",
+    "url": "chapters/perception-sensor-fusion-and-observation-trust.html#how-often-is-the-true-state-inside-the-prediction-set",
+    "question": "Does frame coverage apply to a maneuver with vibration-driven sensor loss?",
+    "summary": "Modality-conditioned conformal coverage uses exchangeability within the sensor pattern. Frame-level coverage does not quantify whole-maneuver coverage when failures and observations are correlated.",
+    "limit": "The source supplies a conditional coverage result. The vibration example is a deployment condition to test, with representative episodes as the unit.",
+    "disposition": "Evaluate by sensor availability pattern and by the actual decision unit.",
+    "aliases": ["missing modalities", "frame coverage", "within-pattern exchangeability", "maneuver coverage"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_conformal_missing_modalities_2026"},
+      {"predicate": "explained_by", "target": "chapter:perception-sensor-fusion-and-observation-trust"}
+    ]
+  },
+  {
+    "id": "persona-steering-attribution",
+    "title": "Persona steering and neuron-level attribution",
+    "url": "chapters/white-box-evidence-interpretability-and-activation-governance.html#personality-and-persona-steering",
+    "question": "Does changing a model persona identify one personality neuron?",
+    "summary": "A successful activation intervention can demonstrate a behavioral change for the tested prompts. Persona-level control can be distributed, and several directions can exhibit similar effects.",
+    "limit": "Model revision, layer, intervention magnitude, prompt distribution and behavioral tests constrain attribution. A local steering effect does not establish a universal personality coordinate.",
+    "disposition": "Test matched and random controls, prompts outside the steering set, and unintended changes before relying on a steering policy.",
+    "aliases": ["personality steering", "persona control", "personality neuron", "steering non-identifiability"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_steering_nonidentifiability_2026"},
+      {"predicate": "explained_by", "target": "chapter:white-box-evidence-interpretability-and-activation-governance"}
+    ]
+  },
+  {
+    "id": "emeans-retrieval-rebuild",
+    "title": "e-means and the release-note retrieval index rebuild",
+    "url": "chapters/virtual-context-abi.html#clustering-the-retrieval-index",
+    "question": "What should survive an e-means release-note index rebuild?",
+    "summary": "Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable.",
+    "limit": "The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection.",
+    "disposition": "Treat the cluster index as a replaceable retrieval aid and verify prompt-independent access to the underlying authoritative notes.",
+    "aliases": ["e-means", "release-note index", "clustering alternatives", "retrieval index rebuild"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_emeans_2026"},
+      {"predicate": "explained_by", "target": "chapter:virtual-context-abi"}
+    ]
+  }
+]

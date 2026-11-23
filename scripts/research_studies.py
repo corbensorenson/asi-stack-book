@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from collections import Counter
 import csv
 import hashlib
 from io import BytesIO, StringIO
@@ -61,6 +62,22 @@ def input_paths(manifest: dict) -> set[Path]:
     } | {Path(item["backlog"]) for item in manifest["agenda"]} | {
         Path(item["artifact"]) for item in manifest["independent_reports"]
     }
+
+
+def freshness_work(result: dict) -> dict[str, dict]:
+    totals = {}
+    for name in result["cases"][0]["arms"]:
+        work, wire, routes = Counter(), Counter(), Counter()
+        for row in result["cases"]:
+            observed = row["arms"][name]
+            work.update(observed["work"])
+            wire.update(observed.get("authority_pipe", {}))
+            wire.update(observed.get("worker_pipe", {}))
+            routes.update(decision["route"] for decision in observed["decisions"])
+        totals[name] = {"work": dict(work), "wire": dict(wire), "routes": dict(routes)}
+    if "totals" in result and result["totals"] != totals:
+        raise ValueError("verifier freshness counters disagree with the recorded decisions")
+    return totals
 
 
 def metrics(format_id: str, result: dict) -> dict:
@@ -155,6 +172,21 @@ def metrics(format_id: str, result: dict) -> dict:
         return {"pairs": result["paired_checkpoints"], "ordinary_wrong": ordinary["wrong_routes"],
                 "retained_wrong": retained["wrong_routes"], "ordinary_reads": ordinary["document_reads"],
                 "retained_reads": retained["document_reads"], "handoff_bytes": retained["handoff_bytes_serialized"]}
+    if format_id == "verifier_freshness_v1":
+        cases = rows_for(format_id, result)
+        if len(cases) != result["paired_checkpoints"] or any(row["adverse"] for row in cases):
+            raise ValueError("verifier freshness decisions disagree with the pinned fixture")
+        totals = freshness_work(result)
+        ordinary = totals["conventional_memoization"]
+        retained = totals["retained_qualification"]
+        if ordinary["wire"] != retained["wire"]:
+            raise ValueError("verifier freshness comparison used unequal transport")
+        return {"pairs": len(cases), "ordinary_reads": ordinary["work"]["document_reads"],
+                "retained_reads": retained["work"]["document_reads"],
+                "handoff_bytes": retained["work"].get("handoff_bytes", 0),
+                "messages": ordinary["wire"].get("messages", 0),
+                "payload_bytes": ordinary["wire"].get("payload_bytes", 0),
+                "specialist": ordinary["routes"].get("specialist", 0)}
     if format_id == "transfer_scheduler_v1":
         arms = result["summary"]["proposals/descriptive"]["arms"]
         return {"pairs": len(result["cases"]), "stratum": result["summary"]["proposals/descriptive"]["cells"],
@@ -223,6 +255,12 @@ def studies_from(manifest: dict, read) -> list[dict]:
     studies = []
     for entry in questions.values():
         history = [run for run in runs.values() if run["study"] == entry["id"]]
+        earlier = set()
+        for run in history:
+            predecessor = run.get("follow_up_to")
+            if predecessor and predecessor not in earlier:
+                raise ValueError(f'Follow-up {run["id"]} must name an earlier run in the same study')
+            earlier.add(run["id"])
         featured = next((run for run in history if run["id"] == entry["featured_run"]), None)
         if featured is None:
             raise ValueError(f"study {entry['id']} does not own its featured run")

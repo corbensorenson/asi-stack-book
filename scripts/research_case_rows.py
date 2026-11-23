@@ -150,6 +150,23 @@ def verifier_policy_audit(result):
             yield case(label, label, arms, adverse=any(row["route"] != row["expected"] for row in decisions))
 
 
+def verifier_freshness(result):
+    for profile in result["cases"]:
+        names = tuple(profile["arms"])
+        for decisions in zip(*(profile["arms"][name]["decisions"] for name in names), strict=True):
+            first = decisions[0]
+            paired_fields = ("tick", "consumer", "expected_route", "pinned_version", "returned_version",
+                             "observed_index_version", "revision")
+            if any(any(row.get(field) != first.get(field) for field in paired_fields) for row in decisions[1:]):
+                raise ValueError("verifier freshness arms do not share paired inputs")
+            identity = f'{profile["case"]}-{first["tick"]}-{first["consumer"]}'
+            label = (f'{profile["case"].replace("_", " ")} · tick {first["tick"]} · {first["consumer"]}'
+                     f' · expected {first["expected_route"]}')
+            arms = {name: arm(row["route"], row["reason"], row["route"])
+                    for name, row in zip(names, decisions, strict=True)}
+            yield case(identity, label, arms, adverse=any(row["route"] != first["expected_route"] for row in decisions))
+
+
 def synthesis_case_records(result, factorial):
     for row in result["cases" if factorial else "tasks"]:
         condition = f'{row["task"]} · {row["family"]}'
@@ -195,6 +212,8 @@ def rows_for(format_id, result):
         rows = verifier_rollout(result)
     elif format_id == "verifier_policy_audit_v2":
         rows = verifier_policy_audit(result)
+    elif format_id == "verifier_freshness_v1":
+        rows = verifier_freshness(result)
     elif format_id in {"transfer_pilot_v1", "transfer_factorial_v1", "transfer_scheduler_v1"}:
         rows = synthesis_case_records(result, format_id != "transfer_pilot_v1")
     else:

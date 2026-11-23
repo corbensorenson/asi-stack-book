@@ -21,15 +21,20 @@ const recordKinds = {
   chapter: "Technical chapter", claim: "Claim", claim_record: "Retained claim record",
   concept: "Concept", part: "Part", proof_target: "Proof target", reader_unit: "Reader unit",
   source: "Source", study: "Study", study_run: "Study run", transition: "Evidence transition",
+  evidence_passage: "Evidence passage",
 };
 const relations = {
   assigned_to: ["Assigned chapters", "Assigned sources"],
   atom: ["Exact claim", "Exact evidence records"],
   contains: ["Chapters", "Part"],
+  cites_source: ["Cited sources", "Answer passages citing this source"],
   declares_dependency: ["Declared dependencies", "Records that reference this dependency"],
   declares_proof_target: ["Proof targets", "Declaring chapter"],
   defined_by: ["Defining chapter", "Defined concepts"],
+  discusses_claim: ["Related claims", "Passages discussing this claim"],
+  examines_run: ["Run examined", "Passages examining this run"],
   explained_by: ["Technical explanations", "Concepts explained here"],
+  follows_up: ["Earlier comparison", "Follow-up comparisons"],
   has_concept_claim: ["Concept claims", "Concept"],
   investigates: ["Claim investigated", "Studies"],
   lists_source: ["Listed sources", "Chapters listing this source"],
@@ -379,10 +384,14 @@ function renderRecord(packet) {
   }
   brief(record, "Definition", node.definition);
   brief(record, "Citation", node.citation_label);
-  if (node.kind === "study") brief(record, "Research question", node.question);
+  brief(record, "Research question", node.question);
   if (node.kind === "study") brief(record, "Current decision", node.disposition);
   brief(record, "Reported result", node.summary);
   brief(record, "Evidence limit", node.limit, "limit");
+  if (node.unmeasured?.length) brief(record, "Outside measurement", node.unmeasured.join(", "));
+  for (const locator of node.locators || []) {
+    if (localLink(locator.url)) record.append(link(locator.label, localLink(locator.url)));
+  }
   if (node.kind === "study") brief(record, "What would change the decision", node.change);
   else brief(record, "Disposition", node.disposition);
   brief(record, "Lean module", node.module);

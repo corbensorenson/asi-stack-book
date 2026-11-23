@@ -1,0 +1,346 @@
+{
+  "book-search": {
+    "records": 3887,
+    "bytes": 10627895,
+    "page_paths": 102,
+    "direct_study_run_targets": 0,
+    "citation_targets": 0,
+    "history_rows": 1302
+  },
+  "reader-search": {
+    "records": 600,
+    "bytes": 1600561,
+    "page_paths": 28,
+    "direct_study_run_targets": 0,
+    "citation_targets": 0,
+    "history_rows": 0
+  },
+  "paper-search": {
+    "records": 726,
+    "bytes": 8000424,
+    "page_paths": 61,
+    "direct_study_run_targets": 0,
+    "citation_targets": 0,
+    "history_rows": 0
+  },
+  "graph": {
+    "snapshot": "b40ecf4c68d8a09228e444574773ddaa629553154b967fe0fd80ad4e7948d9f3",
+    "nodes": {
+      "chapter": 89,
+      "claim": 4247,
+      "claim_record": 84,
+      "concept": 168,
+      "part": 4,
+      "proof_target": 344,
+      "reader_unit": 26,
+      "source": 594,
+      "study": 4,
+      "study_run": 10,
+      "transition": 115
+    },
+    "with_rendered_url": {
+      "chapter": 89,
+      "claim": 91,
+      "concept": 168,
+      "reader_unit": 26,
+      "source": 594,
+      "study": 4,
+      "study_run": 10,
+      "transition": 7
+    },
+    "noncore_claims_with_url": 2,
+    "missing_transitions": 108,
+    "gaps": {
+      "assigned_to": 87,
+      "declares_dependency": 1685
+    },
+    "gap_examples": [
+      {
+        "from": "source:viea",
+        "target_ref": "01",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:viea",
+        "target_ref": "07",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:viea",
+        "target_ref": "12",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:viea",
+        "target_ref": "15",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:scf",
+        "target_ref": "05",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:planforge",
+        "target_ref": "06",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:planforge_compiler_arch",
+        "target_ref": "06",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:cognitive_compilation",
+        "target_ref": "06",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:cognitive_compilation",
+        "target_ref": "12",
+        "reason": "no corroborated current chapter"
+      },
+      {
+        "from": "source:talos",
+        "target_ref": "08",
+        "reason": "no corroborated current chapter"
+      }
+    ],
+    "predicates": {
+      "declares_proof_target": 344,
+      "lists_source": 1458,
+      "maps_source_passage": 1250,
+      "owns_claim": 4233,
+      "declares_dependency": 38050,
+      "retained_record_for": 84,
+      "defined_by": 51,
+      "explained_by": 119,
+      "reader_example": 13,
+      "has_concept_claim": 104,
+      "related_term": 1,
+      "contains": 89,
+      "teaches_chapter": 89,
+      "assigned_to": 1449,
+      "investigates": 4,
+      "retains_run": 10,
+      "proxy_for": 29,
+      "subclaim_of": 61,
+      "atom": 25
+    },
+    "search_bytes": 1737294,
+    "claims_archive_bytes": 1344461
+  },
+  "targets": {
+    "atlas": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [
+          "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"
+        ],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "shared": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [
+          "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#what-this-establishes"
+        ],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "labor": {
+      "matches": {
+        "book-search": [
+          "chapters/stable-capability-fields.html#codex-test-plan"
+        ],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache": [
+          "study_run:verifier-floor-cache"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "receiver": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability": [
+          "study_run:receiver-availability"
+        ],
+        "products/evidence-registry/study-crossed-receiver.html": [
+          "study:crossed-receiver"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "scheduler": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-forward-transfer.html#run-transfer-factorial": [
+          "study_run:transfer-factorial"
+        ],
+        "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit": [
+          "study_run:transfer-scheduler-audit"
+        ],
+        "products/evidence-registry/study-forward-transfer.html": [
+          "study:forward-transfer"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "grant": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering": [
+          "study_run:authority-commit-ordering"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "circle": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003": [
+          "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "transition:post_v2_3.p5.circle_named_target_receipt.promote"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "world": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/claim-citations.html#situated-world-model.finite-pomdp-governed-acquisition-and-consolidation": [
+          "transition:post_v2_3.situated_world_model.finite_pomdp.promote"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "kerc": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/claim-citations.html#kerc.protected_exact_handle_preservation": [
+          "transition:post_v2_3.kerc.protected_exact_handle.promote"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "hnet": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [
+          "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html#prediction-targets-and-learned-granularity"
+        ],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "jepa": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [
+          "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html#prediction-targets-and-learned-granularity"
+        ],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "emeans": {
+      "matches": {
+        "book-search": [
+          "chapters/virtual-context-abi.html#clustering-the-retrieval-index"
+        ],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "conformal": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "steering": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [],
+        "paper-search": []
+      },
+      "graph": {},
+      "graph_edge": {}
+    },
+    "git": {
+      "matches": {
+        "book-search": [],
+        "reader-search": [
+          "reader/quickstart.html#ordinary-change-control-comparison"
+        ],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-scoped-git.html#run-git-retrospective": [
+          "study_run:git-retrospective"
+        ],
+        "products/evidence-registry/study-scoped-git.html": [
+          "study:scoped-git"
+        ]
+      },
+      "graph_edge": {}
+    },
+    "freshness": {
+      "matches": {
+        "book-search": [
+          "chapters/stable-capability-fields.html#codex-test-plan"
+        ],
+        "reader-search": [
+          "reader/quickstart.html#verifier-replacement-replay"
+        ],
+        "paper-search": []
+      },
+      "graph": {
+        "products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache": [
+          "study_run:verifier-floor-cache"
+        ]
+      },
+      "graph_edge": {}
+    }
+  }
+}

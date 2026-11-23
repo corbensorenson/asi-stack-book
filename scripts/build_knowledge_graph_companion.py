@@ -17,7 +17,7 @@ ASSET_NAMES = ("index.html", "explorer.css", "explorer.js")
 GRAPH_SCHEMA = "schemas/book_knowledge_graph.schema.json"
 COMPILER_INPUTS = (
     kg.STRUCTURE, kg.INVENTORY, kg.PAPER_LIBRARY, kg.GLOSSARY, kg.READER_MANIFEST, kg.CROSSWALK,
-    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PROOFS, kg.STUDIES,
+    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PASSAGES, kg.PROOFS, kg.STUDIES,
     "scripts/book_knowledge_graph.py", "scripts/build_knowledge_graph_companion.py",
     "scripts/build_human_reader_current.py", "scripts/research_case_rows.py",
     "scripts/research_studies.py", GRAPH_SCHEMA, *(WEB + name for name in ASSET_NAMES),
@@ -139,6 +139,7 @@ def prepare(read, *, source_commit, worktree):
     files["graph.schema.json"] = schema
     files["search.json"] = kg.json_bytes({"schema_version": "asi-stack.knowledge-graph-search.v2",
                                         "snapshot_id": snapshot, "kinds": kinds, "records": catalog})
+    files["evidence-catalog.json"] = kg.json_bytes(kg.evidence_catalog(graph))
     files["graph.json.gz"] = compressed(kg.json_bytes(graph))
     for key, packets in shards.items():
         files[f"nodes/{key}.json"] = kg.json_bytes({"snapshot_id": snapshot, "records": packets})
@@ -148,7 +149,8 @@ def prepare(read, *, source_commit, worktree):
         "schema_version": "asi-stack.knowledge-graph-companion.v1",
         "graph_schema_version": graph["schema_version"], "snapshot_id": snapshot,
         "source_commit": source_commit, "worktree": worktree, "authority": graph["authority"],
-        "search": "search.json", "archive": "graph.json.gz", "shard_template": "nodes/{shard}.json",
+        "search": "search.json", "evidence_catalog": "evidence-catalog.json",
+        "archive": "graph.json.gz", "shard_template": "nodes/{shard}.json",
         "relationship_template": "relationships/{file}.json",
         "coverage": graph["coverage"],
         "limits": {"preview_per_relation": PREVIEWS_PER_RELATION, "preview_edges_per_node": PACKET_EDGE_LIMIT,

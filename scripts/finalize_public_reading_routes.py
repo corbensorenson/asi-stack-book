@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+from hashlib import sha256
 import json
 from pathlib import Path
 import posixpath
@@ -18,6 +19,16 @@ REPO = "https://github.com/corbensorenson/asi-stack-book"
 LOG = "docs/project_improvements.md"
 SOURCE_APP = "appendices/H_external_sources.html"
 CLAIM_APP = "appendices/C_claim_evidence_matrix.html"
+GRAPH = "products/evidence-registry/knowledge-graph"
+CATALOG = "evidence-catalog.json"
+SEARCH_INDEXES = ("search.json", "reader/search.json", "papers/search.json")
+QUARTO_SEARCH_SCRIPT = "site_libs/quarto-search/quarto-search.js"
+EVIDENCE_LABELS = {
+    "study": "Research study",
+    "study_run": "Study run",
+    "transition": "Bounded claim",
+    "evidence_passage": "Evidence passage",
+}
 
 # These are section identities hidden by the technical Condensed projection.
 RESEARCH_SECTIONS = {
@@ -59,17 +70,79 @@ def log_projection(site: Path, commit: str, tracked: set[str]) -> str:
     return f"[Read this audit on GitHub]({REPO}/blob/{commit}/{LOG}).\n\n{text}"
 
 
-def index_projection(site: Path, chapters: list[dict], sources: list[dict]) -> str:
-    rows = [row for row in load(site / "search.json") if not row["objectID"].startswith("asi-evidence:")]
+def evidence_entries(site: Path, commit: str) -> list[dict]:
+    directory = site / GRAPH
+    manifest = load(directory / "manifest.json")
+    raw = (directory / CATALOG).read_bytes()
+    catalog = json.loads(raw)
+    if (manifest.get("evidence_catalog") != CATALOG or manifest["source_commit"] != commit
+            or catalog["source_commit"] != commit or catalog["snapshot_id"] != manifest["snapshot_id"]
+            or manifest["files"][CATALOG]["sha256"] != sha256(raw).hexdigest()):
+        raise ValueError("Evidence search catalog differs from the site's graph snapshot or source revision")
+    pages = {}
+    entries = []
+    for record in catalog["records"]:
+        title = record.get("citation_title", record["title"])
+        category = EVIDENCE_LABELS[record["kind"]]
+        body = " ".join(record[key] for key in ("question", "summary", "limit", "disposition") if record.get(key))
+        aliases = [record["id"], record["id"].split(":", 1)[1],
+                   *record.get("aliases", []), *record.get("unmeasured", [])]
+        for destination in [{"url": record["url"]}, *record.get("locators", [])]:
+            uri = urlsplit(destination["url"])
+            if uri.scheme or uri.netloc or uri.path.startswith("/") or ".." in Path(uri.path).parts:
+                raise ValueError(f'Invalid research search destination: {destination["url"]}')
+            if uri.path not in pages:
+                pages[uri.path] = (site / uri.path).read_text(encoding="utf-8")
+            if uri.fragment and f'id="{uri.fragment}"' not in pages[uri.path]:
+                raise ValueError(f'Research search anchor missing: {destination["url"]}')
+            entries.append({"objectID": f'asi-evidence:{record["id"]}:{destination["url"]}',
+                            "href": destination["url"], "title": title,
+                            "section": destination.get("label", category),
+                            "text": " ".join((body, *aliases)), "crumbs": [],
+                            "evidence_id": record["id"], "evidence_kind": category})
+    return entries
+
+
+def index_projection(site: Path, index: str, entries: list[dict]) -> str:
+    rows = [row for row in load(site / index) if not row["objectID"].startswith("asi-evidence:")]
     for row in rows:
         target = urlsplit(row["href"])
         if (target.path.startswith("chapters/") and target.fragment in RESEARCH_SECTIONS
                 and not target.query):
             row["href"] = urlunsplit(("", "", target.path, "view=ai", target.fragment))
 
+    directory = posixpath.dirname(index) or "."
+    local = []
+    for row in entries:
+        target = urlsplit(row["href"])
+        href = urlunsplit(("", "", posixpath.relpath(target.path, directory), target.query, target.fragment))
+        local.append({**row, "href": href})
+    return json.dumps(local + rows, ensure_ascii=False, separators=(",", ":")) + "\n"
+
+
+def quarto_search_links(text: str) -> str:
+    # The pinned Quarto template only recognizes ?q=. A result already carrying
+    # a reading-mode query has &q=, so the template appends a second search term.
+    old = """if (item.text && item.href && !item.href.includes('?q=')) {
+                const [main, hash] = item.href.split('#')
+                const hashAppend = hash ? '#' + hash : ''
+                item.href = main + '?q=' + encodeURIComponent(state.query) + hashAppend
+              }"""
+    fixed = """if (item.text && item.href && !new URL(item.href, document.baseURI).searchParams.has(kQueryArg)) {
+                const [main, hash] = item.href.split('#')
+                const hashAppend = hash ? '#' + hash : ''
+                item.href = main + (main.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(state.query) + hashAppend
+              }"""
+    if text.count(old) == 1:
+        return text.replace(old, fixed)
+    if text.count(fixed) == 1:
+        return text
+    raise ValueError("Quarto search result-link template has changed")
+
+
+def book_citation_entries(site: Path, chapters: list[dict], sources: list[dict]) -> list[dict]:
     pages = {name: (site / name).read_text(encoding="utf-8") for name in (SOURCE_APP, CLAIM_APP)}
     entries = []
-
     def add(title: str, section: str, text: str, page: str, anchor: str) -> None:
         if page not in pages:
             pages[page] = (site / page).read_text(encoding="utf-8")
@@ -85,10 +158,7 @@ def index_projection(site: Path, chapters: list[dict], sources: list[dict]) -> s
     for chapter in chapters:
         claim = chapter["id"] + ".core"
         add(claim, "Core claim", chapter["title"], CLAIM_APP, claim)
-    add("e-means", "Clustering the retrieval index",
-        "e-means, centroids, and the release-note index rebuild",
-        "chapters/virtual-context-abi.html", "clustering-the-retrieval-index")
-    return json.dumps(entries + rows, ensure_ascii=False, separators=(",", ":")) + "\n"
+    return entries
 
 
 def main() -> None:
@@ -113,7 +183,13 @@ def main() -> None:
         re.escape(REPO) + r"/blob/(?:main|[0-9a-f]{40})/sources/source_notes/",
         f"{REPO}/blob/{commit}/sources/source_notes/", notes
     ))
-    files.write(site / "search.json", index_projection(site, chapters, load(ROOT / "sources/source_inventory.json")))
+    research = evidence_entries(site, commit)
+    citations = book_citation_entries(site, chapters, load(ROOT / "sources/source_inventory.json"))
+    for index in SEARCH_INDEXES:
+        entries = citations + research if index == "search.json" else research
+        files.write(site / index, index_projection(site, index, entries))
+        script = site / Path(index).parent / QUARTO_SEARCH_SCRIPT
+        files.write(script, quarto_search_links(files.text(script)))
     changes = files.changes(site)
     if changes:
         raise SystemExit(f"Public reading routes are stale: {[row['path'] for row in changes]}")
