@@ -155,6 +155,8 @@ def quarto_search_links(text: str, adapter: str) -> str:
             raise ValueError("The pinned Quarto search integration points have changed")
 
     render(old, fixed)
+    render('            const baseHref = hrefParts[0];',
+           '            const baseHref = item.evidenceId || hrefParts[0];')
     render("""return readSearchData().then(function (fuse) {
                 return fuseSearch(query, fuse, fuseSearchOptions);
               });""", """return asiReadSearchData().then(() =>

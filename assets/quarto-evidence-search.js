@@ -74,7 +74,8 @@ function asiSearchResults(query, scope, options) {
   const escape = value => value.replace(/[&<>"']/g, character => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   })[character]);
-  return [...evidenceRows, ...bookRows].slice(0, options.limit).map(row => {
+  const evidenceRoutes = new Set(evidenceRows.map(row => row.href));
+  return [...evidenceRows, ...bookRows.filter(row => !evidenceRoutes.has(row.href))].slice(0, options.limit).map(row => {
     const fragmentAt = row.href.indexOf("#");
     const fragment = fragmentAt < 0 ? "" : row.href.slice(fragmentAt);
     const base = fragmentAt < 0 ? row.href : row.href.slice(0, fragmentAt);
@@ -88,6 +89,6 @@ function asiSearchResults(query, scope, options) {
         '<span class="asi-evidence-limit">' + escape(row.match) + '</span>'
       : highlightMatch(query, row.text);
     const section = [row.evidence_kind || row.section, row.evidence?.measurement].filter(Boolean).join(" · ");
-    return {title: row.title, section, href, text, crumbs: row.crumbs};
+    return {title: row.title, section, href, text, crumbs: row.crumbs, evidenceId: row.evidence_id};
   });
 }

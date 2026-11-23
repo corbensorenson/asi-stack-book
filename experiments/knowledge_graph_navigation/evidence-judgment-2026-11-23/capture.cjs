@@ -58,6 +58,8 @@ async function graph(page, task) {
 }
 
 async function checkFragment(page, href) {
+  // Request each citation independently even when consecutive anchors share a page.
+  await page.goto("about:blank");
   const response = await page.goto(href);
   const hash = decodeURIComponent(new URL(href).hash.slice(1));
   const opened = await page.evaluate(fragment => {
