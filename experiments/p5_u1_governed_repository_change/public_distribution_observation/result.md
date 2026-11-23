@@ -18,3 +18,15 @@ Replay the read-only observation protocol with a new output file to collect a di
 ```sh
 python3 experiments/p5_u1_governed_repository_change/public_distribution_observation/run.py /tmp/asi-receiver-observation.json
 ```
+
+For an approved timed participant, run the offline review instrument against
+the saved observations. Assign one arm and stratum per participant for each
+case to avoid crossover learning. The clock runs from the reveal to the
+decision, and the record distinguishes verified closures, holds, and decisions
+unsupported by evidence the participant opened. The offline timer excludes
+actual network waiting and measures only the narrow diagnosis and review task.
+
+```sh
+study=experiments/p5_u1_governed_repository_change/public_distribution_observation
+python3 "$study/time_operator.py" "$study/results.json" /tmp/receiver-X7.json --arm caller_fallback --stratum primary_unavailable --code X7C
+```
