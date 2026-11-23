@@ -157,6 +157,14 @@ def quarto_search_links(text: str, adapter: str) -> str:
     render(old, fixed)
     render('            const baseHref = hrefParts[0];',
            '            const baseHref = item.evidenceId || hrefParts[0];')
+    render('  window.history.replaceState({}, "", replacementUrl);\n}',
+           '  window.history.replaceState({}, "", replacementUrl);\n'
+           '  // Preserve the copied search URL after Quarto has resolved the page links.\n'
+           '  window.addEventListener("load", () => {\n'
+           '    const sharedUrl = new URL(window.location);\n'
+           '    sharedUrl.searchParams.set(kQueryArg, kQuery);\n'
+           '    window.history.replaceState(window.history.state, "", sharedUrl);\n'
+           '  }, { once: true });\n}')
     render("""return readSearchData().then(function (fuse) {
                 return fuseSearch(query, fuse, fuseSearchOptions);
               });""", """return asiReadSearchData().then(() =>
