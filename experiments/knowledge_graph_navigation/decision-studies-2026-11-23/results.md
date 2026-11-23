@@ -16,3 +16,15 @@ The labor task exposed a cost of following a broad relationship first. The linke
 Both Circle packets preserved the finite target and a general transport limitation. The frozen lexical scorer required the phrase “general proof transport” and therefore withheld scope credit in both conditions. The rendered formal citation now names that term explicitly. This is a retrievability and scoring-language issue in the initial instrument, not evidence of a reader misunderstanding the theorem. The raw grading is retained.
 
 The conservative decision rules allowed assent only where they recognized the prespecified positive comparison. Zero false promotions under that policy gives no estimate of how often a reader would overclaim. The next independent trial should accept free-form answers, vary question forms and familiar terminology, and time the active review. Allocation and scoring can use the identical initial packets and existing anchor checks. See the [participant packet procedure](participant-procedure.md).
+
+## Actual decision supersession
+
+The earlier verifier navigation task followed a later check back to its
+predecessor. The supplemental Atlas task starts at a decision whose
+interpretation was explicitly superseded. Both arms opened the corrected
+decision in **one step**. The ordinary arm used register search. The linked
+arm followed the supersession edge. Both cited the exact correction and
+retained the post hoc, same-world limit. This case validates the explicit
+route and records equal navigation cost under the scripted policy.
+[Prespecified supplemental probe](atlas-supersession-protocol.md) ·
+[Revision-bound capture](atlas-supersession-capture.json)

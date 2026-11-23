@@ -1,0 +1,186 @@
+{
+  "source_commit": "e53063c0f54a442df9c58644ce82ef13e06f676a",
+  "snapshot_id": "39b607b574bec0a8d903363406a64e446ba024e5795cd350f403197da7d1dec5",
+  "tasks_sha256": "150128717ee8fdc4d2988ad9f0a88f5d9cee5f466b753ed5d52f66221100b4ce",
+  "wall_time_units": "program milliseconds",
+  "human_review_time_ms": null,
+  "packets": [
+    {
+      "id": "G5",
+      "initial": [
+        "evidence_passage:atlas-original-proceed-decision"
+      ],
+      "records": [
+        {
+          "aliases": [
+            "Atlas six-comparator screen",
+            "Atlas original proceed decision",
+            "Atlas E16"
+          ],
+          "citation_text": "Answerability Atlas original proceed decision (superseded)\nhttps://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html#appendix-a.-artifact-references-and-historical-reading-order\nEvidence record evidence_passage:atlas-original-proceed-decision\nBook revision e53063c0f54a442df9c58644ce82ef13e06f676a\nSource locator — Answerability Atlas, Appendix A (E16 and E18) and Table 5 (original and corrected means).\nScope — The historical screen omitted two available comparators. The eight-comparator decision E18 governs interpretation. The original record E16 is retained.",
+          "id": "evidence_passage:atlas-original-proceed-decision",
+          "kind": "evidence_passage",
+          "limit": "The historical screen omitted two available comparators. The eight-comparator decision E18 governs interpretation. The original record E16 is retained.",
+          "locators": [
+            {
+              "label": "Original and corrected results in Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            }
+          ],
+          "measurement": "Superseded decision",
+          "origin": {
+            "locator": "/1",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "What did the original six-comparator Atlas screen report?",
+          "record_version": "superseded",
+          "source_section": "Answerability Atlas, Appendix A (E16 and E18) and Table 5 (original and corrected means).",
+          "summary": "The original six-comparator screen passed at budget 128 with mean H4 of 0.052142 and ordinary 95% lower limit of 0.031653. The correction superseded the proceed decision.",
+          "title": "Answerability Atlas original proceed decision (superseded)",
+          "url": "papers/answerability_atlas_synthesis.html#appendix-a.-artifact-references-and-historical-reading-order"
+        },
+        {
+          "aliases": [
+            "buy all baseline",
+            "Atlas comparator correction",
+            "0.035299",
+            "headroom threshold"
+          ],
+          "citation_text": "Answerability Atlas baseline correction at budget 128\nhttps://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction\nEvidence record evidence_passage:atlas-corrected-decision\nBook revision e53063c0f54a442df9c58644ce82ef13e06f676a\nMethod — Same-seed rescoring after completing the feasible comparator pool.\nSource locator — Answerability Atlas, Section 8.2 and Table 5.\nScope — The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "id": "evidence_passage:atlas-corrected-decision",
+          "kind": "evidence_passage",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "locators": [
+            {
+              "label": "Corrected comparator pool and Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            },
+            {
+              "label": "Reader decision",
+              "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"
+            }
+          ],
+          "measurement": "Failed declared threshold",
+          "method": "Same-seed rescoring after completing the feasible comparator pool.",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "Why did the Atlas stop after adding the buy-all baseline?",
+          "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "title": "Answerability Atlas baseline correction at budget 128",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.4597079999999778,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G5",
+      "initial": [
+        "evidence_passage:atlas-original-proceed-decision"
+      ],
+      "records": [
+        {
+          "aliases": [
+            "Atlas six-comparator screen",
+            "Atlas original proceed decision",
+            "Atlas E16"
+          ],
+          "citation_text": "Answerability Atlas original proceed decision (superseded)\nhttps://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html#appendix-a.-artifact-references-and-historical-reading-order\nEvidence record evidence_passage:atlas-original-proceed-decision\nBook revision e53063c0f54a442df9c58644ce82ef13e06f676a\nSource locator — Answerability Atlas, Appendix A (E16 and E18) and Table 5 (original and corrected means).\nScope — The historical screen omitted two available comparators. The eight-comparator decision E18 governs interpretation. The original record E16 is retained.",
+          "id": "evidence_passage:atlas-original-proceed-decision",
+          "kind": "evidence_passage",
+          "limit": "The historical screen omitted two available comparators. The eight-comparator decision E18 governs interpretation. The original record E16 is retained.",
+          "locators": [
+            {
+              "label": "Original and corrected results in Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            }
+          ],
+          "measurement": "Superseded decision",
+          "origin": {
+            "locator": "/1",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "What did the original six-comparator Atlas screen report?",
+          "record_version": "superseded",
+          "source_section": "Answerability Atlas, Appendix A (E16 and E18) and Table 5 (original and corrected means).",
+          "summary": "The original six-comparator screen passed at budget 128 with mean H4 of 0.052142 and ordinary 95% lower limit of 0.031653. The correction superseded the proceed decision.",
+          "title": "Answerability Atlas original proceed decision (superseded)",
+          "url": "papers/answerability_atlas_synthesis.html#appendix-a.-artifact-references-and-historical-reading-order"
+        },
+        {
+          "aliases": [
+            "buy all baseline",
+            "Atlas comparator correction",
+            "0.035299",
+            "headroom threshold"
+          ],
+          "citation_text": "Answerability Atlas baseline correction at budget 128\nhttps://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction\nEvidence record evidence_passage:atlas-corrected-decision\nBook revision e53063c0f54a442df9c58644ce82ef13e06f676a\nMethod — Same-seed rescoring after completing the feasible comparator pool.\nSource locator — Answerability Atlas, Section 8.2 and Table 5.\nScope — The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "id": "evidence_passage:atlas-corrected-decision",
+          "kind": "evidence_passage",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "locators": [
+            {
+              "label": "Corrected comparator pool and Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            },
+            {
+              "label": "Reader decision",
+              "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"
+            }
+          ],
+          "measurement": "Failed declared threshold",
+          "method": "Same-seed rescoring after completing the feasible comparator pool.",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "Why did the Atlas stop after adding the buy-all baseline?",
+          "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "title": "Answerability Atlas baseline correction at budget 128",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "predicate": "supersedes_decision",
+          "from": "evidence_passage:atlas-original-proceed-decision"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.13141600000000153,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    }
+  ]
+}
