@@ -13,14 +13,16 @@ from schema_validation import validate_value
 
 COMPANION_DIR = "evidence-registry/knowledge-graph"
 WEB = "assets/knowledge-graph/"
-ASSET_NAMES = ("index.html", "explorer.css", "explorer.js")
+ASSET_NAMES = ("index.html", "explorer.css", "explorer.js", "evidence-citation.js")
+EVIDENCE_SEARCH = "assets/evidence-search.js"
 GRAPH_SCHEMA = "schemas/book_knowledge_graph.schema.json"
 COMPILER_INPUTS = (
     kg.STRUCTURE, kg.INVENTORY, kg.PAPER_LIBRARY, kg.GLOSSARY, kg.READER_MANIFEST, kg.CROSSWALK,
-    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PASSAGES, kg.PROOFS, kg.STUDIES,
+    kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PASSAGES, kg.CASES, kg.PROOFS, kg.STUDIES,
+    kg.CHAPTER_HISTORY,
     "scripts/book_knowledge_graph.py", "scripts/build_knowledge_graph_companion.py",
     "scripts/build_human_reader_current.py", "scripts/research_case_rows.py",
-    "scripts/research_studies.py", GRAPH_SCHEMA, *(WEB + name for name in ASSET_NAMES),
+    "scripts/research_studies.py", GRAPH_SCHEMA, EVIDENCE_SEARCH, *(WEB + name for name in ASSET_NAMES),
 )
 SHARD_WIDTH = 2
 PREVIEWS_PER_RELATION = 4
@@ -38,6 +40,33 @@ def input_paths(read):
 
 def shard_id(node_id):
     return sha256(node_id.encode()).hexdigest()[:SHARD_WIDTH]
+
+
+def dependency_inventory(graph):
+    groups = defaultdict(list)
+    for row in graph["unresolved"]:
+        groups[row["predicate"], row["target_ref"]].append(row)
+    families = [
+        {"predicate": predicate, "reference": reference, "occurrences": len(rows),
+         "affected_records": len({row["from"] for row in rows}),
+         "reasons": sorted({row["reason"] for row in rows})}
+        for (predicate, reference), rows in groups.items()
+    ]
+    aliases = defaultdict(list)
+    for row in graph["edges"]:
+        if row["qualifiers"].get("via_alias"):
+            aliases[row["predicate"], row["qualifiers"]["recorded_target"], row["to"]].append(row)
+    return {
+        "snapshot_id": graph["snapshot_id"],
+        "unresolved_occurrences": len(graph["unresolved"]),
+        "unresolved_reference_families": len(families),
+        "affected_records": len({row["from"] for row in graph["unresolved"]}),
+        "unresolved": sorted(families, key=lambda row: (-row["affected_records"], row["reference"], row["predicate"])),
+        "routed_aliases": [
+            {"predicate": predicate, "reference": reference, "destination": target, "occurrences": len(rows)}
+            for (predicate, reference, target), rows in sorted(aliases.items())
+        ],
+    }
 
 
 def compressed(data):
@@ -136,10 +165,12 @@ def prepare(read, *, source_commit, worktree):
 
     snapshot = graph["snapshot_id"]
     files = {name: read(WEB + name) for name in ASSET_NAMES}
+    files["evidence-search.js"] = read(EVIDENCE_SEARCH)
     files["graph.schema.json"] = schema
     files["search.json"] = kg.json_bytes({"schema_version": "asi-stack.knowledge-graph-search.v2",
                                         "snapshot_id": snapshot, "kinds": kinds, "records": catalog})
     files["evidence-catalog.json"] = kg.json_bytes(kg.evidence_catalog(graph))
+    files["dependency-inventory.json"] = kg.json_bytes(dependency_inventory(graph))
     files["graph.json.gz"] = compressed(kg.json_bytes(graph))
     for key, packets in shards.items():
         files[f"nodes/{key}.json"] = kg.json_bytes({"snapshot_id": snapshot, "records": packets})
@@ -150,6 +181,7 @@ def prepare(read, *, source_commit, worktree):
         "graph_schema_version": graph["schema_version"], "snapshot_id": snapshot,
         "source_commit": source_commit, "worktree": worktree, "authority": graph["authority"],
         "search": "search.json", "evidence_catalog": "evidence-catalog.json",
+        "dependency_inventory": "dependency-inventory.json",
         "archive": "graph.json.gz", "shard_template": "nodes/{shard}.json",
         "relationship_template": "relationships/{file}.json",
         "coverage": graph["coverage"],

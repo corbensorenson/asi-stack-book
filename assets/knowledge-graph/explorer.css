@@ -50,6 +50,8 @@ button { background: var(--blue); color: white; }
 .record h3 { font-size: .98rem; margin: 1.15rem 0 .4rem; }
 .metadata, .result-kind { color: var(--muted); font-size: .84rem; }
 .result-kind { display: block; }
+.result-excerpt, .result-scope { margin: 0 .5rem .55rem; font-size: .87rem; }
+.result-scope { color: var(--muted); }
 .limit { padding: .6rem .8rem; border-inline-start: 3px solid var(--trace); background: #f6eee9; }
 details { border-bottom: 1px solid var(--rule); padding: .52rem 0; }
 summary { cursor: pointer; font-weight: 645; }

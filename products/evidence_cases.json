@@ -1,0 +1,60 @@
+[
+  {
+    "run": "receiver-availability",
+    "case": "pair-024",
+    "title": "A fresh second projection closes an already committed request",
+    "question": "What happens when an exact effect is present, the primary projection is stale and the second is fresh?",
+    "limit": "One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition.",
+    "aliases": ["stale primary fresh secondary", "receiver verified closure", "fresh second status"]
+  },
+  {
+    "run": "receiver-availability",
+    "case": "pair-064",
+    "title": "Both receiver projections unavailable",
+    "question": "Does a gateway close the case if neither status source is reachable?",
+    "limit": "One authored review-metadata case begins with an exact effect. The workflows cannot verify it from the two unavailable projections.",
+    "aliases": ["joint receiver outage", "both status paths fail", "receiver safe hold"]
+  },
+  {
+    "run": "verifier-revision-freshness",
+    "case": "successful-stale-lookup-1-release-check",
+    "title": "A successful verifier lookup returns stale approval",
+    "question": "Which route follows when the index responds successfully with a stale revision?",
+    "limit": "One release-check decision at logical tick 1. The fixture supplies the current revision. Both arms use the same expected decision and observations.",
+    "aliases": ["successful stale lookup", "delayed verifier index", "cached verdict revocation"]
+  },
+  {
+    "run": "verifier-process-boundary",
+    "case": "fallback-expired-3-serving-check",
+    "title": "Verifier fallback expiry across the process boundary",
+    "question": "Does the serving check keep using a verifier fallback after its validity window ends?",
+    "limit": "One serving-check decision at logical tick 3 in same-owner local processes. The comparison does not include authorization and use racing in production.",
+    "aliases": ["expired verifier fallback", "fallback validity", "serving check"]
+  },
+  {
+    "run": "transfer-factorial",
+    "case": "b23-descriptive-expanded-forward",
+    "title": "Extracted routine verifies within an expanded-work cap",
+    "question": "Can the whole-program arm and the extracted-routine arm finish the same task within the same expanded-work cap?",
+    "limit": "One authored board-routing case with a descriptive query and forward order. Exhaustion leaves solvability open.",
+    "arms": ["no_library", "aware_whole", "aware_routine"],
+    "aliases": ["b23 board routing", "expanded work case", "whole program exhausted"]
+  },
+  {
+    "run": "transfer-scheduler-audit",
+    "case": "b24-descriptive-proposals-both-reversed",
+    "title": "The same whole program under two queue priorities",
+    "question": "Can changing only the queue priority remove a verified result within the same proposal cap?",
+    "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+    "arms": ["aware_whole__handle-depth", "aware_whole__expanded-length"],
+    "aliases": ["b24 board routing", "matched queue priority", "expanded length change"]
+  },
+  {
+    "run": "authority-commit-ordering",
+    "case": "commit-then-revoke",
+    "title": "An earlier authorized write observed after revocation",
+    "question": "What does the journal show about a write that precedes revocation and is observed later?",
+    "limit": "One schedule in a same-owner local database. A later observation does not change the grant that was in force when the effect committed.",
+    "aliases": ["commit then revoke", "delayed observer", "grant revision at effect"]
+  }
+]

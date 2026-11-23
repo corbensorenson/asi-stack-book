@@ -22,10 +22,12 @@ const recordKinds = {
   concept: "Concept", part: "Part", proof_target: "Proof target", reader_unit: "Reader unit",
   source: "Source", study: "Study", study_run: "Study run", transition: "Evidence transition",
   evidence_passage: "Evidence passage",
+  evidence_case: "Paired case",
 };
 const relations = {
   assigned_to: ["Assigned chapters", "Assigned sources"],
   atom: ["Exact claim", "Exact evidence records"],
+  case_of_run: ["Owning run", "Selected paired cases"],
   contains: ["Chapters", "Part"],
   cites_source: ["Cited sources", "Answer passages citing this source"],
   declares_dependency: ["Declared dependencies", "Records that reference this dependency"],
@@ -43,6 +45,7 @@ const relations = {
   proxy_for: ["Claim measured by proxy", "Proxy results"],
   reader_example: ["Reader examples", "Concepts illustrated"],
   related_term: ["Related terms", "Related terms"],
+  related_proof: ["Related formal target", "Related evidence decisions"],
   retained_record_for: ["Claim identity", "Retained records"],
   retains_run: ["Study runs", "Study"],
   subclaim_of: ["Broader claim", "Evidence for bounded subclaims"],
@@ -52,6 +55,8 @@ const relations = {
 let manifest;
 let catalog;
 let catalogById;
+let evidenceById;
+let evidenceRank;
 let matches = [];
 let shown = 0;
 let selection;
@@ -138,6 +143,11 @@ function showMatches() {
     const a = nodeLink(row[0], row[2]);
     a.append(el("span", label(catalog.kinds[row[1]]), "result-kind"));
     option.append(a);
+    const evidence = evidenceById.get(row[0]);
+    if (evidence) {
+      if (evidence.summary) option.append(el("p", evidence.summary, "result-excerpt"));
+      if (evidence.limit) option.append(el("p", "Scope · " + evidence.limit, "result-scope"));
+    }
     results.append(option);
   }
   shown = Math.min(matches.length, shown + PAGE_SIZE);
@@ -158,8 +168,19 @@ function lookup() {
     status.textContent = "Enter a title, term, or record ID.";
     return;
   }
-  const candidates = catalog.records.filter(row => !kind.value || catalog.kinds[row[1]] === kind.value);
-  matches = rankMatches(candidates, value, row => row);
+  if (kind.value === "evidence") {
+    matches = (normalized ? evidenceRank(value).map(hit => hit.record) : [...evidenceById.values()])
+      .map(record => catalogById.get(record.id));
+  } else {
+    const candidates = catalog.records.filter(row => !kind.value || catalog.kinds[row[1]] === kind.value);
+    matches = rankMatches(candidates, value, row => row);
+    if (!kind.value && value) {
+      const exact = matches.filter(row => value.toLowerCase() === row[0]);
+      const evidence = evidenceRank(value).filter(hit => hit.score >= 570)
+        .map(hit => catalogById.get(hit.record.id));
+      matches = [...new Set([...exact, ...evidence, ...matches])];
+    }
+  }
   showMatches();
 }
 
@@ -233,6 +254,12 @@ function renderRelation(item) {
   if (q.scope && typeof q.scope === "object") row.append(scopeDetails(q.scope));
   if (q.url && localLink(q.url)) row.append(link("Open the reader example", localLink(q.url)));
   if (q.review_state) row.append(el("p", `Passage review · ${q.review_state}`, "metadata"));
+  if (q.via_alias) {
+    const legacy = el("p", "Legacy reference ", "metadata");
+    legacy.append(el("code", q.recorded_target));
+    row.append(legacy);
+    if (q.alias_origin) row.append(provenance(q.alias_origin, "Chapter history"));
+  }
   passageList(row, q.passages);
   row.append(provenance(item.origin, "Relationship source"));
   return row;
@@ -388,6 +415,18 @@ function renderRecord(packet) {
   if (node.kind === "study") brief(record, "Current decision", node.disposition);
   brief(record, "Reported result", node.summary);
   brief(record, "Evidence limit", node.limit, "limit");
+  const evidence = evidenceById.get(node.id);
+  if (evidence) {
+    brief(record, "Measurement", evidence.measurement);
+    const controls = el("p");
+    const copy = el("button", "Copy citation");
+    copy.type = "button";
+    copy.dataset.copyCitation = evidence.citation_text;
+    const feedback = el("span");
+    feedback.setAttribute("role", "status");
+    controls.append(copy, feedback);
+    record.append(controls);
+  }
   if (node.unmeasured?.length) brief(record, "Outside measurement", node.unmeasured.join(", "));
   for (const locator of node.locators || []) {
     if (localLink(locator.url)) record.append(link(locator.label, localLink(locator.url)));
@@ -487,9 +526,18 @@ function applyLocation() {
 
 async function start() {
   try {
-    [manifest, catalog] = await Promise.all([readJSON("manifest.json"), readJSON("search.json")]);
+    const [published, search, evidence] = await Promise.all([
+      readJSON("manifest.json"), readJSON("search.json"), readJSON("evidence-catalog.json"),
+    ]);
+    manifest = published;
+    catalog = search;
     if (catalog.snapshot_id !== manifest.snapshot_id) throw new Error("The search index and graph have different revisions");
+    if (evidence.snapshot_id !== manifest.snapshot_id || evidence.source_commit !== manifest.source_commit) {
+      throw new Error("The evidence catalog and graph have different revisions");
+    }
     catalogById = new Map(catalog.records.map((row) => [row[0], row]));
+    evidenceById = new Map(evidence.records.map(record => [record.id, record]));
+    evidenceRank = asiEvidenceSearch.index(evidence.records);
     for (const name of catalog.kinds) {
       const option = el("option", label(name));
       option.value = name;

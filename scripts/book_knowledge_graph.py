@@ -15,7 +15,7 @@ import sys
 from urllib.parse import urlsplit
 
 from build_human_reader_current import CONCEPT_ENTRY_POINTS, slugify
-from research_case_rows import anchor as run_anchor
+from research_case_rows import anchor as run_anchor, rows_for, study_arm_label
 import research_studies
 
 
@@ -32,6 +32,8 @@ IDENTITIES = "evidence_quality/claim_identity_graph.json"
 CITATIONS = "products/claim_citations.json"
 CITATION_PAGE = "products/evidence-registry/claim-citations.html"
 PASSAGES = "products/evidence_passages.json"
+CASES = "products/evidence_cases.json"
+CHAPTER_HISTORY = "docs/chapter_history_ledger.md"
 PROOFS = "proofs/proof_manifest.json"
 STUDIES = "products/research_studies.json"
 CLAIM_ADDENDA = (
@@ -50,7 +52,7 @@ SOURCE_TARGET_ALIASES = {
 SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
 LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
 NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
-                       "examines_run", "discusses_claim", "cites_source", "follows_up",
+                       "examines_run", "case_of_run", "related_proof", "discusses_claim", "cites_source", "follows_up",
                        "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
                        "defined_by", "explained_by", "contains", "assigned_to")
 PATH_PREDICATES = frozenset(NAVIGATION_PRIORITY) - {"contains", "assigned_to"}
@@ -246,6 +248,18 @@ def concept_records(graph, owners):
             graph.edge(f"concept:{slug}", "related_term", f"concept:{glossary_id}",
                        "scripts/build_human_reader_current.py", "CONCEPT_ENTRY_POINTS:" + slug)
 
+def retired_chapter_routes(graph, chapters):
+    candidates = {}
+    for number, line in enumerate(graph.text(CHAPTER_HISTORY).splitlines(), 1):
+        columns = [column.strip() for column in line.strip("|").split("|")]
+        if len(columns) < 5 or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", columns[0]):
+            continue
+        former, current = columns[1].strip("`"), columns[4].strip("`")
+        if former not in chapters and current in chapters:
+            candidates.setdefault(former, []).append((current, source(CHAPTER_HISTORY, f"line:{number}")))
+    return {former: entries[0] for former, entries in candidates.items() if len(entries) == 1}
+
+
 def claim_records(graph, chapters):
     staged = []
     for path in (CLAIMS, *CLAIM_ADDENDA):
@@ -275,6 +289,7 @@ def claim_records(graph, chapters):
                 graph.edge(concept, "has_concept_claim", key, path, pointer)
                 graph.edge(concept, "explained_by", f"chapter:{owner}", path, pointer)
             staged.append((key, path, pointer, row))
+    retired_routes = retired_chapter_routes(graph, chapters)
     for key, path, pointer, row in staged:
         for i, dependency in enumerate(row.get("dependencies", [])):
             locator = f"{pointer}/dependencies/{i}"
@@ -283,6 +298,11 @@ def claim_records(graph, chapters):
             if len(candidates) == 1:
                 graph.edge(key, "declares_dependency", candidates[0], path, locator,
                            target_kind=graph.nodes[candidates[0]]["kind"], evidence_effect="none")
+            elif not candidates and dependency in retired_routes:
+                target, origin = retired_routes[dependency]
+                graph.edge(key, "declares_dependency", "chapter:" + target, path, locator,
+                           target_kind="chapter", via_alias=True, recorded_target=dependency,
+                           alias_origin=origin, evidence_effect="none")
             else:
                 reason = "ambiguous retained reference" if candidates else "unresolved retained reference"
                 graph.gap(key, "declares_dependency", dependency, path, locator, reason)
@@ -308,18 +328,31 @@ def citation_inputs(read):
 
 
 def claim_citations(read):
+    proofs = {row["tag"]: row for row in json.loads(read(PROOFS))["records"]}
     for selection, identity in citation_inputs(read):
         record = read(identity["transition_path"])
         if sha256(record).hexdigest() != identity["transition_sha256"]:
             raise ValueError(f"citation transition digest changed: {selection['id']}")
         transition = json.loads(record)
-        yield {**selection, "transition": identity["transition_path"],
+        citation = {**selection, "transition": identity["transition_path"],
                "transition_id": identity["transition_id"], "relation": identity["primary_relation"],
                "url": f"{CITATION_PAGE}#{selection['id']}", "parent": identity["canonical_parent_id"],
                "parent_effect": identity["parent_support_state_effect"],
                "proposition": transition["scope_boundary"], "state": transition["new_support_state"],
                "decision": transition["transition_effect"], "limits": transition["limitations"],
                "run_sha256": sha256(read(selection["run"])).hexdigest()}
+        if tag := selection.get("related_proof"):
+            proof = proofs[tag]
+            if proof["status"] != "implemented" or proof["chapter_id"] != identity["owner_chapter_id"]:
+                raise ValueError(f"citation proof belongs to another scope: {tag}")
+            citation["proof"] = {
+                "tag": tag,
+                "url": f'{CITATION_PAGE}#proof-{selection["id"]}',
+                "proposition": proof["formal_target"],
+                "limit": selection["proof_scope"],
+                "module_path": proof["module_path"],
+            }
+        yield citation
 
 
 def evidence_records(graph):
@@ -347,7 +380,8 @@ def evidence_records(graph):
         return graph.text(path).encode("utf-8")
 
     for citation in claim_citations(citation_bytes):
-        transition = graph.nodes["transition:" + citation["transition_id"]]
+        transition_id = "transition:" + citation["transition_id"]
+        transition = graph.nodes[transition_id]
         transition["url"] = citation["url"]
         transition["summary"] = citation["proposition"]
         transition["limit"] = ". ".join(item.rstrip(".") for item in citation["limits"]) + "."
@@ -356,6 +390,14 @@ def evidence_records(graph):
         claim = graph.nodes.get("claim:" + citation["id"])
         if claim is not None and claim["role"] != "core":
             claim["url"] = citation["url"]
+        if proof := citation.get("proof"):
+            proof_key = "proof_target:" + proof["tag"]
+            graph.nodes[proof_key].update(url=proof["url"], summary=proof["proposition"], limit=proof["limit"],
+                                          citation_title="Circle finite public-consumer gate",
+                                          measurement="Finite formal target", method=graph.nodes[proof_key]["module"])
+            position = next(i for i, row in enumerate(graph.data(CITATIONS)) if row["id"] == citation["id"])
+            graph.edge(transition_id, "related_proof", proof_key, CITATIONS, f"/{position}/related_proof",
+                       scope=proof["limit"], evidence_effect="none")
 
     manifest = graph.data(STUDIES)
     for i, study in enumerate(research_studies.studies_from(manifest, lambda p: graph.text(str(p)).encode("utf-8"))):
@@ -378,7 +420,8 @@ def evidence_records(graph):
                                   source_commit=run["source_commit"], disposition=run["disposition"],
                                   unmeasured=run.get("unmeasured", []), date=run["date"],
                                   method=run["method"], protocol=run["protocol"], result=run["result"],
-                                  question=study["question"], featured=study["featured_run"] == run["id"])
+                                  question=study["question"], featured=study["featured_run"] == run["id"],
+                                  format=run["format"])
             graph.edge(key,"retains_run",identity,STUDIES,run_locator,featured=study["featured_run"]==run["id"])
             if run.get("follow_up_to"):
                 graph.edge(identity, "follows_up", "study_run:" + run["follow_up_to"], STUDIES,
@@ -397,6 +440,30 @@ def evidence_passages(graph):
                        evidence_effect="none")
 
 
+def evidence_cases(graph):
+    normalized = {}
+    for i, selection in enumerate(graph.data(CASES)):
+        run_id = selection["run"]
+        run_key = "study_run:" + run_id
+        run = graph.nodes[run_key]
+        if run_id not in normalized:
+            result = graph.data(run["result"])
+            normalized[run_id] = {row["id"]: row for row in rows_for(run["format"], result)}
+        row = normalized[run_id][selection["case"]]
+        arms = [f'{study_arm_label(name)}: {row["arms"][name]["outcome"]}'
+                for name in selection.get("arms", row["arms"])]
+        locator = f"/{i}"
+        anchor = run_anchor(run_id, row["id"])
+        key = graph.node("evidence_case", f'{run_id}--{row["id"]}', CASES, locator,
+                         title=selection["title"], question=selection["question"],
+                         summary=". ".join(arms) + ".", limit=selection["limit"], method=row["condition"],
+                         aliases=selection["aliases"], source_commit=run["source_commit"],
+                         measurement="Authored paired case",
+                         result_sha256=run["result_sha256"], date=run["date"],
+                         url=run["url"].split("#", 1)[0] + "#" + anchor)
+        graph.edge(key, "case_of_run", run_key, CASES, locator + "/case", evidence_effect="none")
+
+
 def compile_graph(read, *, source_commit, worktree):
     graph = Graph(read)
     for path in ("scripts/book_knowledge_graph.py", "scripts/build_human_reader_current.py",
@@ -411,6 +478,7 @@ def compile_graph(read, *, source_commit, worktree):
     claim_records(graph, chapters)
     evidence_records(graph)
     evidence_passages(graph)
+    evidence_cases(graph)
     for edge in graph.edges:
         if edge["from"] not in graph.nodes or edge["to"] not in graph.nodes:
             raise ValueError(f"graph edge has an unknown endpoint: {edge}")
@@ -444,8 +512,26 @@ def search_metadata(node, display_title):
 
 def evidence_catalog(graph):
     """Expose the same bounded records used to build the graph's search index."""
-    kinds = {"study", "study_run", "evidence_passage", "transition"}
-    records = [node for node in graph["nodes"] if node["kind"] in kinds and node.get("url")]
+    kinds = {"study", "study_run", "evidence_passage", "evidence_case", "transition", "proof_target"}
+    records = []
+    for node in graph["nodes"]:
+        if node["kind"] not in kinds or not node.get("url"):
+            continue
+        measurement = node.get("measurement") or {
+            "study_run": "Measured under stated conditions",
+            "transition": "Retained evidence decision",
+        }.get(node["kind"], "")
+        fields = [
+            node.get("citation_title", node["title"]),
+            f'https://corbensorenson.github.io/asi-stack-book/{node["url"]}',
+            f'Evidence record {node["id"]}',
+            f'Book revision {graph["source_commit"]}',
+        ]
+        for label, key in (("Evidence revision", "source_commit"), ("Result SHA-256", "result_sha256"),
+                           ("Method", "method"), ("Scope", "limit")):
+            if key in node:
+                fields.append(f"{label} — {node[key]}")
+        records.append({**node, "measurement": measurement, "citation_text": "\n".join(fields)})
     return {
         "schema_version": "asi-stack.evidence-catalog.v1",
         "source_commit": graph["source_commit"],

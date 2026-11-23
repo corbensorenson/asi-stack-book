@@ -23,11 +23,15 @@ GRAPH = "products/evidence-registry/knowledge-graph"
 CATALOG = "evidence-catalog.json"
 SEARCH_INDEXES = ("search.json", "reader/search.json", "papers/search.json")
 QUARTO_SEARCH_SCRIPT = "site_libs/quarto-search/quarto-search.js"
+SEARCH_ADAPTER_ASSETS = ("assets/evidence-search.js", "assets/quarto-evidence-search.js")
+ADAPTER_END = "/* End ASI Stack evidence-search adapter. */\n"
 EVIDENCE_LABELS = {
     "study": "Research study",
     "study_run": "Study run",
     "transition": "Bounded claim",
     "evidence_passage": "Evidence passage",
+    "evidence_case": "Paired case",
+    "proof_target": "Proof target",
 }
 
 # These are section identities hidden by the technical Condensed projection.
@@ -87,7 +91,7 @@ def evidence_entries(site: Path, commit: str) -> list[dict]:
         body = " ".join(record[key] for key in ("question", "summary", "limit", "disposition") if record.get(key))
         aliases = [record["id"], record["id"].split(":", 1)[1],
                    *record.get("aliases", []), *record.get("unmeasured", [])]
-        for destination in [{"url": record["url"]}, *record.get("locators", [])]:
+        for position, destination in enumerate([{"url": record["url"]}, *record.get("locators", [])]):
             uri = urlsplit(destination["url"])
             if uri.scheme or uri.netloc or uri.path.startswith("/") or ".." in Path(uri.path).parts:
                 raise ValueError(f'Invalid research search destination: {destination["url"]}')
@@ -99,7 +103,8 @@ def evidence_entries(site: Path, commit: str) -> list[dict]:
                             "href": destination["url"], "title": title,
                             "section": destination.get("label", category),
                             "text": " ".join((body, *aliases)), "crumbs": [],
-                            "evidence_id": record["id"], "evidence_kind": category})
+                            "evidence_id": record["id"], "evidence_kind": category, "asi_scope": "evidence",
+                            "evidence_primary": position == 0, "evidence": record})
     return entries
 
 
@@ -107,6 +112,7 @@ def index_projection(site: Path, index: str, entries: list[dict]) -> str:
     rows = [row for row in load(site / index) if not row["objectID"].startswith("asi-evidence:")]
     for row in rows:
         target = urlsplit(row["href"])
+        row["asi_scope"] = "history" if target.path == "appendices/F_changelog.html" else "reading"
         if (target.path.startswith("chapters/") and target.fragment in RESEARCH_SECTIONS
                 and not target.query):
             row["href"] = urlunsplit(("", "", target.path, "view=ai", target.fragment))
@@ -120,7 +126,7 @@ def index_projection(site: Path, index: str, entries: list[dict]) -> str:
     return json.dumps(local + rows, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 
-def quarto_search_links(text: str) -> str:
+def quarto_search_links(text: str, adapter: str) -> str:
     # The pinned Quarto template only recognizes ?q=. A result already carrying
     # a reading-mode query has &q=, so the template appends a second search term.
     old = """if (item.text && item.href && !item.href.includes('?q=')) {
@@ -133,11 +139,28 @@ def quarto_search_links(text: str) -> str:
                 const hashAppend = hash ? '#' + hash : ''
                 item.href = main + (main.includes('?') ? '&' : '?') + 'q=' + encodeURIComponent(state.query) + hashAppend
               }"""
-    if text.count(old) == 1:
-        return text.replace(old, fixed)
-    if text.count(fixed) == 1:
-        return text
-    raise ValueError("Quarto search result-link template has changed")
+    text = text.split(ADAPTER_END, 1)[-1]
+
+    def render(before: str, after: str) -> None:
+        nonlocal text
+        if text.count(before) == 1:
+            text = text.replace(before, after)
+        elif text.count(after) != 1:
+            raise ValueError("The pinned Quarto search integration points have changed")
+
+    render(old, fixed)
+    render("""return readSearchData().then(function (fuse) {
+                return fuseSearch(query, fuse, fuseSearchOptions);
+              });""", """return asiReadSearchData().then(() =>
+                asiSearchResults(query, state.context.asiScope || "", fuseSearchOptions));
+              """.rstrip())
+    render('                language["search-no-results-text"]',
+           '                [asiSearchScopes(createElement, state, setContext, refresh), '
+           'language["search-no-results-text"]]')
+    render('                  `${count} ${language["search-matching-documents-text"]}`',
+           '                  [asiSearchScopes(createElement, state, setContext, refresh), '
+           '`${count} ${language["search-matching-documents-text"]}`]')
+    return adapter + "\n" + ADAPTER_END + text
 
 
 def book_citation_entries(site: Path, chapters: list[dict], sources: list[dict]) -> list[dict]:
@@ -185,11 +208,12 @@ def main() -> None:
     ))
     research = evidence_entries(site, commit)
     citations = book_citation_entries(site, chapters, load(ROOT / "sources/source_inventory.json"))
+    adapter = "\n".join((ROOT / path).read_text(encoding="utf-8") for path in SEARCH_ADAPTER_ASSETS)
     for index in SEARCH_INDEXES:
         entries = citations + research if index == "search.json" else research
         files.write(site / index, index_projection(site, index, entries))
         script = site / Path(index).parent / QUARTO_SEARCH_SCRIPT
-        files.write(script, quarto_search_links(files.text(script)))
+        files.write(script, quarto_search_links(files.text(script), adapter))
     changes = files.changes(site)
     if changes:
         raise SystemExit(f"Public reading routes are stale: {[row['path'] for row in changes]}")

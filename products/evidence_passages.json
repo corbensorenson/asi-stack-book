@@ -7,6 +7,8 @@
     "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
     "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
     "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+    "measurement": "Failed declared threshold",
+    "method": "Same-seed rescoring after completing the feasible comparator pool.",
     "aliases": ["buy all baseline", "Atlas comparator correction", "0.035299", "headroom threshold"],
     "links": [
       {"predicate": "discusses_claim", "target": "claim:benchmark-ratchets-and-anti-goodhart-evidence.core"},
@@ -25,6 +27,8 @@
     "summary": "The dashboard mirrors the supplier webhook. The two displays establish one reported event. A dock observation tied to this shipment and cutoff could establish receipt independently.",
     "limit": "This is an authored exercise about observation lineage. It provides no field estimate of error correlation or the benefit of independent audits.",
     "disposition": "Retain the narrower reported-event claim and seek a separate observation of arrival.",
+    "measurement": "Authored exercise",
+    "method": "Trace each receipt to its originating observation.",
     "aliases": ["shipment", "shared webhook", "two logs agree", "independent corroboration", "shared observation"],
     "links": [
       {"predicate": "explained_by", "target": "reader_unit:unit-15"},
@@ -76,6 +80,9 @@
     "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
     "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
     "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+    "measurement": "Outside measurement for operator time",
+    "unmeasured": ["active operator time", "production labor savings"],
+    "method": "Matched local revision and process-boundary checks.",
     "aliases": ["verifier operator time", "production operator minutes", "verifier revision freshness", "serialized handoff work"],
     "links": [
       {"predicate": "discusses_claim", "target": "claim:stable-capability-fields.core"},

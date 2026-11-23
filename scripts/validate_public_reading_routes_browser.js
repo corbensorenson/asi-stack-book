@@ -69,6 +69,62 @@ async function search(browser, root, query, expected) {
   }
 }
 
+async function checkResearchFacets(context) {
+  const page = await context.newPage();
+  const registry = root + "products/evidence-registry/";
+  try {
+    await page.goto(root);
+    await page.locator("#quarto-search button").first().click();
+    const input = page.locator("input.aa-Input:visible").first();
+    const scope = page.getByRole("combobox", { name: "Search scope" });
+    const hits = page.locator("li.aa-Item a.search-result-link");
+    await input.fill("scheduler");
+    await hits.first().waitFor();
+    await scope.selectOption("history");
+    await page.waitForFunction(() => {
+      const hits = Array.from(document.querySelectorAll("li.aa-Item a.search-result-link"));
+      return hits.length && hits.every(hit => new URL(hit.href).pathname.endsWith("/F_changelog.html"));
+    });
+    await scope.selectOption("reading");
+    await page.waitForFunction(() => {
+      const hits = Array.from(document.querySelectorAll("li.aa-Item a.search-result-link"));
+      return hits.length && hits.every(hit => !new URL(hit.href).pathname.endsWith("/F_changelog.html"));
+    });
+    await scope.selectOption("evidence");
+    await input.fill("production operator minutes");
+    const evidence = hits.filter({ hasText: /Verifier revision checks and measured work/ }).first();
+    await evidence.waitFor();
+    assert.match(await evidence.innerText(), /outside measurement|no active operator time was measured/i);
+
+    const caseId = "evidence_case:receiver-availability--pair-064";
+    const graph = registry + "knowledge-graph/?node=" + encodeURIComponent(caseId);
+    await page.goto(graph);
+    const record = page.locator("#record");
+    const copy = record.getByRole("button", {name: "Copy citation"});
+    await copy.waitFor();
+    const citation = await copy.getAttribute("data-copy-citation");
+    assert.match(citation, /#run-receiver-availability--case-pair-064\n/);
+    assert.match(citation, /Evidence revision — [a-f0-9]{40}/);
+    assert.match(citation, /\nScope — /);
+    await copy.click();
+    await record.getByText(/Citation copied|Citation selected for copying/).waitFor();
+    await record.getByRole("link", {name: "Open in the book", exact: true}).click();
+    const row = page.locator("#run-receiver-availability--case-pair-064");
+    assert(await row.isVisible());
+    await row.getByRole("link", {name: "Open in the graph", exact: true}).click();
+    assert.equal(new URL(page.url()).searchParams.get("node"), caseId);
+
+    await page.goto(registry + "research-comparisons.html#receiver-placement");
+    const comparison = page.locator("#receiver-placement");
+    assert(await comparison.getByText(/48 of 288 paired cells.*each verified 80/).isVisible());
+    const copies = await comparison.getByRole("button", {name: "Copy citation"})
+      .evaluateAll(buttons => buttons.map(button => button.dataset.copyCitation));
+    assert(copies.includes(citation));
+  } finally {
+    await page.close();
+  }
+}
+
 async function checkEquationScroll(page, selector) {
   const equations = page.locator(selector);
   const index = await equations.evaluateAll(elements =>
@@ -125,6 +181,7 @@ async function checkKnowledgeGraph(context, root) {
     await page.goto(route);
     await page.getByRole("heading", { name: "Receipt", exact: true }).waitFor();
     assert(await page.getByRole("heading", { name: "Evidence limit", exact: true }).isVisible());
+    await page.getByRole("combobox", { name: "Record type" }).selectOption("source");
     await page.getByRole("searchbox", { name: "Search the graph" }).fill("e-means");
     await page.getByRole("button", { name: "Search", exact: true }).click();
     await page.locator("#results a").first().click();
@@ -281,6 +338,7 @@ async function main() {
       await checkKnowledgeGraph(context, root);
       await checkStudyCases(context);
       await checkEditorialRoutes(context);
+      await checkResearchFacets(context);
     }
 
     const page = await context.newPage();

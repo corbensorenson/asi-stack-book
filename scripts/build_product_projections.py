@@ -9,6 +9,7 @@ import hashlib
 import json
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlencode
 
 import build_knowledge_graph_companion as knowledge
 import book_knowledge_graph as graph
@@ -17,7 +18,7 @@ from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
 from projection_files import ProjectionFiles
 import research_studies as research
-from research_case_rows import anchor as research_anchor, export_csv, rows_for
+from research_case_rows import ARM_LABELS, anchor as research_anchor, export_csv, rows_for, study_arm_label
 
 
 STRUCTURE = ROOT / "book_structure.json"
@@ -531,27 +532,6 @@ def build_reference(
     return manifest
 
 
-ARM_LABELS = {
-    "conventional": "Conventional", "full_governed": "Governed",
-    "conventional_status": "Conventional status", "additional_observation": "Additional observation",
-    "additional_endpoint": "Additional endpoint", "matched_conventional_access": "One endpoint with matched access",
-    "bound_handoff": "Retained qualification", "no_library": "No library",
-    "ordinary_retrieval": "Ordinary retrieval", "reusable_routines": "Extracted routines",
-    "aware_whole": "Query-aware whole", "aware_routine": "Query-aware routine",
-    "blind_whole": "Query-blind whole", "blind_routine": "Query-blind routine",
-    "conventional_memoization": "Conventional memoization",
-    "retained_qualification": "Serialized handoff",
-    "cached_permission_only": "Cached permission",
-    "transactional_memo": "Version-checked transaction",
-    "transactional_receipt": "Transaction with serialized receipt",
-}
-
-
-def study_arm_label(key: str) -> str:
-    arm, _, scheduler = key.partition("__")
-    return f"{ARM_LABELS[arm]} · {scheduler.replace('-', ' ')}" if scheduler else ARM_LABELS[arm]
-
-
 def study_table(label: str, headings: list[str], rows: str) -> str:
     header = "".join(f'<th scope="col">{escape(heading)}</th>' for heading in headings)
     return (
@@ -560,7 +540,12 @@ def study_table(label: str, headings: list[str], rows: str) -> str:
     )
 
 
-def paired_case_table(run: dict, cases: list[dict]) -> str:
+def graph_link(record_id: str, label: str = "Open in the graph") -> str:
+    target = "knowledge-graph/?" + urlencode({"node": record_id})
+    return f'<a href="{escape(target)}">{escape(label)}</a>'
+
+
+def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
     rows = []
     for row in cases:
         fragment = research_anchor(run["id"], row["id"])
@@ -569,8 +554,10 @@ def paired_case_table(run: dict, cases: list[dict]) -> str:
             for value in row["arms"].values()
         )
         attributes = "".join(f" data-{name}" for name in ("disagrees", "exhausted", "adverse") if row[name])
+        graph_id = f'evidence_case:{run["id"]}--{row["id"]}'
+        graph_route = f'<br><small>{graph_link(graph_id)}</small>' if graph_id in featured else ""
         rows.append(
-            f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a></th>'
+            f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a>{graph_route}</th>'
             f'<td>{escape(row["condition"])}</td>{outcomes}</tr>'
         )
     differences = sum(row["disagrees"] for row in cases)
@@ -680,7 +667,7 @@ def study_outcomes(format_id: str, result: dict) -> str:
     return ""
 
 
-def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: str = "") -> str:
+def render_run(study: dict, row: dict, result: dict, cases: list[dict], featured: set[str], replay: str = "") -> str:
     source = f'{research.REPO}/blob/{row["source_commit"]}'
     artifacts = [("Raw paired result", row["result"]), ("Pinned protocol", row["protocol"]), *(
         (Path(target).name, target) for target in row["inputs"] if target != row["protocol"]
@@ -699,6 +686,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
         f'{follows}<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
         f'{study_outcomes(row["format"], result)}'
         f'<h4>Scope and limits</h4><p>{escape(row["limit"])}</p>'
+        f'<p>{graph_link("study_run:" + row["id"])}</p>'
         f'<h4>Disposition</h4><p>{escape(row["disposition"])}</p>'
         f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'
         f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>'
@@ -707,7 +695,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
         f'<em>The ASI Stack</em>, {escape(row["date"])}. Run <code>{row["id"]}</code>, evidence revision '
         f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
         f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
-        + paired_case_table(row, cases) + "</section>"
+        + paired_case_table(row, cases, featured) + "</section>"
     )
 
 
@@ -775,7 +763,7 @@ def independent_reports(reports: list[dict], study: dict, status: dict) -> str:
 
 
 def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None,
-                   payload: ProductPayload | None) -> tuple[list[dict], str]:
+                   payload: ProductPayload | None, featured: set[str]) -> tuple[list[dict], str]:
     def read(name):
         return inputs.data[ROOT / name] if inputs else (ROOT / name).read_bytes()
 
@@ -831,7 +819,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                 csv_path.write_bytes(export)
             else:
                 payload.write(csv_path, export)
-            sections.append(render_run(study, row, result, cases, replay_links.get(row["id"], "")))
+            sections.append(render_run(study, row, result, cases, featured, replay_links.get(row["id"], "")))
             label = " · featured" if row["id"] == study["featured_run"] else ""
             run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
         links = ""
@@ -917,6 +905,15 @@ def build_claim_citations(product_dir, inputs, payload):
             else:
                 payload.write(target, data)
         limits = "".join(f"<li>{escape(limit)}</li>" for limit in citation["limits"])
+        related = ""
+        if proof := citation.get("proof"):
+            anchor = proof["url"].split("#", 1)[1]
+            related = (
+                f'<aside id="{escape(anchor)}"><h3>Related formal target</h3>'
+                f'<p><code>{escape(proof["tag"])}</code> · {escape(proof["proposition"])}</p>'
+                f'<p>{escape(proof["limit"])}</p>'
+                f'<p>{graph_link("proof_target:" + proof["tag"], "Open the formal target in the graph")}</p></aside>'
+            )
         sections.append(
             f'<section id="{escape(citation["id"])}"><h2>{escape(citation["title"])}</h2>'
             f'<p>{escape(citation["proposition"])}</p>'
@@ -925,9 +922,10 @@ def build_claim_citations(product_dir, inputs, payload):
             f'chapter claim</a> is <code>{escape(citation["relation"])}</code>. '
             f'Effect on parent support <strong>{escape(citation["parent_effect"])}</strong>.</p>'
             f'<p><a href="artifacts/{escape(citation["run"])}">Exact result</a> · '
-            f'<a href="artifacts/{escape(citation["transition"])}">Recorded evidence decision</a></p>'
+            f'<a href="artifacts/{escape(citation["transition"])}">Recorded evidence decision</a> · '
+            f'{graph_link("transition:" + citation["transition_id"])}</p>'
             f'<h3>Scope and limits</h3><ul>{limits}</ul>'
-            f'<p>Result SHA-256 <code>{citation["run_sha256"]}</code></p></section>'
+            f'<p>Result SHA-256 <code>{citation["run_sha256"]}</code></p>{related}</section>'
         )
     write_text(product_dir / "claim-citations.html",
                page("Selected non-core claims", "Cite a bounded proposition, its exact run, and the recorded limits.",
@@ -936,12 +934,48 @@ def build_claim_citations(product_dir, inputs, payload):
     return len(citations)
 
 
+def research_comparisons(product_dir: Path, catalog: dict, payload: ProductPayload | None) -> None:
+    records = {row["id"]: row for row in catalog["records"]}
+    comparisons = (
+        ("receiver-placement", "Choose where a second status lookup runs",
+         ("study_run:receiver-availability", "evidence_case:receiver-availability--pair-024",
+          "evidence_case:receiver-availability--pair-064")),
+        ("verifier-freshness", "Separate verifier freshness from cache format",
+         ("study_run:verifier-floor-cache", "study_run:verifier-revision-freshness",
+          "study_run:verifier-process-boundary")),
+        ("scheduler-and-budget", "Choose a reuse representation under the actual work cap",
+         ("study_run:transfer-factorial", "study_run:transfer-scheduler-audit",
+          "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed")),
+        ("baseline-admission", "Check the strongest feasible comparator",
+         ("evidence_passage:atlas-corrected-decision", "study_run:git-retrospective")),
+    )
+    sections = []
+    for identity, title, keys in comparisons:
+        snippets = []
+        for key in keys:
+            row = records[key]
+            href = safe_rel_link("products/evidence-registry", row["url"])
+            snippets.append(f'<h3><a href="{escape(href)}">{escape(row["title"])}</a></h3>'
+                            f'<p>{escape(row["summary"])}</p>'
+                            f'<p><strong>Scope</strong> {escape(row["limit"])}</p>'
+                            f'<p>{graph_link(key)} · <button type="button" data-copy-citation="'
+                            f'{escape(row["citation_text"])}">Copy citation</button> <span role="status"></span></p>')
+        sections.append(f'<section id="{identity}"><h2>{escape(title)}</h2>{"".join(snippets)}</section>')
+    body = ('<p><a href="index.html">Return to the Evidence Registry</a></p>' + "".join(sections)
+            + '<script src="knowledge-graph/evidence-citation.js" defer></script>')
+    write_text(product_dir / "research-comparisons.html",
+               page("Research comparisons", "Read the conditions that changed each decision and open the exact records.",
+                    body, "knowledge-graph/evidence-catalog.json", show_portfolio=False), payload)
+
+
 def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
-                   payload: ProductPayload | None = None, companion: dict | None = None) -> dict[str, Any]:
+                   payload: ProductPayload | None = None, companion: dict | None = None,
+                   catalog: dict | None = None) -> dict[str, Any]:
     product_dir = output / "evidence-registry"
     if payload is None:
         product_dir.mkdir(parents=True, exist_ok=True)
-    studies, study_cards = build_research(product_dir, status, inputs, payload)
+    featured_cases = {row["id"] for row in (catalog or {}).get("records", []) if row["kind"] == "evidence_case"}
+    studies, study_cards = build_research(product_dir, status, inputs, payload, featured_cases)
     citation_count = build_claim_citations(product_dir, inputs, payload)
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:
@@ -1008,6 +1042,11 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
             '<p><a href="knowledge-graph/index.html">Open the knowledge graph</a> to follow concepts, claims, and evidence. '
             '<a href="knowledge-graph/manifest.json">Agent manifest</a>.</p>'
         )
+    comparison_link = ""
+    if catalog is not None:
+        research_comparisons(product_dir, catalog, payload)
+        manifest["research_comparisons"] = "research-comparisons.html"
+        comparison_link = ' · <a href="research-comparisons.html">Research comparisons</a>'
     sections = []
     for group in published_groups:
         cards = []
@@ -1024,7 +1063,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
         '<h2>Research studies and replays</h2>'
         '<p><a href="research-agenda.html">Active research agenda</a> · '
-        '<a href="research-studies.json">Study data and citations</a></p>'
+        f'<a href="research-studies.json">Study data and citations</a>{comparison_link}</p>'
         f'<div class="grid">{study_cards}</div>'
         '<h2>Follow a claim into its evidence</h2>'
         '<p><a href="claim-citations.html">Cite a selected non-core claim</a> with its recorded scope and exact result.</p>'
@@ -1072,7 +1111,8 @@ def prepare_payload(output: Path, inputs: ProductInputs) -> ProductPayload:
     for name, data in graph_files.items():
         payload.write(output / knowledge.COMPANION_DIR / name, data)
     evidence = build_evidence(output, status, inputs=inputs, payload=payload,
-                              companion=json.loads(graph_files["manifest.json"]))
+                              companion=json.loads(graph_files["manifest.json"]),
+                              catalog=json.loads(graph_files["evidence-catalog.json"]))
     product_rows = [
         {
             "id": "narrative_book",

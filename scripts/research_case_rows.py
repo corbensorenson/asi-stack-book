@@ -7,6 +7,27 @@ from io import StringIO
 import re
 
 
+ARM_LABELS = {
+    "conventional": "Conventional", "full_governed": "Governed",
+    "conventional_status": "Conventional status", "additional_observation": "Additional observation",
+    "additional_endpoint": "Additional endpoint", "matched_conventional_access": "One endpoint with matched access",
+    "bound_handoff": "Retained qualification", "no_library": "No library",
+    "ordinary_retrieval": "Ordinary retrieval", "reusable_routines": "Extracted routines",
+    "aware_whole": "Query-aware whole", "aware_routine": "Query-aware routine",
+    "blind_whole": "Query-blind whole", "blind_routine": "Query-blind routine",
+    "conventional_memoization": "Conventional memoization",
+    "retained_qualification": "Serialized handoff",
+    "cached_permission_only": "Cached permission",
+    "transactional_memo": "Version-checked transaction",
+    "transactional_receipt": "Transaction with serialized receipt",
+}
+
+
+def study_arm_label(key: str) -> str:
+    arm, _, scheduler = key.partition("__")
+    return f"{ARM_LABELS[arm]} · {scheduler.replace('-', ' ')}" if scheduler else ARM_LABELS[arm]
+
+
 def slug(value: str) -> str:
     return re.sub(r"[^a-z0-9-]+", "-", value.lower()).strip("-")
 

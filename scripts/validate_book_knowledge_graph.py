@@ -7,6 +7,7 @@ from collections import Counter, defaultdict
 import json
 
 import book_knowledge_graph as kg
+from build_knowledge_graph_companion import dependency_inventory
 
 
 RETRIEVAL_TASKS = "experiments/knowledge_graph_navigation/retrieval_tasks.json"
@@ -19,6 +20,10 @@ def check_published_packets(directory, graph, manifest):
     assert catalog["snapshot_id"] == snapshot
     evidence = json.loads((directory / manifest["evidence_catalog"]).read_bytes())
     assert evidence == kg.evidence_catalog(graph)
+    inventory = json.loads((directory / manifest["dependency_inventory"]).read_bytes())
+    assert inventory == dependency_inventory(graph)
+    assert sum(row["occurrences"] for row in inventory["unresolved"]) == len(graph["unresolved"])
+    assert any(row["reference"] == "privacy-rights-and-legal-constraints" for row in inventory["unresolved"])
     positions = [row[0] for row in catalog["records"]]
     assert positions == [node["id"] for node in graph["nodes"]]
     limits = manifest["limits"]
