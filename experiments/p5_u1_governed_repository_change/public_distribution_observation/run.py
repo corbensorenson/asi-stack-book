@@ -46,6 +46,7 @@ def fetch(url, limit):
     return raw, {
         "requested_url": url, "final_url": response.get("url_effective"),
         "http_status": status, "redirects": response.get("num_redirects", 0),
+        "response_header_bytes": int(response.get("size_header", 0)),
         "received_bytes": len(raw), "body_sha256": sha256(raw).hexdigest() if raw else None,
         "elapsed_ms": elapsed,
         "error": f"curl_exit_{result.returncode}" if result.returncode else (None if status == 200 else f"http_{status}"),

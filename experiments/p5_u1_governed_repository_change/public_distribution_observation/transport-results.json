@@ -1,0 +1,2566 @@
+{
+  "started_utc": "2026-11-23T10:30:15.883824+00:00",
+  "finished_utc": "2026-11-23T10:30:24.545545+00:00",
+  "cohort_sha256": "c5a2e10d48082712ca9e317106d2e5d95bd93089b2ec36590353a9e40152eb56",
+  "protocol_sha256": "0e21cbeca7d2396c012c7cb66c983d77f20b5d5d61f0f6710fc0502e54644efe",
+  "human_operator_time_ms": null,
+  "observations": [
+    {
+      "package": "kind-of",
+      "version": "6.0.3",
+      "reference": {
+        "expected": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz",
+          "final_url": "https://registry.npmjs.org/kind-of/-/kind-of-6.0.3.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 726,
+          "received_bytes": 7647,
+          "body_sha256": "6c24443b5b6ca52d3dce399c1e2c27c4591c7529765513eeaa0c265b0c0e63da",
+          "elapsed_ms": 116.244,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+        "final_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 794,
+        "received_bytes": 1830,
+        "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+        "elapsed_ms": 231.236,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 261.805,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1830,
+            "upstream_header_bytes": 733,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 2563,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/kind-of@6.0.3/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 733,
+                "received_bytes": 1830,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 260.434,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 194.658,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1830,
+            "upstream_header_bytes": 1041,
+            "gateway_body_bytes": 1830,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 4847,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/kind-of@6.0.3/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1041,
+                "received_bytes": 1830,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 192.143,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 78.969,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1830,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 1830,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 4608,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "final_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 1830,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 77.042,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 73.297,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1830,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 2632,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "final_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 1830,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 71.879,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.007,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.901,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.312,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "final_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 200.953,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.004,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "final_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 200.953,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "util-deprecate",
+      "version": "1.0.2",
+      "reference": {
+        "expected": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+          "final_url": "https://registry.npmjs.org/util-deprecate/-/util-deprecate-1.0.2.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 726,
+          "received_bytes": 2246,
+          "body_sha256": "79a1de983c1b393180c47456d6b73caab278a00ea6e37d5c6675f2dcdec2a3e5",
+          "elapsed_ms": 89.924,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+        "final_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 794,
+        "received_bytes": 694,
+        "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+        "elapsed_ms": 200.953,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 113.74,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 694,
+            "upstream_header_bytes": 1049,
+            "gateway_body_bytes": 694,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2582,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/util-deprecate@1.0.2/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1049,
+                "received_bytes": 694,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 111.908,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 75.606,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 694,
+            "upstream_header_bytes": 1058,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1752,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/util-deprecate@1.0.2/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1058,
+                "received_bytes": 694,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 74.531,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 176.732,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 694,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1496,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "final_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 694,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 175.674,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 97.255,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 694,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 694,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2335,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "final_url": "https://unpkg.com/util-deprecate@1.0.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 694,
+                "body_sha256": "7bba467f049074957e693fc06672848b040c38fa071b6eed8690f5fbe090a8b2",
+                "elapsed_ms": 94.562,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.877,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.003,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.032,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "final_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 209.473,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.752,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "final_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 209.473,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "optionator",
+      "version": "0.9.4",
+      "reference": {
+        "expected": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/optionator/-/optionator-0.9.4.tgz",
+          "final_url": "https://registry.npmjs.org/optionator/-/optionator-0.9.4.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 727,
+          "received_bytes": 14017,
+          "body_sha256": "a772bbe141b4af2c1e65f7530353cd6e978f0349067ea3dc2b0aac2428c2826b",
+          "elapsed_ms": 93.681,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/optionator@0.9.4/package.json",
+        "final_url": "https://unpkg.com/optionator@0.9.4/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 806,
+        "received_bytes": 889,
+        "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+        "elapsed_ms": 209.473,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 290.755,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 889,
+            "upstream_header_bytes": 1044,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1933,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/optionator@0.9.4/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1044,
+                "received_bytes": 889,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 284.65,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 183.499,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 889,
+            "upstream_header_bytes": 1063,
+            "gateway_body_bytes": 889,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2986,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/optionator@0.9.4/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1063,
+                "received_bytes": 889,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 180.299,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 91.471,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 889,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 889,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2737,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "final_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 889,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 89.566,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 98.569,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 889,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1703,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "final_url": "https://unpkg.com/optionator@0.9.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 889,
+                "body_sha256": "8011d3db01182479d3881e788bacb5a9f603ca74bd564c4d26f713d5f5f571d1",
+                "elapsed_ms": 97.427,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.007,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.801,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.341,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "final_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 362.575,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.006,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "final_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 362.575,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "uuid",
+      "version": "8.3.2",
+      "reference": {
+        "expected": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz",
+          "final_url": "https://registry.npmjs.org/uuid/-/uuid-8.3.2.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 1029,
+          "received_bytes": 27977,
+          "body_sha256": "f630703647a5821c735a542edcf8d26c989724efe9d9912ab6f6836a1e79924a",
+          "elapsed_ms": 238.648,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/uuid@8.3.2/package.json",
+        "final_url": "https://unpkg.com/uuid@8.3.2/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 807,
+        "received_bytes": 4428,
+        "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+        "elapsed_ms": 362.575,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 116.657,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 4428,
+            "upstream_header_bytes": 1043,
+            "gateway_body_bytes": 4428,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 10045,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/uuid@8.3.2/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1043,
+                "received_bytes": 4428,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 114.527,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 169.094,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 4428,
+            "upstream_header_bytes": 1064,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 5492,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/uuid@8.3.2/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1064,
+                "received_bytes": 4428,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 167.244,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 90.096,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 4428,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 5242,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "final_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 4428,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 88.453,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 141.115,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 4428,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 4428,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 9816,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "final_url": "https://unpkg.com/uuid@8.3.2/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 4428,
+                "body_sha256": "56c3eae5f83172f7ab5205980ebd9a1328f6436628d893720938d5679208922c",
+                "elapsed_ms": 137.939,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.505,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.002,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.012,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "final_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 240.231,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.37,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "final_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 240.231,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "delayed-stream",
+      "version": "1.0.0",
+      "reference": {
+        "expected": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+          "final_url": "https://registry.npmjs.org/delayed-stream/-/delayed-stream-1.0.0.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 726,
+          "received_bytes": 3464,
+          "body_sha256": "ac38fce4217dfb1d772427c7d8d0d073e35ecd832915e97a61d9ab5c504129d3",
+          "elapsed_ms": 130.135,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+        "final_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 794,
+        "received_bytes": 684,
+        "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+        "elapsed_ms": 240.231,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 110.4,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 684,
+            "upstream_header_bytes": 1045,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1729,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/delayed-stream@1.0.0/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1045,
+                "received_bytes": 684,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 109.109,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 81.784,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 684,
+            "upstream_header_bytes": 1068,
+            "gateway_body_bytes": 684,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2581,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/delayed-stream@1.0.0/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1068,
+                "received_bytes": 684,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 79.298,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 166.372,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 684,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 684,
+            "gateway_header_bytes": 145,
+            "http_response_bytes_all_hops": 2315,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "final_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 684,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 163.885,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 76.684,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 684,
+            "upstream_header_bytes": 802,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 1486,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "final_url": "https://unpkg.com/delayed-stream@1.0.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 802,
+                "received_bytes": 684,
+                "body_sha256": "4f5bd886efbd8feda6ac04db6ac1aa8b2e8dfc159503b0652667e1bc88efd4cb",
+                "elapsed_ms": 75.311,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.007,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.817,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.358,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "final_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 294.915,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.005,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "final_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 294.915,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "xmlchars",
+      "version": "2.2.0",
+      "reference": {
+        "expected": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz",
+          "final_url": "https://registry.npmjs.org/xmlchars/-/xmlchars-2.2.0.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 727,
+          "received_bytes": 11752,
+          "body_sha256": "bdf900298963e4bd95b76aa95e96d29f05687e6ae662d617061778267b576da8",
+          "elapsed_ms": 100.686,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+        "final_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 807,
+        "received_bytes": 2064,
+        "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+        "elapsed_ms": 294.915,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 285.778,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 2064,
+            "upstream_header_bytes": 1054,
+            "gateway_body_bytes": 2064,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 5328,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/xmlchars@2.2.0/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1054,
+                "received_bytes": 2064,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 283.793,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 177.175,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 2064,
+            "upstream_header_bytes": 1057,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 3121,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/xmlchars@2.2.0/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1057,
+                "received_bytes": 2064,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 175.93,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 98.81,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 2064,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 2878,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "final_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 2064,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 97.44,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 92.268,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 2064,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 2064,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 5088,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "final_url": "https://unpkg.com/xmlchars@2.2.0/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 2064,
+                "body_sha256": "a91c0b20003ff9399dde1de8c59681f1b6901c6fb1aac71780a3a876dc548583",
+                "elapsed_ms": 89.807,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.574,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.002,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.01,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "final_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 273.398,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.372,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "final_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 273.398,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "remark",
+      "version": "14.0.3",
+      "reference": {
+        "expected": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/remark/-/remark-14.0.3.tgz",
+          "final_url": "https://registry.npmjs.org/remark/-/remark-14.0.3.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 712,
+          "received_bytes": 5063,
+          "body_sha256": "538bc3a534d87c65d1b7db887b07f0cac80fc583e665f0978ebafed50f6b6a1b",
+          "elapsed_ms": 142.564,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/remark@14.0.3/package.json",
+        "final_url": "https://unpkg.com/remark@14.0.3/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 807,
+        "received_bytes": 1305,
+        "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+        "elapsed_ms": 273.398,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 517.721,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1305,
+            "upstream_header_bytes": 1046,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 2351,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/remark@14.0.3/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1046,
+                "received_bytes": 1305,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 516.103,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 101.844,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1305,
+            "upstream_header_bytes": 1051,
+            "gateway_body_bytes": 1305,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 3807,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/remark@14.0.3/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1051,
+                "received_bytes": 1305,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 98.959,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 188.079,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1305,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 1305,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 3570,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "final_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 1305,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 185.048,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 89.65,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 1305,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 2119,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "final_url": "https://unpkg.com/remark@14.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 1305,
+                "body_sha256": "f33857de004ab8f59257cd375d29060be00e9411fde3dc35b8d32a4c3e0cfaf3",
+                "elapsed_ms": 88.388,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.008,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 1.187,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.534,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 246.194,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.044,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 246.194,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "package": "socks-proxy-agent",
+      "version": "8.0.4",
+      "reference": {
+        "expected": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+        "trace": {
+          "requested_url": "https://registry.npmjs.org/socks-proxy-agent/-/socks-proxy-agent-8.0.4.tgz",
+          "final_url": "https://registry.npmjs.org/socks-proxy-agent/-/socks-proxy-agent-8.0.4.tgz",
+          "http_status": 200,
+          "redirects": 0,
+          "response_header_bytes": 712,
+          "received_bytes": 6663,
+          "body_sha256": "cf3379a2b7871cce86a4c5ac6188ba042f5f7ae8a7b4a19188fe72bf7b2c37f7",
+          "elapsed_ms": 232.389,
+          "error": null
+        },
+        "error": null
+      },
+      "adverse_body_preparation": {
+        "requested_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+        "final_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+        "http_status": 200,
+        "redirects": 0,
+        "response_header_bytes": 807,
+        "received_bytes": 3203,
+        "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+        "elapsed_ms": 246.194,
+        "error": null
+      },
+      "conditions": {
+        "observed": {
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 305.325,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 3203,
+            "upstream_header_bytes": 1046,
+            "gateway_body_bytes": 3203,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 7598,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1046,
+                "received_bytes": 3203,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 302.584,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 153.496,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 3203,
+            "upstream_header_bytes": 1059,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 4262,
+            "traces": [
+              {
+                "requested_url": "https://cdn.jsdelivr.net/npm/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://cdn.jsdelivr.net/npm/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 1059,
+                "received_bytes": 3203,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 152.077,
+                "error": null,
+                "role": "primary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "primary_unavailable": {
+          "caller_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 107.647,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 3203,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 4017,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 3203,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 106.307,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": true,
+            "unresolved": false,
+            "false_closure": false,
+            "elapsed_caller_ms": 104.029,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 1,
+            "upstream_body_bytes": 3203,
+            "upstream_header_bytes": 814,
+            "gateway_body_bytes": 3203,
+            "gateway_header_bytes": 146,
+            "http_response_bytes_all_hops": 7366,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "final_url": "https://unpkg.com/socks-proxy-agent@8.0.4/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 814,
+                "received_bytes": 3203,
+                "body_sha256": "87f7374f424548ee609dac4e3b4569f2d472c69ecccdd4a3c18b337b908c1041",
+                "elapsed_ms": 101.091,
+                "error": null,
+                "role": "secondary",
+                "origin": "live",
+                "http_requests": 1
+              }
+            ]
+          }
+        },
+        "both_unavailable": {
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.914,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          },
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.004,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "role": "secondary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              }
+            ]
+          }
+        },
+        "wrong_body": {
+          "caller_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.014,
+            "caller_http_requests": 0,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 0,
+            "http_response_bytes_all_hops": 0,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "final_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 231.236,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          },
+          "gateway_fallback": {
+            "verified": false,
+            "unresolved": true,
+            "false_closure": false,
+            "elapsed_caller_ms": 0.55,
+            "caller_http_requests": 1,
+            "upstream_http_requests": 0,
+            "upstream_body_bytes": 0,
+            "upstream_header_bytes": 0,
+            "gateway_body_bytes": 0,
+            "gateway_header_bytes": 149,
+            "http_response_bytes_all_hops": 149,
+            "traces": [
+              {
+                "role": "primary",
+                "origin": "locally_withheld",
+                "http_requests": 0,
+                "received_bytes": 0,
+                "response_header_bytes": 0,
+                "error": "withheld"
+              },
+              {
+                "requested_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "final_url": "https://unpkg.com/kind-of@6.0.3/package.json",
+                "http_status": 200,
+                "redirects": 0,
+                "response_header_bytes": 0,
+                "received_bytes": 0,
+                "body_sha256": "0710f74718210573ae878c0a733775d2ad9e9d5a5053f0521cbf9347a39a01ec",
+                "elapsed_ms": 231.236,
+                "error": null,
+                "role": "secondary",
+                "origin": "retained_other_lineage",
+                "http_requests": 0
+              }
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "summary": {
+    "observed": {
+      "caller_fallback": {
+        "verified": 8,
+        "unresolved": 0,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 8,
+        "http_response_bytes_all_hops": 23203
+      },
+      "gateway_fallback": {
+        "verified": 8,
+        "unresolved": 0,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 8,
+        "http_response_bytes_all_hops": 39774
+      },
+      "same_outcomes": true,
+      "median_paired_added_gateway_ms": -40.5265,
+      "added_gateway_bytes_per_verified": 2071.375
+    },
+    "primary_unavailable": {
+      "caller_fallback": {
+        "verified": 8,
+        "unresolved": 0,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 8,
+        "http_response_bytes_all_hops": 21573
+      },
+      "gateway_fallback": {
+        "verified": 8,
+        "unresolved": 0,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 8,
+        "http_response_bytes_all_hops": 37835
+      },
+      "same_outcomes": true,
+      "median_paired_added_gateway_ms": 1.026999999999994,
+      "added_gateway_bytes_per_verified": 2032.75
+    },
+    "both_unavailable": {
+      "caller_fallback": {
+        "verified": 0,
+        "unresolved": 8,
+        "false_closure": 0,
+        "caller_http_requests": 0,
+        "upstream_http_requests": 0,
+        "http_response_bytes_all_hops": 0
+      },
+      "gateway_fallback": {
+        "verified": 0,
+        "unresolved": 8,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 0,
+        "http_response_bytes_all_hops": 1192
+      },
+      "same_outcomes": true,
+      "median_paired_added_gateway_ms": 0.842,
+      "added_gateway_bytes_per_verified": null
+    },
+    "wrong_body": {
+      "caller_fallback": {
+        "verified": 0,
+        "unresolved": 8,
+        "false_closure": 0,
+        "caller_http_requests": 0,
+        "upstream_http_requests": 0,
+        "http_response_bytes_all_hops": 0
+      },
+      "gateway_fallback": {
+        "verified": 0,
+        "unresolved": 8,
+        "false_closure": 0,
+        "caller_http_requests": 8,
+        "upstream_http_requests": 0,
+        "http_response_bytes_all_hops": 1192
+      },
+      "same_outcomes": true,
+      "median_paired_added_gateway_ms": 0.36,
+      "added_gateway_bytes_per_verified": null
+    }
+  },
+  "screen": {
+    "same_main_outcomes": true,
+    "at_least_three_verified_fallbacks_per_arm": true,
+    "zero_false_closures_in_controls": true,
+    "paired_median_added_gateway_ms_within_1000": true,
+    "added_gateway_response_bytes_within_8192_per_verified": true
+  }
+}
