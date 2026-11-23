@@ -6,13 +6,14 @@ const fs = require("node:fs");
 const path = require("node:path");
 const { chromium } = require("playwright");
 
-if (process.argv.length !== 4) throw new Error("Use capture.cjs SITE OUTPUT");
+if (process.argv.length < 4 || process.argv.length > 6) throw new Error("Use capture.cjs SITE OUTPUT [TASKS] [short]");
 const site = path.resolve(process.argv[2]);
 const root = "https://corbensorenson.github.io/asi-stack-book/";
 const registry = "products/evidence-registry/knowledge-graph/";
 const catalog = JSON.parse(fs.readFileSync(path.join(site, registry, "evidence-catalog.json"), "utf8"));
-const tasksBytes = fs.readFileSync(path.join(__dirname, "tasks.json"));
+const tasksBytes = fs.readFileSync(process.argv[4] || path.join(__dirname, "tasks.json"));
 const tasks = JSON.parse(tasksBytes);
+const short = process.argv[5] === "short";
 const entries = {technical: "", reader: "reader/", paper: "papers/"};
 const firstFour = 4;
 const followed = 2;
@@ -76,8 +77,9 @@ async function assess(context, task, arm) {
     assert(items.length <= firstFour);
     const target = catalog.records.find(record => record.id === task.target);
     assert(target, task.target);
+    const locators = [target.url, ...(target.locators || []).map(locator => locator.url)].map(canonical);
     const rank = items.findIndex(row => arm === "graph" ? row.id === target.id :
-      canonical(row.href) === canonical(target.url));
+      locators.includes(canonical(row.href)));
     const routes = [];
     for (const row of items.slice(0, followed)) {
       let href = row.href;
@@ -88,9 +90,11 @@ async function assess(context, task, arm) {
         const link = record.getByRole("link", {name: "Open in the book", exact: true});
         await link.waitFor();
         href = await link.evaluate(link => link.href);
-        preview = limited(await record.evaluate(element =>
-          [...element.children].slice(0, [...element.children].findIndex(child => child.classList.contains("relations")))
-            .map(child => child.innerText).join(" ")));
+        preview = limited(await record.evaluate(element => {
+          const children = [...element.children];
+          const end = children.findIndex(child => child.classList.contains("relations"));
+          return children.slice(0, end === -1 ? children.length : end).map(child => child.innerText).join(" ");
+        }));
       }
       routes.push({...(await checkFragment(page, href)), ...(preview ? {preview} : {})});
     }
@@ -117,14 +121,17 @@ async function assess(context, task, arm) {
     });
     const results = [];
     for (const [index, task] of tasks.entries()) {
+      const query = short ? task.short : task.query;
+      assert(query, `Missing query for ${task.id}`);
       const order = index % 2 ? ["graph", "ordinary"] : ["ordinary", "graph"];
-      const result = {id: task.id, order};
-      for (const arm of order) result[arm] = await assess(context, task, arm);
+      const result = {id: task.id, order, query};
+      for (const arm of order) result[arm] = await assess(context, {...task, query}, arm);
       results.push(result);
     }
     fs.writeFileSync(process.argv[3], JSON.stringify({source_commit: catalog.source_commit,
       snapshot_id: catalog.snapshot_id, tasks_sha256: crypto.createHash("sha256").update(tasksBytes).digest("hex"),
-      chromium: browser.version(), results}, null, 2) + "\n");
+      chromium: browser.version(), query_condition: short ? "prespecified short reformulation" : "full question",
+      results}, null, 2) + "\n");
   } finally {
     await browser.close();
   }

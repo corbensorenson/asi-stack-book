@@ -1,8 +1,8 @@
 # Shared-corpus evidence judgment pilot
 
-The ten tasks were frozen in commit `53c55447` before querying the candidate. They use natural-language formulations and include new transfer conditions around specific run cells, the scope of a formal target, cost and measurement limits, and a unit-of-coverage change. The November 23 live retrieval baseline remains a separate audit of three different indexes and its own 16 tasks.
+The ten development tasks were frozen in commit `53c55447` before querying the first preview. Both interfaces returned empty results for every question under the initial lexical coverage rule. That capture is preserved. The questions now belong to development. A second set was frozen in commit `ee0c8440` after the matching revision was written and before querying it. Score its full questions and short reformulations as separate conditions. The November 23 live retrieval baseline remains a separate audit of three different indexes and its own 16 tasks.
 
-Both arms use the same revision-bound evidence catalog and matching function. The ordinary arm selects Research evidence in the technical book, Human Reader or paper library, as assigned. The graph arm selects Citable evidence. Look at the top four primary results and follow the first two in rank order. Follow each directly to its rendered book anchor. The graph requires opening its record before following the citation, with at most four route actions per task. The ordinary arm uses up to two under the same rule. One full question per task. Preserve primary excerpts, openable locators, the two exact fragments and the graph preview where applicable, with at most 1,400 UTF-8 bytes for any single excerpt. The capture deliberately compares shared-corpus behavior under the same fixed inspection policy. This does not isolate the effect of freely following relationships, or measure the default unfiltered search.
+Both arms use the same revision-bound evidence catalog and matching function. The ordinary arm selects Research evidence in the technical book, Human Reader or paper library, as assigned. The graph arm selects Citable evidence. Look at the top four primary results and follow the first two in rank order. Follow each directly to its rendered book anchor. The graph requires opening its record before following the citation, with at most four route actions per task. The ordinary arm uses up to two under the same rule. Use one query per task in each condition. Preserve primary excerpts, openable locators, the two exact fragments and the graph preview where applicable, with at most 1,400 UTF-8 bytes for any single excerpt. The capture deliberately compares shared-corpus behavior under the same fixed inspection policy. This does not isolate the effect of freely following relationships, or measure the default unfiltered search.
 
 Score four quantities separately:
 
@@ -16,5 +16,8 @@ This is a small, unblinded pilot. The same agent authored the tasks and adjudica
 Run from the repository root with the path to the tested HTML site and an output path. `NODE_PATH` points to the existing Playwright dependency. Set `PLAYWRIGHT_CHROMIUM_EXECUTABLE` when using a local Chrome install.
 
 ```sh
-NODE_PATH="$PWD/ci/browser/node_modules" node experiments/knowledge_graph_navigation/evidence-judgment-2026-11-23/capture.cjs _site /tmp/asi-evidence-judgment.json
+pilot=experiments/knowledge_graph_navigation/evidence-judgment-2026-11-23
+export NODE_PATH="$PWD/ci/browser/node_modules"
+node "$pilot/capture.cjs" _site /tmp/asi-evidence-full.json "$pilot/holdout.json"
+node "$pilot/capture.cjs" _site /tmp/asi-evidence-short.json "$pilot/holdout.json" short
 ```

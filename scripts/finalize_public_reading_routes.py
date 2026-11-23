@@ -118,11 +118,17 @@ def index_projection(site: Path, index: str, entries: list[dict]) -> str:
             row["href"] = urlunsplit(("", "", target.path, "view=ai", target.fragment))
 
     directory = posixpath.dirname(index) or "."
+    local_alternates = {}
+    if directory != ".":
+        for row in entries:
+            if "evidence_id" in row and urlsplit(row["href"]).path.startswith(directory + "/"):
+                local_alternates.setdefault(row["evidence_id"], row["objectID"])
     local = []
     for row in entries:
         target = urlsplit(row["href"])
         href = urlunsplit(("", "", posixpath.relpath(target.path, directory), target.query, target.fragment))
-        local.append({**row, "href": href})
+        preferred = local_alternates.get(row.get("evidence_id"))
+        local.append({**row, "href": href, **({"evidence_primary": row["objectID"] == preferred} if preferred else {})})
     return json.dumps(local + rows, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 

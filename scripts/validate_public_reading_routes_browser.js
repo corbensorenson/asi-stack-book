@@ -63,6 +63,13 @@ async function search(browser, root, query, expected) {
     await page.waitForURL(expected);
     const target = decodeURIComponent(new URL(page.url()).hash.slice(1));
     assert(await page.locator("#" + target.replace(".", "\\.")).first().isVisible(), query);
+    if (resultUrl.searchParams.get("view") === "ai") {
+      await page.goto(resultUrl.href);
+      await page.reload();
+      assert.deepEqual(new URL(page.url()).searchParams.getAll("q"), [query]);
+      assert.equal(new URL(page.url()).hash, resultUrl.hash);
+      assert(await page.locator("#" + target.replace(".", "\\.")).first().isVisible(), query);
+    }
     console.log(JSON.stringify({ query, first_useful_ms: Math.round(firstUseful), ...timing }));
   } finally {
     await page.close();
@@ -80,6 +87,7 @@ async function checkResearchFacets(context) {
     const hits = page.locator("li.aa-Item a.search-result-link");
     await input.fill("scheduler");
     await hits.first().waitFor();
+    assert.match(await hits.first().getAttribute("href"), /study-forward-transfer\.html/);
     await scope.selectOption("history");
     await page.waitForFunction(() => {
       const hits = Array.from(document.querySelectorAll("li.aa-Item a.search-result-link"));
@@ -120,6 +128,20 @@ async function checkResearchFacets(context) {
     const copies = await comparison.getByRole("button", {name: "Copy citation"})
       .evaluateAll(buttons => buttons.map(button => button.dataset.copyCitation));
     assert(copies.includes(citation));
+
+    const graphRoute = registry + "knowledge-graph/?node=";
+    await page.goto(graphRoute + encodeURIComponent("evidence_passage:atlas-corrected-decision"));
+    await record.getByRole("link", {name: "Corrected comparator pool and Table 5"}).click();
+    const atlas = page.locator("#completing-the-comparator-pool");
+    assert(await atlas.isVisible());
+    assert.match(await atlas.innerText(), /0\.035299/);
+    const proof = "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge";
+    await page.goto(graphRoute + encodeURIComponent(proof));
+    await record.getByRole("link", {name: "Open in the book", exact: true}).click();
+    const proofBoundary = page.locator('[id="proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"]');
+    assert.match(await proofBoundary.innerText(), /finite/);
+    await proofBoundary.getByRole("link", {name: "Open the formal target in the graph"}).click();
+    assert.equal(new URL(page.url()).searchParams.get("node"), proof);
   } finally {
     await page.close();
   }
@@ -335,6 +357,8 @@ async function main() {
         /unit-15-verification-bandwidth-claim-ledgers-and-proof\.html[^#]*#what-this-establishes$/);
       await search(context, root + "papers/", "H-Net dynamic chunking and batched serving cost",
         /replaceable-cognitive-substrates-beyond-transformer-monoculture\.html[^#]*#h-net-learns-the-sequence-hierarchy$/);
+      await search(context, root + "papers/", "0.035299",
+        /answerability_atlas_synthesis\.html[^#]*#completing-the-comparator-pool$/);
       await checkKnowledgeGraph(context, root);
       await checkStudyCases(context);
       await checkEditorialRoutes(context);

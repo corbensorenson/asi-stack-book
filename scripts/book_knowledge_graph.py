@@ -528,7 +528,7 @@ def evidence_catalog(graph):
             f'Book revision {graph["source_commit"]}',
         ]
         for label, key in (("Evidence revision", "source_commit"), ("Result SHA-256", "result_sha256"),
-                           ("Method", "method"), ("Scope", "limit")):
+                           ("Method", "method"), ("Source locator", "source_section"), ("Scope", "limit")):
             if key in node:
                 fields.append(f"{label} — {node[key]}")
         records.append({**node, "measurement": measurement, "citation_text": "\n".join(fields)})

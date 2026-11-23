@@ -57,6 +57,7 @@ let catalog;
 let catalogById;
 let evidenceById;
 let evidenceRank;
+let evidenceMatchReasons = new Map();
 let matches = [];
 let shown = 0;
 let selection;
@@ -147,6 +148,8 @@ function showMatches() {
     if (evidence) {
       if (evidence.summary) option.append(el("p", evidence.summary, "result-excerpt"));
       if (evidence.limit) option.append(el("p", "Scope · " + evidence.limit, "result-scope"));
+      const reason = evidenceMatchReasons.get(row[0]);
+      if (reason) option.append(el("p", reason, "result-scope"));
     }
     results.append(option);
   }
@@ -168,15 +171,17 @@ function lookup() {
     status.textContent = "Enter a title, term, or record ID.";
     return;
   }
+  const hits = normalized ? evidenceRank(value) : [];
+  evidenceMatchReasons = new Map(hits.map(hit => [hit.record.id, hit.reason]));
   if (kind.value === "evidence") {
-    matches = (normalized ? evidenceRank(value).map(hit => hit.record) : [...evidenceById.values()])
+    matches = (normalized ? hits.map(hit => hit.record) : [...evidenceById.values()])
       .map(record => catalogById.get(record.id));
   } else {
     const candidates = catalog.records.filter(row => !kind.value || catalog.kinds[row[1]] === kind.value);
     matches = rankMatches(candidates, value, row => row);
     if (!kind.value && value) {
       const exact = matches.filter(row => value.toLowerCase() === row[0]);
-      const evidence = evidenceRank(value).filter(hit => hit.score >= 570)
+      const evidence = hits.filter(hit => hit.score >= 570)
         .map(hit => catalogById.get(hit.record.id));
       matches = [...new Set([...exact, ...evidence, ...matches])];
     }
@@ -411,6 +416,7 @@ function renderRecord(packet) {
   }
   brief(record, "Definition", node.definition);
   brief(record, "Citation", node.citation_label);
+  brief(record, "Source locator", node.source_section);
   brief(record, "Research question", node.question);
   if (node.kind === "study") brief(record, "Current decision", node.disposition);
   brief(record, "Reported result", node.summary);

@@ -9,6 +9,7 @@
     "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
     "measurement": "Failed declared threshold",
     "method": "Same-seed rescoring after completing the feasible comparator pool.",
+    "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
     "aliases": ["buy all baseline", "Atlas comparator correction", "0.035299", "headroom threshold"],
     "links": [
       {"predicate": "discusses_claim", "target": "claim:benchmark-ratchets-and-anti-goodhart-evidence.core"},
@@ -98,6 +99,8 @@
     "summary": "Learned chunking can shorten the deep sequence. Variable chunk counts change batching and memory, and the paper's matched data and FLOP comparisons do not determine wall time.",
     "limit": "The paper reports implementation-dependent slowdown and batching difficulties. Mixed-length serving throughput at a shared quality target remains an adoption test.",
     "disposition": "Compare verified outputs per unit of elapsed time on matched raw inputs and mixed-length batches, including fallback and peak memory.",
+    "measurement": "Source-reported comparison",
+    "source_section": "H-Net, Sections 2.1–2.4 (hierarchy), 3 (comparisons) and 4 (efficiency limitations).",
     "aliases": ["H-Net serving", "dynamic chunking", "deep-stage byte positions", "batched latency"],
     "links": [
       {"predicate": "cites_source", "target": "source:ext_h_net_2025"},
@@ -112,6 +115,8 @@
     "summary": "The paper measures specified representation alignment. Its conditional theorem uses an identity predictor. Task-preserving replacement calls for a separate downstream comparison.",
     "limit": "The source-reported alignment comparison does not qualify a controller or a deployed reasoner. Action-conditioned prediction requires its own evidence.",
     "disposition": "Keep the downstream consumer fixed and test whether the representation preserves the differences that determine the task.",
+    "measurement": "Source-reported comparison",
+    "source_section": "Platonic JEPA, Sections 2.1–2.3 (theorem and conditions), 4.2–4.3 (alignment) and 7 (limits).",
     "aliases": ["Platonic JEPA", "good views", "identity predictor", "actions after representation alignment"],
     "links": [
       {"predicate": "cites_source", "target": "source:ext_platonic_representation_jepa_2026"},
@@ -140,6 +145,8 @@
     "summary": "A successful activation intervention can demonstrate a behavioral change for the tested prompts. Persona-level control can be distributed, and several directions can exhibit similar effects.",
     "limit": "Model revision, layer, intervention magnitude, prompt distribution and behavioral tests constrain attribution. A local steering effect does not establish a universal personality coordinate.",
     "disposition": "Test matched and random controls, prompts outside the steering set, and unintended changes before relying on a steering policy.",
+    "measurement": "Source-reported perturbation experiment",
+    "source_section": "Steering non-identifiability, Figure 1 and Appendices B and C.",
     "aliases": ["personality steering", "persona control", "personality neuron", "steering non-identifiability"],
     "links": [
       {"predicate": "cites_source", "target": "source:ext_steering_nonidentifiability_2026"},
@@ -154,6 +161,8 @@
     "summary": "Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable.",
     "limit": "The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection.",
     "disposition": "Treat the cluster index as a replaceable retrieval aid and verify prompt-independent access to the underlying authoritative notes.",
+    "measurement": "Authored comparison design",
+    "source_section": "e-means, Table 4 (fitting) and Appendix L (retrieval recall at fixed selectivity).",
     "aliases": ["e-means", "release-note index", "clustering alternatives", "retrieval index rebuild"],
     "links": [
       {"predicate": "cites_source", "target": "source:ext_emeans_2026"},

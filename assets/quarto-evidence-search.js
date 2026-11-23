@@ -20,7 +20,12 @@ function asiSearchScopes(createElement, state, setContext, refresh) {
       refresh();
     },
   }, asiScopes.map(([value, label]) => createElement("option", {value}, label)));
-  return createElement("label", {class: "asi-search-scope"}, ["Search scope ", select]);
+  const label = createElement("label", {class: "asi-search-scope"}, ["Search scope ", select]);
+  if (state.query && state.collections.every(collection => !collection.items.length)) {
+    return createElement("div", {}, [label,
+      createElement("p", {}, "Try a shorter phrase, a paper name, or an exact evidence ID.")]);
+  }
+  return label;
 }
 
 function asiSetSearchRows(rows) {
@@ -49,8 +54,10 @@ function asiSearchResults(query, scope, options) {
   const {research, evidence, native, scopes} = asiBookSearch;
   let evidenceRows = [];
   if (!scope || scope === "evidence") {
-    evidenceRows = evidence(query).filter(hit => scope || hit.score >= 570)
-      .map(hit => research.get(hit.record.id));
+    const floor = query.trim().split(/\s+/).length >= 7 ? 450 : 570;
+    const ranked = evidence(query);
+    evidenceRows = (scope ? ranked : ranked.filter(hit => hit.score >= floor).slice(0, 3))
+      .map(hit => ({...research.get(hit.record.id), match: hit.reason}));
   }
   let bookRows = [];
   if (scope !== "evidence") {
@@ -77,7 +84,8 @@ function asiSearchResults(query, scope, options) {
     const href = (queryAt < 0 ? base : base.slice(0, queryAt)) + "?" + params.toString() + fragment;
     const text = row.evidence
       ? '<span class="asi-evidence-result">' + escape(row.evidence.summary || "") + '</span>' +
-        '<span class="asi-evidence-limit"><strong>Scope</strong> ' + escape(row.evidence.limit || "") + '</span>'
+        '<span class="asi-evidence-limit"><strong>Scope</strong> ' + escape(row.evidence.limit || "") + '</span>' +
+        '<span class="asi-evidence-limit">' + escape(row.match) + '</span>'
       : highlightMatch(query, row.text);
     const section = [row.evidence_kind || row.section, row.evidence?.measurement].filter(Boolean).join(" · ");
     return {title: row.title, section, href, text, crumbs: row.crumbs};
