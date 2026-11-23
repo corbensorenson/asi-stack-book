@@ -144,6 +144,7 @@ async function checkResearchFacets(context) {
     assert.equal(new URL(page.url()).searchParams.get("node"), proof);
     await page.goto(graphRoute + encodeURIComponent("study:verifier-rollout"));
     await record.getByRole("link", {name: "Verifier revision checks and measured work", exact: true}).click();
+    await record.getByRole("heading", {name: "Outside measurement", exact: true}).waitFor();
     assert.match(await record.innerText(), /Outside measurement.*operator time/s);
     await record.getByRole("link", {name: "Open in the book", exact: true}).click();
     assert.equal(new URL(page.url()).hash, "#codex-test-plan");
