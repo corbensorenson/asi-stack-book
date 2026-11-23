@@ -5,6 +5,19 @@ unit_id: "unit-01"
 
 ## The Change That Worked
 
+### A repair where ordinary controls were enough {#scoped-git-is-enough}
+
+For the known source-link repair, use scoped Git. Its diff check and ordinary
+revert matched the governed route on four local paths. Each accepted the same
+two authorized repairs and restored the remote files. Git kept the original
+effect in branch ancestry and added no receipt files. The governed workflow
+used an audit ref and added 14 files. The patch was known and the reviewer was
+scripted. [Inspect the comparison](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective)
+
+Give both workflows the same permission, observation and recovery tools on a
+new task. An extra handoff earns its place if it helps the maintainer find and
+recover from a failure after counting its coordination work.
+
 On Monday, a maintainer approves a dependency upgrade prepared by an AI
 assistant. Every test in the repository passes. On Thursday, a downstream
 service fails. It relied on a default the upgrade changed, and its test ran
@@ -50,19 +63,6 @@ the same request that failed on Thursday. That suffices to make a narrow
 recovery decision for this incident. If one person can perform both checks
 with the right access, these roles can share a desk or a process. What matters
 is that each question has an answer the next decision can use.
-
-### A repair where ordinary controls were enough {#scoped-git-is-enough}
-
-In the observed source-link repair, scoped Git and a more elaborate governed
-workflow accepted the same two authorized changes across four matched paths.
-Both restored the remote files. An ordinary revert also kept the original
-effect in branch ancestry. Use the simpler route for this repair. The repair
-was known and the reviewer was scripted. [Inspect the comparison](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective)
-
-A test of decomposition should give both implementations the same permission,
-evidence and recovery tools. Then interrupt an actual handoff and measure
-whether component separation helps the maintainer locate the fault and
-recover. Include the extra records and coordination it takes to get there.
 
 ## The Wrong Unit of Analysis
 

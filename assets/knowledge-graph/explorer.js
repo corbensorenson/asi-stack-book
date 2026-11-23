@@ -35,6 +35,7 @@ const relations = {
   defined_by: ["Defining chapter", "Defined concepts"],
   discusses_claim: ["Related claims", "Passages discussing this claim"],
   examines_run: ["Run examined", "Passages examining this run"],
+  qualifies_study: ["Study qualified by this passage", "Measurement boundaries"],
   explained_by: ["Technical explanations", "Concepts explained here"],
   follows_up: ["Earlier comparison", "Follow-up comparisons"],
   has_concept_claim: ["Concept claims", "Concept"],

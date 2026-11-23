@@ -87,6 +87,7 @@
     "aliases": ["verifier operator time", "production operator minutes", "verifier revision freshness", "serialized handoff work"],
     "links": [
       {"predicate": "discusses_claim", "target": "claim:stable-capability-fields.core"},
+      {"predicate": "qualifies_study", "target": "study:verifier-rollout"},
       {"predicate": "examines_run", "target": "study_run:verifier-revision-freshness"},
       {"predicate": "examines_run", "target": "study_run:verifier-process-boundary"}
     ]
@@ -156,7 +157,7 @@
   {
     "id": "emeans-retrieval-rebuild",
     "title": "e-means and the release-note retrieval index rebuild",
-    "url": "chapters/virtual-context-abi.html#clustering-the-retrieval-index",
+    "url": "chapters/virtual-context-abi.html#release-note-index-rebuild",
     "question": "What should survive an e-means release-note index rebuild?",
     "summary": "Compare clusterers on the same documents and retrieval tasks. Keep stable source identities, authority and expiry metadata, and evidence for whether protected or uncommon notes remain retrievable.",
     "limit": "The release-note rebuild is a worked comparison design. A clustering benchmark does not establish reliable retrieval for this collection.",
@@ -167,6 +168,9 @@
     "links": [
       {"predicate": "cites_source", "target": "source:ext_emeans_2026"},
       {"predicate": "explained_by", "target": "chapter:virtual-context-abi"}
+    ],
+    "locators": [
+      {"label": "Clustering method comparison", "url": "chapters/virtual-context-abi.html#clustering-the-retrieval-index"}
     ]
   }
 ]

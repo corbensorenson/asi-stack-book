@@ -21,6 +21,24 @@ open_evidence_gaps:
   - "No support-state promotion is implied by this drafting pass."
 ---
 
+A maintainer needs to repair a broken source link in this book. The request
+covers two files. She can use a scoped Git workflow with a diff check, the
+same acceptance test, and a revert, or she can add explicit receipts and an
+audit ref for the handoffs. Which workflow earns its keep?
+
+Use scoped Git for this repair. In four matched local paths, both workflows
+accepted the same two authorized repairs and restored the remote file state.
+Git kept the original effect in branch ancestry and produced no extra receipt
+files. The governed route retained it on an audit ref and produced 14.
+The repair was known and the reviewer was scripted.
+[Inspect the matched result](../products/evidence-registry/study-scoped-git.html#run-git-retrospective).
+
+Reopen the choice when a real handoff makes authority, observation, or
+recovery harder to preserve. Give both workflows the same access and recovery
+tools. Then measure whether an explicit boundary improves fault localization
+or recovery enough to repay its coordination work. Those are the
+responsibilities the book calls a stack. They can live in one process.
+
 ## Chapter status
 
 | Field | Value |
@@ -46,13 +64,9 @@ The opening sequence of Part I is ordered deliberately. This opening names the s
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** A capable monolithic agent with scoped tools, current grants, target observation, ordinary review, and recovery is a strong simpler alternative. A single model call plus a shell command is only a thin control unless the task and sandbox make it adequate.
-
-Start with the architecture's basic contract: the subject is not a magic model and not a loose pile of agent tricks. It is a governed system whose parts must say what they own, what they may do, what evidence they create, and how they can be stopped or replaced.
-
-That frame matters because the rest of the stack keeps adding machinery. Planning, memory, routing, proofs, tools, compression, and self-improvement only stay coherent if they attach to stable boundaries. Without those boundaries, a capable system can sound integrated while hiding who approved an action, which source grounded a claim, what changed after feedback, or how a failed part would be rolled back.
-
-The stack frame gives the whole argument a practical test. A powerful part must remain inspectable from outside itself. When a later mechanism cannot name its responsibility, artifact, authority ceiling, evidence state, and failure mode, the right response is not enthusiasm. It is to treat the mechanism as unfinished architecture until its boundary is visible to review and audit.
+Follow the inventory case to see what scoped Git had to preserve in the
+repair: who could write, what actually changed, and who could recover.
+A powerful part must remain inspectable from outside itself.
 :::
 
 ## Problem
@@ -73,18 +87,6 @@ credential existed, and the receipt was real. The failure is that capability
 was allowed to stand in for authority, a plan for an effect, and a successful
 receipt for the world being in the requested state. The residual is a stale
 permission plus an unverified destructive effect.
-
-A matched repair gives us a useful starting point. Scoped Git change control
-and the more elaborate workflow accepted the same two authorized repairs and
-restored the remote file state across four local paths. Ordinary Git retained
-the original effect in branch ancestry. For this known repair, the simpler
-workflow supplied the needed controls. [Scoped Git study](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective)
-
-A single service and several cooperating services can each check current
-authority, observe effects, and recover. Compare them at the same authority,
-evidence access, and recovery capability. Then measure whether separation
-improves failure isolation, time to find an owner, or the safety of a
-replacement enough to repay coordination and recovery costs.
 
 ### Worked trace: three projections, one denied effect
 

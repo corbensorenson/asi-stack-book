@@ -1,0 +1,1795 @@
+{
+  "source_commit": "a2464c16f3e58500fc9ec98e3eefa9acc699ce21",
+  "snapshot_id": "da3399ee9ec0f2cdaf1ef0d917cf519a1553c3563eb42bf35abbf46e235f9037",
+  "tasks_sha256": "3fad5328518cca6b5d38d881470977f648e533f6a79895ac15def19385325dff",
+  "wall_time_units": "program milliseconds",
+  "human_review_time_ms": null,
+  "packets": [
+    {
+      "id": "C1",
+      "initial": [
+        "source:answerability_atlas_synthesis"
+      ],
+      "records": [
+        {
+          "category": "supplemental",
+          "citation_label": "Answerability Atlas Project (2026), What an Answerability Atlas Can and Cannot Do",
+          "id": "source:answerability_atlas_synthesis",
+          "kind": "source",
+          "limit": "Selected book mappings reviewed against public synthesis Sections 1–12 and Appendix B, source guide and claim index. Private raw runs and internal writing checks are not independently replayed. Three chapter integrations only; other former suggestions are not executed. Source text/PDF/figures/index remain byte-identical.",
+          "origin": {
+            "locator": "/506",
+            "path": "sources/source_inventory.json"
+          },
+          "publication_origin": {
+            "locator": "/records/59",
+            "path": "papers/paper_library.json"
+          },
+          "published": "2026-10-25",
+          "source_type": "author_research_paper",
+          "title": "What an Answerability Atlas Can and Cannot Do: An Audited Synthesis of Computational Design Experiments",
+          "url": "papers/answerability_atlas_synthesis.html"
+        },
+        {
+          "aliases": [
+            "buy all baseline",
+            "Atlas comparator correction",
+            "0.035299",
+            "headroom threshold"
+          ],
+          "citation_text": "Answerability Atlas baseline correction at budget 128\nhttps://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction\nEvidence record evidence_passage:atlas-corrected-decision\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — Same-seed rescoring after completing the feasible comparator pool.\nSource locator — Answerability Atlas, Section 8.2 and Table 5.\nScope — The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "id": "evidence_passage:atlas-corrected-decision",
+          "kind": "evidence_passage",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "locators": [
+            {
+              "label": "Corrected comparator pool and Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            },
+            {
+              "label": "Reader decision",
+              "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"
+            }
+          ],
+          "measurement": "Failed declared threshold",
+          "method": "Same-seed rescoring after completing the feasible comparator pool.",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "Why did the Atlas stop after adding the buy-all baseline?",
+          "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "title": "Answerability Atlas baseline correction at budget 128",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 3.0040419999999983,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C1",
+      "initial": [
+        "source:answerability_atlas_synthesis"
+      ],
+      "records": [
+        {
+          "category": "supplemental",
+          "citation_label": "Answerability Atlas Project (2026), What an Answerability Atlas Can and Cannot Do",
+          "id": "source:answerability_atlas_synthesis",
+          "kind": "source",
+          "limit": "Selected book mappings reviewed against public synthesis Sections 1–12 and Appendix B, source guide and claim index. Private raw runs and internal writing checks are not independently replayed. Three chapter integrations only; other former suggestions are not executed. Source text/PDF/figures/index remain byte-identical.",
+          "origin": {
+            "locator": "/506",
+            "path": "sources/source_inventory.json"
+          },
+          "publication_origin": {
+            "locator": "/records/59",
+            "path": "papers/paper_library.json"
+          },
+          "published": "2026-10-25",
+          "source_type": "author_research_paper",
+          "title": "What an Answerability Atlas Can and Cannot Do: An Audited Synthesis of Computational Design Experiments",
+          "url": "papers/answerability_atlas_synthesis.html"
+        },
+        {
+          "aliases": [
+            "buy all baseline",
+            "Atlas comparator correction",
+            "0.035299",
+            "headroom threshold"
+          ],
+          "citation_text": "Answerability Atlas baseline correction at budget 128\nhttps://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction\nEvidence record evidence_passage:atlas-corrected-decision\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — Same-seed rescoring after completing the feasible comparator pool.\nSource locator — Answerability Atlas, Section 8.2 and Table 5.\nScope — The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "id": "evidence_passage:atlas-corrected-decision",
+          "kind": "evidence_passage",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "locators": [
+            {
+              "label": "Corrected comparator pool and Table 5",
+              "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"
+            },
+            {
+              "label": "Reader decision",
+              "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"
+            }
+          ],
+          "measurement": "Failed declared threshold",
+          "method": "Same-seed rescoring after completing the feasible comparator pool.",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "Why did the Atlas stop after adding the buy-all baseline?",
+          "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "title": "Answerability Atlas baseline correction at budget 128",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "predicate": "cites_source",
+          "from": "source:answerability_atlas_synthesis"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 0.15604200000001356,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C2",
+      "initial": [
+        "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+      ],
+      "records": [
+        {
+          "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "kind": "claim",
+          "label": "Design rationale",
+          "origin": {
+            "locator": "/atoms/2823",
+            "path": "evidence_quality/claim_atom_registry.json"
+          },
+          "owner_ref": "circle-calculus-and-proof-carrying-ai-contracts",
+          "record_version": "retained",
+          "role": "mechanism",
+          "scope": {
+            "artifact": "Chapter and manifest contract; five mappings; two record fixtures; external rope slice and transition; public consumer gate; contract-pack archive and no-change decision; four targets; 28 declarations; arbitrary-run local transport invariants; independent exhaustive consumer; semantic review; and future natural transport campaign.",
+            "authority": "This chapter owns exact proof-contract transport only. Formal Methods, Executable Specifications, Artifacts, Supply Chain, Runtime, structural consumers, Verification, Security, Privacy, Rights, Resources, Claims, Evidence, Readiness, Incident, and Release retain their boundaries.",
+            "environment": "Five exact mappings; two schema-valid records; one external Circle rope replay with one narrow non-core prototype-backed transition; one-valid/four-invalid ASI gate; one nine-contract/four-policy-receipt/five-invalid archive with no-change decision; four proof targets; 28 finite declarations; eight reference-trace splits; 45 reachable states through 360 transitions; 72 transitions from nine revoked-lineage states; 16 rejecting lifecycle mutations; and 15 semantic mutations. No general local resolver, multi-consumer service, semantic refinement proof, deployed revocation, independent reproduction, or transfer campaign exists.",
+            "model": "A theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, environment-, and time-specific envelope over source/toolchain pinning, build, resolution, refinement, canonicalization, deterministic recomputation, non-claims, replay, consumer authority, transport, invalidation, fallback, recovery, reproduction, transfer, expiry, and residuals.",
+            "population": "Versioned finite formal facts transported from named public-safe producer artifacts through resolvers, builders, canonicalizers, artifact graphs, and least-authority consumer gates to named consumers and uses.",
+            "time": "Semantic review current through 2026-08-03; theorem, statement, assumption, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, organization, or time change expires affected envelopes. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization."
+          },
+          "state": "prototype-backed",
+          "title": "Build or verify the named formal target and retain command, environment, logs, failures, proof boundary, and compiled-declaration receipt rather than trusting a theorem label.",
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "One compiled Circle proof target\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record transition:post_v2_3.p5.circle_named_target_receipt.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "citation_title": "One compiled Circle proof target",
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "kind": "transition",
+          "limit": "one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/16",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "a0295057fc97b3aabc4d48477021416ae3a076dde0963231f5cdc4d25ff0fb05",
+          "state": "prototype-backed",
+          "summary": "One pinned Circle rope formal target compiled and retained exact command/result receipts, a proof boundary, and a finite public consumer gate with four rejecting controls.",
+          "title": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Circle finite public-consumer gate\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — AsiStackProofs.ProofCarryingContracts\nScope — The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "citation_title": "Circle finite public-consumer gate",
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "implementation_origin": {
+            "locator": "/",
+            "path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
+          },
+          "kind": "proof_target",
+          "limit": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "measurement": "Finite formal target",
+          "method": "AsiStackProofs.ProofCarryingContracts",
+          "module": "AsiStackProofs.ProofCarryingContracts",
+          "origin": {
+            "locator": "/records/255",
+            "path": "proofs/proof_manifest.json"
+          },
+          "status": "implemented",
+          "summary": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "title": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "url": "products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        }
+      ],
+      "path": [
+        {
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "predicate": "atom",
+          "from": "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "predicate": "related_proof",
+          "from": "transition:post_v2_3.p5.circle_named_target_receipt.promote"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 0.2485409999999888,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": false,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C2",
+      "initial": [
+        "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+      ],
+      "records": [
+        {
+          "id": "claim:circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "kind": "claim",
+          "label": "Design rationale",
+          "origin": {
+            "locator": "/atoms/2823",
+            "path": "evidence_quality/claim_atom_registry.json"
+          },
+          "owner_ref": "circle-calculus-and-proof-carrying-ai-contracts",
+          "record_version": "retained",
+          "role": "mechanism",
+          "scope": {
+            "artifact": "Chapter and manifest contract; five mappings; two record fixtures; external rope slice and transition; public consumer gate; contract-pack archive and no-change decision; four targets; 28 declarations; arbitrary-run local transport invariants; independent exhaustive consumer; semantic review; and future natural transport campaign.",
+            "authority": "This chapter owns exact proof-contract transport only. Formal Methods, Executable Specifications, Artifacts, Supply Chain, Runtime, structural consumers, Verification, Security, Privacy, Rights, Resources, Claims, Evidence, Readiness, Incident, and Release retain their boundaries.",
+            "environment": "Five exact mappings; two schema-valid records; one external Circle rope replay with one narrow non-core prototype-backed transition; one-valid/four-invalid ASI gate; one nine-contract/four-policy-receipt/five-invalid archive with no-change decision; four proof targets; 28 finite declarations; eight reference-trace splits; 45 reachable states through 360 transitions; 72 transitions from nine revoked-lineage states; 16 rejecting lifecycle mutations; and 15 semantic mutations. No general local resolver, multi-consumer service, semantic refinement proof, deployed revocation, independent reproduction, or transfer campaign exists.",
+            "model": "A theorem-, model-, artifact-, implementation-, consumer-, claim-, version-, environment-, and time-specific envelope over source/toolchain pinning, build, resolution, refinement, canonicalization, deterministic recomputation, non-claims, replay, consumer authority, transport, invalidation, fallback, recovery, reproduction, transfer, expiry, and residuals.",
+            "population": "Versioned finite formal facts transported from named public-safe producer artifacts through resolvers, builders, canonicalizers, artifact graphs, and least-authority consumer gates to named consumers and uses.",
+            "time": "Semantic review current through 2026-08-03; theorem, statement, assumption, source, toolchain, model, implementation, schema, consumer, policy, rights, threat, organization, or time change expires affected envelopes. Reader-facing claim prose and worked scenes were additionally reviewed on 2026-08-09; later material changes to those surfaces or their section ownership require reauthorization."
+          },
+          "state": "prototype-backed",
+          "title": "Build or verify the named formal target and retain command, environment, logs, failures, proof boundary, and compiled-declaration receipt rather than trusting a theorem label.",
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Circle finite public-consumer gate\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — AsiStackProofs.ProofCarryingContracts\nScope — The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "citation_title": "Circle finite public-consumer gate",
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "implementation_origin": {
+            "locator": "/",
+            "path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
+          },
+          "kind": "proof_target",
+          "limit": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "measurement": "Finite formal target",
+          "method": "AsiStackProofs.ProofCarryingContracts",
+          "module": "AsiStackProofs.ProofCarryingContracts",
+          "origin": {
+            "locator": "/records/255",
+            "path": "proofs/proof_manifest.json"
+          },
+          "status": "implemented",
+          "summary": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "title": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "url": "products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "One compiled Circle proof target\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record transition:post_v2_3.p5.circle_named_target_receipt.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "citation_title": "One compiled Circle proof target",
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "kind": "transition",
+          "limit": "one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/16",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "a0295057fc97b3aabc4d48477021416ae3a076dde0963231f5cdc4d25ff0fb05",
+          "state": "prototype-backed",
+          "summary": "One pinned Circle rope formal target compiled and retained exact command/result receipts, a proof boundary, and a finite public consumer gate with four rejecting controls.",
+          "title": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        }
+      ],
+      "path": [
+        {
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "predicate": "lookup"
+        },
+        {
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 0.16262499999999136,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": false,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C3",
+      "initial": [
+        "study:verifier-rollout"
+      ],
+      "records": [
+        {
+          "change": "The local process check matched ordinary memoization. Test a separately operated consumer, including changes between lookup and relying on the result. Compare provenance, recovery and end-to-end cost under the same freshness requirement.",
+          "citation_text": "Which scope earns a verifier rollout?\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html\nEvidence record study:verifier-rollout\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary memoization at the tested boundary. Before routing on submitted predictions, check the complete set of case IDs and labels against a separately controlled reference. Require evidence of freshness and hold when it cannot be established.",
+          "featured_run": "study_run:verifier-floor-cache",
+          "id": "study:verifier-rollout",
+          "kind": "study",
+          "limit": "Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/2",
+            "path": "products/research_studies.json"
+          },
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "summary": "The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision.",
+          "title": "Which scope earns a verifier rollout?",
+          "url": "products/evidence-registry/study-verifier-rollout.html"
+        },
+        {
+          "aliases": [
+            "verifier operator time",
+            "production operator minutes",
+            "verifier revision freshness",
+            "serialized handoff work"
+          ],
+          "citation_text": "Verifier revision checks and measured work\nhttps://corbensorenson.github.io/asi-stack-book/chapters/stable-capability-fields.html?view=ai#codex-test-plan\nEvidence record evidence_passage:verifier-measurement-boundary\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — Matched local revision and process-boundary checks.\nScope — Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "kind": "evidence_passage",
+          "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "measurement": "Outside measurement for operator time",
+          "method": "Matched local revision and process-boundary checks.",
+          "origin": {
+            "locator": "/4",
+            "path": "products/evidence_passages.json"
+          },
+          "question": "How many minutes of operator time did serialized verifier handoff save in production?",
+          "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+          "title": "Verifier revision checks and measured work",
+          "unmeasured": [
+            "active operator time",
+            "production labor savings"
+          ],
+          "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "hold",
+      "elapsed_ms": 0.08549999999999613,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C3",
+      "initial": [
+        "study:verifier-rollout"
+      ],
+      "records": [
+        {
+          "change": "The local process check matched ordinary memoization. Test a separately operated consumer, including changes between lookup and relying on the result. Compare provenance, recovery and end-to-end cost under the same freshness requirement.",
+          "citation_text": "Which scope earns a verifier rollout?\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html\nEvidence record study:verifier-rollout\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary memoization at the tested boundary. Before routing on submitted predictions, check the complete set of case IDs and labels against a separately controlled reference. Require evidence of freshness and hold when it cannot be established.",
+          "featured_run": "study_run:verifier-floor-cache",
+          "id": "study:verifier-rollout",
+          "kind": "study",
+          "limit": "Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/2",
+            "path": "products/research_studies.json"
+          },
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "summary": "The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision.",
+          "title": "Which scope earns a verifier rollout?",
+          "url": "products/evidence-registry/study-verifier-rollout.html"
+        },
+        {
+          "citation_text": "Absolute floor and equal memoization\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache\nEvidence record study_run:verifier-floor-cache\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — 75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75\nMethod — Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.\nScope — Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary memoization at the tested boundary. Before routing on submitted predictions, check the complete set of case IDs and labels against a separately controlled reference. Require evidence of freshness and hold when it cannot be established.",
+          "featured": true,
+          "format": "verifier_policy_audit_v2",
+          "id": "study_run:verifier-floor-cache",
+          "kind": "study_run",
+          "limit": "Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "measurement": "Measured under stated conditions",
+          "method": "Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.",
+          "origin": {
+            "locator": "/runs/8",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/protocol.md",
+          "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-2026-11-20.json",
+          "result_sha256": "75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision.",
+          "title": "Absolute floor and equal memoization",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache"
+        },
+        {
+          "citation_text": "Paired verifier rollout\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-paired\nEvidence record study_run:verifier-paired\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 21a8b4eab72edd9593f5de9c982fecaf51f639d8\nResult SHA-256 — dabc21e8c7e07ca146729268aae6c85d740ba6cf5f069895099a08bbf8ed9e28\nMethod — Train two small text verifiers on authored cases. Give the conventional and retained-qualification workflows identical candidate results, approvals, monitors, fallback evidence and rules across seven observation profiles and two scopes.\nScope — Both workflows built and hashed the full evidence bundle before any cache check. The 140 and 80 counts describe subsequent inspections. The replay uses a relative regression rule and misses a shared error on copy-09. The follow-up adds a must-pass floor and conventional memoization.",
+          "date": "2026-11-20",
+          "disposition": "Reuse a scoped decision where it saves enough work to pay for validity checks and writes. Compare equivalent conventional caching next.",
+          "featured": false,
+          "format": "verifier_rollout_v1",
+          "id": "study_run:verifier-paired",
+          "kind": "study_run",
+          "limit": "Both workflows built and hashed the full evidence bundle before any cache check. The 140 and 80 counts describe subsequent inspections. The replay uses a relative regression rule and misses a shared error on copy-09. The follow-up adds a must-pass floor and conventional memoization.",
+          "measurement": "Measured under stated conditions",
+          "method": "Train two small text verifiers on authored cases. Give the conventional and retained-qualification workflows identical candidate results, approvals, monitors, fallback evidence and rules across seven observation profiles and two scopes.",
+          "origin": {
+            "locator": "/runs/3",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/verifier_replacement_comparison/protocol.md",
+          "protocol_sha256": "56f93f82084d1516e1987198bb05cc28d834a8e8095af67359818dc29458e995",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/verifier_replacement_comparison/results/2026-11-20-local.json",
+          "result_sha256": "dabc21e8c7e07ca146729268aae6c85d740ba6cf5f069895099a08bbf8ed9e28",
+          "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+          "summary": "Public-copy correctness rose from 9 to 11 of 12. Protected record-change correctness fell from 12 to 8 of 12. Both workflows matched the authored decision at all 28 checkpoints. Post-hash document inspections went from 140 to 80, with 16 added writes.",
+          "title": "Paired verifier rollout",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-paired"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:verifier-floor-cache",
+          "predicate": "retains_run",
+          "from": "study:verifier-rollout"
+        },
+        {
+          "id": "study_run:verifier-paired",
+          "predicate": "retains_run",
+          "from": "study:verifier-rollout"
+        }
+      ],
+      "disposition": "hold",
+      "elapsed_ms": 0.13808300000002305,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": false,
+        "decision_ok": false,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": false,
+        "scoped": false,
+        "case_opened": false
+      }
+    },
+    {
+      "id": "C4",
+      "initial": [
+        "study:crossed-receiver"
+      ],
+      "records": [
+        {
+          "change": "Measure how often a separately operated projection remains fresh when ordinary status fails. Compare caller requests, total transport, time held and recovery effort before choosing where to place the second lookup.",
+          "citation_text": "When a second receiver check changes closure\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html\nEvidence record study:crossed-receiver\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured_run": "study_run:receiver-availability",
+          "id": "study:crossed-receiver",
+          "kind": "study",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/1",
+            "path": "products/research_studies.json"
+          },
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "When a second receiver check changes closure",
+          "url": "products/evidence-registry/study-crossed-receiver.html"
+        },
+        {
+          "citation_text": "Matched access through one or two endpoints\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability\nEvidence record study_run:receiver-availability\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured": true,
+          "format": "receiver_availability_v3",
+          "id": "study_run:receiver-availability",
+          "kind": "study_run",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.",
+          "origin": {
+            "locator": "/runs/7",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+          "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "Matched access through one or two endpoints",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "citation_text": "Crossed receiver study\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-crossed\nEvidence record study_run:receiver-crossed\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 21a8b4eab72edd9593f5de9c982fecaf51f639d8\nResult SHA-256 — ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed\nMethod — Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.\nScope — Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary status when it supplies a fresh exact observation. Add a read when its distinct availability settles a hold.",
+          "featured": false,
+          "format": "receiver_crossed_v1",
+          "id": "study_run:receiver-crossed",
+          "kind": "study_run",
+          "limit": "Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.",
+          "origin": {
+            "locator": "/runs/2",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md",
+          "protocol_sha256": "04d6a6c87cc3063aee321efee402d6faa615e185eac8590d69e7b299e6db1874",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json",
+          "result_sha256": "ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed",
+          "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+          "summary": "Conventional status closed 128 of 160 matched cases. The added read closed 144. All 16 extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed 32 cases each when both observations were fresh.",
+          "title": "Crossed receiver study",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-crossed"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:receiver-availability",
+          "predicate": "retains_run",
+          "from": "study:crossed-receiver"
+        },
+        {
+          "id": "study_run:receiver-crossed",
+          "predicate": "retains_run",
+          "from": "study:crossed-receiver"
+        }
+      ],
+      "disposition": "accept",
+      "elapsed_ms": 0.13150000000001683,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C4",
+      "initial": [
+        "study:crossed-receiver"
+      ],
+      "records": [
+        {
+          "change": "Measure how often a separately operated projection remains fresh when ordinary status fails. Compare caller requests, total transport, time held and recovery effort before choosing where to place the second lookup.",
+          "citation_text": "When a second receiver check changes closure\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html\nEvidence record study:crossed-receiver\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured_run": "study_run:receiver-availability",
+          "id": "study:crossed-receiver",
+          "kind": "study",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/1",
+            "path": "products/research_studies.json"
+          },
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "When a second receiver check changes closure",
+          "url": "products/evidence-registry/study-crossed-receiver.html"
+        },
+        {
+          "citation_text": "Matched access through one or two endpoints\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability\nEvidence record study_run:receiver-availability\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured": true,
+          "format": "receiver_availability_v3",
+          "id": "study_run:receiver-availability",
+          "kind": "study_run",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.",
+          "origin": {
+            "locator": "/runs/7",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+          "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "Matched access through one or two endpoints",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "citation_text": "Crossed receiver study\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-crossed\nEvidence record study_run:receiver-crossed\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 21a8b4eab72edd9593f5de9c982fecaf51f639d8\nResult SHA-256 — ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed\nMethod — Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.\nScope — Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary status when it supplies a fresh exact observation. Add a read when its distinct availability settles a hold.",
+          "featured": false,
+          "format": "receiver_crossed_v1",
+          "id": "study_run:receiver-crossed",
+          "kind": "study_run",
+          "limit": "Both reads use one simulated SQLite journal. The measured difference concerns evidence availability under logical time. Production isolation, incident frequency, and human effort are open. Its original safe-hold label used commit count without testing the identity of a lone committed effect. The separate effect-score run checks that distinction.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross every task with both deduplication contracts, four transport faults, and five observation profiles. The conventional arm checks exact current status and can retry against deduplication. The second arm adds a receiving-side read.",
+          "origin": {
+            "locator": "/runs/2",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/crossed_receiver_protocol.md",
+          "protocol_sha256": "04d6a6c87cc3063aee321efee402d6faa615e185eac8590d69e7b299e6db1874",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-crossed-receiver.json",
+          "result_sha256": "ebdb81568456599a483745aff8eaef1820503cac87902d780a1cb1f1352832ed",
+          "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+          "summary": "Conventional status closed 128 of 160 matched cases. The added read closed 144. All 16 extra closures occurred with stale or unavailable conventional status, a fresh second read, and no receiver deduplication. Both workflows closed 32 cases each when both observations were fresh.",
+          "title": "Crossed receiver study",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-crossed"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:receiver-availability",
+          "predicate": "lookup"
+        },
+        {
+          "id": "study_run:receiver-crossed",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "accept",
+      "elapsed_ms": 0.08424999999999727,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C5",
+      "initial": [
+        "study:scoped-git"
+      ],
+      "records": [
+        {
+          "change": "Use a fresh maintenance task spanning independent owners. Retain the simpler workflow if it produces the same authorized outcomes and recoverable history with less total review and recovery work.",
+          "citation_text": "When scoped Git change control is enough\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html\nEvidence record study:scoped-git\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "date": "2026-11-20",
+          "disposition": "Keep scoped Git for the observed repair when its grant checks and recoverable branch history suffice.",
+          "featured_run": "study_run:git-retrospective",
+          "id": "study:scoped-git",
+          "kind": "study",
+          "limit": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/0",
+            "path": "products/research_studies.json"
+          },
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "summary": "Both workflows accepted 2 authorized repairs in 4 matched paths. Both restored the remote file state. Scoped Git retained the original effect in ordinary branch ancestry and created 0 additional receipt files. The governed arm retained it on an audit ref and created 14 additional receipt files.",
+          "title": "When scoped Git change control is enough",
+          "url": "products/evidence-registry/study-scoped-git.html"
+        },
+        {
+          "citation_text": "Four matched Git paths\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective\nEvidence record study_run:git-retrospective\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 21a8b4eab72edd9593f5de9c982fecaf51f639d8\nResult SHA-256 — d8e6d23c5f619e082e46a6c75d88e205d15e274e79dc5f36916309c65836ea62\nMethod — Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.\nScope — Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "date": "2026-11-20",
+          "disposition": "Keep scoped Git for the observed repair when its grant checks and recoverable branch history suffice.",
+          "featured": true,
+          "format": "scoped_git_v1",
+          "id": "study_run:git-retrospective",
+          "kind": "study_run",
+          "limit": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.",
+          "origin": {
+            "locator": "/runs/1",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/design.json",
+          "protocol_sha256": "6c2d52bc41c3878b80f3dc2c91ee6307f4076a2b92e9206ce7b55134ee12ee4a",
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-conventional-comparison.json",
+          "result_sha256": "d8e6d23c5f619e082e46a6c75d88e205d15e274e79dc5f36916309c65836ea62",
+          "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+          "summary": "Both workflows accepted 2 authorized repairs in 4 matched paths. Both restored the remote file state. Scoped Git retained the original effect in ordinary branch ancestry and created 0 additional receipt files. The governed arm retained it on an audit ref and created 14 additional receipt files.",
+          "title": "Four matched Git paths",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-scoped-git.html#run-git-retrospective"
+        },
+        {
+          "citation_text": "Grant revocation and delayed effect observation\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering\nEvidence record study_run:authority-commit-ordering\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — bc705e8eb7c1a7026b6d6909ce901a8a4c131277\nResult SHA-256 — e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e\nMethod — Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt.\nScope — Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open.",
+          "date": "2026-11-20",
+          "disposition": "Check authority at the write, and use the effect journal to establish what committed.",
+          "featured": false,
+          "format": "authority_ordering_v1",
+          "id": "study_run:authority-commit-ordering",
+          "kind": "study_run",
+          "limit": "Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt.",
+          "origin": {
+            "locator": "/runs/0",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md",
+          "protocol_sha256": "cee38db019ad79211c43df01014b5ee559aee01aac38308e484dc0bb9149b67d",
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "result": "experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json",
+          "result_sha256": "e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e",
+          "source_commit": "bc705e8eb7c1a7026b6d6909ce901a8a4c131277",
+          "summary": "The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit.",
+          "title": "Grant revocation and delayed effect observation",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:git-retrospective",
+          "predicate": "lookup"
+        },
+        {
+          "id": "study_run:authority-commit-ordering",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 0.12191699999999628,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "C5",
+      "initial": [
+        "study:scoped-git"
+      ],
+      "records": [
+        {
+          "change": "Use a fresh maintenance task spanning independent owners. Retain the simpler workflow if it produces the same authorized outcomes and recoverable history with less total review and recovery work.",
+          "citation_text": "When scoped Git change control is enough\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html\nEvidence record study:scoped-git\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "date": "2026-11-20",
+          "disposition": "Keep scoped Git for the observed repair when its grant checks and recoverable branch history suffice.",
+          "featured_run": "study_run:git-retrospective",
+          "id": "study:scoped-git",
+          "kind": "study",
+          "limit": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "measurement": "",
+          "origin": {
+            "locator": "/studies/0",
+            "path": "products/research_studies.json"
+          },
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "summary": "Both workflows accepted 2 authorized repairs in 4 matched paths. Both restored the remote file state. Scoped Git retained the original effect in ordinary branch ancestry and created 0 additional receipt files. The governed arm retained it on an audit ref and created 14 additional receipt files.",
+          "title": "When scoped Git change control is enough",
+          "url": "products/evidence-registry/study-scoped-git.html"
+        },
+        {
+          "citation_text": "Four matched Git paths\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective\nEvidence record study_run:git-retrospective\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 21a8b4eab72edd9593f5de9c982fecaf51f639d8\nResult SHA-256 — d8e6d23c5f619e082e46a6c75d88e205d15e274e79dc5f36916309c65836ea62\nMethod — Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.\nScope — Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "date": "2026-11-20",
+          "disposition": "Keep scoped Git for the observed repair when its grant checks and recoverable branch history suffice.",
+          "featured": true,
+          "format": "scoped_git_v1",
+          "id": "study_run:git-retrospective",
+          "kind": "study_run",
+          "limit": "Retrospective replay of a known repair. Its approval is scripted. Receipt counts omit ordinary Git metadata and do not time human review.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay four matched paths on separate disposable Git remotes. The conventional arm checks the grant against the proposed diff, tests the required configuration, and uses Git revert. Both arms receive the same known repair.",
+          "origin": {
+            "locator": "/runs/1",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/design.json",
+          "protocol_sha256": "6c2d52bc41c3878b80f3dc2c91ee6307f4076a2b92e9206ce7b55134ee12ee4a",
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-20-conventional-comparison.json",
+          "result_sha256": "d8e6d23c5f619e082e46a6c75d88e205d15e274e79dc5f36916309c65836ea62",
+          "source_commit": "21a8b4eab72edd9593f5de9c982fecaf51f639d8",
+          "summary": "Both workflows accepted 2 authorized repairs in 4 matched paths. Both restored the remote file state. Scoped Git retained the original effect in ordinary branch ancestry and created 0 additional receipt files. The governed arm retained it on an audit ref and created 14 additional receipt files.",
+          "title": "Four matched Git paths",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-scoped-git.html#run-git-retrospective"
+        },
+        {
+          "citation_text": "Grant revocation and delayed effect observation\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering\nEvidence record study_run:authority-commit-ordering\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — bc705e8eb7c1a7026b6d6909ce901a8a4c131277\nResult SHA-256 — e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e\nMethod — Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt.\nScope — Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open.",
+          "date": "2026-11-20",
+          "disposition": "Check authority at the write, and use the effect journal to establish what committed.",
+          "featured": false,
+          "format": "authority_ordering_v1",
+          "id": "study_run:authority-commit-ordering",
+          "kind": "study_run",
+          "limit": "Ordered local fixture with a shared database and owner. Grant revision, commit tick and observation are distinct. The comparison leaves distributed control and production enforcement open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay a single local journal under ordered revocation, expiry and observation. Compare a cached permission, a version-checked transaction and a transaction carrying a serialized receipt.",
+          "origin": {
+            "locator": "/runs/0",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md",
+          "protocol_sha256": "cee38db019ad79211c43df01014b5ee559aee01aac38308e484dc0bb9149b67d",
+          "question": "Does the governed workflow improve a known two-file repair over scoped Git change control with a capable reviewer?",
+          "result": "experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json",
+          "result_sha256": "e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e",
+          "source_commit": "bc705e8eb7c1a7026b6d6909ce901a8a4c131277",
+          "summary": "The version-checked transaction and the serialized receipt agree on 4 schedules. An observation after revocation finds the valid earlier commit. Cached permission admits 2 unauthorized effects when the grant changes or expires before commit.",
+          "title": "Grant revocation and delayed effect observation",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-scoped-git.html#run-authority-commit-ordering"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:git-retrospective",
+          "predicate": "retains_run",
+          "from": "study:scoped-git"
+        },
+        {
+          "id": "study_run:authority-commit-ordering",
+          "predicate": "retains_run",
+          "from": "study:scoped-git"
+        }
+      ],
+      "disposition": "revise",
+      "elapsed_ms": 0.08233300000000554,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G1",
+      "initial": [
+        "study_run:verifier-process-boundary"
+      ],
+      "records": [
+        {
+          "citation_text": "Verifier freshness with a separate revision authority process\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary\nEvidence record study_run:verifier-process-boundary\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 089840a7d17a733d8b9344f54fea968e6fc8755f\nResult SHA-256 — b7c2d31a174b6a9d00c1a02ef47f72e7013c5a0f7ac60ed27ffffa379628f4ac\nMethod — Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport.\nScope — The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "date": "2026-11-20",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "featured": false,
+          "format": "verifier_freshness_v1",
+          "id": "study_run:verifier-process-boundary",
+          "kind": "study_run",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "measurement": "Measured under stated conditions",
+          "method": "Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport.",
+          "origin": {
+            "locator": "/runs/10",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md",
+          "protocol_sha256": "50a73074f47153b08a5cd625baec833fc69126b0d00ca5e2d9a01cf9a9920d4c",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-process-boundary-2026-11-20.json",
+          "result_sha256": "b7c2d31a174b6a9d00c1a02ef47f72e7013c5a0f7ac60ed27ffffa379628f4ac",
+          "source_commit": "089840a7d17a733d8b9344f54fea968e6fc8755f",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "title": "Verifier freshness with a separate revision authority process",
+          "unmeasured": [
+            "active operator time",
+            "network latency",
+            "production fault isolation",
+            "cache restart behavior",
+            "concurrent authorization and effect"
+          ],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        },
+        {
+          "citation_text": "Verifier revision freshness on a successful stale lookup\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness\nEvidence record study_run:verifier-revision-freshness\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 089840a7d17a733d8b9344f54fea968e6fc8755f\nResult SHA-256 — 22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec\nMethod — Five authored lookup profiles, two consumers and three logical ticks per profile. Both cache formats receive the same trusted request revision while the index can return an old snapshot, a current snapshot, or no response.\nScope — One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement.",
+          "date": "2026-11-20",
+          "disposition": "Compare the returned evidence to a trusted revision for this request. Hold or use the specialist path when freshness cannot be established. Both cache formats followed the same rule.",
+          "featured": false,
+          "format": "verifier_freshness_v1",
+          "id": "study_run:verifier-revision-freshness",
+          "kind": "study_run",
+          "limit": "One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement.",
+          "measurement": "Measured under stated conditions",
+          "method": "Five authored lookup profiles, two consumers and three logical ticks per profile. Both cache formats receive the same trusted request revision while the index can return an old snapshot, a current snapshot, or no response.",
+          "origin": {
+            "locator": "/runs/9",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md",
+          "protocol_sha256": "0a24f879b31b7e1053f76dbd97d91a5face7b95f1218af28b55e3cee0f1dd96e",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-revision-freshness-2026-11-20.json",
+          "result_sha256": "22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec",
+          "source_commit": "089840a7d17a733d8b9344f54fea968e6fc8755f",
+          "summary": "Both formats took the expected route at all 30 paired checkpoints, including 8 specialist decisions. Each read 50 evidence documents. The serialized arm wrote 1,150 cached handoff bytes. A successful response carrying an old revision sent both arms to a specialist.",
+          "title": "Verifier revision freshness on a successful stale lookup",
+          "unmeasured": [
+            "active operator time",
+            "revision acquisition cost",
+            "process transport",
+            "concurrent updates"
+          ],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness"
+        },
+        {
+          "citation_text": "Absolute floor and equal memoization\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache\nEvidence record study_run:verifier-floor-cache\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — 75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75\nMethod — Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.\nScope — Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "date": "2026-11-20",
+          "disposition": "Use ordinary memoization at the tested boundary. Before routing on submitted predictions, check the complete set of case IDs and labels against a separately controlled reference. Require evidence of freshness and hold when it cannot be established.",
+          "featured": true,
+          "format": "verifier_policy_audit_v2",
+          "id": "study_run:verifier-floor-cache",
+          "kind": "study_run",
+          "limit": "Eleven profiles each use two consumers and three logical ticks. The replay assumes unique case IDs, fixed reference labels and a current revision whenever the index responds. Separate intake controls found that the archived rule accepts a duplicate that masks a failure and a changed label that matches a wrong prediction. The index can fail to respond in these profiles. This run did not include a successful stale response. One local follow-up checks exact revision matching with a trusted revision in the request. A second obtains that revision from a separate same-owner process and counts pipe payload. Independent operation and production fault isolation remain open. CPU timings are diagnostic.",
+          "measurement": "Measured under stated conditions",
+          "method": "Run the retained classifier outputs and scripted positive controls with a scoped must-pass rule. Compare a conventional memo with a serialized qualification over the same authoritative revision index. Test both missed updates and reviewers sharing one faulty dashboard.",
+          "origin": {
+            "locator": "/runs/8",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/protocol.md",
+          "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-2026-11-20.json",
+          "result_sha256": "75a3623260cc99b46af2a35a7e7a41ead2e70b777606c72c634a8b99ba7c7d75",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "The shared copy-09 failure routed to a specialist. Both workflows matched the expected route at 66 scripted checkpoints and each read 75 evidence documents. The serialized handoff wrote 2367 bytes. Both caught a missed invalidation when the index next returned the current revision.",
+          "title": "Absolute floor and equal memoization",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-floor-cache"
+        }
+      ],
+      "path": [
+        {
+          "id": "study_run:verifier-revision-freshness",
+          "predicate": "follows_up",
+          "from": "study_run:verifier-process-boundary"
+        },
+        {
+          "id": "study_run:verifier-floor-cache",
+          "predicate": "follows_up",
+          "from": "study_run:verifier-revision-freshness"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.08212499999999068,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G1",
+      "initial": [
+        "study_run:verifier-process-boundary"
+      ],
+      "records": [
+        {
+          "citation_text": "Verifier freshness with a separate revision authority process\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary\nEvidence record study_run:verifier-process-boundary\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 089840a7d17a733d8b9344f54fea968e6fc8755f\nResult SHA-256 — b7c2d31a174b6a9d00c1a02ef47f72e7013c5a0f7ac60ed27ffffa379628f4ac\nMethod — Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport.\nScope — The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "date": "2026-11-20",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "featured": false,
+          "format": "verifier_freshness_v1",
+          "id": "study_run:verifier-process-boundary",
+          "kind": "study_run",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "measurement": "Measured under stated conditions",
+          "method": "Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport.",
+          "origin": {
+            "locator": "/runs/10",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md",
+          "protocol_sha256": "50a73074f47153b08a5cd625baec833fc69126b0d00ca5e2d9a01cf9a9920d4c",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-process-boundary-2026-11-20.json",
+          "result_sha256": "b7c2d31a174b6a9d00c1a02ef47f72e7013c5a0f7ac60ed27ffffa379628f4ac",
+          "source_commit": "089840a7d17a733d8b9344f54fea968e6fc8755f",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "title": "Verifier freshness with a separate revision authority process",
+          "unmeasured": [
+            "active operator time",
+            "network latency",
+            "production fault isolation",
+            "cache restart behavior",
+            "concurrent authorization and effect"
+          ],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        },
+        {
+          "aliases": [
+            "successful stale lookup",
+            "delayed verifier index",
+            "cached verdict revocation"
+          ],
+          "citation_text": "A successful verifier lookup returns stale approval\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness--case-successful-stale-lookup-1-release-check\nEvidence record evidence_case:verifier-revision-freshness--successful-stale-lookup-1-release-check\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 089840a7d17a733d8b9344f54fea968e6fc8755f\nResult SHA-256 — 22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec\nMethod — successful stale lookup · tick 1 · release-check · expected specialist\nScope — One release-check decision at logical tick 1. The fixture supplies the current revision. Both arms use the same expected decision and observations.",
+          "date": "2026-11-20",
+          "id": "evidence_case:verifier-revision-freshness--successful-stale-lookup-1-release-check",
+          "kind": "evidence_case",
+          "limit": "One release-check decision at logical tick 1. The fixture supplies the current revision. Both arms use the same expected decision and observations.",
+          "measurement": "Authored paired case",
+          "method": "successful stale lookup · tick 1 · release-check · expected specialist",
+          "origin": {
+            "locator": "/2",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "Which route follows when the index responds successfully with a stale revision?",
+          "result_sha256": "22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec",
+          "source_commit": "089840a7d17a733d8b9344f54fea968e6fc8755f",
+          "summary": "Conventional memoization: specialist. Serialized handoff: specialist.",
+          "title": "A successful verifier lookup returns stale approval",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness--case-successful-stale-lookup-1-release-check"
+        },
+        {
+          "citation_text": "Verifier revision freshness on a successful stale lookup\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness\nEvidence record study_run:verifier-revision-freshness\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 089840a7d17a733d8b9344f54fea968e6fc8755f\nResult SHA-256 — 22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec\nMethod — Five authored lookup profiles, two consumers and three logical ticks per profile. Both cache formats receive the same trusted request revision while the index can return an old snapshot, a current snapshot, or no response.\nScope — One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement.",
+          "date": "2026-11-20",
+          "disposition": "Compare the returned evidence to a trusted revision for this request. Hold or use the specialist path when freshness cannot be established. Both cache formats followed the same rule.",
+          "featured": false,
+          "format": "verifier_freshness_v1",
+          "id": "study_run:verifier-revision-freshness",
+          "kind": "study_run",
+          "limit": "One authored public-copy scope with in-process lookups and a trusted revision supplied by the fixture. Obtaining the revision in production, actual transport, concurrent updates, and active operator time were outside the measurement.",
+          "measurement": "Measured under stated conditions",
+          "method": "Five authored lookup profiles, two consumers and three logical ticks per profile. Both cache formats receive the same trusted request revision while the index can return an old snapshot, a current snapshot, or no response.",
+          "origin": {
+            "locator": "/runs/9",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md",
+          "protocol_sha256": "0a24f879b31b7e1053f76dbd97d91a5face7b95f1218af28b55e3cee0f1dd96e",
+          "question": "Can a retained, evidence-bound qualification change safe rollout decisions or avoid repeated work?",
+          "result": "experiments/nov20_instrument_audit/results/verifier-revision-freshness-2026-11-20.json",
+          "result_sha256": "22cdc622fa70b188cd3e8dcb103a5ee86d825056883154e047914571a654e2ec",
+          "source_commit": "089840a7d17a733d8b9344f54fea968e6fc8755f",
+          "summary": "Both formats took the expected route at all 30 paired checkpoints, including 8 specialist decisions. Each read 50 evidence documents. The serialized arm wrote 1,150 cached handoff bytes. A successful response carrying an old revision sent both arms to a specialist.",
+          "title": "Verifier revision freshness on a successful stale lookup",
+          "unmeasured": [
+            "active operator time",
+            "revision acquisition cost",
+            "process transport",
+            "concurrent updates"
+          ],
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-revision-freshness"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_case:verifier-revision-freshness--successful-stale-lookup-1-release-check",
+          "predicate": "lookup"
+        },
+        {
+          "id": "study_run:verifier-revision-freshness",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.08875000000000455,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G2",
+      "initial": [
+        "study_run:receiver-availability"
+      ],
+      "records": [
+        {
+          "citation_text": "Matched access through one or two endpoints\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability\nEvidence record study_run:receiver-availability\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured": true,
+          "format": "receiver_availability_v3",
+          "id": "study_run:receiver-availability",
+          "kind": "study_run",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.",
+          "origin": {
+            "locator": "/runs/7",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+          "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "Matched access through one or two endpoints",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "aliases": [
+            "joint receiver outage",
+            "both status paths fail",
+            "receiver safe hold"
+          ],
+          "citation_text": "Both receiver projections unavailable\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-064\nEvidence record evidence_case:receiver-availability--pair-064\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — review-metadata · primary unavailable · secondary unavailable · exact effect · non-deduplicating\nScope — One authored review-metadata case begins with an exact effect. The workflows cannot verify it from the two unavailable projections.",
+          "date": "2026-11-22",
+          "id": "evidence_case:receiver-availability--pair-064",
+          "kind": "evidence_case",
+          "limit": "One authored review-metadata case begins with an exact effect. The workflows cannot verify it from the two unavailable projections.",
+          "measurement": "Authored paired case",
+          "method": "review-metadata · primary unavailable · secondary unavailable · exact effect · non-deduplicating",
+          "origin": {
+            "locator": "/1",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "Does a gateway close the case if neither status source is reachable?",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Conventional status: hold. Additional endpoint: hold. One endpoint with matched access: hold.",
+          "title": "Both receiver projections unavailable",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-064"
+        },
+        {
+          "aliases": [
+            "stale primary fresh secondary",
+            "receiver verified closure",
+            "fresh second status"
+          ],
+          "citation_text": "A fresh second projection closes an already committed request\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024\nEvidence record evidence_case:receiver-availability--pair-024\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating\nScope — One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition.",
+          "date": "2026-11-22",
+          "id": "evidence_case:receiver-availability--pair-024",
+          "kind": "evidence_case",
+          "limit": "One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition.",
+          "measurement": "Authored paired case",
+          "method": "review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "What happens when an exact effect is present, the primary projection is stale and the second is fresh?",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Conventional status: hold. Additional endpoint: closed · verified closure. One endpoint with matched access: closed · verified closure.",
+          "title": "A fresh second projection closes an already committed request",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_case:receiver-availability--pair-064",
+          "predicate": "lookup"
+        },
+        {
+          "id": "evidence_case:receiver-availability--pair-024",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.09537499999999,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G2",
+      "initial": [
+        "study_run:receiver-availability"
+      ],
+      "records": [
+        {
+          "citation_text": "Matched access through one or two endpoints\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability\nEvidence record study_run:receiver-availability\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.\nScope — The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "date": "2026-11-22",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "featured": true,
+          "format": "receiver_availability_v3",
+          "id": "study_run:receiver-availability",
+          "kind": "study_run",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross primary and secondary projection freshness in separate local services. Compare primary-only status, a caller that can make a second request, and an ordinary gateway with the same access. Give every arm the same conditional retry rule and score the terminal journal separately.",
+          "origin": {
+            "locator": "/runs/7",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/p5_u1_governed_repository_change/prospective_receiver_availability_protocol.md",
+          "protocol_sha256": "64ecf00b8199c7e0b2ac1ebb099ec7c03b4e9b6aa75c971651900b5bbdb70a0c",
+          "question": "When can an additional receiving-side read resolve a timeout after competent conventional status checking?",
+          "result": "experiments/p5_u1_governed_repository_change/results/2026-11-22-prospective-receiver-availability.json",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "title": "Matched access through one or two endpoints",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "aliases": [
+            "joint receiver outage",
+            "both status paths fail",
+            "receiver safe hold"
+          ],
+          "citation_text": "Both receiver projections unavailable\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-064\nEvidence record evidence_case:receiver-availability--pair-064\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — review-metadata · primary unavailable · secondary unavailable · exact effect · non-deduplicating\nScope — One authored review-metadata case begins with an exact effect. The workflows cannot verify it from the two unavailable projections.",
+          "date": "2026-11-22",
+          "id": "evidence_case:receiver-availability--pair-064",
+          "kind": "evidence_case",
+          "limit": "One authored review-metadata case begins with an exact effect. The workflows cannot verify it from the two unavailable projections.",
+          "measurement": "Authored paired case",
+          "method": "review-metadata · primary unavailable · secondary unavailable · exact effect · non-deduplicating",
+          "origin": {
+            "locator": "/1",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "Does a gateway close the case if neither status source is reachable?",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Conventional status: hold. Additional endpoint: hold. One endpoint with matched access: hold.",
+          "title": "Both receiver projections unavailable",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-064"
+        },
+        {
+          "aliases": [
+            "stale primary fresh secondary",
+            "receiver verified closure",
+            "fresh second status"
+          ],
+          "citation_text": "A fresh second projection closes an already committed request\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024\nEvidence record evidence_case:receiver-availability--pair-024\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 904201c2a8ff64044996480e7d081ade4e2b2617\nResult SHA-256 — f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7\nMethod — review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating\nScope — One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition.",
+          "date": "2026-11-22",
+          "id": "evidence_case:receiver-availability--pair-024",
+          "kind": "evidence_case",
+          "limit": "One authored review-metadata case with an exact prior effect and a non-deduplicating receiver. It illustrates a condition, not the frequency of that condition.",
+          "measurement": "Authored paired case",
+          "method": "review-metadata · primary stale · secondary fresh · exact effect · non-deduplicating",
+          "origin": {
+            "locator": "/0",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "What happens when an exact effect is present, the primary projection is stale and the second is fresh?",
+          "result_sha256": "f23f9e778fe5c64f35275a6813c78abcf3bb92930f2419f89b039891e0cf3cf7",
+          "source_commit": "904201c2a8ff64044996480e7d081ade4e2b2617",
+          "summary": "Conventional status: hold. Additional endpoint: closed · verified closure. One endpoint with matched access: closed · verified closure.",
+          "title": "A fresh second projection closes an already committed request",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability--case-pair-024"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_case:receiver-availability--pair-064",
+          "predicate": "case_of_run",
+          "from": "study_run:receiver-availability"
+        },
+        {
+          "id": "evidence_case:receiver-availability--pair-024",
+          "predicate": "case_of_run",
+          "from": "study_run:receiver-availability"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.0922079999999994,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G3",
+      "initial": [
+        "transition:post_v2_3.p5.circle_named_target_receipt.promote"
+      ],
+      "records": [
+        {
+          "citation_text": "One compiled Circle proof target\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record transition:post_v2_3.p5.circle_named_target_receipt.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "citation_title": "One compiled Circle proof target",
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "kind": "transition",
+          "limit": "one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/16",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "a0295057fc97b3aabc4d48477021416ae3a076dde0963231f5cdc4d25ff0fb05",
+          "state": "prototype-backed",
+          "summary": "One pinned Circle rope formal target compiled and retained exact command/result receipts, a proof boundary, and a finite public consumer gate with four rejecting controls.",
+          "title": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Circle finite public-consumer gate\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — AsiStackProofs.ProofCarryingContracts\nScope — The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "citation_title": "Circle finite public-consumer gate",
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "implementation_origin": {
+            "locator": "/",
+            "path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
+          },
+          "kind": "proof_target",
+          "limit": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "measurement": "Finite formal target",
+          "method": "AsiStackProofs.ProofCarryingContracts",
+          "module": "AsiStackProofs.ProofCarryingContracts",
+          "origin": {
+            "locator": "/records/255",
+            "path": "proofs/proof_manifest.json"
+          },
+          "status": "implemented",
+          "summary": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "title": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "url": "products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Acquisition and consolidation in two finite worlds\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#situated-world-model.finite-pomdp-governed-acquisition-and-consolidation\nEvidence record transition:post_v2_3.situated_world_model.finite_pomdp.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — two finite authored simulators. Bayesian count-table policies rather than learned neural world models. internally implemented evaluator. shared three-state abstraction declared in advance. weak shift detection and modest intervention-effect prediction. no natural task, physical effect, production service, or external assessment.",
+          "citation_title": "Acquisition and consolidation in two finite worlds",
+          "id": "transition:post_v2_3.situated_world_model.finite_pomdp.promote",
+          "kind": "transition",
+          "limit": "two finite authored simulators. Bayesian count-table policies rather than learned neural world models. internally implemented evaluator. shared three-state abstraction declared in advance. weak shift detection and modest intervention-effect prediction. no natural task, physical effect, production service, or external assessment.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/33",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "4cdbec3d797ba0bd5d31514cb4a07e065d3e0268dd47de9cc1614f90153160f1",
+          "state": "synthetic-test-backed",
+          "summary": "On two finite authored partially observable environments, five seeds, ten matched arms, 11,250 total episodes, and 6,000 held-out episodes, the frozen governed count-table path passed every integrity and baseline gate plus six aggregate directional ablation signatures, with exact governed replacement and rollback in 10/10 environment-seed runs.",
+          "title": "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#situated-world-model.finite-pomdp-governed-acquisition-and-consolidation"
+        }
+      ],
+      "path": [
+        {
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "predicate": "related_proof",
+          "from": "transition:post_v2_3.p5.circle_named_target_receipt.promote"
+        },
+        {
+          "id": "transition:post_v2_3.situated_world_model.finite_pomdp.promote",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.08491699999999014,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G3",
+      "initial": [
+        "transition:post_v2_3.p5.circle_named_target_receipt.promote"
+      ],
+      "records": [
+        {
+          "citation_text": "One compiled Circle proof target\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record transition:post_v2_3.p5.circle_named_target_receipt.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "citation_title": "One compiled Circle proof target",
+          "id": "transition:post_v2_3.p5.circle_named_target_receipt.promote",
+          "kind": "transition",
+          "limit": "one external pinned target. local replay. finite authored consumer. no general transport service.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/16",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "a0295057fc97b3aabc4d48477021416ae3a076dde0963231f5cdc4d25ff0fb05",
+          "state": "prototype-backed",
+          "summary": "One pinned Circle rope formal target compiled and retained exact command/result receipts, a proof boundary, and a finite public consumer gate with four rejecting controls.",
+          "title": "circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/p5_circle_named_target_receipt_prototype_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Circle finite public-consumer gate\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003\nEvidence record proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nMethod — AsiStackProofs.ProofCarryingContracts\nScope — The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "citation_title": "Circle finite public-consumer gate",
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "implementation_origin": {
+            "locator": "/",
+            "path": "lean/AsiStackProofs/ProofCarryingContracts.lean"
+          },
+          "kind": "proof_target",
+          "limit": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open.",
+          "measurement": "Finite formal target",
+          "method": "AsiStackProofs.ProofCarryingContracts",
+          "module": "AsiStackProofs.ProofCarryingContracts",
+          "origin": {
+            "locator": "/records/255",
+            "path": "proofs/proof_manifest.json"
+          },
+          "status": "implemented",
+          "summary": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "title": "Any record satisfying the finite Circle public-consumer acceptance contract loses acceptance when promotion/deployed-transport overclaims or required mutation-control rejections are present; an independent replay validator separately computes one valid receipt and four invalid controls.",
+          "url": "products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003"
+        },
+        {
+          "citation_text": "Acquisition and consolidation in two finite worlds\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#situated-world-model.finite-pomdp-governed-acquisition-and-consolidation\nEvidence record transition:post_v2_3.situated_world_model.finite_pomdp.promote\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nScope — two finite authored simulators. Bayesian count-table policies rather than learned neural world models. internally implemented evaluator. shared three-state abstraction declared in advance. weak shift detection and modest intervention-effect prediction. no natural task, physical effect, production service, or external assessment.",
+          "citation_title": "Acquisition and consolidation in two finite worlds",
+          "id": "transition:post_v2_3.situated_world_model.finite_pomdp.promote",
+          "kind": "transition",
+          "limit": "two finite authored simulators. Bayesian count-table policies rather than learned neural world models. internally implemented evaluator. shared three-state abstraction declared in advance. weak shift detection and modest intervention-effect prediction. no natural task, physical effect, production service, or external assessment.",
+          "measurement": "Retained evidence decision",
+          "origin": {
+            "locator": "/records/33",
+            "path": "evidence_quality/claim_identity_graph.json"
+          },
+          "record_sha256": "4cdbec3d797ba0bd5d31514cb4a07e065d3e0268dd47de9cc1614f90153160f1",
+          "state": "synthetic-test-backed",
+          "summary": "On two finite authored partially observable environments, five seeds, ten matched arms, 11,250 total episodes, and 6,000 held-out episodes, the frozen governed count-table path passed every integrity and baseline gate plus six aggregate directional ablation signatures, with exact governed replacement and rollback in 10/10 environment-seed runs.",
+          "title": "situated-world-model.finite-pomdp-governed-acquisition-and-consolidation",
+          "transition_origin": {
+            "locator": "/",
+            "path": "evidence_transitions/post_v2_3/situated_world_model_finite_pomdp_synthetic_test_backed.json"
+          },
+          "url": "products/evidence-registry/claim-citations.html#situated-world-model.finite-pomdp-governed-acquisition-and-consolidation"
+        }
+      ],
+      "path": [
+        {
+          "id": "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge",
+          "predicate": "lookup"
+        },
+        {
+          "id": "transition:post_v2_3.situated_world_model.finite_pomdp.promote",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.07637500000001296,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G4",
+      "initial": [
+        "study_run:transfer-scheduler-audit"
+      ],
+      "records": [
+        {
+          "citation_text": "Scheduler sensitivity at matched caps\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit\nEvidence record study_run:transfer-scheduler-audit\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8\nMethod — Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.\nScope — The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "date": "2026-11-20",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "featured": true,
+          "format": "transfer_scheduler_v1",
+          "id": "study_run:transfer-scheduler-audit",
+          "kind": "study_run",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.",
+          "origin": {
+            "locator": "/runs/11",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/protocol.md",
+          "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+          "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
+          "result": "experiments/nov20_instrument_audit/results/schedulers-2026-11-20.json",
+          "result_sha256": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "title": "Scheduler sensitivity at matched caps",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "aliases": [
+            "b24 board routing",
+            "matched queue priority",
+            "expanded length change"
+          ],
+          "citation_text": "The same whole program under two queue priorities\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed\nEvidence record evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8\nMethod — b24 · board-routing · descriptive · 96 proposals · both-reversed\nScope — One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "date": "2026-11-20",
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "kind": "evidence_case",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "measurement": "Authored paired case",
+          "method": "b24 · board-routing · descriptive · 96 proposals · both-reversed",
+          "origin": {
+            "locator": "/5",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "Can changing only the queue priority remove a verified result within the same proposal cap?",
+          "result_sha256": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "title": "The same whole program under two queue priorities",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        },
+        {
+          "citation_text": "Selection × representation on five-bit maps\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial\nEvidence record study_run:transfer-factorial\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — e9ee7d0f7e6f58294de860149d0bbd1c8b5bf0c9\nResult SHA-256 — f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89\nMethod — Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker.\nScope — The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself.",
+          "date": "2026-11-20",
+          "disposition": "Retain whole-program retrieval as a comparator. In this follow-up, the routine-versus-whole ranking depends on the resource cap. Treat selection and representation as separate decisions, and keep the recommendation conditional on language cues and the full work budget.",
+          "featured": false,
+          "format": "transfer_factorial_v1",
+          "id": "study_run:transfer-factorial",
+          "kind": "study_run",
+          "limit": "The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker.",
+          "origin": {
+            "locator": "/runs/5",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/forward_transfer_factorial/protocol.md",
+          "protocol_sha256": "e6f2d97d8f7e55553d1e692d4b55447f753b1314ddfedcf152a5ce6c1bb4100b",
+          "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
+          "result": "experiments/forward_transfer_factorial/results/2026-11-20-local.json",
+          "result_sha256": "f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89",
+          "source_commit": "e9ee7d0f7e6f58294de860149d0bbd1c8b5bf0c9",
+          "summary": "With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family.",
+          "title": "Selection × representation on five-bit maps",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-factorial"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "predicate": "lookup"
+        },
+        {
+          "id": "study_run:transfer-factorial",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.07024999999998727,
+      "comparison": "ordinary_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    },
+    {
+      "id": "G4",
+      "initial": [
+        "study_run:transfer-scheduler-audit"
+      ],
+      "records": [
+        {
+          "citation_text": "Scheduler sensitivity at matched caps\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit\nEvidence record study_run:transfer-scheduler-audit\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8\nMethod — Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.\nScope — The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "date": "2026-11-20",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "featured": true,
+          "format": "transfer_scheduler_v1",
+          "id": "study_run:transfer-scheduler-audit",
+          "kind": "study_run",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "measurement": "Measured under stated conditions",
+          "method": "Replay every retained five-bit arm, then change only the queue priority from handle depth to expanded primitive length. Use the same inputs, libraries, verifier, order conditions, and two resource caps.",
+          "origin": {
+            "locator": "/runs/11",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/nov20_instrument_audit/protocol.md",
+          "protocol_sha256": "3ead3fb189361e364eda866295d2b7841f097e2476c62ae6c89d69f3f40d151c",
+          "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
+          "result": "experiments/nov20_instrument_audit/results/schedulers-2026-11-20.json",
+          "result_sha256": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "title": "Scheduler sensitivity at matched caps",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "aliases": [
+            "b24 board routing",
+            "matched queue priority",
+            "expanded length change"
+          ],
+          "citation_text": "The same whole program under two queue priorities\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed\nEvidence record evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — 420775ef7b7b2db2112f3949ab63aa0ed572254d\nResult SHA-256 — ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8\nMethod — b24 · board-routing · descriptive · 96 proposals · both-reversed\nScope — One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "date": "2026-11-20",
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "kind": "evidence_case",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "measurement": "Authored paired case",
+          "method": "b24 · board-routing · descriptive · 96 proposals · both-reversed",
+          "origin": {
+            "locator": "/5",
+            "path": "products/evidence_cases.json"
+          },
+          "question": "Can changing only the queue priority remove a verified result within the same proposal cap?",
+          "result_sha256": "ae3da5ac97370c34de883a0c2469e63572807ee3a8e1f04547154d75869d61a8",
+          "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "title": "The same whole program under two queue priorities",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        },
+        {
+          "citation_text": "Selection × representation on five-bit maps\nhttps://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html#run-transfer-factorial\nEvidence record study_run:transfer-factorial\nBook revision a2464c16f3e58500fc9ec98e3eefa9acc699ce21\nEvidence revision — e9ee7d0f7e6f58294de860149d0bbd1c8b5bf0c9\nResult SHA-256 — f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89\nMethod — Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker.\nScope — The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself.",
+          "date": "2026-11-20",
+          "disposition": "Retain whole-program retrieval as a comparator. In this follow-up, the routine-versus-whole ranking depends on the resource cap. Treat selection and representation as separate decisions, and keep the recommendation conditional on language cues and the full work budget.",
+          "featured": false,
+          "format": "transfer_factorial_v1",
+          "id": "study_run:transfer-factorial",
+          "kind": "study_run",
+          "limit": "The 256 design cells reuse 16 authored five-bit tasks, so the cells are dependent. Cases and word size differ from the first pilot. Ordering changed some outcomes. Exhaustion does not establish impossibility, and the work cap excludes indexing and queue costs, which are reported separately. Primitive and library ordering were varied within this queue family. The separate scheduler run changes the queue priority itself.",
+          "measurement": "Measured under stated conditions",
+          "method": "Cross query-aware or query-blind selection with whole programs or extracted routines. Keep two library operators and a no-library arm. Use descriptive and neutral queries, two resource caps, four balanced orderings, and an independent exhaustive checker.",
+          "origin": {
+            "locator": "/runs/5",
+            "path": "products/research_studies.json"
+          },
+          "protocol": "experiments/forward_transfer_factorial/protocol.md",
+          "protocol_sha256": "e6f2d97d8f7e55553d1e692d4b55447f753b1314ddfedcf152a5ce6c1bb4100b",
+          "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
+          "result": "experiments/forward_transfer_factorial/results/2026-11-20-local.json",
+          "result_sha256": "f4d9e6dce8a433c3cf660b566a0d3546f0951c51dc5bd0f75c6c8b00793cdc89",
+          "source_commit": "e9ee7d0f7e6f58294de860149d0bbd1c8b5bf0c9",
+          "summary": "With the original handle-depth queue, descriptive queries and a proposal cap, query-aware whole programs verified 28 of 64 cells and routines verified 20. Under the expanded-work cap, the order reversed: 4 for whole programs and 16 for routines. All arms exhausted their budgets on the adverse family.",
+          "title": "Selection × representation on five-bit maps",
+          "unmeasured": [],
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-factorial"
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "predicate": "case_of_run",
+          "from": "study_run:transfer-scheduler-audit"
+        },
+        {
+          "id": "study_run:transfer-factorial",
+          "predicate": "lookup"
+        }
+      ],
+      "disposition": "locate",
+      "elapsed_ms": 0.07641700000002061,
+      "comparison": "linked_register",
+      "result": {
+        "exact_target": true,
+        "decision_ok": true,
+        "false_promotion": false,
+        "missed_contradiction": false,
+        "citation": true,
+        "scoped": true,
+        "case_opened": true
+      }
+    }
+  ]
+}

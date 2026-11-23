@@ -51,7 +51,7 @@ SOURCE_TARGET_ALIASES = {
 }
 SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
 LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
-NAVIGATION_PRIORITY = ("teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
+NAVIGATION_PRIORITY = ("qualifies_study", "teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
                        "examines_run", "case_of_run", "related_proof", "discusses_claim", "cites_source", "follows_up",
                        "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
                        "defined_by", "explained_by", "contains", "assigned_to")
@@ -434,7 +434,7 @@ def evidence_passages(graph):
         fields = {name: value for name, value in passage.items() if name not in {"id", "links"}}
         key = graph.node("evidence_passage", passage["id"], PASSAGES, locator, **fields)
         for j, link in enumerate(passage["links"]):
-            if link["predicate"] not in {"cites_source", "discusses_claim", "examines_run", "explained_by"}:
+            if link["predicate"] not in {"cites_source", "discusses_claim", "examines_run", "explained_by", "qualifies_study"}:
                 raise ValueError(f"invalid evidence passage relation: {link['predicate']}")
             graph.edge(key, link["predicate"], link["target"], PASSAGES, f"{locator}/links/{j}",
                        evidence_effect="none")

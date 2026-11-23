@@ -21,6 +21,7 @@ import build_knowledge_graph_companion as knowledge
 import validate_book_knowledge_graph as graph_checks
 from research_case_rows import anchor as research_anchor, export_csv, rows_for
 from build_canonical_public_status import ROOT, build_status, validate_against_schema
+from build_human_reader_public_site import LinkParser
 from build_product_projections import (
     CONTRACTS,
     CONTRIBUTIONS,
@@ -426,7 +427,28 @@ def reference_responsibility_errors(
     return errors
 
 
+def landing_link_errors(site: Path, page: Path) -> list[str]:
+    parser = LinkParser()
+    parser.feed(page.read_text(encoding="utf-8"))
+    errors = []
+    for link in dict.fromkeys(parser.links):
+        url = urlsplit(link)
+        if url.scheme or url.netloc:
+            continue
+        target = (page.parent / unquote(url.path)).resolve() if url.path else page
+        if target.is_dir():
+            target = target / "index.html"
+        if not target.is_relative_to(site) or not target.is_file():
+            errors.append(f"{page.relative_to(site)}: missing internal target {link}")
+        elif url.fragment and target.suffix == ".html":
+            ids = re.findall(r'\sid=["\']([^"\']+)', target.read_text(encoding="utf-8"))
+            if unquote(url.fragment) not in map(unescape, ids):
+                errors.append(f"{page.relative_to(site)}: missing internal anchor {link}")
+    return errors
+
+
 def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
+    site = site.resolve()
     errors: list[str] = []
     products = site / "products"
     status_path = site / "status" / "canonical-public-status.json"
@@ -458,6 +480,8 @@ def validate_rendered_site(site: Path, projection_schema: dict) -> list[str]:
             target = products / str(row.get(field, ""))
             if not target.is_file():
                 errors.append(f"rendered product projection missing {field}: {row.get(field)!r}")
+            elif field == "entry_path":
+                errors.extend(landing_link_errors(site, target))
     narrative_path = products / "narrative-book" / "manifest.json"
     reference_path = products / "architecture-reference" / "manifest.json"
     evidence_path = products / "evidence-registry" / "manifest.json"

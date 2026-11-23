@@ -1,0 +1,2283 @@
+{
+  "started_utc": "2026-11-23T10:10:39.169782+00:00",
+  "completed_utc": "2026-11-23T10:10:48.100610+00:00",
+  "cohort_sha256": "0d46c4752ec4b0301bc09d5a8f7ac428e3ff2f74502e70eb2ddae76d52e8953c",
+  "protocol_sha256": "2850cec4d13824c327681dcad7d2deca14d84399f11937eed725560e47f82dc3",
+  "automated_pair_scoring_ms": 2.005,
+  "median_secondary_read_ms": 305.5915,
+  "extra_body_bytes_per_recovered_closure": 1418.583,
+  "screen": {
+    "min_three_recovered": true,
+    "no_observed_adverse_false_closures": true,
+    "within_8192_bytes_per_recovered_closure": true,
+    "median_second_read_within_1000_ms": true
+  },
+  "summary": {
+    "observed": {
+      "primary_only": {
+        "lineages": 12,
+        "verified": 12,
+        "unresolved": 0,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 17023,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "caller_fallback": {
+        "lineages": 12,
+        "verified": 12,
+        "unresolved": 0,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 17023,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "gateway_fallback": {
+        "lineages": 12,
+        "verified": 12,
+        "unresolved": 0,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 17023,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      }
+    },
+    "primary_unavailable": {
+      "primary_only": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 0,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "caller_fallback": {
+        "lineages": 12,
+        "verified": 12,
+        "unresolved": 0,
+        "false_closures": 0,
+        "caller_requests": 24,
+        "service_requests": 24,
+        "body_bytes": 17023,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 578.8995,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "gateway_fallback": {
+        "lineages": 12,
+        "verified": 12,
+        "unresolved": 0,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 24,
+        "body_bytes": 18741,
+        "gateway_envelope_bytes": 1718,
+        "median_fetch_ms": 578.8995,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      }
+    },
+    "both_unavailable": {
+      "primary_only": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 0,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "caller_fallback": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 24,
+        "service_requests": 24,
+        "body_bytes": 0,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 578.8995,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "gateway_fallback": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 24,
+        "body_bytes": 998,
+        "gateway_envelope_bytes": 998,
+        "median_fetch_ms": 578.8995,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      }
+    },
+    "wrong_body": {
+      "primary_only": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 12,
+        "body_bytes": 0,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 301.3125,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "caller_fallback": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 24,
+        "service_requests": 24,
+        "body_bytes": 17023,
+        "gateway_envelope_bytes": 0,
+        "median_fetch_ms": 593.489,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      },
+      "gateway_fallback": {
+        "lineages": 12,
+        "verified": 0,
+        "unresolved": 12,
+        "false_closures": 0,
+        "caller_requests": 12,
+        "service_requests": 24,
+        "body_bytes": 18021,
+        "gateway_envelope_bytes": 998,
+        "median_fetch_ms": 593.489,
+        "timed_human_sessions": 0,
+        "active_human_ms": null
+      }
+    }
+  },
+  "observations": [
+    {
+      "name": "markdown-table",
+      "version": "3.0.3",
+      "integrity": "sha512-Z1NL3Tb1M9wH4XESsCDEksWoKTdlUafKc4pt0GRwjUyXaCFZ+dc3g2erqB6zm3szA2IUSi7VnPI+o/9jnxh9hw==",
+      "tarball": "https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.3.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.3.tgz",
+        "final_url": "https://registry.npmjs.org/markdown-table/-/markdown-table-3.0.3.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 6714,
+        "body_sha256": "2ec9363dce6864df201beb557e5b94c6016555970024741ac1aed911a1713ba5",
+        "elapsed_ms": 180.916,
+        "error": null
+      },
+      "expected_file_sha256": "dad41d1a33a10169965d06878a0c5cdcc96eddc28f8353ac9cd6d957fee060d4",
+      "reference_error": null,
+      "reference_processing_ms": 0.985,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/markdown-table@3.0.3/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/markdown-table@3.0.3/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1887,
+          "body_sha256": "dad41d1a33a10169965d06878a0c5cdcc96eddc28f8353ac9cd6d957fee060d4",
+          "elapsed_ms": 398.005,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/markdown-table@3.0.3/package.json",
+          "final_url": "https://unpkg.com/markdown-table@3.0.3/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1887,
+          "body_sha256": "dad41d1a33a10169965d06878a0c5cdcc96eddc28f8353ac9cd6d957fee060d4",
+          "elapsed_ms": 399.827,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1887,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1887,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1887,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1887,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 797.832,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2031,
+            "gateway_envelope_bytes": 144,
+            "captured_fetch_ms": 797.832,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 797.832,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 84,
+            "gateway_envelope_bytes": 84,
+            "captured_fetch_ms": 797.832,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 398.005,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1912,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 672.723,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1996,
+            "gateway_envelope_bytes": 84,
+            "captured_fetch_ms": 672.723,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "picomatch",
+      "version": "2.3.1",
+      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
+      "tarball": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+        "final_url": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 24289,
+        "body_sha256": "1b14ee9ec867c090d7b52c77193d83e77910553b3d18b2f86dd2b7b55e82c11f",
+        "elapsed_ms": 87.914,
+        "error": null
+      },
+      "expected_file_sha256": "39b4c548570b67f5a07fb596e2e102ad8b373f83a86d761d13df6d911f9a784c",
+      "reference_error": null,
+      "reference_processing_ms": 0.547,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/picomatch@2.3.1/package.json",
+          "final_url": "https://unpkg.com/picomatch@2.3.1/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1912,
+          "body_sha256": "39b4c548570b67f5a07fb596e2e102ad8b373f83a86d761d13df6d911f9a784c",
+          "elapsed_ms": 274.718,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/picomatch@2.3.1/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/picomatch@2.3.1/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1912,
+          "body_sha256": "39b4c548570b67f5a07fb596e2e102ad8b373f83a86d761d13df6d911f9a784c",
+          "elapsed_ms": 121.811,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1912,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1912,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1912,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1912,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 396.529,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2051,
+            "gateway_envelope_bytes": 139,
+            "captured_fetch_ms": 396.529,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 396.529,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 79,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 396.529,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 121.811,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1376,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 406.25,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1455,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 406.25,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "neo-async",
+      "version": "2.6.2",
+      "integrity": "sha512-Yd3UES5mWCSqR+qNT93S3UoYUkqAZ9lLg8a7g9rimsWmYGK8cVToA4/sF3RrshdyV3sAGMXVUmpMYOw+dLpOuw==",
+      "tarball": "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz",
+        "final_url": "https://registry.npmjs.org/neo-async/-/neo-async-2.6.2.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 38647,
+        "body_sha256": "43a1700df4178bbd3fe86336349830f25f9ce70d492ab1d45b716ceadaec6df4",
+        "elapsed_ms": 93.492,
+        "error": null
+      },
+      "expected_file_sha256": "bdf14e4aab20dbe30f54ecb40d41ff75339327f9a1cf8638931ea16256ceaa6f",
+      "reference_error": null,
+      "reference_processing_ms": 4.437,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/neo-async@2.6.2/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/neo-async@2.6.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1376,
+          "body_sha256": "bdf14e4aab20dbe30f54ecb40d41ff75339327f9a1cf8638931ea16256ceaa6f",
+          "elapsed_ms": 184.931,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/neo-async@2.6.2/package.json",
+          "final_url": "https://unpkg.com/neo-async@2.6.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1376,
+          "body_sha256": "bdf14e4aab20dbe30f54ecb40d41ff75339327f9a1cf8638931ea16256ceaa6f",
+          "elapsed_ms": 284.439,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1376,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1376,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1376,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1376,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 469.37,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1515,
+            "gateway_envelope_bytes": 139,
+            "captured_fetch_ms": 469.37,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 469.37,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 79,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 469.37,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 184.931,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 739,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 552.513,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 818,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 552.513,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "binary-extensions",
+      "version": "2.3.0",
+      "integrity": "sha512-Ceh+7ox5qe7LJuLHoY0feh3pHuUDHAcRUeyL2VYghZwfpkNIy/+8Ocg0a3UuSoYzavmylwuLWQOf3hl0jjMMIw==",
+      "tarball": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+        "final_url": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.3.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 2362,
+        "body_sha256": "c661f6ad0f10b0c5d6de1630276a3958786dc474b39c9c7caac1507272770114",
+        "elapsed_ms": 90.023,
+        "error": null
+      },
+      "expected_file_sha256": "f775eb159a64b320a9a62aaa831ae67e13ab05bd9ca375b8ec830a1e53cbc56d",
+      "reference_error": null,
+      "reference_processing_ms": 0.984,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/binary-extensions@2.3.0/package.json",
+          "final_url": "https://unpkg.com/binary-extensions@2.3.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 739,
+          "body_sha256": "f775eb159a64b320a9a62aaa831ae67e13ab05bd9ca375b8ec830a1e53cbc56d",
+          "elapsed_ms": 367.582,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/binary-extensions@2.3.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/binary-extensions@2.3.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 739,
+          "body_sha256": "f775eb159a64b320a9a62aaa831ae67e13ab05bd9ca375b8ec830a1e53cbc56d",
+          "elapsed_ms": 299.066,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 739,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 739,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 739,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 739,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 666.648,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 886,
+            "gateway_envelope_bytes": 147,
+            "captured_fetch_ms": 666.648,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 666.648,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 87,
+            "gateway_envelope_bytes": 87,
+            "captured_fetch_ms": 666.648,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 299.066,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 823,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 641.778,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 910,
+            "gateway_envelope_bytes": 87,
+            "captured_fetch_ms": 641.778,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "own-or-env",
+      "version": "1.0.2",
+      "integrity": "sha512-NQ7v0fliWtK7Lkb+WdFqe6ky9XAzYmlkXthQrBbzlYbmFKoAYbDDcwmOm6q8kOuwSRXW8bdL5ORksploUJmWgw==",
+      "tarball": "https://registry.npmjs.org/own-or-env/-/own-or-env-1.0.2.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/own-or-env/-/own-or-env-1.0.2.tgz",
+        "final_url": "https://registry.npmjs.org/own-or-env/-/own-or-env-1.0.2.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 2636,
+        "body_sha256": "fdd90a7d2eb0d12b0c974802648d3a2ec721d5a3fb08934a58aa81e6247c223f",
+        "elapsed_ms": 194.768,
+        "error": null
+      },
+      "expected_file_sha256": "d6a288d62cc096e0dac5e862073d6227ce061174b4d474b63bb3be6ed2f9aa71",
+      "reference_error": null,
+      "reference_processing_ms": 1.386,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/own-or-env@1.0.2/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/own-or-env@1.0.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 823,
+          "body_sha256": "d6a288d62cc096e0dac5e862073d6227ce061174b4d474b63bb3be6ed2f9aa71",
+          "elapsed_ms": 364.0,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/own-or-env@1.0.2/package.json",
+          "final_url": "https://unpkg.com/own-or-env@1.0.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 823,
+          "body_sha256": "d6a288d62cc096e0dac5e862073d6227ce061174b4d474b63bb3be6ed2f9aa71",
+          "elapsed_ms": 342.712,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 823,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 823,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 823,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 823,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 706.712,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 963,
+            "gateway_envelope_bytes": 140,
+            "captured_fetch_ms": 706.712,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 706.712,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 80,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 706.712,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 364.0,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 922,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 623.141,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1002,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 623.141,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "data-urls",
+      "version": "5.0.0",
+      "integrity": "sha512-ZYP5VBHshaDAiVZxjbRVcFJpc+4xGgT0bK3vzy1HLN8jTO975HEbuYzZJcHoQEY5K1a0z8YayJkyVETa08eNTg==",
+      "tarball": "https://registry.npmjs.org/data-urls/-/data-urls-5.0.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/data-urls/-/data-urls-5.0.0.tgz",
+        "final_url": "https://registry.npmjs.org/data-urls/-/data-urls-5.0.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 3475,
+        "body_sha256": "207c4648a8378e07c1816b15ed67b966d250dd099c488f4b2918ea9fad54f52a",
+        "elapsed_ms": 196.561,
+        "error": null
+      },
+      "expected_file_sha256": "96689c6cf175e892589fae35fce2e639eb391e59773b681634d89629c7e2ad77",
+      "reference_error": null,
+      "reference_processing_ms": 1.102,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/data-urls@5.0.0/package.json",
+          "final_url": "https://unpkg.com/data-urls@5.0.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 922,
+          "body_sha256": "96689c6cf175e892589fae35fce2e639eb391e59773b681634d89629c7e2ad77",
+          "elapsed_ms": 259.141,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/data-urls@5.0.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/data-urls@5.0.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 922,
+          "body_sha256": "96689c6cf175e892589fae35fce2e639eb391e59773b681634d89629c7e2ad77",
+          "elapsed_ms": 312.834,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 922,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 922,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 922,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 922,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 571.975,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1061,
+            "gateway_envelope_bytes": 139,
+            "captured_fetch_ms": 571.975,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 571.975,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 79,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 571.975,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 312.834,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 693,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 595.099,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 772,
+            "gateway_envelope_bytes": 79,
+            "captured_fetch_ms": 595.099,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "strip-indent",
+      "version": "3.0.0",
+      "integrity": "sha512-laJTa3Jb+VQpaC6DseHhF7dXVqHTfJPCRDaEbid/drOhgitgYku/letMUqOXFoWV0zIIUbjpdH2t+tYj4bQMRQ==",
+      "tarball": "https://registry.npmjs.org/strip-indent/-/strip-indent-3.0.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/strip-indent/-/strip-indent-3.0.0.tgz",
+        "final_url": "https://registry.npmjs.org/strip-indent/-/strip-indent-3.0.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 1719,
+        "body_sha256": "e5957205b9664935858a2d2e2049118bf577b3afa64a83d513b99184ee7c247f",
+        "elapsed_ms": 109.193,
+        "error": null
+      },
+      "expected_file_sha256": "573ecac977fe836c0e1bfa9ad96a1fd6cebfee4ddec4098a2db10110623ba8ba",
+      "reference_error": null,
+      "reference_processing_ms": 0.938,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/strip-indent@3.0.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/strip-indent@3.0.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 693,
+          "body_sha256": "573ecac977fe836c0e1bfa9ad96a1fd6cebfee4ddec4098a2db10110623ba8ba",
+          "elapsed_ms": 303.559,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/strip-indent@3.0.0/package.json",
+          "final_url": "https://unpkg.com/strip-indent@3.0.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 693,
+          "body_sha256": "573ecac977fe836c0e1bfa9ad96a1fd6cebfee4ddec4098a2db10110623ba8ba",
+          "elapsed_ms": 282.265,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 693,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 693,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 693,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 693,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 585.824,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 835,
+            "gateway_envelope_bytes": 142,
+            "captured_fetch_ms": 585.824,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 585.824,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 82,
+            "gateway_envelope_bytes": 82,
+            "captured_fetch_ms": 585.824,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 303.559,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 2505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 591.879,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2587,
+            "gateway_envelope_bytes": 82,
+            "captured_fetch_ms": 591.879,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "mdast-util-to-markdown",
+      "version": "1.5.0",
+      "integrity": "sha512-bbv7TPv/WC49thZPg3jXuqzuvI45IL2EVAr/KxF0BSdHsU0ceFHOmwQn6evxAh1GaoK/6GQ1wp4R4oW2+LFL/A==",
+      "tarball": "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-1.5.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-1.5.0.tgz",
+        "final_url": "https://registry.npmjs.org/mdast-util-to-markdown/-/mdast-util-to-markdown-1.5.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 34034,
+        "body_sha256": "0deccd60207f7385e4d09b7e128ceb113e847c1c0b4d4497fcc2f0a15cd38067",
+        "elapsed_ms": 234.464,
+        "error": null
+      },
+      "expected_file_sha256": "f6e6314f93fe7ac9a4aade461ab77edf7a65b17c360ad2f54fff9041e348ad44",
+      "reference_error": null,
+      "reference_processing_ms": 5.191,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/mdast-util-to-markdown@1.5.0/package.json",
+          "final_url": "https://unpkg.com/mdast-util-to-markdown@1.5.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 2505,
+          "body_sha256": "f6e6314f93fe7ac9a4aade461ab77edf7a65b17c360ad2f54fff9041e348ad44",
+          "elapsed_ms": 288.32,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/mdast-util-to-markdown@1.5.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/mdast-util-to-markdown@1.5.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 2505,
+          "body_sha256": "f6e6314f93fe7ac9a4aade461ab77edf7a65b17c360ad2f54fff9041e348ad44",
+          "elapsed_ms": 111.077,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 2505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 399.397,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2657,
+            "gateway_envelope_bytes": 152,
+            "captured_fetch_ms": 399.397,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 399.397,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 92,
+            "gateway_envelope_bytes": 92,
+            "captured_fetch_ms": 399.397,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.077,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 2534,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 433.94,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2626,
+            "gateway_envelope_bytes": 92,
+            "captured_fetch_ms": 433.94,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "css-select",
+      "version": "5.1.0",
+      "integrity": "sha512-nwoRF1rvRRnnCqqY7updORDsuqKzqYJ28+oSMaJMMgOauh3fvwHqMS7EZpIPqK8GL+g9mKxF1vP/ZjSeNjEVHg==",
+      "tarball": "https://registry.npmjs.org/css-select/-/css-select-5.1.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/css-select/-/css-select-5.1.0.tgz",
+        "final_url": "https://registry.npmjs.org/css-select/-/css-select-5.1.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 34325,
+        "body_sha256": "9ea328ea35f9062201497dbe10284d34e967fbe6f4ad5dac5b6c535e59bbaf75",
+        "elapsed_ms": 189.328,
+        "error": null
+      },
+      "expected_file_sha256": "793db0e2224547eacf8f7107fae34d1ac223201ef48e47479d73c7bd0c4b2607",
+      "reference_error": null,
+      "reference_processing_ms": 5.209,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/css-select@5.1.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/css-select@5.1.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 2534,
+          "body_sha256": "793db0e2224547eacf8f7107fae34d1ac223201ef48e47479d73c7bd0c4b2607",
+          "elapsed_ms": 209.875,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/css-select@5.1.0/package.json",
+          "final_url": "https://unpkg.com/css-select@5.1.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 2534,
+          "body_sha256": "793db0e2224547eacf8f7107fae34d1ac223201ef48e47479d73c7bd0c4b2607",
+          "elapsed_ms": 322.863,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2534,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2534,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 2534,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 2534,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 532.738,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 2674,
+            "gateway_envelope_bytes": 140,
+            "captured_fetch_ms": 532.738,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 532.738,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 80,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 532.738,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 209.875,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 537.122,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1585,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 537.122,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "micromark-util-decode-string",
+      "version": "1.1.0",
+      "integrity": "sha512-YphLGCK8gM1tG1bd54azwyrQRjCFcmgj2S2GoJDNnh4vYtnL38JS8M4gpxzOPNyHdNEpheyWXCTnnTDY3N+NVQ==",
+      "tarball": "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-1.1.0.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-1.1.0.tgz",
+        "final_url": "https://registry.npmjs.org/micromark-util-decode-string/-/micromark-util-decode-string-1.1.0.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 2847,
+        "body_sha256": "673727036cde2a3fd6a82cc04b0cb30ee2bf308d997e90f437f717d0b7920ccd",
+        "elapsed_ms": 103.084,
+        "error": null
+      },
+      "expected_file_sha256": "56f9ab82c1b41ead8966548d4676e92c6a92b7f12c15b0e226231b7d22423c61",
+      "reference_error": null,
+      "reference_processing_ms": 1.068,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/micromark-util-decode-string@1.1.0/package.json",
+          "final_url": "https://unpkg.com/micromark-util-decode-string@1.1.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1505,
+          "body_sha256": "56f9ab82c1b41ead8966548d4676e92c6a92b7f12c15b0e226231b7d22423c61",
+          "elapsed_ms": 327.247,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/micromark-util-decode-string@1.1.0/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/micromark-util-decode-string@1.1.0/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1505,
+          "body_sha256": "56f9ab82c1b41ead8966548d4676e92c6a92b7f12c15b0e226231b7d22423c61",
+          "elapsed_ms": 411.486,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1505,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 738.733,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1663,
+            "gateway_envelope_bytes": 158,
+            "captured_fetch_ms": 738.733,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 738.733,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 98,
+            "gateway_envelope_bytes": 98,
+            "captured_fetch_ms": 738.733,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 411.486,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1220,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 758.656,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1318,
+            "gateway_envelope_bytes": 98,
+            "captured_fetch_ms": 758.656,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "is-extglob",
+      "version": "2.1.1",
+      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==",
+      "tarball": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+        "final_url": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 2663,
+        "body_sha256": "8c5d4286146ad62fc1096981700ce1c22a167708926fca01f9ca74f9bb50bc19",
+        "elapsed_ms": 167.08,
+        "error": null
+      },
+      "expected_file_sha256": "8031afcd87f448d75ba8a5dd2cde9c68f982a94f406ebae8e5fb7cf6dfdeede2",
+      "reference_error": null,
+      "reference_processing_ms": 1.002,
+      "order": [
+        "primary",
+        "secondary"
+      ],
+      "reads": {
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/is-extglob@2.1.1/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/is-extglob@2.1.1/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1220,
+          "body_sha256": "8031afcd87f448d75ba8a5dd2cde9c68f982a94f406ebae8e5fb7cf6dfdeede2",
+          "elapsed_ms": 111.684,
+          "error": null
+        },
+        "secondary": {
+          "requested_url": "https://unpkg.com/is-extglob@2.1.1/package.json",
+          "final_url": "https://unpkg.com/is-extglob@2.1.1/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 1220,
+          "body_sha256": "8031afcd87f448d75ba8a5dd2cde9c68f982a94f406ebae8e5fb7cf6dfdeede2",
+          "elapsed_ms": 347.17,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1220,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1220,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 1220,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1220,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 458.854,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1360,
+            "gateway_envelope_bytes": 140,
+            "captured_fetch_ms": 458.854,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 458.854,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 80,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 458.854,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 111.684,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 907,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 373.578,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 987,
+            "gateway_envelope_bytes": 80,
+            "captured_fetch_ms": 373.578,
+            "active_human_ms": null
+          }
+        }
+      }
+    },
+    {
+      "name": "minizlib",
+      "version": "2.1.2",
+      "integrity": "sha512-bAxsR8BVfj60DWXHE3u30oHzfl4G7khkSuPW+qvpd7jFRHm7dLxOjUk1EHACJ/hxLY8phGJ0YhYHZo7jil7Qdg==",
+      "tarball": "https://registry.npmjs.org/minizlib/-/minizlib-2.1.2.tgz",
+      "reference": {
+        "requested_url": "https://registry.npmjs.org/minizlib/-/minizlib-2.1.2.tgz",
+        "final_url": "https://registry.npmjs.org/minizlib/-/minizlib-2.1.2.tgz",
+        "http_status": 200,
+        "redirects": 0,
+        "received_bytes": 6154,
+        "body_sha256": "44ed118a2d089bb45debea5247486c4dc6bff7a1c4a28a34397c685fe2b0ceed",
+        "elapsed_ms": 100.548,
+        "error": null
+      },
+      "expected_file_sha256": "dd7d78caf139ba9228a84bee7bb5fa7b92e4d332b836f07bdf1b0f9e78fa6340",
+      "reference_error": null,
+      "reference_processing_ms": 1.107,
+      "order": [
+        "secondary",
+        "primary"
+      ],
+      "reads": {
+        "secondary": {
+          "requested_url": "https://unpkg.com/minizlib@2.1.2/package.json",
+          "final_url": "https://unpkg.com/minizlib@2.1.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 907,
+          "body_sha256": "dd7d78caf139ba9228a84bee7bb5fa7b92e4d332b836f07bdf1b0f9e78fa6340",
+          "elapsed_ms": 261.894,
+          "error": null
+        },
+        "primary": {
+          "requested_url": "https://cdn.jsdelivr.net/npm/minizlib@2.1.2/package.json",
+          "final_url": "https://cdn.jsdelivr.net/npm/minizlib@2.1.2/package.json",
+          "http_status": 200,
+          "redirects": 0,
+          "received_bytes": 907,
+          "body_sha256": "dd7d78caf139ba9228a84bee7bb5fa7b92e4d332b836f07bdf1b0f9e78fa6340",
+          "elapsed_ms": 512.378,
+          "error": null
+        }
+      },
+      "cases": {
+        "observed": {
+          "primary_only": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 907,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 907,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 907,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          }
+        },
+        "primary_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 907,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 774.272,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "verified",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1045,
+            "gateway_envelope_bytes": 138,
+            "captured_fetch_ms": 774.272,
+            "active_human_ms": null
+          }
+        },
+        "both_unavailable": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 774.272,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 78,
+            "gateway_envelope_bytes": 78,
+            "captured_fetch_ms": 774.272,
+            "active_human_ms": null
+          }
+        },
+        "wrong_body": {
+          "primary_only": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 1,
+            "response_body_bytes": 0,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 512.378,
+            "active_human_ms": null
+          },
+          "caller_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 2,
+            "service_requests": 2,
+            "response_body_bytes": 1887,
+            "gateway_envelope_bytes": 0,
+            "captured_fetch_ms": 912.205,
+            "active_human_ms": null
+          },
+          "gateway_fallback": {
+            "disposition": "unresolved",
+            "false_closure": false,
+            "caller_requests": 1,
+            "service_requests": 2,
+            "response_body_bytes": 1965,
+            "gateway_envelope_bytes": 78,
+            "captured_fetch_ms": 912.205,
+            "active_human_ms": null
+          }
+        }
+      }
+    }
+  ]
+}

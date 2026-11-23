@@ -311,6 +311,9 @@ def write_quarto(structure: dict, files: ProjectionFiles | None = None) -> None:
     for stub in HISTORICAL_CHAPTER_STUBS:
         lines.insert(resource_index, f"    - {stub}")
         resource_index += 1
+    for public_document in ("docs/three_defended_contributions.md", "docs/defended_contribution_prior_art_positioning.md"):
+        lines.insert(resource_index, f"    - {public_document}")
+        resource_index += 1
     render_files = list(structure.get("front_matter", []))
     for part in structure.get("parts", []):
         render_files.extend(chapter["file"] for chapter in part.get("chapters", []))

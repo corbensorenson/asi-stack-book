@@ -142,6 +142,11 @@ async function checkResearchFacets(context) {
     assert.match(await proofBoundary.innerText(), /finite/);
     await proofBoundary.getByRole("link", {name: "Open the formal target in the graph"}).click();
     assert.equal(new URL(page.url()).searchParams.get("node"), proof);
+    await page.goto(graphRoute + encodeURIComponent("study:verifier-rollout"));
+    await record.getByRole("link", {name: "Verifier revision checks and measured work", exact: true}).click();
+    assert.match(await record.innerText(), /Outside measurement.*operator time/s);
+    await record.getByRole("link", {name: "Open in the book", exact: true}).click();
+    assert.equal(new URL(page.url()).hash, "#codex-test-plan");
   } finally {
     await page.close();
   }
@@ -347,7 +352,7 @@ async function main() {
     if (!live) await serveCandidate(context);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
-    await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#clustering-the-retrieval-index$/);
+    await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#release-note-index-rebuild$/);
     if (!live) {
       await search(context, root, "Verifier freshness with a separate revision authority process",
         /study-verifier-rollout\.html[^#]*#run-verifier-process-boundary$/);

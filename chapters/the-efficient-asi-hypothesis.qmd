@@ -28,6 +28,25 @@ open_evidence_gaps:
   - "External grounding now includes source-noted comparators for sparse MoE systems, learned/query routing, prompt compression, speculative generation, and broad benchmarks; these are comparator records only, not reproduced efficiency evidence."
 ---
 
+A synthesis system can reuse a whole program or extract shorter routines.
+Under the original queue order and a 96-proposal cap, whole programs verified
+28 of 64 descriptive-query cells and routines verified 20. Under the
+expanded-work cap the ranking reversed, four versus 16. A comparison with
+no library is also in the study. Choose the representation that wins under
+the cap that will actually govern work.
+[Inspect the factorial comparison](../products/evidence-registry/study-forward-transfer.html#run-transfer-factorial).
+
+The 256 design cells reuse 16 authored five-bit task lineages. Queue order
+also changes the result. The experiment therefore supports a conditional
+decision about this search procedure. A conventional cascade that reuses
+tested work and sends difficult cases to a stronger route deserves the same
+resources and acceptance test in a broader trial.
+
+Reopen the efficiency claim on fresh task lineages with a frozen quality
+threshold and matched tuning. Count indexing, verification, fallback,
+operator time, and delayed repair. Adopt the extra machinery only if the
+advantage survives that bill.
+
 ## Chapter status
 
 | Field | Value |
@@ -58,13 +77,9 @@ It inherits the stack boundary from the opening frame and asks the first design 
 ::: {.asi-human-only}
 ## Human Reading Path
 
-**Concrete lens.** Always-maximal routing is the strongest simpler baseline and may win on small or novel workloads. Always-cheapest routing may win only by weakening quality or moving repair outside the accounting boundary.
-
-The stack is now defined, but it cannot remain only a governance diagram. A good architecture should spend high-cost cognition where the contract demands it, reuse prior work when it remains valid, and preserve enough evidence that shortcuts do not become hidden errors.
-
-The important distinction is between thrift and recklessness. The architecture is not arguing that every task should be made cheap. It is arguing that cost, quality, authority, uncertainty, and residual work should be visible together, so the system can choose the smallest adequate route without pretending that adequacy has been proved when it has not. Efficiency is governed only when saved work remains visible.
-
-The target is not austerity; it is measured adequacy under a trace that later layers can challenge. Efficiency becomes trustworthy only when the saving remains visible after verification and repair costs are paid. A cheap answer earns use only when the accounting survives review, and every apparent saving should carry the evidence debt that keeps thrift accountable when efficiency looks too easy elsewhere.
+Use the [invoice trace](#a-concrete-failure-the-cheap-route-that-hid-its-repair-bill)
+to account for savings after verification and repair. The search comparison
+above shows how a measured win can change when the budget changes.
 :::
 
 ## Problem

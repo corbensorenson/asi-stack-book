@@ -5,7 +5,7 @@
     "title": "One compiled Circle proof target",
     "run": "experiments/p5_terminal_batch/results/result.json",
     "related_proof": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
-    "proof_scope": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General transport and implementation refinement remain open."
+    "proof_scope": "The Lean target covers the finite public-consumer acceptance contract. The external rope compilation is a separate, pinned replay. General proof transport and implementation refinement remain open."
   },
   {"id": "kerc.protected_exact_handle_preservation", "title": "Typed exact objects in bilingual records", "run": "experiments/p4_kerc_runtime/results/confirmatory_result.json"},
   {"id": "governed-usefulness.held-out-local-policy-effect", "title": "Policy effects on one held-out local corpus", "run": "experiments/p4_governed_usefulness/results/confirmatory_result.json"},
