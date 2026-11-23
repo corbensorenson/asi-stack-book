@@ -9,6 +9,7 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 from pathlib import Path
 from statistics import median
+from tarfile import TarError
 from threading import Thread
 from time import perf_counter
 from urllib.parse import urlsplit
@@ -25,7 +26,7 @@ def prepare(row):
     if not problem:
         try:
             expected = expected_manifest(raw, row["integrity"])
-        except (KeyError, ValueError, OSError, EOFError) as error:
+        except (KeyError, ValueError, OSError, EOFError, TarError) as error:
             problem = type(error).__name__
     return {"expected": expected, "trace": trace, "error": problem}
 
@@ -71,13 +72,13 @@ def make_gateway(cohort, references, controls, journal):
                 return
             key, condition = pieces
             value, trace = reply(key, condition)
+            journal[(key, condition)] = trace
             body = value if value is not None else b""
             self.send_response(200 if value is not None else 409)
             self.send_header("Content-Type", "application/json")
             self.send_header("Content-Length", str(len(body)))
             self.end_headers()
             self.wfile.write(body)
-            journal[(key, condition)] = trace
 
     return HTTPServer(("127.0.0.1", 0), Gateway)
 

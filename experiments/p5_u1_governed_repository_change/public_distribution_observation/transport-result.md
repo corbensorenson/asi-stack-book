@@ -23,15 +23,19 @@ covers a known withheld read and leaves actual request loss and delayed
 replies open. All attempted live reads succeeded. Every wrong-body control
 used a successful response from a different sampled package.
 
-The measured gateway was a real local HTTP process boundary over separately
-issued upstream reads. The upstream operators still share the same npm
+The measured gateway was a real loopback HTTP hop served by a worker thread
+in the same process. The two arms issued their upstream reads separately.
+The upstream operators still share the same npm
 publication origin. The trial covers one host and time window. The relative
 timings include variation in independent network fetches, so the observed
 condition's negative median does not identify an acceleration caused by
 the gateway. Human operator time remains unmeasured. The [first observation
 pilot](result.md) retains its separate modeled request and envelope counts.
 
-To collect another owner-operated transport snapshot with the frozen cohort:
+The measurements were collected with the runner at commit `c100abc4`.
+The current runner records the gateway trace before sending its response so
+the caller can always join the trace to that response. To collect another
+owner-operated transport snapshot with the frozen cohort:
 
 ```sh
 python3 experiments/p5_u1_governed_repository_change/public_distribution_observation/run_transport.py /tmp/asi-live-transport.json
