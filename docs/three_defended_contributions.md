@@ -1,21 +1,28 @@
 # Three Defended Contributions
 
-Last updated: 2026-11-20
+Last updated: 2026-11-23
 
-The book remains broad, but the research program now permits exactly three
-program-level defended contributions. The older five-track portfolio remains
-useful as subordinate work packages; it is no longer permission to present five
-independent flagship claims, much less one flagship claim per chapter.
+**Use scoped Git for the known source-link repair.** It matched the governed
+workflow on four local paths and kept the original effect in ordinary branch
+ancestry. **Stop the Atlas experiment at budget 128 under its declared
+screen.** The corrected estimate of 0.035299 falls below the 0.04 continuation
+margin on the same authored worlds. **Keep receiver placement conditional on
+the full cost.** With equal access to a second status projection, both
+placements verified 80 of 288 paired cases. The gateway traded fewer caller
+requests for more status bytes. [Scoped Git](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html#run-git-retrospective) ·
+[Atlas correction](https://corbensorenson.github.io/asi-stack-book/papers/answerability_atlas_synthesis.html#completing-the-comparator-pool) ·
+[Receiver comparison](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-availability)
 
-Here, “defended” names the three **proposed targets selected for scrutiny**;
-it does not report established novelty or a successful general defence. The
-current proposals are an architectural composition, a public evidence process,
-and a composition of observation and residual accounting. Their bounded local
-implementation results retain their own evidence ceilings. The
-[prior-art comparison](defended_contribution_prior_art_positioning.md) specifies
-a competent conventional workflow for each target and the relation it must
-add. Equal behavior at lower burden favors that alternative and narrows the
-contribution claim.
+| Proposed contribution | Competent conventional comparison | What would change the decision |
+|---|---|---|
+| Governed-cognition interface contracts | Scoped change control with reviewed authorization, target observation and recovery. | A new handoff workload in which the additional contract improves fault localization or recovery after charging coordination work. |
+| Public claim-state transition discipline | A versioned register with prospective criteria and review over the same exact records. | Reviewers make fewer unsupported promotions or missed corrections, with usable citations and acceptable review time. A fresh Atlas confirmation would use a prespecified comparator pool. |
+| Record/reality reconciliation and residual accounting | A status endpoint with competent retry, deduplication and all ordinarily available observations. | New requests show that the second observation resolves more uncertain effects at acceptable cost. Charge transport, holds and active operator time. |
+
+These three proposed contributions retain the limits of their observations.
+The [prior-art comparison](defended_contribution_prior_art_positioning.md)
+gives implementable conventional comparisons and the conditions for narrowing
+each proposal.
 
 ## Contribution type and present result
 
