@@ -1,0 +1,15 @@
+[
+  {
+    "id": "G5",
+    "study": "navigation",
+    "question": "Find the revised decision that superseded the six-comparator proceed screen. What threshold did the revised estimate miss, and was this a fresh-world confirmation?",
+    "initial": ["evidence_passage:atlas-original-proceed-decision"],
+    "lookup": "Atlas headroom decision after comparator correction",
+    "type": ["supersedes_decision"],
+    "decision": "locate",
+    "contradiction": false,
+    "targets": ["evidence_passage:atlas-corrected-decision"],
+    "facts": ["0.035299", "0.04", "stop"],
+    "scope": ["24 authored worlds", "after outcomes"]
+  }
+]
