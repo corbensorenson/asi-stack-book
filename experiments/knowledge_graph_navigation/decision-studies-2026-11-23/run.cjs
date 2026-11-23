@@ -9,12 +9,14 @@ const {gunzipSync} = require("node:zlib");
 const readline = require("node:readline/promises");
 
 const session = process.argv[4] === "--session";
-if ((!session && process.argv.length !== 4) || (session && process.argv.length !== 8)) {
-  throw new Error("Use run.cjs TESTED_SITE OUTPUT [--session TASK ordinary|linked SESSION_CODE]");
+const supplement = process.argv[4] === "--tasks";
+if ((session && process.argv.length !== 8) || (supplement && process.argv.length !== 6)
+    || (!session && !supplement && process.argv.length !== 4)) {
+  throw new Error("Use run.cjs TESTED_SITE OUTPUT [--tasks FILE | --session TASK ordinary|linked SESSION_CODE]");
 }
 const site = path.resolve(process.argv[2]);
 const companion = path.join(site, "products/evidence-registry/knowledge-graph");
-const tasksRaw = fs.readFileSync(path.join(__dirname, "tasks.json"));
+const tasksRaw = fs.readFileSync(supplement ? process.argv[5] : path.join(__dirname, "tasks.json"));
 const tasks = JSON.parse(tasksRaw);
 const status = JSON.parse(fs.readFileSync(path.join(site, "status/canonical-public-status.json")));
 const manifest = JSON.parse(fs.readFileSync(path.join(companion, "manifest.json")));

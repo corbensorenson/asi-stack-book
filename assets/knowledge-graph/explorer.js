@@ -50,6 +50,7 @@ const relations = {
   retained_record_for: ["Claim identity", "Retained records"],
   retains_run: ["Study runs", "Study"],
   subclaim_of: ["Broader claim", "Evidence for bounded subclaims"],
+  supersedes_decision: ["Earlier decision it supersedes", "Decision that supersedes this one"],
   teaches_chapter: ["Technical owners", "Reader unit"],
 };
 
@@ -404,6 +405,7 @@ function renderRecord(packet) {
   recordTitle.textContent = node.title;
   record.replaceChildren();
   const values = [label(node.kind), node.record_version === "retained" ? "Retained record" : null,
+    node.record_version === "superseded" ? "Superseded decision" : null,
     node.state || null, node.status || null].filter(Boolean);
   record.append(el("p", values.join(" · "), "metadata"));
   const id = el("p");

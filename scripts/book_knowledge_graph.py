@@ -51,7 +51,7 @@ SOURCE_TARGET_ALIASES = {
 }
 SCHEMA_VERSION = "asi-stack.knowledge-graph.v1"
 LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
-NAVIGATION_PRIORITY = ("qualifies_study", "teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
+NAVIGATION_PRIORITY = ("supersedes_decision", "qualifies_study", "teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
                        "examines_run", "case_of_run", "related_proof", "discusses_claim", "cites_source", "follows_up",
                        "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
                        "defined_by", "explained_by", "contains", "assigned_to")
@@ -429,13 +429,20 @@ def evidence_records(graph):
 
 
 def evidence_passages(graph):
-    for i, passage in enumerate(graph.data(PASSAGES)):
+    rows = graph.data(PASSAGES)
+    passages = {f"evidence_passage:{row['id']}": row for row in rows}
+    for i, passage in enumerate(rows):
         locator = f"/{i}"
         fields = {name: value for name, value in passage.items() if name not in {"id", "links"}}
         key = graph.node("evidence_passage", passage["id"], PASSAGES, locator, **fields)
         for j, link in enumerate(passage["links"]):
-            if link["predicate"] not in {"cites_source", "discusses_claim", "examines_run", "explained_by", "qualifies_study"}:
+            if link["predicate"] not in {"cites_source", "discusses_claim", "examines_run", "explained_by",
+                                         "qualifies_study", "supersedes_decision"}:
                 raise ValueError(f"invalid evidence passage relation: {link['predicate']}")
+            if link["predicate"] == "supersedes_decision":
+                older = passages.get(link["target"], {})
+                if passage.get("record_version") == "superseded" or older.get("record_version") != "superseded":
+                    raise ValueError("Decision supersession must point from a current passage to a superseded passage")
             graph.edge(key, link["predicate"], link["target"], PASSAGES, f"{locator}/links/{j}",
                        evidence_effect="none")
 

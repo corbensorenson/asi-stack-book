@@ -127,6 +127,14 @@ def main():
     cases = kg.neighborhood(graph, "study_run:verifier-process-boundary", predicates=("follows_up",))
     assert [edge["to"] for edge in cases["edges"]] == ["study_run:verifier-revision-freshness"]
     assert "active operator time" in nodes["study_run:verifier-process-boundary"]["unmeasured"]
+    original = "evidence_passage:atlas-original-proceed-decision"
+    correction = "evidence_passage:atlas-corrected-decision"
+    supersession = [edge for edge in graph["edges"] if edge["predicate"] == "supersedes_decision"]
+    assert [(edge["from"], edge["to"], edge["qualifiers"]["evidence_effect"]) for edge in supersession] == [
+        (correction, original, "none"),
+    ]
+    assert nodes[original]["record_version"] == "superseded"
+    assert "0.052142" in nodes[original]["summary"] and "0.035299" in nodes[correction]["summary"]
     for query, identity in [
         ("shipment", "evidence_passage:shipment-shared-observation"),
         ("Why did the Atlas stop after adding the buy-all baseline?", "evidence_passage:atlas-corrected-decision"),

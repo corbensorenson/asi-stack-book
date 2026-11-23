@@ -12,12 +12,31 @@
     "source_section": "Answerability Atlas, Section 8.2 and Table 5.",
     "aliases": ["buy all baseline", "Atlas comparator correction", "0.035299", "headroom threshold"],
     "links": [
+      {"predicate": "supersedes_decision", "target": "evidence_passage:atlas-original-proceed-decision"},
       {"predicate": "discusses_claim", "target": "claim:benchmark-ratchets-and-anti-goodhart-evidence.core"},
       {"predicate": "cites_source", "target": "source:answerability_atlas_synthesis"}
     ],
     "locators": [
       {"label": "Corrected comparator pool and Table 5", "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"},
       {"label": "Reader decision", "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"}
+    ]
+  },
+  {
+    "id": "atlas-original-proceed-decision",
+    "title": "Answerability Atlas original proceed decision (superseded)",
+    "record_version": "superseded",
+    "url": "papers/answerability_atlas_synthesis.html#appendix-a.-artifact-references-and-historical-reading-order",
+    "question": "What did the original six-comparator Atlas screen report?",
+    "summary": "The original six-comparator screen passed at budget 128 with mean H4 of 0.052142 and ordinary 95% lower limit of 0.031653. The correction superseded the proceed decision.",
+    "limit": "The historical screen omitted two available comparators. The eight-comparator decision E18 governs interpretation. The original record E16 is retained.",
+    "measurement": "Superseded decision",
+    "source_section": "Answerability Atlas, Appendix A (E16 and E18) and Table 5 (original and corrected means).",
+    "aliases": ["Atlas six-comparator screen", "Atlas original proceed decision", "Atlas E16"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:answerability_atlas_synthesis"}
+    ],
+    "locators": [
+      {"label": "Original and corrected results in Table 5", "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"}
     ]
   },
   {

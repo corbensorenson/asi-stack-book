@@ -130,7 +130,11 @@ async function checkResearchFacets(context) {
     assert(copies.includes(citation));
 
     const graphRoute = registry + "knowledge-graph/?node=";
-    await page.goto(graphRoute + encodeURIComponent("evidence_passage:atlas-corrected-decision"));
+    await page.goto(graphRoute + encodeURIComponent("evidence_passage:atlas-original-proceed-decision"));
+    await record.getByText(/0\.052142/).waitFor();
+    await record.getByRole("link", {name: "Answerability Atlas baseline correction at budget 128", exact: true}).click();
+    assert.equal(new URL(page.url()).searchParams.get("node"), "evidence_passage:atlas-corrected-decision");
+    await record.getByRole("link", {name: "Answerability Atlas original proceed decision (superseded)", exact: true}).waitFor();
     await record.getByRole("link", {name: "Corrected comparator pool and Table 5"}).click();
     const atlas = page.locator("#completing-the-comparator-pool");
     assert(await atlas.isVisible());
