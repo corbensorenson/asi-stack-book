@@ -131,13 +131,14 @@ function asiSearchResults(query, scope, options) {
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   })[character]);
   if (!scope || scope === "evidence") {
-    const existing = new Set(evidenceRows.map(row => row.href));
+    const exact = new Map();
+    const curated = new Map(evidenceRows.map(row => [row.href, row]));
     for (const key of asiIdentifierKeys(query)) {
       for (const row of asiBookSearch.identifiers.get(key) || []) {
-        if (!existing.has(row.href)) evidenceRows.push(row);
-        existing.add(row.href);
+        exact.set(row.href, curated.get(row.href) || row);
       }
     }
+    evidenceRows = [...exact.values(), ...evidenceRows.filter(row => !exact.has(row.href))];
   }
   const evidenceRoutes = new Set(evidenceRows.map(row => row.href));
   return [...evidenceRows, ...bookRows.filter(row => !evidenceRoutes.has(row.href))].slice(0, options.limit).map(row => {

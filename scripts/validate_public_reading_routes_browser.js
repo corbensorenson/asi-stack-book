@@ -391,6 +391,7 @@ async function main() {
     const context = await browser.newContext();
     if (!live) await serveCandidate(context);
     await checkReaderAccess(context);
+    await search(context, root, "SciFact claim 83", /study-citation-retrieval\.html[^#]*#run-fresh-citation-retrieval--case-83$/);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#release-note-index-rebuild$/);
