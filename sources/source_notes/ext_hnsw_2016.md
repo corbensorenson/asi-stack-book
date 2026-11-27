@@ -28,7 +28,7 @@ Evaluate recall, tail latency, graph storage, and updates under the application 
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Choose the grouping by what the reader needs](../../chapters/virtual-context-abi.qmd#choose-the-grouping-by-what-the-reader-needs)
+- `virtual-context-abi` — [Choose the grouping by what the reader needs](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#choose-the-grouping-by-what-the-reader-needs)
 
 ## Claims To Add Or Update
 

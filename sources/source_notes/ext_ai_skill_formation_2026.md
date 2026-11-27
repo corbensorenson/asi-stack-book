@@ -24,7 +24,7 @@ Randomized unfamiliar-library task and subsequent quiz. Observed interaction sty
 
 ## Book Chapters Supported
 
-- `ai-deployment-transition-distribution-and-human-agency` — [Who can diagnose the next failure?](../../chapters/ai-deployment-transition-distribution-and-human-agency.qmd#who-can-diagnose-the-next-failure)
+- `ai-deployment-transition-distribution-and-human-agency` — [Who can diagnose the next failure?](https://corbensorenson.github.io/asi-stack-book/chapters/ai-deployment-transition-distribution-and-human-agency.html#who-can-diagnose-the-next-failure)
 
 ## Claims To Add Or Update
 

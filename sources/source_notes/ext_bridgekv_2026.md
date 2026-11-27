@@ -24,7 +24,7 @@ Single-A40 measurements and separate serving simulation. The smaller decoder cha
 
 ## Book Chapters Supported
 
-- `fast-generation-architectures` — [Translate a prompt cache between models](../../chapters/fast-generation-architectures.qmd#translate-a-prompt-cache-between-models)
+- `fast-generation-architectures` — [Translate a prompt cache between models](https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html#translate-a-prompt-cache-between-models)
 
 ## Claims To Add Or Update
 

@@ -24,7 +24,7 @@ NewtonBench trials and coverage-sensitive analysis. The simulations are noiseles
 
 ## Book Chapters Supported
 
-- `scientific-discovery-and-experimental-governance` — [Spend one measurement to separate two laws](../../chapters/scientific-discovery-and-experimental-governance.qmd#spend-one-measurement-to-separate-two-laws)
+- `scientific-discovery-and-experimental-governance` — [Spend one measurement to separate two laws](https://corbensorenson.github.io/asi-stack-book/chapters/scientific-discovery-and-experimental-governance.html#spend-one-measurement-to-separate-two-laws)
 
 ## Claims To Add Or Update
 

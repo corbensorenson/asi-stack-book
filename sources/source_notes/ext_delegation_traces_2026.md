@@ -24,7 +24,7 @@ Sections 3–5, especially Table 1 and the response options. The 392 trials are 
 
 ## Book Chapters Supported
 
-- `human-factors-and-meaningful-control-in-oversight` — [What did the reviewer actually verify?](../../chapters/human-factors-and-meaningful-control-in-oversight.qmd#what-did-the-reviewer-actually-verify)
+- `human-factors-and-meaningful-control-in-oversight` — [What did the reviewer actually verify?](https://corbensorenson.github.io/asi-stack-book/chapters/human-factors-and-meaningful-control-in-oversight.html#what-did-the-reviewer-actually-verify)
 
 ## Claims To Add Or Update
 

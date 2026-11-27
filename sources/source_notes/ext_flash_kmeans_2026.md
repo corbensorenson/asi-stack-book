@@ -28,7 +28,7 @@ Exact refers to the algorithmic assignment strategy at the chosen numerical prec
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Clustering the retrieval index](../../chapters/virtual-context-abi.qmd#clustering-the-retrieval-index)
+- `virtual-context-abi` — [Clustering the retrieval index](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#clustering-the-retrieval-index)
 
 ## Claims To Add Or Update
 

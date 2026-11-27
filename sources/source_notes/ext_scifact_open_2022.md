@@ -24,7 +24,7 @@ Pooled highlights are model suggestions. Flattened citation-derived highlights c
 
 ## Book Chapters Supported
 
-- `verification-bandwidth-and-context-adequacy` — [Where the citation was lost](../../chapters/verification-bandwidth-and-context-adequacy.qmd#fresh-citation-retrieval)
+- `verification-bandwidth-and-context-adequacy` — [Where the citation was lost](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html#fresh-citation-retrieval)
 
 ## Claims To Add Or Update
 

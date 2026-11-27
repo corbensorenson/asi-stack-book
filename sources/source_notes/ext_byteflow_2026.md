@@ -24,7 +24,7 @@ Section 4.4, Table 3. Bits per byte and downstream scores describe those configu
 
 ## Book Chapters Supported
 
-- `replaceable-cognitive-substrates-beyond-transformer-monoculture` — [A fixed budget for learned byte boundaries](../../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd#a-fixed-budget-for-learned-byte-boundaries)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` — [A fixed budget for learned byte boundaries](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#a-fixed-budget-for-learned-byte-boundaries)
 
 ## Claims To Add Or Update
 

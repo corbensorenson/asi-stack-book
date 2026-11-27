@@ -33,8 +33,8 @@ For deployment comparison, separate the learned specialist, the hand-set energy 
 
 ## Book Chapters Supported
 
-- `replaceable-cognitive-substrates-beyond-transformer-monoculture` — [CRAM learns costs for a constrained search](../../chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd#cram-learned-constraint-search)
-- `benchmark-ratchets-and-anti-goodhart-evidence` — [CRAM and the hand-set puzzle baseline](../../chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd#cram-puzzle-benchmark)
+- `replaceable-cognitive-substrates-beyond-transformer-monoculture` — [CRAM learns costs for a constrained search](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#cram-learned-constraint-search)
+- `benchmark-ratchets-and-anti-goodhart-evidence` — [CRAM and the hand-set puzzle baseline](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#cram-puzzle-benchmark)
 - Reader Unit 19 uses the reported maze failure as an example of checking a specialist's answer.
 
 ## Released documentation and timing records

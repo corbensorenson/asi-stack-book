@@ -24,7 +24,7 @@ Source-normalized evaluation and exact leaf-value metric. All inputs were text-n
 
 ## Book Chapters Supported
 
-- `cognitive-compilation-and-semantic-ir` — [A valid field can hold the wrong limit](../../chapters/cognitive-compilation-and-semantic-ir.qmd#a-valid-field-can-hold-the-wrong-limit)
+- `cognitive-compilation-and-semantic-ir` — [A valid field can hold the wrong limit](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html#a-valid-field-can-hold-the-wrong-limit)
 
 ## Claims To Add Or Update
 

@@ -24,7 +24,7 @@ Figure 2 and pairwise decision procedure. Selection of the observed top ten and 
 
 ## Book Chapters Supported
 
-- `benchmark-ratchets-and-anti-goodhart-evidence` — [Would a one-point lead justify replacement?](../../chapters/benchmark-ratchets-and-anti-goodhart-evidence.qmd#would-a-one-point-lead-justify-replacement)
+- `benchmark-ratchets-and-anti-goodhart-evidence` — [Would a one-point lead justify replacement?](https://corbensorenson.github.io/asi-stack-book/chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#would-a-one-point-lead-justify-replacement)
 
 ## Claims To Add Or Update
 

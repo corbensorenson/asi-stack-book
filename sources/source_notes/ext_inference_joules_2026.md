@@ -24,7 +24,7 @@ Table 1, Qwen3-32B on one B200. The tasks differ in output length and maximum fe
 
 ## Book Chapters Supported
 
-- `physical-compute-infrastructure-energy-and-environmental-constraints` — [From a token meter to an answer bill](../../chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd#from-a-token-meter-to-an-answer-bill)
+- `physical-compute-infrastructure-energy-and-environmental-constraints` — [From a token meter to an answer bill](https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html#from-a-token-meter-to-an-answer-bill)
 
 ## Claims To Add Or Update
 

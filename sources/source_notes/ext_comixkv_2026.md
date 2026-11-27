@@ -24,7 +24,7 @@ Figure 4, Qwen3-32B cost comparison. New allocations apply to newly quantized bl
 
 ## Book Chapters Supported
 
-- `resource-economics-and-token-budgets` — [Which memory saving can fund another job?](../../chapters/resource-economics-and-token-budgets.qmd#which-memory-saving-can-fund-another-job)
+- `resource-economics-and-token-budgets` — [Which memory saving can fund another job?](https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html#which-memory-saving-can-fund-another-job)
 
 ## Claims To Add Or Update
 

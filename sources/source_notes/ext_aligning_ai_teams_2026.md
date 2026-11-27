@@ -24,7 +24,7 @@ Team interventions and per-task results. Results varied by model and task. Count
 
 ## Book Chapters Supported
 
-- `multi-agent-dynamics-collective-intelligence-and-systemic-risk` — [Who owns the check across the assembled release?](../../chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.qmd#who-owns-the-check-across-the-assembled-release)
+- `multi-agent-dynamics-collective-intelligence-and-systemic-risk` — [Who owns the check across the assembled release?](https://corbensorenson.github.io/asi-stack-book/chapters/multi-agent-dynamics-collective-intelligence-and-systemic-risk.html#who-owns-the-check-across-the-assembled-release)
 
 ## Claims To Add Or Update
 

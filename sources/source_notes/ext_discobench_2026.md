@@ -28,7 +28,7 @@ of interrupting real users requires different observations.
 
 ## Book Chapters Supported
 
-- `human-intent-as-a-formal-input` — [Which release did the customer see?](../../chapters/human-intent-as-a-formal-input.qmd#which-release-did-the-customer-see)
+- `human-intent-as-a-formal-input` — [Which release did the customer see?](https://corbensorenson.github.io/asi-stack-book/chapters/human-intent-as-a-formal-input.html#which-release-did-the-customer-see)
 
 ## Claims To Add Or Update
 

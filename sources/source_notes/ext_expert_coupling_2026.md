@@ -24,7 +24,7 @@ Megatron-LM placement and dispatch experiments. The study used one 12-layer mode
 
 ## Book Chapters Supported
 
-- `governed-model-training-distributed-optimization-and-scaling` — [Place four experts on two devices](../../chapters/governed-model-training-distributed-optimization-and-scaling.qmd#place-four-experts-on-two-devices)
+- `governed-model-training-distributed-optimization-and-scaling` — [Place four experts on two devices](https://corbensorenson.github.io/asi-stack-book/chapters/governed-model-training-distributed-optimization-and-scaling.html#place-four-experts-on-two-devices)
 
 ## Claims To Add Or Update
 

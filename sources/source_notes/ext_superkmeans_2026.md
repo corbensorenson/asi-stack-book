@@ -28,7 +28,7 @@ Early stopping depends on query representativeness and nearest-neighbor ground t
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Clustering the retrieval index](../../chapters/virtual-context-abi.qmd#clustering-the-retrieval-index)
+- `virtual-context-abi` — [Clustering the retrieval index](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#clustering-the-retrieval-index)
 
 ## Claims To Add Or Update
 

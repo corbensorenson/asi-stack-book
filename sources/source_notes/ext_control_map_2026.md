@@ -24,7 +24,7 @@ Sections 3–6. Locality depends on the test prompts and damage threshold. These
 
 ## Book Chapters Supported
 
-- `adjudicated-persistence-and-the-adaptive-commit-boundary` — [Which edits reached this answer?](../../chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.qmd#which-edits-reached-this-answer)
+- `adjudicated-persistence-and-the-adaptive-commit-boundary` — [Which edits reached this answer?](https://corbensorenson.github.io/asi-stack-book/chapters/adjudicated-persistence-and-the-adaptive-commit-boundary.html#which-edits-reached-this-answer)
 
 ## Claims To Add Or Update
 

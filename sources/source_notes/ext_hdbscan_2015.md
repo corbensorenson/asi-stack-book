@@ -26,7 +26,7 @@ Small groups can be lost under the minimum cluster size. Rare or novel evidence 
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Choose the grouping by what the reader needs](../../chapters/virtual-context-abi.qmd#choose-the-grouping-by-what-the-reader-needs)
+- `virtual-context-abi` — [Choose the grouping by what the reader needs](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#choose-the-grouping-by-what-the-reader-needs)
 
 ## Additional primary references
 

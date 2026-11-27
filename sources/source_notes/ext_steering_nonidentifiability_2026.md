@@ -24,7 +24,7 @@ Figure 1, the finite-strength perturbation experiments, and Appendices B and C. 
 
 ## Book Chapters Supported
 
-- `white-box-evidence-interpretability-and-activation-governance` — [Can two directions pass the same persona test?](../../chapters/white-box-evidence-interpretability-and-activation-governance.qmd#can-two-directions-pass-the-same-persona-test)
+- `white-box-evidence-interpretability-and-activation-governance` — [Can two directions pass the same persona test?](https://corbensorenson.github.io/asi-stack-book/chapters/white-box-evidence-interpretability-and-activation-governance.html#can-two-directions-pass-the-same-persona-test)
 
 ## Claims To Add Or Update
 

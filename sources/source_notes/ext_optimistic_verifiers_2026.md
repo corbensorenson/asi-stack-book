@@ -24,7 +24,7 @@ Sufficiency comparison and replication. Replication supported the direction of d
 
 ## Book Chapters Supported
 
-- `policy-optimization-and-learning-from-feedback` — [A longer justification earns the wrong reward](../../chapters/policy-optimization-and-learning-from-feedback.qmd#a-longer-justification-earns-the-wrong-reward)
+- `policy-optimization-and-learning-from-feedback` — [A longer justification earns the wrong reward](https://corbensorenson.github.io/asi-stack-book/chapters/policy-optimization-and-learning-from-feedback.html#a-longer-justification-earns-the-wrong-reward)
 
 ## Claims To Add Or Update
 

@@ -26,8 +26,8 @@ The warm fitting protocol excludes loading, initial-center selection, warm-up an
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Clustering the retrieval index](../../chapters/virtual-context-abi.qmd#clustering-the-retrieval-index)
-- `rankfold-neuralfold-and-artifact-compression` — [Count the vector codebook and its reconstruction error](../../chapters/rankfold-neuralfold-and-artifact-compression.qmd#vector-codebook-cost)
+- `virtual-context-abi` — [Clustering the retrieval index](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#clustering-the-retrieval-index)
+- `rankfold-neuralfold-and-artifact-compression` — [Count the vector codebook and its reconstruction error](https://corbensorenson.github.io/asi-stack-book/chapters/rankfold-neuralfold-and-artifact-compression.html#vector-codebook-cost)
 
 ## Additional primary references
 

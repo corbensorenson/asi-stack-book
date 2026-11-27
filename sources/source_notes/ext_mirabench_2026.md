@@ -24,7 +24,7 @@ Action-following and optimism perturbation tests. Predicted episodes can expose 
 
 ## Book Chapters Supported
 
-- `governed-world-models-and-reality-grounding` — [Change the command in the same scene](../../chapters/governed-world-models-and-reality-grounding.qmd#change-the-command-in-the-same-scene)
+- `governed-world-models-and-reality-grounding` — [Change the command in the same scene](https://corbensorenson.github.io/asi-stack-book/chapters/governed-world-models-and-reality-grounding.html#change-the-command-in-the-same-scene)
 
 ## Claims To Add Or Update
 

@@ -24,7 +24,7 @@ Sections 3–5 and Appendix A.9. The authors scored completed trajectories again
 
 ## Book Chapters Supported
 
-- `virtual-context-abi` — [Can the worker still find the correction?](../../chapters/virtual-context-abi.qmd#can-the-worker-still-find-the-correction)
+- `virtual-context-abi` — [Can the worker still find the correction?](https://corbensorenson.github.io/asi-stack-book/chapters/virtual-context-abi.html#can-the-worker-still-find-the-correction)
 
 ## Claims To Add Or Update
 

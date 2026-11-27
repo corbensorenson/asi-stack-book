@@ -24,7 +24,7 @@ HELM paired-error analysis. This conditional rate alone leaves the frequency of 
 
 ## Book Chapters Supported
 
-- `verification-bandwidth-and-context-adequacy` — [How much evidence is a second opinion?](../../chapters/verification-bandwidth-and-context-adequacy.qmd#how-much-evidence-is-a-second-opinion)
+- `verification-bandwidth-and-context-adequacy` — [How much evidence is a second opinion?](https://corbensorenson.github.io/asi-stack-book/chapters/verification-bandwidth-and-context-adequacy.html#how-much-evidence-is-a-second-opinion)
 
 ## Claims To Add Or Update
 

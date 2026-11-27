@@ -24,7 +24,7 @@ ICML proceedings abstract and the authors’ arXiv v2 method and Table 6. In the
 
 ## Book Chapters Supported
 
-- `fast-generation-architectures` — [When can the next draft begin?](../../chapters/fast-generation-architectures.qmd#when-can-the-next-draft-begin)
+- `fast-generation-architectures` — [When can the next draft begin?](https://corbensorenson.github.io/asi-stack-book/chapters/fast-generation-architectures.html#when-can-the-next-draft-begin)
 
 ## Claims To Add Or Update
 
