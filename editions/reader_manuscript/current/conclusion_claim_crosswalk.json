@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "4ba1d50ddf5e7da1212a9ddb1ecc60349a7b2d8a027776836123d575b020049b",
+  "book_structure_sha256": "70c5c13792a20ead385dd06c5849b0fa34dcb64e12f7bf60b32b03222d63d68e",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1476,
+    "source": 1477,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -4121,7 +4121,7 @@
           "chapter_id": "cognitive-compilation-and-semantic-ir",
           "title": "Cognitive Compilation and Semantic IR",
           "technical_source_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-          "technical_source_sha256": "6812c04772f5af3e9e193afd431b4fab0850fed15615c63a44d85cf3dc3bfabd",
+          "technical_source_sha256": "1e5bb7306e393d8f3952ad1dc777127571c157b48fdf8bb5c06fe76b502c52b6",
           "live_technical_path": "chapters/cognitive-compilation-and-semantic-ir.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "cognitive-compilation-and-semantic-ir.core",
@@ -4157,7 +4157,8 @@
             "ext_weightcode_2026",
             "ext_wsp_scope_2026",
             "ext_wsp_icl_2026",
-            "ext_fwsp_2026"
+            "ext_fwsp_2026",
+            "ext_weightbench_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/cognitive_compilation.md",
@@ -4188,7 +4189,8 @@
             "sources/source_notes/ext_weightcode_2026.md",
             "sources/source_notes/ext_wsp_scope_2026.md",
             "sources/source_notes/ext_wsp_icl_2026.md",
-            "sources/source_notes/ext_fwsp_2026.md"
+            "sources/source_notes/ext_fwsp_2026.md",
+            "sources/source_notes/ext_weightbench_2026.md"
           ],
           "proof_edges": [
             {
@@ -4251,7 +4253,7 @@
           "artifact_refs": [
             {
               "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-              "sha256": "6812c04772f5af3e9e193afd431b4fab0850fed15615c63a44d85cf3dc3bfabd"
+              "sha256": "1e5bb7306e393d8f3952ad1dc777127571c157b48fdf8bb5c06fe76b502c52b6"
             },
             {
               "path": "lean/AsiStackProofs/CognitiveCompilation.lean",
