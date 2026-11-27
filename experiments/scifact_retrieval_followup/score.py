@@ -41,7 +41,8 @@ def summarize(data):
         result[key].update(gained=int((gains>0).sum()), lost=int((gains<0).sum()),
                            difference_per_100=round(100*gains.mean(), 2),
                            interval=np.percentile(100*sample(gains)/den, [2.5,97.5]).round(2).tolist())
-    return dict(n=len(cases), groups=size, documents=data["documents"], readings_per_arm=2*len(cases), arms=result)
+    return dict(n=len(cases), groups=size, documents=data["documents"], readings_per_arm=2*len(cases), arms=result,
+                cases=[{"id": c["id"], "arms": c["arms"]} for c in cases])
 
 
 if __name__ == "__main__":

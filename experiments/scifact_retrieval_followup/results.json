@@ -1,0 +1,4039 @@
+{
+  "n": 65,
+  "groups": 49,
+  "documents": 11571,
+  "readings_per_arm": 130,
+  "arms": {
+    "tfidf_tfidf": {
+      "human_doc": 14,
+      "complete": 7,
+      "document_verdict": 6,
+      "tokens": 19669,
+      "sentences_ranked": 479,
+      "justified": 4,
+      "unsupported": 15,
+      "held": 46,
+      "gained": 0,
+      "lost": 0,
+      "difference_per_100": 0.0,
+      "interval": [
+        0.0,
+        0.0
+      ]
+    },
+    "tfidf_coverage": {
+      "human_doc": 14,
+      "complete": 6,
+      "document_verdict": 7,
+      "tokens": 19725,
+      "sentences_ranked": 479,
+      "justified": 3,
+      "unsupported": 17,
+      "held": 45,
+      "gained": 0,
+      "lost": 1,
+      "difference_per_100": -1.54,
+      "interval": [
+        -5.0,
+        0.0
+      ]
+    },
+    "bm25_tfidf": {
+      "human_doc": 14,
+      "complete": 6,
+      "document_verdict": 4,
+      "tokens": 20748,
+      "sentences_ranked": 607,
+      "justified": 2,
+      "unsupported": 16,
+      "held": 47,
+      "gained": 0,
+      "lost": 2,
+      "difference_per_100": -3.08,
+      "interval": [
+        -7.94,
+        0.0
+      ]
+    },
+    "bm25_coverage": {
+      "human_doc": 14,
+      "complete": 7,
+      "document_verdict": 5,
+      "tokens": 20737,
+      "sentences_ranked": 607,
+      "justified": 2,
+      "unsupported": 18,
+      "held": 45,
+      "gained": 0,
+      "lost": 2,
+      "difference_per_100": -3.08,
+      "interval": [
+        -7.94,
+        0.0
+      ]
+    }
+  },
+  "cases": [
+    {
+      "id": 83,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 54468511,
+          "cited": [
+            5,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 258,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 54468511,
+          "cited": [
+            5,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 258,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 15432317,
+          "cited": [
+            4,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 238,
+          "sentences_ranked": 13
+        },
+        "bm25_coverage": {
+          "doc": 15432317,
+          "cited": [
+            4,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 238,
+          "sentences_ranked": 13
+        }
+      }
+    },
+    {
+      "id": 102,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 1451663,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 164,
+          "sentences_ranked": 13
+        },
+        "tfidf_coverage": {
+          "doc": 1451663,
+          "cited": [
+            3,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 185,
+          "sentences_ranked": 13
+        },
+        "bm25_tfidf": {
+          "doc": 13542522,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 341,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 13542522,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 341,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 103,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 5621677,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 350,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 5621677,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 350,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 5621677,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 350,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 5621677,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 350,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 110,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 16270577,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 277,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 16270577,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 277,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 16270577,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 277,
+          "sentences_ranked": 5
+        },
+        "bm25_coverage": {
+          "doc": 16270577,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 277,
+          "sentences_ranked": 5
+        }
+      }
+    },
+    {
+      "id": 135,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 14
+        },
+        "tfidf_coverage": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 14
+        },
+        "bm25_tfidf": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 14
+        },
+        "bm25_coverage": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 14
+        }
+      }
+    },
+    {
+      "id": 136,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 282,
+          "sentences_ranked": 14
+        },
+        "tfidf_coverage": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 282,
+          "sentences_ranked": 14
+        },
+        "bm25_tfidf": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 282,
+          "sentences_ranked": 14
+        },
+        "bm25_coverage": {
+          "doc": 53039345,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 282,
+          "sentences_ranked": 14
+        }
+      }
+    },
+    {
+      "id": 190,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 3781610,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 408,
+          "sentences_ranked": 11
+        },
+        "tfidf_coverage": {
+          "doc": 3781610,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 408,
+          "sentences_ranked": 11
+        },
+        "bm25_tfidf": {
+          "doc": 3781610,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 408,
+          "sentences_ranked": 11
+        },
+        "bm25_coverage": {
+          "doc": 3781610,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 408,
+          "sentences_ranked": 11
+        }
+      }
+    },
+    {
+      "id": 191,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 212,
+          "sentences_ranked": 12
+        },
+        "tfidf_coverage": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 212,
+          "sentences_ranked": 12
+        },
+        "bm25_tfidf": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 212,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 212,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 192,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 40211523,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 359,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 40211523,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 359,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 212,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 2891825,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 212,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 193,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 14830607,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 304,
+          "sentences_ranked": 4
+        },
+        "tfidf_coverage": {
+          "doc": 14830607,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 304,
+          "sentences_ranked": 4
+        },
+        "bm25_tfidf": {
+          "doc": 14830607,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 304,
+          "sentences_ranked": 4
+        },
+        "bm25_coverage": {
+          "doc": 14830607,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 304,
+          "sentences_ranked": 4
+        }
+      }
+    },
+    {
+      "id": 194,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 195,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 4584559,
+          "cited": [
+            4,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 271,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 206,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 1695604,
+          "cited": [
+            3,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 341,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 1695604,
+          "cited": [
+            3,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 341,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 1695604,
+          "cited": [
+            3,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 341,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 1695604,
+          "cited": [
+            3,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 341,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 215,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 155358,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 347,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 155358,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 347,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 155358,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 347,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 155358,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 347,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 257,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 39859550,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 385,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 39859550,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 385,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 9189148,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 354,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 9189148,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 354,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 270,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 32709245,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 122,
+          "sentences_ranked": 2
+        },
+        "tfidf_coverage": {
+          "doc": 32709245,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 122,
+          "sentences_ranked": 2
+        },
+        "bm25_tfidf": {
+          "doc": 45829676,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 255,
+          "sentences_ranked": 11
+        },
+        "bm25_coverage": {
+          "doc": 45829676,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 255,
+          "sentences_ranked": 11
+        }
+      }
+    },
+    {
+      "id": 271,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 32709245,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 128,
+          "sentences_ranked": 2
+        },
+        "tfidf_coverage": {
+          "doc": 32709245,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 128,
+          "sentences_ranked": 2
+        },
+        "bm25_tfidf": {
+          "doc": 267966,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 231,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 267966,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 161,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 318,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 8719756,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 406,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 8719756,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 406,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 14445369,
+          "cited": [
+            7,
+            13
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 347,
+          "sentences_ranked": 15
+        },
+        "bm25_coverage": {
+          "doc": 14445369,
+          "cited": [
+            7,
+            13
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 347,
+          "sentences_ranked": 15
+        }
+      }
+    },
+    {
+      "id": 319,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 8719756,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 406,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 8719756,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 406,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 14445369,
+          "cited": [
+            7,
+            13
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 347,
+          "sentences_ranked": 15
+        },
+        "bm25_coverage": {
+          "doc": 14445369,
+          "cited": [
+            7,
+            13
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 347,
+          "sentences_ranked": 15
+        }
+      }
+    },
+    {
+      "id": 322,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 4587978,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 298,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 4587978,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 298,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 4587978,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 298,
+          "sentences_ranked": 5
+        },
+        "bm25_coverage": {
+          "doc": 4587978,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 298,
+          "sentences_ranked": 5
+        }
+      }
+    },
+    {
+      "id": 373,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 27738981,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 186,
+          "sentences_ranked": 3
+        },
+        "tfidf_coverage": {
+          "doc": 27738981,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 186,
+          "sentences_ranked": 3
+        },
+        "bm25_tfidf": {
+          "doc": 997143,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 211,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 997143,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 211,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 374,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 33478841,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 239,
+          "sentences_ranked": 4
+        },
+        "tfidf_coverage": {
+          "doc": 33478841,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 239,
+          "sentences_ranked": 4
+        },
+        "bm25_tfidf": {
+          "doc": 840512,
+          "cited": [
+            0,
+            10
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 374,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 840512,
+          "cited": [
+            0,
+            10
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 374,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 408,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 409,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 334,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 334,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 334,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 13948920,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 334,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 462,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 8489200,
+          "cited": [
+            5,
+            10
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 12
+        },
+        "tfidf_coverage": {
+          "doc": 8489200,
+          "cited": [
+            5,
+            10
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 330,
+          "sentences_ranked": 12
+        },
+        "bm25_tfidf": {
+          "doc": 3311768,
+          "cited": [
+            8,
+            9
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 300,
+          "sentences_ranked": 11
+        },
+        "bm25_coverage": {
+          "doc": 3311768,
+          "cited": [
+            8,
+            9
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 300,
+          "sentences_ranked": 11
+        }
+      }
+    },
+    {
+      "id": 467,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 24013792,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 311,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 24013792,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 311,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 18129718,
+          "cited": [
+            4,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 273,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 18129718,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 306,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 468,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 24013792,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 285,
+          "sentences_ranked": 5
+        },
+        "tfidf_coverage": {
+          "doc": 24013792,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 285,
+          "sentences_ranked": 5
+        },
+        "bm25_tfidf": {
+          "doc": 18129718,
+          "cited": [
+            4,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 247,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 18129718,
+          "cited": [
+            2,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 280,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 561,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 941663,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 310,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 941663,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 310,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 941663,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 310,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 941663,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 310,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 697,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 31884697,
+          "cited": [
+            2,
+            8
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 392,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 31884697,
+          "cited": [
+            2,
+            8
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 392,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 31884697,
+          "cited": [
+            2,
+            8
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 392,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 31884697,
+          "cited": [
+            2,
+            8
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 392,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 711,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "tfidf_coverage": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "bm25_tfidf": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "bm25_coverage": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        }
+      }
+    },
+    {
+      "id": 712,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "tfidf_coverage": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "bm25_tfidf": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        },
+        "bm25_coverage": {
+          "doc": 22420524,
+          "cited": [
+            3,
+            13
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 298,
+          "sentences_ranked": 14
+        }
+      }
+    },
+    {
+      "id": 719,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 7057140,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 7057140,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 290,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 12105227,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 452,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 12105227,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 416,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 720,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 7057140,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 286,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 7057140,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 286,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 12105227,
+          "cited": [
+            1,
+            3
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 450,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 12105227,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 414,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 763,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 23572580,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 393,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 23572580,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 393,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 24575065,
+          "cited": [
+            1,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 350,
+          "sentences_ranked": 16
+        },
+        "bm25_coverage": {
+          "doc": 24575065,
+          "cited": [
+            4,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 358,
+          "sentences_ranked": 16
+        }
+      }
+    },
+    {
+      "id": 809,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 33478841,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 241,
+          "sentences_ranked": 4
+        },
+        "tfidf_coverage": {
+          "doc": 33478841,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 241,
+          "sentences_ranked": 4
+        },
+        "bm25_tfidf": {
+          "doc": 17307849,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 348,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 17307849,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 348,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 833,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 5811042,
+          "cited": [
+            1,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 306,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 5811042,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 296,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 34256713,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 345,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 34256713,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 345,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 842,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 18702361,
+          "cited": [
+            0
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 176,
+          "sentences_ranked": 1
+        },
+        "tfidf_coverage": {
+          "doc": 18702361,
+          "cited": [
+            0
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 176,
+          "sentences_ranked": 1
+        },
+        "bm25_tfidf": {
+          "doc": 3590276,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 299,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 3590276,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 299,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 843,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 18702361,
+          "cited": [
+            0
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 176,
+          "sentences_ranked": 1
+        },
+        "tfidf_coverage": {
+          "doc": 18702361,
+          "cited": [
+            0
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 176,
+          "sentences_ranked": 1
+        },
+        "bm25_tfidf": {
+          "doc": 3590276,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 299,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 3590276,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 299,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 850,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 7896548,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 324,
+          "sentences_ranked": 4
+        },
+        "tfidf_coverage": {
+          "doc": 7896548,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 324,
+          "sentences_ranked": 4
+        },
+        "bm25_tfidf": {
+          "doc": 7896548,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 324,
+          "sentences_ranked": 4
+        },
+        "bm25_coverage": {
+          "doc": 7896548,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 324,
+          "sentences_ranked": 4
+        }
+      }
+    },
+    {
+      "id": 865,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 9539753,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 343,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 9539753,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 343,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 9539753,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 343,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 9539753,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 343,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 905,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 28276722,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 188,
+          "sentences_ranked": 2
+        },
+        "tfidf_coverage": {
+          "doc": 28276722,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 188,
+          "sentences_ranked": 2
+        },
+        "bm25_tfidf": {
+          "doc": 23030365,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 230,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 23030365,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 230,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 906,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 28276722,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 190,
+          "sentences_ranked": 2
+        },
+        "tfidf_coverage": {
+          "doc": 28276722,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 190,
+          "sentences_ranked": 2
+        },
+        "bm25_tfidf": {
+          "doc": 23030365,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 232,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 23030365,
+          "cited": [
+            0,
+            1
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 232,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 950,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 3998565,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 297,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 3998565,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 297,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 3998565,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 297,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 3998565,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 297,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 958,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 6501747,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 317,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 6501747,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 317,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 6501747,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 317,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 6501747,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 317,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 961,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 23190392,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 329,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 23190392,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 329,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 23190392,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 329,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 23190392,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 329,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 966,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 19587671,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 338,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 19587671,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 338,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 19587671,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 338,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 19587671,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 338,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 1064,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 2919030,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 315,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 2919030,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 315,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 2919030,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 315,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 2919030,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 315,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 1076,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 29309824,
+          "cited": [
+            6,
+            7
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 163,
+          "sentences_ranked": 9
+        },
+        "tfidf_coverage": {
+          "doc": 29309824,
+          "cited": [
+            6,
+            7
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 163,
+          "sentences_ranked": 9
+        },
+        "bm25_tfidf": {
+          "doc": 29746620,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 273,
+          "sentences_ranked": 11
+        },
+        "bm25_coverage": {
+          "doc": 29746620,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 273,
+          "sentences_ranked": 11
+        }
+      }
+    },
+    {
+      "id": 1077,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 10171766,
+          "cited": [
+            2,
+            6
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 220,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 10171766,
+          "cited": [
+            5,
+            6
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 192,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 6047538,
+          "cited": [
+            1,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 325,
+          "sentences_ranked": 5
+        },
+        "bm25_coverage": {
+          "doc": 6047538,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 312,
+          "sentences_ranked": 5
+        }
+      }
+    },
+    {
+      "id": 1095,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 16167746,
+          "cited": [
+            1,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 351,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 16167746,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 361,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 16167746,
+          "cited": [
+            1,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 351,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 16167746,
+          "cited": [
+            1,
+            5
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": true,
+          "outcome": "unsupported",
+          "tokens": 361,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 1116,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 3448877,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 286,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 3448877,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 345,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 3448877,
+          "cited": [
+            0,
+            5
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 286,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 3448877,
+          "cited": [
+            0,
+            3
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 345,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 1149,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 18356566,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 362,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 18356566,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 362,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 18356566,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 362,
+          "sentences_ranked": 6
+        },
+        "bm25_coverage": {
+          "doc": 18356566,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 362,
+          "sentences_ranked": 6
+        }
+      }
+    },
+    {
+      "id": 1151,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "tfidf_coverage": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "bm25_tfidf": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "bm25_coverage": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        }
+      }
+    },
+    {
+      "id": 1152,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "tfidf_coverage": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "bm25_tfidf": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        },
+        "bm25_coverage": {
+          "doc": 1287809,
+          "cited": [
+            8,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 467,
+          "sentences_ranked": 13
+        }
+      }
+    },
+    {
+      "id": 1198,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 1842355,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 298,
+          "sentences_ranked": 11
+        },
+        "tfidf_coverage": {
+          "doc": 1842355,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 298,
+          "sentences_ranked": 11
+        },
+        "bm25_tfidf": {
+          "doc": 1842355,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 298,
+          "sentences_ranked": 11
+        },
+        "bm25_coverage": {
+          "doc": 1842355,
+          "cited": [
+            2,
+            3
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 298,
+          "sentences_ranked": 11
+        }
+      }
+    },
+    {
+      "id": 1251,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 1252,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        },
+        "bm25_coverage": {
+          "doc": 14362678,
+          "cited": [
+            3,
+            5
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 369,
+          "sentences_ranked": 7
+        }
+      }
+    },
+    {
+      "id": 1264,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 9765505,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 273,
+          "sentences_ranked": 7
+        },
+        "tfidf_coverage": {
+          "doc": 9765505,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 273,
+          "sentences_ranked": 7
+        },
+        "bm25_tfidf": {
+          "doc": 24558930,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 316,
+          "sentences_ranked": 9
+        },
+        "bm25_coverage": {
+          "doc": 24558930,
+          "cited": [
+            1,
+            7
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 316,
+          "sentences_ranked": 9
+        }
+      }
+    },
+    {
+      "id": 1285,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 24206855,
+          "cited": [
+            0,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 254,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 24206855,
+          "cited": [
+            0,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 254,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 24206855,
+          "cited": [
+            0,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 254,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 24206855,
+          "cited": [
+            0,
+            7
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 254,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 1287,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 30553457,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 328,
+          "sentences_ranked": 6
+        },
+        "tfidf_coverage": {
+          "doc": 30553457,
+          "cited": [
+            2,
+            4
+          ],
+          "verdict": "SUPPORT",
+          "human_doc": true,
+          "complete": true,
+          "document_verdict": true,
+          "outcome": "justified",
+          "tokens": 328,
+          "sentences_ranked": 6
+        },
+        "bm25_tfidf": {
+          "doc": 40407017,
+          "cited": [
+            7,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 292,
+          "sentences_ranked": 12
+        },
+        "bm25_coverage": {
+          "doc": 40407017,
+          "cited": [
+            7,
+            11
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 292,
+          "sentences_ranked": 12
+        }
+      }
+    },
+    {
+      "id": 1301,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 12189730,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 512,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 12189730,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 512,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 12189730,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 512,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 12189730,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 512,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 1338,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 25550665,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 306,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 25550665,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 306,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 25550665,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 306,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 25550665,
+          "cited": [
+            3,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 306,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 1365,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 13964532,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 290,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 13964532,
+          "cited": [
+            0,
+            4
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 290,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 5453772,
+          "cited": [
+            0,
+            8
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 289,
+          "sentences_ranked": 17
+        },
+        "bm25_coverage": {
+          "doc": 5453772,
+          "cited": [
+            0,
+            16
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 241,
+          "sentences_ranked": 17
+        }
+      }
+    },
+    {
+      "id": 1384,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 9432247,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 275,
+          "sentences_ranked": 8
+        },
+        "tfidf_coverage": {
+          "doc": 9432247,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 275,
+          "sentences_ranked": 8
+        },
+        "bm25_tfidf": {
+          "doc": 9432247,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 275,
+          "sentences_ranked": 8
+        },
+        "bm25_coverage": {
+          "doc": 9432247,
+          "cited": [
+            0,
+            2
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 275,
+          "sentences_ranked": 8
+        }
+      }
+    },
+    {
+      "id": 1399,
+      "arms": {
+        "tfidf_tfidf": {
+          "doc": 13677329,
+          "cited": [
+            6,
+            9
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 378,
+          "sentences_ranked": 11
+        },
+        "tfidf_coverage": {
+          "doc": 13677329,
+          "cited": [
+            3,
+            9
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 382,
+          "sentences_ranked": 11
+        },
+        "bm25_tfidf": {
+          "doc": 61156458,
+          "cited": [
+            6,
+            12
+          ],
+          "verdict": "NEUTRAL",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "held",
+          "tokens": 326,
+          "sentences_ranked": 13
+        },
+        "bm25_coverage": {
+          "doc": 61156458,
+          "cited": [
+            6,
+            9
+          ],
+          "verdict": "CONTRADICT",
+          "human_doc": false,
+          "complete": false,
+          "document_verdict": false,
+          "outcome": "unsupported",
+          "tokens": 375,
+          "sentences_ranked": 13
+        }
+      }
+    }
+  ]
+}
