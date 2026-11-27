@@ -1,0 +1,6199 @@
+{
+  "n": 213,
+  "documents": 12236,
+  "groups": 170,
+  "gained": 3,
+  "lost": 0,
+  "interval": [
+    0.0,
+    3.2
+  ],
+  "totals": {
+    "first": {
+      "justified": 21,
+      "unsupported": 52,
+      "held": 140,
+      "tokens": 61267,
+      "readings": 426
+    },
+    "three": {
+      "justified": 24,
+      "unsupported": 81,
+      "held": 108,
+      "tokens": 185582,
+      "readings": 1278
+    }
+  },
+  "cases": [
+    {
+      "id": 7,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 10511066,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 157
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 25847842,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 615
+        }
+      }
+    },
+    {
+      "id": 8,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 21109850,
+          "cited": [
+            1,
+            11
+          ],
+          "readings": 2,
+          "tokens": 329
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 37970308,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 1050
+        }
+      }
+    },
+    {
+      "id": 16,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 4625052,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 258
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 34438620,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1042
+        }
+      }
+    },
+    {
+      "id": 23,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 70579596,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 196
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 56485860,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 913
+        }
+      }
+    },
+    {
+      "id": 29,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 46964139,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 202
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 202746098,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 764
+        }
+      }
+    },
+    {
+      "id": 31,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 12428497,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 2,
+          "tokens": 385
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 12428497,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 6,
+          "tokens": 1260
+        }
+      }
+    },
+    {
+      "id": 33,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 207584290,
+          "cited": [
+            1,
+            7
+          ],
+          "readings": 2,
+          "tokens": 391
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 45424890,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 1107
+        }
+      }
+    },
+    {
+      "id": 38,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 45829252,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 231
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 16888151,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 802
+        }
+      }
+    },
+    {
+      "id": 59,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 4709641,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 417
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 14914993,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 6,
+          "tokens": 1032
+        }
+      }
+    },
+    {
+      "id": 65,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 34126853,
+          "cited": [
+            0
+          ],
+          "readings": 2,
+          "tokens": 104
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 2530667,
+          "cited": [
+            7,
+            8
+          ],
+          "readings": 6,
+          "tokens": 831
+        }
+      }
+    },
+    {
+      "id": 84,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 12827098,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 2,
+          "tokens": 269
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 12827098,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 722
+        }
+      }
+    },
+    {
+      "id": 87,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 28290096,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 232
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 12827098,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 823
+        }
+      }
+    },
+    {
+      "id": 97,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16732066,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 2,
+          "tokens": 355
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 2,
+          "doc": 6540064,
+          "cited": [
+            7,
+            16
+          ],
+          "readings": 6,
+          "tokens": 1098
+        }
+      }
+    },
+    {
+      "id": 101,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 14730228,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 2,
+          "tokens": 332
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 14730228,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 6,
+          "tokens": 925
+        }
+      }
+    },
+    {
+      "id": 107,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 22995579,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 2,
+          "tokens": 371
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 21285843,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 826
+        }
+      }
+    },
+    {
+      "id": 117,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 6372244,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 296
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 6372244,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 902
+        }
+      }
+    },
+    {
+      "id": 125,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15864988,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 2,
+          "tokens": 268
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15864988,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 6,
+          "tokens": 797
+        }
+      }
+    },
+    {
+      "id": 131,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 26506555,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 243
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 26506555,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1124
+        }
+      }
+    },
+    {
+      "id": 145,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 27512748,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 329
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 22817371,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 6,
+          "tokens": 957
+        }
+      }
+    },
+    {
+      "id": 147,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 27512748,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 327
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 9443506,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1109
+        }
+      }
+    },
+    {
+      "id": 150,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 6227220,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 2,
+          "tokens": 246
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 6227220,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 811
+        }
+      }
+    },
+    {
+      "id": 151,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1084345,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 268
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1084345,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 852
+        }
+      }
+    },
+    {
+      "id": 158,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 13986251,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 381
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 36862805,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 6,
+          "tokens": 893
+        }
+      }
+    },
+    {
+      "id": 162,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 208020629,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 176
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 9102916,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 6,
+          "tokens": 617
+        }
+      }
+    },
+    {
+      "id": 188,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 35426451,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 2,
+          "tokens": 281
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 35426451,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 6,
+          "tokens": 760
+        }
+      }
+    },
+    {
+      "id": 202,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9558539,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 221
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 44258461,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 849
+        }
+      }
+    },
+    {
+      "id": 207,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 811197,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 154
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 13956422,
+          "cited": [
+            1,
+            10
+          ],
+          "readings": 6,
+          "tokens": 608
+        }
+      }
+    },
+    {
+      "id": 231,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 25589389,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 2,
+          "tokens": 251
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 25589389,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 6,
+          "tokens": 739
+        }
+      }
+    },
+    {
+      "id": 234,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 12140542,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 235
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 12140542,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 787
+        }
+      }
+    },
+    {
+      "id": 240,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1993002,
+          "cited": [
+            6,
+            9
+          ],
+          "readings": 2,
+          "tokens": 291
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 25695277,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 967
+        }
+      }
+    },
+    {
+      "id": 260,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 5903485,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 2,
+          "tokens": 266
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 5903485,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 6,
+          "tokens": 894
+        }
+      }
+    },
+    {
+      "id": 273,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11614737,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 368
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11614737,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 6,
+          "tokens": 929
+        }
+      }
+    },
+    {
+      "id": 276,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 4469680,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 2,
+          "tokens": 353
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 207681224,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 971
+        }
+      }
+    },
+    {
+      "id": 282,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33499189,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 214
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 5502934,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 6,
+          "tokens": 813
+        }
+      }
+    },
+    {
+      "id": 284,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 35884825,
+          "cited": [
+            7,
+            9
+          ],
+          "readings": 2,
+          "tokens": 192
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 35884825,
+          "cited": [
+            7,
+            9
+          ],
+          "readings": 6,
+          "tokens": 637
+        }
+      }
+    },
+    {
+      "id": 288,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 4596335,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 322
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 4596335,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 955
+        }
+      }
+    },
+    {
+      "id": 289,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 9580772,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 2,
+          "tokens": 265
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 9580772,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 6,
+          "tokens": 758
+        }
+      }
+    },
+    {
+      "id": 291,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 15048300,
+          "cited": [
+            1,
+            12
+          ],
+          "readings": 2,
+          "tokens": 345
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 21363571,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 860
+        }
+      }
+    },
+    {
+      "id": 297,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 31250237,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 2,
+          "tokens": 368
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 31250237,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 834
+        }
+      }
+    },
+    {
+      "id": 302,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 24164349,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 346
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 7883120,
+          "cited": [
+            7,
+            9
+          ],
+          "readings": 6,
+          "tokens": 889
+        }
+      }
+    },
+    {
+      "id": 307,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 7821634,
+          "cited": [
+            5,
+            9
+          ],
+          "readings": 2,
+          "tokens": 286
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 7821634,
+          "cited": [
+            5,
+            9
+          ],
+          "readings": 6,
+          "tokens": 1027
+        }
+      }
+    },
+    {
+      "id": 311,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9204027,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 2,
+          "tokens": 283
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 18463209,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 6,
+          "tokens": 808
+        }
+      }
+    },
+    {
+      "id": 320,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 11369420,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 260
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 11369420,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 766
+        }
+      }
+    },
+    {
+      "id": 321,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 11369420,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 262
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 11369420,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 772
+        }
+      }
+    },
+    {
+      "id": 328,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 17997584,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 2,
+          "tokens": 307
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 17997584,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 6,
+          "tokens": 972
+        }
+      }
+    },
+    {
+      "id": 329,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9505448,
+          "cited": [
+            4,
+            7
+          ],
+          "readings": 2,
+          "tokens": 348
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9505448,
+          "cited": [
+            4,
+            7
+          ],
+          "readings": 6,
+          "tokens": 768
+        }
+      }
+    },
+    {
+      "id": 344,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9641846,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 279
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 14457411,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 866
+        }
+      }
+    },
+    {
+      "id": 348,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14568116,
+          "cited": [
+            4,
+            9
+          ],
+          "readings": 2,
+          "tokens": 318
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3159348,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 862
+        }
+      }
+    },
+    {
+      "id": 353,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9581516,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 2,
+          "tokens": 194
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 24050001,
+          "cited": [
+            4,
+            7
+          ],
+          "readings": 6,
+          "tokens": 711
+        }
+      }
+    },
+    {
+      "id": 359,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15488881,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 323
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 30610673,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 6,
+          "tokens": 938
+        }
+      }
+    },
+    {
+      "id": 360,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15488881,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 323
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15488881,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 868
+        }
+      }
+    },
+    {
+      "id": 387,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 18257236,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 368
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 18257236,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 917
+        }
+      }
+    },
+    {
+      "id": 395,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 14705366,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 184
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 14705366,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 786
+        }
+      }
+    },
+    {
+      "id": 402,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 51958024,
+          "cited": [
+            4,
+            9
+          ],
+          "readings": 2,
+          "tokens": 368
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 51958024,
+          "cited": [
+            4,
+            9
+          ],
+          "readings": 6,
+          "tokens": 1038
+        }
+      }
+    },
+    {
+      "id": 412,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 40135107,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 299
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 2379626,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 6,
+          "tokens": 980
+        }
+      }
+    },
+    {
+      "id": 419,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9315213,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 2,
+          "tokens": 360
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9315213,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 6,
+          "tokens": 914
+        }
+      }
+    },
+    {
+      "id": 424,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 26302443,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 270
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 26302443,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 717
+        }
+      }
+    },
+    {
+      "id": 433,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 4418070,
+          "cited": [
+            4,
+            6
+          ],
+          "readings": 2,
+          "tokens": 299
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 18735786,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 6,
+          "tokens": 866
+        }
+      }
+    },
+    {
+      "id": 438,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16524052,
+          "cited": [
+            2,
+            11
+          ],
+          "readings": 2,
+          "tokens": 272
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 196401372,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 941
+        }
+      }
+    },
+    {
+      "id": 442,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 3408185,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 2,
+          "tokens": 316
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 6996828,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 824
+        }
+      }
+    },
+    {
+      "id": 446,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11652577,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 2,
+          "tokens": 295
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 10991183,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 756
+        }
+      }
+    },
+    {
+      "id": 451,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 1028111,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 189
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 49585202,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 575
+        }
+      }
+    },
+    {
+      "id": 457,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 18257236,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 368
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 33316993,
+          "cited": [
+            1,
+            7
+          ],
+          "readings": 6,
+          "tokens": 960
+        }
+      }
+    },
+    {
+      "id": 459,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 597790,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 327
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 597790,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 873
+        }
+      }
+    },
+    {
+      "id": 460,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33725128,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 421
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 211084512,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1055
+        }
+      }
+    },
+    {
+      "id": 464,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14168351,
+          "cited": [
+            0
+          ],
+          "readings": 2,
+          "tokens": 128
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 11236696,
+          "cited": [
+            0
+          ],
+          "readings": 6,
+          "tokens": 545
+        }
+      }
+    },
+    {
+      "id": 465,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 5765455,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 334
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 14168351,
+          "cited": [
+            0
+          ],
+          "readings": 6,
+          "tokens": 671
+        }
+      }
+    },
+    {
+      "id": 471,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1754001,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 390
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 22048162,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 6,
+          "tokens": 929
+        }
+      }
+    },
+    {
+      "id": 476,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14767844,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 2,
+          "tokens": 286
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 5693704,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 712
+        }
+      }
+    },
+    {
+      "id": 477,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14767844,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 2,
+          "tokens": 290
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 40608679,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 6,
+          "tokens": 724
+        }
+      }
+    },
+    {
+      "id": 496,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 26781044,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 272
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 39306205,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 813
+        }
+      }
+    },
+    {
+      "id": 497,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 26781044,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 272
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 39306205,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 813
+        }
+      }
+    },
+    {
+      "id": 510,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 24094745,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 2,
+          "tokens": 390
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 1751847,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1089
+        }
+      }
+    },
+    {
+      "id": 511,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 24094745,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 2,
+          "tokens": 390
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 1751847,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1089
+        }
+      }
+    },
+    {
+      "id": 512,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6624958,
+          "cited": [
+            1,
+            12
+          ],
+          "readings": 2,
+          "tokens": 401
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 438543,
+          "cited": [
+            1,
+            12
+          ],
+          "readings": 6,
+          "tokens": 858
+        }
+      }
+    },
+    {
+      "id": 518,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 25918756,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 2,
+          "tokens": 378
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 1571102,
+          "cited": [
+            4,
+            7
+          ],
+          "readings": 6,
+          "tokens": 1183
+        }
+      }
+    },
+    {
+      "id": 519,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1837002,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 2,
+          "tokens": 330
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1837002,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 6,
+          "tokens": 847
+        }
+      }
+    },
+    {
+      "id": 520,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1837002,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 2,
+          "tokens": 330
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1837002,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 6,
+          "tokens": 847
+        }
+      }
+    },
+    {
+      "id": 522,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 206665022,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 195
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 4376016,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 6,
+          "tokens": 768
+        }
+      }
+    },
+    {
+      "id": 534,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 2065102,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 2,
+          "tokens": 284
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 2065102,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 6,
+          "tokens": 710
+        }
+      }
+    },
+    {
+      "id": 538,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 13282296,
+          "cited": [
+            8,
+            12
+          ],
+          "readings": 2,
+          "tokens": 303
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 207115426,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 880
+        }
+      }
+    },
+    {
+      "id": 543,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 19688024,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 2,
+          "tokens": 337
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 11172810,
+          "cited": [
+            5,
+            9
+          ],
+          "readings": 6,
+          "tokens": 949
+        }
+      }
+    },
+    {
+      "id": 546,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 10648422,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 2,
+          "tokens": 275
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 10648422,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 6,
+          "tokens": 907
+        }
+      }
+    },
+    {
+      "id": 556,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1049501,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 2,
+          "tokens": 311
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 9878167,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 6,
+          "tokens": 795
+        }
+      }
+    },
+    {
+      "id": 558,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14853989,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 2,
+          "tokens": 291
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 9878167,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 6,
+          "tokens": 816
+        }
+      }
+    },
+    {
+      "id": 567,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 15250655,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 342
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 15250655,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 871
+        }
+      }
+    },
+    {
+      "id": 581,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9399274,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 359
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 2,
+          "doc": 23460562,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 6,
+          "tokens": 1015
+        }
+      }
+    },
+    {
+      "id": 586,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 78443978,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 163
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 10905425,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 548
+        }
+      }
+    },
+    {
+      "id": 596,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 4824840,
+          "cited": [
+            9,
+            13
+          ],
+          "readings": 2,
+          "tokens": 410
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 4824840,
+          "cited": [
+            9,
+            13
+          ],
+          "readings": 6,
+          "tokens": 969
+        }
+      }
+    },
+    {
+      "id": 599,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 23727666,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 128
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 24671521,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 6,
+          "tokens": 875
+        }
+      }
+    },
+    {
+      "id": 608,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16032269,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 2,
+          "tokens": 386
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 16653712,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 1104
+        }
+      }
+    },
+    {
+      "id": 627,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 16355392,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 268
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 16355392,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 955
+        }
+      }
+    },
+    {
+      "id": 629,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15864988,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 2,
+          "tokens": 266
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15864988,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 6,
+          "tokens": 759
+        }
+      }
+    },
+    {
+      "id": 630,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 5468807,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 213
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 5468807,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 850
+        }
+      }
+    },
+    {
+      "id": 634,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1686997,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 2,
+          "tokens": 399
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1686997,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 6,
+          "tokens": 1085
+        }
+      }
+    },
+    {
+      "id": 639,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 40900567,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 296
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 28887075,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 935
+        }
+      }
+    },
+    {
+      "id": 656,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2687523,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 297
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2687523,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 973
+        }
+      }
+    },
+    {
+      "id": 664,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 9488425,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 382
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3591029,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 6,
+          "tokens": 989
+        }
+      }
+    },
+    {
+      "id": 675,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14769074,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 360
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14769074,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 977
+        }
+      }
+    },
+    {
+      "id": 678,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2877913,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 2,
+          "tokens": 242
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 53280594,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 6,
+          "tokens": 752
+        }
+      }
+    },
+    {
+      "id": 695,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1071991,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 340
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1071991,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 908
+        }
+      }
+    },
+    {
+      "id": 699,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 22544171,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 321
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 53179232,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 6,
+          "tokens": 916
+        }
+      }
+    },
+    {
+      "id": 701,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 7201919,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 2,
+          "tokens": 226
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 19365181,
+          "cited": [
+            7,
+            9
+          ],
+          "readings": 6,
+          "tokens": 880
+        }
+      }
+    },
+    {
+      "id": 722,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1834762,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 312
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1834762,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 1011
+        }
+      }
+    },
+    {
+      "id": 731,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 13400643,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 255
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 4048267,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 6,
+          "tokens": 949
+        }
+      }
+    },
+    {
+      "id": 735,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 347210,
+          "cited": [
+            4,
+            6
+          ],
+          "readings": 2,
+          "tokens": 328
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 347210,
+          "cited": [
+            4,
+            6
+          ],
+          "readings": 6,
+          "tokens": 956
+        }
+      }
+    },
+    {
+      "id": 741,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 23078022,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 2,
+          "tokens": 353
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3302741,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1092
+        }
+      }
+    },
+    {
+      "id": 750,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 8381625,
+          "cited": [
+            1,
+            7
+          ],
+          "readings": 2,
+          "tokens": 406
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 19800147,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 6,
+          "tokens": 945
+        }
+      }
+    },
+    {
+      "id": 754,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 40531268,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 2,
+          "tokens": 246
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 40531268,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 6,
+          "tokens": 694
+        }
+      }
+    },
+    {
+      "id": 769,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 30103626,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 2,
+          "tokens": 322
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 30103626,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 6,
+          "tokens": 897
+        }
+      }
+    },
+    {
+      "id": 786,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1254946,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 2,
+          "tokens": 326
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 14719714,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 931
+        }
+      }
+    },
+    {
+      "id": 794,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 15272848,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 162
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 663374,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 689
+        }
+      }
+    },
+    {
+      "id": 796,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 17404437,
+          "cited": [
+            2,
+            9
+          ],
+          "readings": 2,
+          "tokens": 263
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 17404437,
+          "cited": [
+            2,
+            9
+          ],
+          "readings": 6,
+          "tokens": 839
+        }
+      }
+    },
+    {
+      "id": 806,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 22180793,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 2,
+          "tokens": 260
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 22180793,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 6,
+          "tokens": 914
+        }
+      }
+    },
+    {
+      "id": 819,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 199505748,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 261
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 3846431,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 773
+        }
+      }
+    },
+    {
+      "id": 824,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 40877935,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 2,
+          "tokens": 329
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 15319019,
+          "cited": [
+            12,
+            14
+          ],
+          "readings": 6,
+          "tokens": 995
+        }
+      }
+    },
+    {
+      "id": 827,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 5779572,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 209
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 21299687,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 814
+        }
+      }
+    },
+    {
+      "id": 829,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 87662302,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 231
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 27708811,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 751
+        }
+      }
+    },
+    {
+      "id": 836,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6505827,
+          "cited": [
+            0
+          ],
+          "readings": 2,
+          "tokens": 153
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 14479433,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 874
+        }
+      }
+    },
+    {
+      "id": 849,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 30393575,
+          "cited": [
+            8,
+            11
+          ],
+          "readings": 2,
+          "tokens": 280
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 2334155,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 709
+        }
+      }
+    },
+    {
+      "id": 851,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 11086612,
+          "cited": [
+            7,
+            8
+          ],
+          "readings": 2,
+          "tokens": 318
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 11086612,
+          "cited": [
+            7,
+            8
+          ],
+          "readings": 6,
+          "tokens": 846
+        }
+      }
+    },
+    {
+      "id": 862,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 16066726,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 373
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 44686744,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 6,
+          "tokens": 1218
+        }
+      }
+    },
+    {
+      "id": 864,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 18870062,
+          "cited": [
+            3,
+            6
+          ],
+          "readings": 2,
+          "tokens": 308
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 2,
+          "doc": 6944800,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 876
+        }
+      }
+    },
+    {
+      "id": 868,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6871643,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 195
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 16852547,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 603
+        }
+      }
+    },
+    {
+      "id": 869,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6871643,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 195
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 16852547,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 603
+        }
+      }
+    },
+    {
+      "id": 872,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 3315558,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 190
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 59528145,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 6,
+          "tokens": 711
+        }
+      }
+    },
+    {
+      "id": 874,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6871643,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 197
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 16852547,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 609
+        }
+      }
+    },
+    {
+      "id": 875,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 6871643,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 197
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 16852547,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 609
+        }
+      }
+    },
+    {
+      "id": 878,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 21242882,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 398
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 21242882,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 980
+        }
+      }
+    },
+    {
+      "id": 888,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 25639358,
+          "cited": [
+            5,
+            8
+          ],
+          "readings": 2,
+          "tokens": 341
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 25061030,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 848
+        }
+      }
+    },
+    {
+      "id": 889,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 25639358,
+          "cited": [
+            5,
+            8
+          ],
+          "readings": 2,
+          "tokens": 341
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 19349466,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 848
+        }
+      }
+    },
+    {
+      "id": 892,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 13509809,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 342
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 13509809,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 6,
+          "tokens": 949
+        }
+      }
+    },
+    {
+      "id": 915,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 22108214,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 2,
+          "tokens": 299
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 37034101,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 925
+        }
+      }
+    },
+    {
+      "id": 918,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 54116735,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 176
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 54116735,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 650
+        }
+      }
+    },
+    {
+      "id": 920,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 25863052,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 160
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 25863052,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 606
+        }
+      }
+    },
+    {
+      "id": 924,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 24301710,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 2,
+          "tokens": 475
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 17077004,
+          "cited": [
+            0,
+            9
+          ],
+          "readings": 6,
+          "tokens": 1039
+        }
+      }
+    },
+    {
+      "id": 931,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16056514,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 2,
+          "tokens": 251
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16056514,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1069
+        }
+      }
+    },
+    {
+      "id": 932,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 8310839,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 238
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 20331058,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 977
+        }
+      }
+    },
+    {
+      "id": 937,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 201663923,
+          "cited": [
+            4,
+            8
+          ],
+          "readings": 2,
+          "tokens": 222
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 205110375,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 6,
+          "tokens": 890
+        }
+      }
+    },
+    {
+      "id": 943,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 21295300,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 2,
+          "tokens": 282
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 21295300,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 6,
+          "tokens": 796
+        }
+      }
+    },
+    {
+      "id": 947,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 23163600,
+          "cited": [
+            0,
+            11
+          ],
+          "readings": 2,
+          "tokens": 289
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 23163600,
+          "cited": [
+            0,
+            11
+          ],
+          "readings": 6,
+          "tokens": 948
+        }
+      }
+    },
+    {
+      "id": 968,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2119889,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 248
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 5885861,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 797
+        }
+      }
+    },
+    {
+      "id": 981,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 17181386,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 215
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 8398009,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 912
+        }
+      }
+    },
+    {
+      "id": 983,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2988714,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 2,
+          "tokens": 260
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2988714,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 6,
+          "tokens": 723
+        }
+      }
+    },
+    {
+      "id": 986,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 1383826,
+          "cited": [
+            5,
+            14
+          ],
+          "readings": 2,
+          "tokens": 280
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 1383826,
+          "cited": [
+            5,
+            14
+          ],
+          "readings": 6,
+          "tokens": 822
+        }
+      }
+    },
+    {
+      "id": 987,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 18732672,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 172
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 18732672,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 884
+        }
+      }
+    },
+    {
+      "id": 991,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 27203812,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 174
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 45991075,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 6,
+          "tokens": 721
+        }
+      }
+    },
+    {
+      "id": 995,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 16472469,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 2,
+          "tokens": 302
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 16472469,
+          "cited": [
+            2,
+            4
+          ],
+          "readings": 6,
+          "tokens": 909
+        }
+      }
+    },
+    {
+      "id": 1010,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 3994743,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 387
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 1292029,
+          "cited": [
+            0
+          ],
+          "readings": 6,
+          "tokens": 891
+        }
+      }
+    },
+    {
+      "id": 1013,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 8288301,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 244
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 18804277,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 6,
+          "tokens": 651
+        }
+      }
+    },
+    {
+      "id": 1017,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1088898,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 2,
+          "tokens": 222
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 4846755,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 6,
+          "tokens": 983
+        }
+      }
+    },
+    {
+      "id": 1022,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 7186210,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 2,
+          "tokens": 308
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 7186210,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 1063
+        }
+      }
+    },
+    {
+      "id": 1039,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 86129154,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 288
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 86129154,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 919
+        }
+      }
+    },
+    {
+      "id": 1051,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 26000593,
+          "cited": [
+            0,
+            10
+          ],
+          "readings": 2,
+          "tokens": 271
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 25497662,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 6,
+          "tokens": 929
+        }
+      }
+    },
+    {
+      "id": 1057,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 25101266,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 171
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 25101266,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 518
+        }
+      }
+    },
+    {
+      "id": 1059,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33586339,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 206
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33586339,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 738
+        }
+      }
+    },
+    {
+      "id": 1060,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33586339,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 208
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 33586339,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 744
+        }
+      }
+    },
+    {
+      "id": 1061,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 20381484,
+          "cited": [
+            8,
+            10
+          ],
+          "readings": 2,
+          "tokens": 382
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 20381484,
+          "cited": [
+            8,
+            10
+          ],
+          "readings": 6,
+          "tokens": 915
+        }
+      }
+    },
+    {
+      "id": 1063,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 20381484,
+          "cited": [
+            8,
+            10
+          ],
+          "readings": 2,
+          "tokens": 379
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 20381484,
+          "cited": [
+            8,
+            10
+          ],
+          "readings": 6,
+          "tokens": 984
+        }
+      }
+    },
+    {
+      "id": 1066,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 20418809,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 379
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 3476322,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 6,
+          "tokens": 802
+        }
+      }
+    },
+    {
+      "id": 1080,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 54507329,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 175
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 16227315,
+          "cited": [
+            0,
+            8
+          ],
+          "readings": 6,
+          "tokens": 767
+        }
+      }
+    },
+    {
+      "id": 1082,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 44138605,
+          "cited": [
+            0,
+            18
+          ],
+          "readings": 2,
+          "tokens": 228
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 215416455,
+          "cited": [
+            2,
+            9
+          ],
+          "readings": 6,
+          "tokens": 768
+        }
+      }
+    },
+    {
+      "id": 1083,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 34961195,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 170
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 34961195,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 997
+        }
+      }
+    },
+    {
+      "id": 1092,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 641786,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 2,
+          "tokens": 210
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 641786,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 6,
+          "tokens": 720
+        }
+      }
+    },
+    {
+      "id": 1093,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 641786,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 2,
+          "tokens": 212
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 6421792,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 6,
+          "tokens": 726
+        }
+      }
+    },
+    {
+      "id": 1094,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 31335358,
+          "cited": [
+            1,
+            9
+          ],
+          "readings": 2,
+          "tokens": 274
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 31335358,
+          "cited": [
+            1,
+            9
+          ],
+          "readings": 6,
+          "tokens": 726
+        }
+      }
+    },
+    {
+      "id": 1108,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 21679000,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 256
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 21679000,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 642
+        }
+      }
+    },
+    {
+      "id": 1113,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 22977742,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 258
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 4428028,
+          "cited": [
+            0,
+            6
+          ],
+          "readings": 6,
+          "tokens": 937
+        }
+      }
+    },
+    {
+      "id": 1117,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1269081,
+          "cited": [
+            4,
+            6
+          ],
+          "readings": 2,
+          "tokens": 230
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 29354124,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 6,
+          "tokens": 860
+        }
+      }
+    },
+    {
+      "id": 1122,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 5162688,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 2,
+          "tokens": 326
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 21551484,
+          "cited": [
+            3,
+            10
+          ],
+          "readings": 6,
+          "tokens": 1075
+        }
+      }
+    },
+    {
+      "id": 1123,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 5162688,
+          "cited": [
+            2,
+            6
+          ],
+          "readings": 2,
+          "tokens": 338
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 21551484,
+          "cited": [
+            3,
+            10
+          ],
+          "readings": 6,
+          "tokens": 1117
+        }
+      }
+    },
+    {
+      "id": 1124,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 5162688,
+          "cited": [
+            2,
+            7
+          ],
+          "readings": 2,
+          "tokens": 328
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 21551484,
+          "cited": [
+            3,
+            10
+          ],
+          "readings": 6,
+          "tokens": 1029
+        }
+      }
+    },
+    {
+      "id": 1129,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 2714623,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 2,
+          "tokens": 310
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 2714623,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 6,
+          "tokens": 858
+        }
+      }
+    },
+    {
+      "id": 1131,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 17997584,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 304
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 17997584,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 996
+        }
+      }
+    },
+    {
+      "id": 1143,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 43511977,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 2,
+          "tokens": 367
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 43511977,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 6,
+          "tokens": 998
+        }
+      }
+    },
+    {
+      "id": 1147,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 10231475,
+          "cited": [
+            8,
+            12
+          ],
+          "readings": 2,
+          "tokens": 283
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 53243927,
+          "cited": [
+            1,
+            8
+          ],
+          "readings": 6,
+          "tokens": 936
+        }
+      }
+    },
+    {
+      "id": 1154,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 7370282,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 375
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 7370282,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1144
+        }
+      }
+    },
+    {
+      "id": 1155,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 27912434,
+          "cited": [
+            1,
+            7
+          ],
+          "readings": 2,
+          "tokens": 343
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 27912434,
+          "cited": [
+            1,
+            7
+          ],
+          "readings": 6,
+          "tokens": 1028
+        }
+      }
+    },
+    {
+      "id": 1160,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 73479955,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 167
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 18679358,
+          "cited": [
+            5,
+            10
+          ],
+          "readings": 6,
+          "tokens": 622
+        }
+      }
+    },
+    {
+      "id": 1167,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 4455466,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 2,
+          "tokens": 397
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 4455466,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 6,
+          "tokens": 1035
+        }
+      }
+    },
+    {
+      "id": 1172,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 7370282,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 353
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 7370282,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 6,
+          "tokens": 1037
+        }
+      }
+    },
+    {
+      "id": 1189,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 12548390,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 265
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 12548390,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 974
+        }
+      }
+    },
+    {
+      "id": 1192,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 17537571,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 2,
+          "tokens": 266
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 20532591,
+          "cited": [
+            3,
+            5
+          ],
+          "readings": 6,
+          "tokens": 838
+        }
+      }
+    },
+    {
+      "id": 1201,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16025880,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 2,
+          "tokens": 364
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 2,
+          "doc": 52933423,
+          "cited": [
+            0,
+            8
+          ],
+          "readings": 6,
+          "tokens": 1050
+        }
+      }
+    },
+    {
+      "id": 1203,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 3274571,
+          "cited": [
+            11,
+            13
+          ],
+          "readings": 2,
+          "tokens": 365
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 6767781,
+          "cited": [
+            6,
+            8
+          ],
+          "readings": 6,
+          "tokens": 1021
+        }
+      }
+    },
+    {
+      "id": 1217,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 3829232,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 2,
+          "tokens": 394
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 3,
+          "doc": 44778278,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1154
+        }
+      }
+    },
+    {
+      "id": 1222,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 26156237,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 160
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 12351341,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 709
+        }
+      }
+    },
+    {
+      "id": 1233,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 13905670,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 355
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 13905670,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 910
+        }
+      }
+    },
+    {
+      "id": 1240,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 10108048,
+          "cited": [
+            4,
+            5
+          ],
+          "readings": 2,
+          "tokens": 243
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 19958717,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 892
+        }
+      }
+    },
+    {
+      "id": 1242,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 14046963,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 200
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3226841,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 727
+        }
+      }
+    },
+    {
+      "id": 1243,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 1204614,
+          "cited": [
+            0
+          ],
+          "readings": 2,
+          "tokens": 139
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 46243021,
+          "cited": [
+            5,
+            6
+          ],
+          "readings": 6,
+          "tokens": 753
+        }
+      }
+    },
+    {
+      "id": 1250,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 2094351,
+          "cited": [
+            2,
+            5
+          ],
+          "readings": 2,
+          "tokens": 400
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 2546974,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 1235
+        }
+      }
+    },
+    {
+      "id": 1256,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 207003013,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 279
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 25451374,
+          "cited": [
+            4,
+            9
+          ],
+          "readings": 6,
+          "tokens": 843
+        }
+      }
+    },
+    {
+      "id": 1267,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 30177070,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 2,
+          "tokens": 216
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 52815174,
+          "cited": [
+            2,
+            3
+          ],
+          "readings": 6,
+          "tokens": 739
+        }
+      }
+    },
+    {
+      "id": 1277,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11011341,
+          "cited": [
+            0,
+            3
+          ],
+          "readings": 2,
+          "tokens": 301
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3475317,
+          "cited": [
+            5,
+            7
+          ],
+          "readings": 6,
+          "tokens": 875
+        }
+      }
+    },
+    {
+      "id": 1283,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 3578380,
+          "cited": [
+            0,
+            9
+          ],
+          "readings": 2,
+          "tokens": 495
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 3578380,
+          "cited": [
+            0,
+            9
+          ],
+          "readings": 6,
+          "tokens": 1013
+        }
+      }
+    },
+    {
+      "id": 1286,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1649738,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 245
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1649738,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 841
+        }
+      }
+    },
+    {
+      "id": 1296,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1021480,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 2,
+          "tokens": 146
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 1021480,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 603
+        }
+      }
+    },
+    {
+      "id": 1299,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11718220,
+          "cited": [
+            1,
+            13
+          ],
+          "readings": 2,
+          "tokens": 339
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 11718220,
+          "cited": [
+            1,
+            13
+          ],
+          "readings": 6,
+          "tokens": 920
+        }
+      }
+    },
+    {
+      "id": 1313,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 17579144,
+          "cited": [
+            1,
+            5
+          ],
+          "readings": 2,
+          "tokens": 382
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 20622650,
+          "cited": [
+            0,
+            7
+          ],
+          "readings": 6,
+          "tokens": 937
+        }
+      }
+    },
+    {
+      "id": 1317,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 67857883,
+          "cited": [
+            3,
+            7
+          ],
+          "readings": 2,
+          "tokens": 387
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 4935725,
+          "cited": [
+            6,
+            10
+          ],
+          "readings": 6,
+          "tokens": 1084
+        }
+      }
+    },
+    {
+      "id": 1318,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 205834074,
+          "cited": [
+            2,
+            8
+          ],
+          "readings": 2,
+          "tokens": 322
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 16284655,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 885
+        }
+      }
+    },
+    {
+      "id": 1321,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 16284655,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 294
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 1980926,
+          "cited": [
+            0,
+            10
+          ],
+          "readings": 6,
+          "tokens": 877
+        }
+      }
+    },
+    {
+      "id": 1326,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 17142196,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 2,
+          "tokens": 177
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 3,
+          "doc": 774605,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 526
+        }
+      }
+    },
+    {
+      "id": 1329,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 24472396,
+          "cited": [
+            5,
+            8
+          ],
+          "readings": 2,
+          "tokens": 340
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 3475317,
+          "cited": [
+            0,
+            2
+          ],
+          "readings": 6,
+          "tokens": 686
+        }
+      }
+    },
+    {
+      "id": 1343,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 13591263,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 2,
+          "tokens": 278
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 24227750,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 6,
+          "tokens": 886
+        }
+      }
+    },
+    {
+      "id": 1354,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 199539572,
+          "cited": [
+            1,
+            3
+          ],
+          "readings": 2,
+          "tokens": 261
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 2,
+          "doc": 5256564,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 912
+        }
+      }
+    },
+    {
+      "id": 1357,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 13764090,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 2,
+          "tokens": 260
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 13764090,
+          "cited": [
+            0,
+            5
+          ],
+          "readings": 6,
+          "tokens": 861
+        }
+      }
+    },
+    {
+      "id": 1369,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 207642069,
+          "cited": [
+            1,
+            6
+          ],
+          "readings": 2,
+          "tokens": 214
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 2,
+          "doc": 19310295,
+          "cited": [
+            3,
+            4
+          ],
+          "readings": 6,
+          "tokens": 817
+        }
+      }
+    },
+    {
+      "id": 1377,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 13680015,
+          "cited": [
+            0,
+            4
+          ],
+          "readings": 2,
+          "tokens": 406
+        },
+        "three": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 2,
+          "doc": 9375866,
+          "cited": [
+            0,
+            1
+          ],
+          "readings": 6,
+          "tokens": 895
+        }
+      }
+    },
+    {
+      "id": 1388,
+      "arms": {
+        "first": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 23895668,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 2,
+          "tokens": 286
+        },
+        "three": {
+          "outcome": "justified",
+          "verdict": "SUPPORT",
+          "rank": 1,
+          "doc": 23895668,
+          "cited": [
+            1,
+            2
+          ],
+          "readings": 6,
+          "tokens": 820
+        }
+      }
+    },
+    {
+      "id": 1396,
+      "arms": {
+        "first": {
+          "outcome": "held",
+          "verdict": "NEUTRAL",
+          "rank": 1,
+          "doc": 15205208,
+          "cited": [
+            6,
+            7
+          ],
+          "readings": 2,
+          "tokens": 339
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "SUPPORT",
+          "rank": 3,
+          "doc": 21756760,
+          "cited": [
+            0,
+            9
+          ],
+          "readings": 6,
+          "tokens": 1004
+        }
+      }
+    },
+    {
+      "id": 1408,
+      "arms": {
+        "first": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 52194007,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 2,
+          "tokens": 327
+        },
+        "three": {
+          "outcome": "unsupported",
+          "verdict": "CONTRADICT",
+          "rank": 1,
+          "doc": 52194007,
+          "cited": [
+            1,
+            4
+          ],
+          "readings": 6,
+          "tokens": 951
+        }
+      }
+    }
+  ]
+}
