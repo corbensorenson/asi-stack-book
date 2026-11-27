@@ -1,0 +1,6686 @@
+{
+  "1": {
+    "TaskQueue": {
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 16,
+        "verified": 12,
+        "unsupported": 0,
+        "rejected": 4,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 48,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "last_arrival": {
+        "tick": 31,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 16,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 17,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 18,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 19,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 20,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 21,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 22,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 23,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 24,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 25,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 26,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 27,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 28,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 29,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 30,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 31,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 31,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 16,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 17,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 18,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 19,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 20,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 21,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 22,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 23,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 24,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 25,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 26,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 27,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 28,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 29,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 30,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 31,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    },
+    "ObligationQueue": {
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 16,
+        "verified": 12,
+        "unsupported": 0,
+        "rejected": 4,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 64,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "last_arrival": {
+        "tick": 31,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 16,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 17,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 18,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 19,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 20,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 21,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 22,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 23,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 24,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 25,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 26,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 27,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 28,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 29,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 30,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 31,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 31,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 16,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 17,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 18,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 19,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 20,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 21,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 22,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 23,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 24,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 25,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 26,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 27,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 28,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 29,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 30,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 31,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    }
+  },
+  "2": {
+    "TaskQueue": {
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "last_arrival": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    },
+    "ObligationQueue": {
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "last_arrival": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 0,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 8,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 9,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 9,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 10,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 11,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 11,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 12,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 13,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 13,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 14,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 15,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 15,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    }
+  },
+  "4": {
+    "TaskQueue": {
+      "last_arrival": {
+        "tick": 7,
+        "arrivals": 32,
+        "verified": 12,
+        "unsupported": 0,
+        "rejected": 4,
+        "unresolved_checks": 32,
+        "mean_finished_wait": 2,
+        "max_pending_age": 3,
+        "writes": 64,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 2,
+            "unsupported": false
+          }
+        ]
+      },
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 4,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 4,
+        "max_pending_age": null,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    },
+    "ObligationQueue": {
+      "last_arrival": {
+        "tick": 7,
+        "arrivals": 32,
+        "verified": 12,
+        "unsupported": 0,
+        "rejected": 4,
+        "unresolved_checks": 32,
+        "mean_finished_wait": 2,
+        "max_pending_age": 3,
+        "writes": 96,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 3,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 2,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 1,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 1,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 3,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 2,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "pending",
+            "checks": {},
+            "wait_or_age": 0,
+            "remaining": 2,
+            "unsupported": false
+          }
+        ]
+      },
+      "tick_15": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 4,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      },
+      "drain": {
+        "tick": 15,
+        "arrivals": 32,
+        "verified": 24,
+        "unsupported": 0,
+        "rejected": 8,
+        "unresolved_checks": 0,
+        "mean_finished_wait": 4,
+        "max_pending_age": null,
+        "writes": 128,
+        "jobs": [
+          {
+            "job": 0,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 1,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 0,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 2,
+            "arrival": 0,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 3,
+            "arrival": 0,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 4,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 5,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 1,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 6,
+            "arrival": 1,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 7,
+            "arrival": 1,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 8,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 9,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 2,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 10,
+            "arrival": 2,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 11,
+            "arrival": 2,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 12,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 13,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 3,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 14,
+            "arrival": 3,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 15,
+            "arrival": 3,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 16,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 17,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 4,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 18,
+            "arrival": 4,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 19,
+            "arrival": 4,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 20,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 21,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 5,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 22,
+            "arrival": 5,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 23,
+            "arrival": 5,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 24,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 25,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 6,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 26,
+            "arrival": 6,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 27,
+            "arrival": 6,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 28,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 29,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true,
+              "2": true
+            },
+            "wait_or_age": 7,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 30,
+            "arrival": 7,
+            "verdict": "accepted",
+            "checks": {
+              "0": true,
+              "1": true
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          },
+          {
+            "job": 31,
+            "arrival": 7,
+            "verdict": "rejected",
+            "checks": {
+              "0": true,
+              "1": false
+            },
+            "wait_or_age": 8,
+            "remaining": 0,
+            "unsupported": false
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,459 @@
+{
+  "snapshot": "39b607b574bec0a8d903363406a64e446ba024e5795cd350f403197da7d1dec5",
+  "trials": [
+    {
+      "subject": "atlas",
+      "question": "What happened to the decision when the buy-all competitor entered the comparison?",
+      "identified": false,
+      "method": "text",
+      "packet": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        },
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "atlas",
+      "question": "What happened to the decision when the buy-all competitor entered the comparison?",
+      "identified": false,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "atlas",
+      "question": "What happened to the decision when the buy-all competitor entered the comparison? evidence_passage:atlas-corrected-decision",
+      "identified": true,
+      "method": "text",
+      "packet": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        },
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "atlas",
+      "question": "What happened to the decision when the buy-all competitor entered the comparison? evidence_passage:atlas-corrected-decision",
+      "identified": true,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "atlas",
+      "question": "What happened to the decision when the buy-all competitor entered the comparison? evidence_passage:atlas-corrected-decision",
+      "identified": true,
+      "method": "identifier",
+      "packet": [
+        {
+          "id": "evidence_passage:atlas-corrected-decision",
+          "summary": "Adding two available comparators, including expand all, reduced mean paid-oracle headroom from 0.052142 to 0.035299 at budget 128. The mean fell below the 0.04 continuation threshold, changing the decision to stop.",
+          "disposition": "Retain the stop decision under the declared screen and predeclare the strongest feasible comparators in each budget regime before a fresh comparison.",
+          "limit": "The correction reused 24 authored worlds and fixed seeds after outcomes were inspected. The ordinary interval remains positive and includes 0.04. The result does not establish zero benefit or supply fresh confirmation.",
+          "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "receiver",
+      "question": "Did putting the second read behind a gateway still close more cases once both placements had access?",
+      "identified": false,
+      "method": "text",
+      "packet": [
+        {
+          "id": "evidence_passage:receiver-matched-access",
+          "summary": "Both second-source designs verified 80 of 288 closures. Primary-only status verified 48. Relaying status through a gateway saved 192 caller requests and added 54,168 status payload bytes.",
+          "disposition": "Retain primary-only status where its evidence is sufficient. Compare end-to-end costs and actual availability before choosing a second-source placement.",
+          "limit": "Four authored tasks and controlled projections under local same-owner services. Incident frequencies, independent faults and active operator time remain open.",
+          "url": "reader/quickstart.html#matched-receiver-access"
+        },
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "receiver",
+      "question": "Did putting the second read behind a gateway still close more cases once both placements had access?",
+      "identified": false,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "id": "evidence_passage:receiver-matched-access",
+          "summary": "Both second-source designs verified 80 of 288 closures. Primary-only status verified 48. Relaying status through a gateway saved 192 caller requests and added 54,168 status payload bytes.",
+          "disposition": "Retain primary-only status where its evidence is sufficient. Compare end-to-end costs and actual availability before choosing a second-source placement.",
+          "limit": "Four authored tasks and controlled projections under local same-owner services. Incident frequencies, independent faults and active operator time remain open.",
+          "url": "reader/quickstart.html#matched-receiver-access"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "receiver",
+      "question": "Did putting the second read behind a gateway still close more cases once both placements had access? study_run:receiver-availability",
+      "identified": true,
+      "method": "text",
+      "packet": [
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "id": "evidence_passage:receiver-matched-access",
+          "summary": "Both second-source designs verified 80 of 288 closures. Primary-only status verified 48. Relaying status through a gateway saved 192 caller requests and added 54,168 status payload bytes.",
+          "disposition": "Retain primary-only status where its evidence is sufficient. Compare end-to-end costs and actual availability before choosing a second-source placement.",
+          "limit": "Four authored tasks and controlled projections under local same-owner services. Incident frequencies, independent faults and active operator time remain open.",
+          "url": "reader/quickstart.html#matched-receiver-access"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "receiver",
+      "question": "Did putting the second read behind a gateway still close more cases once both placements had access? study_run:receiver-availability",
+      "identified": true,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        },
+        {
+          "id": "evidence_passage:receiver-matched-access",
+          "summary": "Both second-source designs verified 80 of 288 closures. Primary-only status verified 48. Relaying status through a gateway saved 192 caller requests and added 54,168 status payload bytes.",
+          "disposition": "Retain primary-only status where its evidence is sufficient. Compare end-to-end costs and actual availability before choosing a second-source placement.",
+          "limit": "Four authored tasks and controlled projections under local same-owner services. Incident frequencies, independent faults and active operator time remain open.",
+          "url": "reader/quickstart.html#matched-receiver-access"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "receiver",
+      "question": "Did putting the second read behind a gateway still close more cases once both placements had access? study_run:receiver-availability",
+      "identified": true,
+      "method": "identifier",
+      "packet": [
+        {
+          "id": "study_run:receiver-availability",
+          "summary": "Primary-only status verified 48 of 288 paired cells. The two routes with second-projection access each verified 80. They agreed on disposition in all 288 cells. The gateway used 288 caller requests and 130,128 status payload bytes. The additional endpoint used 480 caller requests and 75,960 bytes.",
+          "disposition": "Use primary-only status where it supplies fresh exact evidence. A fresh second projection can close additional cases when primary status fails. Choose the caller or gateway placement by its full burden and failure behavior. In this run the gateway reduced caller requests and increased total status transport.",
+          "limit": "The paired cells repeat four authored tasks. Status services run in separate processes under the same owner and receive controlled projections of the same starting operation journal. The protocol supplies trusted revision and known availability states. The comparison measures local IPC and logical observation costs. Separately administered outages, production time, incident frequency and human effort remain open.",
+          "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "transfer",
+      "question": "Did reusable routines still win once the queue gave priority to expanded primitive length?",
+      "identified": false,
+      "method": "text",
+      "packet": [
+        {
+          "id": "study_run:transfer-scheduler-audit",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "transfer",
+      "question": "Did reusable routines still win once the queue gave priority to expanded primitive length?",
+      "identified": false,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "study_run:transfer-scheduler-audit",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "transfer",
+      "question": "Did reusable routines still win once the queue gave priority to expanded primitive length? study_run:transfer-scheduler-audit",
+      "identified": true,
+      "method": "text",
+      "packet": [
+        {
+          "id": "study_run:transfer-scheduler-audit",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "transfer",
+      "question": "Did reusable routines still win once the queue gave priority to expanded primitive length? study_run:transfer-scheduler-audit",
+      "identified": true,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "study_run:transfer-scheduler-audit",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        },
+        {
+          "id": "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed",
+          "summary": "Query-aware whole · handle depth: verified. Query-aware whole · expanded length: screen budget exhausted.",
+          "limit": "One authored b24 board-routing case. Both arms have the same descriptive query and 96-proposal cap. This case illustrates scheduler sensitivity, independently of claims about other programs.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "transfer",
+      "question": "Did reusable routines still win once the queue gave priority to expanded primitive length? study_run:transfer-scheduler-audit",
+      "identified": true,
+      "method": "identifier",
+      "packet": [
+        {
+          "id": "study_run:transfer-scheduler-audit",
+          "summary": "In 64 descriptive-query cells at the proposal cap, prioritizing expanded length changed query-aware whole programs from 28 to 8 verified cells. Query-aware routines verified 20 and 20. The earlier ranking depended on the scheduler as well as the cap.",
+          "disposition": "Keep both representations and prespecify schedule, budget, and outcome denominators. Choose a representation only after the advantage persists across comparable schedulers on independent tasks.",
+          "limit": "The 256 matched cells repeat conditions over sixteen authored tasks. Counts describe cells in this design. Treat task lineage as the unit for inference about new tasks. The read-only audit observed the focal pattern before this pinned rerun, so the result is exploratory for unseen families.",
+          "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "verifier",
+      "question": "How many minutes of active operator time did the separate revision authority save in production?",
+      "identified": false,
+      "method": "text",
+      "packet": [
+        {
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+          "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+          "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan"
+        },
+        {
+          "id": "study_run:verifier-process-boundary",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "verifier",
+      "question": "How many minutes of active operator time did the separate revision authority save in production?",
+      "identified": false,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+          "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+          "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan"
+        },
+        {
+          "id": "study_run:verifier-process-boundary",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "verifier",
+      "question": "How many minutes of active operator time did the separate revision authority save in production? study_run:verifier-process-boundary",
+      "identified": true,
+      "method": "text",
+      "packet": [
+        {
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+          "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+          "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan"
+        },
+        {
+          "id": "study_run:verifier-process-boundary",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "verifier",
+      "question": "How many minutes of active operator time did the separate revision authority save in production? study_run:verifier-process-boundary",
+      "identified": true,
+      "method": "graph",
+      "packet": [
+        {
+          "id": "evidence_passage:verifier-measurement-boundary",
+          "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
+          "disposition": "Keep ordinary memoization at this boundary and measure labor and end-to-end cost in a separately operated workload.",
+          "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
+          "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan"
+        },
+        {
+          "id": "study_run:verifier-process-boundary",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    {
+      "subject": "verifier",
+      "question": "How many minutes of active operator time did the separate revision authority save in production? study_run:verifier-process-boundary",
+      "identified": true,
+      "method": "identifier",
+      "packet": [
+        {
+          "id": "study_run:verifier-process-boundary",
+          "summary": "Both formats took the expected route at all 38 paired checkpoints, including 10 specialist decisions. Each read 70 evidence documents and used 164 pipe messages carrying 16,816 payload bytes. The serialized arm also encoded 1,616 bytes into its local cache.",
+          "disposition": "Keep ordinary memoization where it satisfies the same freshness and fallback rules. Measure independence, delivery and end-to-end burden before adopting a cross-owner serialized handoff.",
+          "limit": "The revision authority and worker processes share one operator and run authored public-copy scenarios. Transport accounting excludes framing, work-counter collection and startup. Active operator time, wall time, independently operated services, network latency and concurrent changes between permission checks and effects were outside the measurement.",
+          "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary"
+        }
+      ],
+      "decision": true,
+      "citation": true,
+      "scope": true
+    }
+  ]
+}
