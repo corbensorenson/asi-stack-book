@@ -1,0 +1,60 @@
+[
+  {
+    "subject": "atlas",
+    "start": "evidence_passage:atlas-original-proceed-decision",
+    "question": "What happened to the decision when the buy-all competitor entered the comparison?",
+    "target": "evidence_passage:atlas-corrected-decision",
+    "url": "chapters/benchmark-ratchets-and-anti-goodhart-evidence.html#atlas-baseline-correction",
+    "decision": [
+      "0.035299",
+      "stop"
+    ],
+    "scope": [
+      "24 authored worlds",
+      "after outcomes"
+    ]
+  },
+  {
+    "subject": "receiver",
+    "start": "study:crossed-receiver",
+    "question": "Did putting the second read behind a gateway still close more cases once both placements had access?",
+    "target": "study_run:receiver-availability",
+    "url": "products/evidence-registry/study-crossed-receiver.html#run-receiver-availability",
+    "decision": [
+      "each verified 80"
+    ],
+    "scope": [
+      "four authored tasks",
+      "same starting operation journal"
+    ]
+  },
+  {
+    "subject": "transfer",
+    "start": "study:forward-transfer",
+    "question": "Did reusable routines still win once the queue gave priority to expanded primitive length?",
+    "target": "study_run:transfer-scheduler-audit",
+    "url": "products/evidence-registry/study-forward-transfer.html#run-transfer-scheduler-audit",
+    "decision": [
+      "28 to 8",
+      "20 and 20"
+    ],
+    "scope": [
+      "sixteen authored tasks",
+      "exploratory"
+    ]
+  },
+  {
+    "subject": "verifier",
+    "start": "study:verifier-rollout",
+    "question": "How many minutes of active operator time did the separate revision authority save in production?",
+    "target": "study_run:verifier-process-boundary",
+    "url": "products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary",
+    "decision": [
+      "active operator time",
+      "outside the measurement"
+    ],
+    "scope": [
+      "share one operator"
+    ]
+  }
+]
