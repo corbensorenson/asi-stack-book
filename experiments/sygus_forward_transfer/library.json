@@ -1,0 +1,11 @@
+{
+  "none": [],
+  "whole": [
+    "(bvand x (bvsub x #x00000001))",
+    "(bvand x (bvadd x #x00000001))"
+  ],
+  "routines": [
+    "(bvadd x #x00000001)",
+    "(bvsub x #x00000001)"
+  ]
+}
