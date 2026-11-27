@@ -1071,7 +1071,9 @@ def reader_resources(directory, status, inputs, payload):
              '<a href="SKILL.md">Plain Markdown instructions</a> · '
              '<a href="citation-history.html">Check a saved citation</a></p>'
              '<p>To install, extract the asi-stack-reader folder into the skills directory used by your agent. '
-             'A web reader can use the instructions below directly.</p>' + "".join(paragraphs))
+             'A web reader can use the instructions below directly.</p>' + "".join(paragraphs) +
+             f'<p><a href="https://github.com/corbensorenson/asi-stack-book/blob/{status["source_commit"]}/'
+             'experiments/knowledge_graph_navigation/reader-access/results.md">Read the search and agent comparison</a></p>')
     write_text(directory / "reader-skill.html", page("Read The ASI Stack with an agent",
                "Find the deciding passage and cite its limits.", guide, "knowledge-graph/manifest.json",
                show_portfolio=False), payload)

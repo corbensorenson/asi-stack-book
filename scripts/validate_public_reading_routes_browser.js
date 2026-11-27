@@ -354,8 +354,9 @@ async function checkReaderAccess(context) {
   try {
     await page.goto(root);
     await page.getByRole("link", {name:"Choose a short decision", exact:true}).click();
+    await page.waitForURL(url => url.pathname.endsWith("/reader/quickstart.html") && url.hash === "#short-decisions");
     for (const id of ["guided-change", "guided-observation", "guided-replacement"]) {
-      assert(await page.locator("#" + id).isVisible(), id);
+      await page.locator("#" + id).waitFor({state:"visible"});
     }
     await page.goto(registry + "reader-skill.html");
     const skill = await page.getByRole("link", {name:"Plain Markdown instructions"}).evaluate(link =>
