@@ -1,0 +1,48 @@
+{
+  "development_sha256": "ebc4e2f7c70fecf06255672fb757ce391ab73b39ca0066ce3149ab2579fef3ce",
+  "n": 537,
+  "policies": {
+    "pool": {
+      "triage": 0.0,
+      "publication": null
+    },
+    "agreement": {
+      "triage": 0.0,
+      "publication": null
+    }
+  },
+  "development": {
+    "pool": {
+      "triage": {
+        "justified": 70,
+        "exact": 0,
+        "unsupported": 67,
+        "held": 400,
+        "answerable_held": 208
+      },
+      "publication": {
+        "justified": 0,
+        "exact": 0,
+        "unsupported": 0,
+        "held": 537,
+        "answerable_held": 321
+      }
+    },
+    "agreement": {
+      "triage": {
+        "justified": 47,
+        "exact": 0,
+        "unsupported": 44,
+        "held": 446,
+        "answerable_held": 243
+      },
+      "publication": {
+        "justified": 0,
+        "exact": 0,
+        "unsupported": 0,
+        "held": 537,
+        "answerable_held": 321
+      }
+    }
+  }
+}
