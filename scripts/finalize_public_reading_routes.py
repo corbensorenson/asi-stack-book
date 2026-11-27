@@ -123,14 +123,17 @@ def scientific_identifiers(site):
     registry = "products/evidence-registry"
     release = [json.loads(line) for line in (ROOT / "experiments/scifact_citation_check/reserved.jsonl").read_text().splitlines()]
     fresh = load(ROOT / "experiments/scifact_retrieval_followup/cases.json")["cases"]
+    selection = load(ROOT / "experiments/scifact_three_papers/observations.json")["cases"]
     entries = []
     for study, run, records in (("scientific-citation", "scifact-release", release),
-                                ("citation-retrieval", "fresh-citation-retrieval", fresh)):
+                                ("citation-retrieval", "fresh-citation-retrieval", fresh),
+                                ("citation-retrieval", "three-paper-selection", selection)):
         path = f"{registry}/study-{study}.html"
         html = (site / path).read_text()
         for row in records:
             claim = str(row["id"])
-            papers = sorted({str(a["doc"]) for a in row["arms"].values()} if "arms" in row else {str(row["doc"])})
+            candidates = row.get("candidates") or row.get("arms", {}).values() or [row]
+            papers = sorted({str(a["doc"]) for a in candidates})
             for suffix in (("",) if study == "citation-retrieval" else ("-triage","-publication")):
                 anchor = f"run-{run}--case-{claim}{suffix}"
                 if f'id="{anchor}"' not in html:
