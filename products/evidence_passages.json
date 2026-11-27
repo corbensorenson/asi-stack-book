@@ -364,6 +364,8 @@
       "scientific claim checked against a paper"
     ],
     "links": [
+      {"predicate": "examines_run", "target": "study_run:scifact-release"},
+      {"predicate": "discusses_claim", "target": "claim:verification-bandwidth-and-context-adequacy.core"},
       {
         "predicate": "cites_source",
         "target": "source:ext_scifact_2020"

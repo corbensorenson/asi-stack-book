@@ -591,6 +591,22 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
 
 
 def study_outcomes(format_id: str, result: dict) -> str:
+    if format_id == "scifact_citation":
+        rows = []
+        for name, users in result["outcomes"].items():
+            for user, outcome in users.items():
+                label = f"{ARM_LABELS[name]} · {user}"
+                cells = "".join(f'<td>{outcome[key]}</td>' for key in
+                                ("justified", "unsupported", "held", "answerable_held"))
+                rows.append(f'<tr><th scope="row">{escape(label)}</th>{cells}</tr>')
+        table = study_table("Frozen decisions on the same reserved claims",
+                            ["Decision", "Justified", "Unsupported", "Held", "Held with annotated evidence"],
+                            "".join(rows))
+        low, high = result["paired_interval"]
+        return (table + f'<p>The paired triage utility difference was {result["paired_delta_per_100"]:.2f} '
+                f'per 100 claims (95% interval {low:.2f} to {high:.2f}). Each arm used '
+                f'{result["calls_per_arm"]} model readings. The case table lists each of the '
+                f'{result["n"]} claims twice, once per review policy.</p>')
     if format_id == "transfer_pilot_v1":
         totals = result["totals"]
         fields = ("verified", "budget_exhausted", "attempts", "screening_primitive_steps", "checker_primitive_steps")

@@ -56,5 +56,38 @@
     "question": "What does the journal show about a write that precedes revocation and is observed later?",
     "limit": "One schedule in a same-owner local database. A later observation does not change the grant that was in force when the effect committed.",
     "aliases": ["commit then revoke", "delayed observer", "grant revision at effect"]
+  },
+  {
+    "run": "scifact-release",
+    "case": "51-triage",
+    "title": "A second reading corrects the scientific verdict",
+    "question": "When does a context disagreement hide a justified contradiction?",
+    "limit": "One held-out claim. Pooling included annotated sentence 4 alongside sentence 0. The exact-rationale criterion gives that extra sentence no precision credit.",
+    "aliases": [
+      "SciFact claim 51",
+      "citation veto blocks correction"
+    ]
+  },
+  {
+    "run": "scifact-release",
+    "case": "1-triage",
+    "title": "The citation veto withholds an unsupported verdict",
+    "question": "Can the veto prevent an unsupported contradiction?",
+    "limit": "One held-out claim with no annotated evidence in the selected abstract. The result uses the frozen rationale scoring rule.",
+    "aliases": [
+      "SciFact claim 1",
+      "unsupported contradiction held"
+    ]
+  },
+  {
+    "run": "scifact-release",
+    "case": "75-triage",
+    "title": "Two readings agree on an unsupported verdict",
+    "question": "Can both readings accept the same unsupported citation?",
+    "limit": "One held-out claim with no annotated rationale in the retrieved paper. Agreement within one model shares its failure modes.",
+    "aliases": [
+      "SciFact claim 75",
+      "shared citation error"
+    ]
   }
 ]
