@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1477 |
-| Exact claim-source mappings | 1269 |
+| Assigned source/chapter pairs | 1478 |
+| Exact claim-source mappings | 1270 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1477 |
-| Source notes listing assigned chapter | 1477 |
-| Passage-reviewed mappings recorded | 1202 |
+| Source notes present for assigned pairs | 1478 |
+| Source notes listing assigned chapter | 1478 |
+| Passage-reviewed mappings recorded | 1203 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -72,7 +72,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `virtual-context-abi` | 45 | 38 | 45 | 45 | 38 | argument | passage review required before source-derived promotion |
 | `durable-semantic-memory-and-knowledge-lattices` | 13 | 13 | 13 | 13 | 9 | argument | passage review required before source-derived promotion |
 | `context-transactions-snapshots-mounts-and-taint` | 24 | 16 | 24 | 24 | 16 | argument | passage review required before source-derived promotion |
-| `verification-bandwidth-and-context-adequacy` | 18 | 17 | 18 | 18 | 17 | argument | passage review required before source-derived promotion |
+| `verification-bandwidth-and-context-adequacy` | 19 | 18 | 19 | 19 | 18 | argument | passage review required before source-derived promotion |
 | `claim-ledgers-and-belief-revision` | 21 | 18 | 21 | 21 | 18 | argument | passage review required before source-derived promotion |
 | `spinoza-verification-and-proof-carrying-claims` | 20 | 18 | 20 | 20 | 18 | argument | passage review required before source-derived promotion |
 | `labor-os-and-typed-jobs` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
@@ -480,6 +480,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `black_hole_context_manager` | 1 | yes |
 | `ext_coordination_avoidance_2014` | 1 | yes |
 | `ext_correlated_errors_2025` | 1 | yes |
+| `ext_scifact_2020` | 1 | yes |
 | `ext_agm_belief_revision_1985` | 1 | yes |
 | `ext_truth_maintenance_system_1979` | 1 | yes |
 | `ext_assumption_based_tms_1986` | 1 | yes |
@@ -1219,6 +1220,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `ext_reluplex_2017` | mapped | note present | chapter listed | passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `kernel_english_residual_compiler` | unmapped | note present | chapter listed | not passage-reviewed |
 | `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `ext_correlated_errors_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `verification-bandwidth-and-context-adequacy.core` | `verification-bandwidth-and-context-adequacy` | `ext_scifact_2020` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `spinoza` | mapped | note present | chapter listed | passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `platonic_world_model` | unmapped | note present | chapter listed | not passage-reviewed |
 | `claim-ledgers-and-belief-revision.core` | `claim-ledgers-and-belief-revision` | `viea` | mapped | note present | chapter listed | passage-reviewed |
