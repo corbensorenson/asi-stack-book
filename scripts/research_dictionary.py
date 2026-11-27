@@ -34,13 +34,16 @@ def add_terms(graph):
             node["dictionary_url"] = PAGE+"#term-"+node["id"].partition(":")[2]
 
 
-def shell(title, intro, body):
+def shell(title, intro, body, *, rendered_index=False):
+    book = "../" if rendered_index else "../../../"
+    graph = book + DIRECTORY if rendered_index else ""
+    indexes = "" if rendered_index else book + "terminology/"
     return ('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
             f'<title>{title} · The ASI Stack</title><style>body{{font:1.05rem/1.55 system-ui,sans-serif;max-width:65rem;margin:auto;padding:1.5rem}}'
             'a{color:#165687} input{font:inherit;padding:.45rem;width:min(96%,28rem)} nav a{margin-right:.65rem} article{border-top:1px solid #aaa;padding:.4rem 0}'
             'h3{margin-bottom:.3rem} p{margin:.3rem 0 .8rem} :target{scroll-margin:1.5rem} [hidden]{display:none}</style>'
-            f'<main><nav><a href="../../../index.html">Book</a><a href="index.html">Knowledge graph</a><a href="dictionary.html">Dictionary</a>'
-            f'<a href="subject-index.html">Subject index</a><a href="concordance.html">Term occurrences</a><a href="works.html">Sources</a></nav><h1>{title}</h1><p>{intro}</p><label for="filter">Filter entries</label><br>'
+            f'<main><nav><a href="{book}index.html">Book</a><a href="{graph}index.html">Knowledge graph</a><a href="{graph}dictionary.html">Dictionary</a>'
+            f'<a href="{indexes}subject-index.html">Subject index</a><a href="{indexes}concordance.html">Term occurrences</a><a href="{graph}works.html">Sources</a></nav><h1>{title}</h1><p>{intro}</p><label for="filter">Filter entries</label><br>'
             '<input id="filter" type="search"><p role="status" id="count"></p>'+body+'</main>'
             '<script>const input=document.getElementById("filter"), rows=Array.from(document.querySelectorAll("[data-entry]"));'
             'function filter(){const q=input.value.trim().toLocaleLowerCase();let n=0;for(const r of rows){r.hidden=!!q&&!r.textContent.toLocaleLowerCase().includes(q);if(!r.hidden)n++}'
@@ -71,7 +74,7 @@ def dictionary_files(graph):
                  f'<a href="index.html?node={quote(row["id"])}">Open graph record</a>']
         for owner in row["chapters"]:
             links.append(f'<a href="../../../{nodes[owner]["url"]}">{escape(nodes[owner]["title"])}</a>')
-        links.append(f'<a href="concordance.html#uses-{escape(row["id"].partition(":")[2])}">Find passages using this term</a>')
+        links.append(f'<a href="../../../terminology/concordance.html#uses-{escape(row["id"].partition(":")[2])}">Find passages using this term</a>')
         aliases = ', '.join(map(escape,row['aliases']))
         fragment = escape(row["url"].split("#")[1])
         letter = row['term'][0].upper()
@@ -197,28 +200,30 @@ def subject_index(site, volumes, files, commit):
             for key in sorted(term_ids):
                 occurrences[key].append(dict(url=path+("#"+anchor if anchor else ""), chapter=title, section=headings.get(anchor, "Opening")))
         data.append(dict(id=identity,title=title,path=path,headings=parser.items))
-        items = ''.join(f'<li data-entry><a href="../../../{path}#{escape(anchor)}">{escape(text)}</a></li>' for anchor,text in parser.items)
+        items = ''.join(f'<li data-entry><a href="../{path}#{escape(anchor)}">{escape(text)}</a></li>' for anchor,text in parser.items)
         sections.append(f'<section data-group id="{escape(identity)}"><h2>{escape(title)}</h2><ul>{items}</ul></section>')
         marker = '<nav aria-label="Terminology lookup">'
-        if marker not in contents:
-            prefix = '../' * (len(path.split('/'))-1) + DIRECTORY
-            links = (marker+f'<a href="{prefix}dictionary.html">AI dictionary</a> · '
-                     f'<a href="{prefix}subject-index.html#{escape(identity)}">Index of this chapter</a></nav>')
-            if '</main>' not in contents:
-                raise ValueError(path)
-            files.write(page, contents.replace('</main>',links+'</main>',1))
+        prefix = '../' * (len(path.split('/'))-1)
+        links = (marker+f'<a href="{prefix}{DIRECTORY}dictionary.html">AI dictionary</a> · '
+                 f'<a href="{prefix}terminology/subject-index.html#{escape(identity)}">Index of this chapter</a></nav>')
+        if '</main>' not in contents:
+            raise ValueError(path)
+        projected = (re.sub(re.escape(marker)+r'.*?</nav>', lambda _: links, contents, count=1, flags=re.S)
+                     if marker in contents else contents.replace('</main>', links+'</main>', 1))
+        if projected != contents:
+            files.write(page, projected)
     groups = []
     for term in terms:
         uses = occurrences.get(term["id"], [])
         slug = term["id"].partition(":")[2]
-        links = "".join(f'<li><a href="../../../{escape(u["url"])}">{escape(u["chapter"])} · {escape(u["section"])}</a></li>' for u in uses)
+        links = "".join(f'<li><a href="../{escape(u["url"])}">{escape(u["chapter"])} · {escape(u["section"])}</a></li>' for u in uses)
         groups.append(f'<details data-entry id="uses-{escape(slug)}"><summary>{escape(term["term"])} ({len(uses)})</summary>'
-                      f'<a href="dictionary.html#term-{escape(slug)}">Definition</a><ul>{links}</ul></details>')
-    files.write(site/DIRECTORY/"concordance.html", shell("AI terminology in context",
+                      f'<a href="../{DIRECTORY}dictionary.html#term-{escape(slug)}">Definition</a><ul>{links}</ul></details>')
+    files.write(site/"terminology"/"concordance.html", shell("AI terminology in context",
                 "Find terms and aliases in headings, paragraphs, lists, captions and table cells in both editions. Short acronyms retain case. Follow a mention to read it in context. "
-                '<a href="concordance.json">Download occurrences</a>.', "".join(groups)))
-    files.write(site/DIRECTORY/"concordance.json",json.dumps(dict(source_commit=commit,occurrences=occurrences),ensure_ascii=False)+"\n")
-    files.write(site/DIRECTORY/'subject-index.html' ,shell('Book subject index',
+                '<a href="concordance.json">Download occurrences</a>.', "".join(groups), rendered_index=True))
+    files.write(site/"terminology"/"concordance.json",json.dumps(dict(source_commit=commit,occurrences=occurrences),ensure_ascii=False)+"\n")
+    files.write(site/"terminology"/'subject-index.html' ,shell('Book subject index',
                 f'Browse every addressable section heading in {len(data)} technical chapters and Reader units. '
-                '<a href="subject-index.json">Download the section index</a>.',''.join(sections)))
-    files.write(site/DIRECTORY/'subject-index.json',json.dumps(dict(source_commit=commit,volumes=data),ensure_ascii=False)+'\n')
+                '<a href="subject-index.json">Download the section index</a>.',''.join(sections), rendered_index=True))
+    files.write(site/"terminology"/'subject-index.json',json.dumps(dict(source_commit=commit,volumes=data),ensure_ascii=False)+'\n')

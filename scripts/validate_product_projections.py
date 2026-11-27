@@ -247,8 +247,8 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             key = "concept:" + graph.research_dictionary.term_id(row["term"])
             if key not in terms_by_id or terms_by_id[key]["aliases"] != row["aliases"]:
                 errors.append("Dictionary term or aliases missing: "+key)
-        subject = load(dictionary_dir / "subject-index.json")
-        occurrences = load(dictionary_dir / "concordance.json")
+        subject = load(site / "terminology/subject-index.json")
+        occurrences = load(site / "terminology/concordance.json")
         works = load(dictionary_dir / "works.json")
         if any(index["source_commit"] != source_commit for index in (subject, occurrences, works)):
             errors.append("Terminology indexes use a different revision")
