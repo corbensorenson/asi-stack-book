@@ -25,6 +25,7 @@ primary_sources:
   - "kernel_english_residual_compiler"
   - "ext_correlated_errors_2025"
   - "ext_scifact_2020"
+  - "ext_scifact_open_2022"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -523,6 +524,23 @@ The intervals resample whole paper groups 5,000 times. They describe sampling va
 
 **Inspect the bottleneck before changing the threshold.** In a post-run diagnostic, 187 claims had an annotated rationale somewhere in the corpus. The first retrieved abstract had relevant annotated evidence for 120. The selected sentences contained a complete rationale for only 85. Even perfect verdict selection over those fixed citations could justify at most 85 answers. The main score allows a complete rationale plus an extra sentence. Only one release in each triage arm matched an annotated rationale exactly. Next test a stronger retriever or a different citation span on fresh papers. Retain the pooled second-reading baseline and charge both arms for any new work.
 
+### Which retrieval change recovers the citation? {#fresh-citation-retrieval}
+
+The first study located a bottleneck upstream of the verifier. For a fresh comparison we kept the pooled verifier and changed one retrieval decision at a time. We could change the paper ranking from TF–IDF cosine to BM25, which adjusts term matches for document length and repeated words. Or we could change the sentence selector to favor query terms the first sentence missed. Every route searched the same 11,571 candidate abstracts, returned one paper, cited up to two sentences and used 130 model readings across 65 claims. Actual input lengths varied. [Frozen study, paired cases and offline replay](../products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval)
+
+| Ranking change | Returned paper with human evidence | Citation includes all human highlights | Justified releases | Unsupported releases | Holds |
+|---|---:|---:|---:|---:|---:|
+| Original TF–IDF at both stages | 14 | 7 | 4 | 15 | 46 |
+| Change only the document ranker | 14 | 6 | 2 | 16 | 47 |
+| Change only the sentence selector | 14 | 6 | 3 | 17 | 45 |
+| Change both | 14 | 7 | 2 | 18 | 45 |
+
+Claim 833 shows why the counts at each stage matter. The original route returned paper 5811042 and cited sentences 1 and 6. Changing the sentence selector kept the paper and replaced sentence 1 with sentence 2. The release lost its justification. Changing the document ranker returned a different paper and the verifier withheld its verdict. [Inspect the four decisions](../products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-833)
+
+**Decision.** Retain the original ranking for this workload. Relative to four justified answers, document replacement lost two and gained none. Sentence replacement lost one and gained none. Across 49 groups of related claims, descriptive paired 95% intervals for the respective differences per hundred claims were −7.94 to 0 and −5.00 to 0. Neither change cleared the prespecified switch rule. A wider candidate budget or a learned ranker would be a fresh comparison.
+
+These claims come from the original SciFact test split, with previously scored claims and previously cited or retrieved papers excluded. SciFact-Open supplies annotations, and its preselected candidate abstracts define the search space here. Only citation-derived human highlights earned sentence credit. The release combines alternative human rationales, so requiring all highlights can reject an adequate shorter citation. Pooling supplies additional document labels with model-proposed sentence highlights. An unsupported release here means the benchmark could not certify the returned verdict and citation together. [SciFact-Open annotation guide](https://github.com/dwadden/scifact-open/blob/main/doc/data.md)
+
 ### How much evidence is a second opinion?
 
 Suppose two reviewers independently submit one of four labels on each of 20 previously adjudicated records. Here is the full tally against the event log.
@@ -809,6 +827,7 @@ These rows keep Verification Bandwidth and Context Adequacy's manifest assignmen
 | `kernel_english_residual_compiler` | Metadata-first comparator: [Kernel English with Hierarchical, Interaction-Amortized Residuals: A Dual-Vocabulary Cognitive Compiler for Efficient Language-Model Reasoning](../papers/kernel_english_residual_compiler.html). Corben-authored July 2026 architecture proposal for KERC: protected-object capture, uncertainty-aware normalization, sense-aware Kernel IR, dual surface/core vocabularies, a four-level interaction-amortized residual ledger, exact object storage, grammar-aware macro fusion, structured answer packets, rendering, round-trip verification, versioned migration, and complete rate-compute-fidelity evaluation. Existing chapters are upgraded first; no implementation, benchmark, novelty, efficiency, fidelity, safety, transfer, SOTA, AGI, ASI, or support-state result is inferred. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_correlated_errors_2025` | Passage-reviewed comparator: Correlated Errors in Large Language Models. Compare the probability of matching wrong answers given joint failure with the probability of error given agreement. | This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_scifact_2020` | Passage-reviewed comparator: Fact or Fiction: Verifying Scientific Claims. Externally authored scientific claims, labeled supporting or refuting documents, and annotated sentence-level rationales. | Incomplete evidence annotations, public evaluation labels and domain-specific retrieval limit the interpretation of the local comparison. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_scifact_open_2022` | Passage-reviewed comparator: SciFact-Open: Towards open-domain scientific claim verification. A pooled scientific retrieval benchmark with human document judgments and distinct origins for sentence highlights. | Pooled highlights are model suggestions. Flattened citation-derived highlights can combine alternative human rationales. An unassessed paper may be relevant. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2.1 evaluator adequacy result

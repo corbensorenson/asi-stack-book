@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "8317fb44a10b82180eaef39699667027bc4afafdd5f3857bd9533733d95859ea",
+  "book_structure_sha256": "3878a05d507a5e85a9c942660821c0057b4e0ca4bd95692a820aaedf000efefa",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1478,
+    "source": 1479,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -5134,7 +5134,7 @@
           "chapter_id": "verification-bandwidth-and-context-adequacy",
           "title": "Verification Bandwidth and Context Adequacy",
           "technical_source_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-          "technical_source_sha256": "af0db63ab2bd32c077d437e05241e1f57af65d8e570add81659090cf437204f6",
+          "technical_source_sha256": "67edb62cb74d36abf3892c2c63015f61825b6ca0c22f649af33c271b4bdfbab3",
           "live_technical_path": "chapters/verification-bandwidth-and-context-adequacy.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "verification-bandwidth-and-context-adequacy.core",
@@ -5160,7 +5160,8 @@
             "ext_reluplex_2017",
             "kernel_english_residual_compiler",
             "ext_correlated_errors_2025",
-            "ext_scifact_2020"
+            "ext_scifact_2020",
+            "ext_scifact_open_2022"
           ],
           "source_note_refs": [
             "sources/source_notes/verification_bandwidth.md",
@@ -5181,7 +5182,8 @@
             "sources/source_notes/ext_reluplex_2017.md",
             "sources/source_notes/kernel_english_residual_compiler.md",
             "sources/source_notes/ext_correlated_errors_2025.md",
-            "sources/source_notes/ext_scifact_2020.md"
+            "sources/source_notes/ext_scifact_2020.md",
+            "sources/source_notes/ext_scifact_open_2022.md"
           ],
           "proof_edges": [
             {
@@ -5255,7 +5257,7 @@
           "artifact_refs": [
             {
               "path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-              "sha256": "af0db63ab2bd32c077d437e05241e1f57af65d8e570add81659090cf437204f6"
+              "sha256": "67edb62cb74d36abf3892c2c63015f61825b6ca0c22f649af33c271b4bdfbab3"
             },
             {
               "path": "lean/AsiStackProofs/VerificationBandwidth.lean",
@@ -11587,7 +11589,7 @@
       "order": 25,
       "title": "Recursive Improvement, Replication, and Containment",
       "human_reader_source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "human_reader_source_sha256": "1400cb321f3e9fbe0fca17065b90a7ea3856c09d14ad8885094202d2d6631902",
+      "human_reader_source_sha256": "ff535488ff22c298e24f58a46365b2cb91c878d7e00dea59f4f5f04f2f73eba9",
       "public_path": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html",
       "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
       "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",

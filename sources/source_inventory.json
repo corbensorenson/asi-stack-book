@@ -10723,5 +10723,21 @@
     "citation_label": "Wadden et al. (2020), Fact or Fiction: Verifying Scientific Claims",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Incomplete evidence annotations, public evaluation labels and domain-specific retrieval limit the interpretation of the local comparison."
+  },
+  {
+    "id": "ext_scifact_open_2022",
+    "title": "SciFact-Open: Towards open-domain scientific claim verification",
+    "priority": "external_literature",
+    "layer": "scientific_claim_verification",
+    "chapter_targets": [
+      "verification-bandwidth-and-context-adequacy"
+    ],
+    "url": "https://arxiv.org/abs/2210.13777",
+    "notes": "A pooled scientific retrieval benchmark with human document judgments and distinct origins for sentence highlights.",
+    "source_type": "conference_paper",
+    "published": "2022",
+    "citation_label": "Wadden et al. (2022), SciFact-Open",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Pooled highlights are model suggestions. Flattened citation-derived highlights can combine alternative human rationales. An unassessed paper may be relevant."
   }
 ]

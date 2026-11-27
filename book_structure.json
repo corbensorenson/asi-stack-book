@@ -11696,7 +11696,8 @@
             "ext_reluplex_2017",
             "kernel_english_residual_compiler",
             "ext_correlated_errors_2025",
-            "ext_scifact_2020"
+            "ext_scifact_2020",
+            "ext_scifact_open_2022"
           ],
           "source_queue": {
             "primary": [
@@ -11713,7 +11714,8 @@
               "ext_reluplex_2017",
               "kernel_english_residual_compiler",
               "ext_correlated_errors_2025",
-              "ext_scifact_2020"
+              "ext_scifact_2020",
+              "ext_scifact_open_2022"
             ],
             "variants": [
               "ext_graphrag_2024",
@@ -12076,6 +12078,17 @@
               ],
               "passage_review_state": "reviewed",
               "passage_review_note": "November 27, 2026. Reviewed the data and scoring structure for the local comparison."
+            },
+            {
+              "source_id": "ext_scifact_open_2022",
+              "mapped_support": "A pooled scientific retrieval benchmark with human document judgments and distinct origins for sentence highlights.",
+              "limits": "Pooled highlights are model suggestions. Flattened citation-derived highlights can combine alternative human rationales. An unassessed paper may be relevant.",
+              "passage_refs": [
+                "sources/source_notes/ext_scifact_open_2022.md",
+                "https://arxiv.org/abs/2210.13777"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Reviewed corpus construction, pooling, and the human versus predicted highlight distinction."
             }
           ],
           "publication": {

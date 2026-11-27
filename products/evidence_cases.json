@@ -89,5 +89,16 @@
       "SciFact claim 75",
       "shared citation error"
     ]
+  },
+  {
+    "run": "fresh-citation-retrieval",
+    "case": "833",
+    "title": "Changing the sentence or the paper loses a justified citation",
+    "question": "When do two retrieval changes lose the same originally justified answer for different reasons?",
+    "limit": "One reserved claim. An alternate pair kept one cited sentence but lost justification. The document replacement produced a hold. Counts of additional losses require the paired cohort.",
+    "aliases": [
+      "SciFact Open claim 833",
+      "fresh paper retrieval disagreement"
+    ]
   }
 ]

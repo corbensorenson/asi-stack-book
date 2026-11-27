@@ -385,5 +385,42 @@
         "url": "chapters/the-efficient-asi-hypothesis.html#citation-efficiency"
       }
     ]
+  },
+  {
+    "id": "fresh-citation-retrieval",
+    "title": "Which retrieval change recovers the citation?",
+    "url": "chapters/verification-bandwidth-and-context-adequacy.html#fresh-citation-retrieval",
+    "question": "Would a new ranker or a different pair of sentences recover more justified answers on fresh papers?",
+    "summary": "In 65 SciFact-Open claims, the original ranking delivered four justified verdicts. Replacing the document ranker delivered two and changing only sentence selection delivered three.",
+    "limit": "Human-highlight credit in a fixed candidate catalog with incomplete judgments. Every arm had the same model-call budget and token ceiling. Actual token counts varied.",
+    "disposition": "Keep the original ranking as the experimental reference. Both single changes lost justified releases.",
+    "measurement": "Paired study on external data",
+    "aliases": [
+      "fresh citation retrieval",
+      "SciFact Open",
+      "SciFact-Open",
+      "fresh paper ranking",
+      "BM25 citation selection"
+    ],
+    "links": [
+      {
+        "predicate": "examines_run",
+        "target": "study_run:fresh-citation-retrieval"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_scifact_open_2022"
+      }
+    ],
+    "locators": [
+      {
+        "label": "Four rankings on claim 833",
+        "url": "products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-833"
+      },
+      {
+        "label": "Original threshold experiment",
+        "url": "chapters/verification-bandwidth-and-context-adequacy.html#citation-release-thresholds"
+      }
+    ]
   }
 ]

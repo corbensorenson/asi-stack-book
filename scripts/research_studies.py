@@ -209,6 +209,8 @@ def metrics(format_id: str, result: dict) -> dict:
         return {arm: sum(p["result"]["citation"] for p in result["packets"]
                          if p["id"].startswith("C") and p["comparison"] == arm + "_register")
                 for arm in ("ordinary", "linked")}
+    if format_id == "fresh_retrieval":
+        return {"n": result["n"], **{name: row["justified"] for name, row in result["arms"].items()}}
     if format_id == "scifact_citation":
         return {"n": result["n"], "pool": result["outcomes"]["pool"]["triage"]["justified"],
                 "agreement": result["outcomes"]["agreement"]["triage"]["justified"],

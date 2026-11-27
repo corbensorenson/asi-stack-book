@@ -4119,7 +4119,7 @@ Source loading queue:
 | Retrieval, context, and compression variants | `ext_graphrag_2024`, `ext_hipporag_2024`, `ext_raptor_2024`, `ext_longbench_2023`, `ext_ruler_2024`, `ext_longllmlingua_2023` | Compare graph, associative, hierarchical, long-context, complexity-stress, and compression routes. Availability or source-reported performance is not claim adequacy or local evidence. |
 | Connector or recovery boundary | `vcm_editable` | Use its source note and connector-readable refinement only; no VCM-Bench or model-facing packet result is imported. |
 
-| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_correlated_errors_2025`, `ext_scifact_2020` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `kernel_english_residual_compiler`, `ext_correlated_errors_2025`, `ext_scifact_2020`, `ext_scifact_open_2022` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Relevant context, tools, citations, formal checks, reviewers, and compute can coexist with missing obligations, weak or correlated checks, undiscovered contradictions, and unaffordable verification.

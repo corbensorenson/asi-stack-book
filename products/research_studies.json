@@ -86,6 +86,17 @@
         "scope": "Release policies over a fixed lexical retriever and one NLI model on externally annotated SciFact claims."
       },
       "featured_run": "scifact-release"
+    },
+    {
+      "id": "citation-retrieval",
+      "title": "Can a different ranking recover the missing citation?",
+      "question": "Which single change to document ranking or sentence selection delivers more correct, citable scientific verdicts?",
+      "change": "Test a new evidence candidate generator on a new cohort, giving both arms equal search and verification budgets.",
+      "claim": {
+        "id": "verification-bandwidth-and-context-adequacy.core",
+        "scope": "A fixed catalog of candidate abstracts and a frozen pooled verifier on reserved SciFact-Open claims."
+      },
+      "featured_run": "fresh-citation-retrieval"
     }
   ],
   "runs": [
@@ -538,6 +549,33 @@
         "experiments/scifact_citation_check/thresholds.json"
       ],
       "source_commit": "6e782c3b914451609f9f73bd063071e70bb440dc"
+    },
+    {
+      "id": "fresh-citation-retrieval",
+      "study": "citation-retrieval",
+      "format": "fresh_retrieval",
+      "title": "Four paired rankings on fresh citation papers",
+      "date": "2026-11-27",
+      "protocol": "experiments/scifact_retrieval_followup/protocol.md",
+      "protocol_sha256": "80c052e65b92b901d0b7efc143cd749935d5d000674b6095851a1f96996db9b2",
+      "method": "Cross TF–IDF or BM25 paper selection with TF–IDF or coverage-weighted sentence ranking. Run the same two readings on each returned citation. Exclude previously cited and retrieved papers.",
+      "result_summary": "The baseline delivered {tfidf_tfidf} justified answers in {n} claims. Changing only the document ranker delivered {bm25_tfidf}, changing only the sentence selector {tfidf_coverage}, and changing both {bm25_coverage}.",
+      "limit": "A finite candidate catalog and incomplete annotations. Only citation-provenance human highlights can certify a citation. Their flattened union can reject a valid shorter alternative. Model calls and ceilings were equal, actual token counts varied. Human time is unmeasured.",
+      "disposition": "Retain TF–IDF as the reference in this workload. Neither single change met the declared switch criterion.",
+      "command": "python3 experiments/scifact_retrieval_followup/score.py",
+      "result": "experiments/scifact_retrieval_followup/results.json",
+      "result_sha256": "88141d1942d02989af9cb07046858abd071501c2099081df40730c2354ea6503",
+      "inputs": [
+        "experiments/scifact_retrieval_followup/cases.json",
+        "experiments/scifact_retrieval_followup/score.py",
+        "experiments/scifact_retrieval_followup/run.py",
+        "experiments/scifact_citation_check/predict.py",
+        "experiments/scifact_citation_check/requirements.txt",
+        "experiments/scifact_citation_check/development.jsonl",
+        "experiments/scifact_citation_check/reserved.jsonl",
+        "experiments/scifact_citation_check/protocol.md"
+      ],
+      "source_commit": "6635c1e1b605e5fb426a44e8a47ad3a01dca1a46"
     }
   ],
   "agenda": [

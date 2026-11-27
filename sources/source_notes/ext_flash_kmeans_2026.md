@@ -8,7 +8,11 @@
 | Citation label | Yang et al. (2026), Flash-KMeans |
 | Review scope | Version 2 abstract and Bessa et al., Section 4 and Appendix C for the exact comparison configuration. |
 
-## Mechanism
+## Thesis
+
+A full-batch assignment can avoid materializing all point-center distances in device memory.
+
+## Mechanisms
 
 Fuses distance calculation with nearest-center selection to avoid writing the full distance matrix and groups centroid updates into reductions.
 
@@ -16,10 +20,20 @@ Fuses distance calculation with nearest-center selection to avoid writing the fu
 
 The paper evaluates a GPU implementation of full-batch k-means. The separate e-means paper compares with flash_kmeans 0.3.1.
 
-## Limits and failure modes
+[Section 4, especially FlashAssign (§4.1) and the grouped centroid update](https://arxiv.org/pdf/2603.09229v2).
+
+## Failure Modes
 
 Exact refers to the algorithmic assignment strategy at the chosen numerical precision. Initialization, stopping, hardware and workload affect a timing comparison.
 
-## Book chapters supported
+## Book Chapters Supported
 
-- `virtual-context-abi`
+- `virtual-context-abi` — [Clustering the retrieval index](../../chapters/virtual-context-abi.qmd#clustering-the-retrieval-index)
+
+## Claims To Add Or Update
+
+Compare the same precision, stopping rule and end-to-end cost before attributing a speed difference to a new objective.
+
+## Open Questions
+
+When does the grouped centroid update become the limiting operation?

@@ -591,6 +591,15 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
 
 
 def study_outcomes(format_id: str, result: dict) -> str:
+    if format_id == "fresh_retrieval":
+        rows = []
+        for name, row in result["arms"].items():
+            cells = "".join(f'<td>{row[key]}</td>' for key in
+                            ("human_doc", "complete", "justified", "unsupported", "held", "tokens"))
+            rows.append(f'<tr><th scope="row">{ARM_LABELS[name]}</th>{cells}</tr>')
+        return study_table("One document and two readings per claim",
+                           ["Ranking policy", "Human evidence paper", "Full highlights", "Justified",
+                            "Unsupported", "Held", "Input tokens"], "".join(rows))
     if format_id == "scifact_citation":
         rows = []
         for name, users in result["outcomes"].items():
@@ -860,13 +869,13 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         )
 
     for run in manifest["runs"]:
-        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation"}:
+        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval"}:
             continue
         members = {name: read(Path(name)) for name in (run["protocol"], run["result"], *run["inputs"])}
         command = run["command"]
         preparation = ("Scoring requires Python 3.12 with numpy==2.2.6 installed. "
                        "Replaying the saved predictions needs no network. See the protocol to rerun inference.\n\n"
-                       if run["format"] == "scifact_citation" else "")
+                       if run["format"] in {"scifact_citation", "fresh_retrieval"} else "")
         members["README.md"] = (
             f'# {run["title"]}\n\n{preparation}Extract the archive and run from its root:\n\n'
             f'```sh\n{command} > observation.json\ncmp observation.json {run["result"]}\n```\n\n'

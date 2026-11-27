@@ -3,37 +3,29 @@ title: "Recursive Improvement, Replication, and Containment"
 unit_id: "unit-25"
 ---
 
+## Who gets to write the next edit? {#reader-better-editor}
+
+You have two checkpoints and enough compute for one more round of editing. The successor now solves more math problems than its parent. Both can write candidate changes to another model. Which checkpoint gets the editor’s job?
+
+**Make two entries in the release record.** In the solver entry, compare how the two checkpoints answer the same held-out problems. In the editor entry, compare what happens to a fresh model after each checkpoint edits it. A solver can learn a mathematical shortcut without learning how to teach that shortcut to another model.
+
+In SELFWRITE, the current checkpoint wrote candidate low-rank edits and an external grading rule selected them. Four edits were accepted over five generations. On 500 separate problems from the same math corpus, mean accuracy over four sampled answers rose from 76.30% to 77.75%. That is a 1.45 percentage-point gain for the solver. The release record still has an empty cell for the editor: how much would the original and successor each improve the same untouched target? [Five generations and the held-out comparison](https://arxiv.org/html/2611.29513v1)
+
+| Give both editors | Compare after they finish |
+|---|---|
+| Identical copies of a fresh target checkpoint, the same examples and the same notes on previous attempts | Correct answers gained on sealed problems and previously working answers lost |
+| The same proposal, grading and compute allowances | Total work, including rejected edits and runs that produced no accepted change |
+| An unchanged acceptance rule owned by a separate evaluator | Whether a useful change survives a new target and can be reversed if it fails |
+
+**My choice on the published evidence:** qualify the successor for the measured solver task and keep the parent as the reference editor. I would change that appointment if the successor’s edits improved fresh targets more reliably within the same budget while preserving required capabilities. A tie favors retaining the incumbent. If neither can produce an acceptable change, stop the round. This paired trial is a proposal. [Technical chapter and comparison](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html#better-model-or-better-editor)
+
+For a short route through the rest of the unit, follow [who freezes the improvement contract](#freeze-the-improvement-contract), [what happens when the candidate also changes the test](#improvement-can-rewrite-its-own-test), and [which permissions descendants inherit](#descendants-inherit-history-not-authority).
+
 ## When the Verifier Proposes Its Successor
 
-Consider a hypothetical improvement campaign, not a reported verifier trial.
-The repository stack uses a verifier to decide whether generated patches
-preserve declared contracts. The verifier is slow and misses one class of
-cross-file dependency. During an improvement campaign, the system proposes a
-replacement.
+Now give the candidate a different job. In this hypothetical repository, a verifier misses a cross-file dependency. Its proposed successor adds a dependency graph, catches the known miss, and runs twice as fast on the development suite. The same development path produced the code, the tests and the favorable benchmark. Before that verifier can judge the next version, someone responsible for release must check it against failures the developer did not select.
 
-The candidate adds a typed dependency graph, runs twice as fast on the frozen
-development suite, and catches the known miss. It also supplies a migration
-script, new tests, and a benchmark report showing that the old verifier is
-inferior.
-
-Everything favorable about the candidate came from the same improvement path.
-The path chose the tasks, generated the code, wrote the tests, produced the
-benchmark, and recommends adoption. If its score authorizes replacement, the
-system has converted proposal into ratification.
-
-The candidate may still be good. The problem is not self-reference by itself.
-The problem is authority and evidence collapsing into the component that seeks
-change.
-
-Recursive improvement becomes governable when each cycle preserves distinct
-roles: proposal, implementation, evaluation, archive, qualification, authority,
-replacement, observation, rollback, and reconciliation. A system may improve
-the mechanisms that perform these roles, but a candidate does not inherit the
-authority of the mechanism it replaces.
-
-The same rule governs replication. Producing another artifact, worker, or
-service is not permission for that descendant to run, obtain credentials,
-consume resources, reproduce again, or survive revocation.
+The two decisions from the math example apply again. Qualify this version for the patch checks it can perform. Separately determine who can use its output to accept a future change, who can halt that process, and how to recover the prior verifier. A copied verifier carries code. Its operator must issue the authority under which the copy runs.
 
 {{< include ../generated/unit-25-status.qmd >}}
 
@@ -104,14 +96,6 @@ one. It identifies whether progress came from reusable knowledge, search,
 verification, extra compute, or leakage. The proposed experiments provide a
 way to ask the question; they have not established an open-ended improvement
 curve.
-
-### Would you give the successor the editor’s job? {#reader-better-editor}
-
-A checkpoint solves more held-out math problems after writing its own edits. You have one more round of compute. Which checkpoint gets to spend it?
-
-SELFWRITE accepted four updates in five generations. On 500 separate math problems, mean accuracy over four sampled answers rose from 76.30% to 77.75%. The original solver is a sensible baseline for that question. The choice of editor needs a different trial. Hand the original and updated editors copies of the *same fresh target*, the same prior notes and the same budget. Keep the final problems sealed. Which editor leaves the target better off after accounting for failed tries and damage to other tasks?
-
-The original could win that trial even if the successor is the better solver. Carry the math result forward at its measured scope and leave the editor appointment open. Someone outside both candidates must still own the test and the decision to accept a change. [Five generations, the held-out result and the proposed comparison](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html#better-model-or-better-editor)
 
 ## Proposal Is Not Permission
 

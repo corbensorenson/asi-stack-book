@@ -8,6 +8,8 @@ import re
 
 
 ARM_LABELS = {
+    "tfidf_tfidf": "TF–IDF at both stages", "tfidf_coverage": "Change sentence selection",
+    "bm25_tfidf": "Change document ranking", "bm25_coverage": "Change both stages",
     "pool": "Pool both readings", "agreement": "Require agreement",
     "TaskQueue": "Task cursor", "ObligationQueue": "Obligation records",
     "text": "Text search", "graph": "Graph traversal", "identifier": "Exact identifier",
@@ -299,9 +301,23 @@ def citation_cases(result):
                        adverse=any(sample[f"{name}_{user}"][1] == "unsupported" for name in arms))
 
 
+def fresh_retrieval_cases(result):
+    for record in result["cases"]:
+        arms = {}
+        for name, row in record["arms"].items():
+            span = ", ".join(map(str, row["cited"]))
+            outcome = f'{row["verdict"]} · {row["outcome"]} · paper {row["doc"]}, sentences {span}'
+            work = f'2 readings, {row["tokens"]} input tokens, {row["sentences_ranked"]} candidate sentences'
+            arms[name] = arm(outcome, work, (row["verdict"], row["outcome"], row["doc"], tuple(row["cited"])))
+        yield case(str(record["id"]), f'SciFact-Open claim {record["id"]}', arms,
+                   adverse=any(v["outcome"] == "unsupported" for v in record["arms"].values()))
+
+
 def rows_for(format_id, result):
     if format_id == "verification_arrivals":
         rows = arrival_cases(result)
+    elif format_id == "fresh_retrieval":
+        rows = fresh_retrieval_cases(result)
     elif format_id == "scifact_citation":
         rows = citation_cases(result)
     elif format_id == "revision_retrieval":
