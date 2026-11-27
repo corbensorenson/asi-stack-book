@@ -399,7 +399,7 @@ async function main() {
       await search(context, root, "Verifier freshness with a separate revision authority process",
         /study-verifier-rollout\.html[^#]*#run-verifier-process-boundary$/);
       await search(context, root, "Verifier revision checks and measured work",
-        /stable-capability-fields\.html\?view=ai&[^#]*#codex-test-plan$/);
+        /stable-capability-fields\.html\?view=ai&[^#]*#verifier-measurement-boundary$/);
       await search(context, root + "reader/", "Two shipment receipts from a shared webhook",
         /unit-15-verification-bandwidth-claim-ledgers-and-proof\.html[^#]*#what-this-establishes$/);
       await search(context, root + "papers/", "H-Net dynamic chunking and batched serving cost",

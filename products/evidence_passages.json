@@ -96,7 +96,7 @@
   {
     "id": "verifier-measurement-boundary",
     "title": "Verifier revision checks and measured work",
-    "url": "chapters/stable-capability-fields.html#verifier-measurement-boundary",
+    "url": "chapters/stable-capability-fields.html?view=ai#verifier-measurement-boundary",
     "question": "How many minutes of operator time did serialized verifier handoff save in production?",
     "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
     "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
