@@ -129,6 +129,12 @@ The efficient-ASI hypothesis is therefore not "small models are enough" and not 
 
 Efficiency in this book is always three-sided. A route must say what quality it preserved, what cost it paid, and what residual it left behind. Any two-sided account is suspect. Low cost without quality is failure. High quality without cost accounting is not an efficiency claim. Low cost and high apparent quality without residual accounting is often just deferred work.
 
+### How much useful work can two readings buy? {#citation-efficiency}
+
+A research assistant must decide whether to attach a scientific verdict to a paper and cite two sentences. Budget two model readings per claim. One reads the sentences in context, the other reads the proposed citation alone. The conventional policy pools their probabilities. The alternative requires agreement before releasing the verdict. Both spend the same 598 forward examples and 92,332 unpadded input tokens on 299 held-out claims.
+
+Under the triage rule, pooling released 37 justified answers and 50 unsupported ones. The agreement rule released 22 justified answers and 30 unsupported ones. If a justified answer earns one unit and an unsupported release costs one, the gate gains five units across 299 claims, or 1.67 per hundred. A paired 95% bootstrap interval grouping claims by cited paper runs from −2.36 to +5.77 per hundred. The gate also sent 35 more claims for review. Neither route came within the planned limit of half the intake sent to review. Retain pooling as the comparator and budget for a better first retrieval before promising an unattended service. Staff time and energy were unmeasured. [Thresholds and review counts](verification-bandwidth-and-context-adequacy.qmd#citation-release-thresholds) · [Paired study](../products/evidence-registry/study-scientific-citation.html#run-scifact-release)
+
 ## Why existing approaches are insufficient
 
 A scale-only allocation policy cannot, without additional state, select among routes using task-specific quality predicates, authority ceilings, total costs, residuals, or fallback readiness.

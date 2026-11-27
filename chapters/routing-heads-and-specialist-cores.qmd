@@ -118,6 +118,12 @@ External routing and MoE work supplies the performance baseline that governance-
 
 Route opacity is the immediate routing failure. A system may choose a good specialist and still leave no explanation of rejected candidates, denied authority, missing readiness, fallback options, or residual work. That makes later audit and learning impossible.
 
+### Let a second reading correct or veto the first? {#citation-routing}
+
+The second reading can see the exact sentences that an assistant intends to cite. Decide how much authority that reading has before evaluating the cases. In the SciFact triage study the ordinary router averaged the two probability vectors. Its competitor required matching non-neutral labels. Both selected a zero numerical cutoff on development under the fallback for an infeasible review budget. A neutral winning class still triggered a hold.
+
+Take reserved claim 51. The broader context favored support with probability 0.438. The citation-only reading favored contradiction at 0.867. Pooling chose contradiction and cited sentence 4, the annotated rationale, alongside sentence 0. The veto withheld this justified answer. On claim 1 the same veto suppressed an unsupported contradiction. On claim 75 both readings supported a verdict with no rationale annotated in the retrieved document. Agreement can suppress a mistake, prevent a correction, or preserve a shared error. Follow all three in the [paired case table](../products/evidence-registry/study-scientific-citation.html#run-scifact-release--case-51-triage), then choose a threshold using the [development and held-out budgets](verification-bandwidth-and-context-adequacy.qmd#citation-release-thresholds).
+
 ## Core Claim
 
 [routing-heads-and-specialist-cores.core, label: Design rationale, support: argument] ASI scales through a lightweight routing head that selects bounded specialist cores with local tools, memory, and authority.

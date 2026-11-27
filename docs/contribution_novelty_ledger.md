@@ -19,6 +19,14 @@ same joins; equal behavior at lower burden narrows the novelty claim. This
 framing update does not renew the nine dated row assessments or change their
 machine confidence states.
 
+## November 27, 2026 decisions
+
+For verification bandwidth, the ordered single-owner workload favors keeping the durable task cursor. The next discriminating condition is an interrupted cross-owner handoff. [Current judgment and comparator](../chapters/verification-bandwidth-and-context-adequacy.qmd#verification-capacity-judgment)
+
+For the record/reality gap, give ordinary change control access to the same observation. Distinguish a new path to the same stale report from an independent read of the destination. The current matched comparison supports equal closure under equal access. [Current judgment and reversal condition](../chapters/artifact-graphs-audit-logs-and-replay.qmd#receiver-judgment)
+
+The dated rows below preserve the evidence available at their original assessment.
+
 ## Ledger Boundary
 
 - Source of record: `docs/contribution_novelty_ledger.json`

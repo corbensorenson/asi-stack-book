@@ -11695,7 +11695,8 @@
             "ext_longllmlingua_2023",
             "ext_reluplex_2017",
             "kernel_english_residual_compiler",
-            "ext_correlated_errors_2025"
+            "ext_correlated_errors_2025",
+            "ext_scifact_2020"
           ],
           "source_queue": {
             "primary": [
@@ -11711,7 +11712,8 @@
               "ext_dont_hallucinate_abstain_2024",
               "ext_reluplex_2017",
               "kernel_english_residual_compiler",
-              "ext_correlated_errors_2025"
+              "ext_correlated_errors_2025",
+              "ext_scifact_2020"
             ],
             "variants": [
               "ext_graphrag_2024",
@@ -12063,6 +12065,17 @@
               ],
               "passage_review_note": "2026-11-19. HELM paired-error analysis. This conditional rate alone leaves the frequency of joint failures and the accuracy of consensus unspecified. Task mixture and shared dependencies matter.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_scifact_2020",
+              "mapped_support": "Externally authored scientific claims, labeled supporting or refuting documents, and annotated sentence-level rationales.",
+              "limits": "Incomplete evidence annotations, public evaluation labels and domain-specific retrieval limit the interpretation of the local comparison.",
+              "passage_refs": [
+                "sources/source_notes/ext_scifact_2020.md",
+                "https://aclanthology.org/2020.emnlp-main.609/"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "November 27, 2026. Reviewed the data and scoring structure for the local comparison."
             }
           ],
           "publication": {

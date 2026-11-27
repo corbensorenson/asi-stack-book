@@ -209,6 +209,10 @@ def metrics(format_id: str, result: dict) -> dict:
         return {arm: sum(p["result"]["citation"] for p in result["packets"]
                          if p["id"].startswith("C") and p["comparison"] == arm + "_register")
                 for arm in ("ordinary", "linked")}
+    if format_id == "scifact_citation":
+        return {"n": result["n"], "pool": result["outcomes"]["pool"]["triage"]["justified"],
+                "agreement": result["outcomes"]["agreement"]["triage"]["justified"],
+                "delta": result["paired_delta_per_100"]}
     if format_id == "verification_arrivals":
         ordinary, explicit = (result["4"][name] for name in ("TaskQueue", "ObligationQueue"))
         return {"unfinished": ordinary["last_arrival"]["unresolved_checks"],

@@ -75,6 +75,17 @@
         "scope": "One ordered queue under a common owner with repeatable checks and a fixed service budget."
       },
       "featured_run": "verification-arrivals"
+    },
+    {
+      "id": "scientific-citation",
+      "title": "Should a second reading have veto power over a citation?",
+      "question": "At equal inference cost, should a citation-only reading veto a verdict or help revise it?",
+      "change": "Compare a stronger retriever and scientific verifier on a new paper-disjoint collection with equally capable pooling and abstention.",
+      "claim": {
+        "id": "verification-bandwidth-and-context-adequacy.core",
+        "scope": "Release policies over a fixed lexical retriever and one NLI model on externally annotated SciFact claims."
+      },
+      "featured_run": "scifact-release"
     }
   ],
   "runs": [
@@ -502,6 +513,31 @@
         "arrival rate exceeds verification capacity"
       ],
       "outside_question": "What load would overwhelm a production service?"
+    },
+    {
+      "id": "scifact-release",
+      "study": "scientific-citation",
+      "format": "scifact_citation",
+      "title": "Two release policies on reserved scientific claims",
+      "date": "2026-11-27",
+      "protocol": "experiments/scifact_citation_check/protocol.md",
+      "protocol_sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83",
+      "method": "Retrieve one abstract per claim and read the context and exact proposed citation with the same model. Freeze thresholds by paper on development and compare both policies on identical reserved inputs.",
+      "result_summary": "Pooling delivered {pool} justified answers in {n} cases. Requiring agreement delivered {agreement}, suppressing 20 unsupported releases and 15 justified ones.",
+      "limit": "Public labeled development split reserved for this local study. The permissive citation score accepts a complete annotated rationale plus an extra sentence. Model pretraining exposure is unknown. Human time is unmeasured.",
+      "disposition": "Keep pooling as the experimental reference. Neither triage policy met its review budget. The publication rule held every case.",
+      "command": "python3 experiments/scifact_citation_check/score.py replay",
+      "result": "experiments/scifact_citation_check/results.json",
+      "result_sha256": "6b2bc735ddb6b823b08ed5afe38ed6dbd9a5307b95ca52fa44e248640bb575d6",
+      "inputs": [
+        "experiments/scifact_citation_check/requirements.txt",
+        "experiments/scifact_citation_check/predict.py",
+        "experiments/scifact_citation_check/score.py",
+        "experiments/scifact_citation_check/development.jsonl",
+        "experiments/scifact_citation_check/reserved.jsonl",
+        "experiments/scifact_citation_check/thresholds.json"
+      ],
+      "source_commit": "6e782c3b914451609f9f73bd063071e70bb440dc"
     }
   ],
   "agenda": [

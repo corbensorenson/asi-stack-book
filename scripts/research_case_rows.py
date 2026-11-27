@@ -8,6 +8,7 @@ import re
 
 
 ARM_LABELS = {
+    "pool": "Pool both readings", "agreement": "Require agreement",
     "TaskQueue": "Task cursor", "ObligationQueue": "Obligation records",
     "text": "Text search", "graph": "Graph traversal", "identifier": "Exact identifier",
     "caller_fallback": "Caller fallback", "gateway_fallback": "Gateway fallback", "primary_only": "Primary only",
@@ -287,9 +288,22 @@ def revision_cases(result):
         yield case(f"{subject}-{'id' if identified else 'wording'}", question, arms)
 
 
+def citation_cases(result):
+    for sample in result["cases"]:
+        for user in ("triage", "publication"):
+            arms = {}
+            for name in ("pool", "agreement"):
+                verdict, grade = sample[f"{name}_{user}"]
+                arms[name] = arm(f"{verdict} · {grade}", "Two shared model readings", (verdict, grade))
+            yield case(f"{sample['id']}-{user}", f"SciFact claim {sample['id']} · {user}", arms,
+                       adverse=any(sample[f"{name}_{user}"][1] == "unsupported" for name in arms))
+
+
 def rows_for(format_id, result):
     if format_id == "verification_arrivals":
         rows = arrival_cases(result)
+    elif format_id == "scifact_citation":
+        rows = citation_cases(result)
     elif format_id == "revision_retrieval":
         rows = revision_cases(result)
     elif format_id in {"package_observation", "package_transport"}:

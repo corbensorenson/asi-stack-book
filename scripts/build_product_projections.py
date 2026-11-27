@@ -844,12 +844,15 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         )
 
     for run in manifest["runs"]:
-        if run["format"] not in {"verification_arrivals", "revision_retrieval"}:
+        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation"}:
             continue
         members = {name: read(Path(name)) for name in (run["protocol"], run["result"], *run["inputs"])}
         command = run["command"]
+        preparation = ("Scoring requires Python 3.12 with numpy==2.2.6 installed. "
+                       "Replaying the saved predictions needs no network. See the protocol to rerun inference.\n\n"
+                       if run["format"] == "scifact_citation" else "")
         members["README.md"] = (
-            f'# {run["title"]}\n\nExtract the archive and run from its root:\n\n'
+            f'# {run["title"]}\n\n{preparation}Extract the archive and run from its root:\n\n'
             f'```sh\n{command} > observation.json\ncmp observation.json {run["result"]}\n```\n\n'
             f'The pinned protocol is {run["protocol"]}. The replay uses local data.\n'
         ).encode()

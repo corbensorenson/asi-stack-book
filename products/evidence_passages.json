@@ -346,5 +346,42 @@
         "url": "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html#reader-inference-kernel"
       }
     ]
+  },
+  {
+    "id": "citation-release-thresholds",
+    "title": "When should a scientific verdict leave the review queue?",
+    "url": "chapters/verification-bandwidth-and-context-adequacy.html#citation-release-thresholds",
+    "question": "How do citation checks change the threshold for releasing a scientific verdict?",
+    "summary": "On 299 reserved SciFact claims, pooling released 37 verdicts with a complete rationale and 50 unsupported verdicts. A mandatory agreement rule delivered 22 and 30. Both missed the triage review budget.",
+    "limit": "A fixed retrieval and sentence budget, one frozen inference model and a partial annotation standard. The publication policy held every case.",
+    "disposition": "Keep pooling as the comparison and test retrieval coverage before increasing the checking budget.",
+    "measurement": "Local paired study on external data",
+    "aliases": [
+      "SciFact",
+      "scientific claim verification",
+      "citation threshold",
+      "scientific verdicts",
+      "scientific claim checked against a paper"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_scifact_2020"
+      }
+    ],
+    "locators": [
+      {
+        "label": "Paired release decisions",
+        "url": "products/evidence-registry/study-scientific-citation.html#run-scifact-release"
+      },
+      {
+        "label": "Routing disagreement",
+        "url": "chapters/routing-heads-and-specialist-cores.html#citation-routing"
+      },
+      {
+        "label": "Cost and utility",
+        "url": "chapters/the-efficient-asi-hypothesis.html#citation-efficiency"
+      }
+    ]
   }
 ]
