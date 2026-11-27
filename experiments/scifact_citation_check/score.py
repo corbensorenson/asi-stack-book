@@ -142,9 +142,13 @@ if __name__ == "__main__":
     lock = select(load("development"))
     if sys.argv[1:] == ["select"]:
         write("thresholds.json", lock)
-    elif sys.argv[1:] == ["evaluate"]:
+    elif sys.argv[1:] in (["evaluate"], ["replay"]):
         if lock != json.loads((HERE / "thresholds.json").read_text()):
             raise ValueError("Threshold file differs from development selection")
-        write("results.json", evaluate(load("reserved"), lock["policies"]))
+        result = evaluate(load("reserved"), lock["policies"])
+        if sys.argv[1:] == ["replay"]:
+            print(json.dumps(result, indent=2, allow_nan=False))
+        else:
+            write("results.json", result)
     else:
-        sys.exit("Use select or evaluate")
+        sys.exit("Use select, evaluate or replay")
