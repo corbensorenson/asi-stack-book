@@ -554,6 +554,17 @@ beat established PEFT baselines overall. Small trainable-parameter counts do
 not remove activation cost. Every proposed kernel still earns adoption on
 the actual task, implementation and full resource bill.
 
+## How many passes would you serve? {#choose-loop-depth}
+
+You can run the same Dory 4B base checkpoint with one, two or four loops through its middle layers. Choose a default separately for two math workloads. The authors also ran six and eight loops to test depths beyond the one-to-four training range.
+
+| Dory base, author-reported exact match (%) | 1 loop | 2 loops | 4 loops | 6 loops | 8 loops |
+|---|---:|---:|---:|---:|---:|
+| MATH-500, four-shot greedy | 60.60 | 65.00 | 69.40 | 68.40 | 69.40 |
+| GSM8K, eight-shot chain of thought | 86.43 | 89.99 | 89.84 | 89.01 | 89.99 |
+
+Four loops buy 4.4 percentage points over two on MATH-500. Two already tie the best observed GSM8K score. Start the serving comparison at four and two respectively. What measurement could reverse your choices? Measure end-to-end time per correct answer with the checkpoint, batch sizes and prompt lengths you will serve. Count the generated tokens and peak KV memory as well. A request that emits fewer tokens can still cost more when each token makes extra passes. The table gives accuracy; it leaves this serving decision conditional. [Dory, Table 1](https://arxiv.org/html/2611.03998v1#S3.T1) · [Layer-sharing comparison](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#shared-depth-choices)
+
 ## Recurrence Changes the State Contract
 
 Recurrent and state-space systems can carry information through compact state

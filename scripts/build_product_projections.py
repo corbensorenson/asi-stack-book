@@ -35,6 +35,7 @@ PROJECTION_SCHEMA = ROOT / "schemas/product_projection_manifest.schema.json"
 STATUS_SCHEMA = ROOT / "schemas/canonical_public_status.schema.json"
 SPINE_SCHEMA = ROOT / "schemas/narrative_product_spine.schema.json"
 INVENTORY = ROOT / "sources/source_inventory.json"
+CASE_SOURCES = Path("experiments/scifact_retrieval_followup/case_sources.json")
 P5_U1_RESULT = "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json"
 
 READER_SKILL = Path("skills/asi-stack-reader/SKILL.md")
@@ -146,6 +147,10 @@ class ProductInputs:
         self.capture(ROOT / "experiments/scifact_retrieval_followup/ceiling.json")
         for name in ("before", "after", "results"):
             self.capture(ROOT / "experiments/researcher_search_transfer" / (name+".json"))
+        self.capture(ROOT / CASE_SOURCES)
+        for part in self.json(STRUCTURE)["parts"]:
+            for chapter in part["chapters"]:
+                self.capture(ROOT / chapter["file"])
         self.capture(ROOT / bibliography.METADATA)
         self.capture(ROOT / "scripts/research_bibliographies.py")
         self.capture(ROOT / research.RECORDS)
@@ -558,7 +563,57 @@ def graph_link(record_id: str, label: str = "Open in the graph") -> str:
     return f'<a href="{escape(target)}">{escape(label)}</a>'
 
 
-def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
+def scientific_source_detail(record, data, ceiling):
+    papers = {p["id"]: p for p in data["papers"]}
+    body = [f'<p>{escape(data["claim"])}</p>',
+            f'<details><summary>Inspect papers and annotation · {escape(ceiling["ceiling"])}</summary>',
+            '<p>Sentence indices start at zero in the dataset abstract. An unjudged paper has no benchmark verdict.</p><ul>']
+    for paper in papers.values():
+        annotation = paper["annotation"]
+        label = "Unjudged"
+        if annotation:
+            label = (f'{annotation["label"]}, {annotation["provenance"]} provenance; '
+                     f'highlight indices {annotation["sentences"]}')
+        body.append(f'<li><a href="{escape(paper["url"])}">{escape(paper["title"])}</a> '
+                    f'({paper["id"]}) · {escape(label)}</li>')
+    body.append("</ul><ul>")
+    for method, arm in record["arms"].items():
+        ann = papers[arm["doc"]]["annotation"]
+        if arm["verdict"] == "NEUTRAL":
+            why = "neutral prediction held"
+        elif not ann:
+            why = "unjudged paper"
+        elif ann["provenance"] != "citation":
+            why = "pooled highlights cannot certify a human citation"
+        elif not arm["complete"]:
+            why = "required human highlights incomplete"
+        elif not arm["document_verdict"]:
+            why = "verdict differs from annotation"
+        else:
+            why = "complete human citation and matching verdict"
+        body.append(f'<li>{escape(study_arm_label(method))}: paper {arm["doc"]}, indices {arm["cited"]}, '
+                    f'{arm["verdict"]} · {arm["outcome"]} ({why}).</li>')
+    return "".join(body) + "</ul></details>"
+
+
+def ceiling_groups(ceiling, run_id):
+    stages = [
+        ("certifiable", "Fits two sentences", lambda r: r["ceiling"] == "certifiable"),
+        ("returned", "Returned a certifiable paper", lambda r: r["returned_certifiable"]),
+        ("complete", "Complete human citation", lambda r: r["complete"]),
+        ("justified", "Justified baseline release", lambda r: r["outcome"] == "justified"),
+        ("unsupported", "Unsupported baseline release", lambda r: r["outcome"] == "unsupported"),
+        ("no-paper", "No eligible human paper", lambda r: r["ceiling"] == "no eligible human paper"),
+        ("no-fit", "No highlight set fits", lambda r: r["ceiling"] == "no highlight set fits")]
+    items = []
+    for slug, label, test in stages:
+        links = [f'<a href="#{research_anchor(run_id, str(r["id"]))}">{r["id"]}</a>'
+                 for r in ceiling["cases"] if test(r)]
+        items.append(f'<p id="ceiling-{slug}"><strong>{label} ({len(links)})</strong> · ' + ", ".join(links) + "</p>")
+    return '<section id="scoring-stages"><h3>Cases behind the scoring ceiling</h3>' + "".join(items) + "</section>"
+
+
+def paired_case_table(run: dict, cases: list[dict], case_details=None) -> str:
     rows = []
     methods = list(dict.fromkeys(method for row in cases for method in row["arms"]))
     for row in cases:
@@ -573,7 +628,7 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
         outcomes = "".join(cells)
         attributes = "".join(f" data-{name}" for name in ("disagrees", "exhausted", "adverse") if row[name])
         graph_id = f'evidence_case:{run["id"]}--{row["id"]}'
-        graph_route = f'<br><small>{graph_link(graph_id)}</small>' if graph_id in featured else ""
+        graph_route = f'<br><small>{graph_link(graph_id)}</small>'
         source_detail = ""
         if run["id"] == "fresh-citation-retrieval" and row["id"] == "833":
             source_detail = ('<p>The claim says that NLRP12 positively regulates T-cell receptor activation. '
@@ -582,6 +637,8 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
                              'paper by Lukens et al., <i>The NLRP12 Sensor Negatively Regulates Autoinflammatory Disease '
                              'by Modulating Interleukin-4 Production in T Cells</i></a>. The alternate selector retained '
                              'sentence 6 and replaced sentence 1.</p>')
+        if case_details:
+            source_detail += case_details[row["id"]]
         rows.append(
             f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a>{graph_route}</th>'
             f'<td>{escape(row["condition"])}{source_detail}</td>{outcomes}</tr>'
@@ -729,7 +786,7 @@ def study_outcomes(format_id: str, result: dict) -> str:
     return ""
 
 
-def render_run(study: dict, row: dict, result: dict, cases: list[dict], featured: set[str], replay: str = "") -> str:
+def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: str = "", case_details=None) -> str:
     source = f'{research.REPO}/blob/{row["source_commit"]}'
     artifacts = [("Raw paired result", row["result"]), ("Pinned protocol", row["protocol"]), *(
         (Path(target).name, target) for target in row["inputs"] if target != row["protocol"]
@@ -762,7 +819,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], featured
         f'<em>The ASI Stack</em>, {escape(row["date"])}. Run <code>{row["id"]}</code>, evidence revision '
         f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
         f'Result SHA-256 <code>{row["result_sha256"]}</code>.</p>'
-        + paired_case_table(row, cases, featured) + "</section>"
+        + paired_case_table(row, cases, case_details) + "</section>"
     )
 
 
@@ -849,7 +906,7 @@ def independent_reports(reports: list[dict], study: dict, status: dict) -> str:
 
 
 def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None,
-                   payload: ProductPayload | None, featured: set[str]) -> tuple[list[dict], str]:
+                   payload: ProductPayload | None) -> tuple[list[dict], str]:
     def read(name):
         return inputs.data[ROOT / name] if inputs else (ROOT / name).read_bytes()
 
@@ -898,6 +955,8 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
     ceiling_path = Path("experiments/scifact_retrieval_followup/ceiling.json")
     ceiling = json.loads(read(ceiling_path))
     write_json(product_dir / "scifact-ceiling.json", ceiling, payload)
+    case_sources = json.loads(read(CASE_SOURCES))
+    write_json(product_dir / "scifact-case-sources.json", case_sources, payload)
     studies = research.studies_from(manifest, read)
     reports = manifest["independent_reports"]
     write_json(product_dir / "research-studies.json", {
@@ -932,16 +991,22 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         )
 
     for run in manifest["runs"]:
-        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval", "matched_publication"}:
+        if run["format"] not in research.PORTABLE_RUN_FORMATS:
             continue
         members = {name: read(Path(name)) for name in (run["protocol"], run["result"], *run["inputs"])}
         command = run["command"]
         preparation = ("Scoring requires Python 3.12 with numpy==2.2.6 installed. "
                        "Replaying the saved predictions needs no network. See the protocol to rerun inference.\n\n"
                        if run["format"] in {"scifact_citation", "fresh_retrieval"} else "")
+        expected = run["result"]
+        if run["format"] == "sygus_external":
+            expected = "experiments/sygus_forward_transfer/families.json"
+            preparation = ("The offline report aggregates all 66 retained observations. For fresh search, install Z3 4.15.4 "
+                           "and run python3 experiments/sygus_forward_transfer/run.py CACHE_DIR with network access for the pinned inputs. "
+                           "Machine timings will differ.\n\n")
         members["README.md"] = (
             f'# {run["title"]}\n\n{preparation}Extract the archive and run from its root:\n\n'
-            f'```sh\n{command} > observation.json\ncmp observation.json {run["result"]}\n```\n\n'
+            f'```sh\n{command} > observation.json\ncmp observation.json {expected}\n```\n\n'
             f'The pinned protocol is {run["protocol"]}. The replay uses local data.\n'
         ).encode()
         package = run["id"] + "-replay.zip"
@@ -967,18 +1032,39 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                 csv_path.write_bytes(export)
             else:
                 payload.write(csv_path, export)
-            sections.append(render_run(study, row, result, cases, featured, replay_links.get(row["id"], "")))
+            details = None
+            if row["format"] == "fresh_retrieval":
+                audited = {str(c["id"]): c for c in ceiling["cases"]}
+                details = {str(c["id"]): scientific_source_detail(c, case_sources[str(c["id"])], audited[str(c["id"])])
+                           for c in result["cases"]}
+            sections.append(render_run(study, row, result, cases, replay_links.get(row["id"], ""), details))
             label = " · featured" if row["id"] == study["featured_run"] else ""
             run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
         links = f'<p><a href="bibliographies/index.html#study-{study["id"]}">Export this study bibliography</a></p>'
         if study["id"] == "claim-review":
             links += '<p><a href="search-transfer.html">Reserved query transfer across two public revisions</a>.</p>'
+        if study["id"] == "matched-release":
+            links += '<p>The downloadable replay re-derives closure from status and pinned SHA-256 and rejects an inconsistent recorded decision. The original protocol and raw observations retain their evidence revision.</p>'
+        if study["id"] == "forward-transfer":
+            family_data = json.loads(read(Path("experiments/sygus_forward_transfer/families.json")))
+            rows = "".join(f'<tr><th scope="row">{r["family"]}</th><td>{r["schedule"]}</td><td>{r["arm"]}</td>'
+                           f'<td>{r["verified"]}/{r["tasks"]}</td><td>{r["exhausted"]}</td><td>{r["proposals"]:,}</td>'
+                           f'<td>{r["screen_ops"]:,}</td><td>{r["solver_checks"]}</td>'
+                           f'<td>{r["search_ns"]/1e9:.3f} / {r["verify_ns"]/1e9:.3f}</td></tr>' for r in family_data)
+            links += ('<section id="external-task-families"><h3>Where the external tasks were solved</h3>'
+                      '<p>The library builder visited 20 historical AST nodes. Whole programs stored ten nodes and routines stored six. '
+                      'One additional low-bit task (hd-17) was solved only by whole-program handles. All other families exhausted their proposal caps. '
+                      'The shared search grammar omits signed division and signed and unsigned remainder. '
+                      'The reference formulas supplied example outputs and checked final candidates. Search never saw the held-out formulas.</p>'
+                      + study_table("External SyGuS comparison", ["Task family", "Schedule", "Library", "Verified", "Exhausted",
+                          "Proposals", "Screening operations", "Universal checks", "Search / check seconds"], rows) + '</section>')
         if study["id"] == "citation-retrieval":
+            links += ceiling_groups(ceiling, "fresh-citation-retrieval")
             links += (f'<p>Retrospective scoring ceiling: {ceiling["ceiling"]["certifiable"]} of 65 claims '
                       'could receive full credit with two sentences. The baseline returned 14 human-evidence papers, '
                       '12 of which could fit, and supplied seven complete citations and four justified verdicts. '
                       '<a href="../../chapters/verification-bandwidth-and-context-adequacy.html#citation-scoring-ceiling">'
-                      'Inspect the denominators</a> · <a href="scifact-ceiling.json">Download all 65 case classifications</a>.</p>')
+                      'Inspect the denominators</a> · <a href="scifact-ceiling.json">Download all 65 case classifications</a> · <a href="scifact-case-sources.json">Download claims, paper titles and annotations</a>.</p>')
         if study.get("reader_anchor"):
             links += f'<p><a href="../../reader/quickstart.html#{escape(study["reader_anchor"])}">Worked reader comparison</a></p>'
         if study.get("paper"):
@@ -1066,8 +1152,9 @@ def build_claim_citations(product_dir, inputs, payload, commit):
         for row in card["declarations"]:
             line = row["origin"]["locator"].split(":")[1]
             url = f'{research.REPO}/blob/{commit}/{card["module_path"]}#L{line}'
-            body.append(f'<li><a href="{escape(url)}"><code>{escape(row["name"])}</code></a>'
-                        f'<p>{escape(row["premises"])} {escape(row["conclusion"])}</p></li>')
+            body.append(f'<li id="{escape(row["name"])}"><a href="{escape(url)}"><code>{escape(row["name"])}</code></a>'
+                        f'<p>{escape(row["premises"])} {escape(row["conclusion"])}</p>'
+                        f'{graph_link("evidence_passage:" + row["name"], "Open declaration and copy citation")}</li>' )
         cards.append(f'<section id="{escape(tag)}"><h2>{escape(card["title"])}</h2>'
                      f'<a href="../../{escape(card["passage"])}">Passage using this result</a><ul>{"".join(body)}</ul></section>')
     write_text(product_dir / "proof-declarations.html", page("Cite a formal result",
@@ -1215,8 +1302,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
     if payload is None:
         product_dir.mkdir(parents=True, exist_ok=True)
     reader_resources(product_dir, status, inputs, payload)
-    featured_cases = {row["id"] for row in (catalog or {}).get("records", []) if row["kind"] == "evidence_case"}
-    studies, study_cards = build_research(product_dir, status, inputs, payload, featured_cases)
+    studies, study_cards = build_research(product_dir, status, inputs, payload)
     citation_count = build_claim_citations(product_dir, inputs, payload, status["source_commit"])
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:

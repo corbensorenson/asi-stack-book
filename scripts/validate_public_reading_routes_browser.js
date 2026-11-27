@@ -130,6 +130,19 @@ async function checkResearchFacets(context) {
     assert(copies.includes(citation));
 
     const graphRoute = registry + "knowledge-graph/?node=";
+    for (const [id, fragment] of [
+      ["evidence_case:paired-release-observers--click-exact-down-separate", "run-paired-release-observers--case-click-exact-down-separate"],
+      ["evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected", "circle_public_consumer_gate_promotion_overclaim_rejected"],
+    ]) {
+      await page.goto(graphRoute + encodeURIComponent(id));
+      await copy.waitFor();
+      const text = await copy.getAttribute("data-copy-citation");
+      assert(text.includes("#" + fragment + "\n") && /\nScope — .+/.test(text));
+      await copy.click();
+      await record.getByText(/Citation copied|Citation selected for copying/).waitFor();
+      await record.getByRole("link", {name: "Open in the book", exact: true}).click();
+      await page.locator('[id="' + fragment + '"]').waitFor({state: "visible"});
+    }
     await page.goto(graphRoute + encodeURIComponent("evidence_passage:atlas-original-proceed-decision"));
     await record.getByText(/0\.052142/).waitFor();
     await record.getByRole("link", {name: "Answerability Atlas baseline correction at budget 128", exact: true}).click();
@@ -396,6 +409,8 @@ async function main() {
     if (!live) await serveCandidate(context);
     await checkReaderAccess(context);
     await search(context, root, "SciFact claim 83", /study-citation-retrieval\.html[^#]*#run-fresh-citation-retrieval--case-83$/);
+    await search(context, root, "click-exact-down-separate", /study-matched-release\.html[^#]*#run-paired-release-observers--case-click-exact-down-separate$/);
+    await search(context, root, "circle_public_consumer_gate_promotion_overclaim_rejected", /proof-declarations\.html[^#]*#circle_public_consumer_gate_promotion_overclaim_rejected$/);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#release-note-index-rebuild$/);

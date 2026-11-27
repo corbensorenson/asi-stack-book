@@ -224,6 +224,12 @@ remain in the comparison. To qualify transfer of a human method, test its
 mechanism and usefulness on new tasks against an ordinary structured procedure
 with the same evaluator and total work budget.
 
+### Did the reversal travel to an external workload? {#external-sygus-transfer}
+
+Eleven held-out 32-bit bit-vector problems came from the 2017 SyGuS competition. Four historical problems supplied the library. The experiment crossed whole programs, repeated subtrees and no library with two size schedules. The search saw example outputs and grammar. Z3 checked every proposed solution that passed the examples against the specification over all inputs.
+
+Whole-program handles solved five tasks; charging the size of their expanded trees reduced that to four. Routines and no library each solved four on both schedules. Every solve occurred in the low-bit family. The signed, average and permutation families exhausted the proposal cap in all arms. A one-task advantage became a tie, so the prespecified reversal did not transfer. Keep both representations available and price construction and screening as well as the final check. The [external family table and 66 observations](../products/evidence-registry/study-forward-transfer.html#external-task-families) preserve the task denominators and work.
+
 ### Translating representative methods
 
 The framework changes familiar translations:

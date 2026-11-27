@@ -554,6 +554,8 @@ The primary result remains 4 justified releases across all 65 claims. A **retros
 
 Twenty claims had no eligible paper with human citation evidence. Seven more had human evidence but no highlight set that fit the budget. Across the full cohort the baseline returned 14 papers with human evidence, including two whose highlights could not fit. Of the 15 unsupported releases, 12 returned unjudged papers, one returned a paper with pooled highlights, and two missed part of the human citation. Those categories call for different follow-ups: assess the paper, obtain a human sentence annotation, or improve sentence selection. [Case-level audit and scoring code](https://github.com/corbensorenson/asi-stack-book/tree/main/experiments/scifact_retrieval_followup).
 
+Follow the denominator into the [38 certifiable cases](../products/evidence-registry/study-citation-retrieval.html#ceiling-certifiable), [12 returned certifiable papers](../products/evidence-registry/study-citation-retrieval.html#ceiling-returned), [seven complete citations](../products/evidence-registry/study-citation-retrieval.html#ceiling-complete), [four justified releases](../products/evidence-registry/study-citation-retrieval.html#ceiling-justified), or [15 unsupported releases](../products/evidence-registry/study-citation-retrieval.html#ceiling-unsupported). Each row identifies the paper, sentence indices, available annotation and disposition for each arm.
+
 ### How much evidence is a second opinion?
 
 Suppose two reviewers independently submit one of four labels on each of 20 previously adjudicated records. Here is the full tally against the event log.

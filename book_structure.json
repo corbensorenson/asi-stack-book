@@ -17139,7 +17139,14 @@
             "ext_attention_residuals_2026",
             "ext_mhc_peft_2026",
             "ext_cram_2026",
-            "ext_byteflow_2026"
+            "ext_byteflow_2026",
+            "ext_layer_sharing_orders_2021",
+            "ext_relaxed_recursive_2024",
+            "ext_loop_iso_depth_2026",
+            "ext_smelt_2026",
+            "ext_no_free_loop_2026",
+            "ext_dory_loop_budget_2026",
+            "ext_huginn_2025"
           ],
           "source_queue": {
             "primary": [
@@ -17203,7 +17210,14 @@
               "ext_mhc_2025",
               "ext_attention_residuals_2026",
               "ext_mhc_peft_2026",
-              "ext_byteflow_2026"
+              "ext_byteflow_2026",
+              "ext_layer_sharing_orders_2021",
+              "ext_relaxed_recursive_2024",
+              "ext_loop_iso_depth_2026",
+              "ext_smelt_2026",
+              "ext_no_free_loop_2026",
+              "ext_dory_loop_budget_2026",
+              "ext_huginn_2025"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -17781,6 +17795,83 @@
               ],
               "passage_review_note": "2026-11-19. Section 4.4, Table 3. Bits per byte and downstream scores describe those configurations. A boundary score does not certify semantic fidelity on a new language or task.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_layer_sharing_orders_2021",
+              "mapped_support": "Consecutive, cyclic and reversed reuse change which hidden state each block sees on its next visit.",
+              "limits": "The ranking depends on the translation setting and budget.",
+              "passage_refs": [
+                "sources/source_notes/ext_layer_sharing_orders_2021.md",
+                "https://arxiv.org/abs/2104.06022v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Translation comparisons evaluate several ways to assign a fixed set of layers to depth positions."
+            },
+            {
+              "source_id": "ext_relaxed_recursive_2024",
+              "mapped_support": "A shared matrix plus small depth-specific low-rank updates lets individual passes specialize.",
+              "limits": "The proposed continuous depth-batching throughput gain was modeled.",
+              "passage_refs": [
+                "sources/source_notes/ext_relaxed_recursive_2024.md",
+                "https://arxiv.org/abs/2410.20672v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "The authors convert an untied Gemma checkpoint and evaluate recovery after further training."
+            },
+            {
+              "source_id": "ext_loop_iso_depth_2026",
+              "mapped_support": "A dense iso-depth sweep separates resident parameter savings from the training computation needed to recover validation loss.",
+              "limits": "The fitted recurrence exponent describes the sweep and its validation loss.",
+              "passage_refs": [
+                "sources/source_notes/ext_loop_iso_depth_2026.md",
+                "https://arxiv.org/abs/2604.21106v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "A four-pass 410M model matched a roughly 580M untied model at the training cost of a roughly 1B one."
+            },
+            {
+              "source_id": "ext_smelt_2026",
+              "mapped_support": "A sparse mixture-of-experts architecture repeats the middle half twice while balancing active work, parameter count and cache.",
+              "limits": "A fitted sparse-model frontier cannot be imported as a dense inference speedup.",
+              "passage_refs": [
+                "sources/source_notes/ext_smelt_2026.md",
+                "https://arxiv.org/abs/2609.01343v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Across four scales the authors estimate 6.8–18.0 percent training FLOP savings on the fitted compute-optimal frontier."
+            },
+            {
+              "source_id": "ext_no_free_loop_2026",
+              "mapped_support": "Retrofit a pretrained decoder and compare with keeping it untied and with alternative uses of the same inference budget.",
+              "limits": "Scale, tuning protocol and benchmark selection bound the result.",
+              "passage_refs": [
+                "sources/source_notes/ext_no_free_loop_2026.md",
+                "https://arxiv.org/abs/2610.42030v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Only the 0.8B retrofit beat both references among the tested Qwen-family models."
+            },
+            {
+              "source_id": "ext_dory_loop_budget_2026",
+              "mapped_support": "A normalized transformer reuses its middle block at different inference depths and retains the last loop’s decoding cache.",
+              "limits": "The base accuracy table gives no workload-specific latency or cost per accepted answer.",
+              "passage_refs": [
+                "sources/source_notes/ext_dory_loop_budget_2026.md",
+                "https://arxiv.org/abs/2611.03998v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Base checkpoint Table 1 compares one, two, four, six and eight loops on fixed evaluations."
+            },
+            {
+              "source_id": "ext_huginn_2025",
+              "mapped_support": "A recurrent core between input and output layers spends compute before producing the next token.",
+              "limits": "Extra latent depth benefits selected tasks and costs another core execution.",
+              "passage_refs": [
+                "sources/source_notes/ext_huginn_2025.md",
+                "https://arxiv.org/abs/2502.05171v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "The authors trained a 3.5B checkpoint on 800B tokens and evaluated multiple inference depths."
             }
           ],
           "mechanism": [
@@ -20902,7 +20993,9 @@
             "precision_contract",
             "ext_dflash_2026",
             "ext_d3d_2026",
-            "ext_bridgekv_2026"
+            "ext_bridgekv_2026",
+            "ext_dory_loop_budget_2026",
+            "ext_mixture_of_recursions_2025"
           ],
           "source_queue": {
             "primary": [
@@ -20922,7 +21015,9 @@
               "precision_contract",
               "ext_dflash_2026",
               "ext_d3d_2026",
-              "ext_bridgekv_2026"
+              "ext_bridgekv_2026",
+              "ext_dory_loop_budget_2026",
+              "ext_mixture_of_recursions_2025"
             ],
             "variants": [
               "ext_speculative_decoding_2022",
@@ -21428,6 +21523,28 @@
               ],
               "passage_review_note": "2026-11-19. Single-A40 measurements and separate serving simulation. The smaller decoder changes the output behavior. Quality, transfer costs and request latency need comparison on the same prompt mix.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dory_loop_budget_2026",
+              "mapped_support": "A normalized transformer reuses its middle block at different inference depths and retains the last loop’s decoding cache.",
+              "limits": "The base accuracy table gives no workload-specific latency or cost per accepted answer.",
+              "passage_refs": [
+                "sources/source_notes/ext_dory_loop_budget_2026.md",
+                "https://arxiv.org/abs/2611.03998v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Base checkpoint Table 1 compares one, two, four, six and eight loops on fixed evaluations."
+            },
+            {
+              "source_id": "ext_mixture_of_recursions_2025",
+              "mapped_support": "A lightweight router assigns individual tokens to further passes and changes the set of cached keys and values.",
+              "limits": "Throughput depends on the batch, implementation and quality target.",
+              "passage_refs": [
+                "sources/source_notes/ext_mixture_of_recursions_2025.md",
+                "https://arxiv.org/abs/2507.10524v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "The authors compare selective caching and sharing first-recursion keys and values across recursion steps."
             }
           ],
           "draft_maturity": "v0.3 claim-proof program",
@@ -21468,7 +21585,10 @@
             "portia_synapse",
             "spider_synapse",
             "ext_hybrid_reasoning_agents_2026",
-            "ext_recursive_language_models_2025"
+            "ext_recursive_language_models_2025",
+            "ext_dory_loop_budget_2026",
+            "ext_huginn_2025",
+            "ext_loop_schedule_2026"
           ],
           "source_queue": {
             "primary": [
@@ -21480,7 +21600,10 @@
               "ext_deepseek_r1_2025",
               "ext_s_grpo_2025",
               "ext_hybrid_reasoning_agents_2026",
-              "ext_recursive_language_models_2025"
+              "ext_recursive_language_models_2025",
+              "ext_dory_loop_budget_2026",
+              "ext_huginn_2025",
+              "ext_loop_schedule_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -21614,6 +21737,39 @@
               ],
               "passage_review_note": "2026-11-02: Section 2 algorithms and distinctions, Section 3 task/baseline scope, Section 7 limitations. This is the May 11 v3 revision, not a new October publication. No full paper/code/proof audit or local reproduction.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_dory_loop_budget_2026",
+              "mapped_support": "A normalized transformer reuses its middle block at different inference depths and retains the last loop’s decoding cache.",
+              "limits": "The base accuracy table gives no workload-specific latency or cost per accepted answer.",
+              "passage_refs": [
+                "sources/source_notes/ext_dory_loop_budget_2026.md",
+                "https://arxiv.org/abs/2611.03998v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "Base checkpoint Table 1 compares one, two, four, six and eight loops on fixed evaluations."
+            },
+            {
+              "source_id": "ext_huginn_2025",
+              "mapped_support": "A recurrent core between input and output layers spends compute before producing the next token.",
+              "limits": "Extra latent depth benefits selected tasks and costs another core execution.",
+              "passage_refs": [
+                "sources/source_notes/ext_huginn_2025.md",
+                "https://arxiv.org/abs/2502.05171v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "The authors trained a 3.5B checkpoint on 800B tokens and evaluated multiple inference depths."
+            },
+            {
+              "source_id": "ext_loop_schedule_2026",
+              "mapped_support": "The distribution of loop counts during training affects how a gated recurrent update acts at later inference depths.",
+              "limits": "The November preprint studies a 46M–110M ladder on 2B tokens.",
+              "passage_refs": [
+                "sources/source_notes/ext_loop_schedule_2026.md",
+                "https://arxiv.org/abs/2611.29704v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "In the fixed-depth setting the residual direction could converge even as loss diverged."
             }
           ],
           "problem": "Additional inference can change a system's answer through search, revision, candidate aggregation, or verifier calls without a prospective rule for when extra compute is worthwhile, what evidence the verifier contributes, how initially correct answers are protected, when to stop or abstain, and what the resulting candidate may influence.",

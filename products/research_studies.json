@@ -41,13 +41,13 @@
       "id": "forward-transfer",
       "title": "Did extracted routines help on later synthesis tasks?",
       "question": "When does making previously discovered routines available improve verified synthesis on later task families under matched resource limits?",
-      "change": "Repeat the full scheduler and resource comparison on new task lineages with an independent task author and measured end-to-end cost. Change a reuse default only when the effect persists across the intended schedulers, budgets and tasks.",
+      "change": "Retest on a separately sourced domain with comparable grammar coverage and library construction costs. Check whether any gain survives both schedulers.",
       "paper": "papers/forward_transfer_program_synthesis.html",
       "claim": {
         "id": "cognitive-method-transfer-and-qualification.core",
         "scope": "The synthetic studies test verified later task outcomes under fixed schedules, grammars and resource limits."
       },
-      "featured_run": "transfer-scheduler-audit",
+      "featured_run": "sygus-external-transfer",
       "spotlight": {
         "run": "transfer-pilot",
         "case": "p01",
@@ -610,15 +610,40 @@
         "experiments/matched_publication_boundary/cohort.json"
       ],
       "source_commit": "b25d23654a07db46d9d86a213307076995e92979"
+    },
+    {
+      "id": "sygus-external-transfer",
+      "study": "forward-transfer",
+      "format": "sygus_external",
+      "date": "2026-11-27",
+      "title": "Does the scheduler reversal transfer to external SyGuS problems?",
+      "protocol": "experiments/sygus_forward_transfer/protocol.md",
+      "protocol_sha256": "564d615b54daf3bafd1d9e7b38f939d34db7833b24ba2741a2f4b3fc5d50b053",
+      "method": "Eleven upstream Hacker’s Delight problems, three libraries and two size schedules. Z3 checks accepted candidates on all 32-bit inputs.",
+      "result_summary": "Of eleven external tasks, whole programs solved {whole_handles} under handle size and {whole_expanded} under expanded size. Routines solved {routines_handles} and {routines_expanded}; the empty library solved {none_handles} and {none_expanded}.",
+      "limit": "Four small families from one bit-vector track. All verified tasks were low-bit transformations. The operator subset, library history, semantic pruning and budgets bound this result. Owner-run timing covers one machine.",
+      "disposition": "Keep the representation choice conditional. A one-task advantage under handle size became a tie under expanded size. The prespecified strict reversal did not transfer.",
+      "command": "python3 experiments/sygus_forward_transfer/report.py",
+      "result": "experiments/sygus_forward_transfer/results.json",
+      "result_sha256": "d684de246308863cc317846a528e0ad6fa82847687250bfe743a3a1e79c38bc9",
+      "source_commit": "7c34af73b33448608aed888f74538c21cc1dec44",
+      "inputs": [
+        "experiments/sygus_forward_transfer/inputs.json",
+        "experiments/sygus_forward_transfer/library.json",
+        "experiments/sygus_forward_transfer/run.py",
+        "experiments/sygus_forward_transfer/report.py",
+        "experiments/sygus_forward_transfer/families.json"
+      ],
+      "follow_up_to": "transfer-scheduler-audit"
     }
   ],
   "agenda": [
     {
-      "question": "Does independently available receiver status settle outcomes ordinary status cannot?",
-      "study": "crossed-receiver",
-      "rival": "The earlier benefit reflects access to fresh information. One conventional endpoint with the same access ought to suffice.",
-      "test": "At the same fault and retry budget, compare one conventional status endpoint with a workflow that adds a separately operated reader. Give the single-endpoint baseline all evidence it could ordinarily obtain. Cross receiver deduplication with shared and separate upstream failures. Record verified and false closures, wrong and repeated effects, time to resolution and operating cost.",
-      "decisions": "Keep a separate read only where it adds verified closures with acceptable cost and no repeated effects. Adopt one channel on parity. Narrow the architecture claim if the extra path makes holds or duplicates worse.",
+      "question": "When does sharing a release observation across callers repay its extra hop?",
+      "study": "matched-release",
+      "rival": "A conventional caller can coalesce overlapping requests and cache results under the same freshness bound.",
+      "test": "Start from the 96 paired releases. Cross caller overlap, update timing and freshness deadlines. Give direct and gateway designs the same cache, coalescing and recovery opportunities. Score stale and verified closures, total requests, bytes and time held.",
+      "decisions": "Retain direct checking at the measured single-caller boundary. Change placement only if reuse reduces total work at the same freshness and safety threshold.",
       "backlog": "research_backlog_records/editorial_depth_sources_2026_11_20.json"
     },
     {
@@ -630,10 +655,10 @@
       "backlog": "research_backlog_records/chapter_decisions_2026_11_19.json"
     },
     {
-      "question": "Does the measured reuse advantage survive independently authored tasks and different schedulers?",
+      "question": "Does reusable structure transfer beyond the low-bit SyGuS family?",
       "study": "forward-transfer",
       "rival": "Counting archived routines as one handle moves whole programs earlier in one queue, even when they expand to more work. Descriptive cues and the task family may also drive the result.",
-      "test": "Use independent task authors and compare both representations and query policies at matched library size, scheduler and time budget. Freeze resource caps and the full-cost accounting before opening outcomes.",
+      "test": "The first external cohort added one whole-program solve under handle size and tied under expanded size. Next freeze a second, disjoint synthesis domain with operators that fit its historical library. Match grammar access, preprocessing, selection and end-to-end budgets before opening outcomes.",
       "decisions": "Choose a representation only where an advantage persists for the intended schedule and resource cap. Keep both comparators where the ranking changes. Record exhaustion, regressions and costs.",
       "backlog": "research_backlog_records/forward_transfer_program_synthesis_2026_08_14.json"
     }

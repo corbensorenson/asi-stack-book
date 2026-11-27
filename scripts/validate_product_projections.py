@@ -200,17 +200,44 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 if row["priority"] == "external_literature"}
     expected = {"external":external}
     for part in load(ROOT / "book_structure.json")["parts"]:
-        expected.update({chapter["id"]:external.intersection(chapter["source_ids"]) for chapter in part["chapters"]})
+        for chapter in part["chapters"]:
+            body = (ROOT / chapter["file"]).read_text().split("---\n", 2)[-1]
+            cited = set(re.findall(r"\bext_[a-zA-Z0-9_]+\b", body)) & external
+            expected[chapter["id"]] = set(chapter["source_ids"]) | cited
+            if site:
+                chapter_path = chapter["file"].replace(".qmd", ".html")
+                anchors = set(re.findall(r'\sid="([^"]+)"', (site / chapter_path).read_text()))
+                passages = (bibliography / (chapter["id"] + ".html")).read_text()
+                for fragment in set(re.findall(re.escape(chapter_path) + r'#([^"]+)', passages)) - anchors:
+                    errors.append(f"Bibliography passage missing: {chapter_path}#{fragment}")
     for key, identities in expected.items():
         records = load(bibliography / (key + ".json"))
         bib = (bibliography / (key + ".bib")).read_text()
-        if ({r["id"] for r in records} != identities or
+        if (not identities.issubset({r["id"] for r in records}) or
                 any("{" + r["id"] + ",\n" not in bib for r in records)):
             errors.append(f"chapter bibliography differs from source assignments: {key}")
     for study in studies:
         keys = {r["id"] for r in load(bibliography / ("study-" + study["id"] + ".json"))}
         if any("run-" + run["id"] not in keys for run in study["runs"]):
             errors.append(f"study bibliography lost a pinned protocol: {study['id']}")
+    from importlib.util import spec_from_file_location, module_from_spec
+    location = ROOT / "experiments/matched_publication_boundary"
+    spec = spec_from_file_location("matched_release_replay", location / "score.py")
+    scorer = module_from_spec(spec)
+    spec.loader.exec_module(scorer)
+    observed = load(location / "observations.json")
+    scorer.score(observed)
+    for field, bad in (("observed", "0" * 64), ("status", 503)):
+        changed = copy.deepcopy(observed)
+        row = next(row for row in changed if row["id"] == "click-exact-down-separate")
+        row["arms"]["direct"][field] = bad
+        try:
+            scorer.score(changed)
+        except ValueError as error:
+            if row["id"] + " / direct" not in str(error):
+                errors.append(f"Release replay failed without identifying the observation: {field}")
+        else:
+            errors.append(f"Release replay accepted an inconsistent observation: {field}")
     cards = graph.declaration_cards(read)
     proof_page = (registry / "proof-declarations.html").read_text()
     for card in cards.values():

@@ -499,6 +499,47 @@ def evidence_cases(graph):
         graph.edge(key, "case_of_run", run_key, CASES, locator + "/case", evidence_effect="none")
 
 
+def collection_routes(graph):
+    registry = "products/evidence-registry/"
+    for ri, run in enumerate(graph.data(STUDIES)["runs"]):
+        run_key = "study_run:" + run["id"]
+        node = graph.nodes[run_key]
+        for row in rows_for(run["format"], graph.data(run["result"])):
+            identity = run["id"] + "--" + row["id"]
+            if "evidence_case:" + identity in graph.nodes:
+                continue
+            outcomes = ". ".join(f'{study_arm_label(k)}: {v["outcome"]} ({v["work"]})' for k,v in row["arms"].items())
+            key = graph.node("evidence_case", identity, run["result"], "/", title=row["id"],
+                             aliases=[row["id"]], question=row["condition"], summary=outcomes,
+                             limit=node["limit"], measurement="Case identifier", source_commit=run["source_commit"],
+                             result_sha256=run["result_sha256"], url=node["url"].split("#")[0]+"#"+run_anchor(run["id"],row["id"]))
+            graph.edge(key, "case_of_run", run_key, STUDIES, f"/runs/{ri}", evidence_effect="none")
+        if run["format"] in research_studies.PORTABLE_RUN_FORMATS:
+            key = graph.node("evidence_passage", run["id"]+"-download", STUDIES, f"/runs/{ri}",
+                             title=run["id"]+"-replay.zip", aliases=[run["title"]+" replay download"],
+                             url=node["url"], limit=node["limit"], summary="Download the offline replay from this run.")
+            graph.edge(key,"examines_run",run_key,STUDIES,f"/runs/{ri}",evidence_effect="none")
+    for ci, card in enumerate(graph.data(DECLARATIONS)):
+        for di, decl in enumerate(card["declarations"]):
+            name = decl["name"]
+            locator = f"/{ci}/declarations/{di}"
+            key = graph.node("evidence_passage",name,DECLARATIONS,locator,title=name,
+                             summary=decl["conclusion"],limit=decl["premises"],measurement="Formal declaration",
+                             url=registry+"proof-declarations.html#"+name)
+            graph.edge(key,"specifies_declaration_of","proof_target:"+card["tag"],DECLARATIONS,locator,evidence_effect="none")
+    def bibliography(identity, title, target, path, locator):
+        key = graph.node("evidence_passage", "bibliography-"+identity,path,locator,
+                         title=title+" bibliography",aliases=[identity+".bib",identity+".json",title+" CSL-JSON"],
+                         url=registry+"bibliographies/index.html#"+identity,summary="Download BibTeX or CSL-JSON.",
+                         limit="Reference membership describes the works used or assigned. Claim support is recorded separately.")
+        graph.edge(key,"bibliography_for",target,path,locator,evidence_effect="none")
+    for pi, part in enumerate(graph.data(STRUCTURE)["parts"]):
+        for ci, chapter in enumerate(part["chapters"]):
+            bibliography(chapter["id"],chapter["title"],"chapter:"+chapter["id"],STRUCTURE,f"/parts/{pi}/chapters/{ci}")
+    for si, study in enumerate(graph.data(STUDIES)["studies"]):
+        bibliography("study-"+study["id"],study["title"],"study:"+study["id"],STUDIES,f"/studies/{si}")
+
+
 def compile_graph(read, *, source_commit, worktree):
     graph = Graph(read)
     for path in ("scripts/book_knowledge_graph.py", "scripts/build_human_reader_current.py",
@@ -514,6 +555,7 @@ def compile_graph(read, *, source_commit, worktree):
     evidence_records(graph)
     evidence_passages(graph)
     evidence_cases(graph)
+    collection_routes(graph)
     for edge in graph.edges:
         if edge["from"] not in graph.nodes or edge["to"] not in graph.nodes:
             raise ValueError(f"graph edge has an unknown endpoint: {edge}")

@@ -237,6 +237,8 @@ A maintainer has sent a versioned documentation release and lost its acknowledge
 
 **Choose direct fallback for this workload.** All eight additional closures came when the intended bytes committed, the primary was unavailable and the separate observer could still read them. A fallback sharing the outage recovered none. With equal access, moving the same check into a gateway saved 48 caller requests and added 96 total requests. Among verified releases, median time from ambiguous acknowledgement to verification was 416.3 µs direct and 864.2 µs through the gateway. These times cover one loopback run. Failure frequencies were assigned, both read processes shared storage, and human recovery effort was unmeasured. [Inspect the preregistration, all release conditions, timing and replay](../products/evidence-registry/study-matched-release.html#run-paired-release-observers).
 
+The direct and gateway arms executed the same lookup. The gateway added one hop on every request, exactly 96 additional requests. Within each of the twelve fault conditions, all eight README lineages had the same closure and request counts. To test a deployment decision that could go either way, give both designs the same freshness deadline and overlapping callers. Allow each to cache and coalesce simultaneous reads. Count stale closures as well as traffic and time held.
+
 ### The conventional orchestrator deserves a fair comparison
 
 A conventional workflow can keep typed task inputs, scoped service credentials,

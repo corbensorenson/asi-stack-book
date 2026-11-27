@@ -66,6 +66,10 @@ open_evidence_gaps:
   - "Useful, safe, fair, stable, efficient, economically optimal, deployable, transferable, or SOTA resource claims and physical-feasibility or simulator-adequacy claims remain blocked until that campaign passes."
 ---
 
+A scheduler offers to finish a transformation for 2.3 units. Its output fails verification. A second route can produce an accepted result with a verifier for 14.2 units; manual review costs 43.0. Which would you dispatch? All three prices come from the same synthetic fixture. Begin with the 14.2 route if a reviewer can still own the residual. Its advantage over manual review is 28.8 units per accepted job.
+
+Suppose that after verification a fraction *p* of these jobs needs an additional repair costing *R* units, including the check on the repair. These are sensitivity assumptions. With one accepted outcome per job and the original manual price held fixed, expected cost is **14.2 + pR**. At one repair in four, a repair costing 115.2 units exhausts the advantage. Above that price choose manual review. If repairs can also fail, count only accepted outcomes in the denominator and charge unresolved work as well. The [worked comparison](#worked-cost-comparison-the-cheapest-route-is-not-the-economical-route) explains which routes qualify. The [chapter status and evidence history](#chapter-status) preserve the accounting behind the example.
+
 ## Chapter status
 
 | Field | Value |
@@ -176,7 +180,7 @@ than the adequate baseline. That percentage is a synthetic arithmetic result,
 not a production saving. Its useful lesson is the denominator: generation,
 verification, fallback, residual custody, non-claims, and review eligibility
 all determine whether a route is eligible. The selector found the lowest
-stated cost among these four authored options. For a measured comparison, give
+stated cost among these four authored options. The opening sensitivity calculation spends the 28.8-unit margin on repair. A missing reviewer makes a route ineligible even when its expected price fits. For a measured comparison, give
 an ordinary verified workflow the same tools and acceptance test. Record its
 resource vector alongside the new route and choose the price schedule before
 evaluation. Show whether the ranking holds when reviewer time, queue delay,

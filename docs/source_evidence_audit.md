@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1479 |
-| Exact claim-source mappings | 1271 |
+| Assigned source/chapter pairs | 1491 |
+| Exact claim-source mappings | 1283 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1479 |
-| Source notes listing assigned chapter | 1479 |
-| Passage-reviewed mappings recorded | 1204 |
+| Source notes present for assigned pairs | 1491 |
+| Source notes listing assigned chapter | 1491 |
+| Passage-reviewed mappings recorded | 1216 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -87,7 +87,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `multi-agent-dynamics-collective-intelligence-and-systemic-risk` | 10 | 9 | 10 | 10 | 9 | argument | passage review required before source-derived promotion |
 | `procedural-memory-and-cognitive-loop-closure` | 30 | 24 | 30 | 30 | 24 | argument | passage review required before source-derived promotion |
 | `routing-heads-and-specialist-cores` | 27 | 22 | 27 | 27 | 22 | argument | passage review required before source-derived promotion |
-| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 66 | 55 | 66 | 66 | 55 | argument | passage review required before source-derived promotion |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture` | 73 | 62 | 73 | 73 | 62 | argument | passage review required before source-derived promotion |
 | `relational-dimension-compilation-and-polyadic-cognition` | 2 | 2 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `governed-model-training-distributed-optimization-and-scaling` | 35 | 33 | 35 | 35 | 33 | argument | passage review required before source-derived promotion |
 | `learning-compute-topology-and-adaptive-process-architecture` | 6 | 6 | 6 | 6 | 6 | argument | eligible for support review |
@@ -95,8 +95,8 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `readiness-gates-residual-escrow-and-quarantine` | 24 | 21 | 24 | 24 | 21 | argument | passage review required before source-derived promotion |
 | `personal-compute-hives-and-federated-edge-intelligence` | 33 | 25 | 33 | 33 | 25 | argument | passage review required before source-derived promotion |
 | `compact-generative-systems-and-residual-honesty` | 21 | 17 | 21 | 21 | 17 | argument | passage review required before source-derived promotion |
-| `fast-generation-architectures` | 47 | 24 | 47 | 47 | 24 | argument | passage review required before source-derived promotion |
-| `governed-deliberation-and-test-time-scaling` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
+| `fast-generation-architectures` | 49 | 26 | 49 | 49 | 26 | argument | passage review required before source-derived promotion |
+| `governed-deliberation-and-test-time-scaling` | 15 | 15 | 15 | 15 | 15 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 51 | 26 | 51 | 51 | 26 | argument | passage review required before source-derived promotion |
 | `physical-compute-infrastructure-energy-and-environmental-constraints` | 14 | 9 | 14 | 14 | 7 | argument | passage review required before source-derived promotion |
@@ -257,6 +257,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_mamba_2023` | 3 | yes |
 | `ext_mezo_2023` | 3 | yes |
 | `ext_forward_forward_2022` | 3 | yes |
+| `ext_dory_loop_budget_2026` | 3 | yes |
 | `ext_mlperf_training_v6_2026` | 3 | yes |
 | `ext_deepspeed_inference_2022` | 3 | yes |
 | `ext_flexgen_2023` | 3 | yes |
@@ -343,6 +344,7 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_quantum_ml_shadows_2024` | 2 | yes |
 | `ext_lejepa_2025` | 2 | yes |
 | `ext_cram_2026` | 2 | yes |
+| `ext_huginn_2025` | 2 | yes |
 | `ext_megatron_distributed_training_2021` | 2 | yes |
 | `ext_gspmd_2021` | 2 | yes |
 | `ext_curriculum_learning_2009` | 2 | yes |
@@ -563,6 +565,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_attention_residuals_2026` | 1 | yes |
 | `ext_mhc_peft_2026` | 1 | yes |
 | `ext_byteflow_2026` | 1 | yes |
+| `ext_layer_sharing_orders_2021` | 1 | yes |
+| `ext_relaxed_recursive_2024` | 1 | yes |
+| `ext_loop_iso_depth_2026` | 1 | yes |
+| `ext_smelt_2026` | 1 | yes |
+| `ext_no_free_loop_2026` | 1 | yes |
 | `ext_llama3_herd_2024` | 1 | yes |
 | `ext_zero_optimizer_2019` | 1 | yes |
 | `ext_datastates_llm_2024` | 1 | yes |
@@ -613,8 +620,10 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_dflash_2026` | 1 | yes |
 | `ext_d3d_2026` | 1 | yes |
 | `ext_bridgekv_2026` | 1 | yes |
+| `ext_mixture_of_recursions_2025` | 1 | yes |
 | `ext_test_time_compute_scaling_2024` | 1 | yes |
 | `ext_hybrid_reasoning_agents_2026` | 1 | yes |
+| `ext_loop_schedule_2026` | 1 | yes |
 | `rankfold_compressor` | 1 | yes |
 | `ext_comixkv_2026` | 1 | yes |
 | `ext_iea_energy_and_ai_2025` | 1 | yes |
@@ -1517,6 +1526,13 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_mhc_peft_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_cram_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_byteflow_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_layer_sharing_orders_2021` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_relaxed_recursive_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_loop_iso_depth_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_smelt_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_no_free_loop_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_dory_loop_budget_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `replaceable-cognitive-substrates-beyond-transformer-monoculture.core` | `replaceable-cognitive-substrates-beyond-transformer-monoculture` | `ext_huginn_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | `relational-dimension-compilation-and-polyadic-cognition` | `relational_dimension_compiler` | mapped | note present | chapter listed | not passage-reviewed |
 | `relational-dimension-compilation-and-polyadic-cognition.core` | `relational-dimension-compilation-and-polyadic-cognition` | `ext_neural_message_passing_2017` | mapped | note present | chapter listed | not passage-reviewed |
 | `governed-model-training-distributed-optimization-and-scaling.core` | `governed-model-training-distributed-optimization-and-scaling` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
@@ -1702,6 +1718,8 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_dflash_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_d3d_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_bridgekv_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_dory_loop_budget_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `fast-generation-architectures.core` | `fast-generation-architectures` | `ext_mixture_of_recursions_2025` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `verification_bandwidth` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_tree_of_thoughts_2023` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_test_time_compute_scaling_2024` | mapped | note present | chapter listed | passage-reviewed |
@@ -1714,6 +1732,9 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `spider_synapse` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_hybrid_reasoning_agents_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_recursive_language_models_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_dory_loop_budget_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_huginn_2025` | mapped | note present | chapter listed | passage-reviewed |
+| `governed-deliberation-and-test-time-scaling.core` | `governed-deliberation-and-test-time-scaling` | `ext_loop_schedule_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_neuralfold` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `rankfold_compressor` | mapped | note present | chapter listed | passage-reviewed |
 | `rankfold-neuralfold-and-artifact-compression.core` | `rankfold-neuralfold-and-artifact-compression` | `bbvca_v9` | mapped | note present | chapter listed | passage-reviewed |

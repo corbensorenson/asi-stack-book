@@ -482,5 +482,81 @@
         "target": "source:ext_kmeans_plus_plus_2007"
       }
     ]
+  },
+  {
+    "id": "search-transfer-report",
+    "title": "Can a different clue reach the same evidence?",
+    "url": "products/evidence-registry/search-transfer.html",
+    "question": "How well did ordinary search recover the intended section?",
+    "summary": "First place on eight of eight reserved lookups after the update, two before.",
+    "limit": "Eight authored questions across four targets. Human review time was unmeasured.",
+    "measurement": "Research reference",
+    "aliases": [
+      "reserved ordinary search results",
+      "search transfer report"
+    ],
+    "links": [
+      {
+        "predicate": "explained_by",
+        "target": "study:claim-review"
+      }
+    ]
+  },
+  {
+    "id": "research-bibliographies",
+    "title": "Export a research bibliography",
+    "url": "products/evidence-registry/bibliographies/index.html",
+    "question": "Where can I download chapter and study citations?",
+    "summary": "Chapter and study downloads in BibTeX and CSL-JSON.",
+    "limit": "An inventory entry or citation does not by itself support a claim.",
+    "measurement": "Research reference",
+    "aliases": [
+      "external.bib",
+      "external.json",
+      "bibliography downloads"
+    ],
+    "links": [
+      {
+        "predicate": "explained_by",
+        "target": "chapter:open-research-agenda-and-bibliography-plan"
+      }
+    ]
+  },
+  {
+    "id": "scifact-scoring-ceiling",
+    "title": "How many claims could the benchmark certify?",
+    "url": "chapters/verification-bandwidth-and-context-adequacy.html#citation-scoring-ceiling",
+    "question": "What was the two-sentence scoring ceiling?",
+    "summary": "38 of 65 under the catalog, annotation and sentence budget; four justified baseline releases.",
+    "limit": "A retrospective scoring ceiling under the original evidence rule.",
+    "measurement": "Research reference",
+    "aliases": [
+      "two sentence scoring ceiling",
+      "certifiable papers"
+    ],
+    "links": [
+      {
+        "predicate": "explained_by",
+        "target": "study_run:fresh-citation-retrieval"
+      }
+    ]
+  },
+  {
+    "id": "release-observer-total-work",
+    "title": "Total request cost of the matched release observer",
+    "url": "chapters/integrated-reference-architecture.html#matched-release-observers",
+    "question": "Which release observer used fewer total requests?",
+    "summary": "Direct fallback made 144 total requests and the gateway made 240 for the same 24 verified closures.",
+    "limit": "Controlled single-caller conditions with a shared filesystem.",
+    "measurement": "Research reference",
+    "aliases": [
+      "status requests across all hops"
+    ],
+    "links": [
+      {
+        "predicate": "explained_by",
+        "target": "study_run:paired-release-observers"
+      }
+    ]
   }
 ]

@@ -83,6 +83,9 @@ def freshness_work(result: dict) -> dict[str, dict]:
     return totals
 
 
+PORTABLE_RUN_FORMATS = {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval", "matched_publication", "sygus_external"}
+
+
 def metrics(format_id: str, result: dict) -> dict:
     if format_id == "authority_ordering_v1":
         schedules = result["cases"]
@@ -190,6 +193,10 @@ def metrics(format_id: str, result: dict) -> dict:
                 "messages": ordinary["wire"].get("messages", 0),
                 "payload_bytes": ordinary["wire"].get("payload_bytes", 0),
                 "specialist": ordinary["routes"].get("specialist", 0)}
+    if format_id == "sygus_external":
+        return {f"{arm}_{schedule}": sum(r["stop"] == "verified" for r in result["cases"]
+                                          if r["arm"] == arm and r["schedule"] == schedule)
+                for arm in ("none", "whole", "routines") for schedule in ("handles", "expanded")}
     if format_id == "transfer_scheduler_v1":
         arms = result["summary"]["proposals/descriptive"]["arms"]
         return {"pairs": len(result["cases"]), "stratum": result["summary"]["proposals/descriptive"]["cells"],

@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "3878a05d507a5e85a9c942660821c0057b4e0ca4bd95692a820aaedf000efefa",
+  "book_structure_sha256": "bba50e9555d463de76c0f1655362a7e0505e2a53bbda9ab7f7f80f4d89169d11",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1479,
+    "source": 1491,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -4287,7 +4287,7 @@
           "chapter_id": "cognitive-method-transfer-and-qualification",
           "title": "Cognitive Method Transfer and Qualification",
           "technical_source_file": "chapters/cognitive-method-transfer-and-qualification.qmd",
-          "technical_source_sha256": "b5bfc2bebb62189a007037055a8292a3fa52437332dc445c43254b5569d78225",
+          "technical_source_sha256": "f540287d836ee5cfd41f1cf5bf620fcd099b665765711614174229f868913a68",
           "live_technical_path": "chapters/cognitive-method-transfer-and-qualification.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "cognitive-method-transfer-and-qualification.core",
@@ -4339,7 +4339,7 @@
           "artifact_refs": [
             {
               "path": "chapters/cognitive-method-transfer-and-qualification.qmd",
-              "sha256": "b5bfc2bebb62189a007037055a8292a3fa52437332dc445c43254b5569d78225"
+              "sha256": "f540287d836ee5cfd41f1cf5bf620fcd099b665765711614174229f868913a68"
             }
           ],
           "publication": {
@@ -5134,7 +5134,7 @@
           "chapter_id": "verification-bandwidth-and-context-adequacy",
           "title": "Verification Bandwidth and Context Adequacy",
           "technical_source_file": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-          "technical_source_sha256": "0cebb791143519e795249f9eea10fd585facd9aa6f0e3a12ede8a7fea488766b",
+          "technical_source_sha256": "8d80422a10feed7473f8b4787757c59d75f810df6b0f90b2d92b36e00d04fe3e",
           "live_technical_path": "chapters/verification-bandwidth-and-context-adequacy.html",
           "human_reader_unit_id": "unit-15",
           "core_claim_id": "verification-bandwidth-and-context-adequacy.core",
@@ -5257,7 +5257,7 @@
           "artifact_refs": [
             {
               "path": "chapters/verification-bandwidth-and-context-adequacy.qmd",
-              "sha256": "0cebb791143519e795249f9eea10fd585facd9aa6f0e3a12ede8a7fea488766b"
+              "sha256": "8d80422a10feed7473f8b4787757c59d75f810df6b0f90b2d92b36e00d04fe3e"
             },
             {
               "path": "lean/AsiStackProofs/VerificationBandwidth.lean",
@@ -7422,7 +7422,7 @@
       "order": 19,
       "title": "Routing and Replaceable Cognitive Substrates",
       "human_reader_source_file": "chapters/unit-19-routing-and-replaceable-cognitive-substrates.qmd",
-      "human_reader_source_sha256": "08075aaaf52fe5cbb80aa909a173c04cde73ddd271f1b1e6206734ed4072c01d",
+      "human_reader_source_sha256": "e37e0bab89329490b7c266d4e3dd57e1b7b678d3ad0f1bf1e31fc6668e71be1a",
       "public_path": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html",
       "central_question": "How should a stack choose among general models, specialists, recurrence, cyclic memory, search, tools, and future substrates?",
       "conclusion_change": "Matched natural tasks showing no accepted-useful-output advantage after routing, migration, verification, and maintenance costs would favor a simpler substrate strategy.",
@@ -7608,7 +7608,7 @@
           "chapter_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
           "title": "Replaceable Cognitive Substrates: Beyond Transformer Monoculture",
           "technical_source_file": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-          "technical_source_sha256": "46ce1b2d4c92955b1982894743c624e1055e78f4ba6475004873a4f3ac68ff0e",
+          "technical_source_sha256": "c47bd8d3fd32cfb0f44ca699d234cbdc419142cb11211e4af91a83089a9bbf67",
           "live_technical_path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
           "human_reader_unit_id": "unit-19",
           "core_claim_id": "replaceable-cognitive-substrates-beyond-transformer-monoculture.core",
@@ -7681,7 +7681,14 @@
             "ext_attention_residuals_2026",
             "ext_mhc_peft_2026",
             "ext_cram_2026",
-            "ext_byteflow_2026"
+            "ext_byteflow_2026",
+            "ext_layer_sharing_orders_2021",
+            "ext_relaxed_recursive_2024",
+            "ext_loop_iso_depth_2026",
+            "ext_smelt_2026",
+            "ext_no_free_loop_2026",
+            "ext_dory_loop_budget_2026",
+            "ext_huginn_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/learning_compute_topology.md",
@@ -7749,7 +7756,14 @@
             "sources/source_notes/ext_attention_residuals_2026.md",
             "sources/source_notes/ext_mhc_peft_2026.md",
             "sources/source_notes/ext_cram_2026.md",
-            "sources/source_notes/ext_byteflow_2026.md"
+            "sources/source_notes/ext_byteflow_2026.md",
+            "sources/source_notes/ext_layer_sharing_orders_2021.md",
+            "sources/source_notes/ext_relaxed_recursive_2024.md",
+            "sources/source_notes/ext_loop_iso_depth_2026.md",
+            "sources/source_notes/ext_smelt_2026.md",
+            "sources/source_notes/ext_no_free_loop_2026.md",
+            "sources/source_notes/ext_dory_loop_budget_2026.md",
+            "sources/source_notes/ext_huginn_2025.md"
           ],
           "proof_edges": [
             {
@@ -7788,7 +7802,7 @@
           "artifact_refs": [
             {
               "path": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.qmd",
-              "sha256": "46ce1b2d4c92955b1982894743c624e1055e78f4ba6475004873a4f3ac68ff0e"
+              "sha256": "c47bd8d3fd32cfb0f44ca699d234cbdc419142cb11211e4af91a83089a9bbf67"
             },
             {
               "path": "lean/AsiStackProofs/ReplaceableCognitiveSubstrates.lean",
@@ -10321,7 +10335,7 @@
           "chapter_id": "fast-generation-architectures",
           "title": "Fast Generation Architectures",
           "technical_source_file": "chapters/fast-generation-architectures.qmd",
-          "technical_source_sha256": "d3d04eb202ac3ccf4e8a1e34e848f03c6bddaf184b734f0589264992bdf98cf1",
+          "technical_source_sha256": "7cfa130ba39cff63cfbfb8fd9d15cb1211a25002b17274da202e997322e33a3b",
           "live_technical_path": "chapters/fast-generation-architectures.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "fast-generation-architectures.core",
@@ -10375,7 +10389,9 @@
             "precision_contract",
             "ext_dflash_2026",
             "ext_d3d_2026",
-            "ext_bridgekv_2026"
+            "ext_bridgekv_2026",
+            "ext_dory_loop_budget_2026",
+            "ext_mixture_of_recursions_2025"
           ],
           "source_note_refs": [
             "sources/source_notes/cgs.md",
@@ -10424,7 +10440,9 @@
             "sources/source_notes/precision_contract.md",
             "sources/source_notes/ext_dflash_2026.md",
             "sources/source_notes/ext_d3d_2026.md",
-            "sources/source_notes/ext_bridgekv_2026.md"
+            "sources/source_notes/ext_bridgekv_2026.md",
+            "sources/source_notes/ext_dory_loop_budget_2026.md",
+            "sources/source_notes/ext_mixture_of_recursions_2025.md"
           ],
           "proof_edges": [
             {
@@ -10543,7 +10561,7 @@
           "artifact_refs": [
             {
               "path": "chapters/fast-generation-architectures.qmd",
-              "sha256": "d3d04eb202ac3ccf4e8a1e34e848f03c6bddaf184b734f0589264992bdf98cf1"
+              "sha256": "7cfa130ba39cff63cfbfb8fd9d15cb1211a25002b17274da202e997322e33a3b"
             },
             {
               "path": "scripts/validate_theseus_fast_support_lane.py",
@@ -10565,7 +10583,7 @@
           "chapter_id": "governed-deliberation-and-test-time-scaling",
           "title": "Governed Deliberation and Test-Time Scaling",
           "technical_source_file": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-          "technical_source_sha256": "d3bf66c64291f49cf427b74d1322cbdc43855f70302ef5f5be59cba1becb9cbc",
+          "technical_source_sha256": "bed1b98f09a345db3d980b364936129c813d4205f28d001db64f5a270884caf3",
           "live_technical_path": "chapters/governed-deliberation-and-test-time-scaling.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "governed-deliberation-and-test-time-scaling.core",
@@ -10584,7 +10602,10 @@
             "portia_synapse",
             "spider_synapse",
             "ext_hybrid_reasoning_agents_2026",
-            "ext_recursive_language_models_2025"
+            "ext_recursive_language_models_2025",
+            "ext_dory_loop_budget_2026",
+            "ext_huginn_2025",
+            "ext_loop_schedule_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/verification_bandwidth.md",
@@ -10598,7 +10619,10 @@
             "sources/source_notes/portia_synapse.md",
             "sources/source_notes/spider_synapse.md",
             "sources/source_notes/ext_hybrid_reasoning_agents_2026.md",
-            "sources/source_notes/ext_recursive_language_models_2025.md"
+            "sources/source_notes/ext_recursive_language_models_2025.md",
+            "sources/source_notes/ext_dory_loop_budget_2026.md",
+            "sources/source_notes/ext_huginn_2025.md",
+            "sources/source_notes/ext_loop_schedule_2026.md"
           ],
           "proof_edges": [
             {
@@ -10699,7 +10723,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-deliberation-and-test-time-scaling.qmd",
-              "sha256": "d3bf66c64291f49cf427b74d1322cbdc43855f70302ef5f5be59cba1becb9cbc"
+              "sha256": "bed1b98f09a345db3d980b364936129c813d4205f28d001db64f5a270884caf3"
             }
           ],
           "publication": {
@@ -10826,7 +10850,7 @@
           "chapter_id": "resource-economics-and-token-budgets",
           "title": "Resource Economics and Token Budgets",
           "technical_source_file": "chapters/resource-economics-and-token-budgets.qmd",
-          "technical_source_sha256": "b0aa642e23cdf4d2ad25ac99043041eb3bfa35d10e6d944ea8c229ecf6e1751f",
+          "technical_source_sha256": "e86036ccde861763a80f88339cd2c6e80a8080878bce686af478b17f2d677a4f",
           "live_technical_path": "chapters/resource-economics-and-token-budgets.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "resource-economics-and-token-budgets.core",
@@ -11154,7 +11178,7 @@
           "artifact_refs": [
             {
               "path": "chapters/resource-economics-and-token-budgets.qmd",
-              "sha256": "b0aa642e23cdf4d2ad25ac99043041eb3bfa35d10e6d944ea8c229ecf6e1751f"
+              "sha256": "e86036ccde861763a80f88339cd2c6e80a8080878bce686af478b17f2d677a4f"
             },
             {
               "path": "scripts/validate_capacity_smoothing.py",
@@ -12172,7 +12196,7 @@
           "chapter_id": "integrated-reference-architecture",
           "title": "Integrated Reference Architecture",
           "technical_source_file": "chapters/integrated-reference-architecture.qmd",
-          "technical_source_sha256": "c9bf9a406092757381c463ade5c136774e97e12f2d1e0261e30184087e5d3eec",
+          "technical_source_sha256": "d397331a402880b43d91862aa9f8afbfecf31456d181c77ab45207221dc9a359",
           "live_technical_path": "chapters/integrated-reference-architecture.html",
           "human_reader_unit_id": "unit-26",
           "core_claim_id": "integrated-reference-architecture.core",
@@ -12330,7 +12354,7 @@
           "artifact_refs": [
             {
               "path": "chapters/integrated-reference-architecture.qmd",
-              "sha256": "c9bf9a406092757381c463ade5c136774e97e12f2d1e0261e30184087e5d3eec"
+              "sha256": "d397331a402880b43d91862aa9f8afbfecf31456d181c77ab45207221dc9a359"
             },
             {
               "path": "lean/AsiStackProofs/IntegratedReferenceTrace.lean",

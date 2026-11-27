@@ -81,9 +81,94 @@ def bibtex(record):
     return "@"+kind+"{"+record["id"]+",\n"+",\n".join(f"  {k} = {{{v}}}" for k,v in fields.items())+"\n}\n"
 
 
+def normalize_url(value):
+    value = value.rstrip(".,")
+    match = re.search(r"arxiv\.org/(?:abs|pdf|html)/([0-9]+\.[0-9]+)", value)
+    return "arxiv:" + match[1] if match else value.split("#")[0].rstrip("/")
+
+
+def heading_anchor(title):
+    explicit = re.search(r"\{#([^}\s]+)[^}]*\}\s*$", title)
+    if explicit:
+        return explicit[1]
+    plain = re.sub(r"\[([^]]+)\]\([^)]*\)", r"\1", title)
+    cleaned = re.sub(r"[^\w. -]", "", plain.lower()).strip()
+    return re.sub(r"^[^a-z]+", "", cleaned).replace(" ", "-")
+
+
+def chapter_entries(chapter, text, sources, records, urls, originals):
+    anchors = {}
+    coverage = {}
+    heading, anchor, fence = "Opening decision", "", ""
+    lines = text.split("---\n", 2)[-1].splitlines()
+    for line in lines:
+        if re.match(r"^\s*(?:```|~~~)", line):
+            fence = "" if fence else line.strip()[:3]
+            continue
+        if fence:
+            continue
+        match = re.match(r"^#{1,6}\s+(.+)$", line)
+        if match:
+            heading = re.sub(r"\s*\{[^}]*\}\s*$", "", match[1])
+            slug = heading_anchor(match[1])
+            count = anchors.get(slug, 0)
+            anchors[slug] = count + 1
+            anchor = slug if not count else f"{slug}-{count}"
+        ids = set(re.findall(r"\bext_[a-zA-Z0-9_]+\b", line))
+        ids.update(re.findall(r"`([a-z][a-z0-9_]+)`", line))
+        for link in re.findall(r"\]\(([^ )]+)", line):
+            if (sid := urls.get(normalize_url(link))):
+                ids.add(sid)
+            paper = re.search(r"(?:^|/)papers/([\w-]+)\.(?:html|qmd)", link)
+            if paper and paper[1] in originals:
+                ids.add(paper[1])
+        for sid in sorted(ids & sources.keys()):
+            context = (heading + " " + line).lower()
+            if any(term in context for term in ("research lead", "unreviewed", "pending review", "recovery only")):
+                role = "Research lead"
+            elif "comparator" in context or "why existing approaches" in heading.lower() or "baseline" in heading.lower():
+                role = "Comparator"
+            elif heading.lower() in ("chapter status", "source crosswalk", "manifest source assignment reconciliation", "claim-source mapping status"):
+                role = "Source mapping"
+            elif sid in originals:
+                role = "Original work"
+            elif any(term in context for term in ("reported", "authors", "measured", "evaluated", "scored")):
+                role = "Reported evidence"
+            else:
+                role = "Passage reference"
+            coverage.setdefault(sid, {}).setdefault((anchor, role), heading)
+    ordered = dict.fromkeys([*chapter["source_ids"], *coverage])
+    entries, items = [], []
+    for sid in ordered:
+        source = sources[sid]
+        external = source["priority"] == "external_literature"
+        if external:
+            record = records[sid].copy()
+        else:
+            url = BOOK + ("papers/" + sid + ".html" if sid in originals else
+                          "products/evidence-registry/knowledge-graph/?node=source:" + sid)
+            record = dict(id=sid, title=source["title"], type="report" if sid in originals else "document",
+                          URL=url, note="Book project paper or artifact.")
+        places = coverage.get(sid, {})
+        substantive = any(role != "Source mapping" for _, role in places)
+        kind = ("Book paper or artifact" if not external else
+                "Cited in passage" if substantive else "Assigned background" if sid in chapter["source_ids"] else "Source mapping")
+        label = f'<a href="{escape(record["URL"])}">{escape(record["title"])}</a>'
+        links, notes = [], []
+        for (slug, role), title in places.items():
+            dest = BOOK + chapter["file"].replace(".qmd",".html") + ("#" + slug if slug else "")
+            links.append(f'<a href="{escape(dest)}">{escape(title)}</a> ({role})')
+            notes.append(f"{role}: {title} {dest}")
+        record["note"] += " Chapter use: " + kind + ". " + " | ".join(notes)
+        entries.append(record)
+        items.append(f'<li>{label} · {kind}' + ('<ul><li>'+'</li><li>'.join(links)+'</li></ul>' if links else '')+'</li>')
+    return entries, items
+
+
 def export(read, emit, manifest, commit):
     metadata = {r["id"]:r for r in json.loads(read(METADATA))}
-    inventory = {r["id"]:inventory_entry(r,metadata,commit) for r in json.loads(read("sources/source_inventory.json"))
+    sources = {r["id"]:r for r in json.loads(read("sources/source_inventory.json"))}
+    inventory = {r["id"]:inventory_entry(r,metadata,commit) for r in sources.values()
                  if r["priority"]=="external_literature"}
     sections = []
     def group(key, title, entries):
@@ -94,8 +179,20 @@ def export(read, emit, manifest, commit):
                 f'<a download href="{key}.bib">BibTeX</a> · <a download href="{key}.json">CSL-JSON</a></li>')
     sections.append("<h2>External sources</h2><ul>"+group("external","Complete external source inventory",inventory.values())+"</ul>")
     chapters = [c for p in json.loads(read("book_structure.json"))["parts"] for c in p["chapters"]]
-    sections.append("<h2>By chapter</h2><ul>"+"".join(group(c["id"],c["title"],
-                    [inventory[i] for i in c["source_ids"] if i in inventory]) for c in chapters)+"</ul>")
+    originals = {r["source_id"] for r in json.loads(read("papers/paper_library.json"))["records"]}
+    urls = {normalize_url(url):sid for sid, source in sources.items()
+            for url in (source.get("url"), metadata.get(sid,{}).get("metadata_url")) if url}
+    chapter_links = []
+    for c in chapters:
+        entries, items = chapter_entries(c, read(c["file"]).decode(), sources, inventory, urls, originals)
+        details = c["id"]+".html"
+        title = escape(c["title"])
+        chapter_links.append(group(c["id"], c["title"], entries).replace("</li>", f' · <a href="{details}">Passages and roles</a></li>'))
+        emit(details, '<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">'
+             f'<title>{title} · References</title><main><p><a href="index.html">Bibliographies</a></p><h1>{title}</h1>'
+             f'<p><a href="{c["id"]}.bib">BibTeX</a> · <a href="{c["id"]}.json">CSL-JSON</a></p><ol>'
+             + "".join(items) + "</ol></main></html>")
+    sections.append("<h2>By chapter</h2><ul>"+"".join(chapter_links)+"</ul>")
     study_links = []
     for s in manifest["studies"]:
         sid = s["id"]
@@ -125,6 +222,10 @@ def export(read, emit, manifest, commit):
                 **{"container-title":"Immunity"}))
             add("scifact-open-data","SciFact-Open archive","https://scifact.s3.us-west-2.amazonaws.com/scifact-open/latest/scifact_open.tar.gz","dataset","Archive SHA-256 8f4dc238b2eff422bab5c7918fcbddb6996b29d37cb887942ef6ee1a16fb3415.")
         if sid=="forward-transfer":
+            upstream = json.loads(read("experiments/sygus_forward_transfer/inputs.json"))
+            add("sygus-2017-general-hd", "SyGuS 2017 General Track Hacker’s Delight benchmarks",
+                upstream["repository"]+"/tree/"+upstream["revision"]+"/comp/2017/General_Track",
+                "dataset", "Pinned upstream tasks. The external protocol freezes the selected files and their SHA-256 digests.", "SyGuS-Org")
             add("forward_transfer_program_synthesis","From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis",BOOK+s["paper"],"report","Original August 2026 manuscript with collaborator credits preserved.","Corben Sorenson")
         if sid=="claim-review":
             add("answerability_atlas_synthesis","What an Answerability Atlas Can and Cannot Do",BOOK+"papers/answerability_atlas_synthesis.html","report","Audited synthesis, October 2026. The study protocol identifies the superseded and corrected comparisons.","Answerability Atlas Project")
@@ -142,5 +243,5 @@ def export(read, emit, manifest, commit):
     sections.insert(1,"<h2>By study</h2><ul>"+"".join(study_links)+"</ul>")
     return (f'<p>{len(metadata)} external records have publisher bylines checked against the work title. '
             'Other records retain available inventory fields. Source notes identify which edition or data release informed the chapter. '
-            'Study collections include the pinned experimental protocols and their direct inputs. Chapter collections contain assigned external sources.</p>'
+            'Study collections include the pinned experimental protocols and their direct inputs. Chapter collections distinguish cited passages, assigned background, and project papers or artifacts. Each passage link identifies how the chapter uses the work.</p>'
             +"".join(sections))

@@ -99,6 +99,15 @@ def evidence_entries(site: Path, commit: str) -> list[dict]:
                 pages[uri.path] = (site / uri.path).read_text(encoding="utf-8")
             if uri.fragment and f'id="{uri.fragment}"' not in pages[uri.path]:
                 raise ValueError(f'Research search anchor missing: {destination["url"]}')
+            if record.get("measurement") == "Case identifier":
+                # The full graph packet retains outcomes, source, scope and citation.
+                # Search only needs the exact identity and its landing page.
+                compact = {key: record[key] for key in ("id","title","aliases","measurement","url")}
+                entries.append({"objectID": "asi-evidence:" + record["id"], "href": destination["url"],
+                                "title": title, "section": category, "text": record["question"], "crumbs": [],
+                                "evidence_id":record["id"], "evidence_kind":category, "asi_scope":"evidence",
+                                "evidence_primary":True, "evidence":compact})
+                continue
             entries.append({"objectID": f'asi-evidence:{record["id"]}:{destination["url"]}',
                             "href": destination["url"], "title": title,
                             "section": destination.get("label", category),

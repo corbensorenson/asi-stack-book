@@ -9,7 +9,7 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 - `cached_existing`: 40
 - `connector_readable`: 7
 - `source_note_available_public_project`: 32
-- `source_note_available_uncached`: 534
+- `source_note_available_uncached`: 545
 
 ## Records
 
@@ -628,3 +628,14 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_probelogits_2026` | ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_exomem_2026` | ExoMem: OS-Governed Memory for Local Large-LLM Inference on Mobile Edge Devices | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_weightbench_2026` | WeightBench: Evaluating Language Models as Weight-Space Programmers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_scifact_2020` | Fact or Fiction: Verifying Scientific Claims | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_scifact_open_2022` | SciFact-Open: Towards open-domain scientific claim verification | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_layer_sharing_orders_2021` | Lessons on Parameter Sharing across Layers in Transformers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_relaxed_recursive_2024` | Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_loop_iso_depth_2026` | How Much Is One Recurrence Worth? Iso-Depth Scaling Laws for Looped Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_smelt_2026` | SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_no_free_loop_2026` | There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute? | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_dory_loop_budget_2026` | Dory1.0-4B: A Looped Normalized-GPT | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mixture_of_recursions_2025` | Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_huginn_2025` | Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_loop_schedule_2026` | Loop-Count Schedules in Looped Transformers: An Empirical Study | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

@@ -8,6 +8,7 @@ import re
 
 
 ARM_LABELS = {
+    "none": "No library", "whole": "Whole programs", "routines": "Extracted routines",
     "direct": "Direct fallback", "gateway": "Gateway fallback",
     "tfidf_tfidf": "TF–IDF at both stages", "tfidf_coverage": "Change sentence selection",
     "bm25_tfidf": "Change document ranking", "bm25_coverage": "Change both stages",
@@ -327,8 +328,24 @@ def publication_cases(result):
                    arms, adverse=any(row["closed"] and not row["truth"] for row in record["arms"].values()))
 
 
+def sygus_cases(result):
+    groups = {}
+    for row in result["cases"]:
+        arms = groups.setdefault((row["family"], row["task"], row["schedule"]), {})
+        outcome = row["solution"] or row["stop"]
+        work = (f'{row["proposals"]:,} proposals, {row["screen_ops"]:,} primitive evaluations, '
+                f'{row["solver_checks"]} universal checks; search {row["search_ns"]/1e9:.3f} s, '
+                f'verification {row["verify_ns"]/1e9:.3f} s')
+        arms[row["arm"]] = arm(outcome, work, row["stop"])
+    for (family, task, schedule), arms in groups.items():
+        yield case(f"{task}-{schedule}", f"{family} · {task} · {schedule}", arms,
+                   exhausted=any("cap" in v["outcome"] for v in arms.values()))
+
+
 def rows_for(format_id, result):
-    if format_id == "matched_publication":
+    if format_id == "sygus_external":
+        rows = sygus_cases(result)
+    elif format_id == "matched_publication":
         rows = publication_cases(result)
     elif format_id == "verification_arrivals":
         rows = arrival_cases(result)

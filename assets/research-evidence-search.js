@@ -25,12 +25,13 @@ const asiEvidenceSearch = (() => {
       const primary = terms([identity, title, question, ...aliases, ...(record.unmeasured || []), ...identifiers].join(" "));
       const decision = terms([question, record.summary, record.disposition, record.method].join(" "));
       const scope = terms([record.limit, record.measurement, ...(record.unmeasured || [])].join(" "));
-      for (const word of new Set([...primary, ...decision, ...scope])) {
+      for (const word of (record.measurement === "Case identifier" ? [] : new Set([...primary, ...decision, ...scope]))) {
         frequency.set(word, (frequency.get(word) || 0) + 1);
       }
       return {record, identity, title, aliases, question, primary, decision, scope, identifiers};
     });
-    const weight = word => 1 + Math.log((documents.length + 1) / ((frequency.get(word) || 0) + 1));
+    const fullCount = records.filter(row => row.measurement !== "Case identifier").length;
+    const weight = word => 1 + Math.log((fullCount + 1) / ((frequency.get(word) || 0) + 1));
 
     return function search(query) {
       const normalized = normalize(query);
@@ -54,6 +55,8 @@ const asiEvidenceSearch = (() => {
         } else if ([title, document.question, ...aliases].includes(normalized)) {
           score = 900;
           reason = "Exact title, question or alias";
+        } else if (record.measurement === "Case identifier") {
+          return [];
         } else if ([title, ...aliases].some(field => phrase(field, normalized))) {
           score = 800;
           reason = "Phrase in title or alias";

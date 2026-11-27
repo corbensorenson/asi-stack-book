@@ -10739,5 +10739,152 @@
     "citation_label": "Wadden et al. (2022), SciFact-Open",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "Pooled highlights are model suggestions. Flattened citation-derived highlights can combine alternative human rationales. An unassessed paper may be relevant."
+  },
+  {
+    "id": "ext_layer_sharing_orders_2021",
+    "title": "Lessons on Parameter Sharing across Layers in Transformers",
+    "priority": "external_literature",
+    "layer": "layer_sharing_orders",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2104.06022",
+    "notes": "Consecutive, cyclic and reversed reuse change which hidden state each block sees on its next visit.",
+    "source_type": "preprint",
+    "published": "2021-04-13",
+    "citation_label": "Takase et al. (2021), Lessons on Parameter Sharing across Layers in Transformers",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The ranking depends on the translation setting and budget."
+  },
+  {
+    "id": "ext_relaxed_recursive_2024",
+    "title": "Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+    "priority": "external_literature",
+    "layer": "relaxed_recursive",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2410.20672",
+    "notes": "A shared matrix plus small depth-specific low-rank updates lets individual passes specialize.",
+    "source_type": "preprint",
+    "published": "2024-10-28",
+    "citation_label": "Bae et al. (2024), Relaxed Recursive Transformers: Effective Parameter Sharing with Layer-wise LoRA",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The proposed continuous depth-batching throughput gain was modeled."
+  },
+  {
+    "id": "ext_loop_iso_depth_2026",
+    "title": "How Much Is One Recurrence Worth? Iso-Depth Scaling Laws for Looped Language Models",
+    "priority": "external_literature",
+    "layer": "loop_iso_depth",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2604.21106",
+    "notes": "A dense iso-depth sweep separates resident parameter savings from the training computation needed to recover validation loss.",
+    "source_type": "preprint",
+    "published": "2026-04-22",
+    "citation_label": "Schwethelm et al. (2026), How Much Is One Recurrence Worth? Iso-Depth Scaling Laws for Looped Language Models",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The fitted recurrence exponent describes the sweep and its validation loss."
+  },
+  {
+    "id": "ext_smelt_2026",
+    "title": "SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+    "priority": "external_literature",
+    "layer": "smelt",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2609.01343",
+    "notes": "A sparse mixture-of-experts architecture repeats the middle half twice while balancing active work, parameter count and cache.",
+    "source_type": "preprint",
+    "published": "2026-09-01",
+    "citation_label": "Wang et al. (2026), SMELT: Scaling Laws for Compute-Matched MoE Looped Transformers",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "A fitted sparse-model frontier cannot be imported as a dense inference speedup."
+  },
+  {
+    "id": "ext_no_free_loop_2026",
+    "title": "There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+    "priority": "external_literature",
+    "layer": "no_free_loop",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture"
+    ],
+    "url": "https://arxiv.org/abs/2610.42030",
+    "notes": "Retrofit a pretrained decoder and compare with keeping it untied and with alternative uses of the same inference budget.",
+    "source_type": "preprint",
+    "published": "2026-10-30",
+    "citation_label": "Sukthanker et al. (2026), There Is No Free Loop: When Does Looping a Trained Model Pay for Its Inference Compute?",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Scale, tuning protocol and benchmark selection bound the result."
+  },
+  {
+    "id": "ext_dory_loop_budget_2026",
+    "title": "Dory1.0-4B: A Looped Normalized-GPT",
+    "priority": "external_literature",
+    "layer": "dory_loop_budget",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "fast-generation-architectures",
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2611.03998",
+    "notes": "A normalized transformer reuses its middle block at different inference depths and retains the last loop’s decoding cache.",
+    "source_type": "preprint",
+    "published": "2026-11-02",
+    "citation_label": "Fishman et al. (2026), Dory1.0-4B: A Looped Normalized-GPT",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The base accuracy table gives no workload-specific latency or cost per accepted answer."
+  },
+  {
+    "id": "ext_mixture_of_recursions_2025",
+    "title": "Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation",
+    "priority": "external_literature",
+    "layer": "mixture_of_recursions",
+    "chapter_targets": [
+      "fast-generation-architectures"
+    ],
+    "url": "https://arxiv.org/abs/2507.10524",
+    "notes": "A lightweight router assigns individual tokens to further passes and changes the set of cached keys and values.",
+    "source_type": "preprint",
+    "published": "2025-07-14",
+    "citation_label": "Bae et al. (2025), Mixture-of-Recursions: Learning Dynamic Recursive Depths for Adaptive Token-Level Computation",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Throughput depends on the batch, implementation and quality target."
+  },
+  {
+    "id": "ext_huginn_2025",
+    "title": "Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "priority": "external_literature",
+    "layer": "huginn",
+    "chapter_targets": [
+      "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2502.05171",
+    "notes": "A recurrent core between input and output layers spends compute before producing the next token.",
+    "source_type": "preprint",
+    "published": "2025-02-07",
+    "citation_label": "Geiping et al. (2025), Scaling up Test-Time Compute with Latent Reasoning: A Recurrent Depth Approach",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Extra latent depth benefits selected tasks and costs another core execution."
+  },
+  {
+    "id": "ext_loop_schedule_2026",
+    "title": "Loop-Count Schedules in Looped Transformers: An Empirical Study",
+    "priority": "external_literature",
+    "layer": "loop_schedule",
+    "chapter_targets": [
+      "governed-deliberation-and-test-time-scaling"
+    ],
+    "url": "https://arxiv.org/abs/2611.29704",
+    "notes": "The distribution of loop counts during training affects how a gated recurrent update acts at later inference depths.",
+    "source_type": "preprint",
+    "published": "2026-11-22",
+    "citation_label": "Kolokolov (2026), Loop-Count Schedules in Looped Transformers: An Empirical Study",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The November preprint studies a 46M–110M ladder on 2B tokens."
   }
 ]
