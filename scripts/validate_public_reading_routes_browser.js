@@ -137,7 +137,7 @@ async function checkResearchFacets(context) {
     await record.getByRole("link", {name: "Answerability Atlas original proceed decision (superseded)", exact: true}).waitFor();
     await record.getByRole("link", {name: "Corrected comparator pool and Table 5"}).click();
     const atlas = page.locator("#completing-the-comparator-pool");
-    assert(await atlas.isVisible());
+    await atlas.waitFor({state: "visible"});
     assert.match(await atlas.innerText(), /0\.035299/);
     const proof = "proof_target:lean:circle_contracts.public_consumer_gate.fixture_bridge";
     await page.goto(graphRoute + encodeURIComponent(proof));
@@ -316,7 +316,10 @@ async function checkEditorialRoutes(context) {
     const labels = ["Read the book", "Inspect a result", "Find a technical contract"];
     const primaryLinks = entry.locator(".book-route strong a");
     assert.deepEqual(await primaryLinks.allTextContents(), labels);
-    assert.match(await entry.innerText(), /verified 80 closures/);
+    const decision = await entry.innerText();
+    assert.match(decision, /verified closures from 48 to 80/);
+    assert.match(decision, /8\/8 fallbacks/);
+    assert.match(decision, /2,033 response bytes per verified fallback/);
     const routes = await primaryLinks.evaluateAll(links => links.map(link => link.href));
     for (const href of routes) {
       const response = await page.goto(href);
