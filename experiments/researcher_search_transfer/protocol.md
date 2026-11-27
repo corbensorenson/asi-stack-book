@@ -1,0 +1,3 @@
+# Does a different clue reach the evidence?
+
+Freeze these eight additional researcher queries and their deciding anchors before changing the catalog or ranking. Compare the first three distinct destination links in the deployed ordinary search, before and after the changes. Give credit only for an exact page section, count first place separately, and retain all misses. Heading, identifier, numerical-unit and measurement-limit lookups are the four query families. Single authored set, no people or timing outcomes. Do not use the additional queries as catalog aliases or tune on their post-change results.
