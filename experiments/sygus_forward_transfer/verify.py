@@ -28,7 +28,10 @@ def verify(data, tasks):
         if row["stop"] == "verified":
             args, target, grammar = tasks[key[0]]
             expr = row["solution"]
-            trees = run.parse(expr) if isinstance(expr, str) else []
+            try:
+                trees = run.parse(expr) if isinstance(expr, str) else []
+            except (IndexError, ValueError) as exc:
+                raise ValueError(where + ": malformed witness") from exc
             if len(trees) != 1 or not legal(trees[0], grammar):
                 raise ValueError(where + ": missing or illegal witness")
             if run.different(args, target, trees[0]) != "unsat":

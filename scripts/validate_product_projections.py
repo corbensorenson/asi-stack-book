@@ -238,19 +238,22 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 errors.append(f"Release replay failed without identifying the observation: {field}")
         else:
             errors.append(f"Release replay accepted an inconsistent observation: {field}")
-    dictionary_dir = registry / "knowledge-graph"
-    terms = load(dictionary_dir / "dictionary.json")["terms"]
-    terms_by_id = {r["id"]:r for r in terms}
-    vocabulary = load(ROOT / "products/ai_dictionary.json")
-    for row in vocabulary:
-        key = "concept:" + graph.research_dictionary.term_id(row["term"])
-        if key not in terms_by_id or terms_by_id[key]["aliases"] != row["aliases"]:
-            errors.append("Dictionary term or aliases missing: "+key)
     if site:
+        dictionary_dir = registry / "knowledge-graph"
+        terms = load(dictionary_dir / "dictionary.json")["terms"]
+        terms_by_id = {r["id"]:r for r in terms}
+        vocabulary = load(ROOT / "products/ai_dictionary.json")
+        for row in vocabulary:
+            key = "concept:" + graph.research_dictionary.term_id(row["term"])
+            if key not in terms_by_id or terms_by_id[key]["aliases"] != row["aliases"]:
+                errors.append("Dictionary term or aliases missing: "+key)
         subject = load(dictionary_dir / "subject-index.json")
         occurrences = load(dictionary_dir / "concordance.json")
-        if subject["source_commit"] != source_commit or occurrences["source_commit"] != source_commit:
+        works = load(dictionary_dir / "works.json")
+        if any(index["source_commit"] != source_commit for index in (subject, occurrences, works)):
             errors.append("Terminology indexes use a different revision")
+        if {r["id"] for r in works["works"]} != {"source:"+r["id"] for r in load(ROOT / graph.INVENTORY)}:
+            errors.append("Works index differs from the book source inventory")
         if len(subject["volumes"]) != len(expected)-1 + len(load(ROOT / graph.READER_MANIFEST)["units"]):
             errors.append("Subject index lacks complete edition coverage")
         if not occurrences["occurrences"].get("concept:transformer"):

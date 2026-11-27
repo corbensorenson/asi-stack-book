@@ -36,13 +36,14 @@ def shell(title, intro, body):
             'a{color:#165687} input{font:inherit;padding:.45rem;width:min(96%,28rem)} nav a{margin-right:.65rem} article{border-top:1px solid #aaa;padding:.4rem 0}'
             'h3{margin-bottom:.3rem} p{margin:.3rem 0 .8rem} :target{scroll-margin:1.5rem} [hidden]{display:none}</style>'
             f'<main><nav><a href="../../../index.html">Book</a><a href="index.html">Knowledge graph</a><a href="dictionary.html">Dictionary</a>'
-            f'<a href="subject-index.html">Subject index</a><a href="concordance.html">Term occurrences</a></nav><h1>{title}</h1><p>{intro}</p><label for="filter">Filter entries</label><br>'
+            f'<a href="subject-index.html">Subject index</a><a href="concordance.html">Term occurrences</a><a href="works.html">Sources</a></nav><h1>{title}</h1><p>{intro}</p><label for="filter">Filter entries</label><br>'
             '<input id="filter" type="search"><p role="status" id="count"></p>'+body+'</main>'
             '<script>const input=document.getElementById("filter"), rows=Array.from(document.querySelectorAll("[data-entry]"));'
             'function filter(){const q=input.value.trim().toLocaleLowerCase();let n=0;for(const r of rows){r.hidden=!!q&&!r.textContent.toLocaleLowerCase().includes(q);if(!r.hidden)n++}'
             'for(const s of document.querySelectorAll("[data-group]"))s.hidden=!s.querySelector("[data-entry]:not([hidden])");'
             'document.getElementById("count").textContent=n+" matching entries"}input.addEventListener("input",filter);filter();'
-            'window.addEventListener("hashchange",()=>{input.value="";filter();document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView()});</script></html>')
+            'function openDestination(){const el=document.getElementById(location.hash.slice(1));if(!el)return;if(el.tagName==="DETAILS")el.open=true;el.scrollIntoView()}'
+            'window.addEventListener("hashchange",()=>{input.value="";filter();openDestination()});openDestination();</script></html>')
 
 
 def dictionary_files(graph):
@@ -76,7 +77,38 @@ def dictionary_files(graph):
     body += ''.join(f'<section data-group id="letter-{escape(k)}"><h2>{escape(k)}</h2>{"".join(v)}</section>' for k,v in letters.items())
     html = shell("AI dictionary", f'{len(rows)} definitions from the book and its technical vocabulary. Search a term, abbreviation or definition. '
                  '<a href="dictionary.json" download>Download the dictionary</a>. The subject index also lists topics without a standalone definition.', body)
-    return {"dictionary.html":html.encode(), "dictionary.json":(json.dumps(dict(source_commit=graph["source_commit"],terms=rows),ensure_ascii=False)+"\n").encode()}
+    works = works_index(graph, nodes)
+    return {"dictionary.html":html.encode(), "dictionary.json":(json.dumps(dict(source_commit=graph["source_commit"],terms=rows),ensure_ascii=False)+"\n").encode(),
+            **works}
+
+
+def works_index(graph, nodes):
+    chapter_ids = defaultdict(set)
+    for edge in graph["edges"]:
+        if edge["predicate"] == "assigned_to":
+            chapter_ids[edge["from"]].add(edge["to"])
+        elif edge["predicate"] == "lists_source":
+            chapter_ids[edge["to"]].add(edge["from"])
+    records, entries = [], []
+    sources = sorted((n for n in nodes.values() if n["kind"] == "source"), key=lambda n: (n["title"].casefold(), n["id"]))
+    for node in sources:
+        key = node["id"]
+        records.append({"id": key, "title": node["title"], "source_record": node["url"],
+                        "primary_url": node.get("primary_url"), "chapters": sorted(chapter_ids[key])})
+        links = [f'<a href="../../../{escape(node["url"])}">Book source record</a>',
+                 f'<a href="index.html?node={quote(key)}">Graph record</a>']
+        if node.get("primary_url"):
+            links.append(f'<a href="{escape(node["primary_url"])}">Primary source</a>')
+        chapters = [f'<a href="../../../{escape(nodes[c]["url"])}">{escape(nodes[c]["title"])}</a>'
+                    for c in sorted(chapter_ids[key])]
+        destinations = f'<p>Chapter assignments · {" · ".join(chapters)}</p>' if chapters else ''
+        entries.append(f'<article data-entry id="{escape(key)}"><h3>{escape(node["title"])}</h3>'
+                       f'<p>{escape(key)}</p><p>{" · ".join(links)}</p>{destinations}</article>')
+    intro = (f'{len(records)} sources from the book’s inventory. Find a paper or project by title, identifier or assigned chapter. '
+             'Chapter assignments describe editorial placement. Each chapter bibliography provides its citation context. '
+             '<a href="works.json" download>Download the source index</a>.')
+    return {"works.html": shell("Index of sources", intro, "".join(entries)).encode(),
+            "works.json": (json.dumps(dict(source_commit=graph["source_commit"], works=records), ensure_ascii=False)+"\n").encode()}
 
 
 class Headings(HTMLParser):
