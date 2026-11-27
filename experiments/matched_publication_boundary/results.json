@@ -1,0 +1,3911 @@
+{
+  "n": 96,
+  "totals": {
+    "primary_only": {
+      "verified": 16,
+      "false_closures": 0,
+      "unresolved": 80,
+      "caller_requests": 96,
+      "requests": 96,
+      "body_bytes": 2672,
+      "median_decision_us": 369.0,
+      "median_verified_us": 379.8
+    },
+    "direct": {
+      "verified": 24,
+      "false_closures": 0,
+      "unresolved": 72,
+      "caller_requests": 144,
+      "requests": 144,
+      "body_bytes": 4008,
+      "median_decision_us": 610.6,
+      "median_verified_us": 416.3
+    },
+    "gateway": {
+      "verified": 24,
+      "false_closures": 0,
+      "unresolved": 72,
+      "caller_requests": 96,
+      "requests": 240,
+      "body_bytes": 7488,
+      "median_decision_us": 878.4,
+      "median_verified_us": 864.2
+    }
+  },
+  "strata": {
+    "up-shared": {
+      "primary_only": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 1072,
+        "median_decision_us": 385.9,
+        "median_verified_us": 385.9
+      },
+      "direct": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 1072,
+        "median_decision_us": 389.5,
+        "median_verified_us": 365.7
+      },
+      "gateway": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 48,
+        "body_bytes": 2144,
+        "median_decision_us": 646.6,
+        "median_verified_us": 699.7
+      }
+    },
+    "up-separate": {
+      "primary_only": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 1072,
+        "median_decision_us": 369.0,
+        "median_verified_us": 373.5
+      },
+      "direct": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 1072,
+        "median_decision_us": 341.0,
+        "median_verified_us": 350.2
+      },
+      "gateway": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 48,
+        "body_bytes": 2144,
+        "median_decision_us": 656.9,
+        "median_verified_us": 701.7
+      }
+    },
+    "down-shared": {
+      "primary_only": {
+        "verified": 0,
+        "false_closures": 0,
+        "unresolved": 24,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 264,
+        "median_decision_us": 393.5,
+        "median_verified_us": null
+      },
+      "direct": {
+        "verified": 0,
+        "false_closures": 0,
+        "unresolved": 24,
+        "caller_requests": 48,
+        "requests": 48,
+        "body_bytes": 528,
+        "median_decision_us": 628.9,
+        "median_verified_us": null
+      },
+      "gateway": {
+        "verified": 0,
+        "false_closures": 0,
+        "unresolved": 24,
+        "caller_requests": 24,
+        "requests": 72,
+        "body_bytes": 792,
+        "median_decision_us": 1088.2,
+        "median_verified_us": null
+      }
+    },
+    "down-separate": {
+      "primary_only": {
+        "verified": 0,
+        "false_closures": 0,
+        "unresolved": 24,
+        "caller_requests": 24,
+        "requests": 24,
+        "body_bytes": 264,
+        "median_decision_us": 351.0,
+        "median_verified_us": null
+      },
+      "direct": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 48,
+        "requests": 48,
+        "body_bytes": 1336,
+        "median_decision_us": 798.8,
+        "median_verified_us": 764.1
+      },
+      "gateway": {
+        "verified": 8,
+        "false_closures": 0,
+        "unresolved": 16,
+        "caller_requests": 24,
+        "requests": 72,
+        "body_bytes": 2408,
+        "median_decision_us": 1390.7,
+        "median_verified_us": 1426.3
+      }
+    }
+  },
+  "cases": [
+    {
+      "id": "click-exact-up-shared",
+      "task": "pallets/click",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1702833
+        },
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 641292
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1157000
+        }
+      }
+    },
+    {
+      "id": "click-exact-up-separate",
+      "task": "pallets/click",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 392458
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 713000
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 375667
+        }
+      }
+    },
+    {
+      "id": "click-exact-down-shared",
+      "task": "pallets/click",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1206125
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 288875
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 641458
+        }
+      }
+    },
+    {
+      "id": "click-exact-down-separate",
+      "task": "pallets/click",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 290875
+        },
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 531666
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 953541
+        }
+      }
+    },
+    {
+      "id": "click-absent-up-shared",
+      "task": "pallets/click",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 278667
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 492166
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 387959
+        }
+      }
+    },
+    {
+      "id": "click-absent-up-separate",
+      "task": "pallets/click",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 544125
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 269583
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 254500
+        }
+      }
+    },
+    {
+      "id": "click-absent-down-shared",
+      "task": "pallets/click",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 248750
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 422583
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 754833
+        }
+      }
+    },
+    {
+      "id": "click-absent-down-separate",
+      "task": "pallets/click",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 864791
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1115042
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 249875
+        }
+      }
+    },
+    {
+      "id": "click-wrong-up-shared",
+      "task": "pallets/click",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 538708
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 281250
+        },
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 241667
+        }
+      }
+    },
+    {
+      "id": "click-wrong-up-separate",
+      "task": "pallets/click",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 217583
+        },
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 201875
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 572541
+        }
+      }
+    },
+    {
+      "id": "click-wrong-down-shared",
+      "task": "pallets/click",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 555959
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 721291
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 250042
+        }
+      }
+    },
+    {
+      "id": "click-wrong-down-separate",
+      "task": "pallets/click",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 875041
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 292416
+        },
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 624167
+        }
+      }
+    },
+    {
+      "id": "flask-exact-up-shared",
+      "task": "pallets/flask",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 284584
+        },
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 265500
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 515708
+        }
+      }
+    },
+    {
+      "id": "flask-exact-up-separate",
+      "task": "pallets/flask",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 276541
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 608125
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 313625
+        }
+      }
+    },
+    {
+      "id": "flask-exact-down-shared",
+      "task": "pallets/flask",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 751791
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 251791
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 470500
+        }
+      }
+    },
+    {
+      "id": "flask-exact-down-separate",
+      "task": "pallets/flask",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 235459
+        },
+        "direct": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 574334
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "1f2de14735b1ee9d3a342fa7c5d5e87b95727276c0a56c8a9d77221f37880602",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 790917
+        }
+      }
+    },
+    {
+      "id": "flask-absent-up-shared",
+      "task": "pallets/flask",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 326334
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 630208
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 290167
+        }
+      }
+    },
+    {
+      "id": "flask-absent-up-separate",
+      "task": "pallets/flask",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 555834
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 485875
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 321791
+        }
+      }
+    },
+    {
+      "id": "flask-absent-down-shared",
+      "task": "pallets/flask",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 267250
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 617500
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1687083
+        }
+      }
+    },
+    {
+      "id": "flask-absent-down-separate",
+      "task": "pallets/flask",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 801666
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1683500
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 403958
+        }
+      }
+    },
+    {
+      "id": "flask-wrong-up-shared",
+      "task": "pallets/flask",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1264750
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 445959
+        },
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 412500
+        }
+      }
+    },
+    {
+      "id": "flask-wrong-up-separate",
+      "task": "pallets/flask",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 549500
+        },
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 682500
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1263125
+        }
+      }
+    },
+    {
+      "id": "flask-wrong-down-shared",
+      "task": "pallets/flask",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 555958
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1629708
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 515167
+        }
+      }
+    },
+    {
+      "id": "flask-wrong-down-separate",
+      "task": "pallets/flask",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1248625
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 374292
+        },
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 2549666
+        }
+      }
+    },
+    {
+      "id": "httpx-exact-up-shared",
+      "task": "encode/httpx",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 657041
+        },
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 491959
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 759709
+        }
+      }
+    },
+    {
+      "id": "httpx-exact-up-separate",
+      "task": "encode/httpx",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 399542
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1142750
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 371292
+        }
+      }
+    },
+    {
+      "id": "httpx-exact-down-shared",
+      "task": "encode/httpx",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1125791
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 491333
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 1074500
+        }
+      }
+    },
+    {
+      "id": "httpx-exact-down-separate",
+      "task": "encode/httpx",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 353708
+        },
+        "direct": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 1278917
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "d58f476c1273c9c06c978467c6596620d3840ea8c99ba9d32300ab3286f0e0c3",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1041166
+        }
+      }
+    },
+    {
+      "id": "httpx-absent-up-shared",
+      "task": "encode/httpx",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 346000
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 634541
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 303875
+        }
+      }
+    },
+    {
+      "id": "httpx-absent-up-separate",
+      "task": "encode/httpx",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 571334
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 241083
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 270625
+        }
+      }
+    },
+    {
+      "id": "httpx-absent-down-shared",
+      "task": "encode/httpx",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 360208
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 628291
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 869166
+        }
+      }
+    },
+    {
+      "id": "httpx-absent-down-separate",
+      "task": "encode/httpx",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 675666
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1070416
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 338500
+        }
+      }
+    },
+    {
+      "id": "httpx-wrong-up-shared",
+      "task": "encode/httpx",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 822000
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 557167
+        },
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 395000
+        }
+      }
+    },
+    {
+      "id": "httpx-wrong-up-separate",
+      "task": "encode/httpx",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 335750
+        },
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 298667
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 623416
+        }
+      }
+    },
+    {
+      "id": "httpx-wrong-down-shared",
+      "task": "encode/httpx",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 619000
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 902334
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 353000
+        }
+      }
+    },
+    {
+      "id": "httpx-wrong-down-separate",
+      "task": "encode/httpx",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1316458
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 327041
+        },
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 664167
+        }
+      }
+    },
+    {
+      "id": "requests-exact-up-shared",
+      "task": "psf/requests",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 383917
+        },
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 366916
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 634042
+        }
+      }
+    },
+    {
+      "id": "requests-exact-up-separate",
+      "task": "psf/requests",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 353667
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 3455084
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 610875
+        }
+      }
+    },
+    {
+      "id": "requests-exact-down-shared",
+      "task": "psf/requests",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 2725834
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 973916
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 3236084
+        }
+      }
+    },
+    {
+      "id": "requests-exact-down-separate",
+      "task": "psf/requests",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 1602416
+        },
+        "direct": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 2395625
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "2a9268c9be5f4dc9abe9105740be7c5234babc3dd2b25eb11ca376c538a0c67b",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 2508375
+        }
+      }
+    },
+    {
+      "id": "requests-absent-up-shared",
+      "task": "psf/requests",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 611292
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 753625
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1477000
+        }
+      }
+    },
+    {
+      "id": "requests-absent-up-separate",
+      "task": "psf/requests",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 2101291
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1285500
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 634541
+        }
+      }
+    },
+    {
+      "id": "requests-absent-down-shared",
+      "task": "psf/requests",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 2428750
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 2690625
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 6183167
+        }
+      }
+    },
+    {
+      "id": "requests-absent-down-separate",
+      "task": "psf/requests",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 2710709
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 2514250
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 819125
+        }
+      }
+    },
+    {
+      "id": "requests-wrong-up-shared",
+      "task": "psf/requests",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 2228875
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1518833
+        },
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1258083
+        }
+      }
+    },
+    {
+      "id": "requests-wrong-up-separate",
+      "task": "psf/requests",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 638292
+        },
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1167084
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 940458
+        }
+      }
+    },
+    {
+      "id": "requests-wrong-down-shared",
+      "task": "psf/requests",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 1234167
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1459750
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 392542
+        }
+      }
+    },
+    {
+      "id": "requests-wrong-down-separate",
+      "task": "psf/requests",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 2256834
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 386375
+        },
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 705042
+        }
+      }
+    },
+    {
+      "id": "jinja-exact-up-shared",
+      "task": "pallets/jinja",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 357541
+        },
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 363208
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 857625
+        }
+      }
+    },
+    {
+      "id": "jinja-exact-up-separate",
+      "task": "pallets/jinja",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 433125
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 690417
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 595000
+        }
+      }
+    },
+    {
+      "id": "jinja-exact-down-shared",
+      "task": "pallets/jinja",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1178167
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 442250
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 871083
+        }
+      }
+    },
+    {
+      "id": "jinja-exact-down-separate",
+      "task": "pallets/jinja",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 328541
+        },
+        "direct": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 2286375
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "171bcabd913f25f143eae912d6f23f340d0bc887a305655107f28fb29c73ecfa",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1811458
+        }
+      }
+    },
+    {
+      "id": "jinja-absent-up-shared",
+      "task": "pallets/jinja",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 653459
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 659917
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 349458
+        }
+      }
+    },
+    {
+      "id": "jinja-absent-up-separate",
+      "task": "pallets/jinja",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 801708
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1022000
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1017250
+        }
+      }
+    },
+    {
+      "id": "jinja-absent-down-shared",
+      "task": "pallets/jinja",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 394459
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 658792
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 886083
+        }
+      }
+    },
+    {
+      "id": "jinja-absent-down-separate",
+      "task": "pallets/jinja",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 1744250
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 3357584
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 605250
+        }
+      }
+    },
+    {
+      "id": "jinja-wrong-up-shared",
+      "task": "pallets/jinja",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 781333
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 575625
+        },
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 631292
+        }
+      }
+    },
+    {
+      "id": "jinja-wrong-up-separate",
+      "task": "pallets/jinja",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 325541
+        },
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1175042
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 714500
+        }
+      }
+    },
+    {
+      "id": "jinja-wrong-down-shared",
+      "task": "pallets/jinja",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 896708
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 2932666
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 508583
+        }
+      }
+    },
+    {
+      "id": "jinja-wrong-down-separate",
+      "task": "pallets/jinja",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 2707167
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 966750
+        },
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 1949292
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-exact-up-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1156500
+        },
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 1116750
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1210208
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-exact-up-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 346708
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 2184083
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 538250
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-exact-down-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1791125
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 494791
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 1030250
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-exact-down-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 558583
+        },
+        "direct": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 637750
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "a3e791c4af02a2575518d650c01775f63fe152526b3798064ab64d244c1c6208",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1881583
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-absent-up-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 773625
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 786125
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1003542
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-absent-up-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 722458
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1129333
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 1098042
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-absent-down-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 545125
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 1042666
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 2815291
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-absent-down-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 1636416
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1984667
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 354625
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-wrong-up-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 653500
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 717000
+        },
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 497417
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-wrong-up-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 551166
+        },
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 595458
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 1039500
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-wrong-down-shared",
+      "task": "pallets/itsdangerous",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 629417
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1229666
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 1020042
+        }
+      }
+    },
+    {
+      "id": "itsdangerous-wrong-down-separate",
+      "task": "pallets/itsdangerous",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1057833
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 1312625
+        },
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 795875
+        }
+      }
+    },
+    {
+      "id": "starlette-exact-up-shared",
+      "task": "Kludex/starlette",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 387916
+        },
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 364583
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 639667
+        }
+      }
+    },
+    {
+      "id": "starlette-exact-up-separate",
+      "task": "Kludex/starlette",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 292750
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 534083
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 354583
+        }
+      }
+    },
+    {
+      "id": "starlette-exact-down-shared",
+      "task": "Kludex/starlette",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 1050708
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 275791
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 1044416
+        }
+      }
+    },
+    {
+      "id": "starlette-exact-down-separate",
+      "task": "Kludex/starlette",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 348208
+        },
+        "direct": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 890417
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "da0b8434d7924b2cf637187360afb35f105c46e81a3f1f680b0ef0c33d045c3f",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1978541
+        }
+      }
+    },
+    {
+      "id": "starlette-absent-up-shared",
+      "task": "Kludex/starlette",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 455834
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 615666
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 259708
+        }
+      }
+    },
+    {
+      "id": "starlette-absent-up-separate",
+      "task": "Kludex/starlette",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 479375
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 259542
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 229666
+        }
+      }
+    },
+    {
+      "id": "starlette-absent-down-shared",
+      "task": "Kludex/starlette",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 223750
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 612166
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 831708
+        }
+      }
+    },
+    {
+      "id": "starlette-absent-down-separate",
+      "task": "Kludex/starlette",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 610000
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1465000
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 284541
+        }
+      }
+    },
+    {
+      "id": "starlette-wrong-up-shared",
+      "task": "Kludex/starlette",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 552250
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 284167
+        },
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 384000
+        }
+      }
+    },
+    {
+      "id": "starlette-wrong-up-separate",
+      "task": "Kludex/starlette",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 281459
+        },
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 265541
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 560000
+        }
+      }
+    },
+    {
+      "id": "starlette-wrong-down-shared",
+      "task": "Kludex/starlette",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 600041
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 767708
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 504417
+        }
+      }
+    },
+    {
+      "id": "starlette-wrong-down-separate",
+      "task": "Kludex/starlette",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1234250
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 381834
+        },
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 681875
+        }
+      }
+    },
+    {
+      "id": "packaging-exact-up-shared",
+      "task": "pypa/packaging",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 297083
+        },
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 301500
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 608708
+        }
+      }
+    },
+    {
+      "id": "packaging-exact-up-separate",
+      "task": "pypa/packaging",
+      "effect": "exact",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 335333
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 610125
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 360750
+        }
+      }
+    },
+    {
+      "id": "packaging-exact-down-shared",
+      "task": "pypa/packaging",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 825959
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 230250
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 433834
+        }
+      }
+    },
+    {
+      "id": "packaging-exact-down-separate",
+      "task": "pypa/packaging",
+      "effect": "exact",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 250166
+        },
+        "direct": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 538041
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "38beaf5882e4b06a9a1bbed6db717f8c532eeabbb11983e9eb697d7eabe35673",
+          "closed": true,
+          "truth": true,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 870750
+        }
+      }
+    },
+    {
+      "id": "packaging-absent-up-shared",
+      "task": "pypa/packaging",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 299083
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 596875
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 262083
+        }
+      }
+    },
+    {
+      "id": "packaging-absent-up-separate",
+      "task": "pypa/packaging",
+      "effect": "absent",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 12,
+          "elapsed_ns": 508375
+        },
+        "primary_only": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 240958
+        },
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 6,
+          "elapsed_ns": 258000
+        }
+      }
+    },
+    {
+      "id": "packaging-absent-down-shared",
+      "task": "pypa/packaging",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 454000
+        },
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 554375
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 881750
+        }
+      }
+    },
+    {
+      "id": "packaging-absent-down-separate",
+      "task": "pypa/packaging",
+      "effect": "absent",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "direct": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 17,
+          "elapsed_ns": 590583
+        },
+        "gateway": {
+          "status": 404,
+          "observed": "absent",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 23,
+          "elapsed_ns": 1524583
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 302792
+        }
+      }
+    },
+    {
+      "id": "packaging-wrong-up-shared",
+      "task": "pypa/packaging",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "shared",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 565083
+        },
+        "primary_only": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 294792
+        },
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 250541
+        }
+      }
+    },
+    {
+      "id": "packaging-wrong-up-separate",
+      "task": "pypa/packaging",
+      "effect": "wrong",
+      "primary": "up",
+      "fallback": "separate",
+      "arms": {
+        "primary_only": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 366708
+        },
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 64,
+          "elapsed_ns": 323750
+        },
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 2,
+          "body_bytes": 128,
+          "elapsed_ns": 503542
+        }
+      }
+    },
+    {
+      "id": "packaging-wrong-down-shared",
+      "task": "pypa/packaging",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "shared",
+      "arms": {
+        "direct": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 22,
+          "elapsed_ns": 588042
+        },
+        "gateway": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 33,
+          "elapsed_ns": 774042
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 312000
+        }
+      }
+    },
+    {
+      "id": "packaging-wrong-down-separate",
+      "task": "pypa/packaging",
+      "effect": "wrong",
+      "primary": "down",
+      "fallback": "separate",
+      "arms": {
+        "gateway": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 3,
+          "body_bytes": 139,
+          "elapsed_ns": 1107041
+        },
+        "primary_only": {
+          "status": 503,
+          "observed": "unavailable",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 1,
+          "requests": 1,
+          "body_bytes": 11,
+          "elapsed_ns": 321292
+        },
+        "direct": {
+          "status": 200,
+          "observed": "4c3de4aa0918deac2f712facacd1dc30a8cc4627d0118dd290292ab0af65ca0b",
+          "closed": false,
+          "truth": false,
+          "caller_requests": 2,
+          "requests": 2,
+          "body_bytes": 75,
+          "elapsed_ns": 974000
+        }
+      }
+    }
+  ]
+}
