@@ -98,13 +98,13 @@
     "review_state_counts": {
       "semantically_reviewed": 4064
     },
-    "prose_candidate_count": 4301,
+    "prose_candidate_count": 4304,
     "prose_review_state_counts": {
       "duplicate_of_atom": 2055,
       "editorial_or_question": 60,
-      "historical_or_source_report": 381,
+      "historical_or_source_report": 383,
       "material_atom": 3,
-      "nonmaterial_explanation": 1802
+      "nonmaterial_explanation": 1803
     },
     "support_state_effect": "none"
   },
@@ -2024,7 +2024,7 @@
       "owner": "asi-is-a-stack-not-a-model",
       "role": "prose",
       "ordinal": 3,
-      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:69",
+      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:77",
       "proposition": "Every high-impact component should expose behavior, authority, evidence, and rollback-relevant state to an observer that is not the component itself.",
       "proposition_type": "composite",
       "claim_label": "Design rationale",
@@ -2117,7 +2117,7 @@
       "owner": "asi-is-a-stack-not-a-model",
       "role": "prose",
       "ordinal": 13,
-      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:128",
+      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:136",
       "proposition": "A layer is a logical responsibility and authority boundary, not a required process, service, model, or physical module.",
       "proposition_type": "normative",
       "claim_label": "Design rationale",
@@ -2204,7 +2204,7 @@
       "owner": "asi-is-a-stack-not-a-model",
       "role": "prose",
       "ordinal": 38,
-      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:386",
+      "manifest_pointer": "chapters/asi-is-a-stack-not-a-model.qmd:394",
       "proposition": "A handoff whose consumer cannot identify its required input artifact or authority ceiling should fail closed with an explicit missing-contract record.",
       "proposition_type": "executable",
       "claim_label": "Design rationale",
