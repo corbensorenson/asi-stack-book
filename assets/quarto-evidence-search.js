@@ -12,13 +12,25 @@ const asiScopes = [
   ["history", "History"],
 ];
 
+function asiCurrentScope(state) {
+  if (typeof state.context.asiScope === "string") return state.context.asiScope;
+  try {
+    const saved = sessionStorage.getItem("asi-book-search-scope");
+    return asiScopes.some(([value]) => value === saved) ? saved : "";
+  } catch {
+    return "";
+  }
+}
+
 function asiSearchScopes(createElement, state, setContext, refresh) {
-  const scope = state.context.asiScope || "";
+  const scope = asiCurrentScope(state);
   const select = createElement("select", {
     value: scope,
     "aria-label": "Search scope",
     onChange(event) {
-      setContext({ ...state.context, asiScope: event.currentTarget.value, expanded: [] });
+      const selected = event.currentTarget.value;
+      try { sessionStorage.setItem("asi-book-search-scope", selected); } catch { /* Storage is optional. */ }
+      setContext({ ...state.context, asiScope: selected, expanded: [] });
       refresh();
     },
   }, asiScopes.map(([value, label]) => createElement("option", {value}, label)));

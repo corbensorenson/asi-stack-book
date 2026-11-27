@@ -348,6 +348,40 @@ async function checkEditorialRoutes(context) {
   }
 }
 
+async function checkReaderAccess(context) {
+  const page = await context.newPage();
+  const registry = root + "products/evidence-registry/";
+  try {
+    await page.goto(root);
+    await page.getByRole("link", {name:"Choose a short decision", exact:true}).click();
+    for (const id of ["guided-change", "guided-observation", "guided-replacement"]) {
+      assert(await page.locator("#" + id).isVisible(), id);
+    }
+    await page.goto(registry + "reader-skill.html");
+    const skill = await page.getByRole("link", {name:"Plain Markdown instructions"}).evaluate(link =>
+      fetch(link.href).then(response => response.text()));
+    assert.match(skill, /name: asi-stack-reader/);
+    const zip = await page.getByRole("link", {name:"Download the reader skill"}).evaluate(link =>
+      fetch(link.href).then(response => response.arrayBuffer()).then(buffer => Array.from(new Uint8Array(buffer, 0, 4))));
+    assert.deepEqual(zip, [80, 75, 3, 4]);
+    await page.getByRole("link", {name:"Check a saved citation"}).click();
+    const expected = [
+      ["study:crossed-receiver", "Follow-up under different or additional conditions"],
+      ["evidence_passage:atlas-original-proceed-decision", "Correction already recorded at the saved revision"],
+      ["evidence_passage:emeans-retrieval-rebuild", "Editorial or navigation change"],
+      ["evidence_passage:cram-replacement-decision", "Record absent from saved revision"],
+    ];
+    for (const [record, title] of expected) {
+      await page.getByLabel("Record ID").fill(record);
+      await page.getByRole("button", {name:"Compare revisions"}).click();
+      await page.locator("#history-output h2").filter({hasText:title}).waitFor();
+      assert.equal(new URL(page.url()).searchParams.get("record"), record);
+    }
+  } finally {
+    await page.close();
+  }
+}
+
 async function main() {
   const browser = await chromium.launch({
     executablePath: process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE || undefined,
@@ -355,6 +389,7 @@ async function main() {
   try {
     const context = await browser.newContext();
     if (!live) await serveCandidate(context);
+    await checkReaderAccess(context);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
     await search(context, root, "e-means", /virtual-context-abi\.html[^#]*#release-note-index-rebuild$/);

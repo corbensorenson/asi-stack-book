@@ -167,7 +167,8 @@ def quarto_search_links(text: str, adapter: str) -> str:
            '  }, { once: true });\n}')
     previous = """return asiReadSearchData().then(() =>
                 asiSearchResults(query, state.context.asiScope || "", fuseSearchOptions));"""
-    lookup = 'return asiLookup(query, state.context.asiScope || "", fuseSearchOptions, refresh);'
+    lookup = 'return asiLookup(query, asiCurrentScope(state), fuseSearchOptions, refresh);'
+    text = text.replace('return asiLookup(query, state.context.asiScope || "", fuseSearchOptions, refresh);', lookup)
     if previous in text:
         render(previous, lookup)
     else:
