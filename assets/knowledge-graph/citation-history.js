@@ -9,14 +9,16 @@ function describeCitation(id, passages, studies) {
     if (!p) return null;
     const successor = passages.find(row => row.links.some(link => link.predicate === "supersedes_decision" && link.target === id));
     return {id, decision:p.disposition || p.summary, scope:p.limit, detail:p.summary, title:p.title, url:p.url,
-      method:p.method, links:p.links, locators:p.locators, aliases:p.aliases, outside:p.outside_question, successor:successor?.id,
+      method:p.method, measurement:p.measurement, unmeasured:p.unmeasured, version:p.record_version, question:p.question,
+      links:p.links.map(link => [link.predicate, link.target]), sourceSection:p.source_section,
+      locators:p.locators?.map(link => [link.label, link.url]), aliases:p.aliases, outside:p.outside_question, successor:successor?.id,
       source:"products/evidence_passages.json"};
   }
   const study = studies.studies.find(row => row.id === key);
   const run = studies.runs.find(row => row.id === (kind === "study" ? study?.featured_run : key));
   if (!run) return null;
   return {id, title:kind === "study" ? study.title : run.title, decision:run.disposition, scope:run.limit,
-    detail:run.method, digest:run.result_sha256, protocol:run.protocol_sha256, run:run.id, source:run.result,
+    detail:run.method, summaryTemplate:run.result_summary, digest:run.result_sha256, protocol:run.protocol_sha256, run:run.id, source:run.result,
     followups:studies.runs.filter(row => row.follow_up_to === run.id).map(row => row.id).sort(),
     aliases:run.aliases, outside:run.outside_question,
     url:"products/evidence-registry/study-" + run.study + ".html#run-" + run.id};
@@ -44,8 +46,8 @@ function compareCitation(id, prior, current) {
     }
     return {...result, meaning:"Featured comparison changed; inspect both studies"};
   }
-  const substantive = ["decision","scope","detail","digest","protocol","method"];
-  if (substantive.some(key => before[key] !== after[key])) {
+  const substantive = ["decision","scope","detail","digest","protocol","method","measurement","unmeasured","version","summaryTemplate"];
+  if (substantive.some(key => JSON.stringify(before[key]) !== JSON.stringify(after[key]))) {
     return {...result, meaning:"Evidence or claim text changed; inspect the two versions"};
   }
   const added = (after.followups || []).filter(key => !before.followups.includes(key));
@@ -96,7 +98,12 @@ if (typeof document !== "undefined") {
         if (!row) continue;
         const h = document.createElement("h3"); h.textContent = label + " · " + row.title; output.append(h);
         for (const value of [row.decision, row.scope, row.detail === row.decision ? null : row.detail, sha]) {
-          if (value) {const p = document.createElement("p"); p.textContent = value; output.append(p);}
+          if (value) {
+            const p = document.createElement("p");
+            const prose = value.replace("The {pairs} matched cells", "The matched cells");
+            p.textContent = /\{[^}]+\}/.test(prose) ? "The revision-pinned source gives the values for this field." : prose;
+            output.append(p);
+          }
         }
         const link = document.createElement("a"); link.href = root + sha + "/" + row.source; link.textContent = "Revision-pinned source"; output.append(link);
         if (label !== "Saved record") {

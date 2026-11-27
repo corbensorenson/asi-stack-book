@@ -25,6 +25,8 @@ and [competent conventional alternatives](docs/defended_contribution_prior_art_p
 | Knowledge graph | Search concepts and follow their links to the book, its claims, and bounded evidence. | [Knowledge graph](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/knowledge-graph/) |
 | Original paper library | Corben's digest-bound papers and architecture sources, with links to the chapters they informed. | [Read the original papers](https://corbensorenson.github.io/asi-stack-book/papers/) |
 
+For a specific research question, start with the [three short decisions](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#short-decisions). Agents can use the [portable reader skill](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/reader-skill.html). To revisit an earlier result, [compare a saved citation](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/citation-history.html).
+
 Projection boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md).
 
 The canonical current book is the live **89-chapter** site. Use its `AI view` for the complete research scaffold or `Human view` for the cleaner prose projection. Human view is a reading aid, not a reviewed reader-release manuscript.
