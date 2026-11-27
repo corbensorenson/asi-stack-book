@@ -10400,5 +10400,312 @@
     "citation_label": "D. Sculley et al. (2015), Hidden Technical Debt in Machine Learning Systems",
     "source_crosswalk_review_state": "reviewed",
     "passage_review_limits": "This is a set of design observations and maintenance risks. It does not compare the book's proposed persistence policy against a baseline."
+  },
+  {
+    "id": "ext_tracr_2023",
+    "title": "Tracr: Compiled Transformers as a Laboratory for Interpretability",
+    "priority": "external_literature",
+    "layer": "tracr",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2301.05062v5",
+    "notes": "A compiler turns a restricted symbolic program into a transformer with known internal structure.",
+    "source_type": "conference_paper",
+    "published": "2023",
+    "citation_label": "Lindner et al. (2023), Tracr: Compiled Transformers as a Laboratory for Interpretability",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The compiler takes a program in its supported language. Arbitrary learned checkpoints lack that specification."
+  },
+  {
+    "id": "ext_rome_2022",
+    "title": "Locating and Editing Factual Associations in GPT",
+    "priority": "external_literature",
+    "layer": "rome",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://rome.baulab.info/",
+    "notes": "ROME localizes and changes an MLP computation associated with a factual relation.",
+    "source_type": "conference_paper",
+    "published": "2022",
+    "citation_label": "Meng et al. (2022), Locating and Editing Factual Associations in GPT",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "A targeted association edit establishes little about transplanting the edit to a second network."
+  },
+  {
+    "id": "ext_wsp_sparks_2026",
+    "title": "Sparks of Weight-Space Programming",
+    "priority": "external_literature",
+    "layer": "wsp_sparks",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+    "notes": "An editor inspects or constructs weights and uses its knowledge of a task to propose a change.",
+    "source_type": "research_blog",
+    "published": "2026-11-02",
+    "citation_label": "Takehi et al. (2026), Sparks of Weight-Space Programming",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Selected demonstrations in a research blog give no population success rate."
+  },
+  {
+    "id": "ext_weightcode_2026",
+    "title": "WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming",
+    "priority": "external_literature",
+    "layer": "weightcode",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2611.25476v1",
+    "notes": "An executable transformation can use each destination network and its local examples to derive a fresh parameter change.",
+    "source_type": "preprint",
+    "published": "2026-11-19",
+    "citation_label": "Li et al. (2026), WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The destination models shared the architecture. Clean-image accuracy measures only one retention condition."
+  },
+  {
+    "id": "ext_wsp_scope_2026",
+    "title": "Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations",
+    "priority": "external_literature",
+    "layer": "wsp_scope",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2611.09382v1",
+    "notes": "The editor explores localized interventions and validation selects whether to keep a candidate.",
+    "source_type": "preprint",
+    "published": "2026-11-06",
+    "citation_label": "Hu et al. (2026), Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The best edit is conditional on a successful search. Attempts and validation cost enter the denominator."
+  },
+  {
+    "id": "ext_wsp_icl_2026",
+    "title": "Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models",
+    "priority": "external_literature",
+    "layer": "wsp_icl",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2611.26841v2",
+    "notes": "An edit can encode a residual-stream shift associated with examples in the prompt.",
+    "source_type": "preprint",
+    "published": "2026-11-19",
+    "citation_label": "Skianis and Likas (2026), Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Prompt sensitivity and unfinished editor runs affect the comparison. A small perplexity change cannot establish retention on every task.",
+    "updated": "2026-11-23"
+  },
+  {
+    "id": "ext_fwsp_2026",
+    "title": "Do We Really Need an LLM for Weight-Space Programming? A Deterministic Forward-Only Paradigm and Its Capability Boundaries",
+    "priority": "external_literature",
+    "layer": "fwsp",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2611.34612v1",
+    "notes": "A fixed rule selects from four edit operators using measurements of the target network.",
+    "source_type": "preprint",
+    "published": "2026-11-25",
+    "citation_label": "Yao (2026), Do We Really Need an LLM for Weight-Space Programming? A Deterministic Forward-Only Paradigm and Its Capability Boundaries",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "This is operator selection on a bounded fault suite. Success on other editing tasks needs separate evidence."
+  },
+  {
+    "id": "ext_stop_2024",
+    "title": "Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+    "priority": "external_literature",
+    "layer": "stop",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2310.02304v3",
+    "notes": "A program that searches over proposed code improvements can itself become the program under improvement.",
+    "source_type": "conference_paper",
+    "published": "2024",
+    "citation_label": "Zelikman et al. (2024), Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Model parameters stayed fixed. Results depend on the chosen utility and tasks."
+  },
+  {
+    "id": "ext_aide_squared_2026",
+    "title": "Recursive self-improvement of AI research agents",
+    "priority": "external_literature",
+    "layer": "aide_squared",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2609.26457v1",
+    "notes": "Accepted rewrites of a research agent change how its successor searches and manages context.",
+    "source_type": "preprint",
+    "published": "2026-09-22",
+    "citation_label": "Srikanth et al. (2026), Recursive self-improvement of AI research agents",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "A bounded lineage and finite benchmark suite leave the long-run rate of improvement open."
+  },
+  {
+    "id": "ext_rrsi_2026",
+    "title": "RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+    "priority": "external_literature",
+    "layer": "rrsi",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2609.24972v3",
+    "notes": "Proposal budgets, criticism and pruning constrain adaptation of an agent harness to repeatedly scored tasks.",
+    "source_type": "preprint",
+    "published": "2026-09-21",
+    "citation_label": "Xia et al. (2026), RRSI: Regularized Recursive Self-Improvement of Agent Harnesses",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The results are conditional on the starting harness, tasks and candidate budget.",
+    "updated": "2026-10-04"
+  },
+  {
+    "id": "ext_rsi_env_2026",
+    "title": "RSI-Env: An Open-Ended Environment for Recursive Self-Improvement of Agents",
+    "priority": "external_literature",
+    "layer": "rsi_env",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2611.01736v1",
+    "notes": "An accepted model and harness take the next turn while a host controls evaluation and versioning.",
+    "source_type": "preprint",
+    "published": "2026-11-01",
+    "citation_label": "Qu et al. (2026), RSI-Env: An Open-Ended Environment for Recursive Self-Improvement of Agents",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Changing the teacher, feedback and target can change the outcome. Gains on one capability can coexist with losses elsewhere."
+  },
+  {
+    "id": "ext_selfwrite_2026",
+    "title": "Recursive Self-Editing: LLMs Program Their Own Weight Edits for Self-Improvement",
+    "priority": "external_literature",
+    "layer": "selfwrite",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2611.29513v1",
+    "notes": "The current checkpoint writes a low-rank change. An external scoring rule selects an update for the next generation.",
+    "source_type": "preprint",
+    "published": "2026-11-22",
+    "citation_label": "Zhang and Li (2026), Recursive Self-Editing: LLMs Program Their Own Weight Edits for Self-Improvement",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "One task family, a reused selection set and retained search history limit attribution to improved editing ability."
+  },
+  {
+    "id": "ext_recurscibench_2026",
+    "title": "RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research",
+    "priority": "external_literature",
+    "layer": "recurscibench",
+    "chapter_targets": [
+      "recursive-self-improvement-boundaries"
+    ],
+    "url": "https://arxiv.org/abs/2611.32508v1",
+    "notes": "Freeze initial and evolved agent states and test transfer on separate scientific modeling tasks.",
+    "source_type": "preprint",
+    "published": "2026-11-24",
+    "citation_label": "Xu et al. (2026), RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Performance of a frozen successor on independent tasks measures transfer of the resulting agent. It leaves its ability to produce better future agents open."
+  },
+  {
+    "id": "ext_exokernel_1995",
+    "title": "Exokernel: An Operating System Architecture for Application-Level Resource Management",
+    "priority": "external_literature",
+    "layer": "exokernel",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://pdos.csail.mit.edu/6.1810/2017/readings/engler95exokernel.pdf",
+    "notes": "A small privileged kernel protects physical resources while applications choose management policy through library operating systems.",
+    "source_type": "conference_paper",
+    "published": "1995",
+    "citation_label": "Engler et al. (1995), Exokernel: An Operating System Architecture for Application-Level Resource Management",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Its microbenchmarks predate contemporary model serving. Their speedups cannot price a decoder."
+  },
+  {
+    "id": "ext_mirage_unikernels_2013",
+    "title": "Unikernels: Library Operating Systems for the Cloud",
+    "priority": "external_literature",
+    "layer": "mirage_unikernels",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://anil.recoil.org/papers/2013-asplos-mirage.pdf",
+    "notes": "Compile application and selected OS libraries into a single-purpose image for a hypervisor.",
+    "source_type": "conference_paper",
+    "published": "2013",
+    "citation_label": "Madhavapeddy et al. (2013), Unikernels: Library Operating Systems for the Cloud",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "A bootable guest image can still depend on a host or hypervisor for device access."
+  },
+  {
+    "id": "ext_nuraos_2026",
+    "title": "NuraOS: a minimal Linux appliance for local inference",
+    "priority": "external_literature",
+    "layer": "nuraos",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://github.com/YASSERRMD/NuraOS/blob/830b20a61de65a6063ead2c33807218ab7fd165d/README.md",
+    "notes": "A Linux kernel and minimal userland start an inference server and agent services.",
+    "source_type": "project_documentation",
+    "published": "2026",
+    "citation_label": "NuraOS project (2026), NuraOS: a minimal Linux appliance for local inference",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Project documentation establishes the intended topology. No physical boot or performance comparison was reproduced for this book."
+  },
+  {
+    "id": "ext_probelogits_2026",
+    "title": "ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems",
+    "priority": "external_literature",
+    "layer": "probelogits",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://arxiv.org/abs/2604.11943v3",
+    "notes": "Anima boots a custom kernel with CPU inference, model loading and scheduling on the machine.",
+    "source_type": "preprint",
+    "published": "2026-04-13",
+    "citation_label": "Son (2026), ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "One machine and different measurement campaigns limit causal attribution to kernel placement. Hosted classifier evaluations use a different execution path.",
+    "updated": "2026-07-06"
+  },
+  {
+    "id": "ext_exomem_2026",
+    "title": "ExoMem: OS-Governed Memory for Local Large-LLM Inference on Mobile Edge Devices",
+    "priority": "external_literature",
+    "layer": "exomem",
+    "chapter_targets": [
+      "physical-compute-infrastructure-energy-and-environmental-constraints"
+    ],
+    "url": "https://liuzhidan.github.io/assets/pdf/2026-MobiCom-ExoMem.pdf",
+    "notes": "Framework operators keep stable virtual addresses while the OS can reclaim physical pages from dormant mappings.",
+    "source_type": "conference_paper",
+    "published": "2026",
+    "citation_label": "You et al. (2026), ExoMem: OS-Governed Memory for Local Large-LLM Inference on Mobile Edge Devices",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "Memory feasibility alone does not settle latency, quality or energy requirements for a different service."
+  },
+  {
+    "id": "ext_weightbench_2026",
+    "title": "WeightBench: Evaluating Language Models as Weight-Space Programmers",
+    "priority": "external_literature",
+    "layer": "weightbench",
+    "chapter_targets": [
+      "cognitive-compilation-and-semantic-ir"
+    ],
+    "url": "https://arxiv.org/abs/2611.18553v1",
+    "notes": "Editors attempt weight reading, repair, construction, infeasibility recognition and data-free compression under specified access restrictions.",
+    "source_type": "preprint",
+    "published": "2026-11-13",
+    "citation_label": "Marasini et al. (2026), WeightBench: Evaluating Language Models as Weight-Space Programmers",
+    "source_crosswalk_review_state": "reviewed",
+    "passage_review_limits": "The allowed observations and operations differ by track. An unsuccessful constrained attempt does not establish that a repair with calibration data is impossible."
   }
 ]

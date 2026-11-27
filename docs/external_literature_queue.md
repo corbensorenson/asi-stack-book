@@ -27,3 +27,15 @@ This book currently treats Corben Sorenson's AI papers, local projects, and conv
 ## Import Rule
 
 When a third-party source is actually used, add it to `sources/source_inventory.json` with a stable source ID, create a source note after reading it, and update `book_structure.json` only for chapters that will mine it directly. Do not cite a paper from memory or from another source's bibliography without reading it.
+
+## November 27, 2026 integration
+
+Reviewed primary papers and author-maintained project documentation through November 27. Nineteen external records entered the inventory. Their source notes identify the comparison, its limits, and the question that remains open.
+
+| Decision | Technical passage | Reader exercise |
+|---|---|---|
+| Transfer a numerical edit or rerun its program on the destination checkpoint | [Weight-program transfer](../chapters/cognitive-compilation-and-semantic-ir.qmd#weight-program-transfer) | [A repair that has to travel](../editions/reader_manuscript/current/chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd#reader-weight-program) |
+| Choose a better solver or appoint the next editor | [Successor editing ability](../chapters/recursive-self-improvement-boundaries.qmd#better-model-or-better-editor) | [Who gets the editor’s job?](../editions/reader_manuscript/current/chapters/unit-25-recursive-improvement-replication-and-containment.qmd#reader-better-editor) |
+| Keep Linux or boot an inference kernel on the device | [Inference-kernel placement](../chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd#inference-kernel-placement) | [Two boxes boot to the same prompt](../editions/reader_manuscript/current/chapters/unit-24-physical-compute-energy-and-infrastructure.qmd#reader-inference-kernel) |
+
+The newest selected papers supply two controls. The November 25 forward-only editing study compares operator selection with the same tool library. The November 24 RecurSciBench paper evaluates frozen successors on independent scientific tasks and retains task-level outcomes. The hardware comparison uses the corrected July version of ProbeLogits and distinguishes a physical boot from a hosted inference experiment. [Forward-only programming](https://arxiv.org/abs/2611.34612v1) · [RecurSciBench](https://arxiv.org/abs/2611.32508v1) · [ProbeLogits v3](https://arxiv.org/html/2604.11943v3)

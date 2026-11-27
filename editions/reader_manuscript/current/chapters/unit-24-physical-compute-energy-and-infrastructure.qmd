@@ -146,6 +146,14 @@ or other appropriate evidence are needed. A material change can invalidate
 current reuse eligibility while leaving the historical observation intact.
 Requalify affected claims rather than silently treating the old profile as current.
 
+### Two boxes boot to the same prompt {#reader-inference-kernel}
+
+One appliance boots Linux and starts a model server. Another boots a kernel that runs the model itself. Both answer the first question after a power cut. The owner cares about the next power cut too, especially if it arrives halfway through an update.
+
+Would you replace Linux for speed? The revised Anima measurements on one machine put the custom kernel slightly ahead for a small model at eight workers and behind for sustained decoding on a 7B model. The Linux baseline had been measured months earlier. You cannot price the switch from those figures alone.
+
+Choose a deadline and an energy budget for a correct answer on your own device. Repeat cold starts and sustained runs with the same weights, then interrupt an update. Write down what boots, who can read the previous image, and when verified answers resume. A faster decoder helps only to the extent that it improves the service the owner needs. [Boot paths, corrected throughput table and BugBrain design](https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html#inference-kernel-placement)
+
 ## Measure Use Before Modeling Impact
 
 Physical accounting separates observed use from modeled consequence.

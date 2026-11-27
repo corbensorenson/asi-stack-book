@@ -4,7 +4,7 @@ chapter_id: "recursive-self-improvement-boundaries"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 claim-proof program"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "scf"
   - "benchmaxxing"
@@ -22,6 +22,12 @@ primary_sources:
   - "ext_darwin_godel_machine_2025"
   - "ext_adas_2024"
   - "ext_embedded_agency_2019"
+  - "ext_stop_2024"
+  - "ext_aide_squared_2026"
+  - "ext_rrsi_2026"
+  - "ext_rsi_env_2026"
+  - "ext_selfwrite_2026"
+  - "ext_recurscibench_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -39,12 +45,12 @@ open_evidence_gaps:
 | Part | Part I - Foundations, Alignment, and Governance |
 | Status | conceptual |
 | Manuscript maturity | v0.3 claim-proof program |
-| Last updated | 2026-07-31 |
+| Last updated | 2026-11-27 |
 | Assigned source records | The manifest owns the exact source list, including `capability_ratchet_whitepaper` and `attd` alongside the existing RSI architecture, governance, project, and external comparator records. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `scf`, `benchmaxxing`, `rmi`; supporting: `alignment_field`, `viea`, `talos`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`; connector/recovery: `moecot` |
-| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `platonic_world_model`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `capability_ratchet_whitepaper`, `attd`, `ext_drexler_cais_2019`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_embedded_agency_2019`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` |
+| Source loading state | source notes: `scf`, `deterministic_capability_compilation`, `platonic_world_model`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`, `moecot`, `field_of_god_ai_constitution`, `theseus_self_evolution_system`, `theseus_architecture_gate`, `capability_ratchet_whitepaper`, `attd`, `ext_drexler_cais_2019`, `ext_darwin_godel_machine_2025`, `ext_adas_2024`, `ext_embedded_agency_2019`; raw cache: `scf`, `benchmaxxing`, `rmi`, `alignment_field`, `viea`, `talos`; connector/recovery: `moecot` November 27 comparisons have individual notes and mappings in the source crosswalk. |
 | Source mapping review | All assignments have reviewed mappings with explicit limits. Corben records use local raw caches or the fully reviewed authenticated `moecot` connector text; the constitution and two Theseus records are pinned public-project notes; CAIS, Darwin Gödel Machine, ADAS, and Embedded Agency are external comparator or foundations records. |
 | Test state | `AsiStackProofs.SelfImprovementRefinement` and an independently encoded Python consumer now join seven exact inherited suites into an eight-stage proposal-to-outcome lifecycle. The consumer reaches all 118 routes, rejects 129/129 mutations, emits one bounded replacement handoff, consumes one returned outcome reconciliation, and admits only a materially invalidated protocol version 2; support and external-effect authority remain `none`. The retained evidence includes the 3-valid/10-invalid self-improvement fixture, 4-valid/5-invalid readiness fixture, 5-valid/9-invalid replacement fixture, two-transaction/three-control replacement trace, eight-trace/six-control intent bridge, three-seed/twelve-arm fixed update result with three exact local rollbacks and four `no_change` dispositions, and the Open-Ended Improvement handoff with zero threshold passes. The 22 older `SelfImprovement` declarations remain frozen and lineage-bound. No live proposal, natural useful improvement, evaluator or monitor competence, production replacement, semantic recovery, effect-complete rollback, recursive campaign, or transfer has run. |
 
@@ -152,6 +158,22 @@ search process, budget, and version history; indefinite cumulative improvement
 would require a longer and more adversarial campaign.
 
 That distinction lets the book be ambitious without being reckless. It can welcome self-generated ideas, teacher edits, architecture experiments, and routing improvements while still refusing self-ratification. The candidate may explain why it should change; it may not be the only reason the change is accepted.
+
+### Did the successor become a better editor? {#better-model-or-better-editor}
+
+Suppose the next checkpoint solves more math problems and is then asked to write the next weight update. A release reviewer has two decisions to make. The checkpoint may be worth using as a solver. Giving it the editor’s job requires evidence about the changes it produces in *other* checkpoints.
+
+In SELFWRITE, the current model wrote candidate low-rank edits. An external grading rule chose among them on a reused set of 500 math problems. Later rounds could consult the history of earlier attempts. The authors accepted four updates in five generations. On a separate 500-problem test from the same math corpus, average accuracy over four answers per problem rose from 76.30% to 77.75%. The fraction with at least one correct answer rose from 82.60% to 84.80%. The selection set gained 2.50 percentage points. The study used eight GPUs, including inference and candidate evaluation. Gradient-free editing still had a search bill. [SELFWRITE, §§3–5 and Table 2](https://arxiv.org/html/2611.29513v1)
+
+**Decision.** The result supports a bounded improvement in the solver. To choose an editor, give the original and successor editors identical fresh target checkpoints, equal search history, tools and compute, and the same acceptance rule. Hide final evaluation tasks from both. Measure the changes their edits produce on each target, the capabilities lost, and the cost of rejected attempts. A separate arm with the original editor and no history can estimate the contribution of inherited notes. This is a proposed comparison.
+
+| What survives the round? | What the experiment teaches |
+|---|---|
+| A search program | STOP uses a fixed language model to rewrite the code that searches for improvements. Its downstream test asks what programs that new search procedure produces. [STOP](https://arxiv.org/abs/2310.02304v3) |
+| A research-agent codebase | AIDE² reports seven improvements over eight days and transfer to four held-out benchmarks. Its code changes include search and context management. The duration and tasks bound the observation. [AIDE²](https://arxiv.org/html/2609.26457v1) |
+| Model, harness and research state | RSI-Env compares successors taking the next round with fixed external teachers. Its independent host owns evaluation and versioning. The best choice varies with the target and feedback. [RSI-Env](https://arxiv.org/html/2611.01736v1) |
+
+Repeated selection can also teach a harness the quirks of its scoring set. RRSI constrains proposals, screens changes and prunes them. Its Table 1 separates performance on the evolution tasks from performance on other workplace tasks. RecurSciBench freezes the resulting systems and tests transfer across scientific tasks. Individual tasks regress even under some positive aggregate results. Retain those losses in the release decision, alongside the parent, the history it saw and the authority that accepted its child. [Regularized RSI](https://arxiv.org/html/2609.24972v3) · [RecurSciBench](https://arxiv.org/html/2611.32508v1)
 
 ### Strongest objection
 
@@ -564,6 +586,12 @@ These rows keep Recursive Self-Improvement Boundaries's manifest assignments vis
 | `ext_embedded_agency_2019` | Passage-reviewed comparator: Embedded Agency. Grounds the boundary that a self-modifying system reasons about itself with models smaller than the world and may contain parts with divergent objectives. | The paper is an informal obstacle survey, not a solved theory; the ASI Stack's finite records and proofs do not solve logical uncertainty, self-reference, robust delegation, subsystem alignment, or open-world embedded agency. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Non-self-ratifying placement compilation](../papers/adjudicated_persistence.html). Adds non-self-ratifying meta-compilation: an adaptive placement mechanism cannot solely generate, evaluate, and authorize its own expansion. | Used only to frame independent adjudication of placement-compiler changes; no safe self-modification mechanism or meta-compiler result was produced. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `forward_transfer_program_synthesis` | Passage-reviewed comparator: [Library growth versus verified improvement](../papers/forward_transfer_program_synthesis.html). Separates library growth, exposure, invocation, necessity, positive future-task transfer, and cross-family transfer, and requires distinct interventions on the knowledge state and search procedure before any recursive-improvement claim. | Framework and experimental blueprint only; no open-ended, compounding, cross-family, or resource-positive improvement was implemented or measured. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_stop_2024` | Passage-reviewed comparator: Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation. A program that searches over proposed code improvements can itself become the program under improvement. | Model parameters stayed fixed. Results depend on the chosen utility and tasks. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_aide_squared_2026` | Passage-reviewed comparator: Recursive self-improvement of AI research agents. Accepted rewrites of a research agent change how its successor searches and manages context. | A bounded lineage and finite benchmark suite leave the long-run rate of improvement open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_rrsi_2026` | Passage-reviewed comparator: RRSI: Regularized Recursive Self-Improvement of Agent Harnesses. Proposal budgets, criticism and pruning constrain adaptation of an agent harness to repeatedly scored tasks. | The results are conditional on the starting harness, tasks and candidate budget. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_rsi_env_2026` | Passage-reviewed comparator: RSI-Env: An Open-Ended Environment for Recursive Self-Improvement of Agents. An accepted model and harness take the next turn while a host controls evaluation and versioning. | Changing the teacher, feedback and target can change the outcome. Gains on one capability can coexist with losses elsewhere. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_selfwrite_2026` | Passage-reviewed comparator: Recursive Self-Editing: LLMs Program Their Own Weight Edits for Self-Improvement. The current checkpoint writes a low-rank change. An external scoring rule selects an update for the next generation. | One task family, a reused selection set and retained search history limit attribution to improved editing ability. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_recurscibench_2026` | Passage-reviewed comparator: RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research. Freeze initial and evolved agent states and test transfer on separate scientific modeling tasks. | Performance of a frozen successor on independent tasks measures transfer of the resulting agent. It leaves its ability to produce better future agents open. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Post-v2 mutation, rollback, and invalidation result

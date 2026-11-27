@@ -8,8 +8,8 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 
 - `cached_existing`: 40
 - `connector_readable`: 7
-- `source_note_available_public_project`: 31
-- `source_note_available_uncached`: 516
+- `source_note_available_public_project`: 32
+- `source_note_available_uncached`: 534
 
 ## Records
 
@@ -609,3 +609,22 @@ Raw source exports are local-only and ignored by git. This report tracks readine
 | `ext_coordination_avoidance_2014` | Coordination Avoidance in Database Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_adaptive_holdout_reuse_2015` | Generalization in Adaptive Data Analysis and Holdout Reuse | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
 | `ext_hidden_ml_technical_debt_2015` | Hidden Technical Debt in Machine Learning Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_tracr_2023` | Tracr: Compiled Transformers as a Laboratory for Interpretability | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_rome_2022` | Locating and Editing Factual Associations in GPT | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_wsp_sparks_2026` | Sparks of Weight-Space Programming | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_weightcode_2026` | WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_wsp_scope_2026` | Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_wsp_icl_2026` | Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_fwsp_2026` | Do We Really Need an LLM for Weight-Space Programming? A Deterministic Forward-Only Paradigm and Its Capability Boundaries | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_stop_2024` | Self-Taught Optimizer (STOP): Recursively Self-Improving Code Generation | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_aide_squared_2026` | Recursive self-improvement of AI research agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_rrsi_2026` | RRSI: Regularized Recursive Self-Improvement of Agent Harnesses | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_rsi_env_2026` | RSI-Env: An Open-Ended Environment for Recursive Self-Improvement of Agents | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_selfwrite_2026` | Recursive Self-Editing: LLMs Program Their Own Weight Edits for Self-Improvement | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_recurscibench_2026` | RecurSciBench: Benchmarking Recursive Self-Improvement in Data-Driven Scientific Research | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_exokernel_1995` | Exokernel: An Operating System Architecture for Application-Level Resource Management | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_mirage_unikernels_2013` | Unikernels: Library Operating Systems for the Cloud | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_nuraos_2026` | NuraOS: a minimal Linux appliance for local inference | `source_note_available_public_project` |  |  | source note available from inspected public project source; not part of Google Drive cache manifest |
+| `ext_probelogits_2026` | ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_exomem_2026` | ExoMem: OS-Governed Memory for Local Large-LLM Inference on Mobile Edge Devices | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |
+| `ext_weightbench_2026` | WeightBench: Evaluating Language Models as Weight-Space Programmers | `source_note_available_uncached` |  |  | source note available; source inventory record is not present in the cache manifest |

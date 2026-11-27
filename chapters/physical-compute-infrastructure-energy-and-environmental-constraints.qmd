@@ -4,7 +4,7 @@ chapter_id: "physical-compute-infrastructure-energy-and-environmental-constraint
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.3 concept-complete argument-level manuscript"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "tokenmana"
   - "ext_iea_energy_and_ai_2025"
@@ -15,6 +15,11 @@ primary_sources:
   - "ext_quantum_ml_shadows_2024"
   - "ext_oecd_ai_infrastructure_competition_2025"
   - "ext_inference_joules_2026"
+  - "ext_exokernel_1995"
+  - "ext_mirage_unikernels_2013"
+  - "ext_nuraos_2026"
+  - "ext_probelogits_2026"
+  - "ext_exomem_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -31,10 +36,10 @@ open_evidence_gaps:
 | Part | Part III - Routing, Compression, Representation, and Substrates |
 | Status | conceptual |
 | Manuscript maturity | v0.2 complete argument-level manuscript |
-| Last updated | 2026-11-19 |
+| Last updated | 2026-11-27 |
 | Claim label | Design rationale |
 | Evidence level | argument |
-| Source loading state | source notes: `tokenmana`, `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`; raw cache: `tokenmana`. Selected primary passages reviewed for `ext_inference_joules_2026`. |
+| Source loading state | source notes: `tokenmana`, `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`; raw cache: `tokenmana`. Selected primary passages reviewed for `ext_inference_joules_2026`. November 27 comparisons have individual notes and mappings in the source crosswalk. |
 | Test state | The chapter defines a minimum implementation and falsification plan; no chapter-core promotion follows from prose or source synthesis. |
 
 ## Drafting guardrail
@@ -167,6 +172,22 @@ carries both a service lease and an impact obligation through retirement.
 **Observation.** Use authority-narrowing degradation, placement, demand response, failover, and interruption plans when thermal, water, network, power, or component limits bind.
 
 **Closure.** Close the lifecycle through reuse, recycling, weight and data destruction, decommissioning, stranded-capacity accounting, and unresolved environmental or community residuals.
+
+### Does the appliance earn a custom inference kernel? {#inference-kernel-placement}
+
+An edge appliance must produce a correct answer after power is restored. A chat prompt on its console tells the operator little about who booted the machine or who can repair it. Trace the path from firmware to the first verified answer.
+
+| Design | Who owns memory and devices after boot? | What the reader can verify |
+|---|---|---|
+| Linux inference appliance | Linux supplies scheduling and drivers. NuraOS starts a small userland, a model server and agent services. | A service can be restarted while the host stays up. Check whether the shipped appliance actually exposes a working recovery path. [NuraOS boot and service layout](https://github.com/YASSERRMD/NuraOS/blob/830b20a61de65a6063ead2c33807218ab7fd165d/README.md) |
+| Single-purpose guest image | The application and its OS libraries share an image. In the original Mirage design, Xen still sits underneath. | Include the hypervisor and its device path when comparing footprint or startup. [Mirage unikernels](https://anil.recoil.org/papers/2013-asplos-mirage.pdf) |
+| Inference inside a custom kernel | Anima boots through UEFI and implements model loading, CPU inference and scheduling in its kernel. | Trace the drivers used to load weights and the mechanism that can select a known-good image after a bad update. [ProbeLogits, §6](https://arxiv.org/html/2604.11943v3) |
+
+There is older precedent for granting an application control over resource policy. The exokernel kept protection in a small kernel while applications supplied their own management policies. A contemporary alternative goes the other way for one resource. ExoMem keeps operators in the framework but lets the host OS reclaim physical pages from dormant mappings. Its authors report running 72B-class models on 64 GB Jetson devices. If memory exhaustion is the first failure, page reclamation deserves a trial before anyone replaces the boot stack. [Exokernel](https://pdos.csail.mit.edu/6.1810/2017/readings/engler95exokernel.pdf) · [ExoMem](https://liuzhidan.github.io/assets/pdf/2026-MobiCom-ExoMem.pdf)
+
+**What did removing Linux buy on measured hardware?** In ProbeLogits v3, Table 4, the 135M quantized model produced 1,344 tokens/s with eight bare-metal workers against 1,301 for the earlier eight-thread Linux llama.cpp run. For the 7B model, sustained bare-metal throughput was 12.73 tokens/s against 15.0 for Linux. The author withdrew the earlier 1.39× small-model headline. Both campaigns used the same Ryzen machine, but the Linux measurements came from March and the bare-metal figures from one July boot. The 7B result followed about two hours of load. The hosted classifier experiments elsewhere in the paper measure a different execution path. [Corrected comparison, Table 4](https://arxiv.org/html/2604.11943v3)
+
+**Decision.** Keep a minimal Linux image as the reference for the appliance. Test both images on the same board, model, quantization, inputs and thermal schedule. Count cold time to first correct output, sustained useful throughput, and joules per accepted result. Interrupt an update and observe which component can restore service and how long it takes. A design that meets a hard startup or power budget on the target board can earn the custom kernel even when steady-state decoding ties. BugBrain supplies the book’s Raspberry Pi design lineage. These x86 measurements leave its Pi performance open. [BugBrain manuscript](../papers/bugbrain.html) · [Fast generation](fast-generation-architectures.qmd) · [Boot and weight custody](model-weight-custody-and-hardware-roots-of-trust.qmd)
 
 ## Concept-completion ledger
 
@@ -394,6 +415,11 @@ These rows keep Physical Compute Infrastructure, Energy, and Environmental Const
 | `ext_quantum_ml_shadows_2024` | Metadata-first comparator: Shadows of quantum machine learning. Peer-reviewed analysis of limitations and benchmarking traps in quantum machine-learning advantage claims. It supports advantage declarations with data-loading, classical-baseline, noise, scale, and end-to-end accounting, not a claim that quantum ML is useless. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_oecd_ai_infrastructure_competition_2025` | Metadata-first comparator: Competition in artificial intelligence infrastructure. OECD analysis of concentration, barriers to entry, vertical integration, and competition across AI infrastructure. It motivates bottleneck and exit analysis but does not adjudicate a specific market, legal violation, or optimal remedy. | No passage-level source claim, local implementation, reproduction, safety, performance, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_inference_joules_2026` | Passage-reviewed comparator: Where Do the Joules Go? Diagnosing Inference Energy Consumption. Meter GPU energy per request under the actual output-length and batching policy. | The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_exokernel_1995` | Passage-reviewed comparator: Exokernel: An Operating System Architecture for Application-Level Resource Management. A small privileged kernel protects physical resources while applications choose management policy through library operating systems. | Its microbenchmarks predate contemporary model serving. Their speedups cannot price a decoder. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_mirage_unikernels_2013` | Passage-reviewed comparator: Unikernels: Library Operating Systems for the Cloud. Compile application and selected OS libraries into a single-purpose image for a hypervisor. | A bootable guest image can still depend on a host or hypervisor for device access. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_nuraos_2026` | Passage-reviewed comparator: NuraOS: a minimal Linux appliance for local inference. A Linux kernel and minimal userland start an inference server and agent services. | Project documentation establishes the intended topology. No physical boot or performance comparison was reproduced for this book. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_probelogits_2026` | Passage-reviewed comparator: ProbeLogits: Kernel-Level LLM Inference Primitives for AI-Native Operating Systems. Anima boots a custom kernel with CPU inference, model loading and scheduling on the machine. | One machine and different measurement campaigns limit causal attribution to kernel placement. Hosted classifier evaluations use a different execution path. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_exomem_2026` | Passage-reviewed comparator: ExoMem: OS-Governed Memory for Local Large-LLM Inference on Mobile Edge Devices. Framework operators keep stable virtual addresses while the OS can reclaim physical pages from dormant mappings. | Memory feasibility alone does not settle latency, quality or energy requirements for a different service. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Beyond digital accelerators: end-to-end substrate accounting

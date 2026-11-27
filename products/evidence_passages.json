@@ -226,5 +226,125 @@
     "links": [
       {"predicate": "cites_source", "target": "source:ext_cram_2026"}
     ]
+  },
+  {
+    "id": "weight-program-transfer",
+    "title": "Should we copy a weight edit or rerun the program?",
+    "url": "chapters/cognitive-compilation-and-semantic-ir.html#weight-program-transfer",
+    "question": "Which weight-space programming artifact transfers across checkpoints?",
+    "summary": "WeightCode reran ten programs on five independently trained vision transformers. Recomputing an edit from destination weights and examples preserved much more of the original gain than copying the numerical delta.",
+    "limit": "Same architecture and bounded calibration and retention conditions. Portability to different architectures and the full search cost remain open.",
+    "disposition": "Keep the editing program with its calibration requirements and retest each destination against its original checkpoint.",
+    "measurement": "Source-reported comparison",
+    "aliases": [
+      "weight space programming",
+      "weight-space programming",
+      "weight edits",
+      "WeightCode",
+      "ROME Tracr",
+      "FWSP",
+      "copy a weight patch",
+      "weight editing program transfer"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_weightcode_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_fwsp_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_wsp_icl_2026"
+      }
+    ],
+    "locators": [
+      {
+        "label": "Reader decision",
+        "url": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html#reader-weight-program"
+      }
+    ]
+  },
+  {
+    "id": "better-model-or-better-editor",
+    "title": "Did self-editing produce a better editor?",
+    "url": "chapters/recursive-self-improvement-boundaries.html#better-model-or-better-editor",
+    "question": "Does recursive self-improvement produce better future editors?",
+    "summary": "In SELFWRITE, four updates over five generations raised average held-out math accuracy by 1.45 percentage points. The edited solver also authored the next candidates.",
+    "limit": "One 500-problem test from the same math corpus. The comparison leaves performance of the original and updated editors on matched fresh targets open.",
+    "disposition": "Separate solver performance from editor performance and compare fresh targets under equal history and compute.",
+    "measurement": "Source-reported comparison",
+    "aliases": [
+      "RSI",
+      "self improvement",
+      "recursive self improvement",
+      "SELFWRITE",
+      "better editor",
+      "AIDE squared",
+      "RSI-Env",
+      "RecurSciBench"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_selfwrite_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_rsi_env_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_recurscibench_2026"
+      }
+    ],
+    "locators": [
+      {
+        "label": "Reader decision",
+        "url": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html#reader-better-editor"
+      }
+    ]
+  },
+  {
+    "id": "inference-kernel-placement",
+    "title": "Does bare-metal inference outperform Linux?",
+    "url": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html#inference-kernel-placement",
+    "question": "Should the inference engine replace Linux on this appliance?",
+    "summary": "The corrected Anima table reports 1,344 versus 1,301 tokens/s on 135M at eight workers or threads, and 12.73 versus 15.0 on 7B under the reported comparison.",
+    "limit": "Single Ryzen machine. Linux and bare-metal measurements came from different campaigns, with sustained load on the 7B bare-metal run. No matched Pi energy or recovery result.",
+    "disposition": "Keep a minimal Linux baseline and measure the service deadline, energy per accepted answer and recovery on the intended device.",
+    "measurement": "Source-reported comparison",
+    "aliases": [
+      "bare metal inference",
+      "inference engine as operating system",
+      "inference OS",
+      "Anima OS",
+      "ProbeLogits",
+      "boot straight into inference",
+      "BugBrain Linux comparison",
+      "inference kernel"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_probelogits_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_exomem_2026"
+      },
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_nuraos_2026"
+      }
+    ],
+    "locators": [
+      {
+        "label": "Reader decision",
+        "url": "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html#reader-inference-kernel"
+      }
+    ]
   }
 ]

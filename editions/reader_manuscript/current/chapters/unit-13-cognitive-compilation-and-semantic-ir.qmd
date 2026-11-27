@@ -435,6 +435,14 @@ equivalence.
 
 The source says 4. The release record says 40. Both are legal numbers. Check the field against the cited passage before lowering it into a command. In the Structured Output Benchmark the best exact field-value accuracy was 83.0% on text and 23.7% on audio-derived records. The latter used transcripts and involved different contexts; the gap cannot isolate hearing ability. [The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models](https://arxiv.org/html/2604.25359v1)
 
+### A repair that has to travel {#reader-weight-program}
+
+Two cameras run classifiers with the same architecture. You have fixed the first camera’s errors in fog. A colleague asks for the changed weights. Before sending anything, choose what you would give them and what they would have to test.
+
+WeightCode tried two transfers. Copying the numerical patch did little on independently trained vision models. Rerunning the program let it derive a patch from each destination’s own weights and examples. For the second camera, send the program, the required examples, and a clean-weather test. Keep the original classifier available. If clear-weather accuracy slips, a fog improvement alone cannot justify the switch. The cameras are a teaching example; the paper tested vision transformers.
+
+Now suppose your task is text classification and a few labeled examples in the prompt already work. Give those examples to the prompt, a trained adapter and the weight editor. Rephrase the request before choosing. Pay for failed attempts as well as the change that survives. Which option would you choose if wording changes every week but the checkpoint stays fixed? [Technical comparison and source papers](https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html#weight-program-transfer)
+
 ## Repair by Identity and Observed Change
 
 After rejection, the compiler should not regenerate everything by default. It

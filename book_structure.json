@@ -7076,7 +7076,13 @@
             "ext_adas_2024",
             "ext_embedded_agency_2019",
             "adjudicated_persistence",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_stop_2024",
+            "ext_aide_squared_2026",
+            "ext_rrsi_2026",
+            "ext_rsi_env_2026",
+            "ext_selfwrite_2026",
+            "ext_recurscibench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -7093,7 +7099,13 @@
               "theseus_architecture_gate",
               "capability_ratchet_whitepaper",
               "attd",
-              "forward_transfer_program_synthesis"
+              "forward_transfer_program_synthesis",
+              "ext_stop_2024",
+              "ext_aide_squared_2026",
+              "ext_rrsi_2026",
+              "ext_rsi_env_2026",
+              "ext_selfwrite_2026",
+              "ext_recurscibench_2026"
             ],
             "variants": [],
             "connector_or_recovery": [
@@ -7471,6 +7483,72 @@
                 "papers/source/forward_transfer_program_synthesis.md:1766-1769"
               ],
               "passage_review_note": "Reviewed the complete author manuscript, supplied DOCX, and bibliography. The recursive-improvement discussion is a scoped experimental proposal; no empirical result or external citation is inherited as evidence."
+            },
+            {
+              "source_id": "ext_stop_2024",
+              "mapped_support": "A program that searches over proposed code improvements can itself become the program under improvement.",
+              "limits": "Model parameters stayed fixed. Results depend on the chosen utility and tasks.",
+              "passage_refs": [
+                "sources/source_notes/ext_stop_2024.md",
+                "https://arxiv.org/abs/2310.02304v3"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. On the tested downstream tasks the evolved scaffolding generated better programs using the same underlying model."
+            },
+            {
+              "source_id": "ext_aide_squared_2026",
+              "mapped_support": "Accepted rewrites of a research agent change how its successor searches and manages context.",
+              "limits": "A bounded lineage and finite benchmark suite leave the long-run rate of improvement open.",
+              "passage_refs": [
+                "sources/source_notes/ext_aide_squared_2026.md",
+                "https://arxiv.org/html/2609.26457v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The authors report seven improvements over eight days and transfer to four held-out benchmarks."
+            },
+            {
+              "source_id": "ext_rrsi_2026",
+              "mapped_support": "Proposal budgets, criticism and pruning constrain adaptation of an agent harness to repeatedly scored tasks.",
+              "limits": "The results are conditional on the starting harness, tasks and candidate budget.",
+              "passage_refs": [
+                "sources/source_notes/ext_rrsi_2026.md",
+                "https://arxiv.org/html/2609.24972v3"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Table 1 gives different rankings on the evolution split and independent workplace benchmarks."
+            },
+            {
+              "source_id": "ext_rsi_env_2026",
+              "mapped_support": "An accepted model and harness take the next turn while a host controls evaluation and versioning.",
+              "limits": "Changing the teacher, feedback and target can change the outcome. Gains on one capability can coexist with losses elsewhere.",
+              "passage_refs": [
+                "sources/source_notes/ext_rsi_env_2026.md",
+                "https://arxiv.org/html/2611.01736v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The experiments compare evolving agents with fixed teachers at different levels of goal specificity and feedback."
+            },
+            {
+              "source_id": "ext_selfwrite_2026",
+              "mapped_support": "The current checkpoint writes a low-rank change. An external scoring rule selects an update for the next generation.",
+              "limits": "One task family, a reused selection set and retained search history limit attribution to improved editing ability.",
+              "passage_refs": [
+                "sources/source_notes/ext_selfwrite_2026.md",
+                "https://arxiv.org/html/2611.29513v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Table 2 reports four accepted updates across five generations and a gain of 1.45 percentage points in average per-sample accuracy on 500 held-out math problems."
+            },
+            {
+              "source_id": "ext_recurscibench_2026",
+              "mapped_support": "Freeze initial and evolved agent states and test transfer on separate scientific modeling tasks.",
+              "limits": "Performance of a frozen successor on independent tasks measures transfer of the resulting agent. It leaves its ability to produce better future agents open.",
+              "passage_refs": [
+                "sources/source_notes/ext_recurscibench_2026.md",
+                "https://arxiv.org/html/2611.32508v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The four-system comparison reports variation across domains and individual regressions under positive overall gains."
             }
           ],
           "open_evidence_gaps": [
@@ -9492,7 +9570,15 @@
             "kernel_english_residual_compiler",
             "relational_dimension_compiler",
             "adjudicated_persistence",
-            "ext_structured_output_benchmark_2026"
+            "ext_structured_output_benchmark_2026",
+            "ext_tracr_2023",
+            "ext_rome_2022",
+            "ext_wsp_sparks_2026",
+            "ext_weightcode_2026",
+            "ext_wsp_scope_2026",
+            "ext_wsp_icl_2026",
+            "ext_fwsp_2026",
+            "ext_weightbench_2026"
           ],
           "source_queue": {
             "primary": [
@@ -9509,7 +9595,15 @@
               "qcsa_whitepaper",
               "kernel_english_residual_compiler",
               "relational_dimension_compiler",
-              "ext_structured_output_benchmark_2026"
+              "ext_structured_output_benchmark_2026",
+              "ext_tracr_2023",
+              "ext_rome_2022",
+              "ext_wsp_sparks_2026",
+              "ext_weightcode_2026",
+              "ext_wsp_scope_2026",
+              "ext_wsp_icl_2026",
+              "ext_fwsp_2026",
+              "ext_weightbench_2026"
             ],
             "variants": [
               "ext_pddl_1998",
@@ -9874,6 +9968,94 @@
               ],
               "passage_review_note": "2026-11-19. Source-normalized evaluation and exact leaf-value metric. All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_tracr_2023",
+              "mapped_support": "A compiler turns a restricted symbolic program into a transformer with known internal structure.",
+              "limits": "The compiler takes a program in its supported language. Arbitrary learned checkpoints lack that specification.",
+              "passage_refs": [
+                "sources/source_notes/ext_tracr_2023.md",
+                "https://arxiv.org/html/2301.05062v5"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Sorting and parenthesis checking illustrate how to evaluate an interpretation against a known construction."
+            },
+            {
+              "source_id": "ext_rome_2022",
+              "mapped_support": "ROME localizes and changes an MLP computation associated with a factual relation.",
+              "limits": "A targeted association edit establishes little about transplanting the edit to a second network.",
+              "passage_refs": [
+                "sources/source_notes/ext_rome_2022.md",
+                "https://rome.baulab.info/"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. CounterFact probes the requested change, paraphrases and related subjects whose predictions should remain stable."
+            },
+            {
+              "source_id": "ext_wsp_sparks_2026",
+              "mapped_support": "An editor inspects or constructs weights and uses its knowledge of a task to propose a change.",
+              "limits": "Selected demonstrations in a research blog give no population success rate.",
+              "passage_refs": [
+                "sources/source_notes/ext_wsp_sparks_2026.md",
+                "https://rikiyat.github.io/blog/weight-space-programming/"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The authors present exploratory examples spanning reading, repair and construction. The November 12 addendum clarifies the intended capability claim."
+            },
+            {
+              "source_id": "ext_weightcode_2026",
+              "mapped_support": "An executable transformation can use each destination network and its local examples to derive a fresh parameter change.",
+              "limits": "The destination models shared the architecture. Clean-image accuracy measures only one retention condition.",
+              "passage_refs": [
+                "sources/source_notes/ext_weightcode_2026.md",
+                "https://arxiv.org/html/2611.25476v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The copying and rerunning comparison spans ten programs and five independently trained vision transformers. Recomputed changes transferred substantially better than copied deltas."
+            },
+            {
+              "source_id": "ext_wsp_scope_2026",
+              "mapped_support": "The editor explores localized interventions and validation selects whether to keep a candidate.",
+              "limits": "The best edit is conditional on a successful search. Attempts and validation cost enter the denominator.",
+              "passage_refs": [
+                "sources/source_notes/ext_wsp_scope_2026.md",
+                "https://arxiv.org/html/2611.09382v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Six of sixteen trajectories retained the starting weights across the authors’ seven benchmark families and two model scales."
+            },
+            {
+              "source_id": "ext_wsp_icl_2026",
+              "mapped_support": "An edit can encode a residual-stream shift associated with examples in the prompt.",
+              "limits": "Prompt sensitivity and unfinished editor runs affect the comparison. A small perplexity change cannot establish retention on every task.",
+              "passage_refs": [
+                "sources/source_notes/ext_wsp_icl_2026.md",
+                "https://arxiv.org/html/2611.26841v2"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The six-task comparison includes few-shot prompting and fine-tuning on matched examples. Changes in wording weakened edited performance."
+            },
+            {
+              "source_id": "ext_fwsp_2026",
+              "mapped_support": "A fixed rule selects from four edit operators using measurements of the target network.",
+              "limits": "This is operator selection on a bounded fault suite. Success on other editing tasks needs separate evidence.",
+              "passage_refs": [
+                "sources/source_notes/ext_fwsp_2026.md",
+                "https://arxiv.org/html/2611.34612v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Table 1(b) gives 15/18 exact dispatches for deterministic routing and 6/18 for the 27B tool router with access to the same operators."
+            },
+            {
+              "source_id": "ext_weightbench_2026",
+              "mapped_support": "Editors attempt weight reading, repair, construction, infeasibility recognition and data-free compression under specified access restrictions.",
+              "limits": "The allowed observations and operations differ by track. An unsuccessful constrained attempt does not establish that a repair with calibration data is impossible.",
+              "passage_refs": [
+                "sources/source_notes/ext_weightbench_2026.md",
+                "https://arxiv.org/html/2611.18553v1"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Across 42 tasks the authors find stronger results on small networks and difficulty with the LM patching and infeasibility cases."
             }
           ],
           "publication": {
@@ -22744,7 +22926,12 @@
             "ext_photonic_neuromorphic_2024",
             "ext_quantum_ml_shadows_2024",
             "ext_oecd_ai_infrastructure_competition_2025",
-            "ext_inference_joules_2026"
+            "ext_inference_joules_2026",
+            "ext_exokernel_1995",
+            "ext_mirage_unikernels_2013",
+            "ext_nuraos_2026",
+            "ext_probelogits_2026",
+            "ext_exomem_2026"
           ],
           "problem": "Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.",
           "insufficient": "Nameplate accelerator capacity, chip TDP, workload energy, facility PUE, annual electricity, carbon estimates, water figures, or capital cost each describe a slice. They do not establish delivered useful compute, temporal and locational impact, grid effects, resilience, embodied materials, rebound, community burden, or retireable capacity.",
@@ -22800,7 +22987,12 @@
             ],
             "supporting": [
               "ext_flexible_hardware_enabled_guarantees_2025",
-              "ext_inference_joules_2026"
+              "ext_inference_joules_2026",
+              "ext_exokernel_1995",
+              "ext_mirage_unikernels_2013",
+              "ext_nuraos_2026",
+              "ext_probelogits_2026",
+              "ext_exomem_2026"
             ],
             "variants": [],
             "connector_or_recovery": [],
@@ -22847,6 +23039,61 @@
               ],
               "passage_review_note": "2026-11-19. Table 1, Qwen3-32B on one B200. The tasks differ in output length and maximum feasible batch size. GPU energy excludes other facility loads and cannot by itself determine emissions.",
               "passage_review_state": "reviewed"
+            },
+            {
+              "source_id": "ext_exokernel_1995",
+              "mapped_support": "A small privileged kernel protects physical resources while applications choose management policy through library operating systems.",
+              "limits": "Its microbenchmarks predate contemporary model serving. Their speedups cannot price a decoder.",
+              "passage_refs": [
+                "sources/source_notes/ext_exokernel_1995.md",
+                "https://pdos.csail.mit.edu/6.1810/2017/readings/engler95exokernel.pdf"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The prototype evaluated primitives such as protected transfer and communication against contemporary systems."
+            },
+            {
+              "source_id": "ext_mirage_unikernels_2013",
+              "mapped_support": "Compile application and selected OS libraries into a single-purpose image for a hypervisor.",
+              "limits": "A bootable guest image can still depend on a host or hypervisor for device access.",
+              "passage_refs": [
+                "sources/source_notes/ext_mirage_unikernels_2013.md",
+                "https://anil.recoil.org/papers/2013-asplos-mirage.pdf"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The Mirage design and network-service examples leave the Xen boundary visible beneath the image."
+            },
+            {
+              "source_id": "ext_nuraos_2026",
+              "mapped_support": "A Linux kernel and minimal userland start an inference server and agent services.",
+              "limits": "Project documentation establishes the intended topology. No physical boot or performance comparison was reproduced for this book.",
+              "passage_refs": [
+                "sources/source_notes/ext_nuraos_2026.md",
+                "https://github.com/YASSERRMD/NuraOS/blob/830b20a61de65a6063ead2c33807218ab7fd165d/README.md"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The pinned project README describes the boot path, service layout and Linux isolation facilities."
+            },
+            {
+              "source_id": "ext_probelogits_2026",
+              "mapped_support": "Anima boots a custom kernel with CPU inference, model loading and scheduling on the machine.",
+              "limits": "One machine and different measurement campaigns limit causal attribution to kernel placement. Hosted classifier evaluations use a different execution path.",
+              "passage_refs": [
+                "sources/source_notes/ext_probelogits_2026.md",
+                "https://arxiv.org/html/2604.11943v3"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. Table 4 revises the earlier small-model throughput claim and identifies the baseline date, worker count and sustained-load condition."
+            },
+            {
+              "source_id": "ext_exomem_2026",
+              "mapped_support": "Framework operators keep stable virtual addresses while the OS can reclaim physical pages from dormant mappings.",
+              "limits": "Memory feasibility alone does not settle latency, quality or energy requirements for a different service.",
+              "passage_refs": [
+                "sources/source_notes/ext_exomem_2026.md",
+                "https://liuzhidan.github.io/assets/pdf/2026-MobiCom-ExoMem.pdf"
+              ],
+              "passage_review_state": "reviewed",
+              "passage_review_note": "2026-11-27. The authors report inference with 72B-class models on 64 GB Jetson devices under the tested memory regime."
             }
           ],
           "proof_targets": [

@@ -4,7 +4,7 @@ chapter_id: "cognitive-compilation-and-semantic-ir"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "cognitive_compilation"
   - "deterministic_capability_compilation"
@@ -28,6 +28,14 @@ primary_sources:
   - "relational_dimension_compiler"
   - "adjudicated_persistence"
   - "ext_structured_output_benchmark_2026"
+  - "ext_tracr_2023"
+  - "ext_rome_2022"
+  - "ext_wsp_sparks_2026"
+  - "ext_weightcode_2026"
+  - "ext_wsp_scope_2026"
+  - "ext_wsp_icl_2026"
+  - "ext_fwsp_2026"
+  - "ext_weightbench_2026"
 evidence_level: "argument"
 claim_label: "Design rationale"
 open_evidence_gaps:
@@ -45,12 +53,12 @@ open_evidence_gaps:
 | Part | Part II - Planning, Memory, Reasoning, and Execution |
 | Status | conceptual |
 | Manuscript maturity | v0.3 semantically reviewed proof-contract draft |
-| Last updated | 2026-11-19 |
+| Last updated | 2026-11-27 |
 | Primary source records | 22 assignments. See the source crosswalk for individual roles and limits. |
 | Claim label | Design rationale |
 | Evidence level | argument |
 | Source queue | primary: `cognitive_compilation`; supporting: `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`; external comparators: `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998` |
-| Source loading state | source notes: `cognitive_compilation`, `deterministic_capability_compilation`, `platonic_world_model`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998`, `kernel_english_residual_compiler`, `relational_dimension_compiler`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`. Selected primary passages reviewed for `ext_structured_output_benchmark_2026`. |
+| Source loading state | source notes: `cognitive_compilation`, `deterministic_capability_compilation`, `platonic_world_model`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`, `cca_project`, `moecot_manifest_project`, `corbens_best_model_possible_project`, `qcsa_whitepaper`, `ext_pddl_1998`, `ext_shop2_2003`, `ext_tree_of_thoughts_2023`, `ext_dreamcoder_2020`, `ext_llvm_langref_docs`, `ext_mlir_2020`, `ext_translation_validation_1998`, `kernel_english_residual_compiler`, `relational_dimension_compiler`; raw cache: `cognitive_compilation`, `planforge_compiler_arch`, `genesiscode`, `treellm`, `viea`. Selected primary passages reviewed for `ext_structured_output_benchmark_2026`. November 27 comparisons have individual notes and mappings in the source crosswalk. |
 | Test state | Exact current boundary: two valid/four rejecting hand-authored compilation traces; one independent eight-event obligation/repair/fresh-validation refinement with 86 rejected mutations; one blocked semantic-preservation record/nine rejecting mutations; 45 live Lean declarations across two modules under three targets; 2,340 QCSA predictions over 60 synthetic cases, 13 systems, and three seeds; one 13-stage zero-model reversible trace with ten rejecting adversarial controls; no natural cognitive artifact, matched advantage, or chapter-core support movement. |
 
 ## Drafting guardrail
@@ -183,6 +191,22 @@ Among 21 models, the best exact leaf-value accuracy reached 83.0% on the text
 set and 23.7% on the audio-derived set. The audio-derived inputs were meeting
 transcripts. These are maxima on separate task sets. Task and context
 differences leave open what caused the gap. [The Structured Output Benchmark](https://arxiv.org/html/2604.25359v1)
+
+### Which artifact travels to the next checkpoint? {#weight-program-transfer}
+
+A team has repaired a vision classifier that mistakes noisy images for the wrong class. A second classifier has the same architecture and different training history. The team can copy the numerical difference between the first model’s old and new weights, rerun the program that computed that difference, or keep the second classifier as it is. Each choice produces a different release.
+
+WeightCode tested the first two choices with ten programs and five independently trained vision transformers. Copying the original change yielded little benefit. Rerunning the same code let it inspect the destination weights and use examples for that network. The programs retained 83–110% of their source-network gains on average, depending on the comparison. That percentage describes a fraction of a measured *gain*. A value above 100% is possible when the destination improves more than the source. The experiment concerns transfers within the tested architecture. [WeightCode, copying and rerunning experiments](https://arxiv.org/html/2611.25476v1)
+
+Earlier work makes the distinction precise. Tracr starts with a formal program and constructs a transformer whose intended computation is known. ROME starts with a learned model and a factual association to change, then checks paraphrases and neighboring facts. The *Sparks of Weight-Space Programming* demonstrations ask what an editor can discover when given access to weights. These approaches give the compiler different inputs and give the reviewer different ways to check the output. [Tracr](https://arxiv.org/html/2301.05062v5) · [ROME](https://rome.baulab.info/) · [Sparks](https://rikiyat.github.io/blog/weight-space-programming/)
+
+**Decision.** Carry the program and its calibration requirements to the second checkpoint. Keep that checkpoint eligible as the baseline. Compare clean and corrupted inputs on both versions before admitting the new weights. Where examples in a prompt already solve the problem, compare few-shot prompting and a trained LoRA adapter on the same examples. Change the wording and score again. On six language tasks, Skianis and Likas found that editors often wrote the effect of demonstrations into the weights and that changed wording could reduce accuracy. Hu and colleagues retained the original weights in six of sixteen editing trajectories. Those attempts still consumed editor and evaluation time. [Prompt and adapter comparison](https://arxiv.org/html/2611.26841v2) · [Editing trajectories](https://arxiv.org/html/2611.09382v1)
+
+A fixed edit rule can be a serious competitor. Yao gave a 27B tool router the same four operators available to a deterministic procedure. Across 18 blind fault trials, the fixed procedure chose the prescribed operation or sequence in 15 cases and the model in six. That score measures dispatch on a bounded fault suite. A new fault requiring an operator outside the library would pose a different question. Record the source and target checkpoint, examples available to each arm, attempted edits, retained capabilities, and total cost per accepted change. A smaller patch alone says little about the expense of finding it. [Forward-only programming, Table 1(b)](https://arxiv.org/html/2611.34612v1)
+
+WeightBench adds a useful refusal case. Across 42 tasks its editors struggled to distinguish an impossible edit from a difficult one under a restricted interface. Report which weights the editor could touch and which examples it could see before interpreting a failed attempt. [WeightBench, infeasibility track and experiments](https://arxiv.org/html/2611.18553v1)
+
+For transient changes during a forward pass, see [activation governance](white-box-evidence-interpretability-and-activation-governance.qmd). For learned updates, see [governed model training](governed-model-training-distributed-optimization-and-scaling.qmd). When the edited checkpoint becomes the editor of its successor, the [self-editing comparison](recursive-self-improvement-boundaries.qmd#better-model-or-better-editor) adds another test.
 
 ### Claim-source mapping status
 
@@ -1071,6 +1095,14 @@ These rows keep Cognitive Compilation and Semantic IR's manifest assignments vis
 | `relational_dimension_compiler` | Passage-reviewed comparator: [The Relational Dimension Compiler: Adaptive Polyadic Cognition with Bounded Computational Arity and Unbounded Semantic Structure](../papers/relational_dimension_compiler.html). Adds a dimensional type system and a four-layer relational IR whose semantic, evidence, computational, and abstraction records can lower relation objects into neural, graph, database, symbolic, simulator, planning, or verification backends without identifying a tensor index with semantic identity. | The existing chapter owns accepted-obligation translation, not the complete RDC world-structure lifecycle; no lowering preserves open-world relational meaning by source authority alone. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `adjudicated_persistence` | Passage-reviewed comparator: [Placement adjudication before semantic lowering](../papers/adjudicated_persistence.html). Separates deciding where a lesson should persist from compiling the accepted lesson into a particular semantic or executable representation, with UNKNOWN and deoptimization paths. | Used only to order adjudication before lowering and preserve UNKNOWN and deoptimization; no compiler-correctness or representation-sufficiency result follows. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 | `ext_structured_output_benchmark_2026` | Passage-reviewed comparator: The Structured Output Benchmark: A Multi-Source Benchmark for Evaluating Structured Output Quality in Large Language Models. Score schema compliance and correctness against source evidence separately. | All inputs were text-normalized. Dataset and context differences limit comparisons across source modalities. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_tracr_2023` | Passage-reviewed comparator: Tracr: Compiled Transformers as a Laboratory for Interpretability. A compiler turns a restricted symbolic program into a transformer with known internal structure. | The compiler takes a program in its supported language. Arbitrary learned checkpoints lack that specification. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_rome_2022` | Passage-reviewed comparator: Locating and Editing Factual Associations in GPT. ROME localizes and changes an MLP computation associated with a factual relation. | A targeted association edit establishes little about transplanting the edit to a second network. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_wsp_sparks_2026` | Passage-reviewed comparator: Sparks of Weight-Space Programming. An editor inspects or constructs weights and uses its knowledge of a task to propose a change. | Selected demonstrations in a research blog give no population success rate. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_weightcode_2026` | Passage-reviewed comparator: WeightCode: Installing New Capabilities into Neural Networks via Weight-Space Programming. An executable transformation can use each destination network and its local examples to derive a fresh parameter change. | The destination models shared the architecture. Clean-image accuracy measures only one retention condition. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_wsp_scope_2026` | Passage-reviewed comparator: Exploring Weight-Space Programming: Capabilities, Generalization, and Limitations. The editor explores localized interventions and validation selects whether to keep a candidate. | The best edit is conditional on a successful search. Attempts and validation cost enter the denominator. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_wsp_icl_2026` | Passage-reviewed comparator: Weight-Space Programming Writes In-Context Learning and Matches Fine-Tuning in Language Models. An edit can encode a residual-stream shift associated with examples in the prompt. | Prompt sensitivity and unfinished editor runs affect the comparison. A small perplexity change cannot establish retention on every task. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_fwsp_2026` | Passage-reviewed comparator: Do We Really Need an LLM for Weight-Space Programming? A Deterministic Forward-Only Paradigm and Its Capability Boundaries. A fixed rule selects from four edit operators using measurements of the target network. | This is operator selection on a bounded fault suite. Success on other editing tasks needs separate evidence. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
+| `ext_weightbench_2026` | Passage-reviewed comparator: WeightBench: Evaluating Language Models as Weight-Space Programmers. Editors attempt weight reading, repair, construction, infeasibility recognition and data-free compression under specified access restrictions. | The allowed observations and operations differ by track. An unsuccessful constrained attempt does not establish that a repair with calibration data is impossible. No local implementation, reproduction, performance, safety, deployment, support-state, or ASI result is established by this reconciliation row. |
 
 <!-- manifest-source-reconciliation:end -->
 ## Summary

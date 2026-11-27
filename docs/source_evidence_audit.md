@@ -11,12 +11,12 @@ It does **not** quote or publish raw private source passages. It also does **not
 | Metric | Value |
 |---|---:|
 | Chapters audited | 89 |
-| Assigned source/chapter pairs | 1458 |
-| Exact claim-source mappings | 1250 |
+| Assigned source/chapter pairs | 1477 |
+| Exact claim-source mappings | 1269 |
 | Unmapped assigned pairs | 208 |
-| Source notes present for assigned pairs | 1458 |
-| Source notes listing assigned chapter | 1458 |
-| Passage-reviewed mappings recorded | 1183 |
+| Source notes present for assigned pairs | 1477 |
+| Source notes listing assigned chapter | 1477 |
+| Passage-reviewed mappings recorded | 1202 |
 | Support-state counts | {"argument": 89} |
 | Validation errors | 0 |
 | Warnings | 0 |
@@ -59,7 +59,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `model-weight-custody-and-hardware-roots-of-trust` | 16 | 10 | 16 | 16 | 10 | argument | passage review required before source-derived promotion |
 | `open-weight-release-and-post-release-control` | 7 | 7 | 7 | 7 | 0 | argument | passage review required before source-derived promotion |
 | `ai-supply-chain-integrity-and-lifecycle-provenance` | 16 | 14 | 16 | 16 | 14 | argument | passage review required before source-derived promotion |
-| `recursive-self-improvement-boundaries` | 20 | 16 | 20 | 20 | 16 | argument | passage review required before source-derived promotion |
+| `recursive-self-improvement-boundaries` | 26 | 22 | 26 | 26 | 22 | argument | passage review required before source-derived promotion |
 | `open-ended-improvement-engines` | 9 | 8 | 9 | 9 | 8 | argument | passage review required before source-derived promotion |
 | `autonomous-replication-proliferation-and-containment` | 2 | 1 | 2 | 2 | 0 | argument | passage review required before source-derived promotion |
 | `intent-to-execution-contracts` | 14 | 12 | 14 | 14 | 12 | argument | passage review required before source-derived promotion |
@@ -67,7 +67,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `planning-as-a-control-layer` | 13 | 10 | 13 | 13 | 10 | argument | passage review required before source-derived promotion |
 | `governed-world-models-and-reality-grounding` | 20 | 20 | 20 | 20 | 20 | argument | eligible for support review |
 | `reflexive-model-world-systems` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
-| `cognitive-compilation-and-semantic-ir` | 22 | 19 | 22 | 22 | 19 | argument | passage review required before source-derived promotion |
+| `cognitive-compilation-and-semantic-ir` | 30 | 27 | 30 | 30 | 27 | argument | passage review required before source-derived promotion |
 | `cognitive-method-transfer-and-qualification` | 2 | 2 | 2 | 2 | 2 | argument | eligible for support review |
 | `virtual-context-abi` | 45 | 38 | 45 | 45 | 38 | argument | passage review required before source-derived promotion |
 | `durable-semantic-memory-and-knowledge-lattices` | 13 | 13 | 13 | 13 | 9 | argument | passage review required before source-derived promotion |
@@ -99,7 +99,7 @@ It does **not** quote or publish raw private source passages. It also does **not
 | `governed-deliberation-and-test-time-scaling` | 12 | 12 | 12 | 12 | 12 | argument | eligible for support review |
 | `rankfold-neuralfold-and-artifact-compression` | 11 | 10 | 11 | 11 | 10 | argument | passage review required before source-derived promotion |
 | `resource-economics-and-token-budgets` | 51 | 26 | 51 | 51 | 26 | argument | passage review required before source-derived promotion |
-| `physical-compute-infrastructure-energy-and-environmental-constraints` | 9 | 4 | 9 | 9 | 2 | argument | passage review required before source-derived promotion |
+| `physical-compute-infrastructure-energy-and-environmental-constraints` | 14 | 9 | 14 | 14 | 7 | argument | passage review required before source-derived promotion |
 | `mathematical-and-search-substrates` | 14 | 14 | 14 | 14 | 14 | argument | eligible for support review |
 | `circle-calculus-and-proof-carrying-ai-contracts` | 5 | 5 | 5 | 5 | 5 | argument | eligible for support review |
 | `coil-attention-cyclic-memory-and-recurrence-contracts` | 7 | 7 | 7 | 7 | 7 | argument | eligible for support review |
@@ -422,6 +422,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_openssf_model_signing_spec_2025` | 1 | yes |
 | `ext_spdx_ai_profile_3_0_1` | 1 | yes |
 | `ext_dataset_licensing_audit_2024` | 1 | yes |
+| `ext_stop_2024` | 1 | yes |
+| `ext_aide_squared_2026` | 1 | yes |
+| `ext_rrsi_2026` | 1 | yes |
+| `ext_rsi_env_2026` | 1 | yes |
+| `ext_selfwrite_2026` | 1 | yes |
+| `ext_recurscibench_2026` | 1 | yes |
 | `ext_poet_2019` | 1 | yes |
 | `ext_funsearch_2024` | 1 | yes |
 | `ext_replibench_2025` | 1 | yes |
@@ -446,6 +452,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_mlir_2020` | 1 | yes |
 | `ext_translation_validation_1998` | 1 | yes |
 | `ext_structured_output_benchmark_2026` | 1 | yes |
+| `ext_tracr_2023` | 1 | yes |
+| `ext_rome_2022` | 1 | yes |
+| `ext_wsp_sparks_2026` | 1 | yes |
+| `ext_weightcode_2026` | 1 | yes |
+| `ext_wsp_scope_2026` | 1 | yes |
+| `ext_wsp_icl_2026` | 1 | yes |
+| `ext_fwsp_2026` | 1 | yes |
+| `ext_weightbench_2026` | 1 | yes |
 | `compiling_civilization_cmtq` | 1 | yes |
 | `ext_coala_2024` | 1 | yes |
 | `ext_rag_2020` | 1 | yes |
@@ -604,6 +618,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `ext_iea_energy_and_ai_2025` | 1 | yes |
 | `ext_lbnl_data_center_energy_2024` | 1 | yes |
 | `ext_inference_joules_2026` | 1 | yes |
+| `ext_exokernel_1995` | 1 | yes |
+| `ext_mirage_unikernels_2013` | 1 | yes |
+| `ext_nuraos_2026` | 1 | yes |
+| `ext_probelogits_2026` | 1 | yes |
+| `ext_exomem_2026` | 1 | yes |
 | `coil_attention_memory` | 1 | yes |
 | `ext_beyond_compilation_2026` | 1 | yes |
 | `ext_agent_reliability_rater_drift_2026` | 1 | yes |
@@ -995,6 +1014,12 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_embedded_agency_2019` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
 | `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `forward_transfer_program_synthesis` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_stop_2024` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_aide_squared_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_rrsi_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_rsi_env_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_selfwrite_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `recursive-self-improvement-boundaries.core` | `recursive-self-improvement-boundaries` | `ext_recurscibench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `learning_compute_topology` | unmapped | note present | chapter listed | not passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `rmi` | mapped | note present | chapter listed | passage-reviewed |
 | `open-ended-improvement-engines.core` | `open-ended-improvement-engines` | `cognitive_loop_closure` | mapped | note present | chapter listed | passage-reviewed |
@@ -1084,6 +1109,14 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `relational_dimension_compiler` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `adjudicated_persistence` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_structured_output_benchmark_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_tracr_2023` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_rome_2022` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_wsp_sparks_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_weightcode_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_wsp_scope_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_wsp_icl_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_fwsp_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `cognitive-compilation-and-semantic-ir.core` | `cognitive-compilation-and-semantic-ir` | `ext_weightbench_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-method-transfer-and-qualification.core` | `cognitive-method-transfer-and-qualification` | `compiling_civilization_cmtq` | mapped | note present | chapter listed | passage-reviewed |
 | `cognitive-method-transfer-and-qualification.core` | `cognitive-method-transfer-and-qualification` | `ext_coala_2024` | mapped | note present | chapter listed | passage-reviewed |
 | `virtual-context-abi.core` | `virtual-context-abi` | `vcm_public` | mapped | note present | chapter listed | passage-reviewed |
@@ -1748,6 +1781,11 @@ Sources are sorted by how many chapter claims currently depend on their source-n
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_quantum_ml_shadows_2024` | unmapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_oecd_ai_infrastructure_competition_2025` | unmapped | note present | chapter listed | not passage-reviewed |
 | `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_inference_joules_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_exokernel_1995` | mapped | note present | chapter listed | passage-reviewed |
+| `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_mirage_unikernels_2013` | mapped | note present | chapter listed | passage-reviewed |
+| `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_nuraos_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_probelogits_2026` | mapped | note present | chapter listed | passage-reviewed |
+| `physical-compute-infrastructure-energy-and-environmental-constraints.core` | `physical-compute-infrastructure-energy-and-environmental-constraints` | `ext_exomem_2026` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `genesiscode` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `temporal_coil_research` | mapped | note present | chapter listed | passage-reviewed |
 | `mathematical-and-search-substrates.core` | `mathematical-and-search-substrates` | `cognitive_compilation` | mapped | note present | chapter listed | passage-reviewed |

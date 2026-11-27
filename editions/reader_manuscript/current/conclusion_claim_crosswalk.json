@@ -4,14 +4,14 @@
   "state": "canonical_current_editorial_crosswalk",
   "source_graph": "book_structure.json",
   "source_outline": "docs/human_reader_26_unit_outline.md",
-  "book_structure_sha256": "04801038a994deacd2a766688118790de64e84d0ac0c127990c0e9076ce10ec2",
+  "book_structure_sha256": "4ba1d50ddf5e7da1212a9ddb1ecc60349a7b2d8a027776836123d575b020049b",
   "outline_sha256": "5aadf317460d352d4b6fdbc0f05463cabd4b3ac8a51e268cfefeea630680b8ca",
   "assignment_rule": "Every canonical technical owner routes to exactly one Human Reader unit while retaining its own claim, source, proof, test, artifact-reference, publication, support, and URL identity.",
   "unit_count": 26,
   "owner_route_count": 89,
   "edge_counts": {
     "claim": 89,
-    "source": 1458,
+    "source": 1476,
     "proof": 344,
     "test": 666,
     "tracked_artifact_reference": 260,
@@ -1159,7 +1159,7 @@
           "chapter_id": "model-weight-custody-and-hardware-roots-of-trust",
           "title": "Model-Weight Custody and Hardware Roots of Trust",
           "technical_source_file": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
-          "technical_source_sha256": "7f05723c397f81a4d557301f571e2e1c9aebc73acdad1e8fa85d41f60b15de6e",
+          "technical_source_sha256": "26c037386a5d0237d8154c9e1420655ede2824177b45e93a2a3d3b2970f64a41",
           "live_technical_path": "chapters/model-weight-custody-and-hardware-roots-of-trust.html",
           "human_reader_unit_id": "unit-04",
           "core_claim_id": "model-weight-custody-and-hardware-roots-of-trust.core",
@@ -1288,7 +1288,7 @@
           "artifact_refs": [
             {
               "path": "chapters/model-weight-custody-and-hardware-roots-of-trust.qmd",
-              "sha256": "7f05723c397f81a4d557301f571e2e1c9aebc73acdad1e8fa85d41f60b15de6e"
+              "sha256": "26c037386a5d0237d8154c9e1420655ede2824177b45e93a2a3d3b2970f64a41"
             },
             {
               "path": "lean/AsiStackProofs/ModelWeightCustody.lean",
@@ -1832,7 +1832,7 @@
           "chapter_id": "white-box-evidence-interpretability-and-activation-governance",
           "title": "White-Box Evidence, Interpretability, and Activation Governance",
           "technical_source_file": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-          "technical_source_sha256": "9075a9bbcb3255108b74eb822e2fe3da5418276d3a3d6c5703f05d9cca1b5c21",
+          "technical_source_sha256": "40e546fddc7e61f4247c01f0f858d42a2907de14e723601e57fec0655d9c11c6",
           "live_technical_path": "chapters/white-box-evidence-interpretability-and-activation-governance.html",
           "human_reader_unit_id": "unit-05",
           "core_claim_id": "white-box-evidence-interpretability-and-activation-governance.core",
@@ -1924,7 +1924,7 @@
           "artifact_refs": [
             {
               "path": "chapters/white-box-evidence-interpretability-and-activation-governance.qmd",
-              "sha256": "9075a9bbcb3255108b74eb822e2fe3da5418276d3a3d6c5703f05d9cca1b5c21"
+              "sha256": "40e546fddc7e61f4247c01f0f858d42a2907de14e723601e57fec0655d9c11c6"
             },
             {
               "path": "lean/AsiStackProofs/WhiteBoxEvidence.lean",
@@ -4110,7 +4110,7 @@
       "order": 13,
       "title": "Cognitive Compilation and Semantic IR",
       "human_reader_source_file": "chapters/unit-13-cognitive-compilation-and-semantic-ir.qmd",
-      "human_reader_source_sha256": "d210deccf3a6636006fe29512de795aec2345f25596dd32576227d38a442c8ed",
+      "human_reader_source_sha256": "7895c5f89e09285799929d705c63af07af7f66f08017e9fc1c48bf268f3f8dbf",
       "public_path": "reader/chapters/unit-13-cognitive-compilation-and-semantic-ir.html",
       "central_question": "What intermediate representations let different cognitive substrates share work without pretending that structural conformity equals preserved meaning?",
       "conclusion_change": "End-to-end systems preserving intent, relational roles, and recovery better without explicit IR would narrow the compilation boundary.",
@@ -4121,7 +4121,7 @@
           "chapter_id": "cognitive-compilation-and-semantic-ir",
           "title": "Cognitive Compilation and Semantic IR",
           "technical_source_file": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-          "technical_source_sha256": "2be37ef10dab7183387ec7fa27df6575fb367865f5ee42bb68a535ee490ff48c",
+          "technical_source_sha256": "6812c04772f5af3e9e193afd431b4fab0850fed15615c63a44d85cf3dc3bfabd",
           "live_technical_path": "chapters/cognitive-compilation-and-semantic-ir.html",
           "human_reader_unit_id": "unit-13",
           "core_claim_id": "cognitive-compilation-and-semantic-ir.core",
@@ -4150,7 +4150,14 @@
             "kernel_english_residual_compiler",
             "relational_dimension_compiler",
             "adjudicated_persistence",
-            "ext_structured_output_benchmark_2026"
+            "ext_structured_output_benchmark_2026",
+            "ext_tracr_2023",
+            "ext_rome_2022",
+            "ext_wsp_sparks_2026",
+            "ext_weightcode_2026",
+            "ext_wsp_scope_2026",
+            "ext_wsp_icl_2026",
+            "ext_fwsp_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/cognitive_compilation.md",
@@ -4174,7 +4181,14 @@
             "sources/source_notes/kernel_english_residual_compiler.md",
             "sources/source_notes/relational_dimension_compiler.md",
             "sources/source_notes/adjudicated_persistence.md",
-            "sources/source_notes/ext_structured_output_benchmark_2026.md"
+            "sources/source_notes/ext_structured_output_benchmark_2026.md",
+            "sources/source_notes/ext_tracr_2023.md",
+            "sources/source_notes/ext_rome_2022.md",
+            "sources/source_notes/ext_wsp_sparks_2026.md",
+            "sources/source_notes/ext_weightcode_2026.md",
+            "sources/source_notes/ext_wsp_scope_2026.md",
+            "sources/source_notes/ext_wsp_icl_2026.md",
+            "sources/source_notes/ext_fwsp_2026.md"
           ],
           "proof_edges": [
             {
@@ -4237,7 +4251,7 @@
           "artifact_refs": [
             {
               "path": "chapters/cognitive-compilation-and-semantic-ir.qmd",
-              "sha256": "2be37ef10dab7183387ec7fa27df6575fb367865f5ee42bb68a535ee490ff48c"
+              "sha256": "6812c04772f5af3e9e193afd431b4fab0850fed15615c63a44d85cf3dc3bfabd"
             },
             {
               "path": "lean/AsiStackProofs/CognitiveCompilation.lean",
@@ -8126,7 +8140,7 @@
           "chapter_id": "governed-model-training-distributed-optimization-and-scaling",
           "title": "Governed Model Training, Distributed Optimization, and Scaling",
           "technical_source_file": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-          "technical_source_sha256": "d4437da8b3afb9350531863018829735c0c68afc45df161f1bdf1b5399c54dd2",
+          "technical_source_sha256": "f8a4c7c64d3546a8242330db1768cc3daf55eb77ead6ddd0a7649bf3755bdb1d",
           "live_technical_path": "chapters/governed-model-training-distributed-optimization-and-scaling.html",
           "human_reader_unit_id": "unit-20",
           "core_claim_id": "governed-model-training-distributed-optimization-and-scaling.core",
@@ -8250,7 +8264,7 @@
           "artifact_refs": [
             {
               "path": "chapters/governed-model-training-distributed-optimization-and-scaling.qmd",
-              "sha256": "d4437da8b3afb9350531863018829735c0c68afc45df161f1bdf1b5399c54dd2"
+              "sha256": "f8a4c7c64d3546a8242330db1768cc3daf55eb77ead6ddd0a7649bf3755bdb1d"
             },
             {
               "path": "lean/AsiStackProofs/GovernedModelTraining.lean",
@@ -10301,7 +10315,7 @@
           "chapter_id": "fast-generation-architectures",
           "title": "Fast Generation Architectures",
           "technical_source_file": "chapters/fast-generation-architectures.qmd",
-          "technical_source_sha256": "6cceb2f88036552d0b55525b3ed8763964c187c5e0f3a24f1e76ccfac24b870d",
+          "technical_source_sha256": "d3d04eb202ac3ccf4e8a1e34e848f03c6bddaf184b734f0589264992bdf98cf1",
           "live_technical_path": "chapters/fast-generation-architectures.html",
           "human_reader_unit_id": "unit-23",
           "core_claim_id": "fast-generation-architectures.core",
@@ -10523,7 +10537,7 @@
           "artifact_refs": [
             {
               "path": "chapters/fast-generation-architectures.qmd",
-              "sha256": "6cceb2f88036552d0b55525b3ed8763964c187c5e0f3a24f1e76ccfac24b870d"
+              "sha256": "d3d04eb202ac3ccf4e8a1e34e848f03c6bddaf184b734f0589264992bdf98cf1"
             },
             {
               "path": "scripts/validate_theseus_fast_support_lane.py",
@@ -11211,7 +11225,7 @@
       "order": 24,
       "title": "Physical Compute, Energy, and Infrastructure",
       "human_reader_source_file": "chapters/unit-24-physical-compute-energy-and-infrastructure.qmd",
-      "human_reader_source_sha256": "3176cab1119f1c33f69e9e9872cb6e2d625b2a1c254ee5b6c92f708271e3436c",
+      "human_reader_source_sha256": "0b9c0eda0faa63982742feb9b4facb8606236881db23de4bcbec347c715f7c7e",
       "public_path": "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html",
       "central_question": "What physical and social constraints determine whether an efficient cognitive architecture is actually deployable, resilient, and worth its displaced costs?",
       "conclusion_change": "Deployment studies showing physical constraints and topology do not materially affect accepted useful output, resilience, privacy, or total cost would narrow this layer.",
@@ -11472,7 +11486,7 @@
           "chapter_id": "physical-compute-infrastructure-energy-and-environmental-constraints",
           "title": "Physical Compute Infrastructure, Energy, and Environmental Constraints",
           "technical_source_file": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-          "technical_source_sha256": "4d7deab630574beee24d32679626e520eac5af910e29206032e6f54bec9adb08",
+          "technical_source_sha256": "ee2aba8ee1ef9789315c5675b860680ffbaf8006ed351ad39fd2e9238f52d211",
           "live_technical_path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html",
           "human_reader_unit_id": "unit-24",
           "core_claim_id": "physical-compute-infrastructure-energy-and-environmental-constraints.core",
@@ -11488,7 +11502,12 @@
             "ext_photonic_neuromorphic_2024",
             "ext_quantum_ml_shadows_2024",
             "ext_oecd_ai_infrastructure_competition_2025",
-            "ext_inference_joules_2026"
+            "ext_inference_joules_2026",
+            "ext_exokernel_1995",
+            "ext_mirage_unikernels_2013",
+            "ext_nuraos_2026",
+            "ext_probelogits_2026",
+            "ext_exomem_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/tokenmana.md",
@@ -11499,7 +11518,12 @@
             "sources/source_notes/ext_photonic_neuromorphic_2024.md",
             "sources/source_notes/ext_quantum_ml_shadows_2024.md",
             "sources/source_notes/ext_oecd_ai_infrastructure_competition_2025.md",
-            "sources/source_notes/ext_inference_joules_2026.md"
+            "sources/source_notes/ext_inference_joules_2026.md",
+            "sources/source_notes/ext_exokernel_1995.md",
+            "sources/source_notes/ext_mirage_unikernels_2013.md",
+            "sources/source_notes/ext_nuraos_2026.md",
+            "sources/source_notes/ext_probelogits_2026.md",
+            "sources/source_notes/ext_exomem_2026.md"
           ],
           "proof_edges": [
             {
@@ -11534,7 +11558,7 @@
           "artifact_refs": [
             {
               "path": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.qmd",
-              "sha256": "4d7deab630574beee24d32679626e520eac5af910e29206032e6f54bec9adb08"
+              "sha256": "ee2aba8ee1ef9789315c5675b860680ffbaf8006ed351ad39fd2e9238f52d211"
             },
             {
               "path": "lean/AsiStackProofs/PhysicalComputeInfrastructureReview.lean",
@@ -11559,7 +11583,7 @@
       "order": 25,
       "title": "Recursive Improvement, Replication, and Containment",
       "human_reader_source_file": "chapters/unit-25-recursive-improvement-replication-and-containment.qmd",
-      "human_reader_source_sha256": "9a3b840355fe07030579d7230de69b85386ad87bf23cfec5d05efe4c45957563",
+      "human_reader_source_sha256": "1400cb321f3e9fbe0fca17065b90a7ea3856c09d14ad8885094202d2d6631902",
       "public_path": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html",
       "central_question": "What boundaries let a system improve recursively while remaining interruptible, evidence-bound, and unable to authorize its own proliferation?",
       "conclusion_change": "Competing architectures that achieve equal improvement, reversibility, descendant control, and incident recovery with fewer authority boundaries would justify simplification.",
@@ -11570,7 +11594,7 @@
           "chapter_id": "recursive-self-improvement-boundaries",
           "title": "Recursive Self-Improvement Boundaries",
           "technical_source_file": "chapters/recursive-self-improvement-boundaries.qmd",
-          "technical_source_sha256": "4b7fc33a5363b49da415fc37d400e99e004c2b517399015bb1cbcb06e2e68ec8",
+          "technical_source_sha256": "e45af7dc0e83bf43dac29ec448ab14c249abc538ea96219cbfc3743410410e0c",
           "live_technical_path": "chapters/recursive-self-improvement-boundaries.html",
           "human_reader_unit_id": "unit-25",
           "core_claim_id": "recursive-self-improvement-boundaries.core",
@@ -11597,7 +11621,13 @@
             "ext_adas_2024",
             "ext_embedded_agency_2019",
             "adjudicated_persistence",
-            "forward_transfer_program_synthesis"
+            "forward_transfer_program_synthesis",
+            "ext_stop_2024",
+            "ext_aide_squared_2026",
+            "ext_rrsi_2026",
+            "ext_rsi_env_2026",
+            "ext_selfwrite_2026",
+            "ext_recurscibench_2026"
           ],
           "source_note_refs": [
             "sources/source_notes/scf.md",
@@ -11619,7 +11649,13 @@
             "sources/source_notes/ext_adas_2024.md",
             "sources/source_notes/ext_embedded_agency_2019.md",
             "sources/source_notes/adjudicated_persistence.md",
-            "sources/source_notes/forward_transfer_program_synthesis.md"
+            "sources/source_notes/forward_transfer_program_synthesis.md",
+            "sources/source_notes/ext_stop_2024.md",
+            "sources/source_notes/ext_aide_squared_2026.md",
+            "sources/source_notes/ext_rrsi_2026.md",
+            "sources/source_notes/ext_rsi_env_2026.md",
+            "sources/source_notes/ext_selfwrite_2026.md",
+            "sources/source_notes/ext_recurscibench_2026.md"
           ],
           "proof_edges": [
             {
@@ -11694,7 +11730,7 @@
           "artifact_refs": [
             {
               "path": "chapters/recursive-self-improvement-boundaries.qmd",
-              "sha256": "4b7fc33a5363b49da415fc37d400e99e004c2b517399015bb1cbcb06e2e68ec8"
+              "sha256": "e45af7dc0e83bf43dac29ec448ab14c249abc538ea96219cbfc3743410410e0c"
             }
           ],
           "publication": {

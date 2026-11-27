@@ -2887,7 +2887,7 @@ Source loading queue:
 | Connector or recovery required | `moecot` | Load via Google Drive connector or mark as blocked before source-derived claims. |
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `capability_ratchet_whitepaper`, `attd`, `ext_embedded_agency_2019`, `adjudicated_persistence`, `forward_transfer_program_synthesis` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `capability_ratchet_whitepaper`, `attd`, `ext_embedded_agency_2019`, `adjudicated_persistence`, `forward_transfer_program_synthesis`, `ext_stop_2024`, `ext_aide_squared_2026`, `ext_rrsi_2026`, `ext_rsi_env_2026`, `ext_selfwrite_2026`, `ext_recurscibench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: A system participating in its own proposal, implementation, or evaluation can shape the state, evidence, evaluator, authority, ontology, descendants, and recovery conditions by which admission is judged.
@@ -3685,7 +3685,7 @@ Source loading queue:
 
 
 
-| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `adjudicated_persistence`, `ext_structured_output_benchmark_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `deterministic_capability_compilation`, `platonic_world_model`, `kernel_english_residual_compiler`, `relational_dimension_compiler`, `adjudicated_persistence`, `ext_structured_output_benchmark_2026`, `ext_tracr_2023`, `ext_rome_2022`, `ext_wsp_sparks_2026`, `ext_weightcode_2026`, `ext_wsp_scope_2026`, `ext_wsp_icl_2026`, `ext_fwsp_2026`, `ext_weightbench_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: after Planning admits an obligation, every source-to-IR-to-target transformation can silently lose meaning, non-goals, authority, rights, evidence, repair identity, or residual duties while retaining fluent output.
@@ -6793,7 +6793,7 @@ Source loading queue:
 | Primary | `ext_iea_energy_and_ai_2025`, `ext_lbnl_data_center_energy_2024` | Use the assigned source notes for bounded mechanism, comparator, failure, and limitation context. Source-reported results remain distinct from local evidence. |
 
 
-| Manifest assignment reconciliation | `tokenmana`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`, `ext_inference_joules_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
+| Manifest assignment reconciliation | `tokenmana`, `ext_flexible_hardware_enabled_guarantees_2025`, `ext_neuromorphic_computing_scale_2025`, `ext_photonic_neuromorphic_2024`, `ext_quantum_ml_shadows_2024`, `ext_oecd_ai_infrastructure_competition_2025`, `ext_inference_joules_2026`, `ext_exokernel_1995`, `ext_mirage_unikernels_2013`, `ext_nuraos_2026`, `ext_probelogits_2026`, `ext_exomem_2026` | Generated from `book_structure.json`: read these assigned source notes after the authored queue rows; they add drafting context only and do not promote claim support. |
 Draft arc:
 
 - Problem: Requested compute becomes useful work only through accelerators, memory, storage, interconnect, facilities, grid connections, generation, cooling, water, land, materials, maintenance, resilience, and retirement at particular places and times. Abstract token or FLOP budgets hide these physical constraints and their affected communities.

@@ -4,7 +4,7 @@ chapter_id: "model-weight-custody-and-hardware-roots-of-trust"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 semantically reviewed proof-contract draft"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "ext_rand_model_weight_security_2024"
   - "ext_nist_confidential_computing_2026"
@@ -479,6 +479,8 @@ shards, page cache, host buffers, device memory, temporary unpacked forms,
 compiled kernels, residual stores, backups, peer replicas, and descendant
 certificates. Where physical recall is impossible, policy revocation and key
 destruction are reported separately from copy erasure and capability removal.
+
+For an appliance that boots straight into inference, [trace the kernel and recovery image](physical-compute-infrastructure-energy-and-environmental-constraints.qmd#inference-kernel-placement) to identify who can restore service after an interrupted weight update.
 
 ## Interfaces
 

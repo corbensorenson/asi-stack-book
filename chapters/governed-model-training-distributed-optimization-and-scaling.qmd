@@ -4,7 +4,7 @@ chapter_id: "governed-model-training-distributed-optimization-and-scaling"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "integrated argument chapter; formal/protocol contract complete; optimizer and maintenance-learning integrated"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "learning_compute_topology"
   - "beastbrain"
@@ -778,6 +778,8 @@ monitor drift and stop/selection rules still need observation during the run.
 shows why the exposed reward and optimized detector are not substitutes for
 that outcome audit. The prediction is a planning input, not authority to
 continue training or promote a selected checkpoint.
+
+A [matched comparison of prompting, adapter training and written weight edits](cognitive-compilation-and-semantic-ir.qmd#weight-program-transfer) includes the examples supplied to each arm and the cost of rejected candidates.
 
 ## Interfaces
 

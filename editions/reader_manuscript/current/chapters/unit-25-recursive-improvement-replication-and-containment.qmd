@@ -105,6 +105,14 @@ verification, extra compute, or leakage. The proposed experiments provide a
 way to ask the question; they have not established an open-ended improvement
 curve.
 
+### Would you give the successor the editor’s job? {#reader-better-editor}
+
+A checkpoint solves more held-out math problems after writing its own edits. You have one more round of compute. Which checkpoint gets to spend it?
+
+SELFWRITE accepted four updates in five generations. On 500 separate math problems, mean accuracy over four sampled answers rose from 76.30% to 77.75%. The original solver is a sensible baseline for that question. The choice of editor needs a different trial. Hand the original and updated editors copies of the *same fresh target*, the same prior notes and the same budget. Keep the final problems sealed. Which editor leaves the target better off after accounting for failed tries and damage to other tasks?
+
+The original could win that trial even if the successor is the better solver. Carry the math result forward at its measured scope and leave the editor appointment open. Someone outside both candidates must still own the test and the decision to accept a change. [Five generations, the held-out result and the proposed comparison](https://corbensorenson.github.io/asi-stack-book/chapters/recursive-self-improvement-boundaries.html#better-model-or-better-editor)
+
 ## Proposal Is Not Permission
 
 An improvement proposal is an artifact with identity. It names the problem,
