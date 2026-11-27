@@ -165,11 +165,15 @@ def quarto_search_links(text: str, adapter: str) -> str:
            '    sharedUrl.searchParams.set(kQueryArg, kQuery);\n'
            '    window.history.replaceState(window.history.state, "", sharedUrl);\n'
            '  }, { once: true });\n}')
-    render("""return readSearchData().then(function (fuse) {
+    previous = """return asiReadSearchData().then(() =>
+                asiSearchResults(query, state.context.asiScope || "", fuseSearchOptions));"""
+    lookup = 'return asiLookup(query, state.context.asiScope || "", fuseSearchOptions, refresh);'
+    if previous in text:
+        render(previous, lookup)
+    else:
+        render("""return readSearchData().then(function (fuse) {
                 return fuseSearch(query, fuse, fuseSearchOptions);
-              });""", """return asiReadSearchData().then(() =>
-                asiSearchResults(query, state.context.asiScope || "", fuseSearchOptions));
-              """.rstrip())
+              });""", lookup)
     render('                language["search-no-results-text"]',
            '                [asiSearchScopes(createElement, state, setContext, refresh), '
            'language["search-no-results-text"]]')
@@ -227,7 +231,11 @@ def main() -> None:
     adapter = "\n".join((ROOT / path).read_text(encoding="utf-8") for path in SEARCH_ADAPTER_ASSETS)
     for index in SEARCH_INDEXES:
         entries = citations + research if index == "search.json" else research
-        files.write(site / index, index_projection(site, index, entries))
+        projected = index_projection(site, index, entries)
+        files.write(site / index, projected)
+        small = [row for row in json.loads(projected) if row.get("evidence_primary")]
+        files.write(site / Path(index).with_name("evidence-search.json"),
+                    json.dumps(small, ensure_ascii=False, separators=(",", ":")) + "\n")
         script = site / Path(index).parent / QUARTO_SEARCH_SCRIPT
         files.write(script, quarto_search_links(files.text(script), adapter))
     changes = files.changes(site)

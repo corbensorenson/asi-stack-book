@@ -492,6 +492,8 @@ Table 3 compares chunking rules inside the same 0.6B architecture trained on the
 
 ## CRAM learns costs for a constrained search {#cram-learned-constraint-search}
 
+**Replacement decision.** For a unit-cost maze, compare CRAM with breadth-first search under the same shortest-path check. A warm fit measures training; failed searches, path verification and fallback also count at serving time. In the reported harder maze variant, all three runs left the same extra six-cell branch on one board. Keep the conventional solver for a service promising a legal shortest path until the specialist delivers more verified paths within its deadline. The book has no matched serving-latency result for that switch.
+
 Start with the price of finding a valid path. For a unit-cost maze the incumbent is breadth-first search. A learned energy earns a trial when searching or fitting the incumbent is costly under the actual task contract. Reject the switch if the apparent saving disappears when both outputs must pass the same path check.
 
 Compact Reasoning Associative Memory (CRAM) gives each proposed puzzle

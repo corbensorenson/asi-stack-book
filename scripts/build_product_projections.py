@@ -7,6 +7,7 @@ import argparse
 from html import escape
 import hashlib
 import json
+import re
 from pathlib import Path
 from typing import Any
 from urllib.parse import urlencode
@@ -34,6 +35,11 @@ STATUS_SCHEMA = ROOT / "schemas/canonical_public_status.schema.json"
 SPINE_SCHEMA = ROOT / "schemas/narrative_product_spine.schema.json"
 INVENTORY = ROOT / "sources/source_inventory.json"
 P5_U1_RESULT = "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json"
+
+READER_SKILL = Path("skills/asi-stack-reader/SKILL.md")
+READER_UI = READER_SKILL.parent / "agents/openai.yaml"
+CITATION_ARCHIVE = Path("products/citation_history/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f.json")
+CITATION_SCRIPT = Path("assets/knowledge-graph/citation-history.js")
 
 EVIDENCE_GROUPS = [
     {
@@ -133,6 +139,7 @@ class ProductInputs:
                                                 "scripts/build_tested_site_bundle.py",
                                                 "scripts/build_canonical_public_status.py", "scripts/projection_files.py",
                                                 "scripts/validate_product_projections.py", "scripts/schema_validation.py", "scripts/admission_guard.py"))
+        required.extend(ROOT / name for name in (READER_SKILL, READER_UI, CITATION_ARCHIVE, CITATION_SCRIPT, "LICENSE.md"))
         for path in required:
             self.capture(path)
         self.capture(ROOT / research.RECORDS)
@@ -1029,12 +1036,71 @@ def research_comparisons(product_dir: Path, catalog: dict, payload: ProductPaylo
                     body, "knowledge-graph/evidence-catalog.json", show_portfolio=False), payload)
 
 
+def reader_resources(directory, status, inputs, payload):
+    def read(name):
+        path = ROOT / name
+        return inputs.data[path] if inputs else path.read_bytes()
+
+    def install(name, data):
+        if payload is None:
+            path = directory / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(data)
+        else:
+            payload.write(directory / name, data)
+
+    skill = read(READER_SKILL)
+    kit = research.replay_zip({"asi-stack-reader/SKILL.md": skill,
+                               "asi-stack-reader/agents/openai.yaml": read(READER_UI),
+                               "asi-stack-reader/RIGHTS.md": read("LICENSE.md")})
+    install("asi-stack-reader.zip", kit)
+    install("SKILL.md", skill)
+    # This skill uses paragraphs, numbered instructions and Markdown links. Render
+    # those directly from the installable source so the two guides stay in sync.
+    body = skill.decode().split("---\n", 2)[2].strip().split("\n\n")
+    def inline(text):
+        return re.sub(r"\[([^\]]+)\]\((https://[^\s)]+)\)", r'<a href="\2">\1</a>', escape(text))
+    paragraphs = []
+    for block in body[1:]:
+        if block.startswith("1. "):
+            paragraphs.append("<ol>" + "".join("<li>" + inline(line.partition(". ")[2]) + "</li>"
+                                                for line in block.splitlines()) + "</ol>")
+        else:
+            paragraphs.append("<p>" + inline(block) + "</p>")
+    guide = ('<p><a href="asi-stack-reader.zip" download>Download the reader skill</a> · '
+             '<a href="SKILL.md">Plain Markdown instructions</a> · '
+             '<a href="citation-history.html">Check a saved citation</a></p>'
+             '<p>To install, extract the asi-stack-reader folder into the skills directory used by your agent. '
+             'A web reader can use the instructions below directly.</p>' + "".join(paragraphs))
+    write_text(directory / "reader-skill.html", page("Read The ASI Stack with an agent",
+               "Find the deciding passage and cite its limits.", guide, "knowledge-graph/manifest.json",
+               show_portfolio=False), payload)
+
+    archive = json.loads(read(CITATION_ARCHIVE))
+    install("citation-history/" + archive["revision"] + ".json", read(CITATION_ARCHIVE))
+    write_json(directory / "citation-current.json", {
+        "revision": status["source_commit"], "archived": [archive["revision"]],
+        "passages": json.loads(read(graph.PASSAGES)), "studies": json.loads(read(research.RECORDS))}, payload)
+    install("citation-history.js", read(CITATION_SCRIPT))
+    form = ('<p>Paste the evidence record ID and full book revision from a saved citation. '
+            'This comparison covers studies, individual runs and citable passages. The book includes one earlier '
+            'snapshot locally and reads other historical revisions from its GitHub repository.</p>'
+            '<form id="history-form"><p><label>Record ID <input name="record" required size="38"></label></p>'
+            f'<p><label>Saved book revision <input name="revision" value="{archive["revision"]}" required size="44"></label></p>'
+            '<button>Compare revisions</button></form><div id="history-output" aria-live="polite"></div>'
+            '<noscript>Use the versioned source links in the evidence catalog to compare records manually.</noscript>'
+            '<script src="citation-history.js" defer></script>')
+    write_text(directory / "citation-history.html", page("What changed since I cited this?",
+               "Compare a saved record with the current book.", form, "citation-current.json", show_portfolio=False), payload)
+
+
 def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInputs | None = None,
                    payload: ProductPayload | None = None, companion: dict | None = None,
                    catalog: dict | None = None) -> dict[str, Any]:
     product_dir = output / "evidence-registry"
     if payload is None:
         product_dir.mkdir(parents=True, exist_ok=True)
+    reader_resources(product_dir, status, inputs, payload)
     featured_cases = {row["id"] for row in (catalog or {}).get("records", []) if row["kind"] == "evidence_case"}
     studies, study_cards = build_research(product_dir, status, inputs, payload, featured_cases)
     citation_count = build_claim_citations(product_dir, inputs, payload)
@@ -1101,7 +1167,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         companion_intro = (
             '<h2>Browse the book as a knowledge graph</h2>'
             '<p><a href="knowledge-graph/index.html">Open the knowledge graph</a> to follow concepts, claims, and evidence. '
-            '<a href="knowledge-graph/manifest.json">Agent manifest</a>.</p>'
+            '<a href="knowledge-graph/manifest.json">Agent manifest</a> · <a href="reader-skill.html">Reader skill</a> · <a href="citation-history.html">Check a saved citation</a>.</p>'
         )
     comparison_link = ""
     if catalog is not None:

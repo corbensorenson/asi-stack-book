@@ -494,7 +494,14 @@
       "inputs": [
         "experiments/verification_bandwidth_capacity/arrival-study/run.py"
       ],
-      "source_commit": "aace49dcf014d42f86fcb2821c6b00f5878152f3"
+      "source_commit": "aace49dcf014d42f86fcb2821c6b00f5878152f3",
+      "aliases": [
+        "checking cannot keep up with new work",
+        "verification queue backlog",
+        "reviewers overwhelmed by incoming jobs",
+        "arrival rate exceeds verification capacity"
+      ],
+      "outside_question": "What load would overwhelm a production service?"
     }
   ],
   "agenda": [

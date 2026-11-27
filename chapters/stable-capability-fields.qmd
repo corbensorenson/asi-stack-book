@@ -4,7 +4,7 @@ chapter_id: "stable-capability-fields"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "scf"
   - "viea"
@@ -473,6 +473,10 @@ Measurements span semantic and failure-contract preservation, rare and adversari
 Causal ablations remove identity binding, authority checks, leases, evaluator separation, field-owned regression memory, composition requalification, migration accounting, or effect-complete rollback. Transfer varies models, vendors, tools, hardware, domains, consumers, threat models, and update types. The field claim advances only if the full contract is not dominated on the preregistered frontier and its field-preservation results survive independent replication. Otherwise the failing mechanism is narrowed or refuted.
 
 This program is beyond the current evidence. It does not establish that SCFs are novel, outperform conventional replacement, preserve real capability identity, or make recursive improvement safe.
+
+### Can we price the verifier handoff in staff hours? {#verifier-labor-decision}
+
+**Labor decision.** An ordinary memo and a serialized qualification took the same expected routes at 38 scripted checkpoints across same-owner processes. Both read 70 evidence documents and sent 164 pipe messages carrying 16,816 payload bytes. Serialization added 1,616 local cache bytes. Keep ordinary memoization for this use. No active operator time was measured, so the result supplies no minutes saved, payroll estimate or production labor advantage. [Inspect the comparison](../products/evidence-registry/study-verifier-rollout.html#run-verifier-process-boundary).
 
 ## Codex test plan
 

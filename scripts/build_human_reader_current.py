@@ -686,6 +686,7 @@ main.content .anchorjs-link { position: absolute; left: auto !important; right: 
         "- [Follow the maintainer through a failed upgrade](chapters/unit-01-asi-is-a-stack-not-a-model.qmd#the-change-that-worked). The hypothetical incident shows why a patch can pass its tests and still leave the team with an unresolved failure.",
         "- [Inspect the receiver comparison](quickstart.qmd#crossed-receiver-comparison). The local experiment measures when a second check helps after a request times out and the receiving service may already have acted.",
         "",
+        "[Choose a short decision](quickstart.qmd#short-decisions) about shipping a change, trusting a report, or replacing a solver.",
         "**Have fifteen minutes?** [Review one real change and inspect what happened](quickstart.qmd#first-sitting). You can finish the exercise in the browser. The replay commands and full comparisons are on the same page.",
         "",
         "The 26-unit reader manuscript is a maintained draft. The [technical evidence registry](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/index.html) links the claims, proofs, sources, and retained results behind it.",

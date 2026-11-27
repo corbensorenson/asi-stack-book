@@ -4,7 +4,7 @@ chapter_id: "benchmark-ratchets-and-anti-goodhart-evidence"
 part_id: "evidence-implementation-living-book"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "benchmaxxing"
   - "deterministic_capability_compilation"
@@ -249,6 +249,8 @@ If replacement costs make two points the smallest worthwhile gain, a one-point l
 Among 45 pairs selected from the observed SWE-bench Verified top ten, five were stable under pointwise intervals and a two-point margin. Simultaneous intervals resolved none. Selection of the observed top ten and the choice of interval affect inference. An unresolved difference leaves equivalence open. [What Does an LLM-Agent Leaderboard Rank Actually Compare?](https://arxiv.org/html/2609.07785v1)
 
 ### Atlas case: completing the baseline changes the decision {#atlas-baseline-correction}
+
+**Decision at budget 128.** Should the paid-oracle experiment continue? Completing the comparator pool changed estimated headroom from +0.052142 to +0.035299, below the required mean of 0.04. Stop under the declared screen. The same 24 authored worlds were rescored after inspecting the outcomes. The corrected interval still includes 0.04. A new population claim would require fresh worlds and a comparator pool fixed in advance.
 
 A retained [Answerability Atlas Project working paper](../papers/answerability_atlas_synthesis.html)
 gives a concrete example of a score remaining positive while its decision

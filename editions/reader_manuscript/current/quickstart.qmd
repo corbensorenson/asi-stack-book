@@ -29,6 +29,40 @@ or inspect the stronger [scoped Git baseline](#ordinary-change-control-compariso
 [Replay commands](#run-it) · [All twelve outcomes](#read-the-twelve-outcomes)
 · [Receiver comparison with competent status checks](#crossed-receiver-comparison)
 
+## Three short decisions {#short-decisions}
+
+Pick the problem closest to your work. Stop after you can defend a choice and name one observation that would reverse it.
+
+### A change passed its tests. May it ship? {#guided-change}
+
+The repair updates a generator and the configuration it writes. The grant names only the generator. Read [what the test actually checked](#blocked-authority-result) and the [matched scoped Git comparison](#ordinary-change-control-comparison). Would you ship, split the change, or hold it? What record would settle the disagreement?
+
+<details><summary>Compare your decision</summary>
+
+Hold the two-file change and ask for a grant covering both files. A passing configuration predicate establishes something about the output. It cannot widen the grant. For the known repair, ordinary scoped Git matched the governed workflow’s authorized outcomes and retained recoverable history. Reconsider the extra handoff if a new owner cannot reconstruct or recover the original effect using that history.
+
+</details>
+
+### Two services agree. Did the effect happen? {#guided-observation}
+
+A buyer sees “delivered” on two dashboards. Trace the [two shipment reports](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd#decision-exercise-two-logs-agree-on-a-shipment), then inspect [what changes when both receiver placements can see the same status](#matched-receiver-access). Would you release payment? Which fact could reverse your decision?
+
+<details><summary>Compare your decision</summary>
+
+Both dashboards copied one webhook. Keep the delivery claim open. A dock receipt tied to the same shipment and cutoff would add a distinct observation. A second endpoint can help when the first is unavailable, even if both share an upstream. Agreement alone cannot establish independent observation.
+
+</details>
+
+### A paper reports a faster model. Should I switch? {#guided-replacement}
+
+Your service promises a valid shortest path. Inspect the [three maze checks](chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.qmd#what-the-maze-verifier-must-solve) and the [reported CRAM comparison](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#cram-learned-constraint-search). Pick a baseline and decide what cost belongs on the bill before reading on.
+
+<details><summary>Compare your decision</summary>
+
+Keep breadth-first search on this unit-cost task. A quickly fitted model can still return a branched board. Count failed searches, path checks, and fallback in both arms. Switch when the candidate returns more verified shortest paths under the same service deadline. Matching a particular tie-broken label answers a different question from returning any valid shortest path.
+
+</details>
+
 ## The Thesis in One Page
 
 The ASI Stack begins from a practical claim: greater cognitive capability does

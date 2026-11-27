@@ -19,7 +19,8 @@
     "locators": [
       {"label": "Corrected comparator pool and Table 5", "url": "papers/answerability_atlas_synthesis.html#completing-the-comparator-pool"},
       {"label": "Reader decision", "url": "reader/chapters/unit-22-evaluation-readiness-thresholds-and-structured-assurance.html#benchmarks-need-ratchets"}
-    ]
+    ],
+    "outside_question": "What advantage would the paid oracle have on new worlds?"
   },
   {
     "id": "atlas-original-proceed-decision",
@@ -109,7 +110,11 @@
       {"predicate": "qualifies_study", "target": "study:verifier-rollout"},
       {"predicate": "examines_run", "target": "study_run:verifier-revision-freshness"},
       {"predicate": "examines_run", "target": "study_run:verifier-process-boundary"}
-    ]
+    ],
+    "locators": [
+      {"label": "Decision about staff hours", "url": "chapters/stable-capability-fields.html#verifier-labor-decision"}
+    ],
+    "outside_question": "How much staff time or payroll expense did the handoff save?"
   },
   {
     "id": "h-net-serving",
@@ -183,13 +188,43 @@
     "disposition": "Treat the cluster index as a replaceable retrieval aid and verify prompt-independent access to the underlying authoritative notes.",
     "measurement": "Authored comparison design",
     "source_section": "e-means, Table 4 (fitting) and Appendix L (retrieval recall at fixed selectivity).",
-    "aliases": ["e-means", "release-note index", "clustering alternatives", "retrieval index rebuild"],
+    "aliases": ["e-means", "release-note index", "clustering alternatives", "retrieval index rebuild", "index lost the correction", "cheaper index missed the corrected passage", "how do I know if my index lost the correction"],
     "links": [
       {"predicate": "cites_source", "target": "source:ext_emeans_2026"},
       {"predicate": "explained_by", "target": "chapter:virtual-context-abi"}
     ],
     "locators": [
       {"label": "Clustering method comparison", "url": "chapters/virtual-context-abi.html#clustering-the-retrieval-index"}
+    ],
+    "outside_question": "Which solver finds every revised document on an unseen corpus?"
+  },
+  {
+    "id": "receiver-placement-decision",
+    "title": "When a second hop pays for itself",
+    "url": "chapters/resource-economics-and-token-budgets.html#receiver-break-even",
+    "question": "When is the second hop worth it?",
+    "summary": "The local gateway saved 192 caller requests at a cost of 54,168 status-payload bytes. When the primary was known unavailable before dispatch, both placements used eight caller requests on eight package lineages and the gateway added about 2,033 response bytes per verified fallback.",
+    "limit": "Local status cells and remote package reads have different failure schedules and byte boundaries. Operator time and outage frequency were unmeasured.",
+    "disposition": "Price the avoided requests in the actual workload. Use direct fallback when skipping the unavailable primary saves the same calls.",
+    "aliases": ["second hop", "cost of an extra relay", "gateway break even", "caller already knows to skip primary", "when is the second hop worth it"],
+    "outside_question": "How often do the two delivery services fail independently in production?",
+    "links": [
+      {"predicate": "examines_run", "target": "study_run:receiver-live-transport"},
+      {"predicate": "examines_run", "target": "study_run:receiver-availability"}
+    ]
+  },
+  {
+    "id": "cram-replacement-decision",
+    "title": "Should a faster puzzle fit replace the maze solver?",
+    "url": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#cram-learned-constraint-search",
+    "question": "Should we switch to the learned solver after a fast training run?",
+    "summary": "A CRAM maze variant matched 999 of 1,000 labeled paths but left an extra branch in the repeated error. A warm training fit leaves the downstream path check and fallback unpaid.",
+    "limit": "Source-reported puzzle fits and authored task structure. End-to-end service latency at matched path quality remains unmeasured.",
+    "disposition": "Retain breadth-first search until the candidate delivers more legal shortest paths under the same serving budget.",
+    "aliases": ["fast puzzle training", "maze solving speed", "CRAM versus breadth first search", "warm fit versus inference"],
+    "outside_question": "How much production serving time does CRAM save on my graphs?",
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_cram_2026"}
     ]
   }
 ]

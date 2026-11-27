@@ -325,6 +325,8 @@ explains how comparator economics also changed the source's final decision.
 
 ### What is an avoided caller request worth? {#receiver-break-even}
 
+**Placement decision.** When both routes could read a second projection, the local gateway saved 192 caller requests and added 54,168 status-payload bytes across 288 paired cases. In the eight-package follow-up, direct fallback and the gateway each made eight caller requests because the caller knew the primary was unavailable before dispatch. The gateway added about 2,033 HTTP response bytes per verified fallback. Price the requests the gateway actually avoids in your workload. Neither study measured operator time or the frequency of production outages.
+
 In the [local receiver replay](../products/evidence-registry/study-crossed-receiver.html#run-receiver-availability),
 either placement verified 80 of 288 cases. A gateway used 288 caller requests and
 130,128 status-payload bytes. Caller-side fallback used 480 and 75,960. Subtract

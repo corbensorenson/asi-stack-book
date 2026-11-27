@@ -3,6 +3,8 @@
 // This adapter runs with Quarto's pinned Fuse.js and autocomplete renderer.
 let asiBookSearch;
 let asiBookSearchRequest;
+let asiEvidenceRequest;
+let asiNativeReady = false;
 const asiScopes = [
   ["", "All"],
   ["evidence", "Research evidence"],
@@ -37,17 +39,42 @@ function asiSetSearchRows(rows) {
   asiBookSearch = {research, evidence, native, scopes};
 }
 
-function asiReadSearchData() {
+function asiLoadFullIndex() {
   if (!asiBookSearchRequest) {
     asiBookSearchRequest = fetch(offsetURL("search.json")).then(response => {
       if (!response.ok) throw new Error("Could not load the book search index");
       return response.json();
-    }).then(asiSetSearchRows).catch(error => {
+    }).then(rows => { asiSetSearchRows(rows); asiNativeReady = true; }).catch(error => {
       asiBookSearchRequest = undefined;
       throw error;
     });
   }
   return asiBookSearchRequest;
+}
+
+async function asiLookup(query, scope, options, refresh) {
+  if (!asiNativeReady && (scope === "reading" || scope === "history")) await asiLoadFullIndex();
+  if (!asiBookSearch) {
+    if (!asiEvidenceRequest) {
+      asiEvidenceRequest = fetch(offsetURL("evidence-search.json")).then(response => {
+        if (!response.ok) throw new Error("Evidence index unavailable");
+        return response.json();
+      }).then(rows => { if (!asiNativeReady) asiSetSearchRows(rows); }).catch(() => {
+        asiEvidenceRequest = undefined;
+        return asiLoadFullIndex();
+      });
+    }
+    await asiEvidenceRequest;
+  }
+  const first = asiSearchResults(query, scope, options);
+  if (scope || asiNativeReady) return first;
+  if (first.length) {
+    // Show citable matches immediately, then merge in the chapter and paper results.
+    if (!asiBookSearchRequest) asiLoadFullIndex().then(refresh).catch(() => {});
+    return first;
+  }
+  await asiLoadFullIndex();
+  return asiSearchResults(query, scope, options);
 }
 
 function asiSearchResults(query, scope, options) {
@@ -86,6 +113,7 @@ function asiSearchResults(query, scope, options) {
     const text = row.evidence
       ? '<span class="asi-evidence-result">' + escape(row.evidence.summary || "") + '</span>' +
         '<span class="asi-evidence-limit"><strong>Scope</strong> ' + escape(row.evidence.limit || "") + '</span>' +
+        (row.evidence.outside_question ? '<span class="asi-evidence-limit"><strong>Outside this result</strong> ' + escape(row.evidence.outside_question) + '</span>' : '') +
         '<span class="asi-evidence-limit">' + escape(row.match) + '</span>'
       : highlightMatch(query, row.text);
     const section = [row.evidence_kind || row.section, row.evidence?.measurement].filter(Boolean).join(" · ");

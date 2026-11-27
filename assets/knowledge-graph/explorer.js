@@ -435,6 +435,10 @@ function renderRecord(packet) {
     feedback.setAttribute("role", "status");
     controls.append(copy, feedback);
     record.append(controls);
+    if (["study", "study_run", "evidence_passage"].includes(node.kind)) {
+      const params = new URLSearchParams({record:node.id, revision:manifest.source_commit});
+      record.append(link("Compare a saved revision", "../citation-history.html?" + params));
+    }
   }
   if (node.unmeasured?.length) brief(record, "Outside measurement", node.unmeasured.join(", "));
   for (const locator of node.locators || []) {

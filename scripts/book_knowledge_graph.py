@@ -421,7 +421,7 @@ def evidence_records(graph):
                                   unmeasured=run.get("unmeasured", []), date=run["date"],
                                   method=run["method"], protocol=run["protocol"], result=run["result"],
                                   question=study["question"], featured=study["featured_run"] == run["id"],
-                                  format=run["format"])
+                                  format=run["format"], aliases=run.get("aliases", []), outside_question=run.get("outside_question", ""))
             graph.edge(key,"retains_run",identity,STUDIES,run_locator,featured=study["featured_run"]==run["id"])
             if run.get("follow_up_to"):
                 graph.edge(identity, "follows_up", "study_run:" + run["follow_up_to"], STUDIES,
