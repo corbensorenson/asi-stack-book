@@ -602,7 +602,8 @@ def search_metadata(node, display_title):
     context.extend(node.get("aliases", []))
     context.extend(node.get("unmeasured", []))
     context.extend((citation, node["title"][len(display_title) - 1:] if display_title != node["title"] else ""))
-    return slugify(alias), slugify(" ".join(context))
+    names = node.get("aliases", []) if node.get("dictionary_url") else []
+    return slugify(alias), slugify(" ".join(context)), names
 
 
 def evidence_catalog(graph):
@@ -641,11 +642,15 @@ def search_terms(text):
             for word in text.split("-") if word and word not in SEARCH_STOP_WORDS}
 
 
-def search_score(typed_query, query, words, key, title, alias, context):
+def search_score(typed_query, query, words, key, title, alias, context, names):
     identity = slugify(key.split(":", 1)[1])
-    title = slugify(title)
     if typed_query == key:
         return 1000
+    if typed_query.casefold() == title.casefold():
+        return 910
+    if any(typed_query.casefold() == name.casefold() for name in names):
+        return 905
+    title = slugify(title)
     if query in {identity, title}:
         return 900
     if query == alias:
@@ -674,8 +679,7 @@ def search(graph, query, *, kind=None, limit=8):
         if kind and entry["kind"] != kind:
             continue
         title = title_excerpt(entry["title"])
-        alias, context = search_metadata(entry, title)
-        score = search_score(typed_query, query, words, entry["id"], title, alias, context)
+        score = search_score(typed_query, query, words, entry["id"], title, *search_metadata(entry, title))
         if score:
             hits.append((-score, len(title), entry["id"], entry))
     hits.sort()

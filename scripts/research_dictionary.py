@@ -12,12 +12,16 @@ PAGE = DIRECTORY+"dictionary.html"
 
 
 def term_id(name):
-    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+    return re.sub(r"[^a-z0-9]+", "-", name.lower().replace("+", " plus ")).strip("-")
 
 
 def add_terms(graph):
+    identities = set()
     for position, row in enumerate(graph.data(TERMS)):
         identity = term_id(row["term"])
+        if identity in identities:
+            raise ValueError(f"Repeated dictionary destination for {row['term']}: {identity}")
+        identities.add(identity)
         key = "concept:"+identity
         dest = "chapters/"+row["chapter"]+".html"+("#"+row["anchor"] if row["anchor"] else "")
         if key not in graph.nodes:
@@ -113,6 +117,8 @@ def works_index(graph, nodes):
 
 class Headings(HTMLParser):
     """Read section destinations from Quarto's actual main content."""
+    blocks = {"p", "li", "td", "th", "figcaption", "caption", "dt", "dd"}
+
     def __init__(self):
         super().__init__()
         self.main = False
@@ -120,7 +126,13 @@ class Headings(HTMLParser):
         self.heading = None
         self.items = []
         self.passages = defaultdict(list)
-        self.prose = False
+        self.block = None
+
+    def finish_block(self):
+        if self.block:
+            _, anchor, chunks = self.block
+            self.passages[anchor].append("".join(chunks))
+        self.block = None
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
@@ -128,8 +140,10 @@ class Headings(HTMLParser):
             self.main = True
         if not self.main:
             return
-        if tag == "p":
-            self.prose = True
+        if tag in self.blocks:
+            self.finish_block()
+            anchor = next((key for key in reversed(self.sections) if key), "")
+            self.block = (tag, anchor, [])
         if tag == "section":
             self.sections.append(attrs.get("id"))
         if tag in ("h2","h3","h4","h5","h6"):
@@ -138,16 +152,18 @@ class Headings(HTMLParser):
     def handle_data(self, data):
         if self.heading:
             self.heading[2].append(data)
-        elif self.prose and self.main:
-            self.passages[next((k for k in reversed(self.sections) if k), "")].append(data)
+        elif self.block and self.main:
+            self.block[2].append(data)
 
     def handle_endtag(self, tag):
-        if tag == "p":
-            self.prose = False
+        if self.block and self.block[0] == tag:
+            self.finish_block()
         if self.heading and tag == self.heading[0]:
             _, anchor, words = self.heading
             if anchor:
-                self.items.append((anchor, " ".join("".join(words).split())))
+                title = " ".join("".join(words).split())
+                self.items.append((anchor, title))
+                self.passages[anchor].append(title)
             self.heading = None
         if self.main and tag == "section" and self.sections:
             self.sections.pop()
@@ -176,7 +192,7 @@ def subject_index(site, volumes, files, commit):
             raise ValueError("No citable headings in "+path)
         headings = dict(parser.items)
         for anchor, chunks in parser.passages.items():
-            labels = {match[0] for match in pattern.finditer(" ".join(chunks))}
+            labels = {match[0] for block in chunks for match in pattern.finditer(block)}
             term_ids = set().union(*(names.get(word, set()) | insensitive.get(word.casefold(), set()) for word in labels))
             for key in sorted(term_ids):
                 occurrences[key].append(dict(url=path+("#"+anchor if anchor else ""), chapter=title, section=headings.get(anchor, "Opening")))
@@ -199,7 +215,7 @@ def subject_index(site, volumes, files, commit):
         groups.append(f'<details data-entry id="uses-{escape(slug)}"><summary>{escape(term["term"])} ({len(uses)})</summary>'
                       f'<a href="dictionary.html#term-{escape(slug)}">Definition</a><ul>{links}</ul></details>')
     files.write(site/DIRECTORY/"concordance.html", shell("AI terminology in context",
-                "Lexical matches in chapter and Reader paragraphs. Short acronyms retain case. A mention identifies a reading location; the linked passage supplies its meaning. "
+                "Find terms and aliases in headings, paragraphs, lists, captions and table cells in both editions. Short acronyms retain case. Follow a mention to read it in context. "
                 '<a href="concordance.json">Download occurrences</a>.', "".join(groups)))
     files.write(site/DIRECTORY/"concordance.json",json.dumps(dict(source_commit=commit,occurrences=occurrences),ensure_ascii=False)+"\n")
     files.write(site/DIRECTORY/'subject-index.html' ,shell('Book subject index',

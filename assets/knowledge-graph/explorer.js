@@ -108,6 +108,9 @@ function terms(normalized) {
 
 function grade(row, value, normalized, words) {
   if (row[0] === value) return 1000;
+  const literal = value.toLowerCase();
+  if (row[2].toLowerCase() === literal) return 910;
+  if ((row[6] || []).some(name => name.toLowerCase() === literal)) return 905;
   const identity = slug(row[0].slice(row[0].indexOf(":") + 1));
   const title = slug(row[2]);
   const alias = row[4] || "";
@@ -183,9 +186,12 @@ function lookup() {
     matches = rankMatches(candidates, value, row => row);
     if (!kind.value && value) {
       const exact = matches.filter(row => value.toLowerCase() === row[0]);
-      const evidence = hits.filter(hit => hit.score >= 570)
-        .map(hit => catalogById.get(hit.record.id));
-      matches = [...new Set([...exact, ...evidence, ...matches])];
+      const definitions = matches.filter(row => catalog.kinds[row[1]] === "concept" &&
+        (row[2].toLowerCase() === value.toLowerCase() || (row[6] || []).some(name => name.toLowerCase() === value.toLowerCase())));
+      const evidence = hits.filter(hit => hit.score >= 570);
+      const records = hits => hits.map(hit => catalogById.get(hit.record.id));
+      matches = [...new Set([...exact, ...records(evidence.filter(hit => hit.score >= 800)),
+        ...definitions, ...records(evidence), ...matches])];
     }
   }
   showMatches();
