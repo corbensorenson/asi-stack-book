@@ -577,7 +577,9 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
             source_detail = ('<p>The claim says that NLRP12 positively regulates T-cell receptor activation. '
                              'The annotated paper reports negative regulation. Read abstract sentences 1 and 6 '
                              '(zero-based dataset indices) in the <a href="https://pubmed.ncbi.nlm.nih.gov/25888258/">'
-                             'Lukens et al. paper</a>. The alternate selector retained sentence 6 and replaced sentence 1.</p>')
+                             'paper by Lukens et al., <i>The NLRP12 Sensor Negatively Regulates Autoinflammatory Disease '
+                             'by Modulating Interleukin-4 Production in T Cells</i></a>. The alternate selector retained '
+                             'sentence 6 and replaced sentence 1.</p>')
         rows.append(
             f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a>{graph_route}</th>'
             f'<td>{escape(row["condition"])}{source_detail}</td>{outcomes}</tr>'

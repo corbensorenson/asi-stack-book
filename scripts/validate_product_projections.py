@@ -173,6 +173,30 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 if (f'href="artifacts/{name}"' not in record or not snapshot.is_file()
                         or snapshot.read_bytes() != read(name)):
                     errors.append(f"non-core citation target differs from its retained bytes: {name}")
+    bibliography = registry / "bibliographies"
+    external = {row["id"] for row in load(ROOT / "sources/source_inventory.json")
+                if row["priority"] == "external_literature"}
+    expected = {"external":external}
+    for part in load(ROOT / "book_structure.json")["parts"]:
+        expected.update({chapter["id"]:external.intersection(chapter["source_ids"]) for chapter in part["chapters"]})
+    for key, identities in expected.items():
+        records = load(bibliography / (key + ".json"))
+        bib = (bibliography / (key + ".bib")).read_text()
+        if ({r["id"] for r in records} != identities or
+                any("{" + r["id"] + ",\n" not in bib for r in records)):
+            errors.append(f"chapter bibliography differs from source assignments: {key}")
+    for study in studies:
+        keys = {r["id"] for r in load(bibliography / ("study-" + study["id"] + ".json"))}
+        if any("run-" + run["id"] not in keys for run in study["runs"]):
+            errors.append(f"study bibliography lost a pinned protocol: {study['id']}")
+    cards = graph.declaration_cards(read)
+    proof_page = (registry / "proof-declarations.html").read_text()
+    for card in cards.values():
+        for row in card["declarations"]:
+            line = row["origin"]["locator"].split(":")[1]
+            if (f'/blob/{source_commit}/{card["module_path"]}#L{line}"' not in proof_page
+                    or escape(row["premises"]) not in proof_page):
+                errors.append(f"missing theorem locator or premise: {row['name']}")
     first = research.excerpt(studies, research.SITE_REGISTRY, home=True)
     reader = research.excerpt(studies, research.PUBLIC_REGISTRY, home=False)
     for name, data in [(research.HOME_EXCERPT, first), (research.READER_EXCERPT, reader)]:

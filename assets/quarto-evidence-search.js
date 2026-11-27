@@ -46,9 +46,16 @@ function asiSetSearchRows(rows) {
   const research = new Map(rows.filter(row => row.evidence && row.evidence_primary)
     .map(row => [row.evidence.id, row]));
   const evidence = asiEvidenceSearch.index([...research.values()].map(row => row.evidence));
-  const native = rows.filter(row => !row.evidence);
+  const identifiers = new Map();
+  for (const row of rows) {
+    for (const key of row.identifier_keys || []) {
+      if (!identifiers.has(key)) identifiers.set(key, []);
+      identifiers.get(key).push(row);
+    }
+  }
+  const native = rows.filter(row => !row.evidence && !row.identifier_keys);
   const scopes = new Map();
-  asiBookSearch = {research, evidence, native, scopes};
+  asiBookSearch = {research, evidence, native, scopes, identifiers};
 }
 
 function asiLoadFullIndex() {
@@ -64,8 +71,18 @@ function asiLoadFullIndex() {
   return asiBookSearchRequest;
 }
 
+function asiIdentifierKeys(query) {
+  const match = /^\s*(?:scifact(?:-open)?\s+)?(?:(claim|case|paper|document)\s*)?(?:(?:number|id)\s*)?#?(\d+)\s*$/i.exec(query);
+  if (!match) return [];
+  const kind = (match[1] || "").toLowerCase();
+  const id = match[2];
+  if (kind === "claim" || kind === "case") return ["claim:"+id];
+  if (kind === "paper" || kind === "document") return ["paper:"+id];
+  return ["claim:"+id, "paper:"+id];
+}
+
 async function asiLookup(query, scope, options, refresh) {
-  if (!asiNativeReady && (scope === "reading" || scope === "history")) await asiLoadFullIndex();
+  if (!asiNativeReady && (scope === "reading" || scope === "history" || asiIdentifierKeys(query).length)) await asiLoadFullIndex();
   if (!asiBookSearch) {
     if (!asiEvidenceRequest) {
       asiEvidenceRequest = fetch(offsetURL("evidence-search.json")).then(response => {
@@ -113,6 +130,15 @@ function asiSearchResults(query, scope, options) {
   const escape = value => value.replace(/[&<>"']/g, character => ({
     "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
   })[character]);
+  if (!scope || scope === "evidence") {
+    const existing = new Set(evidenceRows.map(row => row.href));
+    for (const key of asiIdentifierKeys(query)) {
+      for (const row of asiBookSearch.identifiers.get(key) || []) {
+        if (!existing.has(row.href)) evidenceRows.push(row);
+        existing.add(row.href);
+      }
+    }
+  }
   const evidenceRoutes = new Set(evidenceRows.map(row => row.href));
   return [...evidenceRows, ...bookRows.filter(row => !evidenceRoutes.has(row.href))].slice(0, options.limit).map(row => {
     const fragmentAt = row.href.indexOf("#");

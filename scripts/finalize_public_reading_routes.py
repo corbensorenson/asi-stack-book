@@ -108,6 +108,31 @@ def evidence_entries(site: Path, commit: str) -> list[dict]:
     return entries
 
 
+def scientific_identifiers(site):
+    """Index each scored claim and every returned paper, including unfeatured cases."""
+    registry = "products/evidence-registry"
+    release = [json.loads(line) for line in (ROOT / "experiments/scifact_citation_check/reserved.jsonl").read_text().splitlines()]
+    fresh = load(ROOT / "experiments/scifact_retrieval_followup/cases.json")["cases"]
+    entries = []
+    for study, run, records in (("scientific-citation", "scifact-release", release),
+                                ("citation-retrieval", "fresh-citation-retrieval", fresh)):
+        path = f"{registry}/study-{study}.html"
+        html = (site / path).read_text()
+        for row in records:
+            claim = str(row["id"])
+            papers = sorted({str(a["doc"]) for a in row["arms"].values()} if "arms" in row else {str(row["doc"])})
+            for suffix in (("",) if study == "citation-retrieval" else ("-triage","-publication")):
+                anchor = f"run-{run}--case-{claim}{suffix}"
+                if f'id="{anchor}"' not in html:
+                    raise ValueError(f"Scientific identifier destination missing: {anchor}")
+                entries.append({"objectID":"asi-evidence:identifier:"+anchor, "href":path+"#"+anchor,
+                                "identifier_keys":["claim:"+claim, *["paper:"+paper for paper in papers]],
+                                "title":f"SciFact claim {claim}" + suffix.replace("-", " · "),
+                                "section":"Paired study case", "text":"Returned paper IDs: " + ", ".join(papers),
+                                "asi_scope":"evidence","crumbs":[]})
+    return entries
+
+
 def index_projection(site: Path, index: str, entries: list[dict]) -> str:
     rows = [row for row in load(site / index) if not row["objectID"].startswith("asi-evidence:")]
     for row in rows:
@@ -230,8 +255,9 @@ def main() -> None:
     research = evidence_entries(site, commit)
     citations = book_citation_entries(site, chapters, load(ROOT / "sources/source_inventory.json"))
     adapter = "\n".join((ROOT / path).read_text(encoding="utf-8") for path in SEARCH_ADAPTER_ASSETS)
+    identifiers = scientific_identifiers(site)
     for index in SEARCH_INDEXES:
-        entries = citations + research if index == "search.json" else research
+        entries = (citations + research if index == "search.json" else research) + identifiers
         projected = index_projection(site, index, entries)
         files.write(site / index, projected)
         small = [row for row in json.loads(projected) if row.get("evidence_primary")]

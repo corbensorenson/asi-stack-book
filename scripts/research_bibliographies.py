@@ -38,7 +38,7 @@ def inventory_entry(source, metadata, commit):
                 record["author"].append({"family":family, "given":given})
             else:
                 record["author"].append({"literal":name})
-    for field, value in [("container-title",meta.get("venue")), ("DOI",meta.get("doi") or source.get("doi")),
+    for field, value in [("container-title",meta.get("venue")), ("DOI",re.sub(r"^https?://(?:dx\.)?doi\.org/", "", meta.get("doi") or source.get("doi") or "", flags=re.I)),
                          ("issued",issued(meta.get("date") or source.get("published")))]:
         if value:
             record[field] = value
@@ -100,6 +100,14 @@ def export(read, emit, manifest, commit):
             add("minilm-nli-release","NLI MiniLM2 L6 H768","https://huggingface.co/cross-encoder/nli-MiniLM2-L6-H768/tree/b95119ce93d3e065de6214e38cd4a97b0f2f2c6d","software","Pinned model release used for inference.")
         if sid=="citation-retrieval":
             entries.append(inventory["ext_scifact_open_2022"])
+            entries.append(dict(id="lukens-nlrp12-2015", type="article-journal",
+                title="The NLRP12 Sensor Negatively Regulates Autoinflammatory Disease by Modulating Interleukin-4 Production in T Cells",
+                author=[{"family":family,"given":given} for family,given in [
+                    ("Lukens","JR"),("Gurung","P"),("Shaw","PJ"),("Barr","MJ"),("Zaki","MH"),
+                    ("Brown","SA"),("Vogel","P"),("Chi","H"),("Kanneganti","TD")]],
+                DOI="10.1016/j.immuni.2015.03.006", URL="https://pubmed.ncbi.nlm.nih.gov/25888258/",
+                issued=issued("2015"), note="Claim 833 deciding paper. Author list from PubMed record 25888258.",
+                **{"container-title":"Immunity"}))
             add("scifact-open-data","SciFact-Open archive","https://scifact.s3.us-west-2.amazonaws.com/scifact-open/latest/scifact_open.tar.gz","dataset","Archive SHA-256 8f4dc238b2eff422bab5c7918fcbddb6996b29d37cb887942ef6ee1a16fb3415.")
         if sid=="forward-transfer":
             add("forward_transfer_program_synthesis","From Compression to Forward Transfer: Evaluating Reusable Knowledge in Program Synthesis",BOOK+s["paper"],"report","Original August 2026 manuscript with collaborator credits preserved.","Corben Sorenson")
