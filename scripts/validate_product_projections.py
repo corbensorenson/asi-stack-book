@@ -173,6 +173,28 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 if (f'href="artifacts/{name}"' not in record or not snapshot.is_file()
                         or snapshot.read_bytes() != read(name)):
                     errors.append(f"non-core citation target differs from its retained bytes: {name}")
+    transfer = ROOT / "experiments/researcher_search_transfer"
+    reserved = load(transfer / "queries.json")
+    scored = load(transfer / "results.json")
+    published_search = (registry / "search-transfer.html").read_text()
+    if len(scored["queries"]) != len(reserved) or len(reserved) != 8:
+        errors.append("reserved search report lost one or more questions")
+    for label in ("before", "after"):
+        observed = load(transfer / (label + ".json"))
+        public_name = f"search-transfer-{label}.json"
+        if (load(registry / public_name) != observed or public_name not in published_search
+                or scored[label + "_revision"] != observed["revision"]):
+            errors.append(f"reserved search observation differs from published report: {label}")
+        if len(observed["rows"]) != len(reserved):
+            errors.append(f"reserved search observation incomplete: {label}")
+        for (question, anchor), raw, row in zip(reserved, observed["rows"], scored["queries"]):
+            target = row["target"]
+            links = raw["links"]
+            rank = links.index(target) + 1 if target in links else 0
+            if (row["query"] != question or raw["query"] != question or raw["target"] != anchor
+                    or not target.endswith("#" + anchor) or row[label] != rank
+                    or escape(question) not in published_search or escape(target.removeprefix("/asi-stack-book/")) not in published_search):
+                errors.append(f"reserved search row or published destination differs: {label}, {question}")
     bibliography = registry / "bibliographies"
     external = {row["id"] for row in load(ROOT / "sources/source_inventory.json")
                 if row["priority"] == "external_literature"}

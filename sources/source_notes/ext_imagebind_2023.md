@@ -5,7 +5,7 @@
 | Source ID | `ext_imagebind_2023` |
 | Source title | ImageBind: One Embedding Space To Bind Them All |
 | Ingestion date | 2026-07-24 |
-| Source version / URL | CVPR 2023 open-access record, https://openaccess.thecvf.com/content/CVPR2023/html/Girdhar_ImageBind_One_Embedding_Space_To_Bind_Them_All_CVPR_2023_paper |
+| Source version / URL | CVPR 2023 open-access record, https://openaccess.thecvf.com/content/CVPR2023/html/Girdhar_ImageBind_One_Embedding_Space_To_Bind_Them_All_CVPR_2023_paper.html |
 | Citation label | Girdhar et al. (2023), ImageBind |
 | Published / updated | 2023-06-18 / 2023-06-18 |
 | DOI | not assigned in the inspected record |

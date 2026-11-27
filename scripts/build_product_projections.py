@@ -144,6 +144,8 @@ class ProductInputs:
         for path in required:
             self.capture(path)
         self.capture(ROOT / "experiments/scifact_retrieval_followup/ceiling.json")
+        for name in ("before", "after", "results"):
+            self.capture(ROOT / "experiments/researcher_search_transfer" / (name+".json"))
         self.capture(ROOT / bibliography.METADATA)
         self.capture(ROOT / "scripts/research_bibliographies.py")
         self.capture(ROOT / research.RECORDS)
@@ -859,6 +861,34 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                                    manifest, status["source_commit"])
     write_text(bib_dir / "index.html", page("Export a research bibliography",
                "Chapter and study references for citation managers.", bib_body, "../manifest.json", show_portfolio=False, nav_prefix="../"), payload)
+    search_dir = Path("experiments/researcher_search_transfer")
+    report = json.loads(read(search_dir / "results.json"))
+    queries = report["queries"]
+    rank_rows = "".join(f'<tr><th scope="row">{escape(row["query"])}</th>'
+                        f'<td>{row["before"] or "Outside first three"}</td><td>{row["after"] or "Outside first three"}</td>'
+                        f'<td><a href="../../{escape(row["target"].removeprefix("/asi-stack-book/"))}">Deciding section</a></td></tr>' for row in queries)
+    top_three = {key: sum(bool(row[key]) for row in queries) for key in ("before", "after")}
+    first = {key: sum(row[key] == 1 for row in queries) for key in ("before", "after")}
+    report_body = (f'<p>The first three ordinary-search results reached the exact section on {top_three["before"]}/{len(queries)} '
+                   f'queries before and {top_three["after"]}/{len(queries)} after the change. '
+                   f'The first hit succeeded on {first["before"]} and {first["after"]} respectively.</p>'
+                   '<p>Eight authored queries were reserved before editing. They test heading questions, identifiers, '
+                   'quantities and measurement limits. This small set measures destination recovery. Reader time, '
+                   'unseen language and the ability to judge a paper remain open.</p>'
+                   '<p>The intervention changed the indexed passages, destinations and matcher together. It measures '
+                   'the whole search route. The staff-time passage gained an additional fragment. The older '
+                   '<a href="../../chapters/stable-capability-fields.html#verifier-labor-decision">staff-hours heading</a> '
+                   'already existed. The two baseline labor queries landed on the broader test plan.</p>'
+                   + study_table("Exact destination position", ["Reserved question", "Before", "After", "Target"], rank_rows))
+    for label in ("before", "after"):
+        revision = report[label + "_revision"]
+        report_body += f'<p>{label.capitalize()} observation against <a href="{research.REPO}/tree/{revision}"><code>{revision}</code></a>. '
+        report_body += f'<a href="search-transfer-{label}.json">Download every returned link</a></p>'
+        write_text(product_dir / f"search-transfer-{label}.json", read(search_dir / (label+".json")).decode(), payload)
+    report_body += f'<p><a href="{research.REPO}/tree/{status["source_commit"]}/{search_dir}">Protocol, observation script and scorer</a></p>'
+    write_text(product_dir / "search-transfer.html", page("Can a different clue reach the same evidence?",
+               "Reserved ordinary-search queries on two public revisions.", report_body,
+               "manifest.json", show_portfolio=False), payload)
     case_browser = product_dir / "study-case-browser.js"
     case_browser_source = read(Path("assets/study-case-browser.js"))
     if payload is None:
@@ -941,6 +971,8 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             label = " · featured" if row["id"] == study["featured_run"] else ""
             run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
         links = f'<p><a href="bibliographies/index.html#study-{study["id"]}">Export this study bibliography</a></p>'
+        if study["id"] == "claim-review":
+            links += '<p><a href="search-transfer.html">Reserved query transfer across two public revisions</a>.</p>'
         if study["id"] == "citation-retrieval":
             links += (f'<p>Retrospective scoring ceiling: {ceiling["ceiling"]["certifiable"]} of 65 claims '
                       'could receive full credit with two sentences. The baseline returned 14 human-evidence papers, '
@@ -1271,7 +1303,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         f'<p class="status"><strong>Current status:</strong> {status["counts"]["chapters"]} chapters; '
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
         '<h2>Research studies and replays</h2>'
-        '<p><a href="research-agenda.html">Active research agenda</a> · <a href="bibliographies/index.html">Bibliography downloads</a> · <a href="proof-declarations.html">Cite a Lean declaration</a> · '
+        '<p><a href="research-agenda.html">Active research agenda</a> · <a href="search-transfer.html">Reserved search results</a> · <a href="bibliographies/index.html">Bibliography downloads</a> · <a href="proof-declarations.html">Cite a Lean declaration</a> · '
         f'<a href="research-studies.json">Study data and citations</a>{comparison_link}</p>'
         f'<div class="grid">{study_cards}</div>'
         '<h2>Follow a claim into its evidence</h2>'

@@ -17,10 +17,25 @@ def inventory_entry(source, metadata, commit):
     key = source["id"]
     meta = metadata.get(key, {})
     kind = source.get("source_type", "")
-    csl_type = ("paper-conference" if "conference" in kind else "article-journal" if "journal" in kind
-                else "article" if meta.get("venue") == "arXiv" else "webpage")
-    if meta.get("venue","").startswith(("Proceedings","Findings")):
+    venue = meta.get("venue") or ""
+    if kind in ("book", "arxiv_book"):
+        csl_type = "book"
+    elif venue == "arXiv":
+        csl_type = "article"
+    elif "journal" in kind or venue == "Proceedings of the VLDB Endowment":
+        csl_type = "article-journal"
+    elif kind in ("conference_paper", "conference_paper_pdf", "workshop_paper", "arxiv_and_conference") or venue.startswith(("Proceedings of the", "Findings of the")):
         csl_type = "paper-conference"
+    elif "report" in kind:
+        csl_type = "report"
+    elif "standard" in kind or "specification" in kind or kind == "informational_rfc":
+        csl_type = "standard"
+    elif "preprint" in kind or "paper" in kind or kind in ("arxiv", "research_article"):
+        csl_type = "article"
+    elif kind == "software_repository":
+        csl_type = "software"
+    else:
+        csl_type = "webpage"
     note = f'Source note: {REPO}{commit}/sources/source_notes/{key}.md. Source used: {meta.get("version_used",source["url"])}.'
     if meta:
         note += " Bibliographic metadata: "+meta["metadata_url"]
@@ -51,7 +66,7 @@ def tex(value):
 
 
 def bibtex(record):
-    kind = {"paper-conference":"inproceedings","article-journal":"article"}.get(record["type"],"misc")
+    kind = {"paper-conference": "inproceedings", "article-journal": "article", "book": "book", "report": "techreport"}.get(record["type"],"misc")
     fields = {"title":"{"+tex(record["title"])+"}", "url":record["URL"]}
     if record.get("author"):
         fields["author"] = " and ".join(("{"+tex(a["literal"])+"}" if "literal" in a else tex(a["family"])+", "+tex(a["given"])) for a in record["author"])
