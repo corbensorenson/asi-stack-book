@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import research_dictionary
 from hashlib import sha256
 import json
 from pathlib import Path
@@ -265,11 +266,22 @@ def main() -> None:
     citations = book_citation_entries(site, chapters, load(ROOT / "sources/source_inventory.json"))
     adapter = "\n".join((ROOT / path).read_text(encoding="utf-8") for path in SEARCH_ADAPTER_ASSETS)
     identifiers = scientific_identifiers(site)
+    dictionary = load(site / GRAPH / "dictionary.json")
+    if dictionary["source_commit"] != commit:
+        raise ValueError("Dictionary revision differs")
+    for term in dictionary["terms"]:
+        identifiers.append(dict(objectID="asi-evidence:dictionary:"+term["id"], href=term["url"],
+                                title=term["term"], section="AI dictionary", text=term["definition"], crumbs=[],
+                                dictionary_record=True, identifier_keys=["term:"+name.casefold() for name in (term["term"],*term["aliases"])]))
+    reader = load(ROOT / "editions/reader_manuscript/current/manifest.json")
+    volumes = [(c["id"],c["title"],c["file"].replace(".qmd",".html")) for c in chapters]
+    volumes += [(u["unit_id"],u["title"],"reader/"+u["source_file"].replace(".qmd",".html")) for u in reader["units"]]
+    research_dictionary.subject_index(site, volumes, files, commit)
     for index in SEARCH_INDEXES:
         entries = (citations + research if index == "search.json" else research) + identifiers
         projected = index_projection(site, index, entries)
         files.write(site / index, projected)
-        small = [row for row in json.loads(projected) if row.get("evidence_primary")]
+        small = [row for row in json.loads(projected) if row.get("evidence_primary") or row.get("dictionary_record")]
         files.write(site / Path(index).with_name("evidence-search.json"),
                     json.dumps(small, ensure_ascii=False, separators=(",", ":")) + "\n")
         script = site / Path(index).parent / QUARTO_SEARCH_SCRIPT

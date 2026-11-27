@@ -597,3 +597,9 @@ python3 scripts/validate_reader_audio_script_probe_manifest.py
 
 The generated audio script and the tracked audio-script probe are not
 audiobooks and do not imply that any audio artifact exists.
+
+### When a featured result changes
+
+Follow the result into the thesis chapter, its Reader example and the study comparison page. At each destination identify the workload, the unit counted and the strongest conventional comparison. If later evidence changes the decision, place the two findings together and link the deciding case. Keep the earlier result and its original denominator available.
+
+The AI dictionary takes plain-language terms, aliases, chapter owners and optional passage anchors from `products/ai_dictionary.json` alongside the existing architectural definitions. Add meaningful new vocabulary when editing a chapter. The subject index covers every addressable section in the two editions; the concordance records paragraph matches to dictionary headwords and aliases. Add reported quantities from worked examples to `products/worked_source_locators.json` with the exact paper locator, comparison and scope.

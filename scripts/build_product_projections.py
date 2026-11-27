@@ -147,11 +147,13 @@ class ProductInputs:
         self.capture(ROOT / "experiments/scifact_retrieval_followup/ceiling.json")
         for name in ("before", "after", "results"):
             self.capture(ROOT / "experiments/researcher_search_transfer" / (name+".json"))
+        self.capture(ROOT / "experiments/sygus_forward_transfer/verify.py")
         self.capture(ROOT / CASE_SOURCES)
         for part in self.json(STRUCTURE)["parts"]:
             for chapter in part["chapters"]:
                 self.capture(ROOT / chapter["file"])
         self.capture(ROOT / bibliography.METADATA)
+        self.capture(ROOT / "products/worked_source_locators.json")
         self.capture(ROOT / "scripts/research_bibliographies.py")
         self.capture(ROOT / research.RECORDS)
         self.capture(ROOT / "assets/study-case-browser.js")
@@ -673,6 +675,9 @@ def study_outcomes(format_id: str, result: dict) -> str:
         return study_table("Release decisions and measured work", ["Availability and route", "Verified", "False closures",
                            "Unresolved", "Caller requests", "Total requests", "Body bytes", "Median to decision (µs)",
                            "Median to verification (µs)"], "".join(cells))
+    if format_id == "three_papers":
+        rows = "".join(f'<tr><th>{study_arm_label(k)}</th>'+ "".join(f'<td>{v[m]:,}</td>' for m in ("justified","unsupported","held","readings","tokens"))+"</tr>" for k,v in result["totals"].items())
+        return study_table("213 paired claims", ["Policy","Justified","Unsupported","Held","Model readings","Input tokens"],rows)
     if format_id == "fresh_retrieval":
         rows = []
         for name, row in result["arms"].items():
@@ -999,15 +1004,20 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                        "Replaying the saved predictions needs no network. See the protocol to rerun inference.\n\n"
                        if run["format"] in {"scifact_citation", "fresh_retrieval"} else "")
         expected = run["result"]
+        if run["format"] == "three_papers":
+            preparation = "Install numpy==2.2.6 to rescore the saved readings. The pinned checkout contains the original inference dependencies.\n\n"
         if run["format"] == "sygus_external":
+            checker = "experiments/sygus_forward_transfer/verify.py"
+            members[checker] = read(Path(checker))
+            command = "python3 " + checker + " CACHE_DIR"
             expected = "experiments/sygus_forward_transfer/families.json"
-            preparation = ("The offline report aggregates all 66 retained observations. For fresh search, install Z3 4.15.4 "
+            preparation = ("Install Z3 4.15.4 and replace CACHE_DIR with a directory for the pinned benchmark files. The first check needs network access or a populated cache. The verifier checks all cells and positive programs before aggregation. For fresh search install Z3 "
                            "and run python3 experiments/sygus_forward_transfer/run.py CACHE_DIR with network access for the pinned inputs. "
                            "Machine timings will differ.\n\n")
         members["README.md"] = (
             f'# {run["title"]}\n\n{preparation}Extract the archive and run from its root:\n\n'
             f'```sh\n{command} > observation.json\ncmp observation.json {expected}\n```\n\n'
-            f'The pinned protocol is {run["protocol"]}. The replay uses local data.\n'
+            f'The pinned protocol is {run["protocol"]}. Previously downloaded inputs can be reused locally.\n'
         ).encode()
         package = run["id"] + "-replay.zip"
         content = research.replay_zip(members)
@@ -1046,6 +1056,12 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         if study["id"] == "matched-release":
             links += '<p>The downloadable replay re-derives closure from status and pinned SHA-256 and rejects an inconsistent recorded decision. The original protocol and raw observations retain their evidence revision.</p>'
         if study["id"] == "forward-transfer":
+            links += '<p><a href="sygus-external-transfer-replay.zip">Verify all saved programs with Z3</a>. Extract the kit, install Z3 and run <code>python3 experiments/sygus_forward_transfer/verify.py CACHE_DIR</code>. The first check downloads digest-pinned specifications. Subsequent checks can run offline.</p>'
+            raw = json.loads(read(Path("experiments/sygus_forward_transfer/results.json")))
+            tasks = sorted({r["task"] for r in raw["cases"]})
+            links += '<section id="sygus-tasks"><h3>Compare schedules by task</h3>' + "".join(
+                f'<p id="task-{task}"><strong>{task}</strong> · <a href="#{research_anchor("sygus-external-transfer",task+"-handles")}">Handle size</a> · '
+                f'<a href="#{research_anchor("sygus-external-transfer",task+"-expanded")}">Expanded size</a></p>' for task in tasks) + "</section>"
             family_data = json.loads(read(Path("experiments/sygus_forward_transfer/families.json")))
             rows = "".join(f'<tr><th scope="row">{r["family"]}</th><td>{r["schedule"]}</td><td>{r["arm"]}</td>'
                            f'<td>{r["verified"]}/{r["tasks"]}</td><td>{r["exhausted"]}</td><td>{r["proposals"]:,}</td>'
@@ -1059,6 +1075,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                       + study_table("External SyGuS comparison", ["Task family", "Schedule", "Library", "Verified", "Exhausted",
                           "Proposals", "Screening operations", "Universal checks", "Search / check seconds"], rows) + '</section>')
         if study["id"] == "citation-retrieval":
+            links += '<p><a href="#run-three-paper-selection">Fresh one-versus-three experiment</a> · <a href="https://github.com/corbensorenson/asi-stack-book/tree/e3bb40a9/experiments/scifact_three_papers">Pre-outcome protocol and selector</a>. The scoring-ceiling groups below belong to the earlier 65-claim cohort.</p>'
             links += ceiling_groups(ceiling, "fresh-citation-retrieval")
             links += (f'<p>Retrospective scoring ceiling: {ceiling["ceiling"]["certifiable"]} of 65 claims '
                       'could receive full credit with two sentences. The baseline returned 14 human-evidence papers, '
@@ -1211,7 +1228,7 @@ def research_comparisons(product_dir: Path, catalog: dict, payload: ProductPaylo
          ("study_run:verifier-floor-cache", "study_run:verifier-revision-freshness",
           "study_run:verifier-process-boundary")),
         ("scheduler-and-budget", "Choose a reuse representation under the actual work cap",
-         ("study_run:transfer-factorial", "study_run:transfer-scheduler-audit",
+         ("study_run:transfer-factorial", "study_run:transfer-scheduler-audit", "study_run:sygus-external-transfer",
           "evidence_case:transfer-scheduler-audit--b24-descriptive-proposals-both-reversed")),
         ("baseline-admission", "Check the strongest feasible comparator",
          ("evidence_passage:atlas-corrected-decision", "study_run:git-retrospective")),

@@ -558,5 +558,72 @@
         "target": "study_run:paired-release-observers"
       }
     ]
+  },
+  {
+    "id": "dory-depth-table",
+    "title": "Choose a Dory loop count for MATH-500 or GSM8K",
+    "url": "reader/chapters/unit-19-routing-and-replaceable-cognitive-substrates.html#choose-loop-depth",
+    "aliases": [
+      "Dory",
+      "MATH-500",
+      "GSM8K",
+      "Dory MATH-500",
+      "Dory Table 1",
+      "loop depth"
+    ],
+    "summary": "Four loops gave 69.40% on MATH-500. Two loops already tied the highest GSM8K score.",
+    "limit": "Base checkpoint, two tasks. The score table leaves time per correct answer unmeasured.",
+    "measurement": "Worked comparison",
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_dory_loop_budget_2026"
+      },
+      {
+        "predicate": "explained_by",
+        "target": "evidence_passage:loop-serving-cost"
+      }
+    ]
+  },
+  {
+    "id": "loop-serving-cost",
+    "title": "Last-loop KV caching and measured request time",
+    "url": "chapters/fast-generation-architectures.html#loop-kv-serving",
+    "aliases": [
+      "last-loop KV caching",
+      "per-loop KV",
+      "Dory Table 7"
+    ],
+    "summary": "Dory compares per-loop and last-loop cache policies. A separate speculative experiment timed requests with per-loop caching.",
+    "limit": "The 1.11–1.53× speedups use four-loop decoding as the baseline and exclude initial queueing and tool execution.",
+    "measurement": "Worked comparison",
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_dory_loop_budget_2026"
+      },
+      {
+        "predicate": "explained_by",
+        "target": "evidence_passage:dory-depth-table"
+      }
+    ]
+  },
+  {
+    "id": "scifact-unjudged",
+    "title": "Unjudged papers and the two-sentence ceiling",
+    "url": "products/evidence-registry/study-citation-retrieval.html#ceiling-unsupported",
+    "aliases": [
+      "unjudged paper",
+      "unsupported SciFact releases"
+    ],
+    "summary": "Twelve of fifteen unsupported baseline releases returned unjudged papers.",
+    "limit": "The missing label prevents benchmark credit. Scientific validity needs further evidence.",
+    "measurement": "Worked comparison",
+    "links": [
+      {
+        "predicate": "examines_run",
+        "target": "study_run:fresh-citation-retrieval"
+      }
+    ]
   }
 ]

@@ -113,7 +113,7 @@ function asiSearchResults(query, scope, options) {
     const floor = query.trim().split(/\s+/).length >= 7 ? 450 : 570;
     const ranked = evidence(query);
     evidenceRows = (scope ? ranked : ranked.filter(hit => hit.score >= floor).slice(0, 3))
-      .map(hit => ({...research.get(hit.record.id), match: hit.reason}));
+      .map(hit => ({...research.get(hit.record.id), match: hit.reason, score:hit.score}));
   }
   let bookRows = [];
   if (scope !== "evidence") {
@@ -139,6 +139,15 @@ function asiSearchResults(query, scope, options) {
       }
     }
     evidenceRows = [...exact.values(), ...evidenceRows.filter(row => !exact.has(row.href))];
+  }
+  if (!scope || scope === "reading") {
+    const name = query.trim().toLocaleLowerCase().replace(/^(?:define|definition of|what is (?:an? )?)\s*/,"").replace(/\?$/,"");
+    const definitions = asiBookSearch.identifiers.get("term:" + name) || [];
+    if (definitions.length) {
+      // An exact definition beats a loose mention; preserve curated worked examples.
+      const preferred = evidenceRows.filter(row => row.score === undefined || row.score >= 800);
+      evidenceRows = [...preferred, ...definitions, ...evidenceRows.filter(row => !preferred.includes(row))];
+    }
   }
   const evidenceRoutes = new Set(evidenceRows.map(row => row.href));
   return [...evidenceRows, ...bookRows.filter(row => !evidenceRoutes.has(row.href))].slice(0, options.limit).map(row => {

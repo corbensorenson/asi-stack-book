@@ -4,6 +4,7 @@
 from __future__ import annotations
 
 import argparse
+import research_dictionary
 from collections import Counter, deque
 import gzip
 from hashlib import sha256
@@ -514,6 +515,21 @@ def collection_routes(graph):
                              limit=node["limit"], measurement="Case identifier", source_commit=run["source_commit"],
                              result_sha256=run["result_sha256"], url=node["url"].split("#")[0]+"#"+run_anchor(run["id"],row["id"]))
             graph.edge(key, "case_of_run", run_key, STUDIES, f"/runs/{ri}", evidence_effect="none")
+        if run["format"] == "sygus_external":
+            for task in sorted({r["task"] for r in graph.data(run["result"])["cases"]}):
+                key = graph.node("evidence_passage", task+"-schedules", run["result"], "/cases",
+                                 title=task+" under both schedules", aliases=[task], limit=node["limit"],
+                                 summary="Compare the same task across two schedules and three libraries.",
+                                 source_commit=run["source_commit"], result_sha256=run["result_sha256"],
+                                 url=node["url"].split("#")[0]+"#task-"+task)
+                if task == "hd-17":
+                    graph.nodes[key].update(question="Which task changed the whole-program result?",
+                                            aliases=[task,"proposals to first solution"],
+                                            summary="Only whole-program handles solved hd-17, at 8,142 proposals. The other five cells exhausted 12,000.")
+                graph.edge(key,"examines_run",run_key,STUDIES,f"/runs/{ri}",evidence_effect="none")
+                for schedule in ("handles","expanded"):
+                    graph.edge(key,"compares_case","evidence_case:"+run["id"]+"--"+task+"-"+schedule,
+                               STUDIES,f"/runs/{ri}",evidence_effect="none")
         if run["format"] in research_studies.PORTABLE_RUN_FORMATS:
             key = graph.node("evidence_passage", run["id"]+"-download", STUDIES, f"/runs/{ri}",
                              title=run["id"]+"-replay.zip", aliases=[run["title"]+" replay download"],
@@ -545,6 +561,7 @@ def compile_graph(read, *, source_commit, worktree):
     for path in ("scripts/book_knowledge_graph.py", "scripts/build_human_reader_current.py",
                  "scripts/research_studies.py", "scripts/research_case_rows.py"):
         graph.text(path)
+    graph.text("scripts/research_dictionary.py")
     chapters = chapter_records(graph)
     owners = reader_records(graph)
     if set(owners) != set(chapters):
@@ -552,6 +569,7 @@ def compile_graph(read, *, source_commit, worktree):
     source_records(graph, chapters)
     concept_records(graph, owners)
     claim_records(graph, chapters)
+    research_dictionary.add_terms(graph)
     evidence_records(graph)
     evidence_passages(graph)
     evidence_cases(graph)

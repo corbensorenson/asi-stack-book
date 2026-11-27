@@ -1,0 +1,176 @@
+"""Build the book's shared terminology, chapter lookup and citation destinations."""
+from collections import defaultdict
+from html import escape
+from html.parser import HTMLParser
+import json
+import re
+from urllib.parse import quote
+
+TERMS = "products/ai_dictionary.json"
+DIRECTORY = "products/evidence-registry/knowledge-graph/"
+PAGE = DIRECTORY+"dictionary.html"
+
+
+def term_id(name):
+    return re.sub(r"[^a-z0-9]+", "-", name.lower()).strip("-")
+
+
+def add_terms(graph):
+    for position, row in enumerate(graph.data(TERMS)):
+        identity = term_id(row["term"])
+        key = "concept:"+identity
+        dest = "chapters/"+row["chapter"]+".html"+("#"+row["anchor"] if row["anchor"] else "")
+        if key not in graph.nodes:
+            graph.node("concept", identity, TERMS, f"/{position}", title=row["term"],
+                       definition=row["definition"], url=PAGE+"#term-"+identity)
+        graph.nodes[key].update(aliases=row["aliases"], subject_url=dest)
+        graph.edge(key, "explained_by", "chapter:"+row["chapter"], TERMS, f"/{position}", url=dest)
+    for node in graph.nodes.values():
+        if node["kind"] == "concept" and node.get("definition"):
+            node["dictionary_url"] = PAGE+"#term-"+node["id"].partition(":")[2]
+
+
+def shell(title, intro, body):
+    return ('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">'
+            f'<title>{title} · The ASI Stack</title><style>body{{font:1.05rem/1.55 system-ui,sans-serif;max-width:65rem;margin:auto;padding:1.5rem}}'
+            'a{color:#165687} input{font:inherit;padding:.45rem;width:min(96%,28rem)} nav a{margin-right:.65rem} article{border-top:1px solid #aaa;padding:.4rem 0}'
+            'h3{margin-bottom:.3rem} p{margin:.3rem 0 .8rem} :target{scroll-margin:1.5rem} [hidden]{display:none}</style>'
+            f'<main><nav><a href="../../../index.html">Book</a><a href="index.html">Knowledge graph</a><a href="dictionary.html">Dictionary</a>'
+            f'<a href="subject-index.html">Subject index</a><a href="concordance.html">Term occurrences</a></nav><h1>{title}</h1><p>{intro}</p><label for="filter">Filter entries</label><br>'
+            '<input id="filter" type="search"><p role="status" id="count"></p>'+body+'</main>'
+            '<script>const input=document.getElementById("filter"), rows=Array.from(document.querySelectorAll("[data-entry]"));'
+            'function filter(){const q=input.value.trim().toLocaleLowerCase();let n=0;for(const r of rows){r.hidden=!!q&&!r.textContent.toLocaleLowerCase().includes(q);if(!r.hidden)n++}'
+            'for(const s of document.querySelectorAll("[data-group]"))s.hidden=!s.querySelector("[data-entry]:not([hidden])");'
+            'document.getElementById("count").textContent=n+" matching entries"}input.addEventListener("input",filter);filter();'
+            'window.addEventListener("hashchange",()=>{input.value="";filter();document.getElementById(decodeURIComponent(location.hash.slice(1)))?.scrollIntoView()});</script></html>')
+
+
+def dictionary_files(graph):
+    nodes = {n["id"]: n for n in graph["nodes"]}
+    owners = defaultdict(list)
+    for edge in graph["edges"]:
+        if edge["predicate"] in ("defined_by","explained_by") and edge["to"].startswith("chapter:"):
+            owners[edge["from"]].append(edge["to"])
+    rows = []
+    for node in nodes.values():
+        if not node.get("dictionary_url"):
+            continue
+        rows.append(dict(term=node["title"], definition=node["definition"], aliases=node.get("aliases",[]),
+                         id=node["id"], url=node["dictionary_url"], chapters=list(dict.fromkeys(owners[node["id"]])),
+                         passage=node.get("subject_url",node["url"])))
+    rows.sort(key=lambda row:row["term"].casefold())
+    letters = defaultdict(list)
+    for row in rows:
+        label = escape(row["term"])
+        links = [f'<a href="../../../{escape(row["passage"])}">Read the passage</a>',
+                 f'<a href="index.html?node={quote(row["id"])}">Open graph record</a>']
+        for owner in row["chapters"]:
+            links.append(f'<a href="../../../{nodes[owner]["url"]}">{escape(nodes[owner]["title"])}</a>')
+        links.append(f'<a href="concordance.html#uses-{escape(row["id"].partition(":")[2])}">Find passages using this term</a>')
+        aliases = ', '.join(map(escape,row['aliases']))
+        fragment = escape(row["url"].split("#")[1])
+        letter = row['term'][0].upper()
+        letters[letter].append(f'<article data-entry id="{fragment}"><h3><a href="#{fragment}">{label}</a></h3>'
+                               + (f'<p>{aliases}</p>' if aliases else '')+f'<p>{escape(row["definition"])}</p><p>{" · ".join(links)}</p></article>')
+    body = '<nav aria-label="Alphabet">'+''.join(f'<a href="#letter-{escape(k)}">{escape(k)}</a>' for k in letters)+'</nav>'
+    body += ''.join(f'<section data-group id="letter-{escape(k)}"><h2>{escape(k)}</h2>{"".join(v)}</section>' for k,v in letters.items())
+    html = shell("AI dictionary", f'{len(rows)} definitions from the book and its technical vocabulary. Search a term, abbreviation or definition. '
+                 '<a href="dictionary.json" download>Download the dictionary</a>. The subject index also lists topics without a standalone definition.', body)
+    return {"dictionary.html":html.encode(), "dictionary.json":(json.dumps(dict(source_commit=graph["source_commit"],terms=rows),ensure_ascii=False)+"\n").encode()}
+
+
+class Headings(HTMLParser):
+    """Read section destinations from Quarto's actual main content."""
+    def __init__(self):
+        super().__init__()
+        self.main = False
+        self.sections = []
+        self.heading = None
+        self.items = []
+        self.passages = defaultdict(list)
+        self.prose = False
+
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        if tag == "main":
+            self.main = True
+        if not self.main:
+            return
+        if tag == "p":
+            self.prose = True
+        if tag == "section":
+            self.sections.append(attrs.get("id"))
+        if tag in ("h2","h3","h4","h5","h6"):
+            self.heading = (tag, attrs.get("id") or (self.sections[-1] if self.sections else None), [])
+
+    def handle_data(self, data):
+        if self.heading:
+            self.heading[2].append(data)
+        elif self.prose and self.main:
+            self.passages[next((k for k in reversed(self.sections) if k), "")].append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "p":
+            self.prose = False
+        if self.heading and tag == self.heading[0]:
+            _, anchor, words = self.heading
+            if anchor:
+                self.items.append((anchor, " ".join("".join(words).split())))
+            self.heading = None
+        if self.main and tag == "section" and self.sections:
+            self.sections.pop()
+        if tag == "main":
+            self.main = False
+
+
+def subject_index(site, volumes, files, commit):
+    sections, data = [], []
+    terms = json.loads((site/DIRECTORY/"dictionary.json").read_bytes())["terms"]
+    names = defaultdict(set)
+    for term in terms:
+        for word in (term["term"], *term["aliases"]):
+            names[word].add(term["id"])
+    # Short acronyms such as IR and RL must retain case in running prose.
+    forms = sorted(names, key=lambda word:(-len(word),word))
+    insensitive = {word.casefold(): ids for word,ids in names.items() if not word.isupper()}
+    pattern = re.compile(r"(?<!\w)(?:" + "|".join(re.escape(w) if w.isupper() else "(?i:"+re.escape(w)+")" for w in forms) + r")(?!\w)")
+    occurrences = defaultdict(list)
+    for identity,title,path in volumes:
+        parser = Headings()
+        page = site/path
+        contents = page.read_text()
+        parser.feed(contents)
+        if not parser.items:
+            raise ValueError("No citable headings in "+path)
+        headings = dict(parser.items)
+        for anchor, chunks in parser.passages.items():
+            labels = {match[0] for match in pattern.finditer(" ".join(chunks))}
+            term_ids = set().union(*(names.get(word, set()) | insensitive.get(word.casefold(), set()) for word in labels))
+            for key in sorted(term_ids):
+                occurrences[key].append(dict(url=path+("#"+anchor if anchor else ""), chapter=title, section=headings.get(anchor, "Opening")))
+        data.append(dict(id=identity,title=title,path=path,headings=parser.items))
+        items = ''.join(f'<li data-entry><a href="../../../{path}#{escape(anchor)}">{escape(text)}</a></li>' for anchor,text in parser.items)
+        sections.append(f'<section data-group id="{escape(identity)}"><h2>{escape(title)}</h2><ul>{items}</ul></section>')
+        marker = '<nav aria-label="Terminology lookup">'
+        if marker not in contents:
+            prefix = '../' * (len(path.split('/'))-1) + DIRECTORY
+            links = (marker+f'<a href="{prefix}dictionary.html">AI dictionary</a> · '
+                     f'<a href="{prefix}subject-index.html#{escape(identity)}">Index of this chapter</a></nav>')
+            if '</main>' not in contents:
+                raise ValueError(path)
+            files.write(page, contents.replace('</main>',links+'</main>',1))
+    groups = []
+    for term in terms:
+        uses = occurrences.get(term["id"], [])
+        slug = term["id"].partition(":")[2]
+        links = "".join(f'<li><a href="../../../{escape(u["url"])}">{escape(u["chapter"])} · {escape(u["section"])}</a></li>' for u in uses)
+        groups.append(f'<details data-entry id="uses-{escape(slug)}"><summary>{escape(term["term"])} ({len(uses)})</summary>'
+                      f'<a href="dictionary.html#term-{escape(slug)}">Definition</a><ul>{links}</ul></details>')
+    files.write(site/DIRECTORY/"concordance.html", shell("AI terminology in context",
+                "Lexical matches in chapter and Reader paragraphs. Short acronyms retain case. A mention identifies a reading location; the linked passage supplies its meaning. "
+                '<a href="concordance.json">Download occurrences</a>.', "".join(groups)))
+    files.write(site/DIRECTORY/"concordance.json",json.dumps(dict(source_commit=commit,occurrences=occurrences),ensure_ascii=False)+"\n")
+    files.write(site/DIRECTORY/'subject-index.html' ,shell('Book subject index',
+                f'Browse every addressable section heading in {len(data)} technical chapters and Reader units. '
+                '<a href="subject-index.json">Download the section index</a>.',''.join(sections)))
+    files.write(site/DIRECTORY/'subject-index.json',json.dumps(dict(source_commit=commit,volumes=data),ensure_ascii=False)+'\n')

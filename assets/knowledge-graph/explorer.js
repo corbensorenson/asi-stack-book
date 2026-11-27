@@ -417,6 +417,7 @@ function renderRecord(packet) {
     source.append(link("Open the primary source", node.primary_url));
     record.append(source);
   }
+  if (node.dictionary_url) record.append(link("Dictionary entry", localLink(node.dictionary_url)));
   brief(record, "Definition", node.definition);
   brief(record, "Citation", node.citation_label);
   brief(record, "Source locator", node.source_section);

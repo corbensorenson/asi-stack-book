@@ -96,7 +96,7 @@ def heading_anchor(title):
     return re.sub(r"^[^a-z]+", "", cleaned).replace(" ", "-")
 
 
-def chapter_entries(chapter, text, sources, records, urls, originals):
+def chapter_entries(chapter, text, sources, records, urls, originals, reviewed):
     anchors = {}
     coverage = {}
     heading, anchor, fence = "Opening decision", "", ""
@@ -124,12 +124,15 @@ def chapter_entries(chapter, text, sources, records, urls, originals):
                 ids.add(paper[1])
         for sid in sorted(ids & sources.keys()):
             context = (heading + " " + line).lower()
-            if any(term in context for term in ("research lead", "unreviewed", "pending review", "recovery only")):
+            mapping = anchor in {"chapter-status","source-crosswalk","external-literature-queue","manifest-source-assignment-reconciliation","claim-source-mapping-status"}
+            if mapping:
+                role = "Source mapping"
+            elif (sid, anchor) in reviewed:
+                role = "Reported evidence"
+            elif any(term in context for term in ("research lead", "unreviewed", "pending review", "recovery only")):
                 role = "Research lead"
             elif "comparator" in context or "why existing approaches" in heading.lower() or "baseline" in heading.lower():
                 role = "Comparator"
-            elif heading.lower() in ("chapter status", "source crosswalk", "manifest source assignment reconciliation", "claim-source mapping status"):
-                role = "Source mapping"
             elif sid in originals:
                 role = "Original work"
             elif any(term in context for term in ("reported", "authors", "measured", "evaluated", "scored")):
@@ -137,6 +140,12 @@ def chapter_entries(chapter, text, sources, records, urls, originals):
             else:
                 role = "Passage reference"
             coverage.setdefault(sid, {}).setdefault((anchor, role), heading)
+    for (sid, slug), items in reviewed.items():
+        if slug not in anchors:
+            raise ValueError(f"Missing reviewed bibliography passage: {chapter['id']}#{slug}")
+        places = coverage.setdefault(sid,{})
+        if (slug,"Reported evidence") not in places:
+            places[slug,"Reported evidence"] = slug.replace("-"," ")
     ordered = dict.fromkeys([*chapter["source_ids"], *coverage])
     entries, items = [], []
     for sid in ordered:
@@ -159,6 +168,13 @@ def chapter_entries(chapter, text, sources, records, urls, originals):
             dest = BOOK + chapter["file"].replace(".qmd",".html") + ("#" + slug if slug else "")
             links.append(f'<a href="{escape(dest)}">{escape(title)}</a> ({role})')
             notes.append(f"{role}: {title} {dest}")
+        for (source, slug), details in reviewed.items():
+            if source != sid:
+                continue
+            for d in details:
+                explanation = " · ".join(d[k] for k in ("comparison","quantity","scope"))
+                links.append(f'<a href="{escape(d["url"])}">{escape(d["locator"])}</a> · {escape(explanation)}')
+                notes.append(d["locator"]+" "+d["url"]+" · "+explanation)
         record["note"] += " Chapter use: " + kind + ". " + " | ".join(notes)
         entries.append(record)
         items.append(f'<li>{label} · {kind}' + ('<ul><li>'+'</li><li>'.join(links)+'</li></ul>' if links else '')+'</li>')
@@ -182,9 +198,14 @@ def export(read, emit, manifest, commit):
     originals = {r["source_id"] for r in json.loads(read("papers/paper_library.json"))["records"]}
     urls = {normalize_url(url):sid for sid, source in sources.items()
             for url in (source.get("url"), metadata.get(sid,{}).get("metadata_url")) if url}
+    evidence = {}
+    for row in json.loads(read("products/worked_source_locators.json")):
+        if row["source"] not in sources:
+            raise ValueError("Unknown source "+row["source"])
+        evidence.setdefault(row["chapter"],{}).setdefault((row["source"],row["anchor"]),[]).append(row)
     chapter_links = []
     for c in chapters:
-        entries, items = chapter_entries(c, read(c["file"]).decode(), sources, inventory, urls, originals)
+        entries, items = chapter_entries(c, read(c["file"]).decode(), sources, inventory, urls, originals, evidence.get(c["id"],{}))
         details = c["id"]+".html"
         title = escape(c["title"])
         chapter_links.append(group(c["id"], c["title"], entries).replace("</li>", f' · <a href="{details}">Passages and roles</a></li>'))

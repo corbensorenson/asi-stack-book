@@ -91,12 +91,12 @@
       "id": "citation-retrieval",
       "title": "Can a different ranking recover the missing citation?",
       "question": "Which single change to document ranking or sentence selection delivers more correct, citable scientific verdicts?",
-      "change": "Test a new evidence candidate generator on a new cohort, giving both arms equal search and verification budgets.",
+      "change": "Retest a separately frozen selector or abstention threshold on fresh claims. Require a positive lower interval endpoint on justified gains and no increase in unsupported releases; charge all readings.",
       "claim": {
         "id": "verification-bandwidth-and-context-adequacy.core",
-        "scope": "A fixed catalog of candidate abstracts and a frozen pooled verifier on reserved SciFact-Open claims."
+        "scope": "The 65-claim ranking comparison and the separate 213-claim selection trial measure justified answers and unsupported releases in pinned candidate catalogs."
       },
-      "featured_run": "fresh-citation-retrieval"
+      "featured_run": "three-paper-selection"
     },
     {
       "id": "matched-release",
@@ -635,6 +635,30 @@
         "experiments/sygus_forward_transfer/families.json"
       ],
       "follow_up_to": "transfer-scheduler-audit"
+    },
+    {
+      "id": "three-paper-selection",
+      "study": "citation-retrieval",
+      "format": "three_papers",
+      "date": "2026-11-27",
+      "title": "Can a verifier choose one paper from three?",
+      "protocol": "experiments/scifact_three_papers/protocol.md",
+      "protocol_sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef",
+      "source_commit": "c965253fceea696df439dbd60bf8fbe54220d725",
+      "result": "experiments/scifact_three_papers/results.json",
+      "result_sha256": "cdc7dcdc97f0db428cdede74e1779732309f1d2d8fe92ca9457a45aad1e1970d",
+      "inputs": [
+        "experiments/scifact_three_papers/observations.json",
+        "experiments/scifact_three_papers/run.py",
+        "experiments/scifact_three_papers/score.py",
+        "experiments/scifact_retrieval_followup/score.py"
+      ],
+      "method": "Compare the first lexical hit with the best evidence score among three papers on 213 fresh SciFact-Open claims. Keep the two-sentence limit and charge all model readings.",
+      "result_summary": "One paper gave {first_justified} justified and {first_unsupported} unsupported releases; three gave {three_justified} justified and {three_unsupported} unsupported. The paired interval on the change per 100 claims was 0.0 to 3.2.",
+      "limit": "Previously unscored claims from the same benchmark. Paper exposure can overlap earlier studies. Only citation-provenance highlights earn justification. Wall time, energy and human work remain unmeasured.",
+      "disposition": "Keep the one-paper reference. Three additional justified releases came with 29 additional unsupported releases and three times as many readings.",
+      "command": "python3 experiments/scifact_three_papers/score.py",
+      "follow_up_to": "fresh-citation-retrieval"
     }
   ],
   "agenda": [

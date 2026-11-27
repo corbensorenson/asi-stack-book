@@ -238,6 +238,23 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 errors.append(f"Release replay failed without identifying the observation: {field}")
         else:
             errors.append(f"Release replay accepted an inconsistent observation: {field}")
+    dictionary_dir = registry / "knowledge-graph"
+    terms = load(dictionary_dir / "dictionary.json")["terms"]
+    terms_by_id = {r["id"]:r for r in terms}
+    vocabulary = load(ROOT / "products/ai_dictionary.json")
+    for row in vocabulary:
+        key = "concept:" + graph.research_dictionary.term_id(row["term"])
+        if key not in terms_by_id or terms_by_id[key]["aliases"] != row["aliases"]:
+            errors.append("Dictionary term or aliases missing: "+key)
+    if site:
+        subject = load(dictionary_dir / "subject-index.json")
+        occurrences = load(dictionary_dir / "concordance.json")
+        if subject["source_commit"] != source_commit or occurrences["source_commit"] != source_commit:
+            errors.append("Terminology indexes use a different revision")
+        if len(subject["volumes"]) != len(expected)-1 + len(load(ROOT / graph.READER_MANIFEST)["units"]):
+            errors.append("Subject index lacks complete edition coverage")
+        if not occurrences["occurrences"].get("concept:transformer"):
+            errors.append("Missing transformer concordance")
     cards = graph.declaration_cards(read)
     proof_page = (registry / "proof-declarations.html").read_text()
     for card in cards.values():

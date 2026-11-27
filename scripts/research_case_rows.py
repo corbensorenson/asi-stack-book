@@ -8,6 +8,7 @@ import re
 
 
 ARM_LABELS = {
+    "first": "First paper", "three": "Choose among three",
     "none": "No library", "whole": "Whole programs", "routines": "Extracted routines",
     "direct": "Direct fallback", "gateway": "Gateway fallback",
     "tfidf_tfidf": "TF–IDF at both stages", "tfidf_coverage": "Change sentence selection",
@@ -343,7 +344,11 @@ def sygus_cases(result):
 
 
 def rows_for(format_id, result):
-    if format_id == "sygus_external":
+    if format_id == "three_papers":
+        rows = [case(str(r["id"]), "Fresh claim "+str(r["id"]), {
+            k:arm(a["outcome"], f'{a["readings"]} readings, {a["tokens"]} tokens; paper {a["doc"]}, sentences {a["cited"]}',a["outcome"])
+            for k,a in r["arms"].items()}, adverse=any(a["outcome"]=="unsupported" for a in r["arms"].values())) for r in result["cases"]]
+    elif format_id == "sygus_external":
         rows = sygus_cases(result)
     elif format_id == "matched_publication":
         rows = publication_cases(result)

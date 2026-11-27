@@ -19,7 +19,7 @@ GRAPH_SCHEMA = "schemas/book_knowledge_graph.schema.json"
 COMPILER_INPUTS = (
     kg.STRUCTURE, kg.INVENTORY, kg.PAPER_LIBRARY, kg.GLOSSARY, kg.READER_MANIFEST, kg.CROSSWALK,
     kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PASSAGES, kg.CASES, kg.PROOFS, kg.STUDIES,
-    kg.CHAPTER_HISTORY, kg.DECLARATIONS,
+    kg.CHAPTER_HISTORY, kg.DECLARATIONS, kg.research_dictionary.TERMS, "scripts/research_dictionary.py",
     "scripts/book_knowledge_graph.py", "scripts/build_knowledge_graph_companion.py",
     "scripts/build_human_reader_current.py", "scripts/research_case_rows.py",
     "scripts/research_studies.py", GRAPH_SCHEMA, EVIDENCE_SEARCH, *(WEB + name for name in ASSET_NAMES),
@@ -170,6 +170,7 @@ def prepare(read, *, source_commit, worktree):
     files["search.json"] = kg.json_bytes({"schema_version": "asi-stack.knowledge-graph-search.v2",
                                         "snapshot_id": snapshot, "kinds": kinds, "records": catalog})
     files["evidence-catalog.json"] = kg.json_bytes(kg.evidence_catalog(graph))
+    files.update(kg.research_dictionary.dictionary_files(graph))
     files["dependency-inventory.json"] = kg.json_bytes(dependency_inventory(graph))
     files["graph.json.gz"] = compressed(kg.json_bytes(graph))
     for key, packets in shards.items():
@@ -181,7 +182,7 @@ def prepare(read, *, source_commit, worktree):
         "graph_schema_version": graph["schema_version"], "snapshot_id": snapshot,
         "source_commit": source_commit, "worktree": worktree, "authority": graph["authority"],
         "search": "search.json", "evidence_catalog": "evidence-catalog.json",
-        "dependency_inventory": "dependency-inventory.json",
+        "dependency_inventory": "dependency-inventory.json", "dictionary": "dictionary.json",
         "archive": "graph.json.gz", "shard_template": "nodes/{shard}.json",
         "relationship_template": "relationships/{file}.json",
         "coverage": graph["coverage"],

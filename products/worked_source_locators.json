@@ -1,0 +1,102 @@
+[
+  {
+    "chapter": "fast-generation-architectures",
+    "anchor": "loop-kv-serving",
+    "source": "ext_dory_loop_budget_2026",
+    "locator": "Table 7",
+    "url": "https://arxiv.org/html/2611.03998v1#S6.T7",
+    "comparison": "One-loop drafting and four-loop verification versus autoregressive four-loop decoding",
+    "quantity": "1.11–1.53× mean request speedup across six benchmarks",
+    "scope": "Per-loop cache; excludes initialization, initial queueing, tools and evaluator."
+  },
+  {
+    "chapter": "fast-generation-architectures",
+    "anchor": "loop-kv-serving",
+    "source": "ext_dory_loop_budget_2026",
+    "locator": "Table 6",
+    "url": "https://arxiv.org/html/2611.03998v1#S6.T6",
+    "comparison": "Last-loop versus per-loop cache at four passes",
+    "quantity": "Score changes from −2.12 to +0.42 points across reported metrics",
+    "scope": "Cache policy comparison on the post-trained model; separate from Table 7 timing."
+  },
+  {
+    "chapter": "fast-generation-architectures",
+    "anchor": "when-can-the-next-draft-begin",
+    "source": "ext_dflash_2026",
+    "locator": "Table 6",
+    "url": "https://arxiv.org/html/2602.06036v2",
+    "comparison": "Five-layer versus eight-layer drafter",
+    "quantity": "Five layers gave the larger speedup; eight produced longer accepted sequences",
+    "scope": "Drafter-depth ablation under the authors’ serving configuration."
+  },
+  {
+    "chapter": "virtual-context-abi",
+    "anchor": "clustering-the-retrieval-index",
+    "source": "ext_emeans_2026",
+    "locator": "Table 4 and Appendix L",
+    "url": "https://arxiv.org/html/2611.09501v1",
+    "comparison": "e-means versus 25 Flash-KMeans iterations at matched held-out distortion",
+    "quantity": "1.4–2.6 passes; 9.5–45.5× fitting speedups",
+    "scope": "Warm fitting on H100 systems; full rebuild and query costs excluded."
+  },
+  {
+    "chapter": "virtual-context-abi",
+    "anchor": "clustering-the-retrieval-index",
+    "source": "ext_kmeans_plus_plus_2007",
+    "locator": "Theorem 1.1",
+    "url": "https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf",
+    "comparison": "Randomized initialization relative to the optimal squared-distance cost",
+    "quantity": "Expected initial cost at most 8(ln k + 2) times optimum",
+    "scope": "Expectation over seeding; downstream retrieval accuracy is a separate quantity."
+  },
+  {
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "cram-learned-constraint-search",
+    "source": "ext_cram_2026",
+    "locator": "Table 2, Figure 2 and Appendix C.2",
+    "url": "https://arxiv.org/html/2611.17309v1",
+    "comparison": "Cold CRAM fits versus trained looped baselines; separate Sudoku inference comparison",
+    "quantity": "Cold fits of about 0.59 and 0.72 seconds; the separate 282× comparison counts arithmetic",
+    "scope": "Puzzle tasks. Training time and inference work use different denominators."
+  },
+  {
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "a-fixed-budget-for-learned-byte-boundaries",
+    "source": "ext_byteflow_2026",
+    "locator": "Table 3",
+    "url": "https://arxiv.org/html/2603.03583v1",
+    "comparison": "Alternative boundary policies in the same 0.6B byte model",
+    "quantity": "Bits per byte and downstream scores, averaged over three runs at the reported 50B-token scale",
+    "scope": "Boundary quality and serving performance on other distributions remain open."
+  },
+  {
+    "chapter": "recursive-self-improvement-boundaries",
+    "anchor": "better-model-or-better-editor",
+    "source": "ext_selfwrite_2026",
+    "locator": "Sections 3–5 and Table 2",
+    "url": "https://arxiv.org/html/2611.29513v1",
+    "comparison": "Original solver versus the checkpoint selected after proposed weight edits",
+    "quantity": "76.30% to 77.75% mean accuracy; 82.60% to 84.80% with any correct answer",
+    "scope": "500 held-out problems in the same math corpus; editor quality on fresh target models untested."
+  },
+  {
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "weight-program-transfer",
+    "source": "ext_fwsp_2026",
+    "locator": "Table 1(b)",
+    "url": "https://arxiv.org/html/2611.34612v1",
+    "comparison": "A deterministic procedure versus a 27B edit router with the same four operators",
+    "quantity": "15 versus 6 prescribed dispatches in 18 blind trials",
+    "scope": "Fixed fault suite and operator library."
+  },
+  {
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "latent-pass-budget",
+    "source": "ext_dory_loop_budget_2026",
+    "locator": "Base-model Table 1",
+    "url": "https://arxiv.org/html/2611.03998v1#S3.T1",
+    "comparison": "Depths one through eight on MATH-500 and GSM8K",
+    "quantity": "Four loops reached 69.40% on MATH-500; two reached 89.99% on GSM8K",
+    "scope": "Accuracy of one checkpoint. Time per correct answer on these workloads remains unmeasured."
+  }
+]

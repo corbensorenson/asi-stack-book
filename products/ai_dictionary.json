@@ -1,0 +1,3277 @@
+[
+  {
+    "term": "Ablation",
+    "aliases": [],
+    "definition": "An experiment that removes or changes a component while holding comparison conditions as steady as possible.",
+    "chapter": "the-efficient-asi-hypothesis",
+    "anchor": ""
+  },
+  {
+    "term": "Abstention",
+    "aliases": [],
+    "definition": "A policy outcome that withholds an answer or action when the specified acceptance conditions are unmet.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Abstract syntax tree",
+    "aliases": [
+      "AST"
+    ],
+    "definition": "A tree encoding the syntactic structure of an expression or program.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": ""
+  },
+  {
+    "term": "Accelerator",
+    "aliases": [],
+    "definition": "Hardware designed to perform selected computations more efficiently than a general-purpose processor.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Activation",
+    "aliases": [],
+    "definition": "An intermediate numerical value computed by a unit, layer or operation.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Activation checkpointing",
+    "aliases": [
+      "Gradient checkpointing"
+    ],
+    "definition": "Saving selected intermediate states and recomputing others during differentiation to reduce memory demand.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Activation patching",
+    "aliases": [],
+    "definition": "Replacing selected activations during an evaluation to test their causal role in a behavior.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": "probes-sparse-dictionaries-circuits-and-causal-challenge"
+  },
+  {
+    "term": "Activation steering",
+    "aliases": [],
+    "definition": "Intervening on internal activations to change a model’s behavior under specified conditions.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": "problem"
+  },
+  {
+    "term": "Active learning",
+    "aliases": [],
+    "definition": "Choosing which examples to label based on an acquisition criterion such as uncertainty or expected information gain.",
+    "chapter": "scientific-discovery-and-experimental-governance",
+    "anchor": "closed-loop-laboratory-authority"
+  },
+  {
+    "term": "Actor–critic",
+    "aliases": [],
+    "definition": "A reinforcement-learning approach combining an action-selecting policy with a learned value estimate.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": ""
+  },
+  {
+    "term": "Adam",
+    "aliases": [],
+    "definition": "An optimizer that adapts updates using running estimates of the first and second moments of gradients.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "optimizer-families-and-what-they-actually-change"
+  },
+  {
+    "term": "AdamW",
+    "aliases": [],
+    "definition": "An Adam-family optimizer applying weight decay separately from the adaptive gradient update.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "adamw-is-the-reference-not-the-default-winner"
+  },
+  {
+    "term": "Adaptive computation",
+    "aliases": [],
+    "definition": "Changing the amount or structure of computation in response to the input or intermediate state.",
+    "chapter": "learning-compute-topology-and-adaptive-process-architecture",
+    "anchor": ""
+  },
+  {
+    "term": "Admission threshold",
+    "aliases": [],
+    "definition": "A declared condition that a candidate must satisfy before a particular downstream use.",
+    "chapter": "readiness-gates-residual-escrow-and-quarantine",
+    "anchor": ""
+  },
+  {
+    "term": "Adversarial example",
+    "aliases": [],
+    "definition": "An input chosen or modified to produce an undesired model decision under a specified threat model.",
+    "chapter": "adversarial-machine-learning-and-model-attack-surface",
+    "anchor": "adversarial-examples-learned-boundary-failure-under-bounded-perturbation"
+  },
+  {
+    "term": "Agent",
+    "aliases": [],
+    "definition": "A system that selects actions using observations, objectives and some representation of its state.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": "worked-trace-three-projections-one-denied-effect"
+  },
+  {
+    "term": "Agent harness",
+    "aliases": [],
+    "definition": "The software surrounding a model that supplies tools, context, execution control and observation.",
+    "chapter": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+    "anchor": ""
+  },
+  {
+    "term": "AI control",
+    "aliases": [],
+    "definition": "Operational measures for preserving intended constraints even when a model’s behavior is unreliable or strategically adverse.",
+    "chapter": "scalable-oversight-and-adversarial-ai-control",
+    "anchor": "mature-research-target"
+  },
+  {
+    "term": "Aleatoric uncertainty",
+    "aliases": [],
+    "definition": "Variation in outcomes that persists under a given observation and modeling setup.",
+    "chapter": "human-ai-communication-persuasion-and-epistemic-security",
+    "anchor": ""
+  },
+  {
+    "term": "Aliasing",
+    "aliases": [],
+    "definition": "Distinct inputs, positions or states becoming indistinguishable under a representation or sampling rule.",
+    "chapter": "coil-attention-cyclic-memory-and-recurrence-contracts",
+    "anchor": "worked-stale-cache-trace-the-fluent-answer-that-must-be-rejected"
+  },
+  {
+    "term": "Alignment",
+    "aliases": [],
+    "definition": "The degree to which a system’s behavior or objectives accord with specified human intentions and constraints.",
+    "chapter": "constitutional-alignment-substrate",
+    "anchor": "alignment-is-a-non-compensating-vector-not-a-score"
+  },
+  {
+    "term": "Amortization",
+    "aliases": [],
+    "definition": "Spreading a one-time cost across the uses that benefit from it.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "the-kernel-ratecomputefidelity-ledger"
+  },
+  {
+    "term": "Application binary interface",
+    "aliases": [
+      "ABI"
+    ],
+    "definition": "An interface contract specifying how separately implemented components exchange values, state or control at runtime.",
+    "chapter": "stable-capability-fields",
+    "anchor": "capability-fields-as-compilation-units"
+  },
+  {
+    "term": "Application programming interface",
+    "aliases": [
+      "API"
+    ],
+    "definition": "A defined set of operations and data representations through which software components interact.",
+    "chapter": "runtime-adapters-tool-permissions-and-human-approval",
+    "anchor": "effect-receipt-fields"
+  },
+  {
+    "term": "Approximate nearest neighbor",
+    "aliases": [
+      "ANN search"
+    ],
+    "definition": "Search for nearby vectors with a controllable trade-off between exact retrieval, index size and query cost.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Arithmetic intensity",
+    "aliases": [],
+    "definition": "The amount of computation per byte transferred across a specified memory boundary.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": ""
+  },
+  {
+    "term": "Artificial general intelligence",
+    "aliases": [
+      "AGI"
+    ],
+    "definition": "A proposed level of broadly transferable capability across tasks and environments. Operational thresholds vary by evaluation.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Artificial intelligence",
+    "aliases": [
+      "AI"
+    ],
+    "definition": "Systems that perform tasks involving perception, prediction, reasoning, learning or action.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": "worked-trace-three-projections-one-denied-effect"
+  },
+  {
+    "term": "Artificial superintelligence",
+    "aliases": [
+      "ASI"
+    ],
+    "definition": "A hypothetical system substantially exceeding human capability across a broad range of consequential cognitive tasks.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": "draft-key-figure-asi-stack-control-plane"
+  },
+  {
+    "term": "Assurance case",
+    "aliases": [],
+    "definition": "A documented argument for confidence in a property under a specified operating context.",
+    "chapter": "safety-cases-and-structured-assurance",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Attention head",
+    "aliases": [],
+    "definition": "One set of learned projections and attention operations contributing to a multi-head layer.",
+    "chapter": "coilra-multicoil-rope-and-cyclic-mixers",
+    "anchor": ""
+  },
+  {
+    "term": "Attention mask",
+    "aliases": [],
+    "definition": "A constraint on which input positions a query may use in attention.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Auditability",
+    "aliases": [],
+    "definition": "The ability to reconstruct and scrutinize a decision from records accessible to an authorized reviewer.",
+    "chapter": "institutions-international-coordination-and-public-legitimacy",
+    "anchor": ""
+  },
+  {
+    "term": "AUROC",
+    "aliases": [
+      "Area under the ROC curve"
+    ],
+    "definition": "A measure of the ranking of positives relative to negatives across decision thresholds.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Authentication",
+    "aliases": [],
+    "definition": "Establishing evidence for the identity of a principal or origin of a message.",
+    "chapter": "inter-stack-protocols-identity-and-economic-exchange",
+    "anchor": ""
+  },
+  {
+    "term": "Autoencoder",
+    "aliases": [],
+    "definition": "A model trained to encode an input and reconstruct it through a decoder.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": ""
+  },
+  {
+    "term": "Automation bias",
+    "aliases": [],
+    "definition": "A tendency to accept or overweigh automated judgments even when other evidence warrants reconsideration.",
+    "chapter": "human-factors-and-meaningful-control-in-oversight",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Autonomous replication",
+    "aliases": [],
+    "definition": "A system creating additional operational instances with limited direct human involvement.",
+    "chapter": "autonomous-replication-proliferation-and-containment",
+    "anchor": "what-autonomous-replication-means"
+  },
+  {
+    "term": "Autoregressive generation",
+    "aliases": [],
+    "definition": "Generating each output element conditional on previously generated elements.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Backbone",
+    "aliases": [],
+    "definition": "The main feature-extraction or representation network shared by one or more task-specific components.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Backpressure",
+    "aliases": [],
+    "definition": "A mechanism by which a constrained consumer slows or limits incoming work.",
+    "chapter": "labor-os-and-typed-jobs",
+    "anchor": ""
+  },
+  {
+    "term": "Backpropagation",
+    "aliases": [],
+    "definition": "Computing gradients through a composition of operations by applying the chain rule in reverse.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "learning-rule-pluralism-backpropagation-is-one-route"
+  },
+  {
+    "term": "Baseline",
+    "aliases": [],
+    "definition": "A reference method evaluated under declared information, resource and scoring conditions.",
+    "chapter": "the-efficient-asi-hypothesis",
+    "anchor": "worked-trace-useful-work-per-total-contract-cost"
+  },
+  {
+    "term": "Batch size",
+    "aliases": [],
+    "definition": "The number of examples, tokens or sequences grouped in a training or inference step.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Bayesian inference",
+    "aliases": [],
+    "definition": "Updating a prior distribution using a likelihood model and observed data.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": ""
+  },
+  {
+    "term": "Beam search",
+    "aliases": [],
+    "definition": "Maintaining a bounded set of candidate sequences while expanding and scoring continuations.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Belief revision",
+    "aliases": [],
+    "definition": "Updating a set of accepted propositions in response to new evidence or inconsistency.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Benchmark",
+    "aliases": [],
+    "definition": "A defined workload, scoring procedure and comparison setting used to evaluate a system.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": "worked-benchmark-collision-same-score-opposite-decision"
+  },
+  {
+    "term": "Bias–variance trade-off",
+    "aliases": [],
+    "definition": "The interaction between systematic estimation error and variation across training samples.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Bidirectional encoder",
+    "aliases": [],
+    "definition": "An encoder that allows a representation to depend on context on both sides of a position.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "BM25",
+    "aliases": [
+      "Okapi BM25"
+    ],
+    "definition": "A lexical ranking function using term rarity, saturating term frequency and document-length normalization.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": "fresh-citation-retrieval"
+  },
+  {
+    "term": "Bootstrap",
+    "aliases": [],
+    "definition": "Estimating sampling variation by resampling observed units under a chosen dependence model.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Brain–computer interface",
+    "aliases": [
+      "BCI"
+    ],
+    "definition": "A system that exchanges information between neural signals and an external device or computation.",
+    "chapter": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "anchor": ""
+  },
+  {
+    "term": "Breadth-first search",
+    "aliases": [
+      "BFS"
+    ],
+    "definition": "Traversal that explores reachable nodes in order of increasing edge distance.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": ""
+  },
+  {
+    "term": "Brier score",
+    "aliases": [],
+    "definition": "The mean squared difference between probabilistic predictions and outcome indicators.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": ""
+  },
+  {
+    "term": "Byte-pair encoding",
+    "aliases": [
+      "BPE"
+    ],
+    "definition": "A tokenization procedure that iteratively merges selected adjacent units into larger vocabulary entries.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "protected-sense-aware-lowering-into-a-kernel-packet"
+  },
+  {
+    "term": "Calibration",
+    "aliases": [],
+    "definition": "Agreement between predicted probabilities and observed frequencies under specified sampling conditions.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": ""
+  },
+  {
+    "term": "Canary deployment",
+    "aliases": [],
+    "definition": "Exposing a bounded portion of traffic to a candidate change before deciding whether to expand it.",
+    "chapter": "capability-replacement-and-rollback",
+    "anchor": ""
+  },
+  {
+    "term": "Capability elicitation",
+    "aliases": [],
+    "definition": "An evaluation procedure designed to reveal what a system can do under specified assistance and resources.",
+    "chapter": "dangerous-capability-domains-and-misuse-uplift",
+    "anchor": "refusal-is-not-incapability"
+  },
+  {
+    "term": "Capability field",
+    "aliases": [],
+    "definition": "The book’s description of a task-facing capability with an identity, interface, operating conditions and evidence obligations.",
+    "chapter": "stable-capability-fields",
+    "anchor": "core-claim"
+  },
+  {
+    "term": "Cascade",
+    "aliases": [],
+    "definition": "A sequence of increasingly costly routes in which a gate decides when to escalate a request.",
+    "chapter": "the-efficient-asi-hypothesis",
+    "anchor": "worked-trace-useful-work-per-total-contract-cost"
+  },
+  {
+    "term": "Cascading failure",
+    "aliases": [],
+    "definition": "A failure whose effects cause additional components or stages to fail.",
+    "chapter": "failure-modes-of-ungoverned-intelligence",
+    "anchor": ""
+  },
+  {
+    "term": "Catastrophic forgetting",
+    "aliases": [],
+    "definition": "A substantial decline on previously learned tasks after training on later data or tasks.",
+    "chapter": "procedural-memory-and-cognitive-loop-closure",
+    "anchor": ""
+  },
+  {
+    "term": "Causal inference",
+    "aliases": [],
+    "definition": "Estimating what would change under interventions using assumptions that link observations to causal quantities.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": ""
+  },
+  {
+    "term": "Causal masking",
+    "aliases": [],
+    "definition": "Restricting information flow so a position cannot use specified later positions.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Central processing unit",
+    "aliases": [
+      "CPU"
+    ],
+    "definition": "A general-purpose processor used for control, data preparation and numerical computation.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": "inference-kernel-placement"
+  },
+  {
+    "term": "Chain of thought",
+    "aliases": [
+      "CoT"
+    ],
+    "definition": "A sequence of intermediate reasoning tokens produced or supplied before a final response.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "strongest-objections-and-surviving-residuals"
+  },
+  {
+    "term": "Checkpoint",
+    "aliases": [],
+    "definition": "Saved state sufficient for a specified resumption or evaluation, depending on what the checkpoint retains.",
+    "chapter": "capability-replacement-and-rollback",
+    "anchor": "problem"
+  },
+  {
+    "term": "Chunking",
+    "aliases": [],
+    "definition": "Dividing a sequence or document into units for retrieval, representation or computation.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Circuit breaker",
+    "aliases": [],
+    "definition": "A mechanism that limits attempts at an operation after observed failures cross a threshold.",
+    "chapter": "governed-operations-incident-command-and-graceful-degradation",
+    "anchor": ""
+  },
+  {
+    "term": "Cognitive sovereignty",
+    "aliases": [],
+    "definition": "A person’s capacity to govern consequential access to and influence over their cognitive processes.",
+    "chapter": "human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty",
+    "anchor": "cognitive-sovereignty"
+  },
+  {
+    "term": "Commit boundary",
+    "aliases": [],
+    "definition": "The point at which a proposed state change becomes effective under a specified contract.",
+    "chapter": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Compiler",
+    "aliases": [],
+    "definition": "A program that translates a representation into another form while attempting to preserve declared semantics.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Compression ratio",
+    "aliases": [],
+    "definition": "The ratio of original size to compressed size under a stated encoding and accounting convention.",
+    "chapter": "rankfold-neuralfold-and-artifact-compression",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Computer vision",
+    "aliases": [],
+    "definition": "Computational methods for interpreting or generating images and video.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Confidence interval",
+    "aliases": [],
+    "definition": "An interval produced by a procedure with stated coverage properties under assumptions about sampling.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Confounder",
+    "aliases": [],
+    "definition": "A variable related to both an exposure and an outcome that can distort their apparent relationship.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Constitutional AI",
+    "aliases": [],
+    "definition": "An approach that uses written principles to guide critique, revision or preference training.",
+    "chapter": "constitutional-alignment-substrate",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Constraint satisfaction",
+    "aliases": [],
+    "definition": "Finding assignments that satisfy a collection of constraints.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": ""
+  },
+  {
+    "term": "Containment",
+    "aliases": [],
+    "definition": "Controls that bound where a system can operate, what resources it can access and what effects it can cause.",
+    "chapter": "autonomous-replication-proliferation-and-containment",
+    "anchor": "containment-must-be-evaluated-as-a-competing-mechanism"
+  },
+  {
+    "term": "Content addressing",
+    "aliases": [],
+    "definition": "Identifying an artifact by a digest computed from its content.",
+    "chapter": "artifact-graphs-audit-logs-and-replay",
+    "anchor": ""
+  },
+  {
+    "term": "Context poisoning",
+    "aliases": [],
+    "definition": "Corruption of the information supplied to a model such that later decisions are improperly influenced.",
+    "chapter": "context-transactions-snapshots-mounts-and-taint",
+    "anchor": ""
+  },
+  {
+    "term": "Context window",
+    "aliases": [],
+    "definition": "The bounded sequence of tokens or other input positions a model can directly condition on in one invocation.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Continual learning",
+    "aliases": [],
+    "definition": "Learning from a sequence of experiences or tasks while managing interference with prior capabilities.",
+    "chapter": "procedural-memory-and-cognitive-loop-closure",
+    "anchor": "interfaces"
+  },
+  {
+    "term": "Continuous batching",
+    "aliases": [],
+    "definition": "Updating a serving batch as requests arrive, finish or change stage.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Contrastive learning",
+    "aliases": [],
+    "definition": "Learning representations by scoring related items differently from selected alternatives.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": ""
+  },
+  {
+    "term": "Convolutional neural network",
+    "aliases": [
+      "CNN"
+    ],
+    "definition": "A network using learned filters shared across local spatial or temporal neighborhoods.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Corrigibility",
+    "aliases": [],
+    "definition": "A system property involving receptiveness to legitimate correction, modification and interruption.",
+    "chapter": "constitutional-alignment-substrate",
+    "anchor": "problem"
+  },
+  {
+    "term": "Cosine similarity",
+    "aliases": [],
+    "definition": "The inner product of two nonzero vectors divided by the product of their norms.",
+    "chapter": "virtual-context-abi",
+    "anchor": "choose-the-grouping-by-what-the-reader-needs"
+  },
+  {
+    "term": "Cost per accepted answer",
+    "aliases": [],
+    "definition": "Total resource cost, including rejected attempts and checks, divided by the number of accepted answers.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": ""
+  },
+  {
+    "term": "Counterexample",
+    "aliases": [],
+    "definition": "An admissible instance that contradicts a proposition stated for every instance.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Counterfactual",
+    "aliases": [],
+    "definition": "A hypothetical outcome under an intervention different from the one observed.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": "problem"
+  },
+  {
+    "term": "Credit assignment",
+    "aliases": [],
+    "definition": "Determining which actions or components contributed to an observed outcome.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": ""
+  },
+  {
+    "term": "Critic model",
+    "aliases": [],
+    "definition": "A model that evaluates another output against stated criteria and supplies a score or critique.",
+    "chapter": "scalable-oversight-and-adversarial-ai-control",
+    "anchor": ""
+  },
+  {
+    "term": "Cross-attention",
+    "aliases": [],
+    "definition": "Attention in which queries and the key–value representations come from different inputs or streams.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Cross-entropy",
+    "aliases": [],
+    "definition": "The expected negative log probability assigned by one distribution to outcomes from another.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Cross-validation",
+    "aliases": [],
+    "definition": "Evaluating an estimation procedure using multiple partitions of a dataset with different training and validation roles.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Cryptographic hash",
+    "aliases": [],
+    "definition": "A fixed-size digest function designed to make specified collisions or preimages computationally hard to find.",
+    "chapter": "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "anchor": ""
+  },
+  {
+    "term": "Curriculum learning",
+    "aliases": [],
+    "definition": "Training with an organized progression or mixture of tasks chosen to influence learning.",
+    "chapter": "data-engines-continual-learning-and-unlearning",
+    "anchor": "data-order-curricula-and-attribution-assisted-custody"
+  },
+  {
+    "term": "Data leakage",
+    "aliases": [],
+    "definition": "Information that should be unavailable to a training, tuning or decision step entering that step.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Data minimization",
+    "aliases": [],
+    "definition": "Restricting collection, retention and use of data to what a declared purpose needs.",
+    "chapter": "privacy-data-rights-and-information-flow-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Data parallelism",
+    "aliases": [],
+    "definition": "Distributing examples across workers that share or synchronize model parameters.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "problem"
+  },
+  {
+    "term": "Data provenance",
+    "aliases": [],
+    "definition": "The recorded origin, transformations and custody of data.",
+    "chapter": "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "anchor": ""
+  },
+  {
+    "term": "Dataset contamination",
+    "aliases": [],
+    "definition": "Overlap or dependence that gives a system access to information intended to be held out for evaluation.",
+    "chapter": "data-engines-continual-learning-and-unlearning",
+    "anchor": ""
+  },
+  {
+    "term": "DBSCAN",
+    "aliases": [],
+    "definition": "A density-based clustering method that groups connected dense regions and can label isolated observations as noise.",
+    "chapter": "virtual-context-abi",
+    "anchor": "choose-the-grouping-by-what-the-reader-needs"
+  },
+  {
+    "term": "Decoder",
+    "aliases": [],
+    "definition": "A component that maps a representation and possibly earlier outputs to an output distribution or sequence.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Decoding",
+    "aliases": [],
+    "definition": "The process of producing output tokens from a model’s predictive distributions.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Deduplication",
+    "aliases": [],
+    "definition": "Identifying and removing repeated or near-repeated data under a declared similarity rule.",
+    "chapter": "data-engines-continual-learning-and-unlearning",
+    "anchor": "governed-synthetic-data-and-self-play-lifecycle"
+  },
+  {
+    "term": "Deep learning",
+    "aliases": [],
+    "definition": "Learning with networks composed of multiple layers of nonlinear transformations.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Defeater",
+    "aliases": [],
+    "definition": "A reason that weakens an argument or prevents its conclusion from following.",
+    "chapter": "safety-cases-and-structured-assurance",
+    "anchor": "worked-trace-a-stale-control-result-and-an-unresolved-defeater"
+  },
+  {
+    "term": "Defense in depth",
+    "aliases": [],
+    "definition": "The use of multiple protective measures whose assumptions and failure modes can be examined separately.",
+    "chapter": "societal-resilience-and-misuse-defense",
+    "anchor": ""
+  },
+  {
+    "term": "Delegation",
+    "aliases": [],
+    "definition": "Assigning bounded work or authority to another actor under specified conditions.",
+    "chapter": "human-ai-organizations-delegation-and-accountability",
+    "anchor": "worked-two-hop-delegation-responsibility-follows-the-grant"
+  },
+  {
+    "term": "Denoising",
+    "aliases": [],
+    "definition": "Reconstructing a signal or its statistics from a corrupted observation.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "diffusion-generation-and-mutable-test-time-learners"
+  },
+  {
+    "term": "Deployment threshold",
+    "aliases": [],
+    "definition": "A declared capability or risk condition tied to a deployment decision.",
+    "chapter": "capability-thresholds-and-deployment-commitments",
+    "anchor": ""
+  },
+  {
+    "term": "Differential privacy",
+    "aliases": [
+      "DP"
+    ],
+    "definition": "A bound on the change in output probabilities when one protected record or person is added or removed.",
+    "chapter": "privacy-data-rights-and-information-flow-governance",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Diffusion model",
+    "aliases": [],
+    "definition": "A generative model trained to reverse a sequence of noise-adding or corruption steps.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Digital twin",
+    "aliases": [],
+    "definition": "A model linked to information about a particular physical asset, system or process.",
+    "chapter": "embodied-agency-real-time-control-and-physical-safety",
+    "anchor": "evidence"
+  },
+  {
+    "term": "Direct preference optimization",
+    "aliases": [
+      "DPO"
+    ],
+    "definition": "A preference-training objective that updates a policy from preferred and dispreferred responses relative to a reference.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "method-families"
+  },
+  {
+    "term": "Directed acyclic graph",
+    "aliases": [
+      "DAG"
+    ],
+    "definition": "A directed graph containing no directed cycles, often used to express task dependencies.",
+    "chapter": "planning-as-a-control-layer",
+    "anchor": "dag-scheduling-and-intelligence-arbitrage"
+  },
+  {
+    "term": "Distribution shift",
+    "aliases": [],
+    "definition": "A change between the distribution used to develop a system and the one on which it operates.",
+    "chapter": "failure-modes-of-ungoverned-intelligence",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Distributional impact",
+    "aliases": [],
+    "definition": "How the consequences of a system are spread across people or groups.",
+    "chapter": "ai-deployment-transition-distribution-and-human-agency",
+    "anchor": ""
+  },
+  {
+    "term": "Dropout",
+    "aliases": [],
+    "definition": "A training procedure that randomly suppresses selected activations under a specified sampling rule.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Dynamic programming",
+    "aliases": [],
+    "definition": "Solving related subproblems once and reusing their solutions through a recurrence.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": ""
+  },
+  {
+    "term": "e-means",
+    "aliases": [],
+    "definition": "A mini-batch clustering method that updates centers with decayed sums and counts for the fixed-k squared-distance objective.",
+    "chapter": "virtual-context-abi",
+    "anchor": "clustering-the-retrieval-index"
+  },
+  {
+    "term": "Early exit",
+    "aliases": [],
+    "definition": "Producing a result at an intermediate stage when a specified stopping condition holds.",
+    "chapter": "learning-compute-topology-and-adaptive-process-architecture",
+    "anchor": ""
+  },
+  {
+    "term": "Edge inference",
+    "aliases": [],
+    "definition": "Running model computations on or near the device that produces or consumes the data.",
+    "chapter": "personal-compute-hives-and-federated-edge-intelligence",
+    "anchor": ""
+  },
+  {
+    "term": "Effect size",
+    "aliases": [],
+    "definition": "The magnitude of a difference or association on a specified scale.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": ""
+  },
+  {
+    "term": "Embedding",
+    "aliases": [],
+    "definition": "A mapping from objects to numerical vectors whose geometry can be used by later computations.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": "jepa-predicting-a-representation-does-not-certify-the-world"
+  },
+  {
+    "term": "Encoder",
+    "aliases": [],
+    "definition": "A component that maps inputs to representations for a later task or decoder.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "jepa-is-a-prediction-objective-not-a-complete-agent"
+  },
+  {
+    "term": "Energy-based model",
+    "aliases": [
+      "EBM"
+    ],
+    "definition": "A model assigning an energy to configurations so that preferred configurations have lower energy.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Entropy coding",
+    "aliases": [],
+    "definition": "Assigning codes using symbol probabilities to reduce average representation length.",
+    "chapter": "rankfold-neuralfold-and-artifact-compression",
+    "anchor": ""
+  },
+  {
+    "term": "Episodic memory",
+    "aliases": [],
+    "definition": "Memory organized around particular events, observations and their context.",
+    "chapter": "durable-semantic-memory-and-knowledge-lattices",
+    "anchor": ""
+  },
+  {
+    "term": "Epistemic uncertainty",
+    "aliases": [],
+    "definition": "Uncertainty due to incomplete knowledge about a system, distribution or proposition.",
+    "chapter": "human-ai-communication-persuasion-and-epistemic-security",
+    "anchor": ""
+  },
+  {
+    "term": "Epoch",
+    "aliases": [],
+    "definition": "One pass through a specified training dataset, subject to the sampling convention.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Escalation risk",
+    "aliases": [],
+    "definition": "The possibility that interacting decisions intensify a conflict beyond its intended scope.",
+    "chapter": "military-ai-autonomous-weapons-and-strategic-stability",
+    "anchor": "strategic-stability-is-an-interaction-claim"
+  },
+  {
+    "term": "Evaluation awareness",
+    "aliases": [],
+    "definition": "Sensitivity of behavior to cues indicating that a system is being evaluated.",
+    "chapter": "adversarial-evaluation-sandbagging-and-training-time-deception",
+    "anchor": "worked-trace-the-model-that-improves-when-the-monitor-disappears"
+  },
+  {
+    "term": "Expectation–maximization",
+    "aliases": [
+      "EM algorithm"
+    ],
+    "definition": "An iterative estimation method alternating expected latent-variable statistics with parameter updates.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Expert parallelism",
+    "aliases": [],
+    "definition": "Distributing expert subnetworks across devices and routing their assigned tokens to them.",
+    "chapter": "routing-heads-and-specialist-cores",
+    "anchor": ""
+  },
+  {
+    "term": "Externality",
+    "aliases": [],
+    "definition": "A cost or benefit of an action borne by parties outside the immediate decision.",
+    "chapter": "ai-deployment-transition-distribution-and-human-agency",
+    "anchor": ""
+  },
+  {
+    "term": "F1 score",
+    "aliases": [
+      "F1"
+    ],
+    "definition": "The harmonic mean of precision and recall under the chosen averaging convention.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Failure injection",
+    "aliases": [],
+    "definition": "Deliberately introducing controlled faults to measure system behavior and recovery.",
+    "chapter": "project-theseus-as-report-first-implementation-reference",
+    "anchor": ""
+  },
+  {
+    "term": "False-negative rate",
+    "aliases": [
+      "FNR"
+    ],
+    "definition": "The fraction of actual positives incorrectly classified as negative.",
+    "chapter": "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "anchor": ""
+  },
+  {
+    "term": "False-positive rate",
+    "aliases": [
+      "FPR"
+    ],
+    "definition": "The fraction of actual negatives incorrectly classified as positive.",
+    "chapter": "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "anchor": "statistical-detection"
+  },
+  {
+    "term": "Falsifiability",
+    "aliases": [],
+    "definition": "The possibility of specifying observations that could count against a claim.",
+    "chapter": "living-book-methodology",
+    "anchor": ""
+  },
+  {
+    "term": "Feature attribution",
+    "aliases": [],
+    "definition": "Assigning importance to inputs or internal features for a specified prediction.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Federated learning",
+    "aliases": [],
+    "definition": "Training across participating devices or organizations while keeping specified data local.",
+    "chapter": "personal-compute-hives-and-federated-edge-intelligence",
+    "anchor": "which-devices-could-ever-contribute-to-training"
+  },
+  {
+    "term": "Feed-forward network",
+    "aliases": [
+      "FFN",
+      "MLP block"
+    ],
+    "definition": "A network of learned transformations and nonlinearities; in transformers it typically acts independently at each position.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Feedback loop",
+    "aliases": [],
+    "definition": "A process in which outputs influence later inputs or the environment producing them.",
+    "chapter": "reflexive-model-world-systems",
+    "anchor": ""
+  },
+  {
+    "term": "Few-shot learning",
+    "aliases": [],
+    "definition": "Performing or learning a task with a small number of task-specific examples.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Fine-tuning",
+    "aliases": [],
+    "definition": "Continuing training from an existing checkpoint using data and objectives selected for adaptation.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "FlashAttention",
+    "aliases": [],
+    "definition": "A family of exact attention algorithms that tile computation to reduce memory traffic.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Floating-point operations",
+    "aliases": [
+      "FLOPs"
+    ],
+    "definition": "A count of floating-point arithmetic operations under an explicit counting convention.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "current-provider-contracts-are-examples-not-constants"
+  },
+  {
+    "term": "Formal verification",
+    "aliases": [],
+    "definition": "Using mathematical methods to establish specified properties of a model or implementation.",
+    "chapter": "circle-calculus-and-proof-carrying-ai-contracts",
+    "anchor": ""
+  },
+  {
+    "term": "Forward transfer",
+    "aliases": [],
+    "definition": "Improvement on a later task attributable to knowledge or structure acquired from earlier tasks.",
+    "chapter": "cognitive-method-transfer-and-qualification",
+    "anchor": ""
+  },
+  {
+    "term": "Foundation model",
+    "aliases": [],
+    "definition": "A model pretrained on broad data and adapted to many downstream uses.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Fourier transform",
+    "aliases": [],
+    "definition": "Representing a signal through its frequency components.",
+    "chapter": "coilra-multicoil-rope-and-cyclic-mixers",
+    "anchor": ""
+  },
+  {
+    "term": "Game theory",
+    "aliases": [],
+    "definition": "The study of strategic decisions whose outcomes depend on the actions of multiple participants.",
+    "chapter": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "anchor": ""
+  },
+  {
+    "term": "Gaussian mixture model",
+    "aliases": [
+      "GMM"
+    ],
+    "definition": "A probability model representing a distribution as a weighted mixture of Gaussian components.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Generalization",
+    "aliases": [],
+    "definition": "Performance on data or conditions beyond those used for fitting and selecting a model.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Generative pretrained transformer",
+    "aliases": [
+      "GPT"
+    ],
+    "definition": "A family of transformer language models pretrained with a generative prediction objective.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Goal misgeneralization",
+    "aliases": [],
+    "definition": "A learned system retains relevant skills under a shift while pursuing an unintended objective.",
+    "chapter": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "anchor": "worked-trace-separate-the-evidence-lanes-before-assigning-authority"
+  },
+  {
+    "term": "Goodhart’s law",
+    "aliases": [],
+    "definition": "The risk that optimizing a proxy changes its relationship to the objective it was intended to measure.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Graceful degradation",
+    "aliases": [],
+    "definition": "Maintaining a reduced level of service as failures or resource constraints accumulate.",
+    "chapter": "governed-operations-incident-command-and-graceful-degradation",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Gradient",
+    "aliases": [],
+    "definition": "The vector of partial derivatives of a scalar quantity with respect to its parameters.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "problem"
+  },
+  {
+    "term": "Gradient accumulation",
+    "aliases": [],
+    "definition": "Combining gradients from several smaller steps before applying a parameter update.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "the-optimizer-is-a-coupled-run-policy"
+  },
+  {
+    "term": "Gradient clipping",
+    "aliases": [],
+    "definition": "Bounding a gradient’s norm or values before applying an update.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "adamw-is-the-reference-not-the-default-winner"
+  },
+  {
+    "term": "Gradient descent",
+    "aliases": [],
+    "definition": "Iteratively updating parameters in a direction that reduces a differentiable objective.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Graph neural network",
+    "aliases": [
+      "GNN"
+    ],
+    "definition": "A network that computes representations by aggregating information over relations in a graph.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Graphics processing unit",
+    "aliases": [
+      "GPU"
+    ],
+    "definition": "A parallel processor widely used to execute tensor operations in training and inference.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": "from-a-token-meter-to-an-answer-bill"
+  },
+  {
+    "term": "Greedy decoding",
+    "aliases": [],
+    "definition": "Selecting the highest-scoring token at each generation step.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Ground truth",
+    "aliases": [],
+    "definition": "A reference value treated as authoritative for scoring within a specified measurement setup.",
+    "chapter": "scientific-discovery-and-experimental-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Grounding",
+    "aliases": [],
+    "definition": "Linking a representation or answer to specified observations, sources or environmental entities.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Group relative policy optimization",
+    "aliases": [
+      "GRPO"
+    ],
+    "definition": "A policy-optimization approach using relative rewards among sampled completions for the same prompt.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "method-families"
+  },
+  {
+    "term": "Grouped-query attention",
+    "aliases": [
+      "GQA"
+    ],
+    "definition": "Attention in which groups of query heads share key and value heads.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "H-Net",
+    "aliases": [
+      "Hierarchical network with dynamic chunking"
+    ],
+    "definition": "A hierarchical sequence architecture that learns boundaries for grouping input positions into chunks.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "h-net-learns-the-sequence-hierarchy"
+  },
+  {
+    "term": "Hallucination",
+    "aliases": [],
+    "definition": "A generated assertion or detail unsupported by the reference or world state relevant to the task.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Hardware root of trust",
+    "aliases": [],
+    "definition": "A hardware component or function relied on to anchor subsequent integrity or identity checks.",
+    "chapter": "model-weight-custody-and-hardware-roots-of-trust",
+    "anchor": ""
+  },
+  {
+    "term": "Heuristic",
+    "aliases": [],
+    "definition": "A rule or estimate that guides search without necessarily guaranteeing an optimal solution.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": "argument-exit-campaign"
+  },
+  {
+    "term": "Hierarchical clustering",
+    "aliases": [],
+    "definition": "Clustering that builds a nested family of groups by merging or splitting them.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Holdout set",
+    "aliases": [],
+    "definition": "Data reserved from specified development decisions for a later evaluation.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Human control",
+    "aliases": [],
+    "definition": "The ability of accountable people to understand, direct and intervene in a decision process in time.",
+    "chapter": "military-ai-autonomous-weapons-and-strategic-stability",
+    "anchor": "core-claim"
+  },
+  {
+    "term": "Human in the loop",
+    "aliases": [
+      "HITL"
+    ],
+    "definition": "A workflow in which a person contributes judgments or actions during operation.",
+    "chapter": "human-factors-and-meaningful-control-in-oversight",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Hypergraph",
+    "aliases": [],
+    "definition": "A graph generalization in which an edge can connect more than two vertices.",
+    "chapter": "relational-dimension-compilation-and-polyadic-cognition",
+    "anchor": "operator-registry-and-hardware-lowering"
+  },
+  {
+    "term": "Hypernetwork",
+    "aliases": [],
+    "definition": "A network that generates some or all parameters of another network.",
+    "chapter": "recursive-self-improvement-boundaries",
+    "anchor": ""
+  },
+  {
+    "term": "Hypothesis",
+    "aliases": [],
+    "definition": "A proposition with stated predictions or conditions under which evidence would count against it.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Idempotence",
+    "aliases": [],
+    "definition": "The property that repeating an operation has the same intended effect as executing it once.",
+    "chapter": "artifact-graphs-audit-logs-and-replay",
+    "anchor": ""
+  },
+  {
+    "term": "In-context learning",
+    "aliases": [
+      "ICL"
+    ],
+    "definition": "Changing predictions in response to examples or instructions in the input without a parameter update.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "In-distribution",
+    "aliases": [
+      "ID evaluation"
+    ],
+    "definition": "Describes samples taken from the distribution assumed by the evaluation design.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Inductive bias",
+    "aliases": [],
+    "definition": "Assumptions or preferences that guide a learner toward some solutions over others.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "problem"
+  },
+  {
+    "term": "Inference",
+    "aliases": [],
+    "definition": "Applying a model to data to produce predictions, representations, scores or actions.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "heterogeneous-inference-memory-residency-paging-and-prediction"
+  },
+  {
+    "term": "Inner alignment",
+    "aliases": [],
+    "definition": "The relationship between objectives realized by learned internal computation and the intended training objective.",
+    "chapter": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Institutional legitimacy",
+    "aliases": [],
+    "definition": "The basis on which affected parties can recognize a body’s authority and contest its decisions.",
+    "chapter": "institutions-international-coordination-and-public-legitimacy",
+    "anchor": "resilience-inside-the-institutional-boundary"
+  },
+  {
+    "term": "Intent uncertainty",
+    "aliases": [],
+    "definition": "Uncertainty about which objective, constraints or trade-offs a person intended.",
+    "chapter": "human-intent-as-a-formal-input",
+    "anchor": ""
+  },
+  {
+    "term": "Interface contract",
+    "aliases": [],
+    "definition": "A specification of permitted inputs, outputs, responsibilities and failure behavior between components.",
+    "chapter": "stable-capability-fields",
+    "anchor": ""
+  },
+  {
+    "term": "Intermediate representation",
+    "aliases": [
+      "IR"
+    ],
+    "definition": "A representation between a source description and executable or target form, used for analysis and transformation.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "authority-bearing-ir-and-contract-preservation"
+  },
+  {
+    "term": "Interoperability",
+    "aliases": [],
+    "definition": "The ability of systems to exchange information and use it under compatible interpretations and procedures.",
+    "chapter": "inter-stack-protocols-identity-and-economic-exchange",
+    "anchor": "strongest-neighbor-comparison"
+  },
+  {
+    "term": "Invariant",
+    "aliases": [],
+    "definition": "A property required to hold across a specified set of states or transitions.",
+    "chapter": "circle-calculus-and-proof-carrying-ai-contracts",
+    "anchor": "invariants"
+  },
+  {
+    "term": "Inverse reinforcement learning",
+    "aliases": [
+      "IRL"
+    ],
+    "definition": "Inferring reward functions or preference structure from observed behavior under assumptions about an actor.",
+    "chapter": "governed-objective-formation-value-learning-and-goal-integrity",
+    "anchor": ""
+  },
+  {
+    "term": "Inverted index",
+    "aliases": [],
+    "definition": "A mapping from terms or features to the records in which they occur.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Isolation",
+    "aliases": [],
+    "definition": "A boundary that limits how one workload can access or affect another.",
+    "chapter": "security-kernel-and-digital-scifs",
+    "anchor": "problem"
+  },
+  {
+    "term": "Joint embedding",
+    "aliases": [],
+    "definition": "Mapping inputs into a shared or comparable representation space for a specified task.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": ""
+  },
+  {
+    "term": "Joint embedding predictive architecture",
+    "aliases": [
+      "JEPA"
+    ],
+    "definition": "A model trained to predict representations of target inputs from context in a learned representation space.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": "jepa-predicting-a-representation-does-not-certify-the-world"
+  },
+  {
+    "term": "K-means",
+    "aliases": [
+      "Lloyd’s algorithm"
+    ],
+    "definition": "A partitioning method that alternates assigning points to centers and updating means to reduce within-cluster squared distances.",
+    "chapter": "virtual-context-abi",
+    "anchor": "clustering-the-retrieval-index"
+  },
+  {
+    "term": "K-means++",
+    "aliases": [],
+    "definition": "A randomized method for initializing k-means centers using squared distances to existing centers.",
+    "chapter": "virtual-context-abi",
+    "anchor": "clustering-the-retrieval-index"
+  },
+  {
+    "term": "Kalman filter",
+    "aliases": [],
+    "definition": "A recursive state estimator that alternates model-based prediction with measurement updates.",
+    "chapter": "perception-sensor-fusion-and-observation-trust",
+    "anchor": "bayesian-state-estimation-and-concrete-fusion-regimes"
+  },
+  {
+    "term": "Key–value cache",
+    "aliases": [
+      "KV cache",
+      "attention cache"
+    ],
+    "definition": "Stored attention keys and values that can be reused when computing later token positions.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Knowledge distillation",
+    "aliases": [],
+    "definition": "Training a student using outputs, representations or other signals supplied by a teacher.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Knowledge graph",
+    "aliases": [
+      "KG"
+    ],
+    "definition": "A graph of identified entities and typed relationships that supports traversal and structured queries.",
+    "chapter": "durable-semantic-memory-and-knowledge-lattices",
+    "anchor": "memory-retention-and-behavior"
+  },
+  {
+    "term": "Kullback–Leibler divergence",
+    "aliases": [
+      "KL divergence"
+    ],
+    "definition": "The expected log probability ratio of two distributions under the first distribution.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Large language model",
+    "aliases": [
+      "LLM"
+    ],
+    "definition": "A large parameterized model trained to predict or generate sequences of language tokens.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Last-loop KV caching",
+    "aliases": [],
+    "definition": "Keeping the last recurrent pass’s keys and values as history for subsequent tokens.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Latency",
+    "aliases": [],
+    "definition": "Elapsed time between specified start and completion events for one operation.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Latent reasoning",
+    "aliases": [],
+    "definition": "Intermediate computation performed in internal representations before emitting an answer or another token.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Latent space",
+    "aliases": [],
+    "definition": "A representation space used for internal variables or learned features of a model.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": ""
+  },
+  {
+    "term": "Layer normalization",
+    "aliases": [
+      "LayerNorm"
+    ],
+    "definition": "Normalizing activations across a chosen set of features within each example.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Lean",
+    "aliases": [],
+    "definition": "An interactive theorem prover and functional programming language used to express and check formal declarations.",
+    "chapter": "executable-specifications-and-lean-proof-envelope",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Learning curve",
+    "aliases": [],
+    "definition": "Performance measured as a function of training progress, data, model size or another declared resource.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Learning rate",
+    "aliases": [],
+    "definition": "A parameter controlling the scale of an optimization update.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "worked-resume-weights-match-the-run-diverges"
+  },
+  {
+    "term": "Least privilege",
+    "aliases": [],
+    "definition": "The principle that a component receives only the permissions needed for its current task.",
+    "chapter": "system-boundaries-and-authority",
+    "anchor": ""
+  },
+  {
+    "term": "Likelihood",
+    "aliases": [],
+    "definition": "The probability or density assigned to observed data as a function of model parameters.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": ""
+  },
+  {
+    "term": "Linear regression",
+    "aliases": [],
+    "definition": "Fitting a linear function of features to predict a numerical response under a chosen loss.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Load balancing",
+    "aliases": [],
+    "definition": "Distributing work to avoid overloading some resources while others remain underused.",
+    "chapter": "routing-heads-and-specialist-cores",
+    "anchor": ""
+  },
+  {
+    "term": "Logistic regression",
+    "aliases": [],
+    "definition": "A model that maps a linear predictor through a logistic function to estimate a binary class probability.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Logit",
+    "aliases": [],
+    "definition": "An unnormalized score used before a probability transformation such as softmax.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Long short-term memory",
+    "aliases": [
+      "LSTM"
+    ],
+    "definition": "A recurrent architecture using gates to control updates to and reads from a memory cell.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Looped transformer",
+    "aliases": [
+      "Recursive transformer",
+      "recurrent-depth transformer"
+    ],
+    "definition": "A transformer that revisits one or more shared blocks at different effective depths.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Loss function",
+    "aliases": [],
+    "definition": "A scalar objective used to penalize deviations from a target or desired behavior.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Low-rank adaptation",
+    "aliases": [
+      "LoRA"
+    ],
+    "definition": "Adapting a model by learning low-rank updates to selected weight matrices.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "residual-topology-and-depth-routing"
+  },
+  {
+    "term": "Low-rank factorization",
+    "aliases": [],
+    "definition": "Representing a matrix using factors with a smaller inner dimension than the original matrix.",
+    "chapter": "rankfold-neuralfold-and-artifact-compression",
+    "anchor": ""
+  },
+  {
+    "term": "Machine learning",
+    "aliases": [
+      "ML"
+    ],
+    "definition": "Methods for fitting functions, representations or policies from data or experience.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Machine unlearning",
+    "aliases": [],
+    "definition": "Procedures intended to remove or reduce the influence of specified training data under an explicit criterion.",
+    "chapter": "privacy-data-rights-and-information-flow-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Markov decision process",
+    "aliases": [
+      "MDP"
+    ],
+    "definition": "A decision model defined by states, actions, transitions, rewards and an optimization criterion.",
+    "chapter": "planning-as-a-control-layer",
+    "anchor": ""
+  },
+  {
+    "term": "Mean squared error",
+    "aliases": [
+      "MSE"
+    ],
+    "definition": "The average squared difference between predictions and reference values.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Measurement validity",
+    "aliases": [],
+    "definition": "The extent to which a procedure measures the construct relevant to the intended inference.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": ""
+  },
+  {
+    "term": "Mechanistic interpretability",
+    "aliases": [],
+    "definition": "Investigation of the internal computations or representations responsible for model behavior.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": "inference-ceiling"
+  },
+  {
+    "term": "Mechanized proof",
+    "aliases": [],
+    "definition": "A formal derivation checked by software against explicit definitions and assumptions.",
+    "chapter": "executable-specifications-and-lean-proof-envelope",
+    "anchor": ""
+  },
+  {
+    "term": "Medoid",
+    "aliases": [],
+    "definition": "An observed data item chosen as a cluster representative under a specified dissimilarity.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Memory bandwidth",
+    "aliases": [],
+    "definition": "The amount of data a memory subsystem transfers per unit time under stated conditions.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": ""
+  },
+  {
+    "term": "Mesa-optimization",
+    "aliases": [],
+    "definition": "Learned computation that itself performs an optimization process within a trained system.",
+    "chapter": "inner-alignment-mesa-optimization-and-learned-objective-integrity",
+    "anchor": "core-claim"
+  },
+  {
+    "term": "Misuse uplift",
+    "aliases": [],
+    "definition": "A measured difference in an actor’s ability to complete a defined harmful task when given access to a system.",
+    "chapter": "dangerous-capability-domains-and-misuse-uplift",
+    "anchor": ""
+  },
+  {
+    "term": "Mixed precision",
+    "aliases": [],
+    "definition": "Using more than one numerical precision in a computation to balance accuracy and resource demands.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "problem"
+  },
+  {
+    "term": "Mixture of experts",
+    "aliases": [
+      "MoE"
+    ],
+    "definition": "An architecture that routes inputs or tokens to selected expert subnetworks and combines their outputs.",
+    "chapter": "routing-heads-and-specialist-cores",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Model card",
+    "aliases": [],
+    "definition": "Documentation describing a model’s intended use, training or evaluation context, performance and limitations.",
+    "chapter": "open-weight-release-and-post-release-control",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Model predictive control",
+    "aliases": [
+      "MPC control"
+    ],
+    "definition": "Choosing actions by optimizing over a finite horizon and replanning after receiving new observations.",
+    "chapter": "embodied-agency-real-time-control-and-physical-safety",
+    "anchor": ""
+  },
+  {
+    "term": "Model weights",
+    "aliases": [
+      "Parameters"
+    ],
+    "definition": "Numerical values learned or set in a model that determine its input–output computation.",
+    "chapter": "model-weight-custody-and-hardware-roots-of-trust",
+    "anchor": "problem"
+  },
+  {
+    "term": "Momentum",
+    "aliases": [],
+    "definition": "An optimization technique that accumulates past gradient directions to influence later updates.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Monte Carlo tree search",
+    "aliases": [
+      "MCTS"
+    ],
+    "definition": "Incremental tree search using repeated selection, expansion, evaluation and backup.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": ""
+  },
+  {
+    "term": "Moral uncertainty",
+    "aliases": [],
+    "definition": "Uncertainty over which normative principles or trade-offs should govern a decision.",
+    "chapter": "moral-uncertainty-and-value-conflict",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Multi-agent system",
+    "aliases": [
+      "MAS"
+    ],
+    "definition": "A system in which several decision-making entities interact within a shared or coupled environment.",
+    "chapter": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "anchor": ""
+  },
+  {
+    "term": "Multi-head attention",
+    "aliases": [
+      "MHA"
+    ],
+    "definition": "Attention computed over multiple learned projections whose results are combined.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Multi-query attention",
+    "aliases": [
+      "MQA"
+    ],
+    "definition": "Attention in which multiple query heads share a single set of key and value heads.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Multilayer perceptron",
+    "aliases": [
+      "MLP"
+    ],
+    "definition": "A feed-forward neural network with one or more hidden layers and nonlinear activation functions.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "architecture-families-as-different-computational-affordances"
+  },
+  {
+    "term": "Multimodal model",
+    "aliases": [],
+    "definition": "A model that consumes or produces more than one kind of signal, such as text, images or audio.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Nash equilibrium",
+    "aliases": [],
+    "definition": "A strategy profile in which no player can gain by unilaterally changing strategy given the others.",
+    "chapter": "multi-agent-dynamics-collective-intelligence-and-systemic-risk",
+    "anchor": ""
+  },
+  {
+    "term": "Natural language inference",
+    "aliases": [
+      "NLI"
+    ],
+    "definition": "Predicting the semantic relationship between a premise and a hypothesis, commonly entailment, contradiction or neutral.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Natural language processing",
+    "aliases": [
+      "NLP"
+    ],
+    "definition": "Computational methods for analyzing, generating or transforming human language.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Neural architecture search",
+    "aliases": [
+      "NAS"
+    ],
+    "definition": "Searching a space of model architectures under specified performance and resource objectives.",
+    "chapter": "learning-compute-topology-and-adaptive-process-architecture",
+    "anchor": ""
+  },
+  {
+    "term": "Neural network",
+    "aliases": [],
+    "definition": "A parameterized composition of operations, typically trained by optimizing an objective on data.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Non-IID data",
+    "aliases": [],
+    "definition": "Observations that do not satisfy an assumption of independent, identically distributed sampling.",
+    "chapter": "personal-compute-hives-and-federated-edge-intelligence",
+    "anchor": ""
+  },
+  {
+    "term": "Novelty search",
+    "aliases": [],
+    "definition": "An evolutionary search objective that rewards behavioral difference from previously observed candidates.",
+    "chapter": "open-ended-improvement-engines",
+    "anchor": ""
+  },
+  {
+    "term": "Observability",
+    "aliases": [],
+    "definition": "The extent to which internal state can be inferred from available measurements and inputs.",
+    "chapter": "perception-sensor-fusion-and-observation-trust",
+    "anchor": "bayesian-state-estimation-and-concrete-fusion-regimes"
+  },
+  {
+    "term": "Offline reinforcement learning",
+    "aliases": [],
+    "definition": "Learning policies from a fixed interaction dataset without collecting new experience during training.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": ""
+  },
+  {
+    "term": "Ontology",
+    "aliases": [],
+    "definition": "An explicit specification of concepts, relationships and constraints in a domain.",
+    "chapter": "durable-semantic-memory-and-knowledge-lattices",
+    "anchor": "worked-revision-a-lossy-ontology-migration-reaches-its-consumers"
+  },
+  {
+    "term": "Open-ended learning",
+    "aliases": [],
+    "definition": "Learning in which new tasks, behaviors or challenges can continue to arise during the process.",
+    "chapter": "open-ended-improvement-engines",
+    "anchor": ""
+  },
+  {
+    "term": "Open-weight model",
+    "aliases": [],
+    "definition": "A model whose trained parameter files are available to others under stated access and license conditions.",
+    "chapter": "open-weight-release-and-post-release-control",
+    "anchor": ""
+  },
+  {
+    "term": "Operating envelope",
+    "aliases": [],
+    "definition": "Conditions under which an artifact or procedure has been assessed for a specified use.",
+    "chapter": "capability-thresholds-and-deployment-commitments",
+    "anchor": ""
+  },
+  {
+    "term": "Operating system",
+    "aliases": [
+      "OS"
+    ],
+    "definition": "System software that schedules work and mediates access to hardware, memory and other shared resources.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": "inference-kernel-placement"
+  },
+  {
+    "term": "Opportunity cost",
+    "aliases": [],
+    "definition": "The value of the best alternative use displaced by a resource commitment.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "price-reuse-over-its-break-even-horizon"
+  },
+  {
+    "term": "Optimizer state",
+    "aliases": [],
+    "definition": "Auxiliary values retained by an optimizer across updates, such as moment estimates.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "structure-aware-alternatives-what-is-gained-and-paid-for"
+  },
+  {
+    "term": "Oracle comparison",
+    "aliases": [],
+    "definition": "A diagnostic using information unavailable at deployment to estimate an attainable ceiling under stated constraints.",
+    "chapter": "scientific-discovery-and-experimental-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Out-of-distribution",
+    "aliases": [
+      "OOD"
+    ],
+    "definition": "Describes inputs or conditions outside a specified reference distribution.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Outcome reward model",
+    "aliases": [
+      "ORM"
+    ],
+    "definition": "A model that scores a completed outcome or response.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Overfitting",
+    "aliases": [],
+    "definition": "Learning patterns that improve fit on development data while degrading performance under the intended deployment distribution.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Paged attention",
+    "aliases": [],
+    "definition": "Serving attention with key–value storage organized into blocks that can be allocated or mapped separately.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Parameter count",
+    "aliases": [],
+    "definition": "The number of scalar parameters under a declared accounting rule, distinguishing stored and active values when relevant.",
+    "chapter": "rankfold-neuralfold-and-artifact-compression",
+    "anchor": "ten-percent-task-scoped-compression"
+  },
+  {
+    "term": "Parameter-efficient fine-tuning",
+    "aliases": [
+      "PEFT"
+    ],
+    "definition": "Adapting a model by updating a restricted parameter subset or adding small trainable modules.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Pareto frontier",
+    "aliases": [
+      "Pareto efficiency"
+    ],
+    "definition": "The feasible choices for which improving one objective requires worsening at least one other.",
+    "chapter": "the-efficient-asi-hypothesis",
+    "anchor": ""
+  },
+  {
+    "term": "Partially observable Markov decision process",
+    "aliases": [
+      "POMDP"
+    ],
+    "definition": "A decision process in which the actor receives observations that need not reveal the full state.",
+    "chapter": "planning-as-a-control-layer",
+    "anchor": "a-finite-world-model-control-result"
+  },
+  {
+    "term": "Performative prediction",
+    "aliases": [],
+    "definition": "Prediction in settings where deploying the prediction changes the distribution of future outcomes.",
+    "chapter": "reflexive-model-world-systems",
+    "anchor": "external-positioning-beyond-a-model-dependent-distribution"
+  },
+  {
+    "term": "Perplexity",
+    "aliases": [],
+    "definition": "The exponential of average negative log probability under a specified tokenization and logarithm convention.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Persistent state",
+    "aliases": [],
+    "definition": "Information retained across operations or sessions that can influence later behavior.",
+    "chapter": "adjudicated-persistence-and-the-adaptive-commit-boundary",
+    "anchor": ""
+  },
+  {
+    "term": "Personally identifiable information",
+    "aliases": [
+      "PII"
+    ],
+    "definition": "Information that identifies or can reasonably be linked to a person in the relevant context.",
+    "chapter": "privacy-data-rights-and-information-flow-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Pipeline parallelism",
+    "aliases": [],
+    "definition": "Distributing successive stages of computation across devices and overlapping their work.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Planning horizon",
+    "aliases": [],
+    "definition": "The number or duration of future steps considered by a planner.",
+    "chapter": "planning-as-a-control-layer",
+    "anchor": ""
+  },
+  {
+    "term": "Policy",
+    "aliases": [],
+    "definition": "A rule or distribution that selects actions conditional on information available to the actor.",
+    "chapter": "planning-as-a-control-layer",
+    "anchor": "problem"
+  },
+  {
+    "term": "Policy gradient",
+    "aliases": [],
+    "definition": "Estimating how expected return changes with policy parameters and updating in that direction.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "eighteen-stage-update-lifecycle"
+  },
+  {
+    "term": "Positional encoding",
+    "aliases": [],
+    "definition": "Representing position or relative order so a sequence model can distinguish it.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Post-training quantization",
+    "aliases": [
+      "PTQ"
+    ],
+    "definition": "Quantizing a trained model using calibration or conversion after its original training.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Postcondition",
+    "aliases": [],
+    "definition": "A requirement describing the permissible state or result after an operation.",
+    "chapter": "intent-to-execution-contracts",
+    "anchor": ""
+  },
+  {
+    "term": "Posterior distribution",
+    "aliases": [],
+    "definition": "The conditional distribution of unknown quantities after incorporating observed data under a model.",
+    "chapter": "claim-ledgers-and-belief-revision",
+    "anchor": ""
+  },
+  {
+    "term": "Power usage effectiveness",
+    "aliases": [
+      "PUE"
+    ],
+    "definition": "Total facility energy divided by IT equipment energy over a specified interval.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Precision",
+    "aliases": [],
+    "definition": "The fraction of retrieved or predicted positive items that meet the specified relevance or correctness criterion.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Precondition",
+    "aliases": [],
+    "definition": "A requirement that must hold before an operation is valid under its specification.",
+    "chapter": "intent-to-execution-contracts",
+    "anchor": "draft-key-figure-intent-to-artifact-trace"
+  },
+  {
+    "term": "Predictive coding",
+    "aliases": [],
+    "definition": "A family of models that update representations using differences between predictions and observations.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": ""
+  },
+  {
+    "term": "Preference elicitation",
+    "aliases": [],
+    "definition": "Collecting choices or judgments to infer what outcomes a person values.",
+    "chapter": "human-intent-as-a-formal-input",
+    "anchor": ""
+  },
+  {
+    "term": "Prefill",
+    "aliases": [],
+    "definition": "Processing a prompt before decoding later tokens, often populating an attention cache.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "exact-prefix-reuse-saves-prefill-not-generation"
+  },
+  {
+    "term": "Preregistration",
+    "aliases": [],
+    "definition": "A dated specification of a study’s data, decisions, metrics and analysis made before examining its outcomes.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": ""
+  },
+  {
+    "term": "Pretraining",
+    "aliases": [],
+    "definition": "Training on a broad objective before adapting a model to a narrower task or behavior.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "place-four-experts-on-two-devices"
+  },
+  {
+    "term": "Principal component analysis",
+    "aliases": [
+      "PCA"
+    ],
+    "definition": "Finding orthogonal directions of greatest variance under a linear representation of centered data.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Probe",
+    "aliases": [],
+    "definition": "A fitted readout that tests whether information about a target is recoverable from a representation.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Procedural memory",
+    "aliases": [],
+    "definition": "Stored knowledge of how to perform a procedure or sequence of actions.",
+    "chapter": "procedural-memory-and-cognitive-loop-closure",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Process reward model",
+    "aliases": [
+      "PRM"
+    ],
+    "definition": "A model that scores intermediate steps of a trajectory or solution.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Program synthesis",
+    "aliases": [],
+    "definition": "Constructing programs from specifications, examples or constraints.",
+    "chapter": "cognitive-method-transfer-and-qualification",
+    "anchor": ""
+  },
+  {
+    "term": "Proof assistant",
+    "aliases": [],
+    "definition": "A system for constructing and checking formal proofs within a specified logic.",
+    "chapter": "spinoza-verification-and-proof-carrying-claims",
+    "anchor": ""
+  },
+  {
+    "term": "Proof obligation",
+    "aliases": [],
+    "definition": "A proposition that must be established to justify a step, refinement or guarantee.",
+    "chapter": "spinoza-verification-and-proof-carrying-claims",
+    "anchor": ""
+  },
+  {
+    "term": "Proximal policy optimization",
+    "aliases": [
+      "PPO"
+    ],
+    "definition": "A family of policy-gradient methods that constrains the size or effect of policy updates.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "eighteen-stage-update-lifecycle"
+  },
+  {
+    "term": "Pruning",
+    "aliases": [],
+    "definition": "Removing parameters, units or structures under a criterion for redundancy or limited contribution.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Quality diversity",
+    "aliases": [
+      "QD"
+    ],
+    "definition": "Search for a collection of high-performing solutions spread across different behavioral descriptors.",
+    "chapter": "open-ended-improvement-engines",
+    "anchor": ""
+  },
+  {
+    "term": "Quantization",
+    "aliases": [],
+    "definition": "Mapping numerical values into a smaller set of representable values to change storage or computation costs.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Quantization-aware training",
+    "aliases": [
+      "QAT"
+    ],
+    "definition": "Training with approximations to quantized operations so parameters can adapt to the numerical constraints.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": ""
+  },
+  {
+    "term": "Quarantine",
+    "aliases": [],
+    "definition": "Restricting the use or propagation of a candidate while a named concern remains unresolved.",
+    "chapter": "readiness-gates-residual-escrow-and-quarantine",
+    "anchor": "draft-key-figure-readiness-residual-quarantine-map"
+  },
+  {
+    "term": "Query, key and value",
+    "aliases": [
+      "QKV"
+    ],
+    "definition": "In attention, the query and keys determine weights used to combine value vectors.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Random forest",
+    "aliases": [],
+    "definition": "An ensemble of decision trees trained with randomized sampling or feature choices.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Random seed",
+    "aliases": [],
+    "definition": "A value used to initialize a pseudorandom generator so the same sequence can be reconstructed under a fixed implementation.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Randomized controlled trial",
+    "aliases": [
+      "RCT"
+    ],
+    "definition": "An experiment assigning interventions at random to support a causal comparison.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Reasoning budget",
+    "aliases": [],
+    "definition": "A limit on time, tokens, passes or other resources allocated to producing or checking an answer.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Recall",
+    "aliases": [],
+    "definition": "The fraction of all relevant or positive items that a system retrieves or identifies.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": "verify-graph-packets-without-treating-traversal-as-truth"
+  },
+  {
+    "term": "Recurrence",
+    "aliases": [],
+    "definition": "Computing a state by repeatedly applying an update that depends on previous state.",
+    "chapter": "coil-attention-cyclic-memory-and-recurrence-contracts",
+    "anchor": "concrete-circle-recurrence-receipt-boundary"
+  },
+  {
+    "term": "Recurrent neural network",
+    "aliases": [
+      "RNN"
+    ],
+    "definition": "A neural network that repeatedly updates a state using shared parameters over a sequence.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Recursive self-improvement",
+    "aliases": [
+      "RSI"
+    ],
+    "definition": "A process in which a system’s changes to itself influence its capacity to make subsequent improvements.",
+    "chapter": "recursive-self-improvement-boundaries",
+    "anchor": "architectural-rsi-across-planes-and-clocks"
+  },
+  {
+    "term": "Red teaming",
+    "aliases": [],
+    "definition": "Structured adversarial assessment aimed at discovering failures under a declared scope.",
+    "chapter": "adversarial-evaluation-sandbagging-and-training-time-deception",
+    "anchor": ""
+  },
+  {
+    "term": "Reference architecture",
+    "aliases": [],
+    "definition": "A design that identifies components, interfaces and responsibilities for comparing or constructing implementations.",
+    "chapter": "integrated-reference-architecture",
+    "anchor": "concrete-integration-failure-the-patch-that-passed-and-still-could-not-ship"
+  },
+  {
+    "term": "Reference monitor",
+    "aliases": [],
+    "definition": "A mechanism that mediates access to a protected object and checks each attempted use against policy.",
+    "chapter": "system-boundaries-and-authority",
+    "anchor": ""
+  },
+  {
+    "term": "Refinement",
+    "aliases": [],
+    "definition": "A relation under which a more concrete representation or system satisfies a more abstract specification.",
+    "chapter": "circle-calculus-and-proof-carrying-ai-contracts",
+    "anchor": "core-claim"
+  },
+  {
+    "term": "Regularization",
+    "aliases": [],
+    "definition": "Constraints, penalties or training procedures designed to influence which solution a learner selects.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "interpolation-and-double-descent-capacity-is-not-a-monotone-risk-dial"
+  },
+  {
+    "term": "Reinforcement learning",
+    "aliases": [
+      "RL"
+    ],
+    "definition": "Learning a policy through interaction and feedback about outcomes or actions.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "problem"
+  },
+  {
+    "term": "Reinforcement learning from AI feedback",
+    "aliases": [
+      "RLAIF"
+    ],
+    "definition": "Using model-generated judgments as feedback in a reinforcement-learning pipeline.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": ""
+  },
+  {
+    "term": "Reinforcement learning from human feedback",
+    "aliases": [
+      "RLHF"
+    ],
+    "definition": "Using human judgments to train or otherwise guide a policy through reinforcement learning.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Reinforcement learning with verifiable rewards",
+    "aliases": [
+      "RLVR"
+    ],
+    "definition": "Policy training with rewards derived from a specified automatic check of an outcome.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "eighteen-stage-update-lifecycle"
+  },
+  {
+    "term": "Relational inductive bias",
+    "aliases": [],
+    "definition": "Architectural assumptions that favor learning particular relations or compositional structures.",
+    "chapter": "relational-dimension-compilation-and-polyadic-cognition",
+    "anchor": ""
+  },
+  {
+    "term": "Remote attestation",
+    "aliases": [],
+    "definition": "A protocol through which a verifier appraises evidence about a remote execution environment.",
+    "chapter": "confidential-and-verifiable-ai-computation",
+    "anchor": "strongest-objection"
+  },
+  {
+    "term": "Replay",
+    "aliases": [],
+    "definition": "Reconstructing computations or decisions from retained inputs, observations and rules under a specified replay boundary.",
+    "chapter": "artifact-graphs-audit-logs-and-replay",
+    "anchor": "worked-replay-matching-output-different-tool-lineage"
+  },
+  {
+    "term": "Replication",
+    "aliases": [],
+    "definition": "Testing a reported finding with another execution, dataset or implementation under documented conditions.",
+    "chapter": "evidence-states-and-claim-discipline",
+    "anchor": ""
+  },
+  {
+    "term": "Representation learning",
+    "aliases": [],
+    "definition": "Learning transformations of data that make relevant structure available for downstream tasks.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": "leworldmodel-action-conditioned-dynamics"
+  },
+  {
+    "term": "Reproducibility",
+    "aliases": [],
+    "definition": "The capacity to obtain stated results using specified data, methods, artifacts and conditions.",
+    "chapter": "living-book-methodology",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Request coalescing",
+    "aliases": [],
+    "definition": "Serving overlapping requests using a shared in-flight operation when identity and freshness conditions permit reuse.",
+    "chapter": "integrated-reference-architecture",
+    "anchor": ""
+  },
+  {
+    "term": "Reranking",
+    "aliases": [],
+    "definition": "Scoring a retrieved candidate set again to choose an order or final result.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Research agenda",
+    "aliases": [],
+    "definition": "An ordered set of open questions with comparisons or observations capable of changing conclusions.",
+    "chapter": "open-research-agenda-and-bibliography-plan",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Residual connection",
+    "aliases": [
+      "Skip connection"
+    ],
+    "definition": "A pathway that adds or otherwise combines an earlier representation with a transformed one.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Resilience",
+    "aliases": [],
+    "definition": "A system’s ability to maintain or recover essential functions under disruption.",
+    "chapter": "societal-resilience-and-misuse-defense",
+    "anchor": "the-four-stage-resilience-contract"
+  },
+  {
+    "term": "Retrieval-augmented generation",
+    "aliases": [
+      "RAG"
+    ],
+    "definition": "Generation conditioned on content retrieved from an external collection for the current request.",
+    "chapter": "virtual-context-abi",
+    "anchor": "retrieval-augmented-generation-is-a-governed-pipeline-not-a-feature-toggle"
+  },
+  {
+    "term": "Reward hacking",
+    "aliases": [],
+    "definition": "Finding behavior that increases a reward signal while failing the intended objective.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "a-longer-justification-earns-the-wrong-reward"
+  },
+  {
+    "term": "Reward misspecification",
+    "aliases": [],
+    "definition": "A mismatch between what the reward function favors and the outcomes intended by its designers.",
+    "chapter": "governed-objective-formation-value-learning-and-goal-integrity",
+    "anchor": "failure-modes"
+  },
+  {
+    "term": "Reward model",
+    "aliases": [],
+    "definition": "A learned function that assigns scores intended to reflect preferences or task utility.",
+    "chapter": "policy-optimization-and-learning-from-feedback",
+    "anchor": "exact-current-minimum"
+  },
+  {
+    "term": "Ring buffer",
+    "aliases": [],
+    "definition": "Fixed-capacity storage that reuses positions by wrapping an index around the buffer.",
+    "chapter": "coil-attention-cyclic-memory-and-recurrence-contracts",
+    "anchor": "problem"
+  },
+  {
+    "term": "Robustness",
+    "aliases": [],
+    "definition": "Stability of a specified behavior or performance measure under declared perturbations or shifts.",
+    "chapter": "adversarial-machine-learning-and-model-attack-surface",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Roofline model",
+    "aliases": [],
+    "definition": "A performance model that bounds attainable throughput by compute capacity and memory traffic.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": ""
+  },
+  {
+    "term": "Rotary position embedding",
+    "aliases": [
+      "RoPE"
+    ],
+    "definition": "Encoding position by applying position-dependent rotations to query and key coordinates.",
+    "chapter": "coilra-multicoil-rope-and-cyclic-mixers",
+    "anchor": "recorded-rope-receipt-boundary"
+  },
+  {
+    "term": "Router",
+    "aliases": [
+      "Gating network"
+    ],
+    "definition": "A component that selects or weights candidate computational routes for an input.",
+    "chapter": "routing-heads-and-specialist-cores",
+    "anchor": "does-the-router-beat-a-coin-toss-at-the-same-price"
+  },
+  {
+    "term": "Runtime",
+    "aliases": [],
+    "definition": "The environment and services that execute a program and mediate access to its resources.",
+    "chapter": "runtime-adapters-tool-permissions-and-human-approval",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Safety case",
+    "aliases": [],
+    "definition": "A structured argument connecting evidence and assumptions to a bounded safety claim.",
+    "chapter": "safety-cases-and-structured-assurance",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Sample complexity",
+    "aliases": [],
+    "definition": "The amount of data required to achieve a learning criterion under stated assumptions.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "sample-complexity-expose-the-quantifiers-before-quoting-the-bound"
+  },
+  {
+    "term": "Sandbagging",
+    "aliases": [],
+    "definition": "Strategically suppressing demonstrated performance under evaluation.",
+    "chapter": "adversarial-evaluation-sandbagging-and-training-time-deception",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Sandbox",
+    "aliases": [],
+    "definition": "An execution environment that restricts a component’s access to resources and other systems.",
+    "chapter": "security-kernel-and-digital-scifs",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Satisfiability modulo theories",
+    "aliases": [
+      "SMT"
+    ],
+    "definition": "Deciding whether a logical formula is satisfiable in specified background theories such as bit vectors.",
+    "chapter": "cognitive-method-transfer-and-qualification",
+    "anchor": ""
+  },
+  {
+    "term": "Scalable oversight",
+    "aliases": [],
+    "definition": "Techniques that seek to evaluate work that is expensive or difficult for a human supervisor to check directly.",
+    "chapter": "scalable-oversight-and-adversarial-ai-control",
+    "anchor": "problem"
+  },
+  {
+    "term": "Scaling law",
+    "aliases": [],
+    "definition": "An empirical relationship describing how a measured quantity varies with resources or model scale.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": "transfer-claims-are-distribution-search-verifier-and-budget-relative"
+  },
+  {
+    "term": "Scheduling",
+    "aliases": [],
+    "definition": "Selecting which work receives resources, and when, subject to constraints.",
+    "chapter": "labor-os-and-typed-jobs",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "SciFact",
+    "aliases": [],
+    "definition": "A scientific claim-verification benchmark relating claims to annotated abstracts, verdicts and evidence sentences.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": "citation-release-thresholds"
+  },
+  {
+    "term": "Search budget",
+    "aliases": [],
+    "definition": "A bound on resources such as candidate proposals, expanded operations, time or memory.",
+    "chapter": "mathematical-and-search-substrates",
+    "anchor": "invariants"
+  },
+  {
+    "term": "Secure aggregation",
+    "aliases": [],
+    "definition": "Combining distributed contributions while limiting what the aggregator learns about individual inputs.",
+    "chapter": "personal-compute-hives-and-federated-edge-intelligence",
+    "anchor": ""
+  },
+  {
+    "term": "Selective prediction",
+    "aliases": [],
+    "definition": "A prediction policy that can abstain, trading coverage for conditional error or cost.",
+    "chapter": "routing-heads-and-specialist-cores",
+    "anchor": "mechanism"
+  },
+  {
+    "term": "Self-attention",
+    "aliases": [],
+    "definition": "Combining information across positions by using representations from the same sequence as queries, keys and values.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Self-consistency",
+    "aliases": [],
+    "definition": "Combining answers from multiple sampled reasoning trajectories under a declared aggregation rule.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "mature-research-target"
+  },
+  {
+    "term": "Self-supervised learning",
+    "aliases": [],
+    "definition": "Learning from prediction tasks whose targets are derived from the input data.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Semantic memory",
+    "aliases": [],
+    "definition": "Stored knowledge of facts, meanings and relations that can be retrieved across episodes.",
+    "chapter": "durable-semantic-memory-and-knowledge-lattices",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Sensitivity analysis",
+    "aliases": [],
+    "definition": "Examining how a result changes when assumptions, inputs or parameters vary.",
+    "chapter": "prototype-roadmap",
+    "anchor": ""
+  },
+  {
+    "term": "Sensor fusion",
+    "aliases": [],
+    "definition": "Combining observations from multiple sensors or modalities to estimate a state or quantity.",
+    "chapter": "perception-sensor-fusion-and-observation-trust",
+    "anchor": ""
+  },
+  {
+    "term": "Separation of duties",
+    "aliases": [],
+    "definition": "Distributing responsibilities across roles to reduce dependence on one actor’s unchecked decisions.",
+    "chapter": "human-ai-organizations-delegation-and-accountability",
+    "anchor": "separation-of-duties-conflicts-incentives-and-benefits"
+  },
+  {
+    "term": "Sim-to-real transfer",
+    "aliases": [],
+    "definition": "Applying a method learned or tested in simulation to operation in a physical environment.",
+    "chapter": "embodied-agency-real-time-control-and-physical-safety",
+    "anchor": ""
+  },
+  {
+    "term": "Singular value decomposition",
+    "aliases": [
+      "SVD"
+    ],
+    "definition": "Decomposing a matrix into orthogonal directions and nonnegative singular values.",
+    "chapter": "rankfold-neuralfold-and-artifact-compression",
+    "anchor": "the-rankfold-candidate-codec"
+  },
+  {
+    "term": "Snapshot",
+    "aliases": [],
+    "definition": "A view of data or state bound to a particular version or time.",
+    "chapter": "context-transactions-snapshots-mounts-and-taint",
+    "anchor": "problem"
+  },
+  {
+    "term": "Softmax",
+    "aliases": [],
+    "definition": "A mapping that exponentiates scores and normalizes them to form a probability distribution.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Software bill of materials",
+    "aliases": [
+      "SBOM"
+    ],
+    "definition": "An inventory of components included in a software artifact or release.",
+    "chapter": "ai-supply-chain-integrity-and-lifecycle-provenance",
+    "anchor": ""
+  },
+  {
+    "term": "Source criticism",
+    "aliases": [],
+    "definition": "Evaluating the origin, context and evidentiary limits of material used to support a claim.",
+    "chapter": "artifact-steward-agents-and-living-project-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Sparse autoencoder",
+    "aliases": [
+      "SAE"
+    ],
+    "definition": "An autoencoder trained with a sparsity objective to represent activations with relatively few active features.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": "personality-and-persona-steering"
+  },
+  {
+    "term": "Sparsity",
+    "aliases": [],
+    "definition": "A representation or computation in which many possible values or connections are zero or inactive.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": ""
+  },
+  {
+    "term": "Specification gaming",
+    "aliases": [],
+    "definition": "Optimizing the stated objective through behavior that defeats the intended purpose.",
+    "chapter": "failure-modes-of-ungoverned-intelligence",
+    "anchor": ""
+  },
+  {
+    "term": "Speculative decoding",
+    "aliases": [],
+    "definition": "Proposing several tokens using a draft mechanism and checking them with a target rule.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "generation-mode-taxonomy"
+  },
+  {
+    "term": "State of the art",
+    "aliases": [
+      "SOTA"
+    ],
+    "definition": "The leading reported performance within a stated task, comparison set, date and evaluation protocol.",
+    "chapter": "the-efficient-asi-hypothesis",
+    "anchor": "mature-research-target"
+  },
+  {
+    "term": "State-space model",
+    "aliases": [
+      "SSM"
+    ],
+    "definition": "A model representing a sequence through a latent state, a transition rule and an observation or readout rule.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "architecture-families-as-different-computational-affordances"
+  },
+  {
+    "term": "Statistical power",
+    "aliases": [],
+    "definition": "The probability of rejecting a null hypothesis for a specified alternative and test design.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Stochastic gradient descent",
+    "aliases": [
+      "SGD"
+    ],
+    "definition": "Updating parameters using a gradient estimated from sampled training examples.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "optimizer-families-and-what-they-actually-change"
+  },
+  {
+    "term": "Superposition",
+    "aliases": [],
+    "definition": "Representing multiple features in overlapping directions within a shared representation space.",
+    "chapter": "white-box-evidence-interpretability-and-activation-governance",
+    "anchor": ""
+  },
+  {
+    "term": "Supervised fine-tuning",
+    "aliases": [
+      "SFT"
+    ],
+    "definition": "Adapting a pretrained model using labeled demonstrations or target responses.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Supervised learning",
+    "aliases": [],
+    "definition": "Learning a mapping from inputs to targets using labeled examples.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Support vector machine",
+    "aliases": [
+      "SVM"
+    ],
+    "definition": "A classifier or regressor fitted using a margin-based objective, optionally with a kernel.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Sycophancy",
+    "aliases": [],
+    "definition": "A model’s tendency to favor an answer that agrees with the user even when available evidence favors another.",
+    "chapter": "human-ai-communication-persuasion-and-epistemic-security",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Symbolic AI",
+    "aliases": [],
+    "definition": "Approaches that represent and manipulate explicit symbols, rules or logical structures.",
+    "chapter": "asi-is-a-stack-not-a-model",
+    "anchor": ""
+  },
+  {
+    "term": "Syntax-guided synthesis",
+    "aliases": [
+      "SyGuS"
+    ],
+    "definition": "A synthesis problem combining a semantic specification with a grammar restricting candidate programs.",
+    "chapter": "cognitive-method-transfer-and-qualification",
+    "anchor": "external-sygus-transfer"
+  },
+  {
+    "term": "Synthetic data",
+    "aliases": [],
+    "definition": "Data generated by a model, simulator or construction procedure.",
+    "chapter": "data-engines-continual-learning-and-unlearning",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Tail latency",
+    "aliases": [],
+    "definition": "The slow end of a latency distribution, commonly described by a high percentile.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "lifecycle-costs-before-the-first-useful-token"
+  },
+  {
+    "term": "Temperature",
+    "aliases": [],
+    "definition": "A factor that rescales logits before sampling, changing the concentration of the distribution.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "a-physical-memory-policy"
+  },
+  {
+    "term": "Tensor",
+    "aliases": [],
+    "definition": "A multidimensional numerical object used to represent data, activations, parameters or transformations.",
+    "chapter": "relational-dimension-compilation-and-polyadic-cognition",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Tensor parallelism",
+    "aliases": [],
+    "definition": "Splitting the tensors and operations of a model layer across devices.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Tensor processing unit",
+    "aliases": [
+      "TPU"
+    ],
+    "definition": "A family of specialized accelerators for tensor computations.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": ""
+  },
+  {
+    "term": "Test set",
+    "aliases": [],
+    "definition": "Data reserved for assessing performance after the compared procedures are chosen.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Test-time compute",
+    "aliases": [
+      "Inference-time compute"
+    ],
+    "definition": "Computation allocated while answering a request, including sampling, search, checking or extra internal passes.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "strongest-neighbor-comparison"
+  },
+  {
+    "term": "TF–IDF",
+    "aliases": [
+      "TF-IDF",
+      "term frequency–inverse document frequency"
+    ],
+    "definition": "A lexical weighting scheme that combines occurrence within a document with rarity across the collection.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": "fresh-citation-retrieval"
+  },
+  {
+    "term": "Theorem",
+    "aliases": [],
+    "definition": "A proposition established within a formal system under stated assumptions.",
+    "chapter": "spinoza-verification-and-proof-carrying-claims",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Throughput",
+    "aliases": [],
+    "definition": "Completed units of work per unit time under a specified workload and acceptance condition.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": "inference-like-throughput-is-not-inference-like-training-cost"
+  },
+  {
+    "term": "Time per output token",
+    "aliases": [
+      "TPOT"
+    ],
+    "definition": "Time attributed to each generated token under a declared timing convention.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "the-cache-reuse-receipt"
+  },
+  {
+    "term": "Time to first token",
+    "aliases": [
+      "TTFT"
+    ],
+    "definition": "Elapsed time from a specified request start until the first generated token is available.",
+    "chapter": "fast-generation-architectures",
+    "anchor": "when-can-the-next-draft-begin"
+  },
+  {
+    "term": "Token",
+    "aliases": [],
+    "definition": "A unit produced by an encoding scheme and consumed or generated by a model.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "a-semantic-token-is-an-abi-object-not-the-referent"
+  },
+  {
+    "term": "Token budget",
+    "aliases": [],
+    "definition": "A bound on input, generated or total tokens under a specified tokenizer and counting policy.",
+    "chapter": "resource-economics-and-token-budgets",
+    "anchor": ""
+  },
+  {
+    "term": "Tokenizer",
+    "aliases": [],
+    "definition": "A procedure mapping input data into token identifiers and, where defined, back into a representation.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": "protected-sense-aware-lowering-into-a-kernel-packet"
+  },
+  {
+    "term": "Tool calling",
+    "aliases": [
+      "Function calling"
+    ],
+    "definition": "Producing a structured request for an external operation whose execution and permissions are handled by the host.",
+    "chapter": "ai-work-surfaces-agent-harnesses-and-organizational-absorption",
+    "anchor": ""
+  },
+  {
+    "term": "Top-k retrieval",
+    "aliases": [],
+    "definition": "Returning the k highest-ranked candidates under a retrieval score.",
+    "chapter": "verification-bandwidth-and-context-adequacy",
+    "anchor": ""
+  },
+  {
+    "term": "Top-k sampling",
+    "aliases": [],
+    "definition": "Sampling from a distribution restricted to its k highest-scoring options.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Top-p sampling",
+    "aliases": [
+      "Nucleus sampling"
+    ],
+    "definition": "Sampling from a high-probability prefix of the sorted vocabulary reaching a chosen cumulative mass.",
+    "chapter": "fast-generation-architectures",
+    "anchor": ""
+  },
+  {
+    "term": "Training",
+    "aliases": [],
+    "definition": "Changing model parameters using an objective evaluated on data or interactions.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": "the-training-run-transaction"
+  },
+  {
+    "term": "Transaction",
+    "aliases": [],
+    "definition": "A set of operations governed by a defined commit, visibility and failure contract.",
+    "chapter": "context-transactions-snapshots-mounts-and-taint",
+    "anchor": "draft-key-figure-context-transaction-lifecycle"
+  },
+  {
+    "term": "Transfer learning",
+    "aliases": [],
+    "definition": "Using information acquired on one task or dataset to support performance on another.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Transformer",
+    "aliases": [],
+    "definition": "A neural sequence architecture built around attention, feed-forward transformations and residual connections.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": "the-interface-survives-one-non-transformer-implementation"
+  },
+  {
+    "term": "Tree of thoughts",
+    "aliases": [
+      "ToT"
+    ],
+    "definition": "A search method that expands, evaluates and selects among multiple candidate reasoning continuations.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "why-existing-approaches-are-insufficient"
+  },
+  {
+    "term": "Trust boundary",
+    "aliases": [],
+    "definition": "An interface across which assumptions about identity, integrity or authority change.",
+    "chapter": "system-boundaries-and-authority",
+    "anchor": ""
+  },
+  {
+    "term": "Trusted computing base",
+    "aliases": [
+      "TCB"
+    ],
+    "definition": "The components whose correct operation is assumed for a stated protection property.",
+    "chapter": "confidential-and-verifiable-ai-computation",
+    "anchor": ""
+  },
+  {
+    "term": "Trusted execution environment",
+    "aliases": [
+      "TEE"
+    ],
+    "definition": "A hardware-backed environment designed to isolate code and data under stated trust assumptions.",
+    "chapter": "confidential-and-verifiable-ai-computation",
+    "anchor": "start-with-a-guarantee-vector-not-a-security-adjective"
+  },
+  {
+    "term": "Type checking",
+    "aliases": [],
+    "definition": "Verifying that an expression satisfies the typing rules of its formal system.",
+    "chapter": "executable-specifications-and-lean-proof-envelope",
+    "anchor": ""
+  },
+  {
+    "term": "Unsupervised learning",
+    "aliases": [],
+    "definition": "Learning structure from examples without externally supplied task labels.",
+    "chapter": "governed-model-training-distributed-optimization-and-scaling",
+    "anchor": ""
+  },
+  {
+    "term": "Validation set",
+    "aliases": [],
+    "definition": "Data used to choose model settings or procedures, distinct from the final reserved test.",
+    "chapter": "benchmark-ratchets-and-anti-goodhart-evidence",
+    "anchor": ""
+  },
+  {
+    "term": "Value pluralism",
+    "aliases": [],
+    "definition": "The view that several distinct values can matter and may conflict in a decision.",
+    "chapter": "moral-uncertainty-and-value-conflict",
+    "anchor": ""
+  },
+  {
+    "term": "Variational autoencoder",
+    "aliases": [
+      "VAE"
+    ],
+    "definition": "A latent-variable generative model trained with a variational approximation to the posterior.",
+    "chapter": "compact-generative-systems-and-residual-honesty",
+    "anchor": ""
+  },
+  {
+    "term": "Vector database",
+    "aliases": [],
+    "definition": "A store that indexes vectors for similarity search and associates them with retrievable records.",
+    "chapter": "virtual-context-abi",
+    "anchor": ""
+  },
+  {
+    "term": "Verifier",
+    "aliases": [],
+    "definition": "A procedure that checks a candidate against specified conditions, with a stated scope and error model.",
+    "chapter": "governed-deliberation-and-test-time-scaling",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Video random-access memory",
+    "aliases": [
+      "VRAM"
+    ],
+    "definition": "Memory associated with a graphics processor, often limiting resident weights, activations and cached state.",
+    "chapter": "physical-compute-infrastructure-energy-and-environmental-constraints",
+    "anchor": ""
+  },
+  {
+    "term": "Vocabulary",
+    "aliases": [],
+    "definition": "The set of token identifiers available to a tokenizer or prediction head.",
+    "chapter": "cognitive-compilation-and-semantic-ir",
+    "anchor": ""
+  },
+  {
+    "term": "Watermark",
+    "aliases": [],
+    "definition": "A signal embedded in content to support a specified detection or attribution procedure.",
+    "chapter": "content-authenticity-watermarking-and-synthetic-media-integrity",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Weight decay",
+    "aliases": [],
+    "definition": "An optimization rule that shrinks parameter values as part of training.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  },
+  {
+    "term": "Weight tying",
+    "aliases": [
+      "Parameter sharing"
+    ],
+    "definition": "Using the same learned parameters in more than one position, layer or computation.",
+    "chapter": "replaceable-cognitive-substrates-beyond-transformer-monoculture",
+    "anchor": ""
+  },
+  {
+    "term": "Weight-space programming",
+    "aliases": [
+      "WSP"
+    ],
+    "definition": "Constructing or transforming parameter tensors to encode behavior, subject to the semantics of the target architecture.",
+    "chapter": "recursive-self-improvement-boundaries",
+    "anchor": ""
+  },
+  {
+    "term": "World model",
+    "aliases": [],
+    "definition": "A learned or specified model of how environmental states or observations evolve, possibly conditional on actions.",
+    "chapter": "governed-world-models-and-reality-grounding",
+    "anchor": "why-this-boundary-earns-a-chapter"
+  },
+  {
+    "term": "Z3",
+    "aliases": [],
+    "definition": "An automated reasoning system used here to check whether any admissible input distinguishes a candidate from its specification.",
+    "chapter": "cognitive-method-transfer-and-qualification",
+    "anchor": "external-sygus-transfer"
+  },
+  {
+    "term": "Zero-knowledge proof",
+    "aliases": [
+      "ZKP"
+    ],
+    "definition": "A proof protocol that establishes a statement while revealing no additional witness information under its formal definition.",
+    "chapter": "confidential-and-verifiable-ai-computation",
+    "anchor": "human-reading-path"
+  },
+  {
+    "term": "Zero-shot learning",
+    "aliases": [],
+    "definition": "Attempting a task without task-specific demonstrations or labeled training examples under the declared setup.",
+    "chapter": "learning-theory-generalization-and-scaling-science",
+    "anchor": ""
+  }
+]
