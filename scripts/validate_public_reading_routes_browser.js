@@ -151,7 +151,8 @@ async function checkResearchFacets(context) {
     await record.getByRole("heading", {name: "Outside measurement", exact: true}).waitFor();
     assert.match(await record.innerText(), /Outside measurement.*operator time/s);
     await record.getByRole("link", {name: "Open in the book", exact: true}).click();
-    assert.equal(new URL(page.url()).hash, "#codex-test-plan");
+    assert.equal(new URL(page.url()).hash, "#verifier-measurement-boundary");
+    assert.match(await page.locator("#verifier-measurement-boundary").locator("..").innerText(), /Labor decision/);
   } finally {
     await page.close();
   }
