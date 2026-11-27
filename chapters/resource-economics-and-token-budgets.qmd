@@ -4,7 +4,7 @@ chapter_id: "resource-economics-and-token-budgets"
 part_id: "routing-compression-representation-substrates"
 status: "conceptual"
 draft_maturity: "v0.4 temporal-access integration"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "learning_compute_topology"
   - "tokenmana"
@@ -322,6 +322,31 @@ source-reported accounting example, not a hardware-independent speedup or a
 unique attribution of overhead. The existing complete-bill contract keeps
 those quantities separate. The [benchmark case](benchmark-ratchets-and-anti-goodhart-evidence.qmd#atlas-baseline-correction)
 explains how comparator economics also changed the source's final decision.
+
+### What is an avoided caller request worth? {#receiver-break-even}
+
+In the [local receiver replay](../products/evidence-registry/study-crossed-receiver.html#run-receiver-availability),
+either placement verified 80 of 288 cases. A gateway used 288 caller requests and
+130,128 status-payload bytes. Caller-side fallback used 480 and 75,960. Subtract
+within this workload. The gateway saved 192 caller requests and added 54,168
+bytes, or 282.125 extra bytes per request avoided.
+
+Assign a marginal price $r$ to one caller request and $b$ to one status-payload
+byte, in the same currency. Holding other costs equal, the gateway costs less
+when $192r > 54{,}168b$. Try pricing a request like 100 bytes, then like 500.
+At 100, saving requests buys 19,200 byte-equivalents and spends 54,168. Choose
+caller fallback. At 500, it buys 96,000 and the gateway wins this two-cost comparison.
+At the threshold the priced costs tie. A hard request quota can rule out a route
+before prices matter. The case counts give no estimate of a particular service's
+outage rate or its operator's time.
+
+Now try the [eight-package transport follow-up](../products/evidence-registry/study-crossed-receiver.html#run-receiver-live-transport).
+Here the caller knew to skip the primary before dispatch. Both placements made
+eight caller requests. The gateway moved 37,835 HTTP response bytes across its
+hops against 21,573 for direct fallback. There is no positive request saving
+to divide by. On these two dimensions choose direct fallback. This time bytes
+include headers; the local experiment counted status payload. Keep the bills
+separate. A different decision would need another priced benefit or constraint.
 
 ### Price reuse over its break-even horizon
 

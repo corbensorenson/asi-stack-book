@@ -237,7 +237,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             if not matrix.is_file() or f'id="{claim}"' not in matrix.read_text():
                 errors.append(f"scoped claim anchor is absent from Appendix C: {claim}")
             surfaces = [(site / "reader/quickstart.html", research.PUBLIC_REGISTRY)]
-            if study["id"] != "forward-transfer":
+            if study["id"] in research.HOME_STUDIES:
                 surfaces.append((site / "index.html", research.SITE_REGISTRY))
             for target, prefix in surfaces:
                 if not target.is_file():

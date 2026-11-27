@@ -21,9 +21,9 @@
       "reader_anchor": "crossed-receiver-comparison",
       "claim": {
         "id": "artifact-graphs-audit-logs-and-replay.core",
-        "scope": "The crossed study and its prospective follow-up test exact receiver status under prescribed schedules. They score verified effects separately from caller disposition and measure local lookup burden."
+        "scope": "The local status replay measures access to a simulated effect journal. The package follow-ups observe delivery of versioned manifests and compare fallback costs. The workloads answer different questions."
       },
-      "featured_run": "receiver-availability"
+      "featured_run": "receiver-live-transport"
     },
     {
       "id": "verifier-rollout",
@@ -53,6 +53,28 @@
         "case": "p01",
         "label": "Inspect the earlier retrieval miss in p01"
       }
+    },
+    {
+      "id": "claim-review",
+      "title": "Can a reviewer recover the decision and its limits?",
+      "question": "Given the same evidence and two opens, does following typed links improve a citable, scoped decision?",
+      "change": "A fresh set of revision histories or an independently supplied counterexample could change when to prefer a typed route. Retain the original labor-task miss after repairing its link.",
+      "claim": {
+        "id": "evidence-states-and-claim-discipline.core",
+        "scope": "Deterministic retrieval and review instruments measure available evidence and scripted dispositions."
+      },
+      "featured_run": "claim-review-matched"
+    },
+    {
+      "id": "verification-load",
+      "title": "When arrivals outrun verification capacity",
+      "question": "Does storing each outstanding obligation improve admission under increasing load?",
+      "change": "Test interruption and reassignment across owners, preserving recovery and authority in both arms.",
+      "claim": {
+        "id": "verification-bandwidth-and-context-adequacy.core",
+        "scope": "One ordered queue under a common owner with repeatable checks and a fixed service budget."
+      },
+      "featured_run": "verification-arrivals"
     }
   ],
   "runs": [
@@ -68,7 +90,9 @@
       "disposition": "Check authority at the write, and use the effect journal to establish what committed.",
       "command": "python3 experiments/nov20_instrument_audit/check_authority_effect_ordering.py",
       "result": "experiments/nov20_instrument_audit/results/authority-effect-ordering-2026-11-20.json",
-      "inputs": ["experiments/nov20_instrument_audit/check_authority_effect_ordering.py"],
+      "inputs": [
+        "experiments/nov20_instrument_audit/check_authority_effect_ordering.py"
+      ],
       "protocol": "experiments/nov20_instrument_audit/authority_effect_ordering_protocol.md",
       "result_sha256": "e0dbe2360ae27044c50be9ec365cb4225b49a5924fd555e240c4e8fc440b819e",
       "protocol_sha256": "cee38db019ad79211c43df01014b5ee559aee01aac38308e484dc0bb9149b67d",
@@ -256,7 +280,12 @@
       "title": "Verifier revision freshness on a successful stale lookup",
       "date": "2026-11-20",
       "follow_up_to": "verifier-floor-cache",
-      "unmeasured": ["active operator time", "revision acquisition cost", "process transport", "concurrent updates"],
+      "unmeasured": [
+        "active operator time",
+        "revision acquisition cost",
+        "process transport",
+        "concurrent updates"
+      ],
       "protocol": "experiments/nov20_instrument_audit/verifier_revision_freshness_protocol.md",
       "protocol_sha256": "0a24f879b31b7e1053f76dbd97d91a5face7b95f1218af28b55e3cee0f1dd96e",
       "method": "Five authored lookup profiles, two consumers and three logical ticks per profile. Both cache formats receive the same trusted request revision while the index can return an old snapshot, a current snapshot, or no response.",
@@ -283,7 +312,13 @@
       "title": "Verifier freshness with a separate revision authority process",
       "date": "2026-11-20",
       "follow_up_to": "verifier-revision-freshness",
-      "unmeasured": ["active operator time", "network latency", "production fault isolation", "cache restart behavior", "concurrent authorization and effect"],
+      "unmeasured": [
+        "active operator time",
+        "network latency",
+        "production fault isolation",
+        "cache restart behavior",
+        "concurrent authorization and effect"
+      ],
       "protocol": "experiments/nov20_instrument_audit/verifier_process_boundary_protocol.md",
       "protocol_sha256": "50a73074f47153b08a5cd625baec833fc69126b0d00ca5e2d9a01cf9a9920d4c",
       "method": "Ask a separate local process for the scoped revision before each decision. Add a fallback-expiry profile to the five earlier freshness profiles. Both cache formats use the same revision service, lookup conditions and worker transport.",
@@ -324,6 +359,142 @@
         "experiments/nov20_instrument_audit/run_schedulers.py"
       ],
       "source_commit": "420775ef7b7b2db2112f3949ab63aa0ed572254d"
+    },
+    {
+      "id": "receiver-distribution",
+      "study": "crossed-receiver",
+      "format": "package_observation",
+      "title": "What two package delivery services could observe",
+      "date": "2026-11-23",
+      "protocol": "experiments/p5_u1_governed_repository_change/public_distribution_observation/protocol.md",
+      "protocol_sha256": "2850cec4d13824c327681dcad7d2deca14d84399f11937eed725560e47f82dc3",
+      "method": "Check exact manifests through two public delivery services, then mask captured reads.",
+      "result_summary": "Both services delivered all {count} reference manifests. After masking the primary, caller and gateway each verified {verified} lineages.",
+      "limit": "All live reads succeeded. The services share an npm origin. Masking and gateway envelope costs were modeled.",
+      "disposition": "Retain fallback when a second read can establish the missing version. Count the work on both sides.",
+      "command": "python3 experiments/p5_u1_governed_repository_change/public_distribution_observation/run.py /tmp/receiver-new-observation.json",
+      "result": "experiments/p5_u1_governed_repository_change/public_distribution_observation/results.json",
+      "result_sha256": "2b714ba994d960a02a0c3ff049d92dfbaefc17079109778c9c4b1f2431e98a6f",
+      "inputs": [
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/cohort.json",
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/run.py",
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/result.md"
+      ],
+      "source_commit": "a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f",
+      "follow_up_to": "receiver-availability"
+    },
+    {
+      "id": "receiver-live-transport",
+      "study": "crossed-receiver",
+      "format": "package_transport",
+      "title": "Where the caller knows the primary is unavailable",
+      "date": "2026-11-23",
+      "protocol": "experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-protocol.md",
+      "protocol_sha256": "0e21cbeca7d2396c012c7cb66c983d77f20b5d5d61f0f6710fc0502e54644efe",
+      "method": "Use eight new package lineages. Withhold the primary before either arm sends. Compare caller lookup to a loopback gateway with the same reference.",
+      "result_summary": "Both placements verified {verified} of {count} withheld-primary cases with {caller} caller requests each. Gateway delivery added {bytes:,.0f} HTTP response bytes per verified fallback across both hops.",
+      "limit": "One host and time window. Both delivery services depend on npm. All actual reads succeeded. The transport excludes TLS and human labor.",
+      "disposition": "When the caller already knows to skip the primary, the gateway saves no caller requests in this workload. Prefer direct fallback on the measured request and byte costs.",
+      "command": "python3 experiments/p5_u1_governed_repository_change/public_distribution_observation/run_transport.py /tmp/receiver-new-transport.json",
+      "result": "experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-results.json",
+      "result_sha256": "fe178bbf11ddd79b5af3153e59c66e65111731127f7e2cd799790736842874c0",
+      "inputs": [
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-cohort.json",
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/run_transport.py",
+        "experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-result.md"
+      ],
+      "source_commit": "a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f",
+      "follow_up_to": "receiver-distribution"
+    },
+    {
+      "id": "claim-review-matched",
+      "study": "claim-review",
+      "format": "review_packet",
+      "title": "What a versioned register and typed links each recovered",
+      "date": "2026-11-23",
+      "protocol": "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/protocol.md",
+      "protocol_sha256": "b66ebc985ef8e5096f9f1b80a181e6b7010f066d2e7ff958507cdbf9f854fcc9",
+      "method": "Compare deterministic register and link-following policies on five claim decisions and four navigation prompts with matched initial records and two opens.",
+      "result_summary": "Usable citations on the five claim questions: ordinary register {ordinary}/5, linked register {linked}/5. Both cited all four navigation targets.",
+      "limit": "One authored instrument and lexical rubric. Conservative disposition rules limit the false-promotion measure. Human review time is unmeasured.",
+      "disposition": "Keep ordinary search available. On the labor question the linked policy held the claim but spent both opens on earlier comparisons. The study now links directly to its measurement boundary.",
+      "command": "node experiments/knowledge_graph_navigation/decision-studies-2026-11-23/run.cjs TESTED_SITE /tmp/review.json",
+      "result": "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/initial-instrument-capture.json",
+      "result_sha256": "b78f391ce193078a584cf48370faee904765ca1a049c8b97f7a4741c45a0aa28",
+      "inputs": [
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/tasks.json",
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/run.cjs",
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/results.md"
+      ],
+      "source_commit": "a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f"
+    },
+    {
+      "id": "claim-review-atlas",
+      "study": "claim-review",
+      "format": "review_packet",
+      "title": "Following an actual superseded Atlas decision",
+      "date": "2026-11-23",
+      "protocol": "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/atlas-supersession-protocol.md",
+      "protocol_sha256": "e06aae6f552f35aa0f40ce568d6f4a1b6596caebd87f55df8ff9bf05bb4baedf",
+      "method": "Start at the retained proceed decision and locate its correction by the first determining open.",
+      "result_summary": "Both policies reached the correction on open one in the one supplemental Atlas case.",
+      "limit": "One previously studied correction under a scripted navigation policy; no reader timing.",
+      "disposition": "Keep both routes to the corrected citation. A single navigation tie gives no general speed estimate.",
+      "command": "node experiments/knowledge_graph_navigation/decision-studies-2026-11-23/run.cjs TESTED_SITE /tmp/atlas-review.json --tasks experiments/knowledge_graph_navigation/decision-studies-2026-11-23/tasks-atlas-supersession.json",
+      "result": "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/atlas-supersession-capture.json",
+      "result_sha256": "6a4ec7b4e8a5a82aa1ff325edb8be7308a8fff4f623cdbc17706d03ef0f29a02",
+      "inputs": [
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/tasks-atlas-supersession.json",
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/run.cjs",
+        "experiments/knowledge_graph_navigation/decision-studies-2026-11-23/results.md"
+      ],
+      "source_commit": "a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f",
+      "follow_up_to": "claim-review-matched"
+    },
+    {
+      "id": "reserved-revision-retrieval",
+      "study": "claim-review",
+      "format": "revision_retrieval",
+      "title": "Returning a citable packet on reserved histories",
+      "date": "2026-11-27",
+      "protocol": "experiments/knowledge_graph_navigation/revision-retrieval/protocol.md",
+      "protocol_sha256": "7ed7fa7ddfa2ae43f5113f783c55736a1fcc95bfcb1ec1e779ab673284ebddc8",
+      "method": "Use Atlas for development and reserve every other study with three or more historical runs. Compare two record opens on wording alone and repeat with a supplied ID.",
+      "result_summary": "On the {held} reserved histories, text search returned {text} determining citations and graph traversal {graph} under the wording-only budget. Given an ID, direct lookup returned {direct} in one open each.",
+      "limit": "Three familiar histories held out from tuning this instrument. Lexical grading of an extractive packet. Atlas is a development case. Human comprehension and timing are unmeasured.",
+      "disposition": "Keep ordinary search available and resolve a supplied record ID directly. Receiver traversal reached the target on its first open; text search reached it on its second.",
+      "command": "node experiments/knowledge_graph_navigation/revision-retrieval/run.cjs",
+      "result": "experiments/knowledge_graph_navigation/revision-retrieval/results.json",
+      "result_sha256": "351ffffc67a82860420028d788c4099629c203fb547f422e133ab9c43980ac5a",
+      "inputs": [
+        "experiments/knowledge_graph_navigation/revision-retrieval/corpus.json",
+        "experiments/knowledge_graph_navigation/revision-retrieval/tasks.json",
+        "experiments/knowledge_graph_navigation/revision-retrieval/run.cjs",
+        "experiments/knowledge_graph_navigation/revision-retrieval/extract.py",
+        "assets/evidence-search.js"
+      ],
+      "source_commit": "aace49dcf014d42f86fcb2821c6b00f5878152f3",
+      "follow_up_to": "claim-review-atlas"
+    },
+    {
+      "id": "verification-arrivals",
+      "study": "verification-load",
+      "format": "verification_arrivals",
+      "title": "Task cursor or individual obligation records under load",
+      "date": "2026-11-27",
+      "protocol": "experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "protocol_sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730",
+      "method": "Present the same repeating job mix at one, two and four jobs per tick to two FIFO representations with four checks per tick.",
+      "result_summary": "At four arrivals per tick, each queue had {unfinished} unfinished checks after the last arrival. On draining the workload both verified {accepted} jobs. The ordinary queue made {ordinary} bookkeeping writes, the obligation queue {explicit}.",
+      "limit": "Single owner, in-memory logical ticks and fixed ordered checks. Writes are application state updates. Staff time, disk latency and independent reassignment remain unmeasured.",
+      "disposition": "Use the task cursor where a single owner executes ordered checks and can hold work. Adding per-obligation records did not buy additional checking capacity.",
+      "command": "python3 experiments/verification_bandwidth_capacity/arrival-study/run.py",
+      "result": "experiments/verification_bandwidth_capacity/arrival-study/results.json",
+      "result_sha256": "46daa7e31119669398cc843a954590cca8984cf33593646716cb16cf2d19873b",
+      "inputs": [
+        "experiments/verification_bandwidth_capacity/arrival-study/run.py"
+      ],
+      "source_commit": "aace49dcf014d42f86fcb2821c6b00f5878152f3"
     }
   ],
   "agenda": [

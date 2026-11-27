@@ -1,6 +1,6 @@
 # Three Defended Contributions
 
-Last updated: 2026-11-23
+Last updated: 2026-11-27
 
 **Use scoped Git for the known source-link repair.** It matched the governed
 workflow on four local paths and kept the original effect in ordinary branch
@@ -23,6 +23,18 @@ These three proposed contributions retain the limits of their observations.
 The [prior-art comparison](defended_contribution_prior_art_positioning.md)
 gives implementable conventional comparisons and the conditions for narrowing
 each proposal.
+
+Two later observations sharpen those decisions. When a caller knew to skip
+an unavailable primary before dispatch, direct fallback and a loopback
+gateway each needed eight caller requests for eight verified package
+manifests. The gateway added about 2,033 response bytes per fallback.
+In the matched claim-review instrument, the ordinary register supplied
+five usable citations on five claim questions. The linked policy supplied
+four. It held the unsupported labor claim but missed the determining
+citation within budget. The public histories retain the earlier comparisons,
+the miss, and the subsequent graph repair.
+[Receiver transport](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html#run-receiver-live-transport) ·
+[Matched claim review](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-claim-review.html#run-claim-review-matched).
 
 ## Contribution type and present result
 

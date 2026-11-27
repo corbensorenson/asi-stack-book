@@ -4,7 +4,7 @@ chapter_id: "virtual-context-abi"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 proof-program manuscript"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "vcm_public"
   - "deterministic_capability_compilation"
@@ -522,6 +522,34 @@ the additional choice of [using centers as stored codes](rankfold-neuralfold-and
 Keep the Gantry-08 correction, its version and its permissions fixed. Add unrelated release histories, rebuild the index, and ask for the same release sentence at each size. Give the worker two retrieval calls. Score the returned sentence and the cited passage together. A stale summary on call one is an incorrect answer within budget. Finding the correction on call three shows that the evidence survived, but the route missed the two-call requirement. A lookup by trial identifier provides a comparison on the same snapshots.
 
 Shao and colleagues used evidence-preserving growth on LongMemEval. HippoRAG stayed inside two calls while its rate of correct answers within budget fell by 16–20 percentage points across the reported settings. More calls would address a different failure from selecting the wrong evidence within the allowance. Their analysis applies the allowance to completed runs. If the service actually cuts the worker off at its second call, exercise that stopping policy separately and record whether it returns an adequate passage or abstains. [Scale-conditioned memory evaluation, §§3–5 and Appendix A.9](https://arxiv.org/html/2605.07313v2)
+
+#### Retrieval on the book’s own decision history {#revision-retrieval-study}
+
+The release-note example has a counterpart in the archive. The original Atlas
+screen said proceed. A later passage says stop after an omitted competitor was
+included. Atlas served as the development example. Before running another
+comparison we reserved all three other registry study histories with at least
+three runs in the frozen catalog. The determining records qualified earlier
+conclusions about receiver placement, routine reuse and verifier costs.
+
+Each method received the same starting record and question. Text search ranked
+the catalog; graph traversal ranked adjacent records with the same scorer.
+Each could open two records. For the wording-only questions both methods returned
+the decision evidence, exact citation and scope in **3 of 3 histories**. On the
+receiver question the graph reached the determining run first; text search
+opened the chapter passage first and the run second. On the verifier question
+the citable answer to “how many operator minutes?” was that the study never
+measured them. Supplying the exact record ID made direct lookup possible; it
+recovered all three determining records in one open each. Atlas is excluded
+from those denominators.
+
+Use a stable ID when one is available. Keep ordinary search for wording-only
+questions. These three histories give no measured reason to require graph
+traversal. The rubric scores evidence in returned packets, including the limit
+on the answer. It does not measure human interpretation, rank a clustering
+solver, or test the effect of corpus growth. The questions and archive were
+already familiar to the project. The [study record](../products/evidence-registry/study-claim-review.html#run-reserved-revision-retrieval) and [offline dataset and replay](../products/evidence-registry/reserved-revision-retrieval-replay.zip)
+allow a different retrieval policy to be compared on the same historical snapshot.
 
 ### Certified bounded graph snapshots
 

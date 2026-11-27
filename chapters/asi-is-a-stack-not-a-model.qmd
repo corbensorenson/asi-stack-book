@@ -4,7 +4,7 @@ chapter_id: "asi-is-a-stack-not-a-model"
 part_id: "foundations-alignment-governance"
 status: "conceptual"
 draft_maturity: "v0.2 manuscript draft"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "viea"
   - "beastbrain"
@@ -38,6 +38,14 @@ recovery harder to preserve. Give both workflows the same access and recovery
 tools. Then measure whether an explicit boundary improves fault localization
 or recovery enough to repay its coordination work. Those are the
 responsibilities the book calls a stack. They can live in one process.
+
+One way to make the ASI stress case testable is to turn up the rate of proposed
+work while holding checking capacity fixed. In a finite queue comparison, doubling
+arrivals from two to four jobs per tick left 32 checks pending at the last arrival.
+Writing down each obligation individually changed neither the backlog nor which
+jobs earned acceptance. A task cursor sufficed while one owner checked an ordered
+list. Losing the cursor or dividing responsibility among independent owners would
+change the question. [See the competing queues and their measured limits](verification-bandwidth-and-context-adequacy.qmd#verification-arrival-study).
 
 ## Chapter status
 

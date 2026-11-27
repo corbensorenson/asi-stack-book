@@ -424,7 +424,11 @@ extra squares still marked at a dead end. The same error occurred in
 all three runs. A separate path check would catch the extra branch before
 the router passed the answer on. A fair comparison would include an
 ordinary maze solver that already knows the rules and count the cost of
-checking or repairing each answer.
+checking or repairing each answer. For a service promising a valid shortest
+path in a unit-cost maze, keep breadth-first search as the default. Reopen
+the choice when the specialist delivers more verified paths before the same
+deadline, including its failed attempts and fallback. A fast fit on solved
+boards does not settle that deployment decision.
 [Technical case](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#cram-learned-constraint-search)
 
 ## Adoption Binds Authority and Recovery {#adoption-is-a-reversible-governance-transaction}
@@ -482,21 +486,9 @@ question the receiving component must answer.
   memory, and will five-choice selection satisfy the task?
   [Compression and the five-choice case](unit-23-generative-compression-and-cognitive-resource-economics.qmd#compression-moves-burden).
 
-Transformers are powerful general substrates with mature tooling, scaling
-evidence, and broad deployment. The case for replaceability is not that they
-have failed. It is that one architecture should not define every stable
-capability or become impossible to challenge.
-
-Monoculture creates common-mode exposure in model behavior, kernels, memory,
-hardware, serving, and training assumptions. It can also produce enormous
-economies of scale, shared evaluation, easier migration, and concentrated
-security investment. Heterogeneity trades correlated risk for integration and
-maintenance risk.
-
-The stack should therefore preserve an exit path without forcing diversity for
-its own sake. A Transformer may remain the best route for many capabilities.
-Replaceability means alternatives can enter a fair qualification process and
-the incumbent can be replaced when complete evidence justifies it.
+Shared Transformer tooling makes migration, evaluation and security work cheaper.
+Shared kernels and serving assumptions can also fail together. Keep an exit path,
+then price the extra integration work before adopting a second substrate.
 
 ## Prediction Targets and Learned Granularity
 
@@ -517,18 +509,22 @@ paper reports strong matched-data/FLOP results, but also variable-memory and
 batching difficulties and implementation-dependent training slowdown. Fewer
 latent positions are not automatically cheaper useful work.
 
-For the repository specialist, the distinction changes qualification. A JEPA
-embedding must preserve task-relevant information; an H-Net checkpoint must
-preserve boundary/dechunking state and its relation to bytes. Neither supplies
-exact source custody, a semantic compiler or action permission. A combined
-JEPA/H-Net model is a research possibility, not a result of this book or the
-reviewed papers. The [technical substrate owner](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
-keeps the primary references and adoption limits.
+Return to the repository specialist. In this worked decision the old document
+says the worker may publish and the revision says it may only read. Suppose
+the candidate encoder puts corresponding documents closer together on an
+alignment test. Feed both revisions to the same consumer. If it returns
+“may publish” twice, the distinction that mattered has disappeared somewhere
+along the route. Inspect the exact bytes and run the incumbent on the same
+pair. If the incumbent distinguishes them, keep it for this decision. If
+both fail, route the permission check to the exact record. Either way, the
+alignment result alone gives no reason to switch the permission reader.
 
-Change who may publish in one snippet. Can the same consumer distinguish
-the paired permissions after JEPA training? For H-Net, count verified
-outputs delivered before the deadline on the same mixed batch. Both checks
-can veto a switch despite gains in alignment or chunk counts.
+That verdict leaves two other choices open. An H-Net trial could ask how many
+correct outputs arrive before the deadline in a mixed-length batch. A CRAM trial
+could ask whether a proposed maze path is valid after charging for the checker.
+A result on either question would leave the failed permission pair unresolved.
+The [technical comparison](https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#predictive-objectives-and-learned-granularity)
+gives the source results and the state each replacement would have to preserve.
 
 ### A fixed budget for learned byte boundaries
 
@@ -814,15 +810,11 @@ reasoning, speed, or memory savings. The cyclic-mixer work adds a bounded
 operator-equivalence receipt and finite candidate-lifecycle checks. It does
 not establish trained quality, kernel performance, deployment, or transfer.
 
-The collapsible research-status panel and its technical-owner links retain
-the exact current artifact and proof inventories. Their role is to make these
-bounded results inspectable, not to turn their volume into evidence that
-diverse computation is better. The practical missing result is a matched
-natural task where the alternative produces an accepted useful outcome at
-an advantage that survives verification, migration, recovery, and maintenance.
+The research panel links the artifact and proof inventories. The open comparison
+is a natural task where an advantage survives verification, migration, recovery
+and maintenance.
 
-The joined chapter does not combine these bounded results into a claim that
-heterogeneous routing or cyclic substrates improve natural tasks.
+The joined chapter does not combine these bounded results into a claim that heterogeneous routing improves natural tasks.
 
 ## From a Minimum Router to a Substrate Market
 

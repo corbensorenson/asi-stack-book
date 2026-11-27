@@ -8,6 +8,10 @@ import re
 
 
 ARM_LABELS = {
+    "TaskQueue": "Task cursor", "ObligationQueue": "Obligation records",
+    "text": "Text search", "graph": "Graph traversal", "identifier": "Exact identifier",
+    "caller_fallback": "Caller fallback", "gateway_fallback": "Gateway fallback", "primary_only": "Primary only",
+    "ordinary_register": "Versioned register", "linked_register": "Linked register",
     "conventional": "Conventional", "full_governed": "Governed",
     "conventional_status": "Conventional status", "additional_observation": "Additional observation",
     "additional_endpoint": "Additional endpoint", "matched_conventional_access": "One endpoint with matched access",
@@ -220,8 +224,79 @@ def synthesis_case_records(result, factorial):
                    adverse=row["family"] in {"out-of-family", "adverse-mixing"})
 
 
+def package_cases(result, transport):
+    for observation in result["observations"]:
+        name = observation["package" if transport else "name"]
+        for condition, trials in observation["conditions" if transport else "cases"].items():
+            arms = {}
+            methods = ("caller_fallback", "gateway_fallback") if transport else ("primary_only", "caller_fallback", "gateway_fallback")
+            for method in methods:
+                trial = trials[method]
+                if transport:
+                    outcome = "verified" if trial["verified"] else "unresolved"
+                    work = (f'{trial["caller_http_requests"]} caller requests, '
+                            f'{trial["http_response_bytes_all_hops"]} HTTP response bytes across hops')
+                else:
+                    outcome = trial["disposition"]
+                    work = (f'{trial["caller_requests"]} caller requests, {trial["response_body_bytes"]} body bytes, '
+                            f'{trial["gateway_envelope_bytes"]} modeled envelope bytes')
+                arms[method] = arm(outcome, work, (outcome, trial["false_closure"]))
+            yield case(f"{name}-{condition}", f'{name}@{observation["version"]}, {condition}', arms,
+                       adverse=condition in {"wrong_body", "both_unavailable"})
+
+
+def review_cases(result):
+    tasks = {}
+    for packet in result["packets"]:
+        trial = packet["result"]
+        outcomes = tuple(trial[field] for field in ("decision_ok", "citation", "scoped"))
+        labels = ("correct decision with facts", "usable citation", "scope credit")
+        description = ", ".join(f"{label}: {value}" for label, value in zip(labels, outcomes))
+        tasks.setdefault(packet["id"], {})[packet["comparison"]] = arm(
+            description, f'{len(packet["path"])} records opened', outcomes)
+    for task, arms in tasks.items():
+        yield case(task, ("Claim review " if task.startswith("C") else "Navigation ") + task,
+                   {name: arms[name] for name in ("ordinary_register", "linked_register")})
+
+
+def arrival_cases(result):
+    for rate, queues in result.items():
+        for point in ("last_arrival", "tick_15", "drain"):
+            arms = {}
+            for name, reports in queues.items():
+                report = reports[point]
+                counts = tuple(report[k] for k in ("verified", "rejected", "unsupported", "unresolved_checks"))
+                outcome = "{} verified, {} rejected, {} unsupported, {} pending checks".format(*counts)
+                work = f'{report["writes"]} state writes, mean wait among finished jobs {report["mean_finished_wait"]} ticks'
+                arms[name] = arm(outcome, work, counts)
+            yield case(f"{rate}-{point}", f'{rate} jobs per tick, {point.replace("_", " ")}', arms)
+
+
+def revision_cases(result):
+    groups = {}
+    for trial in result["trials"]:
+        key = trial["subject"], trial["identified"], trial["question"]
+        scores = tuple(trial[metric] for metric in ("decision", "citation", "scope"))
+        outcome = "decision {}, citation {}, scope {}".format(*scores)
+        opens = ", ".join(row["id"] for row in trial["packet"])
+        groups.setdefault(key, {})[trial["method"]] = arm(outcome, opens, scores)
+    for (subject, identified, question), arms in groups.items():
+        expected = {"graph", "text", "identifier"} if identified else {"graph", "text"}
+        if set(arms) != expected:
+            raise ValueError(f"missing or ineligible retrieval arm for {subject}: {set(arms)}")
+        yield case(f"{subject}-{'id' if identified else 'wording'}", question, arms)
+
+
 def rows_for(format_id, result):
-    if format_id == "scoped_git_v1":
+    if format_id == "verification_arrivals":
+        rows = arrival_cases(result)
+    elif format_id == "revision_retrieval":
+        rows = revision_cases(result)
+    elif format_id in {"package_observation", "package_transport"}:
+        rows = package_cases(result, format_id == "package_transport")
+    elif format_id == "review_packet":
+        rows = review_cases(result)
+    elif format_id == "scoped_git_v1":
         rows = scoped_git(result)
     elif format_id == "authority_ordering_v1":
         rows = authority_ordering(result)
@@ -242,7 +317,7 @@ def rows_for(format_id, result):
     ordered = sorted(rows, key=lambda row: (not row["disagrees"], row["id"]))
     if not ordered or len(ordered) != len({row["id"] for row in ordered}):
         raise ValueError("research cases are empty or have colliding identities")
-    if any(tuple(row["arms"]) != tuple(ordered[0]["arms"]) for row in ordered):
+    if format_id != "revision_retrieval" and any(tuple(row["arms"]) != tuple(ordered[0]["arms"]) for row in ordered):
         raise ValueError("research cases have inconsistent arm order")
     return ordered
 

@@ -547,12 +547,17 @@ def graph_link(record_id: str, label: str = "Open in the graph") -> str:
 
 def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
     rows = []
+    methods = list(dict.fromkeys(method for row in cases for method in row["arms"]))
     for row in cases:
         fragment = research_anchor(run["id"], row["id"])
-        outcomes = "".join(
-            f'<td>{escape(value["outcome"])}<br><small>{escape(value["work"])}</small></td>'
-            for value in row["arms"].values()
-        )
+        cells = []
+        for method in methods:
+            if method in row["arms"]:
+                value = row["arms"][method]
+                cells.append(f'<td>{escape(value["outcome"])}<br><small>{escape(value["work"])}</small></td>')
+            else:
+                cells.append('<td>Ineligible without an identifier</td>')
+        outcomes = "".join(cells)
         attributes = "".join(f" data-{name}" for name in ("disagrees", "exhausted", "adverse") if row[name])
         graph_id = f'evidence_case:{run["id"]}--{row["id"]}'
         graph_route = f'<br><small>{graph_link(graph_id)}</small>' if graph_id in featured else ""
@@ -572,7 +577,7 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
         f'<details data-study-cases open><summary>Inspect {len(cases)} paired cases</summary>'
         f'<p><label hidden>Filter paired cases <select>{selectors}</select></label> '
         f'<span role="status" data-case-count></span></p>'
-        + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(study_arm_label(key) for key in cases[0]["arms"])],
+        + study_table(f'{run["title"]} cases', ["Case", "Conditions", *(study_arm_label(key) for key in methods)],
                       "".join(rows))
         + "</details>"
     )
@@ -681,6 +686,11 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], featured
     follows = (f'<p>Follow-up to <a href="#{research_anchor(predecessor)}">{escape(next(run["title"] for run in study["runs"] if run["id"] == predecessor))}</a>.</p>'
                if predecessor else "")
     replay_note = (" The Git repair also needs its pre-fix history." if row["format"] == "scoped_git_v1" else "")
+    if row["format"] == "review_packet":
+        replay_note = (f' Replace TESTED_SITE with the rendered site at {escape(result["source_commit"])}. '
+                       'The retained packets also contain every opened excerpt and score.')
+    elif row["format"] in {"package_transport", "package_observation"}:
+        replay_note = ' This command collects a new network observation. Use the raw result below for the original snapshot.'
     return (
         f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
         f'{follows}<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
@@ -707,6 +717,25 @@ def current_study_decision(study: dict) -> str:
         f'<p>{escape(study["summary"])}</p>'
         f'<p><strong>Scope and limits.</strong> {escape(study["limit"])}</p>'
         f'<p><a href="#{run}">Inspect the featured run and its conditions</a>.</p></section>'
+    )
+
+
+def receiver_cost_exercise(study: dict) -> str:
+    history = {run["id"]: run["metrics"] for run in study["runs"]}
+    local = history["receiver-availability"]
+    requests = local["additional_calls"] - local["matched_calls"]
+    payload = local["matched_bytes"] - local["additional_bytes"]
+    return (
+        '<section id="price-an-avoided-request"><h2>What is an avoided request worth?</h2>'
+        f'<p>In the <a href="#run-receiver-availability">local replay</a>, the gateway saved {requests} caller requests '
+        f'and added {payload:,} payload bytes. Break-even on those two prices was {payload/requests:g} bytes per '
+        'request avoided. Price a request like 100 bytes and caller fallback wins. Price it like 500 and '
+        'the gateway wins.</p><p>The <a href="#run-receiver-distribution">first delivery follow-up</a> '
+        'modeled a fallback after an unavailable primary. In the <a href="#run-receiver-live-transport">'
+        'measured transport follow-up</a> the caller knew to skip the primary. No caller requests were saved, '
+        'so there is no per-request break-even. The services shared an npm origin. '
+        '<a href="../../chapters/resource-economics-and-token-budgets.html#receiver-break-even">'
+        'Reprice the two workloads</a>.</p></section>'
     )
 
 
@@ -807,6 +836,27 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             f'Kit SHA-256 <code>{hashlib.sha256(content).hexdigest()}</code>.</p>'
         )
 
+    for run in manifest["runs"]:
+        if run["format"] not in {"verification_arrivals", "revision_retrieval"}:
+            continue
+        members = {name: read(Path(name)) for name in (run["protocol"], run["result"], *run["inputs"])}
+        command = run["command"]
+        members["README.md"] = (
+            f'# {run["title"]}\n\nExtract the archive and run from its root:\n\n'
+            f'```sh\n{command} > observation.json\ncmp observation.json {run["result"]}\n```\n\n'
+            f'The pinned protocol is {run["protocol"]}. The replay uses local data.\n'
+        ).encode()
+        package = run["id"] + "-replay.zip"
+        content = research.replay_zip(members)
+        if payload is None:
+            (product_dir / package).write_bytes(content)
+        else:
+            payload.write(product_dir / package, content)
+        replay_links[run["id"]] = (
+            f'<p><a href="{package}" download>Download the offline protocol, inputs, replay and results</a>. '
+            f'Kit SHA-256 <code>{hashlib.sha256(content).hexdigest()}</code>.</p>'
+        )
+
     for study in studies:
         sections = []
         run_index = []
@@ -833,6 +883,14 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                 'Its <a href="../../chapters/system-boundaries-and-authority.html#grant-to-effect-authority">'
                 'shared trace</a> follows a grant, an effect and a later observation.</p>'
             )
+        if study["id"] == "claim-review":
+            links += (
+                '<p>On <a href="#run-claim-review-matched--case-c3">the labor question</a> both policies held the claim, '
+                'but only the ordinary register supplied the determining citation. Follow the '
+                '<a href="knowledge-graph/?node=study%3Averifier-rollout">repaired measurement-boundary route</a> '
+                'or inspect the <a href="../../chapters/virtual-context-abi.html#revision-retrieval-study">'
+                'reserved-history retrieval comparison</a>.</p>'
+            )
         if study.get("spotlight"):
             spot = study["spotlight"]
             target = research_anchor(spot["run"], spot["case"])
@@ -849,6 +907,8 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         links += replay_links.get(study["featured_run"], "")
         claim = study["claim"]
         comparison = forward_transfer_choices(study) if study["id"] == "forward-transfer" else ""
+        if study["id"] == "crossed-receiver":
+            comparison = receiver_cost_exercise(study)
         body = (
             '<p><a href="index.html">Return to the Evidence Registry</a></p>'
             + current_study_decision(study) + comparison +
@@ -939,7 +999,8 @@ def research_comparisons(product_dir: Path, catalog: dict, payload: ProductPaylo
     comparisons = (
         ("receiver-placement", "Choose where a second status lookup runs",
          ("study_run:receiver-availability", "evidence_case:receiver-availability--pair-024",
-          "evidence_case:receiver-availability--pair-064")),
+          "evidence_case:receiver-availability--pair-064", "study_run:receiver-distribution",
+          "study_run:receiver-live-transport")),
         ("verifier-freshness", "Separate verifier freshness from cache format",
          ("study_run:verifier-floor-cache", "study_run:verifier-revision-freshness",
           "study_run:verifier-process-boundary")),

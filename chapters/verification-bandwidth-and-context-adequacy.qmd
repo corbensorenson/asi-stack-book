@@ -4,7 +4,7 @@ chapter_id: "verification-bandwidth-and-context-adequacy"
 part_id: "planning-memory-reasoning-execution"
 status: "conceptual"
 draft_maturity: "v0.3 manuscript draft"
-last_updated: "2026-11-20"
+last_updated: "2026-11-27"
 primary_sources:
   - "verification_bandwidth"
   - "vcm_public"
@@ -460,6 +460,41 @@ The Verification bandwidth capacity model turns the "long-context theater" warni
 The model also records a valid named-decomposition trace: three clusters of four semantic units plus six boundary checks reduce the modeled obligation set to 24 checks. That reduction is allowed only because the decomposition names the boundary obligations; a control that hides those boundary checks is rejected. Other controls reject treating linear context slots as pairwise verification capacity, hiding residual obligations, declaring adequacy without identified semantic units, and promoting a core support state from the fixture.
 
 This is still a synthetic record model. It does not prove a model verification bandwidth law, does not measure contradiction-rate performance, does not validate an adequacy classifier, does not prove long-context failure in deployed systems, and does not promote any core support state.
+
+### When arrivals outrun the verifier {#verification-arrival-study}
+
+Suppose one verifier can do four checks per tick. Each four-job block requires
+one, three, two and two checks in order. The last job fails its final check.
+At two jobs per tick the offered load averages four checks. At four jobs per
+tick it averages eight. Can explicit obligation records earn their cost as the
+queue fills? An ordinary FIFO queue saves a cursor for each task. Its competitor
+puts each required check in the queue and records its result. Both can hold a
+job, inspect the same evidence, and spend the same four checks per tick.
+
+| Jobs arriving per tick | Last arrival tick (32 jobs) | Verified / rejected by then, each arm | Checks unfinished | Mean ticks to verdict among finished jobs | Oldest pending job, ticks |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 31 | 24 / 8 | 0 | 0 | — |
+| 2 | 15 | 24 / 8 | 0 | 0 | — |
+| 4 | 7 | 12 / 4 | 32 | 2 | 3 |
+
+Both arms ultimately accepted 24 fully checked jobs, rejected eight and made
+zero unsupported acceptances at every rate. At high load the queue drained at
+tick 15, with a four-tick mean wait over all 32 verdicts. Judging only the
+finished jobs at tick 7 understates that wait. At drain, the ordinary arm made
+96 bookkeeping writes (one cursor insertion per task plus one update per check).
+The explicit arm made 128 (one insertion and one result per check). These are
+application state updates in memory. The experiment charges neither disk I/O
+nor staff time.
+
+Use the ordinary queue for ordered checks under this single owner. A separate
+obligation ledger would have to earn the extra work on another demand, such
+as independently reassigned or revoked checks. The result tests representation
+under one scheduler and a fixed task mix. Logical ticks give no production
+throughput estimate. The raw record retains the fixed-tick observation as well
+as the equal-cohort and drained comparisons.
+[Prespecified design](https://github.com/corbensorenson/asi-stack-book/blob/9f787efc/experiments/verification_bandwidth_capacity/arrival-study/protocol.md) ·
+[Job-level results](../products/evidence-registry/study-verification-load.html#run-verification-arrivals) ·
+[Offline replay](../products/evidence-registry/verification-arrivals-replay.zip).
 
 ### How much evidence is a second opinion?
 
