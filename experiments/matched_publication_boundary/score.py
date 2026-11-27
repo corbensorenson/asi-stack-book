@@ -22,7 +22,8 @@ def summarize(rows):
 
 
 def score(rows):
-    tasks = [x["repo"] for x in json.loads((HERE / "cohort.json").read_text())]
+    digests = {item["repo"]: item["sha256"] for item in json.loads((HERE / "cohort.json").read_text())}
+    tasks = list(digests)
     expected = set(itertools.product(tasks, ("exact","absent","wrong"), ("up","down"), ("shared","separate")))
     cells = [(r["task"],r["effect"],r["primary"],r["fallback"]) for r in rows]
     if len(cells) != len(expected) or set(cells) != expected:
@@ -30,6 +31,10 @@ def score(rows):
     for row in rows:
         if set(row["arms"]) != set(ARMS) or any(a["truth"] != (row["effect"]=="exact") for a in row["arms"].values()):
             raise ValueError(row["id"])
+        for name, arm in row["arms"].items():
+            observed_closure = arm["status"] == 200 and arm["observed"] == digests[row["task"]]
+            if arm["closed"] is not observed_closure:
+                raise ValueError(f"{row['id']} / {name}: closure disagrees with HTTP status and expected digest")
     strata = {p+"-"+f:summarize([r for r in rows if r["primary"]==p and r["fallback"]==f])
               for p,f in itertools.product(("up","down"),("shared","separate"))}
     return dict(n=len(rows), totals=summarize(rows), strata=strata, cases=rows)
