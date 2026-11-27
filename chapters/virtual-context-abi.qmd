@@ -430,7 +430,7 @@ nearest-neighbor recall stops improving on validation queries.
 [Faiss](https://arxiv.org/abs/2401.08281) ·
 [k-means++](https://research.google/pubs/k-means-the-advantages-of-careful-seeding/) ·
 [Flash-KMeans](https://arxiv.org/abs/2603.09229v2) ·
-[SuperKMeans](https://arxiv.org/html/2603.20009v1)
+[SuperKMeans](https://arxiv.org/html/2603.20009v1) Theorem 1.1 of Arthur and Vassilvitskii bounds the expected initial squared-distance cost by $8(\ln k + 2)$ times the optimum. A single draw can cost more. This guarantee concerns the seeding objective. Search quality still depends on which lists the query visits. [The authors’ proof](https://theory.stanford.edu/~sergei/papers/kMeansPP-soda.pdf).
 
 **e-means** fits the same objective with updates after each mini-batch.
 Classic mini-batch k-means accumulates a running mean of assigned points.

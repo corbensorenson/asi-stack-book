@@ -3,13 +3,13 @@
   "scanner": "modal and outcome-bearing sentence cue scan; candidates require semantic adjudication",
   "summary": {
     "chapter_count": 64,
-    "candidate_count": 4327,
+    "candidate_count": 4329,
     "review_state_counts": {
       "duplicate_of_atom": 2055,
       "editorial_or_question": 63,
-      "historical_or_source_report": 392,
+      "historical_or_source_report": 393,
       "material_atom": 3,
-      "nonmaterial_explanation": 1814
+      "nonmaterial_explanation": 1815
     }
   },
   "candidates": [
@@ -14296,7 +14296,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.4e0a5ef2aa9a",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:485",
+      "source": "chapters/stable-capability-fields.qmd:487",
       "sentence": "indexing regressions by case ID let a later row erase a failed must-pass",
       "cues": [
         "must"
@@ -14315,7 +14315,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.0f26452003df",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:487",
+      "source": "chapters/stable-capability-fields.qmd:489",
       "sentence": "Bind the case IDs, expected labels and required checks to a",
       "cues": [
         "required"
@@ -14334,7 +14334,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.0ae18254dab2",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:488",
+      "source": "chapters/stable-capability-fields.qmd:490",
       "sentence": "Require complete, unique results for both",
       "cues": [
         "require"
@@ -14353,7 +14353,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.c7edacf62c76",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:531",
+      "source": "chapters/stable-capability-fields.qmd:533",
       "sentence": "In addition to explicit rejection or nondefault routes, the execution layer proves exact rejection noninterference, arbitrary-run identity and non-authority preservation, exact prefix/suffix composition, terminal-state absorption, and exact retirement and quarantine witnesses.",
       "cues": [
         "proves"
@@ -14372,7 +14372,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.eb306651efa4",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:531",
+      "source": "chapters/stable-capability-fields.qmd:533",
       "sentence": "The module does not prove the richer behavioral-refinement contract, deployed route validity, measured evaluator independence, provenance, real regression preservation, migration or composition safety, effect-complete rollback, organizational terminal governance, or production lifecycle enforcement.",
       "cues": [
         "prove"
@@ -14391,7 +14391,7 @@
     {
       "candidate_id": "stable-capability-fields.prose.6d2f13d7f3bf",
       "chapter_id": "stable-capability-fields",
-      "source": "chapters/stable-capability-fields.qmd:603",
+      "source": "chapters/stable-capability-fields.qmd:605",
       "sentence": "Stable fields define what must remain true across implementation changes; Capability Replacement and Rollback defines how a candidate earns the right to replace the current implementation.",
       "cues": [
         "must"
@@ -29176,6 +29176,25 @@
       "target_atom_id": "virtual-context-abi.core"
     },
     {
+      "candidate_id": "virtual-context-abi.prose.f1ed42f5b663",
+      "chapter_id": "virtual-context-abi",
+      "source": "chapters/virtual-context-abi.qmd:433",
+      "sentence": "This guarantee concerns the seeding objective.",
+      "cues": [
+        "guarantee"
+      ],
+      "review_state": "historical_or_source_report",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Theorem 1.1 bounds the seeding objective under its random initialization.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "virtual-context-abi.prose.9b5c921ea792",
       "chapter_id": "virtual-context-abi",
       "source": "chapters/virtual-context-abi.qmd:456",
@@ -32662,9 +32681,28 @@
       "target_atom_id": null
     },
     {
+      "candidate_id": "verification-bandwidth-and-context-adequacy.prose.a285d88b477a",
+      "chapter_id": "verification-bandwidth-and-context-adequacy",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:555",
+      "sentence": "Those categories call for different follow-ups: assess the paper, obtain a human sentence annotation, or improve sentence selection. .",
+      "cues": [
+        "improve"
+      ],
+      "review_state": "nonmaterial_explanation",
+      "allowed_dispositions": [
+        "material_atom",
+        "nonmaterial_explanation",
+        "duplicate_of_atom",
+        "editorial_or_question",
+        "historical_or_source_report"
+      ],
+      "disposition_rationale": "Assigns follow-up work according to the observed reason a citation lacked credit.",
+      "target_atom_id": null
+    },
+    {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.0579171a15ec",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:575",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:588",
       "sentence": "search or artifacts cannot reach the evidence gate.",
       "cues": [
         "cannot"
@@ -32683,7 +32721,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.43f5c9dc7f47",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:604",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:617",
       "sentence": "causal, outcome, cost, reproduction, and transfer obligation is satisfied,",
       "cues": [
         "transfer"
@@ -32702,7 +32740,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.3a1bdd297a3b",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:622",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:635",
       "sentence": "confidence, and green validators cannot promote claims without accepted",
       "cues": [
         "cannot"
@@ -32721,7 +32759,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.1a48120cad82",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:626",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:639",
       "sentence": "High-risk claims require stronger independent modes, lower false-acceptance",
       "cues": [
         "require"
@@ -32740,7 +32778,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.f0f674613889",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:659",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:672",
       "sentence": "outcome, cost, reproduction, or transfer checks after seeing results.",
       "cues": [
         "transfer"
@@ -32759,7 +32797,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.afe686bfdeee",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:709",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:722",
       "sentence": "eleven construct a finite witness or prove finite route consequences.",
       "cues": [
         "prove"
@@ -32778,7 +32816,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.24479cbdcfb7",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:715",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:728",
       "sentence": "The next honest minimum must prospectively sample natural claims with nonzero",
       "cues": [
         "must"
@@ -32797,7 +32835,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.b4d2cafec2b3",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:723",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:736",
       "sentence": "Reproduction from locks and transfer to a second model, domain, and",
       "cues": [
         "transfer"
@@ -32816,7 +32854,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.569b27b7ffa2",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:724",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:737",
       "sentence": "evaluator implementation are required before promotion.",
       "cues": [
         "required"
@@ -32835,7 +32873,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.80a900d2553a",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:731",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:744",
       "sentence": "counterexample, causal, outcome, cost, reproduction, and transfer obligations.",
       "cues": [
         "transfer"
@@ -32854,7 +32892,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.3e412656c22b",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:756",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:769",
       "sentence": "independent outcomes, causal ablations, reproduction, and transfer pass.",
       "cues": [
         "transfer"
@@ -32873,7 +32911,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.082aafdc699b",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:772",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:785",
       "sentence": "The finite route proof records how modeled adequacy reviews should route, and the contradiction probe checks local fixture boundaries, not whether a model actually has enough verification bandwidth.",
       "cues": [
         "should"
@@ -32892,7 +32930,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.475eef0e1775",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:772",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:785",
       "sentence": "Distractor resistance, contradiction-rate measurement, semantic adequacy classification, and deployed claim-ledger outcomes still require logged prompts or deterministic checkers, real or replayed model traces, and reviewable claim-ledger results.",
       "cues": [
         "require"
@@ -32911,7 +32949,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.ccf50f088459",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:792",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:805",
       "sentence": "The declarations do not prove obligation completeness, evaluator competence or",
       "cues": [
         "prove"
@@ -32930,7 +32968,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.91a01e72e5b4",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:795",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:808",
       "sentence": "adequacy, useful error reduction, safety, or transfer.",
       "cues": [
         "transfer"
@@ -32949,7 +32987,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.478431e40fc0",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:842",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:855",
       "sentence": "show that five low-quality candidates provide more verifiable information than",
       "cues": [
         "show"
@@ -32968,7 +33006,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.5ada3ce28b71",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:853",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:866",
       "sentence": "The current repository proves only authored record, lifecycle, and route consequences.",
       "cues": [
         "proves"
@@ -32987,7 +33025,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.11a9ef6914fe",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:854",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:867",
       "sentence": "does not measure model cognition or natural verification quality.",
       "cues": [
         "measure"
@@ -33006,7 +33044,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.a86635415f75",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:857",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:870",
       "sentence": "causal ablations, complete costs, reproduction, and transfer.",
       "cues": [
         "transfer"
@@ -33025,7 +33063,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.074e1df06cd5",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:859",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:872",
       "sentence": "Even a claim-specific adequate program cannot move support by itself.",
       "cues": [
         "cannot"
@@ -33044,7 +33082,7 @@
     {
       "candidate_id": "verification-bandwidth-and-context-adequacy.prose.0970fb2f5367",
       "chapter_id": "verification-bandwidth-and-context-adequacy",
-      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:898",
+      "source": "chapters/verification-bandwidth-and-context-adequacy.qmd:911",
       "sentence": "Claim Ledgers and Belief Revision turns those limits into claim identity, evidence state, contradiction links, revision history, uncertainty, and required promotion conditions.",
       "cues": [
         "required"
@@ -76700,7 +76738,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.eefc10de94fd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:233",
+      "source": "chapters/integrated-reference-architecture.qmd:245",
       "sentence": "does not require separate services merely to make a diagram's boxes physical.",
       "cues": [
         "require"
@@ -76719,7 +76757,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.0f89d457dffa",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:237",
+      "source": "chapters/integrated-reference-architecture.qmd:249",
       "sentence": "The proposed integration contract must therefore identify a join that this",
       "cues": [
         "must"
@@ -76738,7 +76776,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1e81e34eb101",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:244",
+      "source": "chapters/integrated-reference-architecture.qmd:256",
       "sentence": "exposes omissions but cannot settle that stronger comparison.",
       "cues": [
         "cannot"
@@ -76757,7 +76795,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ad340085416f",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:256",
+      "source": "chapters/integrated-reference-architecture.qmd:268",
       "sentence": "The ASI Stack should resist that collapse.",
       "cues": [
         "should"
@@ -76776,7 +76814,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a945de0b8f81",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:256",
+      "source": "chapters/integrated-reference-architecture.qmd:268",
       "sentence": "The planner should not silently become the verifier; the memory compiler should not silently become the authority source; the execution OS should not silently decide that a failed residual is acceptable; and the benchmark ratchet should not silently promote a candidate whose regression floor moved.",
       "cues": [
         "should"
@@ -76795,7 +76833,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.f3ef3c46f621",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:271",
+      "source": "chapters/integrated-reference-architecture.qmd:283",
       "sentence": "The bounded QCSA vertical trace now shows one completed 13-stage local reversible run, but it does not show the broad learned-model, multi-service, deployed integrated stack described by the core claim.",
       "cues": [
         "show",
@@ -76815,7 +76853,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a9370c3f6418",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:322",
+      "source": "chapters/integrated-reference-architecture.qmd:334",
       "sentence": "The join preserves three non-transfers: regret is not evidence, learning",
       "cues": [
         "transfers"
@@ -76834,7 +76872,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.15906f9d9441",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:368",
+      "source": "chapters/integrated-reference-architecture.qmd:380",
       "sentence": "Benchmark Ratchets must remain independent of checkpoint selection, and",
       "cues": [
         "must"
@@ -76853,7 +76891,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.05d64f9743bf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:369",
+      "source": "chapters/integrated-reference-architecture.qmd:381",
       "sentence": "This prevents a trainer from consulting",
       "cues": [
         "prevents"
@@ -76872,7 +76910,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.cea360528391",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:371",
+      "source": "chapters/integrated-reference-architecture.qmd:383",
       "sentence": "It also prevents an integrated stack",
       "cues": [
         "prevents"
@@ -76891,7 +76929,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5086f1ae16cf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:391",
+      "source": "chapters/integrated-reference-architecture.qmd:403",
       "sentence": "candidate and evidence identity at every step, so “the system learned” cannot",
       "cues": [
         "cannot"
@@ -76910,7 +76948,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.824153c40d55",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:399",
+      "source": "chapters/integrated-reference-architecture.qmd:411",
       "sentence": "The reference trace must expose when a",
       "cues": [
         "must"
@@ -76929,7 +76967,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.9ca309289af3",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:412",
+      "source": "chapters/integrated-reference-architecture.qmd:424",
       "sentence": "The later evidence phase must test whether the",
       "cues": [
         "must"
@@ -76948,7 +76986,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.05c96aaf02d1",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:426",
+      "source": "chapters/integrated-reference-architecture.qmd:438",
       "sentence": "At trace scale, the governed-cognition pattern shifts from local boundary ownership to cross-layer composition.",
       "cues": [
         "scale"
@@ -76967,7 +77005,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d4a8fb665865",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:432",
+      "source": "chapters/integrated-reference-architecture.qmd:444",
       "sentence": "The trace should include positive and negative checkpoints.",
       "cues": [
         "should"
@@ -76986,7 +77024,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c3659c0fe196",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:437",
+      "source": "chapters/integrated-reference-architecture.qmd:449",
       "sentence": "trace must eventually be able to join.",
       "cues": [
         "must"
@@ -77005,7 +77043,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d0e505a4601d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:465",
+      "source": "chapters/integrated-reference-architecture.qmd:477",
       "sentence": "It shows why the relation packet belongs in the reference architecture:",
       "cues": [
         "shows"
@@ -77024,7 +77062,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6cb9ff859955",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:472",
+      "source": "chapters/integrated-reference-architecture.qmd:484",
       "sentence": "Suppose a planner asks whether an authorization-bound transfer is possible in",
       "cues": [
         "transfer"
@@ -77043,7 +77081,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.9023e090d0fe",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:498",
+      "source": "chapters/integrated-reference-architecture.qmd:510",
       "sentence": "mean the predicted transfer occurred or that an effect is permitted.",
       "cues": [
         "transfer"
@@ -77062,7 +77100,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a062dfd0e801",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:546",
+      "source": "chapters/integrated-reference-architecture.qmd:558",
       "sentence": "Did a macro-object cross a consumer or environment boundary that should have",
       "cues": [
         "should"
@@ -77081,7 +77119,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.eaa2b2a2e79e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:659",
+      "source": "chapters/integrated-reference-architecture.qmd:671",
       "sentence": "**What the reference trace shows:** The reference trace is an end-to-end logical handoff chain, not a claim about physical module count and not a single agent loop with hidden role changes.",
       "cues": [
         "shows"
@@ -77100,7 +77138,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.091365bd6173",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:659",
+      "source": "chapters/integrated-reference-architecture.qmd:671",
       "sentence": "Each participant receives and emits a typed artifact, and the final SCF gate can still promote, roll back, quarantine, or require review based on evidence and authority.",
       "cues": [
         "require"
@@ -77119,7 +77157,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.7227199d6bfb",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:667",
+      "source": "chapters/integrated-reference-architecture.qmd:679",
       "sentence": "Canonical state and projections must remain separate inside that chain.",
       "cues": [
         "must"
@@ -77138,7 +77176,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d1dbbaf7bee7",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:667",
+      "source": "chapters/integrated-reference-architecture.qmd:679",
       "sentence": "A dashboard, report, cache, index, claim view, or promotion label may summarize the canonical record, but it cannot become the authority merely because it is newer or easier to query.",
       "cues": [
         "cannot"
@@ -77157,7 +77195,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5a18c7ba9d74",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:683",
+      "source": "chapters/integrated-reference-architecture.qmd:695",
       "sentence": "**What the lineage trace shows:** The five projects contribute one bounded family of design lessons, not independent replication.",
       "cues": [
         "shows"
@@ -77176,7 +77214,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.9733c5b37e51",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:685",
+      "source": "chapters/integrated-reference-architecture.qmd:697",
       "sentence": "This fixture checks cross-record consistency and a separate verifier identity only; it does not prove verifier independence, observation truth, causal completeness, or open-world enforcement.",
       "cues": [
         "prove"
@@ -77195,7 +77233,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.8852892cc03e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:689",
+      "source": "chapters/integrated-reference-architecture.qmd:701",
       "sentence": "If the planner fails, the plan DAG should show where.",
       "cues": [
         "should",
@@ -77215,7 +77253,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.721665d23a0e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:689",
+      "source": "chapters/integrated-reference-architecture.qmd:701",
       "sentence": "If memory fails, the context packet should expose stale, missing, or unauthorized material.",
       "cues": [
         "should"
@@ -77234,7 +77272,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c0cebbd694de",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:689",
+      "source": "chapters/integrated-reference-architecture.qmd:701",
       "sentence": "If routing fails, the residual record should survive.",
       "cues": [
         "should"
@@ -77253,7 +77291,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.4715f365395d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:689",
+      "source": "chapters/integrated-reference-architecture.qmd:701",
       "sentence": "If execution fails, the audit log should make the failure replayable.",
       "cues": [
         "should"
@@ -77272,7 +77310,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.de5751de86a5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:689",
+      "source": "chapters/integrated-reference-architecture.qmd:701",
       "sentence": "If improvement is proposed, the SCF gate should decide whether the evidence supports promotion, rollback, quarantine, or human review.",
       "cues": [
         "should"
@@ -77291,7 +77329,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.77fd9766404d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:695",
+      "source": "chapters/integrated-reference-architecture.qmd:707",
       "sentence": "Its stop conditions are missing execution authority, unaccepted residual, and required governance review.",
       "cues": [
         "required"
@@ -77310,7 +77348,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.13d73895fc1c",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:697",
+      "source": "chapters/integrated-reference-architecture.qmd:709",
       "sentence": "It does not prove a deployed runtime, live artifact-continuity audit, authority-stop enforcement, model quality, benchmark quality, or support-state promotion.",
       "cues": [
         "prove"
@@ -77329,7 +77367,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.9928f97f7385",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:713",
+      "source": "chapters/integrated-reference-architecture.qmd:725",
       "sentence": "It does not prove a deployed",
       "cues": [
         "prove"
@@ -77348,7 +77386,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.9abb856a75ce",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:724",
+      "source": "chapters/integrated-reference-architecture.qmd:736",
       "sentence": "Its job is to name the required context, the route, the validation command, the evidence boundary, and the residuals that must survive.",
       "cues": [
         "must",
@@ -77368,7 +77406,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b23b5e36410e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:724",
+      "source": "chapters/integrated-reference-architecture.qmd:736",
       "sentence": "If this plan tried to add a runtime action or a support-state transition, the authority delta would have to show that change or the trace would fail the fixture's silent-authority-delta control.",
       "cues": [
         "show"
@@ -77387,7 +77425,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.8d6016bc2c92",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:730",
+      "source": "chapters/integrated-reference-architecture.qmd:742",
       "sentence": "It cannot say the integrated runtime exists.",
       "cues": [
         "cannot"
@@ -77406,7 +77444,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b1cfc7083591",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:730",
+      "source": "chapters/integrated-reference-architecture.qmd:742",
       "sentence": "It cannot say the authority stop works in production.",
       "cues": [
         "cannot"
@@ -77425,7 +77463,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.3eb18753741a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:730",
+      "source": "chapters/integrated-reference-architecture.qmd:742",
       "sentence": "It cannot say Project Theseus, MoECOT, or VCM executed the run.",
       "cues": [
         "cannot"
@@ -77444,7 +77482,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2497206cd6d1",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:732",
+      "source": "chapters/integrated-reference-architecture.qmd:744",
       "sentence": "The audit log records what validator is expected to prove: `python3 scripts/validate_reference_trace.py` checks parentage, layer coverage, authority deltas, residual deltas, validation commands, source-note refs, stop conditions, promotion blockers, and non-claims across the fixture set.",
       "cues": [
         "prove"
@@ -77463,7 +77501,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.96dce9a8a31e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:738",
+      "source": "chapters/integrated-reference-architecture.qmd:750",
       "sentence": "The blocked fixture shows the same architecture under stress.",
       "cues": [
         "shows"
@@ -77482,7 +77520,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.236a0f4d8f8c",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:738",
+      "source": "chapters/integrated-reference-architecture.qmd:750",
       "sentence": "The stop conditions are concrete: missing execution authority, unaccepted residual, and required governance review.",
       "cues": [
         "required"
@@ -77501,7 +77539,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bfb39a56e825",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:751",
+      "source": "chapters/integrated-reference-architecture.qmd:763",
       "sentence": "A future implementation should be able to replace each fixture-only artifact with a live artifact of the same kind while preserving the same authority, evidence, residual, and non-claim discipline.",
       "cues": [
         "should"
@@ -77520,7 +77558,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5a1092879ef6",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:775",
+      "source": "chapters/integrated-reference-architecture.qmd:787",
       "sentence": "The join prevents two silent substitutions: hardware parallelism for learning",
       "cues": [
         "prevents"
@@ -77539,7 +77577,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b987ead66cf2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:807",
+      "source": "chapters/integrated-reference-architecture.qmd:819",
       "sentence": "what can execute and which receipts must return.",
       "cues": [
         "must"
@@ -77558,7 +77596,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.763af68967ab",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:870",
+      "source": "chapters/integrated-reference-architecture.qmd:882",
       "sentence": "The joined trace must preserve nine non-collapsible identities: event,",
       "cues": [
         "must"
@@ -77577,7 +77615,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.cb29d69b4d1c",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:873",
+      "source": "chapters/integrated-reference-architecture.qmd:885",
       "sentence": "It must also preserve rejected routes,",
       "cues": [
         "must"
@@ -77596,7 +77634,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d09989eb0271",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:929",
+      "source": "chapters/integrated-reference-architecture.qmd:941",
       "sentence": "model weights cannot become the permanent semantic identity, and rollback must",
       "cues": [
         "cannot",
@@ -77616,7 +77654,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b2be8b1c863f",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:935",
+      "source": "chapters/integrated-reference-architecture.qmd:947",
       "sentence": "must be named rather than marketed as KERC.",
       "cues": [
         "must"
@@ -77635,7 +77673,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.eba6f8e5ae5d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:940",
+      "source": "chapters/integrated-reference-architecture.qmd:952",
       "sentence": "Modular decomposition does not guarantee coherent recomposition.",
       "cues": [
         "guarantee"
@@ -77654,7 +77692,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.56c68283f7be",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:946",
+      "source": "chapters/integrated-reference-architecture.qmd:958",
       "sentence": "constraints, required interfaces, runtime target, resource envelope, critical",
       "cues": [
         "required"
@@ -77673,7 +77711,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.49f848d9342d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:954",
+      "source": "chapters/integrated-reference-architecture.qmd:966",
       "sentence": "an integration residual, and requires a new whole-system candidate.",
       "cues": [
         "requires"
@@ -77692,7 +77730,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.eb5a16e581a5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:980",
+      "source": "chapters/integrated-reference-architecture.qmd:992",
       "sentence": "control must remain visible as a route-changing residual.",
       "cues": [
         "must"
@@ -77711,7 +77749,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5215a1b2a001",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:981",
+      "source": "chapters/integrated-reference-architecture.qmd:993",
       "sentence": "packet removes recorded defeaters only; it does not prove comprehension,",
       "cues": [
         "prove"
@@ -77730,7 +77768,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.0d4218cab39a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1004",
+      "source": "chapters/integrated-reference-architecture.qmd:1016",
       "sentence": "A downstream artifact cannot inherit authority merely because it descends from an approved intent; each handoff must preserve or narrow the authority chain.",
       "cues": [
         "cannot",
@@ -77750,7 +77788,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b76b6703a315",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1006",
+      "source": "chapters/integrated-reference-architecture.qmd:1018",
       "sentence": "A blank field in the trace must mean \"not applicable\" or \"not yet available,\" not \"the system forgot to ask.\" Missing contracts, missing evidence, missing approvals, and missing rollback paths should be visible as records that block, narrow, or defer work.",
       "cues": [
         "must",
@@ -77770,7 +77808,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ef6dad458cc8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1009",
+      "source": "chapters/integrated-reference-architecture.qmd:1021",
       "sentence": "prevents downstream authority widening, binds named interfaces to material",
       "cues": [
         "prevents"
@@ -77789,7 +77827,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.92609e983ec5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1011",
+      "source": "chapters/integrated-reference-architecture.qmd:1023",
       "sentence": "and phantom completion, exposes evaluator dependence, requires accepted",
       "cues": [
         "requires"
@@ -77808,7 +77846,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6caac925895e",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1014",
+      "source": "chapters/integrated-reference-architecture.qmd:1026",
       "sentence": "requires effect-complete rollback, reports usefulness and governance cost",
       "cues": [
         "requires"
@@ -77827,7 +77865,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.23fd2d51b266",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1015",
+      "source": "chapters/integrated-reference-architecture.qmd:1027",
       "sentence": "together, bounds transfer, expires changed joins, and limits diagrams, schemas,",
       "cues": [
         "transfer"
@@ -77846,7 +77884,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5447e0b68ee2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1028",
+      "source": "chapters/integrated-reference-architecture.qmd:1040",
       "sentence": "Untraceable handoffs should create missing-contract records.",
       "cues": [
         "should"
@@ -77865,7 +77903,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e84776fcaaaf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1028",
+      "source": "chapters/integrated-reference-architecture.qmd:1040",
       "sentence": "Planning/execution collapse should preserve the failed plan, runtime artifact, and residual.",
       "cues": [
         "should"
@@ -77884,7 +77922,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.4e8af7b11125",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1028",
+      "source": "chapters/integrated-reference-architecture.qmd:1040",
       "sentence": "Self-improvement without evaluator integrity should stop at the SCF gate.",
       "cues": [
         "should"
@@ -77903,7 +77941,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.71d87a9d0b2a",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1030",
+      "source": "chapters/integrated-reference-architecture.qmd:1042",
       "sentence": "A reference architecture should make that theater obvious because the trace record will have missing parentage, unsupported evidence deltas, or stop conditions that were acknowledged but ignored.",
       "cues": [
         "should"
@@ -77922,7 +77960,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.edfb3eed0680",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1032",
+      "source": "chapters/integrated-reference-architecture.qmd:1044",
       "sentence": "Trace fragmentation is the companion failure, where each layer records locally valid receipts that cannot be joined into one accountable run.",
       "cues": [
         "cannot"
@@ -77941,7 +77979,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b2d3321d0cb1",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1039",
+      "source": "chapters/integrated-reference-architecture.qmd:1051",
       "sentence": "blocking, embedded-model closure, and unsupported transfer.",
       "cues": [
         "transfer"
@@ -77960,7 +77998,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.f9f9ab740726",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1064",
+      "source": "chapters/integrated-reference-architecture.qmd:1076",
       "sentence": "reproduction, transfer, whole-stack deployment, or core effect exists.",
       "cues": [
         "transfer"
@@ -77979,7 +78017,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.78404ed4d042",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1066",
+      "source": "chapters/integrated-reference-architecture.qmd:1078",
       "sentence": "The reference-trace fixtures check record shape, trace state, execution boundary, parentage, deltas, blockers, source refs, and support-state effect only: they do not execute the architecture, replay a runtime trace, or prove that every layer handoff is implemented.",
       "cues": [
         "prove"
@@ -77998,7 +78036,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.e1eb501a8232",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1070",
+      "source": "chapters/integrated-reference-architecture.qmd:1082",
       "sentence": "That tiny dry-run trace set now exists at fixture level: one approved flow carries stable artifact IDs from intent through plan, context, route, work order, audit log, evidence update, and SCF no-promotion review; one blocked flow fails because execution authority is missing and governance review remains required.",
       "cues": [
         "required"
@@ -78017,7 +78055,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.217a0ac297d2",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1076",
+      "source": "chapters/integrated-reference-architecture.qmd:1088",
       "sentence": "Exiting argument support requires natural heterogeneous tasks through",
       "cues": [
         "requires"
@@ -78036,7 +78074,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1b580170493f",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1086",
+      "source": "chapters/integrated-reference-architecture.qmd:1098",
       "sentence": "evaluators, institutions, infrastructures, legal regimes, and transfer sites",
       "cues": [
         "transfer"
@@ -78055,7 +78093,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2a5d072f0c3b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1100",
+      "source": "chapters/integrated-reference-architecture.qmd:1112",
       "sentence": "Cross-layer consumers that can reject a trace when a required artifact, source ref, validation command, non-claim, or approval is missing.",
       "cues": [
         "required"
@@ -78074,7 +78112,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b17f9315dd8b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1106",
+      "source": "chapters/integrated-reference-architecture.qmd:1118",
       "sentence": "negative control: a support-seeking receipt must survive independent",
       "cues": [
         "must"
@@ -78093,7 +78131,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bfcddd2c1938",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1110",
+      "source": "chapters/integrated-reference-architecture.qmd:1122",
       "sentence": "prevents record-shape laundering inside the static architecture.",
       "cues": [
         "prevents"
@@ -78112,7 +78150,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ca7a8c35de69",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1113",
+      "source": "chapters/integrated-reference-architecture.qmd:1125",
       "sentence": "A reference trace must not merely say \"the verifier passed.\"",
       "cues": [
         "must"
@@ -78131,7 +78169,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.baa6bdca5210",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1114",
+      "source": "chapters/integrated-reference-architecture.qmd:1126",
       "sentence": "It must identify the trusted core, root-of-trust refs, delegation rule,",
       "cues": [
         "must"
@@ -78150,7 +78188,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bb2769a96bce",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1118",
+      "source": "chapters/integrated-reference-architecture.qmd:1130",
       "sentence": "records; it does not prove a deployed trust base or verifier correctness.",
       "cues": [
         "prove"
@@ -78169,7 +78207,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.65bedd8e2b31",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1141",
+      "source": "chapters/integrated-reference-architecture.qmd:1153",
       "sentence": "and does not prove a deployed authorization, sandbox, verifier, rollback,",
       "cues": [
         "prove"
@@ -78188,7 +78226,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.363318005abf",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1151",
+      "source": "chapters/integrated-reference-architecture.qmd:1163",
       "sentence": "requires unchanged support when no transition exists and accepted review,",
       "cues": [
         "requires"
@@ -78207,7 +78245,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.ff2c317a5cc0",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1153",
+      "source": "chapters/integrated-reference-architecture.qmd:1165",
       "sentence": "Residual conservation requires created residuals to equal",
       "cues": [
         "requires"
@@ -78226,7 +78264,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c74f8ea76e6b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1176",
+      "source": "chapters/integrated-reference-architecture.qmd:1188",
       "sentence": "Every admitted transition must join the exact parent artifact and",
       "cues": [
         "must"
@@ -78245,7 +78283,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.6e9d1de75ea9",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1182",
+      "source": "chapters/integrated-reference-architecture.qmd:1194",
       "sentence": "`AsiStackProofs.IntegratedReferenceTrace` proves that every accepted step joins",
       "cues": [
         "proves"
@@ -78264,7 +78302,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.316cb4d4d716",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1184",
+      "source": "chapters/integrated-reference-architecture.qmd:1196",
       "sentence": "authority ceiling, cannot widen active authority, preserves acknowledged-effect",
       "cues": [
         "cannot"
@@ -78283,7 +78321,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c5679d523cdd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1228",
+      "source": "chapters/integrated-reference-architecture.qmd:1240",
       "sentence": "or revoked retries, requires observation before terminal custody, and separates",
       "cues": [
         "requires"
@@ -78302,7 +78340,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5fe29490890b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1232",
+      "source": "chapters/integrated-reference-architecture.qmd:1244",
       "sentence": "A one-effect witness also proves that the layer model's attempted,",
       "cues": [
         "proves"
@@ -78321,7 +78359,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.b34ec3d19a28",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1255",
+      "source": "chapters/integrated-reference-architecture.qmd:1267",
       "sentence": "validation reruns the whole system in a new temporary directory and requires",
       "cues": [
         "requires"
@@ -78340,7 +78378,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2b66a47c0ae5",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1279",
+      "source": "chapters/integrated-reference-architecture.qmd:1291",
       "sentence": "cannot add another effect, and a separately executed observer reads the",
       "cues": [
         "cannot"
@@ -78359,7 +78397,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.bdf15b2eee2b",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1291",
+      "source": "chapters/integrated-reference-architecture.qmd:1303",
       "sentence": "If the run cannot show parentage, authority, evidence, residuals, and stops, it has not instantiated this architecture.",
       "cues": [
         "cannot",
@@ -78379,7 +78417,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.2e89c49ca960",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1291",
+      "source": "chapters/integrated-reference-architecture.qmd:1303",
       "sentence": "The integration trace kernel remains a target architecture until real trace harnesses, blocked-path tests, artifact-continuity audits, authority stop-condition checks, and accepted evidence transitions show that the layers compose under pressure.",
       "cues": [
         "show"
@@ -78398,7 +78436,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.5632ffa48238",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1331",
+      "source": "chapters/integrated-reference-architecture.qmd:1343",
       "sentence": "These results do not prove artifact truth,",
       "cues": [
         "prove"
@@ -78417,7 +78455,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.c51061c5ea19",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1367",
+      "source": "chapters/integrated-reference-architecture.qmd:1379",
       "sentence": "The environment can challenge predictions; it cannot grant power.",
       "cues": [
         "cannot"
@@ -78436,7 +78474,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.dbb426ba4a34",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1368",
+      "source": "chapters/integrated-reference-architecture.qmd:1380",
       "sentence": "candidate can propose a better behavior; it cannot silently rewrite the Form or",
       "cues": [
         "cannot"
@@ -78455,7 +78493,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.a982ce27e9fd",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1372",
+      "source": "chapters/integrated-reference-architecture.qmd:1384",
       "sentence": "The honest vertical slice must implement one bounded",
       "cues": [
         "must"
@@ -78474,7 +78512,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.21650e107a4d",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1481",
+      "source": "chapters/integrated-reference-architecture.qmd:1493",
       "sentence": "If a demo cannot produce parent artifacts, authority deltas, evidence deltas, residual deltas, and blocked-path records, then it may still be interesting, but it has not yet instantiated this reference architecture.",
       "cues": [
         "cannot"
@@ -78493,7 +78531,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.1871386fdc59",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1483",
+      "source": "chapters/integrated-reference-architecture.qmd:1495",
       "sentence": "Project Theseus becomes useful precisely because it is report-first: it shows how pieces of this trace could become inspectable machinery without letting local reports stand in for public empirical proof.",
       "cues": [
         "shows"
@@ -78512,7 +78550,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.cad6836eb8c4",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1483",
+      "source": "chapters/integrated-reference-architecture.qmd:1495",
       "sentence": "The current static architecture-gate import demonstrates the report-import boundary while leaving the end-to-end runtime trace unclaimed.",
       "cues": [
         "demonstrates"
@@ -78531,7 +78569,7 @@
     {
       "candidate_id": "integrated-reference-architecture.prose.d195a7ce1da8",
       "chapter_id": "integrated-reference-architecture",
-      "source": "chapters/integrated-reference-architecture.qmd:1520",
+      "source": "chapters/integrated-reference-architecture.qmd:1532",
       "sentence": "The integrated trace defines what a complete stack must preserve; an implementation reference shows where that trace can become concrete without pretending the proof is already public.",
       "cues": [
         "must",

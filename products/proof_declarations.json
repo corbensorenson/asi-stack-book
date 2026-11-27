@@ -1,0 +1,92 @@
+[
+  {
+    "tag": "lean:circle_contracts.public_consumer_gate.fixture_bridge",
+    "module_path": "lean/AsiStackProofs/ProofCarryingContracts.lean",
+    "passage": "products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003",
+    "title": "When the finite Circle consumer must reject",
+    "declarations": [
+      {
+        "name": "circle_public_consumer_gate_promotion_overclaim_rejected",
+        "premises": "Any one of three fixture flags asserts an upward transition, chapter promotion or deployed transport.",
+        "conclusion": "The fixture fails the finite acceptance contract."
+      },
+      {
+        "name": "circle_public_consumer_gate_missing_mutation_control_rejected",
+        "premises": "At least one required digest, missing-theorem, stale-contract or transfer rejection flag is false.",
+        "conclusion": "The fixture fails acceptance. Execution of the four mutation trials is a separate observation."
+      }
+    ]
+  },
+  {
+    "tag": "lean:efficiency.minimum_viable.operational_invariant",
+    "module_path": "lean/AsiStackProofs/Efficiency.lean",
+    "passage": "reader/chapters/unit-02-the-efficient-asi-hypothesis.html#what-the-current-work-establishes",
+    "title": "Which route is cheapest under the declared costs?",
+    "declarations": [
+      {
+        "name": "selected_route_is_a_listed_eligible_candidate",
+        "premises": "The finite selector returns this route from the supplied candidates.",
+        "conclusion": "The selected route belongs to the list and meets its eligibility predicate."
+      },
+      {
+        "name": "selected_route_has_minimum_modeled_cost",
+        "premises": "The selector returns a route, and the alternative is an eligible member of the same list.",
+        "conclusion": "The selected total cost is at most the alternative’s modeled cost. Measured production cost remains open."
+      }
+    ]
+  },
+  {
+    "tag": "lean:institutions-international-coordination-and-public-legitimacy.admission_boundary",
+    "module_path": "lean/AsiStackProofs/InstitutionalLegitimacyReview.lean",
+    "passage": "reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html#what-the-current-work-can-establish",
+    "title": "Which jurisdiction does a mandate cover?",
+    "declarations": [
+      {
+        "name": "local_mandate_cannot_authorize_distinct_jurisdiction",
+        "premises": "The proposed jurisdiction differs from the jurisdiction recorded in the mandate.",
+        "conclusion": "The modeled use fails even with the mandate’s own authority identity."
+      },
+      {
+        "name": "participation_signals_cannot_recover_representation",
+        "premises": "A classifier sees only participation signals in the finite model.",
+        "conclusion": "Identical signals can hide different representation states, so such a classifier cannot recover every state."
+      },
+      {
+        "name": "commitment_signals_cannot_recover_effective_enforcement",
+        "premises": "The classifier sees only modeled commitment signals.",
+        "conclusion": "Those signals cannot recover effective enforcement in every encoded case."
+      }
+    ]
+  },
+  {
+    "tag": "lean:societal-resilience-and-misuse-defense.admission_boundary",
+    "module_path": "lean/AsiStackProofs/SocietalResilienceReview.lean",
+    "passage": "reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html#what-the-current-work-can-establish",
+    "title": "Does provider activity establish recovery?",
+    "declarations": [
+      {
+        "name": "provider_signals_cannot_recover_population_resilience",
+        "premises": "A classifier receives only provider signals for the authored population cases.",
+        "conclusion": "Every such classifier misses at least one modeled resilience state."
+      }
+    ]
+  },
+  {
+    "tag": "lean:security.scif.route_envelope",
+    "module_path": "lean/AsiStackProofs/SecurityKernel.lean",
+    "passage": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#verification-starts-with-obligations",
+    "title": "What does a lease proof establish?",
+    "declarations": [
+      {
+        "name": "accepted_lease_is_bounded_versioned_and_unexpired",
+        "premises": "Issuance of a lease is the event kind and the authority transaction accepts it.",
+        "conclusion": "The new version advances once, its ceiling does not increase and model time precedes expiration."
+      },
+      {
+        "name": "accepted_secret_injection_is_scoped_mediated_and_preexpiry",
+        "premises": "A secret-injection event is accepted by the same modeled transaction.",
+        "conclusion": "Acceptance entails the modeled scope, mediation and pre-expiry checks. Sensor coverage is outside the proposition."
+      }
+    ]
+  }
+]

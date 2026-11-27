@@ -96,7 +96,7 @@
   {
     "id": "verifier-measurement-boundary",
     "title": "Verifier revision checks and measured work",
-    "url": "chapters/stable-capability-fields.html?view=ai#codex-test-plan",
+    "url": "chapters/stable-capability-fields.html#verifier-measurement-boundary",
     "question": "How many minutes of operator time did serialized verifier handoff save in production?",
     "summary": "The 30- and 38-checkpoint runs matched ordinary memoization on the expected routes. The latter measured the same 164 pipe messages and 16,816 payload bytes per arm. The serialized arm encoded 1,616 additional local cache bytes.",
     "limit": "Authored public-copy cases with a supplied or same-owner revision. No active operator time was measured. The 38-checkpoint diagnostic also excludes framing, work-counter collection and startup.",
@@ -420,6 +420,66 @@
       {
         "label": "Original threshold experiment",
         "url": "chapters/verification-bandwidth-and-context-adequacy.html#citation-release-thresholds"
+      }
+    ]
+  },
+  {
+    "id": "energy-per-response",
+    "title": "From a token meter to an answer bill",
+    "url": "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html#from-a-token-meter-to-an-answer-bill",
+    "question": "What is GPU energy per response at the reported batch sizes?",
+    "summary": "The reported maximum batches of 512 and 128 used 95 and 2,192 GPU joules per response respectively.",
+    "limit": "One B200 and Qwen3-32B. The output lengths and batch sizes differed. Facility energy is outside the measurement.",
+    "disposition": "Compare request energy at the required quality and latency.",
+    "measurement": "Source-reported result",
+    "aliases": [
+      "energy per response",
+      "GPU joules",
+      "2,192 joules per response"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_inference_joules_2026"
+      }
+    ]
+  },
+  {
+    "id": "reader-editor-choice",
+    "title": "Who gets to write the next edit?",
+    "url": "reader/chapters/unit-25-recursive-improvement-replication-and-containment.html#reader-better-editor",
+    "question": "Which checkpoint gets the editor’s job?",
+    "summary": "A solver gained 1.45 percentage points on 500 held-out math problems. Editing an untouched target is a separate comparison.",
+    "limit": "Same math corpus and four sampled answers per problem. The successor editor comparison remains open.",
+    "disposition": "Retain the parent as editor pending fresh target evidence.",
+    "measurement": "Source-reported result",
+    "aliases": [
+      "next editor",
+      "editor appointment"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_selfwrite_2026"
+      }
+    ]
+  },
+  {
+    "id": "kmeans-seeding",
+    "title": "What does the k-means++ approximation guarantee cover?",
+    "url": "chapters/virtual-context-abi.html#clustering-the-retrieval-index",
+    "question": "How good are the initial centers in expectation?",
+    "summary": "Theorem 1.1 bounds expected squared-distance cost by 8(ln k + 2) times optimum.",
+    "limit": "Expectation over random seeding. A particular run can exceed the bound.",
+    "disposition": "Choose the distance and k before comparing clusterings.",
+    "measurement": "Source-reported result",
+    "aliases": [
+      "k-means++ seeding guarantee"
+    ],
+    "links": [
+      {
+        "predicate": "cites_source",
+        "target": "source:ext_kmeans_plus_plus_2007"
       }
     ]
   }

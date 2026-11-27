@@ -355,13 +355,41 @@ def claim_citations(read):
         yield citation
 
 
+DECLARATIONS = "products/proof_declarations.json"
+
+
+def declaration_cards(read):
+    cards = {}
+    for item in json.loads(read(DECLARATIONS)):
+        path = item["module_path"]
+        lines = read(path).decode().splitlines()
+        declarations = []
+        for row in item["declarations"]:
+            pattern = re.compile(r"^(?:theorem|lemma) " + re.escape(row["name"]) + r"\b")
+            matches = [i for i, line in enumerate(lines, 1) if pattern.match(line)]
+            if len(matches) != 1:
+                raise ValueError(f"Missing or ambiguous Lean declaration: {row['name']}")
+            declarations.append({**row, "origin": source(path, f"line:{matches[0]}")})
+        cards[item["tag"]] = {**item, "declarations": declarations}
+    return cards
+
+
 def evidence_records(graph):
+    cards = declaration_cards(lambda path: graph.text(path).encode())
     for i, row in enumerate(graph.data(PROOFS)["records"]):
         locator = f"/records/{i}"
         key = graph.node("proof_target", row["tag"], PROOFS, locator, title=row["formal_target"],
                          status=row["status"], module=row["module"])
         if row["status"] == "implemented":
             graph.nodes[key]["implementation_origin"] = source(row["module_path"], "/")
+        if card := cards.get(row["tag"]):
+            if row.get("module_path") != card["module_path"]:
+                raise ValueError(f"Proof citation module mismatch: {row['tag']}")
+            node = graph.nodes[key]
+            node["implementation_origin"] = card["declarations"][0]["origin"]
+            node["declarations"] = card["declarations"]
+            node["locators"] = [{"label": "Passage using this formal result", "url": card["passage"]},
+                                {"label": "Declaration names and premises", "url": "products/evidence-registry/proof-declarations.html#" + row["tag"]}]
         graph.edge(f"chapter:{row['chapter_id']}", "declares_proof_target", key, PROOFS, locator)
 
     for i, row in enumerate(graph.data(IDENTITIES)["records"]):

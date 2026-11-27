@@ -452,6 +452,10 @@ function renderRecord(packet) {
   record.append(provenance(node.origin));
   if (node.publication_origin) record.append(provenance(node.publication_origin, "Paper library record"));
   if (node.implementation_origin) record.append(provenance(node.implementation_origin, "Lean implementation"));
+  for (const declaration of node.declarations || []) {
+    brief(record, declaration.name, declaration.premises + " " + declaration.conclusion);
+    record.append(provenance(declaration.origin, "Pinned Lean declaration"));
+  }
   if (node.transition_origin) record.append(provenance(node.transition_origin, "Transition record"));
   if (node.result_sha256 || node.record_sha256) {
     const pinned = el("details");

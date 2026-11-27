@@ -8,6 +8,7 @@ import re
 
 
 ARM_LABELS = {
+    "direct": "Direct fallback", "gateway": "Gateway fallback",
     "tfidf_tfidf": "TF–IDF at both stages", "tfidf_coverage": "Change sentence selection",
     "bm25_tfidf": "Change document ranking", "bm25_coverage": "Change both stages",
     "pool": "Pool both readings", "agreement": "Require agreement",
@@ -313,8 +314,23 @@ def fresh_retrieval_cases(result):
                    adverse=any(v["outcome"] == "unsupported" for v in record["arms"].values()))
 
 
+def publication_cases(result):
+    for record in result["cases"]:
+        arms = {}
+        for name in ("primary_only", "direct", "gateway"):
+            row = record["arms"][name]
+            outcome = ("Verified" if row["truth"] else "False closure") if row["closed"] else "Unresolved"
+            work = (f'{row["caller_requests"]} caller / {row["requests"]} total requests, '
+                    f'{row["body_bytes"]} body bytes, {row["elapsed_ns"]/1000:.1f} µs to decision')
+            arms[name] = arm(outcome, work, outcome)
+        yield case(record["id"], f'{record["task"]} · {record["effect"]} · primary {record["primary"]} · {record["fallback"]}',
+                   arms, adverse=any(row["closed"] and not row["truth"] for row in record["arms"].values()))
+
+
 def rows_for(format_id, result):
-    if format_id == "verification_arrivals":
+    if format_id == "matched_publication":
+        rows = publication_cases(result)
+    elif format_id == "verification_arrivals":
         rows = arrival_cases(result)
     elif format_id == "fresh_retrieval":
         rows = fresh_retrieval_cases(result)

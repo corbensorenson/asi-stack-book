@@ -18,6 +18,7 @@ import build_canonical_public_status as status_builder
 from build_canonical_public_status import ROOT, build_status, load_json
 from generated_directory import install as install_directory, ordinary, relative
 from projection_files import ProjectionFiles
+import research_bibliographies as bibliography
 import research_studies as research
 from research_case_rows import ARM_LABELS, anchor as research_anchor, export_csv, rows_for, study_arm_label
 
@@ -142,6 +143,9 @@ class ProductInputs:
         required.extend(ROOT / name for name in (READER_SKILL, READER_UI, CITATION_ARCHIVE, CITATION_SCRIPT, "LICENSE.md"))
         for path in required:
             self.capture(path)
+        self.capture(ROOT / "experiments/scifact_retrieval_followup/ceiling.json")
+        self.capture(ROOT / bibliography.METADATA)
+        self.capture(ROOT / "scripts/research_bibliographies.py")
         self.capture(ROOT / research.RECORDS)
         self.capture(ROOT / "assets/study-case-browser.js")
         self.research_manifest = self.json(ROOT / research.RECORDS)
@@ -153,7 +157,7 @@ class ProductInputs:
         self.capture(ROOT / research.GIT_LOCK)
         for name in sorted(research.git_replay_paths(lambda path: self.data[ROOT / path])):
             self.capture(ROOT / relative(name.as_posix()))
-        for name in (graph.CITATIONS, graph.IDENTITIES):
+        for name in (graph.CITATIONS, graph.IDENTITIES, graph.DECLARATIONS):
             self.capture(ROOT / name)
         for name in knowledge.input_paths(lambda path: self.data[ROOT / relative(path)]):
             self.capture(ROOT / relative(name))
@@ -278,7 +282,7 @@ def safe_rel_link(from_product_dir: str, target: str) -> str:
     return "../" * depth + target
 
 
-def page(title: str, subtitle: str, body: str, manifest_link: str, *, show_portfolio: bool = True) -> str:
+def page(title: str, subtitle: str, body: str, manifest_link: str, *, show_portfolio: bool = True, nav_prefix: str = "") -> str:
     portfolio = (
         '<p>Three proposed contributions organize all three products: <strong>governed-cognition interface contracts</strong>, '
         '<strong>public claim-state transition discipline</strong>, and <strong>record/reality reconciliation with residual honesty</strong>. '
@@ -312,7 +316,7 @@ main {{ overflow-wrap:anywhere; }}
 </style>
 </head>
 <body><main>
-<nav><a href="../../index.html">Book home</a><a href="../index.html">Three products</a><a href="{escape(manifest_link)}">Machine manifest</a></nav>
+<nav><a href="{nav_prefix}../../index.html">Book home</a><a href="{nav_prefix}../index.html">Three products</a><a href="{escape(manifest_link)}">Machine manifest</a></nav>
 <div class="eyebrow">Product projection</div>
 <h1>{escape(title)}</h1>
 <p class="lead">{escape(subtitle)}</p>
@@ -568,9 +572,15 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
         attributes = "".join(f" data-{name}" for name in ("disagrees", "exhausted", "adverse") if row[name])
         graph_id = f'evidence_case:{run["id"]}--{row["id"]}'
         graph_route = f'<br><small>{graph_link(graph_id)}</small>' if graph_id in featured else ""
+        source_detail = ""
+        if run["id"] == "fresh-citation-retrieval" and row["id"] == "833":
+            source_detail = ('<p>The claim says that NLRP12 positively regulates T-cell receptor activation. '
+                             'The annotated paper reports negative regulation. Read abstract sentences 1 and 6 '
+                             '(zero-based dataset indices) in the <a href="https://pubmed.ncbi.nlm.nih.gov/25888258/">'
+                             'Lukens et al. paper</a>. The alternate selector retained sentence 6 and replaced sentence 1.</p>')
         rows.append(
             f'<tr id="{fragment}"{attributes}><th scope="row"><a href="#{fragment}">{escape(row["id"])}</a>{graph_route}</th>'
-            f'<td>{escape(row["condition"])}</td>{outcomes}</tr>'
+            f'<td>{escape(row["condition"])}{source_detail}</td>{outcomes}</tr>'
         )
     differences = sum(row["disagrees"] for row in cases)
     options = [("all", "All cases")]
@@ -591,6 +601,17 @@ def paired_case_table(run: dict, cases: list[dict], featured: set[str]) -> str:
 
 
 def study_outcomes(format_id: str, result: dict) -> str:
+    if format_id == "matched_publication":
+        cells = []
+        for condition, totals in [("All cells", result["totals"]), *result["strata"].items()]:
+            for name, arm in totals.items():
+                values = [arm[k] for k in ("verified", "false_closures", "unresolved", "caller_requests",
+                                           "requests", "body_bytes", "median_decision_us", "median_verified_us")]
+                cells.append(f'<tr><th>{condition} · {ARM_LABELS[name]}</th>'
+                             + "".join(f'<td>{v if v is not None else "—"}</td>' for v in values) + "</tr>")
+        return study_table("Release decisions and measured work", ["Availability and route", "Verified", "False closures",
+                           "Unresolved", "Caller requests", "Total requests", "Body bytes", "Median to decision (µs)",
+                           "Median to verification (µs)"], "".join(cells))
     if format_id == "fresh_retrieval":
         rows = []
         for name, row in result["arms"].items():
@@ -829,12 +850,22 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         return inputs.data[ROOT / name] if inputs else (ROOT / name).read_bytes()
 
     manifest = inputs.research_manifest if inputs else json.loads(read(research.RECORDS))
+    bib_dir = product_dir / "bibliographies"
+    if payload is None:
+        bib_dir.mkdir(exist_ok=True)
+    bib_body = bibliography.export(read, lambda name, body: write_text(bib_dir / name, body, payload),
+                                   manifest, status["source_commit"])
+    write_text(bib_dir / "index.html", page("Export a research bibliography",
+               "Chapter and study references for citation managers.", bib_body, "../manifest.json", show_portfolio=False, nav_prefix="../"), payload)
     case_browser = product_dir / "study-case-browser.js"
     case_browser_source = read(Path("assets/study-case-browser.js"))
     if payload is None:
         case_browser.write_bytes(case_browser_source)
     else:
         payload.write(case_browser, case_browser_source)
+    ceiling_path = Path("experiments/scifact_retrieval_followup/ceiling.json")
+    ceiling = json.loads(read(ceiling_path))
+    write_json(product_dir / "scifact-ceiling.json", ceiling, payload)
     studies = research.studies_from(manifest, read)
     reports = manifest["independent_reports"]
     write_json(product_dir / "research-studies.json", {
@@ -869,7 +900,7 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
         )
 
     for run in manifest["runs"]:
-        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval"}:
+        if run["format"] not in {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval", "matched_publication"}:
             continue
         members = {name: read(Path(name)) for name in (run["protocol"], run["result"], *run["inputs"])}
         command = run["command"]
@@ -907,7 +938,13 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
             sections.append(render_run(study, row, result, cases, featured, replay_links.get(row["id"], "")))
             label = " · featured" if row["id"] == study["featured_run"] else ""
             run_index.append(f'<li><a href="#{research_anchor(row["id"])}">{escape(row["title"])}</a>{label}</li>')
-        links = ""
+        links = f'<p><a href="bibliographies/index.html#study-{study["id"]}">Export this study bibliography</a></p>'
+        if study["id"] == "citation-retrieval":
+            links += (f'<p>Retrospective scoring ceiling: {ceiling["ceiling"]["certifiable"]} of 65 claims '
+                      'could receive full credit with two sentences. The baseline returned 14 human-evidence papers, '
+                      '12 of which could fit, and supplied seven complete citations and four justified verdicts. '
+                      '<a href="../../chapters/verification-bandwidth-and-context-adequacy.html#citation-scoring-ceiling">'
+                      'Inspect the denominators</a> · <a href="scifact-ceiling.json">Download all 65 case classifications</a>.</p>')
         if study.get("reader_anchor"):
             links += f'<p><a href="../../reader/quickstart.html#{escape(study["reader_anchor"])}">Worked reader comparison</a></p>'
         if study.get("paper"):
@@ -983,12 +1020,25 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
     return studies, cards
 
 
-def build_claim_citations(product_dir, inputs, payload):
+def build_claim_citations(product_dir, inputs, payload, commit):
     def read(name):
         path = ROOT / relative(name)
         return inputs.data[path] if inputs else path.read_bytes()
 
     citations = list(graph.claim_citations(read))
+    cards = []
+    for tag, card in graph.declaration_cards(read).items():
+        body = []
+        for row in card["declarations"]:
+            line = row["origin"]["locator"].split(":")[1]
+            url = f'{research.REPO}/blob/{commit}/{card["module_path"]}#L{line}'
+            body.append(f'<li><a href="{escape(url)}"><code>{escape(row["name"])}</code></a>'
+                        f'<p>{escape(row["premises"])} {escape(row["conclusion"])}</p></li>')
+        cards.append(f'<section id="{escape(tag)}"><h2>{escape(card["title"])}</h2>'
+                     f'<a href="../../{escape(card["passage"])}">Passage using this result</a><ul>{"".join(body)}</ul></section>')
+    write_text(product_dir / "proof-declarations.html", page("Cite a formal result",
+               "Selected Reader and study propositions with their premises and exact Lean declarations.",
+               "".join(cards), "manifest.json", show_portfolio=False), payload)
     sections = []
     for citation in citations:
         for source in (citation["transition"], citation["run"]):
@@ -1006,7 +1056,7 @@ def build_claim_citations(product_dir, inputs, payload):
             related = (
                 f'<aside id="{escape(anchor)}"><h3>Related formal target</h3>'
                 f'<p><code>{escape(proof["tag"])}</code> · {escape(proof["proposition"])}</p>'
-                f'<p>{escape(proof["limit"])}</p>'
+                f'<p>{escape(proof["limit"])}</p><p><a href="proof-declarations.html#{escape(proof["tag"])}">Read the two Lean declarations and their premises</a></p>'
                 f'<p>{graph_link("proof_target:" + proof["tag"], "Open the formal target in the graph")}</p></aside>'
             )
         sections.append(
@@ -1133,7 +1183,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
     reader_resources(product_dir, status, inputs, payload)
     featured_cases = {row["id"] for row in (catalog or {}).get("records", []) if row["kind"] == "evidence_case"}
     studies, study_cards = build_research(product_dir, status, inputs, payload, featured_cases)
-    citation_count = build_claim_citations(product_dir, inputs, payload)
+    citation_count = build_claim_citations(product_dir, inputs, payload, status["source_commit"])
     published_groups: list[dict[str, Any]] = []
     for group in EVIDENCE_GROUPS:
         published_entries: list[dict[str, Any]] = []
@@ -1219,7 +1269,7 @@ def build_evidence(output: Path, status: dict[str, Any], *, inputs: ProductInput
         f'<p class="status"><strong>Current status:</strong> {status["counts"]["chapters"]} chapters; '
         f'{status["counts"]["sources"]} public-safe sources; all chapter-core support remains explicitly bounded.</p>'
         '<h2>Research studies and replays</h2>'
-        '<p><a href="research-agenda.html">Active research agenda</a> · '
+        '<p><a href="research-agenda.html">Active research agenda</a> · <a href="bibliographies/index.html">Bibliography downloads</a> · <a href="proof-declarations.html">Cite a Lean declaration</a> · '
         f'<a href="research-studies.json">Study data and citations</a>{comparison_link}</p>'
         f'<div class="grid">{study_cards}</div>'
         '<h2>Follow a claim into its evidence</h2>'

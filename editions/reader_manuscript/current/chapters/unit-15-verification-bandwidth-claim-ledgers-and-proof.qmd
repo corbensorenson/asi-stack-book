@@ -3,6 +3,21 @@ title: "Verification Bandwidth, Claim Ledgers, and Proof"
 unit_id: "unit-15"
 ---
 
+## Would you give the second reviewer a veto? {#reader-citation-veto}
+
+You run two desks that receive the same scientific claims. A triage desk can flag a promising finding for follow-up. A publication desk releases a verdict with a citation others may rely on. For each claim you can afford two model readings. One sees the cited sentences with nearby context. The other sees the citation alone. You can pool their scores or require both readers to agree. Pick a rule for each desk before looking at the outcomes.
+
+| Triage rule on 299 held-out claims | Justified releases | Unsupported releases | Held for review |
+|---|---:|---:|---:|
+| Pool both readings | 37 | 50 | 212 |
+| Give either reading a veto | 22 | 30 | 247 |
+
+The veto prevented 20 unsupported releases and gave up 15 justified ones. Suppose a justified release is worth one unit. Ignoring referral costs, the veto improves the observed balance once avoiding an unsupported release is worth more than 15/20 of a unit. At equality the two rules tie on that calculation. Thirty-five more claims still need a reviewer under the veto. Your triage decision depends on who can take them and what waiting costs. These counts come from one collection and one verifier.
+
+Now set the publication desk’s risk limit before seeing its held-out cases. The thresholds selected on development data held all 299 claims under both rules. A desk that must publish needs another evidence route or a different capacity budget. An empty release queue supplies no observed error fraction. [Frozen policies, costs and uncertainty](../../chapters/verification-bandwidth-and-context-adequacy.html#citation-release-thresholds) · [Inspect a disagreement](../../products/evidence-registry/study-scientific-citation.html#run-scifact-release--case-51-triage).
+
+Try the same decision as a citation editor. In the fresh study an answer can fail because the returned paper was never judged, because the two sentences omit the human evidence, or because the verifier releases the wrong conclusion. Each diagnosis sends the editor to a different next step. [Work through the scoring ceiling](../../chapters/verification-bandwidth-and-context-adequacy.html#citation-scoring-ceiling).
+
 ## The Claim Everyone Approved
 
 This is an illustrative review failure, not a reported controller trial.
@@ -109,6 +124,8 @@ The obligation set is itself defeasible. Reviewers can miss a dimension. A
 well-formed list does not prove completeness. The system therefore records who
 constructed it, which threat model and consumer informed it, which templates or
 prior incidents were consulted, and which unknowns remain.
+
+[Inspect the exact declarations and their premises](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/proof-declarations.html#lean:security.scif.route_envelope).
 
 This prevents tool-driven verification. A team with a theorem prover should
 not turn every question into a theorem. A team with model judges should not

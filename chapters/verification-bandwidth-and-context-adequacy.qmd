@@ -541,6 +541,19 @@ Claim 833 shows why the counts at each stage matter. The original route returned
 
 These claims come from the original SciFact test split, with previously scored claims and previously cited or retrieved papers excluded. SciFact-Open supplies annotations, and its preselected candidate abstracts define the search space here. Only citation-derived human highlights earned sentence credit. The release combines alternative human rationales, so requiring all highlights can reject an adequate shorter citation. Pooling supplies additional document labels with model-proposed sentence highlights. An unsupported release here means the benchmark could not certify the returned verdict and citation together. [SciFact-Open annotation guide](https://github.com/dwadden/scifact-open/blob/main/doc/data.md)
 
+#### How many claims could the benchmark certify? {#citation-scoring-ceiling}
+
+The primary result remains 4 justified releases across all 65 claims. A **retrospective** check asked what a perfect ranker and verifier could earn under exactly the same catalog, annotation and two-sentence rules.
+
+| Question | Count | Denominator |
+|---|---:|---|
+| Could any eligible paper supply complete human highlights within two sentences? | 38 | 65 claims |
+| Did the baseline return a paper that could earn that credit? | 12 | 38 certifiable claims |
+| Did the selected pair cover its highlights? | 7 | 12 returned certifiable papers |
+| Did the verifier also release the annotated verdict? | 4 | 7 complete citations |
+
+Twenty claims had no eligible paper with human citation evidence. Seven more had human evidence but no highlight set that fit the budget. Across the full cohort the baseline returned 14 papers with human evidence, including two whose highlights could not fit. Of the 15 unsupported releases, 12 returned unjudged papers, one returned a paper with pooled highlights, and two missed part of the human citation. Those categories call for different follow-ups: assess the paper, obtain a human sentence annotation, or improve sentence selection. [Case-level audit and scoring code](https://github.com/corbensorenson/asi-stack-book/tree/main/experiments/scifact_retrieval_followup).
+
 ### How much evidence is a second opinion?
 
 Suppose two reviewers independently submit one of four labels on each of 20 previously adjudicated records. Here is the full tally against the event log.

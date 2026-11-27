@@ -751,6 +751,8 @@ This appendix is generated from source records marked `external_literature` in `
 
 This is an independent top-level appendix for external sources by other authors and organizations. It is not a subsection, second half, or continuation of Appendix G. It contains only third-party papers, documentation records, outside benchmarks, and non-Corben references used for comparison, grounding, or future literature review. Corben's own papers, Corben-supplied materials, recovered project records, and local project records live in their own top-level appendix: [Appendix G, Corben's Own Sources, Papers, and Local Projects](G_corben_source_corpus.qmd).
 
+[Download this collection or a chapter bibliography in BibTeX and CSL-JSON](../products/evidence-registry/bibliographies/index.html).
+
 A listed external source does not claim reproduced experiments, local benchmark results, support-state promotion, or complete literature coverage.
 
 ## Source Ownership Boundary

@@ -97,6 +97,17 @@
         "scope": "A fixed catalog of candidate abstracts and a frozen pooled verifier on reserved SciFact-Open claims."
       },
       "featured_run": "fresh-citation-retrieval"
+    },
+    {
+      "id": "matched-release",
+      "title": "Where should a release observer run?",
+      "question": "When does a separately available observer recover a release, and does moving the same lookup into a gateway improve the decision?",
+      "change": "Repeat with separately operated storage and natural delays. Prefer the gateway if it adds safe completions or ties with lower total measured work.",
+      "claim": {
+        "id": "integrated-reference-architecture.core",
+        "scope": "One host, eight pinned project READMEs and controlled failures around an atomic release."
+      },
+      "featured_run": "paired-release-observers"
     }
   ],
   "runs": [
@@ -576,6 +587,29 @@
         "experiments/scifact_citation_check/protocol.md"
       ],
       "source_commit": "6635c1e1b605e5fb426a44e8a47ad3a01dca1a46"
+    },
+    {
+      "id": "paired-release-observers",
+      "study": "matched-release",
+      "format": "matched_publication",
+      "date": "2026-11-27",
+      "title": "Three placements across 96 matched release conditions",
+      "protocol": "experiments/matched_publication_boundary/protocol.md",
+      "protocol_sha256": "9278efef493dec7b7c8befc2b04b7c34f195fed6dc97cb583a8cb5bde04e45b9",
+      "method": "Rotate three workflows through the same 96 release conditions. Check committed bytes independently after each decision. Count both HTTP hops and the time to a verified digest.",
+      "result_summary": "Primary status verified {primary} releases. Direct and gateway fallback each verified {direct} of {n}. Direct fallback used {direct_requests} total status requests and the gateway used {gateway_requests}.",
+      "limit": "Separate loopback processes read one filesystem under one operator. Faults are assigned equally. Body bytes omit headers and TLS. Timing describes one host. Operator time and natural outage rates remain open.",
+      "disposition": "Use direct fallback when its observer survives a primary outage. Moving the matched lookup into a gateway increased total requests and bytes.",
+      "command": "python3 experiments/matched_publication_boundary/score.py",
+      "result": "experiments/matched_publication_boundary/results.json",
+      "result_sha256": "180c77cdac22970ccf56c9d0d4189adb090a71b19342af537f5d64efea3ffd1f",
+      "inputs": [
+        "experiments/matched_publication_boundary/observations.json",
+        "experiments/matched_publication_boundary/score.py",
+        "experiments/matched_publication_boundary/run.py",
+        "experiments/matched_publication_boundary/cohort.json"
+      ],
+      "source_commit": "b25d23654a07db46d9d86a213307076995e92979"
     }
   ],
   "agenda": [

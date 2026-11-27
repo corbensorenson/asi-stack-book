@@ -225,6 +225,18 @@ The integration question has two halves. The happy path asks whether intent can 
 
 ## Why existing approaches are insufficient
 
+### Where should the release observer run? {#matched-release-observers}
+
+A maintainer has sent a versioned documentation release and lost its acknowledgement. Give the conventional caller and the gateway the same primary and fallback reads. To isolate the value of the second observation, also run the caller with primary status alone. The prospective comparison used eight new project README snapshots, separate local HTTP processes and an independent final check of the bytes. Each workflow faced the same 96 combinations of effect, primary availability and fallback availability.
+
+| Status route | Verified | False closures | Unresolved | Caller / total status requests | Status body bytes |
+|---|---:|---:|---:|---:|---:|
+| Primary only | 16 | 0 | 80 | 96 / 96 | 2,672 |
+| Direct fallback | 24 | 0 | 72 | 144 / 144 | 4,008 |
+| Gateway fallback | 24 | 0 | 72 | 96 / 240 | 7,488 |
+
+**Choose direct fallback for this workload.** All eight additional closures came when the intended bytes committed, the primary was unavailable and the separate observer could still read them. A fallback sharing the outage recovered none. With equal access, moving the same check into a gateway saved 48 caller requests and added 96 total requests. Among verified releases, median time from ambiguous acknowledgement to verification was 416.3 µs direct and 864.2 µs through the gateway. These times cover one loopback run. Failure frequencies were assigned, both read processes shared storage, and human recovery effort was unmeasured. [Inspect the preregistration, all release conditions, timing and replay](../products/evidence-registry/study-matched-release.html#run-paired-release-observers).
+
 ### The conventional orchestrator deserves a fair comparison
 
 A conventional workflow can keep typed task inputs, scoped service credentials,

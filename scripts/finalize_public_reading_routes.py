@@ -23,7 +23,7 @@ GRAPH = "products/evidence-registry/knowledge-graph"
 CATALOG = "evidence-catalog.json"
 SEARCH_INDEXES = ("search.json", "reader/search.json", "papers/search.json")
 QUARTO_SEARCH_SCRIPT = "site_libs/quarto-search/quarto-search.js"
-SEARCH_ADAPTER_ASSETS = ("assets/evidence-search.js", "assets/quarto-evidence-search.js")
+SEARCH_ADAPTER_ASSETS = ("assets/research-evidence-search.js", "assets/quarto-evidence-search.js")
 ADAPTER_END = "/* End ASI Stack evidence-search adapter. */\n"
 EVIDENCE_LABELS = {
     "study": "Research study",

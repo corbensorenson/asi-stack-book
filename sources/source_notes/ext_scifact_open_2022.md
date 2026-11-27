@@ -3,7 +3,7 @@
 | Field | Value |
 |---|---|
 | Source ID | `ext_scifact_open_2022` |
-| Primary publication | Wadden et al. (2022). [Paper](https://arxiv.org/abs/2210.13777) |
+| Primary publication | Wadden et al. (2022). [Preprint used in the chapter](https://arxiv.org/abs/2210.13777) · [Findings of EMNLP publication and author metadata](https://aclanthology.org/2022.findings-emnlp.347/) |
 | Reviewed | November 27, 2026. Sections 2–3 and 5, and the [authors’ annotation guide](https://github.com/dwadden/scifact-open/blob/main/doc/data.md). |
 
 ## Thesis
