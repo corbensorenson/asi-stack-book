@@ -803,59 +803,15 @@ tools cover the task, the direct workflow avoids unnecessary handoffs.
 
 ## What the Current Work Establishes
 
-The routing work checks finite lifecycle and authority rules while keeping
-route choice separate from answer quality. Authored and synthetic cases
-exercise discrimination, clarification, abstention, and fallback. They do
-not establish useful specialist answers or a deployed routing advantage.
+Finite routing checks cover authority, clarification, abstention and fallback. Whether a specialist gives a useful answer remains an empirical question. For the kernel ABI, a counterexample exposes missing checkpoint state. Two implementations still need a natural workload on which to demonstrate interchangeability.
 
-The substrate work checks a bounded ABI and makes omitted checkpoint state
-visible through counterexamples. The heterogeneous-kernel tournament and
-architectural-improvement lifecycle remain unrun. Conformance to the encoded
-boundary does not establish that two implementations are interchangeable
-for a natural workload.
-
-The cyclic-memory work checks addresses, alias visibility, freshness,
-coverage fallback, recurrence budgets, trace composition, and closure. Its
-structural conclusions do not establish retrieval quality, long-context use,
-reasoning, speed, or memory savings. The cyclic-mixer work adds a bounded
-operator-equivalence receipt and finite candidate-lifecycle checks. It does
-not establish trained quality, kernel performance, deployment, or transfer.
-
-The research panel links the artifact and proof inventories. The open comparison
-is a natural task where an advantage survives verification, migration, recovery
-and maintenance.
-
-The joined chapter does not combine these bounded results into a claim that heterogeneous routing improves natural tasks.
+The cyclic-memory checks cover addressing, aliases, freshness and closure. The cyclic mixer has a bounded operator-equivalence result. Neither study measures retrieval quality, speed or memory savings on a trained replacement. The joined chapter does not combine these bounded results into a claim that heterogeneous routing improves natural tasks.
 
 ## From a Minimum Router to a Substrate Market
 
-A minimum implementation can route the repository task among one general
-model, deterministic dependency tool, coding specialist, verifier, human, and
-no-action route. Freeze the denominator and policies. Exercise clarification,
-abstention, stale readiness, authority denial, fallback, wrong route, wrong
-answer, cost overrun, revocation, and closure. Compare the complete system with
-the strong general-model baseline.
+On the repository task, freeze the general model, dependency tool, specialist, verifier, human and no-action routes. Exercise stale readiness, denial, fallback, wrong answers, overruns and revocation. Charge every route against the same direct baseline.
 
-Next, implement the Cognitive Kernel ABI for two genuinely different
-substrates. Inventory all state, migrate or reconstruct it, inject omitted-
-state collisions, and demonstrate rollback. Run a prospective tournament with
-matched tuning, verification, hardware, and human budgets.
-
-Cyclic candidates should begin in isolated structural and kernel tests, then
-trained canaries with ordinary attention, recurrence, state-space, and dense
-baselines. Measure quality, calibration, context use, latency, throughput,
-memory, energy, parameter count, stability, fallback, and total lifecycle
-cost. Keep every failed candidate.
-
-A mature substrate market would continuously qualify general models,
-specialists, tools, humans, and new computational families behind stable
-capability fields. The router would allocate work by evidence, authority,
-consequence, load, and complete cost; preserve abstention and fallback; and
-retire candidates without breaking task identity.
-
-Architectural experimentation could proceed rapidly below the boundary while
-governance, claims, and recovery remain stable above it. Diversity would be an
-empirical option, not a doctrine.
+To qualify a second substrate, inventory its state, inject a checkpoint omission and exercise rollback. Match tuning, verification, hardware and human budgets. For a cyclic candidate, compare trained canaries with attention, recurrence, state-space and dense baselines. Retain failed candidates and record quality, calibration, latency, memory, energy and recovery. A router can then retire a candidate while preserving the task and its owner.
 
 ## Can the Fallback Survive the Same Failure? {#the-strongest-objection}
 
