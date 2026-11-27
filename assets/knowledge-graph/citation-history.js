@@ -82,7 +82,7 @@ if (typeof document !== "undefined") {
       const current = await get("citation-current.json");
       let prior = current;
       if (current.revision !== revision) {
-        if (current.archived.includes(revision)) prior = await get("citation-history/" + revision + ".json");
+        if (current.archived.includes(revision)) prior = await get("saved-revisions/" + revision + ".json");
         else {
           const relation = await get("https://api.github.com/repos/corbensorenson/asi-stack-book/compare/" + revision + "..." + current.revision);
           if (!["ahead", "identical"].includes(relation.status)) throw new Error("The saved revision is outside this book revision’s ancestry.");

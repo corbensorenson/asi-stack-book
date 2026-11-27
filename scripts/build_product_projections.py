@@ -1077,7 +1077,7 @@ def reader_resources(directory, status, inputs, payload):
                show_portfolio=False), payload)
 
     archive = json.loads(read(CITATION_ARCHIVE))
-    install("citation-history/" + archive["revision"] + ".json", read(CITATION_ARCHIVE))
+    install("saved-revisions/" + archive["revision"] + ".json", read(CITATION_ARCHIVE))
     write_json(directory / "citation-current.json", {
         "revision": status["source_commit"], "archived": [archive["revision"]],
         "passages": json.loads(read(graph.PASSAGES)), "studies": json.loads(read(research.RECORDS))}, payload)
