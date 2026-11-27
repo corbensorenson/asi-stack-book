@@ -625,5 +625,25 @@
         "target": "study_run:fresh-citation-retrieval"
       }
     ]
+  },
+  {
+    "id": "repair-cost-threshold",
+    "title": "When repair cost erases the cheaper route’s advantage",
+    "url": "chapters/resource-economics-and-token-budgets.html#repair-cost-threshold",
+    "aliases": [
+      "115.2",
+      "115.2 units",
+      "14.2 + pR",
+      "repair cost break-even"
+    ],
+    "summary": "A verified route costs 14.2 units and manual review costs 43.0. At a one-in-four repair rate the break-even repair price is 115.2 units per repair.",
+    "limit": "Illustrative sensitivity calculation in a synthetic fixture. Every job eventually yields one accepted outcome, and the manual price stays fixed.",
+    "measurement": "Worked sensitivity calculation",
+    "links": [
+      {
+        "predicate": "explained_by",
+        "target": "chapter:resource-economics-and-token-budgets"
+      }
+    ]
   }
 ]

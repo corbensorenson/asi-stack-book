@@ -409,11 +409,13 @@ async function main() {
     if (!live) await serveCandidate(context);
     await checkReaderAccess(context);
     await search(context, root, "SciFact claim 83", /study-citation-retrieval\.html[^#]*#run-fresh-citation-retrieval--case-83$/);
+    await search(context, root, "SciFact claim 7", /study-citation-retrieval\.html[^#]*#run-three-paper-selection--case-7$/);
     await search(context, root, "click-exact-down-separate", /study-matched-release\.html[^#]*#run-paired-release-observers--case-click-exact-down-separate$/);
     await search(context, root, "circle_public_consumer_gate_promotion_overclaim_rejected", /proof-declarations\.html[^#]*#circle_public_consumer_gate_promotion_overclaim_rejected$/);
     await search(context, root, "hd-17", /study-forward-transfer\.html[^#]*#task-hd-17$/);
     await search(context, root, "MATH-500", /unit-19-routing-and-replaceable-cognitive-substrates\.html[^#]*#choose-loop-depth$/);
     await search(context, root, "last-loop KV caching", /fast-generation-architectures\.html[^#]*#loop-kv-serving$/);
+    await search(context, root, "115.2", /resource-economics-and-token-budgets\.html[^#]*#repair-cost-threshold$/);
     await search(context, root, "POMDP", /dictionary\.html[^#]*#term-partially-observable-markov-decision-process$/);
     await search(context, root, "ext_cram_2026", /H_external_sources\.html[^#]*#ext_cram_2026$/);
     await search(context, root, "virtual-context-abi.core", /C_claim_evidence_matrix\.html[^#]*#virtual-context-abi\.core$/);
