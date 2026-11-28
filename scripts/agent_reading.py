@@ -2,7 +2,8 @@
 from html.parser import HTMLParser
 import json
 import re
-from urllib.parse import urljoin
+from pathlib import PurePosixPath
+from urllib.parse import quote, unquote, urljoin, urlsplit
 
 from research_dictionary import DIRECTORY
 
@@ -10,13 +11,16 @@ BOOK = "https://corbensorenson.github.io/asi-stack-book/"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
 SKIP = {"script", "style", "nav", "button", "svg", "iframe", "noscript", "template"}
 HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
+BLOCKS = {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS
 
 
 class PassageParser(HTMLParser):
-    def __init__(self):
+    def __init__(self, targets=()):
         super().__init__()
+        self.targets = set(targets)
         self.stack = []
         self.records = {}
+        self.exact = {}
         self.footnotes = {}
         self.ancestors = {}
         self.tables = []
@@ -30,17 +34,24 @@ class PassageParser(HTMLParser):
             return
         blocked = (self.stack and self.stack[-1]["blocked"]) or tag in SKIP
         identity = attrs.get("id")
-        frame = {"tag": tag, "id": identity, "blocked": blocked, "parts": [], "links": [], "cells": [], "rows": []}
+        frame = {"tag": tag, "id": identity, "blocked": blocked, "parts": [], "links": [],
+                 "cells": [], "rows": [], "targets": []}
         if identity and (tag == "section" or tag in HEADINGS):
             self.ancestors[identity] = [f["id"] for f in self.stack if f["tag"] == "section" and f["id"]]
         if tag not in VOID:
             self.stack.append(frame)
         if blocked:
             return
+        if identity in self.targets:
+            if tag in BLOCKS or tag in {"article", "section", "div", "table", "details", "dl", "ol", "ul"}:
+                frame["targets"].append(identity)
+            else:
+                owner = next((part for part in reversed(self.stack) if part["tag"] in BLOCKS), frame)
+                owner["targets"].append(identity)
         if tag == "a" and attrs.get("href") and "anchorjs-link" not in attrs.get("class", ""):
             for parent in self.stack:
                 parent["links"].append(attrs["href"])
-        if tag in {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS:
+        if tag in BLOCKS:
             self.handle_data("\n")
         if tag == "img" and attrs.get("alt"):
             self.handle_data(attrs["alt"])
@@ -74,9 +85,12 @@ class PassageParser(HTMLParser):
                 row["cells"].append({"text": cell, "header": tag == "th"})
             text = (" | " if row and len(row["cells"]) > 1 else "") + cell
         if tag == "tr":
-            table = next((part for part in reversed(self.stack) if part["tag"] == "table"), None)
-            if table is not None and frame["cells"]:
-                table["rows"].append(frame["cells"])
+            if table := next((part for part in reversed(self.stack) if part["tag"] == "table"), None):
+                if frame["cells"]:
+                    table["rows"].append(frame["cells"])
+                if frame["targets"]:
+                    headers = [row for row in table["rows"][:-1] if all(cell["header"] for cell in row)]
+                    frame["rows"] = headers + [frame["cells"]]
         if tag == "table" and frame["rows"]:
             section_ids = {part["id"] for part in self.stack if part["tag"] == "section"}
             self.tables.append((section_ids, frame["rows"]))
@@ -88,16 +102,21 @@ class PassageParser(HTMLParser):
                 self.footnotes[frame["id"]] = item
         if self.stack:
             self.stack[-1]["parts"].append(text)
-            if tag in {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS:
+            if tag in BLOCKS:
                 self.stack[-1]["parts"].append("\n")
         if tag == "main":
             self.main = False
+            if "" in self.targets:
+                frame["targets"].append("")
+        for identity in frame["targets"]:
+            self.exact[identity] = text, frame["links"], frame["rows"]
 
 
 def section_exports(site, files, commit):
     directory = site / "agent"
     subject = json.loads(files.text(site / "terminology/subject-index.json"))
     entries = []
+    routes = {}
     for volume in subject["volumes"]:
         path = volume["path"]
         parser = PassageParser()
@@ -121,8 +140,54 @@ def section_exports(site, files, commit):
                          footnotes=notes)
             files.write(site / route, serialize(value))
             sections.append(dict(anchor=anchor, heading=heading, file=route))
+            routes[path, anchor] = route
         entries.append(dict(id=volume["id"], title=volume["title"], path=path, sections=sections))
     files.write(directory / "sections.json", serialize(dict(source_commit=commit, volumes=entries)))
+    return routes
+
+
+def section_target(url, *, study=False):
+    """Resolve a publication URL while retaining the exact rendered fragment."""
+    parts = urlsplit(url)
+    path = PurePosixPath(parts.path)
+    if parts.scheme or parts.netloc or path.is_absolute() or ".." in path.parts or path.suffix != ".html":
+        raise ValueError("Invalid discovery destination: " + url)
+    anchor = unquote(parts.fragment)
+    if any(c in anchor for c in ("/", "\\")) or anchor in {".", ".."}:
+        raise ValueError("Invalid discovery anchor: " + url)
+    return path.as_posix(), anchor or ("current-decision" if study else "")
+
+
+def attach_sections(site, files, commit, records, routes):
+    """Bind primary and alternate discovery locators to rendered passages."""
+    pending = {}
+    for row in records:
+        for destination in [row, *row.get("locators", [])]:
+            path, anchor = section_target(destination["url"], study=destination.get("kind") == "study")
+            key = path, anchor
+            if key not in routes:
+                stem = PurePosixPath(path).with_suffix("")
+                # Keep the root file distinct from every possible fragment name.
+                route = f"agent/passages/{stem}/anchors/{anchor}.json" if anchor else f"agent/passages/{stem}/page.json"
+                routes[key] = route
+                pending.setdefault(path, set()).add(anchor)
+            destination["section_url"] = BOOK + quote(routes[key], safe="/")
+    for path, anchors in pending.items():
+        parser = PassageParser(anchors)
+        parser.feed(files.text(site / path))
+        for anchor in sorted(anchors):
+            if anchor not in parser.exact:
+                raise ValueError(f"Discovery passage is missing from main content: {path}#{anchor}")
+            text, links, tables = parser.exact[anchor]
+            url = BOOK + path + ("#" + quote(anchor, safe=".:_-") if anchor else "")
+            notes = {link[1:]: parser.footnotes[link[1:]][0].strip() for link in links
+                     if link.startswith("#") and link[1:] in parser.footnotes}
+            value = dict(source_commit=commit, url=url, text=re.sub(r"\n\s*\n", "\n\n", text).strip(), tables=tables,
+                         links=sorted({urljoin(url, link) for link in links if urljoin(url, link).startswith(("http://", "https://"))}),
+                         footnotes=notes)
+            if not value["text"]:
+                raise ValueError("Empty discovery passage: " + url)
+            files.write(site / routes[path, anchor], serialize(value))
 
 
 def serialize(data):
@@ -130,7 +195,7 @@ def serialize(data):
 
 
 def publish(site, files, commit):
-    section_exports(site, files, commit)
+    routes = section_exports(site, files, commit)
     graph = site / DIRECTORY
     manifest = json.loads((graph / "manifest.json").read_bytes())
     catalog = json.loads((graph / manifest["evidence_catalog"]).read_bytes())
@@ -149,6 +214,7 @@ def publish(site, files, commit):
         elif row.get("record_version") or (row.get("disposition") and row.get("locators")):
             record.update(summary=row.get("summary"), disposition=row.get("disposition"), limit=row.get("limit"))
         records.append(record)
+    attach_sections(site, files, commit, records, routes)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
@@ -167,7 +233,7 @@ def publish(site, files, commit):
 > Corben Sorenson’s living technical book on governed AI systems and the evidence behind its comparisons.
 
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
-- [Discover evidence](agent/discovery.json) by title, alias, or question. Use the returned stable ID to fetch the record and its limits.
+- [Discover evidence](agent/discovery.json) by title, alias, or question. Open a result’s `section_url` to read and cite its exact passage. Use the stable ID for graph relationships or case provenance.
 - [Look up an AI term](products/evidence-registry/knowledge-graph/dictionary.json) by headword or alias.
 - [Read one section](agent/sections.json) by chapter and anchor. Follow its canonical URL when citing.
 - [Replay SciFact claim 7](agent/scifact-claim-7.md) from the observation and result pointers.

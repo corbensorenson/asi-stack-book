@@ -266,6 +266,19 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if discovery["snapshot_id"] != agent["snapshot_id"] or any(
                 row.get("measurement") == "Case identifier" for row in discovery["records"]):
             errors.append("Compact discovery includes bulk cases or differs from the agent index snapshot")
+        for row in discovery["records"]:
+            for destination in [row, *row.get("locators", [])]:
+                direct = destination.get("section_url", "")
+                if not direct.startswith((agent_reading.BOOK + "agent/sections/", agent_reading.BOOK + "agent/passages/")):
+                    errors.append("Discovery result is missing a section export: " + destination["url"])
+                    continue
+                path, fragment = agent_reading.section_target(destination["url"], study=destination.get("kind") == "study")
+                passage_file = site / unquote(direct.removeprefix(agent_reading.BOOK))
+                passage = load(passage_file)
+                cited = urlsplit(passage["url"])
+                if (passage["source_commit"] != source_commit or not passage["text"] or not passage["url"].startswith(agent_reading.BOOK)
+                        or not cited.path.endswith("/" + path) or unquote(cited.fragment) != fragment):
+                    errors.append("Discovery export does not cite the exact rendered passage: " + destination["url"])
         sections = load(site / agent["section_index"])
         headings = {volume["id"]: set(map(tuple, volume["headings"])) for volume in subject["volumes"]}
         for volume in sections["volumes"]:

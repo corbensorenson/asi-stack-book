@@ -1,0 +1,11 @@
+# Rubric
+
+Give one point for each column. A determining citation needs the exact rendered anchor or exact pinned source address. Retain the independent session answers and score with knowledge of the assigned editions. A right-looking guess without a source can earn the decision point if it states the actual result. Withhold the scope point when relevant limitations remain unverified.
+
+| Question | Decision | Determining citation | Scope |
+|---|---|---|---|
+| Repair price | Correctly identifies the break-even repair price at one repair in four and gives 14.2 + pR | Exact repair-cost threshold or worked cost comparison | One accepted result per job and manual price fixed, or equivalent treatment of the acceptance denominator with unresolved work charged |
+| GPU energy | Gives about 95 J at 512 for conversation and 2,192 J at 128 for problem solving | Exact token-meter-to-answer-bill passage or source comparison at the reported values | Different lengths, workloads or modes and batch sizes prevent causal attribution to mode. GPU energy excludes facility loads. Either qualification is relevant but the answer must reject a causal mode interpretation. |
+| Commitment signals | Some modeled enforcement state cannot be recovered by any classifier using only those signals | Exact commitment_signals_cannot_recover_effective_enforcement declaration | Signals are restricted to modeled commitment signals with indistinguishable cases. The finding does not establish enforcement in a real institution. |
+| Receiver pair-064 | All three arms held. The additional endpoint was the arm with two caller requests. | Exact pair-064 row or its pinned case pointer | Both modeled paths unavailable under controlled conditions. One case supplies no frequency or independence estimate. |
+| Dory cache speed | Rejects using the reported range as a last-loop speedup and identifies one-loop drafting with four-loop verification versus four-loop autoregressive decode under per-loop caching | Exact loop-KV-serving subsection or source Tables 6 and 7 | Separate cache-policy accuracy comparisons and speculative timing. Direct matched last-loop versus per-loop wall time is unmeasured in the cited comparison. |
