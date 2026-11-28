@@ -1,0 +1,7 @@
+# Proof lookup retest
+
+Compare the preceding deployed compact study-and-proof edition with the deployed edition that adds the proof-only lookup. Freeze the two panels, rubric, and full tested archives before the sessions. Use a fresh Codex session for each panel and edition, using Codex CLI in ephemeral mode with gpt-6.1-sol, high reasoning effort, and the same reading tool and budget. Start from the homepage. Allow the reader to follow any publicly discoverable path within the assigned edition. Withhold the rubric, other answers and other read journals from each session.
+
+The first panel covers exact hypotheses, quantifiers, and logical guard behavior. The second asks for an application decision that needs the original chapter or Reader wording as well as a proposition. The questions are new and use published declarations already in the index.
+
+Compare binary rubric points, unsupported numerical assertions, deduplicated bytes, and total opens within each panel. Count catalog opens by occurrence, including repeat opens of the same file. Count global chapter-directory and per-volume section-index opens separately, and list full book and proof-source opens if used. The target is to retain answer quality on both panels, reduce deduplicated reading cost and avoid revisiting a proof catalog or chapter index when the export contains the required evidence. Record whether any gate fails. A single unblinded assessment and one pair per panel limit the inference. Bytes describe uncompressed documents, with each distinct payload counted once per session.
