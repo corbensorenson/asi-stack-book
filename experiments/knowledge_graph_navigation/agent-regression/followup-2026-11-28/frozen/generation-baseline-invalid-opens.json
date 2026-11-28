@@ -1,0 +1,127 @@
+{
+  "arm": "baseline",
+  "panel": "generation",
+  "revision": "d5d8c2f7c11985af1a7f9a4393f0771745610639",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 963,
+      "sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4",
+      "displayed_bytes": 963,
+      "displayed_sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "37f80c562e652a2b1d70bc7f3b4e5fe98eaa2fcea4a37ecc1325a67d124a70b4"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 1126,
+      "displayed_sha256": "ef5cc343f5ad631690b9e0580a0da16c6e1d9ce75d597f1934748425044c0ebc"
+    },
+    {
+      "route": "papers/index.html",
+      "focus": [
+        "DFlash"
+      ],
+      "canonical_route": "papers/index.html",
+      "bytes": 70832,
+      "sha256": "8c98441a8a99ddcc6b7a993aa74ce07ba7032c598687e768af187c7f3adfe7d5",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "papers/index.html",
+      "focus": [],
+      "canonical_route": "papers/index.html",
+      "bytes": 70832,
+      "sha256": "8c98441a8a99ddcc6b7a993aa74ce07ba7032c598687e768af187c7f3adfe7d5",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c30289e5e32577dd28370655811de230ffc5406712158c72f75f4c4667933737"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/index.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/knowledge-graph/index.html",
+      "bytes": 3648,
+      "sha256": "44e92fe69b57a0995eae44e3dfd24e2051c0a88631f6bee5bb842bd1af4aa97e",
+      "displayed_bytes": 1056,
+      "displayed_sha256": "39b58f396f59e15021197b7b4bc8c5e5d88a74aab6dbee3414991a08cdc16f51"
+    },
+    {
+      "route": "products/evidence-registry/SKILL.md",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/SKILL.md",
+      "bytes": 2814,
+      "sha256": "262a015cc26fe0db31e4e2705575f24df8a19ce0e776295133213365131854ae",
+      "displayed_bytes": 2814,
+      "displayed_sha256": "262a015cc26fe0db31e4e2705575f24df8a19ce0e776295133213365131854ae"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/dictionary.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/dictionary.json",
+      "bytes": 272226,
+      "sha256": "8c2c7d6be51db7af0869dad595629e1887a2a8d5b3bbf2f9d12cb5b48a22fdb4",
+      "error": "KeyError"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/evidence-catalog.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/evidence-catalog.json",
+      "bytes": 7573494,
+      "sha256": "b72042dfe259127c10d6edc00411f067a6c932a6363584d399bae6361442bb55",
+      "displayed_bytes": 603,
+      "displayed_sha256": "3e34a74399403ff136f096c35bf325a08ecbeb500d1e472081ff691882bf7a20"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/dictionary.html",
+      "focus": [
+        "DFlash"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/dictionary.html",
+      "bytes": 390971,
+      "sha256": "fb5a3c7710174941d7daceace8081e623fa9d4509a102e883a007de0bce754d0",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

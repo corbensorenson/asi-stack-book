@@ -1,0 +1,15 @@
+## FO1
+
+In `accepted_lease_is_bounded_versioned_and_unexpired`, the event must be of kind `issueLease`, and applying it to the authority transaction state must return `some next`. Acceptance implies the prior stage was `requested` and the event had `approvalPresent = true`. The next version equals the old version plus one, the next authority ceiling is at most the old ceiling, and the next modeled time is strictly before the next expiry (`next.now < next.expiresAt`). These are properties of the modeled transition. A deployed clock and identity service require independent validation. [Lean declaration, SecurityKernel.lean line 796](https://github.com/corbensorenson/asi-stack-book/blob/db1df1da6f1f03c3bfb19189130b76469455b227/lean/AsiStackProofs/SecurityKernel.lean#L796)
+
+## FO2
+
+`circle_public_consumer_gate_missing_mutation_control_rejected` proves that the fixture fails `CirclePublicConsumerGateAccepted` if any of `digestMismatchRejected`, `missingTheoremRejected`, `staleContractRejected`, or `unsupportedTransferRejected` is false. The theorem evaluates the logical consequence of the recorded flags in the finite acceptance model. Execution of the four mutation trials is separate replay evidence. [Lean declaration, ProofCarryingContracts.lean line 293](https://github.com/corbensorenson/asi-stack-book/blob/db1df1da6f1f03c3bfb19189130b76469455b227/lean/AsiStackProofs/ProofCarryingContracts.lean#L293) · [Formal target and replay scope](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/claim-citations.html#proof-circle-calculus-and-proof-carrying-ai-contracts.mechanism.003)
+
+## FO3
+
+`participation_signals_cannot_recover_representation` proves that no classifier of type `ParticipationSignals → Bool` can agree with `RepresentativeEnough` on every case in the finite model. Two cases can give the classifier identical signals while having opposite representation labels. The classifier must give the same answer to both and therefore errs on at least one. This establishes an identifiability limit in the model. Whether a real institution is representative requires evidence about that institution. [Lean declaration, InstitutionalLegitimacyReview.lean line 442](https://github.com/corbensorenson/asi-stack-book/blob/db1df1da6f1f03c3bfb19189130b76469455b227/lean/AsiStackProofs/InstitutionalLegitimacyReview.lean#L442)
+
+## FO4
+
+Pooled frame coverage is `(87 + 5) / (90 + 10) = 92%`, and camera-only frame coverage is `5 / 10 = 50%`. When the ten camera-only frames come from one maneuver, the 50% describes those frames. They share the conditions of a single episode and can be correlated. The modality-conditioned conformal guarantee assumes exchangeability of calibration and test points within the sensor pattern. The next maneuver calls for evidence from separate representative episodes at the unit of interest, especially if the encoder tends to fail during difficult maneuvers. [Perception, Sensor Fusion, and Observation Trust §31.7.3](https://corbensorenson.github.io/asi-stack-book/chapters/perception-sensor-fusion-and-observation-trust.html#how-often-is-the-true-state-inside-the-prediction-set)

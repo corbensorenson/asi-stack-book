@@ -1,0 +1,78 @@
+{
+  "suite_revision": "43e09f196dc1681fcb65c4a818acaa20949a4a171eaa377134751a43f4d407f0",
+  "panels": {
+    "science": {
+      "baseline": {
+        "opens": 14,
+        "cumulative_bytes": 1182098,
+        "deduplicated_bytes": 884501,
+        "displayed_bytes": 52000,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 16,
+        "cumulative_bytes": 1224082,
+        "deduplicated_bytes": 938310,
+        "displayed_bytes": 52000,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    }
+  },
+  "totals": {
+    "baseline": {
+      "opens": 14,
+      "cumulative_bytes": 1182098,
+      "deduplicated_bytes": 884501,
+      "displayed_bytes": 52000,
+      "discovery_opens": 2,
+      "decision": 4,
+      "citation": 4,
+      "scope": 4,
+      "quality": 12,
+      "available": 12,
+      "unsupported_numbers": 0
+    },
+    "candidate": {
+      "opens": 16,
+      "cumulative_bytes": 1224082,
+      "deduplicated_bytes": 938310,
+      "displayed_bytes": 52000,
+      "discovery_opens": 1,
+      "decision": 4,
+      "citation": 4,
+      "scope": 4,
+      "quality": 12,
+      "available": 12,
+      "unsupported_numbers": 0
+    }
+  },
+  "gates": {
+    "quality": true,
+    "scope": true,
+    "unsupported_numbers": true,
+    "deduplicated_bytes": false
+  },
+  "regression_passed": false,
+  "paired_intervals": {
+    "quality_points_per_panel": [
+      0.0,
+      0.0
+    ],
+    "deduplicated_bytes_per_panel": [
+      53809.0,
+      53809.0
+    ]
+  }
+}

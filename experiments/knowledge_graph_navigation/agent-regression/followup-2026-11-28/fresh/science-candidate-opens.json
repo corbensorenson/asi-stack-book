@@ -1,0 +1,135 @@
+{
+  "arm": "candidate",
+  "panel": "science",
+  "revision": "db1df1da6f1f03c3bfb19189130b76469455b227",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282195,
+      "sha256": "ae7ac8292c3d561ef9af51593ed6b7062dd9f09359514fd8688bb35171322af4",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a4abc7907dc89a59d270c830c25ab8448137d9edf3e12e3becc0bb6d01cc060f"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "claim 75",
+        "claim 833",
+        "three-paper",
+        "four-way"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 5899,
+      "sha256": "6217382c68bf01ff7a602818d95fd1372963503de697bff56b9cc0dd80e7a5f6",
+      "displayed_bytes": 2512,
+      "displayed_sha256": "a82bb18965836812e649b88ae2542d5d1f4daf26b2712b080b4969228774a216"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json",
+      "bytes": 2036,
+      "sha256": "86280aa4eff1fbe1d4624eccdf4eb8fa841a24a5b5feb6032c1cfa87bebcbc06",
+      "displayed_bytes": 2036,
+      "displayed_sha256": "86280aa4eff1fbe1d4624eccdf4eb8fa841a24a5b5feb6032c1cfa87bebcbc06"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 6581,
+      "sha256": "706acc9499591105ab152729cd75663c0c8f2ed080e34b5c53b07c1f4248b64f",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "76b1495522224f7310e6316e1bee895835a473d0768d6e7db8d4af54f9af293c"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5716,
+      "sha256": "478a3826e5c6e505ae337f4f3ef04fa193e61aa37f3959e842ffae2fa4c985f7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "6ad16888a2373009d341d938dfdcfee1800a650ba7cc830154ec5aa38aaf3a12"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 7154,
+      "sha256": "025962c6682f11124c3a70281fc42d78e18387103850ee051db5d4856b6ab621",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c976eb4151b2663b2bcfe6830bbf5120b318c23f9b98f7dca5a05c442d6d3f59"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "same model",
+        "rationale score",
+        "claim 833 justified single case",
+        "full highlights matching verdict"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 5899,
+      "sha256": "6217382c68bf01ff7a602818d95fd1372963503de697bff56b9cc0dd80e7a5f6",
+      "displayed_bytes": 2288,
+      "displayed_sha256": "e0caaac50d82ce536dc0ac323503f9d959a41c0a99fc23c2578d52c12517afdc"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/current-decision.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/current-decision.json",
+      "bytes": 1676,
+      "sha256": "36aa7bd4868175366a570b9ac2118f72bb24159f0570872f43444609e7c3be6c",
+      "displayed_bytes": 1676,
+      "displayed_sha256": "36aa7bd4868175366a570b9ac2118f72bb24159f0570872f43444609e7c3be6c"
+    },
+    {
+      "route": "products/evidence-registry/study-scientific-citation.html",
+      "focus": [
+        "75-triage"
+      ],
+      "canonical_route": "products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269119,
+      "sha256": "c33362eabbb985e4ce3d601eabc8d9cab5ffeb9df626aaedd03fcc509e989feb",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "4de309916e3e0c6cf05a0dfe8734f7e1dd2cfb052d77f6967ab360400081d715"
+    },
+    {
+      "route": "products/evidence-registry/study-scientific-citation.html",
+      "focus": [
+        "rationale"
+      ],
+      "canonical_route": "products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269119,
+      "sha256": "c33362eabbb985e4ce3d601eabc8d9cab5ffeb9df626aaedd03fcc509e989feb",
+      "displayed_bytes": 461,
+      "displayed_sha256": "bfef8fdb14ea2fa028786451a6b613220a00a135c67268812239ad6026e2d95a"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "focus": [
+        "limit"
+      ],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 6581,
+      "sha256": "706acc9499591105ab152729cd75663c0c8f2ed080e34b5c53b07c1f4248b64f",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "76b1495522224f7310e6316e1bee895835a473d0768d6e7db8d4af54f9af293c"
+    },
+    {
+      "route": "products/evidence-registry/study-scientific-citation.html",
+      "focus": [
+        "same model"
+      ],
+      "canonical_route": "products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269119,
+      "sha256": "c33362eabbb985e4ce3d601eabc8d9cab5ffeb9df626aaedd03fcc509e989feb",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "78391874aae0bb773466121da43729c150b0589f4488fde18889b09a18658a93"
+    }
+  ]
+}

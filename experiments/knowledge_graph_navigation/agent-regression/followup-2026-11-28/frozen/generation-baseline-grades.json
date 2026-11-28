@@ -1,0 +1,27 @@
+{
+  "answer_sha256": "83eeb0bf5ac70f7ea29bb6f8c40d34f97751538eb87823b09e3436f3f6565797",
+  "questions": {
+    "GE1": {
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    "GE2": {
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    "GE3": {
+      "decision": true,
+      "citation": true,
+      "scope": true
+    },
+    "GE4": {
+      "decision": false,
+      "citation": false,
+      "scope": false,
+      "note": "The split-budget inference is correct. The answer lacks the reported model and training scale, the determining citation, and the identifier-specific bound."
+    }
+  },
+  "unsupported_numbers": 0
+}

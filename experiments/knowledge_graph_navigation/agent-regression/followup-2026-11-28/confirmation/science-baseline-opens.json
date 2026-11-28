@@ -1,0 +1,152 @@
+{
+  "arm": "baseline",
+  "panel": "science",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [
+        "SciFact"
+      ],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 39,
+      "displayed_sha256": "858ce954f057badf4c5e84a8a1d511e9fe1b9294985ae0343e82c94bcd22fc53"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 6211,
+      "sha256": "e9c01a802adaaae61d18ad150d949cd81e0e7162679ec4749abae52b4bcb016c",
+      "displayed_bytes": 3403,
+      "displayed_sha256": "68789a89013d4e9f94585f556d94aeb2a7d5d6c5ec782eb4320a8409e07209cd"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "claim 51",
+        "agreement",
+        "first-paper",
+        "claim 833"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 2163,
+      "displayed_sha256": "9cfc929b39d0d0ef9f5c9801e88697976a4569b19d9ffc0403ae9ed08de3adb2"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json",
+      "bytes": 2042,
+      "sha256": "9ba3455d2af4cde51198a6b41f5be6a260608af008a7915948ae2e5144d9a1ee",
+      "displayed_bytes": 2042,
+      "displayed_sha256": "9ba3455d2af4cde51198a6b41f5be6a260608af008a7915948ae2e5144d9a1ee"
+    },
+    {
+      "route": "products/evidence-registry/study-scientific-citation.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269014,
+      "sha256": "be904f30e357044a402d3b41f432b4e79845b03f1df62bb781c0ca2d20361c69",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c43bb01ffed59c3ccad7de5d4d810fabe9d47b2233a6ded5d44e2e36c4142a84"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 6581,
+      "sha256": "9fe18620d8f90ce09e4f742325ae32bbb0332ded3f8bcf7e4fd674ce24151d8a",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "80b05118df4e8b0d1113101816acfdee0232bfff9d9c59b7cd44d48002157c8e"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/ceiling-unsupported.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/ceiling-unsupported.json",
+      "bytes": 2903,
+      "sha256": "583618a40343dae6d8a3153c3986a53e829186395ecf5cede6c472493de154e2",
+      "displayed_bytes": 2903,
+      "displayed_sha256": "583618a40343dae6d8a3153c3986a53e829186395ecf5cede6c472493de154e2"
+    },
+    {
+      "route": "products/evidence-registry/study-citation-retrieval.html",
+      "focus": [
+        "three-paper"
+      ],
+      "canonical_route": "products/evidence-registry/study-citation-retrieval.html",
+      "bytes": 257892,
+      "sha256": "cbe8dd26221a66481610a53333e984c1e0b61a3a1036077a6a1bbb7aef512942",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "bdb0419e010e6b37feba15ba87a559d96709eea14efe6b1c9c77c0eec25534c7"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5716,
+      "sha256": "1b6a4256004d440a24a9ab0d5e16f261886f31730da5f35ec3cd0f38b15b7563",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "018e8b29521f04ec6cd59f384ab9314ee8986323690a0cab78d5173d2cee5842"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 6526,
+      "sha256": "a31413f99038faf3ab81d31a94fba7364b1709afd55a20106df7780ed0b84b34",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "f1648f0c726d6042d82253aea1dae70d30f8fda8e7b28c8af736de7f9a57d8ba"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "review budget",
+        "two shared readings",
+        "scifact-release",
+        "scientific citation",
+        "decision rule"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 3511,
+      "displayed_sha256": "14f29ea2bbd1f30bf7c625befbec24921d6385fff496754ec9592f3f4a853d43"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "bytes": 4855,
+      "sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83",
+      "displayed_bytes": 4855,
+      "displayed_sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83"
+    },
+    {
+      "route": "products/evidence-registry/study-citation-retrieval.html",
+      "focus": [
+        "Run fresh-citation-retrieval, evidence revision"
+      ],
+      "canonical_route": "products/evidence-registry/study-citation-retrieval.html",
+      "bytes": 257892,
+      "sha256": "cbe8dd26221a66481610a53333e984c1e0b61a3a1036077a6a1bbb7aef512942",
+      "displayed_bytes": 84,
+      "displayed_sha256": "d0e113adffd3a022581e54f3483bc386af7df33d26d30388eadabec2feeb4ab0"
+    }
+  ]
+}

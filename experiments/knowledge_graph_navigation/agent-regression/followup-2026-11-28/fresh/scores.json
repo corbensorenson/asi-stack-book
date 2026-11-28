@@ -1,0 +1,106 @@
+{
+  "suite_revision": "23c444185280ecac1567b0e14561032e6004cce5c41e45ac1abe01251c051532",
+  "panels": {
+    "science": {
+      "baseline": {
+        "opens": 13,
+        "cumulative_bytes": 423424,
+        "deduplicated_bytes": 415701,
+        "displayed_bytes": 47322,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 12,
+        "cumulative_bytes": 1131094,
+        "deduplicated_bytes": 580376,
+        "displayed_bytes": 47473,
+        "discovery_opens": 0,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "segmentation": {
+      "baseline": {
+        "opens": 15,
+        "cumulative_bytes": 3031241,
+        "deduplicated_bytes": 1743317,
+        "displayed_bytes": 50108,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 7,
+        "cumulative_bytes": 473385,
+        "deduplicated_bytes": 402553,
+        "displayed_bytes": 22193,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    }
+  },
+  "totals": {
+    "baseline": {
+      "opens": 28,
+      "cumulative_bytes": 3454665,
+      "deduplicated_bytes": 2159018,
+      "displayed_bytes": 97430,
+      "discovery_opens": 3,
+      "decision": 8,
+      "citation": 8,
+      "scope": 8,
+      "quality": 24,
+      "available": 24,
+      "unsupported_numbers": 0
+    },
+    "candidate": {
+      "opens": 19,
+      "cumulative_bytes": 1604479,
+      "deduplicated_bytes": 982929,
+      "displayed_bytes": 69666,
+      "discovery_opens": 1,
+      "decision": 8,
+      "citation": 8,
+      "scope": 8,
+      "quality": 24,
+      "available": 24,
+      "unsupported_numbers": 0
+    }
+  },
+  "gates": {
+    "quality": true,
+    "scope": true,
+    "unsupported_numbers": true,
+    "deduplicated_bytes": true
+  },
+  "regression_passed": true,
+  "paired_intervals": {
+    "quality_points_per_panel": [
+      0.0,
+      0.0
+    ],
+    "deduplicated_bytes_per_panel": [
+      -1340764.0,
+      164675.0
+    ]
+  }
+}

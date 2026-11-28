@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "panels": {
+    "science": {
+      "path": "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-panels/science.md",
+      "ids": [
+        "FS1",
+        "FS2",
+        "FS3",
+        "FS4"
+      ]
+    },
+    "segmentation": {
+      "path": "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-panels/segmentation.md",
+      "ids": [
+        "FB1",
+        "FB2",
+        "FB3",
+        "FB4"
+      ]
+    }
+  },
+  "editions": {
+    "baseline": {
+      "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+      "artifact_name": "asi-stack-pages-552fb37f379249f6a726b98cbbbd06384710c55c",
+      "archive_sha256": "1ce01aa173ad490480eaa2c8b75f0e39adf50df89f5b0d5aa218734f3efca536",
+      "bundle_manifest_sha256": "5595b36d0f32d3a4f2c4ee3a478fd31d424ec130412a5ff0346ff2f615792ad1",
+      "build_run_id": 46120312308,
+      "deploy_run_id": 46121719134,
+      "artifact_id": 15253584251,
+      "original_archive_sha256": "4ada8096df07251a8153f63aa5cdc11c8dccbb919d3d4a4fd4d910fed74eebfa",
+      "replay_archive": "baseline-replay.zip"
+    },
+    "candidate": {
+      "revision": "db1df1da6f1f03c3bfb19189130b76469455b227",
+      "artifact_name": "asi-stack-pages-db1df1da6f1f03c3bfb19189130b76469455b227",
+      "archive_sha256": "474ca6742f20f345d9d9bf4c2cf27767efc20f491ad5689ee8b8fa565b67e9d6",
+      "bundle_manifest_sha256": "7cb13d009490bdc34742dd2a3ae4c86cfecdf83e66eae8a017752a1249595b40",
+      "build_run_id": 46126003281,
+      "deploy_run_id": 46127035070,
+      "artifact_id": 15256171932,
+      "original_archive_sha256": "9116d178bf504daf85cb62d1e2ceb7f780e77de56427e74472331ea8aed5afed",
+      "replay_archive": "candidate-replay.zip"
+    }
+  },
+  "inputs": {
+    "experiments/knowledge_graph_navigation/agent-batch-lookup/read.py": "3cebeea5500272e14e38467e156e755e301732e1ae11a296136fe71f1deeb113",
+    "experiments/knowledge_graph_navigation/agent-publication/read.py": "985307f28eb059841dbbf543317f1e74f28e563822637d6a2a60c1773d1aab35",
+    "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-panels/science.md": "3953b6053476f08f046a834a8b6d91be7a780d806175abb5afcf7506e5ed7924",
+    "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-panels/segmentation.md": "cd789af00242346a81bb4b90abc1de29063b108e378d2304dd9c5c7fb8d89fbd",
+    "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-rubric.md": "6821484bd9f14f6d3e6c26bfa837001c9b784344b768ee75de83f0dc7f412f3d",
+    "experiments/knowledge_graph_navigation/agent-regression/protocol.md": "3397f82bb1e91eefdf5a7da7cdd8fe770e344dd4b541ae6bdb9db4fd0ff6fe14",
+    "experiments/knowledge_graph_navigation/agent-regression/regression.py": "9f79afbce2e846329254ad0716b8f3fda33f9c5186100e210e8eec7bc1d3142e",
+    "experiments/knowledge_graph_navigation/reader-access/read.py": "ec3037352d92901bf13bd3285d729458be5c9965811b11423096a12182f9c91c",
+    "skills/asi-stack-reader/scripts/read_book.py": "824b0cfa24936a9a4c080d655cea2a5f1241c6f42e2b1f7fcb675d7490e14bf5",
+    "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/protocol.md": "02c1d6edec81b7188158ddf18c9af77f5c9d44a9807a8cff13780e1f715ccdf3"
+  },
+  "rubric_path": "experiments/knowledge_graph_navigation/agent-regression/followup-2026-11-28/fresh-rubric.md"
+}

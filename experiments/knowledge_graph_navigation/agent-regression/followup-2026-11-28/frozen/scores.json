@@ -1,0 +1,218 @@
+{
+  "suite_revision": "c75f8de8ca270bce20a3c951ad937bf00acc5009e312cc1fc70d6f46587ca960",
+  "panels": {
+    "assurance": {
+      "baseline": {
+        "opens": 17,
+        "cumulative_bytes": 1392134,
+        "deduplicated_bytes": 692999,
+        "displayed_bytes": 52000,
+        "discovery_opens": 3,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 8,
+        "cumulative_bytes": 1321074,
+        "deduplicated_bytes": 1321074,
+        "displayed_bytes": 34043,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "authority": {
+      "baseline": {
+        "opens": 15,
+        "cumulative_bytes": 3174090,
+        "deduplicated_bytes": 1530679,
+        "displayed_bytes": 47705,
+        "discovery_opens": 0,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 9,
+        "cumulative_bytes": 386118,
+        "deduplicated_bytes": 345530,
+        "displayed_bytes": 33036,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "formal": {
+      "baseline": {
+        "opens": 18,
+        "cumulative_bytes": 1403688,
+        "deduplicated_bytes": 997419,
+        "displayed_bytes": 52000,
+        "discovery_opens": 3,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 8,
+        "cumulative_bytes": 374733,
+        "deduplicated_bytes": 334145,
+        "displayed_bytes": 22008,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "generation": {
+      "baseline": {
+        "opens": 18,
+        "cumulative_bytes": 4550937,
+        "deduplicated_bytes": 2966644,
+        "displayed_bytes": 35225,
+        "discovery_opens": 1,
+        "decision": 3,
+        "citation": 3,
+        "scope": 3,
+        "quality": 9,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 9,
+        "cumulative_bytes": 1137565,
+        "deduplicated_bytes": 1096977,
+        "displayed_bytes": 24123,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 3,
+        "quality": 11,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "science": {
+      "baseline": {
+        "opens": 18,
+        "cumulative_bytes": 1629109,
+        "deduplicated_bytes": 1628146,
+        "displayed_bytes": 50732,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 7,
+        "cumulative_bytes": 306302,
+        "deduplicated_bytes": 306302,
+        "displayed_bytes": 25569,
+        "discovery_opens": 0,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "transfer": {
+      "baseline": {
+        "opens": 15,
+        "cumulative_bytes": 3679372,
+        "deduplicated_bytes": 2692080,
+        "displayed_bytes": 49250,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 11,
+        "cumulative_bytes": 2087630,
+        "deduplicated_bytes": 1195334,
+        "displayed_bytes": 33025,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    }
+  },
+  "totals": {
+    "baseline": {
+      "opens": 101,
+      "cumulative_bytes": 15829330,
+      "deduplicated_bytes": 10507967,
+      "displayed_bytes": 286912,
+      "discovery_opens": 10,
+      "decision": 23,
+      "citation": 23,
+      "scope": 23,
+      "quality": 69,
+      "available": 72,
+      "unsupported_numbers": 0
+    },
+    "candidate": {
+      "opens": 52,
+      "cumulative_bytes": 5613422,
+      "deduplicated_bytes": 4599362,
+      "displayed_bytes": 171804,
+      "discovery_opens": 9,
+      "decision": 24,
+      "citation": 24,
+      "scope": 23,
+      "quality": 71,
+      "available": 72,
+      "unsupported_numbers": 0
+    }
+  },
+  "gates": {
+    "quality": true,
+    "scope": true,
+    "unsupported_numbers": true,
+    "deduplicated_bytes": true
+  },
+  "regression_passed": true,
+  "paired_intervals": {
+    "quality_points_per_panel": [
+      0.0,
+      1.0
+    ],
+    "deduplicated_bytes_per_panel": [
+      -1539969.8333333333,
+      -266273.1666666667
+    ]
+  }
+}

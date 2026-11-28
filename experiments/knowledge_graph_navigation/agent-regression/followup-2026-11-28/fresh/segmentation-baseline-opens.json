@@ -1,0 +1,169 @@
+{
+  "arm": "baseline",
+  "panel": "segmentation",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 6211,
+      "sha256": "e9c01a802adaaae61d18ad150d949cd81e0e7162679ec4749abae52b4bcb016c",
+      "displayed_bytes": 3403,
+      "displayed_sha256": "68789a89013d4e9f94585f556d94aeb2a7d5d6c5ec782eb4320a8409e07209cd"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 1142,
+      "displayed_sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "ByteFlow",
+        "H-Net",
+        "JEPA",
+        "Table 3",
+        "learned segmentation"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 1996,
+      "displayed_sha256": "72507f3d7ef359ae1904a7b418045ce5cd466373e975a1fedd1f3e6a3bef4750"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "ByteFlow",
+        "trained chunkers",
+        "H-Net",
+        "Platonic JEPA"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 136019,
+      "sha256": "eb3aa70b61f374b6e3281aa22104f5ded4bc8e88c813fa2d766dd7449fed8bc9",
+      "displayed_bytes": 1188,
+      "displayed_sha256": "d5b09b21cb150c5855c855b6f3b04fab590fe67913466254fb2b82365bfd4227"
+    },
+    {
+      "route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/h-net-learns-the-sequence-hierarchy.json",
+      "focus": [],
+      "canonical_route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/h-net-learns-the-sequence-hierarchy.json",
+      "bytes": 3928,
+      "sha256": "7e5a9e8b2c77a0320bdd0aa19e6a64f4dec86159260f3107e063b246dcd72b56",
+      "displayed_bytes": 3928,
+      "displayed_sha256": "7e5a9e8b2c77a0320bdd0aa19e6a64f4dec86159260f3107e063b246dcd72b56"
+    },
+    {
+      "route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/jepa-is-a-prediction-objective-not-a-complete-agent.json",
+      "focus": [],
+      "canonical_route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/jepa-is-a-prediction-objective-not-a-complete-agent.json",
+      "bytes": 3023,
+      "sha256": "08ac5523581a577e94fb51c6ed02120dcb27aeee118599eff0c59c18dddeb9a5",
+      "displayed_bytes": 3023,
+      "displayed_sha256": "08ac5523581a577e94fb51c6ed02120dcb27aeee118599eff0c59c18dddeb9a5"
+    },
+    {
+      "route": "papers/index.html",
+      "focus": [
+        "ByteFlow"
+      ],
+      "canonical_route": "papers/index.html",
+      "bytes": 70832,
+      "sha256": "8bb473c4ace51825ca360250d6ead5cf827bc33a7ae4a81690cc96e25ed52fb4",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "focus": [
+        "ByteFlow"
+      ],
+      "canonical_route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "bytes": 429308,
+      "sha256": "a5d3bef40f3d75e4a49dc1509255855cb932812a02593c0a5afa11699594c722",
+      "displayed_bytes": 2756,
+      "displayed_sha256": "4f0c8380f717f91d9a2b228220c1016df98596c907f2c8c9326330b1b05f2123"
+    },
+    {
+      "route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "focus": [
+        "controller identifier"
+      ],
+      "canonical_route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "bytes": 429308,
+      "sha256": "a5d3bef40f3d75e4a49dc1509255855cb932812a02593c0a5afa11699594c722",
+      "displayed_bytes": 3803,
+      "displayed_sha256": "f81688191a16ed8ada371eb0a597d2a27fc0468d80fc988bece98510b1f33094"
+    },
+    {
+      "route": "agent/sections.json",
+      "focus": [
+        "ByteFlow"
+      ],
+      "canonical_route": "agent/sections.json",
+      "bytes": 695701,
+      "sha256": "f44badf7ec371511688b1830ef73d34d74bb455d2613d8183583aedc48cc9190",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "db68b8ccc7a8a223888fe1ea62b5da4d4433b5a9dea9f89e85f8f2c298219dff"
+    },
+    {
+      "route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "focus": [
+        "55.11"
+      ],
+      "canonical_route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "bytes": 429308,
+      "sha256": "a5d3bef40f3d75e4a49dc1509255855cb932812a02593c0a5afa11699594c722",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "e27c94f23c437f81e823dc129c0568db09ebc375c311dcd37b4100ba2489849e"
+    },
+    {
+      "route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/a-fixed-budget-for-learned-byte-boundaries.json",
+      "focus": [],
+      "canonical_route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/a-fixed-budget-for-learned-byte-boundaries.json",
+      "bytes": 1369,
+      "sha256": "0f081b69c34f5f029492a9666f912f78f4b7c29f1a30ea80d0117afcb2fac3e3",
+      "displayed_bytes": 1369,
+      "displayed_sha256": "0f081b69c34f5f029492a9666f912f78f4b7c29f1a30ea80d0117afcb2fac3e3"
+    },
+    {
+      "route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "focus": [
+        "local coding-rate"
+      ],
+      "canonical_route": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html",
+      "bytes": 429308,
+      "sha256": "a5d3bef40f3d75e4a49dc1509255855cb932812a02593c0a5afa11699594c722",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c2b60a83e68ea315318a7542c0b6927efa9b486ccd0af62f8b93178f0a229b0f"
+    },
+    {
+      "route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/source-crosswalk.json",
+      "focus": [
+        "ByteFlow"
+      ],
+      "canonical_route": "agent/sections/replaceable-cognitive-substrates-beyond-transformer-monoculture/source-crosswalk.json",
+      "bytes": 74165,
+      "sha256": "04f2546d69e73dd90194a7f0f37a369d54c8209c0984a7ba33325e693ddcc4df",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "87ed450825d7c16676df591588965d36da3a8b5b6339dec9731079c0fcfe1195"
+    }
+  ]
+}

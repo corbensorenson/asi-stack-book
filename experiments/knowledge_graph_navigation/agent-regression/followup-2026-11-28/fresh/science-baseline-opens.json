@@ -1,0 +1,138 @@
+{
+  "arm": "baseline",
+  "panel": "science",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [
+        "SciFact"
+      ],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 39,
+      "displayed_sha256": "858ce954f057badf4c5e84a8a1d511e9fe1b9294985ae0343e82c94bcd22fc53"
+    },
+    {
+      "route": "products/evidence-registry/research-agenda.html",
+      "focus": [
+        "SciFact"
+      ],
+      "canonical_route": "products/evidence-registry/research-agenda.html",
+      "bytes": 5592,
+      "sha256": "d5dba7b32b43fbd67cfa867ae0d364659ee2e3da8ceb62a5faaab246d41ed8d8",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 6211,
+      "sha256": "e9c01a802adaaae61d18ad150d949cd81e0e7162679ec4749abae52b4bcb016c",
+      "displayed_bytes": 3403,
+      "displayed_sha256": "68789a89013d4e9f94585f556d94aeb2a7d5d6c5ec782eb4320a8409e07209cd"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "SciFact claim 75",
+        "SciFact-Open claim 833",
+        "three-paper selector",
+        "complete highlights"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 2202,
+      "displayed_sha256": "88d76f19c6ba24a616cdbed126f6429fb8938a09140f2a01d92d920b097c63d9"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json",
+      "bytes": 2036,
+      "sha256": "a8a516267d8830a1091be83c19a43d7575a642f7f568f8d5604b89ab61c6ebb6",
+      "displayed_bytes": 2036,
+      "displayed_sha256": "a8a516267d8830a1091be83c19a43d7575a642f7f568f8d5604b89ab61c6ebb6"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 6581,
+      "sha256": "9fe18620d8f90ce09e4f742325ae32bbb0332ded3f8bcf7e4fd674ce24151d8a",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "80b05118df4e8b0d1113101816acfdee0232bfff9d9c59b7cd44d48002157c8e"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "focus": [
+        "result_sha256"
+      ],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 6581,
+      "sha256": "9fe18620d8f90ce09e4f742325ae32bbb0332ded3f8bcf7e4fd674ce24151d8a",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "80b05118df4e8b0d1113101816acfdee0232bfff9d9c59b7cd44d48002157c8e"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5716,
+      "sha256": "1b6a4256004d440a24a9ab0d5e16f261886f31730da5f35ec3cd0f38b15b7563",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "018e8b29521f04ec6cd59f384ab9314ee8986323690a0cab78d5173d2cee5842"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 7154,
+      "sha256": "f4d46ebd4103d30e86238155b3f36c3e03683b5d52b904dc2d5d03ebd322063e",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "9e27723bcb02969b3c73da8d73857e48b9368182334bc36fa50fcb6f8905f781"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 1142,
+      "displayed_sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/nodes/ce.json",
+      "focus": [
+        "evidence_case:fresh-citation-retrieval--833"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/nodes/ce.json",
+      "bytes": 50025,
+      "sha256": "2a9e6872104616407baa2521062ad7df4cf0d526da56e842b11b02283b474e26",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "9d93b896a2643de6f53e473dd9802311b64ab4ba6983c9fce340f1a1790492da"
+    },
+    {
+      "route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "bytes": 9625,
+      "sha256": "0da0a2f54dba14ea87a6da298dca72279c9dbcfb6b6fe77744801f69d43b422b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c76611f9692004862acaa5b514d0bbd82879ce94ae5a73ef397d0f1f60bc585b"
+    }
+  ]
+}

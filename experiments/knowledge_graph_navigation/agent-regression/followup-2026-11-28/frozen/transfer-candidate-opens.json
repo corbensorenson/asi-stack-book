@@ -1,0 +1,114 @@
+{
+  "arm": "candidate",
+  "panel": "transfer",
+  "revision": "db1df1da6f1f03c3bfb19189130b76469455b227",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282195,
+      "sha256": "ae7ac8292c3d561ef9af51593ed6b7062dd9f09359514fd8688bb35171322af4",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a4abc7907dc89a59d270c830c25ab8448137d9edf3e12e3becc0bb6d01cc060f"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "b23",
+        "b24",
+        "four-bit pilot",
+        "hd-19"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40588,
+      "sha256": "57dfd27b8503016430b13e89be2d57d80a534a5ad7b29c083866ad98af532066",
+      "displayed_bytes": 2939,
+      "displayed_sha256": "5568791d3716d94649041cffc136e4524951440532570b91fe15c9006cd9d003"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json",
+      "bytes": 3619,
+      "sha256": "bd0091f416a3ff5eeb4a0954388870582c12e36271346986c12369d15f37eafb",
+      "displayed_bytes": 3619,
+      "displayed_sha256": "bd0091f416a3ff5eeb4a0954388870582c12e36271346986c12369d15f37eafb"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json",
+      "bytes": 5347,
+      "sha256": "123f29ca91178afbd307d99873e42d526acd7f1215b08cf7c80ecba513242cbe",
+      "displayed_bytes": 5347,
+      "displayed_sha256": "123f29ca91178afbd307d99873e42d526acd7f1215b08cf7c80ecba513242cbe"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "bytes": 5591,
+      "sha256": "957fa32f178d7fadc13ac9c14699d1c04b941450f5dcab890d193209437d1910",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "8dba15ad6d66ad135a69634d23b5c1e7883a8fb78098acfba57b7fb7cfb5a869"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/task-hd-19.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/task-hd-19.json",
+      "bytes": 1160,
+      "sha256": "feee6690cb08a2c54676cd2c01d540648e65d9d31c8dfa33b9c8d7fbe16f37c0",
+      "displayed_bytes": 1160,
+      "displayed_sha256": "feee6690cb08a2c54676cd2c01d540648e65d9d31c8dfa33b9c8d7fbe16f37c0"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer--case-hd-19-handles.json",
+      "focus": [],
+      "error": "KeyError"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "hd-19 handles",
+        "hd-19 expanded",
+        "external SyGuS hd-19",
+        "external SyGuS transfer"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40588,
+      "sha256": "57dfd27b8503016430b13e89be2d57d80a534a5ad7b29c083866ad98af532066",
+      "displayed_bytes": 2580,
+      "displayed_sha256": "370e505fdd1b38700e488654e05fca73c00196d1c99c751fe63511b5ec099415"
+    },
+    {
+      "route": "products/evidence-registry/study-forward-transfer.html#run-sygus-external-transfer--case-hd-19-handles",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-forward-transfer.html#run-sygus-external-transfer--case-hd-19-handles",
+      "bytes": 851708,
+      "sha256": "10e662c28d49b5f90eae7b9bfabc1f6c0c50ad5c8a24a83b425fdc737f1b3ce1",
+      "displayed_bytes": 625,
+      "displayed_sha256": "6c494c63159a3d3d9feeb030c98bd7af179dd383ae1075c2f85f39694e1ffa0e"
+    },
+    {
+      "route": "products/evidence-registry/study-forward-transfer.html#run-sygus-external-transfer--case-hd-19-expanded",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-forward-transfer.html#run-sygus-external-transfer--case-hd-19-expanded",
+      "bytes": 851708,
+      "sha256": "10e662c28d49b5f90eae7b9bfabc1f6c0c50ad5c8a24a83b425fdc737f1b3ce1",
+      "displayed_bytes": 629,
+      "displayed_sha256": "819ae846cdd51d57ae1520cc23181095a29bf5c0e980fb8d08ed6bc7f1aa4733"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "bytes": 5126,
+      "sha256": "9ef0d8defe8e9370247dbd2e33ac7c1ca4682fa1426a968af2bf8e355351a7ca",
+      "displayed_bytes": 5126,
+      "displayed_sha256": "9ef0d8defe8e9370247dbd2e33ac7c1ca4682fa1426a968af2bf8e355351a7ca"
+    }
+  ]
+}
