@@ -1,0 +1,205 @@
+{
+  "verified_at": "2026-11-28T11:51:52.034083+00:00",
+  "revision": "c833ed9fae198dae0580f1fcb2f5f2b46f351999",
+  "build_run_id": 46140433453,
+  "deploy_run_id": 46141789365,
+  "artifact_id": 15261669996,
+  "proof_lookup_bytes": 4704,
+  "mixed_lookup_bytes": 23615,
+  "contexts": [
+    "https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html#core-claim",
+    "https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html#core-claim",
+    "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-02-the-efficient-asi-hypothesis.html#what-the-current-work-establishes",
+    "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html#what-the-current-work-can-establish",
+    "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#verification-starts-with-obligations"
+  ],
+  "declarations": {
+    "evidence_passage:accepted_lease_is_bounded_versioned_and_unexpired": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/SecurityKernel.lean#L796",
+      "line": 796,
+      "source_sha256": "ef3c6923a618a8dddfc227a226c12cd6006c0688807f4f77cb462239f784c0a6"
+    },
+    "evidence_passage:accepted_secret_injection_is_scoped_mediated_and_preexpiry": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/SecurityKernel.lean#L817",
+      "line": 817,
+      "source_sha256": "ef3c6923a618a8dddfc227a226c12cd6006c0688807f4f77cb462239f784c0a6"
+    },
+    "evidence_passage:circle_public_consumer_gate_missing_mutation_control_rejected": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/ProofCarryingContracts.lean#L293",
+      "line": 293,
+      "source_sha256": "f41c9b29fbf3d1b641bffeb7f5a858970b7be029402cef09ba919991c8f6f4ec"
+    },
+    "evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/ProofCarryingContracts.lean#L270",
+      "line": 270,
+      "source_sha256": "f41c9b29fbf3d1b641bffeb7f5a858970b7be029402cef09ba919991c8f6f4ec"
+    },
+    "evidence_passage:commitment_signals_cannot_recover_effective_enforcement": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/InstitutionalLegitimacyReview.lean#L463",
+      "line": 463,
+      "source_sha256": "8da84763d1288a27d91cc0219a318e40f0fdd5788ac3157346a700c3d2d85a77"
+    },
+    "evidence_passage:local_mandate_cannot_authorize_distinct_jurisdiction": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/InstitutionalLegitimacyReview.lean#L39",
+      "line": 39,
+      "source_sha256": "8da84763d1288a27d91cc0219a318e40f0fdd5788ac3157346a700c3d2d85a77"
+    },
+    "evidence_passage:participation_signals_cannot_recover_representation": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/InstitutionalLegitimacyReview.lean#L442",
+      "line": 442,
+      "source_sha256": "8da84763d1288a27d91cc0219a318e40f0fdd5788ac3157346a700c3d2d85a77"
+    },
+    "evidence_passage:provider_signals_cannot_recover_population_resilience": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/SocietalResilienceReview.lean#L450",
+      "line": 450,
+      "source_sha256": "01f72e2c5fb027ab72ebda32721312438f3c409b98c24b802d2117db4a969430"
+    },
+    "evidence_passage:selected_route_has_minimum_modeled_cost": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/Efficiency.lean#L175",
+      "line": 175,
+      "source_sha256": "eb1c43210adb9fb4dc8f13c5fca1fade6161909c1588b09ac936ea08345b2544"
+    },
+    "evidence_passage:selected_route_is_a_listed_eligible_candidate": {
+      "url": "https://github.com/corbensorenson/asi-stack-book/blob/c833ed9fae198dae0580f1fcb2f5f2b46f351999/lean/AsiStackProofs/Efficiency.lean#L130",
+      "line": 130,
+      "source_sha256": "eb1c43210adb9fb4dc8f13c5fca1fade6161909c1588b09ac936ea08345b2544"
+    }
+  },
+  "verified_assets": {
+    "agent-index.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent-index.json",
+      "bytes": 1751,
+      "sha256": "1cec6644228027f5af132584352a83ea42c4bb29c90e720897f2ca151b6fd0b0"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json",
+      "bytes": 3212,
+      "sha256": "4ddc3945803cc9ec66332338292dc655733dfaa92495c702ed2bf430218301f1"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json",
+      "bytes": 3368,
+      "sha256": "ead71383a3db28e0753efbe77c2402d61d0fbadad3048ecca0db34f4d7034892"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json",
+      "bytes": 3081,
+      "sha256": "e2715d612fec0b41e6abb7fe4fb3dc6fb0b1a12680249224432e561cde59e281"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json",
+      "bytes": 2864,
+      "sha256": "1f9e88e4598893e56d0aa2469c87601ba0be39c4d5bead8639350b1533fd5014"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json",
+      "bytes": 2744,
+      "sha256": "c4ebac45cab01b597591dc4f2364301017f042f9b17b53c712e3af662c7617b7"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json",
+      "bytes": 2848,
+      "sha256": "0599fb214d68d6a3de3c6d0204a4183b811548f443647ce8fcb7a407fc54da2f"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json",
+      "bytes": 2870,
+      "sha256": "4489e63676b67022a6251a84d6e007ae840bec1eb7fb1816f1b9197ca03bdfb0"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json",
+      "bytes": 2721,
+      "sha256": "777cc00f12e07b15d7ff9091c0f7e4e3fc4c2b3a4a687ed9b53b5c3506d3dfca"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "bytes": 3289,
+      "sha256": "03a9e2dfa7d713d299ee962e6e732785910e03a5770295bde8a64b7cc367d112"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json",
+      "bytes": 3093,
+      "sha256": "da30515393c8134f92630ef270938030d99453fdc9760dc846e6cacb9ce280c3"
+    },
+    "agent/sections/circle-calculus-and-proof-carrying-ai-contracts/core-claim.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/circle-calculus-and-proof-carrying-ai-contracts/core-claim.json",
+      "bytes": 8732,
+      "sha256": "fbffea2cf99994a8892ec471da9628d96f6909a87fb23a78397e9d9b0b6c95b8"
+    },
+    "agent/sections/societal-resilience-and-misuse-defense/core-claim.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/societal-resilience-and-misuse-defense/core-claim.json",
+      "bytes": 3177,
+      "sha256": "ed160c0d735965525befefe3ba4906af50a68eeb2f0dd611aacc424ea4aa817f"
+    },
+    "agent/sections/unit-02/what-the-current-work-establishes.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-02/what-the-current-work-establishes.json",
+      "bytes": 2440,
+      "sha256": "db93156c7149ef401eebc8e24a400aae558707c6b990f689f4f0a6712fd38847"
+    },
+    "agent/sections/unit-08/what-the-current-work-can-establish.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-08/what-the-current-work-can-establish.json",
+      "bytes": 3910,
+      "sha256": "15660e355a5e6350cb58e7cfbd9f2052befb2e17b177fd170c3b322b0b61e93c"
+    },
+    "agent/sections/unit-15/verification-starts-with-obligations.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-15/verification-starts-with-obligations.json",
+      "bytes": 3204,
+      "sha256": "e5e53f40c4e412a1cec19fa82a39fe336fddb0505d003e85be78e13d480a1f2b"
+    },
+    "agent/topics/proofs.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/topics/proofs.json",
+      "bytes": 4704,
+      "sha256": "61aeb6b91595ee6f5d23a5966a429436a69948b9337049dca6a366cdc62ce3ea"
+    },
+    "agent/topics/studies-and-proofs.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/topics/studies-and-proofs.json",
+      "bytes": 23615,
+      "sha256": "d837b6c579d9ef16b2e6e0b68cb58670751452118e1046167c1a5102834db92d"
+    },
+    "chapters/circle-calculus-and-proof-carrying-ai-contracts.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/circle-calculus-and-proof-carrying-ai-contracts.html",
+      "bytes": 339589,
+      "sha256": "ab2a2aaef6439efde44f102d9cc37e040e418c1e8fc01288860c134e53a621bf"
+    },
+    "chapters/societal-resilience-and-misuse-defense.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/societal-resilience-and-misuse-defense.html",
+      "bytes": 326860,
+      "sha256": "4eb9aa7fd9ef8107f72645391c5195eb2e951804534c8f90c0af8babc8f608a3"
+    },
+    "index.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/index.html",
+      "bytes": 282818,
+      "sha256": "0dcd92f888b455c701805e42a5f0ea7b1223211334e0665d940ceeb33fd87c73"
+    },
+    "llms.txt": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/llms.txt",
+      "bytes": 1862,
+      "sha256": "d30f79e9c3f093600b438b53accec62be31d8d262957e89fc14325bc35c3f706"
+    },
+    "products/evidence-registry/SKILL.md": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/SKILL.md",
+      "bytes": 4074,
+      "sha256": "428abafff8431f525959f1297576eb27f6d6897a7b7ee735274038985ba9a993"
+    },
+    "products/evidence-registry/proof-declarations.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/proof-declarations.html",
+      "bytes": 9938,
+      "sha256": "b314adaf76c1096c1592d9c819adb3ce9b7c9fe0005b09e41d155ea662aa5ed5"
+    },
+    "reader/chapters/unit-02-the-efficient-asi-hypothesis.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-02-the-efficient-asi-hypothesis.html",
+      "bytes": 94364,
+      "sha256": "59070c686b53cb2a0d8390fe8fa48ce83e1cfaa5be923f4e467081c341a6dc18"
+    },
+    "reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html",
+      "bytes": 99144,
+      "sha256": "c71b1cdb46ad4b2420e2ff9f50da4ba4b1d20e3a46b6b006ad20ad4a2f01420d"
+    },
+    "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html",
+      "bytes": 115493,
+      "sha256": "d3cfede1b08af16898131d39fb53dba61b7b91a48b68d47272963e26d4cdec6e"
+    }
+  }
+}

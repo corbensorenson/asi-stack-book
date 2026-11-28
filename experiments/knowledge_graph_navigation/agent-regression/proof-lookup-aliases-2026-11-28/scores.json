@@ -1,0 +1,78 @@
+{
+  "suite_revision": "d7a99f761895ed7b62c845277d2ef6f51b2ad3801b7850b3298f4ac309b95049",
+  "panels": {
+    "application": {
+      "baseline": {
+        "opens": 9,
+        "cumulative_bytes": 307190,
+        "deduplicated_bytes": 307190,
+        "displayed_bytes": 29573,
+        "discovery_opens": 0,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 7,
+        "cumulative_bytes": 302221,
+        "deduplicated_bytes": 302221,
+        "displayed_bytes": 24903,
+        "discovery_opens": 0,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    }
+  },
+  "totals": {
+    "baseline": {
+      "opens": 9,
+      "cumulative_bytes": 307190,
+      "deduplicated_bytes": 307190,
+      "displayed_bytes": 29573,
+      "discovery_opens": 0,
+      "decision": 4,
+      "citation": 4,
+      "scope": 4,
+      "quality": 12,
+      "available": 12,
+      "unsupported_numbers": 0
+    },
+    "candidate": {
+      "opens": 7,
+      "cumulative_bytes": 302221,
+      "deduplicated_bytes": 302221,
+      "displayed_bytes": 24903,
+      "discovery_opens": 0,
+      "decision": 4,
+      "citation": 4,
+      "scope": 4,
+      "quality": 12,
+      "available": 12,
+      "unsupported_numbers": 0
+    }
+  },
+  "gates": {
+    "quality": true,
+    "scope": true,
+    "unsupported_numbers": true,
+    "deduplicated_bytes": true
+  },
+  "regression_passed": true,
+  "paired_intervals": {
+    "quality_points_per_panel": [
+      0.0,
+      0.0
+    ],
+    "deduplicated_bytes_per_panel": [
+      -4969.0,
+      -4969.0
+    ]
+  }
+}

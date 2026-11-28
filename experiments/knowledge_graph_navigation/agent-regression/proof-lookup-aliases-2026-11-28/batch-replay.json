@@ -1,0 +1,96 @@
+{
+  "catalog": "agent/topics/proofs.json",
+  "focus": [
+    "--batch",
+    "provider signals population recovery societal resilience",
+    "secret injection stop oscillation sensor",
+    "Circle consumer gate replay expiry fingerprint",
+    "finite selector quality cheaper countermodel"
+  ],
+  "original_journal": "experiments/knowledge_graph_navigation/agent-regression/proof-lookup-2026-11-28/application-candidate-opens.json",
+  "results": {
+    "baseline": {
+      "revision": "9f84414daa945f96077b962fc882b3fa3dd172d4",
+      "catalog_sha256": "f162d6c3f16d630eff6d4fe1c12954d827bbe92088a7aed95440276678f96d8d",
+      "catalog_bytes": 3682,
+      "hits": 3,
+      "results": [
+        {
+          "clue": "provider signals population recovery societal resilience",
+          "expected": "evidence_passage:provider_signals_cannot_recover_population_resilience",
+          "returned": [
+            "evidence_passage:provider_signals_cannot_recover_population_resilience",
+            "evidence_passage:participation_signals_cannot_recover_representation"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "secret injection stop oscillation sensor",
+          "expected": "evidence_passage:accepted_secret_injection_is_scoped_mediated_and_preexpiry",
+          "returned": [
+            "evidence_passage:accepted_secret_injection_is_scoped_mediated_and_preexpiry"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "Circle consumer gate replay expiry fingerprint",
+          "expected": "evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected",
+          "returned": [
+            "evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected",
+            "evidence_passage:circle_public_consumer_gate_missing_mutation_control_rejected"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "finite selector quality cheaper countermodel",
+          "expected": "evidence_passage:selected_route_has_minimum_modeled_cost",
+          "returned": [],
+          "hit": false
+        }
+      ]
+    },
+    "candidate": {
+      "revision": "c833ed9fae198dae0580f1fcb2f5f2b46f351999",
+      "catalog_sha256": "61aeb6b91595ee6f5d23a5966a429436a69948b9337049dca6a366cdc62ce3ea",
+      "catalog_bytes": 4704,
+      "hits": 4,
+      "results": [
+        {
+          "clue": "provider signals population recovery societal resilience",
+          "expected": "evidence_passage:provider_signals_cannot_recover_population_resilience",
+          "returned": [
+            "evidence_passage:provider_signals_cannot_recover_population_resilience",
+            "evidence_passage:commitment_signals_cannot_recover_effective_enforcement"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "secret injection stop oscillation sensor",
+          "expected": "evidence_passage:accepted_secret_injection_is_scoped_mediated_and_preexpiry",
+          "returned": [
+            "evidence_passage:accepted_secret_injection_is_scoped_mediated_and_preexpiry"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "Circle consumer gate replay expiry fingerprint",
+          "expected": "evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected",
+          "returned": [
+            "evidence_passage:circle_public_consumer_gate_promotion_overclaim_rejected",
+            "evidence_passage:circle_public_consumer_gate_missing_mutation_control_rejected"
+          ],
+          "hit": true
+        },
+        {
+          "clue": "finite selector quality cheaper countermodel",
+          "expected": "evidence_passage:selected_route_has_minimum_modeled_cost",
+          "returned": [
+            "evidence_passage:selected_route_has_minimum_modeled_cost",
+            "evidence_passage:selected_route_is_a_listed_eligible_candidate"
+          ],
+          "hit": true
+        }
+      ]
+    }
+  }
+}
