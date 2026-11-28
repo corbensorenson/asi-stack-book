@@ -494,6 +494,7 @@ def evidence_cases(graph):
                          title=selection["title"], question=selection["question"],
                          summary=". ".join(arms) + ".", limit=selection["limit"], method=row["condition"],
                          aliases=selection["aliases"], source_commit=run["source_commit"],
+                         study_run=run_key,
                          measurement="Authored paired case",
                          result_sha256=run["result_sha256"], date=run["date"],
                          url=run["url"].split("#", 1)[0] + "#" + anchor)

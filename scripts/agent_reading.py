@@ -244,6 +244,7 @@ def attach_evidence(files, records, routes, commit, read):
                                               conclusion=row["conclusion"],
                                               url=f"https://github.com/corbensorenson/asi-stack-book/blob/{commit}/{path}#L{line}")
     by_file = {}
+    by_id = {row["id"]: row for row in records}
     for row in records:
         path = routes.get(row["id"])
         if path is None:
@@ -253,6 +254,10 @@ def attach_evidence(files, records, routes, commit, read):
             packet["evidence_revision"] = row["source_commit"]
         if row.get("locators"):
             packet["locators"] = row["locators"]
+        if row.get("study_run"):
+            run = by_id[row["study_run"]]
+            packet["study_run"] = {key: run[key] for key in ("id", "title", "method", "limit", "section_url")}
+            packet["study_run"]["url"] = BOOK + run["url"]
         if row.get("measurement") == "Formal declaration":
             packet["declaration"] = declarations[row["title"]]
         by_file.setdefault(path, []).append(packet)
@@ -312,7 +317,8 @@ def publish(site, files, commit, read):
     primary = attach_sections(site, files, commit, records, routes)
     # Alternate locators carry their own canonical URL and text. Add the
     # evidence only to each record's deciding passage.
-    enriched = [dict(source_by_id[record["id"]], locators=record.get("locators", [])) for record in records]
+    enriched = [dict(source_by_id[record["id"]], locators=record.get("locators", []),
+                     section_url=record["section_url"]) for record in records]
     attach_evidence(files, enriched, primary, commit, read)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=lookup_rows(records))))

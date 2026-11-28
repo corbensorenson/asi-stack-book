@@ -1,0 +1,3 @@
+# Case context confirmation
+
+The first fresh science pair answered all four items but the new edition incurred a full study-page read when the agent checked the run method. Preserve that outcome. Test the subsequent case export change against the same pre-fix edition, `552fb37f`, on four newly authored questions. The panel uses familiar studies and asks for distinct decisions or facts, including the distinction between a case and its parent method. Freeze the prompts and rubric before dispatch, verify the second public deployment, and use one new independent session per arm. Apply the first comparison's allowance, reading rules, quality and cost gates. A single pair provides a local observation about the workflow.

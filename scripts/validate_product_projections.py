@@ -284,6 +284,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         byteflow = next((row for row in lookup["records"] if "ByteFlow" in row.get("aliases", [])), None)
         if byteflow is None or byteflow["id"] != "evidence_passage:byteflow-boundary-budget":
             errors.append("Compact lookup is missing the ByteFlow comparison")
+        discovery_by_id = {row["id"]: row for row in discovery["records"]}
         for row in discovery["records"]:
             for destination in [row, *row.get("locators", [])]:
                 direct = destination.get("section_url", "")
@@ -304,6 +305,14 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                     elif row["kind"] == "evidence_case" and not all(evidence.get(key) for key in
                             ("limit", "case_id", "case_sources", "result_sha256", "evidence_revision")):
                         errors.append("Case export lacks one or more citation fields: " + row["id"])
+                    elif row["kind"] == "evidence_case":
+                        run = evidence.get("study_run", {})
+                        expected = discovery_by_id.get(row["id"].replace("evidence_case:", "study_run:", 1).split("--", 1)[0], {})
+                        if (not run or run.get("id") != expected.get("id")
+                                or run.get("section_url") != expected.get("section_url")
+                                or run.get("url") != agent_reading.BOOK + expected.get("url", "")
+                                or not all(run.get(field) for field in ("method", "limit"))):
+                            errors.append("Case export does not link its run method and limits: " + row["id"])
                     elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
                         errors.append("Formal export lacks its exact declaration: " + row["id"])
         sections = load(site / agent["section_index"])

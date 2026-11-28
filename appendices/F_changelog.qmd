@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-28. Compact case exports now include the parent study's method, scope, and direct run export, keeping study context next to the deciding row.
+
 - 2026-11-28. Added ByteFlow's fixed-boundary comparison to evidence lookup and linked a compact SciFact catalog from the homepage, research studies, and reader skill.
 
 - 2026-11-28. Added a repeatable 24-question agent reading check with twelve fresh sessions. The candidate earned 69 of 72 rubric points versus 66 for the direct-link baseline and used 52.9% fewer deduplicated bytes. Both editions missed the ByteFlow result. [Protocol, answers, and offline replay](https://github.com/corbensorenson/asi-stack-book/tree/main/experiments/knowledge_graph_navigation/agent-regression).
