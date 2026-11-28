@@ -209,6 +209,18 @@ def serialize(data):
     return json.dumps(data, ensure_ascii=False, separators=(",", ":")) + "\n"
 
 
+def lookup_rows(records):
+    """Keep one small record per determining route for batched reading."""
+    rows = []
+    for row in records:
+        identity = row["id"]
+        if identity.startswith("evidence_passage:bibliography-") or (
+                identity.endswith("-download") and row["title"].endswith("-replay.zip")):
+            continue
+        rows.append({key: row[key] for key in ("id", "title", "aliases", "question", "section_url") if key in row})
+    return rows
+
+
 def publish(site, files, commit):
     routes = section_exports(site, files, commit)
     graph = site / DIRECTORY
@@ -228,12 +240,17 @@ def publish(site, files, commit):
                           title=row["title"].replace("_", " "))
         elif row.get("record_version") or (row.get("disposition") and row.get("locators")):
             record.update(summary=row.get("summary"), disposition=row.get("disposition"), limit=row.get("limit"))
+        if row.get("measurement") == "Worked sensitivity calculation":
+            record.update(disposition=row["disposition"], limit=row["limit"])
         records.append(record)
     attach_sections(site, files, commit, records, routes)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
+    files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
+                 evidence_lookup=dict(catalog="agent/lookup.json", match="id, title, aliases, or question",
+                                      read="Open the section_url for the exact passage. Cite its url."),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
                  section_index="agent/sections.json", section_template="agent/sections/{volume_id}/{anchor}.json",
                  proof_declarations="products/evidence-registry/proof-declarations.html",
@@ -248,6 +265,7 @@ def publish(site, files, commit):
 > Corben Sorenson’s living technical book on governed AI systems and the evidence behind its comparisons.
 
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
+- [Look up several evidence topics in one read](agent/lookup.json). Keep the returned section URLs and open those passages together.
 - [Discover evidence](agent/discovery.json) by title, alias, or question. Open a result’s `section_url` to read and cite its exact passage. Use the stable ID for graph relationships or case provenance.
 - [Look up an AI term](products/evidence-registry/knowledge-graph/dictionary.json) by headword or alias.
 - [Read one section](agent/sections.json) by chapter and anchor. Follow its canonical URL when citing.

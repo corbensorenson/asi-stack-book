@@ -266,6 +266,10 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if discovery["snapshot_id"] != agent["snapshot_id"] or any(
                 row.get("measurement") == "Case identifier" for row in discovery["records"]):
             errors.append("Compact discovery includes bulk cases or differs from the agent index snapshot")
+        lookup = load(site / agent["evidence_lookup"]["catalog"])
+        if (lookup["snapshot_id"] != agent["snapshot_id"] or lookup["source_commit"] != source_commit
+                or lookup["records"] != agent_reading.lookup_rows(discovery["records"])):
+            errors.append("Agent lookup does not match the revision-bound discovery routes")
         for row in discovery["records"]:
             for destination in [row, *row.get("locators", [])]:
                 direct = destination.get("section_url", "")

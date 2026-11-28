@@ -628,16 +628,20 @@
   },
   {
     "id": "repair-cost-threshold",
-    "title": "When repair cost erases the cheaper route’s advantage",
+    "title": "115.2-unit break-even repair price",
     "url": "chapters/resource-economics-and-token-budgets.html#repair-cost-threshold",
+    "question": "What does the 115.2-unit repair price mean in the affordability example?",
     "aliases": [
       "115.2",
       "115.2 units",
       "14.2 + pR",
-      "repair cost break-even"
+      "repair cost break-even",
+      "one repair in four",
+      "affordability example"
     ],
     "summary": "A verified route costs 14.2 units and manual review costs 43.0. At a one-in-four repair rate the break-even repair price is 115.2 units per repair.",
     "limit": "Illustrative sensitivity calculation in a synthetic fixture. Every job eventually yields one accepted outcome, and the manual price stays fixed.",
+    "disposition": "At a 25% repair rate, expected cost is 14.2 + 0.25R. A repair price of 115.2 ties the fixed 43-unit manual route if each job yields one accepted outcome.",
     "measurement": "Worked sensitivity calculation",
     "links": [
       {
