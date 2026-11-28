@@ -1,0 +1,106 @@
+{
+  "verified_at": "2026-11-28T09:35:56.691017+00:00",
+  "revision": "a2e05e107cb116985daf2af8f93d9db5033fef18",
+  "build_run_id": 46129650077,
+  "deploy_run_id": 46131079303,
+  "artifact_id": 15257921363,
+  "verified_assets": {
+    "index.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/index.html",
+      "sha256": "bc270c45042bf5da26890bdcdff18255d8061fb0061c6771644196f213b18f8b",
+      "bytes": 282370
+    },
+    "agent-index.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent-index.json",
+      "sha256": "bb9945e04d5ea8509d2dfa08230b217da6288f4a20f7105fa793112b8b9abbcc",
+      "bytes": 1191
+    },
+    "agent/topics/scifact.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/topics/scifact.json",
+      "sha256": "c94f5f8c6599b5e037924947b412efa218377f1f0349fc1f2d093b64727dbbe0",
+      "bytes": 6257
+    },
+    "products/evidence-registry/SKILL.md": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/SKILL.md",
+      "sha256": "f867f24b34e494599776de37d5165d9a5a4ae06c4e6dedeace51d11b094502a2",
+      "bytes": 3665
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "sha256": "41abf0ffa73d8d54fdfbfa33f8cc84cff3244c997e90732a8eeb4b9ede7a49ff",
+      "bytes": 5625
+    },
+    "products/evidence-registry/study-scientific-citation.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scientific-citation.html",
+      "sha256": "fbe5034de3b44da868c4bab796b6bd9c6f3e31369f1c69404ae72b4f05320bcf",
+      "bytes": 269207
+    },
+    "products/evidence-registry/scifact-release-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/scifact-release-replay.zip",
+      "sha256": "50c3c73f6ba2784c8f54577b2430a5ed25f7cbc4ebf9f99a5325fce05f8e9aec",
+      "bytes": 304606
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "sha256": "077f35a4454e04bbff43a768aae74b66c547b7c7956bbd1362e1b65048c9d0d3",
+      "bytes": 5937
+    },
+    "products/evidence-registry/study-citation-retrieval.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-citation-retrieval.html",
+      "sha256": "0cfbc652e19335c073c5bb46dfc8c2a906445b207c0ee60fbfc1e598e268a0f5",
+      "bytes": 258173
+    },
+    "products/evidence-registry/fresh-citation-retrieval-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/fresh-citation-retrieval-replay.zip",
+      "sha256": "df599e777a67e9e5a096e189ad88a36c38f3f7127fc0942e2cac2b9d6181a018",
+      "bytes": 408606
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "sha256": "cb13d7366d68a6f254536359433871a37e430a05b1578264adb55217739bc2f1",
+      "bytes": 5176
+    },
+    "products/evidence-registry/three-paper-selection-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/three-paper-selection-replay.zip",
+      "sha256": "77bded2d502d5fb31acc9febc8b97453deb179526594fc68ab2d0243ba533858",
+      "bytes": 468695
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json",
+      "sha256": "c0f2505f029f133e36d4c4cc10db92e9f89e31f533212e1e9a6c22c8d12176fd",
+      "bytes": 3523
+    }
+  },
+  "study_routes": {
+    "scifact-release": {
+      "previous_bytes": 6526,
+      "compact_bytes": 5625,
+      "full_page_bytes": 269207,
+      "replay_bytes": 304606,
+      "protocol": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "protocol_bytes": 4855,
+      "protocol_sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83",
+      "canonical_citation": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scientific-citation.html#run-scifact-release"
+    },
+    "fresh-citation-retrieval": {
+      "previous_bytes": 7154,
+      "compact_bytes": 5937,
+      "full_page_bytes": 258173,
+      "replay_bytes": 408606,
+      "protocol": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6635c1e1b605e5fb426a44e8a47ad3a01dca1a46/experiments/scifact_retrieval_followup/protocol.md",
+      "protocol_bytes": 4413,
+      "protocol_sha256": "80c052e65b92b901d0b7efc143cd749935d5d000674b6095851a1f96996db9b2",
+      "canonical_citation": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval"
+    },
+    "three-paper-selection": {
+      "previous_bytes": 5716,
+      "compact_bytes": 5176,
+      "full_page_bytes": 258173,
+      "replay_bytes": 468695,
+      "protocol": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/c965253fceea696df439dbd60bf8fbe54220d725/experiments/scifact_three_papers/protocol.md",
+      "protocol_bytes": 2150,
+      "protocol_sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef",
+      "canonical_citation": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-citation-retrieval.html#run-three-paper-selection"
+    }
+  }
+}
