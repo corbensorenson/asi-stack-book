@@ -1,0 +1,542 @@
+{
+  "verified_at": "2026-11-28T10:58:18.556517+00:00",
+  "revision": "da9bd7cd2ae33b7935a7e67047b2cd054e11d8aa",
+  "build_run_id": 46136415382,
+  "deploy_run_id": 46137508539,
+  "artifact_id": 15259634166,
+  "study_run_count": 23,
+  "proof_count": 10,
+  "reviewed_case_count": 12,
+  "replay_kit_count": 11,
+  "catalog_bytes": 22660,
+  "general_catalog_bytes": 41413,
+  "recorded_results": {
+    "study_run:receiver-live-transport": {
+      "url": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-results.json",
+      "bytes": 94021,
+      "sha256": "fe178bbf11ddd79b5af3153e59c66e65111731127f7e2cd799790736842874c0"
+    },
+    "study_run:receiver-distribution": {
+      "url": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/results.json",
+      "bytes": 79649,
+      "sha256": "2b714ba994d960a02a0c3ff049d92dfbaefc17079109778c9c4b1f2431e98a6f"
+    }
+  },
+  "verified_assets": {
+    "agent-index.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent-index.json",
+      "bytes": 1715,
+      "sha256": "fb76c2c3e2d16cf0dc9ce6b0c39d4f4ef8f8f818676cd8eb807169d66369a40e"
+    },
+    "agent/lookup.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/lookup.json",
+      "bytes": 41413,
+      "sha256": "88fdf7bba9ca6ae55ec1433f67b6c5aa4b86aa8d3334dfc3e71fa87f94736b66"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json",
+      "bytes": 2526,
+      "sha256": "9b088a5866d28fc62a6bfe2e507093e6b0364c0af937b122246856760b6ec387"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json",
+      "bytes": 2682,
+      "sha256": "1a876be2f90515ccc9a70c975c5eeef35591d944a83feec1c915bedd1085c5f2"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json",
+      "bytes": 2494,
+      "sha256": "7875d749fac8f9673f98bebd19d71168f9f9025506fc8251b7a53486c775fc62"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json",
+      "bytes": 2277,
+      "sha256": "af47ffda513b73c6fe935855cc6719eb077ea45ee4acf82700e93b00ba170ec3"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json",
+      "bytes": 2086,
+      "sha256": "d38dc71da93ee79d93c208da93656dfdcb21461f69489cda5e45ac316ea1a77f"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json",
+      "bytes": 2190,
+      "sha256": "05208463c7a8a9d6ff98cee3609006182965f92e2457899daba097479c313bba"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json",
+      "bytes": 2212,
+      "sha256": "168a9f1678247dcc326c3f474b26c44d5fa334d59f6031089b8ac8cd250870bf"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json",
+      "bytes": 2120,
+      "sha256": "bb925424b6aec7fb4a1c75f519897db3593c7a346cef088933c6079732744ae6"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "bytes": 2308,
+      "sha256": "86399f308765722c11f5f2441049753bc91d0fcb46ae63df4c9a7a33e77d7504"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json",
+      "bytes": 2112,
+      "sha256": "cfff21597aadba5c902456cb736140e7cbcaa676a333e50d5eb01336b0b42e13"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/current-decision.json",
+      "bytes": 2517,
+      "sha256": "9adb223b1b3a068d1d228e3d98294985458cc2185a47760495748ab8d3cdf49e"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval--case-833.json",
+      "bytes": 8130,
+      "sha256": "4fce326bcd47f236de87ceffc465c1b4516b0b12e747e3ca38994c8765b9bb92"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 6402,
+      "sha256": "918db5865aaa7f8039f86165da5cf424ed41b7871685913eff6e415eacf2b89d"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5344,
+      "sha256": "eb544ef01a4f8e738ae3452090653f67bc9316733c395529e0520adc5e381350"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/current-decision.json",
+      "bytes": 2418,
+      "sha256": "090febdc761c4e4a3fc44e4477198e7fa5c5ce4120fec0f2edfbfd59dee04ef6"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-atlas.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-atlas.json",
+      "bytes": 3626,
+      "sha256": "fdc10b80ee0802cce1a8307a0f9b57a2512b75fa2f634713bf23eb5b738bfd6e"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched--case-c3.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched--case-c3.json",
+      "bytes": 4042,
+      "sha256": "76ba95888fae47d023f178e83e7945019f124d299f586238e6b4cf1151b2dccd"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "bytes": 4201,
+      "sha256": "deba51ba6a32da777fffb0035edb3e6582795c5f5d814055ba10ed6cb122212d"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json",
+      "bytes": 4643,
+      "sha256": "788389acc313f3e5f805c69302b3bc5055a3adf34fdf73f0382495937cb18a56"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/current-decision.json",
+      "bytes": 2486,
+      "sha256": "2c8e37219bff8e0ade165f47246ce7883a80cc4c23d58b096c22a942fe6bb8b3"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability--case-pair-024.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability--case-pair-024.json",
+      "bytes": 4547,
+      "sha256": "ce578b769ff1f5a8634040db2737e0c147b2bcaf620eca8ba22463ceab1f1242"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability--case-pair-064.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability--case-pair-064.json",
+      "bytes": 4397,
+      "sha256": "549d2a5684e7b601d54244363f3c9ff025bf67cc843f05ec172b949bfbfdbb79"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability.json",
+      "bytes": 5873,
+      "sha256": "86ff3d32077896152b07c10e1af51b1fb4a4439aa8712d26fe8f2526cd3d0479"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-crossed.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-crossed.json",
+      "bytes": 4554,
+      "sha256": "64bf5a87550cc83f3cebf5dad704222094a757e507fc29b485d96403a54fbc8a"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3837,
+      "sha256": "5f0700cd3d78de8fd17ca820d01334ddbc68851d4d136d6a2bfdcab829c056f3"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "bytes": 6262,
+      "sha256": "d34354f529be4853d411c6714ad56af7ed2f73e421ead6da99afd174a3b535a6"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "bytes": 4295,
+      "sha256": "dbdacc2a459bb286e5238a6f0852bba8bcb0d31192848d1e5105a0b3f5522a81"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/current-decision.json",
+      "bytes": 2569,
+      "sha256": "64494f1176a4483d575b593d5cdc866736d16f6abcbdcae48d802b396d172bfa"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "bytes": 4588,
+      "sha256": "9e43c9edd52e3662636b8a0e73c3cedc77b5755e2b024042aa9bc6d6be868722"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json",
+      "bytes": 5357,
+      "sha256": "17f78eb5cd16762adc38699b15bf41e6a9128db45730c80abb03b282e681c5a4"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial.json",
+      "bytes": 7402,
+      "sha256": "82262642e4982835f055b2e550bc76a1bffd1bc245d5fe0cb7911c9040e17ac6"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "bytes": 5756,
+      "sha256": "7556bc46f0dee353f286d92c5d2bc3e7ec9ffd691cebf610acd8be9e8c2ba574"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json",
+      "bytes": 6909,
+      "sha256": "7d496fdd1e2d18be6549a8248bc3895d6f83e34424911ce05cec307ed515df1d"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json",
+      "bytes": 6754,
+      "sha256": "eb62ede742725c8d0c8fda5533a682fda993b5abcb8b293dab3803de178f03c0"
+    },
+    "agent/passages/products/evidence-registry/study-matched-release/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-matched-release/anchors/current-decision.json",
+      "bytes": 2501,
+      "sha256": "959b71b068d282a1b04ba0a6c0285da277635fb0541fc597a68e209ccb814f4d"
+    },
+    "agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json",
+      "bytes": 10592,
+      "sha256": "1410bb84710695987c2b981693791c42326db324f43018dd4158ccff7235725b"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/current-decision.json",
+      "bytes": 2468,
+      "sha256": "0421377f5e0e8571d58c32f667c22f2cf713cbb0788de49d6813f11c0fc4ce6c"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-1-triage.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-1-triage.json",
+      "bytes": 3490,
+      "sha256": "43074d88eb4bd933f85426a6a5e333dacbaf0bf631bd77c6485d9a6f8ac5c59f"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-51-triage.json",
+      "bytes": 3523,
+      "sha256": "356b633ca03f4eb5bafda876695bc24f5c8d7b7607e549bd7162d6753c944476"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release--case-75-triage.json",
+      "bytes": 3517,
+      "sha256": "037695282e66f5820ef57eec4058c6c4113dfcdbd3427765602a293adb674616"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 6601,
+      "sha256": "9b8c0390ac6a49d71ee77e746496b34b0f2b9ab823d064728e742752446e2135"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/current-decision.json",
+      "bytes": 2514,
+      "sha256": "3f67de52f3053b5331b0b28dadf9e42b6841f59ef4bc723552eced958dc7625c"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json",
+      "bytes": 3939,
+      "sha256": "b27799893e98153b7bb995c89024672c5ef6b4dd7da52a8d12f1091a667ba563"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json",
+      "bytes": 4380,
+      "sha256": "aa5cce4537438dffab2c7afdc8a7a11b7ce98ee0206be1a16315e6987e622ce7"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-git-retrospective.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/run-git-retrospective.json",
+      "bytes": 4084,
+      "sha256": "0838b7d14c30ca0f4b4c69eef0cd4ea723749e4ac8066438820ab8a2f4151086"
+    },
+    "agent/passages/products/evidence-registry/study-verification-load/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verification-load/anchors/current-decision.json",
+      "bytes": 2575,
+      "sha256": "128f1066379fc4a5db80a5944afe7bae5e4d2d57d33ab21fdbedcfdb9258d784"
+    },
+    "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "bytes": 4399,
+      "sha256": "c00b096a28d1867c4d0643fa252de7f3d7488ddecb0912a8199ebea0eb5332a2"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/current-decision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/current-decision.json",
+      "bytes": 3930,
+      "sha256": "503b6b48e0b95871426f2a0c5663242fe6aff1b5228571ee4345e998d93c468b"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "bytes": 7637,
+      "sha256": "85851849913846b46fc1ffc724cf1a3110b5de582eb7120127ca0e927f994759"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json",
+      "bytes": 4345,
+      "sha256": "11d448c4d9f97ca2ff07bda19bcbcb9681d813b30e72b0d39b2b1cae37aea59b"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary--case-fallback-expired-3-serving-check.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary--case-fallback-expired-3-serving-check.json",
+      "bytes": 4484,
+      "sha256": "8173fd77864b424dfd7346686b266f0346c24dae488a7d7bd963e94bc9ca1ab2"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json",
+      "bytes": 6493,
+      "sha256": "3fdf1e02d7f60a46b2c062a1b39da869863cb5021590e4b6e08310252d5b1b31"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness--case-successful-stale-lookup-1-release-check.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness--case-successful-stale-lookup-1-release-check.json",
+      "bytes": 4478,
+      "sha256": "09b4c9046e98f4fbf63ac758a4a6ff0db26977bcc44dcb233f4117c0ac97fe4f"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness.json",
+      "bytes": 5826,
+      "sha256": "07b1a1d5df1f39701b23e61eca62d4cc8c86976e9bbbb4ae1e9498fee4735286"
+    },
+    "agent/topics/studies-and-proofs.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/topics/studies-and-proofs.json",
+      "bytes": 22660,
+      "sha256": "be3dbaeceab24d6e841cd61ebd0968e4e1b613bf536dea93b92346bc45bb04ad"
+    },
+    "index.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/index.html",
+      "bytes": 282536,
+      "sha256": "9a1f7679308c750a365be1a09f6432a9526eb1029e1ed43d3f96b5dcd846825c"
+    },
+    "llms.txt": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/llms.txt",
+      "bytes": 1651,
+      "sha256": "6527081ddd046842ce5399c12d470a50403e6217be4a53d42c8502c2a1bd7ba8"
+    },
+    "products/evidence-registry/SKILL.md": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/SKILL.md",
+      "bytes": 3669,
+      "sha256": "c5f53d84335e7495ea0082c8ae52ea2b370eee3eb2178e288e5165e4597bd079"
+    },
+    "products/evidence-registry/cases-authority-commit-ordering.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-authority-commit-ordering.csv",
+      "bytes": 2665,
+      "sha256": "8f815debaff5f4f5b4182abb4edd6009817322d6da5bc25934e46cac2f2c3ea4"
+    },
+    "products/evidence-registry/cases-claim-review-atlas.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-claim-review-atlas.csv",
+      "bytes": 433,
+      "sha256": "9583927b11a522ba22765bfa70206ccddd41ace6d68a7c48024640a9707ade71"
+    },
+    "products/evidence-registry/cases-claim-review-matched.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-claim-review-matched.csv",
+      "bytes": 3458,
+      "sha256": "cc8e1cc1484e54be96fdeec5268f1039be70c1ec5842a419c1c88f3472a3d4ac"
+    },
+    "products/evidence-registry/cases-fresh-citation-retrieval.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-fresh-citation-retrieval.csv",
+      "bytes": 56024,
+      "sha256": "a2ba392c599947f7645de4d8412519080d31e538d93b1d7f33bc703f65af262d"
+    },
+    "products/evidence-registry/cases-git-retrospective.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-git-retrospective.csv",
+      "bytes": 1436,
+      "sha256": "55fb1d885bc1a1c57c58c277b714aa16ec2204159075339067c7e76fece586b9"
+    },
+    "products/evidence-registry/cases-paired-release-observers.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-paired-release-observers.csv",
+      "bytes": 73171,
+      "sha256": "f0edd66c34bdedd16acd9377e80e1e83b57508d09cf93350537f199ca3d60a0a"
+    },
+    "products/evidence-registry/cases-receiver-availability.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-receiver-availability.csv",
+      "bytes": 229731,
+      "sha256": "10ef21e058f1970462b51d310a7e5c8122624e2a2ce3559087ac815e663336a3"
+    },
+    "products/evidence-registry/cases-receiver-crossed.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-receiver-crossed.csv",
+      "bytes": 106115,
+      "sha256": "8433b37802e4cde7be642edb45de026b3b0a8645b40493921e88ff4d531ecb97"
+    },
+    "products/evidence-registry/cases-receiver-distribution.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-receiver-distribution.csv",
+      "bytes": 34295,
+      "sha256": "e00bc4be8e500eaa9995c2cf505ad3e519273ff5cec2cfeb679fdeb97636d9d1"
+    },
+    "products/evidence-registry/cases-receiver-effect-audit.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-receiver-effect-audit.csv",
+      "bytes": 107075,
+      "sha256": "7ec19bc7afce1176a3131fe3d9b4111b1485bba53feeca1fd05494bc38d20960"
+    },
+    "products/evidence-registry/cases-receiver-live-transport.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-receiver-live-transport.csv",
+      "bytes": 14684,
+      "sha256": "b16f6be5320c2e9cd3324a2de68e69834ca8e104be9cf2ec4fb214b4ac5c3cdd"
+    },
+    "products/evidence-registry/cases-reserved-revision-retrieval.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-reserved-revision-retrieval.csv",
+      "bytes": 6742,
+      "sha256": "d8e93a00241c65ef0123c13a23b2b4244861f514b825048862ed3de43a8db6c8"
+    },
+    "products/evidence-registry/cases-scifact-release.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-scifact-release.csv",
+      "bytes": 179311,
+      "sha256": "a500a1c8226663c6922eefebf0903a0ee80a864ac0db08f794a9458c21842a7f"
+    },
+    "products/evidence-registry/cases-sygus-external-transfer.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-sygus-external-transfer.csv",
+      "bytes": 16726,
+      "sha256": "f472cd4159b10a24cbf2bee65f86428e11ff4b0fdf11a882ab120952146df23f"
+    },
+    "products/evidence-registry/cases-three-paper-selection.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-three-paper-selection.csv",
+      "bytes": 65332,
+      "sha256": "01c51060a8b4d524addb337cfd9118e1821b995520dd5b75c2d9e5e50fc59067"
+    },
+    "products/evidence-registry/cases-transfer-factorial.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-transfer-factorial.csv",
+      "bytes": 426851,
+      "sha256": "e274981533f274ca0cae2525b09647b3e911151ec1b606635d9b82091f8a509c"
+    },
+    "products/evidence-registry/cases-transfer-pilot.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-transfer-pilot.csv",
+      "bytes": 9281,
+      "sha256": "a192ff2e3eb6fdbfd05dad8da46ab0b0d887d868478de94023f9697451185c1e"
+    },
+    "products/evidence-registry/cases-transfer-scheduler-audit.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-transfer-scheduler-audit.csv",
+      "bytes": 923069,
+      "sha256": "0ffd6719737e431e960cb356c707db0ff5a1e58bca12acae770b5a4fced798f6"
+    },
+    "products/evidence-registry/cases-verification-arrivals.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-verification-arrivals.csv",
+      "bytes": 4306,
+      "sha256": "cdea0f6e059f6964eef7c2c7ac9d13800b250df75c613408317666bf595d2532"
+    },
+    "products/evidence-registry/cases-verifier-floor-cache.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-verifier-floor-cache.csv",
+      "bytes": 48995,
+      "sha256": "7c2a80b31149941e1c0a48899938565c0c3b80721a451db00b6dcb69b4ccebba"
+    },
+    "products/evidence-registry/cases-verifier-paired.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-verifier-paired.csv",
+      "bytes": 14673,
+      "sha256": "581fbe7f847c5e75c43f0730c27ef4c9535747bfbd3d80ed88981e7828c26571"
+    },
+    "products/evidence-registry/cases-verifier-process-boundary.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-verifier-process-boundary.csv",
+      "bytes": 21415,
+      "sha256": "09d8a3d5f514d65416f2bc589d3d966df6c3c4a3660f4f6060a298fb945abe8e"
+    },
+    "products/evidence-registry/cases-verifier-revision-freshness.csv": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-verifier-revision-freshness.csv",
+      "bytes": 17607,
+      "sha256": "3700bb46540547e34d47cc1c6022f4b017c5e531dfe3541d06ff29899f8e3c13"
+    },
+    "products/evidence-registry/fresh-citation-retrieval-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/fresh-citation-retrieval-replay.zip",
+      "bytes": 408606,
+      "sha256": "df599e777a67e9e5a096e189ad88a36c38f3f7127fc0942e2cac2b9d6181a018"
+    },
+    "products/evidence-registry/instrument-audit-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/instrument-audit-replay.zip",
+      "bytes": 2967878,
+      "sha256": "dcfa7842fba1fec2deb84df966e6d64b5fb68a7d621c4326672f0f5e825b62d2"
+    },
+    "products/evidence-registry/paired-release-observers-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/paired-release-observers-replay.zip",
+      "bytes": 213867,
+      "sha256": "15d74842fe2b9783eb77daf76f973a02b9bf327879ca8f4a4fa76e8e65759bac"
+    },
+    "products/evidence-registry/receiver-availability-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/receiver-availability-replay.zip",
+      "bytes": 840674,
+      "sha256": "b8ca322b73f09837e9ec83c8fcb4bc294d24d7507d026a7c0d05e96238fc4154"
+    },
+    "products/evidence-registry/reserved-revision-retrieval-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/reserved-revision-retrieval-replay.zip",
+      "bytes": 161766,
+      "sha256": "05497d2fa06945ea679c3b00137265255f7cffbc6459c40533cf48f4c43858eb"
+    },
+    "products/evidence-registry/scifact-release-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/scifact-release-replay.zip",
+      "bytes": 304606,
+      "sha256": "50c3c73f6ba2784c8f54577b2430a5ed25f7cbc4ebf9f99a5325fce05f8e9aec"
+    },
+    "products/evidence-registry/scoped-git-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/scoped-git-replay.zip",
+      "bytes": 65234,
+      "sha256": "3d7fc701eee24266c86fc25bda993fd712c7b839e411b1144aa0c6f725739982"
+    },
+    "products/evidence-registry/study-citation-retrieval.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-citation-retrieval.html",
+      "bytes": 258221,
+      "sha256": "7df8d2c5cd5268ed8b49e519399a5d26be423ece84f8a32056cfe2a95faac2cd"
+    },
+    "products/evidence-registry/study-claim-review.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-claim-review.html",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b"
+    },
+    "products/evidence-registry/study-crossed-receiver.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe"
+    },
+    "products/evidence-registry/study-forward-transfer.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html",
+      "bytes": 852156,
+      "sha256": "1ed33be872d54af0db29172d23cf87c85ddc62e6ee32e6dabaad688c897c5447"
+    },
+    "products/evidence-registry/study-matched-release.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-matched-release.html",
+      "bytes": 79083,
+      "sha256": "69e586457259d4d627bfeb8d7ebc1807cc81537d65ac8f26adde4e100f381163"
+    },
+    "products/evidence-registry/study-scientific-citation.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269231,
+      "sha256": "7d971945a9ed78a51bd867f7ab6a3cf2ca7bf1ce58b0b3eb5735156b4fb201f2"
+    },
+    "products/evidence-registry/study-scoped-git.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html",
+      "bytes": 16185,
+      "sha256": "3eca96e27b9d98f19172aab5d4ab874feea3cd6106001391b1676350a10abc4c"
+    },
+    "products/evidence-registry/study-verification-load.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verification-load.html",
+      "bytes": 12852,
+      "sha256": "4772c32c39dcf82a4f0e56a0645810b9d768e7e25dd02a98c28890fc33f8a0bd"
+    },
+    "products/evidence-registry/study-verifier-rollout.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html",
+      "bytes": 137893,
+      "sha256": "cd6e90f66798fa7b2ad4483e5ece89aaf24971590a09d87939933742d25af8ab"
+    },
+    "products/evidence-registry/sygus-external-transfer-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/sygus-external-transfer-replay.zip",
+      "bytes": 48856,
+      "sha256": "cbf874c24dd3617eb96cd4dd568957136cabae427a0a14d8f18751c3bcc4d168"
+    },
+    "products/evidence-registry/three-paper-selection-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/three-paper-selection-replay.zip",
+      "bytes": 468695,
+      "sha256": "77bded2d502d5fb31acc9febc8b97453deb179526594fc68ab2d0243ba533858"
+    },
+    "products/evidence-registry/verification-arrivals-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/verification-arrivals-replay.zip",
+      "bytes": 168591,
+      "sha256": "6d6d9adf499d594ba8384368d072e2c3f519e5760c2e9ada9c6cbd0931b5c025"
+    },
+    "products/evidence-registry/verifier-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/verifier-replay.zip",
+      "bytes": 66291,
+      "sha256": "e06ec345142407a911d5f31b57ce726480e215c808a233f6e1eb2f99aa8c21d8"
+    }
+  }
+}
