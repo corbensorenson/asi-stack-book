@@ -1,0 +1,9 @@
+# ByteFlow and SciFact follow-up protocol
+
+Use the unchanged reader and three-field score from the original regression. Verify the candidate deployment before dispatch. Save the exact attested Pages bundle and the live verification record. Keep the same participant prompt, model configuration, entry page, and session allowance across editions within each comparison.
+
+Run the six original panels through fresh sessions against the original direct-link edition and the deployed candidate. Score the four original gates. Also report whether the candidate recovers full credit on the original ByteFlow question and whether science reading cost falls against the previously recorded candidate session. Distinguish that latter historical comparison from a new matched run.
+
+Freeze the two additional panels and their rubric before agent dispatch. Pair the newly deployed edition with the revision used as candidate in the preceding evaluation. The fresh science questions cover different cases, a different decision threshold workload, and a comparison of ranking arms. The fresh segmentation panel asks about fixed versus variable boundaries, transfer of reported scores, and neighboring learned representations. Its questions use the same public book and some of the same passages as the earlier trial. Freshness here concerns the question prompts and requested decisions.
+
+Report these panels separately. For science, require lower deduplicated bytes with no quality, scope, or unsupported-number regression. For segmentation, report performance on the two ByteFlow questions as well as neighbor questions and full-panel cost. Use the same unblinded rubric scoring and keep all responses, including misses. With one pair per focused panel, report observations per panel without interpreting resampling intervals as generalization bounds.
