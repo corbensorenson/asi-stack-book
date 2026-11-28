@@ -322,7 +322,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                             errors.append("SciFact passage lacks compact reading and escalation guidance: " + row["id"])
                         if row["kind"] == "study_run":
                             run_id = row["id"].split(":", 1)[1]
-                            route = (reading.get("protocol_url") or "").split("/blob/", 1)[-1]
+                            route = (reading.get("protocol_url") or "").removeprefix(agent_reading.RAW_REPO)
                             revision, _, protocol = route.partition("/")
                             if (not evidence or revision != evidence.get("evidence_revision") or not protocol
                                     or hashlib.sha256(read(Path(protocol))).hexdigest() != evidence.get("protocol_sha256")

@@ -7,9 +7,9 @@ from pathlib import PurePosixPath
 from urllib.parse import quote, unquote, urljoin, urlsplit
 
 from research_dictionary import DIRECTORY
-from research_studies import REPO
 
 BOOK = "https://corbensorenson.github.io/asi-stack-book/"
+RAW_REPO = "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
 SKIP = {"script", "style", "nav", "button", "svg", "iframe", "noscript", "template"}
 HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
@@ -282,7 +282,7 @@ def attach_evidence(files, records, routes, commit, read):
             if len(run_ids) == 1:
                 run = by_id[next(iter(run_ids))]
                 reading.update(
-                    protocol_url=REPO + f'/blob/{run["source_commit"]}/{run["protocol"]}',
+                    protocol_url=RAW_REPO + f'{run["source_commit"]}/{run["protocol"]}',
                     protocol_for="Open the pinned protocol for a method detail or decision rule absent from this export.",
                 )
                 if any(packet.get("featured_run") == run["id"] for packet in packets):
