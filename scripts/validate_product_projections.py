@@ -260,7 +260,8 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if not occurrences["occurrences"].get("concept:transformer"):
             errors.append("Missing transformer concordance")
         agent = load(site / "agent-index.json")
-        if agent["source_commit"] != source_commit or "agent-index.json" not in (site / "llms.txt").read_text():
+        if (agent["source_commit"] != source_commit or "agent-index.json" not in (site / "llms.txt").read_text()
+                or agent.get("reading") != agent_reading.READING):
             errors.append("Agent index is missing from discovery or differs from the publication revision")
         discovery = load(site / agent["evidence_discovery"])
         if discovery["snapshot_id"] != agent["snapshot_id"] or any(
@@ -268,6 +269,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             errors.append("Compact discovery includes bulk cases or differs from the agent index snapshot")
         lookup = load(site / agent["evidence_lookup"]["catalog"])
         if (lookup["snapshot_id"] != agent["snapshot_id"] or lookup["source_commit"] != source_commit
+                or lookup.get("reading") != agent_reading.READING
                 or lookup["records"] != agent_reading.lookup_rows(discovery["records"])):
             errors.append("Agent lookup does not match the revision-bound discovery routes")
         scifact_path = agent["evidence_lookup"]["topics"]["SciFact"]
@@ -275,7 +277,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         scifact_ids = {row["id"] for row in scifact["records"]}
         if (scifact_path != agent_reading.SCIFACT_LOOKUP
                 or scifact["snapshot_id"] != agent["snapshot_id"] or scifact["source_commit"] != source_commit
-                or scifact.get("reading") != agent_reading.SCIFACT_READ
+                or scifact.get("reading") != agent_reading.READING
                 or scifact["records"] != agent_reading.scifact_lookup_rows(discovery["records"])
                 or not {"study_run:scifact-release", "study_run:fresh-citation-retrieval", "study_run:three-paper-selection",
                         "evidence_case:scifact-release--75-triage", "evidence_passage:scifact-scoring-ceiling"} <= scifact_ids
@@ -299,6 +301,10 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 if (passage["source_commit"] != source_commit or not passage["text"] or not passage["url"].startswith(agent_reading.BOOK)
                         or not cited.path.endswith("/" + path) or unquote(cited.fragment) != fragment):
                     errors.append("Discovery export does not cite the exact rendered passage: " + destination["url"])
+                reading = passage.get("reading", {})
+                if (any(reading.get(k) != value for k, value in agent_reading.READING.items())
+                        or any(urlsplit(url).path.endswith(".zip") for url in passage["links"])):
+                    errors.append("Passage lacks compact reading guidance or exposes a replay link: " + destination["url"])
                 if destination is row:
                     evidence = next((record for record in passage.get("evidence", []) if record["id"] == row["id"]), None)
                     if evidence is None:
@@ -316,29 +322,45 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                             errors.append("Case export does not link its run method and limits: " + row["id"])
                     elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
                         errors.append("Formal export lacks its exact declaration: " + row["id"])
-                    if path in agent_reading.SCIFACT_STUDY_PAGES:
-                        reading = passage.get("reading", {})
-                        if any(reading.get(k) != value for k, value in agent_reading.SCIFACT_READ.items()):
-                            errors.append("SciFact passage lacks compact reading and escalation guidance: " + row["id"])
-                        if row["kind"] == "study_run":
-                            run_id = row["id"].split(":", 1)[1]
-                            route = (reading.get("protocol_url") or "").removeprefix(agent_reading.RAW_REPO)
-                            revision, _, protocol = route.partition("/")
-                            if (not evidence or revision != evidence.get("evidence_revision") or not protocol
-                                    or hashlib.sha256(read(Path(protocol))).hexdigest() != evidence.get("protocol_sha256")
-                                    or any(urlsplit(url).path.endswith(".zip") for url in passage["links"])
-                                    or "Download the offline protocol, inputs, replay and results" in passage["text"]
-                                    or f'href="{run_id}-replay.zip" download' not in (site / path).read_text()):
-                                errors.append("SciFact protocol or replay is absent or exposed at the wrong reading tier: " + row["id"])
+                    if row["kind"] == "study_run":
+                        route = (reading.get("protocol_url") or "").removeprefix(agent_reading.RAW_REPO)
+                        revision, _, protocol = route.partition("/")
+                        if (not evidence or revision != evidence.get("evidence_revision") or not protocol
+                                or hashlib.sha256(read(Path(protocol))).hexdigest() != evidence.get("protocol_sha256")
+                                or "Run from a checkout at this evidence revision" in passage["text"]
+                                or 'data-agent-verification><summary>Replay and verify this run' not in (site / path).read_text()):
+                            errors.append("Study protocol or replay is absent or exposed at the wrong reading tier: " + row["id"])
         sections = load(site / agent["section_index"])
+        chapter_path = agent["chapter_directory"]
+        chapter_directory = load(site / chapter_path)
+        if (chapter_path != agent_reading.CHAPTER_DIRECTORY or chapter_directory["source_commit"] != source_commit
+                or [row["id"] for row in chapter_directory["records"]] != [volume["id"] for volume in sections["volumes"]]
+                or (site / chapter_path).stat().st_size >= (site / agent["section_index"]).stat().st_size
+                or f'href="{chapter_path}"' not in (site / "index.html").read_text()):
+            errors.append("Compact chapter directory omits volumes, is not revision-bound, or lacks its homepage link")
         headings = {volume["id"]: set(map(tuple, volume["headings"])) for volume in subject["volumes"]}
+        compact_directory = {row["id"]: row for row in chapter_directory["records"]}
         for volume in sections["volumes"]:
+            identity = volume["id"]
+            volume_path = agent_reading.CHAPTER_INDEX_DIRECTORY + f"/{identity}.json"
+            chapter_url = agent_reading.BOOK + volume["path"]
+            chapter_index = load(site / volume_path)
+            chapter_rows = {row["id"]: row for row in chapter_index["records"]}
+            if (compact_directory[identity]["section_url"] != agent_reading.BOOK + volume_path
+                    or chapter_index["source_commit"] != source_commit or chapter_index["url"] != chapter_url
+                    or {(row["id"], row["title"]) for row in chapter_rows.values()} != headings.get(identity, set())
+                    or f'{volume_path}"' not in (site / volume["path"]).read_text()):
+                errors.append("Compact chapter index differs from the edition's rendered headings: " + identity)
             if {(row["anchor"], row["heading"]) for row in volume["sections"]} != headings.pop(volume["id"], set()):
                 errors.append("Agent section index differs from the rendered headings: " + volume["id"])
             for row in volume["sections"]:
                 passage = load(site / row["file"])
-                if passage["source_commit"] != source_commit or passage["url"] != (
-                        agent_reading.BOOK + volume["path"] + "#" + row["anchor"]):
+                default = chapter_rows[row["anchor"]]["section_url"]
+                compact = load(site / unquote(default.removeprefix(agent_reading.BOOK)))
+                if (passage["source_commit"] != source_commit or passage["url"] != chapter_url + "#" + row["anchor"]
+                        or compact["source_commit"] != source_commit or compact["url"] != passage["url"]
+                        or compact.get("reading") != agent_reading.READING
+                        or ("/compact/" in default and not compact.get("subsections"))):
                     errors.append("Agent section export has an incorrect citation: " + row["file"])
         if headings or sections["source_commit"] != source_commit:
             errors.append("Agent section index omits volumes or differs from the publication revision")

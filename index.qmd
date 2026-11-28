@@ -4,7 +4,7 @@ The ASI Stack is Corben Sorenson's living technical book on governed AI
 systems. It asks when ordinary change control is enough and what extra
 controls earn their cost.
 
-For SciFact questions, batch your clues in the [SciFact study and case lookup](agent/topics/scifact.json). For other evidence, use the [general lookup](agent/lookup.json). Open the returned `section_url` and cite its `url` directly once it answers the question. Use the pinned protocol for missing method details, the full page for material outside the exports, and the replay kit when reproducing a run.
+Start with the [compact evidence lookup](agent/lookup.json) for a result, case, or proof, or the [chapter and Reader directory](agent/chapters.json) to find a section by title. The [SciFact lookup](agent/topics/scifact.json) covers scientific citation. Open the matching `section_url` and cite its `url` when the evidence answers the question. Follow a subsection or pinned protocol for detail, the full page for material outside the exports, and the replay kit to reproduce a run.
 
 ## Choose the product you need
 

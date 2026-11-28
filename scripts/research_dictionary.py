@@ -192,6 +192,9 @@ class Headings(HTMLParser):
             self.main = False
 
 
+CHAPTER_INDEX_DIRECTORY = "agent/chapter-index"
+
+
 def subject_index(site, volumes, files, commit):
     sections, data = [], []
     terms = json.loads((site/DIRECTORY/"dictionary.json").read_bytes())["terms"]
@@ -223,7 +226,8 @@ def subject_index(site, volumes, files, commit):
         marker = '<nav aria-label="Terminology lookup">'
         prefix = '../' * (len(path.split('/'))-1)
         links = (marker+f'<a href="{prefix}{DIRECTORY}dictionary.html">AI dictionary</a> · '
-                 f'<a href="{prefix}terminology/subject-index.html#{escape(identity)}">Index of this chapter</a></nav>')
+                 f'<a href="{prefix}terminology/subject-index.html#{escape(identity)}">Index of this chapter</a> · '
+                 f'<a href="{prefix}{CHAPTER_INDEX_DIRECTORY}/{escape(identity)}.json">Compact section index</a></nav>')
         if '</main>' not in contents:
             raise ValueError(path)
         projected = (re.sub(re.escape(marker)+r'.*?</nav>', lambda _: links, contents, count=1, flags=re.S)

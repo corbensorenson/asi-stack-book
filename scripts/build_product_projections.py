@@ -654,7 +654,7 @@ def paired_case_table(run: dict, cases: list[dict], case_details=None) -> str:
     selectors = "".join(f'<option value="{key}">{label}</option>' for key, label in options)
     return (
         f'<h4>Paired cases</h4><p>{differences} of {len(cases)} cases have differing outcomes. '
-        f'<a href="cases-{run["id"]}.csv" download>Download paired-case CSV</a>.</p>'
+        f'<a href="cases-{run["id"]}.csv" download data-agent-verification>Download paired-case CSV</a>.</p>'
         f'<details data-study-cases open><summary>Inspect {len(cases)} paired cases</summary>'
         f'<p><label hidden>Filter paired cases <select>{selectors}</select></label> '
         f'<span role="status" data-case-count></span></p>'
@@ -815,9 +815,8 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
         f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'
         f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>' + replay
     )
-    if row["format"] in {"scifact_citation", "fresh_retrieval", "three_papers"}:
-        verification = ('<details data-agent-verification><summary>Replay and verify this run</summary>'
-                        + verification + '</details>')
+    verification = ('<details data-agent-verification><summary>Replay and verify this run</summary>'
+                    + verification + '</details>')
     return (
         f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
         f'{follows}<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
