@@ -1,0 +1,123 @@
+{
+  "arm": "baseline",
+  "panel": "evidence",
+  "revision": "a2e05e107cb116985daf2af8f93d9db5033fef18",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282370,
+      "sha256": "bc270c45042bf5da26890bdcdff18255d8061fb0061c6771644196f213b18f8b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a8b4652fa9ec2d579969a5cdea889d03f0af22b6c95400ba04778f2d26e1360c"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "verification-arrivals",
+        "versioned-register",
+        "receiver transport",
+        "selected_route_has_minimum_modeled_cost"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40588,
+      "sha256": "97d3663bba9d7ec1a81b4e25dd35bf2943f49370334976879f707ce1d2b5ff5d",
+      "displayed_bytes": 2869,
+      "displayed_sha256": "9cb0b18e96db23c1a521f1111a9cf5e2b10f4a957acd90f9b129f369beb64427"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "bytes": 4317,
+      "sha256": "c84d5acaab3472a8f8816c6a4625d2d677217d06fae240d729be7b577f294015",
+      "displayed_bytes": 4317,
+      "displayed_sha256": "c84d5acaab3472a8f8816c6a4625d2d677217d06fae240d729be7b577f294015"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "bytes": 4156,
+      "sha256": "8e9c482cb6dfdba9fe82de5bbfd0908a56221634b1c07dafb9c46901f6b3b62d",
+      "displayed_bytes": 4156,
+      "displayed_sha256": "8e9c482cb6dfdba9fe82de5bbfd0908a56221634b1c07dafb9c46901f6b3b62d"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "bytes": 4455,
+      "sha256": "94f963d6d51e285b526c2e3a44a45b794b823b6c9008c25929cca377cbb495e0",
+      "displayed_bytes": 4455,
+      "displayed_sha256": "94f963d6d51e285b526c2e3a44a45b794b823b6c9008c25929cca377cbb495e0"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "bytes": 1950,
+      "sha256": "625c6f7f291258457cf483d94fa2415ad28555844bafcf41816dd6190f72927e",
+      "displayed_bytes": 1950,
+      "displayed_sha256": "625c6f7f291258457cf483d94fa2415ad28555844bafcf41816dd6190f72927e"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "bytes": 2150,
+      "sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730",
+      "displayed_bytes": 2150,
+      "displayed_sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/results.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/results.md",
+      "bytes": 3548,
+      "sha256": "5179534106fc8b201ae171ba12f04380868eca7e7ba379bf11da74dd8fbc4b79",
+      "displayed_bytes": 3548,
+      "displayed_sha256": "5179534106fc8b201ae171ba12f04380868eca7e7ba379bf11da74dd8fbc4b79"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-result.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-result.md",
+      "bytes": 2573,
+      "sha256": "afc558f901b58b336d9777f30733af87a8d767d80cf6cb692699451063881c07",
+      "displayed_bytes": 2573,
+      "displayed_sha256": "afc558f901b58b336d9777f30733af87a8d767d80cf6cb692699451063881c07"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3939,
+      "sha256": "6f22e789ea00974c618235b7f70603b3595f92a334ee719dbd89f5166c82255d",
+      "displayed_bytes": 3939,
+      "displayed_sha256": "6f22e789ea00974c618235b7f70603b3595f92a334ee719dbd89f5166c82255d"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/result.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/result.md",
+      "bytes": 3539,
+      "sha256": "3d14a48fe832a1f1d1630b372f6e3071aff638e0154786a6e3da1f28dea3cbbc",
+      "displayed_bytes": 3539,
+      "displayed_sha256": "3d14a48fe832a1f1d1630b372f6e3071aff638e0154786a6e3da1f28dea3cbbc"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/tasks.json",
+      "focus": [
+        "labor"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/tasks.json",
+      "bytes": 4362,
+      "sha256": "3fad5328518cca6b5d38d881470977f648e533f6a79895ac15def19385325dff",
+      "displayed_bytes": 4544,
+      "displayed_sha256": "7bf1cfa22a6b16fec1c3d0cab572a832df6a9c5038e37d997c57df741a3dccdb"
+    }
+  ]
+}

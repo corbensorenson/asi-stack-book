@@ -1,0 +1,153 @@
+{
+  "arm": "candidate",
+  "panel": "reader",
+  "revision": "235a908a9c467143f140cfb861e141df93f909b1",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282458,
+      "sha256": "e6c8a6ae691bdfdd604a4a4c487dc012afc184b42e354a5993b17605689d1dd3",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "346b87246898efe866c882eccf372da3d899ef292521c76ab01bd50c6a04c23c"
+    },
+    {
+      "route": "agent/chapters.json",
+      "focus": [
+        "--batch",
+        "longer justification",
+        "Reader Unit 16",
+        "Reader Unit 21",
+        "Reader Unit 24"
+      ],
+      "canonical_route": "agent/chapters.json",
+      "bytes": 43285,
+      "sha256": "4768c9e11edbd60d49fde0773a6e8e5a49bc1d9ee1896ada204ef26f1c3a5b55",
+      "displayed_bytes": 2368,
+      "displayed_sha256": "ea2b2eb1107bb5bbfaf9fd9e5bc1c581f8ec785c909c24e0158748ff683e98dc"
+    },
+    {
+      "route": "agent/chapter-index/unit-16.json",
+      "focus": [
+        "--batch",
+        "qualified reviewer",
+        "scheduler",
+        "independent checks"
+      ],
+      "canonical_route": "agent/chapter-index/unit-16.json",
+      "bytes": 9680,
+      "sha256": "8661606b46573b671e1ee43a2dbe582f06afa868f63a5b7005d25e0b491f44f7",
+      "displayed_bytes": 179,
+      "displayed_sha256": "14345cc5740cc3488b4463d5b18215df267dbe442ac40293f8682767c52ea395"
+    },
+    {
+      "route": "agent/chapter-index/unit-16.json",
+      "focus": [],
+      "canonical_route": "agent/chapter-index/unit-16.json",
+      "bytes": 9680,
+      "sha256": "8661606b46573b671e1ee43a2dbe582f06afa868f63a5b7005d25e0b491f44f7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "cdb5c503e6ef62964166972ef5a27ff0055eac19386d0c7e0ff3c25ba61f951f"
+    },
+    {
+      "route": "agent/sections/unit-16/capacity-and-competence-are-scheduling-constraints.json",
+      "focus": [],
+      "canonical_route": "agent/sections/unit-16/capacity-and-competence-are-scheduling-constraints.json",
+      "bytes": 2828,
+      "sha256": "95f2565aa4c8370c254beba4a110d6ae55a9f86f70da16d43c5406a189f6a452",
+      "displayed_bytes": 2828,
+      "displayed_sha256": "95f2565aa4c8370c254beba4a110d6ae55a9f86f70da16d43c5406a189f6a452"
+    },
+    {
+      "route": "agent/chapter-index/unit-21.json",
+      "focus": [
+        "--batch",
+        "justification",
+        "preferences",
+        "longer"
+      ],
+      "canonical_route": "agent/chapter-index/unit-21.json",
+      "bytes": 16564,
+      "sha256": "edb282d8d0474e6d1e55115addbc5d61f31434b331ec212d808c51a1c89e6565",
+      "displayed_bytes": 1220,
+      "displayed_sha256": "7787b655137448f0f38c1ccb93357794ad8e6ddbd3d6acbc52186619ebc72a80"
+    },
+    {
+      "route": "agent/sections/unit-21/a-longer-justification-earns-the-wrong-reward.json",
+      "focus": [],
+      "canonical_route": "agent/sections/unit-21/a-longer-justification-earns-the-wrong-reward.json",
+      "bytes": 1556,
+      "sha256": "0bfe84386815105345009705bae80d961b092a295dad967795c4dea30ebd4637",
+      "displayed_bytes": 1556,
+      "displayed_sha256": "0bfe84386815105345009705bae80d961b092a295dad967795c4dea30ebd4637"
+    },
+    {
+      "route": "agent/chapter-index/unit-24.json",
+      "focus": [
+        "--batch",
+        "answer bill",
+        "cooling",
+        "energy"
+      ],
+      "canonical_route": "agent/chapter-index/unit-24.json",
+      "bytes": 10977,
+      "sha256": "dc8662f486a7319d1d07819a91c92f1a012d3827089564a147f2d193e9d9c58a",
+      "displayed_bytes": 1082,
+      "displayed_sha256": "4fa84a5608b6d062c45662c23929dae9e52429355539a9c6937a92f66082ac5b"
+    },
+    {
+      "route": "agent/sections/unit-24/from-a-token-meter-to-an-answer-bill.json",
+      "focus": [],
+      "canonical_route": "agent/sections/unit-24/from-a-token-meter-to-an-answer-bill.json",
+      "bytes": 1671,
+      "sha256": "a608a4b685b338a2abb3967503438137242c0e7acacca39e75bf9972d5991934",
+      "displayed_bytes": 1671,
+      "displayed_sha256": "a608a4b685b338a2abb3967503438137242c0e7acacca39e75bf9972d5991934"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "verification arrivals",
+        "drained cohort",
+        "one job per tick",
+        "state writes"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183",
+      "displayed_bytes": 1711,
+      "displayed_sha256": "f5860f6d0da43f6305be009be2b1dee8c50f85e3e57a88357cff93732588b93b"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "bytes": 4073,
+      "sha256": "5fe953db714fee0bcf1d9bccdbdda46c91ad9e4996063ea7a67da7cee03647fc",
+      "displayed_bytes": 4073,
+      "displayed_sha256": "5fe953db714fee0bcf1d9bccdbdda46c91ad9e4996063ea7a67da7cee03647fc"
+    },
+    {
+      "route": "products/evidence-registry/study-verification-load.html",
+      "focus": [
+        "one job per tick"
+      ],
+      "canonical_route": "products/evidence-registry/study-verification-load.html",
+      "bytes": 12852,
+      "sha256": "4772c32c39dcf82a4f0e56a0645810b9d768e7e25dd02a98c28890fc33f8a0bd",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "ecb98f83b9ab09692e1fb1e047984177ab3185469174d298f3f159020a119da8"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "bytes": 2150,
+      "sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730",
+      "displayed_bytes": 2150,
+      "displayed_sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730"
+    }
+  ]
+}

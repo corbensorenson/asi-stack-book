@@ -1,0 +1,134 @@
+{
+  "suite_revision": "5475ae5bfb71eea59c0f925c3767ba5c69c7017e086606342fa14da795ce4490",
+  "panels": {
+    "chapters": {
+      "baseline": {
+        "opens": 12,
+        "cumulative_bytes": 2922809,
+        "deduplicated_bytes": 1155344,
+        "displayed_bytes": 52000,
+        "discovery_opens": 1,
+        "decision": 2,
+        "citation": 2,
+        "scope": 2,
+        "quality": 6,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 15,
+        "cumulative_bytes": 560421,
+        "deduplicated_bytes": 473851,
+        "displayed_bytes": 52000,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 3,
+        "quality": 11,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "evidence": {
+      "baseline": {
+        "opens": 12,
+        "cumulative_bytes": 357947,
+        "deduplicated_bytes": 357947,
+        "displayed_bytes": 43540,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 16,
+        "cumulative_bytes": 2413224,
+        "deduplicated_bytes": 878889,
+        "displayed_bytes": 52000,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    },
+    "reader": {
+      "baseline": {
+        "opens": 18,
+        "cumulative_bytes": 1795250,
+        "deduplicated_bytes": 834712,
+        "displayed_bytes": 52000,
+        "discovery_opens": 2,
+        "decision": 4,
+        "citation": 3,
+        "scope": 4,
+        "quality": 11,
+        "available": 12,
+        "unsupported_numbers": 0
+      },
+      "candidate": {
+        "opens": 13,
+        "cumulative_bytes": 438720,
+        "deduplicated_bytes": 429040,
+        "displayed_bytes": 35338,
+        "discovery_opens": 1,
+        "decision": 4,
+        "citation": 4,
+        "scope": 4,
+        "quality": 12,
+        "available": 12,
+        "unsupported_numbers": 0
+      }
+    }
+  },
+  "totals": {
+    "baseline": {
+      "opens": 42,
+      "cumulative_bytes": 5076006,
+      "deduplicated_bytes": 2348003,
+      "displayed_bytes": 147540,
+      "discovery_opens": 4,
+      "decision": 10,
+      "citation": 9,
+      "scope": 10,
+      "quality": 29,
+      "available": 36,
+      "unsupported_numbers": 0
+    },
+    "candidate": {
+      "opens": 44,
+      "cumulative_bytes": 3412365,
+      "deduplicated_bytes": 1781780,
+      "displayed_bytes": 139338,
+      "discovery_opens": 3,
+      "decision": 12,
+      "citation": 12,
+      "scope": 11,
+      "quality": 35,
+      "available": 36,
+      "unsupported_numbers": 0
+    }
+  },
+  "gates": {
+    "quality": true,
+    "scope": true,
+    "unsupported_numbers": true,
+    "deduplicated_bytes": true
+  },
+  "regression_passed": true,
+  "paired_intervals": {
+    "quality_points_per_panel": [
+      0.0,
+      5.0
+    ],
+    "deduplicated_bytes_per_panel": [
+      -681493.0,
+      520942.0
+    ]
+  }
+}

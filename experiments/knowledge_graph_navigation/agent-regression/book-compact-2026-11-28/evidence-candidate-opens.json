@@ -1,0 +1,171 @@
+{
+  "arm": "candidate",
+  "panel": "evidence",
+  "revision": "235a908a9c467143f140cfb861e141df93f909b1",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282458,
+      "sha256": "e6c8a6ae691bdfdd604a4a4c487dc012afc184b42e354a5993b17605689d1dd3",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "346b87246898efe866c882eccf372da3d899ef292521c76ab01bd50c6a04c23c"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "verification arrivals",
+        "versioned register",
+        "receiver transport",
+        "selected_route_has_minimum_modeled_cost"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183",
+      "displayed_bytes": 2869,
+      "displayed_sha256": "e87c6bfa49a637d63c26561d752b99f2a35635ef2026c363d549a6018f184a7e"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "bytes": 4073,
+      "sha256": "5fe953db714fee0bcf1d9bccdbdda46c91ad9e4996063ea7a67da7cee03647fc",
+      "displayed_bytes": 4073,
+      "displayed_sha256": "5fe953db714fee0bcf1d9bccdbdda46c91ad9e4996063ea7a67da7cee03647fc"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/aace49dcf014d42f86fcb2821c6b00f5878152f3/experiments/verification_bandwidth_capacity/arrival-study/protocol.md",
+      "bytes": 2150,
+      "sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730",
+      "displayed_bytes": 2150,
+      "displayed_sha256": "f5aa08cb9962b0f8418a2d3008770a15aacf53ecbe3dd88154a323dbbb565730"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "bytes": 3584,
+      "sha256": "7ee2d6f5d02090f13f37a9db6924eeb117a49a29bb8085987eeb126eef57a37f",
+      "displayed_bytes": 3584,
+      "displayed_sha256": "7ee2d6f5d02090f13f37a9db6924eeb117a49a29bb8085987eeb126eef57a37f"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "bytes": 3819,
+      "sha256": "5351e6d2374781aa93f1e3aa4cecc14ab774386d6ed55e34816b7751314ca095",
+      "displayed_bytes": 3819,
+      "displayed_sha256": "5351e6d2374781aa93f1e3aa4cecc14ab774386d6ed55e34816b7751314ca095"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/transport-protocol.md",
+      "bytes": 3248,
+      "sha256": "0e21cbeca7d2396c012c7cb66c983d77f20b5d5d61f0f6710fc0502e54644efe",
+      "displayed_bytes": 3248,
+      "displayed_sha256": "0e21cbeca7d2396c012c7cb66c983d77f20b5d5d61f0f6710fc0502e54644efe"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "bytes": 2308,
+      "sha256": "7380f279c8eae371785ae79c54f66d8ae0c15d489217679a63333e4fd8558bae",
+      "displayed_bytes": 2308,
+      "displayed_sha256": "7380f279c8eae371785ae79c54f66d8ae0c15d489217679a63333e4fd8558bae"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "rerun"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "run-receiver-live-transport"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "76135634b626a4b7d9dbdcda2e24a7188b114cba9db5d4447ce0a3ff7d0b633c"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3373,
+      "sha256": "2d06a2b31ee2100daa5d044386deac15758745a6fc285dab55d2f67596d2b1fa",
+      "displayed_bytes": 3373,
+      "displayed_sha256": "2d06a2b31ee2100daa5d044386deac15758745a6fc285dab55d2f67596d2b1fa"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "transport-results.json"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "e90dab70ebb9ce7b156c62e27d02fed28b643392c2062ac0ce3c04d4094a4a12"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "new observation"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 5363,
+      "displayed_sha256": "ba9b7dccd34012886385420e051131ebddc39dfd0a7614cb6bd968fef6bb68f1"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/protocol.md",
+      "focus": [
+        "labor"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/knowledge_graph_navigation/decision-studies-2026-11-23/protocol.md",
+      "bytes": 2723,
+      "sha256": "b66ebc985ef8e5096f9f1b80a181e6b7010f066d2e7ff958507cdbf9f854fcc9",
+      "displayed_bytes": 473,
+      "displayed_sha256": "e7bbbbcfaf411dc2478968e091bae41ac0224d0855208e93eff2fd97d235f47a"
+    },
+    {
+      "route": "products/evidence-registry/study-claim-review.html",
+      "focus": [
+        "labor"
+      ],
+      "canonical_route": "products/evidence-registry/study-claim-review.html",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b",
+      "displayed_bytes": 1005,
+      "displayed_sha256": "97f7eca0b8451770a29f6f27453cbd4a70baf105d77609ca06888ac3d8779c71"
+    },
+    {
+      "route": "products/evidence-registry/study-claim-review.html",
+      "focus": [
+        "case-c3"
+      ],
+      "canonical_route": "products/evidence-registry/study-claim-review.html",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b",
+      "displayed_bytes": 3235,
+      "displayed_sha256": "17a91207ba7dbd41cec10ec6b261ec22b205bcc082b3d13d8395c5a7a3f82ea0"
+    }
+  ]
+}
