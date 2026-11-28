@@ -137,15 +137,26 @@ def publish(site, files, commit):
     if catalog["snapshot_id"] != manifest["snapshot_id"] or catalog["source_commit"] != commit:
         raise ValueError("Agent index differs from the graph revision")
     # Keep discovery distinct from exact case lookup and the downloadable bulk graph.
-    fields = ("id", "kind", "title", "aliases", "question", "measurement", "url")
-    records = [{key: row[key] for key in fields if key in row} for row in catalog["records"]
-               if row.get("measurement") != "Case identifier"]
+    fields = ("id", "kind", "title", "aliases", "question", "measurement", "url", "locators")
+    records = []
+    for row in catalog["records"]:
+        if row.get("measurement") == "Case identifier":
+            continue
+        record = {key: row[key] for key in fields if key in row}
+        if row.get("measurement") == "Formal declaration":
+            record.update(premises=row["limit"], conclusion=row["summary"],
+                          title=row["title"].replace("_", " "))
+        elif row.get("record_version") or (row.get("disposition") and row.get("locators")):
+            record.update(summary=row.get("summary"), disposition=row.get("disposition"), limit=row.get("limit"))
+        records.append(record)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
-                 section_index="agent/sections.json", graph_manifest=DIRECTORY+"manifest.json",
+                 section_index="agent/sections.json", section_template="agent/sections/{volume_id}/{anchor}.json",
+                 proof_declarations="products/evidence-registry/proof-declarations.html",
+                 graph_manifest=DIRECTORY+"manifest.json",
                  citation_history="products/evidence-registry/citation-history.html",
                  reader_skill="products/evidence-registry/SKILL.md",
                  cli="products/evidence-registry/read_book.py",

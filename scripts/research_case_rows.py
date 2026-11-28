@@ -185,7 +185,10 @@ def verifier_policy_audit(result):
                 if row["reasons"]:
                     work += " · " + ", ".join(row["reasons"])
                 arms[name] = arm(row["route"], work, row["route"])
-            pointers = [location("cases", index, "arms", name, "decisions", position) for name in names]
+            pointers = [location("cases", index, "id")]
+            for name in names:
+                pointers.extend((location("cases", index, "arms", name, "decisions", position),
+                                 location("cases", index, "arms", name, "work")))
             yield case(label, label, arms, pointers=pointers, adverse=any(row["route"] != row["expected"] for row in decisions))
 
 

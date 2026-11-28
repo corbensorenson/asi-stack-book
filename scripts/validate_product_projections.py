@@ -16,6 +16,7 @@ import tempfile
 from urllib.parse import unquote, urlsplit
 
 import research_studies as research
+import agent_reading
 import book_knowledge_graph as graph
 import build_knowledge_graph_companion as knowledge
 import validate_book_knowledge_graph as graph_checks
@@ -258,6 +259,25 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             errors.append("Subject index lacks complete edition coverage")
         if not occurrences["occurrences"].get("concept:transformer"):
             errors.append("Missing transformer concordance")
+        agent = load(site / "agent-index.json")
+        if agent["source_commit"] != source_commit or "agent-index.json" not in (site / "llms.txt").read_text():
+            errors.append("Agent index is missing from discovery or differs from the publication revision")
+        discovery = load(site / agent["evidence_discovery"])
+        if discovery["snapshot_id"] != agent["snapshot_id"] or any(
+                row.get("measurement") == "Case identifier" for row in discovery["records"]):
+            errors.append("Compact discovery includes bulk cases or differs from the agent index snapshot")
+        sections = load(site / agent["section_index"])
+        headings = {volume["id"]: set(map(tuple, volume["headings"])) for volume in subject["volumes"]}
+        for volume in sections["volumes"]:
+            if {(row["anchor"], row["heading"]) for row in volume["sections"]} != headings.pop(volume["id"], set()):
+                errors.append("Agent section index differs from the rendered headings: " + volume["id"])
+            for row in volume["sections"]:
+                passage = load(site / row["file"])
+                if passage["source_commit"] != source_commit or passage["url"] != (
+                        agent_reading.BOOK + volume["path"] + "#" + row["anchor"]):
+                    errors.append("Agent section export has an incorrect citation: " + row["file"])
+        if headings or sections["source_commit"] != source_commit:
+            errors.append("Agent section index omits volumes or differs from the publication revision")
     cards = graph.declaration_cards(read)
     proof_page = (registry / "proof-declarations.html").read_text()
     for card in cards.values():
