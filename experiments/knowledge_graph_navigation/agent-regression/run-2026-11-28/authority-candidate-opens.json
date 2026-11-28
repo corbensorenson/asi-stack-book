@@ -1,0 +1,122 @@
+{
+  "arm": "candidate",
+  "panel": "authority",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 1142,
+      "displayed_sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "commit-then-revoke",
+        "package delivery",
+        "exact-effect",
+        "matched release placement"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 2763,
+      "displayed_sha256": "981db47f40b0950f3c18007a1cf5c34d3805a42252e0ec6e62fa939c2c04263f"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json",
+      "bytes": 2468,
+      "sha256": "fdaa7830e390ce62f383a3308b7f707cd49db713eb242157e36c6d89c4b6ed5f",
+      "displayed_bytes": 2468,
+      "displayed_sha256": "fdaa7830e390ce62f383a3308b7f707cd49db713eb242157e36c6d89c4b6ed5f"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3939,
+      "sha256": "3516c32fb287d03bfd12b5d1b1f59b80214e39d1d0a8189335eb84c2931cb8f4",
+      "displayed_bytes": 3939,
+      "displayed_sha256": "3516c32fb287d03bfd12b5d1b1f59b80214e39d1d0a8189335eb84c2931cb8f4"
+    },
+    {
+      "route": "agent/sections/integrated-reference-architecture/matched-release-observers.json",
+      "focus": [],
+      "canonical_route": "agent/sections/integrated-reference-architecture/matched-release-observers.json",
+      "bytes": 3850,
+      "sha256": "ba7a06856f39faa21bafc1a7feb45a5f4a5af68ef0acc8f8ba579c2525b1c093",
+      "displayed_bytes": 3850,
+      "displayed_sha256": "ba7a06856f39faa21bafc1a7feb45a5f4a5af68ef0acc8f8ba579c2525b1c093"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "retained journal",
+        "historical hold",
+        "rescored",
+        "disposition checks"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 1739,
+      "displayed_sha256": "5108ab595c02954b45429b4752355a0930a55b5bd4921b2e86a8aaa47f9273b5"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "bytes": 6348,
+      "sha256": "ed6f402377ae24fb27324a8117ece96d9f76f513ba8ce12f3651d4087b56a574",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "65ddbd5c68bc435cd7d53f983589c1e5440c0ffb6740b382e901e47ca1c0d079"
+    },
+    {
+      "route": "agent/sections/system-boundaries-and-authority/grant-to-effect-authority.json",
+      "focus": [],
+      "canonical_route": "agent/sections/system-boundaries-and-authority/grant-to-effect-authority.json",
+      "bytes": 4444,
+      "sha256": "2815dd7a5b78917d298a655050352649337ac275b825baa8e79a8328f63a6f01",
+      "displayed_bytes": 4444,
+      "displayed_sha256": "2815dd7a5b78917d298a655050352649337ac275b825baa8e79a8328f63a6f01"
+    },
+    {
+      "route": "products/evidence-registry/study-matched-release.html",
+      "focus": [
+        "Paired release"
+      ],
+      "canonical_route": "products/evidence-registry/study-matched-release.html",
+      "bytes": 78971,
+      "sha256": "d74ba2bc8ba26515379b5d19da33b440a08ae291abbf1f57683ff27bfb4c4806",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "74136ee22309753efb96e3dc8c63c90fcce24c7f6ef73ecd4feccc22469669bd"
+    },
+    {
+      "route": "products/evidence-registry/study-matched-release.html",
+      "focus": [
+        "144 total"
+      ],
+      "canonical_route": "products/evidence-registry/study-matched-release.html",
+      "bytes": 78971,
+      "sha256": "d74ba2bc8ba26515379b5d19da33b440a08ae291abbf1f57683ff27bfb4c4806",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "9f58824613bb107875eabf9fdd513ef153767e69d5ae5000326fc38fd1e0fa42"
+    }
+  ]
+}

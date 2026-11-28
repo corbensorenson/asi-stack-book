@@ -1,0 +1,149 @@
+{
+  "arm": "baseline",
+  "panel": "authority",
+  "revision": "d5d8c2f7c11985af1a7f9a4393f0771745610639",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 501504,
+      "sha256": "28fd93833ac306c942e1810e7142881cc106c2187e49223dd27c28d0a03e5341",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "043e285f1cd668882c8edb7beccebc96d993a6a97242107b9b90b6bc05ff600d"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 5624,
+      "sha256": "95285fe210900fcad1b2f48ca4d7c5a69576eedd59447d4aa4ee03301c8a8b44",
+      "displayed_bytes": 2891,
+      "displayed_sha256": "36f0d5b9d8920b2c5c60b4675128574c2e3ed45eac3d58725a8c9887aea0c5e7"
+    },
+    {
+      "route": "reader/quickstart.html",
+      "focus": [
+        "authorization"
+      ],
+      "canonical_route": "reader/quickstart.html",
+      "bytes": 107607,
+      "sha256": "3aff816833d737d92b57c9acbc4afdb034c9819411bf13d5a14f1d645ea0d0d1",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 963,
+      "sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4",
+      "displayed_bytes": 963,
+      "displayed_sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "commit-then-revoke",
+        "two package delivery",
+        "retained journal",
+        "96-condition"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 3656,
+      "displayed_sha256": "34d4ba0b4a852a4e13709a70bc0c9703c2e2779f3703043bb1f85cda96d047e3"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "Disposition and observed effect"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 501504,
+      "sha256": "28fd93833ac306c942e1810e7142881cc106c2187e49223dd27c28d0a03e5341",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "6750c9e9b4ff52790a090c2c2569b030d7a8a28cb95b552c54ce5a00a2732377"
+    },
+    {
+      "route": "reader/quickstart.html",
+      "focus": [
+        "short decision"
+      ],
+      "canonical_route": "reader/quickstart.html",
+      "bytes": 107607,
+      "sha256": "3aff816833d737d92b57c9acbc4afdb034c9819411bf13d5a14f1d645ea0d0d1",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "504a42e91f0e67186114e45538bf31c3785d1c8c4b2ac2d3e2adea328550d8d1"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering--case-commit-then-revoke.json",
+      "bytes": 1437,
+      "sha256": "f3ab7ae6f5adffd2a477e2eceba7fc58d87703e16fd91d19b809a4287c4a6b2a",
+      "displayed_bytes": 1437,
+      "displayed_sha256": "f3ab7ae6f5adffd2a477e2eceba7fc58d87703e16fd91d19b809a4287c4a6b2a"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 54221,
+      "sha256": "3f5db04d1064f3be9ad220b2135b3a48d6d390a714f8c632e8981b9803bdff63",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "eb8cf5df1277ac20b8f2d00d4466c0d7726aa37f74e1fda85c96ff7d65f33828"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "bytes": 171608,
+      "sha256": "731c037f7bd8fad2dd8573418ba5f5dd4f523849f830d703f65da8624d980bdb",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "f510badbdcc2520a62db8df80f09a2022164fd866bf3dc0330e8c5b6d53541e6"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json",
+      "bytes": 117926,
+      "sha256": "e0582fc74c52789a97367af1e3ee67e2f882c0417c411152bcd694938f4ebd03",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "3e2e26055ae377e9ed363a7d03ca2ee3ad2df8a69c0776a86d85be5639979344"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "authority commit ordering",
+        "Disposition and observed effect"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 1816,
+      "displayed_sha256": "151dd155a5f9a320b8d42b438c6c0a66855426d9e3c347056ba330d70d426fdc"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json",
+      "bytes": 6774,
+      "sha256": "24f4ce40a41b81cef10e2a87cf9fa8f3bd24f7a44deeebc1084c7b2ab1c78415",
+      "displayed_bytes": 2737,
+      "displayed_sha256": "7b85849760a37da8baf9dea4b084327b3c6a35abe1c6b174e2be6c5538a3992e"
+    }
+  ]
+}

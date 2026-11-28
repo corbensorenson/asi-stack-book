@@ -1,5 +1,7 @@
 # Changelog
 
+- 2026-11-28. Added a repeatable 24-question agent reading check with twelve fresh sessions. The candidate earned 69 of 72 rubric points versus 66 for the direct-link baseline and used 52.9% fewer deduplicated bytes. Both editions missed the ByteFlow result. [Protocol, answers, and offline replay](https://github.com/corbensorenson/asi-stack-book/tree/main/experiments/knowledge_graph_navigation/agent-regression).
+
 - 2026-11-28. Primary agent passage exports now carry evidence scope, case provenance, and exact pinned Lean statements. Study exports give the deciding comparison with individual paired rows available at their own routes.
 
 - 2026-11-28. Added a short agent lookup catalog and batch search in the reader client. Exact numeric clues lead to their cited passages, including the 115.2-unit repair threshold and the assumptions behind it.

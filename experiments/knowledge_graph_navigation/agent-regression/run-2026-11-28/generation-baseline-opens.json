@@ -1,0 +1,206 @@
+{
+  "arm": "baseline",
+  "panel": "generation",
+  "revision": "d5d8c2f7c11985af1a7f9a4393f0771745610639",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 963,
+      "sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4",
+      "displayed_bytes": 963,
+      "displayed_sha256": "d015b3888f37b29454b91e00e4bd6d064174565bed967dce357b759e5efe3ab4"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "37f80c562e652a2b1d70bc7f3b4e5fe98eaa2fcea4a37ecc1325a67d124a70b4"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 135584,
+      "sha256": "1b93122728dbce06705ea3af216f19f377340d23b7e6891835f84530538d7e09",
+      "displayed_bytes": 1126,
+      "displayed_sha256": "ef5cc343f5ad631690b9e0580a0da16c6e1d9ce75d597f1934748425044c0ebc"
+    },
+    {
+      "route": "papers/index.html",
+      "focus": [
+        "DFlash"
+      ],
+      "canonical_route": "papers/index.html",
+      "bytes": 70832,
+      "sha256": "8c98441a8a99ddcc6b7a993aa74ce07ba7032c598687e768af187c7f3adfe7d5",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/dictionary.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/dictionary.json",
+      "bytes": 272226,
+      "sha256": "8c2c7d6be51db7af0869dad595629e1887a2a8d5b3bbf2f9d12cb5b48a22fdb4",
+      "error": "KeyError"
+    },
+    {
+      "route": "papers/index.html",
+      "focus": [],
+      "canonical_route": "papers/index.html",
+      "bytes": 70832,
+      "sha256": "8c98441a8a99ddcc6b7a993aa74ce07ba7032c598687e768af187c7f3adfe7d5",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c30289e5e32577dd28370655811de230ffc5406712158c72f75f4c4667933737"
+    },
+    {
+      "route": "terminology/subject-index.html",
+      "focus": [
+        "speculative decoding"
+      ],
+      "canonical_route": "terminology/subject-index.html",
+      "bytes": 608342,
+      "sha256": "058796551e2a8dd93ae18c6ce6f521455e665a263124e0849db954ce81307c14",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 5624,
+      "sha256": "95285fe210900fcad1b2f48ca4d7c5a69576eedd59447d4aa4ee03301c8a8b44",
+      "displayed_bytes": 2891,
+      "displayed_sha256": "36f0d5b9d8920b2c5c60b4675128574c2e3ed45eac3d58725a8c9887aea0c5e7"
+    },
+    {
+      "route": "agent/sections.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow",
+        "speculative decoding"
+      ],
+      "canonical_route": "agent/sections.json",
+      "bytes": 695701,
+      "sha256": "926b5465a5c32fc3b2e8c220594f7029eb46a2ef2a532c53fcc7214dc7f787bf",
+      "error": "KeyError"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/index.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/knowledge-graph/index.html",
+      "bytes": 3648,
+      "sha256": "44e92fe69b57a0995eae44e3dfd24e2051c0a88631f6bee5bb842bd1af4aa97e",
+      "displayed_bytes": 1056,
+      "displayed_sha256": "39b58f396f59e15021197b7b4bc8c5e5d88a74aab6dbee3414991a08cdc16f51"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/manifest.json",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/knowledge-graph/manifest.json",
+      "bytes": 63878,
+      "sha256": "066bb41005b11db3813d9e765485c60caee550e7cb673c3893e50b1e944ad828",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "e79d192552c9fc726e021d9e41da9d48ed8428d38ffa95fea8294b526e15ec36"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/evidence-catalog.json",
+      "focus": [
+        "--batch",
+        "DFlash",
+        "D3D",
+        "BridgeKV",
+        "ByteFlow"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/evidence-catalog.json",
+      "bytes": 7573494,
+      "sha256": "b72042dfe259127c10d6edc00411f067a6c932a6363584d399bae6361442bb55",
+      "displayed_bytes": 603,
+      "displayed_sha256": "3e34a74399403ff136f096c35bf325a08ecbeb500d1e472081ff691882bf7a20"
+    },
+    {
+      "route": "agent/sections.json",
+      "focus": [
+        "speculative decoding"
+      ],
+      "canonical_route": "agent/sections.json",
+      "bytes": 695701,
+      "sha256": "926b5465a5c32fc3b2e8c220594f7029eb46a2ef2a532c53fcc7214dc7f787bf",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "db68b8ccc7a8a223888fe1ea62b5da4d4433b5a9dea9f89e85f8f2c298219dff"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/dictionary.html",
+      "focus": [
+        "DFlash"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/dictionary.html",
+      "bytes": 390971,
+      "sha256": "fb5a3c7710174941d7daceace8081e623fa9d4509a102e883a007de0bce754d0",
+      "displayed_bytes": 0,
+      "displayed_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "route": "products/architecture-reference/index.html",
+      "focus": [
+        "generation"
+      ],
+      "canonical_route": "products/architecture-reference/index.html",
+      "bytes": 102693,
+      "sha256": "a7b5674570b1e299efa4ab4465fcaa39f51a7b21c6046fc96e85e94b466f1546",
+      "displayed_bytes": 3257,
+      "displayed_sha256": "8b27a59e0dbb719a2c2b722eaea2c341ba093ab4b07f865703ed4cbceaf57bc8"
+    },
+    {
+      "route": "chapters/fast-generation-architectures.html?view=ai",
+      "focus": [
+        "DFlash"
+      ],
+      "canonical_route": "chapters/fast-generation-architectures.html",
+      "bytes": 401794,
+      "sha256": "47167ffd15016ce67cb08571a04df46543f5aafc9b52808f48c28ceb4c42ca29",
+      "displayed_bytes": 2268,
+      "displayed_sha256": "cb3775718f821cf95606804b2b42ed9180cdc268d09de7af5a873cd13844a146"
+    },
+    {
+      "route": "chapters/fast-generation-architectures.html?view=ai",
+      "focus": [
+        "D3D"
+      ],
+      "canonical_route": "chapters/fast-generation-architectures.html",
+      "bytes": 401794,
+      "sha256": "47167ffd15016ce67cb08571a04df46543f5aafc9b52808f48c28ceb4c42ca29",
+      "displayed_bytes": 2623,
+      "displayed_sha256": "df49f249d4c9c1c0a5a6c35763eebb324b0cc31bddc3dd2a27fc46c250ca7ce0"
+    }
+  ]
+}

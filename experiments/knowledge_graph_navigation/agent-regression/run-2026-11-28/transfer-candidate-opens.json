@@ -1,0 +1,151 @@
+{
+  "arm": "candidate",
+  "panel": "transfer",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/index.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/knowledge-graph/index.html",
+      "bytes": 3648,
+      "sha256": "44e92fe69b57a0995eae44e3dfd24e2051c0a88631f6bee5bb842bd1af4aa97e",
+      "displayed_bytes": 1056,
+      "displayed_sha256": "39b58f396f59e15021197b7b4bc8c5e5d88a74aab6dbee3414991a08cdc16f51"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 6211,
+      "sha256": "e9c01a802adaaae61d18ad150d949cd81e0e7162679ec4749abae52b4bcb016c",
+      "displayed_bytes": 3403,
+      "displayed_sha256": "68789a89013d4e9f94585f556d94aeb2a7d5d6c5ec782eb4320a8409e07209cd"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 1142,
+      "displayed_sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "b23",
+        "b24",
+        "four-bit",
+        "hd-19",
+        "forward transfer"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 3685,
+      "displayed_sha256": "18aad9d80c40478975198b5435fe938e90af6c2ea90f1c1b7279537cd0745490"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial--case-b23-descriptive-expanded-forward.json",
+      "bytes": 3619,
+      "sha256": "14cc05734991afba6656d0a3a2ddb83daf3e86b3fc9f08e3c314a6f25201da2e",
+      "displayed_bytes": 3619,
+      "displayed_sha256": "14cc05734991afba6656d0a3a2ddb83daf3e86b3fc9f08e3c314a6f25201da2e"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit--case-b24-descriptive-proposals-both-reversed.json",
+      "bytes": 5347,
+      "sha256": "033c902942c1b496cc19df3e3f68d7c902d8177c3dc3c2f3f8e921adf15325f2",
+      "displayed_bytes": 5347,
+      "displayed_sha256": "033c902942c1b496cc19df3e3f68d7c902d8177c3dc3c2f3f8e921adf15325f2"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "bytes": 5591,
+      "sha256": "0d0f535b80057492752ae729e840c3f625d305b98a9a5408032d69cc47de007d",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "db0b7c00995867da7cfbd741ddc9a8d40eab92c2e7e5b99d352ccc0389cab6bb"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/task-hd-19.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/task-hd-19.json",
+      "bytes": 1160,
+      "sha256": "5ad55459795b6d4447e1fd020a8599e41dc8f50b573fed47f71d95df5c684803",
+      "displayed_bytes": 1160,
+      "displayed_sha256": "5ad55459795b6d4447e1fd020a8599e41dc8f50b573fed47f71d95df5c684803"
+    },
+    {
+      "route": "agent/discovery.json",
+      "focus": [
+        "--batch",
+        "run-sygus-external-transfer--case-hd-19-expanded",
+        "run-sygus-external-transfer--case-hd-19-handles",
+        "sygus external transfer"
+      ],
+      "canonical_route": "agent/discovery.json",
+      "bytes": 136019,
+      "sha256": "eb3aa70b61f374b6e3281aa22104f5ded4bc8e88c813fa2d766dd7449fed8bc9",
+      "displayed_bytes": 2702,
+      "displayed_sha256": "eb80da8b5a5896843b621c5ab428e86efc6c81a54689cf7245cbdaf78e5ed39a"
+    },
+    {
+      "route": "products/evidence-registry/study-forward-transfer.html",
+      "focus": [
+        "hd-19"
+      ],
+      "canonical_route": "products/evidence-registry/study-forward-transfer.html",
+      "bytes": 851708,
+      "sha256": "10e662c28d49b5f90eae7b9bfabc1f6c0c50ad5c8a24a83b425fdc737f1b3ce1",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "b962ccf31893f1a79f4bb6d3845a233112486d8dd18af425f263097705e13fb8"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "bytes": 5126,
+      "sha256": "40d6318061e57f63bcc4786a3569852c956ee0140dbdfe0d60555ea6d5fed249",
+      "displayed_bytes": 5126,
+      "displayed_sha256": "40d6318061e57f63bcc4786a3569852c956ee0140dbdfe0d60555ea6d5fed249"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/nodes/d0.json",
+      "focus": [
+        "evidence_case:sygus-external-transfer--hd-19-handles"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/nodes/d0.json",
+      "bytes": 133225,
+      "sha256": "534b5281751a7f6e64cd7018b6ef6f5b67c366ebdf69e4f48e58222819b64610",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "dd2e047e6a77f9801a66efec05d8ece04b982a33426a468f4922c6dcf8c07718"
+    },
+    {
+      "route": "products/evidence-registry/knowledge-graph/nodes/89.json",
+      "focus": [
+        "evidence_case:sygus-external-transfer--hd-19-expanded"
+      ],
+      "canonical_route": "products/evidence-registry/knowledge-graph/nodes/89.json",
+      "bytes": 117348,
+      "sha256": "fea4768bc0862a67d25eb875f3acc55bc227648b434d9d114dabd2dd98c3389f",
+      "displayed_bytes": 2760,
+      "displayed_sha256": "b44d81e1cda4d8e9d868dd866db606d76642446dc88d73eab3d79230b8887d53"
+    }
+  ]
+}

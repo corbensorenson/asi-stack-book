@@ -1,0 +1,146 @@
+{
+  "arm": "candidate",
+  "panel": "assurance",
+  "revision": "552fb37f379249f6a726b98cbbbd06384710c55c",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 281914,
+      "sha256": "a01a236931cfd11ac1fc4a73d0da3d27e9051710f27f1ee3e7dd10641ef484b7",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "0b7f6d109f9b490c1cc3870eecc204bad7b4edf2341efc4b53cc66d3b1d33f93"
+    },
+    {
+      "route": "products/evidence-registry/study-verifier-rollout.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-verifier-rollout.html",
+      "bytes": 137445,
+      "sha256": "de96b3885dbca8ef137eba34ea4673ef9f50ed9a852c58775b6dffa6335fbee1",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "5097ec76ed0fe841e84d429e761b6f0247c3689ff8cd372d3e91b69125bfe768"
+    },
+    {
+      "route": "agent-index.json",
+      "focus": [],
+      "canonical_route": "agent-index.json",
+      "bytes": 1142,
+      "sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752",
+      "displayed_bytes": 1142,
+      "displayed_sha256": "ddaaa384e6c773cf039f6b7c45974a4ebdf62710ab46fd3a0885e464a199f752"
+    },
+    {
+      "route": "products/evidence-registry/reader-skill.html",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/reader-skill.html",
+      "bytes": 6211,
+      "sha256": "e9c01a802adaaae61d18ad150d949cd81e0e7162679ec4749abae52b4bcb016c",
+      "displayed_bytes": 3403,
+      "displayed_sha256": "68789a89013d4e9f94585f556d94aeb2a7d5d6c5ec782eb4320a8409e07209cd"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "verifier-paired",
+        "equal memoization",
+        "KERC",
+        "reserved revision",
+        "lexical search"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 39705,
+      "sha256": "46339dfe83038a349735461932d772984c4228f57c07ae581d0eeb00739b13c6",
+      "displayed_bytes": 3029,
+      "displayed_sha256": "8e62093efda6381e6ecf540d0354701fa7e07fa68e13bb03f96a1e65e1ed564a"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json",
+      "bytes": 4164,
+      "sha256": "d598e52e8a78a837212bdf2d6bd1a0cc5dd100bc3e8c081ff73063cfbfd0b8d5",
+      "displayed_bytes": 4164,
+      "displayed_sha256": "d598e52e8a78a837212bdf2d6bd1a0cc5dd100bc3e8c081ff73063cfbfd0b8d5"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "bytes": 8110,
+      "sha256": "a03f2b8a188ff80d326aa1ca1a19c74288f235d0de21c6047ce1cf1d3cf7d93e",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "e960183c073f82a8f5f0a71ab30eed0b2b1f8ac5923921116b41ef52e7950c67"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/claim-citations/anchors/kerc.protected_exact_handle_preservation.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/claim-citations/anchors/kerc.protected_exact_handle_preservation.json",
+      "bytes": 2084,
+      "sha256": "c38ae056d4830c27e9c581119616974c4ab289effc502f115c7f7e8e3ba773bf",
+      "displayed_bytes": 2084,
+      "displayed_sha256": "c38ae056d4830c27e9c581119616974c4ab289effc502f115c7f7e8e3ba773bf"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json",
+      "bytes": 5254,
+      "sha256": "e6e06ffb4b2fbe78c9499e9add876159a0b3cd80e3c1d916b4cebc6d8bd9d1a8",
+      "displayed_bytes": 5254,
+      "displayed_sha256": "e6e06ffb4b2fbe78c9499e9add876159a0b3cd80e3c1d916b4cebc6d8bd9d1a8"
+    },
+    {
+      "route": "products/evidence-registry/study-verifier-rollout.html",
+      "focus": [
+        "operator minutes"
+      ],
+      "canonical_route": "products/evidence-registry/study-verifier-rollout.html",
+      "bytes": 137445,
+      "sha256": "de96b3885dbca8ef137eba34ea4673ef9f50ed9a852c58775b6dffa6335fbee1",
+      "displayed_bytes": 585,
+      "displayed_sha256": "4d3808fbf56648a47e7797fd1bd4e9aae9d2b2875d95d0e40120e902f5af11f7"
+    },
+    {
+      "route": "products/evidence-registry/artifacts/evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/artifacts/evidence_transitions/post_v2_3/kerc_protected_exact_handle_synthetic_test_backed.json",
+      "bytes": 3799,
+      "sha256": "6db041e9ccd4ab28b265e78232b41f610f4e5be1888a514bd1159e4b98327e26",
+      "displayed_bytes": 3799,
+      "displayed_sha256": "6db041e9ccd4ab28b265e78232b41f610f4e5be1888a514bd1159e4b98327e26"
+    },
+    {
+      "route": "products/evidence-registry/artifacts/experiments/p4_kerc_runtime/results/confirmatory_result.json",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/artifacts/experiments/p4_kerc_runtime/results/confirmatory_result.json",
+      "bytes": 15632,
+      "sha256": "027507a0360c8b3749db4c081aa68d9d7a5f2d149dbd66a20a8815a2b28c259b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "dbb8e4c1976687867416a64546ccef76c1de9a1e6ad508f27a8edb227ab23612"
+    },
+    {
+      "route": "appendices/C_claim_evidence_matrix.html",
+      "focus": [
+        "exact-latent-separation"
+      ],
+      "canonical_route": "appendices/C_claim_evidence_matrix.html",
+      "bytes": 975543,
+      "sha256": "e6e349e505cc693674a7953c3335394bc4f45e68b98a40b2172edd11db246350",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "2c801e44ecb05eaa0f5878763a8d56dc4781a0934efd66921931413c91fcdc72"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "focus": [
+        "unmeasured"
+      ],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "bytes": 8110,
+      "sha256": "a03f2b8a188ff80d326aa1ca1a19c74288f235d0de21c6047ce1cf1d3cf7d93e",
+      "displayed_bytes": 1040,
+      "displayed_sha256": "4c44f90d2c7d5580319bd3f9f726f7079e6b768bda718a7baeb97a1cdbf3b4a6"
+    }
+  ]
+}

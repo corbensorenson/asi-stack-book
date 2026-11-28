@@ -27,6 +27,8 @@ and [competent conventional alternatives](docs/defended_contribution_prior_art_p
 
 For a specific research question, start with the [three short decisions](https://corbensorenson.github.io/asi-stack-book/reader/quickstart.html#short-decisions). Agents can use the [portable reader skill](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/reader-skill.html). To revisit an earlier result, [compare a saved citation](https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/citation-history.html).
 
+The [agent reading regression check](experiments/knowledge_graph_navigation/agent-regression/README.md) measures answer quality and reading cost across matched book editions. Its first run includes the questions, answers, grades, and an offline replay.
+
 Projection boundaries are defined in [`docs/product_contracts.md`](docs/product_contracts.md).
 
 The canonical current book is the live **89-chapter** site. Use its `AI view` for the complete research scaffold or `Human view` for the cleaner prose projection. Human view is a reading aid, not a reviewed reader-release manuscript.
