@@ -93,6 +93,9 @@ class PassageParser(HTMLParser):
                     frame["rows"] = headers + [frame["cells"]]
         if tag == "table" and frame["rows"]:
             section_ids = {part["id"] for part in self.stack if part["tag"] == "section"}
+            section_ids.update(target for part in self.stack for target in part["targets"])
+            if "" in self.targets:
+                section_ids.add("")
             self.tables.append((section_ids, frame["rows"]))
         if frame["id"]:
             item = (text, frame["links"])
@@ -109,7 +112,10 @@ class PassageParser(HTMLParser):
             if "" in self.targets:
                 frame["targets"].append("")
         for identity in frame["targets"]:
-            self.exact[identity] = text, frame["links"], frame["rows"]
+            tables = [rows for owners, rows in self.tables if identity in owners]
+            if frame["rows"]:
+                tables.append(frame["rows"])
+            self.exact[identity] = text, frame["links"], tables
 
 
 def section_exports(site, files, commit):
