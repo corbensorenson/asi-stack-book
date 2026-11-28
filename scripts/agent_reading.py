@@ -43,7 +43,8 @@ class PassageParser(HTMLParser):
         blocked = (self.stack and self.stack[-1]["blocked"]) or tag in SKIP
         identity = attrs.get("id")
         frame = {"tag": tag, "id": identity, "blocked": blocked, "parts": [], "links": [],
-                 "cells": [], "rows": [], "targets": []}
+                 "cells": [], "rows": [], "targets": [],
+                 "case_listing": tag == "details" and "data-study-cases" in attrs}
         if identity and (tag == "section" or tag in HEADINGS):
             self.ancestors[identity] = [f["id"] for f in self.stack if f["tag"] == "section" and f["id"]]
         if tag not in VOID:
@@ -57,7 +58,9 @@ class PassageParser(HTMLParser):
                 owner = next((part for part in reversed(self.stack) if part["tag"] in BLOCKS), frame)
                 owner["targets"].append(identity)
         if tag == "a" and attrs.get("href") and "anchorjs-link" not in attrs.get("class", ""):
-            for parent in self.stack:
+            for parent in reversed(self.stack):
+                if parent["case_listing"]:
+                    break
                 parent["links"].append(attrs["href"])
         if tag in BLOCKS or tag == "br":
             self.handle_data("\n")
@@ -100,9 +103,11 @@ class PassageParser(HTMLParser):
                     headers = [row for row in table["rows"][:-1] if all(cell["header"] for cell in row)]
                     frame["rows"] = headers + [frame["cells"]]
         if tag == "table" and frame["rows"]:
-            section_ids = {part["id"] for part in self.stack if part["tag"] == "section"}
-            section_ids.update(target for part in self.stack for target in part["targets"])
-            if "" in self.targets:
+            listing = next((i for i in range(len(self.stack)-1, -1, -1) if self.stack[i]["case_listing"]), -1)
+            owners = self.stack[listing+1:]
+            section_ids = {part["id"] for part in owners if part["tag"] == "section"}
+            section_ids.update(target for part in owners for target in part["targets"])
+            if listing == -1 and "" in self.targets:
                 section_ids.add("")
             self.tables.append((section_ids, frame["rows"]))
         if frame["id"]:
@@ -111,7 +116,7 @@ class PassageParser(HTMLParser):
                 self.records[frame["id"]] = item
             if tag == "li" and frame["id"].startswith("fn"):
                 self.footnotes[frame["id"]] = item
-        if self.stack:
+        if self.stack and not frame["case_listing"]:
             self.stack[-1]["parts"].append(text)
             if tag in BLOCKS:
                 self.stack[-1]["parts"].append("\n")
@@ -175,6 +180,7 @@ def section_target(url, *, study=False):
 def attach_sections(site, files, commit, records, routes):
     """Bind primary and alternate discovery locators to rendered passages."""
     pending = {}
+    evidence_paths = {}
     for row in records:
         for destination in [row, *row.get("locators", [])]:
             path, anchor = section_target(destination["url"], study=destination.get("kind") == "study")
@@ -187,6 +193,7 @@ def attach_sections(site, files, commit, records, routes):
                 routes[key] = route
                 pending.setdefault(path, set()).add(anchor)
             destination["section_url"] = BOOK + quote(routes[key], safe="/")
+            evidence_paths.setdefault(row["id"], site / routes[key])
     for path, anchors in pending.items():
         parser = PassageParser(anchors)
         parser.feed(files.text(site / path))
@@ -203,6 +210,50 @@ def attach_sections(site, files, commit, records, routes):
             if not value["text"]:
                 raise ValueError("Empty discovery passage: " + url)
             files.write(site / routes[path, anchor], serialize(value))
+    return evidence_paths
+
+
+EVIDENCE_FIELDS = ("id", "kind", "title", "measurement", "summary", "disposition", "method", "limit",
+                   "source_section", "outside_question", "unmeasured", "case_id", "case_sources",
+                   "result_sha256", "protocol_sha256", "featured_run")
+
+
+def attach_evidence(files, records, routes, commit, read):
+    """Include the evidence and its provenance in the same fetch as the passage."""
+    from book_knowledge_graph import declaration_cards
+
+    declarations = {}
+    for card in declaration_cards(read).values():
+        lines = read(card["module_path"]).decode().splitlines()
+        for row in card["declarations"]:
+            path = row["origin"]["path"]
+            line = int(row["origin"]["locator"].removeprefix("line:"))
+            # These reviewed declarations all start at column one. Bound the
+            # excerpt at the first proof delimiter, before any next declaration.
+            excerpt = "\n".join(lines[line-1:line+20])
+            statement, separator, _ = excerpt.partition(":= by")
+            if not separator or re.search(r"\n(?:theorem|lemma|def|end)\s", statement):
+                raise ValueError("Cannot isolate theorem signature: " + row["name"])
+            declarations[row["name"]] = dict(statement=statement.rstrip(), premises=row["premises"],
+                                              conclusion=row["conclusion"],
+                                              url=f"https://github.com/corbensorenson/asi-stack-book/blob/{commit}/{path}#L{line}")
+    by_file = {}
+    for row in records:
+        path = routes.get(row["id"])
+        if path is None:
+            continue
+        packet = {field: row[field] for field in EVIDENCE_FIELDS if field in row}
+        if row.get("source_commit"):
+            packet["evidence_revision"] = row["source_commit"]
+        if row.get("locators"):
+            packet["locators"] = row["locators"]
+        if row.get("measurement") == "Formal declaration":
+            packet["declaration"] = declarations[row["title"]]
+        by_file.setdefault(path, []).append(packet)
+    for path, packets in by_file.items():
+        passage = json.loads(files.text(path))
+        passage["evidence"] = packets
+        files.write(path, serialize(passage))
 
 
 def serialize(data):
@@ -221,7 +272,7 @@ def lookup_rows(records):
     return rows
 
 
-def publish(site, files, commit):
+def publish(site, files, commit, read):
     routes = section_exports(site, files, commit)
     graph = site / DIRECTORY
     manifest = json.loads((graph / "manifest.json").read_bytes())
@@ -231,6 +282,7 @@ def publish(site, files, commit):
     # Keep discovery distinct from exact case lookup and the downloadable bulk graph.
     fields = ("id", "kind", "title", "aliases", "question", "measurement", "url", "locators")
     records = []
+    source_by_id = {}
     for row in catalog["records"]:
         if row.get("measurement") == "Case identifier":
             continue
@@ -243,14 +295,19 @@ def publish(site, files, commit):
         if row.get("measurement") == "Worked sensitivity calculation":
             record.update(disposition=row["disposition"], limit=row["limit"])
         records.append(record)
-    attach_sections(site, files, commit, records, routes)
+        source_by_id[row["id"]] = row
+    primary = attach_sections(site, files, commit, records, routes)
+    # Alternate locators carry their own canonical URL and text. Add the
+    # evidence only to each record's deciding passage.
+    enriched = [dict(source_by_id[record["id"]], locators=record.get("locators", [])) for record in records]
+    attach_evidence(files, enriched, primary, commit, read)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
                  evidence_lookup=dict(catalog="agent/lookup.json", match="id, title, aliases, or question",
-                                      read="Open the section_url for the exact passage. Cite its url."),
+                                      read="Open section_url for the passage, evidence scope, and citation. Cite its url."),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
                  section_index="agent/sections.json", section_template="agent/sections/{volume_id}/{anchor}.json",
                  proof_declarations="products/evidence-registry/proof-declarations.html",

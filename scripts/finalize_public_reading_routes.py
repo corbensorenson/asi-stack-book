@@ -281,7 +281,7 @@ def main() -> None:
     volumes = [(c["id"],c["title"],c["file"].replace(".qmd",".html")) for c in chapters]
     volumes += [(u["unit_id"],u["title"],"reader/"+u["source_file"].replace(".qmd",".html")) for u in reader["units"]]
     research_dictionary.subject_index(site, volumes, files, commit)
-    agent_reading.publish(site, files, commit)
+    agent_reading.publish(site, files, commit, lambda path: (ROOT / path).read_bytes())
     for index in SEARCH_INDEXES:
         entries = (citations + research if index == "search.json" else research) + identifiers
         projected = index_projection(site, index, entries)

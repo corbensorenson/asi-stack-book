@@ -283,6 +283,15 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 if (passage["source_commit"] != source_commit or not passage["text"] or not passage["url"].startswith(agent_reading.BOOK)
                         or not cited.path.endswith("/" + path) or unquote(cited.fragment) != fragment):
                     errors.append("Discovery export does not cite the exact rendered passage: " + destination["url"])
+                if destination is row:
+                    evidence = next((record for record in passage.get("evidence", []) if record["id"] == row["id"]), None)
+                    if evidence is None:
+                        errors.append("Primary export lacks its evidence record: " + row["id"])
+                    elif row["kind"] == "evidence_case" and not all(evidence.get(key) for key in
+                            ("limit", "case_id", "case_sources", "result_sha256", "evidence_revision")):
+                        errors.append("Case export lacks one or more citation fields: " + row["id"])
+                    elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
+                        errors.append("Formal export lacks its exact declaration: " + row["id"])
         sections = load(site / agent["section_index"])
         headings = {volume["id"]: set(map(tuple, volume["headings"])) for volume in subject["volumes"]}
         for volume in sections["volumes"]:
