@@ -7,6 +7,7 @@ from pathlib import PurePosixPath
 from urllib.parse import quote, unquote, urljoin, urlsplit
 
 from research_dictionary import DIRECTORY
+from research_studies import REPO
 
 BOOK = "https://corbensorenson.github.io/asi-stack-book/"
 VOID = set("area base br col embed hr img input link meta param source track wbr".split())
@@ -19,6 +20,11 @@ SCIFACT_STUDY_PAGES = {
     "products/evidence-registry/study-citation-retrieval.html",
 }
 SCIFACT_CHAPTER_RECORDS = {"evidence_passage:scifact-scoring-ceiling"}
+SCIFACT_READ = {
+    "answer": "Use the compact text and evidence. Cite url directly and stop when the requested facts and scope are covered.",
+    "full_page": "Open the canonical page for a missing case or section that has no compact export.",
+    "replay": "Use the replay kit on the canonical study page when reproducing the run. Ordinary citations use the compact evidence.",
+}
 
 
 def artifact_anchor(anchor):
@@ -29,7 +35,7 @@ def artifact_anchor(anchor):
 
 
 class PassageParser(HTMLParser):
-    def __init__(self, targets=()):
+    def __init__(self, targets=(), *, omit_verification=False):
         super().__init__()
         self.targets = set(targets)
         self.stack = []
@@ -39,6 +45,7 @@ class PassageParser(HTMLParser):
         self.ancestors = {}
         self.tables = []
         self.main = False
+        self.omit_verification = omit_verification
 
     def handle_starttag(self, tag, attributes):
         attrs = dict(attributes)
@@ -46,7 +53,8 @@ class PassageParser(HTMLParser):
             self.main = True
         if not self.main:
             return
-        blocked = (self.stack and self.stack[-1]["blocked"]) or tag in SKIP
+        blocked = ((self.stack and self.stack[-1]["blocked"]) or tag in SKIP
+                   or (self.omit_verification and "data-agent-verification" in attrs))
         identity = attrs.get("id")
         frame = {"tag": tag, "id": identity, "blocked": blocked, "parts": [], "links": [],
                  "cells": [], "rows": [], "targets": [],
@@ -201,7 +209,7 @@ def attach_sections(site, files, commit, records, routes):
             destination["section_url"] = BOOK + quote(routes[key], safe="/")
             evidence_paths.setdefault(row["id"], site / routes[key])
     for path, anchors in pending.items():
-        parser = PassageParser(anchors)
+        parser = PassageParser(anchors, omit_verification=path in SCIFACT_STUDY_PAGES)
         parser.feed(files.text(site / path))
         for anchor in sorted(anchors):
             if anchor not in parser.exact:
@@ -264,6 +272,24 @@ def attach_evidence(files, records, routes, commit, read):
     for path, packets in by_file.items():
         passage = json.loads(files.text(path))
         passage["evidence"] = packets
+        if urlsplit(passage["url"].removeprefix(BOOK)).path in SCIFACT_STUDY_PAGES:
+            run_ids = {packet["id"] for packet in packets if packet["kind"] == "study_run"}
+            for packet in packets:
+                related = packet.get("study_run", {}).get("id") or packet.get("featured_run")
+                if related:
+                    run_ids.add(related)
+            reading = dict(SCIFACT_READ)
+            if len(run_ids) == 1:
+                run = by_id[next(iter(run_ids))]
+                reading.update(
+                    protocol_url=REPO + f'/blob/{run["source_commit"]}/{run["protocol"]}',
+                    protocol_for="Open the pinned protocol for a method detail or decision rule absent from this export.",
+                )
+                if any(packet.get("featured_run") == run["id"] for packet in packets):
+                    reading["run_url"] = run["section_url"]
+            passage = {"reading": reading, "source_commit": passage["source_commit"], "url": passage["url"],
+                       "text": passage["text"], "evidence": packets, "links": passage["links"],
+                       "tables": passage["tables"], "footnotes": passage["footnotes"]}
         files.write(path, serialize(passage))
 
 
@@ -323,7 +349,7 @@ def publish(site, files, commit, read):
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=lookup_rows(records))))
     files.write(site / SCIFACT_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
-                                                        records=scifact_lookup_rows(records))))
+                                                        reading=SCIFACT_READ, records=scifact_lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
@@ -346,6 +372,7 @@ def publish(site, files, commit, read):
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
 - [Look up several evidence topics in one read](agent/lookup.json). Keep the returned section URLs and open those passages together.
 - [Look up SciFact studies and cases](agent/topics/scifact.json) when every clue concerns scientific citation. Use the same section links.
+- Cite each compact export's `url` directly once the evidence answers the question. Open a pinned protocol for missing method details, a full page for material outside the exports, and a replay kit to reproduce a run.
 - [Discover evidence](agent/discovery.json) by title, alias, or question. Open a result’s `section_url` to read and cite its exact passage. Use the stable ID for graph relationships or case provenance.
 - [Look up an AI term](products/evidence-registry/knowledge-graph/dictionary.json) by headword or alias.
 - [Read one section](agent/sections.json) by chapter and anchor. Follow its canonical URL when citing.

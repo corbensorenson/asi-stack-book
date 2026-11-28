@@ -275,6 +275,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         scifact_ids = {row["id"] for row in scifact["records"]}
         if (scifact_path != agent_reading.SCIFACT_LOOKUP
                 or scifact["snapshot_id"] != agent["snapshot_id"] or scifact["source_commit"] != source_commit
+                or scifact.get("reading") != agent_reading.SCIFACT_READ
                 or scifact["records"] != agent_reading.scifact_lookup_rows(discovery["records"])
                 or not {"study_run:scifact-release", "study_run:fresh-citation-retrieval", "study_run:three-paper-selection",
                         "evidence_case:scifact-release--75-triage", "evidence_passage:scifact-scoring-ceiling"} <= scifact_ids
@@ -315,6 +316,20 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                             errors.append("Case export does not link its run method and limits: " + row["id"])
                     elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
                         errors.append("Formal export lacks its exact declaration: " + row["id"])
+                    if path in agent_reading.SCIFACT_STUDY_PAGES:
+                        reading = passage.get("reading", {})
+                        if any(reading.get(k) != value for k, value in agent_reading.SCIFACT_READ.items()):
+                            errors.append("SciFact passage lacks compact reading and escalation guidance: " + row["id"])
+                        if row["kind"] == "study_run":
+                            run_id = row["id"].split(":", 1)[1]
+                            route = (reading.get("protocol_url") or "").split("/blob/", 1)[-1]
+                            revision, _, protocol = route.partition("/")
+                            if (not evidence or revision != evidence.get("evidence_revision") or not protocol
+                                    or hashlib.sha256(read(Path(protocol))).hexdigest() != evidence.get("protocol_sha256")
+                                    or any(urlsplit(url).path.endswith(".zip") for url in passage["links"])
+                                    or "Download the offline protocol, inputs, replay and results" in passage["text"]
+                                    or f'href="{run_id}-replay.zip" download' not in (site / path).read_text()):
+                                errors.append("SciFact protocol or replay is absent or exposed at the wrong reading tier: " + row["id"])
         sections = load(site / agent["section_index"])
         headings = {volume["id"]: set(map(tuple, volume["headings"])) for volume in subject["volumes"]}
         for volume in sections["volumes"]:

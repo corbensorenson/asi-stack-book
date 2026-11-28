@@ -811,6 +811,13 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
                        'The retained packets also contain every opened excerpt and score.')
     elif row["format"] in {"package_transport", "package_observation"}:
         replay_note = ' This command collects a new network observation. Use the raw result below for the original snapshot.'
+    verification = (
+        f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'
+        f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>' + replay
+    )
+    if row["format"] in {"scifact_citation", "fresh_retrieval", "three_papers"}:
+        verification = ('<details data-agent-verification><summary>Replay and verify this run</summary>'
+                        + verification + '</details>')
     return (
         f'<section id="{fragment}"><h3>{escape(row["title"])} <a href="#{fragment}" aria-label="Link to this run">#</a></h3>'
         f'{follows}<p>{escape(row["method"])}</p><h4>Result</h4><p>{escape(row["summary"])}</p>'
@@ -818,9 +825,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
         f'<h4>Scope and limits</h4><p>{escape(row["limit"])}</p>'
         f'<p>{graph_link("study_run:" + row["id"])}</p>'
         f'<h4>Disposition</h4><p>{escape(row["disposition"])}</p>'
-        f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'
-        f'<pre><code>{escape(row["command"])}</code></pre><ul>{artifact_links}</ul>'
-        + replay +
+        + verification +
         f'<h4>Cite this run</h4><p>Corben Sorenson. “{escape(study["title"])}.” '
         f'<em>The ASI Stack</em>, {escape(row["date"])}. Run <code>{row["id"]}</code>, evidence revision '
         f'<a href="{escape(source + "/" + row["result"])}"><code>{row["source_commit"]}</code></a>. '
