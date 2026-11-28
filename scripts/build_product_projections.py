@@ -809,7 +809,7 @@ def render_run(study: dict, row: dict, result: dict, cases: list[dict], replay: 
     if row["format"] == "review_packet":
         replay_note = (f' Replace TESTED_SITE with the rendered site at {escape(result["source_commit"])}. '
                        'The retained packets also contain every opened excerpt and score.')
-    elif row["format"] in {"package_transport", "package_observation"}:
+    elif row["format"] in research.FRESH_OBSERVATION_FORMATS:
         replay_note = ' This command collects a new network observation. Use the raw result below for the original snapshot.'
     verification = (
         f'<h4>Replay</h4><p>Run from a checkout at this evidence revision.{replay_note}</p>'

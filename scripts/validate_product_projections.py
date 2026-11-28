@@ -272,6 +272,15 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 or lookup.get("reading") != agent_reading.READING
                 or lookup["records"] != agent_reading.lookup_rows(discovery["records"])):
             errors.append("Agent lookup does not match the revision-bound discovery routes")
+        study_proof_path = agent["evidence_lookup"]["topics"]["Studies and proofs"]
+        study_proof = load(site / study_proof_path)
+        if (study_proof_path != agent_reading.STUDY_PROOF_LOOKUP
+                or study_proof["snapshot_id"] != agent["snapshot_id"] or study_proof["source_commit"] != source_commit
+                or study_proof.get("reading") != agent_reading.READING
+                or study_proof["records"] != agent_reading.study_proof_lookup_rows(discovery["records"])
+                or (site / study_proof_path).stat().st_size >= (site / agent["evidence_lookup"]["catalog"]).stat().st_size
+                or f'href="{study_proof_path}"' not in (site / "index.html").read_text()):
+            errors.append("Study and proof lookup lacks its compact revision-bound routes or homepage entry")
         scifact_path = agent["evidence_lookup"]["topics"]["SciFact"]
         scifact = load(site / scifact_path)
         scifact_ids = {row["id"] for row in scifact["records"]}
@@ -288,6 +297,7 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if byteflow is None or byteflow["id"] != "evidence_passage:byteflow-boundary-budget":
             errors.append("Compact lookup is missing the ByteFlow comparison")
         discovery_by_id = {row["id"]: row for row in discovery["records"]}
+        runs_by_id = {run["id"]: run for run in manifest["runs"]}
         for row in discovery["records"]:
             for destination in [row, *row.get("locators", [])]:
                 direct = destination.get("section_url", "")
@@ -323,6 +333,8 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                     elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
                         errors.append("Formal export lacks its exact declaration: " + row["id"])
                     if row["kind"] == "study_run":
+                        run_id = row["id"].split(":", 1)[1]
+                        run = runs_by_id[run_id]
                         route = (reading.get("protocol_url") or "").removeprefix(agent_reading.RAW_REPO)
                         revision, _, protocol = route.partition("/")
                         if (not evidence or revision != evidence.get("evidence_revision") or not protocol
@@ -330,6 +342,16 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                                 or "Run from a checkout at this evidence revision" in passage["text"]
                                 or 'data-agent-verification><summary>Replay and verify this run' not in (site / path).read_text()):
                             errors.append("Study protocol or replay is absent or exposed at the wrong reading tier: " + row["id"])
+                        case_csv = Path(path).parent / f"cases-{run_id}.csv"
+                        expected_cases = {case["id"].split("--", 1)[1]: case["section_url"]
+                                          for case in discovery["records"]
+                                          if case["id"].startswith(f"evidence_case:{run_id}--")}
+                        if (reading.get("recorded_result_url") != agent_reading.RAW_REPO + f'{run["source_commit"]}/{run["result"]}'
+                                or reading.get("case_table_url") != agent_reading.BOOK + case_csv.as_posix()
+                                or not (site / case_csv).is_file()
+                                or {case["case_id"]: case["section_url"] for case in reading.get("case_sections", [])} != expected_cases
+                                or bool(reading.get("rerun_scope")) != (run["format"] in research.FRESH_OBSERVATION_FORMATS)):
+                            errors.append("Study export lacks the exact result, case routes, or network rerun boundary: " + row["id"])
         sections = load(site / agent["section_index"])
         chapter_path = agent["chapter_directory"]
         chapter_directory = load(site / chapter_path)

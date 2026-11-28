@@ -84,6 +84,7 @@ def freshness_work(result: dict) -> dict[str, dict]:
 
 
 PORTABLE_RUN_FORMATS = {"verification_arrivals", "revision_retrieval", "scifact_citation", "fresh_retrieval", "matched_publication", "sygus_external", "three_papers"}
+FRESH_OBSERVATION_FORMATS = {"package_transport", "package_observation"}
 
 
 def metrics(format_id: str, result: dict) -> dict:

@@ -7,6 +7,7 @@ from pathlib import PurePosixPath
 from urllib.parse import quote, unquote, urljoin, urlsplit
 
 from research_dictionary import DIRECTORY, CHAPTER_INDEX_DIRECTORY
+from research_studies import FRESH_OBSERVATION_FORMATS
 
 BOOK = "https://corbensorenson.github.io/asi-stack-book/"
 RAW_REPO = "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/"
@@ -15,6 +16,7 @@ SKIP = {"script", "style", "nav", "button", "svg", "iframe", "noscript", "templa
 HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
 BLOCKS = {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS
 SCIFACT_LOOKUP = "agent/topics/scifact.json"
+STUDY_PROOF_LOOKUP = "agent/topics/studies-and-proofs.json"
 SCIFACT_STUDY_PAGES = {
     "products/evidence-registry/study-scientific-citation.html",
     "products/evidence-registry/study-citation-retrieval.html",
@@ -303,6 +305,7 @@ def attach_evidence(files, records, routes, commit, read):
                                               url=f"https://github.com/corbensorenson/asi-stack-book/blob/{commit}/{path}#L{line}")
     by_file = {}
     by_id = {row["id"]: row for row in records}
+    cases_by_run = {}
     for row in records:
         path = routes.get(row["id"])
         if path is None:
@@ -316,6 +319,7 @@ def attach_evidence(files, records, routes, commit, read):
             run = by_id[row["study_run"]]
             packet["study_run"] = {key: run[key] for key in ("id", "title", "method", "limit", "section_url")}
             packet["study_run"]["url"] = BOOK + run["url"]
+            cases_by_run.setdefault(run["id"], []).append({key: row[key] for key in ("case_id", "title", "section_url")})
         if row.get("measurement") == "Formal declaration":
             packet["declaration"] = declarations[row["title"]]
         by_file.setdefault(path, []).append(packet)
@@ -333,6 +337,14 @@ def attach_evidence(files, records, routes, commit, read):
                 protocol_url=RAW_REPO + f'{run["source_commit"]}/{run["protocol"]}',
                 protocol_for="Open the pinned protocol for a method detail or decision rule absent from this export.",
             )
+            if any(packet["id"] == run["id"] for packet in packets):
+                run_id = run["id"].split(":", 1)[1]
+                reading["recorded_result_url"] = RAW_REPO + f'{run["source_commit"]}/{run["result"]}'
+                reading["case_table_url"] = urljoin(BOOK + run["url"], f"cases-{run_id}.csv")
+                if run["format"] in FRESH_OBSERVATION_FORMATS:
+                    reading["rerun_scope"] = "Running the command collects a new network observation. The pinned result is the original observation."
+                if run["id"] in cases_by_run:
+                    reading["case_sections"] = cases_by_run[run["id"]]
             if any(packet.get("featured_run") == run["id"] for packet in packets):
                 reading["run_url"] = run["section_url"]
         extras = {field: passage.pop(field) for field in ("links", "tables", "footnotes")}
@@ -361,6 +373,11 @@ def scifact_lookup_rows(records):
     return lookup_rows(row for row in records if row["id"] in SCIFACT_CHAPTER_RECORDS or any(
         urlsplit(destination["url"]).path in SCIFACT_STUDY_PAGES
         for destination in (row, *row.get("locators", []))))
+
+
+def study_proof_lookup_rows(records):
+    return lookup_rows(row for row in records if row["kind"] in {"study", "study_run", "evidence_case"}
+                       or row.get("measurement") == "Formal declaration")
 
 
 def publish(site, files, commit, read):
@@ -398,11 +415,13 @@ def publish(site, files, commit, read):
                                                          reading=READING, records=lookup_rows(records))))
     files.write(site / SCIFACT_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
                                                         reading=READING, records=scifact_lookup_rows(records))))
+    files.write(site / STUDY_PROOF_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
+                                                           reading=READING, records=study_proof_lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
                  evidence_lookup=dict(catalog="agent/lookup.json", match="id, title, aliases, or question",
-                                      topics={"SciFact": SCIFACT_LOOKUP},
+                                      topics={"SciFact": SCIFACT_LOOKUP, "Studies and proofs": STUDY_PROOF_LOOKUP},
                                       read="Open section_url for the passage, evidence scope, and citation. Cite its url."),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
                  reading=READING, chapter_directory=CHAPTER_DIRECTORY, chapter_index_template=CHAPTER_INDEX_DIRECTORY + "/{volume_id}.json",
@@ -420,6 +439,7 @@ def publish(site, files, commit, read):
 
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
 - [Look up several evidence topics in one read](agent/lookup.json). Keep the returned section URLs and open those passages together.
+- [Find studies, cases, and Lean declarations](agent/topics/studies-and-proofs.json) in a smaller catalog. A run export gives the pinned protocol, original result, and exact case links.
 - [Look up SciFact studies and cases](agent/topics/scifact.json) when every clue concerns scientific citation. Use the same section links.
 - Cite each compact export's `url` directly once the evidence answers the question. Open a pinned protocol for missing method details, a full page for material outside the exports, and a replay kit to reproduce a run.
 - [Discover evidence](agent/discovery.json) by title, alias, or question. Open a result’s `section_url` to read and cite its exact passage. Use the stable ID for graph relationships or case provenance.
