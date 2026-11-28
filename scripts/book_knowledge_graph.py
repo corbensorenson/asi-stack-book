@@ -16,7 +16,7 @@ import sys
 from urllib.parse import urlsplit
 
 from build_human_reader_current import CONCEPT_ENTRY_POINTS, slugify
-from research_case_rows import anchor as run_anchor, rows_for, study_arm_label
+from research_case_rows import anchor as run_anchor, location, rows_for, study_arm_label
 import research_studies
 
 
@@ -55,7 +55,7 @@ LINK = re.compile(r"\]\(\.\./chapters/([a-z0-9-]+)\.qmd(?:#[^)]+)?\)")
 NAVIGATION_PRIORITY = ("supersedes_decision", "qualifies_study", "teaches_chapter", "reader_example", "owns_claim", "retains_run", "investigates",
                        "examines_run", "case_of_run", "related_proof", "discusses_claim", "cites_source", "follows_up",
                        "maps_source_passage", "atom", "subclaim_of", "proxy_for", "declares_proof_target",
-                       "defined_by", "explained_by", "contains", "assigned_to")
+                       "defined_by", "explained_by", "illustrated_by", "measured_in", "has_primary_source", "contains", "assigned_to")
 PATH_PREDICATES = frozenset(NAVIGATION_PRIORITY) - {"contains", "assigned_to"}
 PATH_VISIT_LIMIT = 1000
 SEARCH_STOP_WORDS = frozenset(
@@ -505,16 +505,29 @@ def collection_routes(graph):
     for ri, run in enumerate(graph.data(STUDIES)["runs"]):
         run_key = "study_run:" + run["id"]
         node = graph.nodes[run_key]
-        for row in rows_for(run["format"], graph.data(run["result"])):
+        result = graph.data(run["result"])
+        readings = {}
+        if run["format"] == "three_papers":
+            path = "experiments/scifact_three_papers/observations.json"
+            readings = {str(case["id"]): location("cases", index)
+                        for index, case in enumerate(graph.data(path)["cases"])}
+        for row in rows_for(run["format"], result):
             identity = run["id"] + "--" + row["id"]
-            if "evidence_case:" + identity in graph.nodes:
-                continue
-            outcomes = ". ".join(f'{study_arm_label(k)}: {v["outcome"]} ({v["work"]})' for k,v in row["arms"].items())
-            key = graph.node("evidence_case", identity, run["result"], "/", title=row["id"],
-                             aliases=[row["id"]], question=row["condition"], summary=outcomes,
-                             limit=node["limit"], measurement="Case identifier", source_commit=run["source_commit"],
-                             result_sha256=run["result_sha256"], url=node["url"].split("#")[0]+"#"+run_anchor(run["id"],row["id"]))
-            graph.edge(key, "case_of_run", run_key, STUDIES, f"/runs/{ri}", evidence_effect="none")
+            key = "evidence_case:" + identity
+            if key not in graph.nodes:
+                outcomes = ". ".join(f'{study_arm_label(k)}: {v["outcome"]} ({v["work"]})' for k, v in row["arms"].items())
+                graph.node("evidence_case", identity, run["result"], row["pointers"][0], title=row["id"],
+                           aliases=[row["id"]], question=row["condition"], summary=outcomes,
+                           limit=node["limit"], measurement="Case identifier", source_commit=run["source_commit"],
+                           result_sha256=run["result_sha256"], url=node["url"].split("#")[0]+"#"+run_anchor(run["id"],row["id"]))
+                graph.edge(key, "case_of_run", run_key, STUDIES, f"/runs/{ri}", evidence_effect="none")
+            prefix = f'https://raw.githubusercontent.com/corbensorenson/asi-stack-book/{run["source_commit"]}/'
+            sources = [dict(role="reported_result", url=prefix+run["result"], pointer=pointer,
+                            sha256=run["result_sha256"]) for pointer in row["pointers"]]
+            if readings:
+                sources.append(dict(role="model_readings", url=prefix+path, pointer=readings[row["id"]],
+                                    sha256=graph.inputs[path]))
+            graph.nodes[key].update(case_id=row["id"], case_sources=sources)
         if run["format"] == "sygus_external":
             for task in sorted({r["task"] for r in graph.data(run["result"])["cases"]}):
                 key = graph.node("evidence_passage", task+"-schedules", run["result"], "/cases",
@@ -574,6 +587,7 @@ def compile_graph(read, *, source_commit, worktree):
     evidence_passages(graph)
     evidence_cases(graph)
     collection_routes(graph)
+    research_dictionary.link_evidence(graph)
     for edge in graph.edges:
         if edge["from"] not in graph.nodes or edge["to"] not in graph.nodes:
             raise ValueError(f"graph edge has an unknown endpoint: {edge}")
@@ -627,6 +641,8 @@ def evidence_catalog(graph):
                            ("Method", "method"), ("Source locator", "source_section"), ("Scope", "limit")):
             if key in node:
                 fields.append(f"{label} — {node[key]}")
+        fields.extend(f'Case input — {ref["url"]} · JSON Pointer {ref["pointer"]} · SHA-256 {ref["sha256"]}'
+                      for ref in node.get("case_sources", []))
         records.append({**node, "measurement": measurement, "citation_text": "\n".join(fields)})
     return {
         "schema_version": "asi-stack.evidence-catalog.v1",

@@ -19,7 +19,7 @@ GRAPH_SCHEMA = "schemas/book_knowledge_graph.schema.json"
 COMPILER_INPUTS = (
     kg.STRUCTURE, kg.INVENTORY, kg.PAPER_LIBRARY, kg.GLOSSARY, kg.READER_MANIFEST, kg.CROSSWALK,
     kg.CLAIMS, *kg.CLAIM_ADDENDA, kg.IDENTITIES, kg.CITATIONS, kg.PASSAGES, kg.CASES, kg.PROOFS, kg.STUDIES,
-    kg.CHAPTER_HISTORY, kg.DECLARATIONS, kg.research_dictionary.TERMS, "scripts/research_dictionary.py",
+    kg.CHAPTER_HISTORY, kg.DECLARATIONS, kg.research_dictionary.TERMS, kg.research_dictionary.EVIDENCE_LINKS, "scripts/research_dictionary.py",
     "scripts/book_knowledge_graph.py", "scripts/build_knowledge_graph_companion.py",
     "scripts/build_human_reader_current.py", "scripts/research_case_rows.py",
     "scripts/research_studies.py", GRAPH_SCHEMA, EVIDENCE_SEARCH, *(WEB + name for name in ASSET_NAMES),
@@ -183,7 +183,7 @@ def prepare(read, *, source_commit, worktree):
         "source_commit": source_commit, "worktree": worktree, "authority": graph["authority"],
         "search": "search.json", "evidence_catalog": "evidence-catalog.json",
         "dependency_inventory": "dependency-inventory.json", "dictionary": "dictionary.json",
-        "archive": "graph.json.gz", "shard_template": "nodes/{shard}.json",
+        "archive": "graph.json.gz", "shard_prefix_length": SHARD_WIDTH, "shard_template": "nodes/{shard}.json",
         "relationship_template": "relationships/{file}.json",
         "coverage": graph["coverage"],
         "limits": {"preview_per_relation": PREVIEWS_PER_RELATION, "preview_edges_per_node": PACKET_EDGE_LIMIT,

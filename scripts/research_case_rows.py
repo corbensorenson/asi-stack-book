@@ -42,10 +42,14 @@ def slug(value: str) -> str:
     return re.sub(r"[^a-z0-9-]+", "-", value.lower()).strip("-")
 
 
-def case(case_id, condition, arms, *, exhausted=False, adverse=False):
+def location(*parts):
+    return "/" + "/".join(str(part).replace("~", "~0").replace("/", "~1") for part in parts)
+
+
+def case(case_id, condition, arms, *, pointers, exhausted=False, adverse=False):
     outcome_signatures = {value["signature"] for value in arms.values()}
     return {
-        "id": slug(case_id), "condition": condition, "arms": arms,
+        "id": slug(case_id), "condition": condition, "arms": arms, "pointers": list(pointers),
         "disagrees": len(outcome_signatures) > 1,
         "exhausted": exhausted, "adverse": adverse,
     }
@@ -56,8 +60,9 @@ def arm(outcome, work, signature):
 
 
 def scoped_git(result):
-    by_case = {}
-    for row in result["trials"]:
+    by_case, pointers = {}, {}
+    for index, row in enumerate(result["trials"]):
+        pointers.setdefault(row["path"], []).append(location("trials", index))
         trials = by_case.setdefault(row["path"], {})
         if row["route"] in trials:
             raise ValueError("duplicate Git case/arm")
@@ -82,14 +87,14 @@ def scoped_git(result):
                 labels.append("effect in branch ancestry" if checks[5] else "effect outside branch ancestry")
             arms[route] = arm("; ".join(labels),
                               f'{row["sidecar_receipt_files"]} receipt files, {row["sidecar_receipt_bytes"]} bytes', checks)
-        yield case(name, name.replace("_", " "), arms, adverse=any(
+        yield case(name, name.replace("_", " "), arms, pointers=pointers[name], adverse=any(
             row["false_block"] or row["unauthorized_terminal_change"] or row["unresolved_terminal_state"]
             for row in trials.values()
         ))
 
 
 def authority_ordering(result):
-    for row in result["cases"]:
+    for index, row in enumerate(result["cases"]):
         arms = {}
         for name, observation in row["arms"].items():
             effect = observation["effect"]
@@ -98,12 +103,12 @@ def authority_ordering(result):
             order += f'; observed revision {observation["revision_at_observation"]}'
             arms[name] = arm(observation["outcome"], order, observation["outcome"])
         identity = row["case"]
-        yield case(identity, identity.replace("_", " "), arms,
+        yield case(identity, identity.replace("_", " "), arms, pointers=[location("cases", index)],
                    adverse=any(observation["outcome"] == "unauthorized" for observation in row["arms"].values()))
 
 
 def crossed_receiver(result):
-    for row in result["pairs"]:
+    for index, row in enumerate(result["pairs"]):
         sink = "deduplicating" if row["sink_idempotent"] else "non-deduplicating"
         condition = f'{row["task"]} · {sink} · {row["scenario"]} · {row["observation_profile"]}'
         arms = {}
@@ -118,17 +123,17 @@ def crossed_receiver(result):
             if receipt["false_closure"] or receipt["wrongful_block"]:
                 outcome += f', {int(receipt["false_closure"])} false closures, {int(receipt["wrongful_block"])} wrong blocks'
             arms[route] = arm(outcome, f'{steps.count("retry")} retries, {steps.count("receive_read")} additional reads', signature)
-        yield case(condition, condition, arms, adverse=any(
+        yield case(condition, condition, arms, pointers=[location("pairs", index)], adverse=any(
             receipt["false_closure"] or receipt["wrongful_block"] or receipt["effect_commits"] > 1
             or receipt.get("observed_effect") == "wrong_effect" for receipt in row["arms"].values()
         ))
 
 
 def verifier_rollout(result):
-    for pair in result["pairs"]:
-        for expected, ordinary, retained in zip(
+    for index, pair in enumerate(result["pairs"]):
+        for position, (expected, ordinary, retained) in enumerate(zip(
             pair["expected_routes"], pair["arms"]["conventional"], pair["arms"]["bound_handoff"], strict=True
-        ):
+        )):
             if (ordinary["tick"], ordinary["evidence_sha256"]) != (retained["tick"], retained["evidence_sha256"]):
                 raise ValueError("verifier arms do not share paired evidence")
             name = f'{pair["scope"]}-{pair["profile"]}-tick-{ordinary["tick"]}'
@@ -140,11 +145,13 @@ def verifier_rollout(result):
                     work += " · " + ", ".join(receipt["gaps"])
                 arms[route] = arm(f'{receipt["decision"]} → {receipt["route"]}', work,
                                   (receipt["decision"], receipt["route"]))
-            yield case(name, condition, arms, adverse=any(row["route"] != expected for row in (ordinary, retained)))
+            pointers = [location("pairs", index, "expected_routes", position),
+                        *(location("pairs", index, "arms", name, position) for name in ("conventional", "bound_handoff"))]
+            yield case(name, condition, arms, pointers=pointers, adverse=any(row["route"] != expected for row in (ordinary, retained)))
 
 
 def receiver_availability(result):
-    for pair in result["pairs"]:
+    for index, pair in enumerate(result["pairs"]):
         condition = (f'{pair["task"]} · primary {pair["primary"]} · secondary {pair["secondary"]} · '
                      f'{pair["initial_state"].replace("_", " ")} · '
                      f'{"deduplicating" if pair["deduplication"] else "non-deduplicating"}')
@@ -158,14 +165,14 @@ def receiver_availability(result):
             work = (f'{trial["logical_status_reads"]} reads, {trial["caller_status_calls"]} caller requests, '
                     f'{trial["retries"]} retries, {trial["status_payload_bytes"]} status bytes')
             arms[name] = arm(" · ".join(qualifiers), work, tuple(qualifiers))
-        yield case(f'pair-{pair["id"]:03}', condition, arms,
+        yield case(f'pair-{pair["id"]:03}', condition, arms, pointers=[location("pairs", index)],
                    adverse=pair["initial_state"] in {"wrong_effect", "repeat_effect"})
 
 
 def verifier_policy_audit(result):
-    for profile in result["cases"]:
+    for index, profile in enumerate(result["cases"]):
         names = tuple(profile["arms"])
-        for decisions in zip(*(profile["arms"][name]["decisions"] for name in names), strict=True):
+        for position, decisions in enumerate(zip(*(profile["arms"][name]["decisions"] for name in names), strict=True)):
             head = decisions[0]
             identity = (head["tick"], head["consumer"], head["expected"], head["revision"])
             if any((d["tick"], d["consumer"], d["expected"], d["revision"]) != identity for d in decisions):
@@ -178,13 +185,14 @@ def verifier_policy_audit(result):
                 if row["reasons"]:
                     work += " · " + ", ".join(row["reasons"])
                 arms[name] = arm(row["route"], work, row["route"])
-            yield case(label, label, arms, adverse=any(row["route"] != row["expected"] for row in decisions))
+            pointers = [location("cases", index, "arms", name, "decisions", position) for name in names]
+            yield case(label, label, arms, pointers=pointers, adverse=any(row["route"] != row["expected"] for row in decisions))
 
 
 def verifier_freshness(result):
-    for profile in result["cases"]:
+    for index, profile in enumerate(result["cases"]):
         names = tuple(profile["arms"])
-        for decisions in zip(*(profile["arms"][name]["decisions"] for name in names), strict=True):
+        for position, decisions in enumerate(zip(*(profile["arms"][name]["decisions"] for name in names), strict=True)):
             first = decisions[0]
             paired_fields = ("tick", "consumer", "expected_route", "pinned_version", "returned_version",
                              "observed_index_version", "revision")
@@ -195,11 +203,13 @@ def verifier_freshness(result):
                      f' · expected {first["expected_route"]}')
             arms = {name: arm(row["route"], row["reason"], row["route"])
                     for name, row in zip(names, decisions, strict=True)}
-            yield case(identity, label, arms, adverse=any(row["route"] != first["expected_route"] for row in decisions))
+            pointers = [location("cases", index, "arms", name, "decisions", position) for name in names]
+            yield case(identity, label, arms, pointers=pointers, adverse=any(row["route"] != first["expected_route"] for row in decisions))
 
 
 def synthesis_case_records(result, factorial):
-    for row in result["cases" if factorial else "tasks"]:
+    key = "cases" if factorial else "tasks"
+    for index, row in enumerate(result[key]):
         condition = f'{row["task"]} · {row["family"]}'
         name = row["task"]
         if factorial:
@@ -225,13 +235,14 @@ def synthesis_case_records(result, factorial):
                 work += " · solution " + (" → ".join(expanded) or "identity")
             terminal = trial["terminal"]
             arms[label] = arm(terminal.replace("_", " "), work, terminal == "verified")
-        yield case(name, condition, arms,
+        yield case(name, condition, arms, pointers=[location(key, index)],
                    exhausted=any(item["terminal"].endswith("budget_exhausted") for item in outcomes.values()),
                    adverse=row["family"] in {"out-of-family", "adverse-mixing"})
 
 
 def package_cases(result, transport):
-    for observation in result["observations"]:
+    key = "conditions" if transport else "cases"
+    for index, observation in enumerate(result["observations"]):
         name = observation["package" if transport else "name"]
         for condition, trials in observation["conditions" if transport else "cases"].items():
             arms = {}
@@ -248,12 +259,13 @@ def package_cases(result, transport):
                             f'{trial["gateway_envelope_bytes"]} modeled envelope bytes')
                 arms[method] = arm(outcome, work, (outcome, trial["false_closure"]))
             yield case(f"{name}-{condition}", f'{name}@{observation["version"]}, {condition}', arms,
-                       adverse=condition in {"wrong_body", "both_unavailable"})
+                       pointers=[location("observations", index, key, condition)], adverse=condition in {"wrong_body", "both_unavailable"})
 
 
 def review_cases(result):
-    tasks = {}
-    for packet in result["packets"]:
+    tasks, pointers = {}, {}
+    for index, packet in enumerate(result["packets"]):
+        pointers.setdefault(packet["id"], []).append(location("packets", index))
         trial = packet["result"]
         outcomes = tuple(trial[field] for field in ("decision_ok", "citation", "scoped"))
         labels = ("correct decision with facts", "usable citation", "scope credit")
@@ -262,7 +274,7 @@ def review_cases(result):
             description, f'{len(packet["path"])} records opened', outcomes)
     for task, arms in tasks.items():
         yield case(task, ("Claim review " if task.startswith("C") else "Navigation ") + task,
-                   {name: arms[name] for name in ("ordinary_register", "linked_register")})
+                   {name: arms[name] for name in ("ordinary_register", "linked_register")}, pointers=pointers[task])
 
 
 def arrival_cases(result):
@@ -275,13 +287,14 @@ def arrival_cases(result):
                 outcome = "{} verified, {} rejected, {} unsupported, {} pending checks".format(*counts)
                 work = f'{report["writes"]} state writes, mean wait among finished jobs {report["mean_finished_wait"]} ticks'
                 arms[name] = arm(outcome, work, counts)
-            yield case(f"{rate}-{point}", f'{rate} jobs per tick, {point.replace("_", " ")}', arms)
+            yield case(f"{rate}-{point}", f'{rate} jobs per tick, {point.replace("_", " ")}', arms, pointers=[location(rate, name, point) for name in arms])
 
 
 def revision_cases(result):
-    groups = {}
-    for trial in result["trials"]:
+    groups, pointers = {}, {}
+    for index, trial in enumerate(result["trials"]):
         key = trial["subject"], trial["identified"], trial["question"]
+        pointers.setdefault(key, []).append(location("trials", index))
         scores = tuple(trial[metric] for metric in ("decision", "citation", "scope"))
         outcome = "decision {}, citation {}, scope {}".format(*scores)
         opens = ", ".join(row["id"] for row in trial["packet"])
@@ -290,34 +303,34 @@ def revision_cases(result):
         expected = {"graph", "text", "identifier"} if identified else {"graph", "text"}
         if set(arms) != expected:
             raise ValueError(f"missing or ineligible retrieval arm for {subject}: {set(arms)}")
-        yield case(f"{subject}-{'id' if identified else 'wording'}", question, arms)
+        yield case(f"{subject}-{'id' if identified else 'wording'}", question, arms, pointers=pointers[subject, identified, question])
 
 
 def citation_cases(result):
-    for sample in result["cases"]:
+    for index, sample in enumerate(result["cases"]):
         for user in ("triage", "publication"):
             arms = {}
             for name in ("pool", "agreement"):
                 verdict, grade = sample[f"{name}_{user}"]
                 arms[name] = arm(f"{verdict} · {grade}", "Two shared model readings", (verdict, grade))
-            yield case(f"{sample['id']}-{user}", f"SciFact claim {sample['id']} · {user}", arms,
+            yield case(f"{sample['id']}-{user}", f"SciFact claim {sample['id']} · {user}", arms, pointers=[location("cases", index)],
                        adverse=any(sample[f"{name}_{user}"][1] == "unsupported" for name in arms))
 
 
 def fresh_retrieval_cases(result):
-    for record in result["cases"]:
+    for index, record in enumerate(result["cases"]):
         arms = {}
         for name, row in record["arms"].items():
             span = ", ".join(map(str, row["cited"]))
             outcome = f'{row["verdict"]} · {row["outcome"]} · paper {row["doc"]}, sentences {span}'
             work = f'2 readings, {row["tokens"]} input tokens, {row["sentences_ranked"]} candidate sentences'
             arms[name] = arm(outcome, work, (row["verdict"], row["outcome"], row["doc"], tuple(row["cited"])))
-        yield case(str(record["id"]), f'SciFact-Open claim {record["id"]}', arms,
+        yield case(str(record["id"]), f'SciFact-Open claim {record["id"]}', arms, pointers=[location("cases", index)],
                    adverse=any(v["outcome"] == "unsupported" for v in record["arms"].values()))
 
 
 def publication_cases(result):
-    for record in result["cases"]:
+    for index, record in enumerate(result["cases"]):
         arms = {}
         for name in ("primary_only", "direct", "gateway"):
             row = record["arms"][name]
@@ -326,13 +339,15 @@ def publication_cases(result):
                     f'{row["body_bytes"]} body bytes, {row["elapsed_ns"]/1000:.1f} µs to decision')
             arms[name] = arm(outcome, work, outcome)
         yield case(record["id"], f'{record["task"]} · {record["effect"]} · primary {record["primary"]} · {record["fallback"]}',
-                   arms, adverse=any(row["closed"] and not row["truth"] for row in record["arms"].values()))
+                   arms, pointers=[location("cases", index)],  adverse=any(row["closed"] and not row["truth"] for row in record["arms"].values()))
 
 
 def sygus_cases(result):
-    groups = {}
-    for row in result["cases"]:
-        arms = groups.setdefault((row["family"], row["task"], row["schedule"]), {})
+    groups, pointers = {}, {}
+    for index, row in enumerate(result["cases"]):
+        key = row["family"], row["task"], row["schedule"]
+        arms = groups.setdefault(key, {})
+        pointers.setdefault(key, []).append(location("cases", index))
         outcome = row["solution"] or row["stop"]
         work = (f'{row["proposals"]:,} proposals, {row["screen_ops"]:,} primitive evaluations, '
                 f'{row["solver_checks"]} universal checks; search {row["search_ns"]/1e9:.3f} s, '
@@ -340,6 +355,7 @@ def sygus_cases(result):
         arms[row["arm"]] = arm(outcome, work, row["stop"])
     for (family, task, schedule), arms in groups.items():
         yield case(f"{task}-{schedule}", f"{family} · {task} · {schedule}", arms,
+                   pointers=pointers[family, task, schedule],
                    exhausted=any("cap" in v["outcome"] for v in arms.values()))
 
 
@@ -347,7 +363,7 @@ def rows_for(format_id, result):
     if format_id == "three_papers":
         rows = [case(str(r["id"]), "Fresh claim "+str(r["id"]), {
             k:arm(a["outcome"], f'{a["readings"]} readings, {a["tokens"]} tokens; paper {a["doc"]}, sentences {a["cited"]}',a["outcome"])
-            for k,a in r["arms"].items()}, adverse=any(a["outcome"]=="unsupported" for a in r["arms"].values())) for r in result["cases"]]
+            for k,a in r["arms"].items()}, pointers=[location("cases", index)], adverse=any(a["outcome"]=="unsupported" for a in r["arms"].values())) for index, r in enumerate(result["cases"])]
     elif format_id == "sygus_external":
         rows = sygus_cases(result)
     elif format_id == "matched_publication":

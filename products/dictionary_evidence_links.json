@@ -1,0 +1,152 @@
+[
+  {
+    "term": "concept:dory",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:dory-depth-table"
+  },
+  {
+    "term": "concept:dory",
+    "relation": "measured_in",
+    "target": "evidence_passage:loop-serving-cost"
+  },
+  {
+    "term": "concept:dory",
+    "relation": "has_primary_source",
+    "target": "source:ext_dory_loop_budget_2026"
+  },
+  {
+    "term": "concept:looped-transformer",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:dory-depth-table"
+  },
+  {
+    "term": "concept:looped-transformer",
+    "relation": "measured_in",
+    "target": "evidence_passage:loop-serving-cost"
+  },
+  {
+    "term": "concept:key-value-cache",
+    "relation": "measured_in",
+    "target": "evidence_passage:loop-serving-cost"
+  },
+  {
+    "term": "concept:last-loop-kv-caching",
+    "relation": "measured_in",
+    "target": "evidence_passage:loop-serving-cost"
+  },
+  {
+    "term": "concept:math-500",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:dory-depth-table"
+  },
+  {
+    "term": "concept:gsm8k",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:dory-depth-table"
+  },
+  {
+    "term": "concept:e-means",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:emeans-retrieval-rebuild"
+  },
+  {
+    "term": "concept:k-means-plus-plus",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:kmeans-seeding"
+  },
+  {
+    "term": "concept:cram",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:cram-replacement-decision"
+  },
+  {
+    "term": "concept:h-net",
+    "relation": "measured_in",
+    "target": "evidence_passage:h-net-serving"
+  },
+  {
+    "term": "concept:joint-embedding-predictive-architecture",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:jepa-alignment-boundary"
+  },
+  {
+    "term": "concept:platonic-representation-hypothesis",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:jepa-alignment-boundary"
+  },
+  {
+    "term": "concept:activation-steering",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:persona-steering-attribution"
+  },
+  {
+    "term": "concept:weight-space-programming",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:weight-program-transfer"
+  },
+  {
+    "term": "concept:syntax-guided-synthesis",
+    "relation": "measured_in",
+    "target": "study_run:sygus-external-transfer"
+  },
+  {
+    "term": "concept:syntax-guided-synthesis",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:hd-17-schedules"
+  },
+  {
+    "term": "concept:program-witness",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:hd-17-schedules"
+  },
+  {
+    "term": "concept:forward-transfer",
+    "relation": "measured_in",
+    "target": "study_run:sygus-external-transfer"
+  },
+  {
+    "term": "concept:cost-per-accepted-answer",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:repair-cost-threshold"
+  },
+  {
+    "term": "concept:answerability-atlas",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:atlas-corrected-decision"
+  },
+  {
+    "term": "concept:scifact-open",
+    "relation": "measured_in",
+    "target": "study_run:three-paper-selection"
+  },
+  {
+    "term": "concept:unjudged-document",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:scifact-unjudged"
+  },
+  {
+    "term": "concept:citation-provenance",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:scifact-scoring-ceiling"
+  },
+  {
+    "term": "concept:abstention",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:citation-release-thresholds"
+  },
+  {
+    "term": "concept:operating-system",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:inference-kernel-placement"
+  },
+  {
+    "term": "concept:request-coalescing",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:release-observer-total-work"
+  },
+  {
+    "term": "concept:conformal-prediction",
+    "relation": "illustrated_by",
+    "target": "evidence_passage:conformal-coverage-unit"
+  }
+]

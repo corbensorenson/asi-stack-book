@@ -7,6 +7,8 @@ import re
 from urllib.parse import quote
 
 TERMS = "products/ai_dictionary.json"
+EVIDENCE_LINKS = "products/dictionary_evidence_links.json"
+EVIDENCE_LABELS = {"illustrated_by": "Worked example", "measured_in": "Measurement", "has_primary_source": "Primary source"}
 DIRECTORY = "products/evidence-registry/knowledge-graph/"
 PAGE = DIRECTORY+"dictionary.html"
 
@@ -34,6 +36,16 @@ def add_terms(graph):
             node["dictionary_url"] = PAGE+"#term-"+node["id"].partition(":")[2]
 
 
+def link_evidence(graph):
+    allowed = {"illustrated_by": {"evidence_passage", "evidence_case"},
+               "measured_in": {"evidence_passage", "study_run"}, "has_primary_source": {"source"}}
+    for position, row in enumerate(graph.data(EVIDENCE_LINKS)):
+        term, relation, target = row["term"], row["relation"], row["target"]
+        if not graph.nodes[term].get("dictionary_url") or graph.nodes[target]["kind"] not in allowed[relation]:
+            raise ValueError(f"Invalid dictionary evidence link at {position}")
+        graph.edge(term, relation, target, EVIDENCE_LINKS, f"/{position}", evidence_effect="none")
+
+
 def shell(title, intro, body, *, rendered_index=False):
     book = "../" if rendered_index else "../../../"
     graph = book + DIRECTORY if rendered_index else ""
@@ -56,16 +68,20 @@ def shell(title, intro, body, *, rendered_index=False):
 def dictionary_files(graph):
     nodes = {n["id"]: n for n in graph["nodes"]}
     owners = defaultdict(list)
+    examples = defaultdict(list)
     for edge in graph["edges"]:
         if edge["predicate"] in ("defined_by","explained_by") and edge["to"].startswith("chapter:"):
             owners[edge["from"]].append(edge["to"])
+        if edge["predicate"] in EVIDENCE_LABELS:
+            examples[edge["from"]].append(dict(id=edge["to"], role=edge["predicate"], url=nodes[edge["to"]]["url"],
+                                                title=nodes[edge["to"]]["title"]))
     rows = []
     for node in nodes.values():
         if not node.get("dictionary_url"):
             continue
         rows.append(dict(term=node["title"], definition=node["definition"], aliases=node.get("aliases",[]),
                          id=node["id"], url=node["dictionary_url"], chapters=list(dict.fromkeys(owners[node["id"]])),
-                         passage=node.get("subject_url",node["url"])))
+                         passage=node.get("subject_url",node["url"]), evidence=examples[node["id"]]))
     rows.sort(key=lambda row:row["term"].casefold())
     letters = defaultdict(list)
     for row in rows:
@@ -75,6 +91,8 @@ def dictionary_files(graph):
         for owner in row["chapters"]:
             links.append(f'<a href="../../../{nodes[owner]["url"]}">{escape(nodes[owner]["title"])}</a>')
         links.append(f'<a href="../../../terminology/concordance.html#uses-{escape(row["id"].partition(":")[2])}">Find passages using this term</a>')
+        for example in row["evidence"]:
+            links.append(f'<a href="../../../{escape(example["url"])}">{EVIDENCE_LABELS[example["role"]]} · {escape(example["title"])}</a>')
         aliases = ', '.join(map(escape,row['aliases']))
         fragment = escape(row["url"].split("#")[1])
         letter = row['term'][0].upper()

@@ -45,6 +45,9 @@ const relations = {
   owns_claim: ["Claims", "Owning chapter"],
   proxy_for: ["Claim measured by proxy", "Proxy results"],
   reader_example: ["Reader examples", "Concepts illustrated"],
+  illustrated_by: ["Worked examples", "Concepts illustrated"],
+  measured_in: ["Measurements", "Concepts measured"],
+  has_primary_source: ["Primary sources", "Concepts with this source"],
   related_term: ["Related terms", "Related terms"],
   related_proof: ["Related formal target", "Related evidence decisions"],
   retained_record_for: ["Claim identity", "Retained records"],
@@ -431,6 +434,16 @@ function renderRecord(packet) {
   if (node.kind === "study") brief(record, "Current decision", node.disposition);
   brief(record, "Reported result", node.summary);
   brief(record, "Evidence limit", node.limit, "limit");
+  if (node.case_sources?.length) {
+    const list = el("ul");
+    for (const input of node.case_sources) {
+      const item = el("li");
+      item.append(link(input.role === "model_readings" ? "Pinned model readings" : "Pinned case result", input.url),
+        " · JSON Pointer ", el("code", input.pointer));
+      list.append(item);
+    }
+    record.append(el("h3", "Case inputs"), list);
+  }
   const evidence = evidenceById.get(node.id);
   if (evidence) {
     brief(record, "Measurement", evidence.measurement);

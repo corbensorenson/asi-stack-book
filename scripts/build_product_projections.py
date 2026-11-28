@@ -39,6 +39,7 @@ CASE_SOURCES = Path("experiments/scifact_retrieval_followup/case_sources.json")
 P5_U1_RESULT = "experiments/p5_u1_governed_repository_change/results/2026-08-13-local.json"
 
 READER_SKILL = Path("skills/asi-stack-reader/SKILL.md")
+READER_CLI = READER_SKILL.parent / "scripts/read_book.py"
 READER_UI = READER_SKILL.parent / "agents/openai.yaml"
 CITATION_ARCHIVE = Path("products/citation_history/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f.json")
 CITATION_SCRIPT = Path("assets/knowledge-graph/citation-history.js")
@@ -141,7 +142,7 @@ class ProductInputs:
                                                 "scripts/build_tested_site_bundle.py",
                                                 "scripts/build_canonical_public_status.py", "scripts/projection_files.py",
                                                 "scripts/validate_product_projections.py", "scripts/schema_validation.py", "scripts/admission_guard.py"))
-        required.extend(ROOT / name for name in (READER_SKILL, READER_UI, CITATION_ARCHIVE, CITATION_SCRIPT, "LICENSE.md"))
+        required.extend(ROOT / name for name in (READER_SKILL, READER_UI, READER_CLI, CITATION_ARCHIVE, CITATION_SCRIPT, "LICENSE.md"))
         for path in required:
             self.capture(path)
         self.capture(ROOT / "experiments/scifact_retrieval_followup/ceiling.json")
@@ -1268,9 +1269,11 @@ def reader_resources(directory, status, inputs, payload):
     skill = read(READER_SKILL)
     kit = research.replay_zip({"asi-stack-reader/SKILL.md": skill,
                                "asi-stack-reader/agents/openai.yaml": read(READER_UI),
+                               "asi-stack-reader/scripts/read_book.py": read(READER_CLI),
                                "asi-stack-reader/RIGHTS.md": read("LICENSE.md")})
     install("asi-stack-reader.zip", kit)
     install("SKILL.md", skill)
+    install("read_book.py", read(READER_CLI))
     # This skill uses paragraphs, numbered instructions and Markdown links. Render
     # those directly from the installable source so the two guides stay in sync.
     body = skill.decode().split("---\n", 2)[2].strip().split("\n\n")
