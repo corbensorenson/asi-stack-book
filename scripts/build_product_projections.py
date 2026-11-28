@@ -1183,7 +1183,8 @@ def build_claim_citations(product_dir, inputs, payload, commit):
                      f'<a href="../../{escape(card["passage"])}">Passage using this result</a><ul>{"".join(body)}</ul></section>')
     write_text(product_dir / "proof-declarations.html", page("Cite a formal result",
                "Selected Reader and study propositions with their premises and exact Lean declarations.",
-               "".join(cards), "manifest.json", show_portfolio=False), payload)
+               '<p><a href="../../agent/topics/proofs.json">Compact lookup for all indexed declarations</a></p>'
+               + "".join(cards), "manifest.json", show_portfolio=False), payload)
     sections = []
     for citation in citations:
         for source in (citation["transition"], citation["run"]):

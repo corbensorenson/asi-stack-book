@@ -17,6 +17,12 @@ HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
 BLOCKS = {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS
 SCIFACT_LOOKUP = "agent/topics/scifact.json"
 STUDY_PROOF_LOOKUP = "agent/topics/studies-and-proofs.json"
+PROOF_LOOKUP = "agent/topics/proofs.json"
+PROOF_PACKET_BYTES = 5500
+PROOF_READING = {
+    "lookup": "Match all your proof clues here once and keep the section URLs.",
+    "evidence": "Read each matched export for the exact Lean statement, pinned source, and cited application context.",
+}
 SCIFACT_STUDY_PAGES = {
     "products/evidence-registry/study-scientific-citation.html",
     "products/evidence-registry/study-citation-retrieval.html",
@@ -284,13 +290,24 @@ EVIDENCE_FIELDS = ("id", "kind", "title", "measurement", "summary", "disposition
                    "result_sha256", "protocol_sha256", "featured_run")
 
 
-def attach_evidence(files, records, routes, commit, read):
+def proof_context(passage, section_url, locator):
+    """Quote the selected rendered paragraph separately from the formal result."""
+    paragraphs = [text for text in passage["text"].split("\n\n") if text.startswith(locator["paragraph"])]
+    if len(paragraphs) != 1 or passage["url"] != BOOK + locator["url"]:
+        raise ValueError("Cannot isolate proof context at " + locator["url"])
+    return dict(url=passage["url"], section_url=section_url, text=paragraphs[0])
+
+
+def attach_evidence(site, files, records, evidence_routes, section_routes, commit, read):
     """Include the evidence and its provenance in the same fetch as the passage."""
     from book_knowledge_graph import declaration_cards
 
     declarations = {}
     for card in declaration_cards(read).values():
         lines = read(card["module_path"]).decode().splitlines()
+        locator = card["reading_context"]
+        target = section_routes[section_target(locator["url"])]
+        context = proof_context(json.loads(files.text(site / target)), BOOK + quote(target, safe="/"), locator)
         for row in card["declarations"]:
             path = row["origin"]["path"]
             line = int(row["origin"]["locator"].removeprefix("line:"))
@@ -302,12 +319,13 @@ def attach_evidence(files, records, routes, commit, read):
                 raise ValueError("Cannot isolate theorem signature: " + row["name"])
             declarations[row["name"]] = dict(statement=statement.rstrip(), premises=row["premises"],
                                               conclusion=row["conclusion"],
-                                              url=f"https://github.com/corbensorenson/asi-stack-book/blob/{commit}/{path}#L{line}")
+                                              url=f"https://github.com/corbensorenson/asi-stack-book/blob/{commit}/{path}#L{line}",
+                                              context=context)
     by_file = {}
     by_id = {row["id"]: row for row in records}
     cases_by_run = {}
     for row in records:
-        path = routes.get(row["id"])
+        path = evidence_routes.get(row["id"])
         if path is None:
             continue
         packet = {field: row[field] for field in EVIDENCE_FIELDS if field in row}
@@ -380,6 +398,10 @@ def study_proof_lookup_rows(records):
                        or row.get("measurement") == "Formal declaration")
 
 
+def proof_lookup_rows(records):
+    return lookup_rows(row for row in records if row.get("measurement") == "Formal declaration")
+
+
 def publish(site, files, commit, read):
     routes = section_exports(site, files, commit)
     graph = site / DIRECTORY
@@ -409,7 +431,7 @@ def publish(site, files, commit, read):
     # evidence only to each record's deciding passage.
     enriched = [dict(source_by_id[record["id"]], locators=record.get("locators", []),
                      section_url=record["section_url"]) for record in records]
-    attach_evidence(files, enriched, primary, commit, read)
+    attach_evidence(site, files, enriched, primary, routes, commit, read)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
                                                          reading=READING, records=lookup_rows(records))))
@@ -417,11 +439,14 @@ def publish(site, files, commit, read):
                                                         reading=READING, records=scifact_lookup_rows(records))))
     files.write(site / STUDY_PROOF_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
                                                            reading=READING, records=study_proof_lookup_rows(records))))
+    files.write(site / PROOF_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
+                                                     reading=PROOF_READING, records=proof_lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
                  evidence_lookup=dict(catalog="agent/lookup.json", match="id, title, aliases, or question",
-                                      topics={"SciFact": SCIFACT_LOOKUP, "Studies and proofs": STUDY_PROOF_LOOKUP},
+                                      topics={"Proofs": PROOF_LOOKUP, "SciFact": SCIFACT_LOOKUP,
+                                              "Studies and proofs": STUDY_PROOF_LOOKUP},
                                       read="Open section_url for the passage, evidence scope, and citation. Cite its url."),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
                  reading=READING, chapter_directory=CHAPTER_DIRECTORY, chapter_index_template=CHAPTER_INDEX_DIRECTORY + "/{volume_id}.json",
@@ -439,6 +464,7 @@ def publish(site, files, commit, read):
 
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
 - [Look up several evidence topics in one read](agent/lookup.json). Keep the returned section URLs and open those passages together.
+- [Find Lean declarations in one pass](agent/topics/proofs.json). Keep the matching section links. Each proof export includes the exact statement, pinned source line, and a cited passage on applying the result.
 - [Find studies, cases, and Lean declarations](agent/topics/studies-and-proofs.json) in a smaller catalog. A run export gives the pinned protocol, original result, and exact case links.
 - [Look up SciFact studies and cases](agent/topics/scifact.json) when every clue concerns scientific citation. Use the same section links.
 - Cite each compact export's `url` directly once the evidence answers the question. Open a pinned protocol for missing method details, a full page for material outside the exports, and a replay kit to reproduce a run.

@@ -281,6 +281,18 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                 or (site / study_proof_path).stat().st_size >= (site / agent["evidence_lookup"]["catalog"]).stat().st_size
                 or f'href="{study_proof_path}"' not in (site / "index.html").read_text()):
             errors.append("Study and proof lookup lacks its compact revision-bound routes or homepage entry")
+        proof_path = agent["evidence_lookup"]["topics"]["Proofs"]
+        proof_lookup = load(site / proof_path)
+        proof_cards = {row["name"]: card["reading_context"]
+                       for card in graph.declaration_cards(read).values() for row in card["declarations"]}
+        if (proof_path != agent_reading.PROOF_LOOKUP or proof_lookup["snapshot_id"] != agent["snapshot_id"]
+                or proof_lookup["source_commit"] != source_commit or proof_lookup.get("reading") != agent_reading.PROOF_READING
+                or proof_lookup["records"] != agent_reading.proof_lookup_rows(discovery["records"])
+                or {row["id"] for row in proof_lookup["records"]} != {"evidence_passage:" + name for name in proof_cards}
+                or (site / proof_path).stat().st_size >= (site / study_proof_path).stat().st_size
+                or (site / proof_path).stat().st_size > agent_reading.PROOF_PACKET_BYTES
+                or f'href="{proof_path}"' not in (site / "index.html").read_text()):
+            errors.append("Proof lookup lacks its complete, compact revision-bound routes or homepage entry")
         scifact_path = agent["evidence_lookup"]["topics"]["SciFact"]
         scifact = load(site / scifact_path)
         scifact_ids = {row["id"] for row in scifact["records"]}
@@ -330,8 +342,19 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
                                 or run.get("url") != agent_reading.BOOK + expected.get("url", "")
                                 or not all(run.get(field) for field in ("method", "limit"))):
                             errors.append("Case export does not link its run method and limits: " + row["id"])
-                    elif row.get("measurement") == "Formal declaration" and not evidence.get("declaration", {}).get("statement"):
-                        errors.append("Formal export lacks its exact declaration: " + row["id"])
+                    elif row.get("measurement") == "Formal declaration":
+                        declaration = evidence.get("declaration", {})
+                        context = declaration.get("context", {})
+                        context_route = context.get("section_url", "")
+                        if (not declaration.get("statement")
+                                or not context_route.startswith(agent_reading.BOOK + "agent/sections/")
+                                or passage_file.stat().st_size > agent_reading.PROOF_PACKET_BYTES):
+                            errors.append("Formal export lacks its declaration or application passage: " + row["id"])
+                        else:
+                            application = load(site / unquote(context_route.removeprefix(agent_reading.BOOK)))
+                            if (application["source_commit"] != source_commit or context != agent_reading.proof_context(
+                                    application, context_route, proof_cards[row["id"].split(":", 1)[1]])):
+                                errors.append("Formal export quotes the wrong application paragraph: " + row["id"])
                     if row["kind"] == "study_run":
                         run_id = row["id"].split(":", 1)[1]
                         run = runs_by_id[run_id]
