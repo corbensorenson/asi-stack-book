@@ -1,0 +1,10 @@
+# Proof application confirmation rubric
+
+Use the established binary decision, determining citation and scope criteria. The citation point requires both the exact theorem and the specific application anchor. Record unsupported numerical claims separately.
+
+| ID | Decision | Determining citation | Scope |
+|---|---|---|---|
+| PC1 | False `staleContractRejected` suffices to reject the finite fixture. Receipt use requires resolving replay state, expiry and other bound conditions. The deployment claim requires separate evidence for the actual deployment. | `circle_public_consumer_gate_missing_mutation_control_rejected` and Circle chapter Core Claim | A prior replay or matching fingerprint provides no empirical warrant for a new deployment claim. A control flag alone gives no observation of executed tests. |
+| PC2 | With successful selection, selected cost is at most that of each eligible listed alternative under declared costs. The modeled open obligation without a residual blocks promotion. | `selected_route_has_minimum_modeled_cost` and Reader Unit 2 What the Current Work Establishes | Actual efficiency and calibrated quality or cost accuracy require separate measurement on relevant workloads. |
+| PC3 | A signal-only classifier cannot match effective enforcement on every modeled case. Given signals alone, the decision about this specific agreement remains unresolved. | `commitment_signals_cannot_recover_effective_enforcement` and Reader Unit 8 What the Current Work Can Establish | The model supplies neither real reachability of a remedy nor an assessment of this specific agreement's enforcement. |
+| PC4 | Lists resistance, absorption, service restoration, harmed-party recovery, correction and adaptation separately. The reported outcomes leave public correction and adaptation open. | `provider_signals_cannot_recover_population_resilience` and the societal-resilience Core Claim | No provider-only classifier recovers all modeled resilience cases. The result does not establish actual missing or achieved recovery for a population. |
