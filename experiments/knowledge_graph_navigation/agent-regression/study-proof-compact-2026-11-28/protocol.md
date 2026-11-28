@@ -1,0 +1,7 @@
+# Study and proof compact reading retest
+
+Compare the book-wide edition `235a908a` with the deployed study-and-proof revision. Freeze two panels of four fresh questions, the rubric, the release bundles, and the unchanged reading harness. Start four separate sessions after live verification, one per edition and panel. Use identical settings, the public homepage, the existing allowance, and sequential reads. The participant follows the assigned edition's public directions and can use full pages or archives. Keep the rubric and other sessions hidden.
+
+Questions use existing publications and new decisions or facts. The C3 question asks for exact row outcomes and work that the previous regression did not request. The receiver question checks a different run's replay and observation boundary. The proof panel covers four exact declarations with different scope questions from the earlier panel. No question requires reexecuting a study or proving a theorem anew.
+
+Report the usual quality and cost gates, plus deduplicated bytes and every full-page or replay open separately for each panel. The study target is to avoid reopening broad study pages for the C3 row or observation scope and retain the deciding facts and citations. The proof target is to preserve full answer quality using the exact declaration exports. Verify that full study pages, pinned sources, and replay downloads remain available independently of the agent sessions. An unblinded reviewer applies fixed criteria. Each panel has one matched pair.
