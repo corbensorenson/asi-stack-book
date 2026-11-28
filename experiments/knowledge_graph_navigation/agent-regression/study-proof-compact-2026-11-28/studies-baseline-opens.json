@@ -1,0 +1,159 @@
+{
+  "arm": "baseline",
+  "panel": "studies",
+  "revision": "235a908a9c467143f140cfb861e141df93f909b1",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282458,
+      "sha256": "e6c8a6ae691bdfdd604a4a4c487dc012afc184b42e354a5993b17605689d1dd3",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "346b87246898efe866c882eccf372da3d899ef292521c76ab01bd50c6a04c23c"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "matched claim-review",
+        "two-service",
+        "forward-transfer",
+        "revision authority"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183",
+      "displayed_bytes": 2859,
+      "displayed_sha256": "0afb41934625dac067f8d6c0ff1f41e1f02b7a33015c21db27fb01d778183d49"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "package distribution",
+        "operator-time",
+        "scheduler audit",
+        "expanded-work cap",
+        "pipe message",
+        "live observation"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183",
+      "displayed_bytes": 3335,
+      "displayed_sha256": "18da6754e790a6efd6dcfaf3b25c4fe9393b86f2dfb376f09ed10164ae99b9db"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "bytes": 3584,
+      "sha256": "7ee2d6f5d02090f13f37a9db6924eeb117a49a29bb8085987eeb126eef57a37f",
+      "displayed_bytes": 3584,
+      "displayed_sha256": "7ee2d6f5d02090f13f37a9db6924eeb117a49a29bb8085987eeb126eef57a37f"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3373,
+      "sha256": "2d06a2b31ee2100daa5d044386deac15758745a6fc285dab55d2f67596d2b1fa",
+      "displayed_bytes": 3373,
+      "displayed_sha256": "2d06a2b31ee2100daa5d044386deac15758745a6fc285dab55d2f67596d2b1fa"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json",
+      "bytes": 6077,
+      "sha256": "2a66fe220c417eeaf67c00c1093346ac6331faff55ada9bd5ce60cf7c3088e37",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "8e70bad94f3961f8430e5758d2e0307c901c111a2536e8395b4624debb3aa5d5"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json",
+      "bytes": 5810,
+      "sha256": "a54bdc9efc056b78e400631581e546776b8c2a7cc301bbcc543bc78ac7b90609",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "7171635376418cba2b02edc765a675d8cd1f48975b4f0864bbdb410ca9359e85"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "claim-review-matched c3",
+        "labor question",
+        "operator time claim review",
+        "receiver-distribution observation command"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183",
+      "displayed_bytes": 2083,
+      "displayed_sha256": "f31d1ccbabd1222bda322d8d74be57d9c9dcea7d8ca4dccc41ce43393e26f997"
+    },
+    {
+      "route": "products/evidence-registry/study-claim-review.html",
+      "focus": [
+        "C3"
+      ],
+      "canonical_route": "products/evidence-registry/study-claim-review.html",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b",
+      "displayed_bytes": 3951,
+      "displayed_sha256": "715b7f12326e4a064735bf1e5cf6af90608499a5f26e6db5650d3c485007a210"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html",
+      "focus": [
+        "observation"
+      ],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 4692,
+      "displayed_sha256": "1cc8b3c0933dbf046041545e60e761030d5a427244465b558c692e99e9290c46"
+    },
+    {
+      "route": "products/evidence-registry/study-crossed-receiver.html#run-receiver-distribution",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-crossed-receiver.html#run-receiver-distribution",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "bc69ab7cffec2456375dbf2fb9e89b81917af6e24be2754091cba51eb12137ef"
+    },
+    {
+      "route": "products/evidence-registry/study-claim-review.html#run-claim-review-matched--case-c3",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-claim-review.html#run-claim-review-matched--case-c3",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b",
+      "displayed_bytes": 402,
+      "displayed_sha256": "84f4392dfa0568c2abd59cc7c54eef7b97aadca104440024635bb8b595e34576"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/a3e9a06203978c6c3b9c5bbeb8d1f1acd640762f/experiments/p5_u1_governed_repository_change/public_distribution_observation/protocol.md",
+      "bytes": 4262,
+      "sha256": "2850cec4d13824c327681dcad7d2deca14d84399f11937eed725560e47f82dc3",
+      "displayed_bytes": 4262,
+      "displayed_sha256": "2850cec4d13824c327681dcad7d2deca14d84399f11937eed725560e47f82dc3"
+    },
+    {
+      "route": "products/evidence-registry/study-claim-review.html#run-claim-review-matched",
+      "focus": [
+        "CaseConditions"
+      ],
+      "canonical_route": "products/evidence-registry/study-claim-review.html#run-claim-review-matched",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b",
+      "displayed_bytes": 47,
+      "displayed_sha256": "79129fa2ba9a48ea47282f36a3de83ba4e425eef0d3452080c9766e76408428f"
+    }
+  ]
+}
