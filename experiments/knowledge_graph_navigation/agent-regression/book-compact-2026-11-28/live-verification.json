@@ -1,0 +1,982 @@
+{
+  "verified_at": "2026-11-28T10:11:23.295347+00:00",
+  "revision": "235a908a9c467143f140cfb861e141df93f909b1",
+  "build_run_id": 46132529050,
+  "deploy_run_id": 46133830493,
+  "artifact_id": 15258124002,
+  "volume_count": 115,
+  "technical_chapters": 89,
+  "reader_units": 26,
+  "section_count": 3597,
+  "compact_parents": 507,
+  "study_runs": 23,
+  "formal_declarations": 10,
+  "replays": 11,
+  "verified_assets": {
+    "agent-index.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent-index.json",
+      "bytes": 1655,
+      "sha256": "c2e53aaa03f7489e78d1afed68831427102fdbe9c7f56164c7c05290364409fb"
+    },
+    "agent/chapter-index/adjudicated-persistence-and-the-adaptive-commit-boundary.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/adjudicated-persistence-and-the-adaptive-commit-boundary.json",
+      "bytes": 13501,
+      "sha256": "75e3def742280b32123d39736345062c076b0ed0de83aba8a36e47fa74086bff"
+    },
+    "agent/chapter-index/adversarial-evaluation-sandbagging-and-training-time-deception.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/adversarial-evaluation-sandbagging-and-training-time-deception.json",
+      "bytes": 13984,
+      "sha256": "f67f9a3f7ca5cb19aaeede75f41d9127bd171bae558402bc07ba932da93457b9"
+    },
+    "agent/chapter-index/adversarial-machine-learning-and-model-attack-surface.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/adversarial-machine-learning-and-model-attack-surface.json",
+      "bytes": 14587,
+      "sha256": "0b5556300ce2137344194672acd1432e65fda70ca9ac29f49e2138613dbc9fa7"
+    },
+    "agent/chapter-index/ai-deployment-transition-distribution-and-human-agency.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/ai-deployment-transition-distribution-and-human-agency.json",
+      "bytes": 12556,
+      "sha256": "a800e74b1fa867bc94e6422ba59107b0d42f9d1f6cf43f183d37712a3faaa16b"
+    },
+    "agent/chapter-index/ai-supply-chain-integrity-and-lifecycle-provenance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/ai-supply-chain-integrity-and-lifecycle-provenance.json",
+      "bytes": 15679,
+      "sha256": "45a5e1ee680ec3cbf54cffb144c18864c77a3a313d30a484cb51c4272d4a9613"
+    },
+    "agent/chapter-index/ai-work-surfaces-agent-harnesses-and-organizational-absorption.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/ai-work-surfaces-agent-harnesses-and-organizational-absorption.json",
+      "bytes": 18184,
+      "sha256": "42e4c8c110ae4d13ef8e9f9761779ab5e8c2e55a008f2b992ce4c848f90ddfe6"
+    },
+    "agent/chapter-index/artifact-graphs-audit-logs-and-replay.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/artifact-graphs-audit-logs-and-replay.json",
+      "bytes": 15308,
+      "sha256": "c89edf7e043eea67d79d8003f625f407c72a98ca1667603e8c9b585332f7082c"
+    },
+    "agent/chapter-index/artifact-steward-agents-and-living-project-governance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/artifact-steward-agents-and-living-project-governance.json",
+      "bytes": 12232,
+      "sha256": "5d6ec5f2df19d7a168124f8d9dde57615c9283d967a2e75fe43421a2379a7c21"
+    },
+    "agent/chapter-index/asi-is-a-stack-not-a-model.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/asi-is-a-stack-not-a-model.json",
+      "bytes": 9197,
+      "sha256": "581e3c3ee7b0157b0175624d8560e5049272e8380cef39784cc03745418075c9"
+    },
+    "agent/chapter-index/autonomous-replication-proliferation-and-containment.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/autonomous-replication-proliferation-and-containment.json",
+      "bytes": 12615,
+      "sha256": "41e150da4b59e27f0055271948392a78b2d2972d4b2f057f5d790b02eccf09fa"
+    },
+    "agent/chapter-index/benchmark-ratchets-and-anti-goodhart-evidence.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/benchmark-ratchets-and-anti-goodhart-evidence.json",
+      "bytes": 18945,
+      "sha256": "569176d678e687fa0cb7fa1e548e0a4123d6b4ae30e93cf364e1e74bde552b4b"
+    },
+    "agent/chapter-index/capability-replacement-and-rollback.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/capability-replacement-and-rollback.json",
+      "bytes": 8560,
+      "sha256": "5f407b9ff1401f6f9b5a7fb0d352d865717edec8b96f0490df5775e53f2916b8"
+    },
+    "agent/chapter-index/capability-thresholds-and-deployment-commitments.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/capability-thresholds-and-deployment-commitments.json",
+      "bytes": 10339,
+      "sha256": "02b51826fab9c2a78dc89609e1c8cbb4aff87ba7ef953fad705ff203af814220"
+    },
+    "agent/chapter-index/circle-calculus-and-proof-carrying-ai-contracts.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/circle-calculus-and-proof-carrying-ai-contracts.json",
+      "bytes": 8489,
+      "sha256": "933ea5c2ffb8ae1d4e638ef46c4c9a754b54ba9e1deee92df1efbc621188a1f9"
+    },
+    "agent/chapter-index/claim-ledgers-and-belief-revision.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/claim-ledgers-and-belief-revision.json",
+      "bytes": 10989,
+      "sha256": "d43f4ad63331d4825305424c1ae3d5928e241169cbffb623c8625aae88f53430"
+    },
+    "agent/chapter-index/cognitive-compilation-and-semantic-ir.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/cognitive-compilation-and-semantic-ir.json",
+      "bytes": 12434,
+      "sha256": "8add24aca6442a4f8da01cf7d5967e8a261c152cad38cf65313f7dbba2a752ac"
+    },
+    "agent/chapter-index/cognitive-method-transfer-and-qualification.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/cognitive-method-transfer-and-qualification.json",
+      "bytes": 12035,
+      "sha256": "61589b36086741d3ff80802b53e8e69891822503886459433cea952f463b0ff7"
+    },
+    "agent/chapter-index/coil-attention-cyclic-memory-and-recurrence-contracts.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/coil-attention-cyclic-memory-and-recurrence-contracts.json",
+      "bytes": 10818,
+      "sha256": "8bc9469804fc65f16d08f3b7a44125aa9a2d4649fe996ec2a7a9a2cdfdbc1969"
+    },
+    "agent/chapter-index/coilra-multicoil-rope-and-cyclic-mixers.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/coilra-multicoil-rope-and-cyclic-mixers.json",
+      "bytes": 9530,
+      "sha256": "daafb09304e2d8dceac55437f4ba09744cdb35b4264ba0406b0e2f610ad07c1b"
+    },
+    "agent/chapter-index/compact-generative-systems-and-residual-honesty.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/compact-generative-systems-and-residual-honesty.json",
+      "bytes": 15620,
+      "sha256": "0f755de8c4206d61b1f71d3da099ae227cc372f79efe6ec2691839d31c9410c3"
+    },
+    "agent/chapter-index/confidential-and-verifiable-ai-computation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/confidential-and-verifiable-ai-computation.json",
+      "bytes": 10316,
+      "sha256": "c615359aea1ecd550ac8cb39b2b51447d4515468d0ba6e108bf2d3de40532c67"
+    },
+    "agent/chapter-index/constitutional-alignment-substrate.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/constitutional-alignment-substrate.json",
+      "bytes": 8202,
+      "sha256": "dc07192f7db6fd1c8ac89b358a5429d2e93f69766d201215ec3d39317f05ec32"
+    },
+    "agent/chapter-index/content-authenticity-watermarking-and-synthetic-media-integrity.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/content-authenticity-watermarking-and-synthetic-media-integrity.json",
+      "bytes": 13601,
+      "sha256": "c1ddf3e7a7816c733ce6bea240cf9fdda19e3de88fda762d138cebba08522a09"
+    },
+    "agent/chapter-index/context-transactions-snapshots-mounts-and-taint.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/context-transactions-snapshots-mounts-and-taint.json",
+      "bytes": 12238,
+      "sha256": "28bd3c74fdd06ce5a47afe3fd30db4c2baa78b49ea6cb8be94e17b8cb16d1a3f"
+    },
+    "agent/chapter-index/dangerous-capability-domains-and-misuse-uplift.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/dangerous-capability-domains-and-misuse-uplift.json",
+      "bytes": 13180,
+      "sha256": "e81e28a73b032b2a2267c42abf44ace61114a135c3826f19e2503a377493d551"
+    },
+    "agent/chapter-index/data-engines-continual-learning-and-unlearning.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/data-engines-continual-learning-and-unlearning.json",
+      "bytes": 16362,
+      "sha256": "5af7b95cc04a6338f90c3f559199bdb0ca43335e0591f814f8f9a8504116a8ca"
+    },
+    "agent/chapter-index/durable-semantic-memory-and-knowledge-lattices.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/durable-semantic-memory-and-knowledge-lattices.json",
+      "bytes": 13705,
+      "sha256": "7c33fbfdb987c77372dc9c3def229d7e5d7d62ab3bf3313647ace3b9c14ee2e6"
+    },
+    "agent/chapter-index/embodied-agency-real-time-control-and-physical-safety.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/embodied-agency-real-time-control-and-physical-safety.json",
+      "bytes": 11406,
+      "sha256": "5f3bce57bf232a958fe0725be7a9e96cf3386421c80b62bfd85901b2f9b64f1c"
+    },
+    "agent/chapter-index/evidence-states-and-claim-discipline.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/evidence-states-and-claim-discipline.json",
+      "bytes": 8487,
+      "sha256": "aec0451614cc99b94b2aa5fca5618d6cdb0e125f13d664618329f35b79b559ba"
+    },
+    "agent/chapter-index/executable-specifications-and-lean-proof-envelope.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/executable-specifications-and-lean-proof-envelope.json",
+      "bytes": 13739,
+      "sha256": "1ec2f8078d0f6ac22ab7c4b28efb1ed5ac5e3b3122a88bdfbc44b7092c52a8a7"
+    },
+    "agent/chapter-index/failure-modes-of-ungoverned-intelligence.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/failure-modes-of-ungoverned-intelligence.json",
+      "bytes": 9735,
+      "sha256": "ccd6025bec9c8959ec9bf38c6f7b13ed4fe48e5a60101f286ca1e1be6740393a"
+    },
+    "agent/chapter-index/fast-generation-architectures.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/fast-generation-architectures.json",
+      "bytes": 13849,
+      "sha256": "aed447917fa1696c07e0756970fe6b6e0278314298a4d8de876f18e69038bbc5"
+    },
+    "agent/chapter-index/governed-deliberation-and-test-time-scaling.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/governed-deliberation-and-test-time-scaling.json",
+      "bytes": 12654,
+      "sha256": "fef513152bcf7bbb0491863065adba829667f984071c6216bdb9328e9128852a"
+    },
+    "agent/chapter-index/governed-model-training-distributed-optimization-and-scaling.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/governed-model-training-distributed-optimization-and-scaling.json",
+      "bytes": 18174,
+      "sha256": "10b2887f511968a820fbca63e41c804d06da6e126b13f1cda45ca8675aa0fef5"
+    },
+    "agent/chapter-index/governed-objective-formation-value-learning-and-goal-integrity.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/governed-objective-formation-value-learning-and-goal-integrity.json",
+      "bytes": 11931,
+      "sha256": "1593b15105926ddd80ec77eab7e67d2548a29c47aad98f64646bbb1a458f1a8d"
+    },
+    "agent/chapter-index/governed-operations-incident-command-and-graceful-degradation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/governed-operations-incident-command-and-graceful-degradation.json",
+      "bytes": 18706,
+      "sha256": "fa20d994d8057e41a9a092a2160bdc0ced66a03150cd38128ef2d15931e30d15"
+    },
+    "agent/chapter-index/governed-world-models-and-reality-grounding.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/governed-world-models-and-reality-grounding.json",
+      "bytes": 16623,
+      "sha256": "17a8a9aeac07a9141aa377df1bf1faef69a71407cc12c0203dde9bb98fa0fd6a"
+    },
+    "agent/chapter-index/human-ai-communication-persuasion-and-epistemic-security.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/human-ai-communication-persuasion-and-epistemic-security.json",
+      "bytes": 12976,
+      "sha256": "739689801b1deba68e198242c96998ea02910c07ed724c08c4f2a789dd8da8fa"
+    },
+    "agent/chapter-index/human-ai-organizations-delegation-and-accountability.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/human-ai-organizations-delegation-and-accountability.json",
+      "bytes": 15766,
+      "sha256": "282daa7a1ac9560f49b663c3800deb214a29d85808bbdc124dae5d7523b849f8"
+    },
+    "agent/chapter-index/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/human-ai-symbiosis-neurotechnology-and-cognitive-sovereignty.json",
+      "bytes": 10867,
+      "sha256": "48ab43b9c6333550e218b6c784511a239e6e7fd72c8687443faac99240f8dbeb"
+    },
+    "agent/chapter-index/human-factors-and-meaningful-control-in-oversight.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/human-factors-and-meaningful-control-in-oversight.json",
+      "bytes": 14711,
+      "sha256": "9cb30ef5d52dae55a32797242d11bd5acb741bc950bdea260be3b82ee4871dbe"
+    },
+    "agent/chapter-index/human-intent-as-a-formal-input.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/human-intent-as-a-formal-input.json",
+      "bytes": 9092,
+      "sha256": "4b71d05544e51857306a54f2616950c6d8651734bf1a5b5eb24c06ff12fe82f4"
+    },
+    "agent/chapter-index/inner-alignment-mesa-optimization-and-learned-objective-integrity.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/inner-alignment-mesa-optimization-and-learned-objective-integrity.json",
+      "bytes": 16240,
+      "sha256": "69d4b5c6b83f428c7182bb7b913e2d3c62699674a3d8f65b1ad346acd4d44a32"
+    },
+    "agent/chapter-index/institutions-international-coordination-and-public-legitimacy.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/institutions-international-coordination-and-public-legitimacy.json",
+      "bytes": 13649,
+      "sha256": "84d135de3ec64ebe16f9cef7df86f2010110da3dee06d5bf5bd525b19d04dd1d"
+    },
+    "agent/chapter-index/integrated-reference-architecture.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/integrated-reference-architecture.json",
+      "bytes": 19056,
+      "sha256": "4d3bd42b7969caac6631960282f1aa49a78dce1a970b87b49c8e29690aace6af"
+    },
+    "agent/chapter-index/intent-to-execution-contracts.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/intent-to-execution-contracts.json",
+      "bytes": 12785,
+      "sha256": "e078069d4b5f59fb5420958d176a25707798635fceb7749703e5b75b41e5e30a"
+    },
+    "agent/chapter-index/inter-stack-protocols-identity-and-economic-exchange.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/inter-stack-protocols-identity-and-economic-exchange.json",
+      "bytes": 11155,
+      "sha256": "6c7e8542e50716d43745fa5cf39bd8f98b1cc50ca88a0c1cb1fdf15d01b20acc"
+    },
+    "agent/chapter-index/labor-os-and-typed-jobs.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/labor-os-and-typed-jobs.json",
+      "bytes": 8089,
+      "sha256": "e9b9267222ee105a14f7995bff5f682e268b3911aadaae172c6952fb2bcf8aa6"
+    },
+    "agent/chapter-index/learning-compute-topology-and-adaptive-process-architecture.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/learning-compute-topology-and-adaptive-process-architecture.json",
+      "bytes": 18000,
+      "sha256": "4cff109cd9d071da1e0a5ea882150a017be9b54206e96fbaf975518b5c9ec917"
+    },
+    "agent/chapter-index/learning-theory-generalization-and-scaling-science.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/learning-theory-generalization-and-scaling-science.json",
+      "bytes": 12391,
+      "sha256": "f0aad496ce83208a0aff29161f931c4e9f486cbed472b86f2f9087e8ddba55d5"
+    },
+    "agent/chapter-index/living-book-methodology.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/living-book-methodology.json",
+      "bytes": 9767,
+      "sha256": "c1df99cf036cc06e84ebb3df751d9ca36bb311dd88ce7aec2dfb74005378e158"
+    },
+    "agent/chapter-index/mathematical-and-search-substrates.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/mathematical-and-search-substrates.json",
+      "bytes": 9085,
+      "sha256": "a5d9b757282f93dd0629a0d913d04f0820f7bd903e009c40f22447a4dc820760"
+    },
+    "agent/chapter-index/military-ai-autonomous-weapons-and-strategic-stability.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/military-ai-autonomous-weapons-and-strategic-stability.json",
+      "bytes": 14213,
+      "sha256": "3d791789f709ab133e777836d1a209b4d517f7e9c1eb3c36710a3b8deaf8724f"
+    },
+    "agent/chapter-index/model-weight-custody-and-hardware-roots-of-trust.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/model-weight-custody-and-hardware-roots-of-trust.json",
+      "bytes": 17503,
+      "sha256": "ad1045fbd4fb7313638f904f11c13decb4fb9c146909849cf88febe6c240bdd4"
+    },
+    "agent/chapter-index/moral-uncertainty-and-value-conflict.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/moral-uncertainty-and-value-conflict.json",
+      "bytes": 9016,
+      "sha256": "e49c8862459162cd914ae2b65e2874111cc100c31ebb546e2a79e4a98da8abcb"
+    },
+    "agent/chapter-index/multi-agent-dynamics-collective-intelligence-and-systemic-risk.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/multi-agent-dynamics-collective-intelligence-and-systemic-risk.json",
+      "bytes": 16951,
+      "sha256": "3933a78b1f67e6d8980c2834b68228a01a8016a8f209697e102e4298b7115d30"
+    },
+    "agent/chapter-index/open-ended-improvement-engines.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/open-ended-improvement-engines.json",
+      "bytes": 14936,
+      "sha256": "d92d6a36e7a421272606588999e000381de64abaef9bb467cad72229ccd399b6"
+    },
+    "agent/chapter-index/open-research-agenda-and-bibliography-plan.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/open-research-agenda-and-bibliography-plan.json",
+      "bytes": 8520,
+      "sha256": "c05259967ad08d5555c17f068f17891612637367ade31cb6baa1b643ce3b02e4"
+    },
+    "agent/chapter-index/open-weight-release-and-post-release-control.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/open-weight-release-and-post-release-control.json",
+      "bytes": 17823,
+      "sha256": "7971e90d067806cf0963ebb76e6e7c76636de4560a2c9507736b4cfbc4b84bb3"
+    },
+    "agent/chapter-index/perception-sensor-fusion-and-observation-trust.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/perception-sensor-fusion-and-observation-trust.json",
+      "bytes": 9708,
+      "sha256": "6d1d229252ff388e71e063f04933f5876c9fa7b9343c532cd4a20a54b241140b"
+    },
+    "agent/chapter-index/personal-compute-hives-and-federated-edge-intelligence.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/personal-compute-hives-and-federated-edge-intelligence.json",
+      "bytes": 14400,
+      "sha256": "b1022caf2bfed6d1e6e0cba9e39f37672f8cccfbab230639eea80cd13410154d"
+    },
+    "agent/chapter-index/physical-compute-infrastructure-energy-and-environmental-constraints.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/physical-compute-infrastructure-energy-and-environmental-constraints.json",
+      "bytes": 15216,
+      "sha256": "ee396c5916fc9e6bf51543a15a6a0e48b3510dd9613fdd3016ee522196807cfa"
+    },
+    "agent/chapter-index/planning-as-a-control-layer.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/planning-as-a-control-layer.json",
+      "bytes": 10826,
+      "sha256": "016d885dd63945f5b3d7914c41591006beb4e2d1abbad4ee64b05d68eb236801"
+    },
+    "agent/chapter-index/policy-optimization-and-learning-from-feedback.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/policy-optimization-and-learning-from-feedback.json",
+      "bytes": 15805,
+      "sha256": "5226ab64453e729693044f99bbcfe690a437ad9d9991805860ce721a6f9a1c50"
+    },
+    "agent/chapter-index/privacy-data-rights-and-information-flow-governance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/privacy-data-rights-and-information-flow-governance.json",
+      "bytes": 13027,
+      "sha256": "43faa4bcf5ac824155788a4aed7482495e7a6a78f4963dd09cd296df3b639e90"
+    },
+    "agent/chapter-index/procedural-memory-and-cognitive-loop-closure.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/procedural-memory-and-cognitive-loop-closure.json",
+      "bytes": 13425,
+      "sha256": "9a77fa6826ae47c5d17466315bb91016a3a4fc15e60b765d049b9ae283871260"
+    },
+    "agent/chapter-index/project-theseus-as-report-first-implementation-reference.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/project-theseus-as-report-first-implementation-reference.json",
+      "bytes": 10554,
+      "sha256": "e1d6f4b1f7ef791046a39bb41a2af666374492f351fabec72e34468016c688b3"
+    },
+    "agent/chapter-index/prototype-roadmap.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/prototype-roadmap.json",
+      "bytes": 7273,
+      "sha256": "32ac2dbfa8610e78b087cb1e9e46778f7b430b21a2b8cdbd3d1309fdc2e20acd"
+    },
+    "agent/chapter-index/rankfold-neuralfold-and-artifact-compression.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/rankfold-neuralfold-and-artifact-compression.json",
+      "bytes": 15017,
+      "sha256": "f7abb0c9aa5208b3ef371b13046cbc3ed7aee3cf0c216ccf3e17336f0749b9ea"
+    },
+    "agent/chapter-index/readiness-gates-residual-escrow-and-quarantine.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/readiness-gates-residual-escrow-and-quarantine.json",
+      "bytes": 11273,
+      "sha256": "e8e13d41ff5792f7c533cd86873d1e59e25e135b01954b0c815ea41780ee7e8a"
+    },
+    "agent/chapter-index/recursive-self-improvement-boundaries.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/recursive-self-improvement-boundaries.json",
+      "bytes": 10759,
+      "sha256": "a7695f26caa0a6a7211ee28fc43881f75b4169d8daea4e0148a6e75adeb97b5e"
+    },
+    "agent/chapter-index/reflexive-model-world-systems.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/reflexive-model-world-systems.json",
+      "bytes": 9370,
+      "sha256": "60a851c4eb835e2b5f010628ac5954626997c0215738f55eba5b549e03827af2"
+    },
+    "agent/chapter-index/relational-dimension-compilation-and-polyadic-cognition.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/relational-dimension-compilation-and-polyadic-cognition.json",
+      "bytes": 11570,
+      "sha256": "13b56c23c8a568599875323df8338f6c8706e918b3684e2a2c04d21cc308ee19"
+    },
+    "agent/chapter-index/replaceable-cognitive-substrates-beyond-transformer-monoculture.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/replaceable-cognitive-substrates-beyond-transformer-monoculture.json",
+      "bytes": 21349,
+      "sha256": "6f241c8998873be21a786f18c21f06dad39cf7bb7c17adbea42d06be928c69f8"
+    },
+    "agent/chapter-index/resource-economics-and-token-budgets.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/resource-economics-and-token-budgets.json",
+      "bytes": 21487,
+      "sha256": "bbf4d4b3cdaf5d570c0ff31ae11bec3eadf086fa88402763cdd79d4e9cdc2f79"
+    },
+    "agent/chapter-index/routing-heads-and-specialist-cores.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/routing-heads-and-specialist-cores.json",
+      "bytes": 14732,
+      "sha256": "0bf2a6e0287b35d7f078690a3d9c648bdc3fdfe1005cbfd4d4d07d91e9268ff2"
+    },
+    "agent/chapter-index/runtime-adapters-tool-permissions-and-human-approval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/runtime-adapters-tool-permissions-and-human-approval.json",
+      "bytes": 13313,
+      "sha256": "671bcc9216b52c5cb4a5c270b0290739656ad4ddba275a3973d5ee51baa189f7"
+    },
+    "agent/chapter-index/safety-cases-and-structured-assurance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/safety-cases-and-structured-assurance.json",
+      "bytes": 9923,
+      "sha256": "c113bd325283102214bc9b27c44a4ff59c9fee5c2a051f07db1dbda56367f3e5"
+    },
+    "agent/chapter-index/scalable-oversight-and-adversarial-ai-control.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/scalable-oversight-and-adversarial-ai-control.json",
+      "bytes": 12287,
+      "sha256": "f040c7899dc06812836f2cf1493e7ba286c03cd9e268866a0bf5d64184c1769c"
+    },
+    "agent/chapter-index/scientific-discovery-and-experimental-governance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/scientific-discovery-and-experimental-governance.json",
+      "bytes": 13513,
+      "sha256": "e55eab6661163efa22b320c5e073ab0c42e272e18c05caf06fcbcc9b882a3417"
+    },
+    "agent/chapter-index/security-kernel-and-digital-scifs.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/security-kernel-and-digital-scifs.json",
+      "bytes": 12198,
+      "sha256": "07eaf4283629db7ebc83602777ea6716f5fbde461b3b31448a3571f322954d03"
+    },
+    "agent/chapter-index/societal-resilience-and-misuse-defense.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/societal-resilience-and-misuse-defense.json",
+      "bytes": 13736,
+      "sha256": "1e3a37149b9cba79f6fccc18480e6996048b726c423ccf46c193f007fb2ce86a"
+    },
+    "agent/chapter-index/spinoza-verification-and-proof-carrying-claims.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/spinoza-verification-and-proof-carrying-claims.json",
+      "bytes": 9997,
+      "sha256": "fa97e56ec7698ffc511e7ca924ba79a142ba2abc890abfda46de06c606e31be4"
+    },
+    "agent/chapter-index/stable-capability-fields.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/stable-capability-fields.json",
+      "bytes": 10181,
+      "sha256": "8ad1bb6dad9d00cdaada98fbdcf80acd7f52d2b235ad01a62b26d30462d82c2f"
+    },
+    "agent/chapter-index/system-boundaries-and-authority.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/system-boundaries-and-authority.json",
+      "bytes": 8184,
+      "sha256": "3186f8b559023208ee434b875a74a189524304cafdd87672d468c4d3e484c582"
+    },
+    "agent/chapter-index/the-efficient-asi-hypothesis.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/the-efficient-asi-hypothesis.json",
+      "bytes": 10064,
+      "sha256": "3569419c2af887037708ce458de4cb5acae6476a73cd332d1c0212191e4f8e36"
+    },
+    "agent/chapter-index/unit-01.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-01.json",
+      "bytes": 7095,
+      "sha256": "9551d713d03d6771383804acd895e9adfe09422276ff4d968caa8530ee64dc14"
+    },
+    "agent/chapter-index/unit-02.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-02.json",
+      "bytes": 7469,
+      "sha256": "8789fcdb2344e77d3d163ec72bf1d72cfd7daa8dbb7d4249a7176b35622ca706"
+    },
+    "agent/chapter-index/unit-03.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-03.json",
+      "bytes": 9254,
+      "sha256": "84e265e16eaf879b059da75be5398d4e7f9a9833ef54ddf8b6aa5ac7e517a048"
+    },
+    "agent/chapter-index/unit-04.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-04.json",
+      "bytes": 6898,
+      "sha256": "942fe6367db8a8c8c416bae27c2e3385d0253396b7d747a47bff35fee253a3cf"
+    },
+    "agent/chapter-index/unit-05.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-05.json",
+      "bytes": 6780,
+      "sha256": "2482726acc0b61785d8713d82b592380f119378d6a6f03fc480d95812c5106b9"
+    },
+    "agent/chapter-index/unit-06.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-06.json",
+      "bytes": 8218,
+      "sha256": "2a86c3cdf67ffb1cf4f6b6d58d27ca238f48efba0a26afe185ba481252f01378"
+    },
+    "agent/chapter-index/unit-07.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-07.json",
+      "bytes": 8366,
+      "sha256": "35c6ba8e04d16bb09fddde283d9cf163720f5dd6afb62a002d0263cc5100ce7e"
+    },
+    "agent/chapter-index/unit-08.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-08.json",
+      "bytes": 8031,
+      "sha256": "47b5e28a52cbeaad8c1623643e25c9d9de608d7719e9292c93e5595c6ff86b97"
+    },
+    "agent/chapter-index/unit-09.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-09.json",
+      "bytes": 6721,
+      "sha256": "ec2ddb9e430a72c6bc80dd012dcc299ec61b1e679330f9554a90fad50abc74de"
+    },
+    "agent/chapter-index/unit-10.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-10.json",
+      "bytes": 6877,
+      "sha256": "150211d03adb0b846fb582111c99fdef8b6b143c9e717bede21feb9173465905"
+    },
+    "agent/chapter-index/unit-11.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-11.json",
+      "bytes": 7803,
+      "sha256": "a75b9a6b3d218665950995b297172fb1ff96f2299262b8a0d04daeda8e60bda3"
+    },
+    "agent/chapter-index/unit-12.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-12.json",
+      "bytes": 7732,
+      "sha256": "ba4d50bb3d659f7c7e406d2a44b9b6a4672d56e08e40152d21794357780e883c"
+    },
+    "agent/chapter-index/unit-13.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-13.json",
+      "bytes": 9499,
+      "sha256": "b217e769cfa495ba49107c495ff7c242bc11fa3f59f35e9d5064da83fbe4d7bb"
+    },
+    "agent/chapter-index/unit-14.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-14.json",
+      "bytes": 10226,
+      "sha256": "2d92245782b4202ab8b9fc62c592dd90138462d70440dd1f904ed2302c4e83a9"
+    },
+    "agent/chapter-index/unit-15.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-15.json",
+      "bytes": 12564,
+      "sha256": "9599887666394f3b97b9b1e0354cfa056efbc6fb29c008f96222f20767aad1ad"
+    },
+    "agent/chapter-index/unit-16.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-16.json",
+      "bytes": 9680,
+      "sha256": "8661606b46573b671e1ee43a2dbe582f06afa868f63a5b7005d25e0b491f44f7"
+    },
+    "agent/chapter-index/unit-17.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-17.json",
+      "bytes": 11662,
+      "sha256": "6ed5680d4330a3eb6c4933879c85040f82284fd685274d3db640f305f0956050"
+    },
+    "agent/chapter-index/unit-18.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-18.json",
+      "bytes": 12902,
+      "sha256": "67223fed26e72a89f09bf049c5c80bd14ce9f94e2c5f517bf1c8edd6b8d27b98"
+    },
+    "agent/chapter-index/unit-19.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-19.json",
+      "bytes": 15612,
+      "sha256": "f7e2bb0a0da54e429d428db699ef16eac3681bcced74c7e54ced1416079a7497"
+    },
+    "agent/chapter-index/unit-20.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-20.json",
+      "bytes": 13047,
+      "sha256": "fc9b323e7668021f44474fc3c9918a1963c412dd80ff9e3937b5e3ced03e591c"
+    },
+    "agent/chapter-index/unit-21.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-21.json",
+      "bytes": 16564,
+      "sha256": "edb282d8d0474e6d1e55115addbc5d61f31434b331ec212d808c51a1c89e6565"
+    },
+    "agent/chapter-index/unit-22.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-22.json",
+      "bytes": 11892,
+      "sha256": "fe0dd17a278351f7d82b660493bb327410290e5e73908a394a20bc0cd5620f0e"
+    },
+    "agent/chapter-index/unit-23.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-23.json",
+      "bytes": 5424,
+      "sha256": "084d50a4e0eb854ce6302ca918132d34ff5dd5b23234fa8bfe2f46054a76f410"
+    },
+    "agent/chapter-index/unit-24.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-24.json",
+      "bytes": 10977,
+      "sha256": "dc8662f486a7319d1d07819a91c92f1a012d3827089564a147f2d193e9d9c58a"
+    },
+    "agent/chapter-index/unit-25.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-25.json",
+      "bytes": 13479,
+      "sha256": "0b81a5cb88c3fea6d8f3a6f82df2a44c8cdebef953b436b8c75f95d90d58c281"
+    },
+    "agent/chapter-index/unit-26.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/unit-26.json",
+      "bytes": 11232,
+      "sha256": "155c758ea34e687e6df48b372cdcfa0d13d380116725c318078351f9a7ad52b0"
+    },
+    "agent/chapter-index/verification-bandwidth-and-context-adequacy.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/verification-bandwidth-and-context-adequacy.json",
+      "bytes": 12593,
+      "sha256": "24e5d17edf0bd62f2d37381ce9587eb20b8213a49c0c59938a8a61f789d8193a"
+    },
+    "agent/chapter-index/virtual-context-abi.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/virtual-context-abi.json",
+      "bytes": 14076,
+      "sha256": "782f866dec86e1677b0a1bdd63e7a1688c52981a3d2b3f0ced2c998aaec7a5a4"
+    },
+    "agent/chapter-index/white-box-evidence-interpretability-and-activation-governance.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapter-index/white-box-evidence-interpretability-and-activation-governance.json",
+      "bytes": 18979,
+      "sha256": "cc658dc7d50903023bca238e42d5f4f4259d4852201eed56e0d4d603f0114427"
+    },
+    "agent/chapters.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/chapters.json",
+      "bytes": 43285,
+      "sha256": "4768c9e11edbd60d49fde0773a6e8e5a49bc1d9ee1896ada204ef26f1c3a5b55"
+    },
+    "agent/compact/governed-deliberation-and-test-time-scaling/deliberation-measurement-contract.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/compact/governed-deliberation-and-test-time-scaling/deliberation-measurement-contract.json",
+      "bytes": 4274,
+      "sha256": "7413110a5eaf85d28b3b7cdbfeb8af839242fdb34695a01b0231f7944eba9bc7"
+    },
+    "agent/compact/unit-24/useful-output-is-the-denominator.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/compact/unit-24/useful-output-is-the-denominator.json",
+      "bytes": 3149,
+      "sha256": "e2382aca8c43fdb640d1cf3d009a6711f1e3a302485391737fb9257754f4c2f6"
+    },
+    "agent/lookup.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/lookup.json",
+      "bytes": 40946,
+      "sha256": "b04e4c0a49dec3fb93e83717d03fdc2150e68f886f7304fd4dc6f1c9b6090183"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_lease_is_bounded_versioned_and_unexpired.json",
+      "bytes": 2526,
+      "sha256": "88be2219761f1c58cd0add331a19a9ae5d72eac257d265668cccf9a933ce3b81"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/accepted_secret_injection_is_scoped_mediated_and_preexpiry.json",
+      "bytes": 2682,
+      "sha256": "7a9c96ffa76882e38f9306a50214d12d697cd60b965dca02780ee3cd3f1a9bdd"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_missing_mutation_control_rejected.json",
+      "bytes": 2494,
+      "sha256": "23bfe525debcb7691625c15720110185695e16372b48ebe55bddbf19267a9c91"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/circle_public_consumer_gate_promotion_overclaim_rejected.json",
+      "bytes": 2277,
+      "sha256": "5e397e27c4bcf2c6425f2fa6572b607ca0fa2d891e58b22938c7a240f6f3a2d1"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/commitment_signals_cannot_recover_effective_enforcement.json",
+      "bytes": 2086,
+      "sha256": "75af243bf325d94fbe2be9c5bc247bdc733bc4192c91f0d0968b4e1dc828407f"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/local_mandate_cannot_authorize_distinct_jurisdiction.json",
+      "bytes": 2190,
+      "sha256": "931ef2a061e68f6077fb63c7e1dfcc7f7fbafd33292412c8a752eccadc78d74e"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/participation_signals_cannot_recover_representation.json",
+      "bytes": 2212,
+      "sha256": "02928e0bb7525ed84c9229e19acade0188de61209b112e000e947452d4c691c2"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/provider_signals_cannot_recover_population_resilience.json",
+      "bytes": 2120,
+      "sha256": "03c0ffbc2c35054f91c28d4906a1b1cef5bcf1f8200208ed378658313d77f3b4"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_has_minimum_modeled_cost.json",
+      "bytes": 2308,
+      "sha256": "7380f279c8eae371785ae79c54f66d8ae0c15d489217679a63333e4fd8558bae"
+    },
+    "agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/proof-declarations/anchors/selected_route_is_a_listed_eligible_candidate.json",
+      "bytes": 2112,
+      "sha256": "bd86bab520fada3730bb47d7929d1e4fe2abeabbbad5161dc985bb6d84de6a31"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 5801,
+      "sha256": "cfa6112b8083a3c5b4e4ac5b37453750b9ad1d4e8f522e2b8e0d58235204494d"
+    },
+    "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5043,
+      "sha256": "b963573f3240697b638ad88284816d95777980c09e26b514b5190a631ad2c62c"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-atlas.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-atlas.json",
+      "bytes": 3275,
+      "sha256": "3251c82ae185288a6148cea9042e4808698e7b3e85ec675117409b0e9edd1e59"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-claim-review-matched.json",
+      "bytes": 3584,
+      "sha256": "7ee2d6f5d02090f13f37a9db6924eeb117a49a29bb8085987eeb126eef57a37f"
+    },
+    "agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-claim-review/anchors/run-reserved-revision-retrieval.json",
+      "bytes": 4311,
+      "sha256": "8b37c2e285ec125be16fbc2c44fbc1fc54d0436a128f92914dd63a77504a1a1e"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-availability.json",
+      "bytes": 4965,
+      "sha256": "ee03b014831027690a747bb367cc49c59c696f25edf30e1d1098b827502b1b99"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-crossed.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-crossed.json",
+      "bytes": 4218,
+      "sha256": "013676007610e823d8c36c3d94fbf66f2203e4722611256aba84d2767ea50177"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-distribution.json",
+      "bytes": 3373,
+      "sha256": "2d06a2b31ee2100daa5d044386deac15758745a6fc285dab55d2f67596d2b1fa"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-effect-audit.json",
+      "bytes": 5939,
+      "sha256": "6f24aca689680dee3607d03bd3af68baf79716e6e5a645bf7a59c1264854d5b6"
+    },
+    "agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-crossed-receiver/anchors/run-receiver-live-transport.json",
+      "bytes": 3819,
+      "sha256": "5351e6d2374781aa93f1e3aa4cecc14ab774386d6ed55e34816b7751314ca095"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-sygus-external-transfer.json",
+      "bytes": 4283,
+      "sha256": "596f4db7d9cc50dacf50c562929ac2a8abd3e7bbea540b20ea660934774e9973"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-factorial.json",
+      "bytes": 6747,
+      "sha256": "632a99ccdce03ad795911a602950f0847f762bc4e7e6ba3bcfd58cf88cb48cee"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-pilot.json",
+      "bytes": 5443,
+      "sha256": "03c9266541340ad4d9addd28e5d5f8f3025b0c6f770a4990eb27671ae9cd0fb8"
+    },
+    "agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-forward-transfer/anchors/run-transfer-scheduler-audit.json",
+      "bytes": 6077,
+      "sha256": "2a66fe220c417eeaf67c00c1093346ac6331faff55ada9bd5ce60cf7c3088e37"
+    },
+    "agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-matched-release/anchors/run-paired-release-observers.json",
+      "bytes": 10280,
+      "sha256": "72528ecd1d9bb9688c2a2c744f360974b767127866df183c9f0bd313cb207fb1"
+    },
+    "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 5498,
+      "sha256": "b1e93c421e59bd445de17c9a7df7e88954e5d63817302f6b98c84e5912b1e386"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/run-authority-commit-ordering.json",
+      "bytes": 3730,
+      "sha256": "ad30e54b8a47ecd6412a8cc93db97ba99a6129a67f1c38e8636d362f5c6fff41"
+    },
+    "agent/passages/products/evidence-registry/study-scoped-git/anchors/run-git-retrospective.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-scoped-git/anchors/run-git-retrospective.json",
+      "bytes": 3740,
+      "sha256": "7bfb07e890df54ab066637fbe8a1dfc89198c4e5b5f3ec156be7d11c243d5155"
+    },
+    "agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verification-load/anchors/run-verification-arrivals.json",
+      "bytes": 4073,
+      "sha256": "5fe953db714fee0bcf1d9bccdbdda46c91ad9e4996063ea7a67da7cee03647fc"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-floor-cache.json",
+      "bytes": 7315,
+      "sha256": "466e65871a096175fff99b4e2f6a0620903eb265643b1166b517de5f1b4382b1"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-paired.json",
+      "bytes": 4022,
+      "sha256": "9f791b990057bcb3232518cdec0b30910d31e65bd8c44e6c4a40217feee9a064"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-process-boundary.json",
+      "bytes": 5810,
+      "sha256": "a54bdc9efc056b78e400631581e546776b8c2a7cc301bbcc543bc78ac7b90609"
+    },
+    "agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/passages/products/evidence-registry/study-verifier-rollout/anchors/run-verifier-revision-freshness.json",
+      "bytes": 5124,
+      "sha256": "85e9ae0634a0c4ee277a9cfdee187ea0bba3178d95e186411f460d82f06dcff1"
+    },
+    "agent/sections.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections.json",
+      "bytes": 695701,
+      "sha256": "07265a34684dc92db197072bc9161c98b4624ab1edcb71b39b24d02aac107eea"
+    },
+    "agent/sections/cognitive-compilation-and-semantic-ir/authority-bearing-ir-and-contract-preservation.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/cognitive-compilation-and-semantic-ir/authority-bearing-ir-and-contract-preservation.json",
+      "bytes": 6140,
+      "sha256": "5f1b1ecb8e8179e441422e41efe8e9d41e4c972fea13289286052ae2d61ac4ab"
+    },
+    "agent/sections/governed-deliberation-and-test-time-scaling/latent-pass-budget.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/governed-deliberation-and-test-time-scaling/latent-pass-budget.json",
+      "bytes": 1856,
+      "sha256": "4880dbc214fa1213e98a84045fc444ab8787da8afd7fa8a4b0c9ab3f63def8c1"
+    },
+    "agent/sections/physical-compute-infrastructure-energy-and-environmental-constraints/metering-allocation-uncertainty-and-rebound.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/physical-compute-infrastructure-energy-and-environmental-constraints/metering-allocation-uncertainty-and-rebound.json",
+      "bytes": 2187,
+      "sha256": "6b6f0b57f444b73f820a8040cdcb53fe4f3662668355c4ae8cd860037a490127"
+    },
+    "agent/sections/resource-economics-and-token-budgets/price-reuse-over-its-break-even-horizon.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/resource-economics-and-token-budgets/price-reuse-over-its-break-even-horizon.json",
+      "bytes": 2205,
+      "sha256": "00a47394aff8ddad6deb48dfb7ba84db659dda94c1ed8f83f833fa04894cd8f4"
+    },
+    "agent/sections/unit-16/capacity-and-competence-are-scheduling-constraints.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-16/capacity-and-competence-are-scheduling-constraints.json",
+      "bytes": 2828,
+      "sha256": "95f2565aa4c8370c254beba4a110d6ae55a9f86f70da16d43c5406a189f6a452"
+    },
+    "agent/sections/unit-21/a-longer-justification-earns-the-wrong-reward.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-21/a-longer-justification-earns-the-wrong-reward.json",
+      "bytes": 1556,
+      "sha256": "0bfe84386815105345009705bae80d961b092a295dad967795c4dea30ebd4637"
+    },
+    "agent/sections/unit-24/from-a-token-meter-to-an-answer-bill.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/sections/unit-24/from-a-token-meter-to-an-answer-bill.json",
+      "bytes": 1671,
+      "sha256": "a608a4b685b338a2abb3967503438137242c0e7acacca39e75bf9972d5991934"
+    },
+    "agent/topics/scifact.json": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/agent/topics/scifact.json",
+      "bytes": 6257,
+      "sha256": "8ffbc852c0733848c1f44df7b09175dc88403ceedb42f716d16be1df0a7d9925"
+    },
+    "chapters/cognitive-compilation-and-semantic-ir.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/cognitive-compilation-and-semantic-ir.html",
+      "bytes": 384303,
+      "sha256": "35289922cd9af07be9b91120fb8f6743ef3840e5344a5f51ddb45cb17a27bbc0"
+    },
+    "chapters/governed-deliberation-and-test-time-scaling.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/governed-deliberation-and-test-time-scaling.html",
+      "bytes": 345606,
+      "sha256": "681d8b9936a0a3e946d751662810fcd518c826e37861adef8e927892a29417d8"
+    },
+    "chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/physical-compute-infrastructure-energy-and-environmental-constraints.html",
+      "bytes": 332092,
+      "sha256": "c873bf1eebf7f88b15b1766034c40cfe574febe5d8ce6b0ae1a7147a01c0464f"
+    },
+    "chapters/resource-economics-and-token-budgets.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/chapters/resource-economics-and-token-budgets.html",
+      "bytes": 458114,
+      "sha256": "acfcfd05ccd60f2cb886d7caec1b20358cbaf716cc9ca24dd0e4015314b6c3d1"
+    },
+    "index.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/index.html",
+      "bytes": 282458,
+      "sha256": "e6c8a6ae691bdfdd604a4a4c487dc012afc184b42e354a5993b17605689d1dd3"
+    },
+    "llms.txt": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/llms.txt",
+      "bytes": 1465,
+      "sha256": "7fe3728eae108ac9b4b6de8c3147eb56be6a06783dad8a5a257ca5a0d1baf891"
+    },
+    "products/evidence-registry/SKILL.md": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/SKILL.md",
+      "bytes": 3573,
+      "sha256": "20001ea62a2ae03d8addb837030d131b47c24478f13986ad6f8f13d2df21cb33"
+    },
+    "products/evidence-registry/fresh-citation-retrieval-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/fresh-citation-retrieval-replay.zip",
+      "bytes": 408606,
+      "sha256": "df599e777a67e9e5a096e189ad88a36c38f3f7127fc0942e2cac2b9d6181a018"
+    },
+    "products/evidence-registry/instrument-audit-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/instrument-audit-replay.zip",
+      "bytes": 2967878,
+      "sha256": "dcfa7842fba1fec2deb84df966e6d64b5fb68a7d621c4326672f0f5e825b62d2"
+    },
+    "products/evidence-registry/paired-release-observers-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/paired-release-observers-replay.zip",
+      "bytes": 213867,
+      "sha256": "15d74842fe2b9783eb77daf76f973a02b9bf327879ca8f4a4fa76e8e65759bac"
+    },
+    "products/evidence-registry/receiver-availability-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/receiver-availability-replay.zip",
+      "bytes": 840674,
+      "sha256": "b8ca322b73f09837e9ec83c8fcb4bc294d24d7507d026a7c0d05e96238fc4154"
+    },
+    "products/evidence-registry/reserved-revision-retrieval-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/reserved-revision-retrieval-replay.zip",
+      "bytes": 161766,
+      "sha256": "05497d2fa06945ea679c3b00137265255f7cffbc6459c40533cf48f4c43858eb"
+    },
+    "products/evidence-registry/scifact-release-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/scifact-release-replay.zip",
+      "bytes": 304606,
+      "sha256": "50c3c73f6ba2784c8f54577b2430a5ed25f7cbc4ebf9f99a5325fce05f8e9aec"
+    },
+    "products/evidence-registry/scoped-git-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/scoped-git-replay.zip",
+      "bytes": 65234,
+      "sha256": "3d7fc701eee24266c86fc25bda993fd712c7b839e411b1144aa0c6f725739982"
+    },
+    "products/evidence-registry/study-citation-retrieval.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-citation-retrieval.html",
+      "bytes": 258221,
+      "sha256": "7df8d2c5cd5268ed8b49e519399a5d26be423ece84f8a32056cfe2a95faac2cd"
+    },
+    "products/evidence-registry/study-claim-review.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-claim-review.html",
+      "bytes": 28143,
+      "sha256": "b8482b97a4563d4e0a74026ac1749875626acc310641711231277404c607763b"
+    },
+    "products/evidence-registry/study-crossed-receiver.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-crossed-receiver.html",
+      "bytes": 502064,
+      "sha256": "ffde0abe536b3373c1ab50f1d55bcd26d0687f37a5723740beeb47bc7a5983fe"
+    },
+    "products/evidence-registry/study-forward-transfer.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-forward-transfer.html",
+      "bytes": 852156,
+      "sha256": "1ed33be872d54af0db29172d23cf87c85ddc62e6ee32e6dabaad688c897c5447"
+    },
+    "products/evidence-registry/study-matched-release.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-matched-release.html",
+      "bytes": 79083,
+      "sha256": "69e586457259d4d627bfeb8d7ebc1807cc81537d65ac8f26adde4e100f381163"
+    },
+    "products/evidence-registry/study-scientific-citation.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scientific-citation.html",
+      "bytes": 269231,
+      "sha256": "7d971945a9ed78a51bd867f7ab6a3cf2ca7bf1ce58b0b3eb5735156b4fb201f2"
+    },
+    "products/evidence-registry/study-scoped-git.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-scoped-git.html",
+      "bytes": 16185,
+      "sha256": "3eca96e27b9d98f19172aab5d4ab874feea3cd6106001391b1676350a10abc4c"
+    },
+    "products/evidence-registry/study-verification-load.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verification-load.html",
+      "bytes": 12852,
+      "sha256": "4772c32c39dcf82a4f0e56a0645810b9d768e7e25dd02a98c28890fc33f8a0bd"
+    },
+    "products/evidence-registry/study-verifier-rollout.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/study-verifier-rollout.html",
+      "bytes": 137893,
+      "sha256": "8552b86fb1677d7c431f5f31e1b82a24b6ee1b390a493e4268c516d070fbe091"
+    },
+    "products/evidence-registry/sygus-external-transfer-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/sygus-external-transfer-replay.zip",
+      "bytes": 48856,
+      "sha256": "cbf874c24dd3617eb96cd4dd568957136cabae427a0a14d8f18751c3bcc4d168"
+    },
+    "products/evidence-registry/three-paper-selection-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/three-paper-selection-replay.zip",
+      "bytes": 468695,
+      "sha256": "77bded2d502d5fb31acc9febc8b97453deb179526594fc68ab2d0243ba533858"
+    },
+    "products/evidence-registry/verification-arrivals-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/verification-arrivals-replay.zip",
+      "bytes": 168591,
+      "sha256": "6d6d9adf499d594ba8384368d072e2c3f519e5760c2e9ada9c6cbd0931b5c025"
+    },
+    "products/evidence-registry/verifier-replay.zip": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/verifier-replay.zip",
+      "bytes": 66291,
+      "sha256": "e06ec345142407a911d5f31b57ce726480e215c808a233f6e1eb2f99aa8c21d8"
+    },
+    "reader/chapters/unit-16-labor-os-work-surfaces-and-organizations.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-16-labor-os-work-surfaces-and-organizations.html",
+      "bytes": 104823,
+      "sha256": "81924585afd0fe0453160d79c2e01153c9d3056acc6592ab8336fb403994382d"
+    },
+    "reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-21-adjudicated-persistence-generalization-feedback-continual-learning-and-unlearning.html",
+      "bytes": 122325,
+      "sha256": "a430fb08e87b6883f2dfd5171fc1ea14eb5500e08248de4f25039de0c887a2a1"
+    },
+    "reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html": {
+      "url": "https://corbensorenson.github.io/asi-stack-book/reader/chapters/unit-24-physical-compute-energy-and-infrastructure.html",
+      "bytes": 102957,
+      "sha256": "7be58bb9de1c394c20bbc39162018eb584fee7af8fe244df7f93de2dcbb723db"
+    }
+  },
+  "largest_parent": {
+    "url": "https://corbensorenson.github.io/asi-stack-book/chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#source-crosswalk",
+    "full_section_bytes": 74523,
+    "compact_bytes": 32907
+  }
+}
