@@ -283,12 +283,17 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
             errors.append("Study and proof lookup lacks its compact revision-bound routes or homepage entry")
         proof_path = agent["evidence_lookup"]["topics"]["Proofs"]
         proof_lookup = load(site / proof_path)
+        cards = graph.declaration_cards(read)
         proof_cards = {row["name"]: card["reading_context"]
-                       for card in graph.declaration_cards(read).values() for row in card["declarations"]}
+                       for card in cards.values() for row in card["declarations"]}
+        proof_clues = {row["name"]: {field: row[field] for field in ("aliases", "question") if field in row}
+                       for card in cards.values() for row in card["declarations"]}
         if (proof_path != agent_reading.PROOF_LOOKUP or proof_lookup["snapshot_id"] != agent["snapshot_id"]
                 or proof_lookup["source_commit"] != source_commit or proof_lookup.get("reading") != agent_reading.PROOF_READING
                 or proof_lookup["records"] != agent_reading.proof_lookup_rows(discovery["records"])
                 or {row["id"] for row in proof_lookup["records"]} != {"evidence_passage:" + name for name in proof_cards}
+                or any({key: row[key] for key in ("aliases", "question") if key in row}
+                       != proof_clues.get(row["id"].removeprefix("evidence_passage:")) for row in proof_lookup["records"])
                 or (site / proof_path).stat().st_size >= (site / study_proof_path).stat().st_size
                 or (site / proof_path).stat().st_size > agent_reading.PROOF_PACKET_BYTES
                 or f'href="{proof_path}"' not in (site / "index.html").read_text()):

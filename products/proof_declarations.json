@@ -6,16 +6,18 @@
     "title": "When the finite Circle consumer must reject",
     "reading_context": {
       "url": "chapters/circle-calculus-and-proof-carrying-ai-contracts.html#core-claim",
-      "paragraph": "Operational rule. A consumer may use a formal receipt"
+      "paragraphs": ["Operational rule. A consumer may use a formal receipt"]
     },
     "declarations": [
       {
         "name": "circle_public_consumer_gate_promotion_overclaim_rejected",
+        "aliases": ["CirclePublicConsumerGateAccepted", "promotion flags", "formal receipt and replay state"],
         "premises": "Any one of three fixture flags asserts an upward transition, chapter promotion or deployed transport.",
         "conclusion": "The fixture fails the finite acceptance contract."
       },
       {
         "name": "circle_public_consumer_gate_missing_mutation_control_rejected",
+        "aliases": ["CirclePublicConsumerGateAccepted", "unsupported transfer rejection", "mutation trial guard"],
         "premises": "At least one required digest, missing-theorem, stale-contract or transfer rejection flag is false.",
         "conclusion": "The fixture fails acceptance. Execution of the four mutation trials is a separate observation."
       }
@@ -28,16 +30,22 @@
     "title": "Which route is cheapest under the declared costs?",
     "reading_context": {
       "url": "reader/chapters/unit-02-the-efficient-asi-hypothesis.html#what-the-current-work-establishes",
-      "paragraph": "The finite AsiStackProofs.Efficiency model represents"
+      "paragraphs": [
+        "The finite AsiStackProofs.Efficiency model represents",
+        "These artifacts establish finite accounting"
+      ]
     },
     "declarations": [
       {
         "name": "selected_route_is_a_listed_eligible_candidate",
+        "aliases": ["listed eligible route", "finite route selector"],
         "premises": "The finite selector returns this route from the supplied candidates.",
         "conclusion": "The selected route belongs to the list and meets its eligibility predicate."
       },
       {
         "name": "selected_route_has_minimum_modeled_cost",
+        "aliases": ["finite selector", "minimum modeled total cost", "cheaper countermodel"],
+        "question": "Does a cheaper failed-quality or unauthorized candidate challenge the minimum modeled cost? What remains to measure about production efficiency?",
         "premises": "The selector returns a route, and the alternative is an eligible member of the same list.",
         "conclusion": "The selected total cost is at most the alternative’s modeled cost. Measured production cost remains open."
       }
@@ -50,21 +58,24 @@
     "title": "Which jurisdiction does a mandate cover?",
     "reading_context": {
       "url": "reader/chapters/unit-08-institutions-coordination-and-societal-resilience.html#what-the-current-work-can-establish",
-      "paragraph": "Those are useful negative results."
+      "paragraphs": ["Those are useful negative results."]
     },
     "declarations": [
       {
         "name": "local_mandate_cannot_authorize_distinct_jurisdiction",
+        "aliases": ["cross-jurisdiction mandate", "different jurisdiction"],
         "premises": "The proposed jurisdiction differs from the jurisdiction recorded in the mandate.",
         "conclusion": "The modeled use fails even with the mandate’s own authority identity."
       },
       {
         "name": "participation_signals_cannot_recover_representation",
+        "aliases": ["ParticipationSignals", "representative standing", "excluded public"],
         "premises": "A classifier sees only participation signals in the finite model.",
         "conclusion": "Identical signals can hide different representation states, so such a classifier cannot recover every state."
       },
       {
         "name": "commitment_signals_cannot_recover_effective_enforcement",
+        "aliases": ["CommitmentSignals", "reachable remedy", "treaty enforcement"],
         "premises": "The classifier sees only modeled commitment signals.",
         "conclusion": "Those signals cannot recover effective enforcement in every encoded case."
       }
@@ -77,11 +88,12 @@
     "title": "Does provider activity establish recovery?",
     "reading_context": {
       "url": "chapters/societal-resilience-and-misuse-defense.html#core-claim",
-      "paragraph": "Operational rule. Keep resistance"
+      "paragraphs": ["Operational rule. Keep resistance"]
     },
     "declarations": [
       {
         "name": "provider_signals_cannot_recover_population_resilience",
+        "aliases": ["population recovery", "incident closure", "harmed-party recovery"],
         "premises": "A classifier receives only provider signals for the authored population cases.",
         "conclusion": "Every such classifier misses at least one modeled resilience state."
       }
@@ -94,16 +106,18 @@
     "title": "What does a lease proof establish?",
     "reading_context": {
       "url": "reader/chapters/unit-15-verification-bandwidth-claim-ledgers-and-proof.html#verification-starts-with-obligations",
-      "paragraph": "After recovering the gantry record"
+      "paragraphs": ["After recovering the gantry record"]
     },
     "declarations": [
       {
         "name": "accepted_lease_is_bounded_versioned_and_unexpired",
+        "aliases": ["lease issuance", "version ceiling and expiry"],
         "premises": "Issuance of a lease is the event kind and the authority transaction accepts it.",
         "conclusion": "The new version advances once, its ceiling does not increase and model time precedes expiration."
       },
       {
         "name": "accepted_secret_injection_is_scoped_mediated_and_preexpiry",
+        "aliases": ["accepted secret-injection event", "gantry stop and sensor trace", "oscillation detection"],
         "premises": "A secret-injection event is accepted by the same modeled transaction.",
         "conclusion": "Acceptance entails the modeled scope, mediation and pre-expiry checks. Sensor coverage is outside the proposition."
       }

@@ -553,7 +553,8 @@ def collection_routes(graph):
         for di, decl in enumerate(card["declarations"]):
             name = decl["name"]
             locator = f"/{ci}/declarations/{di}"
-            key = graph.node("evidence_passage",name,DECLARATIONS,locator,title=name,
+            clues = {field: decl[field] for field in ("aliases", "question") if field in decl}
+            key = graph.node("evidence_passage",name,DECLARATIONS,locator,title=name,**clues,
                              summary=decl["conclusion"],limit=decl["premises"],measurement="Formal declaration",
                              url=registry+"proof-declarations.html#"+name)
             graph.edge(key,"specifies_declaration_of","proof_target:"+card["tag"],DECLARATIONS,locator,evidence_effect="none")

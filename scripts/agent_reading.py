@@ -20,7 +20,7 @@ STUDY_PROOF_LOOKUP = "agent/topics/studies-and-proofs.json"
 PROOF_LOOKUP = "agent/topics/proofs.json"
 PROOF_PACKET_BYTES = 5500
 PROOF_READING = {
-    "lookup": "Match all your proof clues here once and keep the section URLs.",
+    "lookup": "Read this complete list once and keep the section URLs. A batched search can also match names or application terms in the aliases.",
     "evidence": "Read each matched export for the exact Lean statement, pinned source, and cited application context.",
 }
 SCIFACT_STUDY_PAGES = {
@@ -291,11 +291,17 @@ EVIDENCE_FIELDS = ("id", "kind", "title", "measurement", "summary", "disposition
 
 
 def proof_context(passage, section_url, locator):
-    """Quote the selected rendered paragraph separately from the formal result."""
-    paragraphs = [text for text in passage["text"].split("\n\n") if text.startswith(locator["paragraph"])]
-    if len(paragraphs) != 1 or passage["url"] != BOOK + locator["url"]:
-        raise ValueError("Cannot isolate proof context at " + locator["url"])
-    return dict(url=passage["url"], section_url=section_url, text=paragraphs[0])
+    """Quote the selected rendered paragraphs separately from the formal result."""
+    if passage["url"] != BOOK + locator["url"]:
+        raise ValueError("Proof context points to the wrong rendered section: " + locator["url"])
+    paragraphs = passage["text"].split("\n\n")
+    selected = []
+    for prefix in locator["paragraphs"]:
+        matches = [text for text in paragraphs if text.startswith(prefix)]
+        if len(matches) != 1:
+            raise ValueError(f"Cannot isolate proof context at {locator['url']} for {prefix!r}")
+        selected.append(matches[0])
+    return dict(url=passage["url"], section_url=section_url, text="\n\n".join(selected))
 
 
 def attach_evidence(site, files, records, evidence_routes, section_routes, commit, read):
