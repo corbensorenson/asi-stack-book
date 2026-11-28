@@ -1,5 +1,6 @@
 """Publish small, revision-bound entry points and exports of rendered book sections."""
 from html.parser import HTMLParser
+from hashlib import sha256
 import json
 import re
 from pathlib import PurePosixPath
@@ -12,6 +13,13 @@ VOID = set("area base br col embed hr img input link meta param source track wbr
 SKIP = {"script", "style", "nav", "button", "svg", "iframe", "noscript", "template"}
 HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
 BLOCKS = {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS
+
+
+def artifact_anchor(anchor):
+    """Keep human-readable filenames where the anchor is safe in an artifact."""
+    if re.fullmatch(r"[A-Za-z0-9._-]{1,180}", anchor) and anchor not in {".", ".."}:
+        return anchor
+    return "~" + sha256(anchor.encode("utf-8")).hexdigest()
 
 
 class PassageParser(HTMLParser):
@@ -134,7 +142,7 @@ def section_exports(site, files, commit):
             notes = {link[1:]: parser.footnotes[link[1:]][0].strip() for link in links
                      if link.startswith("#") and link[1:] in parser.footnotes}
             page_url = BOOK + path + "#" + anchor
-            route = f'agent/sections/{volume["id"]}/{anchor}.json'
+            route = f'agent/sections/{volume["id"]}/{artifact_anchor(anchor)}.json'
             if "/" in anchor or "\\" in anchor or anchor in {".", ".."}:
                 raise ValueError("Invalid agent passage anchor: " + anchor)
             value = dict(source_commit=commit, chapter=volume["title"], heading=heading, url=page_url,
@@ -174,7 +182,8 @@ def attach_sections(site, files, commit, records, routes):
             if key not in routes:
                 stem = PurePosixPath(path).with_suffix("")
                 # Keep the root file distinct from every possible fragment name.
-                route = f"agent/passages/{stem}/anchors/{anchor}.json" if anchor else f"agent/passages/{stem}/page.json"
+                route = (f"agent/passages/{stem}/anchors/{artifact_anchor(anchor)}.json"
+                         if anchor else f"agent/passages/{stem}/page.json")
                 routes[key] = route
                 pending.setdefault(path, set()).add(anchor)
             destination["section_url"] = BOOK + quote(routes[key], safe="/")
