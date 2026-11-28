@@ -1,0 +1,110 @@
+{
+  "arm": "candidate",
+  "panel": "escalation",
+  "revision": "a2e05e107cb116985daf2af8f93d9db5033fef18",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282370,
+      "sha256": "bc270c45042bf5da26890bdcdff18255d8061fb0061c6771644196f213b18f8b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a8b4652fa9ec2d579969a5cdea889d03f0af22b6c95400ba04778f2d26e1360c"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "reserved release development split dataset card pretraining",
+        "three-paper selector tie score annotation",
+        "SciFact-Open claim 83 document ranker annotated paper",
+        "replay retained predictions scoring protocol"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 6257,
+      "sha256": "c94f5f8c6599b5e037924947b412efa218377f1f0349fc1f2d093b64727dbbe0",
+      "displayed_bytes": 2603,
+      "displayed_sha256": "df699dc24564073f158f511eb868b0c7df9493d6968f283a4259edc1c7f8ec04"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 5625,
+      "sha256": "41abf0ffa73d8d54fdfbfa33f8cc84cff3244c997e90732a8eeb4b9ede7a49ff",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "d87fd7369267fef26a6140bea840fe8dd0b7fb39e86497a4ea7959db1b1b1503"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "bytes": 4855,
+      "sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83",
+      "displayed_bytes": 4855,
+      "displayed_sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5176,
+      "sha256": "cb13d7366d68a6f254536359433871a37e430a05b1578264adb55217739bc2f1",
+      "displayed_bytes": 5176,
+      "displayed_sha256": "cb13d7366d68a6f254536359433871a37e430a05b1578264adb55217739bc2f1"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/c965253fceea696df439dbd60bf8fbe54220d725/experiments/scifact_three_papers/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/c965253fceea696df439dbd60bf8fbe54220d725/experiments/scifact_three_papers/protocol.md",
+      "bytes": 2150,
+      "sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef",
+      "displayed_bytes": 2150,
+      "displayed_sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef"
+    },
+    {
+      "route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "bytes": 9625,
+      "sha256": "f3476e9e364e0653ab132db31c9e8d1dad6869317a3a3f6a2dfbede5b6b5aa0b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "d6cf0020ed6ef2d6c2ba7ed57b51485908e7e2c5d829455fe9c0860abd666185"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "claim 83",
+        "case-83",
+        "certifiable paper never returned all four held"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 6257,
+      "sha256": "c94f5f8c6599b5e037924947b412efa218377f1f0349fc1f2d093b64727dbbe0",
+      "displayed_bytes": 2175,
+      "displayed_sha256": "19f81c8c03d37240a41423ae0543cca64d11edaaa8f412ae9bd76967db28d698"
+    },
+    {
+      "route": "products/evidence-registry/study-citation-retrieval.html",
+      "focus": [
+        "claim 83"
+      ],
+      "canonical_route": "products/evidence-registry/study-citation-retrieval.html",
+      "bytes": 258173,
+      "sha256": "0cfbc652e19335c073c5bb46dfc8c2a906445b207c0ee60fbfc1e598e268a0f5",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "70546d5c6b5c31f635f008906e3189175888b7fa0560e33a898369bca144ccf4"
+    },
+    {
+      "route": "products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-83",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-83",
+      "bytes": 258173,
+      "sha256": "0cfbc652e19335c073c5bb46dfc8c2a906445b207c0ee60fbfc1e598e268a0f5",
+      "displayed_bytes": 1823,
+      "displayed_sha256": "a11427bf54b7476295bc4052bc69057f02d48a19c3e653028edf0be9830ecbea"
+    }
+  ]
+}

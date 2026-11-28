@@ -1,0 +1,110 @@
+{
+  "arm": "candidate",
+  "panel": "ordinary",
+  "revision": "a2e05e107cb116985daf2af8f93d9db5033fef18",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282370,
+      "sha256": "bc270c45042bf5da26890bdcdff18255d8061fb0061c6771644196f213b18f8b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a8b4652fa9ec2d579969a5cdea889d03f0af22b6c95400ba04778f2d26e1360c"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "reserved SciFact triage agreement",
+        "65 claim paired ranker",
+        "213 claim one versus three paper",
+        "SciFact-Open ceiling audit"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 6257,
+      "sha256": "c94f5f8c6599b5e037924947b412efa218377f1f0349fc1f2d093b64727dbbe0",
+      "displayed_bytes": 2846,
+      "displayed_sha256": "4fad2de4448c256ebcba63fbae5f10aafcfcc45b5f777cf57fa34c4617e483be"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 5625,
+      "sha256": "41abf0ffa73d8d54fdfbfa33f8cc84cff3244c997e90732a8eeb4b9ede7a49ff",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "d87fd7369267fef26a6140bea840fe8dd0b7fb39e86497a4ea7959db1b1b1503"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5176,
+      "sha256": "cb13d7366d68a6f254536359433871a37e430a05b1578264adb55217739bc2f1",
+      "displayed_bytes": 5176,
+      "displayed_sha256": "cb13d7366d68a6f254536359433871a37e430a05b1578264adb55217739bc2f1"
+    },
+    {
+      "route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/sections/verification-bandwidth-and-context-adequacy/fresh-citation-retrieval.json",
+      "bytes": 9625,
+      "sha256": "f3476e9e364e0653ab132db31c9e8d1dad6869317a3a3f6a2dfbede5b6b5aa0b",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "d6cf0020ed6ef2d6c2ba7ed57b51485908e7e2c5d829455fe9c0860abd666185"
+    },
+    {
+      "route": "agent/sections/verification-bandwidth-and-context-adequacy/citation-scoring-ceiling.json",
+      "focus": [],
+      "canonical_route": "agent/sections/verification-bandwidth-and-context-adequacy/citation-scoring-ceiling.json",
+      "bytes": 4728,
+      "sha256": "1a89e0f22182a8a88af3597a4cff0c6d5cdc8879673af93ed1a4a93ce71e336e",
+      "displayed_bytes": 4728,
+      "displayed_sha256": "1a89e0f22182a8a88af3597a4cff0c6d5cdc8879673af93ed1a4a93ce71e336e"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "Four paired rankings on fresh citation papers",
+        "fresh-citation-retrieval",
+        "ceiling-unsupported"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 6257,
+      "sha256": "c94f5f8c6599b5e037924947b412efa218377f1f0349fc1f2d093b64727dbbe0",
+      "displayed_bytes": 2151,
+      "displayed_sha256": "c55ea970c0183e50936495d8b0260773dee3777d935e27ac20d5197497683e59"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 5937,
+      "sha256": "077f35a4454e04bbff43a768aae74b66c547b7c7956bbd1362e1b65048c9d0d3",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "deff8549688c87e664d6e56dd8aee5c1c0d14b895e3aaf7cee7a00248eea6520"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/ceiling-unsupported.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/ceiling-unsupported.json",
+      "bytes": 3261,
+      "sha256": "646c039a98482b6a6be0f69bd4220fd734e151275685557174e83c9283a2b600",
+      "displayed_bytes": 3261,
+      "displayed_sha256": "646c039a98482b6a6be0f69bd4220fd734e151275685557174e83c9283a2b600"
+    },
+    {
+      "route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6635c1e1b605e5fb426a44e8a47ad3a01dca1a46/experiments/scifact_retrieval_followup/protocol.md",
+      "focus": [
+        "wall time"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6635c1e1b605e5fb426a44e8a47ad3a01dca1a46/experiments/scifact_retrieval_followup/protocol.md",
+      "bytes": 4413,
+      "sha256": "80c052e65b92b901d0b7efc143cd749935d5d000674b6095851a1f96996db9b2",
+      "displayed_bytes": 478,
+      "displayed_sha256": "20f3d7acb744297d4aaedb0d57454d77cf570b3a766bac5d526a678df17c7b19"
+    }
+  ]
+}

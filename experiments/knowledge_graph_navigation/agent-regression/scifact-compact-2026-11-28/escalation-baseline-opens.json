@@ -1,0 +1,161 @@
+{
+  "arm": "baseline",
+  "panel": "escalation",
+  "revision": "61fe483658541c5ec1c26d56e99536b1c5b6625b",
+  "reads": [
+    {
+      "route": "index.html",
+      "focus": [],
+      "canonical_route": "index.html",
+      "bytes": 282195,
+      "sha256": "ae7ac8292c3d561ef9af51593ed6b7062dd9f09359514fd8688bb35171322af4",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "a4abc7907dc89a59d270c830c25ab8448137d9edf3e12e3becc0bb6d01cc060f"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "development reserved splits dataset card example",
+        "three-paper selector",
+        "claim 83",
+        "retained predictions"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 5899,
+      "sha256": "680f8863bccda143cd5f7e8806ef4124f0b049aee4841204add7eecd1209bab0",
+      "displayed_bytes": 1870,
+      "displayed_sha256": "0a2987e90013e02c6b2bc094dd1bda6e4c2e0526fc30e8f526d507b7c84a98a2"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-scientific-citation/anchors/run-scifact-release.json",
+      "bytes": 6526,
+      "sha256": "e962fbf018daf462b36f3641543f367158a7f48c0a62e788b79dbb475b3074fe",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "de1ef7636a3ec662d1f47d50b2ce398df32592b1807c4da0e8ea8c444ff69130"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-three-paper-selection.json",
+      "bytes": 5716,
+      "sha256": "9ae8774062332adf6c00772b9d4ee6374251ab46a0c343c3d021796f4808fe94",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "45bc49dd44e9bb3203684e895b03c8cb8a4efa780cdb47fc96574d689e44139b"
+    },
+    {
+      "route": "agent/lookup.json",
+      "focus": [
+        "--batch",
+        "dataset-card example",
+        "scifact_citation_check/protocol.md",
+        "scifact_three_papers/protocol.md",
+        "claim 83 document ranker annotated paper",
+        "retained predictions score replay"
+      ],
+      "canonical_route": "agent/lookup.json",
+      "bytes": 40588,
+      "sha256": "7a1c8e03eef72e4a250e186cab38f918e683fc46c9dbd71caeaebddea1a4b7c2",
+      "displayed_bytes": 3208,
+      "displayed_sha256": "87301756e0ccc0d796748b2041b578e5b4eb3de7186f97a9bf457d8444eb3678"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/protocol.md",
+      "bytes": 4855,
+      "sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83",
+      "displayed_bytes": 4855,
+      "displayed_sha256": "6425860ca332a36a46681bc8efac7e8a8a5e7b7ac83716461a0f51b151a0fd83"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/c965253fceea696df439dbd60bf8fbe54220d725/experiments/scifact_three_papers/protocol.md",
+      "focus": [],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/c965253fceea696df439dbd60bf8fbe54220d725/experiments/scifact_three_papers/protocol.md",
+      "bytes": 2150,
+      "sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef",
+      "displayed_bytes": 2150,
+      "displayed_sha256": "42fc49941f08df9398034145299c147237faefe5ae46a3f27affbdaef813e1ef"
+    },
+    {
+      "route": "agent/topics/scifact.json",
+      "focus": [
+        "--batch",
+        "Four paired rankings on fresh citation papers",
+        "certifiable paper",
+        "fresh-citation-retrieval--83",
+        "ranker",
+        "SciFact-Open"
+      ],
+      "canonical_route": "agent/topics/scifact.json",
+      "bytes": 5899,
+      "sha256": "680f8863bccda143cd5f7e8806ef4124f0b049aee4841204add7eecd1209bab0",
+      "displayed_bytes": 3145,
+      "displayed_sha256": "fa4f53b779ac90fa22163156e618d9f0a0a834b5fb00e8cfee4588fef4fd1079"
+    },
+    {
+      "route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "focus": [],
+      "canonical_route": "agent/passages/products/evidence-registry/study-citation-retrieval/anchors/run-fresh-citation-retrieval.json",
+      "bytes": 7154,
+      "sha256": "46dc09d85dc66b3bf60d245ebb556a9b60b9c42ddad74d2e08d3c3bce8ff41bf",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "c2f228e4163a84c0de18b9eed9381d1b24e93d3bc6540b7a291c3ef4218c3969"
+    },
+    {
+      "route": "https://corbensorenson.github.io/asi-stack-book/products/evidence-registry/cases-fresh-citation-retrieval.csv",
+      "focus": [
+        ",83,"
+      ],
+      "canonical_route": "products/evidence-registry/cases-fresh-citation-retrieval.csv",
+      "bytes": 56024,
+      "sha256": "a2ba392c599947f7645de4d8412519080d31e538d93b1d7f33bc703f65af262d",
+      "displayed_bytes": 3437,
+      "displayed_sha256": "dbfaf7cc54ed1b511fdcc9cc0bd69f23d244080e8ae1953aa31a2e13e7cd9334"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/6635c1e1b605e5fb426a44e8a47ad3a01dca1a46/experiments/scifact_retrieval_followup/cases.json",
+      "focus": [
+        "\"claim_id\": 83,"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6635c1e1b605e5fb426a44e8a47ad3a01dca1a46/experiments/scifact_retrieval_followup/cases.json",
+      "bytes": 97098,
+      "sha256": "b1f2dc14f25c5f732ef1cbccff878d73baeed5951c9f479bc49c6d8d44994927",
+      "displayed_bytes": 5500,
+      "displayed_sha256": "3598e513107b4bf8e898fac764d7e26bfcc6b334eb1624eaca8b766089278d92"
+    },
+    {
+      "route": "products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-83",
+      "focus": [],
+      "canonical_route": "products/evidence-registry/study-citation-retrieval.html#run-fresh-citation-retrieval--case-83",
+      "bytes": 257997,
+      "sha256": "6756657e58ba040f90e10793bc72e1f395c0015d0d7504a862be1c9a89b740b2",
+      "displayed_bytes": 1823,
+      "displayed_sha256": "a11427bf54b7476295bc4052bc69057f02d48a19c3e653028edf0be9830ecbea"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/score.py",
+      "focus": [
+        "def main"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/score.py",
+      "bytes": 6073,
+      "sha256": "2e3a43a995a4ecf67836fb094b035f8d2c7e84fe91a126e9215a046b7b204216",
+      "displayed_bytes": 423,
+      "displayed_sha256": "d874a8dc6f1901cdcc44d539c5a658dd75e9ec89af9a45c171fd5382776a7217"
+    },
+    {
+      "route": "https://github.com/corbensorenson/asi-stack-book/blob/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/score.py",
+      "focus": [
+        "if __name__"
+      ],
+      "canonical_route": "https://raw.githubusercontent.com/corbensorenson/asi-stack-book/6e782c3b914451609f9f73bd063071e70bb440dc/experiments/scifact_citation_check/score.py",
+      "bytes": 6073,
+      "sha256": "2e3a43a995a4ecf67836fb094b035f8d2c7e84fe91a126e9215a046b7b204216",
+      "displayed_bytes": 1528,
+      "displayed_sha256": "7c62ac46685c57b843129a1c3ff19881f898e9a5d6c22006c2dd01499222bcdb"
+    }
+  ]
+}
