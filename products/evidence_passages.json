@@ -523,6 +523,20 @@
     ]
   },
   {
+    "id": "byteflow-boundary-budget",
+    "title": "ByteFlow with a fixed learned boundary budget",
+    "url": "chapters/replaceable-cognitive-substrates-beyond-transformer-monoculture.html#a-fixed-budget-for-learned-byte-boundaries",
+    "question": "What happens to useful splits under top-K byte chunking, and what did ByteFlow measure?",
+    "summary": "ByteFlow chooses boundary positions within a fixed budget. One of three useful splits is dropped when only two fit. Table 3 compares chunking rules at the same 0.6B architecture and 50B-token training scale.",
+    "limit": "The training comparison reports bits per byte and downstream scores. Test literal identifier recovery and semantic fidelity on the intended workload separately.",
+    "measurement": "Source-reported comparison",
+    "source_section": "ByteFlow, Table 3.",
+    "aliases": ["ByteFlow", "ByteFlow Table 3", "adaptive byte compression", "fixed budget for learned byte boundaries", "top-K byte boundaries"],
+    "links": [
+      {"predicate": "cites_source", "target": "source:ext_byteflow_2026"}
+    ]
+  },
+  {
     "id": "scifact-scoring-ceiling",
     "title": "How many claims could the benchmark certify?",
     "url": "chapters/verification-bandwidth-and-context-adequacy.html#citation-scoring-ceiling",
@@ -532,7 +546,9 @@
     "measurement": "Research reference",
     "aliases": [
       "two sentence scoring ceiling",
-      "certifiable papers"
+      "certifiable papers",
+      "SciFact Open scoring ceiling",
+      "retrospective two sentence ceiling"
     ],
     "links": [
       {

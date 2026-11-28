@@ -484,7 +484,7 @@ H-Net adapter. Combining a JEPA objective with a hierarchical encoder is a
 research possibility; none of the reviewed sources or this repository supplies
 a validated combined JEPA/H-Net model.
 
-### A fixed budget for learned byte boundaries
+### ByteFlow's fixed budget for learned byte boundaries {#a-fixed-budget-for-learned-byte-boundaries}
 
 Give a packet three valuable internal boundaries and a budget of two. ByteFlow can choose which two to keep from the input, but a lower-ranked boundary still loses a slot. If that split marks a controller identifier, test identifier recovery after chunking. This complements H-Net's learned hierarchy with a distinct constraint on the number of selected positions.
 

@@ -270,6 +270,20 @@ def research_projection_errors(output: Path, source_commit: str, site: Path | No
         if (lookup["snapshot_id"] != agent["snapshot_id"] or lookup["source_commit"] != source_commit
                 or lookup["records"] != agent_reading.lookup_rows(discovery["records"])):
             errors.append("Agent lookup does not match the revision-bound discovery routes")
+        scifact_path = agent["evidence_lookup"]["topics"]["SciFact"]
+        scifact = load(site / scifact_path)
+        scifact_ids = {row["id"] for row in scifact["records"]}
+        if (scifact_path != agent_reading.SCIFACT_LOOKUP
+                or scifact["snapshot_id"] != agent["snapshot_id"] or scifact["source_commit"] != source_commit
+                or scifact["records"] != agent_reading.scifact_lookup_rows(discovery["records"])
+                or not {"study_run:scifact-release", "study_run:fresh-citation-retrieval", "study_run:three-paper-selection",
+                        "evidence_case:scifact-release--75-triage", "evidence_passage:scifact-scoring-ceiling"} <= scifact_ids
+                or (site / scifact_path).stat().st_size >= (site / agent["evidence_lookup"]["catalog"]).stat().st_size
+                or f'href="{scifact_path}"' not in (site / "index.html").read_text()):
+            errors.append("SciFact lookup lacks its compact, revision-bound study routes or homepage entry")
+        byteflow = next((row for row in lookup["records"] if "ByteFlow" in row.get("aliases", [])), None)
+        if byteflow is None or byteflow["id"] != "evidence_passage:byteflow-boundary-budget":
+            errors.append("Compact lookup is missing the ByteFlow comparison")
         for row in discovery["records"]:
             for destination in [row, *row.get("locators", [])]:
                 direct = destination.get("section_url", "")

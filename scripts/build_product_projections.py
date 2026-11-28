@@ -1085,6 +1085,8 @@ def build_research(product_dir: Path, status: dict, inputs: ProductInputs | None
                       'Inspect the denominators</a> · <a href="scifact-ceiling.json">Download all 65 case classifications</a> · <a href="scifact-case-sources.json">Download claims, paper titles and annotations</a>.</p>')
         if study.get("reader_anchor"):
             links += f'<p><a href="../../reader/quickstart.html#{escape(study["reader_anchor"])}">Worked reader comparison</a></p>'
+        if study["id"] in {"scientific-citation", "citation-retrieval"}:
+            links += '<p><a href="../../agent/topics/scifact.json">Look up SciFact studies and cases for agent reading</a>.</p>'
         if study.get("paper"):
             links += f'<p><a href="../../{escape(study["paper"])}">Original paper</a>.</p>'
         if study["id"] == "scoped-git":

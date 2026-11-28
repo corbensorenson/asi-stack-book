@@ -13,6 +13,12 @@ VOID = set("area base br col embed hr img input link meta param source track wbr
 SKIP = {"script", "style", "nav", "button", "svg", "iframe", "noscript", "template"}
 HEADINGS = {"h2", "h3", "h4", "h5", "h6"}
 BLOCKS = {"p", "li", "dt", "dd", "tr", "pre", "figcaption", "caption"} | HEADINGS
+SCIFACT_LOOKUP = "agent/topics/scifact.json"
+SCIFACT_STUDY_PAGES = {
+    "products/evidence-registry/study-scientific-citation.html",
+    "products/evidence-registry/study-citation-retrieval.html",
+}
+SCIFACT_CHAPTER_RECORDS = {"evidence_passage:scifact-scoring-ceiling"}
 
 
 def artifact_anchor(anchor):
@@ -272,6 +278,13 @@ def lookup_rows(records):
     return rows
 
 
+def scifact_lookup_rows(records):
+    """Keep the two linked research studies and their deciding chapter passages together."""
+    return lookup_rows(row for row in records if row["id"] in SCIFACT_CHAPTER_RECORDS or any(
+        urlsplit(destination["url"]).path in SCIFACT_STUDY_PAGES
+        for destination in (row, *row.get("locators", []))))
+
+
 def publish(site, files, commit, read):
     routes = section_exports(site, files, commit)
     graph = site / DIRECTORY
@@ -303,10 +316,13 @@ def publish(site, files, commit, read):
     attach_evidence(files, enriched, primary, commit, read)
     files.write(site / "agent/discovery.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=records)))
     files.write(site / "agent/lookup.json", serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"], records=lookup_rows(records))))
+    files.write(site / SCIFACT_LOOKUP, serialize(dict(source_commit=commit, snapshot_id=manifest["snapshot_id"],
+                                                        records=scifact_lookup_rows(records))))
     index = dict(schema_version="asi-stack.agent-index.v1", book_url=BOOK, source_commit=commit,
                  snapshot_id=manifest["snapshot_id"], lookup=dict(algorithm="sha256", encoding="UTF-8",
                  prefix_length=manifest["shard_prefix_length"], template=DIRECTORY+manifest["shard_template"]),
                  evidence_lookup=dict(catalog="agent/lookup.json", match="id, title, aliases, or question",
+                                      topics={"SciFact": SCIFACT_LOOKUP},
                                       read="Open section_url for the passage, evidence scope, and citation. Cite its url."),
                  evidence_discovery="agent/discovery.json", terms=DIRECTORY+"dictionary.json",
                  section_index="agent/sections.json", section_template="agent/sections/{volume_id}/{anchor}.json",
@@ -323,6 +339,7 @@ def publish(site, files, commit, read):
 
 - [Agent index](agent-index.json) provides the revision, lookup rules, and routes below.
 - [Look up several evidence topics in one read](agent/lookup.json). Keep the returned section URLs and open those passages together.
+- [Look up SciFact studies and cases](agent/topics/scifact.json) when every clue concerns scientific citation. Use the same section links.
 - [Discover evidence](agent/discovery.json) by title, alias, or question. Open a result’s `section_url` to read and cite its exact passage. Use the stable ID for graph relationships or case provenance.
 - [Look up an AI term](products/evidence-registry/knowledge-graph/dictionary.json) by headword or alias.
 - [Read one section](agent/sections.json) by chapter and anchor. Follow its canonical URL when citing.
