@@ -51,7 +51,7 @@ class PassageParser(HTMLParser):
         if tag == "a" and attrs.get("href") and "anchorjs-link" not in attrs.get("class", ""):
             for parent in self.stack:
                 parent["links"].append(attrs["href"])
-        if tag in BLOCKS:
+        if tag in BLOCKS or tag == "br":
             self.handle_data("\n")
         if tag == "img" and attrs.get("alt"):
             self.handle_data(attrs["alt"])
